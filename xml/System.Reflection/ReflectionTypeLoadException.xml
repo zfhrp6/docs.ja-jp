@@ -1,0 +1,238 @@
+<Type Name="ReflectionTypeLoadException" FullName="System.Reflection.ReflectionTypeLoadException">
+  <TypeSignature Language="C#" Value="public sealed class ReflectionTypeLoadException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ReflectionTypeLoadException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ReflectionTypeLoadException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>モジュールのクラスを読み込むことができない場合に、<see cref="M:System.Reflection.Module.GetTypes" /> メソッドがスローする例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReflectionTypeLoadException`0x80131602 の値を持つ HRESULT COR_E_REFLECTIONTYPELOAD を使用します。  
+  
+ インスタンスには、モジュールで定義されたされ、読み込まれたクラス (型のプロパティ) の配列が含まれています。 配列には、null 値を含めることができます。 例外の別の配列もあります (`LoaderExceptions`プロパティ)。 この例外の配列では、クラス ローダーによってスローされた例外を表します。 クラスの配列の穴は、例外を整列します。  
+  
+ この例外は、両方のクラスの配列との配列を公開`TypeLoadExceptions`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReflectionTypeLoadException (Type[] classes, Exception[] exceptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type[] classes, class System.Exception[] exceptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ReflectionTypeLoadException.#ctor(System.Type[],System.Exception[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="classes" Type="System.Type[]" />
+        <Parameter Name="exceptions" Type="System.Exception[]" />
+      </Parameters>
+      <Docs>
+        <param name="classes">型の配列<see langword="Type" />クラス、モジュールで定義され、読み込まれたを格納します。 この配列が null 参照を含めることができます (<see langword="Nothing" /> Visual Basic で) 値です。</param>
+        <param name="exceptions">型の配列<see langword="Exception" />クラス ローダーによってスローされた例外を含んでいます。 Null 参照 (<see langword="Nothing" /> Visual Basic で) の値が、<c>クラス</c>をこの例外を含む行を配列<c>例外</c>配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.ReflectionTypeLoadException" />特定のクラスとその関連付けられた例外のクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReflectionTypeLoadException (Type[] classes, Exception[] exceptions, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type[] classes, class System.Exception[] exceptions, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ReflectionTypeLoadException.#ctor(System.Type[],System.Exception[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="classes" Type="System.Type[]" />
+        <Parameter Name="exceptions" Type="System.Exception[]" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="classes">型の配列<see langword="Type" />クラス、モジュールで定義され、読み込まれたを格納します。 この配列が null 参照を含めることができます (<see langword="Nothing" /> Visual Basic で) 値です。</param>
+        <param name="exceptions">型の配列<see langword="Exception" />クラス ローダーによってスローされた例外を含んでいます。 Null 参照 (<see langword="Nothing" /> Visual Basic で) の値が、<c>クラス</c>をこの例外を含む行を配列<c>例外</c>配列。</param>
+        <param name="message">A<see langword="String" />例外がスローされた原因を説明します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.ReflectionTypeLoadException" />特定のクラスとその関連付けられる例外は、例外の説明およびクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ReflectionTypeLoadException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">情報とデータは、オブジェクトを逆シリアル化または逆シリアル化に必要です。</param>
+        <param name="context">シリアル化のコンテキスト。</param>
+        <summary>提供、<see cref="T:System.Runtime.Serialization.ISerializable" />シリアル化されたオブジェクトの実装です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see langword="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LoaderExceptions">
+      <MemberSignature Language="C#" Value="public Exception[] LoaderExceptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception[] LoaderExceptions" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ReflectionTypeLoadException.LoaderExceptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラス ローダーによってスローされた例外の配列を取得します。</summary>
+        <value>クラス ローダーによってスローされる例外を含んでいる <see langword="Exception" /> 型の配列。 このインスタンスの <see cref="P:System.Reflection.ReflectionTypeLoadException.Types" /> 配列内の null 値は、この配列内の例外と一致します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ReflectionTypeLoadException.LoaderExceptions%2A>プロパティ型の配列を取得する`Exception`を並列である、<xref:System.Reflection.ReflectionTypeLoadException.Types%2A>配列。 リフレクションは、クラスを読み込むことはできませんたびに、この配列は null 値を含めます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Types">
+      <MemberSignature Language="C#" Value="public Type[] Types { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] Types" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ReflectionTypeLoadException.Types" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールで定義され、読み込まれたクラスの配列を取得します。</summary>
+        <value>型の配列<see langword="Type" />クラス、モジュールで定義され、読み込まれたを格納します。 この配列は、いくつかを含めることができます<see langword="null" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ReflectionTypeLoadException.LoaderExceptions%2A>プロパティ型の配列を取得する`Exception`これを並列である`Types`配列。 リフレクションは、クラスを読み込むことはできませんたびに、この配列は null 値を含めます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

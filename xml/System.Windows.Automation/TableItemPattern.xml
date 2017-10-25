@@ -1,0 +1,189 @@
+<Type Name="TableItemPattern" FullName="System.Windows.Automation.TableItemPattern">
+  <TypeSignature Language="C#" Value="public class TableItemPattern : System.Windows.Automation.GridItemPattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableItemPattern extends System.Windows.Automation.GridItemPattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.TableItemPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.GridItemPattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートするコンテナーの子コントロールを表す<see cref="T:System.Windows.Automation.TablePattern" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロール パターンと似ています<xref:System.Windows.Automation.GridItemPattern>、任意の制御をサポートする区別を<xref:System.Windows.Automation.TableItemPattern>個々 のセルとその行および列情報間のリレーションシップをプログラムによって公開されます。  
+  
+ サポートの追加によって個々 のセル機能へのアクセスが提供される<xref:System.Windows.Automation.GridItemPattern>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.TableItemPattern.TableItemPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.TableItemPattern/TableItemPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.TableItemPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TableItemPattern+TableItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキャッシュされたプロパティ値を取得<see cref="T:System.Windows.Automation.TableItemPattern" />です。</summary>
+        <value>キャッシュされたプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 プロパティの現在の値を取得するを使用して、プロパティを取得します。<xref:System.Windows.Automation.TableItemPattern.Current%2A>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.TableItemPattern.TableItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnHeaderItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ColumnHeaderItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ColumnHeaderItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TableItemPattern.ColumnHeaderItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの項目またはセルに関連付けられた、すべての列ヘッダーを取得するプロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.TableItemPatternIdentifiers>です。  
+  
+ このプロパティに存在しない<xref:System.Windows.Automation.TableItemPattern.TableItemPatternInformation>を使用して取得する必要があります<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>または<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、テーブルの主な行または列ヘッダーの項目を表すオートメーション要素オブジェクトの配列が取得されます。  
+  
+ この例では、間のリレーションシップの目的で、<xref:System.Windows.Automation.TablePattern.TablePatternInformation.RowOrColumnMajor%2A>プロパティおよび行と列のヘッダー項目が示されています。 ただし、テーブルに関係なく、行および列ヘッダーを持つことができます、<xref:System.Windows.Automation.TablePattern.TablePatternInformation.RowOrColumnMajor%2A>テーブルのプロパティです。  
+  
+ [!code-csharp[UIATableItemPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#105)]
+ [!code-vb[UIATableItemPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.TableItemPattern.TableItemPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.TableItemPattern/TableItemPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.TableItemPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TableItemPattern+TableItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この現在のプロパティ値を取得<see cref="T:System.Windows.Automation.TableItemPattern" />です。</summary>
+        <value>現在のプロパティ値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.TableItemPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.TableItemPattern.TableItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TableItemPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.TableItemPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.TableItemPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.TableItemPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIATableItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#101)]
+ [!code-vb[UIATableItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowHeaderItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty RowHeaderItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty RowHeaderItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TableItemPattern.RowHeaderItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの項目またはセルに関連付けられているすべての行ヘッダーを取得するプロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.TableItemPatternIdentifiers>です。  
+  
+ このプロパティに存在しない<xref:System.Windows.Automation.TableItemPattern.TableItemPatternInformation>を使用して取得する必要があります<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>または<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、テーブルの主な行または列ヘッダーの項目を表すオートメーション要素オブジェクトの配列が取得されます。  
+  
+ この例では、間のリレーションシップの目的で、<xref:System.Windows.Automation.TablePattern.TablePatternInformation.RowOrColumnMajor%2A>プロパティおよび行と列のヘッダー項目が示されています。 ただし、テーブルに関係なく、行および列ヘッダーを持つことができます、<xref:System.Windows.Automation.TablePattern.TablePatternInformation.RowOrColumnMajor%2A>テーブルのプロパティです。  
+  
+ [!code-csharp[UIATableItemPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#105)]
+ [!code-vb[UIATableItemPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

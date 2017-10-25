@@ -1,0 +1,80 @@
+<Type Name="MouseButtonEventHandler" FullName="System.Windows.Input.MouseButtonEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MouseButtonEventHandler(object sender, MouseButtonEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MouseButtonEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseButtonEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>ルーティング イベントをたとえば関連するマウス ボタンを処理するメソッドを表す<see cref="E:System.Windows.UIElement.MouseLeftButtonDown" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、次の添付イベントと共に使用されます。  
+  
+-   <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.MouseUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.PreviewMouseDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.PreviewMouseUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement?displayProperty=nameWithType>  
+  
+ このデリゲートは、次のルーティング イベントと共に使用されます。 これらのルーティング イベントがより一般的な要素のモデルにアクセスできるようにする上記のアタッチされたイベントを転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+-   <xref:System.Windows.UIElement.MouseDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.MouseUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.MouseLeftButtonDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.MouseLeftButtonUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.MouseRightButtonDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.MouseRightButtonUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseLeftButtonDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseLeftButtonUp?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseRightButtonDown?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseRightButtonUp?displayProperty=nameWithType>  
+  
+ 添付イベントおよび基本要素のルーティング イベントは、それぞれのイベント データを共有し、バブルとトンネル ルーティング イベントのバージョンは、イベント データを共有もします。 イベント ルートをたどる際は、イベントの処理の特性に影響することができます。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.UIElement.MouseDown>イベントのソースの背景色を変更するイベント ハンドラー。  背景色は、どのボタンが押された決定されます。  
+  
+ [!code-csharp[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mouseeventargschangedbutton)]
+ [!code-vb[mousesnippetsample#MouseEventArgsChangedButton](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mouseeventargschangedbutton)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

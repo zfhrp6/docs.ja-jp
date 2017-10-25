@@ -1,0 +1,400 @@
+<Type Name="ProfileSettings" FullName="System.Web.Configuration.ProfileSettings">
+  <TypeSignature Language="C#" Value="public sealed class ProfileSettings : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProfileSettings extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ProfileSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET イベントのプロファイルを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProfileSettings>クラスをプログラムでアクセスおよび変更する方法を提供する、`profiles`の要素、`healthMonitoring`構成ファイルのセクションです。  
+  
+ イベントのプロファイルは、イベントが ASP.NET によって収集され、プロバイダーを累乗した方法を決定します。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`profiles`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.ProfileSettings>クラスです。  
+  
+ 次の構成ファイルの抜粋は、宣言のいくつかのプロパティの値を指定する方法を示します、`profiles`セクションです。  
+  
+```  
+<healthMonitoring>  
+    <profiles>  
+        <add name="Default"  
+            minInstances="1"  
+            maxLimit="Infinite"  
+            minInterval="00:10:00"  
+        />  
+        <add name="Critical"  
+            minInstances="1"  
+            maxLimit="1024"  
+            minInterval="00:00:00"  
+        />  
+    </profiles>  
+</healthMonitoring>   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileSettings (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfileSettings.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfileSettings" />オブジェクトを作成します。</param>
+        <summary><see cref="T:System.Web.Configuration.ProfileSettings" /> クラスの新しいインスタンスを初期化します。 クラスの新しいインスタンスの指定された名前を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Web.Configuration.ProfileSettings.Custom%2A>|空の文字列 ("")。|  
+|<xref:System.Web.Configuration.ProfileSettings.MaxLimit%2A>|<xref:System.Int32.MaxValue>。|  
+|<xref:System.Web.Configuration.ProfileSettings.MinInstances%2A>|1.|  
+|<xref:System.Web.Configuration.ProfileSettings.MinInterval%2A>|<xref:System.TimeSpan.Zero>。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProfileSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#51](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#51)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#51](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#51)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileSettings (string name, int minInstances, int maxLimit, TimeSpan minInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, int32 minInstances, int32 maxLimit, valuetype System.TimeSpan minInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfileSettings.#ctor(System.String,System.Int32,System.Int32,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="minInstances" Type="System.Int32" />
+        <Parameter Name="maxLimit" Type="System.Int32" />
+        <Parameter Name="minInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfileSettings" />オブジェクトを作成します。</param>
+        <param name="minInstances">イベントの発生をプロバイダーにイベントが発生するまでの最小数。</param>
+        <param name="maxLimit">同じ種類のイベントが発生する最大回数。</param>
+        <param name="minInterval">A<see cref="T:System.TimeSpan" />同じ型の 2 つのイベントが発生したときの時刻の間の間隔の最小の長さを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.ProfileSettings" />クラス、クラスの新しいインスタンスを指定した設定を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Web.Configuration.ProfileSettings.Custom%2A>|空の文字列 ("")。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProfileSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#52](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#52)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#52](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#52)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileSettings (string name, int minInstances, int maxLimit, TimeSpan minInterval, string custom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, int32 minInstances, int32 maxLimit, valuetype System.TimeSpan minInterval, string custom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfileSettings.#ctor(System.String,System.Int32,System.Int32,System.TimeSpan,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="minInstances" Type="System.Int32" />
+        <Parameter Name="maxLimit" Type="System.Int32" />
+        <Parameter Name="minInterval" Type="System.TimeSpan" />
+        <Parameter Name="custom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.ProfileSettings" />オブジェクトを作成します。</param>
+        <param name="minInstances">イベントの発生をプロバイダーにイベントが発生するまでの最小数。</param>
+        <param name="maxLimit">同じ種類のイベントが発生する最大回数。</param>
+        <param name="minInterval">A<see cref="T:System.TimeSpan" />同じ型の 2 つのイベント間の最小間隔を指定します。</param>
+        <param name="custom">実装するカスタム クラスの完全修飾型<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.BufferModeSettings" />クラス、クラスの新しいインスタンスを指定した設定を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProfileSettings.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#53](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#53)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#53](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#53)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="public string Custom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Custom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.Custom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("custom", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を実装するカスタム クラスの完全修飾の型、<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />インターフェイスです。</summary>
+        <value>実装するカスタム クラスの完全修飾の型、<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />インターフェイスです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型参照は次の形式 (角かっこ内の項目は必要ありません): *Namespace*.*Typename*、 *Assemblyname*[、] [バージョン = x] [カルチャ = y] [PublicKeyToken = z] です。 たとえば、"ExampleNameSpace.ExampleType、Example.Assembly、バージョン ASSEMBLY_VERSION %、Culture = neutral, PublicKeyToken = MICROSOFT_PUBLICKEY % ="  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSettings.Custom%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#66](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#66)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#66](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#66)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLimit">
+      <MemberSignature Language="C#" Value="public int MaxLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.MaxLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ種類のイベントが発生する最大回数を設定します。</summary>
+        <value>同じ種類のイベントが発生する最大回数。 既定値は、<see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、0 より大きい値が必要です。 値にできる無限設定することによって<xref:System.Int32.MaxValue>です。 無効な値には、構成セクションを保存するときにスローされる例外が発生します。  
+  
+ このプロパティは、同じ種類のイベントが発生する最大回数を指定します。 たとえば、値が`10`イベントが 10 倍の時間に発生して、その後は無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSettings.MaxLimit%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#63](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#63)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#63](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#63)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinInstances">
+      <MemberSignature Language="C#" Value="public int MinInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinInstances" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.MinInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minInstances", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロバイダーでイベントが発生する前に、イベントの発生の最小数を設定します。</summary>
+        <value>プロバイダーにイベントが発生する前に、イベント発生の最小数。 既定値は、<see langword="1" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、0 より大きい値が必要です。 値にできる無限設定することによって<xref:System.Int32.MaxValue>です。 無効な値には、構成セクションを保存するときにスローされる例外が発生します。  
+  
+ このプロパティは、プロバイダーに発生するイベントが発生するまでのイベントの最小数を指定します。 たとえば、値の`5`エントリのイベントの 5 番目のインスタンスが発生するまで、ASP.NET はプロバイダーにイベントが発生しないことを意味します。 値が有限でない場合 (<xref:System.Int32.MaxValue>)、プロバイダーにイベントが生成されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSettings.MinInstances%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#64](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#64)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#64](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#64)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan MinInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MinInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.MinInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ型の 2 つのイベント間の最小間隔を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />同じ型の 2 つのイベント間の最小間隔を指定します。 既定値は、<see cref="F:System.TimeSpan.Zero" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値にできる無限設定することによって<xref:System.Int32.MaxValue>です。 無効な値には、構成セクションを保存するときに例外が発生します。  
+  
+ 値が場合<xref:System.TimeSpan.Zero>間隔の最小値はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSettings.MinInterval%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#65](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#65)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#65](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#65)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ProfileSettings" /> オブジェクトの名前を取得または設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.ProfileSettings" /> オブジェクトの名前。 既定値は空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一意の名前が必要です。 構成セクションの保存時にデータが失われる重複する名前があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSettings.Name%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#62](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#62)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#62](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#62)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSettings.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

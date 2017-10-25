@@ -1,0 +1,266 @@
+<Type Name="FeatureSupport" FullName="System.Windows.Forms.FeatureSupport">
+  <TypeSignature Language="C#" Value="public abstract class FeatureSupport : System.Windows.Forms.IFeatureSupport" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FeatureSupport extends System.Object implements class System.Windows.Forms.IFeatureSupport" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FeatureSupport" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Forms.IFeatureSupport</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>提供<see langword="static" />を現在のシステムからの機能の情報を取得するメソッド。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`static`機能情報のクラスを照会するときに、このクラスのメソッドを実装、<xref:System.Windows.Forms.IFeatureSupport>インターフェイスです。 それ以外の場合、継承<xref:System.Windows.Forms.FeatureSupport>し、独自の実装を提供します。 このクラスの実装は、次を参照してください。<xref:System.Windows.Forms.OSFeature>です。  
+  
+ 機能のバージョン番号を取得する<xref:System.Windows.Forms.FeatureSupport.GetVersionPresent%2A>です。 呼び出す<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>を特定の機能または機能のバージョンがインストールされているかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.FeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Windows.Forms.FeatureSupport" />、オーバーライドする必要があります、<see cref="M:System.Windows.Forms.FeatureSupport.GetVersionPresent(System.String,System.String)" />メソッドです。 このメソッドをオーバーライドするときにいることを確認に使用するクラス、<paramref name="feature" />でこのパラメーターを使用するクラスと同じパラメーターが、<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />メソッドです。 場合、2 つ<paramref name="feature" />パラメーターが異なる、上書きすることも必要があります<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FeatureSupport ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.FeatureSupport" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVersionPresent">
+      <MemberSignature Language="C#" Value="public abstract Version GetVersionPresent (object feature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Version GetVersionPresent(object feature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.GetVersionPresent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="feature">バージョンが要求された機能です。</param>
+        <summary>派生クラスでオーバーライドされると、システムで利用可能な指定した機能のバージョンを取得します。</summary>
+        <returns>A<see cref="T:System.Version" />システムで使用できる、指定した機能のバージョン番号を表すまたは<see langword="null" />機能がインストールされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号は、3 つの部分で構成されています: メジャー、マイナー、およびビルドします。 通常は、バージョン番号は、「メジャー番号 number.build 数」として表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.FeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Windows.Forms.FeatureSupport" />、このメソッドをオーバーライドする必要があります。 このメソッドをオーバーライドするときにいることを確認に使用するクラス、<paramref name="feature" />でこのパラメーターを使用するクラスと同じパラメーターが、<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />メソッドです。 場合、2 つ<paramref name="feature" />パラメーターが異なる、オーバーライドする必要がありますも<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />します。  
+  
+ 参照してください<see cref="M:System.Windows.Forms.OSFeature.GetVersionPresent(System.Object)" />に対してこのメソッドを実装します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVersionPresent">
+      <MemberSignature Language="C#" Value="public static Version GetVersionPresent (string featureClassName, string featureConstName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Version GetVersionPresent(string featureClassName, string featureConstName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.GetVersionPresent(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="featureClassName" Type="System.String" />
+        <Parameter Name="featureConstName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="featureClassName">指定された機能についてクエリするクラスの完全修飾名。 このクラスを実装する必要があります、<see cref="T:System.Windows.Forms.IFeatureSupport" />インターフェイスか、このインターフェイスを実装するクラスを継承します。</param>
+        <param name="featureConstName">検索する機能の完全修飾名。</param>
+        <summary>システムで利用可能な指定した機能のバージョンを取得します。</summary>
+        <returns>A<see cref="T:System.Version" />システムで使用できる、指定した機能のバージョン番号または<see langword="null" />機能がインストールされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号は、3 つの部分で構成されています: メジャー、マイナー、およびビルドします。 通常は、バージョン番号は、「メジャー番号 number.build 数」として表示されます。  
+  
+ 渡す名前を調べる機能を含む製品のマニュアルを参照してください、`featureClassName`と`featureConstName`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public virtual bool IsPresent (object feature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPresent(object feature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.IsPresent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="feature">検索する機能。</param>
+        <summary>システムで指定した機能のすべてのバージョンがインストールされているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />この機能が存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OSFeature>の実装<xref:System.Windows.Forms.FeatureSupport>クエリを実行し、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコードでは、する必要があります`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Windows.Forms.FeatureSupport" />、オーバーライドする必要があります、<see cref="M:System.Windows.Forms.FeatureSupport.GetVersionPresent(System.String,System.String)" />メソッドです。 このメソッドをオーバーライドするときにいることを確認に使用するクラス、<paramref name="feature" />でこのパラメーターを使用するクラスと同じパラメーターが、<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />メソッドです。 場合、2 つ<paramref name="feature" />パラメーターが異なる、オーバーライドする必要がありますも<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public virtual bool IsPresent (object feature, Version minimumVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPresent(object feature, class System.Version minimumVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.IsPresent(System.Object,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+        <Parameter Name="minimumVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="feature">検索する機能。</param>
+        <param name="minimumVersion">A<see cref="T:System.Version" />検索する機能の最低限のバージョン番号を表すです。</param>
+        <summary>システムで指定されているか新しいバージョンの指定した機能がインストールされているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />機能が存在し、そのバージョン番号は、指定された最小バージョン番号です。 以下の場合<see langword="false" />機能がインストールされていないか、そのバージョン番号が指定した最小数を下回る場合。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Windows.Forms.FeatureSupport" />、オーバーライドする必要があります、<see cref="M:System.Windows.Forms.FeatureSupport.GetVersionPresent(System.String,System.String)" />メソッドです。 このメソッドをオーバーライドするときにいることを確認に使用するクラス、<paramref name="feature" />でこのパラメーターを使用するクラスと同じパラメーターが、<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />メソッドです。 場合、2 つ<paramref name="feature" />パラメーターが異なる、オーバーライドする必要がありますも<see cref="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public static bool IsPresent (string featureClassName, string featureConstName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPresent(string featureClassName, string featureConstName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="featureClassName" Type="System.String" />
+        <Parameter Name="featureConstName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="featureClassName">指定された機能についてクエリするクラスの完全修飾名。 このクラスを実装する必要があります、<see cref="T:System.Windows.Forms.IFeatureSupport" />インターフェイスか、このインターフェイスを実装するクラスを継承します。</param>
+        <param name="featureConstName">検索する機能の完全修飾名。</param>
+        <summary>システムで指定した機能のすべてのバージョンがインストールされているかどうかを判断します。 このメソッドは <see langword="static" /> です。</summary>
+        <returns>
+          <see langword="true" />指定した機能が存在する場合<see langword="false" />指定した機能が存在しない場合、または機能を含む製品がインストールされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す名前を調べる機能を含む製品のマニュアルを参照してください、`featureClassName`と`featureConstName`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public static bool IsPresent (string featureClassName, string featureConstName, Version minimumVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPresent(string featureClassName, string featureConstName, class System.Version minimumVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FeatureSupport.IsPresent(System.String,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="featureClassName" Type="System.String" />
+        <Parameter Name="featureConstName" Type="System.String" />
+        <Parameter Name="minimumVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="featureClassName">指定された機能についてクエリするクラスの完全修飾名。 このクラスを実装する必要があります、<see cref="T:System.Windows.Forms.IFeatureSupport" />インターフェイスか、このインターフェイスを実装するクラスを継承します。</param>
+        <param name="featureConstName">検索する機能の完全修飾名。</param>
+        <param name="minimumVersion">A<see cref="T:System.Version" />機能の最低限のバージョン番号を表します。</param>
+        <summary>システムで指定されているか新しいバージョンの指定した機能がインストールされているかどうかを判断します。 このメソッドは <see langword="static" /> です。</summary>
+        <returns>
+          <see langword="true" />機能が存在し、そのバージョン番号は、指定された最小バージョン番号です。 以下の場合<see langword="false" />機能がインストールされていないか、そのバージョン番号が指定した最小数を下回る場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡す名前を調べる機能を含む製品のマニュアルを参照してください、`featureClassName`と`featureConstName`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

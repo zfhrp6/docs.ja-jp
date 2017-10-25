@@ -1,0 +1,117 @@
+<Type Name="AuthenticationServiceManager" FullName="System.Web.UI.AuthenticationServiceManager">
+  <TypeSignature Language="C#" Value="public class AuthenticationServiceManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticationServiceManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.AuthenticationServiceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Path")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.EmptyStringExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>認証サービスのカスタム実装の場所を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.AuthenticationServiceManager>クラスに対応して、<xref:System.Web.UI.ScriptManager.AuthenticationService%2A>のプロパティ、<xref:System.Web.UI.ScriptManager>または<xref:System.Web.UI.ScriptManagerProxy>コントロール。  
+  
+ AJAX 対応アプリケーションでは、ログオンし、クライアント スクリプトからログオフに認証 Web サービスを使用しています。 使用することができます<xref:System.Web.UI.AuthenticationServiceManager>認証 Web サービスは ASP.NET の AJAX 機能によって提供される組み込みの Web サービスを使用する代わりに、別の実装のパスを指定します。  
+  
+ アプリケーションの認証サービスを使用するには、構成ファイルで有効にする必要があります。 組み込みの Web サービスの認証を使用する場合、ページ上で、認証サービス マネージャーを明示的に宣言するはありません。  
+  
+ 独自の認証サービスを作成するには、次の 2 つのメソッドを持つ Web サービスを実装する必要があります:`Login`と`Logout`です。 さらに、これらのメソッドでは、組み込みの認証 Web サービスと同じ署名が必要です。  
+  
+ 次の例では、カスタム認証 Web サービス クラスで実装する必要がある基本クラス構造を示します。  
+  
+  
+  
+ カスタム認証 Web サービスを使用することができますサービスを追加する、宣言によってマークアップを含めることによって、`<AuthenticationService>`内の要素、`<asp:ScriptManager>`要素 ページで、次の例で示すようにします。  
+  
+```  
+<asp:ScriptManager ID="SM1" runat="server">  
+  <AuthenticationService Path="MyAuthenticationService.asmx" />  
+</asp:ScriptManager>  
+```  
+  
+ プログラムによって構成できる<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>カスタム認証 Web サービスを使用します。  
+  
+ 関係なくがかどうか、認証サービスの宣言セクション ページで、認証サービスが有効な場合、構成ファイルでは、AJAX 対応アプリケーションがレンダリングされるページで、ECMAScript (JavaScript) 変数が含まれます。 これにより、クライアント スクリプトを現在のユーザーが認証されたかどうかを判断できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticationServiceManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AuthenticationServiceManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.AuthenticationServiceManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AuthenticationServiceManager.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証サービスへのパスを設定します。</summary>
+        <value>カスタム認証 Web サービスのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>プロパティが設定されていない、戻り値は<xref:System.String?displayProperty=nameWithType>します。 この例では、asp.net AJAX 機能は、次の内部の既定のパスに対応する Web サービスの組み込みの認証を使用: ~/ScriptServices_AuthenticationService.asmx です。 設定した場合、同じ動作が発生した<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>に空の値または`null`です。  
+  
+ <xref:System.Web.UI.AuthenticationServiceManager.Path%2A>指定することができます、<xref:System.Web.UI.ScriptManager>コントロールまたは関連付けられている<xref:System.Web.UI.ScriptManagerProxy>コントロール。 ときに<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>に設定されて、<xref:System.Web.UI.ScriptManagerProxy>レベル、次の警告が適用されます。  
+  
+-   コントロールの階層構造で複数のプロキシがある場合<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>各プロキシ インスタンスに設定する必要はありません。  
+  
+-   場合<xref:System.Web.UI.AuthenticationServiceManager.Path%2A>が明示的に設定すると、プロキシ インスタンスで、値があります、このプロパティが明示的に設定された他のすべてのプロキシの同じです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の一意のパスは、コントロールの階層構造で設定されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

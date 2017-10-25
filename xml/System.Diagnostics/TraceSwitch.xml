@@ -1,0 +1,524 @@
+<Type Name="TraceSwitch" FullName="System.Diagnostics.TraceSwitch">
+  <TypeSignature Language="C#" Value="public class TraceSwitch : System.Diagnostics.Switch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TraceSwitch extends System.Diagnostics.Switch" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceSwitch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.Switch</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.SwitchLevel(typeof(System.Diagnostics.TraceLevel))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コードの再コンパイルせずには、コントロールのトレースとデバッグ出力を複数レベルのスイッチを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トレース スイッチを使用すると、重要度に基づいてメッセージをフィルター処理します。 <xref:System.Diagnostics.TraceSwitch>クラスを提供、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>スイッチのレベルをテストするプロパティです。 <xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティを取得または設定スイッチの<xref:System.Diagnostics.TraceLevel>します。  
+  
+ レベルを設定することができます、<xref:System.Diagnostics.TraceSwitch>しを使用して、構成された、アプリケーション構成ファイルを通じて<xref:System.Diagnostics.TraceSwitch>レベル、アプリケーションにします。 また、作成することができます、<xref:System.Diagnostics.TraceSwitch>コードとコードの特定のセクションをインストルメント化するには、直接レベル設定にします。  
+  
+ 構成するのには<xref:System.Diagnostics.TraceSwitch>、編集、アプリケーションのです。 このファイルのことができますを追加またはスイッチを削除、スイッチの値を設定またはオフにするスイッチは、以前、アプリケーションによって設定されたすべてです。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="1" />  
+    </switches>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ この構成セクションを定義、<xref:System.Diagnostics.TraceSwitch>で、 <xref:System.Diagnostics.Switch.DisplayName%2A> 'éý' `mySwitch`、および<xref:System.Diagnostics.TraceSwitch.Level%2A>列挙値に対応する 1 に設定<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、`true`の<xref:System.Diagnostics.BooleanSwitch>またはなど、列挙値を表すテキスト`Error`の<xref:System.Diagnostics.TraceSwitch>です。 `<add name="mySwitch" value="Error" />` という行は、`<add name="mySwitch" value="1" />` と同じです。  
+  
+ アプリケーションで作成することで構成されているスイッチ レベルを使用することができます、<xref:System.Diagnostics.TraceSwitch>次の例で示すように、同じ名前の。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/remarks.cpp#3)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/remarks.cs#3)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/remarks.vb#3)]  
+  
+ 既定では、スイッチ<xref:System.Diagnostics.TraceSwitch.Level%2A>構成ファイルで指定された値を使用してプロパティを設定します。 場合、<xref:System.Diagnostics.TraceSwitch.%23ctor%2A>コンス トラクターは、構成ファイルでスイッチの初期設定を見つけることができません、<xref:System.Diagnostics.TraceSwitch.Level%2A>新しいスイッチの既定値は<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>します。  
+  
+ トレース出力またはスイッチを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define DEBUG`ファイルの先頭にします。 Visual basic では、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+> [!NOTE]
+>  これらのデバッグし、トレース コンパイラ スイッチを使用する場合は必要ありません、<xref:System.Diagnostics.TraceSwitch>分離内のクラスです。 と共にのみに必要な<xref:System.Diagnostics.Trace>または<xref:System.Diagnostics.Debug>条件付きでコンパイルされるメソッド。  
+  
+ アプリケーションのインストルメント化の詳細については、次を参照してください。<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>です。 詳細については、構成して、トレース スイッチを使用して、次を参照してください。[トレース スイッチ](~/docs/framework/debug-trace-profile/trace-switches.md)です。  
+  
+> [!NOTE]
+>  パフォーマンスを向上させることができますを行う<xref:System.Diagnostics.TraceSwitch>メンバー`static`クラスにします。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`場合、2 番目のエラー メッセージは書き込まれません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceSwitch (string displayName, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceSwitch.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ユーザー インターフェイスに表示される名前。</param>
+        <param name="description">スイッチの説明。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TraceSwitch" />クラス、指定した表示名と説明を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レベルを設定する、<xref:System.Diagnostics.TraceSwitch>アプリケーションの名前に対応する構成ファイルを編集します。 このファイルのことができますスイッチを追加してその値を設定、スイッチの削除またはオフにするスイッチは、以前、アプリケーションによって設定されたすべてです。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="1" />  
+    </switches>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+> [!NOTE]
+>  .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、`true`の<xref:System.Diagnostics.BooleanSwitch>またはなど、列挙値を表すテキスト`Error`の<xref:System.Diagnostics.TraceSwitch>です。 `<add name="mySwitch" value="Error" />` という行は、`<add name="mySwitch" value="1" />` と同じです。  
+  
+ アプリケーションで作成することで構成されているスイッチ レベルを使用することができます、<xref:System.Diagnostics.TraceSwitch>次の例で示すように、同じ名前の。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/remarks.cpp#3)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/remarks.cs#3)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/remarks.vb#3)]  
+  
+ ときに、<xref:System.Diagnostics.TraceSwitch.%23ctor%2A>コンス トラクターは、構成ファイルでスイッチの初期設定を見つけることができません、<xref:System.Diagnostics.TraceSwitch.Level%2A>新しいスイッチのプロパティが設定されて<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ <xref:System.Diagnostics.TraceSwitch>クラスを提供、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>をテストするプロパティ、<xref:System.Diagnostics.TraceSwitch.Level%2A>スイッチ。 <xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティを取得または設定スイッチの<xref:System.Diagnostics.TraceLevel>します。  
+  
+> [!NOTE]
+>  パフォーマンスを向上させることができますを行う<xref:System.Diagnostics.TraceSwitch>メンバー`static`クラスにします。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`場合、2 番目のエラー メッセージは書き込まれません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceSwitch (string displayName, string description, string defaultSwitchValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string description, string defaultSwitchValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceSwitch.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="defaultSwitchValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ユーザー インターフェイスに表示される名前。</param>
+        <param name="description">スイッチの説明。</param>
+        <param name="defaultSwitchValue">スイッチの既定値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TraceSwitch" />クラス、スイッチの指定した表示名、説明、および既定値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `displayName`の値を設定するパラメーターを使用、<xref:System.Diagnostics.Switch.DisplayName%2A>プロパティ、`description`の値を設定するパラメーターを使用して、<xref:System.Diagnostics.Switch.Description%2A>プロパティ、および`defaultSwitchValue`パラメーターがフィールドとして保存され、初期化に使用される、<xref:System.Diagnostics.Switch.Value%2A>最初の参照のプロパティです。 参照してください、<xref:System.Diagnostics.TraceSwitch.%23ctor%28System.String%2CSystem.String%29>詳細およびコード例のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.TraceLevel Level { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.TraceLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceSwitch.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスイッチを許可するメッセージを決定するトレース レベルを設定します。</summary>
+        <value>1 つ、<see cref="T:System.Diagnostics.TraceLevel" />スイッチによって許可されるメッセージのレベルを指定する値します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レベルを設定する、<xref:System.Diagnostics.TraceSwitch>アプリケーションの名前に対応する構成ファイルを編集します。 このファイルのことができますスイッチを追加してその値を設定、スイッチの削除またはオフにするスイッチは、以前、アプリケーションによって設定されたすべてです。 構成ファイルは、次の例のようにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <switches>  
+      <add name="mySwitch" value="0" />  
+      <add name="myNewSwitch" value="3" />  
+      <remove name="mySwitch" />  
+      <clear/>  
+    </switches>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+> [!NOTE]
+>  .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、`true`の<xref:System.Diagnostics.BooleanSwitch>またはなど、列挙値を表すテキスト`Error`の<xref:System.Diagnostics.TraceSwitch>です。 `<add name="mySwitch" value="Error" />` という行は、`<add name="mySwitch" value="1" />` と同じです。  
+  
+ ときに、<xref:System.Diagnostics.TraceSwitch.%23ctor%2A>コンス トラクターは、構成ファイルでスイッチの初期設定を見つけることができません、<xref:System.Diagnostics.TraceSwitch.Level%2A>新しいスイッチのプロパティが設定されて<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ このプロパティの更新の設定、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>プロパティ、新しい値を反映するようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`場合、2 番目のエラー メッセージは書き込まれません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.Level Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.Level Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.Level Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.Level Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.Level Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.Level Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Diagnostics.TraceSwitch.Level" />いずれかではない値に設定されている、<see cref="T:System.Diagnostics.TraceLevel" />値。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSwitchSettingChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSwitchSettingChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSwitchSettingChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceSwitch.OnSwitchSettingChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新して、このスイッチのレベルを修正します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.TraceSwitch.OnSwitchSettingChanged%2A>メソッドを検証し、構成ファイルを使って初期化スイッチの値を修正する、.NET framework で使用します。 構成ファイルで指定されたスイッチの値がによって定義されていない場合、すべてのトレース リスナーにメッセージが書き込まれます、<xref:System.Diagnostics.TraceLevel>列挙とスイッチが定義済みの値に設定します。  
+  
+ コードに設定しようとすると、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティで定義されていない値を<xref:System.Diagnostics.TraceLevel>列挙体、<xref:System.ArgumentException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected override void OnValueChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValueChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceSwitch.OnValueChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="P:System.Diagnostics.Switch.SwitchSetting" />プロパティとは、等価の整数を<see cref="P:System.Diagnostics.Switch.Value" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは内部的にすると、<xref:System.Diagnostics.Switch.Value%2A>スイッチの変更のプロパティです。 メソッドは、スイッチの値に関連するプロパティが新しい値を反映することを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このプロパティをオーバーライドする変換の文字列値、<see cref="P:System.Diagnostics.Switch.Value" />プロパティを binary、し、設定、<see cref="P:System.Diagnostics.TraceSwitch.Level" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceError">
+      <MemberSignature Language="C#" Value="public bool TraceError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TraceError" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceSwitch.TraceError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スイッチが、エラー処理メッセージを許可するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Diagnostics.TraceSwitch.Level" />プロパティに設定されている<see cref="F:System.Diagnostics.TraceLevel.Error" />、 <see cref="F:System.Diagnostics.TraceLevel.Warning" />、 <see cref="F:System.Diagnostics.TraceLevel.Info" />、または<see cref="F:System.Diagnostics.TraceLevel.Verbose" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>プロパティと組み合わせて、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>以上指定した重要度を持つすべてのメッセージを出力するクラス。 ときに、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティが、最も重要<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>、 <xref:System.Diagnostics.TraceLevel.Error> 、エラー処理メッセージのみが生成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`場合、2 番目のエラー メッセージは書き込まれません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceInfo">
+      <MemberSignature Language="C#" Value="public bool TraceInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TraceInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceSwitch.TraceInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スイッチが情報メッセージを許可するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Diagnostics.TraceSwitch.Level" />プロパティに設定されている<see cref="F:System.Diagnostics.TraceLevel.Info" />または<see cref="F:System.Diagnostics.TraceLevel.Verbose" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>プロパティと組み合わせて、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>以上指定した重要度を持つすべてのメッセージを出力するクラス。 ときに、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>、情報メッセージ、警告、およびエラー処理メッセージが生成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`場合、2 番目のエラー メッセージは書き込まれません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceInfo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceInfo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceInfo Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceInfo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceVerbose">
+      <MemberSignature Language="C#" Value="public bool TraceVerbose { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TraceVerbose" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceSwitch.TraceVerbose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スイッチがすべてのメッセージを許可するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Diagnostics.TraceSwitch.Level" />プロパティに設定されている<see cref="F:System.Diagnostics.TraceLevel.Verbose" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>プロパティと組み合わせて、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>以上指定した重要度を持つすべてのメッセージを出力するクラス。 ときに、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>、すべてのデバッグおよびトレースのメッセージを送信します。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`両方を書き込むときに、エラー メッセージ、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceError Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceWarning">
+      <MemberSignature Language="C#" Value="public bool TraceWarning { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TraceWarning" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceSwitch.TraceWarning" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スイッチが、警告メッセージを許可するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Diagnostics.TraceSwitch.Level" />プロパティに設定されている<see cref="F:System.Diagnostics.TraceLevel.Warning" />、 <see cref="F:System.Diagnostics.TraceLevel.Info" />、または<see cref="F:System.Diagnostics.TraceLevel.Verbose" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Diagnostics.TraceSwitch.TraceError%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A>、 <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A>、および<xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A>プロパティと組み合わせて、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>以上指定した重要度を持つすべてのメッセージを出力するクラス。 ときに、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>、警告およびエラー処理メッセージが生成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Diagnostics.TraceSwitch>スイッチを使用するエラー メッセージを出力するかどうかを決定します。 スイッチは、クラス レベルで作成されます。 `MyMethod`最初のエラー メッセージを書き込む場合、<xref:System.Diagnostics.TraceSwitch.Level%2A>プロパティに設定されている<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>またはそれ以降。 ただし、`MyMethod`は 2 番目のエラー メッセージの場合に書き込みできません、<xref:System.Diagnostics.TraceSwitch.Level%2A>はより小さい<xref:System.Diagnostics.TraceLevel?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic TraceSwitch.TraceWarning Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceWarning Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TraceSwitch.TraceWarning Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceWarning Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceSwitch.TraceWarning Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TraceSwitch.TraceWarning Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

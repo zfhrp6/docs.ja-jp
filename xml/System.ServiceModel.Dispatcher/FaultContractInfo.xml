@@ -1,0 +1,109 @@
+<Type Name="FaultContractInfo" FullName="System.ServiceModel.Dispatcher.FaultContractInfo">
+  <TypeSignature Language="C#" Value="public class FaultContractInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FaultContractInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.FaultContractInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.FaultContractAttribute" /> 属性で指定されている SOAP エラーに関する情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.FaultContractInfo> プロパティおよび <xref:System.ServiceModel.Dispatcher.ClientOperation.FaultContractInfos%2A?displayProperty=nameWithType> プロパティにアクセスすることで、<xref:System.ServiceModel.Dispatcher.DispatchOperation.FaultContractInfos%2A?displayProperty=nameWithType> オブジェクトのコレクションを取得できます。 <xref:System.ServiceModel.Dispatcher.FaultContractInfo> クラスは、SOAP エラーのアクションおよび SOAP エラーにシリアル化される詳細な型を公開します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FaultContractInfo (string action, Type detail);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action, class System.Type detail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.FaultContractInfo.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="detail" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="action">SOAP エラーのアクション。</param>
+        <param name="detail">SOAP エラーの詳細としてシリアル化される詳細な型。</param>
+        <summary>指定したアクションと詳細な型を使用する <see cref="T:System.ServiceModel.Dispatcher.FaultContractInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `action` と `detail` から新しい FaultContractInfo を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.FaultContractInfo.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラー アクションの値を取得します。</summary>
+        <value>SOAP エラーのアクションの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detail">
+      <MemberSignature Language="C#" Value="public Type Detail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Detail" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.FaultContractInfo.Detail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラーの詳細としてシリアル化されるオブジェクトの型。</summary>
+        <value>シリアル化される SOAP エラーの詳細を表す <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

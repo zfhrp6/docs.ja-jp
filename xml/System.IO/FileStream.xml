@@ -1,0 +1,2941 @@
+<Type Name="FileStream" FullName="System.IO.FileStream">
+  <TypeSignature Language="C#" Value="public class FileStream : System.IO.Stream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileStream extends System.IO.Stream" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Stream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>同期および非同期の読み取り操作と書き込み操作をサポートするファイル用の <see cref="T:System.IO.Stream" /> を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs#e23a38af5d11ddd3)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して、<xref:System.IO.FileStream>から読み取り、書き込み. を開き、ファイル システム上のファイルを閉じると、パイプ、標準入力、および標準出力を含む他のオペレーティング システムのファイルに関連するハンドルを操作するクラス。 使用することができます、 <xref:System.IO.FileStream.Read%2A>、 <xref:System.IO.FileStream.Write%2A>、 <xref:System.IO.Stream.CopyTo%2A>、および<xref:System.IO.FileStream.Flush%2A>同期操作を実行するメソッドまたは<xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.FileStream.FlushAsync%2A>非同期操作を実行するメソッド。 非同期のメソッドを使用すると、メイン スレッドをブロックすることがなくリソースを消費するファイルの操作を実行できます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 <xref:System.IO.FileStream>入力バッファーとパフォーマンス向上のための出力。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ <xref:System.IO.FileStream.IsAsync%2A>プロパティは、ファイル ハンドルが非同期的に開かれたかどうかを検出します。 インスタンスを作成するときに、この値を指定する、<xref:System.IO.FileStream>クラスを持つコンス トラクターを使用して、 `isAsync`、 `useAsync`、または`options`パラメーター。 このプロパティが`true`ストリームがファイルの操作を非同期的に実行する重複 I/O を使用します。 ただし、<xref:System.IO.FileStream.IsAsync%2A>プロパティがある`true`を呼び出して、 <xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、または<xref:System.IO.Stream.CopyToAsync%2A>メソッドです。 ときに、<xref:System.IO.FileStream.IsAsync%2A>プロパティは`false`および書き込み操作を非同期の読み込みを呼び出すと、引き続き、UI スレッドはブロックされませんが、実際の I/O 操作が同期的に実行します。  
+  
+ <xref:System.IO.FileStream.Seek%2A>メソッドは、ファイルへのランダム アクセスをサポートしています。 <xref:System.IO.FileStream.Seek%2A>ファイル内の任意の位置に移動する読み取り/書き込み位置を使用できます。 これは、バイト オフセット参照ポイント パラメーターを使用します。 バイト オフセットは、シーク参照ポイント、可能性があります、先頭、現在の位置、または、基になるファイルの最後の 3 つのメンバーによって表される、<xref:System.IO.SeekOrigin>列挙します。  
+  
+> [!NOTE]
+>  ディスク ファイルは、常にランダム アクセスをサポートします。 、構築時に、<xref:System.IO.FileStream.CanSeek%2A>にプロパティの値が設定されている`true`または`false`基になるファイルの種類によって異なります。ファイルの種類を基になるが file_type_disk では、winbase.h で定義されている場合、<xref:System.IO.FileStream.CanSeek%2A>プロパティの値が`true`です。 それ以外の場合、<xref:System.IO.FileStream.CanSeek%2A>プロパティの値が`false`です。  
+  
+ プロセスは終了し、ロックされているファイルの一部か未解決のロックを含むファイルを動作は定義されません。  
+  
+ ディレクトリ操作とその他のファイル操作は、次を参照してください。、 <xref:System.IO.File>、 <xref:System.IO.Directory>、および<xref:System.IO.Path>クラスです。 <xref:System.IO.File>クラスは、ユーティリティ クラスを作成するため、主に、静的メソッドを持つ<xref:System.IO.FileStream>オブジェクト ファイルのパスをベースにします。 <xref:System.IO.MemoryStream>クラスは、バイト配列からストリームを作成し、に似ていますが、<xref:System.IO.FileStream>クラスです。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+## <a name="detection-of-stream-position-changes"></a>ストリームの位置の変更の検出  
+ ときに、<xref:System.IO.FileStream>オブジェクトでは、そのハンドルでは、排他的に保持にない、別のスレッドでしたファイル ハンドルを同時にアクセスしたファイル ハンドルに関連付けられているオペレーティング システムのファイル ポインターの位置を変更します。 この場合、キャッシュ内の位置、<xref:System.IO.FileStream>オブジェクトと、バッファーにキャッシュされたデータを侵害する可能性があります。 <xref:System.IO.FileStream>オブジェクトが、オペレーティング システムのハンドルの位置で使用されるキャッシュの位置と同じであることを確認するキャッシュされたバッファーにアクセスするメソッドに対して、チェックを定期的に実行、<xref:System.IO.FileStream>オブジェクト。  
+  
+ 呼び出しでハンドルの位置で予期しない変更が検出されたかどうか、<xref:System.IO.FileStream.Read%2A>メソッド、.NET Framework が、バッファーの内容を破棄し、もう一度、ファイルからのストリームを読み取ります。 ファイル ストリームの位置に影響を与える他のプロセスと、ファイルのサイズに応じて、パフォーマンスに影響を与えることができます。  
+  
+ 呼び出しでハンドルの位置で予期しない変更が検出されたかどうか、<xref:System.IO.FileStream.Write%2A>メソッド、バッファーの内容は破棄されますと<xref:System.IO.IOException>例外がスローされます。  
+  
+ A<xref:System.IO.FileStream>オブジェクトでは、そのハンドルでは、排他的な保留はないときか、<xref:System.IO.FileStream.SafeFileHandle%2A>ハンドルを公開するプロパティにアクセスまたは<xref:System.IO.FileStream>オブジェクトが割り当てられて、<xref:System.IO.FileStream.SafeFileHandle%2A>コンス トラクター内のプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、一部を示しています、<xref:System.IO.FileStream>コンス トラクターです。  
+  
+ [!code-cpp[fstream class#1](~/samples/snippets/cpp/VS_Snippets_CLR/FStream Class/CPP/fstream class.cpp#1)]
+ [!code-csharp[fstream class#1](~/samples/snippets/csharp/VS_Snippets_CLR/FStream Class/CS/fstream class.cs#1)]
+ [!code-vb[fstream class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FStream Class/VB/fstream class.vb#1)]  
+  
+ 次の例では、非同期的にファイルに書き込む方法を示します。 このコードを TextBlock UserInput および Button_Click という名前の Click イベント ハンドラーにフック ボタンという名前を持つ WPF アプリで実行されます。 ファイルのパスは、コンピューター上に存在するよりもファイルに変更する必要があります。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#3](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example3.cs#3)]
+ [!code-vb[Asynchronous_File_IO_async#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example3.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="handle">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可を使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.IO.Stream.Close%2A>が呼び出されると、またはハンドルが閉じられ、ファイルのハンドル数は減少します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="access" />フィールドではなく<see cref="T:System.IO.FileAccess" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="handle">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可を使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.IO.Stream.Close%2A>が呼び出されると、またはハンドルが閉じられ、ファイルのハンドル数は減少します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="access" />フィールドではなく<see cref="T:System.IO.FileAccess" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパスと作成モードを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ コンス トラクターには、ファイルを読み取り/書き込みアクセスが与えられます、読み取りアクセスの共有を開く (ファイルを開くまで、同じまたは別のプロセスでの書き込みは失敗の要求は、`FileStream`オブジェクトが閉じられましたが、読み取り試行が成功する)。  
+  
+ このコンス トラクターを使用すると、読み取り専用のファイルを開くことはできません。代わりを受け取るコンス トラクターを使用する必要があります、`FileAccess`パラメーター値を設定して`FileAccess.Read`です。  
+  
+ バッファー サイズは 4096 バイト (4 KB) の既定のサイズに設定されます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+ なしのコンス トラクター、<xref:System.IO.FileAccess>パラメーター場合、`mode`にパラメーターが設定されている<xref:System.IO.FileMode.Append>、<xref:System.IO.FileAccess.Write>は、既定のアクセス。 それ以外の場合、アクセスに設定されている<xref:System.IO.FileAccess.ReadWrite>です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバイト単位で、ファイルに書き込むし、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.FileStream1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream1/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.FileStream1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream1/CS/source.cs#1)]
+ [!code-vb[System.IO.FileStream1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="handle">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する <see cref="T:System.IO.FileAccess" /> 定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可、およびバッファー サイズを使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。 または、読み書き可能なハンドルにこの関数を呼び出す前に`FileStream`コンス トラクターです。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="handle" />パラメーターが無効なハンドル。  
+  
+ または  
+  
+ <paramref name="handle" />パラメーターが同期ハンドルであり、非同期的に使用されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="bufferSize" />パラメーターが負の値。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの、I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handle">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <param name="ownsHandle">
+          この <see langword="FileStream" /> インスタンスがファイル ハンドルを所有する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可と <see langword="FileStream" /> インスタンスの所有権を使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FileStream`オブジェクトには、ファイルに指定されたアクセスが与えられます。 ハンドルの所有権がなりますとして指定します。 このプロセスへの呼び出し、ハンドルを所有しているかどうか、<xref:System.IO.Stream.Close%2A>メソッドは、ハンドルを終了しても、ファイルのハンドル数は減少します。 `FileStream`オブジェクトが 4096 バイトまでの既定のバッファー サイズを指定します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のメソッドは呼び出しません`Close`が完了したら、ハンドルを使用します。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="access" />フィールドではなく<see cref="T:System.IO.FileAccess" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトがファイルにアクセスできる方法を決定する定数。 これにより、<see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> および <see cref="P:System.IO.FileStream.CanWrite" /> プロパティによって返される値も決まります。 <see cref="P:System.IO.FileStream.CanSeek" /><see langword="true" />場合<c>パス</c>ディスク ファイルを指定します。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、および読み取り/書き込みアクセス許可を使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ コンス トラクターには、ファイルを読み取り/書き込みアクセスが与えられます、読み取りアクセスの共有を開く (ファイルを開くまで、同じまたは別のプロセスでの書き込みは失敗の要求は、`FileStream`オブジェクトが閉じられましたが、読み取り試行が成功する)。 バッファー サイズは 4096 バイト (4 KB) の既定のサイズに設定されます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access, int bufferSize, bool isAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access, int32 bufferSize, bool isAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="isAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handle">この <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <param name="isAsync">
+          ハンドルが非同期的に開かれた場合 (重複 I/O モード用) は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可、バッファー サイズ、および同期状態または非同期状態を使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、`isAsync`パラメーターを`true`を非同期的にファイル ハンドルを開きます。 パラメーターの場合は`true`ストリームがファイルの操作を非同期的に実行する重複 I/O を使用します。 ただし、パラメーターは、する必要はありません`true`を呼び出して、 <xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、または<xref:System.IO.Stream.CopyToAsync%2A>メソッドです。 ときに、`isAsync`パラメーターは`false`および書き込み操作を非同期の読み込みを呼び出すと、引き続き、UI スレッドはブロックされませんが、実際の I/O 操作が同期的に実行します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。 または、読み書き可能なハンドルにこの関数を呼び出す前に`FileStream`コンス トラクターです。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="handle" />パラメーターが無効なハンドル。  
+  
+ または  
+  
+ <paramref name="handle" />パラメーターが同期ハンドルであり、非同期的に使用されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="bufferSize" />パラメーターが負の値。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの、I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access, int bufferSize) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="handle">この <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <param name="ownsHandle">
+          この <see langword="FileStream" /> インスタンスがファイル ハンドルを所有する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可、<see langword="FileStream" /> インスタンスの所有権、およびバッファー サイズを使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FileStream`オブジェクトには、ファイルに指定されたアクセスが与えられます。 ハンドルの所有権がなりますとして指定します。 この場合`FileStream`への呼び出し、ハンドルを所有している、<xref:System.IO.Stream.Close%2A>メソッドは、ハンドルを終了してもします。 具体的には、ファイルのハンドル数は減少します。 `FileStream`オブジェクトが指定したバッファー サイズを指定します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。 または、読み書き可能なハンドルにこの関数を呼び出す前に`FileStream`コンス トラクターです。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの、I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトがファイルにアクセスできる方法を決定する定数。 これにより、<see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> および <see cref="P:System.IO.FileStream.CanWrite" /> プロパティによって返される値も決まります。 <see cref="P:System.IO.FileStream.CanSeek" /><see langword="true" />場合<c>パス</c>ディスク ファイルを指定します。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、読み取り/書き込みアクセス許可、および共有アクセス許可を使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ コンス トラクターには、ファイルを読み取り/書き込みアクセスが与えられます、読み取りアクセスの共有を開く (ファイルを開くまで、同じまたは別のプロセスでの書き込みは失敗の要求は、`FileStream`オブジェクトが閉じられましたが、読み取り試行が成功する)。 バッファー サイズは 4096 バイト (4 KB) の既定のサイズに設定されます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.Lock%2A>メソッドです。  
+  
+ [!code-cpp[System.IO.FileStream3#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream3/CPP/fstreamlock.cpp#2)]
+ [!code-csharp[System.IO.FileStream3#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream3/CS/fstreamlock.cs#2)]
+ [!code-vb[System.IO.FileStream3#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream3/VB/fstreamlock.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ システムが Windows 98 または Windows 98 Second Edition を実行していると<paramref name="share" />に設定されている<see langword="FileShare.Delete" />です。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="mode" /> に無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle, int bufferSize, bool isAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle, int32 bufferSize, bool isAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use FileStream(SafeFileHandle handle, FileAccess access, int bufferSize, bool isAsync) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="isAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handle">この <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> プロパティと <see cref="P:System.IO.FileStream.CanWrite" /> プロパティを設定する定数。</param>
+        <param name="ownsHandle">
+          この <see langword="FileStream" /> インスタンスがファイル ハンドルを所有する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <param name="isAsync">
+          ハンドルが非同期的に開かれた場合 (重複 I/O モード用) は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定した読み取り/書き込みアクセス許可、<see langword="FileStream" /> インスタンスの所有権、バッファー サイズ、および同期状態または非同期状態を使用して、指定したファイル ハンドル用に初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FileStream`オブジェクトには、ファイルに指定されたアクセスが与えられます。 ハンドルの所有権がなりますとして指定します。 この場合`FileStream`への呼び出し、ハンドルを所有している、<xref:System.IO.Stream.Close%2A>メソッドは、ハンドルを終了してもします。 具体的には、ファイルのハンドル数は減少します。 `FileStream`オブジェクトが指定したバッファー サイズを指定します。  
+  
+ `FileStream`ハンドルを排他的に制御を使用するいると仮定します。 読み取り、書き込み、または中にシーク、`FileStream`も保持しているハンドルは、データの破損、可能性があります。 データの安全性、呼び出す<xref:System.IO.FileStream.Flush%2A>前に、ハンドルを使用して、以外のすべてのメソッドは呼び出しません`Close`が完了したらこのハンドルを使用します。 または、読み書き可能なハンドルにこの関数を呼び出す前に`FileStream`コンス トラクターです。  
+  
+ `FileShare.Read`これらの既定値は、<xref:System.IO.FileStream>なしのコンス トラクター、`FileShare`パラメーター。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="access" />より小さい<see langword="FileAccess.Read" />以上<see langword="FileAccess.ReadWrite" />または<paramref name="bufferSize" />が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">ハンドルが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">ディスク エラーなどの、I/O エラーが発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求された場合など、指定したファイル ハンドル用のオペレーティング システムによって許可されていない<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />読み取り専用アクセスのファイル ハンドルを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトがファイルにアクセスできる方法を決定する定数。 これにより、<see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> および <see cref="P:System.IO.FileStream.CanWrite" /> プロパティによって返される値も決まります。 <see cref="P:System.IO.FileStream.CanSeek" /><see langword="true" />場合<c>パス</c>ディスク ファイルを指定します。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、読み取り/書き込みアクセス許可、共有アクセス許可、およびバッファー サイズを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ -または-  
+  
+ <paramref name="mode" />、 <paramref name="access" />、または<paramref name="share" />、無効な値を格納します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ システムが Windows 98 または Windows 98 Second Edition を実行していると<paramref name="share" />に設定されている<see langword="FileShare.Delete" />です。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, bool useAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, bool useAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="useAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトがファイルにアクセスできる方法を決定する定数。 これにより、<see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> および <see cref="P:System.IO.FileStream.CanWrite" /> プロパティによって返される値も決まります。 <see cref="P:System.IO.FileStream.CanSeek" /><see langword="true" />場合<c>パス</c>ディスク ファイルを指定します。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは 4096 です。</param>
+        <param name="useAsync">非同期 I/O または同期 I/O のどちらを使用するかを指定します。 ただし、基になるオペレーティング システムが非同期 I/O をサポートしていないことがあります。したがって、<see langword="true" /> を指定しても、プラットフォームによってはハンドルが同期的に開かれることがあります。 非同期的に開いた場合、<see cref="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドと <see cref="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドは、大量の読み取りまたは書き込み時にはパフォーマンスがより高くなりますが、少量の読み取りまたは書き込み時にはパフォーマンスが非常に低くなることがあります。 アプリケーションが非同期 I/O を活用するために設計されている場合は、設定、 <c>useAsync</c>パラメーターを<see langword="true" />です。 非同期 I/O を正しく使用すると、アプリケーションが 10 倍ほど高速化することがあります。ただし、非同期 I/O 用にアプリケーションを再設計せずに非同期 I/O を使用すると、パフォーマンスが 10 分の 1 ほど低下することがあります。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、読み取り/書き込みアクセス許可、共有アクセス許可、バッファー サイズ、および同期状態または非同期状態を使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非同期的にデータをファイルに書き込むし、データが正常に書き込まれたことを確認する方法を示します。 A`State`情報を渡すにはメイン スレッドからオブジェクトが作成された、`EndReadCallback`と`EndWriteCallback`メソッドです。  
+  
+ [!code-cpp[System.IO.FileStream2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.FileStream2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#1)]
+ [!code-vb[System.IO.FileStream2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ -または-  
+  
+ <paramref name="mode" />、 <paramref name="access" />、または<paramref name="share" />、無効な値を格納します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ システムが Windows 98 または Windows 98 Second Edition を実行していると<paramref name="share" />に設定されている<see langword="FileShare.Delete" />です。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="options" Type="System.IO.FileOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="access"><see langword="FileStream" /> オブジェクトがファイルにアクセスできる方法を決定する定数。 これにより、<see langword="FileStream" /> オブジェクトの <see cref="P:System.IO.FileStream.CanRead" /> および <see cref="P:System.IO.FileStream.CanWrite" /> プロパティによって返される値も決まります。 <see cref="P:System.IO.FileStream.CanSeek" /><see langword="true" />場合<c>パス</c>ディスク ファイルを指定します。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <param name="options">追加のファイル オプションを指定する値。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、読み取り/書き込みアクセス許可、共有アクセス許可、同一のファイルに対して他の FileStream が保有できるアクセス、バッファー サイズ、および追加のファイル オプションを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ `fileOptions`を作成するときに利用できる高度な操作へのアクセスを提供するパラメーターが使用される、<xref:System.IO.FileStream>オブジェクト。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、データをファイルに書き込み、次を使用してデータを読み取り、<xref:System.IO.FileStream>オブジェクト。  
+  
+ [!code-cpp[IO.FileStream.ctor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileStream.ctor1/cpp/example.cpp#1)]
+ [!code-csharp[IO.FileStream.ctor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileStream.ctor1/CS/example.cs#1)]
+ [!code-vb[IO.FileStream.ctor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileStream.ctor1/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ -または-  
+  
+ <paramref name="mode" />、 <paramref name="access" />、または<paramref name="share" />、無効な値を格納します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。  
+  
+ -または-  
+  
+ <see cref="F:System.IO.FileOptions.Encrypted" />指定されて<paramref name="options" />が現在のプラットフォームでは、ファイルの暗号化はサポートされていません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.Security.AccessControl.FileSystemRights rights, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.Security.AccessControl.FileSystemRights rights, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.Security.AccessControl.FileSystemRights,System.IO.FileShare,System.Int32,System.IO.FileOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="options" Type="System.IO.FileOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see cref="T:System.IO.FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="rights">ファイルのアクセス規則および監査規則の作成時に使用するアクセス権を決定する定数。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <param name="options">追加のファイル オプションを指定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、アクセス権、共有アクセス許可、バッファー サイズ、および追加のファイル オプションを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ これを使用して<xref:System.IO.FileStream.%23ctor%2A>権利ファイルの作成時点でのアクセスを適用するコンス トラクターです。 アクセスまたは既存のファイルに対して権限を変更して、使用を検討、<xref:System.IO.File.GetAccessControl%2A>と<xref:System.IO.File.SetAccessControl%2A>メソッドです。  
+  
+ `fileOptions`を作成するときに利用できる高度な操作へのアクセスを提供するパラメーターが使用される、<xref:System.IO.FileStream>オブジェクト。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ -または-  
+  
+ <paramref name="mode" />、 <paramref name="access" />、または<paramref name="share" />、無効な値を格納します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。  
+  
+ -または-  
+  
+ <see cref="F:System.IO.FileOptions.Encrypted" />指定されて<paramref name="options" />が現在のプラットフォームでは、ファイルの暗号化はサポートされていません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.Security.AccessControl.FileSystemRights rights, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options, System.Security.AccessControl.FileSecurity fileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.Security.AccessControl.FileSystemRights rights, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options, class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.Security.AccessControl.FileSystemRights,System.IO.FileShare,System.Int32,System.IO.FileOptions,System.Security.AccessControl.FileSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.FileSystemRights" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="options" Type="System.IO.FileOptions" />
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の <see cref="T:System.IO.FileStream" /> オブジェクトによってカプセル化されるファイルの相対パスまたは絶対パス。</param>
+        <param name="mode">ファイルを開く方法または作成する方法を決定する定数。</param>
+        <param name="rights">ファイルのアクセス規則および監査規則の作成時に使用するアクセス権を決定する定数。</param>
+        <param name="share">プロセスによるファイルの共有方法を決定する定数。</param>
+        <param name="bufferSize">バッファー サイズを示す 0 より大きな正の <see cref="T:System.Int32" /> 値。 既定のバッファー サイズは、4096 です。</param>
+        <param name="options">追加のファイル オプションを指定する定数。</param>
+        <param name="fileSecurity">ファイルのアクセス制御と監査セキュリティを決定する定数。</param>
+        <summary><see cref="T:System.IO.FileStream" /> クラスの新しいインスタンスを、指定したパス、作成モード、アクセス権、共有アクセス許可、バッファー サイズ、追加のファイル オプション、アクセス制御、および監査セキュリティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、デバイス名をようなパスを使用して物理ディスクに直接アクセスをサポートしていません"\\\\。 \PHYSICALDRIVE0"です。  
+  
+ これを使用して<xref:System.IO.FileStream.%23ctor%2A>権利ファイルの作成時点でのアクセスを適用するコンス トラクターです。 アクセスまたは既存のファイルに対して権限を変更して、使用を検討、<xref:System.IO.File.GetAccessControl%2A>と<xref:System.IO.File.SetAccessControl%2A>メソッドです。  
+  
+ `fileOptions`を作成するときに利用できる高度な操作へのアクセスを提供するパラメーターが使用される、<xref:System.IO.FileStream>オブジェクト。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!NOTE]
+>  `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラスは、物理デバイスをアクセスできます。  
+  
+ <xref:System.IO.Stream.CanSeek%2A>`true`すべて<xref:System.IO.FileStream>ファイルをカプセル化するオブジェクト。 場合`path`シークをサポートしていないデバイスを示す、<xref:System.IO.FileStream.CanSeek%2A>プロパティ、その結果を<xref:System.IO.FileStream>は`false`します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A>」を参照してください。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、データをファイルに書き込み、次を使用してデータを読み取り、<xref:System.IO.FileStream>オブジェクト。  
+  
+ [!code-cpp[IO.FileStream.ctor2#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.FileStream.ctor2/cpp/example.cpp#1)]
+ [!code-csharp[IO.FileStream.ctor2#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.FileStream.ctor2/CS/example.cs#1)]
+ [!code-vb[IO.FileStream.ctor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.FileStream.ctor2/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ -または-  
+  
+ <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、NTFS 環境などです。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />などの非ファイル デバイスを参照"con:"、"com1:"、"lpt 1:"、非 NTFS 環境などです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。  
+  
+ -または-  
+  
+ <paramref name="mode" />、 <paramref name="access" />、または<paramref name="share" />、無効な値を格納します。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">場合など、ファイルが見つからない<paramref name="mode" />は<see langword="FileMode.Truncate" />または<see langword="FileMode.Open" />とで指定されたファイル<paramref name="path" />存在しません。 これらのモードではファイルが既に存在している必要があります。</exception>
+        <exception cref="T:System.IO.IOException">指定するなど、I/O エラー<see langword="FileMode.CreateNew" />によって指定されたファイル<paramref name="path" />既に存在する場合が発生しました。  
+  
+ -または-  
+  
+ ストリームは閉じられています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="access" />要求に指定されたオペレーティング システムによって許可されていない<paramref name="path" />、ときなど<paramref name="access" />は<see langword="Write" />または<see langword="ReadWrite" />ファイルまたはディレクトリが読み取り専用アクセスの設定とします。  
+  
+ -または-  
+  
+ <see cref="F:System.IO.FileOptions.Encrypted" />指定されて<paramref name="options" />が現在のプラットフォームでは、ファイルの暗号化はサポートされていません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定した<paramref name="path" />ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満でなければなりません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取り、書き込み、およびファイルに追加します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、 <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRead">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numBytes" Type="System.Int32" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="array">データを読み取るバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>配列</c>読み取りを開始する位置。</param>
+        <param name="numBytes">読み取る最大バイト数。</param>
+        <param name="userCallback">非同期の読み取り操作が完了したときに呼び出されるメソッド。</param>
+        <param name="stateObject">この特定の非同期読み取り要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の読み込み動作を開始します。 (使用を検討して<see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />代わりにします)。</summary>
+        <returns>非同期の読み取りを参照するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 以前のバージョンはなどのメソッドを使用する必要がある<xref:System.IO.FileStream.BeginRead%2A>と<xref:System.IO.FileStream.EndRead%2A>ファイルの非同期操作を実装します。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.FileStream.FlushAsync%2A>、ヘルプ ファイルの非同期操作をより簡単に実装します。  
+  
+ <xref:System.IO.FileStream.EndRead%2A>呼び出しごとに 1 回だけ呼び出す必要があります<xref:System.IO.FileStream.BeginRead%2A>です。 別の読み取りを開始する前に読み取りプロセスを終了に失敗すると、デッドロックなど、望ましくない動作可能性があります。  
+  
+ <xref:System.IO.FileStream>操作の 2 つの異なるモードを提供します。 I/O 同期と非同期 I/O です。 いずれかを使用できますが、基になるオペレーティング システムのリソースは、これらのモードの 1 つのみで、アクセスを許可する場合があります。 既定では、<xref:System.IO.FileStream>オペレーティング システム ハンドルを同期的が開きます。 Windows では、非同期メソッドの速度が低下します。 非同期メソッドを使用している場合を使用して、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+> [!NOTE]
+>  使用して、<xref:System.IO.FileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。 詳細については、「<xref:System.IO.Stream.CanRead%2A>」を参照してください。  
+  
+ 例外が直ちにスローされる場合は、ストリームが閉じているか、無効な引数を渡す、<xref:System.IO.FileStream.BeginRead%2A>です。 IO 要求中にディスク障害など、非同期読み取り要求中に発生したエラーは、スレッド プールのスレッドで発生しへの呼び出しに可視になる<xref:System.IO.FileStream.EndRead%2A>です。  
+  
+ <xref:System.IO.Stream.EndRead%2A>これを呼び出す必要があります<xref:System.IAsyncResult>に読み取られたバイト数を確認します。  
+  
+ 複数の非同期要求は、不定の要求の完了の順序をレンダリングします。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#3)]
+ [!code-csharp[System.IO.FileStream2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#3)]
+ [!code-vb[System.IO.FileStream2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">配列の長さマイナス<paramref name="offset" />はより小さい<paramref name="numBytes" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="numBytes" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">非同期の読み取りがファイルの終わりを超えて試行されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWrite">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numBytes" Type="System.Int32" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="array">現在のストリームに書き込むデータを格納しているバッファー。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>配列</c>現在のストリームにバイトのコピーを開始する位置。</param>
+        <param name="numBytes">書き込む最大バイト数。</param>
+        <param name="userCallback">非同期の書き込み操作が完了したときに呼び出されるメソッド。</param>
+        <param name="stateObject">この特定の非同期書き込み要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の書き込み操作を開始します。 (使用を検討して<see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />代わりにします)。</summary>
+        <returns>非同期の書き込みを参照するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 以前のバージョンはなどのメソッドを使用する必要がある<xref:System.IO.FileStream.BeginWrite%2A>と<xref:System.IO.FileStream.EndWrite%2A>ファイルの非同期操作を実装します。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.FileStream.FlushAsync%2A>、ヘルプ ファイルの非同期操作をより簡単に実装します。  
+  
+ <xref:System.IO.FileStream.EndWrite%2A>1 回だけ呼び出す必要がありますすべて<xref:System.IAsyncResult>から<xref:System.IO.FileStream.BeginWrite%2A>です。 <xref:System.IO.FileStream.EndWrite%2A>I/O 操作が完了するまでブロックされます。  
+  
+ このメソッドは<xref:System.IO.Stream.BeginWrite%2A>します。  
+  
+ <xref:System.IO.FileStream>操作の 2 つの異なるモードを提供します。 I/O 同期と非同期 I/O です。 いずれかを使用できますが、基になるオペレーティング システムのリソースは、これらのモードの 1 つのみで、アクセスを許可する場合があります。 既定では、<xref:System.IO.FileStream>オペレーティング システム ハンドルを同期的が開きます。 Windows では、非同期メソッドの速度が低下します。 非同期メソッドを使用している場合を使用して、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ 例外が直ちにスローされる場合は、ストリームが閉じているか、無効な引数を渡す、<xref:System.IO.FileStream.BeginWrite%2A>です。 IO 要求中にディスク障害など、非同期書き込み要求中に発生したエラーは、スレッド プールのスレッドで発生しへの呼び出しに可視になる<xref:System.IO.FileStream.EndWrite%2A>です。  
+  
+ 複数の非同期要求は、不定の要求の完了の順序をレンダリングします。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#2)]
+ [!code-csharp[System.IO.FileStream2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#2)]
+ [!code-vb[System.IO.FileStream2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> の長さから <paramref name="offset" /> を引いた長さが <paramref name="numBytes" /> 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="numBytes" /> が負の値です。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームが読み取りをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームが読み取りをサポートしている場合は <see langword="true" />。ストリームが閉じているか、書き込み専用アクセスで開かれた場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>読み取りをサポートしませんへの呼び出し、 <xref:System.IO.FileStream.Read%2A>、 <xref:System.IO.FileStream.ReadByte%2A>、および<xref:System.IO.FileStream.BeginRead%2A>メソッドをスロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次の例での使用、`CanRead`プロパティです。 このコードによる出力は「MyFile.txt 書き込みができません」 出力メッセージ「MyFile.txt 両方に書き込まれたしてからの読み取り。」、変更を取得する、`FileAccess`パラメーターを`ReadWrite`で、`FileStream`コンス トラクターです。  
+  
+ [!code-cpp[Classic FileStream.CanRead Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileStream.CanRead Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/CS/source.cs#1)]
+ [!code-vb[Classic FileStream.CanRead Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームがシークをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームがシークをサポートしている場合は <see langword="true" />。ストリームが閉じているか、<see langword="FileStream" /> がパイプまたはコンソール出力などのオペレーティング システム ハンドルから構築された場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>への呼び出しをシークをサポートしていない<xref:System.IO.FileStream.Length%2A>、 <xref:System.IO.FileStream.SetLength%2A>、 <xref:System.IO.FileStream.Position%2A>、および<xref:System.IO.FileStream.Seek%2A>スロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次の例では、`CanSeek`ストリームがシークをサポートしているかどうかを確認するプロパティです。  
+  
+ [!code-cpp[fstream canseek#1](~/samples/snippets/cpp/VS_Snippets_CLR/FStream CanSeek/CPP/fstream canseek.cpp#1)]
+ [!code-csharp[fstream canseek#1](~/samples/snippets/csharp/VS_Snippets_CLR/FStream CanSeek/CS/fstream canseek.cs#1)]
+ [!code-vb[fstream canseek#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FStream CanSeek/VB/fstream canseek.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームが書き込みをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームが書き込みをサポートしている場合は <see langword="true" />。ストリームが閉じているか、読み取り専用アクセスで開かれた場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>への呼び出しの書き込みをサポートしていません<xref:System.IO.FileStream.SetLength%2A>、 <xref:System.IO.FileStream.Write%2A>、 <xref:System.IO.FileStream.BeginWrite%2A>、または<xref:System.IO.FileStream.WriteByte%2A>をスロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次の例では、`CanWrite`ストリームが書き込みをサポートするかどうかを確認するプロパティです。  
+  
+ [!code-cpp[fstream canwrite#1](~/samples/snippets/cpp/VS_Snippets_CLR/FStream CanWrite/CPP/fstream canwrite.cpp#1)]
+ [!code-csharp[fstream canwrite#1](~/samples/snippets/csharp/VS_Snippets_CLR/FStream CanWrite/CS/fstream canwrite.cs#1)]
+ [!code-vb[fstream canwrite#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FStream CanWrite/VB/fstream canwrite.vb#1)]  
+  
+ 例を次に示しますを使用して、`CanWrite`プロパティです。 このコードの出力は、「MyFile.txt は書き込み可能な」です。 出力メッセージ「MyFile.txt 両方に書き込まれたしてからの読み取り。」、変更を取得する、`FileAccess`パラメーターを`ReadWrite`で、`FileStream`コンス トラクターです。  
+  
+ [!code-cpp[Classic FileStream.CanWrite Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileStream.CanWrite Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileStream.CanWrite Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileStream.CanWrite Example/CS/source.cs#1)]
+ [!code-vb[Classic FileStream.CanWrite Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileStream.CanWrite Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.FileStream" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.ComponentModel.Component.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.ComponentModel.Component.Dispose%2A>プロテクト呼び出します<xref:System.IO.FileStream.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.IO.FileStream.Dispose%2A>で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.FileStream> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの <xref:System.ComponentModel.Component.Dispose%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.ComponentModel.Component.Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see cref="M:System.IO.FileStream.Dispose(System.Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see cref="M:System.ComponentModel.Component.Dispose" />です。 実装する方法の詳細についての<see cref="M:System.IO.FileStream.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.ComponentModel.Component.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRead">
+      <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.EndRead(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">待機する保留状態の非同期要求への参照。</param>
+        <summary>保留中の非同期の読み取り操作が完了するまで待機します。 (使用を検討して<see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />代わりにします)。</summary>
+        <returns>ストリームから読み込んだバイト数 (0 ～要求したバイト数の間の数値)。 ストリームの末尾では 0 が返されるだけです。それ以外の場合は、少なくとも 1 バイトが読み込み可能になるまでブロックします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 以前のバージョンはなどのメソッドを使用する必要がある<xref:System.IO.FileStream.BeginRead%2A>と<xref:System.IO.FileStream.EndRead%2A>ファイルの非同期操作を実装します。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.FileStream.FlushAsync%2A>、ヘルプ ファイルの非同期操作をより簡単に実装します。  
+  
+ <xref:System.IO.FileStream.EndRead%2A>すべての呼び出しを正確に呼び出す必要があります<xref:System.IO.FileStream.BeginRead%2A>です。 別の読み取りを開始する前に読み取りプロセスを終了に失敗すると、デッドロックなど、望ましくない動作可能性があります。  
+  
+ このメソッドは<xref:System.IO.Stream.EndRead%2A>します。  
+  
+ <xref:System.IO.FileStream.EndRead%2A>呼び出すことができるすべて<xref:System.IAsyncResult>から<xref:System.IO.FileStream.BeginRead%2A>です。 呼び出す<xref:System.IO.FileStream.EndRead%2A>ストリームから読み取られたバイト数がわかります。 <xref:System.IO.FileStream.EndRead%2A>I/O 操作が完了するまでブロックされます。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#4)]
+ [!code-csharp[System.IO.FileStream2#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#4)]
+ [!code-vb[System.IO.FileStream2#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">この <see cref="T:System.IAsyncResult" /> オブジェクトは、このクラスで <see cref="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> を呼び出すことによって作成されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.IO.FileStream.EndRead(System.IAsyncResult)" /> は複数回呼び出されます。</exception>
+        <exception cref="T:System.IO.IOException">ストリームが閉じているか、内部エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWrite">
+      <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.EndWrite(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留中の非同期 I/O 要求。</param>
+        <summary>非同期の書き込み操作を終了し、I/O 操作が完了するまでブロックします。 (使用を検討して<see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />代わりにします)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 以前のバージョンはなどのメソッドを使用する必要がある<xref:System.IO.FileStream.BeginWrite%2A>と<xref:System.IO.FileStream.EndWrite%2A>ファイルの非同期操作を実装します。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.FileStream.FlushAsync%2A>、ヘルプ ファイルの非同期操作をより簡単に実装します。  
+  
+ このメソッドは<xref:System.IO.Stream.EndWrite%2A>します。  
+  
+ <xref:System.IO.FileStream.EndWrite%2A>1 回だけ呼び出す必要がありますすべて<xref:System.IAsyncResult>から<xref:System.IO.FileStream.BeginWrite%2A>です。 <xref:System.IO.FileStream.EndWrite%2A>I/O 操作が完了するまでブロックされます。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#3)]
+ [!code-csharp[System.IO.FileStream2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#3)]
+ [!code-vb[System.IO.FileStream2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">この <see cref="T:System.IAsyncResult" /> オブジェクトは、このクラスで <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> を呼び出すことによって作成されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.IO.FileStream.EndWrite(System.IAsyncResult)" /> は複数回呼び出されます。</exception>
+        <exception cref="T:System.IO.IOException">ストリームが閉じているか、内部エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~FileStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクターが <see langword="FileStream" /> を再利用するときに、リソースの解放およびその他のクリーンアップ操作を確実に実行するようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクター`Finalize`現在のオブジェクトが完了する準備ができています。 `Finalize`閉じる、`FileStream`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このストリームのバッファーをクリアして、バッファー内のデータがファイルに書き込まれるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.Flush%2A?displayProperty=nameWithType>します。  
+  
+ 呼び出すと、<xref:System.IO.FileStream.Flush%2A?displayProperty=nameWithType>メソッド、オペレーティング システム I/O バッファーがフラッシュされるもします。  
+  
+ 明示的に呼び出す場合を除き、ストリームのエンコーダーはフラッシュされません<xref:System.IO.FileStream.Flush%2A>またはオブジェクトの破棄します。 設定<xref:System.IO.StreamWriter.AutoFlush%2A?displayProperty=nameWithType>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ 読み取りまたは書き込みのいずれかのバッファーを使用できるため<xref:System.IO.FileStream.Flush>は次の 2 つの関数を実行します。  
+  
+-   ファイルに以前にバッファーに書き込まれたデータをコピーし、エンコーダーの状態を除く、バッファーをクリアします。  
+  
+-   場合<xref:System.IO.BufferedStream.CanSeek%2A?displayProperty=nameWithType>は`true`とデータが以前の読み取りにバッファーをファイルからコピー、ファイル内の現在位置が、バッファー内の未読のバイト数だけデクリメントします。 バッファーをクリアし、します。  
+  
+ 使用して、<xref:System.IO.FileStream.Flush%28System.Boolean%29>バッファリングされたすべてのデータの中間ファイル バッファーのことを確認するときのメソッドのオーバー ロードが記述されたディスクにします。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.Lock%2A>メソッドです。  
+  
+ [!code-cpp[System.IO.FileStream3#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream3/CPP/fstreamlock.cpp#4)]
+ [!code-csharp[System.IO.FileStream3#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream3/CS/fstreamlock.cs#4)]
+ [!code-vb[System.IO.FileStream3#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream3/VB/fstreamlock.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public virtual void Flush (bool flushToDisk);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush(bool flushToDisk) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Flush(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flushToDisk" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="flushToDisk">
+          すべての中間ファイル バッファーをフラッシュする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>このストリームのバッファーをクリアして、バッファー内のデータがファイルに書き込まれるようにし、すべての中間ファイル バッファーもクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファリングされたすべてのデータの中間ファイル バッファーのことを確認する場合は、このオーバー ロードが書き込まれます使用してディスクにします。  
+  
+ 呼び出すと、<xref:System.IO.FileStream.Flush%2A>メソッド、オペレーティング システム I/O バッファーがフラッシュされるもします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。</param>
+        <summary>ストリームに対応するすべてのバッファーを非同期にクリアし、バッファー内のデータを基になるデバイスに書き込み、キャンセル要求を監視します。</summary>
+        <returns>非同期のフラッシュ操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、<xref:System.IO.FileStream.FlushAsync%2A>メソッド、オペレーティング システム I/O バッファーがフラッシュされるもします。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。 返されるタスクに含まれるファイルへのハンドルが破棄されている場合、<xref:System.ObjectDisposedException>での例外、<xref:System.Threading.Tasks.Task.Exception%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すファイルのアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.FileStream" /> オブジェクトを取得します。</summary>
+        <returns>現在の <see cref="T:System.IO.FileStream" /> オブジェクトが示すファイルのアクセス制御設定をカプセル化するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、<xref:System.IO.FileStream>クラスと<xref:System.IO.FileStream.GetAccessControl%2A>使用を検討して、既存のファイルのアクセス制御リスト (ACL) エントリを取得するために使用できる<xref:System.IO.File.GetAccessControl%2A?displayProperty=nameWithType>ので、メソッドは使いやすくします。  
+  
+ 使用して、<xref:System.IO.FileStream.GetAccessControl%2A>ファイルの ACL エントリを取得します。  
+  
+ ACL には、個人、グループ、または権限がない、指定されたファイルの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ファイルは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.SystemException">ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public virtual IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use SafeFileHandle instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドルを取得します。</summary>
+        <value>この <see langword="FileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドル。または <see langword="FileStream" /> が閉じられている場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、オペレーティング システムに用意されているシステムの呼び出しで使用するためのオペレーティング システム ハンドル (など`ReadFile`Windows 上)。 など、ファイル記述子を期待する C ライブラリ関数では動作しません`fread`です。  
+  
+ オペレーティング システム ハンドルが開かれた同期または非同期で、に応じて`FileStream`コンス トラクターが呼び出されました。 使用して、<xref:System.IO.FileStream.IsAsync%2A>プロパティをこのハンドルが非同期的に開かれたかどうかを検出します。 Win32 では、つまり、重複 I/O 用、ハンドルが開かれた、異なるパラメーターを必要と`ReadFile`と`WriteFile`です。  
+  
+> [!CAUTION]
+>  場合に、データの破損が発生する可能性があります、`FileStream`が作成されると、そのハンドルが渡される、なんらかの操作が、ハンドルのファイル ポインターを移動し、`FileStream`もう一度使用されます。 複数のスレッドは、同時に同じファイルに書き込めません安全と`FileStream`コードをバッファー処理には、行うことは想定しています。 `FileStream`スローする可能性、<xref:System.IO.IOException>場合`FileStream`他のプロセスがファイル ポインターを移動したことを検出します。 これを回避するには、書き込みませんすべてのデータ ファイルの一部にする`FileStream`がバッファーに格納したとしたときにメソッドが呼び出された最後の場所にファイル ポインターを復元`FileStream`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsync">
+      <MemberSignature Language="C#" Value="public virtual bool IsAsync { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAsync" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.IsAsync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="FileStream" /> が非同期的に開かれたか、同期的に開かれたかを示す値を取得します。</summary>
+        <value>
+          <see langword="FileStream" /> が非同期的に開かれた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsAsync`プロパティを検出するかどうか、`FileStream`ハンドルが開かれた非同期的に、使用するようコードを有効にすると、<xref:System.IO.FileStream.Handle%2A>プロパティ正しくです。 Win32 では、 `IsAsync` true を示し、ハンドル重複 I/O 用に開かれたために異なるパラメーターを必要とされている`ReadFile`と`WriteFile`です。  
+  
+ インスタンスを作成するときに、この値を指定する、<xref:System.IO.FileStream>クラスを持つコンス トラクターを使用して、 `isAsync`、 `useAsync`、または`options`パラメーター。 このプロパティが`true`ストリームがファイルの操作を非同期的に実行する重複 I/O を使用します。 ただし、<xref:System.IO.FileStream.IsAsync%2A>プロパティがある`true`を呼び出して、 <xref:System.IO.FileStream.ReadAsync%2A>、 <xref:System.IO.FileStream.WriteAsync%2A>、または<xref:System.IO.Stream.CopyToAsync%2A>メソッドです。 ときに、<xref:System.IO.FileStream.IsAsync%2A>プロパティは`false`および書き込み操作を非同期の読み込みを呼び出すと、引き続き、UI スレッドはブロックされませんが、実際の I/O 操作が同期的に実行します。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#2)]
+ [!code-csharp[System.IO.FileStream2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#2)]
+ [!code-vb[System.IO.FileStream2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public override long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーム長 (バイト単位) を取得します。</summary>
+        <value>ストリーム長 (バイト単位) を表す long 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`Length`と`Position`プロパティ ファイルの終端の条件を確認します。  
+  
+ [!code-cpp[Classic FileStream.Length Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileStream.Length Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileStream.Length Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileStream.Length Example/CS/source.cs#1)]
+ [!code-vb[Classic FileStream.Length Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileStream.Length Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.IO.FileStream.CanSeek" />このストリームは<see langword="false" />します。</exception>
+        <exception cref="T:System.IO.IOException">ファイルが閉じられているなど、I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Lock">
+      <MemberSignature Language="C#" Value="public virtual void Lock (long position, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Lock(int64 position, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Lock(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">ロックする範囲の先頭。 このパラメーターの値は、0 (ゼロ) 以上にする必要があります。</param>
+        <param name="length">ロックする範囲。</param>
+        <summary><see cref="T:System.IO.FileStream" /> に対する他のプロセスからの読み取りまたは書き込みを禁止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル ストリームの範囲をロックすると、ファイル ストリームの範囲にロックのプロセスの排他アクセスのスレッドが与えられます。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別のプロセスは、ファイルに読み取り/書き込みアクセス権を持つ場合でも、ファイルの部分にアクセスできないように、ファイルの一部をロックする方法を示します。 別のコマンド ウィンドウで、プログラムを同時に実行し、さまざまなコンソールの入力オプションを使用してを調査します。  
+  
+ [!code-cpp[System.IO.FileStream3#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream3/CPP/fstreamlock.cpp#1)]
+ [!code-csharp[System.IO.FileStream3#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream3/CS/fstreamlock.cs#1)]
+ [!code-vb[System.IO.FileStream3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream3/VB/fstreamlock.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" /> または <paramref name="length" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ファイルは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">別のプロセスがファイルの一部をロックしているため、プロセスはこのファイルにアクセスできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンストラクターに渡された <see langword="FileStream" /> の名前を取得します。</summary>
+        <value><see langword="FileStream" /> の名前を示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.Int32%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.FileStream2#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream2/CPP/source.cpp#4)]
+ [!code-csharp[System.IO.FileStream2#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream2/CS/source.cs#4)]
+ [!code-vb[System.IO.FileStream2#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream2/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームの現在位置を取得または設定します。</summary>
+        <value>ストリームの現在位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームの長さを超えた位置へのシークはサポートされています。  シークすると、ファイルの長さを超えて、ファイルのサイズが大きくなります。  Microsoft Windows NT 以降では、ファイルの末尾に追加されたデータすべてが 0 に設定します。  Microsoft Windows 98 またはそれ以前は、ファイルの末尾に追加されたデータすべてがデータは既に削除は 0 に設定されていません。 Windows 98 またはそれ以前のストリームの末尾を越える大きな値に、ストリームの位置を設定すると、例外が発生する可能性があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`Length`と`Position`プロパティ ファイルの終端の条件を確認します。  
+  
+ [!code-cpp[Classic FileStream.Length Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileStream.Length Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileStream.Length Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileStream.Length Example/CS/source.cs#1)]
+ [!code-vb[Classic FileStream.Length Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileStream.Length Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このストリームはシークをサポートしていません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。  
+  
+ \- または  
+  
+ 位置が、Windows 98 またはそれ以前のストリームの末尾を越える非常に大きな値に設定されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">位置を負の値に設定しようとしました。</exception>
+        <exception cref="T:System.IO.EndOfStreamException">サポートされていない、ストリームの末尾を越えるシークをしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (byte[] array, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] unsigned int8[] array, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">このメソッドが戻るときまでの値が指定したバイト配列が含まれています<c>オフセット</c>と (<c>オフセット</c> + <c>カウント</c>- 1<c>)。</c> 、現在のソースから読み取ったバイトにより置き換えられます。</param>
+        <param name="offset">内のバイト オフセット<c>配列</c>れる読み取りのバイトを配置します。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <summary>ストリームからバイトのブロックを読み取り、そのデータを特定のバッファーに書き込みます。</summary>
+        <returns>バッファーに読み取られた合計バイト数。 要求しただけのバイト数を読み取れなかった場合、この値は要求したバイト数より小さくなります。ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.Read%2A>します。  
+  
+ `offset`パラメーターはバイトのオフセット`array`(バッファーのインデックス) 読み取りを開始する位置を示す、`count`パラメーターは、このストリームから読み取られるバイトの最大数を示します。 ストリームの末尾に達した場合は、実際の数バイトを読み取り、または 0 を返されるです。 読み取り操作が成功した場合、ストリームの現在の位置は読み取られたバイト数で進められます。 例外が発生する場合は、ストリームの現在の位置は変更されません。  
+  
+ <xref:System.IO.FileStream.Read%2A>メソッドには、ストリームの末尾に到達した場合にのみゼロが返されます。 それ以外の場合、<xref:System.IO.FileStream.Read%2A>常に返す前に、ストリームから、少なくとも 1 バイトを読み取ります。 データがないかどうかを呼び出すとストリームから<xref:System.IO.FileStream.Read%2A>、少なくとも 1 バイトのデータを返すことができるまで、メソッドはブロックされます。 実装は、ストリームの末尾に達していない場合でも、要求されたより少ないバイト数を返すことです。  
+  
+ 使用して<xref:System.IO.BinaryReader>プリミティブ データ型を読み取るためです。  
+  
+ 読み取り操作を実行するスレッドを中断しません。 アプリケーションは正常に実行するスレッドはブロック解除後に見えますが、中断は、アプリケーションのパフォーマンスと信頼性を減らすことができます。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例から内容の読み取り、<xref:System.IO.FileStream>別に書き込みます<xref:System.IO.FileStream>です。  
+  
+ [!code-csharp[FSRead#1](~/samples/snippets/csharp/VS_Snippets_CLR/FSRead/CS/fsread.cs#1)]
+ [!code-vb[FSRead#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FSRead/VB/fsread.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />および<paramref name="count" />で無効な範囲を記述<paramref name="array" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを書き込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>ストリームからデータを書き込む開始位置を示すです。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。</param>
+        <summary>現在のストリームからバイト シーケンスを非同期に読み取り、読み取ったバイト数だけストリーム内の位置を進め、キャンセル要求を監視します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 現在使用できるバイト数が要求した数より小さい場合、結果の値は要求したバイト数より小さくなることがあります。また、ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileStream.ReadAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費するファイルの操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.FileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。 返されるタスクに含まれるファイルへのハンドルが破棄されている場合、<xref:System.ObjectDisposedException>での例外、<xref:System.Threading.Tasks.Task.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、非同期的に、ファイルを読み取る方法を示します。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#4](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example4.cs#4)]
+ [!code-vb[Asynchronous_File_IO_async#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadByte">
+      <MemberSignature Language="C#" Value="public override int ReadByte ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadByte() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.ReadByte" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルからバイトを読み取り、読み取り位置を 1 バイト進めます。</summary>
+        <returns><see cref="T:System.Int32" /> にキャストしたバイト。ストリームの末尾に達した場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.ReadByte%2A>します。  
+  
+> [!NOTE]
+>  使用して、<xref:System.IO.FileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。 詳細については、「<xref:System.IO.Stream.CanRead%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバイト単位で、ファイルに書き込むし、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.FileStream1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream1/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.FileStream1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream1/CS/source.cs#1)]
+ [!code-vb[System.IO.FileStream1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在のストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームが閉じられます。</exception>
+        <block subset="none" type="overrides">
+          <para>既定の実装<see langword="Stream" />新しいシングル バイト配列を作成し、呼び出して<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />です。 これは、正しい正式には、効率的なことはできません。 内部バッファーと共にストリームは、このメソッドをオーバーライドし、読み取りバッファーを直接呼び出しごとに余分な配列の割り当てを回避するバージョンをはるかに効率的に提供する必要があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeFileHandle">
+      <MemberSignature Language="C#" Value="public virtual Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileStream.SafeFileHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeFileHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.FileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドルを表す <see cref="T:Microsoft.Win32.SafeHandles.SafeFileHandle" /> オブジェクトを取得します。</summary>
+        <value>現在の <see cref="T:System.IO.FileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドルを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileStream.SafeFileHandle%2A>プロパティは自動的にストリームをフラッシュし、現在のストリームの位置を 0 に設定します。  これにより、移動するファイルまたは別のストリームを使用してリセットするストリームの位置、<xref:System.IO.FileStream.SafeFileHandle%2A>このプロパティによって返されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: リンク確認要求  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">に対する相対ポイント<c>原点</c>シークの開始位置を示すです。</param>
+        <param name="origin">参照ポイントとして先頭、末尾、または現在位置を示す<c>オフセット</c>、型の値を使用して<see cref="T:System.IO.SeekOrigin" />です。</param>
+        <summary>このストリームの現在位置を特定の値に設定します。</summary>
+        <returns>ストリームの新しい位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.Seek%2A?displayProperty=nameWithType>します。  
+  
+> [!NOTE]
+>  使用して、<xref:System.IO.FileStream.CanSeek%2A?displayProperty=nameWithType>プロパティを現在のインスタンスがシークをサポートするかどうかを判断します。 詳細については、「<xref:System.IO.Stream.CanSeek%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ストリームの長さを超えた位置をシークできます。 シークすると、ファイルの長さを超えて、ファイルのサイズが大きくなります。 Windows NT とそれ以降のバージョンでは、ファイルの末尾に追加されたデータは、0 に設定されます。 Windows 98 またはそれ以前のバージョンでは、ファイルの末尾に追加されたデータが設定されていないデータは既に削除は 0 にします。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、データをバイト単位で、ファイルに書き込むし、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.FileStream1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream1/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.FileStream1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream1/CS/source.cs#1)]
+ [!code-vb[System.IO.FileStream1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream1/VB/source.vb#1)]  
+  
+ 次の例は、さまざまなを使用して、ファイルの先頭にファイルの末尾から、反対方向のテキストを読み取ります<xref:System.IO.SeekOrigin>の値を使った、<xref:System.IO.FileStream.Seek%2A>メソッドです。  
+  
+ [!code-csharp[System.IO.FileStream.Seek#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.filestream.seek/cs/source.cs#1)]
+ [!code-vb[System.IO.FileStream.Seek#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.filestream.seek/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームが場合など、シークをサポートしていない、<see langword="FileStream" />パイプまたはコンソール出力から構成されます。</exception>
+        <exception cref="T:System.ArgumentException">シークがストリームの開始前に試行されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.FileSecurity fileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.SetAccessControl(System.Security.AccessControl.FileSecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileSecurity" Type="System.Security.AccessControl.FileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="fileSecurity">現在のファイルに適用する ACL エントリを示すオブジェクト。</param>
+        <summary><see cref="T:System.Security.AccessControl.FileSecurity" /> オブジェクトが示すアクセス制御リスト (ACL) エントリを、現在の <see cref="T:System.IO.FileStream" /> オブジェクトが示すファイルに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、<xref:System.IO.FileStream>クラスと<xref:System.IO.FileStream.SetAccessControl%2A>既存のファイルで使用できる、使用を検討して、<xref:System.IO.File.SetAccessControl%2A?displayProperty=nameWithType>メソッドが簡単に使用します。  
+  
+ <xref:System.IO.FileStream.SetAccessControl%2A>メソッドが継承されない ACL リストを表すファイルへのアクセス制御リスト (ACL) エントリを適用します。  
+  
+> [!CAUTION]
+>  ACL に指定された、`fileSecurity`パラメーターは、ファイルの既存の ACL を置き換えます。 新しいユーザーのアクセス許可を追加する、<xref:System.IO.FileStream.GetAccessControl%2A>メソッドを既存の ACL を取得して、変更し、<xref:System.IO.FileStream.SetAccessControl%2A>をファイルに再度適用します。  
+  
+ ACL には、個人、グループ、または権限がない、指定されたファイルの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ファイルは閉じられています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="fileSecurity" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.SystemException">ファイルを検出または変更できませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在のプロセスには、ファイルを開くために必要なアクセス権がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームの新しい長さ。</param>
+        <summary>ストリーム長を特定の値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.SetLength%2A>します。  
+  
+ 指定した値が、ストリームの現在の長さより小さい場合は、ストリームは切り捨てられます。 このシナリオでは、現在の位置が、新しい長さより大きい場合、現在の位置がストリームの最後のバイトまで移動します。 指定した値が、ストリームの現在の長さより大きい場合は、ストリームが展開され、現在の位置は変わりません。 ストリームが展開されている場合、古いクライアント シークレットと新しい長さの間のストリームの内容は未定義です。  
+  
+ ストリームは書き込みとシークの両方をサポートする必要があります`SetLength`動作をします。  
+  
+> [!NOTE]
+>  使用して、 <xref:System.IO.FileStream.CanWrite%2A> 、現在のインスタンスがドキュメントの作成をサポートしているかどうかを決定するプロパティと<xref:System.IO.FileStream.CanSeek%2A>シークがサポートされているかどうかを決定するプロパティです。 追加情報については、<xref:System.IO.Stream.CanWrite%2A>、および <xref:System.IO.Stream.CanSeek%2A> を参照してください。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームでは、書き込みとシークの両方は使用できません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定しようと、<paramref name="value" />パラメーターを 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unlock">
+      <MemberSignature Language="C#" Value="public virtual void Unlock (long position, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unlock(int64 position, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Unlock(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">ロックを解除する範囲の先頭。</param>
+        <param name="length">ロックを解除する範囲。</param>
+        <summary>他のプロセスにより以前にロックされたファイルの全部または一部へのアクセスを許可します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別のプロセスは、ファイルを読み取り/書き込みアクセス権を持つ場合でも、ファイルの部分にアクセスできず、ファイルの指定された部分のロックを解除し、ファイルの一部をロックする方法を示します。 別のコマンド ウィンドウで、プログラムを同時に実行し、さまざまなコンソールの入力オプションを使用してを調査します。  
+  
+ [!code-cpp[System.IO.FileStream3#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream3/CPP/fstreamlock.cpp#1)]
+ [!code-csharp[System.IO.FileStream3#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream3/CS/fstreamlock.cs#1)]
+ [!code-vb[System.IO.FileStream3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream3/VB/fstreamlock.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" /> または <paramref name="length" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (byte[] array, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] array, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">ストリームに書き込むデータを格納しているバッファー。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>配列</c>ストリームにバイトのコピー開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <summary>ファイル ストリームにバイトのブロックを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.Write%2A>します。  
+  
+ `offset`パラメーターはバイトのオフセット`array`(バッファーのインデックス) コピーを開始する位置を示す、`count`パラメーターは、ストリームに書き込まれるバイト数。 書き込み操作が成功した場合、ストリームの現在の位置は書き込まれたバイト数で進められます。 例外が発生する場合は、ストリームの現在の位置は変更されません。  
+  
+> [!NOTE]
+>  使用して、<xref:System.IO.FileStream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。 詳細については、「<xref:System.IO.Stream.CanWrite%2A>」を参照してください。  
+  
+ 書き込み操作を実行するスレッドを中断しません。 アプリケーションは正常に実行するスレッドはブロック解除後に見えますが、中断は、アプリケーションのパフォーマンスと信頼性を減らすことができます。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ このコード例に示されている例の一部である、<xref:System.IO.FileStream.Lock%2A>メソッドです。  
+  
+ [!code-cpp[System.IO.FileStream3#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream3/CPP/fstreamlock.cpp#3)]
+ [!code-csharp[System.IO.FileStream3#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream3/CS/fstreamlock.cs#3)]
+ [!code-vb[System.IO.FileStream3#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream3/VB/fstreamlock.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />および<paramref name="count" />で無効な範囲を記述<paramref name="array" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。  
+  
+ \- または  
+  
+ 別のスレッドが原因で、オペレーティング システムのファイル ハンドルの位置で予期しない変更が発生した可能性があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームのインスタンスでは、書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元となるバッファー。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>ストリームにバイトのコピー開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。</param>
+        <summary>現在のストリームにバイト シーケンスを非同期に書き込み、書き込んだバイト数だけストリーム内の現在位置を進め、キャンセル要求を監視します。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileStream.WriteAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費するファイルの操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.FileStream.CanWrite%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。 返されるタスクに含まれるファイルへのハンドルが破棄されている場合、<xref:System.ObjectDisposedException>での例外、<xref:System.Threading.Tasks.Task.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルを非同期的に書き込む方法を示します。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#3](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example3.cs#3)]
+ [!code-vb[Asynchronous_File_IO_async#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きいです。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の書き込み操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteByte">
+      <MemberSignature Language="C#" Value="public override void WriteByte (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteByte(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.WriteByte(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込むバイト。</param>
+        <summary>ファイル ストリームの現在位置にバイトを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.WriteByte%2A>します。  
+  
+ 使用して`WriteByte`にバイトを書き込む、`FileStream`効率的にします。 ストリームが閉じられているか書き込み禁止になっての場合は、例外がスローされます。  
+  
+> [!NOTE]
+>  使用して、<xref:System.IO.FileStream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。 詳細については、「<xref:System.IO.Stream.CanWrite%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバイト単位で、ファイルに書き込むし、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.FileStream1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.FileStream1/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.FileStream1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileStream1/CS/source.cs#1)]
+ [!code-vb[System.IO.FileStream1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileStream1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <block subset="none" type="overrides">
+          <para>既定の実装<see langword="Stream" />新しいシングル バイト配列を作成し、呼び出して<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />です。 これは、正しい正式には、効率的なことはできません。 内部バッファーと共にストリームは、このメソッドをオーバーライドし、読み取りバッファーを直接呼び出しごとに余分な配列の割り当てを回避するバージョンをはるかに効率的に提供する必要があります。  
+  
+ 一般的なファイルとディレクトリの操作の一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

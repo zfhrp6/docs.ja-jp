@@ -1,0 +1,53 @@
+<Type Name="SettingsContext" FullName="System.Configuration.SettingsContext">
+  <TypeSignature Language="C#" Value="public class SettingsContext : System.Collections.Hashtable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SettingsContext extends System.Collections.Hashtable" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsContext" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Hashtable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>設定を保持するときに、プロバイダーを使用してコンテキスト情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsContext>クラスは設定プロバイダーにコンテキスト情報を提供するアプリケーションで使用される基本クラスです。 継承する特殊なクラスを作成するアプリケーションを選択できます、クラスが抽象ではなく<xref:System.Configuration.SettingsContext>クラスし、特定の種類のプロバイダーに追加情報を提供します。 プロバイダーは、プロパティの書き込み時に、コンテキストの設定を確認し、できます。  
+  
+ 主な目的、<xref:System.Configuration.SettingsContext>クラスが使用する機能を提供するには、<xref:System.Configuration.SettingsBase>クラスと関連するインフラストラクチャ。 <xref:System.Configuration.SettingsContext>で格納されているプロパティのデータに関する追加の機能に固有のコンテキスト情報を提供するクラス、<xref:System.Configuration.SettingsBase>インスタンス。 したがって、追加情報を格納する非常に単純なは、<xref:System.Configuration.SettingsContext>クラス (または他の設定 * クラスから) から派生することがない場合追加機能に固有のコンテキスト情報をサポートするためにします。  
+  
+ たとえば、ASP.NET を使用して、<xref:System.Configuration.SettingsContext>クラスによって管理されているデータに関連付けられているユーザー名に渡すときに、<xref:System.Configuration.SettingsBase>インスタンスだけでなく、ユーザーが認証されたと見なすかどうかを示すプロパティです。 この方法で ASP.NET を使用して、<xref:System.Configuration.SettingsContext>匿名のプロファイル データとを識別するクラスを認証します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.SettingsContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

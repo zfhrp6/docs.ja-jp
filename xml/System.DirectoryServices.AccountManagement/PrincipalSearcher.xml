@@ -1,0 +1,308 @@
+<Type Name="PrincipalSearcher" FullName="System.DirectoryServices.AccountManagement.PrincipalSearcher">
+  <TypeSignature Language="C#" Value="public class PrincipalSearcher : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrincipalSearcher extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メソッドと、基になるプリンシパル ストアに対してクエリを実行するために使用する検索パターンをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の 256 KB のページ サイズが使用されるときに、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher>クラスは、ドメイン プリンシパルのクエリを実行します。 アプリケーションは設定して、既定値を上書きする可能性があります、 <xref:System.DirectoryServices.DirectorySearcher.PageSize%2A> 、基になるプロパティ<xref:System.DirectoryServices.DirectorySearcher>から返されるオブジェクト、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.GetUnderlyingSearcher%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalSearcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" /> クラスの新しいインスタンスを初期化します。 <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />プロパティを設定する必要があります、検索を実行するプリンシパルの前にサーチャー オブジェクトを使用できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalSearcher (System.DirectoryServices.AccountManagement.Principal queryFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.Principal queryFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.#ctor(System.DirectoryServices.AccountManagement.Principal)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="queryFilter" Type="System.DirectoryServices.AccountManagement.Principal" />
+      </Parameters>
+      <Docs>
+        <param name="queryFilter"><see cref="T:System.DirectoryServices.AccountManagement.Principal" />検索に使用するフィルターを指定するオブジェクト。 <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" /> プロパティは、この値に初期化されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" />指定されたクエリのフィルターを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">永続化された principal オブジェクトは、としては使用できません、<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />です。  
+  
+ <paramref name="queryFilter" />パラメーターが null または空にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.PrincipalContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.AccountManagement.PrincipalContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリを実行するために使用するそのプリンシパルを取得します。 コンテキストは、サーバーまたは検索操作の対象となるドメインを指定します。</summary>
+        <value>操作が実行されるサーバーまたはドメインを指定する <see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext>プリンシパル内のオブジェクト セットのコンテキスト プロパティから取得した、このプロパティに含まれているオブジェクト、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>プロパティです。 プリンシパルのコンテキスト オブジェクトで指定された資格情報を使用してクエリを実行しで指定されたコンテナー、<xref:System.DirectoryServices.AccountManagement.PrincipalContext.Container*>プロパティです。 <xref:System.DirectoryServices.AccountManagement.ContextType.Domain>と<xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory>コンテキストの種類、コンテナーはコンテナー オブジェクトの識別名 (DN)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" /> オブジェクトのインスタンスを破棄します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.Principal&gt; FindAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.AccountManagement.PrincipalSearchResult`1&lt;class System.DirectoryServices.AccountManagement.Principal&gt; FindAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.FindAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.PrincipalSearchResult&lt;System.DirectoryServices.AccountManagement.Principal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリのフィルター プロパティに指定されたプリンシパルに一致するすべてのプリンシパル オブジェクトのコレクションを格納するプリンシパルの検索結果を返します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearchResult'1" />結果が見つからない場合、クエリ フィルターまたは空のコレクションに一致するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるオブジェクトの種類のプリンシパルの検索結果で返される主要なオブジェクト、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>プロパティです。 指定されたコンテキストの検索、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.Context%2A>プロパティです。 詳細については、例の概要のトピックで、クエリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />参照プロパティが含まれます。 詳細については、例の概要のトピックで、クエリを参照してください。  
+  
+ <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />永続化されたプリンシパルです。</exception>
+        <exception cref="T:System.ArgumentException">A<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />クエリを実行する前にまずプリンシパル サーチャーに割り当てる必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOne">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.Principal FindOne ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.AccountManagement.Principal FindOne() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.FindOne" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.Principal</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定されるプリンシパルに一致する最初のプリンシパル オブジェクトを格納するプリンシパルの検索結果を検索して返します、<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />プロパティです。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.AccountManagement.Principal" />結果が見つからない場合、クエリのフィルター処理または null に一致するプリンシパルのオブジェクトを含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたオブジェクトの 1 つだけの一致があるかどうか、 <xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>、このメソッドは、そのオブジェクトを返します。 複数の一致がある場合、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>オブジェクト、このメソッドが任意に一致するプリンシパルのいずれかを返します。  
+  
+ <xref:System.DirectoryServices.AccountManagement.Principal>このメソッドから返されるオブジェクトに含まれるオブジェクトの種類に対応、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>プロパティです。 指定されたコンテキストの検索、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.Context%2A>プロパティです。 詳細については、次を参照してください。、[例によってクエリに](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />参照プロパティが含まれます。 詳細については、次を参照してください。、[例によってクエリに](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)概要トピックです。  
+  
+ <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />永続化されたプリンシパルです。</exception>
+        <exception cref="T:System.ArgumentException">A<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />クエリを実行する前にまずプリンシパル サーチャーに割り当てる必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnderlyingSearcher">
+      <MemberSignature Language="C#" Value="public object GetUnderlyingSearcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetUnderlyingSearcher() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.GetUnderlyingSearcher" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>検索を実行するアカウントの管理 API によって使用される基になる検索オブジェクトを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.DirectorySearcher" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが直接にプロパティを変更できます、<xref:System.DirectoryServices.DirectorySearcher>オブジェクト クエリを実行する前にします。 クエリは、変更されたプロパティを使用して、実行されます。 たとえば、256 KB の既定のページ サイズが使用時に、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher>クラスに対してクエリを実行する<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>プリンシパル。 アプリケーションは設定して、既定値を上書きする可能性があります、 <xref:System.DirectoryServices.DirectorySearcher.PageSize%2A> 、基になるプロパティ<xref:System.DirectoryServices.DirectorySearcher>このメソッドから返されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">A<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />クエリを実行する前にまずプリンシパル サーチャーに割り当てる必要があります。  
+  
+ <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />参照プロパティが含まれます。 詳細については、次を参照してください。、[例によってクエリに](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)概要トピックです。  
+  
+ <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />永続化されたプリンシパルです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnderlyingSearcherType">
+      <MemberSignature Language="C#" Value="public Type GetUnderlyingSearcherType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetUnderlyingSearcherType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.GetUnderlyingSearcherType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返されるオブジェクトの型を返します、<see cref="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.GetUnderlyingSearcher" />メソッドです。</summary>
+        <returns>A<see cref="T:System.Type" />から返されるオブジェクトの種類を指定する、<see cref="M:System.DirectoryServices.AccountManagement.PrincipalSearcher.GetUnderlyingSearcher" />メソッドです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">A<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />クエリを実行する前にまずプリンシパル サーチャーに割り当てる必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryFilter">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.Principal QueryFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.AccountManagement.Principal QueryFilter" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.Principal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一致するプリンシパルの検索に使用されるクエリ フィルターを設定します。</summary>
+        <value><see cref="T:System.DirectoryServices.AccountManagement.Principal" />フィルターが設定されていない場合、クエリに使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに含まれている、プリンシパル オブジェクトは、プリンシパル クラスから派生したオブジェクトの任意の型を指定できます。コンピューター、ユーザー、またはグループ。 <xref:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter%2A>いずれかの操作を拡張することによって定義された拡張のプリンシパルの種類を指定できますも<xref:System.DirectoryServices.AccountManagement.Principal>、 <xref:System.DirectoryServices.AccountManagement.UserPrincipal>、<xref:System.DirectoryServices.AccountManagement.GroupPrincipal>または<xref:System.DirectoryServices.AccountManagement.ComputerPrincipal>です。 このプロパティに渡された派生クラスのオブジェクトの種類では、照会されるオブジェクトの種類を決定します。 クエリ結果にはには、指定したプリンシパル オブジェクトに設定されたすべてのプロパティの論理 AND が含まれています。 詳細については、例の概要のトピックで、クエリを参照してください。 派生クラスの詳細については、次を参照してください。、[プリンシパル拡張](http://msdn.microsoft.com/en-us/49d1b257-d652-4224-bdae-2edabced8f00)概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">固定された Principal オブジェクトとしては使用できません、<see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" />です。  
+  
+ <see cref="P:System.DirectoryServices.AccountManagement.PrincipalSearcher.QueryFilter" /> Null または空にすることはできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

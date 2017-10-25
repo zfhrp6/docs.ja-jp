@@ -1,0 +1,328 @@
+<Type Name="DesignerTheme" FullName="System.Workflow.ComponentModel.Design.DesignerTheme">
+  <TypeSignature Language="C#" Value="public abstract class DesignerTheme : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerTheme extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.DesignerTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Design.DesignerTheme/ThemeSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ThemeTypeConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローのデザイン時環境で使用されるすべてのアクティビティ デザイナー テーマ クラスの基本クラス実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> クラスにテーマのプロパティ設定を提供するすべてのクラスは、<xref:System.Workflow.ComponentModel.Design.DesignerTheme> クラスを継承しなければなりません。  デザイナー テーマは、ワークフロー デザイン サーフェイスに表示されるデザイナー クラスの背景と前景の色とスタイル、フォント、および他のスタイル設定を表示するのに使用される、プロパティ値のセットを提供します。  
+  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme> クラスも、<xref:System.Workflow.ComponentModel.Design.DesignerTheme> クラスを継承します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerTheme (System.Workflow.ComponentModel.Design.WorkflowTheme theme);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.WorkflowTheme theme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="theme" Type="System.Workflow.ComponentModel.Design.WorkflowTheme" />
+      </Parameters>
+      <Docs>
+        <param name="theme">デザイナー テーマを関連付ける <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</param>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.ComponentModel.Design.DesignerTheme" /> オブジェクトを使用して <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTo">
+      <MemberSignature Language="C#" Value="public virtual string ApplyTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplyTo" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerTheme.ApplyTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー テーマが適用されるデザイナー型の非修飾名を取得または設定します。</summary>
+        <value>デザイナー テーマが適用されるデザイナー型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme.ApplyTo%2A> プロパティはデザイナー型の非修飾名を使用してデザイナー テーマをデザイナーに関連付けます。一方 <xref:System.Workflow.ComponentModel.Design.DesignerTheme.DesignerType%2A> プロパティは、デザイナーの <xref:System.Type> を使用してデザイナー テーマをデザイナー型に関連付けます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.ReadOnlyException"><see cref="P:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly" /> プロパティが <see langword="true" /> に設定されている場合にユーザーが設定操作を行おうとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingTheme">
+      <MemberSignature Language="C#" Value="protected System.Workflow.ComponentModel.Design.WorkflowTheme ContainingTheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.WorkflowTheme ContainingTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerTheme.ContainingTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー テーマをカプセル化したワークフロー テーマを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.DesignerTheme" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme.ContainingTheme%2A> プロパティは、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme> が初期化時に使用した <xref:System.Workflow.ComponentModel.Design.DesignerTheme.%23ctor%2A> オブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerType">
+      <MemberSignature Language="C#" Value="public virtual Type DesignerType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DesignerType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerTheme.DesignerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー テーマに関連付けられたデザイナーの型を取得または設定します。</summary>
+        <value>現在のデザイナー テーマに関連付けられるデザイナーを表す <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme.DesignerType%2A> プロパティは、デザイナーの <xref:System.Type> を使用してデザイナー テーマをデザイナー型に関連付けます。一方 <xref:System.Workflow.ComponentModel.Design.DesignerTheme.ApplyTo%2A> プロパティは、デザイナー型の非修飾名を使用してデザイナー テーマをデザイナーに関連付けます。  
+  
+ このプロパティに使用できる値としては、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner>、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner>、およびアクティビティ デザイナーの開発者が <xref:System.Workflow.ComponentModel.Design.DesignerTheme> を継承して作成したクラスがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.ReadOnlyException"><see cref="P:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly" /> プロパティが <see langword="true" /> に設定されている場合にユーザーが設定操作を行おうとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerTheme" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~DesignerTheme ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerTheme" /> が、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme.Finalize%2A> がガベージ コレクションより前に解放するのは、アンマネージ リソースのみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Workflow.ComponentModel.Design.DesignerTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" /> が実行しない追加初期化タスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme> クラスは、このメソッドの既定の動作を提供しません。 <xref:System.Workflow.ComponentModel.Design.DesignerTheme> から継承されたクラスでは、このメソッドのための独自のロジックを提供する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAmbientPropertyChanged">
+      <MemberSignature Language="C#" Value="public virtual void OnAmbientPropertyChanged (System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnAmbientPropertyChanged(valuetype System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.OnAmbientPropertyChanged(System.Workflow.ComponentModel.Design.AmbientProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ambientProperty" Type="System.Workflow.ComponentModel.Design.AmbientProperty" />
+      </Parameters>
+      <Docs>
+        <param name="ambientProperty">デザイナー テーマが現在使用する必要がある <see cref="T:System.Workflow.ComponentModel.Design.AmbientProperty" /> 列挙値。</param>
+        <summary>デザイナーのアンビエント プロパティ設定が変更されたことをデザイナー テーマ クラスに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerTheme> から継承したクラスは、<xref:System.Workflow.ComponentModel.Design.AmbientProperty> 列挙値が <xref:System.Workflow.ComponentModel.Design.AmbientProperty.DesignerSize> から <xref:System.Workflow.ComponentModel.Design.AmbientProperty.OperatingSystemSetting> に変更されたとき、または <xref:System.Workflow.ComponentModel.Design.AmbientProperty.OperatingSystemSetting> から <xref:System.Workflow.ComponentModel.Design.AmbientProperty.DesignerSize> に変更されたときに、このメソッドを使用して必要な変更を行います。  
+  
+ <xref:System.Workflow.ComponentModel.Design.AmbientProperty> 列挙体は、デザイナー テーマがどこからアンビエント プロパティ設定を取得するかどうかを決定します。 <xref:System.Workflow.ComponentModel.Design.AmbientProperty.DesignerSize> の値を設定すると、デザイナー テーマ クラスはそのアンビエント設定を <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.AmbientTheme%2A> プロパティから取得します。 <xref:System.Workflow.ComponentModel.Design.AmbientProperty.OperatingSystemSetting> の値を設定すると、デザイナー テーマ クラスは、そのアンビエント設定をデザイナーがインストールされているオペレーティング システムから取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー テーマが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用の場合は <see cref="T:System.Workflow.ComponentModel.Design.DesignerTheme" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme> の初期化に使用された <xref:System.Workflow.ComponentModel.Design.DesignerTheme> が null 参照 (Visual Basic の場合は `Nothing`) でない場合、<xref:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly%2A> はその値を <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.ReadOnly%2A?displayProperty=nameWithType> プロパティから取得します。 <xref:System.Workflow.ComponentModel.Design.WorkflowTheme> が null 参照 (`Nothing`) の場合、<xref:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly%2A> は `false` です。  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme> に <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.CurrentTheme%2A?displayProperty=nameWithType> が割り当てられている場合、<xref:System.Workflow.ComponentModel.Design.DesignerTheme.ReadOnly%2A> プロパティは `true` に設定され、このテーマに関連付けられたすべてのデザイナー テーマのプロパティは変更できません。 必要な場合は、読み込んだテーマを <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.CurrentTheme%2A> に割り当てる前に、プロパティを設定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerTheme.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースの解放またはリセットに関連付けられているアプリケーション定義のタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの `Dispose` は、<xref:System.IDisposable> インターフェイスを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,162 @@
+<Type Name="ProfileServiceManager" FullName="System.Web.UI.ProfileServiceManager">
+  <TypeSignature Language="C#" Value="public class ProfileServiceManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProfileServiceManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ProfileServiceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Path")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.EmptyStringExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プリロードされているプロファイルのプロパティのセットと、プロファイル サービスのカスタム実装の場所を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ProfileServiceManager>クラスに対応して、<xref:System.Web.UI.ScriptManager.ProfileService%2A>プロパティに追加できる、<xref:System.Web.UI.ScriptManager>または<xref:System.Web.UI.ScriptManagerProxy>コントロール。  
+  
+ 使用することができます<xref:System.Web.UI.ProfileServiceManager>ページが表示され、クライアント スクリプトを作成できる場合に事前に読み込まれますプロファイル プロパティのセットを指定します。 また、組み込みのプロファイルの ASP.NET AJAX 機能によって提供される Web サービスを使用する代わりに、特定のパスの読み込みやスクリプトからプロファイルのプロパティを保存するために使用する Web サービスの代替実装を提供するのにこのクラスを使用できます。  
+  
+ 使用するには、プロファイル サービスをアプリケーションで、構成ファイルで有効にする必要があります。 Web サービスの組み込みのプロファイルを使用してプロパティをプリロードする必要はありませんがありません ページで、プロファイル サービス マネージャーを明示的に宣言します。  
+  
+ プリロードされているプロパティ、または Web サービスのカスタム プロファイルのセットを宣言によって指定するには、含める、`<ProfileService>`内の要素、`<asp:ScriptManager>`要素 ページで、次の例で示すようにします。  
+  
+```  
+<asp:ScriptManager ID="SM1" runat="server">  
+  <ProfileService LoadProperties="propertyA,propertyB" Path="MyProfileService.asmx" />  
+</asp:ScriptManager>  
+```  
+  
+ プロファイル サービスのプロパティを事前にまたは Web サービスのカスタム プロファイルを使用するプログラムによって構成できます。  
+  
+ 次の例では、カスタム プロファイルの Web サービスで実装する必要がある基本クラス構造を示します。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileServiceManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ProfileServiceManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ProfileServiceManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperties">
+      <MemberSignature Language="C#" Value="public string[] LoadProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] LoadProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ProfileServiceManager.LoadProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.StringArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定がクライアント スクリプトを利用できるプロファイルのプロパティを格納する配列。</summary>
+        <value>およびプリロードされるクライアント スクリプトからアクセスできるプロファイルのプロパティの名前を格納する文字列配列。 既定値は空の配列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.UI.ProfileServiceManager.LoadProperties%2A>Web アプリケーションで組み込みのプロファイル サービスが、指定されたプロファイルのプロパティごと、現在のユーザーのプロファイル データを取得し、プロファイル プロパティの名前に対応するには、少なくとも 1 つの文字列が含まれています。 プロファイル プロパティの値がシリアル化され、クライアントを使用してスクリプトを利用できるよう、[プロパティ フィールド](http://msdn.microsoft.com/library/ebce3c40-7017-482b-94df-91f7448fda05)コレクション。  
+  
+> [!NOTE]
+>  このプロパティを宣言して設定するには、プロパティ名のコンマ区切りのリストを使用します。 グループ化されたプロパティ値の場合、構文を使用します*GroupName*。* 。PropertyName*です。  
+  
+ ときに<xref:System.Web.UI.ProfileServiceManager.LoadProperties%2A>は空の配列、データがプリロード プロファイルがありません。  
+  
+ <xref:System.Web.UI.ProfileServiceManager.LoadProperties%2A>でプロパティを指定することができます、<xref:System.Web.UI.ScriptManager>コントロールまたは関連付けられている<xref:System.Web.UI.ScriptManagerProxy>コントロール。 ときに<xref:System.Web.UI.ProfileServiceManager.LoadProperties%2A>両方で設定されている、<xref:System.Web.UI.ScriptManager>コントロールと 1 つまたは複数の<xref:System.Web.UI.ScriptManagerProxy>一連のプロパティ、コントロールは、指定されたすべてのプロパティをマージすることによって決定されます。 重複するプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.ProfileServiceManager.LoadProperties" />プロパティには、現在のアプリケーションのプロファイル スキーマに含まれていないプロパティ名が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ProfileServiceManager.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web サービスのプロファイルのカスタム実装のパスを設定します。</summary>
+        <value>Web サービスのプロファイルのカスタム実装のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対仮想パス、絶対仮想パス、および完全修飾パスが許可されています。  
+  
+ 場合、<xref:System.Web.UI.ProfileServiceManager.Path%2A>プロパティが設定されていない、戻り値は<xref:System.String.Empty>します。 この例では、ASP.NET の AJAX 機能し、プロファイルを使用する、組み込み次の内部の既定のパスに対応する Web サービス: ~/ScriptServices_ProfileService.asmx です。 設定した場合、同じ動作が発生した<xref:System.Web.UI.ProfileServiceManager.Path%2A>する空の値または`null`です。  
+  
+ <xref:System.Web.UI.ProfileServiceManager.Path%2A>指定することができます、<xref:System.Web.UI.ScriptManager>コントロールまたは関連付けられている<xref:System.Web.UI.ScriptManagerProxy>コントロール。 ときに<xref:System.Web.UI.ProfileServiceManager.Path%2A>に設定されて、<xref:System.Web.UI.ScriptManagerProxy>レベル、次の警告が適用されます。  
+  
+-   コントロールの階層構造で複数のプロキシがある場合<xref:System.Web.UI.ProfileServiceManager.Path%2A>各プロキシ インスタンスに設定する必要はありません。  
+  
+-   場合<xref:System.Web.UI.ProfileServiceManager.Path%2A>が明示的に設定すると、プロキシ インスタンスで、値があります、このプロパティが明示的に設定された他のすべてのプロキシの同じです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の一意のパスは、コントロールの階層構造で設定されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

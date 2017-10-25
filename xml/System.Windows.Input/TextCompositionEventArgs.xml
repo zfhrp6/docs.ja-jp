@@ -1,0 +1,149 @@
+<Type Name="TextCompositionEventArgs" FullName="System.Windows.Input.TextCompositionEventArgs">
+  <TypeSignature Language="C#" Value="public class TextCompositionEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextCompositionEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.TextCompositionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変更に関連付けられている引数を含む、<see cref="T:System.Windows.Input.TextComposition" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートによってサポートされている、アタッチされたイベントには、によって提供される、<xref:System.Windows.Input.TextCompositionManager>クラス、および含める<xref:System.Windows.Input.TextCompositionManager.TextInput>(<xref:System.Windows.Input.TextCompositionManager.PreviewTextInput>)、 <xref:System.Windows.Input.TextCompositionManager.TextInputStart> (<xref:System.Windows.Input.TextCompositionManager.PreviewTextInputStart>)、および<xref:System.Windows.Input.TextCompositionManager.TextInputUpdate>(<xref:System.Windows.Input.TextCompositionManager.PreviewTextInputUpdate>)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextCompositionEventArgs (System.Windows.Input.InputDevice inputDevice, System.Windows.Input.TextComposition composition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.InputDevice inputDevice, class System.Windows.Input.TextComposition composition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TextCompositionEventArgs.#ctor(System.Windows.Input.InputDevice,System.Windows.Input.TextComposition)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inputDevice" Type="System.Windows.Input.InputDevice" />
+        <Parameter Name="composition" Type="System.Windows.Input.TextComposition" />
+      </Parameters>
+      <Docs>
+        <param name="inputDevice">このイベントに関連付けられている入力デバイス。</param>
+        <param name="composition">A<see cref="T:System.Windows.Input.TextComposition" />このイベントに関連付けられているオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.TextCompositionEventArgs" />クラス、指定した<see cref="T:System.Windows.Input.InputDevice" />と<see cref="T:System.Windows.Input.TextComposition" />クラスの初期値として。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する*コンポジション*は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlText">
+      <MemberSignature Language="C#" Value="public string ControlText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TextCompositionEventArgs.ControlText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに関連付けられたテキストを取得、<see cref="T:System.Windows.Input.TextComposition" />イベント。</summary>
+        <value>このイベントに関連付けられたコントロールのテキストを含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TextCompositionEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.Input.TextCompositionEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemText">
+      <MemberSignature Language="C#" Value="public string SystemText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SystemText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TextCompositionEventArgs.SystemText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているシステムのテキストを取得、<see cref="T:System.Windows.Input.TextComposition" />イベント。</summary>
+        <value>このイベントに関連付けられたシステム テキストを含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TextCompositionEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたテキストの入力を取得、<see cref="T:System.Windows.Input.TextComposition" />イベント。</summary>
+        <value>このイベントに関連付けられている入力テキストを含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextComposition">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TextComposition TextComposition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.TextComposition TextComposition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TextCompositionEventArgs.TextComposition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TextComposition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.TextComposition" />に関連付けられている、<see cref="T:System.Windows.Input.TextComposition" />イベント。</summary>
+        <value>A<see cref="T:System.Windows.Input.TextComposition" />このイベントに関連付けられているテキストの構成を含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

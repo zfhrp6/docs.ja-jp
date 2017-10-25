@@ -1,0 +1,246 @@
+<Type Name="EncryptionMethod" FullName="System.Security.Cryptography.Xml.EncryptionMethod">
+  <TypeSignature Language="C#" Value="public class EncryptionMethod" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EncryptionMethod extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 暗号化に使用される暗号化アルゴリズムをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<EncryptionMethod>`タグでは、統一リソース識別子 (URI) を使用して、XML データの暗号化を解除するために使用する必要があります、暗号化アルゴリズムを識別します。  <xref:System.Security.Cryptography.Xml.EncryptionMethod>クラスによってカプセル化、 `<EncryptionMethod>` http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium の XML 暗号化の仕様で定義されているタグがあります。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptionMethod>に関連付けられている暗号化アルゴリズムを識別するクラス、<xref:System.Security.Cryptography.Xml.EncryptedData>要素または<xref:System.Security.Cryptography.Xml.EncryptedKey>要素。  
+  
+ Http://www.w3.org/TR/xmlenc-core/ にある World Wide Web Consortium の XML 暗号化の仕様で定義されている URI 識別子の 1 つを使用します。  URI 識別子はすべての静的フィールドとしてアクセスできるように、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する単純なユーティリティ クラスを作成する方法を示しています、 <xref:System.Security.Cryptography.TripleDES> XML ドキュメントを暗号化するためのアルゴリズムです。  
+  
+ [!code-cpp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptionMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionMethod.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、<xref:System.Security.Cryptography.Xml.EncryptionMethod>クラス、Uniform Resource Identifier () の暗号化アルゴリズムを指定することがない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptionMethod (string strAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string strAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionMethod.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strAlgorithm">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />アルゴリズム (Uniform Resource Identifier) を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、<xref:System.Security.Cryptography.Xml.EncryptionMethod>クラス暗号化アルゴリズムの URI を使用します。  
+  
+ Http://www.w3.org/TR/xmlenc-core/ にある World Wide Web Consortium の XML 暗号化の仕様で定義されている URI 識別子の 1 つを使用します。  URI 識別子はすべての静的フィールドとしてアクセスできるように、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する単純なユーティリティ クラスを作成する方法を示しています、 <xref:System.Security.Cryptography.TripleDES> XML ドキュメントを暗号化するためのアルゴリズムです。  
+  
+ [!code-cpp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionMethod.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xml.XmlElement" />のインスタンスをカプセル化するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />クラスです。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />のインスタンスをカプセル化するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionMethod.GetXml%2A>メソッドの形式を返します、`<EncryptionMethod>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyAlgorithm">
+      <MemberSignature Language="C#" Value="public string KeyAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptionMethod.KeyAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Uniform Resource Identifier () を XML 暗号化に使用するアルゴリズムについて説明します。</summary>
+        <value>識別子 URI (Uniform Resource) XML 暗号化に使用するアルゴリズムを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionMethod.KeyAlgorithm%2A>プロパティには、Uniform Resource Identifier () のいずれかに関連付けられているデータの暗号化に使用される暗号化アルゴリズムがについて説明します、<xref:System.Security.Cryptography.Xml.EncryptedData>要素または<xref:System.Security.Cryptography.Xml.EncryptedKey>要素。  
+  
+ Http://www.w3.org/TR/xmlenc-core/ にある World Wide Web Consortium の XML 暗号化の仕様で定義されている URI 識別子の 1 つを使用します。  URI 識別子はすべての静的フィールドとしてアクセスできるように、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public int KeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptionMethod.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 暗号化に使用するアルゴリズムのキーのサイズを設定します。</summary>
+        <value>アルゴリズムのキー サイズ、XML の暗号化に使用されるビット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionMethod.KeySize%2A>プロパティには、いずれかに関連付けられているデータの暗号化に使用される暗号化アルゴリズムのキーのサイズがについて説明します、<xref:System.Security.Cryptography.Xml.EncryptedData>要素または<xref:System.Security.Cryptography.Xml.EncryptedKey>要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Security.Cryptography.Xml.EncryptionMethod.KeySize" />プロパティが 0 より小さい値に設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionMethod.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />解析するオブジェクト。</param>
+        <summary>指定した解析<see cref="T:System.Xml.XmlElement" />オブジェクトし、の内部状態を構成、<see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />と一致するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionMethod.LoadXml%2A>メソッドは、構成、<xref:System.Security.Cryptography.Xml.EncryptionMethod>の状態と一致するオブジェクト、<xref:System.Xml.XmlElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">表されるキーのサイズ、<paramref name="value" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,228 @@
+<Type Name="ConnectionPoint" FullName="System.Workflow.ComponentModel.Design.ConnectionPoint">
+  <TypeSignature Language="C#" Value="public class ConnectionPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionPoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイス上のアクティビティ デザイナーの外縁に表示されるコネクション ポイントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ コネクション ポイントは、アクティビティ デザイナー画面の端に小さい四角形で表示されます。 このポイントは、コネクタで 2 つのアクティビティ デザイナーを接続するためのアクティビティ デザイナー上の起点として使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionPoint (System.Workflow.ComponentModel.Design.ActivityDesigner associatedDesigner, System.Workflow.ComponentModel.Design.DesignerEdges designerEdge, int connectionIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner associatedDesigner, valuetype System.Workflow.ComponentModel.Design.DesignerEdges designerEdge, int32 connectionIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectionPoint.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Workflow.ComponentModel.Design.DesignerEdges,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="associatedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="designerEdge" Type="System.Workflow.ComponentModel.Design.DesignerEdges" />
+        <Parameter Name="connectionIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="associatedDesigner">コネクション ポイントが属する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="designerEdge">コネクション ポイントを配置するアクティビティ デザイナー上の位置を指定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerEdges" /> 列挙値。</param>
+        <param name="connectionIndex">現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> のインデックス。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> 列挙値、および整数を使用して、<see cref="T:System.Workflow.ComponentModel.Design.DesignerEdges" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="connectionIndex" /> が、<paramref name="associatedDesigner" /> のコネクション ポイントの数以上です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="associatedDesigner" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesigner AssociatedDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesigner AssociatedDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectionPoint.AssociatedDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクション ポイントが属するアクティビティ デザイナーを取得します。</summary>
+        <value>コネクション ポイントが属する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectionPoint.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクション ポイントの外接する四角形を取得します。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" /> の境界となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionEdge">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.DesignerEdges ConnectionEdge { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerEdges ConnectionEdge" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectionPoint.ConnectionEdge" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクション ポイントが表示されるデザイナーの端を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerEdges" /> が表示されるアクティビティ デザイナーの端を指定する <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionIndex">
+      <MemberSignature Language="C#" Value="public int ConnectionIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectionPoint.ConnectionIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> のコネクション インデックスを取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> のコネクション インデックスを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ デザイナーは、<xref:System.Workflow.ComponentModel.Design.ConnectionPoint.ConnectionIndex%2A> を使用することにより、<xref:System.Workflow.ComponentModel.Design.ConnectionPoint> によって返される読み取り専用の <xref:System.Drawing.Point> コレクション内の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.GetConnections%2A> を識別できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectionPoint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> と比較するオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> が、指定したオブジェクトと等しいかどうかを示す値を返します。</summary>
+        <returns>
+          現在の <see langword="true" /> と <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> が等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectionPoint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> のハッシュ コードを返します。</summary>
+        <returns><see cref="P:System.Workflow.ComponentModel.Design.ConnectionPoint.ConnectionIndex" /> 整数または <see cref="P:System.Workflow.ComponentModel.Design.ConnectionPoint.AssociatedDesigner" /> を介して使用可能なデザイナーによって生成されたハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Point Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectionPoint.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連 <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> 上の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> の論理位置を表すポイントを取得します。</summary>
+        <value>関連 <see cref="T:System.Drawing.Point" /> 上の <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の論理位置を表す <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="public void OnPaint (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, bool drawHighlighted);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnPaint(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, bool drawHighlighted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectionPoint.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+        <Parameter Name="drawHighlighted" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />。</param>
+        <param name="drawHighlighted">
+          強調表示されたコネクション ポイントを描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>アクティビティ デザイナー画面に <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> をレンダリングするために必要なすべてのタスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

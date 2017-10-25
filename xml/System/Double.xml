@@ -1,0 +1,3081 @@
+<Type Name="Double" FullName="System.Double">
+  <TypeSignature Language="C#" Value="public struct Double : IComparable, IComparable&lt;double&gt;, IConvertible, IEquatable&lt;double&gt;, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit float64 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;float64&gt;, class System.IConvertible, class System.IEquatable`1&lt;float64&gt;, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Double" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.Double&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Double&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>倍精度浮動小数点数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double>値型は、負 1.79769313486232 e 308 から 1.79769313486232 e 308、だけでなく、正または負の値を 0 に至るまでの値を倍精度の 64 ビットの数値を表します<xref:System.Double.PositiveInfinity>、 <xref:System.Double.NegativeInfinity>、および非数 (<xref:System.Double.NaN>)。 惑星または銀河系間の距離) など、非常に大規模なまたは非常に小さい (キロで物質の分子質量) とする多くの場合がないこと (などからの距離地球別太陽系)、正確な値を表すものでは、 <xref:System.Double> IEC 60559: 1989 (IEEE 754) バイナリ浮動小数点算術演算子の標準に準拠している型。  
+  
+ このトピックは、次のセクションで構成されています。  
+  
+-   [精度の浮動小数点表現](#Precision)  
+  
+-   [等価性テスト](#Equality)  
+  
+-   [浮動小数点値、および例外](#Exceptions)  
+  
+-   [型変換と Double 構造体](#Conversions)  
+  
+-   [浮動小数点の機能](#Functionality)  
+  
+<a name="Precision"></a>   
+## <a name="floating-point-representation-and-precision"></a>精度の浮動小数点表現  
+ <xref:System.Double>データ型は、次の表に示すように、64 ビットのバイナリ形式で倍精度浮動小数点値を格納します。  
+  
+|パーツ|ビット|  
+|----------|----------|  
+|有効桁または仮数部|0-51|  
+|指数|52-62|  
+|記号 (0 1、正の数値を = = 負の値)|63|  
+  
+ 小数がいくつかの小数部の値を正確に表すことができないと同様 (1/3 などまたは<xref:System.Math.PI?displayProperty=nameWithType>)、バイナリの小数部がいくつかの小数部の値を表すことができません。 たとえば、1/10、小数として .1 のどちらで正確に表されるは、無限にパターン「0011」繰り返しでのバイナリの分数として.001100110011 で表されます。 この場合、浮動小数点値は、それが表す数の不正確な表現を提供します。 元の浮動小数点値で追加の数学演算を実行する多くの場合は、有効桁数のされていないことを向上させる傾向があります。 たとえば、.1 のどちらで 10 を乗算した結果を比較し、.1 のどちらに .1 のどちらを 9 回追加すると、お表示をさらに、8 個より多くの操作が関係しているがあるためは、精度の低い結果を作成しました。 このような違いは、2 つを表示する場合にのみ確認することに注意してください<xref:System.Double>"R"を使用して値[標準数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)、どのかどうか、必要に応じて表示すべて 17 桁でサポートされている、<xref:System.Double>型です。  
+  
+ [!code-csharp[System.Double.Structure#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/representation1.cs#3)]
+ [!code-vb[System.Double.Structure#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/representation1.vb#3)]  
+  
+ いくつかの数字は、バイナリ値の小数部として正確に表すことはできません、ために、浮動小数点数には、おおよその実数のみことができます。  
+  
+ すべての浮動小数点数も数が限定されて有効桁数の浮動小数点値が実数を概算するどれだけ正確にも決定します。   A<xref:System.Double>値の有効桁数、最大で 15 の 10 進数字は最大 17 桁が内部的に保持されています。 つまり、浮動小数点演算が、浮動小数点を変更する有効桁数をれない可能性があります値をポイントします。 具体的な例を次に示します。 非常に大きなの浮動小数点値を定義し、追加の製品<xref:System.Double.Epsilon?displayProperty=nameWithType>と 1,000兆にします。 ただし、製品が元の浮動小数点値を変更するのには小さすぎます。 一方、製品の最上位桁は 1、その最下位の桁が 1/10、1/100、1/1000、<sup>-312</sup>です。  
+  
+ [!code-csharp[System.Double.Structure#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/representation2.cs#4)]
+ [!code-vb[System.Double.Structure#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/representation2.vb#4)]  
+  
+ 浮動小数点数の制限された有効桁数には、いくつかのような影響があります。  
+  
+-   有効桁数が異なるためされません比較の特定の有効桁数で等しく見える 2 つの浮動小数点数が等しい場合があります。 次の例で、一連の数値を加算し、その合計が、予想される合計と比較します。 2 つの値は同じであるへの呼び出しに見えますが、`Equals`メソッドであることを示します。  
+  
+     [!code-csharp[System.Double.Structure#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/precisionlist3.cs#6)]
+     [!code-vb[System.Double.Structure#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/precisionlist3.vb#6)]  
+  
+     書式項目を変更する場合、<xref:System.Console.WriteLine%28System.String%2CSystem.Object%2CSystem.Object%29?displayProperty=nameWithType>ステートメントから`{0}`と`{1}`に`{0:R}`と`{1:R}`、2 つのすべての有効桁数を表示する<xref:System.Double>値、2 つの値が等しくないこと精度が失われるのため、追加操作中には明らかです。 呼び出してこの場合、この問題を解決できます、<xref:System.Math.Round%28System.Double%2CSystem.Int32%29?displayProperty=nameWithType>を丸めるにメソッド、<xref:System.Double>比較を実行する前に必要な有効桁数の値。  
+  
+-   浮動小数点数を使用する数値演算または比較演算可能性がありますいない場合、結果同じ 10 進数を使用すると、バイナリ浮動小数点数が 10 進数と等しくないためです。 前の例では、.1 のどちらで 10 を乗算し、.1 の時間を追加することの結果を表示することによってこれを示します。  
+  
+     小数部の値を持つ数値演算で精度が重要なときに行うこともできます、<xref:System.Decimal>ではなく、<xref:System.Double>型です。 場合の範囲外の整数の値を持つ数値演算の精度、<xref:System.Int64>または<xref:System.UInt64>使用の種類は重要では、<xref:System.Numerics.BigInteger>型です。  
+  
+-   値には、ラウンドト リップしません浮動小数点数が含まれている場合の可能性があります。 操作を元の浮動小数点数を別の形式に変換する、逆の操作が浮動小数点数に変換後のフォームを変換し、最終の浮動小数点数が元の浮動小数点数と等しくない場合、値はラウンドト リップをいいます。 ラウンド トリップは、1 つまたは複数の最下位の桁が失われたまたは変換で変更されるために失敗する可能性があります。 次の例では、次の 3 つ<xref:System.Double>値が文字列に変換され、ファイルに保存します。 出力では、ただし、同じ値が表示される場合もは復元された値が元の値に等しくありません。  
+  
+     [!code-csharp[System.Double.Structure#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/precisionlist4.cs#7)]
+     [!code-vb[System.Double.Structure#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/precisionlist4.vb#7)]  
+  
+     この場合、値を指定できますが正常に往復"G17"を使用して、[標準数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)の完全な精度を保持するために<xref:System.Double>値は、次の例のようにします。  
+  
+     [!code-csharp[System.Double.Structure#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/precisionlist5.cs#8)]
+     [!code-vb[System.Double.Structure#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/precisionlist5.vb#8)]  
+
+   > [!IMPORTANT]
+   >  使用すると、<xref:System.Double>値、場合によっては、"R"書式指定子では、元の値をラウンドト リップに成功するに失敗します。 いることを確認する<xref:System.Double>値のラウンドト リップに成功が"G17"書式指定子を使用します。
+
+-   <xref:System.Single>値があるよりも精度が低い<xref:System.Double>値。 A<xref:System.Single>見かけ上と同じに変換される値<xref:System.Double>多くの場合と等しくない、<xref:System.Double>有効桁数の違いのための値。 次の例では、同一の除算演算の結果が割り当てられている、<xref:System.Double>と<xref:System.Single>値。 後に、<xref:System.Single>に値をキャスト、 <xref:System.Double>、2 つの値の比較は、両者が等しくないことを示しています。  
+  
+     [!code-csharp[System.Double.Structure#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/precisionlist1.cs#5)]
+     [!code-vb[System.Double.Structure#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/precisionlist1.vb#5)]  
+  
+     この問題を避けるためには、いずれかの操作を使用して、<xref:System.Double>の代わりに、<xref:System.Single>データ型、またはを使用して、<xref:System.Math.Round%2A>メソッドの両方の値が同一の有効桁数を含めるようにします。  
+  
+ さらに、算術演算子および代入操作の結果<xref:System.Double>値によって異なる場合が若干プラットフォームの有効桁数が失われるのため、<xref:System.Double>型です。 たとえば、リテラルの割り当ての結果<xref:System.Double>32 ビットおよび 64 ビット バージョンの .NET Framework での値が異なる場合があります。 次の例を示す場合に違いがリテラル値 - 4.42330604244772E-305 と変数の値がある - 4.42330604244772E-に割り当てられている 305、<xref:System.Double>変数。 なおの結果、<xref:System.Double.Parse%28System.String%29>メソッドでもが低下しない有効桁数の損失からです。  
+  
+ [!code-csharp[System.Double.Class.Precision#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.class.precision/cs/precision1.cs#1)]
+ [!code-vb[System.Double.Class.Precision#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.class.precision/vb/precision1.vb#1)]  
+  
+<a name="Equality"></a>   
+## <a name="testing-for-equality"></a>等価性テスト  
+ 等しいと見なされるに 2 つ<xref:System.Double>値が同一の値を表す必要があります。 ただし、有効桁数の値の間の違いのためか 1 つまたは両方の値によって精度が失われるのため、多くの場合は同じである必要な浮動小数点値を有効有効桁数が異なるのためと等しくなります。 その結果、呼び出し、<xref:System.Double.Equals%2A>呼び出しまたは 2 つの値が等しいかどうかを決定するメソッド、 <xref:System.Double.CompareTo%2A> 2 つの間の関係を決定するメソッド<xref:System.Double>値、多くの場合、予期しない結果を生成します。 これは、次の例で示した 2 つのことが明らかと等しくという<xref:System.Double>値が等しくないと、最初に 15 桁の精度、2 番目は 17 のため有効にします。  
+  
+ [!code-csharp[System.Double.Structure#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/comparison1.cs#9)]
+ [!code-vb[System.Double.Structure#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/comparison1.vb#9)]  
+  
+ 異なるコード パスをたどることと、多くの場合、さまざまな方法で操作する計算値を証明と等しくなります。 次の例では、1 つ<xref:System.Double>値は四角形、および元の値を復元する平方根を計算し、します。 1 秒あたり<xref:System.Double>は 3.51 が乗算され、前に、結果の平方根が元の値を復元する 3.51 で割った値を二乗します。 2 つの値が同一に見えますへの呼び出し、<xref:System.Double.Equals%28System.Double%29>メソッドでは、両者が等しくないことを示します。 "R"標準書式指定文字列を使用して各 double 型の値のすべての有効桁数を表示する結果文字列を取得することを示します 2 番目の値.0000000000001 最初よりも小さいです。  
+  
+ [!code-csharp[System.Double.Structure#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/comparison2.cs#10)]
+ [!code-vb[System.Double.Structure#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/comparison2.vb#10)]  
+  
+ 精度の損失が比較の結果に影響する可能性がある場合、呼び出し元に、次の方法のいずれかの採用できます、<xref:System.Double.Equals%2A>または<xref:System.Double.CompareTo%2A>メソッド。  
+  
+-   呼び出す、<xref:System.Math.Round%2A?displayProperty=nameWithType>メソッドを両方の値が同一の有効桁数を含めることを確認してください。 次の例では、このアプローチを使用して、2 つの小数部の値が等しいようにする前の例を変更します。  
+  
+     [!code-csharp[System.Double.Structure#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/comparison3.cs#11)]
+     [!code-vb[System.Double.Structure#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/comparison3.vb#11)]  
+  
+     ただし、精度の問題が引き続き中間値の丸め処理に適用されることに注意してください。 詳細については、<xref:System.Math.Round%28System.Double%2CSystem.Int32%2CSystem.MidpointRounding%29?displayProperty=nameWithType> メソッドを参照してください。  
+  
+-   おおよその等価性テストで等値ではなくです。 か絶対パスを定義することが必要量を 2 つの値は異なるが、引き続きに等しいか、または、小さい方の値が大きい方の値から分岐できます相対的な時間を定義します。  
+  
+    > [!WARNING]
+    >  <xref:System.Double.Epsilon?displayProperty=nameWithType>2 つの間の距離の絶対的な測定値としては使用<xref:System.Double>等しいかどうかをテストするときの値します。  ただし、<xref:System.Double.Epsilon?displayProperty=nameWithType>追加、またはから減算できる最小有効値を測定、<xref:System.Double>値が 0 です。 ほとんどの正の数および負<xref:System.Double>値、値の<xref:System.Double.Epsilon?displayProperty=nameWithType>が小さすぎてを検出します。 したがって、ゼロ値、お勧めしませんの等価性テストで使用します。  
+  
+     次の例では、後者のアプローチを使用して、定義、`IsApproximatelyEqual`相対的な 2 つの値の差をテストするメソッド。 呼び出しの結果を対比させても、`IsApproximatelyEqual`メソッドおよび<xref:System.Double.Equals%28System.Double%29>メソッドです。  
+  
+     [!code-csharp[System.Double.Structure#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/comparison4.cs#12)]
+     [!code-vb[System.Double.Structure#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/comparison4.vb#12)]  
+  
+<a name="Exceptions"></a>   
+## <a name="floating-point-values-and-exceptions"></a>浮動小数点値、および例外  
+ 整数型の 0 によるオーバーフローや除算などの無効な操作の場合に例外がスローされる操作とは異なり浮動小数点値を持つ操作は例外をスローしません。 代わりに、例外的な状況は、浮動小数点演算の結果は 0、正の無限大、負の無限大、または非数 (NaN)。  
+  
+-   浮動小数点演算の結果が小さすぎる場合、変換先形式の結果は 0 です。 これは、次の例のように、2 つの非常に小さい数値を乗算するときに発生します。  
+  
+     [!code-csharp[System.Double.Structure#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/exceptional1.cs#1)]
+     [!code-vb[System.Double.Structure#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/exceptional1.vb#1)]  
+  
+-   浮動小数点演算の結果の大きさが、変換先形式の範囲を超えている場合、操作の結果は<xref:System.Double.PositiveInfinity>または<xref:System.Double.NegativeInfinity>、必要に応じて、結果の符号にします。 オーバーフローが発生する操作の結果<xref:System.Double.MaxValue?displayProperty=nameWithType>は<xref:System.Double.PositiveInfinity>、およびオーバーフローが発生する操作の結果<xref:System.Double.MinValue?displayProperty=nameWithType>は<xref:System.Double.NegativeInfinity>次の例を示します。  
+  
+     [!code-csharp[System.Double.Structure#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/exceptional2.cs#2)]
+     [!code-vb[System.Double.Structure#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/exceptional2.vb#2)]  
+  
+     <xref:System.Double.PositiveInfinity>正の被除数と 0 による除算の結果もと<xref:System.Double.NegativeInfinity>被除数を負の値に 0 による除算の結果します。  
+  
+-   浮動小数点演算が有効でない場合、操作の結果は<xref:System.Double.NaN>します。 たとえば、<xref:System.Double.NaN>次の操作の結果します。  
+  
+    -   0 による除算、被除数と 0 です。 いずれかで結果がゼロで除算の他のケースに注意してください<xref:System.Double.PositiveInfinity>または<xref:System.Double.NegativeInfinity>です。  
+  
+-   無効な入力と浮動小数点演算には。 たとえば、呼び出し、<xref:System.Math.Sqrt%2A?displayProperty=nameWithType>メソッドに負の値を返します<xref:System.Double.NaN>呼び出すと、<xref:System.Math.Acos%2A?displayProperty=nameWithType>よりも大きい複数の以下の負のいずれかの値を持つメソッドです。  
+  
+-   値がある引数を持つすべての操作<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="Conversions"></a>   
+## <a name="type-conversions-and-the-double-structure"></a>型変換と Double 構造体  
+ <xref:System.Double>構造体は、明示的または暗黙的な変換演算子が定義されていません; 代わりに、変換がコンパイラによって実装されます。  
+  
+ 任意のプリミティブ数値型に値の変換、<xref:System.Double>拡大変換したがってしませんまたはされていない明示的なキャスト演算子を必要と、コンパイラで明示的に必要な場合を除き、変換メソッドを呼び出します。 たとえば、c# コンパイラは、キャスト演算子からの変換<xref:System.Decimal>に<xref:System.Double>Visual Basic コンパイラではありませんが、します。 次の例は、他のプリミティブ数値型に最小値または最大値を変換、<xref:System.Double>です。  
+  
+ [!code-csharp[System.Double.Structure#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/convert1.cs#20)]
+ [!code-vb[System.Double.Structure#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/convert1.vb#20)]  
+  
+ さらに、<xref:System.Single>値<xref:System.Single.NaN?displayProperty=nameWithType>、 <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>、および<xref:System.Single.NegativeInfinity?displayProperty=nameWithType>を変換<xref:System.Double.NaN?displayProperty=nameWithType>、 <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、および<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、それぞれします。  
+  
+ 注意するいくつかの数値型の値の変換、<xref:System.Double>値は、有効桁数の損失を伴うことができます。 例を示しています、精度の損失を実行できるように変換するときに<xref:System.Decimal>、 <xref:System.Int64>、 <xref:System.Single>、および<xref:System.UInt64>値<xref:System.Double>値。  
+  
+ 変換、<xref:System.Double>値を他のプリミティブ数値データ型の値に縮小変換し、でキャスト演算子 (C# の場合)、(Visual Basic の場合) の変換メソッドの呼び出しが必要な<xref:System.Convert>メソッドです。 対象の種類が定義されている対象のデータ型の範囲外にある値`MinValue`と`MaxValue`プロパティは、次の表に示すようにどおりに動作します。  
+  
+|変換後の型|結果|  
+|-----------------|------------|  
+|任意の整数型|<xref:System.OverflowException> Checked コンテキストでは、変換が発生した場合に例外です。<br /><br /> Unchecked コンテキスト (c# では既定値) に変換する場合は、変換操作が成功しますが、値がオーバーフローです。|  
+|<xref:System.Decimal>|<xref:System.OverflowException>例外。|  
+|<xref:System.Single>|<xref:System.Single.NegativeInfinity?displayProperty=nameWithType>負の値。<br /><br /> <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>正の値。|  
+  
+ さらに、 <xref:System.Double.NaN?displayProperty=nameWithType>、 <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、および<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>スロー、<xref:System.OverflowException>は checked コンテキストですがこれらの値のオーバーフロー unchecked コンテキストで整数に変換されるので整数に変換します。 変換<xref:System.Decimal>、常にスロー、<xref:System.OverflowException>です。 変換<xref:System.Single>には変換<xref:System.Single.NaN?displayProperty=nameWithType>、 <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>、および<xref:System.Single.NegativeInfinity?displayProperty=nameWithType>、それぞれします。  
+  
+ 注への変換から発生する可能性があります精度の損失、<xref:System.Double>を別の数値型の値。 整数以外の変換の場合<xref:System.Double>値、例からの出力に示す、小数部が失われます、<xref:System.Double>値が (Visual Basic の場合) のように丸められますか (のように C# の場合) に切り捨てられます。 変換<xref:System.Decimal>と<xref:System.Single>、値、<xref:System.Double>値では、対象のデータ型では、正確に表現はありません。  
+  
+ 次の例の数の変換<xref:System.Double>値を他のいくつかの数値型にします。 Visual Basic (既定) と C# の場合は checked コンテキストで発生する、変換 (のため、[チェック](~/docs/csharp/language-reference/keywords/checked.md)キーワード) です。 例の出力両方チェック変換の結果を示しています unchecked コンテキスト。 コンパイルすると Visual Basic で unchecked コンテキストでの変換を行うことができます、`/removeintchecks+`コンパイラ スイッチと c# コメント アウトすることによって、`checked`ステートメントです。  
+  
+ [!code-csharp[System.Double.Structure#21](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/convert2.cs#21)]
+ [!code-vb[System.Double.Structure#21](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/convert2.vb#21)]  
+  
+ 数値型の変換の詳細については、次を参照してください。 [.NET Framework における型変換](~/docs/standard/base-types/type-conversion.md)と[型変換の表](~/docs/standard/base-types/conversion-tables.md)です。  
+  
+<a name="Functionality"></a>   
+## <a name="floating-point-functionality"></a>浮動小数点の機能  
+ <xref:System.Double>構造および関連する型は、次の領域で操作を実行するメソッドを提供します。  
+  
+-   **値の比較**です。 呼び出すことができます、<xref:System.Double.Equals%2A>メソッドを 2 つあるかどうかを判断<xref:System.Double>値が等しいか、または<xref:System.Double.CompareTo%2A>メソッドを 2 つの値の間の関係を決定します。  
+  
+     <xref:System.Double>構造体には、比較演算子の完全なセットもサポートしています。 たとえば、等しいかどうかをテストまたは 1 つの値がより大きいかに等しいかどうかを判断できます。 オペランドの 1 つは、数値型以外の場合、<xref:System.Double>に変換されます、<xref:System.Double>比較を実行する前にします。  
+  
+    > [!WARNING]
+    >  有効桁数が異なるのため 2 つ<xref:System.Double>と等しくなるはずの値にすることがすると、比較の結果に影響します。 参照してください、[等価性テスト](#Equality)の詳細については、比較する 2 つのセクション<xref:System.Double>値。  
+  
+     呼び出すことも、 <xref:System.Double.IsNaN%2A>、 <xref:System.Double.IsInfinity%2A>、 <xref:System.Double.IsPositiveInfinity%2A>、および<xref:System.Double.IsNegativeInfinity%2A>これらの特殊な値をテストするメソッド。  
+  
+-   **数値演算**です。 加算、減算、乗算、および除算などの一般的な算術演算はではなく、言語コンパイラと共通中間言語 (CIL) の手順については、によって実装されます<xref:System.Double>メソッドです。 数学的演算のオペランドの 1 つは、数値型以外の場合、<xref:System.Double>に変換されます、<xref:System.Double>操作を実行する前にします。 操作の結果はまた、<xref:System.Double>値。  
+  
+     呼び出して他の算術演算を実行できる`static`(`Shared` Visual Basic で) 内のメソッド、<xref:System.Math?displayProperty=nameWithType>クラスです。 演算に一般的に使用されるその他のメソッドが含まれています (など<xref:System.Math.Abs%2A?displayProperty=nameWithType>、 <xref:System.Math.Sign%2A?displayProperty=nameWithType>、および<xref:System.Math.Sqrt%2A?displayProperty=nameWithType>)、geometry (など<xref:System.Math.Cos%2A?displayProperty=nameWithType>と<xref:System.Math.Sin%2A?displayProperty=nameWithType>)、および微積分 (など<xref:System.Math.Log%2A?displayProperty=nameWithType>)。  
+  
+     内の個々 のビットを操作することも、<xref:System.Double>値。 <xref:System.BitConverter.DoubleToInt64Bits%2A?displayProperty=nameWithType>メソッドが保持されます、<xref:System.Double>値ビット パターンを 64 ビットの整数。 <xref:System.BitConverter.GetBytes%28System.Double%29?displayProperty=nameWithType>メソッドは、バイト配列で、ビット パターンを返します。  
+  
+-   **丸め処理を行う**です。 丸め処理はよく使用手法として浮動小数点表現と精度の問題によって発生する値の間の相違点の影響を軽減します。 丸めることができます、<xref:System.Double>値を呼び出して、<xref:System.Math.Round%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   **書式設定**です。 変換することができます、<xref:System.Double>を呼び出すことによって、文字列形式の値、<xref:System.Double.ToString%2A>メソッドまたは複合書式指定機能を使用しています。 書式指定文字列で浮動小数点値の文字列形式を制御する方法については、次を参照してください。、[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)トピックです。  
+  
+-   **文字列の解析**です。 浮動小数点値の文字列形式に変換することができます、<xref:System.Double>を呼び出して、値、<xref:System.Double.Parse%2A>または<xref:System.Double.TryParse%2A>メソッドです。 解析操作が失敗した場合、<xref:System.Double.Parse%2A>メソッドにより、例外がスローされるため、一方、<xref:System.Double.TryParse%2A>メソッドを返します。`false`です。  
+  
+-   **変換の入力**です。 <xref:System.Double>構造体の明示的なインターフェイス実装を提供する、 <xref:System.IConvertible> 2 つの標準的な .NET Framework データ型間の変換をサポートするインターフェイスです。 言語コンパイラがすべて他の標準的な数値型に値の暗黙的な変換をサポートも<xref:System.Double>値。 標準的な数値型の値への変換、<xref:System.Double>拡大変換は、キャスト演算子または変換メソッドのユーザーは必要ありません  
+  
+     ただしへの変換<xref:System.Int64>と<xref:System.Single>値は、有効桁数の損失を伴うことができます。 次の表は、これらの型の有効桁数の違いを示します。  
+  
+    |型|最大有効桁数|内部の有効桁数|  
+    |----------|-----------------------|------------------------|  
+    |<xref:System.Double>|15|17|  
+    |<xref:System.Int64>|19 桁|19 桁|  
+    |<xref:System.Single>|小数点以下 7 桁|9 桁の 10 進数字|  
+  
+     精度の問題は、最もよく影響<xref:System.Single>値に変換される<xref:System.Double>値。 次の例では、同じ除算操作によって生成される 2 つの値が等しくないため、値のいずれかの値に変換された単精度浮動小数点、<xref:System.Double>です。  
+  
+     [!code-csharp[System.Double.Structure#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.structure/cs/representation1.cs#3)]
+     [!code-vb[System.Double.Structure#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.structure/vb/representation1.vb#3)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double>:。  
+  
+ [!code-cpp[Double Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#1)]
+ [!code-csharp[Double Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#1)]
+ [!code-vb[Double Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この種類のすべてのメンバーでは、スレッド セーフです。 インスタンスの状態を変更する表示されるメンバーは、新しい値で初期化された新しいインスタンスを実際に返します。 として、他の種類と読み取りと書き込みをこの型のインスタンスを含む共有変数を保護する必要があるスレッド セーフを確保するロックによってです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.CompareTo(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象の倍精度浮動小数点数。</param>
+        <summary>このインスタンスと指定した倍精度浮動小数点数を比較し、このインスタンスの値が指定した倍精度浮動小数点数の値よりも小さいか、同じか、または大きいかを示す整数を返します。</summary>
+        <returns>このインスタンスと <paramref name="value" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ または  
+  
+ このインスタンスが数値ではありません (<see cref="F:System.Double.NaN" />) および<paramref name="value" />番号です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ または  
+  
+ この両方のインスタンスと<paramref name="value" />数値ではありません (<see cref="F:System.Double.NaN" />)、 <see cref="F:System.Double.PositiveInfinity" />、または<see cref="F:System.Double.NegativeInfinity" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ または  
+  
+ このインスタンスは数値と<paramref name="value" />数値ではありません (<see cref="F:System.Double.NaN" />)。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を等価と見なされるのと同じにする必要があります。 浮動小数点値は、複数の数値演算に依存しているときに特にの有効桁数が失われると、それらの値、最小有効数字を除くとほぼ同じにするには共通です。 このため、戻り値の<xref:System.Double.CompareTo%2A>もメソッドがこのことにより意外見える可能性があります。 など、同じ値で除算の後に特定の値で乗算では、元の値を生成する必要があります。 次の例では、ただし、計算値がわかりました元の値より大きくなければなりません。 "R"を使用して、2 つの値のすべての有効桁数を示す[標準数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)計算値が、その有効桁数の元の値と異なることを示します。 このような比較を処理する方法については、「解説」セクションを参照してください、<xref:System.Double.Equals%28System.Double%29>メソッドです。  
+  
+ [!code-csharp[System.Double.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.compareto/cs/compareto2.cs#1)]
+ [!code-vb[System.Double.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.compareto/vb/compareto2.vb#1)]  
+  
+ このメソッドを実装する、<xref:System.IComparable%601?displayProperty=nameWithType>インターフェイスし、実行よりもわずかに向上、<xref:System.Double.CompareTo%2A?displayProperty=nameWithType>メソッドに変換があるないため、`value`オブジェクトへのパラメーターです。  
+  
+ なお、値があるオブジェクトが<xref:System.Double.NaN>値がある別のオブジェクトと等しくないと見なされます<xref:System.Double.NaN>(場合によってはそれ自体)、<xref:System.IComparable%601>インターフェイスでは、する必要があります`A.CompareTo(A)`は 0 を返します。  
+  
+## <a name="widening-conversions"></a>拡大変換  
+ プログラミング言語に応じてコードに考えられる場合があります、<xref:System.Double.CompareTo%2A>メソッドのパラメーターの型のビット数が少ないがここではインスタンスの型よりもします。 これには一部のプログラミング言語は、ビット数のインスタンスと型としてパラメーターを表す暗黙の拡大変換を実行するため。  
+  
+ たとえば、インスタンスの型が<xref:System.Double>パラメーターの型と<xref:System.Int32>です。 Microsoft c# コンパイラは、パラメーターの値を表す命令を生成、<xref:System.Double>オブジェクトを生成、<xref:System.Double.CompareTo%28System.Double%29?displayProperty=nameWithType>拡張パラメーターの形式をおよびインスタンスの値を比較するメソッド。  
+  
+ コンパイラが数値型の暗黙の拡大変換を実行するプログラミング言語のドキュメントを参照してください。 詳細については、次を参照してください。、[型変換の表](~/docs/standard/base-types/conversion-tables.md)トピックです。  
+  
+## <a name="precision-in-comparisons"></a>比較では有効桁数  
+ 文書化されている有効桁数を超える浮動小数点数の有効桁数は、実装と .NET Framework のバージョンに固有です。 その結果、数値の内部表現の有効桁数が変わる可能性があるため、.NET Framework のバージョン間で 2 つの数値の比較が変化します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますジェネリックと非ジェネリック バージョンの<xref:System.Double.CompareTo%2A>いくつかの値と参照型のメソッドです。  
+  
+ [!code-cpp[T.CompareTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/T.CompareTo/CPP/cat.cpp#1)]
+ [!code-csharp[T.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/T.CompareTo/CS/cat.cs#1)]
+ [!code-vb[T.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/T.CompareTo/VB/cat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスと指定したオブジェクトを比較し、このインスタンスの値が指定したオブジェクトの値よりも小さいか、同じか、または大きいかを示す整数を返します。</summary>
+        <returns>このインスタンスと <paramref name="value" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>負の整数  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ または  
+  
+ このインスタンスが数値ではありません (<see cref="F:System.Double.NaN" />) および<paramref name="value" />番号です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ または  
+  
+ このインスタンスと<paramref name="value" />が両方とも<see langword="Double.NaN" />、 <see cref="F:System.Double.PositiveInfinity" />、または<see cref="F:System.Double.NegativeInfinity" /> </description> </item> <item> <term>正の整数  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ または  
+  
+ このインスタンスは数値と<paramref name="value" />数値ではありません (<see cref="F:System.Double.NaN" />)。  
+  
+ または  
+  
+ <paramref name="value" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターでなければなりません`null`またはのインスタンス`Double`です。 それ以外の場合、例外がスローされます。 任意のインスタンス<xref:System.Double>、その値に関係なくが大きいと見なされますより`null`です。  
+  
+ 値を等価と見なされるのと同じにする必要があります。 浮動小数点値は、複数の数値演算に依存しているときに特にの有効桁数が失われると、それらの値、最小有効数字を除くとほぼ同じにするには共通です。 このため、戻り値の<xref:System.Double.CompareTo%2A>もメソッドがこのことにより意外見える可能性があります。 など、同じ値で除算の後に特定の値で乗算では、元の値を生成する必要があります。 次の例では、ただし、計算値がわかりました元の値より大きくなければなりません。 "R"を使用して、2 つの値のすべての有効桁数を示す[標準数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)計算値が、その有効桁数の元の値と異なることを示します。 このような比較を処理する方法については、「解説」セクションを参照してください、<xref:System.Double.Equals%28System.Double%29>メソッドです。  
+  
+ [!code-csharp[System.Double.CompareTo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.compareto/cs/compareto3.cs#2)]
+ [!code-vb[System.Double.CompareTo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.compareto/vb/compareto3.vb#2)]  
+  
+ このメソッドがサポートするために実装されている、<xref:System.IComparable>インターフェイスです。 なおが、<xref:System.Double.NaN>別に等しいと見なされない<xref:System.Double.NaN>(場合によってはそれ自体)、<xref:System.IComparable>インターフェイスでは、する必要があります`A.CompareTo(A)`は 0 を返します。  
+  
+## <a name="precision-in-comparisons"></a>比較では有効桁数  
+ 文書化されている有効桁数を超える浮動小数点数の有効桁数は、実装と .NET Framework のバージョンに固有です。 その結果、数値の内部表現の有効桁数が変わる可能性があるため、.NET Framework のバージョン間で 2 つの数値の比較が変化します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています。`CompareTo`のコンテキストで`Double`です。  
+  
+ [!code-cpp[System.Double#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#16)]
+ [!code-csharp[System.Double#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#16)]
+ [!code-vb[System.Double#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Double" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Epsilon">
+      <MemberSignature Language="C#" Value="public const double Epsilon = 4.94065645841247E-324;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 Epsilon = float64(4.94065645841247E-324)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.Epsilon" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>4.94065645841247E-324</MemberValue>
+      <Docs>
+        <summary>ゼロより大きい最小の <see cref="T:System.Double" /> 値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Double.Epsilon>プロパティには、正の最小値が反映されます。<xref:System.Double>値が数値演算または比較の意味を持つときの値、<xref:System.Double>インスタンスは 0 です。 などの次のコードに示す 0 と<xref:System.Double.Epsilon>と見なされます、値が等しくない一方の値のゼロおよび半分<xref:System.Double.Epsilon>等しいと見なされます。  
+  
+ [!code-csharp[System.Double.Epsilon#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Epsilon/cs/epsilon.cs#5)]
+ [!code-vb[System.Double.Epsilon#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Epsilon/vb/epsilon.vb#5)]  
+  
+ フローティング具体的には、ポイント、記号、52 ビット仮数部または有効桁、および 11 ビット指数部の形式を構成します。 次の例に示す、0 は、-1022 の指数部を持ち、0 の仮数を示します。 <xref:System.Double.Epsilon>-1022 の指数部と 1 の仮数部があります。 つまり、<xref:System.Double.Epsilon>は正の最小<xref:System.Double>0 より大きい値し、最小有効値との最小の可能な増分値を表します、<xref:System.Double>が指数部が-1022 です。  
+  
+ [!code-csharp[System.Double.Epsilon#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Epsilon/cs/epsilon1.cs#6)]
+ [!code-vb[System.Double.Epsilon#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Epsilon/vb/epsilon1.vb#6)]  
+  
+ ただし、<xref:System.Double.Epsilon>プロパティは有効桁数の一般的なメジャーではありません、 <xref:System.Double> ; 入力のみに適用される<xref:System.Double>ゼロの値または-1022 の指数部を持つインスタンス。  
+  
+> [!NOTE]
+>  値、<xref:System.Double.Epsilon>プロパティが浮動小数点演算で丸め処理を行うための相対的なエラーの上限を表すマシン epsilon に相当します。  
+  
+ この定数の値が 4.94065645841247e-324。  
+  
+ 2 つの等しい浮動小数点数可能性がありますいない等しい有効桁数が異なるのためです。 たとえば、c# の式`(double)1/3 == (double)0.33333`が等しくない左側にある除算操作は、右側にある定数が指定した桁にのみ正確中に、最大有効桁数を必要があるためです。 2 つの浮動小数点数値を等しいと見なすかどうかを決定するカスタム アルゴリズムを作成する場合はお勧めしません、アルゴリズムの値を作成、<xref:System.Double.Epsilon>等しいと見なされるには、2 つの値の差の絶対値の許容を確立するために定数です。  (通常は、差分の余白が何回を超える<xref:System.Double.Epsilon>)。2 つの倍精度浮動小数点値を比較する方法については、次を参照してください。<xref:System.Double>と<xref:System.Double.Equals%28System.Double%29>です。  
+  
+## <a name="platform-notes"></a>プラットフォームに関する注意事項  
+ ARM システムでの値、<xref:System.Double.Epsilon>定数が小さすぎますを検出するため、これはゼロに相当します。 2.2250738585072014E に相当する代替 epsilon 値を定義できます-308 代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (double obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(float64 obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Equals(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.Double" /> オブジェクト。</param>
+        <summary>このインスタンスと指定した <see cref="T:System.Double" /> オブジェクトが同じ値を表しているかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> がこのインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IEquatable%601?displayProperty=nameWithType>インターフェイス、および実行よりもわずかに向上<xref:System.Double.Equals%2A>変換があるないため、`obj`オブジェクトへのパラメーターです。  
+  
+## <a name="widening-conversions"></a>拡大変換  
+ プログラミング言語に応じてコードに考えられる場合があります、<xref:System.Double.Equals%2A>メソッドのパラメーターの型のビット数が少ないがここではインスタンスの型よりもします。 これには一部のプログラミング言語は、ビット数のインスタンスと型としてパラメーターを表す暗黙の拡大変換を実行するため。  
+  
+ たとえば、インスタンスの型が<xref:System.Double>パラメーターの型と<xref:System.Int32>です。 Microsoft c# コンパイラは、パラメーターの値を表す命令を生成、<xref:System.Double>オブジェクトを生成、<xref:System.Double.Equals%28System.Double%29?displayProperty=nameWithType>拡張パラメーターの形式をおよびインスタンスの値を比較するメソッド。  
+  
+ コンパイラが数値型の暗黙の拡大変換を実行するプログラミング言語のドキュメントを参照してください。 詳細については、次を参照してください。、[型変換の表](~/docs/standard/base-types/conversion-tables.md)トピックです。  
+  
+## <a name="precision-in-comparisons"></a>比較では有効桁数  
+ <xref:System.Double.Equals%2A>メソッドは、2 つの等しい値を 2 つの値の有効桁数が異なるため等しくない場合があるため、注意して使用する必要があります。 次の例では、レポートを<xref:System.Double>.333333 を値と<xref:System.Double>1 を 3 で割ることによって返される値が等しくないです。  
+  
+ [!code-csharp[System.Double.Epsilon#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Epsilon/cs/Equals_25051.cs#1)]
+ [!code-vb[System.Double.Epsilon#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Epsilon/vb/Equals_25051.vb#1)]  
+  
+ 等しいかどうか比較するではなく 1 つの方法では、定義で 2 つの値の差の許容可能な相対余白 (などです。 値のいずれかの 001%)。 2 つの値の差の絶対値は、以下が許容範囲は、違いは、有効桁数の違いによりする可能性があります、したがって、値は等しいと考えられます。 次の例では、この手法を使用して、等しくと 1/3、2 つの比較<xref:System.Double>に等しくない場合に上記のコード例にある値。 この場合、値が等しいです。  
+  
+ [!code-csharp[System.Double.Epsilon#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Epsilon/cs/Equals_25051.cs#2)]
+ [!code-vb[System.Double.Epsilon#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Epsilon/vb/Equals_25051.vb#2)]  
+  
+> [!NOTE]
+>  <xref:System.Double.Epsilon>最小の式を定義、正の値の範囲は 0 に近いは、次の 2 つのような値の差の余白はより大きくなければなりません<xref:System.Double.Epsilon>です。 通常、回数を超えています<xref:System.Double.Epsilon>です。 このため、ことをお勧めするを使用しない<xref:System.Double.Epsilon>比較するときに<xref:System.Double>等しいかどうかの値。  
+  
+ 2 番目の手法では、絶対値でいくつかの 2 つの浮動小数点数の違いを比較する必要があります。 違いがその絶対値未満の場合は、数値が等しいです。 大きい場合は、数値が等しくありません。 1 つの代替手段では、適宜、絶対値を選択します。 これは問題がありますただし、相違点の許容の余白がの絶対値に依存しているため、<xref:System.Double>値。 2 番目の方法が浮動小数点形式のデザイン機能の活用: 2 つの浮動小数点値の整数表現の違いは、それらを分離する使用可能な浮動小数点値の数を示します。 0.0 の違いなど、および<xref:System.Double.Epsilon>ためには 1、<xref:System.Double.Epsilon>は最小の表現可能な値を扱う場合に、<xref:System.Double>値が 0 です。 次の例では、この手法が、等しくと 1/3、2 つを使用して<xref:System.Double>値と前のコード例、<xref:System.Double.Equals%28System.Double%29>に等しくない場合にメソッドが見つかりませんでした。 この例では注意してください、<xref:System.BitConverter.DoubleToInt64Bits%2A?displayProperty=nameWithType>倍精度浮動小数点値を整数形式に変換します。  
+  
+ [!code-csharp[System.Double.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.equals/cs/equalsabs1.cs#1)]
+ [!code-vb[System.Double.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.equals/vb/equalsabs1.vb#1)]  
+  
+ 文書化されている有効桁数を超える浮動小数点数の有効桁数は、実装と .NET Framework のバージョンに固有です。 その結果、数値の内部表現の有効桁数が変わる可能性があるため、.NET Framework のバージョン間で 2 つの数値の比較が変化します。  
+  
+ 2 つ<xref:System.Double.NaN?displayProperty=nameWithType>値が等しいかどうかを呼び出してテスト、<xref:System.Double.Equals%2A>メソッド、メソッドを返します`true`です。 ただし、2 つ<xref:System.Double.NaN>、演算子を返しますの値が等しいかどうか、等値演算子を使用して、テスト、`false`です。 確認するかどうかの値、<xref:System.Double>数 (NaN) ではないを呼び出すには、代わりに、<xref:System.Double.IsNaN%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>コンパイラのオーバー ロードの解決は、2 つの動作の見かけ上の相違点についてアカウント可能性があります<see cref="M:System.Double.Equals(System.Object)" />メソッドのオーバー ロードします。 場合の間の暗黙的な変換、<paramref name="obj" />引数および<see cref="T:System.Double" />が定義されている引数として型指定されていないと、 <see cref="T:System.Object" />、コンパイラが暗黙的な変換と呼び出し実行可能性があります、<see cref="M:System.Double.Equals(System.Double)" />メソッドです。 それ以外の場合を呼び出すことが、<see cref="M:System.Double.Equals(System.Object)" />メソッドで、常に返します<see langword="false" />場合その<paramref name="obj" />引数ではありません、<see cref="T:System.Double" />値。 次の例は、次の 2 つのメソッド オーバー ロード間の動作の違いを示しています。 除くすべてのプリミティブ数値型の場合<see cref="T:System.Decimal" />し、C# の場合は、最初の比較を返します<see langword="true" />拡大変換と呼び出し、コンパイラが自動的に実行するため、<see cref="M:System.Double.Equals(System.Double)" />メソッド、一方、2 つ目の比較返します<see langword="false" />コンパイラを呼び出すため、<see cref="M:System.Double.Equals(System.Object)" />メソッドです。  
+  
+ [!code-csharp[System.Double.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.equals/cs/equalsoverl.cs#2)]
+ [!code-vb[System.Double.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.equals/vb/equalsoverl.vb#2)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> のインスタンスで、このインスタンスの値に等しい場合は <see cref="T:System.Double" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.Equals%2A>メソッドは、2 つの等しい値を 2 つの値の有効桁数が異なるため等しくない場合があるため、注意して使用する必要があります。 次の例では、レポートを<xref:System.Double>.3333 を値と<xref:System.Double>で割ることによって返される 1 と 3 が等しくないです。  
+  
+ [!code-csharp[System.Double.Epsilon#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Epsilon/cs/Equals_25051.cs#3)]
+ [!code-vb[System.Double.Epsilon#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Epsilon/vb/Equals_25051.vb#3)]  
+  
+ 呼び出すことの代替方法について、<xref:System.Double.Equals%2A>メソッド、ドキュメントを参照して、<xref:System.Double.Equals%28System.Double%29>オーバー ロードします。  
+  
+> [!NOTE]
+>  <xref:System.Double.Epsilon>最小の式を定義、正の値の範囲は 0 に近いは、次の 2 つのような値の差の余白はより大きくなければなりません<xref:System.Double.Epsilon>です。 通常、回数を超えています<xref:System.Double.Epsilon>です。  
+  
+ 文書化されている有効桁数を超える浮動小数点数の有効桁数は、実装と .NET Framework のバージョンに固有です。 その結果、数値の内部表現の有効桁数が変わる可能性があるため、.NET Framework のバージョン間で 2 つの数値の比較が変化します。  
+  
+ 2 つ<xref:System.Double.NaN?displayProperty=nameWithType>値が等しいかどうかを呼び出してテスト、<xref:System.Double.Equals%2A>メソッド、メソッドを返します`true`です。 ただし、2 つ<xref:System.Double.NaN>、演算子を返しますの値が等しいかどうか、等値演算子を使用して、テスト、`false`です。 確認するかどうかの値、<xref:System.Double>数 (NaN) ではないを呼び出すには、代わりに、<xref:System.Double.IsNaN%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>コンパイラのオーバー ロードの解決は、2 つの動作の見かけ上の相違点についてアカウント可能性があります<see cref="M:System.Double.Equals(System.Object)" />メソッドのオーバー ロードします。 場合の間の暗黙的な変換、<paramref name="obj" />引数および<see cref="T:System.Double" />が定義されている引数として型指定されていないと、 <see cref="T:System.Object" />、コンパイラが暗黙的な変換と呼び出し実行可能性があります、<see cref="M:System.Double.Equals(System.Double)" />メソッドです。 それ以外の場合を呼び出すことが、<see cref="M:System.Double.Equals(System.Object)" />メソッドで、常に返します<see langword="false" />場合その<paramref name="obj" />引数ではありません、<see cref="T:System.Double" />値。 次の例は、次の 2 つのメソッド オーバー ロード間の動作の違いを示しています。 除くすべてのプリミティブ数値型の場合<see cref="T:System.Decimal" />し、C# の場合は、最初の比較を返します<see langword="true" />拡大変換と呼び出し、コンパイラが自動的に実行するため、<see cref="M:System.Double.Equals(System.Double)" />メソッド、一方、2 つ目の比較返します<see langword="false" />コンパイラを呼び出すため、<see cref="M:System.Double.Equals(System.Object)" />メソッドです。  
+  
+ [!code-csharp[System.Double.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.equals/cs/equalsoverl.cs#2)]
+ [!code-vb[System.Double.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.equals/vb/equalsoverl.vb#2)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TypeCode GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.TypeCode" /> 値型の <see cref="T:System.Double" /> を返します。</summary>
+        <returns>列挙型定数 <see cref="F:System.TypeCode.Double" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInfinity">
+      <MemberSignature Language="C#" Value="public static bool IsInfinity (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsInfinity(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.IsInfinity(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">倍精度浮動小数点数。</param>
+        <summary>指定した数値が負または正の無限大と評価されるかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="d" /> が <see cref="F:System.Double.PositiveInfinity" /> または <see cref="F:System.Double.NegativeInfinity" /> と評価される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点演算<xref:System.Double.PositiveInfinity>または<xref:System.Double.NegativeInfinity>オーバーフロー状態を通知します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.IsInfinity%2A>:。  
+  
+ [!code-cpp[System.Double#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#11)]
+ [!code-csharp[System.Double#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#11)]
+ [!code-vb[System.Double#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNaN">
+      <MemberSignature Language="C#" Value="public static bool IsNaN (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsNaN(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.IsNaN(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">倍精度浮動小数点数。</param>
+        <summary>指定した値が非数値 (<see cref="F:System.Double.NaN" />) かどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="d" /> が <see cref="F:System.Double.NaN" /> と評価される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点演算<xref:System.Double.NaN>をその操作の結果が定義されていないことを通知します。 たとえば、0.0、0.0 を除算した結果、<xref:System.Double.NaN>です。  
+  
+> [!NOTE]
+>  <xref:System.Double.IsNaN%2A>返します`false`場合、<xref:System.Double>いずれかの値は<xref:System.Double.PositiveInfinity>または<xref:System.Double.NegativeInfinity>です。 これらの値をテストするには、使用、 <xref:System.Double.IsInfinity%2A>、 <xref:System.Double.IsPositiveInfinity%2A>、および<xref:System.Double.IsNegativeInfinity%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.IsNaN%2A>:。  
+  
+ [!code-cpp[System.Double#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#8)]
+ [!code-csharp[System.Double#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#8)]
+ [!code-vb[System.Double#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNegativeInfinity">
+      <MemberSignature Language="C#" Value="public static bool IsNegativeInfinity (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsNegativeInfinity(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.IsNegativeInfinity(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">倍精度浮動小数点数。</param>
+        <summary>指定した数値が負の無限大と評価されるかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="d" /> が <see cref="F:System.Double.NegativeInfinity" /> と評価される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点演算<xref:System.Double.NegativeInfinity>オーバーフロー状態を通知します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.IsNegativeInfinity%2A>:。  
+  
+ [!code-cpp[System.Double#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#13)]
+ [!code-csharp[System.Double#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#13)]
+ [!code-vb[System.Double#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#13)]  
+[!code-cpp[System.Double#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#4)]
+[!code-csharp[System.Double#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#4)]
+[!code-vb[System.Double#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#4)]  
+[!code-cpp[System.Double#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#9)]
+[!code-csharp[System.Double#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#9)]
+[!code-vb[System.Double#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPositiveInfinity">
+      <MemberSignature Language="C#" Value="public static bool IsPositiveInfinity (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPositiveInfinity(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.IsPositiveInfinity(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">倍精度浮動小数点数。</param>
+        <summary>指定した数値が正の無限大と評価されるかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="d" /> が <see cref="F:System.Double.PositiveInfinity" /> と評価される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点演算<xref:System.Double.PositiveInfinity>オーバーフロー状態を通知します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.IsPositiveInfinity%2A>:。  
+  
+ [!code-cpp[System.Double#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#12)]
+ [!code-csharp[System.Double#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#12)]
+ [!code-vb[System.Double#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public const double MaxValue = 1.79769313486232E+308;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 MaxValue = float64(1.79769313486232E+308)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.MaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>1.79769313486232E+308</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.Double" /> の最大有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は、正 1.7976931348623157 e + 308 です。  
+  
+ 超える演算の結果<xref:System.Double.MaxValue?displayProperty=nameWithType>は<xref:System.Double?displayProperty=nameWithType>します。 次の例では、<xref:System.Double?displayProperty=nameWithType>結果を超えたときに結果を加算、乗算、および指数演算操作<xref:System.Double.MaxValue?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Double.MaxValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.maxvalue/cs/maxvalueex.cs#1)]
+ [!code-vb[System.Double.MaxValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.maxvalue/vb/maxvalueex.vb#1)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.MaxValue>:。  
+  
+ [!code-cpp[Double Example#2](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#2)]
+ [!code-csharp[Double Example#2](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#2)]
+ [!code-vb[Double Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public const double MinValue = -1.79769313486232E+308;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 MinValue = float64(-1.79769313486232E+308)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.MinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1.79769313486232E+308</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.Double" /> の最小有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は、負の値の 1.7976931348623157 e + 308 です。  
+  
+ ある操作の結果より小さい<xref:System.Double.MinValue?displayProperty=nameWithType>は<xref:System.Double?displayProperty=nameWithType>します。 次の例では、<xref:System.Double?displayProperty=nameWithType>結果が、減算、乗算の結果より小さい<xref:System.Double.MinValue?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Double.MinValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.minvalue/cs/minvalueex.cs#1)]
+ [!code-vb[System.Double.MinValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.minvalue/vb/minvalueex.vb#1)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.MinValue>:。  
+  
+ [!code-cpp[Double Example#2](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#2)]
+ [!code-csharp[Double Example#2](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#2)]
+ [!code-vb[Double Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaN">
+      <MemberSignature Language="C#" Value="public const double NaN = NaN;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 NaN = float64(NaN)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.NaN" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>NaN</MemberValue>
+      <Docs>
+        <summary>非数 (<see langword="NaN" />) の値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドまたは演算子を返します<xref:System.Double.NaN>操作の結果が定義されている場合。 たとえば、0 を 0 で除算した結果は<xref:System.Double.NaN>次の例を示します。 (0 0 以外の数値で除算を返すこと、ただし、<xref:System.Double.PositiveInfinity>または<xref:System.Double.NegativeInfinity>除数の符号に応じて、します)。  
+  
+ [!code-csharp[System.Double.NaN#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.nan/cs/nan1.cs#1)]
+ [!code-vb[System.Double.NaN#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.nan/vb/nan1.vb#1)]  
+  
+ さらに、メソッドを呼び出すと、<xref:System.Double.NaN>値またはでの操作、<xref:System.Double.NaN>値を返します<xref:System.Double.NaN>次の例を示します。  
+  
+ [!code-csharp[System.Double.NaN#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.nan/cs/nan1.cs#2)]
+ [!code-vb[System.Double.NaN#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.nan/vb/nan1.vb#2)]  
+  
+ 使用して、<xref:System.Double.IsNaN%2A>値が数値ではないかどうかを調べます。 <xref:System.Double.op_Equality%2A>演算子は 2 つが考慮<xref:System.Double.NaN>互いに等しくない場合の値。 一般に、<xref:System.Double>を比較する演算子を使用することはできません<xref:System.Double.NaN?displayProperty=nameWithType>他<xref:System.Double>ですが、値比較メソッド (など<xref:System.Double.Equals%2A>と<xref:System.Double.CompareTo%2A>) ことができます。 次の例との間の動作の違いを示しています。<xref:System.Double>比較演算子とメソッド。  
+  
+ [!code-csharp[System.Double.NaN#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.double.nan/cs/double.nan4.cs#4)]
+ [!code-vb[System.Double.NaN#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.double.nan/vb/double.nan4.vb#4)]  
+  
+   
+  
+## Examples  
+ <xref:System.Double.NaN> の使用例を次に示します。  
+  
+ [!code-cpp[System.Double#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#7)]
+ [!code-csharp[System.Double#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#7)]
+ [!code-vb[System.Double#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeInfinity">
+      <MemberSignature Language="C#" Value="public const double NegativeInfinity = -Infinity;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 NegativeInfinity = float64(-Infinity)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.NegativeInfinity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>-Infinity</MemberValue>
+      <Docs>
+        <summary>負の無限大を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は、負の数を 0 で除算した結果です。  
+  
+ この定数は、返される操作の結果はより小さい<xref:System.Double.MinValue>です。  
+  
+ 使用して<xref:System.Double.IsNegativeInfinity%2A>値が負の無限大と評価されるかどうかを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.NegativeInfinity>:。  
+  
+ [!code-cpp[System.Double#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#9)]
+ [!code-csharp[System.Double#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#9)]
+ [!code-vb[System.Double#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_Equality(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した 2 つの <see cref="T:System.Double" /> 値が等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="left" /> が等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_Equality%2A>メソッド定義の等値演算子<xref:System.Double>値。  
+  
+ 2 つ<xref:System.Double?displayProperty=nameWithType>値が等しいかどうか、等値演算子を使用して、テストの場合、結果は`false`以外の場合は 2 つ<xref:System.Double?displayProperty=nameWithType>値に等しいは考慮されません。 呼び出して等しいかどうか、テストする場合、<xref:System.Double.Equals%2A>メソッド、結果は`true`します。  確認するかどうかの値、<xref:System.Double>数 (NaN) ではないを呼び出すには、代わりに、<xref:System.Double.IsNaN%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool operator &gt; (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_GreaterThan(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した <see cref="T:System.Double" /> 値が、指定したもう 1 つの <see cref="T:System.Double" /> 値より大きいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> より大きい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_GreaterThan%2A>メソッドは、大きい方の操作を定義-の演算子よりも<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &gt;= (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThanOrEqual(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_GreaterThanOrEqual(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した <see cref="T:System.Double" /> 値が、指定したもう 1 つの <see cref="T:System.Double" /> 値以上かどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> が <paramref name="right" /> 以上の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_GreaterThanOrEqual%2A>メソッドの大きい-よりも-または-等号演算子の動作を定義する<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_Inequality(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した 2 つの <see cref="T:System.Double" /> 値が等しくないかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> と <paramref name="right" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_Inequality%2A>メソッド定義の非等値演算子<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static bool operator &lt; (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThan(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_LessThan(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した <see cref="T:System.Double" /> 値が、指定したもう 1 つの <see cref="T:System.Double" /> 値より小さいかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> が <paramref name="right" /> より小さい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_LessThan%2A>メソッドは、以下の操作を定義-の演算子よりも<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &lt;= (double left, double right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThanOrEqual(float64 left, float64 right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.op_LessThanOrEqual(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Double" />
+        <Parameter Name="right" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>指定した <see cref="T:System.Double" /> 値が、指定したもう 1 つの <see cref="T:System.Double" /> 値以下かどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> が <paramref name="right" /> 以下の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.op_LessThanOrEqual%2A>メソッドは、小さいよりも-または等号演算子の操作を定義<xref:System.Double>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static double Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。</param>
+        <summary>数値の文字列形式を、等価の倍精度浮動小数点数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値または記号と等価の倍精度浮動小数点数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `s`パラメーターは、現在のカルチャを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>、または形式の文字列。  
+  
+ [*ws*][*sign*][*integral-digits*[*,*]]*integral-digits*[*.*[*小数部の桁*] [E [*記号*]*桁の指数*] [*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|一連の空白文字。|  
+|*サインイン*|マイナス記号 (-) または、プラス記号 (+) です。 先頭の記号のみを使用できます。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 実行*整数の桁*グループの区切り記号でパーティション分割することができます。 たとえば、コンマ (,) は、一部のカルチャで、何千ものグループを区切ります。 *整数の桁*要素を指定できる場合、文字列が含まれています、*小数部の桁*要素。|  
+|,|カルチャ固有の桁区切り記号。|  
+|」を参照してください。|カルチャに固有の小数点記号です。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ `s`パラメーターの組み合わせを使用して解釈されます、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 つまり、空白文字と桁区切り記号は許可されて、たとえば、通貨記号がないときにします。 きめ細かい制御でどのスタイルより要素が許可されている`s`、解析操作が成功するには、呼び出し、<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%29?displayProperty=nameWithType>または<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッドです。  
+  
+ `s`パラメーターで書式設定情報を使用して解釈されますが、<xref:System.Globalization.NumberFormatInfo>は現在のスレッド カルチャの初期化されているオブジェクト。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>」を参照してください。 他のいくつかのカルチャの書式情報を使用して文字列を解析するには、呼び出し、<xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>または<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッドです。  
+  
+ 通常、渡した場合、<xref:System.Double.Parse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/parse2.cs#3)]
+ [!code-vb[System.Double.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/parse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作では、および適用可能な通貨または 10 進数の間にパラメーターと桁区切り記号が同じには、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Double.Parse%28System.String%29> メソッドの使用例を次に示します。  
+  
+ [!code-cpp[Double Example#5](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#5)]
+ [!code-csharp[Double Example#5](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#5)]
+ [!code-vb[Double Example#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />有効な形式で数値を表しません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" /> は <see cref="F:System.Double.MinValue" /> 未満の数値か、<see cref="F:System.Double.MaxValue" /> より大きい数値を表します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static double Parse (string s, System.Globalization.NumberStyles style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Parse(string s, valuetype System.Globalization.NumberStyles style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Parse(System.String,System.Globalization.NumberStyles)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Float" /> と <see cref="F:System.Globalization.NumberStyles.AllowThousands" /> の組み合わせです。</param>
+        <summary>数値の指定したスタイルでの文字列形式を、それと等価な倍精度浮動小数点数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値または記号と等価の倍精度浮動小数点数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素定義 (空白文字、数千などの区切り記号および通貨記号) で許容される、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 次<xref:System.Globalization.NumberStyles>メンバーがサポートされていません。  
+  
+-   <xref:System.Globalization.NumberStyles.AllowHexSpecifier>  
+  
+-   <xref:System.Globalization.NumberStyles.HexNumber>  
+  
+ `s`パラメーターは、現在のカルチャを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、または<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>です。 値に応じて`style`フォームをかかることができます。  
+  
+ [*ws*][*$*][*sign*][*integral-digits*[*,*]]*integral-digits*[*.*[*小数部の桁*] [E [*記号*]*桁の指数*] [*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|一連の空白文字。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|$|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>と<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。 現在のカルチャの通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|マイナス記号 (-) または、プラス記号 (+) です。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、およびそのがの末尾に置くことができます`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 *整数の桁*要素を指定できる場合、文字列が含まれています、*小数部の桁*要素。|  
+|,|カルチャ固有のグループの区切り記号。 現在のカルチャの桁区切り記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ|  
+|」を参照してください。|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。 小数部の桁が表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ 数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) が正常に解析します。 残りの<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>メンバーが存在する可能性がありますが、入力文字列内に存在する必要がない要素を制御します。 次の表に示す個別<xref:System.Globalization.NumberStyles>フラグに存在可能な要素に影響を与える`s`です。  
+  
+|NumberStyles 値|使用できる要素`s`数字だけでなく|  
+|------------------------|-----------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles.None>|*整数の桁*要素のみです。|  
+|<xref:System.Globalization.NumberStyles.AllowDecimalPoint>|小数点 (*.*) および*小数部の桁*要素。|  
+|<xref:System.Globalization.NumberStyles.AllowExponent>|"E"または"E"文字は、指数表記法を示します。 それ自体では、このフラグは、形式で値をサポートしている*桁の数字*E*桁*以外の場合は追加のフラグが正常に正または負の符号および小数点記号としては、このような要素を含む文字列を解析する必要です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingWhite>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingWhite>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingSign>|*記号*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*記号*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowParentheses>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles.AllowThousands>|桁区切り記号 (,) 要素です。|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|通貨 ($) の要素。|  
+|<xref:System.Globalization.NumberStyles.Currency>|すべての要素。 ただし、 `s` 16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles.Float>|*Ws*先頭または末尾の位置にある要素`s`、*記号*の先頭に`s`、および小数点 (.) のシンボルです。 `s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles.Number>|`ws`、 `sign`、桁区切り記号 (,) と小数点 (.) の要素。|  
+|<xref:System.Globalization.NumberStyles.Any>|すべての要素。 ただし、 `s` 16 進数を表すことはできません。|  
+  
+ `s`で書式設定情報を使用してパラメーターを解析、<xref:System.Globalization.NumberFormatInfo>現在のシステムのカルチャに初期化されるオブジェクト。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>」を参照してください。  
+  
+ 通常、渡した場合、<xref:System.Double.Parse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/parse2.cs#3)]
+ [!code-vb[System.Double.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/parse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作では、および適用可能な通貨または 10 進数の間にパラメーターと桁区切り記号が同じには、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>の文字列形式を解析します<xref:System.Double>EN-US カルチャを使用して値をします。  
+  
+ [!code-csharp[System.Double.Parse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/Parse.cs#1)]
+ [!code-vb[System.Double.Parse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/Parse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />有効な形式で数値を表しません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" /> は <see cref="F:System.Double.MinValue" /> 未満の数値か、<see cref="F:System.Double.MaxValue" /> より大きい数値を表します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />含まれています、<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static double Parse (string s, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Parse(string s, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Parse(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。</param>
+        <summary>指定したカルチャに固有の書式による数値の文字列形式を、それと等価な倍精度浮動小数点数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値または記号と等価の倍精度浮動小数点数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29>メソッドでは、さまざまな方法でフォーマットできるテキストに変換するために使用は、通常、<xref:System.Double>値。 たとえば、数値を指定する HTML テキスト ボックスに、ユーザーによって入力されるテキストに変換する、使用できます。  
+  
+ `s`パラメーターの組み合わせを使用して解釈されます、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 `s`パラメーターを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、または<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>で指定されたカルチャの`provider`、または形式の文字列を含めることができます。  
+  
+ [*ws*][*sign*]*integral-digits*[*.*[*小数部の桁*] [E [*記号*]*桁の指数*] [*ws*]  
+  
+ 省略可能な要素は角かっこで囲まれています ([および])。 数字の 0 から 9 までの一連の"digits"という語を含む要素で構成されます。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|一連の空白文字。|  
+|*サインイン*|マイナス記号 (-) または、プラス記号 (+) です。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 実行*整数の桁*グループの区切り記号でパーティション分割することができます。 たとえば、コンマ (,) は、一部のカルチャで、何千ものグループを区切ります。 *整数の桁*要素を指定できる場合、文字列が含まれています、*小数部の桁*要素。|  
+|。|カルチャに固有の小数点記号です。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ 数値形式の詳細については、次を参照してください。、[型の書式設定](~/docs/standard/base-types/formatting-types.md)トピックです。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の形式を解釈するときに使用されるカルチャに固有の情報を提供するオブジェクト`s`です。 通常は、<xref:System.Globalization.NumberFormatInfo>または<xref:System.Globalization.CultureInfo>オブジェクト。 場合`provider`は`null`または<xref:System.Globalization.NumberFormatInfo>を取得できません、書式設定については、現在のシステム カルチャが使用されます。  
+  
+ 通常、渡した場合、<xref:System.Double.Parse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/parse2.cs#3)]
+ [!code-vb[System.Double.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/parse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作では、および適用可能な通貨または 10 進数の間にパラメーターと桁区切り記号が同じには、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、ボタンは、Web フォームのイベント ハンドラーをクリックします。 によって返される配列を使用して、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティをユーザーのロケールを決定します。 インスタンス化し、<xref:System.Globalization.CultureInfo>そのロケールに対応するオブジェクト。 <xref:System.Globalization.NumberFormatInfo>に属しているオブジェクト<xref:System.Globalization.CultureInfo>にオブジェクトが渡され、<xref:System.Double.Parse%28System.String%2CSystem.IFormatProvider%29>をユーザーに変換するメソッドの入力、<xref:System.Double>値。  
+  
+ [!code-csharp[ParseMethod#2](~/samples/snippets/csharp/VS_Snippets_CLR/ParseMethod/cs/Default.aspx.cs#2)]
+ [!code-vb[ParseMethod#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ParseMethod/vb/Default.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />有効な形式で数値を表しません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" /> は <see cref="F:System.Double.MinValue" /> 未満の数値か、<see cref="F:System.Double.MaxValue" /> より大きい数値を表します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static double Parse (string s, System.Globalization.NumberStyles style, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Parse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.AllowThousands" /> と組み合わせた <see cref="F:System.Globalization.NumberStyles.Float" /> です。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。</param>
+        <summary>指定したスタイルおよびカルチャ固有の書式での数値の文字列形式を、等価の倍精度浮動小数点数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値または記号と等価の倍精度浮動小数点数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素定義 (空白文字、数千などの区切り記号および通貨記号) で許容される、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 次<xref:System.Globalization.NumberStyles>メンバーがサポートされていません。  
+  
+-   <xref:System.Globalization.NumberStyles.AllowHexSpecifier>  
+  
+-   <xref:System.Globalization.NumberStyles.HexNumber>  
+  
+ `s`パラメーターを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、または<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>で指定されたカルチャの`provider`します。 値に応じて`style`フォームをかかることができます。  
+  
+ [*ws*] [*$*] [*sign*][*integral-digits*,]*integral-digits*[.[*小数部の桁*][E[*sign*]*exponential-digits*][*ws*]  
+  
+ 要素は角かっこ ([および]) は省略可能で囲まれています。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|一連の空白文字。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|$|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>と<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。 現在のカルチャの通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|マイナス記号 (-) または、プラス記号 (+) です。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、およびそのがの末尾に置くことができます`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 *整数の桁*要素を指定できる場合、文字列が含まれています、*小数部の桁*要素。|  
+|,|カルチャ固有のグループの区切り記号。 現在のカルチャの桁区切り記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ|  
+|」を参照してください。|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。 小数部の桁が表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ 数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) が正常に解析します。 残りの<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>メンバーが存在する可能性がありますが、入力文字列内に存在する必要がない要素を制御します。 次の表に示す個別<xref:System.Globalization.NumberStyles>フラグに存在可能な要素に影響を与える`s`です。  
+  
+|NumberStyles 値|使用できる要素`s`数字だけでなく|  
+|------------------------|-----------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles.None>|*整数の桁*要素のみです。|  
+|<xref:System.Globalization.NumberStyles.AllowDecimalPoint>|小数点 (*.*) および*小数部の桁*要素。|  
+|<xref:System.Globalization.NumberStyles.AllowExponent>|"E"または"E"文字は、指数表記法を示します。 それ自体では、このフラグは、形式で値をサポートしている*桁の数字*E*桁*以外の場合は追加のフラグが正常に正または負の符号および小数点記号としては、このような要素を含む文字列を解析する必要です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingWhite>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingWhite>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingSign>|*記号*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*記号*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowParentheses>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles.AllowThousands>|桁区切り記号 (,) 要素です。|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|通貨 ($) の要素。|  
+|<xref:System.Globalization.NumberStyles.Currency>|すべての要素。 ただし、 `s` 16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles.Float>|*Ws*先頭または末尾の位置にある要素`s`、*記号*の先頭に`s`、および小数点 (.) のシンボルです。 `s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles.Number>|`ws`、 `sign`、桁区切り記号 (,) と小数点 (.) の要素。|  
+|<xref:System.Globalization.NumberStyles.Any>|すべての要素。 ただし、 `s` 16 進数を表すことはできません。|  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の形式を解釈するときに使用されるカルチャに固有の情報を提供するオブジェクト`s`です。 通常は、<xref:System.Globalization.NumberFormatInfo>または<xref:System.Globalization.CultureInfo>オブジェクト。 場合`provider`は`null`または<xref:System.Globalization.NumberFormatInfo>を取得できません、書式設定については、現在のシステム カルチャが使用されます。  
+  
+ 通常、渡した場合、<xref:System.Double.Parse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.Parse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/parse2.cs#3)]
+ [!code-vb[System.Double.Parse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/parse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作では、および適用可能な通貨または 10 進数の間にパラメーターと桁区切り記号が同じには、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>温度値のいくつかの文字列形式を割り当てる方法、`Temperature`オブジェクト。  
+  
+ [!code-csharp[System.Double.Parse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.Parse/cs/Parse3.cs#2)]
+ [!code-vb[System.Double.Parse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.Parse/vb/Parse3.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />数値の値を表していません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" /><see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />値。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" /> は <see cref="F:System.Double.MinValue" /> 未満の数値か、<see cref="F:System.Double.MaxValue" /> より大きい数値を表します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PositiveInfinity">
+      <MemberSignature Language="C#" Value="public const double PositiveInfinity = Infinity;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal float64 PositiveInfinity = float64(Infinity)" />
+      <MemberSignature Language="DocId" Value="F:System.Double.PositiveInfinity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <MemberValue>Infinity</MemberValue>
+      <Docs>
+        <summary>正の無限大を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は、0 では正の数値を除算した結果です。  
+  
+ この定数は操作の結果がよりも大きい場合に返される<xref:System.Double.MaxValue>です。  
+  
+ 使用して<xref:System.Double.IsPositiveInfinity%2A>値が正の無限大と評価されるかどうかを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています<xref:System.Double.PositiveInfinity>:。  
+  
+ [!code-cpp[System.Double#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#10)]
+ [!code-csharp[System.Double#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#10)]
+ [!code-vb[System.Double#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.GetTypeCode">
+      <MemberSignature Language="C#" Value="TypeCode IConvertible.GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.TypeCode System.IConvertible.GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToBoolean">
+      <MemberSignature Language="C#" Value="bool IConvertible.ToBoolean (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IConvertible.ToBoolean(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToBoolean(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>
+          現在のインスタンスの値が 0 でない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToBoolean%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToByte">
+      <MemberSignature Language="C#" Value="byte IConvertible.ToByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int8 System.IConvertible.ToByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Byte" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToByte%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToChar">
+      <MemberSignature Language="C#" Value="char IConvertible.ToChar (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance char System.IConvertible.ToChar(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToChar(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>この変換はサポートされていません。 このメソッドを使用しようとすると、<see cref="T:System.InvalidCastException" /> がスローされます。</summary>
+        <returns>この変換はサポートされていません。 値は返されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDateTime">
+      <MemberSignature Language="C#" Value="DateTime IConvertible.ToDateTime (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.DateTime System.IConvertible.ToDateTime(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToDateTime(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>この変換はサポートされていません。 このメソッドを使用しようとすると、<see cref="T:System.InvalidCastException" /> がスローされます。</summary>
+        <returns>この変換はサポートされていません。 値は返されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDecimal">
+      <MemberSignature Language="C#" Value="decimal IConvertible.ToDecimal (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Decimal System.IConvertible.ToDecimal(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToDecimal(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Decimal" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToDecimal%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDouble">
+      <MemberSignature Language="C#" Value="double IConvertible.ToDouble (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float64 System.IConvertible.ToDouble(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToDouble(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>変更されていない、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt16">
+      <MemberSignature Language="C#" Value="short IConvertible.ToInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int16 System.IConvertible.ToInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt16%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt32">
+      <MemberSignature Language="C#" Value="int IConvertible.ToInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IConvertible.ToInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt32%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt64">
+      <MemberSignature Language="C#" Value="long IConvertible.ToInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int64 System.IConvertible.ToInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int64" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt64%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSByte">
+      <MemberSignature Language="C#" Value="sbyte IConvertible.ToSByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int8 System.IConvertible.ToSByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToSByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.SByte" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToSByte%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSingle">
+      <MemberSignature Language="C#" Value="float IConvertible.ToSingle (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float32 System.IConvertible.ToSingle(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToSingle(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Single" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToSingle%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToType">
+      <MemberSignature Language="C#" Value="object IConvertible.ToType (Type type, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IConvertible.ToType(class System.Type type, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToType(System.Type,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="type">この <see cref="T:System.Double" /> 値の変換後の型。</param>
+        <param name="provider">戻り値の書式に関するカルチャ固有の情報を提供する <see cref="T:System.IFormatProvider" /> の実装。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><paramref name="type" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、 `static` (`Shared` Visual Basic で)<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt16">
+      <MemberSignature Language="C#" Value="ushort IConvertible.ToUInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int16 System.IConvertible.ToUInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToUInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt16%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt32">
+      <MemberSignature Language="C#" Value="uint IConvertible.ToUInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int32 System.IConvertible.ToUInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToUInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt32%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt64">
+      <MemberSignature Language="C#" Value="ulong IConvertible.ToUInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int64 System.IConvertible.ToUInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.System#IConvertible#ToUInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt64" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Double> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt64%28System.Double%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns>このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.ToString>メソッドの形式、<xref:System.Double>現在のカルチャの形式 ("G"、または [全般]) の既定の値します。 別の形式、有効桁数、またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Double.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Double.ToString%28System.IFormatProvider%29>|  
+|特定の形式または有効桁数|(現在) の既定のカルチャ|<xref:System.Double.ToString%28System.String%29>|  
+|特定の形式または有効桁数|特定のカルチャ|<xref:System.Double.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ 戻り値は、 <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、または形式の文字列。  
+  
+ [サインイン] 整数の桁 [です [。小数部の桁] [e [サインイン] 指数の桁]  
+  
+ 省略可能な要素は角かっこで囲まれています ([および])。 数字の 0 から 9 までの一連の"digits"という語を含む要素で構成されます。 次の表に示す要素がサポートされています。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*サインイン*|負の記号または正の記号。|  
+|*整数の桁*|一連の数字の数の整数部分を指定します。 整数の桁がなくてもかまいません桁の小数部がある場合。|  
+|'*.*'|カルチャに固有の小数点記号です。|  
+|*小数の桁*|一連の数字の数の小数部を指定します。|  
+|'*e*'|小文字"e"を示す文字指数表記。|  
+|*指数桁の数字*|一連の数字の指数部を指定します。|  
+  
+ 戻り値の例をいくつかは、「100」、「-123,456,789」、"123.45 e + 6"、「500」、「3.1416」、「600」、「-0.123」と"-Infinity"です。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、既定値<xref:System.Double.ToString?displayProperty=nameWithType>の数の文字列形式を表示するメソッドを<xref:System.Double>値。  
+  
+ [!code-csharp[System.Double.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/ToString1.cs#1)]
+ [!code-vb[System.Double.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/ToString1.vb#1)]  
+  
+ 次の例は、の使用を示しています。<xref:System.Double.ToString%2A>です。  
+  
+ [!code-cpp[System.Double#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double/CPP/doublesample.cpp#3)]
+ [!code-csharp[System.Double#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double/CS/doublesample.cs#3)]
+ [!code-vb[System.Double#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double/VB/doublesample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>このインスタンスの数値を、指定したカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.ToString%28System.IFormatProvider%29>メソッドの形式、<xref:System.Double>値の既定値 ("G"、または [全般]) で指定されたカルチャの形式です。 別の形式またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Double.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|既定の (現在の)|<xref:System.Double.ToString>|  
+|特定の形式または有効桁数|(現在) の既定のカルチャ|<xref:System.Double.ToString%28System.String%29>|  
+|特定の形式または有効桁数|特定のカルチャ|<xref:System.Double.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ 戻り値は、 <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、または形式の文字列。  
+  
+ [サインイン] 整数の桁 [です [。小数部の桁] [e [サインイン] 指数の桁]  
+  
+ 省略可能な要素は角かっこで囲まれています ([および])。 数字の 0 から 9 までの一連の"digits"という語を含む要素で構成されます。 次の表に示す要素がサポートされています。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*サインイン*|負の記号または正の記号。|  
+|*整数の桁*|一連の数字の数の整数部分を指定します。 整数の桁がなくてもかまいません桁の小数部がある場合。|  
+|'*.*'|カルチャに固有の小数点記号です。|  
+|*小数の桁*|一連の数字の数の小数部を指定します。|  
+|'*e*'|小文字"e"を示す文字指数表記。|  
+|*指数桁の数字*|一連の数字の指数部を指定します。|  
+  
+ 戻り値の例をいくつかは、「100」、「-123,456,789」、"123.45 e + 6"、「500」、「3.1416」、「600」、「-0.123」と"-Infinity"です。  
+  
+ このインスタンスには、[全般] の数値書式指定子 ("G") が表示されます。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>オブジェクト。 通常、`provider`は、<xref:System.Globalization.CultureInfo>オブジェクトまたは<xref:System.Globalization.NumberFormatInfo>オブジェクト。 `provider`パラメーターの書式設定に使用されるカルチャに固有の情報を提供します。 場合`provider`は`null`を使用して、戻り値が書式設定、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの文字列形式を<xref:System.Double>を使用して値<xref:System.Globalization.CultureInfo>を複数の異なるカルチャを表すオブジェクト。  
+  
+ [!code-csharp[System.Double.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/ToString1.cs#2)]
+ [!code-vb[System.Double.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/ToString1.vb#2)]  
+  
+ 次の例は、の使用を示しています。<xref:System.Double.ToString%2A>かかる時間は、、<xref:System.String>と<xref:System.IFormatProvider>パラメーターとして。  
+  
+ [!code-cpp[Double Example#4](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#4)]
+ [!code-csharp[Double Example#4](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#4)]
+ [!code-vb[Double Example#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.ToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">数値書式指定文字列。</param>
+        <summary>指定した書式を使用して、このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.ToString%28System.String%29>メソッドの形式、<xref:System.Double>現在のカルチャの規則を使用して、指定した書式の値。 別の形式またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Double.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.Double.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Double.ToString%28System.IFormatProvider%29>|  
+|特定の形式または有効桁数|特定のカルチャ|<xref:System.Double.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ 戻り値は、 <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、またはで指定したとおり、数値の文字列形式を`format`です。  
+  
+ `format`パラメーターには、D、X を除く任意の有効な標準の数値書式指定子およびカスタム数値書式指定子の任意の組み合わせを指定できます。 場合`format`は`null`または戻り値、空の文字列が、一般的な数値書式指定子 ("G") でフォーマットされています。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ 既定では、戻り値にはのみが含まれています 15 桁精度には最大 17 桁が内部的に保持されています。 このインスタンスの値は 15 桁を超える場合<xref:System.Double.ToString%2A>返します<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>または<xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>予想された数の代わりにします。 高い精度を必要とする場合は、指定`format`が常に有効桁数、または"R"17 桁を返します、"G17"書式指定する場合を返します 15 桁数を表現できる場合は最大有効桁数を持つ場合は、その有効桁数または桁数が 17 数を表すことができます。  
+  
+   
+  
+## Examples  
+ 次の例では、数値の値を定義し、書式を通貨値として"C"標準の数値書式指定文字列を使用して、小数点以下 3 桁の数値として"N"の標準数値書式指定文字列を使用しています。 結果文字列は EN-US カルチャの規則を使用して書式設定されます。 数値書式指定文字列の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+ [!code-csharp[System.Double.ToString#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/ToString7.cs#7)]
+ [!code-vb[System.Double.ToString#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/ToString7.vb#7)]  
+  
+ 次の例では、いくつかが表示されます<xref:System.Double>値は、サポートされている標準数値書式指定子と共に次の 3 つのカスタム数値書式指定文字列を使用します。 余白を埋めるための方法を示しています、カスタム書式指定文字列の 1 つ、<xref:System.Single>先行ゼロを持つ値です。 さらに、"R"を除く各標準書式指定子と精度指定子を使用します。 0 から 3 の精度指定子の範囲の値。 数値の値を文字列に変換するには、EN-US カルチャの書式指定規則を使用します。  
+  
+ [!code-cpp[System.Double.ToString#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double.ToString/cpp/tostring3.cpp#3)]
+ [!code-csharp[System.Double.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/ToString1.cs#3)]
+ [!code-vb[System.Double.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/ToString1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" /> が無効です。</exception>
+        <block subset="none" type="usage">
+          <para>場合によっては、<see langword="/platform:x64" /> スイッチまたは <see langword="/platform:anycpu" /> スイッチを使用してコンパイルして 64 ビット システムで実行すると、"R" 標準の数値書式指定文字列で書式設定される <see cref="T:System.Double" /> 値のラウンドトリップに失敗することがあります。 この問題を回避するには、"G17" 標準の数値書式指定文字列を使用して <see cref="T:System.Double" /> 値を書式設定することができます。 次の例では、ラウンドトリップに失敗する <see cref="T:System.Double" /> 値を持つ "R" 書式指定文字列を使用しています。元の値のラウンドトリップに成功する "G17" 書式指定文字列も使用しています。  
+  
+ [!code-csharp[System.Double.ToString#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex2.cs#6)]
+ [!code-vb[System.Double.ToString#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex2.vb#6)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">数値書式指定文字列。</param>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>このインスタンスの数値を、指定した書式およびカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> と <paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.ToString%28System.String%2CSystem.IFormatProvider%29>メソッドの形式、<xref:System.Double>特定のカルチャの指定した形式の値。 別の形式またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.Double.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.Double.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.Double.ToString%28System.IFormatProvider%29>|  
+|特定の形式または有効桁数|(現在) の既定のカルチャ|<xref:System.Double.ToString%28System.String%29>|  
+  
+ 戻り値は、 <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、またはで指定したとおり、数値の文字列形式を`format`です。  
+  
+ `format`パラメーターには、D、X を除く任意の有効な標準の数値書式指定子およびカスタム数値書式指定子の任意の組み合わせを指定できます。 場合`format`は`null`またはこのインスタンスの戻り値、空の文字列が、一般的な数値書式指定子 ("G") でフォーマットされています。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>オブジェクト。 通常、`provider`は、<xref:System.Globalization.CultureInfo>オブジェクトまたは<xref:System.Globalization.NumberFormatInfo>オブジェクト。 `provider`パラメーターの書式設定に使用されるカルチャに固有の情報を提供します。 場合`provider`は`null`を使用して、戻り値が書式設定、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+ 既定では、戻り値にはのみが含まれています 15 桁精度には最大 17 桁が内部的に保持されています。 このインスタンスの値は 15 桁を超える場合<xref:System.Double.ToString%2A>返します<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>または<xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>予想された数の代わりにします。 高い精度を必要とする場合は、指定`format`が常に有効桁数、または"R"17 桁を返します、"G17"書式指定する場合を返します 15 桁数を表現できる場合は最大有効桁数を持つ場合は、その有効桁数または桁数が 17 数を表すことができます。  
+  
+   
+  
+## Examples  
+ 次の例を表示、<xref:System.Double>値のサポートされている標準数値書式指定子のいくつかの異なるカルチャを使用します。  
+  
+ [!code-cpp[System.Double.ToString#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Double.ToString/cpp/tostring1.cpp#4)]
+ [!code-csharp[System.Double.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/ToString1.cs#4)]
+ [!code-vb[System.Double.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/ToString1.vb#4)]  
+  
+ 次の例は、の使用を示しています。<xref:System.Double.ToString%2A>かかる時間は、、<xref:System.String>と<xref:System.IFormatProvider>パラメーターとして。  
+  
+ [!code-cpp[Double Example#4](~/samples/snippets/cpp/VS_Snippets_CLR/Double Example/CPP/source.cpp#4)]
+ [!code-csharp[Double Example#4](~/samples/snippets/csharp/VS_Snippets_CLR/Double Example/CS/source.cs#4)]
+ [!code-vb[Double Example#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Double Example/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>場合によっては、<see langword="/platform:x64" /> スイッチまたは <see langword="/platform:anycpu" /> スイッチを使用してコンパイルして 64 ビット システムで実行すると、"R" 標準の数値書式指定文字列で書式設定される <see cref="T:System.Double" /> 値のラウンドトリップに失敗することがあります。 この問題を回避するには、"G17" 標準の数値書式指定文字列を使用して <see cref="T:System.Double" /> 値を書式設定することができます。 次の例では、ラウンドトリップに失敗する <see cref="T:System.Double" /> 値を持つ "R" 書式指定文字列を使用しています。元の値のラウンドトリップに成功する "G17" 書式指定文字列も使用しています。  
+  
+ [!code-csharp[System.Double.ToString#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#5)]
+ [!code-vb[System.Double.ToString#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, out double result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, [out] float64&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.TryParse(System.String,System.Double@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="result" Type="System.Double&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="result">このメソッドが戻るとき、倍精度浮動小数点と等価数にはが含まれています、 <c>s</c>パラメーター、変換が成功した場合、変換に失敗した場合は 0 です。 場合、変換は失敗、 <c>s</c>パラメーターは<see langword="null" />または<see cref="F:System.String.Empty" />が有効な形式で数値でない、または数値を表してより小さい<see cref="F:System.Double.MinValue" />以上<see cref="F:System.Double.MaxValue" />です。 このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>数値の文字列形式を、等価の倍精度浮動小数点数に変換します。 戻り値は、変換が成功したか失敗したかを示します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードとは異なります、<xref:System.Double.Parse%28System.String%29?displayProperty=nameWithType>解析の数値の値を返す代わりに、解析操作が成功したかどうかを示すブール値を返すメソッド。 テストするため、例外処理を使用する必要がある、<xref:System.FormatException>イベントで`s`無効なため、正常に解析することはできません。  
+  
+ `s`パラメーターは、現在のカルチャを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>文字列比較では、大文字小文字を区別)、または形式の文字列。  
+  
+ [ws][記号][整数の桁]、整数の桁 [です [。小数部の桁] [e [サインイン] 指数の桁] [ws]  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|一連の空白文字。|  
+|*サインイン*|負の記号または正の記号。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 整数の桁がなくてもかまいません桁の小数部がある場合。|  
+|*、*|カルチャ固有のグループの区切り記号です。|  
+|*.*|カルチャに固有の小数点記号です。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。|  
+|*E*|大文字または小文字の文字 'e' を指数表記を示すです。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ 数値形式の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `s`パラメーターがの組み合わせを使用して解釈されます、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 つまり、空白文字と桁区切り記号が許可されているが、通貨記号は表示されません。 要素を明示的に定義 (などの通貨記号、桁区切り記号、および空白) 内に存在することができます`s`を使用して、<xref:System.Double.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Double%40%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+ `s`で書式設定情報を使用してパラメーターを解析、<xref:System.Globalization.NumberFormatInfo>現在のシステムのカルチャに初期化されるオブジェクト。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>」を参照してください。 文字列を解析するその他の書式情報を使用して指定されたカルチャを使用して、<xref:System.Double.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Double%40%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+ 通常、渡した場合、<xref:System.Double.TryParse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.TryParse/cs/tryparse2.cs#3)]
+ [!code-vb[System.Double.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.TryParse/vb/tryparse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作中、および 10 進数とグループの区切り記号のパラメーターは同じ、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Double.TryParse%28System.String%2CSystem.Double%40%29>数値の文字列形式を変換する方法の<xref:System.Double>値。 その EN-US では、現在のカルチャと見なします。  
+  
+ [!code-csharp[System.Double.TryParse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.TryParse/cs/tryparse1a.cs#1)]
+ [!code-vb[System.Double.TryParse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.TryParse/vb/tryparse1a.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, System.Globalization.NumberStyles style, IFormatProvider provider, out double result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider, [out] float64&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Double.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="result" Type="System.Double&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を格納する文字列。</param>
+        <param name="style">ビットごとの組み合わせ<see cref="T:System.Globalization.NumberStyles" />の使用可能な書式を示す値<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.AllowThousands" /> と組み合わせた <see cref="F:System.Globalization.NumberStyles.Float" /> です。</param>
+        <param name="provider"><see cref="T:System.IFormatProvider" />に関するカルチャ固有の書式情報を提供する<c>s</c>です。</param>
+        <param name="result">このメソッドが戻るときに、倍精度浮動小数点数の相当する数値または記号に含まれているを含む<c>s</c>変換が成功した場合は 0、変換に失敗した場合は、します。 場合、変換は失敗、 <c>s</c>パラメーターは<see langword="null" />または<see cref="F:System.String.Empty" />に準拠した形式では<c>スタイル</c>、数値を表すより小さい<see cref="F:System.SByte.MinValue" />より大きいまたは<see cref="F:System.SByte.MaxValue" />、または<c>スタイル</c>の有効な組み合わせではない<see cref="T:System.Globalization.NumberStyles" />列挙定数。 このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>指定したスタイルおよびカルチャ固有の書式での数値の文字列形式を、等価の倍精度浮動小数点数に変換します。 戻り値は、変換が成功したか失敗したかを示します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double.TryParse%2A>などのメソッドは、<xref:System.Double.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>メソッドを除いて、このメソッドは、変換が失敗した場合に例外をスローしません。 戻り値は、変換が成功すると、`true`と`result`パラメーターは、変換の結果に設定します。 変換に失敗した場合、戻り値は`false`と`result`パラメーターが 0 に設定します。 これをテストする例外処理を使用する必要がある、<xref:System.FormatException>イベントで`s`無効なため、正常に解析することはできません。  
+  
+ `style`パラメーターの使用可能な形式を定義する、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 次<xref:System.Globalization.NumberStyles>メンバーがサポートされていません。  
+  
+-   <xref:System.Globalization.NumberStyles?displayProperty=nameWithType>  
+  
+-   <xref:System.Globalization.NumberStyles?displayProperty=nameWithType>  
+  
+ `s`パラメーターを含めることができます<xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A?displayProperty=nameWithType>、 <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A?displayProperty=nameWithType>、または<xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A?displayProperty=nameWithType>によって示されるカルチャ`provider`です。 値に応じてさらに、 `style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [ws][$][記号][整数の桁]、整数の桁 [.fractional 桁] [e [サインイン] 指数の桁] [ws]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 末尾に表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A?displayProperty=nameWithType>または<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>のメソッド、`provider`パラメーター。 通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、およびそのがの末尾に置くことができます`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*整数の桁*|一連の数字の 0 から 9 の数の整数部を指定するまでです。 整数の桁がなくてもかまいません桁の小数部がある場合。|  
+|*、*|カルチャ固有の桁区切り記号。 現在のカルチャの数千に区切り記号が表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*.*|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*小数の桁*|一連の数字の 0 から 9 数の小数部を指定するまでです。 小数部の桁が表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*e*|E または E 文字は、あることを示す`s`指数表記を使用して数値を表すことができます。 `s`スタイルが含まれている場合、パラメーターは指数表記の数値を表すことができます、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*指数桁の数字*|一連の数字の 0 から 9 指数部を指定するまでです。|  
+  
+ 数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) が正常に解析します。 残りの<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>メンバーを制御する可能性がありますが、入力文字列内に存在する必要はありません要素。 次の表に示す個別<xref:System.Globalization.NumberStyles>フラグに存在可能な要素に影響を与える`s`です。  
+  
+|NumberStyles 値|数字だけでなく s で許可されている要素|  
+|------------------------|---------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles.None>|*整数の桁*要素のみです。|  
+|<xref:System.Globalization.NumberStyles.AllowDecimalPoint>|*.* および*小数部の桁*要素。|  
+|<xref:System.Globalization.NumberStyles.AllowExponent>|`s`パラメーターは、指数表記も使用できます。 それ自体では、このフラグは、形式で値をサポートしている*整数の桁*E*指数の桁*以外の場合は追加のフラグが正常に正または負の符号および小数点記号などの要素を含む指数表記で文字列を解析する必要です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingWhite>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingWhite>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingSign>|*記号*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*記号*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles.AllowParentheses>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles.AllowThousands>|*、*要素。|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|* $ *要素。|  
+|<xref:System.Globalization.NumberStyles.Currency>|すべて。 `s`パラメーターには、16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles.Float>|*Ws*先頭または末尾の位置にある要素`s`、*記号*の先頭に`s`、および*です。* 記号です。 `s`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles.Number>|`ws`、 `sign`、何千もの区切り記号 (*、)、*と小数点 (*.*) 要素です。|  
+|<xref:System.Globalization.NumberStyles.Any>|すべてのスタイルを除く`s`16 進数を表すことはできません。|  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装など、<xref:System.Globalization.NumberFormatInfo>または<xref:System.Globalization.CultureInfo>オブジェクト。 `provider`パラメーターの解析中に使用されるカルチャに固有の情報を提供します。 場合`provider`は`null`または<xref:System.Globalization.NumberFormatInfo>オブジェクトを取得することはできません、現在のカルチャの書式情報を使用します。  
+  
+ 場合、変換は失敗、`s`パラメーターは`null`または数値値ではなく、`provider`パラメーターを生成しません、<xref:System.Globalization.NumberFormatInfo>オブジェクト、または`style`パラメーターがのビット フラグの組み合わせではありません、<xref:System.Globalization.NumberStyles>列挙します。  
+  
+ 通常、渡した場合、<xref:System.Double.TryParse%2A?displayProperty=nameWithType>メソッドを呼び出すことによって作成される文字列を<xref:System.Double.ToString%2A?displayProperty=nameWithType>、元のメソッド<xref:System.Double>値が返されます。 ただし、精度の損失、ため値可能性がありますいないなります。 さらに、いずれかの文字列形式を解析しよう<xref:System.Double.MinValue>または<xref:System.Double.MaxValue>スロー、 <xref:System.OverflowException>、次の例に示すようにします。  
+  
+ [!code-csharp[System.Double.TryParse#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.TryParse/cs/tryparse2.cs#3)]
+ [!code-vb[System.Double.TryParse#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.TryParse/vb/tryparse2.vb#3)]  
+  
+ 区切り記号が発生した場合、`s`解析操作では、および適用可能な通貨または 10 進数の間にパラメーターと桁区切り記号が同じには、解析操作では、区切り文字が桁区切り記号ではなく、小数点区切り文字である前提としています。 区切り記号の詳細については、次を参照してください。 <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Double.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Double%40%29?displayProperty=nameWithType>を特定のスタイルがあり、特定のカルチャの規則を使用してフォーマットされている数値の文字列表現を解析します。  
+  
+ [!code-csharp[System.Double.TryParse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.TryParse/cs/TryParse1.cs#2)]
+ [!code-vb[System.Double.TryParse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.TryParse/vb/TryParse1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />含まれています、<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

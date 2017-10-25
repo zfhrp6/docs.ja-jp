@@ -1,0 +1,245 @@
+<Type Name="LocalIdKeyIdentifierClause" FullName="System.IdentityModel.Tokens.LocalIdKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class LocalIdKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LocalIdKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージのセキュリティ ヘッダーに指定されるセキュリティ トークンを識別するキー識別子句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause> を使用する必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返す場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。結び付けられている参照は、SOAP メッセージのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。  
+  
+ <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause> キー識別子は、`<SecurityTokenReference>` 要素内に配置されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalIdKeyIdentifierClause (string localId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string localId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="localId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localId">現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値。 <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティの値を設定します。</param>
+        <summary>指定した識別子と型の配列を使用して、<see cref="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="localId" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalIdKeyIdentifierClause (string localId, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string localId, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="localId" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="localId">現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値。 <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティの値を設定します。</param>
+        <param name="ownerType">A<see cref="T:System.Type" />によって参照されるセキュリティ トークンの種類は、 <c>localId</c>パラメーター。 <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType" /> プロパティの値を設定します。</param>
+        <summary>指定した識別子と所有者のセキュリティ トークンの種類を使用して、<see cref="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="localId" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalIdKeyIdentifierClause (string localId, byte[] derivationNonce, int derivationLength, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string localId, unsigned int8[] derivationNonce, int32 derivationLength, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="localId" Type="System.String" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="localId">現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値。 <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティの値を設定します。</param>
+        <param name="derivationNonce">派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.GetDerivationNonce" /> メソッドから返される値を設定します。</param>
+        <param name="derivationLength">派生キーのサイズ。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.DerivationLength" /> プロパティの値を設定します。</param>
+        <param name="ownerType">A<see cref="T:System.Type" />によって参照されるセキュリティ トークンの種類は、 <c>localId</c>パラメーター。 <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType" /> プロパティの値を設定します。</param>
+        <summary>指定した識別子、nonce、派生キーの長さ、および所有者のセキュリティ トークンの種類を使用して、<see cref="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子の作成をサポートしません。  ただし、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子を持つ受信 SOAP メッセージを処理して使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="localId" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalId">
+      <MemberSignature Language="C#" Value="public string LocalId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値を取得します。</summary>
+        <value>現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別句と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="clause" /> 型であり、<see cref="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" /> プロパティと <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティの値が現在のインスタンスと一致する場合は <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType" />、それ以外の場合は <see langword="false" />。 詳細については、「解説」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかの場合に、<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティに一致します。  
+  
+-   <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> パラメーターで表されるインスタンスの `keyIdentifierClause` プロパティが `null`。  
+  
+-   現在のインスタンスの <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティの値が `null`。  
+  
+-   2 つのインスタンスの <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティが同じ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (string localId, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(string localId, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.Matches(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localId" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="localId">現在の SOAP メッセージ内の XML 要素に対する <see langword="wsu:Id" /> 属性の値。</param>
+        <param name="ownerType">A<see cref="T:System.Type" />によって参照されるセキュリティ トークンの種類は、 <c>localId</c>パラメーター。</param>
+        <summary>このインスタンスのキー識別子が、指定した参照および種類と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> パラメーターと <paramref name="localId" /> パラメーターが、<paramref name="ownerType" /> プロパティと <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティの値と一致する場合は <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかの場合に、<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティに一致します。  
+  
+-   値、<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A>と、現在のインスタンスが`null`です。  
+  
+-   `ownerType` パラメーターの値が `null` です。  
+  
+-   <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティの値が、現在のメソッドの `ownerType` パラメーターと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerType">
+      <MemberSignature Language="C#" Value="public Type OwnerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type OwnerType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" /> プロパティによって参照されるセキュリティ トークンの種類を取得します。</summary>
+        <value><see cref="T:System.Type" /> プロパティによって参照されるセキュリティ トークンの種類を格納する <see cref="P:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.ToString%2A> メソッドは、<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.LocalId%2A> プロパティと <xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause.OwnerType%2A> プロパティの値を含む文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

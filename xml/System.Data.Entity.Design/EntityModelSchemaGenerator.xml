@@ -1,0 +1,295 @@
+<Type Name="EntityModelSchemaGenerator" FullName="System.Data.Entity.Design.EntityModelSchemaGenerator">
+  <TypeSignature Language="C#" Value="public sealed class EntityModelSchemaGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityModelSchemaGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.EntityModelSchemaGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クラスは、C 領域で、既定 S 領域で EntityContainer と EntityContainer 間 CCMapping を作成します。 マッピングはエクステントの宣言された型に基づいて作成されます。 したがって継承は機能しません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここのコンテンツは更新されません。ここに資料を追加しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityModelSchemaGenerator (System.Data.Metadata.Edm.EntityContainer storeEntityContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.EntityContainer storeEntityContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.#ctor(System.Data.Metadata.Edm.EntityContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeEntityContainer" Type="System.Data.Metadata.Edm.EntityContainer" />
+      </Parameters>
+      <Docs>
+        <param name="storeEntityContainer">概念とマッピングのメタデータからは、ストレージ モデルの EntityContainer が作成されます。</param>
+        <summary><see cref="T:System.Data.Entity.Design.EntityModelSchemaGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityModelSchemaGenerator (System.Data.Metadata.Edm.EntityContainer storeEntityContainer, string namespaceName, string modelEntityContainerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.EntityContainer storeEntityContainer, string namespaceName, string modelEntityContainerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.#ctor(System.Data.Metadata.Edm.EntityContainer,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeEntityContainer" Type="System.Data.Metadata.Edm.EntityContainer" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="modelEntityContainerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="storeEntityContainer">概念とマッピングのメタデータからは、ストレージ モデルの EntityContainer が作成されます。</param>
+        <param name="namespaceName">概念モデルの名前空間の名前。 この値が null の場合は、storeEntityContainer 名は名前空間の名前に使用されます。</param>
+        <param name="modelEntityContainerName">EntityContainer 名は、概念モデルで宣言されています。</param>
+        <summary><see cref="T:System.Data.Entity.Design.EntityModelSchemaGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityModelSchemaGenerator (System.Data.Metadata.Edm.StoreItemCollection storeItemCollection, string namespaceName, string modelEntityContainerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.StoreItemCollection storeItemCollection, string namespaceName, string modelEntityContainerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.#ctor(System.Data.Metadata.Edm.StoreItemCollection,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="storeItemCollection" Type="System.Data.Metadata.Edm.StoreItemCollection" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="modelEntityContainerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="storeItemCollection">モデル メタデータを作成するには、EntityContainer とその他の項目を含む StoreItemCollection です。</param>
+        <param name="namespaceName">名前空間を指定する名前。 Null の場合、storeEntityContainer の名前が使用されます。</param>
+        <param name="modelEntityContainerName">モデルの EntityContainer に付ける名前。 Null の場合、名前空間の変更済みバージョン、storeEntityContainer で参照されている型が適用されます。</param>
+        <summary>コンス トラクター、EntityModelGenerator</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmItemCollection">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmItemCollection EdmItemCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EdmItemCollection EdmItemCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityModelSchemaGenerator.EdmItemCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GenerateMetadata メソッドによって作成された EdmItemCollection を取得します。</summary>
+        <value><see cref="T:System.Data.Metadata.Edm.EdmItemCollection" />概念スキーマ定義言語 (CSDL) を含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityContainer">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EntityContainer EntityContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EntityContainer EntityContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityModelSchemaGenerator.EntityContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EntityContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>概念モデルの EntityContainer GenerateMetadata メソッドによって作成されたを取得します。</summary>
+        <value><see cref="T:System.Data.Metadata.Edm.EntityContainer" />概念モデルの EntityContainer を含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateForeignKeyProperties">
+      <MemberSignature Language="C#" Value="public bool GenerateForeignKeyProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateForeignKeyProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityModelSchemaGenerator.GenerateForeignKeyProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または概念モデルに外部キーのプロパティを生成するためのフラグを設定します。</summary>
+        <value>このプロパティの値設定されている場合<see langword="true" />し、外部キー プロパティは、概念モデルで生成されます。 それ以外の場合の外部キー プロパティは、概念モデルで生成されません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.GenerateMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>概念モデルのメタデータ情報を生成し、すべてのスキーマ エラーを返します。</summary>
+        <returns>エラーのスキーマ オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateMetadata">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateMetadata (Version targetEntityFrameworkVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Data.Metadata.Edm.EdmSchemaError&gt; GenerateMetadata(class System.Version targetEntityFrameworkVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.GenerateMetadata(System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Metadata.Edm.EdmSchemaError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetEntityFrameworkVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="targetEntityFrameworkVersion">Entity Framework の対象とするバージョンに対応する EntityFrameworkVersions のプロパティです。</param>
+        <summary>概念モデルのメタデータ情報を生成し、すべてのスキーマ エラーを返します。</summary>
+        <returns>エラーのスキーマ オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PluralizationService">
+      <MemberSignature Language="C#" Value="public System.Data.Entity.Design.PluralizationServices.PluralizationService PluralizationService { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Entity.Design.PluralizationServices.PluralizationService PluralizationService" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.PluralizationServices.PluralizationService</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルを生成するときに使用するサービスを示す PluralizationService 値を設定します。</summary>
+        <value><see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />モデルを生成するときに使用するサービスを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteModelSchema">
+      <MemberSignature Language="C#" Value="public void WriteModelSchema (string outputFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteModelSchema(string outputFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.WriteModelSchema(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outputFileName">出力ファイルの名前。</param>
+        <summary>指定したファイルに生成された概念スキーマ定義言語 (CSDL) を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteModelSchema">
+      <MemberSignature Language="C#" Value="public void WriteModelSchema (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteModelSchema(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.WriteModelSchema(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">CSDL の書き込み先となる XmlWriter。</param>
+        <summary>XmlWriter オブジェクトを生成された概念スキーマ定義言語 (CSDL) を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStorageMapping">
+      <MemberSignature Language="C#" Value="public void WriteStorageMapping (string outputFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteStorageMapping(string outputFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.WriteStorageMapping(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="outputFileName">出力ファイルの名前。</param>
+        <summary>指定したファイルに生成されたマッピング仕様言語 (MSL) を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStorageMapping">
+      <MemberSignature Language="C#" Value="public void WriteStorageMapping (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteStorageMapping(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EntityModelSchemaGenerator.WriteStorageMapping(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">MSL の書き込み先となる XmlWriter。</param>
+        <summary>XmlWriter オブジェクトを生成されたマッピング仕様言語 (MSL) を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

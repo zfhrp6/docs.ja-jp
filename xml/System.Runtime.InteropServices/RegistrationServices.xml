@@ -1,0 +1,412 @@
+<Type Name="RegistrationServices" FullName="System.Runtime.InteropServices.RegistrationServices">
+  <TypeSignature Language="C#" Value="public class RegistrationServices : System.Runtime.InteropServices.IRegistrationServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegistrationServices extends System.Object implements class System.Runtime.InteropServices.IRegistrationServices" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.RegistrationServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices.IRegistrationServices</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("475e398f-8afa-43a7-a3be-f4ef8d6787c9")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の登録および登録を解除するためのサービスでは、使用するアセンブリをマネージ COM から提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリ内のオブジェクトは、COM クライアントで使用されているときに、登録が必要です。 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)と[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]によって公開されるメソッドを使用して、<xref:System.Runtime.InteropServices.RegistrationServices>クラスを追加またはマネージ アセンブリの COM を有効にするレジストリ エントリを削除します。  
+  
+ 登録ファイルの準備に役立つ、次のメソッドを使用できます。  
+  
+-   <xref:System.Runtime.InteropServices.RegistrationServices.GetManagedCategoryGuid%2A>  
+  
+-   <xref:System.Runtime.InteropServices.RegistrationServices.GetProgIdForType%2A>  
+  
+-   <xref:System.Runtime.InteropServices.RegistrationServices.GetRegistrableTypesInAssembly%2A>  
+  
+-   <xref:System.Runtime.InteropServices.RegistrationServices.TypeRepresentsComType%2A>  
+  
+ これらのメソッドは、登録ファイルで使用される情報の収集に役立つ、実際には生成されません登録ファイルです。 代わりに、使用することができます、 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)ツールを`/regfile`このタスクを実行するにはオプションです。 <xref:System.Runtime.InteropServices.RegistrationServices>メソッドは、エクスポートし、タイプ ライブラリを登録できません。 エクスポートして、タイプ ライブラリを登録する際、 [Regasm.exe (アセンブリ登録ツール)](~/docs/framework/tools/regasm-exe-assembly-registration-tool.md)ツールおよび[Tlbexp.exe (タイプ ライブラリ エクスポーター)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md)ツールです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistrationServices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.RegistrationServices" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetManagedCategoryGuid">
+      <MemberSignature Language="C#" Value="public virtual Guid GetManagedCategoryGuid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Guid GetManagedCategoryGuid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.GetManagedCategoryGuid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マネージ クラスを含む COM カテゴリの GUID を返します。</summary>
+        <returns>マネージ クラスが含まれる COM カテゴリの GUID です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProgIdForType">
+      <MemberSignature Language="C#" Value="public virtual string GetProgIdForType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetProgIdForType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.GetProgIdForType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">要求されているプログラム Id に対応する型。</param>
+        <summary>指定した型の COM プログラム Id を取得します。</summary>
+        <returns>指定した型の ProgID です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRegistrableTypesInAssembly">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetRegistrableTypesInAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetRegistrableTypesInAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.GetRegistrableTypesInAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">クラスを検索するアセンブリ。</param>
+        <summary>呼び出しで登録するアセンブリ内のクラスの一覧を取得<see cref="M:System.Runtime.InteropServices.RegistrationServices.RegisterAssembly(System.Reflection.Assembly,System.Runtime.InteropServices.AssemblyRegistrationFlags)" />です。</summary>
+        <returns>A<see cref="T:System.Type" />配列内のクラスの一覧を含む<paramref name="assembly" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="assembly" /> パラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAssembly">
+      <MemberSignature Language="C#" Value="public virtual bool RegisterAssembly (System.Reflection.Assembly assembly, System.Runtime.InteropServices.AssemblyRegistrationFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool RegisterAssembly(class System.Reflection.Assembly assembly, valuetype System.Runtime.InteropServices.AssemblyRegistrationFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.RegisterAssembly(System.Reflection.Assembly,System.Runtime.InteropServices.AssemblyRegistrationFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="flags" Type="System.Runtime.InteropServices.AssemblyRegistrationFlags" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">登録するアセンブリ。</param>
+        <param name="flags"><see cref="T:System.Runtime.InteropServices.AssemblyRegistrationFlags" />を登録するときに使用される特別な設定を示す値<c>アセンブリ</c>です。</param>
+        <summary>マネージ アセンブリを COM から作成を有効にするクラスを登録します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="assembly" />型が正常に登録されている以外の場合はそれを含む<see langword="false" />アセンブリに対象となる型が含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `RegisterAssembly`指定したアセンブリで型の適切なレジストリ エントリを追加します。 このメソッドは、アセンブリ内で見つかったすべての登録関数も呼び出します。  
+  
+ 使用して<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>アセンブリを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assembly" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">完全な名前<paramref name="assembly" />は<see langword="null" />します。  
+  
+ または  
+  
+ マークされたメソッド<see cref="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute" />は<see langword="static" />します。  
+  
+ または  
+  
+ マークされた 1 つ以上のメソッドがある<see cref="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute" />階層の特定のレベルです。  
+  
+ または  
+  
+ マークされたメソッドのシグネチャ<see cref="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute" />が無効です。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">カスタムの登録をユーザー定義関数 (でマークされた、<see cref="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute" />属性)、例外をスローします。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RegisterTypeForComClients">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した型を COM に登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注をプラットフォーム呼び出しを使用して、アンマネージ呼び出しに`CoRegisterClassObject`と`CoDisconnectObject`登録および COM オブジェクトの登録解除のためのメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RegisterTypeForComClients">
+      <MemberSignature Language="C#" Value="public virtual void RegisterTypeForComClients (Type type, ref Guid g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterTypeForComClients(class System.Type type, valuetype System.Guid&amp; g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients(System.Type,System.Guid@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="g" Type="System.Guid&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" /> COM から使用するために登録します。</param>
+        <param name="g"><see cref="T:System.Guid" />指定した型を登録するために使用します。</param>
+        <summary>指定された型を指定した GUID を使用して COM に登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことと同じ`CoRegisterClassObject`COM で <xref:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients%2A>メソッドがアトミックではないと、マルチ スレッドのコンテキストで使用すると、予期しない結果が発生することができます。  
+  
+ バージョン 2.0 以降を使用して、 <xref:System.Runtime.InteropServices.RegistrationServices.UnregisterTypeForComClients%2A> COM の型の登録を解除する方法  
+  
+ 注をプラットフォーム呼び出しを使用して、アンマネージ呼び出しに`CoRegisterClassObject`と`CoDisconnectObject`登録および COM オブジェクトの登録解除のためのメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" />パラメーターを作成することはできません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterTypeForComClients">
+      <MemberSignature Language="C#" Value="public virtual int RegisterTypeForComClients (Type type, System.Runtime.InteropServices.RegistrationClassContext classContext, System.Runtime.InteropServices.RegistrationConnectionType flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 RegisterTypeForComClients(class System.Type type, valuetype System.Runtime.InteropServices.RegistrationClassContext classContext, valuetype System.Runtime.InteropServices.RegistrationConnectionType flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients(System.Type,System.Runtime.InteropServices.RegistrationClassContext,System.Runtime.InteropServices.RegistrationConnectionType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="classContext" Type="System.Runtime.InteropServices.RegistrationClassContext" />
+        <Parameter Name="flags" Type="System.Runtime.InteropServices.RegistrationConnectionType" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" /> COM から使用するために登録するオブジェクト</param>
+        <param name="classContext">1 つ、<see cref="T:System.Runtime.InteropServices.RegistrationClassContext" />実行可能コードを実行するコンテキストを示す値。</param>
+        <param name="flags">1 つ、<see cref="T:System.Runtime.InteropServices.RegistrationConnectionType" />クラス オブジェクトへの接続の確立方法を指定する値。</param>
+        <summary>接続の種類と指定された実行コンテキストを使用して、指定された型を COM に登録します。</summary>
+        <returns>Cookie の値を表す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことと同じ`CoRegisterClassObject`COM で <xref:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients%2A>メソッドがアトミックではないと、マルチ スレッドのコンテキストで使用すると、予期しない結果が発生することができます。  
+  
+ .NET Framework version 2.0 以降で使用して、 <xref:System.Runtime.InteropServices.RegistrationServices.UnregisterTypeForComClients%2A> COM の型の登録を解除する方法  
+  
+ 注をプラットフォーム呼び出しを使用して、アンマネージ呼び出しに`CoRegisterClassObject`と`CoDisconnectObject`登録および COM オブジェクトの登録解除のためのメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" />パラメーターを作成することはできません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeRepresentsComType">
+      <MemberSignature Language="C#" Value="public virtual bool TypeRepresentsComType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TypeRepresentsComType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.TypeRepresentsComType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">COM 型を確認する型。</param>
+        <summary>型がでマークするかどうかを示す、<see cref="T:System.Runtime.InteropServices.ComImportAttribute" />でマークされた型から派生または、<see cref="T:System.Runtime.InteropServices.ComImportAttribute" />と親と同じ GUID を共有します。</summary>
+        <returns>
+          <see langword="true" />型が付いている場合、<see cref="T:System.Runtime.InteropServices.ComImportAttribute" />でマークされた型から派生または、 <see cref="T:System.Runtime.InteropServices.ComImportAttribute" /> ; 親と同じ GUID を共有し、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeRequiresRegistration">
+      <MemberSignature Language="C#" Value="public virtual bool TypeRequiresRegistration (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TypeRequiresRegistration(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.TypeRequiresRegistration(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">COM 登録要件を確認する型。</param>
+        <summary>指定した型に登録が必要かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />com で使用する型を登録する必要があります場合、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterAssembly">
+      <MemberSignature Language="C#" Value="public virtual bool UnregisterAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool UnregisterAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.UnregisterAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">登録解除するアセンブリ。</param>
+        <summary>マネージ アセンブリのクラスの登録を解除します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="assembly" />が正常に登録されていないそれ以外の種類を含む<see langword="false" />アセンブリに対象となる型が含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UnregisterAssembly`以前に追加した指定したアセンブリで型のレジストリ エントリを削除<xref:System.Runtime.InteropServices.RegistrationServices.RegisterAssembly%2A>です。 このメソッドは、アセンブリ内で見つかったすべての登録解除関数も呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assembly" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">完全な名前<paramref name="assembly" />は<see langword="null" />します。  
+  
+ または  
+  
+ マークされたメソッド<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />は<see langword="static" />します。  
+  
+ または  
+  
+ マークされた 1 つ以上のメソッドがある<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />階層の特定のレベルです。  
+  
+ または  
+  
+ マークされたメソッドのシグネチャ<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />が無効です。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">カスタムの登録解除をユーザー定義関数 (でマークされた、<see cref="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute" />属性)、例外をスローします。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterTypeForComClients">
+      <MemberSignature Language="C#" Value="public virtual void UnregisterTypeForComClients (int cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterTypeForComClients(int32 cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RegistrationServices.UnregisterTypeForComClients(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">以前の呼び出しによって返される cookie の値、<see cref="M:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients(System.Type,System.Runtime.InteropServices.RegistrationClassContext,System.Runtime.InteropServices.RegistrationConnectionType)" />メソッドのオーバー ロードします。</param>
+        <summary>登録されている型への参照を削除、<see cref="M:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients(System.Type,System.Runtime.InteropServices.RegistrationClassContext,System.Runtime.InteropServices.RegistrationConnectionType)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注をプラットフォーム呼び出しを使用して、アンマネージ呼び出しに`CoRegisterClassObject`と`CoDisconnectObject`登録および COM オブジェクトを登録解除する方法はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

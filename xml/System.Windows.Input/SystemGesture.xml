@@ -1,0 +1,209 @@
+<Type Name="SystemGesture" FullName="System.Windows.Input.SystemGesture">
+  <TypeSignature Language="C#" Value="public enum SystemGesture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SystemGesture extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.SystemGesture" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用可能なシステム ジェスチャを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムにシステム ジェスチャが認識されると、<xref:System.Windows.UIElement.StylusSystemGesture>イベントが発生します。 ジェスチャの多くは、従来のマウスのイベントにマップします。 たとえば、タップ システム ジェスチャはマウスの左クリック 1 つを模倣します。  
+  
+   
+  
+## Examples  
+ 次の例は、発生するジェスチャをシステムの種類を決定、<xref:System.Windows.Input.SystemGesture.Tap>イベント。 この例では、<xref:System.Windows.Controls.InkCanvas>と呼ばれる`inkcanvas1`および<xref:System.Windows.Input.SystemGesture>イベント ハンドラーを次に接続されています。  
+  
+ [!code-csharp[PacketSpy#15](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#15)]
+ [!code-vb[PacketSpy#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#15)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Drag">
+      <MemberSignature Language="C#" Value="Drag" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture Drag = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.Drag" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ドラッグにマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Flick">
+      <MemberSignature Language="C#" Value="Flick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture Flick = int32(31)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.Flick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のコマンドに変換する短い、クイック ストロークで発生します。 フリックで実行されるアクションは、システム全体に設定されています。 アプリケーションがリッスンできる、 <see cref="F:System.Windows.Input.SystemGesture.Flick" /> 、標準のいずれかになるを防ぐこと<see cref="T:System.Windows.Input.ApplicationCommands" />を設定して、<see cref="P:System.Windows.RoutedEventArgs.Handled" />プロパティを true に、<see cref="E:System.Windows.UIElement.StylusSystemGesture" />イベント。 Windows Vista のみフリックをサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HoldEnter">
+      <MemberSignature Language="C#" Value="HoldEnter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture HoldEnter = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.HoldEnter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのキーを押してを示すし、保留が発生しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HoldLeave">
+      <MemberSignature Language="C#" Value="HoldLeave" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture HoldLeave = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.HoldLeave" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HoverEnter">
+      <MemberSignature Language="C#" Value="HoverEnter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture HoverEnter = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.HoverEnter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホバーにマップされます。 ツールヒントのロール オーバーの効果、またはその他のマウス ホバー時の動作を表示するために使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HoverLeave">
+      <MemberSignature Language="C#" Value="HoverLeave" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture HoverLeave = int32(24)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.HoverLeave" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上に置いたマウスにマップされます。 ツールヒントのロール オーバーの効果やその他のマウス ホバー時の動作を終了するために使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム ジェスチャがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightDrag">
+      <MemberSignature Language="C#" Value="RightDrag" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture RightDrag = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.RightDrag" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右ドラッグにマップされます。 これは、オブジェクトまたは選択項目を別の領域にドラッグするために使用して、オブジェクトを移動するためのオプションを提供するショートカット メニューの外観が続きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightTap">
+      <MemberSignature Language="C#" Value="RightTap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture RightTap = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.RightTap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右にマップされます。 ショートカット メニューを表示するために使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tap">
+      <MemberSignature Language="C#" Value="Tap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture Tap = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.Tap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左クリックに相当します。 メニューまたはツールバー、処置のコマンドの場合は、コマンドを選択すると、セット、カーソルの選択または選択結果を表示するために使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoFingerTap">
+      <MemberSignature Language="C#" Value="TwoFingerTap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.SystemGesture TwoFingerTap = int32(4352)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.SystemGesture.TwoFingerTap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SystemGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのダブルクリックにマップされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

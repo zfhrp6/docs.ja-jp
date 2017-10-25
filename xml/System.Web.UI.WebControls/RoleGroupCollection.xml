@@ -1,0 +1,302 @@
+<Type Name="RoleGroupCollection" FullName="System.Web.UI.WebControls.RoleGroupCollection">
+  <TypeSignature Language="C#" Value="public sealed class RoleGroupCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoleGroupCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RoleGroupCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.RoleGroupCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>連続番号が含まれていますロールのリストをグループ化する、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロールを使用して役割に基づいてユーザーに表示するコントロール テンプレートを特定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroupCollection>クラスには、特定の関連付けられたロール グループの一覧が管理する<xref:System.Web.UI.WebControls.LoginView>テンプレート。 各役割のグループは、コンテンツと、Web サイト上のユーザーの特定のグループに表示するコントロールを定義します。 同じテンプレートに複数のロール グループを割り当てることは。  
+  
+ ロール グループを特定のユーザーが属しているコレクションを検索する際、<xref:System.Web.UI.WebControls.RoleGroupCollection.GetMatchingRoleGroup%2A>ユーザー名でコレクションを検索するメソッド。  
+  
+> [!CAUTION]
+>  内のロールの順序、<xref:System.Web.UI.WebControls.RoleGroupCollection>に一致する最初の役割が見つかりましたに基づいて順番が実行されるため、コレクションが重要です。  
+  
+ 使用するロールの管理を構成する必要があります、<xref:System.Web.UI.WebControls.RoleGroupCollection>役割グループの一覧を管理するクラス。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleGroupCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RoleGroupCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.RoleGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.RoleGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.Add(System.Web.UI.WebControls.RoleGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Web.UI.WebControls.RoleGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">コレクションに追加する <see cref="T:System.Web.UI.WebControls.RoleGroup" />。</param>
+        <summary>コレクションの末尾にロール グループを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を動的に作成された追加<xref:System.Web.UI.WebControls.RoleGroup>オブジェクトを<xref:System.Web.UI.WebControls.RoleGroupCollection>です。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.RoleGroup>クラスです。  
+  
+ [!code-csharp[RoleGroupClass#2](~/samples/snippets/csharp/VS_Snippets_WebNet/RoleGroupClass/CS/rolegroupclasscs.aspx#2)]
+ [!code-vb[RoleGroupClass#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RoleGroupClass/VB/rolegroupclassvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.RoleGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.RoleGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.Contains(System.Web.UI.WebControls.RoleGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Web.UI.WebControls.RoleGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.Web.UI.WebControls.RoleGroup" />コレクション内で検索します。</param>
+        <summary>コレクションに指定されたロール グループが含まれているかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定されたロール グループ、コレクションのメンバーである場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.RoleGroup[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.RoleGroup[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.CopyTo(System.Web.UI.WebControls.RoleGroup[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.RoleGroup[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる配列<see cref="T:System.Web.UI.WebControls.RoleGroup" />項目を受信するオブジェクトのコレクションからコピーします。</param>
+        <param name="index">先の配列、配列がコピーされた項目の受信を開始する位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.RoleGroupCollection" />の場合は、互換性のある 1 次元配列にコレクション<see cref="T:System.Web.UI.WebControls.RoleGroup" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RoleGroupCollection.CopyTo%2A>に指定された 0 から始まる配列にコレクションの内容をコピーする方法です。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 内の項目にアクセスする配列の構文を使用するには項目は、配列では、後に、<xref:System.Web.UI.WebControls.RoleGroupCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingRoleGroup">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RoleGroup GetMatchingRoleGroup (System.Security.Principal.IPrincipal user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.RoleGroup GetMatchingRoleGroup(class System.Security.Principal.IPrincipal user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.GetMatchingRoleGroup(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RoleGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.Security.Principal.IPrincipal" />ロール グループのコレクションを検索するユーザー アカウントを表すです。</param>
+        <summary>指定されたユーザー アカウントが含まれる最初のロール グループを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.RoleGroup" />指定されたユーザー アカウントが含まれているコレクション内の最初のロール グループを表すです。 かどうか、ユーザーがコレクション内のロール グループの一部でないが返されます<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroupCollection.GetMatchingRoleGroup%2A>メソッド ロール グループのコレクションを検索し、指定されたユーザー アカウントが含まれる最初のロール グループを返します。 メソッドは、グループ、コレクションに追加されます順序ロールのコレクションを検索し、最初に一致するロール グループのみを返します。  
+  
+ 指定されたユーザー アカウントは、コレクション内の役割グループのいずれかの一部ではない場合`null`が返されます。  
+  
+ 使用するロールの管理を構成する必要があります、<xref:System.Web.UI.WebControls.RoleGroupCollection.GetMatchingRoleGroup%2A>メソッドです。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="user" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.RoleGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.RoleGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.IndexOf(System.Web.UI.WebControls.RoleGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Web.UI.WebControls.RoleGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">コレクション内で検索する <see cref="T:System.Web.UI.WebControls.RoleGroup" />。</param>
+        <summary>コレクションを検索し、最初に見つかった位置の指定した 0 から始まるインデックスを返します<see cref="T:System.Web.UI.WebControls.RoleGroup" />です。</summary>
+        <returns><paramref name="group" /> 全体を対象に <see cref="T:System.Web.UI.WebControls.RoleGroupCollection" /> を検索し、見つかった場合は、インデックス番号の最も小さい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroupCollection.IndexOf%2A>メソッドは、一方向の検索を実行します。 平均実行時間が、コレクション内のメンバーの数に依存するためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.RoleGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.RoleGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.Insert(System.Int32,System.Web.UI.WebControls.RoleGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="group" Type="System.Web.UI.WebControls.RoleGroup" />
+      </Parameters>
+      <Docs>
+        <param name="index">ロール グループを挿入する位置を示す 0 から始まるインデックス。</param>
+        <param name="group">挿入するロール グループ。</param>
+        <summary>追加、<see cref="T:System.Web.UI.WebControls.RoleGroup" />コレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RoleGroupCollection.Insert%2A>メソッドは、指定された挿入<xref:System.Web.UI.WebControls.RoleGroup>指定された位置。 次の挿入ポイントの役割のグループは、新しい要素のためにコレクション内で下移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RoleGroup this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.RoleGroup Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RoleGroupCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RoleGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返すロール グループのインデックス。</param>
+        <summary>指定したインデックス位置には、ロール グループを取得します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Web.UI.WebControls.RoleGroup" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.RoleGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.RoleGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RoleGroupCollection.Remove(System.Web.UI.WebControls.RoleGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Web.UI.WebControls.RoleGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">コレクションから削除する <see cref="T:System.Web.UI.WebControls.RoleGroup" />。</param>
+        <summary>コレクションから、最初に見つかった指定されたロール グループを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初のインスタンスの指定した<xref:System.Web.UI.WebControls.RoleGroup>からオブジェクトが削除された、<xref:System.Web.UI.WebControls.RoleGroupCollection>コレクション。 空いた場所を入力するインデックスの削除後に続くグループに移動します。 指定した 2 つ以上のインスタンスが存在<xref:System.Web.UI.WebControls.RoleGroup>オブジェクトの最初のインスタンスのみを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

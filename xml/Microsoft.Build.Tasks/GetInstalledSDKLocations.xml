@@ -1,0 +1,168 @@
+<Type Name="GetInstalledSDKLocations" FullName="Microsoft.Build.Tasks.GetInstalledSDKLocations">
+  <TypeSignature Language="C#" Value="public class GetInstalledSDKLocations : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GetInstalledSDKLocations extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.GetInstalledSDKLocations" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>レジストリ内とディスク上にインストールされている SDK の一覧を収集し、1 つのファイルの参照を解決する SDK および RAR 中に使用できるように、プロジェクトに出力します。  
+  
+ GetInstalledSDKLocations は、その名前に"v"が表示された場合、バージョン フォルダーを認識しません。  場所は、SDK など、C:\Windows\Program \microsoft SDKs\Windows\8.0\SDKFolders\3rdPartySDK\2.5\will が正しく配置します。 しかし、同じ SDK は配置 atC:\Windows\Program Files\Microsoft SDKs\Windows\8.0\SDKFolders\3rdPartySDK\v2.5\won't があるため、無視されます。 SDK を無視する場合は、エラーをログに記録しないし、エラーはスローされません。  
+  
+ バージョン フォルダー名を必要 [.revision として形成される]。 詳細については、「<see cref="M:System.Version.TryParse(System.String,System.Version@)" />」を参照してください。  
+  
+ 特定のバージョンと SDK を検索するには、シーク バージョンは要求されたバージョンに一致する必要があります。 たとえば、SDK に 8.0.0 フォルダー バージョン名があり、ユーザーが、顧客から要求されたバージョン 8.0 SDK がないと、および SDK は検出されません。  
+  
+ バージョンの一致の詳細については、次を参照してください。<see cref="M:System.Version.CompareTo(System.Version)" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GetInstalledSDKLocations ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GetInstalledSDKLocations.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>GetInstalledSDKLocations の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GetInstalledSDKLocations.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Sdk を取得します。</summary>
+        <returns>返します<see langword="true" />メソッドが成功した場合、それを返します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledSDKs">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] InstalledSDKs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] InstalledSDKs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetInstalledSDKLocations.InstalledSDKs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SDKDirectory と SDKRegistry ルートにインストールされている Sdk のすべてを表す項目のセットを設定します。  
+  
+ Itemspec は、SDK のインストール場所です。 SDK の名前を含む sdk 名と呼ばれるメタデータの一部があります。</summary>
+        <value>検出されたすべてのインストールされている Sdk のセットを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SDKDirectoryRoots">
+      <MemberSignature Language="C#" Value="public string[] SDKDirectoryRoots { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] SDKDirectoryRoots" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetInstalledSDKLocations.SDKDirectoryRoots" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはディスク上で Sdk を参照するルート ディレクトリを設定します。</summary>
+        <value>ルート ディレクトリを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SDKRegistryRoot">
+      <MemberSignature Language="C#" Value="public string SDKRegistryRoot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SDKRegistryRoot" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetInstalledSDKLocations.SDKRegistryRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Sdk を検索するルートのレジストリ ルートを設定します。</summary>
+        <value>レジストリ ルートを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPlatformIdentifier">
+      <MemberSignature Language="C#" Value="public string TargetPlatformIdentifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetPlatformIdentifier" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetInstalledSDKLocations.TargetPlatformIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象としているプラットフォーム識別子を取得します。</summary>
+        <value>ターゲット プラットフォーム識別子を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPlatformVersion">
+      <MemberSignature Language="C#" Value="public string TargetPlatformVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetPlatformVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetInstalledSDKLocations.TargetPlatformVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象としているプラットフォームのバージョンを取得します。</summary>
+        <value>ターゲット プラットフォーム バージョンを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

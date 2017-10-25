@@ -1,0 +1,405 @@
+<Type Name="SchemaReference" FullName="System.Web.Services.Discovery.SchemaReference">
+  <TypeSignature Language="C#" Value="public sealed class SchemaReference : System.Web.Services.Discovery.DiscoveryReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SchemaReference extends System.Web.Services.Discovery.DiscoveryReference" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.SchemaReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Discovery.DiscoveryReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("schemaRef", IsNullable=true, Namespace="http://schemas.xmlsoap.org/disco/schema/")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML スキーマ定義 (XSD) 言語スキーマに探索ドキュメントでの参照を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスの検出では、URL を指定します。 使用可能な XML Web サービスを検出する必要があります。 URL は、通常、.disco ファイル名拡張子は、通常は、検出のドキュメントを指します。 探索ドキュメントには、XML Web サービスが存在することに関する情報への参照が含まれています。 これらの参照は、サービスの説明、XSD スキーマ、または他の探索ドキュメントを参照できます。 このクラスは、XSD スキーマへの参照を表します。  
+  
+ 内に含まれる XSD スキーマへの参照を探索ドキュメント内で、 `schemaRef` XML 要素です。 `schemaRef` XML 要素が XML 名前空間と`ref`属性。 XML 名前空間の値に一致する必要があります、<xref:System.Web.Services.Discovery.SchemaReference.Namespace>定数。 値、`ref`に属性を配置、<xref:System.Web.Services.Discovery.SchemaReference.Ref%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SchemaReference#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#1)]
+ [!code-csharp[SchemaReference#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#1)]
+ [!code-vb[SchemaReference#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SchemaReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SchemaReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定値を使用して <see cref="T:System.Web.Services.Discovery.SchemaReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SchemaReference (string href);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string href) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SchemaReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="href">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Discovery.SchemaReference" />クラス XSD スキーマの参照として指定された URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFilename">
+      <MemberSignature Language="C#" Value="public override string DefaultFilename { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultFilename" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SchemaReference.DefaultFilename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照先の XSD スキーマを保存するときに使用する既定のファイルの名前を取得します。</summary>
+        <value>既定の参照先の XSD スキーマ ファイルに保存するときに使用する名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Discovery.SchemaReference.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>探索ドキュメント内の XSD スキーマの参照の XML 名前空間。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内に含まれる XSD スキーマへの参照を探索ドキュメント内で、`schemaRef`で指定された XML 名前空間の一部である XML 要素、<xref:System.Web.Services.Discovery.SchemaReference.Namespace>定数。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDocument">
+      <MemberSignature Language="C#" Value="public override object ReadDocument (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ReadDocument(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SchemaReference.ReadDocument(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+          <see cref="T:System.IO.Stream" />XSD スキーマを含むです。</param>
+        <summary>読み取りを渡されたから XSD スキーマを返します<see cref="T:System.IO.Stream" />です。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />参照されている XSD スキーマの内容を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ref">
+      <MemberSignature Language="C#" Value="public string Ref { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Ref" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SchemaReference.Ref" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("ref")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照先の XSD スキーマに URL を設定します。</summary>
+        <value>参照されている XSD スキーマの URL です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内で探索ドキュメントでは、XSD スキーマへの参照が含まれている、 `schemaRef` XML 要素です。 `schemaRef` XML 要素には、`ref`属性が参照されている XSD スキーマの URL。 <xref:System.Web.Services.Discovery.ContractReference.Ref%2A>プロパティの値を表す、`ref`属性。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="protected override void Resolve (string contentType, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Resolve(string contentType, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SchemaReference.Resolve(System.String,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">To be added.</param>
+        <param name="stream">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SchemaReference.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Xml.Schema.XmlSchema" /> XSD スキーマを表すオブジェクト。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchema" /> XSD スキーマを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、XSD スキーマがないされてダウンロードに追加、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>のプロパティ<xref:System.Web.Services.Discovery.DiscoveryReference.ClientProtocol%2A>、ダウンロードして解決するには、ドキュメントを試行します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Web.Services.Discovery.DiscoveryReference.ClientProtocol" />プロパティは<see langword="null" />します。  
+  
+ または  
+  
+ ダウンロードや、XSD を使用してスキーマの解決中にエラーが発生しました。<see cref="P:System.Web.Services.Discovery.DiscoveryReference.ClientProtocol" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNamespace">
+      <MemberSignature Language="C#" Value="public string TargetNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SchemaReference.TargetNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("targetNamespace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="targetNamespace" /> XSD スキーマの XML 属性です。</summary>
+        <value><see langword="targetNamespace" /> XSD スキーマの XML 属性です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public override string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SchemaReference.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照されるスキーマの URL を設定します。</summary>
+        <value>参照されている XSD スキーマの URL です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.SchemaReference>クラス、<xref:System.Web.Services.Discovery.SchemaReference.Url%2A>プロパティの値を返します、<xref:System.Web.Services.Discovery.SchemaReference.Ref%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDocument">
+      <MemberSignature Language="C#" Value="public override void WriteDocument (object document, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteDocument(object document, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SchemaReference.WriteDocument(System.Object,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Object" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="document"><see cref="T:System.Xml.Schema.XmlSchema" />に書き込む<c>ストリーム</c>です。</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />にシリアル化された XSD スキーマが書き込まれます。</param>
+        <summary>渡されたに渡された XSD スキーマを書き込みます<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SchemaReference#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SchemaReference/CPP/schemareference.cpp#2)]
+ [!code-csharp[SchemaReference#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SchemaReference/CS/schemareference.cs#2)]
+ [!code-vb[SchemaReference#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SchemaReference/VB/schemareference.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

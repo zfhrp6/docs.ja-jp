@@ -1,0 +1,48 @@
+<Type Name="IPartialSessionState" FullName="System.Web.SessionState.IPartialSessionState">
+  <TypeSignature Language="C#" Value="public interface IPartialSessionState" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPartialSessionState" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.IPartialSessionState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>型として実装された場合は、セッション状態プロバイダーを取得するセッション状態の項目である必要を示す 0 個以上のセッション キーの一覧を返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装する型に null 以外の文字列のジェネリック リストが返されるときに、<xref:System.Web.SessionState.IPartialSessionState.PartialSessionStateKeys%2A>プロパティの一覧を示します、セッション状態プロバイダーをプロバイダーが、一覧で指定されたセッション状態の値のみを取得する必要があります。 型を返す場合、`null`値を<xref:System.Web.SessionState.IPartialSessionState.PartialSessionStateKeys%2A>プロパティ、セッション状態プロバイダーはすべてのセッション状態値を取得する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PartialSessionStateKeys">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;string&gt; PartialSessionStateKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;string&gt; PartialSessionStateKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.IPartialSessionState.PartialSessionStateKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態の値に関連付けられているキーの一覧を取得します。</summary>
+        <value>セッション状態の値のキーとして機能する文字列のジェネリック リスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`null`返す値が、セッション状態プロバイダーことを示します、プロバイダーがすべてのセッション状態値を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

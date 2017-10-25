@@ -1,0 +1,330 @@
+<Type Name="IDataServiceStreamProvider" FullName="System.Data.Services.Providers.IDataServiceStreamProvider">
+  <TypeSignature Language="C#" Value="public interface IDataServiceStreamProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataServiceStreamProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.IDataServiceStreamProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メディア リンク エントリであるエンティティに属するメディア リソースとしてバイナリ データへのアクセスおよび変更を実行できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Open Data Protocol (OData) を使用すると、次の構造に基づくメカニズムを使用して、データ フィード内のエントリとは無関係に、データ サービスによって公開されるエンティティのバイナリ データ プロパティを定義できます。  
+  
+-   メディア リソース - バイナリ データであるバイナリ ラージ オブジェクト データ (ビデオ、オーディオ、画像などのメディア リソース)。  
+  
+-   メディア リンク エントリ - エンティティを表し、関連するメディア リソースへの参照を持つデータ フィード内の AtomPub エントリ。  
+  
+ 詳細については、次を参照してください。[ストリーミング プロバイダー](~/docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeleteStream">
+      <MemberSignature Language="C#" Value="public void DeleteStream (object entity, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteStream(object entity, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream(System.Object,System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除されるメディア リンク エントリ。</param>
+        <param name="operationContext">要求を処理する <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>メディア リンク エントリが削除されるときに、関連付けられたメディア リソースを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A> メソッドは、データ サービスからメディア リンク エントリを削除するときに関連付けられているメディア リソースを削除するための実装を提供します。 詳細については、次を参照してください。[ストリーミング プロバイダー](~/docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />または<paramref name="operationContext" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> が、ストリーム出力するバイナリ プロパティを持つエンティティでない場合。</exception>
+        <exception cref="T:System.Data.Services.DataServiceException"><paramref name="entity" /> に関連付けられているストリームを削除できない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetReadStream (object entity, string etag, Nullable&lt;bool&gt; checkETagForEquality, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetReadStream(object entity, string etag, valuetype System.Nullable`1&lt;bool&gt; checkETagForEquality, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream(System.Object,System.String,System.Nullable{System.Boolean},System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="etag" Type="System.String" />
+        <Parameter Name="checkETagForEquality" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連するメディア リソースを持つメディア リンク エントリであるエンティティ。</param>
+        <param name="etag">データ サービスに送信される HTTP 要求の一部として送信される eTag 値。</param>
+        <param name="checkETagForEquality">Null 許容型<see cref="T:System.Boolean" />データ サービスに使用される eTag の型が必要があるかどうかを決定する値。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>メディア リンク エントリである指定されたエンティティのメディア リソース データを格納するストリームを返します。</summary>
+        <returns><see cref="T:System.IO.Stream" /> のバイナリ プロパティ データを格納するデータ <paramref name="entity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eTag` は、If-Match または If-None-Match ヘッダーの値です。 次の値がサポートされています。  
+  
+-   `true`場合、eTag が If-match ヘッダーを表します。  
+  
+-   `false`-eTag が [なし]-If-match ヘッダーを表します。  
+  
+-   `null`場合、If-match または [なし]-If-match ヘッダーは要求内に存在します。  
+  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A> メソッドは、クライアントが指定された `entity` (メディア リンク エントリ) のメディア リソースを要求したときに、データ サービスがクライアントに返すストリームを取得するために、データ サービス ランタイムによって呼び出されます。 詳細については、次を参照してください。[ストリーミング プロバイダー](~/docs/framework/data/wcf/streaming-provider-wcf-data-services.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStreamUri">
+      <MemberSignature Language="C#" Value="public Uri GetReadStreamUri (object entity, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Uri GetReadStreamUri(object entity, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStreamUri(System.Object,System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連するメディア リソースを持つメディア リンク エントリであるエンティティ。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>指定されたエンティティに属するメディア リソースを要求するために使用される URI を返します。</summary>
+        <returns>バイナリ データ ストリームを要求するために使用される <see cref="T:System.Uri" /> 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStreamUri%2A> メソッドは、メディア リソースに対して取得 (つまり、GET) 要求を実行するときにクライアントが使用する必要がある URI を取得するために、データ サービス ランタイムによって呼び出されます。  
+  
+ <xref:System.Uri> メソッドの実装によって返される <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStreamUri%2A> 値は、メディア リソースの場所を参照する、メディア リンク エントリの編集メディア リンクとして使用されます。  
+  
+ メソッドの実装が null を返すと、データ サービスは既定の <xref:System.Uri> を構築します。これは、通常はエンティティの URI に `/$value` が付加された形になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamContentType">
+      <MemberSignature Language="C#" Value="public string GetStreamContentType (object entity, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetStreamContentType(object entity, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamContentType(System.Object,System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連するメディア リソースを持つメディア リンク エントリであるエンティティ。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>指定されたエンティティに属するメディア リソースのコンテンツの種類を返します。</summary>
+        <returns>有効なコンテンツ タイプのバイナリ データ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamContentType%2A> メソッドは、指定された `entity` に属するメディア リソースの Content-Type を取得するために、データ サービス ランタイムによって呼び出されます。 メディア リソースの Content-Type を設定するには、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamContentType%2A> メソッドの実装を使用します。 <xref:System.Data.Services.Providers.IDataServiceStreamProvider> プロバイダーの実装で、Content-Type ヘッダーを直接設定しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamETag">
+      <MemberSignature Language="C#" Value="public string GetStreamETag (object entity, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetStreamETag(object entity, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamETag(System.Object,System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連するメディア リソースを持つメディア リンク エントリであるエンティティ。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>指定されたメディア リンク エントリに属するメディア リソースの eTag を返します。</summary>
+        <returns><paramref name="entity" /> に関連付けられたメディア リソースの eTag。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamETag%2A> メソッドは、`entity` に関連付けられたメディア リソースの eTag を取得するために、データ サービス ランタイムによって呼び出されます。  
+  
+ データ サービスでメディア リソースの同時実行を管理できるようにする場合は、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamETag%2A> メソッドを実装する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWriteStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetWriteStream (object entity, string etag, Nullable&lt;bool&gt; checkETagForEquality, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetWriteStream(object entity, string etag, valuetype System.Nullable`1&lt;bool&gt; checkETagForEquality, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream(System.Object,System.String,System.Nullable{System.Boolean},System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="etag" Type="System.String" />
+        <Parameter Name="checkETagForEquality" Type="System.Nullable&lt;System.Boolean&gt;" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entity">関連するメディア リソースを持つメディア リンク エントリであるエンティティ。</param>
+        <param name="etag">データ サービスに送信される HTTP 要求の一部として送信される eTag 値。</param>
+        <param name="checkETagForEquality">Null 許容型<see cref="T:System.Boolean" />をクライアントによって要求される同時実行チェックの種類を示す値。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>指定されたエンティティに属するクライアントから受け取ったメディア リソースのバイナリ データを書き込むためにデータ サービスで使用されるストリームを返します。</summary>
+        <returns>クライアントから受け取ったバイナリ データの内容を書き込むためにデータ サービスで使用される有効な <see cref="T:System.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> メソッドは、`entity` に関連付けられているメディア リソースの挿入操作または更新操作が処理されているときにデータ サービス ランタイムによって呼び出されます。  
+  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A>メソッドが返すことはありません、`null`値。  
+  
+ このインターフェイスのメソッドの実装側では、書き込みストリームを作成するのに HTTP 要求ヘッダーの情報を必要とするため、`operationContext` が引数として提供されます。 このメソッドを実装する場合は、必要に応じて、同時実行チェックを実行する必要があります。 要求に If-match または [なし]-If-match の要求ヘッダーが含まれている場合、`etag`されません`null`です。 この場合、このメソッドでは適切な同時実行チェックを実行する必要があります。 同時実行チェックに合格した場合、このメソッドは要求されたストリームを返します。 同時実行チェックに失敗した場合、適切な HTTP 応答コードで <xref:System.Data.Services.DataServiceException> が発生します。  
+  
+ `eTag` は、If-Match または If-None-Match ヘッダーの値です。  
+  
+ 次の値の`checkETagForEquality`はサポートされています。  
+  
+-   `true`場合、eTag が If-match ヘッダーを表します。  
+  
+-   `false`-eTag が [なし]-If-match ヘッダーを表します。  
+  
+-   `null`場合、If-match または [なし]-If-match ヘッダーは要求内に存在します。  
+  
+ このメソッドを実装する場合、Content-Type または eTag HTTP 応答ヘッダーはデータ サービス ランタイムによって設定されるため、それらを設定する必要はありません。 その他の HTTP 応答ヘッダーは、提供された `operationContext` を使用して設定できます。  
+  
+ このメソッドを実装する場合は、正常に応答するために必要な `operationContext` のプロパティのみを設定する必要があります。 `operationContext` の他のプロパティを変更すると、データ サービスからの応答が破損することがあります。  
+  
+ すべてのバイトがストリームに正常に書き込まれると、データ サービス ランタイムによってストリームが閉じられます。 ストリームへの書き込み中にエラーが発生した場合は、データ サービスによってクライアントに対するエラー応答が生成されます。  
+  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> メソッドを実装する場合は、次のような例外を発生させる必要があります。  
+  
+|例外の種類|状態|  
+|--------------------|---------------|  
+|<xref:System.ArgumentNullException>|ときに`entity`または`operationContext`は`null`します。|  
+|<xref:System.ArgumentException>|`entity` にバイナリ プロパティがない場合。|  
+|<xref:System.Data.Services.DataServiceException>|有効なストリームを返すことができない場合。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveType">
+      <MemberSignature Language="C#" Value="public string ResolveType (string entitySetName, System.Data.Services.DataServiceOperationContext operationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ResolveType(string entitySetName, class System.Data.Services.DataServiceOperationContext operationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceStreamProvider.ResolveType(System.String,System.Data.Services.DataServiceOperationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="operationContext" Type="System.Data.Services.DataServiceOperationContext" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">エンティティ セットの完全修飾名。</param>
+        <param name="operationContext">要求を処理するためにデータ サービスによって使用される <see cref="T:System.Data.Services.DataServiceOperationContext" /> インスタンス。</param>
+        <summary>名前空間で修飾された型名を返します。この型は、挿入されるメディア リソースのデータ ストリームに関連付けられたメディア リンク エントリに対してデータ サービス ランタイムが作成する必要がある型を表します。</summary>
+        <returns>名前空間で修飾された型名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.ResolveType%2A> メソッドは、メディア リンク エントリである新しいエンティティがメディア リソースと共に作成されているときに、データ サービスによって呼び出されます。 このメソッドを実装する側では、`operationContext` 内の要求ヘッダーを検査し、新しいメディア リソースに関連付けられているメディア リンク エントリを作成するためにデータ サービス ランタイムがインスタンス化する必要がある型を表す名前空間で修飾された型名を返す必要があります。 この型名を表す文字列は、メディア リンク エントリを作成するために、<xref:System.Data.Services.IUpdatable.CreateResource%2A> メソッドに渡されます。  
+  
+ <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> メソッドを実装する場合は、次のような例外を発生させる必要があります。  
+  
+|例外の種類|状態|  
+|--------------------|---------------|  
+|<xref:System.ArgumentNullException>|ときに`operationContext`は`null`します。|  
+|<xref:System.Data.Services.DataServiceException>|`operationContext` に基づいてエンティティ型名を解決できない場合。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamBufferSize">
+      <MemberSignature Language="C#" Value="public int StreamBufferSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StreamBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceStreamProvider.StreamBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリーム バッファーのサイズを取得します。</summary>
+        <value>バッファーのサイズを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のバッファー サイズは 64 KB です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

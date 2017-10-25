@@ -1,0 +1,269 @@
+<Type Name="GestureRecognizer" FullName="System.Windows.Ink.GestureRecognizer">
+  <TypeSignature Language="C#" Value="public sealed class GestureRecognizer : System.Windows.DependencyObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GestureRecognizer extends System.Windows.DependencyObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.GestureRecognizer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>インク ジェスチャを認識します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Ink.GestureRecognizer>インク ジェスチャを識別します。 設定することができます、<xref:System.Windows.Ink.GestureRecognizer>すべてまたはアプリケーション ジェスチャのサブセットを認識するようにします。 設定する、<xref:System.Windows.Ink.GestureRecognizer>使用できるジェスチャのサブセットを認識するように渡す、<xref:System.Windows.Ink.ApplicationGesture>コンス トラクターまたは使用する配列、<xref:System.Windows.Ink.GestureRecognizer.SetEnabledGestures%2A>メソッドです。 確認するかどうか、<xref:System.Windows.Ink.StrokeCollection>ジェスチャで呼び出しが含まれています、<xref:System.Windows.Ink.GestureRecognizer.Recognize%2A>メソッドです。  
+  
+<a name="xamlTextUsage_GestureRecognizer"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスを使用することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例で確認する方法かどうか、<xref:System.Windows.Ink.Stroke>は、<xref:System.Windows.Ink.ApplicationGesture.ScratchOut>ジェスチャ。  
+  
+ [!code-csharp[GestureControl#8](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#8)]
+ [!code-vb[GestureControl#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GestureRecognizer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Ink.GestureRecognizer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成されたときに、<xref:System.Windows.Ink.GestureRecognizer>アプリケーションのすべてのジェスチャを認識します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GestureRecognizer (System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.ApplicationGesture&gt; enabledApplicationGestures);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Ink.ApplicationGesture&gt; enabledApplicationGestures) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Ink.ApplicationGesture})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enabledApplicationGestures" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.ApplicationGesture&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="enabledApplicationGestures">型の配列<see cref="T:System.Windows.Ink.ApplicationGesture" />アプリケーション ジェスチャを指定する、<see cref="T:System.Windows.Ink.GestureRecognizer" />が認識されます。</param>
+        <summary><see cref="T:System.Windows.Ink.GestureRecognizer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Ink.GestureRecognizer.%23ctor%2A>コンス トラクターを作成する、<xref:System.Windows.Ink.GestureRecognizer>アプリケーション ジェスチャのサブセットを認識します。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.GestureRecognizer>のみ認識される、 <xref:System.Windows.Ink.ApplicationGesture.Down>、 <xref:System.Windows.Ink.ApplicationGesture.Right>、および<xref:System.Windows.Ink.ApplicationGesture.ScratchOut>ジェスチャ。  
+  
+ [!code-csharp[GestureControl#4](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#4)]
+ [!code-vb[GestureControl#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Ink.GestureRecognizer" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Ink.GestureRecognizer.Dispose%2A>の使用が終了するときに、<xref:System.Windows.Ink.GestureRecognizer>です。 <xref:System.Windows.Ink.GestureRecognizer.Dispose%2A> メソッドによって、<xref:System.Windows.Ink.GestureRecognizer> は使用不可の状態になります。 呼び出した後にそのため、 <xref:System.Windows.Ink.GestureRecognizer.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.Windows.Ink.GestureRecognizer>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Windows.Ink.GestureRecognizer>占有されていた。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Ink.GestureRecognizer.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Windows.Ink.GestureRecognizer> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Windows.Ink.GestureRecognizer> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnabledGestures">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.ApplicationGesture&gt; GetEnabledGestures ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Windows.Ink.ApplicationGesture&gt; GetEnabledGestures() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.GetEnabledGestures" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.ApplicationGesture&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェスチャを取得、<see cref="T:System.Windows.Ink.GestureRecognizer" />を認識します。</summary>
+        <returns>型の配列<see cref="T:System.Windows.Ink.ApplicationGesture" />ジェスチャを格納している、<see cref="T:System.Windows.Ink.GestureRecognizer" />が認識するように設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示しますジェスチャーですが、アプリケーション、<xref:System.Windows.Ink.GestureRecognizer>を認識します。  
+  
+ [!code-csharp[GestureControl#6](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#6)]
+ [!code-vb[GestureControl#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRecognizerAvailable">
+      <MemberSignature Language="C#" Value="public bool IsRecognizerAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRecognizerAvailable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.GestureRecognizer.IsRecognizerAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジェスチャ レコグナイザーは、ユーザーのシステムで利用できるかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />認識コンポーネントがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ジェスチャ認識エンジンが呼び出す前に使用できるかどうかを確認する方法、<xref:System.Windows.Ink.GestureRecognizer.Recognize%2A>メソッドです。  
+  
+ [!code-csharp[GestureControl#8](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#8)]
+ [!code-vb[GestureControl#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recognize">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.GestureRecognitionResult&gt; Recognize (System.Windows.Ink.StrokeCollection strokes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Ink.GestureRecognitionResult&gt; Recognize(class System.Windows.Ink.StrokeCollection strokes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.Recognize(System.Windows.Ink.StrokeCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.GestureRecognitionResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strokes" Type="System.Windows.Ink.StrokeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="strokes"><see cref="T:System.Windows.Ink.StrokeCollection" />ジェスチャを検索します。</param>
+        <summary>指定したジェスチャを探します<see cref="T:System.Windows.Ink.StrokeCollection" />です。</summary>
+        <returns>型の配列<see cref="T:System.Windows.Ink.GestureRecognitionResult" />アプリケーションを格納しているジェスチャを<see cref="T:System.Windows.Ink.GestureRecognizer" />認識します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列、<xref:System.Windows.Ink.GestureRecognizer.Recognize%2A>メソッドに並べ替えて、<xref:System.Windows.Ink.GestureRecognitionResult.RecognitionConfidence%2A?displayProperty=nameWithType>プロパティです。 たとえば、<xref:System.Windows.Ink.GestureRecognizer.Recognize%2A>返す可能性があります、<xref:System.Windows.Ink.GestureRecognitionResult>次の値の配列。  
+  
+|インデックス|ApplicationGesture|RecognitionConfidence|  
+|-----------|------------------------|---------------------------|  
+|0|<xref:System.Windows.Ink.ApplicationGesture.Check>|<xref:System.Windows.Ink.RecognitionConfidence.Strong>|  
+|1|<xref:System.Windows.Ink.ApplicationGesture.NoGesture>|<xref:System.Windows.Ink.RecognitionConfidence.Intermediate>|  
+|2|<xref:System.Windows.Ink.ApplicationGesture.Curlicue>|<xref:System.Windows.Ink.RecognitionConfidence.Poor>|  
+|3|<xref:System.Windows.Ink.ApplicationGesture.DoubleCurlicue>|<xref:System.Windows.Ink.RecognitionConfidence.Poor>|  
+  
+ つまり、<xref:System.Windows.Ink.GestureRecognizer>認識される可能性が非常を<xref:System.Windows.Ink.Stroke>比較的可能性の高いチェック マークを<xref:System.Windows.Ink.Stroke>ジェスチャではないとまったくない可能性がありますする、<xref:System.Windows.Ink.Stroke>渦巻きまたは二重渦巻きです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Ink.GestureRecognizer.Recognize%2A>メソッドが格納された配列を返すことができます<xref:System.Windows.Ink.ApplicationGesture.NoGesture>高く<xref:System.Windows.Ink.RecognitionConfidence>より他のアプリケーションのジェスチャ。 つまりは可能性が高くなっている、<xref:System.Windows.Ink.Stroke>を下限を持つジェスチャではなく、ジェスチャではありません<xref:System.Windows.Ink.RecognitionConfidence>です。  
+  
+   
+  
+## Examples  
+ 次の例で確認する方法かどうか、<xref:System.Windows.Ink.Stroke>は、<xref:System.Windows.Ink.ApplicationGesture.ScratchOut>ジェスチャ。  
+  
+ [!code-csharp[GestureControl#8](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#8)]
+ [!code-vb[GestureControl#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEnabledGestures">
+      <MemberSignature Language="C#" Value="public void SetEnabledGestures (System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.ApplicationGesture&gt; applicationGestures);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetEnabledGestures(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Ink.ApplicationGesture&gt; applicationGestures) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.GestureRecognizer.SetEnabledGestures(System.Collections.Generic.IEnumerable{System.Windows.Ink.ApplicationGesture})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="applicationGestures" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.ApplicationGesture&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="applicationGestures">型の配列<see cref="T:System.Windows.Ink.ApplicationGesture" />したいアプリケーション ジェスチャを指定する、<see cref="T:System.Windows.Ink.GestureRecognizer" />を認識します。</param>
+        <summary>アプリケーションのジェスチャを設定、<see cref="T:System.Windows.Ink.GestureRecognizer" />を認識します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.GestureRecognizer>のみ認識される、 <xref:System.Windows.Ink.ApplicationGesture.Down>、 <xref:System.Windows.Ink.ApplicationGesture.Right>、および<xref:System.Windows.Ink.ApplicationGesture.ScratchOut>ジェスチャ。  
+  
+ [!code-csharp[GestureControl#5](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureControl/CSharp/Gesture.cs#5)]
+ [!code-vb[GestureControl#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureControl/VisualBasic/Gesture.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

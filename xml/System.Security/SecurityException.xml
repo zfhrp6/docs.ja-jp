@@ -1,0 +1,1053 @@
+<Type Name="SecurityException" FullName="System.Security.SecurityException">
+  <TypeSignature Language="C#" Value="public class SecurityException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SecurityException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecurityException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セキュリティ エラーが検出された場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Security.SecurityException>呼び出し元がリソースにアクセスするために必要なアクセス許可を持っていない場合に例外がスローされます。 次の例のインスタンスを作成、<xref:System.Security.PermissionSet>を含むオブジェクトを<xref:System.Security.Permissions.UIPermission>UI オブジェクトとクリップボードへのアクセスを許可するオブジェクトと<xref:System.Security.Permissions.RegistryPermission>レジストリ アクセスを防ぐためのオブジェクト。 呼び出し、<xref:System.Security.PermissionSet.PermitOnly%2A?displayProperty=nameWithType>メソッドは、これらのアクセス許可が呼び出し元に割り当てられた権限に関係なく適用することを意味します。 その結果、レジストリ キーを作成しようとすると、スロー、<xref:System.Security.SecurityException>です。  
+  
+ [!code-csharp[System.SecurityException.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.securityexception.class/cs/se_ex1.cs#1)]
+ [!code-vb[System.SecurityException.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.securityexception.class/vb/se_ex1.vb#1)]  
+  
+ <xref:System.Security.SecurityException>値は 0x8013150A HRESULT COR_E_SECURITY を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については、<xref:System.Security.SecurityException>クラス、固有の仕様を参照してください<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Security.SecurityException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.SecurityException" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.Security.SecurityException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Security.SecurityException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。  
+  
+ このコンス トラクター内の情報に基づいて、次のプロパティ値の設定、`info`パラメーター。  
+  
+-   <xref:System.Security.SecurityException.Action%2A>  
+  
+-   <xref:System.Security.SecurityException.FirstPermissionThatFailed%2A>  
+  
+-   <xref:System.Security.SecurityException.Demanded%2A>  
+  
+-   <xref:System.Security.SecurityException.RefusedSet%2A>  
+  
+-   <xref:System.Security.SecurityException.DenySetInstance%2A>  
+  
+-   <xref:System.Security.SecurityException.PermitOnlySetInstance%2A>  
+  
+-   <xref:System.Security.SecurityException.FailedAssemblyInfo%2A>  
+  
+-   <xref:System.Security.SecurityException.Method%2A>  
+  
+-   <xref:System.Security.SecurityException.Zone%2A>  
+  
+-   <xref:System.Security.SecurityException.Url%2A>  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Security.SecurityException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ <xref:System.Security.SecurityException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="type">例外がスローされる原因となったアクセス許可の種類。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.SecurityException" />指定したエラー メッセージと例外がスローされる原因となったアクセス許可の種類を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターによって設定されたプロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.Message%2A>|指定された、ローカライズされたエラー メッセージ文字列`message`です。|  
+|<xref:System.Security.SecurityException.PermissionType%2A>|<xref:System.Type>で指定された失敗したアクセス許可の`type`します。|  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message, Type type, string state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Type type, string state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String,System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="state" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="type">例外がスローされる原因となったアクセス許可の種類。</param>
+        <param name="state">例外がスローされる原因となったアクセス許可の状態。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.SecurityException" />指定したエラー メッセージ、例外がスローされる原因となったアクセス許可の種類およびアクセス許可の状態を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターによって設定されたプロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.Message%2A>|指定された、ローカライズされたエラー メッセージ文字列`message`です。|  
+|<xref:System.Security.SecurityException.PermissionType%2A>|<xref:System.Type>で指定された失敗したアクセス許可の`type`します。|  
+|<xref:System.Security.SecurityException.Demanded%2A>|セキュリティ アクセス許可、アクセス許可セット、またはアクセス許可は、失敗したコレクションを設定します。|  
+  
+   
+  
+## Examples  
+ 使用例については、<xref:System.Security.SecurityException.%23ctor%2A>コンス トラクターで指定された例を参照してください、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message, object deny, object permitOnly, System.Reflection.MethodInfo method, object demanded, System.Security.IPermission permThatFailed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, object deny, object permitOnly, class System.Reflection.MethodInfo method, object demanded, class System.Security.IPermission permThatFailed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String,System.Object,System.Object,System.Reflection.MethodInfo,System.Object,System.Security.IPermission)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="deny" Type="System.Object" />
+        <Parameter Name="permitOnly" Type="System.Object" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="demanded" Type="System.Object" />
+        <Parameter Name="permThatFailed" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="deny">拒否されたアクセス許可またはアクセス許可セット。</param>
+        <param name="permitOnly">許可のみのアクセス許可またはアクセス許可セット。</param>
+        <param name="method">A<see cref="T:System.Reflection.MethodInfo" />例外が発生したメソッドを識別します。</param>
+        <param name="demanded">要求されたアクセス許可、アクセス許可セット、またはアクセス許可セットのコレクション。</param>
+        <param name="permThatFailed"><see cref="T:System.Security.IPermission" />失敗したアクセス許可を識別します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.SecurityException" />スタックでの Deny によって発生する例外のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拒否を含むフレーム要求失敗の原因となった場合は、このコンス トラクターを使用します。 次の表は、このコンス トラクターによって設定されたプロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.Message%2A>|指定された、ローカライズされたエラー メッセージ文字列`message`です。|  
+|<xref:System.Security.SecurityException.FirstPermissionThatFailed%2A>|最初の権限を権限セットまたはアクセス許可セットで指定されたコレクション`permThatFailed`です。|  
+|<xref:System.Security.SecurityException.GrantedSet%2A>|空の文字列。|  
+|<xref:System.Security.SecurityException.Demanded%2A>|セキュリティ アクセス許可のアクセス許可を設定、またはアクセス許可セットで指定されたコレクション`demanded`です。|  
+|<xref:System.Security.SecurityException.RefusedSet%2A>|空の文字列。|  
+|<xref:System.Security.SecurityException.DenySetInstance%2A>|拒否されたセキュリティ アクセス許可、アクセス許可セット、またはアクセス許可セットで指定されたコレクション`deny`です。|  
+|<xref:System.Security.SecurityException.PermitOnlySetInstance%2A>|アクセス許可、アクセス許可セット、またはアクセス許可セットで指定されたコレクション`permitOnly`です。|  
+|<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>|`null`。|  
+|<xref:System.Security.SecurityException.Method%2A>|<xref:System.Reflection.MethodInfo> で指定された `method`。|  
+|<xref:System.Security.SecurityException.Zone%2A>|<xref:System.Security.SecurityZone.NoZone>。|  
+|<xref:System.Security.SecurityException.Url%2A>|空の文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.SecurityException.%23ctor%28System.String%2CSystem.Object%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Object%2CSystem.Security.IPermission%29>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.SecurityException#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecurityException/CPP/form1.cpp#16)]
+ [!code-csharp[System.Security.SecurityException#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecurityException/CS/form1.cs#16)]
+ [!code-vb[System.Security.SecurityException#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecurityException/VB/form1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityException (string message, System.Reflection.AssemblyName assemblyName, System.Security.PermissionSet grant, System.Security.PermissionSet refused, System.Reflection.MethodInfo method, System.Security.Permissions.SecurityAction action, object demanded, System.Security.IPermission permThatFailed, System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Reflection.AssemblyName assemblyName, class System.Security.PermissionSet grant, class System.Security.PermissionSet refused, class System.Reflection.MethodInfo method, valuetype System.Security.Permissions.SecurityAction action, object demanded, class System.Security.IPermission permThatFailed, class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.#ctor(System.String,System.Reflection.AssemblyName,System.Security.PermissionSet,System.Security.PermissionSet,System.Reflection.MethodInfo,System.Security.Permissions.SecurityAction,System.Object,System.Security.IPermission,System.Security.Policy.Evidence)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="grant" Type="System.Security.PermissionSet" />
+        <Parameter Name="refused" Type="System.Security.PermissionSet" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+        <Parameter Name="demanded" Type="System.Object" />
+        <Parameter Name="permThatFailed" Type="System.Security.IPermission" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="assemblyName"><see cref="T:System.Reflection.AssemblyName" />例外の原因となったアセンブリの名前を指定します。</param>
+        <param name="grant">A<see cref="T:System.Security.PermissionSet" />アセンブリに与えられたアクセス許可を表すです。</param>
+        <param name="refused">A<see cref="T:System.Security.PermissionSet" />を表す、拒否されたアクセス許可またはアクセス許可セットします。</param>
+        <param name="method">A<see cref="T:System.Reflection.MethodInfo" />例外が発生したメソッドを表すです。</param>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <param name="demanded">要求されたアクセス許可、アクセス許可セット、またはアクセス許可セットのコレクション。</param>
+        <param name="permThatFailed"><see cref="T:System.Security.IPermission" />失敗したアクセス許可を表すです。</param>
+        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" />例外の原因となったアセンブリのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.SecurityException" />十分なアクセス許可セットによって発生する例外のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、許可セット、オンデマンドの障害が発生する場合に例外をスローします。  
+  
+ 次の表は、このコンス トラクターによって設定されたプロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.Message%2A>|指定された、ローカライズされたエラー メッセージ文字列`message`です。|  
+|<xref:System.Security.SecurityException.FirstPermissionThatFailed%2A>|最初の権限を権限セットまたはアクセス許可セットで指定されたコレクション`permThatFailed`です。|  
+|<xref:System.Security.SecurityException.GrantedSet%2A>|<xref:System.Security.PermissionSet> で指定された `grant`。|  
+|<xref:System.Security.SecurityException.Demanded%2A>|セキュリティ アクセス許可のアクセス許可セット、またはアクセス許可セットのコレクションで指定された、失敗した`demanded`です。|  
+|<xref:System.Security.SecurityException.RefusedSet%2A>|<xref:System.Security.PermissionSet> で指定された `refused`。|  
+|<xref:System.Security.SecurityException.DenySetInstance%2A>|空の文字列。|  
+|<xref:System.Security.SecurityException.PermitOnlySetInstance%2A>|空の文字列。|  
+|<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>|<xref:System.Reflection.AssemblyName> で指定された `assemblyName`。|  
+|<xref:System.Security.SecurityException.Method%2A>|<xref:System.Reflection.MethodInfo> で指定された `method`。|  
+|<xref:System.Security.SecurityException.Zone%2A>|<xref:System.Security.SecurityZone>値から、<xref:System.Security.Policy.Evidence>によって指定された`evidence`です。|  
+|<xref:System.Security.SecurityException.Url%2A>|URL を<xref:System.Security.Policy.Evidence>によって指定された`evidence`です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.SecurityAction Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.SecurityAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.SecurityAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となったセキュリティ アクションを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityException.Action%2A>プロパティには、セキュリティ チェックのエラーの原因となったセキュリティ アクションが含まれています。 セキュリティ例外がスローされるセキュリティ操作の多くが発生することができます。 たとえば、アクセス許可に対する要求は、呼び出し履歴上のすべての呼び出し元がある権限セットに必要なアクセス許可のチェックを設定します。 呼び出し履歴上の任意の呼び出し元には、必要なアクセス許可がない、セキュリティ チェックが失敗します。 など、スタック ウォーク修飾子を配置することによって、呼び出しチェーン内のメソッドが、スタック ウォークの結果を変更する代わりに、<xref:System.Security.Permissions.SecurityAction.Deny>または<xref:System.Security.Permissions.SecurityAction.PermitOnly>、許可された権限を制限するスタックにします。 たとえば、呼び出し履歴上のメソッド可能性がありますすべて拒否、呼び出し元の PSET1、という名前のアクセス許可のセットそれらの呼び出し元に対して PSET1 の一部であるアクセス許可の要求が失敗したことなどです。 <xref:System.Security.SecurityException.Action%2A>プロパティには、例外がスローされる原因となったセキュリティ アクションが含まれています。  
+  
+ <xref:System.Security.Permissions.SecurityAction>内の列挙型には、<xref:System.Security.Permissions.SecurityAction>のセキュリティ アクションの値を提供する名前空間、<xref:System.Security.SecurityException.Action%2A>プロパティです。 通常このプロパティには、次の表に示すように値のいずれかが含まれています。  
+  
+|セキュリティ アクション|説明|  
+|---------------------|-----------------|  
+|<xref:System.Security.Permissions.SecurityAction.Demand>|完全なスタック ウォークがで指定されたアセンブリに対して行われた要求のため失敗しました、<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>プロパティです。|  
+|<xref:System.Security.Permissions.SecurityAction.LinkDemand>|リンク確認要求で指定されたアセンブリに対して、<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>プロパティに失敗しました。|  
+|<xref:System.Security.Permissions.SecurityAction.InheritanceDemand>|によって識別されるアセンブリ、<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>プロパティを継承確認要求を満たすために失敗しました。|  
+|<xref:System.Security.Permissions.SecurityAction.PermitOnly>|要求されたアクセス許可は、すべてのアクセス権と一致しませんでした、<xref:System.Security.Permissions.SecurityAction.PermitOnly>権限セットです。 配置するメソッド、<xref:System.Security.Permissions.SecurityAction.PermitOnly>によって識別されるスタックの呼び出しで、<xref:System.Security.SecurityException.Method%2A>プロパティです。|  
+|<xref:System.Security.Permissions.SecurityAction.Deny>|要求されたアクセス許可は、拒否 アクセス許可セット、呼び出し履歴上のアクセス許可を照合します。 配置するメソッド、<xref:System.Security.Permissions.SecurityAction.Deny>によって識別されるスタックの呼び出しで、<xref:System.Security.SecurityException.Method%2A>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Demanded">
+      <MemberSignature Language="C#" Value="public object Demanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Demanded" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.Demanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に失敗したセキュリティ アクセス許可、アクセス許可セット、またはアクセス許可セット コレクションを取得または設定します。</summary>
+        <value>アクセス許可、アクセス許可セット、またはアクセス許可セット コレクション オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたアクセス許可セットまたはアクセス許可セットのコレクションの場合、返されたオブジェクトには、すべての要求されたアクセス許可が含まれています、うち 1 つ以上のエラーが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.SecurityException.Demanded%2A>セキュリティ アクセス許可、アクセス許可セット、またはアクセス許可を表示するプロパティが失敗したコレクションを設定します。 このコード例に示されている例の一部である、<xref:System.Security.SecurityException>クラスです。  
+  
+ [!code-cpp[System.Security.SecurityException#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecurityException/CPP/form1.cpp#3)]
+ [!code-csharp[System.Security.SecurityException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecurityException/CS/form1.cs#3)]
+ [!code-vb[System.Security.SecurityException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecurityException/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">プリンシパル オブジェクトを操作する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DenySetInstance">
+      <MemberSignature Language="C#" Value="public object DenySetInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DenySetInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.DenySetInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求失敗の原因となった、拒否されたセキュリティ アクセス許可、アクセス許可セット、またはアクセス許可セットのコレクションを取得または設定します。　</summary>
+        <value>アクセス許可、アクセス許可セット、またはアクセス許可セット コレクション オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、拒否されたアクセス許可、アクセス許可セット、またはセキュリティ チェックの失敗の原因となったアクセス許可セット コレクションが含まれています。 `null`の拒否の原因ではない例外です。 プロパティの型は<xref:System.Object>なアクセス許可セット、またはアクセス許可セットのコレクションのアクセス許可を含んでいる可能性があるためです。 このプロパティの実行時の型をテストする際、<xref:System.Object.GetType%2A>メソッドまたは Visual Basic の演算子 (C#) 演算子などの特定の言語演算子。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FailedAssemblyInfo">
+      <MemberSignature Language="C#" Value="public System.Reflection.AssemblyName FailedAssemblyInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.AssemblyName FailedAssemblyInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.FailedAssemblyInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.AssemblyName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗したアセンブリに関する情報を取得または設定します。</summary>
+        <value><see cref="T:System.Reflection.AssemblyName" />失敗したアセンブリを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが含まれています、<xref:System.Reflection.AssemblyName>セキュリティ チェックの失敗の原因となったアセンブリを識別するオブジェクト。  
+  
+> [!NOTE]
+>  セキュリティ例外が発生した場合、このプロパティは設定されません、<xref:System.Security.Permissions.SecurityAction.Deny>または<xref:System.Security.Permissions.SecurityAction.PermitOnly>ためにのスタック フレームを発行するアセンブリ、<xref:System.Security.Permissions.SecurityAction.Deny>または<xref:System.Security.Permissions.SecurityAction.PermitOnly>セキュリティ アクションは、スタック ウォークを失敗したアセンブリではありません。 このような場合は、セキュリティ例外が、アセンブリ名を必要としないコンス トラクターを持つ作成許可情報を設定またはセットの情報が拒否されました。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.SecurityException.FailedAssemblyInfo%2A>失敗したアセンブリに関する情報を表示するプロパティです。  
+  
+ [!code-cpp[System.Security.SecurityException#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecurityException/CPP/form1.cpp#12)]
+ [!code-csharp[System.Security.SecurityException#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecurityException/CS/form1.cs#12)]
+ [!code-vb[System.Security.SecurityException#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecurityException/VB/form1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstPermissionThatFailed">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission FirstPermissionThatFailed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.IPermission FirstPermissionThatFailed" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.FirstPermissionThatFailed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に失敗したアクセス許可セットの最初のアクセス許可またはアクセス許可セットのコレクションを取得または設定します。</summary>
+        <value><see cref="T:System.Security.IPermission" />失敗した最初のアクセス許可を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されたオブジェクトは、アクセス許可セットまたはアクセス許可、コレクションを設定する場合、<xref:System.Security.SecurityException.FirstPermissionThatFailed%2A>例外の原因となった最初の権限のみを表します。 追加のアクセス許可セットまたはコレクション内では、要求の失敗をこともあります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />に関する情報を含む、<see cref="T:System.Security.SecurityException" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetObjectData` は、シリアル化する対象のすべての例外オブジェクト データを使用して、<xref:System.Runtime.Serialization.SerializationInfo> を設定します。 逆シリアル化中に、ストリームで転送された `SerializationInfo` から例外が再構成されます。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.SecurityException.GetObjectData%2A>に格納されているアクセス許可の状態を表示するメソッド、<xref:System.Runtime.Serialization.SerializationInfo>オブジェクト。  
+  
+ [!code-cpp[System.Security.SecurityException#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecurityException/CPP/form1.cpp#9)]
+ [!code-csharp[System.Security.SecurityException#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecurityException/CS/form1.cs#9)]
+ [!code-vb[System.Security.SecurityException#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecurityException/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GrantedSet">
+      <MemberSignature Language="C#" Value="public string GrantedSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GrantedSet" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.GrantedSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の原因となったアセンブリのアクセス許可セット、<see cref="T:System.Security.SecurityException" />です。</summary>
+        <value>アセンブリの許可されたセットの XML 表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがありますが含まれていないセキュリティ例外に関連するデータには以外の例外確認に関連するには、<xref:System.Security.AllowPartiallyTrustedCallersAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo Method" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外に関連付けられているメソッドに関する情報を取得または設定します。</summary>
+        <value>A<see cref="T:System.Reflection.MethodInfo" />メソッドを記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、次のいずれかが含まれています。  
+  
+-   例外を発生させたセキュリティ チェックが発生したときに、失敗したアセンブリが実行されていたメソッドに関する情報。  
+  
+-   いずれかに配置する方法について、<xref:System.Security.Permissions.SecurityAction.PermitOnly>または<xref:System.Security.Permissions.SecurityAction.Deny>ために失敗した場合、呼び出し履歴上のセキュリティ アクションを<xref:System.Security.Permissions.SecurityAction.PermitOnly>または<xref:System.Security.Permissions.SecurityAction.Deny>です。  
+  
+-   `null`、は、特定のメソッドを属性に不可能なエラーが発生します。  
+  
+ <xref:System.Reflection.MethodInfo>オブジェクトが、メソッドを一意に識別する名前情報メソッド名、クラス名、およびアセンブリを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionState">
+      <MemberSignature Language="C#" Value="public string PermissionState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PermissionState" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.PermissionState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外がスローされたアクセス許可の状態を取得または設定します。</summary>
+        <value>例外がスローされた時点のアクセス許可の状態。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionType">
+      <MemberSignature Language="C#" Value="public Type PermissionType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PermissionType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.PermissionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗したアクセス許可の種類を取得または設定します。</summary>
+        <value>失敗したアクセス許可の種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermitOnlySetInstance">
+      <MemberSignature Language="C#" Value="public object PermitOnlySetInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PermitOnlySetInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.PermitOnlySetInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ チェックの失敗の原因となった許可のみのスタック フレームの一部であるアクセス許可、アクセス許可セット、またはアクセス許可セット コレクションを取得または設定します。</summary>
+        <value>アクセス許可、アクセス許可セット、またはアクセス許可セット コレクション オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityException.PermitOnlySetInstance%2A>プロパティが、許可されているアクセス許可、アクセス許可セットを表すか、アクセス許可がセキュリティ例外の原因となったスタック フレーム内に含まれるコレクションを設定します。 インスタンスの場合、セキュリティ例外が発生のため、<xref:System.Security.PermissionSet.Demand%2A?displayProperty=nameWithType>障害、このプロパティであり、要求されたに許可されているアクセス許可が表示されます<xref:System.Security.PermissionSet>に含まれる、<xref:System.Security.SecurityException.Demanded%2A>プロパティです。  
+  
+ このプロパティの型は<xref:System.Object>ためのアクセス許可、アクセス許可セット、またはアクセス許可セット コレクションすべて要求されることと<xref:System.Object>は、共通の基本クラスです。  このプロパティの実行時の型をテストする際、<xref:System.Object.GetType%2A>メソッドまたは Visual Basic の演算子 (C#) 演算子などの特定の言語演算子。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RefusedSet">
+      <MemberSignature Language="C#" Value="public string RefusedSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RefusedSet" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.RefusedSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の原因となったアセンブリの拒否された権限のセット、<see cref="T:System.Security.SecurityException" />です。</summary>
+        <value>アセンブリの拒否されたアクセス許可セットの XML 表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがありますが含まれていないセキュリティ例外に関連するデータには以外の例外確認に関連するには、<xref:System.Security.AllowPartiallyTrustedCallersAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の表現を返します<see cref="T:System.Security.SecurityException" />です。</summary>
+        <returns>現在の文字列表現<see cref="T:System.Security.SecurityException" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityException.ToString%2A>メソッドは、完全な説明を返します、<xref:System.Security.SecurityException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となったアセンブリの URL を取得または設定します。</summary>
+        <value>アセンブリの場所を識別する URL。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityZone Zone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.SecurityZone Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityException.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityZone</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となったアセンブリのゾーンを取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Security.SecurityZone" />例外の原因となったアセンブリのゾーンを識別する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

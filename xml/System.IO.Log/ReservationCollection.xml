@@ -1,0 +1,545 @@
+<Type Name="ReservationCollection" FullName="System.IO.Log.ReservationCollection">
+  <TypeSignature Language="C#" Value="public abstract class ReservationCollection : System.Collections.Generic.ICollection&lt;long&gt;, System.Collections.Generic.IEnumerable&lt;long&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ReservationCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;int64&gt;, class System.Collections.Generic.IEnumerable`1&lt;int64&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.ReservationCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Int64&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Int64&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>レコード シーケンスで行われた領域予約のコレクションを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、レコード シーケンスで行われる一連の予約領域を表します。 コレクションに項目を追加すると、新しい予約が割り当てられます。 コレクションから項目を削除すると、予約が解放されます。  
+  
+ ログに書き込む予定のデータがある場合、アプリケーションはログ内に領域を予約しますが、直ちに書き込むことはできません。 予約することにより、ログに書き込む予定のデータを確実に書き込むことができます。 ログを使用すると、多くの場合、マーシャリング領域に 1 つ以上のログ レコードが予約されます。 レコードは追加する前に予約する必要があります。  
+  
+ 予約により、データのコミットは操作が完了してから行い、操作が未完了の場合は変更をロールバックするという処理を確実にすることができます。 また、ログの "取り消し操作" を記録することも可能になります。 ロールバック操作中には、途中で割り込みが発生する場合を考慮して、トランザクションのリソース マネージャー (RM) が状態を回復できるようにしておく必要があります。 予約領域を使用すれば、RM が処理を開始する前に、ログの領域を予約することができます。  
+  
+ <xref:System.IO.Log.IRecordSequence.ReserveAndAppend%2A> メソッドは、呼び出し時に指定されたパラメーターに応じて、領域の予約またはデータの追加のいずれか、あるいは両方を行います。 トランザクション処理の進行中に、取り消し情報を追加し、補正レコードの領域を予約することができます。 ロールバック操作中に作成された補正レコードは、ディスク上で取り消された処理の内容を示します。 レコードの追加には、以前に予約された領域を使用します。 これにより、ロールバック操作中に RM のログ領域が不足するという致命的な状況が確実に防止されます。 トランザクションの処理中にログがいっぱいになっても、アプリケーションは非揮発性データを破壊することなく、トランザクションを確実にロールバックできます。  
+  
+ CLFS は、先書きログとして使用できる ARIES 準拠のログ システムです。 アプリケーションは、操作を実行する前に、先書きログに取り消しレコードを書き込み、補正レコードの書き込みに必要なログ内の領域を予約して、ロールバック時に使用します。 予約した領域は、後で補正レコードの書き込みを実際に行うときに使用されます。  
+  
+ アプリケーションは、いつでもロング スペースを予約またはアクセスできますが、予約とアクセスを同時に行うことはできません。 コミットしたレコードをログに書き込んだ後、アプリケーションは補正レコードの予約を解放できます。 これを行うには、<xref:System.IO.Log.ReservationCollection.FreeReservation%2A> メソッドまたは <xref:System.IO.Log.IRecordSequence.ReserveAndAppend%2A> メソッドを呼び出します。 <xref:System.IO.Log.IRecordSequence.ReserveAndAppend%2A> メソッドを呼び出した場合、操作がアトミックであることが保証されますが、<xref:System.IO.Log.ReservationCollection.FreeReservation%2A> メソッドを呼び出した場合、操作がアトミックであるかどうかは保証されません。  
+  
+ レコードを解放する場合、<xref:System.IO.Log.IRecordSequence.ReserveAndAppend%2A> メソッドの前回の呼び出しと共に予約した同じレコードを解放する必要があります。  
+  
+> [!NOTE]
+>  <xref:System.IO.Log.IRecordSequence> の実装では、実際に予約の割り当ておよび割り当て解除を行うには、<xref:System.IO.Log.ReservationCollection.MakeReservation%2A> メソッドおよび <xref:System.IO.Log.ReservationCollection.FreeReservation%2A> メソッドを実装する必要があります。 また、予約した領域にレコードを書き込むときに、<xref:System.IO.Log.ReservationCollection.ReservationFreed%2A> を呼び出す必要があります。  
+  
+   
+  
+## Examples  
+ 次の例に示すように、予約は 2 つの方法で実行できます。 信頼性の高い処理を行うサンプルでこの方法を採用できます。 このタスクは、CLFS ベースの <xref:System.IO.Log.LogRecordSequence> クラスを使用している場合のみ実行できることに注意してください。  
+  
+```  
+//Using the ReserveAndAppend Method  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+long[] lengthOfUndoRecords = new long[] { 1000 };  
+recordSequence.ReserveAndAppend(recordData,  
+                                                     userSqn,  
+                                                     previousSqn,  
+                                                     RecordSequenceAppendOptions.None,  
+                                                     reservations,  
+                                                     lengthOfUndoRecords);  
+recordSequence.Append(undoRecordData,    // If necessary …  
+                                    userSqn,  
+                                    previousSqn,  
+                                    RecordSequenceAppendOptions.ForceFlush,  
+                                    reservations);  
+  
+// Using the Manual Approach  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+reservations.Add(lengthOfUndoRecord);  
+try  
+{  
+   recordSequence.Append(recordData, userSqn, previousSqn, RecordAppendOptions.None);  
+}  
+catch (Exception)  
+{  
+   reservations.Remove(lengthOfUndoRecord);  
+   throw;  
+}  
+  
+recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.ForceFlush, reservations);  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ReservationCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Log.ReservationCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.Add(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">要求する予約のサイズ (バイト単位)。</param>
+        <summary>予約を割り当てて、コレクションに追加します。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、手動で予約を行う方法を示しています。 このタスクは、CLFS ベースの <xref:System.IO.Log.LogRecordSequence> クラスを使用している場合のみ実行できることに注意してください。  
+  
+```  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+reservations.Add(lengthOfUndoRecord);  
+try  
+{  
+   recordSequence.Append(recordData, userSqn, previousSqn, RecordAppendOptions.None);  
+}  
+catch (Exception)  
+{  
+   reservations.Remove(lengthOfUndoRecord);  
+   throw;  
+}  
+  
+recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.ForceFlush, reservations);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="archiveTail" /> が、このシーケンスの基本シーケンス番号と最後のシーケンス番号との間にありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="size" /> が無効であるか、最大予約サイズを超えています。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内の予約のすべてを解放します。 このメソッドは継承できません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="size" /> が無効であるか、最大予約サイズを超えています。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.Contains(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">コレクション内で検索するサイズ。</param>
+        <summary>指定されたサイズの予約が行われているかどうかを判断します。 このメソッドは継承できません。</summary>
+        <returns>
+          指定されたサイズの予約が行われている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (long[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(int64[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.CopyTo(System.Int64[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Int64[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="arrayIndex">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>コレクション全体を 1 次元配列にコピーします。コピー操作は、コピー先配列の指定したインデックスから始まります。 このメソッドは継承できません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> または <paramref name="arrayIndex" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満か、<paramref name="array" /> の長さ以上の値です。</exception>
+        <exception cref="T:System.ArgumentException">指定された配列は、データをコピーするには領域が不足しています。  
+  
+ または  
+  
+ <paramref name="array" /> が 1 次元配列ではありません。要求された処理に使用できるのは 1 次元配列のみです。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.ReservationCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の予約の数を取得します。</summary>
+        <value>コレクション内の予約の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ReservationCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Log.ReservationCollection" /> がガベージ コレクターによって破棄される前に、リソースを解放できるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreeReservation">
+      <MemberSignature Language="C#" Value="protected abstract void FreeReservation (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void FreeReservation(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.FreeReservation(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">解放する予約のサイズ。</param>
+        <summary>派生クラスでオーバーライドされると、指定したサイズの予約を解放します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.IO.Log.ReservationCollection" /> から継承する場合は、このメソッドを実装してレコード シーケンス内の領域を解放する必要があります。 このメソッドの完了時に、<see cref="M:System.IO.Log.ReservationCollection.ReservationFreed(System.Int64)" /> を呼び出さないでください。このロジックは自動的に処理されます。  
+  
+ レコードを解放する場合、<see cref="Overload:System.IO.Log.IRecordSequence.ReserveAndAppend" /> メソッドの前回の呼び出しと共に予約した同じレコードを解放する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBestMatchingReservation">
+      <MemberSignature Language="C#" Value="protected long GetBestMatchingReservation (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance int64 GetBestMatchingReservation(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.GetBestMatchingReservation(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">合わせる必要がある予約のサイズ。</param>
+        <summary>派生クラスでオーバーライドされると、指定したサイズに最適な予約を取得します。</summary>
+        <returns>指定したサイズ以上のコレクションから取得した予約。該当する予約が存在しない場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、予約された領域からレコード シーケンスにレコードを追加するときに呼び出されます。 呼び出し元に戻ったとき、返されたサイズに該当する予約はコレクションから削除されています。 予約した領域にアクセスしなかった場合は、<xref:System.IO.Log.ReservationCollection.ReservationMade%2A> メソッドを呼び出して、<xref:System.IO.Log.ReservationCollection> がレコード シーケンス内に予約された領域の容量を正確に表すようにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;long&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;int64&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Log.ReservationCollection" /> を反復処理できる列挙子を返します。 このメソッドは継承できません。</summary>
+        <returns><see cref="T:System.IO.Log.ReservationCollection" /> を反復処理できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">次のいずれかの理由により、操作が無効です。  
+  
+-   列挙体が終了しています。  
+  
+-   コレクションが変更されています。  
+  
+-   列挙体が開始されていません。 <see cref="M:System.Collections.IEnumerator.MoveNext" /> を呼び出す必要があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.ReservationCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.ReservationCollection> が読み取り専用になることはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReservation">
+      <MemberSignature Language="C#" Value="protected abstract void MakeReservation (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void MakeReservation(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.MakeReservation(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">割り当てる予約のサイズ。</param>
+        <summary>派生クラスでオーバーライドされると、指定したサイズの予約を割り当てます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.IO.Log.ReservationCollection" /> から継承する場合は、このメソッドを実装してレコード シーケンス内の領域を予約する必要があります。 このメソッドの完了時に、<see cref="M:System.IO.Log.ReservationCollection.ReservationMade(System.Int64)" /> を呼び出さないでください。このロジックは自動的に処理されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (long item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(int64 item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.Remove(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="item">解放する予約のサイズ。</param>
+        <summary>指定されたサイズの予約が行われている場合、その予約を解放します。 このメソッドは継承できません。</summary>
+        <returns>
+          指定されたサイズの予約が見つかり、その予約が削除されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、手動で予約を行う方法を示しています。 このタスクは、CLFS ベースの <xref:System.IO.Log.LogRecordSequence> クラスを使用している場合のみ実行できることに注意してください。  
+  
+```  
+ReservationCollection reservations = recordSequence.CreateReservationCollection();  
+reservations.Add(lengthOfUndoRecord);  
+try  
+{  
+   recordSequence.Append(recordData, userSqn, previousSqn, RecordAppendOptions.None);  
+}  
+catch (Exception)  
+{  
+   reservations.Remove(lengthOfUndoRecord);  
+   throw;  
+}  
+  
+recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.ForceFlush, reservations);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたレコードに対応する十分なサイズの予約が指定された予約コレクションに見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">アーカイブ スナップショットの作成時に I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReservationFreed">
+      <MemberSignature Language="C#" Value="protected void ReservationFreed (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReservationFreed(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.ReservationFreed(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">解放された予約のサイズ。</param>
+        <summary>派生クラスでオーバーライドされると、予約が解放されていることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.ReservationCollection> から継承する場合、コレクションからの削除以外の目的で予約を解放するときには、このメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReservationMade">
+      <MemberSignature Language="C#" Value="protected void ReservationMade (long size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReservationMade(int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.ReservationMade(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="size">予約された予約のサイズ。</param>
+        <summary>派生クラスでオーバーライドされると、予約されていることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承する場合<xref:System.IO.Log.ReservationCollection>、予約が外部への呼び出しで行われたときに、このメソッドを呼び出す必要があります<xref:System.IO.Log.ReservationCollection.Add%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.ReservationCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Log.ReservationCollection" /> を反復処理できる列挙子を返します。 このメソッドは継承できません。</summary>
+        <returns><see cref="T:System.IO.Log.ReservationCollection" /> を反復処理できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">次のいずれかの理由により、操作が無効です。  
+  
+-   列挙体が終了しています。  
+  
+-   コレクションが変更されています。  
+  
+-   列挙体が開始されていません。 <see cref="M:System.Collections.IEnumerator.MoveNext" /> を呼び出す必要があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

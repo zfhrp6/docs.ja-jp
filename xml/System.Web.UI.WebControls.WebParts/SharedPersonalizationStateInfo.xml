@@ -1,0 +1,117 @@
+<Type Name="SharedPersonalizationStateInfo" FullName="System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo">
+  <TypeSignature Language="C#" Value="public sealed class SharedPersonalizationStateInfo : System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SharedPersonalizationStateInfo extends System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.PersonalizationStateInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページの情報を共有パーソナル化の軽量バージョンを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ページのパーソナル化状態に関する統計情報を表します。 (適用またはパーソナル化の発生時に抽出されるデータのプロパティ) などの個人用設定データを返さない自体です。 このクラスは、(バイト単位) の情報のページ、および、サイズの個人用設定を保存したユーザーの数を決定する使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedPersonalizationStateInfo (string path, DateTime lastUpdatedDate, int size, int sizeOfPersonalizations, int countOfPersonalizations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.DateTime lastUpdatedDate, int32 size, int32 sizeOfPersonalizations, int32 countOfPersonalizations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo.#ctor(System.String,System.DateTime,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastUpdatedDate" Type="System.DateTime" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="sizeOfPersonalizations" Type="System.Int32" />
+        <Parameter Name="countOfPersonalizations" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">情報に該当するページです。 <c>パス</c>はアプリケーション相対 (構文を使用してチルダ) 仮想パス。</param>
+        <param name="lastUpdatedDate">A<see cref="T:System.DateTime" />更新すると、ページの共有の情報が最後を示すです。</param>
+        <param name="size">ページの共有状態情報のバイト単位のサイズ。</param>
+        <param name="sizeOfPersonalizations">合計サイズ (バイト単位) のページが存在するすべてのユーザーごとのパーソナル化情報。</param>
+        <param name="countOfPersonalizations">ページを個人用に設定したユーザーの合計数。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `countOfPersonalizations`パラメーターは、ページを個人用に設定したユーザーの合計数を表します。 たとえば、100 人のユーザー ページでは、次の値をカスタマイズ`countOfPersonalizations`100 ではありませんが、個人用に設定されたプロパティの数を掛けた値をそのページは、100 にすると、します。 この数は可能性がありますか、一部のデータ記憶域プロバイダーを 1 つのユーザーとページの組み合わせのユーザーごとの個人用設定の情報を格納する複数の行に使用するため、ユーザーごとの情報を保持する、基になるデータ ストアで使用される行の合計数に一致しない可能性がありますに注意してください。  
+  
+ なお`path`null でない場合は切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />、、切り捨てられる場合は、空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="size" />、<paramref name="sizeOfPersonalizations" />または<paramref name="countOfPersonalizations" />が負の値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CountOfPersonalizations">
+      <MemberSignature Language="C#" Value="public int CountOfPersonalizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CountOfPersonalizations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo.CountOfPersonalizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページを個人用に設定するユーザーの合計数を取得します。</summary>
+        <value>ページに適用されているユーザーごとの個人用設定の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ページを個人用に設定するユーザーの合計数を返します。 たとえば、100 人のユーザー ページでは、次の値をカスタマイズ<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo.CountOfPersonalizations%2A>100 ではありませんが、個人用に設定されたプロパティの数を掛けた値をそのページは、100 にすると、します。 この数は可能性がありますか、一部のデータ記憶域プロバイダーを 1 つのユーザーとページの組み合わせのユーザーごとの個人用設定の情報を格納する複数の行に使用するため、ユーザーごとの情報を保持する、基になるデータ ストアで使用される行の合計数に一致しない可能性がありますに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeOfPersonalizations">
+      <MemberSignature Language="C#" Value="public int SizeOfPersonalizations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SizeOfPersonalizations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo.SizeOfPersonalizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのすべてのユーザーごとの個人用設定の情報の合計サイズを取得します。</summary>
+        <value>合計サイズ (バイト単位) のページのすべてのパーソナル化情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ページが存在するすべてのユーザーごとの個人用設定の情報のサイズを返します。 によって返される値と異なる値になります<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Size%2A>ため<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo.SizeOfPersonalizations%2A>ページのユーザーごとの状態だけのバイト単位のサイズに含まれる共有状態データのサイズは含まれません、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Size%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

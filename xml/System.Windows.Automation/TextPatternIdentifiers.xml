@@ -1,0 +1,1052 @@
+<Type Name="TextPatternIdentifiers" FullName="System.Windows.Automation.TextPatternIdentifiers">
+  <TypeSignature Language="C#" Value="public static class TextPatternIdentifiers" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TextPatternIdentifiers extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.TextPatternIdentifiers" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Automation.Provider.ITextProvider" /> の識別子として使用される値を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.TextPattern>エディット コントロールや文書などのオブジェクトのテキスト コンテンツの詳細を公開します。  
+  
+ UI オートメーション プロバイダーは、部分信頼環境で動作できるように記述する必要があります。 完全な信頼の UIAutomationClient.dll が構成されていないため、プロバイダー コードではそのアセンブリを参照しないでください。 参照している場合、完全に信頼された環境ではコードを実行できますが、部分的に信頼された環境では失敗します。  
+  
+ 具体的には、 <xref:System.Windows.Automation.AutomationElement>などの UIAutomationClient.dll のクラスのフィールドを使用しないでください。 代わりに、 <xref:System.Windows.Automation.AutomationElementIdentifiers>などの UIAutomationTypes.dll のクラスの同等のフィールドを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnimationStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute AnimationStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute AnimationStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.AnimationStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト範囲の <see cref="T:System.Windows.Automation.Text.AnimationStyle" /> 属性を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションが画面だけに表示されます。アニメーション化されたテキスト出力は、アニメーション効果はありません。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.AnimationStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.AnimationStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundColorAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute BackgroundColorAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute BackgroundColorAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.BackgroundColorAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 [BackgroundColor](http://msdn.microsoft.com/library/default.asp?url=/library/gdi/colors_9xiq.asp)テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は、`null`参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BulletStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute BulletStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute BulletStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.BulletStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト範囲の <see cref="T:System.Windows.Automation.Text.BulletStyle" /> 属性を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.BulletStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.BulletStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CapStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute CapStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute CapStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.CapStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト範囲の <see cref="T:System.Windows.Automation.Text.CapStyle" /> 属性を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.CapStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.CapStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute CultureAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute CultureAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.CultureAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フランス語 (fr) ではなくフランス語 (スイス) (fr-CH) など、サブ言語レベルまでのテキスト範囲の Culture (<see cref="T:System.Globalization.CultureInfo" />) 属性を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Globalization.CultureInfo>します。  
+  
+ 参照してください<xref:System.Globalization.CultureInfo>で、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]言語コード形式の詳細についてはします。  
+  
+ 既定値は、アプリケーションの言語[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]します。  
+  
+> [!NOTE]
+>  ここでサーバーが言語タグをサポートしていないか、作成者が使用できない場合もあります。 このような場合は、既定値が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontNameAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute FontNameAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute FontNameAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.FontNameAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>FontName</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例には、"Arial Black"および「ゴシック」が含まれます。  
+  
+ 値は、ローカライズされていません。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.String>します。  
+  
+ 既定値は、`empty string`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute FontSizeAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute FontSizeAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.FontSizeAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>FontSize</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute FontWeightAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute FontWeightAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.FontWeightAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>FontWeight</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対的なストローク、太さ、またはフォントの太さを指します。  
+  
+ これは、`lfWeight`フィールドに[GDI LOGFONT](http://msdn.microsoft.com/library/default.asp?url=/library/gdi/fontext_1wmq.asp)です。 LOGFONT から採用された、次の値の整合性: 0 DontCare、100 を = Thin、200 を = = ExtraLight またはおり、超軽量、300 ライト、400 を = = Normal または Regular、500 中、600 を = = SemiBold またはデミボールド、700 太字、800 の = = ExtraBold または UltraBold、および 900 = 高負荷または黒です。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundColorAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute ForegroundColorAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute ForegroundColorAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.ForegroundColorAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 [ForegroundColor](http://msdn.microsoft.com/library/default.asp?url=/library/gdi/colors_9xiq.asp) ([COLORREF](http://msdn.microsoft.com/library/default.asp?url=/library/gdi/colors_9xiq.asp)) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前景色はテキストまたはフォントの色と同じです。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は、`null`参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalTextAlignmentAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute HorizontalTextAlignmentAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute HorizontalTextAlignmentAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.HorizontalTextAlignmentAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト範囲の <see cref="T:System.Windows.Automation.Text.HorizontalTextAlignment" /> 属性を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のテキスト範囲に関連付けられた段落に適用される水平方向のテキストの配置。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は  
+  
+ <xref:System.Windows.Automation.Text.HorizontalTextAlignment>  
+  
+ 既定値は <xref:System.Windows.Automation.Text.HorizontalTextAlignment.Left>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentationFirstLineAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IndentationFirstLineAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IndentationFirstLineAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IndentationFirstLineAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IndentationFirstLine</c> (<see cref="P:System.Windows.Documents.Paragraph.TextIndent" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の行のインデント (として指定された、<xref:System.Drawing.GraphicsUnit.Point>単位の種類の値)、呼び出し元のテキスト範囲に関連付けられた段落に適用します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentationLeadingAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IndentationLeadingAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IndentationLeadingAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IndentationLeadingAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IndentationLeading</c> (<see cref="P:System.Windows.Documents.Paragraph.TextIndent" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 先頭のインデント (として指定された、<xref:System.Drawing.GraphicsUnit.Point>単位の種類の値)、呼び出し元のテキスト範囲に関連付けられた段落に適用します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentationTrailingAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IndentationTrailingAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IndentationTrailingAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IndentationTrailingAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IndentationTrailing</c> (<see cref="P:System.Windows.Documents.Paragraph.TextIndent" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 末尾のインデント (として指定された、<xref:System.Drawing.GraphicsUnit.Point>単位の種類の値)、呼び出し元のテキスト範囲に関連付けられた段落に適用します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHiddenAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IsHiddenAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IsHiddenAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IsHiddenAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IsHidden</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Boolean>します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItalicAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IsItalicAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IsItalicAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IsItalicAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IsItalic</c> (<see cref="T:System.Windows.FontStyle" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Boolean>します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnlyAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IsReadOnlyAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IsReadOnlyAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IsReadOnlyAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IsReadOnly</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のテキスト範囲に関連付けられているドキュメントの読み取り専用状態です。  
+  
+> [!NOTE]
+>  ドキュメントまたはファイルが読み取り専用ですが、それを編集し、別のファイルとして保存できます、テキストとは見なされません読み取り専用です。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Boolean>します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubscriptAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IsSubscriptAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IsSubscriptAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IsSubscriptAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IsSubscript</c> (<see cref="T:System.Windows.FontVariants" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Boolean>します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSuperscriptAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute IsSuperscriptAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute IsSuperscriptAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.IsSuperscriptAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>IsSuperscript</c> (<see cref="T:System.Windows.FontVariants" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Boolean>します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginBottomAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute MarginBottomAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute MarginBottomAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.MarginBottomAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>MarginBottom</c> (<see cref="T:System.Drawing.Printing.PageSettings" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 下余白は、呼び出し元のテキスト範囲に関連付けられたページに適用されます。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginLeadingAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute MarginLeadingAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute MarginLeadingAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.MarginLeadingAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>MarginLeading</c> (<see cref="T:System.Drawing.Printing.PageSettings" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のテキスト範囲に関連付けられたページに適用される先頭の余白。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginTopAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute MarginTopAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute MarginTopAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.MarginTopAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>MarginTop</c> (<see cref="T:System.Drawing.Printing.PageSettings" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上余白、呼び出し元のテキスト範囲に関連付けられたページに適用します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginTrailingAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute MarginTrailingAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute MarginTrailingAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.MarginTrailingAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>MarginTrailing</c> (<see cref="T:System.Drawing.Printing.PageSettings" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページに適用される末尾の余白は、呼び出し元のテキスト範囲に関連付けられています。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Double>します。  
+  
+ 既定値は `zero` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MixedAttributeValue">
+      <MemberSignature Language="C#" Value="public static readonly object MixedAttributeValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly object MixedAttributeValue" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.MixedAttributeValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した属性の値が、リッチ エディット コントロールのテキスト範囲内で異なるかどうかを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Text.TextPatternRange.GetAttributeValue%2A>返します`TextPattern.MixedAttributeValue`を属性値のコレクションではなくこのバリエーションを示します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Object>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineStylesAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute OutlineStylesAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute OutlineStylesAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.OutlineStylesAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>OutlineStyles</c> (<see cref="T:System.Windows.Automation.Text.OutlineStyles" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.OutlineStyles>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.OutlineStyles.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverlineColorAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute OverlineColorAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute OverlineColorAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.OverlineColorAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>OverlineColor</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は`null`参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverlineStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute OverlineStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute OverlineStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.OverlineStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>OverlineStyle</c> (<see cref="T:System.Windows.Automation.Text.TextDecorationLineStyle" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.TextDecorationLineStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.TextDecorationLineStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.TextPattern" /> パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughColorAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute StrikethroughColorAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute StrikethroughColorAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.StrikethroughColorAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>StrikethroughColor</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は、`null`参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute StrikethroughStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute StrikethroughStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.StrikethroughStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>StrikethroughStyle</c> (<see cref="T:System.Windows.Automation.Text.TextDecorationLineStyle" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.TextDecorationLineStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.TextDecorationLineStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabsAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute TabsAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute TabsAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.TabsAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<c>タブ</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タブ ストップのコレクションには、各タブ ストップとして指定された、<xref:System.Drawing.GraphicsUnit.Point>単位の種類の値。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値は、型の配列<xref:System.Double>です。  
+  
+ 既定値は、`empty`配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent TextChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent TextChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コンテンツが変更されるたびに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1052](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1052)]  
+  
+ [!code-vb[UIATextPattern_snip#2052](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2052)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextFlowDirectionsAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute TextFlowDirectionsAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute TextFlowDirectionsAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.TextFlowDirectionsAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>TextFlowDirections</c> (<see cref="T:System.Windows.Automation.Text.FlowDirections" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.FlowDirections>します。  
+  
+ 既定値は、次の値のビットごとの組み合わせ: <xref:System.Windows.Automation.Text.FlowDirections.Vertical> `|` <xref:System.Windows.Automation.Text.FlowDirections.RightToLeft> `|` <xref:System.Windows.Automation.Text.FlowDirections.BottomToTop>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextSelectionChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent TextSelectionChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent TextSelectionChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの選択が変更されるたびに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のテキスト コントロールは、ゼロ幅のテキスト選択範囲として、テキスト挿入ポイント (カーソル) を処理し、発生させることが`TextSelectionChangedEvent`カーソルを移動するとき。  
+  
+> [!NOTE]
+>  カーソルの動きをに従って、UI オートメーション クライアントを追跡する挿入ポイントの変更で対応をリッスンしていることをお勧め[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]に応じてのではなく、要素のイベント<xref:System.Windows.Automation.TextPattern.TextSelectionChangedEvent>です。  
+  
+ この識別子は[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]プロバイダー。 クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlineColorAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute UnderlineColorAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute UnderlineColorAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.UnderlineColorAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>UnderlineColor</c>テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Int32>します。  
+  
+ 既定値は、`null`参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlineStyleAttribute">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationTextAttribute UnderlineStyleAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationTextAttribute UnderlineStyleAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TextPatternIdentifiers.UnderlineStyleAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationTextAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、 <c>UnderlineStyle</c> (<see cref="T:System.Windows.Automation.Text.TextDecorationLineStyle" />) テキスト範囲の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.TextPattern>です。  
+  
+ この属性の値の種類は<xref:System.Windows.Automation.Text.TextDecorationLineStyle>します。  
+  
+ 既定値は <xref:System.Windows.Automation.Text.TextDecorationLineStyle.None> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

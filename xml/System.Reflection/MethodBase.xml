@@ -1,0 +1,2447 @@
+<Type Name="MethodBase" FullName="System.Reflection.MethodBase">
+  <TypeSignature Language="C#" Value="public abstract class MethodBase : System.Reflection.MemberInfo, System.Runtime.InteropServices._MethodBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit MethodBase extends System.Reflection.MemberInfo implements class System.Runtime.InteropServices._MethodBase" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.MethodBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.MemberInfo</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._MethodBase</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._MethodBase))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドとコンストラクターについての情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MethodBase`基本クラスは、<xref:System.Reflection.MethodInfo>と<xref:System.Reflection.ConstructorInfo>です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see langword="MethodBase" />、次のメンバーをオーバーライドする必要があります: <see cref="M:System.Reflection.MethodBase.GetParameters" />、 <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />、 <see cref="M:System.Reflection.MethodBase.GetMethodImplementationFlags" />、 <see cref="P:System.Reflection.MethodBase.MethodHandle" />、 <see cref="P:System.Reflection.MethodBase.Attributes" />、 <see cref="P:System.Reflection.MemberInfo.Name" />、 <see cref="P:System.Reflection.MemberInfo.DeclaringType" />、 <see cref="P:System.Reflection.MemberInfo.MemberType" />、 <see cref="P:System.Reflection.MemberInfo.ReflectedType" />、 <see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" />、 <see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Type,System.Boolean)" />、および<see cref="M:System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MethodBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.MethodBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドに関連付けられている属性を取得します。</summary>
+        <value><see cref="T:System.Reflection.MethodAttributes" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメンバーには、特定の種類のメンバーに関連して定義されている属性のセットがあります。  
+  
+ 取得する、 <xref:System.Reflection.MethodAttributes>、最初の種類を取得します。 型、メソッドを取得します。 メソッドから取得、<xref:System.Reflection.MethodAttributes>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザー定義メソッド Mymethod の属性を表示します。  
+  
+ [!code-cpp[Classic MethodBase.Attributes Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.Attributes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.Attributes Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.Attributes Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.Attributes Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.Attributes Example/VB/source.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+ Reflection.MethodBase.Attributes サンプル  
+  
+ Mymethodbase Void Mymethod (Int32、System.String ByRef System.String ByRef) を =  
+  
+ PrivateScope  
+  
+ ファミリとアセンブリ  
+  
+ ファミリ  
+  
+ パブリック  
+  
+ HideBySig  
+  
+ ReuseSlot  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、<see cref="P:System.Reflection.MethodBase.Attributes" />メソッドは、かどうかを決定するプロパティ<see langword="public" />、 <see langword="private" />、 <see langword="final" />、<see langword="virtual" />のようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CallingConvention">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.CallingConventions CallingConvention { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.CallingConventions CallingConvention" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.CallingConvention" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.CallingConventions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドの呼び出し規約を示す値を取得します。</summary>
+        <value><see cref="T:System.Reflection.CallingConventions" />このメソッドにします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsGenericParameters">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsGenericParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContainsGenericParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.ContainsGenericParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジェネリック メソッドに未割り当てのジェネリック型パラメーターが含まれるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、現在<see cref="T:System.Reflection.MethodBase" />オブジェクトは、未割り当てのジェネリック型パラメーターを含むジェネリック メソッドを表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック型定義またはオープンの構築型メソッド自体の型引数または外側の型がない場合にのみ、ジェネリック メソッドを呼び出すことができます。 型指定できますが、任意の複雑なために、この再帰的な決定を行うは困難です。 便宜上、およびエラーの可能性を減らすため、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティは呼び出すことができます、クローズ構築のメソッドを区別するために標準的な方法を提供し、開くことはできませんのメソッドを構築します。 場合、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティから返される`true`メソッドを呼び出すことができません。  
+  
+ <xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティが型パラメーターに対して再帰的を検索します。 たとえばを返します`true`オープン型内のすべてのメソッドで`A<T>`(`A(Of T)` Visual Basic で) メソッド自体はジェネリックではない場合でも、します。 これは、動作と、<xref:System.Reflection.MethodBase.IsGenericMethod%2A>を返すプロパティ`false`これらのメソッドです。  
+  
+ 同様に、 <xref:System.Reflection.MethodBase.ContainsGenericParameters%2A> property パラメーターを返します`true`オープン型の任意のコンス トラクターをたとえコンス トラクターことはできません、独自の型パラメーターです。  
+  
+ ジェネリック メソッドに固有の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>プロパティです。 ジェネリック リフレクションで使用されるその他の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentMethod">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetCurrentMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetCurrentMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetCurrentMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在実行中のメソッドを表す <see langword="MethodBase" /> オブジェクトを返します。</summary>
+        <returns>
+          <see cref="M:System.Reflection.MethodBase.GetCurrentMethod" /> は、実行中のメソッド内から呼び出され、そのメソッドに関する情報を返す、静的メソッドです。  
+  
+ A<see langword="MethodBase" />現在実行中のメソッドを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在実行中のメソッドがジェネリック型で定義されている場合、<xref:System.Reflection.MethodInfo>によって返される<xref:System.Reflection.MethodBase.GetCurrentMethod%2A>、ジェネリック型定義から取得されます (つまり、<xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=nameWithType>を返します`true`)。 したがって、メソッドが呼び出されたときに使用された型引数は反映されません。 場合、メソッドなど、`M()`ジェネリック型で定義された`C<T>`(`C(Of T)` Visual Basic で)、および<xref:System.Reflection.MethodBase.GetCurrentMethod%2A>から呼び出されます`C<string>.M()`、し<xref:System.Reflection.MethodBase.GetCurrentMethod%2A>を返します`C<T>.M()`(`C(Of T).M()` Visual Basic で)。  
+  
+ 現在実行中のメソッドがジェネリック メソッドの場合<xref:System.Reflection.MethodBase.GetCurrentMethod%2A>ジェネリック メソッド定義を返します。 ジェネリック メソッドがジェネリック型で定義されている場合、<xref:System.Reflection.MethodInfo>はジェネリック型定義から取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの型を定義します。 1 つは、非ジェネリックのクラス`TestClass`、という名前のメソッド、コンス トラクターが含まれています`GetValue`、およびという名前の読み取り/書き込みプロパティ`GetValue`です。 2 番目は、という名前のジェネリック クラス`TestClass<T>`、コンス トラクターが含まれている、`GetValue`メソッド、およびジェネリック メソッドでは、`ConvertValue<Y>`です。 各コンス トラクター、メソッド、およびプロパティのアクセサーへの呼び出しが含まれています、<xref:System.Reflection.MethodBase.GetCurrentMethod%2A>メソッドです。  
+  
+ [!code-csharp[System.Reflection.MethodBase.GetCurrentMethod#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Reflection.MethodBase.GetCurrentMethod/cs/GetCurentMethod1.cs#1)]
+ [!code-vb[System.Reflection.MethodBase.GetCurrentMethod#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Reflection.MethodBase.GetCurrentMethod/vb/GetCurentMethod1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetException">このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGenericArguments">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetGenericArguments ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetGenericArguments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetGenericArguments" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェネリック メソッドの型引数、またはジェネリック メソッドの定義の型パラメーターを表す <see cref="T:System.Type" /> オブジェクトの配列を返します。</summary>
+        <returns>ジェネリック メソッドの型引数またはジェネリック メソッド定義の型パラメーターを表す <see cref="T:System.Type" /> オブジェクトの配列。 現在のメソッドがジェネリック メソッドではない場合は、空の配列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列の要素は、ジェネリック メソッドの型パラメーターの一覧に表示される順序では。  
+  
+-   場合は、現在のメソッドはクローズ構築メソッド (つまり、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティから返される`false`)、によって返される配列、<xref:System.Reflection.MethodBase.GetGenericArguments%2A>メソッドには、ジェネリック メソッド定義のジェネリック型パラメーターに割り当てられている型が含まれています。  
+  
+-   現在のメソッドがジェネリック メソッド定義の場合は、配列には、型パラメーターが含まれています。  
+  
+-   場合は、現在のメソッドは、オープン構築メソッド (つまり、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティから返される`true`) を特定の種類は、いくつかの型パラメーターに割り当てられていると外側のジェネリック型の型パラメーターは、他の型パラメーターに割り当てられている、配列には、型と型の両方が含まれています。 パラメーター。 使用して、<xref:System.Type.IsGenericParameter%2A>プロパティを見分けます。 このシナリオの例については、のコード例を参照してください、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>プロパティです。  
+  
+ ジェネリック コンス トラクターは、.NET Framework version 2.0 ではサポートされていません。 このプロパティをスロー<xref:System.NotSupportedException>派生クラスでオーバーライドされていないため、例外がスローされます、現在のインスタンスが型の場合<xref:System.Reflection.ConstructorInfo>です。  
+  
+ ジェネリック メソッドに固有の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>プロパティです。 ジェネリック リフレクションで使用されるその他の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在のオブジェクトが、<see cref="T:System.Reflection.ConstructorInfo" />です。 ジェネリック コンス トラクターは、.NET Framework version 2.0 ではサポートされていません。 この例外は、このメソッドが派生クラスでオーバーライドされていない場合、既定の動作です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodBody">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodBody GetMethodBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodBody GetMethodBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBody</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.Reflection.MethodBody" />を現在のメソッドの MSIL ストリーム、ローカル変数、および例外へのアクセスを提供するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Reflection.MethodBody" />を現在のメソッドの MSIL ストリーム、ローカル変数、および例外へのアクセスを提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドする必要はありません、<xref:System.Reflection.MethodBase.GetMethodBody%2A>それを使用するためにします。 呼び出すことができます、<xref:System.Reflection.MethodBase.GetMethodBody%2A>メソッド<xref:System.Reflection.MethodInfo>と<xref:System.Reflection.ConstructorInfo>オブジェクト、メソッドが、ランタイムのバージョンのこれらのクラスでオーバーライドされるためです。 ランタイムのバージョンなど、<xref:System.Reflection.MethodInfo>から派生したクラス、<xref:System.Reflection.MethodInfo>から派生するクラス、<xref:System.Reflection.MethodBase>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。  
+  
+ <xref:System.Reflection.MethodBody.LocalVariables%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.LocalVariableInfo>オブジェクトしそれらの種類が表示され、順序のインデックスを作成します。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>例外処理句の一覧を取得するプロパティを使用します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ [!code-cpp[MethodBody#1](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#1)]
+ [!code-csharp[MethodBody#1](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#1)]
+ [!code-vb[MethodBody#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドは派生クラスでオーバーライドされない限り有効では無効です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">メンバーのメタデータにアクセスします。 アクセス許可の値。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodFromHandle">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetMethodFromHandle (RuntimeMethodHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetMethodFromHandle(valuetype System.RuntimeMethodHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodFromHandle(System.RuntimeMethodHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.RuntimeMethodHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">メソッドのハンドルです。</param>
+        <summary>メソッドの内部メタデータ表現 (ハンドル) を使用して、メソッドの情報を取得します。</summary>
+        <returns>A<see langword="MethodBase" />メソッドに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルが取得されたアプリケーション ドメイン内でのみ有効です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="handle" /> が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodFromHandle">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetMethodFromHandle (RuntimeMethodHandle handle, RuntimeTypeHandle declaringType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetMethodFromHandle(valuetype System.RuntimeMethodHandle handle, valuetype System.RuntimeTypeHandle declaringType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodFromHandle(System.RuntimeMethodHandle,System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.RuntimeMethodHandle" />
+        <Parameter Name="declaringType" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">コンス トラクターまたはメソッドの内部メタデータ表現へのハンドル。</param>
+        <param name="declaringType">コンス トラクターまたはメソッドを定義するジェネリック型へのハンドル。</param>
+        <summary>取得、<see cref="T:System.Reflection.MethodBase" />コンス トラクターまたは指定されたジェネリック型の指定したハンドルによって表されるメソッドのオブジェクト。</summary>
+        <returns>A<see cref="T:System.Reflection.MethodBase" />メソッドまたはで指定されたコンス トラクターを表すオブジェクトを<paramref name="handle" />、によって指定されたジェネリック型で<paramref name="declaringType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルが取得されたアプリケーション ドメイン内でのみ有効です。  
+  
+ A<xref:System.RuntimeMethodHandle>コンス トラクターまたはメソッドのジェネリック型の構造を別に表すことができる<xref:System.Reflection.MethodBase>によっては、ジェネリック型の型パラメーターで指定された型のオブジェクト。 たとえば場合、 `class G<T>` (`class G(Of T)` Visual basic で`generic <T> ref class G`C++ では) 型を返すメソッドを持つ`T`では、<xref:System.Reflection.MethodBase>など、構築されたクラスでは、そのメソッドのオブジェクト`G<int>`とは異なる、<xref:System.Reflection.MethodBase>ジェネリック型定義では、そのメソッドのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="handle" /> が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodImplAttributes GetMethodImplementationFlags ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Reflection.MethodImplAttributes GetMethodImplementationFlags() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodImplementationFlags" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、新しい <see cref="T:System.Reflection.MethodImplAttributes" /> フラグを返します。</summary>
+        <returns><see langword="MethodImplAttributes" /> フラグ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、動的アセンブリにコンス トラクターを定義しを使用して、<xref:System.Reflection.MethodBase.GetMethodImplementationFlags%2A>既定で設定されているメソッドの実装フラグを表示するメソッド。  
+  
+ [!code-cpp[ConstructorBuilder_GetModule_4#3](~/samples/snippets/cpp/VS_Snippets_CLR/ConstructorBuilder_GetModule_4/CPP/constructorbuilder_getmodule_4.cpp#3)]
+ [!code-csharp[ConstructorBuilder_GetModule_4#3](~/samples/snippets/csharp/VS_Snippets_CLR/ConstructorBuilder_GetModule_4/CS/constructorbuilder_getmodule_4.cs#3)]
+ [!code-vb[ConstructorBuilder_GetModule_4#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/ConstructorBuilder_GetModule_4/VB/constructorbuilder_getmodule_4.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameters">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.ParameterInfo[] GetParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.ParameterInfo[] GetParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、指定したメソッドまたはコンス トラクターのパラメーターを取得します。</summary>
+        <returns>型の配列<see langword="ParameterInfo" />この反映メソッド (またはコンス トラクター) のシグネチャと一致する情報を含む<see langword="MethodBase" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.MethodBase.GetParameters%2A>のパラメーターを取得する方法を`Invoke`デリゲートのメソッドです。  
+  
+ 例では、という名前のデリゲートを定義する`MyDelegate`という名前のイベントと`ev`型の`MyDelegate`します。 内のコード、`Main`メソッド、イベントのデリゲート型を取得することによって、イベントのシグネチャの検出を取得する、`Invoke`デリゲート型を取得し、パラメーターの表示のメソッドです。  
+  
+ [!code-cpp[eventarg#1](~/samples/snippets/cpp/VS_Snippets_CLR/EventArg/CPP/eventarg.cpp#1)]
+ [!code-csharp[eventarg#1](~/samples/snippets/csharp/VS_Snippets_CLR/EventArg/CS/eventarg.cs#1)]
+ [!code-vb[eventarg#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventArg/VB/eventarg.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (object obj, object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(object obj, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">メソッドまたはコンストラクターを呼び出す対象となるオブジェクト。 メソッドが静的な場合は、この引数は無視されます。 この引数がある必要があります、コンス トラクターが静的な場合は、<see langword="null" />またはコンス トラクターを定義するクラスのインスタンス。</param>
+        <param name="parameters">呼び出されたメソッドまたはコンス トラクターの引数リスト。 これは、呼び出されるメソッドまたはコンストラクターのパラメーターと同じ数、順序、および型のオブジェクトの配列です。 パラメーターがない場合<c>パラメーター</c>する必要があります<see langword="null" />です。  
+  
+ このインスタンスが表すメソッドまたはコンストラクターが <see langword="ref" /> パラメーター (Visual Basic では <see langword="ByRef" />) を受け取る場合、このパラメーターには、この関数を使用してメソッドまたはコンストラクターを呼び出すために特別な属性が必要ありません。 この値を明示的に初期化されていない配列内のオブジェクトは、そのオブジェクトの種類の既定値が格納されます。 この値は、参照型の要素の<see langword="null" />します。 値型要素は、この値は 0、0.0、または<see langword="false" />、特定の要素の型によって異なります。</param>
+        <summary>指定されたパラメーターを使用して、現在のインスタンスが表すメソッドまたはコンストラクターを呼び出します。</summary>
+        <returns>呼び出されたメソッド、またはコンストラクターの場合は <see langword="null" /> の戻り値を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは便利なメソッドを呼び出す、<xref:System.Reflection.MethodBase.Invoke%28System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29>メソッドのオーバー ロードを渡す<xref:System.Reflection.BindingFlags.Default>の`invokeAttr`と`null`の`binder`と`culture`です。  
+  
+ 呼び出されたメソッドが例外をスローした場合、<xref:System.Exception.GetBaseException%2A?displayProperty=nameWithType>メソッドが例外を返します。  
+  
+ 使用してを静的メソッドを呼び出す、<xref:System.Reflection.MethodInfo>オブジェクトを渡す`null`の`obj`します。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードが、インスタンス コンス トラクターの呼び出しに使用されている場合、オブジェクトに指定された`obj`は再初期化されます。 つまり、すべてのインスタンスの初期化子を実行します。 戻り値は `null` です。 クラスのコンス トラクターが呼び出されると、クラスが再初期化されます。つまり、すべてのクラス初期化子が実行されます。 戻り値は `null` です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ 現在のメソッドのパラメーターが値型とで対応する引数の場合`parameters`は`null`ランタイムは、ゼロ初期化、値型のインスタンスを渡します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リフレクションを使用して動的メソッドの参照を示します。 使用することはできません注、<xref:System.Reflection.MethodInfo>遅延バインディングのオーバーライドを解決できないため、派生クラスでオーバーライドされたメソッドを呼び出すための基本クラスからのオブジェクト。  
+  
+ [!code-cpp[Classic MethodBase.Invoke1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.Invoke1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.Invoke1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.Invoke1 Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.Invoke1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.Invoke1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、キャッチ<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ <paramref name="obj" /> パラメーターは <see langword="null" /> で、メソッドは静的でありません。  
+  
+ または  
+  
+ メソッドは <paramref name="obj" /> のクラスで宣言も継承もされていません。  
+  
+ または  
+  
+ 静的コンストラクターが呼び出されました。<paramref name="obj" /> は <see langword="null" /> でも、コンストラクターを宣言したクラスのインスタンスでもありません。</exception>
+        <exception cref="T:System.ArgumentException">要素、<paramref name="parameters" />配列メソッドまたはインスタンスによって反映されるコンス トラクターの署名に一致しません。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されたメソッドまたはコンストラクターが例外をスローします。  
+  
+ または  
+  
+ 現在のインスタンスが、<see cref="T:System.Reflection.Emit.DynamicMethod" />検証不可能なコードを格納しています。 <see cref="T:System.Reflection.Emit.DynamicMethod" /> については、「解説」の「検証」セクションを参照してください。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="parameters" /> 配列に正しい数の引数がありません。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 呼び出し元には、現在のインスタンスが表すメソッドまたはコンストラクターを実行するアクセス許可がありません。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドを宣言する型は、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティから返される<see langword="true" />を宣言する型。</exception>
+        <exception cref="T:System.NotSupportedException">現在のインスタンスは <see cref="T:System.Reflection.Emit.MethodBuilder" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public abstract object Invoke (object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] parameters, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(object obj, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] parameters, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">メソッドまたはコンストラクターを呼び出す対象となるオブジェクト。 メソッドが静的な場合は、この引数は無視されます。 この引数がある必要があります、コンス トラクターが静的な場合は、<see langword="null" />またはコンス トラクターを定義するクラスのインスタンス。</param>
+        <param name="invokeAttr">0 個以上のビット フラグの組み合わせであるビットマスク<see cref="T:System.Reflection.BindingFlags" />です。 場合<c>バインダー</c>は<see langword="null" />、このパラメーターの値が割り当て<see cref="F:System.Reflection.BindingFlags.Default" />。 このため、渡すは無視されます。</param>
+        <param name="binder">バインディング、引数型の強制変換、メンバーの呼び出し、および、リフレクションによる <see langword="MemberInfo" /> オブジェクトの取得を有効にするオブジェクト。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="parameters">呼び出されたメソッドまたはコンス トラクターの引数リスト。 これは、呼び出されるメソッドまたはコンストラクターのパラメーターと同じ数、順序、および型のオブジェクトの配列です。 この値にはパラメーターがない場合は、<see langword="null" />です。  
+  
+ 場合は、メソッドまたはこのインスタンスで表されるコンス トラクターは、ByRef パラメーターを受け取り、そのパラメーターにメソッドまたはコンス トラクターを呼び出すために必要な特別な属性はありません。 この値を明示的に初期化されていない配列内のオブジェクトは、そのオブジェクトの種類の既定値が格納されます。 この値は、参照型の要素の<see langword="null" />します。 値型要素は、この値は 0、0.0、または<see langword="false" />、特定の要素の型によって異なります。</param>
+        <param name="culture">型の強制変換を制御するために使用する <see langword="CultureInfo" /> のインスタンス。 <see langword="null" /> の場合は、現在のスレッドの <see langword="CultureInfo" /> が使用されます。 (これは、たとえば、1000 を表す <see langword="String" /> を <see langword="Double" /> 値に変換する場合に必要です。これは、カルチャによって 1000 の表記が異なるためです。)</param>
+        <summary>派生クラスでオーバーライドされると、リフレクションされたメソッドまたは指定したパラメーターを持つコンス トラクターを呼び出します。</summary>
+        <returns><see langword="Object" /> 、呼び出されたメソッドの戻り値を含むまたは<see langword="null" />の場合は、コンス トラクターまたは<see langword="null" />メソッドの戻り値の型が<see langword="void" />です。 メソッドまたはコンス トラクターを呼び出す前に<see langword="Invoke" />ユーザーがアクセス許可を持つし、パラメーターが有効であることを確認するか確認します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンスによって反映されるメソッドを動的に呼び出します`obj`を指定したパラメーターを渡します。 メソッドが静的の場合、`obj`パラメーターは無視されます。 非静的メソッドの`obj`継承またはメソッドを宣言し、このクラスと同じ型である必要があるクラスのインスタンスである必要があります。 メソッドは、パラメーターの値を持たない場合`parameters`する必要があります`null`です。 それ以外の場合、数、型、および内の要素の順序`parameters`数、種類、およびこのインスタンスによって反映されるメソッドのパラメーターの順序と同じである必要があります。  
+  
+ 呼び出しで省略可能なパラメーターを省略することはできません`Invoke`です。 省略可能なパラメーターを省略するメソッドを呼び出すを呼び出す必要があります`Type.InvokeMember`代わりにします。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードが、インスタンス コンス トラクターの呼び出しに使用されている場合、オブジェクトに指定された`obj`は再初期化されます。 つまり、すべてのインスタンスの初期化子を実行します。 戻り値は `null` です。 クラスのコンス トラクターが呼び出されると、クラスが再初期化されます。つまり、すべてのクラス初期化子が実行されます。 戻り値は `null` です。  
+  
+ プリミティブ パラメーターの値渡し、通常の拡張が使用されます (Int16 -> Int32 など)。 値渡し参照パラメーターの場合は、通常の参照が拡大変換は許可されて (派生クラスを基本クラスおよびインターフェイス型に基本クラス)。 ただし、参照渡しプリミティブ パラメーター、型が正確に一致する必要があります。 参照渡しの参照パラメーターの場合は、通常の拡張も適用されます。  
+  
+ たとえば、メソッドがリフレクションしている場合は、このインスタンスとして宣言されて`public boolean Compare(String a, String b)`、し`parameters`の配列でなければなりません`Objects`長が 2 になるよう`parameters[0] = new Object("SomeString1") and parameters[1] = new Object("SomeString2")`です。  
+  
+ 現在のメソッドのパラメーターが値型とで対応する引数の場合`parameters`は`null`ランタイムは、ゼロ初期化、値型のインスタンスを渡します。  
+  
+ リフレクションは、仮想メソッドを呼び出すときに、動的メソッドの参照を使用します。 たとえば、クラス B はクラス A から継承をどちらも M をという名前の仮想メソッドを実装します。これであると仮定する`MethodInfo`クラス A に M を表すオブジェクト使用する場合、`Invoke`リフレクションはクラス B. によって指定された実装を使用し、タイプ B のオブジェクトに対して M を呼び出すメソッドクラス B で指定された実装を使用して、B のオブジェクトの型は、A にキャストは、場合でも (以下のコード サンプルを参照してください)。  
+  
+ その一方で、メソッドが仮想でない場合は、し、リフレクション使用元の型によって指定された実装、`MethodInfo`対象として渡されるオブジェクトの種類に関係なく、取得しました。  
+  
+ アクセスの制限には、完全に信頼されたコードは無視されます。 Private のコンス トラクター、メソッド、フィールド、およびプロパティにアクセスして、コードは完全に信頼されるたびに、リフレクションを使用して呼び出されます。  
+  
+ 呼び出されたメソッドが例外をスローした場合`TargetInvocationException.GetException`例外を返します。 この実装は、`NotSupportedException`です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのメンバー、<xref:System.Reflection.Binder?displayProperty=nameWithType>クラスのオーバー ロードを使用して<xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>です。 プライベート メソッド`CanConvertFrom`指定された型の互換性のある型を検索します。 別の例、カスタム バインディングのシナリオでメンバーを呼び出すのでは、次を参照してください。[動的な読み込みおよび使用して型](~/docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md)です。  
+  
+ [!code-cpp[Binder_1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Binder_1/CPP/binder.cpp#1)]
+ [!code-csharp[Binder_1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Binder_1/CS/binder.cs#1)]
+ [!code-vb[Binder_1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Binder_1/VB/binder.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetException"><paramref name="obj" /> パラメーターは <see langword="null" /> で、メソッドは静的でありません。  
+  
+ または  
+  
+ メソッドは <paramref name="obj" /> のクラスで宣言も継承もされていません。  
+  
+ または  
+  
+ 静的コンストラクターが呼び出されました。<paramref name="obj" /> は <see langword="null" /> でも、コンストラクターを宣言したクラスのインスタンスでもありません。</exception>
+        <exception cref="T:System.ArgumentException">型、<paramref name="parameters" />パラメーターがこのインスタンスによって反映されるコンス トラクター、メソッドのシグネチャと一致しません。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException"><paramref name="parameters" /> 配列に正しい数の引数がありません。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されたメソッドまたはコンストラクターが例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、現在のインスタンスが表すメソッドまたはコンストラクターを実行するアクセス許可がありません。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドを宣言する型は、オープン ジェネリック型です。 つまり、<see cref="P:System.Type.ContainsGenericParameters" />プロパティから返される<see langword="true" />を宣言する型。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbstract">
+      <MemberSignature Language="C#" Value="public bool IsAbstract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbstract" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsAbstract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドは抽象であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メソッドが abstract 以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象メンバーが基底クラスで宣言されているし、実装が指定されていません。  
+  
+ 取得する、 <xref:System.Reflection.MethodBase>、最初の種類を取得します。 型、メソッドを取得します。 メソッドから取得、`MethodBase`です。 場合、`MethodBase`またはコンス トラクターがパブリック以外、それが保護されており、簡単にアクセスすることはできません。 非パブリック メソッドにアクセスするには、設定、<xref:System.Reflection.BindingFlags>マスクを`NonPublic`で`GetMethod`です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたメソッドは抽象であり、その結果を表示するかどうかを判断します。  
+  
+ [!code-cpp[Classic MethodBase.IsAbstract Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAbstract Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsAbstract Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAbstract Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsAbstract Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsAbstract Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssembly">
+      <MemberSignature Language="C#" Value="public bool IsAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドまたはコンス トラクターの潜在的な可視性がで説明されているかどうかを示す値を取得<see cref="F:System.Reflection.MethodAttributes.Assembly" />以外の場合は、メソッドまたはコンス トラクターは表示されている最大で、同じアセンブリ内の他の種類におよびに表示されません派生アセンブリの外側の型。</summary>
+        <value>
+          <see langword="true" />このメソッドまたはコンス トラクターの可視性がによって正確に説明されているかどうかは<see cref="F:System.Reflection.MethodAttributes.Assembly" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの実際の可視性は、その型の可視性によって制限されます。 <xref:System.Reflection.MethodBase.IsAssembly%2A>プロパティがあります`true`メソッドは、包含する型の外部で参照することはありませんし、プライベートの入れ子にされた型のメソッドである場合は、メソッドの。  
+  
+ メソッドまたはコンス トラクターの可視性がによって正確に説明されている<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>のみ可視性修飾子が場合`internal`(`Friend` Visual Basic で)。 このプロパティは、`false`あるメソッドの`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で); を使用して、<xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>このようなメソッドを識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つメソッドを定義しの値を表示、 <xref:System.Reflection.MethodBase.IsAssembly%2A>、 <xref:System.Reflection.MethodBase.IsFamily%2A>、 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語を持つメソッドを定義できません<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConstructor">
+      <MemberSignature Language="C#" Value="public bool IsConstructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConstructor" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsConstructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドが、コンス トラクターであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このメソッドは、コンス トラクターによって表される場合、<see cref="T:System.Reflection.ConstructorInfo" />オブジェクト (は「解説」注を参照してください<see cref="T:System.Reflection.Emit.ConstructorBuilder" />オブジェクト)、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Reflection.MethodBase.IsConstructor%2A>プロパティから返される`false`の<xref:System.Reflection.Emit.ConstructorBuilder>しない限り、動的な型のオブジェクト、<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>にフラグが含まれていた、`attributes`コンス トラクターが定義されている場合のパラメーターです。 省略すると、<xref:System.Reflection.MethodAttributes.RTSpecialName>フラグでは、出力されたコンス トラクターの正確性には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamily">
+      <MemberSignature Language="C#" Value="public bool IsFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドまたはコンス トラクターの可視性がで説明されているかどうかを示す値を取得<see cref="F:System.Reflection.MethodAttributes.Family" />; そのメソッドまたはコンス トラクターは、クラスと派生クラス内でだけ参照可能です。</summary>
+        <value>
+          <see langword="true" />場合はこのメソッドへのアクセスまたはコンス トラクターは<see cref="F:System.Reflection.MethodAttributes.Family" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドまたはコンス トラクターの可視性がによって正確に説明されている<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>のみ可視性修飾子が場合`protected`です。 このプロパティは、`false`あるメソッドの`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で); を使用して、<xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>このようなメソッドを識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つメソッドを定義しの値を表示、 <xref:System.Reflection.MethodBase.IsAssembly%2A>、 <xref:System.Reflection.MethodBase.IsFamily%2A>、 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語を持つメソッドを定義できません<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyAndAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyAndAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyAndAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamilyAndAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドまたはコンス トラクターの可視性がで説明されているかどうかを示す値を取得<see cref="F:System.Reflection.MethodAttributes.FamANDAssem" />; は、メソッドまたはコンス トラクター呼び出せるだけの派生クラスによって、同じアセンブリ内にある場合。</summary>
+        <value>
+          <see langword="true" />場合はこのメソッドへのアクセスまたはコンス トラクターは<see cref="F:System.Reflection.MethodAttributes.FamANDAssem" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドまたはコンス トラクターの可視性がによって正確に説明されている<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性修飾子が場合`protected private`C++ でします。 Visual Basic または c# では、この可視性を持つメソッドを定義できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つメソッドを定義しの値を表示、 <xref:System.Reflection.MethodBase.IsAssembly%2A>、 <xref:System.Reflection.MethodBase.IsFamily%2A>、 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語を持つメソッドを定義できません<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyOrAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyOrAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyOrAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamilyOrAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドまたはコンス トラクターの潜在的な可視性が説明されているかどうかを示す値を取得<see cref="F:System.Reflection.MethodAttributes.FamORAssem" />です。 つまり、メソッドまたはコンス トラクター呼び出せる、派生クラスによってどこにいても、および同じアセンブリ内のクラスです。</summary>
+        <value>
+          <see langword="true" />場合はこのメソッドへのアクセスまたはコンス トラクターは<see cref="F:System.Reflection.MethodAttributes.FamORAssem" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のメンバーが<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性、呼び出すことができます、同じアセンブリ内のメンバーまたは派生クラスで任意のメンバーからからではないその他の種類。  
+  
+ メソッドの実際の可視性は、その型の可視性によって制限されます。 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>プロパティがあります`true`メソッドは、包含する型の外部で参照することはありませんし、プライベートの入れ子にされた型のメソッドである場合は、メソッドの。  
+  
+ メソッドまたはコンス トラクターの可視性がによって正確に説明されている<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性修飾子が場合`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つメソッドを定義しの値を表示、 <xref:System.Reflection.MethodBase.IsAssembly%2A>、 <xref:System.Reflection.MethodBase.IsFamily%2A>、 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語を持つメソッドを定義できません<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFinal">
+      <MemberSignature Language="C#" Value="public bool IsFinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFinal" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドは、かどうかを示す値を取得<see langword="final" />です。</summary>
+        <value>
+          このメソッドが <see langword="final" /> である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ないことを確認するための十分なメソッドがオーバーライド可能な場合を判断する<xref:System.Reflection.MethodBase.IsVirtual%2A>は`true`します。 メソッドのオーバーライドに`IsVirtual`する必要があります`true`と`IsFinal`する必要があります`false`です。 たとえば、メソッドは非仮想かもしれませんが、インターフェイス メソッドを実装します。 共通言語ランタイムでは、インターフェイス メンバーを実装するすべてのメソッドは、としてマークする必要がありますが必要です`virtual`。 したがって、コンパイラは、メソッドをマーク`virtual final`です。 メソッドとしてマークする位置のケースがあるように`virtual`がオーバーライドできません。  
+  
+ メソッドがオーバーライドできるかどうかを確実に確立するには、このようなコードを使用します。  
+  
+ `if (MethodInfo.IsVirtual && !MethodInfo.IsFinal)`  
+  
+ 場合`IsVirtual`は`false`または`IsFinal`は`true`メソッドをオーバーライドすることはできませんし、します。  
+  
+   
+  
+## Examples  
+ 次の例を表示`false`の`IsFinal`、これが生じることを実行すると判断します。 コードの出力を`false`MyMethod はマークされていない場合でも`virtual`のため、オーバーライドできません。  
+  
+ [!code-cpp[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGenericMethod">
+      <MemberSignature Language="C#" Value="public virtual bool IsGenericMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsGenericMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドがジェネリックかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、現在<see cref="T:System.Reflection.MethodBase" />ジェネリック メソッドを表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Reflection.MethodBase.IsGenericMethod%2A>プロパティを決定するかどうか、現在<xref:System.Reflection.MethodBase>オブジェクトがジェネリック メソッドを表します。 使用して、<xref:System.Reflection.MethodBase.ContainsGenericParameters%2A>を決定するプロパティかどうか、現在<xref:System.Reflection.MethodBase>オブジェクトは、オープン構築メソッドまたはクローズ構築されるメソッドを表します。  
+  
+> [!NOTE]
+>  ジェネリックは、既定ではサポートされていませんこのプロパティを返します`false`派生クラスでオーバーライドされていない場合。 ジェネリック コンス トラクターでサポートされていない .NET Framework version 2.0 では、このプロパティを返すように`false`型の場合は、現在のインスタンス<xref:System.Reflection.ConstructorInfo>です。  
+  
+ ジェネリック メソッドに固有の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>プロパティです。 ジェネリック リフレクションで使用されるその他の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGenericMethodDefinition">
+      <MemberSignature Language="C#" Value="public virtual bool IsGenericMethodDefinition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethodDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドがジェネリック メソッド定義であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Reflection.MethodBase" /> オブジェクトがジェネリック メソッドの定義を表している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.Reflection.MethodBase>し、ジェネリック メソッド定義を表します。  
+  
+-   <xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A> プロパティが `true` です。  
+  
+-   各<xref:System.Type>によって返される配列内のオブジェクト、<xref:System.Reflection.MethodBase.GetGenericArguments%2A>メソッド。  
+  
+    -   <xref:System.Type.IsGenericParameter%2A?displayProperty=nameWithType> プロパティが `true` です。  
+  
+    -   <xref:System.Type.DeclaringMethod%2A?displayProperty=nameWithType>プロパティは、現在のインスタンスを返します。  
+  
+    -   <xref:System.Type.GenericParameterPosition%2A?displayProperty=nameWithType>の位置と同じプロパティが、<xref:System.Type>配列内のオブジェクト。  
+  
+> [!NOTE]
+>  ジェネリックは、既定ではサポートされていませんこのプロパティを返します`false`派生クラスでオーバーライドされていない場合。 ジェネリック コンス トラクターでサポートされていない .NET Framework version 2.0 では、このプロパティを返すように`false`型の場合は、現在のインスタンス<xref:System.Reflection.ConstructorInfo>です。  
+  
+ ジェネリック メソッドに固有の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType>プロパティです。 ジェネリック リフレクションで使用されるその他の用語に対するインバリアント条件の一覧は、次を参照してください。、<xref:System.Type.IsGenericType%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHideBySig">
+      <MemberSignature Language="C#" Value="public bool IsHideBySig { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHideBySig" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsHideBySig" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで正確に同じシグネチャを持つ同じ種類のメンバーだけが非表示かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />シグネチャで、メンバーが表示されていない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでメンバーが、c# を使用して宣言されている場合`new`修飾子または Visual Basic`Shadows`修飾子は、基底クラス内の同じ名前のメンバーを非表示にできます。 C# シグネチャで基本クラスのメンバーを非表示にします。 つまり、基底クラスのメンバーに複数のオーバー ロードがある場合は、非表示には、1 つだけは同じシグネチャを持つ 1 つです。 これに対し、Visual Basic では、すべての基底クラスのオーバー ロードを非表示にします。 したがって、<xref:System.Reflection.MethodBase.IsHideBySig%2A>を返します`false`、Visual Basic で宣言されたメンバーに`Shadows`修飾子と`true`、c# で宣言されたメンバーに`new`修飾子です。  
+  
+> [!WARNING]
+>  このプロパティは、メソッドがあるかどうかを決定しません、<xref:System.Reflection.MethodAttributes.NewSlot>属性。 いずれかで宣言されているメソッド、`new`または`Shadows`修飾子になります、<xref:System.Reflection.MethodAttributes.NewSlot>属性がで宣言されたメソッドのみ`new`(つまり、c# メソッドのみ) が、<xref:System.Reflection.MethodBase.IsHideBySig%2A>プロパティに設定`true`です。  メソッドがあるかどうかを確認する、<xref:System.Reflection.MethodAttributes.NewSlot>属性には、次のようなコードを使用してください: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` (C#) または`If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot`Visual Basic でします。 ただしをで宣言されたすべてのメソッドが`new`または`Shadows`が、<xref:System.Reflection.MethodAttributes.NewSlot>属性を持つすべてのメソッド、<xref:System.Reflection.MethodAttributes.NewSlot>属性を使用して宣言`new`または`Shadows`です。  
+  
+   
+  
+## Examples  
+ 次のコード例には、オーバー ロードされたメソッドを持つ基本クラスと、オーバー ロードのいずれかの非表示にする派生クラスが含まれています。 コード例は、Visual Basic バージョンの<xref:System.Reflection.MethodBase.IsHideBySig%2A>プロパティから返される`false`派生クラスでメンバーにします。 コード サンプルの c# バージョンでは、プロパティを返します`true`派生クラスでメンバーにします。  
+  
+ [!code-cpp[System.Reflection.MethodBase.IsHideBySig#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Reflection.MethodBase.IsHideBySig/cpp/hide.cpp#1)]
+ [!code-csharp[System.Reflection.MethodBase.IsHideBySig#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Reflection.MethodBase.IsHideBySig/CS/hide.cs#1)]
+ [!code-vb[System.Reflection.MethodBase.IsHideBySig#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Reflection.MethodBase.IsHideBySig/VB/hide.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrivate">
+      <MemberSignature Language="C#" Value="public bool IsPrivate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrivate" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsPrivate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーはプライベートであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このメソッドへのアクセスがクラス自体の他のメンバーに制限されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のメンバーが`Private`レベルの可視性、呼び出すことができます、同じクラスおよびその他のすべてのメンバーからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPublic">
+      <MemberSignature Language="C#" Value="public bool IsPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パブリック メソッドであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このメソッドがパブリックの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、 <xref:System.Reflection.MethodBase>、最初の種類を取得します。 型、メソッドを取得します。 メソッドから取得、`MethodBase`です。 場合、`MethodBase`またはコンス トラクターがパブリック以外、それが保護されており、簡単にアクセスすることはできません。 非パブリック メソッドにアクセスするには、設定、<xref:System.Reflection.BindingFlags>マスクを`NonPublic`で`GetMethod`です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.MethodBase.IsPublic%2A>プロパティを指定したメソッドがパブリックであるかどうかを示すメッセージを表示します。  
+  
+ [!code-cpp[Classic MethodBase.IsPublic Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsPublic Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsPublic Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsPublic Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsPublic Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsPublic Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityCritical">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecurityCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecurityCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメソッドまたはコンス トラクターが、現在の信頼レベルでは、セキュリティ クリティカルまたはセキュリティ セーフ クリティカルであり、重要な操作を実行できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のメソッドまたはコンス トラクターがセキュリティ クリティカルまたはセキュリティ セーフ クリティカルにある場合、現在の信頼レベルです。<see langword="false" />透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MethodBase.IsSecurityCritical%2A>、 <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>プロパティは、メソッドまたは共通言語ランタイム (CLR) によって決定される、現在の信頼レベルのコンス トラクターの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecuritySafeCritical">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecuritySafeCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecuritySafeCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうか、現在のメソッドまたはコンス トラクターが、セキュリティ セーフ クリティカルである、現在の信頼レベルを示す値を取得します。つまり、かどうかが重要な操作を実行することができます、透過的なコードからアクセスできます。</summary>
+        <value>
+          <see langword="true" />メソッドまたはコンス トラクターがセキュリティ セーフ クリティカルである場合、現在の信頼レベルです。<see langword="false" />セキュリティ クリティカルまたは透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MethodBase.IsSecurityCritical%2A>、 <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>プロパティは、メソッドまたは共通言語ランタイム (CLR) によって決定される、現在の信頼レベルのコンス トラクターの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityTransparent">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecurityTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecurityTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメソッドまたはコンス トラクターは透過的であるかどうか、現在の信頼レベル、および操作を実行できません重大を示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メソッドまたはコンス トラクターが透過的セキュリティにある場合、現在の信頼レベルです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返す場合`true`、<xref:System.Reflection.MethodBase.IsSecurityCritical%2A>と<xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>プロパティの戻り値`false`です。  
+  
+ <xref:System.Reflection.MethodBase.IsSecurityCritical%2A>、 <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>プロパティは、メソッドまたは共通言語ランタイム (CLR) によって決定される、現在の信頼レベルのコンス トラクターの透明度を報告します。 これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpecialName">
+      <MemberSignature Language="C#" Value="public bool IsSpecialName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSpecialName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメソッドは特別な名前であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このメソッドは、特別な名前を持つ場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.MethodAttributes.SpecialName>ビット フラグ (プロパティ アクセサー メソッドのオーバー ロードする演算子など) の一部のコンパイラで特別な方法で処理されるメンバーに設定します。  
+  
+   
+  
+## Examples  
+ この例を使用して<xref:System.Reflection.MethodBase.IsSpecialName%2A>内部フィルターまたはリストから、プライベート メンバーにします。  
+  
+ [!code-cpp[Classic Type.IsSpecialName Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Type.IsSpecialName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Type.IsSpecialName Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Type.IsSpecialName Example/CS/source.cs#1)]
+ [!code-vb[Classic Type.IsSpecialName Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Type.IsSpecialName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStatic">
+      <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドが <see langword="static" /> であるかどうかを示す値を取得します。</summary>
+        <value>
+          このメソッドが <see langword="static" /> である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的メンバーは、クラスのインスタンス データを暗黙的に参照できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVirtual">
+      <MemberSignature Language="C#" Value="public bool IsVirtual { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsVirtual" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsVirtual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドが <see langword="virtual" /> であるかどうかを示す値を取得します。</summary>
+        <value>
+          このメソッドが <see langword="virtual" /> である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想メンバーは、クラスでインスタンス データを参照し、クラスのインスタンスから参照する必要があります。  
+  
+ ないことを確認するための十分なメソッドがオーバーライド可能な場合を判断する`IsVirtual`は`true`します。 メソッドのオーバーライドに`IsVirtual`する必要があります`true`と<xref:System.Reflection.MethodBase.IsFinal%2A>する必要があります`false`です。 たとえば、メソッドは非仮想かもしれませんが、インターフェイス メソッドを実装します。 共通言語ランタイムでは、インターフェイス メンバーを実装するすべてのメソッドは、としてマークする必要がありますが必要です`virtual`。 したがって、コンパイラは、メソッドをマーク`virtual final`です。 メソッドとしてマークする位置のケースがあるように`virtual`がオーバーライドできません。  
+  
+ メソッドがオーバーライドできるかどうかを確実に確立するには、このようなコードを使用します。  
+  
+```csharp  
+if (MethodInfo.IsVirtual && !MethodInfo.IsFinal)  
+```  
+  
+```vb  
+If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then  
+```  
+  
+ 場合`IsVirtual`は`false`または`IsFinal`は`true`メソッドをオーバーライドすることはできませんし、します。  
+  
+ 現在のメソッドが呼び出すことによって、基底クラスのメソッドをオーバーライドするかどうかを決定できます、<xref:System.Reflection.MethodInfo.GetBaseDefinition%2A?displayProperty=nameWithType>メソッドです。 次の例では、実装、`IsOverride`これを行うメソッドです。  
+  
+ [!code-csharp[system.reflection.methodinfo.getbasedefinition#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.methodinfo.getbasedefinition/cs/IsOverride1.cs#2)]
+ [!code-vb[system.reflection.methodinfo.getbasedefinition#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.methodinfo.getbasedefinition/vb/IsOverride1.vb#2)]  
+  
+   
+  
+## Examples  
+ 次の例が表示されます`false`の`IsFinal`、これが行われる場合を検討する`MyMethod`オーバーライドします。 コードの出力を`false`にもかかわらず`MyMethod`マークされていない`virtual`のため、オーバーライドできません。  
+  
+ [!code-cpp[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/CS/source.cs#1)]
+ [!code-vb[Classic MethodBase.IsVirtual Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MethodBase.IsVirtual Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodHandle">
+      <MemberSignature Language="C#" Value="public abstract RuntimeMethodHandle MethodHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeMethodHandle MethodHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.MethodHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの内部メタデータ表現へのハンドルを取得します。</summary>
+        <value><see cref="T:System.RuntimeMethodHandle" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルは、取得されたアプリケーション ドメイン内でのみ有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodImplAttributes MethodImplementationFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodImplAttributes MethodImplementationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.MethodImplementationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Reflection.MethodImplAttributes" />メソッドの実装の属性を指定するフラグ。</summary>
+        <value>メソッド実装フラグ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Reflection.MethodBase.GetMethodImplementationFlags%2A> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Reflection.MethodBase left, class System.Reflection.MethodBase right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.op_Equality(System.Reflection.MethodBase,System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.MethodBase" />
+        <Parameter Name="right" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.MethodBase" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> に等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Reflection.MethodBase left, class System.Reflection.MethodBase right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.op_Inequality(System.Reflection.MethodBase,System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.MethodBase" />
+        <Parameter Name="right" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.MethodBase" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> と等しくない場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _MethodBase.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.GetType">
+      <MemberSignature Language="C#" Value="Type _MethodBase.GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.Runtime.InteropServices._MethodBase.GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />」をご覧ください。</summary>
+        <returns>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._MethodBase.GetType" />」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _MethodBase.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _MethodBase.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.Invoke">
+      <MemberSignature Language="C#" Value="void _MethodBase.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsAbstract">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsAbstract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsAbstract" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsAbstract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />」をご覧ください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsAbstract" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsAssembly">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsAssembly" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsConstructor">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsConstructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsConstructor" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsConstructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsConstructor" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsFamily">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamily" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamilyAndAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamilyOrAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsFinal">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFinal" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsFinal" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsHideBySig">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsHideBySig { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsHideBySig" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsHideBySig" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsHideBySig" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsPrivate">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsPrivate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsPrivate" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsPrivate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsPrivate" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsPublic">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsPublic" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsSpecialName">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsSpecialName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsSpecialName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsSpecialName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsSpecialName" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsStatic">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsStatic" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._MethodBase.IsVirtual">
+      <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsVirtual { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsVirtual" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsVirtual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />」を参照してください。</summary>
+        <value>このメンバーの詳細については、「<see cref="P:System.Runtime.InteropServices._MethodBase.IsVirtual" />」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.MethodBase> のインスタンスが <xref:System.Runtime.InteropServices._MethodBase> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

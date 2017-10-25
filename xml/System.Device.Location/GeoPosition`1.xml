@@ -1,0 +1,94 @@
+<Type Name="GeoPosition&lt;T&gt;" FullName="System.Device.Location.GeoPosition&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class GeoPosition&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GeoPosition`1&lt;T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.GeoPosition`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">位置データの型。</typeparam>
+    <summary>型パラメーターで指定された型の場所データを含む、<see cref="T:System.Device.Location.GeoPosition`1" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoPosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoPosition`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Device.Location.GeoPosition`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoPosition (DateTimeOffset timestamp, T position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTimeOffset timestamp, !T position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoPosition`1.#ctor(System.DateTimeOffset,`0)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timestamp" Type="System.DateTimeOffset" />
+        <Parameter Name="position" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="timestamp">場所データが取得された時刻。</param>
+        <param name="position">初期化するために使用する、場所データ、<see cref="T:System.Device.Location.GeoPosition`1" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Device.Location.GeoPosition`1" />タイムスタンプと位置を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public T Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Location" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoPosition`1.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場所データを<see cref="T:System.Device.Location.GeoPosition`1" />オブジェクト。</summary>
+        <value>T 型のオブジェクトの場所データを含む、<see cref="T:System.Device.Location.GeoPosition`1" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timestamp">
+      <MemberSignature Language="C#" Value="public DateTimeOffset Timestamp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset Timestamp" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoPosition`1.Timestamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または場所データが取得された時刻を設定します。</summary>
+        <value>A<see cref="T:System.DateTimeOffset" />場所データが作成された時刻を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

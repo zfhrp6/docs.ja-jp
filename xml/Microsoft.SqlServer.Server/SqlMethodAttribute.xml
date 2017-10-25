@@ -1,0 +1,145 @@
+<Type Name="SqlMethodAttribute" FullName="Microsoft.SqlServer.Server.SqlMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SqlMethodAttribute : Microsoft.SqlServer.Server.SqlFunctionAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SqlMethodAttribute extends Microsoft.SqlServer.Server.SqlFunctionAttribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.SqlServer.Server.SqlFunctionAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー定義型 (UDT) のプロパティまたはメソッドの決定性とデータ アクセス プロパティを示します。 属性のプロパティは、種類が SQL Server に登録されているときに使用される物理的な特性を反映します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの場合、 <xref:Microsoft.SqlServer.Server.SqlMethodAttribute> setter または getter で直接使用する必要があります。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlMethodAttribute>継承する<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute>ため、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute>継承、`FillRowMethodName`と`TableDefinition`からのフィールド<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute>です。 れていない、テーブル値メソッドを記述することが可能ですからこれらのフィールドの名前が推奨可能性がありますに注意してください。  
+  
+   
+  
+## Examples  
+ 次の例は、UDT メソッドを示すこと、メソッドが呼び出されない、型の null インスタンスで、メソッドは、型の状態を変更しないというと、メソッドは呼び出されませんときに起因する`null`パラメーターは、メソッドの呼び出しに渡されます。  
+  
+ [!code-csharp[DataWorks SqlMethodAttribute Sample#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlMethodAttribute Sample/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlMethodAttribute Sample#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlMethodAttribute Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlMethodAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlMethodAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>UDT 上でプロパティまたはメソッドの決定性とデータ アクセス プロパティを示すために使用されるユーザー定義型 (UDT) の属性です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeIfReceiverIsNull">
+      <MemberSignature Language="C#" Value="public bool InvokeIfReceiverIsNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InvokeIfReceiverIsNull" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlMethodAttribute.InvokeIfReceiverIsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL Server が null インスタンスでメソッドを呼び出す必要があるかどうかを示します。</summary>
+        <value>
+          SQL Server が null インスタンスでメソッドを呼び出す必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 (メソッドの属性により) メソッドを呼び出すことができない場合は、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]<see langword="DbNull" /> が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.InvokeIfReceiverIsNull%2A>プロパティは`false`します。  
+  
+ つまり、メソッドは null インスタンスでは呼び出されません。 場合<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.InvokeIfReceiverIsNull%2A>が true の場合、メソッドの戻り値は、その型によって異なります。 メソッドの戻り値の型が null 許容の場合は、型の識別の null 値が返されます。 戻り値の型が null 非許容の場合は、型の既定の CLR 値が返されます。 参照型の既定値は null です。 値の型の既定値は、型の既定のコンス トラクターを呼び出すときに返される値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutator">
+      <MemberSignature Language="C#" Value="public bool IsMutator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMutator" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlMethodAttribute.IsMutator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型 (UDT) のメソッドがミューテーターかどうかを示します。</summary>
+        <value>
+          <see langword="true" />メソッドがミューテーター以外の場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.IsMutator%2A>プロパティに設定されている`true`メソッドの戻り値の型と`void`、SQL Server は、ミューテーターとしてメソッドをマークします。 ミューテーター メソッドは、UDT インスタンスの状態の変更の原因となる 1 つです。 ミューテーター メソッドは、代入ステートメントまたはデータ変更ステートメントで呼び出すことができますが、クエリでは使用できません。 メソッドは、ミューテーターとしてマークされて void 返さない場合は、し、CREATE TYPE は失敗しませんが次のエラー。 以外の場合、返される値も`void`が発生させるエラーが返される値はアクセスできず、使用することはできません。  
+  
+ 既定値、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.IsMutator%2A>プロパティは`false`します。  
+  
+ プロパティは、ミューテーター場合<xref:Microsoft.SqlServer.Server.SqlMethodAttribute>、set アクセス操作子の使用と<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.IsMutator%2A>に設定されている`true`です。 ただし、プロパティ set アクセス操作子は暗黙的に扱われますミューテーターとして設定する必要がないため、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.IsMutator%2A>のプロパティ、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute>に`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNullCall">
+      <MemberSignature Language="C#" Value="public bool OnNullCall { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OnNullCall" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlMethodAttribute.OnNullCall" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="null" /> 入力引数がメソッドの呼び出しで指定されたときにユーザー定義型 (UDT) のメソッドが呼び出されるかどうかを示します。</summary>
+        <value>
+          メソッドの呼び出しで <see langword="null" /> 入力引数を指定したときにこのメソッドが呼び出される場合は <see langword="true" />。入力パラメーターのいずれかが <see langword="null" /> で、メソッドが <see langword="null" /> 値を返す場合は <see langword="false" />。 (メソッドの属性により) メソッドを呼び出すことができない場合は、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]<see langword="DbNull" /> が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:Microsoft.SqlServer.Server.SqlMethodAttribute.OnNullCall%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

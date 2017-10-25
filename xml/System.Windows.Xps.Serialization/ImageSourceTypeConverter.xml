@@ -1,0 +1,252 @@
+<Type Name="ImageSourceTypeConverter" FullName="System.Windows.Xps.Serialization.ImageSourceTypeConverter">
+  <TypeSignature Language="C#" Value="public class ImageSourceTypeConverter : System.ComponentModel.ExpandableObjectConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageSourceTypeConverter extends System.ComponentModel.ExpandableObjectConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Serialization.ImageSourceTypeConverter" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.ExpandableObjectConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Imaging.BitmapSource" /> オブジェクトを他の型のオブジェクトとの間で変換するための型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスを参照してください<xref:System.ComponentModel.TypeConverter>と<xref:System.ComponentModel.ExpandableObjectConverter>の重要な使用上の注意します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageSourceTypeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Xps.Serialization.ImageSourceTypeConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスを参照してください<xref:System.ComponentModel.TypeConverter>と<xref:System.ComponentModel.ExpandableObjectConverter>の重要な使用上の注意します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト情報を提供するオブジェクト。</param>
+        <param name="sourceType">変換対象のオブジェクトの型。</param>
+        <summary>指定された型のインスタンスをこのコンバーターが変換できるかどうかを示す値を返します、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</summary>
+        <returns>
+          <see langword="true" />指定した型のオブジェクトを変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、このクラスに実装された`true`場合にのみ、`sourceType`は、<xref:System.Uri>です。  
+  
+ `context`パラメーターは使用されません。 参照してください**継承時の注意**です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。 コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />です。 そのため、常に確認しています。 また、<paramref name="context" /> オブジェクトのプロパティも null 参照 (<see langword="Nothing" />) を返す場合があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト情報を提供するオブジェクト。</param>
+        <param name="destinationType">変換するオブジェクトの種類、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Windows.Xps.Serialization.ImageSourceTypeConverter" />変換できます、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />指定した型のインスタンスにします。</summary>
+        <returns>
+          <see langword="true" />変換が可能な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、このクラスに実装された`true`場合にのみ、`destinationType`は、<xref:System.Uri>です。  
+  
+ `context`パラメーターは使用されません。 参照してください**継承時の注意**です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。 コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />です。 そのため、常に確認しています。 また、<paramref name="context" /> オブジェクトのプロパティも null 参照 (<see langword="Nothing" />) を返す場合があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト情報を提供するオブジェクト。</param>
+        <param name="culture">変換する際に使用される言語とカルチャ。</param>
+        <param name="value">変換されるオブジェクト。</param>
+        <summary>指定したオブジェクトを<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</summary>
+        <returns>新しい <see cref="T:System.Windows.Media.Imaging.BitmapSource" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このクラスで実装されていません-以外に、例外をスローします。 参照してください**継承時の注意**です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドは派生クラスではなく、このクラスから呼び出されます。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="value" />変換できる型ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>変換メソッドを提供するには、このメソッドをオーバーライドします。 コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 使用して、<paramref name="culture" />言語またはカルチャ情報を提供するパラメーターです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト情報を提供するオブジェクト。</param>
+        <param name="culture">変換する際に使用される言語とカルチャ。</param>
+        <param name="value">変換するオブジェクト。</param>
+        <param name="destinationType">必要な型<c>値</c>に変換します。</param>
+        <summary>変換、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />指定した型のオブジェクトにします。</summary>
+        <returns>新しい<see cref="T:System.Object" />指定した型のです。 オブジェクトがある必要があります、このクラスに実装された、<see cref="T:System.Uri" />です。 オブジェクトの表現、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のシリアル化されたイメージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに実装されている`value`する必要があります、<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ このクラスに実装されている`destinationType`する必要があります、<xref:System.Uri>または<xref:System.NotSupportedException>がスローされます。  
+  
+ `culture`パラメーターは使用されません。 参照してください**継承時の注意**です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><paramref name="destinationType" />型ではないを<paramref name="value" />に変換できます。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Windows.Xps.XpsSerializationException">エラーは、イメージをシリアル化するときに発生します。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換を提供するには、このメソッドをオーバーライドします。 使用して、<paramref name="culture" />パラメーターを言語およびカルチャを指定します。 コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />です。 そのため、常に確認しています。 また、<paramref name="context" /> オブジェクトのプロパティも null 参照 (<see langword="Nothing" />) を返す場合があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Serialization.ImageSourceTypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト情報を提供するオブジェクト。</param>
+        <param name="value">オブジェクトに関するプロパティの説明が必要です。</param>
+        <param name="attributes">無関係なプロパティを除外するために、返されるコレクションをフィルター処理に使用される属性の配列。</param>
+        <summary>指定した型のプロパティの説明のコレクションを取得します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> ; コンポーネントの公開されているプロパティの説明を格納しているか、<see langword="null" />プロパティの説明が返されない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このクラスで実装されていません-以外に、例外をスローします。 参照してください**継承時の注意**です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">このメソッドは派生クラスではなく、このクラスから呼び出されます。</exception>
+        <block subset="none" type="overrides">
+          <para>選択を取得するためのメソッドを提供するには、このメソッドをオーバーライド<see cref="T:System.ComponentModel.PropertyDescriptor" />種類のオブジェクト。 コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 使用して、<paramref name="attributes" />配列に含めるか除外するプロパティを指定します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

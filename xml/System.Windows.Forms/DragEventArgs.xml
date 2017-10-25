@@ -1,0 +1,347 @@
+<Type Name="DragEventArgs" FullName="System.Windows.Forms.DragEventArgs">
+  <TypeSignature Language="C#" Value="public class DragEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DragEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DragEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Windows.Forms.Control.DragDrop" />、 <see cref="E:System.Windows.Forms.Control.DragEnter" />、または<see cref="E:System.Windows.Forms.Control.DragOver" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.DragDrop>イベント、ユーザーがコントロール上でオブジェクトをドラッグして、マウス ボタンを離すコントロールにドロップして、ドラッグ アンド ドロップ操作を完了するときに発生します。 <xref:System.Windows.Forms.Control.DragEnter>イベント、ユーザーがマウスを使用してオブジェクトをドラッグするときに、コントロール上にマウス ポインターを移動するときに発生します。 <xref:System.Windows.Forms.Control.DragOver>イベント、ユーザー コントロール上でマウスを使用してオブジェクトをドラッグするときにマウス ポインターを移動するときに発生します。  
+  
+ A<xref:System.Windows.Forms.DragEventArgs>オブジェクトは、このイベントに関連付けられたデータ以外の場合は、shift キーを押し、CTRL、ALT キーの現在の状態以外の場合は、マウス ポインターの場所を指定し、ソースとドラッグ イベントのターゲットで許可されているドラッグ アンド ドロップ効果。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ 次の例を示して 方法<xref:System.Windows.Forms.DragEventArgs>ソースとターゲットのドラッグ アンド ドロップ操作の間で渡されます。 この例では、<xref:System.Windows.Forms.ListBox>コントロールは、データのソースと<xref:System.Windows.Forms.RichTextBox>コントロールがターゲットです。 例では、<xref:System.Windows.Forms.ListBox>コントロールが有効なファイル名の一覧が設定されています。 ユーザーがから表示されているファイル名のいずれかをドラッグしたときに、<xref:System.Windows.Forms.ListBox>コントロールを<xref:System.Windows.Forms.RichTextBox>コントロール、ファイル名で参照されているファイルが開かれます。  
+  
+ 操作が開始される、<xref:System.Windows.Forms.ListBox>コントロールの MouseDown イベント。 <xref:System.Windows.Forms.RichTextBox.DragEnter>イベント ハンドラーでは、この例では、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>データ形式であることを確認するメソッドを<xref:System.Windows.Forms.RichTextBox>コントロールを表示でき、設定、<xref:System.Windows.Forms.DragDropEffects>ソース管理からそのデータを指定するプロパティをコピーする必要がありますターゲット コントロール。 最後に、<xref:System.Windows.Forms.RichTextBox>コントロールのドラッグ アンド ドロップのイベント ハンドラーを使用して、<xref:System.Windows.Forms.IDataObject.GetData%2A>を開くには、ファイル名を取得します。  
+  
+ [!code-cpp[RichTextDragDrop#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextDragDrop/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextDragDrop#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextDragDrop/CS/form1.cs#1)]
+ [!code-vb[RichTextDragDrop#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextDragDrop/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DragEventArgs (System.Windows.Forms.IDataObject data, int keyState, int x, int y, System.Windows.Forms.DragDropEffects allowedEffect, System.Windows.Forms.DragDropEffects effect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.IDataObject data, int32 keyState, int32 x, int32 y, valuetype System.Windows.Forms.DragDropEffects allowedEffect, valuetype System.Windows.Forms.DragDropEffects effect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DragEventArgs.#ctor(System.Windows.Forms.IDataObject,System.Int32,System.Int32,System.Int32,System.Windows.Forms.DragDropEffects,System.Windows.Forms.DragDropEffects)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.Windows.Forms.IDataObject" />
+        <Parameter Name="keyState" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="allowedEffect" Type="System.Windows.Forms.DragDropEffects" />
+        <Parameter Name="effect" Type="System.Windows.Forms.DragDropEffects" />
+      </Parameters>
+      <Docs>
+        <param name="data">このイベントと関連付けられたデータ。</param>
+        <param name="keyState">Shift、Ctrl、Alt の各キーの現在の状態。</param>
+        <param name="x">ピクセル単位でマウス カーソルの x 座標。</param>
+        <param name="y">ピクセル単位でマウス カーソルの y 座標。</param>
+        <param name="allowedEffect"><see cref="T:System.Windows.Forms.DragDropEffects" /> 値のいずれか。</param>
+        <param name="effect"><see cref="T:System.Windows.Forms.DragDropEffects" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.DragEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedEffect">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DragDropEffects AllowedEffect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DragDropEffects AllowedEffect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.AllowedEffect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ イベントの元の場所 (またはソース) で実行できるドラッグ アンド ドロップ操作を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DragDropEffects" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、コントロールがドラッグ アンド ドロップ操作を開始するときに、<xref:System.Windows.Forms.Control.DoDragDrop%2A?displayProperty=nameWithType>メソッド、許容される操作の効果を指定します。 たとえば、ファイルが読み取り専用である場合に、ソースからファイルをドラッグすると (または、CD など読み取り専用のストレージ メディアから)、ソースはファイルのコピーが、ターゲットに転送されるのではないことを示されます。  
+  
+ ドラッグされたデータに対して操作を実行する前に、この操作が許可されていることを確認するには、このプロパティを調べる必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IDataObject Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IDataObject Data" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.IDataObject" />このイベントに関連付けられているデータを格納します。</summary>
+        <value>このイベントと関連付けられたデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーの本体で使用できます、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>データがデータをドラッグ先となるコントロールの形式の要件と一致するかどうかを調べます。 形式の要件を満たすデータを変換しようとするかどうかをも指定できます。 ドラッグしたデータが、形式の要件を満たさない場合を使用して、<xref:System.Windows.Forms.IDataObject.GetData%2A>データを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Effect">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DragDropEffects Effect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DragDropEffects Effect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.Effect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ アンド ドロップ操作のターゲットのドロップ効果を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DragDropEffects" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、適用の効果はドラッグ アンド ドロップ操作の対象のマウス カーソルを決定します。 これを実行する操作についてユーザーにフィードバックを提供すると便利です。 たとえば場合は、元のファイルをドラッグすると、CTRL キーを押すと、指定<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>を示す、ターゲットは、コピー操作を実行しようとしています。  
+  
+ ドラッグ操作をカスタム カーソルを使用するのを参照してください。<xref:System.Windows.Forms.GiveFeedbackEventArgs.UseDefaultCursors%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyState">
+      <MemberSignature Language="C#" Value="public int KeyState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.KeyState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ボタンの状態と同様に、Shift、Ctrl、Alt の各キーの現在の状態を取得します。</summary>
+        <value>Shift、Ctrl、Alt の各キー、およびマウス ボタンの現在の状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のキーの状態に依存するドラッグ アンド ドロップ操作の効果を行うことができます。 たとえば、コピーまたはドラッグ アンド ドロップ操作中に、ctrl キーまたは SHIFT キーが押されたかどうかに応じて、データを移動することができます。  
+  
+ 設定されているビット、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A>プロパティがキーか、操作中に押されたマウス ボタンを識別します。 たとえば、マウスの左ボタンが押された場合、最初のビット、<xref:System.Windows.Forms.DragEventArgs.KeyState%2A>プロパティを設定します。 ビットごとの AND 演算子を使用して、指定したキーの状態をテストすることができます。  
+  
+ 次の表に、指定したイベントに使用される値を示します。  
+  
+|値|キー|  
+|-----------|---------|  
+|1 (ビット 0)|マウスの左ボタンです。|  
+|2 ビット 1)|マウスの右ボタンです。|  
+|4 (ビット 2)|SHIFT キー。|  
+|8 (ビット 3)|CTRL キー。|  
+|16 (4 ビット)|マウスの中央ボタン。|  
+|32 (ビット 5)|ALT キー。|  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターの x 座標 (画面座標) を取得します。</summary>
+        <value>マウス ポインターの x 座標 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DragEventArgs.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターの y 座標 (画面座標) を取得します。</summary>
+        <value>マウス ポインターの y 座標 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.DragEventArgs>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

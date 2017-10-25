@@ -1,0 +1,185 @@
+<Type Name="ViewTechnology" FullName="System.ComponentModel.Design.ViewTechnology">
+  <TypeSignature Language="C#" Value="public enum ViewTechnology" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ViewTechnology extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ViewTechnology" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイナー ホストをサポートするテクノロジのセットの識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アダプター モデルの表示が置き換えられますする機能を追加、<xref:System.ComponentModel.Design.ViewTechnology>機能です。 ただし、、<xref:System.ComponentModel.Design.ViewTechnology>を選択した場合、旧バージョンとの互換性と将来の使用の両方の機能が保持されます。 詳細については、「.NET 図形ライブラリ:: A サンプル デザイナー」http://windowsforms.net/articles/shapedesigner.aspx で Windows フォーム サポート技術情報を参照してください。  
+  
+ <xref:System.ComponentModel.Design.ViewTechnology>デザイナーでホストされるドキュメントの表示を制御するために使用するモードを示す可能性のある識別子を定義します。  
+  
+ 既定値は、デザイナー ホスト環境でのみ使用する必要があります。 以前のバージョンので、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、<xref:System.ComponentModel.Design.ViewTechnology.Default>列挙型がルート デザイナーでサポートされている UI モデルの種類を指定します。 代わりに使用する必要があるこのモデルを拡張できないため、*ビュー アダプター*モデル。 ビューのアダプターは、1 つの型を別のオブジェクトを対応する型です。  
+  
+ たとえば、HTML デザイナーを返す可能性があります、`DemoDOM`ツリーのビューだけです。 HTML デザイナーでは、既定のビュー テクノロジを返します。 Windows フォームの環境をホストには、1 つまたは複数アダプター使用できるビュー クラスがあります。 このような 1 つのクラスに変換できなかった場合、`DemoDOM`ホスト アプリケーションを Windows フォーム コントロールでは、この種類のデザイナーをサポートできます。 かどうかアダプター型を処理できるなし、データ デザイナーから返された<xref:System.ComponentModel.Design.IRootDesigner.GetView%2A>メソッド、デザイナーの読み込みが失敗し、エラーで、ユーザーが表示されます。  
+  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]UI 技術に合わせて調整できますので、ビューのアダプターを提供するための拡張可能なスキームがあります。 サードパーティのテクノロジのプロバイダーは、適切なビュー アダプターも提供し、そのオブジェクト モデルはすぐに使用できるようにします。  
+  
+ 使用する例については、アダプターの表示「.NET 図形ライブラリ:: A サンプル デザイナー」http://windowsforms.net/articles/shapedesigner.aspx で Windows フォーム サポート技術情報を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.Design.ViewTechnology.Default>デザイナーでクラスです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.IRootDesigner.GetView%2A>インターフェイスです。  
+  
+ [!code-cpp[IRootDesigner Sample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IRootDesigner Sample/CPP/class1.cpp#1)]
+ [!code-csharp[IRootDesigner Sample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IRootDesigner Sample/CS/class1.cs#1)]
+ [!code-vb[IRootDesigner Sample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IRootDesigner Sample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ViewTechnology Default = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ViewTechnology.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ViewTechnology</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のビュー テクノロジのサポートを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート デザイナーは、オブジェクトの任意の型を返す可能性がありますが、オブジェクトは、ホストの技術のアダプターとの互換性である必要があります。 ホスティング環境など[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]新しいビュー技術アダプターを接続する方法を提供します。 Windows フォーム デザイナーの既定のビュー オブジェクトは、<xref:System.Windows.Forms.Control?displayProperty=nameWithType>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.Design.ViewTechnology>デザイナーでクラスです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.IRootDesigner>インターフェイスです。  
+  
+ [!code-cpp[IRootDesigner Sample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IRootDesigner Sample/CPP/class1.cpp#1)]
+ [!code-csharp[IRootDesigner Sample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IRootDesigner Sample/CS/class1.cs#1)]
+ [!code-vb[IRootDesigner Sample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IRootDesigner Sample/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Passthrough">
+      <MemberSignature Language="C#" Value="Passthrough" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ViewTechnology Passthrough = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ViewTechnology.Passthrough" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This value has been deprecated. Use ViewTechnology.Default instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ViewTechnology</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー オブジェクトが、開発環境に直接渡されるモードを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー オブジェクトには、開発環境に必要なインターフェイスを実装する必要があります。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]開発環境は、ActiveX コントロール、作業中の文書またはを介して使用可能な IVsWindowPane インターフェイスを実装するオブジェクトのいずれかであるオブジェクトの表示をサポートしている[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]VSI ([!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]統合) プログラムです。 [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]開発環境では、このビュー テクノロジのサポートを提供します。 このビュー テクノロジのサポートは、必ずしもすべての開発環境で使用可能ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsForms">
+      <MemberSignature Language="C#" Value="WindowsForms" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ViewTechnology WindowsForms = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ViewTechnology.WindowsForms" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This value has been deprecated. Use ViewTechnology.Default instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ViewTechnology</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォーム コントロール オブジェクトがルート デザイナーの表示を提供するモードを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストでは、開発環境のドキュメント ウィンドウを Windows フォーム コントロールを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.Design.ViewTechnology>デザイナーでクラスです。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.LocalizationExtenderProvider>クラスです。  
+  
+ [!code-cpp[LocalizationExtenderProviderExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CPP/class1.cpp#1)]
+ [!code-csharp[LocalizationExtenderProviderExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CS/class1.cs#1)]
+ [!code-vb[LocalizationExtenderProviderExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LocalizationExtenderProviderExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,486 @@
+<Type Name="SignInRequestMessage" FullName="System.IdentityModel.Services.SignInRequestMessage">
+  <TypeSignature Language="C#" Value="public class SignInRequestMessage : System.IdentityModel.Services.WSFederationMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignInRequestMessage extends System.IdentityModel.Services.WSFederationMessage" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SignInRequestMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.WSFederationMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-federation サインイン要求メッセージを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ws-federation サインイン メッセージは、セキュリティ トークンを要求する、証明書利用者 (RP) によって、セキュリティ トークン サービス (STS) に送信されます。 Wa パラメーターは、"wsignout1.0"に設定する必要があり、wtrealm パラメーターは (これは多くの場合、要求されたリソースの URL) 要求されたリソースのセキュリティの領域に設定する必要があります。 他の省略可能なパラメーターは、要求にも指定することがあります。  
+  
+ A<xref:System.IdentityModel.Services.SignOutRequestMessage>の静的メソッドによってメッセージが作成された、<xref:System.IdentityModel.Services.SignOutRequestMessage>クラス、たとえば、<xref:System.IdentityModel.Services.WSFederationMessage.CreateFromUri%2A>メソッドは、wa パラメーターが"wsignin1.0"に設定されている、wresult または wresultptr パラメーターが存在、および wtrealm パラメーターまたは wreply パラメーターのいずれかが存在するとします。  
+  
+> [!IMPORTANT]
+>  Active Directory フェデレーション サービス (AD FS) バージョン 1.0 と下位互換性のため Windows Identity Foundation (WIF) では、wtrealm パラメーターまたは wreply パラメータを設定する (または両方) をサインイン メッセージが無効です。ただし、Ws-federation プロトコルでは、wtrealm パラメーターがサインイン要求に存在することが必要です。 ほとんどのシナリオで、wtrealm パラメーターが指定されていることを確認する必要があります。  
+  
+ <xref:System.IdentityModel.Services.SignInRequestMessage>クラスを設定または個々 のメッセージ パラメーターへのアクセスに使用できるいくつかのプロパティを公開します。 これらのパラメーターも設定またはできる経由でアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>ディクショナリ。 たとえば、するを通してメッセージ内の wtrealm パラメーターか、<xref:System.IdentityModel.Services.SignInRequestMessage.Realm%2A>プロパティまたはキーとして"wtrealm"を指定することによって、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>ディクショナリ。  
+  
+ [!INCLUDE[wif_wsfed_ref](~/includes/wif-wsfed-ref-md.md)]  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifSignInMessage#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifsigninmessage/cs/webapplication1/default.aspx.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignInRequestMessage (Uri baseUrl, string realm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, string realm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInRequestMessage.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="realm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">サインイン メッセージを適用するベース URL。</param>
+        <param name="realm">Wtrealm メッセージ パラメーターの値です。 <see cref="P:System.IdentityModel.Services.SignInRequestMessage.Realm" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SignInRequestMessage" />クラス base URL および wtrealm パラメーターを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wa メッセージ パラメーター (、<xref:System.IdentityModel.Services.WSFederationMessage.Action%2A>プロパティ) は、"wsignin1.0"に初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="realm" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignInRequestMessage (Uri baseUrl, string realm, string reply);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, string realm, string reply) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInRequestMessage.#ctor(System.Uri,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="realm" Type="System.String" />
+        <Parameter Name="reply" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">サインイン メッセージを適用するベース URL です。</param>
+        <param name="realm">Wtrealm メッセージ パラメーターの値です。 ない場合<see langword="null" />または空で、設定、<see cref="P:System.IdentityModel.Services.SignInRequestMessage.Realm" />プロパティです。</param>
+        <param name="reply">返信する URI。 (Wreply メッセージ パラメーターの値です。)Not null または空、設定、<see cref="P:System.IdentityModel.Services.SignInRequestMessage.Reply" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SignInRequestMessage" />クラスの指定したベース URI、wtrealm パラメーター、および wreply パラメーターを使用します。 旧バージョンとの互換性のためには、非標準のメッセージの作成をサポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wa メッセージ パラメーター (、<xref:System.IdentityModel.Services.WSFederationMessage.Action%2A>プロパティ) は、"wsignin1.0"に初期化します。  
+  
+ 旧バージョンとの互換性のためには、非標準のメッセージの作成をサポートします。 一般的なケースでは、wtrealm メッセージ パラメーターを指定してください。 このコンス トラクターは、Active Directory フェデレーション サービス (AD FS) バージョン 1.0 と下位互換性のために指定する wreply メッセージ パラメーターのみを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">両方<paramref name="realm" />と<paramref name="reply" />は<see langword="null" />または空の文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wauth パラメーターを設定します。</summary>
+        <value>認証の種類。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wauth パラメーターは、Ws-trust で定義された wst:AuthenticationType 要素に似ています。 値は、使用される認証の種類を識別する URI を表す文字列を設定する必要があります。  
+  
+ Wauth パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.AuthenticationType%2A>プロパティを`null`またはメッセージから wauth パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTime">
+      <MemberSignature Language="C#" Value="public string CurrentTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentTime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.CurrentTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wct パラメーターを設定します。</summary>
+        <value>Utc datetime 文字列として指定された wct パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wct パラメーターでは、メッセージが作成された時点で現在の時刻を指定します。 Wct パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.CurrentTime%2A>プロパティ`null`またはメッセージから wct パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な datetime 文字列ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Federation">
+      <MemberSignature Language="C#" Value="public string Federation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Federation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Federation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wfed パラメーターを設定します。</summary>
+        <value>Wfed パラメーターの値。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wfed パラメーターでは、メッセージのフェデレーション コンテキストを指定します。 Wfed パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Federation%2A>プロパティ`null`またはメッセージから wfed パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Freshness">
+      <MemberSignature Language="C#" Value="public string Freshness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Freshness" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Freshness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wfresh パラメーターを設定します。</summary>
+        <value>Wfresh パラメーターの値。 文字列として表される整数であるこの必要があります。 認証が有効である分単位で最大有効期間を指定します。 0 は、トークンが発行される前にユーザーが求められる点を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wfresh パラメーターでは、認証が有効である分単位で最大有効期間を示します。 Wfresh パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Freshness%2A>プロパティを`null`またはメッセージから wfresh パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">整数の文字列表記ではない値を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HomeRealm">
+      <MemberSignature Language="C#" Value="public string HomeRealm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HomeRealm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.HomeRealm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの whr パラメーターを設定します。</summary>
+        <value>Whr パラメーターの値。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Whr パラメーターは、要求に対して使用する id プロバイダーのセキュリティの領域を識別します。 または、要求の受信側で認識できる識別子として使用する IP STS の URL として指定できます。 Whr パラメーターは省略可能なセット、<xref:System.IdentityModel.Services.SignInRequestMessage.HomeRealm%2A>プロパティを`null`または空の文字列をメッセージから whr パラメーターを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Policy">
+      <MemberSignature Language="C#" Value="public string Policy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Policy" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Policy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wp パラメーターを設定します。</summary>
+        <value>Wp パラメーターの値。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求に使用するポリシーを識別します。 通常、アクション (wa パラメーター) に適用されますより広範な影響があります。 Wp パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Policy%2A>プロパティを`null`またはメッセージから wp パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Realm">
+      <MemberSignature Language="C#" Value="public string Realm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Realm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Realm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wtrealm パラメーターを設定します。</summary>
+        <value>Wtrealm パラメーターの値。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wtrealm パラメーターでは、要求されたリソースが所属するセキュリティ レルムを指定します。 これは、多くの場合、要求されたリソースの URL です。  
+  
+> [!IMPORTANT]
+>  Active Directory フェデレーション サービス (AD FS) バージョン 1.0 と下位互換性のため Windows Identity Foundation (WIF) では、wtrealm パラメーターまたは wreply パラメータを設定する (または両方) をサインイン メッセージが無効です。ただし、Ws-federation プロトコルでは、wtrealm パラメーターがサインイン要求に存在することが必要です。 ほとんどのシナリオで、wtrealm パラメーターが指定されていることを確認する必要があります。  
+  
+ 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Realm%2A>プロパティを`null`またはメッセージから wtrealm パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reply">
+      <MemberSignature Language="C#" Value="public string Reply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reply" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Reply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wreply パラメーターを設定します。</summary>
+        <value>Wreply パラメーターの値。 これは、URI として指定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答する必要があります URI が含まれています。 Wtrealm パラメーターは、この URI を指定するよく使用されます。 ただしより複雑なシナリオは、wtrealm パラメーターは、要求、たとえば、web、サイト全体のセキュリティの領域を指定するために使用できるし、wreply パラメーターは、ドキュメント、ページ、またはエンドポイントなど、その領域内の特定のリソースを指定するために使用できます。 Wreply パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Reply%2A>プロパティを`null`またはメッセージから wreply パラメーターを削除する空の文字列。  
+  
+> [!IMPORTANT]
+>  Active Directory フェデレーション サービス (AD FS) バージョン 1.0 と下位互換性のため Windows Identity Foundation (WIF) では、wtrealm パラメーターまたは wreply パラメータを設定する (または両方) をサインイン メッセージが無効です。ただし、Ws-federation プロトコルでは、wtrealm パラメーターがサインイン要求に存在することが必要です。 ほとんどのシナリオで、wtrealm パラメーターが指定されていることを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public string Request { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Request" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wreq パラメーターを設定します。</summary>
+        <value>Wreq パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wreq パラメーターを指定するかを使用して、トークン要求、`<wst:RequestSecurityToken>`要素または Ws-trust」の説明に従って完全な要求メッセージ。 Wreq パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Request%2A>プロパティを`null`またはメッセージから wreq パラメーターを削除する空の文字列。  
+  
+ 場合、<xref:System.IdentityModel.Services.SignInRequestMessage.Request%2A>プロパティが指定されて、<xref:System.IdentityModel.Services.SignInRequestMessage.RequestPtr%2A>プロパティを指定することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestPtr">
+      <MemberSignature Language="C#" Value="public string RequestPtr { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestPtr" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.RequestPtr" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wreqptr パラメーターを設定します。</summary>
+        <value>Wreqptr パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表される要求を検索する場所を示す URL を指定します、`<wst:RequestSecurityToken>`要素。 Wreqptr パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.RequestPtr%2A>プロパティを`null`またはメッセージから wreqptr パラメーターを削除する空の文字列。  
+  
+ 場合、<xref:System.IdentityModel.Services.SignInRequestMessage.RequestPtr%2A>プロパティが指定されて、<xref:System.IdentityModel.Services.SignInRequestMessage.Request%2A>プロパティを指定することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUrl">
+      <MemberSignature Language="C#" Value="public string RequestUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestUrl" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.RequestUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに対応する URL の文字列表現を取得します。</summary>
+        <value>現在のインスタンスからシリアル化する URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列には、現在のインスタンスをシリアル化して作成された URL が (クエリ パラメーターを含む) が含まれています。 <xref:System.IdentityModel.Services.SignInRequestMessage.Write%2A>をシリアル化を実行するメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public string Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SignInRequestMessage.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wres パラメーターを設定します。</summary>
+        <value>Wres パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスできるリソースの URL を指定します。 Wres パラメーターは、レガシ パラメーターです。 Wtrealm パラメーターでは通常、(、<xref:System.IdentityModel.Services.SignInRequestMessage.Realm%2A>プロパティ) が代わりに使用します。 Wres パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.SignInRequestMessage.Resource%2A>プロパティを`null`またはメッセージから wres パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">有効な絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="protected override void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInRequestMessage.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  Active Directory フェデレーション サービス (AD FS) バージョン 1.0 と下位互換性のため Windows Identity Foundation (WIF) では、wtrealm パラメーターまたは wreply パラメータを設定する (または両方) をサインイン メッセージが無効です。ただし、Ws-federation プロトコルでは、wtrealm パラメーターがサインイン要求に存在することが必要です。 ほとんどのシナリオで、wtrealm パラメーターが指定されていることを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Wa パラメーター (、<see cref="P:System.IdentityModel.Services.WSFederationMessage.Action" />プロパティ)"wsignin1.0"に設定されていません。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">Wtrealm パラメーターでも、wreply パラメーターが存在します。 (、<see cref="P:System.IdentityModel.Services.SignInRequestMessage.Realm" />プロパティおよび<see cref="P:System.IdentityModel.Services.SignInRequestMessage.Reply" />プロパティには<see langword="null" />または空です)。  
+  
+ または  
+  
+ Wreq パラメーターと wreqptr パラメーターの両方が存在します。 (、<see cref="P:System.IdentityModel.Services.SignInRequestMessage.Request" />プロパティおよび<see cref="P:System.IdentityModel.Services.SignInRequestMessage.RequestPtr" />プロパティの両方が設定されます)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SignInRequestMessage.Write(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />をメッセージを記述します。</param>
+        <summary>クエリ文字列の形式で指定されたテキスト ライターにこのメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Services.SignInRequestMessage.Validate%2A>メッセージを書き込む前にメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

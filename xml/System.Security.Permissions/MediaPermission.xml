@@ -1,0 +1,470 @@
+<Type Name="MediaPermission" FullName="System.Security.Permissions.MediaPermission">
+  <TypeSignature Language="C#" Value="public sealed class MediaPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit MediaPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.MediaPermission" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.MediaPermission" />部分的に信頼された Windows Presentation Foundation (WPF) アプリケーションで作業するオーディオ、画像、およびビデオ メディアの機能を制御するセキュリティ権限のセットについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアクセス許可の値を使用して、 <xref:System.Security.Permissions.MediaPermissionAudio>、 <xref:System.Security.Permissions.MediaPermissionImage>、および<xref:System.Security.Permissions.MediaPermissionVideo>列挙体です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Permissions.MediaPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission (System.Security.Permissions.MediaPermissionAudio permissionAudio);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.MediaPermissionAudio permissionAudio) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor(System.Security.Permissions.MediaPermissionAudio)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAudio" Type="System.Security.Permissions.MediaPermissionAudio" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAudio"><see cref="T:System.Security.Permissions.MediaPermissionAudio" /> の列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.MediaPermission" />クラス オーディオのアクセス許可レベルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、画像とビデオのアクセス許可<xref:System.Security.Permissions.MediaPermissionImage.SafeImage>と<xref:System.Security.Permissions.MediaPermissionVideo.SafeVideo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Security.Permissions.MediaPermission>で、<xref:System.Security.Permissions.MediaPermissionAudio>値。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission1](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission1)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission (System.Security.Permissions.MediaPermissionImage permissionImage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.MediaPermissionImage permissionImage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor(System.Security.Permissions.MediaPermissionImage)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionImage" Type="System.Security.Permissions.MediaPermissionImage" />
+      </Parameters>
+      <Docs>
+        <param name="permissionImage"><see cref="T:System.Security.Permissions.MediaPermissionImage" /> の列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.MediaPermission" />イメージのアクセス許可レベルを指定することによってクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、オーディオとビデオのアクセス許可<xref:System.Security.Permissions.MediaPermissionAudio.SafeAudio>と<xref:System.Security.Permissions.MediaPermissionVideo.SafeVideo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Security.Permissions.MediaPermission>で、<xref:System.Security.Permissions.MediaPermissionImage>値。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission2](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission2)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission (System.Security.Permissions.MediaPermissionVideo permissionVideo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.MediaPermissionVideo permissionVideo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor(System.Security.Permissions.MediaPermissionVideo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionVideo" Type="System.Security.Permissions.MediaPermissionVideo" />
+      </Parameters>
+      <Docs>
+        <param name="permissionVideo"><see cref="T:System.Security.Permissions.MediaPermissionVideo" /> の列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.MediaPermission" />クラス ビデオのアクセス許可レベルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、オーディオ、およびイメージのアクセス許可<xref:System.Security.Permissions.MediaPermissionAudio.SafeAudio>と<xref:System.Security.Permissions.MediaPermissionImage.SafeImage>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Security.Permissions.MediaPermission>で、<xref:System.Security.Permissions.MediaPermissionVideo>値。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission3](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission3)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> の列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.MediaPermission" />アクセス許可の状態を指定することによってクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`state`に設定されている<xref:System.Security.Permissions.PermissionState.Unrestricted>、すべてのメディアの種類を再生または制限なしで表示する完全なアクセス許可が付与されます。 場合`state`に設定されている<xref:System.Security.Permissions.PermissionState.None>、再生または表示するすべてのメディアの種類が制限されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Security.Permissions.MediaPermission>で、<xref:System.Security.Permissions.PermissionState>値。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission4](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission4)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaPermission (System.Security.Permissions.MediaPermissionAudio permissionAudio, System.Security.Permissions.MediaPermissionVideo permissionVideo, System.Security.Permissions.MediaPermissionImage permissionImage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.MediaPermissionAudio permissionAudio, valuetype System.Security.Permissions.MediaPermissionVideo permissionVideo, valuetype System.Security.Permissions.MediaPermissionImage permissionImage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.#ctor(System.Security.Permissions.MediaPermissionAudio,System.Security.Permissions.MediaPermissionVideo,System.Security.Permissions.MediaPermissionImage)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAudio" Type="System.Security.Permissions.MediaPermissionAudio" />
+        <Parameter Name="permissionVideo" Type="System.Security.Permissions.MediaPermissionVideo" />
+        <Parameter Name="permissionImage" Type="System.Security.Permissions.MediaPermissionImage" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAudio"><see cref="T:System.Security.Permissions.MediaPermissionAudio" /> の列挙値。</param>
+        <param name="permissionVideo"><see cref="T:System.Security.Permissions.MediaPermissionVideo" /> の列挙値。</param>
+        <param name="permissionImage"><see cref="T:System.Security.Permissions.MediaPermissionImage" /> の列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.MediaPermission" />オーディオ、ビデオ、およびイメージのアクセス許可レベルを指定することによってクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Security.Permissions.MediaPermission>で<xref:System.Security.Permissions.MediaPermissionAudio>、 <xref:System.Security.Permissions.MediaPermissionVideo>、および<xref:System.Security.Permissions.MediaPermissionImage>値  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission5](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission5)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Audio">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.MediaPermissionAudio Audio { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.MediaPermissionAudio Audio" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.MediaPermission.Audio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオのアクセス許可レベルの現在の値を取得します。</summary>
+        <value>オーディオのアクセス許可レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Security.Permissions.MediaPermissionAudio>値を<xref:System.Security.Permissions.MediaPermission>です。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission6](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission6)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.MediaPermissionImage Image { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.MediaPermissionImage Image" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.MediaPermission.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionImage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオのアクセス許可レベルの現在の値を取得します。</summary>
+        <value>イメージ許可レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Security.Permissions.MediaPermissionImage>値を<xref:System.Security.Permissions.MediaPermission>です。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission7](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission7)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>2 つのアクセス許可の積集合となるアクセス許可には、両方に共通する状態が記述されています。 両方の元のアクセス許可に適合する要求のみが、アクセス許可の積集合に対して有効になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる一連の操作を指定する場合、指定したアクセス許可のサブセットです。 たとえば、C:\example.txt へのアクセスを表すアクセス許可は、c: へのアクセスを表すためのアクセス許可のサブセット\\です。  
+  
+ このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />オーディオ、画像、および動画のアクセス許可がすべて無制限でない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は`true`メディア アクセス許可の値がある場合<xref:System.Security.Permissions.MediaPermissionAudio.AllAudio>、 <xref:System.Security.Permissions.MediaPermissionImage.AllImage>、および<xref:System.Security.Permissions.MediaPermissionVideo.SafeVideo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示して かどうか、<xref:System.Security.Permissions.MediaPermission>は制限されません。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission16](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission16)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.MediaPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Video">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.MediaPermissionVideo Video { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.MediaPermissionVideo Video" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.MediaPermission.Video" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionVideo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビデオのアクセス許可レベルの現在の値を取得します。</summary>
+        <value>メディアのアクセス許可レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Security.Permissions.MediaPermissionVideo>値を<xref:System.Security.Permissions.MediaPermission>です。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermission8](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermission8)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermission8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermission8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

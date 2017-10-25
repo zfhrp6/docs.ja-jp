@@ -1,0 +1,125 @@
+<Type Name="TrackingDataItem" FullName="System.Workflow.Runtime.Tracking.TrackingDataItem">
+  <TypeSignature Language="C#" Value="public class TrackingDataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrackingDataItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingDataItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローから抽出された単一データ項目とそれに関連付けられたすべての注釈を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ランタイム追跡インフラストラクチャは、追跡ポイントを照合すると、追跡レコードを追跡サービスに送ります。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> または <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> は、ワークフローから抽出されて <xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> または <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> で返されるデータを指定するための <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> または <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord> オブジェクトを含むことができます。 <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> は、こうして抽出された単一データ項目を表し、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Body%2A?displayProperty=nameWithType> または <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord.Body%2A?displayProperty=nameWithType> のどちらかに格納されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrackingDataItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingDataItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.TrackingDataItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingDataItem.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽出されたデータに関連付けられた注釈のリストを取得および設定します。</summary>
+        <value>抽出されたデータに関連付けられた注釈を格納している <see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> または <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> は、抽出されたデータと共に送られる注釈を指定できます。 これらは、<xref:System.Workflow.Runtime.Tracking.TrackingDataItem.Annotations%2A> プロパティに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public object Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Data" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingDataItem.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.TrackingDataItem" /> に関連付けられた抽出データを取得または設定します。</summary>
+        <value>抽出されたデータを表す <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.TrackingDataItem.Data%2A> は、<xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> または <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> で指定されてワークフロー インスタンスから抽出されたメンバー データを格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldName">
+      <MemberSignature Language="C#" Value="public string FieldName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FieldName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingDataItem.FieldName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽出されたデータに関連付けられたプロパティまたはフィールドの名前を取得または設定します。</summary>
+        <value>抽出されたプロパティまたはフィールドのドットで区切られた名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイム追跡インフラストラクチャがサポートするデータ抽出の対象としては、<xref:System.Workflow.ComponentModel.Activity> から継承したクラスのフィールドおよびプロパティ、こうしたフィールドまたはプロパティのメンバーのほかに、たとえばコレクション内の単一要素のような、<xref:System.Collections.IEnumerable> インターフェイスを実装したフィールドまたはプロパティ (またはどちらかのメンバー) の単一項目があります。 <xref:System.Workflow.Runtime.Tracking.TrackingDataItem.FieldName%2A> は、抽出された項目のドットで区切られた名前を格納し、<xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract.Member%2A> または <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract.Member%2A> に相当します。どちらに相当するかは、<xref:System.Workflow.Runtime.Tracking.TrackingDataItem> が格納したデータをどちらの抽出タイプが指定したかによります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

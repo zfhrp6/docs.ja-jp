@@ -1,0 +1,191 @@
+<Type Name="TextSearch" FullName="System.Windows.Controls.TextSearch">
+  <TypeSignature Language="C#" Value="public sealed class TextSearch : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TextSearch extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TextSearch" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列のプレフィックスを入力して、セット内の項目を簡単にアクセスするユーザーを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用してをコントロールのコレクション内の項目に文字列を割り当てます。 コレクション内の各項目に指定できる文字列には、2 つの目標が実現しています。 項目が選択されているし、割り当てられている文字列を入力して項目を選択する、ユーザーを表示するテキストを指定します。  
+  
+ たとえば、あると想定する<xref:System.Windows.Controls.ComboBox>のコレクションを格納<xref:System.Windows.Controls.Image>犬のイメージは、1 つのオブジェクト。  文字列、および"Dog"その項目に割り当てる場合、ユーザーは、コンボ ボックスのテキスト ボックスに単語を入力して、dog を選択できます。 ユーザーの種類、単語選択されているその他の項目と区別するための十分なすぐ犬のイメージが選択されます。 場合<xref:System.Windows.Controls.ComboBox.IsEditable%2A>に設定されている`true`上、 <xref:System.Windows.Controls.ComboBox>、"および Dog"がテキスト ボックスに表示されます。  
+  
+ 使用して項目を識別するテキストを指定することができます、<xref:System.Windows.Controls.TextSearch.TextPath%2A?displayProperty=nameWithType>プロパティまたはコントロールに設定して、<xref:System.Windows.Controls.TextSearch.Text%2A>プロパティ、コントロールのコレクション内の各項目にします。 これらのプロパティのいずれかの設定とは、予期しないテキストが表示されないようにすることを確認します。 設定した場合、<xref:System.Windows.Controls.TextSearch.Text%2A>コントロールのコレクション アイテムでは、プロパティ、<xref:System.Windows.Controls.TextSearch.TextPath%2A>プロパティは無視されます。  設定した場合、<xref:System.Windows.Controls.TextSearch.TextPath%2A>プロパティ値を実際のプロパティの名前ではない<xref:System.Windows.Controls.TextSearch.TextPath%2A>は無視されます。  
+  
+<a name="xamlTextUsage_TextSearch"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このマネージ クラスを宣言することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、内の値を割り当てるな静的プロパティを使用することができますが、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、作成<xref:System.Windows.Controls.ComboBox>テキストではなく項目としてイメージを格納しているコントロール。  機能的には、例は、同じです。 最初の例のセット、<xref:System.Windows.Controls.TextSearch.TextPath%2A>プロパティを<xref:System.Windows.Controls.ComboBox>と 2 番目の例のセット、<xref:System.Windows.Controls.AccessText.Text%2A>プロパティ コレクション内の各項目にします。  
+  
+ [!code-xaml[ComboBoxProps_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ComboBoxProps_snip/CS/pane1.xaml#1)]  
+  
+ [!code-xaml[ComboBoxProps_snip#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ComboBoxProps_snip/CS/pane1.xaml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public static string GetText (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetText(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextSearch.GetText(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>指定した項目を識別する文字列を返します。</summary>
+        <returns>指定した項目を識別する文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの値を返します、<xref:System.Windows.Controls.TextSearch.Text%2A>添付プロパティを指定した要素からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextPath">
+      <MemberSignature Language="C#" Value="public static string GetTextPath (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetTextPath(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextSearch.GetTextPath(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>指定した要素のコレクション内の項目を識別するプロパティの名前を返します。</summary>
+        <returns>ユーザーに項目を示すプロパティの名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの値を返します、<xref:System.Windows.Controls.TextSearch.TextPath%2A>添付プロパティを指定した要素からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public static void SetText (System.Windows.DependencyObject element, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetText(class System.Windows.DependencyObject element, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextSearch.SetText(System.Windows.DependencyObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の書き込み先になる要素。</param>
+        <param name="text">項目を識別する文字列。</param>
+        <summary>書き込みます、<see cref="P:System.Windows.Controls.TextSearch.Text" />プロパティの値を指定した要素にアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTextPath">
+      <MemberSignature Language="C#" Value="public static void SetTextPath (System.Windows.DependencyObject element, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTextPath(class System.Windows.DependencyObject element, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextSearch.SetTextPath(System.Windows.DependencyObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の書き込み先になる要素。</param>
+        <param name="path">項目を識別するプロパティの名前。</param>
+        <summary>書き込みます、<see cref="P:System.Windows.Controls.TextSearch.TextPath" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextPathProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextPathProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextPathProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextSearch.TextPathProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextSearch.TextPath" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextSearch.TextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextSearch.Text" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

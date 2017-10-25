@@ -1,0 +1,187 @@
+<Type Name="RegiisUtility" FullName="System.Web.Management.RegiisUtility">
+  <TypeSignature Language="C#" Value="public sealed class RegiisUtility : System.Web.Management.IRegiisUtility" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegiisUtility extends System.Object implements class System.Web.Management.IRegiisUtility" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.RegiisUtility" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Management.IRegiisUtility</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>特定の Web アプリケーションの構成、アセンブリの登録、およびアセンブリのキー コンテナーの操作をサポートするために承認するユーティリティを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.RegiisUtility>クラスにはユーティリティ関数をサポートする、`system.web`アセンブリ登録します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegiisUtility ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.RegiisUtility.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Management.RegiisUtility" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.RegiisUtility.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 基にして、<xref:System.Web.Management.IRegiisUtility>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedConfigAction">
+      <MemberSignature Language="C#" Value="public void ProtectedConfigAction (long options, string firstArgument, string secondArgument, string providerName, string appPath, string site, string cspOrLocation, int keySize, out IntPtr exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProtectedConfigAction(int64 options, string firstArgument, string secondArgument, string providerName, string appPath, string site, string cspOrLocation, int32 keySize, [out] native int&amp; exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.RegiisUtility.ProtectedConfigAction(System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Int64" />
+        <Parameter Name="firstArgument" Type="System.String" />
+        <Parameter Name="secondArgument" Type="System.String" />
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="appPath" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="cspOrLocation" Type="System.String" />
+        <Parameter Name="keySize" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="options">実行するアクションの種類。</param>
+        <param name="firstArgument">構成セクションまたはアセンブリ キー コンテナーの名前。</param>
+        <param name="secondArgument">構成ファイルの名前またはアカウント名。</param>
+        <param name="providerName">プロバイダー名。</param>
+        <param name="appPath">アプリケーションのパス。</param>
+        <param name="site">サイトの参照。</param>
+        <param name="cspOrLocation">構成の位置。</param>
+        <param name="keySize">キーのサイズです。</param>
+        <param name="exception">表示する例外。</param>
+        <summary>構成セクションおよび指定されたパラメーターに基づいてアセンブリのキー コンテナーの特定の操作を実行できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.RegiisUtility.ProtectedConfigAction%2A>メソッドは内部的に使用を保護し、構成内のセクションの保護を解除します。 <xref:System.Web.Management.RegiisUtility.ProtectedConfigAction%2A>メソッドには、アセンブリのキー コンテナーの操作もサポートしています。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAsnetMmcAssembly">
+      <MemberSignature Language="C#" Value="public void RegisterAsnetMmcAssembly (int doReg, string typeName, string binaryDirectory, out IntPtr exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterAsnetMmcAssembly(int32 doReg, string typeName, string binaryDirectory, [out] native int&amp; exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.RegiisUtility.RegisterAsnetMmcAssembly(System.Int32,System.String,System.String,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doReg" Type="System.Int32" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="binaryDirectory" Type="System.String" />
+        <Parameter Name="exception" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="doReg">0 は、アセンブリが登録されている; なることを示しますそれ以外の場合、アセンブリを登録する必要があります。</param>
+        <param name="typeName">アセンブリの型。</param>
+        <param name="binaryDirectory">バイナリ ディレクトリのパス。</param>
+        <param name="exception">表示する例外。</param>
+        <summary>実行中の Microsoft 管理コンソール (MMC) アセンブリを登録または登録解除を許可します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録または実行中の MMC アセンブリを登録解除するには、内部的に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterSystemWebAssembly">
+      <MemberSignature Language="C#" Value="public void RegisterSystemWebAssembly (int doReg, out IntPtr exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterSystemWebAssembly(int32 doReg, [out] native int&amp; exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.RegiisUtility.RegisterSystemWebAssembly(System.Int32,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doReg" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="doReg">0 は、アセンブリが登録されている; なることを示しますそれ以外の場合、アセンブリを登録する必要があります。</param>
+        <param name="exception">表示する例外。</param>
+        <summary>により、実行中の Web アセンブリを登録または登録解除できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録または実行中の Web アセンブリを登録解除するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBrowserCaps">
+      <MemberSignature Language="C#" Value="public void RemoveBrowserCaps (out IntPtr exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveBrowserCaps([out] native int&amp; exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.RegiisUtility.RemoveBrowserCaps(System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="exception">表示する例外。</param>
+        <summary>アンインストールするブラウザー機能のコード ジェネレーターを使用できます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

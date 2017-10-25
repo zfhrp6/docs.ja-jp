@@ -1,0 +1,201 @@
+<Type Name="UrlEncodedParameterWriter" FullName="System.Web.Services.Protocols.UrlEncodedParameterWriter">
+  <TypeSignature Language="C#" Value="public abstract class UrlEncodedParameterWriter : System.Web.Services.Protocols.MimeParameterWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UrlEncodedParameterWriter extends System.Web.Services.Protocols.MimeParameterWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.UrlEncodedParameterWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.MimeParameterWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>URL エンコードの SOAP ことがなく HTTP を使用して実装されている Web サービス クライアントの要求パラメーターを発信ライターの機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.UrlEncodedParameterWriter>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。  
+  
+ 抽象<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter>クラスは継承抽象から<xref:System.Web.Services.Protocols.MimeParameterWriter>クラス、URL エンコードの HTTP 要求のストリームに Web メソッドのパラメーターのクライアント側の書き込み機能を追加します。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter>またはその派生クラスを直接です。 代わりに、Wsdl.exe ツールは、HTTP GET または HTTP POST の実装に応じて、クライアント プロキシ コードを生成するときに適用されます、<xref:System.Web.Services.Protocols.HttpMethodAttribute>各 Web メソッドに属性の設定と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>プロパティを適切な型です。  
+  
+> [!NOTE]
+>  ハイパー テキスト転送プロトコル--http/1.1 指定を使用する自体により、Multipurpose Internet Mail Extensions (MIME) メッセージ形式のバリエーションの電子メール メッセージ、テキストとバイナリの両方のさまざまなコンテンツの種類を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UrlEncodedParameterWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlEncodedParameterWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.UrlEncodedParameterWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="protected void Encode (System.IO.TextWriter writer, object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Encode(class System.IO.TextWriter writer, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode(System.IO.TextWriter,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />の HTTP 要求への書き込みを行うオブジェクト。</param>
+        <param name="values">Web メソッドのパラメーター値。</param>
+        <summary>Web メソッドのすべてのパラメーター値をエンコードし、指定されたライターに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>メソッドは、その他のオーバー ロードを呼び出します<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>パラメーターの値ごとに、配列内の個々 の項目を含むです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="protected void Encode (System.IO.TextWriter writer, string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Encode(class System.IO.TextWriter writer, string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode(System.IO.TextWriter,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />の HTTP 要求への書き込みを行うオブジェクト。</param>
+        <param name="name">エンコードされるパラメーターの名前。</param>
+        <param name="value">エンコードされるパラメーターの値。</param>
+        <summary>指定されたパラメーター値をエンコードし、指定されたライターに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のシグネチャ、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>メソッド、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>のこの署名を呼び出す Web メソッドごとと呼ばれる、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Encode%2A>の各パラメーター値を配列内の個々 の項目を含むメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public override object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlEncodedParameterWriter.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">初期化子を取得する Web メソッドを指定する <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> 。</param>
+        <summary>指定したメソッドの初期化子を返します。</summary>
+        <returns>指定したメソッドの初期化子を含む <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Initialize%2A>メソッドです。 <xref:System.Web.Services.Protocols.UrlEncodedParameterWriter>クラス初期化子がありの値、<xref:System.Web.Services.Protocols.LogicalMethodInfo.InParameters%2A>プロパティ、入力の<xref:System.Web.Services.Protocols.LogicalMethodInfo>オブジェクト。 このプロパティは、<xref:System.Reflection.ParameterInfo>配列。<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.GetInitializer%2A>サービスの初期化中にメソッドが呼び出されます。 後で、要求の作成時点で、初期化子が渡されたオブジェクトを<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Initialize%2A>別のメソッド<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter>インスタンス。 その他のオブジェクトでは、実際に書き込みを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (object initializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(object initializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlEncodedParameterWriter.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="initializer" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="initializer">A<see cref="T:System.Reflection.ParameterInfo" />を介して配列が取得された、<see cref="P:System.Web.Services.Protocols.LogicalMethodInfo.InParameters" />のプロパティ、<see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />クラスです。</param>
+        <summary>インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.Initialize%2A>メソッドが要求の作成時に呼び出されます。  
+  
+ 入力パラメーター `initializer`、呼び出すことによって取得されて、<xref:System.Web.Services.Protocols.UrlEncodedParameterWriter.GetInitializer%2A>クライアントの初期化中に別のインスタンス上のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestEncoding">
+      <MemberSignature Language="C#" Value="public override System.Text.Encoding RequestEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding RequestEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.UrlEncodedParameterWriter.RequestEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求へのパラメーターを書き込むために使用するエンコーディングを取得または設定します。</summary>
+        <value>HTTP 要求へのパラメーターを書き込むために使用するエンコーディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコードで表される、<xref:System.Text.Encoding>クラス、文字をバイト シーケンスに変換する方法を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

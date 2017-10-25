@@ -1,0 +1,279 @@
+<Type Name="UnvalidatedRequestValuesBase" FullName="System.Web.UnvalidatedRequestValuesBase">
+  <TypeSignature Language="C#" Value="public abstract class UnvalidatedRequestValuesBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UnvalidatedRequestValuesBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UnvalidatedRequestValuesBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET 要求の検証をトリガーしない HTTP 要求値へのアクセスを提供するクラスの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の検証方法については、次を参照してください。<xref:System.Web.UnvalidatedRequestValues>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UnvalidatedRequestValuesBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UnvalidatedRequestValuesBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために、派生クラスのコンス トラクターから呼び出される、<see cref="T:System.Web.UnvalidatedRequestValuesBase" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public virtual System.Web.HttpCookieCollection Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信されたクッキーのコレクションを取得します。</summary>
+        <value>HTTP 要求の cookie。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Files">
+      <MemberSignature Language="C#" Value="public virtual System.Web.HttpFileCollectionBase Files { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpFileCollectionBase Files" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Files" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpFileCollectionBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、クライアントがアップロードしたファイルのコレクションを取得します。</summary>
+        <value>HTTP 要求のファイル。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Form">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.NameValueCollection Form { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Form" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Form" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信されたフォーム変数のコレクションを取得します。</summary>
+        <value>HTTP 要求からフォーム変数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.NameValueCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信される HTTP ヘッダーのコレクションを取得します。</summary>
+        <value>HTTP 要求からヘッダー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual string this[string field] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="field">取得するオブジェクトのキー。</param>
+        <summary>派生クラスでオーバーライドされるから指定したオブジェクトを取得、 <see cref="P:System.Web.HttpRequest.Form" />、 <see cref="P:System.Web.HttpRequest.Cookies" />、 <see cref="P:System.Web.HttpRequest.QueryString" />、または<see cref="P:System.Web.HttpRequest.ServerVariables" />ASP.NET 要求の検証をトリガーすることがなく、コレクション。</summary>
+        <value>指定されたオブジェクト、<paramref name="field" />パラメーター。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public virtual string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、要求されたリソースの仮想パスを取得します。</summary>
+        <value>仮想パス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PathInfo">
+      <MemberSignature Language="C#" Value="public virtual string PathInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.PathInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、URL 拡張子を持つリソースの追加パス情報を取得します。</summary>
+        <value>リソースの追加パス情報を含む文字列です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.NameValueCollection QueryString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.QueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、ASP.NET 要求の検証をトリガーすることがなく、クライアントが送信される文字列変数 HTTP クエリのコレクションを取得します。</summary>
+        <value>クライアントによって送信されるクエリ文字列変数のコレクションです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RawUrl">
+      <MemberSignature Language="C#" Value="public virtual string RawUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RawUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.RawUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ASP.NET 要求の検証をトリガーすることがなく、web サイト名に続く要求された URL の一部を取得します。</summary>
+        <value>Web サイト名に続く、URL の一部です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全な要求の URL が場合`http://www.contoso.com/default.aspx?id=44`の値<xref:System.Web.UnvalidatedRequestValuesBase.RawUrl%2A>は`/default.aspx?id=44`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public virtual Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UnvalidatedRequestValuesBase.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、要求の検証をトリガーすることがなく、要求の URL のデータを取得します。</summary>
+        <value>要求の URL のデータを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポート番号、ホスト名、パス情報、およびからユーザーに関するデータなどの URL のデータを取得することができます、<xref:System.Uri>このプロパティを表すオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">プロパティは実装されていません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このプロパティをオーバーライドする場合は、潜在的なクロスサイト スクリプティング攻撃のデータを手動で確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

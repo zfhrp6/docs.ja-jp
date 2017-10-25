@@ -1,0 +1,122 @@
+<Type Name="CorrelationAliasAttribute" FullName="System.Workflow.Activities.CorrelationAliasAttribute">
+  <TypeSignature Language="C#" Value="public sealed class CorrelationAliasAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CorrelationAliasAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.CorrelationAliasAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Event | System.AttributeTargets.Delegate, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連付け値を <see cref="T:System.Workflow.Activities.CorrelationParameterAttribute" /> が示すパラメーターとは異なるパラメーターから取得する必要があるとき、関連付けパラメーターの値をオーバーライドします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 受信メッセージを適切なワークフロー インスタンスに合わせるには、メッセージとワークフロー インスタンスが 1 つのキーを共有する必要があります。 このキーは、関連付けセットと呼ばれます。 通常、キーは、単一値の関連付けセットです。 つまり、メッセージ内の ID フィールドは、スケジュール インスタンスが保持している同じ型の ID と照合できます。  
+  
+ <xref:System.Workflow.Activities.CorrelationAliasAttribute> は、データ交換インターフェイスのメソッドまたはイベントに適用されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.CorrelationAliasAttribute> を使用して <xref:System.Workflow.Activities.CorrelationParameterAttribute> をオーバーライドする方法を次のコード例に示します。 このコード例は、CorrelatedLocalService SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][相関ローカル サービスのサンプル](http://msdn.microsoft.com/en-us/5a3d0733-bbea-4dbf-88ee-a8316db55fbd)です。  
+  
+ [!code-csharp[WF_Samples#312](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets38.cs#312)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationAliasAttribute (string name, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.CorrelationAliasAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">エイリアスされている相関パラメーターの名前。</param>
+        <param name="path">メソッドまたはイベントの引数で指定された関連付けパラメーターの値を保持することを示します<c>名前</c>です。 このパラメーターは、<see langword="Parameter.Location" /> のようなドット表記を使用できます。</param>
+        <summary>エイリアスされている関連付けの名前と値を検出できる場所へのパスを使用して、<see cref="T:System.Workflow.Activities.CorrelationAliasAttribute" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.CorrelationAliasAttribute> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Activities.CorrelationAliasAttribute.Name%2A>|`name` の値。|  
+|<xref:System.Workflow.Activities.CorrelationAliasAttribute.Path%2A>|`path` の値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.CorrelationAliasAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エイリアスされている関連付けパラメーターの名前を取得します。</summary>
+        <value>エイリアスされている相関パラメーターの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.CorrelationAliasAttribute.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付け値の場所を指定するパラメーター内のパスを取得します。</summary>
+        <value>関連付け値の場所を指定するパラメーター内のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパラメーターは、`Parameter.Location` のようなドット表記を使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

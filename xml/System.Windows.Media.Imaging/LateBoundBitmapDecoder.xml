@@ -1,0 +1,246 @@
+<Type Name="LateBoundBitmapDecoder" FullName="System.Windows.Media.Imaging.LateBoundBitmapDecoder">
+  <TypeSignature Language="C#" Value="public sealed class LateBoundBitmapDecoder : System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LateBoundBitmapDecoder extends System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapDecoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期のイメージのダウンロードなど、遅延のビットマップ作成を必要とするデコーダーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder>ときに使用される<xref:System.Windows.Media.Imaging.BitmapCreateOptions.DelayCreation>を指定します。 <xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Decoder%2A>プロパティは、オンデマンドごとに、必要な「実際デコーダー」を作成します。 デコーダーのすべてのプロパティを返す`null`コンテンツのダウンロード中にします。  
+  
+ A<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder>システムにダウンロードされている非同期的にローカルにイメージがあるときにも作成できます。 この場合、デコーダーもを返します`null`イメージのダウンロードが完了するまでのプロパティです。 アプリケーションを確認できる、<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder.IsDownloading%2A>プロパティのデリゲートを追加または、<xref:System.Windows.Media.Imaging.BitmapDecoder.DownloadCompleted>ダウンロードの状態を監視するイベントです。 すべてのフレームがさらに、取得、<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder>イメージのダウンロード中には、フレームでは、ダウンロードが完了したらまでに、1, 1 の幅と高さに返されます。  
+  
+ <xref:System.Windows.Media.Imaging.BitmapFrame>このクラスによって返されるオブジェクトが固定されている、したがって変更可能ではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CodecInfo">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.CodecInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapCodecInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコーデックを説明する情報を取得します。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapCodecInfo" /> のインスタンス。 このプロパティには既定値はありません。 遅延バインド デコーダーがまだダウンロード中の場合は <see langword="null" /> が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例からの情報を読み取る方法を示しています、<xref:System.Windows.Media.Imaging.BitmapCodecInfo>オブジェクトを文字列に送信します。  
+  
+ [!code-cpp[bmpbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CPP/anotherfile.cpp#3)]
+ [!code-csharp[bmpbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[bmpbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorContexts">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt; ColorContexts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.ColorContext&gt; ColorContexts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.ColorContexts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ (定義されている場合) に関連付けられているカラー プロファイルを表す値を取得します。</summary>
+        <value>ビットマップの埋め込みのカラー プロファイルを表す <see cref="T:System.Windows.Media.ColorContext" /> のインスタンス。 カラー プロファイルが定義されていない場合、または <see cref="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" /> のコンテンツがまだダウンロード中の場合、このプロパティは <see langword="null" /> を返します。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decoder">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.BitmapDecoder Decoder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapDecoder Decoder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Decoder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapDecoder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この遅延バインド デコーダーに関連付けられている基になるデコーダーを取得します。</summary>
+        <value>基になる <see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />。 <see cref="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" /> がまだビットマップをダウンロードしている場合は、基になるデコーダーは <see langword="null" /> になります。 それ以外の場合は、最初のアクセス時に基になるデコーダーが作成されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.Imaging.BitmapFrame&gt; Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.Imaging.BitmapFrame&gt; Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.Imaging.BitmapFrame&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップ内の個々のフレームのコンテンツを取得します。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapFrame" /> のインスタンス。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder>は非同期的にダウンロードされると、可能であればの基になるコレクションの<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Frames%2A>コンテンツがダウンロードされ、デコード後に変更します。 コンテンツのダウンロード中にコレクションを常には、少なくとも 1 つの項目を返します。 ダウンロードとデコードの完了後に、<xref:System.Windows.Media.Imaging.BitmapFrame>その基になるコンテンツが自動的に変更します。 つまり、コレクション オブジェクトのみを変更できます。実際のフレーム オブジェクトは変わりません。  
+  
+ 任意のフレームがから取得した、<xref:System.Windows.Media.Imaging.LateBoundBitmapDecoder>イメージのダウンロード中にはの幅と高さを返します`1,1`フレームのダウンロードが完了するまでです。  
+  
+ のみ[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]と[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]イメージが複数のフレームをサポートします。  
+  
+ どの<xref:System.Windows.Media.Imaging.BitmapFrame>このプロパティによって返されるオブジェクトが固定されています。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.BitmapFrame>として、<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ [!code-csharp[bitmapframeexample#4](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#4)]
+ [!code-vb[bitmapframeexample#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDownloading">
+      <MemberSignature Language="C#" Value="public override bool IsDownloading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDownloading" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.IsDownloading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デコーダーが現在のコンテンツをダウンロードしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デコーダーがコンテンツをダウンロードする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Imaging.BitmapPalette Palette { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapPalette Palette" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Palette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />このデコーダーに関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" />このデコーダーに関連付けられています。 ビットマップにパレットがあるない場合、または場合、<see cref="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" />まだコンテンツがダウンロード中、このプロパティを返します<see langword="null" />です。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Preview">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Imaging.BitmapSource Preview { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Preview" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Preview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />が定義されている場合は、このビットマップのグローバル プレビューを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />ビットマップのグローバル プレビューを表すです。 プレビューが定義されていない場合、または場合、<see cref="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" />まだコンテンツがダウンロード中、このプロパティを返します<see langword="null" />です。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapSource>このプロパティを返すことが固定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Imaging.BitmapSource Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.LateBoundBitmapDecoder.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />が定義されている場合、ビットマップのサムネイルを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />ビットマップのサムネイルを表すです。 サムネイルが定義されていない場合、または場合、<see cref="T:System.Windows.Media.Imaging.LateBoundBitmapDecoder" />まだコンテンツがダウンロード中、このプロパティを返します<see langword="null" />です。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapSource>このプロパティを返すことが固定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

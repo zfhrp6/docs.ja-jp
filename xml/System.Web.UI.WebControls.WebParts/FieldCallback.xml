@@ -1,0 +1,32 @@
+<Type Name="FieldCallback" FullName="System.Web.UI.WebControls.WebParts.FieldCallback">
+  <TypeSignature Language="C#" Value="public delegate void FieldCallback(object fieldValue);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FieldCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.FieldCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="fieldValue" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="fieldValue">コールバック メソッド。</param>
+    <summary>プロバイダーからのフィールドのデータを取得するときに呼び出すメソッドを参照します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールを使用してデータを提供する場合、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイス、コンシューマーまたはトランスフォーマー必要があります取得して、プロバイダーからのフィールドのデータを処理します。 <xref:System.Web.UI.WebControls.WebParts.FieldCallback>デリゲートは、プロバイダーのデータを処理するために呼び出すメソッドを表します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A?displayProperty=nameWithType>メソッドが含まれています、<xref:System.Web.UI.WebControls.WebParts.FieldCallback>パラメーターを委任します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

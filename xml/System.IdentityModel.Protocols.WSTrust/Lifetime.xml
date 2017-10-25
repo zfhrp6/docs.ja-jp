@@ -1,0 +1,124 @@
+<Type Name="Lifetime" FullName="System.IdentityModel.Protocols.WSTrust.Lifetime">
+  <TypeSignature Language="C#" Value="public class Lifetime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Lifetime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.Lifetime" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="&lt;wst:Lifetime&gt;" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素が使用される`wst:RequestSecurityToken`または`wst:RequestSecurityTokenResponse`トークンの目的または必須の有効期間を示すメッセージ。 すべての時刻は UTC 時刻で指定します。  
+  
+ [!INCLUDE[wif_wstrust_ref](~/includes/wif-wstrust-ref-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Lifetime (DateTime created, DateTime expires);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime created, valuetype System.DateTime expires) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Lifetime.#ctor(System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="created" Type="System.DateTime" />
+        <Parameter Name="expires" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="created">A<see cref="T:System.DateTime" />トークンの作成時刻 (utc) を表すです。</param>
+        <param name="expires">A<see cref="T:System.DateTime" />を表すトークンの有効期限刻 (utc)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Lifetime" />クラスが指定の作成と有効期限の時刻を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定した時間<paramref name="created" />で指定した時間の前に発生<paramref name="expires" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Lifetime (Nullable&lt;DateTime&gt; created, Nullable&lt;DateTime&gt; expires);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; created, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; expires) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Lifetime.#ctor(System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="created" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="expires" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="created">A<see cref="T:System.DateTime" />トークンの作成時刻 (utc) を指定します。 指定できます<see langword="null" />です。</param>
+        <param name="expires">A<see cref="T:System.DateTime" />トークンの有効期限の時刻 (utc) を指定します。 指定できます<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.Lifetime" />クラスが指定の作成と有効期限の時刻を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定した時間<paramref name="created" />で指定した時間の前に発生<paramref name="expires" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Created">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; Created { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; Created" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.Lifetime.Created" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UTC 時刻でトークンの作成時刻を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />を表すトークンが作成された UTC 時間です。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`<wst:Created>`子要素です。 この省略可能な要素は、トークンが作成された時刻を指定します。  
+  
+ [!INCLUDE[wif_wstrust_ref](~/includes/wif-wstrust-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expires">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; Expires { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; Expires" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.Lifetime.Expires" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UTC 時刻でトークンの有効期限の時間を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />を表すトークンの有効期限が切れる UTC 時刻。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`<wst:Expires>`子要素です。 この省略可能な要素は、トークンの有効期限が切れる時間を指定します。  
+  
+ [!INCLUDE[wif_wstrust_ref](~/includes/wif-wstrust-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

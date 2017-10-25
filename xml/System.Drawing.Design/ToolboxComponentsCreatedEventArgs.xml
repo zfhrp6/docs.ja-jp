@@ -1,0 +1,71 @@
+<Type Name="ToolboxComponentsCreatedEventArgs" FullName="System.Drawing.Design.ToolboxComponentsCreatedEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolboxComponentsCreatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolboxComponentsCreatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxComponentsCreatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Drawing.Design.ToolboxItem.ComponentsCreated" />コンポーネントがツールボックスに追加されたときに発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ComponentsCreated>コンポーネントがツールボックスに追加されたときにイベントが発生します。 <xref:System.Drawing.Design.ToolboxComponentsCreatedEventArgs>対象のコンポーネントまたはコンポーネントが追加されたことを示すデータを提供します。  
+  
+   
+  
+## Examples  
+ 次の例のメソッドを返します、<xref:System.Drawing.Design.ToolboxComponentsCreatedEventArgs>作成されているコンポーネントを示すです。  
+  
+ [!code-cpp[MoreEventArgsExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/MoreEventArgsExamples/CPP/class1.cpp#3)]
+ [!code-csharp[MoreEventArgsExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/MoreEventArgsExamples/CS/class1.cs#3)]
+ [!code-vb[MoreEventArgsExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MoreEventArgsExamples/VB/class1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxComponentsCreatedEventArgs (System.ComponentModel.IComponent[] components);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent[] components) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxComponentsCreatedEventArgs.#ctor(System.ComponentModel.IComponent[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="components" Type="System.ComponentModel.IComponent[]" />
+      </Parameters>
+      <Docs>
+        <param name="components">ツールボックスに含めるためのコンポーネント。</param>
+        <summary><see cref="T:System.Drawing.Design.ToolboxComponentsCreatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Components">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent[] Components { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent[] Components" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxComponentsCreatedEventArgs.Components" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ツールボックスに追加するコンポーネントを格納する配列。</summary>
+        <value>型の配列<see cref="T:System.ComponentModel.IComponent" />ツールボックスに追加するコンポーネントを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

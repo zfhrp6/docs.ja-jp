@@ -1,0 +1,68 @@
+<Type Name="AppDomainManagerInitializationOptions" FullName="System.AppDomainManagerInitializationOptions">
+  <TypeSignature Language="C#" Value="public enum AppDomainManagerInitializationOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AppDomainManagerInitializationOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.AppDomainManagerInitializationOptions" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>新しいドメインを初期化するときに、カスタムのアプリケーション ドメイン マネージャーによって行われる操作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのフラグがプロパティの設定を使用する、<xref:System.AppDomainManager>クラスです。 <xref:System.AppDomainManagerInitializationOptions>のみにカスタムのアプリケーション ドメイン マネージャーを適用するフラグです。 既定のマネージャーには適用されません。 <xref:System.AppDomainManager.InitializeNewDomain%2A>既定のアプリケーション ドメイン マネージャー内のメソッドは、何も行われません。 既定の列挙値は None です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AppDomainManagerInitializationOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.AppDomainManagerInitializationOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AppDomainManagerInitializationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化は実行されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWithHost">
+      <MemberSignature Language="C#" Value="RegisterWithHost" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AppDomainManagerInitializationOptions RegisterWithHost = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.AppDomainManagerInitializationOptions.RegisterWithHost" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AppDomainManagerInitializationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の COM 呼び出し可能ラッパーを登録<see cref="T:System.AppDomainManager" />アンマネージ ホストとします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

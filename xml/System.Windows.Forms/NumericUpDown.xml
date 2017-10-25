@@ -1,0 +1,966 @@
+<Type Name="NumericUpDown" FullName="System.Windows.Forms.NumericUpDown">
+  <TypeSignature Language="C#" Value="public class NumericUpDown : System.Windows.Forms.UpDownBase, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumericUpDown extends System.Windows.Forms.UpDownBase implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.NumericUpDown" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.UpDownBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("Value")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ValueChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Value")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>数値を表示する Windows スピン ボックス (アップダウン コントロール) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.NumericUpDown>コントロールには、できるだけインクリメントまたはデクリメント上矢印をクリックするか、下向きの矢印ボタン コントロールの 1 つの数値が含まれています。 入力できる値、しない限り、<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>プロパティに設定されている`true`です。  
+  
+ 数値の表示を設定して形式指定できる、 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>、または<xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティです。 コントロールでは、16 進値を表示するには、設定、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティを`true`です。 桁を表示する、適切な場合の 10 進数の区切り記号の設定、<xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティを`true`です。 小数点の記号の後に表示される数字の数を指定するには、設定、<xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティを表示する小数点以下桁数です。  
+  
+ コントロールの値の許容範囲を指定するには、設定、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティです。 設定、<xref:System.Windows.Forms.NumericUpDown.Increment%2A>インクリメントまたはデクリメントする値を指定する値、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティ上矢印をクリックするか、下向きの矢印ボタンです。 コントロールを設定して数値を継続的に押すを通じて矢印または下向き矢印を移動する速度を上げることができます、<xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>プロパティです。  
+  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.UpButton%2A>または<xref:System.Windows.Forms.NumericUpDown.DownButton%2A>メソッドが呼び出される、コードまたは上向きまたは下向きの矢印ボタンをクリックして、新しい値が検証され、コントロールが適切な形式で新しい値で更新されます。 具体的には場合、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.NumericUpDown.ParseEditText%2A>の検証または値を更新する前にメソッドが呼び出されます。 値がの間であることを確認し、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値、および<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドが呼び出されます。  
+  
+ 以降で、 [!INCLUDE[net_2015](~/includes/net-2015-md.md)]、<xref:System.Windows.Forms.NumericUpDown>コントロールは、app.config ファイルには、次のエントリが含まれている場合は、システム DPI 設定に基づいてサイズ変更されます。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumericUpDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NumericUpDown" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Accelerations">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.NumericUpDownAccelerationCollection Accelerations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.NumericUpDownAccelerationCollection Accelerations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Accelerations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.NumericUpDownAccelerationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えられたアクセラレータのオブジェクトのコレクションを取得、<see cref="T:System.Windows.Forms.NumericUpDown" />コントロール。</summary>
+        <value>A<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />並べ替え済みのアクセラレータを格納するオブジェクトを<see cref="T:System.Windows.Forms.NumericUpDown" />コントロール</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>プロパティを使用する速度を上げるために使用できます、<xref:System.Windows.Forms.NumericUpDown>豊富な番号、ユーザーには、上矢印が保持しているときの矢印または下向き矢印、キーボードまたはマウスを移動します。 このプロパティの設定との数が減少<xref:System.Windows.Forms.NumericUpDown.ValueChanged>に応じて発生するイベント、<xref:System.Windows.Forms.NumericUpDownAcceleration.Increment%2A>と<xref:System.Windows.Forms.NumericUpDownAcceleration.Seconds%2A>ごとに指定したプロパティ値<xref:System.Windows.Forms.NumericUpDownAcceleration>コレクション内のオブジェクト。 <xref:System.Windows.Forms.NumericUpDownAcceleration>により、コレクションに含まれるオブジェクトが並べ替えられた、<xref:System.Windows.Forms.NumericUpDownAcceleration.Seconds%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>プロパティです。 この例を実行するには、フォームと呼び出しに、次のコードを貼り付けます、`InitializeAcceleratedUpDown`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。 コードの実行中にキーを押してと上向きまたは下矢印を発生するアクセラレータを参照してください。  
+  
+ [!code-csharp[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を開始、<see cref="T:System.Windows.Forms.NumericUpDown" />フォームまたは別のコンポーネントで使用するコントロール。 初期化は実行時に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しい <see cref="T:System.Windows.Forms.AccessibleObject" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecimalPlaces">
+      <MemberSignature Language="C#" Value="public int DecimalPlaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DecimalPlaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.DecimalPlaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に表示する小数部の桁数を取得または設定します。</summary>
+        <value>スピン ボックスに表示する小数部の桁の数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>プロパティが設定されて、<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>新しい形式に、スピン ボックスの表示を更新するメソッドが呼び出されます。  
+  
+ 適切な小数点の記号は、ユーザーのオペレーティング システムの地域別設定によって決まります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値が 0 未満です。  
+  
+ または  
+  
+ 割り当てられた値は 99 より大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownButton">
+      <MemberSignature Language="C#" Value="public override void DownButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DownButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.DownButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の値を減分します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.DownButton%2A>メソッドが呼び出される、コードまたは下向きの矢印ボタンをクリックして、新しい値が検証され、コントロールが適切な形式で新しい値で更新されます。 具体的には場合、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.NumericUpDown.ParseEditText%2A>の検証または値を更新する前にメソッドが呼び出されます。 間で指定する値が検証し、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値、および<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を終了、<see cref="T:System.Windows.Forms.NumericUpDown" />フォームまたは別のコンポーネントで使用するコントロール。 初期化は実行時に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hexadecimal">
+      <MemberSignature Language="C#" Value="public bool Hexadecimal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Hexadecimal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Hexadecimal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に値を 16 進形式で表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />スピン ボックスは、16 進数形式でその値を表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティが設定されて、<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>新しい形式に、スピン ボックスの表示を更新するメソッドが呼び出されます。  
+  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティに設定する必要があります<xref:System.Int32.MaxValue?displayProperty=nameWithType>と<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティに設定する必要があります<xref:System.Int32.MinValue?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Increment">
+      <MemberSignature Language="C#" Value="public decimal Increment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Decimal Increment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Increment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上向きまたは下向きの矢印ボタンがクリックされたときに、スピン ボックス (アップダウン コントロール) で増分または減分する値を取得または設定します。</summary>
+        <value>インクリメントまたはデクリメントする値、<see cref="P:System.Windows.Forms.NumericUpDown.Value" />プロパティと上矢印またはスピン ボックスの下向きの矢印ボタンがクリックされました。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 印ボタンをクリックすると、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティで指定された量の増加を<xref:System.Windows.Forms.NumericUpDown.Increment%2A>プロパティとアプローチ、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティです。 下矢印ボタンをクリックすると、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティで指定された量デクリメントされる、<xref:System.Windows.Forms.NumericUpDown.Increment%2A>プロパティとアプローチ、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値がより大きいか、0。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public decimal Maximum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Decimal Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の最大値を取得または設定します。</summary>
+        <value>スピン ボックスの最大値。 既定値は 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティが設定されて、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティが評価されると<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドが呼び出されます。 場合、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティは、新しいより大きい<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティ、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティの値に設定して、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。 場合、現在<xref:System.Windows.Forms.NumericUpDown.Value%2A>が新しいより大きい<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。 <xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティの値に設定して、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public decimal Minimum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Decimal Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の最小値を取得または設定します。</summary>
+        <value>スピン ボックスの最小値。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティが設定されて、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティが評価されると<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドが呼び出されます。 場合、新しい<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>プロパティの値がより大きい、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティの値、<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値に設定して、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>値。 場合、<xref:System.Windows.Forms.NumericUpDown.Value%2A>が新しいより小さい<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>値、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティも設定と等しい、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.NumericUpDown.OnKeyDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.NumericUpDown.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.NumericUpDown.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyUp" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.NumericUpDown.OnKeyUp%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.NumericUpDown.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.NumericUpDown.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.OnLostFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.LostFocus" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.NumericUpDown.OnLostFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.NumericUpDown.OnLostFocus(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.NumericUpDown.OnLostFocus(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxKeyPress">
+      <MemberSignature Language="C#" Value="protected override void OnTextBoxKeyPress (object source, System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextBoxKeyPress(object source, class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NumericUpDown>コントロールが受け入れるのみ桁の数字、負の符号、小数点、およびバック スペースなどのキーストロークを編集します。 場合、<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>プロパティに設定されている`true`、 <xref:System.Windows.Forms.NumericUpDown> 16 進数の数字を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnValueChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValueChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.OnValueChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.NumericUpDown.ValueChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.NumericUpDown.OnValueChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.NumericUpDown.OnValueChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.NumericUpDown.OnValueChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NumericUpDown" /> コントロールの端とその内容との間隔を取得または設定します。</summary>
+        <value>
+          常に <see cref="F:System.Windows.Forms.Padding.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.NumericUpDown.Padding%2A>プロパティの外観に影響しないとして、<xref:System.Windows.Forms.NumericUpDown>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PaddingChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaddingChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NumericUpDown.PaddingChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.NumericUpDown.Padding" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseEditText">
+      <MemberSignature Language="C#" Value="protected void ParseEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ParseEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.ParseEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に表示するテキストを数値に変換して評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されている`true`、表示されるテキストは数値に変換される間で指定することを検証できるため、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるテキスト、<see cref="T:System.Windows.Forms.NumericUpDown" />コントロール。</summary>
+        <value>
+          <see langword="Null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NumericUpDown.Text%2A>の外観に影響を与えません、<xref:System.Windows.Forms.NumericUpDown>制御。 そのため、非表示にされて、デザイナーでは IntelliSense からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NumericUpDown.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.NumericUpDown.Text" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThousandsSeparator">
+      <MemberSignature Language="C#" Value="public bool ThousandsSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThousandsSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.ThousandsSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要に応じてスピン ボックス (アップダウン コントロール) に桁区切り記号を表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合、桁区切り記号です適切な場合に、スピン ボックスを表示。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>プロパティが設定されて、<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>新しい形式に、スピン ボックスの表示を更新するメソッドが呼び出されます。  
+  
+ 適切な桁区切り記号は、ユーザーのオペレーティング システムの地域別設定によって決まります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NumericUpDown" /> コントロールを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.NumericUpDown" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の文字列型の値を含む、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpButton">
+      <MemberSignature Language="C#" Value="public override void UpButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.UpButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の値を増分します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.UpButton%2A>メソッドが呼び出される、コードまたは上向きの矢印ボタンをクリックして、新しい値が検証され、コントロールが適切な形式で新しい値で更新されます。 具体的には場合、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>に設定されている`true`、<xref:System.Windows.Forms.NumericUpDown.ParseEditText%2A>の検証または値を更新する前に呼び出されます。 間で指定する値が検証し、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値と<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateEditText">
+      <MemberSignature Language="C#" Value="protected override void UpdateEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void UpdateEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.UpdateEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の現在の値を適切な形式で表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の値を検証の間でなければをスピン ボックスが初期化されていない場合、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値、コントロールで表示するための正しい形式に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateEditText">
+      <MemberSignature Language="C#" Value="protected override void ValidateEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDown.ValidateEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に表示されるテキストを検証および更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NumericUpDown.ValidateEditText%2A>メソッドの呼び出し、<xref:System.Windows.Forms.NumericUpDown.ParseEditText%2A>と<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>メソッドを検証して、スピン ボックスの表示を更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public decimal Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Decimal Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDown.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に割り当てる値を取得または設定します。</summary>
+        <value>数値、<see cref="T:System.Windows.Forms.NumericUpDown" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.NumericUpDown.Value%2A>プロパティが設定されて、間にする新しい値を検証、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。 次に、<xref:System.Windows.Forms.NumericUpDown.UpdateEditText%2A>適切な形式で新しい値で、スピン ボックスの表示を更新するメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.NumericUpDown>コントロール、いくつかの共通プロパティの設定および実行時にこれらのプロパティの一部を変更することができます。 このコードは 3 を想定しています<xref:System.Windows.Forms.CheckBox>フォームと用のハンドラーに制御が設定されて、<xref:System.Windows.Forms.Control.Click>イベントをインスタンス化します。 <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A>、 <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A>、および<xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A>でプロパティを設定、<xref:System.Windows.Forms.Control.Click>各チェック ボックスのイベントです。  
+  
+ [!code-cpp[Classic NumericUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic NumericUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumericUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic NumericUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic NumericUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic NumericUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値より小さい<see cref="P:System.Windows.Forms.NumericUpDown.Minimum" />プロパティの値。  
+  
+ または  
+  
+ 割り当てられた値がより大きい、<see cref="P:System.Windows.Forms.NumericUpDown.Maximum" />プロパティの値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.NumericUpDown.ValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.NumericUpDown.Value" />何らかの方法でプロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NumericUpDown.ValueChanged>が発生するイベント、<xref:System.Windows.Forms.NumericUpDown.Value%2A>上矢印をクリックすると、または下向きボタン、またはユーザーがコントロールによって読み取られる新しい値を入力して、コードでは、プロパティを変更できます。 ユーザーが ENTER キーを押すかからコントロールの移動時に、新しい値が読み取られます。 ユーザーが新しい値を入力しをクリックすると上矢印または下のボタン、<xref:System.Windows.Forms.NumericUpDown.ValueChanged>イベントは、2 回発生します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.NumericUpDown.ValueChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.NumericUpDown>という`NumericUpDown1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.NumericUpDown.ValueChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#515](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#515)]
+ [!code-vb[System.Windows.Forms.EventExamples#515](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#515)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

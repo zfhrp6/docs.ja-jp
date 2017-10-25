@@ -1,0 +1,125 @@
+<Type Name="ScrollBars" FullName="System.Web.UI.WebControls.ScrollBars">
+  <TypeSignature Language="C#" Value="public enum ScrollBars" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ScrollBars extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ScrollBars" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>可視性および内のスクロール バーの位置を指定します、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ScrollBars>列挙型の可視性とのスクロール バーの位置を表す、<xref:System.Web.UI.WebControls.Panel>コントロール。 <xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティでは、これらの列挙値を使用して、表示するスクロール バーの種類の指定を<xref:System.Web.UI.WebControls.Panel>コントロール。 既定値、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティは`None`、スクロール バーが表示されないことを示します。  
+  
+ 指定した場合`Auto`の<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティ、スクロール バーが自動的に時に表示内のコンテンツのサイズ、<xref:System.Web.UI.WebControls.Panel>コントロールのサイズを超えています、<xref:System.Web.UI.WebControls.Panel>コントロール。 たとえば場合、<xref:System.Web.UI.WebControls.Panel>コントロールには、テーブルが含まれていると、パネルは、テーブル内のすべての行を表示するのに十分な幅、垂直スクロール バーが表示されます。 テーブルのサイズは、パネルの幅と高さを超えている場合は、両方の垂直および水平方向のスクロール バーが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.Panel.ScrollBars%2A>プロパティを`Auto`です。 パネルには、全体の内容は、パネルのサイズを超えるテーブルが含まれています。 これにより、パネルが表示される場合に自動的に表示される垂直および水平方向のスクロール バーの両方です。 ユーザーはスクロールして、テーブル内のすべてのデータを表示します。  
+  
+ [!code-aspx-csharp[Panel.Scrollbars#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Panel.Scrollbars/CS/panel.scrollbarscs.aspx#1)]
+ [!code-aspx-vb[Panel.Scrollbars#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Scrollbars/VB/panel.scrollbarsvb.aspx#1)]  
+  
+ 次のコード例を示しています、<xref:System.Web.UI.WebControls.ScrollBars>列挙値。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.ScrollBars>列挙値。 スクロール バーは、ユーザーが、リスト ボックスから選択する値に基づいて、パネル内に表示されます。  
+  
+ [!code-aspx-csharp[Panel.Scrollbars2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Panel.Scrollbars2/CS/panel.scrollbars2cs.aspx#1)]
+ [!code-aspx-vb[Panel.Scrollbars2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Panel.Scrollbars2/VB/panel.scrollbars2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ScrollBars Auto = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ScrollBars.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示、水平、垂直、またはその両方必要に応じて、スクロール バーを設定します。 それ以外の場合、スクロール バーは表示されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Both">
+      <MemberSignature Language="C#" Value="Both" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ScrollBars Both = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ScrollBars.Both" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向と垂直スクロール バーの両方が表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Horizontal">
+      <MemberSignature Language="C#" Value="Horizontal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ScrollBars Horizontal = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ScrollBars.Horizontal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平スクロール バーのみが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ScrollBars None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ScrollBars.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロール バーを表示しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Vertical">
+      <MemberSignature Language="C#" Value="Vertical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.ScrollBars Vertical = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.ScrollBars.Vertical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直スクロール バーのみが表示されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

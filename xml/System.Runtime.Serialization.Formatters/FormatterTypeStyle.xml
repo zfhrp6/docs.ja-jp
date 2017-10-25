@@ -1,0 +1,115 @@
+<Type Name="FormatterTypeStyle" FullName="System.Runtime.Serialization.Formatters.FormatterTypeStyle">
+  <TypeSignature Language="C#" Value="public enum FormatterTypeStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed FormatterTypeStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatters.FormatterTypeStyle" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>種類の説明はレイアウト シリアル化ストリームの形式を示します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TypesAlways">
+      <MemberSignature Language="C#" Value="TypesAlways" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle TypesAlways = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatters.FormatterTypeStyle.TypesAlways" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのすべてのメンバーに型を指定することを示すと<see cref="T:System.Runtime.Serialization.ISerializable" />オブジェクト メンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TypesWhenNeeded">
+      <MemberSignature Language="C#" Value="TypesWhenNeeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle TypesWhenNeeded = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatters.FormatterTypeStyle.TypesWhenNeeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトのメンバーであるオブジェクトの配列に対してのみ型を記述することができますを示す<see cref="T:System.Object" />、および<see cref="T:System.Runtime.Serialization.ISerializable" />非プリミティブ値の型。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="XsdString">
+      <MemberSignature Language="C#" Value="XsdString" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle XsdString = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatters.FormatterTypeStyle.XsdString" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP ではなく、XSD 形式で文字列を指定できることを示します。 文字列 Id は送信されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XsdString`と`TypesWhenNeeded`設定が、同じバージョンの上に構築されたサービス間で高パフォーマンスのシリアル化に意図したもの、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 これら 2 つの値では、スキップするか、省略可能なフィールドおよびプロパティを追加 VTS を使用する型情報を意図的に省略するため VTS (バージョン トレラントなシリアル化する) をサポートしていません。 使用しないで、`XsdString`または`TypesWhenNeeded`をシリアル化すると、異なるバージョンを実行しているコンピューター上の種類を逆シリアル化形式の入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]型をシリアル化されたコンピューターよりもします。 さまざまなバージョンを実行するコンピューターで逆シリアル化のシリアル化と、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 、デシリアライザーは、他のバージョンに存在する特定の種類の存在しない場合は、省略可能なフィールドをスキップするできなくなり、型情報のシリアル化をスキップするフォーマッタをにより、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 使用する場合`XsdString`または`TypesWhenNeeded`このようなシナリオでは、1 つのバージョンから変更されている型のカスタムのシリアル化を提供する必要があります、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

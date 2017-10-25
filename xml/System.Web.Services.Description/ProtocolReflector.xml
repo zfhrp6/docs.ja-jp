@@ -1,0 +1,588 @@
+<Type Name="ProtocolReflector" FullName="System.Web.Services.Description.ProtocolReflector">
+  <TypeSignature Language="C#" Value="public abstract class ProtocolReflector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProtocolReflector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ProtocolReflector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>作成するため、通信プロトコルに共通の機能を提供<see cref="T:System.Web.Services.Description.ServiceDescription" />Web サービスとして識別されるクラスのオブジェクトをします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象<xref:System.Web.Services.Description.ProtocolReflector>クラスと派生クラスを作成、具体的な<xref:System.Web.Services.Description.ServiceDescription>を持つ Web サービスとして識別されるクラスのオブジェクトを<xref:System.Web.Services.WebServiceAttribute>属性。 それぞれの具体的な<xref:System.Web.Services.Description.ProtocolReflector>-派生クラスが生成されます<xref:System.Web.Services.Description.ServiceDescription>; 指定された通信プロトコルに従ってオブジェクト<xref:System.Web.Services.Description.ProtocolReflector>プロトコルに関係なく、共通の機能を提供します。  
+  
+ 出力<xref:System.Web.Services.Description.ServiceDescription>で Web サービス記述言語 (WSDL) ドキュメントを生成するインスタンスを使用できます、<xref:System.Web.Services.Description.ServiceDescription.Write%2A>メソッドまたは使用可能なオーバー ロードのいずれか。 <xref:System.Web.Services.Description.ServiceDescription>インスタンスこともできますが、<xref:System.Web.Services.Description.ServiceDescriptionImporter>コードまたはサーバー コードを抽象クラスと関連するクラスをクライアント プロキシを生成します。  
+  
+ <xref:System.Web.Services.Description.ProtocolReflector>クラスの使用、<xref:System.Web.Services.WebServiceBindingAttribute>を作成する、<xref:System.Web.Services.Description.ServiceDescription>の Web サービス クラス内の各バインドを識別します。 その属性が存在しない場合、<xref:System.Web.Services.Description.ProtocolReflector>クラスがクラス全体の 1 つのバインドを作成します。 各 web サービス メソッド (と共に表示される Web サービス クラスのメソッド、 <xref:System.Web.Services.WebMethodAttribute>) から派生するクラスが、バインディングに属する、<xref:System.Web.Services.Description.ProtocolReflector>操作およびに追加される関連するメッセージが生成されます、<xref:System.Web.Services.Description.ServiceDescription>オブジェクト。  
+  
+ 通常、開発者がを通じて間接的にこれらのクラスを使用、<xref:System.Web.Services.Description.ServiceDescriptionReflector>クラスから派生したクラスを直接呼び出すことではなく<xref:System.Web.Services.Description.ProtocolReflector>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProtocolReflector ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.ProtocolReflector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginClass">
+      <MemberSignature Language="C#" Value="protected virtual void BeginClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void BeginClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.BeginClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、実行する前に処理<see cref="T:System.Web.Services.Description.ProtocolReflector" />呼び出し、<see cref="M:System.Web.Services.Description.ProtocolReflector.ReflectMethod" />の各バインディングのメソッドのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Binding Binding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Binding Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) が現在生成され、関連付けられている追加のバインドを取得<see cref="T:System.Web.Services.Description.ServiceDescription" />です。</summary>
+        <value>Web サービス記述言語 (WSDL) が現在生成され、関連付けられている追加のバインド<see cref="T:System.Web.Services.Description.ServiceDescription" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNamespace">
+      <MemberSignature Language="C#" Value="public string DefaultNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.DefaultNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたで識別される既定の名前空間を取得<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクトの<see cref="F:System.Web.Services.Description.ServiceDescription.Namespace" />プロパティです。</summary>
+        <value>既定の名前空間、関連付けられたで識別される<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクトの<see cref="F:System.Web.Services.Description.ServiceDescription.Namespace" />プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndClass">
+      <MemberSignature Language="C#" Value="protected virtual void EndClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EndClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.EndClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、実行後の処理<see cref="ProtocolReflector" />が呼び出されて、<see cref="M:System.Web.Services.Description.ProtocolReflector.ReflectMethod" />の各バインディングのメソッドのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription GetServiceDescription (string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.ServiceDescription GetServiceDescription(string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.GetServiceDescription(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns"><see cref="T:System.Web.Services.Description.ServiceDescription" />入力 Web サービス クラスから反映される Web サービス記述言語 (WSDL) のエンティティに対応するオブジェクトが指定される、後で取得したインスタンス。</param>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />特定の XML 名前空間と、該当する通信プロトコル用のオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.Services.Description.ServiceDescription" />特定の XML 名前空間と、該当する通信プロトコル用のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.ServiceDescription>入力 Web サービス クラスから反映される WSDL のエンティティに対応するオブジェクトが指定される、後で取得したインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderMessages">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.MessageCollection HeaderMessages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.MessageCollection HeaderMessages" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.HeaderMessages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.MessageCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加される SOAP ヘッダー メッセージの定義を取得、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクト。</summary>
+        <value>SOAP ヘッダー メッセージの定義を追加する、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputMessage">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message InputMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Message InputMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.InputMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽象操作プロトコル reflector が Web サービス メソッドから生成して現在の Web サービス記述言語 (WSDL) の入力メッセージを取得します。</summary>
+        <value>抽象操作プロトコル reflector が Web サービス メソッドから生成して現在の Web サービス記述言語 (WSDL) の入力メッセージです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.LogicalMethodInfo Method { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.LogicalMethodInfo Method" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.LogicalMethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配置する Web サービス記述言語 (WSDL) の操作を生成するプロトコル reflector が現在処理している Web サービス メソッドを取得、生成された<see cref="T:System.Web.Services.Description.ServiceDescription" />です。</summary>
+        <value>Web サービス メソッドを配置する Web サービス記述言語 (WSDL) の操作を生成するプロトコル reflector は処理されている、生成された<see cref="T:System.Web.Services.Description.ServiceDescription" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodAttribute">
+      <MemberSignature Language="C#" Value="public System.Web.Services.WebMethodAttribute MethodAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.WebMethodAttribute MethodAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.MethodAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.WebMethodAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.WebMethodAttribute" />を配置する Web サービス記述言語 (WSDL) の操作を生成するプロトコル reflector は処理されているメソッドを生成された<see cref="T:System.Web.Services.Description.ServiceDescription" />です。</summary>
+        <value><see cref="T:System.Web.Services.WebMethodAttribute" />を配置する Web サービス記述言語 (WSDL) の操作を生成するプロトコル reflector は処理されているメソッドを生成されました。<see cref="T:System.Web.Services.Description.ServiceDescription" /></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Methods">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.LogicalMethodInfo[] Methods { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.LogicalMethodInfo[] Methods" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Methods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.LogicalMethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたで識別される、Web サービス クラスに属している Web サービス メソッドを取得<see cref="T:System.Web.Services.Description.ProtocolReflector" />オブジェクトの<see cref="P:System.Web.Services.Description.ProtocolReflector.Methods" />プロパティです。</summary>
+        <value>Web サービス メソッドが関連付けられているで識別される、Web サービス クラスに属する<see cref="T:System.Web.Services.Description.ProtocolReflector" />オブジェクトの<see cref="P:System.Web.Services.Description.ProtocolReflector.Methods" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッドがで識別される、<xref:System.Web.Services.WebMethodAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operation">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Operation Operation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Operation Operation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Operation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Operation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロトコル reflector は現在 Web サービス メソッドから生成する、抽象 Web サービス記述言語 (WSDL) 操作を取得します。</summary>
+        <value>プロトコル reflector は現在 Web サービス メソッドから生成する抽象 Web サービス記述言語 (WSDL) の操作</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子として、操作が表示されます、 `portType` WSDL ドキュメント内の要素。 Web サービス メソッドがで識別される、<xref:System.Web.Services.WebMethodAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationBinding OperationBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationBinding OperationBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.OperationBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロトコル インポーターが Web サービス メソッドから生成して現在 Web サービス記述言語 (WSDL) の操作バインディングを取得します。</summary>
+        <value>バインディングを Web サービス記述言語 (WSDL) 操作プロトコル インポーターが Web サービス メソッドから生成中です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス メソッドがで識別される、<xref:System.Web.Services.WebMethodAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputMessage">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message OutputMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Message OutputMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.OutputMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽象操作プロトコル reflector が Web サービス メソッドから生成して現在の Web サービス記述言語 (WSDL) の出力メッセージを取得します。</summary>
+        <value>Web サービス記述言語 (WSDL) では、プロトコル reflector が Web サービス メソッドから生成する現在の抽象操作にメッセージを出力します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Port Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Port Port" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Port</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロトコル reflector が生成されているバインドへの参照を格納する生成現在 Web サービス記述言語 (WSDL) ポートを取得します。</summary>
+        <value>プロトコル reflector が生成されているバインドへの参照を格納する生成中、Web サービス記述言語 (WSDL) ポートです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PortType">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.PortType PortType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.PortType PortType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.PortType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.PortType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) を取得<see langword="portType" />プロトコル reflector が生成されているバインディングによって実装される生成中です。</summary>
+        <value>Web サービス記述言語 (WSDL)<see langword="portType" />プロトコル reflector が生成されているバインディングによって実装される生成中です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolName">
+      <MemberSignature Language="C#" Value="public abstract string ProtocolName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProtocolName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ProtocolName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、使用されているプロトコルの名前を取得します。</summary>
+        <value>使用されているプロトコルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectDescription">
+      <MemberSignature Language="C#" Value="protected virtual void ReflectDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReflectDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.ReflectDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるで配置を取得するサービス固有の説明情報を生成、<see cref="T:System.Web.Services.Description.ServiceDescription" />をバインディングに対応するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectionImporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlReflectionImporter ReflectionImporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlReflectionImporter ReflectionImporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ReflectionImporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlReflectionImporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Serialization.XmlReflectionImporter" />使用されているインスタンスによって、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</summary>
+        <value><see cref="T:System.Xml.Serialization.XmlReflectionImporter" />使用されているインスタンスによって、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectMethod">
+      <MemberSignature Language="C#" Value="protected abstract bool ReflectMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReflectMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.ReflectMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、生成に配置を取得するメソッドに固有の情報、<see cref="T:System.Web.Services.Description.ServiceDescription" />バインディングに対応するオブジェクト。</summary>
+        <returns>配置を取得するメソッドに固有の情報、<see cref="T:System.Web.Services.Description.ServiceDescription" />バインディングに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.Services.Description.ProtocolReflector.ReflectMethod%2A>メソッドは、操作バインディング、抽象操作、およびメッセージなどの情報を生成する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectMethodBinding">
+      <MemberSignature Language="C#" Value="protected virtual string ReflectMethodBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string ReflectMethodBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ProtocolReflector.ReflectMethodBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メソッドが属しているバインディングの名前を返します。</summary>
+        <returns>メソッドが属しているバインディングの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaExporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSchemaExporter SchemaExporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSchemaExporter SchemaExporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.SchemaExporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSchemaExporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Serialization.XmlSchemaExporter" />使用されているインスタンスによって、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</summary>
+        <value><see cref="T:System.Xml.Serialization.XmlSchemaExporter" />使用されているインスタンスによって、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSchemas Schemas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSchemas Schemas" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Schemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSchemas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成される XML スキーマを取得して、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</summary>
+        <value>生成される XML スキーマによって、関連付けられている<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Service">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Service Service { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Service Service" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.Service" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Service</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロトコル reflector が生成されているバインドへの参照を格納する生成現在 Web サービス記述言語 (WSDL) サービスを取得します。</summary>
+        <value>プロトコル reflector が生成されているバインドへの参照を格納する生成中、Web サービス記述言語 (WSDL) サービス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription ServiceDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription ServiceDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ServiceDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />生成されているバインディングを格納する現在作成中のオブジェクトします。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescription" />生成されているバインディングを格納する現在作成中のオブジェクトします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescriptions">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionCollection ServiceDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionCollection ServiceDescriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ServiceDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクトを作成に対応する追加されたこれまで、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を介して取得された、 <see cref="P:System.Web.Services.Description.ServiceDescriptionReflector.ServiceDescriptions" /> 、関連するプロパティ<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクトを作成に対応する追加されたこれまで、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を介して取得された、 <see cref="P:System.Web.Services.Description.ServiceDescriptionReflector.ServiceDescriptions" /> 、関連するプロパティ<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.ProtocolReflector>クラスを作成、<xref:System.Web.Services.Description.ServiceDescription>し、Web サービス クラスで検出された各バインディングは、個別の名前空間を持つオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceType">
+      <MemberSignature Language="C#" Value="public Type ServiceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ServiceType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ServiceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成するために反映されている Web サービス クラスの型を取得<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクト。</summary>
+        <value>生成するために反映されている Web サービス クラスの型<see cref="T:System.Web.Services.Description.ServiceDescription" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス クラスは、によって識別される、<xref:System.Web.Services.WebServiceAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceUrl">
+      <MemberSignature Language="C#" Value="public string ServiceUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ProtocolReflector.ServiceUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として URL Uniform Resource Locator ()、関連付けられているから取得した、関連付けられている Web サービスのエンドポイントを取得<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />オブジェクト。</summary>
+        <value>関連付けられている Web サービスとして、Locator (URL) のエンドポイントが関連付けられているから取得した<see cref="T:System.Web.Services.Description.ServiceDescriptionReflector" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

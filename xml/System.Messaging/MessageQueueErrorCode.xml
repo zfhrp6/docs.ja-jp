@@ -1,0 +1,2389 @@
+<Type Name="MessageQueueErrorCode" FullName="System.Messaging.MessageQueueErrorCode">
+  <TypeSignature Language="C#" Value="public enum MessageQueueErrorCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MessageQueueErrorCode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueErrorCode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージ キュー アプリケーション内に発生し、生成されたエラーのソースを識別、<see cref="T:System.Messaging.MessageQueueException" />例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueErrorCode>列挙体は、メッセージング操作中にエラーが発生に関する詳細な情報を提供します。  
+  
+ <xref:System.Messaging.MessageQueueException>を使用して、<xref:System.Messaging.MessageQueueException.MessageQueueErrorCode%2A>プロパティをメッセージ キューのエラーの性質を特定します。 <xref:System.Messaging.MessageQueueErrorCode>値が、エラーに関連付けるテキスト文字列を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メッセージ キューのキューが存在する場合、してから、削除するかどうかを確認します。  
+  
+ [!code-cpp[MessageQueue.ExistsDelete#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.ExistsDelete/CPP/mqexistsdelete.cpp#1)]
+ [!code-csharp[MessageQueue.ExistsDelete#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.ExistsDelete/CS/mqexistsdelete.cs#1)]
+ [!code-vb[MessageQueue.ExistsDelete#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.ExistsDelete/VB/mqexistsdelete.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AccessDenied">
+      <MemberSignature Language="C#" Value="AccessDenied" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode AccessDenied = int32(-1072824283)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.AccessDenied" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: アクセスが拒否されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、メッセージ キューはこのエラーを返しますアクセスを指定されたキューまたはコンピューターが拒否されました。 このエラーが返された場合は、作成、削除、またはキューのプロパティの設定など、操作のアクセス権があることを確認します。 キューのアクセス権を変更する方法の詳細については、次を参照してください。、<xref:System.Messaging.MessageQueueAccessRights>と<xref:System.Messaging.MessageQueue.SetPermissions%2A?displayProperty=nameWithType>トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="BadSecurityContext">
+      <MemberSignature Language="C#" Value="BadSecurityContext" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode BadSecurityContext = int32(-1072824267)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.BadSecurityContext" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 不適切なセキュリティ コンテキスト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、セキュリティ コンテキストが破損した場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Base">
+      <MemberSignature Language="C#" Value="Base" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode Base = int32(-1072824320)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.Base" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キューでは、このエラー コードは返しません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="BufferOverflow">
+      <MemberSignature Language="C#" Value="BufferOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode BufferOverflow = int32(-1072824294)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.BufferOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 メッセージ本文の取得が小さすぎるために MQReceiveMessage に指定されたバッファー。 メッセージがキューから削除されませんし、バッファーに収まることをメッセージ本文の一部がコピーされました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotCreateCertificateStore">
+      <MemberSignature Language="C#" Value="CannotCreateCertificateStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotCreateCertificateStore = int32(-1072824209)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotCreateCertificateStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 内部の証明書の証明書ストアを作成できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、独自のプロファイルを操作するアクセス許可があるない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotCreateHashEx">
+      <MemberSignature Language="C#" Value="CannotCreateHashEx" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotCreateHashEx = int32(-1072824191)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotCreateHashEx" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 認証済みメッセージのハッシュ オブジェクトを作成できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.HashAlgorithm%2A>ハッシュ アルゴリズムの詳細についてはプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotCreateOnGlobalCatalog">
+      <MemberSignature Language="C#" Value="CannotCreateOnGlobalCatalog" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotCreateOnGlobalCatalog = int32(-1072824201)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotCreateOnGlobalCatalog" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定したグローバル カタログ サーバーにオブジェクトを作成できませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotGetDistinguishedName">
+      <MemberSignature Language="C#" Value="CannotGetDistinguishedName" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotGetDistinguishedName = int32(-1072824194)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotGetDistinguishedName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ローカル コンピューターの識別名を取得できませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotGrantAddGuid">
+      <MemberSignature Language="C#" Value="CannotGrantAddGuid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotGrantAddGuid = int32(-1072824206)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotGrantAddGuid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 現在のユーザーに"Guid の追加"権限を付与できませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotHashDataEx">
+      <MemberSignature Language="C#" Value="CannotHashDataEx" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotHashDataEx = int32(-1072824193)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotHashDataEx" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 認証済みメッセージのデータをハッシュできません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotImpersonateClient">
+      <MemberSignature Language="C#" Value="CannotImpersonateClient" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotImpersonateClient = int32(-1072824284)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotImpersonateClient" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: RPC サーバーがクライアント アプリケーションを偽装できません、セキュリティ資格情報を検証できませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ディレクトリ サービス サーバーは、クライアント アプリケーションを偽装できない場合に、このエラーを返します。 これは、セキュリティ資格情報を確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotJoinDomain">
+      <MemberSignature Language="C#" Value="CannotJoinDomain" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotJoinDomain = int32(-1072824202)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotJoinDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: Windows 2000 ドメインのメッセージ キュー エンタープライズに参加できませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotLoadMsmqOcm">
+      <MemberSignature Language="C#" Value="CannotLoadMsmqOcm" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotLoadMsmqOcm = int32(-1072824205)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotLoadMsmqOcm" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MSMQOCM を読み込むことができません。DLL ライブラリです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotOpenCertificateStore">
+      <MemberSignature Language="C#" Value="CannotOpenCertificateStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotOpenCertificateStore = int32(-1072824208)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotOpenCertificateStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 内部の証明書の証明書ストアを開くことができません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、独自のプロファイルを操作するアクセス許可があるない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotSetCryptographicSecurityDescriptor">
+      <MemberSignature Language="C#" Value="CannotSetCryptographicSecurityDescriptor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotSetCryptographicSecurityDescriptor = int32(-1072824212)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotSetCryptographicSecurityDescriptor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 暗号化キーのセキュリティ記述子を設定できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化サービス プロバイダーについては、次を参照してください。、<xref:System.Messaging.CryptographicProviderType>と<xref:System.Messaging.Message.AuthenticationProviderType%2A?displayProperty=nameWithType>トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CannotSignDataEx">
+      <MemberSignature Language="C#" Value="CannotSignDataEx" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CannotSignDataEx = int32(-1072824192)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CannotSignDataEx" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 認証済みメッセージを送信する前にデータに署名できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.DigitalSignature%2A>プロパティの詳細については、データの署名をします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateNotProvided">
+      <MemberSignature Language="C#" Value="CertificateNotProvided" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CertificateNotProvided = int32(-1072824211)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CertificateNotProvided" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーは、証明書なしで認証されたメッセージを送信しようとしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、送信元アプリケーションがセキュリティ コンテキスト情報を使用してメッセージを認証しようとしてセキュリティ コンテキストは、証明書を含まない場合にこのエラーを返します。 証明書の詳細については、次を参照してください。、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.SenderCertificate%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ComputerDoesNotSupportEncryption">
+      <MemberSignature Language="C#" Value="ComputerDoesNotSupportEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode ComputerDoesNotSupportEncryption = int32(-1072824269)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.ComputerDoesNotSupportEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: コンピューターが暗号化操作をサポートしません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、アプリケーションとコンピューター (送信元または送信先) の暗号化を要求するときは、このエラーは暗号化操作をサポートしていませんを返します。 このエラーが返されるときに、暗号化操作は失敗します。 詳細については、暗号化を使用して、次を参照してください。、<xref:System.Messaging.MessageQueue.EncryptionRequired%2A?displayProperty=nameWithType>と<xref:System.Messaging.Message.EncryptionAlgorithm%2A?displayProperty=nameWithType>トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CorruptedInternalCertificate">
+      <MemberSignature Language="C#" Value="CorruptedInternalCertificate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CorruptedInternalCertificate = int32(-1072824275)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CorruptedInternalCertificate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 内部メッセージ キュー証明書が破損しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このエラーは、メッセージ キュー 1.0 にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CorruptedPersonalCertStore">
+      <MemberSignature Language="C#" Value="CorruptedPersonalCertStore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CorruptedPersonalCertStore = int32(-1072824271)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CorruptedPersonalCertStore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 個人用証明書ストアが破損しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、Microsoft Internet Explorer の個人用証明書ストアが破損しているときに、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CorruptedQueueWasDeleted">
+      <MemberSignature Language="C#" Value="CorruptedQueueWasDeleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CorruptedQueueWasDeleted = int32(-1072824216)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CorruptedQueueWasDeleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: LQS のキューの.ini ファイルが破損していたために削除されました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CorruptedSecurityData">
+      <MemberSignature Language="C#" Value="CorruptedSecurityData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CorruptedSecurityData = int32(-1072824272)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CorruptedSecurityData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 暗号化関数が失敗しました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CouldNotGetAccountInfo">
+      <MemberSignature Language="C#" Value="CouldNotGetAccountInfo" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CouldNotGetAccountInfo = int32(-1072824265)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CouldNotGetAccountInfo" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーのアカウント情報を取得できませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CouldNotGetUserSid">
+      <MemberSignature Language="C#" Value="CouldNotGetUserSid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode CouldNotGetUserSid = int32(-1072824266)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.CouldNotGetUserSid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: スレッド トークンから SID 情報を取得できませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信者の識別子の詳細については、次を参照してください。、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.SenderId%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteConnectedNetworkInUse">
+      <MemberSignature Language="C#" Value="DeleteConnectedNetworkInUse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode DeleteConnectedNetworkInUse = int32(-1072824248)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.DeleteConnectedNetworkInUse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 接続されたネットワークを削除できません。使用されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ネットワークが少なくとも 1 つの他のコンピューターで定義されているため、指定した接続されたネットワークを削除できない場合に、このエラーを返します。 すべての接続されたネットワーク一覧から接続されたネットワークを削除し、削除をもう一度やり直してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DependentClientLicenseOverflow">
+      <MemberSignature Language="C#" Value="DependentClientLicenseOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode DependentClientLicenseOverflow = int32(-1072824217)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.DependentClientLicenseOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 このメッセージ キュー サーバーを使用する依存型クライアントの数が上限に達しました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DsError">
+      <MemberSignature Language="C#" Value="DsError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode DsError = int32(-1072824253)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.DsError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 内部のディレクトリ サービス エラーが発生します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DsIsFull">
+      <MemberSignature Language="C#" Value="DsIsFull" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode DsIsFull = int32(-1072824254)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.DsIsFull" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ディレクトリ サービスがいっぱいです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、インフォメーション ストアがいっぱいの場合、このエラーを返します。 このエラーは、メッセージ キュー 1.0 にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DtcConnect">
+      <MemberSignature Language="C#" Value="DtcConnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode DtcConnect = int32(-1072824244)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.DtcConnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MS DTC に接続できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、Microsoft 分散トランザクション コーディネーターに接続することがない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionProviderNotSupported">
+      <MemberSignature Language="C#" Value="EncryptionProviderNotSupported" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode EncryptionProviderNotSupported = int32(-1072824213)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.EncryptionProviderNotSupported" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: メッセージ キューでは暗号化サービス プロバイダーがサポートされていません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FailVerifySignatureEx">
+      <MemberSignature Language="C#" Value="FailVerifySignatureEx" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode FailVerifySignatureEx = int32(-1072824190)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.FailVerifySignatureEx" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 受信したメッセージの署名が無効です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FormatNameBufferTooSmall">
+      <MemberSignature Language="C#" Value="FormatNameBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode FormatNameBufferTooSmall = int32(-1072824289)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.FormatNameBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: API に指定された形式名バッファーが小さすぎるため、形式名が収まりません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Generic">
+      <MemberSignature Language="C#" Value="Generic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode Generic = int32(-1072824319)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.Generic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 一般的なエラーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューより具体的な原因を特定できない場合に、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GuidNotMatching">
+      <MemberSignature Language="C#" Value="GuidNotMatching" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode GuidNotMatching = int32(-1072824200)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.GuidNotMatching" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: コンピューターのインストールに対応する GUID をメッセージ キューの構成オブジェクトを作成できませんでした。 メッセージ キューをアンインストールしてからインストールし直す必要があります。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalContext">
+      <MemberSignature Language="C#" Value="IllegalContext" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalContext = int32(-1072824229)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalContext" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なコンテキスト パラメーターです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalCriteriaColumns">
+      <MemberSignature Language="C#" Value="IllegalCriteriaColumns" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalCriteriaColumns = int32(-1072824264)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalCriteriaColumns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効な MQCOLUMNS パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューが使用する場合、このエラーを返します、`MessagePropertyFilter`クラスし、選択した`false`のすべてのブール値をすべての整数値のゼロ (0) です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalCursorAction">
+      <MemberSignature Language="C#" Value="IllegalCursorAction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalCursorAction = int32(-1072824292)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalCursorAction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MQReceiveMessage に指定された MQ_ACTION_PEEK_NEXT を現在のカーソル位置で使用できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `System.Messaging.MessageEnumerator.MoveNext`現在のカーソル位置では使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalEnterpriseOperation">
+      <MemberSignature Language="C#" Value="IllegalEnterpriseOperation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalEnterpriseOperation = int32(-1072824207)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalEnterpriseOperation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 操作は、メッセージ キューのサービス オブジェクトに対して無効です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalFormatName">
+      <MemberSignature Language="C#" Value="IllegalFormatName" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalFormatName = int32(-1072824290)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalFormatName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定された形式名が無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な形式の名前の構文オプションでは、次を参照してください。、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.FormatName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalMessageProperties">
+      <MemberSignature Language="C#" Value="IllegalMessageProperties" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalMessageProperties = int32(-1072824255)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalMessageProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 不正な MQQMPROPS パラメーターを null または 0 のプロパティを持つ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無効なメッセージ プロパティのいずれか`null`またはプロパティが 0 にします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalOperation">
+      <MemberSignature Language="C#" Value="IllegalOperation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalOperation = int32(-1072824220)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalOperation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 操作は外部メッセージ キュー システムでは無効です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalPrivateProperties">
+      <MemberSignature Language="C#" Value="IllegalPrivateProperties" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalPrivateProperties = int32(-1072824197)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalPrivateProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライベート プロパティのパラメーター値が正しくありません。 Null 値であるかプロパティが指定されている可能性があります。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalPropertyId">
+      <MemberSignature Language="C#" Value="IllegalPropertyId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalPropertyId = int32(-1072824263)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalPropertyId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なプロパティの識別子の値。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalPropertySize">
+      <MemberSignature Language="C#" Value="IllegalPropertySize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalPropertySize = int32(-1072824261)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalPropertySize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なプロパティ バッファー サイズ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、メッセージ id または相関 id の指定されたバッファーが適切なサイズではない場合、このエラーを返します。 メッセージ識別子の詳細については、メッセージ クラスの Message.Id および Message.CorrelationId プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalPropertyValue">
+      <MemberSignature Language="C#" Value="IllegalPropertyValue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalPropertyValue = int32(-1072824296)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalPropertyValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なプロパティ値。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalPropertyVt">
+      <MemberSignature Language="C#" Value="IllegalPropertyVt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalPropertyVt = int32(-1072824295)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalPropertyVt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: VARTYPE が無効な値です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalQueuePathName">
+      <MemberSignature Language="C#" Value="IllegalQueuePathName" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalQueuePathName = int32(-1072824300)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalQueuePathName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なキューのパス名。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Path%2A>有効なパスの構文のオプションのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalQueueProperties">
+      <MemberSignature Language="C#" Value="IllegalQueueProperties" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalQueueProperties = int32(-1072824259)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalQueueProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効な MQQUEUEPROPS パラメーターを null または 0 のプロパティを持つ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無効なキューのプロパティか、`null`またはプロパティが 0 にします。  
+  
+ メッセージ キューが使用する場合、このエラーを返します、<xref:System.Messaging.MessageQueueCriteria>クラスし、が呼び出さ<xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>またはキューをフィルター処理するときに使用するための条件が指定されていません。 キューの検索条件をフィルター処理の詳細については、MessageQueueCriteria クラスまたは MessageQueue.GetPublicQueues を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalRelation">
+      <MemberSignature Language="C#" Value="IllegalRelation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalRelation = int32(-1072824262)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalRelation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 制限の無効な関係値。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalRestrictionPropertyId">
+      <MemberSignature Language="C#" Value="IllegalRestrictionPropertyId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalRestrictionPropertyId = int32(-1072824260)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalRestrictionPropertyId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MQRESTRICTION パラメーターの値を propid が無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 識別子の値の制限にプロパティが無効です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalSecurityDescriptor">
+      <MemberSignature Language="C#" Value="IllegalSecurityDescriptor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalSecurityDescriptor = int32(-1072824287)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalSecurityDescriptor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定されたセキュリティ記述子が有効なセキュリティ記述子ではありません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalSort">
+      <MemberSignature Language="C#" Value="IllegalSort" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalSort = int32(-1072824304)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalSort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定された無効な並べ替え (たとえば、重複する列)。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalSortPropertyId">
+      <MemberSignature Language="C#" Value="IllegalSortPropertyId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalSortPropertyId = int32(-1072824228)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalSortPropertyId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MQSORTSET の propid が無効な値です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 並べ替え用の識別子の値が無効なプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IllegalUser">
+      <MemberSignature Language="C#" Value="IllegalUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IllegalUser = int32(-1072824303)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IllegalUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーが無効なユーザー名。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、無効なユーザー名を使用して、アプリケーションが接続している場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InsufficientProperties">
+      <MemberSignature Language="C#" Value="InsufficientProperties" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InsufficientProperties = int32(-1072824257)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InsufficientProperties" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 操作に必要なすべてのプロパティは、入力パラメーターで指定されています。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InsufficientResources">
+      <MemberSignature Language="C#" Value="InsufficientResources" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InsufficientResources = int32(-1072824281)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InsufficientResources" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: リソース不足のため、操作を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、操作を完了するのに十分なメモリがない場合は、このエラーを返します。 このエラーが返されるときに、操作は失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidCertificate">
+      <MemberSignature Language="C#" Value="InvalidCertificate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InvalidCertificate = int32(-1072824276)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InvalidCertificate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザー証明書が無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ証明書が指定されている場合、メッセージ キューがこのエラーを返します、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.SenderCertificate%2A>プロパティが有効でないか、Microsoft Internet Explorer の個人用証明書ストアに証明書が正しく配置されていません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidHandle">
+      <MemberSignature Language="C#" Value="InvalidHandle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InvalidHandle = int32(-1072824313)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InvalidHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 関数に無効なハンドルが渡されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、指定したキュー ハンドルが有効でない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidOwner">
+      <MemberSignature Language="C#" Value="InvalidOwner" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InvalidOwner = int32(-1072824252)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InvalidOwner" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 無効なオブジェクトの所有者。 たとえば、キュー マネージャー オブジェクトが無効であるため CreateQueue が失敗しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、場合は、アプリケーションが、メッセージ キューがないインストールされているコンピューターで、キューを作成しようとしています。 たとえば、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidParameter">
+      <MemberSignature Language="C#" Value="InvalidParameter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode InvalidParameter = int32(-1072824314)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.InvalidParameter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 関数に渡されるパラメーターが無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、操作によって指定されたパラメーターのいずれかが有効ではない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IOTimeout">
+      <MemberSignature Language="C#" Value="IOTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode IOTimeout = int32(-1072824293)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.IOTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 受信パイプラインのピークまたはメッセージのタイムアウトの有効期限が切れました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しで、タイムアウトが指定されている場合、メッセージ キューがこのエラーを返します<xref:System.Messaging.MessageQueue.Receive%2A?displayProperty=nameWithType>または<xref:System.Messaging.MessageQueue.Peek%2A?displayProperty=nameWithType>新しいメッセージがキューに到着する前に有効期限が切れた。 これがなかった場合メッセージ既に; キューにのみ発生します。どちらの方法は、メッセージが存在するかどうかはすぐに返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LabelBufferTooSmall">
+      <MemberSignature Language="C#" Value="LabelBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode LabelBufferTooSmall = int32(-1072824226)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.LabelBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: API に指定されたラベル バッファーが小さすぎます。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MachineExists">
+      <MemberSignature Language="C#" Value="MachineExists" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MachineExists = int32(-1072824256)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MachineExists" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 同じ名前のコンピューターは、サイトに既に存在します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MachineNotFound">
+      <MemberSignature Language="C#" Value="MachineNotFound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MachineNotFound = int32(-1072824307)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MachineNotFound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定されたコンピューターが見つかりませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ディレクトリ サービスのキューのコンピューターを見つけられない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MessageAlreadyReceived">
+      <MemberSignature Language="C#" Value="MessageAlreadyReceived" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MessageAlreadyReceived = int32(-1072824291)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MessageAlreadyReceived" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 別のプロセスによって、またはこのカーソルを使用せず、メッセージを受信する別の呼び出しによって、カーソルが現在指しているメッセージをキューから削除されているがします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、いくつかの他のカーソル、アプリケーション、またはシステム管理者が既に削除されたときに、メッセージ キューから、このエラーを返します。 このエラーを使用するときに発生する可能性があります、<xref:System.Messaging.MessageEnumerator>クラスを呼び出すことによって、インスタンスが返されるなど<xref:System.Messaging.MessageQueue.GetMessageEnumerator%2A?displayProperty=nameWithType>または<xref:System.Messaging.MessageQueue.GetEnumerator%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MessageNotFound">
+      <MemberSignature Language="C#" Value="MessageNotFound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MessageNotFound = int32(-1072824184)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MessageNotFound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定したメッセージが見つかりませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、キューに指定されたメッセージを見つけられない場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MessageStorageFailed">
+      <MemberSignature Language="C#" Value="MessageStorageFailed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MessageStorageFailed = int32(-1072824278)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MessageStorageFailed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 回復可能メッセージまたはジャーナル メッセージを保存できませんでした。 メッセージは送信されませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ローカル コンピューターには、(1 つの場合は、ネットワークに問題が配信が保証される) 回復可能メッセージまたはジャーナル メッセージを格納できない場合、このエラーを返します。 参照してください、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.Recoverable%2A>と<xref:System.Messaging.Message.UseJournalQueue%2A>これらのメッセージを送信するオプションの詳細についてはプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MissingConnectorType">
+      <MemberSignature Language="C#" Value="MissingConnectorType" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MissingConnectorType = int32(-1072824235)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MissingConnectorType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 受信確認メッセージまたはセキュリティで保護されたメッセージを送信するときに、コネクタの種類が必須です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、アプリケーションが通常、メッセージ キューによって設定されるプロパティの設定を使用するコネクタを指定しない場合、このエラーを返します。 コネクタの種類の詳細については、次を参照してください。、<xref:System.Messaging.Message>クラスの<xref:System.Messaging.Message.ConnectorType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MqisReadOnlyMode">
+      <MemberSignature Language="C#" Value="MqisReadOnlyMode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MqisReadOnlyMode = int32(-1072824224)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MqisReadOnlyMode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MQIS データベースは読み取り専用モードです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MqisServerEmpty">
+      <MemberSignature Language="C#" Value="MqisServerEmpty" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode MqisServerEmpty = int32(-1072824225)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.MqisServerEmpty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: (レジストリ) 内の MQIS サーバーの一覧が空です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このエラーは、メッセージ キュー 1.0 にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoDs">
+      <MemberSignature Language="C#" Value="NoDs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoDs = int32(-1072824301)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoDs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 このサイトのコント ローラーに接続されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、アプリケーションがディレクトリ サービスにアクセスできない場合に、このエラーを返します。 このエラーが返される場合は、ディレクトリ サービスにアクセスするためのアクセス許可を確認します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoEntryPointMsmqOcm">
+      <MemberSignature Language="C#" Value="NoEntryPointMsmqOcm" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoEntryPointMsmqOcm = int32(-1072824204)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoEntryPointMsmqOcm" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MSMQOCM 内でエントリ ポイントを検索することはできません。DLL ライブラリです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoGlobalCatalogInDomain">
+      <MemberSignature Language="C#" Value="NoGlobalCatalogInDomain" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoGlobalCatalogInDomain = int32(-1072824196)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoGlobalCatalogInDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定されたドメインでグローバル カタログ サーバーが見つかりません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoInternalUserCertificate">
+      <MemberSignature Language="C#" Value="NoInternalUserCertificate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoInternalUserCertificate = int32(-1072824273)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoInternalUserCertificate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーの内部メッセージ キュー証明書が存在しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、内部証明書が登録されていないか、登録済みの証明書が破損している場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoMsmqServersOnDc">
+      <MemberSignature Language="C#" Value="NoMsmqServersOnDc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoMsmqServersOnDc = int32(-1072824203)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoMsmqServersOnDc" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ドメイン コント ローラーでメッセージ キュー サーバーが見つかりませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoMsmqServersOnGlobalCatalog">
+      <MemberSignature Language="C#" Value="NoMsmqServersOnGlobalCatalog" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoMsmqServersOnGlobalCatalog = int32(-1072824195)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoMsmqServersOnGlobalCatalog" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: グローバル カタログ ドメイン コント ローラーにメッセージ キュー サーバーが見つかりませんでした。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoResponseFromObjectServer">
+      <MemberSignature Language="C#" Value="NoResponseFromObjectServer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode NoResponseFromObjectServer = int32(-1072824247)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.NoResponseFromObjectServer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: オブジェクトの所有者から応答がありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ディレクトリ サービス サーバーからの応答がない場合、このエラーを返します。 このエラーが返されると、操作の状態が不明です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectServerNotAvailable">
+      <MemberSignature Language="C#" Value="ObjectServerNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode ObjectServerNotAvailable = int32(-1072824246)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.ObjectServerNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: オブジェクトの所有者に到達できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、オブジェクトのディレクトリ サービス サーバーが使用できない場合に、このエラーを返します。 このエラーが返されるときに、操作は失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OperationCanceled">
+      <MemberSignature Language="C#" Value="OperationCanceled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode OperationCanceled = int32(-1072824312)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.OperationCanceled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: が完了する前に、操作が取り消されました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PrivilegeNotHeld">
+      <MemberSignature Language="C#" Value="PrivilegeNotHeld" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode PrivilegeNotHeld = int32(-1072824282)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.PrivilegeNotHeld" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: クライアントが操作の実行に必要な権限を持っていません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="Property" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode Property = int32(-1072824318)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 渡されたプロパティの 1 つ以上が無効です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyNotAllowed">
+      <MemberSignature Language="C#" Value="PropertyNotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode PropertyNotAllowed = int32(-1072824258)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.PropertyNotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 要求された操作に対して無効なプロパティ</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderNameBufferTooSmall">
+      <MemberSignature Language="C#" Value="ProviderNameBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode ProviderNameBufferTooSmall = int32(-1072824221)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.ProviderNameBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: プロバイダー名のプロパティに対して渡されたバッファーが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダー名の詳細については、メッセージ クラスの AuthenticationProviderName プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKeyDoesNotExist">
+      <MemberSignature Language="C#" Value="PublicKeyDoesNotExist" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode PublicKeyDoesNotExist = int32(-1072824198)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.PublicKeyDoesNotExist" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: コンピューターの公開キーが存在しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ディレクトリ サービスを照会することが強化されたキーが見つからなかった場合に、このエラーを返します。 このエラーは、メッセージ キュー 2.0 のみに適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKeyNotFound">
+      <MemberSignature Language="C#" Value="PublicKeyNotFound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode PublicKeyNotFound = int32(-1072824199)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.PublicKeyNotFound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: コンピューターの公開キーが見つかりません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー メッセージ キュー 1.0 を実行するコンピューターのコンピューターのプロパティを取得しようとしている場合、またはオフラインで作業しているときにリモート コンピューターのプロパティを取得しようとしている場合、たとえば、このエラーを返します。 このエラーは、メッセージ キュー 2.0 のみに適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="QDnsPropertyNotSupported">
+      <MemberSignature Language="C#" Value="QDnsPropertyNotSupported" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode QDnsPropertyNotSupported = int32(-1072824210)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.QDnsPropertyNotSupported" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DNS のプロパティはキューの検索を条件としてサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューの DNS パス名を取得することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="QueueDeleted">
+      <MemberSignature Language="C#" Value="QueueDeleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode QueueDeleted = int32(-1072824230)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.QueueDeleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: キューが削除されました。 このキューのインスタンスを使ってこれ以上メッセージを受信できません。 キューを閉じる必要があります。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="QueueExists">
+      <MemberSignature Language="C#" Value="QueueExists" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode QueueExists = int32(-1072824315)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.QueueExists" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 同じパス名を持つキューは既に登録されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、ディレクトリ サービスのパブリック キューを登録し、ローカル コンピューター上の専用キューに登録します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="QueueNotAvailable">
+      <MemberSignature Language="C#" Value="QueueNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode QueueNotAvailable = int32(-1072824245)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.QueueNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: リモート コンピューター上に存在するキューからの読み取り中エラーが発生します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="QueueNotFound">
+      <MemberSignature Language="C#" Value="QueueNotFound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode QueueNotFound = int32(-1072824317)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.QueueNotFound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: キューがディレクトリ サービスに登録されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、キューを見つけられない場合、このエラーを返します。 これには、ディレクトリ サービスとメッセージ キューの名前空間に存在しないインターネット キューに登録されていないパブリック キューが含まれます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteMachineNotAvailable">
+      <MemberSignature Language="C#" Value="RemoteMachineNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode RemoteMachineNotAvailable = int32(-1072824215)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.RemoteMachineNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: リモート コンピューターは使用できません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResultBufferTooSmall">
+      <MemberSignature Language="C#" Value="ResultBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode ResultBufferTooSmall = int32(-1072824250)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.ResultBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定した結果バッファーが小さすぎます。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityDescriptorBufferTooSmall">
+      <MemberSignature Language="C#" Value="SecurityDescriptorBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SecurityDescriptorBufferTooSmall = int32(-1072824285)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SecurityDescriptorBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: MQGetQueueSecurity に渡されたバッファーのサイズが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、セキュリティ記述子の指定したセキュリティ バッファーが小さすぎる場合に、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SenderCertificateBufferTooSmall">
+      <MemberSignature Language="C#" Value="SenderCertificateBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SenderCertificateBufferTooSmall = int32(-1072824277)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SenderCertificateBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーの証明書プロパティに渡されたバッファーが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー証明書の詳細については、メッセージ クラスの System.Messaging.Message.SenderCertificate プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SenderIdBufferTooSmall">
+      <MemberSignature Language="C#" Value="SenderIdBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SenderIdBufferTooSmall = int32(-1072824286)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SenderIdBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ユーザーの id プロパティに渡されたバッファーが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、指定した送信者の id のバッファーが小さすぎる場合に、このエラーを返します。 送信者の識別子の詳細については、メッセージ クラスの System.Messaging.Message.SenderId プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceNotAvailable">
+      <MemberSignature Language="C#" Value="ServiceNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode ServiceNotAvailable = int32(-1072824309)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.ServiceNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: メッセージ キュー サービスは利用できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、アプリケーションがキュー マネージャーに接続できない場合に、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SharingViolation">
+      <MemberSignature Language="C#" Value="SharingViolation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SharingViolation = int32(-1072824311)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SharingViolation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 共有違反が発生します。 排他受信のため、キューが既に開いています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、アプリケーションが排他的読み取り権限を持つ既に開かれているキューを開くしようとしている場合、このエラーを返します。 専用キューからメッセージを受信の詳細については、次を参照してください。、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.DenySharedReceive%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureBufferTooSmall">
+      <MemberSignature Language="C#" Value="SignatureBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SignatureBufferTooSmall = int32(-1072824222)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SignatureBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 署名プロパティ用に渡されたバッファーが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名の詳細については、メッセージ クラスの DigitalSignature プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StaleHandle">
+      <MemberSignature Language="C#" Value="StaleHandle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode StaleHandle = int32(-1072824234)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.StaleHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: キュー マネージャーは、サービスが再開されました。 キュー ハンドルは、古い閉じる必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、指定されたハンドルは、キュー マネージャー サービスの以前のセッションで取得した場合、このエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SymmetricKeyBufferTooSmall">
+      <MemberSignature Language="C#" Value="SymmetricKeyBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode SymmetricKeyBufferTooSmall = int32(-1072824223)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.SymmetricKeyBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 対称キーのプロパティに対して渡されたバッファーが小さすぎます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対称キーの詳細については、メッセージ クラスの DestinationSymmetricKey プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionEnlist">
+      <MemberSignature Language="C#" Value="TransactionEnlist" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode TransactionEnlist = int32(-1072824232)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.TransactionEnlist" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: トランザクションを参加させることはできません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionImport">
+      <MemberSignature Language="C#" Value="TransactionImport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode TransactionImport = int32(-1072824242)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.TransactionImport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: トランザクションをインポートできません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionSequence">
+      <MemberSignature Language="C#" Value="TransactionSequence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode TransactionSequence = int32(-1072824239)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.TransactionSequence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: トランザクション操作のシーケンスが正しくありません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionUsage">
+      <MemberSignature Language="C#" Value="TransactionUsage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode TransactionUsage = int32(-1072824240)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.TransactionUsage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: トランザクションの使用法が正しくありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開くには、トランザクション内からの読み取りアクセス用にリモート キューしようとしましたかからのトランザクション内での非トランザクション キューからメッセージを読み取るしようとした場合、メッセージ キューはこのエラーを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnsupportedAccessMode">
+      <MemberSignature Language="C#" Value="UnsupportedAccessMode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode UnsupportedAccessMode = int32(-1072824251)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.UnsupportedAccessMode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定されたアクセス モードがサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 互換性がない場合、キューを開くときに設定されている無効な値や、アクセス モードと共有モード、アクセス モードが指定されている場合は、このエラーが指定されたメッセージ キューを返します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnsupportedFormatNameOperation">
+      <MemberSignature Language="C#" Value="UnsupportedFormatNameOperation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode UnsupportedFormatNameOperation = int32(-1072824288)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.UnsupportedFormatNameOperation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト。 指定された形式名の要求された操作はサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューは、指定された形式名の要求された操作がサポートされていない場合、このエラーを返します。 操作には、直接形式名を指定してメッセージを受信するキューを開こうとしてが含まれます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnsupportedOperation">
+      <MemberSignature Language="C#" Value="UnsupportedOperation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode UnsupportedOperation = int32(-1072824214)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.UnsupportedOperation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: ワークグループのコンピューターにインストールの操作はサポートされていません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UserBufferTooSmall">
+      <MemberSignature Language="C#" Value="UserBufferTooSmall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode UserBufferTooSmall = int32(-1072824280)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.UserBufferTooSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 返される情報を保持するためにユーザー バッファーが小さすぎるために、要求が失敗しました。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WksCantServeClient">
+      <MemberSignature Language="C#" Value="WksCantServeClient" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode WksCantServeClient = int32(-1072824218)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.WksCantServeClient" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: メッセージ キューに依存しないクライアントは、メッセージ キューに依存するクライアントを使用できません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNotAllowed">
+      <MemberSignature Language="C#" Value="WriteNotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageQueueErrorCode WriteNotAllowed = int32(-1072824219)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageQueueErrorCode.WriteNotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキスト: 別の MQIS サーバーがインストールされています。この時点で、データベースを操作することはできませんを記述します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

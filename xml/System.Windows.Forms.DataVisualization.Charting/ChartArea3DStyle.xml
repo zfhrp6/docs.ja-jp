@@ -1,0 +1,442 @@
+<Type Name="ChartArea3DStyle" FullName="System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle">
+  <TypeSignature Language="C#" Value="public class ChartArea3DStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartArea3DStyle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>3 次元 (3 D) グラフ領域の表示属性を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、3 D グラフ領域のスタイルを提供しを使用して公開される、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Area3DStyle%2A>プロパティです。  
+  
+ グラフ領域で 3D を有効にするのには、設定、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Enable3D%2A>プロパティを`true`です。 これにより、3 D グラフ エリアに描画されるすべてのデータ系列に適用します。  
+  
+ 設定して表示できるグラフ領域のアイソ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes%2A>プロパティを`true`、既定値です。 等角ビューはできない、回転の角度に表示されている可能性があります実際、垂直および水平方向の軸の周りの回転の角度と一致しないため、実際には 3D です。 使用して実際の角度が制御されます、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Rotation%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Inclination%2A>プロパティ、それぞれします。  
+  
+ 等角プロジェクションの詳細については、の「解説」セクションを参照してください、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes%2A>プロパティです。  
+  
+ このクラスを使用することもできます。  
+  
+-   クラスターのバーと列のデータ系列を使用してグラフ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsClustered%2A>プロパティです。  
+  
+-   使用して光源の効果を制御、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.LightStyle%2A>プロパティです。  
+  
+-   使用してグラフ領域の壁面の幅を設定、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.WallWidth%2A>プロパティです。  
+  
+-   パースペクティブの時間を設定、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Perspective%2A>プロパティです。  
+  
+-   データ ポイントの深さを使用してデータ行の間の距離を制御、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointDepth%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointGapDepth%2A>プロパティ、それぞれします。  
+  
+-   グラフ領域を使用して、回転、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Inclination%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Rotation%2A>プロパティです。  
+  
+ 3D の点の座標を使用するを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Point3D>クラスです。  
+  
+ グラフを 3D を設定すると、次のグラフ機能が有効なしません。  
+  
+-   スケール区切り  
+  
+-   グラデーション  
+  
+-   スクロールとズーム  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChartArea3DStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChartArea3DStyle (System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.#ctor(System.Windows.Forms.DataVisualization.Charting.ChartArea)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="chartArea" Type="System.Windows.Forms.DataVisualization.Charting.ChartArea" />
+      </Parameters>
+      <Docs>
+        <param name="chartArea">A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />初期化に使用されるオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle" />クラスを使用して、<paramref name="chartArea" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enable3D">
+      <MemberSignature Language="C#" Value="public bool Enable3D { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enable3D" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Enable3D" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ領域の 3D のオンとオフを フラグを設定します。</summary>
+        <value>
+          <see langword="true" />グラフ領域を表示する 3D を使用する<see langword="false" />2D でグラフ領域が表示されている場合。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次元グラフ領域の表示を切り替えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inclination">
+      <MemberSignature Language="C#" Value="public int Inclination { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Inclination" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Inclination" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(30)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ領域の水平軸の周りの回転の角度を設定します。</summary>
+        <value><see langword="integer" /> 3D グラフ領域の水平軸の周りの回転の角度を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClustered">
+      <MemberSignature Language="C#" Value="public bool IsClustered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClustered" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsClustered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定するフラグかどうかのデータ系列の横棒グラフまたは縦棒グラフがクラスター化です。つまり、個別の行に沿って表示されます。</summary>
+        <value>
+          <see langword="true" />いるかどうかのデータ系列の横棒グラフまたは縦棒グラフがクラスター化です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRightAngleAxes">
+      <MemberSignature Language="C#" Value="public bool IsRightAngleAxes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRightAngleAxes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または等角投影を使用して、グラフ領域を表示するかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />アイソ; を使用して、グラフ領域に表示されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等角ビューはできない、回転の角度に表示されている可能性があります実際、垂直および水平方向の軸の周りの回転の角度と一致しないため、実際には 3D です。 使用して実際の角度が制御されます、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Rotation%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Inclination%2A>プロパティ、それぞれします。  
+  
+ アイソをに関して、次の点に注意してください。  
+  
+-   「現実の」3D ではありません。 つまり、軸の周りの回転の角度は、回転の角度に true を使用しません。  
+  
+-   3D グラフの一部の深さを表示するために最適です。  
+  
+-   アプリケーションでは、グラフを回転するエンドユーザーを許可している場合、回転は smooth されません。 この場合、等角ビューの使用は推奨されません。  
+  
+-   アイソ、パースペクティブはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LightStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LightStyle LightStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.LightStyle LightStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.LightStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Windows.Forms.DataVisualization.Charting.LightStyle), "Simplistic")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LightStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ領域の光源のスタイルを設定します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.DataVisualization.Charting.LightStyle" /> 3D グラフ領域の光源のスタイルを指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Perspective">
+      <MemberSignature Language="C#" Value="public int Perspective { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Perspective" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Perspective" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ領域の奥行きの割合を設定します。</summary>
+        <value><see langword="integer" /> 3D グラフ領域の奥行きの割合を表す値です。 許容範囲 0 ~ 100% は、既定値はゼロ (0) % です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 透視投影の平行線投影面と並列ではない任意のセットは、消失点に集約します。  
+  
+ 設定した場合、 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Perspective%2A> 、プロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes%2A>プロパティが自動的に設定する`false`これらのプロパティが相互に排他的であるため、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointDepth">
+      <MemberSignature Language="C#" Value="public int PointDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PointDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ エリアに表示されるデータ ポイントの深さを設定します。</summary>
+        <value><see langword="integer" />をデータ ポイントの深さを表す値です。 許容範囲は 0 ~ 1000% です。 既定値は、100% です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データ ポイントの深さを決定し、データ ポイントの幅の割合として表されます。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointDepth%2A>プロパティに適用できるの深さを横棒グラフ、縦棒、線、円グラフとスプライン グラフのデータ ポイントのみです。 その他のグラフの種類 (チャートのバブル チャート、およびポイントなど) をポイントの深度を「拡張」することはできませんのこのプロパティを設定する場合、データ ポイントの余分なスペースが予約されますが、その深さは向上しません。  
+  
+ 等角投影として設定して、グラフを表示することができます、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes%2A>プロパティを`true`、これは、既定値です。 これを表示するグラフによって、このプロパティで設定した割合個未満にするように見えますチェックポイントの深さとなります。  
+  
+ 行のデータ間のスペースを制御するには、使用、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointGapDepth%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointGapDepth">
+      <MemberSignature Language="C#" Value="public int PointGapDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PointGapDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointGapDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ領域内の行の系列間の距離を設定します。</summary>
+        <value><see langword="integer" /> 3D グラフ領域内でのデータ行 (つまり、データ系列) の間の距離を表す値です。 許容範囲 0 ~ 1000% であり、既定値は 100% です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データ系列に対応する行ごとに、データ行の間の距離を決定します。 測定単位は、1 つの行のデータ ポイント間の距離の割合として表されます。  
+  
+ 列または横棒を使用する列と横棒グラフの型の間のギャップを変更する、`PointWidth`カスタム プロパティには影響は、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointGapDepth%2A>プロパティの値。  
+  
+ 設定、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.IsRightAngleAxes%2A>プロパティを`true`(既定値)、アイソとしてグラフを表示します。 これを表示するグラフによって、このプロパティで設定した割合個未満にするように見えますポイントのギャップの深さとなります。  
+  
+ データ ポイントの深さを制御するには、使用、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.PointDepth%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public int Rotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(30)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ領域の垂直軸の周りの回転の角度を設定します。</summary>
+        <value><see langword="integer" /> 3D グラフ領域の垂直軸の周りの回転の角度を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WallWidth">
+      <MemberSignature Language="C#" Value="public int WallWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WallWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ChartArea3DStyle.WallWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(7)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D グラフ エリアに表示される壁面の幅を設定します。</summary>
+        <value><see langword="integer" /> (ピクセル単位) の 3D グラフ エリアに表示される壁面の幅を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは 3D グラフ領域に表示される (たとえば、背壁、側壁など) の壁面の幅を決定します。 許容範囲は、0 ~ 30 ピクセルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

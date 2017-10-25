@@ -1,0 +1,317 @@
+<Type Name="SoapTypeAttribute" FullName="System.Xml.Serialization.SoapTypeAttribute">
+  <TypeSignature Language="C#" Value="public class SoapTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって生成されたスキーマを制御、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスのインスタンスがシリアル化と、SOAP でエンコードされた XML とします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapTypeAttribute>を制御する属性のファミリに属しているクラスが、どのように<xref:System.Xml.Serialization.XmlSerializer>でエンコードされた SOAP XML としてオブジェクトを逆シリアル化またはシリアル化します。 結果の XML は、World Wide Web Consortium) (www.w3.org) ドキュメント、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」のセクション 5 に準拠します。 類似する属性の一覧については、次を参照してください。[でエンコードされた SOAP シリアル化を制御する属性](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)です。  
+  
+ エンコードされた SOAP メッセージとしてオブジェクトをシリアル化、構築、<xref:System.Xml.Serialization.XmlSerializer>を使用して、<xref:System.Xml.Serialization.XmlTypeMapping>で作成された、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapReflectionImporter>クラスです。  
+  
+ <xref:System.Xml.Serialization.SoapTypeAttribute>クラス宣言にのみ適用できます。  
+  
+ <xref:System.Xml.Serialization.SoapTypeAttribute.IncludeInSchema%2A>プロパティは、生成された XML ストリームの XML スキーマ ドキュメント (.xsd) の結果として得られる XML 要素の型が含まれているかどうかを決定します。 スキーマを表示するには、DLL ファイル、クラスをコンパイルします。 引数として生成されたファイルを渡す、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 ツールのインスタンスで、クラスがシリアル化されるときに生成される XML ストリームの XML スキーマの生成、<xref:System.Xml.Serialization.XmlSerializer>クラスです。  
+  
+ クラスがシリアル化されるときに生成される XML ストリームを別のスキーマ (.xsd) ファイルを記述する Xsd.exe と別の名前空間を設定します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>が適用されますが、クラス、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapTypeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapTypeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.SoapTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.Xml.Serialization.SoapTypeAttribute>型のシリアル化をオーバーライドする場合。 オブジェクトを割り当てる、<xref:System.Xml.Serialization.SoapAttributes.SoapType%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を追加し、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 参照してください、 <xref:System.Xml.Serialization.SoapAttributeOverrides> SOAP シリアル化のオーバーライドの詳細については、クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapTypeAttribute (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapTypeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">XML の名前を入力する、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスのインスタンスをシリアル化 (およびが認識、クラスのインスタンスを逆シリアル化する) 場合に生成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapTypeAttribute" />クラスし、XML 型の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.Xml.Serialization.SoapTypeAttribute>型のシリアル化をオーバーライドする場合。 オブジェクトを割り当てる、<xref:System.Xml.Serialization.SoapAttributes.SoapType%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を追加し、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 参照してください、 <xref:System.Xml.Serialization.SoapAttributeOverrides> SOAP シリアル化のオーバーライドの詳細については、クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapTypeAttribute (string typeName, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapTypeAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">XML の名前を入力する、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスのインスタンスをシリアル化 (およびが認識、クラスのインスタンスを逆シリアル化する) 場合に生成します。</param>
+        <param name="ns">型の XML 名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapTypeAttribute" />クラスし、型の XML 名前空間と名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.Xml.Serialization.SoapTypeAttribute>型のシリアル化をオーバーライドする場合。 オブジェクトを割り当てる、<xref:System.Xml.Serialization.SoapAttributes.SoapType%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を追加し、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 参照してください、 <xref:System.Xml.Serialization.SoapAttributeOverrides> SOAP シリアル化のオーバーライドの詳細については、クラスの概要です。  
+  
+ 設定した場合、 <xref:System.Xml.Serialization.SoapTypeAttribute.Namespace%2A> 1 種類以上の値 (異なる 2 つ以上のクラスに属性を適用する場合は、<xref:System.Xml.Serialization.SoapTypeAttribute.Namespace%2A>それぞれ 1 つの値)、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)種類ごとに個別のスキーマ ファイル (.xsd) が生成されます。 種類ごとに異なる名前空間を設定レンダリング種類ごと、他と異なるため、種類ごとに個別のエンティティとして書き出さ ために必要なためにです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeInSchema">
+      <MemberSignature Language="C#" Value="public bool IncludeInSchema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeInSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapTypeAttribute.IncludeInSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP でエンコードされた XML スキーマ ドキュメントで型を含めるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SOAP でエンコードされた XML スキーマ ドキュメントで型を含めるそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Xml.Serialization.SoapTypeAttribute>型を XML スキーマ ドキュメントに含めるかどうかを指定するクラスの宣言にします。 プロパティの設定の結果を表示する、<xref:System.Xml.Serialization.SoapTypeAttribute>クラス、実行可能ファイルまたは DLL としてアプリケーションをコンパイルする結果として得られるファイルを渡すと、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 このツールは、クラスがシリアル化されるときに生成される XML ストリームの種類の定義を含むスキーマを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapTypeAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 型の名前空間を設定します。</summary>
+        <value>XML 型の名前空間です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合、 <xref:System.Xml.Serialization.SoapTypeAttribute.Namespace%2A> 1 種類以上の値 (異なる 2 つ以上のクラスに属性を適用する場合は、<xref:System.Xml.Serialization.SoapTypeAttribute.Namespace%2A>それぞれ 1 つの値)、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)種類ごとに個別のスキーマ ファイル (.xsd) が生成されます。 種類ごとに異なる名前空間を設定レンダリング種類ごと、他と異なるため、種類ごとに個別のエンティティとして書き出さ ために必要なためにです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapTypeAttribute.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 型の名前を設定します。</summary>
+        <value>XML 型の名前。 既定では、クラス名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、 <xref:System.Xml.Serialization.SoapTypeAttribute> XML 型の名前空間、XML 型の名前と型を XML スキーマ ドキュメントに含めるかどうかを指定するためにクラスです。 設定の結果を表示する、<xref:System.Xml.Serialization.SoapTypeAttribute>オブジェクトのプロパティが、実行可能ファイルまたは DLL としてアプリケーションをコンパイルしを結果として得られるファイルを渡すと、 [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。 このツールは、型定義を含む、スキーマを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 <xref:System.Xml.Serialization.SoapTypeAttribute>を持つクラスに適用される、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> "SoapGroupType"に設定します。 <xref:System.Xml.Serialization.SoapTypeAttribute>はもオーバーライドされると、変更、 <xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A> 「チーム」にします。 両方のバージョンは、シリアル化、2 つのファイルに結果として得られる: SoapType.xml と SoapType2.xml です。  
+  
+ [!code-cpp[SoapTypeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapTypeAttribute Example/CPP/soaptype.cpp#1)]
+ [!code-csharp[SoapTypeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapTypeAttribute Example/CS/soaptype.cs#1)]
+ [!code-vb[SoapTypeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapTypeAttribute Example/VB/soaptype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

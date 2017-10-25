@@ -1,0 +1,852 @@
+<Type Name="HttpServerUtilityWrapper" FullName="System.Web.HttpServerUtilityWrapper">
+  <TypeSignature Language="C#" Value="public class HttpServerUtilityWrapper : System.Web.HttpServerUtilityBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpServerUtilityWrapper extends System.Web.HttpServerUtilityBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpServerUtilityWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpServerUtilityBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Abstractions, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web 要求を処理するヘルパー メソッドを提供する HTTP 組み込みのオブジェクトをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtilityWrapper>から派生したクラス、<xref:System.Web.HttpServerUtilityBase>のラッパーとして機能し、クラス、<xref:System.Web.HttpServerUtility>クラスです。 このクラスの機能を公開する、<xref:System.Web.HttpServerUtility>クラスも公開する際、<xref:System.Web.HttpServerUtilityBase>型です。 <xref:System.Web.HttpServerUtilityBase>クラスでは、元の実装を置換することができます、<xref:System.Web.HttpServerUtility>単体テストの外部の ASP.NET パイプラインを実行する場合などのカスタム実装を使用してアプリケーション内のクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpServerUtilityWrapper (System.Web.HttpServerUtility httpServerUtility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpServerUtility httpServerUtility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.#ctor(System.Web.HttpServerUtility)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="httpServerUtility" Type="System.Web.HttpServerUtility" />
+      </Parameters>
+      <Docs>
+        <param name="httpServerUtility">このラッパー クラスのアクセス提供先のオブジェクト。</param>
+        <summary><see cref="T:System.Web.HttpServerUtilityWrapper" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="httpServerUtility" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearError">
+      <MemberSignature Language="C#" Value="public override void ClearError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ClearError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.ClearError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最新の例外をクリアします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public override object CreateObject (string progID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object CreateObject(string progID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.CreateObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="progID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="progID">インスタンスを作成するオブジェクトのクラスまたは型。</param>
+        <summary>オブジェクトのプログラム ID (ProgID) で識別されている COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">オブジェクトのインスタンスを作成できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public override object CreateObject (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object CreateObject(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.CreateObject(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトを表す型。</param>
+        <summary>オブジェクトの型で識別される COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjectFromClsid">
+      <MemberSignature Language="C#" Value="public override object CreateObjectFromClsid (string clsid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object CreateObjectFromClsid(string clsid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.CreateObjectFromClsid(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">インスタンスを作成するオブジェクトのクラス ID。</param>
+        <summary>オブジェクトのクラス ID (CLSID) で識別された COM オブジェクトのサーバー インスタンスを作成します。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">オブジェクトのインスタンスを作成できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override void Execute (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Execute(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Execute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するハンドラーの URL。</param>
+        <summary>指定した仮想パスのハンドラーを現在のプロセスのコンテキストで実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> オブジェクトは <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> で指定されたハンドラーが実行されたときに、エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override void Execute (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Execute(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Execute(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するハンドラーの URL。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>指定した仮想パスのハンドラーを現在のプロセスのコンテキストで実行し、<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアするかどうかを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> オブジェクトは <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> で指定されたハンドラーが実行されたときに、エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override void Execute (string path, System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Execute(string path, class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Execute(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するハンドラーの URL。</param>
+        <param name="writer">出力をキャプチャするオブジェクト。</param>
+        <summary>指定した仮想パスのハンドラーを現在のプロセスのコンテキストで実行し、<see cref="T:System.IO.TextWriter" /> インスタンスを使用することで、実行したハンドラーからの出力をキャプチャします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `writer`パラメーターがへの参照によって渡される、<xref:System.Web.HttpServerUtilityWrapper.Execute%2A>メソッドです。 プロパティとメソッドを使用するメソッドの完了後にハンドラーからの出力を取得、する、`writer`オブジェクト。 例については、「<xref:System.Web.HttpServerUtilityWrapper.Execute%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> が <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> で指定されたハンドラーが実行されたときに、エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override void Execute (string path, System.IO.TextWriter writer, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Execute(string path, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Execute(System.String,System.IO.TextWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するハンドラーの URL。</param>
+        <param name="writer">出力をキャプチャするオブジェクト。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在の要求のコンテキスト内で指定された仮想パスのハンドラーを実行します。実行時には、ページからの出力をキャプチャするための <see cref="T:System.IO.TextWriter" /> インスタンスと、<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアするかどうかを示す値を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> インスタンスは <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="path" /> がピリオド (.) で終わっています。  
+  
+ \- または  
+  
+ <paramref name="path" /> で指定されたハンドラーが実行されたときに、エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は仮想パスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override void Execute (System.Web.IHttpHandler handler, System.IO.TextWriter writer, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Execute(class System.Web.IHttpHandler handler, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Execute(System.Web.IHttpHandler,System.IO.TextWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handler">現在の要求の転送先となるインターフェイスを実装する HTTP ハンドラー。</param>
+        <param name="writer">出力を取り込むオブジェクト。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>指定したハンドラーを現在のプロセスのコンテキストで実行し、<see cref="T:System.IO.TextWriter" /> インスタンスを使用することで、実行したハンドラーからの出力と、<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアするかどうかを指定する値を取り込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException"><paramref name="handler" /> で指定されたハンドラーが実行されたときに、エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="handler" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastError">
+      <MemberSignature Language="C#" Value="public override Exception GetLastError ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Exception GetLastError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.GetLastError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最新の例外を返します。</summary>
+        <returns>スローされた前回の例外。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public override string HtmlDecode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string HtmlDecode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.HtmlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <summary>HTML エンコードされた文字列をデコードし、デコードした文字列を返します。</summary>
+        <returns>デコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public override void HtmlDecode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void HtmlDecode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.HtmlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <param name="output">デコードされた文字列を格納するストリーム。</param>
+        <summary>HTML エンコードされた文字列をデコードし、結果をストリームに返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `output`パラメーターがへの参照によって渡される、<xref:System.Web.HttpServerUtilityWrapper.HtmlDecode%2A>メソッドです。 プロパティとメソッドを使用するメソッドの完了後にハンドラーからの出力を取得、する、`output`オブジェクト。 例については、「<xref:System.Web.HttpServerUtilityWrapper.HtmlDecode%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public override string HtmlEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string HtmlEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.HtmlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <summary>文字列を HTML エンコードし、エンコードされた文字列を返します。</summary>
+        <returns>HTML エンコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public override void HtmlEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void HtmlEncode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.HtmlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <param name="output">エンコードされた文字列を格納するストリーム。</param>
+        <summary>文字列を HTML エンコードし、その結果の出力を出力ストリームに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `output`パラメーターがへの参照によって渡される、<xref:System.Web.HttpServerUtilityWrapper.HtmlEncode%2A>メソッドです。 プロパティとメソッドを使用するメソッドの完了後にハンドラーからの出力を取得、する、`output`オブジェクト。 例については、「<xref:System.Web.HttpServerUtilityWrapper.HtmlEncode%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public override string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtilityWrapper.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーのコンピューター名を取得します。</summary>
+        <value>サーバー コンピューターの名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">コンピューター名が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MapPath">
+      <MemberSignature Language="C#" Value="public override string MapPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string MapPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.MapPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">物理パスを取得する仮想パス。</param>
+        <summary>Web サーバーの指定した仮想パスに対応する物理ファイル パスを返します。</summary>
+        <returns>対応する物理ファイル パス<paramref name="path" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> オブジェクトは <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptTimeout">
+      <MemberSignature Language="C#" Value="public override int ScriptTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScriptTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtilityWrapper.ScriptTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求タイムアウト値を秒単位で取得または設定します。</summary>
+        <value>要求のタイムアウト値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">現在の <see cref="T:System.Web.HttpContext" /> オブジェクトは <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムアウト期間は<see langword="null" />か、それ以外の場合、設定することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public override void Transfer (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Transfer(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Transfer(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するページまたはハンドラーの URL。</param>
+        <summary>現在のプロセスの実行を終了し、URL で指定されたページまたはハンドラーの実行を開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public override void Transfer (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Transfer(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Transfer(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するページまたはハンドラーの URL。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在のページの実行を終了し、指定された URL およびクリアするかどうかを示す値を使用して、別のページまたはハンドラーの実行を開始、<see cref="P:System.Web.HttpRequestBase.QueryString" />と<see cref="P:System.Web.HttpRequestBase.Form" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ApplicationException">現在のページ要求がコールバックです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transfer">
+      <MemberSignature Language="C#" Value="public override void Transfer (System.Web.IHttpHandler handler, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Transfer(class System.Web.IHttpHandler handler, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.Transfer(System.Web.IHttpHandler,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="handler">現在の要求の転送先 HTTP ハンドラー。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>現在のプロセスの実行を終了し、カスタム HTTP ハンドラーとをオフにするかどうかを示す値を使用して、新しい要求の実行を開始、<see cref="P:System.Web.HttpRequest.QueryString" />と<see cref="P:System.Web.HttpRequest.Form" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ApplicationException">現在のページ要求がコールバックです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public override void TransferRequest (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TransferRequest(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.TransferRequest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するページまたはハンドラーの URL。</param>
+        <summary>指定した URL のエンドポイントを非同期で実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public override void TransferRequest (string path, bool preserveForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TransferRequest(string path, bool preserveForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.TransferRequest(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するページの URL を指定します。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <summary>非同期的に指定された URL のエンドポイントを実行し、オフにするかどうかを指定します、<see cref="P:System.Web.HttpRequestBase.QueryString" />と<see cref="P:System.Web.HttpRequestBase.Form" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public override void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="path">実行するページまたはハンドラーの URL。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <param name="method">HTTP メソッド (<see langword="GET" />、<see langword="POST" />など) に新しい要求に対して使用します。 場合<see langword="null" />、元の要求の HTTP メソッドを使用します。</param>
+        <param name="headers">新しい要求の要求ヘッダーのコレクション。</param>
+        <summary>指定した HTTP メソッドおよびヘッダーを使用して、指定した URL のエンドポイントを非同期に実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求が必要です[!INCLUDE[iisver](~/includes/iisver-md.md)]統合モードで実行します。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferRequest">
+      <MemberSignature Language="C#" Value="public override void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers, bool preserveUser);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers, bool preserveUser) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveForm" Type="System.Boolean" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="headers" Type="System.Collections.Specialized.NameValueCollection" />
+        <Parameter Name="preserveUser" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">パス。</param>
+        <param name="preserveForm">
+          <see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションを保持する場合は、<see langword="true" />。<see cref="P:System.Web.HttpRequest.QueryString" /> コレクションおよび <see cref="P:System.Web.HttpRequest.Form" /> コレクションをクリアする場合は、<see langword="false" />。</param>
+        <param name="method">新しい要求で使用する HTTP メソッド。</param>
+        <param name="headers">A<see cref="T:System.Collections.Specialized.NameValueCollection" />新しい要求の要求ヘッダーを含むオブジェクトです。</param>
+        <param name="preserveUser">
+          <see langword="true" />ユーザーの id を保持するにはそれ以外の場合、<see langword="false" />です。 このメソッドの他のオーバー ロードを呼び出すと、メソッドのオーバー ロードをこの、 <c>preserveUser</c>パラメーターに設定<see langword="true" />です。</param>
+        <summary>フォームの値を保持し、ユーザー id を保持する、指定された HTTP メソッド、ヘッダー、パス、およびオプションを使用して指定された URL の非同期実行を実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">要求には、統合パイプライン モードが必要です。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</exception>
+        <exception cref="T:System.Web.HttpException">要求を処理するサーバーが使用できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecode">
+      <MemberSignature Language="C#" Value="public override string UrlDecode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UrlDecode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする文字列。</param>
+        <summary>URL エンコードされた文字列をデコードし、デコードした文字列を返します。</summary>
+        <returns>デコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecode">
+      <MemberSignature Language="C#" Value="public override void UrlDecode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UrlDecode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">デコードする HTML 文字列。</param>
+        <param name="output">デコードされた文字列を格納するストリーム。</param>
+        <summary>URL でエンコードされた文字列をデコードし、結果の出力をストリームに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `output`パラメーターがへの参照によって渡される、<xref:System.Web.HttpServerUtilityWrapper.UrlDecode%2A>メソッドです。 プロパティとメソッドを使用するメソッドの完了後にハンドラーからの出力を取得、する、`output`オブジェクト。 例については、「<xref:System.Web.HttpServerUtility.HtmlDecode%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="public override string UrlEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UrlEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">URL エンコードするテキスト。</param>
+        <summary>文字列を URL エンコードし、エンコードされた文字列を返します。</summary>
+        <returns>URL エンコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="public override void UrlEncode (string s, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UrlEncode(string s, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="s">エンコードする文字列。</param>
+        <param name="output">エンコードされた文字列を格納するストリーム。</param>
+        <summary>文字列を URL エンコードし、その結果の出力をストリームに送信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlPathEncode">
+      <MemberSignature Language="C#" Value="public override string UrlPathEncode (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UrlPathEncode(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlPathEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">URL エンコードする文字列。</param>
+        <summary>URL 文字列のパス セクションを URL エンコードします。</summary>
+        <returns>URL エンコードされたテキスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlTokenDecode">
+      <MemberSignature Language="C#" Value="public override byte[] UrlTokenDecode (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] UrlTokenDecode(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlTokenDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="input">デコードする URL 文字列トークン。</param>
+        <summary>Base64 形式の文字を使用して、URL 文字列トークンを等価なバイト配列にデコードします。</summary>
+        <returns>デコードされた URL 文字列トークンを含むバイト配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlTokenEncode">
+      <MemberSignature Language="C#" Value="public override string UrlTokenEncode (byte[] input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UrlTokenEncode(unsigned int8[] input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtilityWrapper.UrlTokenEncode(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="input">エンコードするバイト配列。</param>
+        <summary>Base64 形式の文字を使用して、バイト配列を等価の文字列表現にエンコードします。この文字列表現を URL での伝送に使用できます。</summary>
+        <returns>場合に、エンコードされた配列を格納する文字列の長さ<paramref name="input" />が 1 より大きい場合、空の文字列 ("") です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

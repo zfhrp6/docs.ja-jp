@@ -1,0 +1,216 @@
+<Type Name="RoutedEvent" FullName="System.Windows.RoutedEvent">
+  <TypeSignature Language="C#" Value="public sealed class RoutedEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoutedEvent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RoutedEvent" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Markup.RoutedEventConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer("System.Windows.Markup.RoutedEventValueSerializer, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルーティング イベントを表して識別し、その特性を宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに含まれる、 <xref:System.Windows.RoutedEvent.Name%2A>、 <xref:System.Windows.RoutedEvent.RoutingStrategy%2A>、 <xref:System.Windows.RoutedEvent.HandlerType%2A>、および<xref:System.Windows.RoutedEvent.OwnerType%2A>プロパティです。 Null 値を持つこれらのどのメンバーことができます。  
+  
+ このクラスの値を提供するためのものが排他的 XAML の使用方法には、<xref:System.Windows.EventTrigger.RoutedEvent%2A>のプロパティ、 <xref:System.Windows.EventTrigger> (または派生クラス)、または、<xref:System.Windows.EventSetter.Event%2A>のプロパティ、 <xref:System.Windows.EventSetter> (またはその派生クラス)。 詳細については<xref:System.Windows.EventTrigger>、 <xref:System.Windows.EventSetter>、これらのクラスの XAML の使用方法を参照してください、[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+<a name="xamlAttributeUsage_RoutedEvent"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="eventName"/>  
+- or -  
+<object property="type.eventName"/>  
+  
+```  
+  
+<a name="xamlValues_RoutedEvent"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *eventName*  
+ 修飾されていないイベント名と同じ、<xref:System.Windows.RoutedEvent.Name%2A>のプロパティ、<xref:System.Windows.RoutedEvent>フィールドに、実際のメンバー名ではなく、<xref:System.Windows.RoutedEvent>型内で識別子フィールドです。 限定なく*eventName*されている型であるイベントに名前を<xref:System.Windows.Style.TargetType%2A>の現在のスタイルを含む、<xref:System.Windows.EventSetter>または<xref:System.Windows.EventTrigger>です。  
+  
+ *type*  
+ イベント名を修飾するために使用する型。 場合は、プレフィックスなしで提供*型*は既定の XAML 名前空間内にある型にする必要は既存の CLR 型にマップすることができます。 カスタム イベント、または既定の XAML 名前空間の文字列は、外部型のイベントでは*型*マップされている XAML 名前空間のプレフィックスを含めることができます。 その XAML 名前空間は、バッキング CLR の型にマップできる XAML の型を含める必要があり、その CLR 型が目的のルーティング イベントの識別子を定義する必要があります。 XAML 名前空間のマッピングの詳細については、「 [XAML 名前空間と WPF XAML 向け Namespace マッピング](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddOwner">
+      <MemberSignature Language="C#" Value="public System.Windows.RoutedEvent AddOwner (Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.RoutedEvent AddOwner(class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEvent.AddOwner(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ownerType">ルーティング イベントを追加する位置の型。</param>
+        <summary>によって表されるルーティング イベントを別の所有者の種類を関連付けます、<see cref="T:System.Windows.RoutedEvent" />インスタンスし、イベントとその処理のルーティングを有効にします。</summary>
+        <returns>イベントの識別子フィールドです。 この戻り値は、フィールドを設定するパブリック静的な読み取り専用で所有している型でルーティング イベントの形式の識別子を格納するために使用する必要があります。 このフィールドはユーザー コードは、ルーティング イベントを使用する場合のインスタンス ハンドラーをアタッチするためにフィールドを参照する必要がありますので、通常、パブリック アクセスの定義、<see cref="M:System.Windows.UIElement.AddHandler(System.Windows.RoutedEvent,System.Delegate,System.Boolean)" />ユーティリティ メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 所有者の型がによって内部的に使用イベントを解決するときに名前。  
+  
+   
+  
+## Examples  
+ 次の例では、別のクラスで定義されたイベントの別の所有者として、現在のクラスを追加します。 ここでは、 `AnotherEditContainer` 、現在のクラスは、および`EditStateChangedEvent`<xref:System.Windows.RoutedEvent>フィールドは、そのクラスのメンバーとして定義されます。 `MyEditContainer`クラスには最初に、同じ名前を登録する、イベントが定義されている`EditStateChangedEvent`識別子。  
+  
+ [!code-csharp[ClassHandling#RoutedEventAddOwner](~/samples/snippets/csharp/VS_Snippets_Wpf/ClassHandling/CSharp/SDKSampleLibrary/class1.cs#routedeventaddowner)]
+ [!code-vb[ClassHandling#RoutedEventAddOwner](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#routedeventaddowner)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerType">
+      <MemberSignature Language="C#" Value="public Type HandlerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type HandlerType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEvent.HandlerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントのハンドラーの型を取得します。</summary>
+        <value>ルーティング イベントのハンドラーの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーの型は、これによって表されるイベントをリッスンするハンドラーを実装するときに使用されるイベント ハンドラー デリゲート<xref:System.Windows.RoutedEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEvent.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントの識別名を取得します。</summary>
+        <value>ルーティング イベントの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの名前は、各所有者型内で一意である必要がありますが、グローバルに一意である必要はありません。  
+  
+ このプロパティの値の発生元、<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>を定義するメソッド、<xref:System.Windows.RoutedEvent>です。 値では具体的には、<xref:System.Windows.RoutedEvent.Name%2A>は、`name`に渡されたパラメーター値<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerType">
+      <MemberSignature Language="C#" Value="public Type OwnerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type OwnerType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEvent.OwnerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントの登録済み所有者の種類を取得します。</summary>
+        <value>ルーティング イベントの所有者の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は、どのオブジェクト型でも、必ずしもこれらに限定されませんを指定できます<xref:System.Windows.DependencyObject>です。 追加された所有者のルーティング イベントの場合は、このプロパティは、最初に宣言された所有者を返します。  
+  
+ このプロパティの値の発生元、<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>を定義するメソッド、<xref:System.Windows.RoutedEvent>です。 値では具体的には、<xref:System.Windows.RoutedEvent.OwnerType%2A>は、`ownerType`に渡されたパラメーター値<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoutingStrategy">
+      <MemberSignature Language="C#" Value="public System.Windows.RoutingStrategy RoutingStrategy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.RoutingStrategy RoutingStrategy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RoutedEvent.RoutingStrategy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントのルーティング方法を取得します。</summary>
+        <value>列挙値の 1 つ。 既定値は列挙体の既定<see cref="F:System.Windows.RoutingStrategy.Bubble" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 規則では、トンネルのルーティング イベントには名のプレフィックス「プレビュー」と定義されている、関連付けられているバブル イベントがあります。 あることがトンネル バージョンのみと一致するバブル バージョンではなくまれな場合があります。 詳細については、次を参照してください。[する方法: カスタム ルーティング イベントを作成する](~/docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)です。  
+  
+ このプロパティの値の発生元、<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>を定義するメソッド、<xref:System.Windows.RoutedEvent>です。 値では具体的には、<xref:System.Windows.RoutedEvent.RoutingStrategy%2A>は、`routingStrategy`に渡されたパラメーター値<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RoutedEvent.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.RoutedEvent" />です。</summary>
+        <returns>によって返される値と同一では、このオブジェクトの文字列表現<see cref="P:System.Windows.RoutedEvent.Name" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

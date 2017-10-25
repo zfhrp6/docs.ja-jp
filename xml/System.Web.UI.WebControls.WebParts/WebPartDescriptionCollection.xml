@@ -1,0 +1,232 @@
+<Type Name="WebPartDescriptionCollection" FullName="System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection">
+  <TypeSignature Language="C#" Value="public sealed class WebPartDescriptionCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartDescriptionCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションから成る<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />オブジェクトのカタログで使用できる<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>クラスは、さまざまなによって作成<xref:System.Web.UI.WebControls.WebParts.CatalogPart>の実装内のコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッドです。 各<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールに含まれている、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトを作成します。 このオブジェクトは、に関する基本的な情報を管理、 <xref:System.Web.UI.WebControls.WebParts.WebPart> ID、タイトル、その説明、および関連付けられているアイコンへのパスを含むコントロールです。 さまざまな<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで使用できる、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>を表示するオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>のインスタンスを作成することがなく、カタログ内のコントロールの情報、<xref:System.Web.UI.WebControls.WebParts.WebPart>自体を制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>クラスは、Web パーツ コントロール セットのすべてのコレクションを維持するためにによって内部的に使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>カタログで使用されるオブジェクト。 <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>ページは、カタログの表示モードの場合にのみ、コレクションを使用します。 ときに、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールを表示している、ループ、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>それぞれから情報を追加するコレクション<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>カタログを表示するオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartDescriptionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空の新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.%23ctor%2A>を空のコレクションを作成するコンス トラクターを使用することができます。 たとえば、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールは、空、作成<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>オブジェクトのかどうかは、インポートされた記述ファイルのコンテンツ`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartDescriptionCollection (System.Collections.ICollection webPartDescriptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection webPartDescriptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPartDescriptions" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="webPartDescriptions">コレクション<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />に対応するオブジェクト、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カタログ内のコントロールです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />オブジェクトを渡すことによって、<see cref="T:System.Collections.ICollection" />のコレクション<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.%23ctor%28System.Collections.ICollection%29>コンス トラクターを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッドの実装は、さまざまな内で<xref:System.Web.UI.WebControls.WebParts.CatalogPart>のコレクションを作成するコントロール<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="webPartDescriptions" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">メンバー<paramref name="webPartDescriptions" />は<see langword="null" />  
+  
+ または  
+  
+ メンバー<paramref name="webPartDescriptions" />型のオブジェクトではありません<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />  
+  
+ または  
+  
+ メンバー<paramref name="webPartDescriptions" />重複<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDescription.ID" />プロパティ</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.WebPartDescription value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.WebPartDescription value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Contains(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPartDescription" />
+      </Parameters>
+      <Docs>
+        <param name="value">特定の<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />します。</param>
+        <summary>コレクション内の特定のコントロールが存在するかどうかを示す値を返します。</summary>
+        <returns>ブール値を示すかどうか、特定<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />内に存在する、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Contains%2A>メソッドでは、特定するかどうかを確認できます。<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトの一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.WebPartDescription[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.WebPartDescription[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.CopyTo(System.Web.UI.WebControls.WebParts.WebPartDescription[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.WebPartDescription[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コピーされたコレクションを格納するオブジェクト。</param>
+        <param name="index">コレクションの内容を格納する配列内の開始点です。</param>
+        <summary>コレクションの配列にコピーします<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.CopyTo%2A>メソッドは、含めることができるカスタムの配列を構築する場合に便利です、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.WebPartDescription value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.WebPartDescription value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.IndexOf(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPartDescription" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コレクションのメンバーであります。</param>
+        <summary>コレクションの特定のメンバーの位置を返します。</summary>
+        <returns>コレクション内の特定のオブジェクトの位置を示す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.IndexOf%2A>メソッドが複数ある場合に役立ちます。<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト、およびするが、他と比較した 1 つのオブジェクトの序数位置を知る必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartDescription this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartDescription Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コレクション。</param>
+        <summary>コレクション内のインデックスに基づいてコレクションのメンバーを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Item%2A>インデクサー アクセスできるように、基になる<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>インデックスによってコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartDescription this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartDescription Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">特定の一意の識別子として使用される文字列<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コレクション。</param>
+        <summary>一意の文字列識別子に基づくコレクションのメンバーを取得します。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />ID を持つコレクション内の値に等しい<paramref name="id" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection.Item%2A>インデクサーでは、アクセスすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection>に従って一意の識別子のコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,52 @@
+<Type Name="IsExplicitlyDereferenced" FullName="System.Runtime.CompilerServices.IsExplicitlyDereferenced">
+  <TypeSignature Language="C#" Value="public static class IsExplicitlyDereferenced" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit IsExplicitlyDereferenced extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.IsExplicitlyDereferenced" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.CompilerServices.VisualC</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マネージ ポインターが、メソッド シグネチャ内のポインター パラメーターを表すことを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C++ では、マネージ ポインターおよびマネージ参照メタデータに出力としてのポインター。  メタデータに 2 つの型を区別するためには、Microsoft C コンパイラは、マネージ ポインターをこの修飾子を適用します。  マネージ参照型の修飾子は出力されません。  コンパイラは、メタデータ スコープからメソッドをインポートするときに正しい呼び出し構文を知っている必要があります。  <xref:System.Runtime.CompilerServices.IsExplicitlyDereferenced>クラスとそのパートナー、<xref:System.Runtime.CompilerServices.IsImplicitlyDereferenced>クラス、ポインター パラメーターからの参照パラメーターのあいまいさを解消します。  
+  
+ コンパイラは、ジャストイン タイム (JIT) コンパイラが既定の動作が適切ではない場合に、値を処理する方法を変更するメタデータ内のカスタム修飾子を生成します。  JIT コンパイラには、カスタム修飾子が検出されると、修飾子を指定する方法で値を処理します。  コンパイラは、メソッド、パラメーターにカスタム修飾子を適用し、値を返します。  JIT コンパイラでは、必須の修飾子に応答する必要がありますが、オプションの修飾子を無視することができます。  
+  
+ 次の手法のいずれかを使用してメタデータにカスタム修飾子を出力することができます。  
+  
+-   内のメソッドを使用して、<xref:System.Reflection.Emit.TypeBuilder>などクラス<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A>、 <xref:System.Reflection.Emit.TypeBuilder.DefineField%2A>、 <xref:System.Reflection.Emit.TypeBuilder.DefineConstructor%2A>、および<xref:System.Reflection.Emit.TypeBuilder.DefineProperty%2A>です。  
+  
+-   呼び出しを含む Microsoft intermediate language (MSIL) の命令ファイルを生成する`modopt`と`modreq`を使用してファイルをまとめることと、 [Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。  
+  
+-   アンマネージ リフレクション API を使用します。  
+  
+   
+  
+## Examples  
+ 次の例で出力する方法、<xref:System.Runtime.CompilerServices.IsExplicitlyDereferenced>リフレクションを使用してアセンブリにオブジェクト。  
+  
+ [!code-cpp[Runtime.CompilerServices.IsExplicitlyDereferenced#1](~/samples/snippets/cpp/VS_Snippets_CLR/Runtime.CompilerServices.IsExplicitlyDereferenced/cpp/sample.cpp#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

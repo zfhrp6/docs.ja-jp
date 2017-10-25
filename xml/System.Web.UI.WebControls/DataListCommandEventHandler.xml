@@ -1,0 +1,55 @@
+<Type Name="DataListCommandEventHandler" FullName="System.Web.UI.WebControls.DataListCommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataListCommandEventHandler(object source, DataListCommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataListCommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataListCommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="source" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.DataListCommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="source">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DataListCommandEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.Web.UI.WebControls.DataList.CancelCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.DeleteCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.EditCommand" />、 <see cref="E:System.Web.UI.WebControls.DataList.ItemCommand" />、および<see cref="E:System.Web.UI.WebControls.DataList.UpdateCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataList.CancelCommand>イベントが発生したときに、`Cancel`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.DeleteCommand>イベントが発生したときに、`Delete`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.EditCommand>イベントが発生したときに、`Edit`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataList.ItemCommand>イベント内の項目のいずれかのボタンをクリックしたときに発生、<xref:System.Web.UI.WebControls.DataList>コントロールをクリックします。 これにより、プログラムによって特定のコマンド ボタンがクリックされたときのテストし、適切な操作を実行することができます。 このイベントは通常のカスタム コマンド ボタンの処理に使用、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataList.UpdateCommand>イベントが発生したときに、`Update`ボタン内の項目を<xref:System.Web.UI.WebControls.DataList>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataListCommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例では、イベントのハンドラーを定義する方法、 <xref:System.Web.UI.WebControls.DataList.EditCommand>、 <xref:System.Web.UI.WebControls.DataList.UpdateCommand>、<xref:System.Web.UI.WebControls.DataList.CancelCommand>と<xref:System.Web.UI.WebControls.DataList.DeleteCommand>のイベント、<xref:System.Web.UI.WebControls.DataList>コントロール。 この例で指定イベント ハンドラーは、宣言的にコマンドの各プロパティのイベント ハンドラーを設定、<xref:System.Web.UI.WebControls.DataList>コントロール。  
+  
+ [!code-aspx-csharp[DataListEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit/CS/datalisteditcs.aspx#1)]
+ [!code-aspx-vb[DataListEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit/VB/datalisteditvb.aspx#1)]  
+  
+ 次のコード例は、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法を示します、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[DataListEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListEdit2/CS/datalistedit2cs.aspx#1)]
+ [!code-aspx-vb[DataListEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListEdit2/VB/datalistedit2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

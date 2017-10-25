@@ -1,0 +1,34 @@
+<Type Name="OrderedEnumerableRowCollection&lt;TRow&gt;" FullName="System.Data.OrderedEnumerableRowCollection&lt;TRow&gt;">
+  <TypeSignature Language="C#" Value="public sealed class OrderedEnumerableRowCollection&lt;TRow&gt; : System.Data.EnumerableRowCollection&lt;TRow&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OrderedEnumerableRowCollection`1&lt;TRow&gt; extends System.Data.EnumerableRowCollection`1&lt;!TRow&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OrderedEnumerableRowCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TRow" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.EnumerableRowCollection&lt;TRow&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TRow">TRow</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TRow">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+    <summary>この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。 クエリから返される順序付けされた <see cref="T:System.Data.DataRow" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OrderedEnumerableRowCollection%601>使用して、LINQ to を行の順序付けられたシーケンスを返すデータセット クエリの結果を格納します。 これは、<xref:System.Data.EnumerableRowCollection%601>発信元のクエリの LINQ 演算子の呼び出しの状態を保持して、この状態は、述語と並べ替えのいずれかの式を構築するために使用される後続<xref:System.Data.DataView>です。  
+  
+ <xref:System.Data.OrderedEnumerableRowCollection%601>直接インスタンス化できないため、このクラスのパブリック コンス トラクターはありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

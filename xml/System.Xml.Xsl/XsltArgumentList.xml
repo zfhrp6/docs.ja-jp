@@ -1,0 +1,405 @@
+<Type Name="XsltArgumentList" FullName="System.Xml.Xsl.XsltArgumentList">
+  <TypeSignature Language="C#" Value="public class XsltArgumentList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XsltArgumentList extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XsltArgumentList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XSLT パラメーターまたは拡張オブジェクトのいずれかである引数の変数の数が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。 パラメーターと拡張オブジェクトをスタイル シート内から呼び出すことができます。  
+  
+ パラメーターとオブジェクトが追加されたとき、 <xref:System.Xml.Xsl.XsltArgumentList>、それぞれで名前空間の修飾名と名前空間 URI に関連付けられています。  
+  
+ などを使用して、埋め込みスクリプトではなく、オブジェクトを渡すことの利点は、次のとおり`<msxsl:script>`:  
+  
+-   クラスをより効果的にカプセル化および再利用できます。  
+  
+-   スタイル シートを小さくより簡単に保持することを許可します。  
+  
+-   ノード フラグメントを渡すことをサポートしています (を通じて、 <xref:System.Xml.XPath.XPathNavigator>) スタイル シートにします。  
+  
+ 使用しての詳細については、<xref:System.Xml.Xsl.XsltArgumentList>を参照してください[XSLT 拡張オブジェクト](~/docs/standard/data/xml/xslt-extension-objects.md)と[XSLT パラメーター](~/docs/standard/data/xml/xslt-parameters.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsltArgumentList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを実装して、<see cref="T:System.Xml.Xsl.XsltArgumentList" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddExtensionObject">
+      <MemberSignature Language="C#" Value="public void AddExtensionObject (string namespaceUri, object extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddExtensionObject(string namespaceUri, object extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.AddExtensionObject(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceUri" Type="System.String" />
+        <Parameter Name="extension" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceUri">名前空間は、オブジェクトに関連付ける URI であります。 既定の名前空間を使用するには、空の文字列を指定します。</param>
+        <param name="extension">リストに追加するオブジェクト。</param>
+        <summary>新しいオブジェクトを追加、<see cref="T:System.Xml.Xsl.XsltArgumentList" />名前空間 URI に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `params`キーワードで渡されるパラメーターの数に制限できますが、現在サポートされていません。 XSLT スタイル シートで定義されているメソッドを利用する、`params`キーワードが正しく機能しません。 詳細については、次を参照してください。 [params](~/docs/csharp/language-reference/keywords/params.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、スタイル シートは、書籍の価格を変換するのに XSLT 拡張オブジェクトを使用します。  
+  
+ [!code-csharp[XsltArgumentList.AddExtensionObject#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltArgumentList.AddExtensionObject/CS/addextobj.cs#1)]
+ [!code-vb[XsltArgumentList.AddExtensionObject#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltArgumentList.AddExtensionObject/VB/addextobj.vb#1)]  
+  
+ 例では、入力として次のデータ ファイルを使用します。  
+  
+ `books.xml`  
+  
+ [!code-xml[XsltArgumentList.AddExtensionObject#2](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddExtensionObject/XML/books.xml#2)]  
+  
+ `prices.xsl`  
+  
+ [!code-xml[XsltArgumentList.AddExtensionObject#3](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddExtensionObject/XML/prices.xsl#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="namespaceUri" />か<see langword="null" />または http://www.w3.org/1999/XSL/Transform  
+  
+ <paramref name="namespaceUri" />既に関連付けられている拡張オブジェクト。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、このメソッドを呼び出すための十分なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParam">
+      <MemberSignature Language="C#" Value="public void AddParam (string name, string namespaceUri, object parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddParam(string name, string namespaceUri, object parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.AddParam(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+        <Parameter Name="parameter" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターに関連付ける名前。</param>
+        <param name="namespaceUri">名前空間は、パラメーターに関連付ける URI であります。 既定の名前空間を使用するには、空の文字列を指定します。</param>
+        <param name="parameter">パラメーターの値または一覧に追加するオブジェクト。</param>
+        <summary>パラメーターを追加、<see cref="T:System.Xml.Xsl.XsltArgumentList" />名前空間の修飾名に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parameter` W3C 型に対応する必要があります。 次の表に、W3C 型、XPath、または XSLT、および corresponding.NET クラスです。  
+  
+|W3C 型|Equivalent.NET クラス (型)|  
+|--------------|-----------------------------------|  
+|`String`(XPath)|<xref:System.String>|  
+|`Boolean`(XPath)|<xref:System.Boolean>|  
+|`Number`(XPath)|<xref:System.Double>|  
+|`Result Tree Fragment`(XSLT)|<xref:System.Xml.XPath.XPathNavigator>|  
+|`Node Set`(XPath)|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> `XPathNavigator[]`|  
+|`Node`* (XPath)|<xref:System.Xml.XPath.XPathNavigator>|  
+  
+ * これは単一のノードを含むノード セットに相当します。  
+  
+ スタイル シート内で呼び出されているパラメーター オブジェクトが、上記のいずれかでない場合は、次の規則に従って変換されます。  
+  
+-   CLR 数値型は <xref:System.Double> に変換されます。  
+  
+-   <xref:System.DateTime> 型は <xref:System.String> に変換されます。  
+  
+-   <xref:System.Xml.XPath.IXPathNavigable> 型は <xref:System.Xml.XPath.XPathNavigator> に変換されます。 `XPathNavigator[]`変換されます<xref:System.Xml.XPath.XPathNodeIterator>です。  
+  
+ その他の型はエラーになります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>メソッドを現在の日付と時刻を表すパラメーターを作成します。  
+  
+ [!code-csharp[XsltArgumentList.AddParam#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltArgumentList.AddParam/CS/addparam.cs#1)]
+ [!code-vb[XsltArgumentList.AddParam#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltArgumentList.AddParam/VB/addparam.vb#1)]  
+  
+ 例では、入力として、次の 2 つのデータ ファイルを使用します。  
+  
+ `order.xml`  
+  
+ [!code-xml[XsltArgumentList.AddParam#2](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddParam/XML/order.xml#2)]  
+  
+ `order.xsl`  
+  
+ [!code-xml[XsltArgumentList.AddParam#3](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddParam/XML/order.xsl#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="namespaceUri" />か<see langword="null" />または http://www.w3.org/1999/XSL/Transform です。  
+  
+ <paramref name="name" /> W3C XML 仕様に従って有効な名前ではありません。  
+  
+ <paramref name="namespaceUri" />既に関連付けられているパラメーターがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのパラメーターとから拡張オブジェクトを削除、<see cref="T:System.Xml.Xsl.XsltArgumentList" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtensionObject">
+      <MemberSignature Language="C#" Value="public object GetExtensionObject (string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetExtensionObject(string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.GetExtensionObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceUri">名前空間は、オブジェクトの URI であります。</param>
+        <summary>指定した名前空間に関連付けられているオブジェクトを取得します。</summary>
+        <returns>名前空間 URI オブジェクトまたは<see langword="null" />が見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParam">
+      <MemberSignature Language="C#" Value="public object GetParam (string name, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetParam(string name, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.GetParam(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />渡された名前が有効なローカル名であることを確認するチェックしませんただし、名前になることはできません<see langword="null" />です。</param>
+        <param name="namespaceUri">名前空間は、パラメーターに関連付けられている URI であります。</param>
+        <summary>名前空間の修飾名に関連付けられているパラメーターを取得します。</summary>
+        <returns>パラメーター オブジェクトまたは<see langword="null" />が見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveExtensionObject">
+      <MemberSignature Language="C#" Value="public object RemoveExtensionObject (string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object RemoveExtensionObject(string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.RemoveExtensionObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceUri">名前空間 URI は、削除するオブジェクトに関連付けられています。</param>
+        <summary>名前空間 URI を持つオブジェクトを削除から、<see cref="T:System.Xml.Xsl.XsltArgumentList" />です。</summary>
+        <returns>名前空間 URI を持つオブジェクトまたは<see langword="null" />が見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveParam">
+      <MemberSignature Language="C#" Value="public object RemoveParam (string name, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object RemoveParam(string name, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltArgumentList.RemoveParam(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するパラメーターの名前。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />渡された名前が有効なローカル名であることを確認するチェックしませんただし、名前になることはできません<see langword="null" />です。</param>
+        <param name="namespaceUri">名前空間 URI パラメーターを削除します。</param>
+        <summary>パラメーターを削除、<see cref="T:System.Xml.Xsl.XsltArgumentList" />です。</summary>
+        <returns>パラメーター オブジェクトまたは<see langword="null" />が見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XsltMessageEncountered">
+      <MemberSignature Language="C#" Value="public event System.Xml.Xsl.XsltMessageEncounteredEventHandler XsltMessageEncountered;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Xsl.XsltMessageEncounteredEventHandler XsltMessageEncountered" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.XsltMessageEncounteredEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージがにより、スタイル シートで指定されたときに発生、 <c>xsl:message</c>要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントが登録されていない場合のすべてのメッセージは標準出力にパイプします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

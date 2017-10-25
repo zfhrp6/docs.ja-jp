@@ -1,0 +1,164 @@
+<Type Name="HtmlGenericControl" FullName="System.Web.UI.HtmlControls.HtmlGenericControl">
+  <TypeSignature Language="C#" Value="public class HtmlGenericControl : System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlGenericControl extends System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlGenericControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlContainerControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ConstructorNeedsTag(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定の .NET Framework クラスで表されていない、すべての HTML サーバー コントロール要素に対して、メソッド、プロパティ、イベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して、直接など、.NET Framework クラスによって表される HTML サーバー コントロール要素を表す`<span>`、 `<div>`、 `<body>`、または`<font>`です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlGenericControl>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlGenericControl.%23ctor%2A>コンス トラクターです。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)と[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlGenericControl>を表すクラス、`<body>`要素。  
+  
+ [!code-aspx-csharp[Classic HtmlGenericControl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlGenericControl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlGenericControl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlGenericControl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlGenericControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlGenericControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.HtmlControls.HtmlGenericControl" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlGenericControl>クラスの既定値を使用します。 サーバー側を動的に作成する、一般は使用`<span>`要素。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlGenericControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`TagName`|"Span"リテラル文字列です。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlGenericControl>クラスの既定のコンス トラクターを使用します。  
+  
+ [!code-aspx-csharp[HtmlGenericControlDefaultConstructor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlGenericControlDefaultConstructor/CS/htmlgenericcontrolconstructorcs.aspx#1)]
+ [!code-aspx-vb[HtmlGenericControlDefaultConstructor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlGenericControlDefaultConstructor/VB/htmlgenericcontrolconstructorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlGenericControl (string tag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlGenericControl.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tag">クラスのこのインスタンスが作成される要素の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.HtmlControls.HtmlGenericControl" />タグを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlGenericControl>クラスの指定したタグを使用します。 これにより、動的に直接ではなく、.NET Framework クラスによって表される任意の HTML サーバー コントロールの要素を作成することができます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlGenericControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`TagName`|`tag` パラメーターの値。|  
+  
+> [!NOTE]
+>  場合、`tag`パラメーターは`null`、<xref:System.Web.UI.HtmlControls.HtmlGenericControl.TagName%2A>プロパティに設定されている<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlGenericControl>クラスのオーバー ロードされたコンス トラクターを使用します。  
+  
+ [!code-aspx-csharp[HtmlGenericControlOverloadConstructor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlGenericControlOverloadConstructor/CS/htmlgenericcontrolconstructoroverloadcs.aspx#1)]
+ [!code-aspx-vb[HtmlGenericControlOverloadConstructor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlGenericControlOverloadConstructor/VB/htmlgenericcontrolconstructoroverloadvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagName">
+      <MemberSignature Language="C#" Value="public string TagName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlGenericControl.TagName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって表される HTML 要素の名前、<see cref="T:System.Web.UI.HtmlControls.HtmlGenericControl" />コントロール。</summary>
+        <value>要素のタグ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、プログラムによって HTML サーバー コントロールの要素名を確認します。 たとえば、<xref:System.Web.UI.HtmlControls.HtmlGenericControl.TagName%2A>サーバー側のプロパティを`<span id="MySpan" runat= "server"/>`要素には、「範囲」の値が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlGenericControl.TagName%2A>プロパティをプログラムでタグ名を"Body"から「フォント」を変更し、バックアップを作成します。  
+  
+ [!code-aspx-csharp[Classic HtmlGenericControl.TagName Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlGenericControl.TagName Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlGenericControl.TagName Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlGenericControl.TagName Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,43 @@
+<Type Name="DataGridCommandEventHandler" FullName="System.Web.UI.WebControls.DataGridCommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridCommandEventHandler(object source, DataGridCommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridCommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridCommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="source" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.DataGridCommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="source">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.Web.UI.WebControls.DataGrid.CancelCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.DeleteCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.EditCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.ItemCommand" />、および<see cref="E:System.Web.UI.WebControls.DataGrid.UpdateCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridCommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を指定および用のイベント ハンドラーをコーディングする方法を示します、 <xref:System.Web.UI.WebControls.DataGrid.EditCommand>、 <xref:System.Web.UI.WebControls.DataGrid.CancelCommand>、および<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>の項目を編集するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

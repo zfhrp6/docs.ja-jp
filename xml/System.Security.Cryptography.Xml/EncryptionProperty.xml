@@ -1,0 +1,272 @@
+<Type Name="EncryptionProperty" FullName="System.Security.Cryptography.Xml.EncryptionProperty">
+  <TypeSignature Language="C#" Value="public sealed class EncryptionProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EncryptionProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;EncryptionProperty&gt;" /> XML 暗号化に使用される要素。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionProperty>クラスによってカプセル化、 `<EncryptionProperty>` http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium の XML 暗号化の仕様で定義されている要素があります。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関連するその他の暗号化情報を提供するクラス、<xref:System.Security.Cryptography.Xml.EncryptedData>と<xref:System.Security.Cryptography.Xml.EncryptedKey>要素。  たとえば、タイムスタンプを指定するのにこのクラスを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、暗号化し、XML ドキュメントを復号化します。  このコード例を作成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関するカスタム情報を格納しているオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey>要素を追加し、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>のコレクション、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  最後に、このコード例はに関する情報を表示、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトおよび<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>コレクション。  
+  
+ [!code-csharp[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptionProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptionProperty (System.Xml.XmlElement elemProp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlElement elemProp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionProperty.#ctor(System.Xml.XmlElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementProperty" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="elemProp">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />クラスを使用して、<see cref="T:System.Xml.XmlElement" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、暗号化し、XML ドキュメントを復号化します。  このコード例を作成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関するカスタム情報を格納しているオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey>要素を追加し、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>のコレクション、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  最後に、このコード例はに関する情報を表示、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトおよび<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>コレクション。  
+  
+ [!code-csharp[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="elemProp" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />のプロパティ、<paramref name="elemProp" />パラメーターが"EncryptionProperty"ではありません。  
+  
+ または  
+  
+ <see cref="P:System.Xml.XmlElement.NamespaceURI" />のプロパティ、<paramref name="elemProp" />パラメーターが"http://www.w3.org/2001/04/xmlenc#"ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionProperty.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xml.XmlElement" />のインスタンスをカプセル化するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />クラスです。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />のインスタンスをカプセル化するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionProperty.GetXml%2A>メソッドの形式を返します、`<EncryptionProperty>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptionProperty.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の ID を取得<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</summary>
+        <value>現在の ID<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID が使用される参照を<xref:System.Security.Cryptography.Xml.EncryptionProperty>別の場所からのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、暗号化し、XML ドキュメントを復号化します。  このコード例を作成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関するカスタム情報を格納しているオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey>要素を追加し、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>のコレクション、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  最後に、このコード例はに関する情報を表示、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトおよび<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>コレクション。  
+  
+ [!code-csharp[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptionProperty.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />解析するオブジェクト。</param>
+        <summary>入力を解析して<see cref="T:System.Xml.XmlElement" />の内部状態を構成し、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />と一致するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptionProperty.LoadXml%2A>メソッドは、構成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>の状態と一致するオブジェクト、<xref:System.Xml.XmlElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />のプロパティ、<paramref name="value" />パラメーターが"EncryptionProperty"ではありません。  
+  
+ または  
+  
+ <see cref="P:System.Xml.XmlElement.NamespaceURI" />のプロパティ、<paramref name="value" />パラメーターが"http://www.w3.org/2001/04/xmlenc#"ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyElement">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement PropertyElement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement PropertyElement" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlElement" />を表すオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</summary>
+        <value><see cref="T:System.Xml.XmlElement" />を表すオブジェクト、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、暗号化し、XML ドキュメントを復号化します。  このコード例を作成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関するカスタム情報を格納しているオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey>要素を追加し、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>のコレクション、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  最後に、このコード例はに関する情報を表示、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトおよび<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>コレクション。  
+  
+ [!code-csharp[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />プロパティに設定された<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />設定されている値のプロパティ、<see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />プロパティは"EncryptionProperty"ではありません。  
+  
+ または  
+  
+ <see cref="P:System.Xml.XmlElement.NamespaceURI" />設定されている値のプロパティ、<see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />プロパティは"http://www.w3.org/2001/04/xmlenc#"ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptionProperty.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲットを取得、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</summary>
+        <value>対象、<see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、暗号化し、XML ドキュメントを復号化します。  このコード例を作成、<xref:System.Security.Cryptography.Xml.EncryptionProperty>に関するカスタム情報を格納しているオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey>要素を追加し、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>のコレクション、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  最後に、このコード例はに関する情報を表示、<xref:System.Security.Cryptography.Xml.EncryptionProperty>オブジェクトおよび<xref:System.Security.Cryptography.Xml.EncryptionPropertyCollection>コレクション。  
+  
+ [!code-csharp[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptionProperty#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptionProperty/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

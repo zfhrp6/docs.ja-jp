@@ -1,0 +1,84 @@
+<Type Name="CallConvFastcall" FullName="System.Runtime.CompilerServices.CallConvFastcall">
+  <TypeSignature Language="C#" Value="public class CallConvFastcall" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CallConvFastcall extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.CallConvFastcall" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.CompilerServices.VisualC</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この呼び出し規約は、このバージョンの .NET Framework ではサポートされません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `__fastcall`呼び出し規約は、関数への引数が、可能であればレジスタで渡されることを指定します。  
+  
+ クラスは、<xref:System.Runtime.CompilerServices>コンパイラ ライターの使用のみ。  
+  
+ コンパイラは、ジャストイン タイム (JIT) コンパイラが既定の動作が適切ではない場合に、値を処理する方法を変更するメタデータ内のカスタム修飾子を生成します。  JIT コンパイラには、カスタム修飾子が検出されると、修飾子を指定する方法で値を処理します。  コンパイラは、メソッド、パラメーターにカスタム修飾子を適用し、値を返します。  JIT コンパイラでは、必須の修飾子に応答する必要がありますが、オプションの修飾子を無視することができます。  C++ コンパイラでは、既定では、バイト処理、JIT コンパイラが C++ と互換性がない方法でバイトを処理する場合に使用する方法を定義するカスタム修飾子を生成可能性があります。  
+  
+ 次の手法のいずれかを使用してメタデータにカスタム修飾子を出力することができます。  
+  
+-   内のメソッドを使用して、<xref:System.Reflection.Emit.TypeBuilder>のようにクラス<xref:System.Reflection.Emit.TypeBuilder.DefineMethod%2A>、 <xref:System.Reflection.Emit.TypeBuilder.DefineField%2A>、 <xref:System.Reflection.Emit.TypeBuilder.DefineConstructor%2A>、および<xref:System.Reflection.Emit.TypeBuilder.DefineProperty%2A>です。  
+  
+-   呼び出しを含む Microsoft intermediate language (MSIL) の命令ファイルを生成する`modopt`と`modreq`を使用してファイルをまとめることと、 [Ilasm.exe (IL アセンブラー)](~/docs/framework/tools/ilasm-exe-il-assembler.md)です。  
+  
+-   アンマネージ リフレクション API を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallConvFastcall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallConvFastcall.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.CompilerServices.VisualC</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.CallConvFastcall" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、<xref:System.Runtime.CompilerServices>コンパイラ ライターの使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

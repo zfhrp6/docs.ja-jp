@@ -1,0 +1,269 @@
+<Type Name="AnimationTimeline" FullName="System.Windows.Media.Animation.AnimationTimeline">
+  <TypeSignature Language="C#" Value="public abstract class AnimationTimeline : System.Windows.Media.Animation.Timeline" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AnimationTimeline extends System.Windows.Media.Animation.Timeline" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.AnimationTimeline" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Timeline</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>出力値を生成する時間のセグメントを定義します。 これらの値は、ターゲット プロパティのアニメーション化に使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.AnimationTimeline>の種類は、<xref:System.Windows.Media.Animation.Timeline>タイミング進行状況に基づいて、出力値を生成するオブジェクト。 すべてのアニメーション型から継承<xref:System.Windows.Media.Animation.AnimationTimeline>です。  
+  
+ **Freezable 機能:**から継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.Animation.AnimationTimeline>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.Animation.AnimationTimeline>オブジェクトを複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム アニメーションを作成するには、をオーバーライドまたは実装は次のメンバー。  
+  
+-   <see cref="M:System.Windows.Freezable.CreateInstanceCore" />– オーバーライドする必要があります場合は、新しいクラスが具象、<see cref="M:System.Windows.Freezable.CreateInstanceCore" />をクラスの新しいインスタンスを返します。  
+  
+-   <see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />– アニメーションの現在の値を返すには、このメソッドをオーバーライドします。 3 つのパラメーター: 既定の開始値、移行先の既定値、および<see cref="T:System.Windows.Media.Animation.AnimationClock" />です。 使用して、<see cref="T:System.Windows.Media.Animation.AnimationClock" />を現在の時刻またはアニメーションの進行状況を取得します。 既定の開始値と終了値を使うかどうかを選択できます。  
+  
+-   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault" />–、アニメーションがで指定された既定の終了値を使用するかどうかを指定するには、このプロパティのオーバーライド、<see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />メソッドです。  
+  
+-   <see cref="P:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType" />– このプロパティを示すために、<see cref="T:System.Type" />出力のアニメーションが生成されます。  
+  
+ クラスが依存関係プロパティを使ってデータを保存しない場合、または作成の後で追加の初期化が必要な場合は、他のメソッドのオーバーライドが必要な場合があります。詳しくは、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」をご覧ください。  
+  
+ カスタム アニメーションの作成の詳細については、次を参照してください。、[カスタム アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AnimationTimeline ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllocateClock">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Animation.Clock AllocateClock ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Windows.Media.Animation.Clock AllocateClock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.AllocateClock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Windows.Media.Animation.Clock" />この<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />です。</summary>
+        <returns>このクロック<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>メソッドと、コードから直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装側<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />クラス使用する必要がある対応するカスタム クロックにある場合に、このメソッドをオーバーライドする必要があります。 オーバーライドされたメソッドを作成し、継承されたクラスの新しいインスタンスを返す<see cref="T:System.Windows.Media.Animation.Clock" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.AnimationTimeline Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.AnimationTimeline Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.AnimationTimeline</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClock">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.AnimationClock CreateClock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.AnimationClock CreateClock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.CreateClock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.AnimationClock</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> から新しい <see cref="T:System.Windows.Media.Animation.AnimationClock" /> を作成します。</summary>
+        <returns>この <see cref="T:System.Windows.Media.Animation.AnimationTimeline" /> から作成された、新しいクロック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、継承されたシャドウ<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A?displayProperty=nameWithType>: タイプ セーフな実装を持つメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValue">
+      <MemberSignature Language="C#" Value="public virtual object GetCurrentValue (object defaultOriginValue, object defaultDestinationValue, System.Windows.Media.Animation.AnimationClock animationClock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, class System.Windows.Media.Animation.AnimationClock animationClock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Object" />
+        <Parameter Name="defaultDestinationValue" Type="System.Object" />
+        <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">アニメーション自体に開始値がない場合に、アニメーションに対して指定する開始値。 このアニメーションがアニメーション化するプロパティのベース値がなりますコンポジション チェーンの最初の場合それ以外の場合、チェーン内の前のアニメーションによって返される値があります。</param>
+        <param name="defaultDestinationValue">アニメーション自体に宛先値がない場合に、アニメーションに対して指定する宛先値。</param>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />生成できる、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />または<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />アニメーションで使用して、その出力値を生成する値。</param>
+        <summary>アニメーションの現在の値を取得します。</summary>
+        <returns>このアニメーションがプロパティの現在値として認識する値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNaturalDurationCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Duration GetNaturalDurationCore (System.Windows.Media.Animation.Clock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Duration GetNaturalDurationCore(class System.Windows.Media.Animation.Clock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationTimeline.GetNaturalDurationCore(System.Windows.Media.Animation.Clock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.Clock" />
+      </Parameters>
+      <Docs>
+        <param name="clock">これに対して作成されたクロック<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />です。</param>
+        <summary>この単一のイテレーションの長さを返します<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />です。</summary>
+        <returns>アニメーションの自然な期間です。 このメソッドは常に返します、 <see cref="T:System.Windows.Duration" /> 1 秒です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装を提供する<xref:System.Windows.Media.Animation.Timeline.GetNaturalDuration%2A>し、コードから直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、カスタムの自然を提供する必要があるクラスで実装する必要があります<see cref="T:System.Windows.Duration" />ときに、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />プロパティに設定されている<see cref="P:System.Windows.Duration.Automatic" />です。 自然な期間を特定できないかどうかはこのメソッドが返す<see cref="P:System.Windows.Duration.Automatic" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAdditiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsAdditiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsAdditiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.AnimationTimeline.IsAdditiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IsAdditive 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCumulativeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsCumulativeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsCumulativeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.AnimationTimeline.IsCumulativeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IsCumulative 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDestinationDefault">
+      <MemberSignature Language="C#" Value="public virtual bool IsDestinationDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDestinationDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.AnimationTimeline.IsDestinationDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアニメーションを使用するかどうかを示す値を取得、*ある場合*のパラメーター、<see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />メソッドとしてその宛先値。</summary>
+        <value>**true**場合、 *defaultDesintationValue*のパラメーター、<see cref="M:System.Windows.Media.Animation.AnimationTimeline.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)" />メソッドはこのアニメーションの値と、単純な期間の終わりに達した (そのコンピューターの時計が、 <see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" /> 1 の)、それ以外の**false**です。 既定の実装を常に返します**false**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPropertyType">
+      <MemberSignature Language="C#" Value="public abstract Type TargetPropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetPropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.Type" />のプロパティをアニメーション化できます。</summary>
+        <value>このアニメーションでアニメーション化できるプロパティの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

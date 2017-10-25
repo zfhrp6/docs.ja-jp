@@ -1,0 +1,179 @@
+<Type Name="CanExecuteRoutedEventArgs" FullName="System.Windows.Input.CanExecuteRoutedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class CanExecuteRoutedEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CanExecuteRoutedEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.CanExecuteRoutedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Input.CommandBinding.CanExecute" />と<see cref="E:System.Windows.Input.CommandManager.PreviewCanExecute" />イベントにルーティングします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンド ソースでは、通常、このような<xref:System.Windows.Controls.MenuItem>が呼び出す、<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>メソッドを<xref:System.Windows.Input.RoutedCommand>コマンドできますか、現在のコマンド ターゲットで実行できないかを確認します。  場合<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`false`イベント ハンドラーからコマンド ソース無効になります。  たとえば場合、<xref:System.Windows.Controls.MenuItem>コマンドとコマンドのコマンド ソースが現在のコマンド ターゲットで実行できないように動作している、<xref:System.Windows.Controls.MenuItem>をそれ自体を淡色表示されます。  
+  
+ <xref:System.Windows.Input.ICommand.CanExecuteChanged>イベントは、実行するコマンドの機能が変更されたときにコマンド ソースを通知します。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>を返す`true`コマンドの対象がコントロールである場合にのみです。  最初に、<xref:System.Windows.RoutedEventArgs.Source%2A>にキャスト、<xref:System.Windows.Controls.Control>です。  場合<xref:System.Windows.RoutedEventArgs.Source%2A>は、 <xref:System.Windows.Controls.Control>、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`true`、それ以外に設定されている`false`です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCanExecute](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcanexecute)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCanExecute](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcanexecute)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanExecute">
+      <MemberSignature Language="C#" Value="public bool CanExecute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanExecute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Input.RoutedCommand" />に関連付けられたイベントは、コマンド ターゲットで実行することができます。</summary>
+        <value>
+          <see langword="true" />イベントのコマンド ターゲットで実行できる場合それ以外の場合、<see langword="false" />です。  既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、ソースをコマンドの多く<xref:System.Windows.Controls.MenuItem>と<xref:System.Windows.Controls.Button>は無効になっているときに<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>は`false`ときに有効になっていると、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>のみを返すコマンドの対象がコントロールの場合は true です。  最初、<xref:System.Windows.RoutedEventArgs.Source%2A>にイベント データをキャスト、<xref:System.Windows.Controls.Control>です。  ある場合、 <xref:System.Windows.Controls.Control>、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`true`、それ以外に設定されている`false`です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCanExecute](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcanexecute)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCanExecute](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcanexecute)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントに関連付けられているコマンドを取得します。</summary>
+        <value>コマンド。 このコマンドは、カスタム コマンドでない限り、これは、通常、<see cref="T:System.Windows.Input.RoutedCommand" />です。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>複数のコマンドを処理します。  場合、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.Command%2A>プロパティと等しい、<xref:System.Windows.Input.MediaCommands.Play%2A>コマンドおよびメソッド`IsPlaying`返します`false`、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`true`、それ以外の<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`false`です。  場合、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.Command%2A>プロパティと等しい、<xref:System.Windows.Input.MediaCommands.Stop%2A>コマンドおよびメソッド`IsPlaying`返します`true`、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`true`、それ以外の<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>に設定されている`false`です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewMultipleCanExecute](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewmultiplecanexecute)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewMultipleCanExecute](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewmultiplecanexecute)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueRouting">
+      <MemberSignature Language="C#" Value="public bool ContinueRouting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContinueRouting" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.ContinueRouting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドを呼び出した入力ルーティング イベントのルーティングを要素ツリーで続行するかどうかを決定します。</summary>
+        <value>
+          <see langword="true" />ルーティング イベントは、要素ツリーを通じてルーティングを続行する場合それ以外の場合、<see langword="false" />です。   既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CanExecuteRoutedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="target">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameter">
+      <MemberSignature Language="C#" Value="public object Parameter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Parameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.Parameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド固有のデータを取得します。</summary>
+        <value>コマンドのデータ。  既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンド パラメーターを使用するを実行すると、特定の情報をコマンドに渡します。  データの型は、コマンドによって定義されます。  
+  
+ <xref:System.Windows.Input.CanExecuteRoutedEventArgs.Parameter%2A>指定できます`null`です。 多くのコマンドを処理またはしないコマンド パラメーターが必要です。  
+  
+   
+  
+## Examples  
+ 次の例使用する、<xref:System.Windows.Controls.Button>カスタム コマンドのコマンド ソースとして。  <xref:System.Windows.Input.ICommandSource.Command%2A>のプロパティ、<xref:System.Windows.Controls.Button>カスタムに設定されている<xref:System.Windows.Input.RoutedCommand>と呼ばれる`customComand`と<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>の値を渡すために使用、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>のプロパティ、<xref:System.Windows.Controls.Slider>コントロール。  バインドするデータ バインドを使用して、これは、成果、<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>を<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティです。  バインディング式でコンバーターがカスタム<xref:System.Windows.Data.IValueConverter>に変換する<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>に、<xref:System.Int32>にバインドする前に、<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>です。  
+  
+ [!code-xaml[invalidaterequerywithdispatchertimer#InvalidateSampleSliderCommandParameter](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithDispatcherTimer/CSharp/Window1.xaml#invalidatesampleslidercommandparameter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

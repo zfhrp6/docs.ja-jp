@@ -1,0 +1,296 @@
+<Type Name="ProjectElement" FullName="Microsoft.Build.Construction.ProjectElement">
+  <TypeSignature Language="C#" Value="public abstract class ProjectElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProjectElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectElement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>MSBuild の構築のオブジェクト モデルの要素の抽象基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllParents">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElementContainer&gt; AllParents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Construction.ProjectElementContainer&gt; AllParents" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.AllParents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.CompilerServices.IteratorStateMachine(typeof(Microsoft.Build.Construction.ProjectElement/&lt;get_AllParents&gt;d__14))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElementContainer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての親、ProjectRootElement まで行われていること、この要素の要素。  
+  
+ None、ProjectRootElement 場合です。  
+  
+ この場合は none がアタッチされていない親にまだです。</summary>
+        <value>すべての親要素に対する列挙子を返します。 プロジェクトの要素が、ProjectRootElement 場合や、これがまだアタッチされていない場合、親要素に親要素はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public virtual string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または条件値を設定します。  
+  
+ 空の文字列の場合は、condition 属性は有効ですが存在しないか、または値を持たないが返されます。  
+  
+ Null の場合は、Condition 属性は、その要素の法的が返されます。  
+  
+ 設定する値が空の場合は、属性を削除します。  
+  
+ 派生クラスをスローすることは、<see cref="T:System.InvalidOperationException" />条件の設定が、これらの要素に適用されない場合。</summary>
+        <value>条件属性の値を返します。 属性が存在しない場合は、空の文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する値が null または空の文字列に設定されている場合は、Condition 属性を削除します。 Condition 属性が存在しない場合は、存在しない条件が暗黙的に true であるために、例外をスローする代わりに空の文字列を返します  
+  
+ "ProjectExtensions"要素の get アクセス操作子が null を返し、set アクセス操作子は、任意の値の例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionLocation">
+      <MemberSignature Language="C#" Value="public virtual Microsoft.Build.Construction.ElementLocation ConditionLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation ConditionLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.ConditionLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素に、存在する場合、「条件」属性の場所です。  
+  
+ このような属性が存在しない場合は、null を返します。</summary>
+        <value><see cref="T:Microsoft.Build.Construction.ElementLocation" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingProject">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectRootElement ContainingProject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectRootElement ContainingProject" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.ContainingProject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectRootElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この Xml を含む (インポートされた可能性があります) ProjectRootElement です。  
+  
+ null にすることはできません。</summary>
+        <value>このプロジェクトを含むプロジェクトのルート コンテナーを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの値を設定します。  
+  
+ 存在しない場合、空の文字列を返します。  
+  
+ 設定する値が空の場合は、属性を削除します。</summary>
+        <value>ラベルを返します。 ラベルが存在しない場合は、空の文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する値が空の場合は、属性を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelLocation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation LabelLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation LabelLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.LabelLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合、この要素の"Label"属性の場所です。  
+  
+ このような属性がない場合 null を返します。</summary>
+        <value><see cref="T:Microsoft.Build.Construction.ElementLocation" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation Location" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応する Xml 要素の位置。  
+  
+ 可能性がありますいない場合に正しく設定ファイルが保存されていない、または最後に保存してから、ファイルが編集されました。  
+  
+ 場所には、編集、保存されていない場合、要素の発生元のファイルへのパスにはのみが含まれます。</summary>
+        <value><see cref="T:Microsoft.Build.Construction.ElementLocation" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSibling">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectElement NextSibling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectElement NextSibling" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.NextSibling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の兄弟要素。  
+  
+ null も指定できます。</summary>
+        <value>このプロジェクト要素の次の兄弟を返します。 次の兄弟が存在しない場合は null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectElementContainer Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectElementContainer Parent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectElementContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、ProjectRootElement 場合は null です。  
+  
+ この場合は null が、親にまだアタッチされていません。</summary>
+        <value>このプロジェクトを含むプロジェクト要素のコンテナーを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親は、ProjectElementContainer によってのみ設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousSibling">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectElement PreviousSibling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectElement PreviousSibling" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElement.PreviousSibling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の兄弟要素。  
+  
+ null も指定できます。</summary>
+        <value>このプロジェクト要素の前の兄弟を返します。 前の兄弟が存在しない場合は null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

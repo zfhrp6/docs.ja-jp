@@ -1,0 +1,93 @@
+<Type Name="OpenReadCompletedEventArgs" FullName="System.Net.OpenReadCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class OpenReadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OpenReadCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.OpenReadCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.WebClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Net.WebClient.OpenReadCompleted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスに渡される<xref:System.Net.OpenReadCompletedEventHandler>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、読み取り用にリソースをダウンロードするを示しています。  
+  
+ [!code-cpp[NCLWebClientAsync#30](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#30)]
+ [!code-csharp[NCLWebClientAsync#30](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#30)]
+ [!code-vb[NCLWebClientAsync#30](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#30)]  
+  
+ ダウンロードが完了したら、次のメソッドが呼び出されます。  
+  
+ [!code-cpp[NCLWebClientAsync#31](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#31)]
+ [!code-csharp[NCLWebClientAsync#31](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#31)]
+ [!code-vb[NCLWebClientAsync#31](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#31)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream Result" />
+      <MemberSignature Language="DocId" Value="P:System.Net.OpenReadCompletedEventArgs.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロードしたデータを格納している読み取り可能なストリームを取得、<see cref="Overload:System.Net.WebClient.DownloadDataAsync" />メソッドです。</summary>
+        <value>A<see cref="T:System.IO.Stream" />ダウンロードされたデータを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認する必要があります、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>と<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>このプロパティによって返されるデータを使用する前にプロパティです。 場合、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティの値が、<xref:System.Exception>オブジェクトまたは<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>プロパティの値が`true`、非同期操作が正常に完了しませんでした、<xref:System.Net.OpenReadCompletedEventArgs.Result%2A>プロパティの値は無効になります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティによって返されたストリームを使用します。  
+  
+ [!code-cpp[NCLWebClientAsync#31](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#31)]
+ [!code-csharp[NCLWebClientAsync#31](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#31)]
+ [!code-vb[NCLWebClientAsync#31](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

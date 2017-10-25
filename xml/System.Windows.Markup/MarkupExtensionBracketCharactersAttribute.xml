@@ -1,0 +1,80 @@
+<Type Name="MarkupExtensionBracketCharactersAttribute" FullName="System.Windows.Markup.MarkupExtensionBracketCharactersAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MarkupExtensionBracketCharactersAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MarkupExtensionBracketCharactersAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.MarkupExtensionBracketCharactersAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マークアップ拡張で返すことができるかっこ文字を報告します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MarkupExtensionBracketCharactersAttribute (char openingBracket, char closingBracket);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char openingBracket, char closingBracket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtensionBracketCharactersAttribute.#ctor(System.Char,System.Char)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="openingBracket" Type="System.Char" />
+        <Parameter Name="closingBracket" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="openingBracket">A<see cref="T:System.Char" />タグを定義する文字を角かっこです。</param>
+        <param name="closingBracket">右角かっこ文字を定義する <see cref="T:System.Char" />。</param>
+        <summary>指定した文字を使用して <see cref="T:System.Windows.Markup.MarkupExtensionBracketCharactersAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClosingBracket">
+      <MemberSignature Language="C#" Value="public char ClosingBracket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char ClosingBracket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.MarkupExtensionBracketCharactersAttribute.ClosingBracket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.MarkupExtension" /> で終了区切り記号として使用する文字を指定します。</summary>
+        <value>文字を表す <see cref="T:System.Char" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpeningBracket">
+      <MemberSignature Language="C#" Value="public char OpeningBracket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char OpeningBracket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.MarkupExtensionBracketCharactersAttribute.OpeningBracket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.MarkupExtension" /> で開始区切り記号として使用する文字を指定します。</summary>
+        <value>文字を表す <see cref="T:System.Char" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

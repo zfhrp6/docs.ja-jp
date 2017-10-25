@@ -1,0 +1,107 @@
+<Type Name="DeploymentSection" FullName="System.Web.Configuration.DeploymentSection">
+  <TypeSignature Language="C#" Value="public sealed class DeploymentSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DeploymentSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.DeploymentSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>開発用コンピューター上だけに該当するアプリケーション レベルの設定を上書きする実稼働サーバーで通常使用される構成設定を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DeploymentSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.DeploymentSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.DeploymentSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.DeploymentSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.DeploymentSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Retail">
+      <MemberSignature Language="C#" Value="public bool Retail { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Retail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.DeploymentSection.Retail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("retail", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューター上の Web アプリケーションが配置されているかどうかを指定する値の設定を取得または<see langword="retail" />モード。</summary>
+        <value>
+          <see langword="true" />Web アプリケーションが展開されている場合<see langword="retail" />モード以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.Configuration.DeploymentSection.Retail%2A>は`true`ASP.NET のトレース出力を無効に、無効にデバッグ機能、および詳細なリモート ユーザーのシステムによって生成されたエラー メッセージを無効にします。 持つアプリケーション用、`customErrors`アプリケーションの Web.config ファイル内の要素、`mode`属性は強制的に`On`です。 これらの設定は、アプリケーションの Web.config ファイルで行われる設定を上書きします。  
+  
+> [!NOTE]
+>  使用すると、`retail`設定すると、次のように設定を続行する必要があります、`debug`属性を`false`サーバーに配置されているアプリケーションの Web.config ファイルにします。 `debug`設定を無効には、実行のタイムアウトを要求してによってこれがオーバーライドされていない、`retail`設定します。 詳細については、 [ほとんどの一般的な ASP.NET サポート問題 - Microsoft Developer サポートの内部に埋もれて Reporting](http://www.hanselman.com/blog/MostCommonASPNETSupportIssuesReportingFromDeepInsideMicrosoftDeveloperSupport.aspx) Scott Hanselman ブログ。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの例は、このプロパティを設定する方法を示しています。 `true` 、machine.config ファイルにします。 Machine.config ファイルは、このフォルダーにあります。  
+  
+ `%windir%\Microsoft.NET\Framework\<frameworkversion>\Config`  
+  
+```  
+<system.web>  
+  <deployment   
+    retail="true" />  
+</system.web>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

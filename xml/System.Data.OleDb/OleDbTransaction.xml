@@ -1,0 +1,245 @@
+<Type Name="OleDbTransaction" FullName="System.Data.OleDb.OleDbTransaction">
+  <TypeSignature Language="C#" Value="public sealed class OleDbTransaction : System.Data.Common.DbTransaction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbTransaction extends System.Data.Common.DbTransaction" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbTransaction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ ソースで実行される SQL トランザクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを作成、<xref:System.Data.OleDb.OleDbTransaction>を呼び出してオブジェクト<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>上、<xref:System.Data.OleDb.OleDbConnection>オブジェクト。 (コミットまたはトランザクションを中止するなど) のトランザクションに関連付けられているすべての後続操作に対して実行され、<xref:System.Data.OleDb.OleDbTransaction>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbTransaction Begin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbTransaction Begin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbTransaction.Begin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入れ子になったデータベース トランザクションを開始します。</summary>
+        <returns>入れ子になったデータベース トランザクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいトランザクションでは、現在のトランザクション内で入れ子にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">入れ子になったトランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbTransaction Begin (System.Data.IsolationLevel isolevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbTransaction Begin(valuetype System.Data.IsolationLevel isolevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbTransaction.Begin(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolevel">トランザクションを使用する分離レベル。</param>
+        <summary>入れ子になったデータベース トランザクションを開始し、新しいトランザクションを使用する分離レベルを指定します。</summary>
+        <returns>入れ子になったデータベース トランザクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいトランザクションでは、現在のトランザクション内で入れ子にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">入れ子になったトランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベース トランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>と<xref:System.Data.OleDb.OleDbTransaction>です。 使用する方法も示します、 <xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>、 <xref:System.Data.OleDb.OleDbTransaction.Commit%2A>、および<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OleDb.OleDbConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbTransaction.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Data.OleDb.OleDbConnection" /> 、トランザクションに関連付けられているオブジェクトまたは<see langword="null" />場合は、トランザクションは無効になりました。</summary>
+        <value><see cref="T:System.Data.OleDb.OleDbConnection" />トランザクションに関連付けられているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのアプリケーションでは、0 個以上のトランザクションで複数のデータベース接続があります。 このプロパティでは、によって作成された特定のトランザクションに関連付けられている接続オブジェクトを確認できます。<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbConnection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbConnection DbConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection DbConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbTransaction.DbConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbTransaction.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsolationLevel">
+      <MemberSignature Language="C#" Value="public override System.Data.IsolationLevel IsolationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.IsolationLevel IsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbTransaction.IsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトランザクションの <see cref="T:System.Data.IsolationLevel" /> を指定します。</summary>
+        <value>このトランザクションの <see cref="T:System.Data.IsolationLevel" />。 既定値は、<see langword="ReadCommitted" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 並列トランザクションはサポートされていません。 したがって、<xref:System.Data.IsolationLevel>トランザクション全体に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbTransaction.Rollback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションを保留状態からロールバックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションのみロールバック可能を保留状態から (後<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>が呼び出されると、その前に<xref:System.Data.OleDb.OleDbTransaction.Commit%2A>と呼びます)。 バックアップ イベントが破棄する前に、トランザクションはロールバックされます`Commit`または`Rollback`と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>と<xref:System.Data.OleDb.OleDbTransaction>です。 使用する方法も示します、 <xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>、 <xref:System.Data.OleDb.OleDbTransaction.Commit%2A>、および<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

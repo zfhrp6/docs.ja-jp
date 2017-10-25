@@ -1,0 +1,151 @@
+<Type Name="ContextOptions" FullName="System.DirectoryServices.AccountManagement.ContextOptions">
+  <TypeSignature Language="C#" Value="public enum ContextOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ContextOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.ContextOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーへのバインドに使用されるオプションを指定します。 アプリケーションでは、ビットごとの OR 演算とリンクされている複数のオプションを設定できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストのオプションは、アプリケーションで指定されていない、ときに、アカウントの管理 API は、次のオプションの組み合わせを使用します。  
+  
+-   ContextOptions.Negotiate & #124 です。ContextOptions.Signing & #124 です。ContextOptions.Sealing  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Negotiate">
+      <MemberSignature Language="C#" Value="Negotiate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions Negotiate = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.Negotiate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントは Kerberos または NTLM を使用して認証されます。 ユーザー名とパスワードが指定されていない場合、アカウントの管理 API は、ユーザー アカウントが、アプリケーションが実行されているか、呼び出し元スレッドを表すクライアントのユーザー アカウントのいずれかのセキュリティ コンテキストは、呼び出し元のスレッドのセキュリティ コンテキストを使用してオブジェクトにバインドします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sealing">
+      <MemberSignature Language="C#" Value="Sealing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions Sealing = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.Sealing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データは、Kerberos を使用して暗号化されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグは、コンテキストのネゴシエート オプションでのみ使用できる、単純バインド オプションでは使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureSocketLayer">
+      <MemberSignature Language="C#" Value="SecureSocketLayer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions SecureSocketLayer = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.SecureSocketLayer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルは、Secure Sockets Layer (SSL) を使用して暗号化されます。 Active Directory では、SSL をサポートするために、証明書サービスをインストールすることが必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerBind">
+      <MemberSignature Language="C#" Value="ServerBind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions ServerBind = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.ServerBind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが特定のサーバー名にバインドする場合にドメイン コンテキストの種類を使用する場合は、このフラグを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Signing">
+      <MemberSignature Language="C#" Value="Signing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions Signing = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.Signing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの整合性は検証されます。 このフラグは、コンテキストのネゴシエート オプションでのみ使用できる、単純バインド オプションでは使用できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SimpleBind">
+      <MemberSignature Language="C#" Value="SimpleBind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AccountManagement.ContextOptions SimpleBind = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AccountManagement.ContextOptions.SimpleBind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントは、基本認証を使用して認証されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注意**通信可能性がある、インターネット経由でクリア テキストで送信 SecureSocketsLayer オプションが単純なバインドで指定されていない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

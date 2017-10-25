@@ -1,0 +1,121 @@
+<Type Name="ZipArchiveMode" FullName="System.IO.Compression.ZipArchiveMode">
+  <TypeSignature Language="C#" Value="public enum ZipArchiveMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ZipArchiveMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Compression.ZipArchiveMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Compression</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Zip アーカイブのエントリを操作するための値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取りモードを設定するときに、読み取りをサポートする必要があります、基になるファイルまたはストリームがシークをサポートする必要はありません。 基になるファイルまたはストリームはシークをサポートする場合は、要求されたアーカイブからファイルが読み取られます。 基になるファイルまたはストリームに、シークをサポートしていない、アーカイブ全体がメモリに保持されます。  
+  
+ 作成モードを設定するときに、書き込みをサポートする必要があります、基になるファイルまたはストリームがシークをサポートする必要はありません。 書き込み用アーカイブ内の各エントリに 1 回だけ開くことができます。 1 つのエントリを作成する場合は、使用可能になるとすぐに、基になるストリームまたはファイルにデータが書き込まれます。 呼び出してなど、複数のエントリを作成した場合、<xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A>メソッドをデータが書き込まれる、基になるストリームまたはファイルにすべてのエントリが作成された後です。  
+  
+ 更新モードを設定するときに基になるファイルまたはストリームする必要がありますサポートの読み取り、書き込み、およびシークします。 アーカイブ全体の内容がメモリに保持されているし、データは書き込まれませんを基になるファイルまたはストリームのアーカイブが破棄されるまでです。  
+  
+ 次のメソッドは、という名前のパラメーターを含める`mode`をアーカイブ モードを指定することができます。  
+  
+-   <xref:System.IO.Compression.ZipArchive.%23ctor%28System.IO.Stream%2CSystem.IO.Compression.ZipArchiveMode%2CSystem.Boolean%29?displayProperty=nameWithType>  
+  
+-   <xref:System.IO.Compression.ZipArchive.%23ctor%28System.IO.Stream%2CSystem.IO.Compression.ZipArchiveMode%29?displayProperty=nameWithType>  
+  
+-   <xref:System.IO.Compression.ZipFile.Open%28System.String%2CSystem.IO.Compression.ZipArchiveMode%29?displayProperty=nameWithType>  
+  
+   
+  
+## Examples  
+ 次の例を指定する方法を示しています、<xref:System.IO.Compression.ZipArchiveMode>を作成するときの値、<xref:System.IO.Compression.ZipArchive.%23ctor%28System.IO.Stream%2CSystem.IO.Compression.ZipArchiveMode%29?displayProperty=nameWithType>オブジェクト。  
+  
+ [!code-csharp[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/cs/program1.cs#1)]
+ [!code-vb[System.IO.Compression.ZipArchiveMode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.compression.ziparchivemode/vb/program1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="Create" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Compression.ZipArchiveMode Create = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Compression.ZipArchiveMode.Create" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchiveMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいアーカイブのエントリの作成のみが許可されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Compression.ZipArchiveMode Read = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Compression.ZipArchiveMode.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchiveMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アーカイブのエントリを読み取るだけが許可されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="Update" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Compression.ZipArchiveMode Update = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Compression.ZipArchiveMode.Update" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Compression</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Compression.ZipArchiveMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りし、両方のアーカイブのエントリの書き込み操作が許可されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

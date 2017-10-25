@@ -1,0 +1,107 @@
+<Type Name="IRemoteEventInfoContract" FullName="System.AddIn.Contract.Automation.IRemoteEventInfoContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteEventInfoContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteEventInfoContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントがアプリケーション ドメインとプロセス境界を越えてイベントについての情報にアクセスする際に使用するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.Automation.IRemoteEventInfoContract>を実装するリモート オブジェクトのイベントに関する情報を提供、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>インターフェイスです。  
+  
+ リモート オブジェクトの 1 つまたは複数のイベントにアクセスするには、使用、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A>取得するメソッド、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract>リモート オブジェクトの型を表すです。 次に、呼び出し、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvent%2A>または<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvents%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAddMethod">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetAddMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetAddMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteEventInfoContract.GetAddMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteMethodInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベント ハンドラーを追加するために使用されたメソッドを返します、イベントにデリゲートこの<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />イベント ハンドラーを追加するために使用されたメソッドを表すイベントにデリゲートこの<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントにデリゲートを追加するには、呼び出し、<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke%2A>のメソッド、<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract>を<xref:System.AddIn.Contract.Automation.IRemoteEventInfoContract.GetAddMethod%2A>を返します。 渡す、<xref:System.AddIn.Contract.Automation.IRemoteDelegateContract>にデリゲートを表す、`parameters`のパラメーター<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemberData">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.RemoteMemberData GetMemberData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.Automation.RemoteMemberData GetMemberData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteEventInfoContract.GetMemberData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.RemoteMemberData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントに関する情報を返しますこれ<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.Automation.RemoteMemberData" />イベントに関する情報を提供するこの<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供される情報、<xref:System.AddIn.Contract.Automation.RemoteMemberData>構造体には、イベントおよびイベントを宣言する型の名前が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemoveMethod">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetRemoveMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetRemoveMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteEventInfoContract.GetRemoveMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteMethodInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベント ハンドラーを削除するために使用されたメソッドを返すデリゲートがイベントからこの<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />イベント ハンドラーを削除するために使用されたメソッドを表すデリゲート、イベントからこの<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />を識別します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントのデリゲートを削除するには、呼び出し、<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke%2A>のメソッド、<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract>を<xref:System.AddIn.Contract.Automation.IRemoteEventInfoContract.GetRemoveMethod%2A>を返します。 渡す、<xref:System.AddIn.Contract.Automation.IRemoteDelegateContract>にデリゲートを表す、`parameters`のパラメーター<xref:System.AddIn.Contract.Automation.IRemoteMethodInfoContract.Invoke%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

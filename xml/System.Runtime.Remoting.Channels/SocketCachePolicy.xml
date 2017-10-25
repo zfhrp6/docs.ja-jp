@@ -1,0 +1,57 @@
+<Type Name="SocketCachePolicy" FullName="System.Runtime.Remoting.Channels.SocketCachePolicy">
+  <TypeSignature Language="C#" Value="public enum SocketCachePolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SocketCachePolicy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.SocketCachePolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>クライアントをリモート処理クライアントによって保持されるキャッシュから削除するためのポリシーを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するときに、この列挙体が使用される、`socketCachePolicy`の構成プロパティ、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>オブジェクト。 時間が指定されたかどうかを判定、`socketCacheTimeout`ソケットが最後に使用された時間から、またはソケットが作成された時刻から構成プロパティが測定されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbsoluteTimeout">
+      <MemberSignature Language="C#" Value="AbsoluteTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Channels.SocketCachePolicy AbsoluteTimeout = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Channels.SocketCachePolicy.AbsoluteTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.SocketCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットをキャッシュから削除するその作成した後、一定の時間。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Channels.SocketCachePolicy Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Channels.SocketCachePolicy.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.SocketCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットをキャッシュから削除する最後の使用後に、一定の時間。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

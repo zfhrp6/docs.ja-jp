@@ -1,0 +1,3153 @@
+<Type Name="ModuleBuilder" FullName="System.Reflection.Emit.ModuleBuilder">
+  <TypeSignature Language="C#" Value="public class ModuleBuilder : System.Reflection.Module, System.Runtime.InteropServices._ModuleBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit ModuleBuilder extends System.Reflection.Module implements class System.Runtime.InteropServices._ModuleBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.ModuleBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Emit</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.Module</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._ModuleBuilder</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._ModuleBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>定義し、動的アセンブリ内のモジュールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを取得する<xref:System.Reflection.Emit.ModuleBuilder>を使用して、<xref:System.Reflection.Emit.AssemblyBuilder.DefineDynamicModule%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード サンプルに示します`ModuleBuilder`動的モジュールを作成します。 呼び出して、ModuleBuilder が作成されたことに注意してください<xref:System.Reflection.Emit.AssemblyBuilder.DefineDynamicModule%2A>で<xref:System.Reflection.Emit.AssemblyBuilder>、コンス トラクターではなくです。  
+  
+ [!code-cpp[ModuleBuilder_Class#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_Class/CPP/modulebuilder.cpp#1)]
+ [!code-csharp[ModuleBuilder_Class#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_Class/CS/modulebuilder.cs#1)]
+ [!code-vb[ModuleBuilder_Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_Class/VB/modulebuilder.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ModuleBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public override System.Reflection.Assembly Assembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが定義されている動的アセンブリを取得する<see cref="T:System.Reflection.Emit.ModuleBuilder" />です。</summary>
+        <value>現在の動的モジュールを定義された動的アセンブリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Assembly>返されるオブジェクトは、<xref:System.Reflection.Emit.AssemblyBuilder>のこのインスタンスが定義されている<xref:System.Reflection.Emit.ModuleBuilder>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGlobalFunctions">
+      <MemberSignature Language="C#" Value="public void CreateGlobalFunctions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateGlobalFunctions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この動的モジュールのグローバル データの定義、グローバル関数定義を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この動的モジュール内のすべてのグローバル関数を定義すると、ユーザーが終わったときに、このメソッドを呼び出す必要があります。 この関数を呼び出すと、グローバル関数または新しいグローバル データは許可されません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用方法を示します`CreateGlobalFunctions`からグローバル静的メソッドを作成する、<xref:System.Reflection.Emit.MethodBuilder>で実装される<xref:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod%2A>です。  
+  
+ [!code-cpp[ModuleBuilder_CreateGlobalFunctions#2](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CPP/modulebuilder_createglobalfunctions.cpp#2)]
+ [!code-csharp[ModuleBuilder_CreateGlobalFunctions#2](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CS/modulebuilder_createglobalfunctions.cs#2)]
+ [!code-vb[ModuleBuilder_CreateGlobalFunctions#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/VB/modulebuilder_createglobalfunctions.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドは、以前に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineDocument">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.SymbolStore.ISymbolDocumentWriter DefineDocument (string url, Guid language, Guid languageVendor, Guid documentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.SymbolStore.ISymbolDocumentWriter DefineDocument(string url, valuetype System.Guid language, valuetype System.Guid languageVendor, valuetype System.Guid documentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineDocument(System.String,System.Guid,System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.SymbolStore.ISymbolDocumentWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="language" Type="System.Guid" />
+        <Parameter Name="languageVendor" Type="System.Guid" />
+        <Parameter Name="documentType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="url">ドキュメントの URL です。</param>
+        <param name="language">ドキュメントの言語を識別する GUID。 これは、<see cref="F:System.Guid.Empty" />です。</param>
+        <param name="languageVendor">ドキュメントの言語販売元を識別する GUID。 これは、<see cref="F:System.Guid.Empty" />です。</param>
+        <param name="documentType">ドキュメントの種類を識別する GUID。 これは、<see cref="F:System.Guid.Empty" />です。</param>
+        <summary>ソースのドキュメントを定義します。</summary>
+        <returns>定義されているドキュメントです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  .NET Framework の以前のバージョンをスロー<xref:System.ArgumentException>の代わりに<xref:System.ArgumentNullException>とき`url`は`null`します。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルは、の使用方法を示します`DefineDocument`動的モジュールに、外部シンボル ドキュメント (この場合は、生の IL ファイル) をアタッチします。  
+  
+ [!code-cpp[ModuleBuilder_DefineDocument#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefineDocument/CPP/modulebuilder_definedocument.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefineDocument#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefineDocument/CS/modulebuilder_definedocument.cs#1)]
+ [!code-vb[ModuleBuilder_DefineDocument#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefineDocument/VB/modulebuilder_definedocument.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。 これは、.NET Framework の旧バージョンからの変更点です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは動的モジュールのデバッグ モジュールではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineEnum">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.EnumBuilder DefineEnum (string name, System.Reflection.TypeAttributes visibility, Type underlyingType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.EnumBuilder DefineEnum(string name, valuetype System.Reflection.TypeAttributes visibility, class System.Type underlyingType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineEnum(System.String,System.Reflection.TypeAttributes,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.EnumBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="visibility" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="underlyingType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">列挙型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="visibility">列挙体の型の属性です。 属性は、によって定義されたビット<see cref="F:System.Reflection.TypeAttributes.VisibilityMask" />です。</param>
+        <param name="underlyingType">列挙体の基になる型。 これには、組み込みの整数型があります。</param>
+        <summary>列挙型と呼ばれる単一の非静的フィールドに値型では定義<paramref name="value__" />指定した型のです。</summary>
+        <returns>定義された列挙体です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義された列挙型の派生クラスは、<xref:System.Enum>です。 `value__`フィールドが<xref:System.Reflection.FieldAttributes.Private>と<xref:System.Reflection.FieldAttributes.SpecialName>属性セットです。  
+  
+ 列挙体の基になる型として指定できる組み込みの整数型の詳細については、次を参照してください。[クラス ライブラリの概要](~/docs/standard/class-library-overview.md)です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、これを使用して列挙体を定義する必要が<xref:System.Reflection.Emit.TypeBuilder>ため<xref:System.Reflection.Emit.EnumBuilder>が要素の型は列挙型の出力<xref:System.Int32>列挙型の代わりにします。 .NET framework version 2.0 では、<xref:System.Reflection.Emit.EnumBuilder>正しい型である要素を持つ列挙型を出力します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`DefineEnum`動的モジュールで列挙型クラスを実装します。 という名前の列挙が定義されています`Elevation`を含む、基になる型の<xref:System.Int32>、し、2 つの要素を作成: `Low`、0 の値を持つと`High`、値は 1 です。 型が作成された後、アセンブリは、名前で保存`TempAssembly.dll`です。 使用することができます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)このアセンブリの内容を確認します。  
+  
+> [!NOTE]
+>  .NET Framework version 2.0 では、前にこのコード例では、正しい列挙型は生成されません。  
+  
+ [!code-cpp[ModuleBuilder_DefineEnum#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefineEnum/CPP/modulebuilder_defineenum.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefineEnum#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefineEnum/CS/modulebuilder_defineenum.cs#1)]
+ [!code-vb[ModuleBuilder_DefineEnum#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefineEnum/VB/modulebuilder_defineenum.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">可視属性以外の属性が提供されます。  
+  
+ または  
+  
+ 指定した名前列挙体は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 可視属性では、列挙体のスコープは一致しません。 たとえば、<see cref="F:System.Reflection.TypeAttributes.NestedPublic" />が指定されて<paramref name="visibility" />列挙が入れ子にされた型ではありませんが、します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineGlobalMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodBuilder DefineGlobalMethod (string name, System.Reflection.MethodAttributes attributes, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.MethodBuilder DefineGlobalMethod(string name, valuetype System.Reflection.MethodAttributes attributes, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod(System.String,System.Reflection.MethodAttributes,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">メソッドの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attributes">メソッドの属性。 <c>属性</c>含める必要があります<see cref="F:System.Reflection.MethodAttributes.Static" />です。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <summary>指定された名前、属性、戻り値の型およびパラメーターの型を持つグローバル メソッドを定義します。</summary>
+        <returns>定義されたグローバル メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを定義するグローバル メソッドが呼び出されるまでは使用できません<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`DefineGlobalMethod`現在関連付けられている型に依存しないメソッドを作成する<xref:System.Reflection.Emit.ModuleBuilder>です。 グローバルのメソッドをビルドした後<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>を完了するために呼び出す必要があります。  
+  
+ [!code-cpp[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CPP/modulebuilder_createglobalfunctions.cpp#1)]
+ [!code-csharp[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CS/modulebuilder_createglobalfunctions.cs#1)]
+ [!code-vb[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/VB/modulebuilder_createglobalfunctions.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドは静的ではありません。 つまり、<paramref name="attributes" />含まない<see cref="F:System.Reflection.MethodAttributes.Static" />です。  
+  
+ または  
+  
+ 長さ<paramref name="name" />ゼロ  
+  
+ または  
+  
+ 内の要素、<see cref="T:System.Type" />配列が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" /> は以前に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineGlobalMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodBuilder DefineGlobalMethod (string name, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.MethodBuilder DefineGlobalMethod(string name, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod(System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">メソッドの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attributes">メソッドの属性。 <c>属性</c>含める必要があります<see cref="F:System.Reflection.MethodAttributes.Static" />です。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <summary>指定された名前、属性、呼び出し規約、戻り値の型およびパラメーターの型を持つグローバル メソッドを定義します。</summary>
+        <returns>定義されたグローバル メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを定義するまでのグローバル メソッドを使用することはできませんを呼び出す<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルは、の使用方法を示します`DefineGlobalMethod`現在関連付けられている型に依存しないメソッドを作成する<xref:System.Reflection.Emit.ModuleBuilder>です。 グローバルのメソッドをビルドした後<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>を完了するために呼び出す必要があります。  
+  
+ [!code-cpp[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CPP/modulebuilder_createglobalfunctions.cpp#1)]
+ [!code-csharp[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/CS/modulebuilder_createglobalfunctions.cs#1)]
+ [!code-vb[ModuleBuilder_CreateGlobalFunctions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_CreateGlobalFunctions/VB/modulebuilder_createglobalfunctions.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドは静的ではありません。 つまり、<paramref name="attributes" />含まない<see cref="F:System.Reflection.MethodAttributes.Static" />です。  
+  
+ または  
+  
+ 内の要素、<see cref="T:System.Type" />配列が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" /> は以前に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineGlobalMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodBuilder DefineGlobalMethod (string name, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] requiredReturnTypeCustomModifiers, Type[] optionalReturnTypeCustomModifiers, Type[] parameterTypes, Type[][] requiredParameterTypeCustomModifiers, Type[][] optionalParameterTypeCustomModifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.MethodBuilder DefineGlobalMethod(string name, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] requiredReturnTypeCustomModifiers, class System.Type[] optionalReturnTypeCustomModifiers, class System.Type[] parameterTypes, class System.Type[][] requiredParameterTypeCustomModifiers, class System.Type[][] optionalParameterTypeCustomModifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod(System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[],System.Type[],System.Type[],System.Type[][],System.Type[][])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="requiredReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="optionalReturnTypeCustomModifiers" Type="System.Type[]" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="requiredParameterTypeCustomModifiers" Type="System.Type[][]" />
+        <Parameter Name="optionalParameterTypeCustomModifiers" Type="System.Type[][]" />
+      </Parameters>
+      <Docs>
+        <param name="name">メソッドの名前。 <c>名前</c>埋め込まれた null 文字を含めることはできません。</param>
+        <param name="attributes">メソッドの属性。 <c>属性</c>含める必要があります<see cref="F:System.Reflection.MethodAttributes.Static" />です。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="requiredReturnTypeCustomModifiers">戻り値の型の必須カスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が必須のカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="optionalReturnTypeCustomModifiers">戻り値の型の省略可能なカスタム修飾子をなどを表す型の配列<see cref="T:System.Runtime.CompilerServices.IsConst" />または<see cref="T:System.Runtime.CompilerServices.IsBoxed" />です。 戻り値の型が省略可能なカスタム修飾子を持たない場合は、<see langword="null" /> を指定します。</param>
+        <param name="parameterTypes">メソッドのパラメーター型。</param>
+        <param name="requiredParameterTypeCustomModifiers">型の配列の配列。 各型の配列では、グローバル メソッドのパラメーターに対応する必須のカスタム修飾子を表します。 特定の引数が必須のカスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 グローバル メソッドは、引数を持たないか、どの引数の必須カスタム修飾子が場合は、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <param name="optionalParameterTypeCustomModifiers">型の配列の配列。 型の各配列は、パラメーターに対応する省略可能なカスタム修飾子を表します。 特定の引数は省略可能カスタム修飾子を持たない場合は、指定<see langword="null" />型の配列の代わりにします。 グローバル メソッドがあるない場合、引数または引数のいずれも省略可能カスタム修飾子がある場合、指定<see langword="null" />配列の配列の代わりにします。</param>
+        <summary>指定した名前のグローバル メソッドを定義、属性、パラメーターの型の呼び出し規約、戻り値の型のカスタム修飾子を戻り値の型、パラメーターの型、およびカスタム修飾子をします。</summary>
+        <returns>定義されたグローバル メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードでは、マネージ コンパイラのデザイナーが指定されます。  
+  
+ このメソッドを定義するまでのグローバル メソッドを使用することはできませんを呼び出す<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドは静的ではありません。 つまり、<paramref name="attributes" />含まない<see cref="F:System.Reflection.MethodAttributes.Static" />です。  
+  
+ または  
+  
+ 内の要素、<see cref="T:System.Type" />配列が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" />メソッドが既に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineInitializedData">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.FieldBuilder DefineInitializedData (string name, byte[] data, System.Reflection.FieldAttributes attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.FieldBuilder DefineInitializedData(string name, unsigned int8[] data, valuetype System.Reflection.FieldAttributes attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineInitializedData(System.String,System.Byte[],System.Reflection.FieldAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.FieldBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="attributes" Type="System.Reflection.FieldAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="name">データを参照するために使用する名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="data">データのバイナリ ラージ オブジェクト (BLOB)。</param>
+        <param name="attributes">フィールドの属性。 既定値は、<see langword="Static" /> です。</param>
+        <summary>ポータブル実行可能 (PE) ファイルの .sdata セクションでは、初期化されたデータ フィールドを定義します。</summary>
+        <returns>データを参照するフィールド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldAttributes.Static>自動的に含まれる`attributes`です。  
+  
+ このメソッドによって定義されたデータはまで作成されません、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.Emit.ModuleBuilder.DefineInitializedData%2A>で初期化されたデータ フィールドを定義する方法、`.sdata`ポータブル実行可能 (PE) ファイルのセクションです。  
+  
+ [!code-cpp[ModuleBuilder_DefineInitializedData#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefineInitializedData/CPP/modulebuilder_defineinitializeddata.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefineInitializedData#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefineInitializedData/CS/modulebuilder_defineinitializeddata.cs#1)]
+ [!code-vb[ModuleBuilder_DefineInitializedData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefineInitializedData/VB/modulebuilder_defineinitializeddata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> の長さが 0 です。  
+  
+ または  
+  
+ サイズ<paramref name="data" />より小さいよりまたはか 0 より大きいか等しい 0x3f0000 がします。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="data" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" /> は以前に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineManifestResource">
+      <MemberSignature Language="C#" Value="public void DefineManifestResource (string name, System.IO.Stream stream, System.Reflection.ResourceAttributes attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DefineManifestResource(string name, class System.IO.Stream stream, valuetype System.Reflection.ResourceAttributes attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineManifestResource(System.String,System.IO.Stream,System.Reflection.ResourceAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="attribute" Type="System.Reflection.ResourceAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="stream">リソースのバイトを格納しているストリーム。</param>
+        <param name="attribute">リソースがパブリックかプライベートかどうかを指定する列挙値。</param>
+        <summary>動的アセンブリに埋め込まれるマニフェスト リソースを表すバイナリ ラージ オブジェクト (BLOB) を定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリ マニフェストに記録されているリソースしたりすることマネージ リソース マニフェスト リソース Blob では、これらの各リンクすることで、またはに埋め込むことによって、アセンブリに格納することができます。 動的アセンブリでは、次の 4 つのすべてのシナリオはサポートされます。  
+  
+-   このメソッドを使用すると、動的アセンブリのマニフェスト リソース BLOB を埋め込むことができます。  
+  
+-   サテライト モジュールか、動的アセンブリのマニフェスト モジュールには、マネージ リソースを埋め込むを使用して、<xref:System.Reflection.Emit.ModuleBuilder.DefineResource%2A?displayProperty=nameWithType>メソッドを取得するリソース ライターを使用して、<xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=nameWithType>リソースを追加するメソッド。  
+  
+-   マネージ リソースをリンクするには、動的アセンブリに、使用、<xref:System.Reflection.Emit.AssemblyBuilder.DefineResource%2A?displayProperty=nameWithType>メソッドを取得するリソース ライターを使用して、<xref:System.Resources.ResourceWriter.AddResource%2A?displayProperty=nameWithType>リンクされたリソースを追加するメソッド。  
+  
+-   動的アセンブリに BLOB マニフェスト リソースをリンクするを使用して、<xref:System.Reflection.Emit.AssemblyBuilder.AddResourceFile%2A?displayProperty=nameWithType>リンクされたリソースを追加するメソッド。  
+  
+ 使用して 1 つの Win32 リソースをアセンブリにアタッチするさらに、<xref:System.Reflection.Emit.AssemblyBuilder.DefineUnmanagedResource%2A?displayProperty=nameWithType>メソッドまたは<xref:System.Reflection.Emit.ModuleBuilder.DefineUnmanagedResource%2A?displayProperty=nameWithType>メソッドです。 このリソースは、アセンブリ マニフェストには表示されません。  
+  
+   
+  
+## Examples  
+ 次の例が生成され、という名前の動的アセンブリを保存`EmittedManifestResourceAssembly.exe`リソースをアンマネージ埋め込みが含まれます。 例では、1 つのモジュールで構成され、アンマネージ リソースを格納するメモリ ストリームを開いているアセンブリを作成します。 コードを呼び出すし、<xref:System.Reflection.Emit.ModuleBuilder.DefineManifestResource%2A>リソースを定義するメソッド。  
+  
+> [!NOTE]
+>  リソースに対してどの種類のストリームを使用することができます。たとえば、ファイルから管理されていないバイナリ データを読み取ることができます。  
+  
+ この例では、動的モジュールをで型を定義、`Main`メソッド、し MSIL メソッドの本体を生成します。 本体の後に、`Main`メソッドが生成されているし、型が作成されて、コード例 5 バイトをストリームに書き込みます、マニフェスト リソースに関連付けられています。 アセンブリを保存すると、リソースが追加されます。  
+  
+ 例を実行すると、生成されたアセンブリを実行できます。 生成されたアセンブリの内のコード`Main`メソッドが埋め込まれたマニフェスト リソースを読み取り、バイト値をコンソールに出力します。 使用することができます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)アセンブリ マニフェストに情報を表示します。  
+  
+ [!code-csharp[DefineManifestResource#1](~/samples/snippets/csharp/VS_Snippets_CLR/DefineManifestResource/cs/source.cs#1)]
+ [!code-vb[DefineManifestResource#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DefineManifestResource/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> は長さゼロの文字列です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のモジュールを含む動的アセンブリは一時的なものです。つまり、ファイル名が指定されていないときに<see cref="M:System.Reflection.Emit.AssemblyBuilder.DefineDynamicModule(System.String,System.String)" />が呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefinePInvokeMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodBuilder DefinePInvokeMethod (string name, string dllName, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes, System.Runtime.InteropServices.CallingConvention nativeCallConv, System.Runtime.InteropServices.CharSet nativeCharSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.MethodBuilder DefinePInvokeMethod(string name, string dllName, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes, valuetype System.Runtime.InteropServices.CallingConvention nativeCallConv, valuetype System.Runtime.InteropServices.CharSet nativeCharSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefinePInvokeMethod(System.String,System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[],System.Runtime.InteropServices.CallingConvention,System.Runtime.InteropServices.CharSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="nativeCallConv" Type="System.Runtime.InteropServices.CallingConvention" />
+        <Parameter Name="nativeCharSet" Type="System.Runtime.InteropServices.CharSet" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see langword="PInvoke" /> メソッドの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="dllName"><see langword="PInvoke" /> メソッドが定義されている DLL の名前。</param>
+        <param name="attributes">メソッドの属性。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <param name="nativeCallConv">ネイティブ呼び出し規則。</param>
+        <param name="nativeCharSet">メソッドのネイティブ文字セット。</param>
+        <summary>定義、<see langword="PInvoke" />メソッドを指定した名前、メソッド、メソッドの呼び出し規約、メソッドの戻り値の型、メソッドのパラメーターの型の属性、メソッドが定義されている DLL の名前と<see langword="PInvoke" />フラグ。</summary>
+        <returns>定義された <see langword="PInvoke" /> メソッド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかの DLL インポート属性は、このメソッドに引数として指定することはできません (System.Runtime.InteropServices.DllImportAttribute の説明を参照してください)。 メソッドのカスタム属性を生成することによって、このような属性を設定してください。 たとえば、DLL インポート属性`PreserveSig`カスタム属性を生成することによって設定されています。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、`DefinePInvokeMethod`メソッドを作成、<xref:System.Reflection.Emit.MethodBuilder>アンマネージ メソッドの外部`MessageBoxA`、Win32 API にします。 例を含むメッセージ ボックスが表示されます**再試行**と**キャンセル**ボタン、およびメッセージ ボックスからの戻り値が表示されます。  
+  
+> [!IMPORTANT]
+>  0 以外の戻り値を取得する必要がありますを追加する<xref:System.Reflection.MethodImplAttributes?displayProperty=nameWithType>メソッド実装フラグを作成した後に、<xref:System.Reflection.Emit.MethodBuilder>を使用して、<xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags%2A?displayProperty=nameWithType>と<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-cpp[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/CPP/modulebuilder_definepinvokemethod1.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/CS/modulebuilder_definepinvokemethod1.cs#1)]
+ [!code-vb[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/VB/modulebuilder_definepinvokemethod1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドは、静的または包含する型がインターフェイスではありません。  
+  
+ または  
+  
+ 抽象メソッドです。  
+  
+ -または-  
+  
+ メソッドは以前に定義されています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="dllName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">包含する型が以前に作成したを使用します。<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefinePInvokeMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodBuilder DefinePInvokeMethod (string name, string dllName, string entryName, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes, System.Runtime.InteropServices.CallingConvention nativeCallConv, System.Runtime.InteropServices.CharSet nativeCharSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.MethodBuilder DefinePInvokeMethod(string name, string dllName, string entryName, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes, valuetype System.Runtime.InteropServices.CallingConvention nativeCallConv, valuetype System.Runtime.InteropServices.CharSet nativeCharSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefinePInvokeMethod(System.String,System.String,System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[],System.Runtime.InteropServices.CallingConvention,System.Runtime.InteropServices.CharSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="entryName" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="nativeCallConv" Type="System.Runtime.InteropServices.CallingConvention" />
+        <Parameter Name="nativeCharSet" Type="System.Runtime.InteropServices.CharSet" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see langword="PInvoke" /> メソッドの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="dllName"><see langword="PInvoke" /> メソッドが定義されている DLL の名前。</param>
+        <param name="entryName">DLL 内のエントリ ポイントの名前。</param>
+        <param name="attributes">メソッドの属性。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <param name="nativeCallConv">ネイティブ呼び出し規則。</param>
+        <param name="nativeCharSet">メソッドのネイティブ文字セット。</param>
+        <summary>定義、<see langword="PInvoke" />メソッドを指定した名前、メソッド、メソッドの呼び出し規約、メソッドの戻り値の型、メソッドのパラメーターの型の属性、メソッドが定義されている DLL の名前と<see langword="PInvoke" />フラグ。</summary>
+        <returns>定義された <see langword="PInvoke" /> メソッド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性のいくつかの DLL インポート (の説明を参照して<xref:System.Runtime.InteropServices.DllImportAttribute>) このメソッドに引数として指定することはできません。 メソッドのカスタム属性を生成することによって、このような属性を設定してください。 たとえば、DLL インポート属性`PreserveSig`カスタム属性を生成することによって設定されています。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、`DefinePInvokeMethod`メソッドを作成、<xref:System.Reflection.Emit.MethodBuilder>アンマネージ メソッドの外部`MessageBoxA`、Win32 API にします。 例を含むメッセージ ボックスが表示されます**再試行**と**キャンセル**ボタン、およびメッセージ ボックスからの戻り値が表示されます。  
+  
+> [!IMPORTANT]
+>  0 以外の戻り値を取得する必要がありますを追加する<xref:System.Reflection.MethodImplAttributes?displayProperty=nameWithType>メソッド実装フラグを作成した後に、<xref:System.Reflection.Emit.MethodBuilder>を使用して、<xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags%2A?displayProperty=nameWithType>と<xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この例の異なるオーバー ロードを使用して、<xref:System.Reflection.Emit.ModuleBuilder.DefinePInvokeMethod%2A>メソッド、手法を使用するが、同じです。  
+  
+ [!code-cpp[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/CPP/modulebuilder_definepinvokemethod1.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/CS/modulebuilder_definepinvokemethod1.cs#1)]
+ [!code-vb[ModuleBuilder_DefinePInvokeMethod1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefinePInvokeMethod1/VB/modulebuilder_definepinvokemethod1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドは static ではない、またはメソッドが以前に定義を含む型がインターフェイスの場合、または場合の抽象メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="dllName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">包含する型が以前に作成したを使用します。<see cref="M:System.Reflection.Emit.TypeBuilder.CreateType" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineResource">
+      <MemberSignature Language="C#" Value="public System.Resources.IResourceWriter DefineResource (string name, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Resources.IResourceWriter DefineResource(string name, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineResource(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="description">リソースの説明です。</param>
+        <summary>このモジュールに格納される埋め込みマネージ リソースの名前付きを定義します。</summary>
+        <returns>定義されているリソースを使用するリソース ライター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元を呼び出してはならない、`ResourceWriter.Generate()`と`ResourceWriter.Close()`メソッド、これらのメソッドが呼び出されるため`ModuleBuilder.Save`動的アセンブリが書き込まれたときをディスクにします。  
+  
+ このメソッドを使用して、マネージ リソースを埋め込みます。 マニフェスト リソースの blob を埋め込むを使用して、<xref:System.Reflection.Emit.ModuleBuilder.DefineManifestResource%2A>メソッドです。 埋め込みとマネージ リソースと blob のマニフェスト リソースをリンクの概要は、次を参照してください。、<xref:System.Reflection.Emit.ModuleBuilder.DefineManifestResource%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`DefineResource`現在に外部のリソースを追加する<xref:System.Reflection.Emit.ModuleBuilder>です。  
+  
+ [!code-cpp[ModuleBuilder_DefineResource1#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefineResource1/CPP/modulebuilder_defineresource1.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefineResource1#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefineResource1/CS/modulebuilder_defineresource1.cs#1)]
+ [!code-vb[ModuleBuilder_DefineResource1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefineResource1/VB/modulebuilder_defineresource1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> の長さが 0 です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.InvalidOperationException">このモジュールは、一時的なものです。  
+  
+ または  
+  
+ コンテナーのアセンブリは、永続化ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineResource">
+      <MemberSignature Language="C#" Value="public System.Resources.IResourceWriter DefineResource (string name, string description, System.Reflection.ResourceAttributes attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Resources.IResourceWriter DefineResource(string name, string description, valuetype System.Reflection.ResourceAttributes attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineResource(System.String,System.String,System.Reflection.ResourceAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="attribute" Type="System.Reflection.ResourceAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="description">リソースの説明です。</param>
+        <param name="attribute">リソースの属性。</param>
+        <summary>名前付きマネージ埋め込まれた指定された属性を持つなリソースをこのモジュールに格納されるを定義します。</summary>
+        <returns>定義されているリソースを使用するリソース ライター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元を呼び出してはならない、`ResourceWriter.Generate()`と`ResourceWriter.Close()`メソッド、これらのメソッドが呼び出されるため`ModuleBuilder.Save`動的アセンブリが書き込まれたときをディスクにします。  
+  
+ このメソッドを使用して、マネージ リソースを埋め込みます。 マニフェスト リソースの blob を埋め込むを使用して、<xref:System.Reflection.Emit.ModuleBuilder.DefineManifestResource%2A>メソッドです。 埋め込みとマネージ リソースと blob のマニフェスト リソースをリンクの概要は、次を参照してください。、<xref:System.Reflection.Emit.ModuleBuilder.DefineManifestResource%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、現在、外部リソースを追加する DefineResource の使用<xref:System.Reflection.Emit.ModuleBuilder>です。  
+  
+ [!code-cpp[ModuleBuilder_DefineResource2#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_DefineResource2/CPP/modulebuilder_defineresource2.cpp#1)]
+ [!code-csharp[ModuleBuilder_DefineResource2#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_DefineResource2/CS/modulebuilder_defineresource2.cs#1)]
+ [!code-vb[ModuleBuilder_DefineResource2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_DefineResource2/VB/modulebuilder_defineresource2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> の長さが 0 です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.InvalidOperationException">このモジュールは、一時的なものです。  
+  
+ または  
+  
+ コンテナーのアセンブリは、永続化ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前空間を含む、型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <summary>構築、<see langword="TypeBuilder" />このモジュールで指定した名前のプライベート型です。</summary>
+        <returns>指定した名前でプライベート型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">定義済みの型の属性。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名と型属性を指定します。</summary>
+        <returns>A<see langword="TypeBuilder" />のすべての要求された属性を作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr, Type parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr, class System.Type parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="parent" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">型に関連する属性です。</param>
+        <param name="parent">定義済みの型を拡張する型。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名、その属性、および定義済みの型を拡張する型を指定します。</summary>
+        <returns>A<see langword="TypeBuilder" />のすべての要求された属性を作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr, Type parent, int typesize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr, class System.Type parent, int32 typesize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes,System.Type,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="parent" Type="System.Type" />
+        <Parameter Name="typesize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">定義済みの型の属性。</param>
+        <param name="parent">定義済みの型を拡張する型。</param>
+        <param name="typesize">型の合計サイズ。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名、属性、定義済みの型を拡張する型と型の合計サイズを指定します。</summary>
+        <returns><see langword="TypeBuilder" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型には禁止されています。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr, Type parent, System.Reflection.Emit.PackingSize packsize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr, class System.Type parent, valuetype System.Reflection.Emit.PackingSize packsize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes,System.Type,System.Reflection.Emit.PackingSize)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="parent" Type="System.Type" />
+        <Parameter Name="packsize" Type="System.Reflection.Emit.PackingSize" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">定義済みの型の属性。</param>
+        <param name="parent">定義済みの型を拡張する型。</param>
+        <param name="packsize">型のパッキング サイズ。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名、属性、定義済みの型を拡張する型と型のパッキング サイズを指定します。</summary>
+        <returns><see langword="TypeBuilder" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr, Type parent, Type[] interfaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr, class System.Type parent, class System.Type[] interfaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="parent" Type="System.Type" />
+        <Parameter Name="interfaces" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">型に関連する属性。</param>
+        <param name="parent">定義済みの型を拡張する型。</param>
+        <param name="interfaces">型が実装するインターフェイスのリスト。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名、属性、定義済みの型を拡張する型、および定義済みの型が実装するインターフェイスを指定します。</summary>
+        <returns>A<see langword="TypeBuilder" />のすべての要求された属性を作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineType">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeBuilder DefineType (string name, System.Reflection.TypeAttributes attr, Type parent, System.Reflection.Emit.PackingSize packingSize, int typesize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.TypeBuilder DefineType(string name, valuetype System.Reflection.TypeAttributes attr, class System.Type parent, valuetype System.Reflection.Emit.PackingSize packingSize, int32 typesize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineType(System.String,System.Reflection.TypeAttributes,System.Type,System.Reflection.Emit.PackingSize,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attr" Type="System.Reflection.TypeAttributes" />
+        <Parameter Name="parent" Type="System.Type" />
+        <Parameter Name="packingSize" Type="System.Reflection.Emit.PackingSize" />
+        <Parameter Name="typesize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の完全パス。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="attr">定義済みの型の属性。</param>
+        <param name="parent">定義済みの型を拡張する型。</param>
+        <param name="packingSize">型のパッキング サイズ。</param>
+        <param name="typesize">型の合計サイズ。</param>
+        <summary>構築、<see langword="TypeBuilder" />型名、属性、定義済みの型を拡張する型、定義された型のパッキング サイズおよび定義済みの型の合計サイズを指定します。</summary>
+        <returns>A<see langword="TypeBuilder" />のすべての要求された属性を作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、アセンブリ内で一意でなければなりません。 アセンブリの 2 つの異なるモジュールで同じ名前の 2 つの型を持つことはできません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Reflection.Emit.TypeBuilder>現在動的モジュールを使用して、 `CreateType`、ビルドの種類を完了して、アセンブリを保存します。  
+  
+ [!code-cpp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/CS/source.cs#1)]
+ [!code-vb[Classic ModuleBuilder.DefineType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ModuleBuilder.DefineType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した名前の型は、このモジュールの親アセンブリに存在します。  
+  
+ または  
+  
+ 入れ子にされた型の属性は、入れ子になっていない型に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineUninitializedData">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.FieldBuilder DefineUninitializedData (string name, int size, System.Reflection.FieldAttributes attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.FieldBuilder DefineUninitializedData(string name, int32 size, valuetype System.Reflection.FieldAttributes attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineUninitializedData(System.String,System.Int32,System.Reflection.FieldAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.FieldBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="attributes" Type="System.Reflection.FieldAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="name">データを参照するために使用する名前。 <c>名前</c>に埋め込み null 値を含めることはできません。</param>
+        <param name="size">データ フィールドのサイズ。</param>
+        <param name="attributes">フィールドの属性。</param>
+        <summary>ポータブル実行可能 (PE) ファイルの .sdata セクションでは、初期化されていないデータ フィールドを定義します。</summary>
+        <returns>データを参照するフィールド。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldAttributes.Static>自動的に含まれる`attributes`です。  
+  
+ このメソッドによって定義されたデータはまで作成されません、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" /> の長さが 0 です。  
+  
+ または  
+  
+ <paramref name="size" />以下または 0 に等しいかより大きい 0x003f0000 がします。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions" /> は以前に呼び出されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineUnmanagedResource">
+      <MemberSignature Language="C#" Value="public void DefineUnmanagedResource (byte[] resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DefineUnmanagedResource(unsigned int8[] resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineUnmanagedResource(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resource" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="resource">アンマネージ リソースを表す非透過 BLOB</param>
+        <summary>不透明なバイナリ ラージ オブジェクト (BLOB) のバイト数を指定して、管理されていない埋め込みリソースを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリは、1 つだけのアンマネージ リソースを関連付けることができます。 つまり、その通話`DefineVersionInfoResource`または`DefineUnmanagedResource`のいずれかのいずれかの後に呼び出された以前スロー<xref:System.ArgumentException>です。 複数のアンマネージ リソースを (共通言語ランタイムでは提供されません)、Microsoft ResMerge ユーティリティなどのツールとマージする必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">モジュールのアセンブリで、アンマネージ リソースは既に定義されています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resource" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineUnmanagedResource">
+      <MemberSignature Language="C#" Value="public void DefineUnmanagedResource (string resourceFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DefineUnmanagedResource(string resourceFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.DefineUnmanagedResource(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceFileName">アンマネージ リソース ファイルの名前。</param>
+        <summary>Win32 リソース ファイルの名前を割り当て、アンマネージ リソースを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリは、1 つだけのアンマネージ リソースを関連付けることができます。 つまり、その通話`DefineVersionInfoResource`または`DefineUnmanagedResource`のいずれかのいずれかの後に呼び出された以前スロー<xref:System.ArgumentException>です。 複数のアンマネージ リソースを (共通言語ランタイムでは提供されません)、Microsoft ResMerge ユーティリティなどのツールとマージする必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">モジュールのアセンブリで、アンマネージ リソースは既に定義されています。  
+  
+ または  
+  
+ <paramref name="resourceFileName" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="resourceFileName" /> が見つかりません。  
+  
+ または  
+  
+ <paramref name="resourceFileName" /> はディレクトリです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>対象のインスタンスが、指定したオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyQualifiedName">
+      <MemberSignature Language="C#" Value="public override string FullyQualifiedName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullyQualifiedName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.FullyQualifiedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="String" />このモジュールへの完全修飾名とパスを表すです。</summary>
+        <value>モジュールの完全修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を取得する、パスを含まない、`Name`です。  
+  
+> [!NOTE]
+>  モジュール名の大文字と小文字は、プラットフォームに依存します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスの情報にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArrayMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetArrayMethod (Type arrayClass, string methodName, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.MethodInfo GetArrayMethod(class System.Type arrayClass, string methodName, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetArrayMethod(System.Type,System.String,System.Reflection.CallingConventions,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrayClass" Type="System.Type" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="arrayClass">配列クラスです。</param>
+        <param name="methodName">Array クラスのメソッドの名前。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <summary>配列クラスの名前付きメソッドを返します。</summary>
+        <returns>配列クラスの名前のメソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetArrayMethod`その定義が完了していない型の配列がありで定義されたメソッドにアクセスする場合に便利です<xref:System.Array>です。 たとえば、型を定義しをパラメーターとして型の配列を受け取るメソッドを定義する可能性があります。 配列の要素にアクセスするためのメソッドを呼び出す必要があります、<xref:System.Array>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Reflection.Emit.ModuleBuilder.GetArrayMethod%2A>を取得する、<xref:System.Reflection.MethodInfo>を配列の値を返すメソッドに対応します。  
+  
+ [!code-cpp[ModuleBuilder_GetArrayMethod#1](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/CPP/modulebuilder_getarraymethod.cpp#1)]
+ [!code-csharp[ModuleBuilder_GetArrayMethod#1](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/CS/modulebuilder_getarraymethod.cs#1)]
+ [!code-vb[ModuleBuilder_GetArrayMethod#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/VB/modulebuilder_getarraymethod.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="arrayClass" />配列ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="arrayClass" /> または <paramref name="methodName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArrayMethodToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetArrayMethodToken (Type arrayClass, string methodName, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetArrayMethodToken(class System.Type arrayClass, string methodName, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetArrayMethodToken(System.Type,System.String,System.Reflection.CallingConventions,System.Type,System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrayClass" Type="System.Type" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="arrayClass">配列のオブジェクトです。</param>
+        <param name="methodName">メソッドの名前を表す文字列。</param>
+        <param name="callingConvention">メソッドの呼び出し規則。</param>
+        <param name="returnType">メソッドの戻り値の型。</param>
+        <param name="parameterTypes">メソッドのパラメーターの型。</param>
+        <summary>配列クラスの名前のメソッドのトークンを返します。</summary>
+        <returns>配列クラスのメソッドの名前付きトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのような<xref:System.Reflection.Emit.ModuleBuilder.GetArrayMethod%2A>メソッド自体ではなく配列メソッドのトークンを返す点が異なります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Reflection.Emit.ModuleBuilder.GetArrayMethod%2A>を取得する、<xref:System.Reflection.Emit.MethodToken>を配列の値を返すメソッドに対応します。  
+  
+ [!code-cpp[ModuleBuilder_GetArrayMethod#2](~/samples/snippets/cpp/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/CPP/modulebuilder_getarraymethod.cpp#2)]
+ [!code-csharp[ModuleBuilder_GetArrayMethod#2](~/samples/snippets/csharp/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/CS/modulebuilder_getarraymethod.cs#2)]
+ [!code-vb[ModuleBuilder_GetArrayMethod#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ModuleBuilder_GetArrayMethod/VB/modulebuilder_getarraymethod.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="arrayClass" />配列ではありません。  
+  
+ または  
+  
+ <paramref name="methodName" /> の長さが 0 です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="arrayClass" /> または <paramref name="methodName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConstructorToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetConstructorToken (System.Reflection.ConstructorInfo con);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetConstructorToken(class System.Reflection.ConstructorInfo con) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetConstructorToken(System.Reflection.ConstructorInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="con" Type="System.Reflection.ConstructorInfo" />
+      </Parameters>
+      <Docs>
+        <param name="con">トークンを取得するコンス トラクターです。</param>
+        <summary>このモジュール内で指定したコンス トラクターの識別に使用されるトークンを返します。</summary>
+        <returns>このモジュール内で指定したコンス トラクターを識別するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="con" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConstructorToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetConstructorToken (System.Reflection.ConstructorInfo constructor, System.Collections.Generic.IEnumerable&lt;Type&gt; optionalParameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetConstructorToken(class System.Reflection.ConstructorInfo constructor, class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; optionalParameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetConstructorToken(System.Reflection.ConstructorInfo,System.Collections.Generic.IEnumerable{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructor" Type="System.Reflection.ConstructorInfo" />
+        <Parameter Name="optionalParameterTypes" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="constructor">トークンを取得するコンス トラクターです。</param>
+        <param name="optionalParameterTypes">コンス トラクターに省略可能なパラメーターの型のコレクション。</param>
+        <summary>指定した属性とこのモジュール内でパラメーターの型を持つコンス トラクターを識別するために使用するトークンを返します。</summary>
+        <returns>このモジュール内で指定したコンス トラクターを識別するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="constructor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">この型のオブジェクトでは、この引数は無視されます。</param>
+        <summary>現在適用されているすべてのカスタム属性を返します<see cref="T:System.Reflection.Emit.ModuleBuilder" />です。</summary>
+        <returns>カスタム属性を含む配列。属性がない場合、配列は空です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">属性の派生元となる基本型。</param>
+        <param name="inherit">この型のオブジェクトでは、この引数は無視されます。</param>
+        <summary>現在適用されているすべてのカスタム属性を返します<see cref="T:System.Reflection.Emit.ModuleBuilder" />、指定した属性の型から派生したとします。</summary>
+        <returns>派生した、任意のレベルでは、カスタム属性を含む配列<paramref name="attributeType" />; このような属性がない場合、配列は空です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="attributeType" /><see cref="T:System.Type" />ランタイムによって提供されたオブジェクト。 たとえば、<paramref name="attributeType" />は、<see cref="T:System.Reflection.Emit.TypeBuilder" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributesData">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributesData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributesData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetCustomAttributesData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Reflection.Emit.ModuleBuilder" /> に適用されている属性に関する情報を、<see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトとして返します。</summary>
+        <returns>ジェネリック リスト<see cref="T:System.Reflection.CustomAttributeData" />現在のモジュールに適用されている属性に関するデータを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リフレクション専用コンテキストに読み込まれるコードでカスタム属性自体が定義されている場合、リフレクションのみのコンテキストでコードのカスタム属性を調べるには、このメソッドを使用します。 メソッドと同様に<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>と<xref:System.Reflection.Assembly.GetCustomAttributes%2A?displayProperty=nameWithType>属性のインスタンスを作成するため、このようなケースでは使用できません。 リフレクションのみのコンテキストでコードを実行できません。 詳細については、たとえばコードを参照してください、<xref:System.Reflection.CustomAttributeData>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public override System.Reflection.FieldInfo GetField (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.FieldInfo GetField(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetField(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">フィールド名。</param>
+        <param name="bindingAttr">組み合わせ、<see langword="BindingFlags" />ビット フラグの検索を制御するために使用します。</param>
+        <summary>指定した名前とバインディング属性を持つポータブル実行可能 (PE) ファイルの .sdata セクションに定義されている、モジュール レベルのフィールドを返します。</summary>
+        <returns>指定した名前と、バインディング属性を持つフィールドまたは<see langword="null" />フィールドが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、ポータブル実行可能 (PE) ファイルの .sdata セクションにフィールドが定義された動的アセンブリを生成するときに、<xref:System.Reflection.Emit.ModuleBuilder.DefineInitializedData%2A>または<xref:System.Reflection.Emit.ModuleBuilder.DefineUninitializedData%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  までモジュール レベルのフィールドを取得することはできません後、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>モジュールのメソッドが呼び出されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFields">
+      <MemberSignature Language="C#" Value="public override System.Reflection.FieldInfo[] GetFields (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.FieldInfo[] GetFields(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetFields(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">組み合わせ、<see langword="BindingFlags" />ビット フラグの検索を制御するために使用します。</param>
+        <summary>指定したバインディング フラグに一致する、ポータブル実行可能 (PE) ファイルの .sdata セクションに定義されたすべてのフィールドを返します。</summary>
+        <returns>指定したフラグに一致するフィールドの配列このようなフィールドが存在しない場合は、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、ポータブル実行可能 (PE) ファイルの .sdata セクションにフィールドが定義された動的アセンブリを生成するときに、<xref:System.Reflection.Emit.ModuleBuilder.DefineInitializedData%2A>または<xref:System.Reflection.Emit.ModuleBuilder.DefineUninitializedData%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  までモジュール レベルのフィールドを取得することはできません後、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>モジュールのメソッドが呼び出されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.FieldToken GetFieldToken (System.Reflection.FieldInfo field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.FieldToken GetFieldToken(class System.Reflection.FieldInfo field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetFieldToken(System.Reflection.FieldInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.FieldToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Reflection.FieldInfo" />
+      </Parameters>
+      <Docs>
+        <param name="field">トークンを取得するフィールドです。</param>
+        <summary>このモジュール内で指定したフィールドを識別するために使用するトークンを返します。</summary>
+        <returns>このモジュール内で指定したフィールドを識別するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="field" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImpl">
+      <MemberSignature Language="C#" Value="protected override System.Reflection.MethodInfo GetMethodImpl (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, System.Reflection.CallingConventions callConvention, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MethodInfo GetMethodImpl(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, valuetype System.Reflection.CallingConventions callConvention, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetMethodImpl(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Reflection.CallingConventions,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="callConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">メソッド名。</param>
+        <param name="bindingAttr">組み合わせた<see langword="BindingFlags" />ビット フラグの検索を制御するために使用します。</param>
+        <param name="binder">実装するオブジェクト<see langword="Binder" />、このメソッドに関連するプロパティを格納します。</param>
+        <param name="callConvention">メソッドの呼び出し規則。</param>
+        <param name="types">メソッドのパラメーターの型。</param>
+        <param name="modifiers">型が変更されているパラメーター シグネチャでバインドを機能させるために使われるパラメーター修飾子の配列。</param>
+        <summary>指定した条件に一致するモジュール レベル メソッドを返します。</summary>
+        <returns>モジュール レベルで定義され、指定した条件に一致するメソッドまたは<see langword="null" />これらのメソッドが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの継承されたすべてのオーバー ロードの実装を提供する<xref:System.Reflection.Module.GetMethod%2A?displayProperty=nameWithType>メソッドです。 使用して、継承された<xref:System.Reflection.Module.GetMethod%2A?displayProperty=nameWithType>モジュール レベルで宣言されているメソッドを取得します。 モジュール レベルの方法を使用して生成されたコードで定義されて、<xref:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  までモジュール レベルの方法を取得することはできません後、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>モジュールのメソッドが呼び出されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />is <see langword="null" />, <paramref name="types" /> is <see langword="null" />, or an element of <paramref name="types" /> is <see langword="null" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethods">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodInfo[] GetMethods (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodInfo[] GetMethods(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetMethods(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">組み合わせた<see langword="BindingFlags" />ビット フラグの検索を制御するために使用します。</param>
+        <summary>現在のモジュール レベルで定義されているすべてのメソッドを返します<see cref="T:System.Reflection.Emit.ModuleBuilder" />、指定したバインディング フラグに一致するとします。</summary>
+        <returns>一致するすべてのモジュール レベル メソッドを格納する配列<paramref name="bindingFlags" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュール レベルの方法を使用して生成されたコードで定義されて、<xref:System.Reflection.Emit.ModuleBuilder.DefineGlobalMethod%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  までモジュール レベルの方法を取得することはできません後、<xref:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions%2A>モジュールのメソッドが呼び出されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetMethodToken (System.Reflection.MethodInfo method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetMethodToken(class System.Reflection.MethodInfo method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetMethodToken(System.Reflection.MethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="method">トークンを取得するメソッド。</param>
+        <summary>このモジュール内で指定されたメソッドを識別するために使用するトークンを返します。</summary>
+        <returns>このモジュール内で指定されたメソッドを識別するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの宣言する型は、このモジュールではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.MethodToken GetMethodToken (System.Reflection.MethodInfo method, System.Collections.Generic.IEnumerable&lt;Type&gt; optionalParameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.MethodToken GetMethodToken(class System.Reflection.MethodInfo method, class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; optionalParameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetMethodToken(System.Reflection.MethodInfo,System.Collections.Generic.IEnumerable{System.Type})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.MethodToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="optionalParameterTypes" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="method">トークンを取得するメソッド。</param>
+        <param name="optionalParameterTypes">メソッドに省略可能なパラメーターの型のコレクション。</param>
+        <summary>指定した属性とこのモジュール内でパラメーターの型を持つメソッドを識別するために使用するトークンを返します。</summary>
+        <returns>このモジュール内で指定されたメソッドを識別するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの宣言する型は、このモジュールではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPEKind">
+      <MemberSignature Language="C#" Value="public override void GetPEKind (out System.Reflection.PortableExecutableKinds peKind, out System.Reflection.ImageFileMachine machine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetPEKind([out] valuetype System.Reflection.PortableExecutableKinds&amp; peKind, [out] valuetype System.Reflection.ImageFileMachine&amp; machine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetPEKind(System.Reflection.PortableExecutableKinds@,System.Reflection.ImageFileMachine@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peKind" Type="System.Reflection.PortableExecutableKinds&amp;" RefType="out" />
+        <Parameter Name="machine" Type="System.Reflection.ImageFileMachine&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="peKind">このメソッドが返す場合の組み合わせ、<see cref="T:System.Reflection.PortableExecutableKinds" />モジュール内のコードの性質を示す値。</param>
+        <param name="machine">このメソッドが返す場合のいずれか、<see cref="T:System.Reflection.ImageFileMachine" />モジュールによって対象とするプラットフォームを示す値。</param>
+        <summary>モジュールとモジュールの対象となるプラットフォームのコードの性質を示す値のペアを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的モジュールの`peKind`は常に<xref:System.Reflection.PortableExecutableKinds?displayProperty=nameWithType>と`machine`は常に 0 (ゼロ)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignatureToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.SignatureToken GetSignatureToken (System.Reflection.Emit.SignatureHelper sigHelper);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.SignatureToken GetSignatureToken(class System.Reflection.Emit.SignatureHelper sigHelper) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetSignatureToken(System.Reflection.Emit.SignatureHelper)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sigHelper" Type="System.Reflection.Emit.SignatureHelper" />
+      </Parameters>
+      <Docs>
+        <param name="sigHelper">署名。</param>
+        <summary>定義された署名のトークンを定義して、指定した<see cref="T:System.Reflection.Emit.SignatureHelper" />です。</summary>
+        <returns>定義済みの署名のトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって表されるシグネチャのメタデータ トークンを定義する`sigHelper`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sigHelper" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignatureToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.SignatureToken GetSignatureToken (byte[] sigBytes, int sigLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.SignatureToken GetSignatureToken(unsigned int8[] sigBytes, int32 sigLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetSignatureToken(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.SignatureToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sigBytes" Type="System.Byte[]" />
+        <Parameter Name="sigLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sigBytes">署名バイナリ ラージ オブジェクト (BLOB)。</param>
+        <param name="sigLength">署名付き BLOB の長さ。</param>
+        <summary>指定した文字配列と署名の長さが、署名のトークンを定義します。</summary>
+        <returns>指定された署名のトークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sigBytes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignerCertificate">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.X509Certificates.X509Certificate GetSignerCertificate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.X509Certificates.X509Certificate GetSignerCertificate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetSignerCertificate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />にこのモジュールが属するアセンブリの Authenticode 署名に含まれる証明書に対応するオブジェクト。 アセンブリ Authenticode で署名されていない場合<see langword="null" />が返されます。</summary>
+        <returns>証明書、または<see langword="null" />場合、このモジュールが所属するアセンブリが Authenticode 署名がされていません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStringConstant">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.StringToken GetStringConstant (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.StringToken GetStringConstant(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetStringConstant(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.StringToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">モジュールの定数のプールに追加する文字列。</param>
+        <summary>モジュールの定数のプールに指定された文字列のトークンを返します。</summary>
+        <returns>定数のプール内の文字列のトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`str`は既に定義されている、既存のトークンが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="str" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSymWriter">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.SymbolStore.ISymbolWriter GetSymWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.SymbolStore.ISymbolWriter GetSymWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetSymWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.SymbolStore.ISymbolWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この動的モジュールに関連付けられているシンボル ライターを返します。</summary>
+        <returns>この動的モジュールに関連付けられているシンボルのライターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public override Type GetType (string className);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetType(string className) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="className">名前、<see cref="T:System.Type" />を取得します。</param>
+        <summary>モジュールで定義されている名前付きの型を取得します。</summary>
+        <returns>このモジュールで、型が定義されている場合は、要求された型それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、配列型、ポインター型、または byref 型を生成しないでください。 使用して、 <xref:System.Reflection.Emit.TypeBuilder.MakeArrayType%2A?displayProperty=nameWithType>、 <xref:System.Reflection.Emit.TypeBuilder.MakePointerType%2A?displayProperty=nameWithType>、および<xref:System.Reflection.Emit.TypeBuilder.MakeByRefType%2A?displayProperty=nameWithType>メソッド代わりにします。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="className" />ゼロか、1023 を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="className" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">要求された<see cref="T:System.Type" />がパブリックでない呼び出し元がありません<see cref="T:System.Security.Permissions.ReflectionPermission" />現在のアセンブリの外側の非パブリック オブジェクトを反映するようにします。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">クラス初期化子が呼び出され、例外をスローします。</exception>
+        <exception cref="T:System.TypeLoadException">読み込み中にエラーが発生しました、<see cref="T:System.Type" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public override Type GetType (string className, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetType(string className, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetType(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="className">名前、<see cref="T:System.Type" />を取得します。</param>
+        <param name="ignoreCase">場合<see langword="true" />検索では区別されません。 場合<see langword="false" />検索では、大文字小文字を区別します。</param>
+        <summary>型名の大文字と小文字を無視することも、モジュールで定義された名前付き型を取得します。</summary>
+        <returns>このモジュールで、型が定義されている場合は、要求された型それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、配列型、ポインター型、または byref 型を生成しないでください。 使用して、 <xref:System.Reflection.Emit.TypeBuilder.MakeArrayType%2A?displayProperty=nameWithType>、 <xref:System.Reflection.Emit.TypeBuilder.MakePointerType%2A?displayProperty=nameWithType>、および<xref:System.Reflection.Emit.TypeBuilder.MakeByRefType%2A?displayProperty=nameWithType>メソッド代わりにします。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="className" />ゼロか、1023 を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="className" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">要求された<see cref="T:System.Type" />がパブリックでない呼び出し元がありません<see cref="T:System.Security.Permissions.ReflectionPermission" />現在のアセンブリの外側の非パブリック オブジェクトを反映するようにします。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">クラス初期化子が呼び出され、例外をスローします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public override Type GetType (string className, bool throwOnError, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetType(string className, bool throwOnError, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetType(System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="className">名前、<see cref="T:System.Type" />を取得します。</param>
+        <param name="throwOnError">
+          型が見つからなかったときに例外をスローする場合は <see langword="true" />。<see langword="false" /> を返す場合は <see langword="null" />。</param>
+        <param name="ignoreCase">場合<see langword="true" />検索では区別されません。 場合<see langword="false" />検索では、大文字小文字を区別します。</param>
+        <summary>型名の大文字と小文字を無視することも、モジュールで定義された名前付き型を取得します。 必要に応じて、型が見つからない場合は、例外をスローします。</summary>
+        <returns>このモジュールで、型が宣言されている場合は、指定された型それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `throwOnError`パラメーター型が見つからない場合にのみ影響します。 スローされる可能性がありますのあるその他の例外には影響しません。 特に場合は、型が見つかりましたが、アンロードすることはできません<xref:System.TypeLoadException>スローできる場合でも`throwOnError`は`false`します。  
+  
+ このメソッドを使用して、配列型、ポインター型、または byref 型を生成しないでください。 使用して、 <xref:System.Reflection.Emit.TypeBuilder.MakeArrayType%2A?displayProperty=nameWithType>、 <xref:System.Reflection.Emit.TypeBuilder.MakePointerType%2A?displayProperty=nameWithType>、および<xref:System.Reflection.Emit.TypeBuilder.MakeByRefType%2A?displayProperty=nameWithType>メソッド代わりにします。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="className" />ゼロか、1023 を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="className" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">要求された<see cref="T:System.Type" />がパブリックでない呼び出し元がありません<see cref="T:System.Security.Permissions.ReflectionPermission" />現在のアセンブリの外側の非パブリック オブジェクトを反映するようにします。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">クラス初期化子が呼び出され、例外をスローします。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="throwOnError" /><see langword="true" />され、指定した型が検出されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypes">
+      <MemberSignature Language="C#" Value="public override Type[] GetTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type[] GetTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このモジュール内で定義されているすべてのクラスを返します。</summary>
+        <returns>このインスタンスがリフレクションしているモジュール内で定義されている型を格納する配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReflectionTypeLoadException`特殊クラスの読み込み例外です。 `ReflectionTypeLoadException.Types`プロパティには、モジュールで定義され、読み込まれたクラスの配列が含まれています。 この配列は、null 値を含めることができます。 `ReflectionTypeLoadException.LoaderExceptions`プロパティをクラス ローダーによってスローされた例外を表す例外の配列です。 クラスの配列の穴は、例外を整列します。  
+  
+ たとえば、クラスのいずれかのクラスの初期化中に例外をスローした場合は、読み込み、`TargetInvocationException`の対応する要素に格納された、`LoaderExceptions`配列。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.ReflectionTypeLoadException">モジュールの 1 つまたは複数のクラスを読み込むことができませんでした。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeToken GetTypeToken (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.TypeToken GetTypeToken(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetTypeToken(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前空間を含むクラスの名前です。</param>
+        <summary>指定した名前の型を識別するために使用するトークンを返します。</summary>
+        <returns>このモジュール内で指定した名前の型を識別するために使用するトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントに対してこのメソッドは、<xref:System.Reflection.Emit.MethodRental>クラスのメソッドの本体を直接変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="name" />表す、<see langword="ByRef" />型です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ 指定された型<paramref name="name" />で見つかりませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、一時的なモジュールを参照する非 transient モジュールです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeToken">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.TypeToken GetTypeToken (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Reflection.Emit.TypeToken GetTypeToken(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.GetTypeToken(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.TypeToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">クラスの型を表す型のオブジェクト。</param>
+        <summary>このモジュール内で指定した型の識別に使用されるトークンを返します。</summary>
+        <returns>このモジュール内で指定された型を識別するために使用するトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンは、Microsoft intermediate language (MSIL) の命令でオブジェクトの識別に使用されます。 トークンは、モジュールが含まれています。 トークンの値など、`String`がモジュール別にする可能性があります。 ときに`GetTypeToken`が呼び出されると、参照がモジュールに追加します。 参照は、モジュールの永続的な部分になります同じ引数で複数の呼び出しは、追加の影響を与えるありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see langword="ByRef" /> 型です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、一時的なモジュールを参照する非 transient モジュールです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public override bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">テストするためのカスタム属性の型。</param>
+        <param name="inherit">この型のオブジェクトでは、この引数は無視されます。</param>
+        <summary>このモジュールに指定された属性の型が適用されているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合 1 つまたは複数のインスタンス<paramref name="attributeType" />、それ以外のこのモジュールに適用されている<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="attributeType" /><see cref="T:System.Type" />ランタイムによって提供されたオブジェクト。 たとえば、<paramref name="attributeType" />は、<see cref="T:System.Reflection.Emit.TypeBuilder" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsResource">
+      <MemberSignature Language="C#" Value="public override bool IsResource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsResource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.IsResource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトがリソースであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトがリソースである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransient">
+      <MemberSignature Language="C#" Value="public bool IsTransient ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsTransient() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.IsTransient" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この動的モジュールは一時的なものかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、この動的モジュールは一時的なものです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MDStreamVersion">
+      <MemberSignature Language="C#" Value="public override int MDStreamVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MDStreamVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.MDStreamVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータのストリーム バージョンを取得します。</summary>
+        <value>メタデータのストリーム バージョンを表す 32 ビット整数。 上位 2 バイトは、メジャー バージョン番号を表し、下位 2 バイトは、マイナー バージョン番号を表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ ヘッダーの詳細については、共通言語基盤 (CLI) ドキュメントで「Partition II:: Metadata Definition and Semantics」を参照してください。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataToken">
+      <MemberSignature Language="C#" Value="public override int MetadataToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MetadataToken" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.MetadataToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータ内の現在の動的モジュールを識別するトークンを取得します。</summary>
+        <value>メタデータ内の現在のモジュールを識別する整数トークンです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して取得したトークンは、アンマネージのリフレクション API に渡すことができます。 詳細については、次を参照してください。[アンマネージ リフレクション API](http://msdn.microsoft.com/en-us/0c5bb9de-0cf6-438d-ba47-134e6c775fb8)です。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModuleVersionId">
+      <MemberSignature Language="C#" Value="public override Guid ModuleVersionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ModuleVersionId" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.ModuleVersionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールの 2 つのバージョンを区別するために使用できる汎用一意識別子 (UUID) を取得します。</summary>
+        <value>モジュールの 2 つのバージョンを区別するために使用できる <see cref="T:System.Guid" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンマネージ メタデータで GUID がによって返される、<xref:System.Reflection.Module.ModuleVersionId%2A>プロパティと呼びます、 `mvid`、され、GUID ヒープに格納されます。  
+  
+> [!NOTE]
+>  メタデータの詳細については、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メモリ内のモジュールであることを示す文字列。</summary>
+        <value>メモリ内のモジュールであることを示すテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュールに保存され、ディスクから再読み込みされるまで、動的モジュールの名前を取得できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveField">
+      <MemberSignature Language="C#" Value="public override System.Reflection.FieldInfo ResolveField (int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.FieldInfo ResolveField(int32 metadataToken, class System.Type[] genericTypeArguments, class System.Type[] genericMethodArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveField(System.Int32,System.Type[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">モジュール内のフィールドを識別するメタデータ トークン。</param>
+        <param name="genericTypeArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にある型のジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="genericMethodArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>指定されたジェネリック型パラメーターで定義されたコンテキスト内の指定したメタデータ トークンによって識別されるフィールドを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.FieldInfo" />指定したメタデータ トークンによって識別されるフィールドを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>型のメソッドで`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 使用して、<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>メソッドのメソッド、`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 必要でない場合でも、これらの引数を用意することは常にします。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ トークンの解像度を示すコードは汎用コンテキスト (つまりのジェネリック型パラメーター、ジェネリック型またはジェネリック メソッドのトークンが埋め込まれている) を使用して参照してください、<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />現在のモジュールのスコープ内のフィールドのトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />フィールドの親を識別<see langword="TypeSpec" />要素型を含むシグネチャを持つ<see langword="var" />(ジェネリック型の型パラメーター) または<see langword="mvar" />(ジェネリック メソッドの型パラメーター)、どちらか一方または両方のために必要なジェネリック型引数が指定されていませんし<paramref name="genericTypeArguments" />と<paramref name="genericMethodArguments" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMember">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberInfo ResolveMember (int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MemberInfo ResolveMember(int32 metadataToken, class System.Type[] genericTypeArguments, class System.Type[] genericMethodArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveMember(System.Int32,System.Type[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">型またはモジュール内のメンバーを識別するメタデータ トークン。</param>
+        <param name="genericTypeArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にある型のジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="genericMethodArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>型または指定されたジェネリック型パラメーターで定義されたコンテキスト内の指定したメタデータ トークンによって識別されるメンバーを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.MemberInfo" />型または指定したメタデータ トークンによって識別されるメンバーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>型のメソッドで`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 使用して、<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>メソッドのメソッド、`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 必要でない場合でも、これらの引数を用意することは常にします。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ トークンの解像度を示すコードは汎用コンテキスト (つまりのジェネリック型パラメーター、ジェネリック型またはジェネリック メソッドのトークンが埋め込まれている) を使用して参照してください、<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />型またはメンバーを現在のモジュールのスコープ内のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="MethodSpec" />または<see langword="TypeSpec" />要素の型を含むシグネチャを持つ<see langword="var" />(ジェネリック型の型パラメーター) または<see langword="mvar" />(ジェネリック メソッドの型パラメーター)、どちらか一方または両方のために必要なジェネリック型引数が指定されていませんし<paramref name="genericTypeArguments" />と<paramref name="genericMethodArguments" />です。  
+  
+ または  
+  
+ <paramref name="metadataToken" />プロパティまたはイベントを識別します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMethod">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodBase ResolveMethod (int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodBase ResolveMethod(int32 metadataToken, class System.Type[] genericTypeArguments, class System.Type[] genericMethodArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveMethod(System.Int32,System.Type[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">メソッドまたはモジュール内のコンス トラクターを識別するメタデータ トークン。</param>
+        <param name="genericTypeArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にある型のジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="genericMethodArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>メソッドまたは指定されたジェネリック型パラメーターで定義されたコンテキスト内の指定したメタデータ トークンによって識別されるコンス トラクターを返します。</summary>
+        <returns>A<see cref="T:System.Reflection.MethodBase" />指定したメタデータ トークンによって識別されるメソッドを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>型のメソッドで`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 使用して、<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>メソッドのメソッド、`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericMethodArguments`です。 必要でない場合でも、これらの引数を用意することは常にします。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ トークンの解像度を示すコードは汎用コンテキスト (つまりのジェネリック型パラメーター、ジェネリック型またはジェネリック メソッドのトークンが埋め込まれている) を使用して参照してください、<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />メソッドまたはコンス トラクター、現在のモジュールのスコープ内のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="MethodSpec" />要素の型を含むシグネチャを持つ<see langword="var" />(ジェネリック型の型パラメーター) または<see langword="mvar" />(ジェネリック メソッドの型パラメーター)、どちらか一方または両方のために必要なジェネリック型引数が指定されていませんし<paramref name="genericTypeArguments" />と<paramref name="genericMethodArguments" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveSignature">
+      <MemberSignature Language="C#" Value="public override byte[] ResolveSignature (int metadataToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] ResolveSignature(int32 metadataToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveSignature(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">モジュールに署名を識別するメタデータ トークン。</param>
+        <summary>メタデータ トークンによって識別されるシグネチャ blob を返します。</summary>
+        <returns>シグネチャ blob を表すバイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ トークンと署名に関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />有効ではありません<see langword="MemberRef" />、 <see langword="MethodDef" />、 <see langword="TypeSpec" />、署名、または<see langword="FieldDef" />現在のモジュールのスコープ内にトークンです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveString">
+      <MemberSignature Language="C#" Value="public override string ResolveString (int metadataToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ResolveString(int32 metadataToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">モジュールの文字列ヒープ内で文字列を識別するメタデータ トークン。</param>
+        <summary>指定したメタデータ トークンによって識別される文字列を返します。</summary>
+        <returns>A<see cref="T:System.String" />メタデータ文字列ヒープから文字列値を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />現在のモジュールのスコープ内で文字列をトークンではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveType">
+      <MemberSignature Language="C#" Value="public override Type ResolveType (int metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type ResolveType(int32 metadataToken, class System.Type[] genericTypeArguments, class System.Type[] genericMethodArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.ResolveType(System.Int32,System.Type[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataToken" Type="System.Int32" />
+        <Parameter Name="genericTypeArguments" Type="System.Type[]" />
+        <Parameter Name="genericMethodArguments" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="metadataToken">モジュール内の型を識別するメタデータ トークン。</param>
+        <param name="genericTypeArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にある型のジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="genericMethodArguments">配列<see cref="T:System.Type" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表すオブジェクトまたは<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>指定されたジェネリック型パラメーターで定義されたコンテキスト内の指定したメタデータ トークンによって識別される型を返します。</summary>
+        <returns>A<see cref="T:System.Type" />指定したメタデータ トークンによって識別される型を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>型のメソッドで`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 使用して、<xref:System.Reflection.MethodInfo.GetGenericArguments%2A?displayProperty=nameWithType>メソッドのメソッド、`metadataToken`のジェネリック型引数の配列を取得するスコープに`genericTypeArguments`です。 必要でない場合でも、これらの引数を用意することは常にします。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 このドキュメントはオンラインです。参照してください[ECMA c# および共通言語基盤規格](http://go.microsoft.com/fwlink/?LinkID=99212)msdn および[標準 ECMA 335 - 共通言語基盤 (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552) ECMA Web サイトです。  
+  
+ トークンの解像度を示すコードは汎用コンテキスト (つまりのジェネリック型パラメーター、ジェネリック型またはジェネリック メソッドのトークンが埋め込まれている) を使用して参照してください、<xref:System.Reflection.Module.ResolveMethod%28System.Int32%2CSystem.Type%5B%5D%2CSystem.Type%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="metadataToken" />現在のモジュールのスコープ内の型のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="TypeSpec" />要素の型を含むシグネチャを持つ<see langword="var" />(ジェネリック型の型パラメーター) または<see langword="mvar" />(ジェネリック メソッドの型パラメーター)、どちらか一方または両方のために必要なジェネリック型引数が指定されていませんし<paramref name="genericTypeArguments" />と<paramref name="genericMethodArguments" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeName">
+      <MemberSignature Language="C#" Value="public override string ScopeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ScopeName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.ModuleBuilder.ScopeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的モジュールの名前を表す文字列を取得します。</summary>
+        <value>動的モジュールの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetCustomAttribute (System.Reflection.Emit.CustomAttributeBuilder customBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCustomAttribute(class System.Reflection.Emit.CustomAttributeBuilder customBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.SetCustomAttribute(System.Reflection.Emit.CustomAttributeBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customBuilder" Type="System.Reflection.Emit.CustomAttributeBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="customBuilder">適用するカスタム属性を指定するためのヘルパー クラスのインスタンス。</param>
+        <summary>カスタム属性ビルダーを使用して、このモジュールに、カスタム属性を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customBuilder" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetCustomAttribute (System.Reflection.ConstructorInfo con, byte[] binaryAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCustomAttribute(class System.Reflection.ConstructorInfo con, unsigned int8[] binaryAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.SetCustomAttribute(System.Reflection.ConstructorInfo,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="con" Type="System.Reflection.ConstructorInfo" />
+        <Parameter Name="binaryAttribute" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="con">カスタム属性のコンストラクター。</param>
+        <param name="binaryAttribute">属性を表す BLOB バイトです。</param>
+        <summary>このモジュールに属性を表す指定されたバイナリ ラージ オブジェクト (BLOB) を使用して、カスタム属性を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定する方法について`binaryAttribute`、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="con" /> または <paramref name="binaryAttribute" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSymCustomAttribute">
+      <MemberSignature Language="C#" Value="public void SetSymCustomAttribute (string name, byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSymCustomAttribute(string name, unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.SetSymCustomAttribute(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">カスタム属性の名前</param>
+        <param name="data">不透明なバイナリ ラージ オブジェクト (BLOB) バイトのカスタム属性の値を表すです。</param>
+        <summary>このメソッドは何も実行しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは何も実行しません。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUserEntryPoint">
+      <MemberSignature Language="C#" Value="public void SetUserEntryPoint (System.Reflection.MethodInfo entryPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetUserEntryPoint(class System.Reflection.MethodInfo entryPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.SetUserEntryPoint(System.Reflection.MethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entryPoint" Type="System.Reflection.MethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="entryPoint">ユーザー エントリ ポイントです。</param>
+        <summary>ユーザー エントリ ポイントを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイラは、ユーザーのメインを呼び出す前にスタートアップ スタブを生成する可能性があります。 スタートアップ スタブは、エントリ ポイントになります。 ユーザーのメインができるように、デバッガーはコンパイラのエントリ ポイントにステップ インしませんユーザー エントリ ポイントがあります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entryPoint" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは動的モジュールのデバッグ モジュールではありません。  
+  
+ または  
+  
+ <paramref name="entryPoint" />この動的モジュールに含まれない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._ModuleBuilder.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _ModuleBuilder.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._ModuleBuilder.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.System#Runtime#InteropServices#_ModuleBuilder#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._ModuleBuilder.GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.Emit.ModuleBuilder> のインスタンスが <xref:System.Runtime.InteropServices._ModuleBuilder> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._ModuleBuilder.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _ModuleBuilder.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._ModuleBuilder.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.System#Runtime#InteropServices#_ModuleBuilder#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインター。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._ModuleBuilder.GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.Emit.ModuleBuilder> のインスタンスが <xref:System.Runtime.InteropServices._ModuleBuilder> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._ModuleBuilder.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _ModuleBuilder.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._ModuleBuilder.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.System#Runtime#InteropServices#_ModuleBuilder#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトによって提供される型情報インターフェイスの数を受け取る場所です。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._ModuleBuilder.GetTypeInfoCount(System.UInt32@)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.Emit.ModuleBuilder> のインスタンスが <xref:System.Runtime.InteropServices._ModuleBuilder> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._ModuleBuilder.Invoke">
+      <MemberSignature Language="C#" Value="void _ModuleBuilder.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._ModuleBuilder.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.ModuleBuilder.System#Runtime#InteropServices#_ModuleBuilder#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーの id。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Runtime.InteropServices._ModuleBuilder.Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Reflection.Emit.ModuleBuilder> のインスタンスが <xref:System.Runtime.InteropServices._ModuleBuilder> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">メソッドは遅延バインド、COM を使用して<c>IDispatch</c>インターフェイスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,70 @@
+<Type Name="ITextControl" FullName="System.Web.UI.ITextControl">
+  <TypeSignature Language="C#" Value="public interface ITextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ITextControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>テキスト コンテンツを取得または設定するためにコントロールが実装するインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ITextControl>インターフェイスを定義、<xref:System.Web.UI.ITextControl.Text%2A>コントロールが、取得できるように実装するプロパティなどのテキスト コンテンツの設定。 <xref:System.Web.UI.ITextControl.Text%2A>プログラムまたはユーザーによって入力プロパティを設定することができます。  
+  
+> [!CAUTION]
+>  このインターフェイスを実装するコントロールを使用してをユーザー入力を表示できます。 ユーザー入力を表示する前に、実行可能なスクリプトや SQL ステートメントなどの悪意のあるクライアント スクリプトの入力をチェックする必要があります。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装するカスタム コントロールを示しています、<xref:System.Web.UI.ITextControl>インターフェイスです。 既定値が割り当てられた、<xref:System.Web.UI.ITextControl.Text%2A>プロパティ場合`null`プロパティに渡されます。  
+  
+ [!code-csharp[System.Web.UI.ITextControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ITextControl/CS/CustomTextControl.cs#1)]
+ [!code-vb[System.Web.UI.ITextControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ITextControl/VB/CustomTextControl.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ITextControl.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのテキストの内容を設定します。</summary>
+        <value>コントロールのテキストの内容。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ITextControl.Text%2A>プログラムまたはユーザーによって入力プロパティを設定することができます。  
+  
+> [!CAUTION]
+>  このインターフェイスを実装するコントロールを使用してをユーザー入力を表示できます。 ユーザー入力を表示する前に、実行可能なスクリプトや SQL ステートメントなどの悪意のあるクライアント スクリプトの入力をチェックする必要があります。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装するカスタム コントロールを示しています、<xref:System.Web.UI.ITextControl>インターフェイスです。 既定値が割り当てられた、<xref:System.Web.UI.ITextControl.Text%2A>プロパティ場合`null`プロパティに渡されます。  
+  
+ [!code-csharp[System.Web.UI.ITextControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ITextControl/CS/CustomTextControl.cs#1)]
+ [!code-vb[System.Web.UI.ITextControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ITextControl/VB/CustomTextControl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

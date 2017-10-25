@@ -1,0 +1,149 @@
+<Type Name="InputScopeName" FullName="System.Windows.Input.InputScopeName">
+  <TypeSignature Language="C#" Value="public class InputScopeName : System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InputScopeName extends System.Object implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputScopeName" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Input.InputScopeNameConverter, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("NameValue")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキスト入力パターンの名前を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスで定義した名前がによって使用される、<xref:System.Windows.Input.InputScopePhrase>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputScopeName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputScopeName.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.InputScopeName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputScopeName (System.Windows.Input.InputScopeNameValue nameValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.InputScopeNameValue nameValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputScopeName.#ctor(System.Windows.Input.InputScopeNameValue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nameValue" Type="System.Windows.Input.InputScopeNameValue" />
+      </Parameters>
+      <Docs>
+        <param name="nameValue">代替の入力メソッドからの入力の解釈方法を変更する入力スコープ名。</param>
+        <summary>指定した <see cref="T:System.Windows.Input.InputScopeName" /> を使用して、<see cref="P:System.Windows.Input.InputScopeName.NameValue" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputScopeName.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">この <see cref="T:System.Windows.Input.InputScopeName" /> の子として追加されるオブジェクト。</param>
+        <summary>これを子オブジェクトを追加<see cref="T:System.Windows.Input.InputScopeName" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="public void AddText (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddText(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputScopeName.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するテキスト、<see cref="T:System.Windows.Input.InputScopeName" />です。</param>
+        <summary>これの子としてテキスト文字列を追加<see cref="T:System.Windows.Input.InputScopeName" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputScopeNameValue NameValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.InputScopeNameValue NameValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputScopeName.NameValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputScopeNameValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または代替の入力メソッドからの入力を解釈する方法を変更する入力スコープ名の値を設定します。</summary>
+        <value>代替の入力メソッドからの入力を解釈する方法を変更する入力スコープ名の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_InputScopeName"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object NameValue="inputScopeNameValue"/>  
+```  
+  
+<a name="xamlValues_InputScopeName"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *inputScopeNameValue*  
+ 文字列表現を<xref:System.Windows.Input.InputScopeNameValue>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,133 @@
+<Type Name="ISerializationSurrogate" FullName="System.Runtime.Serialization.ISerializationSurrogate">
+  <TypeSignature Language="C#" Value="public interface ISerializationSurrogate" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISerializationSurrogate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ISerializationSurrogate" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用するシリアル化と別の逆シリアル化を実行する 1 つのオブジェクトをシリアル化サロゲート セレクターを実装します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (object obj, System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(object obj, class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ISerializationSurrogate.GetObjectData(System.Object,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化するオブジェクト。</param>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary>指定された設定<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要なデータを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトからデータを抽出`obj`に格納し、 <xref:System.Runtime.Serialization.SerializationInfo> `info`パラメーター。  
+  
+ サロゲートを置いている、このメソッドに情報を格納したオブジェクト`obj`で、 <xref:System.Runtime.Serialization.SerializationInfo> `info`パラメーター。 この情報は、オブジェクトのフィールド、プロパティ、および現在の値を含む、オブジェクトのビューについて説明します。 <xref:System.Runtime.Serialization.SerializationInfo>実際のオブジェクトに対応している可能性がありますか、サロゲートの合成されたビューであることができます。  
+  
+ このメソッドは、によって保護されている、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>の<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetObjectData">
+      <MemberSignature Language="C#" Value="public object SetObjectData (object obj, System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context, System.Runtime.Serialization.ISurrogateSelector selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object SetObjectData(object obj, class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context, class System.Runtime.Serialization.ISurrogateSelector selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ISerializationSurrogate.SetObjectData(System.Object,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext,System.Runtime.Serialization.ISurrogateSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector" />
+      </Parameters>
+      <Docs>
+        <param name="obj">設定されるオブジェクト。</param>
+        <param name="info">情報が、オブジェクトを設定します。</param>
+        <param name="context">オブジェクトの逆シリアル化元のソース。</param>
+        <param name="selector">互換性のためのサロゲートの検索の開始位置のサロゲート セレクター。</param>
+        <summary>内の情報を使用してオブジェクトを追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <returns>設定の逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ISerializationSurrogate.SetObjectData%2A>メソッドは、逆シリアル化中に呼び出されます。 このメソッドを使用して、空をとれる<xref:System.Object>`obj`を既に作成されているし、入力<xref:System.Runtime.Serialization.SerializationInfo>`info`そのオブジェクトへのデータ。 コンス トラクターは、逆シリアル化情報と、オブジェクトの再構築中には呼び出されません。  
+  
+ このメソッドは、によって保護されている、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>の<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,170 @@
+<Type Name="JavaScriptConverter" FullName="System.Web.Script.Serialization.JavaScriptConverter">
+  <TypeSignature Language="C#" Value="public abstract class JavaScriptConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit JavaScriptConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Serialization.JavaScriptConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム型コンバーターの抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptConverter>クラスを使用すると、シリアル化を実装し、逆シリアル化のプロセスでネイティブにサポートされていないマネージ型の場合、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスです。 使用することも<xref:System.Web.Script.Serialization.JavaScriptConverter>シリアル化および逆シリアル化のプロセスより詳細に制御する必要がある場合。  
+  
+ <xref:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes%2A>プロパティは、カスタムのコンバーターがコンバーターのサービスを提供する型を示します。  
+  
+ カスタムのコンバーターがある必要がありますを使用することを示すために、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンス、インスタンスと、コンバーターを登録する必要があります。 使用している場合、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスに直接、使用する必要があります、<xref:System.Web.Script.Serialization.JavaScriptSerializer.RegisterConverters%2A>コンバーターを登録します。 それ以外の場合、ECMAScript (JavaScript) の Web メソッドを呼び出して、カスタムのコンバーターを使用する場合は、登録できますを追加して、`converters`構成ファイル内の要素。 詳細については、次を参照してください。[する方法: Microsoft Ajax の ASP.NET サービスを構成する](http://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30)です。  
+  
+ ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスが登録されると、カスタムのコンバーターを持っている、型、シリアライザーの呼び出しをシリアル化する、<xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize%2A>メソッドです。 同様に、ときに、 <xref:System.Web.Script.Serialization.JavaScriptSerializer> JavaScript Object Notation (JSON) 文字列を逆シリアル化され、JSON 文字列内の型が、シリアライザーの呼び出しに関連付けられているカスタムのコンバーターを認識するインスタンス、<xref:System.Web.Script.Serialization.JavaScriptConverter.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのコンバーターを作成する方法を示します、<xref:System.Web.UI.WebControls.ListItemCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Script.Serialization#2](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization/CS/App_Code/ListItemCollectionConverter.cs#2)]
+ [!code-vb[System.Web.Script.Serialization#2](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization/VB/App_Code/ListItemCollectionConverter.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Web.Script.Serialization.JavaScriptConverter" />、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Web.Script.Serialization.JavaScriptConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)" />  
+  
+-   <see cref="M:System.Web.Script.Serialization.JavaScriptConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)" />  
+  
+-   <see cref="P:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes" /><see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />提供、<see cref="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />メソッドの実装によって使用される<see cref="T:System.Web.Script.Serialization.JavaScriptConverter" />です。 コンバーター コードが、シリアライザーから渡されるディクショナリに含まれている値を取得できるようにして型のオブジェクトにその値を変換する必要があります<paramref name="T" />です。 これを実現する変換のカスタム コードを再実装するのではなく呼び出すことができます、<see cref="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected JavaScriptConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Script.Serialization.JavaScriptConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public abstract object Deserialize (System.Collections.Generic.IDictionary&lt;string,object&gt; dictionary, Type type, System.Web.Script.Serialization.JavaScriptSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; dictionary, class System.Type type, class System.Web.Script.Serialization.JavaScriptSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="serializer" Type="System.Web.Script.Serialization.JavaScriptSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary"><see cref="T:System.Collections.Generic.IDictionary`2" />名前/値のペアとして格納されているプロパティ データのインスタンス。</param>
+        <param name="type">生成されるオブジェクトの型。</param>
+        <param name="serializer"><see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" /> インスタンス。</param>
+        <summary>派生クラスでオーバーライドされると、指定した型のオブジェクトに提供されたディクショナリに変換します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.Script.Serialization.JavaScriptConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)" />内の値を反復処理メソッド、<paramref name="dictionary" />パラメーターで要求された型のインスタンスを構築するために、<paramref name="type" />パラメーター。 コンバーターがから値を直接使用できますが<paramref name="dictionary" />、コンバーター実装者が使用することをお勧め、<see cref="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />メソッド代わりにします。 コンバーターがのこのメソッドを呼び出す必要があります、<see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />から使用可能なインスタンス、<paramref name="serializer" />パラメーター。  
+  
+ <see cref="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />メソッドによりからプロパティ値を渡すコンバーター <paramref name="dictionary" />、し、予期された型の値を返します。 場合によっては、カスタム型のコンバーターをそれ自体が登録されていることのコンバーターのプロパティを持つ作業可能性があります (種類 B のプロパティを持つ型と型 B は、カスタムのコンバーターに関連付けられてもなど)。 その場合は、呼び出す<see cref="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />により、カスタムのコンバーターが呼び出されるプロパティのデータ ディクショナリに含まれている再帰的になることを確認します。 コンバーターがディクショナリ内のすべてのエントリを反復処理、対象の型の構築されたインスタンスが返されます。  
+  
+ コンバーターでは、逆シリアル化中に問題が発生するがスローされます、<see cref="T:System.InvalidOperationException" />問題を説明するエラーです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IDictionary&lt;string,object&gt; Serialize (object obj, System.Web.Script.Serialization.JavaScriptSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Serialize(object obj, class System.Web.Script.Serialization.JavaScriptSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Web.Script.Serialization.JavaScriptSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化するオブジェクト。</param>
+        <param name="serializer">シリアル化するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、名前/値ペアのディクショナリを作成します。</summary>
+        <returns>オブジェクトのデータを表すキー/値ペアを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、カスタムのコンバーターが登録されている型をシリアル化する際、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスを起動、<xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>戻り値<see cref="M:System.Web.Script.Serialization.JavaScriptConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)" />する必要があります、<see cref="T:System.Collections.Generic.IDictionary`2" />を JSON に変換するオブジェクトのデータを表す 0 個以上の名前/値ペアのインスタンス。 コンバーター自体には、JSON としてデータがシリアル化されません。 コンバーターがプロパティの名前 (ディクショナリの文字列のキー) と対応するプロパティを格納する名前/値ペアのディクショナリを構築する代わりに、(ディクショナリ内でオブジェクトの値) の値。 <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />インスタンスが、後でこれらを JSON に変換します。  
+  
+ コンバーターには、例外が発生するがスローされます、<see cref="T:System.InvalidOperationException" />問題を説明するエラーです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedTypes">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;Type&gt; SupportedTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; SupportedTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サポートされる型のコレクションを取得します。</summary>
+        <value>実装するオブジェクト<see cref="T:System.Collections.Generic.IEnumerable`1" />コンバーターでサポートされる型を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes%2A>プロパティは、コンバーターでサポートされている型を一覧表示します。 実行時に、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスでは、このプロパティを使用して、対応するカスタムのコンバーターをマネージ型のマッピングを判断します。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバーライドする方法を示します、<xref:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes%2A>派生クラスのプロパティです。 この例では、コンバーターでのみサポートしている、<xref:System.Web.UI.WebControls.ListItemCollection>型です。 このコード例に示されている例の一部である、<xref:System.Web.Script.Serialization.JavaScriptConverter>クラスです。  
+  
+ [!code-csharp[System.Web.Script.Serialization#3](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization/CS/App_Code/ListItemCollectionConverter.cs#3)]
+ [!code-vb[System.Web.Script.Serialization#3](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization/VB/App_Code/ListItemCollectionConverter.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="P:System.Web.Script.Serialization.JavaScriptConverter.SupportedTypes" />コレクション、およびコレクションには、少なくとも 1 つのエントリを含める必要がありますを返す常に必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

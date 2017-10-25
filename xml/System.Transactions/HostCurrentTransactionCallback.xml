@@ -1,0 +1,37 @@
+<Type Name="HostCurrentTransactionCallback" FullName="System.Transactions.HostCurrentTransactionCallback">
+  <TypeSignature Language="C#" Value="public delegate System.Transactions.Transaction HostCurrentTransactionCallback();" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HostCurrentTransactionCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.HostCurrentTransactionCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters />
+  <ReturnValue>
+    <ReturnType>System.Transactions.Transaction</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <summary>独自の既定概念を提供するホスト環境のメカニズムを備えています<see cref="P:System.Transactions.Transaction.Current" />です。</summary>
+    <returns><see cref="T:System.Transactions.Transaction" /> オブジェクト。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、ホスティング環境の独自の既定概念を提供するメカニズムを備えています。<xref:System.Transactions.Transaction.Current%2A>です。 ときに呼び出されます<xref:System.Transactions.Transaction.Current%2A>は`null`、現在もない<xref:System.Transactions.TransactionScope>を示すこと、アンビエント トランザクションが抑制されました。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

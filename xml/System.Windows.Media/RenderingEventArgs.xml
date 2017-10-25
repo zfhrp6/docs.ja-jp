@@ -1,0 +1,44 @@
+<Type Name="RenderingEventArgs" FullName="System.Windows.Media.RenderingEventArgs">
+  <TypeSignature Language="C#" Value="public class RenderingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RenderingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.RenderingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>必須の引数、<see cref="E:System.Windows.Media.CompositionTarget.Rendering" />イベント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RenderingTime">
+      <MemberSignature Language="C#" Value="public TimeSpan RenderingTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RenderingTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.RenderingEventArgs.RenderingTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの次のフレームのレンダリングを推定ターゲットの時刻を取得します。</summary>
+        <value>次のアニメーションのフレームのレンダリングを推定ターゲット時間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TimeSpan>アニメーション システムと同じ値を反映しているが返されます。 これは、タイム マネージャーによって使用される同じ時間です。 詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,117 @@
+<Type Name="PerformanceCounterManager" FullName="System.Diagnostics.PerformanceCounterManager">
+  <TypeSignature Language="C#" Value="public sealed class PerformanceCounterManager : System.Diagnostics.ICollectData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PerformanceCounterManager extends System.Object implements class System.Diagnostics.ICollectData" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounterManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Diagnostics.ICollectData</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.MonoTODO("not implemented")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("use PerformanceCounter")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("82840be1-d273-11d2-b94a-00600893b17a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パフォーマンス カウンターを使用する場合、システムがロード performance.dll のパフォーマンス データを準備します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PerformanceCounterManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("use PerformanceCounter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.PerformanceCounterManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス カウンター performance.dll は、そのパフォーマンス データ コレクションのルーチンの一部としてこのコンス トラクターを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Diagnostics.ICollectData.CloseData">
+      <MemberSignature Language="C#" Value="void ICollectData.CloseData ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Diagnostics.ICollectData.CloseData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterManager.System#Diagnostics#ICollectData#CloseData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パフォーマンス dll の閉じるパフォーマンス データによって呼び出されます</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Diagnostics.ICollectData.CollectData">
+      <MemberSignature Language="C#" Value="void ICollectData.CollectData (int callIdx, IntPtr valueNamePtr, IntPtr dataPtr, int totalBytes, out IntPtr res);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Diagnostics.ICollectData.CollectData(int32 callIdx, native int valueNamePtr, native int dataPtr, int32 totalBytes, [out] native int&amp; res) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterManager.System#Diagnostics#ICollectData#CollectData(System.Int32,System.IntPtr,System.IntPtr,System.Int32,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callIdx" Type="System.Int32" />
+        <Parameter Name="valueNamePtr" Type="System.IntPtr" />
+        <Parameter Name="dataPtr" Type="System.IntPtr" />
+        <Parameter Name="totalBytes" Type="System.Int32" />
+        <Parameter Name="res" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="callIdx">呼び出しのインデックス。</param>
+        <param name="valueNamePtr">要求されたオブジェクト識別子を含む Unicode 文字列リストへのポインター。</param>
+        <param name="dataPtr">データ バッファーへのポインター。</param>
+        <param name="totalBytes">バイト数へのポインター。</param>
+        <param name="res">このメソッドが戻るとき、 <see cref="T:System.IntPtr" /> -1 の値を使用します。</param>
+        <summary>パフォーマンス データ コレクションのルーチンです。 PerfCount パフォーマンス dll によって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

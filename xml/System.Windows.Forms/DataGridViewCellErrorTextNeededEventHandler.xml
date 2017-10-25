@@ -1,0 +1,53 @@
+<Type Name="DataGridViewCellErrorTextNeededEventHandler" FullName="System.Windows.Forms.DataGridViewCellErrorTextNeededEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewCellErrorTextNeededEventHandler(object sender, DataGridViewCellErrorTextNeededEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewCellErrorTextNeededEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellErrorTextNeededEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellErrorTextNeededEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellErrorTextNeededEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.CellErrorTextNeeded" /> の <see cref="T:System.Windows.Forms.DataGridView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。 処理、<xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded>イベントは、その値または状態によっては、セルのエラーを確認する場合に便利です。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded>イベント テキストを指定エラー ハンドラーでエラー グリフがセルに表示しない限りと、<xref:System.Windows.Forms.DataGridView.ShowCellErrors%2A?displayProperty=nameWithType>プロパティに設定されている`false`またはセルが編集モードにします。 エラー グリフ上マウス ポインターを移動すると、ツールヒントにエラー テキストが表示されます。  
+  
+ <xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewCell.ErrorText%2A?displayProperty=nameWithType>プロパティを取得します。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewCellEventArgs.RowIndex%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataGridViewCellEventArgs.ColumnIndex%2A>プロパティを変更またはこの情報を使用して、状態を判断する、セルの値を<xref:System.Windows.Forms.DataGridViewCellErrorTextNeededEventArgs.ErrorText%2A?displayProperty=nameWithType>プロパティです。 このプロパティは、セルの値で初期化<xref:System.Windows.Forms.DataGridViewCell.ErrorText%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded>大量のデータ セルを設定のパフォーマンスの低下を避けるために使用するときにイベント<xref:System.Windows.Forms.DataGridViewCell.ErrorText%2A>複数のセルの値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewCellErrorTextNeededEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Windows.Forms.DataGridViewCellErrorTextNeededEventHandler>ことが必要なセルのエラー テキストを設定するデリゲート。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CPP/sharedrows.cpp#24)]
+ [!code-csharp[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CS/sharedrows.cs#24)]
+ [!code-vb[System.Windows.Forms.DataGridView_SharedRowScenarios#24](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/VB/sharedrows.vb#24)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

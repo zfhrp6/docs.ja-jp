@@ -1,0 +1,63 @@
+<Type Name="PeerNameType" FullName="System.Net.PeerToPeer.PeerNameType">
+  <TypeSignature Language="C#" Value="public enum PeerNameType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PeerNameType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PeerNameType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>型を定義<see cref="T:System.Net.PeerToPeer.PeerName" />を作成します。 ピア名が保護されているか、セキュリティ保護されていません。 セキュリティで保護されたピア名は、名の所有権の証明を提供します。 セキュリティ保護されていないピア名に関連付けられている id がありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードは、公開キーに関連付けられている秘密キーへのアクセスを持つ必要があります、セキュリティで保護された作成に使用される<xref:System.Net.PeerToPeer.PeerName>所有権を証明するためにします。 ノードには、公開キーへのリレーションシップはありません。  
+  
+ ピア名の形式:*区別*です。 値<xref:System.Net.PeerToPeer.PeerName.Authority%2A>名前とは、セキュリティで保護されたピア名またはセキュリティ保護されていないピア名かどうかによって異なります。 <xref:System.Net.PeerToPeer.PeerName.Classifier%2A> 15 個以下の Unicode 文字を含む任意の文字列に名前の一部を設定することができます、`null`ターミネータです。 1 回、 <xref:System.Net.PeerToPeer.PeerName.Authority%2A>、<xref:System.Net.PeerToPeer.PeerName.Classifier%2A>ピアのセキュリティ レベルが確立されていると、ピアも呼ばれますに相対名やホスト名にします。  
+  
+ 所有者、またはピア ホストのみでセキュリティで保護されたピア名を登録できます、 [PNRP Namespace プロバイダー API](http://go.microsoft.com/fwlink?LinkID=92731)です。 任意のノードがいずれかのセキュリティ保護されていないに所有権<xref:System.Net.PeerToPeer.PeerName>です。  
+  
+ **注**、セキュリティで保護を使用して<xref:System.Net.PeerToPeer.PeerName>ネットワー キング アプリケーションの全体的なセキュリティは確保されません。 アプリケーションのセキュリティは、実装によって異なります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Secured">
+      <MemberSignature Language="C#" Value="Secured" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PeerNameType Secured = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PeerNameType.Secured" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成、セキュリティで保護された<see cref="T:System.Net.PeerToPeer.PeerName" />現在のユーザーの id を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unsecured">
+      <MemberSignature Language="C#" Value="Unsecured" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.PeerToPeer.PeerNameType Unsecured = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.PeerNameType.Unsecured" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保護されていない作成<see cref="T:System.Net.PeerToPeer.PeerName" />現在のユーザーの id を使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

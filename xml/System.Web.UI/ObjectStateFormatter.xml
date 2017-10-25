@@ -1,0 +1,444 @@
+<Type Name="ObjectStateFormatter" FullName="System.Web.UI.ObjectStateFormatter">
+  <TypeSignature Language="C#" Value="public sealed class ObjectStateFormatter : System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectStateFormatter extends System.Object implements class System.Runtime.Serialization.IFormatter, class System.Web.UI.IStateFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ObjectStateFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>オブジェクトの状態を表すオブジェクト グラフをシリアル化および逆シリアル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ObjectStateFormatter>クラスがシリアル化し、コンパクトな形式でオブジェクト状態のグラフを逆シリアル化します。  
+  
+ <xref:System.Web.UI.ObjectStateFormatter>によって使用される、<xref:System.Web.UI.PageStatePersister>クラスとビュー ステートをシリアル化し、コントロールの状態から派生するクラス。 使用して、 <xref:System.Web.UI.LosFormatter> ASP.NET のインフラストラクチャのさまざまな部分の書式設定オブジェクトの状態グラフを提供するクラス。  
+  
+ <xref:System.Web.UI.ObjectStateFormatter>クラスはシリアル化とフォーマットを多く一般的な .NET Framework の参照型では、定数と同じように最適化されています。 次の表は、最適化されている型を一覧表示します。  
+  
+|||||  
+|-|-|-|-|  
+|<xref:System.Array>|<xref:System.DateTime>|<xref:System.Int16>|<xref:System.String>|  
+|<xref:System.Collections.ArrayList>|<xref:System.Double>|<xref:System.Int32>|文字列|  
+|<xref:System.Boolean>|<xref:System.Enum>|null (`Nothing`)|<xref:System.String.Empty?displayProperty=nameWithType>|  
+|<xref:System.Byte>|<xref:System.Collections.Hashtable>|<xref:System.Web.UI.Pair>|<xref:System.Web.UI.Triplet>|  
+|<xref:System.Char>|<xref:System.Collections.Specialized.HybridDictionary>|<xref:System.Single>|<xref:System.Type>|  
+|<xref:System.Drawing.Color>|<xref:System.Collections.IDictionary>|||  
+  
+ さらに、従来の文字列型と文字列の配列はへ書き込み中に、変更せずにシリアル化されたバイナリ ライターから一部の文字列は内部の文字列テーブルを作成することで最適化されています。 文字列に文字列がある関連付けられている場合は、これらのテーブルを使用して最適化された<xref:System.ComponentModel.TypeConverter>オブジェクトまたは文字列がのインスタンスでは実際には、<xref:System.Web.UI.IndexedString>クラスです。  
+  
+ 上記以外の他の型はバイナリのシリアル化を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>実装するオブジェクト、<xref:System.Runtime.Serialization.ISerializable>インターフェイスまたはで修飾された、<xref:System.SerializableAttribute>属性。 <xref:System.Web.UI.ObjectStateFormatter>クラスは、任意のシリアル化可能な種類については最適化されません。  
+  
+ 場合、<xref:System.Web.UI.ObjectStateFormatter>クラスでは、シリアル化できない型が発生した、<xref:System.ArgumentException>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法から派生するクラスについて説明します。、<xref:System.Web.UI.PageStatePersister>クラスへのアクセス、<xref:System.Web.UI.PageStatePersister.StateFormatter%2A>取得するプロパティを、<xref:System.Web.UI.ObjectStateFormatter>ビューステートとコントロールの状態をストリームにシリアル化するインスタンス。 このコード例に示されている例の一部である、<xref:System.Web.UI.PageStatePersister>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/CS/textfilepagestatepersister.cs#3)]
+ [!code-vb[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/VB/textfilepagestatepersister.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectStateFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ObjectStateFormatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Deserialize">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>シリアル化された形式からオブジェクトの状態グラフを逆シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream inputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.IO.Stream inputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="inputStream">A<see cref="T:System.IO.Stream" />を<see cref="T:System.Web.UI.ObjectStateFormatter" />初期化されたに逆シリアル化<see langword="object" />です。</param>
+        <summary>オブジェクトの状態グラフに含まれているバイナリでシリアル化された形式から逆シリアル化し、指定した<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <returns>逆シリアル化されたオブジェクトの状態のグラフを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されるオブジェクトの状態グラフ、<xref:System.Web.UI.ObjectStateFormatter.Serialize%2A>メソッドを逆シリアル化することができます、<xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッドです。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%28System.IO.Stream%29>に格納されているオブジェクトの状態グラフを復元する方法が使用される、 <xref:System.IO.Stream>、ように、<xref:System.IO.FileStream>です。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法から派生するクラスについて説明します。、<xref:System.Web.UI.PageStatePersister>クラスの初期化、<xref:System.Web.UI.PageStatePersister.ViewState%2A>コレクション。 この例では、<xref:System.Web.UI.PageStatePersister.ViewState%2A>にコレクションが割り当てられて、<xref:System.Web.UI.Pair.First>のフィールド、<xref:System.Web.UI.Pair>オブジェクトし、を使用してファイルにシリアル化する、<xref:System.Web.UI.ObjectStateFormatter>クラスです。 ときに、<xref:System.Web.UI.PageStatePersister.Load%2A>メソッドが呼び出されると、<xref:System.Web.UI.LosFormatter.Deserialize%28System.IO.Stream%29>メソッドを使用してファイルからビュー ステートを逆シリアル化と<xref:System.Web.UI.PageStatePersister.ViewState%2A>プロパティを初期化します。 このコード例に示されている例の一部である、<xref:System.Web.UI.PageStatePersister>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/CS/textfilepagestatepersister.cs#2)]
+ [!code-vb[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/VB/textfilepagestatepersister.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="inputStream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">逆シリアル化中に例外が発生した、<see cref="T:System.IO.Stream" />です。 例外メッセージがメッセージに追加されます、<see cref="T:System.ArgumentException" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (string inputString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(string inputString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.Deserialize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputString">ある文字列、<see cref="T:System.Web.UI.ObjectStateFormatter" />初期化されたオブジェクトに逆シリアル化します。</param>
+        <summary>オブジェクトの状態グラフをシリアル化された base64 でエンコードされた文字列の形式から逆シリアル化します。</summary>
+        <returns>逆シリアル化されたオブジェクトの状態のグラフを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されるオブジェクトの状態グラフ、<xref:System.Web.UI.ObjectStateFormatter.Serialize%2A>メソッドを逆シリアル化することができます、<xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッドです。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%28System.String%29>を base64 でエンコードされた文字列形式で格納されているオブジェクトの状態グラフを復元するメソッドを使用します。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 このコード例は、プロパティの設定でシリアル化されていること、<xref:System.Web.UI.ObjectStateFormatter>クラスのように、<xref:System.Web.UI.ObjectStateFormatter.Serialize%28System.Object%29>メソッドです。  
+  
+ [!code-csharp[System.Web.UI.ObjectStateFormatter_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ObjectStateFormatter_1/CS/objectstateformattertest.cs#2)]
+ [!code-vb[System.Web.UI.ObjectStateFormatter_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ObjectStateFormatter_1/VB/objectstateformattertest.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定した<paramref name="inputString" />は<see langword="null" />かが、<see cref="P:System.String.Length" />は 0 です。</exception>
+        <exception cref="T:System.ArgumentException">シリアル化されたデータが正しくありません。</exception>
+        <exception cref="T:System.Web.HttpException">ビュー ステートを逆シリアル化が失敗したときに実行されるマシン認証コード (MAC) の検証チェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public string Serialize (object stateGraph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string Serialize(object stateGraph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.Serialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateGraph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stateGraph">シリアル化するオブジェクト。</param>
+        <summary>Base64 でエンコードされた文字列オブジェクトの状態グラフをシリアル化します。</summary>
+        <returns>Base 64 エンコードのシリアル化されたオブジェクトの状態を表す文字列、<paramref name="stateGraph" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のオブジェクト グラフでシリアル化される、<xref:System.Web.UI.ObjectStateFormatter.Serialize%2A>でメソッドを逆シリアル化できます、<xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッドです。 <xref:System.Web.UI.ObjectStateFormatter.Serialize%28System.Object%29>を base64 でエンコードされた文字列形式を使用するオブジェクトの状態グラフをシリアル化するメソッドを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一連の base64 でエンコードされた文字列を使用して、コントロール プロパティの値をシリアル化する方法を示します、<xref:System.Web.UI.ObjectStateFormatter.Serialize%28System.Object%29>メソッドです。 後で文字列を逆シリアル化できます、<xref:System.Web.UI.ObjectStateFormatter.Deserialize%28System.String%29>メソッドです。  
+  
+ [!code-csharp[System.Web.UI.ObjectStateFormatter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ObjectStateFormatter_1/CS/objectstateformattertest.cs#1)]
+ [!code-vb[System.Web.UI.ObjectStateFormatter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ObjectStateFormatter_1/VB/objectstateformattertest.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream outputStream, object stateGraph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.Stream outputStream, object stateGraph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+        <Parameter Name="stateGraph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="outputStream">A<see cref="T:System.IO.Stream" />先、<see cref="T:System.Web.UI.ObjectStateFormatter" />指定したオブジェクトの状態をシリアル化します。</param>
+        <param name="stateGraph">シリアル化するオブジェクト。</param>
+        <summary>指定したオブジェクトの状態グラフをシリアル化<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化されるオブジェクトの状態グラフ、<xref:System.Web.UI.ObjectStateFormatter.Serialize%2A>メソッドを逆シリアル化することができます、<xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッドです。 <xref:System.Web.UI.ObjectStateFormatter.Serialize%28System.IO.Stream%2CSystem.Object%29>メソッドを使用するバイナリ オブジェクトの状態グラフをシリアル化を<xref:System.IO.Stream>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クラスを取得する方法を示しています、<xref:System.Web.UI.ObjectStateFormatter>ビューステートとストリームを使用して、コントロールの状態をシリアル化するインスタンス、<xref:System.Web.UI.ObjectStateFormatter.Serialize%28System.IO.Stream%2CSystem.Object%29>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.PageStatePersister>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/CS/textfilepagestatepersister.cs#3)]
+ [!code-vb[Samples.AspNet.Alexkr.TextFilePageStatePersister_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Alexkr.TextFilePageStatePersister_1/VB/textfilepagestatepersister.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="inputStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IFormatter.Binder">
+      <MemberSignature Language="C#" Value="System.Runtime.Serialization.SerializationBinder System.Runtime.Serialization.IFormatter.Binder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.SerializationBinder System.Runtime.Serialization.IFormatter.Binder" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ObjectStateFormatter.System#Runtime#Serialization#IFormatter#Binder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.SerializationBinder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.Serialization.Formatter.Binder" />」をご覧ください。</summary>
+        <value><see cref="T:System.Runtime.Serialization.SerializationBinder" />逆シリアル化中に型の検索を実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Runtime.Serialization.IFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IFormatter.Context">
+      <MemberSignature Language="C#" Value="System.Runtime.Serialization.StreamingContext System.Runtime.Serialization.IFormatter.Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContext System.Runtime.Serialization.IFormatter.Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ObjectStateFormatter.System#Runtime#Serialization#IFormatter#Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.StreamingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Runtime.Serialization.IFormatter.Context" />」を参照してください。</summary>
+        <value><see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化および逆シリアル化のために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Runtime.Serialization.IFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IFormatter.Deserialize">
+      <MemberSignature Language="C#" Value="object IFormatter.Deserialize (System.IO.Stream serializationStream);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Runtime.Serialization.IFormatter.Deserialize(class System.IO.Stream serializationStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.System#Runtime#Serialization#IFormatter#Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">逆シリアル化するデータを格納しているストリーム。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.ObjectStateFormatter.Deserialize(System.IO.Stream)" />」をご覧ください。</summary>
+        <returns>逆シリアル化されたグラフの最上位オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Runtime.Serialization.IFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IFormatter.Serialize">
+      <MemberSignature Language="C#" Value="void IFormatter.Serialize (System.IO.Stream serializationStream, object stateGraph);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.IFormatter.Serialize(class System.IO.Stream serializationStream, object stateGraph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.System#Runtime#Serialization#IFormatter#Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="stateGraph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">フォーマッタがシリアル化されたデータを格納するストリーム。 このストリームは、さまざまな (ファイル、ネットワーク、メモリ、およびなど) などのバッキング ストアを参照できます。</param>
+        <param name="stateGraph">オブジェクト、またはシリアル化する、オブジェクト グラフのルート。 このルート オブジェクトのすべての子オブジェクトは、自動的にシリアル化されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.ObjectStateFormatter.Serialize(System.IO.Stream,System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Runtime.Serialization.IFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IFormatter.SurrogateSelector">
+      <MemberSignature Language="C#" Value="System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.IFormatter.SurrogateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ISurrogateSelector System.Runtime.Serialization.IFormatter.SurrogateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ObjectStateFormatter.System#Runtime#Serialization#IFormatter#SurrogateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="T:System.Runtime.Serialization.SurrogateSelector" />」を参照してください。</summary>
+        <value><see cref="T:System.Runtime.Serialization.SurrogateSelector" />このフォーマッタで使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Runtime.Serialization.IFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateFormatter.Deserialize">
+      <MemberSignature Language="C#" Value="object IStateFormatter.Deserialize (string serializedState);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateFormatter.Deserialize(string serializedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.System#Web#UI#IStateFormatter#Deserialize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedState" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serializedState">ある文字列、<see cref="T:System.Web.UI.IStateFormatter" />初期化されたオブジェクトに逆シリアル化します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.ObjectStateFormatter.Deserialize(System.String)" />」をご覧ください。</summary>
+        <returns>ASP.NET サーバー コントロールの状態を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Web.UI.IStateFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateFormatter.Serialize">
+      <MemberSignature Language="C#" Value="string IStateFormatter.Serialize (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IStateFormatter.Serialize(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ObjectStateFormatter.System#Web#UI#IStateFormatter#Serialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">文字列形式にシリアル化する Web サーバー コントロールのビュー ステートを表すオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.ObjectStateFormatter.Serialize(System.Object)" />」をご覧ください。</summary>
+        <returns>Web サーバー コントロールのビュー ステートを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.ObjectStateFormatter> のインスタンスが <xref:System.Web.UI.IStateFormatter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,431 @@
+<Type Name="BitmapCodecInfo" FullName="System.Windows.Media.Imaging.BitmapCodecInfo">
+  <TypeSignature Language="C#" Value="public abstract class BitmapCodecInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BitmapCodecInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapCodecInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イメージ コーデックに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Imaging.BitmapCodecInfo>で各コーデックを取得することができます[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、<xref:System.Windows.Media.Imaging.BitmapDecoder.CodecInfo%2A>または<xref:System.Windows.Media.Imaging.BitmapEncoder.CodecInfo%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BitmapCodecInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapCodecInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.Imaging.BitmapCodecInfo" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Author">
+      <MemberSignature Language="C#" Value="public virtual string Author { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Author" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.Author" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックの作成者を識別する値を取得します。</summary>
+        <value>コーデックの作成者。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerFormat">
+      <MemberSignature Language="C#" Value="public virtual Guid ContainerFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContainerFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.ContainerFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックのコンテナー形式を識別する値を取得します。</summary>
+        <value>コーデックのコンテナー形式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceManufacturer">
+      <MemberSignature Language="C#" Value="public virtual string DeviceManufacturer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceManufacturer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.DeviceManufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックのデバイスの製造元を識別する値を取得します。</summary>
+        <value>コーデックのデバイスの製造元。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceModels">
+      <MemberSignature Language="C#" Value="public virtual string DeviceModels { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceModels" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.DeviceModels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックのデバイス モデルを識別する値を取得します。</summary>
+        <value>コーデックのデバイス モデル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExtensions">
+      <MemberSignature Language="C#" Value="public virtual string FileExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.FileExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックに関連付けられているファイル拡張を識別する値を取得します。</summary>
+        <value>コーデックに関連付けられているファイル拡張。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FriendlyName">
+      <MemberSignature Language="C#" Value="public virtual string FriendlyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FriendlyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.FriendlyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックのフレンドリ名を表す値を取得します。</summary>
+        <value>コーデックのフレンドリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MimeTypes">
+      <MemberSignature Language="C#" Value="public virtual string MimeTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MimeTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.MimeTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別する値を取得、[!INCLUDE[TLA#tla_mime](~/includes/tlasharptla-mime-md.md)]コーデックに関連付けられています。</summary>
+        <value>[!INCLUDE[TLA#tla_mime](~/includes/tlasharptla-mime-md.md)]コーデックに関連付けられている型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecificationVersion">
+      <MemberSignature Language="C#" Value="public virtual Version SpecificationVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version SpecificationVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.SpecificationVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックの仕様バージョンを示す値を取得します。</summary>
+        <value>コーデックの仕様バージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsAnimation">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsAnimation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAnimation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.SupportsAnimation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックがアニメーションをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コーデックがアニメーション; をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsLossless">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsLossless { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsLossless" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.SupportsLossless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックが画像の無損失をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コーデックは; 画像の無損失をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsMultipleFrames">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsMultipleFrames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsMultipleFrames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.SupportsMultipleFrames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックが複数のフレームをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コーデックが複数のフレームをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public virtual Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapCodecInfo.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックのバージョンを識別する値を取得します。</summary>
+        <value>コーデックのバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapCodecInfo.Author%2A>のプロパティ、指定された<xref:System.Windows.Media.Imaging.BitmapEncoder>です。 同じアプローチを使用するには他の取得に<xref:System.Windows.Media.Imaging.BitmapCodecInfo>です。  
+  
+ [!code-csharp[BitmapFrameExample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#3)]
+ [!code-vb[BitmapFrameExample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">呼び出し元<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />レジストリのアクセス許可をレジストリからデータを取得します。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

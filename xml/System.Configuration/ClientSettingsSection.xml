@@ -1,0 +1,116 @@
+<Type Name="ClientSettingsSection" FullName="System.Configuration.ClientSettingsSection">
+  <TypeSignature Language="C#" Value="public sealed class ClientSettingsSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientSettingsSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ClientSettingsSection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内のアプリケーションのユーザー スコープ設定のグループを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 、1 つの既定の設定プロバイダーを含む<xref:System.Configuration.LocalFileSettingsProvider>、拡張子を持つファイルにローカル ファイル システムに構成データを格納する`.config`です。 構成ファイルの内容は、XML ドキュメントとして構成されています。 ユーザー スコープ設定は、名前のファイルに保持`username.config`です。 内の要素として、このファイル内でデータが格納されている、`<userSettings>`セクションです。 対応するで表されるこれらのセクションの各<xref:System.Configuration.ClientSettingsSection>です。 セクションの各オブジェクトが所有し、これは、構成セクション ハンドラーによって管理される、<xref:System.Configuration.IConfigurationSectionHandler>です。  
+  
+ <xref:System.Configuration.ClientSettingsSection>クラスの簡単な拡張機能を表す、<xref:System.Configuration.ConfigurationSection>で使用されるクラス、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]の一般的な構成ファイルをサポートします。  
+  
+ アプリケーション設定の詳細については、トピックを参照してください。 [Windows フォーム用のアプリケーション設定](~/docs/framework/winforms/advanced/application-settings-for-windows-forms.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientSettingsSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ClientSettingsSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ClientSettingsSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Configuration.ClientSettingsSection.%23ctor%2A>コンス トラクターの初期化、<xref:System.Configuration.ClientSettingsSection.Settings%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ClientSettingsSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Settings">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingElementCollection Settings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingElementCollection Settings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ClientSettingsSection.Settings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", Options=System.Configuration.ConfigurationPropertyOptions.IsDefaultCollection)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セクションのクライアント設定のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Configuration.SettingElementCollection" />すべてのクライアント設定を含む現在の構成セクションが見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ClientSettingsSection.Settings%2A>プロパティ自体は構成可能プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

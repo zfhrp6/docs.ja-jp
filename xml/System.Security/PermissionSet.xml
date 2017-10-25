@@ -1,0 +1,1450 @@
+<Type Name="PermissionSet" FullName="System.Security.PermissionSet">
+  <TypeSignature Language="C#" Value="public class PermissionSet : System.Collections.ICollection, System.Runtime.Serialization.IDeserializationCallback, System.Security.ISecurityEncodable, System.Security.IStackWalk" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PermissionSet extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Runtime.Serialization.IDeserializationCallback, class System.Security.ISecurityEncodable, class System.Security.IStackWalk" />
+  <TypeSignature Language="DocId" Value="T:System.Security.PermissionSet" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Security.ISecurityEncodable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Security.IStackWalk</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>数多くの種類のアクセス許可を含めることができるコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Security.PermissionSet>グループとしていくつかの異なるアクセス許可での操作を実行します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.PermissionSet>クラスとメンバー。  
+  
+ [!code-cpp[System.Security.PermissionSet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#1)]
+ [!code-csharp[System.Security.PermissionSet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#1)]
+ [!code-vb[System.Security.PermissionSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">または、Microsoft によって署名されているアセンブリを完全信頼の継承先に対して<see cref="T:System.Security.Policy.StrongName" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PermissionSet (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state">アクセス許可セットのリソースへのアクセスを指定する列挙値の 1 つ。</param>
+        <summary>指定した <see cref="T:System.Security.PermissionSet" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Unrestricted`状態により、実装するすべてのアクセス許可、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイス、中に`None`アクセス許可は許可されません。  
+  
+ 使用して<xref:System.Security.PermissionSet.AddPermission%2A>、空で<xref:System.Security.PermissionSet>をより詳細にセットを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.%23ctor%2A>のアクセス許可の状態で設定されたアクセス許可を作成するコンス トラクター<xref:System.Security.Permissions.PermissionState.None>です。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#2)]
+ [!code-csharp[System.Security.PermissionSet#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#2)]
+ [!code-vb[System.Security.PermissionSet#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.PermissionState" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PermissionSet (System.Security.PermissionSet permSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.PermissionSet permSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.#ctor(System.Security.PermissionSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permSet" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="permSet">新しい値を取得するセット<see cref="T:System.Security.PermissionSet" />、または<see langword="null" />、空を作成する<see cref="T:System.Security.PermissionSet" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.PermissionSet" />から取得した最初の値を持つクラス、<paramref name="permSet" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Security.PermissionSet>内に指定されたアクセス許可のコピーを含む<xref:System.Security.PermissionSet>です。  
+  
+> [!NOTE]
+>  これに相当<xref:System.Security.PermissionSet.Copy%2A>ときに、`permSet`パラメーターではありません`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission AddPermission (System.Security.IPermission perm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.IPermission AddPermission(class System.Security.IPermission perm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.AddPermission(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="perm" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="perm">追加する権限。</param>
+        <summary>指定した権限を <see cref="T:System.Security.PermissionSet" /> に追加します。</summary>
+        <returns>追加のアクセス許可と同じ型に既に存在するすべてのアクセス権の和集合、<see cref="T:System.Security.PermissionSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既に追加されたアクセス許可と同じ型のアクセス許可が存在するかどうか、 <xref:System.Security.PermissionSet>、新しいアクセス許可は、既存のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの和集合です。 アクセス許可を実装する場合など、<xref:System.Security.Permissions.IUnrestrictedPermission>に追加、 <xref:System.Security.Permissions.PermissionState.Unrestricted> <xref:System.Security.PermissionSet>、結果の和集合は、元の`Unrestricted`<xref:System.Security.PermissionSet>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.AddPermission%2A>権限セットにアクセス許可を追加するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#3)]
+ [!code-csharp[System.Security.PermissionSet#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#3)]
+ [!code-vb[System.Security.PermissionSet#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.PermissionSet" />の動作を変更することができます、<see cref="M:System.Security.PermissionSet.AddPermission(System.Security.IPermission)" />メソッドをオーバーライドすることで、<see cref="M:System.Security.PermissionSet.AddPermissionImpl(System.Security.IPermission)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermissionImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.IPermission AddPermissionImpl (System.Security.IPermission perm);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.IPermission AddPermissionImpl(class System.Security.IPermission perm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.AddPermissionImpl(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="perm" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="perm">追加する権限。</param>
+        <summary>指定した権限を <see cref="T:System.Security.PermissionSet" /> に追加します。</summary>
+        <returns>追加される権限および <see cref="T:System.Security.PermissionSet" /> に既に存在する型と同じ型のすべての権限の和集合。あるいは、<paramref name="perm" /> が <see langword="null" /> の場合には <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.AddPermissionImpl%2A>メソッドの実装は、<xref:System.Security.PermissionSet.AddPermission%2A>メソッドです。  
+  
+ 既に追加されたアクセス許可と同じ型のアクセス許可が存在するかどうか、 <xref:System.Security.PermissionSet>、新しいアクセス許可は、既存のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの和集合です。 アクセス許可を実装する場合など、<xref:System.Security.Permissions.IUnrestrictedPermission>に追加、 <xref:System.Security.Permissions.PermissionState.Unrestricted> <xref:System.Security.PermissionSet>、結果の和集合は、元の`Unrestricted`<xref:System.Security.PermissionSet>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public void Assert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Assert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Assert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し側コードが、このメソッドを呼び出すコードを通じて、アクセス許可要求によって保護されているリソースにアクセス可能であるということ、それも、スタックの中で上位に位置する呼び出し側にリソースへのアクセス許可が付与されていない場合でさえそれが可能であることを宣言します。 使用して<see cref="M:System.Security.PermissionSet.Assert" />セキュリティの脆弱性を作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フレーム内で同時に複数のアクセス許可をアサートする唯一の方法は、この 1 つだけ<xref:System.Security.PermissionSet.Assert%2A>フレーム上でアクティブにすることができます。 <xref:System.Security.PermissionSet.Assert%2A>許可された権限の有効です。 呼び出す、<xref:System.Security.CodeAccessPermission.RevertAssert%2A?displayProperty=nameWithType>または<xref:System.Security.CodeAccessPermission.RevertAll%2A?displayProperty=nameWithType>メソッドをアクティブなキャンセル<xref:System.Security.PermissionSet.Assert%2A>です。  
+  
+> [!CAUTION]
+>  呼び出すため、<xref:System.Security.PermissionSet.Assert%2A>メソッド削除コードの呼び出しチェーン内のすべてのある要件は、指定されたリソースにアクセスする権限を付与する必要がある、開くことができるセキュリティの脆弱性を誤ってまたは不適切に使用する場合。 そのため、注意深く使用してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException"><see cref="T:System.Security.PermissionSet" />アサートされるインスタンスがアサート側コードに付与されていません。  
+  
+ -または-  
+  
+ 現在のフレームにはアクティブな <see cref="M:System.Security.PermissionSet.Assert" /> が既に存在しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsNonCodeAccessPermissions">
+      <MemberSignature Language="C#" Value="public bool ContainsNonCodeAccessPermissions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsNonCodeAccessPermissions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.ContainsNonCodeAccessPermissions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.PermissionSet" /> が、<see cref="T:System.Security.CodeAccessPermission" /> から派生していないアクセス許可を含むかどうかを示す値を取得します。</summary>
+        <returns>
+          <see cref="T:System.Security.PermissionSet" /> が <see cref="T:System.Security.CodeAccessPermission" /> から派生していないアクセス許可を含む場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.ContainsNonCodeAccessPermissions%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#9)]
+ [!code-csharp[System.Security.PermissionSet#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#9)]
+ [!code-vb[System.Security.PermissionSet#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertPermissionSet">
+      <MemberSignature Language="C#" Value="public static byte[] ConvertPermissionSet (string inFormat, byte[] inData, string outFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] ConvertPermissionSet(string inFormat, unsigned int8[] inData, string outFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.ConvertPermissionSet(System.String,System.Byte[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inFormat" Type="System.String" />
+        <Parameter Name="inData" Type="System.Byte[]" />
+        <Parameter Name="outFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inFormat">ASCII、Unicode、またはバイナリのいずれかのエンコード形式を表す文字列。  使用可能な値は、"XMLASCII" または "XML"、"XMLUNICODE"、"BINARY" です。</param>
+        <param name="inData">XML でエンコードされたアクセス許可のセット。</param>
+        <param name="outFormat">ASCII、Unicode、またはバイナリのいずれかのエンコード形式を表す文字列。  使用可能な値は、"XMLASCII" または "XML"、"XMLUNICODE"、"BINARY" です。</param>
+        <summary>変換、エンコードされた<see cref="T:System.Security.PermissionSet" />別の XML エンコード形式を 1 つの XML エンコード形式からです。</summary>
+        <returns>指定した出力形式の暗号化されたアクセス許可のセット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public virtual System.Security.PermissionSet Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.PermissionSet Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.PermissionSet" /> のコピーを作成します。</summary>
+        <returns><see cref="T:System.Security.PermissionSet" /> のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー、<xref:System.Security.PermissionSet>リソースに対して、元のオブジェクトと同じアクセス権を表します。 コピーに加えられた変更は、元の権限セットには影響しません。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.Copy%2A>メソッドをアクセス許可セットのコピーを作成します。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#20](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#20)]
+ [!code-csharp[System.Security.PermissionSet#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#20)]
+ [!code-vb[System.Security.PermissionSet#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先となるターゲット配列。</param>
+        <param name="index">コピーを開始する配列内の開始位置 (0 ベース)。</param>
+        <summary>セットのアクセス許可オブジェクトで指定された場所にコピーして、<see cref="T:System.Array" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" />パラメーターが 1 つ以上のディメンションです。</exception>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが範囲外、<paramref name="array" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Security.PermissionSet.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス権限セットに含まれるアクセス権限オブジェクトの数を取得します。</summary>
+        <value><see cref="T:System.Security.PermissionSet" /> に含まれるアクセス権限オブジェクトの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `None`または`Unrestricted`状態の 0 が返されます。 実際のアクセス許可オブジェクトのインスタンスが使用されていないためです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.Count%2A>の権限セットにアクセス許可オブジェクトの数を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#5)]
+ [!code-csharp[System.Security.PermissionSet#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#5)]
+ [!code-vb[System.Security.PermissionSet#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Demand">
+      <MemberSignature Language="C#" Value="public void Demand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Demand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスによって指定されているアクセス許可が付与されていない呼び出し元が、呼び出し履歴の上流に 1 つでも存在した場合、実行時に <see cref="T:System.Security.SecurityException" /> を強制します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Security.PermissionSet.Demand%2A>上、<xref:System.Security.PermissionSet>を 1 つの操作のセットのすべての呼び出し元のすべての権限があることを確認します。  
+  
+ このメソッドを呼び出すコードのアクセス許可はチェックされません。チェックは、そのコードの直前の呼び出し元から開始され、スタックの上位に進みます。 通常、呼び出し履歴はコール スタックに呼び出し履歴の上位にあるメソッドが下位にあるメソッドを呼び出すようにダウン、成長として表されます。 <xref:System.Security.PermissionSet.Demand%2A>場合にのみ成功ありません<xref:System.Security.SecurityException>がスローされます。  
+  
+ 場合、<xref:System.Security.PermissionSet>から継承しないそのアクセス許可を含む<xref:System.Security.CodeAccessPermission>、`Demand`これらのアクセス許可のメソッドとも呼びます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.Demand%2A>アクセス許可セット内のすべてのアクセス許可を要求するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#4)]
+ [!code-csharp[System.Security.PermissionSet#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#4)]
+ [!code-vb[System.Security.PermissionSet#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元に、要求されたアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deny">
+      <MemberSignature Language="C#" Value="public void Deny ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Deny() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Deny" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.PermissionSet" /> に含まれる型の権限との交差部分のある権限について呼び出し側コードをパススルーする <see cref="M:System.Security.PermissionSet.Demand" /> があれば、それが失敗するようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コール スタックの上位の呼び出し元がそれらの呼び出し元にはそれにアクセスする権限が付与されている場合でもこのメソッドを呼び出すコードを保護されたリソースにアクセスすることを防ぎます。 通常、呼び出し履歴はコール スタックに呼び出し履歴の上位にあるメソッドが下位にあるメソッドを呼び出すようにダウン、成長として表されます。  
+  
+ <xref:System.Security.PermissionSet.Deny%2A>プログラマの責任の制限、または呼び出されるメソッドを防ぐのに役立つので偶発的なセキュリティの脆弱性を防ぐ<xref:System.Security.PermissionSet.Deny%2A>拒否されたアクセス許可によって保護されているリソースにアクセスするために使用されているからです。 メソッドを呼び出す場合<xref:System.Security.PermissionSet.Deny%2A>、アクセス許可の場合は、<xref:System.Security.PermissionSet.Demand%2A>になったときにそのアクセス許可は、呼び出し履歴内の下位にある呼び出し元によって呼び出されるのセキュリティ チェックが失敗した、<xref:System.Security.PermissionSet.Deny%2A>です。  
+  
+ <xref:System.Security.PermissionSet.Deny%2A>そのアクセス許可の確認要求が成功することはできませんので許可されていないアクセス許可は無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException"><see cref="M:System.Security.PermissionSet.Deny" /> の前回の呼び出しにより、現在のスタック フレームの権限はすでに制限されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Security.PermissionSet" /> と比較するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.PermissionSet" /> または <see cref="T:System.Security.NamedPermissionSet" /> オブジェクトが、現在の <see cref="T:System.Security.PermissionSet" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          指定したオブジェクトが現在の <see cref="T:System.Security.PermissionSet" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等しいかどうかは、アクセス許可で指定したセットに含まれているアクセス許可によって決まります`obj`です。 `obj`いずれかになります、<xref:System.Security.PermissionSet>オブジェクトまたは<xref:System.Security.NamedPermissionSet>オブジェクト。 場合`obj`は、<xref:System.Security.NamedPermissionSet>名前と説明は無視されます。  
+  
+ 詳細については、「<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public virtual void FromXml (System.Security.SecurityElement et);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXml(class System.Security.SecurityElement et) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="et" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="et">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.FromXml%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#17](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#17)]
+ [!code-csharp[System.Security.PermissionSet#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#17)]
+ [!code-vb[System.Security.PermissionSet#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="et" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="et" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="et" />パラメーターのバージョン番号はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>設定のアクセス許可の列挙子を返します。</summary>
+        <returns>設定のアクセス許可の列挙子オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスとして列挙子を使用して、セット内の個々 のアクセス許可オブジェクトにアクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.GetEnumerator%2A>メソッドをアクセス許可セット内のすべての権限を一覧表示します。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#18](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#18)]
+ [!code-csharp[System.Security.PermissionSet#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#18)]
+ [!code-vb[System.Security.PermissionSet#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.PermissionSet" />の動作を変更することができます、<see cref="M:System.Security.PermissionSet.GetEnumerator" />メソッドをオーバーライドすることで、<see cref="M:System.Security.PermissionSet.GetEnumeratorImpl" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumeratorImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IEnumerator GetEnumeratorImpl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumeratorImpl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.GetEnumeratorImpl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>設定のアクセス許可の列挙子を返します。</summary>
+        <returns>設定のアクセス許可の列挙子オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.GetEnumeratorImpl%2A>メソッドの実装は、<xref:System.Security.PermissionSet.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適している、<see cref="T:System.Security.PermissionSet" /> オブジェクトのハッシュ コードを取得します。</summary>
+        <returns>現在の <see cref="T:System.Security.PermissionSet" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コードは、2 つの比較には使用できませんので、同じアクセス許可セットの 2 つのインスタンスのハッシュ コードが異なる、可能性があります<xref:System.Security.PermissionSet>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission GetPermission (Type permClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.IPermission GetPermission(class System.Type permClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.GetPermission(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="permClass">目的のアクセス許可オブジェクトの型。</param>
+        <summary>セット内に存在する場合は、指定した型のアクセス許可オブジェクトを取得します。</summary>
+        <returns>指定された型のアクセス許可オブジェクトのコピー、<paramref name="permClass" />パラメーターに含まれている、 <see cref="T:System.Security.PermissionSet" />、または<see langword="null" />が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを返します`null`の`Unrestricted`<xref:System.Security.PermissionSet>です。 `Unrestricted` <xref:System.Security.PermissionSet>実質的にすべてのアクセス許可を含む、実際のインスタンスを返す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.PermissionSet" />の動作を変更することができます、<see cref="M:System.Security.PermissionSet.GetPermission(System.Type)" />メソッドをオーバーライドすることで、<see cref="M:System.Security.PermissionSet.GetPermissionImpl(System.Type)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPermissionImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.IPermission GetPermissionImpl (Type permClass);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.IPermission GetPermissionImpl(class System.Type permClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.GetPermissionImpl(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="permClass">アクセス許可オブジェクトの型。</param>
+        <summary>セット内に存在する場合は、指定した型のアクセス許可オブジェクトを取得します。</summary>
+        <returns>指定された型のアクセス許可オブジェクトのコピー、<paramref name="permClass" />パラメーターに含まれている、 <see cref="T:System.Security.PermissionSet" />、または<see langword="null" />が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.GetPermissionImpl%2A>メソッドの実装は、<xref:System.Security.PermissionSet.GetPermission%2A>メソッドです。  
+  
+ このメソッドを返します`null`の`Unrestricted`<xref:System.Security.PermissionSet>です。 `Unrestricted` <xref:System.Security.PermissionSet>実質的にすべてのアクセス許可を含む、実際のインスタンスを返す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public System.Security.PermissionSet Intersect (System.Security.PermissionSet other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.PermissionSet Intersect(class System.Security.PermissionSet other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Intersect(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="other">アクセス許可セットの現在の交差する<see cref="T:System.Security.PermissionSet" />です。</param>
+        <summary>作成してアクセス許可が現在の交差部分で設定されている返します<see cref="T:System.Security.PermissionSet" />と、指定した<see cref="T:System.Security.PermissionSet" />です。</summary>
+        <returns>現在の積集合を表す新しいアクセス許可セット<see cref="T:System.Security.PermissionSet" />と指定したオブジェクト。 このオブジェクトは<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可セットの積集合は、一連の両方に共通する操作を説明するアクセス許可セットです。 具体的には、アクセス許可の両方に適合する要求設定もパスの交差する、最小限のアクセス許可を表します。  
+  
+ 両方のセットに存在するためのアクセス許可の種類ごとに、これらのアクセス許可の 2 つのインスタンスと交差する、アクセス許可を使用して`Intersect`メソッドで、結果として得られる最終的なアクセス許可が含まれている<xref:System.Security.PermissionSet>です。 2 つのセットの 1 つのみに存在するアクセス許可の種類は、結果セットから除外されます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.Intersect%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#12)]
+ [!code-csharp[System.Security.PermissionSet#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#12)]
+ [!code-vb[System.Security.PermissionSet#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.IsEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Security.PermissionSet" />が空です。</summary>
+        <returns>
+          <see langword="true" /> が空の場合は <see cref="T:System.Security.PermissionSet" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Security.PermissionSet>を空にしてこれらのアクセス許可が完全に制限される状態にある場合、まだアクセス許可のインスタンスを含めることができます。 アクセス許可が完全に制限された状態では場合、`IsSubsetOf`メソッドが返す`true`とき`null`パラメーターとして渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Security.PermissionSet.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Security.PermissionSet>ため、このプロパティは常に、読み取り専用であることはできません`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、によって返される値を示しています、<xref:System.Security.PermissionSet.IsReadOnly%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#7)]
+ [!code-csharp[System.Security.PermissionSet#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#7)]
+ [!code-vb[System.Security.PermissionSet#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Security.PermissionSet target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSubsetOf(class System.Security.PermissionSet target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.IsSubsetOf(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係をテストするためのアクセス許可セット。 これはどちらかにする必要があります、<see cref="T:System.Security.PermissionSet" />または<see cref="T:System.Security.NamedPermissionSet" />です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Security.PermissionSet" />の指定されたサブセットです<see cref="T:System.Security.PermissionSet" />です。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Security.PermissionSet" />のサブセットである、<paramref name="target" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Security.PermissionSet>ターゲットのサブセットである<xref:System.Security.PermissionSet>のかどうかは成功するすべての要求、<xref:System.Security.PermissionSet>ターゲットに対しても成功します。 つまり、ターゲット サブセットに含まれているアクセス許可を含む少なくともです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.IsSubsetOf%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#11)]
+ [!code-csharp[System.Security.PermissionSet#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#11)]
+ [!code-vb[System.Security.PermissionSet#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Security.PermissionSet.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが確実にスレッド セーフであるかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet>自動的に処理しないスレッド セーフでは、このプロパティは常に`false`です。  
+  
+ このメソッドがサポートするために必要な<xref:System.Collections.ICollection>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、によって返される値を示しています、<xref:System.Security.PermissionSet.IsSynchronized%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#6)]
+ [!code-csharp[System.Security.PermissionSet#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#6)]
+ [!code-vb[System.Security.PermissionSet#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.Security.PermissionSet" />は<see langword="Unrestricted" />します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Security.PermissionSet" />は<see langword="Unrestricted" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Unrestricted` <xref:System.Security.PermissionSet>効果的に実装するすべてのアクセス許可を含む、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.IsUnrestricted%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#19](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#19)]
+ [!code-csharp[System.Security.PermissionSet#19](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#19)]
+ [!code-vb[System.Security.PermissionSet#19](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermitOnly">
+      <MemberSignature Language="C#" Value="public void PermitOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PermitOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.PermitOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.PermissionSet.Demand" />任意の呼び出し元のコードをパススルーする<see cref="T:System.Security.PermissionSet" />が一部ではなく、現在の<see cref="T:System.Security.PermissionSet" />が失敗します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.PermitOnly%2A>ような<xref:System.Security.PermissionSet.Deny%2A>両方が発生する場合は操作が成功すると失敗するスタック ウォーク点で、します。 される点が異なります<xref:System.Security.PermissionSet.Deny%2A>が失敗し、スタック ウォークを原因となるアクセス許可を指定しますが、<xref:System.Security.PermissionSet.PermitOnly%2A>が失敗するスタック ウォークが発生しないのみのアクセス許可を指定します。 このメソッドを呼び出して、指定されたリソースのみにアクセスするコードを使用できることを確認してください。  
+  
+ <xref:System.Security.PermissionSet.PermitOnly%2A>そのアクセス許可の確認要求が成功することはできませんので許可されていなかった権限は無視されます。 ただし、コードのコール スタックを後で場合呼び出し<xref:System.Security.PermissionSet.Demand%2A>そのアクセス許可、<xref:System.Security.SecurityException>スタック ウォークを呼び出そうとするコードに達した場合にスローされる<xref:System.Security.PermissionSet.PermitOnly%2A>です。 これは、コードを呼び出したため<xref:System.Security.PermissionSet.PermitOnly%2A>与えられていない、アクセス許可が呼び出されていなくても<xref:System.Security.PermissionSet.PermitOnly%2A>そのアクセス許可。 通常、呼び出し履歴はコール スタックに呼び出し履歴の上位にあるメソッドが下位にあるメソッドを呼び出すようにダウン、成長として表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission RemovePermission (Type permClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.IPermission RemovePermission(class System.Type permClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.RemovePermission(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="permClass">削除するアクセス許可の種類。</param>
+        <summary>セットから特定の型のアクセス許可を削除します。</summary>
+        <returns>セットからアクセス許可が削除されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  無制限のアクセス許可セットからアクセス許可を削除することはできません。 アクセス許可の設定は無制限のアクセス許可を削除しようとすると、例外はスローされません。  
+  
+ 次の c# コードが削除しようとした場合、<xref:System.Security.Permissions.FileIOPermission>から、`FullTrust`アクセス許可設定しますが、アクセス許可は削除されません。  
+  
+```  
+PolicyLevel myPol = PolicyLevel.CreateAppDomainLevel();  
+PermissionSet myPermSet = myPol.GetNamedPermissionSet("FullTrust");  
+myPermSet.RemovePermission(typeof(FileIOPermission));  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.RemovePermission%2A>を削除する方法、<xref:System.Security.Permissions.FileIOPermission>アクセス許可を設定します。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#15)]
+ [!code-csharp[System.Security.PermissionSet#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#15)]
+ [!code-vb[System.Security.PermissionSet#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.PermissionSet" />の動作を変更することができます、<see cref="M:System.Security.PermissionSet.RemovePermission(System.Type)" />メソッドをオーバーライドすることで、<see cref="M:System.Security.PermissionSet.RemovePermissionImpl(System.Type)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePermissionImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.IPermission RemovePermissionImpl (Type permClass);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.IPermission RemovePermissionImpl(class System.Type permClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.RemovePermissionImpl(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="permClass">削除するアクセス許可の型。</param>
+        <summary>セットから特定の型のアクセス許可を削除します。</summary>
+        <returns>セットからアクセス許可が削除されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.RemovePermissionImpl%2A>メソッドの実装は、<xref:System.Security.PermissionSet.RemovePermission%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  無制限のアクセス許可セットからアクセス許可を削除することはできません。 アクセス許可の設定は無制限のアクセス許可を削除しようとすると、例外はスローされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevertAssert">
+      <MemberSignature Language="C#" Value="public static void RevertAssert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RevertAssert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.RevertAssert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>以前のど<see cref="M:System.Security.CodeAccessPermission.Assert" />現在のフレームの削除して、有効で使用できなくします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ある場合ありません<xref:System.Security.CodeAccessPermission.Assert%2A>現在のフレーム、<xref:System.ExecutionEngineException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ない<see cref="M:System.Security.CodeAccessPermission.Assert" />現在のフレームです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission SetPermission (System.Security.IPermission perm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.IPermission SetPermission(class System.Security.IPermission perm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.SetPermission(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="perm" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="perm">設定するアクセス許可。</param>
+        <summary>アクセス許可を設定、 <see cref="T:System.Security.PermissionSet" />、同じ型の既存のアクセス許可を置換します。</summary>
+        <returns>設定されたアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから同じ型の既存のアクセス許可オブジェクトを削除、<xref:System.Security.PermissionSet>で置き換えて、`perm`パラメーター。 アクセス許可を実装する場合<xref:System.Security.Permissions.IUnrestrictedPermission>に設定されている、<xref:System.Security.PermissionSet>つまり<xref:System.Security.Permissions.PermissionState.Unrestricted>、結果として得られる<xref:System.Security.PermissionSet>が不要になった`Unrestricted`です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.SetPermission%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#16)]
+ [!code-csharp[System.Security.PermissionSet#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#16)]
+ [!code-vb[System.Security.PermissionSet#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Security.PermissionSet" />の動作を変更することができます、<see cref="M:System.Security.PermissionSet.SetPermission(System.Security.IPermission)" />メソッドをオーバーライドすることで、<see cref="M:System.Security.PermissionSet.SetPermissionImpl(System.Security.IPermission)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPermissionImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.IPermission SetPermissionImpl (System.Security.IPermission perm);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.IPermission SetPermissionImpl(class System.Security.IPermission perm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.SetPermissionImpl(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="perm" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="perm">設定するアクセス許可。</param>
+        <summary>アクセス許可を設定、 <see cref="T:System.Security.PermissionSet" />、同じ型の既存のアクセス許可を置換します。</summary>
+        <returns>設定されたアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.PermissionSet.SetPermissionImpl%2A>メソッドの実装は、<xref:System.Security.PermissionSet.SetPermission%2A>メソッドです。  
+  
+ このメソッドから同じ型の既存のアクセス許可オブジェクトを削除、<xref:System.Security.PermissionSet>で置き換えて、`perm`パラメーター。 アクセス許可を実装する場合<xref:System.Security.Permissions.IUnrestrictedPermission>に設定されている、<xref:System.Security.PermissionSet>つまり<xref:System.Security.Permissions.PermissionState.Unrestricted>、結果として得られる<xref:System.Security.PermissionSet>が不要になった`Unrestricted`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは <see cref="T:System.Security.ReadOnlyPermissionSet" /> から呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Security.PermissionSet.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコレクションのルート オブジェクトを取得します。</summary>
+        <value>現在のコレクションのルート オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがサポートするために必要な<xref:System.Collections.ICollection>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示しています。 <xref:System.Security.PermissionSet.SyncRoot%2A> 、現在のコレクションのルート オブジェクトを取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#8)]
+ [!code-csharp[System.Security.PermissionSet#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#8)]
+ [!code-vb[System.Security.PermissionSet#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IDeserializationCallback.OnDeserialization">
+      <MemberSignature Language="C#" Value="void IDeserializationCallback.OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.System#Runtime#Serialization#IDeserializationCallback#OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">コールバックを開始したオブジェクト。 このパラメーターの機能は、現在実装されていません。</param>
+        <summary>オブジェクト グラフ全体が逆シリアル化された時点で実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.PermissionSet" /> の文字列形式を返します。</summary>
+        <returns>形式、<see cref="T:System.Security.PermissionSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列表記の状態を確認する、デバッグに便利ですが、<xref:System.Security.PermissionSet>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.ToString%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#10)]
+ [!code-csharp[System.Security.PermissionSet#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#10)]
+ [!code-vb[System.Security.PermissionSet#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public virtual System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ オブジェクトとその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.ToXml%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#17](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#17)]
+ [!code-csharp[System.Security.PermissionSet#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#17)]
+ [!code-vb[System.Security.PermissionSet#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public System.Security.PermissionSet Union (System.Security.PermissionSet other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.PermissionSet Union(class System.Security.PermissionSet other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.PermissionSet.Union(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の和集合を形成するアクセス許可セット<see cref="T:System.Security.PermissionSet" />です。</param>
+        <summary>作成、 <see cref="T:System.Security.PermissionSet" /> 、現在の和集合である<see cref="T:System.Security.PermissionSet" />と、指定した<see cref="T:System.Security.PermissionSet" />です。</summary>
+        <returns>現在の和集合を表す新しいアクセス許可セット<see cref="T:System.Security.PermissionSet" />と、指定した<see cref="T:System.Security.PermissionSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.PermissionSet.Union%2A>は、<xref:System.Security.PermissionSet>現在によって表されるすべての操作を表す<xref:System.Security.PermissionSet>、指定したによって表されるすべての操作だけでなく<xref:System.Security.PermissionSet>です。 場合設定するか、 `Unrestricted`、共用体が`Unrestricted`もします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.PermissionSet.Union%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.PermissionSet>クラスです。  
+  
+ [!code-cpp[System.Security.PermissionSet#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.PermissionSet/CPP/permissionset.cpp#13)]
+ [!code-csharp[System.Security.PermissionSet#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.PermissionSet/CS/permissionset.cs#13)]
+ [!code-vb[System.Security.PermissionSet#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.PermissionSet/VB/permissionset.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

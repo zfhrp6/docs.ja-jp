@@ -1,0 +1,36 @@
+<Type Name="SettingsLoadedEventHandler" FullName="System.Configuration.SettingsLoadedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SettingsLoadedEventHandler(object sender, SettingsLoadedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SettingsLoadedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsLoadedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Configuration.SettingsLoadedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント、通常は設定クラスのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Configuration.SettingsLoadedEventArgs" /> オブジェクト。</param>
+    <summary><see cref="E:System.Configuration.ApplicationSettingsBase.SettingsLoaded" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>イベント プロバイダーから設定を取得するときに発生します。 このイベントは、プロバイダーごとに 1 回発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

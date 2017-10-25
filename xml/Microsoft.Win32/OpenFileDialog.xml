@@ -1,0 +1,256 @@
+<Type Name="OpenFileDialog" FullName="Microsoft.Win32.OpenFileDialog">
+  <TypeSignature Language="C#" Value="public sealed class OpenFileDialog : Microsoft.Win32.FileDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OpenFileDialog extends Microsoft.Win32.FileDialog" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.OpenFileDialog" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Win32.FileDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーがファイルを開くには 1 つまたは複数のファイル名を指定できるコモン ダイアログ ボックスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図に示しています、<xref:Microsoft.Win32.OpenFileDialog>の[!INCLUDE[TLA#tla_winvista](~/includes/tlasharptla-winvista-md.md)]します。  
+  
+ ![[開く] ダイアログ ボックス](~/add/media/dialogboxesoverviewfigure2.png "開く ダイアログ ボックス")  
+  
+ 以降で[!INCLUDE[TLA2#tla_winvista](~/includes/tla2sharptla-winvista-md.md)]が保存ファイル ダイアログ ボックスを開き、**お気に入りリンク**ユーザーが別の場所にすばやく移動できるダイアログ ボックスの左側のパネルです。 これらのリンクは、カスタムの場所と呼ばれます。 使用して、<xref:Microsoft.Win32.FileDialog.CustomPlaces%2A>プロパティをこのリンクの一覧を設定します。  
+  
+<a name="xamlTextUsage_OpenFileDialog"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このマネージ クラスを宣言することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:Microsoft.Win32.OpenFileDialog>既定ファイルの名前と拡張子の種類を格納しています。  
+  
+ [!code-csharp[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#openfiledialogboxcodebehind)]
+ [!code-vb[DialogBoxesOverviewSnippets#OpenFileDialogBoxCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#openfiledialogboxcodebehind)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OpenFileDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.OpenFileDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Win32.OpenFileDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckPermissionsToShowDialog">
+      <MemberSignature Language="C#" Value="protected override void CheckPermissionsToShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CheckPermissionsToShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.OpenFileDialog.CheckPermissionsToShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiselect">
+      <MemberSignature Language="C#" Value="public bool Multiselect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Multiselect" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.OpenFileDialog.Multiselect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示すオプションかどうか<see cref="T:Microsoft.Win32.OpenFileDialog" />を複数のファイルを選択できます。</summary>
+        <value>
+          <see langword="true" />場合は、複数の選択肢は使用できません。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ダイアログのユーザー インターフェイスの動作を変更します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OpenFile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream OpenFile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.OpenFileDialog.OpenFile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して、ユーザーが選択されているファイルの読み取り専用ストリームを開きます<see cref="T:Microsoft.Win32.OpenFileDialog" />です。</summary>
+        <returns>新しい<see cref="T:System.IO.Stream" />選択したファイルを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のアクセス許可を持つファイルが開かれた (<xref:System.IO.FileMode.Open>、 <xref:System.IO.FileAccess.Read>、および<xref:System.IO.FileShare.Read>)、読み取り専用チェック ボックスがオン ダイアログ ボックスの有無にかかわらず、します。 上書きするか、ファイルに書き込む機能がない場合、ファイルが開いている場合、アプリケーションは部分的な信頼制限内で実行中に、ファイルを安全に読み込むことができます。  
+  
+ 複数のファイルが選択されている場合は、最初の選択したファイルが開きます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ダイアログ ボックスでファイルが選択されていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileDialogPermission">ファイル ストリームを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Open" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFiles">
+      <MemberSignature Language="C#" Value="public System.IO.Stream[] OpenFiles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream[] OpenFiles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.OpenFileDialog.OpenFiles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つの読み取り専用ストリームを使用して、ユーザーによって選択された各ファイルを格納する配列を作成<see cref="T:Microsoft.Win32.OpenFileDialog" />です。</summary>
+        <returns>新しい複数の配列<see cref="T:System.IO.Stream" />選択したファイルを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のアクセス許可を持つ各ファイルが開かれた (<xref:System.IO.FileMode.Open>、 <xref:System.IO.FileAccess.Read>、および<xref:System.IO.FileShare.Read>)、読み取り専用チェック ボックスがオン ダイアログ ボックスの有無にかかわらず、します。 上書きするか、ファイルに書き込む機能がない場合の各ファイルが開いている場合、アプリケーションは部分的な信頼制限内で実行中に、1 つまたは複数のファイルを安全に読み込むことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ダイアログ ボックスでファイルが選択されていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileDialogPermission">ファイル ストリームの配列を作成します。 関連する列挙。<see cref="F:System.Security.Permissions.FileDialogPermissionAccess.Open" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnlyChecked">
+      <MemberSignature Language="C#" Value="public bool ReadOnlyChecked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnlyChecked" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.OpenFileDialog.ReadOnlyChecked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用 チェック ボックスが表示されるかどうかを示す値を取得または<see cref="T:Microsoft.Win32.OpenFileDialog" />が選択されています。</summary>
+        <value>
+          <see langword="true" />チェック ボックスがオンの場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.OpenFileDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのリセット<see cref="T:Microsoft.Win32.OpenFileDialog" />プロパティを既定値です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ダイアログ ボックスをリセットします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <block subset="none" type="overrides">
+          <para>このクラスはシールされているため、このメソッドをオーバーライドすることはできません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowReadOnly">
+      <MemberSignature Language="C#" Value="public bool ShowReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.OpenFileDialog.ShowReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか<see cref="T:Microsoft.Win32.OpenFileDialog" />読み取り専用チェック ボックスが含まれています。</summary>
+        <value>
+          <see langword="true" />チェック ボックスを表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

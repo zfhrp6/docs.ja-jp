@@ -1,0 +1,329 @@
+<Type Name="EndpointDispatcher" FullName="System.ServiceModel.Dispatcher.EndpointDispatcher">
+  <TypeSignature Language="C#" Value="public sealed class EndpointDispatcher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EndpointDispatcher extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.EndpointDispatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージに対するランタイム拡張機能または変更をサービス アプリケーションに挿入できるようにするプロパティを公開するランタイム オブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスと <xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> クラスは、サービスのエンドポイントに対するランタイム カスタマイズ ポイントを公開します。 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> を使用すると、処理できるメッセージおよび一部のエンドポイント関連情報を制御できます。 <xref:System.ServiceModel.Dispatcher.DispatchRuntime> には、エンドポイント全体のランタイムにカスタム拡張機能を挿入するために使用できる多くのプロパティがあります。  
+  
+ メッセージの送信先アドレスが <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> プロパティに一致しており、メッセージ アクションが <xref:System.ServiceModel.Dispatcher.ChannelDispatcher?displayProperty=nameWithType> プロパティに一致しているときは、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> オブジェクトが、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> から送信されたメッセージの処理を担当します。 2 つの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトが 1 つのメッセージを受信する可能性があるときは、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティの値によって、優先度の高いエンドポイントが決まります。  
+  
+ <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトは、関連付けられた <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> からのメッセージの受信、メッセージ オブジェクトからパラメーターとして使用するオブジェクトへの変換、およびエンドポイント操作の呼び出しといったプロセス、およびこれらの逆のプロセスを、構成または拡張するために使用します。  
+  
+ 通常、エンドポイントの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> は <xref:System.ServiceModel.Description.IEndpointBehavior> インターフェイスを実装することで取得しますが、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher> には他の動作インターフェイスからでもアクセスできます。  
+  
+ 次の <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> プロパティを使用できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> プロパティを使用すると、エンドポイントが特定のメッセージを処理できるかどうかを識別するために <xref:System.ServiceModel.Dispatcher.MessageFilter> が使用する <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> オブジェクトを取得または設定できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> プロパティは、関連付けられた <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトを取得します。このオブジェクトは <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> との間でメッセージを送受信し、このオブジェクトを使用することで他のチャネル関連の値や動作を検査または変更できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> は、メッセージがこのコントラクトに宛てられたものかどうかの識別に使用する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトを取得します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractName%2A> および <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractNamespace%2A> プロパティは、エンドポイント コントラクトの名前と名前空間を返します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> プロパティが返す <xref:System.ServiceModel.Dispatcher.DispatchRuntime> オブジェクトを使用すると、ランタイム値を変更したり、エンドポイント全体に関するカスタム ランタイム機能拡張を挿入したりできます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.EndpointAddress%2A> プロパティは、エンドポイントのアドレスを取得します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティは、複合フィルターの優先順位を返します。<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> はこれを使用して、メッセージを処理するエンドポイントを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、エンドポイントの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> を検索するための <xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> の使用方法を示しています。  
+  
+ [!code-csharp[IEndpointBehavior#4](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointDispatcher (System.ServiceModel.EndpointAddress address, string contractName, string contractNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address, string contractName, string contractNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointDispatcher.#ctor(System.ServiceModel.EndpointAddress,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="contractNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">エンドポイント アドレス。</param>
+        <param name="contractName">エンドポイント コントラクトの名前です。</param>
+        <param name="contractNamespace">エンドポイント コントラクトの名前空間です。</param>
+        <summary>指定したアドレス、コントラクト名、およびコントラクト名前空間で、<see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、記述に含まれないエンドポイントを作成するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointDispatcher (System.ServiceModel.EndpointAddress address, string contractName, string contractNamespace, bool isSystemEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address, string contractName, string contractNamespace, bool isSystemEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointDispatcher.#ctor(System.ServiceModel.EndpointAddress,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="contractNamespace" Type="System.String" />
+        <Parameter Name="isSystemEndpoint" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="address">エンドポイント アドレス。</param>
+        <param name="contractName">エンドポイント コントラクトの名前です。</param>
+        <param name="contractNamespace">エンドポイント コントラクトの名前空間です。</param>
+        <param name="isSystemEndpoint">
+          エンドポイントがユーザーではなくサーバーによって内部で作成されることを示す場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</param>
+        <summary>指定したアドレス、コントラクト名、およびコントラクト名前空間を使用し、エンドポイントがパブリック システム エンドポイントかどうかに従って、<see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFilter">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.MessageFilter AddressFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.MessageFilter AddressFilter" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のメッセージがそのアドレス宛てのものかどうかの識別に使用する <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクトを取得または設定します。</summary>
+        <value>適切なエンドポイントにメッセージをルーティングするために使用されるアドレス フィルター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher?displayProperty=nameWithType> には、チャネルがサポートできるエンドポイントごとの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> があります。 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> プロパティは、メッセージの宛先エンドポイント アドレスを照合する <xref:System.ServiceModel.Dispatcher.MessageFilter?displayProperty=nameWithType> オブジェクトです。 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> 値および <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> 値を組み合わせて、メッセージをこのエンドポイントにルーティングすべきかどうかを判定します。  
+  
+ 一致する 2 つの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトがメッセージを処理できる場合、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティを使用してエンドポイントを選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelDispatcher">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ChannelDispatcher ChannelDispatcher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ChannelDispatcher ChannelDispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ChannelDispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ChannelDispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた <see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcher" /> オブジェクトを取得します。このオブジェクトを使用すると、チャネル関連の他の値や動作を検査または変更できます。</summary>
+        <value>他のチャネル関連の他の値や動作を検査または変更するために使用できるチャネル ディスパッチャー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトは、チャネルからメッセージを受信し、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A>、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A>、および <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> の各プロパティを使用して、メッセージを処理するエンドポイントを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractFilter">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.MessageFilter ContractFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.MessageFilter ContractFilter" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageFilter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージがこのコントラクトに宛てられたものかどうかの識別に使用する <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクトを取得または設定します。</summary>
+        <value>適切なコントラクトにメッセージをルーティングするために使用されるフィルター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> プロパティは、メッセージのアクションと照合される <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトです。 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> 値および <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> 値を組み合わせて、メッセージをこのエンドポイントにルーティングすべきかどうかを判定します。  
+  
+ 一致する 2 つの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトがメッセージを処理できる場合、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティを使用してエンドポイントを選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイント コントラクトの名前を取得します。</summary>
+        <value>エンドポイント コントラクトの名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractNamespace">
+      <MemberSignature Language="C#" Value="public string ContractNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイント コントラクトの名前空間を取得します。</summary>
+        <value>エンドポイント コントラクトの名前空間です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DispatchRuntime">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.DispatchRuntime DispatchRuntime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.DispatchRuntime DispatchRuntime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.DispatchRuntime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントまたはクライアント コールバック エンドポイント全体のランタイム動作を検査、変更、または拡張するために使用する <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> オブジェクトを取得します。</summary>
+        <value>サービス エンドポイントまたはクライアント コールバック エンドポイント全体のランタイム動作を検査、変更、または拡張するために使用する <see cref="P:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> プロパティは、ランタイム値の変更、またはエンドポイント全体に関するカスタム ランタイム機能拡張の挿入を行う <xref:System.ServiceModel.Dispatcher.DispatchRuntime> オブジェクトを取得するために使用します。 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> プロパティからは、エンドポイントの <xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> コレクションに移動することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、エンドポイントの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> を検索するための <xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> の使用方法を示しています。  
+  
+ [!code-csharp[IEndpointBehavior#4](~/samples/snippets/csharp/VS_Snippets_CFX/iendpointbehavior/cs/iendpointbehaviormessageinspector.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress EndpointAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress EndpointAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.EndpointAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントのアドレスを取得します。</summary>
+        <value>エンドポイントのアドレス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterPriority">
+      <MemberSignature Language="C#" Value="public int FilterPriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FilterPriority" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter" /> がエンドポイントを選択するときの、<see cref="P:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter" /> と <see cref="P:System.ServiceModel.Dispatcher.EndpointDispatcher.ChannelDispatcher" /> の組み合わせの優先順位を取得または設定します。</summary>
+        <value>フィルターの優先度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> 値および <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> 値を組み合わせて、メッセージをこのエンドポイントにルーティングすべきかどうかを判定します。  
+  
+ 一致する 2 つの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトがメッセージを処理できる場合、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティを使用してエンドポイントを選択します。  
+  
+ 2 つのエンドポイントがメッセージを処理でき、それらの <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.FilterPriority%2A> プロパティの値が一致する場合は、<xref:System.ServiceModel.Dispatcher.MultipleFilterMatchesException?displayProperty=nameWithType> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSystemEndpoint">
+      <MemberSignature Language="C#" Value="public bool IsSystemEndpoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSystemEndpoint" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointDispatcher.IsSystemEndpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントがユーザーではなくサーバーによって内部で作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />エンドポイントがシステムによって生成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

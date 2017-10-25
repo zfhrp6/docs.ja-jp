@@ -1,0 +1,72 @@
+<Type Name="ExtensibleClassFactory" FullName="System.Runtime.InteropServices.ExtensibleClassFactory">
+  <TypeSignature Language="C#" Value="public sealed class ExtensibleClassFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExtensibleClassFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ExtensibleClassFactory" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アンマネージ オブジェクトからの作成時に拡張されるマネージ オブジェクトのカスタマイズを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ExtensibleClassFactory`を指定することができます、`delegate`基になる COM オブジェクトのインスタンスを提供するランタイム呼び出し可能ラッパー (RCW) の構築時に呼び出されます。 実際には、コールバックは、RCW でラップされた COM オブジェクトのクラス ファクトリとして機能します。 共通言語ランタイムが呼び出すことによって、基になる COM オブジェクトを作成、コールバックを伴わない`CoCreateInstance`です。 このコールバックは、または単一オブジェクトを提供することによって COM モニカーの使用など、基になるオブジェクトをアクティブ化する方法を提供します。 <xref:System.Runtime.InteropServices.ExtensibleClassFactory.RegisterObjectCreationCallback%2A>メソッドを呼び出す必要があります、 `static` RCW を拡張するクラスの初期化子。 1 つのオブジェクト作成のコールバック オブジェクトの種類は許可されます。 拡張可能な RCW がアクティブになると、コールバックを登録します。 基になる COM オブジェクトを作成する必要がある、オブジェクトへの参照を提供するコールバックが呼び出されます。 コールバックを返す必要があります、`IUnknown`ベース オブジェクトのインターフェイス ポインター。  
+  
+   
+  
+## Examples  
+ 登録、`delegate`をマネージ アンマネージ型からを拡張する型のインスタンスが集約されたアンマネージ オブジェクトを割り当てる必要があるとき呼び出されます。 これは、`delegate`が割り当て、アンマネージ オブジェクトを集約する推測されの代わりに呼び出されますが、`CoCreateInstance`です。 このルーチンは、のコンテキストで呼び出す必要があります、`static`をコールバックが行われるクラスの初期化子。  
+  
+ [!code-cpp[Classic ExtensibleClassFactory Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ExtensibleClassFactory Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ExtensibleClassFactory Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ExtensibleClassFactory Example/CS/source.cs#1)]
+ [!code-vb[Classic ExtensibleClassFactory Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ExtensibleClassFactory Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RegisterObjectCreationCallback">
+      <MemberSignature Language="C#" Value="public static void RegisterObjectCreationCallback (System.Runtime.InteropServices.ObjectCreationDelegate callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterObjectCreationCallback(class System.Runtime.InteropServices.ObjectCreationDelegate callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ExtensibleClassFactory.RegisterObjectCreationCallback(System.Runtime.InteropServices.ObjectCreationDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Runtime.InteropServices.ObjectCreationDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see langword="delegate" />の代わりに呼び出される<see langword="CoCreateInstance" />です。</param>
+        <summary>登録、<see langword="delegate" />アンマネージ型からを拡張するマネージ型のインスタンスが集約されたアンマネージ オブジェクトを割り当てる必要があるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`delegate`割り当て、アンマネージ オブジェクトを集約しの代わりに呼び出されます`CoCreateInstance`です。 これは、`delegate`のコンテキストで登録する必要があります、`static`コールバックが行われる対象のクラス初期化子。  
+  
+ 階層内の 1 つのクラスを登録する必要があります、`delegate`コールバック。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

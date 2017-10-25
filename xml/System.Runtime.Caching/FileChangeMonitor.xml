@@ -1,0 +1,106 @@
+<Type Name="FileChangeMonitor" FullName="System.Runtime.Caching.FileChangeMonitor">
+  <TypeSignature Language="C#" Value="public abstract class FileChangeMonitor : System.Runtime.Caching.ChangeMonitor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FileChangeMonitor extends System.Runtime.Caching.ChangeMonitor" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.FileChangeMonitor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Caching.ChangeMonitor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ファイルへの変更を監視するオブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.FileChangeMonitor>クラスは、基本<xref:System.Runtime.Caching.ChangeMonitor>ファイルへの変更を監視するクラスの型。 ファイル システム内の変更の監視を作成するには、このクラスから継承することができます。  
+  
+   
+  
+## Examples  
+ 次の例を使用するキャッシュ項目を作成する方法を示しています、<xref:System.Runtime.Caching.HostFileChangeMonitor>ファイル システム上のソース データ (ファイル) の状態を監視するオブジェクト。 <xref:System.Runtime.Caching.HostFileChangeMonitor> クラスは、<xref:System.Runtime.Caching.FileChangeMonitor> クラスを継承します。 使用して、キャッシュ エントリを定義、<xref:System.Runtime.Caching.CacheItemPolicy>キャッシュ エントリの削除と有効期限の詳細を提供するオブジェクト。  
+  
+ [!code-csharp[CachingASPNetApplications#1](~/samples/snippets/csharp/VS_Snippets_WebNet/cachingaspnetapplications/cs/default.aspx.cs#1)]
+ [!code-vb[CachingASPNetApplications#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/cachingaspnetapplications/vb/default.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>について、従う必要がある継承コントラクトは、継承元のセクションのノートを参照して、<see cref="T:System.Runtime.Caching.ChangeMonitor" />クラスの概要です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FileChangeMonitor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.FileChangeMonitor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Caching.FileChangeMonitor" /> クラスの新しいインスタンスを初期化します。 このコンス トラクターは、基本クラスを初期化するために、派生クラスのコンス トラクターから呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePaths">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; FilePaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; FilePaths" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.FileChangeMonitor.FilePaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の監視されているファイルのパスを格納するコレクションを取得します。</summary>
+        <value>ファイルのパスのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コレクションは、派生のコンス トラクターで設定<xref:System.Runtime.Caching.FileChangeMonitor>型です。  
+  
+ カスタムのファイルの変更の監視を提供するには、派生クラスでこのメソッドをオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModified">
+      <MemberSignature Language="C#" Value="public abstract DateTimeOffset LastModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset LastModified" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.FileChangeMonitor.LastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監視されているファイルが変更された最終時刻を示す値を取得します。</summary>
+        <value>複数のファイルを監視、する場合は、最終更新時刻、最近変更されたファイルです。それ以外の場合、前回を監視されているファイルが変更されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Runtime.Caching.FileChangeMonitor.LastModified%2A>プロパティは通常、派生クラスの初期化フェーズ中に計算します。  
+  
+ カスタム ファイル変更の監視を提供するには、派生クラスでは、このメソッドをオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

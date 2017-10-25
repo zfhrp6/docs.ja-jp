@@ -1,0 +1,90 @@
+<Type Name="RuleActionTrackingEvent" FullName="System.Workflow.Activities.Rules.RuleActionTrackingEvent">
+  <TypeSignature Language="C#" Value="public class RuleActionTrackingEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RuleActionTrackingEvent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleActionTrackingEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>評価されたルールの名前、インスタンス ID、条件評価結果が格納されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent> クラスを使用するコード例を次に示します。 このコード例は、ConsoleTrackingService.cs ファイルから抜粋した RuleActionTrackingEventSample SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][RuleActionTrackingEvent サンプル](http://msdn.microsoft.com/en-us/cea1192f-82e2-4c8a-acc0-5f8ed462de73)です。  
+  
+ [!code-csharp[wf_samples#162](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#162)]
+ [!code-vb[wf_samples#162](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#162)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConditionResult">
+      <MemberSignature Language="C#" Value="public bool ConditionResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConditionResult" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleActionTrackingEvent.ConditionResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価結果を取得します。</summary>
+        <value>結果は <see langword="true" /> または<see langword="false" /> で表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent> クラスを使用して、ルールの実行時に <xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent.ConditionResult%2A> プロパティの値をコンソールに出力する方法を示すコード例を次に示します。 このコード例は、ConsoleTrackingService.cs ファイルから抜粋した RuleActionTrackingEventSample SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][RuleActionTrackingEvent サンプル](http://msdn.microsoft.com/en-us/cea1192f-82e2-4c8a-acc0-5f8ed462de73)です。  
+  
+ [!code-csharp[wf_samples#162](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#162)]
+ [!code-vb[wf_samples#162](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#162)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuleName">
+      <MemberSignature Language="C#" Value="public string RuleName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RuleName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleActionTrackingEvent.RuleName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.Rule" /> が発生する根拠となった <see cref="T:System.Workflow.Activities.Rules.RuleActionTrackingEvent" /> の名前を取得します。</summary>
+        <value>アクションを実行する根拠となった <see cref="T:System.Workflow.Activities.Rules.Rule" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent> クラスを使用して、ルールの実行時に <xref:System.Workflow.Activities.Rules.RuleActionTrackingEvent.RuleName%2A> プロパティの値をコンソールに出力する方法を示すコード例を次に示します。 このコード例は、ConsoleTrackingService.cs ファイルから抜粋した RuleActionTrackingEventSample SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][RuleActionTrackingEvent サンプル](http://msdn.microsoft.com/en-us/cea1192f-82e2-4c8a-acc0-5f8ed462de73)です。  
+  
+ [!code-csharp[wf_samples#162](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#162)]
+ [!code-vb[wf_samples#162](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#162)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

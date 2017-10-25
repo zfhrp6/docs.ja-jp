@@ -1,0 +1,75 @@
+<Type Name="WorkflowEventArgs" FullName="System.Workflow.Runtime.WorkflowEventArgs">
+  <TypeSignature Language="C#" Value="public class WorkflowEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー イベントにデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー イベントは、ワークフロー インスタンスに関連付けられます。 <xref:System.Workflow.Runtime.WorkflowEventArgs> は、ワークフロー イベントに関連付けられた <xref:System.Workflow.Runtime.WorkflowInstance> を格納します。 <xref:System.Workflow.Runtime.WorkflowEventArgs>、または <xref:System.Workflow.Runtime.WorkflowEventArgs> クラスから派生したオブジェクトは、<xref:System.Workflow.Runtime.WorkflowRuntime> クラスでのすべてのワークフロー イベントにデータを提供します。 <xref:System.Workflow.Runtime.WorkflowEventArgs> は、<xref:System.Workflow.Runtime.WorkflowCompletedEventArgs>、<xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs>、および <xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> の基本クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、イベント ハンドラー メソッドを呼び出すときに <xref:System.Workflow.Runtime.WorkflowInstance> プロパティを使用して <xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> オブジェクトを取得する方法を示しています。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントが発生すると、この例で定義されている `OnWorkflowIdled` メソッドが呼び出されます。 このメソッドは、<xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> プロパティを使用してアイドル状態のワークフローを特定し、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> メソッドを呼び出してキューに登録されているワークフロー インスタンスの項目のコレクションを取得します。 コードはコレクション全体を取得するまで繰り返され、ワークフローをアイドル状態にしたイベントを待機しているアクティビティを特定します。 その後、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> メソッドとイベント キュー アイテムの名前を使用して、ワークフロー キューに例外を送信します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#261](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#261)]
+ [!code-vb[WF_Samples#261](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#261)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="WorkflowInstance">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance WorkflowInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.WorkflowInstance WorkflowInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー イベントに関連付けられたワークフロー インスタンスを取得します。</summary>
+        <value>ワークフロー イベントに関連付けられた <see cref="T:System.Workflow.Runtime.WorkflowInstance" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、イベント ハンドラー メソッドを呼び出すときに <xref:System.Workflow.Runtime.WorkflowInstance> プロパティを使用して <xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> オブジェクトを取得する方法を示しています。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントが発生すると、この例で定義されている `OnWorkflowIdled` メソッドが呼び出されます。 このメソッドは、<xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> プロパティを使用してアイドル状態のワークフローを特定し、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> メソッドを呼び出してキューに登録されているワークフロー インスタンスの項目のコレクションを取得します。 コードはコレクション全体を取得するまで繰り返され、ワークフローをアイドル状態にしたイベントを待機しているアクティビティを特定します。 その後、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> メソッドとイベント キュー アイテムの名前を使用して、ワークフロー キューに例外を送信します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#261](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#261)]
+ [!code-vb[WF_Samples#261](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#261)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

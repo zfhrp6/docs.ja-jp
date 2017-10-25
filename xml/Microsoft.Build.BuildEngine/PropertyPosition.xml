@@ -1,0 +1,50 @@
+<Type Name="PropertyPosition" FullName="Microsoft.Build.BuildEngine.PropertyPosition">
+  <TypeSignature Language="C#" Value="public enum PropertyPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PropertyPosition extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.PropertyPosition" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>プロパティを挿入するプロジェクトの場所を定義する定数を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="UseExistingOrCreateAfterLastImport">
+      <MemberSignature Language="C#" Value="UseExistingOrCreateAfterLastImport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.BuildEngine.PropertyPosition UseExistingOrCreateAfterLastImport = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.BuildEngine.PropertyPosition.UseExistingOrCreateAfterLastImport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.PropertyPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の置換[プロパティ](http://msdn.microsoft.com/library/69ab08ab-3e76-41dd-a01b-49aa1d2e0cac)要素が存在する場合。 それ以外の場合、作成、<c>プロパティ</c>最後後[インポート](http://msdn.microsoft.com/library/3bfecaf1-69fd-4008-b651-c9dafd4389d9)プロジェクト内の要素。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseExistingOrCreateAfterLastPropertyGroup">
+      <MemberSignature Language="C#" Value="UseExistingOrCreateAfterLastPropertyGroup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.BuildEngine.PropertyPosition UseExistingOrCreateAfterLastPropertyGroup = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.BuildEngine.PropertyPosition.UseExistingOrCreateAfterLastPropertyGroup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.PropertyPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の置換[プロパティ](http://msdn.microsoft.com/library/69ab08ab-3e76-41dd-a01b-49aa1d2e0cac)要素が存在する場合。 それ以外の場合、可能な場合は、作成する新しい<c>プロパティ</c>既存の互換性のある子要素として[PropertyGroup](http://msdn.microsoft.com/library/ff1e6c68-b9a1-4263-a1ce-dc3b829a64d4)要素。 必要に応じて、作成、新しい互換性のある<c>PropertyGroup</c>直後、最後の要素<c>PropertyGroup</c>プロジェクト内です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,163 @@
+<Type Name="ClaimTypeRequirement" FullName="System.ServiceModel.Security.Tokens.ClaimTypeRequirement">
+  <TypeSignature Language="C#" Value="public class ClaimTypeRequirement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClaimTypeRequirement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.ClaimTypeRequirement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フェデレーション資格情報に表示されると予想される必須のクレームおよび省略可能なクレームの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。 たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。 この要件はセキュリティ ポリシー内に明記されます。 クライアントがセキュリティ トークン サービスのセキュリティ トークン ([!INCLUDE[infocard](~/includes/infocard-md.md)] など) を要求する場合、クライアントは要件をトークン要求に設定します。これにより、セキュリティ トークン サービスは、要件どおりのセキュリティ トークンを発行できます。  
+  
+   
+  
+## Examples  
+ 次のコードでは、2 種類のクレーム要件をセキュリティ バインディングに追加しています。  
+  
+ [!code-csharp[S_UEClaimTypeRequirement#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/cs/client.cs#1)]  
+  
+ 前述のコード例で使用される構成ファイルを次に示します。  
+  
+ [!code-xml[S_UEClaimTypeRequirement#101](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/common/app.config#101)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimTypeRequirement (string claimType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.ClaimTypeRequirement.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">クレームの種類。</param>
+        <summary>指定した種類の必須のクレームの <see cref="T:System.ServiceModel.Security.Tokens.ClaimTypeRequirement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのクレームの種類は、<xref:System.IdentityModel.Claims.ClaimTypes> にあります。  
+  
+   
+  
+## Examples  
+ 次のコードでは、2 種類のクレーム要件をセキュリティ バインディングに追加しています。  
+  
+ [!code-csharp[S_UEClaimTypeRequirement#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/cs/client.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimTypeRequirement (string claimType, bool isOptional);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType, bool isOptional) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.ClaimTypeRequirement.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="isOptional" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">クレームの種類。</param>
+        <param name="isOptional"><see langword="false" /> の場合、クレームは必須です。それ以外の場合、クレームは省略可能です。</param>
+        <summary>指定した種類のクレームの <see cref="T:System.ServiceModel.Security.Tokens.ClaimTypeRequirement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、2 種類のクレーム要件をセキュリティ バインディングに追加しています。  
+  
+ [!code-csharp[S_UEClaimTypeRequirement#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/cs/client.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimType">
+      <MemberSignature Language="C#" Value="public string ClaimType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClaimType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ClaimTypeRequirement.ClaimType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンストラクターで指定されたクレームの種類を取得します。</summary>
+        <value>クレームの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クレームの種類を定義する URI です。  たとえば、Web サイトから製品を購入するために、ユーザーは、十分な与信限度額を備えた有効なクレジット カードを示す必要があります。 クレームの種類として、クレジット カードの URI があります。  
+  
+   
+  
+## Examples  
+ このプロパティを取得する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UEClaimTypeRequirement#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/cs/client.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOptional">
+      <MemberSignature Language="C#" Value="public bool IsOptional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOptional" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ClaimTypeRequirement.IsOptional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クレームが省略可能かどうかを示す値を取得します。</summary>
+        <value>
+          クラスのこのインスタンスが省略可能なクレームである場合は <see langword="true" />、必須のクレームの場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの使用方法の例としては、サービスが必須でない情報を求めるシナリオがあります。 たとえば、ユーザーに氏名と住所の入力を要求し、電話番号は省略可能にする場合などです。  
+  
+   
+  
+## Examples  
+ このプロパティを取得する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UEClaimTypeRequirement#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueclaimtyperequirement/cs/client.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,322 @@
+<Type Name="InputLanguage" FullName="System.Windows.Forms.InputLanguage">
+  <TypeSignature Language="C#" Value="public sealed class InputLanguage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InputLanguage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.InputLanguage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力言語を管理するメソッドとフィールドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力言語とは、キーボード上の物理キーのマップまたは言語の文字をプロットを決定するカルチャ/キーボード レイアウトの組み合わせです。 入力言語は、プラットフォーム SDK 関数によって返されるなどの Windows 入力ロケール識別子に基づいて`GetKeyboardLayout`です。 入力ロケール識別子は、キーボード レイアウト (HKL) の値へのハンドルとも呼ばれます。  
+  
+ 使用して、`static`スレッドまたはプロセスの入力言語を変更して、システムの検索をすべてインストールされているマッピングに提供されるメソッド。 呼び出す<xref:System.Windows.Forms.InputLanguage.CurrentInputLanguage%2A>現在を取得する言語を入力します。 呼び出す<xref:System.Windows.Forms.InputLanguage.DefaultInputLanguage%2A>の既定の入力言語。 呼び出す<xref:System.Windows.Forms.InputLanguage.InstalledInputLanguages%2A>をこのシステムにインストールされているすべての言語を取得します。 インストールされているすべての言語の一覧を作成したらを使用して<xref:System.Windows.Forms.InputLanguage.CurrentInputLanguage%2A>現在を変更する別の言語に言語を入力します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、インストールされている言語の一覧を取得します。 この例では、する必要があります`textBox1`がインスタンス化されたことと`textBox1.MultiLine`に設定されている`true`です。  
+  
+ [!code-cpp[Classic InputLanguage Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage Example/VB/source.vb#1)]  
+  
+ 次の例では、現在の入力言語として既定の入力言語を設定します。 この例では、する必要があります`textBox1`がインスタンス化されたことと`textBox1.MultiLine`に設定されている`true`です。  
+  
+ [!code-cpp[Classic InputLanguage Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic InputLanguage Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage Example/CS/source.cs#2)]
+ [!code-vb[Classic InputLanguage Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の入力言語のカルチャを取得します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />入力言語の現在のカルチャを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.InputLanguage>の現在の入力言語。 このメッセージのテキスト ボックスが表示言語と、入力言語の名前を入力します。  
+  
+ このコードでは`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic InputLanguage.Culture Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.Culture Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.Culture Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.Culture Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.Culture Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.Culture Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInputLanguage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.InputLanguage CurrentInputLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.InputLanguage CurrentInputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.CurrentInputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のスレッドの入力言語を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.InputLanguage" />現在のスレッドの入力言語を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、取得し、現在の入力言語の名前を表示します。 このコードでは`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic InputLanguage.CurrentInputLanguage Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.CurrentInputLanguage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.CurrentInputLanguage Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.CurrentInputLanguage Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.CurrentInputLanguage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.CurrentInputLanguage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">入力言語がシステムによって認識されません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInputLanguage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.InputLanguage DefaultInputLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.InputLanguage DefaultInputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.DefaultInputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの既定の入力言語を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.InputLanguage" />既定値を表す、システムの言語を入力します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、既定の入力言語を取得し、テキスト ボックスに名前を出力します。 このコードでは`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic InputLanguage.DefaultInputLanguage Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.DefaultInputLanguage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.DefaultInputLanguage Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.DefaultInputLanguage Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.DefaultInputLanguage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.DefaultInputLanguage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InputLanguage.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">等しいかどうかをテストする言語です。</param>
+        <summary>2 つの入力言語が等しいかどうかを指定します。</summary>
+        <returns>
+          <see langword="true" />2 つの言語が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromCulture">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.InputLanguage FromCulture (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.InputLanguage FromCulture(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InputLanguage.FromCulture(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />から変換するカルチャを指定します。</param>
+        <summary>指定したカルチャに関連付けられている入力言語を返します。</summary>
+        <returns><see cref="T:System.Windows.Forms.InputLanguage" />以前に選択した入力言語を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.InputLanguage.FromCulture%2A>メソッドは、インストールされているキーボードの中から選択します。 具体的には、このメソッドは、次の操作を実行します。  
+  
+1.  関連付けられている LCID を取得`culture`です。  
+  
+2.  利用可能な入力言語識別子 (HKLs) の完全な一覧を取得、`GetKeyboardLayoutList`関数。  
+  
+3.  検索から LCID に対応する HKL`culture`が存在する場合、します。  
+  
+4.  その HKL に関連付けられているインストール済みのキーボードを返します。  
+  
+5.  キーボードが見つからなかった場合を返します`null`です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.InputLanguage.FromCulture%2A>メソッドは、ロードまたはいずれかが既にインストールされていない場合に、追加のキーボードをインストールすることはありません試みます`culture`です。 プラットフォーム SDK 関数を使用して`LoadKeyboardLayout`、追加のキーボードをインストールします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在の入力言語として既定の入力言語を設定します。  
+  
+ 最初に、<xref:System.Windows.Forms.InputLanguage.DefaultInputLanguage%2A>システム既定の言語を取得します。 次に、<xref:System.Windows.Forms.InputLanguage.CurrentInputLanguage%2A>が呼び出されて、現在の入力言語を取得します。 結果は、テキスト ボックスで印刷されます。 その後、呼び出して<xref:System.Windows.Forms.InputLanguage.CurrentInputLanguage%2A>既定値は入力言語が既定値に現在の入力言語を変更します。 新しい現在の入力言語は、テキスト ボックスに表示されます。  
+  
+ このコードでは`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic InputLanguage.FromCulture Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.FromCulture Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.FromCulture Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.FromCulture Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.FromCulture Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.FromCulture Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InputLanguage.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この入力言語のハッシュ コードを返します。</summary>
+        <returns>この入力言語のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力言語のハンドルを取得します。</summary>
+        <value><see cref="T:System.IntPtr" />この入力言語のハンドルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、現在の入力言語を取得します。 これは呼び出して<xref:System.Windows.Forms.InputLanguage.Handle%2A>テキスト ボックスに、ハンドルと印刷結果を取得します。 この例では、する必要があります`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic InputLanguage.Handle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.Handle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.Handle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.Handle Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.Handle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.Handle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledInputLanguages">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.InputLanguageCollection InstalledInputLanguages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.InputLanguageCollection InstalledInputLanguages" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.InstalledInputLanguages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguageCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インストールされているすべての入力言語の一覧を取得します。</summary>
+        <value>配列<see cref="T:System.Windows.Forms.InputLanguage" />をコンピューターにインストールされている入力言語を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、コンピューターにインストールされているすべての入力言語を取得し、その名前を表示します。 コードの呼び出し<xref:System.Windows.Forms.InputLanguage.InstalledInputLanguages%2A>インストールされている言語を取得します。 テキスト ボックスには、言語名の一覧が表示されます。  
+  
+ このコードでは`textBox1`がインスタンス化されたことと`textBox1.MultiLine`に設定されている`true`です。  
+  
+ [!code-cpp[Classic InputLanguage.InstalledInputLanguages Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.InstalledInputLanguages Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.InstalledInputLanguages Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.InstalledInputLanguages Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.InstalledInputLanguages Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.InstalledInputLanguages Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayoutName">
+      <MemberSignature Language="C#" Value="public string LayoutName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LayoutName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InputLanguage.LayoutName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じコンピューター上のオペレーティング システムの地域の設定には、現在のキーボード レイアウトの名前を取得します。</summary>
+        <value>レイアウトの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、現在の入力言語に関連付けられているカルチャを取得し、カルチャ名を表示します。  
+  
+ 最初に、<xref:System.Windows.Forms.InputLanguage.CurrentInputLanguage%2A>が呼び出されて、現在の入力言語を取得します。 その後、<xref:System.Windows.Forms.InputLanguage.Culture%2A>これは入力言語のカルチャ情報を取得するために呼び出されます。 最後に、<xref:System.Globalization.CultureInfo.EnglishName%2A>が取得され、テキスト ボックスに表示されます。  
+  
+ [!code-cpp[Classic InputLanguage.LayoutName Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic InputLanguage.LayoutName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic InputLanguage.LayoutName Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic InputLanguage.LayoutName Example/CS/source.cs#1)]
+ [!code-vb[Classic InputLanguage.LayoutName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic InputLanguage.LayoutName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

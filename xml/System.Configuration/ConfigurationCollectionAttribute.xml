@@ -1,0 +1,287 @@
+<Type Name="ConfigurationCollectionAttribute" FullName="System.Configuration.ConfigurationCollectionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationCollectionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConfigurationCollectionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationCollectionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言的な構成要素のコレクションのインスタンスを作成する .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.ConfigurationCollectionAttribute>を装飾する属性、<xref:System.Configuration.ConfigurationElementCollection>要素。 これにより、.NET Framework コレクションのインスタンスを作成して、ユーザー設定を使用して初期化するために、指示<xref:System.Configuration.ConfigurationElement>値。  
+  
+> [!NOTE]
+>  カスタム構成要素を作成する最も簡単な方法では、属性付きの (宣言) モデルを使用します。 要素を宣言し、それらを<xref:System.Configuration.ConfigurationCollectionAttribute>属性。 この属性でマークされた各要素に対して、.NET Framework リフレクションを使用して装飾のパラメーターを読み取り、および関連する作成<xref:System.Configuration.ConfigurationElementCollection>インスタンス。 また、プログラムでモデルを使用することができます。 ここではユーザーの責任は、カスタムのパブリック コレクションを宣言する上書きにも、<xref:System.Configuration.ConfigurationElementCollection>メンバーと戻り値、プロパティのコレクション。  
+  
+ .NET Framework 構成システムは、カスタム構成要素を作成するときに使用できる属性の型を提供します。 属性の 2 種類あります。  
+  
+-   .NET Framework の要素のプロパティのカスタム構成のインスタンスを作成する方法を指示する属性。 これらの型は次のとおりです。  
+  
+    -   <xref:System.Configuration.ConfigurationCollectionAttribute>  
+  
+    -   <xref:System.Configuration.ConfigurationPropertyAttribute>  
+  
+-   .NET Framework をカスタム構成要素のプロパティを検証する方法を指示する属性。 これらの型は次のとおりです。  
+  
+    -   <xref:System.Configuration.IntegerValidatorAttribute>  
+  
+    -   <xref:System.Configuration.LongValidatorAttribute>  
+  
+    -   <xref:System.Configuration.RegexStringValidatorAttribute>  
+  
+    -   <xref:System.Configuration.StringValidatorAttribute>  
+  
+    -   <xref:System.Configuration.TimeSpanValidatorAttribute>  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationCollectionAttribute>です。  
+  
+ この例は、3 つのクラスで構成されています: `UrlsSection`、`UrlsCollection`と`UrlConfigElement`です。`UrlsSection`クラスの使用、<xref:System.Configuration.ConfigurationCollectionAttribute>をカスタム構成セクションを定義します。 このセクションには、URL のコレクションが含まれています (によって定義された、`UrlsCollection`クラス) URL 要素の (によって定義された、`UrlConfigElement`クラス)。 例では、インスタンスを実行すると、`UrlsSection`クラスが作成され、アプリケーション構成ファイルで次の構成要素が生成されます。  
+  
+```  
+<configuration>  
+    <configSections>  
+        <section name="MyUrls" type="UrlsSection,   
+          ConfigurationCollectionAttribute, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />  
+    </configSections>  
+    <MyUrls>  
+        <urls>  
+            <remove name="Contoso" />  
+            <add name="Contoso" url="http://www.contoso.com" port="0" />  
+        </urls>  
+    </MyUrls>  
+</configuration  
+```  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/customcollectionsection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/customcollectionsection.vb#1)]  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#31](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/configurationcollectionattribute.cs#31)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/configurationcollectionattribute.vb#31)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationCollectionAttribute (Type itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationCollectionAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="itemType">作成するプロパティのコレクションの型。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationCollectionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、カスタムの型を作成するプロパティのコレクションの .NET Framework に通知します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationCollectionAttribute.%23ctor%2A>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/customcollectionsection.cs#20)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/customcollectionsection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="itemType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItemName">
+      <MemberSignature Language="C#" Value="public string AddItemName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AddItemName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationCollectionAttribute.AddItemName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see langword="&lt;add&gt;" />構成要素。</summary>
+        <value>標準の名前に置き換えて名前「追加」for the configuration item します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.AddItemName%2A>プロパティでは、別の名前を構成要素に代入することができます。 たとえば、使用する`addUrl`「追加」の代わりにします。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.AddItemName%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/customcollectionsection.cs#20)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/customcollectionsection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItemsName">
+      <MemberSignature Language="C#" Value="public string ClearItemsName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClearItemsName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationCollectionAttribute.ClearItemsName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see langword="&lt;clear&gt;" />構成要素。</summary>
+        <value>標準の名前を置換する名前「オフ」、構成項目の。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.ClearItemsName%2A>プロパティは、別の名前を割り当てることができます、`<clear>`構成要素。 たとえば、使用する`clearUrls`「クリア」の代わりにします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationCollectionAttribute.ClearItemsName%2A>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/customcollectionsection.cs#20)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/customcollectionsection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionType">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationElementCollectionType CollectionType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationElementCollectionType CollectionType" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationCollectionAttribute.CollectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類、<see cref="T:System.Configuration.ConfigurationCollectionAttribute" />属性。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationCollectionAttribute" /> の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public Type ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationCollectionAttribute.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション要素の型を取得します。</summary>
+        <value>コレクション要素の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.ItemType%2A>プロパティは構成要素の型を取得するリフレクションで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItemName">
+      <MemberSignature Language="C#" Value="public string RemoveItemName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RemoveItemName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationCollectionAttribute.RemoveItemName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see langword="&lt;remove&gt;" />構成要素。</summary>
+        <value>標準の名前を置換する名前"remove"構成要素のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.RemoveItemName%2A>プロパティは、別の名前を割り当てることができます、`<remove>`構成要素。 たとえば、使用する`removeUrl`「削除」の代わりにします。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationCollectionAttribute.RemoveItemName%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/CS/customcollectionsection.cs#20)]
+ [!code-vb[System.Configuration.ConfigurationCollectionAttribute#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationCollectionAttribute/VB/customcollectionsection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

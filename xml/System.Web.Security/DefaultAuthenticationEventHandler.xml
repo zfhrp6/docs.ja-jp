@@ -1,0 +1,47 @@
+<Type Name="DefaultAuthenticationEventHandler" FullName="System.Web.Security.DefaultAuthenticationEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DefaultAuthenticationEventHandler(object sender, DefaultAuthenticationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DefaultAuthenticationEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.DefaultAuthenticationEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.Security.DefaultAuthenticationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.Security.DefaultAuthenticationEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 **DefaultAuthentication_OnAuthenticate**のイベント、<see cref="T:System.Web.Security.DefaultAuthenticationModule" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.DefaultAuthenticationEventHandler>のデリゲートを定義、<xref:System.Web.Security.DefaultAuthenticationModule.Authenticate>のイベント、<xref:System.Web.Security.DefaultAuthenticationModule>クラスです。 アクセスすることができます、<xref:System.Web.Security.DefaultAuthenticationModule.Authenticate>のイベント、<xref:System.Web.Security.DefaultAuthenticationModule>という名前のサブルーチンを指定することによってクラス**DefaultAuthentication_OnAuthenticate** ASP.NET アプリケーションの Global.asax ファイルでします。 <xref:System.Web.Security.DefaultAuthenticationModule.Authenticate>後にイベントを生成、<xref:System.Web.HttpApplication.AuthenticateRequest>イベントいることを確認するために使用、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>が表示されます、<xref:System.Security.Principal.IPrincipal>オブジェクト。  
+  
+ 使用することができます、<xref:System.Web.Security.DefaultAuthenticationEventArgs.Context%2A>のプロパティ、<xref:System.Web.Security.DefaultAuthenticationEventArgs>にオブジェクトが指定の**DefaultAuthentication_OnAuthenticate**イベントを設定する、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム<xref:System.Security.Principal.IPrincipal>オブジェクト。 値を指定しない場合、<xref:System.Web.HttpContext.User%2A>のプロパティ、<xref:System.Web.HttpContext>中に指定された、 **DefaultAuthentication_OnAuthenticate**イベント、<xref:System.Web.Security.DefaultAuthenticationModule>設定、<xref:System.Web.HttpContext.User%2A>のプロパティ、<xref:System.Web.HttpContext>を<xref:System.Security.Principal.GenericPrincipal>オブジェクトが含まれていないユーザー情報。  
+  
+ **DefaultAuthentication_OnAuthenticate**後にイベントを生成、<xref:System.Web.HttpApplication.AuthenticateRequest>イベントとの前に、<xref:System.Web.HttpApplication.AuthorizeRequest>イベント。 変更を拒否またはアプリケーションへのアクセスを許可するユーザー名に依存しているセクションがある場合、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>アプリケーションの動作に影響を与えることができます。 あることを確認中に設定するユーザー名、 **DefaultAuthentication_OnAuthenticate**イベントは、構成では、セクションを指定する場合と見なされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 **DefaultAuthentication_OnAuthenticate**イベントをテストするかどうか、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>は`null`します。 プロパティが場合`null`、サンプル セット、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>を<xref:System.Security.Principal.GenericPrincipal>オブジェクト、場所、<xref:System.Security.Principal.GenericPrincipal.Identity%2A>の<xref:System.Security.Principal.GenericPrincipal>オブジェクトが、<xref:System.Security.Principal.GenericIdentity>で、 <xref:System.Security.Principal.GenericIdentity.Name%2A> "既定の値".  
+  
+> [!NOTE]
+>  **DefaultAuthentication_OnAuthenticate**イベントが発生する前に、<xref:System.Web.HttpApplication.AuthorizeRequest>イベント。 設定した場合、結果として、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム id には、アプリケーションの動作を与えることができます。 使用している場合など、<xref:System.Web.Security.FormsAuthentication>クラスとはできないようにすること認証されたユーザーのみアクセスをサイトを使用して、セクションを指定する`<deny users="?" />`ユーザーは、名前を必要に応じてこのサンプルでは無視され、要素が発生します。"default"です。 指定する代わりに`<deny users="default" />`を認証されたユーザーのみがサイトにアクセスできることを確認します。  
+  
+ [!code-csharp[System.Web.Security.DefaultAuthenticationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.DefaultAuthenticationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.DefaultAuthenticationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.DefaultAuthenticationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

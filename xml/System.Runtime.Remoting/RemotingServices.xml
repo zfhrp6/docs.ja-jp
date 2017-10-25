@@ -1,0 +1,1051 @@
+<Type Name="RemotingServices" FullName="System.Runtime.Remoting.RemotingServices">
+  <TypeSignature Language="C#" Value="public static class RemotingServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed RemotingServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.RemotingServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用およびリモート オブジェクトとプロキシを公開するには、いくつかの方法を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティブ化、有効期間の管理、またはトランザクションなどの問題を処理するサービス プロバイダーでない限り、プロキシの参照とオブジェクト参照を区別する必要はありません。 リモート処理インフラストラクチャでは、リモート オブジェクトが、クライアントの空間に存在することな印象を与える透過的プロキシを使用します。 プロキシは、それらのリモートの場所に実際のオブジェクトへの呼び出しを転送することによってこれを実現します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public static object Connect (Type classToProxy, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Connect(class System.Type classToProxy, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Connect(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="classToProxy" Type="System.Type" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="classToProxy"><see cref="T:System.Type" />接続するサーバー エンドで既知のオブジェクト。</param>
+        <param name="url">サーバー クラスの URL です。</param>
+        <summary>指定された既知のオブジェクトのプロキシを作成、<see cref="T:System.Type" />と URL を報告します。</summary>
+        <returns>指定した既知のオブジェクトによって提供されたエンドポイントを指すリモート オブジェクトへのプロキシです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるプロキシ オブジェクトは、指定した既知のオブジェクトによって提供されたエンドポイントを指します。 コンソール アプリケーションは、プロキシでメソッドが呼び出されるまで、ネットワーク経由で、メッセージは送信されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.RemotingServices.Connect%2A>よく知られているオブジェクトへのプロキシを作成します。  
+  
+ [!code-cpp[RemotingServices.BasicSample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.BasicSample/CPP/basicclient.cpp#1)]
+ [!code-csharp[RemotingServices.BasicSample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.BasicSample/CS/basicclient.cs#1)]
+ [!code-vb[RemotingServices.BasicSample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.BasicSample/VB/basicclient.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public static object Connect (Type classToProxy, string url, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Connect(class System.Type classToProxy, string url, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Connect(System.Type,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="classToProxy" Type="System.Type" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="classToProxy"><see cref="T:System.Type" />既知のオブジェクトに接続します。</param>
+        <param name="url">既知のオブジェクトの URL。</param>
+        <param name="data">チャネル固有のデータ。 指定できます<see langword="null" />です。</param>
+        <summary>指定された既知のオブジェクトのプロキシを作成、 <see cref="T:System.Type" />URL、およびチャネル固有のデータ。</summary>
+        <returns>要求した既知のオブジェクトによって提供されているエンドポイントを指すプロキシ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるプロキシ オブジェクトは、指定した既知のオブジェクトによって提供されたエンドポイントを指します。 コンソール アプリケーションは、プロキシでメソッドが呼び出されるまで、ネットワーク経由で、メッセージは送信されません。  
+  
+ `data`オブジェクトは、チャネルに情報を伝えるために使用しに渡される、<xref:System.Runtime.Remoting.Channels.IChannelSender.CreateMessageSink%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Disconnect">
+      <MemberSignature Language="C#" Value="public static bool Disconnect (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Disconnect(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Disconnect(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">チャネルから切断するオブジェクト。</param>
+        <summary>登録済みのリモート処理チャネルを介してさらに、メッセージを受信からオブジェクトを停止します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトは正常に登録されているリモート処理チャネルから切断された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.RemotingServices.Disconnect%2A>リモート処理チャネルからオブジェクトを切断するメソッド。  
+  
+ [!code-cpp[RemotingServices.BasicSample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.BasicSample/CPP/manualserver.cpp#2)]
+ [!code-csharp[RemotingServices.BasicSample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.BasicSample/CS/manualserver.cs#2)]
+ [!code-vb[RemotingServices.BasicSample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.BasicSample/VB/manualserver.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="obj" />パラメーターは、プロキシ。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteMessage">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMethodReturnMessage ExecuteMessage (MarshalByRefObject target, System.Runtime.Remoting.Messaging.IMethodCallMessage reqMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMethodReturnMessage ExecuteMessage(class System.MarshalByRefObject target, class System.Runtime.Remoting.Messaging.IMethodCallMessage reqMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.ExecuteMessage(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMethodCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMethodReturnMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.MarshalByRefObject" />
+        <Parameter Name="reqMsg" Type="System.Runtime.Remoting.Messaging.IMethodCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="target">リモート オブジェクトのメソッドを呼び出します。</param>
+        <param name="reqMsg">メソッド呼び出しには、指定したリモート オブジェクトのメソッドへのメッセージが表示します。</param>
+        <summary>指定したリモート オブジェクトに接続し、指定された実行<see cref="T:System.Runtime.Remoting.Messaging.IMethodCallMessage" />にします。</summary>
+        <returns>リモート メソッドの応答です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは特殊なケースで、別の可能性のあるリモート オブジェクトに指定されたメソッドの呼び出しを転送するサーバーによって使用されます。 呼び出し元がコンテキストに適切な場合にのみ、このメソッドを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.RemotingServices.ExecuteMessage%2A>リモート オブジェクトへのメソッド呼び出しを転送する方法です。  
+  
+ [!code-cpp[RemotingServices.ExecuteMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/CPP/serviceclass.cpp#1)]
+ [!code-csharp[RemotingServices.ExecuteMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/CS/serviceclass.cs#1)]
+ [!code-vb[RemotingServices.ExecuteMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/VB/serviceclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">オブジェクトのネイティブ コンテキスト以外のコンテキストからメソッドを呼び出しました。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvoyChainForProxy">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMessageSink GetEnvoyChainForProxy (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMessageSink GetEnvoyChainForProxy(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetEnvoyChainForProxy(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">リモート要求オブジェクトのエンボイ シンクのプロキシが関連付けられています。</param>
+        <summary>指定したプロキシによって表されるリモート オブジェクトにメッセージを送信するときに使用する必要がありますエンボイ シンクのチェーンを返します。</summary>
+        <returns>指定したプロキシに関連付けられているエンボイ シンクのチェーン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンボイ シンクはと共に送信される、<xref:System.Runtime.Remoting.ObjRef>はそのオブジェクトへのメッセージを返すときに使用するオブジェクト。 現在のメソッドでは、オブジェクトのプロキシと、オブジェクト自体の間の通信中に使用されるエンボイ シンクを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLifetimeService">
+      <MemberSignature Language="C#" Value="public static object GetLifetimeService (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetLifetimeService(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetLifetimeService(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">有効期間サービスを取得するオブジェクト。</param>
+        <summary>指定したオブジェクトの有効期間ポリシーを制御する有効期間サービス オブジェクトを返します。</summary>
+        <returns>有効期間を制御するオブジェクト<paramref name="obj" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のオブジェクトをする際に、返されたオブジェクトでの既定の有効期間サービス<xref:System.Runtime.Remoting.Lifetime.ILease>です。 場合、`obj`パラメーターは`null`、メソッドを返します`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.RemotingServices.GetLifetimeService%2A>指定したオブジェクトの有効期間リースを取得します。  
+  
+ [!code-cpp[RemotingServices.TimerSample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.TimerSample/CPP/timerclient.cpp#1)]
+ [!code-csharp[RemotingServices.TimerSample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.TimerSample/CS/timerclient.cs#1)]
+ [!code-vb[RemotingServices.TimerSample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.TimerSample/VB/timerclient.vb#1)]  
+  
+ コンパイルして、この例を実行する、コンパイルし、サーバー、timerserver.exe、および共有ライブラリをコンパイル timerservice.dll を実行する必要があります。  
+  
+ ソース timerserver.exe を次に示します。  
+  
+ [!code-csharp[RemotingServices.TimerSample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.TimerSample/CS/timerserver.cs#2)]
+ [!code-vb[RemotingServices.TimerSample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.TimerSample/VB/timerserver.vb#2)]  
+  
+ ソース timerservice.dll を次に示します。  
+  
+ [!code-csharp[RemotingServices.TimerSample#3](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.TimerSample/CS/timerservice.cs#3)]
+ [!code-vb[RemotingServices.TimerSample#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.TimerSample/VB/timerservice.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodBaseFromMethodMessage">
+      <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetMethodBaseFromMethodMessage (System.Runtime.Remoting.Messaging.IMethodMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetMethodBaseFromMethodMessage(class System.Runtime.Remoting.Messaging.IMethodMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetMethodBaseFromMethodMessage(System.Runtime.Remoting.Messaging.IMethodMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMethodMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メソッド ベースの抽出メソッド メッセージです。</param>
+        <summary>ベース メソッドを返します、指定された<see cref="T:System.Runtime.Remoting.Messaging.IMethodMessage" />です。</summary>
+        <returns>抽出されたメソッド ベースの<paramref name="msg" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、メソッドから基本プロパティを決定、 <xref:System.Runtime.Remoting.Messaging.IMethodMessage.TypeName%2A>、 <xref:System.Runtime.Remoting.Messaging.IMethodMessage.MethodName%2A>、および<xref:System.Runtime.Remoting.Messaging.IMethodMessage.MethodSignature%2A>のプロパティ<xref:System.Runtime.Remoting.Messaging.IMethodMessage>を実装するクラスでは使用、<xref:System.Runtime.Remoting.Messaging.IMethodMessage>インターフェイスです。 コンシューマー<xref:System.Runtime.Remoting.Messaging.IMethodMessage>クラスを参照する必要があります、<xref:System.Runtime.Remoting.Messaging.IMethodMessage.MethodBase%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元に、インフラストラクチャのアクセス許可がないか、コール スタックの上位の呼び出し元の少なくとも 1 つの非パブリック メンバーの種類の情報を取得する権限はありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public static void GetObjectData (object obj, System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetObjectData(object obj, class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetObjectData(System.Object,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化するオブジェクト。</param>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化します。</param>
+        <param name="context">ソースとシリアル化先。</param>
+        <summary>指定された参照オブジェクトによって指定されたマーシャ リングをシリアル化<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターまたは <paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectUri">
+      <MemberSignature Language="C#" Value="public static string GetObjectUri (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetObjectUri(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetObjectUri(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.MarshalByRefObject" />の URI を要求します。</param>
+        <summary>指定したオブジェクトの URI を取得します。</summary>
+        <returns>ある場合、指定したオブジェクトの URI または<see langword="null" />オブジェクトがまだマーシャされていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[System.Runtime.Remoting.RemotingServices#18](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CPP/remotingservicessample.cpp#18)]
+ [!code-csharp[System.Runtime.Remoting.RemotingServices#18](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CS/remotingservicessample.cs#18)]
+ [!code-vb[System.Runtime.Remoting.RemotingServices#18](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/VB/remotingservicessample.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjRefForProxy">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjRef GetObjRefForProxy (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjRef GetObjRefForProxy(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetObjRefForProxy(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロキシを作成するオブジェクトに接続されている、<see cref="T:System.Runtime.Remoting.ObjRef" />用です。</param>
+        <summary>返します、<see cref="T:System.Runtime.Remoting.ObjRef" />指定されたプロキシから、リモート オブジェクトを表すです。</summary>
+        <returns>A <see cref="T:System.Runtime.Remoting.ObjRef" /> 、指定されたプロキシは、接続先のリモート オブジェクトを表すまたは<see langword="null" />オブジェクトまたはプロキシがないマーシャ リングされた場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。 マーシャ リング解除、中に、<xref:System.Runtime.Remoting.ObjRef>リモート オブジェクトと、両方の透過的なプロキシのメソッド情報を抽出する解析と<xref:System.Runtime.Remoting.Proxies.RealProxy>オブジェクトが作成されます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート アプリケーションに到達する方法についてはします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Runtime.Remoting.ObjRef>指定したオブジェクトのインスタンス。  
+  
+ [!code-cpp[RemotingServices.GetObjRefForProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.GetObjRefForProxy/CPP/client.cpp#1)]
+ [!code-csharp[RemotingServices.GetObjRefForProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.GetObjRefForProxy/CS/client.cs#1)]
+ [!code-vb[RemotingServices.GetObjRefForProxy#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.GetObjRefForProxy/VB/client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRealProxy">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Proxies.RealProxy GetRealProxy (object proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Proxies.RealProxy GetRealProxy(object proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetRealProxy(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Proxies.RealProxy</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="proxy" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="proxy">透過プロキシ。</param>
+        <summary>指定された透過的プロキシのバックアップの実際のプロキシを返します。</summary>
+        <returns>透過プロキシを実現する実際のプロキシ インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あらゆる種類のリモート処理境界を越えてオブジェクトを使用するクライアントは、透過プロキシを使用して、オブジェクトは実際にします。 透過プロキシは、クライアントの領域に、実際のオブジェクトが格納されているという印象を示します。 これで、リモート処理インフラストラクチャを使用して実際のオブジェクトへの呼び出しを転送することによって、これを実現します。  
+  
+ 透過プロキシは型のマネージ ランタイム クラスのインスタンスによってバックアップ<xref:System.Runtime.Remoting.Proxies.RealProxy>です。 <xref:System.Runtime.Remoting.Proxies.RealProxy>透過プロキシから、操作を転送するために必要な機能の一部を実装します。  
+  
+ プロキシ オブジェクトはガベージ コレクション、メンバーとメソッドのサポートなどのマネージ オブジェクトに関連付けられたセマンティクスを継承し、フォームの新しいクラスを拡張することができます。 プロキシは、リモート オブジェクト (透過プロキシ) と同じクラスのオブジェクトとして機能しもマネージ オブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServerTypeForUri">
+      <MemberSignature Language="C#" Value="public static Type GetServerTypeForUri (string URI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetServerTypeForUri(string URI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetServerTypeForUri(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="URI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="URI">オブジェクトの URI が<see cref="T:System.Type" />を要求します。</param>
+        <summary>返します、<see cref="T:System.Type" />の指定した URI を持つオブジェクト。</summary>
+        <returns><see cref="T:System.Type" />の指定した URI を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理は、Uri を使用してエンドポイントを識別するため、<xref:System.Runtime.Remoting.RemotingServices.GetServerTypeForUri%2A>メソッドは、プラグ可能なインフラストラクチャの部分、リモート処理 (たとえば、チャネル シンク、動的シンク、およびコンテキスト シンク) を使用するのに便利<xref:System.Runtime.Remoting.Messaging.IMessage>オブジェクト、現在のメソッドは、URI から関連付けられている型のオブジェクトを返すためです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Runtime.Remoting.RemotingServices#7](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CPP/remotingservicessample.cpp#7)]
+ [!code-csharp[System.Runtime.Remoting.RemotingServices#7](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CS/remotingservicessample.cs#7)]
+ [!code-vb[System.Runtime.Remoting.RemotingServices#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/VB/remotingservicessample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元に、インフラストラクチャのアクセス許可がないか、コール スタックの上位の呼び出し元の少なくとも 1 つの非パブリック メンバーの種類の情報を取得する権限はありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリック メンバーの型情報を取得します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSessionIdForMethodMessage">
+      <MemberSignature Language="C#" Value="public static string GetSessionIdForMethodMessage (System.Runtime.Remoting.Messaging.IMethodMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetSessionIdForMethodMessage(class System.Runtime.Remoting.Messaging.IMethodMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.GetSessionIdForMethodMessage(System.Runtime.Remoting.Messaging.IMethodMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMethodMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Messaging.IMethodMessage" />セッション ID が要求されます。</param>
+        <summary>メッセージのセッション ID を取得します。</summary>
+        <returns>現在のセッションを一意に識別するセッション ID 文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じセッション ID は、同じアプリケーション内のオブジェクトの返される可能性がありますが、このメソッドは異なるリモート アプリケーションの 2 つのオブジェクトの同じセッション ID を返すことはありません。  
+  
+ セッションとセッション Id を識別する方法の詳細については、ASP.Net を参照してください。 [ASP.NET セッション状態の概要](http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のセッションのセッション ID 文字列を取得する方法を示します。  
+  
+ [!code-cpp[RemotingServices.ExecuteMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/CPP/serviceclass.cpp#1)]
+ [!code-csharp[RemotingServices.ExecuteMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/CS/serviceclass.cs#1)]
+ [!code-vb[RemotingServices.ExecuteMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.ExecuteMessage/VB/serviceclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMethodOverloaded">
+      <MemberSignature Language="C#" Value="public static bool IsMethodOverloaded (System.Runtime.Remoting.Messaging.IMethodMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsMethodOverloaded(class System.Runtime.Remoting.Messaging.IMethodMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.IsMethodOverloaded(System.Runtime.Remoting.Messaging.IMethodMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMethodMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg">このメッセージは、該当するメソッドへの呼び出しが含まれています。</param>
+        <summary>指定されたメッセージ内のメソッドはオーバー ロードするかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />メソッドが呼び出された場合<paramref name="msg" />、それ以外のオーバー ロードされた<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsObjectOutOfAppDomain">
+      <MemberSignature Language="C#" Value="public static bool IsObjectOutOfAppDomain (object tp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsObjectOutOfAppDomain(object tp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.IsObjectOutOfAppDomain(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tp" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="tp">確認する対象のオブジェクト。</param>
+        <summary>指定された透過的プロキシで指定されたオブジェクトが現在のメソッドを呼び出したオブジェクトよりも、異なるアプリケーション ドメインに含まれているかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが現在のアプリケーション ドメイン外の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション ドメインの詳細については、次を参照してください。[アプリケーション ドメイン](http://msdn.microsoft.com/en-us/39e57d07-a740-4cd4-ae82-e119ea3856c1)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingServices IsObject Snippets#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CPP/class1.cpp#1)]
+ [!code-csharp[RemotingServices IsObject Snippets#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CS/class1.cs#1)]
+ [!code-vb[RemotingServices IsObject Snippets#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices IsObject Snippets/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsObjectOutOfContext">
+      <MemberSignature Language="C#" Value="public static bool IsObjectOutOfContext (object tp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsObjectOutOfContext(object tp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.IsObjectOutOfContext(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tp" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="tp">確認する対象のオブジェクト。</param>
+        <summary>特定のプロキシによって表されるオブジェクトが現在のメソッドを呼び出したオブジェクトとは異なるコンテキストに含まれているかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが現在のコンテキスト外の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストは、その内部に存在するオブジェクトのための環境を定義するプロパティの順序付けられたシーケンスです。 コンテキストは、特定の自動サービスのような同期、トランザクション、ジャスト イン タイム アクティベーション、セキュリティ、およびよう要求するように構成されているオブジェクトのアクティベーション プロセス中に作成されます。 複数のオブジェクトのコンテキスト内ライブことができます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[RemotingServices IsObject Snippets#1](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CPP/class1.cpp#1)]
+ [!code-csharp[RemotingServices IsObject Snippets#1](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CS/class1.cs#1)]
+ [!code-vb[RemotingServices IsObject Snippets#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices IsObject Snippets/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOneWay">
+      <MemberSignature Language="C#" Value="public static bool IsOneWay (System.Reflection.MethodBase method);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsOneWay(class System.Reflection.MethodBase method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.IsOneWay(System.Reflection.MethodBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Reflection.MethodBase" />
+      </Parameters>
+      <Docs>
+        <param name="method">該当するメソッド。</param>
+        <summary>サーバーが実行を続行する前に、メソッドの処理を完了するために指定されたメッセージが待機しているメソッドを呼び出したクライアントで指定するかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />メソッドが 1 つの方法である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一方向のメソッドが呼び出されると、クライアントはサーバーのメッセージの処理の完了を待機しません。 クライアントのメソッドは、サーバーがメッセージを正常に処理するかどうかの確認せずにアプリケーションを返します。 メソッドを使用して 1 つの方法としてマークされます、<xref:System.Runtime.Remoting.Messaging.OneWayAttribute>です。  
+  
+ 一方向のメソッドには、戻り値または out パラメーターを持つことはできません。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Runtime.Remoting.RemotingServices#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CPP/remotingservicessample.cpp#2)]
+ [!code-csharp[System.Runtime.Remoting.RemotingServices#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CS/remotingservicessample.cs#2)]
+ [!code-vb[System.Runtime.Remoting.RemotingServices#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/VB/remotingservicessample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransparentProxy">
+      <MemberSignature Language="C#" Value="public static bool IsTransparentProxy (object proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsTransparentProxy(object proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.IsTransparentProxy(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="proxy" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="proxy">確認するオブジェクトへの参照。</param>
+        <summary>指定したオブジェクトが、透過的なプロキシまたは実際のオブジェクトかどうかを示すブール値を返します。</summary>
+        <returns>オブジェクトが指定されているかどうかを示すブール値、<paramref name="proxy" />パラメーターは、透過的なプロキシまたは実際のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あらゆる種類のリモート処理境界を越えてオブジェクトを使用するクライアントは、透過プロキシを使用して、オブジェクトは実際にします。 透過プロキシは、クライアントの領域に、実際のオブジェクトが格納されているという印象を示します。 これで、リモート処理インフラストラクチャを使用して実際のオブジェクトへの呼び出しを転送することによって、これを実現します。  
+  
+ 透過的なプロキシ型のマネージ ランタイム クラスのインスタンスによって自体は<xref:System.Runtime.Remoting.Proxies.RealProxy>します。 <xref:System.Runtime.Remoting.Proxies.RealProxy>透過プロキシから、操作を転送するために必要な機能の一部を実装します。 プロキシ オブジェクトはガベージ コレクション、メンバーとメソッドのサポートなどのマネージ オブジェクトに関連付けられたセマンティクスを継承し、フォームの新しいクラスを拡張することができます。 このように、プロキシは、デュアルの性質です。一方、リモート オブジェクト (透過プロキシ) と同じクラスのオブジェクトとして機能する必要があり、マネージ オブジェクト自体は、他のです。  
+  
+ プロキシ オブジェクトには関係なく使用できます、<xref:System.AppDomain>です。 アプリケーションでは、プロキシの参照とオブジェクト参照が区別する必要があります。 ただし、サービス プロバイダーがアクティブ化などの問題を処理する、有効期間の管理、およびトランザクション行う必要がこのような区別します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.RemotingServices.IsTransparentProxy%2A>オブジェクトが、プロキシまたは実際のオブジェクトかどうかを調べます。 完全なサンプル コードの例を参照してください、<xref:System.Runtime.Remoting.Messaging.AsyncResult>クラスです。  
+  
+ [!code-cpp[AsyncResult.NewExamples#6](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncResult.NewExamples/CPP/ad.cpp#6)]
+ [!code-csharp[AsyncResult.NewExamples#6](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncResult.NewExamples/CS/ad.cs#6)]
+ [!code-vb[AsyncResult.NewExamples#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncResult.NewExamples/VB/ad.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogRemotingStage">
+      <MemberSignature Language="C#" Value="public static void LogRemotingStage (int stage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LogRemotingStage(int32 stage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.LogRemotingStage(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("REMOTING_PERF")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("It existed for only internal use in .NET and unimplemented in mono")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stage" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stage">リモート処理 exchange 内のステージを識別する内部的に定義された定数です。</param>
+        <summary>外部のデバッガーをリモート処理 exchange ステージを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`"REMOTING_PERF"`プリプロセッサ シンボルを使用して、メソッドに適用された、<xref:System.Diagnostics.ConditionalAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Marshal">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjRef Marshal (MarshalByRefObject Obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjRef Marshal(class System.MarshalByRefObject Obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Marshal(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="Obj">変換対象のオブジェクト。</param>
+        <summary><see cref="T:System.MarshalByRefObject" />、リモート処理インフラストラクチャを登録およびのインスタンスに変換、<see cref="T:System.Runtime.Remoting.ObjRef" />クラスです。</summary>
+        <returns>インスタンス、<see cref="T:System.Runtime.Remoting.ObjRef" />で指定されたオブジェクトを表すクラス、<paramref name="Obj" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート処理の構成部分に連絡する方法に関する情報。  
+  
+ マーシャ リング中に、現在のスレッドからコンテキストを使用して、コンテキストではなくなったアクティブなオブジェクトが作成されたときにします。 URI が明示的に設定していない場合、<xref:System.Runtime.Remoting.RemotingServices.SetObjectUriForMarshal%2A>メソッド、リモート処理の id インフラストラクチャが自動的に生成します。  
+  
+ 2 つの理由の 1 つのプロキシの URI を関連付けることはできません。 URI は、オブジェクトのサーバー側で生成されたか、オブジェクトは、URI がわかっている場合、よく知られています。 このため場合、`Obj`パラメーターは、プロキシ、例外がスローされます。 カスタム プロキシの透過プロキシは、サーバー オブジェクトとして扱われるために、この制限が緩和されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException"><paramref name="Obj" />パラメーターは、オブジェクトのプロキシです。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Marshal">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjRef Marshal (MarshalByRefObject Obj, string URI);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjRef Marshal(class System.MarshalByRefObject Obj, string URI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Marshal(System.MarshalByRefObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Obj" Type="System.MarshalByRefObject" />
+        <Parameter Name="URI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Obj">変換対象のオブジェクト。</param>
+        <param name="URI">新しい初期化に使用する指定された URI<see cref="T:System.Runtime.Remoting.ObjRef" />です。 指定できます<see langword="null" />です。</param>
+        <summary>変換、指定された<see cref="T:System.MarshalByRefObject" />のインスタンスに、<see cref="T:System.Runtime.Remoting.ObjRef" />指定した URI を使用します。</summary>
+        <returns>インスタンス、<see cref="T:System.Runtime.Remoting.ObjRef" />で指定されたオブジェクトを表すクラス、<paramref name="Obj" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート処理の構成部分に連絡する方法に関する情報。  
+  
+ マーシャ リング中に、現在のスレッドからコンテキストを使用して、コンテキストではなくなったアクティブなオブジェクトが作成されたときにします。  
+  
+ 2 つの理由の 1 つのプロキシの URI を関連付けることはできません。 URI は、オブジェクトのサーバー側で生成されたか、オブジェクトは、URI がわかっている場合、よく知られています。 このため場合、`Obj`パラメーターは、プロキシ、例外がスローされます。 カスタム プロキシの透過プロキシは、サーバー オブジェクトとして扱われるために、この制限が緩和されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、現在の使用方法を示します<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A>指定したオブジェクトをマーシャ リングするメソッド。  
+  
+ [!code-cpp[RemotingServices.BasicSample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.BasicSample/CPP/manualserver.cpp#2)]
+ [!code-csharp[RemotingServices.BasicSample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.BasicSample/CS/manualserver.cs#2)]
+ [!code-vb[RemotingServices.BasicSample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.BasicSample/VB/manualserver.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">
+          <paramref name="Obj" />オブジェクトのプロキシ、および<paramref name="URI" />パラメーターではありません<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Marshal">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjRef Marshal (MarshalByRefObject Obj, string ObjURI, Type RequestedType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjRef Marshal(class System.MarshalByRefObject Obj, string ObjURI, class System.Type RequestedType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Marshal(System.MarshalByRefObject,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Obj" Type="System.MarshalByRefObject" />
+        <Parameter Name="ObjURI" Type="System.String" />
+        <Parameter Name="RequestedType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="Obj"><see cref="T:System.Runtime.Remoting.ObjRef" /> に変換するオブジェクト。</param>
+        <param name="ObjURI">URI で指定されたオブジェクト、 <c>Obj</c>でパラメーターをマーシャ リングします。 指定できます<see langword="null" />です。</param>
+        <param name="RequestedType"><see cref="T:System.Type" /> <c>Obj</c>としてマーシャ リングします。 指定できます<see langword="null" />です。</param>
+        <summary><see cref="T:System.MarshalByRefObject" />のインスタンスに変換し、<see cref="T:System.Runtime.Remoting.ObjRef" />クラスに、指定した URI、および提供されている<see cref="T:System.Type" />です。</summary>
+        <returns>インスタンス、<see cref="T:System.Runtime.Remoting.ObjRef" />で指定されたオブジェクトを表すクラス、<paramref name="Obj" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート処理の構成部分に連絡する方法に関する情報。  
+  
+ 指定した<xref:System.Type>リモート処理インフラストラクチャによって公開された型階層のスコープを制限するために使用します。 たとえば、オブジェクト A がオブジェクト B、C のオブジェクトから派生して、これから派生している場合と<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A>が呼び出されると、クライアントが A. ではなく、C と B の間のプロキシをキャストし、  
+  
+ マーシャ リング中に、現在のスレッドからコンテキストを使用して、コンテキストではなくなったアクティブなオブジェクトが作成されたときにします。  
+  
+ 2 つの理由の 1 つのプロキシの URI を関連付けることはできません。 URI は、オブジェクトのサーバー側で生成されたか、オブジェクトは、URI がわかっている場合、よく知られています。 このため場合、`Obj`パラメーターは、プロキシ、例外がスローされます。 カスタム プロキシの透過プロキシは、サーバー オブジェクトとして扱われるために、この制限が緩和されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">
+          <paramref name="Obj" />リモート オブジェクトのプロキシと<paramref name="ObjUri" />パラメーターではありません<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetObjectUriForMarshal">
+      <MemberSignature Language="C#" Value="public static void SetObjectUriForMarshal (MarshalByRefObject obj, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetObjectUriForMarshal(class System.MarshalByRefObject obj, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.SetObjectUriForMarshal(System.MarshalByRefObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="obj">URI を設定するオブジェクト。</param>
+        <param name="uri">指定したオブジェクトに代入する URI。</param>
+        <summary>以降の呼び出しの URI を設定、<see cref="M:System.Runtime.Remoting.RemotingServices.Marshal(System.MarshalByRefObject)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したオブジェクトをマーシャ リングする場合、URI の現在のメソッドによって設定が使用されます。  
+  
+ 内の文字列に設定されている、指定したオブジェクトの URI、マーシャ リングの後に、`uri`にパラメーターが追加された、 <xref:System.Guid> 、現在の<xref:System.AppDomain>します。  
+  
+ 現在のアプリケーションが HTTP ポートでリッスンしているかどうかは、両方の文字列で指定、`uri`パラメーターおよび`uri`に文字列が追加されます、 <xref:System.Guid> 、現在の<xref:System.AppDomain>指定したオブジェクトへのルートです。 例では、アプリケーションが HTTP ポート 9000 をリッスンし、http://localhost:9000/objectUri と http://localhost:9000 の両方の/\<appdomainguid > で指定されたオブジェクトに objectUri ルート/、`obj`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用される URI を設定する方法を示します、<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A>メソッドの指定したオブジェクトをマーシャ リングするとします。  
+  
+ [!code-cpp[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/cpp/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/CPP/source.cpp#1)]
+ [!code-csharp[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/csharp/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/CS/source.cs#1)]
+ [!code-vb[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">
+          <paramref name="obj" />ローカル オブジェクトではなくが既にマーシャ リングされた、または現在のメソッドで既に呼び出されています。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmarshal">
+      <MemberSignature Language="C#" Value="public static object Unmarshal (System.Runtime.Remoting.ObjRef objectRef);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Unmarshal(class System.Runtime.Remoting.ObjRef objectRef) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Unmarshal(System.Runtime.Remoting.ObjRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectRef" Type="System.Runtime.Remoting.ObjRef" />
+      </Parameters>
+      <Docs>
+        <param name="objectRef"><see cref="T:System.Runtime.Remoting.ObjRef" />プロキシの作成対象のリモート オブジェクトを表すです。</param>
+        <summary><see cref="T:System.Runtime.Remoting.ObjRef" />外プロキシ オブジェクトを作成します。</summary>
+        <returns>オブジェクトへのプロキシを指定された<see cref="T:System.Runtime.Remoting.ObjRef" />を表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。 マーシャ リング解除、中に、<xref:System.Runtime.Remoting.ObjRef>リモート オブジェクトと、両方の透過的なプロキシのメソッド情報を抽出する解析と<xref:System.Runtime.Remoting.Proxies.RealProxy>オブジェクトが作成されます。 解析済みのコンテンツ<xref:System.Runtime.Remoting.ObjRef>透過型プロキシは、共通言語ランタイムに登録前に、透過的なプロキシが追加されます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート処理の構成部分に連絡する方法に関する情報。  
+  
+   
+  
+## Examples  
+ 次のコード例では、オブジェクトのマーシャ リングを解除する方法を示します。  
+  
+ [!code-cpp[RemotingServices.Unmarshal#2](~/samples/snippets/cpp/VS_Snippets_Remoting/RemotingServices.Unmarshal/CPP/client.cpp#2)]
+ [!code-csharp[RemotingServices.Unmarshal#2](~/samples/snippets/csharp/VS_Snippets_Remoting/RemotingServices.Unmarshal/CS/client.cs#2)]
+ [!code-vb[RemotingServices.Unmarshal#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/RemotingServices.Unmarshal/VB/client.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Runtime.Remoting.ObjRef" />で指定されたインスタンス、<paramref name="objectRef" />パラメーターは整形式ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmarshal">
+      <MemberSignature Language="C#" Value="public static object Unmarshal (System.Runtime.Remoting.ObjRef objectRef, bool fRefine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Unmarshal(class System.Runtime.Remoting.ObjRef objectRef, bool fRefine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.RemotingServices.Unmarshal(System.Runtime.Remoting.ObjRef,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectRef" Type="System.Runtime.Remoting.ObjRef" />
+        <Parameter Name="fRefine" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="objectRef"><see cref="T:System.Runtime.Remoting.ObjRef" />プロキシの作成対象のリモート オブジェクトを表すです。</param>
+        <param name="fRefine">
+          <see langword="true" />プロキシ サーバーの種類の詳細にそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Runtime.Remoting.ObjRef" />し、サーバーでの種類に改良移動すると、プロキシ オブジェクトを作成します。</summary>
+        <returns>オブジェクトへのプロキシを指定された<see cref="T:System.Runtime.Remoting.ObjRef" />を表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>アプリケーション ドメインの境界を越えてオブジェクト参照を転送に使用するオブジェクトのシリアル化可能な表現です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 <xref:System.Runtime.Remoting.ObjRef>転送できるチャネルを介して別のアプリケーション ドメインに (おそらく別のプロセスまたはコンピューター) 上。 その他のアプリケーション ドメインで 1 回、<xref:System.Runtime.Remoting.ObjRef>実際のオブジェクトに接続して、通常、オブジェクトのプロキシを作成する解析する必要があります。 この操作は、マーシャ リング解除と呼ばれます。 マーシャ リング解除、中に、<xref:System.Runtime.Remoting.ObjRef>リモート オブジェクトと、両方の透過的なプロキシのメソッド情報を抽出する解析と<xref:System.Runtime.Remoting.Proxies.RealProxy>オブジェクトが作成されます。 解析済みのコンテンツ<xref:System.Runtime.Remoting.ObjRef>透過型プロキシは、共通言語ランタイムに登録前に、透過的なプロキシが追加されます。  
+  
+ A<xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>とマーシャ リングされるオブジェクトのクラスは、特定のオブジェクトのインスタンスとの通信を一意に識別する URI を関連オブジェクトが配置されているリモート処理の構成部分に連絡する方法に関する情報。  
+  
+ 最初に作成されるときに、プロキシは<xref:System.MarshalByRefObject>します。 さまざまな種類にキャストすると、リモート処理インフラストラクチャの追跡を不必要に型の読み込みを回避する最も使用されている型。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Runtime.Remoting.ObjRef" />で指定されたインスタンス、<paramref name="objectRef" />パラメーターは整形式ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

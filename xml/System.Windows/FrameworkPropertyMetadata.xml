@@ -1,0 +1,1060 @@
+<Type Name="FrameworkPropertyMetadata" FullName="System.Windows.FrameworkPropertyMetadata">
+  <TypeSignature Language="C#" Value="public class FrameworkPropertyMetadata : System.Windows.UIPropertyMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FrameworkPropertyMetadata extends System.Windows.UIPropertyMetadata" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FrameworkPropertyMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.UIPropertyMetadata</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>依存関係プロパティのメタデータを報告または適用します。特に、フレームワークに固有のプロパティのシステム特性を追加します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから派生<xref:System.Windows.PropertyMetadata>(を通じて<xref:System.Windows.UIPropertyMetadata>)。 ほとんどの WPF フレームワーク レベルのアプリケーション開発目的の<xref:System.Windows.FrameworkPropertyMetadata>は基本のメタデータ型ではなく、依存関係プロパティのメタデータを使用する種類<xref:System.Windows.PropertyMetadata>または<xref:System.Windows.UIPropertyMetadata>です。 これは、既存の依存関係プロパティとカスタムの依存関係プロパティのほとんどのシナリオの両方に当てはまります。  
+  
+ これで宣言されたメンバー クラスの本追加ソフトウェア、<xref:System.Windows.PropertyMetadata>基底クラスは、さまざまなブール値のプロパティを指定するか、レポートのプロパティの継承、データ バインディング、レイアウトなどの WPF フレームワーク レベルのプロパティ システムの動作をします。  
+  
+ 作成するためのいくつかのコンス トラクター シグネチャ、<xref:System.Windows.FrameworkPropertyMetadata>インスタンス take、<xref:System.Windows.FrameworkPropertyMetadataOptions>パラメーター。 <xref:System.Windows.FrameworkPropertyMetadataOptions>列挙型は、コンス トラクターで初期の動作を指定するだけが使用され、後にそれ以外の場合は公開されていない<xref:System.Windows.FrameworkPropertyMetadata>を構築します。 構築されたインスタンスを取得またはコンス トラクターの呼び出しで使用する列挙値の名前を共有するさまざまなプロパティで、対応する情報を設定できます。  
+  
+<a name="xamlTextUsage_FrameworkPropertyMetadata"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例としてメタデータを取得、依存関係プロパティの特定の所有者で、初期基本<xref:System.Windows.PropertyMetadata>型です。 そのメタデータは<xref:System.Windows.FrameworkPropertyMetadata>します。 有効なキャストが返される場合は<xref:System.Windows.FrameworkPropertyMetadata>、し、さまざまな<xref:System.Windows.FrameworkPropertyMetadata>プロパティの値は、単純な UI (非表示) で報告されます。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.FrameworkPropertyMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての値をシグネチャ<xref:System.Windows.FrameworkPropertyMetadata.%23ctor%2A>がプロパティの既定値にします。 <xref:System.Windows.PropertyMetadata.DefaultValue%2A>なります`null`と、さまざまな<xref:System.Windows.FrameworkPropertyMetadata>ブール型プロパティがなります`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類の値として提供される、依存関係プロパティの既定値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />指定された既定値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor1param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor1param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (System.Windows.PropertyChangedCallback propertyChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.PropertyChangedCallback propertyChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+      </Parameters>
+      <Docs>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.FrameworkPropertyMetadata" /> 、指定したクラス<see cref="T:System.Windows.PropertyChangedCallback" />コールバック。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor1paramcallback](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor1paramcallback)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.FrameworkPropertyMetadataOptions flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, valuetype System.Windows.FrameworkPropertyMetadataOptions flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.FrameworkPropertyMetadataOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Windows.FrameworkPropertyMetadataOptions" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類の値として提供される、依存関係プロパティの既定値。</param>
+        <param name="flags">メタデータのオプション フラグ (を組み合わせた<see cref="T:System.Windows.FrameworkPropertyMetadataOptions" />値)。 これらのオプションは、レイアウト、データ バインディングなどのシステムと対話する依存関係プロパティの特性を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />フレームワーク レベルのメタデータのオプションと指定された既定値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+ セットの flags でフラグとしてマークされた値、`flags`パラメーターのブール値が設定されます<xref:System.Windows.FrameworkPropertyMetadata>と一致しているプロパティ<xref:System.Windows.FrameworkPropertyMetadataOptions>フラグの名前を`true`です。 メタデータが特定のプロパティのシステム操作に適用されていない限り、その後、メタデータでは、プロパティの値を変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.PropertyChangedCallback propertyChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, class System.Windows.PropertyChangedCallback propertyChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類の値として提供される、依存関係プロパティの既定値。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />指定された既定値は、クラスし、指定された<see cref="T:System.Windows.PropertyChangedCallback" />コールバック。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor2param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor2param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />この依存関係プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />指定したコールバック クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、基本の初期化子を呼び出すし、追加、`coerceValueCallback`ベースのインスタンスのプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_PCC_CVC](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_pcc_cvc)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.FrameworkPropertyMetadataOptions flags, System.Windows.PropertyChangedCallback propertyChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, valuetype System.Windows.FrameworkPropertyMetadataOptions flags, class System.Windows.PropertyChangedCallback propertyChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Windows.FrameworkPropertyMetadataOptions" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類の値として提供される、依存関係プロパティの既定値。</param>
+        <param name="flags">メタデータのオプション フラグ (を組み合わせた<see cref="T:System.Windows.FrameworkPropertyMetadataOptions" />値)。 これらのオプションは、レイアウト、データ バインディングなどのシステムと対話する依存関係プロパティの特性を指定します。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />した既定値とフレームワーク メタデータ オプションで、クラスし、指定された<see cref="T:System.Windows.PropertyChangedCallback" />コールバック。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+ セットの flags でフラグとしてマークされた値、`flags`パラメーターのブール値が設定されます<xref:System.Windows.FrameworkPropertyMetadata>と一致しているプロパティ<xref:System.Windows.FrameworkPropertyMetadataOptions>フラグの名前を`true`です。 メタデータでは、プロパティの値は、メタデータが特定のプロパティのシステム操作に適用されていない限り、引き続き変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO_PCC](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo_pcc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類として提供される、依存関係プロパティの既定値。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />この依存関係プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />された既定値と指定したコールバック クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor3param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor3param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.FrameworkPropertyMetadataOptions flags, System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, valuetype System.Windows.FrameworkPropertyMetadataOptions flags, class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Windows.FrameworkPropertyMetadataOptions" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類として提供される、依存関係プロパティの既定値。</param>
+        <param name="flags">メタデータのオプション フラグ (を組み合わせた<see cref="T:System.Windows.FrameworkPropertyMetadataOptions" />値)。 これらのオプションは、レイアウト、データ バインディングなどのシステムと対話する依存関係プロパティの特性を指定します。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />このプロパティに対して。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />既定値とフレームワーク メタデータ オプションでは、指定したコールバック クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+ セットの flags でフラグとしてマークされた値、`flags`パラメーターのブール値が設定されます<xref:System.Windows.FrameworkPropertyMetadata>と一致しているプロパティ<xref:System.Windows.FrameworkPropertyMetadataOptions>フラグの名前を`true`です。 メタデータでは、プロパティの値は、メタデータが特定のプロパティのシステム操作に適用されていない限り、引き続き変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO_PCC_CVC](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo_pcc_cvc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.FrameworkPropertyMetadataOptions flags, System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback, bool isAnimationProhibited);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, valuetype System.Windows.FrameworkPropertyMetadataOptions flags, class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback, bool isAnimationProhibited) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Windows.FrameworkPropertyMetadataOptions" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+        <Parameter Name="isAnimationProhibited" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類として提供される、依存関係プロパティの既定値。</param>
+        <param name="flags">メタデータのオプション フラグ (を組み合わせた<see cref="T:System.Windows.FrameworkPropertyMetadataOptions" />値)。 これらのオプションは、レイアウト、データ バインディングなどのシステムと対話する依存関係プロパティの特性を指定します。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />この依存関係プロパティです。</param>
+        <param name="isAnimationProhibited">
+          <see langword="true" />プロパティ システムがこのメタデータに適用されるプロパティをアニメーション化するを防ぎます。 このようなプロパティにアニメーション化が試行されると、プロパティのシステムから送信された、実行時に例外が発生します。 <see langword="false" />プロパティをアニメーション化を許可します。 既定値は、<see langword="false" /> です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />した既定値およびフレームワークのメタデータのオプション、指定したコールバック、およびブール値をプロパティのアニメーションを防ぐために使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+ `isAnimationProhibited`パラメーターの初期値の設定、<xref:System.Windows.UIPropertyMetadata.IsAnimationProhibited%2A>プロパティは、イミディ エイト ベースして宣言<xref:System.Windows.UIPropertyMetadata>クラスです。  
+  
+ セットの flags でフラグとしてマークされた値、`flags`パラメーターのブール値が設定されます<xref:System.Windows.FrameworkPropertyMetadata>と一致しているプロパティ<xref:System.Windows.FrameworkPropertyMetadataOptions>フラグの名前を`true`です。 メタデータでは、プロパティの値は、メタデータが特定のプロパティのシステム操作に適用されていない限り、引き続き変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターのシグネチャを呼び出します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO_PCC_CVC_IAP](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo_pcc_cvc_iap)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkPropertyMetadata (object defaultValue, System.Windows.FrameworkPropertyMetadataOptions flags, System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback, bool isAnimationProhibited, System.Windows.Data.UpdateSourceTrigger defaultUpdateSourceTrigger);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, valuetype System.Windows.FrameworkPropertyMetadataOptions flags, class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback, bool isAnimationProhibited, valuetype System.Windows.Data.UpdateSourceTrigger defaultUpdateSourceTrigger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.#ctor(System.Object,System.Windows.FrameworkPropertyMetadataOptions,System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback,System.Boolean,System.Windows.Data.UpdateSourceTrigger)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Windows.FrameworkPropertyMetadataOptions" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+        <Parameter Name="isAnimationProhibited" Type="System.Boolean" />
+        <Parameter Name="defaultUpdateSourceTrigger" Type="System.Windows.Data.UpdateSourceTrigger" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">通常、特定の種類として提供される、依存関係プロパティの既定値。</param>
+        <param name="flags">メタデータのオプション フラグ (を組み合わせた<see cref="T:System.Windows.FrameworkPropertyMetadataOptions" />値)。 これらのオプションは、レイアウト、データ バインディングなどのシステムと対話する依存関係プロパティの特性を指定します。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムが発信するハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />このプロパティに対して。</param>
+        <param name="isAnimationProhibited">
+          <see langword="true" />プロパティ システムがこのメタデータに適用されるプロパティをアニメーション化するを防ぎます。 このようなプロパティにアニメーション化が試行されると、プロパティのシステムから送信された、実行時に例外が発生します。 既定値は、<see langword="false" /> です。</param>
+        <param name="defaultUpdateSourceTrigger"><see cref="T:System.Windows.Data.UpdateSourceTrigger" />を持つこのプロパティのバインドが適用されるときに使用する、 <see cref="T:System.Windows.Data.UpdateSourceTrigger" /> 'éý'<see cref="F:System.Windows.Data.UpdateSourceTrigger.Default" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.FrameworkPropertyMetadata" />指定された既定値およびフレームワークのメタデータを持つクラス オプションは、指定されたコールバックは、ブール値をアニメーションのプロパティと、データ バインディングの update トリガーの既定値を防ぐために使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`にこのメタデータが適用される依存関係プロパティの元の登録で指定された型に関連するまたは一致する必要があります。 この不一致は、コンパイル時に検出ではないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。 プロパティ システム既定値の型/プロパティ型の不一致の結果が、実行時エラーであるために、プロパティの有効な値を実行時まで評価されません。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue>プロパティ システムに特別な意味を持ち、依存関係プロパティの既定値として使用できません。  
+  
+ `isAnimationProhibited`パラメーターの初期値の設定、<xref:System.Windows.UIPropertyMetadata.IsAnimationProhibited%2A>プロパティは、イミディ エイト ベースして宣言<xref:System.Windows.UIPropertyMetadata>クラスです。  
+  
+ バインディング ソースの更新の動作の詳細については、次を参照してください。[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ セットの flags でフラグとしてマークされた値、`flags`パラメーターのブール値が設定されます<xref:System.Windows.FrameworkPropertyMetadata>と一致しているプロパティ<xref:System.Windows.FrameworkPropertyMetadataOptions>フラグの名前を`true`です。 メタデータでは、プロパティの値は、メタデータが特定のプロパティのシステム操作に適用されていない限り、引き続き変更できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PropertyMetadataAPIs#Initfpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initfpm)]  
+[!code-csharp[PropertyMetadataAPIs#FPMCtor_DV_FPMO_PCC_CVC_IAP_DUST](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#fpmctor_dv_fpmo_pcc_cvc_iap_dust)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" /> が <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsArrange">
+      <MemberSignature Language="C#" Value="public bool AffectsArrange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AffectsArrange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.AffectsArrange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト エンジンの操作中に、依存関係プロパティが配置パスに潜在的に影響するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このメタデータが存在する可能性のある依存関係プロパティの配置パスに影響します。 場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement>および<xref:System.Windows.FrameworkContentElement>の実装が含まれて<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A>要素に存在するすべての依存関係プロパティに対する有効な値の変更を監視します。 そのロジックの一環として、有効日を変更する依存関係プロパティ値し、のメタデータがある<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>'éý'`true`がその要素のビジュアルを無効化する遅延の要求を開始 (への呼び出し<xref:System.Windows.UIElement.InvalidateArrange%2A>)。 この WPF フレームワーク レベルの実装は、既に設定されているため、通常必要はありませんで依存関係プロパティを検索する<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>大幅に交換または WPF フレームワーク レベルのレイアウトの動作を変更する場合を除き、します。  
+  
+ カスタム<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装は、依存関係プロパティの変更と同様に動作することもできます、<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>は`true`します。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_AffectsArrange"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]します。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsMeasure">
+      <MemberSignature Language="C#" Value="public bool AffectsMeasure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AffectsMeasure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.AffectsMeasure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト エンジンの操作中に、依存関係プロパティが測定パスに影響する可能性があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このメタデータが存在する可能性のある依存関係プロパティが測定パスに影響を与える場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement>および<xref:System.Windows.FrameworkContentElement>の実装が含まれて<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A>要素に存在するすべての依存関係プロパティに対する有効な値の変更を監視します。 そのロジックの一環として、有効日を変更する依存関係プロパティ値し、のメタデータがある<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>'éý'`true`がその要素のビジュアルを無効化する遅延の要求を開始します。 この WPF フレームワーク レベルの実装は、既に設定されているため、通常必要はありませんで依存関係プロパティを検索する<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>大幅に交換または WPF フレームワーク レベルのレイアウトの動作を変更する場合を除き、します。  
+  
+ カスタム<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装は、依存関係プロパティの変更と同様に動作することもできます、<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>は`true`します。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_AffectsMeasure"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsParentArrange">
+      <MemberSignature Language="C#" Value="public bool AffectsParentArrange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AffectsParentArrange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト エンジンの操作中に、依存関係プロパティがその親要素のレイアウトの配置パスに潜在的に影響するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          このメタデータが存在する可能性のある依存関係プロパティが特にその親要素の配置パスに影響する可能性がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement>および<xref:System.Windows.FrameworkContentElement>の実装が含まれて<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A>要素に存在するすべての依存関係プロパティに対する有効な値の変更を監視します。 そのロジックの一環として、有効日を変更する依存関係プロパティ値し、のメタデータがある<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>'éý'`true`が親要素のビジュアルの無効化する遅延の要求を開始します。  
+  
+ 一般に、必要はありませんの変更の報告に、<xref:System.Windows.FrameworkElement>プロパティを使用して親要素を<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>要素自体は既に存在して独自ため<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>として`true`です。 通常で十分である、適切なときに、親の配置ため、一般に、子要素の変更を開始します。 <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>ため、<xref:System.Windows.FrameworkContentElement>クラスを派生します。 この場合、子要素のセットが、プロパティ、<xref:System.Windows.FrameworkContentElement>派生クラスでは、自身のレンダリングを制御しません。 レンダリングがによって処理される、<xref:System.Windows.FrameworkElement>コンテンツ ホストとして機能する親要素です。 インスタンスの値の変更、<xref:System.Windows.Documents.FixedPage.Left%2A?displayProperty=nameWithType>子要素で添付プロパティを無効に親の子の位置を変更する必要がありますので、親の整列します。 したがって、<xref:System.Windows.Documents.FixedPage.Left%2A?displayProperty=nameWithType>添付プロパティがメタデータを持つ場所<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>は`true`します。 別の例は、<xref:System.Windows.Controls.Control.Padding%2A>以外の場合はこのプロパティが変更された、親の可能性があります変更に使用できるスペースに応じて、子の位置とします。  
+  
+ この WPF フレームワーク レベルの実装は、既に設定されているため、通常必要はありませんで依存関係プロパティを検索する<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>大幅に交換または WPF フレームワーク レベルのレイアウトの動作を変更する場合を除き、します。  
+  
+ カスタム<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装は、依存関係プロパティの変更と同様に動作することもできます、<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>は`true`します。  
+  
+ いずれかのプロパティの派生クラス<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_AffectsParentArrange"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsParentMeasure">
+      <MemberSignature Language="C#" Value="public bool AffectsParentMeasure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AffectsParentMeasure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト エンジンの操作中に、依存関係プロパティがその親要素のレイアウトの測定パスに潜在的に影響するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          このメタデータが存在する依存関係プロパティが特にその親要素の測定パスに影響する可能性がある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement>および<xref:System.Windows.FrameworkContentElement>の実装が含まれて<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A>要素に存在するすべての依存関係プロパティに対する有効な値の変更を監視します。 そのロジックの一環として、有効日を変更する依存関係プロパティ値し、のメタデータがある<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>'éý'`true`が親要素のビジュアルの無効化する遅延の要求を開始します。 この WPF フレームワーク レベルの実装は、既に設定されているため、通常必要はありませんで依存関係プロパティを検索する<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>大幅に交換または WPF フレームワーク レベルのレイアウトの動作を変更する場合を除き、します。  
+  
+ 一般に、必要はありませんの変更の報告に、<xref:System.Windows.FrameworkElement>プロパティを使用して親要素を<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>要素自体は既に存在して独自ため<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>として`true`です。 子要素の変更は一般に適切な場合に、親メジャーのパスを開始するため、通常で十分です。 <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>ため、<xref:System.Windows.FrameworkContentElement>クラスを派生します。 この場合、子要素のセットが、プロパティ、<xref:System.Windows.FrameworkContentElement>派生クラスでは、自身のレンダリングを制御しません。 レンダリングがによって処理される、<xref:System.Windows.FrameworkElement>コンテンツ ホストとして機能する親要素です。 インスタンスの値の変更、<xref:System.Windows.Documents.Paragraph.KeepWithNext%2A?displayProperty=nameWithType>子要素でプロパティは、段落の相対的な間隔から変更可能性がありますとを増やす場合があります、またはコンテンツ ホストのサイズを小さくために、親のメジャーを無効にします。 そのため、<xref:System.Windows.Documents.Paragraph.KeepWithNext%2A?displayProperty=nameWithType>プロパティがメタデータには、<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>は`true`します。  
+  
+ コンテンツ ホスト要素は、依存関係プロパティの変更も頻繁に検索場所<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>は`true`、コンテンツ ホスト レンダリング ロジックの一部として。 インスタンス、<xref:System.Windows.Controls.TextBox>要素に応答するが必要となるテキスト内で特定の変更の境界ボックス、<xref:System.Windows.Controls.TextBox>自体を変更します。  
+  
+ カスタム<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装は、依存関係プロパティの変更と同様に動作することもできます、<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>は`true`します。  
+  
+ いずれかのプロパティの派生クラス<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_AffectsParentMeasure"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectsRender">
+      <MemberSignature Language="C#" Value="public bool AffectsRender { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AffectsRender" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.AffectsRender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティが一般的なレイアウトに何らかの形で影響する (配置や測定に特に影響を与えないが再描画が必要になる) 可能性があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このメタデータが存在する依存関係プロパティがレンダリングに影響する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement>および<xref:System.Windows.FrameworkContentElement>の実装が含まれて<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A>要素に存在するすべての依存関係プロパティに対する有効な値の変更を監視します。 そのロジックの一環として、有効日を変更する依存関係プロパティ値し、のメタデータがある<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>'éý'`true`がその要素のビジュアルを無効化する遅延の要求を開始します。 この WPF フレームワーク レベルの実装は、既に設定されているため、通常必要はありませんで依存関係プロパティを検索する<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>大幅に交換または WPF フレームワーク レベルのレイアウトの動作を変更する場合を除き、します。  
+  
+ カスタム<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>実装は、依存関係プロパティの変更と同様に動作することもできます、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>は`true`します。  
+  
+ いずれかのプロパティの派生クラス<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_AffectsRender"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BindsTwoWayByDefault">
+      <MemberSignature Language="C#" Value="public bool BindsTwoWayByDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BindsTwoWayByDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが既定で双方向をバインドするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          既定でこのメタデータが存在する依存関係プロパティが双方向をバインドする場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがない場合に`true`、バインドの更新プログラムがの既定の動作に基づいて、既定で一方向、<xref:System.Windows.Data.Binding>コンス トラクターまたはそれと同等[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文です。  
+  
+ 既存の要素では、このプロパティ設定通常検索は`true`状態をレポートし、はたとえばユーザーの操作によって変更される依存関係プロパティのメタデータで<xref:System.Windows.Controls.Primitives.Selector.IsSelected%2A?displayProperty=nameWithType>です。  
+  
+ このプロパティはのみ、依存関係プロパティの既定のバインディング更新特性を一般に報告します。 どのバインディングでもインスタンスでこのプロパティを設定できるローカルに設定された、<xref:System.Windows.Data.Binding.Mode%2A>バインディングのプロパティと、この既定の設定を変更します。  
+  
+ いずれかのプロパティの派生クラス<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_BindsTwoWayByDefault"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultUpdateSourceTrigger">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.UpdateSourceTrigger DefaultUpdateSourceTrigger { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Data.UpdateSourceTrigger DefaultUpdateSourceTrigger" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.DefaultUpdateSourceTrigger" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.UpdateSourceTrigger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の既定の<see cref="T:System.Windows.Data.UpdateSourceTrigger" />を使用するにはこのメタデータを使用してプロパティのバインドが適用されるときに、 <see cref="T:System.Windows.Data.UpdateSourceTrigger" /> 'éý'<see cref="F:System.Windows.Data.UpdateSourceTrigger.Default" />です。</summary>
+        <value>以外の列挙体の値<see cref="F:System.Windows.Data.UpdateSourceTrigger.Default" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_DefaultUpdateSourceTrigger"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティに設定<see cref="F:System.Windows.Data.UpdateSourceTrigger.Default" />; を設定する値はバインディングで要求されたときに既定値になります必要があります。</exception>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherits">
+      <MemberSignature Language="C#" Value="public bool Inherits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Inherits" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.Inherits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの値が継承可能かどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />プロパティの値が継承可能な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ値の継承の機能、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]という特定の依存関係プロパティ ローカルで設定できる時またはその近辺のルート要素に、WPF フレームワーク レベルのプロパティのシステム、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]要素ツリーし、その値もそのプロパティを保持する子要素の論理ツリー内のすべての要素によって継承されます。 プロパティ値の継承は、既定で無効になっており、パフォーマンスへの影響が有効にします。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+> [!NOTE]
+>  非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリーで特定オブジェクト間の分割を使用して非添付プロパティの継承の動作は定義されません。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_Inherits"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDataBindingAllowed">
+      <MemberSignature Language="C#" Value="public bool IsDataBindingAllowed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDataBindingAllowed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.IsDataBindingAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティのデータ バインディングがサポートされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このメタデータを適用する依存関係プロパティのデータ バインディングがサポートされている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、報告`false`2 つの可能な条件のいずれかの: 依存関係プロパティが (に示される依存関係プロパティの識別子、メタデータではない)、読み取り専用であるために、依存関係プロパティをいずれかのデータ バインディングが許可されていません、別のメタデータ プロパティの値は<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>に設定されている`true`このメタデータにします。 このプロパティは、利便性のため公開呼び出し元は、両方を確認する必要はありません<xref:System.Windows.DependencyProperty.ReadOnly%2A>と<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>です。  
+  
+ それ以外の場合の読み取り/書き込みプロパティがデータ バインディングをサポートする必要がありますを指定するメタデータを作成しようとする場合は、フラグを指定<xref:System.Windows.FrameworkPropertyMetadataOptions.NotDataBindable>(とわずかな名前付け規約違いに注意してください<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>)。  
+  
+<a name="xamlTextUsage_IsDataBindingAllowed"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティ フィールド内のさまざまな依存関係から既定のメタデータを取得します、各種の値をクエリ<xref:System.Windows.FrameworkPropertyMetadata>プロパティには、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを作成するとします。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#FPMProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#fpmproperties)]
+[!code-vb[PropertySystemEsoterics#FPMProperties](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#fpmproperties)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNotDataBindable">
+      <MemberSignature Language="C#" Value="public bool IsNotDataBindable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNotDataBindable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティがデータ バインディングをサポートしているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />プロパティがデータ バインディングをサポートしていない場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメタデータ プロパティに設定されている注`true`専用のプロパティを読み取り/書き込みプロパティであるにもかかわらず、データ バインディングをサポートする必要があります。 予想する依存関係プロパティが宣言されているほとんどの場合、データ バインディングが必要な依存関係プロパティが役立つ主要シナリオのいずれかのデータ バインディングがあるためです。 異なり<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>、これだけで変わらないので、特定のバインドに後で変更可能な既定です。 このプロパティの設定`true`依存関係プロパティのメタデータで、その依存関係プロパティに式を使用してその値を適用するすべてのバインディングがこのメタデータに無効になります。  
+  
+ 読み取り専用の依存関係プロパティは (変更後の値を適用可能な set アクセス操作子がない) ため、データをバインディングをサポートしていませんが、レポートではまだ`false`の<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>します。 これは、プロパティに対応するため、<xref:System.Windows.FrameworkPropertyMetadataOptions>値は、メタデータが実際に確立する方法、常にレポート プロパティの名前を付けることを示唆する最後の結果の動作ではなくと同等の機能を報告します。 指定された依存関係プロパティがデータ バインドで許可されるかどうかを判断するのには通常をチェックする<xref:System.Windows.FrameworkPropertyMetadata.IsDataBindingAllowed%2A>代わりにします。 <xref:System.Windows.FrameworkPropertyMetadata.IsDataBindingAllowed%2A>両方をチェックするための便利なは<xref:System.Windows.DependencyProperty.ReadOnly%2A>と<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>単一の操作として、予期される結果を生成します。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_IsNotDataBindable"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Journal">
+      <MemberSignature Language="C#" Value="public bool Journal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Journal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.Journal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジャーナル実装の一部としてアプリケーションが格納できる、または格納する必要のあるジャーナル情報がこのプロパティに格納されているかどうか示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このメタデータが適用される依存関係プロパティのジャーナルを実行する必要があります場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_Journal"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="protected override void Merge (System.Windows.PropertyMetadata baseMetadata, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Merge(class System.Windows.PropertyMetadata baseMetadata, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="baseMetadata">マージする基本のメタデータ。</param>
+        <param name="dp">このメタデータが適用されている依存関係プロパティ。</param>
+        <summary>ソース メタデータと基本メタデータのマージを有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メタデータが上書きされているときに内部的に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.PropertyMetadata" />(またはこれが特にクラス) の実装では、追加のメタデータ プロパティに対応するには、このメソッドをオーバーライドする必要があります。 たとえば、実装に追加可能性があります新しいフラグ列挙値では、および<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />実装はこれらのフラグを正しく組み合わせることができるしする必要があります。  
+  
+ 常に基底の実装は、階層内の以前の型で既に定義されているすべてのプロパティのマージ処理のため、独自の実装の前に、基本実装を呼び出します。  
+  
+ によって追加された動作、<see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />で実装<see cref="T:System.Windows.FrameworkPropertyMetadata" />は、特定の WPF フレームワーク レベルのプロパティなどのメタデータで<see cref="P:System.Windows.FrameworkPropertyMetadata.AffectsRender" />演算で組み合わせるまたは操作します。  
+  
+ <see cref="M:System.Windows.FrameworkPropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />動作は、呼び出すことによって既存の依存関係プロパティのプロパティのメタデータをオーバーライドする場合も、動作を実装<see cref="M:System.Windows.DependencyProperty.OverrideMetadata(System.Type,System.Windows.PropertyMetadata)" />. は、オーバーライドのメタデータを使用して<see cref="T:System.Windows.FrameworkPropertyMetadata" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApply">
+      <MemberSignature Language="C#" Value="protected override void OnApply (System.Windows.DependencyProperty dp, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnApply(class System.Windows.DependencyProperty dp, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkPropertyMetadata.OnApply(System.Windows.DependencyProperty,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dp">メタデータが適用されている依存関係プロパティ。</param>
+        <param name="targetType">型固有のメタデータは、この場合、このメタデータに関連付けられている型。 これが既定のメタデータである場合は、この値を指定できます<see langword="null" />です。</param>
+        <summary>このメタデータは、メタデータがシールされていることを示すプロパティに適用されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ構造のすべての変更可能性、<xref:System.Windows.FrameworkPropertyMetadata>インスタンスに設定されなければなりません変更不可としてこのメソッドが呼び出されるとします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.Windows.FrameworkPropertyMetadata" />このメソッドの実装では、基本実装を呼び出す以外何も行われません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OverridesInheritanceBehavior">
+      <MemberSignature Language="C#" Value="public bool OverridesInheritanceBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OverridesInheritanceBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の論理ツリー内の特定のコンテンツ境界にまたがってプロパティ値の継承を評価するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />プロパティ値の継承が特定のコンテンツ境界をまたがる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメタデータは、特殊な親要素と子要素の境界にまたがってプロパティ値の継承の動作に変更をほとんど適用を報告します。 このような境界の標準的な例は、の内容、<xref:System.Windows.Controls.Frame>ここで、<xref:System.Windows.Controls.Frame>の有無とは無関係にコンテンツが再読み込みされる可能性がありますを取得、<xref:System.Windows.Controls.Frame>です。 目的のプロパティのシステム動作は、プロパティ値の継承の内容に通過する必要がありますしないこと、<xref:System.Windows.Controls.Frame>これらの内容の要素をフレームをホストするアプリケーションが所有または管理していない可能性があるため、します。 使用してメタデータを指定すること<xref:System.Windows.FrameworkPropertyMetadata.OverridesInheritanceBehavior%2A>'éý'`true`を指定しても、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>として`true`、プロパティを継承可能であっても、メタデータを適用すると、<xref:System.Windows.Controls.Frame>境界または類似の境界。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後に<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_OverridesInheritanceBehavior"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubPropertiesDoNotAffectRender">
+      <MemberSignature Language="C#" Value="public bool SubPropertiesDoNotAffectRender { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SubPropertiesDoNotAffectRender" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティのサブプロパティが格納オブジェクトのレンダリングに影響しないかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />サブプロパティ値の変更がレンダリングに影響をいない場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメタデータ オプションは、その型が、独自のプロパティの値を持つ参照型の場合は、依存関係プロパティの関連です。 通常、レイアウト システムのロジックは、サブ プロパティを持つ任意の依存関係プロパティに可能性のあるレイアウトは影響は、別描画パスで実際に実行されているよりも時間がかかるがすべてのサブ プロパティの変更を確認するためのことを想定することです。 このオプションを設定`true`は WPF フレームワーク レベルのレイアウト システムの実装のパフォーマンスを最適化するために便利です。  
+  
+ 派生クラスでプロパティ<xref:System.Windows.PropertyMetadata>通常は読み取り/書き込みとしてオブジェクト モデルで定義します。 これは、インスタンスの初期化後にそれらを調整できるようにします。 ただし、メタデータがへの呼び出しの一部として使用された後<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびメタデータの仕様を伝えるためのプロパティを変更できないと見なされますようになりました。 後にこのプロパティを設定しようとしています。<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+<a name="xamlTextUsage_SubPropertiesDoNotAffectRender"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メタデータがシールされるよう、かつメタデータのプロパティを設定できないように、メタデータは依存関係プロパティの操作に既に適用されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

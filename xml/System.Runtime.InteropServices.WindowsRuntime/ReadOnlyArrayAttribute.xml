@@ -1,0 +1,71 @@
+<Type Name="ReadOnlyArrayAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ReadOnlyArrayAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReadOnlyArrayAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows ランタイム コンポーネントの配列パラメーターに適用する場合は、そのパラメーターに渡される配列の内容が入力に対してのみ使用されることを指定します。 呼び出し元は、配列が呼び出しによって変更されるのを防ぐ必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列パラメーターの場合、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネントは、値によって渡される (`ByVal` Visual Basic で) に、次の属性のいずれかを適用する必要があります。  
+  
+-   適用、<xref:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute>する場合は入力のみに使用する配列の内容の属性です。  
+  
+-   適用、<xref:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute>属性出力のみに使用する配列の内容を予定する場合 (つまり、メソッドの配列の内容を設定に読み取られない)。  
+  
+ パラメーターに両方の属性を適用すると、エラーが発生します。 詳細については、配列への変更に関する標準的なパターンを参照してください。[を Windows ランタイム コンポーネントの配列の引き渡し](http://go.microsoft.com/fwlink/?LinkId=251026)Windows デベロッパー センター内です。  
+  
+> [!IMPORTANT]
+>  持つパラメーター、<xref:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute>属性の動作、呼び出し元がネイティブ コードまたはマネージ コードで記述されたかどうかによって異なります。 呼び出し元がネイティブ コードである場合 (JavaScript または[!INCLUDE[cppwrt](~/includes/cppwrt-md.md)])、呼び出しがアプリケーション バイナリ インターフェイス (ABI) の境界を超えたときに、配列がコピーされます。 要素は必要に応じて変換されます。 そのため、誤ってメソッドによって入力専用配列に変更が加えられたとしても、呼び出し元からは見えません。  
+>   
+>  呼び出し元が管理されている場合、配列のコードはコピーされません。 元の配列を .NET Framework でのメソッド呼び出しの場合、呼び出されたメソッドを使用します。 配列の内容は .NET Framework コードで変更可能なので、配列に対してメソッドによって行われる変更は呼び出し元から見えます。 これは、用に記述された単体テストの影響を与えるので注意してください、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネントです。 マネージ コードでテストが作成される場合、配列の内容はテスト中に変更可能であることが示されます。  
+  
+ この属性を持つパラメーターに適用、<xref:System.Runtime.InteropServices.InAttribute>または<xref:System.Runtime.InteropServices.OutAttribute>属性とモジュールがエクスポートするときにエラーが発生します。 属性を適用する、`out`パラメーターもエラーが発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReadOnlyArrayAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

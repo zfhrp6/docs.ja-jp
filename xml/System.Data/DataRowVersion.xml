@@ -1,0 +1,158 @@
+<Type Name="DataRowVersion" FullName="System.Data.DataRowVersion">
+  <TypeSignature Language="C#" Value="public enum DataRowVersion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataRowVersion extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRowVersion" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Data.DataRow" /> のバージョンを記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRowVersion>内で見つかった値を取得する場合に値が使用される、<xref:System.Data.DataRow>を使用して<xref:System.Data.DataRow.Item%2A>または<xref:System.Data.DataRow.GetChildRows%2A>の<xref:System.Data.DataRow>オブジェクト。  
+  
+ <xref:System.Data.DataRowVersion>のバージョンに通知する、<xref:System.Data.DataRow>が存在します。 バージョンは、次の状況で変更します。  
+  
+-   呼び出した後、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.BeginEdit%2A>メソッドを値を変更する場合、`Current`と`Proposed`値が使用可能になります。  
+  
+-   呼び出した後、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.CancelEdit%2A>、メソッド、`Proposed`値を削除します。  
+  
+-   呼び出した後、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.EndEdit%2A>メソッド、提案済みの値になります、`Current`値。  
+  
+-   呼び出した後、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.AcceptChanges%2A>、メソッド、`Original`値値と同じになります、`Current`値。  
+  
+-   呼び出した後、<xref:System.Data.DataTable>オブジェクトの<xref:System.Data.DataTable.AcceptChanges%2A>、メソッド、`Original`値値と同じになります、`Current`値。  
+  
+-   呼び出した後、<xref:System.Data.DataRow>オブジェクトの<xref:System.Data.DataRow.RejectChanges%2A>、メソッド、`Proposed`値は破棄され、バージョンになります`Current`です。  
+  
+   
+  
+## Examples  
+ 次の例のチェック、<xref:System.Data.DataRowVersion>の<xref:System.Data.DataRow>を呼び出す前に、<xref:System.Data.DataRow.AcceptChanges%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData DataRowVersion Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowVersion Example/cs/source.cs#1)]
+ [!code-vb[Classic WebData DataRowVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="Current" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowVersion Current = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowVersion.Current" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行には、現在の値が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowVersion Default = int32(1536)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowVersion.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.DataRowState" /> の既定のバージョン。 <see langword="DataRowState" />値<see langword="Added" />、<see langword="Modified" />または<see langword="Deleted" />、既定のバージョンは<see langword="Current" />します。 <see langword="Detached" /> の <see cref="T:System.Data.DataRowState" /> 値の場合、バージョンは <see langword="Proposed" /> です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Original">
+      <MemberSignature Language="C#" Value="Original" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowVersion Original = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowVersion.Original" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行には、元の値が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Proposed">
+      <MemberSignature Language="C#" Value="Proposed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowVersion Proposed = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowVersion.Proposed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行には、提案値が含まれています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

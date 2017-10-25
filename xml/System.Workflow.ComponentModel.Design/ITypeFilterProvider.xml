@@ -1,0 +1,74 @@
+<Type Name="ITypeFilterProvider" FullName="System.Workflow.ComponentModel.Design.ITypeFilterProvider">
+  <TypeSignature Language="C#" Value="public interface ITypeFilterProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeFilterProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ITypeFilterProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイナーによって表示されるクラス ブラウザー ダイアログ ボックスに表示される型をフィルター処理するためにクラスが使用するメンバーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanFilterType">
+      <MemberSignature Language="C#" Value="public bool CanFilterType (Type type, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanFilterType(class System.Type type, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ITypeFilterProvider.CanFilterType(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">フィルター処理できるかどうかを確認する対象の <see cref="T:System.Type" />。</param>
+        <param name="throwOnError">
+          <see langword="true" /> が処理されたときに例外をスローする場合は <see cref="M:System.Workflow.ComponentModel.Design.ITypeFilterProvider.CanFilterType(System.Type,System.Boolean)" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した型をフィルター処理できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定した型をフィルターできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterDescription">
+      <MemberSignature Language="C#" Value="public string FilterDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilterDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ITypeFilterProvider.FilterDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラス ブラウザー ダイアログ ボックスに表示されるフィルターの説明を取得します。</summary>
+        <value>フィルターの説明を含む文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

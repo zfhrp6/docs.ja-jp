@@ -1,0 +1,230 @@
+<Type Name="ActivityToolboxItem" FullName="System.Workflow.ComponentModel.Design.ActivityToolboxItem">
+  <TypeSignature Language="C#" Value="public class ActivityToolboxItem : System.Drawing.Design.ToolboxItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActivityToolboxItem extends System.Drawing.Design.ToolboxItem" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityToolboxItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.ToolboxItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイナー内のアクティビティに関連付けられるすべてのツールボックス項目の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Activity> クラスに関連付けられるすべてのツールボックス項目は、<xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> から派生します。 このクラスは、デザイン時環境のツールボックスに <xref:System.Workflow.ComponentModel.Activity> クラスをグラフィック表示し、それをユーザーがデザイン サーフェイスにドラッグすると、関連付けられた <xref:System.Workflow.ComponentModel.Activity> クラスのインスタンスを作成します。 アクティビティ ツールボックス項目は通常、デザイン モードのドキュメントで呼び出されると作成されるアクティビティを表します。  
+  
+ このクラスは、<xref:System.Drawing.Design.ToolboxItem> クラスから直接継承します。  
+  
+   
+  
+## Examples  
+ カスタム アクティビティのための完全な <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> クラスの例を次に示します。 この例では、<xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsCore%2A> 内に 2 つのカスタム アクティビティを配置するために、<xref:System.Workflow.Activities.ParallelActivity> メソッドがオーバーライドされます。  
+  
+ [!code-csharp[WF_Samples#70](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#70)]
+ [!code-vb[WF_Samples#70](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#70)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityToolboxItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityToolboxItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> クラスの既定のコンストラクター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityToolboxItem (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">ツールボックス項目が作成する <see cref="T:System.Workflow.ComponentModel.Activity" /> の型。</param>
+        <summary>指定した型の <see cref="T:System.Workflow.ComponentModel.Design.ActivityToolboxItem" /> コンポーネントを作成する <see cref="T:System.Workflow.ComponentModel.Activity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ActivityToolboxItem (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">ツールボックス項目を逆シリアル化するための情報を保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">ツールボックス項目の逆シリアル化コンテキストを提供する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityToolboxItem" /> と <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を使用して、<see cref="T:System.Runtime.Serialization.StreamingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem.%23ctor%2A> を呼び出すと、ツールボックス項目が逆シリアル化されます。  
+  
+   
+  
+## Examples  
+ カスタム アクティビティのための完全な <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> クラスの例を次に示します。 <xref:System.Drawing.Design.ToolboxItem.Deserialize%2A> の新しいインスタンスを初期化するために、コンストラクター内で <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> メソッドが呼び出されます。  
+  
+ [!code-csharp[WF_Samples#70](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#70)]
+ [!code-vb[WF_Samples#70](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponentsCore">
+      <MemberSignature Language="C#" Value="protected override System.ComponentModel.IComponent[] CreateComponentsCore (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ComponentModel.IComponent[] CreateComponentsCore(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">ツールボックス項目をホストする <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
+        <summary>ツールボックス項目が呼び出されたときに、<see cref="T:System.Workflow.ComponentModel.Activity" /> コンポーネントまたは <see cref="T:System.Workflow.ComponentModel.Activity" /> コンポーネントの配列を作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsCore%2A> メソッドは、<xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> が作成したコンポーネントを返します。  
+  
+   
+  
+## Examples  
+ カスタム アクティビティのための完全な <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem> クラスの例を次に示します。 この例では、<xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsCore%2A> 内に 2 つのカスタム アクティビティを挿入するために、<xref:System.Workflow.Activities.ParallelActivity> メソッドがオーバーライドされます。  
+  
+ [!code-csharp[WF_Samples#70](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#70)]
+ [!code-vb[WF_Samples#70](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponentsWithUI">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.IComponent[] CreateComponentsWithUI (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.IComponent[] CreateComponentsWithUI(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsWithUI(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">ツールボックス項目をホストする <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
+        <summary>ツールボックス項目が呼び出されたときに、デザイン サーフェイスにダイアログ ボックスを生成する <see cref="T:System.Workflow.ComponentModel.Activity" /> コンポーネントまたは <see cref="T:System.Workflow.ComponentModel.Activity" /> コンポーネントの配列を作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ デザイナーの開発者は、このメソッドをオーバーライドすることにより、ツールボックス項目がデザイン サーフェイスにドラッグされたときにダイアログ ボックスを表示できます。 オーバーライドされない限り、このメソッドの動作は <xref:System.Workflow.ComponentModel.Design.ActivityToolboxItem.CreateComponentsCore%2A> と同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxDisplayName">
+      <MemberSignature Language="C#" Value="public static string GetToolboxDisplayName (Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetToolboxDisplayName(class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.GetToolboxDisplayName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">表示名を取得する対象の <see cref="T:System.Workflow.ComponentModel.Activity" /> の型。</param>
+        <summary>ツールボックスのツールボックス項目に関連付けられた表示名を取得します。</summary>
+        <returns>ツールボックス項目の表示名を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxImage">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image GetToolboxImage (Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image GetToolboxImage(class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityToolboxItem.GetToolboxImage(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">ツールボックス イメージを取得する対象の <see cref="T:System.Workflow.ComponentModel.Activity" /> の型。</param>
+        <summary>ツールボックスのツールボックス項目の表示に使用される関連イメージを取得します。</summary>
+        <returns>ツールボックスに表示されるツールボックス項目のイメージ オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

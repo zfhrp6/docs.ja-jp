@@ -1,0 +1,689 @@
+<Type Name="HyperLinkField" FullName="System.Web.UI.WebControls.HyperLinkField">
+  <TypeSignature Language="C#" Value="public class HyperLinkField : System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HyperLinkField extends System.Web.UI.WebControls.DataControlField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HyperLinkField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロール内にハイパーリンクとして表示されるフィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField>クラスは、データ バインドされたコントロールによって使用 (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) に表示される各レコードのハイパーリンクを表示します。 ユーザーには、ハイパーリンクがクリックすると、そのユーザーがハイパーリンクに関連付けられている Web ページに送られます。 <xref:System.Web.UI.WebControls.HyperLinkField>が使用されているデータ バインド コントロールに応じて異なる方法でオブジェクトが表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示の制御、<xref:System.Web.UI.WebControls.HyperLinkField>を列としてオブジェクト中に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ ハイパーリンクを表示するキャプションを指定するには、使用、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>プロパティです。 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>ハイパーリンクがクリックされたときに移動する URL を指定するプロパティです。 特定のウィンドウまたはフレームにリンクされたコンテンツを表示する場合は、設定、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>プロパティです。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティで設定されて、すべてのハイパーリンク、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトが同じキャプションおよびナビゲーションの URL を共有します。 同様に、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>プロパティは、すべてのハイパーリンクにも適用されます。  
+  
+ また、バインド、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト データ ソース内のフィールドにします。 内の各ハイパーリンクの異なるキャプションを表示できます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトおよび各ハイパーリンクが別の場所に移動します。 バインドするフィールド、キャプション、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>プロパティです。 ナビゲーションの URL を作成するには、設定、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>コンマ区切りリストへの URL の作成に使用するフィールドのプロパティです。  
+  
+ キャプションおよびナビゲーションの Url のカスタム形式を指定すると、設定して、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>プロパティ、それぞれします。  
+  
+ 非表示にすることができます、<xref:System.Web.UI.WebControls.HyperLinkField>を設定してデータ バインド コントロール内のオブジェクト、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを`false`です。  
+  
+ ヘッダーとフッター セクションでは、をカスタマイズすることができます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 テキストではなく、ヘッダーのセクションでは、イメージを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にすることができます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトを設定して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>個々 のバインドされたフィールドのプロパティです。 またはのヘッダー セクション全体、データ バインド コントロールを非表示に使用、コントロールの`ShowHeader`プロパティ (使用可能な場合)。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField>で静的ハイパーリンクの列を表示するオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。 内の各ハイパーリンク、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトで指定された同じキャプションおよびナビゲーションの URL を共有する、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティ、それぞれします。  
+  
+ [!code-aspx-csharp[HyperLinkField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkField/CS/hyperlinkfieldcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkField/VB/hyperlinkfieldvb.aspx#1)]  
+  
+ 次のコード例では、バインド、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト データ ソース内のフィールドにします。 <xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティを使用してバインドするキャプションおよびナビゲーションの URL、それぞれに表示される各ハイパーリンクのフィールドを指定する、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。  
+  
+ [!code-aspx-csharp[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/CS/hyperlinkfielddatatextformatstringcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/VB/hyperlinkfielddatatextformatstringvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HyperLinkField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HyperLinkField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.HyperLinkField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.HyperLinkField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターを使用して動的に追加する方法を示します、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[HyperLinkFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldCtor/CS/hyperlinkfieldctorcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldCtor/VB/hyperlinkfieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" />-コピーを受信するオブジェクトを派生します。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクトを指定したオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.CopyProperties%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.HyperLinkField>を別のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HyperLinkField" /> クラスの新しいインスタンスを返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.HyperLinkField" /> の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.CreateField%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>の新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.HyperLinkField>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataNavigateUrlFields">
+      <MemberSignature Language="C#" Value="public virtual string[] DataNavigateUrlFields { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] DataNavigateUrlFields" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.DataFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.StringArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内のハイパーリンクの Url を構築するために使用されるデータ ソースから、フィールドの名前を設定、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクト。</summary>
+        <value>データ ソースからのフィールドの名前を格納する配列内のハイパーリンクの Url を構築するために使用、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。 既定値は空の配列、ことを示す<see cref="P:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティのハイパーリンクを作成する組み合わせる必要がある複数のフィールドがデータ ソースに含まれている場合、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 指定されたフィールド、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティは、書式指定文字列の結合、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>プロパティ内のハイパーリンクを構築するために、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。  
+  
+> [!NOTE]
+>  設定すると、 <xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A> 、.aspx ファイル内の宣言型コードを含むプロパティは、フィールド名のコンマ区切りの一覧を使用します。  
+  
+ フィールドに、ハイパーリンクの Url をバインドするこのプロパティを使用する代わりに使用することができます、<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティを静的な値にハイパーリンクの URL を設定します。 このオプションでは、すべてのハイパーリンクは、同じ URL を共有します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataNavigateUrlFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataNavigateUrlFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataNavigateUrlFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する形式を指定する文字列内のハイパーリンクの Url、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクトが表示されます。</summary>
+        <value>これで、形式を指定する文字列内のハイパーリンクの Url、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />レンダリングされます。 既定値は空の文字列 ("")、いる特殊な書式設定には適用されません URL 値を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>内のハイパーリンクの Url のカスタム形式を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>プロパティが設定されていない、ハイパーリンクの Url は、特殊な書式設定を取得できません。  
+  
+> [!NOTE]
+>  書式指定文字列が適用される場合にのみ、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティを設定します。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 たとえば、書式指定文字列で"アイテムの値: {0}"、{0} プレース ホルダーは、フィールドの値に置き換えられます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列にプレース ホルダーが含まれていない場合、データ ソースからのフィールドの値は、最終的な表示テキストには含まれません。  
+  
+ プレース ホルダー、コロンで区切られ、フォームで、中かっこ内にラップの 2 つの部分から成る {`A`:`Bxx`}。 コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのフィールドの値のインデックスを指定します。  
+  
+> [!NOTE]
+>  このパラメーターは、書式指定構文の一部です。 各セルに 1 つだけのフィールドの値があるため、この値は 0 にのみ設定できます。  
+  
+ コロンとコロンの後の値は省略可能です。 コロンの後に文字 (`B`一般的な例で) 値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  書式指定文字が以外の大文字小文字が区別されない`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。 たとえば、"{0: f2}"書式指定文字列は、小数点以下 2 桁の固定小数点数を表示します。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>に表示されるハイパーリンクのナビゲーション Url に適用するカスタム書式を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 指定されたフィールドの値、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>プロパティは、書式指定文字列で指定された Web ページへのクエリ文字列として渡されます。  
+  
+ [!code-aspx-csharp[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/CS/hyperlinkfielddatatextformatstringcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/VB/hyperlinkfielddatatextformatstringvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextField">
+      <MemberSignature Language="C#" Value="public virtual string DataTextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.DataTextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはにハイパーリンクのキャプションを表示するテキストを含むデータ ソースからのフィールドの名前を設定、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクト。</summary>
+        <value>ハイパーリンクのキャプションを表示する値を含むデータ ソースのフィールドの名前、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>内のハイパーリンクのキャプションに表示するテキストを含むフィールドの名前を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。  
+  
+ ハイパーリンクのキャプションをフィールドにバインドするこのプロパティを使用する代わりに使用することができます、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>プロパティを静的な値にハイパーリンクのキャプションを設定します。 このオプションでは、すべてのハイパーリンクは、同じキャプションを共有します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>に表示されるハイパーリンクのキャプションにバインドするデータ ソースからのフィールドを指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。  
+  
+ [!code-aspx-csharp[HyperLinkFieldDataBind#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldDataBind/CS/hyperlinkfielddatabindcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldDataBind#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldDataBind/VB/hyperlinkfielddatabindvb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>に表示されるハイパーリンクのキャプションにバインドされているプロパティの値を書式設定を<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 値が通貨として書式設定します。  
+  
+ [!code-aspx-csharp[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/CS/hyperlinkfielddatatextformatstringcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/VB/hyperlinkfielddatatextformatstringvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTextFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DataTextFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTextFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をハイパーリンクにキャプションの形式を指定する文字列、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクトが表示されます。</summary>
+        <value>内でのハイパーリンクのタイトルの形式を指定する文字列、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />が表示されます。 既定値は空の文字列 ("")、特殊な書式設定を適用しないこと、ハイパーリンクのキャプションに示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>プロパティをカスタムの表示形式で表示されるキャプションを指定する、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>プロパティが設定されていないと、特別な書式なし、フィールドの値が表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列が適用される場合にのみ、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>プロパティを設定します。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 たとえば、書式指定文字列で"項目の値: {0}"、{0} プレース ホルダーに表示されるときに、フィールドの値に置き換えられます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列にプレース ホルダーが含まれていない場合、データ ソースからのフィールドの値は、最終的な表示テキストには含まれません。  
+  
+ プレース ホルダー、コロンで区切られ、フォームで、中かっこ内にラップの 2 つの部分から成る {`A`:`Bxx`}。 コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのフィールドの値のインデックスを指定します。  
+  
+> [!NOTE]
+>  このパラメーターは、書式指定構文の一部です。 各セルに 1 つだけのフィールドの値があるため、この値は 0 にのみ設定できます。  
+  
+ コロンとコロンの後の値は省略可能です。 コロンの後に文字 (`B`一般的な例で) 値を表示する形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  書式指定文字が以外の大文字小文字が区別されない`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。 たとえば、"{0: f2}"書式指定文字列は、小数点以下 2 桁の固定小数点数を表示します。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>に表示されるハイパーリンクのキャプションにバインドされているプロパティの値を書式設定を<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 値が通貨として書式設定します。  
+  
+ [!code-aspx-csharp[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/CS/hyperlinkfielddatatextformatstringcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkFieldDataTextFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkFieldDataTextFormatString/VB/hyperlinkfielddatatextformatstringvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDataNavigateUrlValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatDataNavigateUrlValue (object[] dataUrlValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatDataNavigateUrlValue(object[] dataUrlValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.FormatDataNavigateUrlValue(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataUrlValues" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="dataUrlValues">書式指定文字列と結合する値の配列。</param>
+        <summary>指定された書式指定文字列を使用して、ナビゲーション URL の形式、<see cref="P:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString" />プロパティです。</summary>
+        <returns>書式設定された URL 値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.FormatDataNavigateUrlValue%2A>メソッドは内のハイパーリンクの URL の書式を設定するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトで指定された書式指定文字列を<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFormatString%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDataTextValue">
+      <MemberSignature Language="C#" Value="protected virtual string FormatDataTextValue (object dataTextValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FormatDataTextValue(object dataTextValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.FormatDataTextValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataTextValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataTextValue">フォーマットするテキスト値。</param>
+        <summary>指定された書式指定文字列を使用してキャプション テキストを書式設定、<see cref="P:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString" />プロパティです。</summary>
+        <returns>書式設定されたテキスト値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.FormatDataTextValue%2A>メソッドは内のハイパーリンクのキャプション テキストの書式を設定するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトで指定された書式指定文字列を<xref:System.Web.UI.WebControls.HyperLinkField.DataTextFormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override bool Initialize (bool enableSorting, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Initialize(bool enableSorting, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.Initialize(System.Boolean,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enableSorting" Type="System.Boolean" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="enableSorting">
+          <see langword="true" />並べ替えがサポートされている場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="control">データ コントロールの親として機能する、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。</param>
+        <summary>初期化、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクト。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />のコントロールまたはテキストを格納している、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState">1 つ、<see cref="T:System.Web.UI.WebControls.DataControlRowState" />を含む行の状態を指定する値、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。</param>
+        <param name="rowIndex">テーブル内の行のインデックス。</param>
+        <summary>内のセルの初期化、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.InitializeCell%2A>メソッドを含むデータ バインドされたコントロールによって呼び出されます、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトを初期化するために、<xref:System.Web.UI.WebControls.HyperLink>コントロールのテキストとリンクの URL を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public virtual string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定すると、ハイパーリンクで移動する URL、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクトをクリックします。</summary>
+        <value>移動するときのハイパーリンクの URL、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />をクリックします。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>に移動するときのハイパーリンクの URL を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトをクリックします。 このプロパティが設定されている場合、すべてのハイパーリンクは、同じナビゲーション URL を共有します。  
+  
+ ハイパーリンクの URL を設定するこのプロパティを使用する代わりに使用することができます、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>ハイパーリンクの Url をデータ ソースのフィールドにバインドするプロパティです。 これにより、ハイパーリンクごとに異なる URL にすることができます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.HyperLinkField.DataNavigateUrlFields%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.NavigateUrl%2A>プロパティを静的な Web ページに移動するときのハイパーリンクを指定する、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトをクリックします。  
+  
+ [!code-aspx-csharp[HyperLinkField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkField/CS/hyperlinkfieldcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkField/VB/hyperlinkfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public virtual string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.TargetConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定対象のウィンドウまたはフレームを表示するために、Web ページとリンクし内のハイパーリンク、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクトをクリックします。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HyperLinkField" /> のハイパーリンクがクリックされたときに、リンク先の Web ページを読み込むウィンドウまたはフレーム。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>ウィンドウまたは Web コンテンツを表示するフレームを指定するプロパティは、そのハイパーリンクがクリックされたときに、ハイパーリンクにリンクします。  
+  
+ 値は、範囲の A ~ Z (大文字)、次の表に示す特殊な値を除く、アンダー スコアで始まるそれぞれの文字で始まる必要があります。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  決定する、ブラウザーのマニュアルを確認するかどうか、`_search`値はサポートされています。 たとえば、Microsoft Internet Explorer 5.0 およびそれ以降のバージョン サポート、`_search`ターゲット値。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>としてプロパティが表示される、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>プロパティ場合に表示される出力、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクトは、XHTML 1.1 に準拠したをする必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.Target%2A>内のハイパーリンクに関連付けられている Web ページの内容を表示する対象のウィンドウを指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 リンクされた Web ページは、ハイパーリンクがクリックされたときに、新しいウィンドウに表示されます。  
+  
+ [!code-aspx-csharp[HyperLinkField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkField/CS/hyperlinkfieldcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkField/VB/hyperlinkfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLinkField.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の各ハイパーリンクを表示するテキスト、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />オブジェクト。</summary>
+        <value>内の各ハイパーリンクを表示するテキスト、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>内のハイパーリンクを表示するキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。 このプロパティが設定されている場合、すべてのハイパーリンクは、同じキャプションを共有します。  
+  
+ ハイパーリンクのキャプションを設定するこのプロパティを使用する代わりに使用することができます、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>ハイパーリンク キャプションをデータ ソースのフィールドにバインドするプロパティです。 これにより、ハイパーリンクごとに異なるキャプションを表示できます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>と<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.HyperLinkField.DataTextField%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HyperLinkField.Text%2A>内のハイパーリンクを表示する静的なキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>オブジェクト。  
+  
+ [!code-aspx-csharp[HyperLinkField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HyperLinkField/CS/hyperlinkfieldcs.aspx#1)]
+ [!code-aspx-vb[HyperLinkField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HyperLinkField/VB/hyperlinkfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLinkField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって、コントロールが含まれていることを示す、<see cref="T:System.Web.UI.WebControls.HyperLinkField" />サポート コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLinkField.ValidateSupportsCallback%2A>メソッドは、既定値をオーバーライド<xref:System.Web.UI.WebControls.DataControlField.ValidateSupportsCallback%2A?displayProperty=nameWithType>メソッドにコントロールが含まれていることを示すために、<xref:System.Web.UI.WebControls.HyperLinkField>サポート コールバック オブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

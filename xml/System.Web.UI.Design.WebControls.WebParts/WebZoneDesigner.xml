@@ -1,0 +1,70 @@
+<Type Name="WebZoneDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner">
+  <TypeSignature Language="C#" Value="public abstract class WebZoneDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebZoneDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時ビジュアル サポートを提供<see cref="T:System.Web.UI.WebControls.WebParts.WebZone" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner>クラスは両方の抽象基本クラス<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner>と<xref:System.Web.UI.Design.WebControls.WebParts.ToolZoneDesigner>、ゾーンに関するその他のすべてのデザイナーをから継承します。 直接継承することによって<xref:System.Web.UI.Design.ControlDesigner>の代わりに<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>、ことができますの実装、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドを自動的にオフにしないでください、<xref:System.Web.UI.Control.Controls%2A>コレクション、子コントロールからの例外を表示するためにデザイナーが有効にします。  
+  
+ この名前空間の他のデザイナーと同様に<xref:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner>よりも優先、<xref:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner.UsePreviewControl%2A>を常に返すプロパティ`true`です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner" />クラスに直接の外部から継承できないように、パブリック コンス トラクターがない、<see cref="N:System.Web.UI.Design.WebControls.WebParts" />名前空間。 代わりに、<see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" /> または <see cref="T:System.Web.UI.Design.WebControls.WebParts.ToolZoneDesigner" /> を使用します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.WebZone" />デザイナーに関連付けられているコントロール。</param>
+        <summary>デザイナーに関連付けられているバインドのインスタンスを作成<see cref="T:System.Web.UI.WebControls.WebParts.WebZone" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.WebZoneDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するときに、デザイナーに関連付けられた実際のコントロールではなく、一時的なコピーをデザイナーで使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

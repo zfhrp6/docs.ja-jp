@@ -1,0 +1,92 @@
+<Type Name="WebUser" FullName="Microsoft.VisualBasic.ApplicationServices.WebUser">
+  <TypeSignature Language="C#" Value="public class WebUser : Microsoft.VisualBasic.ApplicationServices.User" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WebUser extends Microsoft.VisualBasic.ApplicationServices.User" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.WebUser" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.VisualBasic.ApplicationServices.User</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のユーザーに関する情報へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとメソッドによって公開されている、`My.User`オブジェクトが現在のユーザーに関する情報へのアクセスを提供します。 「現在のユーザー」の意味は、Windows アプリケーションと Web アプリケーション間で若干異なります。 Windows アプリケーションでは、現在のユーザーは、アプリケーションを実行しているユーザーがします。 Web アプリケーションでは、現在のユーザーは、アプリケーションにアクセスするユーザーがします。  
+  
+ `My.User`プロパティへのアクセスも用意されています。、 <xref:System.Security.Principal.IPrincipal> 、現在のユーザーです。 プリンシパルのオブジェクトでは、そのユーザーの id や、ユーザーが所属するロールを含め、ユーザーのセキュリティ コンテキストを表します。  
+  
+ このプロパティは、Windows アプリケーションのと同じ機能を提供、<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティです。 このプロパティは、Web アプリケーションのと同じ機能を提供、<xref:System.Web.HttpContext.User%2A>によって返されるオブジェクトのプロパティ、<xref:System.Web.HttpContext.Current%2A>プロパティです。  
+  
+> [!NOTE]
+>  Windows アプリケーション ビルドされたプロジェクトのみ、 **Windows アプリケーション**テンプレート初期化、`My.User`既定ではオブジェクトです。 他の Windows のプロジェクト タイプで初期化する必要があります、`My.User`オブジェクトを呼び出して、<xref:Microsoft.VisualBasic.ApplicationServices.User.InitializeWithWindowsUser%2A>メソッドに値を割り当てることによって、明示的に<xref:System.Threading.Thread.CurrentPrincipal%2A>です。  
+  
+> [!NOTE]
+>  `My.User`オブジェクトは、これらのオペレーティング システムでは、ログオン ユーザーの概念をサポートしていないため Windows 95 および Windows 98 で実行する場合、現在の Windows ユーザーに関する情報を報告できません。 使用するカスタム認証を実装する必要があります、`My.User`これらのオペレーティング システム上のオブジェクト。  
+  
+   
+  
+## Examples  
+ この例で、アプリケーションが Windows 認証またはカスタムの認証に使用されていると、その情報を使用して解析かどうかを確認、`My.User.Name`プロパティです。  
+  
+ [!code-vb[VbVbalrMyUser#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WebUser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.WebUser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとメソッドによって公開されている、`My.User`オブジェクトが現在のユーザーに関する情報へのアクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalPrincipal">
+      <MemberSignature Language="C#" Value="protected override System.Security.Principal.IPrincipal InternalPrincipal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal InternalPrincipal" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WebUser.InternalPrincipal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のユーザーを表すプリンシパル オブジェクトを設定します。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" />現在のユーザーを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WebUser>オブジェクトのプロパティをラップ、<xref:System.Web.HttpContext.User%2A>のプロパティ、<xref:System.Web.HttpContext.Current%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 詳細についてを参照してください、<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

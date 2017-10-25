@@ -1,0 +1,219 @@
+<Type Name="PrintQueueException" FullName="System.Printing.PrintQueueException">
+  <TypeSignature Language="C#" Value="public class PrintQueueException : System.Printing.PrintSystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PrintQueueException extends System.Printing.PrintSystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintQueueException" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintSystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エラーが発生の防止にアクセスする場合にスローされる例外またはの作成、<see cref="T:System.Printing.PrintQueue" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintQueueException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />固有のエラー条件を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PrintQueueException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクトを逆シリアル化または逆シリアル化する必要があるデータ。</param>
+        <param name="context">ソースおよびデスティネーションをシリアル化ストリームを含むコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />特定を提供するクラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />です。 このコンス トラクターは保護されています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="innerException">条件を基になるエラーの原因となった、<see cref="T:System.Printing.PrintQueueException" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />例外の基になるなど、特定のエラー条件を提供するクラスが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException (int errorCode, string message, string printerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, string printerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.Int32,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="printerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="printerName">エラーが発生したときにアクセスされていたプリンターの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />固有のエラー コード、エラー状態、およびプリンター名を提供するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException (int errorCode, string message, string printerName, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, string printerName, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.Int32,System.String,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="printerName" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="printerName">エラーが発生したときにアクセスされていたプリンターの名前。</param>
+        <param name="innerException">条件を基になるエラーの原因となった、<see cref="T:System.Printing.PrintQueueException" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />名、エラー コードとエラー状態で、基になるなど、特定のプリンターを提供するクラスは、例外の原因です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintQueueException (int errorCode, string message, string printerName, string printerMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, string printerName, string printerMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.#ctor(System.Int32,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="printerName" Type="System.String" />
+        <Parameter Name="printerMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="printerName">エラーが発生したときにアクセスされていたプリンターの名前。</param>
+        <param name="printerMessage">プリンタ ドライバまたは例外を発生させたアンマネージの印刷システム コンポーネントによって送信された例外メッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintQueueException" />固有のエラー コード、エラー条件、プリンター名、およびプリンターのメッセージを提供するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintQueueException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクトを逆シリアル化または逆シリアル化する必要があるデータ。</param>
+        <param name="context">ソースおよびデスティネーションをシリアル化ストリームを含むコンテキスト。</param>
+        <summary>オブジェクトをシリアル化に使用され、シリアル化ストリームのコンテキストを取得するデータを取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterName">
+      <MemberSignature Language="C#" Value="public string PrinterName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PrinterName" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintQueueException.PrinterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外がスローされたときにアクセスされていたプリンターの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />プリンターの名前を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

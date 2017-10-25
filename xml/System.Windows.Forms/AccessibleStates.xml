@@ -1,0 +1,592 @@
+<Type Name="AccessibleStates" FullName="System.Windows.Forms.AccessibleStates">
+  <TypeSignature Language="C#" Value="public enum AccessibleStates" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessibleStates extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleStates" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助オブジェクトの状態を表す値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー補助オブジェクトは、1 つ以上のこれらの状態を関連付けることができます。  
+  
+ ユーザー補助アプリケーションの詳細については、"Microsoft Active Accessibility"http://msdn.microsoft.com/library で Microsoft Developer Network (MSDN) ライブラリを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例がに基づいて、実際のコントロールではないため<xref:System.Windows.Forms.Control>、代わりに描画されるが、グラフ コントロールによってがない、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.AccessibleStates>列挙が、<xref:System.Windows.Forms.AccessibleObject.State%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#4)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#4)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlertHigh">
+      <MemberSignature Language="C#" Value="AlertHigh" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates AlertHigh = int32(268435456)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.AlertHigh" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重要な情報がユーザーにすぐに伝える必要があります。 たとえば、重要な低レベルに達するバッテリ レベル インジケーターはこの状態は、この場合は、視覚障碍のあるアクセス ユーティリティへの移行はというアナウンスが、ユーザーにすぐにこの情報をバッテリのインジケーターがビューに表示できるように、画面の拡大率プログラムは、画面をスクロールとです。 この状態は、プロンプトまたはユーザーが続行する前に完了する必要がありますのある操作について適切なもできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AlertLow">
+      <MemberSignature Language="C#" Value="AlertLow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates AlertLow = int32(67108864)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.AlertLow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>優先度の低いについては、ユーザーにとって重要でない可能性があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AlertMedium">
+      <MemberSignature Language="C#" Value="AlertMedium" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates AlertMedium = int32(134217728)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.AlertMedium" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重要な情報がユーザーに即座に伝える必要はありません。 たとえば、バッテリ低下レベル インジケーターは、低レベルに達すると中レベルの警告を発します。 ブラインド アクセス ユーティリティし、ユーザーに重要な情報が利用可能な実際には、ユーザーの作業を中断せずに通知するサウンドを生成します。 ユーザー クエリ、アラート情報をいつでも好きなを実行できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Animated">
+      <MemberSignature Language="C#" Value="Animated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Animated = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Animated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>迅速にまたは継続的には、外観を変更するオブジェクト。 グラフィックス、アニメーション化でときどきが常にではありませんとして定義すべき<see cref="F:System.Windows.Forms.AccessibleRole.Graphic" /> <see langword="OR" /><see langword="Animated" />です。 この状態は、オブジェクトの場所を変更することを示すためには使用できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Busy">
+      <MemberSignature Language="C#" Value="Busy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Busy = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Busy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の状態の入力を受け付けることはできませんコントロールです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="Checked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Checked = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Checked" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェック ボックスがオンのオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapsed">
+      <MemberSignature Language="C#" Value="Collapsed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Collapsed = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Collapsed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウトラインまたはツリー構造内の項目は、非表示オブジェクトの子です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Default = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のボタンまたはメニュー項目。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="Expanded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Expanded = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Expanded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウトラインまたはツリー構造内の項目で、表示されている子オブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtSelectable">
+      <MemberSignature Language="C#" Value="ExtSelectable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates ExtSelectable = int32(33554432)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.ExtSelectable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更された選択範囲のすべてのオブジェクトの選択アンカー、キーボード フォーカスを持つオブジェクトである、このオブジェクトとの間など、アンカー オブジェクトの選択状態です。 アンカー オブジェクトが選択されていない場合、オブジェクトの選択項目から削除されます。 アンカー オブジェクトが選択されている場合など、このオブジェクトのすべてのオブジェクト間に、選択範囲が拡張されます。 選択状態を設定するには、これを組み合わせることによって<see cref="F:System.Windows.Forms.AccessibleSelection.AddSelection" />または<see cref="F:System.Windows.Forms.AccessibleSelection.RemoveSelection" />です。 この状態が変化しないフォーカスや選択範囲のアンカーと結合されている場合を除き、<see cref="F:System.Windows.Forms.AccessibleSelection.TakeFocus" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Floating">
+      <MemberSignature Language="C#" Value="Floating" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Floating = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Floating" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その親オブジェクトの境界に固定されず、しを移動しません自動的に親と共にオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Focusable">
+      <MemberSignature Language="C#" Value="Focusable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Focusable = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Focusable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボード フォーカスを受け取ることができるアクティブなウィンドウのオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Focused">
+      <MemberSignature Language="C#" Value="Focused" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Focused = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Focused" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーボード フォーカスを持つオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPopup">
+      <MemberSignature Language="C#" Value="HasPopup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates HasPopup = int32(1073741824)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.HasPopup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトには、ポップアップ メニューまたは呼び出されたときにウィンドウが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HotTracked">
+      <MemberSignature Language="C#" Value="HotTracked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates HotTracked = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.HotTracked" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスの外観は、マウス ポインターを示すために強調表示されます。 つまり、マウスでオブジェクトが、上に存在します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Indeterminate">
+      <MemberSignature Language="C#" Value="Indeterminate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Indeterminate = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Indeterminate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 つの状態のチェック ボックスまたはツール バー ボタンの状態が不定になります。 チェック ボックスがオンでもオンになっていないと、3 番目または混合状態にあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invisible">
+      <MemberSignature Language="C#" Value="Invisible" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Invisible = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Invisible" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるユーザー インターフェイスを持たないオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Linked">
+      <MemberSignature Language="C#" Value="Linked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Linked = int32(4194304)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Linked" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前選択されていないリンクされたオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Marqueed">
+      <MemberSignature Language="C#" Value="Marqueed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Marqueed = int32(8192)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Marqueed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールまたはテキストやグラフィックを移動を持つオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Mixed">
+      <MemberSignature Language="C#" Value="Mixed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Mixed = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Mixed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 つの状態のチェック ボックスまたはツール バー ボタンの状態が不定になります。 チェック ボックスがオンでもオンになっていないと、3 番目または混合状態にあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Moveable">
+      <MemberSignature Language="C#" Value="Moveable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Moveable = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Moveable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動可能なオブジェクトです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiSelectable">
+      <MemberSignature Language="C#" Value="MultiSelectable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates MultiSelectable = int32(16777216)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.MultiSelectable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数選択した項目を受け取るオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Offscreen">
+      <MemberSignature Language="C#" Value="Offscreen" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Offscreen = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Offscreen" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いいえ画面に表示される形式です。 サウンドや警告のオブジェクトでは、この状態は、または非表示のウィンドウがないため表示されている必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pressed">
+      <MemberSignature Language="C#" Value="Pressed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Pressed = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Pressed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>押された状態オブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Protected">
+      <MemberSignature Language="C#" Value="Protected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Protected = int32(536870912)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Protected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードで保護されたコントロールを編集します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates ReadOnly = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用オブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Selectable">
+      <MemberSignature Language="C#" Value="Selectable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Selectable = int32(2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Selectable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択範囲を受け取ることができるオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="Selected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Selected = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Selected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択されたオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfVoicing">
+      <MemberSignature Language="C#" Value="SelfVoicing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates SelfVoicing = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.SelfVoicing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトまたは子は、自己記述音声合成 (TTS) を使用できます。 音声ベースのユーザー補助機能する必要がありますはアナウンスについてはこの状態を持つオブジェクトのフォーカス時に、オブジェクトがそれ自体に関する情報を自動的に通知するためです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sizeable">
+      <MemberSignature Language="C#" Value="Sizeable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Sizeable = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Sizeable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かなりの数のオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Traversed">
+      <MemberSignature Language="C#" Value="Traversed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Traversed = int32(8388608)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Traversed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>あらかじめ選択されているリンクされたオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unavailable">
+      <MemberSignature Language="C#" Value="Unavailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Unavailable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Unavailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用できなくなったオブジェクトです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Valid">
+      <MemberSignature Language="C#" Value="Valid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleStates Valid = int32(1073741823)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleStates.Valid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This enumeration value has been deprecated. There is no replacement. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効なオブジェクトです。 このプロパティは非推奨[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

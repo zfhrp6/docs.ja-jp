@@ -1,0 +1,1158 @@
+<Type Name="ToolboxItem" FullName="System.Drawing.Design.ToolboxItem">
+  <TypeSignature Language="C#" Value="public class ToolboxItem : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ToolboxItem extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ツールボックス項目の基本の実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem>デザイン時環境のツールボックスに表示できるツールボックス アイテムの基本クラスです。 ツールボックス項目は、通常、デザイン モードのドキュメントで呼び出されたときに作成するコンポーネントを表します。 <xref:System.Drawing.Design.ToolboxItem>クラスには、メソッドと、コンポーネント、または使用すると、コンポーネントを作成およびおよびツールボックスのデータベース内で永続化自体を逆シリアル化する、ツールボックス項目の表示プロパティに、ツールボックスを提供するために必要なプロパティが用意されています。  
+  
+ インスタンス、<xref:System.Drawing.Design.ToolboxItem>から派生するクラスを作成することがなく、名前、ビットマップを作成する型とクラスを構成できます<xref:System.Drawing.Design.ToolboxItem>です。 <xref:System.Drawing.Design.ToolboxItem>クラスも基本クラスのカスタム ツールボックス項目は実装を提供します。 カスタム<xref:System.Drawing.Design.ToolboxItem>複数のコンポーネントを作成できます。 カスタム ツールボックス項目を実装するのから派生する必要があります<xref:System.Drawing.Design.ToolboxItem>をオーバーライドし、 <xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>、 <xref:System.Drawing.Design.ToolboxItem.Serialize%2A>、および<xref:System.Drawing.Design.ToolboxItem.Deserialize%2A>メソッドです。  
+  
+ 次のプロパティとメソッドを構成する必要があります、<xref:System.Drawing.Design.ToolboxItem>正常に機能します。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>プロパティは、ツールボックスに表示されるときに、ツールボックス項目のラベルを指定します。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.TypeName%2A>プロパティ、項目を作成するコンポーネントの型の完全修飾名を指定します。 派生クラスは、複数のコンポーネントを作成する場合、<xref:System.Drawing.Design.ToolboxItem.TypeName%2A>プロパティかは使用できません、かどうかを条件、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドのオーバーライドは、このプロパティの値によって異なります。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.AssemblyName%2A>プロパティが、項目を作成するコンポーネントの種類を格納するアセンブリを指定します。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Bitmap%2A>プロパティが必要に応じて、ツールボックスのツールボックス項目の表示名の横に表示するビットマップ イメージを指定します。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Filter%2A>プロパティが必要に応じていずれかを含む<xref:System.ComponentModel.ToolboxItemFilterAttribute>ツールボックス項目を特定のコンポーネントで使用できるかどうかを決定するオブジェクト。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドは、このツールを使用する場所を挿入する 1 つ以上のコンポーネント インスタンスを返します。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Serialize%2A>メソッドを指定したツールボックス項目を保存する<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Deserialize%2A>メソッドは、状態の情報から、指定したツールボックス項目、構成<xref:System.Runtime.Serialization.SerializationInfo>です。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Initialize%2A>場合メソッドは、コンポーネントの指定した型を作成するツールボックス項目、構成、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>動作を変更するメソッドがオーバーライドされていません。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Locked%2A>プロパティは、ツールボックス項目のプロパティを変更できるかどうかを示します。 ツールボックスに追加された後、ツールボックス項目は通常ロックされています。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.Lock%2A>メソッドは、ツールボックス項目をロックします。  
+  
+-   <xref:System.Drawing.Design.ToolboxItem.CheckUnlocked%2A>場合、メソッドが例外をスロー、<xref:System.Drawing.Design.ToolboxItem.Locked%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するコンポーネントを提供する、<xref:System.Drawing.Design.IToolboxService>テキスト データ形式ハンドラーを追加するインターフェイスまたは<xref:System.Drawing.Design.ToolboxItemCreatorCallback>ツールボックスにします。 データの作成者のコールバック デリゲートをツールボックスに貼り付けられ、カスタム フォームにドラッグしたテキスト データを渡します<xref:System.Drawing.Design.ToolboxItem>を作成する、<xref:System.Windows.Forms.TextBox>テキストを含むです。  
+  
+ [!code-cpp[ToolboxCreatorCallbackSample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/CPP/textdatatextboxcomponent.cpp#1)]
+ [!code-csharp[ToolboxCreatorCallbackSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/CS/textdatatextboxcomponent.cs#1)]
+ [!code-vb[ToolboxCreatorCallbackSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/VB/textdatatextboxcomponent.vb#1)]  
+  
+ 使用を次のコード例に示します、<xref:System.Drawing.Design.ToolboxItem>カスタム ツールボックス項目の実装の基本クラスとしてのクラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Drawing.Design.ToolboxItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Drawing.Design.ToolboxItem.%23ctor%2A>から派生したクラスでコンス トラクター<xref:System.Drawing.Design.ToolboxItem>カスタム ツールボックス項目の実装です。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.ToolboxItem>クラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#3)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Design.ToolboxItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Drawing.Design.ToolboxItem.%23ctor%2A>から派生したクラスでコンス トラクター<xref:System.Drawing.Design.ToolboxItem>カスタム ツールボックス項目の実装です。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.ToolboxItem>クラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#3)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItem (Type toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="toolType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">型<see cref="T:System.ComponentModel.IComponent" />ツールボックス項目を作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItem" />コンポーネントの指定した型を作成するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Drawing.Design.ToolboxItem.%23ctor%2A>から派生したクラスでコンス トラクター<xref:System.Drawing.Design.ToolboxItem>カスタム ツールボックス項目の実装です。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.ToolboxItem>クラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#3)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Drawing.Design.ToolboxItem" />ロックされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public System.Reflection.AssemblyName AssemblyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.AssemblyName AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.AssemblyName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目が作成する型が含まれるアセンブリの名前を取得または設定します。</summary>
+        <value><see cref="T:System.Reflection.AssemblyName" />を作成するには、型または型を含むアセンブリを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.AssemblyName%2A>プロパティを作成するコンポーネントの種類を含むアセンブリを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生ツールボックス項目クラスでは、異なるアセンブリに格納されている複数のコンポーネントを作成する場合は、これらのアセンブリへの参照がプロジェクトに存在していることを確認する必要があります。 オーバー ロードからこれらの参照を追加することをお勧め、<see cref="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />メソッドです。 場合でも、<see cref="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />メソッドがの値に依存しない、<see cref="P:System.Drawing.Design.ToolboxItem.AssemblyName" />プロパティに表示されるためを作成するコンポーネントの 1 つが所属するアセンブリにこのプロパティが設定されるようにする必要があります、**ツールボックスのカスタマイズ**  ダイアログ ボックスで[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Bitmap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Bitmap Bitmap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Bitmap Bitmap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Bitmap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Bitmap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックスでツールボックス項目を表すビットマップを取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Bitmap" />ツールボックスのツールボックス項目を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckUnlocked">
+      <MemberSignature Language="C#" Value="protected void CheckUnlocked ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckUnlocked() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CheckUnlocked" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス項目が現在ロックされている場合は、例外がスローされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.CheckUnlocked%2A>メソッドがスローされます、<xref:System.InvalidOperationException>場合、<xref:System.Drawing.Design.ToolboxItem.Locked%2A>のプロパティ、<xref:System.Drawing.Design.ToolboxItem>に設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Drawing.Design.ToolboxItem" />はロックされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Company">
+      <MemberSignature Language="C#" Value="public string Company { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Company" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Company" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この会社の名前を取得または<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <value>A<see cref="T:System.String" />このポータルを指定する<see cref="T:System.Drawing.Design.ToolboxItem" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentsCreated">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Design.ToolboxComponentsCreatedEventHandler ComponentsCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Design.ToolboxComponentsCreatedEventHandler ComponentsCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Design.ToolboxItem.ComponentsCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxComponentsCreatedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントが作成された直後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ComponentsCreated>イベントはこのツールボックスのコンポーネントが作成されるたびに発生します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentsCreating">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Design.ToolboxComponentsCreatingEventHandler ComponentsCreating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Design.ToolboxComponentsCreatingEventHandler ComponentsCreating" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Design.ToolboxItem.ComponentsCreating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxComponentsCreatingEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントが作成されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ComponentsCreating>イベントは、ツールボックスのコンポーネントが作成されるたびに発生します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentType">
+      <MemberSignature Language="C#" Value="public virtual string ComponentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ComponentType" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.ComponentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコンポーネントの種類を取得<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <value>A<see cref="T:System.String" />このコンポーネントの種類を指定する<see cref="T:System.Drawing.Design.ToolboxItem" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponents">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent[] CreateComponents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.IComponent[] CreateComponents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CreateComponents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス項目で作成するように設定されているコンポーネントを作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.CreateComponents%2A>メソッドの呼び出し、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>型の配列を取得する方法を<xref:System.ComponentModel.IComponent>を作成するコンポーネントを含むです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponents">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent[] CreateComponents (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.IComponent[] CreateComponents(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CreateComponents(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コンポーネントを作成するときに使用します。</param>
+        <summary>指定したデザイナー ホストを使用して、ツールボックス項目で作成するように設定されているコンポーネントを作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.CreateComponents%2A>メソッドの呼び出し、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>型の配列を取得する方法を<xref:System.ComponentModel.IComponent>を作成するコンポーネントを含むです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponents">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent[] CreateComponents (System.ComponentModel.Design.IDesignerHost host, System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.IComponent[] CreateComponents(class System.ComponentModel.Design.IDesignerHost host, class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CreateComponents(System.ComponentModel.Design.IDesignerHost,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コンポーネントを作成するときに使用します。</param>
+        <param name="defaultValues">コンポーネントの初期化に使用するプロパティ名/値ペアの既定値のディクショナリ。</param>
+        <summary>指定したデザイナー ホストおよび既定値を使用して、ツールボックス項目で作成するように設定されているコンポーネントを作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.CreateComponents%2A>メソッドの呼び出し、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>型の配列を取得する方法を<xref:System.ComponentModel.IComponent>を作成するコンポーネントを含むです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponentsCore">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.IComponent[] CreateComponentsCore (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.IComponent[] CreateComponentsCore(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">ツールボックス項目をホストする <see cref="T:System.ComponentModel.Design.IDesignerHost" />。</param>
+        <summary>ツールボックス項目が呼び出されたときに、コンポーネントまたはコンポーネントの配列を作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`host`は`null`、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドは、デザイナーに新しいコンポーネントを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />ツールボックス項目を作成するコンポーネントを返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponentsCore">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.IComponent[] CreateComponentsCore (System.ComponentModel.Design.IDesignerHost host, System.Collections.IDictionary defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.IComponent[] CreateComponentsCore(class System.ComponentModel.Design.IDesignerHost host, class System.Collections.IDictionary defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="defaultValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="host">コンポーネントの作成時に使用するデザイナー ホスト。</param>
+        <param name="defaultValues">コンポーネントの初期化に使用するプロパティ名/値ペアの既定値のディクショナリ。</param>
+        <summary>ツールボックス項目が呼び出されたときに、コンポーネントの配列を作成します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`host`は`null`、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドは、デザイナーに新しいコンポーネントを追加します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>から派生したクラスのメソッド<xref:System.Drawing.Design.ToolboxItem>カスタム ツールボックス項目の実装です。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.ToolboxItem>クラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#5)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependentAssemblies">
+      <MemberSignature Language="C#" Value="public System.Reflection.AssemblyName[] DependentAssemblies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.AssemblyName[] DependentAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.DependentAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.AssemblyName[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Reflection.AssemblyName" />ツールボックス項目の。</summary>
+        <value><see cref="T:System.Reflection.AssemblyName" /> オブジェクトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリ名では、ツールボックス項目の型の読み込みに必要なアセンブリ情報について説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この説明取得または設定<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <value>A<see cref="T:System.String" />この説明を示す<see cref="T:System.Drawing.Design.ToolboxItem" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="protected virtual void Deserialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Deserialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />から読み込めません。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ストリーム特性を示すです。</param>
+        <summary>指定したシリアル化情報オブジェクトから、このツールボックス項目の状態を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、指定したシリアル化情報オブジェクトからツールボックス項目の状態を読み込む方法を示しています。 このコード例に示されている例の一部である、<xref:System.Drawing.Design.ToolboxItem>クラスです。  
+  
+ [!code-csharp[System.Drawing.Design.ToolboxItem#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/CS/Form1.cs#4)]
+ [!code-vb[System.Drawing.Design.ToolboxItem#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Design.ToolboxItem/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Drawing.Design.ToolboxItem.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />と<see cref="M:System.Drawing.Design.ToolboxItem.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />から派生したクラスのメソッドを実装する必要があります<see cref="T:System.Drawing.Design.ToolboxItem" />一部開発環境で提供されるツールボックス データベースで永続化をサポートするためにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目の表示名を取得または設定します。</summary>
+        <value>ツールボックス項目の表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>プロパティは、ツールボックスのツールボックス項目に対して表示される文字列を示します。  
+  
+ 既定では、基本<xref:System.Drawing.Design.ToolboxItem>クラスのセットをその<xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>プロパティで指定された完全修飾型名の短い形式を<xref:System.Drawing.Design.ToolboxItem.TypeName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Drawing.Design.ToolboxItem" /> と比較する <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <summary>2 つの <see cref="T:System.Drawing.Design.ToolboxItem" /> インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Drawing.Design.ToolboxItem" /> と等しい場合は <see cref="T:System.Drawing.Design.ToolboxItem" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目が対象のコンポーネントで使用できるかどうかを決定するフィルターを取得または設定します。</summary>
+        <value><see cref="T:System.ComponentModel.ToolboxItemFilterAttribute" /> オブジェクトの <see cref="T:System.Collections.ICollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.Filter%2A>プロパティのコレクションを含む<xref:System.ComponentModel.ToolboxItemFilterAttribute>デザイン時環境を使用して、ツールボックス項目を変換先コンポーネントで使用できるかどうかを決定するポリシーを指定するオブジェクト。  
+  
+ これで、スコープを制限することの詳細については、<xref:System.Drawing.Design.ToolboxItem>使用できる、ドキュメントを参照して、<xref:System.ComponentModel.ToolboxItemFilterAttribute>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterPropertyValue">
+      <MemberSignature Language="C#" Value="protected virtual object FilterPropertyValue (string propertyName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object FilterPropertyValue(string propertyName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.FilterPropertyValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">フィルター処理の対象となるプロパティの名前。</param>
+        <param name="value">プロパティのフィルター処理に使用する値。</param>
+        <summary>プロパティ値を返す前に、フィルター処理をします。</summary>
+        <returns>フィルター処理済みのプロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.FilterPropertyValue%2A>メソッドは、常に、値を複製するプロパティを有効にまたはが存在するがない場合は、既定値を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Drawing.Design.ToolboxItem" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetType(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.GetType(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">クエリの実行に、デザイナー ホスト<see cref="T:System.ComponentModel.Design.ITypeResolutionService" />です。</param>
+        <summary>ツールボックス項目に関連付けられた型にアクセスできるようにします。</summary>
+        <returns>ツールボックス項目に関連付けられた型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装にアクセスする、デザイナー ホストが使用される、<xref:System.ComponentModel.Design.ITypeResolutionService>インターフェイスです。 ただし、読み込まれた型は、デザイナー ホストでの参照の一覧には追加されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="protected virtual Type GetType (System.ComponentModel.Design.IDesignerHost host, System.Reflection.AssemblyName assemblyName, string typeName, bool reference);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type GetType(class System.ComponentModel.Design.IDesignerHost host, class System.Reflection.AssemblyName assemblyName, string typeName, bool reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.GetType(System.ComponentModel.Design.IDesignerHost,System.Reflection.AssemblyName,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="reference" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />現在のドキュメントです。 これは、<see langword="null" />です。</param>
+        <param name="assemblyName"><see cref="T:System.Reflection.AssemblyName" />をロードする型を含むアセンブリを示すです。 これは、<see langword="null" />です。</param>
+        <param name="typeName">インスタンスを作成する型の名前。</param>
+        <param name="reference">デザイナー ホストの参照のセットに、指定した型を含むアセンブリへの参照を追加するかどうかを示す値。</param>
+        <summary>指定した型のインスタンスを作成します。オプションで、指定したデザイナー ホストとアセンブリの名前を使用します。</summary>
+        <returns>指定した型が見つかった場合は、その型のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" />指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.Initialize(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />ツールボックス項目を作成します。</param>
+        <summary>作成する型を指定して、現在のツールボックス項目を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.Initialize%2A>場合メソッドは、指定された型を作成するツールボックス項目、構成、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>動作を変更するメソッドがオーバーライドされていません。  
+  
+ このメソッドは、次の操作を実行します。  
+  
+-   セット、<xref:System.Drawing.Design.ToolboxItem.AssemblyName%2A>プロパティを<xref:System.Reflection.AssemblyName>を示す、指定した型のアセンブリ。  
+  
+-   セット、<xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>プロパティを指定した型の名前に基づく short 型名。  
+  
+-   あれば追加します。<xref:System.ComponentModel.ToolboxItemFilterAttribute>に対して指定した型の属性が見つかりましたが、<xref:System.Drawing.Design.ToolboxItem.Filter%2A>プロパティのコレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Drawing.Design.ToolboxItem" />ロックされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransient">
+      <MemberSignature Language="C#" Value="public bool IsTransient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransient" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.IsTransient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目が遷移的かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、ツールボックスを提供しているアプリケーションを閉じる; はこのツールボックス項目ツールボックス データベースに格納する必要がありますはいない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.IsTransient%2A>プロパティの既定値`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lock">
+      <MemberSignature Language="C#" Value="public virtual void Lock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Lock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.Lock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス項目をロックして、プロパティが変更されないようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロックされているときに、ツールボックス項目のプロパティを変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locked">
+      <MemberSignature Language="C#" Value="public virtual bool Locked { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Locked" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Locked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Drawing.Design.ToolboxItem" />現在ロックされています。</summary>
+        <value>
+          <see langword="true" />ツールボックス項目はロックされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Drawing.Design.ToolboxItem>がロックされると、そのプロパティを調整することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentsCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnComponentsCreated (System.Drawing.Design.ToolboxComponentsCreatedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnComponentsCreated(class System.Drawing.Design.ToolboxComponentsCreatedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.OnComponentsCreated(System.Drawing.Design.ToolboxComponentsCreatedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Drawing.Design.ToolboxComponentsCreatedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントに対してデータを提供する <see cref="T:System.Drawing.Design.ToolboxComponentsCreatedEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Design.ToolboxItem.ComponentsCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.OnComponentsCreated%2A> メソッドは、<xref:System.Drawing.Design.ToolboxItem.ComponentsCreated> イベントを発生させます。 コンポーネントを作成するツールボックス項目が呼び出された後、このメソッドが呼び出されますと<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドが返されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Drawing.Design.ToolboxItem.OnComponentsCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Drawing.Design.ToolboxItem.OnComponentsCreated(System.Drawing.Design.ToolboxComponentsCreatedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Drawing.Design.ToolboxItem.OnComponentsCreated(System.Drawing.Design.ToolboxComponentsCreatedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentsCreating">
+      <MemberSignature Language="C#" Value="protected virtual void OnComponentsCreating (System.Drawing.Design.ToolboxComponentsCreatingEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnComponentsCreating(class System.Drawing.Design.ToolboxComponentsCreatingEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.OnComponentsCreating(System.Drawing.Design.ToolboxComponentsCreatingEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Drawing.Design.ToolboxComponentsCreatingEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントに対してデータを提供する <see cref="T:System.Drawing.Design.ToolboxComponentsCreatingEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Design.ToolboxItem.ComponentsCreating" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.OnComponentsCreating%2A> メソッドは、<xref:System.Drawing.Design.ToolboxItem.ComponentsCreating> イベントを発生させます。 このメソッドが呼び出される直前にコンポーネントを作成するツールボックス項目が呼び出される、<xref:System.Drawing.Design.ToolboxItem.CreateComponentsCore%2A>メソッドが呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Drawing.Design.ToolboxItem.OnComponentsCreating%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Drawing.Design.ToolboxItem.OnComponentsCreating(System.Drawing.Design.ToolboxComponentsCreatingEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Drawing.Design.ToolboxItem.OnComponentsCreating(System.Drawing.Design.ToolboxComponentsCreatingEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalBitmap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Bitmap OriginalBitmap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Bitmap OriginalBitmap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.OriginalBitmap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Bitmap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目のツールボックスに使用する元のビットマップを取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Bitmap" />ツールボックスのツールボックス項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このビットマップは 16 x 16 ピクセルにする必要があり、デザイン画面ではなく、Visual Studio のツールボックスで使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのディクショナリを取得します。</summary>
+        <value>名前/値ペアのディクショナリ (名前がプロパティ名に、値がプロパティ値になります)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.Properties%2A>ツールボックス項目がロックされた後にプロパティ ディクショナリが読み取り専用です。  
+  
+ プロパティ ディクショナリ内の値がによって検証されます、<xref:System.Drawing.Design.ToolboxItem.ValidatePropertyValue%2A>メソッド、および既定値がから取得した、<xref:System.ComponentModel.TypeDescriptor.GetDefaultProperty%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="protected virtual void Serialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Serialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">保存先の <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ストリーム特性を示すです。</param>
+        <summary>指定したシリアル化情報オブジェクトに、このツールボックス項目の状態を保存します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Drawing.Design.ToolboxItem.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />と<see cref="M:System.Drawing.Design.ToolboxItem.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />から派生したクラスのメソッドを実装する必要があります、<see cref="T:System.Drawing.Design.ToolboxItem" />一部開発環境で提供されるツールボックス データベースで永続化をサポートするためにクラスです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxItem> のインスタンスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.String" /> を表す <see cref="T:System.Drawing.Design.ToolboxItem" /> を返します </summary>
+        <returns>現在の <see cref="T:System.Drawing.Design.ToolboxItem" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の種類の完全修飾名<see cref="T:System.ComponentModel.IComponent" />ツールボックス項目が作成時に呼び出されます。</summary>
+        <value>このツールボックス項目で作成されるコンポーネントの型の完全限定名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.TypeName%2A>プロパティを作成するコンポーネントの種類の完全修飾型名を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>しない限り、このプロパティを設定する必要があります、派生ツールボックス アイテムのクラスは、複数のコンポーネントを作成する場合、<see cref="M:System.Drawing.Design.ToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />メソッドのオーバーライドは、このプロパティの値には依存しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatePropertyType">
+      <MemberSignature Language="C#" Value="protected void ValidatePropertyType (string propertyName, object value, Type expectedType, bool allowNull);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ValidatePropertyType(string propertyName, object value, class System.Type expectedType, bool allowNull) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.ValidatePropertyType(System.String,System.Object,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="expectedType" Type="System.Type" />
+        <Parameter Name="allowNull" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">検証するプロパティの名前。</param>
+        <param name="value">検証の対象となる値 (省略可能)。</param>
+        <param name="expectedType">そのプロパティに予測される型。</param>
+        <param name="allowNull">
+          <see langword="true" />使用できるように<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <summary>オブジェクトが特定の型であるかどうかを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ValidatePropertyType%2A>にヘルパー メソッドとしてメソッドが呼び出される、<xref:System.Drawing.Design.ToolboxItem.ValidatePropertyValue%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" />is <see langword="null" />, and <paramref name="allowNull" /> is <see langword="false" />.</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />指定された型ではない<paramref name="expectedType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatePropertyValue">
+      <MemberSignature Language="C#" Value="protected virtual object ValidatePropertyValue (string propertyName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object ValidatePropertyValue(string propertyName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItem.ValidatePropertyValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">検証するプロパティの名前。</param>
+        <param name="value">検証の対象となる値。</param>
+        <summary>プロパティ ディクショナリに割り当てる前にプロパティを検証します。</summary>
+        <returns>検証に使用された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ValidatePropertyValue%2A>プロパティ ディクショナリに値が設定されるたびに、メソッドが呼び出されます。 このメソッドを使用して、コミットする前に、オブジェクトの値を変更したり、例外をスローして拒否できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /><see langword="null" />、および<paramref name="propertyName" />"IsTransient"がします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public virtual string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItem.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバージョンを取得<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <value>A<see cref="T:System.String" />このバージョンを指定する<see cref="T:System.Drawing.Design.ToolboxItem" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

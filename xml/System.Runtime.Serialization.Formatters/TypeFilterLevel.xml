@@ -1,0 +1,94 @@
+<Type Name="TypeFilterLevel" FullName="System.Runtime.Serialization.Formatters.TypeFilterLevel">
+  <TypeSignature Language="C#" Value="public enum TypeFilterLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TypeFilterLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>.NET Framework リモート処理用の自動逆シリアル化のレベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET framework リモート処理は、低と完全に自動の逆シリアル化の 2 つのレベルを提供します。 逆シリアル化の低レベルでは、最も基本的なリモート処理機能に関連付けられている型のみを逆シリアル化で逆シリアル化の攻撃から保護するのに役立ちます。 完全逆シリアル化レベルがサポート自動逆シリアル化のすべての種類のすべての状況でリモート処理がサポートしています。 .NET Framework の一覧についてはリモート処理の種類を低と完全にサポートするを参照してください[&#91;\<topic://cpconAutomaticDeserializationInNETRemoting > & #93 です。](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
+  
+ プログラムまたはアプリケーション構成ファイルを使用して、この列挙体のメンバーを設定することができます。 例については、次を参照してください[&#91;\< 。topic://cpconAutomaticDeserializationInNETRemoting > & #93 です。](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
+  
+> [!CAUTION]
+>  アプリケーションに必要なセキュリティは、逆シリアル化の制御だけではありません。 分散アプリケーションでは、他のユーザーにデータを単なる表示されている場合でも、高度にシリアル化が細かく制御可能性があります通信を妨げてで何らかの方法で使用して悪意のあるクライアントを妨げません。 そのため、逆シリアル化の低レベルでは、特定の種類の自動逆シリアル化に基づく攻撃に対する保護をいくつか提供しますが、必要がありますも評価するデータの機密性を保護するために認証と暗号化を使用するかどうか。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Full">
+      <MemberSignature Language="C#" Value="Full" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel Full = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework リモート処理のためフル逆シリアル化のレベルです。 すべての種類をサポートしているすべての状況でそのリモート処理をサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Low">
+      <MemberSignature Language="C#" Value="Low" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel Low = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework リモート処理の逆シリアル化の低レベルです。 これは、基本的なリモート処理機能に関連付けられた型をサポートします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

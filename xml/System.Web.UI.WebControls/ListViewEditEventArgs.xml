@@ -1,0 +1,108 @@
+<Type Name="ListViewEditEventArgs" FullName="System.Web.UI.WebControls.ListViewEditEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewEditEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewEditEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewEditEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemEditing" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.ListView.ItemEditing>イベント編集ボタンをクリックすると、その前に、<xref:System.Web.UI.WebControls.ListView>項目が編集モードになります。 ([編集] ボタンは、ボタンが`CommandName`プロパティが"Edit"に設定します)。これにより、編集操作の取り消しなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewEditEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトでは、編集されている項目のインデックスを確認し、編集操作を取り消す必要があることを示すためにできます。 編集操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListViewEditEventArgs>オブジェクトを`true`です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.ListViewEditEventArgs>を参照してください、<xref:System.Web.UI.WebControls.ListViewEditEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewEditEventArgs>ユーザーが、提供が中止された項目を更新しようとするときに、編集操作をキャンセルするオブジェクト。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemEditing#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemEditing/CS/ListViewItemEditingCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemEditing#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemEditing/VB/ListViewItemEditingVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewEditEventArgs (int newEditIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 newEditIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewEditEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newEditIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="newEditIndex">編集する項目のインデックス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewEditEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewEditEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.ListViewEditEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewEditEventArgs.NewEditIndex%2A>|`newEditIndex` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewEditIndex">
+      <MemberSignature Language="C#" Value="public int NewEditIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewEditIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewEditEventArgs.NewEditIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集されている項目のインデックスを取得します。</summary>
+        <value>編集されている項目のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewEditEventArgs.NewEditIndex%2A>プロパティを編集している項目のインデックスを確認します。 この項目を取得する項目のインデックスが使用される多くの場合、<xref:System.Web.UI.WebControls.ListView.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.ListView>コントロールで、アイテムのプロパティにアクセスすることができます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewEditEventArgs.NewEditIndex%2A>取得するプロパティを<xref:System.Web.UI.WebControls.ListViewItem>編集されているオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewEditEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemEditing#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemEditing/CS/ListViewItemEditingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemEditing#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemEditing/VB/ListViewItemEditingVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

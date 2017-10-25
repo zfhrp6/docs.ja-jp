@@ -1,0 +1,96 @@
+<Type Name="CodeAccessSecurityAttribute" FullName="System.Security.Permissions.CodeAccessSecurityAttribute">
+  <TypeSignature Language="C#" Value="public abstract class CodeAccessSecurityAttribute : System.Security.Permissions.SecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit CodeAccessSecurityAttribute extends System.Security.Permissions.SecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.SecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コード アクセス セキュリティの基本属性クラスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性クラスに関連付けます、<xref:System.Security.Permissions.SecurityAction>など、 `Demand`、カスタム セキュリティ属性を持つ。  
+  
+ 派生した型<xref:System.Security.Permissions.CodeAccessSecurityAttribute>リソースまたはセキュリティ保護可能な操作へのアクセスを制限するために使用します。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 使用して、対応するアクセス許可クラスから派生した<xref:System.Security.CodeAccessPermission>強制セキュリティ。  
+  
+   
+  
+## Examples  
+ 次の例は、アクセス許可属性から派生した、<xref:System.Security.Permissions.CodeAccessSecurityAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.CodeAccessSecurityAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.CodeAccessSecurityAttribute/CPP/nameidpermissionattribute.cpp#1)]
+ [!code-csharp[System.Security.Permissions.CodeAccessSecurityAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.CodeAccessSecurityAttribute/CS/nameidpermissionattribute.cs#1)]
+ [!code-vb[System.Security.Permissions.CodeAccessSecurityAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.CodeAccessSecurityAttribute/VB/nameidpermissionattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>このクラスから派生したすべてのアクセス許可属性にのみ、単一のコンス トラクターを受け取る必要があります、<see cref="T:System.Security.Permissions.SecurityAction" />唯一のパラメーターとして。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeAccessSecurityAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.CodeAccessSecurityAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Security.Permissions.CodeAccessSecurityAttribute" />、指定した<see cref="T:System.Security.Permissions.SecurityAction" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスを作成することはできません。 作成するには、このクラスから継承する必要がありますの機能を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスは、1 つだけ使用するコンス トラクターをいる必要があります、<see cref="T:System.Security.Permissions.SecurityAction" />唯一のパラメーターとして。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

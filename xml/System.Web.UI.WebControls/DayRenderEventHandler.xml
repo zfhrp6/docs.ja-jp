@@ -1,0 +1,45 @@
+<Type Name="DayRenderEventHandler" FullName="System.Web.UI.WebControls.DayRenderEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DayRenderEventHandler(object sender, DayRenderEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DayRenderEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DayRenderEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.DayRenderEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DayRenderEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.Calendar.DayRender" />のイベント、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインディングはサポートされていませんが、<xref:System.Web.UI.WebControls.Calendar>コントロールがコンテンツを変更することも、個別の日付のセルの書式設定します。 前に、<xref:System.Web.UI.WebControls.Calendar>を作成し、コントロールを構成するコンポーネントをアセンブル、Web ページにコントロールが表示されます。 <xref:System.Web.UI.WebControls.Calendar.DayRender>イベントが発生したときに日付ごとのセル、<xref:System.Web.UI.WebControls.Calendar>コントロールが作成します。 内容とのイベント ハンドラーでコードを提供することでその作成時に、date セルの書式を制御することができます、<xref:System.Web.UI.WebControls.Calendar.DayRender>イベント。 日付のセルの内容をカスタマイズする方法の詳細については、次を参照してください。<xref:System.Web.UI.WebControls.Calendar.OnDayRender%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.DayRenderEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Calendar.DayRender>表示されている月の日付の色を黄色の背景にイベント。 セルの内容を追加してカスタマイズする方法も示します、<xref:System.Web.UI.LiteralControl?displayProperty=nameWithType>セルへのコントロールです。  
+  
+ [!code-aspx-csharp[Classic Calendar.DayRender Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Calendar.DayRender Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Calendar.DayRender Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Calendar.DayRender Example/VB/sourcevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarDayRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarDayRender/CS/calendardayrendercs.aspx#1)]
+ [!code-aspx-vb[CalendarDayRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarDayRender/VB/calendardayrendervb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,323 @@
+<Type Name="SiteMap" FullName="System.Web.SiteMap">
+  <TypeSignature Language="C#" Value="public static class SiteMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SiteMap extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.SiteMap" />クラスは、サイトの場合は 1 つまたは複数のサイト マップ プロバイダーによって提供されたナビゲーション構造のメモリ内表現です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイト マップがと共に使用される、 <xref:System.Web.UI.WebControls.SiteMapDataSource>、 <xref:System.Web.UI.WebControls.SiteMapPath>、およびユーザーが Web サイトを移動するための効果的なナビゲーション インターフェイスを表示するために他のコントロールです。 A<xref:System.Web.SiteMap>オブジェクトは、ナビゲーションを使用してページおよびコントロールの開発者向けの読み取り専用のサイト マップ情報へのアクセスを提供する ASP.NET サイト ナビゲーションのインフラストラクチャのコンポーネントと<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロール。 ASP.NET サイト ナビゲーションのインフラストラクチャの他のコンポーネントが含まれて、<xref:System.Web.SiteMapProvider>と<xref:System.Web.XmlSiteMapProvider>クラス、Web.sitemap ファイル、およびさまざまなコントロールを使用する、<xref:System.Web.SiteMap>クラスなど、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール、コンテンツおよびメニューを表示するためにします。  
+  
+ <xref:System.Web.SiteMap>いくつかの関数があります。  
+  
+-   (ある 1 つだけのルート ノードを指定できます)、サイトのナビゲーション階層のルート ノードを提供します。  
+  
+-   これは、どのサイト マップ プロバイダーは、プリンシパル、または、既定のプロバイダーを識別します。  
+  
+-   すべてのプロバイダー オブジェクトを作成に使用することの追跡、<xref:System.Web.SiteMap>です。  
+  
+ 基本的には、<xref:System.Web.SiteMap>の階層コレクションのコンテナー<xref:System.Web.SiteMapNode>オブジェクト。 ただし、<xref:System.Web.SiteMap>は、ノード間のリレーションシップが維持されないサイト マップ プロバイダーにデリゲートこれではなく、します。 <xref:System.Web.SiteMap>サイト ナビゲーション情報へのインターフェイスとして機能 (の形式で<xref:System.Web.SiteMapNode>オブジェクト) がこれらのサイト マップ プロバイダーによって保持されています。 元にアクセスできるサイト ナビゲーションのデータを公開するプロバイダーの追跡、<xref:System.Web.SiteMap.Providers%2A>コレクション。 プロバイダーは、任意の方法で、サイト マップ情報を格納できます — が拡張されている限り、<xref:System.Web.SiteMapProvider>抽象クラス、<xref:System.Web.SiteMap>クラスは、そこから正常に初期化することができます。  
+  
+ 既定のプロバイダー、<xref:System.Web.SiteMap>クラスは、<xref:System.Web.XmlSiteMapProvider>クラスは、XML 構成ファイル、Web.sitemap で動作します。 ただし、書き込めること独自<xref:System.Web.SiteMapProvider>オブジェクト、およびサイトのサイト マップを初期化するために使用します。 カスタムのサイト マップ プロバイダーの例は、次を参照してください。<xref:System.Web.SiteMapProvider>です。  
+  
+ サイト ナビゲーションの構成を管理する既定のサイト マップ構成を指定します。 選択したサイト マップ プロバイダーを記述する Web.config ファイルでこの構成を上書きできます。  
+  
+ <xref:System.Web.SiteMap>クラスは静的メンバーだけのパフォーマンスを提供し、指定したサイトから Web フォームまたは Web サーバー コントロールでいつでもアクセスできます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例では、Web.config ファイル内のサイト マップ プロバイダーを宣言する方法を示します。 2 番目のコード例を使用する方法を示しています、<xref:System.Web.SiteMap>オブジェクト。  
+  
+ 次のコード例は、Web.config の構成セクションを示す方法、<xref:System.Web.XmlSiteMapProvider>オブジェクトは既定値として宣言されて<xref:System.Web.SiteMapProvider>オブジェクト。  
+  
+```  
+<siteMap defaultProvider="MyXmlSiteMapProvider" enabled="true">  
+  <providers>  
+    <add name="MyXmlSiteMapProvider"  
+      description="The site map provider that reads in the .sitemap XML files."  
+      type="System.Web.XmlSiteMapProvider, System.Web, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"  
+      siteMapFile="my.sitemap" />  
+  </providers>  
+</siteMap>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMap>オブジェクトに関する情報を表示する静的メンバーへのアクセスを<xref:System.Web.SiteMap.RootNode%2A>と<xref:System.Web.SiteMap.CurrentNode%2A>プロパティです。 によって表示される出力を比較して、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_3/CS/sitemapcs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_3/VB/sitemapvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentNode">
+      <MemberSignature Language="C#" Value="public static System.Web.SiteMapNode CurrentNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.SiteMapNode CurrentNode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMap.CurrentNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.SiteMapNode" />を現在の要求されたページを表すコントロール。</summary>
+        <value>A <see cref="T:System.Web.SiteMapNode" /> ; 要求された現在のページを表すインスタンスそれ以外の場合、<see langword="null" />サイト マップ情報に代表的なノードが存在しない場合、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMap>クラスの取得、<xref:System.Web.SiteMap.CurrentNode%2A>プロパティをプロバイダーから要求します。  
+  
+ サイト マップ情報内のページの代表的なノードが存在しない場合、またはセキュリティ トリミングを有効にし、ノードは、現在のユーザーに返されることはできません`null`が返されます。  
+  
+ <xref:System.Web.SiteMap.SiteMapResolve>イベントは既定のサイト マップ プロバイダーによって 1 つまたは複数のサブスクリプションが存在します。  
+  
+ 独自に実装する場合<xref:System.Web.SiteMapProvider>オブジェクトを検索および取得する、独自のメカニズムを作成する場合があります、<xref:System.Web.SiteMapProvider.CurrentNode%2A>です。 ただし、拡張する場合、<xref:System.Web.StaticSiteMapProvider>クラスのページを識別する URL ベースのスキームを使用して、オーバーライドすることができます、<xref:System.Web.StaticSiteMapProvider.FindSiteMapNode%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMap.CurrentNode%2A>取得するプロパティを<xref:System.Web.SiteMapNode>を現在のページを表すオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_1/CS/catalogcs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_1/VB/catalogvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サイト マップ機能が無効です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成で指定された既定のプロバイダーは存在しません。</exception>
+        <exception cref="T:System.Web.HttpException">低度の信頼またはそれ以降を実行している場合にのみ、機能はサポートされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public static bool Enabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMap.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ プロバイダーが Web.config ファイルで指定されている場合、およびサイト マップ プロバイダーが有効になっている場合を示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />サイト マップ プロバイダーが構成され、有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイト ナビゲーションの構成を管理する既定のサイト マップ構成を指定します。 選択したサイト マップ プロバイダーを記述する Web.config ファイルでこの構成を上書きできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web.config の構成セクションを示す方法、<xref:System.Web.XmlSiteMapProvider>オブジェクトは既定値として宣言されて<xref:System.Web.SiteMapProvider>オブジェクト。  
+  
+```  
+<siteMap defaultProvider="MyXmlSiteMapProvider" enabled="true">  
+  <providers>  
+    <add name="MyXmlSiteMapProvider"  
+      description="SiteMap provider that reads in .sitemap XML files."  
+      type="System.Web.XmlSiteMapProvider, System.Web, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"  
+      siteMapFile="my.sitemap" />  
+  </providers>  
+</siteMap>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public static System.Web.SiteMapProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.SiteMapProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMap.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得<see cref="T:System.Web.SiteMapProvider" />現在のサイト マップのオブジェクト。</summary>
+        <value>既定のサイト マップ プロバイダー、<see cref="T:System.Web.SiteMap" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.XmlSiteMapProvider>オブジェクトが使用され、サイトのルート ディレクトリに配置されている Web.sitemap ファイルからサイト ナビゲーションのデータが読み込まれます。 これは、サイト ナビゲーションの構成および Web.config ファイルのサイト マップ構成セクションを管理する管理クラスで識別されます。 既定では、インスタンスでは、<xref:System.Web.XmlSiteMapProvider>クラスは、その永続的ストアとして Web.sitemap ファイルを使用します。 抽象を実装するクラスを記述して、独自サイト マップ ストレージと構成スキームを実装するただし、<xref:System.Web.SiteMapProvider>クラスです。 独自のプロバイダーの作成方法の詳細については、次を参照してください。<xref:System.Web.SiteMapProvider>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定値にアクセスする方法を示します<xref:System.Web.SiteMapProvider>、静的なを使用して、サイトに対してオブジェクト<xref:System.Web.SiteMap.Provider%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_2/CS/catalog2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_2/VB/catalog2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サイト マップ機能が無効です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成で指定された既定のプロバイダーは存在しません。</exception>
+        <exception cref="T:System.Web.HttpException">低度の信頼またはそれ以降を実行している場合にのみ、機能はサポートされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public static System.Web.SiteMapProviderCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.SiteMapProviderCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMap.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得の読み取り専用コレクションの名前付き<see cref="T:System.Web.SiteMapProvider" />に使用可能なオブジェクト、<see cref="T:System.Web.SiteMap" />クラスです。</summary>
+        <value>A<see cref="T:System.Web.SiteMapProviderCollection" />の名前付き<see cref="T:System.Web.SiteMapProvider" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイト マップ プロバイダーに記載されている、<xref:System.Web.SiteMap.Providers%2A>コレクションは初期化するために、構成階層で指定されている、<xref:System.Web.SiteMap>クラスです。 既定のプロバイダーのみ (で識別される、<xref:System.Web.SiteMap.Provider%2A>プロパティ) で使用することが保証、 <xref:System.Web.SiteMap> ; の初期化中にでプロバイダーが存在する、<xref:System.Web.SiteMap.Providers%2A>コレクションにすると、構成で指定された初期化中に使用されました。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.SiteMap.Providers%2A>コレクションから、<xref:System.Web.SiteMap>クラス、およびそれを反復処理します。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_2/CS/catalog2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_2/VB/catalog2vb.aspx#1)]  
+  
+ サイト用に構成された既定のプロバイダーだけがある場合は、各プロバイダーが表示が表示されます。 たとえば、サンプルの Microsoft Access プロバイダーを使用している場合 (を参照してください<xref:System.Web.StaticSiteMapProvider>)、次の出力を参照してください。  
+  
+```  
+XmlSiteMapProvider   System.Web.XmlSiteMapProvider  
+AccessSiteMapProvider   Samples.AspNet.AccessSiteMapProvider  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サイト マップ機能が無効です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成で指定された既定のプロバイダーは存在しません。</exception>
+        <exception cref="T:System.Web.HttpException">低度の信頼またはそれ以降を実行している場合にのみ、機能はサポートされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNode">
+      <MemberSignature Language="C#" Value="public static System.Web.SiteMapNode RootNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.SiteMapNode RootNode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMap.RootNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.SiteMapNode" />サイトのナビゲーション構造の最上位レベルのページを表すオブジェクト。</summary>
+        <value>A <see cref="T:System.Web.SiteMapNode" /> 、サイトのナビゲーション構造の最上位レベルのページを表す、それ以外の<see langword="null" />セキュリティ トリミングが有効になっている場合は、ノードは、現在のユーザーに返されることはできません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMap>クラスの取得、<xref:System.Web.SiteMap.RootNode%2A>プロパティをプロバイダーから要求します。 プロバイダーの階層構造がある場合、<xref:System.Web.SiteMap>クラスは、階層内のルート プロバイダーのルート ノードを取得します。 既定のプロバイダーのルート ノードにアクセスするには、呼び出し、<xref:System.Web.SiteMap.Provider%2A>両方の既定のプロバイダーを取得するプロパティとその<xref:System.Web.SiteMapProvider.RootNode%2A>プロパティです。  
+  
+ <xref:System.Web.XmlSiteMapProvider>既定のプロバイダーでは、オブジェクトの<xref:System.Web.SiteMap>クラス、1 つのみでサポート<xref:System.Web.XmlSiteMapProvider.RootNode%2A>です。  
+  
+ 独自に実装する場合<xref:System.Web.SiteMapProvider>クラスし、抽象オーバーライド<xref:System.Web.SiteMapProvider.RootNode%2A>プロパティを追跡するために、独自の実装を提供する必要があります、<xref:System.Web.SiteMapProvider.RootNode%2A>のプロパティ、<xref:System.Web.SiteMapNode>インスタンス。  
+  
+ ルート ノードは、設計によって、すべてのユーザーに表示する必要があります。 セキュリティのトリミングを有効にすると、ルート ノードがすべてのユーザーに表示されない場合は、アクセス、<xref:System.Web.SiteMap.RootNode%2A>プロパティがあります、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMap.RootNode%2A>取得するプロパティを<xref:System.Web.SiteMapNode>ページ階層で現在の場所に関係なく、サイトのルート ノードを表すオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap_1/CS/catalogcs.aspx#1)]
+ [!code-aspx-vb[System.Web.SiteMap_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap_1/VB/catalogvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">サイト マップ機能が無効です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.SiteMap.RootNode" />に解決される<see langword="null" />、セキュリティ トリミングを有効にし、ルート ノードが現在のユーザーに表示されない場合に発生します。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成で指定された既定のプロバイダーは存在しません。</exception>
+        <exception cref="T:System.Web.HttpException">低度の信頼またはそれ以降を実行している場合にのみ、機能はサポートされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteMapResolve">
+      <MemberSignature Language="C#" Value="public static event System.Web.SiteMapResolveEventHandler SiteMapResolve;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.SiteMapResolveEventHandler SiteMapResolve" />
+      <MemberSignature Language="DocId" Value="E:System.Web.SiteMap.SiteMapResolve" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapResolveEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Web.SiteMap.CurrentNode" />プロパティにアクセスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブスクライバーのアタッチ、 <xref:System.Web.SiteMapResolveEventHandler> 、静的なオブジェクト<xref:System.Web.SiteMap.SiteMapResolve>イベント通知を受信するときに、<xref:System.Web.SiteMap.CurrentNode%2A>プロパティにアクセスします。 これにより、ユーザーを作成するときにカスタム ロジックを実装する、<xref:System.Web.SiteMapNode>カスタム プロバイダーの実装を必要とせず、現在実行中のページの表現。  
+  
+ サブスクライブする場合、<xref:System.Web.SiteMap.SiteMapResolve>イベント、購読することもに、<xref:System.Web.SiteMapProvider.SiteMapResolve>既定のサイト マップ プロバイダーでイベントをします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Web.SiteMap.SiteMapResolve>など、サイトのナビゲーション コントロールで表示される対象 Url を変更する ASP.NET Web ページ上のイベント、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 この例では、現在のページは、オンラインの掲示板またはフォーラムで送信ページがします。 わかりやすく表示するためには、サイトのナビゲーション、ナビゲーション コントロールによって表示されるノードの Url は、コンテキストの関連するクエリ文字列に付加されます。  
+  
+> [!NOTE]
+>  ASP.NET サイト ナビゲーションのインフラストラクチャを保護対策を提供しへのアクセスに関連付けられているセキュリティ上のリスクを最小限に抑えられますが、無限再帰を防ぐ、<xref:System.Web.SiteMap.CurrentNode%2A>内からのプロパティ、<xref:System.Web.SiteMapResolveEventHandler>クラスです。  
+  
+ 次のコードは、Global.asax ファイルに属しています。 イベント ハンドラーは、アプリケーションの 1 回だけ関連付けられます。 コード ページを実装するかどうかを認識する、`ISiteMapResolver`インターフェイスです。 インターフェイスが実装されている場合、`ExpandForumPaths`関数が呼び出されます。  
+  
+ [!code-csharp[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx.vb#1)]  
+  
+ 次のコードでは、個別のインターフェイスを定義します。 (で Web サイト プロジェクトを配置できますこのコードは App_Code フォルダー内です。)`ISiteMapResolver`インターフェイスを定義、`ExpandForumPaths`メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMap.SiteMapResolve#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx.cs#2)]
+ [!code-vb[System.Web.SiteMap.SiteMapResolve#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx.vb#2)]  
+  
+ 次のコードには、少なくとも 3 つのノードであるページが属しているサイト マップ構造の深さ。 ページを実装して、`ISiteMapResolver`インターフェイス、されるようにすること、`ExpandForumPaths`に呼び出されるメソッド。  
+  
+ [!code-aspx-csharp[System.Web.SiteMap.SiteMapResolve#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx#3)]
+ [!code-aspx-vb[System.Web.SiteMap.SiteMapResolve#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,432 @@
+<Type Name="SequentialActivityDesigner" FullName="System.Workflow.ComponentModel.Design.SequentialActivityDesigner">
+  <TypeSignature Language="C#" Value="public class SequentialActivityDesigner : System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SequentialActivityDesigner extends System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイスに縦型順次レイアウトを表示するすべてのアクティビティ デザイナーのプロパティとメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> およびそれを継承したクラスには、子アクティビティ デザイナーを含めることができます。 これらはワークフロー デザイン サーフェイスに垂直方向に編成され、子アクティビティが <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> のサーフェイスに表示されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SequentialActivityDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibilityObject">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject AccessibilityObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject AccessibilityObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.AccessibilityObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.AccessibleObject" /> が、障碍を持つユーザー用に UI を調整するのに使用できる、<see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> を取得します。</summary>
+        <value>デザイナーに関連付ける <see cref="T:System.Windows.Forms.AccessibleObject" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AccessibleObject> の初期値が null 参照 (Visual Basic の場合は `Nothing`) の場合は、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> によって <xref:System.Windows.Forms.AccessibleObject> が作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExpandCollapse">
+      <MemberSignature Language="C#" Value="public override bool CanExpandCollapse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanExpandCollapse" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.CanExpandCollapse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> をワークフロー デザイナー画面上で展開および折りたたむことができるかどうかを示す値を取得します。</summary>
+        <value>
+          デザイナーをワークフロー デザイン サーフェイス上で展開および折りたたむことができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.CanExpandCollapse%2A> が `true` を返した場合、デザイナーはワークフロー デザイン サーフェイスに展開/折りたたみボタンをレンダリングします。  
+  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> の親デザイナーが <xref:System.Workflow.ComponentModel.Design.ParallelActivityDesigner> の場合、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.CanExpandCollapse%2A> は `false` を返します。 また、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> がルート デザイナーである場合も、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.CanExpandCollapse%2A> は `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="public override bool Expanded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expanded" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Expanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにデザイナーが展開されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> がワークフロー デザイン サーフェイスに展開される場合は <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstSelectableObject">
+      <MemberSignature Language="C#" Value="public override object FirstSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FirstSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.FirstSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> のナビゲーション順で最初の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最初に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectors">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Rectangle[] GetConnectors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance valuetype System.Drawing.Rectangle[] GetConnectors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.GetConnectors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティビティ デザイナーのコネクタの境界となる四角形の配列を返します。</summary>
+        <returns>コネクタの境界となる <see cref="T:System.Drawing.Rectangle" /> 配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のデザイナーがアクティブ デザイナーでない場合、またはデザイナーが展開されていない場合、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.GetConnectors%2A> は空の配列を返します。 親デザイナーにアクティビティ デザイナーが含まれない場合、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.GetConnectors%2A> は四角形 1 つの配列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDropTargets">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle[] GetDropTargets (System.Drawing.Point dropPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle[] GetDropTargets(valuetype System.Drawing.Point dropPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.GetDropTargets(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dropPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="dropPoint">ドロップ ターゲットの x 座標と y 座標を定義する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> 内の有効なドロップ場所を表す四角形の配列を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" /> 内の有効なドロップ場所を表す <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSelectableObject">
+      <MemberSignature Language="C#" Value="public override object GetNextSelectableObject (object obj, System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetNextSelectableObject(object obj, valuetype System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.GetNextSelectableObject(System.Object,System.Workflow.ComponentModel.Design.DesignerNavigationDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="direction" Type="System.Workflow.ComponentModel.Design.DesignerNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ナビゲーション順の現在のオブジェクト。</param>
+        <param name="direction">デザイナーのナビゲーション順を決定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerNavigationDirection" /> 列挙値。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> のナビゲーション順で、指定されたオブジェクトから後の最初の選択可能オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" /> のナビゲーション順で、<paramref name="obj" /> パラメーターから後の最初の選択可能な <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Glyphs">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Glyphs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> に関連付けられたグリフの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> に表示されるすべてのグリフを含む、読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpText">
+      <MemberSignature Language="C#" Value="protected virtual string HelpText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> に他のアクティビティ デザイナーが含まれないときに表示されるテキストを取得または設定します。</summary>
+        <value>デザイナー画面に表示されるテキストを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpText%2A> プロパティ値は、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> に子アクティビティ デザイナーが含まれないときにそのサーフェイスに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpTextRectangle">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Rectangle HelpTextRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle HelpTextRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpTextRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpText" /> プロパティによって表示されるテキストの境界となる四角形を取得します。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" /> プロパティによって表示されるテキストの境界となる <see cref="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpText" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpTextSize">
+      <MemberSignature Language="C#" Value="protected System.Drawing.Size HelpTextSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size HelpTextSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpTextSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> に子アクティビティ デザイナーが含まれないときにそこに表示されるテキストの高さと幅を取得します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> が子アクティビティ デザイナーを含まないときに表示するテキストの高さと幅を定義する <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。 既定では、<see cref="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpTextSize" /> は、新しく初期化された <see cref="T:System.Drawing.Size" /> に設定されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public override System.Workflow.ComponentModel.Design.HitTestInfo HitTest (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Workflow.ComponentModel.Design.HitTestInfo HitTest(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ワークフロー デザイン サーフェイス上の情報収集元の位置 <see cref="T:System.Drawing.Point" />。</param>
+        <summary>ワークフロー デザイン サーフェイス上の指定したポイントにある <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> に関する情報を返します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> に関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HitTest%2A> によって返される情報は、それに渡されたワークフロー デザイン サーフェイス上のポイントに基づいています。 この情報には、ポイントに関連付けられたアクティビティ デザイナー、そのアクティビティ デザイナーの境界、ポイントの正確なヒット場所、ポイントに関連付けられた選択可能オブジェクト、ポイントに関連付けられたユーザー データが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Initialize(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity"><see cref="T:System.Workflow.ComponentModel.Activity" /> の初期化に使用する <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。</param>
+        <summary>指定されたアクティビティを使用してデザイナーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Initialize%2A> は、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.HelpText%2A> プロパティの値を割り当てます。このプロパティ値は、<xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> に子デザイナーが含まれない場合にそのサーフェイスに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSelectableObject">
+      <MemberSignature Language="C#" Value="public override object LastSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object LastSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.LastSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> のナビゲーション順で最後の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最後に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutPosition">
+      <MemberSignature Language="C#" Value="protected override void OnLayoutPosition (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayoutPosition(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.OnLayoutPosition(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">レイアウト引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> にビジュアル キューと子デザイナーを配置するためのレイアウト タスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size OnLayoutSize (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size OnLayoutSize(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.OnLayoutSize(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">レイアウト引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" /> 内に含まれるデザイナーでのビジュアル キューのサイズを設定します。</summary>
+        <returns><see cref="T:System.Drawing.Size" /> の新しいサイズ設定を格納している <see cref="T:System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">描画引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />。</param>
+        <summary>デザイン時にアクティビティのビジュアル表現を描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

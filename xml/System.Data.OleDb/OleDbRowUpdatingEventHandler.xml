@@ -1,0 +1,36 @@
+<Type Name="OleDbRowUpdatingEventHandler" FullName="System.Data.OleDb.OleDbRowUpdatingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void OleDbRowUpdatingEventHandler(object sender, OleDbRowUpdatingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OleDbRowUpdatingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbRowUpdatingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Data.OleDb.OleDbRowUpdatingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Data.OleDb.OleDbRowUpdatingEventArgs" />。</param>
+    <summary><see cref="T:System.Data.OleDb.OleDbDataAdapter" /> の <see cref="E:System.Data.OleDb.OleDbDataAdapter.RowUpdating" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーが、任意の処理を実行する必要はありませんし、コードが例外を生成するか、呼び出し元のメソッドに反映されるまでの例外の許可を避ける必要があります。 呼び出し元に到達する例外は無視されます。  
+  
+ ハンドラーが使用することがあります、<xref:System.Data.OleDb.OleDbRowUpdatingEventArgs>に影響を与える更新を処理します。 たとえば、ハンドラーは、残りのすべての行の更新をスキップしたり、現在の行の更新をスキップすることを選択できます。 データ ソースから受信した順序で行を更新することに注意してください。  
+  
+ <xref:System.Data.OleDb.OleDbRowUpdatingEventArgs> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

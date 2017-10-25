@@ -1,0 +1,24 @@
+<Type Name="DependencyFilter" FullName="Microsoft.Build.Utilities.DependencyFilter">
+  <TypeSignature Language="C#" Value="public delegate bool DependencyFilter(string fullPath);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DependencyFilter extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.DependencyFilter" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="fullPath" Type="System.String" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="fullPath">圧縮された TLog に書き込まれる依存関係ファイルへの完全パス</param>
+    <summary>依存関係のフィルターのデリゲート。 選択的に書き込まれるグラフからの依存関係を削除するタスクの順序で TLog 保存中に使用されます。</summary>
+    <returns>場合は、ファイルが実際に書き込まれる TLog (true) か (false)</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

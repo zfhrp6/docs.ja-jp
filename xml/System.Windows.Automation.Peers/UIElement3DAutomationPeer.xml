@@ -1,0 +1,839 @@
+<Type Name="UIElement3DAutomationPeer" FullName="System.Windows.Automation.Peers.UIElement3DAutomationPeer">
+  <TypeSignature Language="C#" Value="public class UIElement3DAutomationPeer : System.Windows.Automation.Peers.AutomationPeer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UIElement3DAutomationPeer extends System.Windows.Automation.Peers.AutomationPeer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.AutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開<see cref="T:System.Windows.UIElement3D" />UI オートメーションを使用する型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、任意のクラスを継承から<xref:System.Windows.UIElement3D>使用<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>との通信に[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]です。  
+  
+ 継承するクラスを作成する場合<xref:System.Windows.UIElement3D>クラスの機能をサポートするために、オートメーション ピアを提供することがあります。 上書き、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClassNameCore%2A>に関連付けられている要素の型を表す文字列を返すメソッドを<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>です。 呼ばれるクラスを作成する場合など`My3DElement`オートメーション ピアと呼ばれると`My3DElementAutomationPeer`、オーバーライド、 <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClassNameCore%2A> "My3DElement"文字列を返すメソッド。  
+  
+ クラスには、既知のコントロール型の 1 つが一致すると、オーバーライド、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAutomationControlTypeCore%2A>を返すメソッドを<xref:System.Windows.Automation.ControlType>です。 既存<xref:System.Windows.Automation.ControlType>値は通常、2 D のコントロールに関連付けられて、<xref:System.Windows.Automation.ControlType>コントロールの機能を外観ではないことを示します。  その場合、 <xref:System.Windows.UIElement3D> 、ユーザーがクリックしたとき、多くの場合、アクションを呼び出します<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetHelpTextCore%2A>を返す<xref:System.Windows.Automation.ControlType.Button?displayProperty=nameWithType>です。  
+  
+ カスタムの動作<xref:System.Windows.UIElement3D>をオーバーライドするその他の方法が決定します。 各メソッドのトピックで、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>メソッドを使用する方法がこのメソッドをオーバーライドする適切な場合について説明します。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIElement3DAutomationPeer (System.Windows.UIElement3D owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.UIElement3D owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.#ctor(System.Windows.UIElement3D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.UIElement3D" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.UIElement3D" />。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePeerForElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.Peers.AutomationPeer CreatePeerForElement (System.Windows.UIElement3D element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.Peers.AutomationPeer CreatePeerForElement(class System.Windows.UIElement3D element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.CreatePeerForElement(System.Windows.UIElement3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement3D" />
+      </Parameters>
+      <Docs>
+        <param name="element">この <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.UIElement3D" />。</param>
+        <summary>指定した <see cref="T:System.Windows.UIElement3D" /> に対して <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> を作成します。</summary>
+        <returns>A <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> 、指定された<see cref="T:System.Windows.UIElement3D" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>まで、関連付けられているメモリに残ります<xref:System.Windows.UIElement3D>は破棄されます。  
+  
+ 同じインスタンス、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>への呼び出し、このメソッドには、後続の呼び出しから返される<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.FromElement%2A>です。 ピアの型によって決定されます、<xref:System.Windows.UIElement3D.OnCreateAutomationPeer%2A>仮想コールバック。 場合<xref:System.Windows.UIElement3D>いいえ、コールバックを実装しません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>を作成し、このメソッドが戻る`null`です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.Peers.AutomationPeer FromElement (System.Windows.UIElement3D element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.Peers.AutomationPeer FromElement(class System.Windows.UIElement3D element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.FromElement(System.Windows.UIElement3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement3D" />
+      </Parameters>
+      <Docs>
+        <param name="element">この <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.UIElement3D" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> の <see cref="T:System.Windows.UIElement3D" /> を返します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />、または<see langword="null" />場合、<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />により作成されていない、<see cref="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.CreatePeerForElement(System.Windows.UIElement3D)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAcceleratorKeyCore">
+      <MemberSignature Language="C#" Value="protected override string GetAcceleratorKeyCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAcceleratorKeyCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAcceleratorKeyCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセラレータ キーを返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAcceleratorKey" /> によって呼び出されます。</summary>
+        <returns>アクセラレータ キーを<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetAcceleratorKey%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetAcceleratorKey%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.AcceleratorKey%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAcceleratorKeyCore%2A>の意味のある方法でアクセラレータ キーを提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessKeyCore">
+      <MemberSignature Language="C#" Value="protected override string GetAccessKeyCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAccessKeyCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAccessKeyCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス キーを返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAccessKey" /> によって呼び出されます。</summary>
+        <returns>アクセス キーを<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetAccessKey%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetAccessKey%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.AccessKey%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAccessKeyCore%2A>の意味のある方法でアクセス キーを提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationControlTypeCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAutomationControlTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationControlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの種類を取得、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see cref="F:System.Windows.Automation.Peers.AutomationControlType.Custom" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスには、既知のコントロール型の 1 つが一致すると、オーバーライド、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAutomationControlTypeCore%2A>を返すメソッドを<xref:System.Windows.Automation.ControlType>です。 既存<xref:System.Windows.Automation.ControlType>値は通常、2 D のコントロールに関連付けられて、<xref:System.Windows.Automation.ControlType>コントロールの機能を外観ではないことを示します。  その場合、 <xref:System.Windows.UIElement3D> 、ユーザーがクリックしたとき、多くの場合、アクションを呼び出します<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetHelpTextCore%2A>を返す<xref:System.Windows.Automation.ControlType.Button?displayProperty=nameWithType>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationIdCore">
+      <MemberSignature Language="C#" Value="protected override string GetAutomationIdCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAutomationIdCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAutomationIdCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一意に識別する文字列を返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId" /> によって呼び出されます。</summary>
+        <returns>一意に識別する文字列、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetAutomationId%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetAutomationId%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.AutomationId%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetAutomationIdCore%2A>の意味のある方法で識別子を提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundingRectangleCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Rect GetBoundingRectangleCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Rect GetBoundingRectangleCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetBoundingRectangleCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Rect" />の外接する四角形を表す、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle" /> によって呼び出されます。</summary>
+        <returns><see cref="T:System.Windows.Rect" />要素の座標を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、両方でがない場合、<xref:System.Windows.Interop.HwndSource>と<xref:System.Windows.PresentationSource>、このメソッドが戻る<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>です。  
+  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetBoundingRectangleCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.List`1&lt;class System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetChildrenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子要素のコレクションを返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren" /> によって呼び出されます。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />要素の子要素に対応しているよりも、<see cref="T:System.Windows.UIElement3D" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetChildrenCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetClassNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetClassNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClassNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前を返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see cref="F:System.String.Empty" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>の名前を返すには、このメソッドをオーバーライドする必要があります、<xref:System.Windows.UIElement3D>と関連付けられている、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClickablePointCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Point GetClickablePointCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Point GetClickablePointCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClickablePointCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Point" />上にある、クリック可能な領域を表す、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClickablePoint" /> によって呼び出されます。</summary>
+        <returns><see cref="T:System.Windows.Point" />クリック可能な要素です。 要素が <see cref="T:System.Windows.Interop.HwndSource" /> と <see cref="T:System.Windows.PresentationSource" /> のどちらでもない場合、ポイント値が (<see cref="F:System.Double.NaN" />、<see cref="F:System.Double.NaN" />) です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClickablePointCore%2A>の中心を表すポイントを返します、<xref:System.Windows.UIElement3D>です。 オーバーライド<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetClickablePointCore%2A>のさまざまな位置を取得する場合。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpTextCore">
+      <MemberSignature Language="C#" Value="protected override string GetHelpTextCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetHelpTextCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetHelpTextCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>機能について説明する文字列を返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetHelpText" /> によって呼び出されます。</summary>
+        <returns>機能を説明する文字列、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetHelpTextCore%2A>メソッドは、コントロールのツールヒントで提供されるテキストと同じである文字列を返します。 このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetHelpText%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetHelpText%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.HelpText%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetHelpTextCore%2A>の意味のある方法でヘルプ テキストを提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemStatusCore">
+      <MemberSignature Language="C#" Value="protected override string GetItemStatusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetItemStatusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetItemStatusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態を通知する文字列を返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemStatus" /> によって呼び出されます。</summary>
+        <returns>状態、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 示す文字列を返すかどうか、<xref:System.Windows.UIElement3D>項目に関するステータスを伝達します。 たとえば、メッセージング アプリケーション内の連絡先に関連付けられている項目には、「ビジー」または「接続済み」があります。  
+  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetItemStatus%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetItemStatus%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.ItemStatus%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetItemStatusCore%2A>の意味のある方法で、項目の状態を提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemTypeCore">
+      <MemberSignature Language="C#" Value="protected override string GetItemTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetItemTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetItemTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>項目を表すを返しますの人間が判読できる文字列を入力する、<see cref="T:System.Windows.UIElement3D" />この<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetItemType" /> によって呼び出されます。</summary>
+        <returns>項目を表す文字列を入力する、<see cref="T:System.Windows.UIElement3D" />この<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetItemType%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetItemType%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.ItemType%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetItemTypeCore%2A>の意味のある方法で項目の種類を提供するロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLabeledByCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer GetLabeledByCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer GetLabeledByCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetLabeledByCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />を対象とする要素の<see cref="T:System.Windows.UIElement3D" />この<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetLabeledBy" /> によって呼び出されます。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />を対象とする要素の<see cref="T:System.Windows.UIElement3D" />この<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetLabeledBy%2A>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetLabeledBy%2A>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.LabeledBy%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetLabeledByCore%2A>ロジックを追加し、<xref:System.Windows.Automation.Peers.AutomationPeer>の意味のある方法で、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName" /> によって呼び出されます。</summary>
+        <returns>表す文字列、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Name プロパティを参照しているコントロールの説明を使用するユーザーとして想定することができます。 すべてのコントロールのテキスト表現をいることを確認、[!INCLUDE[TLA#tla_gui](~/includes/tlasharptla-gui-md.md)]プログラムにより、ローカライズされた方法でコントロールに参照できるようにします。  
+  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetName%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetName%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.Name%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetNameCore%2A>の意味のある方法で名前を指定するためのロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrientationCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationOrientation GetOrientationCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationOrientation GetOrientationCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetOrientationCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationOrientation</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>向きを返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetOrientation" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see cref="F:System.Windows.Automation.Peers.AutomationOrientation.None" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.UIElement3D>の現在の向きの返すこのメソッドを水平方向または垂直方向の上書きを指定できます、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPattern">
+      <MemberSignature Language="C#" Value="public override object GetPattern (System.Windows.Automation.Peers.PatternInterface patternInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetPattern(valuetype System.Windows.Automation.Peers.PatternInterface patternInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternInterface" Type="System.Windows.Automation.Peers.PatternInterface" />
+      </Parameters>
+      <Docs>
+        <param name="patternInterface">列挙値の 1 つ。</param>
+        <summary>コントロール パターンを返します、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Windows.Automation.Provider.ISynchronizedInputProvider" />インターフェイスの場合は<paramref name="patternInterface" />は<see cref="F:System.Windows.Automation.Peers.PatternInterface.SynchronizedInput" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.GetPattern%2A>されるコントロール パターンを返すメソッドを適用する、<xref:System.Windows.UIElement3D>です。 詳細については、次を参照してください。 [UI オートメーション コントロール パターンの概要](~/docs/framework/ui-automation/ui-automation-control-patterns-overview.md)です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasKeyboardFocusCore">
+      <MemberSignature Language="C#" Value="protected override bool HasKeyboardFocusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool HasKeyboardFocusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.HasKeyboardFocusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />現在にキーボード入力フォーカスがします。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.HasKeyboardFocus" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />要素にキーボード入力フォーカスがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.HasKeyboardFocusCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContentElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsContentElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsContentElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsContentElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />がユーザーに提示されるデータを含む要素です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsContentElement" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsContentElementCore%2A>メソッド場合、<xref:System.Windows.UIElement3D>コンテンツ要素ではありません。 コンテンツの要素には、ユーザーに表示されるデータが含まれています。 コンテンツの要素の例では、リスト ボックスまたはダイアログ ボックスのボタンのアイテムです。 通常とも呼ばれる周辺要素、コンテンツのない要素を使用するには、複合コントロールのコンテンツを操作します。 非コンテンツ要素の例は、ドロップダウン コントロールのボタンです。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsControlElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsControlElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsControlElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsControlElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />対話的なものとしてエンドユーザーが理解します。 必要に応じて、ユーザーが認識できる、<see cref="T:System.Windows.UIElement3D" />内のコントロールの論理構造に利用できるものとして、[!INCLUDE[TLA2#tla_gui](~/includes/tla2sharptla-gui-md.md)]です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsControlElement" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドしないでください。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsEnabledCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsEnabledCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />ヒット テストに参加またはフォーカスを受け入れることができます。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsKeyboardFocusable" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />ヒット テストに参加またはフォーカスを受け入れることができます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsEnabledCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardFocusableCore">
+      <MemberSignature Language="C#" Value="protected override bool IsKeyboardFocusableCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsKeyboardFocusableCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsKeyboardFocusableCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />キーボード フォーカスを受け取ることができます。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsKeyboardFocusable" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />要素がキーボード フォーカスを受け取る場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsKeyboardFocusableCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffscreenCore">
+      <MemberSignature Language="C#" Value="protected override bool IsOffscreenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsOffscreenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsOffscreenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />画面に表示されません。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsOffscreen" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />要素が画面上にない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、要素が表示されているかどうかを示すものではありません。 状況によっては、要素は、画面には表示されていないです。 たとえば、要素が他の要素によって非表示になるが、画面上にある場合は、これは表示されません。 この場合、メソッドを返します`false`です。  
+  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsOffscreenCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPasswordCore">
+      <MemberSignature Language="C#" Value="protected override bool IsPasswordCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsPasswordCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsPasswordCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />保護されたコンテンツが含まれています。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsPassword" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsKeyboardFocusableCore%2A>場合、<xref:System.Windows.UIElement3D>パスワードなどの保護されたコンテンツが含まれています。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequiredForFormCore">
+      <MemberSignature Language="C#" Value="protected override bool IsRequiredForFormCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsRequiredForFormCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsRequiredForFormCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />フォーム上で完了する必要があります。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsRequiredForForm" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.UIElement3D" /> 、それ以外のフォームの完了に必要な<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Automation.AutomationProperties.GetIsRequiredForForm%2A?displayProperty=nameWithType>値を取得します。 <xref:System.Windows.Automation.AutomationProperties.GetIsRequiredForForm%2A?displayProperty=nameWithType>値が返しますされる場合にのみ、<xref:System.Windows.Automation.AutomationProperties.IsRequiredForForm%2A?displayProperty=nameWithType>プロパティを設定します。 オーバーライドできます<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.IsRequiredForFormCore%2A>の意味のある値を指定するためのロジックを追加し、<xref:System.Windows.UIElement3D>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement3D Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement3D Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.UIElement3DAutomationPeer.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。</summary>
+        <value>この <see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.UIElement3D" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFocusCore">
+      <MemberSignature Language="C#" Value="protected override void SetFocusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetFocusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.UIElement3DAutomationPeer.SetFocusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キーボード入力フォーカスを設定、<see cref="T:System.Windows.UIElement3D" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.UIElement3DAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.SetFocus" /> によって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>通常、オーバーライドする必要はありません<xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer.SetFocusCore%2A>です。  
+  
+ <xref:System.Windows.Automation.Peers.UIElement3DAutomationPeer>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

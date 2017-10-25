@@ -1,0 +1,238 @@
+<Type Name="ITypeDescriptorContext" FullName="System.ComponentModel.ITypeDescriptorContext">
+  <TypeSignature Language="C#" Value="public interface ITypeDescriptorContext : IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeDescriptorContext implements class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ITypeDescriptorContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテナーやプロパティの記述子などのコンポーネントに関するコンテキスト情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ITypeDescriptorContext>インターフェイスは、コンポーネントに関するコンテキスト情報を提供します。 <xref:System.ComponentModel.ITypeDescriptorContext>デザイン時コンテナーに関する情報を提供するデザイン時に通常に使用されます。 このインターフェイスは、型変換で通常使用されます。 詳細については、「<xref:System.ComponentModel.TypeConverter>」を参照してください。  
+  
+> [!NOTE]
+>  実行する型コンバーターをデザインするときに、このインターフェイスの存在に依存しないでください。 型コンバーターを返す必要があります、特定のインターフェイス、プロパティ、またはサービスが必要なは使用できない、`null`はなく、例外をスローします。 このインターフェイスのプロパティを返すことができます`null`、いつでもこの検討する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.ITypeDescriptorContext>型変換をサポートするインターフェイスです。  
+  
+ [!code-cpp[InstanceDescriptorSample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/InstanceDescriptorSample/CPP/instancedescriptor.cpp#1)]
+ [!code-csharp[InstanceDescriptorSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/InstanceDescriptorSample/CS/instancedescriptor.cs#1)]
+ [!code-vb[InstanceDescriptorSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/InstanceDescriptorSample/VB/instancedescriptor.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IContainer Container { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IContainer Container" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ITypeDescriptorContext.Container" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを表すコンテナーを取得<see cref="T:System.ComponentModel.TypeDescriptor" />要求します。</summary>
+        <value><see cref="T:System.ComponentModel.IContainer" />このオブジェクトのセットで<see cref="T:System.ComponentModel.TypeDescriptor" />、それ以外の<see langword="null" />コンテナーが存在しない場合、または場合、<see cref="T:System.ComponentModel.TypeDescriptor" />外部オブジェクトを使用しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ITypeDescriptorContext.Container%2A>プロパティは、型記述子に関連付けられたコンポーネントの論理的なコンテナーを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public object Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Instance" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ITypeDescriptorContext.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型記述子の要求に関連付けられているオブジェクトを取得します。</summary>
+        <value>オブジェクトのメソッドを呼び出す、 <see cref="T:System.ComponentModel.TypeDescriptor" />、それ以外の<see langword="null" />メソッドを呼び出すオブジェクトがない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>プロパティを呼び出しているオブジェクトを取得する、<xref:System.ComponentModel.ITypeDescriptorContext>インターフェイスです。 たとえば、型コンバーターを指定した場合、<xref:System.Drawing.Color>に変換する<xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>を使用しているコントロールの実際のインスタンスを返します、<xref:System.Drawing.Color>です。 そのサービスの詳細については、コントロールを後でクエリを実行できますとその<xref:System.ComponentModel.ITypeDescriptorContext.Container%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanged">
+      <MemberSignature Language="C#" Value="public void OnComponentChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnComponentChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.ITypeDescriptorContext.OnComponentChanged%2A>オブジェクトのインスタンスが変更された通知を送信する方法です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.ITypeDescriptorContext.OnComponentChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanged" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanged" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanging">
+      <MemberSignature Language="C#" Value="public bool OnComponentChanging ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnComponentChanging() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanging" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanging" /> イベントを発生させます。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトを変更できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.ITypeDescriptorContext.OnComponentChanging%2A>オブジェクトのインスタンスを変更することを示す通知を送信する方法です。 また、このオブジェクトを変更できるかどうかを示す値を返します。 ときに`false`は、返されるオブジェクトは変更しないでください。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.ITypeDescriptorContext.OnComponentChanging%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanging" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.ComponentModel.ITypeDescriptorContext.OnComponentChanging" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyDescriptor">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptor PropertyDescriptor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor PropertyDescriptor" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.ITypeDescriptorContext.PropertyDescriptor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.PropertyDescriptor" />特定のコンテキスト項目に関連付けられています。</summary>
+        <value><see cref="T:System.ComponentModel.PropertyDescriptor" />項目です。 それ以外の場合、指定されたコンテキストを説明する<see langword="null" />がある場合ありません<see cref="T:System.ComponentModel.PropertyDescriptor" />メソッドを呼び出す。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

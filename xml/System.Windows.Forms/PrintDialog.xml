@@ -1,0 +1,430 @@
+<Type Name="PrintDialog" FullName="System.Windows.Forms.PrintDialog">
+  <TypeSignature Language="C#" Value="public sealed class PrintDialog : System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PrintDialog extends System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PrintDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.CommonDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Document")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.PrintDialogDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プリンターを選択し、Windows フォーム アプリケーションから印刷するドキュメントのセクションを選択できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合<xref:System.Windows.Forms.PrintDialog>読み取り/書き込みプロパティの初期値に設定されます。 これらの値の一覧は、次を参照してください。、<xref:System.Windows.Forms.PrintDialog.%23ctor%2A>コンス トラクターです。 使用して、ユーザーによって変更されているプリンターの設定を取得する、<xref:System.Windows.Forms.PrintDialog>を使用して、<xref:System.Windows.Forms.PrintDialog.PrinterSettings%2A>プロパティです。  
+  
+ Windows フォームで印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。 Windows Presentation Foundation アプリケーションから印刷する場合は、「、<xref:System.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.PrintDialog>コントロール設定を<xref:System.Windows.Forms.PrintDialog.AllowSomePages%2A>、 <xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>、および<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。 この例を実行するを含むフォームに次のコードを貼り付け、<xref:System.Windows.Forms.PrintDialog>という名前のコントロール`PrintDialog1`という名前のボタンと`Button1`です。 この例では、する必要があります、ボタンの<xref:System.Windows.Forms.Control.Click>イベントおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント`docToPrint`が、この例で定義されたイベント処理メソッドに接続されました。  
+  
+ [!code-cpp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.PrintDialog" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成する場合<xref:System.Windows.Forms.PrintDialog>、次の読み取り/書き込みプロパティの初期値に設定されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Windows.Forms.PrintDialog.AllowSomePages%2A>|`false`|  
+|<xref:System.Windows.Forms.PrintDialog.AllowPrintToFile%2A>|`true`|  
+|<xref:System.Windows.Forms.PrintDialog.AllowSelection%2A>|`false`|  
+|<xref:System.Windows.Forms.PrintDialog.Document%2A>|`null`|  
+|<xref:System.Windows.Forms.PrintDialog.PrinterSettings%2A>|`null`|  
+|<xref:System.Windows.Forms.PrintDialog.PrintToFile%2A>|`false`|  
+|<xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>|`false`|  
+|<xref:System.Windows.Forms.PrintDialog.ShowNetwork%2A>|`true`|  
+  
+ プロパティに別個の呼び出しでこれらのプロパティのいずれかの値を変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowCurrentPage">
+      <MemberSignature Language="C#" Value="public bool AllowCurrentPage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowCurrentPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.AllowCurrentPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、**現在のページ**オプション ボタンが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、**現在のページ**オプション ボタンは、表示されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows 2000 と Windows オペレーティング システムの以降のバージョンに対して有効です。 Windows 2000 より前のオペレーティング システムで、<xref:System.Windows.Forms.PrintDialog.AllowCurrentPage%2A>プロパティは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPrintToFile">
+      <MemberSignature Language="C#" Value="public bool AllowPrintToFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPrintToFile" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.AllowPrintToFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ファイルへ出力** チェック ボックスが有効にします。</summary>
+        <value>
+          <see langword="true" />場合、**ファイルへ出力** チェック ボックスが有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowSelection">
+      <MemberSignature Language="C#" Value="public bool AllowSelection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.AllowSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**選択**オプション ボタンが有効にします。</summary>
+        <value>
+          <see langword="true" />場合、**選択**オプション ボタンは、有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowSomePages">
+      <MemberSignature Language="C#" Value="public bool AllowSomePages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowSomePages" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.AllowSomePages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ページ**オプション ボタンが有効にします。</summary>
+        <value>
+          <see langword="true" />場合、**ページ**オプション ボタンは、有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.PrintDialog>コントロール設定を<xref:System.Windows.Forms.PrintDialog.AllowSomePages%2A>、 <xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>、および<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。 この例を実行するを含むフォームに次のコードを貼り付け、<xref:System.Windows.Forms.PrintDialog>という名前のコントロール`PrintDialog1`という名前のボタンと`Button1`です。 この例では、する必要があります、ボタンの<xref:System.Windows.Forms.Control.Click>イベントおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント`docToPrint`が、この例で定義されたイベント処理メソッドに接続されました。  
+  
+ [!code-cpp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrintDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、<see cref="T:System.Drawing.Printing.PrintDocument" />を取得するために使用<see cref="T:System.Drawing.Printing.PrinterSettings" />です。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrintDocument" />を取得するために使用<see cref="T:System.Drawing.Printing.PrinterSettings" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.PrintDialog>コントロール設定を<xref:System.Windows.Forms.PrintDialog.AllowSomePages%2A>、 <xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>、および<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。 この例を実行するを含むフォームに次のコードを貼り付け、<xref:System.Windows.Forms.PrintDialog>という名前のコントロール`PrintDialog1`という名前のボタンと`Button1`です。 この例では、する必要があります、ボタンの<xref:System.Windows.Forms.Control.Click>イベントおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント`docToPrint`が、この例で定義されたイベント処理メソッドに接続されました。  
+  
+ [!code-cpp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterSettings PrinterSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrinterSettings PrinterSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.PrinterSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンターの設定 ダイアログ ボックスで変更を設定します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterSettings" />ダイアログ ボックスで変更します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintDialog.PrinterSettings%2A>を呼び出す前に、プロパティを設定する必要があります<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>と例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintToFile">
+      <MemberSignature Language="C#" Value="public bool PrintToFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrintToFile" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.PrintToFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ファイルへ出力** チェック ボックスをオンします。</summary>
+        <value>
+          <see langword="true" />場合、**ファイルへ出力** チェック ボックスが選択されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオプション、最後の選択したプリンター、およびページの設定を既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected override bool RunDialog (IntPtr hwndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool RunDialog(native int hwndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwndOwner">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public bool ShowHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.ShowHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ヘルプ**ボタンが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、**ヘルプ**ボタンが表示されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows 2000 で不使用とマークされたされ、これは影響しませんおよびそれ以降のバージョンの Windows です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.PrintDialog>設定を制御、 <xref:System.Windows.Forms.PrintDialog.AllowSomePages%2A>、 <xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>、および<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティです。 例を実行するこの貼り付けを次のコードを含むフォームで、<xref:System.Windows.Forms.PrintDialog>という名前のコントロール`PrintDialog1`という名前のボタンと`Button1`です。 この例では、する必要があります、ボタンの<xref:System.Windows.Forms.Control.Click>イベントおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント`docToPrint`が、この例で定義されているメソッドを処理するイベントに接続されました。  
+  
+ [!code-cpp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PrintDialogExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PrintDialogExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowNetwork">
+      <MemberSignature Language="C#" Value="public bool ShowNetwork { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowNetwork" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.ShowNetwork" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、**ネットワーク**ボタンが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、**ネットワーク**ボタンが表示されている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows 2000 で不使用とマークされたされ、これは影響しませんおよびそれ以降のバージョンの Windows です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseEXDialog">
+      <MemberSignature Language="C#" Value="public bool UseEXDialog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseEXDialog" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintDialog.UseEXDialog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行するシステムの Windows XP スタイルで、ダイアログを表示するかどうかを示す値を取得または[!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)]またはそれ以降。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスをそれ以外の場合の Windows XP スタイルで表示するかを示すために<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`、<xref:System.Windows.Forms.PrintDialog.ShowHelp%2A>と<xref:System.Windows.Forms.PrintDialog.ShowNetwork%2A>これらのプロパティは、Windows 2000 およびそれ以降のバージョンの Windows の不使用で行われたために、無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

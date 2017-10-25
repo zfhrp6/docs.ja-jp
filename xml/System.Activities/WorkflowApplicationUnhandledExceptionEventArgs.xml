@@ -1,0 +1,129 @@
+<Type Name="WorkflowApplicationUnhandledExceptionEventArgs" FullName="System.Activities.WorkflowApplicationUnhandledExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public class WorkflowApplicationUnhandledExceptionEventArgs : System.Activities.WorkflowApplicationEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowApplicationUnhandledExceptionEventArgs extends System.Activities.WorkflowApplicationEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.WorkflowApplicationEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワークフロー インスタンスで発生した未処理の例外についての情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティからスローされた例外が処理されない場合、既定の動作では、ワークフロー インスタンスが終了します。 <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが存在する場合、このハンドラーで既定の動作をオーバーライドできます。 このハンドラーがあると、ワークフロー ホストの作成者は、カスタムのログ記録、ワークフローの中止、ワークフローのキャンセル、ワークフローの終了などの適切な処理を実行できます。  
+  
+   
+  
+## Examples  
+ 次の例では、例外をスローするワークフローを呼び出しています。 ワークフローで例外が処理されないため、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが呼び出されます。 例外に関する情報を提供するために <xref:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs> が調査され、ワークフローは終了します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExceptionSource">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity ExceptionSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity ExceptionSource" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs.ExceptionSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外の原因となったアクティビティを取得します。</summary>
+        <value>アクティビティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティからスローされた例外が処理されない場合、既定の動作では、ワークフロー インスタンスが終了します。 <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが存在する場合、このハンドラーで既定の動作をオーバーライドできます。 このハンドラーがあると、ワークフロー ホストの作成者は、カスタムのログ記録、ワークフローの中止、ワークフローのキャンセル、ワークフローの終了などの適切な処理を実行できます。  
+  
+   
+  
+## Examples  
+ 次の例では、例外をスローするワークフローを呼び出しています。 ワークフローで例外が処理されないため、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが呼び出されます。 例外に関する情報を提供するために <xref:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs> が調査され、ワークフローは終了します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionSourceInstanceId">
+      <MemberSignature Language="C#" Value="public string ExceptionSourceInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExceptionSourceInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs.ExceptionSourceInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外の原因となったアクティビティ インスタンスの一意の識別子を取得します。</summary>
+        <value>未処理の例外の原因となったアクティビティ インスタンスの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティからスローされた例外が処理されない場合、既定の動作では、ワークフロー インスタンスが終了します。 <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが存在する場合、このハンドラーで既定の動作をオーバーライドできます。 このハンドラーがあると、ワークフロー ホストの作成者は、カスタムのログ記録、ワークフローの中止、ワークフローのキャンセル、ワークフローの終了などの適切な処理を実行できます。  
+  
+   
+  
+## Examples  
+ 次の例では、例外をスローするワークフローを呼び出しています。 ワークフローで例外が処理されないため、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが呼び出されます。 例外に関する情報を提供するために <xref:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs> が調査され、ワークフローは終了します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledException">
+      <MemberSignature Language="C#" Value="public Exception UnhandledException { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception UnhandledException" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs.UnhandledException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスによって処理されなかった <see cref="T:System.Exception" /> を取得します。</summary>
+        <value>ワークフロー インスタンスによって処理されなかった <see cref="T:System.Exception" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティからスローされた例外が処理されない場合、既定の動作では、ワークフロー インスタンスが終了します。 <xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが存在する場合、このハンドラーで既定の動作をオーバーライドできます。 このハンドラーがあると、ワークフロー ホストの作成者は、カスタムのログ記録、ワークフローの中止、ワークフローのキャンセル、ワークフローの終了などの適切な処理を実行できます。  
+  
+   
+  
+## Examples  
+ 次の例では、例外をスローするワークフローを呼び出しています。 ワークフローで例外が処理されないため、<xref:System.Activities.WorkflowApplication.OnUnhandledException%2A> ハンドラーが呼び出されます。 例外に関する情報を提供するために <xref:System.Activities.WorkflowApplicationUnhandledExceptionEventArgs> が調査され、ワークフローは終了します。  
+  
+ [!code-csharp[CFX_WorkflowApplicationExample#1](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

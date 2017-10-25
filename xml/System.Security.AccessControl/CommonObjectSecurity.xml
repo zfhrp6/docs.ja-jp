@@ -1,0 +1,558 @@
+<Type Name="CommonObjectSecurity" FullName="System.Security.AccessControl.CommonObjectSecurity">
+  <TypeSignature Language="C#" Value="public abstract class CommonObjectSecurity : System.Security.AccessControl.ObjectSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonObjectSecurity extends System.Security.AccessControl.ObjectSecurity" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.CommonObjectSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.ObjectSecurity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセス制御リスト (Acl) を直接操作せずオブジェクトへのアクセスを制御します。 このクラスは、の抽象基本クラス、<see cref="T:System.Security.AccessControl.NativeObjectSecurity" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CommonObjectSecurity (bool isContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool isContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isContainer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isContainer">
+          <see langword="true" />新しいオブジェクトがコンテナー オブジェクトである場合。</param>
+        <summary><see cref="T:System.Security.AccessControl.CommonObjectSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAccessRule">
+      <MemberSignature Language="C#" Value="protected void AddAccessRule (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddAccessRule(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.AddAccessRule(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加するアクセス規則。</param>
+        <summary>これに関連付けられている随意アクセス制御リスト (DACL) に指定されたアクセス規則を追加<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス規則を追加すると、マージする DACL で既存のアクセス規則があります可能性。  
+  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAuditRule">
+      <MemberSignature Language="C#" Value="protected void AddAuditRule (System.Security.AccessControl.AuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddAuditRule(class System.Security.AccessControl.AuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.AddAuditRule(System.Security.AccessControl.AuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する監査規則。</param>
+        <summary>これに関連付けられているシステム アクセス制御リスト (SACL) に指定された監査規則を追加<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査規則を追加すると、マージする SACL の既存のアクセス規則があります可能性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessRules">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules (bool includeExplicit, bool includeInherited, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules(bool includeExplicit, bool includeInherited, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.GetAccessRules(System.Boolean,System.Boolean,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AuthorizationRuleCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeExplicit" Type="System.Boolean" />
+        <Parameter Name="includeInherited" Type="System.Boolean" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="includeExplicit">
+          <see langword="true" />アクセスを含める規則はオブジェクトに対して明示的に設定します。</param>
+        <param name="includeInherited">
+          <see langword="true" />継承されたアクセス規則を含めます。</param>
+        <param name="targetType">アクセス規則を取得する対象のセキュリティ識別子があるかどうかを指定しますユーザー、または T:System.Security.Principal.NTAccount を入力します。 このパラメーターの値に変換できる型である必要があります、<see cref="T:System.Security.Principal.SecurityIdentifier" />型です。</param>
+        <summary>指定したセキュリティ識別子に関連付けられているアクセス規則のコレクションを取得します。</summary>
+        <returns>指定された関連付けられているアクセス規則のコレクション<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuditRules">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.AuthorizationRuleCollection GetAuditRules (bool includeExplicit, bool includeInherited, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.AuthorizationRuleCollection GetAuditRules(bool includeExplicit, bool includeInherited, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.GetAuditRules(System.Boolean,System.Boolean,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AuthorizationRuleCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeExplicit" Type="System.Boolean" />
+        <Parameter Name="includeInherited" Type="System.Boolean" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="includeExplicit">
+          <see langword="true" />監査を含める規則はオブジェクトに対して明示的に設定します。</param>
+        <param name="includeInherited">
+          <see langword="true" />継承された監査規則を含めます。</param>
+        <param name="targetType">監査規則を取得する対象のセキュリティ識別子です。 これは、としてキャスト可能なオブジェクトである必要があります、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <summary>指定したセキュリティ id に関連付けられた監査規則のコレクションを取得します。</summary>
+        <returns>指定した関連付けられた監査規則のコレクション<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifyAccess">
+      <MemberSignature Language="C#" Value="protected override bool ModifyAccess (System.Security.AccessControl.AccessControlModification modification, System.Security.AccessControl.AccessRule rule, out bool modified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ModifyAccess(valuetype System.Security.AccessControl.AccessControlModification modification, class System.Security.AccessControl.AccessRule rule, [out] bool&amp; modified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.ModifyAccess(System.Security.AccessControl.AccessControlModification,System.Security.AccessControl.AccessRule,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modification" Type="System.Security.AccessControl.AccessControlModification" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+        <Parameter Name="modified" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="modification">DACL に適用する変更。</param>
+        <param name="rule">変更するアクセス規則。</param>
+        <param name="modified">
+          DACL が正常に変更された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>この <see cref="T:System.Security.AccessControl.CommonObjectSecurity" /> オブジェクトに関連付けられている随意アクセス制御リスト (DACL) への指定された変更を適用します。</summary>
+        <returns>
+          DACL が正常に変更された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifyAudit">
+      <MemberSignature Language="C#" Value="protected override bool ModifyAudit (System.Security.AccessControl.AccessControlModification modification, System.Security.AccessControl.AuditRule rule, out bool modified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ModifyAudit(valuetype System.Security.AccessControl.AccessControlModification modification, class System.Security.AccessControl.AuditRule rule, [out] bool&amp; modified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.ModifyAudit(System.Security.AccessControl.AccessControlModification,System.Security.AccessControl.AuditRule,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modification" Type="System.Security.AccessControl.AccessControlModification" />
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+        <Parameter Name="modified" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="modification">SACL に適用する変更。</param>
+        <param name="rule">変更する監査規則。</param>
+        <param name="modified">
+          SACL が正常に変更された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定された変更を、この <see cref="T:System.Security.AccessControl.CommonObjectSecurity" /> オブジェクトに関連付けられているシステム アクセス制御リスト (SACL) に適用します。</summary>
+        <returns>
+          SACL が正常に変更された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRule">
+      <MemberSignature Language="C#" Value="protected bool RemoveAccessRule (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool RemoveAccessRule(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAccessRule(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除するアクセス規則。</param>
+        <summary>指定されたアクセス ルールから、随意アクセス制御リスト (DACL) がこれに関連付けられている同じセキュリティ id とアクセス マスクを含むアクセス規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合は、アクセス ルールが正常に削除されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスの削除は、それらを削除するだけでなく、アクセス制御規則を追加する複雑なアルゴリズムを使用して行われます。  
+  
+ このメソッドは、アクセス規則の削除に失敗し、返します`false`アクセス規則に関連付けられているこの継承ルールが正常に削除アルゴリズムの複雑すぎる場合です。  
+  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRuleAll">
+      <MemberSignature Language="C#" Value="protected void RemoveAccessRuleAll (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveAccessRuleAll(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAccessRuleAll(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除するアクセス規則。</param>
+        <summary>指定されたアクセス ルールから、随意アクセス制御リスト (DACL) がこれに関連付けられている同じセキュリティ識別子を持つすべてのアクセス規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRuleSpecific">
+      <MemberSignature Language="C#" Value="protected void RemoveAccessRuleSpecific (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveAccessRuleSpecific(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAccessRuleSpecific(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除するアクセス規則。</param>
+        <summary>指定されたアクセス ルールから、随意アクセス制御リスト (DACL) に関連付けられたを完全に一致するすべてのアクセス規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRule">
+      <MemberSignature Language="C#" Value="protected bool RemoveAuditRule (System.Security.AccessControl.AuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool RemoveAuditRule(class System.Security.AccessControl.AuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAuditRule(System.Security.AccessControl.AuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>これに関連付けられているシステム アクセス制御リスト (SACL) から指定された監査規則、同じセキュリティ id とアクセス マスクを含む監査規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />監査規則が正常に削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査の削除は、それらを削除するだけでなく監査の制御規則を追加が複雑なアルゴリズムを使用して行われます。  
+  
+ このメソッドは、監査規則の削除に失敗し、返します`false`監査規則に関連付けられているこの継承ルールが正常に削除アルゴリズムの複雑すぎる場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleAll">
+      <MemberSignature Language="C#" Value="protected void RemoveAuditRuleAll (System.Security.AccessControl.AuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveAuditRuleAll(class System.Security.AccessControl.AuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAuditRuleAll(System.Security.AccessControl.AuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>これに関連付けられているシステム アクセス制御リスト (SACL) から指定された監査規則、同じセキュリティ識別子を持つすべての監査規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleSpecific">
+      <MemberSignature Language="C#" Value="protected void RemoveAuditRuleSpecific (System.Security.AccessControl.AuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveAuditRuleSpecific(class System.Security.AccessControl.AuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.RemoveAuditRuleSpecific(System.Security.AccessControl.AuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>指定された監査規則からのシステム アクセス制御リスト (SACL) に関連付けられたを完全に一致するすべての監査規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetAccessRule">
+      <MemberSignature Language="C#" Value="protected void ResetAccessRule (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ResetAccessRule(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.ResetAccessRule(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">リセットするアクセス規則。</param>
+        <summary>随意アクセス制御リスト (DACL) に関連付けられたすべてのアクセス規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクトし、指定されたアクセス規則を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessRule">
+      <MemberSignature Language="C#" Value="protected void SetAccessRule (System.Security.AccessControl.AccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetAccessRule(class System.Security.AccessControl.AccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.SetAccessRule(System.Security.AccessControl.AccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">設定するアクセス規則。</param>
+        <summary>これに関連付けられている随意アクセス制御リスト (DACL) で指定されたアクセス規則は、同じセキュリティ id と修飾子を含むすべてのアクセス規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクトし、指定されたアクセス規則を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパルへのアクセスを許可する意図を避けるためには、アプリケーションする必要がありますの有無を確認、許可のすべてのユーザー アクセス (AEFA) アクセス制御エントリ (ACE) の完全および DACL を変更する前に削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAuditRule">
+      <MemberSignature Language="C#" Value="protected void SetAuditRule (System.Security.AccessControl.AuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetAuditRule(class System.Security.AccessControl.AuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonObjectSecurity.SetAuditRule(System.Security.AccessControl.AuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Security.AccessControl.AuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">設定する監査規則。</param>
+        <summary>これに関連付けられているシステム アクセス制御リスト (SACL) で指定された監査規則、同じセキュリティ id と修飾子を含むすべての監査規則を削除<see cref="T:System.Security.AccessControl.CommonObjectSecurity" />オブジェクトし、指定された監査規則を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

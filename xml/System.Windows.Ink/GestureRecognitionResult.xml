@@ -1,0 +1,92 @@
+<Type Name="GestureRecognitionResult" FullName="System.Windows.Ink.GestureRecognitionResult">
+  <TypeSignature Language="C#" Value="public class GestureRecognitionResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GestureRecognitionResult extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.GestureRecognitionResult" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インク ジェスチャに関する情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Ink.GestureRecognitionResult>が含まれています、<xref:System.Windows.Ink.ApplicationGesture>と変更される頻度のレベルを<xref:System.Windows.Ink.GestureRecognizer>ジェスチャが正しく識別します。  
+  
+ 使用して、<xref:System.Windows.Ink.GestureRecognitionResult.RecognitionConfidence%2A>が変更される頻度のレベルを決定するプロパティを<xref:System.Windows.Ink.GestureRecognizer>ジェスチャが正しく識別します。  
+  
+   
+  
+## Examples  
+ 次の例では、上のジェスチャを識別するため、<xref:System.Windows.Controls.InkCanvas>です。 この例では、<xref:System.Windows.Controls.InkCanvas>と呼ばれる`inkCanvas1`とその<xref:System.Windows.Controls.InkCanvas.Gesture>イベントがイベント ハンドラーのコードに接続されました。  
+  
+ [!code-csharp[GestureSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureSample/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[GestureSample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureSample/VisualBasic/Window1.xaml.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationGesture">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.ApplicationGesture ApplicationGesture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Ink.ApplicationGesture ApplicationGesture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.GestureRecognitionResult.ApplicationGesture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.ApplicationGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識されたインク ジェスチャを取得します。</summary>
+        <value>認識されたインク ジェスチャ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、上のジェスチャを識別するため、<xref:System.Windows.Controls.InkCanvas>です。 この例では、<xref:System.Windows.Controls.InkCanvas>と呼ばれる`inkCanvas1`とその<xref:System.Windows.Controls.InkCanvas.Gesture>イベントがイベント ハンドラーのコードに接続されました。  
+  
+ [!code-csharp[GestureSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureSample/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[GestureSample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureSample/VisualBasic/Window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognitionConfidence">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.RecognitionConfidence RecognitionConfidence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Ink.RecognitionConfidence RecognitionConfidence" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.GestureRecognitionResult.RecognitionConfidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.RecognitionConfidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼度のレベルを取得、<see cref="T:System.Windows.Ink.GestureRecognizer" />ジェスチャの認識が含まれています。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Ink.RecognitionConfidence" />レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、上のジェスチャを識別するため、<xref:System.Windows.Controls.InkCanvas>です。 この例では、<xref:System.Windows.Controls.InkCanvas>と呼ばれる`inkCanvas1`とその<xref:System.Windows.Controls.InkCanvas.Gesture>イベントがイベント ハンドラーのコードに接続されました。  
+  
+ [!code-csharp[GestureSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GestureSample/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[GestureSample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GestureSample/VisualBasic/Window1.xaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="IWebEventCustomEvaluator" FullName="System.Web.Management.IWebEventCustomEvaluator">
+  <TypeSignature Language="C#" Value="public interface IWebEventCustomEvaluator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebEventCustomEvaluator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.IWebEventCustomEvaluator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>イベントは、処理に関連するプロバイダーに送信する必要があるかどうかを評価します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ このインターフェイスは、有効または特定のイベントの起動処理を無効にできます。 これは、独自のカスタム イベントを実装する、プロバイダーに送信される、関連する処理の速度を制御すると特に便利です。  
+  
+> [!NOTE]
+>  このインターフェイスは、イベントが発生する頻度を制御しません。 のみは、イベント情報をプロバイダーに送信して処理する頻度を制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する方法を示しています、<xref:System.Web.Management.IWebEventCustomEvaluator>インターフェイスのカスタム イベントを作成するときにします。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#1)]
+ [!code-vb[System.Web.Management.WebBaseEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#1)]  
+  
+ ASP.NET で使用できるようにする構成ファイルの抜粋を次に示します、<xref:System.Web.Management.IWebEventCustomEvaluator.CanFire%2A>発生したイベントを処理するためのプロバイダーに送信する必要があるかどうかを決定するメソッド。  
+  
+```  
+<healthMonitoring   
+  heartBeatInterval="0" enabled="true">  
+  
+    <providers>  
+      <add name="SampleWebEventProvider"   
+        type="SamplesAspNet.SampleEventProvider, webeventprovider, Version=1.0.1741.20369, Culture=neutral, PublicKeyToken=cf85aa6c978d9dea, processorArchitecture=MSIL" />  
+    </providers>  
+  
+    <profiles>  
+      <add   
+        name="Custom"   
+        minInstances="1"   
+        maxLimit="Infinite"   
+        minInterval="00:00:00"   
+        custom ="SamplesAspNet.SampleWebRequestEvent,webrequestevent"   
+        />  
+    </profiles>  
+  
+    <eventMappings>  
+  
+      <add name="SampleWebRequestEvent" type="SamplesAspNet.SampleWebRequestEvent,webrequestevent, Version=1.0.1759.20533, Culture=neutral, PublicKeyToken=0d72899b07049076, processorArchitecture=MSIL" />  
+  
+    </eventMappings>  
+  
+    <rules>  
+      <clear />  
+  
+        <add name="Custom Web Request Event"   
+          eventName="SampleWebRequestEvent"  
+          provider="SampleWebEventProvider" profile="Custom" />  
+    </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanFire">
+      <MemberSignature Language="C#" Value="public bool CanFire (System.Web.Management.WebBaseEvent raisedEvent, System.Web.Management.RuleFiringRecord record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanFire(class System.Web.Management.WebBaseEvent raisedEvent, class System.Web.Management.RuleFiringRecord record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.IWebEventCustomEvaluator.CanFire(System.Web.Management.WebBaseEvent,System.Web.Management.RuleFiringRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="raisedEvent" Type="System.Web.Management.WebBaseEvent" />
+        <Parameter Name="record" Type="System.Web.Management.RuleFiringRecord" />
+      </Parameters>
+      <Docs>
+        <param name="raisedEvent">発生させるイベント。</param>
+        <param name="record"><see cref="T:System.Web.Management.RuleFiringRecord" />イベントに関する情報を格納します。</param>
+        <summary>イベントを発生させるかどうかを評価します。</summary>
+        <returns>
+          <see langword="true" />場合は、イベントを発生させる必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム イベントの評価が返された場合`true`イベントが発生し、関連付けられているプロバイダーによって処理されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のカスタム実装を示しています、<xref:System.Web.Management.IWebEventCustomEvaluator.CanFire%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#22)]
+ [!code-vb[System.Web.Management.WebBaseEvent#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

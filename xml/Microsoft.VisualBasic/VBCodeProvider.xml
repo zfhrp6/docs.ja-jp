@@ -1,0 +1,316 @@
+<Type Name="VBCodeProvider" FullName="Microsoft.VisualBasic.VBCodeProvider">
+  <TypeSignature Language="C#" Value="public class VBCodeProvider : System.CodeDom.Compiler.CodeDomProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VBCodeProvider extends System.CodeDom.Compiler.CodeDomProvider" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.VBCodeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.Compiler.CodeDomProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual Basic コード ジェネレーターと Visual Basic コード コンパイラのインスタンスへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic のインスタンスの取得に使用できるメソッドを提供<xref:System.CodeDom.Compiler.ICodeGenerator>と<xref:System.CodeDom.Compiler.ICodeCompiler>実装します。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、c# または Visual Basic コード プロバイダーを使用して、ソース ファイルをコンパイルします。 例では、入力ファイルの拡張子を確認して、対応する<xref:Microsoft.CSharp.CSharpCodeProvider>または<xref:Microsoft.VisualBasic.VBCodeProvider>コンパイルします。  入力ファイルは、実行可能ファイルにコンパイルされ、コンパイル エラーがコンソールに表示されます。  
+  
+ [!code-csharp[CodeDom_CodeProviders#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CodeProviders/CS/source.cs#2)]
+ [!code-vb[CodeDom_CodeProviders#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_CodeProviders/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VBCodeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.VBCodeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VBCodeProvider (System.Collections.Generic.IDictionary&lt;string,string&gt; providerOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; providerOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.#ctor(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerOptions" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="providerOptions">構成ファイルのプロバイダー オプションが格納された <see cref="T:System.Collections.Generic.IDictionary`2" /> オブジェクト。</param>
+        <summary>指定したプロバイダー オプションを使用して、<see cref="T:Microsoft.VisualBasic.VBCodeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、`providerOptions`は構成ファイル内の要素から取得します。 バージョンを識別することができます、<xref:Microsoft.VisualBasic.VBCodeProvider>を指定して使用する場合、`<providerOption>`要素、オプションの名前として"CompilerVersion"を指定し、オプションの値として、バージョン番号 (たとえば、"v3.5") を指定します。 小文字の"v"のバージョン番号の前にする必要があります。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの例では、コード プロバイダーを使用する必要があります、Visual Basic の version 3.5 を指定する方法を示します。  
+  
+```  
+<configuration>  
+  <system.codedom>  
+    <compilers>  
+      <!-- zero or more compiler elements -->  
+      <compiler  
+          language="vb;VisualBasic"  
+          extension=".vb"  
+          type="Microsoft.VisualBasic.VBCodeProvider, System,   
+          Version=2.0.3600.0, Culture=neutral,   
+          PublicKeyToken=b77a5c561934e089"  
+          compilerOptions="/optimize"  
+          warningLevel="1" >  
+          <providerOption  
+            name="CompilerVersion"  
+            value="v3.5" />  
+        </compiler>  
+    </compilers>  
+  </system.codedom>  
+</configuration>  
+```  
+  
+ 次の例は、の新しいインスタンスを作成するときに、コンパイラのバージョンを指定する方法を示しています、<xref:Microsoft.VisualBasic.VBCodeProvider>クラスです。  
+  
+ [!code-vb[VBProvider.ProviderOptions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/vbprovider.provideroptions/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerOptions" /> は <see langword="null" /> です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCompiler">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.Compiler.ICodeCompiler CreateCompiler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.Compiler.ICodeCompiler CreateCompiler() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.CreateCompiler" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use CodeDomProvider class")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeCompiler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Visual Basic コード コンパイラのインスタンスを取得します。</summary>
+        <returns>Visual Basic <see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> 実装のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGenerator">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.Compiler.ICodeGenerator CreateGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.CreateGenerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use CodeDomProvider class")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.ICodeGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Visual Basic コード ジェネレーターのインスタンスを取得します。</summary>
+        <returns>Visual Basic <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> 実装のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExtension">
+      <MemberSignature Language="C#" Value="public override string FileExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileExtension" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.VBCodeProvider.FileExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース コード ファイルを作成するときに使用するファイル名拡張子を取得します。</summary>
+        <value>生成されるソース コード ファイルで使用するファイル名の拡張子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このファイル名拡張子は、通常、言語のソース コード ファイルで使用される拡張子です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromMember">
+      <MemberSignature Language="C#" Value="public override void GenerateCodeFromMember (System.CodeDom.CodeTypeMember member, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateCodeFromMember(class System.CodeDom.CodeTypeMember member, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.GenerateCodeFromMember(System.CodeDom.CodeTypeMember,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="member" Type="System.CodeDom.CodeTypeMember" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="member">コード生成の対象となる <see cref="T:System.CodeDom.CodeTypeMember" />。</param>
+        <param name="writer">書き込み先の <see cref="T:System.IO.TextWriter" />。</param>
+        <param name="options">コードの生成時に使用する <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />。</param>
+        <summary>指定したテキスト ライターおよびコード ジェネレーターのオプションを使用して、指定したクラス メンバーのコードを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーは、そのコンテキストに応じて異なる方法で生成されます。 たとえば、インターフェイスのメソッドまたは列挙型のフィールドが生成メソッドまたはクラスのフィールドとは異なります。  この実装では、クラスのコンテキスト内のメンバーのコードを生成します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、 <xref:Microsoft.VisualBasic.VBCodeProvider.GenerateCodeFromMember%2A> CodeDOM グラフで使用するコード フラグメントを作成するメソッド。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromMember%2A>のメソッド、<xref:System.CodeDom.Compiler.CodeDomProvider>クラスです。  
+  
+ [!code-csharp[CodeDom_GenerateCodeFromMember#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/cs/program.cs#3)]
+ [!code-vb[CodeDom_GenerateCodeFromMember#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter GetConverter (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter GetConverter(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBCodeProvider.GetConverter(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">型コンバーターを取得する対象のオブジェクトの型。</param>
+        <summary>指定したオブジェクト型の <see cref="T:System.ComponentModel.TypeConverter" /> を取得します。</summary>
+        <returns>指定した型の <see cref="T:System.ComponentModel.TypeConverter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、特定のデータ型の特定の種類の型コンバーターを提供するには、このメソッドをオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageOptions">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.Compiler.LanguageOptions LanguageOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.Compiler.LanguageOptions LanguageOptions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.VBCodeProvider.LanguageOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.LanguageOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語機能識別子を取得します。</summary>
+        <value>言語の特殊な機能を示す <see cref="T:System.CodeDom.Compiler.LanguageOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

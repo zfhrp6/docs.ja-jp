@@ -1,0 +1,570 @@
+<Type Name="MapArea" FullName="System.Web.UI.DataVisualization.Charting.MapArea">
+  <TypeSignature Language="C#" Value="public class MapArea : System.Web.UI.DataVisualization.Charting.ChartNamedElement, System.Web.UI.DataVisualization.Charting.IChartMapArea" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MapArea extends System.Web.UI.DataVisualization.Charting.ChartNamedElement implements class System.Web.UI.DataVisualization.Charting.IChartMapArea" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.MapArea" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.DataVisualization.Charting.IChartMapArea</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ToolTip")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マップ領域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.MapArea>クラスがクライアント側のイメージ マップのマップ領域を表し、HTML に対応する\<領域 > タグです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.MapArea>にオブジェクトが格納されている、<xref:System.Web.UI.DataVisualization.Charting.MapAreasCollection>クラスです。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.MapArea> オブジェクトには、次の 2 種類があります。  
+  
+-   マップ面グラフ要素のときに自動的に作成される — たとえば、データ ポイント、系列を凡例項目またはストリップ ラインのオブジェクト: が空でない`ToolTip`、`Url`または`MapAreaAttributes`プロパティ以外のクライアント側の画像マップに必要なその他の HTML 要素も作成されたことに注意してください。 この場合、マップ領域の位置と寸法自動的にグラフ要素によって決まります。 使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.CustomizeMapAreas>ルートのイベント<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクトを削除または変更する実行時にこれらのマップ領域です。  
+  
+-   ユーザー定義の図形と座標を持つカスタムのマップ領域です。 使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>または実行時にデザイン時にこれらのカスタム マップ領域を追加するオブジェクト。  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ **重要な**上記の説明を使用するイメージ マップを作成する<xref:System.Web.UI.DataVisualization.Charting.MapArea>、オブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが別の手法を使用する必要があります。  
+  
+ カスタム<xref:System.Web.UI.DataVisualization.Charting.MapArea>、オブジェクト、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Shape%2A>プロパティは、形状を決定し、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Coordinates%2A>プロパティがマップ領域の場所を決定します。  
+  
+ ツールヒント、ハイパーリンク、またはターゲットなど、属性 = _Blank または OnClick="javascript:MyJavaScriptFunction()"、すべてのマップ領域を設定できます。  
+  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.MapArea.IsCustom%2A>マップ領域がカスタムであるかどうかを判別プロパティ<xref:System.Web.UI.DataVisualization.Charting.MapArea>オブジェクトです。 つまり、ユーザー定義の図形と座標があるかどうします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.MapArea>クラスです。  
+  
+ ただし、カスタムを作成する簡単な方法<xref:System.Web.UI.DataVisualization.Charting.MapArea>オブジェクトは、オーバー ロードされたいずれかを使用する`Add`または`Insert`のメソッド、<xref:System.Web.UI.DataVisualization.Charting.MapAreasCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (string url, System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.String,System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="path">A<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />マップ領域の図形を定義するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />クラスを指定した URL と<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (string url, System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.String,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />四角形のマップ領域の図形を定義する構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />クラスを指定した URL と<see cref="T:System.Drawing.RectangleF" />構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (System.Web.UI.DataVisualization.Charting.MapAreaShape shape, string url, float[] coordinates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.DataVisualization.Charting.MapAreaShape shape, string url, float32[] coordinates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.Web.UI.DataVisualization.Charting.MapAreaShape,System.String,System.Single[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="shape" Type="System.Web.UI.DataVisualization.Charting.MapAreaShape" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="coordinates" Type="System.Single[]" />
+      </Parameters>
+      <Docs>
+        <param name="shape">マップ領域の図形です。</param>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="coordinates">円、四角形、または多角形の位置を決定する座標の配列。 使用されている図形の種類は、必要な座標の種類を決定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />クラスを指定した図形、URL と座標を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (string toolTip, string url, string attributes, string postBackValue, System.Drawing.Drawing2D.GraphicsPath path, object tag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string toolTip, string url, string attributes, string postBackValue, class System.Drawing.Drawing2D.GraphicsPath path, object tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.String,System.String,System.String,System.String,System.Drawing.Drawing2D.GraphicsPath,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="toolTip" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="attributes" Type="System.String" />
+        <Parameter Name="postBackValue" Type="System.String" />
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+        <Parameter Name="tag" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="toolTip">マップ領域のツールヒント。</param>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="attributes">マップ領域の属性。</param>
+        <param name="postBackValue">ポストバック値を処理できる、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</param>
+        <param name="path">グラフィックス パスとしてのマップ領域の領域の座標。</param>
+        <param name="tag">マップ領域がカスタムであるかどうかを示すためにタグです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />指定したツールヒントのテキスト、URL、属性、ポストバック値、パス、およびタグを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (string toolTip, string url, string attributes, string postBackValue, System.Drawing.RectangleF rect, object tag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string toolTip, string url, string attributes, string postBackValue, valuetype System.Drawing.RectangleF rect, object tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.String,System.String,System.String,System.String,System.Drawing.RectangleF,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="toolTip" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="attributes" Type="System.String" />
+        <Parameter Name="postBackValue" Type="System.String" />
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="tag" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="toolTip">マップ領域のツールヒント。</param>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="attributes">マップ領域の属性。</param>
+        <param name="postBackValue">ポストバック値を処理できる、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</param>
+        <param name="rect">座標、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />オブジェクト。</param>
+        <param name="tag">マップ領域がカスタムであるかどうかを示すためにタグです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />クラスと、指定したツールヒントのテキスト、URL、属性、ポストバック値、四角形の座標およびタグです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MapArea (System.Web.UI.DataVisualization.Charting.MapAreaShape shape, string toolTip, string url, string attributes, string postBackValue, float[] coordinates, object tag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.DataVisualization.Charting.MapAreaShape shape, string toolTip, string url, string attributes, string postBackValue, float32[] coordinates, object tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.MapArea.#ctor(System.Web.UI.DataVisualization.Charting.MapAreaShape,System.String,System.String,System.String,System.String,System.Single[],System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="shape" Type="System.Web.UI.DataVisualization.Charting.MapAreaShape" />
+        <Parameter Name="toolTip" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="attributes" Type="System.String" />
+        <Parameter Name="postBackValue" Type="System.String" />
+        <Parameter Name="coordinates" Type="System.Single[]" />
+        <Parameter Name="tag" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="shape">マップ領域の図形です。</param>
+        <param name="toolTip">マップ領域のツールヒント。</param>
+        <param name="url">マップ領域の参照先 URL またはアンカー ポイントです。</param>
+        <param name="attributes">マップ領域の属性。</param>
+        <param name="postBackValue">ポストバック値を処理できる、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</param>
+        <param name="coordinates">円、四角形、または多角形の位置を決定する座標の配列。 使用されている図形の種類は、必要な座標の種類を決定します。</param>
+        <param name="tag">マップ領域がカスタムであるかどうかを示すためにタグです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />指定した図形、ツールヒントのテキスト、URL、属性、ポストバック値、座標、およびタグを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Coordinates">
+      <MemberSignature Language="C#" Value="public float[] Coordinates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] Coordinates" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.Coordinates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.MapAreaCoordinatesConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の座標、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />オブジェクト。</summary>
+        <value>マップ領域の図形に依存する座標の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.MapArea.Coordinates%2A>プロパティが通常使用をユーザー定義の図形と座標を持つカスタムのマップ領域オブジェクトの座標を設定します。  
+  
+ カスタムのマップ領域を指定する座標は、マップ領域の図形によって異なります。  
+  
+-   円です。 次の 3 つの座標を指定する必要があります。"x1, y1, r"、1、y2"x"、円の中心の座標は、"r"は、円の半径。  
+  
+-   四角形。 4 つの座標を指定する必要があります。"x1, y1, x2, y2"、"x1, y1"where"x2, y2"四角形の左上隅の座標は、四角形の右下隅の座標。  
+  
+-   多角形です。 X と y の 2 つ以上のペアを指定する必要があります"x1, y1, x2, y2... xn、yn"、「x, y」の各ペアが多角形の頂点の座標が含まれます。  
+  
+ 座標を設定するときに、グラフ、ここでグラフ イメージの左上隅は「0, 0」、「100, 100」は、画像の右下隅の相対座標システムを使用します。  
+  
+ マップ領域の図形と座標を定義した後、 <xref:System.Web.UI.DataVisualization.Charting.MapArea.ToolTip%2A>、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Url%2A>や<xref:System.Web.UI.DataVisualization.Charting.MapArea.MapAreaAttributes%2A>プロパティを使用して、特定のユーザーの操作を指定します。  
+  
+ 次の点に注意してください。  
+  
+-   クライアント側の画像マップが作成できる実行時に場合のみ、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクトが`true`、既定値です。  
+  
+-   追加することで、イメージ マップを作成する、<xref:System.Web.UI.DataVisualization.Charting.MapArea>マップ領域のコレクションにオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが、特別な方法を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCustom">
+      <MemberSignature Language="C#" Value="public bool IsCustom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCustom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.IsCustom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域がカスタムであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />マップ領域がカスタム; 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapAreaAttributes">
+      <MemberSignature Language="C#" Value="public string MapAreaAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MapAreaAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.MapAreaAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域の属性を設定します。</summary>
+        <value>A<see langword="string" />を特定のグラフ要素に対応するマップ領域の属性を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性文字列が追加する場合は、このプロパティを設定して、クライアント側の画像マップが自動的に作成して、マップ領域に作成されます、\<マップ > タグに対応する、<xref:System.Web.UI.DataVisualization.Charting.Chart>のこのプロパティが設定されているオブジェクト。 たとえば、このプロパティの使用や設定の対象の属性を設定、`Url`最初のデータ ポイントのプロパティは、次のような HTML コードになります。  
+  
+ \<img id ="Chart1"USEMAP ="#Chart1ImageMap"src ="ChartPic_000002.jpg しますか? 6735e83b-f0cd-4225-8be4-047695a61040"border =「0」/>.\<マップ名 ="Chart1ImageMap">\<エリアの形状 ="rect"HREF ="http://www.SomeDomain.ca"COORDS「69,120,106,309」Target =\=_Blank >\</map >  
+  
+ 文字列全体が追加されるため、\<マップ > タグ、複数の属性は、スペースで区切る必要があります。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.MapArea.MapAreaAttributes%2A>プロパティを組み合わせて使用することができます、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Url%2A>プロパティをターゲットなどのマップ領域属性を指定する _Blank、だけでなく OnClick="MyEvent() などのクライアント側のイベント ハンドラーを ="です。  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ **重要な**をこの方法で、イメージ マップを作成する、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが別の手法を使用する必要があります。  
+  
+ このプロパティを設定するときに、特別なキーワードを使用できます。 各キーワードはその型の適用可能なグラフ要素からデータに置き換えられます。 使用可能なすべてのキーワードの一覧については、次の表を参照してください。  
+  
+|キーワード|置き換え|  
+|-------------|-----------------|  
+|#VALX|データ ポイントの X 値。|  
+|#VAL、#、VALY #VALY&#2;VALY3 しています.|データ ポイントの Y 値。|  
+|#SER|系列名。|  
+|#LABEL|データ ポイント ラベル。|  
+|#INDEX|データ ポイントのインデックス。|  
+|#PERCENT|割合のデータ ポイントの Y 値。|  
+|#TOTAL|すべての系列の Y 値の合計です。|  
+|#LEGENDTEXT|凡例のテキスト。|  
+  
+ ユーザー定義の座標にあるイメージ マップを作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("Map Area")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域の名前を設定します。</summary>
+        <value>A<see langword="string" />マップ領域の名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBackValue">
+      <MemberSignature Language="C#" Value="public string PostBackValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostBackValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.PostBackValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のポストバック値を処理できる、<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</summary>
+        <value>A<see langword="string" />に渡されるポストバック値を表す値<see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shape">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.MapAreaShape Shape { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.MapAreaShape Shape" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.Shape" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.MapAreaShape), "Rectangle")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.MapAreaShape</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の図形、<see cref="T:System.Web.UI.DataVisualization.Charting.MapArea" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.MapAreaShape" />のマップ領域オブジェクトの形状を決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは通常、ユーザー定義の図形と座標を持つ、カスタムのマップ領域オブジェクトの形状を設定する使用します。  
+  
+ カスタム マップ領域の図形を指定する必要がある座標の種類を決定し、使用できる図形が円、四角形、および多角形です。  
+  
+ 図形を取得するときに<xref:System.Web.UI.DataVisualization.Charting.MapArea>オブジェクトに格納されている、<xref:System.Web.UI.DataVisualization.Charting.MapAreasCollection>四角形や円ではない任意の図形は多角形と見なされます。 マップ領域を使って、コレクションにカスタムのマップ領域を追加するなど、<xref:System.Drawing.Drawing2D.GraphicsPath>により、使用する図形の任意の型のパラメーターとしてオブジェクト。 場合、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Shape%2A>これは、他のプロパティ<xref:System.Web.UI.DataVisualization.Charting.MapArea>オブジェクトを取得するが返されます、<xref:System.Web.UI.DataVisualization.Charting.MapAreaShape.Polygon>です。  
+  
+ 図形とマップ領域の座標を定義したら、 <xref:System.Web.UI.DataVisualization.Charting.MapArea.ToolTip%2A>、<xref:System.Web.UI.DataVisualization.Charting.MapArea.Url%2A>や<xref:System.Web.UI.DataVisualization.Charting.MapArea.MapAreaAttributes%2A>プロパティを使用して、特定のユーザーの操作を指定します。  
+  
+ 次の点に注意してください。  
+  
+-   ルート グラフ オブジェクトの IsMapEnabled プロパティが true の場合、既定値である場合、実行時にクライアント側の画像マップが作成のみです。  
+  
+-   イメージを作成するには、マップ領域のコレクション、RenderType、グラフのオブジェクトのプロパティを MapArea オブジェクトを追加することでマップが RenderType.ImageTag をする必要があります。 バイナリ ストリームを使用するときに、イメージ マップを作成することが、特別な方法を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域のツールヒントを設定します。</summary>
+        <value>A<see langword="string" />グラフ要素のツールヒントを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定は自動的にクライアント側の画像マップが作成されるなりタイトル属性を指定したツール ヒントの文字列に設定されたマップ領域が作成します。 マップ領域では、関連するグラフ要素に対応するディメンションを使用します。 たとえば場合、<xref:System.Web.UI.DataVisualization.Charting.MapArea.ToolTip%2A>データ ポイントのプロパティを設定し、次のコードのような HTML コードは、実行時に生成されます。  
+  
+ \<マップ名 ="Chart1ImageMap">\<エリアの形状 ="rect"Title ="最初のデータ値 = 19"COORDS「69,120,106,309」= >\</map >  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ **重要な**をこの方法で、イメージ マップを作成する、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが別の手法を使用する必要があります。  
+  
+ このプロパティでは、さまざまな種類のグラフに関連するデータを表示する特別なキーワードを設定することができます。  
+  
+ ユーザー定義の座標にあるイメージ マップを作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.MapArea.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.UrlValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域の参照先の URL またはアンカー ポイントを設定します。</summary>
+        <value>A<see langword="string" />マップ領域の送信先 URL などのアンカー ポイントを表す値です。 絶対 URL を使用するのには、"http://"または"www"のいずれかの文字列式を開始します。 これらのプレフィックスのいずれかで、文字列が起動しない場合は相対 URL として扱われます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定してクライアント側の画像マップが自動的に作成する、マップ領域を HREF 属性が指定のアンカーまたは URL を設定すると作成されます。 このマップ領域には、関連するグラフ要素に対応するディメンションが使用されます。 たとえば、HREF プロパティは、データ ポイントの設定は場合、実行時に次のような HTML コードが生成されます。  
+  
+ &lt;img id ="Chart1"USEMAP ="#Chart1ImageMap"src ="ChartPic_000002.jpg しますか? 6735e83b-f0cd-4225-8be4-047695a61040"border =「0」/&gt;\<BR >.\<BR >&lt;マップ名 ="Chart1ImageMap"&gt;\<BR >&lt;エリアの形状"rect"HREF ="http://www.healthquotes.ca"COORDS を = =「69,120,106,309」&gt;\<BR > &lt; /マップ&gt;  
+  
+ このプロパティを設定する影響はない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定されている`false`です。 既定値は `true` です。  
+  
+ **重要な**をこの方法で、イメージ マップを作成する、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>にオブジェクトを設定する必要があります<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>です。 バイナリ ストリームを使用するときに、イメージ マップを作成することが別の手法を使用する必要があります。  
+  
+ 使用してターゲット =、空白など、マップ領域の属性を指定することができます、<xref:System.Web.UI.DataVisualization.Charting.MapArea.MapAreaAttributes%2A>プロパティです。  
+  
+ このプロパティでは、さまざまな種類のグラフに関連するデータを表示する特別なキーワードを設定することができます。  
+  
+ ユーザー定義の座標にあるイメージ マップを作成するには、使用、<xref:System.Web.UI.DataVisualization.Charting.Chart.MapAreas%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

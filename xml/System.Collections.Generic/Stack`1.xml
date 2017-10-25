@@ -1,0 +1,1159 @@
+<Type Name="Stack&lt;T&gt;" FullName="System.Collections.Generic.Stack&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class Stack&lt;T&gt; : System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Stack`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.Stack`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Generic.System_StackDebugView`1))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">スタック内の要素の型を指定します。</typeparam>
+    <summary>指定した同じ型のインスタンスの、後入れ先出し (LIFO) の可変サイズのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.Stack%601>配列として実装されます。  
+  
+ スタックやキューは場合に役立ちますについて; 一時的な保存する必要があります。つまり、可能性がある場合の値を取得後に要素を破棄します。 使用して<xref:System.Collections.Generic.Queue%601>かどうかは、これが、コレクションに格納される順序と同じ順序での情報にアクセスする必要があります。 使用して<xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType>逆の順序で、情報にアクセスする必要がある場合。  
+  
+ 使用して、<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>と<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>型の場合、同時に複数のスレッドからコレクションにアクセスする必要があります。  
+  
+ 一般的な用途<xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType>を他のプロシージャの呼び出し中に変数の状態を維持しています。  
+  
+ 次の 3 つの主要な操作を実行できる、<xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType>とその要素。  
+  
+-   <xref:System.Collections.Generic.Stack%601.Push%2A>上部にある要素を挿入、<xref:System.Collections.Stack>です。  
+  
+-   <xref:System.Collections.Generic.Stack%601.Pop%2A>先頭から要素を削除、<xref:System.Collections.Generic.Stack%601>です。  
+  
+-   <xref:System.Collections.Generic.Stack%601.Peek%2A>上部にある要素を返します、<xref:System.Collections.Generic.Stack%601>からは削除されませんが、<xref:System.Collections.Generic.Stack%601>です。  
+  
+ 容量、<xref:System.Collections.Generic.Stack%601>要素の数が、<xref:System.Collections.Generic.Stack%601>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Generic.Stack%601>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。 呼び出すことによって、容量を削減できる<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>です。  
+  
+ 場合<xref:System.Collections.Generic.Stack%601.Count%2A>がスタックの容量よりも小さい<xref:System.Collections.Generic.Stack%601.Push%2A>は、o (1) 操作になります。 容量が、新しい要素を格納するためにする必要がある場合<xref:System.Collections.Generic.Stack%601.Push%2A>O になります (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。 <xref:System.Collections.Generic.Stack%601.Pop%2A>o (1) 操作です。  
+  
+ <xref:System.Collections.Generic.Stack%601>受け付ける`null`と参照の有効な値の型により、重複する要素。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスです。 このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ A<see cref="T:System.Collections.Generic.Stack`1" />コレクションが変更されない限り、複数のリーダーを同時にサポートできます。  それでも、コレクションの列挙は、本質的には、スレッド セーフなプロシージャではします。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空で、既定の初期量を備えた、<see cref="T:System.Collections.Generic.Stack`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.Stack%601>は要素の数を<xref:System.Collections.Generic.Stack%601>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Generic.Stack%601>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Generic.Stack%601>です。  
+  
+ 呼び出すことによって、容量を削減できる<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターをいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack (System.Collections.Generic.IEnumerable&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">要素のコピー元のコレクション。</param>
+        <summary>指定したコレクションからコピーした要素を格納し、コピーされる要素の数を格納できるだけの容量を備えた、<see cref="T:System.Collections.Generic.Stack`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.Stack%601>は要素の数を<xref:System.Collections.Generic.Stack%601>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Generic.Stack%601>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Generic.Stack%601>です。  
+  
+ 呼び出すことによって、容量を削減できる<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>です。  
+  
+ 要素の上にコピー、<xref:System.Collections.Generic.Stack%601>によって読み取られる同じ順序で、<xref:System.Collections.Generic.IEnumerator%601>のコレクション。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`collection`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターをいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stack (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Generic.Stack`1" /> が格納できる要素数の初期値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Generic.Stack`1" />はクラスを空にして、指定した初期量または既定の初期量、大きい方です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.Stack%601>は要素の数を<xref:System.Collections.Generic.Stack%601>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Generic.Stack%601>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Generic.Stack%601>です。  
+  
+ 呼び出すことによって、容量を削減できる<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.Stack`1" /> からすべてのオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.Stack%601.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。  
+  
+ 容量はそのまま残ります。 容量をリセットする、 <xref:System.Collections.Generic.Stack%601>、呼び出す<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>です。 空のトリミング<xref:System.Collections.Generic.Stack%601>のキャパシティを設定、<xref:System.Collections.Generic.Stack%601>を既定の容量。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.Stack`1" /> 内で検索するオブジェクト。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>ある要素が <see cref="T:System.Collections.Generic.Stack`1" /> 内に存在するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="item" /> に存在する場合は <see cref="T:System.Collections.Generic.Stack`1" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定の等値比較子を使用して等しいかどうかを決定<xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType>の`T`リスト内の値の型。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(!T[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.Generic.Stack`1" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Collections.Generic.Stack`1" />既存の 1 次元に<see cref="T:System.Array" />、指定した配列インデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の最後で先出し (LIFO) の順序への呼び出しの連続してによって返される要素の順序と似ての配列にコピー<xref:System.Collections.Generic.Stack%601.Pop%2A>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">コピー元の <see cref="T:System.Collections.Generic.Stack`1" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="arrayIndex" /> から最後までの使用可能領域を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.Stack`1.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.Stack`1" /> に格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.Stack`1" /> に格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.Stack%601>は要素の数を<xref:System.Collections.Generic.Stack%601>格納できます。 <xref:System.Collections.Generic.Stack%601.Count%2A>実際には、要素の数、<xref:System.Collections.Generic.Stack%601>です。  
+  
+ 容量は、常により大きいまたは等しい<xref:System.Collections.Generic.Stack%601.Count%2A>です。 場合<xref:System.Collections.Generic.Stack%601.Count%2A>要素を追加するときに、容量を超える場合、前の要素をコピーし、新しい要素を追加する前に、内部の配列を自動的に再割り当てによって、容量が増加します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかのプロパティとメソッドを示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Count%2A>プロパティです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Stack&lt;T&gt;.Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Collections.Generic.Stack`1/Enumerator&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Stack&lt;T&gt;+Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を返します、<see cref="T:System.Collections.Generic.Stack`1" />です。</summary>
+        <returns><see cref="T:System.Collections.Generic.Stack`1.Enumerator" /> の <see cref="T:System.Collections.Generic.Stack`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置では、<xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A> は、<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A> は、<xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.Generic.Stack%601.Enumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A>が定義されていません。 <xref:System.Collections.Generic.Stack%601.Enumerator.Current%2A> を、再度、コレクションの最初の要素に設定することはできません。列挙子の新しいインスタンスを作成する必要があります。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ことを示します、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスは列挙可能です。 `foreach`ステートメント (`For Each` Visual basic で`for each`C++ で)、キューを列挙するために使用します。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public T Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !T Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>上部にあるオブジェクトを返します、<see cref="T:System.Collections.Generic.Stack`1" />削除することがなくです。</summary>
+        <returns>オブジェクトの上部にある、<see cref="T:System.Collections.Generic.Stack`1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Generic.Stack%601.Pop%2A> メソッドに類似していますが、<xref:System.Collections.Generic.Stack%601.Peek%2A> は <xref:System.Collections.Generic.Stack%601> を変更しません。  
+  
+ 場合型`T`、参照型では、`null`にプッシュされることができます、<xref:System.Collections.Generic.Stack%601>必要な場合は、プレース ホルダーとして。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Generic.Stack`1" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pop">
+      <MemberSignature Language="C#" Value="public T Pop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !T Pop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.Pop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除し、上部にあるオブジェクトを返します、<see cref="T:System.Collections.Generic.Stack`1" />です。</summary>
+        <returns>先頭から削除するオブジェクト、<see cref="T:System.Collections.Generic.Stack`1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Collections.Generic.Stack%601.Peek%2A> メソッドに類似していますが、<xref:System.Collections.Generic.Stack%601.Peek%2A> は <xref:System.Collections.Generic.Stack%601> を変更しません。  
+  
+ 場合型`T`、参照型では、`null`にプッシュされることができます、<xref:System.Collections.Generic.Stack%601>必要な場合は、プレース ホルダーとして。  
+  
+ <xref:System.Collections.Generic.Stack%601>配列として実装されます。 このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Pop%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Generic.Stack`1" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Push">
+      <MemberSignature Language="C#" Value="public void Push (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Push(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.Push(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.Stack`1" /> にプッシュするオブジェクト。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary><see cref="T:System.Collections.Generic.Stack`1" /> の先頭にオブジェクトを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.Stack%601>配列として実装されます。  
+  
+ 場合<xref:System.Collections.Generic.Stack%601.Count%2A>容量の容量と既に同じ、<xref:System.Collections.Generic.Stack%601>内部の配列を自動的に再割り当てが増加し、新しい要素が追加される前に、既存の要素が新しい配列にコピーされます。  
+  
+ 場合型`T`、参照型では、`null`にプッシュされることができます、<xref:System.Collections.Generic.Stack%601>必要な場合は、プレース ホルダーとして。 スタック内のスロットを占有し、任意のオブジェクトと同様に扱われます。  
+  
+ 場合<xref:System.Collections.Generic.Stack%601.Count%2A>がスタックの容量よりも小さい<xref:System.Collections.Generic.Stack%601.Push%2A>は、o (1) 操作になります。 容量が、新しい要素を格納するためにする必要がある場合<xref:System.Collections.Generic.Stack%601.Push%2A>O になります (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.Push%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;T&gt; IEnumerable&lt;T&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.System#Collections#Generic#IEnumerable&lt;T&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置では、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.Generic.IEnumerator%601.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.IEnumerator%601.Current%2A>が定義されていません。 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> を、再度、コレクションの最初の要素に設定することはできません。列挙子の新しいインスタンスを作成する必要があります。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ICollection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、ソースの種類<xref:System.Collections.ICollection>変換先の型に自動的にキャストすることはできません`array`の非ジェネリックの実装<xref:System.Collections.ICollection.CopyTo%2A?displayProperty=nameWithType>スロー<xref:System.InvalidCastException>汎用実装でスローされ、<xref:System.ArgumentException>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ <paramref name="array" />0 から始まるインデックスがありませんでした。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="arrayIndex" /> から最後までの使用可能領域を超えています。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.Stack`1.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。  <see cref="T:System.Collections.Generic.Stack`1" /> の既定の実装では、このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。  まれに、列挙型どうしは競合して書き込みアクセスでは、列挙中にコレクションをロックする必要があります。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.ICollection.SyncRoot%2A>アクセスを同期するために使用できるオブジェクトを返します、<xref:System.Collections.ICollection>です。 同期は、すべてのスレッドがコレクションにアクセスする前にこのオブジェクトをロックする場合のみ有効です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.Stack`1.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。  <see cref="T:System.Collections.Generic.Stack`1" /> の既定の実装では、このプロパティは常に現在のインスタンスを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.ICollection.SyncRoot%2A>アクセスを同期するために使用できるオブジェクトを返します、<xref:System.Collections.ICollection>です。 同期は、すべてのスレッドがコレクションにアクセスする前にこのオブジェクトをロックする場合のみ有効です。 次のコードの使用を示しています、 <xref:System.Collections.ICollection.SyncRoot%2A> c#、C++、および Visual Basic のプロパティです。  
+  
+```csharp  
+ICollection ic = ...;  
+lock (ic.SyncRoot) {  
+   // Access the collection.  
+}  
+```  
+  
+```vb  
+Dim ic As ICollection = ...  
+SyncLock ic.SyncRoot  
+   ' Access the collection.  
+End SyncLock  
+```  
+  
+```cpp#  
+ICollection^ ic = ...;  
+try {  
+   Monitor::Enter(ic->SyncRoot);  
+   // Access the collection.  
+}  
+finally {  
+   Monitor::Exit(ic->SyncRoot);  
+}  
+```  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public T[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !T[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピー、<see cref="T:System.Collections.Generic.Stack`1" />を新しい配列にします。</summary>
+        <returns>新しい配列の要素のコピーを格納、<see cref="T:System.Collections.Generic.Stack`1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の最後で先出し (LIFO) の順序への呼び出しの連続してによって返される要素の順序と似ての配列にコピー<xref:System.Collections.Generic.Stack%601.Pop%2A>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつかの方法を示しています、<xref:System.Collections.Generic.Stack%601>ジェネリック クラスなど、<xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドです。  
+  
+ このコード例は、既定の容量を持つ文字列のスタックを作成し、使用して、 <xref:System.Collections.Generic.Stack%601.Push%2A> 5 つの文字列をスタックにプッシュするメソッド。 スタックの要素が表示され、スタックの状態は変化しませんが列挙されます。 <xref:System.Collections.Generic.Stack%601.Pop%2A>スタックから最初の文字列を表示するメソッドを使用します。 <xref:System.Collections.Generic.Stack%601.Peek%2A>メソッドを使用して、スタックの次の項目を確認し、<xref:System.Collections.Generic.Stack%601.Pop%2A>からポップするメソッドを使用します。  
+  
+ <xref:System.Collections.Generic.Stack%601.ToArray%2A>メソッドは、配列を作成し、スタック要素のコピーに使用し、配列に渡されます、<xref:System.Collections.Generic.Stack%601.%23ctor%2A>を受け取るコンス トラクター <xref:System.Collections.Generic.IEnumerable%601>、逆に、要素の順序でスタックのコピーを作成します。 コピーの要素が表示されます。  
+  
+ 配列 2 回、スタックのサイズが作成、および<xref:System.Collections.Generic.Stack%601.CopyTo%2A>メソッドは、配列の中央にある開始配列要素のコピーに使用します。 <xref:System.Collections.Generic.Stack%601.%23ctor%2A>コンス トラクターは、元に戻す要素の順序でスタックのコピーを作成するもう一度使用されます。 そのため、3 つの null 要素が最後には。  
+  
+ <xref:System.Collections.Generic.Stack%601.Contains%2A>メソッドを使用するまで、スタックの最初のコピーで「4」文字列が表示して、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドは、コピー、クリア、<xref:System.Collections.Generic.Stack%601.Count%2A>スタックが空であるプロパティを示しています。  
+  
+ [!code-csharp[Generic.Stack#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.Stack/cs/source.cs#1)]
+ [!code-vb[Generic.Stack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.Stack/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimExcess">
+      <MemberSignature Language="C#" Value="public void TrimExcess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrimExcess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.TrimExcess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.Stack`1" /> 内にある実際の要素数が現在の容量の 90% 未満の場合は、容量をその数に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクションのメモリ オーバーヘッドを最小要素がコレクションに追加されない場合に使用できます。 再割り当てすることや、大規模なコピーのコスト<xref:System.Collections.Generic.Stack%601>考慮する必要が、ただし、ため、<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>メソッドは何もリストが容量の 90% 以上である場合。 これは、比較的小さい向上のための大規模な再割り当てコストをかけず回避できます。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.Stack%601.Count%2A>します。  
+  
+ リセットする、<xref:System.Collections.Generic.Stack%601>を初期状態に呼び出し、<xref:System.Collections.Generic.Stack%601.Clear%2A>メソッドを呼び出す前に<xref:System.Collections.Generic.Stack%601.TrimExcess%2A>メソッドです。 空のトリミング<xref:System.Collections.Generic.Stack%601>のキャパシティを設定、<xref:System.Collections.Generic.Stack%601>を既定の容量。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryPeek">
+      <MemberSignature Language="C#" Value="public bool TryPeek (out T result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryPeek([out] !T&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.TryPeek(`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryPop">
+      <MemberSignature Language="C#" Value="public bool TryPop (out T result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryPop([out] !T&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.Stack`1.TryPop(`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

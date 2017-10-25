@@ -1,0 +1,119 @@
+<Type Name="TextElementEditingBehaviorAttribute" FullName="System.Windows.Documents.TextElementEditingBehaviorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TextElementEditingBehaviorAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TextElementEditingBehaviorAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextElementEditingBehaviorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定する方法、<see cref="T:System.Windows.Controls.RichTextBox" />カスタム テキスト要素を処理する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム テキスト要素を作成するときに行うこともできます、<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute>要素を分割できない 1 つのエンティティとして扱うことを指定する属性。  ときに、<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsMergeable%2A>と<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsTypographicOnly%2A>プロパティに設定されます`false`、<xref:System.Windows.Controls.RichTextBox>ユーザーを編集するとき、境界と、要素の内容を保持、<xref:System.Windows.Controls.RichTextBox>です。  一般に、カスタム要素のと同様に動作する<xref:System.Windows.Documents.Hyperlink>です。  このクラスを使用してそのプロパティの両方を設定すると、次の動作が発生した`false`:  
+  
+-   ユーザーは、コピーし、カスタム要素のコンテンツの一部を貼り付けます、ときに、コピーしたテキストの書式設定は保持されません。  
+  
+-   入力すると、ユーザーの前に、またはカスタムの要素の内容の後、新しいコンテンツは、カスタム要素の書式情報を取得しません。  
+  
+-   ユーザーは、カスタム要素に改行を挿入することはできません。  
+  
+ カスタム要素を作成するときに使用して、<xref:System.Windows.Documents.TextRange.Save%28System.IO.Stream%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドと set`preserveTextElements`に`true`ディスクまたはクリップボードにシリアル化するときに、カスタムの要素とプロパティの値を保持します。  
+  
+ <xref:System.Windows.Documents.TextElementEditingBehaviorAttribute>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextElementEditingBehaviorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextElementEditingBehaviorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.TextElementEditingBehaviorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextElementEditingBehaviorAttribute>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMergeable">
+      <MemberSignature Language="C#" Value="public bool IsMergeable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMergeable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsMergeable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、 <see cref="T:System.Windows.Controls.RichTextBox" /> 2 つの隣接するテキスト要素をマージすることができます。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.RichTextBox" /> 、それ以外の同じプロパティ値を持つカスタムの隣接するテキスト要素をマージするために解放<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsMergeable%2A>は`true`、同じプロパティ値を持つ隣接するテキスト要素を結合する意思決定は最大のまま、<xref:System.Windows.Controls.RichTextBox>です。  ときに<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsMergeable%2A>は`false`、 <xref:System.Windows.Controls.RichTextBox> 2 つの隣接するテキスト要素を結合できません。  
+  
+ <xref:System.Windows.Documents.TextElementEditingBehaviorAttribute>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTypographicOnly">
+      <MemberSignature Language="C#" Value="public bool IsTypographicOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTypographicOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsTypographicOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、文字ごとに形式をテキスト要素を提供するかどうか、または書式設定、要素全体に適用される場合を示す値を設定します。</summary>
+        <value>
+          <see langword="true" />個々 の文字を適用する書式設定場合<see langword="false" />場合は、要素全体に適用する必要があります、書式設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsTypographicOnly%2A>は`true`書式が保持されると、ユーザーがコピーし、カスタム テキスト要素の内容の一部を貼り付けます。  ときに<xref:System.Windows.Documents.TextElementEditingBehaviorAttribute.IsTypographicOnly%2A>は`false`ユーザーがコピーし、すべてのカスタム テキスト要素の内容を貼り付けます場合にのみに保持されますが、書式設定します。  
+  
+ <xref:System.Windows.Documents.TextElementEditingBehaviorAttribute>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

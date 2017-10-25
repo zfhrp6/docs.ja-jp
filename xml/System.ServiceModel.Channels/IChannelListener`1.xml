@@ -1,0 +1,213 @@
+<Type Name="IChannelListener&lt;TChannel&gt;" FullName="System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;">
+  <TypeSignature Language="C#" Value="public interface IChannelListener&lt;TChannel&gt; : System.ServiceModel.Channels.IChannelListener where TChannel : class, IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelListener`1&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt; implements class System.ServiceModel.Channels.IChannelListener, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IChannelListener`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+        <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannelListener</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+    <summary>チャネル リスナーが種類に固有のチャネルを受け入れるために実装する必要があるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IChannelListener> インターフェイスまたは <xref:System.ServiceModel.Channels.IChannelListener%601> インターフェイスを実装するリスナー ファクトリがサービスに提供するメカニズムにより、サービスとの通信を開始して可能にするクライアントによって生成されるチャネルが受け入れられます。  
+  
+ <xref:System.ServiceModel.Channels.IChannelListener%601> コントラクトを実装することで、その都度チャネルの種類を指定することなく、特定の種類の複数のチャネルを受け入れることができます。 つまり、<xref:System.ServiceModel.Channels.IChannelListener%601> インターフェイスに対するジェネリック パラメーターとしてチャネルの種類を定義することは、<xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A> のメソッドに種類を渡す必要がないことを意味します。 異なる種類のチャネルを受け入れる必要がある場合は、必要なチャネルの種類ごとに別のチャネル リスナーを作成できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="AcceptChannel">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>クライアントとの通信に対して指定した種類のチャネルを受け入れます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的なタイムアウトが設定された <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%28System.TimeSpan%29> オーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AcceptChannel">
+      <MemberSignature Language="C#" Value="public TChannel AcceptChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel AcceptChannel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelListener`1.AcceptChannel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントとの通信に対して指定した種類のチャネルを受け入れます。</summary>
+        <returns>リスナーで受け入れられる <paramref name="TChannel" /> 型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的なタイムアウトが設定された <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%28System.TimeSpan%29> オーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptChannel">
+      <MemberSignature Language="C#" Value="public TChannel AcceptChannel (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel AcceptChannel(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelListener`1.AcceptChannel(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">チャネル操作の待機を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</param>
+        <summary>指定した時間内に、クライアントとの通信に対して指定した種類のチャネルを受け入れます。</summary>
+        <returns>リスナーで受け入れられる <paramref name="TChannel" /> 型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel> ではなく、明示的なタイムアウトを設定したこのオーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BeginAcceptChannel">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した時間内または既定の時間内で、チャネルを受け入れる非同期操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的なタイムアウトが設定された <xref:System.ServiceModel.Channels.IChannelListener%601.BeginAcceptChannel%2A> オーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginAcceptChannel">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAcceptChannel (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAcceptChannel(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelListener`1.BeginAcceptChannel(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">チャネル操作の受け入れの非同期完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">チャネル操作の非同期受け入れに関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>チャネルを受け入れるための非同期操作を開始します。</summary>
+        <returns>チャネル操作の非同期受け入れを参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的なタイムアウトが設定された <xref:System.ServiceModel.Channels.IChannelListener%601.BeginAcceptChannel%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> オーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAcceptChannel">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAcceptChannel (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAcceptChannel(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelListener`1.BeginAcceptChannel(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">チャネル操作の待機を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</param>
+        <param name="callback">チャネル操作の受け入れの非同期完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">チャネル操作の非同期受け入れに関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>指定した時間内でチャネルを受け入れる非同期操作を開始します。</summary>
+        <returns>チャネル操作の非同期受け入れを参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IChannelListener%601.BeginAcceptChannel%28System.TimeSpan%2CSystem.AsyncCallback%2CSystem.Object%29> ではなく、明示的なタイムアウトを設定したこのオーバーロードを使用することをお勧めします。 そのメソッドに対して指定した `timeout` は、システムによって設定される、サービスの既定のタイムアウトをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAcceptChannel">
+      <MemberSignature Language="C#" Value="public TChannel EndAcceptChannel (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel EndAcceptChannel(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelListener`1.EndAcceptChannel(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="Overload:System.ServiceModel.Channels.IChannelListener`1.BeginAcceptChannel" />。</param>
+        <summary>チャネルを受け入れるための非同期操作を完了します。</summary>
+        <returns>リスナーで受け入れられる <paramref name="TChannel" /> 型のチャネル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

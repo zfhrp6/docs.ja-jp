@@ -1,0 +1,594 @@
+<Type Name="XamlObjectWriter" FullName="System.Xaml.XamlObjectWriter">
+  <TypeSignature Language="C#" Value="public class XamlObjectWriter : System.Xaml.XamlWriter, System.Xaml.IXamlLineInfoConsumer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlObjectWriter extends System.Xaml.XamlWriter implements class System.Xaml.IXamlLineInfoConsumer" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlObjectWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlWriter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xaml.IXamlLineInfoConsumer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ソース XAML ノード ストリームからオブジェクト グラフを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Write`のメソッド<xref:System.Xaml.XamlObjectWriter>パターンを実装するように、<xref:System.Xaml.XamlObjectWriter>を使用して、<xref:System.Xaml.XamlWriter>によって定義されている、<xref:System.Xaml.XamlWriter.WriteNode%2A>メソッドです。 <xref:System.Xaml.XamlWriter.WriteNode%2A>ロジックを切り替えます、`Write`メソッド、型が、リーダーの現在位置にあるはどのノードによって異なります。  
+  
+## <a name="scope"></a>スコープ  
+ A <xref:System.Xaml.XamlObjectWriter> ; されるスコープの概念を持つ、<xref:System.Xaml.XamlObjectWriter>出力オブジェクト グラフ内の参照の概念のポイントを保持します。 特定のスコープの特定の操作では、有効または無効にするまたは非操作の結果を生成可能性があります。 呼び出す場合など、<xref:System.Xaml.XamlObjectWriter.WriteStartMember%2A>インスタンスとして既にオブジェクトで初期化が存在するは、ディレクティブを書き込みは、既定の実装が例外をスローします。  
+  
+ カスタムのスコープを追跡する方法<xref:System.Xaml.XamlObjectWriter>にスタックまたはフレーム クラスを持つノードの操作を配置します。 スタックまたはフレームを追跡できますプッシュおよびポップが入力したか、終了しているオブジェクト モデル階層の各レベルの中に、<xref:System.Xaml.XamlObjectWriter>オブジェクト グラフを書き込みます。  
+  
+## <a name="callbacks"></a>コールバック  
+ 中間と高度なをサポートするために<xref:System.Xaml.XamlObjectWriter>シナリオでは、オブジェクト グラフの書き込みのメカニズムを提供コールバックが発生するエントリ ポイントと、<xref:System.Xaml.XamlObjectWriter>がコミットまたは特定の操作をコミットしようとしています。 コールバックの一部の設定で有効になっているし、オブジェクトの種類または書き込み対象のメンバーに限定されません。ただし、コールバック情報はコンテキストには多くの場合、または、コールバックを通じて送信されるデータでは、イベント。 関連するコールバックの一覧を次に示します。  
+  
+-   宣言されているコールバック<xref:System.Xaml.XamlObjectWriterSettings.AfterBeginInitHandler%2A>に新しいオブジェクトがスコープになるときに呼び出される、<xref:System.ComponentModel.ISupportInitialize.BeginInit%2A>作成した各オブジェクトについてオブジェクトの有効期間のフェーズです。  
+  
+-   宣言されているコールバック<xref:System.Xaml.XamlObjectWriterSettings.AfterEndInitHandler%2A>に新しいオブジェクトがスコープになるときに呼び出される、<xref:System.ComponentModel.ISupportInitialize.EndInit%2A>作成した各オブジェクトについてオブジェクトの有効期間のフェーズです。  
+  
+-   宣言されているコールバック<xref:System.Xaml.XamlObjectWriterSettings.BeforePropertiesHandler%2A>スコープは、オブジェクトを起動し、発生したときに呼び出されるときに、最初<xref:System.Xaml.XamlObjectWriter.WriteStartMember%2A>そのオブジェクトのスコープへの呼び出しが行われたが、コミットされていません。  
+  
+-   宣言されているコールバック<xref:System.Xaml.XamlObjectWriterSettings.AfterPropertiesHandler%2A>スコープは、オブジェクトを起動し、動作が呼び出されるときに、<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>そのオブジェクトのスコープへの呼び出しが行われたが、コミットされていません。  
+  
+-   宣言されているコールバック<xref:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler%2A>ときに呼び出される<xref:System.Xaml.XamlObjectWriter.OnSetValue%2A>と呼びます。  
+  
+## <a name="writing-dictionary-keys"></a>ディクショナリ キーの記述  
+ 既定の実装<xref:System.Xaml.XamlObjectWriter>の制約条件の型変換をサポートする<xref:System.Collections.Generic.Dictionary%602>ディクショナリの前に、内容が、オブジェクト グラフに追加されます。 この方法でジェネリック ディクショナリが実行時にオブジェクトによってキー指定されることができ、関連するジェネリックに適合する`Add`およびインデクサー動作します。 ただし、ベースの実装として<xref:System.Xaml.XamlObjectWriter>、この機能にのみ存在ベースからのオブジェクト グラフの作成<xref:System.Collections.Generic.Dictionary%602>クラスの派生クラスではなく<xref:System.Collections.Generic.Dictionary%602>です。  
+  
+## <a name="checks-for-disposed"></a>チェックの破棄  
+ XAML ライターは、可能性のある、遅延の操作またはその前に破棄されている XAML ライターのインスタンスに対して呼び出しが行われる場所に使用されます。 さまざまな Api<xref:System.Xaml.XamlObjectWriter>スローする可能性があります<xref:System.ObjectDisposedException>このような場合です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectWriter (System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.#ctor(System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="schemaContext">書き込み用のノードを提供する XAML リーダーと共有されている XAML スキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectWriter" />クラスによって使用される XAML スキーマ コンテキストを使用して、<see cref="T:System.Xaml.XamlReader" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectWriter (System.Xaml.XamlSchemaContext schemaContext, System.Xaml.XamlObjectWriterSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContext schemaContext, class System.Xaml.XamlObjectWriterSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.#ctor(System.Xaml.XamlSchemaContext,System.Xaml.XamlObjectWriterSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+        <Parameter Name="settings" Type="System.Xaml.XamlObjectWriterSettings" />
+      </Parameters>
+      <Docs>
+        <param name="schemaContext">書き込み用のノードを提供する XAML リーダーと共有されている XAML スキーマ コンテキスト。</param>
+        <param name="settings">特定のオプションを指定する設定オブジェクト<see cref="T:System.Xaml.XamlObjectWriter" />動作と出力します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectWriter" />クラスによって使用されるコンテキストを使用して、<see cref="T:System.Xaml.XamlReader" />とそれに設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能なすべてのフレームをリセットし、オブジェクト グラフをクリアします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放するには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>によって使用されるアンマネージ リソースを解放、 <see cref="T:System.Xaml.XamlObjectWriter" />、し、必要に応じて、マネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAfterBeginInit">
+      <MemberSignature Language="C#" Value="protected virtual void OnAfterBeginInit (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAfterBeginInit(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.OnAfterBeginInit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">報告するオブジェクト。 オブジェクトがパッケージ化<see cref="T:System.Xaml.XamlObjectEventArgs" />ハンドラーが呼び出される場合。</param>
+        <summary>いずれかを呼び出す<see cref="P:System.Xaml.XamlObjectWriterSettings.AfterBeginInitHandler" />メソッドに関連付けられている<see cref="T:System.Xaml.XamlObjectWriterSettings" />この<see cref="T:System.Xaml.XamlObjectWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAfterEndInit">
+      <MemberSignature Language="C#" Value="protected virtual void OnAfterEndInit (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAfterEndInit(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.OnAfterEndInit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">報告するオブジェクト。 値をパッケージ<see cref="T:System.Xaml.XamlObjectEventArgs" />ハンドラーが呼び出される場合。</param>
+        <summary>いずれかを呼び出す<see cref="P:System.Xaml.XamlObjectWriterSettings.AfterEndInitHandler" />メソッドに関連付けられている<see cref="T:System.Xaml.XamlObjectWriterSettings" />この<see cref="T:System.Xaml.XamlObjectWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAfterProperties">
+      <MemberSignature Language="C#" Value="protected virtual void OnAfterProperties (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAfterProperties(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.OnAfterProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">報告するオブジェクト。 パッケージがこの<see cref="T:System.Xaml.XamlObjectEventArgs" />ハンドラーが呼び出される場合。</param>
+        <summary>いずれかを呼び出す<see cref="P:System.Xaml.XamlObjectWriterSettings.AfterPropertiesHandler" />に関連付けられているメソッドが参照されている<see cref="T:System.Xaml.XamlObjectWriterSettings" />この<see cref="T:System.Xaml.XamlObjectWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeforeProperties">
+      <MemberSignature Language="C#" Value="protected virtual void OnBeforeProperties (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBeforeProperties(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.OnBeforeProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">値を通過する<see cref="T:System.Xaml.XamlObjectEventArgs" />ハンドラーが呼び出される場合。</param>
+        <summary>いずれかを呼び出す<see cref="P:System.Xaml.XamlObjectWriterSettings.BeforePropertiesHandler" />に関連付けられているメソッドが参照されている<see cref="T:System.Xaml.XamlObjectWriterSettings" />この<see cref="T:System.Xaml.XamlObjectWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSetValue">
+      <MemberSignature Language="C#" Value="protected virtual bool OnSetValue (object eventSender, System.Xaml.XamlMember member, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnSetValue(object eventSender, class System.Xaml.XamlMember member, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.OnSetValue(System.Object,System.Xaml.XamlMember,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSender" Type="System.Object" />
+        <Parameter Name="member" Type="System.Xaml.XamlMember" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventSender">ハンドラーへのソースとしてレポートするオブジェクト。</param>
+        <param name="member">一部としてハンドラーに渡されるを設定するプロパティの名前<see cref="T:System.Windows.Markup.XamlSetValueEventArgs" />です。</param>
+        <param name="value">によって指定されるプロパティに提供する値<c>プロパティ</c>です。 一部としてハンドラーに渡される値<see cref="T:System.Windows.Markup.XamlSetValueEventArgs" />です。</param>
+        <summary>いずれかを呼び出す<see cref="P:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler" />に関連付けられているメソッドを参照<see cref="T:System.Xaml.XamlObjectWriterSettings" />限り、このライターの<paramref name="handled" />で<see cref="T:System.Windows.Markup.XamlSetValueEventArgs" />イベント データがない<see langword="true" />です。</summary>
+        <returns>任意の関連付けられたハンドラー; によって設定されるブール値それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`SetValue`この XAML ライターの操作に関連付けられたハンドラーが必要がある (、<xref:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler%2A>で宣言された<xref:System.Xaml.XamlObjectWriterSettings>)、このメソッドを新規作成<xref:System.Windows.Markup.XamlSetValueEventArgs>ハンドラーに渡します。 読み取ることによって、戻り値が設定されて、<xref:System.Windows.Markup.XamlSetValueEventArgs.Handled%2A>イベント データを通じて渡される値。 呼び出しが返されたかどうかは、ハンドラーがないし、このメソッドが呼び出される、`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public virtual object Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Result" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriter.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込まれた最後のオブジェクトを取得します。 通常のみと呼ばれる、ノード ストリームの末尾であるし、オブジェクト グラフが完了しました。</summary>
+        <value>書き込まれると、最後のオブジェクトまたは<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も一般的な使用法<xref:System.Xaml.XamlObjectWriter.Result%2A>をノード ストリームは、最後にあることがわかっており、オブジェクト グラフが完全な場合だけに呼び出すことです。 それ以外の場合、オブジェクト グラフが不完全になる可能性は、ほとんどのプラットフォームのシナリオに便利です。  
+  
+ <xref:System.Xaml.XamlObjectWriter.Result%2A>通常への呼び出しの直後に呼び出された場合のみ、null 以外の値を含む<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>、し、現在のスコープが、メンバーのオブジェクトが値を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNameScope">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.INameScope RootNameScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.INameScope RootNameScope" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriter.RootNameScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.INameScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Windows.Markup.INameScope" /> XAML オブジェクト ライターのノードの絶対ルートの XAML 名前スコープを維持するサービスです。</summary>
+        <value><see cref="T:System.Windows.Markup.INameScope" />オブジェクト ライターは、の現在のルートの XAML 名前スコープを維持するサービスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、オブジェクト ライターのコンテキストから取得可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriter.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな XAML スキーマ コンテキストを取得します。</summary>
+        <value>XAML スキーマ コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML スキーマ コンテキストは、オブジェクト記述の最も現実的なシナリオに必要な情報源です。 XAML スキーマ コンテキストでは、バッキング型の型の検索に影響し、アセンブリに関する情報を保持するには、バッキング型が存在します。 既定の XAML スキーマ コンテキストは、CLR 型マッピングの規則に基づいています。 通常、フレームワークは、アセンブリの読み込み機構がフレームワークの amd アプリケーションのプログラミング モデルと一致していることを保証するために、独自の XAML スキーマ コンテキストを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineInfo">
+      <MemberSignature Language="C#" Value="public void SetLineInfo (int lineNumber, int linePosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetLineInfo(int32 lineNumber, int32 linePosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.SetLineInfo(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineNumber" Type="System.Int32" />
+        <Parameter Name="linePosition" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineNumber">リーダーからの行番号。</param>
+        <param name="linePosition">リーダーから行の位置。</param>
+        <summary>実装して<see cref="M:System.Xaml.IXamlLineInfoConsumer.SetLineInfo(System.Int32,System.Int32)" />し、例外の行情報を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービス メソッドは、コードから直接呼び出されるものではありません。 ただし、派生クラスを作成する場合は<xref:System.Xaml.XamlObjectWriter>と行番号は使用できません、コンテキストを報告する予定または、このメソッド呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldProvideLineInfo">
+      <MemberSignature Language="C#" Value="public bool ShouldProvideLineInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldProvideLineInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectWriter.ShouldProvideLineInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の情報サービスを提供する必要があるかどうかを示す値、値をそのため、呼び出す必要がありますも取得、<see cref="M:System.Xaml.IXamlLineInfoConsumer.SetLineInfo(System.Int32,System.Int32)" />メソッドは関連があるとします。</summary>
+        <value>
+          <see langword="true" />行の情報が; ライターによって使用されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndMember">
+      <MemberSignature Language="C#" Value="public override void WriteEndMember ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteEndMember() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteEndMember" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のメンバーのスコープを閉じて、終了中に、メンバーのスコープの値を書き込むことがあります。 新しいスコープでは、メンバーの親オブジェクトのスコープになります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xaml.XamlObjectWriterException">この呼び出しと前の間で発生した値ノードからメンバーの値を作成できませんでした<see langword="StartMember" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndObject">
+      <MemberSignature Language="C#" Value="public override void WriteEndObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteEndObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteEndObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ライターの現在のオブジェクトのスコープを閉じます。 新しいオブジェクトのスコープでは、親メンバーのスコープになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合`EndObject`位置のスコープが、ルート オブジェクトを終了して、新しいオブジェクトのスコープのルート スコープになります。  
+  
+ 呼び出し<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>がまだ作成していないオブジェクトのオブジェクト メンバーの初期化のテキストや初期化パラメーターなどの必要な初期化経路可能性があるためです。 このような場合、呼び出し<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>実際には、オブジェクトを書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteGetObject">
+      <MemberSignature Language="C#" Value="public override void WriteGetObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteGetObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteGetObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>概念書き込みます<see langword="StartObject" />指定したオブジェクトが既定値または親プロパティの暗黙の型の値の場合、オブジェクト グラフにします。 暗黙的な値については、XAML スキーマ コンテキストから取得されると、入力の XAML ノード セット内のオブジェクトの値として指定されているのではなく、バッキング型の情報に由来します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 記述の違い<xref:System.Xaml.XamlObjectWriter.WriteGetObject%2A>およびで書き込み<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>生成されたオブジェクト グラフに表示できます。 <xref:System.Xaml.XamlObjectWriter.WriteGetObject%2A>型のインスタンスを構築しません、 <xref:System.Xaml.XamlObjectWriter.WriteGetObject%2A> API に構築するためにどのようなオブジェクト グラフに通知する情報はありません。 代わりに、親プロパティが初期化されています。 ときに、オブジェクトの作成ように、<xref:System.Xaml.XamlObjectWriter>構築する必要はありません。 これに対し、<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>その型のインスタンスを構築し、オブジェクト グラフに挿入するように指定します。  
+  
+ 一連のフレームとして XAML ノード ストリームを検討する場合、<xref:System.Xaml.XamlObjectWriter.WriteGetObject%2A>に分散された、<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>呼び出します。 そのため、数<xref:System.Xaml.XamlObjectWriter.WriteGetObject%2A>plus<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>呼び出しの数に一致する必要があります<xref:System.Xaml.XamlObjectWriter.WriteEndObject%2A>XAML ノード ストリームの完全なオブジェクトの記述評価の一部として呼び出しです。  
+  
+ 概念`StartObject`自体オブジェクトの値には、暗黙の既定値が、そのオブジェクト必要がありますが必要なメンバーを書き込むに基づいて、XAML ノード ストリームのために、オブジェクト グラフ内の暗黙的なオブジェクトは必要なを配置します。 これが発生する一般的な状況は<xref:System.Xaml.XamlObjectWriter>コレクション プロパティ、およびコレクションの初期化メンバー ノードの書き込みは暗黙的コレクションのプロパティを所有するオブジェクトの作成にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNamespace">
+      <MemberSignature Language="C#" Value="public override void WriteNamespace (System.Xaml.NamespaceDeclaration namespaceDeclaration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteNamespace(class System.Xaml.NamespaceDeclaration namespaceDeclaration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteNamespace(System.Xaml.NamespaceDeclaration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceDeclaration" Type="System.Xaml.NamespaceDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceDeclaration">書き込む名前空間宣言。</param>
+        <summary>次のオブジェクトのスコープまたはメンバーのスコープに適用される名前空間宣言を定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、現在のスコープは、ルート スコープ、オブジェクトのスコープ、またはメンバーのスコープ、名前空間の宣言を記述できます。 ただし、 <xref:System.Xaml.XamlObjectWriter.WriteNamespace%2A> 、次のいずれかの呼び出しの直前にのみ呼び出すことができます: <xref:System.Xaml.XamlObjectWriter.WriteNamespace%2A>、 <xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>、または<xref:System.Xaml.XamlObjectWriter.WriteStartMember%2A>です。 連続した<xref:System.Xaml.XamlObjectWriter.WriteNamespace%2A>ケースは、同じノードに複数の名前空間宣言を記述します。 最終的には、いずれか<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A>または<xref:System.Xaml.XamlObjectWriter.WriteStartMember%2A>呼び出す必要があります。  
+  
+ <xref:System.Xaml.XamlObjectWriter.WriteNamespace%2A>使用しない、 `Start` / `End`比喩します。 XAML 名前空間には、CLR 表現意味でメンバーがいますが、メンバーは、れの特殊な型として表現されている必要はありません<xref:System.Xaml.XamlMember>に機能を拡張します。 値にアクセスする、 <xref:System.Xaml.NamespaceDeclaration>、アクセスするその<xref:System.Xaml.NamespaceDeclaration.Namespace%2A>と<xref:System.Xaml.NamespaceDeclaration.Prefix%2A>プロパティです。  
+  
+ 名前空間の宣言があります、<xref:System.String.Empty?displayProperty=nameWithType>プレフィックスの値。 A<xref:System.String.Empty?displayProperty=nameWithType>プレフィックスが既定の XAML 名前空間の宣言を表します。 既定のプレフィックスを表すために null を使用しないでください。 この API で例外がスローされます。 詳細については、「<xref:System.Xaml.NamespaceDeclaration>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="namespaceDeclaration" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">コンポーネント<paramref name="namespaceDeclaration" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xaml.XamlObjectReaderException">無効なスコープで XAML 名前空間ノードを記述しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartMember">
+      <MemberSignature Language="C#" Value="public override void WriteStartMember (System.Xaml.XamlMember property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteStartMember(class System.Xaml.XamlMember property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteStartMember(System.Xaml.XamlMember)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Xaml.XamlMember" />
+      </Parameters>
+      <Docs>
+        <param name="property">書き込み対象の XAML のプロパティです。 通常、XAML ノード ストリームで XAML リーダーからこの値を取得します。</param>
+        <summary>現在のオブジェクトのスコープに新しいメンバー ノードを書き込みます、スコープが新しいメンバーのスコープとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!TIP]
+>  監視、 <xref:System.Xaml.XamlDuplicateMemberException>、XAML 入力に 2 回、同じ XAML プロパティが設定されている場合に発生します。 属性構文とプロパティ要素構文の両方で同じプロパティを設定する場合などの単純なケースで入力マークアップでは、この例外を簡単に参照してくださいことができます。 ただしより微妙なケースがスポットより難しくは発生します。 たとえば、XAML のアンビエント プロパティが含まれる場合、XAML コンテンツ プロパティを設定した場合、およびプロパティが、アタッチ可能な使用法とインスタンスの使用状況の両方を有効にした場合に、この例外が発生する可能性があります。 開発のデバッグの段階で、マークアップを読み取ると、オブジェクト グラフの書き込みを接続する中間の XAML ノードの表現を表示することによって、多くの場合、この例外を検索できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xaml.XamlObjectWriterException">
+          <paramref name="property" />has <see cref="P:System.Xaml.XamlMember.IsUnknown" /> set to <see langword="true" />.  
+  
+ または  
+  
+ <see cref="P:System.Xaml.XamlLanguage.UnknownContent" />XAML ノード ストリームにコンテンツをサポートしていないオブジェクトのコンテンツが含まれていることを示すが渡されると、します。  
+  
+ または  
+  
+ 無効なスコープで開始メンバーを記述しようとしています。</exception>
+        <exception cref="T:System.Xaml.XamlDuplicateMemberException">
+          <paramref name="property" />親オブジェクトのスコープで既に明示的に設定されているプロパティを指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="property" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartObject">
+      <MemberSignature Language="C#" Value="public override void WriteStartObject (System.Xaml.XamlType xamlType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteStartObject(class System.Xaml.XamlType xamlType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteStartObject(System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlType" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="xamlType">記述する型。 通常この値は、XAML リーダーから取得します。</param>
+        <summary>現在のスコープにオブジェクト ノードを書き込み、新しいオブジェクトのスコープにスコープを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xaml.XamlObjectWriterException">処理、<see cref="P:System.Xaml.XamlType.IsUnknown" />入力し、オブジェクトを作成することはできません。  
+  
+ または  
+  
+ 無効なスコープで開始オブジェクトを記述しようとしています。</exception>
+        <exception cref="T:System.Xaml.XamlParseException">設定で、ルート オブジェクトが既に提供されているときに、ルート オブジェクトを書き込もうとしました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlType" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>使用して、コレクション、ディクショナリ、または配列を新しいインスタンスを追加する必要があります、現在のスコープが、コレクション、ディクショナリ、または配列内にある場合は、<see langword="Add" />関連する型のメソッドです。 それ以外の場合、新しいインスタンスをメンバーに割り当てます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValue">
+      <MemberSignature Language="C#" Value="public override void WriteValue (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteValue(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectWriter.WriteValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む値。</param>
+        <summary>現在のメンバーのスコープに値を書き込みます。 現在のスコープが、コレクション、ディクショナリ、または配列オブジェクトの内側にある場合は、値がコレクション、ディクショナリ、または配列を追加する必要があります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xaml.XamlObjectWriterException">無効なスコープで値を記述しようとしています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

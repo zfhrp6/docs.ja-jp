@@ -1,0 +1,80 @@
+<Type Name="UsableDuringInitializationAttribute" FullName="System.Windows.Markup.UsableDuringInitializationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class UsableDuringInitializationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UsableDuringInitializationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.UsableDuringInitializationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この型が XAML オブジェクト グラフの作成中に上から下に組み込まれるかどうかを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上から下へは、オブジェクト グラフを作成するときに、XAML プロセッサの動作を概算する比喩です。 クラスをインスタンス化、トップダウンをビルドすると、親にアタッチされているし、そのプロパティが設定されます。 トップダウンの構築では、ハンドラーのプロパティ変更の複数回の呼び出しで回避できます。 このような処理がオブジェクト グラフに波及し、オブジェクト グラフの起動時のパフォーマンスの最適化は、したがって複数のハンドラーの呼び出しを排除します。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.UsableDuringInitializationAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ WPF の XAML で[!INCLUDE[net_v30_short](~/includes/net-v30-short-md.md)]と[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]トップダウンの構築されたに組み込まれている XAML 特定のクラスを処理します。 <xref:System.Windows.Markup.UsableDuringInitializationAttribute>属性で上から下の動作のために報告を形式化[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UsableDuringInitializationAttribute (bool usable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool usable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.UsableDuringInitializationAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="usable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="usable">関連付けられているクラスが初期化中に使用可能かどうかを定義します。</param>
+        <summary><see cref="T:System.Windows.Markup.UsableDuringInitializationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を継承します。 アプリケーションの初期適用することは通常として`[UsableDuringInitialization(true)]`、設定できますが、`[UsableDuringInitialization(false)]`動作の派生クラスのレポートを変更する派生クラスでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Usable">
+      <MemberSignature Language="C#" Value="public bool Usable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Usable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.UsableDuringInitializationAttribute.Usable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているクラスが初期化中に使用可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />初期化中に、関連付けられたクラスが使用可能な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

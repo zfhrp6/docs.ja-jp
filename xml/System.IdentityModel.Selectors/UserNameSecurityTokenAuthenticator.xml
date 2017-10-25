@@ -1,0 +1,160 @@
+<Type Name="UserNameSecurityTokenAuthenticator" FullName="System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public abstract class UserNameSecurityTokenAuthenticator : System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UserNameSecurityTokenAuthenticator extends System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenAuthenticator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンを認証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator> クラスをオーバーライドして、セキュリティ トークンをユーザー名とパスワードで認証します。  
+  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンの認証をサポートする以下のクラスに付属しています。  
+  
+|型|説明|  
+|----------|-----------------|  
+|<xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator>|カスタム認証方式を使用してユーザー名とパスワードを認証する機能をアプリケーションに提供します。 認証方式の提供には、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> クラスの派生クラスを使用します。|  
+|<xref:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator>|ユーザー名とパスワードを Windows アカウントとして認証します。|  
+  
+ 多くのカスタム認証方式では、<xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator> クラスを使用して、<xref:System.IdentityModel.Selectors.UserNamePasswordValidator> クラスの派生クラスを実装できます。  ただし、さらに高い柔軟性が必要な場合は、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator> クラスの派生クラスを作成して、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドをオーバーライドできます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UserNameSecurityTokenAuthenticator#0](~/samples/snippets/csharp/VS_Snippets_CFX/usernamesecuritytokenauthenticator/cs/mytokenauthenticator.cs#0)]
+ [!code-vb[UserNameSecurityTokenAuthenticator#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/usernamesecuritytokenauthenticator/vb/mytokenauthenticator.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UserNameSecurityTokenAuthenticator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override bool CanValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.CanValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンをこのセキュリティ トークン認証システムで検証できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="token" /> セキュリティ トークンである場合は <see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.CanValidateTokenCore%2A> メソッドはセキュリティ トークンを認証しません。この認証は、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドが実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンを認証し、セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>このアプリケーションで有効な承認ポリシー セットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドを呼び出して、ユーザー名とパスワードで `token` パラメーターを認証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUserNamePasswordCore">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore (string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore(string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">セキュリティ トークンに関連付けられたユーザー名。</param>
+        <param name="password">セキュリティ トークンに関連付けられたパスワード。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたユーザー名とパスワードを認証し、<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>このアプリケーションで有効な承認ポリシー セットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドをオーバーライドして、<xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンを認証します。  
+  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドがオーバーライドされる場合は、次のガイドラインに従います。  
+  
+-   `token` パラメーターに渡したセキュリティ トークンを検証できない場合、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> 例外をスローします。  
+  
+-   このアプリケーションに対して有効な承認ポリシーが存在しない場合、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601> 型の空の <xref:System.IdentityModel.Policy.IAuthorizationPolicy> を返します。  
+  
+ このメソッドで `null` を返した場合、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] により <xref:System.IdentityModel.Tokens.SecurityTokenValidationException> 例外がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UserNameSecurityTokenAuthenticator#1](~/samples/snippets/csharp/VS_Snippets_CFX/usernamesecuritytokenauthenticator/cs/mytokenauthenticator.cs#1)]
+ [!code-vb[UserNameSecurityTokenAuthenticator#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/usernamesecuritytokenauthenticator/vb/mytokenauthenticator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

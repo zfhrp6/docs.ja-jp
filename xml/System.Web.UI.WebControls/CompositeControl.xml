@@ -1,0 +1,215 @@
+<Type Name="CompositeControl" FullName="System.Web.UI.WebControls.CompositeControl">
+  <TypeSignature Language="C#" Value="public abstract class CompositeControl : System.Web.UI.WebControls.WebControl, System.Web.UI.INamingContainer, System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CompositeControl extends System.Web.UI.WebControls.WebControl implements class System.Web.UI.INamingContainer, class System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CompositeControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.ICompositeControlDesignerAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.CompositeControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>子コントロールを含んでいる Web コントロールに必要な基本機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl>クラスは、完全な形で子コントロールを囲んでいるまたはその他のコントロールの機能を使用するカスタム コントロールの名前付けコンテナーとコントロールのデザイナーの機能を提供する抽象クラスです。 このクラスは継承コントロールでなど<xref:System.Web.UI.WebControls.Login>、および<xref:System.Web.UI.WebControls.Wizard>です。 このクラスを直接使用することはできません。  
+  
+ <xref:System.Web.UI.WebControls.CompositeControl> クラスは、<xref:System.Web.UI.INamingContainer> インターフェイスを実装します。 これは、すべての子コントロールの ID 属性が一意であると、データ バインディングのポストバックに配置することができますを行うために必要です。  
+  
+ 派生してカスタムの複合コントロールを作成する、<xref:System.Web.UI.WebControls.CompositeControl>クラスです。 このクラスは、その子コントロールがアクセスされる前に作成された組み込みの検証は、機能、これにより、デザイン時環境を子コントロールのコレクションを再作成します。 <xref:System.Web.UI.WebControls.CompositeControl.Controls%2A>プロパティにアクセスする前にすべての子コントロールが作成されていることを確認、<xref:System.Web.UI.ControlCollection>です。 <xref:System.Web.UI.WebControls.CompositeControl.DataBind%2A>メソッドでは、すべての子コントロールがデータ ソースにバインドする前に作成されたことを確認します。  
+  
+ コントロールの開発者が使用できる、<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>クラスから派生した複合コントロールのカスタム デザイナーを作成する<xref:System.Web.UI.WebControls.CompositeControl>です。 コントロール デザイナーは、コントロールの表示およびデザイン ビューで操作する方法を定義するクラスです。 詳細については、「<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CompositeControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CompositeControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl>コンス トラクターがのインスタンスを作成する ASP.NET によって呼び出されます、<xref:System.Web.UI.WebControls.CompositeControl>です。 このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeControl.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />で子を表すオブジェクトを制御、<see cref="T:System.Web.UI.WebControls.CompositeControl" />です。</summary>
+        <value>A<see cref="T:System.Web.UI.ControlCollection" />で子コントロールを表す、<see cref="T:System.Web.UI.WebControls.CompositeControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl.Controls%2A>プロパティが返す前にすべての子コントロールが作成されていることを確認する基本実装よりも優先、<xref:System.Web.UI.ControlCollection>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.CompositeControl.Controls%2A>にプログラムでアクセス プロパティを使用する、<xref:System.Web.UI.ControlCollection>の<xref:System.Web.UI.WebControls.CompositeControl>です。 か、コレクションからコントロールを削除して、コレクション内のコントロールを反復処理するコントロールを追加することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeControl.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースのバインド、<see cref="T:System.Web.UI.WebControls.CompositeControl" />とそのすべての子コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl.DataBind%2A>メソッドにバインドするデータ ソース、<xref:System.Web.UI.WebControls.CompositeControl>コントロールとそのすべての子コントロール。 これは、<xref:System.Web.UI.WebControls.CompositeControl.DataBind%2A>メソッドは、データ ソースにバインドする前にすべての子コントロールが作成されていることを確認する基本実装をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecreateChildControls">
+      <MemberSignature Language="C#" Value="protected virtual void RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeControl.RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生したコントロールで子コントロールを再作成<see cref="T:System.Web.UI.WebControls.CompositeControl" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl.RecreateChildControls%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeControl.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>書き込みます、<see cref="T:System.Web.UI.WebControls.CompositeControl" />を指定したコンテンツ<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントに表示するためのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeControl.Render%2A>メソッドでは、コントロールとその子コントロールの描画された内容を指定して、クライアントに書き込みます<xref:System.Web.UI.HtmlTextWriter>です。 このメソッドをオーバーライドすることを確認する基本実装でのすべての子コントロール、<xref:System.Web.UI.WebControls.CompositeControl.Controls%2A>コレクションが作成され、ベースを使用してコントロール、コントロールとその子をレンダリング<xref:System.Web.UI.Control.Render%2A?displayProperty=nameWithType>と<xref:System.Web.UI.Control.RenderChildren%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeControl.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls">
+      <MemberSignature Language="C#" Value="void ICompositeControlDesignerAccessor.RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeControl.System#Web#UI#WebControls#ICompositeControlDesignerAccessor#RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーがデザイン時環境で子コントロールの複合コントロールのコレクションを再作成できるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

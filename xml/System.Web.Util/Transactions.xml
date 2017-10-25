@@ -1,0 +1,93 @@
+<Type Name="Transactions" FullName="System.Web.Util.Transactions">
+  <TypeSignature Language="C#" Value="public class Transactions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Transactions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Util.Transactions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トランザクションの境界内でのコールバック メソッドをラップする方法を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Transactions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.Transactions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Util.Transactions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeTransacted">
+      <MemberSignature Language="C#" Value="public static void InvokeTransacted (System.Web.Util.TransactedCallback callback, System.EnterpriseServices.TransactionOption mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvokeTransacted(class System.Web.Util.TransactedCallback callback, valuetype System.EnterpriseServices.TransactionOption mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.Transactions.InvokeTransacted(System.Web.Util.TransactedCallback,System.EnterpriseServices.TransactionOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.Util.TransactedCallback" />
+        <Parameter Name="mode" Type="System.EnterpriseServices.TransactionOption" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.Web.Util.TransactedCallback" />指定されたトランザクションのサポートで実行されるようにします。</param>
+        <param name="mode"><see cref="T:System.EnterpriseServices.TransactionOption" />デリゲートに対するトランザクションのサポートを指定します。</param>
+        <summary>コールバック メソッドに指定されたトランザクション サポートをラップします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">オペレーティング システムが Windows NT 以降です。</exception>
+        <exception cref="T:System.Web.HttpException">トランザクションのコードを実行できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeTransacted">
+      <MemberSignature Language="C#" Value="public static void InvokeTransacted (System.Web.Util.TransactedCallback callback, System.EnterpriseServices.TransactionOption mode, ref bool transactionAborted);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvokeTransacted(class System.Web.Util.TransactedCallback callback, valuetype System.EnterpriseServices.TransactionOption mode, bool&amp; transactionAborted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.Transactions.InvokeTransacted(System.Web.Util.TransactedCallback,System.EnterpriseServices.TransactionOption,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.Util.TransactedCallback" />
+        <Parameter Name="mode" Type="System.EnterpriseServices.TransactionOption" />
+        <Parameter Name="transactionAborted" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.Web.Util.TransactedCallback" />指定されたトランザクションのサポートで実行されるようにします。</param>
+        <param name="mode"><see cref="T:System.EnterpriseServices.TransactionOption" />デリゲートに対するトランザクションのサポートを指定します。</param>
+        <param name="transactionAborted">参照パラメーターを返す<see langword="true" />トランザクションが、コールバック メソッドの中に中止された、それ以外の場合<see langword="false" />です。</param>
+        <summary>コールバック メソッドに指定されたトランザクション サポートをラップし、トランザクションを中止するかどうかを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `transactionAborted`パラメーターは、呼び出そうとするトランザクションのコールバックの結果を示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">オペレーティング システムが Windows NT 以降です。</exception>
+        <exception cref="T:System.Web.HttpException">トランザクションのコードを実行できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

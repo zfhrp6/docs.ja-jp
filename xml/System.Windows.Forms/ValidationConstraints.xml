@@ -1,0 +1,138 @@
+<Type Name="ValidationConstraints" FullName="System.Windows.Forms.ValidationConstraints">
+  <TypeSignature Language="C#" Value="public enum ValidationConstraints" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ValidationConstraints extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ValidationConstraints" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>通知する定数を定義<see cref="M:System.Windows.Forms.ContainerControl.ValidateChildren(System.Windows.Forms.ValidationConstraints)" />はどのコンテナーの子コントロールは検証する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A>フォームなどのコンテナー内のすべての有効なコントロールを検証します。 この列挙体を使用して、コントロールの種類を制限するが<xref:System.Windows.Forms.Control.Validating>イベントが発生します。  
+  
+ これらの列挙値の OR 演算と組み合わせることができます。 ビットごとの OR 演算子のパラメーターを組み合わせると、論理 AND 演算が発生します。 たとえば、呼び出し`ValidateChildren(ValidationConstraints.ImmediateChildren | ValidationConstraints.Enabled)`のみが生成されます、<xref:System.Windows.Forms.Control.Validating>コンテナーの両方の直系の子は、有効になっているコントロール上のイベントです。  
+  
+ 呼び出すときに ImmediateChildren が指定されていない場合<xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A>メソッド、コントロールの階層内のすべての子コントロールを検証することが必要になります。  
+  
+   
+  
+## Examples  
+ 次のコード例と、のみ、<xref:System.Windows.Forms.Control.Validating>するイベントをフォームの直系の子の発生元<xref:System.Windows.Forms.Control.Enabled%2A>プロパティは`true`します。  
+  
+ [!code-csharp[ValidateChildrenWithConstraints#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ValidateChildrenWithConstraints/CS/Form1.cs#1)]
+ [!code-vb[ValidateChildrenWithConstraints#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ValidateChildrenWithConstraints/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="Enabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints Enabled = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.Enabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証子コントロールが持つ<see cref="P:System.Windows.Forms.Control.Enabled" />プロパティに設定されている<see langword="true" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ImmediateChildren">
+      <MemberSignature Language="C#" Value="ImmediateChildren" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints ImmediateChildren = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.ImmediateChildren" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー内で直接ホストされている子コントロールを検証します。 これらの子の子のいずれかを検証しません。 ある場合など、<see cref="T:System.Windows.Forms.Form" />を含むカスタム<see cref="T:System.Windows.Forms.UserControl" />、および<see cref="T:System.Windows.Forms.UserControl" />が含まれています、<see cref="T:System.Windows.Forms.Button" />を使用して、<see cref="F:System.Windows.Forms.ValidationConstraints.ImmediateChildren" />により、<see cref="E:System.Windows.Forms.Control.Validating" />のイベント、<see cref="T:System.Windows.Forms.UserControl" />しない場合は、実行する、<see cref="E:System.Windows.Forms.Control.Validating" />のイベント、<see cref="T:System.Windows.Forms.Button" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての子コントロール、およびプロパティの設定に関係なく、これらの子コントロールのすべての子を検証します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Selectable">
+      <MemberSignature Language="C#" Value="Selectable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints Selectable = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.Selectable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択できる子コントロールを検証します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TabStop">
+      <MemberSignature Language="C#" Value="TabStop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints TabStop = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.TabStop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子コントロールを検証、<see cref="P:System.Windows.Forms.Control.TabStop" />値のセットで、ユーザーが TAB キーを使用して、コントロールに移動できることを意味します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="Visible" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ValidationConstraints Visible = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ValidationConstraints.Visible" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ValidationConstraints</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証子コントロールが持つ<see cref="P:System.Windows.Forms.Control.Visible" />プロパティに設定されている<see langword="true" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

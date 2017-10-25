@@ -1,0 +1,69 @@
+<Type Name="IReceiveContextSettings" FullName="System.ServiceModel.Channels.IReceiveContextSettings">
+  <TypeSignature Language="C#" Value="public interface IReceiveContextSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReceiveContextSettings" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IReceiveContextSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>受信コンテキスト設定の指定を可能にするインターフェイス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信コンテキストを設定すると、一方向メッセージ チャネルを使用するときに制御型の受信確認を行い、キューに置かれたチャネルを使用するときに非破壊的な読み取りを行うことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IReceiveContextSettings.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信コンテキストが有効になっているかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合受信コンテキストが有効になっているとします。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidityDuration">
+      <MemberSignature Language="C#" Value="public TimeSpan ValidityDuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ValidityDuration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IReceiveContextSettings.ValidityDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直接チャネルと共に使用される場合は接続タイムアウト、キュー内のチャネルと共に使用される場合はメッセージ ロック期間を指定する値を取得します。</summary>
+        <value>タイムアウト値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  場合<xref:System.ServiceModel.Channels.IReceiveContextSettings.ValidityDuration%2A>メッセージ、その処理に使用できるすべてのトランザクションは中止されますと、ワークフロー インスタンスと共に、トランザクション中に期限切れが発生した場合の有効期限が切れた。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

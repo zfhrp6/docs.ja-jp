@@ -1,0 +1,630 @@
+<Type Name="DelimitedListTraceListener" FullName="System.Diagnostics.DelimitedListTraceListener">
+  <TypeSignature Language="C#" Value="public class DelimitedListTraceListener : System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DelimitedListTraceListener extends System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DelimitedListTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TextWriterTraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース出力またはデバッグ ストリーム ライターなどのテキスト ライターに、またはファイル ストリームなど、ストリームに出力を転送します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トレース出力は、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> プロパティによって指定された区切り記号を使用する、区切られたテキスト形式です。 区切り記号を使用して、出力の行の各フィールドを終了します。 などの Microsoft Excel スプレッドシートに出力するトレースを表示する場合がありますを指定するコンマ (「,」) を区切り文字としてコンマ区切り値 (CSV) ファイルを作成します。  
+  
+> [!IMPORTANT]
+>  <xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、`try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 有効または無効にすることができます、<xref:System.Diagnostics.DelimitedListTraceListener>しを使用して、構成された、アプリケーション構成ファイルを通じて<xref:System.Diagnostics.DelimitedListTraceListener>アプリケーションでします。 また、作成することができます、<xref:System.Diagnostics.DelimitedListTraceListener>コードにします。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.DelimitedListTraceListener>単語で始まる名前を持つメソッドを使用して生成されるテキストのみを取り出すため`Trace`など<xref:System.Diagnostics.DelimitedListTraceListener.TraceEvent%2A?displayProperty=nameWithType>または<xref:System.Diagnostics.Trace.TraceWarning%2A?displayProperty=nameWithType>です。 トレースを使用して出力されるデータ、<xref:System.Diagnostics.Debug.Write%2A?displayProperty=nameWithType>と<xref:System.Diagnostics.TextWriterTraceListener.WriteLine%2A?displayProperty=nameWithType>メソッドが区切られていません。  
+  
+ 構成するのには<xref:System.Diagnostics.DelimitedListTraceListener>アプリケーションの名前に対応する構成ファイルを編集します。 このファイルにリスナーを追加、リスナーのプロパティを設定または削除できますリスナーです。 次の例で示すように構成ファイルにフォーマットする必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="delimitedListener"   
+          type="System.Diagnostics.DelimitedListTraceListener"   
+          delimiter=","   
+          initializeData="delimitedOutput.csv"   
+          traceOutputOptions="ProcessId, DateTime" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+> [!NOTE]
+>  使用中または利用不可であるファイルへの書き込みを試みると、ファイル名を自動的に付けた GUID。  
+  
+> [!NOTE]
+>  リスナーは、のメソッドによって使用されるものでは、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース情報を記述するクラス。 コンス トラクターを除く、リスナーのメソッドは、アプリケーション コードから直接呼び出すことはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />出力を受信します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラスを指定した出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力を受信します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラスを指定されたテキスト ライターに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">出力を受信するファイルの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラスを指定したファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (System.IO.Stream stream, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.IO.Stream,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />出力を受信します。</param>
+        <param name="name">トレース リスナーの新しいインスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラス、指定された出力ストリームに書き込み、指定した名前です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティの値を`name`パラメーター、または空の文字列 ("") 場合、`name`パラメーターが`null`。  <xref:System.Diagnostics.TraceListener.Name%2A>プロパティへのインデックスとして使用できる、`Listeners`リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>のインスタンスのプロパティ<xref:System.Diagnostics.DelimitedListTraceListener>"delimListener"という名前を持ちます。  
+  
+```  
+((DelimitedListTraceListener)Trace.Listeners["delimListener"]).Delimiter = ":"  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (System.IO.TextWriter writer, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.IO.TextWriter,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.TextWriter" />出力を受信します。</param>
+        <param name="name">トレース リスナーの新しいインスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラスを指定した名前があり、指定されたテキスト ライターに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティの値を`name`パラメーター、または空の文字列 ("") 場合、`name`パラメーターが`null`。 <xref:System.Diagnostics.TraceListener.Name%2A>プロパティへのインデックスとして使用できる、`Listeners`リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>のインスタンスのプロパティ<xref:System.Diagnostics.DelimitedListTraceListener>"delimListener"という名前を持ちます。  
+  
+```  
+((DelimitedListTraceListener)Trace.Listeners["delimListener"]).Delimiter = ":"  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DelimitedListTraceListener (string fileName, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">出力を受信するファイルの名前。</param>
+        <param name="name">トレース リスナーの新しいインスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DelimitedListTraceListener" />クラス、指定したファイルに書き込み、指定した名前です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、 <xref:System.IO.StreamWriter> 、指定したパスで指定したファイルのクラスを使用して<xref:System.Text.Encoding.UTF8%2A>エンコードします。 ファイルが存在する場合に追加されます。 ファイルが存在しない場合、新しいファイルが作成されます。  
+  
+> [!NOTE]
+>  例外が発生する可能性を減らすためには、出力が無効になる任意の文字が置き換えられます、"?"文字です。  
+  
+ <xref:System.Diagnostics.TraceListener.Name%2A>の値に設定されて、`name`パラメーター、または空の文字列 ("") 場合、`name`パラメーターは`null`します。 <xref:System.Diagnostics.TraceListener.Name%2A>プロパティへのインデックスとして使用できる、`Listeners`リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>のインスタンスのプロパティ<xref:System.Diagnostics.DelimitedListTraceListener>"delimListener"という名前を持ちます。  
+  
+```  
+((DelimitedListTraceListener)Trace.Listeners["delimListener"]).Delimiter = ":"  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delimiter">
+      <MemberSignature Language="C#" Value="public string Delimiter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Delimiter" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DelimitedListTraceListener.Delimiter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または区切り記号で区切られたリストを設定します。</summary>
+        <value>区切り記号で区切られたリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の区切り記号は「;」(セミコロン) です。 次の構成ファイルの例の設定が表示、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>プロパティを使用して、`delimiter`構成ファイル内の属性。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="delimitedListener"   
+          type="System.Diagnostics.DelimitedListTraceListener"   
+          delimiter=":"   
+          initializeData="delimitedOutput.txt"   
+          traceOutputOptions="ProcessId, DateTime" />  
+        <remove name="Default" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Diagnostics.DelimitedListTraceListener.Delimiter" /> が <see langword="null" /> に設定されます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Diagnostics.DelimitedListTraceListener.Delimiter" />空の文字列に設定されている ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSupportedAttributes">
+      <MemberSignature Language="C#" Value="protected override string[] GetSupportedAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance string[] GetSupportedAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.GetSupportedAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>区切り記号付きのトレース リスナーによってサポートされるカスタム構成ファイルの属性を返します。</summary>
+        <returns>1 つの値「区切り記号」を含む文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム属性は、クラスのプロパティを設定するために使用する基本クラスから継承されていない属性です。 カスタム属性の<xref:System.Diagnostics.DelimitedListTraceListener>設定に使用される、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>プロパティです。 次の構成ファイルの例の使用を示しています、`delimiter`を設定する属性、<xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A>プロパティ。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="delimitedListener"   
+          type="System.Diagnostics.DelimitedListTraceListener"   
+          delimiter=":"   
+          initializeData="delimitedOutput.txt"   
+          traceOutputOptions="ProcessId, DateTime" />  
+        <remove name="Default" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別するために使用される名前。通常は、トレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">トレースを発生させたイベントのタイプを指定する <see cref="T:System.Diagnostics.TraceEventType" /> 値の 1 つ。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">出力ファイルまたはストリームに書き込むデータ オブジェクト。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 `source`、 `eventType`、および`id`パラメーターが、ヘッダーとして書き込まれます。 データ オブジェクトを使用して文字列に変換されます、`ToString`オブジェクトのメソッドです。 `eventCache`フッターの内容は、の値によって異なります。 としてデータが書き込まれる、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.DelimitedListTraceListener.TraceData%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別するために使用される名前。通常は、トレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">トレースを発生させたイベントのタイプを指定する <see cref="T:System.Diagnostics.TraceEventType" /> 値の 1 つ。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">出力ファイルまたはストリームに書き込むデータ オブジェクトの配列。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報を出力ファイルまたはストリームの配列に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 `source`、 `eventType`、および`id`パラメーターが、ヘッダーとして書き込まれます。 データ オブジェクトを使用して文字列に変換されます、`ToString`各オブジェクトのメソッドです。 `eventCache`フッターの内容は、の値によって異なります。 としてデータが書き込まれる、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.DelimitedListTraceListener.TraceData%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別するために使用される名前。通常は、トレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">トレースを発生させたイベントのタイプを指定する <see cref="T:System.Diagnostics.TraceEventType" /> 値の 1 つ。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">出力ファイルまたはストリームに書き込むトレース メッセージ。</param>
+        <summary>トレース情報、メッセージ、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 `source`、 `eventType`、および`id`パラメーターが後に、ヘッダーとして書き込まれる、`message`データ。 `eventCache`フッターの内容は、の値によって異なります。 としてデータが書き込まれる、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.DelimitedListTraceListener.TraceEvent%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DelimitedListTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別するために使用される名前。通常は、トレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">トレースを発生させたイベントのタイプを指定する <see cref="T:System.Diagnostics.TraceEventType" /> 値の 1 つ。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する 0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ配列。</param>
+        <summary>トレース情報、書式付き配列、オブジェクト、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、 `source`、 `eventType`、および`id`パラメーターが、ヘッダーとして書き込まれます。 `args`オブジェクトの配列を使用して文字列に変換、<xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>渡して、メソッド、`format`文字列と`args`トレースのメッセージ部分として文字列を書式設定する配列。 `eventCache`フッターの内容は、の値によって異なります。 としてデータが書き込まれる、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.DelimitedListTraceListener.TraceEvent%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

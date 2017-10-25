@@ -1,0 +1,50 @@
+<Type Name="GiveFeedbackEventHandler" FullName="System.Windows.GiveFeedbackEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void GiveFeedbackEventHandler(object sender, GiveFeedbackEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GiveFeedbackEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.GiveFeedbackEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.GiveFeedbackEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>たとえば、インプロセスのドラッグ アンド ドロップ操作からのフィードバック ルーティング イベントを処理するメソッドを表す<see cref="E:System.Windows.UIElement.GiveFeedback" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、次の添付イベントと共に使用されます。  
+  
+-   <xref:System.Windows.DragDrop.GiveFeedback?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.DragDrop.PreviewGiveFeedback?displayProperty=nameWithType>  
+  
+ このデリゲートは、基本要素の次のルーティング イベントにも使用されます。 これらのルーティング イベントがより一般的な要素のモデルにアクセスできるようにする上記のアタッチされたイベントを転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+-   <xref:System.Windows.UIElement.GiveFeedback?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewGiveFeedback?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.GiveFeedback?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewGiveFeedback?displayProperty=nameWithType>  
+  
+ 添付イベントおよび基本要素のルーティング イベントは、それぞれのイベント データを共有し、バブルとトンネル ルーティング イベントのバージョンは、イベント データを共有もします。 イベント ルートをたどる際は、イベントの処理の特性に影響することができます。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ <xref:System.Windows.DragDrop.GiveFeedback?displayProperty=nameWithType>ドラッグ アンド ドロップ操作が開始されたときに、添付イベントが発生します。 <xref:System.Windows.DragDrop.GiveFeedback?displayProperty=nameWithType>添付イベントがドラッグ アンド ドロップ操作中に視覚的なフィードバックをユーザーに提供する、マウス ポインターの外観を変更するドラッグ イベントのソースを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

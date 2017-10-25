@@ -1,0 +1,379 @@
+<Type Name="TagPrefixInfo" FullName="System.Web.Configuration.TagPrefixInfo">
+  <TypeSignature Language="C#" Value="public sealed class TagPrefixInfo : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TagPrefixInfo extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.TagPrefixInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>タグ関連の情報を格納する構成要素を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagPrefixInfo>クラスでは、プログラムからアクセスし、構成ファイルに格納されているタグ プレフィックスの情報を変更することができます。 ASP.NET と同じ機能を提供`@Register`ディレクティブです。 タグ プレフィックスは、「名前空間」ASP.NET では、アセンブリとカスタム コントロールと適切に機能するユーザー コントロールを含める必要がある名前空間に関連付けます。 <xref:System.Web.Configuration.TagPrefixInfo>オブジェクトがのメンバーとして格納されている、<xref:System.Web.Configuration.TagPrefixCollection>オブジェクト。 <xref:System.Web.Configuration.TagPrefixCollection>クラスでは、プログラムでアクセスして変更することができます、`controls`のサブセクション、`pages`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.TagPrefixInfo>オブジェクトを使用してコレクションに追加されます、`add`要素と値を指定する、`tagPrefix`と共に他の関連属性の値の属性です。 必要なその他の情報は、指定したタグ プレフィックスとを使用するコントロールの種類によって異なります。  
+  
+-   定義する必要がありますユーザー コントロールである場合、 <xref:System.Web.Configuration.TagPrefixInfo.TagPrefix%2A>、 <xref:System.Web.Configuration.TagPrefixInfo.TagName%2A>、および<xref:System.Web.Configuration.TagPrefixInfo.Source%2A>プロパティです。  
+  
+-   定義する必要があります、カスタム コントロールである場合、 <xref:System.Web.Configuration.TagPrefixInfo.TagPrefix%2A>、 <xref:System.Web.Configuration.TagPrefixInfo.Namespace%2A>、および<xref:System.Web.Configuration.TagPrefixInfo.Assembly%2A>プロパティです。 <xref:System.Web.Configuration.TagPrefixInfo.Assembly%2A>プロパティは、コントロールがアプリケーション コード ディレクトリにある場合は必要ありません。  
+  
+ 同じ`tagPrefix`に複数のアセンブリまたは名前空間にマップする値を使用できます。  
+  
+> [!NOTE]
+>  ソースを指定すると、ユーザー コントロール自体にあってはいけませんページと同じディレクトリ。 場合は、ページを読み込もうとしたときに、実行時エラーを取得します。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`controls`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.TagPrefixInfo>クラスです。  
+  
+```  
+  
+<system.web>  
+  <pages>  
+    <controls>  
+      <!—- Searches all linked assemblies for the namespace -->  
+      <add tagPrefix="MyTags1" namespace=" MyNameSpace "/>  
+      <!-- Uses a specified assembly -->  
+      <add tagPrefix="MyTags2" namespace="MyNameSpace"   
+        assembly="MyAssembly"/>  
+      <!-- Uses the specified source for the user control -->  
+      <add tagprefix="MyTags3" tagname="MyCtrl" src="MyControl.ascx"/>  
+    </controls>  
+   </pages>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TagPrefixInfo>タグ プレフィックスの設定をプログラムで変更するクラス。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#12)]
+ [!code-vb[System.Web.Configuration.PagesSection#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TagPrefixInfo (string tagPrefix, string nameSpace, string assembly, string tagName, string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tagPrefix, string nameSpace, string assembly, string tagName, string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagPrefixInfo.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tagPrefix" Type="System.String" />
+        <Parameter Name="nameSpace" Type="System.String" />
+        <Parameter Name="assembly" Type="System.String" />
+        <Parameter Name="tagName" Type="System.String" />
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagPrefix">ソース ファイルまたは名前空間とアセンブリにマップされているタグ プレフィックスです。</param>
+        <param name="nameSpace">タグ プレフィックスに関連付けられている名前空間。</param>
+        <param name="assembly">名前空間が存在するアセンブリ。</param>
+        <param name="tagName">ページで使用するコントロールの名前。</param>
+        <param name="source">ユーザー コントロールを格納しているファイルの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.TagPrefixInfo" />クラス渡された値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのインスタンスを作成する、<xref:System.Web.Configuration.TagPrefixInfo>クラスし、渡されたパラメーターを使用して初期化します。 値を指定するパラメーターは、指定したタグ プレフィックスを持つ参照するコントロールの種類によって異なります。 そのタグ プレフィックスの必要のないパラメーターを空白にする必要があります。 (空の文字列を使用)。  
+  
+-   コントロールがユーザー コントロールの場合は、値を指定する必要があります、 `tagPrefix`、 `tagName`、および`source`パラメーター。  
+  
+-   コントロールがカスタム コントロールの場合は、値を指定する必要があります、`tagPrefix`と`nameSpace`パラメーター。 コントロールがないかどうか、アプリケーション コード ディレクトリに、必要がありますも指定する、`assembly`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TagPrefixInfo.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#32](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#32)]
+ [!code-vb[System.Web.Configuration.PagesSection#32](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public string Assembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("assembly")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの実装を含むアセンブリの名前を設定します。</summary>
+        <value>(拡張子なし)、アセンブリの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが存在するアセンブリを指定します。 カスタム コントロールにのみ適用され、コントロールがアプリケーション コード ディレクトリにある場合は必要ありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagPrefixInfo.Assembly%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagPrefixInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">比較するオブジェクト。</param>
+        <summary>このインスタンスを別のオブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />場合は、オブジェクトが同じです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagPrefixInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのハッシュ値を返します。</summary>
+        <returns>現在のインスタンスのハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("namespace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが存在する名前空間を設定します。</summary>
+        <value>名前空間の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが存在する名前空間を指定します。 カスタム コントロールにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagPrefixInfo.Namespace%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("src")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー コントロールを含むファイルのパスと名前を設定します。</summary>
+        <value>名前と、ユーザー コントロールを含むファイルのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ユーザー コントロールの実装を含むファイルのパスと名前を指定します。 ユーザー コントロールにのみ適用されます。 アプリケーションまたはアプリケーションのルートに対する相対パスがあります。  
+  
+> [!NOTE]
+>  ユーザー コントロール自体は、ページと同じディレクトリにあってはいけません。 場合は、ページを読み込もうとしたときに、実行時エラーを取得します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagPrefixInfo.Source%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagName">
+      <MemberSignature Language="C#" Value="public string TagName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.TagName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("tagName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー コントロールの名前を設定します。</summary>
+        <value>ユーザー コントロールの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールの名前を指定します。 ユーザー コントロールにのみ適用されます。 これは、ASP.NET コード内のタグ プリフィックスは次の値です。 たとえば、"myControl"で`<myTag: myControl />`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagPrefixInfo.TagName%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagPrefix">
+      <MemberSignature Language="C#" Value="public string TagPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagPrefixInfo.TagPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("tagPrefix", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定中に関連付けられているソース ファイルまたは名前空間とアセンブリ タグ プレフィックス。</summary>
+        <value>タグ プレフィックスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagPrefixInfo.TagPrefix%2A>プロパティは、コントロールが存在する名前空間に使用される別名を定義します。 ユーザー コントロールとカスタム コントロールに適用されます。 これは、ASP.NET コードで、タグ名の前にの値です。 たとえば"myTag"で`<myTag: myControl />`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagPrefixInfo.TagPrefix%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#30](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#30)]
+ [!code-vb[System.Web.Configuration.PagesSection#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

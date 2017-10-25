@@ -1,0 +1,125 @@
+<Type Name="ObjectDataSourceSelectingEventArgs" FullName="System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectDataSourceSelectingEventArgs : System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataSourceSelectingEventArgs extends System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.ObjectDataSource.Selecting" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>クラスが使用されて、<xref:System.Web.UI.WebControls.ObjectDataSourceView.OnSelecting%2A>メソッドです。 派生したそのため、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>クラス、<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>クラスは入力パラメーターを検証してから操作へのアクセスを提供、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>プロパティです。 <xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>クラスも用意されています、<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.ExecutingSelectCount%2A>プロパティで、現在実行中のデータ取得操作がデータに加え、行の数を取得するかどうかを確認するために使用します。 これは、データ ソースのページングが有効になっている場合、ために重要な<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>イベントは、2 回発生します。 詳細については、「<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.ExecutingSelectCount%2A>」を参照してください。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロールが基になるビジネス オブジェクトのライフ サイクルのさまざまなタイミングで操作を処理できる多くのイベントを公開します。 次の表は、イベントの一覧し、関連付けられている<xref:System.EventArgs>クラスとイベント ハンドラー デリゲート。  
+  
+|イベント|`EventArgs`|`EventHandler`|  
+|-----------|-----------------|--------------------|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>。<br /><br /> ビジネス オブジェクトがインスタンス化される直前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreated>。<br /><br /> ビジネス オブジェクトがインスタンス化された直後後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>。<br /><br /> データが取得される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>。<br /><br /> Insert、update、または削除操作が実行されるまでに発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selected>。<br /><br /> データが取得された後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserted>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updated>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>。<br /><br /> Insert、update、または削除操作が完了した後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>。<br /><br /> ビジネス オブジェクトが破棄される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler>|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceSelectingEventArgs (System.Collections.Specialized.IOrderedDictionary inputParameters, System.Web.UI.DataSourceSelectArguments arguments, bool executingSelectCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.IOrderedDictionary inputParameters, class System.Web.UI.DataSourceSelectArguments arguments, bool executingSelectCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.#ctor(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.DataSourceSelectArguments,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inputParameters" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+        <Parameter Name="executingSelectCount" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inputParameters"><see cref="T:System.Web.UI.WebControls.Parameter" /> オブジェクトの <see cref="T:System.Collections.IDictionary" />。</param>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />追加データに関連する操作を指定する、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />結果セットに、データの特定のサブセットを返したり、データの並べ替えなどを実行する必要があります。</param>
+        <param name="executingSelectCount">
+          <see langword="true" />示すために、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />自体データだけでなく、データの行の数を取得してそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `inputParameters`パラメーターは、<xref:System.Collections.IDictionary>のメソッドのシグネチャに一致し、参照によって渡される名前/値ペアのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceSelectArguments Arguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataSourceSelectArguments Arguments" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceSelectArguments</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機構を提供、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />オブジェクトで操作を要求するデータに関連するデータが取得されたときに使用できます。</summary>
+        <value>A<see cref="T:System.Web.UI.DataSourceSelectArguments" />追加データに関連する操作を指定する、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />結果セットに対して実行する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールを使用して、<xref:System.Web.UI.DataSourceSelectArguments>を要求できるクラス、<xref:System.Web.UI.WebControls.ObjectDataSource>オブジェクトが結果セットに、データの並べ替えやデータの特定のサブセットを返すなどの追加のデータ関連の操作を実行します。 これらのデータに関連する操作は列挙、<xref:System.Web.UI.DataSourceCapabilities>列挙します。 <xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.Arguments%2A>プロパティは読み取り専用、確認したりできますが、変更、データ バインドされたコントロールによって渡される引数。 詳細については、「<xref:System.Web.UI.DataSourceSelectArguments>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutingSelectCount">
+      <MemberSignature Language="C#" Value="public bool ExecutingSelectCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExecutingSelectCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs.ExecutingSelectCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />データ取得操作中に行の数を取得しています。</summary>
+        <value>
+          <see langword="true" />、データ ソースのページングが有効になっている場合、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />が行の数を取得して、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ObjectDataSource>オブジェクトはデータの取得を実行して、データ ソースのページングが有効になっていると、データの取得方法が 2 回呼び出されます。  
+  
+-   データを取得するために 1 回。  
+  
+-   1 回、合計行の数を取得します。  
+  
+ これを生成、<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>イベントを 2 回クリックします。 処理するコードを<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>イベント、これが重要であるハンドラーによって実行される追加の作業が不必要に実行されるすべてのデータ取得操作で重複しないように、イベントのデータの取得 (行の数を取得する) の種類を特定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

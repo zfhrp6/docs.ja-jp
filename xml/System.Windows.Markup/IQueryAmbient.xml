@@ -1,0 +1,65 @@
+<Type Name="IQueryAmbient" FullName="System.Windows.Markup.IQueryAmbient">
+  <TypeSignature Language="C#" Value="public interface IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IQueryAmbient" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IQueryAmbient" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>かどうか、指定したプロパティに処理するかアンビエントとして、現在のスコープを照会します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント プロパティ メカニズムの目的は、通知することが分かっている、オブジェクトが一時的と実行時の一般的なアプリケーションに適していない値である場合、特定のオブジェクトをインスタンス化しないように、XAML オブジェクト ライターで解析時間を向上させるためにです。 通常は、XAML 実行するルックアップや XAML の処理プロパティの get アクセサーの必要がありますをすぐに使用できる値を持つオブジェクト グラフ表現を入力するには、このようなオブジェクトをインスタンス化します。  
+  
+ <xref:System.Windows.Markup.IQueryAmbient>1 つのメンバー:<xref:System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable%2A>です。  
+  
+ <xref:System.Windows.Markup.IQueryAmbient>並列メカニズム<xref:System.Windows.Markup.AmbientAttribute>です。 <xref:System.Windows.Markup.IQueryAmbient>リフレクションを使用して、情報を決定するを回避する特殊なメカニズムは、act を上回りことも (レポートするように選択されたオブジェクト`true`または`false`の<xref:System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable%2A>) 属性がスタティック分析本質的に対し、)。 <xref:System.Windows.Markup.AmbientAttribute>XAML オブジェクト ライターによって使用できる通常専用の XAML 型システムのプロパティに関連する一般的なメカニズムは、<xref:System.Xaml.XamlMember.IsAmbient%2A>と<xref:System.Xaml.XamlType.IsAmbient%2A>です。  
+  
+## <a name="wpf-implementations-of-iqueryambient"></a>IQueryAmbient の WPF 実装  
+ WPF では、<xref:System.Windows.Markup.IQueryAmbient>リソース ディクショナリのルックアップ プロセスのために使用します。 照合プロセスを連続する取得`Resources`WPF の論理ツリー全体で値が検出されるまで、キーのリソースのスコープのルートに向かって実行またはスコープに存在するキーが決定されます。 通常、行うには、インスタンス化する、<xref:System.Windows.ResourceDictionary>結果を受信するたびにします。 内容を宣言する`Resources`限りアンビエントとして`Resources`が存在するこの照合プロセスを最適化します。 WPF では、このインターフェイスは、次の場合。  
+  
+-   <xref:System.Windows.FrameworkElement>実装する<xref:System.Windows.FrameworkElement.System%23Windows%23Markup%23IQueryAmbient%23IsAmbientPropertyAvailable%2A>を返す`true`既存が含まれている場合、すべてのプロパティ名の<xref:System.Windows.ResourceDictionary>の<xref:System.Windows.FrameworkElement.Resources%2A>、クエリを使用しない限り、および、<xref:System.Windows.FrameworkElement.Resources%2A>プロパティ自体です。  
+  
+-   <xref:System.Windows.Style>同じパターンを実装、<xref:System.Windows.Style.Resources%2A>です。  
+  
+-   <xref:System.Windows.Application>同じパターンを実装、<xref:System.Windows.Application.Resources%2A>です。  
+  
+-   <xref:System.Windows.FrameworkContentElement>同じパターンを実装、<xref:System.Windows.FrameworkContentElement.Resources%2A>です。  
+  
+-   <xref:System.Windows.FrameworkTemplate>同じパターンを実装、<xref:System.Windows.FrameworkTemplate.Resources%2A>です。 報告<xref:System.Windows.FrameworkTemplate.Template%2A>アンビエントは返しますコンテンツ`false`のクエリを実行する場合<xref:System.Windows.FrameworkTemplate.Template%2A>自体です。  
+  
+-   このような場合、関連する各`Resources`プロパティ (および<xref:System.Windows.FrameworkTemplate.Template%2A>) として属性<xref:System.Windows.Markup.AmbientAttribute>です。 一般的な使用されないプロパティを照会する、<xref:System.Windows.Markup.AmbientAttribute>インターフェイスを定義するオブジェクトのプロパティの属性を設定します。 つまり、オブジェクト グラフの作成時に、潜在的な実行時間の値を提供するために、リソース ディクショナリが存在する限り、リソース ディクショナリのプロパティのコンテナーだけでなく、他のプロパティ扱えるアンビエントとして。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsAmbientPropertyAvailable">
+      <MemberSignature Language="C#" Value="public bool IsAmbientPropertyAvailable (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAmbientPropertyAvailable(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">アンビエントの状態を確認するプロパティの名前。</param>
+        <summary>かどうか、指定した名前付きプロパティと見なすアンビエント現在のスコープ内のクエリです。</summary>
+        <returns>
+          <see langword="true" />場合は、要求されたプロパティと見なされます。 アンビエントです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

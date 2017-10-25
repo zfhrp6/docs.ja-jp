@@ -1,0 +1,72 @@
+<Type Name="HtmlFormParameterReader" FullName="System.Web.Services.Protocols.HtmlFormParameterReader">
+  <TypeSignature Language="C#" Value="public class HtmlFormParameterReader : System.Web.Services.Protocols.ValueCollectionParameterReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlFormParameterReader extends System.Web.Services.Protocols.ValueCollectionParameterReader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.HtmlFormParameterReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.ValueCollectionParameterReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージではなく HTML 形式のようにエンコードされた名前と値のペアで HTTP を使用して実装されている Web サービスの受信要求パラメーターを読み取ります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.HtmlFormParameterReader>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。 サービス側<xref:System.Web.Services.Protocols.HtmlFormParameterReader>クラスを提供する<xref:System.Web.Services.Protocols.HtmlFormParameterReader.Read%2A>MIME の種類の HTTP 要求の本文にパラメーターはエンコードされた名前と値のペアを読み取るメソッド`application/x-www-form-urlencoded`です。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.HtmlFormParameterReader>直接です。 ASP.NET 構成ファイル (Web.config) のときに HTTP POST の Web サービスが有効になって[\<プロトコル > 要素](http://msdn.microsoft.com/en-us/f3b301dc-855c-4062-8bcf-5ccadb598fab)要素が含まれています、 [\<追加 > 要素を\<プロトコル >](http://msdn.microsoft.com/en-us/abaa41b9-aa8b-469f-8ae5-e58c4d3a2921)要素が`name`属性の値は"HttpPost"です。 <xref:System.Web.Services.Protocols.HtmlFormParameterReader>クラスは、HTTP POST の Web サービスが有効になっているし、該当する HTTP 要求を受信したときに自動的に使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlFormParameterReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HtmlFormParameterReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.HtmlFormParameterReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override object[] Read (System.Web.HttpRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] Read(class System.Web.HttpRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HtmlFormParameterReader.Read(System.Web.HttpRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.Web.HttpRequest" /> HTTP 要求の本文でエンコードされた HTML 名前と値のペアを含むオブジェクト。</param>
+        <summary>Web メソッドにパラメーター値の名前と値のペアを読み取ります。</summary>
+        <returns>オブジェクトの配列には、名前と値のペアが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.HtmlFormParameterReader.Read%2A>メソッドの内容を使用して、<xref:System.Web.HttpRequest>オブジェクトの<xref:System.Web.HttpRequest.Form%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

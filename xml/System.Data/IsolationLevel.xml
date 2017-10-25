@@ -1,0 +1,327 @@
+<Type Name="IsolationLevel" FullName="System.Data.IsolationLevel">
+  <TypeSignature Language="C#" Value="public enum IsolationLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IsolationLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IsolationLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>接続のトランザクション ロック動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IsolationLevel>トランザクションを実行するときに値が .NET Framework データ プロバイダーによって使用されます。  
+  
+ <xref:System.Data.IsolationLevel>が有効にするまでに明示的に変更しますが、いつでも変更できます。 新しい値は解析時ではない、実行時に使用されます。 変更された場合、トランザクション中に、サーバーの動作は、残りのすべてのステートメントに新しいロック レベルを適用するは。  
+  
+   
+  
+## Examples  
+ このアプリケーションを使用する方法を示して<xref:System.Data.IsolationLevel>で<xref:System.Data.Common.DbTransaction>です。 サンプルは、別の分離レベルでは、次の動作のうちは許可を示しています。  
+  
+-   ダーティ リードはします。  
+  
+-   非繰り返しを読み取ります。  
+  
+-   ファントムです。  
+  
+ このアプリケーションは、次の分離レベルで実行されます。  
+  
+-   ReadUncommitted  
+  
+-   ReadCommitted  
+  
+-   RepeatableRead  
+  
+-   シリアル化可能です  
+  
+-   スナップショット  
+  
+ PhantomReadThreads クラスでは、特定のトランザクション、ファントム読み取り動作できるようにするかどうかを示します。 トランザクションは、動作を許可している場合、スレッドは、次の順序で動作します。  
+  
+-   最初のスレッドで、products(All) を選択します。  
+  
+-   2 番目のスレッドでは、新しい製品を挿入します。  
+  
+-   2 番目のスレッドでのトランザクションをコミットします。  
+  
+-   製品を再度選択します。  
+  
+-   最初のスレッドでのトランザクションをコミットします。  
+  
+ トランザクションでは、動作ができるように、2 つの Select 操作が異なる結果になります。  
+  
+ NonrepeatableReadThreads クラスでは、特定のトランザクション、反復不能読み取り動作できるようにするかどうかを示します。 トランザクションは、動作を許可している場合、スレッドは、次の順序で動作します。  
+  
+-   最初のスレッドで、product(ProductId=1) を選択します。  
+  
+-   2 番目のスレッドでは、数量 value(ProductId=1) を更新します。  
+  
+-   2 番目のスレッドでのトランザクションをコミットします。  
+  
+-   製品を再度選択します。  
+  
+-   最初のスレッドでのトランザクションをコミットします。  
+  
+ トランザクションでは、動作ができるように、2 つの Select 操作が異なる結果になります。  
+  
+ ExchangeValuesThreads クラスでは、Serializable、およびスナップショット トランザクションの違いについて説明します。 スレッドは、シリアル化可能なトランザクションは次の順序で動作します。  
+  
+-   最初のスレッドでは、変数に product(ProductId=2) およびストアの価格を取得します。  
+  
+-   最初のスレッドでは、product(ProductId=2) の価格 product(ProductId=1) の価格を更新します。  
+  
+-   最初のスレッドでのトランザクションをコミットします。  
+  
+-   2 番目のスレッドでは、変数に product(ProductId=1) およびストアの価格を取得します。  
+  
+-   2 番目のスレッドでは、product(ProductId=1) の価格 product(ProductId=2) の価格を更新します。  
+  
+-   2 番目のスレッドでのトランザクションをコミットします。  
+  
+ 今すぐ価格の値 (ProductId = 1、ProductId = 2) は、元の価格 Product(ProductId=2) と同じです。  
+  
+ スナップショット トランザクションのスレッドは、次の順序で動作します。  
+  
+-   最初のスレッドで、変数で product(ProductId=2) およびストアの価格を取得します  
+  
+-   最初のスレッドでは、product(ProductId=2) の価格 product(ProductId=1) の価格を更新します。  
+  
+-   2 番目のスレッドでのスナップショットから product(ProductId=1) の価格を取得し、変数に格納します。  
+  
+-   2 番目のスレッドでは、product(ProductId=1) の価格 product(ProductId=2) の価格を更新します。  
+  
+-   2 番目のスレッドでのトランザクションをコミットします。  
+  
+-   最初のスレッドでのトランザクションをコミットします。  
+  
+ 製品の価格を交換するようになりました (ProductId = 1、ProductId = 2)。  
+  
+ DirtyReadThreads クラスでは、特定のトランザクション、ダーティ リード動作できるようにするかどうかを示します。 トランザクションは、動作を許可している場合、スレッドは、次の順序で動作します。  
+  
+-   最初のスレッドでは、トランザクションを開始し、数量 value(ProductId=1) を追加します。  
+  
+-   2 番目のスレッドでは、数量の値を読み取るし、値をもう一度追加します。  
+  
+-   2 番目のスレッドでのトランザクションをコミットします。  
+  
+-   最初のスレッドで、トランザクションをロールバックします。  
+  
+ トランザクションでは、動作ができるように、数量の値が 2 回追加されます。  
+  
+ このサンプル コードで c# および Visual Basic のプロジェクトにある [開発者コード サンプル](http://code.msdn.microsoft.com/site/search?query=How%20to%20use%20IsolationLevel%20Enumeration%20in%20DbTransaction&f%5B0%5D.Value=How%20to%20use%20IsolationLevel%20Enumeration%20in%20DbTransaction&f%5B0%5D.Type=SearchText&ac=4)です。  
+  
+ [!code-csharp[system_data_IsolationLevel#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/system_data_isolationlevel/cs/source.cs#1)]
+ [!code-vb[system_data_IsolationLevel#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/system_data_isolationlevel/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Chaos">
+      <MemberSignature Language="C#" Value="Chaos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel Chaos = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.Chaos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高度な分離のトランザクションからの保留中の変更は上書きできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCommitted">
+      <MemberSignature Language="C#" Value="ReadCommitted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel ReadCommitted = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.ReadCommitted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有ロックが、データの読み込みをダーティ リードを回避するのには、その結果、反復不可能読み取りやファントム データ、トランザクションが終了する前にデータを変更することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadUncommitted">
+      <MemberSignature Language="C#" Value="ReadUncommitted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel ReadUncommitted = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.ReadUncommitted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダーティ リードは、発行される共有ロックと排他ロックは受け入れられません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatableRead">
+      <MemberSignature Language="C#" Value="RepeatableRead" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel RepeatableRead = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.RepeatableRead" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックは、クエリでは、その他のユーザー データを更新できないようにするために使用されるすべてのデータに配置されます。 により、反復不可能読み取りがファントム行ことも可能です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Serializable">
+      <MemberSignature Language="C#" Value="Serializable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel Serializable = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.Serializable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲ロックがかけ、 <see cref="T:System.Data.DataSet" />、ほかのユーザーは、トランザクションが完了するまでに、データセットに行を挿入したり、更新します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Snapshot">
+      <MemberSignature Language="C#" Value="Snapshot" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel Snapshot = int32(16777216)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.Snapshot" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別に、同じデータを変更するときに 1 つのアプリケーションが読み取ることができるデータのバージョンを格納することにより、ブロッキングを減らします。 再実行する場合でも、ある 1 つのトランザクションで他のトランザクションで行われた変更によってで表示できませんを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unspecified">
+      <MemberSignature Language="C#" Value="Unspecified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.IsolationLevel Unspecified = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.IsolationLevel.Unspecified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したものの別の分離レベルが使用されているが、レベルを特定できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合<xref:System.Data.Odbc.OdbcTransaction>を設定しない場合は、<xref:System.Data.IsolationLevel>設定することも<xref:System.Data.IsolationLevel>に`Unspecified`トランザクションが使用されているドライバーによって決定される分離レベルに従って実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

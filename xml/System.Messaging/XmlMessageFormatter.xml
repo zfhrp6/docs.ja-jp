@@ -1,0 +1,420 @@
+<Type Name="XmlMessageFormatter" FullName="System.Messaging.XmlMessageFormatter">
+  <TypeSignature Language="C#" Value="public class XmlMessageFormatter : ICloneable, System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlMessageFormatter extends System.Object implements class System.ICloneable, class System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.XmlMessageFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Messaging.IMessageFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>および XSD スキーマ定義に基づいた XML 形式を使用して、メッセージの本文からオブジェクトを逆シリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.XmlMessageFormatter>は、既定のフォーマッタのインスタンス<xref:System.Messaging.MessageQueue>キューに書き込まれたメッセージのシリアル化に使用します。 インスタンスを作成するときに<xref:System.Messaging.MessageQueue>のインスタンス<xref:System.Messaging.XmlMessageFormatter>は自動的に作成され、関連付け、<xref:System.Messaging.MessageQueue>です。 コードで作成およびに割り当てることによって、別のフォーマッタを指定できます、<xref:System.Messaging.MessageQueue.Formatter%2A>のプロパティ、<xref:System.Messaging.MessageQueue>です。  
+  
+ キューの既定<xref:System.Messaging.XmlMessageFormatter>インスタンスは、キューへの書き込みに使用できますが、いずれかに設定するまで、キューから読み取るには使用できません、<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>または<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>フォーマッタのプロパティです。 既定のフォーマッタ インスタンスに、これらの値の一方または両方を設定することができますか、または、フォーマッタの新しいインスタンスを作成し、適切なに引数として渡すことによって自動的に値を設定できます<xref:System.Messaging.XmlMessageFormatter.%23ctor%2A>コンス トラクターです。  
+  
+ 指定するときに<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>なく<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>、読み取り時間、エラー発生の可能性を減らすことではなく、コンパイル時に種類の存在をチェックします。 <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>すべてのエントリの完全修飾アセンブリ名を指定する必要があります。 さらに、複数の同時実行バージョンを使用するときに、バージョン番号必要がありますも追加されますターゲットの型名にします。  
+  
+ <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 これにより、フォーマッタがメッセージ本文を解釈できます。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 2 つのプロパティの 1 つのみが、キューから読み取るときに設定する必要がありますが、両方を設定することができます。 型のセットは、結合されたセット 2 つのプロパティからです。 使用するプロパティの意思決定は、アプリケーションに固有です。 メッセージ本文のスキーマと一致しません、これらのプロパティの配列の型のいずれかの型が含まれている場合、メッセージが読み取られるときに例外がスローされます。  
+  
+ <xref:System.Messaging.XmlMessageFormatter>疎結合された XML ベースのメッセージングの非常に重要なコンポーネントです。 XSD.exe ユーティリティを使用して、アプリケーションによって使用されるクラスをシリアル化する、ユーティリティを使用する場合など、XML スキーマを生成する XML 形式を使用します。 このクラスには既定のコンストラクターが必要です。  
+  
+ 形式が使用されるもう一度逆のプロセスで、ユーティリティは、スキーマに基づくクラスを生成するときに配布する、クラスのデータを記述します。 このユーティリティを生成する XML スキーマの使用では、クラスの実装が変更された後、クラスを再コンパイルするたびに、.dll ファイルを回避することができます。 クライアントまたはサーバーで、スキーマが変更されない限り、いずれかの側には、その他の変更は影響しません、他の。  
+  
+   
+  
+## Examples  
+ 次のコード例には、3 つコードにはが含まれています。 サーバー コンポーネント、order クラス、およびクライアント コード。 Order クラスは、サーバーが受信メッセージ内で認識されるスキーマを生成する XSD.exe ユーティリティで使用できます。 スキーマは、クラスの"shape"を記述する XML 書式設定されたファイルです。 このスキーマは、サーバー クラスと同じスキーマを共有するクライアント固有の order クラスを生成するクライアント側で使用できます。  
+  
+ 次のコード例では、メッセージ キューからの注文を受信するサーバー コンポーネントを表します。 メッセージの本文は、スキーマを持つが下の Order.cs クラスと一致する順序オブジェクトである必要があります。 サーバー プロセスまたはアプリケーションは、順序を逆シリアル化します。  
+  
+ [!code-cpp[Classic XmlMessageFormatter Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlMessageFormatter Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlMessageFormatter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/VB/source.vb#1)]  
+  
+ 次のコード例では、サーバー上のアプリケーションを受信し、逆シリアル化を order オブジェクトのスキーマを提供する order クラスを表します。  
+  
+ [!code-cpp[Classic XmlMessageFormatter Example#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic XmlMessageFormatter Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CS/source2.cs#2)]
+ [!code-vb[Classic XmlMessageFormatter Example#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/VB/source2.vb#2)]  
+  
+ サーバー上のアプリケーションとやり取りするクライアント アプリケーションは、メッセージ本文にローカルに定義された順序クラスのシリアル化する情報によって、サーバーにメッセージを送信する必要があります。 ローカルに定義された順序クラス、クラスと同じスキーマ、サーバーが定義した順序をサーバーでアプリケーションは、メッセージ本文を逆シリアル化を試みますが必要です。 XSD.exe ユーティリティでは、サーバー上のアプリケーションのマネージャーを作成して、クライアントがサーバーに送信するメッセージをシリアル化に使用する必要があります、スキーマを配布することができます。  
+  
+ クライアント アプリケーションの管理者は、order クラスのスキーマを受信すると、スキーマから、クライアント固有の order クラスを生成する、XSD.exe ユーティリティをもう一度使用します。 次に、サーバーの順序クラスではなく、クライアントのコード例で使用されているこのクラスである (XSD.exe ユーティリティは、元のクラスと同じ名前を付けるスキーマから生成されるクラスを発生)。 この新しい order クラスは、順序をメッセージ本文にシリアル化に使用されます。  
+  
+ 次のコード例は、クライアント側の処理、注文をシリアル化し、キューに注文に関連付けられている情報を送信するために使用します。 コードは、項目、数量、およびアドレス情報を XSD.exe ユーティリティによって Order.cs クラスに対して生成されたスキーマの要素に関連付けます。 注文は、ローカル コンピューター上の順序キューに送信されます。  
+  
+ [!code-cpp[Classic XmlMessageFormatter Example#3](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CPP/source3.cpp#3)]
+ [!code-csharp[Classic XmlMessageFormatter Example#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/CS/source3.cs#3)]
+ [!code-vb[Classic XmlMessageFormatter Example#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlMessageFormatter Example/VB/source3.vb#3)]  
+  
+ サーバーで order クラスから、スキーマを生成すると後、は、クラスを変更できます。 スキーマが変更されない限り、スキーマを再配布する必要はありません。 スキーマを配布して、生成されたクライアント側の order クラスと、そのクライアント クラス変更することも、サーバーの順序のクラスとは無関係にスキーマ自体が変更されない限り、します。 2 つのクラスは疎結合になります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlMessageFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.XmlMessageFormatter" />ターゲットせず、クラス型のセット。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのオーバー ロードが最もよく使用、キューに書き込む際にように対象の種類の書き込み時に必要ありません。  
+  
+ インスタンスを使用してキューからメッセージを読み取るため<xref:System.Messaging.XmlMessageFormatter>をこのコンス トラクターを使用して作成する必要があります設定、<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>または<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティを逆シリアル化しようとするどのような種類のフォーマッタにわかるようにします。  
+  
+ 新規に作成するときに<xref:System.Messaging.MessageQueue>、既定の<xref:System.Messaging.XmlMessageFormatter>ターゲットの種類が設定されていないインスタンスを作成します。 同様に、フォーマッタをこのコンス トラクターを使用して作成すると、キューから読みたい場合は、フォーマッタ インスタンスのターゲット型を設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlMessageFormatter (string[] targetTypeNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] targetTypeNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetTypeNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="targetTypeNames">型の配列<see cref="T:System.String" />されたメッセージからフォーマッタによって逆シリアル化される型のセットを指定します。 これらの値は、たとえば、「MyNamespace.MyOrders、MyOrdersAssemblyName」完全修飾する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.XmlMessageFormatter" />クラス、(完全修飾) の文字列値の配列として渡されるターゲット型を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の型パラメーターを持つコンス トラクターは、キューから読み取るときに最も頻繁に使用します。 作成する場合、対象の種類を指定する必要はありません。  
+  
+ このオーバー ロード、<xref:System.Messaging.XmlMessageFormatter.%23ctor%2A>コンス トラクターのセット、<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>プロパティによって渡された配列の値を`targetTypeNames`パラメーター。 により、このプロパティの設定、<xref:System.Messaging.MessageQueue>これを使用して<xref:System.Messaging.XmlMessageFormatter>のオブジェクトを含むメッセージを読み取るインスタンスの種類を指定します。  
+  
+ 両方の<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 これにより、フォーマッタがメッセージ本文を解釈できます。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 2 つのプロパティの 1 つのみが、キューから読み取るときに設定する必要がありますが、両方を設定することができます。 型のセットは、結合されたセット 2 つのプロパティからです。 どちらかを使用する 1 つは、アプリケーションに固有です。 メッセージ本文のスキーマと一致しません、これらのプロパティの配列の型のいずれかの型が含まれている場合は読み取り時に例外がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Message.Body#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Body/CPP/message_sendreceive.cpp#1)]
+ [!code-csharp[Message.Body#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Body/CS/message_sendreceive.cs#1)]
+ [!code-vb[Message.Body#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Body/VB/message_sendreceive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="targetTypeNames" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlMessageFormatter (Type[] targetTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type[] targetTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.#ctor(System.Type[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="targetTypes">型の配列<see cref="T:System.Type" />されたメッセージからフォーマッタによって逆シリアル化される型のセットを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.XmlMessageFormatter" />クラス、オブジェクトの種類の配列として渡されるターゲット型を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の型パラメーターを持つコンス トラクターは、キューから読み取るときに最も頻繁に使用します。 作成する場合、対象の種類を指定する必要はありません。  
+  
+ このオーバー ロード、<xref:System.Messaging.XmlMessageFormatter.%23ctor%2A>コンス トラクターのセット、<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティによって渡された配列の値を`targetTypes`パラメーター。 このプロパティを使用して設定、<xref:System.Messaging.MessageQueue>これを使用して<xref:System.Messaging.XmlMessageFormatter>インスタンスを指定した型のオブジェクトを含むメッセージを読み取る。  
+  
+ 両方の<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 これにより、フォーマッタがメッセージ本文を解釈できます。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 2 つのプロパティの 1 つのみが、キューから読み取るときに設定する必要がありますが、両方を設定することができます。 型のセットは、結合されたセット 2 つのプロパティからです。 どちらかを使用する 1 つは、アプリケーションに固有です。 メッセージ本文のスキーマと一致しません、これらのプロパティの配列の型のいずれかの型が含まれている場合は読み取り時に例外がスローされます。  
+  
+ 指定するときに<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>なく<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>、読み取り時間、エラー発生の可能性を減らすことではなく、コンパイル時に種類の存在をチェックします。 <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>すべてのエントリの完全修飾アセンブリ名を指定する必要があります。 さらに、複数の同時実行バージョンを使用するときに、バージョン番号必要がありますも追加されますターゲットの型名にします。  
+  
+ 使用する場合<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>、各オブジェクトを追加することができます (たとえば、 `MyClass`) を次の c# コードに示す方法の一覧にします。  
+  
+```  
+TargetTypes = new Type[]{typeof(MyClass)}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="targetTypes" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public bool CanRead (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanRead(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.CanRead(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />を検査します。</param>
+        <summary>フォーマッタがメッセージを逆シリアル化できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />XML フォーマッタがメッセージを逆シリアル化できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Messaging.XmlMessageFormatter.CanRead%2A>が呼び出されると、メッセージの内容が何かが逆シリアル化を試行するフォーマッタ。 フォーマッタのみ逆シリアル化できる、メッセージ、メッセージ本文内の型によって表される配列内の種類のいずれかと同じスキーマがある場合、<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティです。 <xref:System.Messaging.XmlMessageFormatter.CanRead%2A>返します`false`次の 2 つの状況で。  
+  
+-   メッセージの形式を使用していない、<xref:System.Messaging.XmlMessageFormatter>です。  
+  
+-   メッセージ本文のスキーマがいずれかに示されている間、<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>または<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティです。  
+  
+ <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティはどのような種類のオブジェクトができる必要がありますを逆シリアル化フォーマッタを指定します。 任意の型が、一覧にありませんが、メッセージ内で見つかった場合<xref:System.Messaging.XmlMessageFormatter.CanRead%2A>返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">どちらも、<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypeNames" />も<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypes" />プロパティが設定されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Messaging.XmlMessageFormatter" />クラスが読み取り/書き込みプロパティ (ターゲットの種類のセット) は、現在と同じ<see cref="T:System.Messaging.XmlMessageFormatter" />インスタンス。</summary>
+        <returns>オブジェクトのプロパティがこのと同じ<see cref="T:System.Messaging.XmlMessageFormatter" />インスタンスはメタデータを持つができるフォーマッタ クラスのインスタンスを指定されていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはフォーマッタのコピーを作成し、この値に、すべてのプロパティを初期化<xref:System.Messaging.XmlMessageFormatter>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public object Read (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Read(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.Read(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />、XML 形式で、逆シリアル化します。</param>
+        <summary>指定されたメッセージの内容を読み取りますを逆シリアル化されたメッセージを格納しているオブジェクトを作成します。</summary>
+        <returns>逆シリアル化されたメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 メッセージを逆シリアル化前に、これらのプロパティのいずれかを設定する必要があります。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 対象の種類をキューに書き込むために指定する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">どちらも、<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypeNames" />も<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypes" />プロパティが設定されています。  
+  
+ または  
+  
+ メッセージの本文にシリアル化されたインスタンスが内の型によって表されているスキーマのいずれかに準拠していない、<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypeNames" />と<see cref="P:System.Messaging.XmlMessageFormatter.TargetTypes" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetTypeNames">
+      <MemberSignature Language="C#" Value="public string[] TargetTypeNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TargetTypeNames" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.XmlMessageFormatter.TargetTypeNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("XmlMsgTargetTypeNames")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたメッセージからフォーマッタによって逆シリアル化される型のセットを指定します。</summary>
+        <value>型の配列<see cref="T:System.String" />メッセージを読み取るときに、メッセージ本文から逆シリアル化するオブジェクトの種類を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 これにより、フォーマッタがメッセージ本文を解釈できます。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 2 つのプロパティの 1 つのみが、キューから読み取るときに設定する必要がありますが、両方を設定することができます。 型のセットは、結合されたセット 2 つのプロパティからです。 使用するプロパティの意思決定は、アプリケーションに固有です。 メッセージ本文のスキーマと一致しません、これらのプロパティの配列の型のいずれかの型が含まれている場合、メッセージが読み取られるときに例外がスローされます。  
+  
+ <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>すべてのエントリの完全修飾アセンブリ名を指定する必要があります。 さらに、複数の同時実行バージョンを使用するときに、バージョン番号必要がありますも追加されますターゲットの型名にします。  
+  
+ 対象の種類は、キューから読み取るときに必要なです。 <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティはキューへの書き込みに設定する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Messaging.XmlMessageFormatter.TargetTypeNames" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetTypes">
+      <MemberSignature Language="C#" Value="public Type[] TargetTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] TargetTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.XmlMessageFormatter.TargetTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("XmlMsgTargetTypes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたメッセージからフォーマッタによって逆シリアル化される型のセットを指定します。</summary>
+        <value>型の配列<see cref="T:System.Type" />メッセージを読み取るときに、メッセージ本文から逆シリアル化するオブジェクトの種類を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティがメッセージを逆シリアル化とを照合するようにするには、どのようなスキーマをフォーマッタに指示します。 これにより、フォーマッタがメッセージ本文を解釈できます。  
+  
+ メッセージの本文にシリアル化されたインスタンスは、配列型で表されているスキーマのいずれかで従う必要があります。 使用してメッセージを読み込んだとき、<xref:System.Messaging.MessageQueue.Receive%2A>メソッドは、メソッドが、識別されたスキーマに対応して、メッセージ本文を読み込みますの種類のオブジェクトを作成します。  
+  
+ 2 つのプロパティの 1 つのみが、キューから読み取るときに設定する必要がありますが、両方を設定することができます。 型のセットは、結合されたセット 2 つのプロパティからです。 使用するプロパティの意思決定は、アプリケーションに固有です。 メッセージ本文のスキーマと一致しません、これらのプロパティの配列の型のいずれかの型が含まれている場合、メッセージが読み取られるときに例外がスローされます。  
+  
+ 対象の種類は、キューから読み取るときに必要なです。 <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>と<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティはキューへの書き込みに設定する必要はありません。  
+  
+ 指定するときに<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>なく<xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>、読み取り時間、エラー発生の可能性を減らすことではなく、コンパイル時に種類の存在をチェックします。  
+  
+ 使用する場合<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>、各オブジェクトを追加することができます (たとえば、 `MyClass`) c# コードに示す方法の一覧に`TargetTypes = new Type[]{typeof(MyClass), typeof (MyOtherClass)};`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キューから注文を含むメッセージを送受信します。  
+  
+ [!code-cpp[Message.Body#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Body/CPP/message_sendreceive.cpp#1)]
+ [!code-csharp[Message.Body#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Body/CS/message_sendreceive.cs#1)]
+ [!code-vb[Message.Body#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Body/VB/message_sendreceive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Messaging.XmlMessageFormatter.TargetTypes" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.Messaging.Message message, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.Messaging.Message message, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.XmlMessageFormatter.Write(System.Messaging.Message,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />が<see cref="P:System.Messaging.Message.Body" />プロパティがシリアル化されたオブジェクトが格納されます。</param>
+        <param name="obj"><see cref="T:System.Object" />メッセージの本文にシリアル化します。</param>
+        <summary>メッセージの本文にオブジェクトをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の種類を指定して、キューへの書き込みを読み取るときにあることが必要とする必要はありません。 <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames%2A>または<xref:System.Messaging.XmlMessageFormatter.TargetTypes%2A>プロパティはメッセージを逆シリアル化時にのみ、フォーマッタで使用します。  
+  
+ <xref:System.Messaging.XmlMessageFormatter>では、使用、<xref:System.Xml.Serialization.XmlSerializer>クラスは、シリアル化可能なを定義します。 のみのパブリック フィールドおよびパブリック プロパティをシリアル化できます。 構造体、配列、および構造体の配列を含む構造体は、SOAP プロトコルでエンコードされたスタイルを使用しない限り、すべてシリアル化可能なされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

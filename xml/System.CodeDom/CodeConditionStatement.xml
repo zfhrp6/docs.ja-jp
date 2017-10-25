@@ -1,0 +1,197 @@
+<Type Name="CodeConditionStatement" FullName="System.CodeDom.CodeConditionStatement">
+  <TypeSignature Language="C#" Value="public class CodeConditionStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeConditionStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeConditionStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>通常として表される、条件付き分岐ステートメントを表す、<see langword="if" />ステートメントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeConditionStatement>条件式、条件式を評価する場合に実行されるステートメントのコレクションで構成されるコードを表すために使用する`true`、され、条件式を評価する場合に実行されるステートメントの省略可能なコレクション`false`です。 A<xref:System.CodeDom.CodeConditionStatement>としての多くの言語で生成された、`if`ステートメントです。  
+  
+ <xref:System.CodeDom.CodeConditionStatement.Condition%2A>プロパティをテストする式を示します。 <xref:System.CodeDom.CodeConditionStatement.TrueStatements%2A>プロパティにテストする式が評価された場合に実行するステートメントが含まれています。`true`です。 <xref:System.CodeDom.CodeConditionStatement.FalseStatements%2A>プロパティにテストする式が評価された場合に実行するステートメントが含まれています。`false`です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeConditionStatement>を表す、`if`ステートメントを`else`ブロックします。  
+  
+ [!code-cpp[CodeConditionStatementExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeConditionStatementExample/CPP/codeconditionstatementexample.cpp#2)]
+ [!code-csharp[CodeConditionStatementExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeConditionStatementExample/CS/codeconditionstatementexample.cs#2)]
+ [!code-vb[CodeConditionStatementExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeConditionStatementExample/VB/codeconditionstatementexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeConditionStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeConditionStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeConditionStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeConditionStatement (System.CodeDom.CodeExpression condition, params System.CodeDom.CodeStatement[] trueStatements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression condition, class System.CodeDom.CodeStatement[] trueStatements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeConditionStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeStatement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="condition" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="trueStatements" Type="System.CodeDom.CodeStatement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="condition">A<see cref="T:System.CodeDom.CodeExpression" />を評価する式を示すです。</param>
+        <param name="trueStatements">型の配列<see cref="T:System.CodeDom.CodeStatement" />条件が場合に実行されるステートメントを含む<see langword="true" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeConditionStatement" />クラス、指定された条件とステートメントを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeConditionStatement (System.CodeDom.CodeExpression condition, System.CodeDom.CodeStatement[] trueStatements, System.CodeDom.CodeStatement[] falseStatements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression condition, class System.CodeDom.CodeStatement[] trueStatements, class System.CodeDom.CodeStatement[] falseStatements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeConditionStatement.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeStatement[],System.CodeDom.CodeStatement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="condition" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="trueStatements" Type="System.CodeDom.CodeStatement[]" />
+        <Parameter Name="falseStatements" Type="System.CodeDom.CodeStatement[]" />
+      </Parameters>
+      <Docs>
+        <param name="condition">A<see cref="T:System.CodeDom.CodeExpression" />を評価する条件を示すです。</param>
+        <param name="trueStatements">型の配列<see cref="T:System.CodeDom.CodeStatement" />条件が場合に実行されるステートメントを含む<see langword="true" />です。</param>
+        <param name="falseStatements">型の配列<see cref="T:System.CodeDom.CodeStatement" />条件が場合に実行されるステートメントを含む<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeConditionStatement" />クラス、指定された条件とステートメントを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Condition" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeConditionStatement.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を評価する式<see langword="true" />または<see langword="false" />です。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を評価する<see langword="true" />または<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この条件式が評価された場合`true`に含まれるコード、<xref:System.CodeDom.CodeConditionStatement.TrueStatements%2A>コレクションは実行されます。 この条件式が評価された場合`false`と<xref:System.CodeDom.CodeConditionStatement.FalseStatements%2A>コレクションが空でないに含まれているコード、<xref:System.CodeDom.CodeConditionStatement.FalseStatements%2A>コレクションは実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FalseStatements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection FalseStatements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection FalseStatements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeConditionStatement.FalseStatements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>条件式を評価する場合に実行されるステートメントのコレクションを取得<see langword="false" />です。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatementCollection" />条件式を評価する場合に実行されるステートメントを含む<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrueStatements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection TrueStatements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection TrueStatements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeConditionStatement.TrueStatements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>条件式を評価する場合に実行されるステートメントのコレクションを取得<see langword="true" />です。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatementCollection" />条件式を評価する場合に実行されるステートメントを含む<see langword="true" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

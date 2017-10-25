@@ -1,0 +1,245 @@
+<Type Name="MetaChildrenColumn" FullName="System.Web.DynamicData.MetaChildrenColumn">
+  <TypeSignature Language="C#" Value="public class MetaChildrenColumn : System.Web.DynamicData.MetaColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetaChildrenColumn extends System.Web.DynamicData.MetaColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.MetaChildrenColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.DynamicData.MetaColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一対多の関係を表すデータベース フィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データのアプリケーションで、<xref:System.Web.DynamicData.MetaChildrenColumn>クラスは、一対多のリレーションシップまたは親と子の関係を示すデータベース フィールドを表します。  
+  
+ <xref:System.Web.DynamicData.MetaChildrenColumn>クラスは、一対多リレーションシップの親テーブル内のフィールドを表します。 ただしを使用して子テーブル オブジェクトにアクセスすることができます、<xref:System.Web.DynamicData.MetaChildrenColumn.ChildTable%2A>プロパティです。 使用して、子テーブルの外部キー フィールドを取得することも、<xref:System.Web.DynamicData.MetaChildrenColumn.ColumnInOtherTable%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetaChildrenColumn (System.Web.DynamicData.MetaTable table, System.Web.DynamicData.ModelProviders.ColumnProvider entityMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.DynamicData.MetaTable table, class System.Web.DynamicData.ModelProviders.ColumnProvider entityMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaChildrenColumn.#ctor(System.Web.DynamicData.MetaTable,System.Web.DynamicData.ModelProviders.ColumnProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="entityMember" Type="System.Web.DynamicData.ModelProviders.ColumnProvider" />
+      </Parameters>
+      <Docs>
+        <param name="table">メタデータ テーブルです。</param>
+        <param name="entityMember">列のプロバイダー。</param>
+        <summary><see cref="T:System.Web.DynamicData.MetaChildrenColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildTable">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable ChildTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaTable ChildTable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaChildrenColumn.ChildTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一対多リレーションシップの子テーブルを表すオブジェクトを取得します。</summary>
+        <value>一対多リレーションシップの子テーブルを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.MetaChildrenColumn.ChildTable%2A>一対多リレーションシップの子テーブルを表すオブジェクトを取得するプロパティです。 使用して、親テーブルにアクセスすることができます、<xref:System.Web.DynamicData.MetaColumn.Table%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnInOtherTable">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaColumn ColumnInOtherTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn ColumnInOtherTable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaChildrenColumn.ColumnInOtherTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子テーブルの外部キー フィールドを表すオブジェクトを取得します。</summary>
+        <value>子テーブルの外部キー フィールドを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaChildrenColumn.ColumnInOtherTable%2A>プロパティでは、子テーブル内のフィールドへの参照を取得することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenListPath">
+      <MemberSignature Language="C#" Value="public string GetChildrenListPath (object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetChildrenListPath(object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaChildrenColumn.GetChildrenListPath(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="row">外部キー フィールドを含む行です。</param>
+        <summary>子テーブルの一覧操作のページのパスを取得します。</summary>
+        <returns>子テーブルの一覧操作のページのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenListPath%2A>メソッドは、指定された行を使用して、親と子テーブルの一覧操作のページを取得するとします。 指定された外部キー フィールドの値が含まれている URL にクエリ文字列値を追加することによって、このパスを取得、`row`パラメーター。  
+  
+ 使用して、<xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenListPath%2A>メソッドを呼び出すのと同じ、<xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath%28System.String%2CSystem.Object%29>メソッドと受け渡し、<xref:System.Web.DynamicData.PageAction.List%2A>最初のパラメーターとして操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenPath">
+      <MemberSignature Language="C#" Value="public string GetChildrenPath (string action, object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetChildrenPath(string action, object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="action">ターゲットのアクション。</param>
+        <param name="row">外部キー フィールドを含む行です。</param>
+        <summary>子テーブルの指定されたアクション ページのパスを取得します。</summary>
+        <returns>子テーブルの指定されたアクション ページのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath%28System.String%2CSystem.Object%29>メソッドは、子テーブルの指定されたアクション ページのパスを返します。 返されるパスは、ASP.NET 動的データ アプリケーションに対して定義されているルートに基づいており、親として指定された行があります。 指定された外部キー フィールドの値が含まれている URL にクエリ文字列値を追加することによって、このパスを取得、`row`パラメーター。  
+  
+ 場合`row`は`null`、彼の方法は、空の文字列を返します。  
+  
+ 定義されている値を使用して、<xref:System.Web.DynamicData.PageAction>のクラス、`action`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenPath">
+      <MemberSignature Language="C#" Value="public string GetChildrenPath (string action, object row, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetChildrenPath(string action, object row, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath(System.String,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="row" Type="System.Object" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">ターゲットのアクション。</param>
+        <param name="row">外部キー フィールドを含む行です。</param>
+        <param name="path">ターゲット ページ。</param>
+        <summary>子テーブルの指定されたアクション ページのパスを取得します。</summary>
+        <returns>子テーブルの指定されたアクション ページのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath%28System.String%2CSystem.Object%2CSystem.String%29>メソッドは、子テーブルの指定されたアクション ページのパスを返します。 パスを親として指定された行で指定したパスに基づきます。 指定された外部キー フィールドの値が含まれている URL にクエリ文字列値を追加することによって、このパスを取得、`row`パラメーター。  
+  
+ 場合`row`は`null`、このメソッドは、空の文字列を返します。 場合`path`は`null`、<xref:System.Web.DynamicData.MetaChildrenColumn.GetChildrenPath%28System.String%2CSystem.Object%2CSystem.String%29>メソッド ASP.NET 動的データ アプリケーションに対して定義されているルートに基づくパスを返します。  
+  
+ 定義されている値を使用して、<xref:System.Web.DynamicData.PageAction>のクラス、`action`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaChildrenColumn.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンス トラクターが呼び出されたときに使用できない可能性があるデータを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、直接呼び出すことはできません。 初期化をカスタマイズするには、このクラスから派生し、オーバーライドすることができます、、`Initialize`メソッドです。 このメソッドをオーバーライドする場合は、基本コントロールを呼び出す`Initialize`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsManyToMany">
+      <MemberSignature Language="C#" Value="public bool IsManyToMany { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsManyToMany" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaChildrenColumn.IsManyToMany" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の多対多のリレーションシップの状態を示す値を取得します。</summary>
+        <value>
+          <see langword="true" />列のリレーションシップは多対多です。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

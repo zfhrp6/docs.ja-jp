@@ -1,0 +1,118 @@
+<Type Name="OdbcRowUpdatingEventArgs" FullName="System.Data.Odbc.OdbcRowUpdatingEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class OdbcRowUpdatingEventArgs : System.Data.Common.RowUpdatingEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcRowUpdatingEventArgs extends System.Data.Common.RowUpdatingEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcRowUpdatingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.RowUpdatingEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Data.Odbc.OdbcDataAdapter.RowUpdating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>イベントは、行を更新する前に発生します。  
+  
+ 使用する場合、`Update`メソッド、更新の各データ行で発生する 2 つのイベントがある:<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>と<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdated>です。 更新操作の実行順序は次のとおりです。  
+  
+1.  内の値、<xref:System.Data.DataRow>パラメーターの値に移動されます。  
+  
+2.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdating%2A> イベントが発生します。  
+  
+3.  コマンドを実行します。  
+  
+4.  コマンドに設定されている場合`FirstReturnedRecord`、最初に返された結果に格納し、<xref:System.Data.DataRow>です。  
+  
+5.  配置される出力パラメーターがある場合、<xref:System.Data.DataRow>です。  
+  
+6.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdated%2A> イベントが発生します。  
+  
+7.  <xref:System.Data.DataRow.AcceptChanges%2A> が呼ばれたとき。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcRowUpdatingEventArgs (System.Data.DataRow row, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataRow row, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcRowUpdatingEventArgs.#ctor(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+        <Parameter Name="command" Type="System.Data.IDbCommand" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="tableMapping" Type="System.Data.Common.DataTableMapping" />
+      </Parameters>
+      <Docs>
+        <param name="row">更新する <see cref="T:System.Data.DataRow" />。</param>
+        <param name="command"><see cref="T:System.Data.Odbc.OdbcCommand" />更新操作中を実行します。</param>
+        <param name="statementType">1 つ、<see cref="T:System.Data.StatementType" />実行されるクエリの種類を指定する値。</param>
+        <param name="tableMapping"><see cref="T:System.Data.Common.DataTableMapping" />経由で送信<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />です。</param>
+        <summary><see cref="T:System.Data.Odbc.OdbcRowUpdatingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseCommand">
+      <MemberSignature Language="C#" Value="protected override System.Data.IDbCommand BaseCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand BaseCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcRowUpdatingEventArgs.BaseCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand Command { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcCommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcRowUpdatingEventArgs.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Odbc.OdbcCommand" />ときに実行する<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />と呼びます。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcCommand" />ときに実行する<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />と呼びます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

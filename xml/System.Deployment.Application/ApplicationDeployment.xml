@@ -1,0 +1,1104 @@
+<Type Name="ApplicationDeployment" FullName="System.Deployment.Application.ApplicationDeployment">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationDeployment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationDeployment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.ApplicationDeployment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プログラムでは、現在の展開の更新をサポートし、ファイルのオンデマンドのダウンロードを処理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成することができます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]更新プログラムを確認し、それらを使用して自動的にインストールするアプリケーション、`subscription`配置マニフェストの要素。 一部のアプリケーションには、その更新プログラムをより細かく制御ただし、必要があります。 プログラムでは、必要な更新プログラムをインストールし、必要に応じて省略可能な更新プログラムのインストールをユーザーに要求することがあります。 配置マニフェストでサブスクリプションの更新をオフにして、アプリケーションのポリシーの更新を完全に制御を実行できます。 組み合わせて自動サブスクリプションを使用する代わりに、 <xref:System.Deployment.Application.ApplicationDeployment>、されるようにすること[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を使用する点が定期的に、アプリケーションを更新する<xref:System.Deployment.Application.ApplicationDeployment>がリリース後すぐに重要な更新プログラムをダウンロードします。  
+  
+ 配置に使用して、使用可能な更新プログラムがあるかどうかをテストすることができます、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>または<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>メソッドです。 後者のメソッドを発生させます、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted>イベントが正常に終了します。 <xref:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate%2A>そのバージョン番号と現在のユーザーの必要な更新プログラムであるかどうかなど、更新プログラムに関する重要な情報を返します。 更新プログラムがある場合を使用してインストールできます<xref:System.Deployment.Application.ApplicationDeployment.Update%2A>または<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>; 後者のメソッド、<xref:System.Deployment.Application.ApplicationDeployment.UpdateCompleted>更新プログラムのインストールが完了した後のイベントです。 大きな更新プログラムを介して進行状況の通知を受け取ることができます、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>と<xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>イベント内の情報を使用して<xref:System.ComponentModel.ProgressChangedEventArgs>ダウンロードの状態のユーザーに通知します。  
+  
+ 使用することも<xref:System.Deployment.Application.ApplicationDeployment>大規模なファイルおよび必要に応じてアセンブリをダウンロードします。 これらのファイルは、インストール中にダウンロードされないように、デプロイのアプリケーション マニフェスト内で"optional"としてマークする必要があります。 使用して、アプリケーションの期間内に任意の時点でファイルをダウンロードすることができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>または<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッドです。 イベント ハンドラーを指定することによってメモリに読み込まれる前に、アセンブリをダウンロードすることができます、<xref:System.AppDomain.AssemblyResolve>でイベントを<xref:System.AppDomain>クラスです。 詳細については、「[チュートリアル : デザイナーを使用し、ClickOnce 配置 API で必要に応じてアセンブリをダウンロードする](http://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5)」を参照してください。  
+  
+> [!NOTE]
+>  更新する場合、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション、アプリケーションの実行中に、ユーザーは表示されません、更新プログラムが呼び出されるまで、<xref:System.Windows.Forms.Application.Restart%2A>のメソッド、<xref:System.Windows.Forms.Application>は、アプリケーションの現在の実行中のインスタンスを閉じるし、すぐに再起動します。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment>パブリック コンス トラクターがありません。内のクラスのインスタンスを取得する、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションを通じて、<xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>プロパティです。 使用する、<xref:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed%2A>プロパティを現在のアプリケーションがあることを確認、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment>更新プログラムのチェックとダウンロードをサポート ファイルに非同期的に使用して、更新、新しい[イベント ベースの非同期パターン概要](~/docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)クラスのイベントとして完了コールバックを公開します。 <xref:System.Deployment.Application.ApplicationDeployment>開始および、スレッドを管理し、アプリケーションに、正しい UI スレッドでコールバックします。 このクラスを使って、ユーザーは更新プログラムのインストール中の作業を継続できるように、アプリケーションをロックすることがなく更新できます。 ユーザーは、更新が行われるときに、すべての作業を停止する必要がある場合、は、代わりに、同期メソッドを使用することを検討します。  
+  
+> [!NOTE]
+>  非同期更新を実行するには、アプリケーションが、両方をインポートする必要があります、<xref:System.Deployment.Application>と<xref:System.ComponentModel>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しい更新プログラムがあるかどうかアプリケーションの読み込み時に決定します。必要な更新プログラムが利用可能な場合は、コード例は、更新プログラムを非同期的にインストールします。 このコードを含むフォームを追加する必要があります、<xref:System.Windows.Forms.TextBox>という`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivationUri">
+      <MemberSignature Language="C#" Value="public Uri ActivationUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ActivationUri" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.ActivationUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの配置マニフェストの起動に使用する URL を取得します。</summary>
+        <value>長さ 0 の文字列、 <c>TrustUrlParameters</c>は配置マニフェストのプロパティが<see langword="false" />、または UNC を開くには、展開が提供されているか、ローカルで開いたがします。 それ以外の場合、戻り値は、任意のパラメーターを含む、アプリケーションの起動に使用される完全 URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、完全に信頼できると部分的に信頼されたアプリケーションの両方で機能します。  
+  
+   
+  
+## Examples  
+ 次のコードを使用して URL パラメーターを取得する方法を示しています<xref:System.Deployment.Application.ApplicationDeployment.ActivationUri%2A>、および使用する方法、<xref:System.Web.HttpUtility>クラスを安全にクエリ文字列を解析します。 同じクエリ文字列変数の複数の発生は、返された 1 つのエントリでまとめて<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ [!code-csharp[ClickOnceQueryString#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceQueryString/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceQueryString#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceQueryString/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForDetailedUpdate">
+      <MemberSignature Language="C#" Value="public System.Deployment.Application.UpdateCheckInfo CheckForDetailedUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Deployment.Application.UpdateCheckInfo CheckForDetailedUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.UpdateCheckInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>同じ操作を実行<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdate" />、利用可能な更新に関する拡張情報が返されます。</summary>
+        <returns><see cref="T:System.Deployment.Application.UpdateCheckInfo" />使用可能な更新します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate%2A>同期呼び出し元を取得、同じメソッドで非同期呼び出しを使用して取得される情報の拡張、<xref:System.Deployment.Application.CheckForUpdateCompletedEventArgs>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate%2A>最新の更新プログラムに関する情報を取得します。 更新プログラムが存在する場合、自動的にインストールが必要な更新プログラムの場合のみそれ以外の場合、ユーザーが要求されます。  
+  
+ [!code-cpp[ClickOnceAPI#7](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#7)]
+ [!code-csharp[ClickOnceAPI#7](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#7)]
+ [!code-vb[ClickOnceAPI#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のアプリケーションが、更新をサポートするために構成されていないか、または既に進行中の別の更新チェック操作があります。</exception>
+        <exception cref="T:System.Deployment.Application.DeploymentDownloadException">配置マニフェストをダウンロードすることはできません。 この例外は、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />のプロパティ、<see cref="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted" />イベント。</exception>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">配置マニフェストが壊れています。 このアプリケーションをユーザーに展開する前に、アプリケーションのマニフェストを再生成します。 この例外は、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />のプロパティ、<see cref="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted" />イベント。</exception>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForDetailedUpdate">
+      <MemberSignature Language="C#" Value="public System.Deployment.Application.UpdateCheckInfo CheckForDetailedUpdate (bool persistUpdateCheckResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Deployment.Application.UpdateCheckInfo CheckForDetailedUpdate(bool persistUpdateCheckResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.UpdateCheckInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="persistUpdateCheckResult" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="persistUpdateCheckResult">場合<see langword="false" />更新プログラムをサイレント モードで適用されます、およびダイアログ ボックスは表示されません。</param>
+        <summary>同じ操作を実行<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdate" />、利用可能な更新に関する拡張情報が返されます。</summary>
+        <returns><see cref="T:System.Deployment.Application.UpdateCheckInfo" />使用可能な更新します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdate">
+      <MemberSignature Language="C#" Value="public bool CheckForUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CheckForUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チェック<see cref="P:System.Deployment.Application.ApplicationDeployment.UpdateLocation" />を新しい更新プログラムが利用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />新しい更新プログラムがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>メソッドは、配置マニフェストで指定されたバージョンで、現在インストールされている展開のバージョンを比較<xref:System.Deployment.Application.ApplicationDeployment.UpdateLocation%2A>です。 返します、サーバー上のバージョンがインストールされているバージョンから異なる`true`です。  
+  
+ このメソッドは、チェックが完了するまでブロックします。 非同期的に更新プログラムを確認するには、使用、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>メソッド代わりにします。  
+  
+> [!NOTE]
+>  場合<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>更新プログラムがあるしをインストールしないように、ユーザーが選択したことを検出[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]更新プログラムが、次回アプリケーションを実行するユーザーを促します。 このプロンプトを無効にする方法はありません。 (アプリケーションが必要な更新プログラムが場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]メッセージを表示せずにインストールされます)。  
+  
+   
+  
+## Examples  
+ アプリケーションの更新プログラムです。 次のコード例を確認します。1 つが利用可能な場合は、インストール、同期的にします。  
+  
+ [!code-cpp[ClickOnceAPI#5](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#5)]
+ [!code-csharp[ClickOnceAPI#5](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#5)]
+ [!code-vb[ClickOnceAPI#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]呼び出す場合は、すぐにこの例外がスローされます、<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdate" />メソッド中に、更新プログラムが既に進行中です。</exception>
+        <exception cref="T:System.Deployment.Application.DeploymentDownloadException">配置マニフェストをダウンロードすることはできません。</exception>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">配置マニフェストが壊れています。 この問題を解決するアプリケーションを再配置する必要があります。</exception>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdate">
+      <MemberSignature Language="C#" Value="public bool CheckForUpdate (bool persistUpdateCheckResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CheckForUpdate(bool persistUpdateCheckResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdate(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="persistUpdateCheckResult" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="persistUpdateCheckResult">場合<see langword="false" />更新プログラムをサイレント モードで適用されます、およびダイアログ ボックスは表示されません。</param>
+        <summary>チェック<see cref="P:System.Deployment.Application.ApplicationDeployment.UpdateLocation" />を新しい更新プログラムが利用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />新しい更新プログラムがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdateAsync">
+      <MemberSignature Language="C#" Value="public void CheckForUpdateAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckForUpdateAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チェック<see cref="P:System.Deployment.Application.ApplicationDeployment.UpdateLocation" />新しい更新プログラムが利用できるかどうかを決定するには、非同期的にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>すぐに取得し、更新済みのアプリケーションをダウンロードするための別のスレッドを開始します。 場合は、メソッドは、完了するかが取り消されたが発生、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted>イベント。 使用することができます<xref:System.ComponentModel.AsyncCompletedEventArgs>操作が取り消されたかどうか、または更新中に例外が発生したかどうかを判断するには、このイベント ハンドラーでします。  
+  
+ 非同期更新をキャンセルするには呼び出すことによって<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsyncCancel%2A>です。  
+  
+> [!NOTE]
+>  場合<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>更新プログラムがあるしをインストールしないように、ユーザーが選択したことを検出[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]更新プログラムが、次回アプリケーションを実行するユーザーを促します。 このプロンプトを無効にする方法はありません。 (アプリケーションが必要な更新プログラムが場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]メッセージを表示せずにインストールされます)。  
+  
+   
+  
+## Examples  
+ 次の例では、非同期的に、更新プログラムをチェックし、いずれかが存在する場合は、更新プログラムをインストールします。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]呼び出す場合は、すぐにこの例外がスローされます、<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync" />メソッド中に、更新プログラムが既に進行中です。</exception>
+        <exception cref="T:System.Deployment.Application.DeploymentDownloadException">配置マニフェストをダウンロードすることはできません。 この例外が表示されます、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />のプロパティ、<see cref="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted" />イベント。</exception>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">配置マニフェストが壊れています。 この問題を解決するアプリケーションを再配置する必要があります。 この例外が表示されます、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />のプロパティ、<see cref="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted" />イベント。</exception>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdateAsyncCancel">
+      <MemberSignature Language="C#" Value="public void CheckForUpdateAsyncCancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckForUpdateAsyncCancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsyncCancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期更新チェックをキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して開始更新チェックを [キャンセル] を使用して、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>メソッドです。  
+  
+ このメソッドは可能性のある既に進行中でバック グラウンドの更新をキャンセルしていないサブスクリプションの一部として更新プログラムが開始されたなどです。 サブスクリプションの詳細については、次を参照してください。 [ClickOnce の更新方法の選択](http://msdn.microsoft.com/library/d8b6e7bb-4ea0-47f3-91cd-48580bdceccc)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdateCompleted">
+      <MemberSignature Language="C#" Value="public event System.Deployment.Application.CheckForUpdateCompletedEventHandler CheckForUpdateCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Deployment.Application.CheckForUpdateCompletedEventHandler CheckForUpdateCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.CheckForUpdateCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync" />が完了しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.CheckForUpdateCompletedEventArgs>クラスところ、特に他の更新プログラムのバージョン、サイズ、更新プログラムがや利用可能な更新が必須またはオプションかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted>使用可能なアプリケーションの更新プログラムをインストールするユーザーに確認するかどうかを決定します。 更新プログラムが必須のアップグレードの場合、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateCompleted>イベント ハンドラー、ユーザー プロンプトが表示されません。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForUpdateProgressChanged">
+      <MemberSignature Language="C#" Value="public event System.Deployment.Application.DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Deployment.Application.DeploymentProgressChangedEventHandler CheckForUpdateProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>進行状況の更新が 利用可能なときに発生、<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync" />呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>マニフェストのアプリケーションの展開のダウンロード状態をレポートします。 低速ネットワーク接続経由で展開をダウンロードするユーザーにとって重要な情報を指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>配置マニフェストの量は、左からのダウンロードをユーザーに通知するイベントです。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`.  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDeployment">
+      <MemberSignature Language="C#" Value="public static System.Deployment.Application.ApplicationDeployment CurrentDeployment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Deployment.Application.ApplicationDeployment CurrentDeployment" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.CurrentDeployment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.ApplicationDeployment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在を返して<see cref="T:System.Deployment.Application.ApplicationDeployment" />この展開します。</summary>
+        <value>現在の配置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成できない<xref:System.Deployment.Application.ApplicationDeployment>直接アプリケーション内で取得する必要が有効なインスタンスを<xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>プロパティです。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>静的プロパティを使用して配置されたアプリケーション内からのみ有効[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 非からこのプロパティを呼び出そうとすると[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション例外がスローされます。 使用して展開する可能性がありますいないまたは可能性のあるアプリケーションを開発している場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を使用して、<xref:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed%2A>は、現在のプログラムかどうかをテストするプロパティ、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。  
+  
+   
+  
+## Examples  
+ 次のコード例取得<xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>および過去 3 日以内にアプリケーションが更新されているかどうかを確認するかどうか。  
+  
+ [!code-cpp[ClickOnceAPI#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#3)]
+ [!code-csharp[ClickOnceAPI#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#3)]
+ [!code-vb[ClickOnceAPI#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">この静的プロパティ以外から呼び出してしようとしています。[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentVersion">
+      <MemberSignature Language="C#" Value="public Version CurrentVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version CurrentVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.CurrentVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの現在の実行中のインスタンスの配置のバージョンを取得します。</summary>
+        <value>現在の配置のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CurrentVersion%2A>異なる<xref:System.Deployment.Application.ApplicationDeployment.UpdatedVersion%2A>場合は、新しい更新プログラムがインストールされているが、まだ呼び出されません<xref:System.Windows.Forms.Application.Restart%2A>です。 配置マニフェストは、自動更新を実行するように構成は、これら 2 つのかどうかは、アプリケーションを再起動する必要がありますを決定する値を比較できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定するメソッドを定義するかどうか[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]がアプリケーションを更新します。  
+  
+ [!code-cpp[ClickOnceAPI#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#3)]
+ [!code-csharp[ClickOnceAPI#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#3)]
+ [!code-vb[ClickOnceAPI#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DataDirectory">
+      <MemberSignature Language="C#" Value="public string DataDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.DataDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスを取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]データ ディレクトリ。</summary>
+        <value>ローカル ディスク上のアプリケーションのデータ ディレクトリへのパスを含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroup">
+      <MemberSignature Language="C#" Value="public void DownloadFileGroup (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DownloadFileGroup(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">ダウンロードするファイルの名前付きグループです。 すべてのファイルが"optional"でマークされている、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション グループ名が必要です。</param>
+        <summary>一連の要求時に省略可能なファイルをダウンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション、初期化または更新中に、アプリケーション マニフェストで"optional"のマークを付けたファイルはダウンロードされません。 使用することができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>を消費しませんネットワーク リソースとディスク領域が、ユーザーで必要なことを確認できるまでように、すべての要求に応じて、名前付きグループに属するファイルをダウンロードするメソッド。 たとえば、特定のユーザーは、他のユーザー呼び出さない可能性がありますが、日常的に、アプリケーションに含まれるデータ分析パッケージを使用する必要があります。  
+  
+ ダウンロードしているアセンブリを使用する<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>、イベント リスナーをアタッチする、<xref:System.AppDomain.AssemblyResolve>でイベントを<xref:System.AppDomain.CurrentDomain%2A>です。 例については、次を参照してください。 =[チュートリアル: ClickOnce 配置 API を使用して、デザイナーで必要に応じてアセンブリをダウンロードする](http://msdn.microsoft.com/library/59a0dd5f-1cab-4f2f-b780-0ab7399905d5)です。  
+  
+ すべてのファイルにダウンロードされます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション キャッシュがアプリケーションの現在のバージョンにします。 たとえば、アプリケーションがファイル グループをダウンロードした後で、ユーザーがそのアプリケーションの新しいバージョンをインストールしても、後で、アプリケーションの以前のバージョンに戻ることがします。 この例では、以前のバージョンには、最初にダウンロードしてファイルのコピーがあります。 データ ファイルへのアクセスの詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>いずれかでは、部分的に信頼されたアプリケーションで、動作[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]で実行されるアプリケーションがアクセス許可を制限します。 ただし、動的アセンブリをロードしようとする場合、アプリケーションに完全な信頼が必要です。  
+  
+ データ ファイルのオンデマンドのダウンロードは現在サポートされていません。  
+  
+ アプリケーションはまでユーザー入力に応答できない、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>メソッドを返します。 使用して、ユーザーのワークフローに割り込むことがなくファイルをダウンロードする必要がある場合、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッド代わりにします。  
+  
+ ファイル名だけで 1 つのファイルをダウンロードすることはできません。 1 つのファイルをダウンロードするには、名前に割り当てるグループで、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開し、このメソッドを使用して、グループをダウンロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リッスンして要求時にアセンブリを読み込む方法を示します、<xref:System.AppDomain.AssemblyResolve>イベント。  
+  
+ [!code-csharp[ClickOnceOnDemandCmdLine#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceOnDemandCmdLine/CS/Form1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="groupName" />パラメーターが null または長さが 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroupAsync">
+      <MemberSignature Language="C#" Value="public void DownloadFileGroupAsync (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DownloadFileGroupAsync(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">ダウンロードするファイルの名前付きグループです。 すべてのファイルが"optional"でマークされている、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション グループ名が必要です。</param>
+        <summary>バック グラウンドで省略可能なファイルのセットをオンデマンドでダウンロードされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション、初期化または更新中に、アプリケーション マニフェストで"optional"のマークを付けたファイルはダウンロードされません。 使用することができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>を消費しませんネットワーク リソースとディスク領域が、ユーザーで必要なことを確認できるまでように、すべての要求に応じて、名前付きグループに属するファイルをダウンロードするメソッド。 この方法は、静的ファイルだけでなく、アプリケーションが必要としないアセンブリについても動作します。 たとえば、特定のユーザーは、他のユーザー呼び出さない可能性がありますが、日常的に、アプリケーションに含まれるデータ分析パッケージを使用する必要があります。  
+  
+ アセンブリをダウンロードする要求時に、アタッチ、イベント リスナーを<xref:System.AppDomain.AssemblyResolve>でイベントを<xref:System.AppDomain.CurrentDomain%2A>です。 例については、次を参照してください。[チュートリアル: ClickOnce 配置 API で必要に応じてアセンブリをダウンロードする](http://msdn.microsoft.com/library/d20e2789-8621-4806-b5b7-841122da1456)です。  
+  
+ すべてのアセンブリ、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション キャッシュします。  
+  
+ すべての静的ファイルにダウンロードされます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションのデータ ディレクトリがアプリケーションの現在のバージョンにします。 たとえば、アプリケーションがファイル グループをダウンロードした後で、ユーザーがそのアプリケーションの新しいバージョンをインストールしても、後で、アプリケーションの以前のバージョンに戻ることがします。 この例では、以前のバージョンには、最初にダウンロードしてファイルのコピーがあります。 静的ファイルへのアクセスの詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。  
+  
+ 同時に使用する複数のファイル グループをダウンロードする<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>です。 使用してそれらの間に識別できます、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.Group%2A>のプロパティ、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs>に渡されるクラス、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>イベント。 使用することがより複雑な状態を渡す必要がある場合<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>を渡す、`state`オブジェクト。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>いずれかでは、部分的に信頼されたアプリケーションで、動作[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]で実行されるアプリケーションがアクセス許可を制限します。 ただし、動的アセンブリをロードしようとしている場合、アプリケーションに完全な信頼が必要です。  
+  
+ データ ファイルのオンデマンドのダウンロードは現在サポートされていません。  
+  
+ ファイル名だけで 1 つのファイルをダウンロードすることはできません。 1 つのファイルをダウンロードするには、名前に割り当てるグループで、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開し、このメソッドを使用して、グループをダウンロードします。  
+  
+ 非同期のダウンロードを取り消す場合に、呼び出し、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsyncCancel%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="groupName" />パラメーターが null または長さが 0 です。</exception>
+        <exception cref="T:System.InvalidOperationException">2 つ以上のダウンロードを開始することはできません<paramref name="groupName" />一度にです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroupAsync">
+      <MemberSignature Language="C#" Value="public void DownloadFileGroupAsync (string groupName, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DownloadFileGroupAsync(string groupName, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">ダウンロードするファイルの名前付きグループです。 すべてのファイルが"optional"でマークされている、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション グループ名が必要です。</param>
+        <param name="userState">非同期操作の状態情報を含む任意のオブジェクト。</param>
+        <summary>バック グラウンドで省略可能なファイルのセットをオンデマンドでダウンロードし、イベント コールバックにアプリケーションの状態の一部を渡します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション、初期化または更新中に、アプリケーション マニフェストで"optional"のマークを付けたファイルはダウンロードされません。 使用することができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>を消費しませんネットワーク リソースとディスク領域が、ユーザーで必要なことを確認できるまでように、すべての要求に応じて、名前付きグループに属するファイルをダウンロードするメソッド。 この方法は、静的ファイルだけでなく、アプリケーションが必要としないアセンブリについても動作します。 たとえば、特定のユーザーは、他のユーザー呼び出さない可能性がありますが、日常的に、アプリケーションに含まれるデータ分析パッケージを使用する必要があります。 アセンブリをダウンロードする要求時に、アタッチ、イベント リスナーを<xref:System.AppDomain.AssemblyResolve>でイベントを<xref:System.AppDomain.CurrentDomain%2A>です。  
+  
+ 使用して複数のファイル グループを同時にダウンロードすることができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッドです。 使用してそれらの間に識別できます、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.Group%2A>のプロパティ、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs>に渡されるクラス、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>イベント。 使用することがより複雑な状態を渡す必要がある場合  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>渡す、`state`オブジェクト。  
+  
+ すべての静的ファイルにダウンロードされます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションのデータ ディレクトリがアプリケーションの現在のバージョンにします。 静的ファイルへのアクセスの詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。 。 たとえば後、アプリケーションがファイル グループをダウンロードし、ユーザー、アプリケーションの新しいバージョンをインストールが、後で、アプリケーションの以前のバージョンに戻ることができます。 この例では、以前のバージョンには、最初にダウンロードしてファイルのコピーがあります。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>いずれかでは、部分的に信頼されたアプリケーションで、動作[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]で実行されるアプリケーションがアクセス許可を制限します。 ただし、動的アセンブリをロードしようとしている場合、アプリケーションに完全な信頼が必要です。  
+  
+ データ ファイルのオンデマンドのダウンロードは現在サポートされていません。  
+  
+ 非同期のダウンロードを取り消す場合に、呼び出し、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsyncCancel%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="groupName" />パラメーターが null または長さが 0 です。</exception>
+        <exception cref="T:System.InvalidOperationException">2 つ以上のダウンロードを開始することはできません<paramref name="groupName" />一度にです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroupAsyncCancel">
+      <MemberSignature Language="C#" Value="public void DownloadFileGroupAsyncCancel (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DownloadFileGroupAsyncCancel(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsyncCancel(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">ダウンロードするファイルの名前付きグループです。 すべてのファイルが"optional"でマークされている、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション グループ名が必要です。</param>
+        <summary>非同期のファイル ダウンロードを取り消します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="groupName" /> として <see langword="null" /> を使用することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroupCompleted">
+      <MemberSignature Language="C#" Value="public event System.Deployment.Application.DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Deployment.Application.DownloadFileGroupCompletedEventHandler DownloadFileGroupCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DownloadFileGroupCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのダウンロードが完了すると、アプリケーションのメイン スレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupCompleted>イベントは、アプリケーションのメイン スレッドで呼び出されます。 これは、安全にこのコールバック内で直接、アプリケーションの Windows フォーム コントロールを呼び出すスレッドです。  
+  
+ チェック、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>のプロパティ、<xref:System.ComponentModel.AsyncCompletedEventArgs>このコールバックを指定します。 場合は、このプロパティは`null`、ダウンロードがない場合は成功した`null`、インストールが成功せず、およびを通じてインストール エラーの詳細についてを見つけることができます、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、一連のバック グラウンドでのヘルプ ファイルをダウンロードします。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`.  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFileGroupProgressChanged">
+      <MemberSignature Language="C#" Value="public event System.Deployment.Application.DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Deployment.Application.DeploymentProgressChangedEventHandler DownloadFileGroupProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しによって開始されたファイルのダウンロード操作のステータス情報があるときに発生<see cref="Overload:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>イベントは、アプリケーションのメイン スレッドで呼び出されます。 これは、安全にこのコールバック内で直接、アプリケーションの Windows フォーム コントロールを呼び出すスレッドです。  
+  
+ 指定された情報を使用して<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs>をユーザーに進行状況に関する情報を通信するためにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、一連のバック グラウンドでのヘルプ ファイルをダウンロードします。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFileGroupDownloaded">
+      <MemberSignature Language="C#" Value="public bool IsFileGroupDownloaded (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsFileGroupDownloaded(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.IsFileGroupDownloaded(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">ダウンロードするファイルの名前付きグループです。 すべてのファイルが"optional"でマークされている、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション グループ名が必要です。</param>
+        <summary>名前付きファイル グループが、クライアント コンピューターに既にダウンロードされているかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />ファイル グループは既にこのアプリケーションの現在のバージョンのダウンロード済みの場合それ以外の場合、<see langword="false" />です。 場合は、アプリケーションの新しいバージョンがインストールされ、新しいバージョンがない追加、削除、またはファイル グループ内のファイルを変更<see cref="M:System.Deployment.Application.ApplicationDeployment.IsFileGroupDownloaded(System.String)" />返します<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.IsFileGroupDownloaded%2A>セキュリティ確認要求なしに部分的に信頼されたアプリケーションで機能します。  
+  
+ アプリケーションを更新するときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]新しいバージョンのデータ ディレクトリに、以前のバージョンからのオンデマンドのデータ ファイルをコピーします。 これらのファイルの新しいバージョンをダウンロードする場合は、以前のバージョンを保持し、新しいバージョンに移動するすべてのデータを削除してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、すべて内のファイルのダウンロード、`HelpFiles`をディスクにグループ化します。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">
+          <paramref name="groupName" />アプリケーション マニフェストで定義されているファイル グループではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFirstRun">
+      <MemberSignature Language="C#" Value="public bool IsFirstRun { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstRun" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.IsFirstRun" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、最初にこのアプリケーションがクライアント コンピューターで実行するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このバージョンのアプリケーションが; の前に、クライアント コンピューターで実行していない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Deployment.Application.ApplicationDeployment.IsFirstRun%2A>を初めてアプリケーションを実行する任意の 1 回限りの初期化の操作を実行する必要があるかどうかを判断します。  
+  
+ だない、<xref:System.Deployment.Application.ApplicationDeployment.IsFirstRun%2A>設定`true`アプリケーションのこのインスタンスがユーザーにそのユーザー インターフェイスを表示する最初の 1 つであることを示します。 方法のため、システム プロセスをスケジュールする、アプリケーションの 1 つのインスタンスがあります、<xref:System.Deployment.Application.ApplicationDeployment.IsFirstRun%2A>プロパティに設定`true`が別のインスタンスで最初に、画面に表示する可能性があります。 このプロパティの値は、次に、ユーザーが 1 つのバージョンからアップグレードするたびにリセットされます。 アプリケーションを実行には、最初の時間の任意のバージョンだけ操作を実行する場合は、最初の時刻を作成したファイルの有無を確認またはフラグを使用して、格納するなど、追加のテストを実行する必要があります**アプリケーション設定**です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Deployment.Application.ApplicationDeployment.IsFirstRun%2A>ファイル グループに更新プログラムを確認するかどうかを決定する`HelpFiles`です。 呼び出す場合は 1 つまたは複数のファイルが更新されて、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>新しいバージョンを取得します。  
+  
+ [!code-csharp[ClickOnceAPI#9](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#9)]
+ [!code-vb[ClickOnceAPI#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNetworkDeployed">
+      <MemberSignature Language="C#" Value="public static bool IsNetworkDeployed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsNetworkDeployed" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションがあるかどうかを示す値を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value>
+          <see langword="true" />この場合、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部および外部の両方を実行するアプリケーションの場合、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開 (たとえば、展開する前に、ローカル コンピューターでアプリケーションをデバッグする必要がある場合)、テスト<xref:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed%2A>アクセスする前に、<xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>プロパティです。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed%2A>返されます`true`アプリケーションがインストールされているまたはオンラインでホストされているかどうかに関係なく、Web サイト、ファイル共有、または CD-ROM からインストールされたかどうかに関係なく。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得<xref:System.Deployment.Application.ApplicationDeployment.CurrentDeployment%2A>を使用して<xref:System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed%2A>参照がないことを確認するには、まず`null`です。  
+  
+ [!code-cpp[ClickOnceAPI#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#2)]
+ [!code-csharp[ClickOnceAPI#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeOfLastUpdateCheck">
+      <MemberSignature Language="C#" Value="public DateTime TimeOfLastUpdateCheck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeOfLastUpdateCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.TimeOfLastUpdateCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付と時刻を取得[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションの更新プログラムの最終確認日時。</summary>
+        <value><see cref="T:System.DateTime" />の最後の更新チェックします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、サブスクリプションの更新用に構成することができます。 このシナリオで[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]配置マニフェストで定義された間隔で自動的にアプリケーションの配置場所をポーリングし、使用可能な更新プログラムがあるかどうかを決定します。 <xref:System.Deployment.Application.ApplicationDeployment.TimeOfLastUpdateCheck%2A>かどうかが開始されたサブスクリプションか、明示的なチェックを使用してに関係なく、最後の更新チェックの時刻を返します、 <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>、 <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateAsync%2A>、 <xref:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate%2A>、 <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>、または<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>メソッドです。  
+  
+ 更新プログラムのチェックが実行されていません、アプリケーションがインストールされて以来場合<xref:System.Deployment.Application.ApplicationDeployment.TimeOfLastUpdateCheck%2A>インストール時刻を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例のチェックするかどうか、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、過去 3 日以内に利用可能な更新プログラムのチェックが完了します。  
+  
+ [!code-cpp[ClickOnceAPI#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#3)]
+ [!code-csharp[ClickOnceAPI#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#3)]
+ [!code-vb[ClickOnceAPI#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public bool Update ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Update() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.Update" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>同期ダウンロードおよび最新のバージョンのこのアプリケーションのインストールを開始します。</summary>
+        <returns>
+          <see langword="true" />アプリケーションが更新されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、新しいバージョンので指定された場所にアプリケーションを発行するときに更新されたと見なされます<xref:System.Deployment.Application.ApplicationDeployment.UpdateLocation%2A>アプリケーションの配置マニフェストのバージョン番号が、ユーザーのコンピューターに現在インストールされているアプリケーションのバージョン番号より大きいとします。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>呼び出しによって、更新プログラムをクライアント コンピューターにダウンロードしにインストールするまでブロックされます、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]キャッシュです。 この期間中に、アプリケーション応答しなくなりますをユーザーにします。 アプリケーションの応答性を維持またはダウンロードで使用中に、進行状況レポートを表示する場合、<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>メソッド代わりにします。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>すべてのアプリケーション マニフェストで「省略可能」とマークされていないファイルをダウンロードします。 使用してオンデマンドで省略可能なファイルをダウンロードすることができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>または<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッドです。  
+  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]既に更新することがアプリケーションに自動的に呼び出すときに、<xref:System.Deployment.Application.ApplicationDeployment.Update%2A>メソッド以外のかどうかが発生したこのメソッドを呼び出すがスローされます、<xref:System.InvalidOperationException>です。  
+  
+ 展開で 1 つまたは複数のファイルを更新した、アプリケーション マニフェストを更新していない場合が表示されます、<xref:System.Deployment.Application.InvalidDeploymentException>です。 ほとんどの再配置、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションはこの問題を解決します。 配置マニフェストまたはアプリケーション マニフェストの公開キー署名が無効か存在しない場合は、この例外も表示されます。  
+  
+ 更新プログラムは、アプリケーションの以前のバージョンより高いレベルのローカル コンピューター上の信頼を要求可能性があります。 アプリケーションでは、信頼されたアプリケーションの配置を使用する場合、共通言語ランタイム (CLR) の信頼マネージャーは有効な信頼ライセンスが含まれているかどうかを決定する、配置マニフェストを調べます。 配置マニフェストに、有効な信頼ライセンスが含まれていない場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]、インストールが中止され、スロー、<xref:System.Deployment.Application.TrustNotGrantedException>です。 <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>メソッドを実行するアプリケーションのアクセス許可を付与するかどうかをユーザーに求めるプロンプトを表示しません。  
+  
+   
+  
+## Examples  
+ アプリケーションの更新プログラムです。 次のコード例を確認します。更新プログラムが利用可能な場合は、インストール、同期的にします。  
+  
+ [!code-cpp[ClickOnceAPI#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#6)]
+ [!code-csharp[ClickOnceAPI#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#6)]
+ [!code-vb[ClickOnceAPI#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Deployment.Application.TrustNotGrantedException">ローカル コンピューターは、アプリケーションを実行することを要求するアクセス許可レベルを付与しませんでした。</exception>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開が破損しています。 ヒントを診断し、問題を解決する方法については、次を参照してください。 [ClickOnce 配置のトラブルシューティング](http://msdn.microsoft.com/library/58e90012-f68b-4852-8ae9-58e361cbcc32)です。</exception>
+        <exception cref="T:System.Deployment.Application.DeploymentDownloadException">ネットワーク上の場所から、新しい展開をダウンロードできませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">アプリケーションは現在更新中です。</exception>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateAsync">
+      <MemberSignature Language="C#" Value="public void UpdateAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.UpdateAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期のダウンロードとこのアプリケーションの最新バージョンのインストールを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、新しいバージョンので指定された場所にアプリケーションを発行するときに更新されたと見なされます<xref:System.Deployment.Application.ApplicationDeployment.UpdateLocation%2A>アプリケーションの配置マニフェストのバージョン番号が、ユーザーのコンピューターに現在インストールされているアプリケーションのバージョン番号より大きいとします。  
+  
+ 更新プログラムのダウンロード中に[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を発生させる、<xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>ダウンロードの状態を通知するためにアプリケーションのメイン スレッドでイベント ハンドラー。 非同期更新が完了するか、例外が発生したときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を発生させる、<xref:System.Deployment.Application.ApplicationDeployment.UpdateCompleted>メイン アプリケーション スレッドでイベント。 確認、<xref:System.ComponentModel.AsyncCompletedEventArgs>更新プログラムが成功したかどうかを決定するには、このイベントを指定します。  
+  
+ 場合<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>、例外がスロー[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]呼び出し<xref:System.Deployment.Application.ApplicationDeployment.UpdateCompleted>設定と、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティの<xref:System.ComponentModel.AsyncCompletedEventArgs>スローされた例外にします。  
+  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>アプリケーション マニフェストで"optional"としてマークされていない展開内のすべてのファイルがダウンロードされます。 使用してオンデマンドで省略可能なファイルをダウンロードすることができます、<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A>または<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>メソッドです。  
+  
+ [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]既に更新することがアプリケーションに自動的に呼び出すときに、<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>メソッド以外のかどうかが発生したこのメソッドを呼び出すがスローされます、<xref:System.InvalidOperationException>です。  
+  
+ 展開で 1 つまたは複数のファイルを更新した、アプリケーション マニフェストを更新していない場合が表示されます、<xref:System.Deployment.Application.InvalidDeploymentException>です。 ほとんどの場合は、この問題を解決してアプリケーション マニフェストを再構築します。 配置マニフェストまたはアプリケーション マニフェストの公開キー署名が無効か存在しない場合は、この例外も表示されます。  
+  
+ 更新プログラムは、アプリケーションの以前のバージョンより高いレベルのローカル コンピューター上の信頼を要求可能性があります。 アプリケーションでは、信頼されたアプリケーションの配置を使用する場合、共通言語ランタイム (CLR) の信頼マネージャーは有効な信頼ライセンスが含まれているかどうかを決定する、配置マニフェストを調べます。 配置マニフェストに、有効な信頼ライセンスが含まれていない場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]、インストールが中止され、スロー、<xref:System.Deployment.Application.TrustNotGrantedException>です。 <xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>実行するアプリケーションのアクセス許可を付与するかどうかをユーザーに求めるプロンプトは表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションの読み込み時に、新しい更新プログラムが利用可能なかどうかを決定します。必要な更新プログラムが利用可能な場合は、非同期的に更新プログラムをインストールします。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Deployment.Application.TrustNotGrantedException">ローカル コンピューターはこのアプリケーションを実行することを要求するアクセス許可レベルを付与しませんでした。</exception>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]展開が破損しています。 ヒントを診断し、問題を解決する方法については、次を参照してください。 [ClickOnce 配置のトラブルシューティング](http://msdn.microsoft.com/library/58e90012-f68b-4852-8ae9-58e361cbcc32)です。</exception>
+        <exception cref="T:System.Deployment.Application.DeploymentDownloadException">ネットワーク上の場所から、新しい展開をダウンロードできませんでした。</exception>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateAsyncCancel">
+      <MemberSignature Language="C#" Value="public void UpdateAsyncCancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateAsyncCancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.ApplicationDeployment.UpdateAsyncCancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって開始される非同期更新をキャンセル<see cref="M:System.Deployment.Application.ApplicationDeployment.UpdateAsync" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdateAsyncCancel%2A>呼び出しによって開始された更新をキャンセルのみ<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsync%2A>; サブスクリプションの一部として開始された更新は取り消されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCompleted">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.AsyncCompletedEventHandler UpdateCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.AsyncCompletedEventHandler UpdateCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.UpdateCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AsyncCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]への呼び出しの結果として、アプリケーションのアップグレードを完了しました<see cref="M:System.Deployment.Application.ApplicationDeployment.UpdateAsync" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdateCompleted>イベントは、アプリケーションのメイン スレッドで呼び出されます。 例外をトリガーすることがなくこのコールバック内で直接、アプリケーションの Windows フォーム コントロールを呼び出すことができます。  
+  
+ チェック、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>のプロパティ、<xref:System.ComponentModel.AsyncCompletedEventArgs>このコールバックを指定します。 このプロパティは、する場合`null`、インストールが成功した; されていない場合`null`、インストールが成功せず、およびを介してこのインストールの失敗の詳細についてを見つけることができます、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティです。 呼び出す必要がありますが、更新プログラムをダウンロードすると、<xref:System.Windows.Forms.Application.Restart%2A>メソッドを<xref:System.Windows.Forms.Application>アプリケーションの新しいバージョンを使用します。  
+  
+ 呼び出しによって、更新プログラムのインストールが取り消されましたかどうか<xref:System.Deployment.Application.ApplicationDeployment.UpdateAsyncCancel%2A>、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>のプロパティ、<xref:System.ComponentModel.AsyncCompletedEventArgs>クラス`true`です。  
+  
+ このイベント ハンドラーを使用する、アプリケーションする必要があります両方をインポート、<xref:System.Deployment.Application>と<xref:System.ComponentModel>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しい更新プログラムがあるかどうかアプリケーションの読み込み時に決定します。必要な更新プログラムが利用可能な場合は、非同期的に更新プログラムをインストールします。 この例を含む Windows フォーム アプリケーションを展開することが必要です、<xref:System.Windows.Forms.StatusStrip>コントロール、およびこのコントロールが含まれて、<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedApplicationFullName">
+      <MemberSignature Language="C#" Value="public string UpdatedApplicationFullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdatedApplicationFullName" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.UpdatedApplicationFullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新された後は、アプリケーションの完全な名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />アプリケーションの完全な名前を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedVersion">
+      <MemberSignature Language="C#" Value="public Version UpdatedVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version UpdatedVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.UpdatedVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最近ダウンロードされた更新プログラムのバージョンを取得します。</summary>
+        <value><see cref="T:System.Version" />更新プログラムのバージョンを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdatedVersion%2A>異なる<xref:System.Deployment.Application.ApplicationDeployment.CurrentVersion%2A>かどうかには、新しい更新プログラムがインストールされているが、まだ呼び出されません<xref:System.Windows.Forms.Application.Restart%2A>上、<xref:System.Windows.Forms.Application>です。 アプリケーションの配置マニフェストは、自動更新を実行するように構成は、これら 2 つのアプリケーションを再起動する必要があるかどうかを決定する値を比較できます。  
+  
+ アプリケーションが更新されていない場合<xref:System.Deployment.Application.ApplicationDeployment.UpdatedVersion%2A>と同じ値を返します<xref:System.Deployment.Application.ApplicationDeployment.CurrentVersion%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を決定するメソッドを定義するかどうか[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]がアプリケーションを更新します。  
+  
+ [!code-cpp[ClickOnceAPI#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#4)]
+ [!code-csharp[ClickOnceAPI#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#4)]
+ [!code-vb[ClickOnceAPI#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙。<see cref="T:System.Security.Permissions.PermissionState" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateLocation">
+      <MemberSignature Language="C#" Value="public Uri UpdateLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri UpdateLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.ApplicationDeployment.UpdateLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サイトまたはファイル共有をこのアプリケーションの更新を取得します。</summary>
+        <value>HTTP、HTTPS、またはファイルの URL で表される、更新プログラムのパスまたは、Windows とネットワーク ファイルのパス (UNC) します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdateLocation%2A>更新のリダイレクトを使用するアプリケーションの配置が構成されている場合、最初にアプリケーションをダウンロードするために使用する Web サイトとは異なる場合があります。  
+  
+ この値は、アプリケーションの配置マニフェストでのみ変更できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.PermissionSet">ローカル コンピューターにフル アクセスできます。 関連する列挙値:<see cref="T:System.Security.Permissions.PermissionState" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateProgressChanged">
+      <MemberSignature Language="C#" Value="public event System.Deployment.Application.DeploymentProgressChangedEventHandler UpdateProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Deployment.Application.DeploymentProgressChangedEventHandler UpdateProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]呼び出しによって開始された更新操作のステータス情報が新しい、<see cref="M:System.Deployment.Application.ApplicationDeployment.UpdateAsync" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>イベントは、アプリケーションのメイン スレッドで呼び出されます。 例外をトリガーすることがなくこのコールバック内で直接、アプリケーションの Windows フォーム コントロールを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しい更新プログラムがあるかどうかアプリケーションの読み込み時に決定します。必要な更新プログラムが利用可能な場合は、非同期的に更新プログラムをインストールします。  
+  
+ [!code-cpp[ClickOnceAPI#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#1)]
+ [!code-csharp[ClickOnceAPI#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#1)]
+ [!code-vb[ClickOnceAPI#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

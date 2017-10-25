@@ -1,0 +1,2312 @@
+<Type Name="SqlConnection" FullName="System.Data.SqlClient.SqlConnection">
+  <TypeSignature Language="C#" Value="public sealed class SqlConnection : System.Data.Common.DbConnection, ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlConnection extends System.Data.Common.DbConnection implements class System.Data.IDbConnection, class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbConnection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("InfoMessage")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL Server データベースに接続を開くを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Data.SqlClient.SqlConnection>オブジェクトに一意のセッションを表します、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]データ ソース。 クライアント/サーバー データベース システムでは、サーバーへのネットワーク接続と同じです。 <xref:System.Data.SqlClient.SqlConnection>と共に使用する<xref:System.Data.SqlClient.SqlDataAdapter>と<xref:System.Data.SqlClient.SqlCommand>Microsoft に接続するときにパフォーマンスを向上させる[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]データベース。 すべてのサード パーティの[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]製品、およびその他の OLE DB をサポートするデータ ソースを使用して<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ インスタンスを作成する場合<xref:System.Data.SqlClient.SqlConnection>、すべてのプロパティは、初期値に設定します。 これらの値の一覧は、次を参照してください。、<xref:System.Data.SqlClient.SqlConnection>コンス トラクターです。  
+  
+ 参照してください<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>接続文字列のキーワードの一覧についてはします。  
+  
+ 場合、<xref:System.Data.SqlClient.SqlConnection>スコープの移動のうち、閉じられているされません。 したがって、する必要があります明示的に接続を呼び出して終了する`Close`または`Dispose`です。 `Close`および`Dispose`は機能的に等価です。 値の接続プール場合`Pooling`に設定されている`true`または`yes`では、基になる接続が接続プールに返されます。 その一方で場合、`Pooling`に設定されている`false`または`no`では、基になるサーバーに接続が閉じられる実際にします。  
+  
+> [!NOTE]
+>  接続が接続プールからフェッチされたり接続プールに返されたりしたとき、ログイン イベントとログアウト イベントはサーバーで発生しません。これは、接続プールに返されても接続は実際には終了していないためです。 詳細については、次を参照してください。 [SQL サーバー接続プール (ADO.NET)](~/docs/framework/data/adonet/sql-server-connection-pooling.md)です。  
+  
+ 接続が常に切断させるには、内の接続を開く、`using`ブロック、次のコード フラグメントで示すようにします。 これにより、コード ブロックを終了するときに、接続が自動的に閉じられることです。  
+  
+```vb  
+Using connection As New SqlConnection(connectionString)  
+    connection.Open()  
+    ' Do work here; connection closed on following line.  
+End Using  
+  
+```  
+  
+```csharp  
+using (SqlConnection connection = new SqlConnection(connectionString))  
+    {  
+        connection.Open();  
+        // Do work here; connection closed on following line.  
+    }  
+```  
+  
+> [!NOTE]
+>  高パフォーマンス アプリケーションを配置するには、接続プールを使用する必要があります。 使用すると、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]、接続プール管理するため、プロバイダー、自動的にいくつかの設定を変更することはできますを有効にする必要はありません。 詳細については、次を参照してください。 [SQL サーバー接続プール (ADO.NET)](~/docs/framework/data/adonet/sql-server-connection-pooling.md)です。  
+  
+ 場合、<xref:System.Data.SqlClient.SqlException>メソッドの実行によって生成される、 <xref:System.Data.SqlClient.SqlCommand>、<xref:System.Data.SqlClient.SqlConnection>重大度レベルが 19 以下の場合は開いたままです。 重大度レベルが 20 以上の場合は、通常は閉じます、<xref:System.Data.SqlClient.SqlConnection>です。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+ インスタンスを作成するアプリケーション、<xref:System.Data.SqlClient.SqlConnection>オブジェクトを宣言的または強制的のセキュリティ確認要求を設定して、コードに十分なアクセス許可を持つすべての直接的および間接的な呼び出し元を要求できます。 <xref:System.Data.SqlClient.SqlConnection>により、セキュリティ要求を使用して、<xref:System.Data.SqlClient.SqlClientPermission>オブジェクト。 ユーザーが、コードが使用して、十分なアクセス許可を持っているを確認することができます、<xref:System.Data.SqlClient.SqlClientPermissionAttribute>オブジェクト。 ユーザーと管理者を使っても、 [Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](~/docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)コンピューター、ユーザー、およびエンタープライズ レベルのセキュリティ ポリシーを変更します。 詳細については、[セキュリティ](http://msdn.microsoft.com/library/9a9621d7-8883-4a4f-a874-65e8e09e20a6)に関するページをご覧ください。 セキュリティ要求を使用する方法を示す例では、次を参照してください。[コード アクセス セキュリティと ADO.NET](~/docs/framework/data/adonet/code-access-security.md)です。  
+  
+ サーバーからの警告および情報メッセージを処理の詳細については、次を参照してください。[接続イベント](~/docs/framework/data/adonet/connection-events.md)です。 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]エンジンのエラーとエラー メッセージは、『[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+> [!CAUTION]
+>  共有メモリではなく、TCP を強制することができます。 Tcp を付けることによって行うことができます: 接続でサーバー名を文字列または localhost を使用できます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlCommand>と<xref:System.Data.SqlClient.SqlConnection>です。 <xref:System.Data.SqlClient.SqlConnection>が開いたときおよびとして設定、<xref:System.Data.SqlClient.SqlCommand.Connection%2A>の<xref:System.Data.SqlClient.SqlCommand>です。 この例では、<xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>です。 これを実現する、<xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>接続文字列とは、クエリ文字列が渡される、 [!INCLUDE[tsql](~/includes/tsql-md.md)] INSERT ステートメントです。 使用して、コードの終了時に、接続が自動的に終了ブロック。  
+  
+ [!code-csharp[Classic WebData SqlCommand.ExecuteNonQuery Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteNonQuery Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlCommand.ExecuteNonQuery Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteNonQuery Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスをときに<xref:System.Data.SqlClient.SqlConnection>が作成、読み取り/書き込みプロパティは、関連付けられているキーワードを使用して明示的に設定されている場合を除き、次の初期値に設定されます、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティです。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>|空の文字列 ("")|  
+|<xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A>|15|  
+|<xref:System.Data.SqlClient.SqlConnection.Database%2A>|空の文字列 ("")|  
+|<xref:System.Data.SqlClient.SqlConnection.DataSource%2A>|空の文字列 ("")|  
+  
+ のみを使用してこれらのプロパティの値を変更することができます、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティです。 <xref:System.Data.SqlClient.SqlConnectionStringBuilder>クラスを作成および接続文字列の内容を管理するための機能を提供します。  
+  
+   
+  
+## Examples  
+ 次の例を作成して開きます、<xref:System.Data.SqlClient.SqlConnection>です。  
+  
+ [!code-csharp[Classic WebData SqlConnection.SqlConnection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.SqlConnection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlConnection (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] データベースを開くために使用される接続。</param>
+        <summary>接続文字列を示す文字列を指定して、<see cref="T:System.Data.SqlClient.SqlConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスをときに<xref:System.Data.SqlClient.SqlConnection>が作成、読み取り/書き込みプロパティは、関連付けられているキーワードを使用して明示的に設定されている場合を除き、次の初期値に設定されます、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティです。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>|`connectionString`|  
+|<xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A>|15|  
+|<xref:System.Data.SqlClient.SqlConnection.Database%2A>|空の文字列 ("")|  
+|<xref:System.Data.SqlClient.SqlConnection.DataSource%2A>|空の文字列 ("")|  
+  
+ のみを使用してこれらのプロパティの値を変更することができます、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティです。 <xref:System.Data.SqlClient.SqlConnection>クラスを作成および接続文字列の内容を管理するための機能を提供します。  
+  
+   
+  
+## Examples  
+ 次の例を作成して開きます、<xref:System.Data.SqlClient.SqlConnection>です。  
+  
+ [!code-csharp[Classic WebData SqlConnection.SqlConnection1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.SqlConnection1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlConnection (string connectionString, System.Data.SqlClient.SqlCredential cred);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, class System.Data.SqlClient.SqlCredential cred) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.#ctor(System.String,System.Data.SqlClient.SqlCredential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="credential" Type="System.Data.SqlClient.SqlCredential" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">次の接続文字列キーワードのいずれかを使用しない接続文字列: <see langword="Integrated Security = true" />、 <see langword="UserId" />、または<see langword="Password" />; を使用しないまたは<see langword="ContextConnection = true" />です。</param>
+        <param name="cred">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.SqlClient.SqlConnection" />クラスを使用しない接続文字列が指定された<see langword="Integrated Security = true" />と<see cref="T:System.Data.SqlClient.SqlCredential" />ユーザー ID とパスワードを含むオブジェクトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessToken">
+      <MemberSignature Language="C#" Value="public string AccessToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccessToken" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.AccessToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続のアクセス トークンを取得または設定します。</summary>
+        <value>接続のアクセス トークン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDbTransaction">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction BeginDbTransaction (System.Data.IsolationLevel isolationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbTransaction BeginDbTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.BeginDbTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolationLevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolationLevel">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlTransaction BeginTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlTransaction BeginTransaction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.BeginTransaction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベース トランザクションを開始します。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] BEGIN TRANSACTION の実装です。  
+  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.SqlClient.SqlTransaction.Commit%2A>または<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。 確認する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクション管理モデルが正しく実行される、によって提供されるものなど、他のトランザクション管理モデルは使用しないでください[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+> [!NOTE]
+>  分離レベルを指定しないと、既定の分離レベルが使用されます。 分離レベルを指定する、<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>メソッドを使用するオーバー ロードを使用して、`iso`パラメーター (<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>)。 接続が終了または破棄されるまで、トランザクションが完了した後、トランザクションの分離レベルが保持されます。 分離レベルに設定する**スナップショット**snapshot 分離レベルが有効になっていないデータベースではない例外をスローします。 既定の分離レベルを使用して、トランザクションが完了します。  
+  
+> [!CAUTION]
+>  場合は、サーバーで、レベル 16 または上位のエラーが発生する、そのトランザクションを開始するには、トランザクションはロールバックされませんまで、<xref:System.Data.SqlClient.SqlDataReader.Read%2A>メソッドが呼び出されます。 例外はスローされません**ExecuteReader**です。  
+  
+> [!CAUTION]
+>  クエリが大量のデータと呼び出しを返す場合`BeginTransaction`、<xref:System.Data.SqlClient.SqlException>がスローされるため[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]MARS を使用する場合、並列トランザクションを許可されていません。 この問題を避けるためには、常にトランザクションに関連付けるコマンドや、接続リーダーが開く前にします。  
+  
+ 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクションを参照してください「明示的なトランザクション」および「効率的なトランザクションのコーディング[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">並列トランザクションは、複数のアクティブな結果セット (MARS) を使用する場合には使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlTransaction BeginTransaction (System.Data.IsolationLevel iso);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlTransaction BeginTransaction(valuetype System.Data.IsolationLevel iso) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.BeginTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iso" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="iso">トランザクションを実行する分離レベル。</param>
+        <summary>分離レベルを指定して、データベース トランザクションを開始します。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] BEGIN TRANSACTION の実装です。  
+  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.SqlClient.SqlTransaction.Commit%2A>または<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。 確認する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクション管理モデルが正しく実行される、によって提供されるものなど、他のトランザクション管理モデルは使用しないでください[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+> [!NOTE]
+>  トランザクションがコミットまたはロールバック、トランザクションの分離レベル永続化され、自動コミット モードになっているすべての後続のコマンド (、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]既定)。 これにより、永続化して、行外には、他のユーザーのロックは、REPEATABLE read 分離レベルなど、予期しない結果が生成できます。 既定の (READ COMMITTED) に、分離レベルをリセットするには、実行、[!INCLUDE[tsql](~/includes/tsql-md.md)]ステートメントのセットのトランザクション分離レベル READ COMMITTED またはコール<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A?displayProperty=nameWithType>に続く<xref:System.Data.SqlClient.SqlTransaction.Commit%2A?displayProperty=nameWithType>です。 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]分離レベルを参照してください「分離レベルで、データベース エンジン」[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+ 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクションを参照してください「明示的なトランザクション」および「効率的なトランザクションのコーディング[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+> [!CAUTION]
+>  クエリが大量のデータと呼び出しを返す場合`BeginTransaction`、<xref:System.Data.SqlClient.SqlException>がスローされるため[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]MARS を使用する場合、並列トランザクションを許可されていません。 この問題を避けるためには、常にトランザクションに関連付けるコマンドや、接続リーダーが開く前にします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">並列トランザクションは、複数のアクティブな結果セット (MARS) を使用する場合には使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlTransaction BeginTransaction (string transactionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlTransaction BeginTransaction(string transactionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.BeginTransaction(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transactionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="transactionName">トランザクションの名前。</param>
+        <summary>トランザクション名を指定して、データベース トランザクションを開始します。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] BEGIN TRANSACTION の実装です。  
+  
+ 長さ、`transactionName`パラメーターは、32 文字を超えない必要があります。 それ以外の場合、例外がスローされます。  
+  
+ 値、`transactionName`以降の呼び出しでパラメーターを使用する<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>し、、`savePoint`のパラメーター、<xref:System.Data.SqlClient.SqlTransaction.Save%2A>メソッドです。  
+  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.SqlClient.SqlTransaction.Commit%2A>または<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。 確認する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクション管理モデルが正しく実行される、によって提供されるものなど、他のトランザクション管理モデルは使用しないでください[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+ 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクションを参照してください「明示的なトランザクション」および「効率的なトランザクションのコーディング[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+> [!CAUTION]
+>  クエリが大量のデータと呼び出しを返す場合`BeginTransaction`、<xref:System.Data.SqlClient.SqlException>がスローされるため[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]MARS を使用する場合、並列トランザクションを許可されていません。 この問題を避けるためには、常にトランザクションに関連付けるコマンドや、接続リーダーが開く前にします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">並列トランザクションは、複数のアクティブな結果セット (MARS) を使用する場合には使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlTransaction BeginTransaction (System.Data.IsolationLevel iso, string transactionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlTransaction BeginTransaction(valuetype System.Data.IsolationLevel iso, string transactionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.BeginTransaction(System.Data.IsolationLevel,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iso" Type="System.Data.IsolationLevel" />
+        <Parameter Name="transactionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="iso">トランザクションを実行する分離レベル。</param>
+        <param name="transactionName">トランザクションの名前。</param>
+        <summary>分離レベルとトランザクション名を指定して、データベース トランザクションを開始します。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] BEGIN TRANSACTION の実装です。  
+  
+ 値、`transactionName`以降の呼び出しでパラメーターを使用する<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>し、、`savePoint`のパラメーター、<xref:System.Data.SqlClient.SqlTransaction.Save%2A>メソッドです。  
+  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.SqlClient.SqlTransaction.Commit%2A>または<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。 確認する、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクション管理モデルが正しく実行される、によって提供されるものなど、他のトランザクション管理モデルは使用しないでください[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+> [!NOTE]
+>  トランザクションがコミットまたはロールバック、トランザクションの分離レベル永続化され、自動コミット モードになっているすべての後続のコマンド (、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]既定)。 これにより、永続化して、行外には、他のユーザーのロックは、REPEATABLE read 分離レベルなど、予期しない結果が生成できます。 既定の (READ COMMITTED) に、分離レベルをリセットするには、実行、[!INCLUDE[tsql](~/includes/tsql-md.md)]ステートメントのセットのトランザクション分離レベル READ COMMITTED またはコール<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A?displayProperty=nameWithType>に続く<xref:System.Data.SqlClient.SqlTransaction.Commit%2A?displayProperty=nameWithType>です。 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]分離レベルを参照してください「分離レベルで、データベース エンジン」[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+ 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]トランザクションを参照してください「明示的なトランザクション」および「効率的なトランザクションのコーディング[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+> [!CAUTION]
+>  クエリが大量のデータと呼び出しを返す場合`BeginTransaction`、<xref:System.Data.SqlClient.SqlException>がスローされるため[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]MARS を使用する場合、並列トランザクションを許可されていません。 この問題を避けるためには、常にトランザクションに関連付けるコマンドや、接続リーダーが開く前にします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">並列トランザクションは、複数のアクティブな結果セット (MARS) を使用する場合には使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeDatabase">
+      <MemberSignature Language="C#" Value="public override void ChangeDatabase (string database);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ChangeDatabase(string database) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ChangeDatabase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="database" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="database">現在のデータベースの代わりに使用するデータベースの名前。</param>
+        <summary>開いている <see cref="T:System.Data.SqlClient.SqlConnection" /> の現在のデータベースを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値、`database`パラメーターは、有効なデータベース名を指定する必要があります。 `database`パラメーターは、null 値、空の文字列または空白だけの文字の文字列を含めることはできません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData SqlConnection.Database Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.Database Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">データベース名が正しくありません。</exception>
+        <exception cref="T:System.InvalidOperationException">接続が開かれていません。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">データベースを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePassword">
+      <MemberSignature Language="C#" Value="public static void ChangePassword (string connectionString, string newPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ChangePassword(string connectionString, string newPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ChangePassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="newPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">目的のサーバーに接続するために必要な情報を含む接続文字列。 接続文字列には、ユーザー ID と現在のパスワードが含まれている必要があります。</param>
+        <param name="newPassword">新たに設定するパスワード。 このパスワードは、サーバー側で設定されているパスワード セキュリティ ポリシー (最低限の長さ、使用文字の要件など) を満たしている必要があります。</param>
+        <summary>接続文字列で指定されているユーザーの [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のパスワードを、指定された新しいパスワードに変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合は[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]Windows server で開発者活用することにより、クライアント アプリケーションは既存のパスワードを変更するために、現在と新しいパスワードの両方を指定する機能。 アプリケーションは、古いパスワードの有効期限が切れてし、管理者の介入なしにこの操作を完了できる場合、最初のログイン時に、新しいパスワードのユーザー入力を求めるなどの機能を実装できます。  
+  
+ <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A>メソッドが変更された、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 、示されたユーザーのパスワードが示される`connectionString`パラメーターで指定された値を`newPassword`パラメーター。 かどうか、接続文字列には、統合セキュリティのオプションが含まれます (つまり、"Integrated Security = True"またはそれと同等)、例外がスローされます。  
+  
+ パスワードが期限切れを呼び出すことを確認する、<xref:System.Data.SqlClient.SqlConnection.Open%2A>メソッドが発生し、<xref:System.Data.SqlClient.SqlException>です。 接続文字列に含まれるパスワードをリセットする必要があるために、<xref:System.Data.SqlClient.SqlException.Number%2A>例外のプロパティには、状態値 18487 または 18488 が含まれています。 最初の値 (18487) は、パスワードが期限切れ、ある 2 つ目の (18488) ログインする前にパスワードをリセットする必要がありますを示します。  
+  
+ このメソッドは、サーバーに、独自の接続を開き、パスワードの変更を要求しが完了するとすぐに、接続を閉じます。 この接続から取得されることもありませんに返される、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続プールします。  
+  
+   
+  
+## Examples  
+ パスワードの変更の簡単な例を次に示します。  
+  
+```  
+class Program {  
+   static void Main(string[] args) {  
+      System.Data.SqlClient.SqlConnection.ChangePassword(  
+        "Data Source=a_server;Initial Catalog=a_database;UID=user;PWD=old_password",   
+       "new_password");  
+   }  
+}  
+  
+```  
+  
+```  
+Module Module1  
+    Sub Main()  
+System.Data.SqlClient.SqlConnection.ChangePassword(  
+        "Data Source=a_server;Initial Catalog=a_database;UID=user;PWD=old_password",   
+       "new_password")  
+    End Sub  
+End Module  
+  
+```  
+  
+ 次のコンソール アプリケーションでは、現在のパスワードの有効期限が切れているため、ユーザーのパスワードの変更に関連する問題について説明します。  
+  
+ [!code-csharp[DataWorks SqlConnection.ChangePassword#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlConnection.ChangePassword/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlConnection.ChangePassword#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlConnection.ChangePassword/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">接続文字列には、統合セキュリティを使用するオプションが含まれています。  
+  
+ または  
+  
+ <paramref name="newPassword" /> が 128 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" /> または <paramref name="newPassword" /> のいずれかのパラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePassword">
+      <MemberSignature Language="C#" Value="public static void ChangePassword (string connectionString, System.Data.SqlClient.SqlCredential credential, System.Security.SecureString newSecurePassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ChangePassword(string connectionString, class System.Data.SqlClient.SqlCredential credential, class System.Security.SecureString newSecurePassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ChangePassword(System.String,System.Data.SqlClient.SqlCredential,System.Security.SecureString)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="credential" Type="System.Data.SqlClient.SqlCredential" />
+        <Parameter Name="newSecurePassword" Type="System.Security.SecureString" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">サーバーに接続するために必要な情報を保持する接続文字列。 接続文字列は、次の接続文字列キーワードのいずれかを使用しない必要があります: <see langword="Integrated Security = true" />、 <see langword="UserId" />、または<see langword="Password" />; または<see langword="ContextConnection = true" />です。</param>
+        <param name="credential"><see cref="T:System.Data.SqlClient.SqlCredential" /> オブジェクト。</param>
+        <param name="newSecurePassword">新しいパスワード。 <c>newSecurePassword</c>のみ読み取る必要があります。 このパスワードは、サーバー側で設定されているパスワード セキュリティ ポリシー (最低限の長さ、使用文字の要件など) も満たしている必要があります。</param>
+        <summary>変更、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]に示されているユーザーのパスワード、<see cref="T:System.Data.SqlClient.SqlCredential" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">1.  接続文字列には、任意の組み合わせが含まれています。 <see langword="UserId" />、 <see langword="Password" />、または<see langword="Integrated Security=true" />です。  
+  
+2.  接続文字列が含まれる<see langword="Context Connection=true" />です。  
+  
+3.  <paramref name="newSecurePassword" />128 文字を超えています。  
+  
+4.  <paramref name="newSecurePassword" />読み取り専用です。  
+  
+5.  <paramref name="newSecurePassword" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">パラメーターのいずれか (<paramref name="connectionString" />、 <paramref name="credential" />、または<paramref name="newSecurePassword" />) が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAllPools">
+      <MemberSignature Language="C#" Value="public static void ClearAllPools ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearAllPools() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ClearAllPools" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>接続プールを空にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A>接続プールをリセット (または空に)。 適切にマークしは破棄されます (の代わりに、プールに返される) 場合、呼び出し時に使用中の接続がある場合<xref:System.Data.SqlClient.SqlConnection.Close%2A>に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearPool">
+      <MemberSignature Language="C#" Value="public static void ClearPool (System.Data.SqlClient.SqlConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearPool(class System.Data.SqlClient.SqlConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ClearPool(System.Data.SqlClient.SqlConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.SqlClient.SqlConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">プールから削除される <see cref="T:System.Data.SqlClient.SqlConnection" />。</param>
+        <summary>指定した接続に関連付けられている接続プールを空にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>関連付けられている接続プールをクリア、`connection`です。 追加の接続に関連付けられている場合`connection`は呼び出し時に使用して、それらが適切にマークされ、破棄されます (プールに返される) ではなくとき<xref:System.Data.SqlClient.SqlConnection.Close%2A>に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientConnectionId">
+      <MemberSignature Language="C#" Value="public Guid ClientConnectionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ClientConnectionId" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ClientConnectionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>試行成功したか失敗したかにかかわらず、最新の接続試行の接続 ID。</summary>
+        <value>最新の接続試行の接続 ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.ClientConnectionId%2A>接続するサーバーのバージョンに関係なく動作は、拡張イベント ログおよび接続リング バッファー エラーに関するエントリが存在していない[!INCLUDE[sskatmai_r2](~/includes/sskatmai-r2-md.md)]以前のバージョン。  
+  
+ 接続 ID をログ記録に関する拡張イベントが有効になっている場合、サーバーで障害発生したかどうかの拡張イベント ログ内の接続 ID を検索できます。 接続リング バッファーに、接続 ID を検索することもできます ([、接続リング バッファーによる SQL Server 2008 の接続のトラブルシューティング](http://go.microsoft.com/fwlink/?LinkId=207752)) 特定の接続エラーです。 接続 ID が接続リング バッファーにない場合は、ネットワーク エラーを想定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベースへの接続を閉じます。 このメソッドは、開いている接続を閉じるための最も好ましいメソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.Close%2A>メソッドが保留中のトランザクションをロールバックします。 接続プールへの接続を解放し、または接続プールが無効になっている場合、接続を閉じます。  
+  
+> [!NOTE]
+>  保留中のトランザクションを使用して開始[!INCLUDE[tsql](~/includes/tsql-md.md)]または<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>が自動的にロールバックされた接続プールが有効になっている場合、接続がリセットされます。 接続プールがオフの場合は、トランザクションがロールバック後`SqlConnection.Close`と呼びます。 トランザクションが開始<xref:System.Transactions>制御するには、`System.Transactions`して、インフラストラクチャとは影響しません`SqlConnection.Close`です。  
+  
+ アプリケーションが呼び出すことができます<xref:System.Data.SqlClient.SqlConnection.Close%2A>1 つ以上の時間。 例外は生成されません。  
+  
+ 場合、<xref:System.Data.SqlClient.SqlConnection>スコープの移動のうち、閉じられているされません。 したがって、する必要があります明示的に接続を呼び出して終了する`Close`または`Dispose`です。 `Close`および`Dispose`は機能的に等価です。 値の接続プール場合`Pooling`に設定されている`true`または`yes`では、基になる接続が接続プールに返されます。 その一方で場合、`Pooling`に設定されている`false`または`no`では、基になるサーバーに接続が閉じられます。  
+  
+> [!NOTE]
+>  接続が接続プールからフェッチされたり接続プールに返されたりしたとき、ログイン イベントとログアウト イベントはサーバーで発生しません。これは、接続プールに返されても接続は実際には終了していないためです。 詳細については、次を参照してください。 [SQL サーバー接続プール (ADO.NET)](~/docs/framework/data/adonet/sql-server-connection-pooling.md)です。  
+  
+> [!CAUTION]
+>  呼び出す必要はありません`Close`または`Dispose`接続、DataReader、または その他のマネージ オブジェクトで、`Finalize`クラスのメソッドです。 ファイナライザーで、クラスが直接所有されているアンマネージ リソースだけを解放する必要があります。 クラスがアンマネージ リソースを所有していない場合は、クラス定義に `Finalize` メソッドを含めないでください。 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.SqlClient.SqlConnection>、開かれます、一部のプロパティが表示されます。 接続がの末尾に自動的に閉じられる、`using`ブロックします。  
+  
+ [!code-csharp[Classic WebData SqlConnection.Open Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.Open Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">接続を開くときに発生した接続レベルのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnEncryptionKeyCacheTtl">
+      <MemberSignature Language="C#" Value="public static TimeSpan ColumnEncryptionKeyCacheTtl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan ColumnEncryptionKeyCacheTtl" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ColumnEncryptionKeyCacheTtl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、- 有効期限の列暗号化キー エントリの列の暗号化キーのキャッシュ、 [Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx)機能します。 既定値は 2 時間です。 0 は、キャッシュがまったくないことを意味します。</summary>
+        <value>時間間隔。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnEncryptionQueryMetadataCacheEnabled">
+      <MemberSignature Language="C#" Value="public static bool ColumnEncryptionQueryMetadataCacheEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool ColumnEncryptionQueryMetadataCacheEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ColumnEncryptionQueryMetadataCacheEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ メタデータ キャッシュが有効になっているかどうかを示す値を取得または (true) か (false) に対して実行されているパラメーター化クエリを[Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx)データベースを有効にします。 既定値は true です。</summary>
+        <value>クエリ メタデータのキャッシュが有効な場合は true を返します。それ以外の場合は false です。 既定値は true です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、パラメーター化クエリの SqlClient のため、とのやり取り SQL Server にパラメーターのメタデータを暗号化する必要があるパラメーターを表示する方法 (どのキーおよびアルゴリズムを使用する必要があります)。 アプリケーションが呼び出す場合、同じクエリ複数回、余分なラウンド トリップが行われましたサーバーごとには、アプリケーションのパフォーマンスが低下します。  
+  
+ **ColumnEncryptionQueryMetadataCacheEnabled**同じクエリが複数回呼び出される場合は true に設定して、サーバーへのラウンド トリップになります 1 回だけです。 キャッシュには、2000 のクエリに設定されているが構成可能な最大サイズ パラメーターがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnEncryptionTrustedMasterKeyPaths">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,System.Collections.Generic.IList&lt;string&gt;&gt; ColumnEncryptionTrustedMasterKeyPaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IDictionary`2&lt;string, class System.Collections.Generic.IList`1&lt;string&gt;&gt; ColumnEncryptionTrustedMasterKeyPaths" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ColumnEncryptionTrustedMasterKeyPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Collections.Generic.IList&lt;System.String&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベース サーバーの信頼されたキー パスの一覧を設定できるようにします。 アプリケーションのクエリを処理中に、一覧に存在しないキー パスをドライバーが受け取ると、クエリは失敗します。 このプロパティは、セキュリティが損なわれ偽のキー パスを提供する SQL Server が関係するセキュリティ攻撃に対する保護を強化します。この攻撃は、キー ストアの資格情報漏洩につながるおそれがあります。</summary>
+        <value>列の暗号化のための信頼されたマスター キー パスの一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public override string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.SQL.Design.SqlConnectionStringEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] データベースを開くために使用する文字列を取得または設定します。</summary>
+        <value>ソース データベース名を含む接続文字列、および初期接続を確立するために必要なその他のパラメーター。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> OLE DB 接続文字列に似ていますが、同一ではありません。 返される接続文字列では OLE DB または ADO の場合とは異なり、ユーザー設定と同じ<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>、Persist Security Info の値に設定されている場合、セキュリティ情報マイナス`false`(既定値)。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]永続化または Persist Security Info を設定していない場合、接続文字列にパスワードを返すしていない`true`です。  
+  
+ 使用することができます、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティをデータベースに接続します。 次の例は、一般的な接続文字列を示しています。  
+  
+```  
+"Persist Security Info=False;Integrated Security=true;Initial Catalog=Northwind;server=(local)"  
+```  
+  
+ 使用して、新しい<xref:System.Data.SqlClient.SqlConnectionStringBuilder>実行時に有効な接続文字列を構築するためにします。 詳細については、次を参照してください。[接続文字列ビルダー](~/docs/framework/data/adonet/connection-string-builders.md)です。  
+  
+ <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>接続が閉じられたときにのみ、プロパティを設定することができます。 多くの接続文字列の値はある対応する読み取り専用プロパティです。 接続文字列を設定すると、エラーが検出された場合を除いて、これらのプロパティが更新します。 ここで、プロパティのいずれも更新されます。 <xref:System.Data.SqlClient.SqlConnection>プロパティに含まれている設定のみを返す、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>です。  
+  
+ ローカル コンピューターに接続する場合、サーバーの"(local)"を指定します。 サーバー名が指定されていない場合は、ローカル コンピューター上の既定のインスタンスへの接続が試行されます。  
+  
+ リセット、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>閉じた接続に対してすべての接続文字列の値 (および関連するプロパティ) パスワードを含むをリセットします。 含む接続文字列を設定する場合など、"データベース = AdventureWorks"への接続文字列をリセットし、"データ ソース = myserver; Integrated Security = true"では、<xref:System.Data.SqlClient.SqlConnection.Database%2A>プロパティが不要になった"AdventureWorks"に設定されています。  
+  
+ 設定されている後すぐには、接続文字列を解析します。 解析中に、ランタイム例外などの構文エラーが見つかった場合<xref:System.ArgumentException>が生成されます。 開くには、接続試行が行われたときにのみ、その他のエラーを確認できます。  
+  
+ 接続文字列の基本形式には、一連セミコロンで区切られたキーワード/値ペアにはが含まれています。 それぞれのキーワードと値の関連付けには、等号 (=) が使用されます。 セミコロン、単一引用符または二重引用符文字を含む値を含めるには、値を二重引用符で囲む必要があります。 セミコロンと二重引用符の両方が、値が含まれる場合、値は単一引用符で囲むことができます。 単一引用符も値が二重引用符文字で始まる場合に役立ちます。 逆に、値が単一引用符で始まる場合は、二重引用符を使用できます。 値に、一重引用符と二重引用符の両方の文字が含まれている場合は値内で発生するたびに値を囲むために使用する引用符文字が二重にする必要があります。  
+  
+ 文字列値の先頭または末尾のスペースを含めるには、単一引用符または二重引用符のいずれかの値を囲む必要があります。 引用符で囲まれている場合でも、整数、ブール値、列挙値の先頭または末尾の空白は無視されます。 ただし、文字列リテラル キーワードまたは値内にスペースが保持されます。 一重引用符または二重引用符は、区切り記号を使用せず、接続文字列内使用可能性があります (たとえば、データ ソース my'Server またはデータ ソースを = ="Server) 引用符文字が値の最初と最後の文字がない限り、します。  
+  
+ キーワードは、大文字と小文字が区別されません。  
+  
+ 次の表に、内のキーワードの値の有効な名前、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>です。  
+  
+  次の一覧には、接続プール内の値の有効な名前が含まれています、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>です。 詳細については、次を参照してください。 [SQL サーバー接続プール (ADO.NET)](~/docs/framework/data/adonet/sql-server-connection-pooling.md)です。  
+  
+-   接続の有効期間 (または Load Balance Timeout)  
+  
+-   Enlist  
+  
+-   Max Pool Size  
+  
+-   Min Pool Size  
+  
+-   Pooling  
+  
+ キーワードまたは接続プールをブール値を必要とする値を設定するときに 'yes' 'true' および 'false' ではなく ' no' の代わりに使用できます。 整数値は、文字列として表されます。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] は独自のプロトコルを使用して [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] と通信します。 そのため、ことはできませんの ODBC データ ソース名 (DSN) を使用して接続するときに[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]ODBC レイヤーを追加することはないためです。  
+  
+> [!NOTE]
+>  Universal data link (UDL) ファイルはサポートされていません、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+> [!CAUTION]
+>  このリリースで (たとえば、ダイアログ ボックスでは、接続文字列への追加とユーザー ID とパスワード情報を取得する場合など) のユーザー入力に基づいて接続文字列を構築するときに、アプリケーションが注意を使用する必要があります。 アプリケーションは、ユーザーがこれらの値で追加の接続文字列パラメーターを埋め込むことはできないことを確認してください (たとえば、としてパスワードを入力する"なデータベース = somedb"別のデータベースをアタッチしようとすると、)。 ユーザー入力に基づいて接続文字列を構築する必要がある場合は、新しい使用<xref:System.Data.SqlClient.SqlConnectionStringBuilder>、する接続文字列を検証し、この問題を解決するのに役立ちます。 参照してください[接続文字列ビルダー](~/docs/framework/data/adonet/connection-string-builders.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>設定と、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>接続を開く前に、プロパティです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.ConnectionString Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionString Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.ConnectionString Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効な接続文字列引数が指定されたか、必要な接続文字列引数が指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionTimeout">
+      <MemberSignature Language="C#" Value="public override int ConnectionTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ConnectionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>試行を中断してエラーを生成する前に、接続の確立時に待機する時間を取得します。</summary>
+        <value>接続が開くのを待機する時間 (秒単位)。 既定値は 15 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してタイムアウトに接続の待機時間を設定することができます、`Connect Timeout`または`Connection Timeout`キーワード、接続文字列にします。 値が 0 の制限がないことを示します。 とでは避ける必要があります、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>接続の試行が無限に待機するためです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>設定と、`Connection Timeout`接続文字列で 30 秒です。 コードの接続を確立し、表示、<xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A>コンソール ウィンドウでプロパティです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.ConnectionTimeout Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionTimeout Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.ConnectionTimeout Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionTimeout Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">0 より小さい値が設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand CreateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand CreateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.CreateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlConnection" /> に関連付けられている <see cref="T:System.Data.SqlClient.SqlCommand" /> オブジェクトを作成し、返します。</summary>
+        <returns><see cref="T:System.Data.SqlClient.SqlCommand" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[SqlConnection_CreateCommand#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/sqlconnection_createcommand/cs/source.cs#1)]
+ [!code-vb[SqlConnection_CreateCommand#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/sqlconnection_createcommand/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDbCommand">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbCommand CreateDbCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbCommand CreateDbCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.CreateDbCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credential">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCredential Credential { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.SqlClient.SqlCredential Credential" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.Credential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCredential</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.SqlClient.SqlCredential" />この接続のオブジェクト。</summary>
+        <value><see cref="T:System.Data.SqlClient.SqlCredential" />この接続のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Persist Security Info = true`値を取得するために必要な<xref:System.Data.SqlClient.SqlCredential>オブジェクト<xref:System.Data.SqlClient.SqlConnection.Credential%2A>です。  
+  
+ 既定値の<xref:System.Data.SqlClient.SqlConnection.Credential%2A>が null です。  
+  
+ <xref:System.InvalidOperationException>例外が発生します。  
+  
+-   場合<xref:System.Data.SqlClient.SqlConnection.Credential%2A>開いている接続に対して設定されています。  
+  
+-   場合<xref:System.Data.SqlClient.SqlConnection.Credential%2A>設定されている場合に`Context Connection=true`です。  
+  
+-   場合<xref:System.Data.SqlClient.SqlConnection.Credential%2A>設定されている場合に`Integrated Security = true`です。  
+  
+-   場合<xref:System.Data.SqlClient.SqlConnection.Credential%2A>接続文字列を使用する場合に設定されている`Password`です。  
+  
+-   場合<xref:System.Data.SqlClient.SqlConnection.Credential%2A>接続文字列を使用する場合に設定されている`UserID`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCredential Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.SqlClient.SqlCredential Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCredential</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Database">
+      <MemberSignature Language="C#" Value="public override string Database { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Database" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.Database" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデータベース、または接続が開いてから使用するデータベースの名前を取得します。</summary>
+        <value>現在のデータベース、または接続が開いてから使用するデータベースの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection.Database%2A>プロパティを動的に更新します。 現在のデータベースを使って変更する場合、[!INCLUDE[tsql](~/includes/tsql-md.md)]ステートメントまたは<xref:System.Data.SqlClient.SqlConnection.ChangeDatabase%2A>メソッドが、情報メッセージが送信され、プロパティが自動的に更新します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData SqlConnection.Database Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.Database Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public override string DataSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続先となる [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のインスタンスの名前を取得します。</summary>
+        <value>接続先となる [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のインスタンスの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Data.SqlClient.SqlConnection.DataSource%2A>プロパティから返される`null`場合、接続文字列が、<xref:System.Data.SqlClient.SqlConnection>は"コンテキスト接続 = true"です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData SqlConnection.DataSource Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.DataSource Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.DataSource Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.DataSource Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbProviderFactory">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbProviderFactory DbProviderFactory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbProviderFactory DbProviderFactory" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.DbProviderFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnlistDistributedTransaction">
+      <MemberSignature Language="C#" Value="public void EnlistDistributedTransaction (System.EnterpriseServices.ITransaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnlistDistributedTransaction(class System.EnterpriseServices.ITransaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction(System.EnterpriseServices.ITransaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.EnterpriseServices.ITransaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">登録先の既存の <see cref="T:System.EnterpriseServices.ITransaction" /> への参照。</param>
+        <summary>分散トランザクションとして指定したトランザクションに参加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.SqlClient.SqlConnection.EnlistTransaction%2A>分散トランザクションに参加させる方法です。 これにより、接続するため、<xref:System.Transactions.Transaction>インスタンス、 **EnlistTransaction**で利用できる機能を活用、<xref:System.Transactions>を管理するための名前空間は分散トランザクションを置き換えることが**どちら**この目的のためです。 詳細については、次を参照してください。[分散トランザクション](~/docs/framework/data/adonet/distributed-transactions.md)です。  
+  
+ 既存の分散トランザクションを使用して、参加を継続できます、**どちら**メソッドへの自動参加が無効になっている場合。 既存の分散トランザクションに参加させることにより、トランザクションがコミットまたはロールバックされた場合、データ ソース コードで行った変更もコミットまたはロールバックします。  
+  
+ `EnlistDistributedTransaction`例外を返します、<xref:System.Data.SqlClient.SqlConnection>がトランザクションを使用して、既に開始<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>です。 ただし、トランザクションは、データ ソースで開始されたローカル トランザクション (たとえば、明示的に実行することによって、BEGIN TRANSACTION ステートメントを使用して、<xref:System.Data.SqlClient.SqlCommand>オブジェクト)、**どちら**ローカル トランザクションをロールバックし、要求されるとおり、既存の分散トランザクションに参加します。 注意してください、ローカルのトランザクションがロールバックされていないローカル トランザクションの管理を担当の使用を開始は受け取りません<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnlistTransaction">
+      <MemberSignature Language="C#" Value="public override void EnlistTransaction (System.Transactions.Transaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnlistTransaction(class System.Transactions.Transaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.EnlistTransaction(System.Transactions.Transaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Transactions.Transaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">登録先の既存の <see cref="T:System.Transactions.Transaction" /> への参照。</param>
+        <summary>分散トランザクションとして指定したトランザクションに参加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.SqlClient.SqlConnection.EnlistTransaction%2A>分散トランザクションに参加させる方法です。 これにより、接続するため、<xref:System.Transactions.Transaction>インスタンス、 **EnlistTransaction**で利用できる機能を活用、<xref:System.Transactions>を管理するための名前空間は分散トランザクションを置き換えることが**どちら**が使用される、 **System.EnterpriseServices.ITransaction**オブジェクト。 さらに、若干異なるセマンティクス: 接続は明示的にトランザクションに参加させる、一度参加解除されてまたはできない最初のトランザクションが終了するまで、別のトランザクションに参加しています。 分散トランザクションの詳細については、次を参照してください。[分散トランザクション](~/docs/framework/data/adonet/distributed-transactions.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FireInfoMessageEventOnUserErrors">
+      <MemberSignature Language="C#" Value="public bool FireInfoMessageEventOnUserErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FireInfoMessageEventOnUserErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors" /> プロパティを取得または設定します。</summary>
+        <value>
+          <see cref="P:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors" /> プロパティが設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると<xref:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors%2A>に`true`、エラーとして例外が処理されるようになりましたとして扱われました以前を<xref:System.Data.SqlClient.SqlConnection.InfoMessage>イベント。 すべてのイベントは、即座に発生し、イベント ハンドラーによって処理されます。 場合は、<xref:System.Data.SqlClient.SqlConnection.FireInfoMessageEventOnUserErrors%2A>に設定されている`false`、し<xref:System.Data.SqlClient.SqlConnection.InfoMessage>イベントは、プロシージャの最後に処理します。  
+  
+> [!NOTE]
+>  コマンドの処理を停止するサーバーを原因となる重要度レベルが 17 以上のエラーは、例外として処理する必要があります。 この場合、<xref:System.Data.SqlClient.SqlConnection.InfoMessage> イベントによるエラー処理の方法にかかわらず例外がスローされます。  
+  
+ イベントの使用の詳細については、次を参照してください。[接続イベント](~/docs/framework/data/adonet/connection-events.md)です。 によって生成されたエラーの詳細については、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]エンジンは、「[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.SqlClient.SqlConnection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ以上のバージョン管理されたストアド プロシージャのスキーマ情報を取得しようとすると、最新の 1 つのスキーマのみが返されます。 バージョン管理されたストアド プロシージャの詳細については、次を参照してください。[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.SqlClient.SqlConnection" />です。 スキームの詳細については、次を参照してください。 [SQL Server スキーマ コレクション](http://msdn.microsoft.com/library/ms254969.aspx)です。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema (string collectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema(string collectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.GetSchema(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="collectionName">返すスキーマの名前を指定します。</param>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.SqlClient.SqlConnection" />スキーマ名を指定した文字列を使用します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベース、テーブルまたは列のスキーマ情報を使用する必要があります。 このサンプルでは:  
+  
+-   GetSchema を使用してスキーマ情報を取得します。  
+  
+-   スキーマの制限を使用すると、指定した情報を取得できます。  
+  
+-   データベース、テーブル、および一部の列のスキーマ情報を取得します。  
+  
+ サンプルを実行する前にする必要があります、サンプル データベースを作成する、次を使用して[!INCLUDE[tsql](~/includes/tsql-md.md)]:  
+  
+```  
+USE [master]  
+GO  
+  
+CREATE DATABASE [MySchool]   
+  
+GO  
+  
+USE [MySchool]  
+GO  
+  
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+CREATE TABLE [dbo].[Course]([CourseID] [nvarchar](10) NOT NULL,  
+[Year] [smallint] NOT NULL,  
+[Title] [nvarchar](100) NOT NULL,  
+[Credits] [int] NOT NULL,  
+[DepartmentID] [int] NOT NULL,  
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED   
+(  
+[CourseID] ASC,  
+[Year] ASC  
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]  
+  
+GO  
+  
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+CREATE TABLE [dbo].[Department]([DepartmentID] [int] IDENTITY(1,1) NOT NULL,  
+[Name] [nvarchar](50) NOT NULL,  
+[Budget] [money] NOT NULL,  
+[StartDate] [datetime] NOT NULL,  
+[Administrator] [int] NULL,  
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED   
+(  
+[DepartmentID] ASC  
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]  
+  
+GO  
+  
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C1045', 2012, N'Calculus', 4, 7)  
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C1061', 2012, N'Physics', 4, 1)  
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C2021', 2012, N'Composition', 3, 2)  
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C2042', 2012, N'Literature', 4, 2)  
+  
+SET IDENTITY_INSERT [dbo].[Department] ON   
+  
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (1, N'Engineering', 350000.0000, CAST(0x0000999C00000000 AS DateTime), 2)  
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (2, N'English', 120000.0000, CAST(0x0000999C00000000 AS DateTime), 6)  
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (4, N'Economics', 200000.0000, CAST(0x0000999C00000000 AS DateTime), 4)  
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (7, N'Mathematics', 250024.0000, CAST(0x0000999C00000000 AS DateTime), 3)  
+SET IDENTITY_INSERT [dbo].[Department] OFF  
+  
+ALTER TABLE [dbo].[Course]  WITH CHECK ADD  CONSTRAINT [FK_Course_Department] FOREIGN KEY([DepartmentID])  
+REFERENCES [dbo].[Department] ([DepartmentID])  
+GO  
+ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]  
+GO  
+```  
+  
+ [データベースからスキーマ情報を取得する方法](http://code.msdn.microsoft.com/How-to-Get-Schema-b66d62e2)Visual Studio プロジェクトにこのコード サンプルの c# および Visual Basic のバージョンがあります。  
+  
+```  
+using System;  
+using System.Data;  
+using System.Data.SqlClient;  
+  
+class Program {  
+   static void Main(string[] args) {  
+  
+      using (SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=MySchool;Integrated Security=True;Asynchronous Processing=true;")) {  
+         conn.Open();  
+  
+         // Get the Meta Data for Supported Schema Collections  
+         DataTable metaDataTable = conn.GetSchema("MetaDataCollections");  
+  
+         Console.WriteLine("Meta Data for Supported Schema Collections:");  
+         ShowDataTable(metaDataTable, 25);  
+         Console.WriteLine();  
+  
+         // Get the schema information of Databases in your instance  
+         DataTable databasesSchemaTable = conn.GetSchema("Databases");  
+  
+         Console.WriteLine("Schema Information of Databases:");  
+         ShowDataTable(databasesSchemaTable, 25);  
+         Console.WriteLine();  
+  
+         // First, get schema information of all the tables in current database;  
+         DataTable allTablesSchemaTable = conn.GetSchema("Tables");  
+  
+         Console.WriteLine("Schema Information of All Tables:");  
+         ShowDataTable(allTablesSchemaTable, 20);  
+         Console.WriteLine();  
+  
+         // You can specify the Catalog, Schema, Table Name, Table Type to get   
+         // the specified table(s).  
+         // You can use four restrictions for Table, so you should create a 4 members array.  
+         String[] tableRestrictions = new String[4];  
+  
+         // For the array, 0-member represents Catalog; 1-member represents Schema;   
+         // 2-member represents Table Name; 3-member represents Table Type.   
+         // Now we specify the Table Name of the table what we want to get schema information.  
+         tableRestrictions[2] = "Course";  
+  
+         DataTable courseTableSchemaTable = conn.GetSchema("Tables", tableRestrictions);  
+  
+         Console.WriteLine("Schema Information of Course Tables:");  
+         ShowDataTable(courseTableSchemaTable, 20);  
+         Console.WriteLine();  
+  
+         // First, get schema information of all the columns in current database.  
+         DataTable allColumnsSchemaTable = conn.GetSchema("Columns");  
+  
+         Console.WriteLine("Schema Information of All Columns:");  
+         ShowColumns(allColumnsSchemaTable);  
+         Console.WriteLine();  
+  
+         // You can specify the Catalog, Schema, Table Name, Column Name to get the specified column(s).  
+         // You can use four restrictions for Column, so you should create a 4 members array.  
+         String[] columnRestrictions = new String[4];  
+  
+         // For the array, 0-member represents Catalog; 1-member represents Schema;   
+         // 2-member represents Table Name; 3-member represents Column Name.   
+         // Now we specify the Table_Name and Column_Name of the columns what we want to get schema information.  
+         columnRestrictions[2] = "Course";  
+         columnRestrictions[3] = "DepartmentID";  
+  
+         DataTable departmentIDSchemaTable = conn.GetSchema("Columns", columnRestrictions);  
+  
+         Console.WriteLine("Schema Information of DepartmentID Column in Course Table:");  
+         ShowColumns(departmentIDSchemaTable);  
+         Console.WriteLine();  
+  
+         // First, get schema information of all the IndexColumns in current database  
+         DataTable allIndexColumnsSchemaTable = conn.GetSchema("IndexColumns");  
+  
+         Console.WriteLine("Schema Information of All IndexColumns:");  
+         ShowIndexColumns(allIndexColumnsSchemaTable);  
+         Console.WriteLine();  
+  
+         // You can specify the Catalog, Schema, Table Name, Constraint Name, Column Name to   
+         // get the specified column(s).  
+         // You can use five restrictions for Column, so you should create a 5 members array.  
+         String[] indexColumnsRestrictions = new String[5];  
+  
+         // For the array, 0-member represents Catalog; 1-member represents Schema;   
+         // 2-member represents Table Name; 3-member represents Constraint Name;4-member represents Column Name.   
+         // Now we specify the Table_Name and Column_Name of the columns what we want to get schema information.  
+         indexColumnsRestrictions[2] = "Course";  
+         indexColumnsRestrictions[4] = "CourseID";  
+  
+         DataTable courseIdIndexSchemaTable = conn.GetSchema("IndexColumns", indexColumnsRestrictions);  
+  
+         Console.WriteLine("Index Schema Information of CourseID Column in Course Table:");  
+         ShowIndexColumns(courseIdIndexSchemaTable);  
+         Console.WriteLine();  
+      }  
+  
+      Console.WriteLine("Please press any key to exit...");  
+      Console.ReadKey();  
+   }  
+  
+   private static void ShowDataTable(DataTable table, Int32 length) {  
+      foreach (DataColumn col in table.Columns) {  
+         Console.Write("{0,-" + length + "}", col.ColumnName);  
+      }  
+      Console.WriteLine();  
+  
+      foreach (DataRow row in table.Rows) {  
+         foreach (DataColumn col in table.Columns) {  
+            if (col.DataType.Equals(typeof(DateTime)))  
+               Console.Write("{0,-" + length + ":d}", row[col]);  
+            else if (col.DataType.Equals(typeof(Decimal)))  
+               Console.Write("{0,-" + length + ":C}", row[col]);  
+            else  
+               Console.Write("{0,-" + length + "}", row[col]);  
+         }  
+         Console.WriteLine();  
+      }  
+   }  
+  
+   private static void ShowDataTable(DataTable table) {  
+      ShowDataTable(table, 14);  
+   }  
+  
+   private static void ShowColumns(DataTable columnsTable) {  
+      var selectedRows = from info in columnsTable.AsEnumerable()  
+                         select new {  
+                            TableCatalog = info["TABLE_CATALOG"],  
+                            TableSchema = info["TABLE_SCHEMA"],  
+                            TableName = info["TABLE_NAME"],  
+                            ColumnName = info["COLUMN_NAME"],  
+                            DataType = info["DATA_TYPE"]  
+                         };  
+  
+      Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", "TableCatalog", "TABLE_SCHEMA",  
+          "TABLE_NAME", "COLUMN_NAME", "DATA_TYPE");  
+      foreach (var row in selectedRows) {  
+         Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", row.TableCatalog,  
+             row.TableSchema, row.TableName, row.ColumnName, row.DataType);  
+      }  
+   }  
+  
+   private static void ShowIndexColumns(DataTable indexColumnsTable) {  
+      var selectedRows = from info in indexColumnsTable.AsEnumerable()  
+                         select new {  
+                            TableSchema = info["table_schema"],  
+                            TableName = info["table_name"],  
+                            ColumnName = info["column_name"],  
+                            ConstraintSchema = info["constraint_schema"],  
+                            ConstraintName = info["constraint_name"],  
+                            KeyType = info["KeyType"]  
+                         };  
+  
+      Console.WriteLine("{0,-14}{1,-11}{2,-14}{3,-18}{4,-16}{5,-8}", "table_schema", "table_name", "column_name", "constraint_schema", "constraint_name", "KeyType");  
+      foreach (var row in selectedRows) {  
+         Console.WriteLine("{0,-14}{1,-11}{2,-14}{3,-18}{4,-16}{5,-8}", row.TableSchema,  
+             row.TableName, row.ColumnName, row.ConstraintSchema, row.ConstraintName, row.KeyType);  
+      }  
+   }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionName" />null として指定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema (string collectionName, string[] restrictionValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema(string collectionName, string[] restrictionValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.GetSchema(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionName" Type="System.String" />
+        <Parameter Name="restrictionValues" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="collectionName">返すスキーマの名前を指定します。</param>
+        <param name="restrictionValues">要求したスキーマの制限値のセット。</param>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.SqlClient.SqlConnection" />スキーマ名と制限値に指定した文字列配列の指定した文字列を使用します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `restrictionValues`パラメーターを指定できます* n * 、特定のコレクションの制限のコレクションで指定された値の深さ。 指定された制限の値を設定して、他の制限値を設定しない、するために、前述の制限を設定する必要があります。`null`しの値を指定するには、制限用に適切な値を格納します。  
+  
+ この例では、"Tables"コレクションです。 "Tables"コレクションでは、データベース、所有者、3 つの制限とテーブル名があり、所有者"Carl"に関連付けられているテーブルのみに戻るには場合、は、次の値を渡す必要があります。:"Carl"は null です。 制限値が渡されない場合、既定値は、その制限に使用されます。 これは渡すことと、同じマッピング`null`、これとは異なるパラメーター値に空の文字列に渡すことです。 その場合、空の文字列 ("") は、指定されたパラメーターの値であると見なされます。  
+  
+ コード サンプルを示すため<xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>を参照してください<xref:System.Data.SqlClient.SqlConnection.GetSchema%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="collectionName" />null として指定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InfoMessage">
+      <MemberSignature Language="C#" Value="public event System.Data.SqlClient.SqlInfoMessageEventHandler InfoMessage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Data.SqlClient.SqlInfoMessageEventHandler InfoMessage" />
+      <MemberSignature Language="DocId" Value="E:System.Data.SqlClient.SqlConnection.InfoMessage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlInfoMessageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] が警告メッセージまたは情報メッセージを返したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 警告またはサーバーによって送信される情報のメッセージを処理するクライアントを作成する必要があります、<xref:System.Data.SqlClient.SqlInfoMessageEventHandler>このイベントを待機するデリゲート。  
+  
+ <xref:System.Data.SqlClient.SqlConnection.InfoMessage>イベントは、重大度が 10 のメッセージが発生したかによって返される小さい[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。 エラーおよびメッセージの重大度を 20 原因経由で接続が閉じ、11 から 20 までの重大度をメッセージが発生します。 詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]エラー レベルを参照してください「データベース エンジンのエラーの重大度」[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+ 例および詳細については、次を参照してください。[接続イベント](~/docs/framework/data/adonet/connection-events.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public override void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Data.SqlClient.SqlConnection.ConnectionString" /> で指定したプロパティ設定を使用して、データベース接続を開きます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlConnection>がある場合、接続プールから、開いている接続を描画します。 インスタンスに新しい接続を確立、それ以外の場合、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Data.SqlClient.SqlConnection>スコープの移動のうち、終了していません。 したがって、する必要があります明示的に接続を呼び出して終了する<xref:System.Data.SqlClient.SqlConnection.Close%2A>です。  
+  
+> [!NOTE]
+>  インスタンスに接続しようと 1433 以外のポート番号を指定する場合は[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]TCP/IP、以外のプロトコルを使用して、<xref:System.Data.SqlClient.SqlConnection.Open%2A>メソッドは失敗します。 1433 以外のポート番号を指定するには、"サーバー マシン名、ポート番号 ="接続文字列、および使用して、TCP/IP プロトコルでします。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 「許可の呼び出しをアンマネージ アセンブリ」有効になっているセキュリティ権限が必要です (<xref:System.Security.Permissions.SecurityPermission>で<xref:System.Security.Permissions.SecurityPermissionFlag>'éý' `UnmanagedCode`) を開くには、 <xref:System.Data.SqlClient.SqlConnection> SQL デバッグを有効にします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>が開き、プロパティの一部が表示されます。 接続がの末尾に自動的に閉じられる、`using`ブロックします。  
+  
+ [!code-csharp[Classic WebData SqlConnection.Open Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.Open Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">データ ソースまたはサーバーを指定せずに接続を開くことはできません。  
+  
+ または  
+  
+ 接続は既に開かれています。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">接続を開くときに発生した接続レベルのエラー。 <see cref="P:System.Data.SqlClient.SqlException.Number" /> プロパティに値 18487 または 18488 が含まれている場合、指定したパスワードの有効期限が切れているか、リセットする必要があることを示しています。 詳細については、<see cref="M:System.Data.SqlClient.SqlConnection.ChangePassword(System.String,System.String)" /> メソッドを参照してください。  
+  
+ app.config ファイルの <see langword="&lt;system.data.localdb&gt;" /> タグに、使用できないか、不明な要素が含まれています。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><see langword="&lt;localdbinstances&gt;" /> セクションに、同じ名前のエントリが 2 つ含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task OpenAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task OpenAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">取り消し命令。</param>
+        <summary><see cref="P:System.Data.SqlClient.SqlConnection.ConnectionString" /> で指定したプロパティ設定を使用してデータベース接続を開く <see cref="M:System.Data.SqlClient.SqlConnection.Open" /> の非同期バージョン。 キャンセル トークンを使用すると、接続タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスクによって伝達されます。 接続が成功せずに接続タイムアウトの時間が経過した場合、返されるタスクは例外での失敗としてマークされます。 実装は、プール済みの接続でもプールされていない接続でも、呼び出し元のスレッドをブロックすることなくタスクを返します。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後<xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A>、<xref:System.Data.SqlClient.SqlConnection.State%2A>返す必要があります<xref:System.Data.ConnectionState.Connecting>、返されるまで<xref:System.Threading.Tasks.Task>が完了します。 次に、接続が成功した場合<xref:System.Data.SqlClient.SqlConnection.State%2A>返す必要があります<xref:System.Data.ConnectionState.Open>です。 接続が失敗した場合、<xref:System.Data.SqlClient.SqlConnection.State%2A>返す必要があります<xref:System.Data.ConnectionState.Closed>です。  
+  
+ 呼び出し<xref:System.Data.SqlClient.SqlConnection.Close%2A>取り消すか、対応するクローズを試みます<xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A>呼び出します。  
+  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">タスクの完了前に、同じインスタンスに対して <see cref="M:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)" /> を複数回呼び出しています。  
+  
+ <see langword="Context Connection=true" /> が接続文字列に指定されています。  
+  
+ 接続タイムアウトが経過する前に、接続プールから接続を使用できませんでした。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">接続を開くときに発生した [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] によって返されるすべてのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketSize">
+      <MemberSignature Language="C#" Value="public int PacketSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PacketSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.PacketSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のインスタンスと通信するために使用するネットワーク パケットのサイズ (バイト単位) を取得します。</summary>
+        <value>ネットワーク パケットのサイズ (バイト単位)。 既定値は 8000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、一括コピー操作を実行または送信または、大量の text または image データの受信する場合、既定値より少ないネットワークが発生するため、効率が向上よりも大きいパケット サイズは読み取りおよび書き込み操作です。 アプリケーションは、少量の情報を送受信場合、は、パケット サイズを 512 バイトに設定できます (のパケット サイズの値を使用して、 <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>)、これはほとんどのデータ転送操作のための十分なです。 ほとんどのアプリケーションでの既定のパケット サイズをお勧めします。  
+  
+ <xref:System.Data.SqlClient.SqlConnection.PacketSize%2A>512 ~ 32767 バイトの範囲内の値があります。 値がこの範囲外にある場合、例外が生成されます。  
+  
+ 8000、パケットのインスタンスで複数ページ アロケーターを使用するより大きい数値に既定値を設定[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]の全体的なスケーラビリティを減らすより効率的な SinglePage アロケーターの代わりに、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]です。 方法の詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]使用メモリを参照してください[メモリ アーキテクチャ](http://go.microsoft.com/fwlink/?LinkId=143705)で[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]オンライン ブック。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.SqlClient.SqlConnection>、設定を含む、`Packet Size`を接続文字列で 512 です。 表示、<xref:System.Data.SqlClient.SqlConnection.PacketSize%2A>と<xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A>コンソール ウィンドウのプロパティです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.PacketSize Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.PacketSize Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.PacketSize Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.PacketSize Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterColumnEncryptionKeyStoreProviders">
+      <MemberSignature Language="C#" Value="public static void RegisterColumnEncryptionKeyStoreProviders (System.Collections.Generic.IDictionary&lt;string,System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider&gt; customProviders);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterColumnEncryptionKeyStoreProviders(class System.Collections.Generic.IDictionary`2&lt;string, class System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider&gt; customProviders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.RegisterColumnEncryptionKeyStoreProviders(System.Collections.Generic.IDictionary{System.String,System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customProviders" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="customProviders">カスタム プロバイダー</param>
+        <summary>列暗号化キー ストア プロバイダーを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetStatistics">
+      <MemberSignature Language="C#" Value="public void ResetStatistics ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetStatistics() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.ResetStatistics" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>統計情報の収集が有効にされている場合、すべての値はゼロにリセットされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 統計情報の収集が有効になっていないと、このメソッドは、エラーはスローされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrieveStatistics">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary RetrieveStatistics ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IDictionary RetrieveStatistics() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.RetrieveStatistics" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドが呼び出された時点の統計情報の、名前/値ペアから成るコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.DictionaryEntry" /> アイテムの <see cref="T:System.Collections.IDictionary" /> 型の参照を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、取得した値されて現在の位置で時間。 続行する場合、接続を使用して、値が正しくありません。 最新の値を取得するメソッドを再度実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerVersion">
+      <MemberSignature Language="C#" Value="public override string ServerVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.ServerVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが接続している [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のインスタンスのバージョンを示す文字列を取得します。</summary>
+        <value>[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] のインスタンスのバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式は、バージョン*##. ##. ###*、ここで最初の 2 桁はメジャー バージョン、次の 2 桁はマイナーのバージョンであり、最後の 4 桁の数字は、リリース バージョン。 文字列の形式は、 *major.minor.build*主な場所、ビルドが 4 桁の数字とマイナーは正確に 2 桁の数字です。  
+  
+ 返されるタスクが完了しておらず、<xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A> への呼び出しの後に接続が開かれていないときに、<xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A> が呼び出されました。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>し、表示、<xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData ISqlConnection.ServerVersion Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ISqlConnection.ServerVersion Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ISqlConnection.ServerVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ISqlConnection.ServerVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が閉じています。  
+  
+ 返されるタスクが完了しておらず、<see cref="M:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)" /> への呼び出しの後に接続が開かれていないときに、<see cref="P:System.Data.SqlClient.SqlConnection.ServerVersion" /> が呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Data.ConnectionState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ConnectionState State" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.ConnectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続で実行された最も新しいネットワーク操作時の <see cref="T:System.Data.SqlClient.SqlConnection" /> の状態を示します。</summary>
+        <value><see cref="T:System.Data.ConnectionState" /> 列挙型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返します、<xref:System.Data.ConnectionState>の状態を示す列挙値、<xref:System.Data.SqlClient.SqlConnection>です。 値が更新されます閉じ、接続を再び開く<xref:System.Data.SqlClient.SqlConnection.State%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatisticsEnabled">
+      <MemberSignature Language="C#" Value="public bool StatisticsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StatisticsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.StatisticsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="true" /> に設定された場合、現在の接続について統計情報の収集が有効になります。</summary>
+        <value>統計情報の収集が有効な場合は <see langword="true" /> を返し、それ以外の場合は <see langword="false" /> を返します。 <see langword="false" /> が既定値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 統計情報の収集を有効にして、パフォーマンスに与える影響は多少、したがってを有効にする必要がある場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnection.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.SqlClient.SqlConnection> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーは、.NET Compact Framework でのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkstationId">
+      <MemberSignature Language="C#" Value="public string WorkstationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WorkstationId" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnection.WorkstationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベース クライアントを識別する文字列を取得します。</summary>
+        <value>データベース クライアントを識別する文字列。 指定されていない場合は、クライアント コンピューターの名前。 どちらも指定されていない場合は、空の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列には、通常、クライアントのネットワーク名が含まれています。 <xref:System.Data.SqlClient.SqlConnection.WorkstationId%2A>プロパティに対応して、`Workstation ID`接続文字列プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.SqlClient.SqlConnection>し、表示、<xref:System.Data.SqlClient.SqlConnection.WorkstationId%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.WorkstationId Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.WorkstationId Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.WorkstationId Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.WorkstationId Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

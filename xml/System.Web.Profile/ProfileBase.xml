@@ -1,0 +1,809 @@
+<Type Name="ProfileBase" FullName="System.Web.Profile.ProfileBase">
+  <TypeSignature Language="C#" Value="public class ProfileBase : System.Configuration.SettingsBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProfileBase extends System.Configuration.SettingsBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingsBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロファイル プロパティの値と情報への型指定されていないアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルに使用されるクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileBase.GetPropertyValue%2A>と<xref:System.Web.Profile.ProfileBase.SetPropertyValue%2A>のメソッド、<xref:System.Web.Profile.ProfileBase>基底クラスを取得し、プロファイル プロパティの値をそれぞれ設定します。 インスタンス、`ProfileCommon`クラスは、の値として設定されて、 <xref:System.Web.HttpContext.Profile%2A> ASP.NET アプリケーションのプロパティです。  
+  
+ ASP.NET アプリケーションで、ユーザー プロファイルのインスタンスを作成するにはお勧めを使用すること、<xref:System.Web.Profile.ProfileBase.Create%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例が含まれるユーザー プロファイルを指定する Web.config ファイルを示しています、`ZipCode`型のプロパティ`string`と`RecentSearchList`型のプロパティ<xref:System.Collections.Specialized.StringCollection>です。 生成された<xref:System.Web.HttpContext.Profile%2A>、現在のプロパティ<xref:System.Web.HttpContext>が厳密に型指定の指定したプロパティのアクセサー。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <anonymousIdentification enabled="true" />  
+  
+    <profile enabled="true" defaultProvider="SqlProvider" >  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="RecentSearchList"  
+          type="System.Collections.Specialized.StringCollection"  
+          serializeAs="Xml"  
+          allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、ASP.NET ページを読み取り、設定を示しています、`ZipCode`ユーザー プロファイルに指定されたプロパティ。 このコードを実行する前に、プロバイダーを既定値に設定`AspNetSqlProvider`Web サイトの ASP.NET 構成の設定にします。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/defaultvb.aspx#1)]  
+  
+ 次のコード例から継承するクラスを定義する、<xref:System.Web.Profile.ProfileBase>カスタム プロファイルを作成するクラス。 カスタム プロファイルの種類が指定された、`inherits`アプリケーションの Web.config ファイルの構成要素の属性です。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承するカスタム プロファイルの実装を作成することができます、<see cref="T:System.Web.Profile.ProfileBase" />クラスを abstract であり、ユーザー プロファイルの構成要素で指定されていないプロパティを定義します。 含む Web.config ファイルで、カスタムのユーザー プロファイルの種類を指定できます、<see langword="inherits" />次の例のように、構成要素の属性です。 コードを<c>EmployeeProfile</c>クラスがこのトピックのセクションの例に含まれています。  
+  
+```  
+&lt;profile inherits="Samples.AspNet.Profile.EmployeeProfile"  
+  defaultProvider="SqlProvider"&gt;  
+  &lt;providers&gt;  
+    &lt;clear /&gt;  
+    &lt;add  
+      name="SqlProvider"  
+      type="System.Web.Profile.SqlProfileProvider"   
+      connectionStringName="SqlServices"   
+      description="SQL Profile Provider for Sample"/&gt;   
+    &lt;add  
+      name="EmployeeInfoProvider"  
+      type="System.Web.Profile.SqlProfileProvider"   
+      connectionStringName="SqlServices"   
+      description="SQL Profile Provider for Employee Info"/&gt;   
+  &lt;/providers&gt;  
+  
+  &lt;properties&gt;  
+    &lt;add name="GarmentSize" /&gt;  
+  &lt;/properties&gt;  
+&lt;/profile&gt;  
+```</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Profile.ProfileBase" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルに使用されるクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileBase.GetPropertyValue%2A>と<xref:System.Web.Profile.ProfileBase.SetPropertyValue%2A>のメソッド、<xref:System.Web.Profile.ProfileBase>基底クラスを取得し、プロファイル プロパティの値をそれぞれ設定します。 インスタンス、`ProfileCommon`クラスは、の値として設定されて、 <xref:System.Web.HttpContext.Profile%2A> ASP.NET アプリケーションのプロパティです。  
+  
+> [!NOTE]
+>  格納されているクラスの生成に使用される基本クラス、<xref:System.Web.HttpContext.Profile%2A>を使用してプロパティをオーバーライドすることができます、`inherits`構成ファイルのセクションの属性です。 継承するカスタム クラスを指定するこの場合、<xref:System.Web.Profile.ProfileBase>基本クラスです。  
+  
+ このコンス トラクターは、アプリケーション コードから使用するものではありません。 ユーザー プロファイルのインスタンスを作成するには、使用、<xref:System.Web.Profile.ProfileBase.Create%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の Web.config ファイルを含むユーザー プロファイルを指定して、`ZipCode`型のプロパティ`string`と`RecentSearchList`型のプロパティ<xref:System.Collections.Specialized.StringCollection>です。 生成された<xref:System.Web.HttpContext.Profile%2A>、現在のプロパティ<xref:System.Web.HttpContext>が厳密に型指定の指定したプロパティのアクセサー。  
+  
+```  
+<configuration>  
+   <connectionStrings>  
+       <add name="SqlServices" connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+   </connectionStrings>  
+  
+  <system.web>  
+   <anonymousIdentification enabled="true" />  
+  
+   <profile defaultProvider="SqlProvider" >  
+     <providers>  
+       <add  
+         name="SqlProvider"  
+         connectionStringName="SqlServices"  
+         applicationName="ProfileBaseApplication"  
+         type="System.Web.Profile.SqlProfileProvider" />  
+     </providers>  
+  
+     <properties>  
+       <add name="ZipCode" allowAnonymous="true" />  
+       <add name="RecentSearchList"  
+            type="System.Collections.Specialized.StringCollection"  
+            serializeAs="Xml"  
+            allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+   </system.web>  
+</configuration>  
+```  
+  
+ 次の ASP.NET ページの読み取りし、設定、`ZipCode`ユーザー プロファイルに指定されたプロパティ。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="enabled" /> Web.config ファイルのセクションの属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">Web.config ファイルのセクションで指定されたプロパティの型を作成できませんでした。  
+  
+ または  
+  
+ <see langword="allowAnonymous" />属性に、Web.config ファイルのセクションでは、プロパティを設定に<see langword="true" />と<see langword="enabled" />要素の属性に設定されている<see langword="false" />です。  
+  
+ または  
+  
+ <see langword="serializeAs" />属性に、Web.config ファイルのセクションでは、プロパティを設定<see cref="F:System.Configuration.SettingsSerializeAs.Binary" />と<see cref="P:System.Type.IsSerializable" />したプロパティの<see langword="type" />返します<see langword="false" />です。  
+  
+ または  
+  
+ 使用して指定されたプロバイダーの名前、<see langword="provider" />でプロファイル プロパティの属性が見つかりませんでした、<see cref="P:System.Web.Profile.ProfileManager.Providers" />コレクション。  
+  
+ または  
+  
+ <see langword="type" />指定されたプロファイルのプロパティが見つかりませんでした。  
+  
+ または  
+  
+ プロファイル プロパティは、基本クラスで指定されたプロパティ名に一致する名前で指定された、<see langword="inherits" />セクションの属性です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileBase Create (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileBase Create(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">プロファイルを作成するユーザーの名前です。</param>
+        <summary>ASP.NET で使用される、指定されたユーザー名のプロファイルのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Web.Profile.ProfileBase" />を表す、指定したユーザーのプロファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileBase.Create%2A>メソッドを作成し、プロファイルの新しいインスタンスを初期化しはカスタム プロファイルを使用するアプリケーション オブジェクト、または ASP.NET 以外の環境でのユーザー プロファイルの管理に便利です。  
+  
+ このオーバー ロード、<xref:System.Web.Profile.ProfileBase.Create%2A>メソッドでは、指定されたユーザー名が、認証されたユーザーであると想定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタム プロファイル オブジェクトのインスタンスを作成し、プロパティを設定して、データ ソースにプロファイルを保存します。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase.Create#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase.Create/CS/profileBaseCreatecs.aspx.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase.Create#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase.Create/VB/profileBaseCreatevb.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="enabled" /> Web.config ファイルのセクションの属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Web.HttpException">現在ホストしているアクセス許可レベルより小さい<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">Web.config ファイルのセクションで指定されたプロパティの型を作成できませんでした。  
+  
+ または  
+  
+ <see langword="allowAnonymous" />属性に、Web.config ファイルのセクションでは、プロパティを設定に<see langword="true" />と<see langword="enabled" />要素の属性に設定されている<see langword="false" />です。  
+  
+ または  
+  
+ <see langword="serializeAs" />属性に、Web.config ファイルのセクションでは、プロパティを設定<see cref="F:System.Configuration.SettingsSerializeAs.Binary" />と<see cref="P:System.Type.IsSerializable" />したプロパティの<see langword="type" />返します<see langword="false" />です。  
+  
+ または  
+  
+ 使用して指定されたプロバイダーの名前、<see langword="provider" />でプロファイル プロパティの属性が見つかりませんでした、<see cref="P:System.Web.Profile.ProfileManager.Providers" />コレクション。  
+  
+ または  
+  
+ <see langword="type" />指定されたプロファイルのプロパティが見つかりませんでした。  
+  
+ または  
+  
+ プロファイル プロパティは、基本クラスで指定されたプロパティ名に一致する名前で指定された、<see langword="inherits" />セクションの属性です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Web.Profile.ProfileBase Create (string username, bool isAuthenticated);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Profile.ProfileBase Create(string username, bool isAuthenticated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.Create(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="isAuthenticated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">プロファイルを作成するユーザーの名前です。</param>
+        <param name="isAuthenticated">
+          <see langword="true" />ユーザーを示すためには認証です。<see langword="false" />ユーザーが匿名であることを示します。</param>
+        <summary>ASP.NET で使用される、指定されたユーザー名のプロファイルのインスタンスを作成します。 ユーザーが認証済みまたは匿名かどうかを示すパラメーターを受け取ります。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileBase" />を指定したユーザーのプロファイルを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileBase.Create%2A>メソッドを作成し、プロファイルの新しいインスタンスを初期化しはカスタム プロファイルを使用するアプリケーション オブジェクト、または ASP.NET 以外の環境でのユーザー プロファイルの管理に便利です。  
+  
+ このオーバー ロード、<xref:System.Web.Profile.ProfileBase.Create%2A>認証されたユーザーまたは匿名ユーザーのプロファイルを作成するメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタム プロファイル オブジェクトのインスタンスを作成し、プロパティを設定して、データ ソースにプロファイルを保存します。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase.Create#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase.Create/CS/profileBaseCreatecs.aspx.cs#2)]
+ [!code-vb[System.Web.Profile.ProfileBase.Create#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase.Create/VB/profileBaseCreatevb.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="enabled" /> Web.config ファイルのセクションの属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Web.HttpException">現在ホストしているアクセス許可レベルより小さい<see cref="F:System.Web.AspNetHostingPermissionLevel.Medium" />です。</exception>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">Web.config ファイルのセクションで指定されたプロパティの型を作成できませんでした。  
+  
+ または  
+  
+ <see langword="allowAnonymous" />属性に、Web.config ファイルのセクションでは、プロパティを設定に<see langword="true" />と<see langword="enabled" />要素の属性に設定されている<see langword="false" />です。  
+  
+ または  
+  
+ <see langword="serializeAs" />属性に、Web.config ファイルのセクションでは、プロパティを設定<see cref="F:System.Configuration.SettingsSerializeAs.Binary" />と<see cref="P:System.Type.IsSerializable" />したプロパティの<see langword="type" />返します<see langword="false" />です。  
+  
+ または  
+  
+ 使用して指定されたプロバイダーの名前、<see langword="provider" />でプロファイル プロパティの属性が見つかりませんでした、<see cref="P:System.Web.Profile.ProfileManager.Providers" />コレクション。  
+  
+ または  
+  
+ <see langword="type" />指定されたプロファイルのプロパティが見つかりませんでした。  
+  
+ または  
+  
+ プロファイル プロパティは、基本クラスで指定されたプロパティ名に一致する名前で指定された、<see langword="inherits" />セクションの属性です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProfileGroup">
+      <MemberSignature Language="C#" Value="public System.Web.Profile.ProfileGroupBase GetProfileGroup (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Profile.ProfileGroupBase GetProfileGroup(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.GetProfileGroup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileGroupBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">プロパティのグループの名前。</param>
+        <summary>グループ名で識別されるプロパティのグループを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Profile.ProfileGroupBase" />指定されたグループ名で構成されたプロパティのグループのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイルのプロパティより効率的な整理のグループに分けることができます。 <xref:System.Web.Profile.ProfileBase.GetProfileGroup%2A>グループ名でプロパティのグループを取得するプロパティを使用できます。 メンバーとして、グループ名を指定することによって、グループ内のプロファイル プロパティをアクセスすることも、`Profile`プロパティの各ページでご確認いただけます。 たとえば、`ZipCode`プロファイルのメンバーであるプロパティ、`Address`プロファイル グループを使用してアクセスでした`Profile.Address.ZipCode`です。  
+  
+   
+  
+## Examples  
+ 次の Web.config ファイルのグループ名を持つプロパティのグループを含むユーザー プロファイルを指定して`Address`です。 に対して生成されるグループ化されたプロパティ、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>グループ名の前にします。 たとえば、`Profile.Address.Street` のようにします。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString=  
+      "Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx"  
+        name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <authorization>  
+      <deny users="?" />  
+    </authorization>  
+  
+    <membership defaultProvider="SqlProvider"   
+      userIsOnlineTimeWindow="15">  
+      <providers>  
+        <clear />  
+        <add   
+          name="SqlProvider"   
+          type="System.Web.Security.SqlMembershipProvider"   
+          connectionStringName="SqlServices"  
+          enablePasswordRetrieval="false"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"   
+          requiresUniqueEmail="false"  
+          passwordFormat="Hashed"  
+          applicationName="MyApplication" />  
+      </providers>  
+    </membership>  
+  
+    <profile defaultProvider="SqlProvider">  
+      <providers>  
+        <add  
+          name="SqlProvider"  
+          connectionStringName="SqlServices"  
+          applicationName="MyApplication"  
+          type="System.Web.Profile.SqlProfileProvider" />  
+  
+      </providers>  
+  
+      <properties>  
+        <add name="ZipCode" />  
+        <group name="Address">  
+          <add name="Street" />  
+          <add name="City" />  
+          <add name="State" />  
+          <add name="CountryOrRegion" />  
+        </group>  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次の ASP.NET ページを読み込んでユーザー プロファイルに指定されたグループ化されたプロパティを設定します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成セクションで指定されたプロファイルのプロパティ グループ名が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyValue (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyValue(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.GetPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">プロファイル プロパティの名前。</param>
+        <summary>プロファイル プロパティの値を取得します。</summary>
+        <returns>として型指定された、指定されたプロファイル プロパティの値<see langword="object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルに使用されるクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileBase.GetPropertyValue%2A>から型指定されていない値を取得する方法を<xref:System.Web.Profile.ProfileProvider>生成されたアクセサーが指定された型としてキャストし、プロパティの値として返します。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileBase.GetPropertyValue%2A>名前によって、アプリケーションのユーザー プロファイルのプロパティ値を取得します。 戻り値は型指定されていないため、取得されたときに特定のオブジェクト型としてキャストする必要があります。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、名前で各ページで使用できるプロファイル プロパティのメンバーとしてなど、`Profile.CustomerAddress`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ASP.NET ページを読み取り、設定を示しています、`ZipCode`ユーザー プロファイルに指定されたプロパティ。 ユーザー プロファイルのプロパティを指定する Web.config ファイルの例は、の提示された例を参照してください、<xref:System.Web.Profile.ProfileBase>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">匿名プロファイルのプロパティ値を設定しようとしましたが、プロパティの<see langword="allowAnonymous" />属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyNotFoundException">現在のプロファイルに対して定義されたプロパティはありません。  
+  
+ または  
+  
+ 現在のプロファイルで指定されたプロファイルのプロパティ名がありませんでした。  
+  
+ または  
+  
+ 指定されたプロファイル プロパティのプロバイダーでは、指定したプロパティは認識されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (string username, bool isAuthenticated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Initialize(string username, bool isAuthenticated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.Initialize(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="isAuthenticated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">プロファイルを初期化するために、ユーザーの名前。</param>
+        <param name="isAuthenticated">
+          <see langword="true" />ユーザーを示すためには認証です。<see langword="false" />ユーザーが匿名であることを示します。</param>
+        <summary>プロファイル プロパティの値と現在のユーザーに関する情報を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードから使用するものではありません。 いずれかを使用して、<xref:System.Web.Profile.ProfileBase.Create%2A>オーバー ロードのユーザー プロファイルのインスタンスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAnonymous">
+      <MemberSignature Language="C#" Value="public bool IsAnonymous { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAnonymous" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.IsAnonymous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>匿名ユーザーがユーザー プロファイルにするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザー プロファイルの匿名ユーザー以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成セクションを使用して、ユーザー プロファイルへの匿名アクセスが有効にし、`allowAnonymous`プロファイル プロパティを指定するために使用する構成要素の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirty">
+      <MemberSignature Language="C#" Value="public bool IsDirty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.IsDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイルのプロパティのいずれかが変更されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />任意のプロファイルのプロパティが変更された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileBase.IsDirty%2A>プロパティは、中にプロファイル プロバイダーで使用することができます、<xref:System.Configuration.SettingsBase.Save%2A>メソッドかどうかについてのプロパティをプリミティブ型、文字列の構成または<xref:System.DateTime>オブジェクトが変更されました。 プロファイル プロバイダーによって変更されたプロパティを更新しています、<xref:System.Configuration.SettingsBase.Save%2A>メソッドです。 <xref:System.Configuration.SettingsBase.Save%2A>メソッドは自動的に呼び出されますページの実行の最後にある場合、<xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A>プロパティは、`true`  
+  
+ 呼び出されるプロファイル プロバイダー、<xref:System.Configuration.SettingsBase.Save%2A>メソッドでは、カスタムのクラス型やコレクションなどの複合型を持つプロファイル プロパティが変更されたかどうかを判定できません明示的にします。 使用することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム オブジェクトが変更されているかどうかを判断し、変更したオブジェクトの自動保存を続行またはオブジェクトが変更されていない場合は、自動保存を取り消すイベント。 既定の動作、<xref:System.Web.Profile.ProfileBase>クラスは、設定する、<xref:System.Web.Profile.ProfileBase.IsDirty%2A>プロパティを`true`最初は、カスタム型または複合型のプロパティに時刻プロパティにアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">プロファイル プロパティの名前。</param>
+        <summary>取得またはプロパティ名でインデックス付けされたプロファイル プロパティの値を設定します。</summary>
+        <value>として型指定された、指定されたプロファイル プロパティの値<see langword="object" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、名前によって、アプリケーションのユーザー プロファイルのプロパティの値を設定または取得することができます。 返される値は、入力`object`取得されたときに特定のオブジェクト型としてキャストする必要があります。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、名前のメンバーとして、`Profile`プロパティの各ページで使用できる`Profile.CustomerAddress`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、バインドすることによってユーザー プロファイルのプロパティの名前を一覧表示、<xref:System.Configuration.SettingsProperty.Name%2A>プロパティ、静的なから<xref:System.Web.Profile.ProfileBase.Properties%2A>のコレクション<xref:System.Configuration.SettingsProperty>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。 名前を使用して、選択したプロパティ値を取得、<xref:System.Web.Profile.ProfileBase.Item%2A>コレクション。 ユーザー プロファイルのプロパティを指定する Web.config ファイルの例は、の提示された例を参照してください、<xref:System.Web.Profile.ProfileBase>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/ViewProfilecs.aspx#2)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/ViewProfilevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">匿名プロファイルのプロパティ値を設定しようとしましたが、プロパティの<see langword="allowAnonymous" />属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyNotFoundException">現在のプロファイルに対して定義されたプロパティはありません。  
+  
+ または  
+  
+ 現在のプロファイルで指定されたプロファイルのプロパティ名がありませんでした。  
+  
+ または  
+  
+ 指定されたプロファイル プロパティのプロバイダーでは、指定したプロパティは認識されませんでした。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyIsReadOnlyException">読み取り専用とマークされたプロパティの値を設定しようとしました。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyWrongTypeException">互換性のない型を使用してプロパティに値を代入しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastActivityDate">
+      <MemberSignature Language="C#" Value="public DateTime LastActivityDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastActivityDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.LastActivityDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最新の日付と、プロファイルの読み取りまたは変更された時刻を取得します。</summary>
+        <value>最新の日付と、プロファイルの読み取りまたは既定のプロバイダーによって変更された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は既定のプロファイル プロバイダーによってのみ変更します。 プロファイルのプロパティを既定のプロファイル プロバイダー以外のプロバイダーによって行われた変更の値には影響しません、<xref:System.Web.Profile.ProfileBase.LastActivityDate%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastUpdatedDate">
+      <MemberSignature Language="C#" Value="public DateTime LastUpdatedDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastUpdatedDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.LastUpdatedDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイルが変更された、最新の日時を取得します。</summary>
+        <value>最新の日付と、プロファイルは、既定のプロバイダーによって変更された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は既定のプロファイル プロバイダーによってのみ変更します。 プロファイルのプロパティを既定のプロファイル プロバイダー以外のプロバイダーによって行われた変更の値には影響しません、<xref:System.Web.Profile.ProfileBase.LastUpdatedDate%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public static System.Configuration.SettingsPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Configuration.SettingsPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Configuration.SettingsProperty" />プロファイル内の各プロパティのオブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.SettingsPropertyCollection" />の<see cref="T:System.Configuration.SettingsProperty" />アプリケーション用のプロファイル内の各プロパティのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、プロパティ名と型を含む、アプリケーション用に構成されたプロファイルのプロパティに関する情報を取得します。 参照することも、<xref:System.Web.Profile.ProfileProvider>の各プロパティ。 A<xref:System.Web.Profile.ProfileProvider>プロパティ値と、データ ソースからの格納および取得を管理します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、バインドすることによってユーザー プロファイルのプロパティの名前を一覧表示、<xref:System.Configuration.SettingsProperty.Name%2A>プロパティ、静的なから<xref:System.Web.Profile.ProfileBase.Properties%2A>のコレクション<xref:System.Configuration.SettingsProperty>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。 名前を使用して、選択したプロパティ値を取得、<xref:System.Web.Profile.ProfileBase.Item%2A>コレクション。 ユーザー プロファイルのプロパティを指定する Web.config ファイルの例は、の提示された例を参照してください、<xref:System.Web.Profile.ProfileBase>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/ViewProfilecs.aspx#2)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/ViewProfilevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">Web.config ファイルのセクションで指定されたプロパティの型を作成できませんでした。  
+  
+ または  
+  
+ <see langword="allowAnonymous" />属性に、Web.config ファイルのセクションでは、プロパティを設定に<see langword="true" />と<see langword="enabled" />要素の属性に設定されている<see langword="false" />です。  
+  
+ または  
+  
+ <see langword="serializeAs" />属性に、Web.config ファイルのセクションでは、プロパティを設定<see cref="F:System.Configuration.SettingsSerializeAs.Binary" />と<see cref="P:System.Type.IsSerializable" />したプロパティの<see langword="type" />返します<see langword="false" />です。  
+  
+ または  
+  
+ 使用して指定されたプロバイダーの名前、<see langword="provider" />でプロファイル プロパティの属性が見つかりませんでした、<see cref="P:System.Web.Profile.ProfileManager.Providers" />コレクション。  
+  
+ または  
+  
+ <see langword="type" />指定されたプロファイルのプロパティが見つかりませんでした。  
+  
+ または  
+  
+ プロファイル プロパティは、基本クラスで指定されたプロパティ名に一致する名前で指定された、<see langword="inherits" />セクションの属性です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public override void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更のプロファイル プロパティの値では、プロファイル データ ソースを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileBase.Save%2A>メソッドは、データ ソースに変更されたプロファイル プロパティの値を書き込みます。 プロファイル プロバイダーは、更新プログラムを実行することによって、データ ソースのアクティビティの量を減らすことができる場合にのみ、<xref:System.Web.Profile.ProfileBase.IsDirty%2A>プロパティに設定されている`true`です。 これは、既定のケース<xref:System.Web.Profile.SqlProfileProvider>です。 後に、<xref:System.Web.Profile.ProfileBase.Save%2A>メソッドでは、データ ソースに保存されたプロパティ値が<xref:System.Web.Profile.ProfileBase.IsDirty%2A>に設定されている`false`です。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム型または複合型を持つプロファイル プロパティが変更されたかどうかを決定するカスタム ロジックを実装し、変更したオブジェクトの自動保存を続行またはのないオブジェクトが変更された場合は、自動保存をキャンセルするイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValue">
+      <MemberSignature Language="C#" Value="public void SetPropertyValue (string propertyName, object propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPropertyValue(string propertyName, object propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileBase.SetPropertyValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">設定するプロパティの名前。</param>
+        <param name="propertyValue">プロパティに割り当てる値。</param>
+        <summary>プロファイル プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルに使用されるクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileBase.SetPropertyValue%2A>メソッドに渡すプロパティの値を<xref:System.Web.Profile.ProfileProvider>データ ソースに保存するためです。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileBase.SetPropertyValue%2A>名前によって、アプリケーションのユーザー プロファイル内のプロパティ値を割り当てる方法です。 値が型指定されたではなく、型チェックは、コンパイル時間ではなく、実行時に実行されます。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、名前のメンバーとして、`Profile`などで、各ページで利用可能なプロパティ`Profile.CustomerAddress`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ASP.NET ページを読み取り、設定を示しています、`ZipCode`ユーザー プロファイルに指定されたプロパティ。 ユーザー プロファイルのプロパティを指定する Web.config ファイルの例は、の提示された例を参照してください、<xref:System.Web.Profile.ProfileBase>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">匿名プロファイルのプロパティ値を設定しようとしましたが、プロパティの<see langword="allowAnonymous" />属性は<see langword="false" />します。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyNotFoundException">現在のプロファイルに対して定義されたプロパティはありません。  
+  
+ または  
+  
+ 現在のプロファイルで指定されたプロファイルのプロパティ名がありませんでした。  
+  
+ または  
+  
+ 指定されたプロファイル プロパティのプロバイダーでは、指定したプロパティは認識されませんでした。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyIsReadOnlyException">読み取り専用とマークされたプロパティの値を設定しようとしました。</exception>
+        <exception cref="T:System.Configuration.SettingsPropertyWrongTypeException">互換性のない型を使用してプロパティに値を代入しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileBase.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイルのユーザー名を取得します。</summary>
+        <value>プロファイルまたはプロファイルに割り当てられている匿名ユーザー識別子のユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileBase.UserName%2A>プロパティは、プロファイルに関連付けられている認証されたユーザーの名前または場合に、プロファイルに割り当てられた匿名ユーザー識別子を返します、<xref:System.Web.Profile.ProfileBase.IsAnonymous%2A>プロパティは`true`します。  
+  
+ 構成セクションを使用して、ユーザー プロファイルへの匿名アクセスが有効にし、`allowAnonymous`プロファイル プロパティを指定するために使用する構成要素の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

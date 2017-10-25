@@ -1,0 +1,238 @@
+<Type Name="ChartGraphics" FullName="System.Web.UI.DataVisualization.Charting.ChartGraphics">
+  <TypeSignature Language="C#" Value="public class ChartGraphics : System.Web.UI.DataVisualization.Charting.ChartElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartGraphics extends System.Web.UI.DataVisualization.Charting.ChartElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.ChartGraphics" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまな変換関数し、公開 GDI + 提供<see cref="T:System.Drawing.Graphics" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスはさまざまな変換関数し、も公開 GDI +<xref:System.Drawing.Graphics>オブジェクト。 としてスケーラブル ベクター グラフィックス (SVG) の使用を表示する際に注意してください、<xref:System.Drawing.Graphics>オブジェクトのカスタム描画を SVG ドキュメントの一部として含ますることはできません。  
+  
+ なおも、既定では、<xref:System.Drawing.Graphics>関数は、通常、絶対座標を受け取ります。 そのためこのクラスの変換メソッドは、図面の操作を実行する場合に便利ですする必要があります。  
+  
+ A<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics>で公開されているオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs.ChartGraphics%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs>クラス? qualifyHint = False & autoUpgrade = True で、簡単カスタム描画を実行する、<xref:System.Web.UI.DataVisualization.Charting.Chart.PrePaint>と<xref:System.Web.UI.DataVisualization.Charting.Chart.PostPaint>イベント。  
+  
+> [!IMPORTANT]
+>  既定の動作に大幅な変更が行われたかどうか、<xref:System.Drawing.Graphics>オブジェクト、グラフ イメージと関連付けられている要素を不安定に描画する場合があります。 たとえば、配置変更できます。 強くお勧めするも慣れる GDI + のプロパティに大幅な変更を行う前に、<xref:System.Drawing.Graphics>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="True" />アンマネージ コードとマネージの両方のリソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary>リリースでは、アンマネージし、オプションでマネージ リソース。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbsolutePoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF GetAbsolutePoint (System.Drawing.PointF point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.PointF GetAbsolutePoint(valuetype System.Drawing.PointF point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint(System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.PointF" />相対座標内のオブジェクト。</param>
+        <summary><see cref="T:System.Drawing.PointF" />オブジェクトし、その相対座標を絶対座標に変換します。</summary>
+        <returns>A<see cref="T:System.Drawing.PointF" />絶対座標内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbsoluteRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetAbsoluteRectangle (System.Drawing.RectangleF rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetAbsoluteRectangle(valuetype System.Drawing.RectangleF rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsoluteRectangle(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">A<see cref="T:System.Drawing.RectangleF" />相対座標内のオブジェクト。</param>
+        <summary><see cref="T:System.Drawing.RectangleF" />オブジェクトし、その相対座標を絶対座標に変換します。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />絶対座標内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAbsoluteSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.SizeF GetAbsoluteSize (System.Drawing.SizeF size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.SizeF GetAbsoluteSize(valuetype System.Drawing.SizeF size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsoluteSize(System.Drawing.SizeF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.SizeF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Drawing.SizeF" />
+      </Parameters>
+      <Docs>
+        <param name="size">A<see cref="T:System.Drawing.SizeF" />相対座標内のオブジェクト。</param>
+        <summary><see cref="T:System.Drawing.SizeF" />を相対座標を返しますを使用するオブジェクト、<see cref="T:System.Drawing.SizeF" />絶対座標を使用するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.SizeF" />絶対座標内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromAxis">
+      <MemberSignature Language="C#" Value="public double GetPositionFromAxis (string chartAreaName, System.Web.UI.DataVisualization.Charting.AxisName axis, double axisValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetPositionFromAxis(string chartAreaName, valuetype System.Web.UI.DataVisualization.Charting.AxisName axis, float64 axisValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetPositionFromAxis(System.String,System.Web.UI.DataVisualization.Charting.AxisName,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chartAreaName" Type="System.String" />
+        <Parameter Name="axis" Type="System.Web.UI.DataVisualization.Charting.AxisName" />
+        <Parameter Name="axisValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="chartAreaName">グラフ領域の名前。</param>
+        <param name="axis"><see cref="T:System.Web.UI.DataVisualization.Charting.AxisName" />を関連する軸を識別する列挙値。</param>
+        <param name="axisValue">相対的なピクセル値に変換する軸の値です。</param>
+        <summary>指定した軸の指定した軸の値を受け取り、相対的なピクセル値を返します。</summary>
+        <returns>A<see langword="string" />を相対座標で、変換後の軸の値を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelativePoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF GetRelativePoint (System.Drawing.PointF point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.PointF GetRelativePoint(valuetype System.Drawing.PointF point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetRelativePoint(System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.PointF" />絶対座標内のオブジェクト。</param>
+        <summary><see cref="T:System.Drawing.PointF" />絶対座標を返しますを使用するオブジェクト、<see cref="T:System.Drawing.PointF" />を相対座標を使用するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.PointF" />相対座標内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelativeRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetRelativeRectangle (System.Drawing.RectangleF rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetRelativeRectangle(valuetype System.Drawing.RectangleF rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetRelativeRectangle(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">A<see cref="T:System.Drawing.RectangleF" />絶対座標の構造体。</param>
+        <summary><see cref="T:System.Drawing.RectangleF" />絶対座標を返しますを使用している構造体、<see cref="T:System.Drawing.RectangleF" />を相対座標を使用するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />相対座標で構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelativeSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.SizeF GetRelativeSize (System.Drawing.SizeF size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.SizeF GetRelativeSize(valuetype System.Drawing.SizeF size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetRelativeSize(System.Drawing.SizeF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.SizeF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Drawing.SizeF" />
+      </Parameters>
+      <Docs>
+        <param name="size">A<see cref="T:System.Drawing.SizeF" />絶対座標内のオブジェクト。</param>
+        <summary><see cref="T:System.Drawing.SizeF" />絶対パスでオブジェクトを調整しを返します、<see cref="T:System.Drawing.SizeF" />を相対座標を使用するオブジェクト。</summary>
+        <returns>A<see cref="T:System.Drawing.SizeF" />相対座標内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartGraphics.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 GDI +<see cref="T:System.Drawing.Graphics" />目的での描画に使用できるオブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Graphics" />オブジェクトの描画に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GDI + を使用して実行できる任意のカスタム描画を実行するのには、このオブジェクトのプロパティを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

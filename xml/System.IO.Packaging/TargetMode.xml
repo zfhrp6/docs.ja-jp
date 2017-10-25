@@ -1,0 +1,74 @@
+<Type Name="TargetMode" FullName="System.IO.Packaging.TargetMode">
+  <TypeSignature Language="C#" Value="public enum TargetMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TargetMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.TargetMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Packaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうかのターゲット、<see cref="T:System.IO.Packaging.PackageRelationship" />内側または外側には、<see cref="T:System.IO.Packaging.Package" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のターゲットがある場合、 <xref:System.IO.Packaging.Package> (内部) リレーションシップ<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>は常に相対的な[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]します。  
+  
+ ターゲット外にある場合、 <xref:System.IO.Packaging.PackageRelationship.TargetUri%2A> (外部) リレーションシップ<xref:System.IO.Packaging.PackageRelationship.TargetUri%2A>いずれかのパッケージの現在の場所を相対または絶対できます[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="External">
+      <MemberSignature Language="C#" Value="External" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.TargetMode External = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.TargetMode.External" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.TargetMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップは、パッケージの外部にあるリソースを参照します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Internal">
+      <MemberSignature Language="C#" Value="Internal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.TargetMode Internal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.TargetMode.Internal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.TargetMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップは、パッケージ内であるパーツを参照します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

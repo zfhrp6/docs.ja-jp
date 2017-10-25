@@ -1,0 +1,129 @@
+<Type Name="StructuralComparisons" FullName="System.Collections.StructuralComparisons">
+  <TypeSignature Language="C#" Value="public static class StructuralComparisons" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit StructuralComparisons extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.StructuralComparisons" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つのコレクション オブジェクトの構造比較を実行するオブジェクトを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.StructuralComparisons>クラスは、次の 2 つの定義済みの比較オブジェクトを返します。  
+  
+-   <xref:System.Collections.IComparer>などのメソッドに渡すことが実装<xref:System.Array.System%23Collections%23IStructuralComparable%23CompareTo%28System.Object%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>または<xref:System.Tuple%603.System%23Collections%23IStructuralComparable%23CompareTo%28System.Object%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>を 2 つのオブジェクトの構造比較を実行します。 最初のオブジェクトについてよりも前、後ろ、または並べ替え順序で 2 番目のオブジェクトと同じ位置で発生したでかどうかを示すように設定されます。  
+  
+-   <xref:System.Collections.IEqualityComparer>などのメソッドに渡すことが実装<xref:System.Array.System%23Collections%23IStructuralEquatable%23Equals%28System.Object%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>または<xref:System.Tuple%603.System%23Collections%23IStructuralEquatable%23Equals%28System.Object%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>の構造の等価比較を実行します。  
+  
+ オブジェクトは構造的な比較または組または配列のオブジェクトなど、2 つのコレクション オブジェクトの構造の等価比較を実行するためにことができます。 構造の比較では、その値に基づいて 2 つのオブジェクトが比較されます。 オブジェクトを注文できますに基づいていくつかの基準と 2 つのオブジェクトが等しいと見なされる同じ値を持っているときに、同じ物理オブジェクトを参照するのでないです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StructuralComparer">
+      <MemberSignature Language="C#" Value="public static System.Collections.IComparer StructuralComparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IComparer StructuralComparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.StructuralComparisons.StructuralComparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのオブジェクトの構造比較を実行する定義済みのオブジェクトを取得します。</summary>
+        <value>定義済みのオブジェクトの 2 つのコレクション オブジェクトの構造比較を実行するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.IComparer>など、このプロパティによって返されるオブジェクトがコレクション オブジェクトの比較メソッドに渡される<xref:System.Array.System%23Collections%23IStructuralComparable%23CompareTo%28System.Object%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>または<xref:System.Tuple%603.System%23Collections%23IStructuralComparable%23CompareTo%28System.Object%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>、その<xref:System.Collections.IComparer.Compare%2A>配列の各メンバーまたは組の各コンポーネントのメソッドが呼び出されます。 この実装、<xref:System.Collections.IComparer.Compare%2A>メソッドの動作は次のように、対応する項目を別のコレクション オブジェクトのコレクション オブジェクトの各項目を比較します。  
+  
+-   2 つの項目であると見なされる`null`が等しく、項目が null でないをより小さくする null の項目を検討します。  
+  
+-   比較の最初の項目にキャストできるかどうか、<xref:System.Collections.IStructuralComparable>オブジェクト (つまり、オブジェクトの場合は、コレクションを実装する、<xref:System.Collections.IStructuralComparable>インターフェイス)、呼び出し、<xref:System.Collections.IStructuralComparable.CompareTo%2A>メソッドです。  
+  
+-   比較の最初の項目にキャストできないかどうか、<xref:System.Collections.IStructuralComparable>オブジェクト (を実装するコレクション オブジェクトではない場合、つまり、<xref:System.Collections.IStructuralComparable>インターフェイス)、呼び出し、`Comparer.Default.Compare`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StructuralEqualityComparer">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEqualityComparer StructuralEqualityComparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IEqualityComparer StructuralEqualityComparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.StructuralComparisons.StructuralEqualityComparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEqualityComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのオブジェクトの構造の等価比較を定義済みのオブジェクトを取得します。</summary>
+        <value>2 つのコレクション オブジェクトの構造の等価比較に使用される定義済みのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.IComparer>など、このプロパティによって返されるオブジェクトがコレクション オブジェクトの等値比較のメソッドに渡される<xref:System.Array.System%23Collections%23IStructuralEquatable%23Equals%28System.Object%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>または<xref:System.Tuple%603.System%23Collections%23IStructuralEquatable%23Equals%28System.Object%2CSystem.Collections.IEqualityComparer%29?displayProperty=nameWithType>、その<xref:System.Collections.IEqualityComparer.Equals%2A?displayProperty=nameWithType>配列の各メンバーまたは組の各コンポーネントのメソッドが呼び出されます。 この実装、<xref:System.Collections.IEqualityComparer.Equals%2A>メソッドの動作は次のように、対応する項目を別のコレクション オブジェクトのコレクション オブジェクトの各項目を比較します。  
+  
+-   両方の項目がある場合`null`、同等である 2 つの項目と見なされます。  
+  
+-   1 つの項目は null ですが、その他の項目が場合に、等しくない場合に 2 つの項目と見なされます。  
+  
+-   比較の最初の項目にキャストできるかどうか、<xref:System.Collections.IStructuralEquatable>オブジェクト (つまり、オブジェクトの場合は、コレクションを実装する、<xref:System.Collections.IStructuralEquatable>インターフェイス)、呼び出し、<xref:System.Collections.IStructuralEquatable.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   比較の最初の項目にキャストできないかどうか、<xref:System.Collections.IStructuralEquatable>オブジェクト (を実装するコレクション オブジェクトではない場合、つまり、<xref:System.Collections.IStructuralEquatable>インターフェイス)、アイテムの呼び出し`Equals`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

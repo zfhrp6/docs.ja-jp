@@ -1,0 +1,124 @@
+<Type Name="EasingMode" FullName="System.Windows.Media.Animation.EasingMode">
+  <TypeSignature Language="C#" Value="public enum EasingMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EasingMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.EasingMode" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>派生するクラスのモードを定義<see cref="T:System.Windows.Media.Animation.EasingFunctionBase" />イージングを実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のグラフのさまざまな値を示す<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>ここで、 *f*(*t*)、アニメーションの進行状況を表すと*t*時間を表します。  
+  
+ <xref:System.Windows.Media.Animation.BackEase>  
+  
+ ![BackEase EasingMode のグラフ。] (~/add/media/backease-graph.png "BackEase EasingMode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.BounceEase>  
+  
+ ![BounceEase EasingMode のグラフ] (~/add/media/bounceease-graph.png "BounceEase EasingMode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.CircleEase>  
+  
+ ![CircleEase EasingMode のグラフ] (~/add/media/circleease-graph.png "CircleEase EasingMode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.CubicEase>  
+  
+ ![CubicEase EasingMode のグラフ] (~/add/media/cubicease-graph.png "CubicEase EasingMode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.ElasticEase>  
+  
+ ![異なる easingmode のグラフの ElasticEase します。] (~/add/media/elasticease-graph.png "ElasticEase 異なる easingmode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.ExponentialEase>  
+  
+ ![異なる easingmode の ExponentialEase のグラフ。](~/add/media/exponentialease-graph.png "異なる easingmode の ExponentialEase のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.PowerEase>  
+  
+ ![異なる easingmode のグラフの QuarticEase します。] (~/add/media/quarticease-graph.png "QuarticEase 異なる easingmode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.QuadraticEase>  
+  
+ ![異なる easingmode のグラフの QuadraticEase](~/add/media/quadraticease-graph.png "QuadraticEase 異なる easingmode のグラフ")  
+  
+ <xref:System.Windows.Media.Animation.QuarticEase>  
+  
+ ![異なる easingmode のグラフの QuarticEase します。] (~/add/media/quarticease-graph.png "QuarticEase 異なる easingmode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.QuinticEase>  
+  
+ ![異なる easingmode のグラフの QuinticEase します。] (~/add/media/quinticease-graph.png "QuinticEase 異なる easingmode のグラフ。")  
+  
+ <xref:System.Windows.Media.Animation.SineEase>  
+  
+ ![異なる EasingMode 値の SineEase](~/add/media/sineease-graph.png "異なる EasingMode 値の SineEase")  
+  
+<a name="xamlAttributeUsage_HorizontalAlignment"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="enumMemberName"/>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EaseIn">
+      <MemberSignature Language="C#" Value="EaseIn" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.EasingMode EaseIn = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.EasingMode.EaseIn" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.EasingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補間には、イージング関数に関連付けられた数式が次に示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInOut">
+      <MemberSignature Language="C#" Value="EaseInOut" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.EasingMode EaseInOut = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.EasingMode.EaseInOut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.EasingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補間使用<see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" />アニメーションの前半のおよび<see cref="F:System.Windows.Media.Animation.EasingMode.EaseOut" />後半を 2 番目のです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseOut">
+      <MemberSignature Language="C#" Value="EaseOut" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Animation.EasingMode EaseOut = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.EasingMode.EaseOut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.EasingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イージング関数に関連付けられている式の出力-100% の補間を補間に依存します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,316 @@
+<Type Name="OutputCacheSection" FullName="System.Web.Configuration.OutputCacheSection">
+  <TypeSignature Language="C#" Value="public sealed class OutputCacheSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OutputCacheSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.OutputCacheSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションの出力キャッシュを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSection>クラスでは、プログラムでアクセスして変更することができます、`OutputCache`セクションです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputCacheSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.OutputCacheSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProviderName">
+      <MemberSignature Language="C#" Value="public string DefaultProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.DefaultProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultProvider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に格納されている ASP.NET の既定の出力キャッシュ プロバイダーの名前、<see cref="T:System.Web.Configuration.OutputCacheSection" />構成ファイルの要素。</summary>
+        <value>既定のプロバイダーの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の既定の出力キャッシュ プロバイダーは、型のプロバイダーではありません<xref:System.Web.Caching.OutputCacheProvider>です。 出力キャッシュの ASP.NET で使用される、メモリ内の元のプロバイダーでは。 既定値は `AspNetInternalProvider` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableFragmentCache">
+      <MemberSignature Language="C#" Value="public bool EnableFragmentCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableFragmentCache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.EnableFragmentCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableFragmentCache", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフラグメント キャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />フラグメント キャッシュが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.OutputCacheSection.EnableFragmentCache%2A>プロパティに設定されている`false`に関係なく、キャッシュされたユーザー コントロールの出力がない、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブまたは使用されるプロファイルをキャッシュします。 詳細については、<xref:System.Web.Configuration.OutputCacheSettingsSection> および <xref:System.Web.Configuration.OutputCacheProfile> を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheSection.EnableFragmentCache%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/CS/OutputCacheSection.cs#4)]
+ [!code-vb[System.Web.Configuration.OutputCacheSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/VB/OutputCacheSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableKernelCacheForVaryByStar">
+      <MemberSignature Language="C#" Value="public bool EnableKernelCacheForVaryByStar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableKernelCacheForVaryByStar" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.EnableKernelCacheForVaryByStar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableKernelCacheForVaryByStar", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーネル キャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />カーネル キャッシュが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の静的な圧縮が有効になっている場合は、クライアントが圧縮されていない応答を要求し、カーネル キャッシュは無効です。 圧縮された応答のみがカーネルにキャッシュされます。  
+  
+ 設定、<xref:System.Web.Configuration.OutputCacheSection.EnableKernelCacheForVaryByStar%2A>プロパティを`true`しないには、応答のカーネル キャッシュを使用することを確認します。 処理パイプライン内のモジュールには、カーネル キャッシュ ポリシーを設定する必要があります。  
+  
+ <xref:System.Web.Configuration.OutputCacheSection.EnableKernelCacheForVaryByStar%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableOutputCache">
+      <MemberSignature Language="C#" Value="public bool EnableOutputCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableOutputCache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.EnableOutputCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableOutputCache", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または出力キャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />出力キャッシュが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.OutputCacheSection.EnableFragmentCache%2A>プロパティに設定されている`false`、設定に関係なく、サーバー上のページはキャッシュされません[@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブまたはページが使用するプロファイルをキャッシュします。 詳細については、<xref:System.Web.Configuration.OutputCacheSettingsSection> および <xref:System.Web.Configuration.OutputCacheProfile> を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheSection.EnableOutputCache%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/CS/OutputCacheSection.cs#3)]
+ [!code-vb[System.Web.Configuration.OutputCacheSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/VB/OutputCacheSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OmitVaryStar">
+      <MemberSignature Language="C#" Value="public bool OmitVaryStar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OmitVaryStar" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.OmitVaryStar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("omitVaryStar", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see langword="vary" />ヘッダーが有効になっています。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="vary" />ヘッダーが有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `vary`ヘッダーは、サーバーがクライアント要求への応答で送信する複数のキャッシュされた応答の決定に使用する要求ヘッダー フィールドを示します。 既定値を<xref:System.Web.Configuration.OutputCacheSection.OmitVaryStar%2A>プロパティは`false`します。 既定では、ASP.NET の送信、`vary`内のすべてのヘッダー`POST`要求もすべての GET 要求クエリ文字列のようにします。 場合、<xref:System.Web.Configuration.OutputCacheSection.OmitVaryStar%2A>は`true`、ASP.NET 省略、`vary`ヘッダー、キャッシュされたページの応答を返すときに提供する、`GET`を応答に要求がない、キャッシュ`VaryByCustom`プロパティおよび`POST`のない応答への要求がキャッシュされる`VaryByParam`プロパティと いいえ`VaryByCustom`プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheSection.OmitVaryStar%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/CS/OutputCacheSection.cs#5)]
+ [!code-vb[System.Web.Configuration.OutputCacheSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/VB/OutputCacheSection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に格納されている出力キャッシュ プロバイダーのコレクション、<see cref="T:System.Web.Configuration.OutputCacheSection" />構成ファイルの要素。</summary>
+        <value>プロバイダーのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendCacheControlHeader">
+      <MemberSignature Language="C#" Value="public bool SendCacheControlHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SendCacheControlHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheSection.SendCacheControlHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("sendCacheControlHeader", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see langword="cache-control:private" />ヘッダーは既定では、出力キャッシュのモジュールによって送信されます。</summary>
+        <value>
+          <see langword="true" />場合の送信<see langword="cache-control:private" />ヘッダーが有効になっている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSection.SendCacheControlHeader%2A>出力キャッシュを持たない指定されたコンテンツに適用されます。 設定すると`false`、`cache-control:private`ヘッダーは、既定では送信されません。  
+  
+> [!NOTE]
+>  この設定は、既定では、クライアントにキャッシュされるコンテンツを有効します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheSection.SendCacheControlHeader%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/CS/OutputCacheSection.cs#6)]
+ [!code-vb[System.Web.Configuration.OutputCacheSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheSection/VB/OutputCacheSection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

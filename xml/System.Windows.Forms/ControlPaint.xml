@@ -1,0 +1,1812 @@
+<Type Name="ControlPaint" FullName="System.Windows.Forms.ControlPaint">
+  <TypeSignature Language="C#" Value="public sealed class ControlPaint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ControlPaint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ControlPaint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows のコモン コントロールとその要素の描画に使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のメソッド、<xref:System.Windows.Forms.ControlPaint>クラスを使用すると、独自のコントロールまたはコントロールの要素を描画します。 場合は、独自のコントロールの描画を制御することができます、<xref:System.Windows.Forms.ControlStyles.UserPaint>に設定されているビット`true`コントロール。 取得または呼び出すことにより、スタイルを表すビットを設定することができます、<xref:System.Windows.Forms.Control.GetStyle%2A>または<xref:System.Windows.Forms.Control.SetStyle%2A>メソッドです。 任意のコントロールの複数のスタイル ビットを設定することができます。 <xref:System.Windows.Forms.ControlStyles>列挙型のメンバーは、ビットごとの演算と組み合わせることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のいずれかを使用、<xref:System.Windows.Forms.ControlPaint>フラットを描画するコンス トラクター<xref:System.Windows.Forms.Button>コントロール。  
+  
+ [!code-cpp[ButtonState#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ButtonState/CPP/buttonstate1.cpp#2)]
+ [!code-csharp[ButtonState#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ButtonState/CS/buttonstate1.cs#2)]
+ [!code-vb[ButtonState#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ButtonState/VB/buttonstate1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContrastControlDark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color ContrastControlDark { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Drawing.Color ContrastControlDark" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ControlPaint.ContrastControlDark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として使用する色を取得、<see cref="P:System.Drawing.SystemColors.ControlDark" />色。</summary>
+        <value><see cref="T:System.Drawing.Color" />として使用する、<see cref="P:System.Drawing.SystemColors.ControlDark" />色。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが有効になっている場合、<xref:System.Windows.Forms.SystemInformation.HighContrast%2A>モードでは、このプロパティが<xref:System.Drawing.SystemColors.WindowFrame%2A?displayProperty=nameWithType>、それ以外に設定されている<xref:System.Drawing.SystemColors.ControlDark%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHBitmap16Bit">
+      <MemberSignature Language="C#" Value="public static IntPtr CreateHBitmap16Bit (System.Drawing.Bitmap bitmap, System.Drawing.Color background);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int CreateHBitmap16Bit(class System.Drawing.Bitmap bitmap, valuetype System.Drawing.Color background) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.CreateHBitmap16Bit(System.Drawing.Bitmap,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Bitmap" />
+        <Parameter Name="background" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap">作成する <see cref="T:System.Drawing.Bitmap" />。</param>
+        <param name="background"><see cref="T:System.Drawing.Color" />のバック グラウンドします。</param>
+        <summary>16 ビット カラー ビットマップを作成します。</summary>
+        <returns><see cref="T:System.IntPtr" />ビットマップへのハンドルを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHBitmapColorMask">
+      <MemberSignature Language="C#" Value="public static IntPtr CreateHBitmapColorMask (System.Drawing.Bitmap bitmap, IntPtr monochromeMask);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int CreateHBitmapColorMask(class System.Drawing.Bitmap bitmap, native int monochromeMask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.CreateHBitmapColorMask(System.Drawing.Bitmap,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Bitmap" />
+        <Parameter Name="monochromeMask" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap">作成する <see cref="T:System.Drawing.Bitmap" />。</param>
+        <param name="monochromeMask">モノクロ マスクへのポインター。</param>
+        <summary>Win32 の作成<see langword="HBITMAP" />イメージ外です。</summary>
+        <returns><see cref="T:System.IntPtr" />ビットマップへのハンドルを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てを解除を担当する場合、`HBITMAP`です。 イメージの透過性を使用する場合、バック グラウンドを指定した色で入力されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHBitmapTransparencyMask">
+      <MemberSignature Language="C#" Value="public static IntPtr CreateHBitmapTransparencyMask (System.Drawing.Bitmap bitmap);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int CreateHBitmapTransparencyMask(class System.Drawing.Bitmap bitmap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.CreateHBitmapTransparencyMask(System.Drawing.Bitmap)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Bitmap" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap"><see cref="T:System.Drawing.Bitmap" />の透明度マスクを作成します。</param>
+        <summary>透明としてどの色を表示するように指定したビットマップのカラー マスクを作成します。</summary>
+        <returns>ハンドル、<see cref="T:System.Drawing.Bitmap" />マスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットマップの割り当てを解除を担当しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color Dark (System.Drawing.Color baseColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color Dark(valuetype System.Drawing.Color baseColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.Dark(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を暗くします。</param>
+        <summary>指定された色からコントロールの濃い色の新しいオブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールに暗い色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、 <xref:System.Drawing.SystemColors>、色に変換されます、<xref:System.Drawing.SystemColors.ControlDark%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値が減少します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color Dark (System.Drawing.Color baseColor, float percOfDarkDark);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color Dark(valuetype System.Drawing.Color baseColor, float32 percOfDarkDark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.Dark(System.Drawing.Color,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+        <Parameter Name="percOfDarkDark" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を暗くします。</param>
+        <param name="percOfDarkDark">指定した暗く割合<see cref="T:System.Drawing.Color" />です。</param>
+        <summary>指定された色からコントロールの新しい暗い色オブジェクトを作成し、指定した割合で暗くです。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールに暗い色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、 <xref:System.Drawing.SystemColors>、色に変換されます、<xref:System.Drawing.SystemColors.ControlDark%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値が減少します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DarkDark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color DarkDark (System.Drawing.Color baseColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color DarkDark(valuetype System.Drawing.Color baseColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DarkDark(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を暗くします。</param>
+        <summary>指定された色からコントロールの濃い色の新しいオブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールに暗い色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、<xref:System.Drawing.SystemColors>に色が変換されます、<xref:System.Drawing.SystemColors.ControlDarkDark%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値は増加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder">
+      <MemberSignature Language="C#" Value="public static void DrawBorder (System.Drawing.Graphics graphics, System.Drawing.Rectangle bounds, System.Drawing.Color color, System.Windows.Forms.ButtonBorderStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color color, valuetype System.Windows.Forms.ButtonBorderStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Windows.Forms.ButtonBorderStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="style" Type="System.Windows.Forms.ButtonBorderStyle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <param name="color"><see cref="T:System.Drawing.Color" />罫線のです。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.ButtonBorderStyle" />罫線のスタイルを指定する値。</param>
+        <summary>指定したグラフィックス画面でボタン スタイルのコントロールの指定した範囲内の指定したスタイルと色、罫線を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder">
+      <MemberSignature Language="C#" Value="public static void DrawBorder (System.Drawing.Graphics graphics, System.Drawing.Rectangle bounds, System.Drawing.Color leftColor, int leftWidth, System.Windows.Forms.ButtonBorderStyle leftStyle, System.Drawing.Color topColor, int topWidth, System.Windows.Forms.ButtonBorderStyle topStyle, System.Drawing.Color rightColor, int rightWidth, System.Windows.Forms.ButtonBorderStyle rightStyle, System.Drawing.Color bottomColor, int bottomWidth, System.Windows.Forms.ButtonBorderStyle bottomStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color leftColor, int32 leftWidth, valuetype System.Windows.Forms.ButtonBorderStyle leftStyle, valuetype System.Drawing.Color topColor, int32 topWidth, valuetype System.Windows.Forms.ButtonBorderStyle topStyle, valuetype System.Drawing.Color rightColor, int32 rightWidth, valuetype System.Windows.Forms.ButtonBorderStyle rightStyle, valuetype System.Drawing.Color bottomColor, int32 bottomWidth, valuetype System.Windows.Forms.ButtonBorderStyle bottomStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Int32,System.Windows.Forms.ButtonBorderStyle,System.Drawing.Color,System.Int32,System.Windows.Forms.ButtonBorderStyle,System.Drawing.Color,System.Int32,System.Windows.Forms.ButtonBorderStyle,System.Drawing.Color,System.Int32,System.Windows.Forms.ButtonBorderStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="leftColor" Type="System.Drawing.Color" />
+        <Parameter Name="leftWidth" Type="System.Int32" />
+        <Parameter Name="leftStyle" Type="System.Windows.Forms.ButtonBorderStyle" />
+        <Parameter Name="topColor" Type="System.Drawing.Color" />
+        <Parameter Name="topWidth" Type="System.Int32" />
+        <Parameter Name="topStyle" Type="System.Windows.Forms.ButtonBorderStyle" />
+        <Parameter Name="rightColor" Type="System.Drawing.Color" />
+        <Parameter Name="rightWidth" Type="System.Int32" />
+        <Parameter Name="rightStyle" Type="System.Windows.Forms.ButtonBorderStyle" />
+        <Parameter Name="bottomColor" Type="System.Drawing.Color" />
+        <Parameter Name="bottomWidth" Type="System.Int32" />
+        <Parameter Name="bottomStyle" Type="System.Windows.Forms.ButtonBorderStyle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <param name="leftColor"><see cref="T:System.Drawing.Color" />罫線の左側のです。</param>
+        <param name="leftWidth">左罫線の幅。</param>
+        <param name="leftStyle">1 つ、<see cref="T:System.Windows.Forms.ButtonBorderStyle" />左罫線のスタイルを指定する値。</param>
+        <param name="topColor"><see cref="T:System.Drawing.Color" />罫線の最上位のです。</param>
+        <param name="topWidth">上罫線の幅。</param>
+        <param name="topStyle">1 つ、<see cref="T:System.Windows.Forms.ButtonBorderStyle" />上罫線のスタイルを指定する値。</param>
+        <param name="rightColor"><see cref="T:System.Drawing.Color" />枠線の右側のです。</param>
+        <param name="rightWidth">右罫線の幅。</param>
+        <param name="rightStyle">1 つ、<see cref="T:System.Windows.Forms.ButtonBorderStyle" />右罫線のスタイルを指定する値。</param>
+        <param name="bottomColor"><see cref="T:System.Drawing.Color" />枠線の下部にあるのです。</param>
+        <param name="bottomWidth">下罫線の幅。</param>
+        <param name="bottomStyle">1 つ、<see cref="T:System.Windows.Forms.ButtonBorderStyle" />下罫線のスタイルを指定する値。</param>
+        <summary>指定されたスタイル、色、および罫線の幅のボタン スタイルのコントロールの境界線を描画します。指定したグラフィックス サーフェイスです。指定した範囲内です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <summary>コントロールを指定したグラフィックスの表面と指定した範囲内の 3d スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Border3DStyle?displayProperty=nameWithType>境界線を描画する、既定で使用されるスタイルです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.Border3DStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.Border3DStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.Border3DStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="style" Type="System.Windows.Forms.Border3DStyle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.Border3DStyle" />罫線のスタイルを指定する値。</param>
+        <summary>指定したグラフィックス画面で、コントロールの指定した範囲内の指定したスタイルと 3d スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.Border3DStyle style, System.Windows.Forms.Border3DSide sides);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.Border3DStyle style, valuetype System.Windows.Forms.Border3DSide sides) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.Border3DStyle,System.Windows.Forms.Border3DSide)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="style" Type="System.Windows.Forms.Border3DStyle" />
+        <Parameter Name="sides" Type="System.Windows.Forms.Border3DSide" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.Border3DStyle" />罫線のスタイルを指定する値。</param>
+        <param name="sides">1 つ、<see cref="T:System.Windows.Forms.Border3DSide" />境界線を描画する四角形の辺を指定する値。</param>
+        <summary>指定したスタイルを使用して、指定したグラフィックス画面と、側のコントロールの指定した範囲内で 3 次元スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, int x, int y, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">輪郭の四角形の左上の x 座標。</param>
+        <param name="y">輪郭の四角形の左上の y 座標。</param>
+        <param name="width">輪郭の四角形の幅。</param>
+        <param name="height">輪郭の四角形の高さ。</param>
+        <summary>コントロールを指定したグラフィックスの表面と指定した範囲内の 3d スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Border3DStyle?displayProperty=nameWithType>境界線を描画する、既定で使用されるスタイルです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.Border3DStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.Border3DStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.Border3DStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Windows.Forms.Border3DStyle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">輪郭の四角形の左上の x 座標。</param>
+        <param name="y">輪郭の四角形の左上の y 座標。</param>
+        <param name="width">輪郭の四角形の幅。</param>
+        <param name="height">輪郭の四角形の高さ。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.Border3DStyle" />罫線のスタイルを指定する値。</param>
+        <summary>指定したグラフィックス画面で、コントロールの指定した範囲内の指定したスタイルと 3d スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBorder3D">
+      <MemberSignature Language="C#" Value="public static void DrawBorder3D (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.Border3DStyle style, System.Windows.Forms.Border3DSide sides);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawBorder3D(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.Border3DStyle style, valuetype System.Windows.Forms.Border3DSide sides) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawBorder3D(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.Border3DStyle,System.Windows.Forms.Border3DSide)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Windows.Forms.Border3DStyle" />
+        <Parameter Name="sides" Type="System.Windows.Forms.Border3DSide" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">輪郭の四角形の左上の x 座標。</param>
+        <param name="y">輪郭の四角形の左上の y 座標。</param>
+        <param name="width">輪郭の四角形の幅。</param>
+        <param name="height">輪郭の四角形の高さ。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.Border3DStyle" />罫線のスタイルを指定する値。</param>
+        <param name="sides"><see cref="T:System.Windows.Forms.Border3DSide" />境界線を描画する四角形のです。</param>
+        <summary>指定したスタイルを使用して、指定したグラフィックスの表面と側でのコントロールの指定した範囲内で 3 次元スタイルの輪郭を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のいずれかの使用を示します、<xref:System.Windows.Forms.ControlPaint.DrawBorder3D%2A>メソッドです。 この例を実行するには、インポートできる形式で、次のコードを貼り付けます、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 フォームのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawButton">
+      <MemberSignature Language="C#" Value="public static void DrawButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />ボタンのサイズを表すです。</param>
+        <param name="state">ビットごとの組み合わせ、 <see cref="T:System.Windows.Forms.ButtonState" /> 、ボタンを描画する状態を指定する値。</param>
+        <summary>指定したグラフィックス画面と指定した範囲内では、指定された状態でボタン コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawButton">
+      <MemberSignature Language="C#" Value="public static void DrawButton (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawButton(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawButton(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">ボタンの幅。</param>
+        <param name="height">ボタンの高さ。</param>
+        <param name="state">ビットごとの組み合わせ、 <see cref="T:System.Windows.Forms.ButtonState" /> 、ボタンを描画する状態を指定する値。</param>
+        <summary>指定したグラフィックス画面と指定した範囲内では、指定された状態でボタン コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ButtonState#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ButtonState/CPP/buttonstate1.cpp#2)]
+ [!code-csharp[ButtonState#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ButtonState/CS/buttonstate1.cs#2)]
+ [!code-vb[ButtonState#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ButtonState/VB/buttonstate1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCaptionButton">
+      <MemberSignature Language="C#" Value="public static void DrawCaptionButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.CaptionButton button, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCaptionButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.CaptionButton button, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawCaptionButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CaptionButton,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="button" Type="System.Windows.Forms.CaptionButton" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />キャプション ボタンのサイズを表すです。</param>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.CaptionButton" />を描画するキャプション ボタンの種類を指定する値。</param>
+        <param name="state">ビットごとの組み合わせ、 <see cref="T:System.Windows.Forms.ButtonState" /> 、ボタンを描画する状態を指定する値。</param>
+        <summary>指定した状態、指定したグラフィックス画面で、指定した範囲内で指定されたキャプションのボタン コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.ControlPaint.DrawCaptionButton%2A?displayProperty=nameWithType>メソッドおよび<xref:System.Windows.Forms.CaptionButton>列挙します。 この例を実行するには、という名前のボタンを含むフォームで、次のコードを貼り付けます`Button1`です。 フォームをインポートする必要があります、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 ボタンのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCaptionButton">
+      <MemberSignature Language="C#" Value="public static void DrawCaptionButton (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.CaptionButton button, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCaptionButton(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.CaptionButton button, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawCaptionButton(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.CaptionButton,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="button" Type="System.Windows.Forms.CaptionButton" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上の x 座標。</param>
+        <param name="y">描画する四角形の左上の y 座標。</param>
+        <param name="width">描画する四角形の幅。</param>
+        <param name="height">描画する四角形の高さ。</param>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.CaptionButton" />を描画するキャプション ボタンの種類を指定する値。</param>
+        <param name="state">ビットごとの組み合わせ、 <see cref="T:System.Windows.Forms.ButtonState" /> 、ボタンを描画する状態を指定する値。</param>
+        <summary>指定した状態、指定したグラフィックス画面で、指定した範囲内で指定されたキャプションのボタン コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.ControlPaint.DrawCaptionButton%2A>メソッドおよび<xref:System.Windows.Forms.CaptionButton>列挙します。 この例を実行するを含むフォームで次のコードを貼り付け、<xref:System.Windows.Forms.Button>という`Button1`です。 フォームをインポートする必要があります、<xref:System.Windows.Forms>と<xref:System.Drawing>名前空間。 ボタンのことを確認<xref:System.Windows.Forms.Control.Paint>イベントは、この例では、イベント ハンドラーに関連付けられています。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ControlPaintMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaintMembers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />  チェック ボックスのサイズを表すです。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />でチェック ボックスを描画する状態を指定する値。</param>
+        <summary>指定したグラフィックス画面と指定した範囲内では、指定された状態で、チェック ボックス コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawCheckBox(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">チェック ボックスの幅。</param>
+        <param name="height">チェック ボックスの高さ。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />でチェック ボックスを描画する状態を指定する値。</param>
+        <summary>指定したグラフィックス画面と指定した範囲内では、指定された状態で、チェック ボックス コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawComboButton">
+      <MemberSignature Language="C#" Value="public static void DrawComboButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawComboButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawComboButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />コンボ ボックスのサイズを表すです。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />ボックス、コンボを描画する状態を指定する値。</param>
+        <summary>指定した状態のコンボ ボックス コントロールの指定したグラフィックスの表面にし、指定した範囲内でのドロップダウン ボタンを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawComboButton">
+      <MemberSignature Language="C#" Value="public static void DrawComboButton (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawComboButton(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawComboButton(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">輪郭の四角形の左上の x 座標。</param>
+        <param name="y">輪郭の四角形の左上の y 座標。</param>
+        <param name="width">コンボ ボックスの幅。</param>
+        <param name="height">コンボ ボックスの高さ。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />ボックス、コンボを描画する状態を指定する値。</param>
+        <summary>指定した状態のコンボ ボックス コントロールの指定したグラフィックスの表面にし、指定した範囲内でのドロップダウン ボタンを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawContainerGrabHandle">
+      <MemberSignature Language="C#" Value="public static void DrawContainerGrabHandle (System.Drawing.Graphics graphics, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawContainerGrabHandle(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawContainerGrabHandle(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />グラブ ハンドルのグリフの大きさを表すです。</param>
+        <summary>指定したグラフィックス画面で、指定した範囲内のコンテナー コントロールのグラブ ハンドル グリフを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラブ ハンドルは、ユーザーがコンテナーを直接操作するユーザーに示すために、コンテナーによって使用されます。 操作は、サイズ変更や移動などのアクションで構成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawFocusRectangle">
+      <MemberSignature Language="C#" Value="public static void DrawFocusRectangle (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawFocusRectangle(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawFocusRectangle(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />グラブ ハンドルのグリフの大きさを表すです。</param>
+        <summary>指定したグラフィックス画面で指定した範囲内のフォーカスされた四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカスされた四角形は、Windows では、使用してどのようなコントロールに現在のキーボード フォーカスを示す点線の四角形です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ControlPaint.DrawFocusRectangle%2A>メソッドおよび<xref:System.Windows.Forms.Control.Handle%2A?displayProperty=nameWithType>プロパティです。 この例を実行するには、フォームで、次のコードを貼り付けます。 という名前の 2 つのボタンの追加`Button1`と`Button2`をフォームに自身のイベント ハンドラーに接続しているすべてのイベントを確認してください。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawFocusRectangle">
+      <MemberSignature Language="C#" Value="public static void DrawFocusRectangle (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawFocusRectangle(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawFocusRectangle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />グラブ ハンドルのグリフの大きさを表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />つまりにフォーカス四角形を描画するオブジェクトの前景色。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />にフォーカス四角形を描画するオブジェクトの背景色であります。</param>
+        <summary>指定したグラフィックス画面で指定した範囲内のフォーカスされた四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカスされた四角形は、Windows では、使用してどのようなコントロールに現在のキーボード フォーカスを示す点線の四角形です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ControlPaint.DrawFocusRectangle%2A>メソッドおよび<xref:System.Windows.Forms.Control.Handle%2A?displayProperty=nameWithType>プロパティです。 この例を実行するには、フォームで、次のコードを貼り付けます。 という名前の 2 つのボタンの追加`Button1`と Button2 をフォームに自身のイベント ハンドラーに接続しているすべてのイベントを確認してください。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlPaint1#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGrabHandle">
+      <MemberSignature Language="C#" Value="public static void DrawGrabHandle (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, bool primary, bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawGrabHandle(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, bool primary, bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawGrabHandle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="primary" Type="System.Boolean" />
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />グラブ ハンドルのグリフの大きさを表すです。</param>
+        <param name="primary">
+          <see langword="true" />プライマリのグラブ ハンドル; としてハンドルを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="enabled">
+          <see langword="true" />有効な状態で、ハンドルを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定したグラフィックス画面で、指定された状態とスタイル内および指定した境界内で標準の選択のグラブ ハンドル グリフを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラブ ハンドルは、ユーザーがオブジェクトを直接操作するユーザーに示すためにオブジェクトによって使用されます。 操作は、サイズ変更や移動などのアクションで構成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawGrid">
+      <MemberSignature Language="C#" Value="public static void DrawGrid (System.Drawing.Graphics graphics, System.Drawing.Rectangle area, System.Drawing.Size pixelsBetweenDots, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawGrid(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle area, valuetype System.Drawing.Size pixelsBetweenDots, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawGrid(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Size,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="area" Type="System.Drawing.Rectangle" />
+        <Parameter Name="pixelsBetweenDots" Type="System.Drawing.Size" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="area"><see cref="T:System.Drawing.Rectangle" />グリッドの大きさを表すです。</param>
+        <param name="pixelsBetweenDots"><see cref="T:System.Drawing.Size" />グリッドのドットの間の幅と高さを指定します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />のグリッドの背景。</param>
+        <summary>指定された色と、指定したグラフィックス画面で、指定した範囲内で、指定した間隔で 1 ピクセルのドットのグリッドを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`パラメーターは、グリッドは常に、背景に表示できるように、ドットの塗りつぶしの色を計算に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImageDisabled">
+      <MemberSignature Language="C#" Value="public static void DrawImageDisabled (System.Drawing.Graphics graphics, System.Drawing.Image image, int x, int y, System.Drawing.Color background);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawImageDisabled(class System.Drawing.Graphics graphics, class System.Drawing.Image image, int32 x, int32 y, valuetype System.Drawing.Color background) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawImageDisabled(System.Drawing.Graphics,System.Drawing.Image,System.Int32,System.Int32,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="background" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="image">描画する <see cref="T:System.Drawing.Image" />。</param>
+        <param name="x">境界線イメージの左上の x 座標。</param>
+        <param name="y">境界線イメージの左上の y 座標。</param>
+        <param name="background"><see cref="T:System.Drawing.Color" />のイメージの背景。</param>
+        <summary>無効な状態で、指定されたイメージを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `background`ように常に表示される背景に対して無効なイメージの塗りつぶしの色を計算するパラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLockedFrame">
+      <MemberSignature Language="C#" Value="public static void DrawLockedFrame (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, bool primary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawLockedFrame(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, bool primary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawLockedFrame(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="primary" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />フレームの大きさを表すです。</param>
+        <param name="primary">
+          <see langword="true" />プライマリの選択範囲の色と共にこのフレームを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した範囲内の画面と、指定したグラフィックス画面には、ロックされている選択フレームを描画します。 プライマリの選択した色を使用してフレームを描画するかどうかを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMenuGlyph">
+      <MemberSignature Language="C#" Value="public static void DrawMenuGlyph (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.MenuGlyph glyph);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMenuGlyph(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.MenuGlyph glyph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMenuGlyph(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.MenuGlyph)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="glyph" Type="System.Windows.Forms.MenuGlyph" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />のグリフの大きさを表すです。</param>
+        <param name="glyph">1 つ、<see cref="T:System.Windows.Forms.MenuGlyph" />描画するイメージを指定する値。</param>
+        <summary>指定した範囲内のメニュー項目コントロールで、指定した表面には、指定されたメニュー グリフを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーナー描画時に<xref:System.Windows.Forms.MenuItem>コントロールの描画または削除に正しいグリフを決定するプロパティ値を確認する必要があります。 たとえば、ときに、<xref:System.Windows.Forms.MenuItem.Checked%2A?displayProperty=nameWithType>プロパティに設定されている`true`、呼び出す必要があります、<xref:System.Windows.Forms.MenuGlyph.Checkmark>の値<xref:System.Windows.Forms.MenuGlyph>にチェック マークを描画する、<xref:System.Windows.Forms.MenuItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMenuGlyph">
+      <MemberSignature Language="C#" Value="public static void DrawMenuGlyph (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.MenuGlyph glyph, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMenuGlyph(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.MenuGlyph glyph, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMenuGlyph(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.MenuGlyph,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="glyph" Type="System.Windows.Forms.MenuGlyph" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />のグリフの大きさを表すです。</param>
+        <param name="glyph">1 つ、<see cref="T:System.Windows.Forms.MenuGlyph" />描画するイメージを指定する値。</param>
+        <param name="foreColor">置換する色<see cref="P:System.Drawing.Color.White" />として前景色を指定します。</param>
+        <param name="backColor">色を置き換える<see cref="P:System.Drawing.Color.Black" />背景色。</param>
+        <summary>指定した範囲内のメニュー項目コントロールの指定した表面に指定されたメニュー グリフを描画交換<see cref="P:System.Drawing.Color.White" />で指定された色で、<paramref name="backColor" />パラメーターと交換<see cref="P:System.Drawing.Color.Black" />で指定された色を使用<paramref name="foreColor" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーナー描画時に<xref:System.Windows.Forms.MenuItem>コントロールの描画または削除に正しいグリフを決定するプロパティ値を確認する必要があります。 たとえば、ときに、<xref:System.Windows.Forms.MenuItem.Checked%2A?displayProperty=nameWithType>プロパティに設定されている`true`、呼び出す必要があります、<xref:System.Windows.Forms.MenuGlyph.Checkmark>の値<xref:System.Windows.Forms.MenuGlyph>にチェック マークを描画する、<xref:System.Windows.Forms.MenuItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMenuGlyph">
+      <MemberSignature Language="C#" Value="public static void DrawMenuGlyph (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.MenuGlyph glyph);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMenuGlyph(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.MenuGlyph glyph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMenuGlyph(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.MenuGlyph)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="glyph" Type="System.Windows.Forms.MenuGlyph" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">メニューのグリフの幅。</param>
+        <param name="height">メニューのグリフの高さ。</param>
+        <param name="glyph">1 つ、<see cref="T:System.Windows.Forms.MenuGlyph" />描画するイメージを指定する値。</param>
+        <summary>指定された境界内でのメニュー項目コントロールの指定した画面上の指定されたメニュー グリフを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーナー描画時に<xref:System.Windows.Forms.MenuItem>コントロールの描画または削除に正しいグリフを決定するプロパティ値を確認する必要があります。 たとえば、<xref:System.Windows.Forms.MenuItem.Checked%2A?displayProperty=nameWithType>プロパティに設定されている呼び出す場合は true、<xref:System.Windows.Forms.MenuGlyph.Checkmark>の値<xref:System.Windows.Forms.MenuGlyph>にチェック マークを描画する、<xref:System.Windows.Forms.MenuItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMenuGlyph">
+      <MemberSignature Language="C#" Value="public static void DrawMenuGlyph (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.MenuGlyph glyph, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMenuGlyph(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.MenuGlyph glyph, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMenuGlyph(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.MenuGlyph,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="glyph" Type="System.Windows.Forms.MenuGlyph" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">メニューのグリフの幅。</param>
+        <param name="height">メニューのグリフの高さ。</param>
+        <param name="glyph">1 つ、<see cref="T:System.Windows.Forms.MenuGlyph" />描画するイメージを指定する値。</param>
+        <param name="foreColor">置換する色<see cref="P:System.Drawing.Color.White" />として前景色を指定します。</param>
+        <param name="backColor">色を置き換える<see cref="P:System.Drawing.Color.Black" />背景色。</param>
+        <summary>指定した表面に指定された座標、高さ、および幅内で、メニュー項目コントロールで、指定されたメニュー グリフを描画交換<see cref="P:System.Drawing.Color.White" />で指定された色の調整、<paramref name="backColor" />パラメーターと交換<see cref="P:System.Drawing.Color.Black" />色で指定されている、<paramref name="foreColor" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーナー描画時に<xref:System.Windows.Forms.MenuItem>コントロールの描画または削除に正しいグリフを決定するプロパティ値を確認する必要があります。 たとえば、ときに、<xref:System.Windows.Forms.MenuItem.Checked%2A?displayProperty=nameWithType>プロパティに設定されている`true`、呼び出す必要があります、<xref:System.Windows.Forms.MenuGlyph.Checkmark>の値<xref:System.Windows.Forms.MenuGlyph>にチェック マークを描画する、<xref:System.Windows.Forms.MenuItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMixedCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawMixedCheckBox (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMixedCheckBox(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMixedCheckBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />  チェック ボックスのサイズを表すです。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />でチェック ボックスを描画する状態を指定する値。</param>
+        <summary>指定した状態に、指定したグラフィックス画面で、指定した範囲内には、3 つの状態のチェック ボックス コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMixedCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawMixedCheckBox (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawMixedCheckBox(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawMixedCheckBox(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">チェック ボックスの幅。</param>
+        <param name="height">チェック ボックスの高さ。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />でチェック ボックスを描画する状態を指定する値。</param>
+        <summary>指定した状態に、指定したグラフィックス画面で、指定した範囲内には、3 つの状態のチェック ボックス コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />ラジオ ボタンのサイズを表すです。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />ラジオ ボタンを描画する状態を指定する値。</param>
+        <summary>指定した状態、指定したグラフィックス画面で、指定した範囲内でラジオ ボタン コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawRadioButton(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">ラジオ ボタンの幅。</param>
+        <param name="height">ラジオ ボタンの高さ。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />ラジオ ボタンを描画する状態を指定する値。</param>
+        <summary>指定した状態、指定したグラフィックス画面で、指定した範囲内でラジオ ボタン コントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawReversibleFrame">
+      <MemberSignature Language="C#" Value="public static void DrawReversibleFrame (System.Drawing.Rectangle rectangle, System.Drawing.Color backColor, System.Windows.Forms.FrameStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawReversibleFrame(valuetype System.Drawing.Rectangle rectangle, valuetype System.Drawing.Color backColor, valuetype System.Windows.Forms.FrameStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawReversibleFrame(System.Drawing.Rectangle,System.Drawing.Color,System.Windows.Forms.FrameStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="style" Type="System.Windows.Forms.FrameStyle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />画面座標で、描画する四角形の大きさを表すです。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />のフレームの背景。</param>
+        <param name="style">1 つ、<see cref="T:System.Windows.Forms.FrameStyle" />フレームのスタイルを指定する値。</param>
+        <summary>指定した背景色を使用し、指定された状態では、指定した範囲内の画面を元に戻すことのフレームを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`ように常に表示される背景、フレームの塗りつぶしの色を計算するパラメーターを使用します。  
+  
+ このメソッドの結果は、もう一度同じフレームを描画して元に戻すことができます。 多くの色のパフォーマンス向上を提供する点を除いては、このメソッドを使用してフレームを描画すると、画面の領域を反転することに似ています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.Control.RectangleToScreen%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.Control.PointToScreen%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.ControlPaint.DrawReversibleFrame%2A>メンバー。 例を実行するには、という名前のフォームで、次のコードを貼り付けます`Form1`いくつかのコントロールを格納します。 この例では、マウス イベントは、例で定義されているイベント ハンドラーに接続されていることが必要です。  
+  
+ [!code-cpp[System.Windows.Forms.RectangleToScreen#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RectangleToScreen/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.RectangleToScreen#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RectangleToScreen/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.RectangleToScreen#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RectangleToScreen/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawReversibleLine">
+      <MemberSignature Language="C#" Value="public static void DrawReversibleLine (System.Drawing.Point start, System.Drawing.Point end, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawReversibleLine(valuetype System.Drawing.Point start, valuetype System.Drawing.Point end, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawReversibleLine(System.Drawing.Point,System.Drawing.Point,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.Drawing.Point" />
+        <Parameter Name="end" Type="System.Drawing.Point" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="start">開始<see cref="T:System.Drawing.Point" />画面座標で、行のです。</param>
+        <param name="end">終了<see cref="T:System.Drawing.Point" />画面座標で、行のです。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />の行の背景。</param>
+        <summary>画面で、指定された開始位置と終了位置内と指定した背景色の元に戻せる状態行を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`ように常に表示される背景に対して行の塗りつぶしの色を計算するパラメーターを使用します。  
+  
+ このメソッドの結果は、同じ行を再描画して元に戻すことができます。 多くの色のパフォーマンス向上を提供する点を除いては、このメソッドを使用して線を描画すると、画面の領域を反転することに似ています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ControlPaint.DrawReversibleLine%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.Control.PointToScreen%2A?displayProperty=nameWithType>メソッドです。 例を実行するには、フォームで、次のコードを貼り付けます。 という名前のボタンの追加`Button3`をフォームに自身のイベント ハンドラーに接続しているすべてのイベントを確認してください。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaint1#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.ControlPaint1#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.ControlPaint1#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawScrollButton">
+      <MemberSignature Language="C#" Value="public static void DrawScrollButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle rectangle, System.Windows.Forms.ScrollButton button, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawScrollButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle rectangle, valuetype System.Windows.Forms.ScrollButton button, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawScrollButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ScrollButton,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="button" Type="System.Windows.Forms.ScrollButton" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />のグリフの大きさを表すです。</param>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.ScrollButton" />を描画する矢印の種類を指定する値。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />スクロール ボタンを描画する状態を指定する値。</param>
+        <summary>指定された状態では、スクロール バー コントロールの指定したグラフィックスの表面にし、指定した範囲内に指定されたスクロール ボタンを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawScrollButton">
+      <MemberSignature Language="C#" Value="public static void DrawScrollButton (System.Drawing.Graphics graphics, int x, int y, int width, int height, System.Windows.Forms.ScrollButton button, System.Windows.Forms.ButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawScrollButton(class System.Drawing.Graphics graphics, int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.ScrollButton button, valuetype System.Windows.Forms.ButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawScrollButton(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.ScrollButton,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="button" Type="System.Windows.Forms.ScrollButton" />
+        <Parameter Name="state" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">描画する四角形の左上隅の x 座標。</param>
+        <param name="y">描画する四角形の左上隅の y 座標。</param>
+        <param name="width">スクロール ボタンの幅。</param>
+        <param name="height">スクロール ボタンの高さ。</param>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.ScrollButton" />を描画する矢印の種類を指定する値。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.ButtonState" />スクロール ボタンを描画する状態を指定する値。</param>
+        <summary>指定された状態では、スクロール バー コントロールの指定したグラフィックスの表面にし、指定した範囲内に指定されたスクロール ボタンを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSelectionFrame">
+      <MemberSignature Language="C#" Value="public static void DrawSelectionFrame (System.Drawing.Graphics graphics, bool active, System.Drawing.Rectangle outsideRect, System.Drawing.Rectangle insideRect, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawSelectionFrame(class System.Drawing.Graphics graphics, bool active, valuetype System.Drawing.Rectangle outsideRect, valuetype System.Drawing.Rectangle insideRect, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawSelectionFrame(System.Drawing.Graphics,System.Boolean,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="active" Type="System.Boolean" />
+        <Parameter Name="outsideRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="insideRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="active">
+          <see langword="true" />アクティブな状態で、選択したフレームを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="outsideRect"><see cref="T:System.Drawing.Rectangle" />選択フレームの外側の境界を表すです。</param>
+        <param name="insideRect"><see cref="T:System.Drawing.Rectangle" />選択フレームの内側の境界を表すです。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />のフレームの背景。</param>
+        <summary>指定したグラフィックス画面で、指定の内側と外側の寸法と指定した背景色の指定された状態で標準的な選択フレームを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 選択フレームは、デザイン時に選択したコンポーネントの前後で描画されるフレームです。  
+  
+ `backColor`ように常に表示される背景、フレームの塗りつぶしの色を計算するパラメーターを使用します。  
+  
+ 場合、`active`にパラメーターが設定されている`true`コンポーネントがアクティブになったことを示す記号の陰影のセットとして選択したフレームが描画される以外の場合はドット区切りのパターンを持つまたは実装によってはありませんが、それ以外の場合、選択フレームが描画されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSizeGrip">
+      <MemberSignature Language="C#" Value="public static void DrawSizeGrip (System.Drawing.Graphics graphics, System.Drawing.Color backColor, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawSizeGrip(class System.Drawing.Graphics graphics, valuetype System.Drawing.Color backColor, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawSizeGrip(System.Drawing.Graphics,System.Drawing.Color,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />のバック グラウンドのサイズ変更グリップの色を決定するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />サイズ変更グリップの大きさを表すです。</param>
+        <summary>サイズ変更グリップを指定した範囲と背景色を持つフォームで指定したグラフィックスの表面に描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`ように常に表示される背景に対して、サイズ変更グリップの色を計算するパラメーターを使用します。  
+  
+ サイズ変更できるウィンドウを定義するときは、サイズ変更グリップを含めることができます。 サイズ変更グリップは、ユーザーがウィンドウのサイズを変更できるようにする特殊なハンドルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSizeGrip">
+      <MemberSignature Language="C#" Value="public static void DrawSizeGrip (System.Drawing.Graphics graphics, System.Drawing.Color backColor, int x, int y, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawSizeGrip(class System.Drawing.Graphics graphics, valuetype System.Drawing.Color backColor, int32 x, int32 y, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawSizeGrip(System.Drawing.Graphics,System.Drawing.Color,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />のバック グラウンドのサイズ変更グリップの色を決定するために使用します。</param>
+        <param name="x">サイズ変更グリップの左上隅の x 座標。</param>
+        <param name="y">サイズ変更グリップの左上隅の y 座標。</param>
+        <param name="width">サイズ変更グリップの幅。</param>
+        <param name="height">サイズ変更グリップの高さ。</param>
+        <summary>サイズ変更グリップを指定した範囲と背景色を持つフォームで指定したグラフィックスの表面に描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`ように常に表示される背景に対して、サイズ変更グリップの色を計算するパラメーターを使用します。  
+  
+ サイズ変更できるウィンドウを定義するときは、サイズ変更グリップを含めることができます。 サイズ変更グリップは、ユーザーがウィンドウのサイズを変更できるようにする特殊なハンドルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawStringDisabled">
+      <MemberSignature Language="C#" Value="public static void DrawStringDisabled (System.Drawing.Graphics graphics, string s, System.Drawing.Font font, System.Drawing.Color color, System.Drawing.RectangleF layoutRectangle, System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawStringDisabled(class System.Drawing.Graphics graphics, string s, class System.Drawing.Font font, valuetype System.Drawing.Color color, valuetype System.Drawing.RectangleF layoutRectangle, class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawStringDisabled(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Color,System.Drawing.RectangleF,System.Drawing.StringFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="layoutRectangle" Type="System.Drawing.RectangleF" />
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="s">描画する文字列。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />で文字列を描画します。</param>
+        <param name="color"><see cref="T:System.Drawing.Color" />文字列の背景のです。</param>
+        <param name="layoutRectangle"><see cref="T:System.Drawing.RectangleF" />を表す文字列のサイズ。</param>
+        <param name="format"><see cref="T:System.Drawing.StringFormat" />文字列に適用します。</param>
+        <summary>指定した文字列無効な状態で、画面に描画指定したグラフィックです。指定した境界内指定したフォント、色、および書式設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawStringDisabled">
+      <MemberSignature Language="C#" Value="public static void DrawStringDisabled (System.Drawing.IDeviceContext dc, string s, System.Drawing.Font font, System.Drawing.Color color, System.Drawing.Rectangle layoutRectangle, System.Windows.Forms.TextFormatFlags format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawStringDisabled(class System.Drawing.IDeviceContext dc, string s, class System.Drawing.Font font, valuetype System.Drawing.Color color, valuetype System.Drawing.Rectangle layoutRectangle, valuetype System.Windows.Forms.TextFormatFlags format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawStringDisabled(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Color,System.Drawing.Rectangle,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="layoutRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">GDI ベース<see cref="T:System.Windows.Forms.TextRenderer" />です。</param>
+        <param name="s">描画する文字列。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />で文字列を描画します。</param>
+        <param name="color"><see cref="T:System.Drawing.Color" />文字列の背景のです。</param>
+        <param name="layoutRectangle"><see cref="T:System.Drawing.RectangleF" />を表す文字列のサイズ。</param>
+        <param name="format"><see cref="T:System.Drawing.StringFormat" />文字列に適用します。</param>
+        <summary>指定した文字列に無効な状態、画面に描画指定したグラフィックと指定したフォント、色、および形式を指定して、指定した範囲内 GDI ベース<see cref="T:System.Windows.Forms.TextRenderer" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVisualStyleBorder">
+      <MemberSignature Language="C#" Value="public static void DrawVisualStyleBorder (System.Drawing.Graphics graphics, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVisualStyleBorder(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.DrawVisualStyleBorder(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />罫線の大きさを表すです。</param>
+        <summary>無効な項目を適切なスタイルの輪郭を描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillReversibleRectangle">
+      <MemberSignature Language="C#" Value="public static void FillReversibleRectangle (System.Drawing.Rectangle rectangle, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FillReversibleRectangle(valuetype System.Drawing.Rectangle rectangle, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.FillReversibleRectangle(System.Drawing.Rectangle,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" />画面座標で、塗りつぶす四角形の大きさを表すです。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />の塗りつぶしの背景。</param>
+        <summary>画面を元に戻すこと塗りつぶされた四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`ように常に表示される背景、四角形の塗りつぶしの色を計算するパラメーターを使用します。  
+  
+ このメソッドの結果は、もう一度同じ四角形を描画して元に戻すことができます。 多くの色のパフォーマンス向上を提供する点を除いては、このメソッドを使用して、四角形を描画すると、画面の領域を反転することに似ています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ControlPaint.FillReversibleRectangle%2A>メソッドです。 例を実行するには、フォームで、次のコードを貼り付けます。 という名前のボタンの追加`Button2`をフォームに自身のイベント ハンドラーに接続しているすべてのイベントを確認してください。  
+  
+ [!code-cpp[System.Windows.Forms.ControlPaint1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ControlPaint1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ControlPaint1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlPaint1/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Light">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color Light (System.Drawing.Color baseColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color Light(valuetype System.Drawing.Color baseColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.Light(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を明るくします。</param>
+        <summary>指定された色からコントロールの明るい色の新しいオブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールの明るい色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、 <xref:System.Drawing.SystemColors>、色に変換されます、<xref:System.Drawing.SystemColors.ControlLight%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値が減少します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Light">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color Light (System.Drawing.Color baseColor, float percOfLightLight);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color Light(valuetype System.Drawing.Color baseColor, float32 percOfLightLight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.Light(System.Drawing.Color,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+        <Parameter Name="percOfLightLight" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を明るくします。</param>
+        <param name="percOfLightLight">指定されたを明るく割合<see cref="T:System.Drawing.Color" />です。</param>
+        <summary>指定された色からコントロールの明るい色の新しいオブジェクトを作成し、指定した割合で明るきます。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールの明るい色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、 <xref:System.Drawing.SystemColors>、色に変換されます、<xref:System.Drawing.SystemColors.ControlLight%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値が減少します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LightLight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Color LightLight (System.Drawing.Color baseColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Color LightLight(valuetype System.Drawing.Color baseColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ControlPaint.LightLight(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="baseColor"><see cref="T:System.Drawing.Color" />を明るくします。</param>
+        <summary>指定された色からコントロールの明るい色の新しいオブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />コントロールの明るい色を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した<xref:System.Drawing.Color>の 1 つ、<xref:System.Drawing.SystemColors>に色が変換されます、<xref:System.Drawing.SystemColors.ControlLightLight%2A?displayProperty=nameWithType>色です。 それ以外の場合、色の明るさの値は増加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

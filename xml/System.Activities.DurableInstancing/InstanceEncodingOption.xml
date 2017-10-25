@@ -1,0 +1,57 @@
+<Type Name="InstanceEncodingOption" FullName="System.Activities.DurableInstancing.InstanceEncodingOption">
+  <TypeSignature Language="C#" Value="public enum InstanceEncodingOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceEncodingOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.InstanceEncodingOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>永続化プロバイダーがインスタンス状態情報を永続化ストアに保存する前に、GZip アルゴリズムを使用してインスタンス状態情報をエンコードするかどうかを指定するオプションを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[netfx40_long](~/includes/netfx40-long-md.md)] には、SQL Workflow Instance Store の構成要素として SQL 永続化プロバイダーが付属しています。これは、<xref:System.Runtime.Persistence.InstanceStore> クラスの具象実装であり、SQL Server データベースに状態情報を永続化するために使用されます。 ときに、`instanceEncodingOption`に GZip に属性が設定されている、<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>サービスに関連付けられているサービス動作、SQL 永続化プロバイダー、GZip アルゴリズムを使用して SQL サーバー永続性データベースに状態情報を保存する前に、サービスのインスタンスのインスタンス状態情報をエンコードします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GZip">
+      <MemberSignature Language="C#" Value="GZip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceEncodingOption GZip = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceEncodingOption.GZip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceEncodingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GZip アルゴリズムを使用してインスタンス データが圧縮されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.DurableInstancing.InstanceEncodingOption None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.DurableInstancing.InstanceEncodingOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DurableInstancing.InstanceEncodingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス データが圧縮されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

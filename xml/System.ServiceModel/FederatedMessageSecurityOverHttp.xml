@@ -1,0 +1,534 @@
+<Type Name="FederatedMessageSecurityOverHttp" FullName="System.ServiceModel.FederatedMessageSecurityOverHttp">
+  <TypeSignature Language="C#" Value="public sealed class FederatedMessageSecurityOverHttp" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FederatedMessageSecurityOverHttp extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.FederatedMessageSecurityOverHttp" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see langword="WSFederationHttpBinding" /> バインディングのメッセージ レベルのセキュリティ設定を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、クライアントとサービス間のセキュリティ構成のさまざまな側面を制御するプロパティを含みます。プロパティには、サービスにより、クライアントのフェデレーション資格情報の取得元であると想定される発行者の詳細が含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederatedMessageSecurityOverHttp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.FederatedMessageSecurityOverHttp" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.AlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの暗号化とキー ラップ アルゴリズムを指定するアルゴリズム スイートを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> 既定値は、<see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> オブジェクトには、特定の条件で使用するセキュリティ アルゴリズムを指定する多数のプロパティが含まれます。 また、サービスが提供するさまざまなセキュリティ機能も記述されています。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#5](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#5)]
+ [!code-vb[WSFederationHttpSecurity#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimTypeRequirements">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Security.Tokens.ClaimTypeRequirement&gt; ClaimTypeRequirements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Security.Tokens.ClaimTypeRequirement&gt; ClaimTypeRequirements" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Security.Tokens.ClaimTypeRequirement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバイディングの <see cref="T:System.ServiceModel.Security.Tokens.ClaimTypeRequirement" /> インスタンスのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.ObjectModel.Collection`1" /> 型の <see cref="T:System.ServiceModel.Security.Tokens.ClaimTypeRequirement" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるコレクションは、クライアントがこのサービスにアクセスするために使用する、発行されたトークンに含める必要がある必須クレームとオプション クレームを指定するために、サービスによって使用されます。 WSDL の公開が有効になっていても、発行されるトークンに指定されたクレームの種類が含まれていることを WCF が要求しない場合、サービスは必須クレームの種類をメタデータで公開します。  存在している必須クレームの種類を実施しようとするサービスは、承認ポリシーを使用して実施します。  
+  
+ フェデレーション クライアント上では、このコレクションには、発行されたトークンに対するクライアントのクレームの中でセキュリティ トークン サービスに送信される、必須クレームとオプション クレームのリストが含まれます。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#11](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#11)]
+ [!code-vb[WSFederationHttpSecurity#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EstablishSecurityContext">
+      <MemberSignature Language="C#" Value="public bool EstablishSecurityContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EstablishSecurityContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.EstablishSecurityContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ コンテキストを配置する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />セキュリティ コンテキストでは、配置する; が必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuedKeyType">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKeyType IssuedKeyType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Tokens.SecurityKeyType IssuedKeyType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行されるキーの種類を指定します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SecurityKeyType" /> 既定値は、<see cref="F:System.IdentityModel.Tokens.SecurityKeyType.SymmetricKey" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityKeyType> の有効値は、<xref:System.IdentityModel.Tokens.SecurityKeyType.SymmetricKey> と <xref:System.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey> です。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#7](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#7)]
+ [!code-vb[WSFederationHttpSecurity#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.IdentityModel.Tokens.SecurityKeyType" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuedTokenType">
+      <MemberSignature Language="C#" Value="public string IssuedTokenType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IssuedTokenType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedTokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークン サービスによって発行されるトークンの種類を指定します。</summary>
+        <value>発行されるトークンの種類を指定します。 既定値は <see langword="null" /> です。これにより、WCF は、SAML セキュリティ トークンを STS に要求します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サービスが求めるトークンの種類を示し、サービス上にどの SecurityTokenAuthenticator が作成されるかを制御します。 クライアント上では、発行されたトークンに対するクライアントのクレームに含まれるセキュリティ トークン サービスに送信される種類を制御します。  
+  
+ 通常、IssuedTokenType は、URI の形をとります。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#4](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#4)]
+ [!code-vb[WSFederationHttpSecurity#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress IssuerAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress IssuerAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの発行者資格情報を発行するセキュリティ トークン サービスのエンドポイント アドレスを取得または設定します。</summary>
+        <value>セキュリティ トークン サービスの <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアドレスは、サービスの発行者資格情報を発行するセキュリティ トークン サービスのエンドポイント アドレスとして使用されます。 WSDL が有効になっていても、それ以外に用途がない場合、サービスは発行者アドレスをメタデータで公開します。 クライアントは、発行者アドレスを使用して、セキュリティ トークン サービスと通信します。 IssuerAddress が null の場合、クライアントは、IssuedTokenClientCredential の LocalIssuerAddress プロパティと LocalIssuerBinding プロパティを通して指定されるセキュリティトークンサービスを使用することができます。  
+  
+ 特定の状況で ClientCredentials.SupportInteractive が true の場合は、`null` に設定されたこの値、またはクライアント上の WS-AddressingIdentity 匿名 URI により CardSpace がアクティブ化されます。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#8](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#8)]
+ [!code-vb[WSFederationHttpSecurity#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding IssuerBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding IssuerBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントが <see cref="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerAddress" /> であるセキュリティ トークン サービスと通信するときに、クライアントが使用するバインドを取得または設定します。</summary>
+        <value>クライアントがセキュリティ トークン サービスと通信するときに使用する <see cref="T:System.ServiceModel.Channels.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、クライアントがセキュリティ トークン サービスの資格情報を取得するときに、クライアントが使用するバインドを指定します。  
+  
+ このプロパティは、クライアントだけが使用するため、サービスに対して設定する必要はないことに注意してください。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#9](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#9)]
+ [!code-vb[WSFederationHttpSecurity#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerMetadataAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress IssuerMetadataAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress IssuerMetadataAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>帯域外のセキュリティ トークン サービスと通信するためのエンドポイント アドレスを取得または設定します。</summary>
+        <value>帯域外のセキュリティ トークン サービスと通信するときに使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアドレスは、帯域外のサービスの発行者資格情報を発行するセキュリティ トークン サービスのエンドポイントとして使用されます。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#10](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#10)]
+ [!code-vb[WSFederationHttpSecurity#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NegotiateServiceCredential">
+      <MemberSignature Language="C#" Value="public bool NegotiateServiceCredential { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NegotiateServiceCredential" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ レベルの SSL ネゴシエーションを実行して、サービスの証明書を取得するかどうかを指定します。</summary>
+        <value>
+          サービス証明書がネゴシエートされる場合は <see langword="true" />。サービス証明書が帯域外で入手できる場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クライアントとサービスとの間でサービス証明書が自動的にネゴシエートされるかどうかを示します。 このプロパティが `true` の場合、自動的にネゴシエーションが行われます。 このプロパティが `false` の場合、サービスとの通信を行う前に、クライアントでサービス証明書を指定する必要があります。  
+  
+ サービスは、証明書を常に指定する必要があります。  
+  
+ このプロパティが true の場合、サービス証明書のメッセージ レベルの SSL ネゴシエーションは、IssuerAddress プロパティと IssuerBinding プロパティ (または LocalIssuerAddress プロパティと LocalIssuerBinding プロパティ) を通して指定されたセキュリティ トークン サービスにセキュリティ トークンの発行が要求される前に実行されます。  
+  
+   
+  
+## Examples  
+ バインディングからこのプロパティにアクセスして設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#6](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#6)]
+ [!code-vb[WSFederationHttpSecurity#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeAlgorithmSuite">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeAlgorithmSuite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeAlgorithmSuite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeAlgorithmSuite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージを SOAP レベルで保護するために使用されるアルゴリズム スイートをシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />アルゴリズム スイートをシリアル化する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeClaimTypeRequirements">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeClaimTypeRequirements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeClaimTypeRequirements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeClaimTypeRequirements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存の任意のクレームの種類の要件をシリアル化できることを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />シリアル化するための要件がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeEstablishSecurityContext">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeEstablishSecurityContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeEstablishSecurityContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeEstablishSecurityContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ コンテキストが既定値ではないためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />コンテキストがシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeIssuedKeyType">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeIssuedKeyType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeIssuedKeyType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeIssuedKeyType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発行済みキーの種類が既定値ではないためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、型をシリアル化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeNegotiateServiceCredential">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeNegotiateServiceCredential ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeNegotiateServiceCredential() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeNegotiateServiceCredential" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス資格情報のネゴシエーションのプロセスが既定のプロセスではないためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、プロセスをシリアル化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTokenRequestParameters">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTokenRequestParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTokenRequestParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FederatedMessageSecurityOverHttp.ShouldSerializeTokenRequestParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存の任意のトークン要求パラメーターをシリアル化できることを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />シリアル化するパラメーターがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenRequestParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt; TokenRequestParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Xml.XmlElement&gt; TokenRequestParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Xml.XmlElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンの要求時にセキュリティ トークン サービスへのメッセージ本文で送信される XML 要素のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.ObjectModel.Collection`1" /> 型の <see cref="T:System.Xml.XmlElement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるコレクションは、トークンの要求時にセキュリティ トークン サービスに送信される追加の XML 要素をメッセージ本文に指定するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

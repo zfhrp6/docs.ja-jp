@@ -1,0 +1,131 @@
+<Type Name="ProcessorArchitecture" FullName="Microsoft.Build.Utilities.ProcessorArchitecture">
+  <TypeSignature Language="C#" Value="public static class ProcessorArchitecture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ProcessorArchitecture extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.ProcessorArchitecture" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のシステムのプロセッサ アーキテクチャに基づいて、MSBuild で使用するツールセット内の正しいツールを決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールセットには、コンパイラは、さまざまな状況で使用されているなど、いくつかのツールが含まれています。 <xref:System.Reflection.ProcessorArchitecture>現在のシステムのアーキテクチャまたは x86、AMD64 などの CPU に基づくこれらのツールのどちらを使用する必要があります決定となります。  
+  
+ ツールセットの詳細については、次を参照してください。[標準とカスタム ツールセット構成](http://msdn.microsoft.com/library/15a048c8-5ad3-448e-b6e9-e3c5d7147ed2)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AMD64">
+      <MemberSignature Language="C#" Value="public const string AMD64;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string AMD64" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.ProcessorArchitecture.AMD64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>AMD64 プロセッサを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ARM">
+      <MemberSignature Language="C#" Value="public const string ARM;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ARM" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.ProcessorArchitecture.ARM" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ARM プロセッサを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentProcessArchitecture">
+      <MemberSignature Language="C#" Value="public static string CurrentProcessArchitecture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CurrentProcessArchitecture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.ProcessorArchitecture.CurrentProcessArchitecture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの現在のプロセッサ アーキテクチャを取得します。</summary>
+        <value>プロセッサ アーキテクチャの値を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IA64">
+      <MemberSignature Language="C#" Value="public const string IA64;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string IA64" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.ProcessorArchitecture.IA64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IA64 プロセッサを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MSIL">
+      <MemberSignature Language="C#" Value="public const string MSIL;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string MSIL" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.ProcessorArchitecture.MSIL" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MSIL を表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X86">
+      <MemberSignature Language="C#" Value="public const string X86;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string X86" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.ProcessorArchitecture.X86" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>x86 プロセッサを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,346 @@
+<Type Name="DnsEndPoint" FullName="System.Net.DnsEndPoint">
+  <TypeSignature Language="C#" Value="public class DnsEndPoint : System.Net.EndPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DnsEndPoint extends System.Net.EndPoint" />
+  <TypeSignature Language="DocId" Value="T:System.Net.DnsEndPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.EndPoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク エンドポイントを、ホスト名として、または IP アドレスとポート番号の文字列表記として表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint>クラスには、ホスト名または IP アドレスとホスト上のサービスに接続するアプリケーションで必要なリモート ポート情報が含まれています。 ホスト名またはサービスの IP アドレスとポート番号を組み合わせることによって、<xref:System.Net.DnsEndPoint>クラスのフォームへの接続がサービス をポイントします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DnsEndPoint (string host, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string host, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="host">ホスト名または IP アドレスの文字列表現。</param>
+        <param name="port">使用可能なポートを指定する、アドレス、または 0 に関連付けられているポート番号。 <c>ポート</c>ホストの順序で。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Net.DnsEndPoint" /> IP アドレスとポート番号のホスト名、または文字列表現を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.%23ctor%28System.String%2CSystem.Int32%29>コンス トラクターを初期化するために使用できる、<xref:System.Net.DnsEndPoint>クラスのホスト名または IP アドレスとポートを表す文字列を使用します。 このコンス トラクターを設定、<xref:System.Net.DnsEndPoint.AddressFamily%2A>プロパティを<xref:System.Net.Sockets.AddressFamily.Unknown>です。  
+  
+ このコンス トラクターを使用して IP の文字列表記ではなくホスト名でアドレスしている場合、アドレス ファミリの<xref:System.Net.DnsEndPoint>残ります<xref:System.Net.Sockets.AddressFamily.Unknown>使用後にします。 <xref:System.Net.DnsEndPoint.AddressFamily%2A>いずれかのプロパティ<xref:System.Net.Sockets.Socket>への呼び出しによって作成された、<xref:System.Net.Sockets.Socket.ConnectAsync%2A>メソッドは、接続が正常にすることができます、最初のアドレスのアドレス ファミリになります (必ずしも、最初のアドレスを解決する) を確立します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="host" />パラメーターには、空の文字列が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="host" />パラメーターは、<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。  
+  
+ または  
+  
+ <paramref name="port" /> が <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DnsEndPoint (string host, int port, System.Net.Sockets.AddressFamily addressFamily);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string host, int32 port, valuetype System.Net.Sockets.AddressFamily addressFamily) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsEndPoint.#ctor(System.String,System.Int32,System.Net.Sockets.AddressFamily)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+        <Parameter Name="addressFamily" Type="System.Net.Sockets.AddressFamily" />
+      </Parameters>
+      <Docs>
+        <param name="host">ホスト名または IP アドレスの文字列表現。</param>
+        <param name="port">使用可能なポートを指定する、アドレス、または 0 に関連付けられているポート番号。 <c>ポート</c>ホストの順序で。</param>
+        <param name="addressFamily"><see cref="T:System.Net.Sockets.AddressFamily" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Net.DnsEndPoint" /> IP アドレス、ポート番号、およびアドレス ファミリのホスト名、または文字列表現を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.%23ctor%28System.String%2CSystem.Int32%2CSystem.Net.Sockets.AddressFamily%29>コンス トラクターを初期化するために使用できる、<xref:System.Net.DnsEndPoint>クラスのホスト名または IP アドレス、ポート、およびアドレス ファミリを表す文字列を使用します。  
+  
+ コンス トラクターを使用して、IP アドレスの文字列形式ではなく、ホスト名、アドレス ファミリは、指定されたアドレス ファミリの値のアドレスが優先 DNS 解決を制限します。 として指定したアドレス ファミリをコンス トラクターを使用すると<xref:System.Net.Sockets.AddressFamily.Unknown>のアドレス ファミリ、<xref:System.Net.DnsEndPoint>残ります<xref:System.Net.Sockets.AddressFamily.Unknown>使用後にします。 <xref:System.Net.DnsEndPoint.AddressFamily%2A>いずれかのプロパティ<xref:System.Net.Sockets.Socket>への呼び出しによって作成された、<xref:System.Net.Sockets.Socket.ConnectAsync%2A>メソッドは、接続が正常にすることができます、最初のアドレスのアドレス ファミリになります (必ずしも、最初のアドレスを解決する) を確立します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="host" />パラメーターには、空の文字列が含まれています。  
+  
+ または  
+  
+ <paramref name="addressFamily" /> は <see cref="F:System.Net.Sockets.AddressFamily.Unknown" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="host" />パラメーターは、<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。  
+  
+ または  
+  
+ <paramref name="port" /> が <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFamily">
+      <MemberSignature Language="C#" Value="public override System.Net.Sockets.AddressFamily AddressFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.AddressFamily AddressFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Net.DnsEndPoint.AddressFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.AddressFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) アドレス ファミリを取得します。</summary>
+        <value><see cref="T:System.Net.Sockets.AddressFamily" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.AddressFamily%2A>プロパティのインスタンスのアドレス ファミリに示される、<xref:System.Net.DnsEndPoint>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsEndPoint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand">A<see cref="T:System.Net.DnsEndPoint" />現在のインスタンスと比較します。</param>
+        <summary>2 つの <see cref="T:System.Net.DnsEndPoint" /> オブジェクトを比較します。</summary>
+        <returns>
+          2 つの <see cref="T:System.Net.DnsEndPoint" /> インスタンスが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.Equals%2A>メソッドは現在、比較<xref:System.Net.DnsEndPoint>インスタンス、`comparand`パラメーターを返す`true`2 つのインスタンスには、同一のエンドポイントが含まれている場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsEndPoint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ値を返します、<see cref="T:System.Net.DnsEndPoint" />です。</summary>
+        <returns>整数ハッシュ値を<see cref="T:System.Net.DnsEndPoint" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.GetHashCode%2A>メソッドのハッシュ コードを返します、<xref:System.Net.DnsEndPoint>です。 この値は、ハッシュ テーブル内のキーとして使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public string Host { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Host" />
+      <MemberSignature Language="DocId" Value="P:System.Net.DnsEndPoint.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストのホストのインターネット プロトコル (IP) アドレスの名前または文字列の形式を取得します。</summary>
+        <value>IP アドレスのホスト名または文字列表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.Host%2A>プロパティがのインスタンスの IP アドレスのホスト名または文字列表現を示す、<xref:System.Net.DnsEndPoint>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.DnsEndPoint.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポート番号を取得、<see cref="T:System.Net.DnsEndPoint" />です。</summary>
+        <value>0 を 0 xffff の範囲のポート番号を示す整数値、<see cref="T:System.Net.DnsEndPoint" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsEndPoint.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホスト名またはの文字列表現の IP アドレスとポート番号を返します、<see cref="T:System.Net.DnsEndPoint" />です。</summary>
+        <returns>アドレス ファミリ、ホスト名または IP アドレス文字列、および指定したポート番号を含む文字列<see cref="T:System.Net.DnsEndPoint" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.DnsEndPoint.ToString%2A>メソッドは、アドレス ファミリ、ホスト名または IP アドレス文字列、およびポート番号を表す文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

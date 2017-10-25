@@ -1,0 +1,437 @@
+<Type Name="SpinWait" FullName="System.Threading.SpinWait">
+  <TypeSignature Language="C#" Value="public struct SpinWait" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit SpinWait extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.SpinWait" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スピンベースの待機のサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.SpinWait>共通のスピン ロジックをカプセル化します。 シングル プロセッサ コンピューターでは、生成がビジー状態の待機時間ではなく常に使用し、ハイパー スレッディング テクノロジを採用する Intel プロセッサを搭載したコンピューターのハードウェア スレッドの不足を防ぐに役立ちます。 SpinWait は回転とは true。 生成の適切な組み合わせをカプセル化します。  
+  
+ <xref:System.Threading.SpinWait>低レベルのコードが不要な割り当てのオーバーヘッドを心配せず SpinWait を利用できることをつまり値型です。 SpinWait は通常のアプリケーションの一般的に便利です。 ほとんどの場合など、.NET Framework によって提供される同期クラスを使用する必要があります<xref:System.Threading.Monitor>です。 スピン待機している必要がある、ただし、ほとんどの場合は、<xref:System.Threading.SpinWait>型を優先する必要があります、<xref:System.Threading.Thread.SpinWait%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Threading.SpinWait>:  
+  
+ [!code-csharp[System.Threading.SpinWait#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.spinwait/cs/spinwait.cs#01)]
+ [!code-vb[System.Threading.SpinWait#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.spinwait/vb/spinwait.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>中に<see cref="T:System.Threading.SpinWait" />は、同時実行アプリケーションで使用するよう設計されていないものでは複数のスレッドから同時に使用します。 <see cref="T:System.Threading.SpinWait" />メンバーはスレッド セーフではありません。 複数のスレッドが起動する必要がある場合の独自のインスタンスを使用して各必要があります<see cref="T:System.Threading.SpinWait" />です。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.SpinWait.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間の数を取得<see cref="M:System.Threading.SpinWait.SpinOnce" />はこのインスタンスで呼び出されました。</summary>
+        <value>時間の数を表す整数を返します<see cref="M:System.Threading.SpinWait.SpinOnce" />はこのインスタンスで呼び出されました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSpinWillYield">
+      <MemberSignature Language="C#" Value="public bool NextSpinWillYield { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NextSpinWillYield" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.SpinWait.NextSpinWillYield" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、次への呼び出しに<see cref="M:System.Threading.SpinWait.SpinOnce" />強制コンテキストの切り替えをトリガーする、プロセッサが得られます。</summary>
+        <value>次の呼び出しにするかどうか<see cref="M:System.Threading.SpinWait.SpinOnce" />強制コンテキストの切り替えをトリガーする、プロセッサが得られます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シングル プロセッサ コンピューターでは、<xref:System.Threading.SpinWait.SpinOnce%2A>常に、プロセッサが生成されます。 複数の cpu を搭載したマシンで<xref:System.Threading.SpinWait.SpinOnce%2A>不特定数の呼び出しの後に生成可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.SpinWait.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スピン カウンターをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、<xref:System.Threading.SpinWait.SpinOnce%2A>と<xref:System.Threading.SpinWait.NextSpinWillYield%2A>動作場合とないへの呼び出し<xref:System.Threading.SpinWait.SpinOnce%2A>がこのインスタンスに発行されました。 場合、<xref:System.Threading.SpinWait>インスタンスが何度も再利用をすぐに応答を避けるためにリセットすることができます。  
+  
+   
+  
+## Examples  
+ 単純なロック制御不要のスタックの実装で SpinWait を使用する例を次に示します。 (これは単なる例です。 効率的なスレッド セーフであるスタックが必要な場合、ConcurrentStack の使用を検討します。)  
+  
+ `// C#`  
+  
+ `public class LockFreeStack<T>`  
+  
+ `{`  
+  
+ `private volatile Node m_head;`  
+  
+ `private class Node { public Node Next; public T Value; }`  
+  
+ `public void Push(T item)`  
+  
+ `{`  
+  
+ `var spin = new SpinWait();`  
+  
+ `Node node = new Node { Value = item }, head;`  
+  
+ `while (true)`  
+  
+ `{`  
+  
+ `head = m_head;`  
+  
+ `node.Next = head;`  
+  
+ `if (Interlocked.CompareExchange(ref m_head, node, head) == head) break;`  
+  
+ `spin.SpinOnce();`  
+  
+ `}`  
+  
+ `}`  
+  
+ `public bool TryPop(out T result)`  
+  
+ `{`  
+  
+ `result = default(T);`  
+  
+ `var spin = new SpinWait();`  
+  
+ `Node head;`  
+  
+ `while (true)`  
+  
+ `{`  
+  
+ `head = m_head;`  
+  
+ `if (head == null) return false;`  
+  
+ `if (Interlocked.CompareExchange(ref m_head, head.Next, head) == head)`  
+  
+ `{`  
+  
+ `result = head.Value;`  
+  
+ `return true;`  
+  
+ `}`  
+  
+ `spin.SpinOnce();`  
+  
+ `}`  
+  
+ `}`  
+  
+ `}`  
+  
+ `' Visual Basic`  
+  
+ `Public Class LockFreeStack(Of T)`  
+  
+ `Private m_head As Node`  
+  
+ `Private Class Node`  
+  
+ `Public [Next] As Node`  
+  
+ `Public Value As T`  
+  
+ `End Class`  
+  
+ `Public Sub Push(ByVal item As T)`  
+  
+ `Dim spin As New SpinWait()`  
+  
+ `Dim head As Node, node As New Node With {.Value = item}`  
+  
+ `While True`  
+  
+ `Thread.MemoryBarrier()`  
+  
+ `head = m_head`  
+  
+ `node.Next = head`  
+  
+ `If Interlocked.CompareExchange(m_head, node, head) Is head Then Exit While`  
+  
+ `spin.SpinOnce()`  
+  
+ `End While`  
+  
+ `End Sub`  
+  
+ `Public Function TryPop(ByRef result As T) As Boolean`  
+  
+ `result = CType(Nothing, T)`  
+  
+ `Dim spin As New SpinWait()`  
+  
+ `Dim head As Node`  
+  
+ `While True`  
+  
+ `Thread.MemoryBarrier()`  
+  
+ `head = m_head`  
+  
+ `If head Is Nothing Then Return False`  
+  
+ `If Interlocked.CompareExchange(m_head, head.Next, head) Is head Then`  
+  
+ `result = head.Value`  
+  
+ `Return True`  
+  
+ `End If`  
+  
+ `spin.SpinOnce()`  
+  
+ `End While`  
+  
+ `End Function`  
+  
+ `End Class`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinOnce">
+      <MemberSignature Language="C#" Value="public void SpinOnce ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SpinOnce() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.SpinWait.SpinOnce" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>単一のスピンを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは通常と呼ばれ、ループ内で時間数に基づく動作を変更することがあります、<xref:System.Threading.SpinWait.SpinOnce%2A>が呼び出されてきたこのインスタンスにします。 各スピンの結果、<xref:System.Threading.Thread.SpinWait%2A>呼び出されるメソッド。 回数のカウントが保持される<xref:System.Threading.SpinWait.SpinOnce%2A>が呼び出された回数のしきい値に達すると、および、<xref:System.Threading.Thread.Yield%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinUntil">
+      <MemberSignature Language="C#" Value="public static void SpinUntil (Func&lt;bool&gt; condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SpinUntil(class System.Func`1&lt;bool&gt; condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Func&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="condition">これまでを繰り返し実行するデリゲートは、true を返します。</param>
+        <summary>指定した条件が満たされるまでを回転します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="condition" /> 引数が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinUntil">
+      <MemberSignature Language="C#" Value="public static bool SpinUntil (Func&lt;bool&gt; condition, int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SpinUntil(class System.Func`1&lt;bool&gt; condition, int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Func&lt;System.Boolean&gt;" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="condition">これまでを繰り返し実行するデリゲートは、true を返します。</param>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>指定した条件が満たされるまで、または指定されたタイムアウトの有効期限が切れてを回転します。</summary>
+        <returns>タイムアウト内に条件が満たされた場合は true。それ以外の場合は false</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="condition" /> 引数が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は無限のタイムアウトを表す -1 以外の負の数です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinUntil">
+      <MemberSignature Language="C#" Value="public static bool SpinUntil (Func&lt;bool&gt; condition, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SpinUntil(class System.Func`1&lt;bool&gt; condition, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean},System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Func&lt;System.Boolean&gt;" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="condition">これまでを繰り返し実行するデリゲートは、true を返します。</param>
+        <param name="timeout">A<see cref="T:System.TimeSpan" />待機するミリ秒数を表すか、無制限に待機する-1 ミリ秒を表す TimeSpan。</param>
+        <summary>指定した条件が満たされるまで、または指定されたタイムアウトの有効期限が切れてを回転します。</summary>
+        <returns>タイムアウト内に条件が満たされた場合は true。それ以外の場合は false</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="condition" /> 引数が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" />無限のタイムアウト - または - タイムアウトはよりも大きい値を表す-1 ミリ秒以外の負の数値<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

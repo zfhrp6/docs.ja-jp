@@ -1,0 +1,573 @@
+<Type Name="ListBox" FullName="System.Web.UI.WebControls.ListBox">
+  <TypeSignature Language="C#" Value="public class ListBox : System.Web.UI.WebControls.ListControl, System.Web.UI.IPostBackDataHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListBox extends System.Web.UI.WebControls.ListControl implements class System.Web.UI.IPostBackDataHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ListControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackDataHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ValidationProperty("SelectedItem")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単一または複数の項目を選択できるリスト ボックス コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、 <xref:System.Web.UI.WebControls.ListBox> 1 つをリスト コントロールを作成するコントロールまたは複数項目を選択します。 使用して、<xref:System.Web.UI.WebControls.ListBox.Rows%2A>プロパティ、コントロールの高さを指定します。 複数の項目の選択を有効にするには設定、<xref:System.Web.UI.WebControls.ListBox.SelectionMode%2A>プロパティを`ListSelectionMode.Multiple`です。  
+  
+ 表示する項目を指定する、<xref:System.Web.UI.WebControls.ListBox>コントロールを配置、`ListItem`要素開始タグと終了タグの間には、各エントリに、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.ListControl.Items%2A>を確認するコレクション、<xref:System.Web.UI.WebControls.ListItem>に含まれるオブジェクト、<xref:System.Web.UI.WebControls.ListBox>コントロール。 など、その選択した項目を指定できます、<xref:System.Web.UI.WebControls.ListBox>列挙することによってコントロール、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクションとテスト、<xref:System.Web.UI.WebControls.ListItem.Selected%2A>の各値<xref:System.Web.UI.WebControls.ListItem>要素。  
+  
+ <xref:System.Web.UI.WebControls.ListBox>コントロールには、データ バインディングもサポートしています。 データ ソースにコントロールをバインドする最初のいずれかなどのデータ ソースを作成、<xref:System.Web.UI.DataSourceControl>コントロールに表示するアイテムを含むオブジェクト。 次に、使用、<xref:System.Web.UI.Control.DataBind%2A>をデータ ソースにバインドするメソッド、<xref:System.Web.UI.WebControls.ListBox>コントロール。 使用して、<xref:System.Web.UI.WebControls.ListControl.DataTextField%2A>と<xref:System.Web.UI.WebControls.ListControl.DataValueField%2A>プロパティにバインドするデータ ソースのフィールドを指定する、`Text`と`Value`プロパティ、それぞれ、各リスト項目コントロールにします。 <xref:System.Web.UI.WebControls.ListBox>コントロールがデータ ソースからの情報を表示してようになりました。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 検証コントロールを使用すると、コントロールに入力されたテキストを表示する前にユーザー入力を検証します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:ListBox  
+    AccessKey="string"  
+    AppendDataBoundItems="True|False"  
+    AutoPostBack="True|False"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CausesValidation="True|False"  
+    CssClass="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    DataTextField="string"  
+    DataTextFormatString="string"  
+    DataValueField="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDataBound="DataBound event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelectedIndexChanged="SelectedIndexChanged event handler"  
+    OnTextChanged="TextChanged event handler"  
+    OnUnload="Unload event handler"  
+    Rows="integer"  
+    runat="server"  
+    SelectedIndex="integer"  
+    SelectedValue="string"  
+    SelectionMode="Single|Multiple"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    ValidationGroup="string"  
+    Visible="True|False"  
+    Width="size"  
+>  
+            <asp:ListItem  
+                Enabled="True|False"  
+                Selected="True|False"  
+                Text="string"  
+                Value="string"  
+            />  
+</asp:ListBox>  
+```  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ [!code-aspx-csharp[Classic ListBox Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ListBox Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ListBox Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ListBox Example 2/VB/sourcevb.aspx#1)]  
+  
+ 次の例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ListBox>複数選択をサポートするコントロール。  
+  
+ [!code-aspx-csharp[Classic ListBox Example 2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ListBox Example 2/CS/source3cs.aspx#3)]
+ [!code-aspx-vb[Classic ListBox Example 2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ListBox Example 2/VB/source3vb.aspx#3)]  
+  
+ 次の例で作成する方法、<xref:System.Web.UI.WebControls.ListBox>コントロール データ バインディングを使用します。  
+  
+ [!code-aspx-csharp[Classic ListBox Example 2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ListBox Example 2/CS/source2cs.aspx#2)]
+ [!code-aspx-vb[Classic ListBox Example 2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ListBox Example 2/VB/source2vb.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.ListBox>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML のコンテンツを表示する出力ストリーム。</param>
+        <summary>表示する属性のリストに <see langword="name" />、<see langword="size" />、<see langword="multiple" />、および <see langword="onchange" /> を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ オーバーライドする方法を次のコード例に示します、<xref:System.Web.UI.WebControls.ListBox.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.ListBox>常にリスト項目のテキストが太字で表示されます。  
+  
+ [!code-aspx-csharp[CustomListBoxAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomListBoxAddAttributesToRender/CS/custom_listbox_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomListBoxAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomListBoxAddAttributesToRender/VB/custom_listbox_addattributestorendervb.aspx#1)]  
+  
+ [!code-csharp[CustomListBoxAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomListBoxAddAttributesToRender/CS/custom_listbox_addattributestorender.cs#2)]
+ [!code-vb[CustomListBoxAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomListBoxAddAttributesToRender/VB/custom_listbox_addattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListBox.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの境界線の色を取得または設定します。</summary>
+        <value>コントロールの境界線の色を表す <see cref="T:System.Drawing.Color" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ListBox.BorderColor%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.WebControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.BorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.BorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListBox.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの境界線スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ListBox.BorderStyle%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.WebControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit BorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListBox.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの境界線の幅を取得または設定します。</summary>
+        <value>コントロールの境界線の幅を表す <see cref="T:System.Web.UI.WebControls.Unit" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ListBox.BorderWidth%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.WebControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedIndices">
+      <MemberSignature Language="C#" Value="public virtual int[] GetSelectedIndices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32[] GetSelectedIndices() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.GetSelectedIndices" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListBox" /> コントロールの現在選択されている項目について、インデックス値の配列を取得します。</summary>
+        <returns>整数の配列。各整数は、リスト ボックスの選択された項目のインデックスを表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListBox.GetSelectedIndices%2A>識別または選択したアイテムにアクセスする方法、<xref:System.Web.UI.WebControls.ListBox>コントロール。 返される配列内の各要素は、選択されたリスト項目のインデックスを表します。 内の項目にアクセスするインデックス値を使用することができます、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPostData">
+      <MemberSignature Language="C#" Value="protected virtual bool LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">使用される、コントロールのキー識別子をインデックスに、 <c>postCollection</c>です。</param>
+        <param name="postCollection">コントロール ID によってインデックス化された値の情報を格納している <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary>リスト コントロールのポストされた内容が前回ポストされた内容と異なる場合に、その内容を読み込みます。</summary>
+        <returns>
+          ポストされた内容が前回ポストされた内容と異なる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.ListBox>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A>メソッドか場合の状態、<xref:System.Web.UI.WebControls.ListBox>コントロールが変更されました。 つまり、そのかどうかを各リスト項目コントロールに同じ<xref:System.Web.UI.WebControls.ListItem.Selected%2A>前回ポストされた値と値。 ユーザーがコントロールの変更で項目を選択する、<xref:System.Web.UI.WebControls.ListItem.Selected%2A>の対応する値<xref:System.Web.UI.WebControls.ListItem>内のオブジェクト、<xref:System.Web.UI.WebControls.ListControl.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.ListBox>コントロール。 コントロールでは、いくつかのリスト項目が選択されている場合、または場合、<xref:System.Web.UI.WebControls.ListBox>を無効にした<xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A>返します`false`です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A>メソッドを返します。`true`コントロール、ASP.NET ページ フレームワーク呼び出し、<xref:System.Web.UI.WebControls.RadioButtonList.RaisePostDataChangedEvent%2A>コントロールのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>クライアントに表示する前に <see cref="T:System.Web.UI.WebControls.ListBox" /> コントロールを構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListBox.OnPreRender%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.ListBox>クラスです。 <xref:System.Web.UI.WebControls.ListBox.OnPreRender%2A>メソッドにより、派生クラスを処理する、<xref:System.Web.UI.Control.PreRender>イベント デリゲートを結び付けずにします。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ <xref:System.Web.UI.WebControls.ListBox.OnPreRender%2A>メソッドがビュー状態とのコンテンツの表示を保存する前に、必要な表示前の手順を実行、<xref:System.Web.UI.WebControls.ListBox>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.ListBox.OnPreRender(System.EventArgs)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.ListBox.OnPreRender(System.EventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> コントロールのポストされたデータが変更されるたびに、<see cref="T:System.Web.UI.WebControls.ListBox" /> メソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ ASP.NET ページ フレームワークによって、<xref:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent%2A>メソッドを<xref:System.Web.UI.WebControls.ListBox>タイミングを制御、<xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A>メソッドは、リスト項目の状態が変更されたことを示しますで、<xref:System.Web.UI.WebControls.ListBox>コントロール。 <xref:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A>させる方法、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>イベント。 コントロール開発者、<xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A>ユーザーがコントロールにリスト項目を選択したときに、カスタム処理を実行するメソッド。  
+  
+ <xref:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent%2A>メソッドは、発生させる前に検証を実行できます必要に応じて、<xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged>コントロールのイベントです。 内のリスト項目にしたときに、ページ上のコントロールのグループを検証する、<xref:System.Web.UI.WebControls.ListBox>が選択されている設定、<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>と<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティ`true`で検証するコントロールのグループを指定し、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rows">
+      <MemberSignature Language="C#" Value="public virtual int Rows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListBox.Rows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(4)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListBox" /> コントロールに表示する行数を取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListBox" /> コントロールに表示する行数。 既定値は <see langword="4" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListBox.Rows%2A>プロパティを表示する行の数を指定する、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+> [!CAUTION]
+>  行の数は、1 ~ 2000 の間でなければなりません。 この範囲外の値には、例外が発生します。  
+  
+ 値、<xref:System.Web.UI.WebControls.ListBox.Rows%2A>プロパティは viewstate に格納されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ListBox.Rows%2A>で 6 つの行を表示するプロパティ、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ [!code-aspx-csharp[Classic ListBox.Rows Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ListBox.Rows Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic ListBox.Rows Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ListBox.Rows Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された行数は、いずれか大きいか小さい 2000年よりもです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListSelectionMode SelectionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ListSelectionMode SelectionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListBox.SelectionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListSelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListBox" /> コントロールの選択モードを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListSelectionMode" /> 値のいずれか。 既定値は <see langword="Single" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListBox.SelectionMode%2A>のモードの動作を指定するプロパティ、<xref:System.Web.UI.WebControls.ListBox>コントロール。 このプロパティを設定`ListSelectionMode.Single`から 1 つの項目のみを選択できることを示します、<xref:System.Web.UI.WebControls.ListBox>コントロール、中に`ListSelectionMode.Multiple`複数の項目を選択することを指定します。  
+  
+ 値、<xref:System.Web.UI.WebControls.ListBox.SelectionMode%2A>プロパティは viewstate に格納されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListBox.SelectionMode%2A>から複数の選択肢を選択するユーザーを有効にするプロパティ、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ [!code-aspx-csharp[ListBoxSelectionMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListBoxSelectionMode/CS/listboxselectionmodecs.aspx#1)]
+ [!code-aspx-vb[ListBoxSelectionMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListBoxSelectionMode/VB/listboxselectionmodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された選択モードは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ListSelectionMode" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.LoadPostData">
+      <MemberSignature Language="C#" Value="bool IPostBackDataHandler.LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.UI.IPostBackDataHandler.LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">読み込まれる内容を参照する、ポストされたコレクション内のインデックス。</param>
+        <param name="postCollection">サーバーにポストされたコレクション。</param>
+        <summary>リスト コントロールのポストされた内容が前回ポストされた内容と異なる場合に、その内容を読み込みます。</summary>
+        <returns>
+          ポストされた内容が前回ポストされた内容と異なる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.ListBox.LoadPostData%2A?displayProperty=nameWithType>ポストされたデータへの変更を処理するメソッド、<xref:System.Web.UI.WebControls.ListBox>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.ListBox.System%23Web%23UI%23IPostBackDataHandler%23LoadPostData%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.ListBox> のインスタンスが <xref:System.Web.UI.IPostBackDataHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ポストされたデータを処理するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.ListBox" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.ListBox.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.ListBox.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />コントロールのポストされたデータを処理するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="void IPostBackDataHandler.RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListBox.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> コントロールのポストされたデータが変更されるたびに、<see cref="T:System.Web.UI.WebControls.ListBox" /> メソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent%2A?displayProperty=nameWithType>メソッド イベントを発生させるときにポストされたデータを<xref:System.Web.UI.WebControls.ListBox>オブジェクトに対する変更。  
+  
+ <xref:System.Web.UI.WebControls.ListBox.System%23Web%23UI%23IPostBackDataHandler%23LoadPostData%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.ListBox> のインスタンスが <xref:System.Web.UI.IPostBackDataHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>イベントを発生させるためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.ListBox" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.ListBox.RaisePostDataChangedEvent" />コントロールのポストされたデータが変更されたときにイベントを発生させる方法です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

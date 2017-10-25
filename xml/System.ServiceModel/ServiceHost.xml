@@ -1,0 +1,489 @@
+<Type Name="ServiceHost" FullName="System.ServiceModel.ServiceHost">
+  <TypeSignature Language="C#" Value="public class ServiceHost : System.ServiceModel.ServiceHostBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceHost extends System.ServiceModel.ServiceHostBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ServiceHostBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービスのホストを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス モデルのプログラミング モデルで使用されるホストを実装します。  
+  
+ インターネット インフォメーション サービス (IIS) と Windows アクティベーション サービス (WAS) のどちらも使用せずにサービスを公開する場合は、<xref:System.ServiceModel.ServiceHost> クラスを使用して、クライアント アプリケーションが使用するサービスを構成して公開します。 IIS と WAS はどちらも <xref:System.ServiceModel.ServiceHost> オブジェクトと自動的に対話します。  
+  
+ 呼び出し元が使用できるようにサービスを公開するために、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、サービスの完全な説明を必要とします (<xref:System.ServiceModel.Description.ServiceDescription> クラスで表されます)。 <xref:System.ServiceModel.ServiceHost> クラスは、サービスの種類と構成情報から <xref:System.ServiceModel.Description.ServiceDescription> を作成した後、その説明を使用して、説明に含まれるエンドポイント用の <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトを作成します。  
+  
+ <xref:System.ServiceModel.ServiceHost> オブジェクトを使用して、サービスのロード、エンドポイントの構成、セキュリティ設定の適用、および受信要求を処理するためのリスナーの起動を行います。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_SelfHost#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_selfhost/cs/wholeenchilada.cs#1)]
+ [!code-vb[S_SelfHost#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_selfhost/vb/wholeenchilada.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceHost ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHost> クラスのインスタンスを作成するために使用するコンストラクターは 2 つあります。 ほとんどの場合は、サービスの種類を入力パラメーターとして指定する <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Type%2CSystem.Uri%5B%5D%29> コンストラクターを使用します。 ホストは、これを使用して、必要に応じて新しいサービスを作成できます。 サービス ホストにサービスの特定のシングルトン インスタンスを使用させる場合のみ、<xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> コンストラクターを代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceHost (object singletonInstance, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object singletonInstance, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor(System.Object,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="singletonInstance" Type="System.Object" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="singletonInstance">ホストされたサービスのインスタンス。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Array" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>指定したサービスのインスタンスと、そのベース アドレスを使用して、<see cref="T:System.ServiceModel.ServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、シングルトン サービスによって使用される特定のオブジェクト インスタンスを用意する場合に、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> を実装するための代替方法として使用します。 サービスを実装する型を作成することが困難な場合 (たとえば、パラメーターを持たない既定のパブリック コンストラクターを実装しない場合) は、このオーバーロードを使用できます。  
+  
+ このオーバーロードにオブジェクトを指定すると、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] のインスタンス化動作に関連するいくつかの機能が異なる動作をすることに注意してください。 たとえば、このコンストラクター オーバーロードを使用して既知のオブジェクト インスタンスを指定した場合、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> を呼び出しても効果はありません。 他のインスタンス解放機構も、同様に無視されます。 <xref:System.ServiceModel.ServiceHost> は常に、すべての操作について <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode?displayProperty=nameWithType> に設定されているかのように動作します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEServiceHost2#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost2/cs/service.cs#1)]
+ [!code-vb[S_UEServiceHost2#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost2/vb/service.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="singletonInstance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceHost (Type serviceType, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor(System.Type,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="serviceType">ホストされるサービスの型。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>指定したサービスの種類と、そのベース アドレスを使用して、<see cref="T:System.ServiceModel.ServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、サービスの種類があり、必要に応じて新しいインスタンスを作成できる場合に使用します。これは、シングルトン インスタンスが必要な場合でも使用します。 サービス ホストにサービスの特定のシングルトン インスタンスを使用させる場合のみ、<xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> コンストラクターを代わりに使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.ServiceHost> クラスを使用して Windows Communication Foundation サービスをホストする方法を示しています。  
+  
+ [!code-csharp[S_UEServiceHost#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost/cs/service.cs#1)]
+ [!code-vb[S_UEServiceHost#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost/vb/service.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されるエンドポイントのアドレス。</param>
+        <summary>指定されたコントラクト、バインディング、およびエンドポイント アドレスを持つホストされるサービスに、サービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEServiceHost#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost/cs/service.cs#3)]
+ [!code-vb[S_UEServiceHost#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost/vb/service.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または <paramref name="address" /> は、<see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。</param>
+        <summary>指定したコントラクト、バインディング、およびエンドポイント アドレスを含む URI を使用して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEServiceHost#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost/cs/service.cs#4)]
+ [!code-vb[S_UEServiceHost#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost/vb/service.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または <paramref name="address" /> は、<see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">サービスのエンドポイント アドレス。</param>
+        <param name="listenUri">サービス エンドポイントがリッスンできる <see cref="T:System.Uri" />。</param>
+        <summary>指定したコントラクト、バインディング、エンドポイント アドレス、およびサービスがリッスンする URI を使用して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したものと同じ URI でリッスンする必要がある複数のエンドポイントがある場合は、メソッドのこのバージョンを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEServiceHost#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost/cs/service.cs#5)]
+ [!code-vb[S_UEServiceHost#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost/vb/service.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または <paramref name="address" /> は、<see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。</param>
+        <param name="listenUri">サービス エンドポイントがリッスンできる <see cref="T:System.Uri" />。</param>
+        <summary>指定したコントラクト、バインド、エンドポイント アドレスを含む URI、およびサービスがリッスンする URI を使用して、ホストされるサービスにサービス エンドポイントを追加します。</summary>
+        <returns>ホストされるサービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したものと同じ URI でリッスンする必要がある複数のエンドポイントがある場合は、メソッドのこのバージョンを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEServiceHost#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueservicehost/cs/service.cs#6)]
+ [!code-vb[S_UEServiceHost#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueservicehost/vb/service.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="implementedContract" />、<paramref name="binding" />、または <paramref name="address" /> は、<see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">コントラクトが初期化されていません。またはコントラクト キーが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="protected override void ApplyConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.ApplyConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成ファイルからサービスの説明を読み込み、構築中のランタイムに適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDescription">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Description.ServiceDescription CreateDescription (out System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Description.ContractDescription&gt; implementedContracts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Description.ServiceDescription CreateDescription([out] class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt;&amp; implementedContracts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.CreateDescription(System.Collections.Generic.IDictionary{System.String,System.ServiceModel.Description.ContractDescription}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContracts" Type="System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Description.ContractDescription&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContracts">実装されているホストされるサービスのキー付きコントラクトを含む型 (<see cref="T:System.Collections.Generic.IDictionary`2" /> <see cref="T:System.String" />) のキー ペアを持つ<see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <summary>ホストされるサービスの説明を作成します。</summary>
+        <returns>ホストされるサービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カスタマイズしたプログラミング モデルからコントラクトの説明を作成するために使用します。 カスタマイズされたモデルを実装するには、対応する基本クラスのメソッドである <xref:System.ServiceModel.ServiceHostBase.CreateDescription%28System.Collections.Generic.IDictionary%7BSystem.String%2CSystem.ServiceModel.Description.ContractDescription%7D%40%29> をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ホストされるサービスの種類が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="InitializeDescription">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>種類またはインスタンスに基づいて、ホストされるサービスの説明を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.ServiceModel.ServiceHost.%23ctor%2A> の一部としてベース アドレスを渡すという要件がなくなります。 <xref:System.ServiceModel.ServiceHost> から継承されるクラスは、<xref:System.ServiceModel.ServiceHost.%23ctor%2A> を呼び出した後、ベース アドレスが使用可能な場合は、<xref:System.ServiceModel.ServiceHost.InitializeDescription%2A> のいずれかを呼び出すことができます。 これが、サービス モデル メタデータ ユーティリティ ツール (Svcutil.exe) が実装される方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="InitializeDescription">
+      <MemberSignature Language="C#" Value="protected void InitializeDescription (object singletonInstance, System.ServiceModel.UriSchemeKeyedCollection baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeDescription(object singletonInstance, class System.ServiceModel.UriSchemeKeyedCollection baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.InitializeDescription(System.Object,System.ServiceModel.UriSchemeKeyedCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="singletonInstance" Type="System.Object" />
+        <Parameter Name="baseAddresses" Type="System.ServiceModel.UriSchemeKeyedCollection" />
+      </Parameters>
+      <Docs>
+        <param name="singletonInstance">ホストされたサービスのインスタンス。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納している <see cref="T:System.ServiceModel.UriSchemeKeyedCollection" />。</param>
+        <summary>インスタンスと、指定したベース アドレスに基づいて、ホストされるサービスの説明を初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="singletonInstance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeDescription">
+      <MemberSignature Language="C#" Value="protected void InitializeDescription (Type serviceType, System.ServiceModel.UriSchemeKeyedCollection baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeDescription(class System.Type serviceType, class System.ServiceModel.UriSchemeKeyedCollection baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.InitializeDescription(System.Type,System.ServiceModel.UriSchemeKeyedCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.ServiceModel.UriSchemeKeyedCollection" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">ホストされるサービスの <see cref="T:System.Type" />。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納している <see cref="T:System.ServiceModel.UriSchemeKeyedCollection" />。</param>
+        <summary>種類と、指定したベース アドレスに基づいて、ホストされるサービスの説明を初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected override void OnClosed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.OnClosed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス ホストが閉じられるときに、ホストされているサービスで破棄可能なサービスを破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドする場合、<xref:System.ServiceModel.ServiceHost.OnClosed%2A>メソッドの基本を確認する必要があります。例外が発生した場合でも、OnClosed メソッドが呼び出されます。 次のコードは、これを行う方法を示しています。  
+  
+```  
+protected override void OnClosed()  
+{  
+    try  
+    {  
+        if (FaultFlagService.faultFlag == ThrowDuring.OnClosed)  
+        {  
+            FaultFlagService.faultFlag = ThrowDuring.Never;  
+            throw new ServiceActivationException("Faulting the service because FaultFlagService.faultFlag = ThrowDuring.OnClosed");  
+        }  
+    }  
+    finally  
+    {  
+        base.OnClosed();  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingletonInstance">
+      <MemberSignature Language="C#" Value="public object SingletonInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SingletonInstance" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHost.SingletonInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるサービスのシングルトン インスタンスを取得します。</summary>
+        <value>ホストされるサービス オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用されるサービスのインスタンスを制御する場合は、<xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> コンストラクターを使用して、ホストされるサービスのシングルトン インスタンスを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

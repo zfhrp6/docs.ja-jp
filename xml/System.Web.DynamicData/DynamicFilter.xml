@@ -1,0 +1,399 @@
+<Type Name="DynamicFilter" FullName="System.Web.DynamicData.DynamicFilter">
+  <TypeSignature Language="C#" Value="public class DynamicFilter : System.Web.UI.Control, System.Web.DynamicData.IFilterExpressionProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicFilter extends System.Web.UI.Control implements class System.Web.DynamicData.IFilterExpressionProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IFilterExpressionProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>指定した列を使用してテーブル行をフィルター処理するための UI を表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ClassContext](#ClassContext)  
+  
+-   [宣言型の構文](#DeclarativeSyntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.DynamicData.DynamicFilter>コントロールがテーブルの行をフィルター処理するための UI を生成するページのマークアップで使用します。 動的なデータは、~\DynamicData\Filters フォルダー内にある既定のフィルターのテンプレートを使用して UI を作成します。 これらのテンプレートは、外部キー、ブール値、および列挙型の列の型をサポートします。  
+  
+ 次の表は、実行できるタスクの一部を示します。  
+  
+|シナリオ|説明|  
+|--------------|-----------------|  
+|テーブルの行のフィルター処理に使用する列を指定します。|プロパティを使用して<xref:System.Web.DynamicData.DynamicFilter.DataField%2A>テーブル行のフィルター処理に使用する列を指定します。|  
+|使用して UI を作成するフィルターのテンプレートの名前を指定します。|プロパティを使用して<xref:System.Web.DynamicData.DynamicFilter.FilterUIHint%2A>を使用して UI を作成するフィルターのテンプレートの名前を指定します。|  
+|UI が表示される前に、カスタム操作を実行します。|使用して、 <xref:System.Web.DynamicData.DynamicFilter.FilterChanged> UI が表示される前に、カスタム操作を実行します。|  
+  
+ 次の方法で使用するフィルターのテンプレートを指定できます。  
+  
+-   使用して、<xref:System.Web.DynamicData.DynamicFilter.FilterUIHint%2A>ページ マークアップ内のプロパティです。 この方法は、プレゼンテーション層のカスタマイズではスキーマ (データベース) に依存しないと、1 つのページに適用されます。  
+  
+-   使用して、<xref:System.ComponentModel.DataAnnotations.FilterUIHintAttribute>モデルの属性です。 この方法は、データ層のカスタマイズ、特定のスキーマ (データベース) に依存して、アプリケーション全体に適用されます。  
+  
+ 両方のアプローチを使用する場合は、マークアップで指定されているフィルターのテンプレートが、データ モデルで指定されているテンプレートよりも優先されます。  
+  
+<a name="ClassContext"></a>   
+## <a name="class-context"></a>クラスのコンテキスト  
+ <xref:System.Web.DynamicData.DynamicFilter>コントロールを使用するように設計された、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。 <xref:System.Web.DynamicData.DynamicFilter>コントロールで参照されます、<xref:System.Web.DynamicData.DynamicFilterExpression>内インスタンス、<xref:System.Web.UI.WebControls.QueryExtender>ページ マークアップ内のオブジェクト。  
+  
+ 次の図は、動的なデータがテーブル行の外部キー列でフィルター処理を実装するために次の手順を示します。  
+  
+ ![動的データ クエリ要素](~/add/media/dynamic-dataquery.png "動的データ クエリ要素")  
+  
+1.  <xref:System.Web.DynamicData.DynamicFilter>コントロールを選択した値を渡します、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。  
+  
+2.  <xref:System.Web.UI.WebControls.QueryExtender>コントロールでは、値を使用して、情報をフィルター処理、クエリを作成します。 次に、この情報をデータ ソース コントロールに渡します。  
+  
+3.  データ ソース コントロールは、フィルターのクエリ情報をデータ ソース プロバイダーに渡します。  
+  
+4.  データ ソース プロバイダーでは、データベースにクエリを渡します。  
+  
+5.  データベースでは、フィルター選択されたテーブルの行を返します。  
+  
+6.  データ ソース プロバイダーでは、データ ソース コントロールにこのデータを送信します。  
+  
+7.  データ ソース コントロールでは、表示用のデータ バインド コントロールにフィルター選択されたテーブルの行を渡します。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DynamicFilter  
+    ID="Control ID"  
+    DataField="Name of the data field to use for filtering"  
+    EnableViewState="True|False"   
+    FilterUIHint="Name of the filter template to generate the UI"  
+    OnFilterChanged="Filter changed event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"   
+    Visible="True|False"  
+    runat="server"/>  
+```  
+  
+   
+  
+## Examples  
+ Visual Studio プロジェクトとソース コードがこの場所で使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=168914)です。  
+  
+ 次の例では、既定 ForeignKey.ascx フィルター テンプレートを使用して、ProductCategory の外部キー列によって、製品テーブルの行をフィルター処理するための UI を作成します。 ユーザーは、ProductCategory の値を選択するときの値を含む行のみが表示されます。  
+  
+ 次の例が必要です。  
+  
+-   動的データ Web サイトまたは動的データ Web アプリケーションです。 これにより、作成、`AdventureWorksLTDataContext`データ コンテキスト、データベースとテーブルにアクセスするためのクラスを作成します。 詳細については、「`Walkthrough: Creating a New Dynamic Data Web Site using Scaffolding`」を参照してください。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicFilter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/cs/dynamicfilter.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicFilter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/vb/dynamicfilter.aspx#1)]  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicFilter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/cs/dynamicfilter.aspx.cs#2)]
+ [!code-vb[System.Web.DynamicData.DynamicFilter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/vb/dynamicfilter.aspx.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常呼び出すことはありません、<xref:System.Web.DynamicData.DynamicFilter.%23ctor%2A>直接コンス トラクターです。 代わりに、使用する、<xref:System.Web.DynamicData.DynamicFilter>ページ マークアップ内のクラスとクラスには、ページが読み込まれるときに初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="protected System.Web.DynamicData.MetaColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicFilter.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィルター処理に使用するテーブル列を設定します。</summary>
+        <value>フィルター処理に使用するテーブル列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは内部でのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicFilter.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーブルの行のフィルター処理に使用する列の名前を設定します。</summary>
+        <value>テーブルの行のフィルター処理に使用される列の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、マークアップでのフィルタ リング テーブル行の列を指定する方法を示します。  
+  
+```  
+<asp:DynamicFilter ID="CategoryFilter" runat="server"   
+    DataField="ProductCategory" />  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FilterChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FilterChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.DynamicData.DynamicFilter.FilterChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した、ユーザーが、外部キーの値を選択するとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicFilter.FilterChanged>イベントは、新しい値が表示される前に、ユーザーは、外部キーの値を選択したときに発生します。 これにより、カスタム ページングなどのカスタム操作を実行できるイベント処理メソッドを提供できます。  
+  
+   
+  
+## Examples  
+ 次の例では、フィルターの変更イベントを処理する方法を示します。 ハンドラーは、フィルター選択された行が表示される前に ページのインデックスをリセットします。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicFilter#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/cs/dynamicfilter.aspx.cs#3)]
+ [!code-vb[System.Web.DynamicData.DynamicFilter#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.dynamicdata.dynamicfilter/vb/dynamicfilter.aspx.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control FilterTemplate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control FilterTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicFilter.FilterTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールの現在のインスタンスに関連付けられているフィルターのテンプレートを取得します。</summary>
+        <value>このコントロールの現在のインスタンスに関連付けられているフィルターのテンプレートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的なデータは、サポートされている列の型のテーブル行をフィルター処理するための UI を生成します。 ~\DynamicData\Filters フォルダー内にある既定のフィルターのテンプレートを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterUIHint">
+      <MemberSignature Language="C#" Value="public string FilterUIHint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilterUIHint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicFilter.FilterUIHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または UI の作成に使用されるフィルターのテンプレートの名前を設定します。</summary>
+        <value>フィルターのテンプレートの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicFilter.FilterUIHint%2A>プロパティを使用して、テーブル行のフィルター処理するための UI を作成するフィルターのテンプレートを指定できます。 次の方法で使用するフィルターのテンプレートを指定できます。  
+  
+-   使用して、<xref:System.Web.DynamicData.DynamicFilter.FilterUIHint%2A>ページ マークアップ内のプロパティです。 この方法は、プレゼンテーション層のカスタマイズではスキーマ (データベース) に依存しないと、1 つのページに適用されます。  
+  
+-   使用して、<xref:System.ComponentModel.DataAnnotations.FilterUIHintAttribute>モデルの属性です。 この方法は、データ層のカスタマイズ、特定のスキーマ (データベース) に依存して、アプリケーション全体に適用されます。  
+  
+ 両方のアプローチを使用する場合は、マークアップで指定されたフィルターのテンプレートが、データ モデルに指定されたテンプレートよりも優先されます。  
+  
+   
+  
+## Examples  
+ 次の例では、フィルター処理に使用するマークアップでフィルター テンプレートを指定する方法を示します。  
+  
+```  
+<asp:DynamicFilter ID="CategoryFilter" runat="server"   
+    FilterUIHint="ForeignKey" />  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilter.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">サーバー コントロールの内容を受け取るオブジェクト。</param>
+        <summary>指定されたサーバー コントロールの内容を送信<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ライターは、ページにコンテンツをレンダリングします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.DynamicData.IFilterExpressionProvider.GetQueryable">
+      <MemberSignature Language="C#" Value="System.Linq.IQueryable IFilterExpressionProvider.GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Linq.IQueryable System.Web.DynamicData.IFilterExpressionProvider.GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilter.System#Web#DynamicData#IFilterExpressionProvider#GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">データ ソース クエリ。</param>
+        <summary>現在のフィルター値を使用して、変更したクエリを取得します。</summary>
+        <returns>フィルターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.DynamicData.DynamicFilter> のインスタンスが <xref:System.Web.DynamicData.IFilterExpressionProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.DynamicData.IFilterExpressionProvider.Initialize">
+      <MemberSignature Language="C#" Value="void IFilterExpressionProvider.Initialize (System.Web.UI.WebControls.IQueryableDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.DynamicData.IFilterExpressionProvider.Initialize(class System.Web.UI.WebControls.IQueryableDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicFilter.System#Web#DynamicData#IFilterExpressionProvider#Initialize(System.Web.UI.WebControls.IQueryableDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.IQueryableDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソース。</param>
+        <summary><see cref="T:System.Web.DynamicData.DynamicFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.DynamicData.DynamicFilter> のインスタンスが <xref:System.Web.DynamicData.IFilterExpressionProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

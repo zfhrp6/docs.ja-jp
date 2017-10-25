@@ -1,0 +1,150 @@
+<Type Name="XamlDeferLoadAttribute" FullName="System.Windows.Markup.XamlDeferLoadAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XamlDeferLoadAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XamlDeferLoadAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlDeferLoadAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示しますクラスやプロパティ (など、テンプレートの動作)、XAML の遅延読み込みの使用状況がレポートを遅延の動作とその宛先/コンテンツ タイプを有効にするクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDeferringLoader>関連する可能性がありますが、サポート クラスとして負荷のシナリオを遅延します。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ XAML の WPF 実装にこの属性を適用する、クラスの例は、<xref:System.Windows.TemplateContent>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlDeferLoadAttribute (string loaderType, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string loaderType, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlDeferLoadAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loaderType" Type="System.String" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="loaderType">遅延読み込み動作を使用する実装の型の文字列名。</param>
+        <param name="contentType">コマンドの遅延送信の宛先/コンテンツ型の型の文字列名は、動作を読み込みます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.XamlDeferLoadAttribute" />クラス、文字列型の名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="loaderType" /> または <paramref name="contentType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlDeferLoadAttribute (Type loaderType, Type contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type loaderType, class System.Type contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlDeferLoadAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loaderType" Type="System.Type" />
+        <Parameter Name="contentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="loaderType">CLR<see cref="T:System.Type" />遅延読み込み動作を使用する実装の値。</param>
+        <param name="contentType">CLR<see cref="T:System.Type" />遅延読み込み動作の宛先/コンテンツ型の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.XamlDeferLoadAttribute" />クラス、CLR を使用して<see cref="T:System.Type" />値。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="loaderType" /> または <paramref name="contentType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public Type ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlDeferLoadAttribute.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CLR の取得<see cref="T:System.Type" />遅延読み込み動作の宛先/コンテンツ型の値。</summary>
+        <value>CLR<see cref="T:System.Type" />遅延読み込み動作の宛先/コンテンツ型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTypeName">
+      <MemberSignature Language="C#" Value="public string ContentTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlDeferLoadAttribute.ContentTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>遅延読み込み動作を使用する実装の型の文字列名を取得します。</summary>
+        <value>遅延読み込み動作を使用するコンバーターの型の文字列名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoaderType">
+      <MemberSignature Language="C#" Value="public Type LoaderType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type LoaderType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlDeferLoadAttribute.LoaderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CLR の取得<see cref="T:System.Type" />遅延読み込み動作を使用する実装の値。</summary>
+        <value>CLR<see cref="T:System.Type" />遅延読み込み動作を使用する実装の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoaderTypeName">
+      <MemberSignature Language="C#" Value="public string LoaderTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoaderTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlDeferLoadAttribute.LoaderTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>遅延読み込み動作の宛先/コンテンツ型の型の文字列名を取得します。</summary>
+        <value>コマンドの遅延送信の宛先/コンテンツ型の型の文字列名は、動作を読み込みます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

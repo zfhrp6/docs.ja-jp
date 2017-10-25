@@ -1,0 +1,137 @@
+<Type Name="DockStyle" FullName="System.Windows.Forms.DockStyle">
+  <TypeSignature Language="C#" Value="public enum DockStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DockStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DockStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DockEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>位置と、コントロールがドッキングされている方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールがコンテナーの端にドッキングされているときに常に隣接した位置にそのエッジ コンテナーのサイズが変更されるときにします。 複数のコントロールが端にドッキングされている場合、コントロールが並んで表示される、z オーダー; に従って高い z オーダーでコントロールは、コンテナーの端から離れた場所に配置されます。  
+  
+ 左、右、上または下が選択されている場合、指定されたと反対のコントロールの端が格納しているコントロールの対応する端のサイズにサイズ変更されます。 塗りつぶしを選択すると、格納しているコントロールの端に合わせてコントロールのすべての 4 辺のサイズが変更されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.GroupBox>し、一部の共通プロパティを設定します。 例は、作成、<xref:System.Windows.Forms.TextBox>設定とその<xref:System.Windows.Forms.Control.Location%2A>グループ ボックス内で。 次に、設定、<xref:System.Windows.Forms.Control.Text%2A>グループ ボックスで、およびフォームの上部にドッキング グループ ボックスのプロパティです。 最後に、無効になりますグループ ボックスに設定して、<xref:System.Windows.Forms.Control.Enabled%2A>プロパティを`false`、それが原因で無効にするグループ ボックスに含まれるすべてのコントロールです。  
+  
+ [!code-cpp[Windows.Forms.Control Properties#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control Properties/CPP/controlproperties.cpp#2)]
+ [!code-csharp[Windows.Forms.Control Properties#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control Properties/CS/controlproperties.cs#2)]
+ [!code-vb[Windows.Forms.Control Properties#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control Properties/VB/controlproperties.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="Bottom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle Bottom = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.Bottom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの下端は、その親コントロールの下部にドッキングされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="Fill" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle Fill = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.Fill" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのコントロールの端は、親コントロールの四辺にドッキングされているし、適切にサイズします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="Left" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle Left = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.Left" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの左エッジは、そのコンテナー コントロールの左端にドッキングされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがドッキングされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle Right = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの右エッジは、そのコンテナー コントロールの右端にドッキングされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="Top" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DockStyle Top = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DockStyle.Top" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの上端は、その親コントロールの上部にドッキングされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

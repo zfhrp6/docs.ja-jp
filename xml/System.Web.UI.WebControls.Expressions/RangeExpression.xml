@@ -1,0 +1,211 @@
+<Type Name="RangeExpression" FullName="System.Web.UI.WebControls.Expressions.RangeExpression">
+  <TypeSignature Language="C#" Value="public class RangeExpression : System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RangeExpression extends System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.RangeExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>値が指定した値よりも大きいか小さいか、または値が指定した 2 つの値の間にあるかを判定する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryExtender>コントロール クラスを使用して、Web ページにデータをフィルター処理する機能を提供する、<xref:System.Web.UI.WebControls.Expressions>名前空間。 これらのクラスが含まれて、<xref:System.Web.UI.WebControls.Expressions.RangeExpression>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.Expressions.RangeExpression>クラスは、範囲を定義する値のペアを使用してデータ列を検索します。 使用する、<xref:System.Web.UI.WebControls.Expressions.RangeExpression.DataField%2A>プロパティを検索する列を指定します。 使用する、 <xref:System.Web.UI.WebControls.Expressions.RangeExpression.MinType%2A> 、結果を含めるか、検索に最小値を除外するかどうかを指定するプロパティを使用して、<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType%2A>プロパティを含めるか、最大値を除外するかどうかを指定します。 最大と最小値を指定できます[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]にコントロールや、値を渡されることができますし、<xref:System.Web.UI.WebControls.QueryExtender>コントロール内のパラメーターとして<xref:System.Web.UI.WebControls.ControlParameter>コントロール。 結果は通常、データ バインド コントロールに表示されます。  
+  
+   
+  
+## Examples  
+ 次の例で指定されている範囲内で、表示価格を持つ製品を AdventureWorks データベースの Products テーブルで、ListPrice 列を検索する方法を示しています、`FromTextBox`と`ToTextBox`テキスト ボックス。 フィルターは、最小値が含まれていますが、結果の最大値を除きます。 結果が表示されます、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.DataField" /> プロパティが <see langword="null" /> です。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.RangeExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Expressions.RangeExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.RangeExpression.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または比較に使用するフィールドを設定します。</summary>
+        <value>比較に使用するフィールドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 範囲式は、指定した範囲のデータ フィールドを検索します。  
+  
+   
+  
+## Examples  
+ 次の例で指定されている範囲内で、表示価格を持つ製品を AdventureWorks データベースの Products テーブルで、表示価格の列を検索する方法を示しています、`FromTextBox`と`ToTextBox`テキスト ボックス。  
+  
+ このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:RangeExpression DataField="ListPrice"    
+    MinType="Inclusive" MaxType="Exclusive">  
+  <asp:ControlParameter ControlID="FromTextBox" />  
+  <asp:ControlParameter ControlID="ToTextBox" />  
+</asp:RangeExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.RangeExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">比較に使用するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Linq.IQueryable" />範囲の比較に対して実行されたオブジェクト。</summary>
+        <returns>インスタンス、<see cref="T:System.Linq.IQueryable" />に式が適用されているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された使用<xref:System.Linq.IQueryable>式を解決するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.DataField" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.MinType" />と<see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType" />プロパティに設定されます<see cref="F:System.Web.UI.WebControls.Expressions.RangeType.None" />です。  
+  
+ または  
+  
+ <see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.MinType" />または<see cref="P:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType" />プロパティに設定されていない<see cref="F:System.Web.UI.WebControls.Expressions.RangeType.None" />され、パラメーターのコレクションが空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Expressions.RangeType MaxType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Expressions.RangeType MaxType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.RangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または範囲の最大値を設定します。</summary>
+        <value>最大値を使用する比較の種類。 既定値は<see cref="F:System.Web.UI.WebControls.Expressions.RangeType.None" />、最大の比較が実行されないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、 <xref:System.Web.UI.WebControls.Expressions.RangeType.Inclusive>、 <xref:System.Web.UI.WebControls.Expressions.RangeType.Exclusive>、および<xref:System.Web.UI.WebControls.Expressions.RangeType.None>です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType%2A>に設定されている<xref:System.Web.UI.WebControls.Expressions.RangeType.Inclusive>、検索結果の範囲の最大値が含まれます。 これを実行するため、> = 操作します。 場合は、プロパティを設定する<xref:System.Web.UI.WebControls.Expressions.RangeType.Exclusive>を指定することと等価であるフィールドで、> または < 操作します。 場合は、プロパティを設定する<xref:System.Web.UI.WebControls.Expressions.RangeType.None>範囲に制限は適用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、範囲で指定されている最小値を含める方法と、最大値を除外する方法を示します。 最大値と最小値は、テキスト ボックスに入力されます。 このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:RangeExpression DataField="ListPrice"    
+    MinType="Inclusive" MaxType="Exclusive">  
+  <asp:ControlParameter ControlID="FromTextBox" />  
+  <asp:ControlParameter ControlID="ToTextBox" />  
+</asp:RangeExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Expressions.RangeType MinType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Expressions.RangeType MinType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.RangeExpression.MinType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.RangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または範囲の最小値を設定します。</summary>
+        <value>最小値を使用する比較の種類。 既定値は<see cref="F:System.Web.UI.WebControls.Expressions.RangeType.None" />、最小の比較が実行されないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、 <xref:System.Web.UI.WebControls.Expressions.RangeType.Inclusive>、 <xref:System.Web.UI.WebControls.Expressions.RangeType.Exclusive>、および<xref:System.Web.UI.WebControls.Expressions.RangeType.None>です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MinType%2A>または<xref:System.Web.UI.WebControls.Expressions.RangeExpression.MaxType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.Expressions.RangeType.Inclusive>範囲の最小値と最大値が検索結果に含まれています。 これを実行するため、> = または\<操作を = です。 <xref:System.Web.UI.WebControls.Expressions.RangeType.Exclusive>に対応フィールドを > または < 操作と<xref:System.Web.UI.WebControls.Expressions.RangeType.None>範囲に制限はありません。  
+  
+   
+  
+## Examples  
+ 次の例では、範囲で指定されている最小値を含める方法と、最大値を除外する方法を示します。 最大値と最小値は、テキスト ボックスに入力されます。 このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:RangeExpression DataField="ListPrice"    
+    MinType="Inclusive" MaxType="Exclusive">  
+  <asp:ControlParameter ControlID="FromTextBox" />  
+  <asp:ControlParameter ControlID="ToTextBox" />  
+</asp:RangeExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

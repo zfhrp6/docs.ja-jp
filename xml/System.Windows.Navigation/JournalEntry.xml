@@ -1,0 +1,323 @@
+<Type Name="JournalEntry" FullName="System.Windows.Navigation.JournalEntry">
+  <TypeSignature Language="C#" Value="public class JournalEntry : System.Windows.DependencyObject, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit JournalEntry extends System.Windows.DependencyObject implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.JournalEntry" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>"戻る"または"進む"ナビゲーション履歴にエントリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]1 つのエントリ、ナビゲーション履歴と同じようを既に移動先のコンテンツの各部分を格納するナビゲーション履歴サービスを実装する[!INCLUDE[TLA#tla_ie](~/includes/tlasharptla-ie-md.md)]です。 ナビゲーション履歴には、1 つ"戻る"ナビゲーション履歴を記憶を使用し、次に進むナビゲーション履歴を記憶する 1 つを使用する、2 つのスタックが構成されます。  
+  
+ 現在のアイテムのエントリは、前方のナビゲーションが発生したときに、ナビゲーション履歴をバックアップするが追加されます。 これは、次の状況で発生します。  
+  
+-   `Navigate`メソッドが呼び出されます (<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>、 <xref:System.Windows.Navigation.NavigationWindow.Navigate%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.Frame.Navigate%2A?displayProperty=nameWithType>)。  
+  
+-   `GoForward`メソッドが呼び出されます (<xref:System.Windows.Navigation.NavigationService.GoForward%2A?displayProperty=nameWithType>、 <xref:System.Windows.Navigation.NavigationWindow.GoForward%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.Frame.GoForward%2A?displayProperty=nameWithType>)。  
+  
+-   ナビゲーションの転送ボタン[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]現在のナビゲーターからに表示される ([!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+ 同様に、現在のアイテムのエントリが追加"進む"ナビゲーション履歴を戻るナビゲーションが発生すると、動作は、前にとき。  
+  
+-   `GoBack`メソッドが呼び出されます (<xref:System.Windows.Navigation.NavigationService.GoBack%2A?displayProperty=nameWithType>、 <xref:System.Windows.Navigation.NavigationWindow.GoBack%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.Frame.GoBack%2A?displayProperty=nameWithType>)。  
+  
+-   ナビゲーションで [戻る] ボタン[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]現在のナビゲーターからに表示される ([!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+ 各エントリに戻ると"進む"ナビゲーション履歴がのインスタンス、<xref:System.Windows.Navigation.JournalEntry>クラスです。  
+  
+ 各<xref:System.Windows.Navigation.JournalEntry>オブジェクトのエントリの名前を含む特定のナビゲーションに関する情報をカプセル化 (<xref:System.Windows.Navigation.JournalEntry.Name%2A>) エントリを保持するかどうか、(<xref:System.Windows.Navigation.JournalEntry.KeepAlive%2A>) および[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]コンテンツへの移動がへの (<xref:System.Windows.Navigation.JournalEntry.Source%2A>)。  
+  
+ すべてを取得することができます、<xref:System.Windows.Navigation.JournalEntry>ナビゲーション履歴を列挙することによってオブジェクトに戻る、<xref:System.Windows.Navigation.NavigationWindow.BackStack%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.Frame.BackStack%2A?displayProperty=nameWithType>プロパティです。 "進む"ナビゲーション履歴をすべて取得できます、<xref:System.Windows.Navigation.JournalEntry>オブジェクトを列挙することによって、<xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.Frame.ForwardStack%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 最新を削除する必要がある場合<xref:System.Windows.Navigation.JournalEntry>オブジェクトなどのナビゲーションを防ぐために、"戻る"ナビゲーション履歴から呼び出すことができます、`RemoveBackEntry`メソッド (<xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A?displayProperty=nameWithType>、 <xref:System.Windows.Navigation.NavigationWindow.RemoveBackEntry%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.Frame.RemoveBackEntry%2A?displayProperty=nameWithType>)、どの削除、<xref:System.Windows.Navigation.JournalEntry>オブジェクトおよびオブジェクトへの参照を返します。  
+  
+ 追加することはできません<xref:System.Windows.Navigation.JournalEntry>オブジェクトをナビゲーション履歴、ただし、インスタンス化から派生することができますので<xref:System.Windows.Navigation.JournalEntry>、およびそのためにはメンバーを実装する型がないためです。 ただし、ユーザー設定を追加することができます<xref:System.Windows.Navigation.CustomContentState>を呼び出してナビゲーション履歴のバックアップを作成するオブジェクト、`AddBackEntry`メソッド (<xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A>、 <xref:System.Windows.Navigation.NavigationWindow.AddBackEntry%2A>、 <xref:System.Windows.Controls.Frame.AddBackEntry%2A>) です。<xref:System.Windows.Navigation.NavigationService>を追加、<xref:System.Windows.Navigation.CustomContentState>オブジェクトを内部的が作成した<xref:System.Windows.Navigation.JournalEntry>オブジェクトで、"戻る"ナビゲーション履歴に追加されます。  
+  
+   
+  
+## Examples  
+ 次の例は、最新を取得する方法を示しています。<xref:System.Windows.Navigation.JournalEntry>オブジェクトを取得する"戻る"ナビゲーション履歴から、<xref:System.Windows.Navigation.JournalEntry.Name%2A>と<xref:System.Windows.Navigation.JournalEntry.Source%2A>プロパティの値。  
+  
+ [!code-csharp[JournalEntrySnippets#GetJournalEntryCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/JournalEntrySnippets/CSharp/DatePage.xaml.cs#getjournalentrycodebehind)]
+ [!code-vb[JournalEntrySnippets#GetJournalEntryCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JournalEntrySnippets/visualbasic/datepage.xaml.vb#getjournalentrycodebehind)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected JournalEntry (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報。</param>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary><see cref="T:System.Windows.Navigation.JournalEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomContentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.CustomContentState CustomContentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Navigation.CustomContentState CustomContentState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.JournalEntry.CustomContentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.CustomContentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Navigation.CustomContentState" />このジャーナル エントリに関連付けられているオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Navigation.CustomContentState" />このジャーナル エントリに関連付けられているオブジェクト。 1 つが関連付けられていない場合<see langword="null" />が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeepAlive">
+      <MemberSignature Language="C#" Value="public static bool GetKeepAlive (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetKeepAlive(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.GetKeepAlive(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">添付プロパティ値の取得元の要素。</param>
+        <summary>返します、<see cref="P:System.Windows.Navigation.JournalEntry.KeepAlive" />指定の要素に対応する履歴項目のプロパティを添付します。</summary>
+        <returns>値、<see cref="P:System.Windows.Navigation.JournalEntry.KeepAlive" />指定の要素に対応する履歴項目のプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public static string GetName (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetName(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.GetName(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">添付プロパティ値の取得元の要素。</param>
+        <summary>取得、<see cref="P:System.Windows.Navigation.JournalEntry.Name" />指定の要素に対応する履歴項目のプロパティを添付します。</summary>
+        <returns><see cref="P:System.Windows.Navigation.JournalEntry.Name" />指定の要素に対応する履歴項目のプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">ターゲット オブジェクトをシリアル化するために必要なデータ。</param>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>このオブジェクトがシリアル化されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAliveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeepAliveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeepAliveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalEntry.KeepAliveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.JournalEntry.KeepAlive" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.JournalEntry.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または履歴項目の名前を設定します。</summary>
+        <value>履歴項目の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってホストされているコンテンツ<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>、または[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]、ナビゲーション表示[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]ユーザー戻る ボタンと進むナビゲーション履歴内を移動することができます。 ナビゲーション履歴のエントリごとに表示されるテキストは、優先順位、ナビゲーション履歴エントリ名を自動的に構築するために使用されるデータの次の部分に依存します。  
+  
+-   アタッチされた<xref:System.Windows.Navigation.JournalEntry.Name%2A>属性。  
+  
+-   <xref:System.Windows.Controls.Page.Title%2A>。  
+  
+-   <xref:System.Windows.Controls.Page.WindowTitle%2A>および[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]現在のページ  
+  
+-   [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]現在のページです。  
+  
+<a name="xamlAttributeUsage_Name"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*オブジェクト* **JournalEntry.Name**="<xref:System.String>"/>  
+  
+<a name="dependencyPropertyInfo_Name"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.JournalEntry.NameProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Navigation.JournalEntry.Name%2A>プロパティを<xref:System.Windows.Controls.Page>マークアップで、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]添付プロパティの使用法。  
+  
+ [!code-xaml[JournalEntrySnippets#JENameMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/JournalEntrySnippets/CSharp/JENamePage.xaml#jenamemarkup)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty NameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty NameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalEntry.NameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.JournalEntry.Name" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKeepAlive">
+      <MemberSignature Language="C#" Value="public static void SetKeepAlive (System.Windows.DependencyObject dependencyObject, bool keepAlive);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetKeepAlive(class System.Windows.DependencyObject dependencyObject, bool keepAlive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.SetKeepAlive(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+        <Parameter Name="keepAlive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">添付プロパティの値を設定する要素。</param>
+        <param name="keepAlive">
+          <see langword="true" />履歴項目をメモリに保持されます。それ以外の場合、<see langword="false" />です。</param>
+        <summary>セット、<see cref="P:System.Windows.Navigation.JournalEntry.KeepAlive" />指定した要素のプロパティを添付します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetName">
+      <MemberSignature Language="C#" Value="public static void SetName (System.Windows.DependencyObject dependencyObject, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetName(class System.Windows.DependencyObject dependencyObject, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntry.SetName(System.Windows.DependencyObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">添付プロパティの値を設定する要素。</param>
+        <param name="name">添付プロパティに割り当てられる名前。</param>
+        <summary>セット、<see cref="P:System.Windows.Navigation.JournalEntry.Name" />指定した要素のプロパティを添付します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.JournalEntry.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または移動先のコンテンツの URI を設定します。</summary>
+        <value>移動したコンテンツの URI または<see langword="null" />URI がエントリに関連付けられていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

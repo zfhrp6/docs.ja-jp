@@ -1,0 +1,184 @@
+<Type Name="ManipulationDelta" FullName="System.Windows.Input.ManipulationDelta">
+  <TypeSignature Language="C#" Value="public class ManipulationDelta" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManipulationDelta extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationDelta" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>操作のイベントが発生したときに蓄積されている変換のデータが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDelta>クラスには、操作の位置の変更に関する情報が含まれています。  [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]として変更を解釈する<xref:System.Windows.Input.ManipulationDelta.Translation%2A>、 <xref:System.Windows.Input.ManipulationDelta.Expansion%2A>、または<xref:System.Windows.Input.ManipulationDelta.Rotation%2A>です。 ときに、<xref:System.Windows.UIElement.ManipulationDelta>イベントで発生する、<xref:System.Windows.UIElement>でプロパティを使用して、<xref:System.Windows.Input.ManipulationDelta>操作は、オブジェクトを変換するオブジェクト。  <xref:System.Windows.Input.ManipulationDeltaEventArgs>クラス型の 2 つのプロパティを提供<xref:System.Windows.Input.ManipulationDelta>:<xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>と<xref:System.Windows.Input.ManipulationDeltaEventArgs.CumulativeManipulation%2A>です。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。  例では、適用、 <xref:System.Windows.Input.ManipulationDelta.Translation%2A>、 <xref:System.Windows.Input.ManipulationDelta.Scale%2A>、および<xref:System.Windows.Input.ManipulationDelta.Rotation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationDelta (System.Windows.Vector translation, double rotation, System.Windows.Vector scale, System.Windows.Vector expansion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Vector translation, float64 rotation, valuetype System.Windows.Vector scale, valuetype System.Windows.Vector expansion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDelta.#ctor(System.Windows.Vector,System.Double,System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="translation" Type="System.Windows.Vector" />
+        <Parameter Name="rotation" Type="System.Double" />
+        <Parameter Name="scale" Type="System.Windows.Vector" />
+        <Parameter Name="expansion" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="translation">操作の直線運動[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</param>
+        <param name="rotation">(度単位) の操作の回転が異なります。</param>
+        <param name="scale">操作の量の乗数としてサイズが変更されます。</param>
+        <param name="expansion">操作がサイズ変更量[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</param>
+        <summary><see cref="T:System.Windows.Input.ManipulationDelta" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expansion">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector Expansion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector Expansion" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDelta.Expansion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の操作がサイズ変更量[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</summary>
+        <value>操作がサイズ変更量[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDelta.Scale%2A>と<xref:System.Windows.Input.ManipulationDelta.Expansion%2A>プロパティの両方がサイズ変更操作を報告します。  2 つの違いは、値を報告する方法です。  <xref:System.Windows.Input.ManipulationDelta.Expansion%2A>プロパティ内のサイズ変更操作を報告する[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。 <xref:System.Windows.Input.ManipulationDelta.Scale%2A>プロパティは、の乗数として値を報告します。  場合<xref:System.Windows.Input.ManipulationDelta.Scale%2A>0.5、操作は 50%、サイズが小さくなるように解釈されます。  場合<xref:System.Windows.Input.ManipulationDelta.Scale%2A>が 2 の場合、操作はサイズを増やすことで 100% として解釈されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public double Rotation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDelta.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作の回転角度を設定します。</summary>
+        <value>(度単位) の操作の回転が異なります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDelta.Rotation%2A>プロパティを報告する方法、操作は、軸の周りの回転として解釈されます。  軸は、連絡先の操作を開始した、2 つのポイント間のポイントでは通常です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。  例では、適用、 <xref:System.Windows.Input.ManipulationDelta.Translation%2A>、 <xref:System.Windows.Input.ManipulationDelta.Scale%2A>、および<xref:System.Windows.Input.ManipulationDelta.Rotation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector Scale { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDelta.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または乗数として操作のサイズが変更の量を設定します。</summary>
+        <value>操作の量のサイズが変更されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDelta.Scale%2A>と<xref:System.Windows.Input.ManipulationDelta.Expansion%2A>プロパティの両方がサイズ変更操作を報告します。  2 つの違いは、値を報告する方法です。  <xref:System.Windows.Input.ManipulationDelta.Scale%2A>プロパティは、の乗数として値を報告します。  場合<xref:System.Windows.Input.ManipulationDelta.Scale%2A>0.5、操作は 50%、サイズが小さくなるように解釈されます。  場合<xref:System.Windows.Input.ManipulationDelta.Scale%2A>が 2 の場合、操作はサイズを増やすことで 100% として解釈されます。 <xref:System.Windows.Input.ManipulationDelta.Expansion%2A>プロパティ内のサイズ変更操作を報告する[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。  例では、適用、 <xref:System.Windows.Input.ManipulationDelta.Translation%2A>、 <xref:System.Windows.Input.ManipulationDelta.Scale%2A>、および<xref:System.Windows.Input.ManipulationDelta.Rotation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translation">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector Translation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Vector Translation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDelta.Translation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作の線形の動きを設定します。</summary>
+        <value>操作の直線運動[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDelta.Translation%2A>プロパティは、画面の水平方向および垂直方向に移動することと、操作を解釈する方法を報告します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。  例では、適用、 <xref:System.Windows.Input.ManipulationDelta.Translation%2A>、 <xref:System.Windows.Input.ManipulationDelta.Scale%2A>、および<xref:System.Windows.Input.ManipulationDelta.Rotation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

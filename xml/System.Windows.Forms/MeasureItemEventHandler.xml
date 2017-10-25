@@ -1,0 +1,41 @@
+<Type Name="MeasureItemEventHandler" FullName="System.Windows.Forms.MeasureItemEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MeasureItemEventHandler(object sender, MeasureItemEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MeasureItemEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MeasureItemEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.MeasureItemEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MeasureItemEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see langword="MeasureItem" />のイベント、 <see cref="T:System.Windows.Forms.ListBox" />、 <see cref="T:System.Windows.Forms.ComboBox" />、 <see cref="T:System.Windows.Forms.CheckedListBox" />、または<see cref="T:System.Windows.Forms.MenuItem" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MeasureItemEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Drawing.Graphics>プロパティ内のアイテムのカスタム描画を実行する、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[MeasureItemEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MeasureItemEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[MeasureItemEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MeasureItemEventArgs/CS/form1.cs#1)]
+ [!code-vb[MeasureItemEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MeasureItemEventArgs/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

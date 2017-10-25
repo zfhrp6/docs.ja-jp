@@ -1,0 +1,109 @@
+<Type Name="TemplateContentLoader" FullName="System.Windows.TemplateContentLoader">
+  <TypeSignature Language="C#" Value="public class TemplateContentLoader : System.Xaml.XamlDeferringLoader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateContentLoader extends System.Xaml.XamlDeferringLoader" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TemplateContentLoader" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlDeferringLoader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装して<see cref="T:System.Xaml.XamlDeferringLoader" />WPF XAML で、テンプレートに対して定義されている XAML のコンテンツの読み込みを延期するためにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_TemplateContentLoader"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateContentLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TemplateContentLoader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.TemplateContentLoader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override object Load (System.Xaml.XamlReader xamlReader, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Load(class System.Xaml.XamlReader xamlReader, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TemplateContentLoader.Load(System.Xaml.XamlReader,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlReader" Type="System.Xaml.XamlReader" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="xamlReader">呼び出しで返される、発信側リーダー<see cref="M:System.Windows.TemplateContentLoader.Save(System.Object,System.IServiceProvider)" />です。</param>
+        <param name="serviceProvider">必要なサービスのサービス プロバイダー。</param>
+        <summary>XAML コンテンツに基づく遅延モードでのロード、<see cref="T:System.Xaml.XamlReader" />サービス プロバイダーからの特定の必要なサービスです。</summary>
+        <returns>入力のノード ストリームのルート オブジェクト<see cref="T:System.Xaml.XamlReader" />です。 具体的には、これは、<see cref="T:System.Windows.TemplateContent" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.IXamlObjectWriterFactory>必須の service は、渡されたで使用できる場合があります`serviceProvider`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlReader" />または<paramref name="serviceProvider" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="serviceProvider" />必要なサービスは提供されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlReader Save (object value, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xaml.XamlReader Save(object value, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TemplateContentLoader.Save(System.Object,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="value">遅延読み込みをコミットする入力値。</param>
+        <param name="serviceProvider">必要なサービスのサービス プロバイダー。</param>
+        <summary>使用しないでください。常に例外をスローします。</summary>
+        <returns>常に例外がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目的は、 <xref:System.Windows.TemplateContentLoader> XAML を読み込むし、オブジェクトのファクトリ比喩を呼び出すには、`Save`パスは、目的の設計の一部ではありません。 <xref:System.Xaml.IXamlObjectWriterFactory>用のサービスとして渡される<xref:System.Windows.TemplateContentLoader.Load%2A>XAML およびテンプレートに関連するすべての追加操作のサポートを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

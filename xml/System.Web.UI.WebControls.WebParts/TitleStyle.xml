@@ -1,0 +1,99 @@
+<Type Name="TitleStyle" FullName="System.Web.UI.WebControls.WebParts.TitleStyle">
+  <TypeSignature Language="C#" Value="public sealed class TitleStyle : System.Web.UI.WebControls.TableItemStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TitleStyle extends System.Web.UI.WebControls.TableItemStyle" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.TitleStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TableItemStyle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ゾーン内の Web パーツ コントロールのタイトル バーのスタイル特性を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.TitleStyle>クラスは、ゾーン内のコントロールを Web パーツのタイトル バーに適用される共通のスタイル特性を指定するゾーンが使用されます。 <xref:System.Web.UI.WebControls.WebParts.WebZone.PartTitleStyle%2A>プロパティにはへの参照が含まれています、<xref:System.Web.UI.WebControls.WebParts.TitleStyle>各ゾーンのオブジェクト。  
+  
+ コントロールのタイトル バーは、実行時に HTML テーブルのセルとしてレンダリングされます。 <xref:System.Web.UI.WebControls.WebParts.TitleStyle>クラスから継承、<xref:System.Web.UI.WebControls.TableItemStyle>クラス、することができます、セルの属性のようなタイトル バーのスタイル属性を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.TitleStyle>クラスです。 次のページのコードで、`<asp:calendar>`要素および`<asp:label>`実行時に正規の Web パーツ機能を制御すること、対応する、ゾーン内の要素が表示されます。 注意して、`<parttitlestyle>`要素は、いくつかのスタイル属性が含まれているが、ゾーンに含まれる両方の Web パーツ コントロールのタイトル バーに適用されます。  
+  
+ [!code-aspx-csharp[WebParts_PartTitleStyle_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PartTitleStyle_Overview/CS/parttitlestylecs.aspx#1)]
+ [!code-aspx-vb[WebParts_PartTitleStyle_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PartTitleStyle_Overview/VB/parttitlestylevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TitleStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.TitleStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.TitleStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.WebParts.TitleStyle>クラスです。 コンス トラクターの値を設定する、<xref:System.Web.UI.WebControls.WebParts.TitleStyle.Wrap%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public override bool Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.TitleStyle.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタイトル バーのパーツ コントロールのタイトル バーの内容を折り返すかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />タイトル バーのタイトル バーの内容を折り返す場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.TitleStyle>クラスでオーバーライド ベース<xref:System.Web.UI.WebControls.TableItemStyle.Wrap%2A>プロパティ値を設定できますが、`false`です。 <xref:System.Web.UI.WebControls.WebParts.TitleStyle.%23ctor%2A>設定、<xref:System.Web.UI.WebControls.WebParts.TitleStyle.Wrap%2A>プロパティを`false`既定では、パーツ コントロールのタイトル バーできないその内容をラップするようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.TitleStyle.Wrap%2A>プロパティです。 次のページのコードで、`<asp:calendar>`要素および`<asp:label>`実行時に対応するコントロールを正規の Web パーツ機能により、ゾーン内の要素が表示されます。  
+  
+ 注意して、`<parttitlestyle>`要素は、いくつかのスタイル属性が含まれているが、ゾーンに含まれる両方の Web パーツ コントロールのタイトル バーに適用されます。 また、`<parttitlestyle>`要素には`wrap`と`width`属性。 <xref:System.Web.UI.WebControls.WebParts.TitleStyle.Wrap%2A>にプロパティの値が設定されている`true`であり、2 つのコントロールのタイトル バーのテキストに割り当てられた値よりも太くなって、`width`ページがブラウザーで読み込まれるときに属性で、各コントロールのタイトル バーのテキストをラップします。  
+  
+ [!code-aspx-csharp[WebParts_PartTitleStyle_Wrap#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PartTitleStyle_Wrap/CS/parttitlestylewrapcs.aspx#1)]
+ [!code-aspx-vb[WebParts_PartTitleStyle_Wrap#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_PartTitleStyle_Wrap/VB/parttitlestylewrapvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

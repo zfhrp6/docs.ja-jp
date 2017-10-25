@@ -1,0 +1,188 @@
+<Type Name="DirectoryEntryConfiguration" FullName="System.DirectoryServices.DirectoryEntryConfiguration">
+  <TypeSignature Language="C#" Value="public class DirectoryEntryConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryEntryConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.DirectoryEntryConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.DirectoryEntryConfiguration" />クラスに直接指定し、ディレクトリ オブジェクトを操作するためのプロバイダー固有のオプションを取得する方法が用意されています。 通常、オプションは、基になるディレクトリ ストアの検索操作に適用されます。 サポートされるオプションは、プロバイダー固有です。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+      <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+    </permission>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCurrentServerName">
+      <MemberSignature Language="C#" Value="public string GetCurrentServerName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCurrentServerName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntryConfiguration.GetCurrentServerName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このディレクトリ オブジェクトに現在のバインドのサーバーのホスト名を取得します。</summary>
+        <returns>サーバーの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutuallyAuthenticated">
+      <MemberSignature Language="C#" Value="public bool IsMutuallyAuthenticated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsMutuallyAuthenticated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntryConfiguration.IsMutuallyAuthenticated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SSPI 層で相互認証を実行するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />相互認証が実行されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntryConfiguration.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページ検索のページ サイズを設定します。</summary>
+        <value>ページ内のエントリの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordEncoding">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.PasswordEncodingMethod PasswordEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.PasswordEncodingMethod PasswordEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntryConfiguration.PasswordEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.PasswordEncodingMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンコード パスワードを設定します。</summary>
+        <value>1 つ、<see cref="T:System.DirectoryServices.PasswordEncodingMethod" />パスワード エンコードの種類を示す列挙メンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordPort">
+      <MemberSignature Language="C#" Value="public int PasswordPort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PasswordPort" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntryConfiguration.PasswordPort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスワードを設定または変更されたときに SSL 接続を確立するために使用するポート番号を設定します。</summary>
+        <value>パスワードを設定または変更されたときに、SSL 接続を確立するために使用するポート番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ポート 636 は設定またはパスワードを変更するときに、SSL 接続を確立するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Referral">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ReferralChasingOption Referral { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ReferralChasingOption Referral" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntryConfiguration.Referral" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ReferralChasingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または場合を決定する値とどのように参照の追跡を設定します。</summary>
+        <value>1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.ReferralChasingOption" />場合を指定する列挙体メンバーとどのように参照の追跡をします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityMasks">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.SecurityMasks SecurityMasks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.SecurityMasks SecurityMasks" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryEntryConfiguration.SecurityMasks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.SecurityMasks</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用するセキュリティ マスク<see cref="T:System.DirectoryServices.DirectoryEntryConfiguration" />です。</summary>
+        <value>1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.SecurityMasks" />セキュリティ マスクを指定する列挙体メンバーです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUserNameQueryQuota">
+      <MemberSignature Language="C#" Value="public void SetUserNameQueryQuota (string accountName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetUserNameQueryQuota(string accountName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryEntryConfiguration.SetUserNameQueryQuota(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accountName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="accountName">そのプリンシパルの名前に対してクエリできるように設定しているアカウント名。</param>
+        <summary>クォータ情報が返されますも、プリンシパルにアクセスできるように、セキュリティ プリンシパルの名前を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

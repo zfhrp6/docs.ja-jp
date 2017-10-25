@@ -1,0 +1,56 @@
+<Type Name="IPostBackContainer" FullName="System.Web.UI.WebControls.IPostBackContainer">
+  <TypeSignature Language="C#" Value="public interface IPostBackContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPostBackContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.IPostBackContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールのクライアント側スクリプト オプションを取得できるようにするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.Web.UI.WebControls.IPostBackContainer>インターフェイスの取得を有効にする ボタン、<xref:System.Web.UI.PostBackOptions>正しいポストバック イベントの参照を作成するために使用できるオブジェクト。  
+  
+ ポストバックの処理の詳細については、次を参照してください。 [ASP.NET Web フォーム サーバー コントロールのイベント モデル](http://msdn.microsoft.com/library/6304bff7-1b0e-4641-8acb-6d3b0badc4a3)です。  
+  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IPostBackContainer>インターフェイスが実装する必要も、<xref:System.Web.UI.IPostBackEventHandler>を包含ボタンによって生成されるイベントを処理するインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetPostBackOptions">
+      <MemberSignature Language="C#" Value="public System.Web.UI.PostBackOptions GetPostBackOptions (System.Web.UI.WebControls.IButtonControl buttonControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.PostBackOptions GetPostBackOptions(class System.Web.UI.WebControls.IButtonControl buttonControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.IPostBackContainer.GetPostBackOptions(System.Web.UI.WebControls.IButtonControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PostBackOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buttonControl" Type="System.Web.UI.WebControls.IButtonControl" />
+      </Parameters>
+      <Docs>
+        <param name="buttonControl">ポストバック イベントを生成するコントロール。</param>
+        <summary>指定したボタン コントロールのポストバック スクリプトに必要なオプションを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.PostBackOptions" />ポストバックのスクリプトを生成するために必要なオプションを含むオブジェクト<paramref name="buttonControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.WebControls.IPostBackContainer.GetPostBackOptions%2A>方法は、新しい構成する必要があります<xref:System.Web.UI.PostBackOptions>に必要な情報を持つインスタンス、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>ポストバック イベントの有効な参照を構築するためにメソッドをポストバックが実行すると、クライアントで開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

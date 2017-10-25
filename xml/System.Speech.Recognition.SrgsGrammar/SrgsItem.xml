@@ -1,0 +1,450 @@
+<Type Name="SrgsItem" FullName="System.Speech.Recognition.SrgsGrammar.SrgsItem">
+  <TypeSignature Language="C#" Value="public class SrgsItem : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsItem extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Speech.Recognition.SrgsGrammar.SrgsItem/SrgsItemDebugDisplay))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>語句または成功した認識を生成するために、ユーザーが話すことができ他のエンティティを含む文法要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクトから成る語句、エンティティなど<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>オブジェクト、語句の論理的な組み合わせと<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>オブジェクト、およびなどです。 使用することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Elements%2A>プロパティを<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>クラスの構成要素にアクセスするために、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。  
+  
+ 順序<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクトに表示される、指定された<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトをユーザー必要がありますも言及して順序を指定します。 既定では、内容、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>正確に 1 回読み上げられる必要があります。 指定するの内容、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>する必要があります、繰り返しの音声を使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.%23ctor%2A>コンス トラクターとセット、`repeatCount`パラメーター。 同様に、数の範囲を指定することを常に<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>読み上げることができます、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>を設定するコンス トラクターのいずれかの<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat%2A>プロパティおよび<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat%2A>プロパティです。 場合、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>が既に存在するのいずれかを使用することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat%2A?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat%2A>クラッシュの回数を指定する方法です。  
+  
+ 確率の値を設定して、項目が繰り返し読み上げられることを指定することも、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.RepeatProbability%2A>プロパティです。  
+  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>内のオブジェクトは、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクトが元となるユーザー会話できますいずれかの代替のリストを構成します。 使用することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Weight%2A>プロパティ リスト内の指定した項目を読み上げられますが、その確率を指定します。  
+  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>クラスを表します、 `item` World Wide Web Consortium (W3C) で定義されている要素[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)です。 については、SRGS`item`要素および System.Speech でのサポートに関する詳細を参照してください。[項目要素](http://msdn.microsoft.com/en-us/10cba7dd-994e-4aa7-907e-0669e5467d60)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードされた constructer <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem> 、既定値オブジェクトを初期化します`repeatCount`プロパティが 0 のです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (int repeatCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 repeatCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="repeatCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="repeatCount">アイテムを読み上げる必要がありますを時間数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラスし、その内容を読み上げる必要があります回数を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター設定<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat%2A>と<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat%2A>新しいプロパティ<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>の値に`repeatCount`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="repeatCount" />負の値または 255 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (params System.Speech.Recognition.SrgsGrammar.SrgsElement[] elements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsElement[] elements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsElement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elements" Type="System.Speech.Recognition.SrgsGrammar.SrgsElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="elements">追加するオブジェクトの配列、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラスし、の配列を指定<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsElement" />をこのインスタンスに追加するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="elements" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">メンバーはすべて、<paramref name="elements" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムに関連付けられているテキストです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラスし、そのテキストの内容を指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (int min, int max);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 min, int32 max) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="min" Type="System.Int32" />
+        <Parameter Name="max" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="min">アイテム内のテキストを繰り返す必要がある時間の最小数。</param>
+        <param name="max">アイテム内のテキストを繰り返し指定できる時間の最大数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラスし、最小値と最大の繰り返しカウントを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="min" />負の値または 255 より大きいです。  
+  
+ <paramref name="max" />負の値または 255 より大きいです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="min" /> が <paramref name="max" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (int min, int max, params System.Speech.Recognition.SrgsGrammar.SrgsElement[] elements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 min, int32 max, class System.Speech.Recognition.SrgsGrammar.SrgsElement[] elements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.Int32,System.Int32,System.Speech.Recognition.SrgsGrammar.SrgsElement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="min" Type="System.Int32" />
+        <Parameter Name="max" Type="System.Int32" />
+        <Parameter Name="elements" Type="System.Speech.Recognition.SrgsGrammar.SrgsElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="min">最小回数の内容、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />オブジェクトを繰り返す必要があります。</param>
+        <param name="max">最大回数の内容、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />オブジェクトを繰り返すことができます。</param>
+        <param name="elements">追加するオブジェクトの配列、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラスの配列を指定、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsElement" />オブジェクトをこのインスタンスに追加して、最小値と最大の繰り返しカウントを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="elements" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">メンバーはすべて、<paramref name="elements" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsItem (int min, int max, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 min, int32 max, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.#ctor(System.Int32,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="min" Type="System.Int32" />
+        <Parameter Name="max" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="min">項目を繰り返す必要がある時間の最小数。</param>
+        <param name="max">アイテムを繰り返し指定できる時間の最大数。</param>
+        <param name="text">アイテムに関連付けられているテキストです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />クラス、アイテムに関連付けられているテキストを指定および最小値と最大の繰り返しカウントを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="min" />負の値または 255 より大きいです。  
+  
+ <paramref name="max" />負の値または 255 より大きいです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="min" /> が <paramref name="max" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Speech.Recognition.SrgsGrammar.SrgsElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Speech.Recognition.SrgsGrammar.SrgsElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.Add(System.Speech.Recognition.SrgsGrammar.SrgsElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">追加するオブジェクト。</param>
+        <summary>これに含まれるオブジェクトのコレクションにオブジェクトを追加<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Add%2A>メソッドは、要素を追加、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Elements%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Elements">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Speech.Recognition.SrgsGrammar.SrgsElement&gt; Elements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Speech.Recognition.SrgsGrammar.SrgsElement&gt; Elements" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.Elements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Speech.Recognition.SrgsGrammar.SrgsElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるオブジェクトのコレクションを取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</summary>
+        <value>含まれるオブジェクトのコレクション、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxRepeat">
+      <MemberSignature Language="C#" Value="public int MaxRepeat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxRepeat" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内容を話すことができ、ユーザーの最大回数を取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />です。</summary>
+        <value>ユーザーが項目の内容を話すことの最大回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するには、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat%2A>メソッドです。  
+  
+ このプロパティの一部を表す、 `repeat` World Wide Web Consortium (W3C) で定義されている属性[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRepeat">
+      <MemberSignature Language="C#" Value="public int MinRepeat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinRepeat" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがの内容を話す必要がありますを時間の最小数を取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />です。</summary>
+        <value>最小出現回数、ユーザーが項目の内容を話すことができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するには、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat%2A>メソッドです。  
+  
+ このプロパティの一部を表す、 `repeat` World Wide Web Consortium (W3C) 音声認識の文法の仕様 (SRGS) の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatProbability">
+      <MemberSignature Language="C#" Value="public float RepeatProbability { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 RepeatProbability" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.RepeatProbability" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ユーザーがこの内容を繰り返している確率<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />インスタンス。</summary>
+        <value>浮動として、確率は、値、この項目の内容が繰り返し読み上げられることをポイントします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティにのみ適用されますアイテムが<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat%2A>と<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat%2A>プロパティは、いずれかのコンス トラクターで既定以外の値に明示的に設定されている<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>か、または、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.RepeatProbability" />値が負の値か 1.0 より大きいをします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRepeat">
+      <MemberSignature Language="C#" Value="public void SetRepeat (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRepeat(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">アイテムを読み上げる必要がありますを時間数。</param>
+        <summary>回数の設定の内容、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />読み上げる必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MaxRepeat%2A>と<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.MinRepeat%2A>プロパティの値を`count`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="count" />0 未満か、255 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRepeat">
+      <MemberSignature Language="C#" Value="public void SetRepeat (int minRepeat, int maxRepeat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRepeat(int32 minRepeat, int32 maxRepeat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsItem.SetRepeat(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="minRepeat" Type="System.Int32" />
+        <Parameter Name="maxRepeat" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minRepeat">アイテムを読み上げる必要がありますを時間の最小数。</param>
+        <param name="maxRepeat">項目を読み上げられる時間の最大数。</param>
+        <summary>時間の最小数および項目を読み上げられる最大回数を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="minRepeat" />0 以下 255 より大きい。  
+  
+ <paramref name="maxRepeat" />0 以下 255 より大きい。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="minRepeat" /> が <paramref name="maxRepeat" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Weight">
+      <MemberSignature Language="C#" Value="public float Weight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Weight" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.Weight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、その確率の調整を乗算した要素を<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsItem" />で、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsOneOf" />オブジェクトが読み上げられます。</summary>
+        <value>浮動小数点、読み上げされているこのアイテムの確率値を調整する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は 1.0 では、これは、項目の重みを付けないと同じです。 1.0 より大きい重みは、項目を読み上げられますが、その項目を読み上げられますが、その確率が悪影響を及ぼすバイアス 1.0 未満の重みの可能性を対し肯定的なバイアスです。  
+  
+ このプロパティはのみに関連する<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>内のオブジェクトは、<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>インスタンス。 その他のすべてのケースでは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsItem.Weight" />負の値にします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,180 @@
+<Type Name="LocalizabilityAttribute" FullName="System.Windows.LocalizabilityAttribute">
+  <TypeSignature Language="C#" Value="public sealed class LocalizabilityAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LocalizabilityAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LocalizabilityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バイナリ XAML (BAML) クラスまたはクラス メンバーのローカリゼーション属性を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、クラス、プロパティ、またはメソッドに適用できます。  
+  
+ ローカリゼーション属性を使用する方法の詳細については、次を参照してください。[ローカリゼーション属性とコメント](~/docs/framework/wpf/advanced/localization-attributes-and-comments.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalizabilityAttribute (System.Windows.LocalizationCategory category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.LocalizationCategory category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalizabilityAttribute.#ctor(System.Windows.LocalizationCategory)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="category" Type="System.Windows.LocalizationCategory" />
+      </Parameters>
+      <Docs>
+        <param name="category">ローカライズのカテゴリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.LocalizabilityAttribute" />指定ローカライズのカテゴリを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public System.Windows.LocalizationCategory Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LocalizationCategory Category" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalizabilityAttribute.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LocalizationCategory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカリゼーション属性の対象となる値のカテゴリの設定を取得します。</summary>
+        <value>ローカリゼーション属性のカテゴリの設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、ローカリゼーション属性の変更できる設定を示します。  
+  
+|カテゴリの設定|説明|  
+|----------------------|-------------|  
+|<xref:System.Windows.LocalizationCategory.None>|リソースは、標準的なカテゴリに属していません。|  
+|<xref:System.Windows.LocalizationCategory.Text>|長い説明のテキスト。|  
+|<xref:System.Windows.LocalizationCategory.Title>|1 行、タイトルなどのテキストです。|  
+|<xref:System.Windows.LocalizationCategory.Label>|コントロールのラベルなどの短いテキスト文字列。|  
+|<xref:System.Windows.LocalizationCategory.Button>|A<xref:System.Windows.Controls.Button>または関連するコントロール。|  
+|<xref:System.Windows.LocalizationCategory.CheckBox>|A<xref:System.Windows.Controls.CheckBox>または関連するコントロール。|  
+|<xref:System.Windows.LocalizationCategory.ComboBox>|A<xref:System.Windows.Controls.ComboBox>またはなど、コントロールに関連する<xref:System.Windows.Controls.ComboBoxItem>です。|  
+|<xref:System.Windows.LocalizationCategory.ListBox>|A<xref:System.Windows.Controls.ListBox>またはなど、コントロールに関連する<xref:System.Windows.Controls.ListBoxItem>です。|  
+|<xref:System.Windows.LocalizationCategory.Menu>|A<xref:System.Windows.Controls.Menu>またはなど、コントロールに関連する<xref:System.Windows.Controls.MenuItem>です。|  
+|<xref:System.Windows.LocalizationCategory.RadioButton>|A<xref:System.Windows.Controls.RadioButton>または関連するコントロール。|  
+|<xref:System.Windows.LocalizationCategory.ToolTip>|A<xref:System.Windows.Controls.ToolTip>または関連するコントロール。|  
+|<xref:System.Windows.LocalizationCategory.Hyperlink>|A<xref:System.Windows.Documents.Hyperlink>または関連するコントロール。|  
+|<xref:System.Windows.LocalizationCategory.TextFlow>|A<xref:System.Windows.Documents.FlowDocument>またはテキストを含めることができるその他のパネルです。|  
+|<xref:System.Windows.LocalizationCategory.XmlData>|[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ。|  
+|<xref:System.Windows.LocalizationCategory.Font>|フォント ファミリ、フォント スタイル、フォント サイズなどのフォントに関連するデータ。|  
+|<xref:System.Windows.LocalizationCategory.Inherit>|親ノードから分類を継承します。|  
+|<xref:System.Windows.LocalizationCategory.Ignore>|このリソースはローカライズしないでください。 これは、リソースの子ノードには適用されません。|  
+|<xref:System.Windows.LocalizationCategory.NeverLocalize>|このリソース、またはに設定されているカテゴリがその子ノードをローカライズしない<xref:System.Windows.LocalizationCategory.Inherit>です。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、ボタンの定義のローカリゼーション属性のカテゴリの設定を示します。  
+  
+ [!code-xaml[AttributesSnippets#AttributesSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/AttributesSnippets/CSharp/Attributes.xaml#attributessnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiability">
+      <MemberSignature Language="C#" Value="public System.Windows.Modifiability Modifiability { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Modifiability Modifiability" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalizabilityAttribute.Modifiability" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Modifiability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカリゼーション属性の対象となる値の変更できる設定を設定します。</summary>
+        <value>ローカリゼーション属性の変更できる設定です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、ローカリゼーション属性の変更できる設定を示します。  
+  
+|変更できる設定|説明|  
+|---------------------------|-------------|  
+|<xref:System.Windows.Modifiability.Modifiable>|ターゲット値はローカライザーで変更します。|  
+|<xref:System.Windows.Modifiability.Unmodifiable>|対象となる値はローカライザーで変更ではありません。|  
+|<xref:System.Windows.Modifiability.Inherit>|対象となる値を変更できるは、その親ノードから継承されます。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、ボタンの定義のローカリゼーション属性を変更できる設定を示します。  
+  
+ [!code-xaml[AttributesSnippets#AttributesSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/AttributesSnippets/CSharp/Attributes.xaml#attributessnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Readability">
+      <MemberSignature Language="C#" Value="public System.Windows.Readability Readability { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Readability Readability" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalizabilityAttribute.Readability" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Readability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカリゼーション属性の対象となる値の読みやすさの設定を設定します。</summary>
+        <value>ローカリゼーション属性の読みやすさ設定です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、ローカリゼーション属性の読みやすさの設定を示します。  
+  
+|読みやすくするための設定|説明|  
+|-------------------------|-------------|  
+|<xref:System.Windows.Readability.Readable>|対象の値は、読み取り可能なテキストです。|  
+|<xref:System.Windows.Readability.Unreadable>|対象となる値が読み取り可能ではありません。|  
+|<xref:System.Windows.Readability.Inherit>|ターゲットの値の読みやすさは、その親ノードから継承されます。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、テキスト ブロックの定義のローカリゼーション属性の読みやすさ設定が表示されます。  
+  
+ [!code-xaml[AttributesSnippets#AttributesSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/AttributesSnippets/CSharp/Comments.xaml#attributessnippet4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,190 @@
+<Type Name="Vector3DConverter" FullName="System.Windows.Media.Media3D.Vector3DConverter">
+  <TypeSignature Language="C#" Value="public sealed class Vector3DConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Vector3DConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Vector3DConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>その他の型のインスタンスとを変換、<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+ 次のサンプルは、<xref:System.Windows.Media.Media3D.Vector3DConverter>に文字列に変換する構造体、<xref:System.Windows.Media.Media3D.Vector3D>構造体。  
+  
+```csharp  
+...  
+  
+// Converts a String to a Vector3D using a Vector3DConverter  
+// Returns a Vector3D.  
+  
+Vector3DConverter v3DConverter = new Vector3DConverter();  
+Vector3D vector3DResult = new Vector3D();  
+string string3 = "10,20,30";      
+  
+vector3DResult = (Vector3D)v3DConverter.ConvertFromString(string3);  
+// vector3DResult is equal to (10, 20, 30)  
+  
+...  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Vector3DConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Vector3DConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.Media3D.Vector3DConverter" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Vector3DConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="sourceType">変換の評価中は、ソースの型。</param>
+        <summary>クラスを指定された型のインスタンスに変換できるかどうかを決定する<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。</summary>
+        <returns>型に変換できるかどうかを示す、<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>false  
+  
+ </term><description>指定した型から変換できません。  
+  
+ </description></item><item><term>true  
+  
+ </term><description>指定された型をコンバーターが、<see cref="T:System.Windows.Media.Media3D.Vector3D" />です。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Vector3DConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="destinationType">この必要な入力<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造は変換の評価中です。</param>
+        <summary>インスタンスかどうかを決定する<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造を別の種類に変換することができます。</summary>
+        <returns>示すかどうかこの<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造に変換することができます<paramref name="destinationType" />です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>false  
+  
+ </term><description>このコンバーターが変換できない<see cref="T:System.Windows.Media.Media3D.Vector3D" />指定した型の構造体。  
+  
+ </description></item><item><term>true  
+  
+ </term><description>このコンバーターが変換できる<see cref="T:System.Windows.Media.Media3D.Vector3D" />指定した型の構造体。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Vector3DConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">この呼び出し ITypeDescriptorContext です。</param>
+        <param name="culture">について説明します、<see cref="T:System.Globalization.CultureInfo" />の変換後の型。</param>
+        <param name="value">変換されるオブジェクト。</param>
+        <summary>指定したオブジェクトに変換しようとしています、<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。</summary>
+        <returns><see cref="T:System.Windows.Media.Media3D.Vector3D" />から変換された作成された構造<paramref name="value" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">指定したオブジェクトが場合に発生**null**またはに変換できない型である、<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Vector3DConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">型のコンテキスト情報を記述します。</param>
+        <param name="culture">変換する際に留意するメソッドを呼び出します。</param>
+        <param name="value"><see cref="T:System.Windows.Media.Media3D.Vector3D" />構造に変換します。</param>
+        <param name="destinationType">型この<see cref="T:System.Windows.Media.Media3D.Vector3D" />に構造を変換します。</param>
+        <summary>変換を試みます、<see cref="T:System.Windows.Media.Media3D.Vector3D" />を指定した型の構造体。</summary>
+        <returns>変換するこれから作成されたオブジェクト<see cref="T:System.Windows.Media.Media3D.Vector3D" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

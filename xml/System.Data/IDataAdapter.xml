@@ -1,0 +1,430 @@
+<Type Name="IDataAdapter" FullName="System.Data.IDataAdapter">
+  <TypeSignature Language="C#" Value="public interface IDataAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IDataAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトをデータ アダプターを実装するのには、メソッドと入力し、更新に使用されるマッピング操作に関連するプロパティのセットを表します、<see cref="T:System.Data.DataSet" />およびデータ ソースを更新します。  
+  
+ <see cref="T:System.Data.IDbDataAdapter" />インスタンスは、データ ソースまたはされている (のようになります) (TRANSACT-SQL) のようなテキスト形式のコマンドを含むリレーショナル データベースの中に<see cref="T:System.Data.IDataAdapter" />インスタンスにデータ ソースの種類を使用できます可能性があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataAdapter>インターフェイスが継承するクラスをデータ ソース間のブリッジを表す DataAdapter クラスを実装することにより、<xref:System.Data.DataSet>です。 DataAdapter クラスの詳細については、次を参照してください。 [DataAdapter からの DataSet の読み込み](~/docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IDataAdapter>インターフェイスを直接が継承するクラスのインスタンスを実装して<xref:System.Data.IDataAdapter>です。  
+  
+ 継承するクラス<xref:System.Data.IDataAdapter>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するための追加メンバーを定義する必要があります。 たとえば、<xref:System.Data.IDataAdapter>インターフェイスを定義、<xref:System.Data.IDataAdapter.Fill%2A>を受け取るメソッド、<xref:System.Data.DataSet>をパラメーターとして。 さらに、<xref:System.Data.OleDb.OleDbDataAdapter>クラスは継承、<xref:System.Data.Common.DbDataAdapter.Fill%2A>メソッド定義のオーバー ロードを 2 つ追加して、<xref:System.Data.OleDb.OleDbDataAdapter.Fill%2A>を ADO レコード セット オブジェクトをパラメーターとして受け取るメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスを使用して<xref:System.Data.SqlClient.SqlCommand>、 <xref:System.Data.SqlClient.SqlDataAdapter>、および<xref:System.Data.SqlClient.SqlConnection>、データベースからレコードを選択します。 塗りつぶされた<xref:System.Data.DataSet>次が返されます。 これを行うには、メソッドが渡される初期化された<xref:System.Data.DataSet>、接続文字列、およびクエリ文字列では、TRANSACT-SQL SELECT ステートメント。  
+  
+ [!code-csharp[Classic WebData SqlDataAdapter Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataAdapter Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>.NET Framework データ プロバイダー間の整合性を高める形式で継承するクラスの名前を<paramref name="Prv" />DataAdapter 場所<paramref name="Prv" />は、特定の .NET Framework データ プロバイダー名前空間のすべてのクラスに指定された uniform プレフィックス。 たとえば、<paramref name="Sql" />のプレフィックス、<see cref="T:System.Data.SqlClient.SqlDataAdapter" />クラス内で、<see langword="System.Data.SqlClient" />名前空間。  
+  
+ 継承する場合、<see cref="T:System.Data.IDataAdapter" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>PrvDataAdapter()  
+  
+ </term><description>PrvDataAdapter クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvDataAdapter (PrvCommand selectCommand)  
+  
+ </term><description>指定した SQL SELECT ステートメントを使用して、PrvDataAdapter クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvDataAdapter (文字列 selectCommandText、文字列 selectConnectionString)  
+  
+ </term><description>SQL SELECT ステートメントと接続文字列を使用して、PrvDataAdapter クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvDataAdapter (文字列 selectCommandText、PrvConnection selectConnection)  
+  
+ </term><description>SQL SELECT ステートメントおよび PrvConnection オブジェクトを使用して、PrvDataAdapter クラスの新しいインスタンスを初期化します。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="public int Fill (System.Data.DataSet dataSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Fill(class System.Data.DataSet dataSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataAdapter.Fill(System.Data.DataSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet">A<see cref="T:System.Data.DataSet" />のレコードを格納して、必要に応じて、スキーマです。</param>
+        <summary>追加または内の行を更新、<see cref="T:System.Data.DataSet" />一致するように、データ ソースを使用して、<see cref="T:System.Data.DataSet" />名、および作成、 <see cref="T:System.Data.DataTable" /> "Table"という名前です。</summary>
+        <returns>行の数が正常に追加または更新されて、<see cref="T:System.Data.DataSet" />です。 これには、行を返さないステートメントによって影響を受けた行は含まれません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataAdapter.Fill%2A>関連付けられている、指定した SELECT ステートメントを使用してデータ ソースから行を取得<xref:System.Data.IDbDataAdapter.SelectCommand%2A>プロパティです。 SELECT ステートメントに関連付けられている接続オブジェクトが有効である必要がありますが、開放する必要はありません。 前に、接続が閉じられた場合<xref:System.Data.IDataAdapter.Fill%2A>が呼び出されると、そのはデータの取得に開かれた後終了します。 接続が開いている場合の前に<xref:System.Data.IDataAdapter.Fill%2A>が呼び出されると、未処理のままにします。  
+  
+ <xref:System.Data.IDataAdapter.Fill%2A>操作は、先に行を追加する<xref:System.Data.DataTable>内のオブジェクト、 <xref:System.Data.DataSet>、作成、<xref:System.Data.DataTable>オブジェクトのかどうかは、まだ存在しません。 作成するときに<xref:System.Data.DataTable>、オブジェクト、<xref:System.Data.IDataAdapter.Fill%2A>操作は、通常のみの列名のメタデータを作成します。 ただし場合、<xref:System.Data.IDataAdapter.MissingSchemaAction%2A>プロパティに設定されている`AddWithKey`、適切なプライマリ キーと制約も作成されます。  
+  
+ `SelectCommand` が OUTER JOIN の結果を返す場合、`DataAdapter` は、生成される <xref:System.Data.DataTable.PrimaryKey%2A> に <xref:System.Data.DataTable> 値を設定しません。 重複する行が正しく解決されることを確認する主キーを明示的に定義する必要があります。 詳細については、次を参照してください。[主キーを定義する](~/docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)です。  
+  
+ 場合、<xref:System.Data.IDataAdapter>重複する列を設定中に検出すると、<xref:System.Data.DataTable>パターン"columnname1"、"columnname2"、"columnname3"などを使用して、連続した列の名前が生成されます。 配置されますが、受信データに名前のない列が含まれている場合、<xref:System.Data.DataSet>に従ってパターン"Column1"、"Column2"などです。 複数の結果セットが追加されたとき、 <xref:System.Data.DataSet>、各結果セットが別のテーブルに格納します。 追加の結果セットは指定したテーブル名 (たとえば、"Table"、"Table1"、"Table2"、およびなど) に整数値を追加してという名前です。 アプリケーションは、列やテーブルの名前を使用して、これらの名前付けパターンとの競合が発生しないことを確認する場合、注意を使用してください。  
+  
+ ときに設定するために使用する SELECT ステートメント、<xref:System.Data.DataSet>複数の結果を返すバッチの SQL ステートメントなど、エラーが含まれる結果のいずれかの場合連続するすべての結果はスキップされには追加されません、<xref:System.Data.DataSet>です。  
+  
+ 使用することができます、<xref:System.Data.IDataAdapter.Fill%2A>で複数回、同じメソッド<xref:System.Data.DataTable>です。 主キーが存在する場合は、受信した行が既に存在する行と一致すると共にマージされます。 主キーがない場合、受信行が、<xref:System.Data.DataTable>です。  
+  
+> [!NOTE]
+>  複数の結果の実装を返す SQL ステートメントのバッチを処理するときに<xref:System.Data.IDataAdapter.Fill%2A>と<xref:System.Data.IDataAdapter.FillSchema%2A>の .NET Framework データ プロバイダーが最初の結果のみのスキーマ情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillSchema">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable[] FillSchema (System.Data.DataSet dataSet, System.Data.SchemaType schemaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.DataTable[] FillSchema(class System.Data.DataSet dataSet, valuetype System.Data.SchemaType schemaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataAdapter.FillSchema(System.Data.DataSet,System.Data.SchemaType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+        <Parameter Name="schemaType" Type="System.Data.SchemaType" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet"><see cref="T:System.Data.DataSet" />データ ソースからスキーマを格納します。</param>
+        <param name="schemaType"><see cref="T:System.Data.SchemaType" /> 値のいずれか。</param>
+        <summary>追加、 <see cref="T:System.Data.DataTable" /> "Table"をという名前を指定した<see cref="T:System.Data.DataSet" />に基づいて、指定された、データ ソースにある一致するようにスキーマを構成および<see cref="T:System.Data.SchemaType" />です。</summary>
+        <returns>配列<see cref="T:System.Data.DataTable" />データ ソースからスキーマ情報を格納するオブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataAdapter.FillSchema%2A>メソッドを使用してデータ ソースからスキーマを取得、<xref:System.Data.IDbDataAdapter.SelectCommand%2A>です。 接続オブジェクトに関連付けられている、<xref:System.Data.IDbDataAdapter.SelectCommand%2A>有効である必要がありますを開く必要はありませんが、します。 前に、接続が閉じられた場合<xref:System.Data.IDataAdapter.FillSchema%2A>が呼び出されると、そのはデータの取得に開かれた後終了します。 接続が開いている場合の前に<xref:System.Data.IDataAdapter.FillSchema%2A>が呼び出されると、未処理のままにします。  
+  
+ A<xref:System.Data.IDataAdapter.FillSchema%2A>操作は追加、<xref:System.Data.DataTable>変換先に<xref:System.Data.DataSet>です。 これは、後、列を追加、<xref:System.Data.DataColumnCollection>の<xref:System.Data.DataTable>、次の構成と<xref:System.Data.DataColumn>プロパティ、データ ソースに存在する場合。  
+  
+-   <xref:System.Data.DataColumn.AllowDBNull%2A>  
+  
+-   <xref:System.Data.DataColumn.AutoIncrement%2A>。 設定する必要があります<xref:System.Data.DataColumn.AutoIncrementStep%2A>と<xref:System.Data.DataColumn.AutoIncrementSeed%2A>とは別にします。  
+  
+-   <xref:System.Data.DataColumn.MaxLength%2A>  
+  
+-   <xref:System.Data.DataColumn.ReadOnly%2A>  
+  
+-   <xref:System.Data.DataColumn.Unique%2A>  
+  
+ <xref:System.Data.IDataAdapter.FillSchema%2A>構成も行います、<xref:System.Data.DataTable.PrimaryKey%2A>と<xref:System.Data.DataTable.Constraints%2A>に応じて、次の規則のプロパティ。  
+  
+-   1 つまたは複数の主キー列がによって返される場合、<xref:System.Data.IDbDataAdapter.SelectCommand%2A>の主キー列として使用される、<xref:System.Data.DataTable>です。  
+  
+-   主キー列は返されませんが、一意の列は場合、は、すべての一意の列が null 非許容の場合は、主キーとしての一意の列が使用されます。 任意の列は null を許容すると場合、<xref:System.Data.UniqueConstraint>に追加、 <xref:System.Data.ConstraintCollection>、ですが、<xref:System.Data.DataTable.PrimaryKey%2A>プロパティが設定されていません。  
+  
+-   主キー列としての主キー列が使用される主キー列と一意の列の両方が返される場合は、<xref:System.Data.DataTable>です。  
+  
+ 主キーと一意の制約が追加することに注意してください、<xref:System.Data.ConstraintCollection>以前の規則が、その他の制約に従って、型は追加されません。  
+  
+ 一意のクラスター化または SQL Server テーブルに複数の列にインデックスを定義し、主キー制約は、個別の列のセットで、クラスター化インデックス内の列の名前が返されます。 主キー列の名前を返すには、主キー インデックスの名前を指定する SELECT ステートメントでクエリ ヒントを使用します。 クエリ ヒントを指定する方法の詳細については、次を参照してください。[クエリ ヒント (TRANSACT-SQL)](http://msdn.microsoft.com/library/ms181714.aspx)です。  
+  
+ 場合、<xref:System.Data.IDataAdapter>重複する列を設定中に検出すると、<xref:System.Data.DataTable>パターン"columnname1"、"columnname2"、"columnname3"などを使用して、連続した列の名前が生成されます。 配置されますが、受信データに名前のない列が含まれている場合、<xref:System.Data.DataSet>に従ってパターン"Column1"、"Column2"などです。 複数の結果セットが追加されたとき、 <xref:System.Data.DataSet>、各結果セットが別のテーブルに格納します。 追加の結果セットは指定したテーブル名 (たとえば、"Table"、"Table1"、"Table2"、およびなど) に整数値を追加してという名前です。 アプリケーションは、列やテーブルの名前を使用して、これらの名前付けパターンとの競合が発生しないことを確認する場合、注意を使用してください。  
+  
+ <xref:System.Data.IDataAdapter.FillSchema%2A>行を返しません。 使用して、<xref:System.Data.IDataAdapter.Fill%2A>行を追加する方法、<xref:System.Data.DataTable>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFillParameters">
+      <MemberSignature Language="C#" Value="public System.Data.IDataParameter[] GetFillParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IDataParameter[] GetFillParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataAdapter.GetFillParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDataParameter[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SQL SELECT ステートメントを実行するときに、ユーザーによって設定パラメーターを取得します。</summary>
+        <returns>配列<see cref="T:System.Data.IDataParameter" />パラメーターを格納するオブジェクトがユーザーによって設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+```  
+private static void GetParameters(String connectiongString) {  
+           using (SqlConnection conn = new SqlConnection(connectiongString)) {  
+              String queryString = "Select [CourseID],[Title],[Credits] from [MySchool].[dbo].[Course] where [Year]=@Year and [Credits]>=@Credits";   
+              SqlParameter year = new SqlParameter("@Year", 2012);   
+              SqlParameter credits = new SqlParameter("@Credits", SqlDbType.Int, 4, "Credits");   
+              credits.Value = 4; SqlCommand command = new SqlCommand(queryString, conn);   
+              command.Parameters.Add(year);   
+              command.Parameters.Add(credits);   
+              IDbDataAdapter mySchool = new SqlDataAdapter(command);   
+              IDataParameter[] parameters = mySchool.GetFillParameters();  
+              Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", "ParameterName", "SourceColumn", "Direction", "DbType", "Value");   
+              foreach (IDataParameter parameter in parameters) {   
+                 Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", parameter.ParameterName, parameter.SourceColumn, parameter.Direction, parameter.DbType, parameter.Value);   
+              }  
+           }  
+        }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MissingMappingAction">
+      <MemberSignature Language="C#" Value="public System.Data.MissingMappingAction MissingMappingAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.MissingMappingAction MissingMappingAction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataAdapter.MissingMappingAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.MissingMappingAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうかのマップされていないソース テーブルまたは列が渡されるソース名でフィルター処理するために、またはエラーが発生するを指定します。</summary>
+        <value><see cref="T:System.Data.MissingMappingAction" /> 値のいずれか。 既定値は、<see langword="Passthrough" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataAdapter.TableMappings%2A>プロパティは返されたレコードの間のマスター マッピングを提供し、<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定されている値が、<see cref="T:System.Data.MissingMappingAction" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MissingSchemaAction">
+      <MemberSignature Language="C#" Value="public System.Data.MissingSchemaAction MissingSchemaAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.MissingSchemaAction MissingSchemaAction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataAdapter.MissingSchemaAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.MissingSchemaAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すか、不足しているソース テーブル、列、およびそれらのリレーションシップは無視、データセットのスキーマを追加したり、発生するエラーが発生するかどうかを指定します。</summary>
+        <value><see cref="T:System.Data.MissingSchemaAction" /> 値のいずれか。 既定値は、<see langword="Add" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">設定されている値が、<see cref="T:System.Data.MissingSchemaAction" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TableMappings">
+      <MemberSignature Language="C#" Value="public System.Data.ITableMappingCollection TableMappings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.ITableMappingCollection TableMappings" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataAdapter.TableMappings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ITableMappingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース テーブルを dataset テーブルにマップする方法を示します。</summary>
+        <value>返されたレコードの間でマスター マッピングを提供するコレクションと<see cref="T:System.Data.DataSet" />です。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataAdapter> "Table"という名前のソース テーブルのマッピングのみが使用されます。 すべてを選択して、データの値を返すステートメントの INSERT、DELETE、および更新する必要がありますは一貫性のある列の名前付けを使用しています。 レコードで返される列名は一意である必要があります、重複する名前の列が以前のデータを上書きするそれ以外の場合。 <xref:System.Data.IDataAdapter.Update%2A>、"Table"という名前のソース テーブルにマップされているテーブルの変更を調整する必要がのみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public int Update (System.Data.DataSet dataSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Update(class System.Data.DataSet dataSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDataAdapter.Update(System.Data.DataSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet"><see cref="T:System.Data.DataSet" />データ ソースを更新するために使用します。</param>
+        <summary>それぞれの INSERT、UPDATE、または DELETE ステートメントの問い合わせについては、挿入、更新、または削除された、指定した行に各<see cref="T:System.Data.DataSet" />から、 <see cref="T:System.Data.DataTable" /> "Table"という名前です。</summary>
+        <returns>正常に更新された行の数、<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを呼び出すと、<xref:System.Data.IDataAdapter.Update%2A>メソッド、<xref:System.Data.IDataAdapter>を調べ、<xref:System.Data.DataRow.RowState%2A>プロパティで構成されているインデックスの順序に基づいて、各行の繰り返し、必要な INSERT、UPDATE、または DELETE ステートメントを実行し、<xref:System.Data.DataSet>です。 たとえば、<xref:System.Data.IDataAdapter.Update%2A>内の行の順序付けのため、DELETE ステートメントの後に、INSERT ステートメント、およびし、もう 1 つの DELETE ステートメントの実行可能性があります、<xref:System.Data.DataTable>です。  
+  
+ これらのステートメントは、バッチ処理としては実行されないことに注意してください。各行が個別に更新されます。 アプリケーションが呼び出すことができます、<xref:System.Data.DataSet.GetChanges%2A>メソッドの場合は、一連のステートメントの種類 (たとえば、更新する前に挿入) を制御する必要があります。 詳細については、次を参照してください。 [Dataadapter によるデータ ソースを更新](~/docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)です。  
+  
+ かどうかには、INSERT、UPDATE、または DELETE ステートメントが指定されていませんが、<xref:System.Data.Common.DataAdapter.Update%2A>メソッドが例外を生成します。 ただし、作成することができます、<xref:System.Data.SqlClient.SqlCommandBuilder>または<xref:System.Data.OleDb.OleDbCommandBuilder>設定した場合、SQL ステートメントの 1 つのテーブルの更新プログラムを自動的に生成するオブジェクト、 `SelectCommand` .NET Framework データ プロバイダーのプロパティです。 次に、設定しない追加の SQL ステートメントは、CommandBuilder によって生成されます。 この生成ロジックで内に存在するキー列について、<xref:System.Data.DataSet>です。 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ <xref:System.Data.Common.DataAdapter.Update%2A>メソッドは、更新プログラムを実行する前に最初のマッピングに示されたテーブルから行を取得します。 <xref:System.Data.Common.DataAdapter.Update%2A>の値を使用して行を更新、<xref:System.Data.IDbCommand.UpdatedRowSource%2A>プロパティです。 返されるその他の行は無視されます。  
+  
+ すべてのデータが読み込まれた後、 <xref:System.Data.DataSet>、<xref:System.Data.Common.DbDataAdapter.OnRowUpdated%2A>イベントを発生すると、ユーザーが、調整を検査できるように<xref:System.Data.DataSet>行とその出力、コマンドによって返されるパラメーター。 行が正常に更新される、その行に対する変更が受け入れられます。  
+  
+ 使用する場合<xref:System.Data.IDataAdapter.Update%2A>実行の順序は、次のようにします。  
+  
+1.  内の値、<xref:System.Data.DataRow>パラメーターの値に移動されます。  
+  
+2.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdating%2A> イベントが発生します。  
+  
+3.  コマンドを実行します。  
+  
+4.  コマンドに設定されている場合`FirstReturnedRecord`、最初に返された結果に格納し、<xref:System.Data.DataRow>です。  
+  
+5.  出力パラメーターがある場合配置されます、<xref:System.Data.DataRow>です。  
+  
+6.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdated%2A> イベントが発生します。  
+  
+7.  <xref:System.Data.DataRow.AcceptChanges%2A> が呼ばれたとき。  
+  
+ 各コマンドに関連付けられている、<xref:System.Data.IDataAdapter>関連付けられているパラメーターのコレクションを持ちます。 パラメーターを使用して、現在行にマップされます、`SourceColumn`と`SourceVersion`の .NET Framework データ プロバイダーのプロパティ`Parameter`クラスです。 `SourceColumn`指す、<xref:System.Data.DataTable>列を<xref:System.Data.IDataAdapter>参照を現在の行のパラメーターの値を取得します。  
+  
+ `SourceColumn`すべてのテーブル マップを適用する前に、マップされていない列の名前を指します。 場合`SourceColumn`は存在しない列に実行されるアクションは、次のいずれかに依存<xref:System.Data.MissingMappingAction>値。  
+  
+|列挙値|実行されるアクション|  
+|-----------------------|------------------|  
+|`MissingMappingAction.Passthrough`|ソース列の名前とテーブル名を使用して、<xref:System.Data.DataSet>マッピングが存在しない場合。|  
+|`MissingMappingAction.Ignore`|A<xref:System.SystemException>が生成されます。 マッピングが明示的に設定されている入力パラメーターのマッピングが欠落は通常、エラーによって発生します。|  
+|`MissingMappingAction.Error`|A<xref:System.SystemException>が生成されます。|  
+  
+ `SourceColumn`出力の値をマップするプロパティを使用しても、または入力/出力パラメーターにバックアップ、`DataSet`です。 存在しない列を参照する場合、例外が生成されます。  
+  
+ `SourceVersion`の .NET Framework データ プロバイダーのプロパティ`Parameter`クラスかどうかを使用する、 `Original`、 `Current`、または`Proposed`列の値のバージョン。 この機能は、オプティミスティック同時実行制御違反をチェックする UPDATE ステートメントの WHERE 句に元の値を含める頻繁に使用します。  
+  
+> [!NOTE]
+>  行の更新中にエラーが発生した場合は、例外がスローされ、更新プログラムの実行は廃止されました。 エラーが発生したときに例外を生成せず、更新操作を続行するには設定、<xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A>プロパティを`true`呼び出す前に<xref:System.Data.Common.DbDataAdapter.Update%2A>です。 内の行ごとにエラーに応答することがありますも、 `RowUpdated` DataAdapter のイベントです。 内で例外を生成せず、更新操作を続行する、`RowUpdated`イベント、設定、<xref:System.Data.Common.RowUpdatedEventArgs.Status%2A>のプロパティ、<xref:System.Data.Common.RowUpdatedEventArgs>に<xref:System.Data.UpdateStatus.Continue>です。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスを使用して<xref:System.Data.OleDb.OleDbDataAdapter>を<xref:System.Data.Common.DataAdapter.Update%2A>データ ソース。 この例では、作成した、<xref:System.Data.OleDb.OleDbDataAdapter>と<xref:System.Data.DataSet>です。  
+  
+ [!code-csharp[Classic WebData DataAdapter.IDataAdapter.Update Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.IDataAdapter.Update Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataAdapter.IDataAdapter.Update Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataAdapter.IDataAdapter.Update Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DBConcurrencyException">INSERT、UPDATE、または DELETE ステートメントを実行しようとすると、影響を受けた 0 個のレコードが発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,51 @@
+<Type Name="RefreshEventHandler" FullName="System.ComponentModel.RefreshEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RefreshEventHandler(RefreshEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RefreshEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.RefreshEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="e" Type="System.ComponentModel.RefreshEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="e">A<see cref="T:System.ComponentModel.RefreshEventArgs" />コンポーネントを含むまたは<see cref="T:System.Type" />に変更します。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.ComponentModel.TypeDescriptor.Refreshed" />イベントが発生したときに、<see cref="T:System.Type" />またはコンポーネントがデザイン時に変更します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.RefreshEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用する方法、<xref:System.ComponentModel.RefreshEventHandler>を処理するデリゲート、<xref:System.ComponentModel.TypeDescriptor.Refreshed>イベントの種類またはコンポーネントが変更されるとします。 コードでは、`OnRefreshed`イベントがイベントを処理し、変更しているコンポーネントが表示されます。  
+  
+ コードでは、`TextBox`コントロールがフォームに既に配置されています。  
+  
+ [!code-cpp[RefreshEventHandler#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RefreshEventHandler/CPP/refreshevent.cpp#1)]
+ [!code-csharp[RefreshEventHandler#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RefreshEventHandler/CS/refreshevent.cs#1)]
+ [!code-vb[RefreshEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RefreshEventHandler/VB/refreshevent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

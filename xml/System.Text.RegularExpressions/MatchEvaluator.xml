@@ -1,0 +1,53 @@
+<Type Name="MatchEvaluator" FullName="System.Text.RegularExpressions.MatchEvaluator">
+  <TypeSignature Language="C#" Value="public delegate string MatchEvaluator(Match match);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MatchEvaluator extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.MatchEvaluator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="match" Type="System.Text.RegularExpressions.Match" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.String</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="match"><see cref="T:System.Text.RegularExpressions.Match" />中に 1 つの正規表現の一致を表すオブジェクト、<see cref="Overload:System.Text.RegularExpressions.Regex.Replace" />メソッド操作します。</param>
+    <summary>中に正規表現の一致が見つかるたびに呼び出されるメソッドを表す、<see cref="Overload:System.Text.RegularExpressions.Regex.Replace" />メソッド操作します。</summary>
+    <returns>によって表されるメソッドによって返される文字列、<see cref="T:System.Text.RegularExpressions.MatchEvaluator" />を委任します。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Text.RegularExpressions.MatchEvaluator>など置換メソッドによって見つかった一致ごとにカスタムの検証または操作の操作を実行するメソッドのデリゲート<xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.Text.RegularExpressions.MatchEvaluator%29?displayProperty=nameWithType>です。 各一致文字列を<xref:System.Text.RegularExpressions.Regex.Replace%2A>メソッドの呼び出し、<xref:System.Text.RegularExpressions.MatchEvaluator>デリゲートにメソッド、<xref:System.Text.RegularExpressions.Match>一致を表すオブジェクト。 デリゲート メソッドを実行して文字列を返す処理、<xref:System.Text.RegularExpressions.Regex.Replace%2A>メソッドが、一致した文字列に置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Text.RegularExpressions.MatchEvaluator>一致に見つかった位置の番号を持つ文字のすべての一致するグループを置換するデリゲート。  
+  
+ [!code-cpp[System.Text.RegularExpressions.MatchEvaluator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.text.regularexpressions.MatchEvaluator/CPP/regexreplace.cpp#1)]
+ [!code-csharp[System.Text.RegularExpressions.MatchEvaluator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.MatchEvaluator/CS/regexreplace.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.MatchEvaluator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.MatchEvaluator/VB/regexreplace.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

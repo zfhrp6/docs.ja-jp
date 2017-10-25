@@ -1,0 +1,69 @@
+<Type Name="MessageHeaderArrayAttribute" FullName="System.ServiceModel.MessageHeaderArrayAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MessageHeaderArrayAttribute : System.ServiceModel.MessageHeaderAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageHeaderArrayAttribute extends System.ServiceModel.MessageHeaderAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageHeaderArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.MessageHeaderAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP メッセージの既定のラッパー要素を、ヘッダー要素内の配列型の周囲に書き込んではならないことを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageHeaderArrayAttribute> 内で直接、または配列型の既定のラッパー要素なしで `<soap:Header>` の最初で唯一の子の内部で、無制限の数の同一要素を出力する場合に、`<soap:Header>` 属性を使用して標準の配列ラッパー要素をオフにします。  
+  
+ <xref:System.ServiceModel.MessageHeaderArrayAttribute> は、配列型のメンバーにのみ適用できます。 これを指定した場合、<xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A> および <xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A> は、各配列項目の要素の名前および名前空間として使用されます。 指定しない場合、配列項目要素は、繰り返しのない本文部分に名前を付けるために使用された規則と同じ規則を使って命名されます。 詳細については、<xref:System.ServiceModel.MessageContractMemberAttribute.Name%2A> および <xref:System.ServiceModel.MessageContractMemberAttribute.Namespace%2A> を参照してください。  
+  
+ 既定の SOAP エンベロープ自体を変更せずに SOAP 本体のコンテンツのシリアル化を制御する方法の詳細については、次を参照してください。 <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)、および[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ メッセージ コントラクトの作成の詳細については、次を参照してください。[メッセージ コントラクトを使用して](~/docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageHeaderArrayAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageHeaderArrayAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageHeaderArrayAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP メッセージ ヘッダーの中に無制限の配列項目を含める場合に、既定の配列ラッパー要素を抑制するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,283 @@
+<Type Name="DynamicDataRoute" FullName="System.Web.DynamicData.DynamicDataRoute">
+  <TypeSignature Language="C#" Value="public class DynamicDataRoute : System.Web.Routing.Route" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicDataRoute extends System.Web.Routing.Route" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicDataRoute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Routing.Route</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET 動的データで使用されるルートを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的データの動作を構成するのにには、ルートを使用します。  
+  
+ 静的な<xref:System.Web.Routing.RouteTable.Routes%2A>のプロパティ、<xref:System.Web.Routing.RouteTable>型がルートのコレクションを保持します。 動的なデータは、1 つまたは複数のルートは、通常、登録 (に追加された、<xref:System.Web.Routing.RouteTable.Routes%2A>プロパティ) で、 `Application_Start` Global.asax ファイル内のイベントです。 たとえば、ルートでは、行のリストと同じページに 1 行のデータの詳細を表示するかどうかを判断します。 いくつかのテーブルの行のリストと同じページに詳細を表示するかどうかを判断することもできます。  
+  
+ 設定する、 <xref:System.Web.DynamicData.DynamicDataRoute.Action%2A>、 <xref:System.Web.DynamicData.DynamicDataRoute.ViewName%2A>、 <xref:System.Web.DynamicData.DynamicDataRoute.Table%2A>、および<xref:System.Web.DynamicData.DynamicDataRoute.Model%2A>プロパティ内の URL のパターンを指定し、<xref:System.Web.Routing.Route.%23ctor%2A>コンス トラクターです。  
+  
+ 動的なデータは、要求の URL パターンに一致し、Url を作成するを指定した URL パターンを使用します。 詳細については、「<xref:System.Web.DynamicData.DynamicDataRoute.%23ctor%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicDataRoute (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataRoute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">URL パターン。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.DynamicData.DynamicDataRoute" />クラスを指定した URL パターン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、動的なデータで置換パラメーターを使用して作成される Url を指定します。 たとえば、文字列を渡す場合"{table}/{controller}"、結果は、URL になります"~/Products/ListDetails.aspx"ListDetails 操作を使用して、Product テーブルを表示するとします。  
+  
+ 置換パラメーターを使用する必要はありません。 「テーブル/ダイナミック」が生成される文字列を渡す可能性があります"~/Table/DynamicData.aspx"です。 "MyPageName"に渡すことが生成するために"~/MyPageName.aspx"です。 動的なデータは、テーブルおよびアクションの情報を確認する URL には依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataRoute.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルートのアクションの名前を設定します。</summary>
+        <value>ルート アクションの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能なアクション名の一覧は、次を参照してください。<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>です。 インスタンスを作成するときに、このプロパティを設定しないかどうかは<xref:System.Web.DynamicData.DynamicDataRoute>ルートは、すべてのアクションに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionFromRouteData">
+      <MemberSignature Language="C#" Value="public string GetActionFromRouteData (System.Web.Routing.RouteData routeData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetActionFromRouteData(class System.Web.Routing.RouteData routeData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataRoute.GetActionFromRouteData(System.Web.Routing.RouteData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeData" Type="System.Web.Routing.RouteData" />
+      </Parameters>
+      <Docs>
+        <param name="routeData">現在の要求に関連するルート データ。 詳細については、「<see cref="M:System.Web.DynamicData.DynamicDataRoute.GetRouteData(System.Web.HttpContextBase)" />」を参照してください。</param>
+        <summary>アクションを返します、<see cref="T:System.Web.Routing.RouteData" />の現在の動的データ Web 要求のオブジェクト。</summary>
+        <returns>アクション。 使用可能な値の一覧は、次を参照してください。<see cref="T:System.Web.DynamicData.PageAction" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">アクションは、Web 要求のルーティング情報に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRouteData">
+      <MemberSignature Language="C#" Value="public override System.Web.Routing.RouteData GetRouteData (System.Web.HttpContextBase httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Routing.RouteData GetRouteData(class System.Web.HttpContextBase httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataRoute.GetRouteData(System.Web.HttpContextBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">Web 要求に関する情報が含まれています。</param>
+        <summary>特定の Web 要求のルーティング情報を返します。</summary>
+        <returns>Web 要求のルーティング情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `httpContext`パラメーターは、要求されたテーブルとアクションを識別できるように、必要な Web 要求の情報を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTableFromRouteData">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable GetTableFromRouteData (System.Web.Routing.RouteData routeData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.DynamicData.MetaTable GetTableFromRouteData(class System.Web.Routing.RouteData routeData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataRoute.GetTableFromRouteData(System.Web.Routing.RouteData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routeData" Type="System.Web.Routing.RouteData" />
+      </Parameters>
+      <Docs>
+        <param name="routeData">現在の要求に関連するルート データ。 詳細については、「<see cref="M:System.Web.DynamicData.DynamicDataRoute.GetRouteData(System.Web.HttpContextBase)" />」を参照してください。</param>
+        <summary>動的データ Web ページ要求に関連付けられているテーブルを識別します。</summary>
+        <returns>動的なデータが表示されるテーブルを説明するメタデータ。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">Web 要求のルーティング情報のテーブルが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualPath">
+      <MemberSignature Language="C#" Value="public override System.Web.Routing.VirtualPathData GetVirtualPath (System.Web.Routing.RequestContext requestContext, System.Web.Routing.RouteValueDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Routing.VirtualPathData GetVirtualPath(class System.Web.Routing.RequestContext requestContext, class System.Web.Routing.RouteValueDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataRoute.GetVirtualPath(System.Web.Routing.RequestContext,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.VirtualPathData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+        <Parameter Name="values" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">Web 要求に関する情報が含まれています。</param>
+        <param name="values">現在のアプリケーションのルート オブジェクトのコレクションです。</param>
+        <summary>ルートの仮想パスを返します。</summary>
+        <returns>仮想パス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaModel Model { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaModel Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataRoute.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルートが適用されるデータ モデルを設定します。</summary>
+        <value>ルートは、データ モデルのメタデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するときに、このプロパティを設定しないかどうかは<xref:System.Web.DynamicData.DynamicDataRoute>、登録済みの既定のモデル<xref:System.Data.Linq.DataContext>インスタンスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteHandler">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.DynamicDataRouteHandler RouteHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.DynamicDataRouteHandler RouteHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataRoute.RouteHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicDataRouteHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートの要求を処理するオブジェクトを取得または設定します。</summary>
+        <value>ルートの要求を処理するために使用するハンドラー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicDataRoute.RouteHandler%2A>プロパティと同じ、<xref:System.Web.Routing.Route.RouteHandler%2A?displayProperty=nameWithType>プロパティです。 厳密に型指定されたバージョンとして提供されて、<xref:System.Web.Routing.Route.RouteHandler%2A?displayProperty=nameWithType>利便性をコーディングするためのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public string Table { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataRoute.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルートのテーブルの名前を設定します。</summary>
+        <value>ルートに関連付けられているテーブルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するときに、このプロパティを設定しないかどうかは<xref:System.Web.DynamicData.DynamicDataRoute>、ルートが示されたデータ モデルのすべてのテーブルに適用されます<xref:System.Web.DynamicData.DynamicDataRoute.Model%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewName">
+      <MemberSignature Language="C#" Value="public string ViewName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataRoute.ViewName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルートに関連付けられている .aspx ページの名前を設定します。</summary>
+        <value>ルートに関連付けられている .aspx ページの名前。 プロパティの値を返します、ルートのページが指定されていない場合、<see cref="P:System.Web.DynamicData.DynamicDataRoute.Action" />プロパティを".aspx"が追加されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的なデータでは、いくつかの標準的な .aspx ページ名を使用して、ユーザー設定の表示、更新、および指定されたテーブルからデータを削除する UI を作成します。 これらのページ名には、List.aspx、Details.aspx、Edit.aspx、Insert.aspx、および ListDetails.aspx が含まれます。 <xref:System.Web.DynamicData.DynamicDataRoute.ViewName%2A>プロパティは、これらのページの使用する特定のテーブルとアクションを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

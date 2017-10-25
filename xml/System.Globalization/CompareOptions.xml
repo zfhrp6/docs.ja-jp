@@ -1,0 +1,333 @@
+<Type Name="CompareOptions" FullName="System.Globalization.CompareOptions">
+  <TypeSignature Language="C#" Value="public enum CompareOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CompareOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.CompareOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用する文字列比較オプションを定義<see cref="T:System.Globalization.CompareInfo" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのオプションは、大文字小文字の区別、または種類の文字を無視する必要があるを示します。  
+  
+ .NET Framework の並べ替えの 3 つの異なる方法で使用: word の並べ替え、文字列の並べ替え、および並べ替えの序数。 単語の並べ替えでは、文字列のカルチャに依存した比較を実行します。 特定の英数字以外の文字が特別な重み付けがあります。 たとえば、ハイフン ("-") に割り当てられる重みは非常に小さいため、並べ替えられたリスト内の "coop" と "co-op" の出現位置は隣接します。 文字列の並べ替えは word での並べ替えに似ていますが、特殊なケースではありません。 したがって、英数字以外のすべてのシンボルは、すべての英数字文字の前にします。 序数の並べ替えでは、文字列の各要素のユニコード値に基づいて文字列を比較します。  
+  
+ StringSort 値でのみ使用できます<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>と<xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType>です。 <xref:System.ArgumentException>StringSort 値が使用されている場合にスローされる<xref:System.Globalization.CompareInfo.IsPrefix%2A?displayProperty=nameWithType>、 <xref:System.Globalization.CompareInfo.IsSuffix%2A?displayProperty=nameWithType>、 <xref:System.Globalization.CompareInfo.IndexOf%2A?displayProperty=nameWithType>、または<xref:System.Globalization.CompareInfo.LastIndexOf%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  アプリケーションがそのまま使用する文字列比較メソッドを使用可能であれば、<xref:System.Globalization.CompareOptions>予想比較の種類を指定する値。 一般的な規則としてユーザー向けの比較が最も適してセキュリティ (現在のカルチャを使用)、言語のオプションを使用して Ordinal または OrdinalIgnoreCase、比較を指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、StringSort の並べ替えの違い StringSort せず並べ替えを示しています。  
+  
+ [!code-cpp[System.Globalization.CompareOptions.StringSort#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CompareOptions.StringSort/CPP/compareoptions_stringsort.cpp#1)]
+ [!code-csharp[System.Globalization.CompareOptions.StringSort#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CompareOptions.StringSort/CS/compareoptions_stringsort.cs#1)]
+ [!code-vb[System.Globalization.CompareOptions.StringSort#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CompareOptions.StringSort/VB/compareoptions_stringsort.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="IgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions IgnoreCase = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.IgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較で大文字小文字を区別する必要があることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreKanaType">
+      <MemberSignature Language="C#" Value="IgnoreKanaType" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions IgnoreKanaType = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.IgnoreKanaType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較でひらがなとカタカナを無視することを示します。 ひらがなとカタカナはひらがなとカタカナの文字を指します、日本語の言語の発音を表すことができます。 ひらがなネイティブ日本語の表現および使用語、「コンピューター」または"Internet"など、他の言語から借用語のカタカナが使用されます。 ひらがなとカタカナの両方では、発音を表現できます。 この値は、選択した場合、1 つのサウンドのひらがな文字は同じ発音カタカナの文字と等しいと見なされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreNonSpace">
+      <MemberSignature Language="C#" Value="IgnoreNonSpace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions IgnoreNonSpace = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.IgnoreNonSpace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較で分音文字などの非スペーシング組み合わせ文字を無視することを示します。 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)組み合わせ文字は、新しい文字を生成するために基本文字の結合文字として定義します。 非スペーシング組み合わせ文字は、表示されるときに単独で間隔位置を占有することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreSymbols">
+      <MemberSignature Language="C#" Value="IgnoreSymbols" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions IgnoreSymbols = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.IgnoreSymbols" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較などの空白文字、句読点、通貨記号、パーセント記号、数学記号、アンパサンド記号を無視することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreWidth">
+      <MemberSignature Language="C#" Value="IgnoreWidth" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions IgnoreWidth = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.IgnoreWidth" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較で文字幅を無視することを示します。 たとえば、日本語のカタカナの文字を全角と半角記述できます。 この値は、選択した場合、カタカナの文字を全角として書き込まれますが、同じ文字を半角文字として記述と等しいと見なされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較の既定オプションの設定を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="Ordinal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions Ordinal = int32(1073741824)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.Ordinal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の比較が連続する Unicode utf-16 でエンコードされた値を使用することを示します (コード単位の比較でのコード単位)、文字列の先頭の 1 つが高速比較をするは、カルチャに依存しません。 コード単位 XXXX16 で始まる文字列は、XXXX16 が YYYY16 より小さい場合、YYYY16 で始まる文字列の前に来るです。 この値は、その他と組み合わせることはできません<see cref="T:System.Globalization.CompareOptions" />値を単独で使用する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OrdinalIgnoreCase">
+      <MemberSignature Language="C#" Value="OrdinalIgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions OrdinalIgnoreCase = int32(268435456)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.OrdinalIgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列比較は、大文字小文字を区別する必要がありますし、序数に基づく比較を実行します。 この手法は、文字列をインバリアント カルチャを使用して、結果に序数に基づく比較を実行することを大文字に変換するのと同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StringSort">
+      <MemberSignature Language="C#" Value="StringSort" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CompareOptions StringSort = int32(536870912)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CompareOptions.StringSort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の比較が文字列の並べ替えアルゴリズムを使用することを示します。 文字列の並べ替え、ハイフン、アポストロフィとその他の英数字以外の記号は、文字の英数字の前にします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

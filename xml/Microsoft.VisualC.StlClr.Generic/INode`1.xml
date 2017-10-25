@@ -1,0 +1,115 @@
+<Type Name="INode&lt;TValue&gt;" FullName="Microsoft.VisualC.StlClr.Generic.INode&lt;TValue&gt;">
+  <TypeSignature Language="C#" Value="public interface INode&lt;TValue&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract beforefieldinit INode`1&lt;TValue&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualC.StlClr.Generic.INode`1" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TValue" />
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TValue">[!INCLUDE[cpp_iter_arg](~/includes/cpp-iter-arg-md.md)]</typeparam>
+    <summary>ノードのデータ構造のインターフェイスです。 双方向の反復をサポートするコンテナーには、ノードが含まれます。 ノードは、コンテナー内のコンテナーと、次または前の要素へのポインターでは、その位置にある要素の値で構成されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="_Value">
+      <MemberSignature Language="C#" Value="public TValue _Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TValue _Value" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualC.StlClr.Generic.INode`1._Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue@</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテナー内のこのノードの要素の値を設定します。</summary>
+        <value>コンテナー内のこのノードの要素の値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="container">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.IBidirectionalContainer&lt;TValue&gt; container ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.VisualC.StlClr.Generic.IBidirectionalContainer`1&lt;!TValue&gt; container() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.INode`1.container" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.IBidirectionalContainer&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードが含まれているコンテナーを取得します。</summary>
+        <returns>現在のノードが含まれているコンテナーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="is_head">
+      <MemberSignature Language="C#" Value="public bool is_head ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool is_head() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.INode`1.is_head" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードが、コンテナーの最初のノードであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のノードが、コンテナーの最初のノードの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="next_node">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.INode&lt;TValue&gt; next_node ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.VisualC.StlClr.Generic.INode`1&lt;!TValue&gt; next_node() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.INode`1.next_node" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.INode&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードのコンテナー内の次のノードを取得します。</summary>
+        <returns>現在のノード コンテナー内で次のノード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="prev_node">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.INode&lt;TValue&gt; prev_node ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.VisualC.StlClr.Generic.INode`1&lt;!TValue&gt; prev_node() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.INode`1.prev_node" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.INode&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードの直前に、コンテナー内のノードを取得します。</summary>
+        <returns>現在のノードの直前のコンテナー ノードです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

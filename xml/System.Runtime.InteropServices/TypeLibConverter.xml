@@ -1,0 +1,288 @@
+<Type Name="TypeLibConverter" FullName="System.Runtime.InteropServices.TypeLibConverter">
+  <TypeSignature Language="C#" Value="public sealed class TypeLibConverter : System.Runtime.InteropServices.ITypeLibConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeLibConverter extends System.Object implements class System.Runtime.InteropServices.ITypeLibConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.TypeLibConverter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices.ITypeLibConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("f1c3bf79-c3e4-11d3-88e7-00902754c43a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連のマネージ アセンブリ、COM タイプ ライブラリからおよびその逆の変換サービスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLibConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.TypeLibConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertAssemblyToTypeLib">
+      <MemberSignature Language="C#" Value="public object ConvertAssemblyToTypeLib (System.Reflection.Assembly assembly, string strTypeLibName, System.Runtime.InteropServices.TypeLibExporterFlags flags, System.Runtime.InteropServices.ITypeLibExporterNotifySink notifySink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertAssemblyToTypeLib(class System.Reflection.Assembly assembly, string strTypeLibName, valuetype System.Runtime.InteropServices.TypeLibExporterFlags flags, class System.Runtime.InteropServices.ITypeLibExporterNotifySink notifySink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibConverter.ConvertAssemblyToTypeLib(System.Reflection.Assembly,System.String,System.Runtime.InteropServices.TypeLibExporterFlags,System.Runtime.InteropServices.ITypeLibExporterNotifySink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="strTypeLibName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Runtime.InteropServices.TypeLibExporterFlags" />
+        <Parameter Name="notifySink" Type="System.Runtime.InteropServices.ITypeLibExporterNotifySink" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">変換対象のアセンブリ。</param>
+        <param name="strTypeLibName">結果のタイプ ライブラリのファイル名。</param>
+        <param name="flags">A<see cref="T:System.Runtime.InteropServices.TypeLibExporterFlags" />特別な設定を示す値。</param>
+        <param name="notifySink"><see cref="T:System.Runtime.InteropServices.ITypeLibExporterNotifySink" />呼び出し元によって実装されるインターフェイス。</param>
+        <summary>アセンブリを COM タイプ ライブラリに変換します。</summary>
+        <returns><see langword="ITypeLib" /> インターフェイスを実装するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`ITypeLib`、MSDN ライブラリの既存のドキュメントを参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1/CPP/convert2.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1/CS/convert2.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.TypelibConverter.ConvertAssemblyToTypelib1/VB/convert2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypeLibToAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.AssemblyBuilder ConvertTypeLibToAssembly (object typeLib, string asmFileName, int flags, System.Runtime.InteropServices.ITypeLibImporterNotifySink notifySink, byte[] publicKey, System.Reflection.StrongNameKeyPair keyPair, bool unsafeInterfaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Emit.AssemblyBuilder ConvertTypeLibToAssembly(object typeLib, string asmFileName, int32 flags, class System.Runtime.InteropServices.ITypeLibImporterNotifySink notifySink, unsigned int8[] publicKey, class System.Reflection.StrongNameKeyPair keyPair, bool unsafeInterfaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibConverter.ConvertTypeLibToAssembly(System.Object,System.String,System.Int32,System.Runtime.InteropServices.ITypeLibImporterNotifySink,System.Byte[],System.Reflection.StrongNameKeyPair,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeLib" Type="System.Object" />
+        <Parameter Name="asmFileName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Int32" />
+        <Parameter Name="notifySink" Type="System.Runtime.InteropServices.ITypeLibImporterNotifySink" />
+        <Parameter Name="publicKey" Type="System.Byte[]" />
+        <Parameter Name="keyPair" Type="System.Reflection.StrongNameKeyPair" />
+        <Parameter Name="unsafeInterfaces" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="typeLib"><see langword="ITypeLib" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="asmFileName">結果として得られるアセンブリのファイル名。</param>
+        <param name="flags">A<see cref="T:System.Runtime.InteropServices.TypeLibImporterFlags" />特別な設定を示す値。</param>
+        <param name="notifySink">
+          <see cref="T:System.Runtime.InteropServices.ITypeLibImporterNotifySink" />呼び出し元によって実装されるインターフェイス。</param>
+        <param name="publicKey">A<see langword="byte" />公開キーを含む配列。</param>
+        <param name="keyPair">A<see cref="T:System.Reflection.StrongNameKeyPair" />パブリックおよびプライベートの暗号化キー ペアを含むオブジェクト。</param>
+        <param name="unsafeInterfaces">場合<see langword="true" />、インターフェイスのリンク時のチェックを必要と<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />権限です。 場合<see langword="false" />スタックを必要とする実行時のチェック段階し、高価なされますが、保護の強化を実現するのに役立つインターフェイスを必要とします。</param>
+        <summary>COM タイプ ライブラリをアセンブリに変換します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.AssemblyBuilder" />変換されたタイプ ライブラリを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ に対して有効では、アセンブリの厳密な名前を生成しない場合は、`publicKey`と`keyPair`する`null`限り、`flags`と等しくない<xref:System.Runtime.InteropServices.TypeLibImporterFlags?displayProperty=nameWithType>です。 それ以外の場合、これらのパラメーターの少なくとも 1 つ指定してください。 場合`publicKey`は`null`、公開キーと`keyPair`ターゲット アセンブリのマニフェストのメタデータで設定して、アセンブリの内容に基づいて、署名が生成されます。 場合`keyPair`は`null`、`publicKey`ターゲット アセンブリのマニフェストのメタデータで設定され、署名は生成されません。 両方のパラメーターを指定して、一般的に効果的ではなく、署名が無効になります。  
+  
+ 詳細については`ITypeLib`、MSDN ライブラリの既存のドキュメントを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeLib" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="asmFileName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="notifySink" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asmFileName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="asmFileName" />MAX_PATH よりも長くなります。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="flags" /> が <see cref="F:System.Runtime.InteropServices.TypeLibImporterFlags.PrimaryInteropAssembly" /> ではありません。  
+  
+ または  
+  
+ <paramref name="publicKey" /> と <paramref name="keyPair" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Reflection.ReflectionTypeLoadException">生成されるメタデータには、任意の型が読み込まれないようにエラーが発生します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTypeLibToAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.AssemblyBuilder ConvertTypeLibToAssembly (object typeLib, string asmFileName, System.Runtime.InteropServices.TypeLibImporterFlags flags, System.Runtime.InteropServices.ITypeLibImporterNotifySink notifySink, byte[] publicKey, System.Reflection.StrongNameKeyPair keyPair, string asmNamespace, Version asmVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Emit.AssemblyBuilder ConvertTypeLibToAssembly(object typeLib, string asmFileName, valuetype System.Runtime.InteropServices.TypeLibImporterFlags flags, class System.Runtime.InteropServices.ITypeLibImporterNotifySink notifySink, unsigned int8[] publicKey, class System.Reflection.StrongNameKeyPair keyPair, string asmNamespace, class System.Version asmVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibConverter.ConvertTypeLibToAssembly(System.Object,System.String,System.Runtime.InteropServices.TypeLibImporterFlags,System.Runtime.InteropServices.ITypeLibImporterNotifySink,System.Byte[],System.Reflection.StrongNameKeyPair,System.String,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.AssemblyBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeLib" Type="System.Object" />
+        <Parameter Name="asmFileName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Runtime.InteropServices.TypeLibImporterFlags" />
+        <Parameter Name="notifySink" Type="System.Runtime.InteropServices.ITypeLibImporterNotifySink" />
+        <Parameter Name="publicKey" Type="System.Byte[]" />
+        <Parameter Name="keyPair" Type="System.Reflection.StrongNameKeyPair" />
+        <Parameter Name="asmNamespace" Type="System.String" />
+        <Parameter Name="asmVersion" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="typeLib"><see langword="ITypeLib" /> インターフェイスを実装するオブジェクト。</param>
+        <param name="asmFileName">結果として得られるアセンブリのファイル名。</param>
+        <param name="flags">A<see cref="T:System.Runtime.InteropServices.TypeLibImporterFlags" />特別な設定を示す値。</param>
+        <param name="notifySink">
+          <see cref="T:System.Runtime.InteropServices.ITypeLibImporterNotifySink" />呼び出し元によって実装されるインターフェイス。</param>
+        <param name="publicKey">A<see langword="byte" />公開キーを含む配列。</param>
+        <param name="keyPair">A<see cref="T:System.Reflection.StrongNameKeyPair" />パブリックおよびプライベートの暗号化キー ペアを含むオブジェクト。</param>
+        <param name="asmNamespace">結果として得られるアセンブリの名前空間。</param>
+        <param name="asmVersion">結果として得られるアセンブリのバージョン。 場合<see langword="null" />、タイプ ライブラリのバージョンを使用します。</param>
+        <summary>COM タイプ ライブラリをアセンブリに変換します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.AssemblyBuilder" />変換されたタイプ ライブラリを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ に対して有効では、アセンブリの厳密な名前を生成しない場合は、`publicKey`と`keyPair`する`null`限り、`flags`と等しくない<xref:System.Runtime.InteropServices.TypeLibImporterFlags?displayProperty=nameWithType>です。 それ以外の場合、これらのパラメーターの少なくとも 1 つを指定する必要があります。 場合`publicKey`は`null`、公開キーと`keyPair`ターゲット アセンブリのマニフェストのメタデータで設定して、アセンブリの内容に基づいて、署名が生成されます。 場合`keyPair`は`null`、`publicKey`ターゲット アセンブリのマニフェストのメタデータで設定され、署名は生成されません。 両方のパラメーターを指定して、一般的に効果的ではなく、署名が無効になります。  
+  
+ 詳細については`ITypeLib`、MSDN ライブラリの既存のドキュメントを参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Runtime.InteropServices.ConvertTypelibToASSembly#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Runtime.InteropServices.ConvertTypelibToASSembly/CPP/convert1.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.ConvertTypelibToASSembly#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.ConvertTypelibToASSembly/CS/convert1.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.ConvertTypelibToASSembly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.ConvertTypelibToASSembly/VB/convert1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeLib" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="asmFileName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="notifySink" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asmFileName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="asmFileName" />MAX_PATH よりも長くなります。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="flags" /> が <see cref="F:System.Runtime.InteropServices.TypeLibImporterFlags.PrimaryInteropAssembly" /> ではありません。  
+  
+ または  
+  
+ <paramref name="publicKey" /> と <paramref name="keyPair" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Reflection.ReflectionTypeLoadException">生成されるメタデータには、任意の型が読み込まれないようにエラーが発生します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimaryInteropAssembly">
+      <MemberSignature Language="C#" Value="public bool GetPrimaryInteropAssembly (Guid g, int major, int minor, int lcid, out string asmName, out string asmCodeBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetPrimaryInteropAssembly(valuetype System.Guid g, int32 major, int32 minor, int32 lcid, [out] string&amp; asmName, [out] string&amp; asmCodeBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibConverter.GetPrimaryInteropAssembly(System.Guid,System.Int32,System.Int32,System.Int32,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Guid" />
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+        <Parameter Name="lcid" Type="System.Int32" />
+        <Parameter Name="asmName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="asmCodeBase" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="g">タイプ ライブラリの GUID です。</param>
+        <param name="major">タイプ ライブラリのメジャー バージョン番号。</param>
+        <param name="minor">タイプ ライブラリのマイナー バージョン番号。</param>
+        <param name="lcid">タイプ ライブラリの LCID です。</param>
+        <param name="asmName">正常に返された場合は、プライマリ相互運用機能アセンブリの名前に関連付けられている<c>g</c>です。</param>
+        <param name="asmCodeBase">正常に返された場合は、そのプライマリ相互運用機能アセンブリのコード ベースに関連付けられている<c>g</c>です。</param>
+        <summary>コードと名前を指定したタイプ ライブラリのプライマリ相互運用機能アセンブリの基本取得します。</summary>
+        <returns>
+          <see langword="true" />プライマリ相互運用機能アセンブリが、レジストリで見つかった場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

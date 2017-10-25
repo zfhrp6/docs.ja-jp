@@ -1,0 +1,143 @@
+<Type Name="ManagementOptions" FullName="System.Management.ManagementOptions">
+  <TypeSignature Language="C#" Value="public abstract class ManagementOptions : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ManagementOptions extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのオプション オブジェクトの抽象基本クラスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public abstract object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementOptions.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementNamedValueCollection Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementNamedValueCollection Context" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementOptions.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementNamedValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または WMI コンテキスト オブジェクトを設定します。 これは、カスタマイズされた操作のコンテキスト情報をサポートする WMI プロバイダーに渡される名前と値のペアの一覧です。</summary>
+        <value>返します、 <see cref="T:System.Management.ManagementNamedValueCollection" /> WMI コンテキスト情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 名前と値のペアをカスタマイズされた操作のコンテキスト情報をサポートする WMI プロバイダーに渡されるリスト。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InfiniteTimeout">
+      <MemberSignature Language="C#" Value="public static readonly TimeSpan InfiniteTimeout;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan InfiniteTimeout" />
+      <MemberSignature Language="DocId" Value="F:System.Management.ManagementOptions.InfiniteTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウトが発生しないことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を使用、<xref:System.Management.ManagementOptions.Timeout%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementOptions.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作に適用するタイムアウトを設定します。 コレクションを返す操作では、このタイムアウトは適用される操作自体ではなく、結果のコレクションの列挙に注意してください (、<see cref="P:System.Management.EnumerationOptions.ReturnImmediately" />後者のプロパティを使用)。 このプロパティは、操作をセミコロン同期的に実行することを示すために使用されます。</summary>
+        <value>返します、<see cref="T:System.TimeSpan" />操作に適用するタイムアウトを定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Management.ManagementOptions.Timeout%2A>プロパティは、次のクラスに対応する準同期操作で使用: <xref:System.Management.ObjectGetOptions>、 <xref:System.Management.PutOptions>、 <xref:System.Management.DeleteOptions>、 <xref:System.Management.InvokeMethodOptions>、 <xref:System.Management.EnumerationOptions>、および<xref:System.Management.EventWatcherOptions>です。  
+  
+ このプロパティ効果はありません、<xref:System.Management.ManagementScope.Connect>メソッドです。  
+  
+## <a name="property-value"></a>プロパティ値  
+ このプロパティの既定値は<xref:System.TimeSpan.MaxValue>、つまり、操作がブロックされます。 指定された値を正の値にする必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,129 @@
+<Type Name="SolidBrush" FullName="System.Drawing.SolidBrush">
+  <TypeSignature Language="C#" Value="public sealed class SolidBrush : System.Drawing.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SolidBrush extends System.Drawing.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.SolidBrush" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つの色のブラシを定義します。 ブラシは、四角形、楕円、扇形、多角形、パスなどのグラフィックス図形の塗りつぶしに使用されます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから継承、<xref:System.Drawing.Brush>クラスです。  
+  
+   
+  
+## Examples  
+  
+-   次のコード例は、影を追加、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Drawing.SolidBrush>です。  
+  
+ この例は Windows フォームで使用するよう設計されています。 この例を実行するには、フォームと呼び出しにこのコードを貼り付けます、`AddShadow`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント。 フォームが含まれるかどうかを確認、<xref:System.Windows.Forms.ListBox>という`listBox1`です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.MiscExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.MiscExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SolidBrush (System.Drawing.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.SolidBrush.#ctor(System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="color" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color">A<see cref="T:System.Drawing.Color" />このブラシの色を表す構造です。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.SolidBrush" />指定された色のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+-   次のコード例は、影を追加、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Drawing.SolidBrush>です。  
+  
+ この例は Windows フォームで使用するよう設計されています。 この例を実行するには、フォームと呼び出しにこのコードを貼り付けます、`AddShadow`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント。 フォームが含まれるかどうかを確認、<xref:System.Windows.Forms.ListBox>という`listBox1`です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.MiscExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.MiscExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.SolidBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.SolidBrush" /> オブジェクトの同一コピーを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.SolidBrush" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SolidBrush.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この色の設定を取得または<see cref="T:System.Drawing.SolidBrush" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />このブラシの色を表す構造です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.SolidBrush.Color" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.SolidBrush" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.SolidBrush.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

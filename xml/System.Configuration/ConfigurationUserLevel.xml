@@ -1,0 +1,101 @@
+<Type Name="ConfigurationUserLevel" FullName="System.Configuration.ConfigurationUserLevel">
+  <TypeSignature Language="C#" Value="public enum ConfigurationUserLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConfigurationUserLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationUserLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>構成を指定するために使用ファイルの構成オブジェクトによって表されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Configuration.ConfigurationUserLevel>構成を指定するファイルがによって返される構成オブジェクトによって表されますが<xref:System.Configuration.ConfigurationManager.OpenExeConfiguration%2A?displayProperty=nameWithType>と<xref:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration%2A?displayProperty=nameWithType>です。  
+  
+ アプリケーション構成ファイル、アプリケーションと同じディレクトリには、同じ名前を持つですが、.config 拡張子。 たとえば、C:\System\Public.exe の構成ファイルは C:\System\Public.exe.config です。  
+  
+ アプリケーションでは、すべてのユーザー、個々 のユーザーに適用される別の構成とローミング ユーザーに適用される構成に適用されるグローバル構成を使用します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.ConfigurationUserLevel>列挙します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationUserLevel#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.configuration.configurationuserlevel/cs/configurationuserlevel.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationUserLevel#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.configuration.configurationuserlevel/vb/configurationuserlevel.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationUserLevel None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationUserLevel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationUserLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.Configuration" />すべてのユーザーに適用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PerUserRoaming">
+      <MemberSignature Language="C#" Value="PerUserRoaming" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationUserLevel PerUserRoaming = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationUserLevel.PerUserRoaming" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationUserLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、ローミング<see cref="T:System.Configuration.Configuration" />現在のユーザーに適用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PerUserRoamingAndLocal">
+      <MemberSignature Language="C#" Value="PerUserRoamingAndLocal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationUserLevel PerUserRoamingAndLocal = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationUserLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルの取得<see cref="T:System.Configuration.Configuration" />現在のユーザーに適用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

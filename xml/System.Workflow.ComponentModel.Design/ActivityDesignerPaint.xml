@@ -1,0 +1,322 @@
+<Type Name="ActivityDesignerPaint" FullName="System.Workflow.ComponentModel.Design.ActivityDesignerPaint">
+  <TypeSignature Language="C#" Value="public static class ActivityDesignerPaint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ActivityDesignerPaint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティ デザイナー画面にユーザー インターフェイスの要素を描画するのに使用される静的メソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> クラスを使用してワークフロー デザイン サーフェイスにカスタム アクティビティを描画する方法の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドを使用して、丸みのある四角形が最初に描画されます。 次に <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText%2A> を使用してテキストが描画され、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.TextRectangle%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の位置に配置されます。 さらに、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> クラスの <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドを使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> が描画されます。  最後に、<xref:System.Workflow.ComponentModel.CompositeActivity> を使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton%2A> によって使用される展開ボタンが描画されます。  
+  
+ [!code-csharp[WF_Samples#78](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#78)]
+ [!code-vb[WF_Samples#78](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#78)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Draw3DButton">
+      <MemberSignature Language="C#" Value="public static void Draw3DButton (System.Drawing.Graphics graphics, System.Drawing.Image image, System.Drawing.Rectangle bounds, float transparency, System.Windows.Forms.ButtonState buttonState);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Draw3DButton(class System.Drawing.Graphics graphics, class System.Drawing.Image image, valuetype System.Drawing.Rectangle bounds, float32 transparency, valuetype System.Windows.Forms.ButtonState buttonState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.Draw3DButton(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Single,System.Windows.Forms.ButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="transparency" Type="System.Single" />
+        <Parameter Name="buttonState" Type="System.Windows.Forms.ButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">3 次元ボタンを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="image">ボタン上に描画する <see cref="T:System.Drawing.Image" />。</param>
+        <param name="bounds">ボタンの境界を定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="transparency">ボタンの透過性レベルを指定する単精度浮動小数点数。</param>
+        <param name="buttonState">ボタンの外観を指定する <see cref="T:System.Windows.Forms.ButtonState" /> 列挙値。</param>
+        <summary>アクティビティ デザイナー画面に 3 次元ボタンを描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawExpandButton">
+      <MemberSignature Language="C#" Value="public static void DrawExpandButton (System.Drawing.Graphics graphics, System.Drawing.Rectangle boundingRect, bool drawExpanded, System.Workflow.ComponentModel.Design.CompositeDesignerTheme compositeDesignerTheme);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawExpandButton(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle boundingRect, bool drawExpanded, class System.Workflow.ComponentModel.Design.CompositeDesignerTheme compositeDesignerTheme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean,System.Workflow.ComponentModel.Design.CompositeDesignerTheme)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="boundingRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="drawExpanded" Type="System.Boolean" />
+        <Parameter Name="compositeDesignerTheme" Type="System.Workflow.ComponentModel.Design.CompositeDesignerTheme" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">ボタンを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="boundingRect">ボタンの境界を定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="drawExpanded">
+          展開状態のボタンを描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="compositeDesignerTheme">ボタンをレンダリングするのに使用されるアクティビティ デザイナーに関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" />。</param>
+        <summary>アクティビティ デザイナー画面上の複合デザイナーを展開および折りたたむのに使用されるボタンを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> クラスを使用してワークフロー デザイン サーフェイスにカスタム アクティビティを描画する方法の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドを使用して、丸みのある四角形が最初に描画されます。 次に <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText%2A> を使用してテキストが描画され、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.TextRectangle%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の位置に配置されます。 さらに、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> クラスの <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドを使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> が描画されます。  最後に、<xref:System.Workflow.ComponentModel.CompositeActivity> を使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton%2A> によって使用される展開ボタンが描画されます。  
+  
+ [!code-csharp[WF_Samples#78](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#78)]
+ [!code-vb[WF_Samples#78](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#78)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" /> または <paramref name="compositeDesignerTheme" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public static void DrawImage (System.Drawing.Graphics graphics, System.Drawing.Image image, System.Drawing.Rectangle destination, System.Workflow.ComponentModel.Design.DesignerContentAlignment alignment);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawImage(class System.Drawing.Graphics graphics, class System.Drawing.Image image, valuetype System.Drawing.Rectangle destination, valuetype System.Workflow.ComponentModel.Design.DesignerContentAlignment alignment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Workflow.ComponentModel.Design.DesignerContentAlignment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="destination" Type="System.Drawing.Rectangle" />
+        <Parameter Name="alignment" Type="System.Workflow.ComponentModel.Design.DesignerContentAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">イメージを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="image">描画する <see cref="T:System.Drawing.Image" />。</param>
+        <param name="destination">描画するイメージの境界を定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="alignment">イメージを外接する四角形にどのように配置するかを指定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" />。</param>
+        <summary><see cref="T:System.Drawing.Graphics" />、<see cref="T:System.Drawing.Image" />、<see cref="T:System.Drawing.Rectangle" />、および <see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" /> を使用して、アクティビティ デザイナー画面にイメージを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> を使用する場合、ソースの四角形はイメージのサイズにピクセル単位で設定され、透過性の設定値は 1.0f に設定されます。また、グレースケールの描画はできません。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> クラスを使用してワークフロー デザイン サーフェイスにカスタム アクティビティを描画する方法の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドを使用して、丸みのある四角形が最初に描画されます。 次に <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText%2A> を使用してテキストが描画され、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.TextRectangle%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の位置に配置されます。 さらに、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> クラスの <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドを使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> が描画されます。  最後に、<xref:System.Workflow.ComponentModel.CompositeActivity> を使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton%2A> によって使用される展開ボタンが描画されます。  
+  
+ [!code-csharp[WF_Samples#78](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#78)]
+ [!code-vb[WF_Samples#78](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#78)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" />、<paramref name="image" />、または <paramref name="destination" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public static void DrawImage (System.Drawing.Graphics graphics, System.Drawing.Image image, System.Drawing.Rectangle destination, System.Drawing.Rectangle source, System.Workflow.ComponentModel.Design.DesignerContentAlignment alignment, float transparency, bool grayscale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawImage(class System.Drawing.Graphics graphics, class System.Drawing.Image image, valuetype System.Drawing.Rectangle destination, valuetype System.Drawing.Rectangle source, valuetype System.Workflow.ComponentModel.Design.DesignerContentAlignment alignment, float32 transparency, bool grayscale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Workflow.ComponentModel.Design.DesignerContentAlignment,System.Single,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="destination" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Drawing.Rectangle" />
+        <Parameter Name="alignment" Type="System.Workflow.ComponentModel.Design.DesignerContentAlignment" />
+        <Parameter Name="transparency" Type="System.Single" />
+        <Parameter Name="grayscale" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">イメージを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="image">描画する <see cref="T:System.Drawing.Image" />。</param>
+        <param name="destination">イメージの境界を定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source">イメージのソースを定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="alignment">イメージを外接する四角形にどのように配置するかを指定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" />。</param>
+        <param name="transparency">イメージの透過性の設定を定義する単精度浮動小数点数。</param>
+        <param name="grayscale">
+          イメージをグレースケールで描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Drawing.Graphics" />、<see cref="T:System.Drawing.Image" />、<see cref="T:System.Drawing.Rectangle" />、<see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" />、単精度浮動小数点数、およびブール値を使用して、アクティビティ デザイナー画面にイメージを描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" />、<paramref name="image" />、<paramref name="destination" />、または <paramref name="source" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。  
+  
+ または  
+  
+ <paramref name="transparency" /> が 0 未満か、1.0f よりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRoundedRectangle">
+      <MemberSignature Language="C#" Value="public static void DrawRoundedRectangle (System.Drawing.Graphics graphics, System.Drawing.Pen drawingPen, System.Drawing.Rectangle rectangle, int radius);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRoundedRectangle(class System.Drawing.Graphics graphics, class System.Drawing.Pen drawingPen, valuetype System.Drawing.Rectangle rectangle, int32 radius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="drawingPen" Type="System.Drawing.Pen" />
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radius" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">四角形を描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="drawingPen">四角形を描画する <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="rectangle">丸みのある四角形の境界を定義する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="radius">丸い端に使用する半径の整数値。</param>
+        <summary>アクティビティ デザイナー画面に丸みのある四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> は、描画するパスを取得するのに <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.GetRoundedRectanglePath%2A> メソッドを使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> クラスを使用してワークフロー デザイン サーフェイスにカスタム アクティビティを描画する方法の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドを使用して、丸みのある四角形が最初に描画されます。 次に <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText%2A> を使用してテキストが描画され、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.TextRectangle%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の位置に配置されます。 さらに、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> クラスの <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドを使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> が描画されます。  最後に、<xref:System.Workflow.ComponentModel.CompositeActivity> を使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton%2A> によって使用される展開ボタンが描画されます。  
+  
+ [!code-csharp[WF_Samples#78](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#78)]
+ [!code-vb[WF_Samples#78](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#78)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" /> または <paramref name="drawingPen" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.Graphics graphics, System.Drawing.Font font, string text, System.Drawing.Rectangle boundingRect, System.Drawing.StringAlignment alignment, System.Workflow.ComponentModel.Design.TextQuality textQuality, System.Drawing.Brush textBrush);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.Graphics graphics, class System.Drawing.Font font, string text, valuetype System.Drawing.Rectangle boundingRect, valuetype System.Drawing.StringAlignment alignment, valuetype System.Workflow.ComponentModel.Design.TextQuality textQuality, class System.Drawing.Brush textBrush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText(System.Drawing.Graphics,System.Drawing.Font,System.String,System.Drawing.Rectangle,System.Drawing.StringAlignment,System.Workflow.ComponentModel.Design.TextQuality,System.Drawing.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="boundingRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="alignment" Type="System.Drawing.StringAlignment" />
+        <Parameter Name="textQuality" Type="System.Workflow.ComponentModel.Design.TextQuality" />
+        <Parameter Name="textBrush" Type="System.Drawing.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">テキストを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="font">テキストの描画に使用する <see cref="T:System.Drawing.Font" />。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="boundingRect">テキスト描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="alignment">テキストを外接する四角形のどこに配置するかを指定する <see cref="T:System.Drawing.StringAlignment" />。</param>
+        <param name="textQuality">テキスト描画の品質設定を指定する <see cref="T:System.Workflow.ComponentModel.Design.TextQuality" />。</param>
+        <param name="textBrush">テキストを描画する <see cref="T:System.Drawing.Brush" />。</param>
+        <summary>アクティビティ デザイナー画面にテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> クラスを使用してワークフロー デザイン サーフェイスにカスタム アクティビティを描画する方法の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドを使用して、丸みのある四角形が最初に描画されます。 次に <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawText%2A> を使用してテキストが描画され、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.TextRectangle%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の位置に配置されます。 さらに、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> クラスの <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドを使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawImage%2A> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint> が描画されます。  最後に、<xref:System.Workflow.ComponentModel.CompositeActivity> を使用して、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawExpandButton%2A> によって使用される展開ボタンが描画されます。  
+  
+ [!code-csharp[WF_Samples#78](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#78)]
+ [!code-vb[WF_Samples#78](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#78)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" />、<paramref name="font" />、<paramref name="text" />、または <paramref name="textBrush" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoundedRectanglePath">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Drawing2D.GraphicsPath GetRoundedRectanglePath (System.Drawing.Rectangle rectangle, int radius);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Drawing2D.GraphicsPath GetRoundedRectanglePath(valuetype System.Drawing.Rectangle rectangle, int32 radius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.GetRoundedRectanglePath(System.Drawing.Rectangle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.GraphicsPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radius" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">グラフィックス パスを取得する対象の <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="radius">丸い角の描画に使用する半径を定義する整数。</param>
+        <summary>指定した丸みのある四角形を描画するのに使用されるグラフィックス パスを返します。</summary>
+        <returns>指定した四角形の丸いパスを描画する <see cref="T:System.Drawing.Drawing2D.GraphicsPath" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.DrawRoundedRectangle%2A> メソッドは、描画するパスを取得するのに <xref:System.Workflow.ComponentModel.Design.ActivityDesignerPaint.GetRoundedRectanglePath%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rectangle" /> が <see cref="P:System.Drawing.Rectangle.IsEmpty" /> に設定されます。  
+  
+ または  
+  
+ <paramref name="radius" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,144 @@
+<Type Name="FontVariants" FullName="System.Windows.FontVariants">
+  <TypeSignature Language="C#" Value="public enum FontVariants" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FontVariants extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontVariants" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Variant 傍点を文字のグリフのフォームを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したフォントが特定のグリフのセットをサポートしていない場合は、既定のグリフが表示されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.Typography.Variants%2A>プロパティでは、OpenType フォントの上付き文字と下付き文字の値を設定することができます。  
+  
+ 次のテキストは、Palatino Linotype フォントの上付き文字を示したものです。  
+  
+ ![OpenType の上付き文字を使用してテキストを](~/add/media/opentypefont14.gif "OpenType の上付き文字を使用するテキスト")  
+上付き文字の例  
+  
+ 次のコード例のプロパティを使用して、Palatino Linotype フォントの上付き文字を定義する方法を示しています、<xref:System.Windows.Documents.Typography>オブジェクト。  
+  
+ [!code-xaml[OpenTypeFontSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#12)]   
+  
+ 次のテキストは、Palatino Linotype フォントの下付き文字を表示します。  
+  
+ ![OpenType の下付き文字を使用してテキストを](~/add/media/opentypefont15.gif "OpenType の下付き文字を使用するテキスト")  
+添字の例  
+  
+ 次のコード例は、のプロパティを使用して、Palatino Linotype フォントの添字を定義する方法を示します、<xref:System.Windows.Documents.Typography>オブジェクト。  
+  
+ [!code-xaml[OpenTypeFontSamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#13)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Inferior">
+      <MemberSignature Language="C#" Value="Inferior" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Inferior = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Inferior" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下位のグリフで既定のグリフを置き換えますか、適切な配置のグリフの置換を組み合わせることができます。 下のフォームは、化学式または数値表記に用いられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの既定の動作。 フォントのスケーリングと配置は、通常はします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="Ordinal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Ordinal = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Ordinal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>序数に基づくグリフで既定のグリフを置き換えますか、適切な配置のグリフの置換を組み合わせることができます。 序数に基づくフォームは、序数に基づく word では、"first"の「1」などの数値表記に通常関連付けられる</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ruby">
+      <MemberSignature Language="C#" Value="Ruby" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Ruby = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Ruby" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のグリフをより小さなかなグリフに置き換えます。 リーダーによく知られていない可能性もあります漢字の意味を明確にするために使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Subscript">
+      <MemberSignature Language="C#" Value="Subscript" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Subscript = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Subscript" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下付き文字のグリフには、既定のグリフを置き換えます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Superscript">
+      <MemberSignature Language="C#" Value="Superscript" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontVariants Superscript = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontVariants.Superscript" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のグリフを上付き文字のグリフに置き換えます。 上付きは脚注よく使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

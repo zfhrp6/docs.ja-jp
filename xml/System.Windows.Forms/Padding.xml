@@ -1,0 +1,643 @@
+<Type Name="Padding" FullName="System.Windows.Forms.Padding">
+  <TypeSignature Language="C#" Value="public struct Padding" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Padding extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Padding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.PaddingConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー インターフェイス (UI) 要素に関連付けられた埋め込みや余白の情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Padding>構造体は、埋め込みやコントロールなどの四角形の UI 要素に関連付けられた余白を表します。 余白は、UI 要素の本文とその端との間で内部領域です。 これに対し、余白は、隣接する 2 つの隣接する UI 要素の端を区切る距離です。 構造の類似性のため<xref:System.Windows.Forms.Padding>パディングと余白の両方を表すために使用します。  
+  
+ 示す図については、<xref:System.Windows.Forms.Control.Padding%2A>と<xref:System.Windows.Forms.Control.Margin%2A>、コントロールのプロパティを参照してください[マージンし、Windows フォーム コントロールのパディング](~/docs/framework/winforms/controls/margin-and-padding-in-windows-forms-controls.md)です。  
+  
+ 埋め込みよりもないコントロールのコンテナーであるコントロールに対して別の効果を持ちます。 たとえば、<xref:System.Windows.Forms.Panel>コントロール、<xref:System.Windows.Forms.Padding>の枠線の間隔を定義するプロパティ、<xref:System.Windows.Forms.Panel>とその子コントロール。 <xref:System.Windows.Forms.Button>コントロール、<xref:System.Windows.Forms.Padding>プロパティ定義の枠線の間隔、<xref:System.Windows.Forms.Button>コントロールとそれに含まれているテキスト。  
+  
+ 一般的なメソッドおよびプロパティに加えて<xref:System.Windows.Forms.Padding>も次の種類のレベルのメンバーを定義します。  
+  
+-   <xref:System.Windows.Forms.Padding.Empty>を表すフィールドを事前に定義された<xref:System.Windows.Forms.Padding>埋め込みなしでします。  
+  
+-   一連のクラスには、2 つの追加など、一般的な算術演算を実行するための演算子<xref:System.Windows.Forms.Padding>オブジェクトを一緒にします。 演算子のオーバー ロードをサポートしない言語では、別の方法の構文を使用してこれらのメンバーを呼び出すことができます。  
+  
+-   <xref:System.Windows.Forms.Padding.Horizontal%2A>、 <xref:System.Windows.Forms.Padding.Vertical%2A>、および<xref:System.Windows.Forms.Padding.Size%2A>プロパティで、カスタム レイアウトの計算で使用する場合に便利である値の組み合わせを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、余白プロパティを使用して、アウトラインを作成する方法を示します、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ 完全なコードの一覧については、次を参照してください。[する方法: 作成、罫線の周囲を Windows フォーム コントロールを使用して埋め込み](~/docs/framework/winforms/controls/how-to-create-a-border-around-a-windows-forms-control-using-padding.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.Padding#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Padding/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.Padding#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Padding/VB/Form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Padding (int all);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 all) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="all" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="all">すべての埋め込みをするためのピクセルの数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Padding" />クラスのすべての端の指定された余白サイズを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Bottom%2A>、<xref:System.Windows.Forms.Padding.Top%2A>と<xref:System.Windows.Forms.Padding.All%2A>プロパティの値を`all`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Padding (int left, int top, int right, int bottom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 left, int32 top, int32 right, int32 bottom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="left" Type="System.Int32" />
+        <Parameter Name="top" Type="System.Int32" />
+        <Parameter Name="right" Type="System.Int32" />
+        <Parameter Name="bottom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="left">余白のサイズ (ピクセル単位) の左のエッジ。</param>
+        <param name="top">余白のサイズ (ピクセル単位) の最上位のエッジ。</param>
+        <param name="right">余白のサイズ (ピクセル単位) の右のエッジ。</param>
+        <param name="bottom">余白のサイズ (ピクセル単位) の下のエッジ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Padding" />クラス各エッジの個別の余白サイズを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのパラメーター値が等しい場合は、<xref:System.Windows.Forms.Padding.All%2A>プロパティがこの一般的な値に反映されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Padding Add (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.Padding Add(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.Add(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1"><see cref="T:System.Windows.Forms.Padding" />。</param>
+        <param name="p2"><see cref="T:System.Windows.Forms.Padding" />。</param>
+        <summary>指定した 2 つの合計を計算<see cref="T:System.Windows.Forms.Padding" />値。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Padding" />指定した 2 つの合計を格納している<see cref="T:System.Windows.Forms.Padding" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public int All { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 All" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべてのエッジの余白の値を設定します。</summary>
+        <value>埋め込み (ピクセル単位) のエッジすべての場合は同じです。それ以外の場合、-1 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのエッジ、同じ余白の値を使用する場合は、このプロパティを取得する、ときに、この一般的な値が返されます。 それ以外の場合、すべてのパディング値が等しくないことを示すために、-1 が返されます。  
+  
+ この値が変更された設定、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Bottom%2A>、および<xref:System.Windows.Forms.Padding.Top%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public int Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または下端のパディング値を設定します。</summary>
+        <value>(ピクセル単位) の下のエッジのパディングです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更できるもの設定、<xref:System.Windows.Forms.Padding.All%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.Padding Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Windows.Forms.Padding Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Padding.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>提供、<see cref="T:System.Windows.Forms.Padding" />埋め込みなしでのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の埋め込みオブジェクトが持つものとして定義、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Left%2A>、<xref:System.Windows.Forms.Padding.Bottom%2A>と<xref:System.Windows.Forms.Padding.Top%2A>埋め込みのプロパティを 0 に設定します。  
+  
+ この変更できないフィールドは、比較演算と初期化に適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在と比較するオブジェクト<see cref="T:System.Windows.Forms.Padding" />です。</param>
+        <summary>指定したオブジェクトの値は、現在に相当するかどうかを判断<see cref="T:System.Windows.Forms.Padding" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.Padding" />オブジェクトと等価である、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型の他のオブジェクトのみ<xref:System.Windows.Forms.Padding>(または派生型)、現在と同じにすることができます<xref:System.Windows.Forms.Padding>です。 さらに、対応する<xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Left%2A>、<xref:System.Windows.Forms.Padding.Bottom%2A>と<xref:System.Windows.Forms.Padding.Top%2A>両方のプロパティを<xref:System.Windows.Forms.Padding>オブジェクトは同じである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ コードを生成<see cref="T:System.Windows.Forms.Padding" />です。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Padding.GetHashCode%2A>メソッドを使用、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Top%2A>、および<xref:System.Windows.Forms.Padding.Bottom%2A>現在を表す 32 ビットのハッシュ コードを生成する値<xref:System.Windows.Forms.Padding>です。  
+  
+ ハッシュ コードは、(つまり、同じ値を持つ 2 つのオブジェクトには、同じハッシュ コードを生成する必要があります)、オブジェクトの値に対応する数値です。 ハッシュ コードは、並べ替え、オブジェクトのコレクションを格納に使用されます。 たとえば、<xref:System.Collections.Hashtable?displayProperty=nameWithType>キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。  
+  
+ ハッシュ コードとハッシュ関数の詳細については、次を参照してください。、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Horizontal">
+      <MemberSignature Language="C#" Value="public int Horizontal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Horizontal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Horizontal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右と左のエッジの埋め込みの合計を取得します。</summary>
+        <value>合計、(ピクセル単位) を取得、<see cref="P:System.Windows.Forms.Padding.Left" />と<see cref="P:System.Windows.Forms.Padding.Right" />余白の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、多くのレイアウトの計算で使用するため便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public int Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または左端の余白の値を設定します。</summary>
+        <value>左端のピクセル単位でのパディングです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更できるもの設定、<xref:System.Windows.Forms.Padding.All%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Padding operator + (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Forms.Padding op_Addition(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.op_Addition(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1">最初の<see cref="T:System.Windows.Forms.Padding" />を追加します。</param>
+        <param name="p2">2 番目<see cref="T:System.Windows.Forms.Padding" />を追加します。</param>
+        <summary>指定された 2 つのベクトルを加算<see cref="T:System.Windows.Forms.Padding" />オブジェクト、新規の結果として得られる<see cref="T:System.Windows.Forms.Padding" />です。</summary>
+        <returns>新しい<see cref="T:System.Windows.Forms.Padding" />を追加した結果生成された<paramref name="p1" />と<paramref name="p2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの加算演算では、各エッジのパディング値の追加の結果を示します。 たとえば、<xref:System.Windows.Forms.Padding.Left%2A>結果のプロパティは、の合計、<xref:System.Windows.Forms.Padding.Left%2A>オペランドは 2 つのプロパティです。  
+  
+ この操作は推移的です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Forms.Padding.Add%28System.Windows.Forms.Padding%2CSystem.Windows.Forms.Padding%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.op_Equality(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1">A<see cref="T:System.Windows.Forms.Padding" />をテストします。</param>
+        <param name="p2">A<see cref="T:System.Windows.Forms.Padding" />をテストします。</param>
+        <summary>指定した 2 つあるかどうかをテスト<see cref="T:System.Windows.Forms.Padding" />オブジェクトが等しい。</summary>
+        <returns>
+          2 つの <see cref="T:System.Windows.Forms.Padding" /> オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Forms.Padding>オブジェクトは余白の値をそれぞれ 4 つのエッジ – <xref:System.Windows.Forms.Padding.Left%2A>、 <xref:System.Windows.Forms.Padding.Right%2A>、 <xref:System.Windows.Forms.Padding.Top%2A>、および<xref:System.Windows.Forms.Padding.Bottom%2A>– は、両方のオブジェクトの同じです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Forms.Padding.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.op_Inequality(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1">A<see cref="T:System.Windows.Forms.Padding" />をテストします。</param>
+        <param name="p2">A<see cref="T:System.Windows.Forms.Padding" />をテストします。</param>
+        <summary>指定した 2 つあるかどうかをテスト<see cref="T:System.Windows.Forms.Padding" />オブジェクトが同じではありません。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Forms.Padding" />オブジェクトが、それ以外のさまざまな<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、逆の<xref:System.Windows.Forms.Padding.op_Equality%2A>します。  
+  
+ この演算子を同等の方法の否定であります。<xref:System.Windows.Forms.Padding.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Padding operator - (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Forms.Padding op_Subtraction(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.op_Subtraction(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1"><see cref="T:System.Windows.Forms.Padding" /> (被減数) から減算します。</param>
+        <param name="p2"><see cref="T:System.Windows.Forms.Padding" /> (減数) から減算します。</param>
+        <summary>指定された 2 つのベクトルの減算を行います<see cref="T:System.Windows.Forms.Padding" />オブジェクト、新規の結果として得られる<see cref="T:System.Windows.Forms.Padding" />です。</summary>
+        <returns><see cref="T:System.Windows.Forms.Padding" />を減算した結果<paramref name="p2" />から<paramref name="p1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの減算演算では、各エッジの余白の値を減算した結果を示します。 たとえば、<xref:System.Windows.Forms.Padding.Left%2A>結果のプロパティは使用の違い、<xref:System.Windows.Forms.Padding.Left%2A>オペランドは 2 つのプロパティです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Forms.Padding.Subtract%28System.Windows.Forms.Padding%2CSystem.Windows.Forms.Padding%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public int Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または右端のパディング値を設定します。</summary>
+        <value>右端のピクセル単位でのパディングです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更できるもの設定、<xref:System.Windows.Forms.Padding.All%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式でパディングの情報を取得、<see cref="T:System.Drawing.Size" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />パディング情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Padding.Size%2A>プロパティからの型変換を実行する<xref:System.Windows.Forms.Padding>に<xref:System.Drawing.Size?displayProperty=nameWithType>です。 <xref:System.Windows.Forms.Padding.Horizontal%2A>プロパティに対応して、<xref:System.Drawing.Size.Width%2A?displayProperty=nameWithType>プロパティ、および<xref:System.Windows.Forms.Padding.Vertical%2A>プロパティに対応して、<xref:System.Drawing.Size.Height%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Windows.Forms.Padding.Size%2A>多くのレイアウトの計算で使用すると便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Padding Subtract (System.Windows.Forms.Padding p1, System.Windows.Forms.Padding p2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.Padding Subtract(valuetype System.Windows.Forms.Padding p1, valuetype System.Windows.Forms.Padding p2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.Subtract(System.Windows.Forms.Padding,System.Windows.Forms.Padding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p1" Type="System.Windows.Forms.Padding" />
+        <Parameter Name="p2" Type="System.Windows.Forms.Padding" />
+      </Parameters>
+      <Docs>
+        <param name="p1"><see cref="T:System.Windows.Forms.Padding" />。</param>
+        <param name="p2"><see cref="T:System.Windows.Forms.Padding" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.Padding" /> 値から、指定したもう 1 つの値を減算します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Padding" />指定されたいずれかの減算の結果を格納している<see cref="T:System.Windows.Forms.Padding" />から別の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public int Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または上端のパディング値を設定します。</summary>
+        <value>上端のピクセル単位でのパディングです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を変更できるもの設定、<xref:System.Windows.Forms.Padding.All%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Padding.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Forms.Padding" /> を表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.Padding" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、上下左右の余白のラベル付きの値を含む文字列を返します。  
+  
+ このメソッドは<xref:System.Object.ToString%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Vertical">
+      <MemberSignature Language="C#" Value="public int Vertical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Vertical" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Padding.Vertical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上端と下端の埋め込みの合計を取得します。</summary>
+        <value>合計、(ピクセル単位) を取得、<see cref="P:System.Windows.Forms.Padding.Top" />と<see cref="P:System.Windows.Forms.Padding.Bottom" />余白の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、多くのレイアウトの計算で使用するため便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

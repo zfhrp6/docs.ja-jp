@@ -1,0 +1,93 @@
+<Type Name="AssociatedMetadataTypeTypeDescriptionProvider" FullName="System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider">
+  <TypeSignature Language="C#" Value="public class AssociatedMetadataTypeTypeDescriptionProvider : System.ComponentModel.TypeDescriptionProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssociatedMetadataTypeTypeDescriptionProvider extends System.ComponentModel.TypeDescriptionProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeDescriptionProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>属性と関連付けられているクラスで定義されているプロパティの情報を追加することで、クラスのメタデータ情報を拡張します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider>クラスは、追加、変更、または属性、プロパティ、およびイベントなどの特性を非表示にする型またはオブジェクトに関連付けられている型情報を動的に拡張します。 詳細については、「<xref:System.ComponentModel.TypeDescriptor>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssociatedMetadataTypeTypeDescriptionProvider (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">メタデータ プロバイダーを作成する種類。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider" />クラスを指定の型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssociatedMetadataTypeTypeDescriptionProvider (Type type, Type associatedMetadataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Type associatedMetadataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="associatedMetadataType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">メタデータ プロバイダーを作成する種類。</param>
+        <param name="associatedMetadataType">メタデータを含む関連付けられている型。</param>
+        <summary>指定したメタデータ プロバイダーの種類および関連づけられた型を使用して、<see cref="T:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="associatedMetadataType" /> の値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeDescriptor">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor (Type objectType, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(class System.Type objectType, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.AssociatedMetadataTypeTypeDescriptionProvider.GetTypeDescriptor(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ICustomTypeDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">型記述子を取得するオブジェクトの型。</param>
+        <param name="instance">型のインスタンス。</param>
+        <summary>指定された型とオブジェクトの型記述子を取得します。</summary>
+        <returns>型のメタデータを提供する記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

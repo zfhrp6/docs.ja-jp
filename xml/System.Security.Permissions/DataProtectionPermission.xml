@@ -1,0 +1,419 @@
+<Type Name="DataProtectionPermission" FullName="System.Security.Permissions.DataProtectionPermission">
+  <TypeSignature Language="C#" Value="public sealed class DataProtectionPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DataProtectionPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.DataProtectionPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>暗号化されたデータとメモリにアクセスする機能を制御します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアクセス許可を使用してデータとメモリを使用して暗号化する機能を制御する、<xref:System.Security.Cryptography.ProtectedData>と<xref:System.Security.Cryptography.ProtectedMemory>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProtectionPermission (System.Security.Permissions.DataProtectionPermissionFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.DataProtectionPermissionFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.#ctor(System.Security.Permissions.DataProtectionPermissionFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flag" Type="System.Security.Permissions.DataProtectionPermissionFlags" />
+      </Parameters>
+      <Docs>
+        <param name="flags">To be added.</param>
+        <summary>指定したアクセス許可フラグを使用して、<see cref="T:System.Security.Permissions.DataProtectionPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.%23ctor%28System.Security.Permissions.DataProtectionPermissionFlags%29>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#2)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#2)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="flags" /> は <see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" /> 値の有効な組み合わせではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProtectionPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定したアクセス許可状態を使用して、<see cref="T:System.Security.Permissions.DataProtectionPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するか`None`(完全に制限される) または`Unrestricted`データとメモリにアクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.%23ctor%28System.Security.Permissions.PermissionState%29>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#9)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#9)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="state" /> は有効な <see cref="T:System.Security.Permissions.PermissionState" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.Copy%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#5)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#5)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.DataProtectionPermissionFlags Flags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.DataProtectionPermissionFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.DataProtectionPermission.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.DataProtectionPermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データおよびメモリの保護フラグを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定するかどうか、`Protect`と`Unprotect`のメソッド、<xref:System.Security.Cryptography.ProtectedData>と<xref:System.Security.Cryptography.ProtectedMemory>クラスを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.Flags%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#10)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#10)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値がの有効な組み合わせではありません、<see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>XML エンコードからの特定の状態で、アクセス許可を再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.DataProtectionPermission.FromXml%2A>メソッドの再構築、<xref:System.Security.Permissions.DataProtectionPermission>によって定義された XML エンコードからのオブジェクト、<xref:System.Security.SecurityElement>クラスです。 使用して、 <xref:System.Security.Permissions.DataProtectionPermission.ToXml%2A> XML エンコード方法、 <xref:System.Security.Permissions.DataProtectionPermission>、状態情報を含むです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.FromXml%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#7)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#7)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="e" />有効なアクセス許可要素ではありません。  
+  
+ または  
+  
+ バージョン番号<paramref name="e" />はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 現在のアクセス許可と同じ型である必要があります。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、一連の両方に共通する操作を説明する権限です。 個々 の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.Intersect%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#10)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#10)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />と同じ型のアクセス許可を現在のアクセス許可と指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係にあるかどうかをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限で完全に含まれる一連の操作を指定する場合、指定したアクセス許可のサブセットです。  アクセス許可など、<xref:System.Security.Permissions.DataProtectionPermissionFlags.ProtectData>アクセスに対するアクセス許可のサブセットである<xref:System.Security.Permissions.DataProtectionPermissionFlags.AllFlags>アクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.IsSubsetOf%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#3)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#3)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />と同じ型のアクセス許可を現在のアクセス許可と指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限のアクセス許可は、アクセス許可によって保護されているすべてのリソースへのアクセスを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.IsUnrestricted%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#4)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#4)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Permissions.DataProtectionPermission.FromXml%2A>から状態情報を復元する方法、<xref:System.Security.SecurityElement>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.ToXml%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#7)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#7)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.DataProtectionPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.Permissions.DataProtectionPermission.Union%2A>は、現在のアクセス許可と、指定した権限の両方で表されるすべての操作を表す権限。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.DataProtectionPermission.Union%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.DataProtectionPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.DataProtectionPermission2#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CPP/dataprotect.cpp#6)]
+ [!code-csharp[System.Security.Permissions.DataProtectionPermission2#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/CS/dataprotect.cs#6)]
+ [!code-vb[System.Security.Permissions.DataProtectionPermission2#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.DataProtectionPermission2/VB/dataprotect.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />と同じ型のアクセス許可を現在のアクセス許可と指定されていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

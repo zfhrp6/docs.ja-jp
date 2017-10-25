@@ -1,0 +1,181 @@
+<Type Name="CodeMethodInvokeExpression" FullName="System.CodeDom.CodeMethodInvokeExpression">
+  <TypeSignature Language="C#" Value="public class CodeMethodInvokeExpression : System.CodeDom.CodeExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeMethodInvokeExpression extends System.CodeDom.CodeExpression" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeMethodInvokeExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドを呼び出す式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeMethodInvokeExpression>メソッドを呼び出す式を表すために使用します。  
+  
+ <xref:System.CodeDom.CodeMethodInvokeExpression.Method%2A>プロパティを呼び出す方法を指定します。 <xref:System.CodeDom.CodeMethodInvokeExpression.Parameters%2A>プロパティは、メソッドに渡すパラメーターを示します。 使用して、<xref:System.CodeDom.CodeDirectionExpression>パラメーターのフィールドの方向を指定します。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeMethodInvokeExpression>メソッドを呼び出すためです。  
+  
+ [!code-cpp[CodeMethodInvokeExpression#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeMethodInvokeExpression/CPP/codemethodinvokeexpressionexample.cpp#2)]
+ [!code-csharp[CodeMethodInvokeExpression#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeMethodInvokeExpression/CS/codemethodinvokeexpressionexample.cs#2)]
+ [!code-vb[CodeMethodInvokeExpression#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeMethodInvokeExpression/VB/codemethodinvokeexpressionexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodInvokeExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodInvokeExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeMethodInvokeExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodInvokeExpression (System.CodeDom.CodeMethodReferenceExpression method, params System.CodeDom.CodeExpression[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeMethodReferenceExpression method, class System.CodeDom.CodeExpression[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodInvokeExpression.#ctor(System.CodeDom.CodeMethodReferenceExpression,System.CodeDom.CodeExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="method" Type="System.CodeDom.CodeMethodReferenceExpression" />
+        <Parameter Name="parameters" Type="System.CodeDom.CodeExpression[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="method">A<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />に呼び出すメソッドを示すです。</param>
+        <param name="parameters">配列<see cref="T:System.CodeDom.CodeExpression" />メソッドの呼び出しに使用するパラメーターを指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeMethodInvokeExpression" />クラスの指定したメソッドとパラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodInvokeExpression (System.CodeDom.CodeExpression targetObject, string methodName, params System.CodeDom.CodeExpression[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression targetObject, string methodName, class System.CodeDom.CodeExpression[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodInvokeExpression.#ctor(System.CodeDom.CodeExpression,System.String,System.CodeDom.CodeExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.CodeDom.CodeExpression[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="targetObject">A<see cref="T:System.CodeDom.CodeExpression" />を呼び出すメソッドを使用して、ターゲット オブジェクトを示すです。</param>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="parameters">配列<see cref="T:System.CodeDom.CodeExpression" />でメソッドを呼び出すパラメーターを指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeMethodInvokeExpression" />クラスの指定されたターゲット オブジェクト、メソッド名、およびパラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeMethodReferenceExpression Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeMethodReferenceExpression Method" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMethodInvokeExpression.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeMethodReferenceExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に呼び出すメソッド。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />に呼び出すメソッドを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpressionCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpressionCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMethodInvokeExpression.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの呼び出しのパラメーターを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpressionCollection" />メソッドの呼び出しのパラメーターを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.CodeDom.CodeDirectionExpression>パラメーターのフィールドの方向を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

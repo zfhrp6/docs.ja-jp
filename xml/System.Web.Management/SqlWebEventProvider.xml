@@ -1,0 +1,256 @@
+<Type Name="SqlWebEventProvider" FullName="System.Web.Management.SqlWebEventProvider">
+  <TypeSignature Language="C#" Value="public class SqlWebEventProvider : System.Web.Management.BufferedWebEventProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlWebEventProvider extends System.Web.Management.BufferedWebEventProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.SqlWebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.BufferedWebEventProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント通知を SQL データベースに保存したイベント プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ このプロバイダーは、その動作のカスタマイズに使用できる構成属性の包括的なセットを備えています。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`<healthMonitoring>`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム プロバイダーの作成の例は、次を参照してください。[する方法: 例を実装、正常性監視カスタム プロバイダー](http://msdn.microsoft.com/library/bbb1c959-e6e4-42b2-be62-49b7ca5ab72c)です。  
+  
+   
+  
+## Examples  
+ 次の例は、型プロバイダーを指定する方法を示しています。 構成ファイルの抜粋<xref:System.Web.Management.SqlWebEventProvider>で、`<healthMonitoring>`セクションです。 `<add>`内の要素、`<rules>`セクションでは、プロバイダーが、監査イベントを処理することを指定します。  
+  
+```  
+<healthMonitoring  
+  enabled="true"  
+  heartBeatInterval="0">  
+  <bufferModes>  
+    <add name="Analysis"  
+    maxBufferSize="1000"  
+    maxFlushSize="100"  
+    urgentFlushThreshold="100"  
+    regularFlushInterval="00:05:00"  
+    urgentFlushInterval="00:01:00"  
+    maxBufferThreads="1"  
+    />  
+  </bufferModes>  
+  <providers>  
+    <add name="SqlWebEventProvider"  
+    type="System.Web.Management.SqlWebEventProvider,System.Web"  
+    connectionStringName="LocalSqlServer"  
+    maxEventDetailsLength="1073741823"  
+    buffer="true"  
+    bufferMode="Analysis"  
+    />  
+  </providers>  
+  <eventMappings>  
+    <add name="All Audits"  
+    type="System.Web.Management.WebAuditEvent, System.Web"   
+    />  
+  </eventMappings>  
+  <profiles>  
+    <add name="Default"  
+    minInstances="1"  
+    maxLimit="Infinite"  
+    minInterval="00:10:00"  
+    />  
+  </profiles>  
+  <rules>  
+    <add name="All Audits Default"  
+    eventName="All Audits"  
+    provider="SqlWebEventProvider"  
+    profile="Default"  
+    minInterval="00:00:30"   
+    />  
+  </rules>  
+</healthMonitoring>   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SqlWebEventProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Management.SqlWebEventProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.SqlWebEventProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventProcessingComplete">
+      <MemberSignature Language="C#" Value="protected virtual void EventProcessingComplete (System.Web.Management.WebBaseEventCollection raisedEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EventProcessingComplete(class System.Web.Management.WebBaseEventCollection raisedEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.EventProcessingComplete(System.Web.Management.WebBaseEventCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="raisedEvents" Type="System.Web.Management.WebBaseEventCollection" />
+      </Parameters>
+      <Docs>
+        <param name="raisedEvents">A<see cref="T:System.Web.Management.WebBaseEventCollection" />発生したイベントのオブジェクト。</param>
+        <summary>イベント処理が完了するときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはコードから直接使用するためのものではありません。 ASP.NET の稼働状況の監視システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">このプロバイダーを識別する構成ファイルで使用する名前。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />このプロバイダーの構成ファイルに割り当てられている属性を指定するオブジェクト。</param>
+        <summary>このオブジェクトの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.SqlWebEventProvider.Initialize%2A>初期化するメソッドを<xref:System.Web.Management.SqlWebEventProvider>クラスの構成設定を使用し、構成ファイルで指定されている名前です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">宣言されている接続文字列がない<paramref name="config" />です。  
+  
+ \- または  
+  
+ 宣言されている 1 つの接続文字列を超えるを使用する必要がある<paramref name="config" />です。  
+  
+ \- または  
+  
+ によって、接続文字列が指定した<paramref name="config" />統合セキュリティを指定します。  
+  
+ \- または  
+  
+ 値、<see langword="maxEventDetailsLength" />によって指定される属性<paramref name="config" />はより小さい<see langword="0" />以上<see langword="1073741823" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEvent">
+      <MemberSignature Language="C#" Value="public override void ProcessEvent (System.Web.Management.WebBaseEvent eventRaised);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessEvent(class System.Web.Management.WebBaseEvent eventRaised) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.ProcessEvent(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventRaised" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="eventRaised"><see cref="T:System.Web.Management.WebBaseEvent" />オブジェクトを処理します。</param>
+        <summary>プロバイダーに渡されたイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはコードから直接使用するためのものではありません。 イベントの処理を開始する ASP.NET の稼働状況の監視システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEventFlush">
+      <MemberSignature Language="C#" Value="public override void ProcessEventFlush (System.Web.Management.WebEventBufferFlushInfo flushInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessEventFlush(class System.Web.Management.WebEventBufferFlushInfo flushInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.ProcessEventFlush(System.Web.Management.WebEventBufferFlushInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flushInfo" Type="System.Web.Management.WebEventBufferFlushInfo" />
+      </Parameters>
+      <Docs>
+        <param name="flushInfo"><see cref="T:System.Web.Management.WebEventBufferFlushInfo" />フラッシュされるバッファーの情報を含むオブジェクトです。</param>
+        <summary>プロバイダーのバッファーからすべてのイベントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはコードから直接使用するためのものではありません。 ASP.NET の稼働状況の監視システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public override void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlWebEventProvider.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのシャット ダウンに関連付けられているタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.SqlWebEventProvider.Shutdown%2A>メソッドは、Web アプリケーションをホストするアプリケーション ドメインが終了するとします。 メソッドは、アプリケーションを正常に終了できるようにするためのタスクを実行します。"  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

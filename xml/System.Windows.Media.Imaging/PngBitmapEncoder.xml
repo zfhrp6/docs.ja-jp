@@ -1,0 +1,97 @@
+<Type Name="PngBitmapEncoder" FullName="System.Windows.Media.Imaging.PngBitmapEncoder">
+  <TypeSignature Language="C#" Value="public sealed class PngBitmapEncoder : System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PngBitmapEncoder extends System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.PngBitmapEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapEncoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ポータブル ネットワーク グラフィックス (PNG) 形式のイメージのエンコードに使用されるエンコーダーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]形式のビットマップ サポート フレーム レベルのメタデータ。 プレビュー、グローバルな縮小表示、フレーム レベル サムネイル、グローバルなメタデータ、または複数のフレームはサポートしていません。  
+  
+ エンコーディングは、部分信頼では機能しません。 参照してください[WPF 部分信頼セキュリティ](~/docs/framework/wpf/wpf-partial-trust-security.md)については部分的に信頼します。  
+  
+<a name="xamlTextUsage_No"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PngBitmapEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.PngBitmapEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.PngBitmapEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、初期化、<xref:System.Windows.Media.Imaging.PngBitmapEncoder>新しいビットマップ イメージのエンコードにします。  
+  
+ [!code-cpp[pngbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CPP/PngEncoderDecoder.cpp#3)]
+ [!code-csharp[pngbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CSharp/PngEncoderDecoder.cs#3)]
+ [!code-vb[pngbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PngBitmapDecoderEncoder/VB/PngEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interlace">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.PngInterlaceOption Interlace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Imaging.PngInterlaceOption Interlace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.PngBitmapEncoder.Interlace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.PngInterlaceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、[!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]ビットマップがインター レースします。</summary>
+        <value><see cref="P:System.Windows.Media.Imaging.PngBitmapEncoder.Interlace" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Media.Imaging.PngInterlaceOption.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インター レースを表示する処理を指す、 [!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)] 2 つのフィールド内のフレームです。 1 つのフィールドには、フレームの偶数行が含まれています、その他のフィールドには、フレームの奇数行が含まれています。 ときに、[!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]は 1 つのフィールド内の行が最初に、表示を表示したりし、2 番目のフィールド内の行が表示されます。  
+  
+<a name="XAMLTextUsage_Interlace"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.PngBitmapEncoder.Interlace%2A>プロパティです。  
+  
+ [!code-cpp[pngbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CPP/PngEncoderDecoder.cpp#3)]
+ [!code-csharp[pngbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CSharp/PngEncoderDecoder.cs#3)]
+ [!code-vb[pngbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PngBitmapDecoderEncoder/VB/PngEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

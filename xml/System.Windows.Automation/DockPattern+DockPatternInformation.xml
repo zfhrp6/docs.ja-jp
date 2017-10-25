@@ -1,0 +1,63 @@
+<Type Name="DockPattern+DockPatternInformation" FullName="System.Windows.Automation.DockPattern+DockPatternInformation">
+  <TypeSignature Language="C#" Value="public struct DockPattern.DockPatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit DockPattern/DockPatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.DockPattern.DockPatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.DockPattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.DockPattern.Current" />または<see cref="P:System.Windows.Automation.DockPattern.Cached" />アクセサー。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この構造体で指定したプロパティを使用しても取得できます<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>と<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>から対応する識別子を使用して<xref:System.Windows.Automation.DockPattern>です。 たとえば、<xref:System.Windows.Automation.DockPattern.DockPatternInformation.DockPosition%2A>でプロパティを識別、<xref:System.Windows.Automation.DockPattern.DockPositionProperty>フィールドです。 個々 のプロパティの詳細については、それぞれの識別子のリファレンス ページで使用できます。各リファレンス トピックの「解説」セクションのリンクを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DockPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.DockPosition DockPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.DockPosition DockPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.DockPattern.DockPatternInformation.DockPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.DockPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Automation.DockPosition" />の<see cref="T:System.Windows.Automation.AutomationElement" />ドッキング コンテナー内にあります。</summary>
+        <value><see cref="T:System.Windows.Automation.DockPosition" />ドッキング コンテナーおよびコンテナー内の他の要素の境界に対して、要素のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドッキング コンテナーは、コントロールを配置できる子要素、行方向および垂直方向には、ドッキング コンテナーおよびコンテナー内の他の要素の境界に対して相対的です。  
+  
+ 既定値は <xref:System.Windows.Automation.DockPosition.None> です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.DockPosition>をサポートするコントロールの現在のドッキング位置を表す値を取得<xref:System.Windows.Automation.DockPattern>です。  
+  
+ [!code-csharp[UIADockPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIADockPattern_snip/CSharp/UIADockPattern_snippets.cs#101)]
+ [!code-vb[UIADockPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIADockPattern_snip/VisualBasic/UIADockPattern_snippets.vb#101)]  
+[!code-csharp[UIADockPattern_snip#1025](~/samples/snippets/csharp/VS_Snippets_Wpf/UIADockPattern_snip/CSharp/UIADockPattern_snippets.cs#1025)]
+[!code-vb[UIADockPattern_snip#1025](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIADockPattern_snip/VisualBasic/UIADockPattern_snippets.vb#1025)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

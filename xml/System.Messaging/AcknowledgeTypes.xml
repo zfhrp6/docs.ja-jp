@@ -1,0 +1,181 @@
+<Type Name="AcknowledgeTypes" FullName="System.Messaging.AcknowledgeTypes">
+  <TypeSignature Language="C#" Value="public enum AcknowledgeTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AcknowledgeTypes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.AcknowledgeTypes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージ キュー、送信元アプリケーションに返す受信確認メッセージの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.AcknowledgeTypes>クラスは、受信確認メッセージの 1 つまたは複数のカテゴリを要求する結合できます、フラグのセットを用意されています。  
+  
+ アプリケーションでは、メッセージを送信するときに、メッセージ キューによって元のメッセージの成否を示す受信確認メッセージが返されることを要求することです。 メッセージ キューは、指定した管理キューにこれらの受信確認メッセージを送信します。 受信確認の種類は 4 つのグループに大別できます: 正到着受信確認、正の値の読み取り受信確認、負の値の到着の確認、および負の値の読み取り受信確認します。 特定の状況の通知を受信するアプリケーションを有効に受信確認を要求する — など、メッセージ送信先キューに到達、取得されるメッセージまたはによりメッセージに到達するか、送信先キューから取得されているタイムアウトします。  
+  
+ 使用する場合、<xref:System.Messaging.Message>クラスのキューにメッセージを送信、受信確認で、アプリケーションを受信する必要がありますの種類を指定する、<xref:System.Messaging.Message.AcknowledgeType%2A>管理キューの受信確認メッセージを受信すると、プロパティ、<xref:System.Messaging.Message.AdministrationQueue%2A>プロパティです。  
+  
+ 使用すると、<xref:System.Messaging.Message>が管理キューに、インスタンスの受信確認メッセージを読み取るクラス<xref:System.Messaging.Message.Acknowledgment%2A>プロパティの条件を示します、受信確認メッセージを担当するなど、元のメッセージがキューから読み取られる前にタイムアウトが期限切れの場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キューから注文を含むメッセージを送受信します。 元のメッセージが達した場合または具体的には、肯定受信確認の要求がキューから取得します。  
+  
+ [!code-cpp[Message.Acknowledgment#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Acknowledgment/CPP/message_acknowledgment.cpp#1)]
+ [!code-csharp[Message.Acknowledgment#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Acknowledgment/CS/message_acknowledgment.cs#1)]
+ [!code-vb[Message.Acknowledgment#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Acknowledgment/VB/message_acknowledgment.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FullReachQueue">
+      <MemberSignature Language="C#" Value="FullReachQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes FullReachQueue = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.FullReachQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューに到達時刻タイマーが切れた場合、または元のメッセージを認証できない場合、キューまたは否定受信確認を元のメッセージが到着する場合は、肯定受信確認を要求するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullReceive">
+      <MemberSignature Language="C#" Value="FullReceive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes FullReceive = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.FullReceive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間を受信のタイマーが切れる前に、元のメッセージがキューから受信した場合、肯定受信確認を要求または否定受信確認をそれ以外の場合に使用されるマスク。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeReceive">
+      <MemberSignature Language="C#" Value="NegativeReceive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes NegativeReceive = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.NegativeReceive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューから受信されるまで、元のメッセージが失敗した場合は、否定受信確認を要求するために使用するマスクです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Messaging.MessageQueue.Peek%2A?displayProperty=nameWithType>メッセージをピークするした場合でも、この受信確認の種類が返される可能性がありますので、メソッドが、キューからメッセージを削除できません。 のみ、<xref:System.Messaging.MessageQueue.Receive%2A?displayProperty=nameWithType>メソッド (または、関連する非同期<xref:System.Messaging.MessageQueue.BeginReceive%2A?displayProperty=nameWithType>メソッド)、キューからメッセージを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通知されます (正または負の値) の受信確認メッセージがないことを要求するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAcknowledgeReachQueue">
+      <MemberSignature Language="C#" Value="NotAcknowledgeReachQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes NotAcknowledgeReachQueue = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.NotAcknowledgeReachQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のメッセージがキューに到達できない場合に、否定受信確認を要求するために使用するマスクです。 これは、キューに到達時刻タイマーが切れたときに、またはメッセージを認証できない場合に発生することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAcknowledgeReceive">
+      <MemberSignature Language="C#" Value="NotAcknowledgeReceive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes NotAcknowledgeReceive = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.NotAcknowledgeReceive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが発生するときに、否定受信確認を要求するために使用するマスクは、元のメッセージが、時間を受信のタイマーが切れる前に、キューから受信されていることを防止します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PositiveArrival">
+      <MemberSignature Language="C#" Value="PositiveArrival" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes PositiveArrival = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.PositiveArrival" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のメッセージ キューに到達したときに、肯定受信確認を要求するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PositiveReceive">
+      <MemberSignature Language="C#" Value="PositiveReceive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.AcknowledgeTypes PositiveReceive = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.AcknowledgeTypes.PositiveReceive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AcknowledgeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のメッセージがキューから正常に取得されたときに、肯定受信確認を要求するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

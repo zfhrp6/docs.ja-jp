@@ -1,0 +1,156 @@
+<Type Name="ITableMapping" FullName="System.Data.ITableMapping">
+  <TypeSignature Language="C#" Value="public interface ITableMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITableMapping" />
+  <TypeSignature Language="DocId" Value="T:System.Data.ITableMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ソース テーブル内のテーブルに関連付けます、 <see cref="T:System.Data.DataSet" />、によって実装されると、<see cref="T:System.Data.Common.DataTableMapping" />クラスは、.NET Framework データ プロバイダーで一般的に使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ITableMapping>インターフェイスが継承するクラスのデータ ソース列を関連付ける tablemapping が見つかりませんクラスを実装することにより、<xref:System.Data.DataSet>列です。 詳細については、次を参照してください。 [DataAdapter DataTable と DataColumn のマップ](~/docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.ITableMapping>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.ITableMapping>です。  
+  
+ 継承するクラス<xref:System.Data.ITableMapping>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.ITableMapping>インターフェイスを定義、<xref:System.Data.ITableMapping.DataSetTable%2A>プロパティです。 さらに、<xref:System.Data.Common.DataTableMapping>クラスは、このプロパティを継承しも定義、<xref:System.Data.Common.DataTableMapping.GetDataTableBySchemaAction%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.Common.DataTableMapping>に追加し、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 通知し、ユーザーをマッピングがコレクションに追加された、parent マップを表示します。  
+  
+ [!code-csharp[Classic WebData DataTableMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Data.ITableMapping" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>DataTableMapping()  
+  
+ </term><description>Tablemapping が見つかりませんクラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>(文字列 sourceTable、文字列 dataSetTable) tablemapping が見つかりません  
+  
+ </term><description>ソース テーブル名を指定すると、ソースで tablemapping が見つかりませんクラスの新しいインスタンスを初期化<see cref="T:System.Data.DataTable" />名。  
+  
+ </description></item><item><term>(文字列 sourceTable、文字列 dataSetTable、DataColumnMapping:operator[] columnMappings) tablemapping が見つかりません  
+  
+ </term><description>ソース テーブル名では、指定されたときに tablemapping が見つかりませんクラスの新しいインスタンスを初期化、<see cref="T:System.Data.DataTable" />名、および ColumnMapping オブジェクトの配列。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnMappings">
+      <MemberSignature Language="C#" Value="public System.Data.IColumnMappingCollection ColumnMappings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IColumnMappingCollection ColumnMappings" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ITableMapping.ColumnMappings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IColumnMappingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスを取得<see cref="T:System.Data.Common.DataColumnMappingCollection" />の<see cref="T:System.Data.DataTable" />です。</summary>
+        <value>データ列のマッピングのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.Common.DataTableMapping>、そのプロパティ、およびコピーの一部を設定、<xref:System.Data.Common.DataTableMapping.ColumnMappings%2A>を配列にします。 この例では、<xref:System.Data.Common.DataColumnMappingCollection>が作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMapping.ColumnMappings Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMapping.ColumnMappings Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMapping.ColumnMappings Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMapping.ColumnMappings Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSetTable">
+      <MemberSignature Language="C#" Value="public string DataSetTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSetTable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ITableMapping.DataSetTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、テーブル内での大文字と小文字の名前、<see cref="T:System.Data.DataSet" />です。</summary>
+        <value>テーブル内での大文字と小文字の名前、<see cref="T:System.Data.DataSet" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceTable">
+      <MemberSignature Language="C#" Value="public string SourceTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceTable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ITableMapping.SourceTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはソース テーブルの名前を設定します。</summary>
+        <value>ソース テーブルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

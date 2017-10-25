@@ -1,0 +1,242 @@
+<Type Name="SeekableXPathNavigator" FullName="System.ServiceModel.Dispatcher.SeekableXPathNavigator">
+  <TypeSignature Language="C#" Value="public abstract class SeekableXPathNavigator : System.Xml.XPath.XPathNavigator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SeekableXPathNavigator extends System.Xml.XPath.XPathNavigator" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XPath.XPathNavigator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML ドキュメントに含まれるデータへの読み取り専用のランダム アクセスを提供し、指定したノードの効率的な照会を可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] システムの各部分の間を移動する SOAP メッセージは、システムのさまざまなコンポーネントによって処理されます。これらのコンポーネントはメッセージを検査し、その処理で実行するアクションを決定する必要があります。 XPath エンジンはこの処理のためにメッセージを照会するコンポーネントであり、SOAP メッセージおよび他の XML ドキュメントを読むためのナビゲーターが必要です。 ナビゲーターは、ノード間を移動して、実際に読み取られている XML ドキュメント内の場所を追跡する、カーソルを提供します。  
+  
+ XPath エンジンは <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> を使用します。これは、<xref:System.Xml.XPath.XPathNavigator> クラスを拡張して <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> プロパティを追加したものです。 このプロパティを使用すると、ナビゲーターを複製せずに XML ドキュメント内の位置を迅速に保存し、読み込むことができます。<xref:System.Xml.XPath.XPathNavigator> を使用してそうした操作を行うには、大量のメモリ領域を割り当てる必要があります。 XPath エンジンでは、XML ドキュメントでクエリの実行中にカーソルの位置を頻繁に記録する必要があるため、<xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> によってメッセージ処理の重要な最適化が提供されます。  
+  
+ <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> プロパティの値は実装ごとに固有であり、ノード位置または文字位置にはマッピングできないことに注意してください。 その値は、それを提供した <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> の実装 (およびインスタンス) に対してのみ意味があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SeekableXPathNavigator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComparePosition">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XmlNodeOrder ComparePosition (long first, long second);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Xml.XmlNodeOrder ComparePosition(int64 first, int64 second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.ComparePosition(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeOrder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstPosition" Type="System.Int64" />
+        <Parameter Name="secondPosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="first">To be added.</param>
+        <param name="second">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した 2 つの位置のドキュメントの順序を記述する値を返します。</summary>
+        <returns>ドキュメント内での <see cref="T:System.Xml.XmlNodeOrder" /> に対する <paramref name="firstPosition" /> の関係を示す <paramref name="secondPosition" /> のいずれかの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="firstPosition" /> または <paramref name="secondPosition" /> が有効ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、位置の値が無効な場合は例外をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPosition">
+      <MemberSignature Language="C#" Value="public abstract long CurrentPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CurrentPosition" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、XPath ナビゲーターが配置されているデータ内のノードに関連付けられた値を取得または設定します。</summary>
+        <value>ナビゲーターの現在位置に関連付けられている値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `set` 操作は、指定した値に関連付けられている位置にナビゲーターを移動します。 `get` 操作は、ナビゲーターの現在位置に関連付けられている値を返します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このプロパティには、本来の意味はありません。実装によりナビゲーターの現在位置に関連付けられる非透過的な <see cref="T:System.Int64" /> 値です。 値自体についての制限または要件はありません。 内部データ構造に関しては、どのような想定も行うことはできません。  
+  
+ 値がシーケンシャルである必要はなく、ナビゲーターの位置が一意の値に対応することさえ必要ではありません。 複数の値が同じナビゲーター位置を参照してもかまわないので、2 つの値を比較しても役に立つ情報は得られません。  
+  
+ <see langword="get" /> 操作で提供される値は、<see langword="set" /> 操作に対して有効である必要があります。 先に <see langword="set" /> 操作で取得したものではない値を <see langword="get" /> 操作で使用しても、必ずしもエラーになるとは限りません。 <see cref="P:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition" /> によって返されたものではない、他の方法で取得された値を、実装では有効であると見なしても、見なさなくてもかまいません。どちらにするかは、実装者が選択できます。  
+  
+ 値の意味は、ナビゲーターが同じドキュメント内を移動している有効期間の間は不変である必要があります。 また、同じドキュメントを移動している間は、複製によって関連付けられた任意の 2 つのナビゲーターが値の意味を共有する必要があります。 <see langword="get" /> 操作によって提供されるすべての値は、インスタンスが同じドキュメントを移動している間は、ナビゲーターおよびその複製の有効期間を通じて有効でなければなりません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalName">
+      <MemberSignature Language="C#" Value="public abstract string GetLocalName (long node_position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetLocalName(int64 node_position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.GetLocalName(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodePosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="node_position">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した位置のノードのローカル名を返します。</summary>
+        <returns>指定した位置のノードのローカル名。 現在位置がテキスト ノードを参照している場合など、ノードにローカル名がない場合は、<see cref="F:System.String.Empty" /> が返されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node_position" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public abstract string GetName (long node_position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetName(int64 node_position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.GetName(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodePosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="node_position">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した位置のノードの名前を返します。</summary>
+        <returns><paramref name="node_position" /> のノードの名前。 ノードに名前がない場合は <see cref="F:System.String.Empty" /> が返ります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前は、`nodePosition` にある XML 要素の名前であり、通常は名前空間プレフィックスを含みます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node_position" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespace">
+      <MemberSignature Language="C#" Value="public abstract string GetNamespace (long node_position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetNamespace(int64 node_position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.GetNamespace(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodePosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="node_position">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した位置のノードの名前空間を返します。</summary>
+        <returns><paramref name="node_position" /> のノードの名前空間。 ノードに名前空間がない場合は <see cref="F:System.String.Empty" /> が返ります。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node_position" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNodeType">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XPath.XPathNodeType GetNodeType (long node_position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Xml.XPath.XPathNodeType GetNodeType(int64 node_position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.GetNodeType(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNodeType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodePosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="node_position">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した位置のノードの種類を返します。</summary>
+        <returns>XML ノードの種類を示す <see cref="T:System.Xml.XPath.XPathNodeType" /> のいずれかの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node_position" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public abstract string GetValue (long node_position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetValue(int64 node_position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.SeekableXPathNavigator.GetValue(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodePosition" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="node_position">To be added.</param>
+        <summary>派生クラスでオーバーライドされると、指定した位置のノードのテキスト値を返します。</summary>
+        <returns><paramref name="node_position" /> にあるノードのテキスト値。 ノードにテキスト値がない場合は <see cref="F:System.String.Empty" /> が返ります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の場合は、<xref:System.Xml.XmlElement.InnerText%2A> プロパティと同じように、指定した位置にあるノードのすべてのテキスト子孫を連結したものが返ります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node_position" /> が無効です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

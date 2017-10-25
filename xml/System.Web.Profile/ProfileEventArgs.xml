@@ -1,0 +1,120 @@
+<Type Name="ProfileEventArgs" FullName="System.Web.Profile.ProfileEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ProfileEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.Profile.ProfileModule.Personalize" />のイベント、<see cref="T:System.Web.Profile.ProfileModule" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.Profile.ProfileEventArgs>クラスの中に、<xref:System.Web.Profile.ProfileModule.Personalize>カスタム ユーザー プロファイルを指定するイベントです。 場合は、ときに、<xref:System.Web.Profile.ProfileModule.Personalize>イベントが完了したら、<xref:System.Web.Profile.ProfileEventArgs>のパラメーター、<xref:System.Web.Profile.ProfileEventHandler>がその<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>プロパティではない値に設定`null`、<xref:System.Web.Profile.ProfileModule>の値を使用して、 <xref:System.Web.Profile.ProfileEventArgs.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Profile.ProfileModule.Personalize>イベント、アプリケーションの Global.asax ファイルで宣言されています。 イベントのコードでは、ロールのメンバーシップに基づくユーザー プロファイルを読み込みます。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/CS/global.asax#12)]
+ [!code-vb[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/VB/global.asax#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileEventArgs (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileEventArgs.#ctor(System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />の現在の要求。</param>
+        <summary><see cref="T:System.Web.Profile.ProfileEventArgs" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileEventArgs.%23ctor%2A>のインスタンスを作成、<xref:System.Web.Profile.ProfileEventArgs>クラスとセット、<xref:System.Web.Profile.ProfileEventArgs.Context%2A>プロパティを指定した<xref:System.Web.HttpContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.HttpContext" />現在の要求。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在の要求</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Profile.ProfileModule.Personalize>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 <xref:System.Web.Profile.ProfileEventArgs.Context%2A>プロパティへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Profile">
+      <MemberSignature Language="C#" Value="public System.Web.Profile.ProfileBase Profile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Profile.ProfileBase Profile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileEventArgs.Profile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の要求のユーザー プロファイルを設定します。</summary>
+        <value>現在の要求に使用するユーザー プロファイル。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>中にプロパティ、<xref:System.Web.Profile.ProfileModule.Personalize>カスタム ユーザー プロファイルを指定するイベントです。 場合は、ときに、<xref:System.Web.Profile.ProfileModule.Personalize>イベントが完了したら、<xref:System.Web.Profile.ProfileEventArgs>のパラメーター、<xref:System.Web.Profile.ProfileEventHandler>がその<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>プロパティではない値に設定`null`、<xref:System.Web.Profile.ProfileModule>の値を使用して、 <xref:System.Web.Profile.ProfileEventArgs.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Profile.ProfileModule>は設定されません、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>プロパティを<xref:System.Web.Profile.ProfileModule.Personalize>イベント。 <xref:System.Web.Profile.ProfileModule>のみの値を取得、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>プロパティときに、コードで、<xref:System.Web.Profile.ProfileModule.Personalize>イベントが完了します。 場合、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A?displayProperty=nameWithType>プロパティが明示的に設定されていない中にアプリケーション コードによって、<xref:System.Web.Profile.ProfileModule.Personalize>イベント、<xref:System.Web.Profile.ProfileEventArgs.Profile%2A>プロパティの値になります`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Profile.ProfileModule.Personalize>イベント、アプリケーションの Global.asax ファイルで宣言されています。 イベントのコードでは、ロールのメンバーシップに基づくユーザー プロファイルを読み込みます。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/CS/global.asax#12)]
+ [!code-vb[System.Web.Profile.ProfileManager.Personalize#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.Personalize/VB/global.asax#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

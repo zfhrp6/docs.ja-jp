@@ -1,0 +1,93 @@
+<Type Name="CachedResourceDictionaryExtension" FullName="System.Activities.Presentation.CachedResourceDictionaryExtension">
+  <TypeSignature Language="C#" Value="public class CachedResourceDictionaryExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CachedResourceDictionaryExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.CachedResourceDictionaryExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Windows.ResourceDictionary))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リソース ディクショナリをその URI に関連付ける、キャッシュされたディクショナリを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML マークアップ拡張機能を提供する <xref:System.Windows.Markup.MarkupExtension> クラスを実装します。 マークアップ拡張機能は、XAML の文字列属性値またはマークアップ要素に基づいてオブジェクトを返します。 各拡張機能の <xref:System.Activities.Presentation.CachedResourceDictionaryExtension.ProvideValue%2A> メソッドは実行時に <xref:System.IServiceProvider> オブジェクトを使用してコンテキストを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CachedResourceDictionaryExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.CachedResourceDictionaryExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.CachedResourceDictionaryExtension" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.CachedResourceDictionaryExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できる <see cref="T:System.IServiceProvider" /> オブジェクト。</param>
+        <summary>このマークアップ拡張機能で使用するターゲット プロパティの値として設定するオブジェクトを返します。</summary>
+        <returns>拡張機能が適用されたプロパティで設定する <see cref="T:System.Object" /> 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各拡張機能の <xref:System.Activities.Presentation.CachedResourceDictionaryExtension.ProvideValue%2A> メソッドは実行時に <xref:System.IServiceProvider> オブジェクトを使用してコンテキストを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.CachedResourceDictionaryExtension.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされたこのリソース ディクショナリ拡張機能に関連付けられた URI を取得または設定します。</summary>
+        <value>キャッシュされたこのリソース ディクショナリ拡張機能に関連付けられた <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

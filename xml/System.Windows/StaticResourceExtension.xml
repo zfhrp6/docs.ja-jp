@@ -1,0 +1,153 @@
+<Type Name="StaticResourceExtension" FullName="System.Windows.StaticResourceExtension">
+  <TypeSignature Language="C#" Value="public class StaticResourceExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticResourceExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.StaticResourceExtension" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Object))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>静的 (XAML 読み込み時) のリソースをサポートするマークアップ拡張機能を実装して XAML から作成された参照です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ拡張機能の実装です。 WPF のマークアップ拡張機能クラスの存在の一部の側面のインフラストラクチャをサポートするには、主に、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] XAML プロセッサの実装と、マークアップ拡張機能によって公開されるメンバーは通常呼び出されませんユーザー コードからです。 この拡張機能をサポートしている、 [StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)XAML から使用します。 WPF XAML で静的リソースの検索のしくみの詳細については、次を参照してください。 [StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)または[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ `{StaticResource}`マークアップ拡張は、XAML の WPF 実装に固有です。 使用することができます`{StaticResource}`プレフィックスを使用せず、WPF の既定の XAML 名前空間を参照するときにします。 XAML 言語用に定義されたマークアップ拡張機能をサポートして一方、(など`{x:Type}`) の使用量の XAML 言語の XAML 名前空間プレフィックスを必要とします。 詳細については、次を参照してください。[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+ 通常、静的リソース参照は、XAML で使用されるたびに、 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)明示的に必要はありません。  
+  
+<a name="xamlTextUsage_StaticResourceExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticResourceExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.StaticResourceExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.StaticResourceExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticResourceExtension (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.StaticResourceExtension.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">このマークアップ拡張機能を参照するリソースのキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.StaticResourceExtension" />クラスは、指定された初期キーを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resourceKey" />パラメーターが<see langword="null" />、マークアップ拡張機能の使用または明示的な構築に使用するか。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.StaticResourceExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。</param>
+        <summary>この拡張機能を適用するプロパティで設定するオブジェクトを返します。 <see cref="T:System.Windows.StaticResourceExtension" />、これは、オブジェクトを検索するオブジェクトがによって識別される、リソース ディクショナリで見つかった、<see cref="P:System.Windows.StaticResourceExtension.ResourceKey" />です。</summary>
+        <returns>マークアップ拡張機能によって提供された値のプロパティに設定するオブジェクトの値が評価されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサポートしている[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]XAML プロセッサの実装を直接呼び出すことはありません。 XAML プロセッサの実装の適切な処理のこのメソッドを使用して`StaticResource`オブジェクトの作成中に拡張機能の値。  
+  
+ 設定するプロパティを識別できます、 <xref:System.Reflection.PropertyInfo> (標準的なプロパティ) または<xref:System.Windows.DependencyProperty>(依存関係プロパティ)。  
+  
+ この実装は、渡されたに基づく XAML 関連のサービスに依存している`serviceProvider`です。 なければなりません`null`です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]実装では、サービス コンテキストから必要なサービスを次に示します。  
+  
+-   <xref:System.Xaml.IXamlSchemaContextProvider>  
+  
+-   <xref:System.Xaml.IAmbientProvider>  
+  
+-   <xref:System.Xaml.IRootObjectProvider>  
+  
+ これらのサービスのいずれかが存在しない場合、マークアップ拡張機能の使用法は例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="serviceProvider" /><see langword="null" />、または必要なサービスの実装に失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceKey">
+      <MemberSignature Language="C#" Value="public object ResourceKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ResourceKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.StaticResourceExtension.ResourceKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("resourceKey")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの静的リソース参照によって渡されるキーの値を設定します。 リソース ディクショナリでそのキーに一致するオブジェクトを取得するキーが使用されます。</summary>
+        <value>リソースのリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況の情報を参照してください[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
+  
+<a name="xamlTextUsage_ResourceKey"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された値として<see langword="null" />、マークアップ拡張機能の使用または明示的な構築に使用するか。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

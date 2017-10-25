@@ -1,0 +1,326 @@
+<Type Name="X509ClientCertificateAuthentication" FullName="System.ServiceModel.Security.X509ClientCertificateAuthentication">
+  <TypeSignature Language="C#" Value="public class X509ClientCertificateAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509ClientCertificateAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.X509ClientCertificateAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント証明書を検証するための認証プロパティを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> が <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> に設定されている場合、<xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスを継承するカスタム証明書検証を作成する必要があります。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][する方法: カスタム証明書検証を使用するサービスを作成する](~/docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)です。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#1](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#1)]
+ [!code-vb[X509ClientCertificateAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#1)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication certificateValidationMode='ChainTrust' />  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CertificateValidationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書検証モードを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.X509CertificateValidationMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.X509CertificateValidationMode> に指定できる値は次のとおりです。  
+  
+-   <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>  
+  
+-   <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>  
+  
+-   <xref:System.ServiceModel.Security.X509CertificateValidationMode.None>  
+  
+-   <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust>  
+  
+-   <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust>  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> を使用して画面に出力する方法を次の例に示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#7](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#7)]
+ [!code-vb[X509ClientCertificateAuthentication#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#7)]   
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication certificateValidationMode='ChainTrust' />  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.CustomCertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム クライアント証明書検証を取得または設定します。</summary>
+        <value>カスタム クライアント証明書検証コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A> プロパティが <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> に設定されている場合は、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CustomCertificateValidator%2A> プロパティに <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスから継承したカスタム検証を設定する必要があります。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][する方法: カスタム証明書検証を使用するサービスを作成する](~/docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)です。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#2](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#2)]
+ [!code-vb[X509ClientCertificateAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#2)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication certificateValidationMode='Custom' customCertificateValidatorType='Samples.MyCertificateValidator, Samples' />  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          資格情報が読み取り専用のとき <see langword="set" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeWindowsGroups">
+      <MemberSignature Language="C#" Value="public bool IncludeWindowsGroups { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeWindowsGroups" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.IncludeWindowsGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>承認コンテキストに Windows グループが含まれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          Windows グループが承認コンテキストに含まれている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> プロパティが `true` に設定されている場合にだけ有効です。  
+  
+ ユーザーが属するグループの一覧を生成する必要がない場合にのみ、このプロパティを `false` に設定します。アプリケーションや承認決定に Windows グループが不要な場合は、これによってパフォーマンスが向上する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#3](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#3)]
+ [!code-vb[X509ClientCertificateAuthentication#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#3)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication includeWindowsGroups ='true'/>  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapClientCertificateToWindowsAccount">
+      <MemberSignature Language="C#" Value="public bool MapClientCertificateToWindowsAccount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MapClientCertificateToWindowsAccount" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書を Windows アカウントに割り当てるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          証明書が Windows アカウントにマッピングされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書クライアントの資格情報種類をバインディングで使用する場合、その証明書は Windows アカウントにマッピングされません。 この動作は、このプロパティを使用してオーバーライドできます。 このプロパティを `true` に設定すると、クライアント証明書の ID が Windows アカウントにマッピングされます。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#4](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#4)]
+ [!code-vb[X509ClientCertificateAuthentication#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#4)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication mapClientCertificateToWindowsAccount='true'/>  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          資格情報が読み取り専用のとき <see langword="set" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevocationMode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.RevocationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ChainTrust および PeerOrChainTrust X.509 証明書検証の証明書失効モードを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509RevocationMode" /> のいずれかの値。<see langword="NoCheck" />、<see langword="Online" />、または <see langword="Offline" /> です。 既定値は、<see langword="Online" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書を使用するとき、システムは、クライアント証明書が証明書失効リスト内にないことを検証して、クライアント証明書が失効していないことを確認します。 このチェックは、オンラインで、またはキャッシュ内の失効リストに対して実行できます。 失効チェックをオフにするには、このプロパティを <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode.NoCheck> に設定します。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][証明書の使用](~/docs/framework/wcf/feature-details/working-with-certificates.md)です。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[X509ClientCertificateAuthentication#5](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#5)]
+ [!code-vb[X509ClientCertificateAuthentication#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#5)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication certificateValidationMode='ChainTrust'   revocationMode = 'NoCheck'/>  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          資格情報が読み取り専用のとき <see langword="set" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ClientCertificateAuthentication.TrustedStoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書チェーンを検証するためのコンテキストとなる信頼されたストアの場所を取得または設定します。</summary>
+        <value>クライアント証明書チェーンを検証するコンテキストで信頼されたストアの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、X.509 証明書チェーンの検証にコンピューターのコンテキストを使用するのか、それともユーザーのコンテキストを使用するのかを指定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[X509ClientCertificateAuthentication#6](~/samples/snippets/csharp/VS_Snippets_CFX/x509clientcertificateauthentication/cs/source.cs#6)]
+ [!code-vb[X509ClientCertificateAuthentication#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/x509clientcertificateauthentication/vb/source.vb#6)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+```  
+<serviceCredentials>  
+  <clientCertificate>  
+     <authentication certificateValidationMode='ChainTrust'   trustedStoreLocation = 'LocalMachine'/>  
+  </clientCertificate>  
+</serviceCredentials>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          資格情報が読み取り専用のとき <see langword="set" />。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

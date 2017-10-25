@@ -1,0 +1,82 @@
+<Type Name="XPathMessageFilterElementComparer" FullName="System.ServiceModel.Configuration.XPathMessageFilterElementComparer">
+  <TypeSignature Language="C#" Value="public class XPathMessageFilterElementComparer : System.Collections.IComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XPathMessageFilterElementComparer extends System.Object implements class System.Collections.IComparer" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.XPathMessageFilterElementComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>2 つの <see cref="T:System.ServiceModel.Configuration.XPathMessageFilterElement" /> インスタンスを比較する機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilterElementComparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.XPathMessageFilterElementComparer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.XPathMessageFilterElementComparer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IComparer.Compare">
+      <MemberSignature Language="C#" Value="int IComparer.Compare (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IComparer.Compare(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.XPathMessageFilterElementComparer.System#Collections#IComparer#Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.ServiceModel.Configuration.XPathMessageFilterElement" />。</param>
+        <param name="y"><see cref="T:System.ServiceModel.Configuration.XPathMessageFilterElement" />。</param>
+        <summary>2 つの <see cref="T:System.ServiceModel.Configuration.XPathMessageFilterElement" /> インスタンスを比較します。</summary>
+        <returns>次の表に、それぞれの値を示します。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term> -1  
+  
+ </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+  
+ </description></item><item><term> 0  
+  
+ </term><description><paramref name="x" /> と <paramref name="y" /> が等価です。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="x" /> または <paramref name="y" /> で指定された XPath フィルターを解析できません。</exception>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="x" /> または <paramref name="y" /> で指定された XPath 名前空間プレフィックスが見つかりません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

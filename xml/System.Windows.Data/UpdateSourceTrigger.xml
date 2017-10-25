@@ -1,0 +1,97 @@
+<Type Name="UpdateSourceTrigger" FullName="System.Windows.Data.UpdateSourceTrigger">
+  <TypeSignature Language="C#" Value="public enum UpdateSourceTrigger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UpdateSourceTrigger extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.UpdateSourceTrigger" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>バインディング ソースを更新するタイミングを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.UpdateSourceTrigger Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.UpdateSourceTrigger.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.UpdateSourceTrigger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値<see cref="T:System.Windows.Data.UpdateSourceTrigger" />バインディング ターゲット プロパティの値。 ほとんどの依存関係プロパティの既定値は<see cref="F:System.Windows.Data.UpdateSourceTrigger.PropertyChanged" />中、<see cref="P:System.Windows.Controls.TextBox.Text" />プロパティの既定値を持つ<see cref="F:System.Windows.Data.UpdateSourceTrigger.LostFocus" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値を決定するプログラムによる方法<xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A>のプロパティを使用して、プロパティ メタデータを取得する依存関係プロパティの値は、<xref:System.Windows.DependencyProperty.GetMetadata%2A>の値を確認し、<xref:System.Windows.FrameworkPropertyMetadata.DefaultUpdateSourceTrigger%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Explicit">
+      <MemberSignature Language="C#" Value="Explicit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.UpdateSourceTrigger Explicit = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.UpdateSourceTrigger.Explicit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.UpdateSourceTrigger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出すときにのみ、バインディング ソースを更新、<see cref="M:System.Windows.Data.BindingExpression.UpdateSource" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LostFocus">
+      <MemberSignature Language="C#" Value="LostFocus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.UpdateSourceTrigger LostFocus = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.UpdateSourceTrigger.LostFocus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.UpdateSourceTrigger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング ターゲット要素がフォーカスを失うたびに、バインド ソースを更新します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChanged">
+      <MemberSignature Language="C#" Value="PropertyChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.UpdateSourceTrigger PropertyChanged = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.UpdateSourceTrigger.PropertyChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.UpdateSourceTrigger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング ターゲット プロパティが変更されるたびに、バインディング ソースを即時更新します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

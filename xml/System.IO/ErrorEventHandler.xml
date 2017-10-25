@@ -1,0 +1,50 @@
+<Type Name="ErrorEventHandler" FullName="System.IO.ErrorEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ErrorEventHandler(object sender, ErrorEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ErrorEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.IO.ErrorEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.IO.ErrorEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.IO.ErrorEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.IO.FileSystemWatcher.Error" />のイベント、<see cref="T:System.IO.FileSystemWatcher" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.ErrorEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 関連付けるには、イベントをイベント処理メソッドを使用して、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると、イベント処理メソッドが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、`FileSystemWatcher`ファイルの変更を監視するオブジェクト (作成、削除、名前の変更、変更)、ディスク ドライブで発生しています。 また、正しくエラー通知を受信する方法も示します。  
+  
+ [!code-csharp[FileSystemWatcher#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#1)]
+ [!code-vb[FileSystemWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

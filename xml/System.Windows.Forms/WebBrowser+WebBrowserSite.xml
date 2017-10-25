@@ -1,0 +1,56 @@
+<Type Name="WebBrowser+WebBrowserSite" FullName="System.Windows.Forms.WebBrowser+WebBrowserSite">
+  <TypeSignature Language="C#" Value="protected class WebBrowser.WebBrowserSite : System.Windows.Forms.WebBrowserSiteBase" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit WebBrowser/WebBrowserSite extends System.Windows.Forms.WebBrowserSiteBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.WebBrowser.WebBrowserSite" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.WebBrowserSiteBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ホスト ウィンドウを表す、<see cref="T:System.Windows.Forms.WebBrowser" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンマネージを使用して OLE 開発に慣れているかどうかは`WebBrowser`ActiveX コントロールは、Windows フォームの機能を拡張する<xref:System.Windows.Forms.WebBrowser>コントロールで、ActiveX コントロールのマネージ ラッパーです。 ブラウザーのショートカット メニューとショートカット キーをカスタマイズするかホスト型のドキュメントにカスタム セキュリティ設定を指定して、この拡張性を使用できます。  
+  
+ この機能を使用するから継承するクラスを実装する、<xref:System.Windows.Forms.WebBrowser>と<xref:System.Windows.Forms.WebBrowser.WebBrowserSite>クラスです。 アンマネージ`WebBrowser`ActiveX コントロールを使用して、保護された<xref:System.Windows.Forms.WebBrowser.CreateWebBrowserSiteBase%2A?displayProperty=nameWithType>によって実装された機能拡張インターフェイスを取得する方法を<xref:System.Windows.Forms.WebBrowser.WebBrowserSite>クラスです。 上書き、<xref:System.Windows.Forms.WebBrowser.CreateWebBrowserSiteBase%2A>から継承する独自のクラスのインスタンスを返すメソッドを<xref:System.Windows.Forms.WebBrowser.WebBrowserSite>クラスです。 <xref:System.Windows.Forms.WebBrowser.WebBrowserSite> OLE の実装に、既定値を提供するクラス`IDocHostUIHandler`インターフェイスです。 詳細については、次を参照してください。 [IDocHostUIHandler インターフェイス](http://go.microsoft.com/fwlink/?LinkId=98895)、MSDN ライブラリです。 このインターフェイスの実装を提供したり、他の実装`WebBrowser`コントロールの動作をカスタマイズするために ActiveX コントロールのインターフェイスです。 詳細については、次を参照してください。 [WebBrowser コントロール](http://go.microsoft.com/fwlink/?LinkID=98894)、MSDN ライブラリです。  
+  
+> [!NOTE]
+>  いずれか、独自の実装を提供する場合`IDocHostUIHandler`メンバー、そのインターフェイスのすべてのメンバーを実装する必要があります。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">この型をオーバーライドするには、アンマネージ コードにアクセスする必要があります。 関連する列挙:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />と<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowserSite (System.Windows.Forms.WebBrowser host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.WebBrowser host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.WebBrowser.WebBrowserSite.#ctor(System.Windows.Forms.WebBrowser)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="host" Type="System.Windows.Forms.WebBrowser" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.Windows.Forms.WebBrowser" /></param>
+        <summary><see cref="T:System.Windows.Forms.WebBrowser.WebBrowserSite" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />と<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

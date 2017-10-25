@@ -1,0 +1,221 @@
+<Type Name="ServiceContractGenerationContext" FullName="System.ServiceModel.Description.ServiceContractGenerationContext">
+  <TypeSignature Language="C#" Value="public class ServiceContractGenerationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceContractGenerationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceContractGenerationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="M:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract(System.ServiceModel.Description.ServiceContractGenerationContext)" /> メソッドに渡され、コードの生成前にサービス コントラクトとそのコンテキストを変更できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext> メソッドに渡される <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%2A?displayProperty=nameWithType> オブジェクトを使用して、コードの生成前にコード ドキュメント オブジェクト モデルを変更できます。 通常、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> インターフェイスは、<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> のカスタム実装に実装されます。このカスタム実装は、カスタム WSDL 要素をインポート、または他の方法によってサービス レベルまたは操作レベルでコードを変更するために使用されます。 操作レベルでコードを変更する方法については、<xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> を参照してください。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext> メソッドに渡される <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%2A?displayProperty=nameWithType> オブジェクトを使用して、カスタム WSDL 要素から抽出したコード コメントを追加する方法を次の例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#12](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#12)]  
+  
+ 追加されるコード コメントのコード例を次に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#13](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.cs#13)]
+ [!code-vb[C_CustomWSDLExtensions#13](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceContractGenerationContext (System.ServiceModel.Description.ServiceContractGenerator serviceContractGenerator, System.ServiceModel.Description.ContractDescription contract, System.CodeDom.CodeTypeDeclaration contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceContractGenerator serviceContractGenerator, class System.ServiceModel.Description.ContractDescription contract, class System.CodeDom.CodeTypeDeclaration contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceContractGenerationContext.#ctor(System.ServiceModel.Description.ServiceContractGenerator,System.ServiceModel.Description.ContractDescription,System.CodeDom.CodeTypeDeclaration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceContractGenerator" Type="System.ServiceModel.Description.ServiceContractGenerator" />
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="contractType" Type="System.CodeDom.CodeTypeDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="serviceContractGenerator">コントラクトのコードを生成するジェネレーター。</param>
+        <param name="contract">生成するコントラクトの、コントラクトの説明。</param>
+        <param name="contractType">生成するコントラクト コードの <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</param>
+        <summary>指定したコントラクト ジェネレーター、コントラクトの説明、およびコントラクト コード型宣言を使用して、<see cref="T:System.ServiceModel.Description.ServiceContractGenerationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceContractGenerationContext (System.ServiceModel.Description.ServiceContractGenerator serviceContractGenerator, System.ServiceModel.Description.ContractDescription contract, System.CodeDom.CodeTypeDeclaration contractType, System.CodeDom.CodeTypeDeclaration duplexCallbackType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceContractGenerator serviceContractGenerator, class System.ServiceModel.Description.ContractDescription contract, class System.CodeDom.CodeTypeDeclaration contractType, class System.CodeDom.CodeTypeDeclaration duplexCallbackType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceContractGenerationContext.#ctor(System.ServiceModel.Description.ServiceContractGenerator,System.ServiceModel.Description.ContractDescription,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceContractGenerator" Type="System.ServiceModel.Description.ServiceContractGenerator" />
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="contractType" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="duplexCallbackType" Type="System.CodeDom.CodeTypeDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="serviceContractGenerator">コントラクトのコードを生成するジェネレーター。</param>
+        <param name="contract">生成するコントラクトの、コントラクトの説明。</param>
+        <param name="contractType">生成するコントラクト コードの <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</param>
+        <param name="duplexCallbackType">生成する双方向コントラクト コードの <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</param>
+        <summary>指定したコントラクト ジェネレーター、コントラクトの説明、およびコントラクト コード型宣言を使用して、<see cref="T:System.ServiceModel.Description.ServiceContractGenerationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ContractDescription Contract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ContractDescription Contract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceContractGenerationContext.Contract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ContractDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコントラクトの <see cref="T:System.ServiceModel.Description.ContractDescription" /> を取得します。</summary>
+        <value>現在のコントラクトの <see cref="T:System.ServiceModel.Description.ContractDescription" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext.Contract%2A> プロパティを使用して、現在のコントラクトの <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> を調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeDeclaration ContractType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeDeclaration ContractType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceContractGenerationContext.ContractType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeDeclaration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコントラクトの <see cref="T:System.CodeDom.CodeTypeDeclaration" /> を取得します。</summary>
+        <value>現在のコントラクトの <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext.ContractType%2A> プロパティを使用して、コードを生成する前に現在のコントラクトの <xref:System.CodeDom.CodeTypeDeclaration?displayProperty=nameWithType> を確認または変更します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext> メソッドに渡される <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%2A?displayProperty=nameWithType> オブジェクトを使用して、カスタム WSDL 要素から抽出したコード コメントを追加する方法を次の例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#12](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#12)]  
+  
+ 追加されるコード コメントのコード例を次に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#13](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.cs#13)]
+ [!code-vb[C_CustomWSDLExtensions#13](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DuplexCallbackType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeDeclaration DuplexCallbackType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeDeclaration DuplexCallbackType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceContractGenerationContext.DuplexCallbackType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeDeclaration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス コントラクト上の双方向コールバック コントラクトの <see cref="T:System.CodeDom.CodeTypeDeclaration" /> を取得します。</summary>
+        <value>サービス コントラクト上の双方向コールバック コントラクトの <see cref="T:System.CodeDom.CodeTypeDeclaration" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext.DuplexCallbackType%2A> プロパティを使用して、コードを生成する前にサービス コントラクト上の双方向コールバック コントラクトの <xref:System.CodeDom.CodeTypeDeclaration?displayProperty=nameWithType> を確認または変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.OperationContractGenerationContext&gt; Operations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.OperationContractGenerationContext&gt; Operations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceContractGenerationContext.Operations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.OperationContractGenerationContext&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトの操作を表す <see cref="T:System.ServiceModel.Description.OperationContractGenerationContext" /> オブジェクトのコレクションを取得します。</summary>
+        <value>コントラクトの操作を表す <see cref="T:System.ServiceModel.Description.OperationContractGenerationContext" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext.Operations%2A> プロパティを使用して、コントラクトの操作を表す <xref:System.ServiceModel.Description.OperationContractGenerationContext?displayProperty=nameWithType> オブジェクトを確認または変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceContractGenerator">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceContractGenerator ServiceContractGenerator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceContractGenerator ServiceContractGenerator" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceContractGenerationContext.ServiceContractGenerator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceContractGenerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトを生成する <see cref="T:System.ServiceModel.Description.ServiceContractGenerator" /> を取得します。</summary>
+        <value>コントラクトを生成する <see cref="T:System.ServiceModel.Description.ServiceContractGenerator" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext.ServiceContractGenerator%2A> プロパティを使用して、コントラクト コードを作成するコード ジェネレーターを確認または変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,105 @@
+<Type Name="DispatcherOperation&lt;TResult&gt;" FullName="System.Windows.Threading.DispatcherOperation&lt;TResult&gt;">
+  <TypeSignature Language="C#" Value="public class DispatcherOperation&lt;TResult&gt; : System.Windows.Threading.DispatcherOperation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DispatcherOperation`1&lt;TResult&gt; extends System.Windows.Threading.DispatcherOperation" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherOperation`1" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TResult" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherOperation</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TResult">によって返される型、<see cref="T:System.Threading.Tasks.Task`1" />です。</typeparam>
+    <summary>ポストされた操作との対話に使用されるオブジェクトを表す、<see cref="T:System.Windows.Threading.Dispatcher" />キューし、が含まれています、<see cref="T:System.Threading.Tasks.Task`1" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAwaiter">
+      <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.TaskAwaiter&lt;TResult&gt; GetAwaiter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Runtime.CompilerServices.TaskAwaiter`1&lt;!TResult&gt; GetAwaiter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherOperation`1.GetAwaiter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.TaskAwaiter&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>結果を返す非同期操作を待機するオブジェクトを返します。</summary>
+        <returns>結果を返す非同期操作を待機しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeDelegateCore">
+      <MemberSignature Language="C#" Value="protected override object InvokeDelegateCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object InvokeDelegateCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherOperation`1.InvokeDelegateCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている操作を開始<see cref="T:System.Windows.Threading.DispatcherOperation" />です。</summary>
+        <returns>操作の結果。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public TResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherOperation`1.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完了した後は、操作の結果を取得します。</summary>
+        <value>操作の結果。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Task">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; Task { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; Task" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherOperation`1.Task" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.Task`1" />現在の操作を表すです。</summary>
+        <value>現在の操作を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

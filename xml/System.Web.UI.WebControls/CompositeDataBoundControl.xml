@@ -1,0 +1,283 @@
+<Type Name="CompositeDataBoundControl" FullName="System.Web.UI.WebControls.CompositeDataBoundControl">
+  <TypeSignature Language="C#" Value="public abstract class CompositeDataBoundControl : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CompositeDataBoundControl extends System.Web.UI.WebControls.DataBoundControl implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CompositeDataBoundControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataBoundControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>他のサーバー コントロールで構成される表形式のデータ バインド コントロールの基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeDataBoundControl>クラスは、データ ソースからデータにバインドする複合サーバー コントロールの基底クラスとして機能します。 複合サーバー コントロールは、他のサーバー コントロールの組み合わせから組み込まれているコントロールです。 ページの開発者は使用しないで、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>クラスの直接。 代わりに、このクラスから派生したコントロールを使用します。 複合データ バインド コントロールの例として、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.FormView>、および<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ 継承するクラス、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>コントロールをオーバーライドする必要があります、<xref:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls%28System.Collections.IEnumerable%2CSystem.Boolean%29>コントロールの階層構造を作成します。 複合データ バインド コントロールの子コントロールにアクセスするには、使用、<xref:System.Web.UI.WebControls.CompositeDataBoundControl.Controls%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、テーブルのデータ ソースの値を表示するカスタム複合データ バインド コントロールを作成する方法を示します。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#2)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.UI.WebControls.CompositeDataBoundControl" />クラスでは、次のメンバーをオーバーライドする必要があります:<see cref="M:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls(System.Collections.IEnumerable,System.Boolean)" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CompositeDataBoundControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeDataBoundControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CompositeDataBoundControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeDataBoundControl> クラスは抽象クラスです。 このクラスの新しいインスタンスを作成することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeDataBoundControl.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合データ バインド コントロール内の子コントロールのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.ControlCollection" />複合データ バインド コントロール内の子コントロールを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合データ バインド コントロールは、1 つまたは複数のサーバー コントロールの組み合わせです。 使用して、<xref:System.Web.UI.WebControls.CompositeDataBoundControl.Controls%2A>プロパティをこれらの子コントロールを管理します。 追加、削除、またはコレクション内のサーバー コントロールを反復処理することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートに格納されている値に基づく複合データ バインド コントロールを表示するために使用されるコントロールの階層構造を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls>メソッドから派生したクラスによって使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>複合データ バインド コントロールのコントロールの階層構造を作成するクラス。 このメソッドのオーバー ロードでは、データ ソースから直接ではなく、ビューステートの値に基づいてコントロールの階層を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected abstract int CreateChildControls (System.Collections.IEnumerable dataSource, bool dataBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 CreateChildControls(class System.Collections.IEnumerable dataSource, bool dataBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls(System.Collections.IEnumerable,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="dataBinding" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.Collections.IEnumerable" />コントロールにバインドする値を含むです。</param>
+        <param name="dataBinding">
+          <see langword="true" />示す、<see cref="M:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls(System.Collections.IEnumerable,System.Boolean)" />データ バインド時に呼び出されます。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>抽象クラスでオーバーライドされると、指定したデータ ソースからの値に基づく複合データ バインド コントロールを表示するために使用されるコントロールの階層構造を作成します。</summary>
+        <returns>作成された項目の数、<see cref="M:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls(System.Collections.IEnumerable,System.Boolean)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls>メソッドから派生したクラスによって使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>複合データ バインド コントロールのコントロールの階層構造を作成するクラス。 拡張するとき、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>クラスがオーバーライドする必要があります、<xref:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls>独自に作成する方法は、階層を制御します。 複合コントロールを作成する方法の詳細については、次を参照してください。[カスタム ASP.NET サーバー コントロールの開発](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef)です。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.CompositeDataBoundControl.CreateChildControls%28System.Collections.IEnumerable%2CSystem.Boolean%29>コントロールの階層構造を作成するカスタム コントロールのメソッドです。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#2)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMethod">
+      <MemberSignature Language="C#" Value="protected string DeleteMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeDataBoundControl.DeleteMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にデータを削除するために呼び出すメソッドの名前。</summary>
+        <value>メソッドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、データ バインディング メソッドとして使用するモデル バインドします。  
+  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertMethod">
+      <MemberSignature Language="C#" Value="protected string InsertMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InsertMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeDataBoundControl.InsertMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にデータを挿入するために呼び出すメソッドの名前。</summary>
+        <value>メソッドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、データ バインディング メソッドとして使用するモデル バインドします。  
+  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUsingModelBinders">
+      <MemberSignature Language="C#" Value="protected override bool IsUsingModelBinders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUsingModelBinders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeDataBoundControl.IsUsingModelBinders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデル バインディングが使用するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />モデル バインディングが使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected override void PerformDataBinding (System.Collections.IEnumerable data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void PerformDataBinding(class System.Collections.IEnumerable data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Collections.IEnumerable" />複合データ バインド コントロールにバインドする値を含むです。</param>
+        <summary>データ ソースからデータを複合データ バインド コントロールをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding%2A>メソッドから派生したクラスによって使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.CompositeDataBoundControl>複合データ バインド コントロールをデータ ソースからデータをバインドするクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMethod">
+      <MemberSignature Language="C#" Value="protected string UpdateMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdateMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompositeDataBoundControl.UpdateMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にデータを更新するために呼び出すメソッドの名前。</summary>
+        <value>メソッドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、データ バインディング メソッドとして使用するモデル バインドします。  
+  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

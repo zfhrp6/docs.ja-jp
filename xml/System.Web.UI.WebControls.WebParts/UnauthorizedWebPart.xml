@@ -1,0 +1,140 @@
+<Type Name="UnauthorizedWebPart" FullName="System.Web.UI.WebControls.WebParts.UnauthorizedWebPart">
+  <TypeSignature Language="C#" Value="public sealed class UnauthorizedWebPart : System.Web.UI.WebControls.WebParts.ProxyWebPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UnauthorizedWebPart extends System.Web.UI.WebControls.WebParts.ProxyWebPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.ProxyWebPart</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プレース ホルダーを作成するために使用されるたびにオブジェクト、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールの<see cref="Overload:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized" />メソッドを返します。<see langword="false" />の、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットが個別かどうかを決定するための承認機構を提供<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをページに追加することができます。 開発者は、任意の文字列を割り当てることができます必要に応じて、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 ときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールがページにコントロールを追加することが、このフィルターの値を使用して、開発者によって設定基準に照らし合わせてチェックされ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized%2A>メソッド、および返します`false`コントロールが承認されていない場合。  
+  
+> [!NOTE]
+>  このメカニズムは、サーバー コントロールおよびユーザー コントロールに配置されている、でも動作<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーン、これらのコントロールにラップされているため、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> 、実行時にオブジェクトと、このオブジェクトの継承、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが承認されていない、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>挿入を制御、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>に許可されていないコントロールの代わりに、ページのコントロールのツリー コントロールです。 <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロール ツリーのコントロールの予約 ページで、承認されていないコントロールの位置になり、ユーザーが以前に適用してパーソナル化データ、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール損失を防止します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>ページを挿入すると、また、レンダリングされるページのソース コードに表示されますがコントロールに表示されることはありません。 開発者をチェックして、ページのコントロール ツリーにおける存在を確認できます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロール。  
+  
+ このコード例の最初の部分は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPartManager>をオーバーライドするコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized%28System.Web.UI.WebControls.WebParts.WebPart%29>カスタム承認条件を作成するメソッド。 どの<xref:System.Web.UI.WebControls.WebParts.WebPart>を持つコントロールをその<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティが特定の値、またはプロパティに割り当てられている値を持たない任意のコントロールに設定を承認は、およびこれらの条件を満たしていないコントロールが許可されていません。  
+  
+ [!code-csharp[WebParts_UnauthorizedWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_UnauthorizedWebPart_Overview/CS/MyManagerAuthorize.cs#2)]
+ [!code-vb[WebParts_UnauthorizedWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_UnauthorizedWebPart_Overview/VB/MyManagerAuthorize.vb#2)]  
+  
+ コード例の 2 番目の部分は、ユーザー設定をホストする Web ページ<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 内で宣言された 3 つのサーバーの静的コントロール、`<asp:webpartzone>`要素。 これらのコントロールが実際にはありませんが<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、それらが折り返されると、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>として処理することができますので、実行時にオブジェクト<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御し、そのために値を割り当てる、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティです。 注意して、<xref:System.Web.UI.WebControls.BulletedList>コントロールがカスタムの条件に従って、承認されるように有効にする必要があります、値に設定、フィルター<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 <xref:System.Web.UI.WebControls.Label>コントロールにする必要がありますいない承認フィルター値。 <xref:System.Web.UI.WebControls.Calendar>のため、既定では、承認するか、コントロールがプロパティの値を割り当てられません。  
+  
+ [!code-aspx-csharp[WebParts_UnauthorizedWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_UnauthorizedWebPart_Overview/CS/IsAuthorizedCS.aspx#1)]
+ [!code-aspx-vb[WebParts_UnauthorizedWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_UnauthorizedWebPart_Overview/VB/IsAuthorizedVB.aspx#1)]  
+  
+ コード例の 3 番目の部分は、Web パーツの記述ファイルをエクスポートできるようにするために Web.config ファイルに追加する必要があります設定です。 このコード例の Web ページと同じディレクトリ内の Web.config ファイルがあることを確認します。 内で、`<system.web>`セクションであることを確認、`<webParts>`を持つ要素が`enableExport`属性に設定`true`マークアップを次のように、します。  
+  
+ `<webParts enableExport="true">`  
+  
+ `...`  
+  
+ `</webParts>`  
+  
+ ブラウザーでページを読み込むことを確認、<xref:System.Web.UI.WebControls.BulletedList>と<xref:System.Web.UI.WebControls.Calendar>コントロールが、想定どおりにレンダリングされますが、<xref:System.Web.UI.WebControls.Label>承認されなかったために、コントロールは表示されません。 クリックすると、**リスト web パーツ コントロール**原因のボタンをクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>のすべてのコントロールの Id を一覧表示するコントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>コレクション。 なおの ID、<xref:System.Web.UI.WebControls.Label>コントロールがあることを証明する、 <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>  ページで、ラベルはレンダリングされない場合でも、その場所を保持するためにページ コントロールのツリーに追加したコントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>プロパティのデータの新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>コンス トラクターをそのオーバー ロードの両方でを呼び出す基底コンス トラクター、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart>クラスです。 これらのコンス トラクターの各プロパティ、およびデータ初期化の新しいインスタンスを作成、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロール。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールを追加する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (およびその他のサーバーまたはユーザー コントロール) のコントロールのコレクションには使用して、各コントロールをチェック、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized%2A>メソッドです。 新規の ID) などのコントロールからの特定のプロパティ値がプロパティに割り当てられたコントロールのインスタンスが許可されていない場合<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロール、および<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロールが失敗したコントロールの代わりに、ページのコントロールのツリーに追加し、承認します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>  ページでは、コントロールを表示することはありませんし、ユーザーに方法はありませんが存在するかを知る。 ただし、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>コントロールがコントロールのツリー内の元のコントロールの位置を維持し、元のコントロールの既存のパーソナル化データを保持するプレース ホルダーとしても機能します。 そうすると、ユーザーが以前にコントロールをカスタマイズ、し、承認されていない、何らかの理由になり再び、承認された後で、ユーザーのパーソナル化データを復元できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnauthorizedWebPart (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.#ctor(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />によって承認されるように、障害が発生、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart" />コントロール、静的なときに呼び出されます<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール (またはサーバーまたはユーザー コントロール)、承認に失敗します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>コンス トラクターは、スタティック コントロール`webPart`をパラメーターとして、`webPart`承認チェックが失敗しました。 静的なコントロールは、プログラムで追加されるのではなく、Web ページのマークアップで宣言されているいずれか。 コンス トラクターは、の新しいインスタンスを返す、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>の代わりに、ページのコントロールのツリーに追加されているコントロール`webPart`です。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnauthorizedWebPart (string originalID, string originalTypeName, string originalPath, string genericWebPartID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string originalID, string originalTypeName, string originalPath, string genericWebPartID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalID" Type="System.String" />
+        <Parameter Name="originalTypeName" Type="System.String" />
+        <Parameter Name="originalPath" Type="System.String" />
+        <Parameter Name="genericWebPartID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="originalID">追加された元のサーバーまたはユーザー コントロールの ID を表す文字列、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" /> Web パーツ アプリケーションに含めるようにします。</param>
+        <param name="originalTypeName">元のコントロールの種類の名前を含む文字列。</param>
+        <param name="originalPath">元のコントロールがユーザー コントロールの場合は、ユーザー コントロールへの相対仮想パスを含む文字列。</param>
+        <param name="genericWebPartID">ID を含む文字列、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />を元のサーバーまたはユーザー コントロールをラップします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart" />コントロール、動的なときに呼び出されます<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール (またはサーバーまたはユーザー コントロール)、承認に失敗します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>コンス トラクターの呼び出し時に動的な<xref:System.Web.UI.WebControls.WebParts.WebPart>またはその他のサーバー コントロールには、その承認チェックが失敗した場合します。 動的コントロールは、いずれかのプログラムでは、ページに追加するか、Web パーツのカタログからユーザーが制御します。 <xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>コンス トラクターは、の新しいインスタンスを返す、<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart>承認に失敗したダイナミック コントロールを置換するコントロール。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.UnauthorizedWebPart.%23ctor%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

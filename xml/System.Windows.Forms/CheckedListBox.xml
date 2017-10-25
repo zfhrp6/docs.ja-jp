@@ -1,0 +1,1528 @@
+<Type Name="CheckedListBox" FullName="System.Windows.Forms.CheckedListBox">
+  <TypeSignature Language="C#" Value="public class CheckedListBox : System.Windows.Forms.ListBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi CheckedListBox extends System.Windows.Forms.ListBox" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CheckedListBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ListBox</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.LookupBindingProperties</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表示、<see cref="T:System.Windows.Forms.ListBox" />で各項目の左側にチェック ボックスが表示されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロールは、ユーザーがコントロールの右側にある、キーボードまたは、スクロール バーを使用して移動できるアイテムの一覧を表示します。 ユーザーがいずれかで、チェック マークを配置できますかで他のアイテムと、チェックされた項目を移動することができます、<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>と<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>です。  
+  
+ 実行時に、リストをオブジェクトを追加するとオブジェクト参照の配列を割り当てる、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>メソッドです。 リストには、各オブジェクトの既定の文字列値が表示されます。 使用してリストに個々 のアイテムを追加することができます、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection.Add%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.CheckedListBox>オブジェクトを 3 つの状態をサポートしている、<xref:System.Windows.Forms.CheckState>列挙: <xref:System.Windows.Forms.CheckState.Checked>、 <xref:System.Windows.Forms.CheckState.Indeterminate>、および<xref:System.Windows.Forms.CheckState.Unchecked>です。 状態を設定する必要があります<xref:System.Windows.Forms.CheckState.Indeterminate>コード内のユーザー インターフェイスであるため、<xref:System.Windows.Forms.CheckedListBox>これを行うメカニズムを提供しません。  
+  
+ 場合<xref:System.Windows.Forms.ListBox.UseTabStops%2A>は`true`、<xref:System.Windows.Forms.CheckedListBox>が認識され、列を作成するアイテムのテキストでタブ文字を展開します。 これらのタブ ストップは、あらかじめ設定されているし、変更できません。 カスタム タブを使用する設定<xref:System.Windows.Forms.ListBox.UseTabStops%2A>に`false`設定、<xref:System.Windows.Forms.ListBox.UseCustomTabOffsets%2A>に`true`にカスタム値を追加して、<xref:System.Windows.Forms.ListBox.CustomTabOffsets%2A>コレクション。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.CheckedListBox.UseCompatibleTextRendering%2A>プロパティは`false`、<xref:System.Windows.Forms.ListBox.CustomTabOffsets%2A>プロパティは無視され、[標準] タブのオフセットに置き換えられます。  
+  
+ <xref:System.Windows.Forms.CheckedListBox>クラスは、次の 3 つのインデックス付きコレクションをサポートしています。  
+  
+|Collection|カプセル化するクラス|  
+|----------------|-------------------------|  
+|含まれるすべてのアイテム、<xref:System.Windows.Forms.CheckedListBox>コントロール。|<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>|  
+|チェックされた項目 (不定状態で項目を含む)、含まれているアイテムのサブセットで、<xref:System.Windows.Forms.CheckedListBox>コントロール。|<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>|  
+|項目のコレクションへのインデックスのサブセットである、インデックスをチェックします。 これらのインデックスは、checked または不確定な状態で項目を指定します。|<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>|  
+  
+ 次の 3 つのテーブルは 3 つのインデックス付きコレクションの例を<xref:System.Windows.Forms.CheckedListBox>クラスでサポートされます。  
+  
+ 最初のテーブルは、コントロール (すべての項目がコントロールに含まれている場合) 内の項目のインデックス付きコレクションの例を示します。  
+  
+|インデックス|アイテム|状態の確認|  
+|-----------|----------|-----------------|  
+|0|オブジェクト 1|<xref:System.Windows.Forms.CheckState.Unchecked>|  
+|1|オブジェクト 2|<xref:System.Windows.Forms.CheckState.Checked>|  
+|2|オブジェクト 3|<xref:System.Windows.Forms.CheckState.Unchecked>|  
+|3|オブジェクト 4|<xref:System.Windows.Forms.CheckState.Indeterminate>|  
+|4|オブジェクト 5|<xref:System.Windows.Forms.CheckState.Checked>|  
+  
+ 2 番目のテーブルは、チェックされた項目のインデックス付きコレクションの例を示します。  
+  
+|インデックス|アイテム|  
+|-----------|----------|  
+|0|オブジェクト 2|  
+|1|オブジェクト 4|  
+|2|オブジェクト 5|  
+  
+ 3 番目のテーブルは、チェックされた項目のインデックスのインデックス付きコレクションの例を示します。  
+  
+|インデックス|項目のインデックス|  
+|-----------|-------------------|  
+|0|1|  
+|1|3|  
+|2|4|  
+  
+   
+  
+## Examples  
+ 次の例は、メソッド、プロパティ、およびのコレクションを使用する方法を示しています、<xref:System.Windows.Forms.CheckedListBox>です。 これは、完全なサンプル プロジェクトにコピーした後に実行できる状態です。 保存をクリックして 1 回とを確認し、項目をオフに、項目を追加するテキスト ボックスを使用してボタン、チェックされた項目をオフにします。  
+  
+ [!code-cpp[Classic CheckedListBox Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CheckedListBox Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CheckedListBox Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CheckedListBox Example/CS/source.cs#1)]
+ [!code-vb[Classic CheckedListBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CheckedListBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CheckedListBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.CheckedListBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Forms.CheckedListBox>使用<xref:System.Windows.Forms.Control.SetStyle%2A>と`ResizeRedraw`の値<xref:System.Windows.Forms.ControlStyles>をサイズ変更されたときに、コントロールが再描画されることを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedIndices">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CheckedListBox.CheckedIndexCollection CheckedIndices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CheckedListBox/CheckedIndexCollection CheckedIndices" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.CheckedIndices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CheckedListBox+CheckedIndexCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これでチェックされているインデックスのコレクション<see cref="T:System.Windows.Forms.CheckedListBox" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.CheckedListBox.CheckedIndexCollection" />のコレクション、<see cref="T:System.Windows.Forms.CheckedListBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェックされているインデックスのコレクションには、インデックスのサブセット内のすべての項目のコレクションを<xref:System.Windows.Forms.CheckedListBox>コントロール。 これらのインデックスは、checked または不確定な状態で項目を指定します。  
+  
+   
+  
+## Examples  
+ 次の例でチェックされた項目を列挙、<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>項目の状態は、何をチェックしています。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.CheckedIndices%2A>を取得するプロパティ、 <xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>、および<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>です。  
+  
+ 最初のループを使用して、<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>取得するメソッド、<xref:System.Windows.Forms.CheckState>項目のインデックスを指定した、チェックされている各項目の。 2 番目を使用してループも<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>が使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A?displayProperty=nameWithType>項目のインデックスを取得する方法をします。  
+  
+ [!code-cpp[CheckedListBox#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#2)]
+ [!code-csharp[CheckedListBox#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#2)]
+ [!code-vb[CheckedListBox#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CheckedListBox.CheckedItemCollection CheckedItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CheckedListBox/CheckedItemCollection CheckedItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.CheckedItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CheckedListBox+CheckedItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これでチェックされた項目のコレクション<see cref="T:System.Windows.Forms.CheckedListBox" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.CheckedListBox.CheckedItemCollection" />のコレクション、<see cref="T:System.Windows.Forms.CheckedListBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のオブジェクトのサブセットである、<xref:System.Windows.Forms.CheckedListBox.Items%2A>いるものだけを表すコレクション項目<xref:System.Windows.Forms.CheckState?displayProperty=nameWithType>は`Checked`または`Indeterminate`です。 このコレクション内のインデックスで昇順に並べ替えます。  
+  
+   
+  
+## Examples  
+ 次の例でチェックされた項目を列挙、<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>項目の状態は、何をチェックしています。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.CheckedIndices%2A>を取得するプロパティ、 <xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>、および<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>です。  
+  
+ 最初のループを使用して、<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>取得するメソッド、<xref:System.Windows.Forms.CheckState>項目のインデックスを指定した、チェックされている各項目の。 2 番目を使用してループも<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>が使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A?displayProperty=nameWithType>項目のインデックスを取得する方法をします。  
+  
+ この例を実行するには、次の手順を実行します。  
+  
+1.  新しい Windows フォーム アプリケーションを作成します。  
+  
+2.  追加、<xref:System.Windows.Forms.CheckedListBox>と<xref:System.Windows.Forms.Button>をフォームにします。  
+  
+3.  ボタンの名前を付けます`WhatIsChecked`、ハンドラーを追加、<xref:System.Windows.Forms.Control.Click>イベント、および次のハンドラーの本体からのコードにコピーします。  
+  
+4.  項目を追加、<xref:System.Windows.Forms.CheckedListBox>です。  
+  
+5.  この例を実行し、いくつかのリスト ボックスにチェック ボックスを確認します。  
+  
+6.  ボタンをクリックします。  
+  
+     一連のチェックされたどの項目を示すメッセージ ボックスが表示されます。  
+  
+ [!code-cpp[CheckedListBox#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#2)]
+ [!code-csharp[CheckedListBox#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#2)]
+ [!code-vb[CheckedListBox#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckOnClick">
+      <MemberSignature Language="C#" Value="public bool CheckOnClick { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckOnClick" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.CheckOnClick" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が選択されたときに、チェック ボックスを切り替えるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />チェック マークがすぐに適用される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>項目が選択されるたびに、チェック ボックスを切り替える必要があるかどうかを示します。 既定の動作は、最初のクリックで選択を変更して、もう一度クリックすると、チェック マークを適用するユーザーには。 場合によっては、ただし、好む場合がありますがクリックされるとすぐには、チェックされた項目があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.CheckedListBox>コントロールを設定して、 <xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>、 <xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>、および<xref:System.Windows.Forms.CheckedListBox.ThreeDCheckBoxes%2A>プロパティです。 例では、設定、<xref:System.Windows.Forms.CheckedListBox>コントロールとセット、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>を<xref:System.Windows.Forms.Control.Name%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+ 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.CheckedListBox>という名前`CheckedListBox1`を呼び出すと、`InitializeCheckListBox`フォームのコンス トラクターまたはメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが <see cref="T:System.Windows.Forms.CheckedListBox" /> コントロールをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.Click>イベントが渡されます、<xref:System.EventArgs>がイベント ハンドラーにこれを示しているだけ、クリックが発生したことです。 具体的なマウス情報 (など、ボタンのクリック、ホイールを回転、または場所の数) を必要がある場合、<xref:System.Windows.Forms.Control.MouseDown>と<xref:System.Windows.Forms.Control.MouseUp>イベントで、渡す、<xref:System.Windows.Forms.MouseEventArgs>イベント ハンドラーにします。  
+  
+ ダブルクリックは、ユーザーのオペレーティング システムのマウス設定によって決まります。 ユーザーは、マウス ボタンのダブルクリック間で渡すことができる時間数を調整できます。 <xref:System.Windows.Forms.CheckedListBox.Click>イベントは、ユーザーがコントロールをダブルクリックするたびに発生します。 イベント処理メソッドがある場合など、<xref:System.Windows.Forms.CheckedListBox.Click>と<xref:System.Windows.Forms.Control.DoubleClick>イベント、フォームがダブルクリックされたときに、両方のイベント処理メソッドが呼び出されるときに、フォームのイベントが発生します。 ユーザーがサポートしていないコントロールをダブルクリックしたかどうか、<xref:System.Windows.Forms.Control.DoubleClick>イベント、<xref:System.Windows.Forms.CheckedListBox.Click>イベントを 2 回発生する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.CheckedListBox.Click>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.CheckedListBox>という`CheckedListBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.CheckedListBox.Click>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#157](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#157)]
+ [!code-vb[System.Windows.Forms.EventExamples#157](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#157)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.CheckedListBox" /> コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しい <see cref="T:System.Windows.Forms.AccessibleObject" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.CheckedListBox.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.Control.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定する、<xref:System.Windows.Forms.Control.AccessibilityObject%2A>プロパティへの参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.CreateAccessibilityInstance" />派生クラスで呼び出す必要はありません、基本クラスの<see cref="M:System.Windows.Forms.CheckedListBox.CreateAccessibilityInstance" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItemCollection">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.ListBox.ObjectCollection CreateItemCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.ListBox/ObjectCollection CreateItemCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.CreateItemCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListBox+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>項目コレクションの新しいインスタンスを作成します。</summary>
+        <returns>新しい項目コレクションを表す <see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.CreateParams" />必要なパラメーターを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.CreateParams%2A>プロパティ必要がありますいない上書きや、派生したコントロールのプロパティを調整するために使用します。 などのプロパティ、 <xref:System.Windows.Forms.CreateParams.Caption%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.CreateParams.Width%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.CreateParams.Height%2A?displayProperty=nameWithType>などのコントロールに対応するプロパティを設定する必要があります<xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>、<xref:System.Windows.Forms.Control.Width%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.Control.Height%2A?displayProperty=nameWithType>です。 <xref:System.Windows.Forms.CreateParams>標準の Windows コントロール クラスをラップするか、スタイルを設定するには、Windows フォームの名前空間では提供されない場合にのみ拡張する必要があります。 コントロールのパラメーターの作成の詳細については、次を参照してください。、`CreateWindow`と`CreateWindowEx`関数および`CREATESTRUCT`http://msdn.microsoft.com/library の MSDN ライブラリの Windows プラットフォーム SDK リファレンス内の構造体ドキュメントがあります。  
+  
+   
+  
+## Examples  
+ 次のコード例では拡張、<xref:System.Windows.Forms.Control.CreateParams%2A>のプロパティ、<xref:System.Windows.Forms.Button>クラスを派生します。 <xref:System.Windows.Forms.CreateParams.Style%2A?displayProperty=nameWithType>プロパティを変更すると、それが原因で、ボタンを表示する、<xref:System.Drawing.Icon>ではなく、<xref:System.Drawing.Image>です。 この例では、継承されたクラスがあることが必要です、<xref:System.Windows.Forms.Button>クラスです。  
+  
+ [!code-cpp[CreateParams#3](~/samples/snippets/cpp/VS_Snippets_Winforms/CreateParams/CPP/createparams.cpp#3)]
+ [!code-csharp[CreateParams#3](~/samples/snippets/csharp/VS_Snippets_Winforms/CreateParams/CS/createparams.cs#3)]
+ [!code-vb[CreateParams#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CreateParams/VB/createparams.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="P:System.Windows.Forms.Control.CreateParams" />派生クラスでプロパティを使用、基本クラスの<see cref="P:System.Windows.Forms.Control.CreateParams" />基本実装を拡張するプロパティです。 それ以外の場合、すべての実装を提供する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのデータ ソースを取得または設定します。</summary>
+        <value>データのソースを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataSourceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataSourceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.DataSourceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.CheckedListBox.DataSource" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMember">
+      <MemberSignature Language="C#" Value="public string DisplayMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.DisplayMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を表示するリスト ボックスに格納されているオブジェクトのプロパティを表す文字列を取得または設定します。</summary>
+        <value>リスト ボックスに格納されているオブジェクトのプロパティ名を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Forms.CheckedListBox>が含まれている項目の既定の文字列が表示されます。 ただし、<xref:System.Windows.Forms.CheckedListBox>さまざまな種類のオブジェクトを表示しを指定することによって表示される文字列を変更することがあります、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>プロパティです。 指定したプロパティが存在しない場合の値は、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>プロパティは、空の文字列 ("")、オブジェクトの結果<xref:System.Windows.Forms.ListBox.ToString%2A>メソッドが代わりに表示されます。  
+  
+ 場合の新しい値、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>設定、以前の値を保持することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.CheckedListBox>コントロールを設定して、 <xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>、 <xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>、および<xref:System.Windows.Forms.CheckedListBox.ThreeDCheckBoxes%2A>プロパティです。 例では、設定、<xref:System.Windows.Forms.CheckedListBox>コントロールとセット、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>を<xref:System.Windows.Forms.Control.Name%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+ 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.CheckedListBox>という名前`CheckedListBox1`を呼び出すと、`InitializeCheckListBox`フォームのコンス トラクターまたはメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMemberChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DisplayMemberChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DisplayMemberChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.DisplayMemberChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.CheckedListBox.DisplayMember" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItem">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DrawItemEventHandler DrawItem;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DrawItemEventHandler DrawItem" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.DrawItem" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DrawItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーナー描画 <see cref="T:System.Windows.Forms.CheckedListBox" /> のビジュアルな部分を変更すると発生します。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、オーナー描画で使用<xref:System.Windows.Forms.CheckedListBox>です。 イベントが発生した場合にのみ、<xref:System.Windows.Forms.CheckedListBox.DrawMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DrawMode?displayProperty=nameWithType>または<xref:System.Windows.Forms.DrawMode?displayProperty=nameWithType>です。 このイベントを使用するには項目を描画するに必要なタスクを実行する、<xref:System.Windows.Forms.CheckedListBox>です。 可変サイズの項目がある場合 (つまり、<xref:System.Windows.Forms.CheckedListBox.DrawMode%2A>に設定されている<xref:System.Windows.Forms.DrawMode?displayProperty=nameWithType>) では、<xref:System.Windows.Forms.CheckedListBox.MeasureItem>アイテムが描画される前にイベントが発生します。 イベント ハンドラーを作成することができます、<xref:System.Windows.Forms.CheckedListBox.MeasureItem>しようとする描画イベント ハンドラーで、項目のサイズを指定するイベント、<xref:System.Windows.Forms.CheckedListBox.DrawItem>イベント。  
+  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMode">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DrawMode DrawMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DrawMode DrawMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.DrawMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素を描画するためのモードを示す値を取得、<see cref="T:System.Windows.Forms.CheckedListBox" />です。 このクラスでは、このプロパティは使用されません。</summary>
+        <value>常に、<see cref="T:System.Windows.Forms.DrawMode" />の<see langword="Normal" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemChecked">
+      <MemberSignature Language="C#" Value="public bool GetItemChecked (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetItemChecked(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.GetItemChecked(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目のインデックス。</param>
+        <summary>指定した項目がチェックされているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />項目がチェックされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>返します`true`場合の値<xref:System.Windows.Forms.CheckState>は`Checked`または`Indeterminate`項目。 内に項目が特定の状態を確認するには<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> 0 より小さい値が指定されています。  
+  
+ または  
+  
+ <paramref name="index" />リスト内の項目の数以上を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemCheckState">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CheckState GetItemCheckState (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.CheckState GetItemCheckState(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.GetItemCheckState(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CheckState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">チェックの値を取得する項目のインデックス。</param>
+        <summary>現在の項目のチェックの状態を示す値を返します。</summary>
+        <returns><see cref="T:System.Windows.Forms.CheckState" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>メソッドを取得する機能を提供する、 <xref:System.Windows.Forms.CheckState> 、インデックスの項目の値。 かどうかに項目のチェックの状態を設定することはありません`Indeterminate`を使用して、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例でチェックされた項目を列挙、<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>項目の状態は、何をチェックしています。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>項目のチェックの状態を設定します。 例を使用して、<xref:System.Windows.Forms.CheckedListBox.CheckedIndices%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>と<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>です。  
+  
+ 最初のループを使用して、<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>取得するメソッド、<xref:System.Windows.Forms.CheckState>項目のインデックスを指定した、チェックされている各項目の。 2 番目を使用してループも<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>が使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A?displayProperty=nameWithType>項目のインデックスを取得する方法をします。  
+  
+ [!code-cpp[CheckedListBox#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#2)]
+ [!code-csharp[CheckedListBox#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#2)]
+ [!code-vb[CheckedListBox#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 0 より小さい値が指定されています。  
+  
+ または  
+  
+ <paramref name="index" />リスト内の項目の数以上を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCheck">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ItemCheckEventHandler ItemCheck" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.ItemCheck" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemCheckEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のチェック状態が変更されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ までチェックの状態は更新されません後、<xref:System.Windows.Forms.CheckedListBox.ItemCheck>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.CheckedListBox.ItemCheck>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.CheckedListBox>という`CheckedListBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.CheckedListBox.ItemCheck>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#156](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#156)]
+ [!code-vb[System.Windows.Forms.EventExamples#156](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#156)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemHeight">
+      <MemberSignature Language="C#" Value="public override int ItemHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.ItemHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目領域の高さを取得します。</summary>
+        <value>項目領域の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この測定値は、フォントの高さとアイテムの周囲の空白文字を提供する小さな余白に基づいています。  
+  
+ "G"と"y"などの文字のエクステンダーは、9.75 ポイント arial フォントが変更されたときに表示されません。 これを修正するからクラスを派生<xref:System.Windows.Forms.CheckedListBox>オーバーライドと<xref:System.Windows.Forms.CheckedListBox.ItemHeight%2A>を返す`base.ItemHeight+2`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CheckedListBox.ObjectCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CheckedListBox/ObjectCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CheckedListBox+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目のコレクションを取得<see cref="T:System.Windows.Forms.CheckedListBox" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.CheckedListBox.ObjectCollection" />コレクション内の項目を表す、<see cref="T:System.Windows.Forms.CheckedListBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.Items%2A>プロパティでは、この参照に格納されている項目の一覧を取得することができます、<xref:System.Windows.Forms.CheckedListBox>コントロール。 この参照に項目を追加、アイテムを削除して、コレクション内の項目の数を取得します。 項目のコレクションで実行できるタスクの詳細については、次を参照してください。、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>クラスのリファレンス トピックです。  
+  
+   
+  
+## Examples  
+ 次の例でチェックされた項目を列挙、<xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>項目の状態は、何をチェックしています。 この例では、<xref:System.Windows.Forms.CheckedListBox.Items%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>を使用して、項目のインデックスを取得する、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A?displayProperty=nameWithType>メソッドです。 例を使用して、<xref:System.Windows.Forms.CheckedListBox.CheckedIndices%2A>を取得するプロパティ、 <xref:System.Windows.Forms.CheckedListBox.CheckedIndexCollection>、および<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.CheckedItemCollection>です。  
+  
+ 最初のループを使用して、<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>取得するメソッド、<xref:System.Windows.Forms.CheckState>項目のインデックスを指定した、チェックされている各項目の。 2 番目を使用してループも<xref:System.Windows.Forms.CheckedListBox.GetItemCheckState%2A>が使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A?displayProperty=nameWithType>項目のインデックスを取得する方法をします。  
+  
+ [!code-cpp[CheckedListBox#2](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#2)]
+ [!code-csharp[CheckedListBox#2](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#2)]
+ [!code-vb[CheckedListBox#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureItem">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MeasureItemEventHandler MeasureItem;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MeasureItemEventHandler MeasureItem" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.MeasureItem" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MeasureItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーナー描画ときに発生<see cref="T:System.Windows.Forms.ListBox" />が作成され、リスト項目のサイズが決定されます。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画する前に、項目のサイズを指定するには、このイベントのイベント ハンドラーを作成することができます、<xref:System.Windows.Forms.CheckedListBox.DrawItem>イベント。 イベントが発生した場合にのみ、<xref:System.Windows.Forms.CheckedListBox.DrawMode%2A>プロパティに設定されている<xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>です。  
+  
+ 最大の高さ、<xref:System.Windows.Forms.ListBox>項目は、255 (ピクセル)。  
+  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.MouseClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウスで <see cref="T:System.Windows.Forms.CheckedListBox" /> コントロールをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.CheckedListBox.MouseClick>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.CheckedListBox>という`CheckedListBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.CheckedListBox.MouseClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#158](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#158)]
+ [!code-vb[System.Windows.Forms.EventExamples#158](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#158)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected override void OnClick (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClick(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnClick(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.CheckedListBox.Click" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.OnClick%2A>メソッドを選択またはがクリックされたアイテムのチェック ボックスをオフにします。 場合、<xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>プロパティに設定されている`true`、チェック ボックスは、アイテムがクリックされたとき、最初の状態が選択されているかオフか時間から切り替えられます。 それ以外の場合、項目が既に選択されている場合にのみ、チェック ボックスは切り替えられます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnClick%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.OnClick(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CheckedListBox.OnClick(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawItem">
+      <MemberSignature Language="C#" Value="protected override void OnDrawItem (System.Windows.Forms.DrawItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDrawItem(class System.Windows.Forms.DrawItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DrawItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Forms.DrawItemEventArgs" />詳細を含むオブジェクト</param>
+        <summary><see cref="E:System.Windows.Forms.CheckedListBox.DrawItem" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnDrawItem%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.CheckedListBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.CheckedListBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnFontChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.OnFontChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CheckedListBox.OnFontChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnHandleCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.OnHandleCreated(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CheckedListBox.OnHandleCreated(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCheck">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemCheck (System.Windows.Forms.ItemCheckEventArgs ice);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemCheck(class System.Windows.Forms.ItemCheckEventArgs ice) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnItemCheck(System.Windows.Forms.ItemCheckEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ice" Type="System.Windows.Forms.ItemCheckEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="ice">イベント データを格納している <see cref="T:System.Windows.Forms.ItemCheckEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.CheckedListBox.ItemCheck" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnItemCheck%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.OnItemCheck(System.Windows.Forms.ItemCheckEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CheckedListBox.OnItemCheck(System.Windows.Forms.ItemCheckEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyPress">
+      <MemberSignature Language="C#" Value="protected override void OnKeyPress (System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyPress(class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生した <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Space キーが押された場合、<xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>プロパティに設定されていない<xref:System.Windows.Forms.SelectionMode?displayProperty=nameWithType>、<xref:System.Windows.Forms.CheckedListBox.OnKeyPress%2A>項目のチェック状態が現在選択されているメソッドのスイッチ。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnKeyPress%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CheckedListBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CheckedListBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMeasureItem">
+      <MemberSignature Language="C#" Value="protected override void OnMeasureItem (System.Windows.Forms.MeasureItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMeasureItem(class System.Windows.Forms.MeasureItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MeasureItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MeasureItemEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.CheckedListBox.MeasureItem" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnMeasureItem%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.CheckedListBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.CheckedListBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ListBox.SelectedIndexChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CheckedListBox.OnSelectedIndexChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.CheckedListBox.OnSelectedIndexChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.CheckedListBox.OnSelectedIndexChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内で埋め込み、<see cref="T:System.Windows.Forms.CheckedListBox" />です。 このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールの内部の間隔特性を表す <see cref="T:System.Windows.Forms.Padding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの既定値が表示される<xref:System.Windows.Forms.Control.Padding%2A>Windows ユーザー インターフェイス ガイドラインの近くにある程度であります。 いくつかの調整は、特定のアプリケーションに必要な可能性があります。  
+  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshItems">
+      <MemberSignature Language="C#" Value="protected override void RefreshItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RefreshItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.RefreshItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを解析して<see cref="T:System.Windows.Forms.CheckedListBox" />アイテムをもう一度と項目の新しいテキスト文字列を取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionMode">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.SelectionMode SelectionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.SelectionMode SelectionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.SelectionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択モードを指定している値を取得または設定します。</summary>
+        <value>いずれか、<see langword="One" />または<see langword="None" />値<see cref="T:System.Windows.Forms.SelectionMode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>プロパティは、リスト ボックス内の 1 つの項目を選択するか、項目を選択できないかどうかを決定します。 <xref:System.Windows.Forms.CheckedListBox>オブジェクト、複数の選択はサポートされていません。 モードを設定するには 1 つの項目または項目がありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.CheckedListBox>コントロールを設定して、<xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>を選択する一覧で 1 つの項目を許可します。  
+  
+ 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.CheckedListBox>という名前`CheckedListBox1`を呼び出すと、`InitializeCheckListBox`フォームのコンス トラクターまたはメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">はない値を代入しようとしましたが、<see cref="T:System.Windows.Forms.SelectionMode" />値<see langword="One" />または<see langword="None" />です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てるしようとしましたが、<see langword="MultiExtended" />の値<see cref="T:System.Windows.Forms.SelectionMode" />コントロールにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemChecked">
+      <MemberSignature Language="C#" Value="public void SetItemChecked (int index, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetItemChecked(int32 index, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.SetItemChecked(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="index">チェックの状態を設定する項目のインデックス。</param>
+        <param name="value">
+          <see langword="true" />として項目を設定する次のようにチェックします。それ以外の場合、<see langword="false" />です。</param>
+        <summary>セット<see cref="T:System.Windows.Forms.CheckState" />に指定したインデックス位置にある項目の<see langword="Checked" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`true`渡されると、このメソッドを設定、<xref:System.Windows.Forms.CheckState>値を`Checked`です。 値`false`設定<xref:System.Windows.Forms.CheckState>に`Unchecked`です。  
+  
+   
+  
+## Examples  
+ 次の例は、内の項目を列挙、<xref:System.Windows.Forms.CheckedListBox>し、リスト内の他のすべての項目を確認します。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>と<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>項目のチェックの状態を設定する方法です。 チェックするその他のすべての項目について<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>を設定するために呼び出される、<xref:System.Windows.Forms.CheckState>に`Indeterminate`、中に<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>チェックされた状態を設定するその他の項目が呼び出された`Checked`です。  
+  
+ 例を使用して、<xref:System.Windows.Forms.CheckedListBox.Items%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>を取得する、<xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A>項目の。  
+  
+ [!code-cpp[CheckedListBox#3](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#3)]
+ [!code-csharp[CheckedListBox#3](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#3)]
+ [!code-vb[CheckedListBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたインデックスが 0 未満です。  
+  
+ または  
+  
+ インデックスは、リスト内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemCheckState">
+      <MemberSignature Language="C#" Value="public void SetItemCheckState (int index, System.Windows.Forms.CheckState value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetItemCheckState(int32 index, valuetype System.Windows.Forms.CheckState value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.SetItemCheckState(System.Int32,System.Windows.Forms.CheckState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Windows.Forms.CheckState" />
+      </Parameters>
+      <Docs>
+        <param name="index">状態を設定する項目のインデックス。</param>
+        <param name="value"><see cref="T:System.Windows.Forms.CheckState" /> 値のいずれか。</param>
+        <summary>指定したインデックスの位置にある項目のチェックの状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A> メソッドは、<xref:System.Windows.Forms.CheckedListBox.ItemCheck> イベントを発生させます。  
+  
+ 項目を持つ<xref:System.Windows.Forms.CheckState>に設定されている`Indeterminate`にチェック ボックスで、チェック マークが表示されますが、チェックされた項目の中間状態を示すために、ボックスは淡色表示にします。  
+  
+   
+  
+## Examples  
+ 次の例は、内の項目を列挙、<xref:System.Windows.Forms.CheckedListBox>し、リスト内の他のすべての項目を確認します。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>と<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>項目のチェックの状態を設定する方法です。 チェックするその他のすべての項目について<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>を設定するために呼び出される、<xref:System.Windows.Forms.CheckState>に`Indeterminate`、中に<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>チェックされた状態を設定するその他の項目が呼び出された`Checked`です。  
+  
+ 例を使用して、<xref:System.Windows.Forms.CheckedListBox.Items%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>を取得する、<xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A>項目の。  
+  
+ [!code-cpp[CheckedListBox#3](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#3)]
+ [!code-csharp[CheckedListBox#3](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#3)]
+ [!code-vb[CheckedListBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> 0 より小さい値が指定されています。  
+  
+ または  
+  
+ <paramref name="index" />がより大きいか、一覧内の項目の数と同じです。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="value" />のいずれかではない、<see cref="T:System.Windows.Forms.CheckState" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeDCheckBoxes">
+      <MemberSignature Language="C#" Value="public bool ThreeDCheckBoxes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThreeDCheckBoxes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.ThreeDCheckBoxes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチェック ボックスがあるかどうかを示す値を設定、<see cref="T:System.Windows.Forms.ButtonState" />の<see langword="Flat" />または<see langword="Normal" />です。</summary>
+        <value>
+          <see langword="true" />場合は、チェック ボックスがあるフラットな外観です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.CheckedListBox>コントロールを設定して、 <xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>、 <xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>、および<xref:System.Windows.Forms.CheckedListBox.ThreeDCheckBoxes%2A>プロパティです。 例では、設定、<xref:System.Windows.Forms.CheckedListBox>コントロールとセット、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>を<xref:System.Windows.Forms.Control.Name%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+ 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.CheckedListBox>という名前`CheckedListBox1`を呼び出すと、`InitializeCheckListBox`フォームのコンス トラクターまたはメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCompatibleTextRendering">
+      <MemberSignature Language="C#" Value="public bool UseCompatibleTextRendering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCompatibleTextRendering" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.UseCompatibleTextRendering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用するかどうかを決定する値、<see cref="T:System.Drawing.Graphics" />クラス ([!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]) または<see cref="T:System.Windows.Forms.TextRenderer" />クラス ([!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]) テキストの表示にします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Drawing.Graphics" />クラスは、バージョン 1.0 および 1.1 と互換性のためのテキストのレンダリングを実行するために使用する必要があります。 .NET Framework のそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UseCompatibleTextRendering`プロパティがそのレンダリング テキストを使用して Windows フォーム コントロールの間での visual の互換性を維持するためのもの、<xref:System.Windows.Forms.TextRenderer>クラスと[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]と[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]カスタム テキスト レンダリングを使用して実行するアプリケーション、<xref:System.Drawing.Graphics>クラスです。 ほとんどの場合、アプリケーションはからアップグレードされていない場合に[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]または[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]、しておくことをお勧め`UseCompatibleTextRendering`の既定値に設定`false`です。  
+  
+ [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ベース<xref:System.Windows.Forms.TextRenderer>クラスで導入された、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]パフォーマンスを向上させるようにテキストの外観をよく、および国際対応フォントのサポートを改善します。 以前のバージョンので、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ベース<xref:System.Drawing.Graphics>クラスを使用してすべてのテキスト レンダリングを実行します。 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]文字間隔とでの折り返しが異なるから計算[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]です。 使用する Windows フォーム アプリケーションで、<xref:System.Drawing.Graphics>クラスのテキストを表示するために、これが原因で、コントロールのテキストを使用する<xref:System.Windows.Forms.TextRenderer>を異なるアプリケーションで他のテキストで表示します。 この非互換性を解決するには、設定することができます、`UseCompatibleTextRendering`プロパティを`true`の特定のコントロールです。 設定する`UseCompatibleTextRendering`に`true`サポートされている、すべてのコントロール、アプリケーションで呼び出して、<xref:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault%2A?displayProperty=nameWithType>メソッドのパラメーターを持つ`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMember">
+      <MemberSignature Language="C#" Value="public string ValueMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckedListBox.ValueMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値の描画元のデータ ソースのプロパティを指定する文字列を取得または設定します。</summary>
+        <value>値の描画元のデータ ソースのプロパティを指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容を指定、<xref:System.Windows.Forms.CheckedListBox.ValueMember%2A>プロパティ データをバインドする場合。  
+  
+ オフにすることができます、<xref:System.Windows.Forms.CheckedListBox.ValueMember%2A>プロパティに空の文字列プロパティを設定して ("") または`null`です。  
+  
+ 新しい設定<xref:System.Windows.Forms.CheckedListBox.ValueMember%2A>プロパティが発生し、<xref:System.Windows.Forms.CheckedListBox.ValueMemberChanged>と<xref:System.Windows.Forms.ListControl.SelectedValueChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクトで指定したプロパティが見つかりません、<see cref="P:System.Windows.Forms.CheckedListBox.DataSource" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMemberChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ValueMemberChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ValueMemberChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CheckedListBox.ValueMemberChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.CheckedListBox.ValueMember" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WmReflectCommand">
+      <MemberSignature Language="C#" Value="protected override void WmReflectCommand (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WmReflectCommand(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.WmReflectCommand(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m"><see cref="T:System.Windows.Forms.Message" />がトップレベル ウィンドウに送信される、<see cref="T:System.Windows.Forms.CheckedListBox" />コントロール。</param>
+        <summary>コマンド メッセージを処理、<see cref="T:System.Windows.Forms.CheckedListBox" />コントロールがトップレベル ウィンドウから受信します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、オーバーライドを示しています、<xref:System.Windows.Forms.Control.WndProc%2A>で識別されたオペレーティング システムのメッセージを処理するメソッドを<xref:System.Windows.Forms.Message>構造体。 別のアプリケーションがアクティブになる時期を知るには、この例では、WM_ACTIVATEAPP オペレーティング システムのメッセージが処理されます。 理解、使用可能な http://msdn.microsoft.com/library、MSDN ライブラリにあるプラットフォーム SDK ドキュメントのリファレンスを参照してください<xref:System.Windows.Forms.Message.Msg%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.Message.LParam%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.Message.WParam%2A?displayProperty=nameWithType>値。 これは、MSDN ライブラリ http://msdn.microsoft.com/library でも、プラットフォーム SDK (コア SDK セクション) のダウンロードに含まれる Windows.h ヘッダー ファイルでは、実際の定数値を確認できます。  
+  
+ [!code-cpp[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,138 @@
+<Type Name="ScaffoldTableAttribute" FullName="System.ComponentModel.DataAnnotations.ScaffoldTableAttribute">
+  <TypeSignature Language="C#" Value="public class ScaffoldTableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScaffoldTableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスまたはデータ テーブルがスキャフォールディングを使用するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキャフォールディングは、データベース スキーマに基づいて web ページのテンプレートを生成するためのメカニズムです。 ASP.NET 動的データでは、スキャフォールディングを使用して、表示およびデータベースを更新するユーザーに許可する Web ベースの UI を生成します。 このクラスを使用して、<xref:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute.Scaffold%2A>プロパティを動的データ Web サイトで、個々 のテーブルのスキャフォールディングを有効にします。 スキャフォールディングでは、物理ページの必要なしに、データ モデルに基づいてページを動的に表示する ASP.NET ページ フレームワークを強化します。  
+  
+ スキャフォールディングには、次の情報が提供されます。  
+  
+-   最小またはコードなしでデータ ドリブン Web アプリケーションを作成します。  
+  
+-   迅速な開発時間です。  
+  
+-   ページの表示、挿入、編集、削除、並べ替え、およびページング機能を含む、完全に機能します。  
+  
+-   組み込みのデータのデータベース スキーマに基づく検証。  
+  
+-   外部キーまたはブール値フィールドごとに作成されるフィルターです。  
+  
+ 有効にするにまたはテーブルを表す部分クラスにこの属性を適用することでデータ モデル内のデータ テーブルのスキャフォールディングを無効にするのには、このクラスを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ErrorLog テーブルを表す ErrorLog 部分クラスをスキャフォールディング属性を適用して AdventureWorksLT データベース ErrorLog テーブルを非表示にします。 Scaffold プロパティに設定します。`false.`  
+  
+```csharp  
+[MetadataType (typeof(ErrorLogMetada))]  
+[ScaffoldTable(false)]  
+public partial class ErrorLog  
+{  
+  
+}  
+  
+public class ErrorLogMetada  
+{  
+  
+}  
+```  
+
+```vb  
+<MetadataType(GetType(ErrorLogMetada))> _   
+<ScaffoldTable(False)>   
+Public Partial Class ErrorLog   
+  
+End Class   
+  
+Public Class ErrorLogMetada  
+  
+End Class   
+```  
+  
+ コード例をコンパイルするには、次のものが必要。  
+  
+-   Visual Studio 2008 Service Pack 1 または Visual Developer 2008 Express Edition Service Pack 1。  
+  
+-   AdventureWorksLT サンプル データベース。 ダウンロードして、SQL Server サンプル データベースをインストールする方法については、次を参照してください。 [Microsoft SQL Server Product Samples: Database](http://go.microsoft.com/fwlink/?LinkId=117483) CodePlex サイトにします。 (SQL Server 2005 または SQL Server 2008) を実行して SQL Server のバージョンについては、サンプル データベースの正しいバージョンをインストールすることを確認します。  
+  
+-   動的データ Web サイトです。 これにより、データベースとをカスタマイズするデータ フィールドを含むクラスとメソッドをオーバーライドするためのデータ コンテキストを作成できます。 さらに、前に説明したページを使用するための環境を作成します。 詳細については、次を参照してください。[チュートリアル: 作成、新しい動的データ Web サイトを使用してスキャフォールディング](http://msdn.microsoft.com/library/1564aef2-9103-436a-9806-c8ad7abd616a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScaffoldTableAttribute (bool scaffold);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool scaffold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scaffold" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scaffold">スキャフォールディングが有効になっているかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute" />を使用して、<see cref="P:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute.Scaffold" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます`scaffold`に`true`CRUD (作成、読み取り、更新、削除) 操作のため、データベース内のすべてのデータ テーブルを公開するか、または CRUD 操作を個々 のテーブルを設定して公開するには、全体のデータ モデルの`scaffold`に個々 のテーブルに対して`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scaffold">
+      <MemberSignature Language="C#" Value="public bool Scaffold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Scaffold" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute.Scaffold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキャフォールディングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、スキャフォールディングが有効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキャフォールディングは、データベース スキーマに基づいて web ページのテンプレートを生成するメカニズムです。 ASP.NET 動的データでは、スキャフォールディングを使用して、表示およびデータベースを更新するユーザーに許可する Web ベースの UI を生成します。 Scaffold 属性の詳細については、次を参照してください。<xref:System.ComponentModel.DataAnnotations.ScaffoldTableAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

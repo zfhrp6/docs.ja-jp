@@ -1,0 +1,290 @@
+<Type Name="ITypeResolutionService" FullName="System.ComponentModel.Design.ITypeResolutionService">
+  <TypeSignature Language="C#" Value="public interface ITypeResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ITypeResolutionService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>名前でアセンブリまたは型を取得するインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスは、デザイン時に型の読み込みに使用されます。  
+  
+   
+  
+## Examples  
+ 次の例のコントロールのメソッドを呼び出すインターフェイスを提供する、<xref:System.ComponentModel.Design.ITypeResolutionService>デザイン モードからです。  
+  
+ [!code-cpp[ITypeResolutionServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ITypeResolutionServiceExample/CPP/ityperesolutionservicecontrol.cpp#1)]
+ [!code-csharp[ITypeResolutionServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ITypeResolutionServiceExample/CS/ityperesolutionservicecontrol.cs#1)]
+ [!code-vb[ITypeResolutionServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ITypeResolutionServiceExample/VB/ityperesolutionservicecontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly GetAssembly (System.Reflection.AssemblyName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly GetAssembly(class System.Reflection.AssemblyName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するアセンブリの名前。</param>
+        <summary>要求されたアセンブリを取得します。</summary>
+        <returns>要求されたアセンブリのインスタンスまたは<see langword="null" />アセンブリが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly GetAssembly (System.Reflection.AssemblyName name, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly GetAssembly(class System.Reflection.AssemblyName name, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetAssembly(System.Reflection.AssemblyName,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するアセンブリの名前。</param>
+        <param name="throwOnError">
+          <see langword="true" />場合は、アセンブリが見つからない場合、このメソッドは例外をスローする必要があります。それ以外の場合、 <see langword="false" />、このメソッドが戻ると<see langword="null" />場合は、アセンブリを配置することはできません。</param>
+        <summary>要求されたアセンブリを取得します。</summary>
+        <returns>要求されたアセンブリのインスタンスまたは<see langword="null" />アセンブリが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPathOfAssembly">
+      <MemberSignature Language="C#" Value="public string GetPathOfAssembly (System.Reflection.AssemblyName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPathOfAssembly(class System.Reflection.AssemblyName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetPathOfAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="name">アセンブリの名前。</param>
+        <summary>元のアセンブリが読み込まれたファイルへのパスを取得します。</summary>
+        <returns>元のアセンブリが読み込まれたファイルへのパス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。 型名がアセンブリを示す完全修飾名でない場合は、このサービスは、内部参照アセンブリのセットを検索します。</param>
+        <summary>指定した名前の型を読み込みます。</summary>
+        <returns>インスタンス<see cref="T:System.Type" />、指定した名前に対応するまたは<see langword="null" />型が見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string name, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string name, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetType(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。 型名がアセンブリを示す完全修飾名でない場合は、このサービスは、内部参照アセンブリのセットを検索します。</param>
+        <param name="throwOnError">
+          <see langword="true" />場合は、アセンブリが見つからない場合、このメソッドは例外をスローする必要があります。それ以外の場合、 <see langword="false" />、このメソッドが戻ると<see langword="null" />場合は、アセンブリを配置することはできません。</param>
+        <summary>指定した名前の型を読み込みます。</summary>
+        <returns>インスタンス<see cref="T:System.Type" />、指定した名前に対応するまたは<see langword="null" />型が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、型を読み込むことはできません、`throwOnError`パラメーターは`true`例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string name, bool throwOnError, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string name, bool throwOnError, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.GetType(System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。 型名がアセンブリを示す完全修飾名でない場合は、このサービスは、内部参照アセンブリのセットを検索します。</param>
+        <param name="throwOnError">
+          <see langword="true" />場合は、アセンブリが見つからない場合、このメソッドは例外をスローする必要があります。それ以外の場合、 <see langword="false" />、このメソッドが戻ると<see langword="null" />場合は、アセンブリを配置することはできません。</param>
+        <param name="ignoreCase">
+          <see langword="true" />型と、検索するときに、大文字小文字を区別するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した名前の型を読み込みます。</summary>
+        <returns>インスタンス<see cref="T:System.Type" />、指定した名前に対応するまたは<see langword="null" />型が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、型を読み込むことはできません、`throwOnError`パラメーターは`true`例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceAssembly">
+      <MemberSignature Language="C#" Value="public void ReferenceAssembly (System.Reflection.AssemblyName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReferenceAssembly(class System.Reflection.AssemblyName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeResolutionService.ReferenceAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Reflection.AssemblyName" />を参照するアセンブリを示すです。</param>
+        <summary>指定したアセンブリへの参照を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスにアセンブリへの参照を追加すると、このサービスは、アセンブリが指定されていない名から型を読み込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

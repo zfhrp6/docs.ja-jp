@@ -1,0 +1,85 @@
+<Type Name="TransactionFlowOption" FullName="System.ServiceModel.TransactionFlowOption">
+  <TypeSignature Language="C#" Value="public enum TransactionFlowOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransactionFlowOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.TransactionFlowOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービス操作のトランザクション フロー ポリシーを指定するために <see cref="T:System.ServiceModel.TransactionFlowAttribute" /> と共に使用される列挙体です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、<xref:System.ServiceModel.TransactionFlowAttribute> クラスのインスタンスをインスタンス化するために使用されます。このクラスは、サービス コントラクト メソッドをマークしてトランザクション フロー ポリシーを示すために使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、操作レベルで <xref:System.ServiceModel.TransactionFlowOption> クラスと共にこの列挙を使用しています。  
+  
+ [!code-csharp[OperationBehaviorAttribute1#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute1#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute1/vb/services.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Allowed">
+      <MemberSignature Language="C#" Value="Allowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransactionFlowOption Allowed = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransactionFlowOption.Allowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransactionFlowOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションをフローさせることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Mandatory">
+      <MemberSignature Language="C#" Value="Mandatory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransactionFlowOption Mandatory = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransactionFlowOption.Mandatory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransactionFlowOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションをフローさせる必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAllowed">
+      <MemberSignature Language="C#" Value="NotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransactionFlowOption NotAllowed = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransactionFlowOption.NotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransactionFlowOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションをフローさせません。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

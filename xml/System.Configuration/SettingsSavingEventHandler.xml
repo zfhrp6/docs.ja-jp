@@ -1,0 +1,36 @@
+<Type Name="SettingsSavingEventHandler" FullName="System.Configuration.SettingsSavingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SettingsSavingEventHandler(object sender, CancelEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SettingsSavingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsSavingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント、通常、データのコンテナーまたはデータ バインドされたコレクションのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CancelEventArgs" />。</param>
+    <summary><see cref="E:System.Configuration.ApplicationSettingsBase.SettingsSaving" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>だけのアプリケーション設定のグループが保存される前に、通常の実行中にイベントが発生した、<xref:System.Configuration.ApplicationSettingsBase.Save%2A>から派生したラッパー クラスのメソッド<xref:System.Configuration.ApplicationSettingsBase>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

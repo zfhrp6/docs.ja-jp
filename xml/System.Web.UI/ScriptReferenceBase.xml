@@ -1,0 +1,283 @@
+<Type Name="ScriptReferenceBase" FullName="System.Web.UI.ScriptReferenceBase">
+  <TypeSignature Language="C#" Value="public abstract class ScriptReferenceBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ScriptReferenceBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptReferenceBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Path")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのスクリプト参照クラスの基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ScriptReferenceBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ScriptReferenceBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrl">
+      <MemberSignature Language="C#" Value="protected abstract string GetUrl (System.Web.UI.ScriptManager scriptManager, bool zip);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetUrl(class System.Web.UI.ScriptManager scriptManager, bool zip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceBase.GetUrl(System.Web.UI.ScriptManager,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="zip" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see langword="ScriptManager" />対象 Web ページ上のコントロールです。</param>
+        <param name="zip">
+          <see langword="true" />スクリプトを圧縮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>値として表示される URL を取得、<see langword="src" />の属性、<see langword="script" />要素。</summary>
+        <returns>値として表示される URL を含む文字列、<see langword="src" />の属性、<see langword="script" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAjaxFrameworkScript">
+      <MemberSignature Language="C#" Value="protected virtual bool IsAjaxFrameworkScript (System.Web.UI.ScriptManager scriptManager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool IsAjaxFrameworkScript(class System.Web.UI.ScriptManager scriptManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceBase.IsAjaxFrameworkScript(System.Web.UI.ScriptManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see cref="T:System.Web.UI.ScriptManager" /> オブジェクト。</param>
+        <summary>指定したスクリプトの参照が ASP.NET AJAX スクリプトであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />スクリプト参照が場合、ASP.NET AJAX スクリプトです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFromSystemWebExtensions">
+      <MemberSignature Language="C#" Value="protected abstract bool IsFromSystemWebExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool IsFromSystemWebExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceBase.IsFromSystemWebExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use IsAjaxFrameworkScript(ScriptManager)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複合スクリプトに ASP.NET AJAX framework スクリプトへの参照が含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />複合スクリプトには、ASP.NET AJAX framework スクリプト; への参照が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyScriptLoaded">
+      <MemberSignature Language="C#" Value="public bool NotifyScriptLoaded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NotifyScriptLoaded" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReferenceBase.NotifyScriptLoaded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("NotifyScriptLoaded is no longer required in script references.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.Handlers.ScriptResourceHandler" />オブジェクトが自動的にコードを追加、クライアントを呼び出すためのように ECMAScript (JavaScript) ファイルの最後に<see cref="P:System.Web.UI.ScriptReferenceBase.NotifyScriptLoaded" />のメソッド、[に読み込むに](http://msdn.microsoft.com/library/cd901c0f-51e2-4c63-9963-158f4a88b008)クラスです。</summary>
+        <value>
+          <see langword="true" />場合、 [Sys.Application.notifyScriptLoaded](http://msdn.microsoft.com/library/dd95aa94-34bb-45b6-ac06-1cb4031469c6)メソッドは、JavaScript ファイルの最後に自動的に呼び出されますまたは<see langword="false" />ユーザー コードを呼び出す場合、 [Sys.Application.notifyScriptLoaded](http://msdn.microsoft.com/library/dd95aa94-34bb-45b6-ac06-1cb4031469c6) JavaScript ファイルに既にあるメソッドです。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.ScriptReferenceBase.NotifyScriptLoaded%2A>プロパティを`false`アセンブリにスクリプト ファイルを参照するスクリプト ファイルには既にを呼び出すコードが含まれている場合[Sys.Application.notifyScriptLoaded](http://msdn.microsoft.com/library/dd95aa94-34bb-45b6-ac06-1cb4031469c6)です。 場合、エラーがスロー [Sys.Application.notifyScriptLoaded](http://msdn.microsoft.com/library/dd95aa94-34bb-45b6-ac06-1cb4031469c6)メソッドがスクリプト ファイルから複数回呼び出されます。  
+  
+ 呼び出すスクリプト ファイルの最後にコードを含める必要がありますが、アセンブリに埋め込まれていないスタンドアロンのスクリプト ファイルを参照する場合、 [Sys.Application.notifyScriptLoaded](http://msdn.microsoft.com/library/dd95aa94-34bb-45b6-ac06-1cb4031469c6)メソッドです。 次の例では、スクリプト ファイルの末尾に追加するコードを示します。  
+  
+```  
+if(typeof(Sys) !== "undefined) Sys.Application.notifyScriptLoaded();  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReferenceBase.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty("*.js")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web ページから相対的、参照されているクライアント スクリプト ファイルのパスを設定します。</summary>
+        <value>参照されているクライアント スクリプトのパス</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceExtension">
+      <MemberSignature Language="C#" Value="protected static string ReplaceExtension (string pathOrName);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string ReplaceExtension(string pathOrName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceBase.ReplaceExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pathOrName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pathOrName">名前を変更するスクリプトの完全パス。 パスは、".js"で終わる必要があります。</param>
+        <summary>デバッグ スクリプトを指定する指定されたスクリプト パスにファイル名拡張子を置き換えます。</summary>
+        <returns>デバッグ拡張機能を含むスクリプトのパスを含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スクリプト".js"拡張子であることを前提としています。 関数を持つ拡張機能は、". debug.js"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceUICultures">
+      <MemberSignature Language="C#" Value="public string[] ResourceUICultures { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ResourceUICultures" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReferenceBase.ResourceUICultures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.StringArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定でサポートされている UI カルチャのコンマ区切りのリスト、<see cref="P:System.Web.UI.ScriptReferenceBase.Path" />プロパティです。</summary>
+        <value>UI カルチャのコンマ区切りの一覧を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ScriptMode ScriptMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ScriptMode ScriptMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReferenceBase.ScriptMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ScriptMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用するクライアントのスクリプト ファイル (リリースまたはデバッグ) のバージョンを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.ScriptMode" />を参照するクライアント スクリプト ファイルのバージョンを示す値。 既定値は、<see cref="F:System.Web.UI.ScriptMode.Auto" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

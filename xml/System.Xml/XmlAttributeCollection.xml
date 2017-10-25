@@ -1,0 +1,820 @@
+<Type Name="XmlAttributeCollection" FullName="System.Xml.XmlAttributeCollection">
+  <TypeSignature Language="C#" Value="public sealed class XmlAttributeCollection : System.Xml.XmlNamedNodeMap, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlAttributeCollection extends System.Xml.XmlNamedNodeMap implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlAttributeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlNamedNodeMap</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>名前またはインデックスによってアクセス可能な属性のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlAttributeCollection`拡張、<xref:System.Xml.XmlNamedNodeMap>厳密に追加することでクラスの型指定されたヘルパー メソッドです。 このクラスは、追加、削除、またはコレクション内の属性の変更に使用できます。 `XmlAttributeCollection`によって返される、<xref:System.Xml.XmlElement.Attributes%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute Append (System.Xml.XmlAttribute node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute Append(class System.Xml.XmlAttribute node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.Append(System.Xml.XmlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="node">挿入する <see cref="T:System.Xml.XmlAttribute" />。</param>
+        <summary>コレクションの最後のノードとして指定された属性を挿入します。</summary>
+        <returns><see langword="XmlAttribute" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の属性がコレクションから削除して、同じ名前を持つ属性が既に場合、コレクション内にあると`node`がコレクションの末尾に追加します。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントに新しい属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.Append Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Append Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.Append Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Append Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.Append Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Append Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node" />別のこのコレクションを作成したドキュメントから作成されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Xml.XmlAttribute[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Xml.XmlAttribute[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.CopyTo(System.Xml.XmlAttribute[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Xml.XmlAttribute[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">このコレクションからコピーされるオブジェクトのコピー先の配列。</param>
+        <param name="index">コピー開始位置、配列内のインデックス。</param>
+        <summary>すべてをコピー、<see cref="T:System.Xml.XmlAttribute" />渡された配列には、このコレクションからオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では`CopyTo`を配列にコレクションのすべての属性をコピーします。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAfter">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute InsertAfter (System.Xml.XmlAttribute newNode, System.Xml.XmlAttribute refNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute InsertAfter(class System.Xml.XmlAttribute newNode, class System.Xml.XmlAttribute refNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.InsertAfter(System.Xml.XmlAttribute,System.Xml.XmlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newNode" Type="System.Xml.XmlAttribute" />
+        <Parameter Name="refNode" Type="System.Xml.XmlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="newNode">挿入する <see cref="T:System.Xml.XmlAttribute" />。</param>
+        <param name="refNode"><see cref="T:System.Xml.XmlAttribute" />参照属性はします。 <c>newNode</c>後に置かれます、 <c>refNode</c>です。</param>
+        <summary>指定した属性は、指定した参照属性の直後後に挿入します。</summary>
+        <returns><see langword="XmlAttribute" />コレクションに挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の属性がコレクションから削除して、同じ名前を持つ属性が既に場合、コレクション内にあると`newNode`コレクションに挿入します。 場合`refNode`は`null`、`newNode`コレクションの先頭に挿入します。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントに新しい属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.InsertAfter Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertAfter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.InsertAfter Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertAfter Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.InsertAfter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertAfter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="newNode" />別のこのコレクションを作成したドキュメントから作成されました。 または、<paramref name="refNode" />このコレクションのメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertBefore">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute InsertBefore (System.Xml.XmlAttribute newNode, System.Xml.XmlAttribute refNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute InsertBefore(class System.Xml.XmlAttribute newNode, class System.Xml.XmlAttribute refNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.InsertBefore(System.Xml.XmlAttribute,System.Xml.XmlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newNode" Type="System.Xml.XmlAttribute" />
+        <Parameter Name="refNode" Type="System.Xml.XmlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="newNode">挿入する <see cref="T:System.Xml.XmlAttribute" />。</param>
+        <param name="refNode"><see cref="T:System.Xml.XmlAttribute" />参照属性はします。 <c>newNode</c>する前に配置されますが、 <c>refNode</c>です。</param>
+        <summary>指定した参照属性の直前に指定された属性を挿入します。</summary>
+        <returns><see langword="XmlAttribute" />コレクションに挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の属性がコレクションから削除して、同じ名前を持つ属性が既に場合、コレクション内にあると`newNode`コレクションに挿入します。 場合`refNode`は`null`、`newNode`コレクションの末尾に挿入します。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントに新しい属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.InsertBefore Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertBefore Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.InsertBefore Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertBefore Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.InsertBefore Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.InsertBefore Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="newNode" />別のこのコレクションを作成したドキュメントから作成されました。 または、<paramref name="refNode" />このコレクションのメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemOf">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute this[int i] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlAttribute ItemOf(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.ItemOf(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">属性のインデックス。</param>
+        <summary>指定したインデックスの属性を取得します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Xml.XmlAttribute" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。 呼び出すことと等価である<xref:System.Xml.XmlNamedNodeMap.Item%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、コレクション内のすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.this Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">引き渡された index が範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemOf">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlAttribute ItemOf(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.ItemOf(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性の限定名。</param>
+        <summary>指定した名前の属性を取得します。</summary>
+        <value>指定された名前の <see cref="T:System.Xml.XmlAttribute" />。 このプロパティを返しますのかどうかは、属性が存在しない、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。 呼び出すことと等価である<xref:System.Xml.XmlNamedNodeMap.GetNamedItem%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントから属性を削除します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemOf">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute this[string localName, string namespaceURI] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlAttribute ItemOf(string, string)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.ItemOf(System.String,System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">属性のローカル名。</param>
+        <param name="namespaceURI">属性の名前空間 URI。</param>
+        <summary>指定されたローカル名および名前空間 (Uniform Resource Identifier) の属性を取得します。</summary>
+        <value><see cref="T:System.Xml.XmlAttribute" />指定されたローカル名と名前空間 URI を使用します。 このプロパティを返しますのかどうかは、属性が存在しない、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。 呼び出すことと等価である<xref:System.Xml.XmlNamedNodeMap.GetNamedItem%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepend">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute Prepend (System.Xml.XmlAttribute node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute Prepend(class System.Xml.XmlAttribute node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.Prepend(System.Xml.XmlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="node">挿入する <see cref="T:System.Xml.XmlAttribute" />。</param>
+        <summary>コレクションの最初のノードとして指定された属性を挿入します。</summary>
+        <returns><see langword="XmlAttribute" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の属性がコレクションから削除して、同じ名前を持つ属性が既に場合、コレクション内にあると`node`がコレクションの先頭に追加します。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントに新しい属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.Prepend Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Prepend Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.Prepend Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Prepend Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.Prepend Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Prepend Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute Remove (System.Xml.XmlAttribute node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute Remove(class System.Xml.XmlAttribute node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.Remove(System.Xml.XmlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="node">削除する <see cref="T:System.Xml.XmlAttribute" />。</param>
+        <summary>指定された属性をコレクションから削除します。</summary>
+        <returns>削除されたノードまたは<see langword="null" />がコレクション内で見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントから属性を削除します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="public void RemoveAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.RemoveAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての属性を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントからすべての属性を削除します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.RemoveAll Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAll Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.RemoveAll Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAll Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.RemoveAll Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAll Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlAttribute RemoveAt (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlAttribute RemoveAt(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">削除するノードのインデックス。 最初のノードのインデックスは 0 です。</param>
+        <summary>コレクションから指定したインデックスに対応する属性を削除します。</summary>
+        <returns>返します<see langword="null" />指定したインデックス位置に属性がない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントから属性を削除します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.RemoveAt Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAt Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.RemoveAt Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAt Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNamedItem">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode SetNamedItem (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode SetNamedItem(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.SetNamedItem(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">このコレクションに格納する属性ノード。 ノードに後で、ノードの名前を使用してアクセスできます。 新しいによって置き換えられる場合はその名前を持つノードでは、既にコレクションに存在、それ以外の場合、ノードは、コレクションの末尾に追加されます。</param>
+        <summary>追加、<see cref="T:System.Xml.XmlNode" />を使用してその<see cref="P:System.Xml.XmlNode.Name" />プロパティ</summary>
+        <returns>場合、<paramref name="node" />置き換えます。 置き換え前のノード、同じ名前の既存のノードを返します。 それ以外の場合は、追加されたノードが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ドキュメントに新しい属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttributeCollection.SetNamedItem Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.SetNamedItem Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttributeCollection.SetNamedItem Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttributeCollection.SetNamedItem Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttributeCollection.SetNamedItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttributeCollection.SetNamedItem Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="node" />異なるから作成された<see cref="T:System.Xml.XmlDocument" />よりも、このコレクションを作成します。  
+  
+ これは、<see langword="XmlAttributeCollection" />は読み取り専用です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" /><see cref="T:System.Xml.XmlAttribute" />に別の属性ではない<see cref="T:System.Xml.XmlElement" />オブジェクト。 その他の要素の属性を再利用するには、複製する必要があります、<see langword="XmlAttribute" />再利用するオブジェクトします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttributeCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">このコレクションからコピーされるオブジェクトのコピー先の配列。</param>
+        <param name="index">コピー開始位置、配列内のインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.XmlAttributeCollection.CopyTo(System.Xml.XmlAttribute[],System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlAttributeCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#Count" />」をご覧ください。</summary>
+        <value>返します、<see langword="int" />属性の数を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlAttributeCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#IsSynchronized" />」を参照してください。</summary>
+        <value>返します<see langword="true" />コレクションが同期されている場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlAttributeCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.XmlAttributeCollection.System#Collections#ICollection#SyncRoot" />」を参照してください。</summary>
+        <value>返します、<see cref="T:System.Object" />つまりコレクションのルートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlAttributeCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

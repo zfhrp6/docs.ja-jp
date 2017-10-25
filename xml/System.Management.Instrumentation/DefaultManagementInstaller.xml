@@ -1,0 +1,57 @@
+<Type Name="DefaultManagementInstaller" FullName="System.Management.Instrumentation.DefaultManagementInstaller">
+  <TypeSignature Language="C#" Value="public class DefaultManagementInstaller : System.Configuration.Install.Installer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultManagementInstaller extends System.Configuration.Install.Installer" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.DefaultManagementInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management.Instrumentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.Installer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つのインストルメント アセンブリをインストールします。 この既定のプロジェクト インストーラーを使用するには、アセンブリ内の <see cref="T:System.Management.Instrumentation.DefaultManagementInstaller" /> からクラスを派生するだけです。 メソッドをオーバーライドする必要はありません。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、.NET framework の標準的な installUtil インストーラーのインターフェイスを提供します。 オートメーション クラスを含む任意のアセンブリには、この型から派生したクラスを含める必要があります。 これにより、オートメーション オブジェクトのスキーマを生成し、それを WMI にインストールし、必要なプロバイダーの登録のコードを作成するコードが提供されます。  
+  
+   
+  
+## Examples  
+ 次の例からクラスを派生する方法を示しています、<xref:System.Management.Instrumentation.DefaultManagementInstaller>クラスを WMI プロバイダーをインストールします。  
+  
+```csharp  
+// This is the installer class that installs an instrumented assembly.  
+// To use the default project installer, simply derive a class from  
+// DefaultManagementInstaller.  No methods need to be overridden.  
+[System.ComponentModel.RunInstaller(true)]  
+public class TheInstaller : DefaultManagementInstaller  
+{ }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultManagementInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.DefaultManagementInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.Instrumentation.DefaultManagementInstaller" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

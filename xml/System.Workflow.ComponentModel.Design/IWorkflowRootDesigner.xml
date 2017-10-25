@@ -1,0 +1,124 @@
+<Type Name="IWorkflowRootDesigner" FullName="System.Workflow.ComponentModel.Design.IWorkflowRootDesigner">
+  <TypeSignature Language="C#" Value="public interface IWorkflowRootDesigner : IDisposable, System.ComponentModel.Design.IRootDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWorkflowRootDesigner implements class System.ComponentModel.Design.IDesigner, class System.ComponentModel.Design.IRootDesigner, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.IWorkflowRootDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IRootDesigner</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>呼び出し側デザイナーとメッセージ フィルターのプロパティを定義すると共に、アクティビティをサポートしているかどうかをすべてのワークフロー ルート デザイナーを対象に判断するメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ すべてのワークフロー ルート デザイナーは、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner> 型であるか、またはそれを継承したものです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InvokingDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.CompositeActivityDesigner InvokingDesigner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.CompositeActivityDesigner InvokingDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.IWorkflowRootDesigner.InvokingDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.CompositeActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ルート デザイナーの初期化を要求した <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> を取得または設定します。</summary>
+        <value>ワークフロー ルート デザイナーの初期化を要求した <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクティビティ デザイナーが別のアクティビティ デザイナーの子であった場合、親デザイナーが呼び出し側デザイナーであることがほとんどです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedActivityType">
+      <MemberSignature Language="C#" Value="public bool IsSupportedActivityType (Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSupportedActivityType(class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.IWorkflowRootDesigner.IsSupportedActivityType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">デザイナーでのサポートを確認する <see cref="T:System.Type" />。</param>
+        <summary>指定した型が現在のワークフロー デザイナーでサポートされているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が現在のワークフロー デザイナーでサポートされている場合は <paramref name="type" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageFilters">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter&gt; MessageFilters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter&gt; MessageFilters" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.IWorkflowRootDesigner.MessageFilters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ルート デザイナーに関連付けられたメッセージ フィルターを取得します。</summary>
+        <value>WorkflowDesignerMessageFilter は、ワークフロー ルート デザイナーに関連付けられたメッセージ フィルターを格納する読み取り専用のコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsLayoutPersistence">
+      <MemberSignature Language="C#" Value="public bool SupportsLayoutPersistence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsLayoutPersistence" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.IWorkflowRootDesigner.SupportsLayoutPersistence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際のワークフロー ルート デザイナーがレイアウトの永続性をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          デザイナーがレイアウトの永続性をサポートしている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

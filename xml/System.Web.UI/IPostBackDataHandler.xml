@@ -1,0 +1,104 @@
+<Type Name="IPostBackDataHandler" FullName="System.Web.UI.IPostBackDataHandler">
+  <TypeSignature Language="C#" Value="public interface IPostBackDataHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPostBackDataHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IPostBackDataHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロールがポストバック データを自動的にロードするために実装する必要があるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する必要があります、<xref:System.Web.UI.IPostBackDataHandler>インターフェイスのクライアントがサーバーにポストバックされるフォーム データを確認する必要のあるサーバー コントロールを作成するときにします。 このインターフェイスを定義するコントラクトでは、サーバー コントロールがポストバックの結果の状態を変更する必要があるかどうかを判断し、適切なイベントを発生させるできるようにします。 詳細については、次を参照してください。[サーバーで ASP.NET Web フォーム ページのイベントの処理](http://msdn.microsoft.com/library/765bfc89-33ee-4d0d-bbe6-3b172c06def9)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを実装するカスタム テキスト ボックス サーバー コントロール、<xref:System.Web.UI.IPostBackDataHandler>インターフェイスです。 <xref:System.Web.UI.WebControls.TextBox.Text%2A>ポストバックの結果プロパティを変更し、サーバー コントロールを生成、<xref:System.Web.UI.WebControls.TextBox.TextChanged>ポストバック データが読み込まれた後のイベントです。  
+  
+ [!code-csharp[Classic IPostBackDataHandler Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IPostBackDataHandler Example/CS/source.cs#1)]
+ [!code-vb[Classic IPostBackDataHandler Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IPostBackDataHandler Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LoadPostData">
+      <MemberSignature Language="C#" Value="public bool LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IPostBackDataHandler.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">コントロールのキー識別子。</param>
+        <param name="postCollection">すべての着信名前値のコレクション。</param>
+        <summary>クラスによって実装された場合、ポストバック ASP.NET サーバー コントロールのデータを処理します。</summary>
+        <returns>
+          ポストバックの結果、サーバー コントロールの状態が変化する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ページ フレームワークを返すすべてのサーバー コントロールでは追跡`true`このメソッドの呼び出しにして呼び出します、<xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent%2A>それらのコントロールのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますサーバー コントロールのバージョンを実装する、<xref:System.Web.UI.IPostBackDataHandler.LoadPostData%2A>メソッドです。  
+  
+ [!code-csharp[Classic IPostBackDataHandler.LoadPostData Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IPostBackDataHandler.LoadPostData Example/CS/source.cs#1)]
+ [!code-vb[Classic IPostBackDataHandler.LoadPostData Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IPostBackDataHandler.LoadPostData Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="public void RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスによって実装された場合、コントロールの状態が変更されたことを ASP.NET アプリケーションに通知する、サーバー コントロールに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent%2A>メソッドを実装するサーバー コントロールのすべての変更イベントを発生させる、<xref:System.Web.UI.IPostBackDataHandler>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サーバー コントロールを実装する方法を示しています、<xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent%2A>メソッドです。  
+  
+ [!code-csharp[Classic IPostBackDataHandler.RaisePostDataChangedEvent Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IPostBackDataHandler.RaisePostDataChangedEvent Example/CS/source.cs#1)]
+ [!code-vb[Classic IPostBackDataHandler.RaisePostDataChangedEvent Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IPostBackDataHandler.RaisePostDataChangedEvent Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

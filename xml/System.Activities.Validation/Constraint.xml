@@ -1,0 +1,126 @@
+<Type Name="Constraint" FullName="System.Activities.Validation.Constraint">
+  <TypeSignature Language="C#" Value="public abstract class Constraint : System.Activities.NativeActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Constraint extends System.Activities.NativeActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Validation.Constraint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.NativeActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクティビティの検証に使用される検証制約を処理します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddValidationError">
+      <MemberSignature Language="C#" Value="public static void AddValidationError (System.Activities.NativeActivityContext context, System.Activities.Validation.ValidationError error);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddValidationError(class System.Activities.NativeActivityContext context, class System.Activities.Validation.ValidationError error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Validation.Constraint.AddValidationError(System.Activities.NativeActivityContext,System.Activities.Validation.ValidationError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+        <Parameter Name="error" Type="System.Activities.Validation.ValidationError" />
+      </Parameters>
+      <Docs>
+        <param name="context">ワークフロー アクティビティ実行環境。</param>
+        <param name="error">ワークフロー実行時に発生する検証エラー。</param>
+        <summary>実行コンテキストにアタッチされた実行時検証エラーの一覧に、検証エラーを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="protected override void CacheMetadata (System.Activities.NativeActivityMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.NativeActivityMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Validation.Constraint.CacheMetadata(System.Activities.NativeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.NativeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">検証実行時引数の一覧のコンテナーになる <see cref="T:System.Activities.NativeActivityMetadata" /> オブジェクト。</param>
+        <summary>ワークフロー検証プロセスの実行時引数が含まれている <see cref="T:System.Activities.NativeActivityMetadata" /> オブジェクトを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override void Execute (System.Activities.NativeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Execute(class System.Activities.NativeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Validation.Constraint.Execute(System.Activities.NativeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ワークフロー アクティビティ実行環境。</param>
+        <summary>アクティビティを検証するプロセスを起動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExecute">
+      <MemberSignature Language="C#" Value="protected abstract void OnExecute (System.Activities.NativeActivityContext context, object objectToValidate, System.Activities.Validation.ValidationContext objectToValidateContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExecute(class System.Activities.NativeActivityContext context, object objectToValidate, class System.Activities.Validation.ValidationContext objectToValidateContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Validation.Constraint.OnExecute(System.Activities.NativeActivityContext,System.Object,System.Activities.Validation.ValidationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+        <Parameter Name="objectToValidate" Type="System.Object" />
+        <Parameter Name="objectToValidateContext" Type="System.Activities.Validation.ValidationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ワークフロー アクティビティ実行。</param>
+        <param name="objectToValidate">検証に使用するアクティビティ。</param>
+        <param name="objectToValidateContext">検証に使用するアクティビティのコンテキスト。</param>
+        <summary>派生クラスによって実装されている場合、指定のネイティブ アクティビティおよび検証コンテキストを使用して指定されたオブジェクトを検証します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationErrorListPropertyName">
+      <MemberSignature Language="C#" Value="public const string ValidationErrorListPropertyName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ValidationErrorListPropertyName" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Validation.Constraint.ValidationErrorListPropertyName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー実行時検証エラーの一覧であるアクティビティ制約プロパティの名前。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

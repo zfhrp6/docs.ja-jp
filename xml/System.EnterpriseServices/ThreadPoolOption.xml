@@ -1,0 +1,94 @@
+<Type Name="ThreadPoolOption" FullName="System.EnterpriseServices.ThreadPoolOption">
+  <TypeSignature Language="C#" Value="public enum ThreadPoolOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ThreadPoolOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ThreadPoolOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって、作業が送信されるスレッド プールを示す<see cref="T:System.EnterpriseServices.Activity" />を実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ThreadPoolOption>値として使用される<xref:System.EnterpriseServices.ServiceConfig.ThreadPool%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Inherit">
+      <MemberSignature Language="C#" Value="Inherit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ThreadPoolOption Inherit = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ThreadPoolOption.Inherit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ThreadPoolOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元のスレッドのアパートメント スレッド プールのアパートメントの同じ型が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MTA">
+      <MemberSignature Language="C#" Value="MTA" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ThreadPoolOption MTA = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ThreadPoolOption.MTA" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ThreadPoolOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マルチ スレッド アパートメント (MTA) が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ThreadPoolOption None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ThreadPoolOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ThreadPoolOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッド プールは使用されません。 この値を使用して構成する場合、<see cref="T:System.EnterpriseServices.ServiceConfig" />に渡される、<see cref="T:System.EnterpriseServices.Activity" />例外がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="STA">
+      <MemberSignature Language="C#" Value="STA" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ThreadPoolOption STA = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ThreadPoolOption.STA" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ThreadPoolOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シングル スレッド アパートメント (STA) が使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

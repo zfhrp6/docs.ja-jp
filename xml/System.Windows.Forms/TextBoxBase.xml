@@ -1,0 +1,2717 @@
+<Type Name="TextBoxBase" FullName="System.Windows.Forms.TextBoxBase">
+  <TypeSignature Language="C#" Value="public abstract class TextBoxBase : System.Windows.Forms.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextBoxBase extends System.Windows.Forms.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TextBoxBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("TextChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.TextBoxBaseDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキスト コントロールで必要な基本機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスなど、中核となるテキスト操作、コントロールの機能の実装<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.RichTextBox>です。 テキスト選択範囲が含まれます**クリップボード**機能、複数行テキスト コントロールのサポート、および多数のイベントです。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行を作成するためのクラスを派生<xref:System.Windows.Forms.TextBox>垂直スクロール バーを持つコントロール。 またこの例では、 <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>、 <xref:System.Windows.Forms.TextBox.AcceptsReturn%2A>、および<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティを複数行テキスト ボックス コントロールのテキスト ドキュメントを作成するのに役立ちます。  
+  
+ [!code-cpp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>通常から継承していない<see cref="T:System.Windows.Forms.TextBoxBase" />です。 継承するクラスを作成する独自のテキスト コントロール、<see cref="T:System.Windows.Forms.TextBox" />または<see cref="T:System.Windows.Forms.RichTextBox" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceptsTab">
+      <MemberSignature Language="C#" Value="public bool AcceptsTab { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcceptsTab" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.AcceptsTab" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タブ オーダーに従って次のコントロールにフォーカスを移動させる代わりに、コントロールにタブ文字を入力させる複数行テキスト ボックス コントロールで Tab キーを押すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが TAB キーを使用して複数行テキスト ボックスにタブを入力できる場合<see langword="false" />場合は、TAB キーを押すとフォーカスを移動します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティがある必要がありますも`true`をコントロールにタブ文字を取得します。  
+  
+ 場合、<xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>プロパティに設定されている`true`ユーザーがタブ オーダーの次のコントロールにフォーカスを移動するには、CTRL + TAB を押す必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行を作成するためのクラスを派生<xref:System.Windows.Forms.TextBox>垂直スクロール バーを持つコントロール。 またこの例では、 <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>、 <xref:System.Windows.Forms.TextBox.AcceptsReturn%2A>、および<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティを複数行テキスト ボックス コントロールのテキスト ドキュメントを作成するのに役立ちます。  
+  
+ [!code-cpp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsTabChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AcceptsTabChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AcceptsTabChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.AcceptsTabChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.AcceptsTab" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.AcceptsTabChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.AcceptsTabChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#241](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#241)]
+ [!code-vb[System.Windows.Forms.EventExamples#241](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#241)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendText">
+      <MemberSignature Language="C#" Value="public void AppendText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.AppendText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">テキスト ボックスの現在の内容に追加するテキスト。</param>
+        <summary>テキスト ボックスの現在のテキストにテキストを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをテキスト文字列を連結する連結演算子 (+) を使用する代わりに、コントロール内の既存のテキストを追加するを使用することができます、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TextBoxBase.AppendText%2A>メソッドおよび<xref:System.Windows.Forms.TextBoxBase.TextLength%2A>プロパティを 1 つからテキストをコピー<xref:System.Windows.Forms.TextBox>別にします。 この例には、その 2 つが必要があります<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`と`textBox2`、フォームに追加されて`textBox1`に割り当てられているテキストが含まれて、<xref:System.Windows.Forms.Control.Text%2A>プロパティです。  
+  
+ [!code-cpp[TextBoxBase.AppendText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TextBoxBase.AppendText/CPP/form1.cpp#1)]
+ [!code-csharp[TextBoxBase.AppendText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TextBoxBase.AppendText/CS/form1.cs#1)]
+ [!code-vb[TextBoxBase.AppendText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TextBoxBase.AppendText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public override bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールに割り当てられているフォントが変更されたときに、コントロールの高さを自動的に調整するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールの高さが自動的に調整する場合、フォントが変更されたときです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Forms.TextBoxBase.AutoSize%2A>プロパティを`true`の<xref:System.Windows.Forms.TextBox>、ときに、 <xref:System.Windows.Forms.Control.Font%2A> 、変更、<xref:System.Windows.Forms.TextBox>拡大または縮小、<xref:System.Windows.Forms.Control.Height%2A>大きくまたは小さくテキストに合わせてです。 <xref:System.Windows.Forms.Control.Width%2A>の<xref:System.Windows.Forms.TextBox>は変わりません。  
+  
+ テキストを入力すると、コントロールのサイズを変更する場合は、使用、<xref:System.Windows.Forms.RichTextBox>制御および使用してその<xref:System.Windows.Forms.RichTextBox.ContentsResized>サイズを変更するイベントです。  
+  
+   
+  
+## Examples  
+ この例では、フォームに 2 つのテキスト ボックス、2 つのボタンがあるし、各ボタンのクリックしてイベントを前提としています。 例を示します、<xref:System.Windows.Forms.TextBoxBase.AutoSize%2A>プロパティを設定することによって`true`の 1 つのテキスト ボックスと`false`他のです。 1 つのボタンをクリックすると、テキスト ボックスで塗りつぶされて、小規模なテキストより大きなテキストを含むテキスト ボックスに入力、他のボタンをクリックするとします。 テキスト ボックス<xref:System.Windows.Forms.TextBoxBase.AutoSize%2A>'éý'`true`高さより大きなテキストに合わせて拡張します。 幅は変更されません。  
+  
+ [!code-csharp[SystemWindowsFormsAutoSize#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemWindowsFormsAutoSize/CS/Form1.cs#1)]
+ [!code-vb[SystemWindowsFormsAutoSize#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemWindowsFormsAutoSize/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AutoSizeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AutoSizeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.AutoSizeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(-501)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの背景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />を表すコントロールの背景。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.TextBoxBase.BackColor%2A>テキスト コントロールをフォームの画面の配色に blend の背景色を変更するプロパティです。  
+  
+ コントロール内のテキストの色を変更するには、<xref:System.Windows.Forms.TextBoxBase.ForeColor%2A>プロパティです。 設定するときに、<xref:System.Windows.Forms.TextBoxBase.BackColor%2A>テキスト コントロールのプロパティが選択した色がでないが表示されなくなったコントロールのテキストを確認してください。 たとえば場合、<xref:System.Windows.Forms.TextBoxBase.BackColor%2A>と<xref:System.Windows.Forms.TextBoxBase.ForeColor%2A>プロパティに設定されて`Color.Black`、textbox コントロール内のテキストは表示されません。  
+  
+ このプロパティもある場合は無効になります、<xref:System.Windows.Forms.TextBoxBase.ReadOnly%2A>のプロパティ、<xref:System.Windows.Forms.TextBoxBase>に設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>オブジェクトの背景イメージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.BackgroundImage" /> プロパティの値が変更された場合に発生します。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageLayout" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.BackgroundImageLayout" /> プロパティの値が変更された場合に発生します。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(-504)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックス コントロールの境界線の種類を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.BorderStyle" />テキスト ボックス コントロールの境界線の種類を表すです。 既定値は、<see langword="Fixed3D" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.TextBoxBase.BorderStyle%2A>プロパティを既定の 3 次元コントロールだけでなく、ふちなしとフラット スタイルのコントロールを作成します。  
+  
+> [!NOTE]
+>  派生クラスでは、<xref:System.Windows.Forms.RichTextBox>はサポートしていません、`BorderStyle.FixedSingle`スタイル。 このスタイル、<xref:System.Windows.Forms.BorderStyle>を使用する、`BorderStyle.Fixed3D`代わりにスタイルを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、1 つの境界線と 20 ポイント Arial を使用してテキストを適切に表示されるテキスト ボックスを作成するためのクラスを派生します。 この例では、<xref:System.Windows.Forms.TextBoxBase.PreferredHeight%2A>高さを決定する、適切なコントロールのフォントの後にプロパティと<xref:System.Windows.Forms.TextBoxBase.BorderStyle%2A>コントロールに割り当てられています。  
+  
+ [!code-cpp[Classic TextBoxBase.BorderStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.BorderStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.BorderStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.BorderStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.BorderStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.BorderStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">列挙体の有効な値の範囲内にない値がプロパティに割り当てられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyleChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BorderStyleChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BorderStyleChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.BorderStyleChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.BorderStyle" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.BorderStyleChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.BorderStyleChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#242](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#242)]
+ [!code-vb[System.Windows.Forms.EventExamples#242](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#242)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanEnableIme">
+      <MemberSignature Language="C#" Value="protected override bool CanEnableIme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanEnableIme" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.CanEnableIme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Control.ImeMode" /> プロパティをアクティブな値に設定して、IME サポートを有効にできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />場合、<see cref="P:System.Windows.Forms.TextBoxBase.ReadOnly" />プロパティは<see langword="true" />場合または<see cref="T:System.Windows.Forms.TextBoxBase" />パスワード マスクを使用するクラスを設定、それ以外の文字<see langword="true" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUndo">
+      <MemberSignature Language="C#" Value="public bool CanUndo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUndo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.CanUndo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがテキスト ボックス コントロールで前の操作を取り消すことができるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザーは、テキスト ボックス コントロールで実行される前の操作を取り消すことができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る場合`true`、呼び出すことができます、<xref:System.Windows.Forms.TextBoxBase.Undo%2A>テキスト ボックスの最後の操作を元に戻す方法です。 このメソッドを使用することができます、<xref:System.Windows.Forms.MenuItem.Popup>のイベント、 <xref:System.Windows.Forms.MenuItem>、またはボタンの状態を管理するコードで、<xref:System.Windows.Forms.ToolBar>を有効にするにまたはテキスト ボックス コントロールで前の操作を元に戻すことを無効にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.CanUndo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.CanUndo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.CanUndo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.CanUndo Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.CanUndo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.CanUndo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックス コントロールのすべてのテキストをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを割り当てる代わりに、コントロールの内容を消去を使用することができます、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティ、空の文字列。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラスにイベント ハンドラーを作成、<xref:System.Windows.Forms.Control.TextChanged>イベント。 イベント ハンドラー内のコードは、数値データを制限します。 コントロールでテキストを入力すると、コードは、入力したテキストが数値を判断します。 コードがコントロールからテキストをクリア テキストが数値ではない場合、<xref:System.Windows.Forms.MessageBox>に数字のみを受け入れることをユーザーにアラートを表示します。 例では、する必要があります、`Boolean`という名前の変数`flag`と<xref:System.Windows.Forms.TextBox>と呼ばれるコントロール`textBox1`このメソッドの外部で定義されます。 この例は、変数を使用して、フラグでイベントの連鎖を回避する方法を示します、<xref:System.Windows.Forms.Control.TextChanged>イベント。  
+  
+ [!code-cpp[Classic TextBoxBase.Clear Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.Clear Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearUndo">
+      <MemberSignature Language="C#" Value="public void ClearUndo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearUndo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.ClearUndo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスのアンドゥ バッファーから直前に実行された操作に関する情報を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーションの状態に基づいてを繰り返しから元に戻す操作を防ぐために使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.TextBoxBase.Click>イベント。 例を実行するを含むフォームで、次のコードを貼り付けます、 <xref:System.Windows.Forms.TextBox> TextBox1 と呼ばれるコントロール。 この例では、イベント処理メソッドに関連付けられている必要があります、<xref:System.Windows.Forms.TextBoxBase.Click>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxBaseScrolling#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TextBoxBaseScrolling#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TextBoxBaseScrolling#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public void Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスに現在の選択範囲をコピー、**クリップボード**です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代わりに、このメソッドを使用できる、 <xref:System.Windows.Forms.Clipboard> 、テキスト ボックスにテキストをコピーし、それを配置する、クラス、**クリップボード**です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandle">
+      <MemberSignature Language="C#" Value="protected override void CreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.CreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのハンドルを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cut">
+      <MemberSignature Language="C#" Value="public void Cut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Cut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックス内の現在の選択範囲の移動、**クリップボード**です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールでテキストが選択されている場合は、このメソッドは、テキスト ボックスからのみテキストを切り取ります。 代わりに、このメソッドを使用できる、 <xref:System.Windows.Forms.Clipboard> 、テキスト ボックスにテキストをコピーしに移動する、クラス、**クリップボード**です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCursor">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.Cursor DefaultCursor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Cursor DefaultCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.DefaultCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のカーソルを取得または設定します。</summary>
+        <value>現在の既定のカーソルを表す <see cref="T:System.Windows.Forms.Cursor" /> 型のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド<xref:System.Windows.Forms.TextBoxBase.DefaultCursor%2A>コントロールの既定のカーソルを構成します。 これは、コントロールのコンス トラクターでカーソルを設定するよりも効率的でありでは特定のカーソル関連のデザイナー機能の自動サポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定の <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeselectAll">
+      <MemberSignature Language="C#" Value="public void DeselectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeselectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.DeselectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定の値、<see cref="P:System.Windows.Forms.TextBoxBase.SelectionLength" />プロパティが 0 文字がコントロールで選択されていないようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleBuffered">
+      <MemberSignature Language="C#" Value="protected override bool DoubleBuffered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DoubleBuffered" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.DoubleBuffered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが表示される前に、バッファーにコントロールの描画を行うかどうかを示す値を設定します。 このクラスでは、このプロパティは使用されません。</summary>
+        <value>
+          <see langword="true" />コントロールのダブル バッファリングを実装するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(-513)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの前景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロールの前景色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.TextBoxBase.ForeColor%2A>フォーム上の他のコントロールのテキストに合わせて、コントロール内のテキストの色を変更するプロパティです。 このプロパティは、強調表示を無効な値を含む特定のテキスト ボックスにも使用できます。  
+  
+ コントロールの背景色を変更するには、<xref:System.Windows.Forms.TextBoxBase.BackColor%2A>プロパティです。 設定するときに、<xref:System.Windows.Forms.TextBoxBase.ForeColor%2A>テキスト コントロールのプロパティが選択した色がでないが表示されなくなったコントロールのテキストを確認してください。 たとえば場合、<xref:System.Windows.Forms.TextBoxBase.ForeColor%2A>と<xref:System.Windows.Forms.TextBoxBase.BackColor%2A>プロパティに設定されて`Color.Black`、textbox コントロール内のテキストは表示されません。  
+  
+ このプロパティもある場合は無効になります、<xref:System.Windows.Forms.TextBoxBase.ReadOnly%2A>のプロパティ、<xref:System.Windows.Forms.TextBoxBase>に設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharFromPosition">
+      <MemberSignature Language="C#" Value="public virtual char GetCharFromPosition (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance char GetCharFromPosition(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetCharFromPosition(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">一番近くにある文字をシークする位置。</param>
+        <summary>コントロール内の指定した位置の一番近くにある文字を取得します。</summary>
+        <returns>指定した位置にある文字。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場所が指定されている場合、`pt`パラメーターが文字列で指定した位置に最も近いの最初の文字、コントロールのクライアント領域外`pt`が返されます。 このメソッドを使用すると、コントロール内の特定の時点の近くにあるどの文字を決定します。 この値は、その場所にあるテキストに対して操作を実行し、使用できます。  
+  
+> [!NOTE]
+>  場合内の指定の場所、`pt`で指定した位置に最も近い文字列の最後の文字、コントロールのクライアント領域の右側にあるパラメーターがある`pt`が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharIndexFromPosition">
+      <MemberSignature Language="C#" Value="public virtual int GetCharIndexFromPosition (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCharIndexFromPosition(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetCharIndexFromPosition(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">検索する位置。</param>
+        <summary>指定位置に最も近い文字のインデックスを取得します。</summary>
+        <returns>指定した位置の 0 から始まる文字インデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された位置に最も近い文字のインデックスを返します、`pt`パラメーター。 文字インデックスは、スペースを含む、コントロール内のテキストの 0 から始まるインデックスです。 このメソッドを使用すると、場所、テキストで、ユーザーが、このメソッドに、マウス座標を渡すことによって、マウスを決定します。 ユーザーがコントロールのテキスト内の単語にマウス ポインターを置いたときにタスクを実行する場合に役立ちます。 これができます。  
+  
+> [!IMPORTANT]
+>  か、指定した場所は、コントロールのクライアントの四角形内にありませんは、コントロール内の最後の文字を超える、戻り値は、最後の文字のインデックス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstCharIndexFromLine">
+      <MemberSignature Language="C#" Value="public int GetFirstCharIndexFromLine (int lineNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFirstCharIndexFromLine(int32 lineNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetFirstCharIndexFromLine(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineNumber">最初の文字のインデックスを取得する行。</param>
+        <summary>指定された行の先頭文字のインデックスを取得します。</summary>
+        <returns>指定した行の最初の文字の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行番号は、テキスト ボックスには、0 から始まります。 場合、`lineNumber`パラメーターが、テキスト ボックスの最後の行より大きい<xref:System.Windows.Forms.TextBoxBase.GetFirstCharIndexFromLine%2A>-1 を返します。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.GetFirstCharIndexFromLine%2A>物理行の最初の文字インデックスを返します。 物理行は、行に表示される、割り当てられている行ではありません。 表示されている行の数は、右端で折り返すにより割り当てられた行の数より大きくできます。 2 つの長い行を割り当てる場合など、<xref:System.Windows.Forms.RichTextBox>を制御し、設定<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>と<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>に`true`、2 つの長時間割り当てられている行と、次の 4 つの物理 (または行が表示されます)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="lineNumber" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstCharIndexOfCurrentLine">
+      <MemberSignature Language="C#" Value="public int GetFirstCharIndexOfCurrentLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFirstCharIndexOfCurrentLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetFirstCharIndexOfCurrentLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の行の先頭文字のインデックスを取得します。</summary>
+        <returns>現在の行における 0 から始まる文字インデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineFromCharIndex">
+      <MemberSignature Language="C#" Value="public virtual int GetLineFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetLineFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetLineFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">検索する文字インデックスの位置。</param>
+        <summary>コントロールのテキスト内で、指定の文字位置からの行数を取得します。</summary>
+        <returns>文字インデックスを含む行の 0 から始まる行番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された文字のインデックスに基づいて行の数を決定することができます、`index`メソッドのパラメーターです。 コントロール内のテキストの最初の行では、値 0 を返します。 <xref:System.Windows.Forms.TextBoxBase.GetLineFromCharIndex%2A>メソッドは、インデックス付きの文字がコントロール内にある物理的な行番号を返します。 たとえば場合内のテキストの最初の論理行の一部、コントロールが次の行に折り返される、<xref:System.Windows.Forms.TextBoxBase.GetLineFromCharIndex%2A>メソッドは、指定された文字のインデックス位置にある文字が 2 番目の物理的な行に折り返されます場合、1 を返します。 場合<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>に設定されている`false`行の一部を次に折り返されるなしと指定の文字インデックスの場合は 0 を返します。 このメソッドを使用するにはのどの行で、特定の文字のインデックスが内にあるかを判断します。 呼び出しの後など、<xref:System.Windows.Forms.RichTextBox.Find%2A>テキストを検索する方法、検索結果がある文字のインデックスを取得することができます。 によって返される文字のインデックスを持つこのメソッドを呼び出すことができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>という単語が行を決定するメソッドが見つかりました。  
+  
+> [!NOTE]
+>  内の文字のインデックスが指定されている場合、`index`パラメーターは、コントロール内に含まれる使用可能な行数外ですが、最後の行番号が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromCharIndex">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Point GetPositionFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Drawing.Point GetPositionFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.GetPositionFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の取得対象とする文字のインデックス。</param>
+        <summary>指定の文字インデックスにおけるコントロール内の位置を取得します。</summary>
+        <returns>コントロールのクライアントの四角形領域内における、指定した文字の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、コントロールの特定の文字のインデックスが存在を確認することができます。 このメソッドは、コントロール内の単語のショートカット メニュー項目またはヘルプ情報を表示するなどのタスクを使用できます。 たとえば、ユーザーがコントロールに含まれる単語を右クリックしたときに、ユーザーにオプションのメニューを表示する場合は、行うこともできますこのメソッドを正しく表示する単語の位置を決定する、<xref:System.Windows.Forms.ContextMenu>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideSelection">
+      <MemberSignature Language="C#" Value="public bool HideSelection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HideSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.HideSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックス コントロールがフォーカスを失ったときに、そのコントロールで選択されているテキストが強調表示されたままかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />選択したテキストが表示されない場合、テキスト ボックス コントロールがフォーカスを失ったときを強調表示されます。<see langword="false" />テキスト ボックス コントロールがフォーカスを失ったときに、選択したテキストが強調表示されたままの場合、します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、別のフォームまたはダイアログ ボックスにフォーカスが、スペル チェック ダイアログ ボックスなどのテキスト ボックス コントロールで強調表示されているテキストを保持することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TextBoxBase.HideSelection%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeTextBox`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxBaseScrolling#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.TextBoxBaseScrolling#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.TextBoxBaseScrolling#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideSelectionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler HideSelectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler HideSelectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.HideSelectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.HideSelection" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.HideSelectionChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.HideSelectionChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#245](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#245)]
+ [!code-vb[System.Windows.Forms.EventExamples#245](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#245)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeModeBase">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.ImeMode ImeModeBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImeMode ImeModeBase" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.ImeModeBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの入力方式エディター (IME) モードを設定します。</summary>
+        <value>コントロールの IME モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputKey">
+      <MemberSignature Language="C#" Value="protected override bool IsInputKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsInputKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.IsInputKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">キーの値のいずれか。</param>
+        <summary>指定されているキーが、入力キーであるか、またはプリプロセスを必要とする特殊なキーであるかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定したキーが入力キーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextBoxBase.IsInputKey%2A>メソッドを返します。`true`ときに、`keyData`パラメーターが含まれています、<xref:System.Windows.Forms.Keys.Tab>値、および<xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>プロパティは`true`します。 <xref:System.Windows.Forms.TextBoxBase.IsInputKey%2A>返します`false`場合`keyData`両方を含む<xref:System.Windows.Forms.Keys.Tab>と<xref:System.Windows.Forms.Keys.Control>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lines">
+      <MemberSignature Language="C#" Value="public string[] Lines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Lines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.Lines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.StringArrayEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックス コントロールで行のテキストを設定します。</summary>
+        <value>テキスト ボックス コントロールのテキストを格納する文字列の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列内の各要素では、テキスト ボックス コントロール内のテキストの行になります。 場合、 <xref:System.Windows.Forms.TextBoxBase.Multiline%2A> 、テキスト ボックス コントロールのプロパティに設定されて`true`テキストに改行文字が表示されると、改行文字の後のテキストが、配列内の新しい要素に追加され、別々 の行に表示されます。  
+  
+> [!NOTE]
+>  既定では、内の行の読み取り専用コピーである行のコレクション、<xref:System.Windows.Forms.TextBox>です。 行の書き込み可能なコレクションを取得するには、次のようなコードを使用します。`textBox1.Lines = new string[] { "abcd" };`  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行テキスト ボックス コントロールからテキストのすべての文字列を抽出するためのクラスを派生し、それらを表示を使用して、<xref:System.Diagnostics.Debug.WriteLine%2A?displayProperty=nameWithType>メソッドです。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>コントロールが作成されている、という名前`textBox1`行のテキストの入力されたとします。  
+  
+ [!code-cpp[Classic TextBoxBase.Lines Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.Lines Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.Lines Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.Lines Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.Lines Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.Lines Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public virtual int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(32767)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがテキスト ボックス コントロールに入力または貼り付けできる最大文字数を取得または設定します。</summary>
+        <value>コントロールに入力できる文字数。 既定値は 32767 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 郵便番号や電話番号などの値をコントロールに入力したテキストの長さが制限またはデータがデータベースに入力するときに入力したテキストの長さを制限するには、このプロパティを使用することができます。 データベース内の対応するフィールドの最大長をコントロールに入力したテキストを制限することができます。  
+  
+> [!NOTE]
+>  コードでは、値を設定することができます、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティを持つ、長さで指定された値を超える値を<xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>プロパティです。 このプロパティは、実行時に、コントロールに入力したテキストにのみ影響します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.TextBox>パスワードを受け入れるように使用されるテキスト ボックスを作成します。 この例では、<xref:System.Windows.Forms.TextBox.CharacterCasing%2A>を大文字に型指定されたすべての文字を変更するプロパティと<xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>8 文字に、パスワードの長さを制限するプロパティです。 またこの例では、<xref:System.Windows.Forms.TextBox.TextAlign%2A>中央にパスワードのプロパティ、<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-cpp[Classic TextBoxBase.MaxLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.MaxLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.MaxLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.MaxLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.MaxLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.MaxLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティに割り当てられた値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Modified">
+      <MemberSignature Language="C#" Value="public bool Modified { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Modified" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.Modified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが作成されたか、その内容が最後に設定されたので、テキスト ボックス コントロールがユーザーによって変更されたことを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールの内容が変更された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、ユーザーがテキスト ボックス コントロールの内容を変更したかどうかを判断します。 アプリケーションで、テキスト ボックス コントロールに変更が加えられたかを示すコードでこのプロパティを設定することもできます。 このプロパティは、変更された場合、テキスト ボックス コントロールで変更された内容を検証または保存できるように決定する検証とデータ保存メソッドによって使用できます。  
+  
+ 変更する場合、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティ、プログラムによって、<xref:System.Windows.Forms.TextBoxBase.Modified%2A>にプロパティを元に戻します`false`です。 これは発生しません、<xref:System.Windows.Forms.TextBoxBase.ModifiedChanged>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.Control.TextChanged>イベントを<xref:System.Windows.Forms.TextBox>、かどうかをクラスを派生の内容、<xref:System.Windows.Forms.TextBox>コントロールされてから変更されたコントロールがデータを格納します。 例では、コントロールの元の内容を格納する文字列を使用して、比較の内容、<xref:System.Windows.Forms.TextBox>内容が変更されたかどうかを決定します。 内容が変更された場合、<xref:System.Windows.Forms.TextBoxBase.Modified%2A>プロパティに設定されている`true`です。 それ以外の場合はリセット`false`です。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されたことと、`String`という名前の変数`originalText`の元の文字列の格納用に作成した、<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-cpp[Classic TextBoxBase.Modified Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.Modified Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.Modified Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.Modified Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.Modified Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.Modified Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifiedChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ModifiedChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ModifiedChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.ModifiedChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.Modified" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更する場合、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティ、プログラムによって、<xref:System.Windows.Forms.TextBoxBase.Modified%2A>にプロパティを元に戻します`false`です。 これは発生しません、<xref:System.Windows.Forms.TextBoxBase.ModifiedChanged>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.ModifiedChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.ModifiedChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#246](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#246)]
+ [!code-vb[System.Windows.Forms.EventExamples#246](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#246)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.MouseClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスでコントロールをクリックしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox>コントロールは発生しません、<xref:System.Windows.Forms.TextBoxBase.Click>イベントを右クリックします。 <xref:System.Windows.Forms.TextBoxBase.MouseClick>イベントは、相当する機能を提供します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.MouseClick>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.MouseClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#244](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#244)]
+ [!code-vb[System.Windows.Forms.EventExamples#244](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#244)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiline">
+      <MemberSignature Language="C#" Value="public virtual bool Multiline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Multiline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.Multiline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールが複数行テキスト ボックス コントロールかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールが複数行テキスト ボックス コントロールです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数行テキスト ボックスでは、コントロールに 1 つ以上の行のテキストを表示することができます。 場合、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティに設定されている`true`、複数行テキスト ボックスに入力したテキストがコントロールでは、次の行にラップされます。 場合、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティに設定されている`false`、改行文字を入力するまでにその複数行テキスト ボックス コントロールに入力したテキストが同じ行に表示されます。  
+  
+ 次は改行文字として使用できます。  
+  
+-   <xref:System.Environment.NewLine%2A?displayProperty=nameWithType>  
+  
+-   ControlChars.CrLf  
+  
+-   vbCrLf (Visual Basic のみ)  
+  
+ テキスト ボックスを使用して、スクロール バーを追加することができます、<xref:System.Windows.Forms.TextBox.ScrollBars%2A>水平/垂直方向のスクロール バーを表示するプロパティです。 これにより、ユーザーがコントロールのサイズを越えるテキストをスクロールできます。  
+  
+> [!NOTE]
+>  の既定値、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティは`false`の既定のサイズ、<xref:System.Windows.Forms.TextBox>サイズを変更する場合でも、フォント サイズに従いなります、<xref:System.Windows.Forms.TextBox>です。 一貫性のあるサイズを取得する、<xref:System.Windows.Forms.TextBox>設定、その<xref:System.Windows.Forms.TextBox.Multiline%2A>プロパティを`true`です。  
+  
+> [!NOTE]
+>  日本語のオペレーティング システムで、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティに設定されている`true`、設定、<xref:System.Windows.Forms.TextBox.PasswordChar%2A>プロパティは、パスワードのテキストが表示されます。 このため、日本語のオペレーティング システムで次のように設定します。、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティを`false`設定した場合、<xref:System.Windows.Forms.TextBox.PasswordChar%2A>プロパティです。  
+  
+> [!NOTE]
+>  このプロパティに設定`false`既定ではすべての派生クラスの例外を除いて、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ <xref:System.Windows.Forms.RichTextBox>コントロール、<xref:System.Windows.Forms.RichTextBox.Multiline%2A?displayProperty=nameWithType>プロパティは、コントロールが自動的にサイズ変更、次のように動作しているかどうかに影響します。  
+  
+-   場合<xref:System.Windows.Forms.RichTextBox.AutoSize%2A?displayProperty=nameWithType>に設定されている`true`と<xref:System.Windows.Forms.RichTextBox.Multiline%2A?displayProperty=nameWithType>に設定されている`true`、<xref:System.Windows.Forms.RichTextBox>サイズは自動的に変更されません。  
+  
+-   場合<xref:System.Windows.Forms.RichTextBox.AutoSize%2A?displayProperty=nameWithType>に設定されている`true`と<xref:System.Windows.Forms.RichTextBox.Multiline%2A?displayProperty=nameWithType>に設定されている`false`、<xref:System.Windows.Forms.RichTextBox>は自動的に変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行を作成するためのクラスを派生<xref:System.Windows.Forms.TextBox>垂直スクロール バーを持つコントロール。 またこの例では、 <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>、 <xref:System.Windows.Forms.TextBox.AcceptsReturn%2A>、および<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティを複数行テキスト ボックス コントロールのテキスト ドキュメントを作成するのに役立ちます。  
+  
+ [!code-cpp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultilineChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler MultilineChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MultilineChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.MultilineChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.Multiline" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.MultilineChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.MultilineChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#247](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#247)]
+ [!code-vb[System.Windows.Forms.EventExamples#247](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#247)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAcceptsTabChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnAcceptsTabChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAcceptsTabChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnAcceptsTabChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.TextBoxBase.AcceptsTabChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnAcceptsTabChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnAcceptsTabChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnAcceptsTabChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBorderStyleChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnBorderStyleChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBorderStyleChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnBorderStyleChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.TextBoxBase.BorderStyleChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnBorderStyleChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnBorderStyleChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnBorderStyleChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleDestroyed">
+      <MemberSignature Language="C#" Value="protected override void OnHandleDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnHandleDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHideSelectionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnHideSelectionChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnHideSelectionChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnHideSelectionChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.TextBoxBase.HideSelectionChanged" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnHideSelectionChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnHideSelectionChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnHideSelectionChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnModifiedChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnModifiedChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnModifiedChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnModifiedChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.TextBoxBase.ModifiedChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnModifiedChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnModifiedChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnModifiedChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.MouseEventArgs mevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.MouseEventArgs mevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mevent" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="mevent">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseUp" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMultilineChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnMultilineChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMultilineChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnMultilineChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.TextBoxBase.MultilineChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnMultilineChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnMultilineChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnMultilineChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaddingChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPaddingChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaddingChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnPaddingChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>このクラスでは、このメソッドは無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このメソッドは無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnReadOnlyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnReadOnlyChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnReadOnlyChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnReadOnlyChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.TextBoxBase.ReadOnlyChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.TextBoxBase.OnReadOnlyChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TextBoxBase.OnReadOnlyChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TextBoxBase.OnReadOnlyChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTextChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.OnTextChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.Padding" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PaddingChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaddingChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.PaddingChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.PaintEventHandler Paint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.PaintEventHandler Paint" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.Paint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PaintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが再描画されると発生します。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paste">
+      <MemberSignature Language="C#" Value="public void Paste ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Paste() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Paste" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスに現在選択項目の内容と置き換えます、**クリップボード**です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextBoxBase.Paste%2A>方法はのみにコピーするテキスト コントロールにテキストが格納されている場合、**クリップボード**です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">読み取るのために、**クリップボード**です。 関連する列挙値:<see langword="AllClipboard" />値<see cref="T:System.Security.Permissions.UIPermissionClipboard" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredHeight">
+      <MemberSignature Language="C#" Value="public int PreferredHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PreferredHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.PreferredHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスの適切な高さを取得します。</summary>
+        <value>テキスト ボックスの適切な高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるサイズは、テキスト ボックスのフォントの高さと境界線のスタイルに基づきます。 コントロールにテキストが正しく表示されていることを確認するのにテキスト ボックスの適切なサイズを調べるには、このプロパティを使用することができます。 このプロパティによって返される値は、(ピクセル単位) です。  
+  
+ 値<xref:System.Windows.Forms.TextBoxBase.PreferredHeight%2A>上部または下部のテキストをクリッピングせずに 1 行のテキストを表示するために、テキスト ボックスがあります。 最小の高さを表します。 この値は、同じかどうか、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティに設定されている`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCmdKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessCmdKey (ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessCmdKey(valuetype System.Windows.Forms.Message&amp; msg, valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">A<see cref="T:System.Windows.Forms.Message" />を処理するウィンドウ メッセージを表す、参照によって渡されます。</param>
+        <param name="keyData">1 つ、<see cref="T:System.Windows.Forms.Keys" />を処理するショートカット キーを表す値です。</param>
+        <summary>コマンド キーを処理します。</summary>
+        <returns>
+          <see langword="true" />コマンド キーがコントロールによって処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessDialogKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessDialogKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessDialogKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.ProcessDialogKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">処理するキーを表す <see cref="T:System.Windows.Forms.Keys" /> 値の 1 つ。</param>
+        <summary>ダイアログ キーを処理します。</summary>
+        <returns>
+          キーがコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックス内のテキストは読み取り専用であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テキスト ボックスは読み取り専用です。 場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`、実行時にユーザーがコントロールの内容を変更することはできません。 このプロパティ設定して`true`の値を設定することができます、<xref:System.Windows.Forms.TextBoxBase.Text%2A>コード内のプロパティです。 コントロールを無効にするのではなく、この機能を使用することができます、<xref:System.Windows.Forms.Control.Enabled%2A>をコピーする内容を有効にするプロパティおよびに表示されるツールヒント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnlyChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ReadOnlyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ReadOnlyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TextBoxBase.ReadOnlyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TextBoxBase.ReadOnly" /> プロパティの値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TextBoxBase.ReadOnlyChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TextBoxBase>、ように、<xref:System.Windows.Forms.TextBox>または<xref:System.Windows.Forms.TextBoxBase>です。 インスタンスを名前`TextBoxBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TextBoxBase.ReadOnlyChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#248](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#248)]
+ [!code-vb[System.Windows.Forms.EventExamples#248](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#248)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToCaret">
+      <MemberSignature Language="C#" Value="public void ScrollToCaret ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToCaret() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.ScrollToCaret" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの内容を現在のキャレット位置までスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、コントロールの表示領域内のキャレットになるまで、コントロールの内容をスクロールすることができます。 キャレットは、コントロールの表示領域の下にある場合、<xref:System.Windows.Forms.TextBoxBase.ScrollToCaret%2A>メソッドは、カーソルが、コントロールの下部に表示されるまで、コントロールのコンテンツがスクロールします。 コントロールの表示領域の上、キャレットを配置すると場合、このメソッドは、カーソルが、コントロールの上部に表示されるまで、コントロールの内容をスクロールします。 複数行テキスト ボックスにこのメソッドを使用するには、現在のテキストのエントリ ポイントが、コントロールの表示領域内にあることを確認します。  
+  
+> [!NOTE]
+>  コントロールにフォーカスがない場合、またはカレットがコントロールの表示領域に既に配置されている場合は、このメソッドを指定しても効果はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Keys>列挙と<xref:System.Windows.Forms.TextBoxBase.ScrollToCaret%2A>ENTER キーが押された後に、カレット、によって表される、テキスト挿入ポイントの画面に表示が常にされることを確認するメソッド。 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.TextBox>と呼ばれるコントロール`TextBox1`と<xref:System.Windows.Forms.RichTextBox>と呼ばれるコントロール`RichTextBox1`です。 この例では、イベント処理メソッドに関連付けられている必要があります、<xref:System.Windows.Forms.Control.KeyDown>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxBaseScrolling#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.TextBoxBaseScrolling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.TextBoxBaseScrolling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxBaseScrolling/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select (int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select(int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Select(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="start">テキスト ボックス内で現在選択されているテキストの最初の文字の位置。</param>
+        <param name="length">選択する文字数。</param>
+        <summary>テキスト ボックスでテキストの範囲を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのテキストの最初の文字を開始位置を設定する場合は、設定、`start`パラメーターを 0 にします。 このメソッドを使用するには、タイミングなどのテキストの部分文字列を選択するコントロールのテキストの検索と情報を交換します。  
+  
+> [!NOTE]
+>  設定して、テキスト ボックス内でカレットを移動することができますプログラムによって、`start`パラメーター カレットを移動し、設定するテキスト ボックス内の位置を`length`パラメーターにゼロ (0) の値。 テキスト ボックスで、カレットを移動するためにフォーカスが必要です。  
+  
+> [!NOTE]
+>  このメソッドはパラメーターを使用せず、代わりの方法が使用されます。 この代替メソッドが継承、<xref:System.Windows.Forms.Control>クラスです。 呼び出されると、そのコントロールに入力フォーカスを設定し、コントロールの内容を選択します。 詳細については、<xref:System.Windows.Forms.Control.Select%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラスのインスタンス"について fox"という単語のコントロールの内容を検索します。 かどうか、コードの単語を選択を使用して、コントロール、<xref:System.Windows.Forms.TextBoxBase.Select%2A>メソッドです。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という`textBox1`が作成されて、その<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティには「The quick brown fox 移動することで」という文が含まれています。  
+  
+ [!code-cpp[Classic TextBoxBase.Select Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.Select Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.Select Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.Select Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.Select Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.Select Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="start" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAll">
+      <MemberSignature Language="C#" Value="public void SelectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.SelectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスのすべてのテキストを選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、コントロール内のすべてのテキストを選択することができます。 組み合わせてこのメソッドを使用することができます、<xref:System.Windows.Forms.TextBoxBase.Cut%2A>メソッドで、テキストをコントロールでは、コントロールの内容全体をコピーして貼り付けることを選択する必要があります、**クリップボード**です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、任意のテキストがコントロールで選択されているかどうかを決定する、クラスを派生します。 呼び出しが行われたテキストが選択されていない場合、<xref:System.Windows.Forms.TextBoxBase.SelectAll%2A>メソッドにコントロールの内容をコピーする前に、**クリップボード**です。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>が作成された名前付き`textBox1`します。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectAll Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectAll Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectAll Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectAll Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectAll Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectAll Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedText">
+      <MemberSignature Language="C#" Value="public virtual string SelectedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.SelectedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールで現在選択されているテキストを示す値を取得または設定します。</summary>
+        <value>テキスト ボックスで現在選択されているテキストを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト ボックスで現在選択されているテキストを変更するには、このプロパティにテキストを割り当てることができます。 テキストが選択されていない場合、テキスト ボックスに、このプロパティは、長さ 0 の文字列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectedText Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectedText Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectedText Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectedText Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectedText Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectedText Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionLength">
+      <MemberSignature Language="C#" Value="public virtual int SelectionLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.SelectionLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスで選択されている文字の数を設定します。</summary>
+        <value>テキスト ボックスで選択されている文字の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、かどうか任意の文字は現在選択されているテキスト ボックス コントロールで選択したテキストの操作を実行する前に確認します。 ときの値、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>の値、コントロールのテキスト内で文字数よりも大きい値に設定されて、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティの値を減算コントロール内のテキストの全体の長さに設定されて、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>プロパティ (の任意の値が指定されている場合、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>プロパティ)。  
+  
+> [!NOTE]
+>  設定して、テキスト ボックス内でカレットを移動することができますプログラムによって、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>カレットを移動し、設定をテキスト ボックス内の位置に、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティをゼロ (0) の値にします。 テキスト ボックスで、カレットを移動するためにフォーカスが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStart">
+      <MemberSignature Language="C#" Value="public int SelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.SelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスで選択したテキストの開始位置を設定します。</summary>
+        <value>テキスト ボックスで選択したテキストの開始位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのテキストが選択されていない場合、このプロパティは、カーソル、または新しいテキスト用のキャレットを示します。 コントロール内のテキストの長さを超えた位置にこのプロパティを設定すると、選択の開始位置は最後の文字の後に配置されます。 テキスト ボックス コントロールでテキストを選択すると、このプロパティを変更する可能性があります値を小さくの<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティです。 位置の後にコントロール内の残りのテキストが示される場合、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>プロパティは、の値より小さい、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティ、値の<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティは自動的に小さきます。 値、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>の増加が、プロパティ、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティです。  
+  
+ 設定して、テキスト ボックス内で選択範囲を移動することができますプログラムによって、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>と<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティです。  
+  
+ 設定して、テキスト ボックス内でカレットを移動することができますプログラムによって、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>カレットを移動し、設定をテキスト ボックス内の位置に、<xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A>プロパティをゼロ (0) の値にします。  
+  
+ <xref:System.Windows.Forms.TextBox>選択またはカレットを移動する順序にフォーカスがある必要があります。 設定することができます、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>つまり<xref:System.Windows.Forms.TextBoxBase.ReadOnly%2A>を付けることにより、<xref:System.Windows.Forms.Control.Focus%2A>最初。  
+  
+   
+  
+## Examples  
+ **例 1**  
+  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ **例 2**  
+  
+ 次の例のセット、<xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>つまり<xref:System.Windows.Forms.TextBoxBase.ReadOnly%2A>を付けることにより、<xref:System.Windows.Forms.Control.Focus%2A>最初。  
+  
+ [!code-csharp[SystemWindowsFormsTextBoxBase#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemWindowsFormsTextBoxBase/CS/Form1.cs#1)]
+ [!code-vb[SystemWindowsFormsTextBoxBase#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemWindowsFormsTextBoxBase/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBoundsCore">
+      <MemberSignature Language="C#" Value="protected override void SetBoundsCore (int x, int y, int width, int height, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetBoundsCore(int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="x">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Left" /> プロパティ値。</param>
+        <param name="y">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Top" /> プロパティ値。</param>
+        <param name="width">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Width" /> プロパティ値。</param>
+        <param name="height">使用しません。</param>
+        <param name="specified"><see cref="T:System.Windows.Forms.BoundsSpecified" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定した境界を設定、<see cref="T:System.Windows.Forms.TextBoxBase" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextBoxBase>コントロール、<xref:System.Windows.Forms.TextBoxBase.PreferredHeight%2A>場合は、境界を設定するプロパティ、<xref:System.Windows.Forms.TextBoxBase.AutoSize%2A>プロパティは`true`と<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティは`false`します。  
+  
+ 含まれていない境界に対応するパラメーター、通常、`specified`パラメーターは、その現在の値で渡されます。 たとえば、 <xref:System.Windows.Forms.Control.Height%2A>、 <xref:System.Windows.Forms.Control.Width%2A>、または<xref:System.Drawing.Point.X%2A>または<xref:System.Drawing.Point.Y%2A>のプロパティ、<xref:System.Windows.Forms.Control.Location%2A>プロパティは、コントロールの現在のインスタンスへの参照で渡すことができます。 ただしで渡されるすべての値が受け入れられ、コントロールに適用します。  
+  
+ `specified`パラメーターは、コントロールの要素を表す<xref:System.Windows.Forms.Control.Bounds%2A>アプリケーションによって変更します。 たとえば、変更する場合、 <xref:System.Windows.Forms.Control.Size%2A> 、コントロールの`specified`パラメーター値が、`Size`の値<xref:System.Windows.Forms.BoundsSpecified>です。 ただし場合、<xref:System.Windows.Forms.Control.Size%2A>への応答の調整、<xref:System.Windows.Forms.Control.Dock%2A>プロパティが設定されている、`specified`パラメーター値が、`None`の値<xref:System.Windows.Forms.BoundsSpecified>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.TextBoxBase.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.TextBoxBase.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />を変更するコントロールの境界を強制する方法です。 派生クラスがサイズ制限を追加、<see cref="M:System.Windows.Forms.TextBoxBase.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortcutsEnabled">
+      <MemberSignature Language="C#" Value="public virtual bool ShortcutsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShortcutsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.ShortcutsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義されたショートカットを有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ショートカットを有効にするにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.TextBoxBase.ShortcutsEnabled%2A>プロパティを有効にするにまたは、次のショートカット キーの組み合わせとコントロールのショートカット メニューを無効にします。  
+  
+-   Ctrl + Z  
+  
+-   Ctrl + E  
+  
+-   Ctrl + C  
+  
+-   Ctrl + Y  
+  
+-   Ctrl + X  
+  
+-   Ctrl + BackSpace  
+  
+-   Ctrl + V  
+  
+-   Ctrl + Del  
+  
+-   Ctrl + A  
+  
+-   SHIFT キーを押しながら DEL キーを押す  
+  
+-   Ctrl + L  
+  
+-   SHIFT キーを押しながら挿入  
+  
+-   Ctrl + R  
+  
+ その他のショートカット キーを指定するには、このプロパティをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスに、現在のテキストを設定します。</summary>
+        <value>コントロール内に表示するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト ボックスに複数行のテキストを表示するには、設定、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティを`true`です。 読み取りや複数行テキスト ボックスのテキストを設定を使用して、<xref:System.Windows.Forms.TextBoxBase.Lines%2A>プロパティです。 入力できるテキストの量、<xref:System.Windows.Forms.RichTextBox>コントロールが使用可能なシステム メモリによってのみ制限されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行を作成するためのクラスを派生<xref:System.Windows.Forms.TextBox>垂直スクロール バーを持つコントロール。 またこの例では、 <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>、 <xref:System.Windows.Forms.TextBox.AcceptsReturn%2A>、および<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティを複数行テキスト ボックス コントロールのテキスト ドキュメントを作成するのに役立ちます。  
+  
+ [!code-cpp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextLength">
+      <MemberSignature Language="C#" Value="public virtual int TextLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TextLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.TextLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのテキストの長さを取得します。</summary>
+        <value>コントロールのテキストに格納されている文字数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字の合計数の知識が必要なコントロールのテキスト内のテキストの特定の文字列の検索などのタスクの文字列の文字数を調べて、このプロパティを使用することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TextBoxBase.AppendText%2A>メソッドおよび<xref:System.Windows.Forms.TextBoxBase.TextLength%2A>プロパティを 1 つからテキストをコピー<xref:System.Windows.Forms.TextBox>別にします。 この例には、その 2 つが必要があります<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`と`textBox2`、フォームに追加されて`textBox1`に割り当てられているテキストが含まれて、<xref:System.Windows.Forms.Control.Text%2A>プロパティです。  
+  
+ [!code-cpp[TextBoxBase.AppendText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TextBoxBase.AppendText/CPP/form1.cpp#1)]
+ [!code-csharp[TextBoxBase.AppendText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TextBoxBase.AppendText/CS/form1.cs#1)]
+ [!code-vb[TextBoxBase.AppendText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TextBoxBase.AppendText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TextBoxBase" /> コントロールを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.TextBoxBase" /> を表す文字列。 コントロールの種類と <see cref="T:System.Windows.Forms.TextBoxBase" /> プロパティを格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undo">
+      <MemberSignature Language="C#" Value="public void Undo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Undo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.Undo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスで直前に実行された編集操作を元に戻します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、最後は元に戻します**クリップボード**テキストを変更する場合は、テキスト ボックス コントロールで実行される操作または、<xref:System.Windows.Forms.TextBoxBase.CanUndo%2A>プロパティから返される`true`です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextBoxBase.Undo%2A>メソッドでは機能しません、<xref:System.Windows.Forms.Control.KeyPress>または<xref:System.Windows.Forms.Control.TextChanged>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、派生クラス。 提供<xref:System.Windows.Forms.MenuItem.Click>のイベント ハンドラー<xref:System.Windows.Forms.MenuItem>切り取り、コピー、貼り付け、および元に戻す操作を実行したオブジェクト。 この例では、する必要があります、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.SelectionLength Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.SelectionLength Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxBase.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordWrap">
+      <MemberSignature Language="C#" Value="public bool WordWrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WordWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxBase.WordWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行テキスト ボックス コントロールは、自動的に、必要な場合に、次の行の先頭に折り返さがあるかどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合は、複数行テキスト ボックス コントロールが折り返されるです。<see langword="false" />テキスト ボックス コントロールに自動的に水平方向にスクロール過去のコントロールの右端と入力します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、無関係に水平スクロール バーは表示されません、<xref:System.Windows.Forms.TextBox.ScrollBars%2A>プロパティの設定。  
+  
+> [!NOTE]
+>  派生クラスで<xref:System.Windows.Forms.TextBox>、しない限り、このプロパティのプロパティの設定に関係なくコントロール内のテキストを折り返す常には、<xref:System.Windows.Forms.TextBox.TextAlign%2A>プロパティに設定されている`HorizontalAlignment.Left`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.TextBox>、複数行を作成するためのクラスを派生<xref:System.Windows.Forms.TextBox>垂直スクロール バーを持つコントロール。 またこの例では、 <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A>、 <xref:System.Windows.Forms.TextBox.AcceptsReturn%2A>、および<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティを複数行テキスト ボックス コントロールのテキスト ドキュメントを作成するのに役立ちます。  
+  
+ [!code-cpp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/CS/source.cs#1)]
+ [!code-vb[Classic TextBoxBase.AcceptsTab Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TextBoxBase.AcceptsTab Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

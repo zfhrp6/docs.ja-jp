@@ -1,0 +1,176 @@
+<Type Name="MemoryFailPoint" FullName="System.Runtime.MemoryFailPoint">
+  <TypeSignature Language="C#" Value="public sealed class MemoryFailPoint : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MemoryFailPoint extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.MemoryFailPoint" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.ConstrainedExecution.CriticalFinalizerObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>操作の実行前に十分なメモリ リソースがあることを確認します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このクラスは高度な開発で使用するものです。  
+  
+ インスタンスを作成する、<xref:System.Runtime.MemoryFailPoint>クラスは、メモリ ゲートを作成します。 メモリ ゲートは、大量のメモリを必要とするアクティビティを開始する前に、十分なリソースを確認します。 チェックに失敗した結果、<xref:System.InsufficientMemoryException>例外がスローされます。 この例外は、開始してから、操作を防止して、リソース不足の原因のエラーの可能性を低減できます。 この使用を回避するのにパフォーマンスが低下する、<xref:System.OutOfMemoryException>例外と、コード内の任意の場所に、例外の不適切な処理からにつながる可能性のある状態の破損。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ スローすることによって、<xref:System.InsufficientMemoryException>の例外を除き、アプリケーションを区別できるとアプリケーションの状態が破損した可能性のある部分的に完了した操作の推定値を操作を完了することにすることはできません。 これにより、アプリケーションが現在をアンロードする必要があります、ペシミスティック エスカレーションのポリシーの頻度を減らす<xref:System.AppDomain>やプロセスのリサイクルします。  
+  
+ <xref:System.Runtime.MemoryFailPoint>確認するかどうかと連続する仮想アドレス空間のための十分なメモリ ヒープですべてのガベージ コレクションで使用可能なし、スワップ ファイルのサイズを増やすことがあります。  <xref:System.Runtime.MemoryFailPoint>ゲートでは、呼び出し元の有効期間中にメモリの長期的な可用性に関する保証常には使用できません、<xref:System.Runtime.MemoryFailPoint.Dispose%2A>にリソースが関連付けられていることを確認するメソッド<xref:System.Runtime.MemoryFailPoint>解放されます。  
+  
+ 作成する必要があります、メモリ ゲートを使用する、<xref:System.Runtime.MemoryFailPoint>オブジェクトおよびメモリのメガバイト (MB) の数を指定を使用する次の操作が想定されます。 十分なメモリが使用できない場合、<xref:System.InsufficientMemoryException>例外がスローされます。  
+  
+ コンス トラクターのパラメーターは正の整数である必要があります。 負の値を生成、<xref:System.ArgumentOutOfRangeException>例外。  
+  
+ <xref:System.Runtime.MemoryFailPoint>16 MB の粒度で動作します。 16 MB より小さい値は 16 MB で、として処理され、その他の値は次に最大 16 MB の倍数として扱われます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.MemoryFailPoint>破損の方法でメモリの不足を防ぐためにそれ自体を遅くアプリケーションを有効にします。  これは、構文のスコープ内で使用する必要があります。  次の例では、ワーク キュー内の項目を処理するスレッドが起動します。  使用して、使用可能なメモリ リソースをチェックする各スレッドを起動する前に<xref:System.Runtime.MemoryFailPoint>です。  例外がスローされた場合、メインのメソッドは、次のスレッドを起動する前にメモリがあるまでを待ちます。  
+  
+ [!code-csharp[MemoryFailPoint#1](~/samples/snippets/csharp/VS_Snippets_CLR/MemoryFailPoint/CS/program.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。 セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryFailPoint (int sizeInMegabytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 sizeInMegabytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sizeInMegabytes" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sizeInMegabytes">必要なメモリ サイズ (単位は MB)。 必ず正の値を指定します。</param>
+        <summary>正常に実行するために必要なメモリの量を指定して、<see cref="T:System.Runtime.MemoryFailPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作業項目を処理して、アプリケーションによって使用されるメモリの量が経験的に決定できます。  アプリケーションが要求を処理する必要があるメモリの量を推定するには、使用を検討して、<xref:System.GC.GetTotalMemory%2A?displayProperty=nameWithType>メソッドを作業項目を処理するメソッドの呼び出しの前後の前に使用できるメモリの量を決定します。 参照してください、<xref:System.Runtime.MemoryFailPoint>クラスの値を動的に決定するコード例については、`sizeInMegabytes`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、実行時に、メソッドが必要とするメモリの量を決定する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.MemoryFailPoint>クラスです。  
+  
+ [!code-csharp[MemoryFailPoint#2](~/samples/snippets/csharp/VS_Snippets_CLR/MemoryFailPoint/CS/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したモリ サイズは負の値です。</exception>
+        <exception cref="T:System.InsufficientMemoryException">ゲートによって保護されているコードの実行を開始する十分なメモリがあります。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.MemoryFailPoint" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.MemoryFailPoint.Dispose%2A> を使い終わったら <xref:System.Runtime.MemoryFailPoint> を呼び出します。 <xref:System.Runtime.MemoryFailPoint.Dispose%2A> メソッドによって、<xref:System.Runtime.MemoryFailPoint> は使用不可の状態になります。 呼び出した後<xref:System.Runtime.MemoryFailPoint>へのすべての参照を解放する必要があります、<xref:System.Runtime.MemoryFailPoint>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Runtime.MemoryFailPoint>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Runtime.MemoryFailPoint.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Runtime.MemoryFailPoint> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Runtime.MemoryFailPoint> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~MemoryFailPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクターが <see cref="T:System.Runtime.MemoryFailPoint" /> を再利用しているときに、リソースが解放され、他のクリーンアップ操作が確実に実行されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクターの呼び出し、<xref:System.Runtime.MemoryFailPoint.Finalize%2A>メソッド、現在のオブジェクトが完了する準備ができたとき。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

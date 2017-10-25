@@ -1,0 +1,290 @@
+<Type Name="ModelMethodContext" FullName="System.Web.UI.WebControls.ModelMethodContext">
+  <TypeSignature Language="C#" Value="public class ModelMethodContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModelMethodContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ModelMethodContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>呼び出しに使用された、<see cref="M:System.Web.UI.Page.UpdateModel``1(``0)" />または<see cref="M:System.Web.UI.Page.TryUpdateModel``1(``0)" />メソッドと、<see cref="T:System.Web.UI.Page" />オブジェクトは直接アクセスすることはありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、カスタム クラスを定義できますによって参照されるメソッド、 `SelectMethod`、 `UpdateMethod`、 `DeleteMethod`、および`InsertMethod`データ バインディング、およびこれらのメソッドのプロパティがこの型のパラメーターを保持し、呼び出しに使用できること、<xref:System.Web.UI.Page.UpdateModel%2A>メソッドです。 メソッドのパラメーターの代わりに、代わりに、<xref:System.Web.UI.WebControls.ModelMethodContext.Current%2A>を呼び出すメソッド内でプロパティを使用することができます、<xref:System.Web.UI.Page.UpdateModel%2A>メソッドです。  
+  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelMethodContext (System.Web.UI.Page page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Page page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ModelMethodContext.#ctor(System.Web.UI.Page)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+      </Parameters>
+      <Docs>
+        <param name="page">ページ オブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ModelMethodContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="page" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.ModelMethodContext Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.WebControls.ModelMethodContext Current" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ModelMethodContext.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ModelMethodContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.ModelMethodContext" />オブジェクトに対応する、<see cref="T:System.Web.UI.Page" />内のオブジェクト、<see cref="P:System.Web.HttpContext.Current" />プロパティです。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ModelMethodContext" />オブジェクト。 または<see langword="null" />のページに現在の要求がない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelState">
+      <MemberSignature Language="C#" Value="public System.Web.ModelBinding.ModelStateDictionary ModelState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelStateDictionary ModelState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ModelMethodContext.ModelState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelStateDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの状態を取得します。</summary>
+        <value>モデルの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TryUpdateModel&lt;TModel&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TryUpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool TryUpdateModel&lt;TModel&gt; (TModel model) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryUpdateModel&lt;class TModel&gt;(!!TModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ModelMethodContext.TryUpdateModel``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデルの型。</typeparam>
+        <param name="model">モデル。</param>
+        <summary>値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <returns>
+          <see langword="true" />モデル バインディングが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryUpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool TryUpdateModel&lt;TModel&gt; (TModel model, System.Web.ModelBinding.IValueProvider valueProvider) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryUpdateModel&lt;class TModel&gt;(!!TModel model, class System.Web.ModelBinding.IValueProvider valueProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ModelMethodContext.TryUpdateModel``1(``0,System.Web.ModelBinding.IValueProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+        <Parameter Name="valueProvider" Type="System.Web.ModelBinding.IValueProvider" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデルの型。</typeparam>
+        <param name="model">モデル。</param>
+        <param name="valueProvider">値プロバイダー。</param>
+        <summary>指定された値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <returns>
+          <see langword="true" />モデル バインディングが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="UpdateModel&lt;TModel&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="UpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual void UpdateModel&lt;TModel&gt; (TModel model) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateModel&lt;class TModel&gt;(!!TModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ModelMethodContext.UpdateModel``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデルの型。</typeparam>
+        <param name="model">モデル。</param>
+        <summary>値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateModel&lt;TModel&gt;">
+      <MemberSignature Language="C#" Value="public virtual void UpdateModel&lt;TModel&gt; (TModel model, System.Web.ModelBinding.IValueProvider valueProvider) where TModel : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateModel&lt;class TModel&gt;(!!TModel model, class System.Web.ModelBinding.IValueProvider valueProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ModelMethodContext.UpdateModel``1(``0,System.Web.ModelBinding.IValueProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TModel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="model" Type="TModel" />
+        <Parameter Name="valueProvider" Type="System.Web.ModelBinding.IValueProvider" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TModel">モデルの型。</typeparam>
+        <param name="model">モデル。</param>
+        <param name="valueProvider">値プロバイダー。</param>
+        <summary>指定された値プロバイダー内の値を使用して、指定されたモデル インスタンスを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

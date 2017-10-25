@@ -1,0 +1,179 @@
+<Type Name="EventTypeFilter" FullName="System.Diagnostics.EventTypeFilter">
+  <TypeSignature Language="C#" Value="public class EventTypeFilter : System.Diagnostics.TraceFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventTypeFilter extends System.Diagnostics.TraceFilter" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventTypeFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceFilter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>示す、イベントの種類に基づいているかどうか、リスナーをトレースする必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターのさまざまな種類の 1 つでのトレース リスナーに割り当てることが、<xref:System.Diagnostics.TraceListener.Filter%2A>プロパティによって提供される範囲を超えてスクリーン処理のレイヤーを提供する、<xref:System.Diagnostics.TraceSwitch>です。 リスナーによって生成されるイベントの種類を制御するフィルターを使用できます。  
+  
+ このクラスの値に基づいてイベントをフィルター処理する、<xref:System.Diagnostics.EventTypeFilter.EventType%2A>プロパティです。  このプロパティは、リスナーをトレースするかメッセージのイベントの種類を指定するコードまたは構成ファイルで設定できます。 プロパティの値では、トレースを開始位置を示すしきい値を示します。 指定されたレベル以上のイベントの種類は追跡されます。 <xref:System.Diagnostics.TraceFilter.ShouldTrace%2A>かどうかは、イベントをトレースするかを判断するためのリスナーによって呼び出されたメソッドの値を使用して、<xref:System.Diagnostics.EventTypeFilter.EventType%2A>プロパティです。  
+  
+ イベントの設定に開始する位置の型は、アプリケーションの名前に対応する構成ファイルを編集トレースでは。 このファイル内で、リスナーを追加、そのフィルターの種類を設定してトレースするイベントの種類を指定します。 構成ファイルは、次のようにフォーマットされている必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <sharedListeners>  
+      <add name="Console" type="System.Diagnostics.ConsoleTraceListener">  
+        <filter type="System.Diagnostics.EventTypeFilter"   
+          initializeData="Warning" />  
+      </add>  
+    </sharedListeners>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ データを初期化する方法について、<xref:System.Diagnostics.EventTypeFilter>を参照してください[&lt;フィルター&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-sharedlisteners.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventTypeFilter (System.Diagnostics.SourceLevels level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Diagnostics.SourceLevels level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventTypeFilter.#ctor(System.Diagnostics.SourceLevels)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="level" Type="System.Diagnostics.SourceLevels" />
+      </Parameters>
+      <Docs>
+        <param name="level">ビットごとの組み合わせ、<see cref="T:System.Diagnostics.SourceLevels" />トレースへのメッセージのイベントの種類を指定する値。</param>
+        <summary><see cref="T:System.Diagnostics.EventTypeFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`level`パラメーターは初期化するために使用、<xref:System.Diagnostics.EventTypeFilter.EventType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.SourceLevels EventType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.SourceLevels EventType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventTypeFilter.EventType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.SourceLevels</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトレース メッセージのイベントの種類を設定します。</summary>
+        <value><see cref="T:System.Diagnostics.SourceLevels" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventTypeFilter.EventType%2A>プロパティは、トレース レベルを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldTrace">
+      <MemberSignature Language="C#" Value="public override bool ShouldTrace (System.Diagnostics.TraceEventCache cache, string source, System.Diagnostics.TraceEventType eventType, int id, string formatOrMessage, object[] args, object data1, object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ShouldTrace(class System.Diagnostics.TraceEventCache cache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string formatOrMessage, object[] args, object data1, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventTypeFilter.ShouldTrace(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[],System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="formatOrMessage" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="data1" Type="System.Object" />
+        <Parameter Name="data" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="cache">A<see cref="T:System.Diagnostics.TraceEventCache" />を表すトレース イベントの情報キャッシュします。</param>
+        <param name="source">ソースの名前。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">トレースの識別番号。</param>
+        <param name="formatOrMessage">引数、またはメッセージの配列を作成するための書き込みに使用する形式。</param>
+        <param name="args">引数オブジェクトの配列。</param>
+        <param name="data1">トレース データ オブジェクト。</param>
+        <param name="data">トレース データ オブジェクトの配列。</param>
+        <summary>トレース リスナーがイベントをトレースするかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、トレースを作成する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、`eventType`パラメーターがより大きいかの値と等しい、<xref:System.Diagnostics.EventTypeFilter.EventType%2A>プロパティ、メソッドを返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

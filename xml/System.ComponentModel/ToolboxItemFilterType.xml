@@ -1,0 +1,171 @@
+<Type Name="ToolboxItemFilterType" FullName="System.ComponentModel.ToolboxItemFilterType">
+  <TypeSignature Language="C#" Value="public enum ToolboxItemFilterType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolboxItemFilterType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ToolboxItemFilterType" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>フィルターの種類を示すために使用される識別子を定義する、<see cref="T:System.ComponentModel.ToolboxItemFilterAttribute" />を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.ComponentModel.ToolboxItemFilterAttribute>です。  
+  
+ [!code-cpp[IToolboxUserExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IToolboxUserExample/CPP/samplecontrol.cpp#1)]
+ [!code-csharp[IToolboxUserExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IToolboxUserExample/CS/samplecontrol.cs#1)]
+ [!code-vb[IToolboxUserExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IToolboxUserExample/VB/samplecontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Allow">
+      <MemberSignature Language="C#" Value="Allow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.ToolboxItemFilterType Allow = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ToolboxItemFilterType.Allow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ToolboxItemFilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目のフィルター文字列が、許可しますが、必要ないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.ToolboxItemFilterType Custom = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ToolboxItemFilterType.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ToolboxItemFilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム処理がツールボックス項目のフィルター文字列を使用するかどうかを判断するために必要であることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この種類の<xref:System.ComponentModel.ToolboxItemFilterType>は、通常、デザイナーがコードを使用して、ツールボックス アイテムを承認または拒否たいことを示すためにルート デザイナー クラスを指定します。 デザイナーを実装する必要があります、<xref:System.Drawing.Design.IToolboxUser.GetToolSupported%2A>のメソッド、<xref:System.Drawing.Design.IToolboxUser>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.ComponentModel.ToolboxItemFilterAttribute>です。  
+  
+ [!code-cpp[IToolboxUserExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IToolboxUserExample/CPP/samplecontrol.cpp#1)]
+ [!code-csharp[IToolboxUserExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IToolboxUserExample/CS/samplecontrol.cs#1)]
+ [!code-vb[IToolboxUserExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IToolboxUserExample/VB/samplecontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prevent">
+      <MemberSignature Language="C#" Value="Prevent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.ToolboxItemFilterType Prevent = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ToolboxItemFilterType.Prevent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ToolboxItemFilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目のフィルター文字列が使用できないことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、デザイナーとクラスをコンポーネントは、フィルター文字列がある、1 つが、<xref:System.ComponentModel.ToolboxItemFilterType>できないようにするのツールボックス項目は使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Require">
+      <MemberSignature Language="C#" Value="Require" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.ToolboxItemFilterType Require = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.ToolboxItemFilterType.Require" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ToolboxItemFilterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックス項目のフィルター文字列が有効にするツールボックス アイテムの存在する必要がありますを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールボックス項目のフィルターの種類とは、有効にする必要があるため、デザイナーとコンポーネントのクラスが必要に対応するフィルター文字列です。 デザイナーでも、コンポーネント クラスを持つことができます、また、<xref:System.ComponentModel.ToolboxItemFilterType.Require>のツールボックス項目の有効にするようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

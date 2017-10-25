@@ -1,0 +1,308 @@
+<Type Name="EntityPropertyMappingAttribute" FullName="System.Data.Services.Common.EntityPropertyMappingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EntityPropertyMappingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityPropertyMappingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Common.EntityPropertyMappingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WCF Data Services によって返されるフィードのエントリのエンティティ型のプロパティおよび要素をカスタム マッピングを指定する属性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> を使用して、リフレクション プロバイダーのデータ モデルでカスタム フィード マッピングを定義できます。 この属性は、カスタム フィード マッピングがデータ モデル内で定義されていることを示すクラスを生成するためにメタデータが使用される場合にも、生成されたクライアント データ サービス クラスに適用されます。 この情報は、クライアントが作成およびカスタムのフィードをサポートするメッセージを処理できるかどうかを確認する必要があります。 詳細については、次を参照してください。[フィードのカスタマイズ](~/docs/framework/data/wcf/feed-customization-wcf-data-services.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`Order` 型の両方のプロパティが既存のフィード要素にマップされます。 `Product` 型の `Item` プロパティは、別の名前空間のカスタム フィード属性にマップされます。  
+  
+ [!code-csharp[Astoria Custom Feeds#CustomIQueryableFeeds](~/samples/snippets/csharp/VS_Snippets_Misc/astoria custom feeds/cs/orderitems.svc.cs#customiqueryablefeeds)]
+ [!code-vb[Astoria Custom Feeds#CustomIQueryableFeeds](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria custom feeds/vb/orderitems.svc.vb#customiqueryablefeeds)]  
+  
+ 前の例では、URI `http://myservice/OrderItems.svc/Orders(0)?$expand=Items` に次の結果が返されます。  
+  
+ [!code-xml[Astoria Custom Feeds#IQueryableFeedResultInline](~/samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/iqueryablefeedresultinline.xml#iqueryablefeedresultinline)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityPropertyMappingAttribute (string sourcePath, System.Data.Services.Common.SyndicationItemProperty targetSyndicationItem, System.Data.Services.Common.SyndicationTextContentKind targetTextContentKind, bool keepInContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourcePath, valuetype System.Data.Services.Common.SyndicationItemProperty targetSyndicationItem, valuetype System.Data.Services.Common.SyndicationTextContentKind targetTextContentKind, bool keepInContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Common.EntityPropertyMappingAttribute.#ctor(System.String,System.Data.Services.Common.SyndicationItemProperty,System.Data.Services.Common.SyndicationTextContentKind,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourcePath" Type="System.String" />
+        <Parameter Name="targetSyndicationItem" Type="System.Data.Services.Common.SyndicationItemProperty" />
+        <Parameter Name="targetTextContentKind" Type="System.Data.Services.Common.SyndicationTextContentKind" />
+        <Parameter Name="keepInContent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourcePath">フィード項目の指定されたプロパティにマップされるエンティティ型のプロパティ名 (文字列)。</param>
+        <param name="targetSyndicationItem">プロパティをマップするフィード内で要素を表す <see cref="T:System.Data.Services.Common.SyndicationItemProperty" /> 値。 この値に設定する必要があります<c>なし</c>場合、<see cref="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath" />は<see langword="null" />します。</param>
+        <param name="targetTextContentKind">フィード内で表示されるコンテンツの形式を識別する <see cref="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetTextContentKind" /> 値。</param>
+        <param name="keepInContent">ブール値<see langword="true" />のマップ先の場所と、フィードのコンテンツ セクションの両方でマップされているプロパティを表示するときにします。</param>
+        <summary>
+          <see cref="T:System.Data.Services.Common.EntityPropertyMappingAttribute" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityPropertyMappingAttribute (string sourcePath, string targetPath, string targetNamespacePrefix, string targetNamespaceUri, bool keepInContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourcePath, string targetPath, string targetNamespacePrefix, string targetNamespaceUri, bool keepInContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Common.EntityPropertyMappingAttribute.#ctor(System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourcePath" Type="System.String" />
+        <Parameter Name="targetPath" Type="System.String" />
+        <Parameter Name="targetNamespacePrefix" Type="System.String" />
+        <Parameter Name="targetNamespaceUri" Type="System.String" />
+        <Parameter Name="keepInContent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourcePath">フィード内の指定されたプロパティにマップされるエンティティ型のプロパティ名 (文字列)。</param>
+        <param name="targetPath">プロパティのマップ先となる結果のフィードのターゲットの名前 (文字列)。</param>
+        <param name="targetNamespacePrefix">このパラメーターと連携して<c>targetNamespaceUri</c>を名前空間を指定、 <c>targetPath</c>要素が存在します。</param>
+        <param name="targetNamespaceUri">指定された文字列として、名前空間では、要素の URI を指定します、 <c>targetName</c>プロパティです。</param>
+        <param name="keepInContent">ブール値<see langword="true" />のマップ先の場所と、フィードのコンテンツ セクションの両方でマップされているプロパティを表示するときにします。</param>
+        <summary>プロパティをカスタム フィード要素にマップする <see cref="T:System.Data.Services.Common.EntityPropertyMappingAttribute" /> のインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetNamespacePrefix` と `targetNamespaceUri` のどちらも指定しない場合、`targetName` が既定の名前空間に配置されます。 `targetNamespacePrefix` を指定しない場合、プレフィックスが自動生成されます。 `targetNamespacePrefix` が指定されている場合でも、`targetNamespaceUri` が指定されていないと、構築時に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepInContent">
+      <MemberSignature Language="C#" Value="public bool KeepInContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepInContent" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.KeepInContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ値をフィードのコンテンツ セクションおよびマップされた場所の両方で繰り返す必要があるかどうかを示すブール値を取得します。</summary>
+        <value>A<see cref="T:System.Boolean" />値が<see langword="true" />プロパティは、フィードの両方の場所にマップされている、それ以外の場合に<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性値<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.KeepInContent%2A>は`true`、フィードと旧バージョンとの互換性のある[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]プロトコル バージョン 1.0 を使用するクライアント アプリケーション。 ときに、値の<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.KeepInContent%2A>' は`false`、データ サービスによって使用されるプロトコルのバージョンは 2.0 またはそれ以降のバージョンである必要があります。 詳細については、次を参照してください。[データ サービスのバージョン管理](~/docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourcePath">
+      <MemberSignature Language="C#" Value="public string SourcePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourcePath" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィードの指定された要素にマップされる配信項目のプロパティの名前を取得します。</summary>
+        <value>プロパティ名を含む文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、複合型を直接参照できません。 複合型の場合は、プロパティ名が円記号 (`/`) で区切られたパス式を使用する必要があります。 たとえば、整数プロパティ `Person` および複合プロパティ `Age` を含むエンティティ型 `Address` では、以下の値を使用できます。  
+  
+-   `Age`  
+  
+-   `Address/Street`  
+  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、プロパティ名で無効な文字 (スペースなど) を含む値に設定することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNamespacePrefix">
+      <MemberSignature Language="C#" Value="public string TargetNamespacePrefix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetNamespacePrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri" /> と共に <see cref="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath" /> 要素が存在する名前空間を指定する文字列値を取得します。</summary>
+        <value>ターゲットの名前空間プレフィックスを含む文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> と <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri%2A> のどちらも指定しない場合、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A> が既定の名前空間に配置されます。 <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> を指定しない場合、プレフィックスが自動生成されます。 <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> が指定されている場合でも、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri%2A> が指定されていないと、構築時に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNamespaceUri">
+      <MemberSignature Language="C#" Value="public string TargetNamespaceUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetNamespaceUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath" /> プロパティで指定された要素の名前空間 URI を指定する文字列値を取得します。</summary>
+        <value>名前空間 URI を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非配信要素/属性へのマッピングの場合は、このプロパティは、ターゲット要素/属性の名前空間です。  
+  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> と <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri%2A> のどちらも指定しない場合、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A> が既定の名前空間に配置されます。 <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> を指定しない場合、プレフィックスが自動生成されます。 <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> が指定されている場合でも、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri%2A> が指定されていないと、構築時に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPath">
+      <MemberSignature Language="C#" Value="public string TargetPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetPath" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのマップ先のフィードでカスタム ターゲットの名前を取得します。</summary>
+        <value>ターゲットの XML 要素または属性を持つ文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A> プロパティが設定されている場合は、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespaceUri%2A> および <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetNamespacePrefix%2A> プロパティも設定する必要があります。  
+  
+ 値<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A>する必要があります`null`(`Nothing` Visual Basic で) ときの値、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetSyndicationItem%2A>プロパティ以外は何も<xref:System.Data.Services.Common.SyndicationItemProperty.CustomProperty>します。  
+  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A>入れ子になった要素が円記号で区切られたパス式でなければなりません (`/`)、アンパサンド属性が指定されます (`@`)。 次の例では、文字列 `UnitsInStock/@ReorderLevel` によってプロパティ値がルート エントリ要素の `ReorderLevel` という子要素の `UnitsInStock` という属性にマップされます。  
+  
+ [!code-xml[Astoria Custom Feeds#EdmFeedMappedToAttributeSpecific](~/samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedmappedtoattributespecific)]  
+  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A> プロパティに空白を含めることはできません。  
+  
+ <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A> プロパティは、XPath の true 式として表現されませんが、指定された要素と属性の名前は整形式の XML 要素と属性を表す必要があります。 データ サービスが初期化されたときに、無効な値により例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetSyndicationItem">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Common.SyndicationItemProperty TargetSyndicationItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Common.SyndicationItemProperty TargetSyndicationItem" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetSyndicationItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Common.SyndicationItemProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティを取得、<see cref="T:System.ServiceModel.Syndication.SyndicationItem" />クラスです。</summary>
+        <value><see cref="T:System.ServiceModel.Syndication.SyndicationItem" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信要素にマッピングする場合、このプロパティは、配信項目の名前です。  
+  
+ この値に設定する必要があります`None`場合、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetPath%2A>が null でないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetTextContentKind">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Common.SyndicationTextContentKind TargetTextContentKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Common.SyndicationTextContentKind TargetTextContentKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetTextContentKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Common.SyndicationTextContentKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Common.EntityPropertyMappingAttribute" /> によってマップされたプロパティのコンテンツの種類を取得します。</summary>
+        <value>フィード要素内のコンテンツの種類を識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信コンテンツにマッピングする場合、このプロパティは、配信項目のコンテンツの種類です。  
+  
+ <xref:System.Data.Services.Common.SyndicationTextContentKind.xhtml> 属性の値として <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.TargetTextContentKind%2A> を指定する場合、そのプロパティ値に正しい形式の XML が含まれることを確認する必要があります。 データ サービスは、変換を行わずに値を返します。 さらに、返された XML 内の XML 要素のプレフィックスに名前空間 URI、およびマップされたフィード内で定義されたプレフィックスが含まれている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

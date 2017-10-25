@@ -1,0 +1,32 @@
+<Type Name="ActiveDesignSurfaceChangedEventHandler" FullName="System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ActiveDesignSurfaceChangedEventHandler(object sender, ActiveDesignSurfaceChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ActiveDesignSurfaceChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.ComponentModel.Design.DesignSurfaceManager" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs" />。</param>
+    <summary><see cref="E:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurfaceChanged" /> の <see cref="T:System.ComponentModel.Design.DesignSurfaceManager" /> イベントを処理するメソッドを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler>デリゲート、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

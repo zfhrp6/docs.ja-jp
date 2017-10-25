@@ -1,0 +1,144 @@
+<Type Name="ResultPropertyCollection" FullName="System.DirectoryServices.ResultPropertyCollection">
+  <TypeSignature Language="C#" Value="public class ResultPropertyCollection : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResultPropertyCollection extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ResultPropertyCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティを含む、<see cref="T:System.DirectoryServices.SearchResult" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.SearchResult>インスタンスがに似て<xref:System.DirectoryServices.DirectoryEntry>インスタンス。 ある主な相違点、<xref:System.DirectoryServices.DirectoryEntry>情報を取得、Active Directory ドメイン サービス階層から、新しいオブジェクトがアクセスされるたびに一方のデータを<xref:System.DirectoryServices.SearchResult>に表示されています、<xref:System.DirectoryServices.SearchResultCollection>を<xref:System.DirectoryServices.DirectorySearcher>のクエリを返します。 取得しようとする場合、<xref:System.DirectoryServices.SearchResult>した取得用に、クエリが指定されませんでしたプロパティ、プロパティは使用できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ResultPropertyCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">検索するプロパティの名前。</param>
+        <summary>指定した名前を持つプロパティがこのコレクションに属するかどうかを判断します。</summary>
+        <returns>戻り値は<see langword="true" />; このコレクションに指定したプロパティが属している場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.ResultPropertyValueCollection[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.ResultPropertyValueCollection[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ResultPropertyCollection.CopyTo(System.DirectoryServices.ResultPropertyValueCollection[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.DirectoryServices.ResultPropertyValueCollection[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.DirectoryServices.ResultPropertyValueCollection" />をこのコレクションのプロパティを受け取る。</param>
+        <param name="index">プロパティのコピーを開始する位置の 0 から始まる配列インデックス。</param>
+        <summary>プロパティをこのコレクションから、配列の特定のインデックスにある開始位置として、配列にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ResultPropertyValueCollection this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ResultPropertyValueCollection Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ResultPropertyCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ResultPropertyValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するプロパティの名前。</param>
+        <summary>指定した名前が指定されている、このコレクションからプロパティを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ResultPropertyValueCollection" />を持つ、指定した名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# では、このプロパティは <xref:System.DirectoryServices.ResultPropertyValueCollection> クラスのインデクサーです。  
+  
+ JScript では、型によって定義された既定のインデックス付きプロパティを使用することができますが明示的に、自分を定義できません。 ただし、クラスに expando 属性を指定すると、自動的には、型を持つオブジェクトであり、インデックスの種類でインデックス付きプロパティに対して、既定値<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection PropertyNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection PropertyNames" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ResultPropertyCollection.PropertyNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション内のプロパティの名前を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />このコレクション内のプロパティの名前を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ResultPropertyCollection.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション内のプロパティの値を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />このコレクション内のプロパティの値を含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,446 @@
+<Type Name="AnonymousIdentificationSection" FullName="System.Web.Configuration.AnonymousIdentificationSection">
+  <TypeSignature Language="C#" Value="public sealed class AnonymousIdentificationSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AnonymousIdentificationSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.AnonymousIdentificationSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>認証されていないユーザーの匿名 id を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection>クラスでは、プログラムでアクセスして変更することができます、`anonymousIdentification`構成ファイルの要素。  
+  
+ 匿名 id の目的は、割り当てるには、コンピューターとアプリケーション レベルで認証されていないユーザーに一意の id です。 この一意の id は、ユーザーを追跡するために使用できます。 匿名 id このコンテキストで使用されている関係がないすべての Web 要求の発行者の id を持つまたはユーザーに関連するその他のセキュリティ面で単に、追跡目的およびユーザー状態管理の一意の id を割り当てます。  
+  
+ 匿名ユーザーを使用して多くの場合、追跡、`Session`識別子。 このアプローチの主な問題は、識別子と設定するデータを格納するのには、オーバーヘッドの非一意性、`Session`状態の値は、ユーザーに、セッション識別子を割り当てるために行う必要があります。 匿名 id は、認証されていないユーザーはごとに一意の識別子を提供して、識別子を設定するデータを格納するユーザーを必要としない、これらの問題を解決します。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Web.Configuration.AnonymousIdentificationSection>基になる構成ファイルからのオブジェクト。 取得または関連する構成値を設定するには、このオブジェクトを使用します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#2)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousIdentificationSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.AnonymousIdentificationSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.AnonymousIdentificationSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.AnonymousIdentificationSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookieless">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookieMode Cookieless { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.HttpCookieMode Cookieless" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.Cookieless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieless", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie を使用するかどうかを示す値を設定します。</summary>
+        <value><see cref="T:System.Web.HttpCookieMode" /> 値のいずれか。 既定値は <see cref="F:System.Web.HttpCookieMode.UseDeviceProfile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.Cookieless%2A>プロパティは、ユーザーに関する情報を維持するために、cookie を使用すべき状況を定義します。  
+  
+ ときに、<xref:System.Web.Configuration.AnonymousIdentificationSection.Cookieless%2A>プロパティに設定されている<xref:System.Web.HttpCookieMode.UseCookies>cookie にユーザーの識別子を保存します。 詳細については、「<xref:System.Web.HttpCookieMode>」を参照してください。  
+  
+> [!NOTE]
+>  ASP.NET URI パス内のユーザーの匿名識別子を格納する (つまり、実行 cookie なしのモードで) 場合、<xref:System.Web.Configuration.AnonymousIdentificationSection.Cookieless%2A>プロパティは、次の値のいずれかに設定:<xref:System.Web.HttpCookieMode.UseUri>です。<xref:System.Web.HttpCookieMode.UseDeviceProfile> browser のプロファイルは、cookie がサポートされていないことです。 示されている場合または<xref:System.Web.HttpCookieMode.AutoDetect>自動検出プロセスと判断したとき、ブラウザーが cookie をサポートしていません。 最後に、URI と匿名 id のサイズは、許容される長さを超えている場合、匿名の id は適用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.Configuration.AnonymousIdentificationSection.Cookieless%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#3)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieName">
+      <MemberSignature Language="C#" Value="public string CookieName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookieName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookieName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie の名前を設定します。</summary>
+        <value>Cookie の名前。 既定値は"です。ASPXANONYMOUS"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookieName%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#4)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiePath">
+      <MemberSignature Language="C#" Value="public string CookiePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookiePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookiePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookiePath", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクッキーを格納する場所のパスを設定します。</summary>
+        <value>ユーザーの匿名 id を使用する HTTP クッキーのパス。 既定値は、スラッシュ (/)、Web アプリケーションのルートを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookiePath%2A>プロパティは、認証 cookie が存在し、認証 cookie 自体と共に送信されることを示します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookiePath%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#5)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieProtection">
+      <MemberSignature Language="C#" Value="public System.Web.Security.CookieProtection CookieProtection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.CookieProtection CookieProtection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookieProtection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieProtection", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.CookieProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie の暗号化に使用される暗号化の種類を設定します。</summary>
+        <value><see cref="T:System.Web.Security.CookieProtection" /> 値のいずれか。 既定値は <see cref="F:System.Web.Security.CookieProtection.All" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cookie の保護を向上させることができますも設定、<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieRequireSSL%2A>プロパティを`true`です。  
+  
+ 両方のデータの検証と cookie を保護するために暗号化する場合、このプロパティに既定値を使用することを確認します。 このオプションは、要素に基づいて、構成済みのデータ検証アルゴリズムを使用します。 TRIPLE-DES (3 des) が使用の暗号化、使用可能な場合、キーが十分に長い (48 バイト以上)。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookieProtection%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#6)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieRequireSSL">
+      <MemberSignature Language="C#" Value="public bool CookieRequireSSL { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CookieRequireSSL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookieRequireSSL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieRequireSSL", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証情報を送信するときに Secure Sockets Layer (SSL) 接続が必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SSL 接続が必要な場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieRequireSSL%2A>は`true`、SSL を介して接続される場合を除き、準拠しているブラウザーは cookie を返しません。  
+  
+> [!NOTE]
+>  匿名の id が、cookie ではなく、URI のパス内に格納されている場合、<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieRequireSSL%2A>設定では、匿名 id のモジュールの動作には影響しません。 これは、フォーム認証の動作と一致します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookieRequireSSL%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#7)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieSlidingExpiration">
+      <MemberSignature Language="C#" Value="public bool CookieSlidingExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CookieSlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookieSlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieSlidingExpiration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求ごとに cookie のタイムアウト値をリセットするかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />スライド式有効期限が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieSlidingExpiration%2A>に設定されている`true`、cookie が有効である時間間隔を 1 つのセッション中に発行される各要求で指定された時間にリセット for、<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieTimeout%2A>プロパティです。 ときに<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieSlidingExpiration%2A>に設定されている`false`cookie の有効期限は特定の時点に時刻。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookieSlidingExpiration%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#8)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan CookieTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CookieTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.CookieTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanMinutesOrInfiniteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または分単位で認証が期限切れになるまで、時間を設定します。</summary>
+        <value>時間 (分)、認証の有効期限が切れるまでの量。 既定値は、100000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の大きさの値には内部的には、このプロパティを設定することができます、<xref:System.Web.Configuration.AnonymousIdentificationSection.CookieTimeout%2A>値 2 年間の最大値に制限されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.CookieTimeout%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#9)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("domain")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie ドメインを設定します。</summary>
+        <value>Cookie のドメインの名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、匿名 id cookie の一般的な DNS 名前空間 (たとえば、すべてのサイト"contoso.com"で終わる) を持つドメイン間で共有を使用します。 次の要件は、匿名 id の cookie を共有するために満たす必要があります。  
+  
+-   Cookie を共有するサイトでは、共通の暗号化と検証キーがある必要があります。  
+  
+-   Cookie パスなどの他の匿名 id の構成の属性し、cookie の名前は、すべてのサイトと同じである必要があります。  
+  
+ 詳細についてを参照してください、<xref:System.Web.HttpCookie>クラスです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.Domain%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#10)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または匿名 id が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />匿名 id が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.Configuration.AnonymousIdentificationSection.Enabled%2A>に設定されている`true`cookie は、ユーザーの状態情報を管理するために使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.AnonymousIdentificationSection.Enabled%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.AnonymousIdentificationSection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/CS/AnonymousIdentificationSection.cs#11)]
+ [!code-vb[System.Web.Configuration.AnonymousIdentificationSection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AnonymousIdentificationSection/VB/AnonymousIdentificationSection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AnonymousIdentificationSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

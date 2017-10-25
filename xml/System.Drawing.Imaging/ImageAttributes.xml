@@ -1,0 +1,1675 @@
+<Type Name="ImageAttributes" FullName="System.Drawing.Imaging.ImageAttributes">
+  <TypeSignature Language="C#" Value="public sealed class ImageAttributes : ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ImageAttributes extends System.Object implements class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.ImageAttributes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>レンダリング時のビットマップとメタファイルの色の操作方法に関する情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは、カラー調整行列、グレースケール調整行列、ガンマ補正値、カラー マップ テーブル、色のしきい値など、いくつかのカラー調整設定を維持します。 レンダリング中に色を修正、暗くなります、明るくなります、および削除できます。 このような操作を適用するには、初期化、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトし、そのパスを渡す<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト (のパスと共に、 <xref:System.Drawing.Image>) に、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、イメージの 1 つのすべての色 (0.2、0.0、0.4, 1.0) と倍赤の要素が 0.2 を赤、緑、および青のコンポーネントに追加  
+  
+ 次の図は、右側の左側に元のイメージと変換後のイメージを示します。  
+  
+ ![色](~/add/media/colortrans1.png "色")  
+  
+ 次の例のコードでは、次の手順を使用して、色の変更を実行します。  
+  
+1.  初期化、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクト。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを渡す、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクトを<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+3.  渡す、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>のメソッド、<xref:System.Drawing.Graphics>オブジェクト。  
+  
+ [!code-csharp[System.Drawing.RecoloringImages#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
+ [!code-vb[System.Drawing.RecoloringImages#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Imaging.ImageAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearBrushRemapTable">
+      <MemberSignature Language="C#" Value="public void ClearBrushRemapTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearBrushRemapTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearBrushRemapTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Imaging.ImageAttributes" /> オブジェクトのブラシのカラー リマップ テーブルを消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー リマップ テーブルを 1 つ、ビットマップ カテゴリについて、さまざまなカラー リマップ テーブルと引き続きブラシ カテゴリのさまざまなカラー リマップ テーブルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ブラシ カテゴリの調整設定を一切指定していない場合、ブラシ カテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、緑、赤を変換する既定のリマップ テーブルを指定して 1.8 の既定のガンマ値を指定します。 呼び出す場合は、<xref:System.Drawing.Imaging.ImageAttributes.SetBrushRemapTable%2A>メソッド、既定のリマップ テーブル (赤緑) および既定のガンマ値 (1.8) は、ブラシには適用されません。 後で呼び出す場合、<xref:System.Drawing.Imaging.ImageAttributes.ClearBrushRemapTable%2A>メソッド、ブラシ カテゴリは元に戻されません既定リマップ テーブルを以外の場合は、ブラシ カテゴリ持たなくなりますリマップ テーブル。 ブラシ カテゴリは、既定のガンマ値に戻りましていない同様に、ブラシ カテゴリはガンマ値を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearColorKey">
+      <MemberSignature Language="C#" Value="public void ClearColorKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearColorKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearColorKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのカラー キー (透明度の範囲) を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、1 つの既定のカテゴリのカラー キー、ビットマップ カテゴリについて、別のカラー キーともペン カテゴリに別の色キーを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearColorKey">
+      <MemberSignature Language="C#" Value="public void ClearColorKey (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearColorKey(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearColorKey(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">カラー キーを消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー キー (透明度の範囲) を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、1 つの既定のカテゴリのカラー キー、ビットマップ カテゴリについて、別のカラー キーともペン カテゴリに別の色キーを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、200 255 からの赤の要素を持つ色を透明既定の色キーを指定して 1.8 の既定のガンマ値を指定します。 呼び出して、ペンのカテゴリのカラー キーを設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetColorKey%2A>方法、既定のカラー キーおよび既定のガンマ値は、ペンには適用されません。 後で呼び出すことによって、ペンの色キーをクリアする場合、<xref:System.Drawing.Imaging.ImageAttributes.ClearColorKey%2A>メソッド、ペン カテゴリは元に戻されません既定の色キーを以外の場合は、ペン カテゴリ持たなくなりますカラー キー。 同様に、ペンのカテゴリは、既定のガンマ値に戻さはありません。ペンのカテゴリはガンマ値を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearColorMatrix">
+      <MemberSignature Language="C#" Value="public void ClearColorMatrix ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearColorMatrix() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearColorMatrix" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのカラー調整行列を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー調整行列、ビットマップ カテゴリについて、さまざまなカラー調整行列と引き続きペンのカテゴリのさまざまなカラー調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合ペン カテゴリに既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearColorMatrix">
+      <MemberSignature Language="C#" Value="public void ClearColorMatrix (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearColorMatrix(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearColorMatrix(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">カラー調整行列を消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー調整行列を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー調整行列、ビットマップ カテゴリについて、さまざまなカラー調整行列と引き続きペンのカテゴリのさまざまなカラー調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合ペン カテゴリに既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、カラー調整行列と既定のカテゴリのガンマ値を指定します。 呼び出して、ペンのカテゴリのカラー調整行列を設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>メソッド、ペンには既定のカラー調整行列を適用できません。 後でを呼び出すしペンのカラー調整行列を消去するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.ClearColorMatrix%2A>メソッド、ペン カテゴリは元に戻されません既定の調整行列を以外の場合は、ペン カテゴリ持たなくなります調整行列。 同様に、ペンのカテゴリは、既定のガンマ値に戻さはありません。ペンのカテゴリはガンマ値を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearGamma">
+      <MemberSignature Language="C#" Value="public void ClearGamma ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearGamma() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearGamma" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのガンマ補正を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearGamma">
+      <MemberSignature Language="C#" Value="public void ClearGamma (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearGamma(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearGamma(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">ガンマ補正が無効にされるカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのガンマ補正を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合ペン カテゴリに既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、ガンマ値と既定のカテゴリのカラー調整行列を指定するとします。 呼び出して、ペンのカテゴリのガンマ値を設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetGamma%2A>メソッド、ペンに既定のガンマ値は適用されません。 後で呼び出すことによってペンのガンマ値をクリアする場合、<xref:System.Drawing.Imaging.ImageAttributes.ClearGamma%2A>メソッド、ペン カテゴリは元に戻されませんを既定のガンマ値以外の場合は、ペン カテゴリ持たなくなりますガンマ値。 同様に、ペンのカテゴリは、既定のカラー調整行列に戻さはありません。ペンのカテゴリはカラー調整行列を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearNoOp">
+      <MemberSignature Language="C#" Value="public void ClearNoOp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearNoOp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearNoOp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリの <see langword="NoOp" /> 設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 呼び出すことによって、既定のカテゴリのカラー調整を無効にすることができます、<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>メソッドです。 その後、呼び出すことによって、既定のカテゴリのカラー調整を再開できます、<xref:System.Drawing.Imaging.ImageAttributes.ClearNoOp%2A>メソッドです。 呼び出す前に配置された新機能へのカラー調整を返します<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearNoOp">
+      <MemberSignature Language="C#" Value="public void ClearNoOp (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearNoOp(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearNoOp(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see langword="NoOp" /> 設定を消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリの <see langword="NoOp" /> 設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 呼び出して、特定のカテゴリのカラー調整を無効にすることができます、<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>メソッドです。 その後、呼び出すことでそのカテゴリのカラー調整を再開できます、<xref:System.Drawing.Imaging.ImageAttributes.ClearNoOp%2A>メソッドです。 呼び出す前に配置された新機能へのカラー調整を返します<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearOutputChannel">
+      <MemberSignature Language="C#" Value="public void ClearOutputChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearOutputChannel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearOutputChannel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリの CMYK (水色、マゼンタ、黄、黒) 出力チャネル設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネルとビットマップ カテゴリに別の出力チャネルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearOutputChannel">
+      <MemberSignature Language="C#" Value="public void ClearOutputChannel (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearOutputChannel(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearOutputChannel(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">出力チャネル設定を消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定されたのカテゴリの CMYK (水色、マゼンタ、黄、黒) 出力チャネル設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネルとビットマップ カテゴリに別の出力チャネルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、出力チャネルと既定のカテゴリの調整行列を指定するとします。 呼び出して、ビットマップのカテゴリの出力チャネルを設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>メソッドは、既定の出力チャネルのビットマップには適用されません。 後で、ビットマップをクリアする場合の出力チャネルを呼び出して、<xref:System.Drawing.Imaging.ImageAttributes.ClearOutputChannel%2A>メソッド、ビットマップのカテゴリは元に戻されません既定の出力チャネルを以外の場合は、ビットマップ カテゴリ持たなくなります出力チャネル設定します。 同様に、ビットマップのカテゴリは、既定のカラー調整行列に戻さはありません。ビットマップのカテゴリはカラー調整行列を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearOutputChannelColorProfile">
+      <MemberSignature Language="C#" Value="public void ClearOutputChannelColorProfile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearOutputChannelColorProfile() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearOutputChannelColorProfile" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリの出力チャネルのカラー プロファイル設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネル プロファイルとビットマップ カテゴリに別の出力チャネル プロファイルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearOutputChannelColorProfile">
+      <MemberSignature Language="C#" Value="public void ClearOutputChannelColorProfile (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearOutputChannelColorProfile(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearOutputChannelColorProfile(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">出力チャネル プロファイル設定を消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリの出力チャネルのカラー プロファイル設定を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネル プロファイルとビットマップ カテゴリに別の出力チャネル プロファイルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの出力チャネル プロファイルと、調整を指定するとします。 呼び出して、ビットマップのカテゴリの出力チャネル プロファイルを設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>メソッドは、既定の出力チャネル プロファイルは、ビットマップには適用されません。 後で、ビットマップをクリアする場合を呼び出して出力チャネル プロファイル、<xref:System.Drawing.Imaging.ImageAttributes.ClearOutputChannelColorProfile%2A>メソッド、ビットマップのカテゴリは元に戻されません、既定の出力チャネル プロファイル以外の場合は、ビットマップ カテゴリ持たなくなります出力チャネル プロファイル設定します。 同様に、ビットマップのカテゴリは、既定のカラー調整行列に戻さはありません。ビットマップのカテゴリはカラー調整行列を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearRemapTable">
+      <MemberSignature Language="C#" Value="public void ClearRemapTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearRemapTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearRemapTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのカラー リマップ テーブルを消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのリマップ テーブル、ビットマップ カテゴリについて、異なるリマップ テーブルと引き続きペン カテゴリに異なるリマップ テーブルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearRemapTable">
+      <MemberSignature Language="C#" Value="public void ClearRemapTable (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearRemapTable(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearRemapTable(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">リマップ テーブルを消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー リマップ テーブルを消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのリマップ テーブル、ビットマップ カテゴリについて、異なるリマップ テーブルと引き続きペン カテゴリに異なるリマップ テーブルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合ペン カテゴリに既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、リマップ テーブルと既定のカテゴリのガンマ値を指定します。 呼び出して、ペン カテゴリにリマップ テーブルを設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A>メソッド、ペンに既定のリマップ テーブルは適用されません。 後で呼び出すことによってペン リマップ テーブルをクリアする場合、<xref:System.Drawing.Imaging.ImageAttributes.ClearRemapTable%2A>メソッド、ペン カテゴリは元に戻されません既定リマップ テーブルを以外の場合は、ペン カテゴリ持たなくなりますリマップ テーブル。 同様に、ペンのカテゴリは、既定のガンマ値に戻さはありません。ペンのカテゴリはガンマ値を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearThreshold">
+      <MemberSignature Language="C#" Value="public void ClearThreshold ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearThreshold() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearThreshold" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのしきい値を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しきい値は、0 ~ 1 の各色成分カットオフ ポイントを指定する値です。 たとえば、しきい値は 0.7 に設定され、レンダリングすると、色が赤、緑、および青のコンポーネントは 230、50、および 220、それぞれします。 赤のコンポーネント (230) は、赤の要素は 255 (最大輝度) に変更するために、0.7 × 255 を超えています。 緑の成分 (50) は、0.7 × 255 より小さい緑の成分を 0 に変更されます。 青のコンポーネント (220) は、0.7 × 255 より青のコンポーネントを 255 に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのしきい値、ビットマップのカテゴリに対して異なるしきい値と引き続きペンのカテゴリに対して異なるしきい値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearThreshold">
+      <MemberSignature Language="C#" Value="public void ClearThreshold (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearThreshold(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.ClearThreshold(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">しきい値設定を消去する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのしきい値を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しきい値は、0 ~ 1 の各色成分カットオフ ポイントを指定する値です。 たとえば、しきい値は 0.7 に設定され、レンダリングすると、色が赤、緑、および青のコンポーネントは 230、50、および 220、それぞれします。 赤のコンポーネント (230) は、赤の要素は 255 (最大輝度) に変更するために 0.7x55 を超えています。 緑の成分 (50) は、0.7 × 255 より小さい緑の成分を 0 に変更されます。 青のコンポーネント (220) は、0.7 × 255 より青のコンポーネントを 255 に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのしきい値、ビットマップのカテゴリに対して異なるしきい値と引き続きペンのカテゴリに対して異なるしきい値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、しきい値と既定のカテゴリのガンマ値を指定します。 呼び出して、ペンのカテゴリのしきい値を設定するかどうか、<xref:System.Drawing.Imaging.ImageAttributes.SetThreshold%2A>メソッド、ペンに既定のしきい値は適用されません。 後で呼び出すことによって、ペンのしきい値をクリアする場合、<xref:System.Drawing.Imaging.ImageAttributes.ClearThreshold%2A>メソッド、ペン カテゴリは元に戻されません既定のしきい値を以外の場合は、ペン カテゴリ持たなくなりますしきい値です。 同様に、ペンのカテゴリは、既定のガンマ値に戻さはありません。ペンのカテゴリはガンマ値を持たなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Imaging.ImageAttributes" /> オブジェクトの同一コピーを作成します。</summary>
+        <returns>このクラスが作成し、オブジェクトとしてキャストされる <see cref="T:System.Drawing.Imaging.ImageAttributes" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Imaging.ImageAttributes" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes.Dispose%2A> を使い終わったら <xref:System.Drawing.Imaging.ImageAttributes> を呼び出します。 <xref:System.Drawing.Imaging.ImageAttributes.Dispose%2A> メソッドによって、<xref:System.Drawing.Imaging.ImageAttributes> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.Imaging.ImageAttributes.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.Imaging.ImageAttributes>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.Imaging.ImageAttributes>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Imaging.ImageAttributes.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Imaging.ImageAttributes> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Imaging.ImageAttributes> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ImageAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdjustedPalette">
+      <MemberSignature Language="C#" Value="public void GetAdjustedPalette (System.Drawing.Imaging.ColorPalette palette, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetAdjustedPalette(class System.Drawing.Imaging.ColorPalette palette, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.GetAdjustedPalette(System.Drawing.Imaging.ColorPalette,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="palette" Type="System.Drawing.Imaging.ColorPalette" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="palette"><see cref="T:System.Drawing.Imaging.ColorPalette" />。入力では調整対象のパレットを、出力では調整済みのパレットを格納します。</param>
+        <param name="type">調整設定がパレットに適用されるカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリの調整設定に従ってパレットの色を調整します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー リマップ テーブル、ビットマップ カテゴリについて、さまざまなカラー リマップ テーブルと引き続きペン カテゴリに異なるカラー リマップ テーブルを指定できます。  
+  
+ 呼び出すと、<xref:System.Drawing.Imaging.ImageAttributes.GetAdjustedPalette%2A>メソッド、パレットの色の調整に使用される調整のカテゴリを指定することができます。 渡す場合など、<xref:System.Drawing.Imaging.ColorAdjustType.Bitmap>を<xref:System.Drawing.Imaging.ImageAttributes.GetAdjustedPalette%2A>メソッドは、ビットマップ カテゴリの設定を使用、パレットの色の調整を調整します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBrushRemapTable">
+      <MemberSignature Language="C#" Value="public void SetBrushRemapTable (System.Drawing.Imaging.ColorMap[] map);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBrushRemapTable(class System.Drawing.Imaging.ColorMap[] map) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetBrushRemapTable(System.Drawing.Imaging.ColorMap[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="map" Type="System.Drawing.Imaging.ColorMap[]" />
+      </Parameters>
+      <Docs>
+        <param name="map"><see cref="T:System.Drawing.Imaging.ColorMap" /> オブジェクトの配列。</param>
+        <summary>ブラシ カテゴリのカラー リマップ テーブルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カラー リマップ テーブルは、の配列<xref:System.Drawing.Imaging.ColorMap>構造体。 各<xref:System.Drawing.Imaging.ColorMap>構造体には 2 つ<xref:System.Drawing.Color>オブジェクト: いずれかの古い色と対応する新しい色を指定する 1 つを指定します。 レンダリング中に古いカラー リマップ テーブル内の 1 つに一致する任意の色は、対応する新しい色に変更されます。  
+  
+ 呼び出す、<xref:System.Drawing.Imaging.ImageAttributes.SetBrushRemapTable%2A>メソッドに渡すことと同じ効果が<xref:System.Drawing.Imaging.ColorAdjustType.Brush>を<xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A>メソッドです。 指定したリマップ テーブルは、ブラシと塗りつぶされるメタファイル内の項目に適用されます。  
+  
+ このメソッドは、メタファイルでのみ使用するものです。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  1 つの要素を作成<xref:System.Drawing.Imaging.ColorMap>色として赤と、新しい色として緑を保持する配列。  
+  
+2.  この配列を新しく作成した<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorKey">
+      <MemberSignature Language="C#" Value="public void SetColorKey (System.Drawing.Color colorLow, System.Drawing.Color colorHigh);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorKey(valuetype System.Drawing.Color colorLow, valuetype System.Drawing.Color colorHigh) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorKey(System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="colorLow" Type="System.Drawing.Color" />
+        <Parameter Name="colorHigh" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="colorLow">下位のカラー キー値。</param>
+        <param name="colorHigh">上位のカラー キー値。</param>
+        <summary>既定のカテゴリのカラー キーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、範囲の色を透明にすることができるように、高値と安値のカラー キー値を設定します。 ある高値と安値のカラー キーの対応するコンポーネント間で 3 つのコンポーネント (赤、緑、青) の各色は透過的に行われます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー キー、ビットマップ カテゴリについて、別のカラー キーともペン カテゴリに別の色キーを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetColorKey%28System.Drawing.Color%2CSystem.Drawing.Color%2CSystem.Drawing.Imaging.ColorAdjustType%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorKey">
+      <MemberSignature Language="C#" Value="public void SetColorKey (System.Drawing.Color colorLow, System.Drawing.Color colorHigh, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorKey(valuetype System.Drawing.Color colorLow, valuetype System.Drawing.Color colorHigh, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorKey(System.Drawing.Color,System.Drawing.Color,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="colorLow" Type="System.Drawing.Color" />
+        <Parameter Name="colorHigh" Type="System.Drawing.Color" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="colorLow">下位のカラー キー値。</param>
+        <param name="colorHigh">上位のカラー キー値。</param>
+        <param name="type">カラー キーを設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー キー (透明度の範囲) を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、範囲の色を透明にすることができるように、高値と安値のカラー キー値を設定します。 ある高値と安値のカラー キーの対応するコンポーネント間で 3 つのコンポーネント (赤、緑、青) の各色は透過的に行われます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー キー、ビットマップ カテゴリについて、別のカラー キーともペン カテゴリに別の色キーを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペンのカテゴリのカラー キーを設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetColorKey%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  開く、<xref:System.Drawing.Image>を Circle.bmp ファイルを使用し、画面に描画します。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを呼び出すことによって、色キーを設定、<xref:System.Drawing.Imaging.ImageAttributes.SetColorKey%2A>メソッドです。  
+  
+3.  色キーを使用して、画面にイメージを描画、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrices">
+      <MemberSignature Language="C#" Value="public void SetColorMatrices (System.Drawing.Imaging.ColorMatrix newColorMatrix, System.Drawing.Imaging.ColorMatrix grayMatrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrices(class System.Drawing.Imaging.ColorMatrix newColorMatrix, class System.Drawing.Imaging.ColorMatrix grayMatrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrices(System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="grayMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <param name="grayMatrix">グレースケール調整行列。</param>
+        <summary>既定のカテゴリのカラー調整行列とグレースケール調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの調整行列、ビットマップのカテゴリを異なる調整行列とペン カテゴリにも異なる調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ 呼び出す、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrices%28System.Drawing.Imaging.ColorMatrix%2CSystem.Drawing.Imaging.ColorMatrix%29?displayProperty=nameWithType>はメソッドを呼び出すことと同じ、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrices%28System.Drawing.Imaging.ColorMatrix%2CSystem.Drawing.Imaging.ColorMatrix%2CSystem.Drawing.Imaging.ColorMatrixFlag%29?displayProperty=nameWithType>メソッドと受け渡し<xref:System.Drawing.Imaging.ColorMatrixFlag?displayProperty=nameWithType>の`flags`パラメーター。 <xref:System.Drawing.Imaging.ColorMatrixFlag?displayProperty=nameWithType>カラー調整行列、グレースケール調整行列ではありません (グレーで表示を含む) のすべての色が調整されるように指定します。 したがって、このメソッドに渡されるグレースケール調整行列には効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrices">
+      <MemberSignature Language="C#" Value="public void SetColorMatrices (System.Drawing.Imaging.ColorMatrix newColorMatrix, System.Drawing.Imaging.ColorMatrix grayMatrix, System.Drawing.Imaging.ColorMatrixFlag flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrices(class System.Drawing.Imaging.ColorMatrix newColorMatrix, class System.Drawing.Imaging.ColorMatrix grayMatrix, valuetype System.Drawing.Imaging.ColorMatrixFlag flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrices(System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrixFlag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="grayMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="flags" Type="System.Drawing.Imaging.ColorMatrixFlag" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <param name="grayMatrix">グレースケール調整行列。</param>
+        <param name="flags">カラー調整行列とグレースケール調整行列の影響を受けるイメージと色の種類を指定する <see cref="T:System.Drawing.Imaging.ColorMatrixFlag" /> の要素。</param>
+        <summary>既定のカテゴリのカラー調整行列とグレースケール調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの調整行列、ビットマップのカテゴリを異なる調整行列とペン カテゴリにも異なる調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrices">
+      <MemberSignature Language="C#" Value="public void SetColorMatrices (System.Drawing.Imaging.ColorMatrix newColorMatrix, System.Drawing.Imaging.ColorMatrix grayMatrix, System.Drawing.Imaging.ColorMatrixFlag mode, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrices(class System.Drawing.Imaging.ColorMatrix newColorMatrix, class System.Drawing.Imaging.ColorMatrix grayMatrix, valuetype System.Drawing.Imaging.ColorMatrixFlag mode, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrices(System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrixFlag,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="grayMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="mode" Type="System.Drawing.Imaging.ColorMatrixFlag" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <param name="grayMatrix">グレースケール調整行列。</param>
+        <param name="mode">カラー調整行列とグレースケール調整行列の影響を受けるイメージと色の種類を指定する <see cref="T:System.Drawing.Imaging.ColorMatrixFlag" /> の要素。</param>
+        <param name="type">カラー調整とグレースケール調整行列を設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー調整行列とグレースケール調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの調整行列、ビットマップのカテゴリを異なる調整行列とペン カテゴリにも異なる調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペンのカテゴリのカラー調整とグレースケール調整行列を設定した場合<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrices%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrix">
+      <MemberSignature Language="C#" Value="public void SetColorMatrix (System.Drawing.Imaging.ColorMatrix newColorMatrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrix(class System.Drawing.Imaging.ColorMatrix newColorMatrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrix(System.Drawing.Imaging.ColorMatrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <summary>既定のカテゴリのカラー調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー調整行列、ビットマップ カテゴリについて、さまざまなカラー調整行列と引き続きペンのカテゴリのさまざまなカラー調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ 呼び出す、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%28System.Drawing.Imaging.ColorMatrix%29?displayProperty=nameWithType>はメソッドを呼び出すことと同じ、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%28System.Drawing.Imaging.ColorMatrix%2CSystem.Drawing.Imaging.ColorMatrixFlag%29?displayProperty=nameWithType>メソッドと受け渡し<xref:System.Drawing.Imaging.ColorMatrixFlag?displayProperty=nameWithType>の`flags`パラメーター。 <xref:System.Drawing.Imaging.ColorMatrixFlag?displayProperty=nameWithType>カラー調整行列を使用して (グレーで表示を含む) のすべての色を調整することを指定します  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  128、medium 灰色単色で塗りつぶされた四角形を生成した値に設定するすべての色のある四角形イメージを作成します。 コードは、この四角形の画像を画面に描画します。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ColorMatrix>設定とその<xref:System.Drawing.Drawing2D.Matrix>1.75 で、イメージの赤の要素を強調する場所です。  
+  
+3.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトと呼び出し、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>メソッドです。  
+  
+4.  使用して、画面にイメージ (2 つ目の四角形) を描画、<xref:System.Drawing.Imaging.ColorMatrix>でだけ設定、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+ 2 つ目の四角形が強調表示色が赤を持つことに注意してください。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrix">
+      <MemberSignature Language="C#" Value="public void SetColorMatrix (System.Drawing.Imaging.ColorMatrix newColorMatrix, System.Drawing.Imaging.ColorMatrixFlag flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrix(class System.Drawing.Imaging.ColorMatrix newColorMatrix, valuetype System.Drawing.Imaging.ColorMatrixFlag flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrix(System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrixFlag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="flags" Type="System.Drawing.Imaging.ColorMatrixFlag" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <param name="flags">カラー調整行列の影響を受けるイメージと色の種類を指定する <see cref="T:System.Drawing.Imaging.ColorMatrixFlag" /> の要素。</param>
+        <summary>既定のカテゴリのカラー調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー調整行列、ビットマップ カテゴリについて、さまざまなカラー調整行列と引き続きペンのカテゴリのさまざまなカラー調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%28System.Drawing.Imaging.ColorMatrix%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColorMatrix">
+      <MemberSignature Language="C#" Value="public void SetColorMatrix (System.Drawing.Imaging.ColorMatrix newColorMatrix, System.Drawing.Imaging.ColorMatrixFlag mode, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColorMatrix(class System.Drawing.Imaging.ColorMatrix newColorMatrix, valuetype System.Drawing.Imaging.ColorMatrixFlag mode, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetColorMatrix(System.Drawing.Imaging.ColorMatrix,System.Drawing.Imaging.ColorMatrixFlag,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Drawing.Imaging.ColorMatrix" />
+        <Parameter Name="mode" Type="System.Drawing.Imaging.ColorMatrixFlag" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">カラー調整行列。</param>
+        <param name="mode">カラー調整行列の影響を受けるイメージと色の種類を指定する <see cref="T:System.Drawing.Imaging.ColorMatrixFlag" /> の要素。</param>
+        <param name="type">カラー調整行列を設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー調整行列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのカラー調整行列、ビットマップ カテゴリについて、さまざまなカラー調整行列と引き続きペンのカテゴリのさまざまなカラー調整行列を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペンのカテゴリのカラー調整行列を設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RotateColors`フォームから<xref:System.Windows.Forms.Control.Paint>イベント処理メソッドを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Drawing.RotateColors#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RotateColors/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.RotateColors#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RotateColors/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGamma">
+      <MemberSignature Language="C#" Value="public void SetGamma (float gamma);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetGamma(float32 gamma) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetGamma(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gamma" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="gamma">ガンマ補正値。</param>
+        <summary>既定のカテゴリのガンマ値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な値、`gamma`パラメーターは、1.0 ~ 2.2 です。 ただし、値は 0.1 5.0 に生じる可能性がいくつかの状況で役に立ちます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ 通常の範囲外のガンマ値は、古い CRT モニターの産業環境やウィンドウの表示などの特殊な照明条件では、モニターの役立つことがあります。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 さらに、システム上で有効なパスとイメージ名にイメージ ファイルのパスを変更する必要があります。 コードは、次のアクションを実行します。  
+  
+1.  開く、<xref:System.Drawing.Image>を Camera.jpg ファイルを使用し、ガンマの既定値を使用して、画面に描画します。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを呼び出すことによって 2.2 にそのガンマ値を設定、<xref:System.Drawing.Imaging.ImageAttributes.SetGamma%2A>メソッドです。  
+  
+3.  ガンマ値のセットだけを使用して、画面に (2 番目のカメラ) のイメージを描画、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGamma">
+      <MemberSignature Language="C#" Value="public void SetGamma (float gamma, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetGamma(float32 gamma, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetGamma(System.Single,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gamma" Type="System.Single" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="gamma">ガンマ補正値。</param>
+        <param name="type">ガンマ値を設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> 列挙の要素。</param>
+        <summary>指定したカテゴリのガンマ値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な値、`gamma`パラメーターは、1.0 ~ 2.2 です。 ただし、値は 0.1 5.0 に生じる可能性がいくつかの状況で役に立ちます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペンのカテゴリのガンマ値を設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetGamma%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+ 通常の範囲外のガンマ値は、古い CRT モニターの産業環境やウィンドウの表示などの特殊な照明条件では、モニターの役立つことがあります。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetGamma%28System.Single%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoOp">
+      <MemberSignature Language="C#" Value="public void SetNoOp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNoOp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetNoOp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のカテゴリのカラー調整をオフにします。 <see cref="Overload:System.Drawing.Imaging.ImageAttributes.ClearNoOp" /> メソッドを呼び出して、<see cref="Overload:System.Drawing.Imaging.ImageAttributes.SetNoOp" /> メソッドを呼び出す前のカラー調整設定に戻すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  開く、 <xref:System.Drawing.Image> Camera.jpg ファイルを使用します。  
+  
+2.  ガンマ値を設定、 <xref:System.Drawing.Imaging.ImageAttributes> 0.25 オブジェクト。  
+  
+3.  画面にイメージを描画します。  
+  
+4.  呼び出し、<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>メソッドです。  
+  
+5.  画面に (2 番目のカメラ) のイメージを描画します。ただし、ため、<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp%2A>メソッドが呼び出された、ガンマ 1.0 とイメージの値に既定値の設定は既定ガンマ 設定で画面に描画します。  
+  
+ 右側のイメージのコントラスト (ガンマ 1.0) がその左側の画像が (0.25 ガンマ) あせて非常に注意してください。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNoOp">
+      <MemberSignature Language="C#" Value="public void SetNoOp (System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNoOp(valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetNoOp(System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="type">色補正をオフにする対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー調整をオフにします。 <see cref="Overload:System.Drawing.Imaging.ImageAttributes.ClearNoOp" /> メソッドを呼び出して、<see cref="Overload:System.Drawing.Imaging.ImageAttributes.SetNoOp" /> メソッドを呼び出す前のカラー調整設定に戻すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのガンマ値、ビットマップ カテゴリについて、別のガンマ値とまだペン カテゴリに別のガンマ値を指定できます。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetNoOp>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputChannel">
+      <MemberSignature Language="C#" Value="public void SetOutputChannel (System.Drawing.Imaging.ColorChannelFlag flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputChannel(valuetype System.Drawing.Imaging.ColorChannelFlag flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetOutputChannel(System.Drawing.Imaging.ColorChannelFlag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Drawing.Imaging.ColorChannelFlag" />
+      </Parameters>
+      <Docs>
+        <param name="flags">出力チャネルを指定する <see cref="T:System.Drawing.Imaging.ColorChannelFlag" /> の要素。</param>
+        <summary>既定のカテゴリの CMYK (水色、マゼンタ、黄、黒) 出力チャネルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>イメージを CMYK 色空間に変換し、CMYK カラー チャネルのいずれかの強度を確認するメソッド。 たとえば、作成する、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトし、そのビットマップ出力チャネル設定<xref:System.Drawing.Imaging.ColorChannelFlag.ColorChannelC>です。 そのパスを渡す場合<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>メソッド、各ピクセルの水色の要素が計算され、描画された画像内の各ピクセルは水色チャネルの輝度を示す灰色の網掛けがします。 同様に、マゼンタ、黄、および黒チャネルの輝度を示すイメージをレンダリングすることができます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネルとビットマップ カテゴリに別の出力チャネルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームに次のコードを貼り付けます。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントと呼び出し`ShowOutputChannels`を渡して、`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Drawing.Misc3#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#4)]
+ [!code-vb[System.Drawing.Misc3#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputChannel">
+      <MemberSignature Language="C#" Value="public void SetOutputChannel (System.Drawing.Imaging.ColorChannelFlag flags, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputChannel(valuetype System.Drawing.Imaging.ColorChannelFlag flags, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetOutputChannel(System.Drawing.Imaging.ColorChannelFlag,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Drawing.Imaging.ColorChannelFlag" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="flags">出力チャネルを指定する <see cref="T:System.Drawing.Imaging.ColorChannelFlag" /> の要素。</param>
+        <param name="type">出力チャネルを設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定されたカテゴリの CMYK (水色、マゼンタ、黄、黒) 出力チャネルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>イメージを CMYK 色空間に変換し、CMYK カラー チャネルのいずれかの強度を確認するメソッド。 たとえば、作成する、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトし、そのビットマップ出力チャネル設定<xref:System.Drawing.Imaging.ColorChannelFlag.ColorChannelC>です。 そのパスを渡す場合<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>メソッド、各ピクセルの水色の要素が計算され、描画された画像内の各ピクセルは水色チャネルの輝度を示す灰色の網掛けがします。 同様に、マゼンタ、黄、および黒チャネルの輝度を示すイメージをレンダリングすることができます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネルとビットマップ カテゴリに別の出力チャネルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ビットマップのカテゴリの出力チャネルを設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Bitmap>を<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>メソッド、ビットマップに適用なし、既定の調整設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームに次のコードを貼り付けます。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントと呼び出し`ShowOutputChannels`を渡して、`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Drawing.Misc3#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#4)]
+ [!code-vb[System.Drawing.Misc3#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputChannelColorProfile">
+      <MemberSignature Language="C#" Value="public void SetOutputChannelColorProfile (string colorProfileFilename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputChannelColorProfile(string colorProfileFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="colorProfileFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="colorProfileFilename">カラー プロファイル ファイルのパス名。 カラー プロファイル ファイルが %SystemRoot%\System32\Spool\Drivers\Color ディレクトリにある場合、このパラメーターはファイル名にすることができます。 それ以外の場合、このパラメーターは、完全修飾パス名を指定する必要があります。</param>
+        <summary>既定のカテゴリの出力チャネルのカラー プロファイル ファイルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>と<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>CMYK (水色、マゼンタ、黄、黒) のカラー スペースにイメージを変換して、CMYK のいずれかの強度を確認するメソッドのカラー チャネル。 たとえば、次の手順を実行するコードを記述するとします。  
+  
+1.  作成、<xref:System.Drawing.Image>です。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+3.  渡す<xref:System.Drawing.Imaging.ColorChannelFlag.ColorChannelC>を<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+4.  カラー プロファイル ファイルのパス名を渡す、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+5.  パスを渡す、<xref:System.Drawing.Image>と<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+  
+ [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]カラー プロファイル ファイルを使用して図では、各ピクセルの水色の要素を計算し、描画された画像内の各ピクセルは水色チャネルの輝度を示す灰色の網掛けされます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネル カラー プロファイル ファイルおよびビットマップ カテゴリに別の出力チャネル カラー プロファイル ファイルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputChannelColorProfile">
+      <MemberSignature Language="C#" Value="public void SetOutputChannelColorProfile (string colorProfileFilename, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputChannelColorProfile(string colorProfileFilename, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile(System.String,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="colorProfileFilename" Type="System.String" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="colorProfileFilename">カラー プロファイル ファイルのパス名。 カラー プロファイル ファイルが %SystemRoot%\System32\Spool\Drivers\Color ディレクトリにある場合、このパラメーターはファイル名にすることができます。 それ以外の場合、このパラメーターは、完全修飾パス名を指定する必要があります。</param>
+        <param name="type">出力チャネル カラー プロファイル ファイルを設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリの出力チャネルのカラー プロファイル ファイルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>と<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>CMYK (水色、マゼンタ、黄、黒) のカラー スペースにイメージを変換して、CMYK のいずれかの強度を確認するメソッドのカラー チャネル。 たとえば、次の手順を実行するコードを記述するとします。  
+  
+1.  作成、<xref:System.Drawing.Image>です。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+3.  渡す<xref:System.Drawing.Imaging.ColorChannelFlag.ColorChannelC>を<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannel%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+4.  カラー プロファイル ファイルのパス名を渡す、<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+5.  パスを渡す、<xref:System.Drawing.Image>と<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+  
+ [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]カラー プロファイル ファイルを使用して図では、各ピクセルの水色の要素を計算し、描画された画像内の各ピクセルは水色チャネルの輝度を示す灰色の網掛けされます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリの出力チャネル カラー プロファイル ファイルおよびビットマップ カテゴリに別の出力チャネル カラー プロファイル ファイルを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ビットマップ カテゴリの調整設定を一切指定していない場合、ビットマップ カテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 ビットマップのカテゴリの出力チャネルのカラー プロファイル ファイルを渡すことで設定した場合<xref:System.Drawing.Imaging.ColorAdjustType.Bitmap>を<xref:System.Drawing.Imaging.ImageAttributes.SetOutputChannelColorProfile%2A>メソッド、ビットマップに適用なし、既定の調整設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRemapTable">
+      <MemberSignature Language="C#" Value="public void SetRemapTable (System.Drawing.Imaging.ColorMap[] map);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRemapTable(class System.Drawing.Imaging.ColorMap[] map) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetRemapTable(System.Drawing.Imaging.ColorMap[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="map" Type="System.Drawing.Imaging.ColorMap[]" />
+      </Parameters>
+      <Docs>
+        <param name="map"><see cref="T:System.Drawing.Imaging.ColorMap" /> 型の色ペアの配列。 それぞれの色ペアには、既存の色 (1 番目の値) および変換後の色 (2 番目の値) が含まれています。</param>
+        <summary>既定のカテゴリのカラー リマップ テーブルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カラー リマップ テーブルは、の配列<xref:System.Drawing.Imaging.ColorMap>構造体。 各<xref:System.Drawing.Imaging.ColorMap>構造体には 2 つ<xref:System.Drawing.Color>オブジェクト: いずれかの古い色と対応する新しい色を指定する 1 つを指定します。 レンダリング中に古いカラー リマップ テーブル内の 1 つに一致する任意の色は、対応する新しい色に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリ、ビットマップ カテゴリのカラー リマップ テーブルおよびまだペン カテゴリに異なるカラー リマップ テーブルのカラー リマップを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  イメージ (赤色の円) を作成、Circle2.jpg として保存、そのイメージおよび画面に描画します。  
+  
+2.  緑の色を色が赤にマップするカラー マップを作成します。  
+  
+3.  再び、今度はカラー マップを使用して、画面に以前作成されたイメージを描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRemapTable">
+      <MemberSignature Language="C#" Value="public void SetRemapTable (System.Drawing.Imaging.ColorMap[] map, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRemapTable(class System.Drawing.Imaging.ColorMap[] map, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetRemapTable(System.Drawing.Imaging.ColorMap[],System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="map" Type="System.Drawing.Imaging.ColorMap[]" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="map"><see cref="T:System.Drawing.Imaging.ColorMap" /> 型の色ペアの配列。 それぞれの色ペアには、既存の色 (1 番目の値) および変換後の色 (2 番目の値) が含まれています。</param>
+        <param name="type">カラー リマップ テーブルを設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのカラー リマップ テーブルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カラー リマップ テーブルは、の配列<xref:System.Drawing.Imaging.ColorMap>構造体。 各<xref:System.Drawing.Imaging.ColorMap>構造体には 2 つ<xref:System.Drawing.Color>オブジェクト: いずれかの古い色と対応する新しい色を指定する 1 つを指定します。 レンダリング中に古いカラー リマップ テーブル内の 1 つに一致する任意の色は、対応する新しい色に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリ、ビットマップ カテゴリのカラー リマップ テーブルおよびまだペン カテゴリに異なるカラー リマップ テーブルのカラー リマップを指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペンのカテゴリのカラー リマップ テーブルを設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%28System.Drawing.Imaging.ColorMap%5B%5D%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetThreshold">
+      <MemberSignature Language="C#" Value="public void SetThreshold (float threshold);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetThreshold(float32 threshold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetThreshold(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="threshold" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="threshold">しきい値を指定する実数。</param>
+        <summary>既定のカテゴリのしきい値 (透明度の範囲) を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しきい値は、0 ~ 1 の各色成分カットオフ ポイントを指定する値です。 たとえば、しきい値は 0.7 に設定され、レンダリングすると、色が赤、緑、および青のコンポーネントは 230、50、および 220、それぞれします。 赤のコンポーネント (230) は、赤の要素は 255 (最大輝度) に変更するために、0.7 × 255 を超えています。 緑の成分 (50) は、0.7 × 255 より小さい緑の成分を 0 に変更されます。 青のコンポーネント (220) は、0.7 × 255 より青のコンポーネントを 255 に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのしきい値、ビットマップ カテゴリのしきい値と引き続きペン カテゴリに異なるしきい値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  開く、<xref:System.Drawing.Image>し、画面に描画します。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを使用して、そのしきい値を設定、<xref:System.Drawing.Imaging.ImageAttributes.SetThreshold%2A>メソッドです。  
+  
+3.  しきい値を使用して、画面にイメージを描画、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetThreshold">
+      <MemberSignature Language="C#" Value="public void SetThreshold (float threshold, System.Drawing.Imaging.ColorAdjustType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetThreshold(float32 threshold, valuetype System.Drawing.Imaging.ColorAdjustType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetThreshold(System.Single,System.Drawing.Imaging.ColorAdjustType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="threshold" Type="System.Single" />
+        <Parameter Name="type" Type="System.Drawing.Imaging.ColorAdjustType" />
+      </Parameters>
+      <Docs>
+        <param name="threshold">最大値または最小値に変換する色の並べ替えのためのブレークポイントとして使用される、0.0 ～ 1.0 の範囲内のしきい値。</param>
+        <param name="type">色のしきい値を設定する対象のカテゴリを指定する <see cref="T:System.Drawing.Imaging.ColorAdjustType" /> の要素。</param>
+        <summary>指定したカテゴリのしきい値 (透明度の範囲) を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しきい値は、0 ~ 1 の各色成分カットオフ ポイントを指定する値です。 たとえば、しきい値は 0.7 に設定され、レンダリングすると、色が赤、緑、および青のコンポーネントは 230、50、および 220、それぞれします。 赤のコンポーネント (230) は、赤の要素は 255 (最大輝度) に変更するために、0.7 × 255 を超えています。 緑の成分 (50) は、0.7 × 255 より小さい緑の成分を 0 に変更されます。 青のコンポーネント (220) は、0.7 × 255 より青のコンポーネントを 255 に変更されます。  
+  
+ <xref:System.Drawing.Imaging.ImageAttributes>オブジェクトは調整の 5 つのカテゴリのカラー/グレースケールの設定を保持します。 既定、ビットマップ、ブラシ、ペン、およびテキスト。 たとえば、既定のカテゴリのしきい値、ビットマップ カテゴリのしきい値と引き続きペン カテゴリに異なるしきい値を指定できます。  
+  
+ 既定のカラー調整とグレースケール調整の設定は、独自の調整設定がないすべてのカテゴリに適用されます。 たとえば、ペンのカテゴリの調整設定を一切指定していない場合、ペンのカテゴリには、既定の設定が適用されます。  
+  
+ カラー調整または特定のカテゴリに対してグレースケール調整の設定を指定するとすぐに、既定の調整設定はそのカテゴリに適用されません。 たとえば、既定のカテゴリの調整設定のコレクションを指定します。 渡すことによって、ペン カテゴリのしきい値を設定するかどうかは<xref:System.Drawing.Imaging.ColorAdjustType.Pen>を<xref:System.Drawing.Imaging.ImageAttributes.SetThreshold%2A>メソッド、既定の調整設定のいずれもペンには適用します。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetThreshold%28System.Single%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWrapMode">
+      <MemberSignature Language="C#" Value="public void SetWrapMode (System.Drawing.Drawing2D.WrapMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetWrapMode(valuetype System.Drawing.Drawing2D.WrapMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetWrapMode(System.Drawing.Drawing2D.WrapMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Drawing.Drawing2D.WrapMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">イメージの繰り返しコピーを領域に並べて表示するときの方法を指定する <see cref="T:System.Drawing.Drawing2D.WrapMode" /> の要素。</param>
+        <summary>形状全体、または形状の境界上にテクスチャを並べて表示する方法を決定するために使用されるラップ モードを設定します。 テクスチャで塗りつぶす形状がそのテクスチャより小さい場合、テクスチャは形状の境界をはみだして表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Drawing.Imaging.ImageAttributes.SetWrapMode%28System.Drawing.Drawing2D.WrapMode%29>はメソッドを呼び出すことと同じ<xref:System.Drawing.Imaging.ImageAttributes.SetWrapMode%28System.Drawing.Drawing2D.WrapMode%2CSystem.Drawing.Color%29>渡す<xref:System.Drawing.Color.Black%2A?displayProperty=nameWithType>の`color`パラメーター。 <xref:System.Drawing.Color.Black%2A?displayProperty=nameWithType>表示イメージの外側のピクセルの色を指定します。 この色が、モード パラメーターに設定されている場合に表示<xref:System.Drawing.Drawing2D.WrapMode.Clamp>に渡されたソース四角形と、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドは、イメージ自体より大きい。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+1.  開く、 <xref:System.Drawing.Image> Circle3.jpg からファイル (small、赤で塗りつぶされた円) と、画面に描画します。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトと設定、<xref:System.Drawing.Drawing2D.WrapMode>列挙型を<xref:System.Drawing.Drawing2D.WrapMode.Tile>です。  
+  
+3.  作成、 <xref:System.Drawing.TextureBrush> Circle3.jpg ファイルからイメージを使用します。  
+  
+4.  赤で塗りつぶされた小さな円で埋め、画面に四角形を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicImaging.ImageAttributes#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.ClassicImaging.ImageAttributes#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.ClassicImaging.ImageAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImaging.ImageAttributes/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWrapMode">
+      <MemberSignature Language="C#" Value="public void SetWrapMode (System.Drawing.Drawing2D.WrapMode mode, System.Drawing.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetWrapMode(valuetype System.Drawing.Drawing2D.WrapMode mode, valuetype System.Drawing.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetWrapMode(System.Drawing.Drawing2D.WrapMode,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Drawing.Drawing2D.WrapMode" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="mode">イメージの繰り返しコピーを領域に並べて表示するときの方法を指定する <see cref="T:System.Drawing.Drawing2D.WrapMode" /> の要素。</param>
+        <param name="color">表示イメージの外側のピクセルの色を指定する <see cref="T:System.Drawing.Imaging.ImageAttributes" /> オブジェクト。 モード パラメーターが <see cref="F:System.Drawing.Drawing2D.WrapMode.Clamp" /> に設定され、<see cref="Overload:System.Drawing.Graphics.DrawImage" /> に渡されたソース四角形がそのイメージ自体より大きい場合に、この色が表示されます。</param>
+        <summary>形状全体、または形状の境界上にテクスチャを並べて表示する方法を決定するために使用される、ラップ モードおよび色を指定します。 テクスチャで塗りつぶす形状がそのテクスチャより小さい場合、テクスチャは形状の境界をはみだして表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetWrapMode%28System.Drawing.Drawing2D.WrapMode%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWrapMode">
+      <MemberSignature Language="C#" Value="public void SetWrapMode (System.Drawing.Drawing2D.WrapMode mode, System.Drawing.Color color, bool clamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetWrapMode(valuetype System.Drawing.Drawing2D.WrapMode mode, valuetype System.Drawing.Color color, bool clamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageAttributes.SetWrapMode(System.Drawing.Drawing2D.WrapMode,System.Drawing.Color,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Drawing.Drawing2D.WrapMode" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="clamp" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode">イメージの繰り返しコピーを領域に並べて表示するときの方法を指定する <see cref="T:System.Drawing.Drawing2D.WrapMode" /> の要素。</param>
+        <param name="color">表示イメージの外側のピクセルの色を指定する Color オブジェクト。 モード パラメーターが <see cref="F:System.Drawing.Drawing2D.WrapMode.Clamp" /> に設定され、<see cref="Overload:System.Drawing.Graphics.DrawImage" /> に渡されたソース四角形がそのイメージ自体より大きい場合に、この色が表示されます。</param>
+        <param name="clamp">このパラメーターは何も作用しません。 <see langword="false" /> に設定してください。</param>
+        <summary>形状全体、または形状の境界上にテクスチャを並べて表示する方法を決定するために使用される、ラップ モードおよび色を指定します。 テクスチャで塗りつぶす形状がそのテクスチャより小さい場合、テクスチャは形状の境界をはみだして表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Drawing.Imaging.ImageAttributes.SetWrapMode%28System.Drawing.Drawing2D.WrapMode%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,369 @@
+<Type Name="PresentationTraceSources" FullName="System.Diagnostics.PresentationTraceSources">
+  <TypeSignature Language="C#" Value="public static class PresentationTraceSources" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PresentationTraceSources extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PresentationTraceSources" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) アプリケーションの対象となる具体的には、デバッグ トレースのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッグ トレース場合のみを使用できる、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]完全信頼モードでアプリケーションを実行します。  
+  
+ トレースを有効にするためにする必要があります、レジストリ キーを設定、し、トレース ソースを構成する必要があります。  
+  
+-   レジストリ キーを作成するには、"HKeyCurrentUser\Software\Microsoft\Tracing\WPF"の下に 1 に"ManagedTracing"reg_dword 値を設定します。  
+  
+-   トレース ソースを構成するのには、アプリケーション構成ファイルを作成します。 このファイルには、XamlPad.exe.config など、.config 拡張子が付きます。  
+  
+ 最適なアプリケーションのパフォーマンスを達成するためのベスト プラクティスを理解してアプリケーションの設計で考慮が必要[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]アプリケーションの開発。 詳細については、次を参照してください。 [WPF アプリケーションのパフォーマンスの最適化](~/docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)です。  
+  
+   
+  
+## Examples  
+ 次のサンプル構成ファイルでは、アニメーション、"debug.txt"と呼ばれるテキスト ファイルに出力を書き込むのトレースを有効します。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <sources>  
+      <source name="System.Windows.Media.Animation"  
+switchName="SourceSwitch" >  
+        <listeners>  
+          <add name="textListener" />  
+        </listeners>  
+      </source>  
+    </sources>  
+    <switches>  
+      <add name="SourceSwitch" value="All" />  
+    </switches>  
+    <sharedListeners>  
+      <add name="textListener"  
+           type="System.Diagnostics.TextWriterTraceListener"  
+           initializeData="Debug.txt" />  
+    </sharedListeners>  
+    <trace autoflush="true" indentsize="4"></trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnimationSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource AnimationSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource AnimationSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.AnimationSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションのトレース ソースを取得します。</summary>
+        <value>アニメーションのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindingSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource DataBindingSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource DataBindingSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.DataBindingSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングのトレース ソースを取得します。</summary>
+        <value>データ バインディングのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyPropertySource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource DependencyPropertySource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource DependencyPropertySource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.DependencyPropertySource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティのトレース ソースを取得します。</summary>
+        <value>依存関係プロパティのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentsSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource DocumentsSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource DocumentsSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.DocumentsSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのトレース ソースを取得します。</summary>
+        <value>ドキュメントのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreezableSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource FreezableSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource FreezableSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.FreezableSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Freezable のトレース ソースを取得します。</summary>
+        <value>Freezable のトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTraceLevel">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.PresentationTraceLevel GetTraceLevel (object element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Diagnostics.PresentationTraceLevel GetTraceLevel(object element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PresentationTraceSources.GetTraceLevel(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PresentationTraceLevel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Diagnostics.PresentationTraceSources.TraceLevel" />添付プロパティを指定された要素。</summary>
+        <returns><see cref="P:System.Diagnostics.PresentationTraceSources.TraceLevel" />要素のプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PresentationTraceSources.GetTraceLevel%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HwndHostSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource HwndHostSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource HwndHostSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.HwndHostSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トレース ソースをホストする hwnd 取得します。</summary>
+        <value>Hwnd ホストのトレース ソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PresentationTraceSources.HwndHostSource%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource MarkupSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource MarkupSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.MarkupSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マークアップのトレース ソースを取得します。</summary>
+        <value>マークアップのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameScopeSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource NameScopeSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource NameScopeSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.NameScopeSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前のスコープのトレース ソースを取得します。</summary>
+        <value>名前スコープのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PresentationTraceSources.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新は、app.config ファイルを再読み込みを強制することで、ソースをトレースします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceDictionarySource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource ResourceDictionarySource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource ResourceDictionarySource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.ResourceDictionarySource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソース ディクショナリのトレース ソースを取得します。</summary>
+        <value>リソース ディクショナリのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoutedEventSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource RoutedEventSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource RoutedEventSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.RoutedEventSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントのトレース ソースを取得します。</summary>
+        <value>ルーティング イベントのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTraceLevel">
+      <MemberSignature Language="C#" Value="public static void SetTraceLevel (object element, System.Diagnostics.PresentationTraceLevel traceLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTraceLevel(object element, valuetype System.Diagnostics.PresentationTraceLevel traceLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PresentationTraceSources.SetTraceLevel(System.Object,System.Diagnostics.PresentationTraceLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Object" />
+        <Parameter Name="traceLevel" Type="System.Diagnostics.PresentationTraceLevel" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先となる要素。</param>
+        <param name="traceLevel">必要な<see cref="T:System.Diagnostics.PresentationTraceLevel" />値。</param>
+        <summary>値を設定、<see cref="P:System.Diagnostics.PresentationTraceSources.TraceLevel" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PresentationTraceSources.SetTraceLevel%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShellSource">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceSource ShellSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceSource ShellSource" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PresentationTraceSources.ShellSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シェルのトレース ソースを取得します。</summary>
+        <value>シェルのトレース ソース。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceLevelProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TraceLevelProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TraceLevelProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PresentationTraceSources.TraceLevelProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Diagnostics.PresentationTraceSources.TraceLevel" /> 添付プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PresentationTraceSources.TraceLevelProperty>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

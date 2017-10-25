@@ -1,0 +1,618 @@
+<Type Name="MailDefinition" FullName="System.Web.UI.WebControls.MailDefinition">
+  <TypeSignature Language="C#" Value="public sealed class MailDefinition : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MailDefinition extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MailDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.EmptyStringExpandableObjectConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールがテキスト ファイルまたは文字列から電子メール メッセージを作成できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition>クラスは、作成にコントロールで使用できる、<xref:System.Net.Mail.MailMessage>オブジェクトをテキスト ファイルまたは電子メール メッセージの本文を表す文字列。 使用して、<xref:System.Web.UI.WebControls.MailDefinition>を簡単に作成するクラスには、コントロールによって送信される電子メール メッセージがあらかじめ定義されています。 参照してください、コントロールを使用していない電子メールを送信するかどうか、<xref:System.Net.Mail>クラスです。  
+  
+ 渡すことによって、電子メール メッセージの本文にテキストの置換を行うことができます、<xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%2A>メソッド、<xref:System.Collections.IDictionary>置換する文字列をマップするインスタンス。  
+  
+ <xref:System.Net.Mail.MailMessage>によって作成されたオブジェクト、<xref:System.Web.UI.WebControls.MailDefinition>を使用してクラスを送信、<xref:System.Net.Mail.SmtpClient.Send%2A>のメソッド、<xref:System.Net.Mail.SmtpClient>クラスです。 電子メールを送信できるようにするには、Web.config ファイルで、SMTP メール サーバーを構成する必要があります。 詳細については、次を参照してください。、 [ &lt;smtp&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.MailDefinition>クラスは、データ バインディングをサポートしません。 プロパティ、<xref:System.Web.UI.WebControls.MailDefinition>クラスを使用してデータにバインドできません、`<%#   %>`データ バインディング式の構文。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web フォーム ページからインターネット電子メール メッセージを作成します。 フォームで、メッセージのテキストを入力するか、メールの本文として使用するテキスト ファイルの名前を入力します。 コードで定義されたメッセージの 2 つの文字列の置換: 受信者の一覧から、フォームのテキスト ボックスには、文字列で置き換えられます"\<~ % >"とで指定したテキスト、<xref:System.Web.UI.WebControls.MailDefinition.From%2A>プロパティには、文字列が置き換えられます"\<% から % >"。  
+  
+ このコードを生成する Web フォーム ページ、 をクリックすることができます**電子メールを作成し、表示のみ**電子メール メッセージを作成しのプロパティを表示する、 <xref:System.Net.Mail.MailMessage> Web ページ内のオブジェクト。 をクリックして**電子メールを作成し、送信**Web ページで電子メール メッセージの表示し、インターネットの電子メールを使用して、受信者にメッセージを送信の両方にします。  
+  
+> [!IMPORTANT]
+>  このコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[MailDefinitionClassSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#1)]
+ [!code-aspx-vb[MailDefinitionClassSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.MailDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyFileName">
+      <MemberSignature Language="C#" Value="public string BodyFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BodyFileName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.BodyFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.MailDefinitionBodyFileNameEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty("*.*")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの本文のテキストを含むファイルの名前を設定します。</summary>
+        <value>メッセージ本文のテキストを格納しているファイルの名前。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティは、電子メール メッセージの本文に使用するテキスト ファイルの場所を指定します。  
+  
+ <xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%28System.String%2CSystem.Collections.IDictionary%2CSystem.Web.UI.Control%29>メソッドを使用、`owner`マップするパラメーター、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティをサーバー上のパス。 場合、 `owner` .aspx ページ上のコントロールまたはページ自体にパラメーターが指す、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティ .aspx ページと同じディレクトリ内のテキスト ファイルを指しています。 たとえば、.aspx ページは C:\inetpub\wwwroot\default.aspx にある場合、<xref:System.Web.UI.WebControls.MailDefinition>コントロールが、ディレクトリは C:\inetpub\wwwroot にテキスト ファイルを探します。  
+  
+ 場合、 <xref:System.Web.UI.WebControls.MailDefinition> .ascx ファイルに含まれるユーザー コントロール クラスが使用されて、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティは、ユーザー コントロールと同じディレクトリにあるテキスト ファイルをポイントします。 たとえば、.aspx ページは C:\inetpub\wwwroot\default.aspx に配置され、C:\inetpub\wwwroot\controls\control.aspx にユーザー コントロールが、<xref:System.Web.UI.WebControls.MailDefinition>オブジェクトがディレクトリ C:\inetpub\wwwroot\controls でテキスト ファイルを検索します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティに入力されたテキストを<xref:System.Web.UI.WebControls.TextBox>Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#3)]
+ [!code-vb[MailDefinitionClassSample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CC">
+      <MemberSignature Language="C#" Value="public string CC { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CC" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.CC" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージのコピー (CC) を送信する先の電子メール アドレスのコンマ区切り一覧を取得または設定します。</summary>
+        <value>メッセージのコピー (CC) を送信する先の電子メール アドレスのコンマ区切り一覧。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.CC%2A>プロパティには、電子メール メッセージの追加の受信者の一覧が含まれています。  
+  
+ 場合、<xref:System.Web.UI.WebControls.MailDefinition.CC%2A>プロパティには、不適切な形式の電子メール アドレスが含まれています、<xref:System.Net.Mail.SmtpClient.Send%2A>メソッドがスローされます、<xref:System.Web.HttpException>例外と、電子メール メッセージは送信されません。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.MailDefinition.CC%2A>プロパティに入力されたテキストを<xref:System.Web.UI.WebControls.TextBox>Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#4](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#4)]
+ [!code-vb[MailDefinitionClassSample#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMailMessage">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailMessage CreateMailMessage (string recipients, System.Collections.IDictionary replacements, System.Web.UI.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Mail.MailMessage CreateMailMessage(string recipients, class System.Collections.IDictionary replacements, class System.Web.UI.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.CreateMailMessage(System.String,System.Collections.IDictionary,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipients" Type="System.String" />
+        <Parameter Name="replacements" Type="System.Collections.IDictionary" />
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="recipients">メッセージの受信者のコンマ区切りの一覧です。</param>
+        <param name="replacements"><see cref="T:System.Collections.IDictionary" />文字列とその置換文字列の一覧を格納します。</param>
+        <param name="owner"><see cref="T:System.Web.UI.Control" />を所有しているこの<see cref="T:System.Web.UI.WebControls.MailDefinition" />です。</param>
+        <summary>SMTP (Simple Mail Transfer Protocol) を使用して送信するテキスト ファイルから電子メール メッセージを作成します。</summary>
+        <returns>テキスト ファイルからの電子メール メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%2A>メソッドが新たに作成<xref:System.Net.Mail.MailMessage>オブジェクトを使用して送信できる、<xref:System.Net.Mail.SmtpClient.Send%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Web.Mail.MailMessage.BodyFormat%2A>メール メッセージをプレーン テキストとして書式設定するかどうかを示すためにプロパティを設定する必要があります (<xref:System.Web.Mail.MailFormat?displayProperty=nameWithType>) または HTML (<xref:System.Web.Mail.MailFormat?displayProperty=nameWithType>)。  
+  
+ `recipients`パラメーターには、電子メール メッセージの受信者のコンマ区切りの一覧が含まれています。 場合、`recipients`パラメーターには、不適切な書式のインターネット電子メール アドレスが含まれています、<xref:System.Net.Mail.SmtpClient.Send%2A>メソッドがスローされます、<xref:System.Web.HttpException>例外と、電子メール メッセージは送信されません。  
+  
+ `replacements`パラメーターは、<xref:System.Collections.IDictionary>の代わりに文字列のリストを格納しているインスタンス。 追加された順序の文字列が置換、<xref:System.Collections.IDictionary>コレクション、およびそれらには、以前の置換を上書きできます。  
+  
+ `owner`パラメーターは、どのコントロールの親であることを示します、<xref:System.Web.UI.WebControls.MailDefinition>コントロール。 指定されたテキスト ファイルを検索するディレクトリを判断、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Collections.Specialized.ListDictionary> 2 つの文字列を定義するオブジェクト ("\<~ % >"と"\<% から % >") を電子メール メッセージに置き換えられます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#7](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#7)]
+ [!code-vb[MailDefinitionClassSample#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#7)]  
+  
+ 次のコード例では、<xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%2A>メソッドをテキスト ファイルから新しい電子メール メッセージを作成します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#8](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#8)]
+ [!code-vb[MailDefinitionClassSample#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="replacements" />文字列は含まれません。</exception>
+        <exception cref="T:System.Web.HttpException"><see langword="From" /> 、SMTP、構成ファイルのセクション内の値が<see langword="null" />または空の文字列  
+  
+ \- または  
+  
+ <paramref name="recipients" />不適切な電子メール アドレスが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owner" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMailMessage">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailMessage CreateMailMessage (string recipients, System.Collections.IDictionary replacements, string body, System.Web.UI.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Mail.MailMessage CreateMailMessage(string recipients, class System.Collections.IDictionary replacements, string body, class System.Web.UI.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.CreateMailMessage(System.String,System.Collections.IDictionary,System.String,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipients" Type="System.String" />
+        <Parameter Name="replacements" Type="System.Collections.IDictionary" />
+        <Parameter Name="body" Type="System.String" />
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="recipients">受信者のコンマ区切り一覧。</param>
+        <param name="replacements"><see cref="T:System.Collections.IDictionary" />文字列とその置換文字列の一覧を格納します。</param>
+        <param name="body">電子メール メッセージのテキストです。</param>
+        <param name="owner"><see cref="T:System.Web.UI.Control" />を所有しているこの<see cref="T:System.Web.UI.WebControls.MailDefinition" />です。</param>
+        <summary>SMTP (Simple Mail Transfer Protocol) を使用して送信するテキスト ファイルから置換が適用された電子メール メッセージを作成します。</summary>
+        <returns>テキスト ファイルから置換が適用された電子メール メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%2A>メソッドが新たに作成<xref:System.Net.Mail.MailMessage>に送信可能なオブジェクト、<xref:System.Net.Mail.SmtpClient.Send%2A?displayProperty=nameWithType>メソッドです。  
+  
+ `recipients`パラメーターには、電子メール メッセージの受信者のコンマ区切りの一覧が含まれています。 場合、`recipients`パラメーターには、不適切な書式のインターネット電子メール アドレスが含まれています、<xref:System.Net.Mail.SmtpClient.Send%2A>メソッドがスローされます、<xref:System.Web.HttpException>例外と、電子メール メッセージは送信されません。  
+  
+ `replacements`パラメーターは、<xref:System.Collections.IDictionary>の代わりに文字列のリストを格納しているインスタンス。 追加された順序の文字列が置換、<xref:System.Collections.IDictionary>コレクション、およびそれらには、以前の置換を上書きできます。  
+  
+ `body`パラメーターには、電子メール メッセージのテキストが含まれています。  
+  
+ `owner`パラメーターは、どのコントロールの親であることを示します、<xref:System.Web.UI.WebControls.MailDefinition>コントロール。 指定されたテキスト ファイルを検索するディレクトリを判断、<xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Collections.Specialized.ListDictionary> 2 つの文字列を定義するオブジェクト ("\<~ % >"と"\<% から % >") を電子メール メッセージに置き換えられます。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#7](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#7)]
+ [!code-vb[MailDefinitionClassSample#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#7)]  
+  
+ 次のコード例では、<xref:System.Web.UI.WebControls.MailDefinition.CreateMailMessage%2A>に入力したテキストから新しい電子メール メッセージを作成する方法、 <xref:System.Web.UI.WebControls.TextBox> Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#8](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#8)]
+ [!code-vb[MailDefinitionClassSample#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="replacements" />文字列は含まれません。</exception>
+        <exception cref="T:System.Web.HttpException"><see langword="From" /> 、SMTP、構成ファイルのセクション内の値が<see langword="null" />または空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="recipients" />不適切な電子メール アドレスが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owner" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddedObjects">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.EmbeddedMailObjectsCollection EmbeddedObjects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.EmbeddedMailObjectsCollection EmbeddedObjects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.EmbeddedObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.EmbeddedMailObjectsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.EmbeddedMailObject" />インスタンス、通常の画像を埋め込むために使用する<see cref="T:System.Web.UI.WebControls.MailDefinition" />ユーザーに電子メールを送信する前にオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.EmbeddedMailObjectsCollection" />で画像を埋め込むために使用されるインスタンス、<see cref="T:System.Web.UI.WebControls.MailDefinition" />ユーザーに電子メールを送信する前にオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EmbeddedMailObject>の項目を<xref:System.Web.UI.WebControls.EmbeddedMailObjectsCollection>によって返されるコレクション、<xref:System.Web.UI.WebControls.MailDefinition.EmbeddedObjects%2A>プロパティは、電子メール メッセージに埋め込むには項目を表します。 これらの項目には、会社のロゴなどのイメージ ファイルやその他のグラフィックスを含めることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public string From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string From" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの送信者の電子メール アドレスを設定します。</summary>
+        <value>メッセージの送信者の電子メール アドレス。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.From%2A>プロパティには、電子メール メッセージの送信者の電子メール アドレスが含まれています。 場合、<xref:System.Web.UI.WebControls.MailDefinition.From%2A>プロパティが空白、または、不適切な形式の電子メール アドレスを含む、<xref:System.Net.Mail.SmtpClient.Send%2A?displayProperty=nameWithType>メソッドがスローされます、<xref:System.Web.HttpException>例外と、電子メール メッセージは送信されません。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.MailDefinition.From%2A>プロパティに入力されたテキストを<xref:System.Web.UI.WebControls.TextBox>Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#5](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#5)]
+ [!code-vb[MailDefinitionClassSample#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBodyHtml">
+      <MemberSignature Language="C#" Value="public bool IsBodyHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBodyHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.IsBodyHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メールの本文が HTML かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />電子メールの本文が HTML 以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MailDefinition.IsBodyHtml%2A>電子メール メッセージの本文がプレーン テキストまたは HTML マークアップを含むかどうかを指定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailPriority Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.MailPriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの優先順位を設定します。</summary>
+        <value><see cref="T:System.Net.Mail.MailPriority" /> 値のいずれか。 既定値は、<see cref="F:System.Net.Mail.MailPriority.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.Priority%2A>プロパティは、電子メール メッセージの相対的な優先順位を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.MailDefinition.Priority%2A>プロパティから選択した値を<xref:System.Web.UI.WebControls.DropDownList>Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#10](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#10)]
+ [!code-vb[MailDefinitionClassSample#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Net.Mail.MailPriority" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public string Subject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの件名を設定します。</summary>
+        <value>電子メール メッセージの件名行。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailDefinition.Subject%2A>プロパティは、電子メール メッセージの件名行として使用します。 空白でもかまいません。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.MailDefinition.Subject%2A>プロパティに入力されたテキストを<xref:System.Web.UI.WebControls.TextBox>Web フォーム ページ上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.MailDefinition>クラスです。  
+  
+ [!code-csharp[MailDefinitionClassSample#6](~/samples/snippets/csharp/VS_Snippets_WebNet/MailDefinitionClassSample/CS/maildefinitionsamplecs.aspx#6)]
+ [!code-vb[MailDefinitionClassSample#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MailDefinitionClassSample/VB/maildefinitionsamplevb.aspx#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailDefinition.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールがそのビュー ステートの変更を保存しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールがその状態を保存するマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.MailDefinition> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.MailDefinition.BodyFileName%2A>と<xref:System.Web.UI.WebControls.EmbeddedMailObject.Path%2A>プロパティに保存されず、<xref:System.Web.UI.Control.ViewState%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>によって保存された前回のページ要求からビューステート情報を復元、<see cref="M:System.Web.UI.IStateManager.SaveViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.MailDefinition> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポスト バックされた時間以降に発生した、サーバー コントロールのビューステートの変更を保存します。</summary>
+        <returns>サーバー コントロールの現在のビュー ステート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.MailDefinition> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailDefinition.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールにビュー ステートの変更の追跡すると、サーバー コントロールの保存できるため<see cref="T:System.Web.UI.StateBag" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.MailDefinition> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

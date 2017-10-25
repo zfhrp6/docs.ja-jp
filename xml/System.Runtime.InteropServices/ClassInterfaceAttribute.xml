@@ -1,0 +1,175 @@
+<Type Name="ClassInterfaceAttribute" FullName="System.Runtime.InteropServices.ClassInterfaceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ClassInterfaceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClassInterfaceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ClassInterfaceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インターフェイスが生成される場合、COM に公開されているクラスに対して生成されるクラス インターフェイスの型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリまたはクラスに適用できます。  
+  
+ この属性は、タイプ ライブラリ エクスポーター (Tlbexp.exe) が、属性付きクラスのクラス インターフェイスを自動的に生成するかどうかを制御します。 クラスのインターフェイス クラス自身と同じ名前の実行が、名前にアンダー スコアが付きます。 公開されているときにすべてのクラス インターフェイスが含まれます、`public`以外 -`static`その基本クラスから継承したメンバーを含む、マネージ クラスのメンバーです。 マネージ クラスは、クラス インターフェイスへのアクセスことはできません、クラス メンバーに直接アクセスすることができますをする必要があります。 Tlbexp.exe は、クラス インターフェイスの一意のインターフェイス id (IID) を生成します。  
+  
+ クラス インターフェイスは、デュアルまたはディスパッチ専用インターフェイスを指定できます。 必要に応じて、クラス インターフェイスの生成を抑制し、代わりにカスタム インターフェイスを提供できます。 公開するか、または抑制する状況、クラス インターフェイスを指定して、<xref:System.Runtime.InteropServices.ClassInterfaceType?displayProperty=nameWithType>列挙体のメンバーです。 適用するときに<xref:System.Runtime.InteropServices.ClassInterfaceAttribute>アセンブリ属性に関連するアセンブリ内のすべてのクラスに個々 のクラスは、それぞれ独自の属性を使用して設定をオーバーライドしない限り、します。  
+  
+ クラス インターフェイスは、各クラスのインターフェイスを明示的に定義のタスクをなくすため、実稼働アプリケーションでの使用が強くお勧めします。 デュアル クラス インターフェイスは、クラスの進化に伴って変更されることが特定のインターフェイス レイアウトにバインドするクライアントを許可します。 たとえば、COM クライアントにクラス インターフェイスを公開するマネージ クラスがあるとします。 クラスの最初のバージョンには、メソッドが含まれている`North`と`South`です。 アンマネージ クライアントは、クラス インターフェイスを提供するバインドできる`North`クラス インターフェイスとメソッドの最初のメソッドとして`South`2 番目のメソッドとして。 新しいメソッドを持つ、クラスの次のバージョンについて検討`East`メソッド間で挿入された、`North`と`South`です。 以前のクラス インターフェイスを通じて、新しいクラスにバインドしようとするアンマネージのクライアントがメソッドを呼び出すしまう`East`メソッドを呼び出すしようと`South`インターフェイス内でのメソッドの位置が変更されたため、します。 さらに、基本クラスのレイアウトに何らかの変更は、すべての派生クラスのクラス インターフェイスのレイアウトも影響します。 クライアントをバインドする直接クラスに示さない同時バージョン管理の問題を管理します。 クラス インターフェイスの使用に関する特定のガイドラインについては、次を参照してください。 [COM 呼び出し可能ラッパー](~/docs/framework/interop/com-callable-wrapper.md)です。  
+  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)常にインポートされたクラスに適用されます、<xref:System.Runtime.InteropServices.ClassInterfaceType?displayProperty=nameWithType>を既存の COM クラスを公開してのしないことを示す列挙体のメンバーがインターフェイスを管理します。  
+  
+   
+  
+## Examples  
+ 次の例に適用する方法を示しています、<xref:System.Runtime.InteropServices.ClassInterfaceAttribute>で、<xref:System.Runtime.InteropServices.ClassInterfaceType>値<xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch>を生成する、`IDispatch`のためのインターフェイス`MyClass`です。  
+  
+ [!code-cpp[Classic ClassInterfaceAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ClassInterfaceAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ClassInterfaceAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ClassInterfaceAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic ClassInterfaceAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ClassInterfaceAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClassInterfaceAttribute (short classInterfaceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 classInterfaceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ClassInterfaceAttribute.#ctor(System.Int16)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="classInterfaceType" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="classInterfaceType">クラスに対して生成されるインターフェイスの型について説明します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" /> 、指定したクラス<see cref="T:System.Runtime.InteropServices.ClassInterfaceType" />列挙値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、基になる 16 ビット符号付き整数をそれぞれ表す<xref:System.Runtime.InteropServices.ClassInterfaceType>列挙体のメンバーです。 [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClassInterfaceAttribute (System.Runtime.InteropServices.ClassInterfaceType classInterfaceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.ClassInterfaceType classInterfaceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ClassInterfaceAttribute.#ctor(System.Runtime.InteropServices.ClassInterfaceType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="classInterfaceType" Type="System.Runtime.InteropServices.ClassInterfaceType" />
+      </Parameters>
+      <Docs>
+        <param name="classInterfaceType">1 つ、<see cref="T:System.Runtime.InteropServices.ClassInterfaceType" />クラスに対して生成されるインターフェイスの型を記述する値。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.InteropServices.ClassInterfaceAttribute" /> 、指定したクラス<see cref="T:System.Runtime.InteropServices.ClassInterfaceType" />列挙体のメンバーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り可能なコードでエラーが発生しにくくなりました、常にこのコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ClassInterfaceType Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.ClassInterfaceType Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ClassInterfaceAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ClassInterfaceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.InteropServices.ClassInterfaceType" />クラスのインターフェイスの種類を生成するかを示す値。</summary>
+        <value><see cref="T:System.Runtime.InteropServices.ClassInterfaceType" />クラスのインターフェイスの種類を生成するかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

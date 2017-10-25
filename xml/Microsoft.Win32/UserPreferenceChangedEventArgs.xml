@@ -1,0 +1,62 @@
+<Type Name="UserPreferenceChangedEventArgs" FullName="Microsoft.Win32.UserPreferenceChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class UserPreferenceChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserPreferenceChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.UserPreferenceChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:Microsoft.Win32.SystemEvents.UserPreferenceChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>イベント、ユーザーの設定が変更されたときに発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserPreferenceChangedEventArgs (Microsoft.Win32.UserPreferenceCategory category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Win32.UserPreferenceCategory category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.UserPreferenceChangedEventArgs.#ctor(Microsoft.Win32.UserPreferenceCategory)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="category" Type="Microsoft.Win32.UserPreferenceCategory" />
+      </Parameters>
+      <Docs>
+        <param name="category">1 つ、<see cref="T:Microsoft.Win32.UserPreferenceCategory" />が変更されたユーザー 基本設定のカテゴリを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Win32.UserPreferenceChangedEventArgs" />クラスを使用して指定されたユーザー 基本設定カテゴリの識別子。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.UserPreferenceCategory Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Win32.UserPreferenceCategory Category" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.UserPreferenceChangedEventArgs.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.UserPreferenceCategory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたユーザー設定のカテゴリを取得します。</summary>
+        <value>1 つ、<see cref="T:Microsoft.Win32.UserPreferenceCategory" />ユーザー設定のカテゴリが変更されたことを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

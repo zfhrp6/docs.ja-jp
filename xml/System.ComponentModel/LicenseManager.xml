@@ -1,0 +1,484 @@
+<Type Name="LicenseManager" FullName="System.ComponentModel.LicenseManager">
+  <TypeSignature Language="C#" Value="public sealed class LicenseManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LicenseManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.LicenseManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネントにライセンスを追加し、<see cref="T:System.ComponentModel.LicenseProvider" /> を管理するためのプロパティとメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicenseManager>クラスは、次を提供`static`プロパティ:<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>と<xref:System.ComponentModel.LicenseManager.UsageMode%2A>です。 クラスは、以下も用意されています。`static`メソッド: <xref:System.ComponentModel.LicenseManager.CreateWithContext%2A>、 <xref:System.ComponentModel.LicenseManager.IsValid%2A>、および<xref:System.ComponentModel.LicenseManager.Validate%2A>です。  
+  
+ ライセンスを取得する対象となるコンポーネントを作成するときに、次の操作を行う必要があります。  
+  
+1.  指定して、<xref:System.ComponentModel.LicenseProvider>を持つコンポーネントをマークすることによって、<xref:System.ComponentModel.LicenseProviderAttribute>です。  
+  
+2.  呼び出す<xref:System.ComponentModel.LicenseManager.Validate%2A>または<xref:System.ComponentModel.LicenseManager.IsValid%2A>コンポーネントのコンス トラクターです。 <xref:System.ComponentModel.LicenseManager.Validate%2A>スロー、<xref:System.ComponentModel.LicenseException>有効なライセンスがなくてもインスタンスを作成しようとします。 <xref:System.ComponentModel.LicenseManager.IsValid%2A>例外はスローされません。  
+  
+3.  呼び出す<xref:System.ComponentModel.License.Dispose%2A>コンポーネントが破棄または終了時に付与されているすべてのライセンスにします。  
+  
+ ライセンスの詳細については、次を参照してください。[する方法: ライセンス コンポーネントやコントロール](http://msdn.microsoft.com/library/8e66c1ed-a445-4b26-8185-990b6e2bbd57)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、ライセンスされたコントロールを作成、<xref:System.ComponentModel.LicenseManager.Validate%2A>メソッドです。 使用して、<xref:System.ComponentModel.LicenseProvider>によって実装される、<xref:System.ComponentModel.LicFileLicenseProvider>クラスです。  
+  
+ [!code-cpp[Classic LicenseManager Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic LicenseManager Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LicenseManager Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic LicenseManager Example/CS/source.cs#1)]
+ [!code-vb[Classic LicenseManager Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic LicenseManager Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateWithContext">
+      <MemberSignature Language="C#" Value="public static object CreateWithContext (Type type, System.ComponentModel.LicenseContext creationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateWithContext(class System.Type type, class System.ComponentModel.LicenseContext creationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.CreateWithContext(System.Type,System.ComponentModel.LicenseContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="creationContext" Type="System.ComponentModel.LicenseContext" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />を作成する型を表すです。</param>
+        <param name="creationContext">A<see cref="T:System.ComponentModel.LicenseContext" />ライセンス付きのインスタンスを使用する場合を指定します。</param>
+        <summary>ライセンス付きのインスタンスを使用できるコンテキストを指定指定した型のインスタンスを作成します。</summary>
+        <returns>指定した型のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicenseContext>として指定する、`creationContext`パラメーターとして使用、<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>これの有効期間<xref:System.ComponentModel.License>です。 <xref:System.ComponentModel.LicenseManager.CreateWithContext%2A>メソッドでは、他のすべてのスレッドをブロック単位、<xref:System.AppDomain>変更から、<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>できるので、<xref:System.ComponentModel.LicenseManager.CreateWithContext%2A>アトミックな操作として動作します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">プライベート クラス メンバーは、メタデータにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWithContext">
+      <MemberSignature Language="C#" Value="public static object CreateWithContext (Type type, System.ComponentModel.LicenseContext creationContext, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateWithContext(class System.Type type, class System.ComponentModel.LicenseContext creationContext, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.CreateWithContext(System.Type,System.ComponentModel.LicenseContext,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="creationContext" Type="System.ComponentModel.LicenseContext" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />を作成する型を表すです。</param>
+        <param name="creationContext">A<see cref="T:System.ComponentModel.LicenseContext" />ライセンス付きのインスタンスを使用する場合を指定します。</param>
+        <param name="args">型の配列<see cref="T:System.Object" />を表す、型の引数。</param>
+        <summary>ライセンス付きのインスタンスを使用できるコンテキストを指定指定された引数で指定した型のインスタンスを作成します。</summary>
+        <returns>指定した引数の配列の指定した型のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicenseContext>として指定する、`creationContext`パラメーターとして使用、<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>これの有効期間<xref:System.ComponentModel.License>です。 このメソッドでは、他のすべてのスレッドをブロック単位、<xref:System.AppDomain>変更から、<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>できるので、<xref:System.ComponentModel.LicenseManager.CreateWithContext%2A>アトミックな操作として動作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentContext">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.LicenseContext CurrentContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ComponentModel.LicenseContext CurrentContext" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.LicenseManager.CurrentContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.LicenseContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定を取得または<see cref="T:System.ComponentModel.LicenseContext" />、ライセンスされたオブジェクトを使用する場合を指定します。</summary>
+        <value>A<see cref="T:System.ComponentModel.LicenseContext" />ライセンスされたオブジェクトを使用する場合を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが、有効な要求したとき<xref:System.ComponentModel.License>、ユーザーをコンテキストを指定する必要があります、<xref:System.ComponentModel.License>に有効では、<xref:System.ComponentModel.LicenseProvider.GetLicense%2A?displayProperty=nameWithType>メソッドです。 <xref:System.ComponentModel.LicenseContext>これによって返されるプロパティをすべて渡す必要がある<xref:System.ComponentModel.LicenseProvider>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.ComponentModel.LicenseManager.CurrentContext" />プロパティがロックされている、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLicensed">
+      <MemberSignature Language="C#" Value="public static bool IsLicensed (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsLicensed(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.IsLicensed(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />の有効なライセンスが見つかりません。</param>
+        <summary>指定された型が有効なライセンスを持つかどうかを返します。</summary>
+        <returns>
+          <see langword="true" />指定された型がライセンス付き場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public static bool IsValid (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsValid(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.IsValid(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />を要求するオブジェクトの型を表す、<see cref="T:System.ComponentModel.License" />です。</param>
+        <summary>指定した型の有効なライセンスを許可できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、有効なライセンスを与えることができます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicenseManager.IsValid%2A>メソッドを返します。`true`型か、ライセンスがない、またはとライセンスがおよび、ライセンスが無効です。  
+  
+ このメソッドはスローされません、<xref:System.ComponentModel.LicenseException>有効なに与えることができないときに<xref:System.ComponentModel.License>です。 <xref:System.ComponentModel.LicenseManager.Validate%2A>メソッドが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public static bool IsValid (Type type, object instance, out System.ComponentModel.License license);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsValid(class System.Type type, object instance, [out] class System.ComponentModel.License&amp; license) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.IsValid(System.Type,System.Object,System.ComponentModel.License@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="license" Type="System.ComponentModel.License&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />ライセンスを要求するオブジェクトの型を表すです。</param>
+        <param name="instance">指定した型または型のオブジェクトは、指定した型から派生します。</param>
+        <param name="license">A<see cref="T:System.ComponentModel.License" />は有効なライセンス、または<see langword="null" />場合は、有効なライセンスを付与することはできません。</param>
+        <summary>型の指定したインスタンスの有効なライセンスを与えることがあるかどうかを判断します。 このメソッドは、有効な作成<see cref="T:System.ComponentModel.License" />です。</summary>
+        <returns>
+          <see langword="true" />有効な場合<see cref="T:System.ComponentModel.License" />付与されている、それ以外は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.LicenseManager.IsValid%2A>メソッドを返します。`true`ときに、`type`パラメーターのライセンスがない、またはライセンスされている場合、`license`パラメーターが無効です。  
+  
+ このメソッドはスローされません、<xref:System.ComponentModel.LicenseException>有効なに与えることができないときに<xref:System.ComponentModel.License>です。 <xref:System.ComponentModel.LicenseManager.Validate%2A>メソッドが例外をスローします。  
+  
+ 場合、`license`パラメーターではありません`null`を求めるオブジェクトは、この呼び出しの後に、<xref:System.ComponentModel.License>を呼び出してのライセンスを破棄する必要があります、<xref:System.ComponentModel.License.Dispose%2A>メソッド、オブジェクトを破棄または終了時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockContext">
+      <MemberSignature Language="C#" Value="public static void LockContext (object contextUser);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LockContext(object contextUser) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.LockContext(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextUser" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contextUser">オブジェクトが現在のコンテキストをロックします。</param>
+        <summary>現在に加えられる変更が防止<see cref="T:System.ComponentModel.LicenseContext" />の指定したオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.LicenseContext>を取得する、<xref:System.ComponentModel.License>のオブジェクト。 このメソッドはロック、 <xref:System.ComponentModel.LicenseContext>、防止、<xref:System.ComponentModel.License>取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コンテキストは既にロックされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockContext">
+      <MemberSignature Language="C#" Value="public static void UnlockContext (object contextUser);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnlockContext(object contextUser) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.UnlockContext(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextUser" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contextUser">オブジェクトが現在のコンテキストがロックを解除します。</param>
+        <summary>現在の変更は、<see cref="T:System.ComponentModel.LicenseContext" />指定したオブジェクトの。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.LicenseContext>を取得する、<xref:System.ComponentModel.License>のオブジェクト。 このメソッドのロックを解除、<xref:System.ComponentModel.LicenseContext>できるので、<xref:System.ComponentModel.License>を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contextUser" />前の呼び出しで指定されたものの別のユーザーを表す<see cref="M:System.ComponentModel.LicenseManager.LockContext(System.Object)" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UsageMode">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.LicenseUsageMode UsageMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.ComponentModel.LicenseUsageMode UsageMode" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.LicenseManager.UsageMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.LicenseUsageMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.LicenseUsageMode" />のライセンスされたオブジェクトを使用する場合を指定する、<see cref="P:System.ComponentModel.LicenseManager.CurrentContext" />です。</summary>
+        <value>1 つ、<see cref="T:System.ComponentModel.LicenseUsageMode" />で指定された値、<see cref="P:System.ComponentModel.LicenseManager.CurrentContext" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを見つけられない場合、<xref:System.ComponentModel.LicenseManager.CurrentContext%2A>値を返します<xref:System.ComponentModel.LicenseUsageMode.Runtime>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public static void Validate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.Validate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />ライセンスを要求するオブジェクトの型を表すです。</param>
+        <summary>指定した型のライセンスを付与できるかどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ComponentModel.LicenseException>ときに、有効な<xref:System.ComponentModel.License>付与することはできません。 <xref:System.ComponentModel.LicenseManager.IsValid%2A>メソッドが例外をスローしません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.LicenseException">A<see cref="T:System.ComponentModel.License" />付与することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.License Validate (Type type, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.License Validate(class System.Type type, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.LicenseManager.Validate(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.License</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />ライセンスを要求するオブジェクトの型を表すです。</param>
+        <param name="instance"><see cref="T:System.Object" />型または指定した型の指定した型から派生します。</param>
+        <summary>指定した型のインスタンスのライセンスを与えることがあるかどうかを判断します。</summary>
+        <returns>有効な <see cref="T:System.ComponentModel.License" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ComponentModel.LicenseException>ときに、有効な<xref:System.ComponentModel.License>付与することはできません。 <xref:System.ComponentModel.LicenseManager.IsValid%2A>メソッドが例外をスローしません。  
+  
+ すべてのオブジェクトを求める、<xref:System.ComponentModel.License>を呼び出してのライセンスを破棄する必要があります、<xref:System.ComponentModel.License.Dispose%2A>メソッド、オブジェクトを破棄または終了時にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.LicenseException">型のライセンスが与えられたが、<see cref="T:System.ComponentModel.License" />付与することはできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

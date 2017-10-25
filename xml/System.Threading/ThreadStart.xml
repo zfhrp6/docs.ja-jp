@@ -1,0 +1,61 @@
+<Type Name="ThreadStart" FullName="System.Threading.ThreadStart">
+  <TypeSignature Language="C#" Value="public delegate void ThreadStart();" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ThreadStart extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadStart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters />
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <summary><see cref="T:System.Threading.Thread" /> で実行するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドで実行するメソッドとして表されますマネージ スレッドの作成時に、<xref:System.Threading.ThreadStart>委任または<xref:System.Threading.ParameterizedThreadStart>デリゲートに渡される、<xref:System.Threading.Thread.%23ctor%2A>コンス トラクターです。 スレッドがまで実行を開始していない、<xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>メソッドが呼び出されます。 によって表されるメソッドの最初の行で実行が開始される、<xref:System.Threading.ThreadStart>または<xref:System.Threading.ParameterizedThreadStart>を委任します。  
+  
+> [!NOTE]
+>  Visual Basic および c# のユーザーを省略できます、<xref:System.Threading.ThreadStart>または<xref:System.Threading.ParameterizedThreadStart>スレッドを作成するときに、デリゲート コンス トラクターです。 Visual Basic を使用して、`AddressOf`演算子が、メソッドに渡すときに、<xref:System.Threading.Thread.%23ctor%2A>コンス トラクター。 たとえば、`Dim t As New Thread(AddressOf ThreadProc)`です。 C# の場合は、単にスレッド プロシージャの名前を指定します。 コンパイラは、適切なデリゲート コンス トラクターを選択します。  
+  
+ [C++]  
+  
+> [!NOTE]
+>  .NET Framework のバージョン 2.0 で作成、<xref:System.Threading.ThreadStart>の C++ では静的メソッドには、1 つだけのパラメーターが必要です。 委任: クラス名で修飾して、コールバック メソッドのアドレス。 以前のバージョンで 2 つのパラメーターが必要な静的メソッドのデリゲートを作成する場合: 0 (null) とメソッドのアドレス。 インスタンス メソッドでのすべてのバージョンは 2 つのパラメーターを必要とします。 インスタンス変数とメソッドのアドレス。  
+  
+   
+  
+## Examples  
+ 次のコード例の作成と使用の構文を示しています、<xref:System.Threading.ThreadStart>にインスタンス メソッドと静的メソッドを使用して委任します。  
+  
+ 作成する方法を示す別の単純な例については、<xref:System.Threading.ThreadStart>デリゲートを参照してください、<xref:System.Threading.Thread.Start?displayProperty=nameWithType>メソッドのオーバー ロードします。 スレッドの作成の詳細については、次を参照してください。[スレッドの作成と開始時にデータを渡す](~/docs/standard/threading/creating-threads-and-passing-data-at-start-time.md)です。  
+  
+ [!code-cpp[System.Threading.ThreadStart2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadStart2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadStart2/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadStart2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadStart2/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

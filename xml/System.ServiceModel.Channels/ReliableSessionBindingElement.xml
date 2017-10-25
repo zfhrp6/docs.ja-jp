@@ -1,0 +1,564 @@
+<Type Name="ReliableSessionBindingElement" FullName="System.ServiceModel.Channels.ReliableSessionBindingElement">
+  <TypeSignature Language="C#" Value="public sealed class ReliableSessionBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReliableSessionBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ReliableSessionBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyExportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>エンドポイント間の信頼できるセッションに必要な送信および受信チャネルを作成できるバインド要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッションを提供し、オプションとして順序付けされたメッセージ配信を提供します。 この実装されたセッションは、SOAP およびトランスポート中継局を通過できます。  
+  
+ 各バインド要素は、メッセージの送信または受信時の処理手順を表します。 実行時に、バインディング要素は、メッセージの送受信に求められる送信および受信チャネル スタックを作成するために必要なチャネル ファクトリとリスナーを作成します。 <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> が提供するスタック内のオプションの層は、エンドポイント間に信頼できるセッションを確立し、このセッションの動作を構成することができます。  
+  
+ <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> は、次の表の標準バインドで提供されます。  
+  
+|バインディング|既定値|  
+|-------------|-------------|  
+|<xref:System.ServiceModel.NetTcpBinding>|オフ|  
+|<xref:System.ServiceModel.WSHttpBinding>|オフ|  
+|<xref:System.ServiceModel.WSDualHttpBinding>|オン (必須)|  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> は、任意のカスタム バインドに追加できます。 カスタム バインドへの追加は、次の構成要素を使用して行います。  
+  
+```  
+<bindings>  
+    <customBinding>  
+        <binding configurationName="ReliabilityHTTP">  
+            <reliableSession/>  
+        </binding>  
+    </customBinding>  
+</bindings>  
+```  
+  
+ コード内で <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> を使用する方法を次のコード例に示します。  
+  
+ [!code-csharp[S_Imperative#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/service.cs#1)]
+ [!code-vb[S_Imperative#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliableSessionBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ReliableSessionBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliableSessionBindingElement (bool ordered);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool ordered) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ordered" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ordered">
+          メッセージを、送信された順に配信する必要がある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</param>
+        <summary>メッセージが送信された順序をメッセージ配信で維持する必要があるかどうかを指定する <see cref="T:System.ServiceModel.Channels.ReliableSessionBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgementInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan AcknowledgementInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AcknowledgementInterval" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.AcknowledgementInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファクトリによって作成された信頼できるチャネルで、メッセージの送信元に受信確認を送信するまで送信先が待機する時間を取得または設定します。</summary>
+        <value>メッセージの送信元に受信確認を送信するまでサービスが待機する時間を指定する <see cref="T:System.TimeSpan" />。 既定値は、2 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼できるチャネルで複数のメッセージを受信する送信先は、これらのメッセージに対する受信確認を 1 つのメッセージにグループ化することで、ネットワーク トラフィックを減らし、メッセージでの情報密度を上げます。 グループ化は、トラフィックの増加にも問題なく対応します。 送信先は、メッセージを受信するたびに、可能な限り早く受信確認を送信するのではなく、ある時間だけ待機し、その間に到着したメッセージに対する受信確認をグループ化して、まとめて送信します。 ただし、最初に受信したメッセージだけは例外で、配信されると、直ちに受信確認が行われます。 また、単一の HTTP 接続で信頼できるセッションを使用する場合は (たとえば、<xref:System.ServiceModel.WSHttpBinding> ではなく <xref:System.ServiceModel.WSDualHttpBinding> の場合)、この設定は使用されません。  
+  
+ <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.AcknowledgementInterval%2A> プロパティで設定する値は、インフラストラクチャに対する推奨値であり、絶対的な制限ではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 以下の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />種類のチャネルを作成できるファクトリの構築に必要な情報を含む<c>TChannel</c>です。</param>
+        <summary>信頼できるセッションをサポートする、指定した種類のチャネルを作成するファクトリを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> から初期化される <see cref="T:System.ServiceModel.Channels.IChannel" /> 型の <paramref name="context" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファクトリによって作成される <xref:System.ServiceModel.Channels.IChannel> の型は `TChannel` です。 クライアントでサポートされる `TChannel` の型は、サービスに接続する基になるチャネルの種類によって決まります。 次の表では、サポートされる信頼できるセッション チャネルの種類を、基になるチャネルごとに示します。  
+  
+|基になるチャネルの種類別の、信頼できるセッションの `TChannel` 型のサポート|IRequestChannel|IRequestSessionChannel|IDuplexChannel|IDuplexSessionChannel|  
+|-------------------------------------------------------------------------------|---------------------|----------------------------|--------------------|---------------------------|  
+|IOutputSessionChannel|はい|はい|はい|はい|  
+|IRequestSessionChannel|はい|はい|いいえ|いいえ|  
+|IDuplexSessionChannel|いいえ|いいえ|はい|はい|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="TChannel" /> がサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">作成したリスナーで受け入れる <see cref="T:System.ServiceModel.Channels.IChannel" />。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />受け入れることができる種類のチャネル リスナーを構築するために必要な情報を含む<c>TChannel</c>です。</param>
+        <summary>信頼できるセッションをサポートする、指定した種類のチャネルを受け入れるリスナーを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> から初期化される <see cref="T:System.ServiceModel.Channels.IChannel" /> 型の <paramref name="context" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスナーが受け入れる <xref:System.ServiceModel.Channels.IChannel> の種類は `TChannel` です。 サービスをホストするサーバーでサポートされる `TChannel` の種類は、クライアントへの接続で使用される基になるチャネルの種類によって決まります。 次の表では、サポートされる信頼できるセッション チャネルの種類を、基になるチャネルごとに示します。  
+  
+|基になるチャネルの種類別の、信頼できるセッションの `TChannel` 型のサポート|IReplyChannel|IReplySessionChannel|IDuplexChannel|IDuplexSessionChannel|  
+|-------------------------------------------------------------------------------|-------------------|--------------------------|--------------------|---------------------------|  
+|IInputSessionChannel|はい|はい|はい|はい|  
+|IReplySessionChannel|はい|はい|いいえ|いいえ|  
+|IDuplexSessionChannel|いいえ|いいえ|はい|はい|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="TChannel" /> がサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />種類のチャネルを作成できるファクトリの構築に必要な情報を含む<c>TChannel</c>です。</param>
+        <summary>指定したチャネルとコンテキストに対して信頼できるセッションをサポートするチャネル ファクトリを作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> 型の <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> を作成できる場合は <paramref name="TChannel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、`true` で提供されている値の表に従って、`false` に対する `TChannel` または <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel"><see cref="T:System.ServiceModel.Channels.IChannel" />するチャネル リスナー場合ビルド、受け入れます。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />受け入れることができる種類のチャネル リスナーを構築するために必要な情報を含む<c>TChannel</c>です。</param>
+        <summary>指定したチャネルとコンテキストに対して信頼できるセッションをサポートするチャネル リスナーを作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> 型の <see cref="T:System.ServiceModel.Channels.ChannelListenerBase`1" /> を生成する <see cref="T:System.ServiceModel.Channels.IChannel" /> をバインディング要素で作成できる場合は <paramref name="TChannel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、チャネル スタックは、バインドによってチャネル スタックが作成されるファクトリ パターンを使用して作成されます。 メッセージの送信時には、バインドを使用してチャネル ファクトリが作成されます。これにより、次々にチャネル スタックが作成され、スタック内の最上位チャネルへの参照が返されます。 アプリケーションは、このチャネルを使用して、メッセージを送信できます。 同様に、メッセージの受信時には、バインドを使用して、受信メッセージをリッスンするチャネル リスナーが作成されます。 チャネル リスナーは、チャネル スタックを作成し、最上位チャネルへの参照をアプリケーションに渡すことによって、リッスンしているアプリケーションにメッセージを提供します。  
+  
+ このメソッドは、`true` で提供されている値の表に従って、`false` に対する `TChannel` または <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener%60%601%28System.ServiceModel.Channels.BindingContext%29> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の信頼できるセッションのバインディング要素のコピーを作成します。</summary>
+        <returns>現在のバインド要素の複製である <see cref="T:System.ServiceModel.Channels.BindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowControlEnabled">
+      <MemberSignature Language="C#" Value="public bool FlowControlEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FlowControlEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼できるセッションでフロー制御が有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          信頼できるセッションでフロー制御が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フロー制御は、受信側が処理できる量より多いメッセージを送信側が送信しないようにするために、信頼できるセッションが実装するメカニズムです。 受信側は、メッセージのバッファーを用意し、急増したメッセージや順序が正しくないメッセージをこのバッファーに格納します。 受信側は、受信確認のたびに、このバッファーに残っている領域の量を送信側に通知します。 送信側は、この情報を使用することで、受信側のバッファーに空きがないときにはいつでも、新しいメッセージの送信を停止できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">取得するプロパティの型。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />型のチャネルを取得するために必要な情報を含む<c>T</c>です。</param>
+        <summary>バインド コンテキストから、指定した型のプロパティを取得します。</summary>
+        <returns>指定した <paramref name="T" /> での <paramref name="context" /> 型のプロパティ。または、<see langword="null" /> 型のプロパティが見つからない場合は <paramref name="T" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InactivityTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan InactivityTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan InactivityTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.InactivityTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが非アクティブになってから終了するまでの時間を取得または設定します。</summary>
+        <value>サービスが非アクティブになってから終了するまでの時間を指定する <see cref="T:System.TimeSpan" />。 既定値は、10 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルでのアクティビティは、アプリケーションまたはインフラストラクチャのメッセージを受信するように定義されています。 非アクティブ タイムアウト パラメーターは、アクティブでないセッションを維持する最長期間を制御します。 反応のない時間が <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.InactivityTimeout%2A> より長くなると、インフラストラクチャによってセッションは中止され、チャネルはエラーとなります。 信頼できるセッションは、強制的に終了されます。  
+  
+ 送信元アプリケーションに送信するメッセージがない場合は、通常、無反応のために信頼できるセッションがエラーになることはありません。代わりに、keep-alive 機構が無期限にセッションをアクティブ状態で維持します。 アプリケーション メッセージが送信または受信されない場合、これとは関係なく、ディスパッチャーが信頼できるセッションを終了させる場合があることに注意してください。 したがって、メッセージがまったく受信されないようなネットワーク状態の場合、または送信側でエラーが発生した場合には、通常、非アクティブ タイムアウトになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値が、0 以下か、<see cref="F:System.Int32.MaxValue" /> または <see cref="F:System.TimeSpan.MaxValue" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPendingChannels">
+      <MemberSignature Language="C#" Value="public int MaxPendingChannels { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPendingChannels" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxPendingChannels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼できるセッションの間に保留できるチャネルの最大数を取得または設定します。</summary>
+        <value>保留できるチャネルの最大数。 既定値は 4 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、受け入れを待っている間は保留状態になります。 この限界に達すると、それ以上チャネルは作成されず、この数が (保留状態のチャネルの受け入れによって) 減少するまで、保留モードになります。 これは、リスナーごとの制限です。  
+  
+ しきい値に達した後に、リモート アプリケーションが新しい信頼できるセッションを確立しようとした場合、要求は拒否され、この原因となる open 操作でエラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値が、0 以下か、または 16384 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxRetryCount">
+      <MemberSignature Language="C#" Value="public int MaxRetryCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxRetryCount" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxRetryCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼できるセッションの間にメッセージの転送を試行する最大回数を取得または設定します。</summary>
+        <value>メッセージの再送信を試みる最大回数。 最小値は 1、最大値は <see cref="F:System.Int32.MaxValue" />、既定値は 8 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージは、受信側でその配信が確認されている場合、転送されたと見なされます。  
+  
+ 転送済みのメッセージの受信確認が一定時間内に受信されない場合、インフラストラクチャは、自動的にそのメッセージを再転送します。 インフラストラクチャは、<xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxRetryCount%2A> で指定されている回数を上限として、メッセージの送信を試みます。 この上限回数に達しても受信確認が届かない場合は、致命的な通信エラーと見なし、チャネル エラー イベントを発生させます。  
+  
+ インフラストラクチャは、指数バックオフ アルゴリズムを使用し、計算された平均ラウンドトリップ時間に基づいて、いつ再転送するかを判断します。 最初の再試行時間は、計測されたセッション確立のラウンドトリップ時間に基づいて計算されます。 再送信アルゴリズムは、試行ごとに遅延を 2 倍にします。この結果、最初の転送試行から最後の再転送試行までに約 8.5 分かかります。 最初の再転送試行のタイミングは、計算されたラウンドトリップ時間に従って調整されるので、試行にかかる時間延長はさまざまです。 これにより、再転送のタイミングをさまざまなネットワーク条件に動的に適用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 以下の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxTransferWindowSize">
+      <MemberSignature Language="C#" Value="public int MaxTransferWindowSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxTransferWindowSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信バッファーまたは受信バッファーに存在できるメッセージの最大数を取得または設定します。</summary>
+        <value>バッファーに格納できるメッセージの最大数。 最小値は 1、最大値は 4096、既定値は 32 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> プロパティの値は、送信側と受信側の両方で設定できます。 この値が、WSDL のバインド ポリシーに含まれるため、使用する場合、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)クライアントを構築するために同じ値を持つこと。 ツールを使用しない場合は、クライアントに対して設定した値が有効になります。  
+  
+ 送信側でこの制限に達すると、それ以上の送信の呼び出しはブロックされます。 受信側でこの制限に達すると、基になっているチャネルに到着する新しいメッセージは受け入れられません。  
+  
+ 信頼できるセッションは、ネットワークの使用率を改善するためにウィンドウ プロトコルを使用します。 必要なバッファーの量は、送信ウィンドウのサイズから直接導出されます。 この値を調節するときは、最適な送信ウィンドウが帯域幅と待ち時間に直接、関係することに注意してください。 理想的な最大ウィンドウ サイズは、帯域幅に待ち時間を掛けた値です。 値がこれより小さいと、ネットワークの利用率が 100% 未満になり、これより大きいと、領域が無駄になるだけです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値が、0 以下か、または 4096 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordered">
+      <MemberSignature Language="C#" Value="public bool Ordered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Ordered" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.Ordered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信された順序をメッセージ配信で維持する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          メッセージを、送信された順に配信する必要がある場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージを順番どおりにディスパッチするには、<xref:System.ServiceModel.ConcurrencyMode> を <xref:System.ServiceModel.ConcurrencyMode.Single> に設定する必要もあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReliableMessagingVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ReliableMessagingVersion ReliableMessagingVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ReliableMessagingVersion ReliableMessagingVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ReliableSessionBindingElement.ReliableMessagingVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReliableMessagingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド要素で指定された WS-ReliableMessaging のバージョンを取得または設定します。</summary>
+        <value>構成要素で使用する WS-ReliableMessaging プロトコルのバージョンを表す <see cref="T:System.ServiceModel.ReliableMessagingVersion" /> から派生したインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-ReliableMessaging プロトコルには、現在 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] によってサポートされる WS-ReliableMessaging1.1 と WS-ReliableMessagingFebruary2005 という 2 つのバージョンがあります。 既定のバージョンは WS-ReliableMessagingFebruary2005 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy">
+      <MemberSignature Language="C#" Value="void IPolicyExportExtension.ExportPolicy (System.ServiceModel.Description.MetadataExporter exporter, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy(class System.ServiceModel.Description.MetadataExporter exporter, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElement.System#ServiceModel#Description#IPolicyExportExtension#ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">信頼できるセッションのバインド要素のバインド情報を WSDL 要素にエクスポートする <see cref="T:System.ServiceModel.Description.MetadataExporter" />。</param>
+        <param name="context">エクスポートされた WSDL 要素からエンドポイントの説明へのマッピングを提供する <see cref="T:System.ServiceModel.Description.PolicyConversionContext" />。</param>
+        <summary>信頼できるセッションのバインド要素に含まれる情報を WSDL 要素にマップします。この要素は、リモート エンドポイントが信頼できるセッションでサービスにアクセスできるようにするものです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

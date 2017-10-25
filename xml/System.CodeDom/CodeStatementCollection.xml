@@ -1,0 +1,493 @@
+<Type Name="CodeStatementCollection" FullName="System.CodeDom.CodeStatementCollection">
+  <TypeSignature Language="C#" Value="public class CodeStatementCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeStatementCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeStatementCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.CodeDom.CodeStatement" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeStatementCollection> クラスには、一連の <xref:System.CodeDom.CodeStatement> オブジェクトの格納に使用できる単純なコレクション オブジェクトが用意されています。  
+  
+   
+  
+## Examples  
+ <xref:System.CodeDom.CodeStatementCollection> クラスを使用する方法を次の例に示します。 例では、クラスの新しいインスタンスを作成使用して、いくつかの方法ステートメント、コレクションに追加、そのインデックスを返しますとを追加または特定のインデックス位置にあるステートメントを削除します。  
+  
+ [!code-cpp[CodeStatementCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[CodeStatementCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#1)]
+ [!code-vb[CodeStatementCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeStatementCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeStatementCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の空のインスタンスを作成する方法を示しています、<xref:System.CodeDom.CodeStatementCollection>クラスです。  
+  
+ [!code-cpp[CodeStatementCollectionExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#2)]
+ [!code-csharp[CodeStatementCollectionExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#2)]
+ [!code-vb[CodeStatementCollectionExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeStatementCollection (System.CodeDom.CodeStatement[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeStatement[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.#ctor(System.CodeDom.CodeStatement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.CodeStatement" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeStatementCollection" />クラスの指定した配列を含む<see cref="T:System.CodeDom.CodeStatement" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeStatementCollection (System.CodeDom.CodeStatementCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeStatementCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.#ctor(System.CodeDom.CodeStatementCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatementCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeStatementCollection" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeStatementCollection" />指定したソース コレクションの要素を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.CodeExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.CodeExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.Add(System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.CodeExpression" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeExpression" /> オブジェクトをコレクションに追加します。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.CodeStatement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.CodeStatement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.Add(System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.CodeStatement" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeStatement" /> オブジェクトをコレクションに追加します。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.CodeDom.CodeStatement>オブジェクトを<xref:System.CodeDom.CodeStatementCollection>インスタンス。  
+  
+ [!code-cpp[CodeStatementCollectionExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#3)]
+ [!code-csharp[CodeStatementCollectionExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#3)]
+ [!code-vb[CodeStatementCollectionExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeStatement[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeStatement[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.AddRange(System.CodeDom.CodeStatement[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.CodeStatement" />コレクションに追加するオブジェクト。</param>
+        <summary>セットを追加<see cref="T:System.CodeDom.CodeStatement" />をコレクションにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeStatementCollection.AddRange%28System.CodeDom.CodeStatement%5B%5D%29>に配列のメンバーを追加するメソッドのオーバー ロード、<xref:System.CodeDom.CodeStatementCollection>インスタンス。  
+  
+ [!code-cpp[CodeStatementCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeStatementCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeStatementCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeStatementCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeStatementCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.AddRange(System.CodeDom.CodeStatementCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatementCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeStatementCollection" />コレクションに追加するオブジェクトを格納するオブジェクト。</param>
+        <summary>別の内容を追加<see cref="T:System.CodeDom.CodeStatementCollection" />コレクションの末尾にオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeStatementCollection.AddRange%28System.CodeDom.CodeStatementCollection%29>メソッドのオーバー ロードのいずれかのメンバーを追加する<xref:System.CodeDom.CodeStatementCollection>別にします。  
+  
+ [!code-cpp[CodeStatementCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeStatementCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeStatementCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.CodeDom.CodeStatement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.CodeDom.CodeStatement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.Contains(System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.CodeStatement" />コレクション内で検索するオブジェクト。</param>
+        <summary>コレクションを含む、指定したかどうかを示す値を取得<see cref="T:System.CodeDom.CodeStatement" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがコレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.CodeDom.CodeStatementCollection.Contains%2A>メソッドが存在する特定の検索を<xref:System.CodeDom.CodeStatement>が検出されたインデックス値を取得します。  
+  
+ [!code-cpp[CodeStatementCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeStatementCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeStatementCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.CodeDom.CodeStatement[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.CodeDom.CodeStatement[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.CopyTo(System.CodeDom.CodeStatement[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.CodeDom.CodeStatement[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">挿入を開始する位置を示す配列のインデックス。</param>
+        <summary>要素をコピー、<see cref="T:System.CodeDom.CodeStatementCollection" />を 1 次元オブジェクト<see cref="T:System.Array" />インスタンス、指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の内容をコピーする方法を示します、<xref:System.CodeDom.CodeStatementCollection>オブジェクトを指定したインデックス値で始まる、配列にします。  
+  
+ [!code-cpp[CodeStatementCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[CodeStatementCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#6)]
+ [!code-vb[CodeStatementCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピー先の配列が多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.CodeDom.CodeStatementCollection" />がで指定されたターゲット配列のインデックスの間で使用可能な領域よりも大きい、<paramref name="index" />パラメーターと対象となる配列の末尾。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ターゲット配列の最小のインデックス値より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.CodeDom.CodeStatement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.CodeDom.CodeStatement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.IndexOf(System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.CodeDom.CodeStatement" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.CodeDom.CodeStatement" />内のオブジェクト、<see cref="T:System.CodeDom.CodeStatementCollection" />コレクション内に存在する場合は、します。</summary>
+        <returns>見つかった場合は、コレクションには、指定したオブジェクトのインデックスそれ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、特定の存在を検索<xref:System.CodeDom.CodeStatement>を使用して、<xref:System.CodeDom.CodeStatementCollection.IndexOf%2A>が検出されたインデックス値を取得します。  
+  
+ [!code-cpp[CodeStatementCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeStatementCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeStatementCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.CodeDom.CodeStatement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.CodeDom.CodeStatement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.Insert(System.Int32,System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定したオブジェクトを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="value"><see cref="T:System.CodeDom.CodeStatement" />挿入するオブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.CodeDom.CodeStatement" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeStatementCollection.Insert%2A>を追加するメソッド、<xref:System.CodeDom.CodeStatement>オブジェクトを<xref:System.CodeDom.CodeStatementCollection>です。  
+  
+ [!code-cpp[CodeStatementCollectionExample#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#8)]
+ [!code-csharp[CodeStatementCollectionExample#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#8)]
+ [!code-vb[CodeStatementCollectionExample#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatement this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatement Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeStatementCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセスするコレクションのインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.CodeDom.CodeStatement" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatement" />有効な各インデックスにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションへのアクセスに使用できるインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> パラメーターが、コレクションのインデックスの有効範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.CodeDom.CodeStatement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.CodeDom.CodeStatement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeStatementCollection.Remove(System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.CodeDom.CodeStatement" />。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeStatement" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeStatementCollection.Remove%2A>を削除する方法、<xref:System.CodeDom.CodeStatement>オブジェクトから、<xref:System.CodeDom.CodeStatementCollection>です。  
+  
+ [!code-cpp[CodeStatementCollectionExample#9](~/samples/snippets/cpp/VS_Snippets_CLR/CodeStatementCollectionExample/CPP/class1.cpp#9)]
+ [!code-csharp[CodeStatementCollectionExample#9](~/samples/snippets/csharp/VS_Snippets_CLR/CodeStatementCollectionExample/CS/class1.cs#9)]
+ [!code-vb[CodeStatementCollectionExample#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeStatementCollectionExample/VB/class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したオブジェクトがコレクション内に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

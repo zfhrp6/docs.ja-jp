@@ -1,0 +1,171 @@
+<Type Name="IFormattable" FullName="System.IFormattable">
+  <TypeSignature Language="C#" Value="public interface IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.IFormattable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの値を文字列形式で書式設定する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IFormattable>インターフェイス オブジェクトを書式指定文字列と書式プロバイダーに基づいての文字列形式に変換します。  
+  
+ 書式指定文字列は、通常、オブジェクトの一般的な外観を定義します。 たとえば、.NET Framework は、次のとおり  
+  
+-   列挙値の書式設定の標準書式指定文字列 (を参照してください[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md))。  
+  
+-   数値の書式設定の標準およびカスタムの書式指定文字列 (を参照してください[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md))。  
+  
+-   日付と時刻の値の書式設定の標準およびカスタムの書式指定文字列 (を参照してください[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md))。  
+  
+-   時間間隔を書式設定するための標準およびカスタムの書式指定文字列 (を参照してください[標準 TimeSpan 書式指定文字列](~/docs/standard/base-types/standard-timespan-format-strings.md)と[カスタム TimeSpan 書式指定文字列](~/docs/standard/base-types/custom-timespan-format-strings.md))。  
+  
+ アプリケーション定義の型の書式設定をサポートするために、独自の書式指定文字列を定義することもできます。  
+  
+ 書式プロバイダーでは、通常の文字列形式にオブジェクトを変換する際に使用する記号を定義する書式指定オブジェクトを返します。 たとえば、数値を通貨値に変換すると、書式プロバイダーは、結果の文字列に表示する通貨記号を定義します。 .NET Framework では、次の 3 つの書式プロバイダーを定義します。  
+  
+-   <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>クラスは、どちらかを返します、 <xref:System.Globalization.NumberFormatInfo> 、数値を書式設定するためのオブジェクトまたは<xref:System.Globalization.DateTimeFormatInfo>日付と時刻の値を書式設定するためのオブジェクト。  
+  
+-   <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>クラスは、数値を書式設定するためには、それ自体のインスタンスを返します。  
+  
+-   <xref:System.Globalization.DateTimeFormatInfo?displayProperty=nameWithType>クラスは、日付と時刻の値を書式設定するためには、それ自体のインスタンスを返します。  
+  
+ さらに、カルチャ固有の職業固有を指定する独自のカスタム書式プロバイダーを定義するまたは業界固有の情報が書式設定に使用します。 カスタム書式プロバイダーを使用してカスタムの書式設定を実装の詳細については、次を参照してください。<xref:System.ICustomFormatter>です。  
+  
+ <xref:System.IFormattable>インターフェイスが 1 つのメソッドを定義<xref:System.IFormattable.ToString%2A>、実装する型の書式指定サービスを提供します。 <xref:System.IFormattable.ToString%2A>メソッドを直接呼び出すことができます。 さらに、呼び出されたによって自動的に、<xref:System.Convert.ToString%28System.Object%29?displayProperty=nameWithType>と<xref:System.Convert.ToString%28System.Object%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッド、および使用するメソッドによって、[複合書式指定機能](~/docs/standard/base-types/composite-formatting.md).NET Framework でします。 このようなメソッドを含める<xref:System.Console.WriteLine%28System.String%2CSystem.Object%29?displayProperty=nameWithType>、<xref:System.String.Format%2A?displayProperty=nameWithType>と<xref:System.Text.StringBuilder.AppendFormat%28System.String%2CSystem.Object%29?displayProperty=nameWithType>、他のユーザー間で。 <xref:System.IFormattable.ToString%2A>メソッドの書式指定文字列内の各書式項目のメソッドが呼び出されます。  
+  
+ <xref:System.IFormattable>インターフェイスは、基本データ型によって実装されます。  
+  
+   
+  
+## Examples  
+ 次の例では、 `Temperature` インターフェイスを実装する <xref:System.IFormattable> クラスを定義しています。 クラスは、次の 4 つの書式指定子のサポート:"G"および"C"、温度を摂氏で表示されることを示します"F"は、温度は華氏; に表示されることを示します"K"は、温度をケルビンで表示されることを示します。 さらに、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>実装も処理書式指定文字列を`null`または空です。 他の 2 つ`ToString`によって定義されたメソッド、`Temperature`クラスへの呼び出しをラップするだけ、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>実装します。  
+  
+ [!code-csharp[System.IFormattable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iformattable/cs/example1.cs#1)]
+ [!code-vb[System.IFormattable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iformattable/vb/example1.vb#1)]  
+  
+ 次の例では、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>実装直接、または複合書式指定文字列を使用しています。  
+  
+ [!code-csharp[System.IFormattable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iformattable/cs/example1.cs#2)]
+ [!code-vb[System.IFormattable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iformattable/vb/example1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>文字列の書式設定より詳細に制御を必要とするクラス<see cref="M:System.Object.ToString" />提供を実装しなければなりません<see cref="T:System.IFormattable" />です。  
+  
+ 実装するクラス<see cref="T:System.IFormattable" />"G"(全般) 書式指定子をサポートする必要があります。 "G"指定子だけでなく、クラスは、サポートされている書式指定子の一覧を定義できます。 書式指定子を処理するさらに、クラスを準備する必要があります<see langword="null" />です。 書式設定と、コードの書式設定の詳細については、次を参照してください[型の書式設定。](~/docs/standard/base-types/formatting-types.md)</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="formatProvider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IFormattable.ToString%2A>メソッドは値を複数の方法で表すことができる文字列形式に変換します。 その正確な書式は、特定の記号または特定のカルチャ、職業、内または業界によって定義された特定の順序に依存します。 メソッドを直接呼び出すことができます。 によって自動的に呼び出されます、<xref:System.Convert.ToString%28System.Object%29?displayProperty=nameWithType>と<xref:System.Convert.ToString%28System.Object%2CSystem.IFormatProvider%29?displayProperty=nameWithType>メソッド、および複合書式設定を使用しているメソッドによって機能の .NET Framework でなど<xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>、 <xref:System.Console.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>、および<xref:System.Text.StringBuilder.AppendFormat%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>です。 (詳細については、次を参照してください[複合書式指定](~/docs/standard/base-types/composite-formatting.md)。)。  
+  
+ 複合書式指定メソッドの呼び出し、<xref:System.IFormattable.ToString%2A>書式指定文字列内の各書式項目を 1 回のメソッドです。 メソッドに渡されるパラメーターはとおりと呼ばれる特定の書式設定メソッドおよび書式指定項目の内容に依存します。  
+  
+-   書式指定項目が、書式指定文字列を含まないかどうか (書式指定項目は、単に場合など、 `{0}`)、渡される`null`の値として、<xref:System.String?displayProperty=nameWithType>パラメーター。  
+  
+-   書式指定項目には、書式指定文字列が含まれている場合 (たとえば、 `{0:G}`) の値として書式設定文字列が渡されること、<xref:System.String?displayProperty=nameWithType>パラメーター。  
+  
+-   元のメソッド呼び出しが含まれていない場合、<xref:System.IFormatProvider?displayProperty=nameWithType>パラメーター、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>の値として渡される、<xref:System.IFormatProvider?displayProperty=nameWithType>パラメーター。  
+  
+-   元のメソッド呼び出しが含まれている場合、<xref:System.IFormatProvider?displayProperty=nameWithType>パラメーター、メソッドの呼び出しで指定されているプロバイダーは、の値として渡される、<xref:System.IFormatProvider?displayProperty=nameWithType>パラメーター。  
+  
+> [!NOTE]
+>  オブジェクトの<xref:System.IFormattable.ToString%2A>渡されない場合にのみ、複合書式指定メソッドによって実装が呼び出されます、<xref:System.ICustomFormatter>書式プロバイダー、または、<xref:System.ICustomFormatter.Format%2A>カスタム書式プロバイダーのメソッドを返します`null`です。  
+  
+ .NET Framework には、実装の 3 つの書式設定プロバイダーが含まれています、<xref:System.IFormatProvider>インターフェイス。  
+  
+-   <xref:System.Globalization.NumberFormatInfo>数値書式設定は 10 進数と桁区切り記号の文字などの情報およびスペルと通貨値の通貨記号の配置を提供します。  
+  
+-   <xref:System.Globalization.DateTimeFormatInfo>月、日、および年の日付のパターン内の位置など、日付に関連して、時間関連の書式情報を提供します。  
+  
+-   <xref:System.Globalization.CultureInfo>既定の書式の数値書式指定情報を含む特定のカルチャの情報および日付に関連して、時間関連の書式情報を格納します。  
+  
+ さらに、独自のカスタム書式プロバイダーを定義することができます。  
+  
+   
+  
+## Examples  
+ 次の例で、`Temperature`を実装するクラス、<xref:System.IFormattable.ToString%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.IFormattable>クラスです。  
+  
+ [!code-csharp[System.IFormattable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iformattable/cs/example1.cs#1)]
+ [!code-vb[System.IFormattable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iformattable/vb/example1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />メソッドは、"G"(全般) の書式指定子をサポートする必要があります。 "G"指定子だけでなく、クラスは、サポートされている書式指定子の一覧を定義できます。 書式指定子を処理するさらに、クラスを準備する必要があります<see langword="null" />です。 書式設定と、コードの書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

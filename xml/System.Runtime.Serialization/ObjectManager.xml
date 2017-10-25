@@ -1,0 +1,602 @@
+<Type Name="ObjectManager" FullName="System.Runtime.Serialization.ObjectManager">
+  <TypeSignature Language="C#" Value="public class ObjectManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ObjectManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ObjectManager" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追跡オブジェクトとは逆シリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化中に、<xref:System.Runtime.Serialization.Formatter>クエリ、<xref:System.Runtime.Serialization.ObjectManager>を逆シリアル化された、既にしているオブジェクト参照参照シリアル化ストリーム内のオブジェクトへの参照が、(旧バージョンとリファレンス) を使用するかどうかを判断またはまだされて逆シリアル化されないオブジェクトに (前方参照)。 シリアル化ストリーム内の参照が前方参照の場合、<xref:System.Runtime.Serialization.Formatter>のフィックス アップを登録することができます、<xref:System.Runtime.Serialization.ObjectManager>です。 シリアル化ストリーム内の参照が旧バージョンとの参照の場合、<xref:System.Runtime.Serialization.Formatter>参照をすぐに完了します。 フィックス アップは、既に完了していないオブジェクトの逆シリアル化プロセス中にオブジェクト参照を最終処理中のプロセスを指します。 必要なオブジェクトが逆シリアル化された後、<xref:System.Runtime.Serialization.ObjectManager>参照を完了します。  
+  
+ <xref:System.Runtime.Serialization.ObjectManager> Fixup の順序を決定する規則のセットに依存します。 実装するすべてのオブジェクト<xref:System.Runtime.Serialization.ISerializable>ことも、<xref:System.Runtime.Serialization.ISerializationSurrogate>経由で送信される、すべてのオブジェクトに予想される、<xref:System.Runtime.Serialization.SerializationInfo>オブジェクト ツリーが逆シリアル化されるときに使用できます。 ただし、親オブジェクトは、すべての子オブジェクトが完全に完了が完全に逆シリアル化時に推測することはできません。 すべての子オブジェクトは存在しますが、孫のすべてのオブジェクトが存在するとは限りません。 オブジェクトは、その子オブジェクトでのコードの実行に依存する特定のアクションを実行する必要がある場合、これらのアクションの遅延、実装、<xref:System.Runtime.Serialization.IDeserializationCallback>インターフェイス、および戻るこのインターフェイスで呼び出されるときにのみ、コードを実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Serialization.ObjectManager>クラス オブジェクトごとに 1 回だけを通過する、オブジェクト グラフを順番に処理します。  
+  
+ [!code-csharp[ObjectManager#1](~/samples/snippets/csharp/VS_Snippets_Misc/ObjectManager/CS/ObjectManager.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectManager (System.Runtime.Serialization.ISurrogateSelector selector, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.ISurrogateSelector selector, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.#ctor(System.Runtime.Serialization.ISurrogateSelector,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="selector">使用するサロゲート セレクター。 <see cref="T:System.Runtime.Serialization.ISurrogateSelector" />指定された型のオブジェクトを逆シリアル化時に使用する正しいサロゲートを決定します。 逆シリアル化時に、サロゲート セレクターは、ストリームで送信される情報からオブジェクトの新しいインスタンスを作成します。</param>
+        <param name="context">ストリーム コンテキスト。 <see cref="T:System.Runtime.Serialization.StreamingContext" />で使用されていない<see langword="ObjectManager" />、実装する任意のオブジェクトに対するパラメーターとして渡されますが、<see cref="T:System.Runtime.Serialization.ISerializable" />句または having、<see cref="T:System.Runtime.Serialization.ISerializationSurrogate" />です。 これらのオブジェクトは、逆シリアル化する情報のソースに応じて、特定のアクションを実行できます。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ObjectManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DoFixups">
+      <MemberSignature Language="C#" Value="public virtual void DoFixups ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DoFixups() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.DoFixups" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>記録されたすべてのフィックス アップを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィックス アップがすべて該当するサロゲート、オブジェクト自体によって実行されます (実装している場合<xref:System.Runtime.Serialization.ISerializable>)、または既定の実装です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">Fixup が正常に完了しませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public virtual object GetObject (long objectID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetObject(int64 objectID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.GetObject(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectID" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="objectID">要求されたオブジェクトの ID です。</param>
+        <summary>指定したオブジェクト ID を持つオブジェクトを返します</summary>
+        <returns>指定したオブジェクト ID が既に格納されている場合のオブジェクトまたは<see langword="null" />場合、このようなオブジェクトが登録されていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを登録およびへの呼び出しでオブジェクト ID を発行することができます、<xref:System.Runtime.Serialization.ObjectManager.RegisterObject%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectID" /> パラメーターが 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseDeserializationEvent">
+      <MemberSignature Language="C#" Value="public virtual void RaiseDeserializationEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RaiseDeserializationEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RaiseDeserializationEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装する登録済みのオブジェクトに逆シリアル化イベントを発生させます<see cref="T:System.Runtime.Serialization.IDeserializationCallback" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnDeserializingEvent">
+      <MemberSignature Language="C#" Value="public void RaiseOnDeserializingEvent (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseOnDeserializingEvent(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RaiseOnDeserializingEvent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">呼び出されるメソッドを含む型のインスタンス。</param>
+        <summary>マークされたメソッドを呼び出し、<see cref="T:System.Runtime.Serialization.OnDeserializingAttribute" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordArrayElementFixup">
+      <MemberSignature Language="C#" Value="public virtual void RecordArrayElementFixup (long arrayToBeFixed, int index, long objectRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecordArrayElementFixup(int64 arrayToBeFixed, int32 index, int64 objectRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RecordArrayElementFixup(System.Int64,System.Int32,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrayToBeFixed" Type="System.Int64" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="objectRequired" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="arrayToBeFixed">フィックス アップを記録するために使用する配列の ID。</param>
+        <param name="index">内のインデックス<c>arrayFixup</c>フィックス アップが要求されます。</param>
+        <param name="objectRequired">フィックス アップが完了した後に、現在の配列要素が指すオブジェクトの ID。</param>
+        <summary>配列内の 1 つの要素のフィックス アップを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィックス アップは、指定した配列の指定した要素のことです。 修正プロセス中に使用される値が提供される、`objectRequired`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayToBeFixed" />または<paramref name="objectRequired" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="index" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordArrayElementFixup">
+      <MemberSignature Language="C#" Value="public virtual void RecordArrayElementFixup (long arrayToBeFixed, int[] indices, long objectRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecordArrayElementFixup(int64 arrayToBeFixed, int32[] indices, int64 objectRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RecordArrayElementFixup(System.Int64,System.Int32[],System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrayToBeFixed" Type="System.Int64" />
+        <Parameter Name="indices" Type="System.Int32[]" />
+        <Parameter Name="objectRequired" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="arrayToBeFixed">フィックス アップを記録するために使用する配列の ID。</param>
+        <param name="indices">Fixup が要求される多次元配列内のインデックス。</param>
+        <param name="objectRequired">オブジェクトの ID、配列の要素が指すフィックス アップが完了した後です。</param>
+        <summary>後で実行するために、配列内の指定した要素のフィックス アップを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィックス アップは、指定した配列の指定した要素です。 修正プロセス中に使用される値が提供される、`objectRequired`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayToBeFixed" />または<paramref name="objectRequired" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="indices" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordDelayedFixup">
+      <MemberSignature Language="C#" Value="public virtual void RecordDelayedFixup (long objectToBeFixed, string memberName, long objectRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecordDelayedFixup(int64 objectToBeFixed, string memberName, int64 objectRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RecordDelayedFixup(System.Int64,System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectToBeFixed" Type="System.Int64" />
+        <Parameter Name="memberName" Type="System.String" />
+        <Parameter Name="objectRequired" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="objectToBeFixed">参照を必要とするオブジェクトの ID <c>objectRequired</c>です。</param>
+        <param name="memberName">メンバー名<c>objectToBeFixed</c>フィックス アップを実行します。</param>
+        <param name="objectRequired">必要なオブジェクトの ID <c>objectToBeFixed</c>です。</param>
+        <summary>後で実行するために、オブジェクト メンバーのフィックス アップを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィックス アップは、指定したオブジェクトの指定したメンバーのことです。 としてフィックス アップ処理中に使用される値を指定、`objectRequired`引数。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="objectToBeFixed" />または<paramref name="objectRequired" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="memberName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordFixup">
+      <MemberSignature Language="C#" Value="public virtual void RecordFixup (long objectToBeFixed, System.Reflection.MemberInfo member, long objectRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecordFixup(int64 objectToBeFixed, class System.Reflection.MemberInfo member, int64 objectRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RecordFixup(System.Int64,System.Reflection.MemberInfo,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectToBeFixed" Type="System.Int64" />
+        <Parameter Name="member" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="objectRequired" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="objectToBeFixed">参照を必要とするオブジェクトの ID、 <c>objectRequired</c>オブジェクト。</param>
+        <param name="member">メンバー <c>objectToBeFixed</c>フィックス アップを実行します。</param>
+        <param name="objectRequired">必要なオブジェクトの ID <c>objectToBeFixed</c>です。</param>
+        <summary>後で実行するには、オブジェクトのメンバーのフィックス アップを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィックス アップは、指定したオブジェクトの指定したメンバーのことです。 としてフィックス アップ処理中に使用される値を指定、`objectRequired`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectToBeFixed" />または<paramref name="objectRequired" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="member" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterObject">
+      <MemberSignature Language="C#" Value="public virtual void RegisterObject (object obj, long objectID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterObject(object obj, int64 objectID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RegisterObject(System.Object,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="objectID" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録するオブジェクト。</param>
+        <param name="objectID">登録するオブジェクトの ID。</param>
+        <summary>オブジェクトは、逆シリアル化に関連付けられたレジスタ<paramref name="objectID" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ObjectManager>オブジェクトとその ID の両方に関する情報を保持します。 逆シリアル化後<xref:System.Runtime.Serialization.ObjectManager.GetObject%2A>かどうかは、特定のオブジェクト ID は既に逆シリアル化された、または前方参照がないまだ逆シリアル化されたオブジェクトにあるかどうかを決定するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectID" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="objectID" />は既に登録されて、オブジェクト以外の<paramref name="obj" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterObject">
+      <MemberSignature Language="C#" Value="public void RegisterObject (object obj, long objectID, System.Runtime.Serialization.SerializationInfo info);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterObject(object obj, int64 objectID, class System.Runtime.Serialization.SerializationInfo info) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RegisterObject(System.Object,System.Int64,System.Runtime.Serialization.SerializationInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="objectID" Type="System.Int64" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録するオブジェクト。</param>
+        <param name="objectID">登録するオブジェクトの ID。</param>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />場合に使用<c>obj</c>実装<see cref="T:System.Runtime.Serialization.ISerializable" />かが、<see cref="T:System.Runtime.Serialization.ISerializationSurrogate" />です。 <c>info</c>フィックス アップが必要な情報と完了したし、そのオブジェクトが完了したときに必要なオブジェクトに渡されされます。</param>
+        <summary>オブジェクトは、逆シリアル化に関連付けられたレジスタ<paramref name="objectID" />、および録画、<see cref="T:System.Runtime.Serialization.SerializationInfo" />一緒に使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ObjectManager>オブジェクトとその ID の両方に関する情報を保持します。 逆シリアル化中に後で行うこともできます<xref:System.Runtime.Serialization.ObjectManager.GetObject%2A>がないまだ逆シリアル化されたオブジェクトへの前方参照がある場合または ID は既に逆シリアル化された、特定のオブジェクトかどうかを検出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectID" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="objectID" />は既に登録されて、オブジェクト以外の<paramref name="obj" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterObject">
+      <MemberSignature Language="C#" Value="public void RegisterObject (object obj, long objectID, System.Runtime.Serialization.SerializationInfo info, long idOfContainingObj, System.Reflection.MemberInfo member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterObject(object obj, int64 objectID, class System.Runtime.Serialization.SerializationInfo info, int64 idOfContainingObj, class System.Reflection.MemberInfo member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RegisterObject(System.Object,System.Int64,System.Runtime.Serialization.SerializationInfo,System.Int64,System.Reflection.MemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="objectID" Type="System.Int64" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="idOfContainingObj" Type="System.Int64" />
+        <Parameter Name="member" Type="System.Reflection.MemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録するオブジェクト。</param>
+        <param name="objectID">登録するオブジェクトの ID。</param>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />場合に使用<c>obj</c>実装<see cref="T:System.Runtime.Serialization.ISerializable" />かが、<see cref="T:System.Runtime.Serialization.ISerializationSurrogate" />です。 <c>info</c>フィックス アップが必要な情報と完了したし、そのオブジェクトが完了したときに必要なオブジェクトに渡されされます。</param>
+        <param name="idOfContainingObj">含むオブジェクトの ID <c>obj</c>です。このパラメーターは必要な場合にのみ<c>obj</c>は値型です。</param>
+        <param name="member">親オブジェクト内のフィールドを<c>obj</c>が存在します。 このパラメーターには意味がある場合にのみ<c>obj</c>は値型です。</param>
+        <summary>オブジェクトのメンバーは、逆シリアル化に関連付けるレジスタ<paramref name="objectID" />、および録画、<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する必要があります、`member`と`idOfContainingObj`パラメーター場合`obj`は、<xref:System.ValueType>方法により、フィックス アップを実行して、<xref:System.ValueType>オブジェクト。 情報を格納する領域、<xref:System.ValueType>インラインで含まれるオブジェクトが割り当てられます。 ただし、ときに、<xref:System.ValueType>を登録することをボックス化、 <xref:System.Runtime.Serialization.ObjectManager>、含まれるオブジェクトとの接続は失われます。 フィックス アップがのインスタンスで実行することを保証するために、<xref:System.ValueType>とボックス化されたインスタンスではなく親オブジェクトに格納、<xref:System.Runtime.Serialization.ObjectManager>いくつかの情報を保持します。  
+  
+ <xref:System.Runtime.Serialization.ObjectManager>オブジェクトとその ID の両方に関する情報を保持します。 逆シリアル化後<xref:System.Runtime.Serialization.ObjectManager.GetObject%2A>を特定のオブジェクト ID は既に逆シリアル化された、またはまだ逆シリアル化するかどうかは、オブジェクトへの前方参照かどうかを検出するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectID" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="objectID" />は既に登録されて、オブジェクト以外の<paramref name="obj" />、または<paramref name="member" />されませんが、<see cref="T:System.Reflection.FieldInfo" />と<paramref name="member" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterObject">
+      <MemberSignature Language="C#" Value="public void RegisterObject (object obj, long objectID, System.Runtime.Serialization.SerializationInfo info, long idOfContainingObj, System.Reflection.MemberInfo member, int[] arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterObject(object obj, int64 objectID, class System.Runtime.Serialization.SerializationInfo info, int64 idOfContainingObj, class System.Reflection.MemberInfo member, int32[] arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ObjectManager.RegisterObject(System.Object,System.Int64,System.Runtime.Serialization.SerializationInfo,System.Int64,System.Reflection.MemberInfo,System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="objectID" Type="System.Int64" />
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="idOfContainingObj" Type="System.Int64" />
+        <Parameter Name="member" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="arrayIndex" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録するオブジェクト。</param>
+        <param name="objectID">登録するオブジェクトの ID。</param>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />場合に使用<c>obj</c>実装<see cref="T:System.Runtime.Serialization.ISerializable" />かが、<see cref="T:System.Runtime.Serialization.ISerializationSurrogate" />です。 <c>info</c>フィックス アップが必要な情報と完了したし、そのオブジェクトが完了したときに必要なオブジェクトに渡されされます。</param>
+        <param name="idOfContainingObj">含むオブジェクトの ID <c>obj</c>です。このパラメーターは必要な場合にのみ<c>obj</c>は値型です。</param>
+        <param name="member">親オブジェクト内のフィールドを<c>obj</c>が存在します。 このパラメーターには意味がある場合にのみ<c>obj</c>は値型です。</param>
+        <param name="arrayIndex">場合<c>obj</c>は、<see cref="T:System.ValueType" />であり、配列のメンバー <c>arrayIndex</c>その配列内のインデックスが含まれています、 <c>obj</c>が存在します。 <c>arrayIndex</c>場合は無視されます<c>obj</c>は両方とも、<see cref="T:System.ValueType" />であり、配列のメンバーです。</param>
+        <summary>関連付けることが逆シリアル化中に、オブジェクトに含まれる配列のメンバーを登録<paramref name="objectID" />、および録画、<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する必要があります、`member`と`idOfContainingObj`パラメーター場合`obj`は、<xref:System.ValueType>方法により、フィックス アップを実行して、<xref:System.ValueType>オブジェクト。 情報を格納する領域、<xref:System.ValueType>インラインで含まれるオブジェクトが割り当てられます。 ただし、ときに、<xref:System.ValueType>を登録することをボックス化、 <xref:System.Runtime.Serialization.ObjectManager>、含まれるオブジェクトとの接続は失われます。 フィックス アップがのインスタンスで実行することを保証するために、<xref:System.ValueType>とボックス化されたインスタンスではなく親オブジェクトに格納、<xref:System.Runtime.Serialization.ObjectManager>いくつかの情報を保持します。  
+  
+ <xref:System.Runtime.Serialization.ObjectManager>オブジェクトとその ID の両方に関する情報を保持します。 逆シリアル化後<xref:System.Runtime.Serialization.ObjectManager.GetObject%2A>を特定のオブジェクト ID は既に逆シリアル化された、またはまだ逆シリアル化するかどうかは、オブジェクトへの前方参照かどうかを検出するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="objectID" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="objectID" />は既に登録されて、オブジェクト以外の<paramref name="obj" />、または<paramref name="member" />されませんが、<see cref="T:System.Reflection.FieldInfo" />と<paramref name="member" />いない<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

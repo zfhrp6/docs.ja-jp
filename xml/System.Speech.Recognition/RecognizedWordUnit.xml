@@ -1,0 +1,621 @@
+<Type Name="RecognizedWordUnit" FullName="System.Speech.Recognition.RecognizedWordUnit">
+  <TypeSignature Language="C#" Value="public class RecognizedWordUnit" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RecognizedWordUnit extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizedWordUnit" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Text: {Text}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>音声認識のアトミック ユニットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンによって返されるすべての結果が構築された<xref:System.Speech.Recognition.RecognizedWordUnit>オブジェクト。  
+  
+ 配列<xref:System.Speech.Recognition.RecognizedWordUnit>オブジェクトは、すべての認識操作を介してアクセス可能な<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+ 認識の確実性のメジャーを提供するだけでなく (<xref:System.Speech.Recognition.RecognizedWordUnit.Confidence%2A>)、<xref:System.Speech.Recognition.RecognizedWordUnit>インスタンスを提供します。  
+  
+-   認識された単語の正規化された正確な (または構文) のテキスト表現。 詳しくは、「<xref:System.Speech.Recognition.ReplacementText>」、「<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>」、「<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>」をご覧ください。  
+  
+-   発音については、サポートされている音標文字、国際音声記号 (IPA) またはユニバーサル電話設定 (UPS) などの文字を使用します。 詳細については、「<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>」を参照してください。  
+  
+-   印刷用の書式設定します。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.DisplayAttributes>クラスとその<xref:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ユーティリティ ルーチン (`stringFromWordArray`) 文字列を生成します。 文字列には、構文上の出力が含まれます (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>)、正規化されたテキスト (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>)、または国際音声記号からのルビ文字 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>)。 使用して文字列が書式設定<xref:System.Speech.Recognition.DisplayAttributes>からオブジェクトを取得、<xref:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes%2A>プロパティから、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Speech.Recognition.RecognizedWordUnit>オブジェクト。 <xref:System.Speech.Recognition.RecognizedWordUnit>からオブジェクトを取得、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+```csharp  
+  
+internal enum WordType   
+{  
+  Text,  
+  Normalized = Text,  
+  Lexical,  
+  Pronunciation  
+}  
+```  
+  
+```csharp  
+internal static string stringFromWordArray(ReadOnlyCollection<RecognizedWordUnit> words, WordType type)   
+{  
+  string text = "";  
+  foreach (RecognizedWordUnit word in words)   
+  {  
+    string wordText = "";  
+    if (type == WordType.Text || type == WordType.Normalized)   
+    {  
+      wordText = word.Text;  
+    }   
+    else if (type == WordType.Lexical)   
+    {  
+      wordText = word.LexicalForm;  
+    }   
+    else if (type == WordType.Pronunciation)   
+    {  
+      wordText = word.Pronunciation;  
+    }   
+    else   
+    {  
+      throw new InvalidEnumArgumentException(String.Format("[0}: is not a valid input", type));  
+    }  
+    // Use display attribute  
+  
+    if ((word.DisplayAttributes & DisplayAttributes.OneTrailingSpace) != 0)   
+    {  
+      wordText += " ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.TwoTrailingSpaces) != 0)  
+    {  
+      wordText += "  ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ConsumeLeadingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimStart();  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ZeroTrailingSpaces) != 0)  
+    {  
+      wordText = wordText.TrimEnd();  
+    }  
+  
+    text += wordText;  
+  
+  }  
+  return text;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RecognizedWordUnit (string text, float confidence, string pronunciation, string lexicalForm, System.Speech.Recognition.DisplayAttributes displayAttributes, TimeSpan audioPosition, TimeSpan audioDuration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, float32 confidence, string pronunciation, string lexicalForm, valuetype System.Speech.Recognition.DisplayAttributes displayAttributes, valuetype System.TimeSpan audioPosition, valuetype System.TimeSpan audioDuration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizedWordUnit.#ctor(System.String,System.Single,System.String,System.String,System.Speech.Recognition.DisplayAttributes,System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="confidence" Type="System.Single" />
+        <Parameter Name="pronunciation" Type="System.String" />
+        <Parameter Name="lexicalForm" Type="System.String" />
+        <Parameter Name="displayAttributes" Type="System.Speech.Recognition.DisplayAttributes" />
+        <Parameter Name="audioPosition" Type="System.TimeSpan" />
+        <Parameter Name="audioDuration" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="text">認識された単語の正規化されたテキスト。  
+  
+ この値は、 <see langword="null" />、""、または<see cref="F:System.String.Empty" />です。</param>
+        <param name="confidence">A <see langword="float" /> 0.0 ~ 1.0 の単語認識の確実性を示す値。</param>
+        <param name="pronunciation">認識された単語の発音スペル チェックします。  
+  
+ この値は、 <see langword="null" />、""、または<see cref="F:System.String.Empty" />です。</param>
+        <param name="lexicalForm">認識された単語の正規化テキスト。  
+  
+ この引数が必要でありできない可能性があります<see langword="null" />、""、または<see cref="F:System.String.Empty" />です。</param>
+        <param name="displayAttributes">認識された単語を表示する空白文字の使用を定義します。</param>
+        <param name="audioPosition">オーディオの入力ストリームで認識された単語の場所です。  
+  
+ この値は、<see cref="F:System.TimeSpan.Zero" /> の場合もあります。</param>
+        <param name="audioDuration">認識されたテキストに対応するオーディオ入力の長さ。  
+  
+ この値は、<see cref="F:System.TimeSpan.Zero" /> の場合もあります。</param>
+        <summary><see cref="T:System.Speech.Recognition.RecognizedWordUnit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`text`または`pronunciation`は`null`、""、または<xref:System.String.Empty>と<xref:System.Speech.Recognition.RecognizedWordUnit>使用認識操作で、認識エンジンは出力で適切な値が生成<xref:System.Speech.Recognition.RecognizedWordUnit>インスタンス。  
+  
+ 構築を直接<xref:System.Speech.Recognition.RecognizedWordUnit>認識を使用して操作をエミュレートする場合にのみ、インスタンスが通常使用される、<xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognize%2A>または<xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeAsync%2A>のメソッド、<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラスおよび<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A>または<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>のメソッド、<xref:System.Speech.Recognition.SpeechRecognizer>クラスです。  
+  
+ 実際のアプリケーションに直接構築しないで<xref:System.Speech.Recognition.RecognizedWordUnit>、を通じて取得ではなく、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、多少不自然なテストのエミュレーションでは、新しい単語を入力から生成されると、エミュレーターに渡される、し、検証する場所です。  
+  
+```csharp  
+private void _emulateAndVerify_Click(object sender, EventArgs e)   
+{  
+  char[] delimiterChars = { ' ', ',', '.', ':', ';', '\t' };  
+  string text = _emulateTextBox.Text;  
+  string[] words = text.Split(delimiterChars);  
+  
+  RecognizedWordUnit[] InputWordUnits = new RecognizedWordUnit[words.Length];  
+  for (int i = 0; i < words.Length; i++)   
+  {  
+    InputWordUnits[i] = new RecognizedWordUnit(  
+        "",   
+        0,   
+        "",  
+        words[i].ToLower(),   
+        DisplayAttributes.OneTrailingSpace,   
+        new TimeSpan(),   
+        new TimeSpan());  
+  }  
+  
+  RecognitionResult rec = _recognizer.EmulateRecognize(  
+        InputWordUnits,   
+        System.Globalization.CompareOptions.IgnoreCase);  
+  if (rec == null)   
+  {  
+    MessageBox.Show(String.Format("Recognition emulation for {0} failed.\n", text));  
+  }   
+  else if (InputWordUnits.Length != rec.Words.Count)   
+  {  
+    MessageBox.Show(  
+       String.Format("Length mismatch: Input was {0} words, Recognition has {1} words.\n}"));  
+  }   
+  else   
+  {  
+    for (int i = 0; i < InputWordUnits.Length; i++)   
+    {  
+  
+      if (rec.Words[i].LexicalForm.ToLower() != InputWordUnits[i].LexicalForm.ToLower())   
+      {  
+        MessageBox.Show(  
+          String.Format("Input word {0} \"{1}\" not found. Recognition output is {2}",  
+          i, InputWordUnits[i].LexicalForm, rec.Words[i].LexicalForm));  
+        continue;  
+      }  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Confidence">
+      <MemberSignature Language="C#" Value="public float Confidence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Confidence" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedWordUnit.Confidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識された単語が特定の入力と一致する確率を表す、認識エンジンによって割り当てられた値を取得します。</summary>
+        <value>単語の正しい認識の確実性の相対尺度です。 値は 0.0 から 1.0 までであり、低い数字ほど信頼度が低くなります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼スコアは、単語が正しく認識された絶対可能性を示していません。 代わりに、信頼スコアは、特定の入力の複数の代替認識の相対的な精度を比較するためのメカニズムを提供します。 これには、最も正確な認識結果を返すことが容易にします。 たとえば、認識された単語に 0.8 の信頼スコアがある場合は、これは限りませんという単語が、80% 可能性は、入力の適切な一致であります。  単語が、適切な一致を信頼度を持つその他の結果よりも、入力のスコアを 0.8 未満である可能性が高くなることを意味します。  
+  
+ 独自の信頼スコアは、比較する、同じ認識操作とは、同じ入力の以前の認定から別の結果がない限り意味がありません。  
+  
+ によって返される値<xref:System.Speech.Recognition.RecognizedWordUnit.Confidence%2A>は相対で、一意な各認識エンジンにします。 2 つの異なる認識エンジンの間の信頼度の値の比較方法の定義がない方法も<xref:System.Speech.Recognition.RecognizedWordUnit.Confidence%2A>個々 の<xref:System.Speech.Recognition.RecognizedWordUnit>オブジェクトの定義、<xref:System.Speech.Recognition.RecognizedPhrase.Confidence%2A>の<xref:System.Speech.Recognition.RecognizedPhrase>です。  
+  
+ 音声認識エンジンは、バック グラウンド干渉、inarticulate 音声、または予期しない単語または単語のシーケンスを含む、さまざまな理由、音声入力に確信度の低いスコアを割り当てる可能性があります。 アプリケーションが使用されている場合、<xref:System.Speech.Recognition.SpeechRecognitionEngine>インスタンス、どの音声で入力が受理されても拒否のいずれかの信頼レベルを変更することができます、<xref:System.Speech.Recognition.SpeechRecognitionEngine.UpdateRecognizerSetting%2A>メソッドです。 信頼度のしきい値によって管理される共有認識エンジンを<xref:System.Speech.Recognition.SpeechRecognizer>のユーザー プロファイルに関連付けられているし、Windows レジストリに格納します。 アプリケーションは、プロパティ、共有認識エンジンのレジストリに変更を書き込めません必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayAttributes">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.DisplayAttributes DisplayAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.DisplayAttributes DisplayAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のテキスト出力を作成するための情報を書式設定を取得<see cref="T:System.Speech.Recognition.RecognizedWordUnit" />インスタンス。</summary>
+        <value>内容を表示する空白文字の使用を指定、<see cref="T:System.Speech.Recognition.RecognizedWordUnit" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.DisplayAttributes>によって返されるオブジェクト、<xref:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes%2A>プロパティが存在する場合、特定のワードで使用する先頭および末尾のスペースを指定します。  
+  
+ この書式設定情報を使用する方法の詳細については、次を参照してください。、<xref:System.Speech.Recognition.DisplayAttributes>列挙します。  
+  
+   
+  
+## Examples  
+ 次の例では、ユーティリティ ルーチン (`stringFromWordArray`) 3 つの方法のいずれかで書式設定されている文字列を生成する: 構文的に (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>)、正規化された (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>)、または発音 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>)。 テキストの出力がから取得した、<xref:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes%2A>プロパティを<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Speech.Recognition.RecognizedWordUnit>から取得されるオブジェクト、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+```csharp  
+  
+internal enum WordType   
+{  
+  Text,  
+  Normalized = Text,  
+  Lexical,  
+  Pronunciation  
+}  
+```  
+  
+```csharp  
+internal static string stringFromWordArray(  
+        ReadOnlyCollection<RecognizedWordUnit> words,   
+        WordType type)   
+{  
+  string text = "";  
+  foreach (RecognizedWordUnit word in words)   
+  {  
+    string wordText = "";  
+    if (type == WordType.Text || type == WordType.Normalized)   
+    {  
+      wordText = word.Text;  
+    }   
+    else if (type == WordType.Lexical)   
+    {  
+      wordText = word.LexicalForm;  
+    }  
+    else if (type == WordType.Pronunciation)   
+    {  
+       wordText = word.Pronunciation;  
+    }   
+    else   
+    {  
+      throw new InvalidEnumArgumentException(  
+         String.Format("[0}: is not a valid input", type));  
+    }  
+  
+    // Use display attribute  
+    if ((word.DisplayAttributes & DisplayAttributes.OneTrailingSpace) != 0)   
+    {  
+      wordText += " ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.TwoTrailingSpaces) != 0)  
+    {  
+      wordText += "  ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ConsumeLeadingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimStart();  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ZeroTrailingSpaces) != 0)  
+    {  
+      wordText = wordText.TrimEnd();  
+    }  
+  
+    text += wordText;  
+  
+  }  
+  return text;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LexicalForm">
+      <MemberSignature Language="C#" Value="public string LexicalForm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LexicalForm" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedWordUnit.LexicalForm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識された単語の正規化されていないテキストを取得します。</summary>
+        <value>返します、<see cref="T:System.String" />どのような正規化せず、認識された単語のテキストを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、によって返される値<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>と<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>と同じです。 ただし、認識エンジンで音声正規化を使用してをよりわかりやすいまたは口語的のテキスト表現オーディオ入力を返すことがあります。  
+  
+ 音声認識の正規化とは特殊な構成体または書面で音声認識を表現するシンボルを使用します。 など、正規化は、「$1.16」出力テキストを読み上げられる単語「ドルと 16 セント」を置換できます。  
+  
+   
+  
+## Examples  
+ 次の例では、3 つの形式のいずれかでテキストを生成するユーティリティ ルーチン: 構文 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>)、正規化された (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>)、および音声 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>)。 テキストの出力がから取得した、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Speech.Recognition.RecognizedWordUnit>から取得されるオブジェクト、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+```csharp  
+  
+internal enum WordType   
+{  
+  Text,  
+  Normalized = Text,  
+  Lexical,  
+  Pronunciation  
+}  
+```  
+  
+```csharp  
+internal static string stringFromWordArray(  
+         ReadOnlyCollection<RecognizedWordUnit> words,   
+         WordType type)   
+{  
+  string text = "";  
+  foreach (RecognizedWordUnit word in words)   
+  {  
+    string wordText = "";  
+    if (type == WordType.Text || type == WordType.Normalized)   
+    {  
+      wordText = word.Text;  
+    }   
+    else if (type == WordType.Lexical)   
+    {  
+      wordText = word.LexicalForm;  
+    }   
+    else if (type == WordType.Pronunciation)   
+    {  
+      wordText = word.Pronunciation;  
+    }   
+    else   
+    {  
+      throw new InvalidEnumArgumentException(  
+          String.Format("[0}: is not a valid input", type));  
+    }  
+  
+    // Use display attribute  
+    if ((word.DisplayAttributes & DisplayAttributes.OneTrailingSpace) != 0)   
+    {  
+      wordText += " ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.TwoTrailingSpaces) != 0)  
+    {  
+      wordText += "  ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ConsumeLeadingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimStart();  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ZeroTrailingSpaces) != 0)  
+    {  
+    wordText = wordText.TrimEnd();  
+    }  
+  
+    text += wordText;  
+  
+  }  
+  return text;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pronunciation">
+      <MemberSignature Language="C#" Value="public string Pronunciation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pronunciation" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedWordUnit.Pronunciation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識された単語のスペルを取得します。</summary>
+        <value>国際音声記号 (IPA) またはユニバーサル電話設定 (UPS) など、サポートされている発音記号からの文字の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>、ロードのいずれかに音声入力に一致する音声認識エンジンが使用されるどの発音を示す<xref:System.Speech.Recognition.Grammar>オブジェクト。 音声認識エンジンの内部辞書に読み込んだで認識文法からリンクされている辞書ドキュメント内で定義されて発音<xref:System.Speech.Recognition.Grammar>オブジェクト、または、読み込まれたで認識文法にインライン<xref:System.Speech.Recognition.Grammar>オブジェクト。 音声認識エンジンは、ある発音が辞書またはする音声認識エンジン現在にアクセス権の文法で定義されていない特殊な単語の発音を作成することもできます。  
+  
+ 媒体使用新しいなど、多くの Windows ベースの Unicode フォントは、IPA 文字列の表示をサポートします。 詳細については、次を参照してください。[国際音声記号](http://go.microsoft.com/fwlink/?LinkId=58363)です。  
+  
+   
+  
+## Examples  
+ 次の例では、3 つの可能な形式のいずれかの文字列を生成するユーティリティ ルーチン: 構文 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>)、正規化された (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>)、および音声 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>)。 テキストの出力がから取得した、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Speech.Recognition.RecognizedWordUnit>から取得されるオブジェクト、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+```csharp  
+  
+internal enum WordType   
+{  
+  Text,  
+  Normalized = Text,  
+  Lexical,  
+  Pronunciation  
+}  
+```  
+  
+```csharp  
+internal static string stringFromWordArray(  
+          ReadOnlyCollection<RecognizedWordUnit> words,   
+          WordType type)   
+{  
+  string text = "";  
+  foreach (RecognizedWordUnit word in words)   
+  {  
+    string wordText = "";  
+    if (type == WordType.Text || type == WordType.Normalized)   
+    {  
+      wordText = word.Text;  
+    }   
+    else if (type == WordType.Lexical)   
+    {  
+      wordText = word.LexicalForm;  
+    }   
+    else if (type == WordType.Pronunciation)   
+    {  
+      wordText = word.Pronunciation;  
+    }   
+    else   
+    {  
+      throw new InvalidEnumArgumentException(  
+          String.Format("[0}: is not a valid input", type));  
+    }  
+    // Use display attribute  
+  
+    if ((word.DisplayAttributes & DisplayAttributes.OneTrailingSpace) != 0)   
+    {  
+      wordText += " ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.TwoTrailingSpaces) != 0)   
+    {  
+      wordText += "  ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ConsumeLeadingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimStart();  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ZeroTrailingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimEnd();  
+    }  
+  
+    text += wordText;  
+  }  
+  return text;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedWordUnit.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識された単語の正規化されたテキストを取得します。</summary>
+        <value>指定された入力の単語の正規化されたテキスト出力を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、によって返される値<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>と<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>と同じになります。 ただし、認識エンジンで音声正規化を使用してをよりわかりやすいまたは口語的のテキスト表現オーディオ入力を返すことがあります。  
+  
+ 音声認識の正規化とは特殊な構成体または書面で音声認識を表現するシンボルを使用します。 など、正規化は、「$1.16」出力テキストを読み上げられる単語「ドルと 16 セント」を置換できます。  
+  
+   
+  
+## Examples  
+ 次の例では、3 つの形式のいずれかで文字列を生成するユーティリティ ルーチン: 構文 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.LexicalForm%2A>)、正規化された (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Text%2A>)、および音声 (を使用して<xref:System.Speech.Recognition.RecognizedWordUnit.Pronunciation%2A>)。 テキストの出力がから取得した、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Speech.Recognition.RecognizedWordUnit>から取得されるオブジェクト、<xref:System.Speech.Recognition.RecognizedPhrase.Words%2A>プロパティを<xref:System.Speech.Recognition.RecognizedPhrase>オブジェクト。  
+  
+```csharp  
+  
+internal enum WordType   
+{  
+  Text,  
+  Normalized = Text,  
+  Lexical,  
+  Pronunciation  
+}  
+```  
+  
+```csharp  
+internal static string stringFromWordArray(  
+          ReadOnlyCollection<RecognizedWordUnit> words,   
+          WordType type)   
+{  
+  string text = "";  
+  foreach (RecognizedWordUnit word in words)   
+  {  
+    string wordText = "";  
+    if (type == WordType.Text || type == WordType.Normalized)   
+    {  
+      wordText = word.Text;  
+    }   
+    else if (type == WordType.Lexical)   
+    {  
+      wordText = word.LexicalForm;  
+    }   
+    else if (type == WordType.Pronunciation)   
+    {  
+      wordText = word.Pronunciation;  
+    }   
+    else   
+    {  
+      throw new InvalidEnumArgumentException(  
+           String.Format("[0}: is not a valid input", type));  
+    }  
+  
+    // Use display attribute  
+    if ((word.DisplayAttributes & DisplayAttributes.OneTrailingSpace) != 0)   
+    {  
+      wordText += " ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.TwoTrailingSpaces) != 0)   
+    {  
+      wordText += "  ";  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ConsumeLeadingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimStart();  
+    }  
+    if ((word.DisplayAttributes & DisplayAttributes.ZeroTrailingSpaces) != 0)   
+    {  
+      wordText = wordText.TrimEnd();  
+    }  
+  
+    text += wordText;  
+  
+  }  
+  return text;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

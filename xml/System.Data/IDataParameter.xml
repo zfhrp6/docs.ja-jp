@@ -1,0 +1,387 @@
+<Type Name="IDataParameter" FullName="System.Data.IDataParameter">
+  <TypeSignature Language="C#" Value="public interface IDataParameter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataParameter" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IDataParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Command オブジェクトへのパラメーター、さらに必要に応じて <see cref="T:System.Data.DataSet" /> 列へのそれらのマッピングを表し、データ ソースにアクセスする .NET Framework データ プロバイダーによって実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataParameter>インターフェイスは、コマンド オブジェクトにパラメーターを表すパラメーター クラスを実装する継承するクラスを使用します。 パラメーターのクラスの詳細については、次を参照してください。[構成パラメーターとパラメーターのデータ型](~/docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IDataParameter>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.IDataParameter>です。  
+  
+ 継承するクラス<xref:System.Data.IDataParameter>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.IDataParameter>インターフェイスを定義、<xref:System.Data.IDataParameter.DbType%2A>プロパティです。 さらに、<xref:System.Data.OleDb.OleDbParameter>クラスは、このプロパティを継承しも定義、<xref:System.Data.OleDb.OleDbParameter.OleDbType%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスの複数のインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>して、<xref:System.Data.SqlClient.SqlParameterCollection>内のコレクション、<xref:System.Data.SqlClient.SqlDataAdapter>です。 これらのパラメーターは、データ ソースからデータを選択し、内のデータを配置に使用、<xref:System.Data.DataSet>です。 この例では、<xref:System.Data.DataSet>と<xref:System.Data.SqlClient.SqlDataAdapter>適切なスキーマ、コマンド、および接続で既に作成されています。  
+  
+ [!code-csharp[Classic WebData SqlParameter Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>.NET Framework データ プロバイダー間の整合性を高める形式で継承するクラスの名前を<paramref name="Prv" />パラメーター場所<paramref name="Prv" />は、特定の .NET Framework データ プロバイダー名前空間のすべてのクラスに指定された uniform プレフィックス。 たとえば、<paramref name="Sql" />のプレフィックス、<see cref="T:System.Data.SqlClient.SqlCommand" />クラス内で、<see langword="System.Data.SqlClient" />名前空間。  
+  
+ 継承する場合、<see cref="T:System.Data.IDataParameter" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>PrvParameter()  
+  
+ </term><description>パラメーターのクラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvParameter (文字列名、PrvDbType データ型)  
+  
+ </term><description>パラメーター名とデータ型とパラメーターのクラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvParameter (文字列名、オブジェクトの値)  
+  
+ </term><description>パラメーター名とパラメーターの値であるオブジェクトを使用して、パラメーター クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvParameter (文字列名、PrvDbType データ型、int サイズ)  
+  
+ </term><description>パラメーター名、データ型、および幅を持つパラメーター クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvParameter (文字列名、PrvDbType データ型、int サイズ、文字列 srcColumn)  
+  
+ </term><description>パラメーター名、データ型、幅、およびソース列名を持つ DbParameter クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvParameter (文字列 parameterName、PrvDbType dbType、int サイズ、ParameterDirection 方向、ブール型の isNullable、バイト有効桁数、バイトの小数点以下桁数、文字列 srcColumn、DataRowVersion srcVersion、オブジェクトの値)  
+  
+ </term><description>新しいインスタンスを初期化、<see cref="T:System.Data.OleDb.OleDbParameter" />パラメーター名、データ型、幅、ソース列名、パラメーターの方向、数値有効桁数、およびその他のプロパティを持つクラス。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public System.Data.DbType DbType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DbType DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DbType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.DbType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DbType" /> 値のいずれか。 既定値は、<see cref="F:System.Data.DbType.String" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ (Prv はプロバイダー固有のプレフィックスを表す) PrvDbType と<xref:System.Data.SqlClient.SqlParameter.DbType%2A>がリンクされています。 そのため、設定、<xref:System.Data.SqlClient.SqlParameter.DbType%2A>この、PrvDbType を変更します。  
+  
+ サポートされるデータ型の一覧は、適切な .NET Framework データ プロバイダーの PrvDbType メンバーを参照してください。 詳細については、次を参照してください。 [DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが有効な <see cref="T:System.Data.DbType" /> に設定されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.Data.ParameterDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ParameterDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ParameterDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが入力専用、出力専用、双方向、またはストアド プロシージャの戻り値パラメーターのいずれであるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。 既定値は、<see langword="Input" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.ParameterDirection>は、出力、および関連付けられている実行<xref:System.Data.SqlClient.SqlCommand>、値を返さない、 <xref:System.Data.IDataParameter> null 値が含まれています。  
+  
+ 最後の結果セットから最後の行を読み取った後`Output`、 `InputOut`、および`ReturnValue`パラメーターを更新します。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.Direction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Direction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.Direction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Direction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティが、有効な <see cref="T:System.Data.ParameterDirection" /> 値のいずれかに設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが null 値を受け取るかどうかを示す値を取得します。</summary>
+        <value>
+          null 値を受け取る場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値の処理を使用して、<xref:System.DBNull>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.IsNullable Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.IsNullable Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.IsNullable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.IsNullable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterName">
+      <MemberSignature Language="C#" Value="public string ParameterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParameterName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.ParameterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.IDataParameter" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.IDataParameter" /> の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDataParameter.ParameterName%2A>形式で指定された@paramnameです。 設定する必要があります<xref:System.Data.IDataParameter.ParameterName%2A>パラメーターに依存するコマンドを実行する前にします。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.ParameterName Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.ParameterName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.ParameterName Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.ParameterName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.DataSet" /> にマップされ、<see cref="P:System.Data.IDataParameter.Value" /> を読み込んだり返したりするために使用されるソース列の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DataSet" /> にマップされるソース列の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の間のリンク、<xref:System.Data.IDataParameter>と<xref:System.Data.DataTable>の値に応じて双方向である可能性があります、<xref:System.Data.IDataParameter.Direction%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.SourceColumn Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SourceColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.SourceColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SourceColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceVersion">
+      <MemberSignature Language="C#" Value="public System.Data.DataRowVersion SourceVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowVersion SourceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.SourceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.IDataParameter.Value" /> を読み込むときに使用する <see cref="T:System.Data.DataRowVersion" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。 既定値は、<see langword="Current" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用、<xref:System.Data.IDbDataAdapter.UpdateCommand%2A>中に、<xref:System.Data.Common.DbDataAdapter.Update%2A>パラメーターの値に、元のまたは現在の値を使用するかどうかを決定します。 これにより、プライマリ キーを更新できます。 このプロパティは無視されます、<xref:System.Data.IDbDataAdapter.InsertCommand%2A>と<xref:System.Data.IDbDataAdapter.DeleteCommand%2A>です。 このプロパティのバージョンに、<xref:System.Data.DataRow>によって使用される、<xref:System.Data.DataRow.Item%2A>プロパティ、または<xref:System.Data.DataRow.GetChildRows%2A>のメソッド、<xref:System.Data.DataRow>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.SourceVersion Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SourceVersion Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.SourceVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SourceVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティが <see cref="T:System.Data.DataRowVersion" /> 値のいずれかに設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDataParameter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの値を取得または設定します。</summary>
+        <value>パラメーターの値である <see cref="T:System.Object" />。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力パラメーターの値がバインドされている、<xref:System.Data.IDbCommand>ですが、サーバーに送信します。 完了時に出力パラメーターと戻り値パラメーターの値を設定、<xref:System.Data.IDbCommand>後、<xref:System.Data.IDataReader>が閉じられます。  
+  
+ Null パラメーター値をサーバーに送信するときにユーザーを指定する必要があります`DBNull`null でないです。 システムの null 値は、値のない空オブジェクトです。 `DBNull` は、null 値を表すために使用します。  
+  
+ アプリケーションでは、データベースの種類を指定する場合、プロバイダーがサーバーにデータを送信するとき、バインドされた値がその型に変換されます。 プロバイダーがサポートしている場合は、任意の型の値を変換しようとした場合、<xref:System.IConvertible>インターフェイスです。 指定した型の値と互換性がない場合、変換エラーがあります。  
+  
+ <xref:System.Data.SqlClient.SqlParameter.Value%2A>でプロパティを上書き<xref:System.Data.Common.DbDataAdapter.Update%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、実装するクラスのインスタンスを作成<xref:System.Data.SqlClient.SqlParameter>、および一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData SqlParameter.Value Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Value Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlParameter.Value Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Value Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

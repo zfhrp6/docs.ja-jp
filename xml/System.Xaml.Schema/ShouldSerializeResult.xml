@@ -1,0 +1,73 @@
+<Type Name="ShouldSerializeResult" FullName="System.Xaml.Schema.ShouldSerializeResult">
+  <TypeSignature Language="C#" Value="public enum ShouldSerializeResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ShouldSerializeResult extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.Schema.ShouldSerializeResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>によって報告されたシリアル化の動作を定義、<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは呼び出し元によって特殊なシリアル化をサポートします。 一般的なシリアル化のサポートはこの列挙体に必要ありません。 `ShouldSerialize`情報は、既定の XAML スキーマ コンテキストと CLR のリフレクションの一部として XAML ライターにはそれ以外の場合です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xaml.Schema.ShouldSerializeResult Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Xaml.Schema.ShouldSerializeResult.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.ShouldSerializeResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明な場合は、メンバーの型を延期します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="False">
+      <MemberSignature Language="C#" Value="False" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xaml.Schema.ShouldSerializeResult False = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xaml.Schema.ShouldSerializeResult.False" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.ShouldSerializeResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果をシリアル化できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="True">
+      <MemberSignature Language="C#" Value="True" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xaml.Schema.ShouldSerializeResult True = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xaml.Schema.ShouldSerializeResult.True" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.ShouldSerializeResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果のシリアル化します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

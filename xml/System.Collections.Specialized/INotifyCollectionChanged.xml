@@ -1,0 +1,82 @@
+<Type Name="INotifyCollectionChanged" FullName="System.Collections.Specialized.INotifyCollectionChanged">
+  <TypeSignature Language="C#" Value="public interface INotifyCollectionChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INotifyCollectionChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.INotifyCollectionChanged" />
+  <AssemblyInfo>
+    <AssemblyName>System.ObjectModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=3.0.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>項目が追加、削除された場合やリスト全体がクリアされた場合など、動的な変更をリスナーに通知します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する任意のコレクションを列挙することができます、<xref:System.Collections.IEnumerable>インターフェイスです。 ただし、コレクションの挿入や削除を更新できるように動的なバインドを設定する、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コレクションは、自動的に実装する必要があります、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスです。 このインターフェイスを公開、<xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged>イベントを基になるコレクションが変更されるたびに発生する必要があります。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]提供、<xref:System.Collections.ObjectModel.ObservableCollection%601>クラスは、これは組み込みの実装を公開するデータの収集、<xref:System.Collections.Specialized.INotifyCollectionChanged>インターフェイスです。 例については、次を参照してください。[する方法:、ObservableCollection を作成してバインド](~/docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md)です。  
+  
+ コレクション内の個々 のデータ オブジェクトは、前述の要件を満たす必要があります、[バインディング ソースの概要](~/docs/framework/wpf/data/binding-sources-overview.md)です。  
+  
+ 独自のコレクションを実装する前に、使用を検討して<xref:System.Collections.ObjectModel.ObservableCollection%601>またはなどの既存のコレクションのいずれかのクラス<xref:System.Collections.Generic.List%601>、 <xref:System.Collections.ObjectModel.Collection%601>、および<xref:System.ComponentModel.BindingList%601>、その他の多くの間でします。  
+  
+ 高度なシナリオをした独自のコレクションを実装する場合は、使用を検討して<xref:System.Collections.IList>、インデックスによって個別にアクセスできることができ、最適なパフォーマンスを提供するオブジェクトの非ジェネリック コレクションを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NotifyCollectionChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーは、型の引数<xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs>、このイベントに関連付けられているデータが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

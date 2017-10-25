@@ -1,0 +1,109 @@
+<Type Name="UCOMITypeComp" FullName="System.Runtime.InteropServices.UCOMITypeComp">
+  <TypeSignature Language="C#" Value="public interface UCOMITypeComp" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract UCOMITypeComp" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.UCOMITypeComp" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("00020403-0000-0000-c000-000000000046")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>代わりに、<see cref="T:System.Runtime.InteropServices.ComTypes.ITypeComp" /> を使用してください。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`ITypeComp`インターフェイスでは、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bind">
+      <MemberSignature Language="C#" Value="public void Bind (string szName, int lHashVal, short wFlags, out System.Runtime.InteropServices.UCOMITypeInfo ppTInfo, out System.Runtime.InteropServices.DESCKIND pDescKind, out System.Runtime.InteropServices.BINDPTR pBindPtr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Bind(string szName, int32 lHashVal, int16 wFlags, [out] class System.Runtime.InteropServices.UCOMITypeInfo&amp; ppTInfo, [out] valuetype System.Runtime.InteropServices.DESCKIND&amp; pDescKind, [out] valuetype System.Runtime.InteropServices.BINDPTR&amp; pBindPtr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMITypeComp.Bind(System.String,System.Int32,System.Int16,System.Runtime.InteropServices.UCOMITypeInfo@,System.Runtime.InteropServices.DESCKIND@,System.Runtime.InteropServices.BINDPTR@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szName" Type="System.String" />
+        <Parameter Name="lHashVal" Type="System.Int32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="ppTInfo" Type="System.Runtime.InteropServices.UCOMITypeInfo&amp;" RefType="out" />
+        <Parameter Name="pDescKind" Type="System.Runtime.InteropServices.DESCKIND&amp;" RefType="out" />
+        <Parameter Name="pBindPtr" Type="System.Runtime.InteropServices.BINDPTR&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="szName">バインド対象の名前。</param>
+        <param name="lHashVal">ハッシュ値<c>szName</c>によって計算された<see langword="LHashValOfNameSys" />です。</param>
+        <param name="wFlags">定義されている呼び出しフラグの 1 つ以上含むフラグ word、<see langword="INVOKEKIND" />列挙します。</param>
+        <param name="ppTInfo">正常に返された場合は、型の説明への参照項目を含むバインドする場合、<see langword="FUNCDESC" />または<see langword="VARDESC" />が返されました。</param>
+        <param name="pDescKind">参照、<see langword="DESCKIND" />に名前がバインドされるかどうかを示す列挙子は、 <see langword="VARDESC" />、 <see langword="FUNCDESC" />、または<see langword="TYPECOMP" />です。</param>
+        <param name="pBindPtr">バインド先への参照を<see langword="VARDESC" />、 <see langword="FUNCDESC" />、または<see langword="ITypeComp" />インターフェイスです。</param>
+        <summary>型のメンバー名にマップまたはグローバル変数、およびタイプ ライブラリ内の関数をバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`ITypeComp::Bind`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindType">
+      <MemberSignature Language="C#" Value="public void BindType (string szName, int lHashVal, out System.Runtime.InteropServices.UCOMITypeInfo ppTInfo, out System.Runtime.InteropServices.UCOMITypeComp ppTComp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BindType(string szName, int32 lHashVal, [out] class System.Runtime.InteropServices.UCOMITypeInfo&amp; ppTInfo, [out] class System.Runtime.InteropServices.UCOMITypeComp&amp; ppTComp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMITypeComp.BindType(System.String,System.Int32,System.Runtime.InteropServices.UCOMITypeInfo@,System.Runtime.InteropServices.UCOMITypeComp@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szName" Type="System.String" />
+        <Parameter Name="lHashVal" Type="System.Int32" />
+        <Parameter Name="ppTInfo" Type="System.Runtime.InteropServices.UCOMITypeInfo&amp;" RefType="out" />
+        <Parameter Name="ppTComp" Type="System.Runtime.InteropServices.UCOMITypeComp&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="szName">バインド対象の名前。</param>
+        <param name="lHashVal">ハッシュ値<c>szName</c>によって決まります<see langword="LHashValOfNameSys" />です。</param>
+        <param name="ppTInfo">正常に返されたへの参照、<see langword="ITypeInfo" />の型の<c>szName</c>バインドされました。</param>
+        <param name="ppTComp">正常に返されたへの参照、<see langword="ITypeComp" />変数。</param>
+        <summary>タイプ ライブラリ内に含まれる型の説明にバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`ITypeComp::BindType`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

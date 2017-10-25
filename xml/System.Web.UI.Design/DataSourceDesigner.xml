@@ -1,0 +1,543 @@
+<Type Name="DataSourceDesigner" FullName="System.Web.UI.Design.DataSourceDesigner">
+  <TypeSignature Language="C#" Value="public class DataSourceDesigner : System.Web.UI.Design.ControlDesigner, System.Web.UI.Design.IDataSourceDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataSourceDesigner extends System.Web.UI.Design.ControlDesigner implements class System.Web.UI.Design.IDataSourceDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DataSourceDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataSourceDesigner</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>デザイン ホストでのデザイン時サポートを提供、<see cref="T:System.Web.UI.DataSourceControl" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner>クラスは、データ ソース デザイナーの基底クラスなど、 <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner>、 <xref:System.Web.UI.Design.WebControls.AccessDataSourceDesigner>、および<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラスです。 新しいデータ ソース コントロールを作成する場合がありますもしたいコントロールのカスタム コントロールのデザイナーを作成から派生させます、<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。  
+  
+ <xref:System.Web.UI.Design.DataSourceDesigner>クラスには 2 つのイベント メソッド:<xref:System.Web.UI.Design.DataSourceDesigner.OnDataSourceChanged%2A>と<xref:System.Web.UI.Design.DataSourceDesigner.OnSchemaRefreshed%2A>メソッドです。 一時的に無効の両方のこれらのイベント、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressDataSourceEvents%2A>を設定するメソッド、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents%2A>プロパティです。 イベント メソッドを再度有効にすることができます、<xref:System.Web.UI.Design.DataSourceDesigner.ResumeDataSourceEvents%2A>メソッドです。  
+  
+ クラスのインスタンスを作成せずスキーマまたはビューの等価性の評価に使用できる 2 つの静的な方法はあります。  
+  
+-   <xref:System.Web.UI.Design.DataSourceDesigner.SchemasEquivalent%2A>メソッドは 2 つのスキーマを比較します。  
+  
+-   <xref:System.Web.UI.Design.DataSourceDesigner.ViewSchemasEquivalent%2A>メソッドは 2 つのビューのスキーマを比較します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の表に示すように、いくつか他の小さなカスタム クラスでは、カスタム データ ソース コントロールを使用する方法を示します。  
+  
+|カスタム クラス|を派生|  
+|------------------|------------------|  
+|`CustomDataSource`|<xref:System.Web.UI.WebControls.ObjectDataSource>|  
+|`CustomDataSourceDesigner`|<xref:System.Web.UI.Design.DataSourceDesigner>|  
+|`CustomDataSourceView`|<xref:System.Web.UI.WebControls.ObjectDataSourceView>|  
+|`CustomDesignDataSourceView`|<xref:System.Web.UI.Design.DesignerDataSourceView>|  
+|`BookListViewSchema`|<xref:System.Web.UI.Design.IDataSourceViewSchema>|  
+|`CustomIDFieldSchema`|<xref:System.Web.UI.Design.IDataSourceFieldSchema>|  
+|`CustomTitleFieldSchema`|<xref:System.Web.UI.Design.IDataSourceFieldSchema>|  
+|`BookItem`(2 つのフィールドのデータ構造です。)||  
+  
+ コード例をコンパイルした後、デザイン ビューで .aspx ページを開くし、設定、`DataSourceID`プロパティをカスタム データ ソース コントロールの ID。  
+  
+ [!code-csharp[DataSourceDesignerSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataSourceDesignerSample/CS/DataSourceDesignerSample.cs#1)]
+ [!code-vb[DataSourceDesignerSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataSourceDesignerSample/VB/DataSourceDesignerSample.vb#1)]  
+[!code-aspx-csharp[DataSourceDesignerSample#6](~/samples/snippets/csharp/VS_Snippets_WebNet/DataSourceDesignerSample/CS/DataSourceDesignerSample.aspx#6)]
+[!code-aspx-vb[DataSourceDesignerSample#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataSourceDesignerSample/VB/DataSourceDesignerSample.aspx#6)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスでは、デザイン時の操作 メニューの一覧のコマンドを提供するにオーバーライドする必要があります、<see cref="P:System.Web.UI.Design.DataSourceDesigner.ActionLists" />返されるカスタム プロパティを<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />オブジェクトから派生したカスタムの項目を含む、<see cref="T:System.ComponentModel.Design.DesignerActionList" />オブジェクト。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DataSourceDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.%23ctor%2A>コンス トラクターはデザイン時にデザイン ホストによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DataSourceDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のアクション リスト メニューの作成に使用するアイテムの一覧を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />コントロール デザイナーのアクションのリスト項目を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を持つ単純な複合コントロールを作成する方法を示しています、<xref:System.Web.UI.WebControls.Label>コントロールと<xref:System.Web.UI.WebControls.TextBox>プロパティを設定すると、コントロール、`Text`両方内部のコントロールのプロパティだけでなく<xref:System.Web.UI.WebControls.WebControl.Width%2A>と<xref:System.Web.UI.WebControls.WebControl.BackColor%2A>のプロパティ、<xref:System.Web.UI.WebControls.TextBox>コントロール。 関連付けられたコントロール デザイナー クラスでは、3 つが作成されます<xref:System.ComponentModel.Design.DesignerActionMethodItem>の各コントロールで、2 つのプロパティを設定して、設定を持つロールバックできる元に戻す機能とデザインのホストでのコマンドします。 コード例を使用しませんが、カスタム<xref:System.Web.UI.DataSourceControl>オブジェクトを上書きする方法を示しています、<xref:System.Web.UI.Design.DataSourceDesigner.ActionLists%2A>プロパティです。  
+  
+ [!code-csharp[DesignerInvokeTransactedChange#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerInvokeTransactedChange/CS/InvokeTransactedChangeSample.cs#1)]
+ [!code-vb[DesignerInvokeTransactedChange#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerInvokeTransactedChange/VB/InvokeTransactedChangeSample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生するカスタム クラスを作成する場合は、<see cref="T:System.Web.UI.Design.DataSourceDesigner" />オーバーライドする必要があります、クラス、<see cref="P:System.Web.UI.Design.DataSourceDesigner.ActionLists" />プロパティです。 オーバーライド メソッドで、既定値を作成する基底クラスを呼び出して最初<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />オブジェクト、およびカスタム クラスに固有のアクションの一覧を追加します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConfigure">
+      <MemberSignature Language="C#" Value="public virtual bool CanConfigure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanConfigure" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DataSourceDesigner.CanConfigure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.DataSourceDesigner.Configure" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.Web.UI.Design.DataSourceDesigner.Configure" />と呼ばれる、それ以外は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DataSourceDesigner.CanConfigure%2A>有効にするにまたは特定のデータ ソースのデザイン時構成を無効にするカスタム クラスのプロパティです。  
+  
+ ようにデザイン ホスト[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.DataSourceDesigner.CanConfigure%2A>プロパティをデータ ソースを構成するコマンドがデザイン時にアクションのリスト メニューに表示されるかどうか決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRefreshSchema">
+      <MemberSignature Language="C#" Value="public virtual bool CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DataSourceDesigner.CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="M:System.Web.UI.Design.DataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.Web.UI.Design.DataSourceDesigner.RefreshSchema(System.Boolean)" />と呼ばれる、それ以外は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DataSourceDesigner.CanRefreshSchema%2A>プロパティが、派生クラスを有効にするにまたは特定のデータ ソースのデザイン時にスキーマを更新する機能を無効にします。 アプリケーションには、ロケールに依存しないデータ構造が必要なスキーマは決して変化しない、する場合は、<xref:System.Web.UI.Design.DataSourceDesigner.CanRefreshSchema%2A>を返すプロパティ`false`です。  
+  
+ ようにデザイン ホスト[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.DataSourceDesigner.CanRefreshSchema%2A>プロパティをデザイン時に、そのスキーマを更新するコマンドが操作 メニューの一覧に表示されるかどうか決定します。  
+  
+ デザイン ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、表示できます、<xref:System.Web.UI.Design.DataSourceDesigner.CanRefreshSchema%2A>次のプロセスを完了してアクション内のプロパティ。  
+  
+1.  ページで、配置、<xref:System.Web.UI.WebControls.SqlDataSource>または<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。  
+  
+2.  デザイン ビューで、アクションの一覧でクリックして**構成**です。  
+  
+3.  データ ソースからのいくつかのフィールドを削除します。  
+  
+4.  アクションの一覧でクリックして**スキーマの更新**です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public virtual void Configure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Configure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.Configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン ホストのデータ ソース構成ユーティリティを起動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.Configure%2A>でメソッドがサポートされていません、<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。 ただし、から継承するカスタム データ ソース デザイナーで無効にします<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。  
+  
+ デザイン ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、表示できます、<xref:System.Web.UI.Design.DataSourceDesigner.Configure%2A>メソッドで、次のプロセスを完了してアクション。  
+  
+1.  Put、<xref:System.Web.UI.WebControls.SqlDataSource>または<xref:System.Web.UI.WebControls.AccessDataSource>ページ上のコントロールです。  
+  
+2.  クリックすると、アクションの一覧で、デザイン ビューで**構成**です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">基本クラスでこのメソッドを呼び出すしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataSourceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataSourceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたデータ ソースの任意のプロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたデータ ソース コントロールを表示するための HTML マークアップを取得します。</summary>
+        <returns>デザイン時の表示のマークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.Web.UI.Design.DataSourceDesigner.GetDesignTimeHtml%2A>メソッドは、ベースから結果を返します<xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Design.DesignerDataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.DesignerDataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">ビューの名前。</param>
+        <summary>ビュー名で識別される <see cref="T:System.Web.UI.Design.DesignerDataSourceView" /> オブジェクトを取得します。</summary>
+        <returns>この実装は常に返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に、クラスを派生`viewName`が存在しない、<xref:System.Web.UI.Design.DataSourceDesigner.GetView%2A>メソッドが返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="public virtual string[] GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このデータ ソースで使用可能なビュー名の配列を返します。</summary>
+        <returns>ビュー名の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataSourceChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.OnDataSourceChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />呼び出し元のオブジェクトが提供するオブジェクト。</param>
+        <summary>発生させます、<see cref="E:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged" />イベントのデータ ソースのプロパティが変更されたとき、<see cref="P:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents" />値は<see langword="false" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.OnDataSourceChanged%2A>メソッドはデザイン ホストでそのコントロールの更新に関連付けられているデータ ソースにバインドされている各コントロールのコントロール デザイナーに通知します。 <xref:System.Web.UI.Design.DataSourceDesigner.OnDataSourceChanged%2A>でメソッドを抑制することができます、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressDataSourceEvents%2A>メソッドの呼び出しでも、<xref:System.Web.UI.Design.DataSourceDesigner.RefreshSchema%2A>メソッドの引数を`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSchemaRefreshed">
+      <MemberSignature Language="C#" Value="protected virtual void OnSchemaRefreshed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSchemaRefreshed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.OnSchemaRefreshed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させます、<see cref="E:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed" />イベント、データ ソースのスキーマが変更されたときに、<see cref="P:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents" />値は<see langword="false" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.OnSchemaRefreshed%2A>メソッドは、スキーマのフィールドが変更された関連するデータ ソースにバインドされている各コントロールのコントロール デザイナーに通知します。 <xref:System.Web.UI.Design.DataSourceDesigner.OnSchemaRefreshed%2A>でメソッドを抑制することができます、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressDataSourceEvents%2A>メソッドの呼び出しでも、<xref:System.Web.UI.Design.DataSourceDesigner.RefreshSchema%2A>の引数を持つプロパティ`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSchema">
+      <MemberSignature Language="C#" Value="public virtual void RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">
+          <see langword="true" />スキーマを更新するときにイベントを許可するには<see langword="false" />を無効にする、<see cref="E:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged" />と<see cref="E:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed" />イベント スキーマを更新するときにします。</param>
+        <summary>必要に応じてイベントを抑制しながら、データ ソースからスキーマを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.RefreshSchema%2A>でメソッドがサポートされていません、<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。 ただし、これは、派生クラスでサポートなど、<xref:System.Web.UI.Design.WebControls.XmlDataSourceDesigner>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">基本クラスでこのメソッドを呼び出すしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeDataSourceEvents">
+      <MemberSignature Language="C#" Value="public virtual void ResumeDataSourceEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResumeDataSourceEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.ResumeDataSourceEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースのイベントが抑制されているデータ ソース イベントを復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定してデータ ソースのイベントを抑制することができます、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents%2A>プロパティを`false`または呼び出すことによって、<xref:System.Web.UI.Design.DataSourceDesigner.RefreshSchema%2A>メソッドの引数を`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基本クラスでこのメソッドを呼び出すしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaRefreshed">
+      <MemberSignature Language="C#" Value="public event EventHandler SchemaRefreshed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SchemaRefreshed" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマが更新された後に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemasEquivalent">
+      <MemberSignature Language="C#" Value="public static bool SchemasEquivalent (System.Web.UI.Design.IDataSourceSchema schema1, System.Web.UI.Design.IDataSourceSchema schema2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SchemasEquivalent(class System.Web.UI.Design.IDataSourceSchema schema1, class System.Web.UI.Design.IDataSourceSchema schema2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.SchemasEquivalent(System.Web.UI.Design.IDataSourceSchema,System.Web.UI.Design.IDataSourceSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema1" Type="System.Web.UI.Design.IDataSourceSchema" />
+        <Parameter Name="schema2" Type="System.Web.UI.Design.IDataSourceSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema1">比較する最初のスキーマ (から派生した、 <see cref="T:System.Web.UI.Design.IDataSourceSchema" />)。</param>
+        <param name="schema2">比較する 2 番目のスキーマです。</param>
+        <summary>2 つのスキーマが等しいかどうかを示す値を提供します。</summary>
+        <returns>
+          <see langword="true" />両方のスキーマが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのスキーマの比較は、ビュー、および名前とビューに含まれているフィールドの型に基づきます。 <xref:System.Web.UI.Design.DataSourceDesigner.SchemasEquivalent%2A>のインスタンスなしメソッドを使用することができます、<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressDataSourceEvents">
+      <MemberSignature Language="C#" Value="public virtual void SuppressDataSourceEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SuppressDataSourceEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.SuppressDataSourceEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>までの後にすべてのデータ ソース イベントを延期、<see cref="M:System.Web.UI.Design.DataSourceDesigner.ResumeDataSourceEvents" />メソッドが呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressingDataSourceEvents">
+      <MemberSignature Language="C#" Value="protected bool SuppressingDataSourceEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressingDataSourceEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="E:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged" />イベントまたは<see cref="M:System.Web.UI.Design.DataSourceDesigner.RefreshSchema(System.Boolean)" />メソッドが発生します。</summary>
+        <value>
+          <see langword="true" />イベントが抑制されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.SuppressingDataSourceEvents%2A>を呼び出してプロパティを設定することができます、<xref:System.Web.UI.Design.DataSourceDesigner.SuppressDataSourceEvents%2A>または<xref:System.Web.UI.Design.DataSourceDesigner.RefreshSchema%2A>メソッドの引数を`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewSchemasEquivalent">
+      <MemberSignature Language="C#" Value="public static bool ViewSchemasEquivalent (System.Web.UI.Design.IDataSourceViewSchema viewSchema1, System.Web.UI.Design.IDataSourceViewSchema viewSchema2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ViewSchemasEquivalent(class System.Web.UI.Design.IDataSourceViewSchema viewSchema1, class System.Web.UI.Design.IDataSourceViewSchema viewSchema2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataSourceDesigner.ViewSchemasEquivalent(System.Web.UI.Design.IDataSourceViewSchema,System.Web.UI.Design.IDataSourceViewSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewSchema1" Type="System.Web.UI.Design.IDataSourceViewSchema" />
+        <Parameter Name="viewSchema2" Type="System.Web.UI.Design.IDataSourceViewSchema" />
+      </Parameters>
+      <Docs>
+        <param name="viewSchema1">比較する最初のビュー (から派生した、 <see cref="T:System.Web.UI.Design.IDataSourceViewSchema" />)。</param>
+        <param name="viewSchema2">比較する 2 つ目のビューです。</param>
+        <summary>2 つのスキーマのビューが等しいかどうかを決定する値を提供します。</summary>
+        <returns>
+          <see langword="true" />両方のビューが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceDesigner.ViewSchemasEquivalent%2A>のインスタンスなしメソッドを使用することができます、<xref:System.Web.UI.Design.DataSourceDesigner>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

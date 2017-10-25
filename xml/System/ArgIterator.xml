@@ -1,0 +1,320 @@
+<Type Name="ArgIterator" FullName="System.ArgIterator">
+  <TypeSignature Language="C#" Value="public struct ArgIterator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ArgIterator extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.ArgIterator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>可変長の引数リストを表します。つまり、関数のパラメーターを受け取る可変個の引数。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイラを記述する開発者向けの使用、<xref:System.ArgIterator>構造体を引数リストで、必須およびオプションの引数を列挙します。 <xref:System.ArgIterator>構造体は、コンパイラ以外のアプリケーションの一般的に便利です。  
+  
+ 機能は、<xref:System.ArgIterator>構造が通常、特定のプログラミング言語の構文では非表示します。 たとえば、C++ プログラミング言語では、引数リストの末尾にある省略記号 ([...]) を指定することで、可変長の引数リストを宣言します。 <xref:System.ArgIterator>構造役に立ちます、主にときの開発言語はサポートされていません直接可変長パラメーターにアクセスするためです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgIterator (RuntimeArgumentHandle arglist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.RuntimeArgumentHandle arglist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.#ctor(System.RuntimeArgumentHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="arglist" Type="System.RuntimeArgumentHandle" />
+      </Parameters>
+      <Docs>
+        <param name="arglist">必須およびオプションの引数で構成される引数リスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgIterator" />指定した引数リストを使用して構造体します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.ArgIterator>オブジェクトは、最初の省略可能な引数から引数リストを列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgIterator (RuntimeArgumentHandle arglist, void* ptr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.RuntimeArgumentHandle arglist, void* ptr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.#ctor(System.RuntimeArgumentHandle,System.Void*)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="arglist" Type="System.RuntimeArgumentHandle" />
+        <Parameter Name="ptr" Type="System.Void*" />
+      </Parameters>
+      <Docs>
+        <param name="arglist">必須およびオプションの引数で構成される引数リスト。</param>
+        <param name="ptr">引数へのポインター <c>arglist</c>最初、または最初の必須引数にアクセスする<c>arglist</c>場合<c>ptr</c>は<see langword="null" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgIterator" />一覧で指定した引数リストと項目へのポインターを使用して構造体します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.ArgIterator>オブジェクトによって指定された引数から引数リストを列挙する`ptr`、または最初の必須引数場合`ptr`は`null`します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public void End ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void End() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.End" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスで表される、可変長の引数リストの処理を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 概念的には、<xref:System.ArgIterator.End%2A>可変長の引数リストの処理を終了します。 ただし、このメソッドは実際の実装です。<xref:System.ArgIterator.End%2A>メソッド本体が空です。 可変長の引数リストの論理的な処理が終了する位置を示すために、マーカーとして、コードでこのメソッドを使用できます。  
+  
+ <xref:System.ArgIterator.End%2A>メソッドに対応して、 `va_end` C 標準ライブラリ内のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">このインスタンスと比較するオブジェクト。</param>
+        <summary>このメソッドはサポートされていませんし、常にスロー<see cref="T:System.NotSupportedException" />です。</summary>
+        <returns>この比較はサポートされていません。 値は返されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextArg">
+      <MemberSignature Language="C#" Value="public TypedReference GetNextArg ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TypedReference GetNextArg() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.GetNextArg" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TypedReference</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>可変長の引数リスト内には、次の引数を返します。</summary>
+        <returns>次の引数として、<see cref="T:System.TypedReference" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 反復子は次の引数に自動的に前進します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リストの末尾を越えるしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextArg">
+      <MemberSignature Language="C#" Value="public TypedReference GetNextArg (RuntimeTypeHandle rth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TypedReference GetNextArg(valuetype System.RuntimeTypeHandle rth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.GetNextArg(System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TypedReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rth" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="rth">取得する引数の型を識別するランタイム型ハンドル。</param>
+        <summary>指定された型を持つ可変長の引数リストで次の引数を返します。</summary>
+        <returns>次の引数として、<see cref="T:System.TypedReference" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 反復子は次の引数に自動的に前進します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リストの末尾を越えるしようとしました。</exception>
+        <exception cref="T:System.ArgumentNullException">残りの引数へのポインターは 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextArgType">
+      <MemberSignature Language="C#" Value="public RuntimeTypeHandle GetNextArgType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeTypeHandle GetNextArgType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.GetNextArgType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeTypeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の引数の型を返します。</summary>
+        <returns>次の引数の型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、次の引数に、反復子は変化しません。  
+  
+ <xref:System.ArgIterator.GetNextArgType%2A>呼び出し元の関数で指定された引数の型を返します。 たとえば、次の引数が型では<xref:System.String>がその呼び出し元の関数の種類として、引数を指定する<xref:System.Object>、<xref:System.ArgIterator.GetNextArgType%2A>型として表された引数の報告<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemainingCount">
+      <MemberSignature Language="C#" Value="public int GetRemainingCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetRemainingCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgIterator.GetRemainingCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>引数リスト内の残りの引数の数を返します。</summary>
+        <returns>残りの引数の数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

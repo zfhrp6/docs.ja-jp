@@ -1,0 +1,111 @@
+<Type Name="TaskLoggingHelperExtension" FullName="Microsoft.Build.Tasks.TaskLoggingHelperExtension">
+  <TypeSignature Language="C#" Value="public class TaskLoggingHelperExtension : Microsoft.Build.Utilities.TaskLoggingHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskLoggingHelperExtension extends Microsoft.Build.Utilities.TaskLoggingHelper" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.TaskLoggingHelperExtension" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Utilities.TaskLoggingHelper</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまなメッセージのログ記録を有効にします。 リソースの読み込みと書式設定も有効にします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskLoggingHelperExtension (Microsoft.Build.Framework.ITask taskInstance, System.Resources.ResourceManager primaryResources, System.Resources.ResourceManager sharedResources, string helpKeywordPrefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask taskInstance, class System.Resources.ResourceManager primaryResources, class System.Resources.ResourceManager sharedResources, string helpKeywordPrefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.TaskLoggingHelperExtension.#ctor(Microsoft.Build.Framework.ITask,System.Resources.ResourceManager,System.Resources.ResourceManager,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="taskInstance" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="primaryResources" Type="System.Resources.ResourceManager" />
+        <Parameter Name="sharedResources" Type="System.Resources.ResourceManager" />
+        <Parameter Name="helpKeywordPrefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="taskInstance">インスタンスを含むタスク、<see cref="T:Microsoft.Build.Tasks.TaskLoggingHelperExtension" />クラスです。</param>
+        <param name="primaryResources">UI と文字列のリソース。</param>
+        <param name="sharedResources">共有された UI と文字列のリソース。</param>
+        <param name="helpKeywordPrefix">ヘルプ キーワードを作成するためのプレフィックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.Tasks.TaskLoggingHelperExtension" />タスク インスタンス、主要なリソース、共有リソース、およびヘルプ キーワードのプレフィックスを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FormatResourceString">
+      <MemberSignature Language="C#" Value="public override string FormatResourceString (string resourceName, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string FormatResourceString(string resourceName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.TaskLoggingHelperExtension.FormatResourceString(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="resourceName">読み込む文字列リソースの名前。</param>
+        <param name="args">読み込まれた文字列、書式設定するための省略可能な引数または<see langword="null" />です。</param>
+        <summary>指定したリソース文字列を読み込み、必要に応じて、指定した引数を使用して文字列を書式指定します。 現在のスレッドのカルチャが書式指定に使用されます。</summary>
+        <returns>書式設定された文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドではそのリソースを登録する所有者タスクのいずれかによって、<xref:Microsoft.Build.Utilities.Task>クラスのコンス トラクター、または、次のプロパティのいずれかの基準:<xref:Microsoft.Build.Utilities.Task.TaskResources%2A>または<xref:Microsoft.Build.Utilities.AppDomainIsolatedTask.TaskResources%2A>です。  
+  
+ このメソッドは、スレッド セーフです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TaskSharedResources">
+      <MemberSignature Language="C#" Value="public System.Resources.ResourceManager TaskSharedResources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Resources.ResourceManager TaskSharedResources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.TaskLoggingHelperExtension.TaskSharedResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.ResourceManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有 UI リソースと共有文字列リソースを取得または設定します。</summary>
+        <value>共有 UI リソースと共有文字列リソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、カルチャに固有のリソースの読み込みに使用します。 派生クラスにローカライズされた文字列がある場合は、構築時に、またはこのプロパティを介してそのリソースを登録する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

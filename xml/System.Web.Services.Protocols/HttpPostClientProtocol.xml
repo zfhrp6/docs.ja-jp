@@ -1,0 +1,99 @@
+<Type Name="HttpPostClientProtocol" FullName="System.Web.Services.Protocols.HttpPostClientProtocol">
+  <TypeSignature Language="C#" Value="public class HttpPostClientProtocol : System.Web.Services.Protocols.HttpSimpleClientProtocol" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpPostClientProtocol extends System.Web.Services.Protocols.HttpSimpleClientProtocol" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.HttpPostClientProtocol" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.HttpSimpleClientProtocol</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP POST プロトコルを使用する XML Web サービス クライアント プロキシの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントを使用する場合、HTTP POST プロトコルを既定のパラメーターでは URL エンコード規則を使用して HTTP 本文内でエンコードされてし、応答のシンプルな XML を使用しています。 このプロトコルはから派生するクラスを使用して<xref:System.Web.Services.Protocols.MimeFormatter>パラメーターをエンコードし、標準的な MIME に値を書式設定を返します。 使用するエンコーダーは、サービスの説明で指定されます。  
+  
+ XML Web サービス クライアントは、ASP.NET を使用して、直接派生するプロキシ クラスを作成する場合、またはから直接<xref:System.Web.Services.Protocols.WebClientProtocol>を呼び出したい XML Web サービス用に作成する必要があります。 呼び出すときは、XML Web サービス クライアントが HTTP を使用して、プロキシ クラスを派生させる<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>、さらにから派生した<xref:System.Web.Services.Protocols.WebClientProtocol>です。  
+  
+ <xref:System.Web.Services.Protocols.HttpGetClientProtocol>および<xref:System.Web.Services.Protocols.HttpPostClientProtocol>から派生<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>、HTTP-GET および HTTP-POST をそれぞれ使用して、XML Web サービス メソッドを呼び出すためのサポートを提供します。 SOAP を使用する XML Web サービスを呼び出すクライアントがから派生する必要があります<xref:System.Web.Services.Protocols.SoapHttpClientProtocol>です。  
+  
+ プロキシ クラスの構築に関する詳細については、「 [&#91;\<topic://cpconcreatingwebserviceproxy > & #93 です。](http://msdn.microsoft.com/en-us/142d91f5-3249-4cfc-a431-1f3acb76d756).  
+  
+   
+  
+## Examples  
+ 次の例の Wsdl.exe ユーティリティによって生成されたプロキシ クラス、`Math`次の XML Web サービスです。 プロキシ クラスの派生元<xref:System.Web.Services.Protocols.HttpPostClientProtocol>、抽象から派生した<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>クラスです。  
+  
+ [!code-cpp[Classic HttpPostClientProtocol Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpPostClientProtocol Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpPostClientProtocol Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpPostClientProtocol Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpPostClientProtocol Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpPostClientProtocol Example/VB/source.vb#1)]  
+  
+ 次の例は、`Math`以前のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpPostClientProtocol ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpPostClientProtocol.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.HttpPostClientProtocol" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[HttpPostClientProtocol_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpPostClientProtocol_Constructor/CPP/httppostclientprotocol_constructor.cpp#1)]
+ [!code-csharp[HttpPostClientProtocol_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpPostClientProtocol_Constructor/CS/httppostclientprotocol_constructor.cs#1)]
+ [!code-vb[HttpPostClientProtocol_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpPostClientProtocol_Constructor/VB/httppostclientprotocol_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebRequest">
+      <MemberSignature Language="C#" Value="protected override System.Net.WebRequest GetWebRequest (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Net.WebRequest GetWebRequest(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpPostClientProtocol.GetWebRequest(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebRequest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" />を作成するときに使用する、<see cref="T:System.Net.WebRequest" />です。</param>
+        <summary>作成、<see cref="T:System.Net.WebRequest" />指定された URI のインスタンス。</summary>
+        <returns><see cref="T:System.Net.WebRequest" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本バージョンの<xref:System.Web.Services.Protocols.WebClientProtocol.GetWebRequest%2A>に HTTP POST を使用して、XML Web サービスに対する HTTP 要求を作成するように指定します。 このメソッドをオーバーライドしてカスタマイズできます、<xref:System.Net.WebRequest>オブジェクトの XML Web サービス要求が行われる前にします。 たとえば、要求にカスタム ヘッダーを追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="uri" />パラメーターが null か、長さが 0 です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

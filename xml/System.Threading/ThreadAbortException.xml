@@ -1,0 +1,117 @@
+<Type Name="ThreadAbortException" FullName="System.Threading.ThreadAbortException">
+  <TypeSignature Language="C#" Value="public sealed class ThreadAbortException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ThreadAbortException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadAbortException" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Threading.Thread.Abort(System.Object)" /> メソッドが呼び出されるときにスローされる例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しが行われたときに、<xref:System.Threading.Thread.Abort%2A>スレッド、共通言語ランタイムを破棄するメソッドをスロー、<xref:System.Threading.ThreadAbortException>です。 <xref:System.Threading.ThreadAbortException>特別な例外をキャッチできるが、自動的に再度発生の最後に、`catch`ブロックします。 この例外が発生したときに、ランタイムは実行すべて、`finally`スレッドを終了するまでブロックします。 スレッドがバインド解除済みの計算を実行できるため、`finally`ブロックや呼び出し<xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType>abort を取り消す場合に、スレッドはこれまでに終了するという保証はありません。 中止されたスレッドが終了するまで待機する場合を呼び出すことができます、<xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Threading.Thread.Join%2A>ブロッキング呼び出しスレッドが実際に実行を停止するまで戻りませんです。  
+  
+> [!NOTE]
+>  共通言語ランタイム (CLR) を停止すると、マネージ実行可能ファイル内のすべてのフォア グラウンド スレッドが終了したバック グラウンド threadsafter を使用していない<xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>です。 したがって、使用することはできません<xref:System.Threading.ThreadAbortException>をバック グラウンド スレッドが終了します。 CLR によって検出されます。  
+  
+ <xref:System.Threading.ThreadAbortException>値は 0x80131530 HRESULT COR_E_THREADABORTED を使用します。  
+  
+> [!NOTE]
+>  継承された値<xref:System.Exception.Data%2A>プロパティは常に`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、スレッドの中止を示します。 受信する、スレッド、`ThreadAbortException`を使用して、<xref:System.Threading.Thread.ResetAbort%2A>中止要求をキャンセルし、実行を継続する方法です。  
+  
+ [!code-cpp[ThreadAbEx#1](~/samples/snippets/cpp/VS_Snippets_CLR/ThreadAbEx/CPP/threadabex.cpp#1)]
+ [!code-csharp[ThreadAbEx#1](~/samples/snippets/csharp/VS_Snippets_CLR/ThreadAbEx/CS/threadabex.cs#1)]
+ [!code-vb[ThreadAbEx#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ThreadAbEx/VB/threadabex.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+Thread - working.  
+Main - aborting my thread.  
+Thread - caught ThreadAbortException - resetting.  
+Exception message: Thread was being aborted.  
+Thread - still alive and working.  
+Thread - finished working.  
+Main ending.  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExceptionState">
+      <MemberSignature Language="C#" Value="public object ExceptionState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExceptionState" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ThreadAbortException.ExceptionState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドの中止に関連するアプリケーションに固有の情報を格納しているオブジェクトを取得します。</summary>
+        <value>アプリケーションに固有の情報を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるオブジェクトを指定、`stateInfo`のパラメーター、<xref:System.Threading.Thread.Abort%2A>メソッドです。 このオブジェクトの使用方法と正確な内容が定義されているアプリケーションです。通常は、中止するスレッドにわかりやすい情報を伝えるために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、中止中のスレッドに情報を渡す方法を示します。  
+  
+ [!code-cpp[System.Threading.Thread.Abort2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Thread.Abort2/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Thread.Abort2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Thread.Abort2/CS/source.cs#1)]
+ [!code-vb[System.Threading.Thread.Abort2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Thread.Abort2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

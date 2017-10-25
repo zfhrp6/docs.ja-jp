@@ -1,0 +1,616 @@
+<Type Name="IDbCommand" FullName="System.Data.IDbCommand">
+  <TypeSignature Language="C#" Value="public interface IDbCommand : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDbCommand implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IDbCommand" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ソースに接続しながら実行される SQL ステートメントを表し、リレーショナル データベースにアクセスする .NET Framework データ プロバイダーにより実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDbCommand>インターフェイスは、データ ソースで実行する SQL ステートメントを表すコマンド クラスの実装、継承したクラスを有効にします。 コマンド クラスの詳細については、次を参照してください。[コマンドを実行する](~/docs/framework/data/adonet/executing-a-command.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IDbCommand>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.IDbCommand>です。  
+  
+ 継承するクラス<xref:System.Data.IDbCommand>継承されたすべてのメンバーを実装して、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.IDbCommand>インターフェイスを定義、<xref:System.Data.IDbCommand.ExecuteNonQuery%2A>メソッドです。 さらに、<xref:System.Data.SqlClient.SqlCommand>クラスは、このメソッドを継承しも定義、<xref:System.Data.SqlClient.SqlCommand.ExecuteXmlReader%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlConnection>、 <xref:System.Data.SqlClient.SqlCommand>、および<xref:System.Data.SqlClient.SqlDataReader>です。 例は、コンソールに書き込み、データを読み取ります。 最後に、例、 <xref:System.Data.SqlClient.SqlDataReader>、続いて、<xref:System.Data.SqlClient.SqlConnection>です。  
+  
+ [!code-csharp[Classic WebData SqlCommand Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlCommand Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlCommand Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlCommand Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>.NET Framework データ プロバイダー間の整合性を高める形式で継承するクラスの名前を<paramref name="PrvClassname" />場所<paramref name="Prv" />は、特定の .NET Framework データ プロバイダー名前空間のすべてのクラスに指定された uniform プレフィックス。 たとえば、<paramref name="Sql" />のプレフィックス、<see cref="T:System.Data.SqlClient.SqlCommand" />クラス内で、<see langword="System.Data.SqlClient" />名前空間。  
+  
+ 継承する場合、<see cref="T:System.Data.IDbCommand" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>PrvCommand()  
+  
+ </term><description>PrvCommand クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvCommand (文字列 cmdText)  
+  
+ </term><description>クエリのテキストを含んだ PrvCommand クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvCommand (文字列 cmdText、PrvConnection 接続)  
+  
+ </term><description>クエリと、PrvConnection のテキストを含んだ PrvCommand クラスの新しいインスタンスを初期化します。  
+  
+ </description></item><item><term>PrvCommand (文字列 cmdText、PrvConnection 接続、PrvTransaction トランザクション)  
+  
+ </term><description>クエリや、PrvConnection、PrvTransaction のテキストを含んだ PrvCommand クラスの新しいインスタンスを初期化します。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.IDbCommand" /> の実行のキャンセルを試行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [キャンセル] を何も行われませんが、何も起こりません。 ただし、処理中のコマンドが存在し、キャンセルの試行が失敗した場合でも、例外は生成されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandText">
+      <MemberSignature Language="C#" Value="public string CommandText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandText" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.CommandText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに対して実行するテキスト コマンドを取得または設定します。</summary>
+        <value>実行するテキスト コマンド。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.IDbCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、設定、<xref:System.Data.IDbCommand.CommandText%2A>プロパティをストアド プロシージャの名前にします。 ユーザーが、ストアド プロシージャ名に特殊文字が含まれている場合は、エスケープ文字構文を使用する必要あります。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.OleDb.OleDbCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData IDbCommand.CommandText Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDbCommand.CommandText Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDbCommand.CommandText Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDbCommand.CommandText Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTimeout">
+      <MemberSignature Language="C#" Value="public int CommandTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CommandTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.CommandTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドを実行する試みを終了してエラーが生成されるまでの待機時間を取得または設定します。</summary>
+        <value>時間 (秒) コマンドの実行を待機します。 既定値は 30 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlCommand>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData IDbCommand.CommandTimeout Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDbCommand.CommandTimeout Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDbCommand.CommandTimeout Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDbCommand.CommandTimeout Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられたプロパティ値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandType">
+      <MemberSignature Language="C#" Value="public System.Data.CommandType CommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.CommandType CommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.CommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.IDbCommand.CommandText" /> プロパティをどのように解釈するかを表示または指定します。</summary>
+        <value><see cref="T:System.Data.CommandType" /> 値のいずれか。 既定値は、<see langword="Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Data.IDbCommand.CommandType%2A>プロパティを`StoredProcedure`、設定する必要があります、<xref:System.Data.IDbCommand.CommandText%2A>プロパティをストアド プロシージャの名前にします。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.IDbConnection Connection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.IDbCommand" /> のインスタンスで使用する <see cref="T:System.Data.IDbConnection" /> を取得または設定します。</summary>
+        <value>データ ソースへの接続。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParameter">
+      <MemberSignature Language="C#" Value="public System.Data.IDbDataParameter CreateParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IDbDataParameter CreateParameter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.CreateParameter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbDataParameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.IDbDataParameter" /> オブジェクトの新しいインスタンスを作成します。</summary>
+        <returns><see langword="IDbDataParameter" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承する場合<xref:System.Data.IDbCommand>、.NET Framework データ プロバイダーの厳密に型指定されたバージョンを実装して<xref:System.Data.IDbCommand.CreateParameter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteNonQuery">
+      <MemberSignature Language="C#" Value="public int ExecuteNonQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 ExecuteNonQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.ExecuteNonQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>.NET Framework データ プロバイダーの <see langword="Connection" /> オブジェクトに対して SQL ステートメントを実行し、影響を受ける行の数を返します。</summary>
+        <returns>影響を受けた行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.IDbCommand.ExecuteNonQuery%2A>カタログ操作 (データベースの構造をクエリやテーブルなどのデータベース オブジェクトを作成するなど) を実行するかを使用せず、データベース内のデータを変更する、 <xref:System.Data.DataSet> UPDATE、INSERT、または DELETE ステートメントを実行することによってです。  
+  
+ ただし、<xref:System.Data.IDbCommand.ExecuteNonQuery%2A>戻り値の任意の行、すべての出力パラメーターまたはパラメーターにマップされている値には、データが挿入されますを返すしていません。  
+  
+ UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 その他のすべての種類のステートメントは、戻り値は-1 です。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.OleDb.OleDbCommand>、し、それを実行します。 これを実現するには、SQL SELECT ステートメントを表す文字列と、データ ソースへの接続に使用する文字列、メソッドに渡します。  
+  
+ [!code-csharp[Classic WebData OleDbCommand.ExecuteNonQuery Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbCommand.ExecuteNonQuery Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbCommand.ExecuteNonQuery Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbCommand.ExecuteNonQuery Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が存在しません。  
+  
+ または  
+  
+ 接続が開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.IDataReader ExecuteReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IDataReader ExecuteReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.ExecuteReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Data.IDbCommand.Connection" /> に対して <see cref="P:System.Data.IDbCommand.CommandText" /> を実行し、<see cref="T:System.Data.IDataReader" /> をビルドします。</summary>
+        <returns><see cref="T:System.Data.IDataReader" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.IDataReader ExecuteReader (System.Data.CommandBehavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.IDataReader ExecuteReader(valuetype System.Data.CommandBehavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.ExecuteReader(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior"><see cref="T:System.Data.CommandBehavior" /> 値のいずれか。</param>
+        <summary><see cref="P:System.Data.IDbCommand.Connection" /> に対して <see cref="P:System.Data.IDbCommand.CommandText" /> を実行し、<see cref="T:System.Data.CommandBehavior" /> の値のいずれかを使用して <see cref="T:System.Data.IDataReader" /> をビルドします。</summary>
+        <returns><see cref="T:System.Data.IDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元が呼び出す必要があります、<xref:System.Data.IDbConnection.Open%2A>のメソッド、<xref:System.Data.IDbCommand.Connection%2A>プロパティです。  
+  
+ ときに、<xref:System.Data.IDbCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.IDbCommand.CommandText%2A>プロパティは、ストアド プロシージャの名前に設定する必要があります。 コマンドを呼び出すときにこのストアド プロシージャが実行される<xref:System.Data.IDbCommand.ExecuteReader%2A>です。  
+  
+> [!NOTE]
+>  使用して<xref:System.Data.CommandBehavior.SequentialAccess>大きな値やバイナリ データを取得します。 それ以外の場合、<xref:System.OutOfMemoryException>が発生して、接続は閉じられます。  
+  
+ 中に、<xref:System.Data.IDataReader>が使用されている、関連付けられている<xref:System.Data.IDbConnection>がビジー状態であるサービス、<xref:System.Data.IDataReader>です。 この状態では、その他の操作はありません、<xref:System.Data.IDbConnection>閉じる以外です。 これは、まで続きます、 <xref:System.Data.IDataReader.Close%2A> DataReader のメソッドが呼び出されます。 DataReader が作成された場合<xref:System.Data.CommandBehavior>'éý' `CloseConnection`DataReader の終了、接続が自動的に終了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteScalar">
+      <MemberSignature Language="C#" Value="public object ExecuteScalar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ExecuteScalar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.ExecuteScalar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。 追加の列または行は無視されます。</summary>
+        <returns>結果セットの最初の行の最初の列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.IDbCommand.ExecuteScalar%2A>データベースから 1 つの値 (たとえば、集計値) を取得します。 使用するよりも少ないコードが必要です、<xref:System.Data.IDbCommand.ExecuteReader%2A>メソッド、およびによって返されるデータを使用して 1 つの値を生成するために必要な操作を実行すること、<xref:System.Data.IDataReader>です。  
+  
+ 一般的な<xref:System.Data.IDbCommand.ExecuteScalar%2A>クエリは、c# の例を次のようにフォーマットされていることができます。  
+  
+```  
+CommandText = "select count(*) as NumberOfRegions from region";  
+Int32 count = (int) ExecuteScalar();  
+```  
+  
+ 結果セットの最初の行の最初の列が見つからない場合、null 参照 (`Nothing` Visual Basic で) が返されます。 データベース内の値が場合`null`、クエリを返します`DBNull.Value`です。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlCommand>を使用してそれを実行および<xref:System.Data.SqlClient.SqlCommand.ExecuteScalar%2A>です。 例には、集計の結果を返す TRANSACT-SQL ステートメントを表す文字列と、データ ソースへの接続に使用する文字列が渡されます。  
+  
+ [!code-csharp[Classic WebData SqlCommand.ExecuteScalar#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteScalar/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData SqlCommand.ExecuteScalar#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteScalar/VB/mysample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Data.IDataParameterCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDataParameterCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDataParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.IDataParameterCollection" /> を取得します。</summary>
+        <value>SQL ステートメントまたはストアド プロシージャのパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlCommand>、し、そのパラメーターを表示します。 例では、アプリケーションに渡す、 <xref:System.Data.SqlClient.SqlConnection>、TRANSACT-SQL SELECT ステートメントでは、およびの配列をあるクエリ文字列<xref:System.Data.SqlClient.SqlParameter>オブジェクト。  
+  
+ [!code-csharp[Classic WebData IDbCommand.Parameters Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDbCommand.Parameters Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDbCommand.Parameters Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDbCommand.Parameters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepare">
+      <MemberSignature Language="C#" Value="public void Prepare ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Prepare() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbCommand.Prepare" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コマンドの準備済み (またはコンパイル済み) のバージョンをデータ ソースに作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.IDbCommand.CommandType%2A>プロパティに設定されている`TableDirect`、<xref:System.Data.IDbCommand.Prepare%2A>何も行われません。 場合<xref:System.Data.IDbCommand.CommandType%2A>に設定されている`StoredProcedure`への呼び出し<xref:System.Data.IDbCommand.Prepare%2A>no-op する可能性がありますが、成功する必要があります。 サーバーに自動的に必要に応じて; を再利用のプランがキャッシュします。そのため、クライアント アプリケーションで直接このメソッドを呼び出す必要はありません。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.OleDb.OleDbCommand>、し、接続を開きます。 例は、SQL Select ステートメントを表す文字列と、データ ソースへの接続に使用する文字列を渡すことによって、データ ソース上のストアド プロシージャを準備します。  
+  
+ [!code-csharp[Classic WebData OleDbCommand.Prepare Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbCommand.Prepare Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbCommand.Prepare Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbCommand.Prepare Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.OleDb.OleDbCommand.Connection" /> が設定されていません。  
+  
+ または  
+  
+ <see cref="P:System.Data.OleDb.OleDbCommand.Connection" /> が <see cref="M:System.Data.OleDb.OleDbConnection.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.Data.IDbTransaction Transaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbTransaction Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework データ プロバイダーの <see langword="Command" /> オブジェクトが実行されるトランザクションを取得または設定します。</summary>
+        <value><see langword="Command" />の .NET Framework データ プロバイダー オブジェクトを実行します。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedRowSource">
+      <MemberSignature Language="C#" Value="public System.Data.UpdateRowSource UpdatedRowSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.UpdateRowSource UpdatedRowSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbCommand.UpdatedRowSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.UpdateRowSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbDataAdapter" /> の <see cref="M:System.Data.IDataAdapter.Update(System.Data.DataSet)" /> メソッドで使用するときに、コマンドの結果を <see cref="T:System.Data.DataRow" /> に適用する方法を取得または設定します。</summary>
+        <value><see cref="T:System.Data.UpdateRowSource" /> 値のいずれか。 既定値は<see langword="Both" />コマンドが自動的に生成される場合を除き、します。 既定値は、<see langword="None" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">入力された値は、のいずれかでがない、<see cref="T:System.Data.UpdateRowSource" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

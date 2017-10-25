@@ -1,0 +1,230 @@
+<Type Name="ControlParser" FullName="System.Web.UI.Design.ControlParser">
+  <TypeSignature Language="C#" Value="public sealed class ControlParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ControlParser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ControlParser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サーバーを作成するためのメソッドを提供<see cref="T:System.Web.UI.Control" />コントロールまたは<see cref="T:System.Web.UI.ITemplate" />持続コントロールまたはテンプレートを表すマークアップの文字列からのインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ したクラスでは、コントロールまたはコントロール テンプレートを表すマークアップの文字列を解析して、コントロールの種類または含んだインターフェイスを作成するメソッドを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してページ上のコントロールの HTML マークアップを取得する方法を示しています、<xref:System.Web.UI.Design.ControlPersister>クラスとを使用してコントロールをインスタンス化する方法、<xref:System.Web.UI.Design.ControlParser>クラスです。 この例では、デザイナーから Microsoft Windows ダイアログ ボックスを表示する方法も示します。  
+  
+ [!code-cpp[ControlParserPersisterExample#1](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#1)]
+ [!code-csharp[ControlParserPersisterExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#1)]
+ [!code-vb[ControlParserPersisterExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ParseControl">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control ParseControl (System.ComponentModel.Design.IDesignerHost designerHost, string controlText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control ParseControl(class System.ComponentModel.Design.IDesignerHost designerHost, string controlText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlParser.ParseControl(System.ComponentModel.Design.IDesignerHost,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="controlText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ページのデザイナー ホストであるインスタンスです。</param>
+        <param name="controlText">コントロールの HTML マークアップ。</param>
+        <summary>指定したデザイナー ホストを使用して、指定されたマークアップからコントロールを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.Control" />を*controlText*を表します。 それ以外の場合、 <see langword="null" />、パーサーは、コントロールを作成できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlParser.ParseControl%2A>メソッドにアクセスする、デザイナー ホストのサービスを使用して ASP.NET Web ページ上のレジスタ ディレクティブを表す文字列。 デザイナー ホスト サービスがを通じて取得した、<xref:System.Web.UI.Design.WebFormsRootDesigner.ReferenceManager%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>オブジェクトが使用できない場合や、<xref:System.Web.UI.Design.IWebFormReferenceManager>サービス。  
+  
+ <xref:System.Web.UI.Design.ControlParser.ParseControl%2A>パーサーは、コントロールを作成できない場合、メソッドが例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、HTML マークアップ テキストからコントロールを作成する方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.UI.Design.ControlParser>クラスです。  
+  
+ [!code-cpp[ControlParserPersisterExample#2](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#2)]
+ [!code-csharp[ControlParserPersisterExample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#2)]
+ [!code-vb[ControlParserPersisterExample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">パラメーターが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseControl">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control ParseControl (System.ComponentModel.Design.IDesignerHost designerHost, string controlText, string directives);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control ParseControl(class System.ComponentModel.Design.IDesignerHost designerHost, string controlText, string directives) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlParser.ParseControl(System.ComponentModel.Design.IDesignerHost,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="controlText" Type="System.String" />
+        <Parameter Name="directives" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ページのデザイナー ホストであるインスタンスです。</param>
+        <param name="controlText">コントロールの HTML マークアップのテキスト。</param>
+        <param name="directives">コントロールのコードに含めるページ ディレクティブ。</param>
+        <summary>指定したデザイナー ホストおよびディレクティブを使用して、指定したマークアップからコントロールを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.Control" />を<paramref name="controlText" />を表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlParser.ParseControl%2A>メソッドにアクセスする、デザイナー ホストのサービスを使用して ASP.NET Web ページ上のレジスタ ディレクティブを表す文字列。 デザイナー ホスト サービスがを通じて取得した、<xref:System.Web.UI.Design.WebFormsRootDesigner.ReferenceManager%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>オブジェクトが使用できない場合や、<xref:System.Web.UI.Design.IWebFormReferenceManager>サービス。  
+  
+ <xref:System.Web.UI.Design.ControlParser.ParseControl%2A>パーサーは、コントロールを作成できない場合、メソッドが例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、HTML マークアップ テキストからコントロールを作成する方法を示します。 このコード例に示されている例の一部である、<xref:System.Web.UI.Design.ControlParser>クラスです。  
+  
+ [!code-cpp[ControlParserPersisterExample#2](~/samples/snippets/cpp/VS_Snippets_WebNet/ControlParserPersisterExample/CPP/webcustomcontrol1.cpp#2)]
+ [!code-csharp[ControlParserPersisterExample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlParserPersisterExample/CS/webcustomcontrol1.cs#2)]
+ [!code-vb[ControlParserPersisterExample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlParserPersisterExample/VB/webcustomcontrol1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">パラメーターが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseControls">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control[] ParseControls (System.ComponentModel.Design.IDesignerHost designerHost, string controlText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control[] ParseControls(class System.ComponentModel.Design.IDesignerHost designerHost, string controlText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlParser.ParseControls(System.ComponentModel.Design.IDesignerHost,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="controlText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ページのデザイナー ホストであるインスタンスです。</param>
+        <param name="controlText">コントロールのマークアップのコレクションを表す文字列。</param>
+        <summary>指定したデザイナー ホストを使用して、指定されたマークアップからコントロールの配列を作成します。</summary>
+        <returns>配列<see cref="T:System.Web.UI.Control" />要素から解析<paramref name="controlText" />、それ以外の<see langword="null" />パーサーは、コントロールを作成できない場合は、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlParser.ParseControls%2A>メソッドにアクセスする、デザイナー ホストのサービスを使用して ASP.NET Web ページ上のレジスタ ディレクティブを表す文字列。 デザイナー ホスト サービスがを通じて取得した、<xref:System.Web.UI.Design.WebFormsRootDesigner.ReferenceManager%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>オブジェクトが使用できない場合や、<xref:System.Web.UI.Design.IWebFormReferenceManager>サービス。  
+  
+ <xref:System.Web.UI.Design.ControlParser.ParseControls%2A>パーサーがからコントロールを作成できない場合、メソッドが例外をスロー、`controlText`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designerHost" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="controlText" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTemplate">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.ITemplate ParseTemplate (System.ComponentModel.Design.IDesignerHost designerHost, string templateText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.ITemplate ParseTemplate(class System.ComponentModel.Design.IDesignerHost designerHost, string templateText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlParser.ParseTemplate(System.ComponentModel.Design.IDesignerHost,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="templateText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ページのデザイナー ホストであるインスタンスです。</param>
+        <param name="templateText">テンプレートのマークアップを含む文字列。</param>
+        <summary>作成、<see cref="T:System.Web.UI.ITemplate" />マークアップを指定したテンプレートからのインターフェイスです。</summary>
+        <returns><see cref="T:System.Web.UI.ITemplate" />解析することによって作成されたインスタンス<paramref name="templateText" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlParser.ParseTemplate%2A>メソッドにアクセスする、デザイナー ホストのサービスを使用して ASP.NET Web ページ上のレジスタ ディレクティブを表す文字列。 デザイナー ホスト サービスがを通じて取得した、<xref:System.Web.UI.Design.WebFormsRootDesigner.ReferenceManager%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>オブジェクトが使用できない場合や、<xref:System.Web.UI.Design.IWebFormReferenceManager>サービス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designerHost" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTemplate">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.ITemplate ParseTemplate (System.ComponentModel.Design.IDesignerHost designerHost, string templateText, string directives);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.ITemplate ParseTemplate(class System.ComponentModel.Design.IDesignerHost designerHost, string templateText, string directives) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlParser.ParseTemplate(System.ComponentModel.Design.IDesignerHost,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="templateText" Type="System.String" />
+        <Parameter Name="directives" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ページのデザイナー ホストであるインスタンスです。</param>
+        <param name="templateText">テンプレートのマークアップを含む文字列。</param>
+        <param name="directives">テンプレートのコードの先頭に追加するすべてのディレクティブ。</param>
+        <summary>指定したテンプレートのマークアップを解析し、作成、<see cref="T:System.Web.UI.ITemplate" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Web.UI.ITemplate" />解析することによって作成されたインスタンス<paramref name="templateText" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlParser.ParseTemplate%2A>メソッドにアクセスする、デザイナー ホストのサービスを使用して ASP.NET Web ページ上のレジスタ ディレクティブを表す文字列。 デザイナー ホスト サービスがを通じて取得した、<xref:System.Web.UI.Design.WebFormsRootDesigner.ReferenceManager%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>オブジェクトが使用できない場合や、<xref:System.Web.UI.Design.IWebFormReferenceManager>サービス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designerHost" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

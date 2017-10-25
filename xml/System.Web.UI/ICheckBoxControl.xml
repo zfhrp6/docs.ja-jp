@@ -1,0 +1,97 @@
+<Type Name="ICheckBoxControl" FullName="System.Web.UI.ICheckBoxControl">
+  <TypeSignature Language="C#" Value="public interface ICheckBoxControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICheckBoxControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ICheckBoxControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとチェック ボックスとして機能するコントロールを実装するイベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ICheckBoxControl>インターフェイス プロパティと Web ページ上のチェック ボックスとして機能するコントロールを実装する必要がありますのあるイベントを定義します。 <xref:System.Web.UI.ICheckBoxControl.Checked%2A>チェック ボックスをオンになっているかどうかを決定する、またはプロパティをプログラムで設定するプロパティを使用できます。 <xref:System.Web.UI.ICheckBoxControl.CheckedChanged>イベントが発生したときに、<xref:System.Web.UI.ICheckBoxControl.Checked%2A>サーバーへのポスト間の変更の値します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.CheckBox> は、<xref:System.Web.UI.ICheckBoxControl> を実装します。 次のコード例では、値を読み取る、<xref:System.Web.UI.ICheckBoxControl.Checked%2A>プロパティと応答、<xref:System.Web.UI.ICheckBoxControl.CheckedChanged>イベント。  
+  
+ [!code-aspx-csharp[CheckBoxCheckedChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxCheckedChanged/CS/checkboxcheckedchangedcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxCheckedChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxCheckedChanged/VB/checkboxcheckedchangedvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ICheckBoxControl.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="T:System.Web.UI.ICheckBoxControl" />コントロールをコントロールが選択されているかどうかを示します。</summary>
+        <value>
+          <see langword="true" />チェック ボックスがオンの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御を実装する<xref:System.Web.UI.ICheckBoxControl>使用<xref:System.Web.UI.ICheckBoxControl.Checked%2A>コントロールが選択されているかどうかを決定する、またはプログラムで値を設定します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.CheckBox> は、<xref:System.Web.UI.ICheckBoxControl> を実装します。 次のコード例では、値を読み取る、<xref:System.Web.UI.ICheckBoxControl.Checked%2A>プロパティと応答、<xref:System.Web.UI.ICheckBoxControl.CheckedChanged>イベント。  
+  
+ [!code-aspx-csharp[CheckBoxCheckedChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxCheckedChanged/CS/checkboxcheckedchangedcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxCheckedChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxCheckedChanged/VB/checkboxcheckedchangedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler CheckedChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CheckedChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.ICheckBoxControl.CheckedChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの値、<see cref="P:System.Web.UI.ICheckBoxControl.Checked" />サーバーへのポスト間でプロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ICheckBoxControl.CheckedChanged>イベントが発生したときの値<xref:System.Web.UI.ICheckBoxControl.Checked%2A>サーバーへのポスト間で変更します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.CheckBox> は、<xref:System.Web.UI.ICheckBoxControl> を実装します。 次のコード例では、値を読み取る、<xref:System.Web.UI.ICheckBoxControl.Checked%2A>プロパティと応答、<xref:System.Web.UI.ICheckBoxControl.CheckedChanged>イベント。  
+  
+ [!code-aspx-csharp[CheckBoxCheckedChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxCheckedChanged/CS/checkboxcheckedchangedcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxCheckedChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxCheckedChanged/VB/checkboxcheckedchangedvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,47 @@
+<Type Name="FormViewUpdatedEventHandler" FullName="System.Web.UI.WebControls.FormViewUpdatedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void FormViewUpdatedEventHandler(object sender, FormViewUpdatedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormViewUpdatedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewUpdatedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.FormViewUpdatedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.FormViewUpdatedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.FormView.ItemUpdated" />のイベント、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView>制御を発生させます、<xref:System.Web.UI.WebControls.FormView.ItemUpdated>更新ボタンをクリックしたときにイベント (ボタンをその`CommandName`プロパティが「更新」に設定) コントロール内でをクリックした後は、<xref:System.Web.UI.WebControls.FormView>コントロールは、レコードを更新します。 これにより、このイベントが発生するたびに、更新操作の結果を確認するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.FormViewUpdatedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemUpdated>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewUpdatedEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewUpdatedEventHandler/CS/formviewupdatedeventhandlercs.aspx#1)]
+ [!code-aspx-vb[FormViewUpdatedEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewUpdatedEventHandler/VB/formviewupdatedeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemUpdated>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewUpdatedEventArgs/CS/formviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewUpdatedEventArgs/VB/formviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

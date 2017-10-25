@@ -1,0 +1,347 @@
+<Type Name="Constraint" FullName="System.Data.Constraint">
+  <TypeSignature Language="C#" Value="public abstract class Constraint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Constraint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Constraint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ConstraintName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.ConstraintConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>1 つ以上の強制できる制約を表します。<see cref="T:System.Data.DataColumn" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制約のデータの整合性を維持するために使用するルールとは、<xref:System.Data.DataTable>です。 ときにいずれかで使用される値を削除するなど、複数の関連するテーブル、<xref:System.Data.ForeignKeyConstraint>関連テーブル内の値も削除するかどうかを判断、既定値は、null 値に、設定、またはかどうかのアクションは行われません。 A <xref:System.Data.UniqueConstraint>、その一方で、だけは、特定のテーブル内のすべての値が一意であることを確認します。 詳細については、次を参照してください。 [DataTable の制約](~/docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。  
+  
+ 基本<xref:System.Data.Constraint>コンス トラクターは使用されません。 プライマリまたは一意キー制約を使用して作成される、<xref:System.Data.UniqueConstraint>コンス トラクター、および外部キー制約を使用して作成される、<xref:System.Data.ForeignKeyConstraint>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例は、制約のコレクションを調べ、<xref:System.Data.DataTable>各制約があるかどうかを判断し、<xref:System.Data.UniqueConstraint>または<xref:System.Data.ForeignKeyConstraint>です。 制約のプロパティが表示されます。  
+  
+ [!code-csharp[Classic WebData Constraint Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData Constraint Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData Constraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData Constraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Constraint ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Constraint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Constraint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="_DataSet">
+      <MemberSignature Language="C#" Value="protected virtual System.Data.DataSet _DataSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataSet _DataSet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Constraint._DataSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataSet" />この制約が属しています。</summary>
+        <value><see cref="T:System.Data.DataSet" />制約が属しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckStateForProperty">
+      <MemberSignature Language="C#" Value="protected void CheckStateForProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckStateForProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Constraint.CheckStateForProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataSet" />この制約が属しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstraintName">
+      <MemberSignature Language="C#" Value="public virtual string ConstraintName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConstraintName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Constraint.ConstraintName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>制約の名前、<see cref="T:System.Data.ConstraintCollection" />です。</summary>
+        <value><see cref="T:System.Data.Constraint" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection>によって返される、<xref:System.Data.DataTable.Constraints%2A>のプロパティ、<xref:System.Data.DataTable>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を反復処理、<xref:System.Data.ConstraintCollection>の<xref:System.Data.DataTable>各出力<xref:System.Data.Constraint.ConstraintName%2A>です。  
+  
+ [!code-csharp[Classic WebData Constraint.ConstraintName Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData Constraint.ConstraintName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData Constraint.ConstraintName Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData Constraint.ConstraintName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.Constraint" />名が null 値または空の文字列。</exception>
+        <exception cref="T:System.Data.DuplicateNameException"><see cref="T:System.Data.ConstraintCollection" />既に含まれています、 <see cref="T:System.Data.Constraint" /> (比較では大文字小文字が区別されません). 同じ名前を持つ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProperties">
+      <MemberSignature Language="C#" Value="public System.Data.PropertyCollection ExtendedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.PropertyCollection ExtendedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Constraint.ExtendedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.PropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義の制約プロパティのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Data.PropertyCollection" />カスタム情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張プロパティが型でなければなりません<xref:System.String>です。 種類がプロパティ<xref:System.String>ときは保持されず、<xref:System.Data.Constraint>は XML として書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataSet">
+      <MemberSignature Language="C#" Value="protected void SetDataSet (System.Data.DataSet dataSet);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void SetDataSet(class System.Data.DataSet dataSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Constraint.SetDataSet(System.Data.DataSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet"><see cref="T:System.Data.DataSet" />この制約が属しています。</param>
+        <summary>制約の設定<see cref="T:System.Data.DataSet" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.Constraint.SetDataSet%2A>を設定するメソッド、<xref:System.Data.DataSet>制約。  
+  
+ [!code-csharp[Classic WebData Constraint.SetDataSet Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData Constraint.SetDataSet Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData Constraint.SetDataSet Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData Constraint.SetDataSet Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public abstract System.Data.DataTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Constraint.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataTable" />に制約が適用されます。</summary>
+        <value>A<see cref="T:System.Data.DataTable" />に制約が適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を返します、<xref:System.Data.DataTable>の<xref:System.Data.Constraint>です。  
+  
+ [!code-csharp[Classic WebData Constraint.Table Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData Constraint.Table Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData Constraint.Table Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData Constraint.Table Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Constraint.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Data.Constraint.ConstraintName" />がある場合、文字列として、します。</summary>
+        <returns>文字列値、<see cref="P:System.Data.Constraint.ConstraintName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を返します、<xref:System.Data.Constraint.ConstraintName%2A>を使用して、<xref:System.Data.Constraint.ToString%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData Constraint.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData Constraint.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData Constraint.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData Constraint.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

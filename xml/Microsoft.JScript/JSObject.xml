@@ -1,0 +1,266 @@
+<Type Name="JSObject" FullName="Microsoft.JScript.JSObject">
+  <TypeSignature Language="C#" Value="public class JSObject : Microsoft.JScript.ScriptObject, System.Collections.IEnumerable, System.Runtime.InteropServices.Expando.IExpando" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JSObject extends Microsoft.JScript.ScriptObject implements class System.Collections.IEnumerable, class System.Reflection.IReflect, class System.Runtime.InteropServices.Expando.IExpando" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.JSObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.ScriptObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices.Expando.IExpando</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>JScript ではオブジェクトを表します。 このクラスは、オブジェクトと関数のカテゴリに属します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JSObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.JScript.JSObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo AddField (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo AddField(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.AddField(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するフィールドの名前。</param>
+        <summary>オブジェクトに指定したフィールドを追加します。</summary>
+        <returns>新しいフィールドで、正常に追加されます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="field_table">
+      <MemberSignature Language="C#" Value="protected System.Collections.ArrayList field_table;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.ArrayList field_table" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSObject.field_table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的に追加され、オブジェクトから削除するフィールドの一覧を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberInfo[] GetMember (string name, System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MemberInfo[] GetMember(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.GetMember(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />指定した名前に一致するすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>一致するメンバーの配列、<paramref name="name" />引数。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMembers">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberInfo[] GetMembers (System.Reflection.BindingFlags bindingAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MemberInfo[] GetMembers(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>配列を取得<see cref="T:System.Reflection.MemberInfo" />現在のスクリプト オブジェクトのすべてのメンバーに対応するオブジェクト。</summary>
+        <returns>現在のオブジェクトのすべてのメンバーを含むオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetMemberValue2">
+      <MemberSignature Language="C#" Value="public void SetMemberValue2 (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMemberValue2(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.SetMemberValue2(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">値を設定する対象のフィールドの名前。</param>
+        <param name="value">フィールドの新しい値。</param>
+        <summary>動的にオブジェクトに追加しに格納されているフィールドの値を設定<see cref="F:Microsoft.JScript.JSObject.field_table" />です。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのメンバーを反復処理する列挙子を返します。</summary>
+        <returns>オブジェクトのメンバーを反復処理に使用される列挙子オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.Expando.IExpando.AddMethod">
+      <MemberSignature Language="C#" Value="System.Reflection.MethodInfo IExpando.AddMethod (string name, Delegate method);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Reflection.MethodInfo System.Runtime.InteropServices.Expando.IExpando.AddMethod(string name, class System.Delegate method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.System#Runtime#InteropServices#Expando#IExpando#AddMethod(System.String,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="method" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するメソッドの名前。</param>
+        <param name="method">メソッドにデリゲートします。</param>
+        <summary>オブジェクトを指定したメソッドを追加します。 <see cref="M:Microsoft.JScript.JSObject.System#Runtime#InteropServices#Expando#IExpando#AddMethod(System.String,System.Delegate)" />JScript では実装されていません。</summary>
+        <returns>すべての場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.Expando.IExpando.AddProperty">
+      <MemberSignature Language="C#" Value="System.Reflection.PropertyInfo IExpando.AddProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Reflection.PropertyInfo System.Runtime.InteropServices.Expando.IExpando.AddProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.System#Runtime#InteropServices#Expando#IExpando#AddProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するプロパティの名前。</param>
+        <summary>オブジェクトに指定したプロパティを追加します。 JScript では、このメソッドが実装されていません。</summary>
+        <returns>すべての場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices.Expando.IExpando.RemoveMember">
+      <MemberSignature Language="C#" Value="void IExpando.RemoveMember (System.Reflection.MemberInfo m);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices.Expando.IExpando.RemoveMember(class System.Reflection.MemberInfo m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.System#Runtime#InteropServices#Expando#IExpando#RemoveMember(System.Reflection.MemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Reflection.MemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="m">削除するメンバーの名前。</param>
+        <summary>オブジェクトから、指定されたメンバーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSObject.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

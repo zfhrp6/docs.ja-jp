@@ -1,0 +1,220 @@
+<Type Name="CodeMethodReferenceExpression" FullName="System.CodeDom.CodeMethodReferenceExpression">
+  <TypeSignature Language="C#" Value="public class CodeMethodReferenceExpression : System.CodeDom.CodeExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeMethodReferenceExpression extends System.CodeDom.CodeExpression" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeMethodReferenceExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドへの参照を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.CodeDom.CodeMethodReferenceExpression> Object.Method 形式の式を表すために使用できます。  
+  
+ <xref:System.CodeDom.CodeMethodReferenceExpression.TargetObject%2A>プロパティは、メソッドを格納しているオブジェクトを示します。 <xref:System.CodeDom.CodeMethodReferenceExpression.MethodName%2A>プロパティ、メソッドの名前を示します。  
+  
+ A<xref:System.CodeDom.CodeMethodReferenceExpression>と共に使用される、<xref:System.CodeDom.CodeMethodInvokeExpression>呼び出すには、メソッドを示すことと、<xref:System.CodeDom.CodeDelegateCreateExpression>イベントを処理するメソッドを示すことです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.CodeDom.CodeMethodReferenceExpression>にメソッドを参照してください。  
+  
+ [!code-cpp[CodeMethodReferenceExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeMethodReferenceExample/CPP/codemethodreferenceexample.cpp#3)]
+ [!code-csharp[CodeMethodReferenceExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeMethodReferenceExample/CS/codemethodreferenceexample.cs#3)]
+ [!code-vb[CodeMethodReferenceExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeMethodReferenceExample/VB/codemethodreferenceexample.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodReferenceExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodReferenceExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeMethodReferenceExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodReferenceExpression (System.CodeDom.CodeExpression targetObject, string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression targetObject, string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodReferenceExpression.#ctor(System.CodeDom.CodeExpression,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">A<see cref="T:System.CodeDom.CodeExpression" />対象にするオブジェクトを示すです。</param>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />クラスの指定された対象のオブジェクトとメソッドの名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMethodReferenceExpression (System.CodeDom.CodeExpression targetObject, string methodName, params System.CodeDom.CodeTypeReference[] typeParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression targetObject, string methodName, class System.CodeDom.CodeTypeReference[] typeParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMethodReferenceExpression.#ctor(System.CodeDom.CodeExpression,System.String,System.CodeDom.CodeTypeReference[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="typeParameters" Type="System.CodeDom.CodeTypeReference[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="targetObject">A<see cref="T:System.CodeDom.CodeExpression" />対象にするオブジェクトを示すです。</param>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="typeParameters">配列<see cref="T:System.CodeDom.CodeTypeReference" />を指定する値、<see cref="P:System.CodeDom.CodeMethodReferenceExpression.TypeArguments" />この<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />クラスの指定されたターゲット オブジェクト、メソッド名、およびジェネリック型引数を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `typeParameters`パラメーターは、型パラメーターへの参照が現在のジェネリック メソッドに置き換えられる型の参照のコレクションを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。  
+  
+ [!code-cpp[System.CodeDom.CodeMethodReferenceExpression#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.codedom.codemethodreferenceexpression/cpp/source.cpp#1)]
+ [!code-csharp[System.CodeDom.CodeMethodReferenceExpression#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.codedom.codemethodreferenceexpression/cs/source.cs#1)]
+ [!code-vb[System.CodeDom.CodeMethodReferenceExpression#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.codedom.codemethodreferenceexpression/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMethodReferenceExpression.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照されるメソッドの名前を設定します。</summary>
+        <value>参照されるメソッドの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetObject">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression TargetObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression TargetObject" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMethodReferenceExpression.TargetObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照されるメソッドを指定する式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を表す、参照されるメソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeArguments">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceCollection TypeArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReferenceCollection TypeArguments" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMethodReferenceExpression.TypeArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のジェネリック メソッドの参照を式の型引数を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReferenceCollection" />現在のコードの型引数を含む<see cref="T:System.CodeDom.CodeMethodReferenceExpression" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeMethodReferenceExpression.TypeArguments%2A>プロパティは、型パラメーターへの参照が現在のジェネリック メソッドに置き換えられる型の参照のコレクションを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

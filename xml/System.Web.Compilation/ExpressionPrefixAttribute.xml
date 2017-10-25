@@ -1,0 +1,117 @@
+<Type Name="ExpressionPrefixAttribute" FullName="System.Web.Compilation.ExpressionPrefixAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionPrefixAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExpressionPrefixAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ExpressionPrefixAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>式ビルダーで使用するプレフィックス属性を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ExpressionPrefixAttribute>クラスは、構成ファイルで定義されていない式を持つデザイン時に使用します。 使用して、<xref:System.Web.Compilation.ExpressionPrefixAttribute.ExpressionPrefix%2A>に関連付けられているプレフィックスの名前を取得するプロパティ、<xref:System.Web.Compilation.ExpressionPrefixAttribute>オブジェクト。 式ビルダーは、次の形式のステートメントを探します。  
+  
+ `<%$ [expressionPrefix]:[expressionValue] %>`  
+  
+ 式のプレフィックスに基づく式ビルダーは、プロパティを割り当てるのためのコードを生成します。 `expressionPrefix`パラメーターまたはを通じて、構成ファイルで定義されている構成されている式ビルダーを指す、<xref:System.Web.Compilation.ExpressionPrefixAttribute>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示します、<xref:System.Web.Compilation.ExpressionPrefixAttribute>クラスです。 実装するカスタム式ビルダーに、属性が適用される、<xref:System.Web.Compilation.ExpressionBuilder>抽象クラスです。 この実装<xref:System.Web.Compilation.ExpressionBuilder>式に渡されるステートメントの評価を返します。 この例を実行するには、最初に、Web.config ファイルでカスタム式ビルダーを登録する必要があります。 最初のコード例では、Web.config ファイルでカスタム式ビルダーを登録する方法を示します。  
+  
+```  
+<configuration>  
+    <system.web>  
+       <compilation>  
+          <expressionBuilders>  
+              <add expressionPrefix="MyCustomExpression"  
+               type="MyCustomExpressionBuilder"/>  
+          </expressionBuilders>  
+       </compilation>  
+    </system.web>  
+</configuration>  
+```  
+  
+ 2 つ目のコード例では、.aspx ファイル内の式を参照する方法を示します。  
+  
+```  
+<asp:Label ID="Label1" runat="server"   
+Text="<%$ MyCustomExpression:Hello, world! %>" />  
+```  
+  
+ 3 番目のコード例から派生することによってカスタマイズされた式ビルダーを開発する方法を示します<xref:System.Web.Compilation.ExpressionBuilder>です。 このコード例を実行するには、App_Code フォルダーに、クラスを配置する必要があります。  
+  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#1)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#1)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionPrefixAttribute (string expressionPrefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string expressionPrefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionPrefixAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expressionPrefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expressionPrefix">現在のプレフィックス<see cref="T:System.Web.Compilation.ExpressionBuilder" />です。</param>
+        <summary><see cref="T:System.Web.Compilation.ExpressionPrefixAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Compilation.ExpressionPrefixAttribute.%23ctor%2A>のインスタンスを初期化するコンス トラクター、<xref:System.Web.Compilation.ExpressionPrefixAttribute>クラスのプレフィックスの識別子を使用します。 <xref:System.Web.Compilation.ExpressionPrefixAttribute.%23ctor%2A>の既定のコンス トラクター、<xref:System.Web.Compilation.ExpressionPrefixAttribute>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expressionPrefix" />null または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionPrefix">
+      <MemberSignature Language="C#" Value="public string ExpressionPrefix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExpressionPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ExpressionPrefixAttribute.ExpressionPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプレフィックス値を取得<see cref="T:System.Web.Compilation.ExpressionBuilder" />オブジェクト。</summary>
+        <value>構成済みの式のプレフィックス<see cref="T:System.Web.Compilation.ExpressionBuilder" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Compilation.ExpressionPrefixAttribute.ExpressionPrefix%2A>プロパティを指定された属性に関連付けられているプレフィックスの名前を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

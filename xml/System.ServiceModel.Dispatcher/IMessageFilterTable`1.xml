@@ -1,0 +1,437 @@
+<Type Name="IMessageFilterTable&lt;TFilterData&gt;" FullName="System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;">
+  <TypeSignature Language="C#" Value="public interface IMessageFilterTable&lt;TFilterData&gt; : System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;, System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;, System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageFilterTable`1&lt;TFilterData&gt; implements class System.Collections.Generic.ICollection`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.Generic.IDictionary`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.ServiceModel.Dispatcher.MessageFilter, !TFilterData&gt;&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TFilterData" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IDictionary&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.ServiceModel.Dispatcher.MessageFilter,TFilterData&gt;&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TFilterData">テーブル内の各フィルターに関連付けられたデータの型。</typeparam>
+    <summary>1 つ以上のフィルターから派生するクエリ条件でメッセージを検査するために、フィルター テーブルで実装する必要があるコントラクトを定義する <see langword="interface" />。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルター テーブルは、フィルター エンジンの核となるコンポーネントです。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] でのフィルター エンジンの主な用途は、メッセージと一致するすべてのフィルターを見つけ、アプリケーションのロジックをメッセージと照合することです。  
+  
+ フィルター テーブルを使用すると、個別に行う場合より効率的に、複数のフィルターを 1 つのメッセージと照合することができます。 フィルター テーブルは、フィルター データをフィルターに関連付けます。 テーブルは、キーと値のペアのコレクションです。キーは <xref:System.ServiceModel.Dispatcher.MessageFilter> で、値は関連付けられたフィルター データです。 フィルター データは、ジェネリック パラメーターで指定されている型の任意のデータで、これを使用して、メッセージがテーブル内のフィルターと一致した場合に実行するアクションを指定できます。  
+  
+ フィルター テーブルのエントリには、<xref:System.Collections.Generic.IDictionary%602> が継承する <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> の機能を使用してアクセスできます。  
+  
+ あるフィルター インスタンスを特定の <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> に追加できるのは、1 回だけであることに注意してください。 このフィルターの複数のインスタンスを同じフィルター テーブルに追加するには、フィルター コンストラクターを使用して追加のインスタンスを作成します。  
+  
+ フィルターは、メッセージがフィルターのクエリ条件を満たしているときに、メッセージと一致します。 オーバーロードされた一致メソッドは 4 つあります。 返されるデータは、フィルター データまたは <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクト自体です。 このデータは、複数の一致が許可されている場合も、単一の一致しか許可されていない場合も、返されます。 次の表では、各オーバーロードについて、この情報を示します。  
+  
+|メソッド名|一致する文字列|返されるデータ|  
+|-----------------|-------------|-------------------|  
+|<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A>|Single|`FilterData`|  
+|<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A>|Single|<xref:System.ServiceModel.Dispatcher.MessageFilter>|  
+|<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A>|複数|`FilterData`|  
+|<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A>|複数|<xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクト|  
+  
+ 各メソッドには、2 つのオーバーロードが含まれます。 2 つのオーバーロードの違いは、一方は <xref:System.ServiceModel.Channels.Message> パラメーターを受け取り、本文の内容を検査することはできないのに対し、他方は、<xref:System.ServiceModel.Channels.MessageBuffer> パラメーターを受け取り、メッセージのどの部分でも検査できるということです。 メッセージ パラメーターを指定してメソッドを呼び出したときに、フィルター テーブルにメッセージ本文の内容を検査するフィルターが含まれている場合は、例外がスローされます。 テーブル内のフィルターがどちらかはっきりしない場合は、メッセージ バッファーを受け取るオーバーロードを呼び出してください。  
+  
+ メッセージ ヘッダーは自動的にバッファーに格納され、フィルターはその内容を取り込まずに調べることができます。 ただし、フィルターでメッセージ本文を調べる場合は、メッセージ全体をバッファーに格納する必要があります。これは、バッファーに格納されていないメッセージ本文は、クエリによって取り込まれ、その内容が破壊されるためです。  
+  
+ 次のクラスは、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> を実装しています。  
+  
+-   <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601>  
+  
+-   <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601>  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>フィルター テーブルは、照合操作に関してはスレッド セーフですが、変更に関してはスレッド セーフではありません。 フィルター テーブルにアクセスするスレッドは、<see cref="T:System.Threading.ReaderWriterLock" /> または同様のロック セマンティックによって同期する必要があります。 このロックにより、フィルター テーブルの複数の読み取り (たとえば照合操作) は同時に実行できますが、フィルター テーブルに書き込むには (たとえばフィルターの追加)、スレッドが排他的ロックを待つ必要があります。  
+  
+ フィルターがテーブルに追加されると、すべてのコンパイルが行われます。 事前にフィルター テーブルを作成しており、それを編集しない場合は、照合中のロックの必要はありません。</threadsafe>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="GetMatchingFilter">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージによってクエリ条件が満たされるフィルターをテーブルから返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ メッセージ本文の内容を調べる必要がない場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を使用します。 メッセージ本文の内容を調べる必要がある場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>2 つ以上のフィルターがメッセージに一致した場合は、<see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.Message message, out System.ServiceModel.Dispatcher.MessageFilter result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.Message,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="result">To be added.</param>
+        <summary>指定したメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合に、このメソッドを使用します。  
+  
+ フィルター テーブル内のフィルターでメッセージの本文を検査する必要がある場合は、このメソッドの <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> バージョンを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>2 つ以上のフィルターがメッセージに一致した場合は、<see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" /> をスローする必要があります。  
+  
+ このバージョンは <see cref="T:System.ServiceModel.Channels.Message" /> を受け取ります。そして、それがメッセージ本文を確認しようとした場合は、このバージョンが <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilter">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilter (System.ServiceModel.Channels.MessageBuffer buffer, out System.ServiceModel.Dispatcher.MessageFilter result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilter(class System.ServiceModel.Channels.MessageBuffer buffer, [out] class System.ServiceModel.Dispatcher.MessageFilter&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(System.ServiceModel.Channels.MessageBuffer,System.ServiceModel.Dispatcher.MessageFilter@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="filter" Type="System.ServiceModel.Dispatcher.MessageFilter&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="result">To be added.</param>
+        <summary>指定したメッセージまたはバッファー内のメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、そのフィルターを <see langword="out" /> パラメーターに設定して返します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがバッファー内のメッセージに一致すると予測され、一致するフィルターを返す必要があり、メッセージ本文の検査が必要になる可能性がある場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingFilters">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージによってクエリ条件が満たされるフィルターをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると推測され、一致するフィルターが必要な場合は、これらのうちいずれか 1 つのメソッドを使用します。 結果を追加する前に、フィルターが格納されたコレクションをクリアしないように注意してください。 そうすることで、複数のフィルター テーブルに含まれる一致フィルターのすべてを 1 つのコレクションに蓄積できます。  
+  
+ フィルター テーブル内のフィルターでメッセージの本文を検査する必要がある場合は、メッセージをバッファーに格納し、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A> メソッドに渡します。 それ以外の場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A> を使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトは、`results` パラメーターに格納されます。 これで、該当するフィルターをキーとして指定し、<xref:System.Collections.Generic.IDictionary%602> によって提供されているメソッドを使用して、フィルター データをフィルター テーブルから復元できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Channels.Message message, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilters(class System.ServiceModel.Channels.Message message, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.Message,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したメッセージがテーブル内のフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると予測され、一致するフィルターが必要で、メッセージ本文を検査する必要がない場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このバージョンは <see cref="T:System.ServiceModel.Channels.Message" /> を受け取ります。そして、それがメッセージ本文を確認しようとした場合は、このバージョンが <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingFilters">
+      <MemberSignature Language="C#" Value="public bool GetMatchingFilters (System.ServiceModel.Channels.MessageBuffer buffer, System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingFilters(class System.ServiceModel.Channels.MessageBuffer buffer, class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.MessageFilter&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{System.ServiceModel.Dispatcher.MessageFilter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.MessageFilter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="results">格納する参照パラメーター、<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />で一致するオブジェクト<see cref="T:System.Collections.Generic.ICollection`1" />&lt;フィルター&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内のフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターをコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがバッファー内のメッセージに一致すると予測され、一致するフィルターが必要で、メッセージ本文の検査が必要になる可能性がある場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingValue">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージがテーブル内の 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致したフィルターのフィルター データを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがメッセージに一致すると予測され、一致するフィルターからフィルター データだけを復元する必要がある場合は、これらのメソッドのいずれかを使用します。 これらのメソッドは、一致するフィルターが見つかったかどうかを示すブール値を返し、`data` 参照パラメーターに一致するフィルター データを設定します。  
+  
+ メッセージの本文を検査するフィルターがフィルター テーブル内に存在しない場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> を使用します。  
+  
+ フィルター テーブル内のフィルターでメッセージの本文を検査する可能性がある場合は、メッセージをバッファーに格納し、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A> メソッドに渡します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>2 つ以上のフィルターがメッセージに一致した場合は、<see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.Message message, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.Message message, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.Message,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="value" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="data">To be added.</param>
+        <summary>指定したメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターのデータをコレクションに追加します。</summary>
+        <returns>
+          メッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしている場合は <see langword="true" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがバッファー内のメッセージに一致すると予測され、一致するフィルターからフィルター データだけを復元する必要がある場合は、このメソッドを使用します。  
+  
+ このメソッドでは、一致するフィルターは、多くとも 1 つであると予想されます。 複数のフィルターが一致する場合は、<xref:System.ServiceModel.Dispatcher.MultipleFilterMatchesException> をスローする必要があります。  
+  
+ フィルター テーブル内のフィルターでメッセージの本文を検査する必要がある場合は、<xref:System.ServiceModel.Channels.Message.CreateBufferedCopy%2A> を使用してメッセージをバッファーに格納し、それを <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A> バージョンのメソッドに渡します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>2 つ以上のフィルターがメッセージに一致した場合は、<see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" /> をスローする必要があります。  
+  
+ このオーバーロードは、<see cref="T:System.ServiceModel.Channels.Message" /> を受け取ります。そして、それがメッセージ本文を確認しようとした場合は、このオーバーロードが <see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValue">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValue (System.ServiceModel.Channels.MessageBuffer buffer, out TFilterData data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValue(class System.ServiceModel.Channels.MessageBuffer buffer, [out] !TFilterData&amp; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValue(System.ServiceModel.Channels.MessageBuffer,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="value" Type="TFilterData&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="data">To be added.</param>
+        <summary>指定したバッファー内のメッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターのデータをコレクションに追加します。</summary>
+        <returns>
+          メッセージがテーブル内のただ 1 つのフィルターの一致条件を満たしている場合は <see langword="true" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのフィルターがバッファー内のメッセージに一致すると予測され、一致するフィルターからフィルター データだけを復元する必要があり、メッセージ本文の検査が必要になる可能性がある場合は、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>2 つ以上のフィルターがメッセージに一致した場合は、<see cref="T:System.ServiceModel.Dispatcher.MultipleFilterMatchesException" /> をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetMatchingValues">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したメッセージまたはバッファー内のメッセージと一致するフィルターのフィルター データを、コレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上のフィルターがメッセージに一致すると推測され、一致するフィルター データだけが必要な場合は、このメソッドを使用します。 これらのメソッドは、一致するフィルターが見つかったかどうかを示すブール値を返し、一致するフィルター データをすべてコレクションに格納します。  
+  
+ 結果を追加する前に、フィルターが格納されたコレクションをクリアしないように注意してください。 そうすることで、複数のフィルター テーブルに含まれる一致フィルターのすべてを 1 つのコレクションに蓄積できます。  
+  
+ メッセージ本文の内容を確認する必要がない場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A> を使用します。 メッセージ本文の内容を確認する必要がある場合は、<xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Channels.Message message, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValues(class System.ServiceModel.Channels.Message message, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.Message,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="results">一致するフィルターのフィルター データをジェネリック コレクションに格納する参照パラメーター。</param>
+        <summary>指定したメッセージがテーブル内の少なくとも 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターの <paramref name="FilterData" /> をコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="message" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ以上のフィルターがメッセージに一致すると予測され、フィルター データだけが必要で、メッセージ本文の内容を検査しない場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトのフィルター データを `results` パラメーターに格納します。  
+  
+ フィルター テーブル内のフィルターでメッセージの本文を検査する場合は、メッセージをバッファーに格納し、それを <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A> バージョンのメソッドに渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatchingValues">
+      <MemberSignature Language="C#" Value="public bool GetMatchingValues (System.ServiceModel.Channels.MessageBuffer buffer, System.Collections.Generic.ICollection&lt;TFilterData&gt; results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetMatchingValues(class System.ServiceModel.Channels.MessageBuffer buffer, class System.Collections.Generic.ICollection`1&lt;!TFilterData&gt; results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IMessageFilterTable`1.GetMatchingValues(System.ServiceModel.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+        <Parameter Name="results" Type="System.Collections.Generic.ICollection&lt;TFilterData&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">To be added.</param>
+        <param name="results">ジェネリック型のフィルターの一致するフィルター データを格納する参照パラメーター <see cref="T:System.Collections.Generic.ICollection`1" /> &lt; <c>FilterData</c>&gt;です。</param>
+        <summary>指定したバッファー内のメッセージがテーブル内の少なくとも 1 つのフィルターの一致条件を満たしているかどうかを示す値を返し、一致するフィルターの <paramref name="FilterData" /> をコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" /> がテーブル内の少なくとも 1 つのフィルターの一致条件を満たしている場合は <paramref name="messageBuffer" />、どのフィルター条件も満たしていない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ以上のフィルターがバッファー内のメッセージに一致すると予測され、フィルター データだけが必要で、メッセージ本文の検査が必要になる可能性がある場合は、このメソッドを使用します。  
+  
+ 一致する <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトのフィルター データを `results` パラメーターに格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

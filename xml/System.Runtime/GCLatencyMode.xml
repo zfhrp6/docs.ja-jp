@@ -1,0 +1,209 @@
+<Type Name="GCLatencyMode" FullName="System.Runtime.GCLatencyMode">
+  <TypeSignature Language="C#" Value="public enum GCLatencyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed GCLatencyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.GCLatencyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ガベージ コレクターがアプリケーションに関与する時間を調整します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、アプリケーションでガベージ コレクションの割り込みの動作を調整することができます、<xref:System.Runtime.GCSettings.LatencyMode%2A>プロパティをいずれかの<xref:System.Runtime.GCLatencyMode>NoGCRegion 以外の値を列挙します。 取得することによって、ガベージ コレクターの現在の待機モードを指定することも、<xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType>プロパティの値。  
+  
+ 参照してください[待機モード](~/docs/standard/garbage-collection/latency.md)のガベージ コレクションの実行時の構成設定がこの列挙体の既定値に与える影響についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Batch">
+      <MemberSignature Language="C#" Value="Batch" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLatencyMode Batch = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLatencyMode.Batch" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ガベージ コレクションの同時実行を無効にし、バッチ呼び出しでオブジェクトを解放します。 これは、関与するレベルが最も高いモードです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモードは、応答性を犠牲にしてスループットを最大に適しています。  
+  
+ このモードでは、ランタイム構成の設定を上書きします。 有効な場合で、さらに同時実行ガベージ コレクションをバッチ モードに切り替えるできないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interactive">
+      <MemberSignature Language="C#" Value="Interactive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLatencyMode Interactive = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLatencyMode.Interactive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ガベージ コレクションの同時実行を有効にし、アプリケーションの実行中にオブジェクトを解放します。 これは、ワークステーション上のガベージ コレクションの既定のモードで、関与するレベルは <see cref="F:System.Runtime.GCLatencyMode.Batch" /> より低くなります。 応答とスループットのバランスが保たれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモードは、同時実行するワークステーションのガベージ コレクションと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowLatency">
+      <MemberSignature Language="C#" Value="LowLatency" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLatencyMode LowLatency = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLatencyMode.LowLatency" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの解放時に、保守的なガベージ コレクションを有効にします。 システムがメモリ圧迫の状態でありながら、ジェネレーション 0 とジェネレーション 1 のコレクションが頻繁に発生する可能性がある場合のみ、すべてのコレクションが発生します</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモードでは、サーバーのガベージ コレクターを使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoGCRegion">
+      <MemberSignature Language="C#" Value="NoGCRegion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLatencyMode NoGCRegion = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLatencyMode.NoGCRegion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリがクリティカル パスを実行中に、ガベージ コレクションが中断されることを示します。  
+  
+ <see cref="F:System.Runtime.GCLatencyMode.NoGCRegion" /> は読み取り専用値です。つまり、<see cref="F:System.Runtime.GCLatencyMode.NoGCRegion" /> 値を <see cref="P:System.Runtime.GCSettings.LatencyMode" /> プロパティに割り当てることはできません。 <see cref="Overload:System.GC.TryStartNoGCRegion" /> メソッドを呼び出して GC 領域待機時間モードなしを指定し、<see cref="M:System.GC.EndNoGCRegion" /> メソッドを呼び出して終了します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SustainedLowLatency">
+      <MemberSignature Language="C#" Value="SustainedLowLatency" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.GCLatencyMode SustainedLowLatency = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.GCLatencyMode.SustainedLowLatency" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.GCLatencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長期間にわたって待機時間を最小限に抑えることを試みるガベージ コレクションを有効にします。 コレクターは、生成 0、生成 1、同時実行生成 2 のコレクションのみ実行しようとしています。 それでも、システムがメモリ圧迫の状態にある場合は、完全なブロック コレクションが発生することがあります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,230 @@
+<Type Name="ResourceExpressionBuilder" FullName="System.Web.Compilation.ResourceExpressionBuilder">
+  <TypeSignature Language="C#" Value="public class ResourceExpressionBuilder : System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResourceExpressionBuilder extends System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ResourceExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Compilation.ExpressionBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionEditor("System.Web.UI.Design.ResourceExpressionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionPrefix("Resources")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールのプロパティ値を割り当てるため、ページのパーサーにコードを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ResourceExpressionBuilder>クラスは、ページが実行されるときに、リソースの値を取得するコードを作成します。 通常、リソース ファイルには、特定の言語またはカルチャにローカライズされた情報が含まれています。  
+  
+ リソース式形式の`<%$ Resources: ClassKey, ResourceKey %>`ページ内で。 コロン (:) の前に式の一部は使用するには式ビルダーの種類を指定し、コロンの後ろの部分は、クラス名とリソースのキーを示します。 直前の正規表現は、という名前のファイルから次の値を取得、 `ClassKey.resx`:  
+  
+```  
+<data name="ResourceKey"><value xml:space="preserve">Hello!</value></data>  
+```  
+  
+ ページのパーサーを持つ式を検出した場合、`Resources`プレフィックスのインスタンスを作成、<xref:System.Web.Compilation.ResourceExpressionBuilder>クラスです。 <xref:System.Web.Compilation.ResourceExpressionBuilder>クラスまたはいずれかの式を評価するページを実行すると、式の値を返すコードを生成します。  
+  
+ 式がコンパイルされるページで、発生した場合、<xref:System.Web.Compilation.ResourceExpressionBuilder>オブジェクトがリソース ファイルから指定した値を取得するコードを生成します。 式はコンパイルされませんが、ページで、発生した場合、<xref:System.Web.Compilation.ResourceExpressionBuilder>オブジェクトでは、ページが解析される際に、リソース ファイルから値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リソース ファイルから既定の通貨を取得します。  
+  
+ [!code-aspx-csharp[System.Web.Compilation.ResourceExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceExpressionBuilder/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.Compilation.ResourceExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceExpressionBuilder/VB/Default.aspx#1)]
+  
+ このコードは、という名前のリソース ファイルから次の値を読み取ります`Financial.resx`App_GlobalResources ディレクトリにします。  
+  
+```  
+<data name="Currency"><value xml:space="preserve">US dollars</value></data>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceExpressionBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceExpressionBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ResourceExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="target">式を表すオブジェクト。</param>
+        <param name="entry">式でバインドされるプロパティに関する情報を表すオブジェクト。</param>
+        <param name="parsedData">によって返されるデータを解析するオブジェクトを含む、<see cref="Overload:System.Web.Compilation.ResourceExpressionBuilder.ParseExpression" />メソッドです。</param>
+        <param name="context">式の評価にコンテキスト情報です。</param>
+        <summary>リソース ファイルから値を返します。</summary>
+        <returns><see cref="T:System.Object" />解析された式に関連付けられています。 解析された式には、クラス名とリソースのキーが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フォームの式`<%$ Resources: someResourceKey %>`コンパイルなし機能を使用する ページで発生しました。 リソース ファイル内のキー/値ペアから適切な値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="entry">オブジェクトのプロパティ名。</param>
+        <param name="parsedData">式の解析された値。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>コード ページの実行中に評価する式を返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeExpression" />メソッドを呼び出します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ページまたはコントロールの CodeDOM の作成時に呼び出されます。 <xref:System.CodeDom.CodeExpression>返されるオブジェクトの種類が<xref:System.CodeDom.CodeMethodInvokeExpression>ページの実行中にリソースの値を取得するときに呼び出すメソッドを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseExpression">
+      <MemberSignature Language="C#" Value="public static System.Web.Compilation.ResourceExpressionFields ParseExpression (string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Compilation.ResourceExpressionFields ParseExpression(string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceExpressionBuilder.ParseExpression(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.ResourceExpressionFields</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">解析される式の値。</param>
+        <summary>解析された式を表すオブジェクトを返します。</summary>
+        <returns>式の <see cref="T:System.Web.Compilation.ResourceExpressionFields" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、式を解析しを返します、<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>と<xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>、返されたプロパティ値<xref:System.Web.Compilation.ResourceExpressionFields>オブジェクトをこれらのプロパティが式で指定された場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseExpression">
+      <MemberSignature Language="C#" Value="public override object ParseExpression (string expression, Type propertyType, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ParseExpression(string expression, class System.Type propertyType, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="expression">宣言型の式の値。</param>
+        <param name="propertyType">プロパティの型は、式にバインドします。</param>
+        <param name="context">式の評価にコンテキスト情報です。</param>
+        <summary>解析された式を表すオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />を表す解析された式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Object>の種類は<xref:System.Web.Compilation.ResourceExpressionFields>します。 このメソッドは、式を解析しを返します、<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>と<xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>プロパティ値を返された<xref:System.Web.Compilation.ResourceExpressionFields>オブジェクトをそれらのプロパティが式で指定された場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">リソースの式が見つからないか、無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEvaluate">
+      <MemberSignature Language="C#" Value="public override bool SupportsEvaluate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ResourceExpressionBuilder.SupportsEvaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルなし機能を使用するページで、式を評価できるかどうかを示す値を返します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ResourceExpressionBuilder.SupportsEvaluate%2A>プロパティを示すかどうか、<xref:System.Web.Compilation.ResourceExpressionBuilder.EvaluateExpression%2A>メソッドをクラスに実装されています。 <xref:System.Web.Compilation.ResourceExpressionBuilder.EvaluateExpression%2A>コンパイルなし機能を使用する ページで評価される式の式ビルダー内で実装する必要があります。 <xref:System.Web.Compilation.ResourceExpressionBuilder>このプロパティは常を返すようにコンパイルされていないページで、リソース値の評価をサポートしています`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

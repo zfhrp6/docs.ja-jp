@@ -1,0 +1,51 @@
+<Type Name="IDataSourceSchema" FullName="System.Web.UI.Design.IDataSourceSchema">
+  <TypeSignature Language="C#" Value="public interface IDataSourceSchema" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataSourceSchema" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IDataSourceSchema" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時にデータ ソースの構造を記述するためには、基本的な機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.Design.IDataSourceSchema>をデザイン時にカスタム データ ソースを記述するインターフェイスです。 たとえば、 <xref:System.Web.UI.Design.DataSetSchema>、 <xref:System.Web.UI.Design.XmlDocumentSchema>、および<xref:System.Web.UI.Design.TypeSchema>クラスで実装、<xref:System.Web.UI.Design.IDataSourceSchema>インターフェイスです。  
+  
+ 実装するクラス、<xref:System.Web.UI.Design.IDataSourceSchema>データ バインド コントロールのデザイン時のフィールドとビューの一覧を提供するカスタム コントロールのデザイナー コンポーネントで使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetViews">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IDataSourceViewSchema[] GetViews ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.IDataSourceViewSchema[] GetViews() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IDataSourceSchema.GetViews" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースに含まれるビューのスキーマの記述子の配列を取得します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.IDataSourceViewSchema" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.Web.UI.Design.IDataSourceSchema.GetViews%2A>メソッドを実装するオブジェクトの配列を返します、<xref:System.Web.UI.Design.IDataSourceViewSchema>インターフェイスです。 によって返される配列のなど、<xref:System.Web.UI.Design.DataSetSchema.GetViews%2A?displayProperty=nameWithType>メソッド、配列の各要素は、<xref:System.Web.UI.Design.DataSetViewSchema>を実装するオブジェクト<xref:System.Web.UI.Design.IDataSourceViewSchema>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,198 @@
+<Type Name="WellKnownServiceTypeEntry" FullName="System.Runtime.Remoting.WellKnownServiceTypeEntry">
+  <TypeSignature Language="C#" Value="public class WellKnownServiceTypeEntry : System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WellKnownServiceTypeEntry extends System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.TypeEntry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの種類の値を保持は、サービス側でサーバーのアクティブ化される型のオブジェクト (1 回の呼び出しまたはシングルトン) として登録します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーでアクティブ化されるオブジェクトの種類には、1 回の呼び出しまたは単一のいずれかを指定できます。 オブジェクトの種類が 1 回の呼び出しの場合は、新しいインスタンスには、クライアントからの呼び出しごとが作成されます。 シングルトン オブジェクトのすべての呼び出しは、そのオブジェクトの 1 つのインスタンスによって処理されます。  
+  
+ このオブジェクトの URI を知っているすべてのクライアントが優先的に使用するチャネルを登録することによってこのオブジェクトのプロキシを取得できます<xref:System.Runtime.Remoting.Channels.ChannelServices>と呼び出すことによって、オブジェクトをアクティブ化`new`または<xref:System.Activator.GetObject%2A?displayProperty=nameWithType>です。  
+  
+ ことが重要、リモート オブジェクト自体が、登録プロセスで作成しないことに注意してください。 これのみ、クライアントが、オブジェクトのメソッドを呼び出すしようとしたときの動作またはクライアント側からオブジェクトをアクティブにします。  
+  
+ サーバーでアクティブ化されるオブジェクトとリモート オブジェクトのアクティブ化の詳細については、次を参照してください[&#91;\< 。topic://cpconActivation > & #93 です。](http://msdn.microsoft.com/en-us/e90d0c64-00da-4080-ae78-a6c558825c25).  
+  
+   
+  
+## Examples  
+ [!code-cpp[WellKnownServiceTypeEntry_Server#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WellKnownServiceTypeEntry_Server/CPP/wellknownservicetypeentry_server.cpp#1)]
+ [!code-csharp[WellKnownServiceTypeEntry_Server#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WellKnownServiceTypeEntry_Server/CS/wellknownservicetypeentry_server.cs#1)]
+ [!code-vb[WellKnownServiceTypeEntry_Server#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WellKnownServiceTypeEntry_Server/VB/wellknownservicetypeentry_server.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WellKnownServiceTypeEntry (Type type, string objectUri, System.Runtime.Remoting.WellKnownObjectMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string objectUri, valuetype System.Runtime.Remoting.WellKnownObjectMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.WellKnownServiceTypeEntry.#ctor(System.Type,System.String,System.Runtime.Remoting.WellKnownObjectMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="objectUri" Type="System.String" />
+        <Parameter Name="mode" Type="System.Runtime.Remoting.WellKnownObjectMode" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />サービスのサーバーでアクティブ化されるオブジェクトの型。</param>
+        <param name="objectUri">サーバーのアクティブ化の種類の URI。</param>
+        <param name="mode"><see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />のオブジェクトをアクティブにする方法を定義する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" />クラスに、指定された<see cref="T:System.Type" />、オブジェクトの URI、および<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WellKnownServiceTypeEntry (string typeName, string assemblyName, string objectUri, System.Runtime.Remoting.WellKnownObjectMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string assemblyName, string objectUri, valuetype System.Runtime.Remoting.WellKnownObjectMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.WellKnownServiceTypeEntry.#ctor(System.String,System.String,System.String,System.Runtime.Remoting.WellKnownObjectMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="objectUri" Type="System.String" />
+        <Parameter Name="mode" Type="System.Runtime.Remoting.WellKnownObjectMode" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">サービスのサーバーでアクティブ化される型の完全な型名。</param>
+        <param name="assemblyName">サーバーでアクティブ化されるサービスの種類のアセンブリ名。</param>
+        <param name="objectUri">サーバーでアクティブ化されるオブジェクトの URI。</param>
+        <param name="mode"><see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />のオブジェクトをアクティブにする方法を定義する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.WellKnownServiceTypeEntry" />アセンブリ名の指定した型の名前を持つクラス オブジェクトの URI、および<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextAttributes">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.WellKnownServiceTypeEntry.ContextAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.IContextAttribute[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーのアクティブ化サービスの種類のコンテキストの属性を設定します。</summary>
+        <value>取得またはサーバーのアクティブ化サービスの種類のコンテキストの属性を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、このインデクサーは実装されていませんし、操作では、すべての結果は生成されません。  
+  
+ コンテキスト属性コンテキスト プロパティを提供、した場合は、コンテキストに追加、同期やトランザクションなどのポリシーを適用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.WellKnownObjectMode Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Remoting.WellKnownObjectMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.WellKnownServiceTypeEntry.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.WellKnownObjectMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />サーバーでアクティブ化されるサービスの種類。</summary>
+        <value><see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />サーバーでアクティブ化されるサービスの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public Type ObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.WellKnownServiceTypeEntry.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />サーバーでアクティブ化されるサービスの種類。</summary>
+        <value><see cref="T:System.Type" />サーバーでアクティブ化されるサービスの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectUri">
+      <MemberSignature Language="C#" Value="public string ObjectUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ObjectUri" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.WellKnownServiceTypeEntry.ObjectUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>よく知られているサービスの種類の URI を取得します。</summary>
+        <value>サーバーでアクティブ化されるサービスの種類の URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.WellKnownServiceTypeEntry.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの URI を型名、アセンブリ名を返しますと<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />とサーバーのアクティブ化される型の<see cref="T:System.String" />です。</summary>
+        <returns>型名、アセンブリ名、オブジェクトの URI、および<see cref="T:System.Runtime.Remoting.WellKnownObjectMode" />とサーバーのアクティブ化される型の<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

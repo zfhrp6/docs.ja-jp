@@ -1,0 +1,1190 @@
+<Type Name="OleDbDataReader" FullName="System.Data.OleDb.OleDbDataReader">
+  <TypeSignature Language="C#" Value="public sealed class OleDbDataReader : System.Data.Common.DbDataReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbDataReader extends System.Data.Common.DbDataReader" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbDataReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbDataReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ ソースからデータ行の前方参照専用のストリームを読み取る手段を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する、 <xref:System.Data.OleDb.OleDbDataReader>、呼び出す必要があります、<xref:System.Data.OleDb.OleDbCommand.ExecuteReader%2A>のメソッド、<xref:System.Data.OleDb.OleDbCommand>コンス トラクターを直接使用する代わりに、オブジェクトです。  
+  
+ 終了する前に、 <xref:System.Data.OleDb.OleDbConnection>、最初に閉じて、<xref:System.Data.OleDb.OleDbDataReader>オブジェクト。 またを閉じる必要があります、<xref:System.Data.OleDb.OleDbDataReader>オブジェクト resuse する予定のかどうか、<xref:System.Data.OleDb.OleDbCommand>オブジェクト。呼び出した後にまでの出力パラメーターを取得することはできませんなど<xref:System.Data.OleDb.OleDbDataReader.Close%2A>です。  
+  
+ 結果データの読み取り中に、別のプロセスまたはスレッドがセットに加えられた変更は、のユーザーに表示される可能性があります、<xref:System.Data.OleDb.OleDbDataReader>です。 ただし、正確な動作、タイミングによって決まります。  
+  
+ <xref:System.Data.OleDb.OleDbDataReader.IsClosed%2A>および<xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.OleDb.OleDbDataReader>が閉じられます。 <xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>プロパティにアクセスできるときに、<xref:System.Data.OleDb.OleDbDataReader>存在する場合、常に呼び出す<xref:System.Data.OleDb.OleDbDataReader.Close%2A>の値を返す前に<xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>正確な戻り値を保証するためにします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.OleDb.OleDbConnection>、 <xref:System.Data.OleDb.OleDbCommand>、および<xref:System.Data.OleDb.OleDbDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、<xref:System.Data.OleDb.OleDbDataReader>し、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData OleDbDataReader Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbDataReader Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbDataReader Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbDataReader Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.OleDb.OleDbDataReader" /> オブジェクトを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Data.OleDb.OleDbDataReader.Close%2A>メソッドを使用しているときに、<xref:System.Data.OleDb.OleDbDataReader>を使用して、関連付けられている<xref:System.Data.OleDb.OleDbConnection>他の目的。  
+  
+> [!CAUTION]
+>  呼び出す必要はありません**閉じる**または**Dispose**接続、DataReader、または その他のマネージ オブジェクトで、 **Finalize**クラスのメソッドです。 ファイナライザーで、クラスが直接所有されているアンマネージ リソースだけを解放する必要があります。 クラスがアンマネージ リソースを所有していない場合は含まれません、 **Finalize**メソッド、クラス定義にします。 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.OleDb.OleDbConnection>、 <xref:System.Data.OleDb.OleDbCommand>、および<xref:System.Data.OleDb.OleDbDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.OleDb.OleDbDataReader>、し、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData IDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public override int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の入れ子の深さを示す値を取得します。</summary>
+        <value>現在の行の入れ子の深さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も外側のテーブルは深さ 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldCount">
+      <MemberSignature Language="C#" Value="public override int FieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.FieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の列の数を取得します。</summary>
+        <value>0 を有効なレコード セットに配置されない場合それ以外の場合、現在のレコード内の列の数。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示フィールドを含めます。 非表示フィールドを除外するには、<xref:System.Data.OleDb.OleDbDataReader.VisibleFieldCount%2A> を使用します。  
+  
+ 行を返さないクエリを実行すた後<xref:System.Data.OleDb.OleDbDataReader.FieldCount%2A>0 を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データ ソースに現在接続されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public override bool GetBoolean (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetBoolean(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetBoolean(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を Boolean として取得します。</summary>
+        <returns>列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがって取得されたデータには、ブール値がある必要があります既にまたは例外が発生します。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public override byte GetByte (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8 GetByte(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetByte(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値をバイトとして取得します。</summary>
+        <returns>バイトとして指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、データの取得では、バイトが既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override long GetBytes (int ordinal, long dataIndex, byte[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetBytes(int32 ordinal, int64 dataIndex, unsigned int8[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始するフィールド内のインデックス。</param>
+        <param name="buffer">バイトのストリームを読み込むバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">バッファーにコピーする最大の長さ。</param>
+        <summary>指定したバッファー オフセットから始まる配列として指定した列オフセットからバイトのストリームをバッファーに読み取ります。</summary>
+        <returns>実際に読み取られたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.GetBytes%2A>フィールドに使用できるバイト数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetBytes`バイトを取得するフィールドからは既に使用されています。 たとえば、ケース可能性があります、ときに、<xref:System.Data.OleDb.OleDbDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ バッファーを渡した場合`null`、<xref:System.Data.OleDb.OleDbDataReader.GetBytes%2A>フィールドの長さをバイト単位で返します。  
+  
+ 変換は実行されません。そのため、取得されたデータでは、バイト配列が既にあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public override char GetChar (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetChar(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetChar(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>文字として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされていません。<xref:System.Data.OleDb>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public override long GetChars (int ordinal, long dataIndex, char[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetChars(int32 ordinal, int64 dataIndex, char[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始する行内のインデックス。</param>
+        <param name="buffer">データのコピー先のバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">読み取る文字の数。</param>
+        <summary>指定したバッファー オフセットから始まる配列として、文字のストリームを指定した列オフセットからバッファーに読み取ります。</summary>
+        <returns>実際に読み取られた文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.GetChars%2A>フィールドに使用できる文字数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetChars`フィールドから文字を取得するは既に使用されています。 たとえば、ケース可能性があります、ときに、<xref:System.Data.OleDb.OleDbDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ バッファーを渡した場合`null`、<xref:System.Data.OleDb.OleDbDataReader.GetChars%2A>文字数で、フィールドの長さを返します。  
+  
+ 変換は実行されません。そのため、取得されたデータでは、文字配列が既にあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbDataReader GetData (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbDataReader GetData(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetData(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>返します、<see cref="T:System.Data.OleDb.OleDbDataReader" />要求された列の序数のオブジェクト。</summary>
+        <returns><see cref="T:System.Data.OleDb.OleDbDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataAdapter.Fill%2A>が呼び出す<xref:System.Data.OleDb.OleDbDataReader.GetData%2A>、プロバイダーを返す場合、<xref:System.Data.IDataReader>をサポートする列を持つ<xref:System.Data.IDataReader>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataTypeName">
+      <MemberSignature Language="C#" Value="public override string GetDataTypeName (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDataTypeName(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetDataTypeName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まる列序数。</param>
+        <summary>ソースのデータ型の名前を取得します。</summary>
+        <returns>バックエンドのデータ型の名前。 詳細については、次を参照してください。 [SQL Server データ型](http://go.microsoft.com/fwlink/?LinkId=198032)または[データ型にアクセス](http://go.microsoft.com/fwlink/?LinkId=198033)です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime GetDateTime (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime GetDateTime(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetDateTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.DateTime" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.DateTime>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDbDataReader">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbDataReader GetDbDataReader (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbDataReader GetDbDataReader(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetDbDataReader(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecimal">
+      <MemberSignature Language="C#" Value="public override decimal GetDecimal (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Decimal GetDecimal(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetDecimal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.Decimal" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.Decimal>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDouble">
+      <MemberSignature Language="C#" Value="public override double GetDouble (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float64 GetDouble(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetDouble(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>倍精度浮動小数点数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、倍精度浮動小数点数が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ リーダー内の行に対して反復処理を行うために使用できる <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+        <returns>データ リーダー内の行に対して反復処理を行うために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、明示的な列挙子を取得することができます、言語をサポートする、`foreach`構築、データ リーダー内の行を反復処理するために直接ループ構造を使用する方が簡単です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetFieldType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetFieldType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まる列序数。</param>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトのデータ型です。</summary>
+        <returns>オブジェクトのデータ型である <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFloat">
+      <MemberSignature Language="C#" Value="public override float GetFloat (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float32 GetFloat(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetFloat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>単精度浮動小数点数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。 そのため、取得されたデータでは、単精度浮動小数点数が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGuid">
+      <MemberSignature Language="C#" Value="public override Guid GetGuid (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Guid GetGuid(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetGuid(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>グローバル一意識別子 (GUID) として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、データの取得では、グローバルに一意の識別子が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt16">
+      <MemberSignature Language="C#" Value="public override short GetInt16 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int16 GetInt16(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetInt16(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>16 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、16 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt32">
+      <MemberSignature Language="C#" Value="public override int GetInt32 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetInt32(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetInt32(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>32 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、32 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt64">
+      <MemberSignature Language="C#" Value="public override long GetInt64 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetInt64(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetInt64(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を 64 ビット符号付き整数として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、64 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public override string GetName (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetName(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まる列序数。</param>
+        <summary>指定された列の名前を取得します。</summary>
+        <returns>指定された列の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrdinal">
+      <MemberSignature Language="C#" Value="public override int GetOrdinal (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetOrdinal(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetOrdinal(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前。</param>
+        <summary>列の名前を指定して、列の序数を取得します。</summary>
+        <returns>0 から始まる列序数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A>最初に区別する検索を実行します。 失敗した場合、2 番目の検索が行われます。 メソッドをスロー、`IndexOutOfRange`いなければ、例外、0 から始まる列序数が見つかりません。  
+  
+ <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A>カタカナの全角区別されません。  
+  
+ 呼び出す効率的ではありません序数に基づく参照は、名前による参照よりも効率的であるため<xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A>ループ内で。 呼び出すことによって、時間を節約<xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A>1 回し、結果をループ内で使用する整数の変数に割り当てることです。  
+  
+   
+  
+## Examples  
+ <xref:System.Data.OleDb.OleDbDataReader.GetOrdinal%2A> メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[Classic WebData OleDbDataReader.GetOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbDataReader.GetOrdinal/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbDataReader.GetOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbDataReader.GetOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定された名前は、有効な列名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchemaTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchemaTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetSchemaTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> の列メタデータを記述する <see cref="T:System.Data.OleDb.OleDbDataReader" /> を返します。</summary>
+        <returns>列メタデータを記述する <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.GetSchemaTable%2A>メソッドは、OLE DB に対応付けます**icolumnsrowset::getcolumnsrowset**メソッド、および次の順序で各列に関するメタデータを返します。  
+  
+|DataReader 列|OLE DB 列 ID|説明|  
+|-----------------------|----------------------|-----------------|  
+|ColumnName|DBCOLUMN_NAME|列の名前これは一意でない可能性があります。 これを特定できない場合は、null 値が返されます。 この名前は、常に、現在のビューまたはコマンド テキスト内の列の最も最近使用した名前の変更が反映されます。|  
+|ColumnOrdinal|DBCOLUMN_NUMBER|0 から始まる列の序数。 この列は、null 値を含めることはできません。|  
+|ColumnSize|DBCOLUMN_COLUMNSIZE|列の値の可能な最大長。 固定長データ型を使用する列でのデータ型のサイズです。|  
+|NumericPrecision|DBCOLUMN_PRECISION|DbType が数値データ型の場合は、これは、列の最大有効桁数です。 DBTYPE_DECIMAL または DBTYPE_NUMERIC のデータ型を持つ列の有効桁数は、列の定義によって異なります。 DbType が数値データ型でない場合は、これは、null 値になります。|  
+|NumericScale|DBCOLUMN_SCALE|DbType が DBTYPE_DECIMAL または DBTYPE_NUMERIC の場合は、これは、小数点の右側にある数字の数。 それ以外の場合、これは、null 値です。|  
+|DataType|なし|列の .NET Framework の型にマップされます。|  
+|プロバイダーの種類|DBCOLUMN_TYPE|列のデータ型のインジケーター。 列のデータ型は、行ごとに変化する場合は、DBTYPE_VARIANT このなければなりません。 この列は、null 値を含めることはできません。|  
+|IsLong|DBCOLUMNFLAGS_ISLONG|プロバイダーは、列には、非常に長いデータを含むバイナリ長オブジェクト (BLOB) が含まれている場合、DBCOLUMNFLAGS_ISLONG を設定します。 非常に長いデータの定義は、プロバイダー固有です。 このフラグの設定は、データ型の PROVIDER_TYPES 行セットの IS_LONG 列の値に対応します。|  
+|AllowDBNull|DBCOLUMNFLAGS_ISNULLABLE|プロバイダーは、コンシューマーは、null 値に列を設定できる場合、またはプロバイダーでは、コンシューマーが列を null 値に設定できるかどうかを判断できない場合に、DBCOLUMNFLAGS_ISNULLABLE を設定します。 Null 値に設定することはできない場合でも、列は、null 値を含む可能性があります。|  
+|IsReadOnly|DBCOLUMNFLAGS_WRITE|`true`場合は、列を変更できません。それ以外の場合`false`です。 列は、プロバイダーが DBCOLUMNFLAGS_WRITE または DBCOLUMNFLAGS_WRITEUNKNOWN のいずれかのフラグを設定した場合は、書き込み可能と見なされます。|  
+|IsRowVersion|DBCOLUMNFLAGS_ISROWID|プロバイダーは、列に書き込むことができない、永続的な行識別子が含まれている場合、DBCOLUMNFLAGS_ISROWID を設定し、意味を持つ値を除く行を識別します。|  
+|IsUnique|DBCOLUMN_ISUNIQUE で|VARIANT_TRUE: できます BaseTableName で返されるベース テーブルのテーブルの 2 つの行は、この列に同じ値を持ちます。 IsUnique は、列がキーを表す場合は VARIANT_TRUE にするのにまたはこの列にのみ適用される UNIQUE 型の制約があるかどうかはそれ自体によって保証されます。<br /><br /> VARIANT_FALSE: 列は、ベース テーブルに重複する値を含めることができます。 この列の既定値は VARIANT_FALSE です。|  
+|IsKey|DBCOLUMN_KEYCOLUMN|VARIANT_TRUE: 列は、行セット内の列のセットの 1 つをまとめると、行を一意に識別します。 IsKey を VARIANT_TRUE に設定した列のセットは、行セット内の行を一意に識別する必要があります。 この列のセットが列の最小セットである必要はありません。 この列のセットは、ベース テーブルの主キー、unique 制約または一意のインデックスから生成される可能性があります。<br /><br /> VARIANT_FALSE: 列は、行を一意に識別する必要はありません。|  
+|IsAutoIncrement|DBCOLUMN_ISAUTOINCREMENT|VARIANT_TRUE: 列は、固定された増分で新しい行に値を割り当てます。<br /><br /> VARIANT_FALSE: 列は固定された増分で新しい行の値を割り当てられません。 この列の既定値は VARIANT_FALSE です。|  
+|BaseSchemaName|DBCOLUMN_BASESCHEMANAME|列を含むデータ ストア内のスキーマの名前です。 ベース スキーマ名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|BaseCatalogName|DBCOLUMN_BASECATALOGNAME|列を含むデータ ストア内のカタログの名前。 ベースのカタログ名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|BaseTableName|DBCOLUMN_BASETABLENAME|テーブルまたは列を含むデータ ストア内のビューの名前。 ベース テーブル名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|BaseColumnName|DBCOLUMN_BASECOLUMNNAME|データ ストア内の列の名前。 これは、エイリアスが使用された場合に、[ColumnName] 列で返される列名と異なる可能性があります。 ベースの列名を特定できない場合や行セットの列が派生したと一致しない、データの列ストアの場合は、null 値。 この列の既定値は、null 値です。|  
+  
+> [!NOTE]
+>  メタデータ列は、正しい情報を返すことは、呼び出す必要があるかどうかを確認する<xref:System.Data.OleDb.OleDbCommand.ExecuteReader%2A>で、`behavior`パラメーターに設定`KeyInfo`です。 それ以外の場合、既定値、null、または不適切なデータを返すスキーマ テーブルの列のいくつか可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.OleDb.OleDbDataReader" /> が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public override string GetString (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetString(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>文字列として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、データの取得では、文字列が既にあります。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTimeSpan">
+      <MemberSignature Language="C#" Value="public TimeSpan GetTimeSpan (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TimeSpan GetTimeSpan(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetTimeSpan(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.TimeSpan" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.TimeSpan>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.OleDb.OleDbDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>ネイティブ形式で指定された序数の列の値を取得します。</summary>
+        <returns>戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る<xref:System.DBNull>null データベース列にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public override int GetValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.GetValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">属性列のコピー先の <see cref="T:System.Object" /> の配列。</param>
+        <summary>現在の行の列の値を持つオブジェクトの配列を追加します。</summary>
+        <returns>配列に含まれる <see cref="T:System.Object" /> のインスタンスの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのアプリケーションに対して、<xref:System.Data.OleDb.OleDbDataReader.GetValues%2A>メソッドが各列を個別に取得する代わりに、すべての列を取得するための効率的な方法を提供します。  
+  
+ 渡すことができます、<xref:System.Object>結果の行に含まれる列数より少ないを格納する配列。 データの量のみ、<xref:System.Object>配列では、配列にコピーを保持します。 渡すことも、<xref:System.Object>配列の長さが、結果の行に含まれる列数よりも多い。  
+  
+ このメソッドが戻る<xref:System.DBNull>null データベース列にします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[OleDbDataReader_GetValues#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/oledbdatareader_getvalues/cs/source.cs#1)]
+ [!code-vb[OleDbDataReader_GetValues#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/oledbdatareader_getvalues/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasRows">
+      <MemberSignature Language="C#" Value="public override bool HasRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasRows" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.HasRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 1 つまたは複数の行が含まれています。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Data.OleDb.OleDbDataReader" /> 1 つまたは複数の行が含まれます。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public override bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ リーダーが閉じられたかどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OleDb.OleDbDataReader" />が閉じられた場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.IsClosed%2A>および<xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.OleDb.OleDbDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNull">
+      <MemberSignature Language="C#" Value="public override bool IsDBNull (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDBNull(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.IsDBNull(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>存在しない値や欠落値が列に含まれているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定された列の値と等しい場合<see cref="T:System.DBNull" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型指定されたを呼び出す前に null 列値は get メソッドを検索するには、このメソッドを呼び出す (たとえば、 <xref:System.Data.OleDb.OleDbDataReader.GetByte%2A>、<xref:System.Data.OleDb.OleDbDataReader.GetChar%2A>など)、エラーの発生を防ぐためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">列の序数。</param>
+        <summary>序数の列を指定して、ネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IndexOutOfRangeException">渡されたインデックスは 0 から <see cref="P:System.Data.IDataRecord.FieldCount" /> の範囲外にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前です。</param>
+        <summary>列の名前を指定されたネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字小文字を区別ルックアップが最初に実行されます。 失敗した場合、2 番目の検索が行われます。  
+  
+ このメソッドは、カタカナの全角を区別します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定した名前の列は見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResult">
+      <MemberSignature Language="C#" Value="public override bool NextResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool NextResult() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.NextResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッチ SQL ステートメントの結果を読み取っているときに、次の結果にデータ リーダーを進めます。</summary>
+        <returns>
+          <see langword="true" />次の結果セットがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチの SQL ステートメントを実行することによって生成される複数の結果を処理するために使用します。  
+  
+ 既定では、データ リーダーは、最初の結果に位置付けられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbDataReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbDataReader" /> を次のレコードに進めます。</summary>
+        <returns>
+          次の行が存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の位置、<xref:System.Data.OleDb.OleDbDataReader>最初のレコードの前に、です。 そのため、呼び出す必要があります<xref:System.Data.OleDb.OleDbDataReader.Read%2A>をデータへのアクセスを開始します。  
+  
+ 中に、<xref:System.Data.OleDb.OleDbDataReader>が使用されている、関連付けられた<xref:System.Data.OleDb.OleDbConnection>機能を提供するまで、呼び出しがビジー<xref:System.Data.OleDb.OleDbDataReader.Close%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.OleDb.OleDbConnection>、 <xref:System.Data.OleDb.OleDbCommand>、および<xref:System.Data.OleDb.OleDbDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、<xref:System.Data.OleDb.OleDbDataReader>し、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData IDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordsAffected">
+      <MemberSignature Language="C#" Value="public override int RecordsAffected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecordsAffected" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.RecordsAffected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL ステートメントの実行によって変更、挿入、または削除された行の数を取得します。</summary>
+        <value>変更、挿入、または削除された行の数。影響を受けた行がない、またはステートメントが失敗した場合は 0。SELECT ステートメントの場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>プロパティが設定されていないすべての行が読み取られ、<xref:System.Data.OleDb.OleDbDataReader>です。  
+  
+ このプロパティの値は、累積的なです。 たとえば、バッチ モードの値に 2 つのレコードを挿入<xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>2 つです。  
+  
+ <xref:System.Data.OleDb.OleDbDataReader.IsClosed%2A>および<xref:System.Data.OleDb.OleDbDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.OleDb.OleDbDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibleFieldCount">
+      <MemberSignature Language="C#" Value="public override int VisibleFieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisibleFieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbDataReader.VisibleFieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbDataReader" /> 内の表示フィールドの数を取得します。</summary>
+        <value>表示フィールドの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、<xref:System.Data.OleDb.OleDbDataReader> 内の表示フィールドの数を調べるために使用します。 たとえば、部分的な主キーに対して SELECT を実行すると、キーの残りの部分が非表示フィールドとして返されます。 非表示フィールドは、常に表示フィールドの後ろに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

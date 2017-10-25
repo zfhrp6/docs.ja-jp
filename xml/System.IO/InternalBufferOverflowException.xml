@@ -1,0 +1,174 @@
+<Type Name="InternalBufferOverflowException" FullName="System.IO.InternalBufferOverflowException">
+  <TypeSignature Language="C#" Value="public class InternalBufferOverflowException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit InternalBufferOverflowException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.IO.InternalBufferOverflowException" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内部バッファーがオーバーフローした場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher>ファイルの変更、コンポーネントのバッファーにそれらの変更を作成し、アプリケーション プログラミング インターフェイス (Api) に渡すシステム ストアが通知されます。 短時間に多数の変更がある場合は、バッファーできます簡単にオーバーフロー、基本的にすべての変更が失われる例外がスローされ、結果として得られます。 バッファーのオーバーフローを防止するには、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A?displayProperty=nameWithType>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A?displayProperty=nameWithType>不要な変更通知を除外するプロパティです。 <xref:System.IO.FileSystemWatcher.InternalBufferSize%2A?displayProperty=nameWithType> プロパティを使用して内部バッファーのサイズを増やすこともできます。 ただし、バッファーのサイズを増やすと負荷が高いため、バッファー可能な限り小さくします。  
+  
+   
+  
+## Examples  
+ 次の例は、ファイルの変更を監視する FileSystemWatcher を作成する方法を示します (作成、削除、名前の変更、変更)、ディスク ドライブで発生しています。 また、正しくエラー通知を受信する方法も示します。  
+  
+ [!code-csharp[FileSystemWatcher#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#1)]
+ [!code-vb[FileSystemWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InternalBufferOverflowException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.InternalBufferOverflowException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.InternalBufferOverflowException" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのコンス トラクターは、エラーを示すために、コンポーネントによって使用されます。 のみ、クラスまたは .NET Framework を拡張する場合に、それらを使用します。 この例外は、内部バッファーがオーバーフローしたことを確認するようにコードでユーザーが適切な手順を実行する必要がありますを示します。 オーバーフローの原因は多くの場合、変更が多すぎる短時間で通知の内部バッファーがオーバーフローの原因です。 これを解決するを使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A?displayProperty=nameWithType>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A?displayProperty=nameWithType>望ましくないを除外するプロパティの変更通知します。 <xref:System.IO.FileSystemWatcher.InternalBufferSize%2A?displayProperty=nameWithType> プロパティを使用して内部バッファーのサイズを増やすこともできます。 ただし、バッファーのサイズを増やすと負荷が高いため、バッファー可能な限り小さくします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InternalBufferOverflowException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.InternalBufferOverflowException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の有効期限を指定するメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.InternalBufferOverflowException" />と、エラー メッセージを表示するクラスを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのコンス トラクターは、エラーを示すために、コンポーネントによって使用されます。 のみ、クラスまたは .NET Framework を拡張する場合に、それらを使用します。 この例外は、内部バッファーがオーバーフローしたことを確認するようにコードでユーザーが適切な手順を実行する必要がありますを示します。 オーバーフローの原因は多くの場合、変更が多すぎる短時間で通知の内部バッファーがオーバーフローの原因です。 これを解決するを使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A?displayProperty=nameWithType>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A?displayProperty=nameWithType>望ましくないを除外するプロパティの変更通知します。 <xref:System.IO.FileSystemWatcher.InternalBufferSize%2A?displayProperty=nameWithType> プロパティを使用して内部バッファーのサイズを増やすこともできます。 ただし、バッファーのサイズを増やすと負荷が高いため、バッファー可能な限り小さくします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InternalBufferOverflowException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.InternalBufferOverflowException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">T:System.IO.InternalBufferOverflowException オブジェクトをシリアル化に必要な情報です。</param>
+        <param name="context">ソースと T:System.IO.InternalBufferOverflowException オブジェクトに関連付けられているシリアル化されたストリームの転送先。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.IO.InternalBufferOverflowException" />を使用して、指定したシリアル化できるクラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InternalBufferOverflowException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.InternalBufferOverflowException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の有効期限を指定するメッセージ。</param>
+        <param name="inner">内部例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.InternalBufferOverflowException" />クラスを表示するメッセージとは、生成された内部例外を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのコンス トラクターは、エラーを示すために、コンポーネントによって使用されます。 のみ、クラスまたは .NET Framework を拡張する場合に、それらを使用します。 この例外は、内部バッファーがオーバーフローしたことを確認するようにコードでユーザーが適切な手順を実行する必要がありますを示します。 オーバーフローの原因は多くの場合、変更が多すぎる短時間で通知の内部バッファーがオーバーフローの原因です。 これを解決するを使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A?displayProperty=nameWithType>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A?displayProperty=nameWithType>望ましくないを除外するプロパティの変更通知します。 <xref:System.IO.FileSystemWatcher.InternalBufferSize%2A?displayProperty=nameWithType> プロパティを使用して内部バッファーのサイズを増やすこともできます。 ただし、バッファーのサイズを増やすと負荷が高いため、バッファー可能な限り小さくします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

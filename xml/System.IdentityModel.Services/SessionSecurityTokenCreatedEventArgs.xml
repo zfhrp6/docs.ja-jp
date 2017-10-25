@@ -1,0 +1,96 @@
+<Type Name="SessionSecurityTokenCreatedEventArgs" FullName="System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs">
+  <TypeSignature Language="C#" Value="public class SessionSecurityTokenCreatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenCreatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated" />イベントと、<see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では。  
+  
+-   セッションの認証モジュール (SAM) で、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>内からイベントは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A?displayProperty=nameWithType>セッション トークンの後にメソッド (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) が作成されました。 これは、場合に発生、たとえば、イベント ハンドラーを<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>イベントは、トークンを変更します。 使用することができます、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs>をパイプラインに沿ってさらに渡されるして、エンティティ (ユーザー) の要求の認証に使用する前にセッション トークンを変更します。  
+  
+-   Ws-federation 認証モジュール (WSFAM) で、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> SAM がスレッドのプリンシパルを設定し、セッションの cookie を書き込むために呼び出される直前と、STS から受信した Ws-federation サインイン応答メッセージからのセッション トークンが作成された直後に、要求処理パイプラインからイベントが発生します。  
+  
+ 使用することができます、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A>プロパティを変更またはトークンを交換します。 設定することができます、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie%2A>を指定するかどうか、セッションの cookie する書き込まれます (か書き直されます)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenCreatedEventArgs (System.IdentityModel.Tokens.SessionSecurityToken sessionToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.#ctor(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">作成されたセッション セキュリティ トークンです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs" />クラスを指定したセッション セキュリティ トークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A>プロパティで指定されたトークンに設定されて、`sessionToken`パラメーター。 <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie%2A> プロパティは `false` に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sessionToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SessionSecurityToken SessionToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SessionSecurityToken SessionToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成されたセッションのセキュリティ トークンを設定します。</summary>
+        <value>作成されたセッション トークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSessionCookie">
+      <MemberSignature Language="C#" Value="public bool WriteSessionCookie { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WriteSessionCookie" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie が応答に書き込むかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />応答に cookie を書き込むそれ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />cookie は、応答には書き込まれません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

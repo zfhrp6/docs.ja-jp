@@ -1,0 +1,78 @@
+<Type Name="IInternalConfigSettingsFactory" FullName="System.Configuration.Internal.IInternalConfigSettingsFactory">
+  <TypeSignature Language="C#" Value="public interface IInternalConfigSettingsFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInternalConfigSettingsFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Internal.IInternalConfigSettingsFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>設定を構成システムで使用されるインターフェイスを定義、<see cref="T:System.Configuration.ConfigurationSettings" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CompleteInit">
+      <MemberSignature Language="C#" Value="public void CompleteInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CompleteInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigSettingsFactory.CompleteInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化を示すシステム構成を完了します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetConfigurationSystem">
+      <MemberSignature Language="C#" Value="public void SetConfigurationSystem (System.Configuration.Internal.IInternalConfigSystem internalConfigSystem, bool initComplete);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetConfigurationSystem(class System.Configuration.Internal.IInternalConfigSystem internalConfigSystem, bool initComplete) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.IInternalConfigSettingsFactory.SetConfigurationSystem(System.Configuration.Internal.IInternalConfigSystem,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="internalConfigSystem" Type="System.Configuration.Internal.IInternalConfigSystem" />
+        <Parameter Name="initComplete" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="internalConfigSystem"><see cref="T:System.Configuration.Internal.IInternalConfigSystem" />によって使用されるオブジェクト、<see cref="T:System.Configuration.ConfigurationSettings" />クラスです。</param>
+        <param name="initComplete">
+          <see langword="true" />構成システムの初期化プロセスが完了した場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>Asp.net 構成システムに、階層構造の構成設定と固有の拡張機能を提供します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="CombineMode" FullName="System.Drawing.Drawing2D.CombineMode">
+  <TypeSignature Language="C#" Value="public enum CombineMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CombineMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.CombineMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>別の方法のクリッピング領域を示す組み合わせることができます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Complement">
+      <MemberSignature Language="C#" Value="Complement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Complement = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Complement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい領域から削除して、既存のリージョンの結果で、既存のリージョンを置き換えることを指定します。 つまり、既存の領域は、新しい領域から除外します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="Exclude" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Exclude = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Exclude" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の領域から削除して、新しい領域の結果で、既存のリージョンを置き換えることを指定します。 つまり、新しい領域が、既存のリージョンから除外します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="Intersect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Intersect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Intersect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのクリッピング領域は、積集合を使用して結合されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="Replace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Replace = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Replace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのクリッピング領域は、別に置き換えられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="Union" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Union = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Union" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのクリッピング領域は、両方の和集合を使用して結合されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="Xor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CombineMode Xor = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CombineMode.Xor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのクリッピング領域には、いずれか、またはその他の地域で囲まれた領域のみを使用して結合が、両方は必要ありませんが。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

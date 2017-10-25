@@ -1,0 +1,44 @@
+<Type Name="IWin32Window" FullName="System.Windows.Interop.IWin32Window">
+  <TypeSignature Language="C#" Value="public interface IWin32Window" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWin32Window" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.IWin32Window" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Win32 ウィンドウ ハンドルのコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  実装コードが部分信頼で実行できる場合、このインターフェイスを実装する必要がありますされません。 これは、InheritanceDemand によって強制されます。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">として、InheritanceDemand です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IWin32Window.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ ハンドルを取得します。</summary>
+        <value>ウィンドウ ハンドル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

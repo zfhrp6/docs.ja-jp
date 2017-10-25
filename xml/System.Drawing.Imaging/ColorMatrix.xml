@@ -1,0 +1,588 @@
+<Type Name="ColorMatrix" FullName="System.Drawing.Imaging.ColorMatrix">
+  <TypeSignature Language="C#" Value="public sealed class ColorMatrix" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ColorMatrix extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.ColorMatrix" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>5 列 5 行を含むマトリックスが RGBAW 領域の座標を定義します。 いくつかの方法、<see cref="T:System.Drawing.Imaging.ImageAttributes" />クラスは、カラー行列を使用して、イメージの色を調整します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マトリックスの係数は、ARGB 同種の値に変換するために使用される 5 列 5 線形変換を構成します。 たとえば、ARGB ベクターは、赤、緑、青、アルファおよび w が 1 では常に w として表されます。  
+  
+ たとえば、色 (0.2、0.0、0.4, 1.0) で起動して次の変換を適用するとします。  
+  
+1.  赤の成分倍精度浮動小数点  
+  
+2.  赤、緑、および青のコンポーネントを 0.2 を追加します。  
+  
+ 次行列乗算では、変換のペアを順に実行します。  
+  
+ ![色の変更](~/add/media/recoloring01.gif "色の変更")  
+  
+ カラー行列の要素は、行と列 (0 から始まる) インデックス付けられます。 たとえば、5 番目の行およびマトリックス M の 3 列目のエントリは、M [4] [2] で表されます。  
+  
+ 5 × 5 単位行列で、次の図に示す) は、対角線上の 1 と 0 それ以外の場所がします。 単位行列でカラー ベクトルを乗算する場合、色のベクターは変更されません。 カラー変換の行列を形成する便利な方法では、単位行列で開始し、少しの変更を必要な変換を生成します。  
+  
+ ![色の変更](~/add/media/recoloring02.gif "色の変更")  
+  
+ マトリックスと変換の詳細についてを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つのすべての色 (0.2、0.0、0.4, 1.0) は、前の段落で説明した変換を適用するイメージ。  
+  
+ 次の図は、右側の左側に元のイメージと変換後のイメージを示します。  
+  
+ ![色](~/add/media/colortrans1.png "色")  
+  
+ 次の例のコードでは、次の手順を使用して、色の変更を実行します。  
+  
+1.  初期化、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクト。  
+  
+2.  作成、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを渡す、<xref:System.Drawing.Imaging.ColorMatrix>オブジェクトを<xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A>のメソッド、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクト。  
+  
+3.  渡す、<xref:System.Drawing.Imaging.ImageAttributes>オブジェクトを<xref:System.Drawing.Graphics.DrawImage%2A>のメソッド、<xref:System.Drawing.Graphics>オブジェクト。  
+  
+ 前の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー  
+  
+ [!code-csharp[System.Drawing.RecoloringImages#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#21)]
+ [!code-vb[System.Drawing.RecoloringImages#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorMatrix ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ColorMatrix.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Imaging.ColorMatrix" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColorMatrix (float[][] newColorMatrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32[][] newColorMatrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ColorMatrix.#ctor(System.Single[][])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="newColorMatrix" Type="System.Single[][]" />
+      </Parameters>
+      <Docs>
+        <param name="newColorMatrix">新しい要素の値<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Imaging.ColorMatrix" />クラスの指定した行列の要素を使用して<paramref name="newColorMatrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成して使用する方法を示しています、<xref:System.Drawing.Imaging.ColorMatrix>です。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RotateColors`フォームから<xref:System.Windows.Forms.Control.Paint>イベント処理メソッドを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Drawing.RotateColors#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RotateColors/CS/Form1.cs#1)]
+ [!code-vb[System.Drawing.RotateColors#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RotateColors/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public float this[int row, int column] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Item(int32, int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Item(System.Int32,System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Int32" />
+        <Parameter Name="column" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="row">要素の行。</param>
+        <param name="column">要素の列です。</param>
+        <summary>取得または指定した行と列にある要素を設定、<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>指定した行と列にある要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix00">
+      <MemberSignature Language="C#" Value="public float Matrix00 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix00" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix00" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、要素、0 (ゼロ) の行および 0 列この<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>0 の行とこの列が 0 にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix01">
+      <MemberSignature Language="C#" Value="public float Matrix01 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix01" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix01" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、要素、0 (ゼロ) の行およびこれの最初の列<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の列と 0 個の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix02">
+      <MemberSignature Language="C#" Value="public float Matrix02 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix02" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix02" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得要素は、0 (ゼロ) 行と 2 番目の列または設定この<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 2 番目の列と 0 個の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix03">
+      <MemberSignature Language="C#" Value="public float Matrix03 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix03" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix03" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得要素、0 (ゼロ) と 3 番目の行の列または設定この<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。 アルファ コンポーネントを表します。</summary>
+        <value>この 3 番目の列と 0 個の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix04">
+      <MemberSignature Language="C#" Value="public float Matrix04 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix04" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix04" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ある取得または設定要素、0 (ゼロ) 行 4 列のこの<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>0 個の行とこれの 4 列目にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix10">
+      <MemberSignature Language="C#" Value="public float Matrix10 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix10" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定要素最初の行と 0 (ゼロ) の列のこの<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>最初の行とこの列が 0 にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix11">
+      <MemberSignature Language="C#" Value="public float Matrix11 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix11" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の行およびこれの最初の列での要素の設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>最初の行と最初の列のこの位置にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix12">
+      <MemberSignature Language="C#" Value="public float Matrix12 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix12" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この最初の行と 2 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の行と 2 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix13">
+      <MemberSignature Language="C#" Value="public float Matrix13 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix13" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix13" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この最初の行と 3 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。 アルファ コンポーネントを表します。</summary>
+        <value>この最初の行と 3 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix14">
+      <MemberSignature Language="C#" Value="public float Matrix14 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix14" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix14" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この最初の行および 4 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の行および 4 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix20">
+      <MemberSignature Language="C#" Value="public float Matrix20 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix20" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix20" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定要素、2 番目の行と 0 (ゼロ) の列のこの<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>2 番目の行とこの列が 0 にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix21">
+      <MemberSignature Language="C#" Value="public float Matrix21 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix21" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix21" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の行およびこれの最初の列での要素の設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の列と 2 番目の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix22">
+      <MemberSignature Language="C#" Value="public float Matrix22 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix22" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix22" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 2 番目の行と 2 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 2 番目の行と 2 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix23">
+      <MemberSignature Language="C#" Value="public float Matrix23 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix23" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix23" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 2 番目と 3 番目の行の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 2 番目と 3 番目の行の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix24">
+      <MemberSignature Language="C#" Value="public float Matrix24 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix24" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix24" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 2 番目の行および 4 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 2 番目の行および 4 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix30">
+      <MemberSignature Language="C#" Value="public float Matrix30 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix30" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix30" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定要素 3 番目の行と 0 (ゼロ) の列のこの<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>3 番目の行とこの列が 0 にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix31">
+      <MemberSignature Language="C#" Value="public float Matrix31 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix31" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix31" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 番目の行およびこれの最初の列での要素の設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の列と 3 番目の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix32">
+      <MemberSignature Language="C#" Value="public float Matrix32 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix32" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix32" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 3 番目の行と 2 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 3 番目の行と 2 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix33">
+      <MemberSignature Language="C#" Value="public float Matrix33 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix33" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix33" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 3 番目と 3 番目の行の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。 アルファ コンポーネントを表します。</summary>
+        <value>この 3 番目と 3 番目の行の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix34">
+      <MemberSignature Language="C#" Value="public float Matrix34 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix34" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix34" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 3 番目の行および 4 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 3 番目の行および 4 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix40">
+      <MemberSignature Language="C#" Value="public float Matrix40 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix40" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix40" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定要素 4 番目の行と 0 (ゼロ) の列のこの<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>4 番目の行とこの列が 0 にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix41">
+      <MemberSignature Language="C#" Value="public float Matrix41 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix41" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix41" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>4 番目の行およびこれの最初の列での要素の設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この最初の列と 4 番目の行にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix42">
+      <MemberSignature Language="C#" Value="public float Matrix42 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix42" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix42" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 4 番目の行と 2 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 4 番目の行と 2 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix43">
+      <MemberSignature Language="C#" Value="public float Matrix43 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix43" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix43" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素を 4 番目と 3 番目の行の 1 列にこの設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。 アルファ コンポーネントを表します。</summary>
+        <value>この 4 番目と 3 番目の行の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matrix44">
+      <MemberSignature Language="C#" Value="public float Matrix44 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Matrix44" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ColorMatrix.Matrix44" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 4 番目の行および 4 番目の列に要素を設定を取得または<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</summary>
+        <value>この 4 番目の行および 4 番目の列にある要素<see cref="T:System.Drawing.Imaging.ColorMatrix" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

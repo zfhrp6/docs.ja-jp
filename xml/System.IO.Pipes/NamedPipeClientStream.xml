@@ -1,0 +1,821 @@
+<Type Name="NamedPipeClientStream" FullName="System.IO.Pipes.NamedPipeClientStream">
+  <TypeSignature Language="C#" Value="public sealed class NamedPipeClientStream : System.IO.Pipes.PipeStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NamedPipeClientStream extends System.IO.Pipes.PipeStream" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Pipes.NamedPipeClientStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Pipes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Pipes.PipeStream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開、<see cref="T:System.IO.Stream" />名前付きパイプ、同期および非同期の両方がサポートする読み取りおよび書き込み操作に関連します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きパイプは、パイプ サーバーと 1 つ以上のパイプ クライアント間の通信の一方向または双方向のパイプを提供します。 名前付きパイプは、ローカルまたはネットワーク経由で、プロセス間通信に使用できます。 単一のパイプ名は複数で共有できる<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクト。  
+  
+ すべてのプロセスは、名前付きパイプ サーバーまたはクライアント、またはその両方として機能できます。  
+  
+> [!NOTE]
+>  [!INCLUDE[winxppro](~/includes/winxppro-md.md)]と[!INCLUDE[win2kserver](~/includes/win2kserver-md.md)]、最大で 10 パイプは、ネットワーク経由で同時に接続できます。  
+  
+   
+  
+## Examples  
+ 次の例では、同じコンピューターを使用して、名前付きパイプで子プロセスに、親プロセスから文字列を送信する方法を示します。 この例で作成、<xref:System.IO.Pipes.NamedPipeServerStream>親プロセス内のオブジェクト。 <xref:System.IO.Pipes.NamedPipeServerStream>オブジェクトには、<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.Out>です。 サーバーは、を待機する<xref:System.IO.Pipes.NamedPipeClientStream>を子プロセスに接続するためのオブジェクト。 この例では、両方のプロセスが同じコンピューターには、<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクトには、<xref:System.IO.Pipes.PipeDirection>の値<xref:System.IO.Pipes.PipeDirection.In>です。 次に、親プロセスはユーザー指定の文字列を子プロセスに送信します。 文字列は、コンソールに表示されます。  
+  
+ この例では、クライアント プロセスは、サーバー プロセスに接続します。 パイプ クライアントとサーバーの両方のコードを含む完全なコード サンプルは、次を参照してください。[する方法: ネットワーク プロセス間通信に使用する名前付きパイプ](~/docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)です。  
+  
+ [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string pipeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string pipeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pipeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pipeName">パイプ名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />指定されたパイプ名を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次の既定値を使用します。  
+  
+-   既定のサーバー名"です。"です。  
+  
+-   既定の<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>です。  
+  
+-   既定の<xref:System.IO.Pipes.PipeOptions>値<xref:System.IO.Pipes.PipeOptions.None>です。  
+  
+-   既定の<xref:System.Security.Principal.TokenImpersonationLevel>値<xref:System.Security.Principal.TokenImpersonationLevel.None>です。  
+  
+-   既定の<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" /> は長さゼロの文字列です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />指定されたパイプとサーバーの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次の既定値を使用します。  
+  
+-   既定の<xref:System.IO.Pipes.PipeDirection>値<xref:System.IO.Pipes.PipeDirection.InOut>です。  
+  
+-   既定の<xref:System.IO.Pipes.PipeOptions>値<xref:System.IO.Pipes.PipeOptions.None>です。  
+  
+-   既定の<xref:System.Security.Principal.TokenImpersonationLevel>値<xref:System.Security.Principal.TokenImpersonationLevel.None>です。  
+  
+-   既定の<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName, System.IO.Pipes.PipeDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName, valuetype System.IO.Pipes.PipeDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String,System.IO.Pipes.PipeDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />指定されたパイプとサーバー名、および指定されたパイプの方向を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次の既定値を使用します。  
+  
+-   既定の<xref:System.IO.Pipes.PipeOptions>値<xref:System.IO.Pipes.PipeOptions.None>です。  
+  
+-   既定の<xref:System.Security.Principal.TokenImpersonationLevel>値<xref:System.Security.Principal.TokenImpersonationLevel.None>です。  
+  
+-   既定の<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+   
+  
+## Examples  
+ 次の例では、親プロセスから名前付きパイプを使用して子プロセスに文字列を送信する方法を示します。 この例で作成、<xref:System.IO.Pipes.NamedPipeClientStream>は、ローカル コンピューター上のパイプに接続し、子のプロセス内のオブジェクト。 サーバーの例がわかるように、<xref:System.IO.Pipes.NamedPipeServerStream>クラスです。 この例に示されている例の一部である、<xref:System.IO.Pipes.NamedPipeServerStream>と<xref:System.IO.Pipes.NamedPipeClientStream>クラスです。  
+  
+ [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。  
+  
+ または  
+  
+ <paramref name="direction" /> は有効な <see cref="T:System.IO.Pipes.PipeDirection" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (System.IO.Pipes.PipeDirection direction, bool isAsync, bool isConnected, Microsoft.Win32.SafeHandles.SafePipeHandle safePipeHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.Pipes.PipeDirection direction, bool isAsync, bool isConnected, class Microsoft.Win32.SafeHandles.SafePipeHandle safePipeHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,System.Boolean,System.Boolean,Microsoft.Win32.SafeHandles.SafePipeHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="isAsync" Type="System.Boolean" />
+        <Parameter Name="isConnected" Type="System.Boolean" />
+        <Parameter Name="safePipeHandle" Type="Microsoft.Win32.SafeHandles.SafePipeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。</param>
+        <param name="isAsync">
+          ハンドルが非同期的に開かれていることを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="isConnected">
+          <see langword="true" />パイプが接続されているを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="safePipeHandle">このパイプのハンドルを安全な場所<see cref="T:System.IO.Pipes.NamedPipeClientStream" />オブジェクトによってカプセル化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />で指定されたパイプの方向は指定されたパイプ ハンドルのクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IOException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="safePipeHandle" />有効なハンドルではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="safePipeHandle" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="direction" /> は有効な <see cref="T:System.IO.Pipes.PipeDirection" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName, System.IO.Pipes.PipeDirection direction, System.IO.Pipes.PipeOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName, valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.Pipes.PipeOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String,System.IO.Pipes.PipeDirection,System.IO.Pipes.PipeOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。</param>
+        <param name="options">パイプを開く方法または作成する方法を決定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />指定されたパイプ名とサーバー名、および指定されたパイプの方向とパイプ オプションを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次の既定値を使用します。  
+  
+-   既定の<xref:System.Security.Principal.TokenImpersonationLevel>値<xref:System.Security.Principal.TokenImpersonationLevel.None>です。  
+  
+-   既定の<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。  
+  
+ または  
+  
+ <paramref name="direction" /> は有効な <see cref="T:System.IO.Pipes.PipeDirection" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="options" /> は有効な <see cref="T:System.IO.Pipes.PipeOptions" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName, System.IO.Pipes.PipeDirection direction, System.IO.Pipes.PipeOptions options, System.Security.Principal.TokenImpersonationLevel impersonationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName, valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.Pipes.PipeOptions options, valuetype System.Security.Principal.TokenImpersonationLevel impersonationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String,System.IO.Pipes.PipeDirection,System.IO.Pipes.PipeOptions,System.Security.Principal.TokenImpersonationLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。</param>
+        <param name="options">パイプを開く方法または作成する方法を決定する列挙値の 1 つ。</param>
+        <param name="impersonationLevel">セキュリティ偽装レベルを決定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />クラスは、指定されたパイプ名とサーバー名、および指定されたパイプの方向、パイプのオプション、およびセキュリティ偽装レベルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、既定値を使用して<xref:System.IO.HandleInheritability>値<xref:System.IO.HandleInheritability.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。  
+  
+ または  
+  
+ <paramref name="direction" /> は有効な <see cref="T:System.IO.Pipes.PipeDirection" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="options" /> は有効な <see cref="T:System.IO.Pipes.PipeOptions" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="impersonationLevel" /> は有効な <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName, System.IO.Pipes.PipeAccessRights desiredAccessRights, System.IO.Pipes.PipeOptions options, System.Security.Principal.TokenImpersonationLevel impersonationLevel, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName, valuetype System.IO.Pipes.PipeAccessRights desiredAccessRights, valuetype System.IO.Pipes.PipeOptions options, valuetype System.Security.Principal.TokenImpersonationLevel impersonationLevel, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String,System.IO.Pipes.PipeAccessRights,System.IO.Pipes.PipeOptions,System.Security.Principal.TokenImpersonationLevel,System.IO.HandleInheritability)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="desiredAccessRights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <param name="desiredAccessRights">パイプの必要なアクセス権を指定する列挙値の 1 つ。</param>
+        <param name="options">パイプを開く方法または作成する方法を決定する列挙値の 1 つ。</param>
+        <param name="impersonationLevel">セキュリティ偽装レベルを決定する列挙値の 1 つ。</param>
+        <param name="inheritability">基になるハンドルを子プロセスが継承するかどうかを決定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />クラスは、指定されたパイプ名とサーバー名、および指定されたパイプのオプション、セキュリティ偽装レベル、および継承性モードを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのパイプの方向はによって決定されます、`desiredAccessRights`パラメーター。 場合、`desiredAccessRights`値は<xref:System.IO.Pipes.PipeAccessRights.ReadData>、パイプの方向になります<xref:System.IO.Pipes.PipeDirection.In>です。 場合の値`desiredAccessRights`は<xref:System.IO.Pipes.PipeAccessRights.WriteData>、パイプの方向になります<xref:System.IO.Pipes.PipeDirection.Out>です。 場合の値`desiredAccessRights`両方が含まれる<xref:System.IO.Pipes.PipeAccessRights.ReadData>と<xref:System.IO.Pipes.PipeAccessRights.WriteData>、パイプの方向になります<xref:System.IO.Pipes.PipeDirection.InOut>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。  
+  
+ または  
+  
+ <paramref name="options" /> は有効な <see cref="T:System.IO.Pipes.PipeOptions" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="impersonationLevel" /> は有効な <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> は有効な <see cref="T:System.IO.HandleInheritability" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamedPipeClientStream (string serverName, string pipeName, System.IO.Pipes.PipeDirection direction, System.IO.Pipes.PipeOptions options, System.Security.Principal.TokenImpersonationLevel impersonationLevel, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serverName, string pipeName, valuetype System.IO.Pipes.PipeDirection direction, valuetype System.IO.Pipes.PipeOptions options, valuetype System.Security.Principal.TokenImpersonationLevel impersonationLevel, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.String,System.String,System.IO.Pipes.PipeDirection,System.IO.Pipes.PipeOptions,System.Security.Principal.TokenImpersonationLevel,System.IO.HandleInheritability)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serverName" Type="System.String" />
+        <Parameter Name="pipeName" Type="System.String" />
+        <Parameter Name="direction" Type="System.IO.Pipes.PipeDirection" />
+        <Parameter Name="options" Type="System.IO.Pipes.PipeOptions" />
+        <Parameter Name="impersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="serverName">接続対象のリモート コンピューターの名前。ローカル コンピューターを指定する場合は "."。</param>
+        <param name="pipeName">パイプ名。</param>
+        <param name="direction">パイプの方向を決定する列挙値の 1 つ。</param>
+        <param name="options">パイプを開く方法または作成する方法を決定する列挙値の 1 つ。</param>
+        <param name="impersonationLevel">セキュリティ偽装レベルを決定する列挙値の 1 つ。</param>
+        <param name="inheritability">基になるハンドルを子プロセスが継承するかどうかを決定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />クラスは、指定されたパイプ名とサーバー名、および指定されたパイプの方向、パイプのオプション、セキュリティ偽装レベル、および継承性モードを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pipeName" /> または <paramref name="serverName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pipeName" />または<paramref name="serverName" />は長さ 0 の文字列。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="pipeName" /> は "匿名" に設定されています。  
+  
+ または  
+  
+ <paramref name="direction" /> は有効な <see cref="T:System.IO.Pipes.PipeDirection" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="options" /> は有効な <see cref="T:System.IO.Pipes.PipeOptions" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="impersonationLevel" /> は有効な <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> 値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> は有効な <see cref="T:System.IO.HandleInheritability" /> 値ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckPipePropertyOperations">
+      <MemberSignature Language="C#" Value="protected override void CheckPipePropertyOperations ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CheckPipePropertyOperations() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.CheckPipePropertyOperations" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public void Connect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.Connect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>無限のタイムアウト値で待機中のサーバーに接続します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.Pipes.NamedPipeClientStream.Connect%28System.Int32%29>無限のタイムアウト値を持つメソッドです。  
+  
+ このメソッドでは、使用可能になるパイプ インスタンスが待機します。 <xref:System.IO.Pipes.NamedPipeClientStream.Connect%2A>前に返す場合があります<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>から呼び出される、<xref:System.IO.Pipes.NamedPipeServerStream>オブジェクトが、<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>まで返されません<xref:System.IO.Pipes.NamedPipeClientStream.Connect%2A>が返されました。  
+  
+ 後のパイプに書き込まれたデータ、<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクトが接続すると、サーバーが呼び出される前に、<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>への呼び出しの後、サーバーを使用できます<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、親プロセスから名前付きパイプを使用して子プロセスに文字列を送信する方法を示します。 この例で作成、<xref:System.IO.Pipes.NamedPipeClientStream>は、ローカル コンピューター上のパイプに接続し、子のプロセス内のオブジェクト。 サーバーの例がわかるように、<xref:System.IO.Pipes.NamedPipeServerStream>クラスです。 この例に示されている例の一部である、<xref:System.IO.Pipes.NamedPipeServerStream>と<xref:System.IO.Pipes.NamedPipeClientStream>クラスです。  
+  
+ [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">クライアントが既に接続されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public void Connect (int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect(int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.Connect(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">接続がタイムアウトするまでサーバーの応答を待機する時間 (ミリ秒単位)。</param>
+        <summary>指定したタイムアウト期限内に、待機中のサーバーに接続します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、使用可能になるパイプ インスタンスが待機します。 <xref:System.IO.Pipes.NamedPipeClientStream.Connect%2A>前に返す場合があります<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>から呼び出される、<xref:System.IO.Pipes.NamedPipeServerStream>が<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>まで返されません<xref:System.IO.Pipes.NamedPipeClientStream.Connect%2A>が返されました。 設定する、`timeout`パラメーターを<xref:System.Threading.Timeout.Infinite>無限のタイムアウト値を指定します。  
+  
+ 後のパイプに書き込まれたデータ、<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクトが接続すると、サーバーが呼び出される前に、<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>への呼び出しの後、サーバーを使用できます<xref:System.IO.Pipes.NamedPipeServerStream.WaitForConnection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TimeoutException">指定したサーバーに接続できませんでした<paramref name="timeout" />期間。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" />0 より小さいに設定されていない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">クライアントが既に接続されています。</exception>
+        <exception cref="T:System.IO.IOException">サーバーが別のクライアントに接続されているし、タイムアウト期限が切れました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.ConnectAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>無限のタイムアウト時間で待機中のサーバーに非同期接続します。</summary>
+        <returns>非同期の接続操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.ConnectAsync(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">接続がタイムアウトするまでサーバーの応答を待機する時間 (ミリ秒単位)。</param>
+        <summary>指定したタイムアウト時間内に待機中のサーバーに非同期接続します。</summary>
+        <returns>非同期の接続操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.ConnectAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>待機中のサーバーに非同期接続し、キャンセル要求を監視します。</summary>
+        <returns>非同期の接続操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (int timeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(int32 timeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.ConnectAsync(System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">接続がタイムアウトするまでサーバーの応答を待機する時間 (ミリ秒単位)。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>指定したタイムアウト時間内に待機中のサーバーに非同期接続し、キャンセル要求を監視します。</summary>
+        <returns>非同期の接続操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~NamedPipeClientStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.NamedPipeClientStream.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースを解放し、前に他のクリーンアップ操作を実行、<see cref="T:System.IO.Pipes.NamedPipeClientStream" />インスタンスがガベージ コレクションによって回収されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfServerInstances">
+      <MemberSignature Language="C#" Value="public int NumberOfServerInstances { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfServerInstances" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.NamedPipeClientStream.NumberOfServerInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じパイプ名を共有するサーバー インスタンス数を取得します。</summary>
+        <value>同じパイプ名を共有するサーバー インスタンス数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サーバー インスタンスの数を返します、<xref:System.IO.Pipes.NamedPipeServerStream>オブジェクトを現在<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクトへのハンドルがまたはに接続されています。 場合、現在<xref:System.IO.Pipes.NamedPipeClientStream>オブジェクトが、名前付きパイプ サーバーにまだ接続されていないか、現在のパイプ ハンドルが設定されていない場合に、このプロパティがスロー、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次の例では、親プロセスから名前付きパイプを使用して子プロセスに文字列を送信する方法を示します。 この例では、<xref:System.IO.Pipes.NamedPipeClientStream>は、ローカル コンピューター上のパイプに接続し、子のプロセスでオブジェクトを作成します。 サーバーの例がわかるように、<xref:System.IO.Pipes.NamedPipeServerStream>クラスです。 この例に示されている例の一部である、<xref:System.IO.Pipes.NamedPipeServerStream>と<xref:System.IO.Pipes.NamedPipeClientStream>クラスです。  
+  
+ [!code-csharp[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/cs/Program.cs#01)]
+ [!code-vb[System.IO.Pipes.NamedPipeClientStream_Sample1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.NamedPipeClientStream_Sample1/vb/program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">パイプ ハンドルがまだ設定されていません。  
+  
+ または  
+  
+ 現在<see cref="T:System.IO.Pipes.NamedPipeClientStream" />オブジェクトがまだに接続されていない、<see cref="T:System.IO.Pipes.NamedPipeServerStream" />オブジェクト。</exception>
+        <exception cref="T:System.IO.IOException">パイプが壊れているか、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">基になるパイプ ハンドルは閉じられます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

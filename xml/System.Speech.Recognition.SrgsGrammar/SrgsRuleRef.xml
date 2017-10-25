@@ -1,0 +1,626 @@
+<Type Name="SrgsRuleRef" FullName="System.Speech.Recognition.SrgsGrammar.SrgsRuleRef">
+  <TypeSignature Language="C#" Value="public class SrgsRuleRef : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsRuleRef extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ImmutableObject(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>規則への参照を指定する文法要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>クラスは、再利用するときに特に便利です、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>要素の内容が既に定義されています。 既存のルールを再利用では、複雑な文法をより迅速に構築できます。  
+  
+ コンス トラクターのいずれかを使用することができます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>クラス参照を<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトまたは`rule`要素以下が true の場合。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトの親の文法との値がその<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Scope%2A>プロパティは<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleScope.Public>または<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleScope.Private>です。  
+  
+-   `rule`要素の値と外部の文法では、その`scope`属性は`public`します。  
+  
+-   `rule`要素は、外部の文法の値ではその`scope`属性は`private`、として宣言されていると、`root rule`外部の文法のです。  
+  
+ このクラスを表します、 `ruleref` World Wide Web Consortium (W3C) で定義されている要素[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)です。 については、SRGS`ruleref`要素および System.Speech でのサポートに関する詳細を参照してください。 [ruleref 要素](http://msdn.microsoft.com/en-us/56eb0031-4908-4788-83ab-7c5e19aa4ac0)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (System.Speech.Recognition.SrgsGrammar.SrgsRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsRule)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Speech.Recognition.SrgsGrammar.SrgsRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">参照するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />クラスしを参照するルールを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>を含む文章内のオブジェクト。 参照をルールを作成する、`rule`外部の文法ファイル内の要素は、次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%28System.Uri%2CSystem.String%2CSystem.String%2CSystem.String%29>  
+  
+   
+  
+## Examples  
+ 次の例では、語句を認識する文法「ワールド カップが勝利した民族が」とそれに続くワールド カップが勝利した国の名前。 作成した後、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクト`winnerRule`文字列識別子を与える`WorldCupWinner`例では、文字列を付加するルールに「ワールド カップが勝利した民族は」です。 使用して<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>オブジェクト、例では、欧州の国の一覧と南アメリカの国の一覧を作成し、それぞれのルールにそれぞれのリストを追加`ruleEurope`または`ruleSAmerica`です。 規則の参照を作成し`ruleEurope`と`ruleSAmerica`に追加して、`WorldCupWinner`ルール。  
+  
+```  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+}  
+```  
+  
+ 作成された文法には、次の形式があります。  
+  
+```  
+<grammar version="1.0" xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="WorldCupWinner">  
+    <rule id="WorldCupWinner" scope="public">  
+        <item> A nation that has won the world cup is </item>  
+        <one-of>  
+            <item>  
+                <ruleref uri="#EuropeanNations" />  
+            </item>  
+            <item>  
+                <ruleref uri="#SouthAmericanNations" />  
+            </item>  
+        </one-of>  
+    </rule>  
+    <rule id="EuropeanNations">  
+        <one-of>  
+            <item> England </item>  
+            <item> France </item>  
+            <item> Germany </item>  
+            <item> Italy </item>  
+        </one-of>  
+    </rule>  
+    <rule id="SouthAmericanNations">  
+        <one-of>  
+            <item> Argentina </item>  
+            <item> Brazil </item>  
+            <item> Uruguay </item>  
+        </one-of>  
+    </rule>  
+</grammar>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">含む文法の外部の文法ファイルの場所です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />クラスし、参照する外部の文法ファイルの場所を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、外部の文法ファイルへの参照をルールを作成します。 URI を参照するルールの識別子を含めることも`http://www.contoso.com/ExternalGrammar.grxml#targetRule`します。  場合、`uri`パラメーターは、ルール識別子を指定しないため、ルールの参照先の文法のルート ルールを指します。 参照をルールを作成する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>同じ文法内でオブジェクトを次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、バスの定期輸送サービスに関する情報を返すアプリケーションの文法を作成します。 最初のメソッドで`GrammarUrlForRoute`文法の場所を指定する文字列に追加され、ルートを指定する文字列を使用します。 これには、その文法の特定のルールを指定します。 メソッドを返します、`Uri`そのルールにします。  
+  
+ 2 番目のメソッドでは、 `CreateGrammarForRoute`、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>という名前の要素`grammar`で指定されたルール参照を持つ、`Uri`によって渡された`GrammarUrlForRoute`です。 _Route をという名前の変数が外側のクラスのメンバーであることに注意してください。  
+  
+```  
+private Uri GrammarUrlForRoute(string route)  
+{  
+  return new Uri("http://localhost/MyBus/MyBusLocations.grxml#LocationsForRoute" + route);  
+}  
+  
+private SrgsDocument CreateGrammarForRoute()  
+{  
+  SrgsDocument grammar = new SrgsDocument();  
+  grammar.Mode = SrgsGrammarMode.Voice;  
+  SrgsRule rule = new SrgsRule("LocationsForRoute" + _route);  
+  SrgsRuleRef ruleref = new SrgsRuleRef(GrammarUrlForRoute(_route));  
+  
+  SrgsSemanticInterpretationTag tag = new SrgsSemanticInterpretationTag ("$.Location = $$");  
+  
+  rule.Elements.Add(ruleref);  
+  rule.Elements.Add(tag);  
+  grammar.Rules.Add(rule);  
+  grammar.Root = rule;  
+  return grammar;  
+}  
+```  
+  
+> [!NOTE]
+>  _ という名前の変数`route`は前のサンプルでは不定と宣言されていません。 として宣言する必要があります、<xref:System.String>し、前のサンプルをコンパイルおよび実行する前に、特定のバス ルートのルート番号を格納します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (System.Speech.Recognition.SrgsGrammar.SrgsRule rule, string semanticKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsRule rule, string semanticKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsRule,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Speech.Recognition.SrgsGrammar.SrgsRule" />
+        <Parameter Name="semanticKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rule">参照するオブジェクト。</param>
+        <param name="semanticKey">セマンティック キー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />参照およびセマンティック キーを含む文字列へのルールを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>を含む文章内のオブジェクト。 参照をルールを作成する、`rule`外部の文法ファイル内の要素は、次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%28System.Uri%2CSystem.String%2CSystem.String%2CSystem.String%29>  
+  
+   
+  
+## Examples  
+ 次の例では、フライトの都市を選択するための文法を作成します。 2 つの例では、構築<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>インスタンスをそれぞれ指定するセマンティック キー。 参照対象と同じルール両方<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>という名前のオブジェクト`cities`、ルール参照から認識結果を別のセマンティック キーでタグが、します。 セマンティック キーでは、出発都市や、航空券の到着市区町村として認識されている、市区町村を識別します。 ハンドラーを<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベントでは、キーを使用して、使用して作成されたセマンティクス値を取得する<xref:System.Speech.Recognition.SrgsGrammar.SrgsNameValueTag.%23ctor%2A>認識結果からです。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+using System.Speech.Recognition.SrgsGrammar;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a SpeechRecognitionEngine object.  
+    {  
+      using (SpeechRecognitionEngine recognizer =  
+         new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US")))  
+      {  
+  
+        // Build a rule with a list of cities, assign a semantic value to each city.  
+        SrgsItem chi = new SrgsItem("Chicago");  
+        chi.Add(new SrgsNameValueTag("ORD"));  
+        SrgsItem bos = new SrgsItem("Boston");  
+        bos.Add(new SrgsNameValueTag("BOS"));  
+        SrgsItem mia = new SrgsItem("Miami");  
+        mia.Add(new SrgsNameValueTag("MIA"));  
+        SrgsItem dal = new SrgsItem("Dallas");  
+        dal.Add(new SrgsNameValueTag("DFW"));  
+  
+        SrgsOneOf cities = new SrgsOneOf(new SrgsItem[] { chi, bos, mia, dal });  
+        SrgsRule citiesRule = new SrgsRule("flightCities");  
+        citiesRule.Add(cities);  
+  
+        // Build the root rule, add rule references to the cities rule.  
+        SrgsRule flightBooker = new SrgsRule("bookFlight");  
+        flightBooker.Add(new SrgsItem("I want to fly from"));  
+        flightBooker.Add(new SrgsRuleRef(citiesRule, "departureCity"));  
+        flightBooker.Add(new SrgsItem("to"));  
+        flightBooker.Add(new SrgsRuleRef(citiesRule, "arrivalCity"));  
+  
+        // Build an SrgsDocument object from the flightBooker rule and add the cities rule.  
+        SrgsDocument cityChooser = new SrgsDocument(flightBooker);  
+        cityChooser.Rules.Add(citiesRule);  
+  
+        // Create a Grammar object from the SrgsDocument and load it to the recognizer.  
+        Grammar departArrive = new Grammar(cityChooser);  
+        departArrive.Name = ("Cities Grammar");  
+        recognizer.LoadGrammarAsync(departArrive);  
+  
+        // Configure recognizer input.  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Attach a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Start asynchronous recognition.  
+        recognizer.RecognizeAsync();  
+        Console.WriteLine("Starting asynchronous recognition...");  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+      Console.WriteLine();  
+      Console.WriteLine("Semantic results:");  
+      Console.WriteLine("  The departure city is: " + e.Result.Semantics["departureCity"].Value);  
+      Console.WriteLine("  The destination city is: " + e.Result.Semantics["arrivalCity"].Value);  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (Uri uri, string rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, string rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="rule" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">含む文法の外部の文法ファイルの場所です。</param>
+        <param name="rule">参照するルールの識別子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />クラス、外部の文法ファイルの場所を参照するルールの識別子を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、`rule`外部文法ファイル内の要素。 参照をルールを作成する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>同じ文法内でオブジェクトを次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。  
+  
+ <paramref name="rule" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="rule" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (System.Speech.Recognition.SrgsGrammar.SrgsRule rule, string semanticKey, string parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsRule rule, string semanticKey, string parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsRule,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rule" Type="System.Speech.Recognition.SrgsGrammar.SrgsRule" />
+        <Parameter Name="semanticKey" Type="System.String" />
+        <Parameter Name="parameters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rule">参照するオブジェクト。</param>
+        <param name="semanticKey">セマンティック キー。</param>
+        <param name="parameters">初期化パラメーター、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />セマンティック ディクショナリ、および初期化パラメーターの文字列のエイリアスを参照するルールを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>を含む文章内のオブジェクト。 参照をルールを作成する、`rule`外部の文法ファイル内の要素は、次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%28System.Uri%2CSystem.String%2CSystem.String%2CSystem.String%29>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (Uri uri, string rule, string semanticKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, string rule, string semanticKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Uri,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="rule" Type="System.String" />
+        <Parameter Name="semanticKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">含む文法の外部の文法ファイルの場所です。</param>
+        <param name="rule">参照するルールの識別子。</param>
+        <param name="semanticKey">セマンティックの辞書のエイリアス文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />クラス、外部の文法の場所を指定するファイルをルールの識別子とセマンティックのディクショナリの文字列のエイリアスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、`rule`外部文法ファイル内の要素。 参照をルールを作成する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>同じ文法内でオブジェクトを次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。  
+  
+ <paramref name="semanticKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="semanticKey" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsRuleRef (Uri uri, string rule, string semanticKey, string parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri, string rule, string semanticKey, string parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.#ctor(System.Uri,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="rule" Type="System.String" />
+        <Parameter Name="semanticKey" Type="System.String" />
+        <Parameter Name="parameters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">含む文法の外部の文法ファイルの場所です。</param>
+        <param name="rule">参照するルールの識別子。</param>
+        <param name="semanticKey">セマンティック キー。</param>
+        <param name="parameters">初期化パラメーター、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />クラス、外部の文法の場所を指定するファイル、ルールの識別子、セマンティックのディクショナリ、および初期化パラメーターの文字列のエイリアスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの参照をルールの作成、`rule`外部文法ファイル内の要素。 参照をルールを作成する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>同じ文法内でオブジェクトを次のコンス トラクターのいずれかを使用します。  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+-   <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.%23ctor%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dictation">
+      <MemberSignature Language="C#" Value="public static readonly System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Dictation;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Dictation" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Dictation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRuleRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この文法に関連付けられている、ディクテーション トピックで定義されている音声入力が一致できる規則を定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Garbage">
+      <MemberSignature Language="C#" Value="public static readonly System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Garbage;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Garbage" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Garbage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRuleRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルールの次の一致、次のトークンでは、最大、または音声の入力が終了するまで、音声が一致するルールを定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MnemonicSpelling">
+      <MemberSignature Language="C#" Value="public static readonly System.Speech.Recognition.SrgsGrammar.SrgsRuleRef MnemonicSpelling;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Speech.Recognition.SrgsGrammar.SrgsRuleRef MnemonicSpelling" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.MnemonicSpelling" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRuleRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声入力は、単語のスペル アウト文字を含めることができ、そのスペル アウト文字が単語として認識されることを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Null" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRuleRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>任意のオーディオ入力がない場合は自動的に一致するルールを定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Params">
+      <MemberSignature Language="C#" Value="public string Params { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Params" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Params" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化パラメーターを取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />要素。</summary>
+        <value>初期化パラメーター、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SemanticKey">
+      <MemberSignature Language="C#" Value="public string SemanticKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SemanticKey" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.SemanticKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セマンティックのディクショナリのエイリアスの文字列を取得します。</summary>
+        <value>セマンティックの辞書のエイリアス文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルールの URI を取得この<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef" />要素の参照。</summary>
+        <value>参照するルールの場所です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Void">
+      <MemberSignature Language="C#" Value="public static readonly System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Void;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Speech.Recognition.SrgsGrammar.SrgsRuleRef Void" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef.Void" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRuleRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み上げしないことができます、ルールを定義します。 シーケンスに VOID を自動的に挿入すると、そのシーケンスが unspeakable になります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

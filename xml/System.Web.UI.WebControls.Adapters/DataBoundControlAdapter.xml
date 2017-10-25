@@ -1,0 +1,161 @@
+<Type Name="DataBoundControlAdapter" FullName="System.Web.UI.WebControls.Adapters.DataBoundControlAdapter">
+  <TypeSignature Language="C#" Value="public class DataBoundControlAdapter : System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataBoundControlAdapter extends System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Adapters.WebControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動作をカスタマイズ、<see cref="T:System.Web.UI.WebControls.DataBoundControl" />アダプターが特定のブラウザーの要求に関連付けられているオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコントロール、<xref:System.Web.UI.WebControls.DataBoundControl>クラスは、データ ソースにバインドし、バインドされているデータ ソース内の項目を列挙することにより、ユーザー インターフェイスまたは子コントロールの階層が生成されます。 <xref:System.Web.UI.WebControls.DataBoundControl>などのデータ ソースにバインドできるすべてのコントロールの共通の特性を定義する抽象基本クラスには、<xref:System.Web.UI.WebControls.DataGrid>と<xref:System.Web.UI.WebControls.ListBox>コントロール。 詳細については、「<xref:System.Web.UI.WebControls.DataBoundControl>」を参照してください。  
+  
+ A<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>の動作を変更して、<xref:System.Web.UI.WebControls.DataBoundControl>の特定のブラウザーまたはブラウザー、または機能の一部の機能に対するフィルターとしてのクラスです。 派生する特殊なクラスにカプセル化できますレンダリング動作に適応性の多く、<xref:System.Web.UI.HtmlTextWriter>クラスです。 したがって、さまざまなブラウザー クラスの動作、またはその信頼に適応性の 1 つのアダプターを使用できること可能性がありますが、<xref:System.Web.UI.HtmlTextWriter>クラスを不要なコントロール アダプターの使用して使用することができます。  
+  
+ ある場合、各コントロールが .browser 定義ファイルからアダプターへの明示的なマッピングを持つ`<controlAdapter>`これらのファイル内のエントリ。 したがって、いずれかへのアクセスを<xref:System.Web.UI.Control.Adapter%2A>のプロパティ、<xref:System.Web.UI.WebControls.DataBoundControl>を使用して、<xref:System.Web.HttpBrowserCapabilities>コントロール アダプターのマッピングの参照を実行する .browser 定義ファイルから抽出されるオブジェクト。  
+  
+ 処理中には、.NET Framework は、ブラウザー固有の可能性があるコントロールのメソッドの呼び出しを受け取ります。 コントロール アダプターが接続されている場合、.NET Framework は、関連付けられているアダプターのメソッドを呼び出します。 詳細については、「<xref:System.Web.UI.Adapters.ControlAdapter>」を参照してください。  
+  
+ M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding(System.Collections.IEnumerable) メソッドは、関連付けられている列挙可能なコレクションにバインド<xref:System.Web.UI.WebControls.DataBoundControl>です。 <xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.Control%2A>プロパティを厳密に型指定された参照を返します、<xref:System.Web.UI.WebControls.DataBoundControl>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、作成し、2 つの派生したコントロールを使用します。  
+  
+-   `MyDataBound`から派生したクラス<xref:System.Web.UI.WebControls.DataBoundControl>、単純な読み取り専用のグリッド コントロールです。  
+  
+-   `MyDataBoundAdapter`から派生したクラス<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>、小さな画面ブラウザーに適した行区切り記号を使用して、1 次元のリストとしてグリッド データをレンダリングします。  
+  
+ 最初のコード例は、Web ページを使用して宣言する、`MyDataBound`コントロール クラスのインスタンスおよび<xref:System.Web.UI.WebControls.ObjectDataSource>の形式でデータを提供する、<xref:System.Data.DataView>オブジェクト。  
+  
+  
+  
+ 2 番目のコード例が含まれていますが、派生`MyDataBound`と`MyDataBoundAdapter`クラス。  
+  
+-   `MyDataBound`クラスのオーバーライド、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding%2A>を保存する方法、<xref:System.Collections.IEnumerator>データ ソース、およびオーバーライドのコレクション、 <xref:System.Web.UI.WebControls.WebControl.RenderContents%2A> HTML としてデータ ソースを表示するためにメソッド`<table>`です。  
+  
+-   `MyDataBoundAdapter`クラスのオーバーライド<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding%2A>を 1 次元のデータ ソースを保存する<xref:System.Collections.ArrayList>し、行区切り記号を追加します。 オーバーライド<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>表示するために、<xref:System.Collections.ArrayList>で区切られたフィールドの一覧として`<br />`タグ。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/CS/mydatabound.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/VB/mydatabound.vb#1)]  
+  
+ 3 番目のコード例で使用するコントロール アダプターがないことを指定する構成ファイルを使用する`MyDataBound`Microsoft Internet Explorer ブラウザーでは、コントロール、`MyDataBoundAdapter`と共に使用される`MyDataBound`Openwave をブラウザー コントロール。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBoundControlAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>クラスの対応する、作成時に<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.DataBoundControl Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataBoundControl Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataBoundControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密に型指定された参照を取得、<see cref="T:System.Web.UI.WebControls.DataBoundControl" />このコントロール アダプターに関連付けられているオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataBoundControl" /> の割り当て先である <see cref="T:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>オブジェクトにアタッチされて、<xref:System.Web.UI.WebControls.DataBoundControl>コントロール、.NET Framework は、コントロールのメンバーではなく特定のアダプター メンバーを呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.Control%2A>から派生したアダプターのプロパティ、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>クラスです。 参照を厳密に型を返します、`MyDataBound`コントロール。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/CS/mydatabound.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/VB/mydatabound.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter" />クラスを実装してくださいには、少なくとも、<see langword="Control" />例」のセクションで示すように、コントロールの厳密に型指定されたインスタンスを返すプロパティ</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected virtual void PerformDataBinding (System.Collections.IEnumerable data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void PerformDataBinding(class System.Collections.IEnumerable data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Collections.IEnumerable" />の<see cref="T:System.Object" />をバインドする派生<see cref="T:System.Web.UI.WebControls.DataBoundControl" />です。</param>
+        <summary>関連付けられているデータ ソースのデータ バインド<see cref="T:System.Web.UI.WebControls.DataBoundControl" />コントロール アダプター オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding%2A>の代わりにメソッドが呼び出された、<xref:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding%2A?displayProperty=nameWithType>メソッドと、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter>から派生したコントロールにコントロール アダプターが接続されている、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ オーバーライドでは通常、<xref:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding%2A?displayProperty=nameWithType>種類の名前と、必要なときの値を作成するデータを反復処理し、内部コレクションに保存します。 通常、<xref:System.Web.UI.WebControls.WebControl.RenderContents%2A>または同様の方法の<xref:System.Web.UI.WebControls.DataBoundControl>内部コレクションからユーザー インターフェイスまたは子コントロールが設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding%2A>コレクションを 1 次元のデータ ソースの保存に<xref:System.Collections.ArrayList>オブジェクトし、行区切り記号を追加します。 オーバーライドする方法も示しています、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.RenderContents%2A>メソッドを表示するために、<xref:System.Collections.ArrayList>で区切られたフィールドの一覧として`<br />`タグ。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/CS/mydatabound.cs#3)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.DataBoundControlAdapter#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.DataBoundControlAdapter/VB/mydatabound.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライド、<see cref="M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding(System.Collections.IEnumerable)" />方法特殊化されるロジックをバインディングが対象のブラウザーに必要な — などと項目名必要があります用に作成されるが異なるよりコントロールの一般的な使用法。  
+  
+ <see cref="M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding(System.Collections.IEnumerable)" />メソッドの呼び出しを基本<see cref="M:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding(System.Collections.IEnumerable)" />です。 呼び出す必要があります、<see cref="M:System.Web.UI.WebControls.Adapters.DataBoundControlAdapter.PerformDataBinding(System.Collections.IEnumerable)" />メソッドを基本のデータ バインディング機能を必要とする場合にのみ、<see cref="T:System.Web.UI.WebControls.DataBoundControl" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

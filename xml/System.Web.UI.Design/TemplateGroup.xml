@@ -1,0 +1,166 @@
+<Type Name="TemplateGroup" FullName="System.Web.UI.Design.TemplateGroup">
+  <TypeSignature Language="C#" Value="public class TemplateGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateGroup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.TemplateGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクション<see cref="T:System.Web.UI.Design.TemplateDefinition" />デザイン時に Web サーバー コントロールのテンプレートの要素を表すオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から派生したコントロール デザイナー クラスを作成する方法を示します、<xref:System.Web.UI.Design.ControlDesigner>クラスです。 このコントロール デザイナーには、4 つのテンプレートを持つコントロールがサポートしています。  
+  
+ これには、コードをコンパイルしの設計でホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、デザイン ビューでページを確認します。 コントロールを選択して、変更するテンプレートを選択するアクションの一覧をクリックし、ドラッグ アンド ドロップ機能を使用して、テンプレートにコントロールを移動します。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#1)]
+ [!code-aspx-csharp[DesignerTemplateGroupSample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.aspx#2)]  
+
+ [!code-vb[DesignerTemplateGroupSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#1)]  
+ [!code-aspx-vb[DesignerTemplateGroupSample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateGroup (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateGroup.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">グループの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateGroup" />クラス、指定された名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateGroup (string groupName, System.Web.UI.WebControls.Style groupStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string groupName, class System.Web.UI.WebControls.Style groupStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateGroup.#ctor(System.String,System.Web.UI.WebControls.Style)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+        <Parameter Name="groupStyle" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">グループの名前</param>
+        <param name="groupStyle">A<see cref="T:System.Web.UI.WebControls.Style" />グループでのテンプレートに適用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateGroup" />クラス、指定された名前とスタイルを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddTemplateDefinition">
+      <MemberSignature Language="C#" Value="public void AddTemplateDefinition (System.Web.UI.Design.TemplateDefinition templateDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddTemplateDefinition(class System.Web.UI.Design.TemplateDefinition templateDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateGroup.AddTemplateDefinition(System.Web.UI.Design.TemplateDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateDefinition" Type="System.Web.UI.Design.TemplateDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="templateDefinition"><see cref="T:System.Web.UI.Design.TemplateDefinition" />。</param>
+        <summary>指定された追加<see cref="T:System.Web.UI.Design.TemplateDefinition" />グループにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public string GroupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateGroup.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループの名前を取得します。</summary>
+        <value>グループの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style GroupStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style GroupStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateGroup.GroupStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループの現在のスタイルを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" />設定、それ以外の場合、グループの<see langword="null" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateGroup.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループのすべてのテンプレートがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />グループにテンプレートがない場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Templates">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.TemplateDefinition[] Templates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateDefinition[] Templates" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateGroup.Templates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateDefinition[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グループ内のすべてのテンプレート定義の配列を取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.TemplateDefinition" /> オブジェクトの配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

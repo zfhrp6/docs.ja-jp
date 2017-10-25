@@ -1,0 +1,393 @@
+<Type Name="ICodeGenerator" FullName="System.CodeDom.Compiler.ICodeGenerator">
+  <TypeSignature Language="C#" Value="public interface ICodeGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICodeGenerator" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.ICodeGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コードを生成するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、コード プロバイダーの構成の実装の<xref:System.CodeDom.Compiler.CodeDomProvider>、 <xref:System.CodeDom.Compiler.ICodeGenerator>、 <xref:System.CodeDom.Compiler.ICodeParser>、および<xref:System.CodeDom.Compiler.ICodeCompiler>です。 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>、 <xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>、および<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>メソッドは廃止されましたが、および方法<xref:System.CodeDom.Compiler.ICodeGenerator>と<xref:System.CodeDom.Compiler.ICodeCompiler>で直接利用、<xref:System.CodeDom.Compiler.CodeDomProvider>クラスです。 コード プロバイダーの実装でこれらのメソッドをオーバーライドして、基本メソッドを呼び出さないでください。  
+  
+ コンパイラの開発者は、特定の言語でコードを動的に生成できるようにするには、このインターフェイスを実装できます。 これは、ASP.NET などの埋め込みコードを含むテンプレート ドキュメントのさまざまなコードを生成する、デバッグ可能なコンテンツを含む動的アセンブリの作成ウィザードの作成などの目的で使用できます。  
+  
+ <xref:System.CodeDom.Compiler.ICodeGenerator>実装は通常を呼び出すことによって取得、<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>メソッドの<xref:System.CodeDom.Compiler.CodeDomProvider>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateEscapedIdentifier">
+      <MemberSignature Language="C#" Value="public string CreateEscapedIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateEscapedIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.CreateEscapedIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">エスケープされた識別子を作成する文字列。</param>
+        <summary>指定された値に対して、エスケープされた識別子を作成します。</summary>
+        <returns>値のエスケープされた識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.ICodeGenerator.CreateEscapedIdentifier%2A>識別子が予約されていると競合しているかどうかをテストまたは言語のキーワードを場合は、言語固有のエスケープ コードの書式設定と同じ名前を返します。 これは、エスケープされた識別子に呼ばれます。 エスケープされた識別子には、同じ`value`が、エスケープ コードの書式が、キーワード、識別子を区別するために追加します。 2 つの実装の例では、先頭、`value`と"@"ひとまとめにして、または、`value`で"["および"]"です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateValidIdentifier">
+      <MemberSignature Language="C#" Value="public string CreateValidIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateValidIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.CreateValidIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">有効な識別子を生成する文字列。</param>
+        <summary>指定された値に対して有効な識別子を作成します。</summary>
+        <returns>指定された値に対して有効な識別子です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.ICodeGenerator.CreateValidIdentifier%2A>テストするかどうか予約済みと識別子の競合や言語キーワードを返します、有効な識別子名を競合しません。 返される識別子が同じを含む`value`と競合する場合に予約されています言語のキーワードであるかはエスケープ コードの書式が、キーワード、識別子を区別するために追加します。 通常、変更が必要な値が返されます先頭にアンダー スコア「_」。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromCompileUnit">
+      <MemberSignature Language="C#" Value="public void GenerateCodeFromCompileUnit (System.CodeDom.CodeCompileUnit e, System.IO.TextWriter w, System.CodeDom.Compiler.CodeGeneratorOptions o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromCompileUnit(class System.CodeDom.CodeCompileUnit e, class System.IO.TextWriter w, class System.CodeDom.Compiler.CodeGeneratorOptions o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GenerateCodeFromCompileUnit(System.CodeDom.CodeCompileUnit,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="e">コード生成の対象となる <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <param name="w"><see cref="T:System.IO.TextWriter" />出力コードにします。</param>
+        <param name="o">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定した Code Document Object Model (CodeDOM) の コンパイル ユニットのコードを生成し、指定したオプションを使用して、指定したテキスト ライターに出力します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromExpression">
+      <MemberSignature Language="C#" Value="public void GenerateCodeFromExpression (System.CodeDom.CodeExpression e, System.IO.TextWriter w, System.CodeDom.Compiler.CodeGeneratorOptions o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromExpression(class System.CodeDom.CodeExpression e, class System.IO.TextWriter w, class System.CodeDom.Compiler.CodeGeneratorOptions o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GenerateCodeFromExpression(System.CodeDom.CodeExpression,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.CodeDom.CodeExpression" />を示すコードを生成する式。</param>
+        <param name="w"><see cref="T:System.IO.TextWriter" />出力コードにします。</param>
+        <param name="o">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定した Code Document Object Model (CodeDOM) の式のコードを生成し、指定したテキスト ライターに出力します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromNamespace">
+      <MemberSignature Language="C#" Value="public void GenerateCodeFromNamespace (System.CodeDom.CodeNamespace e, System.IO.TextWriter w, System.CodeDom.Compiler.CodeGeneratorOptions o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromNamespace(class System.CodeDom.CodeNamespace e, class System.IO.TextWriter w, class System.CodeDom.Compiler.CodeGeneratorOptions o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GenerateCodeFromNamespace(System.CodeDom.CodeNamespace,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.CodeDom.CodeNamespace" />コード生成の対象名前空間を示すです。</param>
+        <param name="w"><see cref="T:System.IO.TextWriter" />出力コードにします。</param>
+        <param name="o">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定した Code Document Object Model (CodeDOM) の名前空間のコードを生成し、指定したオプションを使用して、指定したテキスト ライターに出力します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromStatement">
+      <MemberSignature Language="C#" Value="public void GenerateCodeFromStatement (System.CodeDom.CodeStatement e, System.IO.TextWriter w, System.CodeDom.Compiler.CodeGeneratorOptions o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromStatement(class System.CodeDom.CodeStatement e, class System.IO.TextWriter w, class System.CodeDom.Compiler.CodeGeneratorOptions o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GenerateCodeFromStatement(System.CodeDom.CodeStatement,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.CodeDom.CodeStatement" />
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.CodeDom.CodeStatement" />に変換する CodeDOM 要素を格納します。</param>
+        <param name="w"><see cref="T:System.IO.TextWriter" />出力コードにします。</param>
+        <param name="o">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定した Code Document Object Model (CodeDOM) のステートメントのコードを生成し、指定したオプションを使用して、指定したテキスト ライターに出力します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeFromType">
+      <MemberSignature Language="C#" Value="public void GenerateCodeFromType (System.CodeDom.CodeTypeDeclaration e, System.IO.TextWriter w, System.CodeDom.Compiler.CodeGeneratorOptions o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromType(class System.CodeDom.CodeTypeDeclaration e, class System.IO.TextWriter w, class System.CodeDom.Compiler.CodeGeneratorOptions o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GenerateCodeFromType(System.CodeDom.CodeTypeDeclaration,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.CodeDom.Compiler.CodeGeneratorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.CodeDom.CodeTypeDeclaration" />コードを生成する種類を示すです。</param>
+        <param name="w"><see cref="T:System.IO.TextWriter" />出力コードにします。</param>
+        <param name="o">A<see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />コードを生成するために使用するオプションを示すです。</param>
+        <summary>指定した Code Document Object Model (CodeDOM) の型宣言のコードを生成し、指定したオプションを使用して、指定したテキスト ライターに出力します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeOutput">
+      <MemberSignature Language="C#" Value="public string GetTypeOutput (System.CodeDom.CodeTypeReference type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTypeOutput(class System.CodeDom.CodeTypeReference type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.GetTypeOutput(System.CodeDom.CodeTypeReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.CodeDom.CodeTypeReference" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.CodeDom.CodeTypeReference" />を示す戻り値の型。</param>
+        <summary>指定したによって示される型を取得<see cref="T:System.CodeDom.CodeTypeReference" />です。</summary>
+        <returns>このコード ジェネレーターがコードを生成するように設計された言語の指定した型のテキスト表現。 たとえば、Visual Basic では、System.Int32 型を渡すことにより返されます「整数」。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidIdentifier">
+      <MemberSignature Language="C#" Value="public bool IsValidIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsValidIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.IsValidIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">有効な識別子であるためにテストする値。</param>
+        <summary>指定した値が現在の言語に対して有効な識別子であるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="value" />パラメーターが有効な識別子です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、識別子が有効かどうかをテストします。 実装するときに<xref:System.CodeDom.Compiler.ICodeGenerator.IsValidIdentifier%2A>派生クラスに渡される値をテストする方法の設計および返す`true`言語の規則に適合させますであり、キーワードと競合していない場合にのみです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Supports">
+      <MemberSignature Language="C#" Value="public bool Supports (System.CodeDom.Compiler.GeneratorSupport supports);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Supports(valuetype System.CodeDom.Compiler.GeneratorSupport supports) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.Supports(System.CodeDom.Compiler.GeneratorSupport)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="supports" Type="System.CodeDom.Compiler.GeneratorSupport" />
+      </Parameters>
+      <Docs>
+        <param name="supports">ジェネレーターをテストする機能。</param>
+        <summary>ジェネレーターが、指定したによって表される言語機能のサポートを提供するかどうかを示す値を取得<see cref="T:System.CodeDom.Compiler.GeneratorSupport" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />指定した機能がサポートされています。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数がこのメソッドを呼び出すことができる<xref:System.CodeDom.Compiler.GeneratorSupport>と共にバイナリ"Or"演算子 (&#124;) の適切な機能フラグのセットを結合することで、一連の機能をテストするには、一度にフラグ。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateIdentifier">
+      <MemberSignature Language="C#" Value="public void ValidateIdentifier (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ValidateIdentifier(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.ICodeGenerator.ValidateIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証する識別子。</param>
+        <summary>指定した値が有効な識別子ではない場合は、例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を返すのではなくは、このメソッドは、指定された識別子は、メソッドの実装に従った有効な場合に例外をスローします。 通常、この例外は、<xref:System.ArgumentException>です。 このメソッドは、無効な識別子の値に基づいてわかりやすいエラー メッセージを作成するには、このメソッドを実装するコード ジェネレーターを使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">識別子が正しくありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

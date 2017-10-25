@@ -1,0 +1,316 @@
+<Type Name="DesignerGlyph" FullName="System.Workflow.ComponentModel.Design.DesignerGlyph">
+  <TypeSignature Language="C#" Value="public abstract class DesignerGlyph" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerGlyph extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.DesignerGlyph" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティ デザイナーの Z オーダーの最前面にグリフを描画します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> クラスは、ワークフロー デザイン サーフェイスで使用されるすべてのデザイナー グリフの基本クラスです。  
+  
+ アクティビティ デザイナーの開発者は、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph> から継承したクラスを使用して <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> のサーフェイスにカスタム グリフを描画できます。 <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> クラスは、こうしたグリフを Z オーダーのトップレベルに描画します。視覚的には、デザイナー上の他のすべてのグリフの上に、カスタム グリフの <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> 値に基づいて配置されます。 <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティの値が小さいほど優先順位が高いことを示し、グリフはアクティビティ デザイナーの Z オーダーの最前面に描画されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph> クラスから派生したグリフ クラスのコード例を次に示します。  このコードは、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.GetBounds%2A> メソッドおよび <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint%2A> メソッドをオーバーライドします。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#132](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#132)]
+ [!code-vb[WF_Samples#132](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#132)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> から継承する場合は、<see cref="M:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint(System.Drawing.Graphics,System.Boolean,System.Workflow.ComponentModel.Design.AmbientTheme,System.Workflow.ComponentModel.Design.ActivityDesigner)" /> メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerGlyph ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerGlyph.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeActivated">
+      <MemberSignature Language="C#" Value="public virtual bool CanBeActivated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanBeActivated" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerGlyph.CanBeActivated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> が、自身が関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> にフォーカスを獲得できるかどうかを示す値を取得します。</summary>
+        <value>
+          デザイナーのグリフをアクティブにできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ CanBeActivated プロパティの実装例を次に示します。  この例は、追跡プロファイル デザイナーの SDK サンプルです。  詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#119](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#119)]
+ [!code-vb[WF_Samples#119](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#119)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Rectangle GetBounds (System.Workflow.ComponentModel.Design.ActivityDesigner designer, bool activated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Drawing.Rectangle GetBounds(class System.Workflow.ComponentModel.Design.ActivityDesigner designer, bool activated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerGlyph.GetBounds(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="activated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="designer">グリフを関連付ける <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="activated">
+          グリフをアクティビティ デザイナー画面に表示するかどうかを指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> のグリフの境界を返します。</summary>
+        <returns>グリフの境界を表す <see cref="T:System.Drawing.Rectangle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされない限り、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.GetBounds%2A> は、グリフが関連付けられているアクティビティ デザイナーの境界を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.GetBounds%2A> メソッドをオーバーライドする方法を示しています。 このコードは、カスタム グリフ オブジェクトのサイズと位置を設定します。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#133](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#133)]
+ [!code-vb[WF_Samples#133](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#133)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HighestPriority">
+      <MemberSignature Language="C#" Value="public const int HighestPriority = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 HighestPriority = (0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerGlyph.HighestPriority" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> の最も高くできる優先順位を表します。 この値は定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティの値が小さいほど優先順位が高いことを示し、グリフはアクティビティ デザイナーの Z オーダーの最前面に描画されます。 値、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.HighestPriority>フィールドは 0 です。  
+  
+> [!NOTE]
+>  この定数値は、カスタム グリフを作成する際のガイドラインになります。 カスタム グリフをデザインするときに、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティにさまざまな値を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowestPriority">
+      <MemberSignature Language="C#" Value="public const int LowestPriority = 1000000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 LowestPriority = (1000000)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerGlyph.LowestPriority" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1000000</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> の最も低くできる優先順位を表します。 この値は定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティの値が大きいほど優先順位が低いことを示し、グリフはアクティビティ デザイナーの Z オーダーの最後面に描画されます。 値、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.LowestPriority>フィールドは 1000000 です。  
+  
+> [!NOTE]
+>  この定数値は、カスタム グリフを作成する際のガイドラインになります。 カスタム グリフをデザインするときに、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティにさまざまな値を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalPriority">
+      <MemberSignature Language="C#" Value="public const int NormalPriority = 10000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 NormalPriority = (10000)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.DesignerGlyph.NormalPriority" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>10000</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> の通常の優先順位を表します。 この値は定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティの値が小さいほど優先順位が高いことを示し、値が大きいほど優先順位が低くなります。 <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.NormalPriority> フィールドの値が 10000 です。  
+  
+> [!NOTE]
+>  この定数値は、カスタム グリフを作成する際のガイドラインになります。 カスタム グリフをデザインするときに、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority%2A> プロパティにさまざまな値を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivate">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivate (System.Workflow.ComponentModel.Design.ActivityDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActivate(class System.Workflow.ComponentModel.Design.ActivityDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerGlyph.OnActivate(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="designer">グリフが描画される <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>グリフをアクティブにするアクションが実行されたことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ OnActivate メソッドの実装例を次に示します。  この例は、追跡プロファイル デザイナーの SDK サンプルです。  詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#119](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#119)]
+ [!code-vb[WF_Samples#119](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#119)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected abstract void OnPaint (System.Drawing.Graphics graphics, bool activated, System.Workflow.ComponentModel.Design.AmbientTheme ambientTheme, System.Workflow.ComponentModel.Design.ActivityDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPaint(class System.Drawing.Graphics graphics, bool activated, class System.Workflow.ComponentModel.Design.AmbientTheme ambientTheme, class System.Workflow.ComponentModel.Design.ActivityDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint(System.Drawing.Graphics,System.Boolean,System.Workflow.ComponentModel.Design.AmbientTheme,System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="activated" Type="System.Boolean" />
+        <Parameter Name="ambientTheme" Type="System.Workflow.ComponentModel.Design.AmbientTheme" />
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">塗りつぶしと描画タスクを実行する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="activated">
+          グリフをデザイン サーフェイスに表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="ambientTheme">アンビエント プロパティ設定へのアクセスに使用する <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" />。</param>
+        <param name="designer">ユーザー アクションに関する情報の取得元の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>派生クラスでオーバーライドされると、アクティビティ デザイナー画面にグリフをレンダリングするために必要なタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint%2A> は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorPen%2A> を使用してコメント グリフの境界を描画し、<xref:System.Workflow.ComponentModel.Design.AmbientTheme.CommentIndicatorBrush%2A> を使用してそれを塗りつぶします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Design.DesignerGlyph.OnPaint%2A> メソッドをオーバーライドする方法を示しています。 このコードは、グリフが関連付けられているアクティビティ デザイナーへのグリフ オブジェクトの描画の仕方をカスタマイズしたものです。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#134](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#134)]
+ [!code-vb[WF_Samples#134](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#134)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public virtual int Priority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerGlyph.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイン サーフェイスでのデザイナー グリフの優先順位設定を取得します。</summary>
+        <value>アクティビティ デザイナー サーフェイスの <see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> の優先順位を表す整数値。 値が小さいほど優先順位が高いことを示し、グリフはアクティビティ デザイナーの Z オーダーの最前面に描画されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

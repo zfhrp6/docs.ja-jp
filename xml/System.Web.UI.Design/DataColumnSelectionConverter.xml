@@ -1,0 +1,222 @@
+<Type Name="DataColumnSelectionConverter" FullName="System.Web.UI.Design.DataColumnSelectionConverter">
+  <TypeSignature Language="C#" Value="public class DataColumnSelectionConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataColumnSelectionConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DataColumnSelectionConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインドされた列のフィールドのフィールド名を表すプロパティの型コンバーターを提供する<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DataColumnSelectionConverter>コントロールのプロパティに代入する前にオブジェクトの種類を変換するクラス。 一般に、<xref:System.Web.UI.Design.DataColumnSelectionConverter>クラスは、文字列オブジェクトの型の変換をサポートしているし、関連するコントロール プロパティへの割り当てに使用できる標準値の一覧を提供します。 標準値コレクションは、現在のバインドされた列のフィールドのフィールド名の一覧<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ 変換をサポートするその他のオブジェクトの種類からクラスを派生<xref:System.Web.UI.Design.DataColumnSelectionConverter>をオーバーライドし、<xref:System.Web.UI.Design.DataColumnSelectionConverter.CanConvertFrom%2A>と<xref:System.Web.UI.Design.DataColumnSelectionConverter.ConvertFrom%2A>の他のオブジェクトの種類の方法です。 標準の割り当て可能な値のカスタム リストをサポートするためにオーバーライド、<xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドです。  
+  
+ 適用、<xref:System.ComponentModel.TypeConverterAttribute>を指定する属性、<xref:System.Web.UI.Design.DataColumnSelectionConverter>コントロール プロパティの型コンバーターとしてクラスです。 たとえば、<xref:System.Web.UI.WebControls.GridView.RowHeaderColumn%2A>のプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールによって指定<xref:System.Web.UI.Design.DataColumnSelectionConverter>としてその型コンバーター。  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesSupported%2A>メソッドを使用して利用可能な値の一覧を返す、コンバーターをサポートしていることを示します、<xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドです。 <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesExclusive%2A>メソッドは、リストが使用可能な値の排他的なリストでがないことを示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumnSelectionConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DataColumnSelectionConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できる実装します。</param>
+        <param name="sourceType">変換前の型。</param>
+        <summary>指定したソースの種類を関連付けられたコントロールのプロパティの型に変換できるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />コンバーターが変換を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Web.UI.Design.DataColumnSelectionConverter.CanConvertFrom%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Web.UI.Design.DataColumnSelectionConverter.ConvertFrom%2A>メソッドは、ソースの種類の変換をサポートします。  
+  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.ConvertFrom%2A>メソッドは、文字列からのみ変換できますので、<xref:System.Web.UI.Design.DataColumnSelectionConverter.CanConvertFrom%2A>メソッドを返します。`true`とき`sourceType`文字列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できる実装します。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />ローカリゼーション機能をサポートするために使用できるオブジェクト。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトを関連するコントロール プロパティの型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を変換後のオブジェクトを表すインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`が文字列型の文字列形式を`value`が返されます。 場合`value`は`null`、空の文字列 ("") が返されます。 その他のすべての値、<xref:System.NotSupportedException>例外がスローされます。  
+  
+ 呼び出す、<xref:System.Web.UI.Design.DataColumnSelectionConverter.CanConvertFrom%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Web.UI.Design.DataColumnSelectionConverter.ConvertFrom%2A>メソッドは、ソースの種類の変換をサポートします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できる実装します。</param>
+        <summary>関連付けられたコントロールのプロパティに割り当てることが可能な値の一覧を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />関連するコントロール プロパティへの割り当てに使用可能な値を含むインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドを使用、<xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>したプロパティの`context`を取得するオブジェクト、<xref:System.ComponentModel.IComponent>実装します。 場合、<xref:System.ComponentModel.IComponent>実装が使用可能な関連付けられたコントロールをデザイン時にアクセスし、関連付けられているから使用可能な値の一覧を取得するために使用が<xref:System.Web.UI.WebControls.GridView>コンポーネントです。  
+  
+ 使用可能な値のコレクションが連結された列のフィールドから作成されて、<xref:System.Web.UI.WebControls.GridView>コントロール。 バインドされた列のフィールドから成る<xref:System.Web.UI.WebControls.BoundField>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション、およびデータ ソースのフィールドが自動的に生成バインドされた列のフィールドからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できる実装します。</param>
+        <summary>このコンバーターが関連付けられているコントロールのプロパティに割り当てることができるすべての可能な値を含むリストを返すかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />このコンバーターは、関連付けられたコントロールのプロパティに割り当てることができるすべての可能な値を含むリストを返す場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesExclusive%2A>のメソッド、<xref:System.Web.UI.Design.DataColumnSelectionConverter>インスタンスを返します`false`、によって一覧が返されることを示す、<xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドはすべての割り当て可能な値の排他的なリストではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できる実装します。</param>
+        <summary>このコンバーターが指定したコンテキスト内でのコントロール プロパティへの割り当てに使用できる値のセットを返すかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />このコンバーターが、関連付けられているコントロール プロパティへの割り当てに使用できる値の標準セットを返す場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesSupported%2A>メソッドをコンバーターがを通じて使用可能な値の一覧を返すをサポートしているかどうかを示します、<xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドです。  
+  
+ <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValuesSupported%2A>メソッドを<xref:System.Web.UI.Design.DataColumnSelectionConverter>オブジェクトを返します`true`場合、指定した`context`オブジェクトの提供、<xref:System.ComponentModel.IComponent>実装でその<xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>プロパティです。 <xref:System.Web.UI.Design.DataColumnSelectionConverter.GetStandardValues%2A>メソッドを使用、<xref:System.ComponentModel.IComponent>関連付けられたコントロールをデザイン時にアクセスし、使用可能なの一覧を取得する実装では、関連付けられたから列フィールドがバインドされている<xref:System.Web.UI.WebControls.GridView>コンポーネントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

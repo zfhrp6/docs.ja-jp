@@ -1,0 +1,167 @@
+<Type Name="TypeNameConverter" FullName="System.Configuration.TypeNameConverter">
+  <TypeSignature Language="C#" Value="public sealed class TypeNameConverter : System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeNameConverter extends System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.TypeNameConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationConverterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型と文字列値の間に変換します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、他の構成を実行するコンバーターの種類すべて、この型では、関連する厳密に型指定されたプロパティとの間の構成ファイル内で見つかった文字列に変換します。  
+  
+ 具体的には、<xref:System.Configuration.TypeNameConverter>クラスの変換、<xref:System.String>の構成の種類に割り当てられた値、<xref:System.Type>値およびその逆です。 参照される型は、関連付けられている構成の処理を担当するクラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタムのセクションに関連付けられている型を取得する方法を示します。 カスタムのセクションの実装でのコード例を参照してください、<xref:System.Configuration.ConfigurationConverterBase>クラスの参照。  
+  
+ [!code-csharp[System.Configuration.TypeNameConverter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.TypeNameConverter/CS/TypeNameConverter.cs#1)]
+ [!code-vb[System.Configuration.TypeNameConverter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.TypeNameConverter/VB/TypeNameConverter.vb#1)]  
+  
+ 次の例は、前の例で使用される構成の抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  
+  <configSections>  
+    <section name="CustomSection"   
+      type="Samples.AspNet.CustomSection,   
+      ConfigurationConverters,   
+      Version=1.0.0.0, Culture=neutral,   
+      PublicKeyToken=null"   
+      allowDefinition="Everywhere"   
+      allowExeDefinition="MachineToApplication"   
+      restartOnExternalChanges="true" />  
+  </configSections>  
+  
+  <CustomSection fileName="default.txt" maxIdleTime="90"   
+    timeDelay="infinite" cdStr="str0, str1" permission="Read"  
+    maxUsers="Infinite"/>  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeNameConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TypeNameConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.TypeNameConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、システムによって提供されるコンバーターの種類を使用します。 使用する必要があるときだけ、<xref:System.Configuration.TypeNameConverter.%23ctor%2A>コンス トラクターは、独自の変換の種類を作成するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TypeNameConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="data">変換対象の <see cref="T:System.String" /> オブジェクト。</param>
+        <summary><see cref="T:System.String" /> オブジェクトを <see cref="T:System.Type" /> オブジェクトに変換します。</summary>
+        <returns><see cref="T:System.Type" />を表す、<paramref name="data" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.TypeNameConverter.ConvertFrom%2A>メソッドに変換する構成ファイルから読み取るときに、<xref:System.String>値を<xref:System.Type>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Type" />値を解決することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TypeNameConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="value">変換する値。</param>
+        <param name="type">変換後の型。</param>
+        <summary><see cref="T:System.Type" /> オブジェクトを <see cref="T:System.String" /> オブジェクトに変換します。</summary>
+        <returns><see cref="T:System.String" />を表す、<paramref name="value" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.TypeNameConverter.ConvertTo%2A>メソッドに変換する構成ファイルに書き込む際に、<xref:System.Type>値を<xref:System.String>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

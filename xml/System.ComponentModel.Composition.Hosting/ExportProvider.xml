@@ -1,0 +1,848 @@
+<Type Name="ExportProvider" FullName="System.ComponentModel.Composition.Hosting.ExportProvider">
+  <TypeSignature Language="C#" Value="public abstract class ExportProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExportProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Hosting.ExportProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定された一致するエクスポートを取得<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExportProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Hosting.ExportProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt; ExportsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt; ExportsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Composition.Hosting.ExportProvider.ExportsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、エクスポート、<see cref="T:System.ComponentModel.Composition.Hosting.ExportProvider" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportsChanging">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt; ExportsChanging;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt; ExportsChanging" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Composition.Hosting.ExportProvider.ExportsChanging" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したエクスポートを変更するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExport&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public Lazy&lt;T&gt; GetExport&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Lazy`1&lt;!!T&gt; GetExport&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExport``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Lazy&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`1" />オブジェクトを返します。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名を持つエクスポートを返します。 1 つの一致するエクスポートが一致しない場合、例外がスローされます。</summary>
+        <returns>コントラクト名を持つエクスポートは、指定された型パラメーターから派生します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">ゼロがある<see cref="T:System.Lazy`1" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。  
+  
+ または  
+  
+ 1 つ以上を使用する必要がある<see cref="T:System.Lazy`1" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExport&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public Lazy&lt;T&gt; GetExport&lt;T&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Lazy`1&lt;!!T&gt; GetExport&lt;T&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExport``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Lazy&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`1" />オブジェクトを返します。</typeparam>
+        <param name="contractName">コントラクト名、<see cref="T:System.Lazy`1" />戻るには、オブジェクトまたは<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つエクスポートを返します。 1 つの一致するエクスポートが一致しない場合、例外がスローされます。</summary>
+        <returns>指定したコントラクト名を持つエクスポートします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">ゼロがある<see cref="T:System.Lazy`1" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。  
+  
+ または  
+  
+ 1 つ以上を使用する必要がある<see cref="T:System.Lazy`1" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExport&lt;T,TMetadataView&gt;">
+      <MemberSignature Language="C#" Value="public Lazy&lt;T,TMetadataView&gt; GetExport&lt;T,TMetadataView&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Lazy`2&lt;!!T, !!TMetadataView&gt; GetExport&lt;T, TMetadataView&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExport``2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Lazy&lt;T,TMetadataView&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TMetadataView" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`2" />オブジェクトを返します。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <typeparam name="TMetadataView">メタデータ ビューの種類、<see cref="T:System.Lazy`2" />オブジェクトを返します。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名を持つエクスポートを返します。 1 つの一致するエクスポートが一致しない場合、例外がスローされます。</summary>
+        <returns>System.Lazy'2</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">ゼロがある<see cref="T:System.Lazy`2" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。  
+  
+ または  
+  
+ 1 つ以上を使用する必要がある<see cref="T:System.Lazy`2" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="TMetadataView" />有効なメタデータ ビューの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExport&lt;T,TMetadataView&gt;">
+      <MemberSignature Language="C#" Value="public Lazy&lt;T,TMetadataView&gt; GetExport&lt;T,TMetadataView&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Lazy`2&lt;!!T, !!TMetadataView&gt; GetExport&lt;T, TMetadataView&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExport``2(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Lazy&lt;T,TMetadataView&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TMetadataView" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`2" />オブジェクトを返します。</typeparam>
+        <typeparam name="TMetadataView">メタデータ ビューの種類、<see cref="T:System.Lazy`2" />オブジェクトを返します。</typeparam>
+        <param name="contractName">コントラクト名、<see cref="T:System.Lazy`2" />戻るには、オブジェクトまたは<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つエクスポートを返します。 1 つの一致するエクスポートが一致しない場合、例外がスローされます。</summary>
+        <returns>指定したコントラクト名を持つエクスポートします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">ゼロがある<see cref="T:System.Lazy`2" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。  
+  
+ または  
+  
+ 1 つ以上を使用する必要がある<see cref="T:System.Lazy`2" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />オブジェクト。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="TMetadataView" />有効なメタデータ ビューの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetExportedValue&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetExportedValue&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名を持つ、エクスポートされるオブジェクトを返します。 1 つの一致するエクスポートされたオブジェクトが正確に一致しない場合は、例外がスローされます。</summary>
+        <returns>コントラクト名を持つエクスポートされるオブジェクトは、指定された型パラメーターから派生します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">派生したコントラクト名は、エクスポートされたオブジェクトがある<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。  
+  
+ または  
+  
+ 派生したコントラクト名を持つエクスポートされたオブジェクトが 1 つ以上を使用する必要がある<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">基になるエクスポートされたオブジェクトにキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetExportedValue&lt;T&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetExportedValue&lt;T&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。</typeparam>
+        <param name="contractName">戻るには、エクスポートされるオブジェクトのコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つエクスポートされたオブジェクトを返します。 1 つの一致するエクスポートされたオブジェクトが正確に一致しない場合は、例外がスローされます。</summary>
+        <returns>指定したコントラクト名を持つエクスポートされるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">派生したコントラクト名は、エクスポートされたオブジェクトがある<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。  
+  
+ または  
+  
+ 派生したコントラクト名を持つエクスポートされたオブジェクトが 1 つ以上を使用する必要がある<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">基になるエクスポートされたオブジェクトにキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValueOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetExportedValueOrDefault&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetExportedValueOrDefault&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueOrDefault``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <summary>指定された型パラメーターまたは、指定した型の既定値から派生したコントラクト名を持つ、エクスポートされるオブジェクトを取得または 1 つ以上の一致するエクスポートされたオブジェクトがある場合に例外をスローします。</summary>
+        <returns>派生したコントラクト名を持つエクスポートされるオブジェクト<paramref name="T" />、それ以外の場合は、既定値を<paramref name="T" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エクスポートされたオブジェクトが見つからない場合、このメソッドはの適切な既定値を返します`T`; たとえば、整数型のゼロ`false`ブール型の場合と`null`参照型の場合。  
+  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">派生したコントラクト名を持つエクスポートされたオブジェクトが 1 つ以上を使用する必要がある<paramref name="T" />で、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">基になるエクスポートされたオブジェクトにキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValueOrDefault&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetExportedValueOrDefault&lt;T&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetExportedValueOrDefault&lt;T&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueOrDefault``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。</typeparam>
+        <param name="contractName">戻るには、エクスポートされるオブジェクトのコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定した型の既定値または指定したコントラクト名に、エクスポートされるオブジェクトを取得または 1 つ以上の一致するエクスポートされたオブジェクトがある場合に例外をスローします。</summary>
+        <returns>場合は、指定したコントラクトでエクスポートされるオブジェクト名が見つかりました。それ以外の場合、既定値<paramref name="T" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エクスポートされたオブジェクトが見つからない場合、このメソッドはの適切な既定値を返します`T`; たとえば、整数型のゼロ`false`ブール型の場合と`null`参照型の場合。  
+  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">指定したコントラクト名を持つ 2 つ以上のエクスポートされたオブジェクトが、<see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">基になるエクスポートされたオブジェクトにキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValues&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;T&gt; GetExportedValues&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; GetExportedValues&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValues``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名は、エクスポートされたすべてのオブジェクトを取得します。</summary>
+        <returns>コントラクト名が指定された型パラメーターから派生した場合、エクスポートされたオブジェクトが見つかりませんでした。それ以外の場合、空<see cref="T:System.Collections.ObjectModel.Collection`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">1 つまたは複数の基になるエクスポートされたオブジェクトにキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValues&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;T&gt; GetExportedValues&lt;T&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; GetExportedValues&lt;T&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValues``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返す、エクスポートされるオブジェクトの型。</typeparam>
+        <param name="contractName">エクスポートされたオブジェクトを返す; のコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つエクスポートされたすべてのオブジェクトを取得します。</summary>
+        <returns>場合は、指定したコントラクトでエクスポートされたオブジェクト名が見つかりました。それ以外の場合、空<see cref="T:System.Collections.ObjectModel.Collection`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">1 つ以上の基になるエクスポートされた値にキャストできません<paramref name="T" />です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.CompositionException">構成時にエラーが発生しました。 <see cref="P:System.ComponentModel.Composition.CompositionException.Errors" />発生したエラーのコレクションが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt; GetExports (System.ComponentModel.Composition.Primitives.ImportDefinition definition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.Export&gt; GetExports(class System.ComponentModel.Composition.Primitives.ImportDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">条件を定義するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトを取得します。</param>
+        <summary>指定されたインポート定義の条件に一致するすべてのエクスポートを取得します。</summary>
+        <returns>すべてのコレクション、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />によって指定された条件に一致するオブジェクト<paramref name="definition" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">
+          <see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" /><see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />ゼロがあると<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトの指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />です。  
+  
+ または  
+  
+ <see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" /><see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne" />または<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />あり、1 つ以上の<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトの指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt; GetExports (System.ComponentModel.Composition.Primitives.ImportDefinition definition, System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.Export&gt; GetExports(class System.ComponentModel.Composition.Primitives.ImportDefinition definition, class System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(System.ComponentModel.Composition.Primitives.ImportDefinition,System.ComponentModel.Composition.Hosting.AtomicComposition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+        <Parameter Name="atomicComposition" Type="System.ComponentModel.Composition.Hosting.AtomicComposition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">条件を定義するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトを取得します。</param>
+        <param name="atomicComposition">コンポジションのトランザクションのコンテナーです。</param>
+        <summary>指定されたインポート定義と構成の条件に一致するすべてのエクスポートを取得します。</summary>
+        <returns>すべてのコレクション、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />によって指定された条件に一致するオブジェクト<paramref name="definition" />と<paramref name="atomicComposition" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">
+          <see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" /><see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />ゼロがあると<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトの指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />です。  
+  
+ または  
+  
+ <see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" /><see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne" />または<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />あり、1 つ以上の<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトの指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="atomicComposition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Lazy&lt;object,object&gt;&gt; GetExports (Type type, Type metadataViewType, string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Lazy`2&lt;object, object&gt;&gt; GetExports(class System.Type type, class System.Type metadataViewType, string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(System.Type,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Lazy&lt;System.Object,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="metadataViewType" Type="System.Type" />
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">型パラメーター、<see cref="T:System.Lazy`2" />で返されるオブジェクト。</param>
+        <param name="metadataViewType">メタデータ ビューの種類、<see cref="T:System.Lazy`2" />で返されるオブジェクト。</param>
+        <param name="contractName">コントラクト名、<see cref="T:System.Lazy`2" />戻るには、オブジェクトまたは<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つすべてのエクスポートを取得します。</summary>
+        <returns>すべてのコレクション、 <see cref="T:System.Lazy`2" /> 、コントラクトに一致するためのオブジェクト<paramref name="contractName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`type`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="metadataViewType" />有効なメタデータ ビューの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Lazy&lt;T&gt;&gt; GetExports&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Lazy`1&lt;!!T&gt;&gt; GetExports&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Lazy&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`1" />で返されるオブジェクト。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名を持つすべてのエクスポートを取得します。</summary>
+        <returns><see cref="T:System.Lazy`1" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />、それ以外の場合は、空<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Lazy&lt;T&gt;&gt; GetExports&lt;T&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Lazy`1&lt;!!T&gt;&gt; GetExports&lt;T&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Lazy&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`1" />で返されるオブジェクト。</typeparam>
+        <param name="contractName">コントラクト名、<see cref="T:System.Lazy`1" />戻るには、オブジェクトまたは<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つすべてのエクスポートを取得します。</summary>
+        <returns><see cref="T:System.Lazy`1" />指定のコントラクトを持つオブジェクト名をそれ以外の場合、空<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports&lt;T,TMetadataView&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Lazy&lt;T,TMetadataView&gt;&gt; GetExports&lt;T,TMetadataView&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Lazy`2&lt;!!T, !!TMetadataView&gt;&gt; GetExports&lt;T, TMetadataView&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports``2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Lazy&lt;T,TMetadataView&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TMetadataView" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`2" />で返されるオブジェクト。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <typeparam name="TMetadataView">メタデータ ビューの種類、<see cref="T:System.Lazy`2" />で返されるオブジェクト。</typeparam>
+        <summary>指定された型パラメーターから派生したコントラクト名を持つすべてのエクスポートを取得します。</summary>
+        <returns><see cref="T:System.Lazy`2" />から派生したコントラクト名を持つオブジェクト<paramref name="T" />、それ以外の場合は、空<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="TMetadataView" />有効なメタデータ ビューの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExports&lt;T,TMetadataView&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Lazy&lt;T,TMetadataView&gt;&gt; GetExports&lt;T,TMetadataView&gt; (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Lazy`2&lt;!!T, !!TMetadataView&gt;&gt; GetExports&lt;T, TMetadataView&gt;(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExports``2(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Lazy&lt;T,TMetadataView&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TMetadataView" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">型パラメーター、<see cref="T:System.Lazy`2" />で返されるオブジェクト。 コントラクト名は、この型パラメーターからも派生します。</typeparam>
+        <typeparam name="TMetadataView">メタデータ ビューの種類、<see cref="T:System.Lazy`2" />で返されるオブジェクト。</typeparam>
+        <param name="contractName">コントラクト名、<see cref="T:System.Lazy`2" />戻るには、オブジェクトまたは<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>指定したコントラクト名を持つすべてのエクスポートを取得します。</summary>
+        <returns><see cref="T:System.Lazy`2" /> 、それ以外の場合は、指定したコントラクト名を持つオブジェクトは空<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`T`です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Hosting.CompositionContainer" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="TMetadataView" />有効なメタデータ ビューの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportsCore">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt; GetExportsCore (System.ComponentModel.Composition.Primitives.ImportDefinition definition, System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.Export&gt; GetExportsCore(class System.ComponentModel.Composition.Primitives.ImportDefinition definition, class System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(System.ComponentModel.Composition.Primitives.ImportDefinition,System.ComponentModel.Composition.Hosting.AtomicComposition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+        <Parameter Name="atomicComposition" Type="System.ComponentModel.Composition.Hosting.AtomicComposition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">条件を定義するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />で返されるオブジェクト。</param>
+        <param name="atomicComposition">コンポジションのトランザクションのコンテナーです。</param>
+        <summary>指定した定義によって定義された制約に一致するすべてのエクスポートを取得します。</summary>
+        <returns>指定した条件に一致するすべてのエクスポートを含むコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバーライドでは、基数関連の不一致をエラーとして扱っていない必要があり、このような場合に例外をスローする必要があります。 たとえば場合、<xref:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality%2A>は<xref:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne>ゼロがあると<xref:System.ComponentModel.Composition.Primitives.Export>の指定した条件に一致するオブジェクト<xref:System.ComponentModel.Composition.Primitives.ImportDefinition>、空<xref:System.Collections.Generic.IEnumerable%601>コレクションが返される必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExportsChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnExportsChanged (System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExportsChanged(class System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.OnExportsChanged(System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Composition.Hosting.ExportProvider.ExportsChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExportsChanging">
+      <MemberSignature Language="C#" Value="protected virtual void OnExportsChanging (System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExportsChanging(class System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.OnExportsChanging(System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Composition.Hosting.ExportsChangeEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Composition.Hosting.ExportProvider.ExportsChanging" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetExports">
+      <MemberSignature Language="C#" Value="public bool TryGetExports (System.ComponentModel.Composition.Primitives.ImportDefinition definition, System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition, out System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt; exports);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetExports(class System.ComponentModel.Composition.Primitives.ImportDefinition definition, class System.ComponentModel.Composition.Hosting.AtomicComposition atomicComposition, [out] class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.Export&gt;&amp; exports) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Hosting.ExportProvider.TryGetExports(System.ComponentModel.Composition.Primitives.ImportDefinition,System.ComponentModel.Composition.Hosting.AtomicComposition,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+        <Parameter Name="atomicComposition" Type="System.ComponentModel.Composition.Hosting.AtomicComposition" />
+        <Parameter Name="exports" Type="System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="definition">条件を定義するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトを取得します。</param>
+        <param name="atomicComposition">コンポジションのトランザクションのコンテナーです。</param>
+        <param name="exports">このメソッドが戻るときのコレクションを含んでいます。<see cref="T:System.ComponentModel.Composition.Primitives.Export" />によって定義される条件に一致するオブジェクト<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />、それ以外の場合は、空<see cref="T:System.Collections.Generic.IEnumerable`1" />オブジェクト。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたインポートの条件に一致するすべてのエクスポートを取得します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" />は<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne" />または<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrMore" />ゼロがあると<see cref="T:System.ComponentModel.Composition.Primitives.Export" />オブジェクトの指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />です。<see langword="true" />場合<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" />は<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne" />または<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />が正確に 1 つと<see cref="T:System.ComponentModel.Composition.Primitives.Export" />の指定した条件に一致する<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

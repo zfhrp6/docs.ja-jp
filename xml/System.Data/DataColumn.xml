@@ -1,0 +1,1713 @@
+<Type Name="DataColumn" FullName="System.Data.DataColumn">
+  <TypeSignature Language="C#" Value="public class DataColumn : System.ComponentModel.MarshalByValueComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataColumn extends System.ComponentModel.MarshalByValueComponent" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.MarshalByValueComponent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ColumnName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DataColumnEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の列のスキーマを表す、<see cref="T:System.Data.DataTable" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>のスキーマを作成するための基本的なビルド ブロックには、<xref:System.Data.DataTable>です。 1 つまたは複数を追加することによって、スキーマをビルドする<xref:System.Data.DataColumn>オブジェクトを<xref:System.Data.DataColumnCollection>です。 詳細については、次を参照してください。 [DataTable に列の追加](~/docs/framework/data/adonet/dataset-datatable-dataview/adding-columns-to-a-datatable.md)です。  
+  
+ 各<xref:System.Data.DataColumn>が、<xref:System.Data.DataColumn.DataType%2A>データの種類を決定するプロパティ、<xref:System.Data.DataColumn>が含まれています。 たとえば、データ型を整数や文字列、または 10 進数を制限できます。 に格納されているデータ、<xref:System.Data.DataTable>結合は通常、元のデータ ソースにデータ ソースのデータ型に一致する必要があります。 詳細については、次を参照してください。 [ADO.NET でのデータ型マッピング](~/docs/framework/data/adonet/data-type-mappings-in-ado-net.md)です。  
+  
+ などのプロパティ<xref:System.Data.DataColumn.AllowDBNull%2A>、 <xref:System.Data.DataColumn.Unique%2A>、および<xref:System.Data.DataColumn.ReadOnly%2A>エントリとそれによってデータの整合性を保証することができ、データの更新に関する制限を格納します。 使用することも、 <xref:System.Data.DataColumn.AutoIncrement%2A>、 <xref:System.Data.DataColumn.AutoIncrementSeed%2A>、および<xref:System.Data.DataColumn.AutoIncrementStep%2A>データの自動生成を制御するプロパティです。 詳細については<xref:System.Data.DataColumn.AutoIncrement%2A>列を参照してください[AutoIncrement 列の作成](~/docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)です。 詳細については、次を参照してください。[主キーを定義する](~/docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)です。  
+  
+ できますも確認する値を<xref:System.Data.DataColumn>が一意で作成することで、<xref:System.Data.UniqueConstraint>に追加することと、<xref:System.Data.ConstraintCollection>の<xref:System.Data.DataTable>先、<xref:System.Data.DataColumn>が属しています。 詳細については、次を参照してください。 [DataTable の制約](~/docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)です。  
+  
+ 間にリレーションシップを作成する<xref:System.Data.DataColumn>、オブジェクトを作成、<xref:System.Data.DataRelation>オブジェクトを追加して、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ 使用することができます、<xref:System.Data.DataColumn.Expression%2A>のプロパティ、<xref:System.Data.DataColumn>列の値を計算するオブジェクト、または集計列を作成します。 詳細については、次を参照してください。[式列を作成する](~/docs/framework/data/adonet/dataset-datatable-dataview/creating-expression-columns.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.DataTable>いくつかの<xref:System.Data.DataColumn>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataColumn Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataColumn" />文字列型としてクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成すると、<xref:System.Data.DataColumn>オブジェクトは既定値を持たない<xref:System.Data.DataColumn.ColumnName%2A>または<xref:System.Data.DataColumn.Caption%2A>です。 追加すると、<xref:System.Data.DataColumnCollection>に名前が割り当てられていない場合、既定の名前 ("Column1"、"Column2") が生成されます、<xref:System.Data.DataColumn.ColumnName%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataColumn>、さまざまなプロパティを設定し、それを追加、<xref:System.Data.DataColumnCollection>の<xref:System.Data.DataTable>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataColumn Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumn (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">作成するのには、列の名前を表す文字列。 場合設定<see langword="null" />または空の文字列 ("")、columns コレクションに追加すると、既定の名前が指定されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataColumn" />指定された列名を使用して、型の文字列としてのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、列に固有の名前になります、<xref:System.Data.DataColumn.Caption%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataColumn>と指定した<xref:System.Data.DataColumn.ColumnName%2A>です。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataColumn1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataColumn1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumn (string columnName, Type dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string columnName, class System.Type dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">作成するのには、列の名前を表す文字列。 場合設定<see langword="null" />または空の文字列 ("")、columns コレクションに追加すると、既定の名前が指定されます。</param>
+        <param name="dataType">サポートされている<see cref="P:System.Data.DataColumn.DataType" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataColumn" />クラス、指定された列の名前とデータ型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataColumn>と指定した<xref:System.Data.DataColumn.ColumnName%2A>と<xref:System.Data.DataColumn.DataType%2A>です。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataColumn2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataColumn2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いいえ<paramref name="dataType" />が指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumn (string columnName, Type dataType, string expr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string columnName, class System.Type dataType, string expr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.#ctor(System.String,System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Type" />
+        <Parameter Name="expr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">作成するのには、列の名前を表す文字列。 場合設定<see langword="null" />または空の文字列 ("")、columns コレクションに追加すると、既定の名前が指定されます。</param>
+        <param name="dataType">サポートされている<see cref="P:System.Data.DataColumn.DataType" />です。</param>
+        <param name="expr">この列を作成するために使用する式。 詳細については、<see cref="P:System.Data.DataColumn.Expression" /> プロパティを参照してください。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataColumn" />クラス、指定された名前、データ型と式を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、計算列を作成します。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataColumn3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataColumn3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いいえ<paramref name="dataType" />が指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumn (string columnName, Type dataType, string expr, System.Data.MappingType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string columnName, class System.Type dataType, string expr, valuetype System.Data.MappingType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.#ctor(System.String,System.Type,System.String,System.Data.MappingType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Type" />
+        <Parameter Name="expr" Type="System.String" />
+        <Parameter Name="type" Type="System.Data.MappingType" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">作成するのには、列の名前を表す文字列。 場合設定<see langword="null" />または空の文字列 ("")、columns コレクションに追加すると、既定の名前が指定されます。</param>
+        <param name="dataType">サポートされている<see cref="P:System.Data.DataColumn.DataType" />です。</param>
+        <param name="expr">この列を作成するために使用する式。 詳細については、<see cref="P:System.Data.DataColumn.Expression" /> プロパティを参照してください。</param>
+        <param name="type"><see cref="T:System.Data.MappingType" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataColumn" />クラスの指定した名前、データ型、式、および列が属性であるかどうかを決定する値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `type`引数セット、<xref:System.Data.DataColumn.ColumnMapping%2A>プロパティです。 プロパティを指定方法、<xref:System.Data.DataColumn>ときにマップされて、<xref:System.Data.DataSet>は XML ドキュメントに変換します。 たとえば、"fName、"という名前の列は、値が含まれている"Bob"と`type`に設定されている`MappingType.Attribute`、XML 要素に次のようになります。  
+  
+ \<名前 fName = 'Bob'/>  
+  
+ 要素または属性に列をマップする方法の詳細については、次を参照してください。、<xref:System.Data.DataColumn.ColumnMapping%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、計算列を作成します。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataColumn4 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn4 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataColumn4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataColumn4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いいえ<paramref name="dataType" />が指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDBNull">
+      <MemberSignature Language="C#" Value="public bool AllowDBNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowDBNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.AllowDBNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーブルに属する行のこの列で null 値を許可するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は null 値の値が許可されます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataColumn>設定とその<xref:System.Data.DataColumn.AllowDBNull%2A>プロパティを`true`です。  
+  
+ [!code-csharp[Classic WebData DataColumn.AllowDBNull Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.AllowDBNull Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.AllowDBNull Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.AllowDBNull Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoIncrement">
+      <MemberSignature Language="C#" Value="public bool AutoIncrement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoIncrement" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.AutoIncrement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列がテーブルに追加された新しい行の列の値を自動的にインクリメントするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />列の値が自動的にインクリメントする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列の型がない場合、Int16、Int32 または Int64 このプロパティが設定されている場合、<xref:System.Data.DataColumn.DataType%2A>プロパティは Int32 に変換します。 これは、計算列と、例外が生成されます。 <xref:System.Data.DataColumn.Expression%2A>プロパティを設定します。 インクリメントされた値は、columns コレクションに追加すると、この列の行の値が既定値に等しい場合にのみ使用されます。  
+  
+ 使用して新しい行を作成することができます、<xref:System.Data.DataRow.ItemArray%2A>のプロパティ、<xref:System.Data.DataRow>クラスし、値の配列を渡します。 これは、潜在的な問題の列に対してその<xref:System.Data.DataColumn.AutoIncrement%2A>'éý'`true`その値が自動的に生成されるため、します。 使用する、<xref:System.Data.DataRow.ItemArray%2A>プロパティ、場所`null`配列での列の位置。 詳細については、次を参照してください。、<xref:System.Data.DataRow.ItemArray%2A>のプロパティ、<xref:System.Data.DataRow>クラスです。  
+  
+ 場合は、列の型は<xref:System.Data.SqlTypes.SqlInt16>または<xref:System.Data.SqlTypes.SqlInt32>、<xref:System.Data.DataColumn.AutoIncrement%2A>は機能しません。 代わりに、Int16 または int32 型を使用します。  
+  
+ 場合は、列の型は<xref:System.Data.SqlTypes.SqlInt64>または<xref:System.Data.SqlTypes.SqlDecimal>、<xref:System.Data.DataColumn.AutoIncrement%2A>は部分的にのみ機能します。 Int64 型または Decimal を代わりに使用します。  
+  
+ ときに、<xref:System.Data.DataColumn.AutoIncrementStep%2A>値は、オーバーフローをチェックが抑制されて現在の値に追加します。  
+  
+   
+  
+## Examples  
+ 次の例のセット、 <xref:System.Data.DataColumn.AutoIncrement%2A>、 <xref:System.Data.DataColumn.AutoIncrementSeed%2A>、および<xref:System.Data.DataColumn.AutoIncrementStep%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">列は、計算列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoIncrementSeed">
+      <MemberSignature Language="C#" Value="public long AutoIncrementSeed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AutoIncrementSeed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.AutoIncrementSeed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を持つ列の開始値、<see cref="P:System.Data.DataColumn.AutoIncrement" />プロパティに設定<see langword="true" />です。 既定値は 0 です。</summary>
+        <value>開始値、<see cref="P:System.Data.DataColumn.AutoIncrement" />機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、 <xref:System.Data.DataColumn.AutoIncrement%2A>、 <xref:System.Data.DataColumn.AutoIncrementSeed%2A>、および<xref:System.Data.DataColumn.AutoIncrementStep%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoIncrementStep">
+      <MemberSignature Language="C#" Value="public long AutoIncrementStep { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AutoIncrementStep" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.AutoIncrementStep" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を持つ列で使用されるインクリメントその<see cref="P:System.Data.DataColumn.AutoIncrement" />プロパティに設定<see langword="true" />です。</summary>
+        <value>列の値が自動的にインクリメントされる数です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、 <xref:System.Data.DataColumn.AutoIncrement%2A>、 <xref:System.Data.DataColumn.AutoIncrementSeed%2A>、および<xref:System.Data.DataColumn.AutoIncrementStep%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.AutoIncrementSeed Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.AutoIncrementSeed Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定されている値は 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="public string Caption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のキャプションを設定します。</summary>
+        <value>列のキャプションです。 設定しない場合を返します、<see cref="P:System.Data.DataColumn.ColumnName" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.DataColumn.Caption%2A>のわかりやすいまたはフレンドリ名を表示するプロパティを<xref:System.Data.DataColumn>です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataTable>です。 これは、後、3 つ追加<xref:System.Data.DataColumn>オブジェクトを<xref:System.Data.DataColumnCollection>設定と、<xref:System.Data.DataColumn.Caption%2A>それぞれのプロパティ<xref:System.Data.DataColumn>です。  
+  
+ [!code-csharp[Classic WebData DataColumn.Caption Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.Caption Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.Caption Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.Caption Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckNotAllowNull">
+      <MemberSignature Language="C#" Value="protected void CheckNotAllowNull ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void CheckNotAllowNull() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.CheckNotAllowNull" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckUnique">
+      <MemberSignature Language="C#" Value="protected void CheckUnique ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckUnique() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.CheckUnique" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnMapping">
+      <MemberSignature Language="C#" Value="public virtual System.Data.MappingType ColumnMapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.MappingType ColumnMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.ColumnMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.MappingType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.MappingType" />列の。</summary>
+        <value><see cref="T:System.Data.MappingType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn.ColumnMapping%2A>プロパティを決定する方法、<xref:System.Data.DataColumn>ときにマップされて、<xref:System.Data.DataSet>による XML ドキュメントとして保存されます、<xref:System.Data.DataSet.WriteXml%2A>メソッドです。  
+  
+ たとえば場合、 <xref:System.Data.DataColumn> "customerID"をという名前とその<xref:System.Data.DataColumn.ColumnMapping%2A>プロパティに設定されている`MappingType.Element`列の値は、次の XML を生成します。  
+  
+```  
+<Customers>  
+ <customerID>ALFKI</customerID>  
+......  
+ </Customers>  
+ <Orders>  
+ <OrderID>12345</OrderID>  
+ <customerID>ALFKI</customerID>  
+......  
+ </Orders>  
+```  
+  
+ ただし、同じ列にマップされている場合`MappingType.Attribute`、次の XML が生成されます。  
+  
+```  
+<Customers customerID="ALFKI"........more attributes.....>  
+ <Order orderID="1234"....more attributes..../>  
+ <Order orderID="1234"....more attributes..../>  
+...... More orders for this customer  
+ </Customers>  
+```  
+  
+ 使用して、<xref:System.Data.DataColumn.%23ctor%2A>コンス トラクターを含む、`type`引数を指定し、<xref:System.Data.DataColumn>ときにマップされてその<xref:System.Data.DataSet>は XML ドキュメントに変換されます。  
+  
+ <xref:System.Data.DataColumn.ColumnMapping%2A>プロパティは、コンス トラクターの引数に対応`type`です。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Data.DataColumn.ColumnMapping%2A>のプロパティを入力して新しい<xref:System.Data.DataColumn>です。  
+  
+ [!code-csharp[Classic WebData DataColumn.ColumnMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.ColumnMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.ColumnMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.ColumnMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnName">
+      <MemberSignature Language="C#" Value="public string ColumnName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ColumnName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.ColumnName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の列の名前、<see cref="T:System.Data.DataColumnCollection" />です。</summary>
+        <value>列の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.DataColumn>が作成されると、ある<xref:System.Data.DataColumn.ColumnName%2A>値。 ただし、ときに、<xref:System.Data.DataColumn>に追加、<xref:System.Data.DataColumnCollection>の<xref:System.Data.DataTable>オブジェクトの既定の名前 ("Column1"、"Column2") が指定します。  
+  
+ 既定では、<xref:System.Data.DataColumn.Caption%2A>値に設定されて、<xref:System.Data.DataColumn.ColumnName%2A>値。  
+  
+   
+  
+## Examples  
+ 次の例では、取得、<xref:System.Data.DataColumn.ColumnName%2A>内の各テーブルの各列に対して、<xref:System.Data.DataSet>です。 作成する方法も示します、<xref:System.Data.DataColumn>を新しい<xref:System.Data.DataColumn.ColumnName%2A>です。  
+  
+ [!code-csharp[Classic WebData DataColumn.ColumnName Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.ColumnName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.ColumnName Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.ColumnName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティに設定<see langword="null" />か、空の文字列と列がコレクションに属しています。</exception>
+        <exception cref="T:System.Data.DuplicateNameException">同じ名前の列は、コレクションに既に存在します。 名前比較では大文字と小文字が区別されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public Type DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.ColumnTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列に格納されたデータの種類を設定します。</summary>
+        <value>A<see cref="T:System.Type" />列のデータ型を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Data.DataColumn.DataType%2A>値が確実に正しい作成とデータ ソースのデータの更新時に非常に重要です。  
+  
+ <xref:System.Data.DataColumn.DataType%2A>プロパティは、次の .NET Framework の基本データ型をサポートしています。  
+  
+-   <xref:System.Boolean>  
+  
+-   <xref:System.Byte>  
+  
+-   <xref:System.Char>  
+  
+-   <xref:System.DateTime>  
+  
+-   <xref:System.Decimal>  
+  
+-   <xref:System.Double>  
+  
+-   <xref:System.Guid>  
+  
+-   <xref:System.Int16>  
+  
+-   <xref:System.Int32>  
+  
+-   <xref:System.Int64>  
+  
+-   <xref:System.SByte>  
+  
+-   <xref:System.Single>  
+  
+-   <xref:System.String>  
+  
+-   <xref:System.TimeSpan>  
+  
+-   <xref:System.UInt16>  
+  
+-   <xref:System.UInt32>  
+  
+-   <xref:System.UInt64>  
+  
+ 次の配列の種類。  
+  
+-   `Byte[]`  
+  
+ 列の後にこのプロパティの変更が開始されたデータを格納する、例外が生成されます。  
+  
+ 場合<xref:System.Data.DataColumn.AutoIncrement%2A>に設定されている`true`設定する前に、<xref:System.Data.DataColumn.DataType%2A>プロパティ、およびするが、型を整数型以外に設定しよう、例外が生成されます。  
+  
+> [!NOTE]
+>  データ型の列`Byte[]`基本の .NET Framework データ型とは異なり、参照データ型であるためには、特定の状況で特別な処理が必要です。 データ型の列の場合`Byte[]`として使用される、 <xref:System.Data.DataTable.PrimaryKey%2A>、または、<xref:System.Data.DataView.Sort%2A>または<xref:System.Data.DataView.RowFilter%2A>のキー、 <xref:System.Data.DataView>、列値の変更では、割り当てが関係する必要があります、`Byte[]`列の値とは別にインスタンス化を`Byte[]`オブジェクト。 並べ替え、フィルター、および主キー操作で使用される内部のインデックスの更新を開始するには、この割り当てが必要です。 この例を次に示します。  
+  
+```  
+byte[] columnValue = (byte[])myDataTable.Rows[0][0];  
+byte[] newValue = (byte[])columnValue.Clone();  
+newValue[1] = 2;  
+myDataTable.Rows[0][0] = newValue;  
+```  
+  
+> [!NOTE]
+>  データ型の .NET Framework の基本データ型以外の場合、列を定義することはできますが、 `Byte[]`、このような列は、次の使用量制限に従い、ユーザー定義型として扱われます。 (ユーザー定義型の詳細については、次を参照してください[ユーザーの種類の作成と](http://msdn.microsoft.com/en-us/ec0266d2-7e5b-47e4-938a-85ac9d04fa40)。)。  
+  
+-   列がの一部にすることはできません、<xref:System.Data.DataView.RowFilter%2A>または<xref:System.Data.DataTable.Select%2A>式。  
+  
+-   列として使用する場合、 <xref:System.Data.DataTable.PrimaryKey%2A>、または、<xref:System.Data.DataView.Sort%2A>または、 <xref:System.Data.DataView>、変更できないフィールドとして扱う必要があります。 テーブルに追加したら、列のデータを変更しないでください。  
+  
+-   その<xref:System.Data.DataColumn.ColumnMapping%2A>にのみ設定できます`MappingType.Element`です。  
+  
+-   クラスを実装する必要があります、列のデータ型でマークする必要があります、 <xref:System.SerializableAttribute>、必要に応じて実装する場合と、<xref:System.Runtime.Serialization.ISerializable>または<xref:System.Xml.Serialization.IXmlSerializable>インターフェイスです。  
+  
+-   変更の追跡のサポートは制限されています。 利用する、<xref:System.Data.DataTable>クラスの変更の追跡メカニズム、列のデータ型を実装するクラスを実装する必要がありますか、<xref:System.ComponentModel.IChangeTracking>インターフェイス、または通知する責任を引き継ぎます、<xref:System.Data.DataRow>か、呼び出すことによって、列の値が変更されたとき<xref:System.Data.DataRow.SetModified%2A>行または列の値オブジェクトとは別にインスタンス化された列の値オブジェクトを割り当てる。  
+  
+   
+  
+## Examples  
+ 次の例をいくつかのデータ型の列の追加、 <xref:System.Data.DataTable>、し、テーブルに 1 つの行を追加します。  
+  
+ [!code-csharp[Classic WebData DataColumn.DataType Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataType Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.DataType Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DataType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">列が既に格納されているデータを使用しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTimeMode">
+      <MemberSignature Language="C#" Value="public System.Data.DataSetDateTime DateTimeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataSetDateTime DateTimeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.DateTimeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSetDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="DateTimeMode" />列にします。</summary>
+        <value><see cref="T:System.Data.DataSetDateTime" />指定された列にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn.DateTimeMode%2A>に行を追加後に変更することはできません、<xref:System.Data.DataColumn>からの変更を除く<xref:System.Data.DataSetDateTime.Unspecified>と<xref:System.Data.DataSetDateTime.UnspecifiedLocal>またはその逆です。 変更`UnspecifiedLocal`に`Unspecified`とこれら 2 つのオプションの違いは、シリアル化中にのみ、記憶域には影響しません、その逆は許可されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.DefaultValueTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、新しい行を作成するときに、列の既定値を設定します。</summary>
+        <value>列に適した値<see cref="P:System.Data.DataColumn.DataType" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、列に自動的に割り当てられている値と、<xref:System.Data.DataRow>が作成される (たとえば、日付と時刻、<xref:System.Data.DataRow>が作成されました。  
+  
+ ときに<xref:System.Data.DataColumn.AutoIncrement%2A>に設定されている場合は true、することは既定値です。  
+  
+ 使用して新しい行を作成することができます、<xref:System.Data.DataRow.ItemArray%2A>のプロパティ、<xref:System.Data.DataRow>クラスと値の配列をメソッドに渡します。 これは、その値が自動的に生成するために問題がある列の既定値です。 使用する、<xref:System.Data.DataRow.ItemArray%2A>プロパティでこのような列は、次のように配置します。`null`配列での列の位置。 詳細については、<xref:System.Data.DataRow.ItemArray%2A> プロパティを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例をいくつか作成<xref:System.Data.DataColumn>オブジェクトを別のデータ型を持ち、適切な設定が各列に値を既定値です。  
+  
+ [!code-vb[Classic WebData DataColumn.DefaultValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.DefaultValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">行を追加するときに既定値は列のデータ型のインスタンスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public string Expression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行のフィルター選択、列の値を計算または集計列を作成するための式を設定します。</summary>
+        <value>列の値を計算または集計列を作成する式。 式の戻り値の型によって決定されます、<see cref="P:System.Data.DataColumn.DataType" />列の。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つを使用して、<xref:System.Data.DataColumn.Expression%2A>プロパティは、計算列を作成します。 たとえば、税の値を計算するには、単価は特定の地域の税率によって乗算されます。 税率が異なるため領域、可能性がありますいない; 列に単一の税率を配置するには代わりに、値は計算を使用して、<xref:System.Data.DataColumn.Expression%2A>プロパティ、次のセクションで Visual Basic コードで示すようにします。  
+  
+ DataSet1.Tables("Products") です。Columns("tax") です。式 ="UnitPrice * 0.086"  
+  
+ 2 番目の使用では、集計列を作成します。 計算された値と同様に、集計操作を実行内の行の完全なセットに基づいて、<xref:System.Data.DataTable>です。 単純な例は、セットに返される行の数をカウントがあります。 これは、この Visual Basic コードで示すように、特定の販売員ごとに完了したトランザクションの数をカウントに使用するメソッドです。  
+  
+```  
+DataSet1.Tables("Orders").Columns("OrderCount").Expression = "Count(OrderID)"  
+```  
+  
+## <a name="expression-syntax"></a>式の構文  
+ 式を作成するときに使用して、<xref:System.Data.DataColumn.ColumnName%2A>列を参照するプロパティです。 たとえば場合、 <xref:System.Data.DataColumn.ColumnName%2A> 1 つの列が"UnitPrice"、および別の"Quantity"では、式になります次のようにします。  
+  
+ "UnitPrice * Quantity"  
+  
+> [!NOTE]
+>  列が式の中で使用されている場合、その列の依存関係の設定を式と言います。 依存列が名前を変更または削除した場合、例外はスローされません。 ここで無効な式の列にアクセスするときに、例外がスローされます。  
+  
+ フィルター式を作成するときに、単一引用符を含む文字列を囲みます。  
+  
+ "LastName = 'Jones'"  
+  
+ 列名は、英数字以外の文字が含まれています 1 桁の数字で始まるまたは、次の予約語のいずれかに一致 (大文字)、次の段落で説明したように特別な処理が必要です。  
+  
+ And  
+  
+ 間  
+  
+ 子  
+  
+ False  
+  
+ In  
+  
+ Is  
+  
+ Like  
+  
+ Not  
+  
+ Null  
+  
+ または  
+  
+ 親  
+  
+ True  
+  
+ 列名では、上記の条件のいずれかを満たしている場合、角かっこで囲む必要があります、または"'"(抑音アクセント) 引用符。 たとえば、式では、「Column #」をという名前の列を使用するのには記述するか「[列 #]」。  
+  
+ 合計 * [列数]  
+  
+ または"\`列 #'"。  
+  
+ 合計 *\`列 #'  
+  
+ 列名が角かっこで囲んで、任意に囲まれている場合 ']' と '\\' 文字 (ではないその他の文字) でエスケープする必要ありますにバック スラッシュを付加することによって ("\\") 文字です。 列名がアクサン グラーブ文字で囲まれている場合含めることはできません、アクサン グラーブ文字です。 たとえば、という名前の列"列の\\"書き込まれます。  
+  
+ 合計 * [列 [\\]\\\\]  
+  
+ または  
+  
+ 合計 *\`列の\\`  
+  
+## <a name="user-defined-values"></a>ユーザー定義の値  
+ ユーザー定義の値は、列の値と比較する式内で使用可能性があります。 文字列値は、単一引用符で囲む必要があります (文字列値の各単一引用符はで別の単一引用符文字を付加することでエスケープする)。 日付の値は、シャープ記号 (#) またはデータ プロバイダーに基づく単一引用符 (') で囲む必要があります。 10 進数と指数表記の数値の許容されます。 例:  
+  
+ "FirstName ="John""  
+  
+ "価格 < 50.00 ="  
+  
+ "Birthdate < #1/31/&#82;"  
+  
+ 格納されている列は、列挙値は、整数データ型に値をキャストします。 例:  
+  
+ "EnumColumn = 5"  
+  
+## <a name="parsing-literal-expressions"></a>リテラル式の解析  
+ インバリアント カルチャのロケールでは、すべてのリテラル式を表す必要があります。 ときに`DataSet`を解析し、リテラル式を式には、変換、インバリアント カルチャの現在のカルチャではなく常に使用します。  
+  
+ 値を囲む単一引用符がある場合、文字列リテラルが識別されます。 例:  
+  
+ "John"  
+  
+ `Boolean`リテラルは、true と false です。式で、引用符がないです。  
+  
+ `Integer`リテラル [+-]?[0-9] + として扱われます`System.Int32`、`System.Int64`または`System.Double`です。 `System.Double`数値の大きさがによって精度が低下します。 たとえば、リテラル内の数値は 2147483650、`DataSet`を数値として解析は、まず、`Int32`です。 数が大きすぎるために、この操作は成功しません。 ここでは`DataSet`と数は、解析、 `Int64`、これは成功します。 Int64 では、最大値より大きい数値リテラル場合`DataSet`リテラルを使用して、解析は`Double`します。  
+  
+ 4.42372E など、科学的表記法を使用する実数のリテラル-30 の場合を使用して解析`System.Double`です。  
+  
+ 実数のリテラル、科学的表記法はなく、10 進数のポイントととして扱われます`System.Decimal`です。 数がによってサポートされる最大値または最小値を超えたかどうか`System.Decimal`、としては、解析結果、`System.Double`です。 例:  
+  
+ 変換される 142526.144524、`Decimal`です。  
+  
+ 345262.78036719560925667 として扱われます、`Double`です。  
+  
+## <a name="operators"></a>演算子  
+ 連結は、ブール型 AND、OR、および NOT 演算子を使用して許可します。 句のグループ化かっこを使用し、優先順位を強制できます。 AND 演算子は、その他の演算子に優先します。 例:  
+  
+ (LastName ="smith から""または"LastName = 'Jones')FirstName ="John"  
+  
+ 比較式を作成するときに、次の演算子は使用できます。  
+  
+ \<  
+  
+ >  
+  
+ \<=  
+  
+ >=  
+  
+ <>  
+  
+ =  
+  
+ IN  
+  
+ LIKE  
+  
+ 次の算術演算子は、式でもサポートされます。  
+  
+ \+(加算)  
+  
+ \- (減算)  
+  
+ \*(乗算)  
+  
+ /(除算)  
+  
+ % (剰余)  
+  
+## <a name="string-operators"></a>文字列演算子  
+ 文字列を連結するには、プラス記号です。 値、<xref:System.Data.DataSet.CaseSensitive%2A>のプロパティ、<xref:System.Data.DataSet>クラスでは、文字列の比較が大文字小文字を区別するかどうかを判断します。 ただしでその値をオーバーライドすることができます、<xref:System.Data.DataTable.CaseSensitive%2A>のプロパティ、<xref:System.Data.DataTable>クラスです。  
+  
+## <a name="wildcard-characters"></a>ワイルドカード文字  
+ 両方、*、% は、LIKE 比較でのワイルドカード文字を同じ意味で使用できます。 LIKE 句内の文字列が含まれている場合、*、または %、それらの文字は、角かっこ () で囲む必要があります。 角かっこが句である場合は、各かっこを角かっこ (たとえば [] または []) で囲む必要があります。 ワイルドカードが使用できるの開始と終了パターンでは、パターンでは、末尾またはパターンの開始時にします。 例:  
+  
+ "ItemName のように ' * 製品\*'"  
+  
+ "ItemName のように ' * 製品 '"  
+  
+ 「ItemName のように ' 製品 *'」  
+  
+ 文字列の途中では、ワイルドカード文字は使用できません。 たとえば、' te * xt' は許可されていません。  
+  
+## <a name="parentchild-relation-referencing"></a>親/子のリレーションシップの参照  
+ 親テーブルで参照できる、式、列名に付加することによって`Parent`です。 たとえば、`Parent.Price`という名前の親テーブルの列を参照して`Price`です。  
+  
+ 子が親の 1 つ以上の行を持つ Parent(RelationName) を使用します。ColumnName です。 たとえば、Parent(RelationName) です。価格は、リレーションシップを使用して価格をという名前の親テーブルの列を参照します。  
+  
+ 子テーブル内の列で参照できる、式、列名に付加することによって`Child`です。 ただし、親子リレーションシップは、複数の行を返す可能性があります、ため、集計関数に子列への参照を含める必要があります。 たとえば、`Sum(Child.Price)`という名前の列の合計を返します`Price`子テーブルにします。  
+  
+ 構文は、テーブルに 1 つ以上の子がある場合:`Child(RelationName)`です。 たとえば、という 2 つの子テーブルが存在する場合`Customers`と`Orders`、および<xref:System.Data.DataRelation>オブジェクトの名前は`Customers2Orders`参照に次のようになります。  
+  
+ Avg(Child(Customers2Orders) です。数量)  
+  
+## <a name="aggregates"></a>集計  
+ 次の集計の種類がサポートされています。  
+  
+ Sum (Sum)  
+  
+ Avg (平均)  
+  
+ Min (最小)  
+  
+ 最大値 (最大)  
+  
+ カウント (数)  
+  
+ StDev (統計的標準偏差)  
+  
+ Var (統計的変位)。  
+  
+ 集計は、リレーションシップに沿った通常実行されます。 集計式を作成するには、親/子リレーションシップの参照は、前述の詳細として以前に一覧表示する関数と子テーブルの列のいずれかを使用します。 例:  
+  
+ Avg(Child.Price)  
+  
+ Avg(Child(Orders2Details) です。Price)  
+  
+ 集計は、1 つのテーブルに対しても実行できます。 たとえば、"Price"をという名前の列に図形の概要を作成します。  
+  
+ Sum(Price)  
+  
+> [!NOTE]
+>  集計を作成する 1 つのテーブルを使用する場合があるな group by 機能します。 代わりに、すべての行では、列に同じ値が表示します。  
+  
+ 集計関数を返しますがかどうか、テーブルは行を持たない、`null`です。  
+  
+ データ型は、確認するには常に決定できます、<xref:System.Data.DataColumn.DataType%2A>列のプロパティです。 次のセクションに示すように、Convert 関数を使用してデータ型を変換することもできます。  
+  
+ 集計は、1 つの列にのみ適用でき、集計内の他の式を使用できません。  
+  
+## <a name="functions"></a>関数  
+ 次の関数もサポートします。  
+  
+ `CONVERT`  
+  
+|||  
+|-|-|  
+|説明|特定の式を指定した .NET Framework の型に変換します。|  
+|構文|変換 (`expression`、 `type`)|  
+|引数|`expression`--に変換する式です。<br /><br /> `type`--.NET Framework のデータ型、値を変換します。|  
+  
+ 例: myDataColumn.Expression="Convert (合計、'System.Int32')"  
+  
+ すべての変換は次の例外が有効な:`Boolean`との間に変換できる`Byte`、 `SByte`、 `Int16`、 `Int32`、 `Int64`、 `UInt16`、 `UInt32`、 `UInt64`、`String`と自体のみです。 `Char`強制的に変換できる`Int32`、 `UInt32`、 `String`、および自体のみです。 `DateTime`強制的に変換できる`String`と自体のみです。 `TimeSpan`強制的に変換できる`String`と自体のみです。  
+  
+ `LEN`  
+  
+|||  
+|-|-|  
+|説明|文字列の長さを取得します。|  
+|構文|LEN (`expression`)|  
+|引数|`expression`--評価する文字列。|  
+  
+ 例: myDataColumn.Expression="Len(ItemName)"  
+  
+ `ISNULL`  
+  
+|||  
+|-|-|  
+|説明|Checked 式または置換値の式とを返すかを確認します。|  
+|構文|ISNULL (`expression`、 `replacementvalue`)|  
+|引数|`expression`--を確認する式です。<br /><br /> `replacementvalue`--式がの場合`null`、`replacementvalue`が返されます。|  
+  
+ 例: myDataColumn.Expression="IsNull (price,-1)"  
+  
+ `IIF`  
+  
+|||  
+|-|-|  
+|説明|論理式の結果に応じて、2 つの値のいずれかを取得します。|  
+|構文|IIF (`expr`、 `truepart`、 `falsepart`)|  
+|引数|`expr`-評価する式。<br /><br /> `truepart`--の値を返す式が true のかどうかです。<br /><br /> `falsepart`--の値を返す式が false のかどうかです。|  
+  
+ 例: myDataColumn.Expression ="IIF (合計 > 1000 '高価な'、'dear')  
+  
+ `TRIM`  
+  
+|||  
+|-|-|  
+|説明|削除のすべての先頭と末尾の空白の \r、\n、\t などの文字 ' '|  
+|構文|TRIM (`expression`)|  
+|引数|`expression`--をトリミングする式です。|  
+  
+ `SUBSTRING`  
+  
+|||  
+|-|-|  
+|説明|文字列の特定の時点で開始する、指定された長さの部分文字列を取得します。|  
+|構文|部分文字列 (`expression`、 `start`、 `length`)|  
+|引数|`expression`--部分文字列のソース文字列です。<br /><br /> `start`--サブスト リングの開始位置を指定する整数。<br /><br /> `length`--部分文字列の長さを指定する整数。|  
+  
+ 例: myDataColumn.Expression「部分文字列 (電話、7、8)」を =  
+  
+> [!NOTE]
+>  リセットすることができます、<xref:System.Data.DataColumn.Expression%2A>プロパティ値を null または空の文字列に割り当てることによりします。 塗りつぶされた以前のすべての行の後に既定値が割り当てられます、既定値が式の列に設定されている場合、<xref:System.Data.DataColumn.Expression%2A>プロパティはリセットされます。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 3 つの列を作成、<xref:System.Data.DataTable>です。 2 番目と 3 番目の列を含む式です。2 つ目が変数の税率を使用して税額を計算し、3 番目の最初の列の値を計算の結果を追加します。 結果のテーブルが表示されます、<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+ [!code-csharp[Classic WebData DataColumn.Expression Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.Expression Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.Expression Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.Expression Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Data.DataColumn.AutoIncrement" />または<see cref="P:System.Data.DataColumn.Unique" />プロパティに設定されている<see langword="true" />です。</exception>
+        <exception cref="T:System.FormatException">CONVERT 関数を使用しているときに、文字列式の評価結果が文字列に、型パラメーターに変換できる表現が含まれていません。</exception>
+        <exception cref="T:System.InvalidCastException">CONVERT 関数を使用しているときに要求されたキャストはできません。 考えられるキャストの詳細については、次のセクションで、変換関数を参照してください。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">SUBSTRING 関数を使用する場合、開始引数が範囲外です。  
+  
+ または  
+  
+ SUBSTRING 関数を使用する場合、長の引数が範囲外です。</exception>
+        <exception cref="T:System.Exception">LEN 関数または TRIM 関数を使用する場合、式は文字列に評価されません。 評価される式が含まれます<see cref="T:System.Char" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProperties">
+      <MemberSignature Language="C#" Value="public System.Data.PropertyCollection ExtendedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.PropertyCollection ExtendedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.ExtendedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.PropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているカスタムのユーザー情報のコレクションを取得、<see cref="T:System.Data.DataColumn" />です。</summary>
+        <value>A<see cref="T:System.Data.PropertyCollection" />カスタム情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn.ExtendedProperties%2A>プロパティを使用して、オブジェクトにカスタム情報を格納できます。 たとえば、データを更新する場合、時刻を格納する場合があります。  
+  
+ 拡張プロパティが型でなければなりません<xref:System.String>です。 種類がプロパティ<xref:System.String>ときは保持されず、<xref:System.Data.DataColumn>は XML として書き込まれます。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム プロパティを<xref:System.Data.PropertyCollection>によって返される、<xref:System.Data.DataColumn.ExtendedProperties%2A>プロパティです。 2 番目の例では、カスタム プロパティを取得します。  
+  
+ [!code-csharp[Classic WebData DataColumn.ExtendedProperties Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.ExtendedProperties Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.ExtendedProperties Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.ExtendedProperties Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト列の最大長を設定します。</summary>
+        <value>文字内の列の最大長。 最大長の列がない場合は、値は – 1 (既定値) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn.MaxLength%2A>テキスト以外の列のプロパティは無視されます。 A<xref:System.ArgumentException>を割り当てる場合は、例外を発生<xref:System.Data.DataColumn.MaxLength%2A>文字列以外の列にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前空間、<see cref="T:System.Data.DataColumn" />です。</summary>
+        <value><see cref="T:System.Data.DataColumn" /> の名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn.Namespace%2A>にドキュメントの XML を読み書きするときにプロパティが使用される、<xref:System.Data.DataTable>で、<xref:System.Data.DataSet>を使用して、 <xref:System.Data.DataSet.ReadXml%2A>、 <xref:System.Data.DataSet.WriteXml%2A>、 <xref:System.Data.DataSet.ReadXmlSchema%2A>、または<xref:System.Data.DataSet.WriteXmlSchema%2A>メソッドです。  
+  
+ XML 属性および要素を読み取るときにスコープを指定する XML ドキュメントの名前空間が使用される、<xref:System.Data.DataSet>です。 たとえば、<xref:System.Data.DataSet>スキーマを含む"myCompany、"名前空間を持つドキュメントから読み取るデータの読み取りが試行され (で、<xref:System.Data.DataSet.ReadXml%2A>メソッド) を"theirCompany"名前空間を持つドキュメントから 既存のスキーマに対応していないすべてのデータは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">名前空間には、既にデータがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanging">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanging (System.ComponentModel.PropertyChangedEventArgs pcevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanging(class System.ComponentModel.PropertyChangedEventArgs pcevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcevent" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pcevent">パラメーターの参照。</param>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="public int Ordinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Ordinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Ordinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の列の (0 から始まる) 位置を取得、<see cref="T:System.Data.DataColumnCollection" />コレクション。</summary>
+        <value>列の位置。 列がコレクションのメンバーでない場合は、-1 を取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、列の列名、順序、およびデータ型を返します。  
+  
+ [!code-csharp[Classic WebData DataColumn.Ordinal Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.Ordinal Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.Ordinal Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.Ordinal Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public string Prefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前空間のエイリアスを表すプレフィックス、XML、<see cref="T:System.Data.DataTable" />です。</summary>
+        <value>XML プレフィックス、<see cref="T:System.Data.DataTable" />名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTable.Prefix%2A>の名前空間に属している要素を識別する XML ドキュメント全体で使用される、<xref:System.Data.DataSet>オブジェクト (によって、設定、<xref:System.Data.DataSet.Namespace%2A>プロパティ)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePropertyChanging">
+      <MemberSignature Language="C#" Value="protected void RaisePropertyChanging (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RaisePropertyChanging(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.RaisePropertyChanging(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの参照。</param>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列がテーブルに行を追加するとすぐに変更できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、列は読み取り専用です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.DataColumn>設定とその<xref:System.Data.DataColumn.ReadOnly%2A>プロパティ`true`です。  
+  
+ [!code-csharp[Classic WebData DataColumn.ReadOnly Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.ReadOnly Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.ReadOnly Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.ReadOnly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティに設定<see langword="false" />計算列にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOrdinal">
+      <MemberSignature Language="C#" Value="public void SetOrdinal (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOrdinal(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.SetOrdinal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">指定した序数。</param>
+        <summary>Ordinal またはの位置を変更、<see cref="T:System.Data.DataColumn" />指定された序数の位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ordinal またはの位置を変更、<xref:System.Data.DataColumn>指定された序数の位置にします。 序数に基づく場合は、0 – 1 (最後の列の序数を超える) の列の既存の数より大きいか小さいし、無効な<xref:System.ArgumentException>がスローされます。  
+  
+ 変更すると、列の序数、列が列のコレクション内の新しい位置に移動されます。 列の新しい序数を調整する、以前と新しい序数との間のすべての列に番号がします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataTable" />に属している列。</summary>
+        <value><see cref="T:System.Data.DataTable" />を<see cref="T:System.Data.DataColumn" />に属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、親テーブルを返します、<xref:System.Data.DataColumn>を通じてその<xref:System.Data.DataColumn.Table%2A>プロパティです。  
+  
+ [!code-csharp[Classic WebData DataColumn.Table Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.Table Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.Table Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.Table Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Data.DataColumn.Expression" />が存在する場合は、列の。</summary>
+        <returns><see cref="P:System.Data.DataColumn.Expression" />プロパティが設定されて、それ以外の場合は、値、<see cref="P:System.Data.DataColumn.ColumnName" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataColumn.ToString%2A>プロパティのコレクションの各メンバーの既定の文字列を返すを<xref:System.Data.DataColumn>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataColumn.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unique">
+      <MemberSignature Language="C#" Value="public bool Unique { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Unique" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataColumn.Unique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の各行の値が一意である必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />値が一意である必要がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、false から true に変更とすぐに unique 制約は、値が一意であるかどうかを確認するには、この列に作成されます。  
+  
+   
+  
+## Examples  
+ 次の例が新規作成<xref:System.Data.DataColumn>、そのプロパティを設定し、テーブルの列のコレクションに追加します。  
+  
+ [!code-csharp[Classic WebData DataColumn.Unique Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumn.Unique Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumn.Unique Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumn.Unique Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">列では、計算列です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

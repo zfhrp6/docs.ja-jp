@@ -1,0 +1,370 @@
+<Type Name="FederationMessage" FullName="System.IdentityModel.Services.FederationMessage">
+  <TypeSignature Language="C#" Value="public abstract class FederationMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FederationMessage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.FederationMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージ クラスを派生するすべてのフェデレーションから基底クラスを定義します。</summary>
+    <remarks>To be added.</remarks>
+    <block subset="none" type="overrides">
+      <para>オーバーライドする必要がありますには、少なくとも、<see cref="P:System.IdentityModel.Services.FederationMessage.ProviderIdentifier" />プロパティおよび<see cref="M:System.IdentityModel.Services.FederationMessage.Write(System.IO.TextWriter)" />派生クラス内のメソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FederationMessage (Uri baseUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">フェデレーション メッセージを適用するベース URL。 初期化、<see cref="P:System.IdentityModel.Services.FederationMessage.BaseUri" />プロパティです。</param>
+        <summary>初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.IdentityModel.Services.FederationMessage" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">
+          <paramref name="baseUri" />有効な絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederationMessage.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージを適用するベース URL を設定します。</summary>
+        <value>A<see cref="T:System.Uri" />ベース URL を格納しています。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">ある値を設定しようとすると、<see langword="null" />に発生します。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">有効な URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaseUrl">
+      <MemberSignature Language="C#" Value="public static Uri GetBaseUrl (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetBaseUrl(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.GetBaseUrl(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">ベース URL を抽出する元の URI。</param>
+        <summary>ベース URL を指定した URI から抽出するヘルパー メソッドです。</summary>
+        <returns>抽出されたベース URL。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される URL は、クエリ文字列せず元 URL です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameter">
+      <MemberSignature Language="C#" Value="public string GetParameter (string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetParameter(string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.GetParameter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">検索対象のパラメーターです。</param>
+        <summary>パラメーター ディクショナリから指定されたパラメーターの値を返します。</summary>
+        <returns>パラメーターの値または<see langword="null" />パラメーターが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターの辞書がを通じてアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameter" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederationMessage.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディクショナリとしてのメッセージのパラメーターを取得します。</summary>
+        <value>メッセージ パラメーターを格納するディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージのパラメーターを含む名前と値のペアのディクショナリ。 パラメーターは、パラメーター名によってキー指定されます。 たとえば、wattr パラメーターの値を取得するには、"wattr"を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseQueryString">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection ParseQueryString (Uri data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.NameValueCollection ParseQueryString(class System.Uri data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.ParseQueryString(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="data">解析する URI。</param>
+        <summary>指定された URI にクエリ文字列を解析するヘルパー メソッド、<see cref="T:System.Collections.Specialized.NameValueCollection" />です。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.NameValueCollection" />クエリ文字列内のパラメーターを格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveParameter">
+      <MemberSignature Language="C#" Value="public void RemoveParameter (string parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveParameter(string parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.RemoveParameter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">削除するパラメーターの名前。</param>
+        <summary>パラメーター ディクショナリからパラメーターを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターの辞書がを通じてアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameter" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameter">
+      <MemberSignature Language="C#" Value="public void SetParameter (string parameter, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameter(string parameter, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.SetParameter(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">設定するパラメーターの名前。</param>
+        <param name="value">パラメーターに割り当てられる値です。</param>
+        <summary>パラメーターの辞書のパラメーターの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターがディクショナリに存在しない場合に追加されます。 パラメーターの辞書がを通じてアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameter" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <paramref name="value" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUriParameter">
+      <MemberSignature Language="C#" Value="public void SetUriParameter (string parameter, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetUriParameter(string parameter, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.SetUriParameter(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">パラメーターの名前。</param>
+        <param name="value">パラメーター値。</param>
+        <summary>パラメーターの辞書のパラメーターの値を設定します。 値は、絶対 URI にする必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターがディクショナリに存在しない場合が追加されます。 パラメーターの辞書がを通じてアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameter" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="value" /><see langword="null" />または絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="protected virtual void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装のチェックするかどうか、<xref:System.IdentityModel.Services.FederationMessage.BaseUri%2A>プロパティが絶対 URI を格納します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">値、<see cref="P:System.IdentityModel.Services.FederationMessage.BaseUri" />プロパティは<see langword="null" />か絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public abstract void Write (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.Write(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">テキスト ライターをメッセージが書き込まれます。</param>
+        <summary>派生クラスでオーバーライドされると、メッセージを出力ストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドをオーバーライドする必要があります。 実装は、メッセージを検証しに書き込む前に適切な例外をスローする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFormPost">
+      <MemberSignature Language="C#" Value="public virtual string WriteFormPost ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string WriteFormPost() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.WriteFormPost" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォーム ポストにメッセージをシリアル化し、文字列としての Javascript と結果の形式を返します。</summary>
+        <returns>その関連付けられた Javascript と共にフォームとして、メッセージの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteQueryString">
+      <MemberSignature Language="C#" Value="public virtual string WriteQueryString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string WriteQueryString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederationMessage.WriteQueryString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリ文字列の形式でメッセージの文字列表現を返します。</summary>
+        <returns>クエリ文字列の形式のメッセージです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された URL を構成しているメッセージを作成、<xref:System.IdentityModel.Services.FederationMessage.BaseUri%2A>プロパティのパラメーター ディクショナリから作成されるクエリ文字列が続きます。 パラメーターの辞書がを通じてアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

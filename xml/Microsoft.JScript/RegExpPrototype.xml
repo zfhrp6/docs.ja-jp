@@ -1,0 +1,160 @@
+<Type Name="RegExpPrototype" FullName="Microsoft.JScript.RegExpPrototype">
+  <TypeSignature Language="C#" Value="public class RegExpPrototype : Microsoft.JScript.JSObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegExpPrototype extends Microsoft.JScript.JSObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.RegExpPrototype" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.JSObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的メソッドとプロパティを提供<see cref="T:Microsoft.JScript.RegExpObject" />オブジェクト。 このクラスのすべてのメソッドは、メソッドへのアクセスを要求しているオブジェクトへの参照を渡すことによって呼び出されます。 このクラスは、組み込みのオブジェクト モデルのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="compile">
+      <MemberSignature Language="C#" Value="public static Microsoft.JScript.RegExpObject compile (object thisob, object source, object flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.JScript.RegExpObject compile(object thisob, object source, object flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.RegExpPrototype.compile(System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.RegExp_compile)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.RegExpObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="flags" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="source">検索する正規表現パターンです。</param>
+        <param name="flags">無視する場合、グローバル フラグと複数行モード。</param>
+        <summary>作成して、新しいコンパイル<see cref="T:Microsoft.JScript.RegExpObject" />オブジェクトを指定した正規表現パターンとフラグです。</summary>
+        <returns>新しい <see cref="T:Microsoft.JScript.RegExpObject" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="constructor">
+      <MemberSignature Language="C#" Value="public static Microsoft.JScript.RegExpConstructor constructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.JScript.RegExpConstructor constructor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.RegExpPrototype.constructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.RegExpConstructor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロトタイプを使用しているプロトタイプ ベースのオブジェクトへの参照を取得します。</summary>
+        <value>プロトタイプ ベースのオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="exec">
+      <MemberSignature Language="C#" Value="public static object exec (object thisob, object input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object exec(object thisob, object input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.RegExpPrototype.exec(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.RegExp_exec)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="input" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="input">検索する正規表現パターンです。</param>
+        <summary>指定したオブジェクトで指定した正規表現パターンの検索を実行します。</summary>
+        <returns>正規表現パターンの検索の結果。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="test">
+      <MemberSignature Language="C#" Value="public static bool test (object thisob, object input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool test(object thisob, object input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.RegExpPrototype.test(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.RegExp_test)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="input" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="input">検索する正規表現パターンです。</param>
+        <summary>指定したオブジェクトの指定した正規表現パターンの検索をテストします。</summary>
+        <returns>
+          <see langword="true" />検索が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toString">
+      <MemberSignature Language="C#" Value="public static string toString (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toString(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.RegExpPrototype.toString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.RegExp_toString)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>正規表現パターンとフラグを含む指定したオブジェクトの文字列表現を作成します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

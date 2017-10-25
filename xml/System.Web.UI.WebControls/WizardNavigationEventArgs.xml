@@ -1,0 +1,103 @@
+<Type Name="WizardNavigationEventArgs" FullName="System.Web.UI.WebControls.WizardNavigationEventArgs">
+  <TypeSignature Language="C#" Value="public class WizardNavigationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WizardNavigationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WizardNavigationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="P:System.Web.UI.WebControls.WizardNavigationEventArgs.CurrentStepIndex" />プロパティおよび<see cref="P:System.Web.UI.WebControls.WizardNavigationEventArgs.NextStepIndex" />ウィザード コントロール内でナビゲーション プロパティ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardNavigationEventArgs>クラス内のさまざまなナビゲーション イベントに必要なデータを提供する<xref:System.Web.UI.WebControls.Wizard>コントロール。 たとえば、<xref:System.Web.UI.WebControls.Wizard.NextButtonClick>のイベント、<xref:System.Web.UI.WebControls.Wizard>コントロール、<xref:System.Web.UI.WebControls.WizardNavigationEventArgs>オブジェクトを示すために、<xref:System.Web.UI.WebControls.WizardNavigationEventArgs.CurrentStepIndex%2A>と<xref:System.Web.UI.WebControls.WizardNavigationEventArgs.NextStepIndex%2A>コントロールのです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WizardNavigationEventArgs (int currentStepIndex, int nextStepIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 currentStepIndex, int32 nextStepIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardNavigationEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="currentStepIndex" Type="System.Int32" />
+        <Parameter Name="nextStepIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="currentStepIndex">インデックス、<see cref="T:System.Web.UI.WebControls.WizardStep" />に現在表示されているオブジェクト、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</param>
+        <param name="nextStepIndex">インデックス、<see cref="T:System.Web.UI.WebControls.WizardStep" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Wizard" />コントロールが次に表示されます。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WizardNavigationEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardNavigationEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィザードの次の手順への移動を取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />次の手順にナビゲーションをキャンセルする場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStepIndex">
+      <MemberSignature Language="C#" Value="public int CurrentStepIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentStepIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardNavigationEventArgs.CurrentStepIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Web.UI.WebControls.WizardStep" />オブジェクトに現在表示されて、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+        <value>表す 0 から始まるインデックス値、<see cref="T:System.Web.UI.WebControls.WizardStep" />に現在表示されているオブジェクト、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextStepIndex">
+      <MemberSignature Language="C#" Value="public int NextStepIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NextStepIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardNavigationEventArgs.NextStepIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを表す値を取得、<see cref="T:System.Web.UI.WebControls.WizardStep" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Wizard" />コントロールが次に表示されます。</summary>
+        <value>表す 0 から始まるインデックス値、<see cref="T:System.Web.UI.WebControls.WizardStep" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Wizard" />コントロールが次に表示されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

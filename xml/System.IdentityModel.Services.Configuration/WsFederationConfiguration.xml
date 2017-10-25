@@ -1,0 +1,528 @@
+<Type Name="WsFederationConfiguration" FullName="System.IdentityModel.Services.Configuration.WsFederationConfiguration">
+  <TypeSignature Language="C#" Value="public class WsFederationConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WsFederationConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.Configuration.WsFederationConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての Ws-federation 認証モジュールに必要な構成設定が含まれています (<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration>に設定されているクラス、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>を介してアクセスするオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティには、Ws-federation 認証モジュール (WSFAM) のプロパティを初期化し、その動作を制御するために使用する設定が含まれています。 これらの設定は通常から読み込まれます、`<wsFederation>`構成ファイル内の要素。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsFederationConfiguration (System.IdentityModel.Services.Configuration.WSFederationElement federationElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Services.Configuration.WSFederationElement federationElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.WsFederationConfiguration.#ctor(System.IdentityModel.Services.Configuration.WSFederationElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="federationElement" Type="System.IdentityModel.Services.Configuration.WSFederationElement" />
+      </Parameters>
+      <Docs>
+        <param name="federationElement"><see langword="&lt;wsFederation&gt;" />元の新しいインスタンスを初期化する要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.WsFederationConfiguration" />から、指定したクラス<see langword="&lt;wsFederation&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した設定に従って、新しいインスタンスのプロパティが初期化`<wsFederation>`要素。  
+  
+ いくつかの検証は実行、<xref:System.IdentityModel.Services.Configuration.WSFederationElement>で指定されたオブジェクト`federationElement`です。 両方の<xref:System.IdentityModel.Services.Configuration.WSFederationElement.Issuer%2A?displayProperty=nameWithType>プロパティおよび<xref:System.IdentityModel.Services.Configuration.WSFederationElement.Realm%2A?displayProperty=nameWithType>プロパティが null 以外の場合、空でない値を指定する必要があります。 場合、<xref:System.IdentityModel.Services.Configuration.WSFederationElement.RequireHttps%2A?displayProperty=nameWithType>プロパティが設定されて`true`、<xref:System.IdentityModel.Services.Configuration.WSFederationElement.Issuer%2A?displayProperty=nameWithType>プロパティは、HTTPS スキームのある URI を指定する必要があります。 <xref:System.IdentityModel.Services.Configuration.WSFederationElement.Freshness%2A?displayProperty=nameWithType>プロパティを負の値にすることはできません。 これらの条件のいずれかが満たされない場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsFederationConfiguration (string issuer, string realm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string issuer, string realm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.WsFederationConfiguration.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="realm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuer">Ws-federation 認証モジュール (WSFAM) で使用する発行者の URI を含む文字列です。</param>
+        <param name="realm">WSFAM によって使用される要求の領域の URI を含む文字列です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.WsFederationConfiguration" />指定発行者と領域を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Issuer%2A>と<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Realm%2A>プロパティが初期化によると、`issuer`と`realm`パラメーター。 その他のすべてのプロパティは、既定値に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="realm" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wauth パラメーターの値を設定します。</summary>
+        <value>認証の種類を指定する URI。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomAttributes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,string&gt; CustomAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, string&gt; CustomAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.CustomAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたすべての余分な属性を格納するディクショナリを取得、<see langword="&lt;wsFederation&gt;" />構成ファイル内の要素。</summary>
+        <value>余分な属性を含むディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFreshness">
+      <MemberSignature Language="C#" Value="public const string DefaultFreshness = null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DefaultFreshness = null" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultFreshness" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <MemberValue>null</MemberValue>
+      <Docs>
+        <summary>既定値を含む定数、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Freshness" />プロパティ; 0 です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaxArrayLength">
+      <MemberSignature Language="C#" Value="public const int DefaultMaxArrayLength = 2097152;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultMaxArrayLength = (2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultMaxArrayLength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2097152</MemberValue>
+      <Docs>
+        <summary>既定値を設定する定数<see cref="P:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength" />、XML ディクショナリ リーダーのクォータによって参照されるオブジェクトのプロパティ、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.XmlDictionaryReaderQuotas" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaxStringContentLength">
+      <MemberSignature Language="C#" Value="public const int DefaultMaxStringContentLength = 2097152;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultMaxStringContentLength = (2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultMaxStringContentLength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2097152</MemberValue>
+      <Docs>
+        <summary>既定値を設定する定数<see cref="P:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength" />、XML ディクショナリ リーダーのクォータによって参照されるオブジェクトのプロパティ、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.XmlDictionaryReaderQuotas" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPassiveRedirectEnabled">
+      <MemberSignature Language="C#" Value="public const bool DefaultPassiveRedirectEnabled;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal bool DefaultPassiveRedirectEnabled" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultPassiveRedirectEnabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を含む定数、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.PassiveRedirectEnabled" />プロパティです。<see langword="true" />、受動的なリダイレクトを有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPersistentCookiesOnPassiveRedirects">
+      <MemberSignature Language="C#" Value="public const bool DefaultPersistentCookiesOnPassiveRedirects;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal bool DefaultPersistentCookiesOnPassiveRedirects" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultPersistentCookiesOnPassiveRedirects" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を含む定数、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.PersistentCookiesOnPassiveRedirects" />プロパティです。<see langword="false" />cookie が有効ではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRequireHttps">
+      <MemberSignature Language="C#" Value="public const bool DefaultRequireHttps;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal bool DefaultRequireHttps" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultRequireHttps" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を含む定数、<see cref="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.RequireHttps" />プロパティです。<see langword="true" />リダイレクトでは HTTPS が必要です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Freshness">
+      <MemberSignature Language="C#" Value="public string Freshness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Freshness" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Freshness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wfresh パラメーターの値を設定します。</summary>
+        <value>目的の最大期間、認証要求 (分) です。 既定値は、<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultFreshness" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HomeRealm">
+      <MemberSignature Language="C#" Value="public string HomeRealm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HomeRealm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.HomeRealm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する whr パラメーターの値を設定します。</summary>
+        <value>ホーム領域の id プロバイダーのアドレス。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public string Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ トークンの目的の発行者を識別する URI を設定します。</summary>
+        <value>セキュリティ トークン サービス (STS) を識別する URI。 ことはできません<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PassiveRedirectEnabled">
+      <MemberSignature Language="C#" Value="public bool PassiveRedirectEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PassiveRedirectEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.PassiveRedirectEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation プロトコル リダイレクトを開始する、モジュールが有効になっているかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />有効にする次のようにリダイレクトします。それ以外の場合、<see langword="false" />です。 既定値は<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultPassiveRedirectEnabled" />リダイレクトが有効にします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistentCookiesOnPassiveRedirects">
+      <MemberSignature Language="C#" Value="public bool PersistentCookiesOnPassiveRedirects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PersistentCookiesOnPassiveRedirects" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.PersistentCookiesOnPassiveRedirects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証が成功した上で、永続的なセッションの cookie が発行するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />永続的なセッション cookie を発行するにはそれ以外の場合、<see langword="false" />です。 既定値は<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultPersistentCookiesOnPassiveRedirects" />cookie が有効ではありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Policy">
+      <MemberSignature Language="C#" Value="public string Policy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Policy" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Policy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用される wp パラメーターの値を設定します。</summary>
+        <value>使用するポリシーを識別する URL です。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Realm">
+      <MemberSignature Language="C#" Value="public string Realm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Realm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Realm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") に使用する wtrealm パラメーターの値を設定します。</summary>
+        <value>セキュリティ トークン サービス (STS) に、証明書利用者 (RP) を識別する URI。 ことはできません<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reply">
+      <MemberSignature Language="C#" Value="public string Reply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reply" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Reply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreply パラメーターの値を設定します。</summary>
+        <value>これで、証明書利用者 (RP) アプリケーションにはセキュリティ トークン サービス (STS) からの応答を受信するアドレスを識別する URL です。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public string Request { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Request" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreq パラメーターの値を設定します。</summary>
+        <value>トークン発行要求で表した、<see langword="&lt;wst:RequestSecurityToken&gt;" />要素。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestPtr">
+      <MemberSignature Language="C#" Value="public string RequestPtr { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestPtr" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.RequestPtr" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreqptr パラメーターの値を設定します。</summary>
+        <value>として表現されるトークンの発行要求の場所を指定する URL、<see langword="&lt;wst:RequestSecurityToken&gt;" />要素</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireHttps">
+      <MemberSignature Language="C#" Value="public bool RequireHttps { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireHttps" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.RequireHttps" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ トークン サービス (STS) との通信で HTTPS プロトコルを使用する必要があるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は HTTPS を使用する STS との通信を保護する必要がありますそれ以外の場合、<see langword="false" />です。 既定値は<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultRequireHttps" />HTTPS は必須です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public string Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wres パラメーターの値を設定します。</summary>
+        <value>証明書利用者 (RP)、アクセスされるリソースを識別する URI をセキュリティ トークン サービス (STS) にします。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって設定されている wtrealm パラメーター、<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration.Realm%2A>プロパティは、このパラメーターの代わりに使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInQueryString">
+      <MemberSignature Language="C#" Value="public string SignInQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignInQueryString" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.SignInQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で送信されるその他のパラメーターを含むクエリ文字列を設定します。</summary>
+        <value>次の形式で追加のメッセージ パラメーターを含む URL フラグメント: <c>"? param1 = value1&amp;param2 = value2&amp;paramN = の値"</c>です。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutQueryString">
+      <MemberSignature Language="C#" Value="public string SignOutQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignOutQueryString" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.SignOutQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパッシブ サインアウト時に Ws-federation サインアウト要求 ("wsignout1.0") で送信されるその他のパラメーターを含むクエリ文字列を設定します。</summary>
+        <value>次の形式で追加のメッセージ パラメーターを含む URL フラグメント: <c>"? param1 = value1&amp;param2 = value2&amp;paramN = の値"</c>です。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutReply">
+      <MemberSignature Language="C#" Value="public string SignOutReply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignOutReply" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.SignOutReply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインアウト要求 ("wsignout1.0") の中に使用する wreply パラメーターの値を設定します。</summary>
+        <value>先クライアント リダイレクトされるセキュリティ トークン サービス (STS) によってパッシブ Ws-federation プロトコルを介してサインアウト中に URL です。 既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlDictionaryReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.WsFederationConfiguration.XmlDictionaryReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのインスタンスによって使用される XML ディクショナリ リーダーの構成可能なクォータ値を設定します。</summary>
+        <value>構成可能なクォータ値を格納するオブジェクト。 既定のオブジェクトが、<see cref="P:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength" />プロパティに設定<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultMaxArrayLength" />と<see cref="P:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength" />プロパティに設定<see cref="F:System.IdentityModel.Services.Configuration.WsFederationConfiguration.DefaultMaxStringContentLength" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

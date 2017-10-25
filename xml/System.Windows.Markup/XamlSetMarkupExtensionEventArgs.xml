@@ -1,0 +1,116 @@
+<Type Name="XamlSetMarkupExtensionEventArgs" FullName="System.Windows.Markup.XamlSetMarkupExtensionEventArgs">
+  <TypeSignature Language="C#" Value="public class XamlSetMarkupExtensionEventArgs : System.Windows.Markup.XamlSetValueEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlSetMarkupExtensionEventArgs extends System.Windows.Markup.XamlSetValueEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.XamlSetValueEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML オブジェクト ライターが、マークアップ拡張機能を使用して値を設定するときに呼び出されるコールバックのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスがである可能性がありますが<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>処理を通じて、マークアップ拡張機能値を設定する試行をすべて、1 つ以上のマークアップ拡張機能を使用して、これを行うことも、ことです。 したがってセット操作ごとに個別のマークアップ拡張機能の実装をサポートするコードの最終的に解決します。 <xref:System.Windows.Markup.XamlSetMarkupExtensionEventArgs>クラスは、コールバックがそれに応じて分岐するように、実行しようとしたマークアップ拡張機能セットの各操作の詳細を報告の異なる<xref:System.Windows.Markup.MarkupExtension>場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSetMarkupExtensionEventArgs (System.Xaml.XamlMember member, System.Windows.Markup.MarkupExtension value, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlMember member, class System.Windows.Markup.MarkupExtension value, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetMarkupExtensionEventArgs.#ctor(System.Xaml.XamlMember,System.Windows.Markup.MarkupExtension,System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.Xaml.XamlMember" />
+        <Parameter Name="value" Type="System.Windows.Markup.MarkupExtension" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="member">XAML 型システム/メンバーのスキーマ情報が設定されています。</param>
+        <param name="value">設定されているメンバーを提供するマークアップ拡張機能の参照。</param>
+        <param name="serviceProvider">サービス プロバイダーの情報は、マークアップ拡張機能に渡されます。</param>
+        <summary><see cref="T:System.Windows.Markup.XamlSetMarkupExtensionEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallBase">
+      <MemberSignature Language="C#" Value="public override void CallBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CallBase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetMarkupExtensionEventArgs.CallBase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在機能している型の基底クラスに定義されているコールバックを呼び出す方法を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupExtension">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.MarkupExtension MarkupExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.MarkupExtension MarkupExtension" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetMarkupExtensionEventArgs.MarkupExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.MarkupExtension</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Markup.MarkupExtension" />はこれに関連する参照<see cref="T:System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />です。</summary>
+        <value>これに関連するマークアップ拡張機能の参照<see cref="T:System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、構築`value`にキャスト<xref:System.Windows.Markup.MarkupExtension>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceProvider">
+      <MemberSignature Language="C#" Value="public IServiceProvider ServiceProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IServiceProvider ServiceProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetMarkupExtensionEventArgs.ServiceProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IServiceProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マークアップ拡張機能に渡されたサービス プロバイダーの情報を取得します。</summary>
+        <value>マークアップ拡張機能に渡されたサービス プロバイダー情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、`serviceProvider`コンス トラクターの引数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

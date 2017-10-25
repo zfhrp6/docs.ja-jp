@@ -1,0 +1,494 @@
+<Type Name="TableRow" FullName="System.Web.UI.WebControls.TableRow">
+  <TypeSignature Language="C#" Value="public class TableRow : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableRow extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TableRow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Cells")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.PreviewControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "Cells")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の行を表す、<see cref="T:System.Web.UI.WebControls.Table" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.TableRow>クラス内の行を表す、<xref:System.Web.UI.WebControls.Table>コントロール。  
+  
+ このクラスでは、行の内容を表示する方法を制御することができます。 設定して、行のコンテンツの配置が指定されて、<xref:System.Web.UI.WebControls.TableRow.HorizontalAlign%2A>と<xref:System.Web.UI.WebControls.TableRow.VerticalAlign%2A>プロパティです。  
+  
+ 使用して、行のセルをプログラムで管理できる、<xref:System.Web.UI.WebControls.TableRow.Cells%2A>コレクション。 <xref:System.Web.UI.WebControls.TableRow.Cells%2A>コレクションは、コレクションの<xref:System.Web.UI.WebControls.TableCell>行内のセルを表すオブジェクト。  
+  
+> [!CAUTION]
+>  <xref:System.Web.UI.WebControls.TableCell>悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示するコントロールを使用することができます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。 [ASP.NET の検証コントロール](http://msdn.microsoft.com/library/fa2aa14d-a461-492e-9a79-c990904613ef)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:TableRow  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    TableSection="TableHeader|TableBody|TableFooter"  
+    ToolTip="string"  
+    VerticalAlign="NotSet|Top|Middle|Bottom"  
+    Visible="True|False"  
+    Width="size"  
+>  
+        <asp:TableCell  
+            AccessKey="string"  
+            AssociatedHeaderCellID="string"  
+            BackColor="color name|#dddddd"  
+            BorderColor="color name|#dddddd"  
+            BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|  
+                Groove|Ridge|Inset|Outset"  
+            BorderWidth="size"  
+            ColumnSpan="integer"  
+            CssClass="string"  
+            Enabled="True|False"  
+            EnableTheming="True|False"  
+            EnableViewState="True|False"  
+            Font-Bold="True|False"  
+            Font-Italic="True|False"  
+            Font-Names="string"  
+            Font-Overline="True|False"  
+            Font-Size="string|Smaller|Larger|XX-Small|  
+                X-Small|Small|Medium|Large|X-Large|XX-Large"  
+            Font-Strikeout="True|False"  
+            Font-Underline="True|False"  
+            ForeColor="color name|#dddddd"  
+            Height="size"  
+            HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+            ID="string"  
+            OnDataBinding="DataBinding event handler"  
+            OnDisposed="Disposed event handler"  
+            OnInit="Init event handler"  
+            OnLoad="Load event handler"  
+            OnPreRender="PreRender event handler"  
+            OnUnload="Unload event handler"  
+            RowSpan="integer"  
+            runat="server"  
+            SkinID="string"  
+            Style="string"  
+            TabIndex="integer"  
+            Text="string"  
+            ToolTip="string"  
+            VerticalAlign="NotSet|Top|Middle|Bottom"  
+            Visible="True|False"  
+            Width="size"  
+            Wrap="True|False"  
+        />  
+        <asp:TableHeaderCell  
+            AbbreviatedText="string"  
+            AccessKey="string"  
+            AssociatedHeaderCellID="string"  
+            BackColor="color name|#dddddd"  
+            BorderColor="color name|#dddddd"  
+            BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|  
+                Groove|Ridge|Inset|Outset"  
+            BorderWidth="size"  
+            CategoryText="string"  
+            ColumnSpan="integer"  
+            CssClass="string"  
+            Enabled="True|False"  
+            EnableTheming="True|False"  
+            EnableViewState="True|False"  
+            Font-Bold="True|False"  
+            Font-Italic="True|False"  
+            Font-Names="string"  
+            Font-Overline="True|False"  
+            Font-Size="string|Smaller|Larger|XX-Small|  
+                X-Small|Small|Medium|Large|X-Large|XX-Large"  
+            Font-Strikeout="True|False"  
+            Font-Underline="True|False"  
+            ForeColor="color name|#dddddd"  
+            Height="size"  
+            HorizontalAlign="NotSet|Left|Center|Right|Justify"  
+            ID="string"  
+            OnDataBinding="DataBinding event handler"  
+            OnDisposed="Disposed event handler"  
+            OnInit="Init event handler"  
+            OnLoad="Load event handler"  
+            OnPreRender="PreRender event handler"  
+            OnUnload="Unload event handler"  
+            RowSpan="integer"  
+            runat="server"  
+            Scope="NotSet|Row|Column"  
+            SkinID="string"  
+            Style="string"  
+            TabIndex="integer"  
+            Text="string"  
+            ToolTip="string"  
+            VerticalAlign="NotSet|Top|Middle|Bottom"  
+            Visible="True|False"  
+            Width="size"  
+            Wrap="True|False"  
+        />  
+</asp:TableRow>  
+```  
+  
+   
+  
+## Examples  
+ この次のコード例はテーブルを作成、プログラムで、テーブルに要素を追加し、Web ページでテーブルを表示します。  
+  
+ [!code-aspx-csharp[TableCell#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#1)]
+ [!code-aspx-vb[TableCell#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TableRow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TableRow.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TableRow" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.TableRow>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.Web.UI.WebControls.TableRow>プログラムによってクラスです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.TableRow>クラスです。  
+  
+ [!code-csharp[TableCell#5](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#5)]
+ [!code-vb[TableCell#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cells">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableCellCollection Cells { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableCellCollection Cells" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TableRow.Cells" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableCellCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.TableCell" />内の行のセルを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.Table" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableCellCollection" />の行からのセルのコレクションを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.Table" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのコレクションをプログラムから制御を使用して<xref:System.Web.UI.WebControls.TableCell>の行のセルを表すオブジェクト、<xref:System.Web.UI.WebControls.Table>コントロール。 プログラムで追加、insert、または削除できます、<xref:System.Web.UI.WebControls.TableCell>オブジェクトをコレクションからです。  
+  
+> [!NOTE]
+>  このプロパティは、作成するときにのみ使用<xref:System.Web.UI.WebControls.Table>プログラムで制御します。 このプロパティの設定宣言することで、デザイン時に<xref:System.Web.UI.WebControls.TableCell>オブジェクト。  
+  
+   
+  
+## Examples  
+ この次のコード例はテーブルを作成、プログラムで、テーブルに要素を追加し、Web ページでテーブルを表示します。  
+  
+ [!code-aspx-csharp[TableCell#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#1)]
+ [!code-aspx-vb[TableCell#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TableRow.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Web.UI.ControlCollection" />オブジェクトに対して、<see cref="T:System.Web.UI.WebControls.TableRow" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ControlCollection" />オブジェクトを含む、<see cref="T:System.Web.UI.WebControls.TableRow" />コントロールの子サーバー コントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TableRow.CreateControlCollection%2A>メソッドが新たに作成<xref:System.Web.UI.ControlCollection>を保持するオブジェクト、<xref:System.Web.UI.WebControls.TableRow>セル。  
+  
+ <xref:System.Web.UI.WebControls.TableRow.CreateControlCollection%2A>メソッドは、主の機能を拡張するコントロールの開発者を対象、<xref:System.Web.UI.WebControls.TableRow>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlStyle">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Style CreateControlStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Style CreateControlStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TableRow.CreateControlStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />オブジェクトに対して、<see cref="T:System.Web.UI.WebControls.TableRow" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Style" />のスタイル プロパティを指定するオブジェクト、<see cref="T:System.Web.UI.WebControls.TableRow" />コントロール。  
+  
+ <see cref="M:System.Web.UI.WebControls.TableRow.CreateControlCollection" />メソッドは、主の機能を拡張するコントロールの開発者を対象、<see cref="T:System.Web.UI.WebControls.TableRow" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HorizontalAlign HorizontalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HorizontalAlign HorizontalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TableRow.HorizontalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HorizontalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行の内容の水平方向の配置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HorizontalAlign" /> 値のいずれか。 既定値は <see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TableRow.HorizontalAlign%2A>行の内容の水平方向の配置を指定するプロパティです。 次の表は、使用可能な値を一覧表示します。  
+  
+|水平方向のアラインメント|説明|  
+|--------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.HorizontalAlign.NotSet>|水平方向の配置が設定されていません。|  
+|<xref:System.Web.UI.WebControls.HorizontalAlign.Left>|行の内容が左揃えで配置します。|  
+|<xref:System.Web.UI.WebControls.HorizontalAlign.Center>|行の内容が中央揃えされます。|  
+|<xref:System.Web.UI.WebControls.HorizontalAlign.Right>|行の内容が右揃えで配置します。|  
+|<xref:System.Web.UI.WebControls.HorizontalAlign.Justify>|行の内容は均一に散在し、左と右余白のどちらに揃えて配置します。|  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TableRow.HorizontalAlign%2A>プロパティです。 完了したら、作業中のコード例は、次を参照してください。、<xref:System.Web.UI.WebControls.TableRow>クラスの概要に関するトピック。  
+  
+ [!code-csharp[TableCell#4](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#4)]
+ [!code-vb[TableCell#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TableRow.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TableSection">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableRowSection TableSection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TableRowSection TableSection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TableRow.TableSection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableRowSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場所、<see cref="T:System.Web.UI.WebControls.TableRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.Table" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TableRowSection" /> 値。 既定値は、<see cref="F:System.Web.UI.WebControls.TableRowSection.TableBody" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TableRow.TableSection%2A>プロパティを取得または設定を<xref:System.Web.UI.WebControls.TableRow>にオブジェクトを配置、<xref:System.Web.UI.WebControls.Table>コントロール。 使用可能なテーブルの場所を参照してください。<xref:System.Web.UI.WebControls.TableRowSection>です。 次の表は、使用可能な値を一覧表示します。  
+  
+|テーブルの行のセクション|として表示されます。|  
+|-----------------------|------------------|  
+|<xref:System.Web.UI.WebControls.TableRowSection.TableHeader>|ヘッダー行です。|  
+|<xref:System.Web.UI.WebControls.TableRowSection.TableBody>|テーブルの本文。|  
+|<xref:System.Web.UI.WebControls.TableRowSection.TableFooter>|フッター行。|  
+  
+ 宣言の構文を使用する場合、セクションは、ヘッダー、本文、およびページ フッターの順序でする必要があります。  
+  
+ <xref:System.Web.UI.WebControls.TableRowSection>列挙型を使用してアクセスできる Web サイトを構築することができます、<xref:System.Web.UI.WebControls.Table>コントロールを追加することによって、 `<thead>`、 `<tbody>`、および`<tfoot>`をクライアントにレンダリングされる HTML 要素です。 テーブル内のすべての行にある場合、`<tbody>`要素、セクションの情報はレンダリングされません。 少なくとも 1 つの行は、本文以外の要素でなければなりません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TableRow.TableSection%2A>で行ヘッダーとフッター行を定義するプロパティ、<xref:System.Web.UI.WebControls.Table>コントロール。  
+  
+ [!code-aspx-csharp[TableRow#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TableRow/CS/TableRowCS.aspx#1)]
+ [!code-aspx-vb[TableRow#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableRow/VB/TableRowVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="T:System.Web.UI.WebControls.TableRowSection" /> が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.VerticalAlign VerticalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.VerticalAlign VerticalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TableRow.VerticalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.VerticalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行の内容の垂直方向の配置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.VerticalAlign" /> 値のいずれか。 既定値は <see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TableRow.VerticalAlign%2A>行の内容の垂直方向の配置を指定するプロパティです。 次の表は、使用可能な値を一覧表示します。  
+  
+|垂直方向のアラインメント|説明|  
+|------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.VerticalAlign.NotSet>|垂直方向の配置が設定されていません。|  
+|<xref:System.Web.UI.WebControls.VerticalAlign.Top>|行の内容を行の上部に揃えます。|  
+|<xref:System.Web.UI.WebControls.VerticalAlign.Middle>|行の内容は、行の中央に揃えて配置されます。|  
+|<xref:System.Web.UI.WebControls.VerticalAlign.Bottom>|行の内容を行の下部に揃えます。|  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TableRow.VerticalAlign%2A>プロパティです。 完了したら、作業中のコード例は、次を参照してください。、<xref:System.Web.UI.WebControls.TableRow>クラスの概要に関するトピック。  
+  
+ [!code-csharp[TableCell#4](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#4)]
+ [!code-vb[TableCell#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

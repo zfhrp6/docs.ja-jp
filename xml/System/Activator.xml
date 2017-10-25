@@ -1,0 +1,2271 @@
+<Type Name="Activator" FullName="System.Activator">
+  <TypeSignature Language="C#" Value="public sealed class Activator : System.Runtime.InteropServices._Activator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Activator extends System.Object implements class System.Runtime.InteropServices._Activator" />
+  <TypeSignature Language="DocId" Value="T:System.Activator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._Activator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._Activator))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの型をローカル サイトまたはリモート サイトに作成するメソッド、または既存のリモート オブジェクトへの参照を取得するメソッドを保持します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activator.CreateInstance%2A>メソッドは、指定された引数を最もよく一致するコンス トラクターを呼び出すことによって、アセンブリで定義されている型のインスタンスを作成します。 引数が指定されていない場合は、既定のコンス トラクターをパラメーターをとらないコンス トラクターが呼び出されます。  
+  
+ 検索し、コンス トラクターを呼び出すための十分なアクセス許可が必要それ以外の場合、例外がスローされます。 既定では、コンス トラクターを検索中に、パブリック コンス トラクターだけと見なされます。 コンス トラクターまたは既定のコンス トラクターが見つかりません、例外がスローされます。  
+  
+ バインダー パラメーターは、適切なコンス トラクターのアセンブリを検索するオブジェクトを指定します。 バインダーと検索条件を指定することができます。 バインダーが指定されていない場合は、既定のバインダーが使用されます。 詳細については、<xref:System.Reflection.Binder?displayProperty=nameWithType> クラスおよび <xref:System.Reflection.BindingFlags?displayProperty=nameWithType> クラスを参照してください。  
+  
+ 証拠パラメーターは、セキュリティ ポリシーとコンス トラクターのアクセス許可に影響します。 詳細については、<xref:System.Security.Policy.Evidence?displayProperty=nameWithType> クラスを参照してください。  
+  
+ 型のインスタンスは、ローカルまたはリモート サイトで作成できます。 場合は、型がリモートで作成されると、アクティベーション属性パラメーターは、リモート サイトの URI を指定します。 インスタンスを作成するための呼び出しは、リモート サイトに達する前に、仲介サイトを通過可能性があります。 その他のアクティベーション属性は、環境、または呼び出しが、リモート サイトと中間サイトで動作するコンテキストを変更できます。  
+  
+ インスタンスがローカルに作成される場合は、そのオブジェクトへの参照が返されます。 インスタンスがリモートで作成された場合、プロキシへの参照が返されます。 リモート オブジェクトは、ローカル オブジェクトの場合と同様に、プロキシ経由操作されます。  
+  
+ <xref:System.Activator.GetObject%2A>メソッドは、現在実行しているリモート オブジェクト、よく知られているオブジェクトのサーバー側でアクティブまたは XML Web サービス プロキシを作成します。 接続メディア、つまり、チャネルを指定できます。 詳細については、<xref:System.Runtime.Remoting.Channels.ChannelServices?displayProperty=nameWithType> クラスを参照してください。  
+  
+ アセンブリには、型定義が含まれています。 <xref:System.Activator.CreateInstance%2A>メソッドは、現在実行中のアセンブリから型のインスタンスを作成します。 <xref:System.Activator.CreateInstanceFrom%2A>メソッドは、アセンブリを含むファイルからインスタンスを作成します。 <xref:System.Activator.CreateComInstanceFrom%2A>メソッドは、アセンブリを含むファイルから COM オブジェクトのインスタンスを作成します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Activator>を動的に実行時にオブジェクトを構築します。  
+  
+ [!code-cpp[ActivatorX#1](~/samples/snippets/cpp/VS_Snippets_CLR/ActivatorX/cpp/ActivatorX.cpp#1)]
+ [!code-csharp[ActivatorX#1](~/samples/snippets/csharp/VS_Snippets_CLR/ActivatorX/cs/ActivatorX.cs#1)]
+ [!code-vb[ActivatorX#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ActivatorX/VB/ActivatorX.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateComInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateComInstanceFrom (string assemblyName, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateComInstanceFrom(string assemblyName, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateComInstanceFrom(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <summary>名前を指定したアセンブリ ファイルと、既定のコンストラクターを使用して、名前を指定した COM オブジェクトのインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ A<xref:System.Runtime.InteropServices.ComVisibleAttribute?displayProperty=nameWithType>属性の値`true`COM 型に明示的にも既定に適用する必要がありますので、<xref:System.Activator.CreateComInstanceFrom%2A>メソッドは、その型のインスタンスを作成できます。 それ以外の場合、<xref:System.TypeLoadException>がスローされます。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、呼び出し元が許可されている場合は、非パブリックの型を作成するこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> または <paramref name="assemblyName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.TypeLoadException">COM を使用してインスタンスを作成できません。  
+  
+ または  
+  
+ <paramref name="typename" /> が <paramref name="assemblyName" /> で見つかりませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つからないか、読み込もうとしているモジュールにファイル名拡張子が指定されていません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成できません。  
+  
+ または  
+  
+ このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、<see cref="T:System.MarshalByRefObject" /> を継承しないオブジェクトのアクティベーション属性を提供できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assemblyName" /> が空の文字列 ("") です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateComInstanceFrom (string assemblyName, string typeName, byte[] hashValue, System.Configuration.Assemblies.AssemblyHashAlgorithm hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateComInstanceFrom(string assemblyName, string typeName, unsigned int8[] hashValue, valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateComInstanceFrom(System.String,System.String,System.Byte[],System.Configuration.Assemblies.AssemblyHashAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="hashValue" Type="System.Byte[]" />
+        <Parameter Name="hashAlgorithm" Type="System.Configuration.Assemblies.AssemblyHashAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="hashValue">計算されたハッシュ コードの値。</param>
+        <param name="hashAlgorithm">ファイルのハッシュ処理および厳密な名前の生成に使用されるハッシュ アルゴリズム。</param>
+        <summary>名前を指定したアセンブリ ファイルと、既定のコンストラクターを使用して、名前を指定した COM オブジェクトのインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ A<xref:System.Runtime.InteropServices.ComVisibleAttribute?displayProperty=nameWithType>属性の値`true`COM 型に明示的にも既定に適用する必要がありますので、<xref:System.Activator.CreateComInstanceFrom%2A>メソッドは、その型のインスタンスを作成できます。 それ以外の場合、<xref:System.TypeLoadException>がスローされます。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、呼び出し元が許可されている場合は、非パブリックの型を作成するこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> または <paramref name="assemblyName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="assemblyName" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">アセンブリまたはモジュールが 2 回読み込まれ、2 つの異なる証拠が出されました。あるいは、アセンブリ名が MAX_PATH の文字数を超えています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つからないか、読み込もうとしているモジュールにファイル名拡張子が指定されていません。</exception>
+        <exception cref="T:System.IO.FileLoadException">
+          <paramref name="assemblyName" /> が見つかりましたが、読み込めません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は有効なアセンブリ名ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">"file://" で始まっていないコードベースが、必須の <see langword="WebPermission" /> なしで指定されました。</exception>
+        <exception cref="T:System.TypeLoadException">COM を使用してインスタンスを作成できません  
+  
+ または  
+  
+ <paramref name="typename" /> が <paramref name="assemblyName" /> で見つかりませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成できません。  
+  
+ または  
+  
+ このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、<see cref="T:System.MarshalByRefObject" /> を継承しないオブジェクトのアクティベーション属性を提供できません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">file:// で始まる URI を読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Net.WebPermission">file:// で始まらないする URI を読み取る。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext">作成するオブジェクトを指定するアクティベーション コンテキスト オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ActivationContext" /> オブジェクトによって決定される型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ アクティブ化コンテキストは、ドメイン ポリシーを設定して、アプリケーション ベースのセキュリティ モデルを提供するマニフェストに基づくアクティベーションに使用されます。 <xref:System.ActivationContext>クラスに含まれる、<xref:System.ApplicationIdentity>アプリケーション マニフェストへのアクセスを提供するオブジェクト。 詳細については、<xref:System.Security.Policy.ApplicationSecurityManager> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <summary>指定された型の既定のコンストラクターを使用して、指定された型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されるコンス トラクターは、アクセスできる必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が付与されている非パブリックの型へのアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Activator.CreateInstance%28System.Type%29>メソッドです。 さまざまな種類のインスタンスが作成され、その既定値が表示されます。  
+  
+ [!code-cpp[ActivatorX#4](~/samples/snippets/cpp/VS_Snippets_CLR/ActivatorX/cpp/source2.cpp#4)]
+ [!code-csharp[ActivatorX#4](~/samples/snippets/csharp/VS_Snippets_CLR/ActivatorX/cs/source2.cs#4)]
+ [!code-vb[ActivatorX#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ActivatorX/VB/source2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは <see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MissingMemberException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext, string[] activationCustomData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext, string[] activationCustomData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.ActivationContext,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+        <Parameter Name="activationCustomData" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext">作成するオブジェクトを指定するアクティベーション コンテキスト オブジェクト。</param>
+        <param name="activationCustomData">カスタム アクティベーション データを格納する Unicode 文字列の配列。</param>
+        <summary>指定した <see cref="T:System.ActivationContext" /> オブジェクトによって決定され、指定したカスタム アクティベーション データによってアクティブにされる型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ アクティブ化コンテキストは、ドメイン ポリシーを設定して、アプリケーション ベースのセキュリティ モデルを提供するマニフェストに基づくアクティベーションに使用されます。 <xref:System.ActivationContext>クラスに含まれる、<xref:System.ApplicationIdentity>アプリケーション マニフェストへのアクセスを提供するオブジェクト。 詳細については、<xref:System.Security.Policy.ApplicationSecurityManager> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (string assemblyName, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(string assemblyName, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <summary>名前を指定したアセンブリと、既定のコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+ `assemblyName`次のいずれかになります。  
+  
+-   パスまたはファイル拡張子の付かない、アセンブリの簡易名。 たとえばは指定`TypeExtensions`.\bin\TypeExtensions.dll を持つパスと名前はアセンブリのです。  
+  
+-   簡易名、バージョン、カルチャ、およびパブリック キー トークンの署名されたアセンブリの完全名たとえば、"TypeExtensions、バージョン 1.0.0.0、カルチャを = = neutral, PublicKeyToken = 181869f2f7435b51"です。  
+  
+ 共通言語ランタイムがどのようにを識別し、アセンブリを読み込む方法については、次を参照してください。[ランタイムがアセンブリを検索する方法](~/docs/framework/deployment/how-the-runtime-locates-assemblies.md)です。 アプリケーション構成ファイルを使用して、アセンブリの場所を定義する方法については、次を参照してください。[アセンブリの場所を指定する](~/docs/framework/configure-apps/specify-assembly-location.md)です。 場合`assemblyName`が見つかると、既定のコンテキストに読み込まれます。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、呼び出し元が許可されている場合は、非パブリックの型を作成するこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを定義`Person`という名前のアセンブリで`PersonInfo`です。 なお、`Person`クラスにはパラメーターなしのうちの 1 つ、2 つのコンス トラクターです。  
+  
+ [!code-csharp[System.Activator.CreateInstance#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activator.createinstance/cs/personinfo.cs#1)]
+ [!code-vb[System.Activator.CreateInstance#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activator.createinstance/vb/personinfo.vb#1)]  
+  
+ 次の例では、<xref:System.Activator.CreateInstance%28System.String%2CSystem.String%29>をインスタンス化するメソッド、`Person`クラスです。 プロジェクトに追加する PersonInfo.dll への参照が必要です。 <xref:System.Activator.CreateInstance%28System.String%2CSystem.String%29>メソッドの呼び出し、`Person`クラスの既定のコンス トラクターに値を割り当てます例では、その`Name`プロパティです。  
+  
+ [!code-csharp[System.Activator.CreateInstance#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activator.createinstance/cs/createinstanceex1.cs#2)]
+ [!code-vb[System.Activator.CreateInstance#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activator.createinstance/vb/createinstanceex1.vb#2)]  
+  
+ ただし、<xref:System.Activator.CreateInstance%2A>頻繁に呼び出され、コンピューターの境界を越えることかされるデザイン時に不明の型のインスタンスを作成します。 この場合、プロジェクトのアセンブリへの参照を含めることはできませんし、型のメンバーへの事前バインディングされた呼び出しを行うことはできません。 この制限を回避するには、次の例を使用して、<xref:System.Activator.CreateInstance%2A>メソッドに値を代入するためにリフレクションと、`Person`オブジェクトの`Name`プロパティの値を表示します。  
+  
+ [!code-csharp[System.Activator.CreateInstance#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activator.createinstance/cs/createinstanceex1a.cs#3)]
+ [!code-vb[System.Activator.CreateInstance#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activator.createinstance/vb/createinstanceex1a.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type, bool nonPublic);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type, bool nonPublic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="nonPublic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="nonPublic">
+          パブリックまたはパブリックでない既定コンストラクターを一致させる場合は <see langword="true" />。パブリックの既定コンストラクターだけを一致させる場合は <see langword="false" />。</param>
+        <summary>指定された型の既定のコンストラクターを使用して、指定された型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、非パブリックの型とメンバーにアクセスすると、呼び出し元が許可されている場合にこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型とメンバーを含むアセンブリの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは <see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <summary>指定したパラメーターに最も一致するコンストラクターを使用して、指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されるコンス トラクターは、アクセスできる必要があり、指定した引数リストを最も具体的な一致を提供する必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が付与されている非パブリックの型へのアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Object%5B%5D%29>メソッドを作成、<xref:System.String>オブジェクト。 呼び出す、 <xref:System.String.%23ctor%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29?displayProperty=nameWithType> 14 番目の位置から文字配列から 10 個の要素を表す文字列をインスタンス化するコンス トラクターです。  
+  
+ [!code-csharp[System.Activator.CreateInstance#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activator.createinstance/cs/CreateInstance5.cs#5)]
+ [!code-vb[System.Activator.CreateInstance#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activator.createinstance/vb/CreateInstance5.vb#5)]  
+  
+ 次の例は、要素に渡される引数は、ジャグ配列を作成、<xref:System.String>コンス トラクターです。 各配列を渡します、<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Object%5B%5D%29>に適切な文字列のコンス トラクターを呼び出すメソッド。  
+  
+ [!code-csharp[System.Activator.CreateInstance#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activator.createinstance/cs/createinstance2.cs#4)]
+ [!code-vb[System.Activator.CreateInstance#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activator.createinstance/vb/createinstance2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは、<see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MissingMemberException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (AppDomain domain, string assemblyName, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.AppDomain domain, string assemblyName, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.AppDomain,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="domain">ここでいう名前の型、リモート ドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <summary>名前を指定したアセンブリと既定のコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstance%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>直前の呼び出し元に完全信頼を要求するようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> または <paramref name="domain" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象型のインスタンスを作成することはできません。  
+  
+ または  
+  
+ このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">すべての型のメンバーに対して操作の呼び出しに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (string assemblyName, string typeName, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(string assemblyName, string typeName, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.String,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリと、既定のコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、呼び出し元が許可されている場合は、非パブリックの型を作成するこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型の許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" />は、<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />  
+  
+ 配列。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ 使用できないアセンブリ名またはコード ベースです。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">指定されたターゲットでリモートからアクティブ化を試みたときにエラーが発生しました<paramref name="activationAttributes" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type, object[] args, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type, object[] args, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type,System.Object[],System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>指定したパラメーターに最も一致するコンストラクターを使用して、指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されるコンス トラクターは、アクセスできる必要があり、指定した引数リストを最も具体的な一致を提供する必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が付与されている非パブリックの型へのアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型を含むアセンブリの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは、<see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、<c>型</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、<c>型</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>型</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <summary>指定したパラメーターに最も一致するコンストラクターを使用して、指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されるコンス トラクターは、指定したバインダー、バインディング属性の制約の下で指定した引数リストを持つ最も具体的な一致を提供する必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、非パブリックの型とメンバーにアクセスすると、呼び出し元が許可されている場合にこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型とメンバーを含むアセンブリの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは、<see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException">COM 型が <see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> 経由で取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (Type type, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.Type type, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.Type,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、<c>型</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、<c>型</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>型</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>指定したパラメーターに最も一致するコンストラクターを使用して、指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されるコンス トラクターは、指定したバインダー、バインディング属性の制約の下で指定した引数リストを持つ最も具体的な一致を提供する必要があります。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、非パブリックの型とメンバーにアクセスすると、呼び出し元が許可されている場合にこのメソッドを使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型とメンバーの許可セットは、呼び出し元の許可セットまたはそのサブセットに制限されています。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="type" /> はオープン ジェネリック型です (つまり、<see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> を返します)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="type" /> を <see cref="T:System.Reflection.Emit.TypeBuilder" /> にすることはできません。  
+  
+ または  
+  
+ <see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="type" /> を格納するアセンブリは、<see cref="F:System.Reflection.Emit.AssemblyBuilderAccess.Save" /> を使用して作成された動的アセンブリです。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">呼び出されるコンストラクターは例外をスローします。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException">COM 型が <see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> 経由で取得されませんでした。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">
+          <paramref name="type" /> は COM オブジェクトですが、型を取得するために使用されるクラス ID が有効でないか、または識別されたクラスが登録されていません。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="type" /> は有効な型ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠を指定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(string assemblyName, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリと、指定したパラメーターに最も一致するコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合、非パブリックの型とメンバーの作成に使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型とメンバーを含むアセンブリの許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5)。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (AppDomain domain, string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.AppDomain domain, string assemblyName, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.AppDomain,System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="domain">型がという名前のドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリと、指定したパラメーターに最も適したコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstance%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>直前の呼び出し元に完全信頼を要求するようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="domain" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">すべての型のメンバーに対して操作の呼び出しに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes, System.Security.Policy.Evidence securityInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(string assemblyName, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes, class System.Security.Policy.Evidence securityInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Methods which use evidence to sandbox are obsolete and will be removed in a future release of the .NET Framework. Please use an overload of CreateInstance which does not take an Evidence parameter. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+        <Parameter Name="securityInfo" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <param name="securityInfo">セキュリティ ポリシーがコードに与えるアクセス許可を決定するために使用する情報。</param>
+        <summary>名前を指定したアセンブリと、指定したパラメーターに最も一致するコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合、非パブリックの型とメンバーの作成に使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグと非パブリックの型とメンバーを含むアセンブリの許可セットは、呼び出し元の許可セット、またはそのサブセットに制限されているかどうか。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstance (AppDomain domain, string assemblyName, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes, System.Security.Policy.Evidence securityAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.AppDomain domain, string assemblyName, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes, class System.Security.Policy.Evidence securityAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance(System.AppDomain,System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Methods which use evidence to sandbox are obsolete and will be removed in a future release of the .NET Framework. Please use an overload of CreateInstance which does not take an Evidence parameter. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+        <Parameter Name="securityAttributes" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="domain">型がという名前のドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyName">型がという名前のアセンブリの名前<c>typeName</c>をシークします。 場合<c>assemblyName</c>は<see langword="null" />、実行中のアセンブリを検索します。</param>
+        <param name="typeName">必要な型の完全修飾名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 通常、これは単一の <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。 <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> により、リモート オブジェクトのアクティブ化に必要な URL が指定されます。</param>
+        <param name="securityAttributes">セキュリティ ポリシーがコードに与えるアクセス許可を決定するために使用する情報。</param>
+        <summary>名前を指定したアセンブリと、指定したパラメーターに最も適したコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstance%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除します。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>直前の呼び出し元に完全信頼を要求するようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="domain" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyName" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException"><see cref="Overload:System.Type.GetTypeFromProgID" /> または <see cref="Overload:System.Type.GetTypeFromCLSID" /> を通じて COM 型が取得されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.TypedReference" />、<see cref="T:System.ArgIterator" />、<see cref="T:System.Void" />、および <see cref="T:System.RuntimeArgumentHandle" /> 型、またはそれらの型の配列の作成はサポートされていません。  
+  
+ または  
+  
+ <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。  
+  
+ または  
+  
+ <paramref name="args" /> と最もよく一致するコンストラクターに <see langword="varargs" /> 引数があります。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyName" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <exception cref="T:System.IO.FileLoadException">アセンブリまたはモジュールが、2 つの異なる証拠を使用して 2 回読み込まれました。  
+  
+ または  
+  
+ アセンブリ名かコード ベースが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">すべての型のメンバーに対して操作の呼び出しに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T CreateInstance&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T CreateInstance&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstance``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成する型。</typeparam>
+        <summary>パラメーターなしのコンストラクターを使用して、指定されたジェネリック型パラメーターによって決定される型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクトへの参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activator.CreateInstance%60%601>ジェネリック メソッドは、型パラメーターによって指定された型のインスタンス化を実装するコンパイラで使用します。 たとえば、次のジェネリック メソッドの実装で`new T()`(`gcnew T()` C++ で) を使用して、<xref:System.Activator.CreateInstance%60%601>ジェネリック メソッドです。  
+  
+ [!code-cpp[System.Activation.CreateInstance~~1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.activation.createinstance~~1/cpp/remarks.cpp#1)]
+ [!code-csharp[System.Activation.CreateInstance~~1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.activation.createinstance~~1/cs/remarks.cs#1)]
+ [!code-vb[System.Activation.CreateInstance~~1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.activation.createinstance~~1/vb/remarks.vb#1)]  
+  
+ 一般の使用はありません、<xref:System.Activator.CreateInstance%60%601>型は、コンパイル時に確認する必要があるため、アプリケーションでのジェネリック メソッドのコードします。 コンパイル時に、型がわかっている場合は、通常のインスタンス化構文を使用できます (`new` 、C# の場合は、演算子`New`Visual basic で`gcnew`C++ で)。 コンパイル時に、型が不明な場合は、非ジェネリック オーバー ロードを呼び出すことができます<xref:System.Activator.CreateInstance%2A>です。  
+  
+ オーバー ロードはありません、<xref:System.Activator.CreateInstance%60%601>ジェネリック メソッドを非ジェネリックのオーバー ロードがあるために、引数リストを受け取る<xref:System.Activator.CreateInstance%2A>既に遅延バインディングのコンス トラクターの解像度を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MissingMethodException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MissingMemberException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 型指定されている<paramref name="T" />パラメーターなしのコンス トラクターがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (string assemblyFile, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(string assemblyFile, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <summary>名前を指定したアセンブリ ファイルと、既定のコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Activator.CreateInstanceFrom%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Activator>クラスです。  
+  
+ [!code-cpp[ActivatorX#3](~/samples/snippets/cpp/VS_Snippets_CLR/ActivatorX/cpp/ActivatorX.cpp#3)]
+ [!code-csharp[ActivatorX#3](~/samples/snippets/csharp/VS_Snippets_CLR/ActivatorX/cs/ActivatorX.cs#3)]
+ [!code-vb[ActivatorX#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/ActivatorX/VB/ActivatorX.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要な<see cref="T:System.Security.Permissions.FileIOPermission" />します。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (AppDomain domain, string assemblyFile, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(class System.AppDomain domain, string assemblyFile, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.AppDomain,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="domain">ここでいう名前の型、リモート ドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <summary>名前を指定したアセンブリ ファイルと既定のコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstanceFrom%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>直前の呼び出し元に完全信頼を要求するようにします。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="domain" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要な<see cref="T:System.Security.Permissions.FileIOPermission" />します。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (string assemblyFile, string typeName, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(string assemblyFile, string typeName, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.String,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリ ファイルと、既定のコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するパブリック コンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要な<see cref="T:System.Security.Permissions.FileIOPermission" />します。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">アクセス許可に関係なく、非パブリックな型の次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(string assemblyFile, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリ ファイルと、指定したパラメーターに最も一致するコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Security.Permissions.FileIOPermission" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (AppDomain domain, string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(class System.AppDomain domain, string assemblyFile, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.AppDomain,System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="domain">ここでいう名前の型、リモート ドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <summary>名前を指定したアセンブリ ファイルと、指定したパラメーターに最も適したコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstanceFrom%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照して、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="domain" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要な<see cref="T:System.Security.Permissions.FileIOPermission" />します。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ <paramref name="assemblyName" />現在読み込まれているバージョンよりも後に、共通言語ランタイムのバージョンに対してコンパイルされました。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠を指定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes, System.Security.Policy.Evidence securityInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(string assemblyFile, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes, class System.Security.Policy.Evidence securityInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Methods which use evidence to sandbox are obsolete and will be removed in a future release of the .NET Framework. Please use an overload of CreateInstanceFrom which does not take an Evidence parameter. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+        <Parameter Name="securityInfo" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <param name="securityInfo">セキュリティ ポリシーがコードに与えるアクセス許可を決定するために使用する情報。</param>
+        <summary>名前を指定したアセンブリ ファイルと、指定したパラメーターに最も一致するコンストラクターを使用して、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Security.Permissions.FileIOPermission" />です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すデリゲートのインスタンスを作成するときに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceFrom">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.ObjectHandle CreateInstanceFrom (AppDomain domain, string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, object[] args, System.Globalization.CultureInfo culture, object[] activationAttributes, System.Security.Policy.Evidence securityAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceFrom(class System.AppDomain domain, string assemblyFile, string typeName, bool ignoreCase, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, object[] args, class System.Globalization.CultureInfo culture, object[] activationAttributes, class System.Security.Policy.Evidence securityAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.CreateInstanceFrom(System.AppDomain,System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[],System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Methods which use Evidence to sandbox are obsolete and will be removed in a future release of the .NET Framework. Please use an overload of CreateInstanceFrom which does not take an Evidence parameter. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+        <Parameter Name="assemblyFile" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="bindingAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="activationAttributes" Type="System.Object[]" />
+        <Parameter Name="securityAttributes" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="domain">ここでいう名前の型、リモート ドメイン<c>typeName</c>を作成します。</param>
+        <param name="assemblyFile">型がという名前のアセンブリが格納されているファイルの名前<c>typeName</c>をシークします。</param>
+        <param name="typeName">推奨される型の名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />指定する検索<c>typeName</c> ; 大文字小文字を区別することはありません<see langword="false" />検索では、大文字小文字を区別するを指定します。</param>
+        <param name="bindingAttr">検索に影響を与える 0 個以上のビット フラグの組み合わせ、 <c>typeName</c>コンス トラクターです。 場合<c>bindingAttr</c>は 0、大文字と小文字をパブリック コンス トラクターが行われます。</param>
+        <param name="binder">使用するオブジェクト<c>bindingAttr</c>と<c>args</c>シークおよび識別する、 <c>typeName</c>コンス トラクターです。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。</param>
+        <param name="args">呼び出すコンストラクターのパラメーターと、数、順序、および型が一致する引数の配列。 場合<c>args</c>は空の配列または<see langword="null" />、(既定のコンス トラクター) のパラメーターをとらないコンス トラクターが呼び出されます。</param>
+        <param name="culture">カルチャに固有の情報の強制変換を制御する<c>args</c>に対して宣言された仮引数の型を<c>typeName</c>コンス トラクターです。 場合<c>カルチャ</c>は<see langword="null" />、<see cref="T:System.Globalization.CultureInfo" />現在のスレッドが使用されます。</param>
+        <param name="activationAttributes">アクティべーションに参加できる 1 つ以上の属性の配列。 これは、通常、リモート オブジェクトをアクティブ化するために必要な URL を指定する 1 つの <see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> オブジェクトを含む配列です。  
+  
+ このパラメーターは、クライアント側でアクティブ化されるオブジェクトに関連しています。 クライアント アクティベーションは、下位互換性のために残されているレガシ テクノロジです。新規の開発には使用しないでください。 分散アプリケーションは、代わりに Windows Communication Foundation (WCF) を使用する必要があります。</param>
+        <param name="securityAttributes">セキュリティ ポリシーがコードに与えるアクセス許可を決定するために使用する情報。</param>
+        <summary>名前を指定したアセンブリ ファイルと、指定したパラメーターに最も適したコンストラクターを使用して、指定したリモート ドメインに、名前を指定した型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたインスタンスにアクセスするために、ラップを解除する必要があるハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Activator.CreateInstanceFrom%2A>ホストがセキュリティのアクセス許可が制限されているアプリケーション ドメインでコードを実行する必要がある場合。  
+  
+ 使用して、<xref:System.Runtime.Remoting.ObjectHandle.Unwrap%2A?displayProperty=nameWithType>戻り値のラップを解除するメソッド。  
+  
+> [!NOTE]
+>  このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>直前の呼び出し元に完全信頼を要求するようにします。  
+  
+ その他の呼び出されたメソッドによってスローされる例外については、の例外セクションを参照してください、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>と<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="domain" /> または <paramref name="typeName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">一致するコンストラクターが見つかりませんでした。</exception>
+        <exception cref="T:System.TypeLoadException">
+          <paramref name="typename" /> が <paramref name="assemblyFile" /> に見つかりませんでした。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="assemblyFile" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.MethodAccessException">呼び出し元には、このコンストラクターを呼び出すアクセス許可がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">リフレクションを通じて呼び出されたコンストラクターが、例外をスローしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要な<see cref="T:System.Security.Permissions.FileIOPermission" />します。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="activationAttributes" /> が空の配列ではないか、作成される型が <see cref="T:System.MarshalByRefObject" /> から派生したものではありません。</exception>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="assemblyFile" /> は正しいアセンブリではありません。  
+  
+ または  
+  
+ 共通言語ランタイム (CLR) バージョン 2.0 以降が現在読み込まれており、<paramref name="assemblyName" /> は現在読み込まれているバージョンより新しいバージョンの CLR 用にコンパイルされました。 .NET Framework のバージョン 2.0、3.0、3.5 はすべて、CLR バージョン 2.0 を使うことにご注意ください。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠を指定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ パスを検索し、その内容を読み取る権限です。 関連する列挙:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />と<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">非パブリックの型と許可に関係なくメンバーにアクセスするため次のように設定します。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public static object GetObject (Type type, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetObject(class System.Type type, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.GetObject(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">接続する既知のオブジェクトの型。</param>
+        <param name="url">既知のオブジェクトの URL。</param>
+        <summary>指定された型と URL が示す既知のオブジェクト用にプロキシを作成します。</summary>
+        <returns>要求した既知のオブジェクトによって提供されたエンドポイントを指すプロキシ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート オブジェクトにメッセージを送信するプロキシを呼び出します。 コンソール アプリケーションは、プロキシでメソッドが呼び出されるまで、ネットワーク経由で、メッセージは送信されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="url" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">
+          <paramref name="type" />参照渡しでマーシャ リングされませんし、インターフェイスではありません。</exception>
+        <exception cref="T:System.MemberAccessException">このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public static object GetObject (Type type, string url, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetObject(class System.Type type, string url, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.GetObject(System.Type,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type">接続する既知のオブジェクトの型。</param>
+        <param name="url">既知のオブジェクトの URL。</param>
+        <param name="state">チャネル固有データまたは <see langword="null" />。</param>
+        <summary>指定された型、URL、およびチャネル データが示す既知のオブジェクト用にプロキシを作成します。</summary>
+        <returns>要求した既知のオブジェクトによって提供されたエンドポイントを指すプロキシ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート オブジェクトにメッセージを送信するプロキシを呼び出します。 コンソール アプリケーションは、プロキシでメソッドが呼び出されるまで、ネットワーク経由で、メッセージは送信されません。  
+  
+ `state`パラメーターは、チャネルに情報を通信しに渡される、<xref:System.Runtime.Remoting.Channels.IChannelSender.CreateMessageSink%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="url" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">
+          <paramref name="type" />参照渡しでマーシャ リングされませんし、インターフェイスではありません。</exception>
+        <exception cref="T:System.MemberAccessException">このメンバーは、遅延バインディング メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._Activator.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _Activator.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Activator.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.System#Runtime#InteropServices#_Activator#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">渡された割り当てる名前の配列。</param>
+        <param name="cNames">割り当てる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元割り当て済み配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするために使用し、マネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._Activator.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _Activator.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Activator.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.System#Runtime#InteropServices#_Activator#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを受け取るオブジェクト。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするために使用し、マネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._Activator.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _Activator.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Activator.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.System#Runtime#InteropServices#_Activator#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">このメソッドから制御が戻るときに、オブジェクトが提供する型情報インターフェイスの数を受け取る場所へのポインターが格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするために使用し、マネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._Activator.Invoke">
+      <MemberSignature Language="C#" Value="void _Activator.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Activator.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activator.System#Runtime#InteropServices#_Activator#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別するディパッチ ID。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の引数 DISPID の配列、および各配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするために使用し、マネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

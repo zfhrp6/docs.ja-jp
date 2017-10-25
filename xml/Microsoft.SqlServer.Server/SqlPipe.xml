@@ -1,0 +1,322 @@
+<Type Name="SqlPipe" FullName="Microsoft.SqlServer.Server.SqlPipe">
+  <TypeSignature Language="C#" Value="public sealed class SqlPipe" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlPipe extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlPipe" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マネージ ストアド プロシージャに、呼び出し元に結果を返す SQL Server データベース上でインプロセスで実行を許可します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスはからアクセスできる管理対象のストアド プロシージャを介して、<xref:Microsoft.SqlServer.Server.SqlContext.Pipe%2A>のプロパティ、<xref:Microsoft.SqlServer.Server.SqlContext>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlCommand>ストアド プロシージャ内のデータ ソースから行を選択します。 使用して、<xref:Microsoft.SqlServer.Server.SqlPipe>コマンドを実行し、結果をクライアントに送信します。  
+  
+ [!code-csharp[DataWorks SqlPipe#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExecuteAndSend">
+      <MemberSignature Language="C#" Value="public void ExecuteAndSend (System.Data.SqlClient.SqlCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExecuteAndSend(class System.Data.SqlClient.SqlCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.ExecuteAndSend(System.Data.SqlClient.SqlCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.SqlClient.SqlCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.SqlClient.SqlCommand" />を実行するオブジェクト。</param>
+        <summary>パラメーターとして渡されるコマンドを実行し、結果をクライアントに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際の結果だけでなく他のメッセージやエラーも送信されます直接クライアントにします。  
+  
+ 出力パラメーターと戻り値は、クライアントに送信されません。これらは、コマンド オブジェクトのパラメーター コレクションを呼び出し元に使用できます。  
+  
+ コマンドは、インプロセス接続、バインドされていない場合、<xref:System.InvalidOperationException>がスローされます。 このメソッドはアウト プロセスの接続にバインドされたコマンドではサポートされていません。  
+  
+ エラーがある場合、<xref:System.Data.SqlClient.SqlCommand>が送信された例外は、パイプに送信されますが、呼び出し元のマネージ コードにも、コピーが送信するオブジェクト。 呼び出し元のコードが例外をキャッチしませんが TRANSACT-SQL コードをスタックに伝達され、2 回の出力に表示されます。 呼び出し元のコードが例外をキャッチした場合、パイプ コンシューマー、エラーが表示されますが、重複するエラーされません。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlCommand>ストアド プロシージャ内のデータ ソースから行を選択します。 使用して、<xref:Microsoft.SqlServer.Server.SqlPipe>コマンドを実行し、結果をクライアントに送信します。  
+  
+ [!code-csharp[DataWorks SqlPipe.ExecuteAndSend#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.ExecuteAndSend/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.ExecuteAndSend#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.ExecuteAndSend/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="command" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドはアウト プロセスの接続にバインドされたコマンドではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSendingResults">
+      <MemberSignature Language="C#" Value="public bool IsSendingResults { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSendingResults" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlPipe.IsSendingResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:Microsoft.SqlServer.Server.SqlPipe" />が単一の結果セットをクライアントに送信するモード。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />メソッドが呼び出されたと<see cref="T:Microsoft.SqlServer.Server.SqlPipe" />単一の結果セットをクライアントに送信するモードでは、それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Send">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>クライアントまたは現在の出力のコンシューマーに直接結果を送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **送信**メソッドは、クライアントまたは呼び出し元に直接データを送信します。 出力を使用するクライアントでは通常、**パイプ**メソッド、入れ子になった CLR の場合、ストアド プロシージャの出力のコンシューマーこともできます、ストアド プロシージャがあります。 たとえば、Procedure1 が<xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>コマンド テキスト"EXEC Procedure2"を使用します。 Procedure2 もマネージ ストアド プロシージャです。 ここで Procedure2 が呼び出す場合<xref:Microsoft.SqlServer.Server.SqlPipe.Send%2A>行は、クライアントが、Procedure1 のリーダーに送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public void Send (Microsoft.SqlServer.Server.SqlDataRecord record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(class Microsoft.SqlServer.Server.SqlDataRecord record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.Send(Microsoft.SqlServer.Server.SqlDataRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="Microsoft.SqlServer.Server.SqlDataRecord" />
+      </Parameters>
+      <Docs>
+        <param name="record">クライアントに送信される 1 行の結果セット:<see cref="T:Microsoft.SqlServer.Server.SqlDataRecord" />オブジェクト。</param>
+        <summary>クライアントまたは現在の出力のコンシューマーに直接設定 1 行の結果を送信します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="record" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public void Send (System.Data.SqlClient.SqlDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(class System.Data.SqlClient.SqlDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.Send(System.Data.SqlClient.SqlDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.SqlClient.SqlDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">複数行の結果セットのクライアントに送信する:<see cref="T:System.Data.SqlClient.SqlDataReader" />オブジェクト。</param>
+        <summary>クライアントまたは現在の出力のコンシューマーに直接設定複数行の結果を送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.SqlClient.SqlDataReader>オブジェクト渡されたパラメーターが列を非表示として、これらの列は、クライアントに送信される結果セットには反映されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public void Send (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Send(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.Send(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">クライアントに送信されるメッセージ文字列。</param>
+        <summary>クライアントまたは現在の出力のコンシューマーに直接文字列メッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ文字列は、クライアントに情報メッセージとして送信されます。 クライアント アプリケーションは、によっては、データ アクセス アプリケーション プログラミング インターフェイス (API) を使用して、さまざまなメカニズムを通じてメッセージをリッスンできます。 たとえば場合は、クライアントは、ADO.NET を使用して、メッセージ転送を介して、<xref:System.Data.SqlClient.SqlConnection.InfoMessage>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:Microsoft.SqlServer.Server.SqlPipe.Send%2A>メソッドを直接クライアントにメッセージ文字列を送信します。  
+  
+ [!code-csharp[DataWorks SqlPipe.Send#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.Send/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.Send#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.Send/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="message" />が 4,000 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResultsEnd">
+      <MemberSignature Language="C#" Value="public void SendResultsEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendResultsEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>結果セットの末尾をマークしを返します、<see cref="T:Microsoft.SqlServer.Server.SqlPipe" />インスタンスを初期状態に戻す。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ ストアド プロシージャを実装していないクライアントに結果セットを送信することができます、<xref:System.Data.SqlClient.SqlDataReader>です。 このメソッドと共に<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>と<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>、ストアド プロシージャをクライアントにカスタム結果セットの送信を許可します。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:Microsoft.SqlServer.Server.SqlDataRecord>とその<xref:Microsoft.SqlServer.Server.SqlMetaData>です。 例を使用して結果セットの先頭をマークし、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>メソッドを使用してクライアントにデータの例を含むレコードを送信する、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッド、および記号のセットを結果の終わり、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks SqlPipe.SendResultsEnd#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsEnd/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.SendResultsEnd#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsEnd/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />メソッドが既に呼び出されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResultsRow">
+      <MemberSignature Language="C#" Value="public void SendResultsRow (Microsoft.SqlServer.Server.SqlDataRecord record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendResultsRow(class Microsoft.SqlServer.Server.SqlDataRecord record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow(Microsoft.SqlServer.Server.SqlDataRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="Microsoft.SqlServer.Server.SqlDataRecord" />
+      </Parameters>
+      <Docs>
+        <param name="record">A<see cref="T:Microsoft.SqlServer.Server.SqlDataRecord" />クライアントに送信される行に列の値を持つオブジェクト。 レコードのスキーマのメタデータによって記述されたスキーマに一致する必要があります、<see cref="T:Microsoft.SqlServer.Server.SqlDataRecord" />に渡される、<see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />メソッドです。</param>
+        <summary>1 行のデータをクライアントに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ ストアド プロシージャを実装していないクライアントに結果セットを送信することができます、<xref:System.Data.SqlClient.SqlDataReader>です。 このメソッドと共に<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>と<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>、ストアド プロシージャをクライアントにカスタム結果セットを送信します。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッドは、クライアントに 1 行のデータを送信します。 行は、後で呼び出す呼び出し元に返される<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>、送信される各行につき 1 回です。 すべての行が送信されたへの呼び出し後、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>メソッドは、結果セットの末尾を設定するために必要です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:Microsoft.SqlServer.Server.SqlDataRecord>とその<xref:Microsoft.SqlServer.Server.SqlMetaData>です。 例を使用して結果セットの先頭をマークし、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>メソッドを使用してクライアントにデータの例を含むレコードを送信する、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッド、および記号のセットを結果の終わり、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks SqlPipe.SendResultsRow#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsRow/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.SendResultsRow#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsRow/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="record" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />メソッドが既に呼び出されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResultsStart">
+      <MemberSignature Language="C#" Value="public void SendResultsStart (Microsoft.SqlServer.Server.SqlDataRecord record);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendResultsStart(class Microsoft.SqlServer.Server.SqlDataRecord record) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="record" Type="Microsoft.SqlServer.Server.SqlDataRecord" />
+      </Parameters>
+      <Docs>
+        <param name="record">A<see cref="T:Microsoft.SqlServer.Server.SqlDataRecord" />オブジェクト元となるメタデータが抽出され、結果セットを記述するために使用します。</param>
+        <summary>クライアントに返される結果セットの開始をマークし、結果セットを記述するメタデータを構築するために、レコードのパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ ストアド プロシージャを実装していないクライアントに結果セットを送信することができます、<xref:System.Data.SqlClient.SqlDataReader>です。 このメソッドと共に<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>と<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>、ストアド プロシージャをクライアントにカスタム結果セットの送信を許可します。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>メソッドは、結果セットの先頭をマークし、レコード パラメーターを使用して、結果セットを記述するメタデータを構築するためにします。 それ以降、すべての行を使用して送信、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッドはそのメタデータ定義と一致する必要があります。  
+  
+ その後に呼び出すことに注意してください<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>、のみ<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>と<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>呼び出すことができます。 他のメソッドの同じインスタンスで<xref:Microsoft.SqlServer.Server.SqlPipe>スロー、<xref:System.InvalidOperationException>です。 <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>設定<xref:Microsoft.SqlServer.Server.SqlPipe>他のメソッドを呼び出すことが初期状態に戻す。  
+  
+ コントロールは、TRANSACT-SQL に CLR の実行から戻た後、CLR のメモリに初期化または静的ローカル変数を使用しないでください。 例については、操作を処理中のインスタンスがクラス、ストアではなく`SQLDataRecord`、CLR から制御が返された後に使用されます。 1 つの例外は、`SQLMetaData`プロセス クラスでします。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:Microsoft.SqlServer.Server.SqlDataRecord>とその<xref:Microsoft.SqlServer.Server.SqlMetaData>です。 例を使用して結果セットの先頭をマークし、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>メソッドを使用してクライアントにデータの例を含むレコードを送信する、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッド、および記号のセットを結果の終わり、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks SqlPipe.SendResultsStart#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsStart/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.SendResultsStart#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsStart/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="record" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="record" />列がないか、初期化されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">以外のメソッド<see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow(Microsoft.SqlServer.Server.SqlDataRecord)" />または<see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd" />後に呼び出されますが、<see cref="M:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart(Microsoft.SqlServer.Server.SqlDataRecord)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

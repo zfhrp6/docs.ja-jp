@@ -1,0 +1,134 @@
+<Type Name="IMenuEditorService" FullName="System.Windows.Forms.Design.IMenuEditorService">
+  <TypeSignature Language="C#" Value="public interface IMenuEditorService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMenuEditorService" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.IMenuEditorService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>サービスの編集 メニューへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスの実装の大部分は、ホスト環境によって提供されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Menu GetMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.Menu GetMenu() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IMenuEditorService.GetMenu" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Menu</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のメニューを取得します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.Menu" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActive">
+      <MemberSignature Language="C#" Value="public bool IsActive ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsActive() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IMenuEditorService.IsActive" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のメニューがアクティブかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />現在のメニューが現在アクティブな場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageFilter">
+      <MemberSignature Language="C#" Value="public bool MessageFilter (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MessageFilter(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IMenuEditorService.MessageFilter(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>により Win32 メッセージを傍受したりエディター サービス。</summary>
+        <returns>
+          <see langword="true" />メッセージがコントロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMenu">
+      <MemberSignature Language="C#" Value="public void SetMenu (System.Windows.Forms.Menu menu);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetMenu(class System.Windows.Forms.Menu menu) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IMenuEditorService.SetMenu(System.Windows.Forms.Menu)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menu" Type="System.Windows.Forms.Menu" />
+      </Parameters>
+      <Docs>
+        <param name="menu"><see cref="T:System.Windows.Forms.Menu" />をレンダリングします。</param>
+        <summary>フォーム上に表示されている指定されたメニューを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メニューは、フォームのウィンドウ フレームの上部に描画され、ユーザーが直接編集することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelection">
+      <MemberSignature Language="C#" Value="public void SetSelection (System.Windows.Forms.MenuItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetSelection(class System.Windows.Forms.MenuItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.IMenuEditorService.SetSelection(System.Windows.Forms.MenuItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.MenuItem" />を現在選択されているメニュー項目として設定します。</param>
+        <summary>現在のメニューの選択されたメニュー項目を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

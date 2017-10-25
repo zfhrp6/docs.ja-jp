@@ -1,0 +1,3705 @@
+<Type Name="AxHost" FullName="System.Windows.Forms.AxHost">
+  <TypeSignature Language="C#" Value="public abstract class AxHost : System.Windows.Forms.Control, System.ComponentModel.ICustomTypeDescriptor, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AxHost extends System.Windows.Forms.Control implements class System.ComponentModel.ICustomTypeDescriptor, class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AxHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICustomTypeDescriptor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Enter")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.AxHostDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ActiveX コントロールをラップし、全機能を備えた Windows フォーム コントロールとして公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常使用しない、<xref:System.Windows.Forms.AxHost>クラスに直接できます。 使用することができます、 [Aximp.exe (Windows フォーム ActiveX コントロール インポーター)](~/docs/framework/tools/aximp-exe-windows-forms-activex-control-importer.md)を拡張するラッパーを生成する<xref:System.Windows.Forms.AxHost>です。  
+  
+ ActiveX コントロール インポーターから派生するクラスを生成する、<xref:System.Windows.Forms.AxHost>クラス、およびアプリケーションへの参照として追加できるライブラリ ファイル (DLL) にコンパイルします。 また、使用することができます、 `/source` ActiveX コントロール インポーターに切り替えて、に対して生成される c# ファイル、<xref:System.Windows.Forms.AxHost>クラスを派生します。 コードを変更し、ライブラリ ファイルに再コンパイルします。  
+  
+> [!NOTE]
+>  ActiveX コントロールのメンバーの名前には、.NET Framework で定義された名前が一致するかどうかは、ActiveX コントロール インポーターは、メンバー名プレフィックス"ctl"を作成するとき、<xref:System.Windows.Forms.AxHost>クラスを派生します。 たとえば、ActiveX コントロールに「レイアウト」という名前のメンバーがある場合は、名前が変更"CtlLayout"に、<xref:System.Windows.Forms.AxHost>ために、派生クラス、`Layout`イベントは、.NET Framework 内で定義します。  
+  
+ ほとんどの共通プロパティの<xref:System.Windows.Forms.AxHost>クラスは、基になる ActiveX コントロールは、これらのプロパティを公開する場合に使用します。 共通プロパティのいくつかの例としては<xref:System.Windows.Forms.Control.BackColor%2A>、 <xref:System.Windows.Forms.Control.Cursor%2A>、 <xref:System.Windows.Forms.Control.Font%2A>、および<xref:System.Windows.Forms.Control.Text%2A>です。  
+  
+> [!NOTE]
+>  Windows フォームのデザイン環境として Visual Studio を使用している場合利用できる ActiveX コントロールをアプリケーションにコントロールをツールボックスに ActiveX コントロールを追加します。 これを実現するを右クリックし、**ツールボックス**を選択**ツールボックスのカスタマイズ**ActiveX の.ocx ファイルを参照します。 詳細については、「ActiveX コントロールを Windows フォームの追加」、Visual Studio のマニュアルを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AxHost (string clsid);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clsid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">ラップする ActiveX コントロールの CLSID。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.AxHost" />クラス、指定された CLSID によって示される ActiveX コントロールをラップします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AxHost (string clsid, int flags);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clsid, int32 flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.String" />
+        <Parameter Name="flags" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">ラップする ActiveX コントロールの CLSID。</param>
+        <param name="flags"><see cref="T:System.Int32" />コントロールのショートカット メニューの動作を変更します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.AxHost" /> ActiveX コントロールをラップするクラスが、指定された CLSID で示され、ショートカット メニューの動作を使用して、指定したによって示される<paramref name="flags" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のバイナリ表現、 `flags` 0x1 の値によって表されるビットを含むパラメーター値、コントロールのショートカット メニューは含まれません、**編集**ActiveX コントロールが明示的に提供しない限りオプションです。  
+  
+ 場合のバイナリ表現、`flags`パラメーターの値を含む値で表される、0x2、ショートカット メニュー、コントロールで、[プロパティ] オプションに含まれる場合、ActiveX コントロールは、プロパティ ページのセットを提供する場合のビットがそれ以外の場合、ショートカット メニューが格納されてプロパティ オプション、ActiveX コントロールが明示的に提供する場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachInterfaces">
+      <MemberSignature Language="C#" Value="protected virtual void AttachInterfaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AttachInterfaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.AttachInterfaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、基になる ActiveX コントロールへのインターフェイスをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するクラス<see cref="T:System.Windows.Forms.AxHost" />このメソッドをオーバーライドする必要があります。 このメソッドのオーバーライドされたバージョン、内で拡張するクラスを呼び出す必要があります<see cref="M:System.Windows.Forms.AxHost.GetOcx" />を独自のインターフェイスを取得します。 ほとんどの場合、<see cref="M:System.Windows.Forms.AxHost.GetOcx" />このメソッドが呼び出される前に、メソッドを呼び出すことはできません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value>コントロールの背景色を表す色です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColorChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackColorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackColorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.BackColorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.BackColorChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.BackColorChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールに表示される背景イメージ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.BackgroundImageChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.BackgroundImageChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageLayout" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ActiveX コントロールの初期化を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン環境では、通常、このメソッドを使用してフォームまたは別のコンポーネントで使用するコンポーネントの初期化を開始します。 <xref:System.Windows.Forms.AxHost.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.Windows.Forms.AxHost.BeginInit%2A>と<xref:System.Windows.Forms.AxHost.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。 初期化は実行時に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingContextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BindingContextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BindingContextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.BindingContextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.BindingContextChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.BindingContextChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeUICues">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.UICuesEventHandler ChangeUICues;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.UICuesEventHandler ChangeUICues" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.ChangeUICues" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.UICuesEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.ChangeUICues" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.ChangeUICues>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.Click" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.Click>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContainerControl ContainingControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContainerControl ContainingControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.ContainingControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContainerControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ActiveX コントロールを含むコントロールを設定します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.ContainerControl" /> ActiveX コントロールを含むコントロールを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.ContainingControl%2A>プロパティの値が異なっていてもかまいません、<xref:System.Windows.Forms.Control.Parent%2A>プロパティです。 <xref:System.Windows.Forms.ContainerControl> ActiveX コントロールの論理コンテナーは、このプロパティで表されます。 ActiveX コントロールがでホストされている場合など、<xref:System.Windows.Forms.GroupBox>コントロール、および<xref:System.Windows.Forms.GroupBox>に含まれる、 <xref:System.Windows.Forms.Form>、 <xref:System.Windows.Forms.AxHost.ContainingControl%2A> ActiveX コントロールのプロパティの値が、 <xref:System.Windows.Forms.Form>、および<xref:System.Windows.Forms.Control.Parent%2A>プロパティの値が、<xref:System.Windows.Forms.GroupBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべてのウィンドウをこのプロパティの値を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenu ContextMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenu ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールに関連付けられたショートカット メニュー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ContextMenuChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ContextMenuChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.ContextMenuChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.ContextMenuChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.ContextMenuChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandle">
+      <MemberSignature Language="C#" Value="protected override void CreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.CreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのハンドルを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected virtual object CreateInstanceCore (Guid clsid);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateInstanceCore(valuetype System.Guid clsid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.CreateInstanceCore(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">ActiveX コントロールの CLSID。</param>
+        <summary>ActiveX コントロールを作成する、システムによって呼び出されます。</summary>
+        <returns><see cref="T:System.Object" /> ActiveX コントロールを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSink">
+      <MemberSignature Language="C#" Value="protected virtual void CreateSink ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreateSink() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.CreateSink" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントの待機を準備するために、コントロールにより呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本クラスの実装は空です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.Cursor Cursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Cursor Cursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.Cursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールの前景色を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CursorChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler CursorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CursorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.CursorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.CursorChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.CursorChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定の <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyHandle">
+      <MemberSignature Language="C#" Value="protected override void DestroyHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DestroyHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.DestroyHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールに関連付けられたハンドルを破棄します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetachSink">
+      <MemberSignature Language="C#" Value="protected virtual void DetachSink ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DetachSink() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.DetachSink" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントの待機を停止するときに、コントロールにより呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本クラスの実装は空です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.Control" /> とその子コントロールが使用しているアンマネージ リソースを解放します。オプションで、マネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClick">
+      <MemberSignature Language="C#" Value="public event EventHandler DoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.DoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.DoubleClick" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.DoubleClick>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoVerb">
+      <MemberSignature Language="C#" Value="public void DoVerb (int verb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DoVerb(int32 verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.DoVerb(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verb" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="verb">IOleObject::EnumVerbs 内のオブジェクトの列挙操作のいずれか。</param>
+        <summary>オブジェクトが、エンドユーザーの操作に応答アクションを実行するように要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した動詞を[IOleObject::DoVerb](http://go.microsoft.com/fwlink/?LinkId=166076)ホストされるコントロールのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragDrop">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragDrop;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragDrop" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.DragDrop" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.DragDrop" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.DragDrop>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragEnter">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.DragEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.DragEnter" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.DragEnter>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragLeave">
+      <MemberSignature Language="C#" Value="public event EventHandler DragLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DragLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.DragLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.DragLeave" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.DragLeave>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragOver">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragOver;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragOver" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.DragOver" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.DragOver" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.DragOver>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToBitmap">
+      <MemberSignature Language="C#" Value="public void DrawToBitmap (System.Drawing.Bitmap bitmap, System.Drawing.Rectangle targetBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToBitmap(class System.Drawing.Bitmap bitmap, valuetype System.Drawing.Rectangle targetBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.DrawToBitmap(System.Drawing.Bitmap,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Bitmap" />
+        <Parameter Name="targetBounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap"><see cref="T:System.Drawing.Bitmap" />。</param>
+        <param name="targetBounds"><see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary>このコントロールでは、このメソッドはサポートされていません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditMode">
+      <MemberSignature Language="C#" Value="public bool EditMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.EditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールが編集モードであるかどうかを示す値を返します。</summary>
+        <value>
+          <see langword="true" />ホストされるコントロールが編集モードです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public virtual bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Boolean" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnabledChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler EnabledChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EnabledChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.EnabledChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.EnabledChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.EnabledChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ActiveX コントロールの初期化を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン環境では、通常、このメソッドを使用して、フォームまたは別のコンポーネントで使用するコンポーネントの初期化を完了します。 <xref:System.Windows.Forms.AxHost.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.Windows.Forms.AxHost.BeginInit%2A>と<xref:System.Windows.Forms.AxHost.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。 初期化は実行時に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールで表示されるテキスト フォント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FontChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FontChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.FontChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.FontChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.FontChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールの前景色を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColorChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ForeColorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ForeColorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.ForeColorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.ForeColorChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.ForeColorChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColorFromOleColor">
+      <MemberSignature Language="C#" Value="protected static System.Drawing.Color GetColorFromOleColor (uint color);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig valuetype System.Drawing.Color GetColorFromOleColor(unsigned int32 color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetColorFromOleColor(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="color">変換する OLE カラー値。</param>
+        <summary>返します、<see cref="T:System.Drawing.Color" />指定した OLE カラー値に対応する構造体。</summary>
+        <returns><see cref="T:System.Drawing.Color" />翻訳済みの OLE カラー値を表す構造です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFromIFont">
+      <MemberSignature Language="C#" Value="protected static System.Drawing.Font GetFontFromIFont (object font);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Drawing.Font GetFontFromIFont(object font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetFontFromIFont(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="font" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="font">作成する IFont、<see cref="T:System.Drawing.Font" />からです。</param>
+        <summary>返します、<see cref="T:System.Drawing.Font" />指定した OLE から作成された[IFont](http://go.microsoft.com/fwlink/?LinkId=166075)オブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Font" />指定された対象から作成された[IFont](http://go.microsoft.com/fwlink/?LinkId=166075)、<see cref="P:System.Windows.Forms.Control.DefaultFont" />場合は、フォントを作成できませんでした、または<see langword="null" />場合<paramref name="font" />は<see langword="null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontFromIFontDisp">
+      <MemberSignature Language="C#" Value="protected static System.Drawing.Font GetFontFromIFontDisp (object font);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Drawing.Font GetFontFromIFontDisp(object font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetFontFromIFontDisp(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="font" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="font">作成するこの、<see cref="T:System.Drawing.Font" />からです。</param>
+        <summary>返します、<see cref="T:System.Drawing.Font" />指定した OLE から作成された[この](http://go.microsoft.com/fwlink/?LinkId=166073)オブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Font" />指定された対象から作成された[この](http://go.microsoft.com/fwlink/?LinkId=166073)、<see cref="P:System.Windows.Forms.Control.DefaultFont" />場合は、フォントを作成できませんでした、または<see langword="null" />場合<paramref name="font" />は<see langword="null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIFontDispFromFont">
+      <MemberSignature Language="C#" Value="protected static object GetIFontDispFromFont (System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig object GetIFontDispFromFont(class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetIFontDispFromFont(System.Drawing.Font)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="font">このオブジェクトを作成するフォントです。</param>
+        <summary>OLE を返します[この](http://go.microsoft.com/fwlink/?LinkId=166073)指定された対象から作成されたオブジェクト<see cref="T:System.Drawing.Font" />オブジェクト。</summary>
+        <returns>[この](http://go.microsoft.com/fwlink/?LinkId=166073)指定したフォントから作成されたオブジェクトまたは<see langword="null" />場合<paramref name="font" />は<see langword="null" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Font.Unit" />プロパティの値が<see cref="F:System.Drawing.GraphicsUnit.Point" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIFontFromFont">
+      <MemberSignature Language="C#" Value="protected static object GetIFontFromFont (System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig object GetIFontFromFont(class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetIFontFromFont(System.Drawing.Font)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="font">IFont オブジェクトを作成するフォントです。</param>
+        <summary>OLE を返します[IFont](http://go.microsoft.com/fwlink/?LinkId=166075)指定された対象から作成されたオブジェクト<see cref="T:System.Drawing.Font" />オブジェクト。</summary>
+        <returns>[IFont](http://go.microsoft.com/fwlink/?LinkId=166075)指定したフォントから作成されたオブジェクトまたは<see langword="null" />場合<paramref name="font" />は<see langword="null" />または[IFont](http://go.microsoft.com/fwlink/?LinkId=166075)を作成できませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Font.Unit" />プロパティの値が<see cref="F:System.Drawing.GraphicsUnit.Point" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIPictureDispFromPicture">
+      <MemberSignature Language="C#" Value="protected static object GetIPictureDispFromPicture (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig object GetIPictureDispFromPicture(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetIPictureDispFromPicture(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image">変換対象の <see cref="T:System.Drawing.Image" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.Image" /> に対応する OLE <see langword="IPictureDisp" /> オブジェクトを返します。</summary>
+        <returns>OLE <see langword="IPictureDisp" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIPictureFromCursor">
+      <MemberSignature Language="C#" Value="protected static object GetIPictureFromCursor (System.Windows.Forms.Cursor cursor);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig object GetIPictureFromCursor(class System.Windows.Forms.Cursor cursor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetIPictureFromCursor(System.Windows.Forms.Cursor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cursor" Type="System.Windows.Forms.Cursor" />
+      </Parameters>
+      <Docs>
+        <param name="cursor">A <see cref="T:System.Windows.Forms.Cursor" />、これは Windows マウス ポインターを表すイメージ。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.Cursor" /> に対応する OLE <see langword="IPicture" /> オブジェクトを返します。</summary>
+        <returns>OLE <see langword="IPicture" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIPictureFromPicture">
+      <MemberSignature Language="C#" Value="protected static object GetIPictureFromPicture (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig object GetIPictureFromPicture(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetIPictureFromPicture(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image">変換対象の <see cref="T:System.Drawing.Image" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.Image" /> に対応する OLE <see langword="IPicture" /> オブジェクトを返します。</summary>
+        <returns>OLE <see langword="IPicture" /> オブジェクトを表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOADateFromTime">
+      <MemberSignature Language="C#" Value="protected static double GetOADateFromTime (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig float64 GetOADateFromTime(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetOADateFromTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time"><see cref="T:System.DateTime" />構造に変換します。</param>
+        <summary>指定された対応する OLE オートメーション日付を返します<see cref="T:System.DateTime" />構造体。</summary>
+        <returns>倍精度浮動小数点数を指定すると等価の OLE オートメーション日付を含む<paramref name="time" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OLE オートメーション日付は 1899 年 12 月 30 日の深夜から日数を値の浮動小数点数として実装されます。 たとえば、午前 0 時、1899 年 12 月 31日で表される 1.0 です。午前 6 時、1900 年 1 月 1日は 2.25; によって表されます。午前 0 時、1899 年 12 月 29日として表されます-1.0。午前 6 時、1899 年 12 月 29日は-1.25 によって表されます。  
+  
+ 基本 OLE オートメーション日付は 1899 年 12 月 30 日の深夜がします。 OLE オートメーション日付の最大値が同じ<xref:System.DateTime.MaxValue>、31 年 12 月の最後の時点から 9999 です。  
+  
+ OLE オートメーションの詳細については、次を参照してください。、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OverflowException">このインスタンスの値を OLE オートメーション日付として表すことはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOcx">
+      <MemberSignature Language="C#" Value="public object GetOcx ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetOcx() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetOcx" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になる ActiveX コントロールへの参照を取得します。</summary>
+        <returns>ActiveX コントロールを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOleColorFromColor">
+      <MemberSignature Language="C#" Value="protected static uint GetOleColorFromColor (System.Drawing.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig unsigned int32 GetOleColorFromColor(valuetype System.Drawing.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetOleColorFromColor(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color"><see cref="T:System.Drawing.Color" />構造に変換します。</param>
+        <summary>指定された対応する OLE カラー値を返します<see cref="T:System.Drawing.Color" />構造体。</summary>
+        <returns>OLE カラー値を表す、翻訳された<see cref="T:System.Drawing.Color" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPictureFromIPicture">
+      <MemberSignature Language="C#" Value="protected static System.Drawing.Image GetPictureFromIPicture (object picture);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Drawing.Image GetPictureFromIPicture(object picture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetPictureFromIPicture(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="picture" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="picture">変換対象の <see langword="IPicture" />。</param>
+        <summary>返します、<see cref="T:System.Drawing.Image" />指定した OLE に対応する<see langword="IPicture" />オブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Image" />を表す、<see langword="IPicture" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには変換する`IPictureDisp`に加えてオブジェクト`IPicture`オブジェクト。 これは機能するため、 `IPictureDisp` OLE インターフェイスのサブセットである、`IPicture`インターフェイスです。 変換する`IPictureDisp`このメソッドを持つオブジェクトが必要なため、<xref:System.Windows.Forms.AxHost.GetPictureFromIPictureDisp%2A>現時点では正しく動作しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPictureFromIPictureDisp">
+      <MemberSignature Language="C#" Value="protected static System.Drawing.Image GetPictureFromIPictureDisp (object picture);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Drawing.Image GetPictureFromIPictureDisp(object picture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetPictureFromIPictureDisp(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="picture" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="picture">変換対象の <see langword="IPictureDisp" />。</param>
+        <summary>返します、<see cref="T:System.Drawing.Image" />指定した OLE に対応する<see langword="IPictureDisp" />オブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Image" />を表す、<see langword="IPictureDisp" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは正しく機能しません。 使用することができます、<xref:System.Windows.Forms.AxHost.GetPictureFromIPicture%2A>に変換する方法、`IPictureDisp`オブジェクトに、 <xref:System.Drawing.Image>、ただし、ため、 `IPictureDisp` OLE インターフェイスのサブセットである、`IPicture`インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScaledBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetScaledBounds (System.Drawing.Rectangle bounds, System.Drawing.SizeF factor, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetScaledBounds(valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.SizeF factor, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetScaledBounds(System.Drawing.Rectangle,System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="factor" Type="System.Drawing.SizeF" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="bounds">ActiveX コントロールの元の境界。</param>
+        <param name="factor">スケール ファクター。</param>
+        <param name="specified"><see cref="T:System.Windows.Forms.BoundsSpecified" /> 値。</param>
+        <summary>ActiveX コントロールの現在の境界を取得する、システムによって呼び出されます。</summary>
+        <returns>変更されていない<paramref name="bounds" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ActiveX コントロールをスケール自体には、このメソッドは特別な計算を実行しないようには無視されます、`factor`と`specified`、値を返します、`bounds`値が変更されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTimeFromOADate">
+      <MemberSignature Language="C#" Value="protected static DateTime GetTimeFromOADate (double date);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig valuetype System.DateTime GetTimeFromOADate(float64 date) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.GetTimeFromOADate(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="date">OLE オートメーション日付に変換します。</param>
+        <summary>返します、<see cref="T:System.DateTime" />指定した OLE オートメーション日付に対応する構造体。</summary>
+        <returns>A<see cref="T:System.DateTime" />ことを表します同じ日付し、時刻<paramref name="date" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `date`パラメーターは前に、または後、基本日午前 0 時、1899 年 12 月 30 日間の数値として日付を表す倍精度浮動小数点数。 符号と整数型の一部`date`1899 年 12 月 30日から正または負の値の 1 日転置およびの小数部の絶対値として日付をエンコード`date`午前 0 時から 1 日変位の割合としての時刻をエンコードします。 `date`エンコードまでの間の値にする必要があります。  
+  
+ 日付をエンコードする方法、原因があること 1899 年 12 月 30 日の時刻を表す 2 つの方法に注意してください。 たとえば、-0.5、0.5 は 1899 年 12 月 30日正午を意味プラスまたは基準日から 0 日を差し引いた日転置は基本の日付のままで、午前 0 時から半日変位正午のためです。  
+  
+ OLE オートメーションの詳細については、次を参照してください。、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">日付が有効な OLE オートメーション日付の値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GiveFeedback">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.GiveFeedback" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GiveFeedbackEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.GiveFeedback" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.GiveFeedback>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasAboutBox">
+      <MemberSignature Language="C#" Value="public bool HasAboutBox { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasAboutBox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.HasAboutBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ActiveX コントロールがあるかどうかを示す値を取得、**に関する** ダイアログ ボックス。</summary>
+        <value>
+          <see langword="true" />ActiveX コントロールがある場合、**に関する** ダイアログ ボックス、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **に関する** ダイアログ ボックスには、ActiveX コントロールのバージョンおよび著作権について通常が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPropertyPages">
+      <MemberSignature Language="C#" Value="public bool HasPropertyPages ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasPropertyPages() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.HasPropertyPages" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ActiveX コントロールにプロパティ ページがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />ActiveX コントロールに、プロパティ ページがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ ページでは、ActiveX コントロールのユーザーを表示および ActiveX コントロールのプロパティを変更できるようにします。 これらのプロパティは、表示およびコントロールのプロパティを編集用にカスタマイズされた、グラフィカル インターフェイスを提供する 1 つまたは複数のプロパティ ページが含まれているコントロールのプロパティのダイアログ ボックスを呼び出すことによってアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpRequested">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HelpEventHandler HelpRequested;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HelpEventHandler HelpRequested" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.HelpRequested" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.HelpRequested" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.HelpRequested>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImeMode ImeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImeMode ImeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.ImeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.ImeMode" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeModeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ImeModeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ImeModeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.ImeModeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.ImeModeChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.ImeModeChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEditMode">
+      <MemberSignature Language="C#" Value="public void InvokeEditMode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeEditMode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.InvokeEditMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストされるコントロールの編集モードをアクティブ化しようとしています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputChar">
+      <MemberSignature Language="C#" Value="protected override bool IsInputChar (char charCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsInputChar(char charCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.IsInputChar(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charCode" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="charCode">テスト対象の文字。</param>
+        <summary>文字が ActiveX コントロールによって認識される入力文字かを調べます。</summary>
+        <returns>
+          <see langword="true" />文字が必要があります、ActiveX コントロールに直接送信する、プリプロセスしない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.IsInputChar%2A>メソッドは、特定の入力文字を前処理するか、ActiveX コントロールに直接送信されるかどうかを決定するウィンドウ メッセージのプリプロセス時に呼び出されます。 文字の前処理では、文字が別のコントロールのニーモニックであるかどうかを確認が含まれています。  
+  
+ 実装されている、<xref:System.Windows.Forms.AxHost>クラス、<xref:System.Windows.Forms.AxHost.IsInputChar%2A>メソッドは常に返します`true`で指定した文字が ActiveX コントロールに直接送信されるため、します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべてのウィンドウにこのメソッドを呼び出すクラスを継承します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.KeyEventHandler KeyDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.KeyEventHandler KeyDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.KeyDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.KeyDown" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.KeyDown>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyPress">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.KeyPressEventHandler KeyPress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.KeyPressEventHandler KeyPress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.KeyPress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.KeyPressEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.KeyPress" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.KeyPress>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.KeyEventHandler KeyUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.KeyEventHandler KeyUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.KeyUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.KeyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.KeyUp" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.KeyUp>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Layout">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.LayoutEventHandler Layout;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.LayoutEventHandler Layout" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.Layout" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LayoutEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.Layout" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.Layout>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeDirty">
+      <MemberSignature Language="C#" Value="public void MakeDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.MakeDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントに対して、通知サービスの変更、<see cref="T:System.Windows.Forms.AxHost" />が変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseClick">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDoubleClick">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseDoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseDoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseDoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseDown" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseDown>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnter">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseEnter" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseEnter>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseHover">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseHover;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseHover" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseHover" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseHover" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseHover>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeave">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseLeave" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseLeave>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseMove" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseMove>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseUp" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseUp>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheel">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseWheel;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseWheel" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.MouseWheel" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.MouseWheel" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.MouseWheel>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OcxState">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.AxHost.State OcxState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AxHost/State OcxState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.OcxState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AxHost+State</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ActiveX コントロールの永続化された状態を設定します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.AxHost.State" /> ActiveX コントロールの永続化された状態を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Forms.AxHost.OcxState%2A>は、コントロールの作成後に表示される前にプロパティを使用します。 基になる ActiveX コントロールの永続化された状態が返されます、<xref:System.Windows.Forms.AxHost.State>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">ActiveX コントロールは既に読み込まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnForeColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnForeColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnForeColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnForeColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.ForeColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInPlaceActive">
+      <MemberSignature Language="C#" Value="protected virtual void OnInPlaceActive ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInPlaceActive() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnInPlaceActive" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが、インプレース アクティブ状態に遷移するときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本クラスの実装は空です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.OnLostFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.LostFocus" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.PaintEventHandler Paint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.PaintEventHandler Paint" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.Paint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PaintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.Paint" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.Paint>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreProcessMessage">
+      <MemberSignature Language="C#" Value="public override bool PreProcessMessage (ref System.Windows.Forms.Message msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool PreProcessMessage(valuetype System.Windows.Forms.Message&amp; msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.PreProcessMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="msg">処理するメッセージを表す、参照渡しされた <see cref="T:System.Windows.Forms.Message" />。 有効な値は、WM_KEYDOWN、WM_SYSKEYDOWN、WM_CHAR、および WM_SYSCHAR です。</param>
+        <summary>キーボード メッセージまたは入力メッセージがディスパッチされる前に、メッセージ ループ内の入力メッセージを前処理します。</summary>
+        <returns>
+          メッセージがコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessDialogKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessDialogKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessDialogKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ProcessDialogKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">処理するキーを表す <see cref="T:System.Windows.Forms.Keys" /> 値の 1 つ。</param>
+        <summary>ダイアログ キーを処理します。</summary>
+        <returns>
+          キーがコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMnemonic">
+      <MemberSignature Language="C#" Value="protected override bool ProcessMnemonic (char charCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool ProcessMnemonic(char charCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ProcessMnemonic(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charCode" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="charCode">処理対象の文字。</param>
+        <summary>ニーモニック文字を処理します。</summary>
+        <returns>
+          文字がコントロールによってニーモニックとして処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropsValid">
+      <MemberSignature Language="C#" Value="protected bool PropsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool PropsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.PropsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストされるコントロールがそのプロパティをアクセスできる状態かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />ホストされるコントロールのプロパティにアクセスできる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryAccessibilityHelp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.QueryAccessibilityHelpEventHandler QueryAccessibilityHelp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.QueryAccessibilityHelp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.QueryAccessibilityHelpEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.QueryAccessibilityHelp" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.QueryAccessibilityHelp>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryContinueDrag">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.QueryContinueDrag" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.QueryContinueDragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.QueryContinueDrag" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.QueryContinueDrag>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseDown">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseDown (short button, short shift, int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseDown(int16 button, int16 shift, int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseDown(System.Int16,System.Int16,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseDown" />イベントが、指定した 32 ビット符号付き整数値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseDown">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseDown (short button, short shift, float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseDown(int16 button, int16 shift, float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseDown(System.Int16,System.Int16,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.AxHost.MouseDown" />指定した単精度浮動小数点数値を使用して、イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseDown">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseDown (object o1, object o2, object o3, object o4);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseDown(object o1, object o2, object o3, object o4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseDown(System.Object,System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o1" Type="System.Object" />
+        <Parameter Name="o2" Type="System.Object" />
+        <Parameter Name="o3" Type="System.Object" />
+        <Parameter Name="o4" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o1">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="o2">使用しません。</param>
+        <param name="o3">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="o4">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseDown" />イベントが、指定したオブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseMove">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseMove (short button, short shift, int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseMove(int16 button, int16 shift, int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseMove(System.Int16,System.Int16,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseMove" />イベントが、指定した 32 ビット符号付き整数値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseMove">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseMove (short button, short shift, float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseMove(int16 button, int16 shift, float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseMove(System.Int16,System.Int16,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.AxHost.MouseMove" />指定した単精度浮動小数点数値を使用して、イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseMove">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseMove (object o1, object o2, object o3, object o4);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseMove(object o1, object o2, object o3, object o4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseMove(System.Object,System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o1" Type="System.Object" />
+        <Parameter Name="o2" Type="System.Object" />
+        <Parameter Name="o3" Type="System.Object" />
+        <Parameter Name="o4" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o1">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="o2">使用しません。</param>
+        <param name="o3">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="o4">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseMove" />イベントが、指定したオブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseUp">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseUp (short button, short shift, int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseUp(int16 button, int16 shift, int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseUp(System.Int16,System.Int16,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseUp" />イベントが、指定した 32 ビット符号付き整数値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseUp">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseUp (short button, short shift, float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseUp(int16 button, int16 shift, float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseUp(System.Int16,System.Int16,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="button" Type="System.Int16" />
+        <Parameter Name="shift" Type="System.Int16" />
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="shift">使用しません。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.AxHost.MouseUp" />指定した単精度浮動小数点数値を使用して、イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseOnMouseUp">
+      <MemberSignature Language="C#" Value="protected void RaiseOnMouseUp (object o1, object o2, object o3, object o4);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseOnMouseUp(object o1, object o2, object o3, object o4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.RaiseOnMouseUp(System.Object,System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o1" Type="System.Object" />
+        <Parameter Name="o2" Type="System.Object" />
+        <Parameter Name="o3" Type="System.Object" />
+        <Parameter Name="o4" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o1">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="o2">使用しません。</param>
+        <param name="o3">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="o4">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <summary>発生させます、<see cref="E:System.Windows.Forms.AxHost.MouseUp" />イベントが、指定したオブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public virtual bool RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Boolean" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeftChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler RightToLeftChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RightToLeftChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.RightToLeftChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.RightToLeftChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.RightToLeftChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAboutBoxDelegate">
+      <MemberSignature Language="C#" Value="protected void SetAboutBoxDelegate (System.Windows.Forms.AxHost.AboutBoxDelegate d);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetAboutBoxDelegate(class System.Windows.Forms.AxHost/AboutBoxDelegate d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.SetAboutBoxDelegate(System.Windows.Forms.AxHost.AboutBoxDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Windows.Forms.AxHost+AboutBoxDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Windows.Forms.AxHost.AboutBoxDelegate" />を呼び出します。</param>
+        <summary>呼び出し、 <see cref="M:System.Windows.Forms.AxHost.ShowAboutBox" /> ActiveX コントロールのダイアログ ボックスの詳細を表示するメソッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>メソッドでは、派生クラスを処理することもできます、<xref:System.Windows.Forms.AxHost.ShowAboutBox%2A>デリゲートを結び付けずメソッドです。 これは、処理するための手法をお勧め、<xref:System.Windows.Forms.AxHost.ShowAboutBox%2A>派生クラスのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターをオーバーライドし、<xref:System.Windows.Forms.AxHost.SetAboutBoxDelegate%2A>と<xref:System.Windows.Forms.AxHost.AttachInterfaces%2A>のメソッド、 <xref:System.Windows.Forms.AxHost> Microsoft マスク エディット ActiveX コントロールをラップするクラスを派生します。 このコードは、MSMask32.ocx ファイルで AxImp.exe を実行して、生成されたソース コードを作成する必要があります、`/source`スイッチを編集するラッパー クラスを生成します。 このコードのみを表示 c# 構文でのみ言語の出力であるため、AxImp.exe でします。  
+  
+ [!code-csharp[AxHost_Wrap_MaskEdit#1](~/samples/snippets/csharp/VS_Snippets_Winforms/AxHost_Wrap_MaskEdit/CS/axmsmask.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.AxHost.SetAboutBoxDelegate(System.Windows.Forms.AxHost.AboutBoxDelegate)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.AxHost.SetAboutBoxDelegate(System.Windows.Forms.AxHost.AboutBoxDelegate)" />メソッドのデリゲートを登録するための受信、<see cref="M:System.Windows.Forms.AxHost.ShowAboutBox" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBoundsCore">
+      <MemberSignature Language="C#" Value="protected override void SetBoundsCore (int x, int y, int width, int height, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetBoundsCore(int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="x">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Left" /> プロパティ値。</param>
+        <param name="y">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Top" /> プロパティ値。</param>
+        <param name="width">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Width" /> プロパティ値。</param>
+        <param name="height">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Height" /> プロパティ値。</param>
+        <param name="specified"><see cref="T:System.Windows.Forms.BoundsSpecified" /> 値のビットごとの組み合わせ。</param>
+        <summary>このコントロールの指定した境界を設定する作業を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVisibleCore">
+      <MemberSignature Language="C#" Value="protected override void SetVisibleCore (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetVisibleCore(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.SetVisibleCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          コントロールを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>コントロールを指定した表示状態に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowAboutBox">
+      <MemberSignature Language="C#" Value="public void ShowAboutBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowAboutBox() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ShowAboutBox" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ActiveX コントロールの表示**に関する** ダイアログ ボックス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.AxHost.HasAboutBox%2A>は`false`、no**に関する** ダイアログ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPropertyPages">
+      <MemberSignature Language="C#" Value="public void ShowPropertyPages ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowPropertyPages() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ShowPropertyPages" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ActiveX コントロールに関連付けられたプロパティ ページを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.AxHost.HasPropertyPages%2A>は`false`、プロパティ ページは表示されません。  
+  
+ プロパティ ページでは、ActiveX コントロールのユーザーを表示および ActiveX コントロールのプロパティを変更できるようにします。 これらのプロパティは、表示およびコントロールのプロパティを編集用にカスタマイズされた、グラフィカル インターフェイスを提供する 1 つまたは複数のプロパティ ページが含まれているコントロールのプロパティのダイアログ ボックスを呼び出すことによってアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPropertyPages">
+      <MemberSignature Language="C#" Value="public void ShowPropertyPages (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowPropertyPages(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ShowPropertyPages(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">親<see cref="T:System.Windows.Forms.Control" />ActiveX コントロールのです。</param>
+        <summary>指定した親コントロールに割り当てられた ActiveX コントロールに関連付けられたプロパティ ページを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.AxHost.HasPropertyPages%2A>は`false`、プロパティ ページは表示されません。  
+  
+ プロパティ ページでは、ActiveX コントロールのユーザーを表示および ActiveX コントロールのプロパティを変更できるようにします。 これらのプロパティは、表示およびコントロールのプロパティを編集用にカスタマイズされた、グラフィカル インターフェイスを提供する 1 つまたは複数のプロパティ ページが含まれているコントロールのプロパティのダイアログ ボックスを呼び出すことによってアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.ISite Site { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのサイトを取得または設定します。</summary>
+        <value>コントロールに関連付けられた <see cref="T:System.ComponentModel.ISite" /> (存在する場合)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler StyleChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StyleChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.StyleChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.StyleChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.StyleChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetAttributes">
+      <MemberSignature Language="C#" Value="System.ComponentModel.AttributeCollection ICustomTypeDescriptor.GetAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.AttributeCollection System.ComponentModel.ICustomTypeDescriptor.GetAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型のコレクションを返します<see cref="T:System.Attribute" />現在のオブジェクト。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />現在のオブジェクトの属性を持つ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetClassName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetClassName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetClassName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetClassName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトのクラス名を返します。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の代わりに、型名を使用する、<xref:System.Windows.Forms.AxHost.System%23ComponentModel%23ICustomTypeDescriptor%23GetClassName%2A>メソッドを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetComponentName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetComponentName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetComponentName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetComponentName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの名前を返します。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の代わりに、既定の名前を使用する、<xref:System.Windows.Forms.AxHost.System%23ComponentModel%23ICustomTypeDescriptor%23GetComponentName%2A>メソッドを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetConverter">
+      <MemberSignature Language="C#" Value="System.ComponentModel.TypeConverter ICustomTypeDescriptor.GetConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.TypeConverter System.ComponentModel.ICustomTypeDescriptor.GetConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの型コンバーターを返します。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の代わりに既定の型コンバーターを使用する、<xref:System.Windows.Forms.AxHost.System%23ComponentModel%23ICustomTypeDescriptor%23GetConverter%2A>メソッドを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptor ICustomTypeDescriptor.GetDefaultEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetDefaultEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの既定のイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" /> 、現在のオブジェクトの既定のイベントを表すまたは<see langword="null" />オブジェクトにイベントがあるない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetDefaultProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの既定のプロパティを返します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.PropertyDescriptor" /> 、現在のオブジェクトの既定のプロパティを表すまたは<see langword="null" />オブジェクトにプロパティがない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEditor">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">A<see cref="T:System.Type" />を表す現在のオブジェクトのエディターです。</param>
+        <summary>現在のオブジェクトの指定した型のエディターを返します。</summary>
+        <returns>現在のオブジェクトのエディターは、指定した型のオブジェクトまたは<see langword="null" />エディターが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトのイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />現在のオブジェクトのイベントを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetEvents(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>イベントをフィルターとして指定された属性配列を使用して現在のオブジェクトを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />のイベントを表す、<see cref="T:System.Windows.Forms.AxHost" />指定した属性のセットに一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトのプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />現在のオブジェクトのイベントを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetProperties(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>フィルターとして指定された属性配列を使用して現在のオブジェクトのプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />現在のイベントを表す<see cref="T:System.Windows.Forms.AxHost" />指定した属性のセットに一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetPropertyOwner (System.ComponentModel.PropertyDescriptor pd);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner(class System.ComponentModel.PropertyDescriptor pd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.System#ComponentModel#ICustomTypeDescriptor#GetPropertyOwner(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pd" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="pd">使用しません。</param>
+        <summary>指定した値を所有するオブジェクトを返します。</summary>
+        <returns>現在のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.AxHost.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>このコントロールに関連付けられたテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.AxHost.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.AxHost.TextChanged" />では、イベントはサポートされていない、<see cref="T:System.Windows.Forms.AxHost" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しようとする追加または削除するハンドラーを<xref:System.Windows.Forms.AxHost.TextChanged>イベント、<xref:System.NotSupportedException>がスローされます。 派生したイベント、<xref:System.Windows.Forms.Control>でクラスがサポートされていない、<xref:System.Windows.Forms.AxHost>クラスです。 制御できる ActiveX によって公開されるイベント、<xref:System.Windows.Forms.AxHost>ラッパーが作成されたイベントは、使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

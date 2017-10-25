@@ -1,0 +1,138 @@
+<Type Name="ServiceHostFactory" FullName="System.ServiceModel.Activation.ServiceHostFactory">
+  <TypeSignature Language="C#" Value="public class ServiceHostFactory : System.ServiceModel.Activation.ServiceHostFactoryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceHostFactory extends System.ServiceModel.Activation.ServiceHostFactoryBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.ServiceHostFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activation.ServiceHostFactoryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力メッセージに応答してホスト インスタンスが動的に作成される管理対象ホスト環境の中で、<see cref="T:System.ServiceModel.ServiceHost" /> のインスタンスを提供するファクトリです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的アクティブ化をサポートする管理対象ホスト環境は、インターネット インフォメーション サービス (IIS) と Windows プロセス アクティブ化サービス (WAS) です。  
+  
+ <xref:System.ServiceModel.ServiceHost> のカスタム派生物を実装している場合は、<xref:System.ServiceModel.Activation.ServiceHostFactory> クラスから派生するファクトリの実装も検討してください。  
+  
+ <xref:System.ServiceModel.ServiceHostBase> のカスタム派生物を実装している場合は、<xref:System.ServiceModel.Activation.ServiceHostFactoryBase> から直接派生するファクトリを実装することも検討してください。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Activation.ServiceHostFactory> クラスを使用する方法を次の例に示します。  
+  
+ [!code-csharp[ServiceHostFactory#0](~/samples/snippets/csharp/VS_Snippets_CFX/servicehostfactory/cs/program.cs#0)]
+ [!code-vb[ServiceHostFactory#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicehostfactory/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceHostFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceHostFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.ServiceHostFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activation.ServiceHostFactory.%23ctor%2A> を使用する方法を次の例に示します。  
+  
+ [!code-csharp[ServiceHostFactory#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicehostfactory/cs/program.cs#1)]
+ [!code-vb[ServiceHostFactory#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicehostfactory/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.ServiceHostBase CreateServiceHost (string constructorString, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.ServiceHostBase CreateServiceHost(string constructorString, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(System.String,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHostBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructorString" Type="System.String" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="constructorString">ファクトリによって構築された <see cref="T:System.ServiceModel.ServiceHostBase" /> インスタンスに渡される初期化データ。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Array" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>指定したベース アドレスを持ち、指定したデータでそれを初期化する <see cref="T:System.ServiceModel.ServiceHost" /> を作成します。</summary>
+        <returns>指定したベース アドレスを持つ <see cref="T:System.ServiceModel.ServiceHost" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost%28System.String%2CSystem.Uri%5B%5D%29> メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[ServiceHostFactory#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicehostfactory/cs/program.cs#3)]
+ [!code-vb[ServiceHostFactory#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicehostfactory/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseAddress" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">提供されるホスト コンテキストがないか、<paramref name="constructorString" /> が <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.ServiceHost CreateServiceHost (Type serviceType, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.ServiceHost CreateServiceHost(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(System.Type,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHost</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">ホストするサービスの種類を指定します。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Array" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>指定したベース アドレスを持つ指定した種類のサービスのための <see cref="T:System.ServiceModel.ServiceHost" /> を作成します。</summary>
+        <returns>指定したベース アドレスを持つ指定した種類のサービスのための <see cref="T:System.ServiceModel.ServiceHost" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost%28System.Type%2CSystem.Uri%5B%5D%29> メソッドのオーバーライドの実装を作成する方法を次に示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

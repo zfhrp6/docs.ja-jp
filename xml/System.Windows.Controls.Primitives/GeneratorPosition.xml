@@ -1,0 +1,230 @@
+<Type Name="GeneratorPosition" FullName="System.Windows.Controls.Primitives.GeneratorPosition">
+  <TypeSignature Language="C#" Value="public struct GeneratorPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit GeneratorPosition extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.GeneratorPosition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+      <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" />管理されているアイテムの位置を記述に使用される<see cref="T:System.Windows.Controls.ItemContainerGenerator" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.GeneratorPosition>によって使用される<xref:System.Windows.Controls.Primitives.IItemContainerGenerator.StartAt%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Controls.Primitives.GeneratorPosition>を項目リストの先頭からの転送の生成を開始します。  
+  
+ [!code-csharp[GeneratorPositionSnippets#GenerateForwardFromBeginningCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/GeneratorPositionSnippets/CSharp/Window1.xaml.cs#generateforwardfrombeginningcode)]
+ [!code-vb[GeneratorPositionSnippets#GenerateForwardFromBeginningCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeneratorPositionSnippets/visualbasic/window1.xaml.vb#generateforwardfrombeginningcode)]  
+  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Controls.Primitives.GeneratorPosition>を項目リストの末尾からの逆方向の生成を開始します。  
+  
+ [!code-csharp[GeneratorPositionSnippets#GenerateBackwardFromEndCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/GeneratorPositionSnippets/CSharp/Window1.xaml.cs#generatebackwardfromendcode)]
+ [!code-vb[GeneratorPositionSnippets#GenerateBackwardFromEndCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeneratorPositionSnippets/visualbasic/window1.xaml.vb#generatebackwardfromendcode)]  
+  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Controls.Primitives.GeneratorPosition>に項目リストの中央からフォワード生成を開始します。  
+  
+ [!code-csharp[GeneratorPositionSnippets#GenerateForwardFromMiddleCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/GeneratorPositionSnippets/CSharp/Window1.xaml.cs#generateforwardfrommiddlecode)]
+ [!code-vb[GeneratorPositionSnippets#GenerateForwardFromMiddleCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeneratorPositionSnippets/visualbasic/window1.xaml.vb#generateforwardfrommiddlecode)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeneratorPosition (int index, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 index, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Int32" />生成された (実際) の項目に対応するインデックス。 -1 は、架空の項目の先頭またはアイテムの一覧の最後を参照する特殊な値です。</param>
+        <param name="offset"><see cref="T:System.Int32" />オフセットをインデックス付けされた項目の近くに未生成 (認識されない) 項目に対する相対パスです。 自体は、インデックス付けされた要素を指すオフセットが 0 のオフセット 1 が未生成の (認識されない) 次の項目を参照し、-1 のオフセットは、前の項目を参照します。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" />指定されたインデックスとオフセットを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象の <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> インスタンス。</param>
+        <summary>指定したインスタンスと <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> の現在のインスタンスを比較し、値が等しいかどうかを確認します。</summary>
+        <returns>
+          <paramref name="o" /> と、この <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> のインスタンスが同じ値を持つ場合は <see langword="true" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> のハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.GeneratorPosition.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Int32" />生成された (実際) の項目に対応するインデックス。</summary>
+        <value><see cref="T:System.Int32" />生成された (実際) の項目に対応するインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **-1**架空の項目の先頭またはアイテムの一覧の最後を参照する特殊な値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.GeneratorPosition.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Int32" />オフセットをインデックス付けされた項目の近くに未生成 (認識されない) 項目に対する相対パスです。</summary>
+        <value><see cref="T:System.Int32" />オフセットをインデックス付けされた項目の近くに未生成 (認識されない) 項目に対する相対パスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オフセットの**0**インデックス付けされた要素自体のオフセットを指す**1**未生成の (認識されない) 次の項目とのオフセットを指す**-1**は前の項目を参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Controls.Primitives.GeneratorPosition gp1, System.Windows.Controls.Primitives.GeneratorPosition gp2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Controls.Primitives.GeneratorPosition gp1, valuetype System.Windows.Controls.Primitives.GeneratorPosition gp2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.op_Equality(System.Windows.Controls.Primitives.GeneratorPosition,System.Windows.Controls.Primitives.GeneratorPosition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gp1" Type="System.Windows.Controls.Primitives.GeneratorPosition" />
+        <Parameter Name="gp2" Type="System.Windows.Controls.Primitives.GeneratorPosition" />
+      </Parameters>
+      <Docs>
+        <param name="gp1">比較する 1 番目のインスタンス。</param>
+        <param name="gp2">比較する 2 番目のインスタンス。</param>
+        <summary>2 つの <see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /> オブジェクトの値が等しいかどうかを比較します。</summary>
+        <returns>
+          2 つのオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Controls.Primitives.GeneratorPosition.Equals*?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Controls.Primitives.GeneratorPosition gp1, System.Windows.Controls.Primitives.GeneratorPosition gp2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Controls.Primitives.GeneratorPosition gp1, valuetype System.Windows.Controls.Primitives.GeneratorPosition gp2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.op_Inequality(System.Windows.Controls.Primitives.GeneratorPosition,System.Windows.Controls.Primitives.GeneratorPosition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gp1" Type="System.Windows.Controls.Primitives.GeneratorPosition" />
+        <Parameter Name="gp2" Type="System.Windows.Controls.Primitives.GeneratorPosition" />
+      </Parameters>
+      <Docs>
+        <param name="gp1">比較する 1 番目のインスタンス。</param>
+        <param name="gp2">比較する 2 番目のインスタンス。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" />値の非等値のオブジェクト。</summary>
+        <returns>
+          <see langword="true" />値が等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法の否定であります。<xref:System.Windows.Controls.Primitives.GeneratorPosition.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.GeneratorPosition.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの文字列表現を返します<see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" />です。</summary>
+        <returns>このインスタンスの文字列表現<see cref="T:System.Windows.Controls.Primitives.GeneratorPosition" /></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

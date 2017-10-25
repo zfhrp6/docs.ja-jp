@@ -1,0 +1,395 @@
+<Type Name="Setter" FullName="System.Windows.Setter">
+  <TypeSignature Language="C#" Value="public class Setter : System.Windows.SetterBase, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Setter extends System.Windows.SetterBase implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Setter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.SetterBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetMarkupExtension("ReceiveMarkupExtension")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetTypeConverter("ReceiveTypeConverter")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティの値を適用する set アクセス操作子を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Style>s とさまざまな種類のトリガー (から継承するクラス<xref:System.Windows.TriggerBase>) を使用して<xref:System.Windows.Setter>のプロパティ値を適用します。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.Setter.Property%2A>と<xref:System.Windows.Setter.Value%2A>プロパティを<xref:System.Windows.Setter>意味を持つように set アクセス操作子にします。 1 つまたは両方のプロパティが設定されていない場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Style>適用されるたびに<xref:System.Windows.Controls.TextBlock>要素。 これは、<xref:System.Windows.Style>をいくつかの値を適用<xref:System.Windows.Controls.TextBlock>プロパティの使用に<xref:System.Windows.Setter>s。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
+  
+ 次の例は、名前付き<xref:System.Windows.Style>できる<xref:System.Windows.Controls.Button>コントロール。 <xref:System.Windows.Style>定義、<xref:System.Windows.Trigger>要素を変更する、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは`true`します。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Setter.Property" />プロパティを null にすることはできません。</exception>
+    <exception cref="T:System.ArgumentException">場合、指定した<see cref="P:System.Windows.Setter.Value" />に設定されている<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Setter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Setter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Setter (System.Windows.DependencyProperty property, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DependencyProperty property, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.#ctor(System.Windows.DependencyProperty,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="property" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.Windows.DependencyProperty" />を適用する、<see cref="P:System.Windows.Setter.Value" />にします。</param>
+        <param name="value">プロパティに適用する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Setter" />指定したプロパティと値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Setter (System.Windows.DependencyProperty property, object value, string targetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DependencyProperty property, object value, string targetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.#ctor(System.Windows.DependencyProperty,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="property" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.Windows.DependencyProperty" />を適用する、<see cref="P:System.Windows.Setter.Value" />にします。</param>
+        <param name="value">プロパティに適用する値。</param>
+        <param name="targetName">子ノードの名前この<see cref="T:System.Windows.Setter" />向けです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Setter" />指定されたプロパティ、値、およびターゲットの名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty Property { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Setter.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のプロパティを<see cref="P:System.Windows.Setter.Value" />適用されます。</summary>
+        <value>A<see cref="T:System.Windows.DependencyProperty" />先、<see cref="P:System.Windows.Setter.Value" />適用されます。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方を指定する必要があります、<xref:System.Windows.Setter.Property%2A>と<xref:System.Windows.Setter.Value%2A>プロパティを<xref:System.Windows.Setter>または例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、適用されるたびにスタイル<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
+  
+ 次の例は、スタイルの宣言に影響を与える、<xref:System.Windows.Controls.Control.Background%2A>のプロパティ、<xref:System.Windows.Controls.Control>です。 そのプロパティを注意してください。 この例では名前は、クラスの名前で修飾されて (<xref:System.Windows.Controls.Control>) ため、<xref:System.Windows.Style>が指定されていません、<xref:System.Windows.Style.TargetType%2A>です。  
+  
+ [!code-xaml[StyleOvw01#StyleSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimple)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Setter.Property" />プロパティは、<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">指定した<see cref="P:System.Windows.Setter.Property" />プロパティが読み取り専用にすることはできません。</exception>
+        <exception cref="T:System.InvalidOperationException">場合、指定した<see cref="P:System.Windows.Setter.Value" />は指定した型に対して無効<see cref="P:System.Windows.Setter.Property" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveMarkupExtension">
+      <MemberSignature Language="C#" Value="public static void ReceiveMarkupExtension (object targetObject, System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveMarkupExtension(object targetObject, class System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.ReceiveMarkupExtension(System.Object,System.Windows.Markup.XamlSetMarkupExtensionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">マークアップ拡張機能値が設定されるオブジェクト。</param>
+        <param name="eventArgs">マークアップ拡張機能の処理に関連するデータ。</param>
+        <summary>処理する場合は、マークアップ拡張機能がのプロパティの値を提供する、<see cref="T:System.Windows.Setter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.Setter>マークアップ拡張機能でします。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTypeConverter">
+      <MemberSignature Language="C#" Value="public static void ReceiveTypeConverter (object targetObject, System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveTypeConverter(object targetObject, class System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.ReceiveTypeConverter(System.Object,System.Windows.Markup.XamlSetTypeConverterEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetTypeConverterEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">型コンバーターは、値が設定されるオブジェクト。</param>
+        <param name="eventArgs">型コンバーターの処理に関連するデータ。</param>
+        <summary>実行する型コンバーターがのプロパティの値を提供する場合の処理、<see cref="T:System.Windows.Setter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetTypeConverterAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.Setter>型コンバーターを使用しました。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の開始を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Setter> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Setter.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の完了を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Setter> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetName">
+      <MemberSignature Language="C#" Value="public string TargetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Setter.TargetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトの名前の設定を取得または<see cref="T:System.Windows.Setter" />向けです。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Set アクセス操作子のコレクション (この set アクセス操作子が含まれるコレクション) の適用先のスコープ内の要素の名前には、このプロパティを設定することができます。 通常は、この set アクセス操作子を格納しているテンプレート内にある名前付きの要素を選択します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Setter.TargetName%2A>トリガーに使用される<xref:System.Windows.Setter>ことを指定する、<xref:System.Windows.Setter>のためのものでは、<xref:System.Windows.Shapes.Ellipse>という名前`ThumbCover`内で、<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ [!code-xaml[ColorPicker_snip#StyleTargetNameRef](~/samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerApp/MyApp.xaml#styletargetnameref)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Setter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.SetterTriggerConditionValueConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Property")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("TargetName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで指定されているプロパティに適用する値の設定を取得または<see cref="T:System.Windows.Setter" />です。</summary>
+        <value>既定値は <see cref="F:System.Windows.DependencyProperty.UnsetValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Value"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Value="value"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Value"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Value>  
+    value  
+  </object.Value>  
+</object>  
+```  
+  
+<a name="xamlValues_Value"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *value*  
+ オブジェクトまたはマークアップ拡張機能です。 参照してください[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)します。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.Setter.Property%2A>と<xref:System.Windows.Setter.Value%2A>プロパティを<xref:System.Windows.Setter>または例外がスローされます。  
+  
+ データのバインドと、オブジェクト内での動的なリソースがサポートされている場合は、指定された値は、<xref:System.Windows.Freezable>オブジェクト。 参照してください[マークアップ拡張機能をバインド](~/docs/framework/wpf/advanced/binding-markup-extension.md)と[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Style>適用されるたびに<xref:System.Windows.Controls.TextBlock>要素。 完了の例では、次を参照してください。[スタイルとテンプレート サンプルの概要](http://go.microsoft.com/fwlink/?LinkID=160010)です。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
+  
+ 次の例では定義、<xref:System.Windows.Style>で<xref:System.Windows.Setter>のシステム リソースを参照します。  
+  
+ [!code-xaml[BtnStyles#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#1)]  
+  
+ 次の例では定義、<xref:System.Windows.Style>の<xref:System.Windows.Controls.Primitives.RepeatButton>です。  
+  
+ [!code-xaml[ColorPicker_snip#StyleTargetNameRef](~/samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerApp/MyApp.xaml#styletargetnameref)]  
+  
+ 次の例は、<xref:System.Windows.Setter.Value%2A>を使用するプロパティ、<xref:System.Windows.Data.Binding>宣言します。 コード例全体については、「[バインディングの検証のサンプル](http://go.microsoft.com/fwlink/?LinkID=159972)」をご覧ください。  
+  
+ [!code-xaml[bindvalidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">場合、指定した<see cref="P:System.Windows.Setter.Value" />に設定されている<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

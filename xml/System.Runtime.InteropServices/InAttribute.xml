@@ -1,0 +1,94 @@
+<Type Name="InAttribute" FullName="System.Runtime.InteropServices.InAttribute">
+  <TypeSignature Language="C#" Value="public sealed class InAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.InAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>呼び出し元から呼び出し先へデータをマーシャリングするものの、逆方向にはマーシャリングしないことを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターには、この属性を適用することができます。  
+  
+ <xref:System.Runtime.InteropServices.InAttribute>は省略可能です。 COM 相互運用属性はサポートされており、プラットフォーム呼び出しのみです。 明示的な設定がない場合は、相互運用マーシャラーは、ルールは、型、参照またはによっての値にパラメーターが渡されるかどうか、および種類が blittable 型か非 blittable パラメーターに基づくものとします。 たとえば、<xref:System.Text.StringBuilder>クラスは常と見なされ、In/out、値によって渡された文字列の配列が内にあると見なされます。  
+  
+ 適用することはできません、 <xref:System.Runtime.InteropServices.InAttribute> c# を使用して変更パラメーターに、スタイルの`out`キーワード。 混乱を避けるために、`In`で Visual Basic のキーワード、 <xref:System.Runtime.InteropServices.InAttribute>、属性、負符号を使用して、`<[In]>`属性の前後にかっこでフォームをします。  
+  
+ 結合、<xref:System.Runtime.InteropServices.InAttribute>と<xref:System.Runtime.InteropServices.OutAttribute>は場合に特に便利ですが配列に適用され、非 blittable 型の形式です。 呼び出し元がこれらの型には、呼び出し先で両方の属性を適用する場合にのみ、変更を参照してください。 これらの型では、マーシャ リング中にコピーする必要あります、ために使用<xref:System.Runtime.InteropServices.InAttribute>と<xref:System.Runtime.InteropServices.OutAttribute>を不要なコピーを減らすためにします。  
+  
+ 影響の詳細については<xref:System.Runtime.InteropServices.InAttribute>マーシャ リング動作で、次を参照してください。[方向属性](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2)です。  
+  
+   
+  
+## Examples  
+ 次の例に適用する方法を示しています、<xref:System.Runtime.InteropServices.InAttribute>と<xref:System.Runtime.InteropServices.OutAttribute>プラットフォーム呼び出しの配列をパラメーターとして渡しますプロトタイプ。 方向性のある属性の組み合わせにより、呼び出し元が呼び出し先によって行われた変更を確認します。  
+  
+ [!code-cpp[Interop InOutParameters#1](~/samples/snippets/cpp/VS_Snippets_CLR/Interop InOutParameters/CPP/inout.cpp#1)]
+ [!code-csharp[Interop InOutParameters#1](~/samples/snippets/csharp/VS_Snippets_CLR/Interop InOutParameters/CS/inout.cs#1)]
+ [!code-vb[Interop InOutParameters#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Interop InOutParameters/VB/inout.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.InAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.InAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

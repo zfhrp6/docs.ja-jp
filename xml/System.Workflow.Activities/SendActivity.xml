@@ -1,0 +1,770 @@
+<Type Name="SendActivity" FullName="System.Workflow.Activities.SendActivity">
+  <TypeSignature Language="C#" Value="public sealed class SendActivity : System.Workflow.ComponentModel.Activity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SendActivity extends System.Workflow.ComponentModel.Activity" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.SendActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Activity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.SendActivityDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.SendActivity), "Design.Resources.SendActivity.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.SendActivityValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) サービス操作の同期呼び出しをモデル化するクライアント アクティビティ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.SendActivity> アクティビティを使用すると、定義済みメッセージ交換パターンを使用して [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスとのメッセージ交換に参加することができます。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Activities.SendActivity> アクティビティはブロッキング アクティビティです。つまり、このアクティビティの実行が完了するまでワークフローの実行がブロックされます。  
+  
+ <xref:System.Workflow.Activities.SendActivity> アクティビティでサポートされるメッセージ交換パターンには、次が含まれます。  
+  
+-   一方向の送信メッセージ  
+  
+     <xref:System.Workflow.Activities.SendActivity> アクティビティはメッセージを送信しますが、サービスからの応答を想定していません。  
+  
+-   要求を送信し、応答を読み取ります。  
+  
+     <xref:System.Workflow.Activities.SendActivity> アクティビティはメッセージを送信し、応答をサービスから受信するまで待ちます。  
+  
+-   要求を送信し、エラーを読み取ります。  
+  
+     <xref:System.Workflow.Activities.SendActivity> アクティビティはメッセージを送信し、応答またはエラーをサービスから受信するまで待ちます。 実行中に、送信アクティビティはサーバーから受け取ったエラーをすべてスローします。 クライアント ワークフローでのエラー処理には <xref:System.Workflow.ComponentModel.FaultHandlerActivity> アクティビティを使用できます。  
+  
+> [!NOTE]
+>  このアクティビティの一部である[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]です。 同様の活動の[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]を参照してください<xref:System.ServiceModel.Activities.Send>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.SendActivity> コンストラクターは通常、ワークフロー デザイナーで作成されたコード側ファイルで呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.SendActivity> コンストラクターは通常、ワークフロー デザイナーで作成されたコード側ファイルで呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Activities.SendActivity> クラスの新しいインスタンスを作成する方法を示します。  この例は、`Conversations` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#16](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティが初期化される場合に <see cref="P:System.Workflow.ComponentModel.Activity.Name" /> 割り当てられる値。</param>
+        <summary>指定した <see cref="T:System.Workflow.Activities.SendActivity" /> プロパティを使用して、<see langword="name" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.SendActivity> コンストラクターは通常、ワークフロー デザイナーで作成されたコード側ファイルで呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Activities.SendActivity> クラスの新しいインスタンスを作成する方法を示します。  
+  
+ [!code-csharp[SendActivity#17](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterResponse">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Activities.SendActivityEventArgs&gt; AfterResponse;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Activities.SendActivityEventArgs&gt; AfterResponse" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Activities.SendActivity.AfterResponse" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Activities.SendActivityEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答をサービスから受信後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントで関連付けられたこのイベント ハンドラーを使用すると、呼び出されたサービス操作から戻り値を読み込むことができます。  
+  
+   
+  
+## Examples  
+ `AfterResponse` イベントを使用する方法を次の例に示します。  
+  
+ [!code-csharp[SendActivity#2](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterResponseEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty AfterResponseEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty AfterResponseEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.SendActivity.AfterResponseEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.Activities.SendActivity.AfterResponse" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存イベント プロパティを使用して、送信アクティビティの <xref:System.Workflow.Activities.SendActivity.AfterResponse> イベントをワークフロー クラスのパブリック イベント ハンドラーにバインドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeSend">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Activities.SendActivityEventArgs&gt; BeforeSend;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Activities.SendActivityEventArgs&gt; BeforeSend" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Activities.SendActivity.BeforeSend" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Activities.SendActivityEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> アクティビティがサービスにメッセージを送信する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントで関連付けられたこのイベント ハンドラーを使用すると、呼び出されたサービス操作のパラメーター値を設定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Activities.SendActivity> のコンテキストは、このイベント ハンドラーで設定できません。  
+  
+   
+  
+## Examples  
+ `BeforeSend` イベントを使用する方法を次の例に示します。 この例は、`Conversations` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#3](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeSendEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty BeforeSendEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty BeforeSendEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.SendActivity.BeforeSendEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> イベントをターゲットとする <see cref="E:System.Workflow.Activities.SendActivity.BeforeSend" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存イベント プロパティを使用して、送信アクティビティの <xref:System.Workflow.Activities.SendActivity.BeforeSend> イベントをワークフロー クラスのパブリック イベント ハンドラーにバインドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelToken">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ChannelToken ChannelToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.ChannelToken ChannelToken" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SendActivity.ChannelToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ChannelToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.Activities.ChannelToken" /> がそれ自身をクライアント チャネルに関連付けるために使用する <see cref="T:System.Workflow.Activities.SendActivity" />。</summary>
+        <value><see cref="T:System.Workflow.Activities.ChannelToken" /> がサービスと通信するのに使用するクライアント チャネルを定義する <see cref="T:System.Workflow.Activities.SendActivity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル トークンは、チャネルを確立する際に使用されるチャネル名、チャネルのスコープ、およびエンドポイント構成名を指定します。 構成ファイルのエンドポイント名には、<xref:System.Workflow.Activities.SendActivity> アクティビティが通信するサービスのアドレス、バインド、およびコントラクト情報があります。  
+  
+ チャネル トークンも一意のチャネル名およびトークンの所有者アクティビティ名を指定します。 チャネル トークンは、同じエンドポイントを使用してサービスと通信する複数の送信アクティビティ間を共有できます。  
+  
+   
+  
+## Examples  
+ 次の例は、`ChannelToken` プロパティにアクセスする方法を示しています。 この例は、`CalculatorClient` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#7](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Context" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SendActivity.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相関関係の識別など、通信しているクライアントとサービス間の通信に使用されたコンテキストを含むディクショナリを返します。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" /> キーと関連付けられた <see cref="T:System.String" /> 値を含むディクショナリベースのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+   
+  
+## Examples  
+ 次の例は、`Context` プロパティにアクセスする方法を示しています。 この例は、`CalculatorClient` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#8](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomAddress">
+      <MemberSignature Language="C#" Value="public string CustomAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SendActivity.CustomAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスとの通信に使用するカスタム アドレスを取得または設定します。</summary>
+        <value>サービスがリッスンしているアドレスが値の文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在する場合、この値を使用して操作のエンドポイント アドレスを定義します。  
+  
+   
+  
+## Examples  
+ 次の例は、`CustomAddress` プロパティにアクセスする方法を示しています。 この例は、`CalculatorClient` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#9](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomAddressProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty CustomAddressProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty CustomAddressProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.SendActivity.CustomAddressProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> プロパティの <see cref="P:System.Workflow.Activities.SendActivity.CustomAddress" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在する場合、この値を使用して操作のエンドポイント アドレスを定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetContext">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>相関関係の識別など、通信しているクライアントとサービス間の通信に使用されたコンテキストを含むディクショナリを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetContext">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetContext (System.Workflow.ComponentModel.Activity activity, System.Workflow.Activities.ChannelToken endpoint, Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetContext(class System.Workflow.ComponentModel.Activity activity, class System.Workflow.Activities.ChannelToken endpoint, class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.GetContext(System.Workflow.ComponentModel.Activity,System.Workflow.Activities.ChannelToken,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="endpoint" Type="System.Workflow.Activities.ChannelToken" />
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activity">コンテキスト情報が必要なアクティビティ。</param>
+        <param name="endpoint">サービスとの関連付けのエンドポイント情報。</param>
+        <param name="contractType">サービスで実装されたコントラクトの <see cref="T:System.Type" />。</param>
+        <summary>送信操作のコンテキスト情報を取得または設定します。</summary>
+        <returns><see cref="T:System.Xml.XmlQualifiedName" /> キーと関連付けられた <see cref="T:System.String" /> 値を含むディクショナリベースのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+   
+  
+## Examples  
+ `GetContext` メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[SendActivity#12](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContext">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetContext (System.Workflow.ComponentModel.Activity activity, string endpointName, string ownerActivityName, Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetContext(class System.Workflow.ComponentModel.Activity activity, string endpointName, string ownerActivityName, class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.GetContext(System.Workflow.ComponentModel.Activity,System.String,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="endpointName" Type="System.String" />
+        <Parameter Name="ownerActivityName" Type="System.String" />
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activity">コンテキスト情報が必要なアクティビティ。</param>
+        <param name="endpointName">サービスとの関連付けに使用されるエンドポイントの名前。</param>
+        <param name="ownerActivityName">所有アクティビティの名前。</param>
+        <param name="contractType">サービスで実装されたコントラクトの <see cref="T:System.Type" />。</param>
+        <summary>アクティビティ インスタンス、そのアクティビティで使用されるエンドポイント名、所有者アクティビティの名前、およびコントラクトの型を表す <see cref="T:System.Type" /> オブジェクトを指定するコンテキスト情報を返す静的メソッド。</summary>
+        <returns><see cref="T:System.Xml.XmlQualifiedName" /> キーと関連付けられた <see cref="T:System.String" /> 値を含むディクショナリベースのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+   
+  
+## Examples  
+ `GetContext` メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[SendActivity#15](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeProperties">
+      <MemberSignature Language="C#" Value="protected override void InitializeProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.InitializeProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterBindings">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.WorkflowParameterBindingCollection ParameterBindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.WorkflowParameterBindingCollection ParameterBindings" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SendActivity.ParameterBindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.WorkflowParameterBindingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスの正式なパラメーター リストに検出されるようなバインド可能なパラメーターのコレクションを取得します。</summary>
+        <value>バインドされるパラメーターの <see cref="T:System.Workflow.ComponentModel.WorkflowParameterBindingCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.SendActivity.ParameterBindings%2A> を使用して、<xref:System.Workflow.Activities.SendActivity> アクティビティを含むサービス操作パラメーターとワークフローのパブリック フィールドおよびパブリック プロパティ間のバインディングを指定できます。 <xref:System.Workflow.Activities.SendActivity> アクティビティが実行されると、対応するパラメーター値はバインドされるワークフロー プロパティから読み込まれて、サービス操作パラメーターとしてサービスに送信されます。  
+  
+ <xref:System.Workflow.Activities.SendActivity.ParameterBindings%2A> を使用して、サービス操作からの戻り値を取得することもできます。  
+  
+ サービス操作のすべてのパラメーターはバインドされる必要があります。 バインドされていないサービス操作パラメーターは、コンパイラ警告を生成します。そのパラメーターの既定値は、<xref:System.Workflow.Activities.SendActivity> が呼び出されると送信されます。  
+  
+   
+  
+## Examples  
+ 次の例は、`ParameterBindings` プロパティにアクセスする方法を示しています。 この例は、`Conversations` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#0](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValuePropertyName">
+      <MemberSignature Language="C#" Value="public const string ReturnValuePropertyName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ReturnValuePropertyName" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.SendActivity.ReturnValuePropertyName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="SendActivity" /> アクティビティが通信しているサービスからの戻り値に使用されているプロパティの名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この文字列を使用して、<xref:System.Workflow.Activities.SendActivity.ParameterBindings%2A> イベント ハンドラーの <xref:System.Workflow.Activities.SendActivity> アクティビティに関連付けられた <xref:System.Workflow.Activities.SendActivity.AfterResponse> からの戻り値を取得できます。  
+  
+   
+  
+## Examples  
+ 次の例は、`ReturnValuePropertyName` フィールドにアクセスする方法を示しています。  
+  
+ [!code-csharp[SendActivity#6](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceOperationInfo">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.TypedOperationInfo ServiceOperationInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.TypedOperationInfo ServiceOperationInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SendActivity.ServiceOperationInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.TypedOperationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="SendActivity" /> アクティビティが通信するサービスのコントラクトおよび操作を定義します。</summary>
+        <value>コントラクト名、コントラクトの型、操作名 (実際のメソッド名と異なる場合がある)、その操作が一方向の操作かどうか、および操作についてのパラメーターなどのメソッド情報を含んでいる <see cref="T:System.Workflow.Activities.TypedOperationInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.SendActivity> アクティビティは常に、既存のコントラクトおよびその定義された操作を参照します。 <xref:System.Workflow.Activities.SendActivity> アクティビティがコントラクト自体を定義することはできません。  
+  
+   
+  
+## Examples  
+ 次の例は、`ServiceOperationInfo` プロパティにアクセスする方法を示しています。 この例は、`Conversations` SDK サンプルを作成し直したものです。  
+  
+ [!code-csharp[SendActivity#1](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetContext">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> アクティビティのコンテキスト情報を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public static void SetContext (System.Workflow.ComponentModel.Activity activity, System.Workflow.Activities.ChannelToken endpoint, Type contractType, System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetContext(class System.Workflow.ComponentModel.Activity activity, class System.Workflow.Activities.ChannelToken endpoint, class System.Type contractType, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.SetContext(System.Workflow.ComponentModel.Activity,System.Workflow.Activities.ChannelToken,System.Type,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="endpoint" Type="System.Workflow.Activities.ChannelToken" />
+        <Parameter Name="contractType" Type="System.Type" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activity">コンテキスト情報を関連付けるアクティビティ インスタンス。</param>
+        <param name="endpoint">サービスとの関連付けに使用されるエンドポイント。</param>
+        <param name="contractType">サービスで実装されたコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="context">設定するコンテキスト情報。</param>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> アクティビティ、指定されたアクティビティ インスタンス、そのアクティビティで使用されたエンドポイント、コントラクトの型およびコンテキスト情報自体を表している <see cref="T:System.Type" /> オブジェクトのコンテキスト情報を設定する静的メソッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報は、相関関係の識別など、通信しているクライアントとサービス間の通信に使用されています。  
+  
+   
+  
+## Examples  
+ `SetContext` メソッドを使用する方法の例を次に示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public static void SetContext (System.Workflow.ComponentModel.Activity activity, string endpointName, string ownerActivityName, Type contractType, System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetContext(class System.Workflow.ComponentModel.Activity activity, string endpointName, string ownerActivityName, class System.Type contractType, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SendActivity.SetContext(System.Workflow.ComponentModel.Activity,System.String,System.String,System.Type,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="endpointName" Type="System.String" />
+        <Parameter Name="ownerActivityName" Type="System.String" />
+        <Parameter Name="contractType" Type="System.Type" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activity">コンテキスト情報を関連付けるアクティビティ インスタンス。</param>
+        <param name="endpointName">サービスとの関連付けに使用されるエンドポイントの名前。</param>
+        <param name="ownerActivityName">所有アクティビティの名前。</param>
+        <param name="contractType">サービスで実装されたコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="context">設定するコンテキスト情報。</param>
+        <summary><see cref="T:System.Workflow.Activities.SendActivity" /> アクティビティ、特定のアクティビティ インスタンス、そのアクティビティで使用されているエンドポイント名、所有者アクティビティの名前、コントラクトの型を表す <see cref="T:System.Type" /> オブジェクト、およびコンテキスト情報自体のコンテキスト情報を設定する静的メソッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `SetContext` メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[SendActivity#15](~/samples/snippets/csharp/VS_Snippets_CFX/sendactivity/cs/snippets.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

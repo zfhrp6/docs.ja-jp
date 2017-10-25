@@ -1,0 +1,142 @@
+<Type Name="SearchResultAttributeCollection" FullName="System.DirectoryServices.Protocols.SearchResultAttributeCollection">
+  <TypeSignature Language="C#" Value="public class SearchResultAttributeCollection : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchResultAttributeCollection extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.SearchResultAttributeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.SearchResultAttributeCollection" />クラスは、コレクションの<see cref="T:System.DirectoryServices.Protocols.DirectoryAttribute" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AttributeNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection AttributeNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection AttributeNames" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.AttributeNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.AttributeNames" />プロパティには、このコレクション内の属性の名前が含まれています。</summary>
+        <value>このコレクション内の属性の名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">検索対象の属性の名前。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Contains(System.String)" />メソッドでは、コレクションが、指定したに含まれているかどうかを判断<paramref name="attributeName" />です。</summary>
+        <returns>
+          <see langword="true" />attributeName がコレクションに含まれている場合または<see langword="false" />そうでない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.Protocols.DirectoryAttribute[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.Protocols.DirectoryAttribute[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchResultAttributeCollection.CopyTo(System.DirectoryServices.Protocols.DirectoryAttribute[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.DirectoryServices.Protocols.DirectoryAttribute[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピーされた要素のコピー先である 1 次元配列、<see cref="T:System.DirectoryServices.Protocols.SearchResultAttributeCollection" />オブジェクト。</param>
+        <param name="index">0 から始まるインデックス<c>配列</c>コピー開始位置。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchResultAttributeCollection.CopyTo(System.DirectoryServices.Protocols.DirectoryAttribute[],System.Int32)" />メソッドが対象となる配列の指定したインデックスから始まる 1 次元配列にコレクション全体をコピーします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />多次元  
+  
+ または  
+  
+ コピー元の <see cref="T:System.DirectoryServices.Protocols.SearchResultAttributeCollection" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.DirectoryServices.Protocols.SearchResultAttributeCollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DirectoryAttribute this[string attributeName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.DirectoryAttribute Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DirectoryAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">この属性の名前。</param>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Item(System.String)" />プロパティが含まれています、<see cref="T:System.DirectoryServices.Protocols.DirectoryAttribute" />で指定されたオブジェクト<paramref name="attributeName" />です。</summary>
+        <value><see cref="T:System.DirectoryServices.Protocols.DirectoryAttribute" />で指定されたオブジェクト<paramref name="attributeName" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchResultAttributeCollection.Values" />プロパティには、このコレクション内の属性の値が含まれています。</summary>
+        <value>このコレクション内の属性の値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

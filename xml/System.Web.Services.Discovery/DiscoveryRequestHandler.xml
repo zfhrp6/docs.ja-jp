@@ -1,0 +1,95 @@
+<Type Name="DiscoveryRequestHandler" FullName="System.Web.Services.Discovery.DiscoveryRequestHandler">
+  <TypeSignature Language="C#" Value="public sealed class DiscoveryRequestHandler : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DiscoveryRequestHandler extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DiscoveryRequestHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Web サービス探索ドキュメントの要求を処理する ASP.NET の HTTP ハンドラー。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryRequestHandler>クラスを使用してその<xref:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest%2A>探索ドキュメントに対する HTTP 要求を処理するメソッド、します。 探索ドキュメントで表される、<xref:System.Web.Services.Discovery.DiscoveryDocument>クラスし、通常は、.disco 拡張機能を使用してファイルとしてシリアル化します。 Web サービスの検出は、指定された場所で使用できる Web サービスを決定するためのメカニズムを提供します。  
+  
+ <xref:System.Web.Services.Discovery.DiscoveryRequestHandler>クラス通常しなくても、開発者から直接使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryRequestHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryRequestHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DiscoveryRequestHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="public bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryRequestHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得<see langword="true" />、示すかどうかのインスタンス<see cref="T:System.Web.Services.Discovery.DiscoveryRequestHandler" />(または派生クラス) は再利用可能です。</summary>
+        <value>このプロパティは常に <see langword="true" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="P:System.Web.HttpContext.Request" />と<see cref="P:System.Web.HttpContext.Response" />のプロパティ、<see cref="T:System.Web.HttpContext" />クラスをそれぞれ入力と出力に使用します。</param>
+        <summary>HTTP 応答をシリアル化する探索ドキュメントに対する HTTP 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest%2A>メソッドは、HTTP 要求の Uniform Resource Locator (URL) に対応するファイル システム パス内の該当するファイルを検索します。 検索は、サブディレクトリを拡張し、スイッチのターゲット ファイルの拡張機能によっては検索のルート ディレクトリ内で見つかった場合があります。  
+  
+ 検索処理は追加、<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクトの<xref:System.Web.Services.Discovery.DiscoveryDocument.References%2A>検出されたファイルを持つプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,179 @@
+<Type Name="OpacityConverter" FullName="System.Windows.Forms.OpacityConverter">
+  <TypeSignature Language="C#" Value="public class OpacityConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OpacityConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.OpacityConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列から不透明度の値の変換を行う型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常を直接インスタンスを作成しないの<xref:System.Windows.Forms.OpacityConverter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>クラスです。 型コンバーターおよび表示する詳細については、コード例を参照してください、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OpacityConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpacityConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.OpacityConverter" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コンパイラによって提供される既定のコンス トラクターです。  
+  
+ 通常を直接インスタンスを作成しないの<xref:System.Windows.Forms.OpacityConverter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>クラスです。 詳細については、コード例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpacityConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <param name="sourceType"><see cref="T:System.Type" />から変換する型を表すです。</param>
+        <summary>このコンバーターが、指定したソースの種類のオブジェクトを指定したコンテキストを使用するコンバーターのネイティブ型に変換できるかどうかを示す値を返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sourceType`できると予想される、<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ 使用することができます、<paramref name="context" />パラメーターをこのコンバーターが呼び出されている環境に関する追加情報を抽出します。 パラメーターは、<see langword="null" />ので、内容を常に確認する必要があります。 また、プロパティを<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を返すことも<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpacityConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <param name="culture">変換のロケール情報。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトをコンバーターのネイティブ型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.OpacityConverter.ConvertFrom%2A>メソッドが変換に特化した<xref:System.String>に対応するパーセンテージまたは 10 進数の端数を表す値<xref:System.Double>、割合としての不透明度を表す値です。 以外の型<xref:System.String>はこのメソッドの基本クラスの実装に渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">オブジェクトは、変換のサポートされている種類ではありませんでした。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="value" />型に正しく変換でした<see cref="T:System.Double" />です。  
+  
+ または  
+  
+ 変換された結果の<paramref name="value" />% または 100% より大きい値を 0 未満でした。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ 使用することができます、<paramref name="context" />パラメーターをこのコンバーターが呼び出されている環境に関する追加情報を抽出します。 パラメーターは、<see langword="null" />ので、内容を常に確認する必要があります。 また、プロパティを<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を返すことも<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OpacityConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <param name="culture">変換のロケール情報。</param>
+        <param name="value">変換する値。</param>
+        <param name="destinationType">オブジェクトの変換後の型。</param>
+        <summary>変換先の型の値コンバーターのネイティブ型に変換します。</summary>
+        <returns><see cref="T:System.Object" />を表す、変換された<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.OpacityConverter.ConvertTo%2A>整数の値に変換するメソッドを特化、<xref:System.String>割合表現します。 その他の種類は、このメソッドの基本クラスの実装に渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="value" />変換できない、<paramref name="destinationType" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ 使用することができます、<paramref name="context" />パラメーターをこのコンバーターが呼び出されている環境に関する追加情報を抽出します。 パラメーターは、<see langword="null" />ので、内容を常に確認する必要があります。 また、プロパティを<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を返すことも<see langword="null" />します。  
+  
+ 結果のオブジェクトが、<see cref="T:System.String" />不透明度の割合を表します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

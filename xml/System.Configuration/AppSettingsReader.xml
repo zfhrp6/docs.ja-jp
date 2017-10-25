@@ -1,0 +1,192 @@
+<Type Name="AppSettingsReader" FullName="System.Configuration.AppSettingsReader">
+  <TypeSignature Language="C#" Value="public class AppSettingsReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AppSettingsReader extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.AppSettingsReader" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成から特定の種類の値を読み取るためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含む構成ファイルの作成、`<appSettings>`セクション、および、使用、<xref:System.Configuration.AppSettingsReader>今生成された設定を読み取ります。  
+  
+```  
+using System;  
+using System.Configuration;  
+  
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        var reader = new AppSettingsReader();  
+  
+        var stringSetting = reader.GetValue("String setting", typeof(string));  
+        Console.WriteLine("String setting: " + stringSetting);  
+  
+        var dateTimeSetting = reader.GetValue("DateTime setting", typeof(DateTime));  
+        Console.WriteLine("DateTime setting: " + dateTimeSetting);  
+  
+        try  
+        {  
+            var missingSetting = reader.GetValue("Int setting", typeof(Int32));  
+        }  
+        catch (InvalidOperationException e)  
+        {  
+            Console.WriteLine("Missing key error: " + e.Message);  
+        }  
+  
+        Console.WriteLine("Press any key to continue");  
+        Console.ReadKey();  
+    }  
+}  
+```  
+  
+ 次の例では、前述の例で使用される構成ファイルを示します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+    <appSettings>  
+        <add key="String setting" value="String retrieved from App.Config"/>  
+        <add key="Date setting" value="Thursday, December 01, 2005 12:53:56 PM"/>  
+    </appSettings>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AppSettingsReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.AppSettingsReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.AppSettingsReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含む構成ファイルの作成、`<appSettings>`セクション、および、使用、<xref:System.Configuration.AppSettingsReader>今生成された設定を読み取ります。  
+  
+```  
+using System;  
+using System.Configuration;  
+  
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        var reader = new AppSettingsReader();  
+  
+        var stringSetting = reader.GetValue("String setting", typeof(string));  
+        Console.WriteLine("String setting: " + stringSetting);  
+  
+        var dateTimeSetting = reader.GetValue("DateTime setting", typeof(DateTime));  
+        Console.WriteLine("DateTime setting: " + dateTimeSetting);  
+  
+        try  
+        {  
+            var missingSetting = reader.GetValue("Int setting", typeof(Int32));  
+        }  
+        catch (InvalidOperationException e)  
+        {  
+            Console.WriteLine("Missing key error: " + e.Message);  
+        }  
+  
+        Console.WriteLine("Press any key to continue");  
+        Console.ReadKey();  
+    }  
+}  
+```  
+  
+ 次の例では、前述の例で使用される構成ファイルを示します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+    <appSettings>  
+        <add key="String setting" value="String retrieved from App.Config"/>  
+        <add key="Date setting" value="Thursday, December 01, 2005 12:53:56 PM"/>  
+    </appSettings>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (string key, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(string key, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.AppSettingsReader.GetValue(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="key">値を取得する対象のキー。</param>
+        <param name="type">返すオブジェクトの型。</param>
+        <summary>指定したキーの値を取得、<see cref="P:System.Configuration.ConfigurationSettings.AppSettings" />プロパティの構成から値を含む指定した型のオブジェクトを返します。</summary>
+        <returns>指定したキーの値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.AppSettingsReader.GetValue%2A>内の各キー値を取得する方法を`<appSettings>`構成ファイルのセクションです。  
+  
+ [!code-csharp[System.Configuration.AppSettingsReader#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.AppSettingsReader/CS/AppSettingsReader.cs#2)]
+ [!code-vb[System.Configuration.AppSettingsReader#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.AppSettingsReader/VB/AppSettingsReader.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="key" />存在しません、<see langword="&lt;appSettings&gt;" />構成セクション。  
+  
+ \- または  
+  
+ 値、<see langword="&lt;appSettings&gt;" />用の構成セクション<paramref name="key" />型ではありません<paramref name="type" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

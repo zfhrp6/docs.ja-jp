@@ -1,0 +1,424 @@
+<Type Name="HttpModuleActionCollection" FullName="System.Web.Configuration.HttpModuleActionCollection">
+  <TypeSignature Language="C#" Value="public sealed class HttpModuleActionCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpModuleActionCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpModuleActionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.HttpModuleAction))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.HttpModuleAction" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpModuleActionCollection>コレクションへのアクセスを使用する、<xref:System.Web.Configuration.HttpModuleAction>の要素、<xref:System.Web.Configuration.HttpModulesSection>セクションです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpModuleActionCollection> クラスを使用する方法を示す例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#1)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#1)]  
+  
+ 次の例は、ASP.NET カスタム モジュールを使用できるようにする構成ファイルの抜粋です。 ビルドおよび HTTP モジュールを構成する方法の完全な例を参照してください、 [NIB: 方法: を作成し、HTTP モジュールを構成する](http://msdn.microsoft.com/en-us/4174fd13-a9c4-4ff6-baa5-3f7d7fc73ef3)です。  
+  
+```  
+<httpModules>  
+  <add name="TimerModule"   
+    type="Samples.AspNet.RequestTimeInterval, RequestTimeInterval Version=1.0.1557.23158, Culture=neutral,  
+    PublicKeyToken=7bfb33146a87b52e, processorArchitecture=MSIL"/>  
+</httpModules>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpModuleActionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpModuleActionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの初期化されていないインスタンスを作成する、<xref:System.Web.Configuration.HttpModuleActionCollection>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Configuration.HttpModuleActionCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#2)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.HttpModuleAction httpModule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.HttpModuleAction httpModule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.Add(System.Web.Configuration.HttpModuleAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpModule" Type="System.Web.Configuration.HttpModuleAction" />
+      </Parameters>
+      <Docs>
+        <param name="httpModule"><see cref="T:System.Web.Configuration.HttpModuleAction" />モジュールをコレクションに追加します。</param>
+        <summary>コレクションに <see cref="T:System.Web.Configuration.HttpModuleAction" /> オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションに <xref:System.Web.Configuration.HttpModuleAction> オブジェクトを追加します。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.Configuration.HttpModuleAction>オブジェクトをコレクションに追加します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">追加しようとしましたが、<see cref="T:System.Web.Configuration.HttpModuleAction" />コレクションに既に存在するオブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Configuration.HttpModuleAction" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを適切なファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの適切なセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ 次の例は、削除する方法を示します、<xref:System.Web.Configuration.HttpModuleAction>コレクションに含まれるモジュールです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#8)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Configuration.HttpModuleAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Configuration.HttpModuleAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.IndexOf(System.Web.Configuration.HttpModuleAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Web.Configuration.HttpModuleAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Web.Configuration.HttpModuleAction" />コレクションのインデックスを取得する対象のモジュール。</param>
+        <summary>指定したコレクションのインデックスを取得<see cref="T:System.Web.Configuration.HttpModuleAction" />モジュール。</summary>
+        <returns>指定したモジュールのコレクションのインデックス値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前に指定する必要があります、<xref:System.Web.Configuration.HttpModuleAction>適切な名前と種類のモジュール。 このモジュール オブジェクトを使用すると、そのコレクションのインデックスを取得し、します。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Web.Configuration.HttpModuleAction>モジュール コレクションのインデックス。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#4)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsElementRemovable">
+      <MemberSignature Language="C#" Value="protected override bool IsElementRemovable (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsElementRemovable(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.IsElementRemovable(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.HttpModuleAction this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.HttpModuleAction Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleActionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.HttpModuleAction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">モジュール コレクションのインデックス。</param>
+        <summary>取得または、このコレクション内の項目を設定します。</summary>
+        <value>指定した位置にある項目<paramref name="index" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは内部使用のみを目的としています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleActionCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpModuleAction" />コレクションからのモジュール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ そのコレクションからモジュールを削除するには、表示されているオーバー ロードされたメソッドのいずれかを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">識別するキー、<see cref="T:System.Web.Configuration.HttpModuleAction" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`<remove>`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、削除する方法を示します、<xref:System.Web.Configuration.HttpModuleAction>コレクションからのモジュール。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#6)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Configuration.HttpModuleAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Configuration.HttpModuleAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.Remove(System.Web.Configuration.HttpModuleAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Web.Configuration.HttpModuleAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Web.Configuration.HttpModuleAction" />モジュールを削除します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`<remove>`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、削除する方法を示します、<xref:System.Web.Configuration.HttpModuleAction>コレクションからのモジュール。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#5)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">渡された<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクトがコレクションに存在しません、要素は既に削除されて、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleActionCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.HttpModuleAction" />モジュールを削除します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.HttpModuleAction" />コレクションから指定したインデックスにあるモジュール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`<remove>`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、削除する方法を示します、<xref:System.Web.Configuration.HttpModuleAction>コレクションからのモジュール。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleActionCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/CS/httpmoduleactioncollection.cs#7)]
+ [!code-vb[System.Web.Configuration.HttpModuleActionCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleActionCollection/VB/httpmoduleactioncollection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクト、コレクション内の指定したインデックス位置の要素は既に削除されて、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

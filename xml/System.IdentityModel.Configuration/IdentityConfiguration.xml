@@ -1,0 +1,791 @@
+<Type Name="IdentityConfiguration" FullName="System.IdentityModel.Configuration.IdentityConfiguration">
+  <TypeSignature Language="C#" Value="public class IdentityConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IdentityConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Configuration.IdentityConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Identity Foundation の動作を制御する構成可能なプロパティのコレクションを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" /> クラスの新しいインスタンスを初期化します。 設定は、存在する場合、既定の構成から読み込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値が読み込まれてから、名前のない`<identityConfiguration>`構成ファイル内の要素、ような要素が存在する場合それ以外の場合、プロパティは、既定値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration (bool loadConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool loadConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから設定を読み込めませんそれ以外の場合<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />を既定の構成から設定を読み込む必要があるかどうかを示す値を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`loadConfig`は`true`、プロパティ値が読み込まれる、名前のないから`<identityConfiguration>`構成ファイル内の要素が既定値にプロパティを設定するそれ以外の場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="loadConfig" /><see langword="true" />、がない<see langword="&lt;system.identityModel&gt;" />構成要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration (System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="serviceCertificate">サービス証明書。 <see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.ServiceCertificate" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />を指定されたサービス証明書を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値が読み込まれてから、名前のない`<identityConfiguration>`構成ファイル内の要素、ような要素が存在する場合それ以外の場合、プロパティは、既定値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration (string identityConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identityConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identityConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identityConfigurationName">名前、<see langword="&lt;identityConfiguration&gt;" />設定が読み込まれる元となる要素。</param>
+        <summary><see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" /> クラスの新しいインスタンスを初期化します。 設定は、名前付きの構成から読み込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが呼び出された場合 System.IdentityModel 構成セクションを指定した名前では、構成ファイルに存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ない<see langword="&lt;system.identityModel&gt;" />構成要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration (bool loadConfig, System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool loadConfig, class System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor(System.Boolean,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+        <Parameter Name="serviceCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから設定を読み込めませんそれ以外の場合<see langword="false" />です。</param>
+        <param name="serviceCertificate">サービス証明書。 <see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.ServiceCertificate" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />を指定されたサービス証明書を持つクラス。 設定は、既定の構成を必要に応じて読み込んでいます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`loadConfig`は`true`、プロパティ値が読み込まれる、名前のないから`<identityConfiguration>`構成ファイル内の要素が既定値にプロパティを設定するそれ以外の場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="loadConfig" /><see langword="true" />、がない<see langword="&lt;system.identityModel&gt;" />構成要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentityConfiguration (string identityConfigurationName, System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identityConfigurationName, class System.Security.Cryptography.X509Certificates.X509Certificate2 serviceCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.#ctor(System.String,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identityConfigurationName" Type="System.String" />
+        <Parameter Name="serviceCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="identityConfigurationName">名前、<see langword="&lt;service&gt;" />構成から要素が読み込まれるには</param>
+        <param name="serviceCertificate">サービス証明書。 <see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.ServiceCertificate" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />名前付きの構成を読み込み、指定されたサービス証明書を持つクラスであります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ない<see langword="&lt;System.IdentityModel&gt;" />構成要素</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AudienceRestriction">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.AudienceRestriction AudienceRestriction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.AudienceRestriction AudienceRestriction" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.AudienceRestriction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.AudienceRestriction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、構成された<see cref="T:System.IdentityModel.Tokens.AudienceRestriction" />です。</summary>
+        <value>構成された<see cref="T:System.IdentityModel.Tokens.AudienceRestriction" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caches">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.IdentityModelCaches Caches { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.IdentityModelCaches Caches" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.Caches" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.IdentityModelCaches</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、構成された<see cref="T:System.IdentityModel.Configuration.IdentityModelCaches" />です。</summary>
+        <value>構成済みのキャッシュします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Configuration.IdentityModelCaches>トークン リプレイ キャッシュとこのインスタンスが構成されているセッション トークンのキャッシュが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.CertificateValidationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者証明書の検証にハンドラーによって使用される証明書検証モードを設定します。</summary>
+        <value>証明書検証モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.CertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者の証明書を検証するハンドラーによって使用される証明書検証を設定します。</summary>
+        <value>証明書検証コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsAuthenticationManager">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsAuthenticationManager ClaimsAuthenticationManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsAuthenticationManager ClaimsAuthenticationManager" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthenticationManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsAuthenticationManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求認証マネージャーを設定します。 既定のインスタンスでは、<see cref="T:System.Security.Claims.ClaimsAuthenticationManager" />クラスです。</summary>
+        <value>要求認証マネージャーです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsAuthorizationManager">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsAuthorizationManager ClaimsAuthorizationManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsAuthorizationManager ClaimsAuthorizationManager" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsAuthorizationManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求の承認マネージャーを設定します。</summary>
+        <value>要求承認マネージャー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCertificateValidationMode">
+      <MemberSignature Language="C#" Value="public static readonly System.ServiceModel.Security.X509CertificateValidationMode DefaultCertificateValidationMode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.ServiceModel.Security.X509CertificateValidationMode DefaultCertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultCertificateValidationMode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の X.509 証明書検証モード<see cref="F:System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultIssuerNameRegistryType">
+      <MemberSignature Language="C#" Value="public static readonly Type DefaultIssuerNameRegistryType;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Type DefaultIssuerNameRegistryType" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultIssuerNameRegistryType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の発行者名レジストリの型です。<see cref="T:System.Type" />の<see cref="T:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaxClockSkew">
+      <MemberSignature Language="C#" Value="public static readonly TimeSpan DefaultMaxClockSkew;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan DefaultMaxClockSkew" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultMaxClockSkew" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の最大クロックのずれ。5 分です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRevocationMode">
+      <MemberSignature Language="C#" Value="public static readonly System.Security.Cryptography.X509Certificates.X509RevocationMode DefaultRevocationMode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode DefaultRevocationMode" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultRevocationMode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の X.509 失効モード。<see cref="F:System.Security.Cryptography.X509Certificates.X509RevocationMode.Online" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultServiceName">
+      <MemberSignature Language="C#" Value="public const string DefaultServiceName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DefaultServiceName" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultServiceName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のサービス名です。空の文字列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public static readonly System.Security.Cryptography.X509Certificates.StoreLocation DefaultTrustedStoreLocation;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Security.Cryptography.X509Certificates.StoreLocation DefaultTrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultTrustedStoreLocation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の信頼できる既定のストアの場所<see cref="F:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine" />.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectReplayedTokens">
+      <MemberSignature Language="C#" Value="public bool DetectReplayedTokens { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DetectReplayedTokens" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.DetectReplayedTokens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはハンドラーが再生されたトークンを検出するかどうかを示す既定のハンドラー構成で値を設定します。</summary>
+        <value>
+          <see langword="true" />ハンドラーを検出する必要があります再生トークンです。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを更新、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />オブジェクトに対する、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />に含まれるオブジェクト、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlerCollectionManager" />このプロパティの値と一致するように<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、トークンのハンドラーを使用してトークンを処理する前に呼び出される必要があります。 <xref:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlerCollectionManager%2A>プロパティを指定します、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager>をこのインスタンス用に構成されたセキュリティ トークン ハンドラーが含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが複数回呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialized">
+      <MemberSignature Language="C#" Value="public virtual bool IsInitialized { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.IsInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="M:System.IdentityModel.Configuration.IdentityConfiguration.Initialize" />メソッドが呼び出されました。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.IdentityModel.Configuration.IdentityConfiguration.Initialize" />それ以外の呼び出されたメソッドがされた<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerNameRegistry">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.IssuerNameRegistry IssuerNameRegistry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.IssuerNameRegistry IssuerNameRegistry" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.IssuerNameRegistry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.IssuerNameRegistry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者名レジストリの発行者名を解決するために使用を設定します。</summary>
+        <value>発行者名レジストリのです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerTokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver IssuerTokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver IssuerTokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.IssuerTokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者トークン リゾルバーを設定します。</summary>
+        <value>発行者トークン リゾルバー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadConfiguration">
+      <MemberSignature Language="C#" Value="protected void LoadConfiguration (System.IdentityModel.Configuration.IdentityConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void LoadConfiguration(class System.IdentityModel.Configuration.IdentityConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.LoadConfiguration(System.IdentityModel.Configuration.IdentityConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.IdentityModel.Configuration.IdentityConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.IdentityModel.Configuration.IdentityConfigurationElement" />構成ファイルからです。</param>
+        <summary>この設定を読み込みます<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />アプリケーションまたは Web 構成ファイルからのインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きセクションが存在しない場合、構成ファイルがない場合、または場合`element`は`null`、し、例外はスローされません以外の場合は、一連の既定値でインスタンスが読み込まれる代わりにします。 このメソッドは、<xref:System.IdentityModel.Configuration.IdentityConfiguration.LoadHandlers%2A>メソッド トークン ハンドラー構成を読み込めません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadHandlerConfiguration">
+      <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration LoadHandlerConfiguration (System.IdentityModel.Configuration.IdentityConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration LoadHandlerConfiguration(class System.IdentityModel.Configuration.IdentityConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.LoadHandlerConfiguration(System.IdentityModel.Configuration.IdentityConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.IdentityModel.Configuration.IdentityConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see langword="&lt;identityConfiguration&gt;" />設定の読み込み元の構成ファイルからの要素。</param>
+        <summary>読み込み、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />直下にある、指定した要素を使用して<see cref="T:System.IdentityModel.Configuration.IdentityConfigurationElement" />です。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />構成ファイル内の要素から読み込まれます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadHandlerConfiguration">
+      <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration LoadHandlerConfiguration (System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration baseConfiguration, System.IdentityModel.Configuration.SecurityTokenHandlerConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration LoadHandlerConfiguration(class System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration baseConfiguration, class System.IdentityModel.Configuration.SecurityTokenHandlerConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.LoadHandlerConfiguration(System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration,System.IdentityModel.Configuration.SecurityTokenHandlerConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseConfiguration" Type="System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />
+        <Parameter Name="element" Type="System.IdentityModel.Configuration.SecurityTokenHandlerConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="baseConfiguration">基本<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />元となると、既定値を継承します。</param>
+        <param name="element"><see cref="T:System.IdentityModel.Configuration.SecurityTokenHandlerConfigurationElement" />構成ファイルからです。</param>
+        <summary>関連する構成要素を読み込み、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />です。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />構成ファイル内の要素から読み込まれると、<paramref name="baseConfiguration" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadHandlers">
+      <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager LoadHandlers (System.IdentityModel.Configuration.IdentityConfigurationElement serviceElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager LoadHandlers(class System.IdentityModel.Configuration.IdentityConfigurationElement serviceElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.IdentityConfiguration.LoadHandlers(System.IdentityModel.Configuration.IdentityConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceElement" Type="System.IdentityModel.Configuration.IdentityConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="serviceElement"><see langword="&lt;identityConfiguration&gt;" />要素のこのインスタンスを構成するために使用します。</param>
+        <summary>読み込み、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />指定したサービスに対して定義されています。</summary>
+        <returns>ハンドラー コレクション マネージャーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Configuration.IdentityConfiguration.LoadHandlerConfiguration%2A>トークン ハンドラーを構成する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxClockSkew">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxClockSkew { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxClockSkew" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.MaxClockSkew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信している双方のシステム クロック間で許容される時刻の最大のずれを取得または設定します。</summary>
+        <value>最大クロック スキューです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成のサービス名を取得します。</summary>
+        <value>サービスの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RevocationMode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.RevocationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者の証明書の検証にハンドラーによって使用される失効モードを設定します。</summary>
+        <value>失効モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveBootstrapContext">
+      <MemberSignature Language="C#" Value="public bool SaveBootstrapContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SaveBootstrapContext" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.SaveBootstrapContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.BootstrapContext" /> オブジェクトがトークンの検証後に <see cref="T:System.Security.Claims.ClaimsIdentity" /> とセッションに保存されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ブートストラップのコンテキストが保存される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandlerCollectionManager">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlerCollectionManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />のセットを含んでいる<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージにシリアル化し、トークンの検証に使用されるオブジェクトが見つかりませんでした。</summary>
+        <value>ハンドラー コレクション マネージャーです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandlers">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollection SecurityTokenHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollection SecurityTokenHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Trust メッセージ内にあるトークンをシリアル化し、検証するために使用する <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" /> オブジェクトのコレクションを取得します。</summary>
+        <value>トークン ハンドラーのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自のトークン ハンドラーを登録するには、このコレクションに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 ServiceCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 ServiceCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.ServiceCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス証明書を設定します。</summary>
+        <value>サービス証明書として使用する X.509 証明書。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、初期化に使用されるサービス証明書、<xref:System.IdentityModel.Selectors.SecurityTokenResolver>で指定されている、<xref:System.IdentityModel.Configuration.IdentityConfiguration.ServiceTokenResolver%2A>プロパティおよび<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceTokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver ServiceTokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver ServiceTokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.ServiceTokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスのトークン リゾルバーを設定します。</summary>
+        <value>サービスのトークン リゾルバー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenReplayCacheExpirationPeriod">
+      <MemberSignature Language="C#" Value="public TimeSpan TokenReplayCacheExpirationPeriod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TokenReplayCacheExpirationPeriod" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.TokenReplayCacheExpirationPeriod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目に配置の有効期限を設定、<see cref="T:System.IdentityModel.Tokens.TokenReplayCache" />です。</summary>
+        <value>項目の有効期限はトークン リプレイ キャッシュに配置します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.IdentityConfiguration.TrustedStoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行者証明書の検証にハンドラーによって使用される信頼されたストアの場所を設定します。</summary>
+        <value>信頼されたストアの場所。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

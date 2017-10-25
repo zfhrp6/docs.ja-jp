@@ -1,0 +1,1022 @@
+<Type Name="Engine" FullName="Microsoft.Build.BuildEngine.Engine">
+  <TypeSignature Language="C#" Value="public class Engine" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Engine extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.Engine" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This class has been deprecated. Please use Microsoft.Build.Evaluation.ProjectCollection from the Microsoft.Build assembly instead.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>MSBuild エンジンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクト間の依存関係のシステムで、<xref:Microsoft.Build.BuildEngine.Engine>プロジェクトのビルドを指定したビルドで複数回、同じプロジェクトで同じターゲットのビルドを回避できるようにするには保持されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine (Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor(Microsoft.Build.BuildEngine.BuildPropertyGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+      </Parameters>
+      <Docs>
+        <param name="globalProperties">A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />を表す子エンジンに渡されるプロパティです。</param>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine (Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor(Microsoft.Build.BuildEngine.ToolsetDefinitionLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="locations" Type="Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />
+      </Parameters>
+      <Docs>
+        <param name="locations">A<see cref="T:Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />ツールセット定義の場所を指定する列挙です。</param>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine (string binPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string binPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("If you were simply passing in the .NET Framework location as the BinPath, just change to the parameterless Engine() constructor. Otherwise, you can define custom toolsets in the registry or config file, or by adding elements to the Engine's ToolsetCollection. Then use either the Engine() or Engine(ToolsetLocations) constructor instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="binPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binPath">MSBuild.exe へのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.BuildEngine.Engine" />を持つ、指定されたクラス<see cref="P:Microsoft.Build.BuildEngine.Engine.BinPath" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine (Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, valuetype Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor(Microsoft.Build.BuildEngine.BuildPropertyGroup,Microsoft.Build.BuildEngine.ToolsetDefinitionLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+        <Parameter Name="locations" Type="Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />
+      </Parameters>
+      <Docs>
+        <param name="globalProperties">A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />を表す子エンジンに渡されるプロパティです。</param>
+        <param name="locations">A<see cref="T:Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />列挙体は、ツールセットの定義の場所を指定します。</param>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Engine (Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations, int numberOfCpus, string localNodeProviderParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, valuetype Microsoft.Build.BuildEngine.ToolsetDefinitionLocations locations, int32 numberOfCpus, string localNodeProviderParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.#ctor(Microsoft.Build.BuildEngine.BuildPropertyGroup,Microsoft.Build.BuildEngine.ToolsetDefinitionLocations,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+        <Parameter Name="locations" Type="Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />
+        <Parameter Name="numberOfCpus" Type="System.Int32" />
+        <Parameter Name="localNodeProviderParameters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="globalProperties">A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />を表す子エンジンに渡されるプロパティです。</param>
+        <param name="locations">A<see cref="T:Microsoft.Build.BuildEngine.ToolsetDefinitionLocations" />列挙体は、ツールセットの定義の場所を指定します。</param>
+        <param name="numberOfCpus">システムの Cpu またはコアの数を指定する整数。</param>
+        <param name="localNodeProviderParameters">構成に使用されるパラメーターの文字列、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]エンジンです。 パラメーターとしての書式を設定する必要があります<c>ParameterName</c>=<c>ParameterValue</c>です。 有効なセミコロンで区切られた、省略可能なパラメーターが次のようには。  
+  
+ <see langword="MSBUILDLOCATION" />ここで、ビルド プロセスに MSBuild.exe がありますを示します。 このパスを有効、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]エンジンで MSBuild.exe を見つけて、ローカル ノードとして開始します。 <see langword="MSBUILDLOCATION" />ホストの基本的なパラメーターです。 既定値は C:\Windows\Microsoft.Net\Framework\v3.5\\です。  
+  
+ <see langword="NODEREUSE" />かどうか、子ノードを残しビルドが完了したら、別のビルドで後で使用できる場合に示します。 ノードは、使用する以外の 1 分後に自動的に破棄されます。 既定値は <see langword="true" /> です。</param>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BinPath">
+      <MemberSignature Language="C#" Value="public string BinPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BinPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.BinPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Avoid setting BinPath. If you were simply passing in the .NET Framework location as the BinPath, no other action is necessary. Otherwise, define Toolsets instead in the registry or config file, or by adding elements to the Engine's ToolsetCollection, in order to use a custom BinPath.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または MSBuild.exe へのパスを設定します。</summary>
+        <value>MSBuild.exe へのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)] 3.5 では、"BinPath"が置き換えられて"ToolsPath"。 したがって、します。ターゲット ファイル、MBBuildBinPath ではなく、MSBuildToolsPath を使用します。 [!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]オブジェクト モデルでは、"BinPath"を実行しているツールセットに関連しています。 ビルド エンジンからパスを取得する手順は次のとおりです。  
+  
+1.  既定のツール バージョンを取得します。  
+  
+2.  ツールセットのマップを取得します。  
+  
+3.  マップの文字列に基づいて、ツールセットを検索します。  
+  
+4.  ツールセットを取得します。  
+  
+5.  ツールセットのパスを取得します。  
+  
+ エンジンを作成する場合は、この手順は必要ありません。 その場合、ツールセットのパスを知っています。  
+  
+ ソリューション内のプロジェクトでは、他のツールセットを使用できる、のでことができますもパスを取得する MSBuild.exe プロジェクトから、次のようにします。  
+  
+```  
+project.EvaluatedProperties[ReservedPropertyNames.toolsPath].FinalValue   
+```  
+  
+ ツールセットの詳細については、次を参照してください。`MSBuild Tool Set (ToolsVersion)`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildEnabled">
+      <MemberSignature Language="C#" Value="public bool BuildEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BuildEnabled" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.BuildEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクト内のターゲットの構築が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロジェクト内のターゲットの構築が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProject">
+      <MemberSignature Language="C#" Value="public bool BuildProject (Microsoft.Build.BuildEngine.Project project);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProject(class Microsoft.Build.BuildEngine.Project project) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProject(Microsoft.Build.BuildEngine.Project)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" />を構築します。</param>
+        <summary>指定したビルド<see cref="T:Microsoft.Build.BuildEngine.Project" />です。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProject">
+      <MemberSignature Language="C#" Value="public bool BuildProject (Microsoft.Build.BuildEngine.Project project, string targetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProject(class Microsoft.Build.BuildEngine.Project project, string targetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProject(Microsoft.Build.BuildEngine.Project,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+        <Parameter Name="targetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" />を構築します。</param>
+        <param name="targetName"><see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <summary>指定した指定したターゲットをビルド<see cref="T:Microsoft.Build.BuildEngine.Project" />です。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProject">
+      <MemberSignature Language="C#" Value="public bool BuildProject (Microsoft.Build.BuildEngine.Project project, string[] targetNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProject(class Microsoft.Build.BuildEngine.Project project, string[] targetNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProject(Microsoft.Build.BuildEngine.Project,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" />を構築します。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <summary>指定した指定したターゲットをビルド<see cref="T:Microsoft.Build.BuildEngine.Project" />です。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProject">
+      <MemberSignature Language="C#" Value="public bool BuildProject (Microsoft.Build.BuildEngine.Project project, string[] targetNames, System.Collections.IDictionary targetOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProject(class Microsoft.Build.BuildEngine.Project project, string[] targetNames, class System.Collections.IDictionary targetOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProject(Microsoft.Build.BuildEngine.Project,System.String[],System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" />を構築します。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <param name="targetOutputs">ビルドのターゲットの出力。 このパラメーターが null 参照を指定できます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) の出力が必要ない場合。</param>
+        <summary>指定した指定したターゲットをビルド<see cref="T:Microsoft.Build.BuildEngine.Project" />、し、ターゲットの出力を返します。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProject">
+      <MemberSignature Language="C#" Value="public bool BuildProject (Microsoft.Build.BuildEngine.Project project, string[] targetNames, System.Collections.IDictionary targetOutputs, Microsoft.Build.BuildEngine.BuildSettings buildFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProject(class Microsoft.Build.BuildEngine.Project project, string[] targetNames, class System.Collections.IDictionary targetOutputs, valuetype Microsoft.Build.BuildEngine.BuildSettings buildFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProject(Microsoft.Build.BuildEngine.Project,System.String[],System.Collections.IDictionary,Microsoft.Build.BuildEngine.BuildSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+        <Parameter Name="buildFlags" Type="Microsoft.Build.BuildEngine.BuildSettings" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" />を構築します。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <param name="targetOutputs">ビルドのターゲットの出力。 このパラメーターが null 参照を指定できます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) の出力が必要ない場合。</param>
+        <param name="buildFlags"><see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />ビルドに適用します。</param>
+        <summary>指定した指定したターゲットをビルド<see cref="T:Microsoft.Build.BuildEngine.Project" />、指定した<see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />、し、ターゲットの出力を返します。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BuildProjectFile">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したプロジェクト ファイルを読み込み、プロジェクトをビルドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <summary>指定したプロジェクト ファイルを読み込み、プロジェクトをビルドします。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string targetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string targetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <param name="targetName"><see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <summary>指定したプロジェクト ファイルを読み込み、プロジェクトの指定したターゲットをビルドします。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string[] targetNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string[] targetNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <summary>指定したプロジェクト ファイルを読み込み、プロジェクトの指定したターゲットをビルドします。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string[] targetNames, Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string[] targetNames, class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String[],Microsoft.Build.BuildEngine.BuildPropertyGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <param name="globalProperties"><see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />ビルドに適用します。</param>
+        <summary>指定したプロジェクト ファイルを読み込んで、指定したプロジェクトの指定したターゲットをビルド<see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />、し、ターゲットの出力を返します。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string[] targetNames, Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, System.Collections.IDictionary targetOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string[] targetNames, class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, class System.Collections.IDictionary targetOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String[],Microsoft.Build.BuildEngine.BuildPropertyGroup,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <param name="globalProperties"><see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />ビルドに適用します。</param>
+        <param name="targetOutputs">ビルドのターゲットの出力。 このパラメーターが null 参照を指定できます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) の出力が必要ない場合。</param>
+        <summary>指定したプロジェクト ファイルを読み込んで、指定したプロジェクトの指定したターゲットをビルド<see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />、し、ターゲットの出力を返します。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string[] targetNames, Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, System.Collections.IDictionary targetOutputs, Microsoft.Build.BuildEngine.BuildSettings buildFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string[] targetNames, class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, class System.Collections.IDictionary targetOutputs, valuetype Microsoft.Build.BuildEngine.BuildSettings buildFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String[],Microsoft.Build.BuildEngine.BuildPropertyGroup,System.Collections.IDictionary,Microsoft.Build.BuildEngine.BuildSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+        <Parameter Name="buildFlags" Type="Microsoft.Build.BuildEngine.BuildSettings" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">読み込んでビルドするプロジェクト ファイルです。</param>
+        <param name="targetNames">含む配列、<see langword="Name" />をビルドするターゲット要素の属性です。</param>
+        <param name="globalProperties"><see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />ビルドに適用します。</param>
+        <param name="targetOutputs">ビルドのターゲットの出力。 このパラメーターが null 参照を指定できます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]) の出力が必要ない場合。</param>
+        <param name="buildFlags"><see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />ビルドに適用します。</param>
+        <summary>指定したプロジェクト ファイルを読み込んで、指定したプロジェクトの指定したターゲットをビルド<see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />と<see cref="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />、し、ターゲットの出力を返します。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFile, string[] targetNames, Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, System.Collections.IDictionary targetOutputs, Microsoft.Build.BuildEngine.BuildSettings buildFlags, string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFile(string projectFile, string[] targetNames, class Microsoft.Build.BuildEngine.BuildPropertyGroup globalProperties, class System.Collections.IDictionary targetOutputs, valuetype Microsoft.Build.BuildEngine.BuildSettings buildFlags, string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFile(System.String,System.String[],Microsoft.Build.BuildEngine.BuildPropertyGroup,System.Collections.IDictionary,Microsoft.Build.BuildEngine.BuildSettings,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFile" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+        <Parameter Name="buildFlags" Type="Microsoft.Build.BuildEngine.BuildSettings" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFile">ビルドするプロジェクトの名前。</param>
+        <param name="targetNames">A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />各プロジェクトのターゲットの配列。 指定できます<see langword="null" />プロジェクトの既定のターゲットをビルドする場合。</param>
+        <param name="globalProperties"><see cref="T:System.Collections.IDictionary" />各プロジェクトのプロパティの配列。 指定できます<see langword="null" />場合はグローバル プロパティは必要ありません。</param>
+        <param name="targetOutputs">A<see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />ターゲット出力のテーブルの配列。 指定できます<see langword="null" />出力が必要ない場合。</param>
+        <param name="buildFlags">その他のビルド フラグの文字列配列。</param>
+        <param name="toolsVersion">このビルドでプロジェクトを強制する ToolsVersion です。</param>
+        <summary>ディスクからプロジェクト ファイルを読み込み、指定したターゲットをビルドします。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、ビルドに使用するには、各プロジェクトのグローバル プロパティのセットを受け取り、ターゲットの出力を返しますおよびその他のビルド フラグを指定する呼び出し元も有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFiles">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFiles (string[] projectFiles, string[][] targetNamesPerProject, Microsoft.Build.BuildEngine.BuildPropertyGroup[] globalPropertiesPerProject, System.Collections.IDictionary[] targetOutputsPerProject, Microsoft.Build.BuildEngine.BuildSettings buildFlags, string[] toolsVersions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BuildProjectFiles(string[] projectFiles, string[][] targetNamesPerProject, class Microsoft.Build.BuildEngine.BuildPropertyGroup[] globalPropertiesPerProject, class System.Collections.IDictionary[] targetOutputsPerProject, valuetype Microsoft.Build.BuildEngine.BuildSettings buildFlags, string[] toolsVersions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.BuildProjectFiles(System.String[],System.String[][],Microsoft.Build.BuildEngine.BuildPropertyGroup[],System.Collections.IDictionary[],Microsoft.Build.BuildEngine.BuildSettings,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFiles" Type="System.String[]" />
+        <Parameter Name="targetNamesPerProject" Type="System.String[][]" />
+        <Parameter Name="globalPropertiesPerProject" Type="Microsoft.Build.BuildEngine.BuildPropertyGroup[]" />
+        <Parameter Name="targetOutputsPerProject" Type="System.Collections.IDictionary[]" />
+        <Parameter Name="buildFlags" Type="Microsoft.Build.BuildEngine.BuildSettings" />
+        <Parameter Name="toolsVersions" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="projectFiles">ビルドするプロジェクト ファイルの文字列リスト。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="targetNamesPerProject">A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />各プロジェクトのターゲットの配列。</param>
+        <param name="globalPropertiesPerProject"><see cref="T:System.Collections.IDictionary" />各プロジェクトのプロパティの配列。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="targetOutputsPerProject">A<see cref="T:Microsoft.Build.BuildEngine.BuildSettings" />ターゲット出力のテーブルの配列。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="buildFlags">その他のビルド フラグの文字列配列。</param>
+        <param name="toolsVersions">このビルドでプロジェクトを強制する ToolsVersion です。</param>
+        <summary>一連のプロジェクト ファイルをディスクから読み込んで各プロジェクトのターゲットの指定された一覧を構築します。</summary>
+        <returns>
+          <see langword="true" />プロジェクトが正常にビルドされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、ビルドに使用するには、各プロジェクトのグローバル プロパティのセットを受け取り、ターゲットの出力を返しますおよびその他のビルド フラグを指定する呼び出し元も有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewProject">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.Project CreateNewProject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.Project CreateNewProject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.CreateNewProject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Project</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の作成<see cref="T:Microsoft.Build.BuildEngine.Project" />これに関連付けられているオブジェクト<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</summary>
+        <returns>作成された <see cref="T:Microsoft.Build.BuildEngine.Project" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultToolsVersion">
+      <MemberSignature Language="C#" Value="public string DefaultToolsVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultToolsVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.DefaultToolsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値はこのビルド エンジンの ToolsVersion であります。</summary>
+        <value>既定の ToolsVersion を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトは、これらは、それ以外の場合述べることできませんのどの ToolsVersion を使用する場合、この ToolsVersion を使用します。 この値はいずれかから取得、。 *.exe.config ファイルまたはレジストリのキー。 どちらもは、既定の ToolsVersion を指定する場合は、バージョンは「2.0」のバージョンにハードコード ToolsVersion の詳細については、次を参照してください。 [、.NET Framework の特定のバージョン用にビルド](http://msdn.microsoft.com/en-us/24a6530c-e837-4774-9da0-6893614524d8)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoadedProject">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.Project GetLoadedProject (string projectFullFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.Project GetLoadedProject(string projectFullFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.GetLoadedProject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Project</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFullFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFullFileName">プロジェクト ファイルへの絶対ファイル パス、<see cref="T:Microsoft.Build.BuildEngine.Project" />オブジェクト。</param>
+        <summary>返します、<see cref="T:Microsoft.Build.BuildEngine.Project" />指定したプロジェクト ファイルに関連付けられているオブジェクト。</summary>
+        <returns><see cref="T:Microsoft.Build.BuildEngine.Project" />指定したプロジェクト ファイルに関連付けられているオブジェクト。 ない場合は<see cref="T:Microsoft.Build.BuildEngine.Project" />オブジェクトは、指定されたプロジェクト ファイルと関連付け、null 参照が返されます (<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalEngine">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.BuildEngine.Engine GlobalEngine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Build.BuildEngine.Engine GlobalEngine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.GlobalEngine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Engine</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:Microsoft.Build.BuildEngine.Engine" />これには、(共有) をグローバル<see cref="T:System.AppDomain" />です。</summary>
+        <value><see cref="T:Microsoft.Build.BuildEngine.Engine" />これには、(共有) をグローバル<see cref="T:System.AppDomain" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalProperties">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildPropertyGroup GlobalProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.BuildEngine.BuildPropertyGroup GlobalProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.GlobalProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildPropertyGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクトのグローバル プロパティのコレクションを設定します。</summary>
+        <value>A<see cref="T:Microsoft.Build.BuildEngine.BuildPropertyGroup" />プロジェクトのグローバル プロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グローバル プロパティを使用して設定されるプロパティとは、 **/property**コマンドライン、またはプロジェクトをビルドする前に、統合開発環境 (IDE) で設定されているプロパティをオンにします。 これらのグローバル プロパティは、これを使用して作成されたすべてのプロジェクトに適用されます<xref:Microsoft.Build.BuildEngine.Engine>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBuilding">
+      <MemberSignature Language="C#" Value="public bool IsBuilding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBuilding" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.IsBuilding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクト ビルド中であるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ビルドが進行中です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトが構築中は、変更されるようにするのには、このプロパティを確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyLogCriticalEvents">
+      <MemberSignature Language="C#" Value="public bool OnlyLogCriticalEvents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OnlyLogCriticalEvents" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.OnlyLogCriticalEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド時に警告やエラーなどの重要なイベントだけを記録するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />重大なイベントをログ記録するだけの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDistributedLogger">
+      <MemberSignature Language="C#" Value="public void RegisterDistributedLogger (Microsoft.Build.Framework.ILogger centralLogger, Microsoft.Build.BuildEngine.LoggerDescription forwardingLogger);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterDistributedLogger(class Microsoft.Build.Framework.ILogger centralLogger, class Microsoft.Build.BuildEngine.LoggerDescription forwardingLogger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.RegisterDistributedLogger(Microsoft.Build.Framework.ILogger,Microsoft.Build.BuildEngine.LoggerDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="centralLogger" Type="Microsoft.Build.Framework.ILogger" />
+        <Parameter Name="forwardingLogger" Type="Microsoft.Build.BuildEngine.LoggerDescription" />
+      </Parameters>
+      <Docs>
+        <param name="centralLogger"><see cref="T:Microsoft.Build.Framework.ILogger" />中央 logger を表すです。</param>
+        <param name="forwardingLogger">A<see cref="T:Microsoft.Build.BuildEngine.LoggerDescription" />転送 logger を表すです。</param>
+        <summary>レジスタは、ビルド エンジンにロガーを分散します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスレッド セーフではありません。 一貫した動作を確実には、ビルドを開始する前に、すべてのロガーを登録します。 詳細については、次を参照してください。[マルチ マルチプロセッサ対応の Logger の記述](http://msdn.microsoft.com/library/ff987d1b-1798-4803-9ef6-cc8fcc263516)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterLogger">
+      <MemberSignature Language="C#" Value="public void RegisterLogger (Microsoft.Build.Framework.ILogger logger);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterLogger(class Microsoft.Build.Framework.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.RegisterLogger(Microsoft.Build.Framework.ILogger)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logger" Type="Microsoft.Build.Framework.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="logger">関連付けるロガー、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</param>
+        <summary>指定したロガーを登録、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロガーに登録されている場合、 <xref:Microsoft.Build.BuildEngine.Engine>、すべてのビルド イベントを受信します。  
+  
+ ロガーの登録を解除するを使用して、<xref:Microsoft.Build.BuildEngine.Engine.UnregisterAllLoggers%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストがこのビルド エンジンに終了したときに呼び出されます。 ロガーの登録を解除し、ノードをシャット ダウンします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Toolsets">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.ToolsetCollection Toolsets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.BuildEngine.ToolsetCollection Toolsets" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.Toolsets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.ToolsetCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはこのビルド エンジンのインスタンスによって認識されるツールセットのコレクションを取得します。</summary>
+        <value>A<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />このエンジンのインスタンスによって認識されるツール セットです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールセットの詳細については、次を参照してください。 [、.NET Framework の特定のバージョン用にビルド](http://msdn.microsoft.com/en-us/24a6530c-e837-4774-9da0-6893614524d8)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadAllProjects">
+      <MemberSignature Language="C#" Value="public void UnloadAllProjects ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnloadAllProjects() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.UnloadAllProjects" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>参照をすべて削除<see cref="T:Microsoft.Build.BuildEngine.Project" />オブジェクトから、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadProject">
+      <MemberSignature Language="C#" Value="public void UnloadProject (Microsoft.Build.BuildEngine.Project project);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnloadProject(class Microsoft.Build.BuildEngine.Project project) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.UnloadProject(Microsoft.Build.BuildEngine.Project)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="Microsoft.Build.BuildEngine.Project" />
+      </Parameters>
+      <Docs>
+        <param name="project"><see cref="T:Microsoft.Build.BuildEngine.Project" /> から削除する <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
+        <summary>指定された参照が削除される<see cref="T:Microsoft.Build.BuildEngine.Project" />から、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterAllLoggers">
+      <MemberSignature Language="C#" Value="public void UnregisterAllLoggers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnregisterAllLoggers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Engine.UnregisterAllLoggers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのロガーからの登録を解除、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.BuildEngine.Engine.UnregisterAllLoggers%2A>メソッドの呼び出し、<xref:Microsoft.Build.Framework.ILogger.Shutdown%2A>それぞれからの登録を解除する前に登録されている各 logger のメソッド、<xref:Microsoft.Build.BuildEngine.Engine>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Engine>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Engine.BuildProjectFile%2A>をプロジェクト ファイルを構築するメソッド。 <xref:Microsoft.Build.BuildEngine.FileLogger>クラスは、ログ ファイルに情報を使用します。  
+  
+ [!code-csharp[msbuild_BuildAProject#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_BuildAProject/CS/Program.cs#1)]
+ [!code-vb[msbuild_BuildAProject#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_BuildAProject/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public static Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.Engine.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.Engine" /> のバージョンを取得します。</summary>
+        <value>バージョン、<see cref="T:Microsoft.Build.BuildEngine.Engine" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

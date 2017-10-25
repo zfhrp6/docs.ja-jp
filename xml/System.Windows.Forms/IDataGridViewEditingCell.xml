@@ -1,0 +1,140 @@
+<Type Name="IDataGridViewEditingCell" FullName="System.Windows.Forms.IDataGridViewEditingCell">
+  <TypeSignature Language="C#" Value="public interface IDataGridViewEditingCell" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataGridViewEditingCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IDataGridViewEditingCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>その値の操作を許可するセルの共通機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスはなどのクラスによって実装<xref:System.Windows.Forms.DataGridViewCheckBoxCell>から派生した<xref:System.Windows.Forms.DataGridViewCell>編集コントロールをホストしない値の指定のユーザー インターフェイス (UI) を指定します。 UI のここでは、セルが編集モードにするかどうかに関係なくで表示されます。  
+  
+ その他のセルなどの型、 <xref:System.Windows.Forms.DataGridViewButtonCell>UI を提供するが、ユーザー指定の値を格納しないでください。 この場合、セルの種類は実装しません<xref:System.Windows.Forms.IDataGridViewEditingCell>編集コントロールをホストすることもできます。  
+  
+ 表示、編集セルの種類を制御すると、セルが編集モードなど<xref:System.Windows.Forms.DataGridViewTextBoxCell>、実装していない<xref:System.Windows.Forms.IDataGridViewEditingCell>コンパニオン クラスを実装する代わりが<xref:System.Windows.Forms.IDataGridViewEditingControl>です。 たとえば、<xref:System.Windows.Forms.DataGridViewTextBoxCell>提供、<xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>から派生した、<xref:System.Windows.Forms.TextBox>コントロールと実装<xref:System.Windows.Forms.IDataGridViewEditingControl>です。 この場合、セル<xref:System.Windows.Forms.DataGridViewCell.EditType%2A>プロパティに設定されている、<xref:System.Type>編集コントロール型を表すオブジェクト。 実装する方法について<xref:System.Windows.Forms.IDataGridViewEditingControl>を参照してください[する方法: Windows フォーム DataGridView セルでホスト コントロール](~/docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EditingCellFormattedValue">
+      <MemberSignature Language="C#" Value="public object EditingCellFormattedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object EditingCellFormattedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IDataGridViewEditingCell.EditingCellFormattedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの書式設定された値を設定します。</summary>
+        <value><see cref="T:System.Object" />セルの値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定された値は、セルのユーザー インターフェイスに表示される値を表します。 書式設定された値は、セルに含まれている実際の値よりも絶対値、データ型も異なる可能性があります。  
+  
+ このプロパティの実装は、通常の呼び出しによって取得された値を返す、<xref:System.Windows.Forms.IDataGridViewEditingCell.GetEditingCellFormattedValue%2A>メソッドを渡して、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.Formatting>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditingCellValueChanged">
+      <MemberSignature Language="C#" Value="public bool EditingCellValueChanged { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EditingCellValueChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IDataGridViewEditingCell.EditingCellValueChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの値が変更されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セルの値が変更された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定`true`をセルの値が変更されたことと、ユーザー インターフェイス (UI) がこの値の変更を反映するように更新する必要があることを示します。 所有しているセルまたはテーブルにこのプロパティをリセットする必要があります`false`更新の実行後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditingCellFormattedValue">
+      <MemberSignature Language="C#" Value="public object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEditingCellFormattedValue(valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataGridViewEditingCell.GetEditingCellFormattedValue(System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Forms.DataGridViewDataErrorContexts" />
+      </Parameters>
+      <Docs>
+        <param name="context">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />データが必要とされるコンテキストを指定する値。</param>
+        <summary>セルの書式設定された値を取得します。</summary>
+        <returns><see cref="T:System.Object" />セルの内容の書式設定されたバージョンを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定された値は、セルのユーザー インターフェイスに表示される値を表します。 書式設定された値は、セルに含まれている実際の値よりも絶対値、データ型も異なる可能性があります。  
+  
+ セルの書式設定された値を設定するには、使用、<xref:System.Windows.Forms.IDataGridViewEditingCell.EditingCellFormattedValue%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareEditingCellForEdit">
+      <MemberSignature Language="C#" Value="public void PrepareEditingCellForEdit (bool selectAll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PrepareEditingCellForEdit(bool selectAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataGridViewEditingCell.PrepareEditingCellForEdit(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="selectAll">
+          <see langword="true" />セルの内容を選択するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>編集するため、現在選択されているセルを準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの目的は、編集するため、セルとその内容を準備するのにです。 たとえば、セルの内容の末尾にカーソルを置くか、コンテンツの配置方法に変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

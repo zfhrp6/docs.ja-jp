@@ -1,0 +1,77 @@
+<Type Name="IWin32Window" FullName="System.Windows.Forms.IWin32Window">
+  <TypeSignature Language="C#" Value="public interface IWin32Window" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWin32Window" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IWin32Window" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("458AB8A2-A1EA-4d7b-8EBE-DEE5D3D9442C")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Win32 HWND ハンドルを公開するインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、HWND の Win32 ハンドルを公開するオブジェクトに実装されます。 結果のハンドルは、Win32 API の呼び出しで使用できます。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Forms.Control.Text%2A>プロパティ`label1`現在<xref:System.Windows.Forms.IWin32Window.Handle%2A>の`Form1`します。 この例があるか、<xref:System.Windows.Forms.Form>と呼ばれる`Form1`で、<xref:System.Windows.Forms.Label>と呼ばれる`label1`にします。  
+  
+ [!code-cpp[Classic IWin32Window Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic IWin32Window Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic IWin32Window Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic IWin32Window Example/CS/source.cs#1)]
+ [!code-vb[Classic IWin32Window Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic IWin32Window Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IWin32Window.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装側で表されるウィンドウへのハンドルを取得します。</summary>
+        <value>実装側で表されるウィンドウへのハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行者の値に応じて、<xref:System.Windows.Forms.IWin32Window.Handle%2A>プロパティ ウィンドウの有効期間中に変更します。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Forms.Control.Text%2A>プロパティ`label1`現在<xref:System.Windows.Forms.IWin32Window.Handle%2A>の`Form1`します。 この例があるか、<xref:System.Windows.Forms.Form>と呼ばれる`Form1`で、<xref:System.Windows.Forms.Label>と呼ばれる`label1`にします。  
+  
+ [!code-cpp[Classic IWin32Window Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic IWin32Window Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic IWin32Window Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic IWin32Window Example/CS/source.cs#1)]
+ [!code-vb[Classic IWin32Window Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic IWin32Window Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

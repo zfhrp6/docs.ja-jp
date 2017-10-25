@@ -1,0 +1,35 @@
+<Type Name="GetValueOverride" FullName="System.Workflow.ComponentModel.GetValueOverride">
+  <TypeSignature Language="C#" Value="public delegate object GetValueOverride(DependencyObject d);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GetValueOverride extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.GetValueOverride" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="d" Type="System.Workflow.ComponentModel.DependencyObject" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Object</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="d"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />を対象とする、<see cref="M:System.Workflow.ComponentModel.DependencyObject.GetValue(System.Workflow.ComponentModel.DependencyProperty)" />メソッドです。</param>
+    <summary>依存関係オブジェクトに対して定義されている依存関係プロパティの <see cref="M:System.Workflow.ComponentModel.DependencyObject.GetValue(System.Workflow.ComponentModel.DependencyProperty)" /> ロジックを、独自にオーバーライドできるようにします。</summary>
+    <returns>指定した <see cref="T:System.Object" /> の値を表す <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このデリゲートの実装は、<xref:System.Workflow.ComponentModel.PropertyMetadata.GetValueOverride%2A> または <xref:System.Workflow.ComponentModel.PropertyMetadata> の呼び出し中に、<xref:System.Workflow.ComponentModel.DependencyProperty.Register%2A> の <xref:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached%2A> プロパティに設定できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

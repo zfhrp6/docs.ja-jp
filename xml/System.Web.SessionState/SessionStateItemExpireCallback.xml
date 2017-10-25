@@ -1,0 +1,34 @@
+<Type Name="SessionStateItemExpireCallback" FullName="System.Web.SessionState.SessionStateItemExpireCallback">
+  <TypeSignature Language="C#" Value="public delegate void SessionStateItemExpireCallback(string id, SessionStateStoreData item);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateItemExpireCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionStateItemExpireCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="id" Type="System.String" />
+    <Parameter Name="item" Type="System.Web.SessionState.SessionStateStoreData" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="id"><see cref="P:System.Web.SessionState.HttpSessionState.SessionID" />セッションが終了することのパラメーターです。</param>
+    <param name="item">A<see cref="T:System.Web.SessionState.SessionStateStoreData" />オブジェクトは、終了するセッションのセッション状態データを格納します。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.SessionState.SessionStateModule.End" />セッション状態モジュールのイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemExpireCallback>デリゲートを使用して有効に、<xref:System.Web.SessionState.SessionStateStoreProviderBase>実装を呼び出して、 `Session_OnEnd` Global.asax ファイルからのイベントです。  
+  
+ 詳細については、指定された、「解説」を参照してください。、<xref:System.Web.SessionState.SessionStateStoreProviderBase.SetItemExpireCallback%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="WSTrustRequestBodyWriter" FullName="System.ServiceModel.Security.WSTrustRequestBodyWriter">
+  <TypeSignature Language="C#" Value="public class WSTrustRequestBodyWriter : System.ServiceModel.Channels.BodyWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSTrustRequestBodyWriter extends System.ServiceModel.Channels.BodyWriter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.WSTrustRequestBodyWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BodyWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>送信メッセージに RSTR の書き込みを行うメッセージ本文のライターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.WSTrustRequestBodyWriter>クラスは、の実装、<xref:System.ServiceModel.Channels.BodyWriter>をサポートするクラス<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustRequestBodyWriter (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken requestSecurityToken, System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer serializer, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext serializationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken requestSecurityToken, class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer serializer, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext serializationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustRequestBodyWriter.#ctor(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestSecurityToken" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="serializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />
+        <Parameter Name="serializationContext" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="requestSecurityToken"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト (RST)、送信メッセージでシリアル化します。</param>
+        <param name="serializer"><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> RST のシリアル化に使用するオブジェクト。</param>
+        <param name="serializationContext">A<see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />シリアル化のコンテキストを格納しています。</param>
+        <summary><see cref="T:System.ServiceModel.Security.WSTrustRequestBodyWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestSecurityToken" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="serializer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="serializationContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteBodyContents">
+      <MemberSignature Language="C#" Value="protected override void OnWriteBodyContents (System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnWriteBodyContents(class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustRequestBodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" /> RST を書き込まれるオブジェクトします。</param>
+        <summary>基底クラス メソッドのオーバーライド。 RST を送信ストリームにシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>発信ストリームへのこのインスタンスに関連付けられているオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

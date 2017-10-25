@@ -1,0 +1,151 @@
+<Type Name="IValueProvider" FullName="System.Windows.Automation.Provider.IValueProvider">
+  <TypeSignature Language="C#" Value="public interface IValueProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IValueProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IValueProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("c7935180-6fb3-4201-b174-7df73adbf64a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>1 つの範囲に広がらず、文字列として表すことができる固有の値を持つコントロールへの、UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの値は、可能性がありますかに応じて、コントロールとその設定は編集できません。  
+  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.ValuePattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IValueProvider.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの値は読み取り専用であるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />値が読み取り専用の場合<see langword="false" />場合は、変更することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> を呼び出せるようにするには、コントロールの `true` を <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> に設定し、 `false` を <xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>に設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、変更するには、その値を許可する、コントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIValueProvider_snip#IsReadOnly](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIValueProvider_snip/CSharp/ValueFragment.cs#isreadonly)]
+ [!code-vb[UIAIValueProvider_snip#IsReadOnly](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIValueProvider_snip/visualbasic/valuefragment.vb#isreadonly)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IValueProvider.SetValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">設定する値。 プロバイダーは、値を適切なデータ型に変換します。</param>
+        <summary>コントロールの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一行のエディット コントロールは、そのコンテンツへのプログラムによるアクセスをサポートするために、 <xref:System.Windows.Automation.Provider.IValueProvider>を実装します。 一方、複数行のエディット コントロールは <xref:System.Windows.Automation.Provider.IValueProvider>を実装しません。代わりに <xref:System.Windows.Automation.Provider.ITextProvider>を実装して、そのコンテンツへのアクセスを提供します。  
+  
+ などのコントロール<xref:System.Windows.Automation.ControlType.ListItem>と<xref:System.Windows.Automation.ControlType.TreeItem>実装する必要があります<xref:System.Windows.Automation.Provider.IValueProvider>編集コントロールのモードを現在に関係なく、項目のいずれかの値が編集可能な場合です。 親コントロールを実装する必要がありますも<xref:System.Windows.Automation.Provider.IValueProvider>子項目が編集可能な場合です。  
+  
+ ![編集可能なリスト項目。](~/add/media/uia-valuepattern-editable-listitem.PNG "編集可能なリスト項目。")  
+編集可能なリスト項目の例  
+  
+   
+  
+## Examples  
+ 次のコード例では、限定された長さの文字列に設定するのには、その値を許可するカスタム コントロールを示します。  
+  
+ [!code-csharp[UIAIValueProvider_snip#SetValue](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIValueProvider_snip/CSharp/ValueFragment.cs#setvalue)]
+ [!code-vb[UIAIValueProvider_snip#SetValue](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIValueProvider_snip/visualbasic/valuefragment.vb#setvalue)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ロケールに固有の情報が、誤った形式でコントロールに渡された場合 (誤った日付形式など)。</exception>
+        <exception cref="T:System.ArgumentException">新しい値を、文字列からコントロールが認識する形式に変換できない場合。</exception>
+        <exception cref="T:System.Windows.Automation.ElementNotEnabledException">有効になっていないコントロールの操作が試行された場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IValueProvider.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの値を取得します。</summary>
+        <value>文字列としてのコントロールの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一行エディット コントロールを実装してその内容へのプログラムによるアクセスをサポートする<xref:System.Windows.Automation.Provider.IValueProvider>(に加えて<xref:System.Windows.Automation.Provider.ITextProvider>)。 ただし、複数行エディット コントロールは実装しないで<xref:System.Windows.Automation.Provider.IValueProvider>です。  
+  
+ 複数行エディット コントロールのテキスト コンテンツを取得するコントロールを実装する必要があります<xref:System.Windows.Automation.Provider.ITextProvider>です。 ただし、 <xref:System.Windows.Automation.Provider.ITextProvider> はコントロールの値の設定はサポートしていません。  
+  
+ <xref:System.Windows.Automation.Provider.IValueProvider> は、書式設定情報や部分文字列の値の取得をサポートしていません。 このようなシナリオでは <xref:System.Windows.Automation.Provider.ITextProvider> を実装します。  
+  
+   
+  
+## Examples  
+ 次の例は、取得するには、その値を許可する、コントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIValueProvider_snip#Value](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIValueProvider_snip/CSharp/ValueFragment.cs#value)]
+ [!code-vb[UIAIValueProvider_snip#Value](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIValueProvider_snip/visualbasic/valuefragment.vb#value)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

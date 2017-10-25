@@ -1,0 +1,174 @@
+<Type Name="ProfileMigrateEventArgs" FullName="System.Web.Profile.ProfileMigrateEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ProfileMigrateEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileMigrateEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileMigrateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.Profile.ProfileModule.MigrateAnonymous" />のイベント、<see cref="T:System.Web.Profile.ProfileModule" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileMigrateEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 <xref:System.Web.Profile.ProfileMigrateEventArgs>オブジェクトへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求との匿名プロファイルの匿名ユーザー識別子、<xref:System.Web.Profile.ProfileMigrateEventArgs.AnonymousID%2A>プロパティです。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>プロファイル プロパティをコピーするイベント値の匿名プロファイルの認証済みのプロファイルに、アプリケーションが匿名でを使用したユーザーがログインするとします。  
+  
+ ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 ときに、`ProfileCommon`クラスを生成すると、Web.config ファイルで指定されたプロファイルのプロパティに基づいて、`GetProfile`を取得できるようにするメソッドを追加、`ProfileCommon`ユーザー名に基づいてオブジェクト。 使用することができます、`GetProfile`の匿名プロファイルのプロパティ値を取得する現在のプロファイルのメソッドです。 匿名プロパティの値は、認証されたユーザーの現在のプロファイルにコピーできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、匿名認証を有効にする Web.config ファイルを表示して、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。  
+  
+ 次のコード例では、Web.config ファイルを匿名 id を有効にして匿名ユーザーをサポートするプロファイルのプロパティを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <AnonymousIdentification enabled="true" />  
+  
+    <profile enabled="true" defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList" allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントは、匿名プロファイルからプロファイル プロパティの値を現在のユーザーのプロファイルにコピーします。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/global.asax#1)]
+ [!code-vb[System.Web.Profile.ProfileManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileMigrateEventArgs (System.Web.HttpContext context, string anonymousId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context, string anonymousId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileMigrateEventArgs.#ctor(System.Web.HttpContext,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="anonymousId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />の現在の要求。</param>
+        <param name="anonymousId">移行される匿名の識別子です。</param>
+        <summary><see cref="T:System.Web.Profile.ProfileMigrateEventArgs" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileMigrateEventArgs.%23ctor%2A>のインスタンスを作成、<xref:System.Web.Profile.ProfileMigrateEventArgs>クラス、セット、<xref:System.Web.Profile.ProfileMigrateEventArgs.Context%2A>プロパティを指定した<xref:System.Web.HttpContext>、設定と、<xref:System.Web.Profile.ProfileMigrateEventArgs.AnonymousID%2A>プロパティを指定した`anonymousId`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnonymousID">
+      <MemberSignature Language="C#" Value="public string AnonymousID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AnonymousID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileMigrateEventArgs.AnonymousID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイル プロパティ値の移行元の匿名プロファイルの匿名識別子を取得します。</summary>
+        <value>プロファイル プロパティ値の移行元の匿名プロファイルの匿名識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileMigrateEventArgs.AnonymousID%2A>プロパティには、匿名ユーザーの一意の識別子が含まれています。 処理することができますがされているアプリケーションを使用して、匿名ユーザーがログインすると、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>認証済みのプロファイルに、ユーザーの匿名プロファイルからプロファイル プロパティをコピーするイベントの値します。  
+  
+ ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスし、Web.config ファイルで指定されたプロファイルのプロパティが含まれています。 ときに、`ProfileCommon`クラスが生成された、`GetProfile`を取得できるようにするメソッドを追加、`ProfileCommon`ユーザー名に基づいてオブジェクト。 使用することができます、`GetProfile`の匿名プロファイルのプロパティ値を取得する現在のプロファイルのメソッドです。 匿名プロパティの値は、認証されたユーザーの現在のプロファイルにコピーできます。 匿名プロパティの値のコピーの例については、2 番目のコード例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、匿名認証を有効にする Web.config ファイルを表示して、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント  
+  
+ 次のコード例では、Web.config ファイルを匿名 id を有効にして匿名ユーザーをサポートするプロファイルのプロパティを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <AnonymousIdentification enabled="true" />  
+  
+    <profile enabled="true" defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList" allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+  
+```  
+  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントは、匿名プロファイルからプロファイル プロパティの値を現在のユーザーのプロファイルにコピーします。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/global.asax#1)]
+ [!code-vb[System.Web.Profile.ProfileManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileMigrateEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.HttpContext" />現在の要求。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在の要求</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileMigrateEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 <xref:System.Web.Profile.ProfileMigrateEventArgs.Context%2A>プロパティへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,163 @@
+<Type Name="LambdaReference&lt;T&gt;" FullName="System.Activities.Expressions.LambdaReference&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class LambdaReference&lt;T&gt; : System.Activities.CodeActivity&lt;System.Activities.Location&lt;T&gt;&gt;, System.Activities.XamlIntegration.IValueSerializableExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LambdaReference`1&lt;T&gt; extends System.Activities.CodeActivity`1&lt;class System.Activities.Location`1&lt;!T&gt;&gt; implements class System.Activities.XamlIntegration.IValueSerializableExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Expressions.LambdaReference`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Activities.CodeActivity&lt;System.Activities.Location&lt;T&gt;&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TResult">System.Activities.Location&lt;T&gt;</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Activities.XamlIntegration.IValueSerializableExpression</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">式によって返される値の型。</typeparam>
+    <summary><see cref="F:System.Activities.ArgumentDirection.Out" /> 引数のバインドをサポートする、左辺値として使用されるラムダ式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Expressions.LambdaReference%601> は、コードで指定されたラムダ式用に使用され、XAML にシリアル化することはできません。 <xref:System.Activities.Expressions.LambdaReference%601> が含まれているワークフローのシリアル化を試みると、<xref:System.Activities.Expressions.LambdaSerializationException> がスローされます。 コンテナーであるワークフローで XAML シリアル化が必要な場合は、<xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> を使用するか、<xref:System.Activities.Expressions.ExpressionServices> を使用することで <xref:System.Activities.Expressions.LambdaReference%601> をシリアル化が可能な形式に変換します。  
+  
+ このアクティビティでは、LINQ to エンティティ プロバイダーを使用して、LINQ 式を評価します。 このアクティビティと共に使用、LINQ 式は、ADO.Net Entity Data Model によって評価である必要があります。 たとえば、アクティビティ、変数、またはワークフロー自体の引数を参照する LINQ 式を使用できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LambdaReference (System.Linq.Expressions.Expression&lt;Func&lt;System.Activities.ActivityContext,T&gt;&gt; locationExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;class System.Activities.ActivityContext, !T&gt;&gt; locationExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.LambdaReference`1.#ctor(System.Linq.Expressions.Expression{System.Func{System.Activities.ActivityContext,`0}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="locationExpression" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;System.Activities.ActivityContext,T&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="locationExpression">式の値。</param>
+        <summary><see cref="T:System.Activities.Expressions.LambdaReference`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="protected override void CacheMetadata (System.Activities.CodeActivityMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.CodeActivityMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.LambdaReference`1.CacheMetadata(System.Activities.CodeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.CodeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertToString">
+      <MemberSignature Language="C#" Value="public bool CanConvertToString (System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanConvertToString(class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.LambdaReference`1.CanConvertToString(System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary>このメソッドは常に返します<see langword="true" />と組み合わせて使用し、<see cref="M:System.Activities.Expressions.LambdaReference`1.ConvertToString(System.Windows.Markup.IValueSerializerContext)" />試みを XAML には、このアクティビティをシリアル化するときにわかりやすいエラー メッセージを提供します。</summary>
+        <returns>このメソッドは常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Expressions.LambdaReference%601> は、コードで指定されたラムダ式用に使用され、XAML にシリアル化することはできません。 <xref:System.Activities.Expressions.LambdaReference%601> が含まれているワークフローのシリアル化を試みると、<xref:System.Activities.Expressions.LambdaSerializationException> がスローされます。 コンテナーであるワークフローで XAML シリアル化が必要な場合は、<xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> を使用するか、<xref:System.Activities.Expressions.ExpressionServices> を使用することで <xref:System.Activities.Expressions.LambdaReference%601> をシリアル化が可能な形式に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToString">
+      <MemberSignature Language="C#" Value="public string ConvertToString (System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ConvertToString(class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.LambdaReference`1.ConvertToString(System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary><see cref="T:System.Activities.Expressions.LambdaSerializationException" /> をスローし、<see cref="M:System.Activities.Expressions.LambdaReference`1.CanConvertToString(System.Windows.Markup.IValueSerializerContext)" /> と共に使用されることで、このアクティビティの XAML へのシリアル化が試みられたときに説明的なエラー メッセージを生成します。</summary>
+        <returns>このメソッドを呼び出すと、<see cref="T:System.Activities.Expressions.LambdaSerializationException" /> がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Expressions.LambdaReference%601> は、コードで指定されたラムダ式用に使用され、XAML にシリアル化することはできません。 <xref:System.Activities.Expressions.LambdaReference%601> が含まれているワークフローのシリアル化を試みると、<xref:System.Activities.Expressions.LambdaSerializationException> がスローされます。 コンテナーであるワークフローで XAML シリアル化が必要な場合は、<xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> を使用するか、<xref:System.Activities.Expressions.ExpressionServices> を使用することで <xref:System.Activities.Expressions.LambdaReference%601> をシリアル化が可能な形式に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Activities.Location&lt;T&gt; Execute (System.Activities.CodeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Activities.Location`1&lt;!T&gt; Execute(class System.Activities.CodeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.LambdaReference`1.Execute(System.Activities.CodeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Location&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.CodeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

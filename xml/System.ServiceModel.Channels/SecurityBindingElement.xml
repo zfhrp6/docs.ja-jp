@@ -1,0 +1,1900 @@
+<Type Name="SecurityBindingElement" FullName="System.ServiceModel.Channels.SecurityBindingElement">
+  <TypeSignature Language="C#" Value="public abstract class SecurityBindingElement : System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityBindingElement extends System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.SecurityBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Security</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装されると、チャネルの SOAP メッセージ セキュリティをサポートするバインド要素を表す抽象クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] での SOAP メッセージ セキュリティ バインド要素に対する基本クラスです。 この抽象クラスには、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>、および <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> という 3 種類の実装があります。 これらの実装は、WS-Security Policy 仕様で定義されているバインドをモデル化しています。  
+  
+ カスタム バインドには、特定の順序で配置されたバインド要素のコレクションが含まれます。バインド スタックの一番上を表す要素が最初に追加され、バインド スタックの 1 つ下の要素が 2 番目に追加される、という順序で配置されます。  
+  
+ このクラスをバインドに追加するには、次を実行します。  
+  
+1.  <xref:System.ServiceModel.Channels.BindingElementCollection> を作成します。  
+  
+2.  オプションの <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> や <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> など、バインド スタックでこのバインド要素の上になるカスタム バインド要素を作成します。  
+  
+3.  <xref:System.ServiceModel.Channels.BindingElementCollection> メソッドを使用して、これらの要素を前に説明した順序で <xref:System.ServiceModel.Channels.BindingElementCollection.InsertItem%2A> に追加します。  
+  
+4.  <xref:System.ServiceModel.Channels.SecurityBindingElement>、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> など、<xref:System.ServiceModel.Channels.TransportSecurityBindingElement> から派生するセキュリティ バインド要素のインスタンスを作成します。  
+  
+5.  派生したセキュリティ バインドをコレクションに追加します。  
+  
+6.  <xref:System.ServiceModel.Channels.TcpTransportBindingElement> など、追加のカスタム バインド要素があればコレクションに追加します。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して、<xref:System.ServiceModel.Channels.SecurityBindingElement>を参照してください[SecurityBindingElement 認証モード](~/docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)と[する方法: SecurityBindingElement 作成するカスタム バインドを使用して、](~/docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが一度作成されると、そのプロパティを変更不可として扱う必要があります。 一部のプロパティで `set` を呼び出すと、予期しない結果になることがあります。プロパティに古い値が保持されているようにバインディングが動作し、この問題が発生したことを示すのが、ランタイム エラーのみとなる場合があります。 このように動作することがわかっているプロパティは <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> と <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> の 2 つです。 他にも同じように動作するプロパティが存在する可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowInsecureTransport">
+      <MemberSignature Language="C#" Value="public bool AllowInsecureTransport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowInsecureTransport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.AllowInsecureTransport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護された混合モードのメッセージを、HTTP などのセキュリティで保護されていないトランスポートを介して送信できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />混合モードのメッセージをセキュリティで保護します。 セキュリティ保護されていないトランスポートを介して送信できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの型。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定する <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> の設定とバインド コンテキストに基づいて、チャネル ファクトリを作成します。 作成されるチャネル ファクトリは SOAP メッセージ セキュリティ チャネル ファクトリで、内部的にバインディング コンテキスト (トランスポート チャネル ファクトリを格納する) に対応するチャネル ファクトリへの参照を保持します。</summary>
+        <returns>チャネル ファクトリがに基づいて、<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />設定とバインド コンテキストで渡されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成されるチャネル ファクトリは SOAP メッセージ セキュリティ チャネル ファクトリで、内部的にバインディング コンテキスト (トランスポート チャネル ファクトリを格納する) に対応するチャネル ファクトリへの参照を保持します。  
+  
+ このメソッドは、パラメーター エラーチェックを行ってから、<xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore%2A> を呼び出します。 このメソッドは、派生クラスで実装されると、チャネル ファクトリを作成します。これは、このバインドの送信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactoryCore&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactoryCore&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactoryCore&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの型。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>実装されると、指定した種類のチャネル ファクトリを作成します。</summary>
+        <returns>指定した種類のチャネル ファクトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory%2A> は、エラーチェックを行ってこのメソッドを呼び出します。 このメソッドは、派生クラスで実装されると、チャネル ファクトリを作成します。これは、このバインドの送信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定する <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> の設定とバインディング コンテキストに基づいて、チャネル リスナーを作成します。</summary>
+        <returns>に基づいてチャネル リスナー、<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />設定とバインド コンテキストで渡されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成されるチャネル ファクトリは SOAP メッセージ セキュリティ チャネル リスナーで、内部的にバインディング コンテキスト (トランスポート チャネル リスナーを格納する) に対応するチャネル リスナーへの参照を保持します。  
+  
+ このメソッドは、パラメーター エラーチェックを行ってから、<xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelListenerCore%2A> を呼び出します。 このメソッドは、派生クラスで実装されると、チャネル リスナーを作成します。これは、このバインドの受信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListenerCore&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListenerCore&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListenerCore&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelListenerCore``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" /> オブジェクト。</param>
+        <summary>実装されると、指定した種類のチャネル リスナーを作成します。</summary>
+        <returns>指定した種類のチャネル リスナー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelListener%2A> は、エラーチェックを行ってこのメソッドを呼び出します。 このメソッドは、派生クラスで実装されると、チャネル リスナーを作成します。これは、このバインドの送信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの型。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル ファクトリを作成できるかどうかを判断します。</summary>
+        <returns>
+          指定した型のチャネル ファクトリを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル ファクトリを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル リスナーを作成できるかどうかを判断します。</summary>
+        <returns>
+          指定した型のチャネル リスナーを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル リスナーを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAnonymousForCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateAnonymousForCertificateBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateAnonymousForCertificateBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateAnonymousForCertificateBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対称セキュリティ バインド要素を作成し、匿名クライアント認証および証明書ベースのサーバー認証用に構成します。</summary>
+        <returns>新しいバインドを保持する <see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントとサーバーは、サービス証明書を使用して帯域外で構成する必要があります。  
+  
+ バインディングは、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> が <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11%2A>、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> が `true` に設定されて作成されます。  
+  
+   
+  
+## Examples  
+ このメソッドを呼び出す方法を次のコードに示します。  
+  
+ [!code-csharp[c_CustomBindingsAuthMode#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#3)]
+ [!code-vb[c_CustomBindingsAuthMode#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_custombindingsauthmode/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateCertificateOverTransportBindingElement">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>SOAP メッセージ セキュリティを使用する証明書ベースの認証をクライアントが行うものと想定する、セキュリティ バインド要素を作成します。 このバインディング要素は、トランスポートがサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供することを想定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントには、認証に使用する証明書を構成する必要があります。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateCertificateOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateCertificateOverTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateCertificateOverTransportBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SOAP メッセージ セキュリティを使用する証明書ベースの認証をクライアントが行うものと想定する、セキュリティ バインディング要素を作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバインディング要素は、トランスポートがサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供することを想定します。  
+  
+ バインディング要素は、<xref:System.ServiceModel.MessageSecurityVersion.Default%2A> クラスの <xref:System.ServiceModel.MessageSecurityVersion> プロパティを使用するように構成されます。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCertificateOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateCertificateOverTransportBindingElement (System.ServiceModel.MessageSecurityVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateCertificateOverTransportBindingElement(class System.ServiceModel.MessageSecurityVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(System.ServiceModel.MessageSecurityVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.ServiceModel.MessageSecurityVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">バインディングの <see cref="T:System.ServiceModel.MessageSecurityVersion" />。</param>
+        <summary>SOAP メッセージ セキュリティを使用する証明書ベースの認証をクライアントが行うものと想定する、セキュリティ バインド要素を作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバインド要素は、トランスポートがサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供することを想定します。 バインディング要素を、指定した <xref:System.ServiceModel.MessageSecurityVersion> で構成します。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCertificateSignatureBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateCertificateSignatureBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateCertificateSignatureBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateCertificateSignatureBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AsymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>証明書を使用してメッセージに署名するバインド要素を作成します。 このバインディング要素は、一方向のメッセージ交換に対してのみ使用でき、メッセージに署名することだけが可能です。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.AsymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ このバインド要素を使用する場合は、クライアントが認証用に証明書を構成する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIssuedTokenBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenBindingElement (System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenBindingElement(class System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement(System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedTokenParameters" Type="System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />
+      </Parameters>
+      <Docs>
+        <param name="issuedTokenParameters">A<see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />ことを表します、対称キーに基づいて発行されたトークン。</param>
+        <summary>対称セキュリティ バインド要素を作成し、対称キーに基づいて発行されたトークンを使用するクライアント認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されるトークンのパラメーターは、対称型のキーでなければなりません。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuedTokenParameters" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="issuedTokenParameters" /> は対称型のキーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIssuedTokenForCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForCertificateBindingElement (System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForCertificateBindingElement(class System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedTokenParameters" Type="System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />
+      </Parameters>
+      <Docs>
+        <param name="issuedTokenParameters"><see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />ことを表します、対称キーに基づいて発行されたトークン。</param>
+        <summary>対称セキュリティ バインド要素を作成し、発行されるトークンに基づくクライアント認証と、サーバー証明書に基づくサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されるトークンは、対称キーまたは非対称キーのどちらでもかまいません。 クライアントとサーバーを、サーバーの証明書で準備する必要があります。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> が `true`、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> が <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11%2A> にそれぞれ設定されています。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuedTokenParameters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateIssuedTokenForSslBindingElement">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>対称セキュリティ バインド要素を作成し、発行されるトークンに基づくクライアント認証と、サーバー証明書に基づくサーバー認証を必要とするように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されるトークンは、対称キーまたは非対称キーのどちらでもかまいません。 クライアントは、SOAP レベルの SSL プロトコルを使用してサーバーを認証します。  
+  
+ 両方のオーバーロードは <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters> パラメーターを使用します。 そのいずれかに、キャンセルが要求されるかどうかを指定するパラメーターが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateIssuedTokenForSslBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement (System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement(class System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedTokenParameters" Type="System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />
+      </Parameters>
+      <Docs>
+        <param name="issuedTokenParameters"><see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />。</param>
+        <summary>対称セキュリティ バインド要素を作成し、発行されるトークンに基づくクライアント認証と、サーバー証明書に基づくサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーは、SSL プロトコルの最後で、クッキー ベースのセキュリティ コンテキスト トークンを発行します。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> が `true`、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> が <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11%2A> にそれぞれ設定されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuedTokenParameters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIssuedTokenForSslBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement (System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters, bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement(class System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters, bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedTokenParameters" Type="System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="issuedTokenParameters"><see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />。</param>
+        <param name="requireCancellation">
+          キャンセルが必要な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役立ちます。</param>
+        <summary>対称セキュリティ バインド要素を作成し、発行されるトークンに基づくクライアント認証と、サーバー証明書に基づくサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> が `true`、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> が <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11%2A> にそれぞれ設定されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuedTokenParameters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIssuedTokenOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateIssuedTokenOverTransportBindingElement (System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateIssuedTokenOverTransportBindingElement(class System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters issuedTokenParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuedTokenParameters" Type="System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />
+      </Parameters>
+      <Docs>
+        <param name="issuedTokenParameters"><see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" />。</param>
+        <summary>セキュリティ バインド要素を作成し、発行されたトークンを使用する SOAP セキュリティ ベースのクライアント認証を必要とするように構成します。 このバインド要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuedTokenParameters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKerberosBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateKerberosBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateKerberosBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対称セキュリティ バインド要素を作成し、クライアントの Kerberos トークンに基づくクライアント認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Kerberos 認証を行うには、サーバーは、サービス プリンシパル名が Active Directory に登録されているアカウントで実行する必要があります。 NetworkService は、これに該当するアカウントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKerberosOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateKerberosOverTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateKerberosOverTransportBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosOverTransportBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ バインド要素を作成し、クライアントの Kerberos トークンを使用する SOAP セキュリティ ベースのクライアント認証を必要とするように構成します。 このバインディング要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Kerberos 認証を行うには、サーバーは、サービス プリンシパル名が Active Directory に登録されているアカウントで実行する必要があります。 NetworkService は、これに該当するアカウントです。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。 <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateMutualCertificateBindingElement">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>非対称セキュリティ バインディング要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントには、クライアント自身の証明書と共にサーバーの証明書も構成する必要があります。 サーバーには、サーバー自身の証明書を構成する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateMutualCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非対称セキュリティ バインディング要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインドは、要求ごとにクライアントが新しいランダムな対称キー (サーバー用に暗号化される) を生成し、それを使用して要求だけでなくサーバーからの応答も保護するように構成されます。 クライアントの証明書は、要求での保証サポート トークンとして使用されます。  
+  
+ 実際には、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> が作成されます。  
+  
+   
+  
+## Examples  
+ このメソッドを呼び出す方法を次のコードに示します。  
+  
+ [!code-csharp[c_CreateSecureSession#5](~/samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMutualCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement (System.ServiceModel.MessageSecurityVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement(class System.ServiceModel.MessageSecurityVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement(System.ServiceModel.MessageSecurityVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.ServiceModel.MessageSecurityVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">メッセージ セキュリティ バージョン。</param>
+        <summary>非対称セキュリティ バインド要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンが WSSecurity10 の場合は、バインド要素は、クライアント要求がクライアントの証明書によって署名され、サーバーの証明書で暗号化されるように構成されます。  
+  
+ バージョンが WSSecurity11 の場合は、要求ごとにクライアントが新しいランダムな対称キー (サーバー用に暗号化される) を生成し、それを使用して要求だけでなく、サーバーからの応答も保護するように、バインド要素が構成されます。 クライアントの証明書は、要求での保証サポート トークンとして使用されます。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> プロパティは変更できません。 プロパティで `set` を呼び出しても変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMutualCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement (System.ServiceModel.MessageSecurityVersion version, bool allowSerializedSigningTokenOnReply);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateMutualCertificateBindingElement(class System.ServiceModel.MessageSecurityVersion version, bool allowSerializedSigningTokenOnReply) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement(System.ServiceModel.MessageSecurityVersion,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.ServiceModel.MessageSecurityVersion" />
+        <Parameter Name="allowSerializedSigningTokenOnReply" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="version">メッセージ セキュリティ バージョン。</param>
+        <param name="allowSerializedSigningTokenOnReply">
+          <see langword="true" />シリアル化された使用できるように、応答のトークンの署名それ以外の場合、<see langword="false" />です。</param>
+        <summary>非対称セキュリティ バインド要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `allowSerializedSigningTokenOnReply` パラメーターが `true` の場合は、古いバージョンの Web サービス拡張 (WSE) との相互運用性が有効になります。  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMutualCertificateDuplexBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateMutualCertificateDuplexBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateMutualCertificateDuplexBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateDuplexBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AsymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非対称セキュリティ バインド要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。 この認証モードは、双方向メッセージ交換パターンをセキュリティで保護するために使用でき、帯域外のクライアント証明書を使用するようにサービスを構成する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.AsymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMutualCertificateDuplexBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateMutualCertificateDuplexBindingElement (System.ServiceModel.MessageSecurityVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.AsymmetricSecurityBindingElement CreateMutualCertificateDuplexBindingElement(class System.ServiceModel.MessageSecurityVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateDuplexBindingElement(System.ServiceModel.MessageSecurityVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AsymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="version" Type="System.ServiceModel.MessageSecurityVersion" />
+      </Parameters>
+      <Docs>
+        <param name="version">メッセージ セキュリティ バージョン。</param>
+        <summary>非対称セキュリティ バインド要素を作成し、証明書ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。 この認証モードは、双方向メッセージ交換パターンをセキュリティで保護するために使用でき、帯域外のクライアント証明書を使用するようにサービスを構成する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.AsymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメソッドを呼び出すことで <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが作成されたら、<xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion%2A> プロパティを変更不可として扱う必要があります。 この値が変更されると、矛盾するバインド動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecureConversationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement (System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement(class System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bootstrapSecurity" Type="System.ServiceModel.Channels.SecurityBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="bootstrapSecurity">A<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />を含む、セキュリティで保護された通信のハンドシェイク メッセージを保護する方法を指定します。</param>
+        <summary>対称セキュリティ バインド要素を作成し、クライアントとサービスの間にセキュリティで保護された通信を確立するように構成します。 セキュリティで保護された通信のハンドシェイクの最後に発行されるセキュリティ コンテキスト トークンを使用して、メッセージをセキュリティで保護します。 ブートストラップ セキュリティ バインド要素は、セキュリティで保護された通信のハンドシェイク メッセージをセキュリティで保護する方法を指定します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素は、セッション ベースのセキュリティ コンテキスト トークンを使用するように構成されます。  
+  
+ サービスからセキュリティで保護された通信のトークンを要求するために使用されるセキュリティ バインドおよびポリシーを示すには、`bootstrapSecurity` が使用されます。  
+  
+ `bootstrapSecurity` が <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> の場合は、このメソッドによって返されるバインディング要素も同じになります。また、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> は、`true` に設定されます。<xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ それ以外の場合は、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> が <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> に設定された `false` が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bootstrapSecurity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecureConversationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement (System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity, bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement(class System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity, bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bootstrapSecurity" Type="System.ServiceModel.Channels.SecurityBindingElement" />
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bootstrapSecurity">A<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />を含む、セキュリティで保護された通信のハンドシェイク メッセージを保護する方法を指定します。</param>
+        <param name="requireCancellation">
+          キャンセルが必要な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 このパラメーターを <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役に立ちます。</param>
+        <summary>対称セキュリティ バインド要素を作成し、クライアントとサービスの間にセキュリティで保護された通信を確立するように構成します。 セキュリティで保護された通信のハンドシェイクの最後に発行されるセキュリティ コンテキスト トークンを使用して、メッセージをセキュリティで保護します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `requireCancellation` が `false` の場合は、クッキー ベースのセキュリティ コンテキスト トークンが発行されます。それ以外の場合は、セッション ベースのセキュリティ コンテキスト トークンが発行されます。  
+  
+ サービスから `bootstrapSecurity` を要求するために使用されるセキュリティ バインディングおよびポリシーを示すには、`SecureConversationToken` が使用されます。  
+  
+ `bootstrapSecurity` が <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> の場合は、このメソッドによって返されるバインディング要素も `TransportSecurityBindingElement` になります。また、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> は、`true` に設定されます。<xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ それ以外の場合は、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> が <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> に設定された `false` が返されます。  
+  
+> [!NOTE]
+>  [!INCLUDE[wxp](~/includes/wxp-md.md)] で偽装が必要な場合は、セキュリティ コンテキスト トークンを使用しない、セキュリティで保護されたセッションを使用します。 偽装時にセキュリティ コンテキスト トークンを使用すると、<xref:System.InvalidOperationException> がスローされます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サポートされていないシナリオ](~/docs/framework/wcf/feature-details/unsupported-scenarios.md)です。 [!INCLUDE[crabout](~/includes/crabout-md.md)]セッションをセキュリティで保護しを参照してください[セキュリティで保護されたセッション](~/docs/framework/wcf/feature-details/secure-sessions.md)です。  
+  
+   
+  
+## Examples  
+ このメソッドを呼び出す方法を次のコードに示します。  
+  
+ [!code-csharp[c_CreateSecureSession#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bootstrapSecurity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecureConversationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement (System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity, bool requireCancellation, System.ServiceModel.Security.ChannelProtectionRequirements bootstrapProtectionRequirements);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SecurityBindingElement CreateSecureConversationBindingElement(class System.ServiceModel.Channels.SecurityBindingElement bootstrapSecurity, bool requireCancellation, class System.ServiceModel.Security.ChannelProtectionRequirements bootstrapProtectionRequirements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement,System.Boolean,System.ServiceModel.Security.ChannelProtectionRequirements)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bootstrapSecurity" Type="System.ServiceModel.Channels.SecurityBindingElement" />
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+        <Parameter Name="bootstrapProtectionRequirements" Type="System.ServiceModel.Security.ChannelProtectionRequirements" />
+      </Parameters>
+      <Docs>
+        <param name="bootstrapSecurity">A<see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />を含む、セキュリティで保護された通信のハンドシェイク メッセージを保護する方法を指定します。</param>
+        <param name="requireCancellation">
+          キャンセルが必要な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 このパラメーターを <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役に立ちます。</param>
+        <param name="bootstrapProtectionRequirements"><see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" />チャネル保護要件を指定するオブジェクト。</param>
+        <summary>対称セキュリティ バインド要素を作成し、クライアントとサービスの間にセキュリティで保護された通信を確立するように構成します。 セキュリティで保護された通信のハンドシェイクの最後に発行されるセキュリティ コンテキスト トークンを使用して、メッセージをセキュリティで保護します。 ブートストラップ セキュリティ バインド要素は、セキュリティで保護された通信のハンドシェイク メッセージをセキュリティで保護する方法を指定します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `bootstrapProtectionRequirements` パラメーターを使用すると、セキュリティで保護された通信のハンドシェイクの一部として交換されるメッセージをセキュリティで保護する方法をカスタマイズできます。  
+  
+ サービスからセキュリティで保護された通信のトークンを要求するために使用されるセキュリティ バインドおよびポリシーを示すには、`bootstrapSecurity` が使用されます。  
+  
+ `bootstrapSecurity` が <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> の場合は、このメソッドによって返されるバインディング要素も `TransportSecurityBindingElement` になります。また、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> は、`true` に設定されます。<xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ それ以外の場合は、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> が <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> に設定された `false` が返されます。  
+  
+> [!NOTE]
+>  [!INCLUDE[wxp](~/includes/wxp-md.md)] で偽装が必要な場合は、セキュリティ コンテキスト トークンを使用しない、セキュリティで保護されたセッションを使用します。 偽装時にセキュリティ コンテキスト トークンを使用すると、<xref:System.InvalidOperationException> がスローされます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サポートされていないシナリオ](~/docs/framework/wcf/feature-details/unsupported-scenarios.md)です。 [!INCLUDE[crabout](~/includes/crabout-md.md)]セッションをセキュリティで保護しを参照してください[セキュリティで保護されたセッション](~/docs/framework/wcf/feature-details/secure-sessions.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bootstrapSecurity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSslNegotiationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSslNegotiationBindingElement (bool requireClientCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSslNegotiationBindingElement(bool requireClientCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireClientCertificate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireClientCertificate">
+          SSL ネゴシエーション中にクライアント証明書が要求される場合は <see langword="true" /> です。</param>
+        <summary>対称セキュリティ バインド要素を作成し、クライアントとサーバーの間で SOAP レベルの SSL ネゴシエーションを行って、クライアント証明書が必要かどうかに留意するよう構成します。</summary>
+        <returns>新しいバインドを保持する <see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSL ネゴシエーションの後で発行されるセキュリティ コンテキスト トークンは、クッキー ベースです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSslNegotiationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSslNegotiationBindingElement (bool requireClientCertificate, bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSslNegotiationBindingElement(bool requireClientCertificate, bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSslNegotiationBindingElement(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireClientCertificate" Type="System.Boolean" />
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireClientCertificate">
+          SSL ネゴシエーション中にクライアント証明書が要求される場合は <see langword="true" /> です。</param>
+        <param name="requireCancellation">
+          キャンセルが必要な場合は <see langword="true" />。 <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役立ちます。</param>
+        <summary>SOAP SSL ネゴシエーションを行い、クライアント証明書とキャンセルが必要かどうかに留意する、対称セキュリティ バインド要素を作成します。</summary>
+        <returns>新しいバインドを保持する <see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSL ネゴシエーションの後で発行されるセキュリティ コンテキスト トークンは、`requireCancellation` が `true` の場合はセッション ベースです。それ以外の場合はクッキー ベースです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSspiNegotiationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSspiNegotiationBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSspiNegotiationBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Negotiate 認証パッケージに基づいて SOAP SSPI ネゴシエーションを行う対称セキュリティ バインディング要素を作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI ネゴシエーションの最後に発行されるセキュリティ コンテキスト トークンは、クッキー ベースです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSspiNegotiationBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSspiNegotiationBindingElement (bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateSspiNegotiationBindingElement(bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireCancellation">キャンセルが要求されるかどうかを指定します。 <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役立ちます。</param>
+        <summary>Negotiate 認証パッケージに基づいて SOAP SSPI ネゴシエーションを行う対称セキュリティ バインディング要素を作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI ネゴシエーションの最後に発行されるセキュリティ コンテキスト トークンは、`requireCancellation` が `false` の場合はクッキー ベースです。それ以外の場合はセッション ベースです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSspiNegotiationOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ バインディング要素を作成し、Negotiate 認証パッケージを使用する SOAP SSPI ネゴシエーションに基づくクライアント認証を行うように構成します。 このバインディング要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI ネゴシエーションの最後に発行されるセキュリティ コンテキスト トークンは、クッキー ベースです。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。 <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSspiNegotiationOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement (bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement(bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireCancellation">キャンセルが要求されるかどうかを指定します。 <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役立ちます。</param>
+        <summary>セキュリティ バインド要素を作成し、Negotiate 認証パッケージを使用する SOAP SSPI ネゴシエーションに基づくクライアント認証を行うように構成します。 このバインディング要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `requireCancellation` が `false` の場合は、クッキー ベースのセキュリティ コンテキスト トークンが発行されます。それ以外の場合は、セッション ベースのセキュリティ コンテキスト トークンが発行されます。  
+  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。 <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserNameForCertificateBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForCertificateBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForCertificateBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対称セキュリティ バインディング要素を作成し、ユーザー名とパスワード ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。 作成されるバインド要素では、サービスとの通信チャネルを開く前に、帯域外のサービス証明書を使用するようにクライアントを構成する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー証明書は、クライアントでは帯域外に構成する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserNameForSslBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForSslBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForSslBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForSslBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対称セキュリティ バインディング要素を作成し、ユーザー名とパスワード ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。 クライアントは、SOAP レベルの SSL プロトコルを使用してサーバーを認証します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI ネゴシエーションの最後に発行されるセキュリティ コンテキスト トークンは、クッキー ベースです。  
+  
+ サーバー証明書は SSL プロトコルの一部として取得されるため、クライアントにサーバー証明書を準備する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserNameForSslBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForSslBindingElement (bool requireCancellation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.SymmetricSecurityBindingElement CreateUserNameForSslBindingElement(bool requireCancellation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForSslBindingElement(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SymmetricSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireCancellation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireCancellation">キャンセルが要求されるかどうかを指定します。 <see langword="false" /> に設定すると、セキュリティ コンテキスト トークンが有効になります。このモードでは、セッション状態は、サーバーのメモリに保持されるのではなく、確立されるセキュリティ コンテキスト トークンの内部にエンコードされるため、このトークンは Web ファームのシナリオに役立ちます。</param>
+        <summary>対称セキュリティ バインド要素を作成し、ユーザー名とパスワード ベースのクライアント認証と、証明書ベースのサーバー認証を必要とするように構成します。 クライアントは、SOAP レベルの SSL プロトコルを使用してサーバーを認証します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.SymmetricSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `requireCancellation` が `false` の場合は、ステートフルなセキュリティ コンテキスト トークンが発行されます。それ以外の場合は、ステートレスなセキュリティ コンテキスト トークンが発行されます。  
+  
+ サーバー証明書は SSL プロトコルの一部として取得されるため、クライアントにサーバー証明書を準備する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserNameOverTransportBindingElement">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.TransportSecurityBindingElement CreateUserNameOverTransportBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.TransportSecurityBindingElement CreateUserNameOverTransportBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportSecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ バインド要素を作成し、SOAP メッセージの一部として送信されるユーザー名とパスワードに基づくクライアント認証を行うように構成します。 このバインディング要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成されたバインディングでは、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> が `true` に設定されています。 <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> から返される <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> オブジェクトでは、<xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays%2A> プロパティが `false` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite DefaultAlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite DefaultAlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.DefaultAlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの暗号化とキー ラップ アルゴリズムを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />メッセージ暗号化アルゴリズムとキー ラップ アルゴリズムを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>署名、暗号化、キー派生、およびその他の暗号化操作に使用されるセキュリティ アルゴリズムを指定する多数のプロパティを含むオブジェクトです。 また、これらの暗号操作を行うために使用されるキーのサイズも制御します。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[c_CustomBindingsAuthMode#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_custombindingsauthmode/cs/source.cs#8)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see langword="set" /> で値が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUnsecuredResponse">
+      <MemberSignature Language="C#" Value="public bool EnableUnsecuredResponse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableUnsecuredResponse" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.EnableUnsecuredResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] がセキュリティで保護された要求に対するセキュリティで保護されていない応答を送受信できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合[!INCLUDE[indigo2](~/includes/indigo2-md.md)]セキュリティで保護された要求へのセキュリティ保護されていない応答を送受信できる場合は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointSupportingTokenParameters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.Tokens.SupportingTokenParameters EndpointSupportingTokenParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.Tokens.SupportingTokenParameters EndpointSupportingTokenParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.SupportingTokenParameters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークン パラメーターをサポートするエンドポイントを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />トークン パラメーターをサポートするエンドポイントを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポート トークンはバインドのために、プライマリ トークンに含まれていない追加クレームを提供します。 <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A> が返すコレクションには、エンドポイントで定義されているすべての操作に対する追加のトークン パラメーター (<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters>) が格納されています。 プライマリ トークン パラメーターは、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> にあります (どちらも <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスを継承します)。 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> の場合は、プライマリ トークン パラメーターは <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters%2A> プロパティで返されます。 <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> 要素には、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.InitiatorTokenParameters%2A> プロパティおよび <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.RecipientTokenParameters%2A> プロパティという 2 つのパラメーター プロパティがあります。  
+  
+> [!NOTE]
+>  これらのプロパティは、実際の値ではなく、セキュリティ トークンの種類だけを指定しているため、パラメーターと呼ばれます。  
+>   
+>  サポート トークンは、エンドポイント レベルを対象にすることができます。この場合は、クライアントからサービスに送信されるすべてのセキュリティで保護されたメッセージに、サポート トークンが格納されます。 サービスは、クライアントからのすべてのセキュリティで保護されたメッセージに、このプロパティで構成されたサポート トークンの種類が格納されていることを強制します。  
+>   
+>  エンドポイントのすべての操作ではなく、特定の操作に対してのみサポート トークンを提供するには、<xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">取得するプロパティ。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.BindingContext" /> を使用して、指定したオブジェクトを取得します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.BindingContext" /> から取得した指定オブジェクト。オブジェクトが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本クラスまたはそのクラスの先祖から、指定したオブジェクトを取得します。 返されるオブジェクトは、通常、プロパティのコレクションです。たとえば、<xref:System.ServiceModel.Channels.ISecurityCapabilities> を実装するオブジェクトなどです。  
+  
+ `SecurityBindingElement` は、要求されているプロパティの型を認識できない場合は、下位のバインディング要素スタックに呼び出しを代行させて、バインディング コンテキスト パラメーターを渡します。 `SecurityBindingElement` が提供できるプロパティの型は、<xref:System.ServiceModel.Channels.ISecurityCapabilities> と <xref:System.ServiceModel.Security.IdentityVerifier> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeTimestamp">
+      <MemberSignature Language="C#" Value="public bool IncludeTimestamp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeTimestamp" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各メッセージにタイム スタンプが含まれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          各メッセージにタイム スタンプが含まれる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> プロパティが `true` で、`DetectReplays` が `true` の場合には、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] はリプレイ攻撃を検出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEntropyMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityKeyEntropyMode KeyEntropyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.SecurityKeyEntropyMode KeyEntropyMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityKeyEntropyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの作成に使用されるエントロピのソースを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityKeyEntropyMode" />キーを作成するために使用します。 既定値は <see cref="F:System.ServiceModel.Security.SecurityKeyEntropyMode.CombinedEntropy" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode%2A> は、サービスが発行するトークン (<xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken> など) のキーの計算方法を指定します。クライアント キー マテリアルのみを基に計算、サービス キー マテリアルのみを基に計算、または両方の組み合わせを基に計算のいずれかです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalClientSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.LocalClientSecuritySettings LocalClientSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.LocalClientSecuritySettings LocalClientSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.LocalClientSecuritySettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが使用するローカル セキュリティ設定に固有のバインド プロパティを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />固有のバインド プロパティをクライアントによって使用されるローカル セキュリティ設定を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、サービスのセキュリティ ポリシーから派生する設定ではないという点でローカルです。 取得した <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> オブジェクトを使用して、このバインドのセキュリティ プロパティを設定できます。  
+  
+   
+  
+## Examples  
+ このプロパティにアクセスし、別のオブジェクトのプロパティを設定する方法を次のコードに示します。  
+  
+ [!code-csharp[c_MaxClockSkew#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_maxclockskew/cs/source.cs#1)]
+ [!code-vb[c_MaxClockSkew#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_maxclockskew/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalServiceSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.LocalServiceSecuritySettings LocalServiceSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.LocalServiceSecuritySettings LocalServiceSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.LocalServiceSecuritySettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが使用するローカル セキュリティ設定に固有のバインド プロパティを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.LocalServiceSecuritySettings" />サービスによって使用されるローカル セキュリティ設定に固有のバインド プロパティを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、サービスのセキュリティ ポリシーの一部として公開されず、クライアントのバインディングには影響を与えないため、ローカルです。  
+  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> オブジェクトの以下のプロパティは、サービス拒否 (DOS) セキュリティ攻撃の軽減に役立ちます。  
+  
+-   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A> : SPNEGO または SSL ネゴシエーションの実行後にサーバーによってキャッシュされる、期限付きの `SecurityContextToken` の最大数を制御します。  
+  
+-   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime%2A> : SPNEGO または SSL ネゴシエーションに続いてサーバーが発行する `SecurityContextToken` の有効期限を制御します。 サーバーは、この期間の `SecurityContextToken` をキャッシュします。  
+  
+-   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions%2A>: サーバーで確立されているが、そのアプリケーション メッセージが処理されていない、セキュリティで保護されたメッセージ交換の最大数を制御します。 このクォータは、クライアントが、セキュリティで保護されたメッセージ交換をサービスで確立しないようにします。それによって、サービスはクライアントごとの状態を保持できますが、それらの状態を使用することはありません。  
+  
+-   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>: サービスが、セキュリティで保護されたメッセージ交換を、それに対するアプリケーション メッセージを受信しなくても維持する最長時間を制御します。 このクォータは、クライアントが、セキュリティで保護されたメッセージ交換をサービスで確立しないようにします。それによって、サービスはクライアントごとの状態を保持できますが、それらの状態を使用することはありません。  
+  
+ セキュリティで保護されたメッセージ交換セッションでは、バインディングの <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A> プロパティおよび `ReceiveTimeout` プロパティの両方が、セッション タイムアウトに影響します。 2 つのうち短い方が、タイムアウトが発生する時間を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageSecurityVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageSecurityVersion MessageSecurityVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageSecurityVersion MessageSecurityVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" />メッセージ セキュリティ バージョンを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageSecurityVersion> には、セキュリティ仕様のバージョン番号を指定する多数のプロパティが含まれます。このバージョン番号は、チャネルで交換されるメッセージの保護に使用されます。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Channels.SecurityBindingElement> オブジェクトが一度作成されると、このプロパティは変更できません。 プロパティで `set` を呼び出しても変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          null 値を持つ <see langword="set" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationSupportingTokenParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt; OperationSupportingTokenParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt; OperationSupportingTokenParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークン パラメーターをサポートする操作のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" /> 型 (キー) および <see cref="T:System.String" /> 型 (値) の <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポート トークンはバインドのために、プライマリ トークンに含まれていない追加クレームを提供します。  
+  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters%2A> プロパティが返すコレクションには、定義されている特定の操作に対する追加のトークン パラメーター (<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters>) が格納されています。 プライマリ トークン パラメーターは、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> にあります (どちらも <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスを継承します)。 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> の場合は、プライマリ トークン パラメーターは <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters%2A> プロパティで返されます。 <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> には、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.InitiatorTokenParameters%2A> プロパティおよび <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.RecipientTokenParameters%2A> プロパティという 2 つのパラメーター プロパティがあります。  
+  
+> [!NOTE]
+>  これらのプロパティは、実際の値ではなく、セキュリティ トークンの種類だけを指定しているため、パラメーターと呼ばれます。  
+  
+ サポート トークンは、バインドとは異なるスコープ (この場合は操作) を対象にすることができます。その場合、指定したアクションを備えるサービスにクライアントから送信されるすべてのセキュリティ保護されたメッセージに、サポート トークンが格納されます。  
+  
+ エンドポイントのすべての操作ではなく、特定の操作に対してのみサポート トークンを提供するには、<xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalEndpointSupportingTokenParameters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.Tokens.SupportingTokenParameters OptionalEndpointSupportingTokenParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.Tokens.SupportingTokenParameters OptionalEndpointSupportingTokenParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.SupportingTokenParameters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントに対するオプションのサポート トークン パラメーターを取得します。</summary>
+        <value>サービス エンドポイントの <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポート トークンはバインドのために、プライマリ トークンに含まれていない追加クレームを提供します。 サポート トークンは、バインドとは異なるスコープ (この場合はエンドポイント) を対象にできます。 サービスは、<xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters%2A> コレクションで指定されているトークンの種類に対応するトークンを含まないメッセージの場合でも、メッセージを破棄しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalOperationSupportingTokenParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt; OptionalOperationSupportingTokenParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt; OptionalOperationSupportingTokenParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Security.Tokens.SupportingTokenParameters&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークン パラメーターをサポートするオプション操作のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" /> 型 (キー) および <see cref="T:System.String" /> 型 (値) の <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポート トークンはバインドのために、プライマリ トークンに含まれていない追加クレームを提供します。 トークンのサポートにより、バインドと異なるスコープ (この場合は操作) を対象にできます。 サービスは、<xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A> コレクションで指定されているトークンの種類に対応するトークンを含まないメッセージの場合でも、メッセージを破棄しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectTokens">
+      <MemberSignature Language="C#" Value="public bool ProtectTokens { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProtectTokens" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.ProtectTokens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ バインド要素は、トークンを保護するかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />場合は、セキュリティ バインド要素を保護トークンです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityHeaderLayout">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.SecurityHeaderLayout SecurityHeaderLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Channels.SecurityHeaderLayout SecurityHeaderLayout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドのセキュリティ ヘッダー内の要素の順序を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />このバインディングのセキュリティ ヘッダー内の要素の順序を表すです。 既定値は、<see cref="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityHeaderLayout> 列挙体には次のメンバーが含まれます。  
+  
+-   <xref:System.ServiceModel.Channels.SecurityHeaderLayout.Strict>: 項目は、「使用前に宣言する」という一般的な方針に従って、セキュリティ ヘッダーに追加されます。  
+  
+-   <xref:System.ServiceModel.Channels.SecurityHeaderLayout.Lax> : 項目は、WSS: SOAP メッセージ セキュリティに準じた任意の順序で、セキュリティ ヘッダーに追加されます。  
+  
+-   <xref:System.ServiceModel.Channels.SecurityHeaderLayout.LaxTimestampFirst> : 項目は、WSS: SOAP メッセージ セキュリティに準じた任意の順序で、セキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最初の要素は `wsse:Timestamp` 要素である必要があります。  
+  
+-   <xref:System.ServiceModel.Channels.SecurityHeaderLayout.LaxTimestampLast> : 項目は、WSS: SOAP メッセージ セキュリティに準じた任意の順序で、セキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最後の要素は `wsse:Timestamp` 要素である必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が有効な<see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIssuerBindingContextIfRequired">
+      <MemberSignature Language="C#" Value="protected static void SetIssuerBindingContextIfRequired (System.ServiceModel.Security.Tokens.SecurityTokenParameters parameters, System.ServiceModel.Channels.BindingContext issuerBindingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void SetIssuerBindingContextIfRequired(class System.ServiceModel.Security.Tokens.SecurityTokenParameters parameters, class System.ServiceModel.Channels.BindingContext issuerBindingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(System.ServiceModel.Security.Tokens.SecurityTokenParameters,System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.ServiceModel.Security.Tokens.SecurityTokenParameters" />
+        <Parameter Name="issuerBindingContext" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="parameters"><see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />。</param>
+        <param name="issuerBindingContext"><see cref="T:System.ServiceModel.Channels.BindingContext" /> BindingContext が値を持つトークン要件プロパティに使用される発行元のパーティとの対話形式のキーを表すオブジェクト。</param>
+        <summary>BindingContext の要件が発行済みトークンの場合、発行者と通信するために使用が値を持つトークン要件プロパティのキーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムで使用するために予約されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKeyDerivation">
+      <MemberSignature Language="C#" Value="public virtual void SetKeyDerivation (bool requireDerivedKeys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetKeyDerivation(bool requireDerivedKeys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requireDerivedKeys" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="requireDerivedKeys">
+          <see langword="true" />派生キーを要求するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生キーが必要かどうかを示す値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このメソッドを呼び出す方法を次のコードに示します。  
+  
+ [!code-csharp[c_CreateSecureSession#7](~/samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SecurityBindingElement.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このクラスの説明を返します。</summary>
+        <returns>現在の <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> インスタンスの説明。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.ToString%2A> が返す情報には、現在のインスタンスの <xref:System.ServiceModel.Channels.SecurityBindingElement.DefaultAlgorithmSuite%2A>、<xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A>、<xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A>、<xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode%2A>、<xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters%2A>、<xref:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout%2A>、および <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters%2A> の値が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

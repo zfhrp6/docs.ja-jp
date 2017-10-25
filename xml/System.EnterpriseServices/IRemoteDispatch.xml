@@ -1,0 +1,105 @@
+<Type Name="IRemoteDispatch" FullName="System.EnterpriseServices.IRemoteDispatch">
+  <TypeSignature Language="C#" Value="public interface IRemoteDispatch" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteDispatch" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IRemoteDispatch" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("6619a740-8154-43be-a186-0319578e02db")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって実装される、<see cref="T:System.EnterpriseServices.ServicedComponent" />クラスかどうかを<see cref="T:System.EnterpriseServices.AutoCompleteAttribute" />クラス属性に設定されている<see langword="true" />または<see langword="false" />リモート メソッド呼び出しのためです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IRemoteDispatch>インターフェイスは、コードで直接実装する必要はありません。 .NET Framework インフラストラクチャによって内部的に使用されます。  
+  
+ <xref:System.EnterpriseServices.AutoCompleteAttribute> 、COM + コンテキストでオブジェクトの元に戻すビット自動的に設定されていることを確認 class 属性`true`メソッドが戻るとします。 オブジェクトが非アクティブ化し、ことができます。  
+  
+ <xref:System.EnterpriseServices.IRemoteDispatch>にインターフェイスのメソッドが表示されない、<xref:System.EnterpriseServices.ServicedComponent>クラス インターフェイスです。 代わりに、<xref:System.EnterpriseServices.ServicedComponent>を明示的に実装<xref:System.EnterpriseServices.IRemoteDispatch>です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+    <altmember cref="T:System.EnterpriseServices.ServicedComponent" />
+    <altmember cref="T:System.EnterpriseServices.AutoCompleteAttribute" />
+  </Docs>
+  <Members>
+    <Member MemberName="RemoteDispatchAutoDone">
+      <MemberSignature Language="C#" Value="public string RemoteDispatchAutoDone (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string RemoteDispatchAutoDone(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.EnterpriseServices.AutoComplete(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">実装する要求オブジェクトに変換する文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMessage" />インターフェイスです。</param>
+        <summary>確実に、COM + コンテキストで、<see cref="T:System.EnterpriseServices.ServicedComponent" />に設定されているクラス オブジェクトの元に戻すビット<see langword="true" />リモート メソッド呼び出しの後にします。</summary>
+        <returns>実装する応答オブジェクトから変換された文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchAutoDone%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteDispatchNotAutoDone">
+      <MemberSignature Language="C#" Value="public string RemoteDispatchNotAutoDone (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string RemoteDispatchNotAutoDone(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.EnterpriseServices.AutoComplete(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">実装する、要求オブジェクトに変換する文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMessage" />インターフェイスです。</param>
+        <summary>限りませんが、COM + のコンテキストで、<see cref="T:System.EnterpriseServices.ServicedComponent" />に設定されているクラス オブジェクトの元に戻すビット<see langword="true" />リモート メソッド呼び出しの後にします。</summary>
+        <returns>実装する応答オブジェクトから変換された文字列、<see cref="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IRemoteDispatch.RemoteDispatchNotAutoDone%2A>の公開されたインターフェイスにメソッドが属していない、<xref:System.EnterpriseServices.ServicedComponent>クラスし、他の場所で実装する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

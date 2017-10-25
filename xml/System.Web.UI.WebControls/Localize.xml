@@ -1,0 +1,105 @@
+<Type Name="Localize" FullName="System.Web.UI.WebControls.Localize">
+  <TypeSignature Language="C#" Value="public class Localize : System.Web.UI.WebControls.Literal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Localize extends System.Web.UI.WebControls.Literal" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Localize" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Literal</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LocalizeDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.Localize))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上にローカライズされた静的テキストを表示するための場所を予約します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.Localize>にローカライズされたテキストを表示するための Web ページ上の場所を予約するコントロール。  
+  
+> [!NOTE]
+>  外部にあるコントロール、`body`要素は無視されます。  
+  
+ <xref:System.Web.UI.WebControls.Localize>コントロールの継承、<xref:System.Web.UI.WebControls.Literal>制御し、すべての方法でと同じです。 <xref:System.Web.UI.WebControls.Localize>コントロールがその他の静的テキストからローカライズ可能な静的テキストを区別するためにデザイン時に使用します。 <xref:System.Web.UI.WebControls.Label>コントロールでは、表示のテキストにスタイルを適用することができます、<xref:System.Web.UI.WebControls.Localize>コントロールはありません。 設定して、コントロールに表示されるテキストをプログラムで管理することができます、<xref:System.Web.UI.WebControls.Literal.Text%2A?displayProperty=nameWithType>から継承されたプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロール。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Localize  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    Mode="Transform|PassThrough|Encode"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Text="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Localize>コントロールに静的なテキストを表示します。  
+  
+> [!NOTE]
+>  次のコード例では、単一ファイルのコード モデルを使用しが正しく動作しない場合は、分離コード ファイルに直接コピーします。 このコード例は、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Localize#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Localize/CS/localizecs.aspx#1)]
+ [!code-aspx-vb[Localize#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Localize/VB/localizevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Localize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Localize.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Localize" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.Localize>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,70 @@
+<Type Name="HandleProcessCorruptedStateExceptionsAttribute" FullName="System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class HandleProcessCorruptedStateExceptionsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HandleProcessCorruptedStateExceptionsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>破損しているプロセスの状態を示す例外を処理するコードを有効に管理されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロセス破損状態例外は、プロセスの状態が破損していることを示す例外です。 この状態で、アプリケーションの実行はお勧めしません。  
+  
+ 既定では、共通言語ランタイム (CLR) に配信しないこれらの例外、マネージ コードと`try` / `catch`ブロック (およびその他の例外処理句) には呼び出されません。 これらの例外の処理を管理することを確認の場合、適用する必要があります、<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>属性をメソッドが例外処理句を実行します。 CLR は、両方があるメソッドでのみ適用可能な exception 句にプロセス破損状態例外を配信、<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>と<xref:System.Security.SecurityCriticalAttribute>属性。  
+  
+ 追加することも、アプリケーションの構成ファイルにします。 これが確実に破損状態例外に配信せず、例外ハンドラー、<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>または<xref:System.Security.SecurityCriticalAttribute>属性。 この構成要素は前のバージョンでコンパイルされたアプリケーションに影響を与えません、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]で実行しているが、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]以降、破損状態例外は引き続きそれらのアプリケーションに配信されるか。 <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>属性ためには無視されますが、部分的に信頼されているまたは透過的なコードに見つかったときに信頼されたホストは、信頼されていないアドインをキャッチして、これらの重大な例外を無視できません。  
+  
+ プロセス破損状態例外の詳細については、エントリを参照してください。[破損状態例外の処理](http://go.microsoft.com/fwlink/?LinkID=179681)CLR 徹底解剖ブログでします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HandleProcessCorruptedStateExceptionsAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

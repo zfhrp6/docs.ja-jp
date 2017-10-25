@@ -1,0 +1,627 @@
+<Type Name="FlatTrackingData" FullName="Microsoft.Build.Utilities.FlatTrackingData">
+  <TypeSignature Language="C#" Value="public class FlatTrackingData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FlatTrackingData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.FlatTrackingData" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、ビルド時にファイルの依存関係を追跡するために使用されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool skipMissingFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool skipMissingFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITaskItem[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="skipMissingFiles" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <param name="skipMissingFiles">ディスク上に存在しないファイルを無視します。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITaskItem[] tlogFiles, DateTime missingFileTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, valuetype System.DateTime missingFileTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITaskItem[],System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="missingFileTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <param name="missingFileTimeUtc">不足しているファイルに記録するかを示す DateTime です。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool skipMissingFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool skipMissingFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="skipMissingFiles" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">解釈する tlog ファイル</param>
+        <param name="skipMissingFiles">ディスク上に存在しないファイルを無視します。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, DateTime missingFileTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, valuetype System.DateTime missingFileTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="missingFileTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">解釈する tlog ファイル</param>
+        <param name="missingFileTimeUtc">不足しているファイルに記録するかを示す DateTime です。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] tlogFilesToIgnore, DateTime missingFileTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] tlogFilesToIgnore, valuetype System.DateTime missingFileTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="tlogFilesToIgnore" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="missingFileTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <param name="tlogFilesToIgnore">無視する Tlog です。</param>
+        <param name="missingFileTimeUtc">不足しているファイルに記録するかを示す DateTime です。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlatTrackingData (Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] tlogFilesToIgnore, DateTime missingFileTimeUtc, string[] excludedInputPaths, System.Collections.Generic.IDictionary&lt;string,DateTime&gt; sharedLastWriteTimeUtcCache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] tlogFilesToIgnore, valuetype System.DateTime missingFileTimeUtc, string[] excludedInputPaths, class System.Collections.Generic.IDictionary`2&lt;string, valuetype System.DateTime&gt; sharedLastWriteTimeUtcCache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.#ctor(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],System.DateTime,System.String[],System.Collections.Generic.IDictionary{System.String,System.DateTime})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="tlogFilesToIgnore" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="missingFileTimeUtc" Type="System.DateTime" />
+        <Parameter Name="excludedInputPaths" Type="System.String[]" />
+        <Parameter Name="sharedLastWriteTimeUtcCache" Type="System.Collections.Generic.IDictionary&lt;System.String,System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">解釈する .tlog ファイル</param>
+        <param name="tlogFilesToIgnore">.Tlog ファイルを無視します。</param>
+        <param name="missingFileTimeUtc">日付と不足しているファイルの時刻を記録する必要があります。</param>
+        <param name="excludedInputPaths">任意のサブディレクトリも含めて、無視するファイルを含むパスのセット。</param>
+        <param name="sharedLastWriteTimeUtcCache">キャッシュが使用する間で共有できる複数<c>FlatTrackingData</c>インスタンス。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyTable">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,DateTime&gt; DependencyTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, valuetype System.DateTime&gt; DependencyTable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.DependencyTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係テーブルを取得します。</summary>
+        <value>依存関係テーブルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileIsExcludedFromDependencyCheck">
+      <MemberSignature Language="C#" Value="public bool FileIsExcludedFromDependencyCheck (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FileIsExcludedFromDependencyCheck(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.FileIsExcludedFromDependencyCheck(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">テストするファイルの名前です。</param>
+        <summary>返します<see langword="true" />場合は、指定したファイルは追跡対象の依存関係のチェックから除外します。</summary>
+        <returns>
+          <see langword="true" />場合は、ファイルは除外されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinalizeTLogs">
+      <MemberSignature Language="C#" Value="public static void FinalizeTLogs (bool trackedOperationsSucceeded, Microsoft.Build.Framework.ITaskItem[] readTLogNames, Microsoft.Build.Framework.ITaskItem[] writeTLogNames, Microsoft.Build.Framework.ITaskItem[] trackedFilesToRemoveFromTLogs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FinalizeTLogs(bool trackedOperationsSucceeded, class Microsoft.Build.Framework.ITaskItem[] readTLogNames, class Microsoft.Build.Framework.ITaskItem[] writeTLogNames, class Microsoft.Build.Framework.ITaskItem[] trackedFilesToRemoveFromTLogs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.FinalizeTLogs(System.Boolean,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="trackedOperationsSucceeded" Type="System.Boolean" />
+        <Parameter Name="readTLogNames" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="writeTLogNames" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="trackedFilesToRemoveFromTLogs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="trackedOperationsSucceeded">True は、追跡される操作が成功したことを示します。</param>
+        <param name="readTLogNames">読み取られる Tlog です。</param>
+        <param name="writeTLogNames">書き込まれる Tlog です。</param>
+        <param name="trackedFilesToRemoveFromTLogs">Tlog から削除する追跡対象のファイルです。</param>
+        <summary>圧縮し、追跡した実行の成功率に基づく Tlog を確定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡される操作が完了した後、圧縮/追跡対象の実行の成否に基づいて Tlog を最終処理する必要があります。 失敗した場合、おクリーンアップ Tlog アウトします。 成功した場合お Tlog から一時ファイルを消去し、それらを再書き込みします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastWriteTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime GetLastWriteTimeUtc (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetLastWriteTimeUtc(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.GetLastWriteTimeUtc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">ファイルの名前</param>
+        <summary>キャッシュされた値をファイルの最終書き込み時刻を返します。 ファイルがチェック キャッシュ、最初の時間を更新します。</summary>
+        <returns>最後の書き込み、ファイルの時刻。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpToDate">
+      <MemberSignature Language="C#" Value="public static bool IsUpToDate (Microsoft.Build.Utilities.Task hostTask, Microsoft.Build.Utilities.UpToDateCheckType upToDateCheckType, Microsoft.Build.Framework.ITaskItem[] readTLogNames, Microsoft.Build.Framework.ITaskItem[] writeTLogNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsUpToDate(class Microsoft.Build.Utilities.Task hostTask, valuetype Microsoft.Build.Utilities.UpToDateCheckType upToDateCheckType, class Microsoft.Build.Framework.ITaskItem[] readTLogNames, class Microsoft.Build.Framework.ITaskItem[] writeTLogNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.IsUpToDate(Microsoft.Build.Utilities.Task,Microsoft.Build.Utilities.UpToDateCheckType,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostTask" Type="Microsoft.Build.Utilities.Task" />
+        <Parameter Name="upToDateCheckType" Type="Microsoft.Build.Utilities.UpToDateCheckType" />
+        <Parameter Name="readTLogNames" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="writeTLogNames" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="hostTask">ホスト タスク。</param>
+        <param name="upToDateCheckType">UpToDateCheckType</param>
+        <param name="readTLogNames">読み取り tlog の配列</param>
+        <param name="writeTLogNames">書き込み tlog の配列</param>
+        <summary>かどうか、追跡データを示しますすべて UpToDateCheckType に従って最新の状態を確認します。</summary>
+        <returns>すべてのものが最新の状態の場合、true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理が最新でない場合は、再作業の実行を追跡するために準備するためにすべてのエントリを削除する Tlog が圧縮されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpToDate">
+      <MemberSignature Language="C#" Value="public static bool IsUpToDate (Microsoft.Build.Utilities.TaskLoggingHelper Log, Microsoft.Build.Utilities.UpToDateCheckType upToDateCheckType, Microsoft.Build.Utilities.FlatTrackingData inputs, Microsoft.Build.Utilities.FlatTrackingData outputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsUpToDate(class Microsoft.Build.Utilities.TaskLoggingHelper Log, valuetype Microsoft.Build.Utilities.UpToDateCheckType upToDateCheckType, class Microsoft.Build.Utilities.FlatTrackingData inputs, class Microsoft.Build.Utilities.FlatTrackingData outputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.IsUpToDate(Microsoft.Build.Utilities.TaskLoggingHelper,Microsoft.Build.Utilities.UpToDateCheckType,Microsoft.Build.Utilities.FlatTrackingData,Microsoft.Build.Utilities.FlatTrackingData)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Log" Type="Microsoft.Build.Utilities.TaskLoggingHelper" />
+        <Parameter Name="upToDateCheckType" Type="Microsoft.Build.Utilities.UpToDateCheckType" />
+        <Parameter Name="inputs" Type="Microsoft.Build.Utilities.FlatTrackingData" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Utilities.FlatTrackingData" />
+      </Parameters>
+      <Docs>
+        <param name="Log">ホスト タスクから TaskLoggingHelper</param>
+        <param name="upToDateCheckType">使用する UpToDateCheckType</param>
+        <param name="inputs">入力を含む FlatTrackingData 構造体</param>
+        <param name="outputs">出力を含む FlatTrackingData 構造体</param>
+        <summary>追跡データと、UpToDateCheckType に従って最新の状態をシンプルにチェックします。</summary>
+        <returns>すべてのものが最新の状態の場合、true を返しますfalse それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ない追跡ログ圧縮は、このオーバー ロードを使用するときを行う  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MissingFiles">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;string&gt; MissingFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;string&gt; MissingFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.MissingFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 TLog で検出されたファイルが見つからない</summary>
+        <value>見つからない TLog で検出されたファイルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestFileName">
+      <MemberSignature Language="C#" Value="public string NewestFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewestFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこれまで見てきた最新のファイルのパスを設定します。</summary>
+        <value>これまで見てきた最新のファイルのパスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestFileTime">
+      <MemberSignature Language="C#" Value="public DateTime NewestFileTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NewestFileTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestFileTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこれまで見てきた最新のファイルの時刻の設定</summary>
+        <value>これまで見てきた最新のファイルの時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestFileTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime NewestFileTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NewestFileTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestFileTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこれまで見てきた最新のファイルの UTC 時刻を設定します。</summary>
+        <value>これまで見てきた最新のファイルの UTC 時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestTLogFileName">
+      <MemberSignature Language="C#" Value="public string NewestTLogFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewestTLogFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestTLogFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最新の TLog ファイルのパスを設定します。</summary>
+        <value>最新の TLog ファイルのパスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestTLogTime">
+      <MemberSignature Language="C#" Value="public DateTime NewestTLogTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NewestTLogTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestTLogTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最新の Tlog の時刻を設定します。</summary>
+        <value>最新の Tlog の時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewestTLogTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime NewestTLogTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NewestTLogTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.NewestTLogTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最新の Tlog の UTC 時刻を設定します。</summary>
+        <value>最新の Tlog の時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldestFileName">
+      <MemberSignature Language="C#" Value="public string OldestFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldestFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.OldestFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検出された最も古いファイルのパスを設定します。</summary>
+        <value>検出された最も古いファイルのパスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldestFileTime">
+      <MemberSignature Language="C#" Value="public DateTime OldestFileTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime OldestFileTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.OldestFileTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検出された最も古いファイルの時間を設定します。</summary>
+        <value>検出された最も古いファイルの時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldestFileTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime OldestFileTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime OldestFileTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.OldestFileTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最も古いファイルをこれまで見てきたの UTC 時刻を設定します。</summary>
+        <value>検出された最も古いファイルの UTC 時刻を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.SaveTlog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドでは、出力テーブルから tlog 再書き込みされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog (Microsoft.Build.Utilities.DependencyFilter includeInTLog);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog(class Microsoft.Build.Utilities.DependencyFilter includeInTLog) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.SaveTlog(Microsoft.Build.Utilities.DependencyFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeInTLog" Type="Microsoft.Build.Utilities.DependencyFilter" />
+      </Parameters>
+      <Docs>
+        <param name="includeInTLog">依存関係のフィルター。</param>
+        <summary>このメソッドは、現在のテーブルから tlog をもう一度記述します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipMissingFiles">
+      <MemberSignature Language="C#" Value="public bool SkipMissingFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipMissingFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.SkipMissingFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または TLog が存在しないファイルでスキップする、記録するかを指定するスイッチを設定します。</summary>
+        <value>TLog が存在しないファイルでスキップする、記録するかを指定するスイッチを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TlogFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] TlogFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] TlogFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.TlogFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの構造体 TLog ファイルを設定します。</summary>
+        <value>この構造体 TLog ファイルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TlogsAvailable">
+      <MemberSignature Language="C#" Value="public bool TlogsAvailable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TlogsAvailable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.TlogsAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または us に渡されたすべての Tlog がディスクで使用できるかどうかを指定するスイッチを設定します。</summary>
+        <value>渡されたすべての Tlog がディスクで使用できるかどうかを指定するスイッチを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TreatRootMarkersAsEntries">
+      <MemberSignature Language="C#" Value="public bool TreatRootMarkersAsEntries { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TreatRootMarkersAsEntries" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.FlatTrackingData.TreatRootMarkersAsEntries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルのアクセスをとして TLog でルート マーカーが扱うかどうかを指定するスイッチを設定またはマーカーとしてのみです。</summary>
+        <value>TLog でルート マーカーをファイルのアクセスをとして扱うかどうかを指定するスイッチを返しますまたはマーカーとしてのみです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateFileEntryDetails">
+      <MemberSignature Language="C#" Value="public void UpdateFileEntryDetails ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateFileEntryDetails() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FlatTrackingData.UpdateFileEntryDetails" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>依存関係テーブルのエントリの詳細の現在の状態を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

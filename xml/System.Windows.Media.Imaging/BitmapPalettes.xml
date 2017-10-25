@@ -1,0 +1,775 @@
+<Type Name="BitmapPalettes" FullName="System.Windows.Media.Imaging.BitmapPalettes">
+  <TypeSignature Language="C#" Value="public static class BitmapPalettes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit BitmapPalettes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapPalettes" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビットマップ イメージでよく使用されるいくつかのカラー パレットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+ のみ[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]と[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]イメージがサポート パレットをフォーマットします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlackAndWhite">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette BlackAndWhite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette BlackAndWhite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.BlackAndWhite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>白黒のカラー パレットを表す値を取得します。 このパレットは、合計 2 色で構成されます。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。  この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlackAndWhiteTransparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette BlackAndWhiteTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette BlackAndWhiteTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.BlackAndWhiteTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>黒、白、および透明色パレットを表す値を取得します。 このパレットは、合計 3 つの色で構成されます。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray16">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray16" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>灰色の網掛けが 16 を含むカラー パレットを表す値を取得します。 パレットの範囲は黒からグレーを白にします。 このパレットには、合計 16 色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray16Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray16Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray16Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray16Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>灰色の網掛けが 16 を含むカラー パレットを表す値を取得します。 パレットの範囲は黒灰色およびその他の透明色を白にします。 このパレットには、合計 17 色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray256">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray256" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含むの灰色を白に黒からまで 256 のグレースケール カラー パレットを表す値を取得します。 このパレットには、合計 256 色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray256Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray256Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray256Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray256Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含む灰色およびその他の透明色を白に黒の範囲の 256 のグレースケール カラー パレットを表す値を取得します。 このパレットには、257 合計色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray4">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray4 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray4" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray4" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含むグレーを白に黒からまでの範囲の 4 つのグレースケール カラー パレットを表す値を取得します。 このパレットには、合計 4 色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gray4Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Gray4Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Gray4Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Gray4Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含む灰色およびその他の透明色を白に黒の範囲の 4 つのグレースケール カラー パレットを表す値を取得します。 このパレットには、合計 5 色が含まれています。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone125">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone125 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone125" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone125" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>125 の基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで色が 133 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone125Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone125Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone125Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone125Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>125 原色、16 のシステム カラー、および 1 の追加の透明色を含むカラー パレットを表す値を取得します。 重複する色がパレットには削除されます。 これは、このパレットで色を 134 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone216">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone216 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone216" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone216" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>216 基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで色を 224 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone216Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone216Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone216Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone216Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>216 原色、16 のシステム カラー、および 1 の追加の透明色を含むカラー パレットを表す値を取得します。 重複する色がパレットには削除されます。 これは、このパレットで色を 225 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone252">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone252 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone252" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone252" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>252 基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで 256 色の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone252Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone252Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone252Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone252Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>252 原色、16 のシステム カラー、および 1 の追加の透明色を含むカラー パレットを表す値を取得します。 重複する色がパレットには削除されます。 これは、このパレットで 256 色の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone256">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone256" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>256 の基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで 256 色の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone256Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone256Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone256Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone256Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>256 色の原色、16 色のシステム カラーおよび 1 の追加透明色を置き換える、シーケンスの最後の色を含むカラー パレットを表す値を取得します。 重複する色がパレットには削除されます。 これは、このパレットで 256 色の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone27">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone27 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone27" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone27" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>27 基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで色を 35 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone27Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone27Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone27Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone27Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>27 原色と 16 のシステム カラーが含まれ、重複する色が削除されて 1 の追加の透明色をカラー パレットを表す値を取得します。 これは、このパレットで色を 36 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone64">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone64 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone64" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone64" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>64 の基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで色を 72 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone64Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone64Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone64Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone64Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>64 原色と 16 のシステム カラーが含まれ、重複する色が削除されて 1 の追加の透明色をカラー パレットを表す値を取得します。 これは、このパレットで色を 73 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone8">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone8 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone8" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone8" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>8 つのプライマリ色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、システム パレットと同じであるこのパレットの 16 色の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Halftone8Transparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette Halftone8Transparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette Halftone8Transparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.Halftone8Transparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>8 つのプライマリ色と 16 のシステム カラーが含まれ、重複する色が削除されて 1 の追加の透明色をカラー パレットを表す値を取得します。 これは、このパレットで色が 17 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPalette">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette WebPalette { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette WebPalette" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.WebPalette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>216 基本色と、削除、重複する色の 16 のシステム カラーを含むカラー パレットを表す値を取得します。 これは、このパレットで色を 224 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>と同じですが、<xref:System.Windows.Media.Imaging.BitmapPalettes.Halftone216%2A>パレット。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPaletteTransparent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapPalette WebPaletteTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapPalette WebPaletteTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalettes.WebPaletteTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>216 原色と 16 のシステム カラーが含まれ、重複する色が削除されて 1 の追加の透明色をカラー パレットを表す値を取得します。 これは、このパレットで色を 225 の合計です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes.WebPaletteTransparent%2A>と同じですが、<xref:System.Windows.Media.Imaging.BitmapPalettes.Halftone216Transparent%2A>パレット。  
+  
+ <xref:System.Windows.Media.Imaging.BitmapPalettes>名前の末尾が「透過」追加「カラー」をプロパティは、完全に透過的です。 256 色が既にあるパレットの場合は、最後の色を透明色置換されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>のメンバーを使用して、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。 この例を使用する方法を示していますが、<xref:System.Windows.Media.Imaging.BitmapPalettes.WebPalette%2A>プロパティのメンバーを使用することができます、<xref:System.Windows.Media.Imaging.BitmapPalettes>同様の方法でクラスです。  
+  
+ [!code-csharp[bitmapframeexample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#10)]
+ [!code-vb[bitmapframeexample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,194 @@
+<Type Name="IConnectionPoint" FullName="Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint">
+  <TypeSignature Language="C#" Value="public interface IConnectionPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IConnectionPoint" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("B196B286-BAB4-101A-B69C-00AA00341D07")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>OLE DB の実装を提供<see langword="IConnectionPoint" />Visual Basic 6.0 からアップグレードしたアプリケーションで使用するためのインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Advise">
+      <MemberSignature Language="C#" Value="public void Advise (IntPtr sink, out int cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Advise([in]native int sink, [out] int32&amp; cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.Advise(System.IntPtr,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sink" Type="System.IntPtr" />
+        <Parameter Name="cookie" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="sink">この接続ポイントによって管理されている発信インターフェイスへの呼び出しを受信するためのシンクへの参照。</param>
+        <param name="cookie">このメソッドが戻るとき、接続の cookie を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>接続ポイントと、呼び出し元のシンク オブジェクトのアドバイザリ コネクションを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumConnections">
+      <MemberSignature Language="C#" Value="public void EnumConnections (out Microsoft.VisualBasic.Compatibility.VB6.IEnumConnections enumC);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void EnumConnections([out] class Microsoft.VisualBasic.Compatibility.VB6.IEnumConnections&amp; enumC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.EnumConnections(Microsoft.VisualBasic.Compatibility.VB6.IEnumConnections@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumC" Type="Microsoft.VisualBasic.Compatibility.VB6.IEnumConnections&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="enumC">このメソッドが戻るときに、新しく作成された列挙子が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>この接続ポイントに存在する接続を反復処理する列挙子オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionInterface">
+      <MemberSignature Language="C#" Value="public void GetConnectionInterface (out Guid piid);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void GetConnectionInterface([out] valuetype System.Guid&amp; piid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.GetConnectionInterface(System.Guid@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="piid" Type="System.Guid&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="piid">このパラメーターが返されるときは、この接続ポイントによって管理されている発信インターフェイスの IID を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>この接続ポイントによって管理されている発信インターフェイスの IID を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionPointContainer">
+      <MemberSignature Language="C#" Value="public void GetConnectionPointContainer (out Microsoft.VisualBasic.Compatibility.VB6.IConnectionPointContainer cpc);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void GetConnectionPointContainer([out] class Microsoft.VisualBasic.Compatibility.VB6.IConnectionPointContainer&amp; cpc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.GetConnectionPointContainer(Microsoft.VisualBasic.Compatibility.VB6.IConnectionPointContainer@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cpc" Type="Microsoft.VisualBasic.Compatibility.VB6.IConnectionPointContainer&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="cpc">このパラメーターが返されるときに、接続可能オブジェクトが含まれています。<see langword="IConnectionPointContainer" />インターフェイスです。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>取得、<see langword="IConnectionPointContainer" />概念的には この接続ポイントを所有している接続可能なオブジェクトへのインターフェイス ポインター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unadvise">
+      <MemberSignature Language="C#" Value="public void Unadvise (int cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void Unadvise([in]int32 cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.Unadvise(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">以前から返される接続の cookie、<see cref="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.Advise(System.IntPtr,System.Int32@)" />メソッドです。</param>
+        <summary>を通じてが既に確立されているアドバイザリ接続を閉じ、<see cref="M:Microsoft.VisualBasic.Compatibility.VB6.IConnectionPoint.Advise(System.IntPtr,System.Int32@)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい開発では、次を参照してください。<xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint>です。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

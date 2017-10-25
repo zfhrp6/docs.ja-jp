@@ -1,0 +1,174 @@
+<Type Name="LinePragmaCodeInfo" FullName="System.Web.Compilation.LinePragmaCodeInfo">
+  <TypeSignature Language="C#" Value="public sealed class LinePragmaCodeInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit LinePragmaCodeInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.LinePragmaCodeInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解析中のスクリプト ブロックのプロパティが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの解析時にスクリプト ブロックに関する情報が格納されている、<xref:System.Web.Compilation.LinePragmaCodeInfo>クラスです。 このクラスが使用されて、<xref:System.Web.UI.SimpleWebHandlerParser>クラスです。  
+  
+ <xref:System.Web.Compilation.LinePragmaCodeInfo>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinePragmaCodeInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.LinePragmaCodeInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.LinePragmaCodeInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを使用する、<xref:System.Web.Compilation.LinePragmaCodeInfo>インスタンスのパラメーターを受け取るコンス トラクター オーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinePragmaCodeInfo (int startLine, int startColumn, int startGeneratedColumn, int codeLength, bool isCodeNugget);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 startLine, int32 startColumn, int32 startGeneratedColumn, int32 codeLength, bool isCodeNugget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.LinePragmaCodeInfo.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startLine" Type="System.Int32" />
+        <Parameter Name="startColumn" Type="System.Int32" />
+        <Parameter Name="startGeneratedColumn" Type="System.Int32" />
+        <Parameter Name="codeLength" Type="System.Int32" />
+        <Parameter Name="isCodeNugget" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="startLine">.Aspx ファイル内のスクリプト ブロックの開始行。</param>
+        <param name="startColumn">.Aspx ファイル内のスクリプト ブロックの開始列。</param>
+        <param name="startGeneratedColumn">生成されたソース ファイル内のスクリプト ブロックの開始列。</param>
+        <param name="codeLength">スクリプト ブロックの長さ。</param>
+        <param name="isCodeNugget">スクリプト ブロックは内にあるかどうかを示す値&lt;%%&gt;タグ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.LinePragmaCodeInfo" />クラスを初期化するためのパラメーターを使用して、 <see cref="P:System.Web.Compilation.LinePragmaCodeInfo.StartLine" />、 <see cref="P:System.Web.Compilation.LinePragmaCodeInfo.StartColumn" />、 <see cref="P:System.Web.Compilation.LinePragmaCodeInfo.StartGeneratedColumn" />、 <see cref="P:System.Web.Compilation.LinePragmaCodeInfo.CodeLength" />、および<see cref="P:System.Web.Compilation.LinePragmaCodeInfo.IsCodeNugget" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeLength">
+      <MemberSignature Language="C#" Value="public int CodeLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CodeLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.LinePragmaCodeInfo.CodeLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト ブロックの長さを取得します。</summary>
+        <value>スクリプト ブロックの長さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCodeNugget">
+      <MemberSignature Language="C#" Value="public bool IsCodeNugget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCodeNugget" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.LinePragmaCodeInfo.IsCodeNugget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト ブロックは内にあるかどうかを示す値を取得&lt;%%&gt;タグ。</summary>
+        <value>
+          <see langword="true" />スクリプト ブロックに含まれている場合&lt;%%&gt;タグです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内にあるコード、 \<%% > タグは「注目」と呼ばれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartColumn">
+      <MemberSignature Language="C#" Value="public int StartColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.LinePragmaCodeInfo.StartColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.Aspx ファイル内のスクリプト ブロックの開始列を取得します。</summary>
+        <value>.Aspx ファイル内のスクリプト ブロックの開始列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartGeneratedColumn">
+      <MemberSignature Language="C#" Value="public int StartGeneratedColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartGeneratedColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.LinePragmaCodeInfo.StartGeneratedColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたソース ファイル内のスクリプト ブロックの開始列を取得します。</summary>
+        <value>生成されたソース ファイル内のスクリプト ブロックの開始列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartLine">
+      <MemberSignature Language="C#" Value="public int StartLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartLine" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.LinePragmaCodeInfo.StartLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.Aspx ファイル内のスクリプト ブロックの開始行を取得します。</summary>
+        <value>.Aspx ファイル内のスクリプト ブロックの開始行。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

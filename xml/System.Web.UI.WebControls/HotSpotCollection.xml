@@ -1,0 +1,344 @@
+<Type Name="HotSpotCollection" FullName="System.Web.UI.WebControls.HotSpotCollection">
+  <TypeSignature Language="C#" Value="public sealed class HotSpotCollection : System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HotSpotCollection extends System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HotSpotCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.StateManagedCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.HotSpotCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.HotSpot" />の内部オブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotCollection>クラスを有効にするコレクションを表します、<xref:System.Web.UI.WebControls.ImageMap>コントロールの一覧を維持するために、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトが含まれています。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>メソッドを指定した追加<xref:System.Web.UI.WebControls.HotSpot>序数に基づくインデックスの配列の末尾にコレクションにオブジェクト。 使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>を追加するメソッド、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを指定したインデックス位置にあるコレクション。 使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Item%2A>に直接アクセスするためのインデクサー、<xref:System.Web.UI.WebControls.HotSpot>単純な配列表記を使用して、指定したインデックスにあるコレクション内のオブジェクト。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Remove%2A>を削除する方法、<xref:System.Web.UI.WebControls.HotSpot>コレクションの末尾からのオブジェクト。 使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.RemoveAt%2A>を削除する方法、<xref:System.Web.UI.WebControls.HotSpot>指定したインデックス位置からのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を制御し、2 つ追加<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティを使用してアクセスする、<xref:System.Web.UI.WebControls.HotSpotCollection>のコレクション、<xref:System.Web.UI.WebControls.ImageMap>を制御し、追加、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトをします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.Cstr/CS/imagemap.cstrcs.aspx#1)]
+ [!code-aspx-vb[ImageMap.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.Cstr/VB/imagemap.cstrvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HotSpotCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpotCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、このコンス トラクターは、の新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.HotSpotCollection>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CircleHotSpot.%23ctor%2A>プログラムで作成する 2 つのコンス トラクター<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトに追加して、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.Cstr/CS/imagemap.cstrcs.aspx#1)]
+ [!code-aspx-vb[ImageMap.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.Cstr/VB/imagemap.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.UI.WebControls.HotSpot spot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.UI.WebControls.HotSpot spot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.Add(System.Web.UI.WebControls.HotSpot)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="spot" Type="System.Web.UI.WebControls.HotSpot" />
+      </Parameters>
+      <Docs>
+        <param name="spot"><see cref="T:System.Web.UI.WebControls.HotSpot" />をコレクションに追加するオブジェクト。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.HotSpot" />の末尾にオブジェクト、<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />コレクション。</summary>
+        <returns>オブジェクトがコレクションに追加されたインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>メソッドは、指定した追加<xref:System.Web.UI.WebControls.HotSpot>コレクションの末尾にオブジェクト。 追加する、<xref:System.Web.UI.WebControls.HotSpot>コレクションの位置、特定のインデックスを使用するオブジェクト、<xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を制御し、2 つ追加<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティを使用してアクセスする、<xref:System.Web.UI.WebControls.HotSpotCollection>のコレクション、<xref:System.Web.UI.WebControls.ImageMap>を制御し、追加、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトをします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.Cstr/CS/imagemap.cstrcs.aspx#1)]
+ [!code-aspx-vb[ImageMap.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.Cstr/VB/imagemap.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected override object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.HotSpot spot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.HotSpot spot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.Insert(System.Int32,System.Web.UI.WebControls.HotSpot)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="spot" Type="System.Web.UI.WebControls.HotSpot" />
+      </Parameters>
+      <Docs>
+        <param name="index">配列インデックスを追加する位置を示す、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト。</param>
+        <param name="spot">コレクションに追加する <see cref="T:System.Web.UI.WebControls.HotSpot" /> オブジェクト。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトに、<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>メソッドは、指定した追加<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを指定したインデックス位置にあるコレクション。 追加する、<xref:System.Web.UI.WebControls.HotSpot>を使用して、コレクションの末尾にオブジェクト、<xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つをプログラムで追加する方法を示します<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトを<xref:System.Web.UI.WebControls.ImageMap>コントロール。 <xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティを使用してアクセスする、<xref:System.Web.UI.WebControls.HotSpotCollection>コレクション。 <xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>メソッドは、追加`Circle2`をコレクションにします。 <xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>メソッドは、追加`Circle1`の最前面に、最初の要素のコレクションに`Circle2`です。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[HotSpotCollection.Insert#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HotSpotCollection.Insert/CS/hotspotcollection.insertcs.aspx#1)]
+ [!code-aspx-vb[HotSpotCollection.Insert#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HotSpotCollection.Insert/VB/hotspotcollection.insertvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.HotSpot this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.HotSpot Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpotCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpot</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">場所を指定する序数インデックス値、<see cref="T:System.Web.UI.WebControls.HotSpot" />コレクション内のオブジェクト。</param>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.HotSpot" />で指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />コレクション。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HotSpot" />で指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーへのアクセスを使用して、<xref:System.Web.UI.WebControls.HotSpot>配列表記を使用して、指定されたインデックスでコレクション内のオブジェクト。 インデクサーを使用すると、変更または置換、<xref:System.Web.UI.WebControls.HotSpot>直接コレクション内のオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.HotSpotCollection.Item%2A>プロパティに直接アクセスを<xref:System.Web.UI.WebControls.HotSpot>に含まれるオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.HotSpotCollection>コレクションと表示の各オブジェクトの値<xref:System.Web.UI.WebControls.HotSpot.AlternateText%2A>プロパティページ上のラベル。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[HotSpotCollection.Item#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HotSpotCollection.Item/CS/hotspotcollection.itemcs.aspx#1)]
+ [!code-aspx-vb[HotSpotCollection.Item#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HotSpotCollection.Item/VB/hotspotcollection.itemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.HotSpot spot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.HotSpot spot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.Remove(System.Web.UI.WebControls.HotSpot)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="spot" Type="System.Web.UI.WebControls.HotSpot" />
+      </Parameters>
+      <Docs>
+        <param name="spot">コレクションから削除する <see cref="T:System.Web.UI.WebControls.HotSpot" /> オブジェクト。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトから、<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotCollection.Remove%2A>メソッドは、指定された削除<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをコレクションからです。 削除する、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをコレクション内の指定したインデックス位置を使用して位置から、<xref:System.Web.UI.WebControls.HotSpotCollection.RemoveAt%2A>メソッドです。  
+  
+ 新規に追加する<xref:System.Web.UI.WebControls.HotSpot>をコレクションにオブジェクトを使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>または<xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つをプログラムで追加する方法を示します<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトを<xref:System.Web.UI.WebControls.ImageMap>コントロール。 2 つの後に<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトに追加されます、 <xref:System.Web.UI.WebControls.HotSpotCollection> 、コレクション、<xref:System.Web.UI.WebControls.HotSpotCollection.Remove%2A>メソッドを使用して、削除`Circle1`コレクションからです。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[HotSpotCollection.Remove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HotSpotCollection.Remove/CS/hotspotcollection.removecs.aspx#1)]
+ [!code-aspx-vb[HotSpotCollection.Remove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HotSpotCollection.Remove/VB/hotspotcollection.removevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">配列インデックスを削除する、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.HotSpot" />コレクションから指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpotCollection.RemoveAt%2A>メソッドの削除、<xref:System.Web.UI.WebControls.HotSpot>コレクションから指定したインデックス位置にあるオブジェクト。 固有の仕様を削除する<xref:System.Web.UI.WebControls.HotSpot>オブジェクト名を使用して、コレクションから、<xref:System.Web.UI.WebControls.HotSpotCollection.Remove%2A>メソッドです。  
+  
+ 新規に追加する<xref:System.Web.UI.WebControls.HotSpot>をコレクションにオブジェクトを使用して、<xref:System.Web.UI.WebControls.HotSpotCollection.Add%2A>または<xref:System.Web.UI.WebControls.HotSpotCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つをプログラムで追加する方法を示します<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトを<xref:System.Web.UI.WebControls.ImageMap>コントロール。 2 つの後に<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトに追加されます、 <xref:System.Web.UI.WebControls.HotSpotCollection> 、コレクション、<xref:System.Web.UI.WebControls.HotSpotCollection.RemoveAt%2A>メソッドを使用して、コレクション内の最初のインデックス位置にあるオブジェクトを削除します。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[HotSpotCollection.RemoveAt#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HotSpotCollection.RemoveAt/CS/hotspotcollection.removeatcs.aspx#1)]
+ [!code-aspx-vb[HotSpotCollection.RemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HotSpotCollection.RemoveAt/VB/hotspotcollection.removeatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected override void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpotCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

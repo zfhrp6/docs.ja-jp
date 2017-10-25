@@ -1,0 +1,55 @@
+<Type Name="DataReceivedEventHandler" FullName="System.Diagnostics.DataReceivedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataReceivedEventHandler(object sender, DataReceivedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataReceivedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DataReceivedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Process</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Diagnostics.DataReceivedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Diagnostics.DataReceivedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Diagnostics.Process.OutputDataReceived" />イベントまたは<see cref="E:System.Diagnostics.Process.ErrorDataReceived" />のイベント、<see cref="T:System.Diagnostics.Process" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DataReceivedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ リダイレクトされたを非同期的に収集する<xref:System.Diagnostics.Process.StandardOutput%2A>または<xref:System.Diagnostics.Process.StandardError%2A>ストリームは、プロセスの出力、イベント ハンドラーを追加、<xref:System.Diagnostics.Process.OutputDataReceived>または<xref:System.Diagnostics.Process.ErrorDataReceived>イベント。 プロセスでは、対応するリダイレクトされたストリームに行を書き込むたびに、これらのイベントが発生します。 リダイレクトされたストリームが閉じている場合、null の行は、イベント ハンドラーに送信されます。 アクセスする前にこの条件を調べ、イベント ハンドラーを確認してください、<xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティです。 たとえば、使用することができます、`static`メソッド<xref:System.String.IsNullOrEmpty%2A?displayProperty=nameWithType>を検証する、<xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>イベント ハンドラーのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リダイレクトされたで、非同期読み取り操作を実行する方法を示しています。<xref:System.Diagnostics.Process.StandardOutput%2A>のストリーム、**並べ替え**コマンド。 **並べ替え**コマンドは、コンソール アプリケーションを読み取り、テキスト入力を並べ替えています。  
+  
+ 例は、作成、<xref:System.Diagnostics.DataReceivedEventHandler>の委任、`SortOutputHandler`イベント ハンドラーを持つデリゲートを関連付けると、<xref:System.Diagnostics.Process.OutputDataReceived>イベント。 イベント ハンドラーは、テキストの行からリダイレクトされた<xref:System.Diagnostics.Process.StandardOutput%2A>ストリームは、テキストを書式化して、画面にテキストを書き込みます。  
+  
+ [!code-cpp[Process_AsyncStreams#1](~/samples/snippets/cpp/VS_Snippets_CLR/process_asyncstreams/CPP/sort_async.cpp#1)]
+ [!code-csharp[Process_AsyncStreams#1](~/samples/snippets/csharp/VS_Snippets_CLR/process_asyncstreams/CS/sort_async.cs#1)]
+ [!code-vb[Process_AsyncStreams#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/process_asyncstreams/VB/sort_async.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

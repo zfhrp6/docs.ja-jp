@@ -1,0 +1,108 @@
+<Type Name="ManualResetEvent" FullName="System.Threading.ManualResetEvent">
+  <TypeSignature Language="C#" Value="public sealed class ManualResetEvent : System.Threading.EventWaitHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManualResetEvent extends System.Threading.EventWaitHandle" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ManualResetEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.EventWaitHandle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントが発生したことを、1 つ以上の待機中のスレッドに通知します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET framework version 2.0 では、<xref:System.Threading.ManualResetEvent>から新しい派生<xref:System.Threading.EventWaitHandle>クラスです。 A<xref:System.Threading.ManualResetEvent>は機能的に等価、<xref:System.Threading.EventWaitHandle>で作成された<xref:System.Threading.EventResetMode?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  異なり、<xref:System.Threading.ManualResetEvent>クラス、<xref:System.Threading.EventWaitHandle>クラスは、名前付きシステム同期イベントへのアクセスを提供します。  
+  
+ <xref:System.Threading.ManualResetEvent>通知することによって互いに通信するためにスレッドを使用できます。 通常、この通信は、他のスレッドを続行する前にあるスレッドが完了する必要がありますタスクに関するものです。  
+  
+ スレッドが続行、呼び出しスレッドが他の前に完了する必要がありますのあるアクティビティが開始されると<xref:System.Threading.EventWaitHandle.Reset%2A>に`ManualResetEvent`非シグナル状態にします。 このスレッドはようなものの制御、`ManualResetEvent`です。 スレッドの呼び出しに<xref:System.Threading.WaitHandle.WaitOne%2A>上、`ManualResetEvent`はブロックすると、シグナルを待機しています。 呼び出しスレッドを制御するには、アクティビティが完了すると、<xref:System.Threading.EventWaitHandle.Set%2A>を待機中のスレッドが続行できることを通知します。 すべての待機中のスレッドが解放されます。  
+  
+ シグナル状態されて`ManualResetEvent`は手動でリセットされるまで、シグナル状態のままです。 つまり、呼び出し`WaitOne`は直ちに戻ります。  
+  
+ 初期状態を制御することができます、`ManualResetEvent`ブール値をコンス トラクターに渡すことによって`true`初期状態が通知される場合と`false`それ以外の場合。  
+  
+ `ManualResetEvent`使用することもできます、 `static` <xref:System.Threading.WaitHandle.WaitAll%2A>と<xref:System.Threading.WaitHandle.WaitAny%2A>メソッドです。  
+  
+ スレッド同期機構の詳細については、次を参照してください。 [ManualResetEvent と ManualResetEventSlim](~/docs/standard/threading/manualresetevent-and-manualreseteventslim.md)概念説明のドキュメントです。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Threading.ManualResetEvent>動作します。 この例の先頭、 <xref:System.Threading.ManualResetEvent> unsignaled 状態で (つまり、`false`コンス トラクターに渡される)。 3 つの例は、作成スレッドでブロックされるので、<xref:System.Threading.ManualResetEvent>を呼び出してその<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドです。 押されたとき、 **Enter**キーの例では、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドで、次の 3 つのすべてのスレッドを解放します。 これは、動作と、<xref:System.Threading.AutoResetEvent>クラスは、各リリース後に自動的にリセットする、一度に 1 つのスレッドを解放します。  
+  
+ キーを押して、 **Enter**キーが再びことを示します、<xref:System.Threading.ManualResetEvent>までシグナルの状態のままになります、<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出された: 例では、次の 2 つ以上のスレッドを開始します。 呼び出すときに、これらのスレッドがブロックされない、<xref:System.Threading.WaitHandle.WaitOne%2A>メソッドが完了する代わりに実行します。  
+  
+ キーを押して、 **Enter**キーを呼び出す例によって、もう一度、<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドしブロックを呼び出すときに 1 つの複数のスレッドを開始する<xref:System.Threading.WaitHandle.WaitOne%2A>です。 キーを押して、 **Enter**キー 1 つの最後に呼び出し<xref:System.Threading.EventWaitHandle.Set%2A>リリース最後のスレッドと、プログラムを終了します。  
+  
+ [!code-cpp[System.Threading.ManualResetEvent#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ManualResetEvent/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ManualResetEvent#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ManualResetEvent/CS/source.cs#1)]
+ [!code-vb[System.Threading.ManualResetEvent#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ManualResetEvent/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このクラスは、スレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManualResetEvent (bool initialState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ManualResetEvent.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          <see langword="true" />初期状態を設定する次のように通知します。<see langword="false" />を初期状態を非シグナル状態に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.ManualResetEvent" />初期状態をシグナル状態に設定するかどうかを示すブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の初期状態、<xref:System.Threading.ManualResetEvent>通知される (を渡すことによって作成されている場合は、`true`の`initialState`)、スレッドを待機している、<xref:System.Threading.ManualResetEvent>はブロックしません。 スレッドがブロックされるまで初期状態が非シグナル状態の場合は、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

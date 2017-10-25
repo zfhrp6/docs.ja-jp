@@ -1,0 +1,179 @@
+<Type Name="EventRoute" FullName="System.Windows.EventRoute">
+  <TypeSignature Language="C#" Value="public sealed class EventRoute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventRoute extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.EventRoute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ルーティング イベントが続かなければへのルートのコンテナーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、有効な<xref:System.Windows.RoutedEvent>、ターゲット オブジェクトとハンドラーの一覧のペアのイベントのイベントのルーティングを参照する順序付きリストが含まれています。 <xref:System.Windows.EventRoute>一覧に新しいエントリを追加することをサポートし、呼び出されるハンドラーの一覧にもできます。  
+  
+ ハンドラーを追加するための通常のほとんどの操作[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]イベントにこのクラスの扱いが必要としない (たとえば、使用<xref:System.Windows.EventManager>クラス処理を追加またはイベントのハンドラーを既存のクエリを実行する方法)。 このクラスは、主に使用する要素が子要素または要素を追加するか、既定の集計イベントのルートから要素を削除する実用的にする親要素について、特定の知識がある場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventRoute (System.Windows.RoutedEvent routedEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.RoutedEvent routedEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.#ctor(System.Windows.RoutedEvent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+      </Parameters>
+      <Docs>
+        <param name="routedEvent">このイベントのルーティングに関連する NULL 以外のイベントの識別子です。</param>
+        <summary>
+          <see cref="T:System.Windows.EventRoute" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object target, Delegate handler, bool handledEventsToo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(object target, class System.Delegate handler, bool handledEventsToo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.Add(System.Object,System.Delegate,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="handler" Type="System.Delegate" />
+        <Parameter Name="handledEventsToo" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">ハンドラーのルートに追加するのに元のターゲット オブジェクトを指定します。</param>
+        <param name="handler">ルートに追加するハンドラーを指定します。</param>
+        <param name="handledEventsToo">リスナーが既に処理されているイベントを検出したかどうかを示します。</param>
+        <summary>ルートに指定された対象の指定されたハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のターゲット インスタンスのハンドラーを 2 回追加すると、エラーではありません。 このような場合は、ハンドラーが 2 回呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeekBranchNode">
+      <MemberSignature Language="C#" Value="public object PeekBranchNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object PeekBranchNode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.PeekBranchNode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素を返します。</summary>
+        <returns>2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeekBranchSource">
+      <MemberSignature Language="C#" Value="public object PeekBranchSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object PeekBranchSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.PeekBranchSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素のソースを返します。</summary>
+        <returns>2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素のソース。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopBranchNode">
+      <MemberSignature Language="C#" Value="public object PopBranchNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object PopBranchNode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.PopBranchNode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>2 つの論理ツリーの分岐イベント ルートのスタックの最上位ノードを返します。</summary>
+        <returns>2 つの論理ツリーの分岐イベント ルートのスタックの最上位ノード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushBranchNode">
+      <MemberSignature Language="C#" Value="public void PushBranchNode (object node, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PushBranchNode(object node, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventRoute.PushBranchNode(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Object" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="node">2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素。</param>
+        <param name="source">2 つの論理ツリーの分岐イベント ルートのスタックの最上位の要素のソース。</param>
+        <summary>イベント ルート スタックが 2 つの論理ツリーの分岐には、最上位ノードを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

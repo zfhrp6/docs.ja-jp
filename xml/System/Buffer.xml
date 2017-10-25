@@ -1,0 +1,426 @@
+<Type Name="Buffer" FullName="System.Buffer">
+  <TypeSignature Language="C#" Value="public static class Buffer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Buffer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Buffer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プリミティブ型の配列を操作します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Buffer>プリミティブ型の配列にのみ影響します。このクラスは、オブジェクトには適用されません。 各プリミティブ型は、一連の任意の動作や、プリミティブ型に関連付けられている制限に関係なくバイトとして扱われます。  
+  
+ <xref:System.Buffer>プリミティブ型を別の配列を 1 つのプリミティブ型の配列からバイトをコピーするメソッドの配列からバイトを取得、配列にバイトを設定、および配列の長さを取得を提供します。 このクラスは同様のメソッドよりもプリミティブ型を操作するためのパフォーマンスの向上、<xref:System.Array?displayProperty=nameWithType>クラスです。  
+  
+ <xref:System.Buffer>is applicable to the following primitive types: <xref:System.Boolean>, <xref:System.Char>, <xref:System.SByte>, <xref:System.Byte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>, <xref:System.UInt64>, <xref:System.IntPtr>, <xref:System.UIntPtr>, <xref:System.Single>, and <xref:System.Double>.  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかの使用を示しています。`Buffer`クラスのメソッドです。  
+  
+ [!code-cpp[System.Buffer.BlockCopy#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/buffer.cpp#1)]
+ [!code-csharp[System.Buffer.BlockCopy#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/buffer.cs#1)]
+ [!code-vb[System.Buffer.BlockCopy#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.BlockCopy/VB/buffer.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlockCopy">
+      <MemberSignature Language="C#" Value="public static void BlockCopy (Array src, int srcOffset, Array dst, int dstOffset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BlockCopy(class System.Array src, int32 srcOffset, class System.Array dst, int32 dstOffset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="src" Type="System.Array" />
+        <Parameter Name="srcOffset" Type="System.Int32" />
+        <Parameter Name="dst" Type="System.Array" />
+        <Parameter Name="dstOffset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="src">ソース バッファー。</param>
+        <param name="srcOffset">0 から始まるバイト オフセット<c>src</c>です。</param>
+        <param name="dst">コピー先のバッファー。</param>
+        <param name="dstOffset">0 から始まるバイト オフセット<c>dst</c>です。</param>
+        <param name="count">コピーするバイト数。</param>
+        <summary>コピー先の配列の指定したオフセット位置を先頭として、コピー元の配列の指定したオフセットから指定数のバイトをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コピー`count`からバイト`src`で始まる、`srcOffset`を`dst`で始まる、`dstOffset`です。 両方`srcOffset`と`dstOffset`は 0 から始まるです。 つまり、各バッファーの最初のバイトが 0 の位置は、1 を配置できません。  
+  
+ <xref:System.Buffer.BlockCopy%2A>メソッド内のバイトにアクセスする、`src`パラメーター配列をメモリにオフセットを使用して、いないインデックスまたは上限と下限の配列の範囲などの構造をプログラミングします。 たとえば、アプリケーションのプログラミング言語で宣言する場合、 <xref:System.Int32> -50 の 0 から始まる下限を持つ配列と、配列とオフセットが 5、<xref:System.Buffer.BlockCopy%2A>メソッド、メソッドにアクセスが最初の配列要素は、-49 のインデックス位置にある配列の 2 番目の要素。 さらに、最初にアクセスされる-49 の配列要素のバイトは、アプリケーションを実行しているコンピューターのエンディアンによって異なります。  
+  
+ その名前からわかるように、<xref:System.Buffer.BlockCopy%2A>メソッドは、一度に 1 つのバイトをコピーするのではなく、全体としてバイトのブロックをコピーします。 したがって場合、`src`と`dst`、同じ配列と、範囲参照`srcOffset`  +  `count` -1 の範囲が重複しています`dstOffset`  +  `count` - 1、先にコピーする前に、重複するバイトの値は上書きされません。 次の例では、という名前の配列の 0 ~ 16 バイト数の値で`arr`12-28 バイトにコピーされます。 重複する範囲に関係なく元のバイトの値が正常にコピーされます。  
+  
+ [!code-cpp[System.Buffer.BlockCopy#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/overlap1.cpp#3)]
+ [!code-csharp[System.Buffer.BlockCopy#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/overlap1.cs#3)]
+ [!code-vb[System.Buffer.BlockCopy#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.BlockCopy/VB/overlap1.vb#3)]  
+  
+ 次の例では、という名前の配列の 12-28 バイト数の値で`arr`バイト 0 ~ 16 にコピーされます。 もう一度、重複する範囲に関係なく元のバイトの値が正常にコピーされます。  
+  
+ [!code-cpp[System.Buffer.BlockCopy#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/overlap1.cpp#4)]
+ [!code-csharp[System.Buffer.BlockCopy#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/overlap1.cs#4)]
+ [!code-vb[System.Buffer.BlockCopy#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.BlockCopy/VB/overlap1.vb#4)]  
+  
+   
+  
+## Examples  
+ 次の例では、配列の領域をコピーを使用して、<xref:System.Buffer.BlockCopy%2A>メソッドです。 各<xref:System.Buffer.BlockCopy%2A>操作、および変換先がバイトのシーケンスと値の両方として配列を配列のソースが一覧表示されます。 使用する場合は、システムのエンディアンを検討の重要度の例に、<xref:System.Buffer.BlockCopy%2A>メソッド: ための Windows システムは、リトル エンディアン、プリミティブ データ型の値の下位バイトには、上位バイトが前に指定します。  
+  
+ [!code-cpp[System.Buffer.BlockCopy#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CPP/bcopy.cpp#2)]
+ [!code-csharp[System.Buffer.BlockCopy#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.BlockCopy/CS/bcopy.cs#2)]
+ [!code-vb[System.Buffer.BlockCopy#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.BlockCopy/VB/bcopy.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="src" /> または <paramref name="dst" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="src" /> または <paramref name="dst" /> は primitive な配列ではありません。  
+  
+ または  
+  
+ <paramref name="src" /> のバイト数が <paramref name="srcOffset" /> と <paramref name="count" /> の合計よりも小さい。  
+  
+ または  
+  
+ <paramref name="dst" /> のバイト数が <paramref name="dstOffset" /> と <paramref name="count" /> の合計よりも小さい。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="srcOffset" />、<paramref name="dstOffset" /> または <paramref name="count" /> は 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ByteLength">
+      <MemberSignature Language="C#" Value="public static int ByteLength (Array array);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ByteLength(class System.Array array) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.ByteLength(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列。</param>
+        <summary>指定した配列のバイト数を返します。</summary>
+        <returns>配列のバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、`ByteLength`配列内のバイト数を返します。  
+  
+ [!code-cpp[System.Buffer.Bytes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.Bytes/CPP/bytelength.cpp#1)]
+ [!code-csharp[System.Buffer.Bytes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.Bytes/CS/bytelength.cs#1)]
+ [!code-vb[System.Buffer.Bytes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.Bytes/VB/bytelength.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />プリミティブ型ではありません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="array" />2 ギガバイト (GB) を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public static byte GetByte (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8 GetByte(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.GetByte(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列。</param>
+        <param name="index">配列内の位置。</param>
+        <summary>指定した配列の指定した位置にあるバイトを取得します。</summary>
+        <returns>返します、<paramref name="index" />配列内のバイト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetByte`メソッドは、配列外の特定のバイトを取得します。 配列は、プリミティブの配列にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して配列内の指定した位置にバイト値を表示する、`GetByte`メソッドです。  
+  
+ [!code-cpp[System.Buffer.Bytes#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.Bytes/CPP/getbyte.cpp#3)]
+ [!code-csharp[System.Buffer.Bytes#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.Bytes/CS/getbyte.cs#3)]
+ [!code-vb[System.Buffer.Bytes#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.Bytes/VB/getbyte.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />プリミティブ型ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />負の値以上の長さを超える<paramref name="array" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="array" />2 ギガバイト (GB) を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryCopy">
+      <MemberSignature Language="C#" Value="public static void MemoryCopy (void* source, void* destination, long destinationSizeInBytes, long sourceBytesToCopy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MemoryCopy(void* source, void* destination, int64 destinationSizeInBytes, int64 sourceBytesToCopy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Void*" />
+        <Parameter Name="destination" Type="System.Void*" />
+        <Parameter Name="destinationSizeInBytes" Type="System.Int64" />
+        <Parameter Name="sourceBytesToCopy" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="source">コピーするバイトのアドレス。</param>
+        <param name="destination">対象のアドレス。</param>
+        <param name="destinationSizeInBytes">コピー先のメモリ ブロックで利用可能なバイト数。</param>
+        <param name="sourceBytesToCopy">コピーするバイト数。</param>
+        <summary>長整数値として指定されたバイト数を、メモリ内のアドレス間でコピーします。  
+  
+ この API は、CLS に準拠していません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コピー`sourceBytesToCopy`により指定されたアドレスからのバイト`source`で指定されたアドレスに`destination`です。 バッファーが重なり合っている場合との違い`destination`マイナス`source`はより小さい`sourceBytesToCopy`、ソース ブロックは逆の順序で移行先のブロックにコピーします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sourceBytesToCopy" /> が <paramref name="destinationSizeInBytes" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryCopy">
+      <MemberSignature Language="C#" Value="public static void MemoryCopy (void* source, void* destination, ulong destinationSizeInBytes, ulong sourceBytesToCopy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MemoryCopy(void* source, void* destination, unsigned int64 destinationSizeInBytes, unsigned int64 sourceBytesToCopy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.UInt64,System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Void*" />
+        <Parameter Name="destination" Type="System.Void*" />
+        <Parameter Name="destinationSizeInBytes" Type="System.UInt64" />
+        <Parameter Name="sourceBytesToCopy" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="source">コピーするバイトのアドレス。</param>
+        <param name="destination">対象のアドレス。</param>
+        <param name="destinationSizeInBytes">コピー先のメモリ ブロックで利用可能なバイト数。</param>
+        <param name="sourceBytesToCopy">コピーするバイト数。</param>
+        <summary>符号なし長整数値として指定されたバイト数を、メモリ内のアドレス間でコピーします。  
+  
+ この API は、CLS に準拠していません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コピー`sourceBytesToCopy`により指定されたアドレスからのバイト`source`で指定されたアドレスに`destination`です。 バッファーが重なり合っている場合との違い`destination`マイナス`source`はより小さい`sourceBytesToCopy`、ソース ブロックは逆の順序で移行先のブロックにコピーします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sourceBytesToCopy" /> が <paramref name="destinationSizeInBytes" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetByte">
+      <MemberSignature Language="C#" Value="public static void SetByte (Array array, int index, byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetByte(class System.Array array, int32 index, unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffer.SetByte(System.Array,System.Int32,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列。</param>
+        <param name="index">配列内の位置。</param>
+        <param name="value">割り当てる値。</param>
+        <summary>指定した配列の指定した位置にあるバイトに、指定した値を代入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `array`プリミティブの配列でなければなりません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して配列内の特定の位置にあるバイトに値を割り当てます、`SetByte`メソッドです。  
+  
+ [!code-cpp[System.Buffer.Bytes#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Buffer.Bytes/CPP/setbyte.cpp#2)]
+ [!code-csharp[System.Buffer.Bytes#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Buffer.Bytes/CS/setbyte.cs#2)]
+ [!code-vb[System.Buffer.Bytes#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Buffer.Bytes/VB/setbyte.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />プリミティブ型ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />負の値以上の長さを超える<paramref name="array" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="array" />2 ギガバイト (GB) を超えています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

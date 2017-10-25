@@ -1,0 +1,387 @@
+<Type Name="ApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.ApplicationBase">
+  <TypeSignature Language="C#" Value="public class ApplicationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ApplicationBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.ApplicationBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ、メソッド、および現在のアプリケーションに関連するイベントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Application`オブジェクトの現在のアプリケーションまたは DLL にのみ関連付けられているデータを返す。 システム レベル以外の情報は、`My.Application` に変更される可能性があります。  
+  
+ `My.Application` オブジェクトは、次のクラスで構成されています。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> は、すべてのプロジェクトで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>Windows フォーム アプリケーションで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>コンソール アプリケーションで使用可能なメンバーを提供します。  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.GetEnvironmentVariable`メソッドを取得し、この値が使用可能な場合は、PATH 環境変数の値を表示します。 それ以外の場合、PATH 環境変数が存在しないことを示すメッセージが表示されます。  
+  
+ [!code-vb[VbVbalrMyApplication#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.ApplicationBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeCulture">
+      <MemberSignature Language="C#" Value="public void ChangeCulture (string cultureName);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void ChangeCulture(string cultureName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeCulture(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">
+          <see langword="String" />。 文字列としてカルチャの名前。 使用可能な名前の一覧は、次を参照してください。<see cref="T:System.Globalization.CultureInfo" />です。</param>
+        <summary>文字列を操作し、文字列の書式設定の現在のスレッドで使用するカルチャを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.ChangeCulture`メソッドは、現在のスレッドの変更<xref:System.Threading.Thread.CurrentCulture%2A>プロパティです。 <xref:System.Threading.Thread.CurrentCulture%2A>日付、時刻、通貨、数値、テキスト、文字列比較、およびそのスレッドですべての計算の大文字と小文字の順序の並べ替えの既定の形式を決定します。  
+  
+ 現在のカルチャを取得するには、使用することができます、<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Culture%2A>プロパティまたは<xref:System.Threading.Thread.CurrentCulture%2A>プロパティです。  
+  
+ <xref:System.Threading.Thread.CurrentCulture%2A>言語設定とは異なります。 地理的地域の標準設定に関連するデータのみが含まれています。 したがって、<xref:System.Threading.Thread.CurrentCulture%2A>プロパティは、特定のカルチャをまたはにのみ設定できます、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>です。  
+  
+ 使用して、`My.Application.ChangeUICulture`カルチャに固有のリソースを取得するため、現在のスレッドを使用するカルチャを変更するメソッド。  
+  
+> [!IMPORTANT]
+>  `My.Application.ChangeCulture`メソッドが必要な<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>を設定します。 スレッドの操作は、スレッドに関連付けられているセキュリティ状態であるため危険です。 そのため、このアクセス許可は信頼できるコードを必要に応じてのみの指定にします。 信頼度の低いコードでは、スレッドのカルチャを変更することはできません。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、どのカルチャを変更した日付の文字列形式を示します。  
+  
+ [!code-vb[VbVbalrMyApplication#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cultureName" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cultureName" />有効なカルチャ名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeUICulture">
+      <MemberSignature Language="C#" Value="public void ChangeUICulture (string cultureName);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void ChangeUICulture(string cultureName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">
+          <see langword="String" />。 文字列としてカルチャの名前。 使用可能な名前の一覧は、次を参照してください。<see cref="T:System.Globalization.CultureInfo" />です。</param>
+        <summary>カルチャに固有のリソースを取得するため、現在のスレッドを使用するカルチャを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.ChangeUICulture`メソッドは、現在のスレッドの変更<xref:System.Threading.Thread.CurrentUICulture%2A>プロパティです。 <xref:System.Threading.Thread.CurrentUICulture%2A>リソース マネージャーによって使用されるカルチャを決定するプロパティと`My.Resources`オブジェクトです。 この情報を使用して実行時にカルチャ固有のリソースを検索します。  
+  
+ 現在の UI カルチャを取得するには、使用することができます、<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A>プロパティまたは<xref:System.Threading.Thread.CurrentUICulture%2A>プロパティです。  
+  
+ 使用して、`My.Application.ChangeCulture`文字列操作や文字列の書式設定に使用される、現在のスレッド カルチャを変更するメソッド。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.ChangeUICulture`メソッドをカルチャを設定、`My.Resources`オブジェクトがリソースを取得するために使用します。  
+  
+ [!code-vb[VbVbalrMyResources#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#10)]  
+  
+ この例を実行するアプリケーションが必要という名前の文字列`Message`にアプリケーションのリソース ファイル、およびアプリケーションはがフランス語のカルチャ バージョンが、そのリソース ファイルの`Resources.fr-FR.resx`します。 詳細については、次を参照してください。[する方法: リソース追加や削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)です。  
+  
+ アプリケーションには、そのリソース ファイルのフランス語のカルチャ バージョンがない場合、`My.Resources`オブジェクトは、既定のカルチャのリソース ファイルからリソースを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cultureName" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cultureName" />有効なカルチャ名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列操作や文字列の書式設定に使用される、現在のスレッド カルチャを取得します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />文字列操作、文字列の書式設定の現在のスレッド カルチャを表すオブジェクトを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.CurrentCulture`プロパティを取得、<xref:System.Globalization.CultureInfo>文字列操作、文字列の書式設定の現在のスレッドを使用するオブジェクト。 このオブジェクトは、によって返されたのと同じ、<xref:System.Threading.Thread.CurrentCulture%2A>プロパティで、そのスレッドで文字列に関連する計算の多くを制御します。 <xref:System.Threading.Thread.CurrentCulture%2A>プロパティは、日付、時刻、通貨、および数値の既定の形式を決定します。 また、並べ替えや比較などの文字列を大文字に変換する方法を決定します。  
+  
+ 使用することができます、カルチャを変更するには<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeCulture%2A>メソッドまたは別の割り当て<xref:System.Globalization.CultureInfo>オブジェクトを<xref:System.Threading.Thread.CurrentCulture%2A>プロパティです。  
+  
+ <xref:System.Threading.Thread.CurrentCulture%2A>言語設定とは異なります。 地理的地域の標準設定に関連するデータのみが含まれています。  
+  
+ 使用して、`My.Application.CurrentUICulture`カルチャに固有のリソースを取得するため、現在のスレッドを使用するカルチャを取得するプロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、カルチャが日付の文字列表現に与える影響を示します。  
+  
+ [!code-vb[VbVbalrMyApplication#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvironmentVariable">
+      <MemberSignature Language="C#" Value="public string GetEnvironmentVariable (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance string GetEnvironmentVariable(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.GetEnvironmentVariable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">A<see langword="String" />環境変数の名前を含むです。</param>
+        <summary>指定された環境変数の値を返します。</summary>
+        <returns>A<see langword="String" />名前の環境変数の値を含む<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.GetEnvironmentVariable`メソッドは、名前の環境変数を返します`name`です。 このメソッドはのような<xref:System.Environment.GetEnvironmentVariable%28System.String%29?displayProperty=nameWithType>で環境変数が指定された場合に、このメソッドによって例外が発生する点を除いて、`name`存在しません。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.GetEnvironmentVariable`メソッドを取得し、使用可能な場合は、PATH 環境変数の値を表示します。 それ以外の場合、PATH 環境変数が存在しないことを示すメッセージが表示されます。  
+  
+ [!code-vb[VbVbalrMyApplication#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定された環境変数<paramref name="name" />存在しません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元のコードはありません<see cref="T:System.Security.Permissions.EnvironmentPermission" />で<see langword="Read" />アクセスします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.ApplicationServices.AssemblyInfo Info { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.ApplicationServices.AssemblyInfo Info" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Info" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.AssemblyInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョン番号、説明などのアプリケーションのアセンブリに関する情報を取得するためのプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see cref="T:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo" />現在のアプリケーションのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、`My.Application.Info.Version`プロパティをアプリケーションのバージョンを表示します。  
+  
+ [!code-vb[VbVbalrMyApplication#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.Log Log { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Logging.Log Log" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.Log</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティとイベントと例外の情報をアプリケーションのログ リスナーに書き込むためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see cref="T:Microsoft.VisualBasic.Logging.Log" />現在のアプリケーションのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UICulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo UICulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo UICulture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッド カルチャに固有のリソースの取得に使用されるカルチャを取得します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />カルチャに固有のリソースを取得するため、現在のスレッドを使用するカルチャを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.CurrentUICulture`プロパティを取得、<xref:System.Globalization.CultureInfo>カルチャに固有のリソースを取得するため、現在のスレッドを使用するオブジェクトします。 このオブジェクトは、によって返されたのと同じ、<xref:System.Threading.Thread.CurrentUICulture%2A>プロパティです。 <xref:System.Threading.Thread.CurrentUICulture%2A>リソース マネージャーによって使用されるカルチャを決定するプロパティと`My.Resources`オブジェクト、情報の実行時にカルチャ固有のリソースを検索する必要があります。  
+  
+ 使用することができます、カルチャを変更するには<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>メソッドまたは別の割り当て<xref:System.Globalization.CultureInfo>オブジェクトを<xref:System.Threading.Thread.CurrentUICulture%2A>プロパティです。  
+  
+ <xref:System.Threading.Thread.CurrentCulture%2A>言語設定とは異なります。 地理的地域の標準設定に関連するデータのみが含まれています。  
+  
+ 使用して、`My.Application.CurrentCulture`文字列操作や文字列の書式設定に使用される、現在のスレッド カルチャを取得するプロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.CurrentCulture`プロパティを使用して変更する前に、現在のカルチャのキャッシュを<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>です。 `My.Application.ChangeUICulture`メソッドの設定、カルチャ、`My.Resources`オブジェクトがリソースを取得するために使用します。  
+  
+ [!code-vb[VbVbalrMyResources#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#10)]  
+  
+ この例を実行するアプリケーションが必要という名前の文字列`Message`にアプリケーションのリソース ファイル、およびアプリケーションはがフランス語のカルチャ バージョンが、そのリソース ファイルの`Resources.fr-FR.resx`します。 詳細については、次を参照してください。[する方法: リソース追加や削除](http://msdn.microsoft.com/en-us/7b77bc06-3952-4799-b029-def3f8f7f88d)です。  
+  
+ アプリケーションには、そのリソース ファイルのフランス語のカルチャ バージョンがない場合、`My.Resources`オブジェクトは、既定のカルチャのリソース ファイルからリソースを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

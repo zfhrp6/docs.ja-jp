@@ -1,0 +1,299 @@
+<Type Name="DataGridView+DataGridViewTopRowAccessibleObject" FullName="System.Windows.Forms.DataGridView+DataGridViewTopRowAccessibleObject">
+  <TypeSignature Language="C#" Value="protected class DataGridView.DataGridViewTopRowAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit DataGridView/DataGridViewTopRowAccessibleObject extends System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.AccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.DataGridViewColumnHeaderCell" /> オブジェクトの行に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームには、ユーザー補助クライアント アプリケーションを使用するプログラムは、組み込みのユーザー補助のサポートが含まれています。 ユーザー補助クライアント アプリケーションの例では、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ画面拡大ツールおよびレビュー担当者のユーティリティが含まれます。  
+  
+ <xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject>クラスから継承、<xref:System.Windows.Forms.AccessibleObject>の行に関する情報を提供するクラス<xref:System.Windows.Forms.DataGridViewColumnHeaderCell>ユーザー補助クライアント アプリケーションにオブジェクト。 各クラスの視覚的な部分を表す、 <xref:System.Windows.Forms.DataGridView>— など<xref:System.Windows.Forms.DataGridViewColumnHeaderCell>、 <xref:System.Windows.Forms.DataGridViewRowHeaderCell>、<xref:System.Windows.Forms.DataGridViewRow>と<xref:System.Windows.Forms.DataGridViewCell>— もから継承するクラスを含む<xref:System.Windows.Forms.AccessibleObject>外側のクラスに関する情報を提供し、ユーザー補助クライアント アプリケーションの代理としてアクションを実行します。  
+  
+ 名前や説明などの追加情報を提供するインスタンスがある、<xref:System.Windows.Forms.DataGridView>コントロール、ユーザー補助クライアント アプリケーションにします。 この追加情報を提示するための 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>と<xref:System.Windows.Forms.Control.AccessibleDescription%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+> [!NOTE]
+>  変更する必要があります、<xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>と<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティ値の場合など、まれな状況でのみを行う、<xref:System.Windows.Forms.DataGridView>リストのようになります。  
+  
+ 場合によっては、必要がある場合以上のアクセシビリティ情報またはカスタムに付属するアクションをさまざまなユーザー補助<xref:System.Windows.Forms.DataGridView>または<xref:System.Windows.Forms.DataGridViewCell>です。 ユーザー補助機能をカスタマイズするから派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.DataGridView.DataGridViewAccessibleObject>または<xref:System.Windows.Forms.DataGridViewCell.DataGridViewCellAccessibleObject>クラスおよびオーバーライド、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。 たとえば、セル内で特別なヒット テストなど、独自のカスタム動作を実装するカスタムの行ヘッダー セルを作成している場合から継承するクラスを作成する必要があります、<xref:System.Windows.Forms.DataGridViewRowHeaderCell.DataGridViewRowHeaderCellAccessibleObject>クラスをオーバーライド、<xref:System.Windows.Forms.DataGridViewRowHeaderCell.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.DataGridView>を使用して、データ構造体を公開<xref:System.Windows.Forms.AccessibleRole>階層の表に、データを定義する値。 Microsoft Active Accessibility をデータ テーブルを公開する方法については、"を公開するデータ テーブルを通じて Microsoft Active Accessibility"http://msdn.microsoft.com/library の MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewTopRowAccessibleObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject" />クラス設定がない場合、<see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewTopRowAccessibleObject (System.Windows.Forms.DataGridView owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridView owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.#ctor(System.Windows.Forms.DataGridView)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.DataGridView" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.DataGridView" />を所有している、<see cref="T:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject" /></param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject" />クラス、設定、<see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" />プロパティを指定した値にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの位置とサイズを取得します。</summary>
+        <value>ユーザー補助オブジェクトの境界を表す <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの詳細については、次を参照してください。、<xref:System.Windows.Forms.AccessibleObject.Bounds%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" /> プロパティが設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChild">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject GetChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject GetChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.GetChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセス可能な子の 0 から始まるインデックス。</param>
+        <summary>子を返します、指定したインデックスに対応するユーザー補助オブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Forms.AccessibleObject" />指定したインデックスに列ヘッダーを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列ヘッダーを表す子ユーザー補助オブジェクトの順序に対応、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" /> プロパティが設定されていません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildCount">
+      <MemberSignature Language="C#" Value="public override int GetChildCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetChildCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.GetChildCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー補助オブジェクトに属する子の数を返します。</summary>
+        <returns>ユーザー補助オブジェクトに属する子ユーザー補助オブジェクトの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属する子ユーザー補助オブジェクトの数、<xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject>で表示する列の番号に対応する、<xref:System.Windows.Forms.DataGridView>です。 場合、<xref:System.Windows.Forms.DataGridView.RowHeadersVisible%2A?displayProperty=nameWithType>プロパティは`true`、<xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.GetChildCount%2A>メソッドが含まれています、<xref:System.Windows.Forms.DataGridViewTopLeftHeaderCell>子ユーザー補助オブジェクトの数にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" /> プロパティが設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの名前を取得します。</summary>
+        <value>「Top 行」の文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Navigate (System.Windows.Forms.AccessibleNavigation navigationDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject Navigate(valuetype System.Windows.Forms.AccessibleNavigation navigationDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Navigate(System.Windows.Forms.AccessibleNavigation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigationDirection" Type="System.Windows.Forms.AccessibleNavigation" />
+      </Parameters>
+      <Docs>
+        <param name="navigationDirection"><see cref="T:System.Windows.Forms.AccessibleNavigation" /> 値のいずれか。</param>
+        <summary>他のユーザー補助オブジェクトに移動します。</summary>
+        <returns><see cref="T:System.Windows.Forms.AccessibleObject" />内の指定したオブジェクトを表す<see cref="T:System.Windows.Forms.AccessibleNavigation" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表、<xref:System.Windows.Forms.AccessibleObject>を<xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Navigate%2A>メソッドは各パラメーターの値を返します。  
+  
+|パラメーター値|戻り値|  
+|---------------------|------------------|  
+|<xref:System.Windows.Forms.AccessibleNavigation.Next> または<br /><br /> <xref:System.Windows.Forms.AccessibleNavigation.Down>|ユーザー補助オブジェクトを表す最初<xref:System.Windows.Forms.DataGridViewRow>内のデータ行は、<xref:System.Windows.Forms.DataGridView>です。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.FirstChild>|ユーザー補助オブジェクトの最初の列ヘッダーを表す、<xref:System.Windows.Forms.DataGridView>です。 場合、<xref:System.Windows.Forms.DataGridView.RowHeadersVisible%2A>プロパティに設定されている`true`、ユーザー補助オブジェクトを表す、<xref:System.Windows.Forms.DataGridViewTopLeftHeaderCell>です。|  
+|<xref:System.Windows.Forms.AccessibleNavigation.LastChild>|最後に表示される列の列ヘッダーを表すユーザー補助オブジェクト。|  
+|他のすべての<xref:System.Windows.Forms.AccessibleNavigation>値|`null`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" /> プロパティが設定されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridView Owner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridView Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataGridView" />列見出しの行を格納しています。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridView" />列見出しの行を格納しています。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" />プロパティは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject" /> の親を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridView.DataGridViewAccessibleObject" />を表す、<see cref="T:System.Windows.Forms.DataGridView" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Owner" /> プロパティが設定されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトのロールを取得します。</summary>
+        <value><see cref="F:System.Windows.Forms.AccessibleRole.Row" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの値を取得します。</summary>
+        <value>「Top 行」の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Value%2A>プロパティと同じ、<xref:System.Windows.Forms.DataGridView.DataGridViewTopRowAccessibleObject.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

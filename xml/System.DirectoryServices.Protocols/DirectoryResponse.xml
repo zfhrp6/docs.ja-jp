@@ -1,0 +1,135 @@
+<Type Name="DirectoryResponse" FullName="System.DirectoryServices.Protocols.DirectoryResponse">
+  <TypeSignature Language="C#" Value="public abstract class DirectoryResponse : System.DirectoryServices.Protocols.DirectoryOperation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DirectoryResponse extends System.DirectoryServices.Protocols.DirectoryOperation" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.DirectoryResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryOperation</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.DirectoryResponse" />クラスは、要求応答のクラスの基本クラスと同様に、<see cref="T:System.DirectoryServices.Protocols.SearchResponse" />と<see cref="T:System.DirectoryServices.Protocols.AddResponse" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public virtual System.DirectoryServices.Protocols.DirectoryControl[] Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.DirectoryControl[] Controls" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DirectoryControl[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.Controls" />プロパティには配列が含まれています<see cref="T:System.DirectoryServices.Protocols.DirectoryControl" />サーバーによって返されるオブジェクト。</summary>
+        <value>配列<see cref="T:System.DirectoryServices.Protocols.DirectoryControl" />サーバーによって返されるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string ErrorMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.ErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.ErrorMessage" />プロパティがあれば、この操作のエラー メッセージを格納します。</summary>
+        <value>この操作のエラー メッセージ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchedDN">
+      <MemberSignature Language="C#" Value="public virtual string MatchedDN { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MatchedDN" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.MatchedDN" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.MatchedDN" />プロパティには、サーバーによって返される一致の識別名が含まれています。</summary>
+        <value>サーバーによって返される一致した識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Referral">
+      <MemberSignature Language="C#" Value="public virtual Uri[] Referral { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri[] Referral" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.Referral" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.Referral" />プロパティには、サーバーの参照が含まれています。</summary>
+        <value>サーバーの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestId">
+      <MemberSignature Language="C#" Value="public string RequestId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.RequestId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.RequestId" />プロパティには、要求の識別子が含まれています。</summary>
+        <value>要求の識別子です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">ユーザーがプロパティ値を設定しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultCode">
+      <MemberSignature Language="C#" Value="public virtual System.DirectoryServices.Protocols.ResultCode ResultCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.ResultCode ResultCode" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryResponse.ResultCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ResultCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryResponse.ResultCode" />プロパティには、操作の結果コードが含まれています。</summary>
+        <value>操作の結果コード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

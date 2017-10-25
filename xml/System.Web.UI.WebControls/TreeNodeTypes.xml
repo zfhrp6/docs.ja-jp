@@ -1,0 +1,129 @@
+<Type Name="TreeNodeTypes" FullName="System.Web.UI.WebControls.TreeNodeTypes">
+  <TypeSignature Language="C#" Value="public enum TreeNodeTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TreeNodeTypes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeTypes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別のノード型 (リーフ、親、およびルート) を表し、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeTypes>で使用できる別のノード型を表す列挙体が使用される、<xref:System.Web.UI.WebControls.TreeView>コントロール。 次の表では、次の 3 つの異なるノード型について説明します。  
+  
+|ノード型|説明|  
+|---------------|-----------------|  
+|リーフ|子ノードなしでのノードです。|  
+|親|親ノードと 1 つまたは複数の子ノードがノード。|  
+|ルート|親ノードがなく、1 つまたは複数の子ノードがノード。|  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeTypes>列挙体は、フラグ列挙体は、ビットごとの演算を使用して値を結合することができます。 たとえばを親ノードおよびリーフ ノードを表す、行うことができます、ビットごと`OR`親とリーフの値に対して操作します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>プロパティの使用、<xref:System.Web.UI.WebControls.TreeNodeTypes.Leaf>でチェック ボックスを表示するノードの種類を表す列挙体、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>コントロール。 ユーザーからの複数の項目を選択できるように指定したノードの種類の横にあるチェック ボックスを表示するときに設定されている値以外の値は [なし]、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeTypes>ことを示す列挙体、<xref:System.Web.UI.WebControls.TreeView>コントロールは、親ノードおよびリーフ ノードだけの各チェック ボックスを表示する必要があります。  
+  
+ [!code-aspx-csharp[TreeViewShowCheckBoxes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewShowCheckBoxes/CS/treeviewshowcheckboxescs.aspx#1)]
+ [!code-aspx-vb[TreeViewShowCheckBoxes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewShowCheckBoxes/VB/treeviewshowcheckboxesvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeTypes All = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeTypes.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのノードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Leaf">
+      <MemberSignature Language="C#" Value="Leaf" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeTypes Leaf = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeTypes.Leaf" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子ノードなしでのノードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeTypes None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeTypes.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="Parent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeTypes Parent = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeTypes.Parent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親ノードと 1 つまたは複数の子ノードがノード。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="Root" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.TreeNodeTypes Root = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.TreeNodeTypes.Root" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親ノードがなく、1 つまたは複数の子ノードがノード。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

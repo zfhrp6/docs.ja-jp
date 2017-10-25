@@ -1,0 +1,101 @@
+<Type Name="IWebPartParameters" FullName="System.Web.UI.WebControls.WebParts.IWebPartParameters">
+  <TypeSignature Language="C#" Value="public interface IWebPartParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebPartParameters" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebPartParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Web パーツ接続のパラメーター値を渡す Web パーツ コントロールで実装するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、Web パーツ接続において、コンシューマーに通常プロバイダーから送信されます。 ただし、場合によっては、プロバイダーには、返信する必要があります、値を判断するコンシューマーからのパラメーターが必要があります。 <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters>インターフェイスは、コンシューマーからプロバイダーへのパラメーターを渡すことを促進するを実装するメンバーを定義します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.RowToParametersTransformer> クラスは、<xref:System.Web.UI.WebControls.WebParts.IWebPartParameters> インターフェイスを実装します。 トランスフォーマーを使用して、互換性のない接続ポイントを持つ 2 つの Web パーツ コントロールの間でデータを変換します。 A<xref:System.Web.UI.WebControls.WebParts.RowToParametersTransformer>オブジェクトを実装するプロバイダーからのデータの変換、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスのプロバイダーがコンシューマーからパラメーターを必要とします。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData%2A>メソッドは、プロバイダーからデータが取得され、消費者のデータを処理するコールバック メソッドを提供します。 コールバック メソッドには、戻り値を適宜設定、コンシューマー内でカスタマイズしたメソッドを指定できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetParametersData">
+      <MemberSignature Language="C#" Value="public void GetParametersData (System.Web.UI.WebControls.WebParts.ParametersCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetParametersData(class System.Web.UI.WebControls.WebParts.ParametersCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData(System.Web.UI.WebControls.WebParts.ParametersCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.UI.WebControls.WebParts.ParametersCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">プロバイダーからデータを処理するために呼び出すメソッド。</param>
+        <summary>接続プロバイダーからのデータの値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData%2A>パラメーターに基づくプロバイダーから値を取得するメソッドを使用します。 によって表されるメソッド、`callback`パラメーターは、コンシューマーが使用するデータを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptorCollection Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPartParameters.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンシューマーによって受信されるデータのプロパティ記述子を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データを記述します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters.Schema%2A>プロパティが、インターフェイスによって渡されるデータのプロパティ情報を提供します。 トランスフォーマーとコンシューマーのコントロールがコンテンツの種類に関する情報を取得するには、このプロパティのクエリを実行しに含まれているフィールドの他の詳細、<xref:System.Web.UI.WebControls.WebParts.IWebPartParameters>インターフェイスのインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetConsumerSchema">
+      <MemberSignature Language="C#" Value="public void SetConsumerSchema (System.ComponentModel.PropertyDescriptorCollection schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetConsumerSchema(class System.ComponentModel.PropertyDescriptorCollection schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IWebPartParameters.SetConsumerSchema(System.ComponentModel.PropertyDescriptorCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.ComponentModel.PropertyDescriptorCollection" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see cref="T:System.ComponentModel.PropertyDescriptorCollection" />によって返される<see cref="P:System.Web.UI.WebControls.WebParts.IWebPartParameters.Schema" />です。</param>
+        <summary>呼び出すときに、コンシューマーが受信するプロパティのプロパティ記述子を設定、<see cref="M:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData(System.Web.UI.WebControls.WebParts.ParametersCallback)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

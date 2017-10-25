@@ -1,0 +1,102 @@
+<Type Name="XhtmlConformanceSection" FullName="System.Web.Configuration.XhtmlConformanceSection">
+  <TypeSignature Language="C#" Value="public sealed class XhtmlConformanceSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XhtmlConformanceSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.XhtmlConformanceSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see langword="xhtmlConformance" />セクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.XhtmlConformanceSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`xhtmlConformance`構成ファイルのセクションです。  
+  
+> [!NOTE]
+>  ASP.NET では、XHTML 1.1 規格に準拠している Web ページを作成することができます。 標準 XHTML 1.1 の詳細については、W3C のサイトを参照してください。 既定では、HTML 4.0 をサポートするブラウザーで動作しているか、後でしたら ASP.NET ページおよびコントロール マークアップを表示する、XHTML 1.0 Transitional 標準と互換性があります。 ただし、状況によっては、たくない XHTML マークアップを表示するために ASP.NET です。 これは、XHTML で通常は禁止されるタグや属性に依存している既存のページがある場合は true。 通常です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>既存のアプリケーションを中断する可能性のあるレンダリングの変更のみが、従来の動作に戻されます。 XHTML の仕様に準拠するために行われたすべての変更を元に戻す機構はありません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XhtmlConformanceSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.XhtmlConformanceSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.XhtmlConformanceSection" />クラスの既定のパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.XhtmlConformanceSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.XhtmlConformanceSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.XhtmlConformanceMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.XhtmlConformanceMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.XhtmlConformanceSection.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.XhtmlConformanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.Configuration.XhtmlConformanceSection.Mode" /> プロパティを取得または設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.XhtmlConformanceMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Configuration.XhtmlConformanceMode.Transitional" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、HTML 4.0 をサポートするブラウザーで動作しているか、後でしたら ASP.NET ページおよびコントロール マークアップを表示する、XHTML 1.0 Transitional 標準と互換性があります。 ただし、状況によっては、たくない XHTML マークアップを表示するために ASP.NET です。 これは、XHTML で通常は禁止されるタグや属性に依存している既存のページがある場合は true。 通常です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.XhtmlConformanceSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

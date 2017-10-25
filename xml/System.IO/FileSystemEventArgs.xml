@@ -1,0 +1,194 @@
+<Type Name="FileSystemEventArgs" FullName="System.IO.FileSystemEventArgs">
+  <TypeSignature Language="C#" Value="public class FileSystemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileSystemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileSystemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ディレクトリのイベントのデータを提供します。 <see cref="E:System.IO.FileSystemWatcher.Changed" />、 <see cref="E:System.IO.FileSystemWatcher.Created" />、<see cref="E:System.IO.FileSystemWatcher.Deleted" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemEventArgs>クラスは、これらのイベントのイベント ハンドラーに、パラメーターとして渡されます。  
+  
+ <xref:System.IO.FileSystemWatcher.Changed>イベントは、サイズが変更されたときに発生、システム属性では、最終書き込み時刻、最終アクセス時刻、またはセキュリティのアクセス許可、ファイルまたは、指定したディレクトリに<xref:System.IO.FileSystemWatcher.Path%2A>の<xref:System.IO.FileSystemWatcher>です。  
+  
+ <xref:System.IO.FileSystemWatcher.Created>イベント ファイルまたはディレクトリが指定されたときに発生<xref:System.IO.FileSystemWatcher.Path%2A>の<xref:System.IO.FileSystemWatcher>を作成します。  
+  
+ <xref:System.IO.FileSystemWatcher.Deleted>イベント ファイルまたはディレクトリが指定されたときに発生<xref:System.IO.FileSystemWatcher.Path%2A>の<xref:System.IO.FileSystemWatcher>を削除します。 詳細については、「<xref:System.IO.FileSystemWatcher>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.IO.FileSystemWatcher>ファイルの変更を監視する (作成、削除、名前変更、変更)、ディスク ドライブで発生しています。 また、正しくエラー通知を受信する方法も示します。  
+  
+ [!code-csharp[FileSystemWatcher#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#1)]
+ [!code-vb[FileSystemWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSystemEventArgs (System.IO.WatcherChangeTypes changeType, string directory, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.IO.WatcherChangeTypes changeType, string directory, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemEventArgs.#ctor(System.IO.WatcherChangeTypes,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="changeType" Type="System.IO.WatcherChangeTypes" />
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="changeType">1 つ、<see cref="T:System.IO.WatcherChangeTypes" />値で、ファイル システムで検出された変更の種類を表します。</param>
+        <param name="directory">影響を受けたファイルまたはディレクトリのルート ディレクトリ。</param>
+        <param name="name">影響を受けたファイルまたはディレクトリの名前。</param>
+        <summary><see cref="T:System.IO.FileSystemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public System.IO.WatcherChangeTypes ChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.WatcherChangeTypes ChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemEventArgs.ChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.WatcherChangeTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したディレクトリのイベントの種類を取得します。</summary>
+        <value>1 つ、<see cref="T:System.IO.WatcherChangeTypes" />をファイル システムで検出された変更の種類を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.IO.FileSystemEventArgs.ChangeType%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.FileSystemEventArgs>クラスです。  
+  
+ [!code-csharp[FileSystemWatcher#7](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#7)]
+ [!code-vb[FileSystemWatcher#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullPath">
+      <MemberSignature Language="C#" Value="public string FullPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullPath" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemEventArgs.FullPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>影響を受けたファイルまたはディレクトリの完全修飾パスを取得します。</summary>
+        <value>影響を受けたファイルまたはディレクトリのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.IO.FileSystemEventArgs.FullPath%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.FileSystemEventArgs>クラスです。  
+  
+ [!code-csharp[FileSystemWatcher#7](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemWatcher/cs/filesystemwatcher.cs#7)]
+ [!code-vb[FileSystemWatcher#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemWatcher/VB/FileSystemWatcher.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemEventArgs.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>影響を受けたファイルまたはディレクトリの名前を取得します。</summary>
+        <value>影響を受けたファイルまたはディレクトリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される名、<xref:System.IO.FileSystemEventArgs.Name%2A>プロパティは、影響を受けたファイルまたはディレクトリ、監視対象ディレクトリを基準との相対パスです。 たとえば場合、<xref:System.IO.FileSystemWatcher>オブジェクトは、ディレクトリ"C:\temp"と"C:\temp\test\file.txt"変更でファイルを監視、<xref:System.IO.FileSystemEventArgs.Name%2A>プロパティは"test\file.txt"を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

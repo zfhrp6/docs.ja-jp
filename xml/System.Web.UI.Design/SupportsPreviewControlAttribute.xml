@@ -1,0 +1,222 @@
+<Type Name="SupportsPreviewControlAttribute" FullName="System.Web.UI.Design.SupportsPreviewControlAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SupportsPreviewControlAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SupportsPreviewControlAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロール デザイナーがデザイン時にコントロールのプレビューのインスタンスを必要かどうかを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性をコントロールのデザイナーでサポートされているプレビュー コントロールの種類を示すためにコントロール デザイナー クラス。 この属性を使用すると、関連付けられたコントロールの実際の永続化されたインスタンスに影響を与えずにデザイン時のレンダリングのプレビュー コントロールを変更できます。  
+  
+ 通常、指定した、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>から派生したカスタム デザイナー クラスを宣言する場合に、<xref:System.Web.UI.Design.ControlDesigner>クラスです。 値、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性の動作を決定する、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>と<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>ベース メンバー<xref:System.Web.UI.Design.ControlDesigner>クラスです。  
+  
+ 設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを`true`をデザイナーで関連付けられたコントロールの一時コピーを使用して、デザイン時 HTML を生成することを示します。 一時的なコントロールへの変更は保存されません。  
+  
+ 設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを`false`デザイナーがコントロールのインスタンスを具体的にを返すことを示すために、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>プロパティから、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>メソッドです。 コントロール オブジェクトへの変更が保存されます。  
+  
+ たとえば、<xref:System.Web.UI.Design.WebControls.CalendarDesigner>クラスには、 <xref:System.Web.UI.Design.SupportsPreviewControlAttribute> 'éý'`true`です。 デザイナーは、予定表に適用できる書式設定のタスクは、さまざまなオート フォーマット stylesthat をプレビューすることができます、自動スタイル プレビュー コントロールを使用します。 ユーザーは、ユーザー インターフェイスに別のオート フォーマットのスタイルを選択すると、選択したスタイルのスキームは、プレビュー コントロールに適用されます。 インスタンスに適用されているスキームは変わりませんプレビュー コントロールを新しいスタイルを適用する、<xref:System.Web.UI.WebControls.Calendar>デザイナーで制御します。  
+  
+ 場合、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>宣言では、コントロール デザイナーが指定されていない、<xref:System.Web.UI.Design.ControlDesigner>動作を指定することと同じ、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>として`false`です。  
+  
+> [!NOTE]
+>  派生したデザイナー クラス、<xref:System.Web.UI.Design.ControlDesigner>クラスをオーバーライドして、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>と<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>メンバー、および無視する、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性。 予想される動作を決定する<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>と<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>、派生したコントロール デザイナー クラスのリファレンス ドキュメントを参照してください。  
+  
+ 属性の使用方法の概要については、次を参照してください。[属性の概要](http://msdn.microsoft.com/en-us/a4daf212-2410-423d-a800-7a08864e9bff)と[属性](~/docs/standard/attributes/index.md)です。 デザイン時属性の詳細については、次を参照してください。[属性およびデザイン時サポート](http://msdn.microsoft.com/library/7aed9eb4-124b-4a15-a0a3-458f37ac9ef7)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用したデザイナーのコントロールをマークする方法を示しています、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性。 コード例では、ASP.NET サーバー コントロールから、<xref:System.Web.UI.WebControls.Label>クラスし、ASP.NET サーバー コントロールをカスタム コントロールのデザイナーの実装に関連付けます。 コントロール デザイナー クラス宣言が付いて、`SupportsPreviewControl`属性に設定`true`です。 コントロール デザイナーよりも優先、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドとコントロールのデザイン時 HTML を斜体のタグで囲まれます。  
+  
+ [!code-csharp[System.Web.UI.Design.SupportsPreviewControlAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.SupportsPreviewControlAttribute/CS/supportspreviewdesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.SupportsPreviewControlAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.SupportsPreviewControlAttribute/VB/supportspreviewdesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SupportsPreviewControlAttribute (bool supportsPreviewControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool supportsPreviewControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.SupportsPreviewControlAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportsPreviewControl" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="supportsPreviewControl">初期値を割り当てる<see cref="P:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />クラスし、の初期値の設定、<see cref="P:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常のインスタンスを作成する必要はありません、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>クラスに直接できます。 適用、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>のソース コードでカスタム コントロール デザイナーのクラス宣言にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.Design.SupportsPreviewControlAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.Design.SupportsPreviewControlAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.SupportsPreviewControlAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.SupportsPreviewControlAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />既定プレビュー値に設定されているクラスです。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>のプロパティ、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.Default>にフィールドが設定されている`false`です。  
+  
+ 使用して、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.IsDefaultAttribute%2A>メソッドを呼び出せば確認するかどうかの値、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティが既定のプレビュー値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.SupportsPreviewControlAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較するオブジェクト<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</param>
+        <summary>指定したオブジェクトが、プレビュー属性と同じ設定の現在のインスタンスを表すかどうかを判断、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />クラスです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />属性とその値がのこのインスタンスと同じ<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.Equals%2A>メソッドのオーバーライド、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.Equals%2A>メソッドの値に基づいて 2 つのインスタンスを比較し、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.SupportsPreviewControlAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />クラスです。</summary>
+        <returns>現在のインスタンスの 32 ビット符号付き整数ハッシュ コード<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.GetHashCode%2A>メソッドのオーバーライド、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.GetHashCode%2A>メソッドによると等しい 2 つのオブジェクトに対して同じハッシュ コードを生成する、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.Equals%2A>メソッドです。 ハッシュ コードは、ハッシュ テーブルなど、アルゴリズムとデータ構造体のハッシュでの使用に適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.SupportsPreviewControlAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうかの現在のインスタンス、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />クラスが既定のプレビューの属性値に設定します。</summary>
+        <returns>
+          <see langword="true" />場合の現在のインスタンス<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />と等しい既定プレビュー属性値。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.IsDefaultAttribute%2A>メソッドの値を比較し、 <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A> 、現在のプロパティ<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>の値を持つオブジェクト、 <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A> 、静的なプロパティ<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.Default>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsPreviewControl">
+      <MemberSignature Language="C#" Value="public bool SupportsPreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsPreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール デザイナーが一時プレビュー コントロールをデザイン時に必要かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デザイナーがデザイン時プレビュー用に関連付けられたコントロールの一時コピーを使用する場合<see langword="false" />デザイナーのインスタンスを使用している場合、<see cref="P:System.ComponentModel.Design.ComponentDesigner.Component" />デザイナーに含まれているコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常の値を指定する、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを適用することによって、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>カスタム デザイナー クラスの宣言に属性します。 値、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性の動作を決定する、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>と<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>ベース メンバー<xref:System.Web.UI.Design.ControlDesigner>クラスです。  
+  
+ 設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを`true`をデザイナーで関連付けられたコントロールの一時コピーを使用して、デザイン時 HTML を生成することを示します。 一時的なコントロールへの変更は保存されません。  
+  
+ 設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティを`false`デザイナーがコントロールのインスタンスを具体的にを返すことを示すために、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>プロパティから、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>メソッドです。 コントロール オブジェクトへの変更が保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,694 @@
+<Type Name="TempFileCollection" FullName="System.CodeDom.Compiler.TempFileCollection">
+  <TypeSignature Language="C#" Value="public class TempFileCollection : IDisposable, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TempFileCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.TempFileCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>一時ファイルのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.TempFileCollection>一意のファイル名を生成し、ファイルの一覧を追跡するために使用できます。 これは役に立ちます<xref:System.CodeDom.Compiler.ICodeCompiler>コンパイラによって生成された中間ファイル、使用後が削除される場合がありますの一覧を管理する場合に実装します。  
+  
+ 内の一意の一時ファイル名を生成するディレクトリを指定するには、適切にオーバー ロードされたコンス トラクターを使用します。 かどうかをコレクションに追加されたファイルは、指定されていない場合それ以外の場合を使用する場合を示すために、コンス トラクター オーバー ロードを使用することもできます。、<xref:System.CodeDom.Compiler.TempFileCollection.AddFile%2A>または<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>メソッド、コレクションが破棄されるときに削除するか、<xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッドが呼び出されます。  
+  
+ インスタンスに任意のディレクトリ内のファイルを追加することができます<xref:System.CodeDom.Compiler.TempFileCollection>を使用して、<xref:System.CodeDom.Compiler.TempFileCollection.AddFile%2A>メソッドです。  
+  
+ 特定のファイル拡張子の一時ファイルの一意の名前を生成する呼び出す<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>および生成するファイル名の拡張子を指定します。 <xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>メソッドは、完全なパスで指定されたディレクトリで指定された拡張子のファイル名から成る文字列を返します、<xref:System.CodeDom.Compiler.TempFileCollection.TempDir%2A>プロパティです。 <xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>メソッドは 1 つのファイル名拡張子の 1 つの一意のファイル名だけを返します。  
+  
+ 両方の<xref:System.CodeDom.Compiler.TempFileCollection.AddFile%2A>と<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>メソッド コレクションが破棄されるときに、ファイルを削除するかどうかを指定できるオーバー ロードがありますまたは<xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッドが呼び出されます。  
+  
+ <xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッド保持するとマークされているものを除き、コレクション内のすべてのファイルが削除されます。  
+  
+ <xref:System.CodeDom.Compiler.TempFileCollection.BasePath%2A>プロパティによって返されるファイル名の生成に使用されるファイル名拡張子の付かない、基本ファイル名に完全なパスを示す、<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>メソッドです。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.CodeDom.Compiler.TempFileCollection>クラスおよび<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>と<xref:System.CodeDom.Compiler.TempFileCollection.AddFile%2A>メソッドです。  
+  
+ [!code-csharp[System.CodeDom.Compiler.TempFileCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.Compiler.TempFileCollection/CS/program.cs#1)]
+ [!code-vb[System.CodeDom.Compiler.TempFileCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.Compiler.TempFileCollection/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">派生させるため、<see cref="T:System.CodeDom.Compiler.TempFileCollection" />クラスです。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。<see cref="T:System.Security.PermissionSet" />: <see langword="FullTrust" />.</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TempFileCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.CodeDom.Compiler.TempFileCollection" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定の設定を使用して、コレクションを初期化する既定のコンス トラクターです。 既定では、この一時ファイル コレクションは、既定の一時ディレクトリにファイルを保管して、生成および使用された後に、一時ファイルを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TempFileCollection (string tempDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tempDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tempDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tempDir">一時ファイルを格納するのに使用する一時ディレクトリへのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.TempFileCollection" />クラスを生成して、使用後に一時ファイルを削除する既定で設定されている指定された一時ディレクトリを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TempFileCollection (string tempDir, bool keepFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tempDir, bool keepFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tempDir" Type="System.String" />
+        <Parameter Name="keepFiles" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="tempDir">一時ファイルを格納するのに使用する一時ディレクトリへのパス。</param>
+        <param name="keepFiles">
+          <see langword="true" />使用後も、一時ファイルを保持する場合<see langword="false" />場合は、一時ファイルを削除する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.TempFileCollection" />クラスの指定された一時ディレクトリとの保持または既定で生成して、使用後に、一時ファイルを削除するかどうかを示す値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`keepFiles`設定に使用される、<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>パラメーター。 コレクション内の一時ファイルを保持またはの値に基づいてコンパイラ アクティビティの完了時に削除された、<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>コレクション内のプロパティです。 各ファイルが、このコレクションの現在の値に追加されるにつれて<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>を持つメソッドに追加しない限り、それに関連付けられたが、`keepFile`その特定のファイルに対して値を使用する場合のパラメーターです。 ときに、<xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッドを呼び出す場合<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>は`true`を使用して追加含めすべてのファイルが削除されると、<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>の値`true`です。 これにより、ファイルを一時的にエラーが報告などの目的のコンパイル後に保持し、不要になったときに削除する、保存されているとして識別された特定のファイルです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddExtension">
+      <MemberSignature Language="C#" Value="public string AddExtension (string fileExtension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AddExtension(string fileExtension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.AddExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileExtension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileExtension">コレクションに追加する一時ファイルの自動生成された名前のファイル名拡張子。</param>
+        <summary>コレクションに指定されたファイル名拡張子を持つファイル名を追加します。</summary>
+        <returns>指定された拡張子をコレクションに追加されたファイル名です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された拡張子を一時ファイルのコレクションに追加されたファイル名を返します。 使用する前に、その他のコードはファイルを作成して必要があります。  
+  
+ このメソッドは、同じ拡張機能を使用して呼び出した場合は、同じ名前を返すために、各ファイル名拡張子では、一度だけ呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddExtension">
+      <MemberSignature Language="C#" Value="public string AddExtension (string fileExtension, bool keepFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AddExtension(string fileExtension, bool keepFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.AddExtension(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileExtension" Type="System.String" />
+        <Parameter Name="keepFile" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="fileExtension">コレクションに追加する一時ファイルの自動生成された名前のファイル名拡張子。</param>
+        <param name="keepFile">
+          <see langword="true" />使用後も、ファイルを保持する場合<see langword="false" />場合は、ファイルを削除する必要があります。</param>
+        <summary>ファイルを削除または保持するかどうかを示す値を指定して、このコレクションに指定されたファイル名拡張子を持つファイル名を追加します。</summary>
+        <returns>指定された拡張子をコレクションに追加されたファイル名です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された拡張子を一時ファイルのコレクションに追加されたファイル名を返します。 使用する前に、その他のコードはファイルを作成して必要があります。  
+  
+ このメソッドは、同じ拡張機能を使用して呼び出した場合は、同じ名前を返すために、各ファイル名拡張子では、一度だけ呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fileExtension" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFile">
+      <MemberSignature Language="C#" Value="public void AddFile (string fileName, bool keepFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFile(string fileName, bool keepFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.AddFile(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="keepFile" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">コレクションに追加するファイルの名前。</param>
+        <param name="keepFile">
+          <see langword="true" />使用後も、ファイルを保持する場合<see langword="false" />場合は、ファイルを削除する必要があります。</param>
+        <summary>コレクションが破棄された後に、またはファイルを保持するかどうかを示す値を指定して、このコレクションに指定されたファイルを追加、<see cref="M:System.CodeDom.Compiler.TempFileCollection.Delete" />メソッドが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.CodeDom.Compiler.TempFileCollection.AddFile%28System.String%2CSystem.Boolean%29>をコレクションに保持するのには、ファイルを追加するメソッド。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.TempFileCollection>クラスです。  
+  
+ [!code-csharp[System.CodeDom.Compiler.TempFileCollection#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDom.Compiler.TempFileCollection/CS/program.cs#2)]
+ [!code-vb[System.CodeDom.Compiler.TempFileCollection#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDom.Compiler.TempFileCollection/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fileName" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <paramref name="fileName" />複製です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BasePath">
+      <MemberSignature Language="C#" Value="public string BasePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BasePath" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.BasePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションの一時ファイル名を生成するために使用される一時ディレクトリ パスのファイル名拡張子を除いた、基本ファイル名への完全パスを取得します。</summary>
+        <value>コレクションの一時ファイル名を生成するために使用される、一時ディレクトリ パス上のファイル名拡張子の付かない、基本ファイル名の完全パスです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">場合、<see cref="P:System.CodeDom.Compiler.TempFileCollection.BasePath" />プロパティが設定されていない、またはに設定されている<see langword="null" />、および<see cref="F:System.Security.Permissions.FileIOPermissionAccess.AllAccess" />がで指定された一時ディレクトリに対して許可されていない、<see cref="P:System.CodeDom.Compiler.TempFileCollection.TempDir" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (string[] fileNames, int start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(string[] fileNames, int32 start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.CopyTo(System.String[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileNames" Type="System.String[]" />
+        <Parameter Name="start" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fileNames">コピー先の文字列の配列。</param>
+        <param name="start">コピーを開始する配列のインデックス。</param>
+        <summary>指定したインデックスから始まる、指定した文字列に、コレクションのメンバーをコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のファイルの数を取得します。</summary>
+        <value>コレクション内のファイルの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保持するマークされていません、このコレクション内で、一時ファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッドは、調べるを個別に、ファイルを保持するか削除するか、コレクション内の各ファイルをチェックします。 受け取るメソッドを追加するコレクションを使用して、追加されたときに保持するファイルを明示的にマークすることができます、`keepFile`パラメーター。 使用してコレクションにファイルを追加する場合、<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>オーバー ロードはありませんが、`keepFile`パラメーター値の<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>プロパティは、既定の保持ファイル インジケーターとして使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.CodeDom.Compiler.TempFileCollection" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.CodeDom.Compiler.TempFileCollection> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~TempFileCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトがガベージ コレクションによって回収される前に一時ファイルを削除しようとしています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A?displayProperty=nameWithType>を呼び出してリソースをクリーンアップし、`Dispose(false)`です。 `Dispose(Boolean)` をオーバーライドしてクリーンアップをカスタマイズします。  
+  
+ アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの`Finalize`への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションのメンバーを列挙できる列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />コレクションのメンバーを格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepFiles">
+      <MemberSignature Language="C#" Value="public bool KeepFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepFiles" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.KeepFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定では、ファイルを保持するかどうかを示す値を設定するときに、<see cref="M:System.CodeDom.Compiler.TempFileCollection.Delete" />メソッドが呼び出されるか、コレクションは破棄されます。</summary>
+        <value>
+          <see langword="true" />ファイルを保持する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>プロパティが既定値として使用されるときの値、<xref:System.CodeDom.Compiler.TempFileCollection.AddExtension%2A>がないオーバー ロード、`keepFile`パラメーターが、コレクションに一時ファイルを追加すると呼ばれます。 コレクション内の各一時ファイルは、関連付けられているファイル保持フラグがそのファイルを保持するか削除するかをファイルごとに決定するがします。 ファイルは自動的に保持または、ファイルの関連付けの保持の値に基づいて、コンパイルの完了時に削除します。 ただし、コンパイルが完了したら、ファイル保持されたことができますを解放するには<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>false と呼び出し元、<xref:System.CodeDom.Compiler.TempFileCollection.Delete%2A>メソッドです。  これにより、すべてのファイルが削除されているが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int start);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="start" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="start">コピーの開始位置となる、配列の 0 から始まるインデックス。</param>
+        <summary>ターゲット配列の指定したインデックスにある開始位置として、配列にコレクションの要素をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> に格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.TempFileCollection.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースの解放またはリセットに関連付けられているアプリケーション定義のタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.TempFileCollection> のインスタンスが <xref:System.IDisposable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TempDir">
+      <MemberSignature Language="C#" Value="public string TempDir { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TempDir" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.TempFileCollection.TempDir" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一時ファイルを保存する一時ディレクトリを取得します。</summary>
+        <value>一時ファイルを保存する一時ディレクトリです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

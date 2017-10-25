@@ -1,0 +1,136 @@
+<Type Name="SecurityMode" FullName="System.ServiceModel.SecurityMode">
+  <TypeSignature Language="C#" Value="public enum SecurityMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecurityMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.SecurityMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>バインディングのセキュリティ設定を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの`ProtectionLevel`のトランスポートの設定は無視されます、<xref:System.ServiceModel.SecurityMode>が None に設定します。 [!INCLUDE[crabout](~/includes/crabout-md.md)]`ProtectionLevel`プロパティを参照してください[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ [!INCLUDE[crabout](~/includes/crdefault-md.md)][!INCLUDE[indigo1](~/includes/indigo1-md.md)]セキュリティと、このプロパティが、一般的なセキュリティ機能に与える影響を参照してください。 [Services のセキュリティ保護](~/docs/framework/wcf/securing-services.md)と[WCF セキュリティのプログラミング](~/docs/framework/wcf/feature-details/programming-wcf-security.md)です。 [!INCLUDE[crabout](~/includes/crabout-md.md)]トランスポート モードを参照してください[トランスポート セキュリティ](~/docs/framework/wcf/feature-details/transport-security.md)です。  
+  
+ TransportWithMessageCredential を選択した場合、値に設定するに注意してください<xref:System.ServiceModel.HttpClientCredentialType>または<xref:System.ServiceModel.TcpClientCredentialType>は無視されます。  
+  
+   
+  
+## Examples  
+ `Mode` の <xref:System.ServiceModel.WSHttpBinding> プロパティを設定する例を次に示します。 例については、次を参照してください。[する方法: セキュリティ モードを設定](~/docs/framework/wcf/how-to-set-the-security-mode.md)です。  
+  
+ [!code-csharp[c_SettingSecurityMode#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#1)]
+ [!code-vb[c_SettingSecurityMode#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="Message" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SecurityMode Message = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SecurityMode.Message" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティは、SOAP メッセージ セキュリティを使用して確保されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SecurityMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SecurityMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティを無効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="Transport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SecurityMode Transport = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SecurityMode.Transport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティは、セキュア トランスポート (HTTPS など) を使用して確保されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportWithMessageCredential">
+      <MemberSignature Language="C#" Value="TransportWithMessageCredential" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.SecurityMode TransportWithMessageCredential = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.SecurityMode.TransportWithMessageCredential" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュア トランスポート (HTTPS など) は整合性、機密性、および認証を提供し、SOAP メッセージ セキュリティはクライアント認証を提供します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

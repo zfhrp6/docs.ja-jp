@@ -1,0 +1,119 @@
+<Type Name="FormStartPosition" FullName="System.Windows.Forms.FormStartPosition">
+  <TypeSignature Language="C#" Value="public enum FormStartPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormStartPosition extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FormStartPosition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォームの最初の位置を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って、<xref:System.Windows.Forms.Form.StartPosition%2A>のプロパティ、<xref:System.Windows.Forms.Form>クラスです。 これは、フォームの別の開始位置を表します。 既定の開始位置は`WindowsDefaultLocation`します。  
+  
+   
+  
+## Examples  
+ この例では、フォームの開始位置を画面の中央に変更し、ラベルを使用して位置情報を表示します。 この例を既に作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[FormStartPosition#1](~/samples/snippets/cpp/VS_Snippets_Winforms/FormStartPosition/CPP/formstartposition.cpp#1)]
+ [!code-csharp[FormStartPosition#1](~/samples/snippets/csharp/VS_Snippets_Winforms/FormStartPosition/CS/formstartposition.cs#1)]
+ [!code-vb[FormStartPosition#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/FormStartPosition/VB/formstartposition.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CenterParent">
+      <MemberSignature Language="C#" Value="CenterParent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FormStartPosition CenterParent = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FormStartPosition.CenterParent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormStartPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームは、親フォームの境界内で中央揃えされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CenterScreen">
+      <MemberSignature Language="C#" Value="CenterScreen" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FormStartPosition CenterScreen = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FormStartPosition.CenterScreen" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormStartPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームは、現在の表示の中心し、フォームのサイズで指定された次元します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Manual">
+      <MemberSignature Language="C#" Value="Manual" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FormStartPosition Manual = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FormStartPosition.Manual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormStartPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームの位置によって決まり、<see cref="P:System.Windows.Forms.Control.Location" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsDefaultBounds">
+      <MemberSignature Language="C#" Value="WindowsDefaultBounds" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FormStartPosition WindowsDefaultBounds = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FormStartPosition.WindowsDefaultBounds" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormStartPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームは Windows の既定の場所に配置し、Windows の既定値によって決定境界を持ちます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsDefaultLocation">
+      <MemberSignature Language="C#" Value="WindowsDefaultLocation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FormStartPosition WindowsDefaultLocation = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FormStartPosition.WindowsDefaultLocation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormStartPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームは Windows の既定の場所に配置され、フォームのサイズで指定された大きさにします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

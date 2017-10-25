@@ -1,0 +1,86 @@
+<Type Name="IDataSourceProvider" FullName="System.Web.UI.Design.IDataSourceProvider">
+  <TypeSignature Language="C#" Value="public interface IDataSourceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataSourceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IDataSourceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール デザイナーがデータ ソースへのアクセスを提供する実装できるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースを提供することができるクラスを使用するオブジェクトにそのデータ ソースへのアクセスを有効にするには、このインターフェイスを実装できます、<xref:System.Web.UI.Design.IDataSourceProvider>インターフェイスです。 このインターフェイスを使用して、<xref:System.Web.UI.Design.DataFieldConverter>と<xref:System.Web.UI.Design.DataMemberConverter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のカスタム クラスを示しています。 `TemplatedListDesigner`、から継承される、<xref:System.Web.UI.Design.TemplatedControlDesigner>クラスと実装、`IDataSourceProvider`インターフェイスです。  
+  
+ [!code-xml[System.Web.UI.Design_Samples1#1](~/samples/snippets/common/VS_Snippets_WebNet/system.web.ui.design_samples1/Common/System.Web.UI.Design_Samples1.xml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetResolvedSelectedDataSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable GetResolvedSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerable GetResolvedSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IDataSourceProvider.GetResolvedSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択したデータ ソースから選択したデータ メンバーを取得します。</summary>
+        <returns>このコントロールを選択するユーザーを使用する場合、選択したデータ ソースから選択したデータ メンバー、 <see cref="T:System.ComponentModel.IListSource" /> (など、 <see cref="T:System.Data.DataSet" />)、データ ソースを提供し、<see langword="DataMember" />特定のリストを選択するプロパティを (または<see cref="T:System.Data.DataTable" />) データ ソース内で。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を実装して、`GetResolvedSelectedDataSource`と<xref:System.Web.UI.Design.IDataSourceProvider.GetSelectedDataSource%2A>のメソッド、<xref:System.Web.UI.Design.IDataSourceProvider>インターフェイスです。 `GetSelectedDataSource`メソッドは、データ ソースとのこの実装として、任意のオブジェクトを取得、`GetResolvedSelectedDataSource`メソッドにそのオブジェクトの変換、<xref:System.Collections.IEnumerable>オブジェクト。  
+  
+ [!code-xml[System.Web.UI.Design_Samples1#17](~/samples/snippets/common/VS_Snippets_WebNet/system.web.ui.design_samples1/Common/System.Web.UI.Design_Samples1.xml#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedDataSource">
+      <MemberSignature Language="C#" Value="public object GetSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IDataSourceProvider.GetSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソース プロバイダーから選択したデータ ソースへの参照を取得します。</summary>
+        <returns>このデータ ソース プロバイダーの現在選択されているデータ ソース オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、両方を実装する、`GetSelectedDataSource`と<xref:System.Web.UI.Design.IDataSourceProvider.GetResolvedSelectedDataSource%2A>のメソッド、<xref:System.Web.UI.Design.IDataSourceProvider>インターフェイスです。 `GetSelectedDataSource`メソッドを使用して、デザイン時に、コントロールに関連付けられたデータ ソースが実装するオブジェクトであることを確認、<xref:System.Collections.IEnumerable>インターフェイスです。 これにより、データ ソースを反復処理できます。  
+  
+ [!code-xml[System.Web.UI.Design_Samples1#17](~/samples/snippets/common/VS_Snippets_WebNet/system.web.ui.design_samples1/Common/System.Web.UI.Design_Samples1.xml#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

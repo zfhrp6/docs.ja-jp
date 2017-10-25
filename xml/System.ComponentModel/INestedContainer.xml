@@ -1,0 +1,77 @@
+<Type Name="INestedContainer" FullName="System.ComponentModel.INestedContainer">
+  <TypeSignature Language="C#" Value="public interface INestedContainer : IDisposable, System.ComponentModel.IContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INestedContainer implements class System.ComponentModel.IContainer, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.INestedContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>論理的に 0 個以上の他のコンポーネントを含む、親コンポーネントによって所有されている、入れ子になったコンテナーの機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.INestedContainer>インターフェイスは、所有しているコンポーネントの概念を追加、<xref:System.ComponentModel.IContainer>インターフェイスです。 入れ子になったコンテナーは、論理的がないとは限りません視覚的に、0 個以上の子コンポーネントが含まれていて、親コンポーネントによって所有されているオブジェクトです。 ビジュアルの順に、所有しているコンポーネントは多くの場合、値が別のコンテナーです。  
+  
+ 入れ子になったコンテナーは、各サブコントロールの明示的なシリアル化されたメンバー変数またはカスタムのシリアライザーをしなくてもデザインするコントロールのセクションを許可します。 代わりに、フォーム デザイナーでは、コンポーネントの 1 つのマスター コンテナーが保持されます。 各コンポーネントのサイトには、追加のコンポーネントを配置する場所を提供する入れ子になったコンテナーがあります。 コンポーネントは、入れ子になったコンテナーに配置されたが、場合に、受信名は、所定の名前と、所有しているコンポーネントの名前の組み合わせになります。 また、入れ子になったコンテナーに追加されたコンポーネントが、親コンテナーのサービスへのフル アクセスを持ち、入れ子になったコンテナーが新しいコンポーネントの追加に関して、親の同じ動作を提供します。 入れ子になったコンテナーでは、デザイン時サポートを有効にすることが含まれている、各コンポーネントのデザイナーを作成します。 標準的なコードのシリアライザーを入れ子になったコンテナーを参照しないためこれらのコンポーネントのみにシリアル化されますをプライマリ コンテナー内のコンポーネントを調べてそれらへのパスを取得できます。  
+  
+ コンポーネントのサービス サイトの種類のクエリを実行して入れ子になったコンテナーが見つかりません<xref:System.ComponentModel.INestedContainer>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent Owner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.INestedContainer.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入れ子になったコンテナーの所有しているコンポーネントを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.IComponent" />入れ子になったコンテナーを所有しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 所有しているコンポーネントは、通常のコンテナーの入れ子になったコンテナーを区別する特性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

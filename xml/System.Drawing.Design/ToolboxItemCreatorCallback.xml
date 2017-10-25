@@ -1,0 +1,44 @@
+<Type Name="ToolboxItemCreatorCallback" FullName="System.Drawing.Design.ToolboxItemCreatorCallback">
+  <TypeSignature Language="C#" Value="public delegate System.Drawing.Design.ToolboxItem ToolboxItemCreatorCallback(object serializedObject, string format);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolboxItemCreatorCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxItemCreatorCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="serializedObject" Type="System.Object" />
+    <Parameter Name="format" Type="System.String" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="serializedObject">オブジェクトを作成するデータを格納する、<see cref="T:System.Drawing.Design.ToolboxItem" />用です。</param>
+    <param name="format">作成するクリップボードのデータ形式の名前、<see cref="T:System.Drawing.Design.ToolboxItem" />用です。</param>
+    <summary>作成できるコールバック機構を提供する<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+    <returns>逆シリアル化された<see cref="T:System.Drawing.Design.ToolboxItem" />で指定されたオブジェクト<paramref name="serializedObject" />です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このツールボックス項目をツールボックスに置かれた特定のクリップボード データ形式の任意のオブジェクトから作成するデリゲート型のメソッド シグネチャに一致するメソッドのシグネチャにツールボックス アイテムの creator メソッドを実装できます。 たとえば、ツールボックス項目の作成者によって作成されるをデザインできます、<xref:System.Windows.Forms.TextBox>をツールボックスにクリップボードから貼り付けたテキストを格納します。 使用することができます、<xref:System.Drawing.Design.IToolboxService.AddCreator%2A>のメソッド、<xref:System.Drawing.Design.IToolboxService>を追加する、<xref:System.Drawing.Design.ToolboxItemCreatorCallback>をツールボックスに特定のデータ型のイベント ハンドラー。 `serializedObject`パラメーターには、データ オブジェクトが含まれています。  
+  
+ <xref:System.Drawing.Design.ToolboxItemCreatorCallback> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例は、使用するコンポーネント、 <xref:System.Drawing.Design.IToolboxService> "Text"のデータ形式ハンドラーを追加または<xref:System.Drawing.Design.ToolboxItemCreatorCallback>ツールボックスにします。 データの作成者のコールバック デリゲートをツールボックスに貼り付けられ、カスタム フォームにドラッグしたテキスト データを渡します<xref:System.Drawing.Design.ToolboxItem>を作成する、<xref:System.Windows.Forms.TextBox>テキストを含むです。  
+  
+ [!code-cpp[ToolboxCreatorCallbackSample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/CPP/textdatatextboxcomponent.cpp#1)]
+ [!code-csharp[ToolboxCreatorCallbackSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/CS/textdatatextboxcomponent.cs#1)]
+ [!code-vb[ToolboxCreatorCallbackSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxCreatorCallbackSample/VB/textdatatextboxcomponent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

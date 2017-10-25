@@ -1,0 +1,21 @@
+<Namespace Name="System.Data">
+  <Docs>
+    <summary><see cref="N:System.Data" /> 名前空間は、ADO.NET アーキテクチャを表すクラスへのアクセスを提供します。 ADO.NET を使用すると、複数のデータ ソースのデータを効率的に管理するコンポーネントを構築できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネットなどに接続していない状態では、ADO.NET は複数層システムのデータを要求、更新、および調整するツールを提供します。 ADO.NET アーキテクチャも、Windows フォームや ASP.NET によって作成された HTML ページなどのクライアント アプリケーションで実装されます。  
+  
+ ADO.NET アーキテクチャで中心的な働きをするのは <xref:System.Data.DataSet> クラスです。 各 <xref:System.Data.DataSet> は、複数の <xref:System.Data.DataTable> オブジェクトを含めることができ、各 <xref:System.Data.DataTable> には SQL Server などの 1 つのデータ ソースのデータが含まれています。  
+  
+ 各 <xref:System.Data.DataTable> には <xref:System.Data.DataColumnCollection> が含まれています。これは、<xref:System.Data.DataColumn> オブジェクトのコレクションで、各 <xref:System.Data.DataTable> のスキーマを決定します。 <xref:System.Data.DataColumn.DataType%2A> プロパティは、<xref:System.Data.DataColumn> が保持しているデータ型を決定します。 <xref:System.Data.DataColumn.ReadOnly%2A> プロパティと <xref:System.Data.DataColumn.AllowDBNull%2A> プロパティを使用すると、データの整合性をさらに保証できます。 <xref:System.Data.DataColumn.Expression%2A> プロパティを使用すると、計算列を作成できます。  
+  
+ <xref:System.Data.DataTable> が別の <xref:System.Data.DataTable> との親/子のリレーションシップに参加している場合、リレーションシップは <xref:System.Data.DataRelation> を <xref:System.Data.DataRelationCollection> オブジェクトの <xref:System.Data.DataSet> に追加することによって作成されます。 このようなリレーションシップを追加した場合、<xref:System.Data.UniqueConstraint> と <xref:System.Data.ForeignKeyConstraint> は両方ともコンストラクターのパラメーター設定に応じて、自動的に作成されます。 <xref:System.Data.UniqueConstraint> により、列に含まれる値が一意であることが保証されます。 <xref:System.Data.ForeignKeyConstraint> は、主キー値が変更または削除された場合に、子の行または列に対して実行する操作を決定します。  
+  
+ <xref:System.Data.SqlClient> 名前空間 (.NET Framework Data Provider for SQL Server)、<xref:System.Data.Odbc> 名前空間 (.NET Framework Data Provider for ODBC)、<xref:System.Data.OleDb> 名前空間 (.NET Framework Data Provider for OLE DB)、または <xref:System.Data.OracleClient> 名前空間 (.NET Framework Data Provider for Oracle) を使用すると、<xref:System.Data.DataSet> と共に使用するデータ ソースにアクセスできます。 Each.NET Framework データ プロバイダーが、対応する**DataAdapter**データ ソース間のブリッジとして使用して、<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

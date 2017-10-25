@@ -1,0 +1,310 @@
+<Type Name="CivicAddress" FullName="System.Device.Location.CivicAddress">
+  <TypeSignature Language="C#" Value="public class CivicAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CivicAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.CivicAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>都市の住所を表します。 都市の住所は、住所、郵便番号、都道府県/州、および国または地域などのフィールドを含めることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得できる場所の都市の住所、<xref:System.Device.Location.GeoCoordinate>を実装するクラスを使用して<xref:System.Device.Location.ICivicAddressResolver>です。  
+  
+ <xref:System.Device.Location.CivicAddressResolver>クラスに対応する都市のアドレスが返される既定の実装を提供する、<xref:System.Device.Location.GeoCoordinate>両方の調整都市の住所データだけでなく、データ ソースの場所を提供する場合、します。  
+  
+ <xref:System.Device.Location.CivicAddressResolver.ResolveAddress%2A>返します、<xref:System.Device.Location.CivicAddress>の現在の位置。  ソースの場所が都市の住所に座標位置を解決できない場合<xref:System.Device.Location.CivicAddress.Unknown>が返されます。  
+  
+   
+  
+## Examples  
+ 次の例を解決する方法を示しています、<xref:System.Device.Location.CivicAddress>から、<xref:System.Device.Location.GeoCoordinate>場所同期的に処理します。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressSync#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/cs/resolvecivicaddresssync.cs#1)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressSync#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/vb/resolvecivicaddresssync.vb#1)]  
+  
+ 次の例を解決する方法を示しています、<xref:System.Device.Location.CivicAddress>から、<xref:System.Device.Location.GeoCoordinate>場所に非同期的にします。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressAsync#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/cs/resolvecivicaddressasync.cs#1)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressAsync#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/vb/resolvecivicaddressasync.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CivicAddress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.CivicAddress.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Device.Location.CivicAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのフィールドを初期化する<xref:System.String.Empty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CivicAddress (string addressLine1, string addressLine2, string building, string city, string countryRegion, string floorLevel, string postalCode, string stateProvince);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string addressLine1, string addressLine2, string building, string city, string countryRegion, string floorLevel, string postalCode, string stateProvince) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.CivicAddress.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="addressLine1" Type="System.String" />
+        <Parameter Name="addressLine2" Type="System.String" />
+        <Parameter Name="building" Type="System.String" />
+        <Parameter Name="city" Type="System.String" />
+        <Parameter Name="countryRegion" Type="System.String" />
+        <Parameter Name="floorLevel" Type="System.String" />
+        <Parameter Name="postalCode" Type="System.String" />
+        <Parameter Name="stateProvince" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addressLine1">番地の最初の行を含む文字列。</param>
+        <param name="addressLine2">番地の 2 番目の行を含む文字列。</param>
+        <param name="building">建物名または番号を含む文字列。</param>
+        <param name="city">市区町村を含む文字列。</param>
+        <param name="countryRegion">国または地域を含む文字列。</param>
+        <param name="floorLevel">フロア番号を含む文字列。</param>
+        <param name="postalCode">郵便番号を含む文字列。</param>
+        <param name="stateProvince">州または都道府県を含む文字列。</param>
+        <summary>アドレス情報を使用して、<see cref="T:System.Device.Location.CivicAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">少なくとも 1 つのパラメーターは、空でない文字列でなければなりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressLine1">
+      <MemberSignature Language="C#" Value="public string AddressLine1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AddressLine1" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.AddressLine1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアドレスの最初の行を設定します。</summary>
+        <value>アドレスの最初の行を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressLine2">
+      <MemberSignature Language="C#" Value="public string AddressLine2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AddressLine2" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.AddressLine2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアドレスの 2 行目を設定します。</summary>
+        <value>アドレスの 2 番目の行を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty." /></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Building">
+      <MemberSignature Language="C#" Value="public string Building { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Building" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.Building" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドの名前または番号を設定します。</summary>
+        <value>ビルドの名前または番号を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="City">
+      <MemberSignature Language="C#" Value="public string City { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string City" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.City" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または市区町村の名前を設定します。</summary>
+        <value>市区町村の名前を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountryRegion">
+      <MemberSignature Language="C#" Value="public string CountryRegion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CountryRegion" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.CountryRegion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または国または地域の場所を設定します。</summary>
+        <value>国または地域コードを返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 国または地域は、通常は 2 文字の ISO 3166 国コードで表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FloorLevel">
+      <MemberSignature Language="C#" Value="public string FloorLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FloorLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.FloorLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または場所の階数を設定します。</summary>
+        <value>階数を表す文字列を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnknown">
+      <MemberSignature Language="C#" Value="public bool IsUnknown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnknown" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.IsUnknown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Device.Location.CivicAddress" /> にデータが含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Device.Location.CivicAddress" /> が <see cref="F:System.Device.Location.CivicAddress.Unknown" /> に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で<xref:System.Device.Location.CivicAddress.IsUnknown%2A>を確認する、<xref:System.Device.Location.CivicAddress>から返された<xref:System.Device.Location.CivicAddressResolver.ResolveAddress%2A>都市の住所を印刷する前にします。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressSync#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/cs/resolvecivicaddresssync.cs#2)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressSync#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/vb/resolvecivicaddresssync.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostalCode">
+      <MemberSignature Language="C#" Value="public string PostalCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostalCode" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.PostalCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または場所の郵便番号コードを設定します。</summary>
+        <value>場所の郵便番号コードを返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateProvince">
+      <MemberSignature Language="C#" Value="public string StateProvince { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StateProvince" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.CivicAddress.StateProvince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場所の都道府県。</summary>
+        <value>場所の都道府県を返します。 データが指定されていない場合を返します<see cref="F:System.String.Empty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="public static readonly System.Device.Location.CivicAddress Unknown;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Device.Location.CivicAddress Unknown" />
+      <MemberSignature Language="DocId" Value="F:System.Device.Location.CivicAddress.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.CivicAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Device.Location.CivicAddress" />データが含まれていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Device.Location.CivicAddress.IsUnknown%2A>ことを確認するかどうか、<xref:System.Device.Location.CivicAddress>データが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Device.Location.CivicAddress.IsUnknown%2A>を確認する、<xref:System.Device.Location.CivicAddress>から返された<xref:System.Device.Location.CivicAddressResolver.ResolveAddress%2A>都市の住所を印刷する前にします。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressSync#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/cs/resolvecivicaddresssync.cs#2)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressSync#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/vb/resolvecivicaddresssync.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

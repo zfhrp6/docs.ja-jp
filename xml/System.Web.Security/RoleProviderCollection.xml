@@ -1,0 +1,163 @@
+<Type Name="RoleProviderCollection" FullName="System.Web.Security.RoleProviderCollection">
+  <TypeSignature Language="C#" Value="public sealed class RoleProviderCollection : System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoleProviderCollection extends System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.RoleProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>継承するオブジェクトのコレクション、<see cref="T:System.Web.Security.RoleProvider" />抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのロール プロバイダーが公開されている<xref:System.Web.Security.RoleProviderCollection>によって、<xref:System.Web.Security.Roles.Providers%2A>のプロパティ、<xref:System.Web.Security.Roles>クラスです。 名前で、コレクション内の特定のロール プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Security.SqlRoleProvider>です。 これにより、カスタム ロール プロバイダーのされないされるメンバーにアクセスするだけでなく、単一のアプリケーションで複数のデータ ストアからロール情報を管理することの一部、<xref:System.Web.Security.RoleProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションとそれらの種類に対して有効なプロバイダーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.Roles#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Roles/CS/Providerscs.aspx#7)]
+ [!code-aspx-vb[System.Web.Security.Roles#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Roles/VB/Providersvb.aspx#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のロール プロバイダーのコレクションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Configuration.Provider.ProviderBase provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Configuration.Provider.ProviderBase provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProviderCollection.Add(System.Configuration.Provider.ProviderBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Configuration.Provider.ProviderBase" />
+      </Parameters>
+      <Docs>
+        <param name="provider">コレクションに追加するロール プロバイダーです。</param>
+        <summary>ロール プロバイダーをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="provider" />継承する型のではありません、<see cref="T:System.Web.Security.RoleProvider" />抽象クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Security.RoleProvider[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Security.RoleProvider[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProviderCollection.CopyTo(System.Web.Security.RoleProvider[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Security.RoleProvider[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先は、<see cref="T:System.Web.Security.RoleProviderCollection" />です。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>ロール プロバイダーのコレクションを 1 次元配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>ロール プロバイダー オブジェクトを指定した配列にコピーするためです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.RoleProviderCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.Security.RoleProviderCollection>の配列を<xref:System.Web.Security.RoleProvider>オブジェクト。  
+  
+ [!code-csharp[System.Web.Security.RoleProviderCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RoleProviderCollection/CS/snippetscs.aspx#3)]
+ [!code-vb[System.Web.Security.RoleProviderCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RoleProviderCollection/VB/snippetsvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Security.RoleProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Security.RoleProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RoleProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.RoleProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ロール プロバイダーの名前。</param>
+        <summary>指定されたプロバイダー名によって参照されるコレクション内のロール プロバイダーを取得します。</summary>
+        <value>継承されるオブジェクト、<see cref="T:System.Web.Security.RoleProvider" />抽象クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのロール プロバイダーが公開されている<xref:System.Web.Security.RoleProviderCollection>によって、<xref:System.Web.Security.Roles.Providers%2A>のプロパティ、<xref:System.Web.Security.Roles>クラスです。 名前で、コレクション内の特定のロール プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Security.SqlRoleProvider>です。 これにより、カスタム ロール プロバイダーのされないされるメンバーにアクセスするだけでなく、単一のアプリケーションで複数のデータ ストアからロール情報を管理することの一部、<xref:System.Web.Security.RoleProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例へのアクセス、<xref:System.Web.Security.SqlRoleProvider>からのアプリケーション用に構成された、<xref:System.Web.Security.Roles.Providers%2A>のプロパティ、<xref:System.Web.Security.Roles>クラス名をします。  
+  
+ [!code-csharp[System.Web.Security.RoleProviderCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RoleProviderCollection/CS/snippetscs.aspx#2)]
+ [!code-vb[System.Web.Security.RoleProviderCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RoleProviderCollection/VB/snippetsvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

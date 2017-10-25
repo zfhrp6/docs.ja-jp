@@ -1,0 +1,100 @@
+<Type Name="IToggleProvider" FullName="System.Windows.Automation.Provider.IToggleProvider">
+  <TypeSignature Language="C#" Value="public interface IToggleProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IToggleProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IToggleProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("56d00bd0-c4f4-433c-a836-1a52a57e0892")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の状態を順番に切り替えて、一度設定した状態を保持することができるコントロールへの UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.TogglePattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Toggle">
+      <MemberSignature Language="C#" Value="public void Toggle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Toggle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IToggleProvider.Toggle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのトグル状態を順番に切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールがこの順序でのトグル状態を順番に表示する必要があります: <xref:System.Windows.Automation.ToggleState.On>、 <xref:System.Windows.Automation.ToggleState.Off>、(サポートされている) 場合と<xref:System.Windows.Automation.ToggleState.Indeterminate>です。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの可能な切り替え可能なカスタム コントロールに対して、このメソッドの実装を示しています。  
+  
+ [!code-csharp[UIAIToggleProvider_snip#Toggle](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIToggleProvider_snip/CSharp/ToggleFragment.cs#toggle)]
+ [!code-vb[UIAIToggleProvider_snip#Toggle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIToggleProvider_snip/visualbasic/togglefragment.vb#toggle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleState">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ToggleState ToggleState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ToggleState ToggleState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IToggleProvider.ToggleState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ToggleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのトグル状態を取得します。</summary>
+        <value>コントロールの <see cref="T:System.Windows.Automation.ToggleState" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールに繰り返す必要があります、<xref:System.Windows.Automation.ToggleState>この順序で: <xref:System.Windows.Automation.ToggleState.On>、 <xref:System.Windows.Automation.ToggleState.Off>、(サポートされている) 場合と<xref:System.Windows.Automation.ToggleState.Indeterminate>です。  
+  
+   
+  
+## Examples  
+ 次の例は、切り替え可能なコントロールに対して、このメソッドの実装を示しています。 返される ToggleState がコントロールの色をに基づいてください。このメソッドは、 <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> CheckBox コントロールのプロパティです。  
+  
+ [!code-csharp[UIAIToggleProvider_snip#ToggleState](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAIToggleProvider_snip/CSharp/ToggleFragment.cs#togglestate)]
+ [!code-vb[UIAIToggleProvider_snip#ToggleState](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAIToggleProvider_snip/visualbasic/togglefragment.vb#togglestate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

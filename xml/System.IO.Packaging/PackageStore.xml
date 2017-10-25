@@ -1,0 +1,181 @@
+<Type Name="PackageStore" FullName="System.IO.Packaging.PackageStore">
+  <TypeSignature Language="C#" Value="public static class PackageStore" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed PackageStore extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackageStore" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション固有のコレクションを表します<see cref="T:System.IO.Packaging.Package" />と組み合わせて使用されるインスタンス<see cref="T:System.IO.Packaging.PackWebRequest" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackageStore>開くと、アプリケーションでアクティブであるパッケージの参照のコレクションを定義します。  パッケージに追加された、<xref:System.IO.Packaging.PackageStore>アクセスは、キーの URI 値がします。  <xref:System.IO.Packaging.PackageStore> 3 つの一般的な使用をサポートしています。  
+  
+1.  アクセス<xref:System.IO.Packaging.PackagePart>を使用してデータ<xref:System.IO.Packaging.PackWebRequest>です。  
+  
+2.  インスタンスを取得するアプリケーション、<xref:System.IO.Packaging.Package>パッケージの URI を指定します。  
+  
+3.  作成およびに格納されるパッケージにアクセスする、<xref:System.IO.MemoryStream>です。  
+  
+ パフォーマンスを改善し、繰り返されるファイルを開く/閉じる操作のオーバーヘッドを最小限に抑える、<xref:System.IO.Packaging.PackageStore>パッケージによってアクセスのインスタンスの管理に使用される<xref:System.IO.Packaging.PackWebRequest>とアプリケーションによって直接です。  パッケージでは、データにアクセスするときに、 <xref:System.IO.Packaging.Package> 、要求されたアドレス<xref:System.IO.Packaging.PackagePart><xref:System.IO.Packaging.PackagePart.Uri%2A>が最初にチェックするかどうか、パッケージは既に定義されているしで開いているを参照してください、<xref:System.IO.Packaging.PackageStore>です。  パッケージにオープンで定義されている場合、 <xref:System.IO.Packaging.PackageStore>、要求された部分を繰り返し要求ごとに、パッケージの開閉せずに直接アクセスできます。  
+  
+ アプリケーションが使用してパッケージを開いた場合<xref:System.IO.Packaging.Package.Open%2A?displayProperty=nameWithType>、<xref:System.IO.Packaging.PackageStore.AddPackage%2A>にパッケージを追加するに呼び出せる、<xref:System.IO.Packaging.PackageStore>です。  <xref:System.IO.Packaging.PackageStore.RemovePackage%2A>後でパッケージを削除に呼び出す必要があります、<xref:System.IO.Packaging.PackageStore>呼び出しの前に<xref:System.IO.Packaging.Package.Close%2A?displayProperty=nameWithType>です。  
+  
+ XPS パッケージが開かれた、<xref:System.Windows.Xps.Packaging.XpsDocument.%23ctor%2A>コンス トラクターが自動的に追加または削除される、<xref:System.IO.Packaging.PackageStore>ドキュメントが作成され破棄されます。  (を呼び出す必要はありません<xref:System.IO.Packaging.PackageStore.AddPackage%2A>または<xref:System.IO.Packaging.PackageStore.RemovePackage%2A>で XPS パッケージが開かれたのとは別に<xref:System.Windows.Xps.Packaging.XpsDocument.%23ctor%2A>コンス トラクターです)。  
+  
+ パッケージを使用してアクセスのファイル I/O アクセス許可、<xref:System.IO.Packaging.PackageStore>を開いたときに、パッケージに設定する I/O のアクセス許可と同じになります。  <xref:System.IO.Packaging.PackageStore>ストアが追加されているパッケージへの参照を提供するだけです。  アプリケーションを正しく開く、更新、および各パッケージの終了の責任です。  
+  
+ パッケージに追加された、<xref:System.IO.Packaging.PackageStore>と組み合わせて使用している場合、マルチ スレッド環境でアクセスできる、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]などパーサー<xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>です。  マルチ スレッド環境で使用する場合、アプリケーションがアクセスする前に、パッケージをロックする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddPackage">
+      <MemberSignature Language="C#" Value="public static void AddPackage (Uri uri, System.IO.Packaging.Package package);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPackage(class System.Uri uri, class System.IO.Packaging.Package package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageStore.AddPackage(System.Uri,System.IO.Packaging.Package)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+      </Parameters>
+      <Docs>
+        <param name="uri">キー[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<c>パッケージ</c>で比較する、<see cref="T:System.IO.Packaging.PackWebRequest" />です。</param>
+        <param name="package">ストアに追加するパッケージ。</param>
+        <summary>追加、<see cref="T:System.IO.Packaging.Package" />ストアにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`パッケージのキーを呼び出す場合と比較される URI を定義<xref:System.IO.Packaging.PackWebRequest>です。  
+  
+ 場合、`packageUri`と一致する、<xref:System.IO.Packaging.PackagePart.Uri%2A>の<xref:System.IO.Packaging.PackagePart>で、<xref:System.IO.Packaging.PackWebRequest>で定義されているパッケージを呼び出して、<xref:System.IO.Packaging.PackageStore>要求された部分にアクセスするために使用します。  
+  
+ 場合、`packageUri`と一致しません、<xref:System.IO.Packaging.PackagePart.Uri%2A>の<xref:System.IO.Packaging.PackagePart>で、<xref:System.IO.Packaging.PackWebRequest>要求された部分にアクセスする呼び出し、指定した URI を使用してパッケージを開きます。  
+  
+ **セキュリティに関する注意**このメソッドが要求<xref:System.Security.Permissions.EnvironmentPermission>すべてカスタム<xref:System.IO.Packaging.Package>(非<xref:System.IO.Packaging.ZipPackage>) 型です。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Packaging.PackageStore.AddPackage%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[RightsManagedPackageViewer#RmPkgViewDecrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackageViewer/CSharp/Window1.xaml.cs#rmpkgviewdecrypt)]
+ [!code-vb[RightsManagedPackageViewer#RmPkgViewDecrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackageViewer/visualbasic/window1.xaml.vb#rmpkgviewdecrypt)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="package" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" />無効なパッケージ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定したパッケージ<paramref name="packageUri" />は既にストアにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPackage">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.Package GetPackage (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.Package GetPackage(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageStore.GetPackage(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]を返すパッケージのです。</param>
+        <summary>返します、<see cref="T:System.IO.Packaging.Package" />と指定した[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ストアからです。</summary>
+        <returns>指定したパッケージ<paramref name="packageUri" />; または<see langword="null" />場合に、指定したパッケージは、<paramref name="packageUri" />は、ストアにありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`Uri が一致の指定した、<xref:System.IO.Packaging.PackageStore.AddPackage%2A>メソッドの呼び出しです。  
+  
+ **セキュリティに関する注意**このメソッドが要求<xref:System.Security.Permissions.EnvironmentPermission>すべてカスタム<xref:System.IO.Packaging.Package>(非<xref:System.IO.Packaging.ZipPackage>) 型です。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Packaging.PackageStore.GetPackage%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[RightsManagedPackageViewer#RmPkgViewOpenDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackageViewer/CSharp/Window1.xaml.cs#rmpkgviewopendoc)]
+ [!code-vb[RightsManagedPackageViewer#RmPkgViewOpenDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackageViewer/visualbasic/window1.xaml.vb#rmpkgviewopendoc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="packageUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" />無効なパッケージ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePackage">
+      <MemberSignature Language="C#" Value="public static void RemovePackage (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePackage(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackageStore.RemovePackage(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のパッケージを削除します。</param>
+        <summary>削除、<see cref="T:System.IO.Packaging.Package" />と指定した[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ストアからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `packageUri`Uri が一致の指定した、<xref:System.IO.Packaging.PackageStore.AddPackage%2A>メソッドの呼び出しです。  
+  
+ **セキュリティに関する注意**このメソッドが要求<xref:System.Security.Permissions.EnvironmentPermission>すべてカスタム<xref:System.IO.Packaging.Package>(非<xref:System.IO.Packaging.ZipPackage>) 型です。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Packaging.PackageStore.RemovePackage%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[RightsManagedPackageViewer#RmPkgViewCloseDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackageViewer/CSharp/Window1.xaml.cs#rmpkgviewclosedoc)]
+ [!code-vb[RightsManagedPackageViewer#RmPkgViewCloseDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackageViewer/visualbasic/window1.xaml.vb#rmpkgviewclosedoc)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="packageUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="packageUri" />無効なパッケージ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

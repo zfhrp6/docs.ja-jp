@@ -1,0 +1,42 @@
+<Type Name="ImageClickEventHandler" FullName="System.Web.UI.ImageClickEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ImageClickEventHandler(object sender, ImageClickEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImageClickEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ImageClickEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.ImageClickEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントの原因となったサーバー コントロール。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.ImageClickEventArgs" />。</param>
+    <summary>ユーザーには、イメージ ベースの ASP.NET サーバー コントロールがクリックしたときに発生するイベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、ユーザーには、イメージ ベースの ASP.NET サーバー コントロールがクリックしたときに発生するすべてのクリック イベント用に必要なシグネチャを定義します。 このデリゲートのいずれかによって定義された署名を使用する必要があります`OnServerClick`用に作成したイベント ハンドラー、<xref:System.Web.UI.HtmlControls.HtmlInputImage>サーバー コントロールまたは`OnClick`用に作成したイベント ハンドラー、 <xref:System.Web.UI.WebControls.ImageButton> Web サーバー コントロールです。  
+  
+ カスタム イメージ ベースの ASP.NET サーバー コントロールをユーザーがクリックしてを作成する場合は、ユーザーの操作に関連付けられたイベントを定義するこのデリゲートを使用します。  
+  
+ デリゲートとイベントとやり取りする方法の詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。 イベントを発生させる方法については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[SystemWebUI.ImageClickEventArgs Sample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI.ImageClickEventArgs Sample/CS/imageclickeventargscs.aspx#1)]
+ [!code-vb[SystemWebUI.ImageClickEventArgs Sample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI.ImageClickEventArgs Sample/VB/imageclickeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,469 @@
+<Type Name="WorkflowServiceHost" FullName="System.ServiceModel.WorkflowServiceHost">
+  <TypeSignature Language="C#" Value="public class WorkflowServiceHost : System.ServiceModel.ServiceHostBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowServiceHost extends System.ServiceModel.ServiceHostBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WorkflowServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ServiceHostBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローベースのサービスのホストを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス モデルのプログラミング モデルで使用されるホストを実装します。  
+  
+ インターネット インフォメーション サービス (IIS) または Windows アクティブ化サービス (WAS) のどちらも使用せずにサービスを公開する場合は、<xref:System.ServiceModel.WorkflowServiceHost> クラスを使用して、クライアント アプリケーションが使用するサービスとしてワークフローを構成して公開します。 IIS と WAS はどちらも <xref:System.ServiceModel.WorkflowServiceHost> オブジェクトと自動的に対話します。  
+  
+ 呼び出し元が使用できるようにサービスとしてワークフローを公開するために、WCF では、サービスの完全な説明を必要とします (<xref:System.ServiceModel.Description.ServiceDescription> クラスで表されます)。 <xref:System.ServiceModel.WorkflowServiceHost> クラスは、ワークフロー サービスの種類と構成情報から <xref:System.ServiceModel.Description.ServiceDescription> を作成した後、その説明を使用して、説明に含まれるエンドポイント用の <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトを作成します。  
+  
+ <xref:System.ServiceModel.WorkflowServiceHost> オブジェクトを使用して、ワークフロー サービスのロード、エンドポイントの構成、セキュリティ設定の適用、および受信要求を処理するためのリスナーの起動を行います。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowServiceHost ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (System.IO.Stream workflowDefinition, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream workflowDefinition, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.IO.Stream,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinition" Type="System.IO.Stream" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinition">
+          ワークフロー定義を格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義と指定されたサービスのベース アドレスを含んでいるバイト ストリームを使用して、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー定義がデータベースなどのセキュリティ保護されているストレージに保存されている場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (string workflowDefinitionPath, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string workflowDefinitionPath, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.String,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinitionPath" Type="System.String" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionPath">ワークフロー定義ファイルのパスを表す文字列。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義のパスと指定されたサービスのベース アドレスを使用して、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー定義が Windows ファイルの形式である場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (Type workflowType, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type workflowType, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.Type,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowType">ワークフロー インスタンスの <see cref="T:System.Type" />。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー型と指定されたサービスのベース アドレスを使用して、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイルされた型としてワークフローが定義されている場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (System.IO.Stream workflowDefinition, System.IO.Stream ruleDefinition, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream workflowDefinition, class System.IO.Stream ruleDefinition, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.IO.Stream,System.IO.Stream,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinition" Type="System.IO.Stream" />
+        <Parameter Name="ruleDefinition" Type="System.IO.Stream" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinition">
+          ワークフロー定義を格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="ruleDefinition">
+          ワークフロー ルール定義を格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義を含んでいるバイト ストリーム、ワークフロー ルール定義を含んでいるバイト ストリーム、および指定されたサービスのベース アドレスを使用して <see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベースなどのセキュリティ保護されたストレージにワークフロー定義とルール定義が保存されている場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (string workflowDefinitionPath, string ruleDefinitionPath, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string workflowDefinitionPath, string ruleDefinitionPath, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.String,System.String,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinitionPath" Type="System.String" />
+        <Parameter Name="ruleDefinitionPath" Type="System.String" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionPath">ワークフロー定義ファイルのパスを表す文字列。</param>
+        <param name="ruleDefinitionPath">ワークフロー ルール定義ファイルのパスを表す文字列。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義のパス、ワークフロー ルール定義のパス、および指定されたサービスのベース アドレスを使用して、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー定義とルール定義が Windows ファイルの形式になっている場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (System.IO.Stream workflowDefinition, System.IO.Stream ruleDefinition, System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream workflowDefinition, class System.IO.Stream ruleDefinition, class System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.IO.Stream,System.IO.Stream,System.Workflow.ComponentModel.Compiler.ITypeProvider,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinition" Type="System.IO.Stream" />
+        <Parameter Name="ruleDefinition" Type="System.IO.Stream" />
+        <Parameter Name="typeProvider" Type="System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinition">
+          ワークフロー定義を格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="ruleDefinition">
+          ワークフロー ルール定義を格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="typeProvider"><see cref="T:System.Workflow.ComponentModel.Compiler.ITypeProvider" /> インターフェイスを実装する型プロバイダー。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義を含んでいるバイト ストリーム、ワークフロー ルール定義を含んでいるバイト ストリーム、カスタム アクティビティ型の型プロバイダー、指定されたサービスのベース アドレスを使用して <see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイルされたワークフローに別のアセンブリで定義されているカスタム型を参照させる場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHost (string workflowDefinitionPath, string ruleDefinitionPath, System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, params Uri[] baseAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string workflowDefinitionPath, string ruleDefinitionPath, class System.Workflow.ComponentModel.Compiler.ITypeProvider typeProvider, class System.Uri[] baseAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.#ctor(System.String,System.String,System.Workflow.ComponentModel.Compiler.ITypeProvider,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowDefinitionPath" Type="System.String" />
+        <Parameter Name="ruleDefinitionPath" Type="System.String" />
+        <Parameter Name="typeProvider" Type="System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+        <Parameter Name="baseAddress" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionPath">ワークフロー定義ファイルのパスを表す文字列。</param>
+        <param name="ruleDefinitionPath">ワークフロー ルール定義ファイルのパスを表す文字列。</param>
+        <param name="typeProvider"><see cref="T:System.Workflow.ComponentModel.Compiler.ITypeProvider" /> インターフェイスを実装する型プロバイダー。</param>
+        <param name="baseAddress">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー定義のパス、ワークフロー ルール定義のパス、カスタム アクティビティ型の型プロバイダー、指定されたサービスのベース アドレスを使用して、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローがワークフロー マークアップ ファイル (.xoml) で定義されており、これが、別のアセンブリで定義されているカスタム型を参照している場合は、このオーバーロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されるエンドポイントのアドレス。</param>
+        <summary>指定されたコントラクト、バインド、およびエンドポイント アドレスを使用して、ワークフロー サービスのサービス エンドポイントを追加します。</summary>
+        <returns>ワークフロー サービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー サービスは <paramref name="implementedContract" /> を実装しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。</param>
+        <summary>コントラクト、バインド、およびエンドポイント アドレスを含んでいる URI を指定して、ワークフロー サービスにサービス エンドポイントを追加します。</summary>
+        <returns>ワークフロー サービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー サービスは <paramref name="implementedContract" /> を実装しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">サービスのエンドポイント アドレス。</param>
+        <param name="listenUri">サービス エンドポイントがリッスンできる <see cref="T:System.Uri" />。</param>
+        <summary>コントラクト、バインド、エンドポイント アドレス、およびサービスがリッスンする URI を指定して、ワークフロー サービスにサービス エンドポイントを追加します。</summary>
+        <returns>ワークフロー サービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="T:System.ServiceModel.ServiceContractAttribute" /> について <paramref name="implementedContract" /> は指定されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address, Uri listenUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address, class System.Uri listenUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContract" Type="System.Type" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="listenUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContract">追加されたエンドポイントのコントラクトの <see cref="T:System.Type" />。</param>
+        <param name="binding">追加されたエンドポイントの <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="address">追加されたエンドポイントのアドレスを格納する <see cref="T:System.Uri" />。</param>
+        <param name="listenUri">サービス エンドポイントがリッスンできる <see cref="T:System.Uri" />。</param>
+        <summary>コントラクト、バインド、エンドポイント アドレスを表す URI、およびサービスがリッスンする URI を指定して、ワークフロー サービスにサービス エンドポイントを追加します。</summary>
+        <returns>ワークフロー サービスに追加された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="T:System.ServiceModel.ServiceContractAttribute" /> について <paramref name="implementedContract" /> は指定されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDescription">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Description.ServiceDescription CreateDescription (out System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Description.ContractDescription&gt; implementedContracts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Description.ServiceDescription CreateDescription([out] class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt;&amp; implementedContracts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.CreateDescription(System.Collections.Generic.IDictionary{System.String,System.ServiceModel.Description.ContractDescription}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="implementedContracts" Type="System.Collections.Generic.IDictionary&lt;System.String,System.ServiceModel.Description.ContractDescription&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="implementedContracts">このメソッドが戻る際、<see cref="T:System.Collections.Generic.IDictionary`2" /> オブジェクトには、実装された、ホストされているサービスのキー付きコントラクトが格納されます。</param>
+        <summary>ワークフロー サービスの記述を作成します。</summary>
+        <returns>ワークフロー サービスの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosing">
+      <MemberSignature Language="C#" Value="protected override void OnClosing ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosing() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WorkflowServiceHost.OnClosing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> が Closing 状態になる前に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、<xref:System.ServiceModel.WorkflowServiceHost> は、<xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> を呼び出す前に、<xref:System.ServiceModel.Channels.CommunicationObject.OnClosing%2A?displayProperty=nameWithType> を呼び出します。 これは、サービス ホストが終了する前にワークフロー ランタイムがシャットダウンすることを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

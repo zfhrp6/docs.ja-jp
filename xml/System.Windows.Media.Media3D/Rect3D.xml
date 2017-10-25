@@ -1,0 +1,1146 @@
+<Type Name="Rect3D" FullName="System.Windows.Media.Media3D.Rect3D">
+  <TypeSignature Language="C#" Value="public struct Rect3D : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Rect3D extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Rect3D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.Media3D.Rect3DConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Media3D.Converters.Rect3DValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>3-D の四角形を表します。 キューブなどです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>場所として定義されます (<xref:System.Windows.Media.Media3D.Point3D>) とサイズの構造体 (<xref:System.Windows.Media.Media3D.Size3D>)。 <xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、および<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>サイズに対して指定された値は規模が大きくなり座標ではない、空の四角形の場合を除く負の値にできません。 空の四角形がで指定された<xref:System.Windows.Media.Media3D.Rect3D.Empty%2A>を持つ<xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、および<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>無限大の値。  
+  
+ この構造体は、通常の境界を表す使用、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_Rect3D"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect3D (System.Windows.Media.Media3D.Point3D location, System.Windows.Media.Media3D.Size3D size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Media3D.Point3D location, valuetype System.Windows.Media.Media3D.Size3D size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.#ctor(System.Windows.Media.Media3D.Point3D,System.Windows.Media.Media3D.Size3D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="location" Type="System.Windows.Media.Media3D.Point3D" />
+        <Parameter Name="size" Type="System.Windows.Media.Media3D.Size3D" />
+      </Parameters>
+      <Docs>
+        <param name="location">新しい場所<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="size">新しいサイズ<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Media3D.Rect3D" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect3D (double x, double y, double z, double sizeX, double sizeY, double sizeZ);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x, float64 y, float64 z, float64 sizeX, float64 sizeY, float64 sizeZ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+        <Parameter Name="z" Type="System.Double" />
+        <Parameter Name="sizeX" Type="System.Double" />
+        <Parameter Name="sizeY" Type="System.Double" />
+        <Parameter Name="sizeZ" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">新しいの x 軸座標<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="y">新しい y 軸座標<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="z">新しいの z 軸座標<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="sizeX">新しいサイズ<see cref="T:System.Windows.Media.Media3D.Rect3D" />X ディメンションです。</param>
+        <param name="sizeY">新しいサイズ<see cref="T:System.Windows.Media.Media3D.Rect3D" />Y ディメンションです。</param>
+        <param name="sizeZ">新しいサイズ<see cref="T:System.Windows.Media.Media3D.Rect3D" />Z 次元のです。</param>
+        <summary><see cref="T:System.Windows.Media.Media3D.Rect3D" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Media.Media3D.Point3D point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.Windows.Media.Media3D.Point3D point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Contains(System.Windows.Media.Media3D.Point3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Media.Media3D.Point3D" />
+      </Parameters>
+      <Docs>
+        <param name="point">テストする点です。</param>
+        <summary>示す値を取得、指定したかどうか<see cref="T:System.Windows.Media.Media3D.Point3D" />内にある、<see cref="T:System.Windows.Media.Media3D.Rect3D" />の両端を含むです。</summary>
+        <returns>内で指定された点または四角形が場合は true、<see cref="T:System.Windows.Media.Media3D.Rect3D" />など、四辺場合は false をそれ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Rect3D は通常の境界を表すために使用する<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Media.Media3D.Rect3D rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.Windows.Media.Media3D.Rect3D rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Contains(System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect">
+          <see cref="T:System.Windows.Media.Media3D.Rect3D" />テストします。</param>
+        <summary>示す値を取得、指定したかどうか<see cref="T:System.Windows.Media.Media3D.Point3D" />内にある、<see cref="T:System.Windows.Media.Media3D.Rect3D" />の両端を含むです。</summary>
+        <returns>内で指定された点または四角形が場合は true、<see cref="T:System.Windows.Media.Media3D.Rect3D" />など、四辺場合は false をそれ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (double x, double y, double z);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(float64 x, float64 y, float64 z) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Contains(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+        <Parameter Name="z" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">X 軸座標、<see cref="T:System.Windows.Media.Media3D.Point3D" />をテストします。</param>
+        <param name="y">Y 軸座標、<see cref="T:System.Windows.Media.Media3D.Point3D" />をテストします。</param>
+        <param name="z">Z 座標、<see cref="T:System.Windows.Media.Media3D.Point3D" />をテストします。</param>
+        <summary>示す値を取得、指定したかどうか<see cref="T:System.Windows.Media.Media3D.Point3D" />内にある、<see cref="T:System.Windows.Media.Media3D.Rect3D" />の両端を含むです。</summary>
+        <returns>
+          <see langword="true" />指定された点または四角形が内にある場合、<see cref="T:System.Windows.Media.Media3D.Rect3D" />端; を含む<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.Media3D.Rect3D Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を取得します。</summary>
+        <value>空の <see cref="T:System.Windows.Media.Media3D.Rect3D" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは空白を返します<xref:System.Windows.Media.Media3D.Rect3D>値は、正の無限大、サイズの値が負の無限大の X、Y、および Z。 これは、どのサイズでは、値を負数にすることができる場合だけです。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>2 つの <see cref="T:System.Windows.Media.Media3D.Rect3D" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を型の<xref:System.Double>操作したときにエラーを取得する可能性があります。 2 つの論理的に等しい値の厳密な比較が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Windows.Media.Media3D.Rect3D" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した 2 つ、場合<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスが正確に一致します。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を型の<xref:System.Double>; 操作したときにエラーを取得する 2 つ論理的に等しい間での厳密な比較<xref:System.Windows.Media.Media3D.Rect3D>値が失敗する可能性があります。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Media3D.Rect3D value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Media.Media3D.Rect3D value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Equals(System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Media.Media3D.Rect3D" />現在のインスタンスと比較します。</param>
+        <summary>2 つの <see cref="T:System.Windows.Media.Media3D.Rect3D" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した 2 つ、場合<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスが正確に一致します。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を型の<xref:System.Double>; 操作したときにエラーを取得する 2 つ論理的に等しい間での厳密な比較<xref:System.Windows.Media.Media3D.Rect3D>値が失敗する可能性があります。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Media3D.Rect3D rect1, System.Windows.Media.Media3D.Rect3D rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Media3D.Rect3D rect1, valuetype System.Windows.Media.Media3D.Rect3D rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Equals(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="rect2" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">最初<see cref="T:System.Windows.Media.Media3D.Rect3D" />を比較します。</param>
+        <param name="rect2">2 番目<see cref="T:System.Windows.Media.Media3D.Rect3D" />を比較します。</param>
+        <summary>2 つの <see cref="T:System.Windows.Media.Media3D.Rect3D" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した 2 つ、場合<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスが正確に一致します。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を型の<xref:System.Double>; 操作したときにエラーを取得する 2 つ論理的に等しい間での厳密な比較<xref:System.Windows.Media.Media3D.Rect3D>値が失敗する可能性があります。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために通常使用 s、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返します、<see cref="T:System.Windows.Media.Media3D.Rect3D" /></summary>
+        <returns>このハッシュ コード<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Windows.Media.Media3D.Rect3D rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(valuetype System.Windows.Media.Media3D.Rect3D rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Intersect(System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Windows.Media.Media3D.Rect3D" />現在と交差する<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <summary>現在の積集合を検索<see cref="T:System.Windows.Media.Media3D.Rect3D" />と、指定した<see cref="T:System.Windows.Media.Media3D.Rect3D" />、現在、結果を格納および<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの指定された四角形の値が空の場合、このメソッドは空の値を返します。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Intersect (System.Windows.Media.Media3D.Rect3D rect1, System.Windows.Media.Media3D.Rect3D rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Intersect(valuetype System.Windows.Media.Media3D.Rect3D rect1, valuetype System.Windows.Media.Media3D.Rect3D rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Intersect(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="rect2" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">最初<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="rect2">2 番目<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <summary>指定したの積集合を返します<see cref="T:System.Windows.Media.Media3D.Rect3D" />値。</summary>
+        <returns>積集合の結果<paramref name="rect1" />と<paramref name="rect2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの指定された四角形の値が空の場合、このメソッドは空の値を返します。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntersectsWith">
+      <MemberSignature Language="C#" Value="public bool IntersectsWith (System.Windows.Media.Media3D.Rect3D rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IntersectsWith(valuetype System.Windows.Media.Media3D.Rect3D rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.IntersectsWith(System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect">評価する四角形。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Windows.Media.Media3D.Rect3D" />これと交差する<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.Media.Media3D.Rect3D" />これと交差する<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合 1 つの辺がそれぞれの<xref:System.Windows.Media.Media3D.Rect3D>は、一致と見なされます交差します。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Media3D.Rect3D" />は、 <see cref="P:System.Windows.Media.Media3D.Rect3D.Empty" /><see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Windows.Media.Media3D.Rect3D" />は空の四角形です。<see langword="false" />それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Media.Media3D.Rect3D.Size%2A>0 の場合は、この<xref:System.Windows.Media.Media3D.Rect3D>まだ含まれているポイントの 0 または 1-次元設定です。 そのため、このプロパティは 0 の領域を確認する使用するされません。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Point3D Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Point3D Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Media3D.Point3D" />の原点を表す、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.Media3D.Point3D" />原点を表す、 <see cref="T:System.Windows.Media.Media3D.Rect3D" />、通常、背面左下隅です。  既定値は、(0,0,0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次元座標系では正の Y 軸が、ポイントに注意してください (と仮定すると、カメラの<xref:System.Windows.Media.Media3D.ProjectionCamera.UpDirection%2A>プロパティが正の値)。  そのため、このプロパティは、のバックの左下隅通常を表します、<xref:System.Windows.Media.Media3D.Rect3D>シーン内です。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_Location"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (System.Windows.Media.Media3D.Vector3D offsetVector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(valuetype System.Windows.Media.Media3D.Vector3D offsetVector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Offset(System.Windows.Media.Media3D.Vector3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetVector" Type="System.Windows.Media.Media3D.Vector3D" />
+      </Parameters>
+      <Docs>
+        <param name="offsetVector">
+          <see cref="T:System.Windows.Media.Media3D.Vector3D" />オフセットの翻訳を指定します。</param>
+        <summary>オフセットの変換の設定、<see cref="T:System.Windows.Media.Media3D.Rect3D" />として指定された、指定された値に、<see cref="T:System.Windows.Media.Media3D.Vector3D" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ 呼び出して、<xref:System.Windows.Media.Media3D.Rect3D.Offset%2A>メソッドのみが、特殊効果を変更できる場合、 <xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、および<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>プロパティに直接できます。 <xref:System.Windows.Media.Media3D.Rect3D>値の型を参照する場合は、<xref:System.Windows.Media.Media3D.Rect3D>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、または<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Media.Media3D.Rect3D.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。  値を変更する場合、<xref:System.Windows.Media.Media3D.Rect3D>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Media.Media3D.Rect3D>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Media.Media3D.Rect3D>プロパティまたはインデクサーに戻します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Offset (System.Windows.Media.Media3D.Rect3D rect, System.Windows.Media.Media3D.Vector3D offsetVector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Offset(valuetype System.Windows.Media.Media3D.Rect3D rect, valuetype System.Windows.Media.Media3D.Vector3D offsetVector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Offset(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Vector3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="offsetVector" Type="System.Windows.Media.Media3D.Vector3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect">
+          <see cref="T:System.Windows.Media.Media3D.Rect3D" />変換できません。</param>
+        <param name="offsetVector">
+          <see cref="T:System.Windows.Media.Media3D.Vector3D" />オフセットの翻訳を指定します。</param>
+        <summary>取得またはでオフセット値を設定の場所、<see cref="T:System.Windows.Media.Media3D.Rect3D" />変換されます。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Media3D.Rect3D" />オフセットの結果を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (double offsetX, double offsetY, double offsetZ);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(float64 offsetX, float64 offsetY, float64 offsetZ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Offset(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+        <Parameter Name="offsetZ" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">X 軸方向のオフセットします。</param>
+        <param name="offsetY">Y 軸方向のオフセットします。</param>
+        <param name="offsetZ">Z 軸に沿ってオフセットします。</param>
+        <summary>取得またはでオフセット値を設定の場所、<see cref="T:System.Windows.Media.Media3D.Rect3D" />変換されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ 呼び出して、<xref:System.Windows.Media.Media3D.Rect3D.Offset%2A>メソッドのみが、特殊効果を変更できる場合、 <xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、および<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>プロパティに直接できます。 <xref:System.Windows.Media.Media3D.Rect3D>値の型を参照する場合は、<xref:System.Windows.Media.Media3D.Rect3D>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Media.Media3D.Rect3D.X%2A>、 <xref:System.Windows.Media.Media3D.Rect3D.Y%2A>、または<xref:System.Windows.Media.Media3D.Rect3D.Z%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Media.Media3D.Rect3D.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。 値を変更する場合、<xref:System.Windows.Media.Media3D.Rect3D>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Media.Media3D.Rect3D>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Media.Media3D.Rect3D>プロパティまたはインデクサーに戻します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Offset (System.Windows.Media.Media3D.Rect3D rect, double offsetX, double offsetY, double offsetZ);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Offset(valuetype System.Windows.Media.Media3D.Rect3D rect, float64 offsetX, float64 offsetY, float64 offsetZ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Offset(System.Windows.Media.Media3D.Rect3D,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+        <Parameter Name="offsetZ" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="rect">変換する Rect3D です。</param>
+        <param name="offsetX">X 軸方向のオフセットします。</param>
+        <param name="offsetY">Y 軸方向のオフセットします。</param>
+        <param name="offsetZ">Z 軸に沿ってオフセットします。</param>
+        <summary>取得またはでオフセット値を設定の場所、<see cref="T:System.Windows.Media.Media3D.Rect3D" />変換されます。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Media3D.Rect3D" />オフセットの結果を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Media3D.Rect3D rect1, System.Windows.Media.Media3D.Rect3D rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Media3D.Rect3D rect1, valuetype System.Windows.Media.Media3D.Rect3D rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.op_Equality(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="rect2" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">最初<see cref="T:System.Windows.Media.Media3D.Rect3D" />を評価します。</param>
+        <param name="rect2">2 番目<see cref="T:System.Windows.Media.Media3D.Rect3D" />を評価します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスの正確な等価性。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスが正確に一致します。<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Media3D.Rect3D rect1, System.Windows.Media.Media3D.Rect3D rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Media3D.Rect3D rect1, valuetype System.Windows.Media.Media3D.Rect3D rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.op_Inequality(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="rect2" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">最初<see cref="T:System.Windows.Media.Media3D.Rect3D" />を比較します。</param>
+        <param name="rect2">2 番目<see cref="T:System.Windows.Media.Media3D.Rect3D" />を比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Media3D.Rect3D" />正確な不等値のインスタンス。</summary>
+        <returns>True の場合、2 つ<see cref="T:System.Windows.Media.Media3D.Rect3D" />インスタンスが等しくない、false それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意してください<xref:System.Double>値; 操作したときにエラーを取得できます。 2 つの厳密な比較<xref:System.Windows.Media.Media3D.Rect3D>が論理的に等しい値が失敗する可能性があります。  
+  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">表す文字列、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <summary>文字列形式に変換する<see cref="T:System.Windows.Media.Media3D.Rect3D" />と同等に<see cref="T:System.Windows.Media.Media3D.Rect3D" />構造体。</summary>
+        <returns><see cref="T:System.Windows.Media.Media3D.Rect3D" /> の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Size3D Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Size3D Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Size3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の領域では、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.Media3D.Size3D" />領域を指定する、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_SizeX"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeX">
+      <MemberSignature Language="C#" Value="public double SizeX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SizeX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.SizeX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のサイズ、 <see cref="T:System.Windows.Media.Media3D.Rect3D" /> X ディメンションです。</summary>
+        <value>サイズを指定する double、 <see cref="T:System.Windows.Media.Media3D.Rect3D" /> X ディメンションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_SizeY"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeY">
+      <MemberSignature Language="C#" Value="public double SizeY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SizeY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.SizeY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のサイズ、 <see cref="T:System.Windows.Media.Media3D.Rect3D" /> Y ディメンションです。</summary>
+        <value>サイズを指定する double、 <see cref="T:System.Windows.Media.Media3D.Rect3D" /> Y ディメンションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_SizeZ"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeZ">
+      <MemberSignature Language="C#" Value="public double SizeZ { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SizeZ" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.SizeZ" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Z 次元の Rect3D のサイズを設定します。</summary>
+        <value>サイズを指定する double、 <see cref="T:System.Windows.Media.Media3D.Rect3D" /> Z 次元のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Rect3D は通常の境界を表すために使用する<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_Size3D"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する形式を指定する文字列。  
+  
+ または  
+  
+ <see langword="null" />型に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider"><see langword="IFormatProvider" />を使用して値の書式設定します。  
+  
+ または  
+  
+ <see langword="null" />オペレーティング システムの現在のロケール設定から数値の書式情報を取得できます。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 このメンバーの詳細については、「<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>指定された形式で現在のインスタンスの値を含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Rect3D の文字列表現を作成します。</summary>
+        <returns><see cref="T:System.Windows.Media.Media3D.Rect3D" /> の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>文字列表現を作成、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.Media3D.Rect3D" /> の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Windows.Media.Media3D.Point3D point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Windows.Media.Media3D.Point3D point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Union(System.Windows.Media.Media3D.Point3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Media.Media3D.Point3D" />
+      </Parameters>
+      <Docs>
+        <param name="point">指定した <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を持つ和集合が評価される <see cref="T:System.Windows.Media.Media3D.Point3D" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を更新し、その <see cref="T:System.Windows.Media.Media3D.Rect3D" /> と指定した <see cref="T:System.Windows.Media.Media3D.Point3D" /> の和集合を反映させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Windows.Media.Media3D.Rect3D rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Windows.Media.Media3D.Rect3D rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Union(System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect">現在の <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を持つ和集合が評価される <see cref="T:System.Windows.Media.Media3D.Rect3D" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を更新し、その <see cref="T:System.Windows.Media.Media3D.Rect3D" /> と 2 番目に指定した <see cref="T:System.Windows.Media.Media3D.Rect3D" /> の和集合を反映させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Union (System.Windows.Media.Media3D.Rect3D rect, System.Windows.Media.Media3D.Point3D point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Union(valuetype System.Windows.Media.Media3D.Rect3D rect, valuetype System.Windows.Media.Media3D.Point3D point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Union(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Point3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="point" Type="System.Windows.Media.Media3D.Point3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect">現在の <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を持つ和集合が評価される <see cref="T:System.Windows.Media.Media3D.Rect3D" />。</param>
+        <param name="point">指定した <see cref="T:System.Windows.Media.Media3D.Rect3D" /> を持つ和集合が評価される <see cref="T:System.Windows.Media.Media3D.Point3D" />。</param>
+        <summary>新しいを返します<see cref="T:System.Windows.Media.Media3D.Rect3D" />の和集合を表す、<see cref="T:System.Windows.Media.Media3D.Rect3D" />と、指定した<see cref="T:System.Windows.Media.Media3D.Point3D" />です。</summary>
+        <returns>結果の和集合の<paramref name="rect" />と<paramref name="point" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D Union (System.Windows.Media.Media3D.Rect3D rect1, System.Windows.Media.Media3D.Rect3D rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D Union(valuetype System.Windows.Media.Media3D.Rect3D rect1, valuetype System.Windows.Media.Media3D.Rect3D rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Rect3D.Union(System.Windows.Media.Media3D.Rect3D,System.Windows.Media.Media3D.Rect3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Media.Media3D.Rect3D" />
+        <Parameter Name="rect2" Type="System.Windows.Media.Media3D.Rect3D" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">最初<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <param name="rect2">2 番目<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</param>
+        <summary>新しいインスタンスを返します<see cref="T:System.Windows.Media.Media3D.Rect3D" />2 つの和集合を表す<see cref="T:System.Windows.Media.Media3D.Rect3D" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Media3D.Rect3D" />の和集合の結果を表す値<paramref name="rect1" />と<paramref name="rect2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public double X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の X 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>X 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_X"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public double Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の Y 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>Y 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_Y"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Z">
+      <MemberSignature Language="C#" Value="public double Z { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Z" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Rect3D.Z" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の Z 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</summary>
+        <value>Z 座標の値、<see cref="T:System.Windows.Media.Media3D.Rect3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Rect3D>境界を表すために使用は、通常、<xref:System.Windows.Media.Media3D.MeshGeometry3D>または<xref:System.Windows.Media.Media3D.Model3D>です。  
+  
+ <xref:System.Windows.Media.Media3D.Size3D>および<xref:System.Windows.Media.Media3D.Rect3D>は通常使用されません XAML では、それらの型を使用している WPF 3D オブジェクト モデルで設定可能なプロパティが存在しないためです。  
+  
+<a name="xamlTextUsage_Z"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

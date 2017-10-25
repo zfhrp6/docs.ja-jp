@@ -1,0 +1,397 @@
+<Type Name="PixelFormat" FullName="System.Drawing.Imaging.PixelFormat">
+  <TypeSignature Language="C#" Value="public enum PixelFormat" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PixelFormat extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.PixelFormat" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>イメージでは、各ピクセルの色データの形式を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル形式では、1 つのピクセルのデータに関連付けられているメモリのビット数を定義します。 形式は、データの単一のピクセルの色要素の順序も定義します。  
+  
+ PixelFormat48bppRGB、PixelFormat64bppARGB、および PixelFormat64bppPARGB 16 ビット カラー コンポーネント (チャネル) ごとに 1 を使用します。 GDI + version 1.0 および 1.1 には、チャネルあたり 16 ビットのイメージを読み取ることができますが、そのようなイメージは、処理、表示、および保存用チャネルあたり 8 ビット形式に変換されます。 各 16 ビット カラー チャネルは、0 ~ 2 の範囲内で値を保持できる ^13。  
+  
+ ピクセル形式の一部には、合成のカラー値が含まれています。 合成とは、アルファ値が、色の値が乗算されて既にことを意味します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alpha">
+      <MemberSignature Language="C#" Value="Alpha" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Alpha = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Alpha" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル データには、合成がないアルファ値が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Canonical">
+      <MemberSignature Language="C#" Value="Canonical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Canonical = int32(2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Canonical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセルあたり 32 ビットの既定のピクセル形式。 形式は、色深度 24 ビットと 8 ビットのアルファ チャネルを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DontCare">
+      <MemberSignature Language="C#" Value="DontCare" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat DontCare = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.DontCare" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル形式が指定されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Extended">
+      <MemberSignature Language="C#" Value="Extended" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Extended = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Extended" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予約済み。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format16bppArgb1555">
+      <MemberSignature Language="C#" Value="Format16bppArgb1555" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format16bppArgb1555 = int32(397319)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format16bppArgb1555" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル形式は、16 ビット/ピクセルです。 色の情報は、32,768 のうち 5 ビットは赤で 5 ビット色の濃淡が緑、5 ビットは青色、および 1 ビットはアルファを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format16bppGrayScale">
+      <MemberSignature Language="C#" Value="Format16bppGrayScale" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format16bppGrayScale = int32(1052676)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format16bppGrayScale" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル形式は、16 ビット/ピクセルです。 色の情報は、灰色の網掛けが 65536 を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format16bppRgb555">
+      <MemberSignature Language="C#" Value="Format16bppRgb555" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format16bppRgb555 = int32(135173)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format16bppRgb555" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 16 ビット/ピクセルです。赤、緑、および青のコンポーネントでは、それぞれ 5 ビットは使用されます。 残りのビットは使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format16bppRgb565">
+      <MemberSignature Language="C#" Value="Format16bppRgb565" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format16bppRgb565 = int32(135174)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format16bppRgb565" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 16 ビット/ピクセルです。5 ビットは赤の要素の使用は、6 ビットは緑の成分のために使用され、5 ビットは、青の要素に使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format1bppIndexed">
+      <MemberSignature Language="C#" Value="Format1bppIndexed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format1bppIndexed = int32(196865)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format1bppIndexed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ビット/ピクセルをピクセル形式であることと、インデックス付きの色を使用することを指定します。 色の表に、そのために 2 つの色、です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format24bppRgb">
+      <MemberSignature Language="C#" Value="Format24bppRgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format24bppRgb = int32(137224)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format24bppRgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 1 ピクセルあたり 24 ビットであるを指定しますそれぞれ 8 ビットは、赤、緑、および青のコンポーネントに使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format32bppArgb">
+      <MemberSignature Language="C#" Value="Format32bppArgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format32bppArgb = int32(2498570)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format32bppArgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ピクセルあたり 32 ビットに形式を指定しますそれぞれ 8 ビットは、アルファ、赤、緑、および青のコンポーネントに使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format32bppPArgb">
+      <MemberSignature Language="C#" Value="Format32bppPArgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format32bppPArgb = int32(925707)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format32bppPArgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ピクセルあたり 32 ビットに形式を指定しますそれぞれ 8 ビットは、アルファ、赤、緑、および青のコンポーネントに使用されます。 アルファ コンポーネントに応じて、赤、緑、および青のコンポーネントが合成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format32bppRgb">
+      <MemberSignature Language="C#" Value="Format32bppRgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format32bppRgb = int32(139273)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format32bppRgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ピクセルあたり 32 ビットに形式を指定しますそれぞれ 8 ビットは、赤、緑、および青のコンポーネントに使用されます。 残りの 8 ビットは使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format48bppRgb">
+      <MemberSignature Language="C#" Value="Format48bppRgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format48bppRgb = int32(1060876)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format48bppRgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ピクセルあたり 48 のビットを形式であることを指定します各 16 ビットは、赤、緑、および青のコンポーネントに使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format4bppIndexed">
+      <MemberSignature Language="C#" Value="Format4bppIndexed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format4bppIndexed = int32(197634)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format4bppIndexed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 4 ビット/ピクセル、インデックス付きであることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format64bppArgb">
+      <MemberSignature Language="C#" Value="Format64bppArgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format64bppArgb = int32(3424269)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format64bppArgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 1 ピクセルあたり 64 ビットであるを指定しますアルファ、赤、緑、および青コンポーネントには、各 16 ビットを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format64bppPArgb">
+      <MemberSignature Language="C#" Value="Format64bppPArgb" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format64bppPArgb = int32(1851406)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format64bppPArgb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式が 1 ピクセルあたり 64 ビットであるを指定しますアルファ、赤、緑、および青コンポーネントには、各 16 ビットを使用します。 赤、緑、および青のコンポーネントは、アルファ コンポーネントに従って前乗算されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Format8bppIndexed">
+      <MemberSignature Language="C#" Value="Format8bppIndexed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Format8bppIndexed = int32(198659)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Format8bppIndexed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式がインデックス付きピクセルあたり 8 ビットであることを指定します。 したがって、カラー テーブルには 256 色にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Gdi">
+      <MemberSignature Language="C#" Value="Gdi" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Gdi = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Gdi" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル データには、GDI 色が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Indexed">
+      <MemberSignature Language="C#" Value="Indexed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Indexed = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Indexed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル データには、カラー インデックス値、つまり、値は、個々 のカラー値ではなく、システム カラー テーブル内の色へのインデックスが含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Max">
+      <MemberSignature Language="C#" Value="Max" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Max = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Max" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列挙体の最大値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PAlpha">
+      <MemberSignature Language="C#" Value="PAlpha" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat PAlpha = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.PAlpha" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル形式には、アルファ合成の値が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Undefined">
+      <MemberSignature Language="C#" Value="Undefined" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.PixelFormat Undefined = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.PixelFormat.Undefined" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセル形式は、定義されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="EventLogWatcher" FullName="System.Diagnostics.Eventing.Reader.EventLogWatcher">
+  <TypeSignature Language="C#" Value="public class EventLogWatcher : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLogWatcher extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>使用すると、受信イベントにサブスクライブできます。 目的のイベントがイベント ログに発行されるたび、<see cref="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />イベントが発生し、このイベントを処理するメソッドは実行されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスから作成されます<xref:System.Diagnostics.Eventing.Reader.EventLogQuery>オブジェクトで、イベント サブスクリプションのクエリを指定します。 イベントが記録された、クエリで表される条件に一致する場合に、<xref:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten>イベントが発生します。  
+  
+   
+  
+## Examples  
+ たとえば、このクラスを使用してコードを参照してください[する方法: イベント ログでイベントをサブスクライブ](http://msdn.microsoft.com/en-us/62e006d3-9fab-4fdf-a8f8-e23d05498cd4)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogWatcher (System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.#ctor(System.Diagnostics.Eventing.Reader.EventLogQuery)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventQuery" Type="System.Diagnostics.Eventing.Reader.EventLogQuery" />
+      </Parameters>
+      <Docs>
+        <param name="eventQuery">イベント サブスクリプションのクエリを指定します。 イベントが記録された、クエリで表される条件に一致する場合に、<see cref="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />イベントが発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />イベント クエリを指定することによってクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogWatcher (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">パスまたはイベントのイベント ログ モニターの名前。 任意のイベントがこのイベント ログに記録された場合、<see cref="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />イベントが発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />クラス名またはイベント ログへのパスを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogWatcher (System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery, System.Diagnostics.Eventing.Reader.EventBookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery, class System.Diagnostics.Eventing.Reader.EventBookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.#ctor(System.Diagnostics.Eventing.Reader.EventLogQuery,System.Diagnostics.Eventing.Reader.EventBookmark)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventQuery" Type="System.Diagnostics.Eventing.Reader.EventLogQuery" />
+        <Parameter Name="bookmark" Type="System.Diagnostics.Eventing.Reader.EventBookmark" />
+      </Parameters>
+      <Docs>
+        <param name="eventQuery">イベント サブスクリプションのクエリを指定します。 イベントが記録された、クエリで表される条件に一致する場合に、<see cref="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />イベントが発生します。</param>
+        <param name="bookmark">イベント ログまたはイベントのストリーム内の開始位置として使用されるブックマーク (プレース ホルダー)。 クエリによって返されるブックマーク イベント後にログに記録されたイベントのみです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />クラス イベント クエリとクエリの開始位置として使用されるブックマークを指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogWatcher (System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery, System.Diagnostics.Eventing.Reader.EventBookmark bookmark, bool readExistingEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.Eventing.Reader.EventLogQuery eventQuery, class System.Diagnostics.Eventing.Reader.EventBookmark bookmark, bool readExistingEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.#ctor(System.Diagnostics.Eventing.Reader.EventLogQuery,System.Diagnostics.Eventing.Reader.EventBookmark,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventQuery" Type="System.Diagnostics.Eventing.Reader.EventLogQuery" />
+        <Parameter Name="bookmark" Type="System.Diagnostics.Eventing.Reader.EventBookmark" />
+        <Parameter Name="readExistingEvents" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="eventQuery">イベント サブスクリプションのクエリを指定します。 イベントが記録された、クエリで表される条件に一致する場合に、<see cref="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />イベントが発生します。</param>
+        <param name="bookmark">イベント ログまたはイベントのストリーム内の開始位置として使用されるブックマーク (プレース ホルダー)。 クエリによって返されるブックマーク イベント後にログに記録されたイベントのみです。</param>
+        <param name="readExistingEvents">イベント ログに既に存在するイベントを読み取るかどうかを決定するブール値。 この値が場合<see langword="true" />、既存のイベントが読み取られ、この値は<see langword="false" />、既存のイベントが読み取られません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />クラス イベント クエリ、クエリの開始位置として使用されるブックマークおよび読み取りイベントがイベント ログに既に存在するかどうかを決定するブール値を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogWatcher.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>このオブジェクトによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogWatcher.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトがイベント デリゲートへのイベントの配信を開始するかどうかを判断します。</summary>
+        <value>返します<see langword="true" />イベント デリゲートを返す、このオブジェクトがイベントを配信するときに<see langword="false" />ときにこのオブジェクトの配信が停止します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventRecordWritten">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Diagnostics.Eventing.Reader.EventRecordWrittenEventArgs&gt; EventRecordWritten;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Diagnostics.Eventing.Reader.EventRecordWrittenEventArgs&gt; EventRecordWritten" />
+      <MemberSignature Language="DocId" Value="E:System.Diagnostics.Eventing.Reader.EventLogWatcher.EventRecordWritten" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Diagnostics.Eventing.Reader.EventRecordWrittenEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定する、デリゲート (イベント ハンドラー メソッド) イベントが発行されるたびに呼び出される条件に一致するイベントで指定されて、このオブジェクトのクエリを許可します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ たとえば、このクラスを使用してコードを参照してください[する方法: イベント ログでイベントをサブスクライブ](http://msdn.microsoft.com/en-us/62e006d3-9fab-4fdf-a8f8-e23d05498cd4)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

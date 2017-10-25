@@ -1,0 +1,933 @@
+<Type Name="ConstraintCollection" FullName="System.Data.ConstraintCollection">
+  <TypeSignature Language="C#" Value="public sealed class ConstraintCollection : System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConstraintCollection extends System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Data.ConstraintCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.InternalDataCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.ConstraintsCollectionEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>制約のコレクションを表します、<see cref="T:System.Data.DataTable" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection>を通じてアクセス、<xref:System.Data.DataTable.Constraints%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Data.ConstraintCollection>両方を含めることができます<xref:System.Data.UniqueConstraint>と<xref:System.Data.ForeignKeyConstraint>オブジェクトに対する、<xref:System.Data.DataTable>です。 A<xref:System.Data.UniqueConstraint>オブジェクトでは、特定の列のデータが一意で、データの整合性を保持するために常にあることを確認します。 <xref:System.Data.ForeignKeyConstraint>関連で何が起こるかを決定テーブル内のデータ、<xref:System.Data.DataTable>が更新または削除します。 たとえば、行が削除される場合、<xref:System.Data.ForeignKeyConstraint>が決定されます (cascade) を削除するかどうか、関連する行も、またはその他のいくつかの一連の措置のです。  
+  
+> [!NOTE]
+>  追加すると、<xref:System.Data.DataRelation>に 2 つのテーブル間のリレーションシップを作成する、<xref:System.Data.DataSet>の両方を<xref:System.Data.ForeignKeyConstraint>と<xref:System.Data.UniqueConstraint>自動的に作成されます。 <xref:System.Data.UniqueConstraint> 、親の主キー列に適用される<xref:System.Data.DataTable>、そのテーブルに、制約を追加および<xref:System.Data.ConstraintCollection>です。 <xref:System.Data.ForeignKeyConstraint>主キー列と外部キー列に適用される制約の子テーブルの追加と<xref:System.Data.ConstraintCollection>です。  
+  
+ <xref:System.Data.ConstraintCollection>などの標準的な収集方法を使用して<xref:System.Data.ConstraintCollection.Add%2A>、 <xref:System.Data.ConstraintCollection.Clear%2A>、および<xref:System.Data.ConstraintCollection.Remove%2A>です。 さらに、<xref:System.Data.ConstraintCollection.Contains%2A>メソッドは、コレクション内の特定の制約が存在する検索を使用することができます。  
+  
+ A<xref:System.Data.UniqueConstraint>場合は、作成、<xref:System.Data.DataColumn>でその<xref:System.Data.DataColumn.Unique%2A>プロパティに設定`true`に追加、<xref:System.Data.DataTable>オブジェクトの<xref:System.Data.DataColumnCollection>します。  
+  
+ A<xref:System.Data.ForeignKeyConstraint>場合は、作成、<xref:System.Data.DataRelation>に追加、<xref:System.Data.DataSet>オブジェクトの<xref:System.Data.DataRelationCollection>します。  
+  
+   
+  
+## Examples  
+ 最初の例では、作成、 <xref:System.Data.DataTable>、し、追加、 <xref:System.Data.DataColumn> (とその<xref:System.Data.DataColumn.Unique%2A>プロパティに設定`true`) に、<xref:System.Data.DataColumnCollection>です。 2 番目の例では、作成、 <xref:System.Data.DataSet>、2 つ<xref:System.Data.DataTable>オブジェクト、4 つの列、および<xref:System.Data.DataRelation>です。 制約の数が印刷されます、<xref:System.Data.ForeignKeyConstraint>と<xref:System.Data.UniqueConstraint>が作成されます、<xref:System.Data.DataRelation>に追加、<xref:System.Data.DataSet>オブジェクトの<xref:System.Data.DataRelationCollection.%23ctor%2A>します。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Data.Constraint constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Data.Constraint constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.Data.Constraint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Data.Constraint" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">追加する <see langword="Constraint" />。</param>
+        <summary>指定した <see cref="T:System.Data.Constraint" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが正常に追加または削除、制約、変更された場合、<xref:System.Data.ConstraintCollection.CollectionChanged>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次の例では追加、<xref:System.Data.UniqueConstraint>を<xref:System.Data.ConstraintCollection>の<xref:System.Data.DataTable>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="constraint" /> 引数が null です。</exception>
+        <exception cref="T:System.ArgumentException">この制約は既にこのコレクションまたは別のコレクションに属しています。</exception>
+        <exception cref="T:System.Data.DuplicateNameException">コレクションを既にには、同じ名前の制約があります。 (比較では、大文字と小文字を区別しません。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn column, bool primaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn column, bool primaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see langword="UniqueConstraint" /> の名前。</param>
+        <param name="column"><see cref="T:System.Data.DataColumn" />に制約が適用されます。</param>
+        <param name="primaryKey">列が主キーにするかどうかを指定します。 場合<see langword="true" />列が主キー列になります。</param>
+        <summary>新しい<see cref="T:System.Data.UniqueConstraint" />、指定した名前を持つ<see cref="T:System.Data.DataColumn" />とを列が主キーし、コレクションに追加するかどうかを示す値。</summary>
+        <returns>新しい <see langword="UniqueConstraint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベントは、制約が正常に追加された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.ConstraintCollection.Add%2A>メソッドを作成し、新しい追加<xref:System.Data.UniqueConstraint>を<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Add2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Add2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">制約は、このコレクションに既に属しています。  
+  
+ または  
+  
+ 制約は、別のコレクションに属しています。</exception>
+        <exception cref="T:System.Data.DuplicateNameException">コレクションを既にには、指定した名前の制約があります。 (比較では、大文字と小文字を区別しません。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn primaryKeyColumn, System.Data.DataColumn foreignKeyColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn primaryKeyColumn, class System.Data.DataColumn foreignKeyColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn,System.Data.DataColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="primaryKeyColumn" Type="System.Data.DataColumn" />
+        <Parameter Name="foreignKeyColumn" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Data.ForeignKeyConstraint" /> の名前。</param>
+        <param name="primaryKeyColumn">主キー、または親<see cref="T:System.Data.DataColumn" />です。</param>
+        <param name="foreignKeyColumn">Foreign key、または子、<see cref="T:System.Data.DataColumn" />です。</param>
+        <summary>新しい<see cref="T:System.Data.ForeignKeyConstraint" />指定した名前を持つ親列、および子列と制約をコレクションに追加します。</summary>
+        <returns>新しい <see langword="ForeignKeyConstraint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベントは、制約が正常に追加された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例は、新しく追加<xref:System.Data.ForeignKeyConstraint>を<xref:System.Data.ConstraintCollection>の<xref:System.Data.DataTable>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Add3 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add3 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Add3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn[] columns, bool primaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn[] columns, bool primaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="columns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Data.UniqueConstraint" /> の名前。</param>
+        <param name="columns">配列<see cref="T:System.Data.DataColumn" />制約を適用するオブジェクトします。</param>
+        <param name="primaryKey">列が主キーにするかどうかを指定します。 場合<see langword="true" />列が主キー列になります。</param>
+        <summary>新しい<see cref="T:System.Data.UniqueConstraint" />、指定した名前の配列<see cref="T:System.Data.DataColumn" />オブジェクト、および、列が主キーし、コレクションに追加するかどうかを示す値。</summary>
+        <returns>新しい <see langword="UniqueConstraint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベントは、制約が正常に追加された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例の配列を作成する<xref:System.Data.DataColumn>新規作成に使用されるオブジェクト<xref:System.Data.UniqueConstraint>にある特定の<xref:System.Data.DataTable>します。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">制約は、このコレクションに既に属しています。  
+  
+ または  
+  
+ 制約は、別のコレクションに属しています。</exception>
+        <exception cref="T:System.Data.DuplicateNameException">コレクションを既にには、指定した名前の制約があります。 (比較では、大文字と小文字を区別しません。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn[] primaryKeyColumns, System.Data.DataColumn[] foreignKeyColumns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn[] primaryKeyColumns, class System.Data.DataColumn[] foreignKeyColumns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn[],System.Data.DataColumn[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="primaryKeyColumns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="foreignKeyColumns" Type="System.Data.DataColumn[]" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Data.ForeignKeyConstraint" /> の名前。</param>
+        <param name="primaryKeyColumns">配列<see cref="T:System.Data.DataColumn" />主キー、または、親の列であるオブジェクト。</param>
+        <param name="foreignKeyColumns">配列<see cref="T:System.Data.DataColumn" />foreign key、または、子の列であるオブジェクト。</param>
+        <summary>新しい<see cref="T:System.Data.ForeignKeyConstraint" />親列と子列の指定した配列を使用し、コレクションに制約を追加します。</summary>
+        <returns>新しい <see langword="ForeignKeyConstraint" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベントは、制約が正常に追加された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例の 2 つの配列を作成する<xref:System.Data.DataColumn>オブジェクト、および 2 つ作成し<xref:System.Data.ForeignKeyConstraint>データセット内の 2 つのテーブル間のリレーションシップ。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Add4 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add4 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Add4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Add4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Data.Constraint[] constraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.Constraint[] constraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.AddRange(System.Data.Constraint[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraints" Type="System.Data.Constraint[]" />
+      </Parameters>
+      <Docs>
+        <param name="constraints">配列<see cref="T:System.Data.ConstraintCollection" />コレクションに追加するオブジェクト。</param>
+        <summary>指定した要素をコピー<see cref="T:System.Data.ConstraintCollection" />コレクションの末尾までの配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Data.DataTable.BeginInit%2A>が呼び出されて`AddRange`までコレクションに任意のオブジェクトを追加しません<xref:System.Data.DataTable.EndInit%2A>と呼びます。 時を`EndInit`が呼び出されると、コレクションが設定されますを最新の呼び出しで指定された項目`AddRange`です。 場合`AddRange`内で複数回を呼び出すが、 `BeginInit`  /  `EndInit`シーケンス、最新の呼び出しで指定された項目のみ`AddRange`追加されます。  
+  
+   
+  
+## Examples  
+ 次の例は、主キーと外部キー制約を作成し、それらを追加、<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.AddRange Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.AddRange Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.AddRange Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.AddRange Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRemove">
+      <MemberSignature Language="C#" Value="public bool CanRemove (System.Data.Constraint constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanRemove(class System.Data.Constraint constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Data.Constraint" />
+      </Parameters>
+      <Docs>
+        <param name="constraint"><see cref="T:System.Data.Constraint" />をテストする、コレクションから削除します。</param>
+        <summary>示すかどうか、<see cref="T:System.Data.Constraint" />削除できます。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Data.Constraint" /> 、それ以外のコレクションから削除された<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作するたびに、<xref:System.Data.DataRelation>に追加されます、<xref:System.Data.DataSet>を追加するには、<xref:System.Data.ForeignKeyConstraint>親テーブルと<xref:System.Data.UniqueConstraint>する子テーブルにします。 <xref:System.Data.UniqueConstraint>は、親テーブルの主キー列に適用され、<xref:System.Data.ForeignKeyConstraint>は、子テーブルの外部キー列に適用します。 削除しようとしているため、<xref:System.Data.UniqueConstraint>削除する前に、<xref:System.Data.ForeignKeyConstraint>で例外をスローする原因として、使用するようにして、<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出すことを確認する、削除する前に、<xref:System.Data.UniqueConstraint>削除できます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Data.Constraint>それを削除する前に、削除することができます。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.CanRemove Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.CanRemove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.CanRemove Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.CanRemove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いずれかのコレクションをクリア<see cref="T:System.Data.Constraint" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベントは、この操作が成功した場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例からのすべての制約のクリア、<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Data.ConstraintCollection.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときに発生、<see cref="T:System.Data.ConstraintCollection" />のため変更<see cref="T:System.Data.Constraint" />オブジェクトが追加または削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Data.ConstraintCollection.CollectionChanged>イベント。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.CollectionChanged Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.CollectionChanged Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.CollectionChanged Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.CollectionChanged Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Data.Constraint.ConstraintName" />制約のです。</param>
+        <summary>示すかどうか、<see cref="T:System.Data.Constraint" />名で指定されたオブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />コレクションには、指定した制約が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.ConstraintCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、指定した<xref:System.Data.Constraint>コレクションから削除する前に存在します。 使用することも、<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Data.Constraint>削除できます。  
+  
+   
+  
+## Examples  
+ 次の例を決定するかどうか、指定した<xref:System.Data.Constraint>内に存在する、<xref:System.Data.ConstraintCollection>削除する前にします。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.Constraint[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.Constraint[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.CopyTo(System.Data.Constraint[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.Constraint[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">挿入を開始する配列のインデックス。</param>
+        <summary>オブジェクトをコレクションに、1 次元コピー<see cref="T:System.Array" />インスタンスの指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Data.Constraint constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.Constraint constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.IndexOf(System.Data.Constraint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Data.Constraint" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">検索対象の <see cref="T:System.Data.Constraint" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Data.Constraint" />です。</summary>
+        <returns>0 から始まるインデックス、<see cref="T:System.Data.Constraint" />コレクション内にある場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.ConstraintCollection.IndexOf%2A>いずれかで使用するインデックスを返すメソッドを<xref:System.Data.ConstraintCollection.Contains%2A>または<xref:System.Data.ConstraintCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.ConstraintCollection.IndexOf%2A>のインデックスを返すメソッドを<xref:System.Data.Constraint>です。 インデックスが渡される、<xref:System.Data.ConstraintCollection.Contains%2A>メソッド、コレクションに制約が含まれているかどうかを決定する、削除されるまでです。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.IndexOf1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.IndexOf1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.IndexOf1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.IndexOf1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string constraintName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string constraintName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraintName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="constraintName"><see cref="T:System.Data.Constraint" /> の名前。</param>
+        <summary>インデックスを取得、<see cref="T:System.Data.Constraint" />名で指定します。</summary>
+        <returns>インデックス、<see cref="T:System.Data.Constraint" />コレクション内にある場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.ConstraintCollection.IndexOf%2A>いずれかで使用するインデックスを返すメソッドを<xref:System.Data.ConstraintCollection.Contains%2A>または<xref:System.Data.ConstraintCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.ConstraintCollection.IndexOf%2A>のインデックスを返すメソッドを<xref:System.Data.Constraint>です。 インデックスが渡される、<xref:System.Data.ConstraintCollection.Contains%2A>コレクションに、削除する前に、制約が含まれているかどうかを調べます。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.IndexOf Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.IndexOf Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.IndexOf Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.IndexOf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Constraint Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返される制約のインデックス。</param>
+        <summary>取得、<see cref="T:System.Data.Constraint" />コレクション内の指定したインデックス位置からです。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Data.Constraint" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.ConstraintCollection.Contains%2A>特定の制約の存在をテストするメソッド。  
+  
+   
+  
+## Examples  
+ 次の例では、それぞれを取得<xref:System.Data.Constraint>から、<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">インデックス値は、コレクション内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Constraint this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Constraint Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Constraint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Data.Constraint.ConstraintName" />の制約を返します。</param>
+        <summary>取得、<see cref="T:System.Data.Constraint" />コレクションから指定した名前を持つ。</summary>
+        <value><see cref="T:System.Data.Constraint" />指定した名前です。 それ以外の場合、null 値の場合、<see cref="T:System.Data.Constraint" />存在しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.ConstraintCollection.Contains%2A>特定の制約の存在をテストするメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、名前付き取得<xref:System.Data.Constraint>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.Constraint constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.Constraint constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Remove(System.Data.Constraint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Data.Constraint" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">削除する <see cref="T:System.Data.Constraint" />。</param>
+        <summary>指定された <see cref="T:System.Data.Constraint" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する前に、`Remove`メソッドを使用できます、<xref:System.Data.ConstraintCollection.Contains%2A>ターゲットがコレクションに含まれているかどうかを調べます<xref:System.Data.Constraint>、および<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出せば確認かどうか、<xref:System.Data.Constraint>削除できます。  
+  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベント、制約が正常に削除された場合に発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[Classic WebData ConstraintCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="constraint" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">制約は、コレクションには属していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除する <see cref="T:System.Data.Constraint" /> の名前。</param>
+        <summary>削除、<see cref="T:System.Data.Constraint" />コレクションから名前で指定されたオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する前に、`Remove`メソッドを使用できます、<xref:System.Data.ConstraintCollection.Contains%2A>ターゲットがコレクションに含まれているかどうかを調べます<xref:System.Data.Constraint>、および<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出せば確認かどうか、<xref:System.Data.Constraint>削除できます。  
+  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベント、制約が正常に削除された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、削除、<xref:System.Data.Constraint>から、<xref:System.Data.ConstraintCollection>にその存在をテストした後、<xref:System.Data.ConstraintCollection.Contains%2A>メソッドを削除するかどうかと、<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.Remove1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Remove1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.Remove1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.Remove1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Data.Constraint" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Data.Constraint" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ConstraintCollection.IndexOf%2A>メソッドは、特定のインデックスを返します<xref:System.Data.Constraint>です。  
+  
+ 使用する前に、`RemoveAt`メソッドを使用できます、<xref:System.Data.ConstraintCollection.Contains%2A>ターゲットがコレクションに含まれているかどうかを調べます<xref:System.Data.Constraint>、および<xref:System.Data.ConstraintCollection.CanRemove%2A>メソッドを呼び出せば確認かどうか、<xref:System.Data.Constraint>削除できます。  
+  
+ <xref:System.Data.ConstraintCollection.CollectionChanged>イベント、制約が正常に削除された場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.ConstraintCollection.IndexOf%2A>メソッドと共に、<xref:System.Data.ConstraintCollection.RemoveAt%2A>から制約を削除する方法、<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData ConstraintCollection.RemoveAt Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.RemoveAt Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData ConstraintCollection.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ConstraintCollection.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">コレクションには、このインデックスにある、制約がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

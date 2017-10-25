@@ -1,0 +1,125 @@
+<Type Name="SearchResultEntryCollection" FullName="System.DirectoryServices.Protocols.SearchResultEntryCollection">
+  <TypeSignature Language="C#" Value="public class SearchResultEntryCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchResultEntryCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" />クラスのコレクションを格納する<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />結果セット内のオブジェクトが返されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.Protocols.SearchResultEntry value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.Protocols.SearchResultEntry value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.Contains(System.DirectoryServices.Protocols.SearchResultEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DirectoryServices.Protocols.SearchResultEntry" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.Contains(System.DirectoryServices.Protocols.SearchResultEntry)" />メソッドでは、コレクションを含む、指定したかどうかを判断<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合<paramref name="value" />または<see langword="false" />そうでない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.Protocols.SearchResultEntry[] values, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.Protocols.SearchResultEntry[] values, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.CopyTo(System.DirectoryServices.Protocols.SearchResultEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.DirectoryServices.Protocols.SearchResultEntry[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="values">コピーされた要素のコピー先である 1 次元配列、<see cref="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" />オブジェクト。</param>
+        <param name="index">0 から始まるインデックス<c>値</c>コピー開始位置。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.CopyTo(System.DirectoryServices.Protocols.SearchResultEntry[],System.Int32)" />メソッドが対象となる配列の指定したインデックスから始まる 1 次元配列にコレクション全体をコピーします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="values" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="values" />多次元  
+  
+ または  
+  
+ コピー元の <see cref="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" /> の要素数が、コピー先 <paramref name="values" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.DirectoryServices.Protocols.SearchResultEntry value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.DirectoryServices.Protocols.SearchResultEntry value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.IndexOf(System.DirectoryServices.Protocols.SearchResultEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DirectoryServices.Protocols.SearchResultEntry" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />オブジェクトのインデックスが返されます。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SearchResultEntryCollection.IndexOf(System.DirectoryServices.Protocols.SearchResultEntry)" />メソッドが最初に見つかった位置の指定した 0 から始まるインデックスを返します<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />オブジェクトに<see cref="T:System.DirectoryServices.Protocols.SearchResultEntryCollection" />です。</summary>
+        <returns>指定したインデックス値<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />オブジェクトの場合が見つかると、見つからなかった場合は-1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.SearchResultEntry this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.SearchResultEntry Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SearchResultEntryCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.SearchResultEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス値、<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />オブジェクト。</param>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SearchResultEntryCollection.Item(System.Int32)" />プロパティが含まれています、<see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />内の指定したオブジェクト<paramref name="index" />です。</summary>
+        <value><see cref="T:System.DirectoryServices.Protocols.SearchResultEntry" />内の指定したオブジェクト<paramref name="index" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,298 @@
+<Type Name="ServiceModelSectionGroup" FullName="System.ServiceModel.Configuration.ServiceModelSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class ServiceModelSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceModelSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.ServiceModelSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) の主要な構成セクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべて[!INCLUDE[indigo2](~/includes/indigo2-md.md)]で構成要素が入れ子にされた、`system.serviceModel`構成ファイルの要素。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、他の製品の構成セクションに要素を追加しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceModelSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceModelSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.ServiceModelSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Behaviors">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.BehaviorsSection Behaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.BehaviorsSection Behaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Behaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.BehaviorsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動作要素である子エントリを含む構成セクションを取得します。</summary>
+        <value>動作要素である子エントリを含む構成セクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `behavior` セクションは、動作要素を定義します。 各エントリは、動作にリンクするときにサービスが使用する一意の `name` で識別されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bindings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.BindingsSection Bindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.BindingsSection Bindings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Bindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.BindingsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのバインディングを含む構成セクションを取得します。</summary>
+        <value>すべてのバインディングを格納する構成セクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセクションには、標準バインディングおよびカスタム バインディングのコレクションが保持されます。 各エントリは、バインディングにリンクするときにサービスが使用する一意の名前で識別されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Client">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ClientSection Client { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ClientSection Client" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Client" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ClientSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントがサービスへの接続に使用するエンドポイントの一覧を格納する構成セクションを取得します。</summary>
+        <value>クライアントがサービスへの接続に使用するエンドポイントの一覧を含む構成セクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComContracts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ComContractsSection ComContracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ComContractsSection ComContracts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.ComContracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ComContractsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM+ 相互運用性で使用されるサービス コントラクトの名前空間とコントラクト名を定義する構成セクションを取得します。</summary>
+        <value>COM + 相互運用に使用されるサービス コントラクトの名前空間とコントラクト名を定義する構成セクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonBehaviors">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.CommonBehaviorsSection CommonBehaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.CommonBehaviorsSection CommonBehaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.CommonBehaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.CommonBehaviorsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] セクションの動作が適用される前に、コンピューター上のすべての <see langword="behaviors" /> のサービスに適用される動作のリストを含む構成セクションを取得します。</summary>
+        <value>すべてに適用される動作のリストを格納する構成セクション[!INCLUDE[indigo2](~/includes/indigo2-md.md)]動作前に、コンピューター上のサービス、<see langword="behaviors" />セクションの内容を適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセクションは、Machine.config ファイルに定義されます。 動作コレクションの動作が適用される前に、コンピューター上のすべての [!INCLUDE[indigo2](~/includes/indigo2-md.md)] のサービスに適用される動作のリストが含まれます。 ある動作が両方のセクションで定義されている場合、動作セクション内の動作が優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Diagnostic">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.DiagnosticSection Diagnostic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.DiagnosticSection Diagnostic" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Diagnostic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.DiagnosticSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の診断機能の構成セクションを取得します。</summary>
+        <value>診断機能の構成セクション[!INCLUDE[indigo2](~/includes/indigo2-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `diagnostics` セクションには、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の診断機能の設定が含まれます。 ユーザーはトレース、パフォーマンス カウンター、および WMI プロバイダーを有効または無効にしたり、カスタム メッセージ フィルターを追加したりできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ExtensionsSection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ExtensionsSection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ExtensionsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての拡張を定義する構成セクションを取得します。</summary>
+        <value>すべての拡張を定義する構成セクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSectionGroup">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Configuration.ServiceModelSectionGroup GetSectionGroup (System.Configuration.Configuration config);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Configuration.ServiceModelSectionGroup GetSectionGroup(class System.Configuration.Configuration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceModelSectionGroup.GetSectionGroup(System.Configuration.Configuration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ServiceModelSectionGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="config" Type="System.Configuration.Configuration" />
+      </Parameters>
+      <Docs>
+        <param name="config">構成ファイルを表す <see cref="T:System.Configuration.Configuration" />。</param>
+        <summary>指定した構成ファイルから <see langword="system.ServiceModel" /> 構成セクション グループを取得します。</summary>
+        <returns>構成の <see cref="T:System.ServiceModel.Configuration.ServiceModelSectionGroup" /> 設定を表す <see langword="system.ServiceModel" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="config" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolMapping">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ProtocolMappingSection ProtocolMapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ProtocolMappingSection ProtocolMapping" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.ProtocolMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ProtocolMappingSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信プロトコルを定義するエンドポイント構成セクションを取得します。</summary>
+        <value>通信プロトコルを定義するエンドポイント構成セクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceHostingEnvironment">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ServiceHostingEnvironmentSection ServiceHostingEnvironment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ServiceHostingEnvironmentSection ServiceHostingEnvironment" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.ServiceHostingEnvironment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ServiceHostingEnvironmentSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義する構成セクションを取得します。</summary>
+        <value>環境をホストするサービスの型を定義する構成セクションは、特定のトランスポートに対してインスタンス化します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Services">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ServicesSection Services { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ServicesSection Services" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.Services" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ServicesSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのコレクションを定義する構成セクションを取得します。</summary>
+        <value>サービスのコレクションを定義する構成セクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリで定義された各サービスの場合は、サービスの設定を含むサービス要素がこのセクションに含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardEndpoints">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.StandardEndpointsSection StandardEndpoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.StandardEndpointsSection StandardEndpoints" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceModelSectionGroup.StandardEndpoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.StandardEndpointsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準エンドポイントの構成セクションを取得します。</summary>
+        <value>標準エンドポイント セクション要素オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

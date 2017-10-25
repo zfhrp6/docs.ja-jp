@@ -1,0 +1,250 @@
+<Type Name="IOperationBehavior" FullName="System.ServiceModel.Description.IOperationBehavior">
+  <TypeSignature Language="C#" Value="public interface IOperationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOperationBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IOperationBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>サービスまたはクライアント アプリケーションで操作のランタイム動作を拡張するために使用できるメソッドを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントまたはサービス アプリケーションのいずれかで、操作全体にわたる実行の一部の側面をアプリケーション レベルで変更、確認、または拡張するには、<xref:System.ServiceModel.Description.IOperationBehavior> インターフェイスを実装します。  
+  
+-   <xref:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters%2A> メソッドを使用して、実行時にカスタム データを渡して、バインディングがカスタム動作をサポートできるようにします。  
+  
+-   <xref:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior%2A> メソッドを使用して、クライアント アプリケーションでクライアント ディスパッチャーを変更または確認したり、クライアント ディスパッチャーに拡張機能を挿入したりできます。  
+  
+-   <xref:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior%2A> メソッドを使用して、サービス アプリケーションで操作全体にわたる実行を変更または確認したり、操作全体にわたる実行に拡張機能を挿入したりできます。  
+  
+-   <xref:System.ServiceModel.Description.IOperationBehavior.Validate%2A> メソッドを使用して、<xref:System.ServiceModel.Description.OperationDescription> が特定の要件を満たしていることを確認します。 このメソッドを使用して、操作で特定の構成設定が有効になっているかどうか、操作が特定の機能をサポートしているかどうかなどの要件を確認できます。  
+  
+ <xref:System.ServiceModel.Description.IOperationBehavior> オブジェクトは、これらのメソッドをどれでも使用できますが、通常は、重要なメソッドは 1 つだけです。この場合、使用されないメソッドは、アクションを実行せずに戻ることができます。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IOperationBehavior> メソッドは <xref:System.ServiceModel.Description.OperationDescription> オブジェクトをパラメーターとして渡します。 このパラメーターは、検査にのみ使用されます。<xref:System.ServiceModel.Description.OperationDescription> オブジェクトを変更した場合、実行の動作は未定義になります。  
+  
+ <xref:System.ServiceModel.Description.IOperationBehavior> オブジェクトは通常、サービス アプリケーションの <xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> オブジェクト、および、クライアント アプリケーションの <xref:System.ServiceModel.Dispatcher.ClientOperation?displayProperty=nameWithType> オブジェクトのさまざまなプロパティにアクセスするために使用します。  
+  
+ 一般に、開発者はまず機能拡張ポイントを調べてアプリケーション シナリオに適したカスタマイズ オプションを決定してから、そのカスタマイズを適切なスコープで実装します。 たとえば、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType> オブジェクトを使用してサービス全体のすべてのメッセージに対するカスタマイズを挿入したり、<xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> オブジェクトを使用して特定のコントラクト全体のすべてのメッセージに対するカスタマイズを挿入したりできます。 さまざまなプロパティおよび設定できるカスタマイズについては、次を参照してください。 [ServiceHost を拡張すると、サービス モデル レイヤー](~/docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
+  
+ カスタマイズを設定して必要なカスタマイズ インターフェイスを実装し、<xref:System.ServiceModel.Description.IOperationBehavior> が適切なスコープのカスタマイズであることを確認したら、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] ランタイムにカスタマイズを挿入する必要があります。これは、<xref:System.ServiceModel.Description.IOperationBehavior> を実装し、ランタイムに操作の動作を追加することによって行います。  
+  
+ ランタイムに <xref:System.ServiceModel.Description.IOperationBehavior> を追加するには、2 つの方法があります。  
+  
+-   サービス ホスト (サービス アプリケーションの場合) またはチャネル ファクトリ (クライアント アプリケーションの場合) を開く前に、プログラムを使用して、<xref:System.ServiceModel.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> プロパティに操作のカスタム動作を追加します。  
+  
+-   カスタム属性を使用して動作を追加します。  
+  
+ 想定されているサービス カスタマイズ タスクを実行するには、<xref:System.ServiceModel.Description.IOperationBehavior> メソッドが <xref:System.ServiceModel.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> で呼び出されるときに行われるサービス ランタイムの構築の前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> オブジェクトを <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> プロパティに追加しておく必要があります。 クライアント カスタマイズ タスクを実行するには、<xref:System.ServiceModel.Description.IOperationBehavior> で <xref:System.ServiceModel.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> メソッドまたは <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> メソッドを呼び出す前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> オブジェクトを <xref:System.ServiceModel.ChannelFactory%601> プロパティに追加しておく必要があります。  
+  
+ 操作の動作は、個々の操作のスコープ内のランタイムに簡単にアクセスできるように設計されていますが、親ランタイム オブジェクトにアクセスすることにより、より広いスコープのランタイムにアクセスできます。  
+  
+   
+  
+## Examples  
+ インスペクターが操作で呼び出されたときにコンソールに書き込みを行う <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> の実装を次のコード例に示します。 このカスタマイズは、<xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> または <xref:System.ServiceModel.Dispatcher.ClientOperation?displayProperty=nameWithType> にのみ結び付けることができるので、通常は操作の動作によって挿入されます。  
+  
+ [!code-csharp[Interceptors#4](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#4)]
+ [!code-vb[Interceptors#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#4)]  
+  
+ 操作の動作がパラメーター インスペクターをランタイムに結び付ける方法を次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#6](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#6)]
+ [!code-vb[Interceptors#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBindingParameters">
+      <MemberSignature Language="C#" Value="public void AddBindingParameters (System.ServiceModel.Description.OperationDescription operationDescription, System.ServiceModel.Channels.BindingParameterCollection bindingParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBindingParameters(class System.ServiceModel.Description.OperationDescription operationDescription, class System.ServiceModel.Channels.BindingParameterCollection bindingParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="bindingParameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="operationDescription">検査されている操作。 検査でのみ使用します。 操作の説明が変更される場合、結果は未定義です。</param>
+        <param name="bindingParameters">動作をサポートするためにバインディング要素が要求するオブジェクトのコレクション。</param>
+        <summary>実行時にバインディングにデータを渡して、バインディングがカスタム動作をサポートできるようにするために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の動作をサポートするために必要な追加のオブジェクトをバインディング要素に提供するには、<xref:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters%2A> メソッドを実装します。 これによってバインディング パラメーターが追加されると、チャネル リスナーまたはチャネル ファクトリが作成された場合に、バインディングがこれらのオブジェクトを検索して処理できます。 <xref:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters%2A> メソッドは通常、サポートするチャネルを正しく作成できるように、カスタム バインディング要素に操作に関する情報を渡すために実装します。 変更の必要がない場合は、値を返しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="public void ApplyClientBehavior (System.ServiceModel.Description.OperationDescription operationDescription, System.ServiceModel.Dispatcher.ClientOperation clientOperation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyClientBehavior(class System.ServiceModel.Description.OperationDescription operationDescription, class System.ServiceModel.Dispatcher.ClientOperation clientOperation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="clientOperation" Type="System.ServiceModel.Dispatcher.ClientOperation" />
+      </Parameters>
+      <Docs>
+        <param name="operationDescription">検査されている操作。 検査でのみ使用します。 操作の説明が変更される場合、結果は未定義です。</param>
+        <param name="clientOperation">によって示される操作のカスタマイズ プロパティを公開するランタイム オブジェクト<c>operationDescription</c>です。</param>
+        <summary>操作全体にわたってクライアントの変更または拡張を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の操作で使用されるすべてのメッセージについて、クライアント ランタイムを表示または変更したり、クライアント ランタイムにカスタム拡張機能を追加したりするには、<xref:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior%2A> メソッドを実装します。 クライアントのランタイム オブジェクトで実行できるカスタマイズの詳細については、<xref:System.ServiceModel.Dispatcher.ClientRuntime> および <xref:System.ServiceModel.Dispatcher.ClientOperation> を参照してください。  
+  
+ 動作をサービス アプリケーションでのみ使用する場合は、<xref:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior%2A> メソッドで <xref:System.NotImplementedException> をスローさせることをお勧めします。  
+  
+   
+  
+## Examples  
+ インスペクターが操作で呼び出されたときにコンソールに書き込みを行う <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> の実装を次のコード例に示します。 このカスタマイズは、<xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> または <xref:System.ServiceModel.Dispatcher.ClientOperation?displayProperty=nameWithType> にのみ結び付けることができるので、通常は操作の動作によって挿入されます。  
+  
+ [!code-csharp[Interceptors#4](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#4)]
+ [!code-vb[Interceptors#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#4)]  
+  
+ 操作の動作がパラメーター インスペクターをランタイムに結び付ける方法を次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#6](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#6)]
+ [!code-vb[Interceptors#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="public void ApplyDispatchBehavior (System.ServiceModel.Description.OperationDescription operationDescription, System.ServiceModel.Dispatcher.DispatchOperation dispatchOperation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyDispatchBehavior(class System.ServiceModel.Description.OperationDescription operationDescription, class System.ServiceModel.Dispatcher.DispatchOperation dispatchOperation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="dispatchOperation" Type="System.ServiceModel.Dispatcher.DispatchOperation" />
+      </Parameters>
+      <Docs>
+        <param name="operationDescription">検査されている操作。 検査でのみ使用します。 操作の説明が変更される場合、結果は未定義です。</param>
+        <param name="dispatchOperation">によって示される操作のカスタマイズ プロパティを公開するランタイム オブジェクト<c>operationDescription</c>です。</param>
+        <summary>操作全体にわたってサービスの変更または拡張を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメッセージまたは特定の操作について、サービス ランタイムを表示、変更、または拡張するには、<xref:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior%2A> メソッドを実装します。 サービス アプリケーションで実行できるカスタマイズの詳細については、<xref:System.ServiceModel.Dispatcher.DispatchRuntime?displayProperty=nameWithType> および <xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> を参照してください。  
+  
+ 動作をクライアント アプリケーションでのみ使用する場合は、<xref:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior%2A> メソッドで <xref:System.NotImplementedException> 例外をスローさせることをお勧めします。  
+  
+   
+  
+## Examples  
+ インスペクターが操作で呼び出されたときにコンソールに書き込みを行う <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> の実装を次のコード例に示します。 このカスタマイズは、<xref:System.ServiceModel.Dispatcher.DispatchOperation?displayProperty=nameWithType> または <xref:System.ServiceModel.Dispatcher.ClientOperation?displayProperty=nameWithType> にのみ結び付けることができるので、通常は操作の動作によって挿入されます。  
+  
+ [!code-csharp[Interceptors#4](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#4)]
+ [!code-vb[Interceptors#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#4)]  
+  
+ 操作の動作がパラメーター インスペクターをランタイムに結び付ける方法を次のコード例に示します。  
+  
+ [!code-csharp[Interceptors#6](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#6)]
+ [!code-vb[Interceptors#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (System.ServiceModel.Description.OperationDescription operationDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate(class System.ServiceModel.Description.OperationDescription operationDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IOperationBehavior.Validate(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationDescription" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="operationDescription">検査されている操作。 検査でのみ使用します。 操作の説明が変更される場合、結果は未定義です。</param>
+        <summary>操作が指定した基準を満たしていることを確認するために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造を調べて基準の設定を確認するために、<xref:System.ServiceModel.Description.IOperationBehavior.Validate%2A> メソッドを実装します。 このメソッドを使用するために <xref:System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior%2A>、または <xref:System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior%2A> でカスタマイズを行う必要はありません。 操作が検証にパスした場合は値を返します。それ以外の場合は、例外をスローします。  
+  
+ たとえば、<xref:System.ServiceModel.Description.IOperationBehavior.Validate%2A> メソッドを使用して、操作が許可されているかどうかを確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

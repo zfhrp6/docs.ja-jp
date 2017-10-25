@@ -1,0 +1,80 @@
+<Type Name="Touch" FullName="System.Windows.Input.Touch">
+  <TypeSignature Language="C#" Value="public static class Touch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Touch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Touch" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マルチタッチ オペレーティング システムからの入力を処理するアプリケーション レベルのサービスを提供しを発生させます、<see cref="E:System.Windows.Input.Touch.FrameReported" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Touch.FrameReported>でイベントが含まれる[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]Silverlight との互換性をサポートするためにします。 Silverlight との互換性を確保する必要はありません、ように、タッチ イベントを使用して<xref:System.Windows.UIElement.TouchDown>と<xref:System.Windows.UIElement.TouchMove>の<xref:System.Windows.UIElement>、 <xref:System.Windows.UIElement3D>、または<xref:System.Windows.ContentElement>です。  
+  
+ <xref:System.Windows.Input.Touch.FrameReported>イベント モデルを使用しない、同じイベントとその他の WPF 入力イベントなど<xref:System.Windows.UIElement.TouchDown>と<xref:System.Windows.UIElement.TouchMove>です。 可能性のある、UI のオブジェクト ツリーを通じてルーティングする要素に固有のイベントとして公開されているのではなく、<xref:System.Windows.Input.Touch.FrameReported>イベントは、アプリケーション レベルで処理される 1 つのイベントです。 したがって、使用することはできません、`sender`タッチされる要素を決定する、イベント ハンドラーのパラメーターです。  
+  
+ 使用して、<xref:System.Windows.Input.TouchFrameEventArgs>を取得する、<xref:System.Windows.Input.TouchPoint>タッチ イベントに関連する値。 <xref:System.Windows.Input.TouchPoint>、取得することができます、<xref:System.Windows.Input.TouchPoint.Position%2A>タッチのとを特定するかどうか、<xref:System.Windows.Input.TouchAction>が、 <xref:System.Windows.Input.TouchAction.Down>、 <xref:System.Windows.Input.TouchAction.Move>、または<xref:System.Windows.Input.TouchAction.Up>アクション。 使用することも、<xref:System.Windows.Input.TouchPoint>を取得する、<xref:System.Windows.Input.TouchDevice>です。 <xref:System.Windows.Input.TouchDevice>、デバイスを指定できます<xref:System.Windows.Input.TouchDevice.Id%2A>タッチは、要素に関する情報を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、上の単純なパターンを作成することができます、 <xref:System.Windows.Controls.Canvas> 2 本の指タッチ スクリーンをドラッグすることができます。 によって表される各タッチ、<xref:System.Windows.Input.TouchDevice>です。パターンは、タッチによって提供されるタッチ ポイント間に線を描画して作成されます。 この例では、Windows タッチ対応画面が必要です。  
+  
+ 次のマークアップで構成されるユーザー インターフェイスの作成、<xref:System.Windows.Controls.Canvas>が中心に、<xref:System.Windows.Controls.Grid>です。  
+  
+ [!code-xaml[TouchFrameSample#000](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml#000)]  
+  
+ 次のコードでハンドル、<xref:System.Windows.Input.Touch.FrameReported>イベント。 タッチを押したときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice>にキャプチャされて、<xref:System.Windows.Controls.Canvas>です。 タッチを持ち上げると、<xref:System.Windows.Input.TouchDevice>を解放します。 タッチをまたいで移動するときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice.Id%2A>がオンになっています。 最初のタッチの場合は、その場所が記録されます。 2 番目のタッチの場合は、最初のタッチ、位置から 2 番目のタッチの位置に線を描画します。  
+  
+ [!code-csharp[TouchFrameSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml.cs#100)]
+ [!code-vb[TouchFrameSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/touchframesample/vb/mainwindow.xaml.vb#100)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FrameReported">
+      <MemberSignature Language="C#" Value="public static event System.Windows.Input.TouchFrameEventHandler FrameReported;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.TouchFrameEventHandler FrameReported" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Touch.FrameReported" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchFrameEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タッチ メッセージが送信されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フレームは、一連のマルチタッチ メッセージまたはタッチ ポイントで 1 つです。 処理することにより、タッチに応答できる、<xref:System.Windows.Input.Touch.FrameReported>イベントとの詳細にアクセスする、<xref:System.Windows.Input.TouchPoint>から、<xref:System.Windows.Input.TouchFrameEventArgs>イベント データ。  
+  
+ <xref:System.Windows.Input.Touch.FrameReported>イベントが他の同じイベント モデルを使用しない[!INCLUDE[TLA#tla_titlewinclient](~/includes/tlasharptla-titlewinclient-md.md)]などの入力イベント、<xref:System.Windows.UIElement.TouchDown>と<xref:System.Windows.UIElement.TouchMove>です。 可能性のある、UI のオブジェクト ツリーを通じてルーティングする要素に固有のイベントとして公開されているのではなく、<xref:System.Windows.Input.Touch.FrameReported>イベントは、アプリケーション レベルで処理される 1 つのイベントです。 したがって、使用することはできません、`sender`タッチされる要素を決定する、イベント ハンドラーのパラメーターです。  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Windows.Input.Touch.FrameReported>イベント。 タッチを押したときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice>にキャプチャされて、<xref:System.Windows.Controls.Canvas>です。 タッチを持ち上げると、<xref:System.Windows.Input.TouchDevice>を解放します。 タッチをまたいで移動するときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice.Id%2A>がオンになっています。 最初のタッチの場合は、その場所が記録されます。 2 番目のタッチの場合は、最初のタッチ、位置から 2 番目のタッチの位置に線を描画します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.Touch>クラスの概要です。  
+  
+ [!code-csharp[TouchFrameSample#110](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml.cs#110)]
+ [!code-vb[TouchFrameSample#110](~/samples/snippets/visualbasic/VS_Snippets_Wpf/touchframesample/vb/mainwindow.xaml.vb#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

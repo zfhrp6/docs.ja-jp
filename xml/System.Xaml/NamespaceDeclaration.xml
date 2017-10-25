@@ -1,0 +1,116 @@
+<Type Name="NamespaceDeclaration" FullName="System.Xaml.NamespaceDeclaration">
+  <TypeSignature Language="C#" Value="public class NamespaceDeclaration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NamespaceDeclaration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.NamespaceDeclaration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Prefix={Prefix} Namespace={Namespace}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>個別のプロパティとしてこれらの文字列値を格納することで、識別子と XAML 名前空間のプレフィックスを宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.NamespaceDeclaration>XAML ノード ストリームの一部としての XAML 名前空間情報を表します。 <xref:System.Xaml.NamespaceDeclaration>クラスはオブジェクトまたはメンバーで実際にはないノードの種類です。 代わりに、個別のノードの種類。  
+  
+ XAML ノード ストリームで、<xref:System.Xaml.NamespaceDeclaration>オブジェクトまたはその XAML 名前空間を適用するメンバーの前に発生します。  
+  
+ 慣例により、XAML 名前空間の識別子には、Uniform Resource Identifier () に似ています。 ただし、<xref:System.Xaml.NamespaceDeclaration.Namespace%2A>プロパティ<xref:System.Xaml.NamespaceDeclaration>の種類は<xref:System.String>します。 通常、Api の .NET Framework XAML サービスは、文字列として XAML 名前空間の識別子を扱います。 相対パスは true を絶対の区別および<xref:System.Uri>型、XAML (または XML) の名前空間を識別するためには、関係ありません。 名前空間 URI として規則も XML で一般的です。  
+  
+ この型のオブジェクトは、入力として使用されて、<xref:System.Xaml.XamlObjectWriter.WriteNamespace%2A?displayProperty=nameWithType>メソッド、オブジェクト グラフに XAML ノード ストリームの情報を書き込むときにします。 この型のオブジェクトは、入力として使用されて、<xref:System.Xaml.XamlXmlWriter.WriteNamespace%2A?displayProperty=nameWithType>メソッド XAML ノード ストリーム情報を XML としてシリアル化を書き込むときにします。  
+  
+ 名前空間の宣言があります、<xref:System.String.Empty?displayProperty=nameWithType>プレフィックスの値。 A<xref:System.String.Empty?displayProperty=nameWithType>プレフィックスが既定の XAML 名前空間の宣言を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamespaceDeclaration (string ns, string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string ns, string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.NamespaceDeclaration.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">XAML 名前空間識別子を文字列として。</param>
+        <param name="prefix">名前空間プレフィックスのマッピングのために使用される文字列プレフィックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.NamespaceDeclaration" />クラス プロパティの初期値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化<xref:System.Xaml.NamespaceDeclaration>値を検証しようとはしません。 XAML ライターを正しく使用するのには、null 値を使用しないでです。 名前空間の宣言があります、<xref:System.String?displayProperty=nameWithType>プレフィックスの値。 A<xref:System.String?displayProperty=nameWithType>プレフィックスが既定の XAML 名前空間の宣言を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.NamespaceDeclaration.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別子部分を取得、<see cref="T:System.Xaml.NamespaceDeclaration" />です。</summary>
+        <value>XAML 名前空間の宣言の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 慣例により、XAML 名前空間の識別子には、Uniform Resource Identifier () に似ています。 通常、Api の .NET Framework XAML サービスは、文字列として XAML 名前空間の識別子を扱います。 相対パスは true を絶対の区別および<xref:System.Uri>型、XAML (または XML) の名前空間を識別するためには、関係ありません。 名前空間 URI として規則も XML で一般的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public string Prefix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.NamespaceDeclaration.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML 名前空間マッピング プレフィックスとして使用されるプレフィックスを取得、<see cref="T:System.Xaml.NamespaceDeclaration" />です。</summary>
+        <value>このプレフィックス文字列<see cref="T:System.Xaml.NamespaceDeclaration" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間の宣言があります、<xref:System.String?displayProperty=nameWithType>プレフィックスの値。 A<xref:System.String?displayProperty=nameWithType>プレフィックスが既定の XAML 名前空間の宣言を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,549 @@
+<Type Name="VirtualPathUtility" FullName="System.Web.VirtualPathUtility">
+  <TypeSignature Language="C#" Value="public static class VirtualPathUtility" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VirtualPathUtility extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.VirtualPathUtility" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>仮想パスの一般的な操作のためのユーティリティ メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.VirtualPathUtility>クラスが仮想パスに関連する一般的な操作のためのユーティリティ メソッドを提供します。 ASP.NET サーバー コントロールとサーバー コードでは、Web アプリケーション ルート演算子を使用する仮想パス、チルダ (~) 通常は代わりに使用相対パスと絶対パス。 詳細については、次を参照してください。 [ASP.NET Web プロジェクト パス](http://msdn.microsoft.com/library/2447f50c-b849-483c-8093-85ed53e7a5bd)です。  
+  
+ 使用して、<xref:System.Web.VirtualPathUtility>クラスのカスタム Web サービスのハンドラーの開発のケースがある可能性がある、アプリケーションの相対パスを絶対仮想パスに変換する必要がある場合。  
+  
+ 絶対仮想パスは、リテラルのスラッシュ記号 (/) を開始します。 だけ、チルダ (~) またはチルダと二重の円記号で始まる場合、アプリケーション ルート ディレクトリに対する相対パス相対仮想パスです (~\\\\) またはチルダとスラッシュ記号 (~/)。 アプリケーションの独立したパスは、相対仮想パスを作成します。  
+  
+ アプリケーションの仮想ディレクトリを取得できます、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>と<xref:System.Web.HttpRequest.ApplicationPath%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.VirtualPathUtility>クラスは、セキュリティまたは標準化のためのものではありません。 Web アプリケーションのセキュリティの詳細については、次を参照してください。[概要の Web アプリケーション セキュリティの脅威](http://msdn.microsoft.com/library/88d61678-f84e-4622-ae80-53128821855a)です。 汎用の URL の処理機能では、次を参照してください。<xref:System.Uri>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.VirtualPathUtility>クラスとそのメソッドの一部です。 最初に、<xref:System.Web.HttpRequest.FilePath%2A>プロパティには、Web ページへの仮想パスが生成されます。 <xref:System.Web.VirtualPathUtility.GetFileName%2A>、 <xref:System.Web.VirtualPathUtility.GetExtension%2A>、および<xref:System.Web.VirtualPathUtility.GetDirectory%2A>メソッドが仮想パスに関する情報を返します。 次に、<xref:System.Web.HttpRequest.CurrentExecutionFilePath%2A>プロパティが異なる場合がありますの現在の要求の仮想パスを生成、<xref:System.Web.HttpRequest.FilePath%2A>プロパティの場合、<xref:System.Web.HttpResponse.Redirect%2A>メソッドが呼び出されました。 <xref:System.Web.VirtualPathUtility.IsAbsolute%2A>、 <xref:System.Web.VirtualPathUtility.IsAppRelative%2A>、および<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドが仮想パスに関する情報を返します。  
+  
+ [!code-aspx-csharp[System.Web.VirtualPathUtility#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#1)]
+ [!code-aspx-vb[System.Web.VirtualPathUtility#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppendTrailingSlash">
+      <MemberSignature Language="C#" Value="public static string AppendTrailingSlash (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string AppendTrailingSlash(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.AppendTrailingSlash(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">スラッシュを追加する仮想パス。</param>
+        <summary>既に存在しない場合は、仮想パスの末尾にリテラルのスラッシュ記号 (/) を追加します。</summary>
+        <returns>変更された仮想パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想パスの末尾にリテラルのスラッシュ記号 (/) が存在する場合の仮想パスは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static string Combine (string basePath, string relativePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Combine(string basePath, string relativePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.Combine(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="basePath" Type="System.String" />
+        <Parameter Name="relativePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="basePath">基本パス。</param>
+        <param name="relativePath">相対パス。</param>
+        <summary>基本パスと相対パスを結合します。</summary>
+        <returns>合計<paramref name="basePath" />と<paramref name="relativePath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.VirtualPathUtility.Combine%2A>メソッドの値を返します、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>プロパティの相対パスが正確にティルダ (~) である場合。  
+  
+ <xref:System.Web.VirtualPathUtility.Combine%2A>メソッドを使用、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>プロパティ ベースのパスではなく値の相対パスがチルダとスラッシュ (/) で始まる場合 (~/)、それ以外の<xref:System.Web.VirtualPathUtility.Combine%2A>メソッドは基本のパスを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <paramref name="relativePath" />物理パスです。  
+  
+ または  
+  
+ <paramref name="relativePath" />1 つまたは複数のコロンが含まれます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="relativePath" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <paramref name="basePath" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectory">
+      <MemberSignature Language="C#" Value="public static string GetDirectory (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDirectory(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.GetDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス。</param>
+        <summary>仮想パスのディレクトリの部分を返します。</summary>
+        <returns>仮想パスで参照されているディレクトリです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`virtualPath`ルートがありません。 つまり、ルート演算子 (ティルダ [~]) と等しくない、パラメーターがチルダとスラッシュ (/) など、チルダ (~) で始まっていない (~/) またはチルダと二重の円記号 (~//)、スラッシュ (/) で始まっていないか、<xref:System.ArgumentException>例外がスローされます。  
+  
+ 場合に渡される仮想パス、<xref:System.Web.VirtualPathUtility.GetDirectory%2A>メソッドは`"/images/image1.gif"`、返されたディレクトリは`"/images"`します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.GetFileName%2A>、 <xref:System.Web.VirtualPathUtility.GetExtension%2A>、および<xref:System.Web.VirtualPathUtility.GetDirectory%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#2)]
+ [!code-vb[System.Web.VirtualPathUtility#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" />ルートがありません。  
+  
+ \- または  
+  
+ <paramref name="virtualPath" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtension">
+      <MemberSignature Language="C#" Value="public static string GetExtension (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetExtension(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.GetExtension(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス。</param>
+        <summary>仮想パスで参照されているファイルの拡張子を取得します。</summary>
+        <returns>ファイル名拡張子の文字列リテラル、ピリオド (.) を含む<see langword="null" />、または空の文字列 ("") です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に渡される仮想パス、<xref:System.Web.VirtualPathUtility.GetExtension%2A>メソッドは`"/images/image1.gif"`、返される拡張は`".gif"`します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.GetFileName%2A>、 <xref:System.Web.VirtualPathUtility.GetExtension%2A>、および<xref:System.Web.VirtualPathUtility.GetDirectory%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#2)]
+ [!code-vb[System.Web.VirtualPathUtility#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" />定義されている無効な文字が 1 つまたは複数含まれています<see cref="F:System.IO.Path.InvalidPathChars" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileName">
+      <MemberSignature Language="C#" Value="public static string GetFileName (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFileName(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.GetFileName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス。</param>
+        <summary>仮想パスで参照されているファイルのファイル名を取得します。</summary>
+        <returns>ファイル名の最後のディレクトリ文字の後にリテラル<paramref name="virtualPath" />、それ以外の場合は、最後のディレクトリ名の最後の文字<paramref name="virtualPath" />ディレクトリまたはボリューム区切り文字します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に渡される仮想パス、<xref:System.Web.VirtualPathUtility.GetFileName%2A>メソッドは`"/images/image1.gif"`、返されたファイル名が`"image1.gif"`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.GetFileName%2A>、 <xref:System.Web.VirtualPathUtility.GetExtension%2A>、および<xref:System.Web.VirtualPathUtility.GetDirectory%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#2)]
+ [!code-vb[System.Web.VirtualPathUtility#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" />定義されている無効な文字が 1 つまたは複数含まれています<see cref="F:System.IO.Path.InvalidPathChars" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbsolute">
+      <MemberSignature Language="C#" Value="public static bool IsAbsolute (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsAbsolute(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.IsAbsolute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">確認への仮想パス。</param>
+        <summary>指定した仮想パスが絶対; するかどうかを示すブール値を返しますつまり、リテラルのスラッシュ記号 (/) で開始します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="virtualPath" />絶対パスは、<see langword="null" />または空の文字列 ("") です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想パスは、リテラルのスラッシュ記号 (/) で始まる場合は、絶対です。 たとえば、<xref:System.Web.HttpRequest.Path%2A>プロパティが絶対仮想パスを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.IsAbsolute%2A>、 <xref:System.Web.VirtualPathUtility.IsAppRelative%2A>、および<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#3)]
+ [!code-vb[System.Web.VirtualPathUtility#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAppRelative">
+      <MemberSignature Language="C#" Value="public static bool IsAppRelative (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsAppRelative(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.IsAppRelative(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">確認への仮想パス。</param>
+        <summary>指定した仮想パスがアプリケーションを基準とするかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="virtualPath" />、それ以外のアプリケーションに相対<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仮想パスは、ルート演算子 (、チルダ [])、または演算子付きのルートを開始します。 場合`virtualPath`は`null`、<xref:System.ArgumentNullException>例外が発生します。 場合`virtualPath`空の文字列 ("") では、<xref:System.Web.VirtualPathUtility.IsAppRelative%2A>メソッドを返します。`false`です。  
+  
+> [!NOTE]
+>  `"~``filename` `"`は有効な仮想パスではありませんし、返します`false`の<xref:System.Web.VirtualPathUtility.IsAppRelative%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.IsAbsolute%2A>、 <xref:System.Web.VirtualPathUtility.IsAppRelative%2A>、および<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#3)]
+ [!code-vb[System.Web.VirtualPathUtility#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeRelative">
+      <MemberSignature Language="C#" Value="public static string MakeRelative (string fromPath, string toPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string MakeRelative(string fromPath, string toPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.MakeRelative(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromPath" Type="System.String" />
+        <Parameter Name="toPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fromPath">相対仮想パスを返すの開始となる仮想パス。</param>
+        <param name="toPath">相対仮想パスを返すの終了となる仮想パス。</param>
+        <summary>別に、ルート演算子 (ティルダ [~]) を含む 1 つの仮想パスからの相対仮想パスを返します。</summary>
+        <returns>相対仮想パス<paramref name="fromPath" />に<paramref name="toPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`fromPath`と`toPath`パラメーターはルートがないです。 つまり、ルート演算子 (ティルダ [~]) が等しくないが、パラメーターがチルダとスラッシュ (/) など、チルダ (~) で始まらない (~/) またはチルダと二重の円記号 (~//)、またはスラッシュ (/) で始まらない、<xref:System.ArgumentException>例外がスローされます。  
+  
+ クエリ文字列パラメーターとは、URI で使用する HTML アンカーは、相対パスを決定するのには使用されません。  
+  
+ 場合`fromPath`は`"/directory1/file1.aspx"`と`toPath`は`"/directory2/file2.aspx"`、<xref:System.Web.VirtualPathUtility.MakeRelative%2A>メソッドを返します。`"../directory2/file2.aspx"`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fromPath" />ルートがありません。  
+  
+ \- または  
+  
+ <paramref name="toPath" />ルートがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveTrailingSlash">
+      <MemberSignature Language="C#" Value="public static string RemoveTrailingSlash (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string RemoveTrailingSlash(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.RemoveTrailingSlash(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">末尾のスラッシュを削除する仮想パスからマークを付けます。</param>
+        <summary>仮想パスから末尾のスラッシュ記号 (/) を削除します。</summary>
+        <returns>仮想パスが末尾にスラッシュ記号、仮想パスがまだいない場合、ルート ディレクトリ (「/」) です。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.VirtualPathUtility.RemoveTrailingSlash%2A>メソッドは、スラッシュ (/) を仮想パスの末尾から削除します。 仮想パスがルート ディレクトリで既に場合 (`"/"`)、アクションは実行されません。 仮想パスが場合`null`または空の文字列 ("") では、<xref:System.Web.VirtualPathUtility.RemoveTrailingSlash%2A>メソッドを返します。`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToAbsolute">
+      <MemberSignature Language="C#" Value="public static string ToAbsolute (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToAbsolute(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.ToAbsolute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">アプリケーションの相対パスに変換する仮想パス。</param>
+        <summary>仮想パスをアプリケーション絶対パスに変換します。</summary>
+        <returns>指定した仮想パスの絶対パス形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション絶対パスは、ルート演算子 (ティルダ [~]) ではなく、アプリケーション パスが使用されているいずれかです。  
+  
+ 場合`virtualPath`は。  
+  
+-   絶対、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドが変更されていない仮想パスを返します。  
+  
+-   アプリケーションの相対パス、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドの先頭に現在のアプリケーションの仮想ディレクトリのパスを追加する、`virtualPath`です。 現在のアプリケーションの仮想ディレクトリ パスのアクセスなど、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>プロパティです。  
+  
+-   ルートにない、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドが発生し、<xref:System.ArgumentOutOfRangeException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="virtualPath" />ルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">先頭に二重ピリオド (.) を使用すると、最上位ディレクトリを終了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToAbsolute">
+      <MemberSignature Language="C#" Value="public static string ToAbsolute (string virtualPath, string applicationPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToAbsolute(string virtualPath, string applicationPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.ToAbsolute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="applicationPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">アプリケーションの相対パスに変換する仮想パス。</param>
+        <param name="applicationPath">変換に使用するアプリケーション パス<c>virtualPath</c>の相対パスにします。</param>
+        <summary>仮想パスを指定したアプリケーションのパスを使用してアプリケーション絶対パスに変換します。</summary>
+        <returns>絶対仮想パスの形式を<paramref name="virtualPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.VirtualPathUtility.ToAbsolute%2A>のオーバー ロード、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドは、現在のアプリケーション パスではなく、指定されたアプリケーション パスを使用します。  
+  
+ 場合`virtualPath`は。  
+  
+-   絶対、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドは、変更せずに仮想パスを返します。  
+  
+-   アプリケーションの相対パス、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドは、追加`applicationPath`仮想パスの先頭にします。  
+  
+-   ルートにない、<xref:System.Web.VirtualPathUtility.ToAbsolute%2A>メソッドが発生し、<xref:System.ArgumentOutOfRangeException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="applicationPath" />ルートがありません。</exception>
+        <exception cref="T:System.Web.HttpException">先頭に二重ピリオド (.) は、最上位ディレクトリを終了するアプリケーションのパスで使用されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToAppRelative">
+      <MemberSignature Language="C#" Value="public static string ToAppRelative (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToAppRelative(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.ToAppRelative(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">アプリケーションの相対パスに変換する仮想パス。</param>
+        <summary>仮想パスでは、アプリケーションの仮想パスを使用してアプリケーションの相対パスに変換、<see cref="P:System.Web.HttpRuntime.AppDomainAppVirtualPath" />プロパティです。</summary>
+        <returns>アプリケーションの相対パス形式を<paramref name="virtualPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、アプリケーションの仮想パス`"myapp"`および仮想パス`"/myApp/sub/default.asp"`に渡される、<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッド、結果として得られるアプリケーションの相対パスは`"~/sub/default.aspx"`します。  
+  
+ 場合`virtualPath`、現在のアプリケーション パスで始まらない、<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドが変更されていない仮想パスを返します。  
+  
+ 場合`virtualPath`はアプリケーションのパスと同じルート演算子 (、チルダ []) が返されます。 現在のアプリケーションの仮想ディレクトリ パスのアクセスなど、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.VirtualPathUtility.IsAbsolute%2A>、 <xref:System.Web.VirtualPathUtility.IsAppRelative%2A>、および<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.VirtualPathUtility#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.VirtualPathUtility/cs/virtualpathutilitycs.aspx#3)]
+ [!code-vb[System.Web.VirtualPathUtility#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.VirtualPathUtility/vb/virtualpathutilityvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToAppRelative">
+      <MemberSignature Language="C#" Value="public static string ToAppRelative (string virtualPath, string applicationPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToAppRelative(string virtualPath, string applicationPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.VirtualPathUtility.ToAppRelative(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="applicationPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">アプリケーションの相対パスに変換する仮想パス。</param>
+        <param name="applicationPath">変換に使用するアプリケーション パス<c>virtualPath</c>の相対パスにします。</param>
+        <summary>仮想パスを指定したアプリケーションのパスを使用してアプリケーションの相対パスに変換します。</summary>
+        <returns>アプリケーションの相対パス形式を<paramref name="virtualPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.VirtualPathUtility.ToAppRelative%2A>のオーバー ロード、<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドを使用`applicationPath`現在のアプリケーション パスではなくです。 場合`virtualPath`で始まっていない`applicationPath`、<xref:System.Web.VirtualPathUtility.ToAppRelative%2A>メソッドが変更されていない仮想パスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

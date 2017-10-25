@@ -1,0 +1,60 @@
+<Type Name="ActivityWithResult" FullName="System.Activities.ActivityWithResult">
+  <TypeSignature Language="C#" Value="public abstract class ActivityWithResult : System.Activities.Activity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ActivityWithResult extends System.Activities.Activity" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.ActivityWithResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Activity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>値またはアクティビティの種類を取得<see langword="out" />引数。 このクラスは抽象であり、<see cref="T:System.Activities.Activity" /> クラスから派生します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.Activities.OutArgument Result { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.OutArgument Result" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ActivityWithResult.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.IgnoreDataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.OutArgument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装した場合、型 <see cref="T:System.Activities.OutArgument" /> のオブジェクトの値を取得または設定します。</summary>
+        <value><see langword="out" />引数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultType">
+      <MemberSignature Language="C#" Value="public Type ResultType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ResultType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ActivityWithResult.ResultType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、アクティビティ <see cref="T:System.Activities.OutArgument" /> の型を取得します。</summary>
+        <value>型オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

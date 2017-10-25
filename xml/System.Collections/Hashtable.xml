@@ -1,0 +1,2560 @@
+<Type Name="Hashtable" FullName="System.Collections.Hashtable">
+  <TypeSignature Language="C#" Value="public class Hashtable : ICloneable, System.Collections.IDictionary, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Hashtable extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.ICloneable, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Hashtable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Hashtable/HashtableDebugView))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キーのハッシュ コードに基づいて編成された、キーと値のペアのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/collections/hashtable.cs#10fefb6e0ae510dd)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 各要素に格納されているキー/値ペアは、<xref:System.Collections.DictionaryEntry>オブジェクト。 キーには`null`値を指定できますが、します。  
+  
+ キーとして使用されるオブジェクト、<xref:System.Collections.Hashtable>をオーバーライドするために必要な<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IHashCodeProvider>インターフェイス) および<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IComparer>インターフェイス)。 メソッドとインターフェイスの両方の実装でも、大文字小文字の区別を同じ方法で処理する必要があります。それ以外の場合、<xref:System.Collections.Hashtable>動作可能性があります。 例では、作成するときに、 <xref:System.Collections.Hashtable>、使用する必要があります、<xref:System.Collections.CaseInsensitiveHashCodeProvider>クラス (またはその大文字と小文字<xref:System.Collections.IHashCodeProvider>実装) で、<xref:System.Collections.CaseInsensitiveComparer>クラス (またはその大文字と小文字<xref:System.Collections.IComparer>実装)。  
+  
+ さらに、これらのメソッドは、キーが存在するときに、同じパラメーターで呼び出されたときに、同じ結果を生成する必要があります、<xref:System.Collections.Hashtable>です。 代わりに使用するが、<xref:System.Collections.Hashtable>を持つコンス トラクター、<xref:System.Collections.IEqualityComparer>パラメーター。 キーの等値に単に参照の等価性を継承して実装されたかどうかは<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>が十分に機能します。  
+  
+ 内のキーとして使用される限りに主要なオブジェクトが変更可能にする必要があります、<xref:System.Collections.Hashtable>です。  
+  
+ 要素が追加されたとき、<xref:System.Collections.Hashtable>要素は、キーのハッシュ コードに基づいてバケットに配置されます。 キーの後続の参照は、要素を検索するために必要なキーの比較の数を大幅に削減するためだけに 1 つのバケットで検索するキーのハッシュ コードを使用します。  
+  
+ 占有率、<xref:System.Collections.Hashtable>バケット数に対する要素の最大比率を決定します。 小さい負荷の要因が高速検索時間は平均的増加後のメモリ消費量がが欠点です。 1.0 の既定の占有率は一般に、速度とサイズの最適なバランスを提供します。 別の占有率はすることもできる時に指定された、<xref:System.Collections.Hashtable>を作成します。  
+  
+ 要素が追加されるにつれて、<xref:System.Collections.Hashtable>の実際の占有率、<xref:System.Collections.Hashtable>が増加します。 実際の占有率が、指定された占有率、バケットの数に達したとき、<xref:System.Collections.Hashtable>は 2 回、現在の数より大きい最小の素数を自動的に増加<xref:System.Collections.Hashtable>バケット。  
+  
+ 内の各キー オブジェクト、<xref:System.Collections.Hashtable>呼び出すことによってアクセスできる独自のハッシュ関数を提供する必要があります<xref:System.Collections.Hashtable.GetHash%2A>です。 ただし、いずれかのオブジェクトを実装する<xref:System.Collections.IHashCodeProvider>に渡すことができます、<xref:System.Collections.Hashtable>コンス トラクター、およびテーブル内のすべてのオブジェクトに対してハッシュ関数を使用します。  
+  
+ 容量、<xref:System.Collections.Hashtable>要素の数が、<xref:System.Collections.Hashtable>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Hashtable>容量を増やすは自動的に再割り当て、必要に応じて。  
+  
+ 非常に大きな<xref:System.Collections.Hashtable>オブジェクト、設定して、64 ビット システム上の 20億要素に最大の容量を増やすことができます、`enabled`する構成要素の属性`true`実行時環境でします。  
+  
+ `foreach` C# 言語のステートメント (`For Each` Visual Basic で)、コレクション内の要素の型のオブジェクトを返します。 以降の各要素、<xref:System.Collections.Hashtable>キー/値ペアは、要素型は、キーの型または値の型ではありません。 要素の型は、代わりに、<xref:System.Collections.DictionaryEntry>です。 例:  
+  
+ [!code-cpp[System.Collections.Hashtable_ClassExample#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cpp/remarks.cpp#01)]
+ [!code-csharp[System.Collections.Hashtable_ClassExample#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cs/remarks.cs#01)]
+ [!code-vb[System.Collections.Hashtable_ClassExample#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/vb/remarks.vb#01)]  
+  
+ `foreach`ステートメントがしか書き込まないことから、コレクションへの読み取りを許可する列挙子のラッパー。  
+  
+ 列挙子をシリアル化とシリアル化するため、<xref:System.Collections.Hashtable>の要素を並べ替えるになる可能性があります、呼び出さずに列挙を続行することはできません、<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。  
+  
+> [!NOTE]
+>  キーを継承する、その動作を変更、絶対の一意性を保証できませんを使用する比較であるため、<xref:System.Type.Equals%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、作成、初期化、およびさまざまな機能を実行する方法を示しています、<xref:System.Collections.Hashtable>とそのキーと値を出力する方法です。  
+  
+ [!code-cpp[System.Collections.Hashtable_ClassExample#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cpp/hashtable_example.cpp#00)]
+ [!code-csharp[System.Collections.Hashtable_ClassExample#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/cs/hashtable_example.cs#00)]
+ [!code-vb[System.Collections.Hashtable_ClassExample#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ClassExample/vb/hashtable_example.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>
+      <see cref="T:System.Collections.Hashtable" />スレッドが複数のリーダー スレッドと 1 つの書き込みのスレッドを使用しても安全です。 スレッド セーフであるはマルチ スレッドを使用時に (更新) の書き込み操作を実行、スレッドの 1 つだけロック制御不要の読み取り、ライターにシリアル化を可能にする、<see cref="T:System.Collections.Hashtable" />です。 複数のライターのすべての操作をサポートするために、<see cref="T:System.Collections.Hashtable" />によって返されるラッパーを介して行う必要があります、<see cref="M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)" />を読み取っているスレッドがないことを指定された方法、<see cref="T:System.Collections.Hashtable" />オブジェクト。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの既定の初期容量を使用して、係数、ハッシュ コード プロバイダーおよび比較子をロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの容量を使用すると、占有率に基づくハッシュ テーブルのバケットの最適な数を計算します。 容量を増やすは自動的に要求します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CPP/hashtable_ctor.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CS/hashtable_ctor.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/VB/hashtable_ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定されたディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />オブジェクト初期容量は、コピーした要素の数と等しくあり既定占有率、ハッシュ コード プロバイダーおよび比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CPP/hashtable_ctordictionary.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CS/hashtable_ctordictionary.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/VB/hashtable_ctordictionary.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" />で使用するには、ハッシュ コード プロバイダーとの比較子を定義するオブジェクト、<see cref="T:System.Collections.Hashtable" />オブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーと既定の比較子を使用します。 既定のハッシュ コード プロバイダーの各キーの実装は、<see cref="M:System.Object.GetHashCode" />の各キーの実装で、既定の比較子<see cref="M:System.Object.Equals(System.Object)" />です。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの既定の初期容量を使用して、係数、および指定されたを読み込む<see cref="T:System.Collections.IEqualityComparer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの容量を使用すると、占有率に基づくハッシュ テーブルのバケットの最適な数を計算します。 容量を増やすは自動的に要求します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトには、ハッシュ コード プロバイダーとの比較子の両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>オブジェクトをオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.Collections.IEqualityComparer>大文字と小文字の文字列の検索の実行などのシナリオを実現できます。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CPP/hashtable_ctor.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CS/hashtable_ctor.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/VB/hashtable_ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの指定した初期容量と既定の占有率、ハッシュ コード プロバイダーおよび比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CPP/hashtable_ctorint.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CS/hashtable_ctorint.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/VB/hashtable_ctorint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d, System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d, class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" />で使用するには、ハッシュ コード プロバイダーとの比較子を定義するオブジェクト、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーと既定の比較子を使用します。 既定のハッシュ コード プロバイダーの各キーの実装は、<see cref="M:System.Object.GetHashCode" />の各キーの実装で、既定の比較子<see cref="M:System.Object.Equals(System.Object)" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定したディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />オブジェクトの初期容量は、コピーした要素の数と同じとは、既定の占有率と、指定した<see cref="T:System.Collections.IEqualityComparer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトには、ハッシュ コード プロバイダーとの比較子の両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>オブジェクトをオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.Collections.IEqualityComparer>大文字と小文字の文字列の検索の実行などのシナリオを実現できます。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CPP/hashtable_ctordictionary.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CS/hashtable_ctordictionary.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/VB/hashtable_ctordictionary.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d, float loadFactor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d, float32 loadFactor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定されたディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />オブジェクト初期容量は、コピーした要素の数と等しくあり、指定された占有率では、既定のハッシュ コード プロバイダーとの比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CPP/hashtable_ctordictionaryfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CS/hashtable_ctordictionaryfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/VB/hashtable_ctordictionaryfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IHashCodeProvider hcp, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IHashCodeProvider hcp, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use Hashtable(IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="hcp"><see cref="T:System.Collections.IHashCodeProvider" />内のすべてのキーのハッシュを提供するオブジェクトのコード、<see cref="T:System.Collections.Hashtable" />オブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーを使用するの各キーの実装は<see cref="M:System.Object.GetHashCode" />します。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />を使用して 2 つのキーが等しいかどうかを判断するオブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの既定の初期容量を使用して、要素、および指定したハッシュ コード プロバイダーとの比較子をロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの容量を使用すると、占有率に基づくハッシュ テーブルのバケットの最適な数を計算します。 容量を増やすは自動的に要求します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムのハッシュ コード プロバイダーとカスタムの比較演算子は、大文字と小文字の文字列、検索を行うなどのシナリオを有効にします。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CPP/hashtable_ctor.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CS/hashtable_ctor.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/VB/hashtable_ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity, System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" />で使用するには、ハッシュ コード プロバイダーとの比較子を定義するオブジェクト、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーと既定の比較子を使用します。 既定のハッシュ コード プロバイダーの各キーの実装は、<see cref="M:System.Object.GetHashCode" />の各キーの実装で、既定の比較子<see cref="M:System.Object.Equals(System.Object)" />です。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの指定した初期容量を使用して<see cref="T:System.Collections.IEqualityComparer" />、および既定の占有率。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトには、ハッシュ コード プロバイダーとの比較子の両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>をオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.Collections.IEqualityComparer>大文字と小文字の文字列の検索の実行などのシナリオを実現できます。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CPP/hashtable_ctorint.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CS/hashtable_ctorint.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/VB/hashtable_ctorint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity, float loadFactor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, float32 loadFactor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの指定した初期容量を使用して、係数、および既定のハッシュ コード プロバイダーとの比較子を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CPP/hashtable_ctorintfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CS/hashtable_ctorintfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/VB/hashtable_ctorintfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="capacity" />オーバーフローの原因となっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Hashtable (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要な情報を含む、<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納している <see cref="T:System.Collections.Hashtable" /> オブジェクト。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />を使用して、指定したシリアル化できるクラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの容量を使用すると、占有率に基づくハッシュ テーブルのバケットの最適な数を計算します。 容量を増やすは自動的に要求します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+ 列挙子をシリアル化とシリアル化するため、<xref:System.Collections.Hashtable>の要素を並べ替えるになる可能性があります、呼び出さずに列挙を続行することはできません、<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d, System.Collections.IHashCodeProvider hcp, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d, class System.Collections.IHashCodeProvider hcp, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use Hashtable(IDictionary, IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="hcp"><see cref="T:System.Collections.IHashCodeProvider" />内のすべてのキーのハッシュを提供するオブジェクトのコード、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーを使用するの各キーの実装は<see cref="M:System.Object.GetHashCode" />します。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />を使用して 2 つのキーが等しいかどうかを判断するオブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定されたディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />オブジェクト初期容量は、コピーした要素の数と等しくあり、既定の占有率と、指定したハッシュ コード プロバイダーとの比較子を使用します。 この API は、互換性のために残されています。 代わりに、次を参照してください。<see cref="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Collections.IEqualityComparer)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムのハッシュ コード プロバイダーとカスタムの比較演算子は、大文字と小文字の文字列、検索を行うなどのシナリオを有効にします。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CPP/hashtable_ctordictionary.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/CS/hashtable_ctordictionary.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionary/VB/hashtable_ctordictionary.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d, float loadFactor, System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d, float32 loadFactor, class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Single,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" />で使用するには、ハッシュ コード プロバイダーとの比較子を定義するオブジェクト、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーと既定の比較子を使用します。 既定のハッシュ コード プロバイダーの各キーの実装は、<see cref="M:System.Object.GetHashCode" />の各キーの実装で、既定の比較子<see cref="M:System.Object.Equals(System.Object)" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定されたディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />初期容量は、コピーした要素の数と等しくあり、指定された占有率を使用してオブジェクトおよび<see cref="T:System.Collections.IEqualityComparer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトには、ハッシュ コード プロバイダーとの比較子の両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>オブジェクトをオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.Collections.IEqualityComparer>大文字と小文字の文字列の検索の実行などのシナリオを実現できます。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CPP/hashtable_ctordictionaryfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CS/hashtable_ctordictionaryfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/VB/hashtable_ctordictionaryfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity, System.Collections.IHashCodeProvider hcp, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.IHashCodeProvider hcp, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32,System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use Hashtable(int, IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <param name="hcp"><see cref="T:System.Collections.IHashCodeProvider" />内のすべてのキーのハッシュを提供するオブジェクトのコード、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーを使用するの各キーの実装は<see cref="M:System.Object.GetHashCode" />します。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />を使用して 2 つのキーが等しいかどうかを判断するオブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの指定した初期容量、ハッシュ コード プロバイダー、比較演算子、および既定の占有率を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムのハッシュ コード プロバイダーとカスタムの比較演算子は、大文字と小文字の文字列、検索を行うなどのシナリオを有効にします。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CPP/hashtable_ctorint.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/CS/hashtable_ctorint.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorInt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorInt/VB/hashtable_ctorint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity, float loadFactor, System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, float32 loadFactor, class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32,System.Single,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <param name="equalityComparer"><see cref="T:System.Collections.IEqualityComparer" />で使用するには、ハッシュ コード プロバイダーとの比較子を定義するオブジェクト、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーと既定の比較子を使用します。 既定のハッシュ コード プロバイダーの各キーの実装は、<see cref="M:System.Object.GetHashCode" />の各キーの実装で、既定の比較子<see cref="M:System.Object.Equals(System.Object)" />です。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスを使用して、指定した初期量占有率、および<see cref="T:System.Collections.IEqualityComparer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトには、ハッシュ コード プロバイダーとの比較子の両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>をオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.Collections.IEqualityComparer>大文字と小文字の文字列の検索の実行などのシナリオを実現できます。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CPP/hashtable_ctorintfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CS/hashtable_ctorintfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/VB/hashtable_ctorintfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (System.Collections.IDictionary d, float loadFactor, System.Collections.IHashCodeProvider hcp, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary d, float32 loadFactor, class System.Collections.IHashCodeProvider hcp, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Collections.IDictionary,System.Single,System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use Hashtable(IDictionary, float, IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="d" Type="System.Collections.IDictionary" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="d"><see cref="T:System.Collections.IDictionary" />新しいコピー先のオブジェクト<see cref="T:System.Collections.Hashtable" />オブジェクト。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <param name="hcp"><see cref="T:System.Collections.IHashCodeProvider" />内のすべてのキーのハッシュを提供するオブジェクトのコード、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーを使用するの各キーの実装は<see cref="M:System.Object.GetHashCode" />します。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />を使用して 2 つのキーが等しいかどうかを判断するオブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの新規作成 を指定されたディクショナリから要素をコピーして<see cref="T:System.Collections.Hashtable" />オブジェクト。 新しい<see cref="T:System.Collections.Hashtable" />オブジェクトが初期容量は、コピーした要素の数と等しいと指定した占有率、ハッシュ コード プロバイダーおよび比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期の容量は、ソース ディクショナリ内の要素の数に設定されます。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>オブジェクト。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムのハッシュ コード プロバイダーとカスタムの比較演算子は、大文字と小文字の文字列、検索を行うなどのシナリオを有効にします。  
+  
+ 新しい要素<xref:System.Collections.Hashtable>を列挙子が反復処理する順序と同じ順序で並べ替えられて、<xref:System.Collections.IDictionary>オブジェクト。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`d`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CPP/hashtable_ctordictionaryfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/CS/hashtable_ctordictionaryfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorDictionaryFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorDictionaryFloat/VB/hashtable_ctordictionaryfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hashtable (int capacity, float loadFactor, System.Collections.IHashCodeProvider hcp, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, float32 loadFactor, class System.Collections.IHashCodeProvider hcp, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.#ctor(System.Int32,System.Single,System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use Hashtable(int, float, IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="loadFactor" Type="System.Single" />
+        <Parameter Name="hcp" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">要素の概算数を<see cref="T:System.Collections.Hashtable" />オブジェクトが最初に含めることができます。</param>
+        <param name="loadFactor">0.1 ～ 1.0 の範囲の値。これに、パフォーマンスが最高になる既定値を乗算します。 その結果が、バケット数に対する要素数の最大比率です。</param>
+        <param name="hcp"><see cref="T:System.Collections.IHashCodeProvider" />内のすべてのキーのハッシュを提供するオブジェクトのコード、<see cref="T:System.Collections.Hashtable" />です。  
+  
+ または  
+  
+ <see langword="null" />既定のハッシュ コード プロバイダーを使用するの各キーの実装は<see cref="M:System.Object.GetHashCode" />します。</param>
+        <param name="comparer"><see cref="T:System.Collections.IComparer" />を使用して 2 つのキーが等しいかどうかを判断するオブジェクト。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Collections.Hashtable" />クラスの指定した初期容量を使用して、係数、ハッシュ コード プロバイダーおよび比較子をロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素を追加するときにサイズ変更操作を実行する必要があるの初期量を指定する、<xref:System.Collections.Hashtable>オブジェクト。 容量が自動的には、占有率に基づく必要に応じて拡大します。  
+  
+ 占有率は、バケット数に対する要素の最大比率です。 小さいテーブル占有率は増加後のメモリ消費量が高速の参照を意味します。 1.0 の占有率は、速度とサイズの最適なバランスです。  
+  
+ 実際の占有率では、指定されたロード要素に達すると、現在のバケット数の 2 倍より大きい最小の素数をバケットの数は自動的に増加します。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Hashtable>です。 既定のハッシュ コード プロバイダーのキーの実装は、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Hashtable>一意である必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムのハッシュ コード プロバイダーとカスタムの比較演算子は、大文字と小文字の文字列、検索を行うなどのシナリオを有効にします。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別を使用してハッシュ テーブルが作成<xref:System.Collections.Hashtable>コンス トラクターし、それぞれに同じ要素が含まれている場合でも、ハッシュ テーブルの動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CPP/hashtable_ctorintfloat.cpp#1)]
+ [!code-csharp[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/CS/hashtable_ctorintfloat.cs#1)]
+ [!code-vb[System.Collections.Hashtable_ctorIntFloat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Hashtable_ctorIntFloat/VB/hashtable_ctorintfloat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />0.1 未満です。  
+  
+ または  
+  
+ <paramref name="loadFactor" />1.0 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加する要素のキー。</param>
+        <param name="value">追加する要素の値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>指定したキーおよび値を持つ要素を <see cref="T:System.Collections.Hashtable" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーには`null`値を指定できますが、します。  
+  
+ オブジェクトの状態とそのハッシュ コード値間の相関関係を持たない必要があります通常されませんするキーとして使用します。 たとえば、文字列オブジェクトは、キーとして使用 StringBuilder オブジェクトよりも優れています。  
+  
+ 使用することも、<xref:System.Collections.Hashtable.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、 <xref:System.Collections.Hashtable>。 たとえば、`myCollection["myNonexistentKey"] = myValue`です。 ただしで指定したキーが既に存在する場合、 <xref:System.Collections.Hashtable>、設定、<xref:System.Collections.Hashtable.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Hashtable.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+ 場合<xref:System.Collections.Hashtable.Count%2A>の容量より小さい、 <xref:System.Collections.Hashtable>、このメソッドは、o (1) 操作になります。 容量は、新しい要素を格納するためにする必要があります、このメソッドが O (`n`) 操作、場所`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を追加する方法を示しています、<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable.Add Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Add Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Add Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">同じキーを持つ要素が、<see cref="T:System.Collections.Hashtable" /> に既に存在します。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Hashtable" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.Hashtable" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Collections.Hashtable" /> からすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Hashtable.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。 容量はそのまま残ります。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例の値をクリアする方法を示しています、<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable.Clear Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Clear Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Hashtable" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> の簡易コピーを作成します。</summary>
+        <returns><see cref="T:System.Collections.Hashtable" /> の簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの簡易コピーは、参照型または値の型が参照先のオブジェクトはコピーしないかどうか、コレクションの要素のみをコピーします。 新しいコレクション内の参照は、元のコレクション内の参照をポイントする同じオブジェクトをポイントします。  
+  
+ これに対し、コレクションのディープ コピーされた要素をコピーして、要素が直接または間接的に参照するすべてです。  
+  
+ <xref:System.Collections.Hashtable>クローンに同じ数、同じ容量、同じ<xref:System.Collections.IHashCodeProvider>実装、および同じ<xref:System.Collections.IComparer>実装元として<xref:System.Collections.Hashtable>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="comparer">
+      <MemberSignature Language="C#" Value="protected System.Collections.IComparer comparer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IComparer comparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.comparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use KeyComparer properties.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Collections.IComparer" />に使用する、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <value><see cref="T:System.Collections.IComparer" />に使用する、<see cref="T:System.Collections.Hashtable" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値に設定されますが、ハッシュ テーブルは、使用して作成された、<see cref="T:System.Collections.IEqualityComparer" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Collections.Hashtable" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Collections.Hashtable" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>
+          指定したキーを持つ要素が <see langword="true" /> に格納されている場合は <see cref="T:System.Collections.Hashtable" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Hashtable.Contains%2A> は、<xref:System.Collections.IDictionary.Contains%2A?displayProperty=nameWithType> を実装します。 同様に動作が<xref:System.Collections.Hashtable.ContainsKey%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`項目が存在するかどうかを確認します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次の例を決める方法を説明するかどうか、<xref:System.Collections.Hashtable>の特定の要素が含まれています。  
+  
+ [!code-cpp[Classic Hashtable.Contains Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.ContainsKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Collections.Hashtable" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Collections.Hashtable" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>
+          指定したキーを持つ要素が <see langword="true" /> に格納されている場合は <see cref="T:System.Collections.Hashtable" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの動作とまったく同じ<xref:System.Collections.Hashtable.Contains%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`項目が存在するかどうかを確認します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次の例を決める方法を説明するかどうか、<xref:System.Collections.Hashtable>の特定の要素が含まれています。  
+  
+ [!code-cpp[Classic Hashtable.Contains Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsValue">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsValue (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsValue(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.ContainsValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Hashtable" /> 内で検索される値。 値として <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Hashtable" /> に特定の値が格納されているかどうかを判断します。</summary>
+        <returns>
+          指定した <see langword="true" /> を持つ要素が <see cref="T:System.Collections.Hashtable" /> に含まれている場合は <paramref name="value" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の値、<xref:System.Collections.Hashtable>を使用して、指定した値と比較されます、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`項目が存在するかどうかを確認します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次の例を決める方法を説明するかどうか、<xref:System.Collections.Hashtable>の特定の要素が含まれています。  
+  
+ [!code-cpp[Classic Hashtable.Contains Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (Array array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />のコピー先は、<see cref="T:System.Collections.DictionaryEntry" />からコピーされるオブジェクト<see cref="T:System.Collections.Hashtable" />です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Collections.Hashtable" />要素を 1 次元<see cref="T:System.Array" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のコピー先は、<xref:System.Array>を列挙子が反復処理する順序と同じ順序で、<xref:System.Collections.Hashtable>です。  
+  
+ 内のキーのみをコピーする、<xref:System.Collections.Hashtable>を使用して`Hashtable.Keys.CopyTo`です。  
+  
+ 値だけをコピーする、<xref:System.Collections.Hashtable>を使用して`Hashtable.Values.CopyTo`です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例は、キーの一覧またはの値のリストをコピーする方法を示します、 <xref:System.Collections.Hashtable> 1 次元に<xref:System.Array>です。  
+  
+ [!code-cpp[Classic Hashtable.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.Hashtable" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="arrayIndex" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.Hashtable" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> に格納されているキー/値ペアの数を取得します。</summary>
+        <value><see cref="T:System.Collections.Hashtable" /> に格納されているキー/値ペアの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EqualityComparer">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEqualityComparer EqualityComparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEqualityComparer EqualityComparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.EqualityComparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEqualityComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEqualityComparer" />に使用する、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <value><see cref="T:System.Collections.IEqualityComparer" />に使用する、<see cref="T:System.Collections.Hashtable" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IEqualityComparer>比較演算子と、ハッシュ コード プロバイダーの両方が含まれています。 場合、<xref:System.Collections.IEqualityComparer>で使用される、<xref:System.Collections.Hashtable>コンス トラクター、オブジェクト内のキーとして使用する、<xref:System.Collections.Hashtable>をオーバーライドする必要はありません、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値に設定されますが、ハッシュ テーブルは、使用して作成された、<see cref="T:System.Collections.IHashCodeProvider" />と<see cref="T:System.Collections.IComparer" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />を反復処理する、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" /> の <see cref="T:System.Collections.Hashtable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子には、コレクションへの排他アクセスがありません。したがって、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ 列挙子をシリアル化とシリアル化するため、<xref:System.Collections.Hashtable>の要素を並べ替えるになる可能性があります、呼び出さずに列挙を続行することはできません、<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の使用を比較する<xref:System.Collections.Hashtable.GetEnumerator%2A>と`foreach`の内容を列挙する、<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic Hashtable Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable Example/CS/source2.cs#2)]
+ [!code-vb[Classic Hashtable Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable Example/VB/source2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHash">
+      <MemberSignature Language="C#" Value="protected virtual int GetHash (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 GetHash(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.GetHash(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.Object" />が返されるハッシュ コード。</param>
+        <summary>指定したキーのハッシュ コードを返します。</summary>
+        <returns>ハッシュ コード<paramref name="key" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの作成時、特定の<xref:System.Collections.IHashCodeProvider>実装では、このメソッドは、そのハッシュ コード プロバイダーを使用して、それ以外の場合、使用、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>の実装`key`です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> をシリアル化するために必要な情報を格納している <see cref="T:System.Collections.Hashtable" /> オブジェクト。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納している <see cref="T:System.Collections.Hashtable" /> オブジェクト。</param>
+        <summary>実装して、<see cref="T:System.Runtime.Serialization.ISerializable" />インターフェイスし、シリアル化に必要なデータを返します、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">コレクションが変更されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="hcp">
+      <MemberSignature Language="C#" Value="protected System.Collections.IHashCodeProvider hcp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IHashCodeProvider hcp" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.hcp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use EqualityComparer property.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IHashCodeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ コードを提供できるオブジェクトを取得または設定します。</summary>
+        <value>ハッシュ コードを提供できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値に設定されますが、ハッシュ テーブルは、使用して作成された、<see cref="T:System.Collections.IEqualityComparer" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public virtual bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.Hashtable" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 固定サイズのコレクションでは、コレクションの作成後に要素の追加または削除はできませんが、既存の要素の変更はできます。  
+  
+ 固定サイズ コレクションが追加および削除する要素を防止するラッパーで単純なコレクションそのための追加または削除、要素を含む、基になるコレクションが変更された場合、固定サイズ コレクションにはそれらの変更が反映されます。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.Hashtable" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、コレクションのコレクションの変更を防止するラッパーです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.Hashtable" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Collections.Hashtable> 1 つのライターと複数リーダー同時にサポートできます。 複数のライターをサポートするために、によって返されるラッパーを介してすべての操作を行う必要があります、<xref:System.Collections.Hashtable.Synchronized%2A>メソッドです。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Hashtable.SyncRoot%2A>列挙中に。  
+  
+ [!code-cpp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CPP/remarks.cpp#2)]
+ [!code-csharp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CS/remarks.cs#2)]
+ [!code-vb[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/VB/remarks.vb#2)]  
+  
+   
+  
+## Examples  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Hashtable>、かどうかを<xref:System.Collections.Hashtable>が同期されているし、同期を使用して<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">値を取得または設定する対象のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。</summary>
+        <value>指定されたキーに関連付けられている値。 返しますを取得しようとして、指定したキーが見つからない場合<see langword="null" />、し、指定したキーを使用して、新しい要素を作成するように設定しようとしています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[key]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ 使用することも、<xref:System.Collections.Hashtable.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、 <xref:System.Collections.Hashtable>。 たとえば、`myCollection["myNonexistentKey"] = myValue`です。 ただしで指定したキーが既に存在する場合、 <xref:System.Collections.Hashtable>、設定、<xref:System.Collections.Hashtable.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Hashtable.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+ キーには`null`値を指定できますが、します。 区別するために`null`指定したキーが見つからないため、返されると`null`指定したキーの値が返される`null`を使用して、<xref:System.Collections.Hashtable.Contains%2A>メソッドまたは<xref:System.Collections.Hashtable.ContainsKey%2A>一覧で、キーが存在するかどうかを決定するメソッド。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。プロパティの設定は、o (1) 操作ではもです。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.IList.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Hashtable.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">このプロパティが設定されていますが、<see cref="T:System.Collections.Hashtable" /> が読み取り専用です。  
+  
+ または  
+  
+ プロパティを設定すると、 <paramref name="key" /> 、コレクションに存在しません、<see cref="T:System.Collections.Hashtable" />固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEquals">
+      <MemberSignature Language="C#" Value="protected virtual bool KeyEquals (object item, object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool KeyEquals(object item, object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.KeyEquals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Object" />と比較する<c>キー</c>です。</param>
+        <param name="key">内のキー、<see cref="T:System.Collections.Hashtable" />と比較する<c>項目</c>です。</param>
+        <summary>特定の比較<see cref="T:System.Object" />内の特定のキーを持つ、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="item" /> が等しい場合は <paramref name="key" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブルの作成時、特定の<xref:System.Collections.IComparer>実装では、このメソッドを使用してその; 比較できる比較演算子は、 <xref:System.Collections.IComparer.Compare%2A> (`item`、 `key`)。 それ以外の場合、使用して`item.Equals(key)`です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />内のキーを含む、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" />内のキーを含む、<see cref="T:System.Collections.Hashtable" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のキーの順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられている値と同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Hashtable.Values%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元のキーを逆参照<xref:System.Collections.Hashtable>です。 そのため、変更、<xref:System.Collections.Hashtable>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserialization">
+      <MemberSignature Language="C#" Value="public virtual void OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、逆シリアル化が完了したときに逆シリアル化イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Hashtable.Count%2A>します。  
+  
+ 列挙子をシリアル化とシリアル化するため、<xref:System.Collections.Hashtable>の要素を並べ替えるになる可能性があります、呼び出さずに列挙を続行することはできません、<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトに現在関連付けられている<see cref="T:System.Collections.Hashtable" />が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する要素のキー。</param>
+        <summary>指定したキーを持つ要素を <see cref="T:System.Collections.Hashtable" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.Hashtable>指定のキーを持つ要素が含まれていない、<xref:System.Collections.Hashtable>は変更されません。 例外をスローすることはありません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、要素を削除する方法を示しています、<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable.Remove Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.Remove Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Hashtable" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Collections.Hashtable" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Collections.Hashtable Synchronized (System.Collections.Hashtable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Hashtable Synchronized(class System.Collections.Hashtable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.Synchronized(System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="table">同期する <see cref="T:System.Collections.Hashtable" />。</param>
+        <summary>同期 (スレッド セーフである) ラッパーを返します、<see cref="T:System.Collections.Hashtable" />です。</summary>
+        <returns>A 同期 (スレッド セーフである) ラッパーを<see cref="T:System.Collections.Hashtable" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Hashtable.Synchronized%2A>メソッドはスレッド セーフの複数のリーダーとライター。 さらに、同期されたラッパーでは、書き込み、一度に 1 つだけのライターがあることが確認されます。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Hashtable.SyncRoot%2A>列挙中に。  
+  
+ [!code-cpp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CPP/remarks.cpp#2)]
+ [!code-csharp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CS/remarks.cs#2)]
+ [!code-vb[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/VB/remarks.vb#2)]  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例は、同期する方法を示します、 <xref:System.Collections.Hashtable>、かどうかを<xref:System.Collections.Hashtable>が同期されているし、同期を使用して<xref:System.Collections.Hashtable>です。  
+  
+ [!code-cpp[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CS/source.cs#1)]
+ [!code-vb[Classic Hashtable.IsSynchronized Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="table" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Hashtable" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.Hashtable" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同期されたバージョンを作成する、<xref:System.Collections.Hashtable>を使用して、<xref:System.Collections.Hashtable.Synchronized%2A>メソッドです。 ただし、派生クラスは、独自の同期されたバージョンを指定、<xref:System.Collections.Hashtable>を使用して、<xref:System.Collections.Hashtable.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.Hashtable.SyncRoot%2A>の<xref:System.Collections.Hashtable>、上で直接、<xref:System.Collections.Hashtable>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.Hashtable>オブジェクト。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.Hashtable.SyncRoot%2A>列挙中に。  
+  
+ [!code-cpp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CPP/remarks.cpp#2)]
+ [!code-csharp[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/CS/remarks.cs#2)]
+ [!code-vb[Classic Hashtable.IsSynchronized Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Hashtable.IsSynchronized Example/VB/remarks.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Hashtable.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 この位置で、呼び出す<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は無効になります呼び出すと、次に<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+ 列挙子には、コレクションへの排他アクセスがありません。したがって、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Hashtable.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Collections.Hashtable" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Collections.Hashtable" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値の順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられているキーと同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Collections.Hashtable.Keys%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元の値を逆参照<xref:System.Collections.Hashtable>です。 そのため、変更、<xref:System.Collections.Hashtable>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

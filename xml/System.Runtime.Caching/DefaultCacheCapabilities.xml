@@ -1,0 +1,176 @@
+<Type Name="DefaultCacheCapabilities" FullName="System.Runtime.Caching.DefaultCacheCapabilities">
+  <TypeSignature Language="C#" Value="public enum DefaultCacheCapabilities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DefaultCacheCapabilities extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.DefaultCacheCapabilities" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連のキャッシュ実装を提供する機能を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.DefaultCacheCapabilities>クラスはフラグ列挙体です。 フィールドの値はビットであり、キャッシュの機能を説明するフラグのセットとして結合できます。  
+  
+ <xref:System.Runtime.Caching.DefaultCacheCapabilities>プログラムでキャッシュの実装の動作を設定する列挙体を使用できます。 この動作は、特定のキャッシュを実装する機能の組み合わせに基づいています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbsoluteExpirations">
+      <MemberSignature Language="C#" Value="AbsoluteExpirations" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities AbsoluteExpirations = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.AbsoluteExpirations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装では、キャッシュ エントリを特定の日付と時刻に自動的に削除する機能をサポートします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheEntryChangeMonitors">
+      <MemberSignature Language="C#" Value="CacheEntryChangeMonitors" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities CacheEntryChangeMonitors = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryChangeMonitors" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装には、エントリを監視する変更の監視を作成する機能がサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheEntryRemovedCallback">
+      <MemberSignature Language="C#" Value="CacheEntryRemovedCallback" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities CacheEntryRemovedCallback = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装では、エントリがキャッシュから削除されている通知を発生させることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheEntryUpdateCallback">
+      <MemberSignature Language="C#" Value="CacheEntryUpdateCallback" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities CacheEntryUpdateCallback = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ実装は、エントリをキャッシュから削除することを示す通知を発生させることができます。 この設定は、キャッシュの実装が自動的に削除されるエントリを新しいキャッシュ エントリと 機能をサポートすることも示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheRegions">
+      <MemberSignature Language="C#" Value="CacheRegions" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities CacheRegions = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.CacheRegions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ実装では、キャッシュ領域にその記憶域をパーティション分割する機能をサポートし、それらの地域にキャッシュ エントリを挿入し、それらの地域からのキャッシュ エントリを取得する機能をサポートします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InMemoryProvider">
+      <MemberSignature Language="C#" Value="InMemoryProvider" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities InMemoryProvider = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.InMemoryProvider" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装は、メモリ内に少なくとも部分的に実行されます。 メモリ内キャッシュなどが、分散キャッシュはこのフラグを設定しませんが、<see cref="T:System.Runtime.Caching.MemoryCache" />クラスはようにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装の管轄外ので説明されている機能、<see cref="T:System.Runtime.Caching.DefaultCacheCapabilities" />列挙します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OutOfProcessProvider">
+      <MemberSignature Language="C#" Value="OutOfProcessProvider" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities OutOfProcessProvider = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.OutOfProcessProvider" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装には、アウト プロセスが実行されます。 分散キャッシュは、メモリ内キャッシュなどが、このフラグは設定、<see cref="T:System.Runtime.Caching.MemoryCache" />クラスではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SlidingExpirations">
+      <MemberSignature Language="C#" Value="SlidingExpirations" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.DefaultCacheCapabilities SlidingExpirations = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.DefaultCacheCapabilities.SlidingExpirations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.DefaultCacheCapabilities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの実装には、自動的に指定した時間間隔でアクセスされていないキャッシュ エントリを削除する機能がサポートしています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,113 @@
+<Type Name="RecycleLimitInfo" FullName="System.Web.Hosting.RecycleLimitInfo">
+  <TypeSignature Language="C#" Value="public sealed class RecycleLimitInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RecycleLimitInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.RecycleLimitInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検出されたメモリの負荷のレベルについて説明します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RecycleLimitInfo (long currentPrivateBytes, long recycleLimit, System.Web.Hosting.RecycleLimitNotificationFrequency recycleLimitNearFrequency);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 currentPrivateBytes, int64 recycleLimit, valuetype System.Web.Hosting.RecycleLimitNotificationFrequency recycleLimitNearFrequency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.RecycleLimitInfo.#ctor(System.Int64,System.Int64,System.Web.Hosting.RecycleLimitNotificationFrequency)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="currentPrivateBytes" Type="System.Int64" />
+        <Parameter Name="recycleLimit" Type="System.Int64" />
+        <Parameter Name="recycleLimitNearFrequency" Type="System.Web.Hosting.RecycleLimitNotificationFrequency" />
+      </Parameters>
+      <Docs>
+        <param name="currentPrivateBytes">現在のプロセスのプライベート バイトの使用状況を検出します。</param>
+        <param name="recycleLimit">現在のプロセスで決定したプライベート バイトの制限。</param>
+        <param name="recycleLimitNearFrequency">達しているメモリしきい値への対応をリスナーに確認していることをメモリ モニターが認識する頻度を示す列挙型。</param>
+        <summary><see cref="T:System.Web.Hosting.RecycleLimitInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPrivateBytes">
+      <MemberSignature Language="C#" Value="public long CurrentPrivateBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CurrentPrivateBytes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.RecycleLimitInfo.CurrentPrivateBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスのプライベート バイトの使用状況を取得します。</summary>
+        <value>現在のプロセスの検出されたプライベート バイトの使用状況。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecycleLimit">
+      <MemberSignature Language="C#" Value="public long RecycleLimit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RecycleLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.RecycleLimitInfo.RecycleLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスで決定したプライベート バイトの制限を取得します。</summary>
+        <value>現在のプロセスで決定したプライベート バイトの制限。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestGC">
+      <MemberSignature Language="C#" Value="public bool RequestGC { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequestGC" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.RecycleLimitInfo.RequestGC" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのオブザーバーがイベントを処理した後に、イベントのソースが、ガベージ コレクションを引き起こすかどうかを示すために使用できる監視可能なイベントのソースに返されるブール値を設定します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimFrequency">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.RecycleLimitNotificationFrequency TrimFrequency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Hosting.RecycleLimitNotificationFrequency TrimFrequency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.RecycleLimitInfo.TrimFrequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.RecycleLimitNotificationFrequency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>達しているメモリしきい値への対応をリスナーに確認していることをメモリ モニターが認識する頻度を示す列挙型を取得します。 この頻度に基づいて害のないまたはサブスクライバーを調整するより重大なイベントに、反応します。</summary>
+        <value>リスナーが対応する必要がある頻度を示す列挙型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

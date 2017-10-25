@@ -1,0 +1,323 @@
+<Type Name="NameTable" FullName="System.Xml.NameTable">
+  <TypeSignature Language="C#" Value="public class NameTable : System.Xml.XmlNameTable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NameTable extends System.Xml.XmlNameTable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.NameTable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlNameTable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シングル スレッドを実装する<see cref="T:System.Xml.XmlNameTable" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのいくつかのクラス<xref:System.Xml.XmlDocument>と<xref:System.Xml.XmlReader>を使用して、`NameTable`属性と要素の名前を格納する内部クラス。 要素名または属性名が XML ドキュメントに複数回、出現した場合は、`NameTable` に 1 回だけ格納されます。  
+  
+ 名前は、共通言語ランタイム (CLR) オブジェクト型として格納されます。 これにより、負荷の高い文字列比較ではなく、これらの文字列でオブジェクト比較を実行できます。 これらの文字列オブジェクトが、アトミック化された文字列と呼ばれます。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つの要素名を比較します。  
+  
+ [!code-cpp[NameTable#1](~/samples/snippets/cpp/VS_Snippets_Data/NameTable/CPP/nametable.cpp#1)]
+ [!code-csharp[NameTable#1](~/samples/snippets/csharp/VS_Snippets_Data/NameTable/CS/nametable.cs#1)]
+ [!code-vb[NameTable#1](~/samples/snippets/visualbasic/VS_Snippets_Data/NameTable/VB/nametable.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.NameTable.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see langword="NameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の NameTable を構築します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した文字列を atomizes し、<see langword="NameTable" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override string Add (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string Add(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.NameTable.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加する文字列。</param>
+        <summary>指定した文字列を atomizes し、<see langword="NameTable" />です。</summary>
+        <returns>アトミック化された文字列または既存の文字列内に既に存在する場合、<see langword="NameTable" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override string Add (char[] key, int start, int len);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string Add(char[] key, int32 start, int32 len) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.NameTable.Add(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Char[]" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="len" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加する文字列を格納する文字配列。</param>
+        <param name="start">文字列の最初の文字を指定する配列の 0 から始まるインデックス。</param>
+        <param name="len">文字列の文字の数。</param>
+        <summary>指定した文字列を atomizes し、<see langword="NameTable" />です。</summary>
+        <returns>アトミック化された文字列または既存の文字列に既に存在する場合、<see langword="NameTable" />です。 場合<paramref name="len" />0 の場合は、String.Empty が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="start" />  
+  
+ または  
+  
+ <paramref name="start" />&gt;= <paramref name="key" />.長さ  
+  
+ または  
+  
+ <paramref name="len" />&gt;= <paramref name="key" />.長さ  
+  
+ 上記の条件の場合にスローされる例外されません<paramref name="len" />0 を = です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="len" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Get">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>アトミック化された文字列を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public override string Get (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string Get(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.NameTable.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索対象の名前。</param>
+        <summary>指定した値のアトミック化された文字列を取得します。</summary>
+        <returns>アトミック化された文字列オブジェクトまたは<see langword="null" />文字列が既にアトミックしていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public override string Get (char[] key, int start, int len);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string Get(char[] key, int32 start, int32 len) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.NameTable.Get(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Char[]" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="len" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象の名前を格納する文字配列。</param>
+        <param name="start">名前の最初の文字を指定する配列の 0 から始まるインデックス。</param>
+        <param name="len">名前の文字の数。</param>
+        <summary>指定した配列内の文字の指定した範囲と同じ文字を含む、アトミック化された文字列を取得します。</summary>
+        <returns>アトミック化された文字列または<see langword="null" />文字列が既にアトミックしていない場合。 場合<paramref name="len" />0 の場合は、String.Empty が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.NameTable>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">0 &gt; <paramref name="start" />  
+  
+ または  
+  
+ <paramref name="start" />&gt;= <paramref name="key" />.長さ  
+  
+ または  
+  
+ <paramref name="len" />&gt;= <paramref name="key" />.長さ  
+  
+ 上記の条件の場合にスローされる例外されません<paramref name="len" />0 を = です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="len" /> &lt; 0.</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

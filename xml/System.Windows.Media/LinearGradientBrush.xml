@@ -1,0 +1,418 @@
+<Type Name="LinearGradientBrush" FullName="System.Windows.Media.LinearGradientBrush">
+  <TypeSignature Language="C#" Value="public sealed class LinearGradientBrush : System.Windows.Media.GradientBrush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LinearGradientBrush extends System.Windows.Media.GradientBrush" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.LinearGradientBrush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.GradientBrush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>線形グラデーションを使用して領域を塗りつぶします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.LinearGradientBrush>線形グラデーションで領域を塗りつぶします。 線形グラデーションでは、線に沿ったグラデーションを定義します。 線の終点がによって定義されている、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>線状グラデーションのプロパティです。 A<xref:System.Windows.Media.LinearGradientBrush>描画ブラシ、<xref:System.Windows.Media.GradientBrush.GradientStops%2A>この線に沿ったです。  
+  
+ 既定の線形グラデーションはします。 既定で、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>線形グラデーションの (0, 0) は、描画される領域の左上隅にあると、その<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>(1, 1) は、描画される領域の右下隅です。 斜線のパスに沿って、結果として得られるグラデーションの色の補間します。  
+  
+ 次の図は、対角線のグラデーションを示します。 始点から終点へのグラデーションの補間のパスを強調表示する行が追加されました。  
+  
+ ![対角線方向の線形グラデーションのグラデーション軸](~/add/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "対角線方向の線形グラデーションのグラデーション軸")  
+対角線方向の線形グラデーション  
+  
+ 次の図は、同じ線形グラデーションですが強調表示されたグラデーション境界とを示しています。  
+  
+ ![線形グラデーションのグラデーションの分岐点](~/add/media/wcpsdk-graphicsmm-4gradientstops.png "の線形グラデーションのグラデーションの終了")  
+強調表示されたグラデーション境界と対角線方向の線形グラデーション  
+  
+ 完全にいっぱいにならない塗りつぶされている領域のグラデーション軸を指定することができます。 このエラーが発生したとき、<xref:System.Windows.Media.GradientBrush.SpreadMethod%2A>プロパティは、残りの領域を描画する方法を決定します。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ A<xref:System.Windows.Media.LinearGradientBrush>の種類は、<xref:System.Windows.Freezable>オブジェクトし、パフォーマンスを向上させるために固定することができます。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.LinearGradientBrush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.LinearGradientBrush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Windows.Media.GradientStopCollection gradientStopCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.GradientStopCollection gradientStopCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor(System.Windows.Media.GradientStopCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="gradientStopCollection" Type="System.Windows.Media.GradientStopCollection" />
+      </Parameters>
+      <Docs>
+        <param name="gradientStopCollection"><see cref="P:System.Windows.Media.GradientBrush.GradientStops" />をこのブラシに設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LinearGradientBrush" />指定のグラデーションの分岐点を持つクラスであります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Windows.Media.GradientStopCollection gradientStopCollection, double angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.GradientStopCollection gradientStopCollection, float64 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor(System.Windows.Media.GradientStopCollection,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="gradientStopCollection" Type="System.Windows.Media.GradientStopCollection" />
+        <Parameter Name="angle" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="gradientStopCollection"><see cref="P:System.Windows.Media.GradientBrush.GradientStops" />をこのブラシに設定します。</param>
+        <param name="angle">A<see cref="T:System.Double" />角度を度、グラデーションの単位を表すです。 値が 0.0 の水平方向のグラデーションを作成し、90.0 の値が垂直グラデーションを作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LinearGradientBrush" />を持つ、指定されたクラス<see cref="T:System.Windows.Media.GradientStopCollection" />と角度。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Windows.Media.Color startColor, System.Windows.Media.Color endColor, double angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Color startColor, valuetype System.Windows.Media.Color endColor, float64 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor(System.Windows.Media.Color,System.Windows.Media.Color,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startColor" Type="System.Windows.Media.Color" />
+        <Parameter Name="endColor" Type="System.Windows.Media.Color" />
+        <Parameter Name="angle" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="startColor"><see cref="T:System.Windows.Media.Color" />オフセットは 0.0 です。</param>
+        <param name="endColor"><see cref="T:System.Windows.Media.Color" />オフセット 1.0 です。</param>
+        <param name="angle">A<see cref="T:System.Double" />角度を度、グラデーションの単位を表すです。 値が 0.0 の水平方向のグラデーションを作成し、90.0 の値が垂直グラデーションを作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LinearGradientBrush" />クラスを持つ指定した開始<see cref="T:System.Windows.Media.Color" />、終了<see cref="T:System.Windows.Media.Color" />、および角度。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Windows.Media.GradientStopCollection gradientStopCollection, System.Windows.Point startPoint, System.Windows.Point endPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.GradientStopCollection gradientStopCollection, valuetype System.Windows.Point startPoint, valuetype System.Windows.Point endPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor(System.Windows.Media.GradientStopCollection,System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="gradientStopCollection" Type="System.Windows.Media.GradientStopCollection" />
+        <Parameter Name="startPoint" Type="System.Windows.Point" />
+        <Parameter Name="endPoint" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="gradientStopCollection"><see cref="P:System.Windows.Media.GradientBrush.GradientStops" />をこのブラシに設定します。</param>
+        <param name="startPoint"><see cref="P:System.Windows.Media.LinearGradientBrush.StartPoint" />グラデーションのです。</param>
+        <param name="endPoint"><see cref="P:System.Windows.Media.LinearGradientBrush.EndPoint" />グラデーションのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LinearGradientBrush" />指定のグラデーションの分岐点を持つクラスである<see cref="P:System.Windows.Media.LinearGradientBrush.StartPoint" />、および<see cref="P:System.Windows.Media.LinearGradientBrush.EndPoint" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Windows.Media.Color startColor, System.Windows.Media.Color endColor, System.Windows.Point startPoint, System.Windows.Point endPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Color startColor, valuetype System.Windows.Media.Color endColor, valuetype System.Windows.Point startPoint, valuetype System.Windows.Point endPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.#ctor(System.Windows.Media.Color,System.Windows.Media.Color,System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startColor" Type="System.Windows.Media.Color" />
+        <Parameter Name="endColor" Type="System.Windows.Media.Color" />
+        <Parameter Name="startPoint" Type="System.Windows.Point" />
+        <Parameter Name="endPoint" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="startColor"><see cref="T:System.Windows.Media.Color" />オフセットは 0.0 です。</param>
+        <param name="endColor"><see cref="T:System.Windows.Media.Color" />オフセット 1.0 です。</param>
+        <param name="startPoint"><see cref="P:System.Windows.Media.LinearGradientBrush.StartPoint" />グラデーションのです。</param>
+        <param name="endPoint"><see cref="P:System.Windows.Media.LinearGradientBrush.EndPoint" />グラデーションのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LinearGradientBrush" />クラスを持つ指定した開始<see cref="T:System.Windows.Media.Color" />、終了<see cref="T:System.Windows.Media.Color" />、 <see cref="P:System.Windows.Media.LinearGradientBrush.StartPoint" />、および<see cref="P:System.Windows.Media.LinearGradientBrush.EndPoint" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GradientBrush.MappingMode%2A>ブラシの初期化は<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LinearGradientBrush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.LinearGradientBrush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LinearGradientBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.LinearGradientBrush" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LinearGradientBrush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.LinearGradientBrush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LinearGradientBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.LinearGradientBrush" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LinearGradientBrush.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Point EndPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point EndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.LinearGradientBrush.EndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>線状グラデーションの終点の 2 次元座標を取得または設定します。</summary>
+        <value>線状グラデーションの終点の 2 次元座標。 既定値は (1,1) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.LinearGradientBrush>線に沿ったグラデーションを描画します。 線の始点と終点がによって定義されている、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>のプロパティ、<xref:System.Windows.Media.LinearGradientBrush>です。  
+  
+ 既定の線形グラデーションはします。 既定で、 <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> (0, 0) は、線形グラデーションの塗りつぶし対象の領域の左上隅にあると、その<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>(1, 1) は、塗りつぶし対象の領域の右下隅です。 斜線のパスに沿って、結果として得られるグラデーションの色の補間します。  
+  
+ 次の図は、対角線のグラデーションを示します。 黒の線は、始点から終点へのグラデーションの補間のパスを強調表示に追加されました。  
+  
+ ![対角線方向の線形グラデーションのグラデーション軸](~/add/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "対角線方向の線形グラデーションのグラデーション軸")  
+対角線方向の線形グラデーション  
+  
+## <a name="specifying-relative-or-absolute-values"></a>指定の相対値または絶対値  
+ 注意してください、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>のプロパティ、<xref:System.Windows.Media.LinearGradientBrush>を決定するかどうか、<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>は相対パスまたは絶対値として解釈されます。 A<xref:System.Windows.Media.GradientBrush.MappingMode%2A>の<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>ことを指定、<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>塗りつぶされる領域のサイズに対する相対パスの値です。 A<xref:System.Windows.Media.GradientBrush.MappingMode%2A>の<xref:System.Windows.Media.BrushMappingMode.Absolute>ことを指定、<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>デバイス非依存ピクセルで表されます。 既定では、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>に設定されている<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>、<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>相対値です。  
+  
+<a name="dependencyPropertyInfo_EndPoint"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.LinearGradientBrush.EndPointProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndPointProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EndPointProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EndPointProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.LinearGradientBrush.EndPointProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.LinearGradientBrush.EndPoint" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Point StartPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point StartPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.LinearGradientBrush.StartPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>線形グラデーションの起点の 2 次元座標を取得または設定します。</summary>
+        <value>線形グラデーションの起点の 2 次元座標。 既定値は (0, 0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.LinearGradientBrush>線に沿ったグラデーションを描画します。 線の始点と終点がによって定義されている、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>のプロパティ、<xref:System.Windows.Media.LinearGradientBrush>です。  
+  
+ 既定の線形グラデーションはします。 既定で、 <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> (0, 0) は、線形グラデーションの塗りつぶし対象の領域の左上隅にあると、その<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>(1, 1) は、塗りつぶし対象の領域の右下隅です。 斜線のパスに沿って、結果として得られるグラデーションの色の補間します。  
+  
+ 次の図は、対角線のグラデーションを示します。 黒の線は、始点から終点へのグラデーションの補間のパスを強調表示に追加されました。  
+  
+ ![対角線方向の線形グラデーションのグラデーション軸](~/add/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "対角線方向の線形グラデーションのグラデーション軸")  
+対角線方向の線形グラデーション  
+  
+## <a name="specifying-relative-or-absolute-values"></a>指定の相対値または絶対値  
+ 注意してください、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>のプロパティ、<xref:System.Windows.Media.LinearGradientBrush>を決定するかどうか、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>は相対パスまたは絶対値として解釈されます。 A<xref:System.Windows.Media.GradientBrush.MappingMode%2A>の<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>ことを指定、<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>塗りつぶされる領域のサイズに対する相対パスの値です。 A<xref:System.Windows.Media.GradientBrush.MappingMode%2A>の<xref:System.Windows.Media.BrushMappingMode.Absolute>ことを指定、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>デバイス非依存ピクセルで表されます。 既定では、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>に設定されている<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>相対値です。  
+  
+<a name="dependencyPropertyInfo_StartPoint"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.LinearGradientBrush.StartPointProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartPointProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StartPointProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StartPointProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.LinearGradientBrush.StartPointProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.LinearGradientBrush.StartPoint" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

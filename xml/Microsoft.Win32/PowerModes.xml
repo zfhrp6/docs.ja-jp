@@ -1,0 +1,73 @@
+<Type Name="PowerModes" FullName="Microsoft.Win32.PowerModes">
+  <TypeSignature Language="C#" Value="public enum PowerModes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PowerModes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.PowerModes" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>オペレーティング システムにより報告された電源モード イベントの識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、電源モードの変更またはイベントの種類を表す識別子を定義します。 この列挙体の値が使用する<xref:Microsoft.Win32.PowerModeChangedEventArgs>の種類を示すために、<xref:Microsoft.Win32.SystemEvents.PowerModeChanged>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="Resume" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.PowerModes Resume = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.PowerModes.Resume" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.PowerModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが中断状態から再開します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusChange">
+      <MemberSignature Language="C#" Value="StatusChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.PowerModes StatusChange = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.PowerModes.StatusChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.PowerModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電源モードの状態の通知イベントが、オペレーティング システムによって生成されました。 これは、弱を示している可能性があります。 またはバッテリの充電中、AC 電源およびバッテリ、または別の変更、システムの状態の間の遷移の電源装置です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspend">
+      <MemberSignature Language="C#" Value="Suspend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.PowerModes Suspend = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.PowerModes.Suspend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.PowerModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムを中断します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

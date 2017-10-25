@@ -1,0 +1,402 @@
+<Type Name="DiscoveryProxy" FullName="System.ServiceModel.Discovery.DiscoveryProxy">
+  <TypeSignature Language="C#" Value="public abstract class DiscoveryProxy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DiscoveryProxy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryProxy" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>探索プロキシの実装に使用される抽象基本クラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryProxy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryProxy (System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator messageSequenceGenerator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator messageSequenceGenerator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.#ctor(System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="messageSequenceGenerator" Type="System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequenceGenerator">メッセージのシーケンス ジェネレーター。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Discovery.DiscoveryProxy" /> を使用して、<see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryProxy (System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator messageSequenceGenerator, int duplicateMessageHistoryLength);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator messageSequenceGenerator, int32 duplicateMessageHistoryLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.#ctor(System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="messageSequenceGenerator" Type="System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" />
+        <Parameter Name="duplicateMessageHistoryLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequenceGenerator">メッセージのシーケンス ジェネレーター。</param>
+        <param name="duplicateMessageHistoryLength">重複するメッセージを識別するためにトランスポートで使用されるメッセージ ハッシュの最大数。 既定値は 0 です。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryProxy" /> と重複するメッセージの履歴の長さを指定して <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginShouldRedirectFind">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginShouldRedirectFind (System.ServiceModel.Discovery.FindCriteria resolveCriteria, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginShouldRedirectFind(class System.ServiceModel.Discovery.FindCriteria resolveCriteria, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.BeginShouldRedirectFind(System.ServiceModel.Discovery.FindCriteria,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resolveCriteria" Type="System.ServiceModel.Discovery.FindCriteria" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resolveCriteria">検索するサービスを説明する解決基準。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、探索プロキシがマルチキャストの検索要求を受信した場合にマルチキャストの抑制メッセージを送信できるようになります。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト抑制メッセージは、探索プロキシが使用可能な場合に、マルチキャスト検索メッセージまたはマルチキャスト解決メッセージの応答として送信できます。 探索プロキシにユニキャスト メッセージを送付すると、探索操作で発生するネットワーク トラフィックの量の削減に役立つ場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginShouldRedirectResolve">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginShouldRedirectResolve (System.ServiceModel.Discovery.ResolveCriteria findCriteria, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginShouldRedirectResolve(class System.ServiceModel.Discovery.ResolveCriteria findCriteria, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.BeginShouldRedirectResolve(System.ServiceModel.Discovery.ResolveCriteria,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="findCriteria" Type="System.ServiceModel.Discovery.ResolveCriteria" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="findCriteria">検索するサービスを説明する検索基準。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、探索プロキシがマルチキャストの解決要求を受信した場合にマルチキャストの抑制メッセージを送信できるようになります。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト抑制メッセージは、探索プロキシが使用可能な場合に、マルチキャスト検索メッセージまたはマルチキャスト解決メッセージの応答として送信できます。 探索プロキシにユニキャスト メッセージを送付すると、探索操作で発生するネットワーク トラフィックの量の削減に役立つ場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndShouldRedirectFind">
+      <MemberSignature Language="C#" Value="protected virtual bool EndShouldRedirectFind (IAsyncResult result, out System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt; redirectionEndpoints);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool EndShouldRedirectFind(class System.IAsyncResult result, [out] class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt;&amp; redirectionEndpoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.EndShouldRedirectFind(System.IAsyncResult,System.Collections.ObjectModel.Collection{System.ServiceModel.Discovery.EndpointDiscoveryMetadata}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="redirectionEndpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <param name="redirectionEndpoints">リダイレクト エンドポイントを説明するエンドポイント探索メタデータのコレクション。</param>
+        <summary>このメソッドをオーバーライドすると、検索要求に対するマルチキャスト抑制メッセージの送信完了を処理できます。</summary>
+        <returns>
+          <see langword="true" />検索操作のリダイレクトにする、それ以外の場合場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト抑制メッセージは、探索プロキシが使用可能な場合に、マルチキャスト検索メッセージまたはマルチキャスト解決メッセージの応答として送信できます。 探索プロキシにユニキャスト メッセージを送付すると、探索操作で発生するネットワーク トラフィックの量の削減に役立つ場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndShouldRedirectResolve">
+      <MemberSignature Language="C#" Value="protected virtual bool EndShouldRedirectResolve (IAsyncResult result, out System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt; redirectionEndpoints);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool EndShouldRedirectResolve(class System.IAsyncResult result, [out] class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt;&amp; redirectionEndpoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.EndShouldRedirectResolve(System.IAsyncResult,System.Collections.ObjectModel.Collection{System.ServiceModel.Discovery.EndpointDiscoveryMetadata}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="redirectionEndpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Discovery.EndpointDiscoveryMetadata&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <param name="redirectionEndpoints">リダイレクト エンドポイントを説明するエンドポイント探索メタデータのコレクション。</param>
+        <summary>このメソッドをオーバーライドすると、解決要求に対するマルチキャスト抑制メッセージの送信完了を処理できます。</summary>
+        <returns>
+          <see langword="true" />場合は、解決操作のリダイレクトにする、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト抑制メッセージは、探索プロキシが使用可能な場合に、マルチキャスト検索メッセージまたはマルチキャスト解決メッセージの応答として送信できます。 探索プロキシにユニキャスト メッセージを送付すると、探索操作で発生するネットワーク トラフィックの量の削減に役立つ場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginFind">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginFind (System.ServiceModel.Discovery.FindRequestContext findRequestContext, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginFind(class System.ServiceModel.Discovery.FindRequestContext findRequestContext, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind(System.ServiceModel.Discovery.FindRequestContext,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="findRequestContext" Type="System.ServiceModel.Discovery.FindRequestContext" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="findRequestContext">探索するサービスを説明する検索要求コンテキスト。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、検索操作を処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索結果は、<xref:System.ServiceModel.Discovery.FindRequestContext.AddMatchingEndpoint%2A> メソッドを 1 回以上呼び出すことによって返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOfflineAnnouncement">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginOfflineAnnouncement (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginOfflineAnnouncement(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOfflineAnnouncement(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.EndpointDiscoveryMetadata,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence">探索メッセージのシーケンス。</param>
+        <param name="endpointDiscoveryMetadata">エンドポイント探索メタデータ。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、オフラインのアナウンス メッセージを処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOnlineAnnouncement">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginOnlineAnnouncement (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginOnlineAnnouncement(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOnlineAnnouncement(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.EndpointDiscoveryMetadata,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence">探索メッセージのシーケンス。</param>
+        <param name="endpointDiscoveryMetadata">エンドポイント探索メタデータ。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、オンラインのアナウンス メッセージを処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginResolve">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginResolve (System.ServiceModel.Discovery.ResolveCriteria resolveCriteria, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginResolve(class System.ServiceModel.Discovery.ResolveCriteria resolveCriteria, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginResolve(System.ServiceModel.Discovery.ResolveCriteria,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resolveCriteria" Type="System.ServiceModel.Discovery.ResolveCriteria" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resolveCriteria">探索するサービスを説明する解決基準。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、解決操作を処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndFind">
+      <MemberSignature Language="C#" Value="protected abstract void OnEndFind (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndFind(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、検索操作の完了を処理できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOfflineAnnouncement">
+      <MemberSignature Language="C#" Value="protected abstract void OnEndOfflineAnnouncement (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndOfflineAnnouncement(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOfflineAnnouncement(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、オフラインのアナウンス メッセージの完了を処理できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOnlineAnnouncement">
+      <MemberSignature Language="C#" Value="protected abstract void OnEndOnlineAnnouncement (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndOnlineAnnouncement(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOnlineAnnouncement(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、オンラインのアナウンス メッセージの完了を処理できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndResolve">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Discovery.EndpointDiscoveryMetadata OnEndResolve (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Discovery.EndpointDiscoveryMetadata OnEndResolve(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryProxy.OnEndResolve(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.EndpointDiscoveryMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、解決操作の完了を処理できます。</summary>
+        <returns>解決済みのサービスのエンドポイント探索メタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

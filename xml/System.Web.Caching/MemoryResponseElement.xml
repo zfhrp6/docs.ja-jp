@@ -1,0 +1,107 @@
+<Type Name="MemoryResponseElement" FullName="System.Web.Caching.MemoryResponseElement">
+  <TypeSignature Language="C#" Value="public class MemoryResponseElement : System.Web.Caching.ResponseElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MemoryResponseElement extends System.Web.Caching.ResponseElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.MemoryResponseElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Caching.ResponseElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メモリに格納されている出力キャッシュ エントリの一部を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力キャッシュの応答、<xref:System.Web.Caching.MemoryResponseElement>オブジェクトはバイトの配列としてメモリに格納します。 配列には、出力キャッシュ応答の一部またはすべてを含めることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryResponseElement (byte[] buffer, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] buffer, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Caching.MemoryResponseElement.#ctor(System.Byte[],System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">出力キャッシュ応答の部分を含むバイト配列。</param>
+        <param name="length">配列のサイズ<c>バッファー</c>です。</param>
+        <summary><see cref="T:System.Web.Caching.MemoryResponseElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`buffer`することはできません`null`長さ 0 の配列であることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="length" />0 のサイズより大きいか小さい<paramref name="buffer" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public byte[] Buffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.MemoryResponseElement.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュ応答の一部またはすべてを格納する配列を取得します。</summary>
+        <value>オブジェクトのバイトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>プロパティがありますいない`null`長さ 0 の配列であることができますが、します。 場合<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>プロパティは`null`、<xref:System.Web.Caching.MemoryResponseElement>コンス トラクターをスロー、<xref:System.ArgumentNullException>です。 場合、<xref:System.Web.Caching.MemoryResponseElement.Length%2A>プロパティが 0 の値のサイズより大きいか小さい<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Caching.MemoryResponseElement.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって参照される配列のサイズを取得、<see cref="P:System.Web.Caching.MemoryResponseElement.Buffer" />プロパティです。</summary>
+        <value>配列のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Caching.MemoryResponseElement>メモリ バッファーのプールから作成される固定サイズのメモリ バッファーは、ASP.NET によって作成されるオブジェクトです。 その結果の内容、<xref:System.Web.Caching.MemoryResponseElement>オブジェクト多くの場合に完全に収まらない、<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>配列。 通常の一部にのみ、<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>配列には、応答データが含まれます。 そのため、プロバイダーをシリアル化、 <xref:System.Web.Caching.MemoryResponseElement.Buffer%2A> (代わりに直接出力キャッシュに保存される完全な型をシリアル化) の配列を使用する必要があります、<xref:System.Web.Caching.MemoryResponseElement.Length%2A>の量を決定するプロパティ、<xref:System.Web.Caching.MemoryResponseElement.Buffer%2A>配列が格納されている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

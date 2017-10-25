@@ -1,0 +1,2246 @@
+<Type Name="WorkflowView" FullName="System.Workflow.ComponentModel.Design.WorkflowView">
+  <TypeSignature Language="C#" Value="public class WorkflowView : System.Windows.Forms.UserControl, IServiceProvider, System.Windows.Forms.IMessageFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowView extends System.Windows.Forms.UserControl implements class System.IServiceProvider, class System.Windows.Forms.IMessageFilter" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.WorkflowView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Forms.IMessageFilter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Design.ActivityDesignerTheme(typeof(System.Workflow.ComponentModel.Design.AmbientTheme), Xml="&lt;AmbientTheme xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow" ApplyTo="System.Workflow.ComponentModel.Design.WorkflowView" ShowConfigErrors="True" DrawShadow="False" DrawGrayscale="False" DropIndicatorColor="0xFF006400" SelectionForeColor="0xFF0000FF" SelectionPatternColor="0xFF606060" ForeColor="0xFF808080" BackColor="0xFFFFFFFF" ShowGrid="False" GridColor="0xFFC0C0C0" TextQuality="Aliased" DrawRounded="True" ShowDesignerBorder="True" /&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロセス フローのビジュアル表示を描画するデザイン サーフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、ワークフロー マークアップで記述されたプロセス フローのビジュアル表示を描画するデザイン サーフェイスです。 <xref:System.Workflow.ComponentModel.Design.WorkflowView> には各種のユーザー インターフェイス機能が組み込まれています。アクティビティ デザイナーはこれを使って画面を描画し、Windows が生成するさまざまなイベントに応答します。 さらに <xref:System.Workflow.ComponentModel.Design.WorkflowView> には、いくつかのアクティビティについてこれを実行するための機能が組み込まれており、すべてのデザイナーが共通に利用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> メソッドを使用して <xref:System.ComponentModel.Design.IRootDesigner.GetView%2A> クラスのインスタンスを取得する方法を示しています。 その後、このコードは <xref:System.Workflow.ComponentModel.Design.WorkflowView>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar%2A> などのいくつかの <xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> プロパティを設定し、<xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToScreenSize%2A> メソッドを呼び出します。  
+  
+ このコード例は、WorkflowDesignerControl.cs ファイルから抜粋したワークフロー追跡プロファイル デザイナーの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー追跡プロファイル デザイナー](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[wf_samples#126](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#126)]
+ [!code-vb[wf_samples#126](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#126)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowView (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" /> インターフェイスを実装するオブジェクト。</param>
+        <summary>指定されたサービス プロバイダーで <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトを作成する方法の例を次に示します。 この例では、<xref:System.ComponentModel.Design.DesignSurface> オブジェクトを作成し、`BeginLoad` を引数として渡して <xref:System.Workflow.ComponentModel.Design.WorkflowDesignerLoader> メソッドを呼び出します。 <xref:System.Workflow.Activities.SequentialWorkflowActivity> の作成後、先に作成した <xref:System.Workflow.ComponentModel.Design.WorkflowView> を引数としてコンストラクターに渡して、<xref:System.ComponentModel.Design.DesignSurface> オブジェクトを作成します。  
+  
+ このコード例は、WorkflowViewWrapper.cs ファイルから抜粋した Outlook ワークフロー ウィザードの SDK サンプルの一部です。 詳細については、次を参照してください。 [Outlook ワークフロー ウィザード サンプル](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[wf_samples#97](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#97)]
+ [!code-vb[wf_samples#97](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#97)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDesignerMessageFilter">
+      <MemberSignature Language="C#" Value="public void AddDesignerMessageFilter (System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter designerMessageFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDesignerMessageFilter(class System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter designerMessageFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.AddDesignerMessageFilter(System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerMessageFilter" Type="System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="designerMessageFilter"><see cref="T:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" /> に追加する <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" /> を <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> からのメッセージを処理するコンポーネントです。  
+  
+ `Strategy` は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> デザイン パターンに基づき、メッセージを <xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> に渡して処理させます。  
+  
+ マウス イベント、キーボード イベント、描画/レイアウト イベントを、<xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> に関連付けられた <xref:System.Workflow.ComponentModel.Design.WorkflowView> に渡します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.ComponentModel.Design.WorkflowDesignerLoader> を作成し、<xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトをワークフロー デザイン サーフェイスに関連付けています。 メッセージの通知を取得するために、<xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> を作成し、これを <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトに追加します。  
+  
+ このコード例は、WorkflowViewWrapper.cs ファイルから抜粋した Outlook ワークフロー ウィザードの SDK サンプルの一部です。 詳細については、次を参照してください。 [Outlook ワークフロー ウィザード サンプル](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[wf_Samples#102](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#102)]
+ [!code-vb[wf_Samples#102](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#102)]  
+  
+ 前のコードで作成した `MessageFilter` オブジェクトは、<xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> クラスから派生したものです。  このクラスのメソッドをオーバーライドすることにより、<xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクト上でユーザー インターフェイス イベントが発生するたびに、メッセージ フィルターに通知が届くようにします。  
+  
+ [!code-csharp[wf_samples#104](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#104)]
+ [!code-vb[wf_samples#104](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientPointToLogical">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point ClientPointToLogical (System.Drawing.Point clientPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point ClientPointToLogical(valuetype System.Drawing.Point clientPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ClientPointToLogical(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="clientPoint">クライアント座標から論理座標に変換する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Drawing.Point" /> をクライアント座標から論理座標に変換します。</summary>
+        <returns>クライアント座標から論理座標に変換された <see cref="T:System.Drawing.Point" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+-   論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientRectangleToLogical">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle ClientRectangleToLogical (System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle ClientRectangleToLogical(valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ClientRectangleToLogical(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">クライアント座標から論理座標に変換する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary><see cref="T:System.Drawing.Rectangle" /> をクライアント座標から論理座標に変換します。</summary>
+        <returns>クライアント座標から論理座標に変換された <see cref="T:System.Drawing.Rectangle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientSizeToLogical">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size ClientSizeToLogical (System.Drawing.Size clientSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size ClientSizeToLogical(valuetype System.Drawing.Size clientSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ClientSizeToLogical(System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="clientSize">クライアント座標から論理座標に変換する <see cref="T:System.Drawing.Size" />。</param>
+        <summary><see cref="T:System.Drawing.Size" /> をクライアント座標から論理座標に変換します。</summary>
+        <returns>クライアント座標から論理座標に変換された <see cref="T:System.Drawing.Size" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.AccessibleObject" /> の新しい <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> を作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.AccessibleObject" /> の新しい <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Workflow.ComponentModel.Design.WorkflowView.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.AccessibleObject> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.AccessibleObject> を作成するには、.NET Framework と一緒にインストールされる `Accessibility` アセンブリへの参照を追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Workflow.ComponentModel.Design.WorkflowView.CreateAccessibilityInstance" /> をオーバーライドする場合は、基本クラスの <see cref="M:System.Workflow.ComponentModel.Design.WorkflowView.CreateAccessibilityInstance" /> メソッドを呼び出さないでください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ disposing パラメーターが `true` に設定されている場合、このメソッドは、この <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトが参照しているすべてのマネージ オブジェクトが保持しているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ 詳細については`Dispose`と`Finalize`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableFitToScreen">
+      <MemberSignature Language="C#" Value="public bool EnableFitToScreen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableFitToScreen" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.EnableFitToScreen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン サーフェイス上のボタンを押したとき、ワークフロー デザイン サーフェイスのズーム レベルを変更して、ワークフロー全体が <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に表示されるようにします。</summary>
+        <value>
+          動的ボタンが有効であれば <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ スクリーン ボタンに合わせてズーム レベルを変更する例を以下に示します。 このメソッドは、まずデザイナーの <xref:System.ComponentModel.Design.IDesignerHost> インターフェイスを取得し、次に <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトを検索しています。そのため、<xref:System.IServiceProvider.GetService%2A> メソッドを呼び出してから、<xref:System.Workflow.ComponentModel.Design.WorkflowView.EnableFitToScreen%2A> プロパティを変更しています。  
+  
+ [!code-csharp[wf_samples#50](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#50)]
+ [!code-vb[wf_samples#50](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureVisible">
+      <MemberSignature Language="C#" Value="public void EnsureVisible (object selectableObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnsureVisible(object selectableObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectableObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="selectableObject">表示するオブジェクト。</param>
+        <summary>渡された <see cref="T:System.Object" /> が確実に表示されるよう、必要に応じて親オブジェクトを展開し、<see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> をスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作対象のオブジェクトがワークフロー内にあって、ユーザー インターフェイス キューを必要とする場合、<xref:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible%2A> を使います。<xref:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible%2A> は、必要に応じて親オブジェクトを展開し、<xref:System.Workflow.ComponentModel.Design.WorkflowView> をスクロールして、このオブジェクトがデザイナー上に表示されるようにします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.ComponentModel.Design.WorkflowView.GetService%2A> オブジェクトの <xref:System.Workflow.ComponentModel.Design.WorkflowView> メソッドを使って、<xref:System.ComponentModel.Design.ISelectionService> インターフェイスを取得しています。 サービスが存在すれば <xref:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible%2A> が呼び出されます。このとき、現在選択状態のアクティビティが、`PrimarySelection` オブジェクトの <xref:System.ComponentModel.Design.ISelectionService> プロパティを使って渡されます。  
+  
+ [!code-csharp[wf_samples#64](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#64)]
+ [!code-vb[wf_samples#64](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#64)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="selectableObject" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FitToScreenSize">
+      <MemberSignature Language="C#" Value="public void FitToScreenSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FitToScreenSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.FitToScreenSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスのズーム レベルを変更して、ワークフロー全体が <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> 内に表示されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際のズーム レベルは、ワークフロー デザイナーの設定にも依存します。  
+  
+   
+  
+## Examples  
+ スクリーン ボタンに合わせてズーム レベルを変更する例を以下に示します。 このメソッドは、まずデザイナーの <xref:System.ComponentModel.Design.IDesignerHost> インターフェイスを取得し、次に <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトを検索しています。そのため、<xref:System.IServiceProvider.GetService%2A> メソッドを呼び出してから、<xref:System.Workflow.ComponentModel.Design.WorkflowView.EnableFitToScreen%2A> プロパティを変更しています。 最後に <xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToScreenSize%2A> メソッドを呼び出して、ワークフロー全体を、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の表示領域内に描画します。  
+  
+ [!code-csharp[wf_samples#50](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#50)]
+ [!code-vb[wf_samples#50](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FitToWorkflowSize">
+      <MemberSignature Language="C#" Value="public void FitToWorkflowSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FitToWorkflowSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.FitToWorkflowSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ズーム レベルを 100% に変更して、ワークフローを本来の大きさで <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトのプロパティを所定の値で初期化しています。 <xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToWorkflowSize%2A> を実行すると、<xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトが、ワークフローの本来の大きさで、<xref:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortRectangle%2A> 内に表示されます。  
+  
+ [!code-csharp[wf_samples#65](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#65)]
+ [!code-vb[wf_samples#65](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#65)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected override object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの <see cref="T:System.Type" />。</param>
+        <summary>指定した型のサービス オブジェクトがある場合は、そのオブジェクトを取得します。</summary>
+        <returns><paramref name="serviceType" /> が <see langword="typeof(" /><see cref="T:System.ComponentModel.Design.CommandID" /><see langword=")" /> であれば、<see langword="GetService" /> の戻り値は所定の <see cref="T:System.ComponentModel.Design.CommandID" /> になります。そうでない場合、<see langword="GetService" /> の戻り値は、要求したサービスを実装する <see cref="T:System.Object" />、当該サービスを解決できなければ null 参照 (Visual Basic の場合は <see langword="Nothing" />) となります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetService` は、要求したサービスを実装している <xref:System.Object>、サービスを解決できない場合は null 参照 (Visual Basic では `Nothing`) を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.ComponentModel.Design.WorkflowView.GetService%2A> オブジェクトの <xref:System.Workflow.ComponentModel.Design.WorkflowView> メソッドを使って、<xref:System.ComponentModel.Design.ISelectionService> インターフェイスを取得しています。 サービスが存在すれば <xref:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible%2A> が呼び出されます。このとき、現在選択状態のアクティビティが、`PrimarySelection` オブジェクトの <xref:System.ComponentModel.Design.ISelectionService> プロパティを使って渡されます。  
+  
+ [!code-csharp[wf_samples#64](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#64)]
+ [!code-vb[wf_samples#64](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#64)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HScrollBar">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HScrollBar HScrollBar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HScrollBar HScrollBar" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HScrollBar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の水平スクロール バーを取得します。</summary>
+        <value>水平スクロール バーの設定と表示の調整に使用できる <see cref="T:System.Windows.Forms.ScrollBar" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> クラスのインスタンスを取得する方法を次のコード例に示します。  その後、このコードは <xref:System.Workflow.ComponentModel.Design.WorkflowView>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar%2A> などのいくつかの <xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> プロパティを設定し、<xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToWorkflowSize%2A> メソッドを呼び出します。  
+  
+ [!code-csharp[Wf_samples#65](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#65)]
+ [!code-vb[Wf_samples#65](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#65)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Idle">
+      <MemberSignature Language="C#" Value="public event EventHandler Idle;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Idle" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.WorkflowView.Idle" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="WorkflowView" /> の処理が終了し、アイドル状態に入るときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドがアイドル状態になる前に実行する必要があるタスクは、このイベントに結び付けます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidateClientRectangle">
+      <MemberSignature Language="C#" Value="public void InvalidateClientRectangle (System.Drawing.Rectangle clientRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvalidateClientRectangle(valuetype System.Drawing.Rectangle clientRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.InvalidateClientRectangle(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="clientRectangle">クライアント座標で表した <see cref="T:System.Drawing.Rectangle" /> 領域を無効にして、強制的に再描画されるようにします。</param>
+        <summary>指定された <see cref="T:System.Drawing.Rectangle" /> を無効にして、強制的に再描画されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.InvalidateClientRectangle%2A> を実行すると、<xref:System.Drawing.Rectangle> (クライアント座標) で表された範囲が、再描画 (画面の更新) を要する領域として追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidateLogicalRectangle">
+      <MemberSignature Language="C#" Value="public void InvalidateLogicalRectangle (System.Drawing.Rectangle logicalRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvalidateLogicalRectangle(valuetype System.Drawing.Rectangle logicalRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.InvalidateLogicalRectangle(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="logicalRectangle">論理座標で表した <see cref="T:System.Drawing.Rectangle" /> 領域を無効にして、強制的に再描画されるようにします。</param>
+        <summary>指定された <see cref="T:System.Drawing.Rectangle" /> を無効にして、強制的に再描画されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.InvalidateLogicalRectangle%2A> を実行すると、<xref:System.Drawing.Rectangle> (論理座標) で表された範囲が、再描画 (画面の更新) を要する領域として追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="public void LoadViewState (System.IO.Stream viewState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadViewState(class System.IO.Stream viewState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.LoadViewState(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewState" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="viewState">ビューステートを復元するときに使用する <see cref="T:System.IO.BinaryReader" />。</param>
+        <summary>バイナリ ストリームからビューステート情報を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.LoadViewState%2A> は、以前 <xref:System.Workflow.ComponentModel.Design.WorkflowView.SaveViewState%2A> メソッドで保存しておいたビューステート情報を復元します。  
+  
+ カスタム デザイナーがビューの状態を復元する方法をカスタマイズする必要がある場合は、このメソッドをオーバーライドします。  
+  
+   
+  
+## Examples  
+ 次の例は、のビューステートを読み込む方法を示します、<xref:System.Workflow.ComponentModel.Design.WorkflowView>オブジェクトを作成して、<xref:System.IO.FileStream>オブジェクトを`FileMode.Open`フラグを設定しに渡す、<xref:System.Workflow.ComponentModel.Design.WorkflowView.LoadViewState%2A>メソッドです。 このビューステート ファイルは、<xref:System.Workflow.ComponentModel.Design.WorkflowView.SaveViewState%2A> メソッドで作成されたものです。  
+  
+ [!code-csharp[wf_samples#60](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#60)]
+ [!code-vb[wf_samples#60](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#60)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalPointToClient">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point LogicalPointToClient (System.Drawing.Point logicalPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point LogicalPointToClient(valuetype System.Drawing.Point logicalPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.LogicalPointToClient(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="logicalPoint">クライアント座標に変換する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Drawing.Point" /> を論理座標からクライアント座標に変換します。</summary>
+        <returns>論理座標からクライアント座標に変換された <see cref="T:System.Drawing.Point" /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalPointToScreen">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point LogicalPointToScreen (System.Drawing.Point logicalPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point LogicalPointToScreen(valuetype System.Drawing.Point logicalPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.LogicalPointToScreen(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="logicalPoint">画面座標に変換する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Drawing.Point" /> を論理座標から画面座標に変換します。</summary>
+        <returns>論理座標から画面座標に変換された <see cref="T:System.Drawing.Point" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalRectangleToClient">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle LogicalRectangleToClient (System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle LogicalRectangleToClient(valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.LogicalRectangleToClient(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">クライアント座標に変換する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary><see cref="T:System.Drawing.Rectangle" /> を論理座標からクライアント座標に変換します。</summary>
+        <returns>論理座標からクライアント座標に変換された <see cref="T:System.Drawing.Rectangle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalSizeToClient">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size LogicalSizeToClient (System.Drawing.Size logicalSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size LogicalSizeToClient(valuetype System.Drawing.Size logicalSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.LogicalSizeToClient(System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="logicalSize">クライアント座標に変換する <see cref="T:System.Drawing.Size" />。</param>
+        <summary><see cref="T:System.Drawing.Size" /> を論理座標からクライアント座標に変換します。</summary>
+        <returns>論理座標からクライアント座標に変換された <see cref="T:System.Drawing.Size" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+-   クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnControlAdded">
+      <MemberSignature Language="C#" Value="protected override void OnControlAdded (System.Windows.Forms.ControlEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnControlAdded(class System.Windows.Forms.ControlEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnControlAdded(System.Windows.Forms.ControlEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ControlEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ControlEventArgs" />。</param>
+        <summary>コントロールが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に追加されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnControlAdded%2A> は、子コントロールが <xref:System.Workflow.ComponentModel.Design.WorkflowView> に追加されたときに呼び出されます。 追加できる子コントロールは、<xref:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> に限ります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">追加されたコントロールが <see cref="P:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar" /> でも <see cref="P:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar" /> でもない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragDrop">
+      <MemberSignature Language="C#" Value="protected override void OnDragDrop (System.Windows.Forms.DragEventArgs dragEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragDrop(class System.Windows.Forms.DragEventArgs dragEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnDragDrop(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dragEventArgs" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="dragEventArgs">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>ドラッグされていた項目が <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> にドロップされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragDrop%2A> は、ドラッグ操作中、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 上でマウス ボタンを離したときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragEnter">
+      <MemberSignature Language="C#" Value="protected override void OnDragEnter (System.Windows.Forms.DragEventArgs dragEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragEnter(class System.Windows.Forms.DragEventArgs dragEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnDragEnter(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dragEventArgs" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="dragEventArgs">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>オブジェクトが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の境界を越えて入って来たときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragEnter%2A> は、ドラッグ操作中、マウス カーソルが <xref:System.Workflow.ComponentModel.Design.WorkflowView> 内に入ってきたときに 1 回だけ発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragLeave">
+      <MemberSignature Language="C#" Value="protected override void OnDragLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnDragLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに対してデータを提供する <see cref="T:System.EventArgs" />。</param>
+        <summary>ドラッグ操作中、マウス カーソルが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の外に出たときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragLeave%2A> は、ドラッグ操作中、マウス カーソルが <xref:System.Workflow.ComponentModel.Design.WorkflowView> の外に出たときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="protected override void OnDragOver (System.Windows.Forms.DragEventArgs dragEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragOver(class System.Windows.Forms.DragEventArgs dragEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnDragOver(System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dragEventArgs" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="dragEventArgs">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップの操作中、マウス ポインターが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の境界内にあると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragOver%2A> は、マウス カーソルが <xref:System.Workflow.ComponentModel.Design.WorkflowView> の境界内で移動すると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGiveFeedback">
+      <MemberSignature Language="C#" Value="protected override void OnGiveFeedback (System.Windows.Forms.GiveFeedbackEventArgs gfbevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnGiveFeedback(class System.Windows.Forms.GiveFeedbackEventArgs gfbevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback(System.Windows.Forms.GiveFeedbackEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gfbevent" Type="System.Windows.Forms.GiveFeedbackEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="gfbevent">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.GiveFeedbackEventArgs" />。</param>
+        <summary>ドラッグ操作中に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback%2A> は、ドラッグ操作が始まると発生します。 <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback%2A> は、ドラッグ対象に応じてマウス ポインターの外観を変え、何をドラッグしているのか目で見て確認できるようにするために使います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> にフォーカスがあるときにキーが押されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnKeyDown%2A> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> にフォーカスがあるときにキーが押されると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供する <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> にフォーカスがあるときにキーが放されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnKeyUp%2A> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> にフォーカスがあるときにキーが放されると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayout">
+      <MemberSignature Language="C#" Value="protected override void OnLayout (System.Windows.Forms.LayoutEventArgs levent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayout(class System.Windows.Forms.LayoutEventArgs levent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnLayout(System.Windows.Forms.LayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="levent" Type="System.Windows.Forms.LayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="levent">イベントに対してデータを提供する <see cref="T:System.Windows.Forms.LayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> が子コントロールの位置を変更する必要があるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnLayout%2A> は、子コントロールが追加または削除されるとき、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の境界が変更されるとき、および <xref:System.Workflow.ComponentModel.Design.WorkflowView> のレイアウトに影響を与える可能性があるその他の変化が発生するときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseCaptureChanged">
+      <MemberSignature Language="C#" Value="protected override void OnMouseCaptureChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseCaptureChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseCaptureChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータを提供する <see cref="T:System.EventArgs" />。</param>
+        <summary>マウスをドラッグして選択された項目が変わったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseCaptureChanged%2A> は、マウス操作により選択されている項目に、変化が生じたときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDoubleClick">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDoubleClick (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDoubleClick(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> をダブルクリックしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムのマウス設定に応じて、ダブルクリックが決定されます。 ユーザーは、2 回のクリックではなくダブルクリックと見なされるマウス ボタンのクリック間隔を設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> 上にマウス ポインターを置いてマウス ボタンを押したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>/ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> or<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ `OnMouseEnter` は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> に入ったときに発生します。  
+  
+ `OnMouseDown` は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 上にマウス ポインターを置いてマウス ボタンを押したときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>マウス ポインターが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に入ると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A> は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> に入ったときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseHover">
+      <MemberSignature Language="C#" Value="protected override void OnMouseHover (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseHover(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>マウス ポインターが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の上に置かれたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A> は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> の上に置かれたときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>マウス ポインターが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> から出ると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A> は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> から離れると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary>マウス ポインターが <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> 上で移動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A> は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> 上を移動すると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> 上にマウス ポインターがある状態でマウス ボタンが放されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A> は、マウス ポインターが <xref:System.Workflow.ComponentModel.Design.WorkflowView> 上にあり、ユーザーがマウス ボタンを離したときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseWheel">
+      <MemberSignature Language="C#" Value="protected override void OnMouseWheel (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseWheel(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> にフォーカスがあるときにマウス ホイールが動くと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス イベントは次の順序で発生します。  
+  
+ 1.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseEnter%2A>  
+  
+ 2.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseMove%2A>  
+  
+ 3.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseHover%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseDown%2A> または <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A>  
+  
+ 4.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseUp%2A>  
+  
+ 5.<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseLeave%2A>  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnMouseWheel%2A> は、マウス ホイールが <xref:System.Workflow.ComponentModel.Design.WorkflowView> 上を移動すると発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Windows.Forms.PaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> が再描画されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnPaint%2A> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> が再描画されるときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnQueryContinueDrag">
+      <MemberSignature Language="C#" Value="protected override void OnQueryContinueDrag (System.Windows.Forms.QueryContinueDragEventArgs qcdevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnQueryContinueDrag(class System.Windows.Forms.QueryContinueDragEventArgs qcdevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnQueryContinueDrag(System.Windows.Forms.QueryContinueDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="qcdevent" Type="System.Windows.Forms.QueryContinueDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="qcdevent">イベントに関する情報を格納している <see cref="T:System.Windows.Forms.QueryContinueDragEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ オプションをキャンセルする必要があるかどうかを決定できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnQueryContinueDrag%2A> イベントは、ドラッグ操作中、キーボードまたはマウス ボタンの状態に変更があったときに発生します。 <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnQueryContinueDrag%2A> イベントにより、ドラッグ ソースはドラッグ操作をキャンセルする必要があるかどうかを判断できます。  
+  
+ ドラッグ操作に関連するイベントは、当該コントロール上にドロップしてよい場合に発生します。 <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback%2A> イベントが発生する場合、ドラッグ効果を表す値が渡されます。 ドラッグ効果の一覧については、<xref:System.Windows.Forms.DragDropEffects> 列挙体を参照してください。  
+  
+ マウス カーソルの位置、キーボードの状態、およびマウス ボタンの状態の変更が監視されます。  
+  
+-   ユーザーがウィンドウの外に移動した場合、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragLeave%2A> イベントが生成されます。  
+  
+-   マウスが別のコントロールに移動した場合は、そのコントロールの <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragEnter%2A> が生成されます。  
+  
+-   マウスが移動しても同じコントロール内の場合は、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragOver%2A> イベントが生成されます。  
+  
+ キーボードまたはマウス ボタンの状態に変更があった場合、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnQueryContinueDrag%2A> イベントが生成され、このイベントの `Action` の <xref:System.Windows.Forms.QueryContinueDragEventArgs> プロパティの値に応じて、ドラッグを継続するか、データをドロップするか、操作をキャンセルするかが判断されます。  
+  
+ 値が `DragAction.Continue` の場合、操作を継続するための <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragOver%2A> イベントが発生し、適切な視覚的フィードバックを設定できるように新しい効果が指定された <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback%2A> イベントが発生します。 有効なドロップ効果の一覧については、<xref:System.Windows.Forms.DragDropEffects> 列挙体を参照してください。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragOver%2A> イベントおよび <xref:System.Workflow.ComponentModel.Design.WorkflowView.OnGiveFeedback%2A> イベントはペアになっています。したがって、マウスがドロップ ターゲットをまたがって移動した場合、マウスの位置に関する最新のフィードバックがユーザーに提示されます。  
+  
+ 値が `DragAction.Drop` の場合は、ドロップ効果の値がソースに返されます。ソース アプリケーションでは、ソース データに対して適切な操作を実行できます。たとえば、移動操作だった場合は、データの切り取りなどを実行できます。  
+  
+ 値が `DragAction.Cancel` の場合、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnDragLeave%2A> イベントが発生します。  
+  
+ 既定では、Esc キーが押された場合、<xref:System.Workflow.ComponentModel.Design.WorkflowView.OnQueryContinueDrag%2A> イベントは `Action` を `DragAction.Cancel` に設定します。また、マウスの左右または中央のボタンが押された場合は `Action` を `DragAction.Drop` に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRootDesignerChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnRootDesignerChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRootDesignerChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnRootDesignerChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン サーフェイスの新しいルート デザイナーとして、別のデザイナーが設定されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnZoomChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnZoomChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnZoomChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.OnZoomChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ズーム レベルが変わったときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformLayout">
+      <MemberSignature Language="C#" Value="public void PerformLayout (bool immediateUpdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PerformLayout(bool immediateUpdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.PerformLayout(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="immediateUpdate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="immediateUpdate">
+          <see langword="true" /> ならば直ちにレイアウトが更新されます。そうでない場合は <see langword="false" /> を指定します。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> がレイアウト ロジックをすべての子コントロールに適用するように強制します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.PerformLayout%2A> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 内のすべての子コントロールを更新し、必要に応じてそれらのコントロールをサイズ変更したり移動したりします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintDocument">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintDocument PrintDocument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrintDocument PrintDocument" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.PrintDocument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PrintDocument" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> を取得します。</summary>
+        <value>プリンターに出力を送信する <see cref="P:System.Workflow.ComponentModel.Design.WorkflowView.PrintDocument" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.PrintDocument%2A> オブジェクトを使って印刷方法を表すプロパティを設定し、`Print` メソッドを呼び出して印刷を開始します。  
+  
+   
+  
+## Examples  
+ <xref:System.Drawing.Printing.PrintDocument> オブジェクトを検索し、<xref:System.Windows.Forms.PrintDialog> を表示し、ここで選択された <xref:System.Drawing.Printing.PrinterSettings> に基づいてドキュメントを印刷する例を示します。  
+  
+ [!code-csharp[Wf_samples#56](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#56)]
+ [!code-vb[Wf_samples#56](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#56)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintPreviewMode">
+      <MemberSignature Language="C#" Value="public bool PrintPreviewMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrintPreviewMode" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.PrintPreviewMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> が印刷プレビュー モードかどうかを取得または設定します。</summary>
+        <value>
+          印刷プレビュー モードがアクティブであれば <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 現在のワークフローを印刷プレビュー モードで表示するよう、WorkflowView オブジェクトを変更する例を以下に示します。  
+  
+ [!code-csharp[wf_samples#57](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#57)]
+ [!code-vb[wf_samples#57](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#57)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDesignerMessageFilter">
+      <MemberSignature Language="C#" Value="public void RemoveDesignerMessageFilter (System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter designerMessageFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDesignerMessageFilter(class System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter designerMessageFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.RemoveDesignerMessageFilter(System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerMessageFilter" Type="System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="designerMessageFilter"><see cref="T:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" /> から削除する <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</param>
+        <summary>関連する <see cref="T:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowDesignerMessageFilter> は、ドラッグなどのデザイナー イベントに応答するために使います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesigner RootDesigner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesigner RootDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.RootDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> のルート デザイナーを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローのルート デザイナーとは、そのデザイン サーフェイスに関連付けられたデザイナーのことです。 子デザイナーがすべて含まれるほか、ワークフローでこれ以降発生するアクティビティもすべてこのルート デザイナーに属します。  
+  
+   
+  
+## Examples  
+ WorkflowView オブジェクトの RootDesigner を取得する例を以下に示します。 workflowPanel フィールドには GetWorkflowView という名前のメソッドがあり、これを使ってアクティブな WorkflowView インスタンスを取得できます。 RootDesigner を SequentialWorkflowRootDesigner にキャストすると、アクションはすべて、このオブジェクトに対して働くようになります。  
+  
+ このコード例は、DesignerShell.cs ファイルから抜粋した Basic DesignerHosting の SDK サンプルの一部です。 詳細については、次を参照してください。 [Basic Designer Hosting サンプル](http://msdn.microsoft.com/en-us/55925adf-2daa-4dc2-b1bf-61aa0190d734)です。  
+  
+ [!code-csharp[wf_samples#236](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#236)]
+ [!code-vb[wf_samples#236](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#236)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDesignerChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler RootDesignerChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RootDesignerChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.WorkflowView.RootDesignerChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーが変わったときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="public void SaveViewState (System.IO.Stream viewState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveViewState(class System.IO.Stream viewState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.SaveViewState(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewState" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="viewState">ビューステートを保存するために使用する <see cref="T:System.IO.BinaryReader" />。</param>
+        <summary>ビューステートをバイナリ ストリームに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューステートとは、ビューのプロパティおよび子コントロールの値を累積したものです。 プロパティ値をストリームとして保存しておけば、いつでも <xref:System.Workflow.ComponentModel.Design.WorkflowView.LoadViewState%2A> メソッドで復元することができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトのビューステートを保存する例を以下に示します。<xref:System.IO.FileStream> フラグを指定して `FileMode.Create` オブジェクトを作成し、これを <xref:System.Workflow.ComponentModel.Design.WorkflowView.SaveViewState%2A> メソッドに渡しています。 後でこのビューステートを読み込む方法については、<xref:System.Workflow.ComponentModel.Design.WorkflowView.LoadViewState%2A> を参照してください。  
+  
+ [!code-csharp[wf_samples#59](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#59)]
+ [!code-vb[wf_samples#59](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveWorkflowImage">
+      <MemberSignature Language="C#" Value="public void SaveWorkflowImage (System.IO.Stream stream, System.Drawing.Imaging.ImageFormat imageFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveWorkflowImage(class System.IO.Stream stream, class System.Drawing.Imaging.ImageFormat imageFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.SaveWorkflowImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="imageFormat" Type="System.Drawing.Imaging.ImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="stream">ワークフロー ビューを画像として保存するための <see cref="T:System.IO.Stream" />。</param>
+        <param name="imageFormat">ワークフロー ビューのイメージの保存に使用する <see cref="T:System.Drawing.Imaging.ImageFormat" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の画像を、指定されたストリームに、指定された形式で保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ビューのイメージはビットマップとして作成されます。  
+  
+   
+  
+## Examples  
+ 現在開いているワークフローを、画像として <xref:System.IO.Stream> に保存する例を以下に示します。 この例では、<xref:System.Windows.Forms.SaveFileDialog> を作成して、保存先ファイル名をユーザーにたずねています。 次に、指定されたファイル名の <xref:System.IO.FileStream> オブジェクトを作成し、これを <xref:System.Workflow.ComponentModel.Design.WorkflowView.SaveWorkflowImage%2A> メソッドに渡します。  
+  
+ [!code-csharp[wf_samples#63](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#63)]
+ [!code-vb[wf_samples#63](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#63)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="imageFormat" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveWorkflowImage">
+      <MemberSignature Language="C#" Value="public void SaveWorkflowImage (string imageFile, System.Drawing.Imaging.ImageFormat imageFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveWorkflowImage(string imageFile, class System.Drawing.Imaging.ImageFormat imageFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.SaveWorkflowImage(System.String,System.Drawing.Imaging.ImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageFile" Type="System.String" />
+        <Parameter Name="imageFormat" Type="System.Drawing.Imaging.ImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="imageFile">ワークフロー ビュー画像を保存するファイルのパス。</param>
+        <param name="imageFormat">ワークフロー ビューのイメージの保存に使用する <see cref="T:System.Drawing.Imaging.ImageFormat" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> を指定された形式の画像ファイルとして保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ビューのイメージはビットマップとして作成されます。  
+  
+   
+  
+## Examples  
+ 現在開いているワークフローを、画像として <xref:System.String> に保存する例を以下に示します。 この例では、<xref:System.Windows.Forms.SaveFileDialog> を作成して、保存先ファイル名をユーザーにたずねています。 このファイル名と `ImageFormat.Bmp` フラグを、<xref:System.Workflow.ComponentModel.Design.WorkflowView.SaveWorkflowImage%2A> メソッドに渡します。  
+  
+ [!code-csharp[wf_samples#62](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#62)]
+ [!code-vb[wf_samples#62](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#62)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="imageFile" /> または <paramref name="imageFormat" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveWorkflowImageToClipboard">
+      <MemberSignature Language="C#" Value="public void SaveWorkflowImageToClipboard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveWorkflowImageToClipboard() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.SaveWorkflowImageToClipboard" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードに WorkflowView の画像を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPointToLogical">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point ScreenPointToLogical (System.Drawing.Point screenPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point ScreenPointToLogical(valuetype System.Drawing.Point screenPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ScreenPointToLogical(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="screenPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="screenPoint">画面座標から論理座標に変換する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Drawing.Point" /> を画面座標から論理座標に変換します。</summary>
+        <returns>画面座標から論理座標に変換された <see cref="T:System.Drawing.Point" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> は、2 つの座標空間、つまり論理座標とクライアント座標を使用します。  
+  
+ クライアント座標は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> の左上隅を起点とした相対座標です。 左上隅の座標は (0,0) です。x 座標と y 座標は、それぞれ表示可能領域の右方向と下方向に進むにつれて数値が大きくなります。 クライアント座標系は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルとスクロール バーの位置の影響を受けます。  
+  
+ 論理座標系では、オブジェクトは常に (0,0) にマッピングされます。 横方向と縦方向の位置は、ズームやスクロール バーの位置の影響を受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollPosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point ScrollPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point ScrollPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.ScrollPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> 上のスクロール バーの位置を取得または設定します。</summary>
+        <value>画面座標で表したスクロール バーの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.ScrollPosition%2A> で取得または設定できるのは、デザイン サーフェイス上のスクロール バーの位置です。  
+  
+   
+  
+## Examples  
+ ScrollPosition プロパティの値を設定する例を以下に示します。これは <xref:System.Windows.Forms.Panel> コントロールの OnMouseMove メソッドを実装したものです。  これは Outlook ワークフロー ウィザード SDK サンプルから抜粋したものです。  詳細については、次を参照してください。 [Outlook ワークフロー ウィザード サンプル](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[wf_samples#105](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#105)]
+ [!code-vb[wf_samples#105](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowDepth">
+      <MemberSignature Language="C#" Value="public int ShadowDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ShadowDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.ShadowDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.Design.WorkflowView.ShadowDepth" /> の <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> を取得または設定します。</summary>
+        <value>ピクセル単位でのシャドウ深度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.ShadowDepth%2A> は、ワークフロー デザイン サーフェイス上に影付きでテキストを表示する場合に、その影の深さを取得または設定するために使います。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> メソッドを使用して <xref:System.ComponentModel.Design.IRootDesigner.GetView%2A> クラスのインスタンスを取得する方法を示しています。 インスタンスの取得後に <xref:System.Workflow.ComponentModel.Design.WorkflowView>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar%2A>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> などのいくつかの <xref:System.Workflow.ComponentModel.Design.WorkflowView.ShadowDepth%2A> プロパティを設定し、<xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToScreenSize%2A> メソッドを呼び出します。  
+  
+ [!code-csharp[Wf_samples#48](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#48)]
+ [!code-vb[Wf_samples#48](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#48)]  
+  
+ 上記のコードでは、現在開かれているワークフローを削除して、新しいワークフローを読み込めるようにするために、`UnloadWorkflow` メソッドを使っています。これは次のように実装されています。  
+  
+ [!code-csharp[Wf_samples#49](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#49)]
+ [!code-vb[Wf_samples#49](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#49)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ShowInfoTip">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>表示、**ヒント**の<see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示、**ヒント**の<xref:System.Workflow.ComponentModel.Design.WorkflowView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ShowInfoTip">
+      <MemberSignature Language="C#" Value="public void ShowInfoTip (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowInfoTip(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ShowInfoTip(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">表示するテキスト、**ヒント**です。</param>
+        <summary>表示、**ヒント**の<see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />指定されたテキストでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示、**ヒント**の<xref:System.Workflow.ComponentModel.Design.WorkflowView>指定されたテキストでします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="infoTipText" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInfoTip">
+      <MemberSignature Language="C#" Value="public void ShowInfoTip (string title, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowInfoTip(string title, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ShowInfoTip(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="title">タイトル、**ヒント**を表示します。</param>
+        <param name="text">テキスト、**ヒント**を表示します。</param>
+        <summary>表示、**ヒント**の<see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />指定されたタイトルとテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示、**ヒント**の<xref:System.Workflow.ComponentModel.Design.WorkflowView>指定されたタイトルとテキストを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="title" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="infoTipText" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInPlaceToolTip">
+      <MemberSignature Language="C#" Value="public void ShowInPlaceToolTip (string toolTipText, System.Drawing.Rectangle toolTipRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowInPlaceToolTip(string toolTipText, valuetype System.Drawing.Rectangle toolTipRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.ShowInPlaceToolTip(System.String,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolTipText" Type="System.String" />
+        <Parameter Name="toolTipRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="toolTipText">表示するテキスト。</param>
+        <param name="toolTipRectangle">画面上の <see cref="T:System.Drawing.Rectangle" /> の表示位置を表す <see langword="ToolTip" />。</param>
+        <summary>指定した位置に <see langword="ToolTip" /> を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ToolTips` とは、マウス ポインターをオブジェクト上に置いたときに表示されるテキストです。ユーザーにとって役に立つ情報を表示するために使います。  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.ShowInPlaceToolTip%2A> は、`ToolTip` として、指定されたタイトルとテキストを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IServiceProvider.GetService">
+      <MemberSignature Language="C#" Value="object IServiceProvider.GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IServiceProvider.GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.System#IServiceProvider#GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの <see cref="T:System.Type" />。</param>
+        <summary>指定された型のサービスを取得します (そのサービスを利用できる場合)。</summary>
+        <returns>要求されたサービスを実装する <see cref="T:System.Object" />。ただしサービスを解決できない場合は null 参照 (Visual Basic では <see langword="Nothing" />) を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `serviceType` が `CommandID` であれば、このメソッドは `CommandID` をそのまま返します。 `Type` がそれ以外の場合には、`GetService` は要求したサービスを実装するオブジェクトを返します。サービスを解決できない場合は、null 参照 (`Nothing`) を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.ComponentModel.Design.WorkflowView.GetService%2A> オブジェクトの <xref:System.Workflow.ComponentModel.Design.WorkflowView> メソッドを使って、<xref:System.ComponentModel.Design.ISelectionService> インターフェイスを取得しています。 サービスが存在すれば <xref:System.Workflow.ComponentModel.Design.WorkflowView.EnsureVisible%2A> が呼び出されます。このとき、現在選択状態のアクティビティが、`PrimarySelection` オブジェクトの <xref:System.ComponentModel.Design.ISelectionService> プロパティを使って渡されます。  
+  
+ [!code-csharp[wf_samples#64](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#64)]
+ [!code-vb[wf_samples#64](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#64)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Forms.IMessageFilter.PreFilterMessage">
+      <MemberSignature Language="C#" Value="bool IMessageFilter.PreFilterMessage (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Forms.IMessageFilter.PreFilterMessage(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.System#Windows#Forms#IMessageFilter#PreFilterMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">ディスパッチされるメッセージ。 このメッセージは変更できません。</param>
+        <summary>メッセージがディスパッチされる前に、フィルターで排除します。</summary>
+        <returns>
+          <see langword="true" /> の場合、メッセージはフィルターで排除され、ディスパッチされません。<see langword="false" /> の場合、メッセージは次のフィルターまたはコントロールに継続されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewPortRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle ViewPortRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle ViewPortRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortRectangle" /> の、現在の <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> を取得します。</summary>
+        <value>画面上の可視領域を表す <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortRectangle%2A> にはワークフローの可視領域が設定されています。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> オブジェクトの Paint イベントに応じて、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 上に直接画像を描画するメソッドの例を以下に示します。 <xref:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortRectangle%2A> プロパティは、画像が実際に描画された、デザイン サーフェイス上の可視領域を返します。  
+  
+ [!code-csharp[wf_samples#58](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#58)]
+ [!code-vb[wf_samples#58](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#58)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewPortSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size ViewPortSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ViewPortSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.ViewPortSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> の可視領域のサイズを取得します。</summary>
+        <value><see langword="Size" /> の可視領域を表す <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> の可視領域のサイズを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VScrollBar">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.VScrollBar VScrollBar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.VScrollBar VScrollBar" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VScrollBar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> に関連付けられた垂直スクロール バーを取得します。</summary>
+        <value>水平スクロール バーの設定と表示の調整に使用できる <see cref="T:System.Windows.Forms.ScrollBar" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> を使うと、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 上の垂直スクロール バーを取得し、その値に応じてユーザー インターフェイスを調整できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView> クラスのインスタンスを取得する方法を次のコード例に示します。  その後、このコードは <xref:System.Workflow.ComponentModel.Design.WorkflowView>、<xref:System.Workflow.ComponentModel.Design.WorkflowView.HScrollBar%2A> などのいくつかの <xref:System.Workflow.ComponentModel.Design.WorkflowView.VScrollBar%2A> プロパティを設定し、<xref:System.Workflow.ComponentModel.Design.WorkflowView.FitToWorkflowSize%2A> メソッドを呼び出します。  
+  
+ [!code-csharp[Wf_samples#65](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#65)]
+ [!code-vb[Wf_samples#65](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#65)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowView.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理する Windows メッセージ。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージはすべて <xref:System.Workflow.ComponentModel.Design.WorkflowView.WndProc%2A> メソッドに送信されます。  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.WndProc%2A> メソッドは、Windows `WindowProc` 関数に正確に対応しています。 Windows メッセージの処理の詳細については、MSDN Library 内にある Windows プラットフォーム SDK リファレンスの `WindowProc` 関数のドキュメントを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、自分自身では扱わないメッセージを処理するために、基本クラスの <see langword="WndProc" /> メソッドを呼び出す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Zoom">
+      <MemberSignature Language="C#" Value="public int Zoom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Zoom" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowView.Zoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> のズーム レベルを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> のズーム レベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ズーム機能を使うと、<xref:System.Workflow.ComponentModel.Design.WorkflowView> 内のコンポーネントのサイズを拡大または縮小できます。 <xref:System.Workflow.ComponentModel.Design.AmbientTheme> は、<xref:System.Workflow.ComponentModel.Design.WorkflowView> のズーム レベルの最小値、最大値を設定するために使います。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowView.Zoom%2A> の <xref:System.Workflow.ComponentModel.Design.WorkflowView> プロパティを設定する方法を次の例に示します。  
+  
+ 次のコード例は、MainForm.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニターのサンプル](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[wf_samples#138](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#138)]
+ [!code-vb[wf_samples#138](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#138)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">ズーム レベルが <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> の最小値を下回ったとき、  
+  
+ または  
+  
+ ズーム レベルが <see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> の最大値を上回ったとき。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ZoomChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ZoomChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.WorkflowView.ZoomChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" /> のズーム設定が変化したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ビューのイメージはビットマップとして作成されます。  
+  
+   
+  
+## Examples  
+ ハンドラーを <xref:System.Workflow.ComponentModel.Design.WorkflowView.ZoomChanged> イベントに割り当てる例を以下に示します。  
+  
+ このコード例は、ViewHost.cs ファイルから抜粋したワークフロー モニターの SDK サンプルの一部です。 詳細については、次を参照してください。[ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[wf_samples#136](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#136)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

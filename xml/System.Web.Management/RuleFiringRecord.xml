@@ -1,0 +1,70 @@
+<Type Name="RuleFiringRecord" FullName="System.Web.Management.RuleFiringRecord">
+  <TypeSignature Language="C#" Value="public sealed class RuleFiringRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RuleFiringRecord extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.RuleFiringRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生しているイベントを発生させるレコードを表す、<see cref="T:System.Web.Management.WebManagementEvent" />クラスと実装、<see cref="T:System.Web.Management.IWebEventCustomEvaluator" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.RuleFiringRecord>クラス イベントの発生を記録するかどうかを決定するために使用できる情報を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Web.Management.RuleFiringRecord>に渡されるときに使用、<xref:System.Web.Management.IWebEventCustomEvaluator.CanFire%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#22)]
+ [!code-vb[System.Web.Management.WebBaseEvent#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#22)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LastFired">
+      <MemberSignature Language="C#" Value="public DateTime LastFired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastFired" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.RuleFiringRecord.LastFired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが最後に発生した最後の時刻を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />オブジェクトを表すイベントが最後に発生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimesRaised">
+      <MemberSignature Language="C#" Value="public int TimesRaised { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TimesRaised" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.RuleFiringRecord.TimesRaised" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した時間の合計数を取得します。</summary>
+        <value>イベントが発生した合計回数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

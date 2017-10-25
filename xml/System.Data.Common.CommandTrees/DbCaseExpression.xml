@@ -1,0 +1,128 @@
+<Type Name="DbCaseExpression" FullName="System.Data.Common.CommandTrees.DbCaseExpression">
+  <TypeSignature Language="C#" Value="public sealed class DbCaseExpression : System.Data.Common.CommandTrees.DbExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DbCaseExpression extends System.Data.Common.CommandTrees.DbExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.CommandTrees.DbCaseExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.CommandTrees.DbExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="When" />、 <see langword="Then" />、および<see langword="Else" />の句、<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="public override void Accept (System.Data.Common.CommandTrees.DbExpressionVisitor visitor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Accept(class System.Data.Common.CommandTrees.DbExpressionVisitor visitor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.CommandTrees.DbCaseExpression.Accept(System.Data.Common.CommandTrees.DbExpressionVisitor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visitor" Type="System.Data.Common.CommandTrees.DbExpressionVisitor" />
+      </Parameters>
+      <Docs>
+        <param name="visitor"><see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" /> のインスタンス。</param>
+        <summary>結果値を生成しない式のビジター パターンを実装します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visitor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Accept&lt;TResultType&gt;">
+      <MemberSignature Language="C#" Value="public override TResultType Accept&lt;TResultType&gt; (System.Data.Common.CommandTrees.DbExpressionVisitor&lt;TResultType&gt; visitor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!TResultType Accept&lt;TResultType&gt;(class System.Data.Common.CommandTrees.DbExpressionVisitor`1&lt;!!TResultType&gt; visitor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.CommandTrees.DbCaseExpression.Accept``1(System.Data.Common.CommandTrees.DbExpressionVisitor{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResultType</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResultType" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="visitor" Type="System.Data.Common.CommandTrees.DbExpressionVisitor&lt;TResultType&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResultType">によって生成される結果の種類<c>ビジター。</c></typeparam>
+        <param name="visitor">特定の型の結果値を生成する、型指定された <see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" /> のインスタンス。</param>
+        <summary>特定の型の結果値を生成する式のビジター パターンを実装します。</summary>
+        <returns><see cref="T:System.Data.Common.CommandTrees.DbExpressionVisitor" /> によって生成された、特定の型の結果値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visitor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Else">
+      <MemberSignature Language="C#" Value="public System.Data.Common.CommandTrees.DbExpression Else { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.CommandTrees.DbExpression Else" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.CommandTrees.DbCaseExpression.Else" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.CommandTrees.DbExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="Else" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</summary>
+        <value><see langword="Else" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">式は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">式が <see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" /> のコマンド ツリーに関連付けられていません。  
+  
+ または、式の結果型が <see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" /> の結果型に等しくないかこの型に昇格できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Then">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt; Then { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Data.Common.CommandTrees.DbExpression&gt; Then" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.CommandTrees.DbCaseExpression.Then" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Then" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</summary>
+        <value><see langword="Then" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="When">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt; When { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Data.Common.CommandTrees.DbExpression&gt; When" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.CommandTrees.DbCaseExpression.When" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="When" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</summary>
+        <value><see langword="When" />この句<see cref="T:System.Data.Common.CommandTrees.DbCaseExpression" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

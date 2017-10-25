@@ -1,0 +1,155 @@
+<Type Name="MarkupExtensionReturnTypeAttribute" FullName="System.Windows.Markup.MarkupExtensionReturnTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MarkupExtensionReturnTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MarkupExtensionReturnTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.MarkupExtensionReturnTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マークアップ拡張で返すことができる型を報告します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Markup.MarkupExtension>派生カスタム クラスは、これを適用する必要があります[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]可能なタイプ セーフな戻り値の型によって返されることを示すためにその<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>実装します。 つまりかどうかを返しますより具体的な種類の型よりも常に、マークアップ拡張機能<xref:System.Object>、型は主なシナリオ、マークアップ拡張機能クラスは属性がへのキャストと<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>し、その型を報告します。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ カスタム XAML マークアップ拡張機能を実装するためのパターンの詳細については、次を参照してください。<xref:System.Windows.Markup.MarkupExtension>と[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MarkupExtensionReturnTypeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.MarkupExtensionReturnTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MarkupExtensionReturnTypeAttribute (Type returnType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type returnType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="returnType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="returnType">戻り値の型をこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]レポートします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.MarkupExtensionReturnTypeAttribute" />クラスの指定されたを使用して<see cref="T:System.Type" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Markup.MarkupExtension>派生カスタム クラスは、これを適用する必要があります[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]によって返されるタイプ セーフな戻り値の型を示すためにその<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MarkupExtensionReturnTypeAttribute (Type returnType, Type expressionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type returnType, class System.Type expressionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The expressionType argument is not used by the XAML parser. To specify the expected return type, use MarkupExtensionReturnTypeAttribute(Type). To specify custom handling for expression types, use XamlSetMarkupExtensionAttribute.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="expressionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="returnType">戻り値の型をこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]レポートします。</param>
+        <param name="expressionType">非推奨です。使用しないでください。</param>
+        <summary>非推奨です。使用しないでください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーム<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>式は非推奨または旧式し、は使用できませんの 2 番目のパラメーターを報告します。 戻り値の型の属性の式またはその他の入力またはとモデルの遅延評価が可能な戻り値の型では、する必要があります<xref:System.Object>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionType">
+      <MemberSignature Language="C#" Value="public Type ExpressionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExpressionType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.ExpressionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This is not used by the XAML parser. Please look at XamlSetMarkupExtensionAttribute.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非推奨です。使用しないでください。</summary>
+        <value>非推奨です。使用しないでください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーム<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>式は推奨されておらず、使用しないでの 2 番目のパラメーターを報告します。 式が可能な場合、これを属性の戻り値の型が必要があります<xref:System.Object>代わりにします。 「<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public Type ReturnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Markup.MarkupExtension" />戻り値の型をこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]レポートします。</summary>
+        <value>特定のタイプ セーフな戻り値の型<see cref="M:System.Windows.Markup.MarkupExtension.ProvideValue(System.IServiceProvider)" />マークアップ拡張機能の実装で、 <see cref="T:System.Windows.Markup.MarkupExtensionReturnTypeAttribute" /> [!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]を適用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

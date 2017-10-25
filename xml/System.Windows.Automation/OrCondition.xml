@@ -1,0 +1,87 @@
+<Type Name="OrCondition" FullName="System.Windows.Automation.OrCondition">
+  <TypeSignature Language="C#" Value="public class OrCondition : System.Windows.Automation.Condition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OrCondition extends System.Windows.Automation.Condition" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.OrCondition" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Condition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>条件のいずれかが true の場合、一致が存在する 2 つ以上の条件の組み合わせを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrCondition (params System.Windows.Automation.Condition[] conditions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Automation.Condition[] conditions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.OrCondition.#ctor(System.Windows.Automation.Condition[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditions" Type="System.Windows.Automation.Condition[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="conditions">2 つ以上の条件と一致するのいずれかの場合があります。</param>
+        <summary><see cref="T:System.Windows.Automation.OrCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.OrCondition>取得に使用される[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ボタンまたはラジオ ボタンのいずれかである要素。  
+  
+ [!code-csharp[UIAClient_snip#175](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#175)]
+ [!code-vb[UIAClient_snip#175](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#175)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConditions">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Condition[] GetConditions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.Condition[] GetConditions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.OrCondition.GetConditions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この条件で結合する条件を取得します。</summary>
+        <returns>条件は、この条件で結合します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列は、コピーです。 これを変更しても、条件の状態には影響しません。  
+  
+   
+  
+## Examples  
+ 次の例の関数は、作成、<xref:System.Windows.Automation.OrCondition>し、それに含まれるサブ条件の数を表示します。  
+  
+ [!code-csharp[UIAClient_snip#175](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#175)]
+ [!code-vb[UIAClient_snip#175](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#175)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,332 @@
+<Type Name="LateBinding" FullName="Microsoft.VisualBasic.CompilerServices.LateBinding">
+  <TypeSignature Language="C#" Value="public sealed class LateBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LateBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.LateBinding" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 2005 以降、このクラスは廃止されました。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="LateCall">
+      <MemberSignature Language="C#" Value="public static void LateCall (object o, Type objType, string name, object[] args, string[] paramnames, bool[] CopyBack);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateCall(object o, class System.Type objType, string name, object[] args, string[] paramnames, bool[] CopyBack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateCall(System.Object,System.Type,System.String,System.Object[],System.String[],System.Boolean[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+        <Parameter Name="CopyBack" Type="System.Boolean[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">メソッドを呼び出すオブジェクト。</param>
+        <param name="objType">オブジェクトの型。</param>
+        <param name="name">メソッド名<c>o</c>を呼び出します。</param>
+        <param name="args">メソッドに渡すパラメーター値の配列。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <param name="CopyBack">配列<see langword="Boolean" />値、場所<see langword="True" />関連のパラメーターが渡されることを示す<see langword="ByRef" />です。</param>
+        <summary>オブジェクトのメソッドへの遅延バインディング呼び出しを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateGet">
+      <MemberSignature Language="C#" Value="public static object LateGet (object o, Type objType, string name, object[] args, string[] paramnames, bool[] CopyBack);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateGet(object o, class System.Type objType, string name, object[] args, string[] paramnames, bool[] CopyBack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateGet(System.Object,System.Type,System.String,System.Object[],System.String[],System.Boolean[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+        <Parameter Name="CopyBack" Type="System.Boolean[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">値を返すオブジェクト。</param>
+        <param name="objType">オブジェクトの型。</param>
+        <param name="name">メンバー名<c>o</c>から値を取得します。</param>
+        <param name="args">配列内の場所を指定する 1 つまたは複数のインデックス値の<c>o</c>場合<c>o</c>は 1 次元または多次元の配列、またはオブジェクトに渡す引数の値は<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <param name="CopyBack">配列<see langword="Boolean" />値、場所<see langword="True" />関連のパラメーターが渡されることを示す<see langword="ByRef" />です。</param>
+        <summary>オブジェクトから遅延バインディングされた値を返します。</summary>
+        <returns>場合<paramref name="o" />、配列の値は、<paramref name="o" />によって指定された位置に<paramref name="args" />です。 場合<paramref name="o" />オブジェクトの戻り値は、<paramref name="o" />で名前付きパラメーターを使用して呼び出される<paramref name="paramnames" />と関連付けられた値で<paramref name="args" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexGet">
+      <MemberSignature Language="C#" Value="public static object LateIndexGet (object o, object[] args, string[] paramnames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateIndexGet(object o, object[] args, string[] paramnames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateIndexGet(System.Object,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">値を返すオブジェクト。</param>
+        <param name="args">配列内の場所を指定する 1 つまたは複数のインデックス値の<c>o</c>場合<c>o</c>は 1 次元または多次元の配列、またはオブジェクトに渡す引数の値は<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <summary>指定したインデックスまたはパラメーターを使用して、オブジェクトから遅延バインディングされた値を返します。</summary>
+        <returns>場合<paramref name="o" />、配列の値は、<paramref name="o" />によって指定された位置に<paramref name="args" />です。 場合<paramref name="o" />オブジェクトの戻り値は、<paramref name="o" />で名前付きパラメーターを使用して呼び出される<paramref name="paramnames" />と関連付けられた値で<paramref name="args" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexSet">
+      <MemberSignature Language="C#" Value="public static void LateIndexSet (object o, object[] args, string[] paramnames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateIndexSet(object o, object[] args, string[] paramnames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateIndexSet(System.Object,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">値を設定するオブジェクト。</param>
+        <param name="args">配列内の場所を指定する 1 つまたは複数のインデックス値の<c>o</c>場合<c>o</c>は 1 次元または多次元の配列、またはオブジェクトに渡す引数の値は<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <summary>指定されたパラメーターを使用して、オブジェクトの遅延バインディングされた値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexSetComplex">
+      <MemberSignature Language="C#" Value="public static void LateIndexSetComplex (object o, object[] args, string[] paramnames, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateIndexSetComplex(object o, object[] args, string[] paramnames, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateIndexSetComplex(System.Object,System.Object[],System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="o">値を設定するオブジェクト。</param>
+        <param name="args">オブジェクトに渡す 1 つまたは複数のパラメーター値の配列<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <param name="OptimisticSet">
+          <see langword="True" />場合にスローされる例外を抑制するセットのメンバーが見つかりません。</param>
+        <param name="RValueBase">
+          <see langword="True" />識別する<c>o</c>遅延バインディング式の結果として。</param>
+        <summary>指定されたパラメーターを使用して、オブジェクトの遅延バインディングされた値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateSet">
+      <MemberSignature Language="C#" Value="public static void LateSet (object o, Type objType, string name, object[] args, string[] paramnames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateSet(object o, class System.Type objType, string name, object[] args, string[] paramnames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateSet(System.Object,System.Type,System.String,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">メンバーの値を設定するオブジェクト。</param>
+        <param name="objType">オブジェクトの型。</param>
+        <param name="name">メンバーの名前を設定します。</param>
+        <param name="args">メンバーに渡す値を 1 つまたはパラメーターの配列<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <summary>指定されたパラメーターを使用して、オブジェクトのメンバーの遅延バインディングされた値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LateSetComplex">
+      <MemberSignature Language="C#" Value="public static void LateSetComplex (object o, Type objType, string name, object[] args, string[] paramnames, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateSetComplex(object o, class System.Type objType, string name, object[] args, string[] paramnames, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LateBinding.LateSetComplex(System.Object,System.Type,System.String,System.Object[],System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="paramnames" Type="System.String[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="o">メンバーの値を設定するオブジェクト。</param>
+        <param name="objType">オブジェクトの型。</param>
+        <param name="name">メンバーの名前を設定します。</param>
+        <param name="args">メンバーに渡す 1 つまたは複数のパラメーター値の配列<c>o</c>です。</param>
+        <param name="paramnames">パラメーターの名前を格納する配列内の値、 <c>args</c>配列が渡されます。</param>
+        <param name="OptimisticSet">
+          <see langword="True" />場合にスローされる例外を抑制するセットのメンバーが見つかりません。</param>
+        <param name="RValueBase">
+          <see langword="True" />識別する<c>o</c>遅延バインディング式の結果として。</param>
+        <summary>指定されたパラメーターを使用して、オブジェクトのメンバーの遅延バインディングされた値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

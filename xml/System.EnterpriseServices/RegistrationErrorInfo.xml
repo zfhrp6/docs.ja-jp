@@ -1,0 +1,138 @@
+<Type Name="RegistrationErrorInfo" FullName="System.EnterpriseServices.RegistrationErrorInfo">
+  <TypeSignature Language="C#" Value="public sealed class RegistrationErrorInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit RegistrationErrorInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.RegistrationErrorInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>複数の COM + オブジェクトに関連するメソッドに関するエラー情報の拡張を取得します。 これには、インストール、インポート、および COM + アプリケーションとコンポーネントをエクスポートするメソッドも含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、複数の COM + オブジェクトに関連するメソッドに関する拡張エラー情報を取得する方法を示します。  
+  
+ [!code-cpp[EnterpriseServices Registration#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices Registration/CPP/deployservicedcomponent.cpp#0)]
+ [!code-csharp[EnterpriseServices Registration#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices Registration/CS/deployservicedcomponent.cs#0)]
+ [!code-vb[EnterpriseServices Registration#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices Registration/VB/deployservicedcomponent.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ErrorCode">
+      <MemberSignature Language="C#" Value="public int ErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ErrorCode" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.RegistrationErrorInfo.ErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトまたはファイルのエラー コードを取得します。</summary>
+        <value>オブジェクトまたはファイルのエラー コード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorString">
+      <MemberSignature Language="C#" Value="public string ErrorString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorString" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.RegistrationErrorInfo.ErrorString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明を取得、<see cref="P:System.EnterpriseServices.RegistrationErrorInfo.ErrorCode" />です。</summary>
+        <value><see cref="P:System.EnterpriseServices.RegistrationErrorInfo.ErrorCode" /> の説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、元のエラー文字列を取得する方法を示します、`RegistrationErrorInfo`オブジェクト。  
+  
+ [!code-cpp[EnterpriseServices Registration#4](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices Registration/CPP/deployservicedcomponent.cpp#4)]
+ [!code-csharp[EnterpriseServices Registration#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices Registration/CS/deployservicedcomponent.cs#4)]
+ [!code-vb[EnterpriseServices Registration#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices Registration/VB/deployservicedcomponent.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorRef">
+      <MemberSignature Language="C#" Value="public string MajorRef { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MajorRef" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.RegistrationErrorInfo.MajorRef" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>該当する場合は、エラーの原因となったオブジェクトのキーの値を取得します。</summary>
+        <value>該当する場合、エラーの原因となったオブジェクトのキー値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの値が適用されないとき<xref:System.EnterpriseServices.RegistrationErrorInfo.MajorRef%2A>と同じ<xref:System.EnterpriseServices.RegistrationErrorInfo.Name%2A>です。 更新するにまたはコンポーネントとインストールに失敗した DLL の検索に失敗した項目を検索するには、これを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorRef">
+      <MemberSignature Language="C#" Value="public string MinorRef { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinorRef" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.RegistrationErrorInfo.MinorRef" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ名など、エラーの原因となった項目の正確な仕様を取得します。</summary>
+        <value>エラーが発生したプロパティ名など、項目の正確な仕様。 場合は、複数のエラーが発生したか、これは適用されません<see cref="P:System.EnterpriseServices.RegistrationErrorInfo.MinorRef" />文字列を返します"&lt;無効な&gt;"です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.RegistrationErrorInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトまたはエラーが発生したファイルの名前を取得します。</summary>
+        <value>オブジェクトまたはエラーが発生したファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

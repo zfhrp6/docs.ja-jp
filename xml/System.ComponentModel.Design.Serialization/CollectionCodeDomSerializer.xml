@@ -1,0 +1,155 @@
+<Type Name="CollectionCodeDomSerializer" FullName="System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer">
+  <TypeSignature Language="C#" Value="public class CollectionCodeDomSerializer : System.ComponentModel.Design.Serialization.CodeDomSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionCodeDomSerializer extends System.ComponentModel.Design.Serialization.CodeDomSerializer" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.Serialization.CodeDomSerializer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションをシリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer>クラスには、ステートメントまたは式を作成できます。 シリアル化するオブジェクトが、配列の場合、<xref:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer>式が作成され、現在のコンテキスト スタック内のステートメントに割り当てます。 オブジェクトが持つコレクションである場合、 *AddRange*または同様の方法、<xref:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer>はメソッドを呼び出すステートメントを作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CollectionCodeDomSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodSupportsSerialization">
+      <MemberSignature Language="C#" Value="protected bool MethodSupportsSerialization (System.Reflection.MethodInfo method);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool MethodSupportsSerialization(class System.Reflection.MethodInfo method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.MethodSupportsSerialization(System.Reflection.MethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="method"><see cref="T:System.Reflection.MethodInfo" />シリアル化属性を確認します。</param>
+        <summary>シリアル化のサポートを確認、<paramref name="method" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="method" />シリアル化をサポートしています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェック、`method`属性のシリアル化をサポートしている」を参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="method" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public override object Serialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Serialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />シリアル化中に使用します。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>CodeDOM オブジェクトに特定のコレクションをシリアル化します。</summary>
+        <returns>表す CodeDOM オブジェクト<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションは、次のようにシリアル化されます。  
+  
+1.  コレクションが、配列、配列が書き込まれます。  
+  
+    1.  場合、コレクションがある、 *AddRange*メソッドと呼ばれる、配列が提供されます。  
+  
+    2.  場合、コレクションがある、*追加*メソッド、これは繰り返し呼び出されます、コレクション内のすべての項目が書き込まれるまでです。  
+  
+2.  コレクションの場合、 <xref:System.Collections.IList>、<xref:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.Serialize%2A>メソッドのコレクションにはキャスト、<xref:System.Collections.IList>し、そのインターフェイスを追加します。  
+  
+    1.  コレクションがあるない場合*追加*メソッドでマークされたが、 <xref:System.ComponentModel.DesignerSerializationVisibility?displayProperty=nameWithType>、<xref:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.Serialize%2A>コレクションを列挙し、各要素をシリアル化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeCollection">
+      <MemberSignature Language="C#" Value="protected virtual object SerializeCollection (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, System.CodeDom.CodeExpression targetExpression, Type targetType, System.Collections.ICollection originalCollection, System.Collections.ICollection valuesToSerialize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SerializeCollection(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, class System.CodeDom.CodeExpression targetExpression, class System.Type targetType, class System.Collections.ICollection originalCollection, class System.Collections.ICollection valuesToSerialize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CollectionCodeDomSerializer.SerializeCollection(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeExpression,System.Type,System.Collections.ICollection,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="targetExpression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="originalCollection" Type="System.Collections.ICollection" />
+        <Parameter Name="valuesToSerialize" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />シリアル化中に使用します。</param>
+        <param name="targetExpression"><see cref="T:System.CodeDom.CodeExpression" />コレクションを参照します。</param>
+        <param name="targetType"><see cref="T:System.Type" />のコレクション。</param>
+        <param name="originalCollection">シリアル化するコレクション。</param>
+        <param name="valuesToSerialize">シリアル化する値。</param>
+        <summary>指定されたコレクションをシリアル化します。</summary>
+        <returns>シリアル化プロセスが成功した場合、シリアル化されたコレクションそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeExpression>を参照するコレクションを指定できます`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" />、<paramref name="targetType" />、<paramref name="originalCollection" />、または <paramref name="valuesToSerialize" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

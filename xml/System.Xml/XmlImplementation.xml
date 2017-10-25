@@ -1,0 +1,204 @@
+<Type Name="XmlImplementation" FullName="System.Xml.XmlImplementation">
+  <TypeSignature Language="C#" Value="public class XmlImplementation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlImplementation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlImplementation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一連のコンテキストを定義<see cref="T:System.Xml.XmlDocument" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDocument`同じ実装から作成されるオブジェクトが同じ<xref:System.Xml.XmlNameTable>です。 これにより、ユーザーは、オブジェクトの間で属性と要素の名前をより効率的に比較できます。  
+  
+ ただし、`XmlDocument`オブジェクトは 1 つのドキュメントからノードを移動する、同じ実装を共有、使用する必要があります、<xref:System.Xml.XmlDocument.ImportNode%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlImplementation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlImplementation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlImplementation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlImplementation (System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlImplementation.#ctor(System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="nt"><see cref="T:System.Xml.XmlNameTable" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XmlImplementation" />クラス、<see cref="T:System.Xml.XmlNameTable" />指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDocument">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlDocument CreateDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlDocument CreateDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlImplementation.CreateDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDocument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Xml.XmlDocument" /> を作成します。</summary>
+        <returns>新しい <see langword="XmlDocument" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlDocument`同じ実装から作成されたオブジェクトは、同じ名前テーブルを共有します。 これにより、ユーザーは、オブジェクトの間で属性と要素の名前をより効率的に比較できます。  
+  
+ ただし、`XmlDocument`オブジェクトは 1 つのドキュメントからノードを移動する、同じ実装を共有、使用する必要があります、<xref:System.Xml.XmlDocument.ImportNode%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます`XmlDocument`同じ実装からのオブジェクト。  
+  
+ [!code-cpp[Classic WebData XmlImplementation.CreateDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlImplementation.CreateDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlImplementation.CreateDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlImplementation.CreateDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlImplementation.CreateDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlImplementation.CreateDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFeature">
+      <MemberSignature Language="C#" Value="public bool HasFeature (string strFeature, string strVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasFeature(string strFeature, string strVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlImplementation.HasFeature(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strFeature" Type="System.String" />
+        <Parameter Name="strVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strFeature">テスト対象の機能のパッケージ名。 この名前は大文字と小文字を区別しません。</param>
+        <param name="strVersion">これは、テスト パッケージの名前のバージョン番号です。 バージョンが指定されていない場合 (<see langword="null" />)、によって返されるメソッドを任意のバージョンの機能をサポートする<see langword="true" />です。</param>
+        <summary>ドキュメント オブジェクト モデル (DOM) の実装には、特定の機能が実装されている場合にテストします。</summary>
+        <returns>
+          <see langword="true" />指定したバージョンで、機能が実装されている場合それ以外の場合、<see langword="false" />です。  
+  
+ 次の表に、発生の組み合わせ<see langword="HasFeature" />を返す<see langword="true" />です。  
+  
+ <list type="table"><listheader><term>strFeature  
+  
+ </term><description>strVersion  
+  
+ </description></listheader><item><term>XML  
+  
+ </term><description> 1.0  
+  
+ </description></item><item><term>XML  
+  
+ </term><description> 2.0  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

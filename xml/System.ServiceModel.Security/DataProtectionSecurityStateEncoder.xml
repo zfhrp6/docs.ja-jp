@@ -1,0 +1,193 @@
+<Type Name="DataProtectionSecurityStateEncoder" FullName="System.ServiceModel.Security.DataProtectionSecurityStateEncoder">
+  <TypeSignature Language="C#" Value="public class DataProtectionSecurityStateEncoder : System.ServiceModel.Security.SecurityStateEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataProtectionSecurityStateEncoder extends System.ServiceModel.Security.SecurityStateEncoder" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Security.SecurityStateEncoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows <see langword="DataProtection" /> API 機能を使用してセキュリティ状態のエンコードおよびデコードを行う機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用で表されるセキュリティ状態をエンコード、*ステートフルなセキュリティ コンテキスト トークン*メッセージを送信するときに、受信者にメッセージが到着すると、セキュリティ コンテキストをデコードします。  
+  
+ エンコードは、現在のユーザー スコープで実行するか (この場合、そのユーザー アカウントで実行されているプロセスのみがセキュリティ状態をデコードできます)、またはローカル コンピューターのスコープで実行できます (この場合、そのコンピューター上で実行されているすべてのプロセスがセキュリティ状態をデコードできます)。 既定では、エンコードは現在のユーザー スコープで実行されます。  
+  
+ セキュリティ状態を送信するときに、このクラスは、サーバーによって使用、*ステートフルなセキュリティ コンテキスト トークン*クライアントに発行します。  
+  
+ `DataProtection` スコープに基づく `CurrentUser` では、現在のユーザーがユーザー プロファイルを持っている必要があります。 ユーザーがローミング プロファイルを持つ場合は、あるコンピューター上で実行されているユーザー プロセスがエンコードしたセキュリティ状態を、別のコンピューター上で実行されているユーザー プロセスがデコードすることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProtectionSecurityStateEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProtectionSecurityStateEncoder (bool useCurrentUserProtectionScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool useCurrentUserProtectionScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="useCurrentUserProtectionScope" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useCurrentUserProtectionScope">現在のユーザー保護スコープを使用するかどうかを示します。</param>
+        <summary>このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProtectionSecurityStateEncoder (bool useCurrentUserProtectionScope, byte[] entropy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool useCurrentUserProtectionScope, unsigned int8[] entropy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="useCurrentUserProtectionScope" Type="System.Boolean" />
+        <Parameter Name="entropy" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="useCurrentUserProtectionScope">現在のユーザー保護スコープを使用するかどうかを示します。</param>
+        <param name="entropy">エントロピを指定する <see langword="byte" /> 配列。これは、エンコーダーがセキュリティ状態のエンコードに使用できる追加のランダム度を示します。</param>
+        <summary>このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecodeSecurityState">
+      <MemberSignature Language="C#" Value="protected override byte[] DecodeSecurityState (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance unsigned int8[] DecodeSecurityState(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">エンコードされたセキュリティ状態を表す <see langword="byte" /> 配列。</param>
+        <summary>セキュリティ状態をデコードします。</summary>
+        <returns>デコードされたセキュリティ状態を表す <see langword="byte" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodeSecurityState">
+      <MemberSignature Language="C#" Value="protected override byte[] EncodeSecurityState (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance unsigned int8[] EncodeSecurityState(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">デコードされたセキュリティ状態を表す <see langword="byte" /> 配列。</param>
+        <summary>セキュリティ状態をエンコードします。</summary>
+        <returns>エンコードされたセキュリティ状態を表す <see langword="byte" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntropy">
+      <MemberSignature Language="C#" Value="public byte[] GetEntropy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetEntropy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このエンコーダーのランダム度を示します。</summary>
+        <returns><see cref="T:System.Byte" /> 型の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" /> インスタンスを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.String" /> インスタンスを表す <see cref="T:System.ServiceModel.Security.DataProtectionSecurityStateEncoder" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返される情報には、現在のインスタンスの <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope%2A> 値と <xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.GetEntropy%2A> 値が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCurrentUserProtectionScope">
+      <MemberSignature Language="C#" Value="public bool UseCurrentUserProtectionScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCurrentUserProtectionScope" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザー保護スコープを使用するかどうかを示す値を取得します。</summary>
+        <value>
+          現在のユーザー保護スコープを使用する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

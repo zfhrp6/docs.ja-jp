@@ -1,0 +1,165 @@
+<Type Name="WSTrustSerializationContext" FullName="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext">
+  <TypeSignature Language="C#" Value="public class WSTrustSerializationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSTrustSerializationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-trust メッセージのシリアル化コンテキストを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ws-trust 要求 (RST) と応答 (RSTR) をシリアル化に使用されるオブジェクトのコンテナーです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustSerializationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustSerializationContext (System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager securityTokenHandlerCollectionManager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager securityTokenHandlerCollectionManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.#ctor(System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityTokenHandlerCollectionManager" Type="System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />
+      </Parameters>
+      <Docs>
+        <param name="securityTokenHandlerCollectionManager"><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />オブジェクトのセットを含む<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージにシリアル化して、トークンの検証に使用するオブジェクトが見つかりませんでした。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> 、指定したクラス<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityTokenHandlerCollectionManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustSerializationContext (System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager securityTokenHandlerCollectionManager, System.IdentityModel.Selectors.SecurityTokenResolver securityTokenResolver, System.IdentityModel.Selectors.SecurityTokenResolver useKeyTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager securityTokenHandlerCollectionManager, class System.IdentityModel.Selectors.SecurityTokenResolver securityTokenResolver, class System.IdentityModel.Selectors.SecurityTokenResolver useKeyTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.#ctor(System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager,System.IdentityModel.Selectors.SecurityTokenResolver,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityTokenHandlerCollectionManager" Type="System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />
+        <Parameter Name="securityTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+        <Parameter Name="useKeyTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="securityTokenHandlerCollectionManager"><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />オブジェクトのセットを含む<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージにシリアル化して、トークンの検証に使用するオブジェクトが見つかりませんでした。</param>
+        <param name="securityTokenResolver"><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> Ws-trust メッセージ要素の大部分で発見されたセキュリティ トークン参照を解決するのには使用するオブジェクト。</param>
+        <param name="useKeyTokenResolver"><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> RST メッセージの wst:UseKey 要素だけでなく、wst:RenewTarget 要素を RST メッセージのセキュリティ トークン参照を解決するのには使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> 、指定したクラス<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />、 <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />、および<see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityTokenHandlerCollectionManager" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="securityTokenResolver" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="useKeyTokenResolver" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandlerCollectionManager">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.SecurityTokenHandlerCollectionManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />のセットを含む<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージ内にあるオブジェクトのシリアル化とトークンを検証するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandlers">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollection SecurityTokenHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollection SecurityTokenHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.SecurityTokenHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージ内にあるオブジェクトをシリアル化し、セキュリティ トークンを検証するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollection" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver TokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver TokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.TokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> Ws-trust メッセージ要素の大部分で発見されたセキュリティ トークン参照を解決するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseKeyTokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver UseKeyTokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver UseKeyTokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext.UseKeyTokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> RST メッセージの wst:UseKey 要素だけでなく、wst:RenewTarget 要素を RST メッセージのセキュリティ トークン参照を解決するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,109 @@
+<Type Name="ConfigurationAllowExeDefinition" FullName="System.Configuration.ConfigurationAllowExeDefinition">
+  <TypeSignature Language="C#" Value="public enum ConfigurationAllowExeDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConfigurationAllowExeDefinition extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationAllowExeDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>設定または内に含まれるプロパティを上書きする構成ファイルの階層内の場所を指定します、<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するときに、この列挙体の値が使用必要に応じて、<xref:System.Configuration.ConfigurationSection>クラスです。 この列挙は、クライアント アプリケーションにのみ適用に注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MachineOnly">
+      <MemberSignature Language="C#" Value="MachineOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationAllowExeDefinition MachineOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationAllowExeDefinition.MachineOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowExeDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSection" /> Machine.config ファイルでのみ定義できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineToApplication">
+      <MemberSignature Language="C#" Value="MachineToApplication" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationAllowExeDefinition MachineToApplication = int32(100)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationAllowExeDefinition.MachineToApplication" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowExeDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSection" /> Machine.config ファイルで、またはクライアント アプリケーションのディレクトリ内の *.exe.config ファイルで定義されていることができます。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineToLocalUser">
+      <MemberSignature Language="C#" Value="MachineToLocalUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationAllowExeDefinition MachineToLocalUser = int32(300)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationAllowExeDefinition.MachineToLocalUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowExeDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSection" /> *.Exe.config ファイルをクライアント アプリケーション ディレクトリのローミング ユーザーのディレクトリに User.config ファイルに、またはローカル ユーザーのディレクトリに User.config ファイル内で、Machine.config ファイルで定義されていることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineToRoamingUser">
+      <MemberSignature Language="C#" Value="MachineToRoamingUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationAllowExeDefinition MachineToRoamingUser = int32(200)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationAllowExeDefinition.MachineToRoamingUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationAllowExeDefinition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSection" />またはローミング ユーザーのディレクトリに User.config ファイルにクライアント アプリケーションのディレクトリ内の *.exe.config ファイルで、Machine.config ファイルで定義されていることができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

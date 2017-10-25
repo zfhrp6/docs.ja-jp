@@ -1,0 +1,334 @@
+<Type Name="NumericUpDownAccelerationCollection" FullName="System.Windows.Forms.NumericUpDownAccelerationCollection">
+  <TypeSignature Language="C#" Value="public class NumericUpDownAccelerationCollection : MarshalByRefObject, System.Collections.Generic.ICollection&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;, System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumericUpDownAccelerationCollection extends System.MarshalByRefObject implements class System.Collections.Generic.ICollection`1&lt;class System.Windows.Forms.NumericUpDownAcceleration&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Forms.NumericUpDownAcceleration&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>並べ替えられたコレクションを表します<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />内のオブジェクト、<see cref="T:System.Windows.Forms.NumericUpDown" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の要素、<xref:System.Windows.Forms.NumericUpDownAccelerationCollection>により並べ替えられた、<xref:System.Windows.Forms.NumericUpDownAcceleration.Seconds%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>プロパティです。 この例を実行するには、フォームと呼び出しに、次のコードを貼り付けます、`InitializeAcceleratedUpDown`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。 コードの実行中にキーを押してと上向きまたは下矢印を発生するアクセラレータを参照してください。  
+  
+ [!code-csharp[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumericUpDownAccelerationCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Forms.NumericUpDownAcceleration acceleration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Windows.Forms.NumericUpDownAcceleration acceleration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.Add(System.Windows.Forms.NumericUpDownAcceleration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="acceleration" Type="System.Windows.Forms.NumericUpDownAcceleration" />
+      </Parameters>
+      <Docs>
+        <param name="acceleration"><see cref="T:System.Windows.Forms.NumericUpDownAcceleration" /> に追加する <see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />を<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 保持しながら、項目が追加された、<xref:System.Windows.Forms.NumericUpDownAccelerationCollection>並べ替えられます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>プロパティです。 この例を実行するには、フォームと呼び出しに、次のコードを貼り付けます、`InitializeAcceleratedUpDown`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。 コードの実行中にキーを押してと上向きまたは下矢印を発生するアクセラレータを参照してください。  
+  
+ [!code-csharp[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.MiscBugDriven#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="acceleration" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (params System.Windows.Forms.NumericUpDownAcceleration[] accelerations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.NumericUpDownAcceleration[] accelerations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.AddRange(System.Windows.Forms.NumericUpDownAcceleration[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accelerations" Type="System.Windows.Forms.NumericUpDownAcceleration[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="accelerations">型の配列<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />コレクションに追加するオブジェクトを格納します。</param>
+        <summary>指定した配列の要素を追加、 <see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />、並べ替えられたコレクションを保持します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="accelerations" /><see langword="null" />、または内のエントリの 1 つ、<paramref name="accelerations" />配列が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> からすべての要素を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.NumericUpDownAcceleration acceleration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Windows.Forms.NumericUpDownAcceleration acceleration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.Contains(System.Windows.Forms.NumericUpDownAcceleration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="acceleration" Type="System.Windows.Forms.NumericUpDownAcceleration" />
+      </Parameters>
+      <Docs>
+        <param name="acceleration"><see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> 内で検索される <see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />特定格納<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />です。</summary>
+        <returns>
+          <see cref="T:System.Windows.Forms.NumericUpDownAcceleration" /> が <see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Windows.Forms.NumericUpDownAcceleration[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Windows.Forms.NumericUpDownAcceleration[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.CopyTo(System.Windows.Forms.NumericUpDownAcceleration[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Windows.Forms.NumericUpDownAcceleration[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> からコピーされる値のコピー先となる 1 次元 <see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />。</param>
+        <param name="index">内のインデックス<c>配列</c>コピー開始位置。</param>
+        <summary>コピー、<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />値を 1 次元<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />インスタンスの指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDownAccelerationCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のオブジェクトの数を取得、<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />です。</summary>
+        <value>コレクション内のオブジェクトの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDownAccelerationCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.NumericUpDownAcceleration this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.NumericUpDownAcceleration Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NumericUpDownAccelerationCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.NumericUpDownAcceleration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />をコレクションから取得します。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />で指定したインデックス番号します。</summary>
+        <value><see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />指定したインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Windows.Forms.NumericUpDownAcceleration acceleration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Windows.Forms.NumericUpDownAcceleration acceleration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.Remove(System.Windows.Forms.NumericUpDownAcceleration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="acceleration" Type="System.Windows.Forms.NumericUpDownAcceleration" />
+      </Parameters>
+      <Docs>
+        <param name="acceleration">コレクションから削除する <see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />。</param>
+        <summary>最初に出現する指定した削除<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />から、<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.NumericUpDownAcceleration" />から削除<see cref="T:System.Windows.Forms.NumericUpDownAccelerationCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Windows.Forms.NumericUpDownAcceleration&gt; IEnumerable&lt;NumericUpDownAcceleration&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Forms.NumericUpDownAcceleration&gt; System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.System#Collections#Generic#IEnumerable&lt;System#Windows#Forms#NumericUpDownAcceleration&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Forms.NumericUpDownAcceleration&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を取得します。</summary>
+        <returns>指定した期間に上向きボタンまたは下向きボタンが押されたときに、コントロールでの高速化の実行方法を指定するコレクションを反復処理します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.NumericUpDownAccelerationCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NumericUpDownAccelerationCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を取得します。</summary>
+        <returns>コレクションに対する反復処理します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.NumericUpDownAccelerationCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,62 @@
+<Type Name="WebPartEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved" />、および<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartEventArgs>クラスには、いくつかの Web パーツのイベントの情報が含まれています。 これらのイベントが含まれて、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded>、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted>、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed>、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved>、および<xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged>イベント。 <xref:System.Web.UI.WebControls.WebParts.WebPartEventArgs>クラスは、イベントに関連する Web パーツ コントロールへのアクセスを提供します。 Web パーツ コントロールは、<xref:System.Web.UI.WebControls.WebParts.WebPartEventArgs.WebPart%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartEventArgs (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> (またはサーバーまたはユーザー コントロール) イベントに関連します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPart">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart WebPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart WebPart" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartEventArgs.WebPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連する Web パーツ コントロールを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />に関係する、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed" />、 <see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved" />、または<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

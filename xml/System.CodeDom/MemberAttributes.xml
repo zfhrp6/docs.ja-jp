@@ -1,0 +1,369 @@
+<Type Name="MemberAttributes" FullName="System.CodeDom.MemberAttributes">
+  <TypeSignature Language="C#" Value="public enum MemberAttributes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MemberAttributes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.MemberAttributes" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスのメンバーのメンバー属性識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている識別子、<xref:System.CodeDom.MemberAttributes>列挙体は、クラス メンバーのスコープとアクセスの属性を指定するために使用できます。  
+  
+> [!NOTE]
+>  ない`Virtual`メンバーの属性です。 メンバーが宣言されている仮想メンバーのアクセスをパブリックに設定して (`property1.Attributes = MemberAttributes.Public`) せず、最終的なとして指定することです。 最終的なフラグがない場合は、メンバー `virtual` (C#) (`public virtual`)、 `overrideable` Visual Basic で (`Public Overrideable`)。 メンバーとして宣言することを回避する`virtual`または`overrideable`パブリックの両方を設定し、最後にフラグを設定、<xref:System.CodeDom.CodeTypeMember.Attributes%2A>プロパティです。 参照してください、<xref:System.CodeDom.CodeTypeMember.Attributes%2A>メンバーの属性を設定する方法の詳細については、プロパティです。  
+  
+> [!NOTE]
+>  アクセス フラグを設定するためのパターン (フラグの用語を含んでいる`Public`、 `Private`、 `Assembly`、または`Family`) は AccessMask マスクを使用してすべてのアクセス フラグをマスクし、必要なアクセス フラグを設定します。 たとえば、コンス トラクターを識別するコード ステートメント (という名前`constructor1`) public としては`constructor1.Attributes = (constructor1.Attributes & ~MemberAttributes.AccessMask) | MemberAttributes.Public;`します。 設定、<xref:System.CodeDom.CodeTypeMember.Attributes%2A>アクセス フラグに直接プロパティ (たとえば、 `constructor1.Attributes = MemberAttributes.Public;`) 設定されているその他のすべてのフラグが消去されます。 このパターンは、(抽象、最終的なスタティック、上書きまたは Const) スコープ フラグを設定するためも使用する必要があります、ScopeMask マスクを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示します、<xref:System.CodeDom.CodeMemberProperty>を定義する、`string`を持つプロパティ`get`と`set`アクセサー。  
+  
+ [!code-cpp[CodeMemberPropertyExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeMemberPropertyExample/CPP/codememberpropertyexample.cpp#3)]
+ [!code-csharp[CodeMemberPropertyExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeMemberPropertyExample/CS/codememberpropertyexample.cs#3)]
+ [!code-vb[CodeMemberPropertyExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeMemberPropertyExample/VB/codememberpropertyexample.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abstract">
+      <MemberSignature Language="C#" Value="Abstract" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Abstract = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Abstract" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽象メンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessMask">
+      <MemberSignature Language="C#" Value="AccessMask" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes AccessMask = int32(61440)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.AccessMask" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス マスク。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="Assembly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Assembly = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Assembly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じアセンブリ内の任意のクラスにアクセスできるメンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Const">
+      <MemberSignature Language="C#" Value="Const" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Const = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Const" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定数メンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Family">
+      <MemberSignature Language="C#" Value="Family" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Family = int32(12288)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Family" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのクラスと派生クラスのファミリ内でアクセス可能なメンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyAndAssembly">
+      <MemberSignature Language="C#" Value="FamilyAndAssembly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes FamilyAndAssembly = int32(8192)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.FamilyAndAssembly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのクラス、および同じアセンブリ内の派生クラス内でアクセス可能であるメンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyOrAssembly">
+      <MemberSignature Language="C#" Value="FamilyOrAssembly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes FamilyOrAssembly = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.FamilyOrAssembly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのクラス、その派生クラスで任意のアセンブリと同じアセンブリ内の任意のクラス内でアクセス可能であるメンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Final">
+      <MemberSignature Language="C#" Value="Final" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Final = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Final" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドできないメンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="New">
+      <MemberSignature Language="C#" Value="New" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes New = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.New" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいメンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Overloaded">
+      <MemberSignature Language="C#" Value="Overloaded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Overloaded = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Overloaded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーバー ロードされたメンバーの場合。 Visual Basic など、一部の言語では、オーバー ロードされたメンバーを明示的に指定する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Override">
+      <MemberSignature Language="C#" Value="Override" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Override = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Override" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基底クラスのメンバーをオーバーライドするメンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Private">
+      <MemberSignature Language="C#" Value="Private" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Private = int32(20480)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Private" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライベート メンバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Public">
+      <MemberSignature Language="C#" Value="Public" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Public = int32(24576)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Public" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パブリック メンバーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeMask">
+      <MemberSignature Language="C#" Value="ScopeMask" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes ScopeMask = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.ScopeMask" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープのマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Static">
+      <MemberSignature Language="C#" Value="Static" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes Static = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.Static" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>静的メンバーです。 Visual basic の場合は、これは、<see langword="Shared" />キーワード。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VTableMask">
+      <MemberSignature Language="C#" Value="VTableMask" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.CodeDom.MemberAttributes VTableMask = int32(240)" />
+      <MemberSignature Language="DocId" Value="F:System.CodeDom.MemberAttributes.VTableMask" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.MemberAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>VTable マスクです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

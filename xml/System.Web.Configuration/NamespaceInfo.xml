@@ -1,0 +1,188 @@
+<Type Name="NamespaceInfo" FullName="System.Web.Configuration.NamespaceInfo">
+  <TypeSignature Language="C#" Value="public sealed class NamespaceInfo : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NamespaceInfo extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.NamespaceInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つの構成の名前空間の参照を含むと同様、<see langword="Import" />ディレクティブです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.NamespaceCollection>含む<xref:System.Web.Configuration.NamespaceInfo>に対応するオブジェクト、`add`内の要素、`namespaces`セクションです。 各<xref:System.Web.Configuration.NamespaceInfo>と同じオブジェクトが、 `Import` (<`%@ Import %`>) および構成ファイルのスコープ内のコントロールすべてのページに適用するディレクティブ。 `Import`ディレクティブでは、ページ上のすべてのクラスを使用してを利用できるように、ASP.NET ページで、名前空間をインポートすることができます。  
+  
+   
+  
+## Examples  
+ この例は、宣言のプロパティの値を指定する方法を示します、<xref:System.Web.Configuration.NamespaceCollection>と<xref:System.Web.Configuration.NamespaceInfo>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`namespaces`セクションです。  
+  
+```  
+  
+<system.web>  
+  <pages>  
+    <namespaces>  
+      <add namespace="System" />  
+      <add namespace="System.Collections" />  
+      <add namespace="System.Collections.Specialized" />  
+      <add namespace="System.ComponentModel" />  
+      <add namespace="System.Configuration" />  
+      <add namespace="System.Web" />  
+    </namespaces>  
+  </pages>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.NamespaceInfo>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#22)]
+ [!code-vb[System.Web.Configuration.PagesSection#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#22)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NamespaceInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.NamespaceInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい名前空間参照<see cref="T:System.Web.Configuration.NamespaceInfo" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.NamespaceInfo" />指定された名前空間の参照を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間の参照が有効であることを確認する検証は実行されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示しています。<xref:System.Web.Configuration.NamespaceInfo.%23ctor%2A>コンス トラクターです。 例の一部では、<xref:System.Web.Configuration.PagesSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#23](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#23)]
+ [!code-vb[System.Web.Configuration.PagesSection#23](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object namespaceInformation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object namespaceInformation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.NamespaceInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceInformation" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceInformation">A<see cref="T:System.Web.Configuration.NamespaceInfo" />と比較するオブジェクト。</param>
+        <summary>渡された現在のインスタンスを比較して<see cref="T:System.Web.Configuration.NamespaceInfo" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つのオブジェクトが同じ場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.NamespaceInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのハッシュ値を返します。</summary>
+        <returns>現在のインスタンスのハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.NamespaceInfo.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("namespace", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前空間の参照を設定します。</summary>
+        <value>名前空間の名前を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間の参照が有効であることを確認する検証は実行されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.NamespaceInfo.Namespace%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#29](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#29)]
+ [!code-vb[System.Web.Configuration.PagesSection#29](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.NamespaceInfo.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

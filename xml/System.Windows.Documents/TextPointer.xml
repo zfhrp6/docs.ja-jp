@@ -1,0 +1,1018 @@
+<Type Name="TextPointer" FullName="System.Windows.Documents.TextPointer">
+  <TypeSignature Language="C#" Value="public class TextPointer : System.Windows.Documents.ContentPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextPointer extends System.Windows.Documents.ContentPosition" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextPointer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.ContentPosition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内の位置を表す、<see cref="T:System.Windows.Documents.FlowDocument" />または<see cref="T:System.Windows.Controls.TextBlock" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextPointer>クラスは、次の用語を紹介します。  
+  
+-   配置の本質的に、<xref:System.Windows.Documents.TextPointer>常を指します、*位置*コンテンツにします。  このような位置のいずれかの分類、コンテンツ内の文字間またはフロー間でコンテンツ要素タグは、コンテンツの構造を定義します。  
+  
+-   現在の位置にあるため、<xref:System.Windows.Documents.TextPointer>常に、位置を示すためとで実行できる操作の多くは、<xref:System.Windows.Documents.TextPointer>によって示される現在の位置に対しては、 <xref:System.Windows.Documents.TextPointer>、によって示される位置を指す理にかなって、<xref:System.Windows.Documents.TextPointer>として、*現在位置*です。  
+  
+-   挿入位置の*挿入位置*任意セマンティック コンテンツ規則に関連付けられている可能性がありますに、新しいコンテンツを追加する位置です。  実際には、挿入位置は、キャレットを配置する場所のコンテンツで任意の場所です。  有効な例<xref:System.Windows.Documents.TextPointer>挿入位置ではない位置は 2 つの隣接する位置<xref:System.Windows.Documents.Paragraph>タグ (つまり、前の段落の終わりのタグと次の段落の開始タグの間で)。  
+  
+-   目的で、シンボル<xref:System.Windows.Documents.TextPointer>記号に関連する操作では、次の文字と見なされます、*シンボル*:  
+  
+    -   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+    -   A<xref:System.Windows.UIElement>要素内に含まれる、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+    -   各 16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+-   テキスト コンテナー -*テキスト コンテナー*が最終的なフロー コンテンツの境界を形成する要素で指定された位置、<xref:System.Windows.Documents.TextPointer>テキスト コンテナー内に常にします。  現時点では、テキスト コンテナーがある必要があるか、<xref:System.Windows.Documents.FlowDocument>または<xref:System.Windows.Controls.TextBlock>です。  一般に、操作の間で<xref:System.Windows.Documents.TextPointer>異なるテキスト コンテナー内のインスタンスはサポートされていません。  
+  
+-   ドキュメントのテキスト コンテナー内のコンテンツと呼びます、*ドキュメント*など、<xref:System.Windows.Documents.TextPointer.IsInSameDocument%2A>メソッドおよび<xref:System.Windows.Documents.TextPointer.DocumentStart%2A>と<xref:System.Windows.Documents.TextPointer.DocumentEnd%2A>プロパティです。  
+  
+ <xref:System.Windows.Documents.TextPointer>クラスは、走査およびで表されるコンテンツの操作を容易に[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]フロー コンテンツ要素です。 このような要素がから派生する一般に、<xref:System.Windows.Documents.TextElement>です。  一部の操作を<xref:System.Windows.Documents.TextPointer>を容易に、次のとおりです。  
+  
+-   2 番目の指定した位置の現在位置を示す序数に基づく比較を実行します。  参照してください、<xref:System.Windows.Documents.TextPointer.CompareTo%2A>メソッドです。  
+  
+-   指定した方向で現在の位置に隣接するコンテンツの種類を決定します。  参照してください、<xref:System.Windows.Documents.TextPointer.GetPointerContext%2A>メソッドと<xref:System.Windows.Documents.TextPointerContext>列挙します。  
+  
+-   取得、<xref:System.Windows.Documents.TextElement>スコープまたは現在の位置に隣接しています。  参照してください<xref:System.Windows.Documents.Paragraph>と<xref:System.Windows.Documents.TextPointer.GetAdjacentElement%2A>メソッドです。  
+  
+-   現在のドキュメントのスコープとなるテキスト コンテナーを取得します。  <xref:System.Windows.Documents.TextPointer.Parent%2A> プロパティを参照してください。  
+  
+-   指定の数の文字の直前または直後の現在の位置を取得します。  参照してください、<xref:System.Windows.Documents.TextPointer.GetTextInRun%2A>メソッドです。  
+  
+-   現在の位置にある文字の文字列を挿入します。  参照してください、<xref:System.Windows.Documents.TextPointer.InsertTextInRun%2A>メソッドです。  
+  
+-   コンテンツ内の行の境界を検索します。  参照してください、<xref:System.Windows.Documents.TextPointer.GetLineStartPosition%2A>メソッドおよび<xref:System.Windows.Documents.TextPointer.IsAtLineStartPosition%2A>プロパティです。  
+  
+-   間で変換<xref:System.Windows.Documents.TextPointer>の位置とシンボルは、コンテンツにオフセットします。  参照してください、<xref:System.Windows.Documents.TextPointer.GetOffsetToPosition%2A>と<xref:System.Windows.Documents.TextPointer.GetPositionAtOffset%2A>メソッドです。  
+  
+-   間で変換することによってビジュアル ヒット テストの実行、<xref:System.Windows.Documents.TextPointer>位置と<xref:System.Windows.Point>相対座標を表すです。  
+  
+-   近くの挿入位置を見つけます。 または、現在の位置が、挿入位置であるかどうかを確認します。  参照してください、<xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A>と<xref:System.Windows.Documents.TextPointer.GetNextInsertionPosition%2A>メソッドおよび<xref:System.Windows.Documents.TextPointer.IsAtInsertionPosition%2A>プロパティです。  
+  
+ 位置と<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>によって示される、<xref:System.Windows.Documents.TextPointer>オブジェクトは変更できません。  コンテンツの編集または変更、によって示される位置の場合、<xref:System.Windows.Documents.TextPointer>前後のテキストに対して相対的変わらないではなくコンテンツの先頭からその位置のオフセットは調整コンテンツ内の新しい相対位置を反映するようにします。  たとえば、<xref:System.Windows.Documents.TextPointer>を示すコンテンツを挿入または削除する前に、または段落の後のときにもその段落の先頭を指す特定の段落の先頭の位置が続行されます。  
+  
+ <xref:System.Windows.Documents.TextPointer>クラスは、パブリック コンス トラクターを提供しません。  インスタンス<xref:System.Windows.Documents.TextPointer>プロパティまたはその他のオブジェクトのメソッドを使用して作成された (その他を含む<xref:System.Windows.Documents.TextPointer>オブジェクト)。 次の一覧のメソッドとプロパティを作成して返す例をいくつかの提供、<xref:System.Windows.Documents.TextPointer>です。  この一覧は完全ではありません。  
+  
+-   <xref:System.Windows.Documents.TextRange>:<xref:System.Windows.Documents.TextRange.Start%2A>と<xref:System.Windows.Documents.TextRange.End%2A>です。  
+  
+-   <xref:System.Windows.Documents.TextElement>: <xref:System.Windows.Documents.TextElement.ContentStart%2A>、 <xref:System.Windows.Documents.TextElement.ContentEnd%2A>、 <xref:System.Windows.Documents.TextElement.ElementStart%2A>、および<xref:System.Windows.Documents.TextElement.ElementEnd%2A>です。  
+  
+-   <xref:System.Windows.Controls.TextBlock> (テキスト コンテナー): <xref:System.Windows.Controls.TextBlock.ContentStart%2A>、 <xref:System.Windows.Controls.TextBlock.ContentEnd%2A>、および<xref:System.Windows.Controls.TextBlock.GetPositionFromPoint%2A>です。  
+  
+-   <xref:System.Windows.Documents.FlowDocument> (テキスト コンテナー): <xref:System.Windows.Documents.FlowDocument.ContentStart%2A>、および<xref:System.Windows.Documents.FlowDocument.ContentEnd%2A>  
+  
+-   既存の<xref:System.Windows.Documents.TextPointer>: <xref:System.Windows.Documents.TextPointer.DocumentStart%2A>、 <xref:System.Windows.Documents.TextPointer.DocumentEnd%2A>、 <xref:System.Windows.Documents.TextPointer.GetNextInsertionPosition%2A>、および<xref:System.Windows.Documents.TextPointer.GetPositionAtOffset%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Windows.Documents.TextPointer> 1 つ目の内部でだけの位置を検索する<xref:System.Windows.Documents.Run>指定されたテキスト コンテナー内の要素。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_TextPointer1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_textpointer1)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_TextPointer1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_textpointer1)]  
+  
+ 次の例を使用して単純検索アルゴリズムを実装する<xref:System.Windows.Documents.TextPointer>機能します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_TextPointer2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_textpointer2)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_TextPointer2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_textpointer2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (System.Windows.Documents.TextPointer position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 CompareTo(class System.Windows.Documents.TextPointer position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.CompareTo(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position">A<see cref="T:System.Windows.Documents.TextPointer" />を現在の位置を比較する位置を指定します。</param>
+        <summary>現在の指定した位置の間の序数の比較を実行<see cref="T:System.Windows.Documents.TextPointer" />、2 番目の指定と<see cref="T:System.Windows.Documents.TextPointer" />です。</summary>
+        <returns>– 場合は 1 現在<see cref="T:System.Windows.Documents.TextPointer" />の前に<paramref name="position" />;、場所が同じ場合は 0 以外の場合は +1 現在<see cref="T:System.Windows.Documents.TextPointer" />に依存して<paramref name="position" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値-1 は、現在の位置が指定されていることを示します<xref:System.Windows.Documents.TextPointer>によって指定された位置の前に`position`です。  値 0 は、指定された位置が等しいことを示します。  +1 の正の値は、現在の位置が指定されていることを示します<xref:System.Windows.Documents.TextPointer>によって指定された位置に依存して`position`です。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。  例では、<xref:System.Windows.Documents.TextPointer.CompareTo%2A>メソッドを組み合わせて使用、<xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A>メソッドを指定したかどうかをテストする<xref:System.Windows.Documents.TextElement>が空です。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetInsertionPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getinsertionposition)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetInsertionPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getinsertionposition)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="position" />現在の位置に関連付けられたテキスト コンテナーの外部での位置を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteTextInRun">
+      <MemberSignature Language="C#" Value="public int DeleteTextInRun (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 DeleteTextInRun(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.DeleteTextInRun(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">削除する文字数の現在位置を開始します。 現在の位置より後に続く文字を削除するのには正の値を指定します。現在の位置を前にある文字を削除するのには負の値を指定します。</param>
+        <summary>現在の指定された位置から指定数の文字を削除<see cref="T:System.Windows.Documents.TextPointer" />です。</summary>
+        <returns>実際に削除される文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の位置の後の文字を削除するのには正の値を指定 (としてで<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>); の現在の位置を前にある文字を削除するのには負の値を指定 (としてで<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>)。  
+  
+ 実際に削除された文字数で指定された数よりも少ない可能性があります`count`です。  これは、ケースで、`count`を削除する存在より多くの文字を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは、位置、テキストが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentEnd">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer DocumentEnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer DocumentEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.DocumentEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />現在の位置に関連付けられたテキスト コンテナー内のコンテンツの最後。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />現在の位置に関連付けられたテキスト コンテナー内のコンテンツの最後。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextPointer.Parent%2A>の返された<xref:System.Windows.Documents.TextPointer>テキスト コンテナーでは常に (<xref:System.Windows.Controls.TextBlock>または<xref:System.Windows.Documents.FlowDocument>) ではなく、<xref:System.Windows.Documents.TextElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentStart">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer DocumentStart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer DocumentStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.DocumentStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextPointer" />現在の位置に関連付けられたテキスト コンテナー内のコンテンツの先頭にします。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />現在の位置に関連付けられたテキスト コンテナー内のコンテンツの先頭にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他の位置への相対オフセットで作業のベースライン位置として、このプロパティによって返される位置を使用します。  <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition%2A>と<xref:System.Windows.Documents.TextPointer.GetPositionAtOffset%2A>メソッドの位置と位置の間で変換する方法を提供する数分オフセットします。  
+  
+ <xref:System.Windows.Documents.TextPointer.Parent%2A>の返された<xref:System.Windows.Documents.TextPointer>テキスト コンテナーでは常に (<xref:System.Windows.Controls.TextBlock>または<xref:System.Windows.Documents.FlowDocument>) ではなく、<xref:System.Windows.Documents.TextElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAdjacentElement">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject GetAdjacentElement (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyObject GetAdjacentElement(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetAdjacentElement(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />隣接する要素を検索する論理方向を指定する値。</param>
+        <summary>存在する場合、現在の罫線では、要素を返します<see cref="T:System.Windows.Documents.TextPointer" />指定した論理方向にします。</summary>
+        <returns>指定した隣接する要素<paramref name="direction" />、または<see langword="null" />隣接する要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される要素は、通常、<xref:System.Windows.Documents.TextElement>です。  A<xref:System.Windows.UIElement>場合、返されることができます、<xref:System.Windows.Documents.TextPointer>内の位置を示す、<xref:System.Windows.Documents.BlockUIContainer>要素または<xref:System.Windows.Documents.InlineUIContainer>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharacterRect">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect GetCharacterRect (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Rect GetCharacterRect(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetCharacterRect(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />境界ボックスのコンテンツを検索対象となる論理方向を指定する値。</param>
+        <summary>境界ボックスを返します (<see cref="T:System.Windows.Rect" />) コンテンツを囲む境界線の現在の<see cref="T:System.Windows.Documents.TextPointer" />指定した論理方向にします。</summary>
+        <returns>コンテンツを囲む境界線の現在の境界ボックス<see cref="T:System.Windows.Documents.TextPointer" />、指定した方向でまたは<see cref="P:System.Windows.Rect.Empty" />場合、現在は有効なレイアウト情報は使用できません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextElement>エッジでは、このメソッドのためのコンテンツは考慮されません。  場合、<xref:System.Windows.Documents.TextPointer>前に位置付けられます、<xref:System.Windows.Documents.TextElement>エッジ、戻り値は、次の境界ボックスではない<xref:System.Windows.Documents.TextElement>指定した方向にコンテンツ。  ゼロ幅、指定された方向にコンテンツがないかどうかは<xref:System.Windows.Rect>と共に、前のコンテンツの高さに一致する高さが返されます。  
+  
+ このメソッドによって実行される操作は、有効なレイアウトによって異なります。  必要に応じて、このメソッドは、操作を続行する前に有効なレイアウトを自動的に再生成しようとします。  レイアウトを再生成すると、比較的コストのかかる操作を指定できます。  使用して、<xref:System.Windows.Documents.TextPointer.HasValidLayout%2A>レイアウトを再生成する操作を実行する前に有効なレイアウトを確認するプロパティです。  詳細については、次を参照してください。[レイアウト](~/docs/framework/wpf/advanced/layout.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInsertionPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetInsertionPosition (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetInsertionPosition(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetInsertionPosition(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />最も近い挿入位置を検索する論理方向を指定する値。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />を指定した論理方向に最も近い挿入位置です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />を指定した方向に最も近い挿入位置です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 挿入位置は、任意セマンティック コンテンツ規則に関連付けられている可能性がありますに、新しいコンテンツを追加する位置です。  実際には、挿入位置は、キャレットを配置する場所のコンテンツで任意の場所です。  有効な例<xref:System.Windows.Documents.TextPointer>挿入位置ではない位置は 2 つの隣接する位置<xref:System.Windows.Documents.Paragraph>タグ (つまり、前の段落の終わりのタグと次の段落の開始タグの間で)。  
+  
+ 場合、<xref:System.Windows.Documents.TextPointer>既に、有効な挿入位置が、終了タグを指す空でない書式シーケンスのすぐ後ろに指定した方向にその位置の<xref:System.Windows.Documents.TextPointer>これによって返されるメソッドは、書式設定のシーケンスの終了直後に挿入位置を指すに調整します。 たとえば、マークアップ シーケンス`<Bold>a</Bold>b`です。 文字の間の 2 つのカーソル位置があることに注意してください`a`と`b`: いずれかの終わりの前にある`Bold`タグとに 1 つ`Bold`タグ。 場合<xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A>で呼び出されると、<xref:System.Windows.Documents.TextPointer>文字の直後に位置する`a`前に閉じるときの`Bold`タグを使用して、`direction`の<xref:System.Windows.Documents.LogicalDirection.Forward>、返された<xref:System.Windows.Documents.TextPointer>文字の直前の位置 をポイントするように調整`b`、終了後に`Bold`タグ。 ような調整は論理方向が逆で作業するときに書式設定タグを開くため実行します。 このメソッドは、ような場合に、挿入位置間のあいまいさの手段を提供します。  
+  
+ このメソッドは、構造タグのシーケンスが含まれているときに、挿入ポイントの選択的にも使用できます。 たとえば、決算残高と期首段落タグの間での位置にあるときに方向パラメーターは、する使用を次の段落の先頭に最も近い挿入ポイントを選択 (を指定して<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>) または前の段落の末尾 (を指定して<xref:System.Windows.Documents.LogicalDirection?displayProperty=nameWithType>)。  
+  
+ カーソル位置にあるポインターであるし、指定した隣接する書式設定タグが存在しません`direction`、返された<xref:System.Windows.Documents.TextPointer>、呼び出し元と同じ位置を指す<xref:System.Windows.Documents.TextPointer>です。  
+  
+ によって示される位置を基準に有効な挿入位置が存在しないことが可能であれば、<xref:System.Windows.Documents.TextPointer>です。  これは、参照先の内容が空のテーブルまたはリストと同様に構造的に完了していない場合に発生することができます。  このような場合、このメソッドだけを返します、<xref:System.Windows.Documents.TextPointer>と同じ位置に、<xref:System.Windows.Documents.TextPointer>からこのメソッドが呼び出されました。  このメソッドは常に有効な返します<xref:System.Windows.Documents.TextPointer>です。  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、 <xref:System.Windows.Documents.TextPointer.GetInsertionPosition%2A> 、指定したかどうかを確認する方法を<xref:System.Windows.Documents.TextElement>が印刷可能なコンテンツの空です。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetInsertionPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getinsertionposition)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetInsertionPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getinsertionposition)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineStartPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetLineStartPosition (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetLineStartPosition(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetLineStartPosition(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">開始位置を返す対象の行を決定するときにスキップされる行の開始マーカーの数。 負の値が前の行を指定、0 が、現在の行を指定し、正の値が次の行を指定します。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />現在相対指定される行の先頭に<see cref="T:System.Windows.Documents.TextPointer" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />指定した行の先頭を指す (で、 <see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" /> 'éý' <see cref="F:System.Windows.Documents.LogicalDirection.Forward" />)、または<see langword="null" />場合は、指定した行が範囲外か、それ以外の場合、配置できません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Documents.TextPointer>を指すあいまいな位置、たとえば、2 つの線の間で指定された方向に行<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>相対の開始行を選択しています。  
+  
+ このメソッドによって実行される操作は、有効なレイアウトによって異なります。  必要に応じて、このメソッドは、操作を続行する前に有効なレイアウトを自動的に再生成しようとします。  レイアウトを再生成すると、比較的コストのかかる操作を指定できます。  使用して<xref:System.Windows.Documents.TextPointer.HasValidLayout%2A>レイアウトを再生成する操作を実行する前に有効なレイアウトを確認します。  詳細については、次を参照してください。[レイアウト](~/docs/framework/wpf/advanced/layout.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineStartPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetLineStartPosition (int count, out int actualCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetLineStartPosition(int32 count, [out] int32&amp; actualCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetLineStartPosition(System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="actualCount" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="count">開始位置を返す対象の行を決定するときにスキップされる行の開始マーカーの数。 負の値が前の行を指定、0 が、現在の行を指定し、正の値が次の行を指定します。</param>
+        <param name="actualCount">このメソッドが戻るときに、開始位置を取得する行を決定するときにスキップされた行の開始マーカーの実際の数が含まれています。  この値より小さい<c>カウント</c>かどうかは、先頭または末尾のコンテンツが発生した前に、指定した数の行はスキップされます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />現在相対指定される行の先頭に<see cref="T:System.Windows.Documents.TextPointer" />、し、スキップされた行の数を報告します。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />指定した行の先頭を指す (で、 <see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" /> 'éý' <see cref="F:System.Windows.Documents.LogicalDirection.Forward" />)、または指定した行が範囲外の場合は、指定した行に最も近い行の先頭にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Documents.TextPointer>を指すあいまいな位置、たとえば、2 つの線の間で指定された方向に行、<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>プロパティが相対の開始行として選択されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextContextPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetNextContextPosition (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetNextContextPosition(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetNextContextPosition(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />次の記号を検索する論理方向を指定する値。</param>
+        <summary>指定した論理方向に次のシンボルへのポインターを返します。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />は要求された方向に次の記号をまたは<see langword="null" />場合、現在<see cref="T:System.Windows.Documents.TextPointer" />開始またはコンテンツの最後の罫線します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかは、シンボルを使用すると見なされます。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素に含まれている、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+ 次の記号としてカテゴリ化される場合<xref:System.Windows.Documents.TextPointerContext.EmbeddedElement>、 <xref:System.Windows.Documents.TextPointerContext.ElementStart>、または<xref:System.Windows.Documents.TextPointerContext.ElementEnd>(で識別される、<xref:System.Windows.Documents.TextPointer.GetPointerContext%2A>メソッド)、<xref:System.Windows.Documents.TextPointer>これによって返されるメソッドは現在の位置から 1 つの記号で高度なです。  
+  
+ 次の記号としてカテゴリ化される場合<xref:System.Windows.Documents.TextPointerContext.Text>、<xref:System.Windows.Documents.TextPointer>これによって返されるメソッドは次のテキスト以外の記号をテキスト過去の高度な (は、次が位置、<xref:System.Windows.Documents.TextPointerContext>は<xref:System.Windows.Documents.TextPointerContext.Text>)。  呼び出してを超えました。 正確なシンボル数が事前に計算する、<xref:System.Windows.Documents.TextPointer.GetTextRunLength%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。  この例では、<xref:System.Windows.Documents.TextPointer.GetNextContextPosition%2A>メソッドと組み合わせて、<xref:System.Windows.Documents.TextPointer.GetPointerContext%2A>を走査し、指定したシンボルを抽出メソッド<xref:System.Windows.Documents.TextElement>です。  
+  
+ 抽出する例を使用できますが、[!INCLUDE[TLA#tla_titlexaml](~/includes/tlasharptla-titlexaml-md.md)]構造体の内容を指定された<xref:System.Windows.Documents.TextElement>、わかりやすくするためだけのためのものでは、実稼働コードでは使用できません。  参照してください、<xref:System.Xml>名前空間を機能豊富な一連の型を使用して XML を処理するために設計されています。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetNextContextPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getnextcontextposition)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetNextContextPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getnextcontextposition)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextInsertionPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetNextInsertionPosition (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetNextInsertionPosition(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetNextInsertionPosition(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />次の挿入位置を検索する論理方向を指定する値。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />に指定した論理方向に次の挿入位置です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />は要求された方向には、次の挿入位置を識別する、または<see langword="null" />次の挿入位置が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *挿入位置*任意セマンティック コンテンツ規則に関連付けられている可能性がありますに、新しいコンテンツを追加する位置です。  実際には、挿入位置は、キャレットを配置する場所のコンテンツで任意の場所です。  有効な例<xref:System.Windows.Documents.TextPointer>挿入位置ではない位置は 2 つの隣接する位置<xref:System.Windows.Documents.Paragraph>タグ (つまり、前の段落の終わりのタグと次の段落の開始タグの間で)。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。 この例では、<xref:System.Windows.Documents.TextPointer.GetNextInsertionPosition%2A>の数をカウントするためにコンテンツの要素の境界を走査するメソッド<xref:System.Windows.Documents.Paragraph>要素が指定した 2 つの間で提示<xref:System.Windows.Documents.TextPointer>インスタンス。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetNextInsertionPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getnextinsertionposition)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetNextInsertionPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getnextinsertionposition)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOffsetToPosition">
+      <MemberSignature Language="C#" Value="public int GetOffsetToPosition (System.Windows.Documents.TextPointer position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetOffsetToPosition(class System.Windows.Documents.TextPointer position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetOffsetToPosition(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position">A<see cref="T:System.Windows.Documents.TextPointer" />する間隔 (シンボル) を検索する位置を指定します。</param>
+        <summary>現在のシンボルの数を返します<see cref="T:System.Windows.Documents.TextPointer" />、2 番目の指定と<see cref="T:System.Windows.Documents.TextPointer" />です。</summary>
+        <returns>現在のシンボルの相対数<see cref="T:System.Windows.Documents.TextPointer" />と<paramref name="position" />です。  負の値が示す現在<see cref="T:System.Windows.Documents.TextPointer" />によって指定された位置に依存して<paramref name="position" />、0 ことを示し、位置が等しいか、正の値が示す現在<see cref="T:System.Windows.Documents.TextPointer" />によって指定された位置の前に<paramref name="position" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかは、シンボルを使用すると見なされます。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素に含まれている、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。 この例では、<xref:System.Windows.Documents.TextPointer.GetOffsetToPosition%2A>という 2 つのオフセットを検索するメソッド<xref:System.Windows.Documents.TextPointer>インスタンスし、この情報を使用して保存し、選択内容を復元する<xref:System.Windows.Controls.RichTextBox>です。  例では、内容、<xref:System.Windows.Controls.RichTextBox>選択範囲を保存して復元する間で変更されていません。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetOffsetToPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getoffsettoposition)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetOffsetToPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getoffsettoposition)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="position" />現在の位置に関連付けられたテキスト コンテナーの外部での位置を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPointerContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointerContext GetPointerContext (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Documents.TextPointerContext GetPointerContext(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetPointerContext(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointerContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />隣接するコンテンツのカテゴリを決定する論理方向を指定する値。</param>
+        <summary>現在の横にあるコンテンツのカテゴリ インジケーターを返す<see cref="T:System.Windows.Documents.TextPointer" />指定した論理方向にします。</summary>
+        <returns>1 つ、<see cref="T:System.Windows.Documents.TextPointerContext" />を指定した論理方向の横にあるコンテンツのカテゴリを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。 この例では、<xref:System.Windows.Documents.TextPointer.GetPointerContext%2A>タグと終了要素タグが指定した 2 つの間の分散を計算するためのアルゴリズムを実装するメソッド<xref:System.Windows.Documents.TextPointer>位置。  各 +1、および各カウントが開始要素タグ終了要素タグは – 1 としてカウントされます。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetOffsetToPosition2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getoffsettoposition2)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetOffsetToPosition2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getoffsettoposition2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionAtOffset">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetPositionAtOffset (int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetPositionAtOffset(int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetPositionAtOffset(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="offset">計算して位置を返す対象の記号でのオフセット。  示されるは、逆の論理方向に位置を計算のオフセットが負の場合、<see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" />プロパティです。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />を現在の先頭からのシンボルで指定したオフセットで示される位置に<see cref="T:System.Windows.Documents.TextPointer" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />を指定したオフセットで示される位置または<see langword="null" />の対応する位置が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかは、シンボルを使用すると見なされます。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素に含まれている、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。 この例では、<xref:System.Windows.Documents.TextPointer.GetPositionAtOffset%2A>メソッド、任意のホスティングの段落およびを返す他と比較して指定した位置のオフセットを計算する 1 つのペアを実装するメソッド、<xref:System.Windows.Documents.TextPointer>指定段落内の指定したオフセット。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetPositionAtOffset](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_getpositionatoffset)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetPositionAtOffset](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_getpositionatoffset)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionAtOffset">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetPositionAtOffset (int offset, System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetPositionAtOffset(int32 offset, valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetPositionAtOffset(System.Int32,System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="offset">計算して位置を返す対象の記号でのオフセット。  オフセットは負の値の場合、返された<see cref="T:System.Windows.Documents.TextPointer" />、現在の前に<see cref="T:System.Windows.Documents.TextPointer" />以外の場合に従います。</param>
+        <param name="direction">1 つ、 <see cref="T:System.Windows.Documents.LogicalDirection" /> 、返された論理方向を指定する値<see cref="T:System.Windows.Documents.TextPointer" />です。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />を現在の先頭からのシンボルで指定したオフセットで示される位置に<see cref="T:System.Windows.Documents.TextPointer" />と指定した方向にします。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />を指定したオフセットで示される位置または<see langword="null" />場合は、コンテンツの終わりを超えて拡張して、オフセットします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかは、シンボルを使用すると見なされます。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素に含まれている、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextInRun">
+      <MemberSignature Language="C#" Value="public string GetTextInRun (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetTextInRun(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetTextInRun(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />を検索し、隣接するテキストを返す論理方向を指定する値。</param>
+        <summary>現在の横にある任意のテキストを含む文字列を返します<see cref="T:System.Windows.Documents.TextPointer" />指定した論理方向にします。</summary>
+        <returns>指定された論理方向に隣接するテキストを含む文字列または<see cref="F:System.String.Empty" />隣接するテキストが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、テキストの中断のない実行のみを返します。  いずれかの記号の型以外の場合は、何も返されない<xref:System.Windows.Documents.TextPointerContext.Text>は現在の横にある<xref:System.Windows.Documents.TextPointer>指定した方向にします。  同様に、次のテキスト以外の記号までしかテキストが返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。 この例では、<xref:System.Windows.Documents.TextPointer.GetTextInRun%2A>単純なテキストの抽出を実装するメソッド。  メソッドは、指定した 2 つの間のすべてのテキスト文字列の連結を返します<xref:System.Windows.Documents.TextPointer>インスタンス。  
+  
+ 例を使用して、2 つの間の任意のテキストを抽出する<xref:System.Windows.Documents.TextPointer>インスタンス、わかりやすくするためだけのためのものでは、実稼働コードでは使用できません。  代わりに、<xref:System.Windows.Documents.TextRange.Text%2A?displayProperty=nameWithType> プロパティを使用してください。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_GetTextInRun](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_gettextinrun)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_GetTextInRun](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_gettextinrun)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextInRun">
+      <MemberSignature Language="C#" Value="public int GetTextInRun (System.Windows.Documents.LogicalDirection direction, char[] textBuffer, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTextInRun(valuetype System.Windows.Documents.LogicalDirection direction, char[] textBuffer, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetTextInRun(System.Windows.Documents.LogicalDirection,System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+        <Parameter Name="textBuffer" Type="System.Char[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />を見つけ、隣接するテキストをコピー先となる論理方向を指定する値。</param>
+        <param name="textBuffer">任意のテキストのコピー先バッファー。</param>
+        <param name="startIndex">インデックス<c>textBuffer</c>のテキストのコピー書き込みを開始する位置。</param>
+        <param name="count">コピーする文字の最大数。</param>
+        <summary>呼び出し元が指定した文字配列に指定した方向に隣接するテキストから、指定した最大文字数をコピーします。</summary>
+        <returns>実際にコピーされた文字数<paramref name="textBuffer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、テキストの中断のない実行のみを返します。  いずれかの記号の型以外の場合は、何も返されない<xref:System.Windows.Documents.TextPointerContext.Text>は現在の横にある<xref:System.Windows.Documents.TextPointer>指定した方向にします。  同様に、次のテキスト以外の記号までしかテキストが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />0 未満かより大きい、<see cref="P:System.Array.Length" />プロパティ<paramref name="textBuffer" />です。  
+  
+ または  
+  
+ <paramref name="count" />0 未満かの残りの領域を超える<paramref name="textBuffer" />(<paramref name="textBuffer" />です。<see cref="P:System.Array.Length" /> マイナス<paramref name="startIndex" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextRunLength">
+      <MemberSignature Language="C#" Value="public int GetTextRunLength (System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTextRunLength(valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.GetTextRunLength(System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Windows.Documents.LogicalDirection" />文字の数をカウントする論理方向を指定する値。</param>
+        <summary>現在の間での Unicode 文字の数を返します<see cref="T:System.Windows.Documents.TextPointer" />と、テキスト以外の次のシンボル、指定した論理方向です。</summary>
+        <returns>現在の間での Unicode 文字の数<see cref="T:System.Windows.Documents.TextPointer" />と次のテキスト以外の記号。  この番号は、隣接するテキストがない場合は、0 にすることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかは、シンボルを使用すると見なされます。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素に含まれている、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasValidLayout">
+      <MemberSignature Language="C#" Value="public bool HasValidLayout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasValidLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.HasValidLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の位置に関連付けられたテキスト コンテナー (最新) レイアウトが有効であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、レイアウトは現在、無効です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、有効なレイアウトに依存する操作 (など、<xref:System.Windows.Documents.TextPointer.GetLineStartPosition%2A>メソッド、<xref:System.Windows.Documents.TextPointer.GetCharacterRect%2A>メソッド、および<xref:System.Windows.Documents.TextPointer.IsAtLineStartPosition%2A>プロパティ) 操作を続行する前に有効なレイアウトを自動的に再生成しようとしています。  レイアウトを再生成すると、比較的コストのかかる操作を指定できます。  このプロパティを使用して、レイアウトを再生成操作を実行する前に有効なレイアウトをチェックします。  詳細については、次を参照してください。[レイアウト](~/docs/framework/wpf/advanced/layout.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertLineBreak">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer InsertLineBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer InsertLineBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.InsertLineBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の位置に改行を挿入します。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />すぐ後ろに配置され、<see cref="T:System.Windows.Documents.LineBreak" />このメソッドによって挿入される要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertParagraphBreak">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer InsertParagraphBreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer InsertParagraphBreak() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.InsertParagraphBreak" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>段落区切りを現在の位置に挿入します。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />を先頭に (<see cref="P:System.Windows.Documents.TextElement.ContentStart" />) 新しい段落のです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の内部では、現在の位置はときに、このメソッドが呼び出された場合<xref:System.Windows.Documents.Paragraph>要素、既存の段落およびそのコンテンツが含まれていますが、現在の位置で 2 つの段落に分割されます。  このメソッドが呼び出された場合、現在の位置が既存の段落の内部ではない場合に、新しい空の段落が挿入されます。  このメソッドは、位置にある分割または段落を挿入するには適さない場合 (などの場合は、現在の位置の内側、<xref:System.Windows.Documents.Hyperlink>要素)、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドはなどのスコープに新しい段落を対応するために分割することはできませんの位置、<see cref="T:System.Windows.Documents.Hyperlink" />または<see cref="T:System.Windows.Documents.InlineUIContainer" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertTextInRun">
+      <MemberSignature Language="C#" Value="public void InsertTextInRun (string textData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertTextInRun(string textData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.InsertTextInRun(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textData">挿入するテキスト。</param>
+        <summary>テキストに指定されたテキストを挿入<see cref="T:System.Windows.Documents.Run" />現在位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Documents.TextPointer>によってスコープが設定されません、<xref:System.Windows.Documents.Run>要素、<xref:System.Windows.Documents.Run>と共に挿入、`textData`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の位置が内ではありません、<see cref="T:System.Windows.Documents.Run" />要素。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textData" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAtInsertionPosition">
+      <MemberSignature Language="C#" Value="public bool IsAtInsertionPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAtInsertionPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.IsAtInsertionPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の位置が、挿入位置であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、現在の位置は、挿入位置です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 挿入位置は、任意セマンティック コンテンツ規則に関連付けられている可能性がありますに、新しいコンテンツを追加する位置です。  実際には、挿入位置は、キャレットを配置する場所のコンテンツで任意の場所です。  有効な例<xref:System.Windows.Documents.TextPointer>挿入位置ではない位置は 2 つの隣接する位置<xref:System.Windows.Documents.Paragraph>タグ (つまり、前の段落の終わりのタグと次の段落の開始タグの間で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAtLineStartPosition">
+      <MemberSignature Language="C#" Value="public bool IsAtLineStartPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAtLineStartPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.IsAtLineStartPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の位置が行の先頭にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在の位置が; 行の先頭にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Documents.TextPointer>を指すあいまいな位置、たとえば、2 つの線の間で指定された方向に行、<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>プロパティが相対の開始行として選択されています。  
+  
+ このプロパティによって実行される操作は、有効なレイアウトによって異なります。  必要に応じて、このメソッドは、操作を続行する前に有効なレイアウトを自動的に再生成しようとします。  レイアウトを再生成すると、比較的コストのかかる操作を指定できます。  使用して、<xref:System.Windows.Documents.TextPointer.HasValidLayout%2A>レイアウトを再生成する操作を実行する前に有効なレイアウトを確認するプロパティです。  詳細については、次を参照してください。[レイアウト](~/docs/framework/wpf/advanced/layout.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInSameDocument">
+      <MemberSignature Language="C#" Value="public bool IsInSameDocument (System.Windows.Documents.TextPointer textPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsInSameDocument(class System.Windows.Documents.TextPointer textPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.IsInSameDocument(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="textPosition">A<see cref="T:System.Windows.Documents.TextPointer" />を現在の位置を比較する位置を指定します。</param>
+        <summary>指定した位置が、現在の位置と同じテキスト コンテナーかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="textPosition" />、現在の位置と同じテキスト コンテナー内にある位置を示す場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の関連するほとんどの操作<xref:System.Windows.Documents.TextPointer>インスタンスは、対象のインスタンスに同じテキスト コンテナーのスコープ内の位置が示されている場合にのみ有効です。  たとえば、<xref:System.Windows.Documents.TextPointer.CompareTo%2A>と<xref:System.Windows.Documents.TextPointer.GetOffsetToPosition%2A>でメソッドを使用することはできません、<xref:System.Windows.Documents.TextPointer>を現在の位置に関連付けられたテキスト コンテナーの外部での位置。  このメソッドを使用していることを確認、指定した<xref:System.Windows.Documents.TextPointer>はこのような操作の現在の位置と互換性ができます。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用を示します。  この例では、 <xref:System.Windows.Documents.TextPointer.IsInSameDocument%2A> 、指定したかどうかを確認する方法を<xref:System.Windows.Documents.TextPointer>他の指定した 2 つの間に配置された<xref:System.Windows.Documents.TextPointer>すべての 3 つの位置が同じテキスト コンテナーに属していることの保証がないときの状況でのインスタンス。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextPointer_IsInSameDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textpointer_isinsamedocument)]
+ [!code-vb[TextPointer_Snippets#_TextPointer_IsInSameDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textpointer_isinsamedocument)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="textPosition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.LogicalDirection LogicalDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Documents.LogicalDirection LogicalDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.LogicalDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.LogicalDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の位置に関連付けられているコンテンツを区別するために使用される現在の位置に関連付けられている論理方向を取得します。</summary>
+        <value><see cref="T:System.Windows.Documents.LogicalDirection" />現在の位置に関連付けられている値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの使用方法の例として、<xref:System.Windows.Documents.LogicalDirection>の<xref:System.Windows.Documents.TextPointer>返されるヒット テストによって方法では 2 つの文字のテキストの間にあるヒットします。 論理の方向は、実際にヒットする 2 つの文字を指定します: 左側または右側です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paragraph">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Paragraph Paragraph { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Paragraph Paragraph" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.Paragraph" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Paragraph</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合は、現在の位置のスコープの段落を取得します。</summary>
+        <value><see cref="T:System.Windows.Documents.Paragraph" />現在の位置のスコープをまたは<see langword="null" />このような段落が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextPointer.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の位置のスコープとなる論理上の親を取得します。</summary>
+        <value>現在の位置のスコープとなる論理親です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextPointer.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <returns>オブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,271 @@
+<Type Name="CompositionContract" FullName="System.Composition.Hosting.Core.CompositionContract">
+  <TypeSignature Language="C#" Value="public sealed class CompositionContract" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CompositionContract extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Hosting.Core.CompositionContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Runtime</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エクスポートで一致するように、合成エンジンは、パーツ間のアグリーメントをインポートを表します。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompositionContract (Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">コントラクトの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Composition.Hosting.Core.CompositionContract" />指定したコントラクト型を持つクラス。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompositionContract (Type contractType, string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType, string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">コントラクトの型。</param>
+        <param name="contractName">コントラクト名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Composition.Hosting.Core.CompositionContract" />クラスを指定したコントラクト名と型を使用します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompositionContract (Type contractType, string contractName, System.Collections.Generic.IDictionary&lt;string,object&gt; metadataConstraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType, string contractName, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; metadataConstraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.#ctor(System.Type,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="metadataConstraints" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">コントラクトの型。</param>
+        <param name="contractName">コントラクト名。</param>
+        <param name="metadataConstraints">コントラクトのメタデータの制約のコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Composition.Hosting.Core.CompositionContract" />指定したコントラクトの名前、種類、およびメタデータの制約を含むクラスです。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public System.Composition.Hosting.Core.CompositionContract ChangeType (Type newContractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Hosting.Core.CompositionContract ChangeType(class System.Type newContractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.ChangeType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newContractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="newContractType">新しいコントラクトの型。</param>
+        <summary>このオブジェクトと指定した型が、同じ名前と制約がある新しい契約を作成します。</summary>
+        <returns>作成されたコントラクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionContract.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトの名前を取得します。</summary>
+        <value>コントラクト名。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractType">
+      <MemberSignature Language="C#" Value="public Type ContractType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContractType" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionContract.ContractType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトの型を取得します。</summary>
+        <value>コントラクトの型。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトがのこのインスタンスと等しいかどうかを判断<see cref="T:System.Composition.Hosting.Core.CompositionContract" />です。</summary>
+        <returns>
+          指定したオブジェクトが現在のオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Composition.Hosting.Core.CompositionContract" />オブジェクト。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataConstraints">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt; MetadataConstraints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt; MetadataConstraints" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionContract.MetadataConstraints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトのメタデータの制約のコレクションを取得します。</summary>
+        <value>メタデータ制約のコレクション。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Composition.Hosting.Core.CompositionContract" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.Composition.Hosting.Core.CompositionContract" /> オブジェクトの文字列表現。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryUnwrapMetadataConstraint&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public bool TryUnwrapMetadataConstraint&lt;T&gt; (string constraintName, out T constraintValue, out System.Composition.Hosting.Core.CompositionContract remainingContract);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryUnwrapMetadataConstraint&lt;T&gt;(string constraintName, [out] !!T&amp; constraintValue, [out] class System.Composition.Hosting.Core.CompositionContract&amp; remainingContract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionContract.TryUnwrapMetadataConstraint``1(System.String,``0@,System.Composition.Hosting.Core.CompositionContract@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Runtime</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="constraintName" Type="System.String" />
+        <Parameter Name="constraintValue" Type="T&amp;" RefType="out" />
+        <Parameter Name="remainingContract" Type="System.Composition.Hosting.Core.CompositionContract&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メタデータ制約の値の型。</typeparam>
+        <param name="constraintName">メタデータ制約の名前。</param>
+        <param name="constraintValue">このメソッドが戻るときに見つからなかった場合、制約の値が含まれます。 このパラメーターは初期化前として処理されます。</param>
+        <param name="remainingContract">このメソッドが戻るとき、制約が見つかった場合は、削除、制約が設定されたコントラクトを保持します。 このパラメーターは初期化前として処理されます。</param>
+        <summary>存在する場合は、指定した型と名前を持つメタデータ制約を取得します。</summary>
+        <returns>
+          <see langword="true" />制約付きのメタデータ項目がラップされると、値を抽出します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

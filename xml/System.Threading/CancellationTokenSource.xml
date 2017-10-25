@@ -1,0 +1,594 @@
+<Type Name="CancellationTokenSource" FullName="System.Threading.CancellationTokenSource">
+  <TypeSignature Language="C#" Value="public class CancellationTokenSource : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CancellationTokenSource extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.CancellationTokenSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>取り消す必要があることを <see cref="T:System.Threading.CancellationToken" /> に通知します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、.NET Framework では、2 つのオブジェクトを含む非同期操作または長時間同期操作の連携によるキャンセル処理の統一されたモデルを使用します。  
+  
+-   A<xref:System.Threading.CancellationTokenSource>を通じてキャンセル トークンを提供するオブジェクト、<xref:System.Threading.CancellationTokenSource.Token%2A>プロパティと呼び出すことによって取り消しのメッセージ送信の<xref:System.Threading.CancellationTokenSource.Cancel%2A>または<xref:System.Threading.CancellationTokenSource.CancelAfter%2A>メソッドです。  
+  
+-   A<xref:System.Threading.CancellationToken>をキャンセルが要求されたかどうかを示すオブジェクト。  
+  
+ 連携によるキャンセル処理モデルを実装するための一般的なパターンは次のとおりです。  
+  
+-   <xref:System.Threading.CancellationTokenSource> オブジェクトのインスタンスを作成します。このオブジェクトでは、個々のキャンセル トークンへのキャンセル通知を管理し、送信します。  
+  
+-   <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> プロパティによって返されるトークンを、キャンセルをリッスンしているそれぞれのタスクまたはスレッドに渡します。  
+  
+-   呼び出す、<xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType>キャンセル トークンを受信する操作からのメソッドです。 各タスクまたはスレッドが、キャンセル要求に応答するためのメカニズムを提供します。 操作と正確に確認方法は、[キャンセル] を選択するかどうかは、アプリケーション ロジックに依存します。  
+  
+-   キャンセルの通知を提供する <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> メソッドを呼び出します。 これにより設定、<xref:System.Threading.CancellationToken.IsCancellationRequested%2A?displayProperty=nameWithType>プロパティにキャンセル トークンのすべてのコピーを`true`です。  
+  
+-   呼び出す、<xref:System.Threading.CancellationTokenSource.Dispose%2A>メソッドが完了すると、<xref:System.Threading.CancellationTokenSource>オブジェクト。  
+  
+ 詳細については、次を参照してください。[マネージ スレッドのキャンセル](~/docs/standard/threading/cancellation-in-managed-threads.md)です。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型のインスタンスを使用してが完了したら、直接的または間接的にそれを破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次の例では、11 個の異なる機器から 10 個の整数値を読み取るデータ コレクションのアプリケーションをエミュレートするために、乱数ジェネレーターを使用します。 ゼロの値は、操作を取り消す必要がある場合とない全体の平均を計算する必要があります、1 つの機器に測定が失敗したことを示します。  
+  
+ 例では、インスタンス化可能な操作のキャンセルを処理するために、<xref:System.Threading.CancellationTokenSource>に渡されるキャンセル トークンを生成するオブジェクト、<xref:System.Threading.Tasks.TaskFactory>オブジェクト。 <xref:System.Threading.Tasks.TaskFactory>オブジェクトはさらに、キャンセル トークンを渡しますの各タスクを特定のインストルメント化の測定値を収集します。 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%60%602%28System.Threading.Tasks.Task%7B%60%600%7D%5B%5D%2CSystem.Func%7BSystem.Threading.Tasks.Task%7B%60%600%7D%5B%5D%2C%60%601%7D%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType>メソッドが呼び出され、すべての測定値が正常に収集された後でのみ平均を計算することを確認します。 タスクがあるキャンセルされたためにない場合に呼び出し、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>メソッドが例外をスローします。  
+  
+ [!code-csharp[System.Threading.CancellationTokenSource.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.cancellationtokensource.class/cs/cancel1.cs#1)]
+ [!code-vb[System.Threading.CancellationTokenSource.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.cancellationtokensource.class/vb/cancel1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリックおよびプロテクト メンバー<see cref="T:System.Threading.CancellationTokenSource" />スレッド セーフでは、例外を除いて、複数のスレッドから同時に使用可能性があります<see cref="M:System.Threading.CancellationTokenSource.Dispose" />、ときに使用する必要がありますの他のすべての操作、<see cref="T:System.Threading.CancellationTokenSource" />オブジェクトが完了します。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CancellationTokenSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.CancellationTokenSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CancellationTokenSource (int millisecondsDelay);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 millisecondsDelay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="millisecondsDelay" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsDelay">この <see cref="T:System.Threading.CancellationTokenSource" /> を取り消すまで待機する時間間隔 (ミリ秒単位)。</param>
+        <summary>指定した遅延 (ミリ秒単位) が経過した後に取り消される <see cref="T:System.Threading.CancellationTokenSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウント ダウン、`millisecondsDelay`コンス トラクターの呼び出し時に開始します。  ときに、`millisecondsDelay`経過すると、構築された<xref:System.Threading.CancellationTokenSource>(既にキャンセルされていないが) 場合は取り消されます。  
+  
+ 後続の呼び出し<xref:System.Threading.CancellationTokenSource.CancelAfter%2A>がリセットされます、`millisecondsDelay`の構築された<xref:System.Threading.CancellationTokenSource>既にキャンセルされていない場合は、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsDelay" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CancellationTokenSource (TimeSpan delay);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan delay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="delay" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="delay">この <see cref="T:System.Threading.CancellationTokenSource" /> を取り消すまで待機する時間間隔。</param>
+        <summary>指定した期間の後に取り消される <see cref="T:System.Threading.CancellationTokenSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターの呼び出し中に、遅延のカウント ダウンを開始します。 遅延時間が経過した場合、構築された<xref:System.Threading.CancellationTokenSource>が取り消されると、既にキャンセルされていない場合。  
+  
+ 後続の呼び出し<xref:System.Threading.CancellationTokenSource.CancelAfter%2A>、構築済みの遅延をリセット<xref:System.Threading.CancellationTokenSource>既にキャンセルされていない場合は、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="delay" />
+          <see langword="." />
+          <see cref="P:System.TimeSpan.TotalMilliseconds" />-1 より大きいか小さい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取り消しの要求を伝えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられた<xref:System.Threading.CancellationToken>、キャンセルの通知し、状態に移行場所<xref:System.Threading.CancellationToken.IsCancellationRequested%2A>は true を返します。  
+  
+ 登録されているすべてのコールバックまたはキャンセル可能な操作、<xref:System.Threading.CancellationToken>実行されます。  
+  
+ キャンセル可能な操作と、トークンを使用して登録されたコールバックは、例外をスローする必要があります。  
+  
+ ただし、[キャンセル] のこのオーバー ロードが集計されますにスローされた例外、<xref:System.AggregateException>例外をスローして 1 つのコールバックが、実行されるをその他の登録済みのコールバック防ぐことはできません。  
+  
+ <xref:System.Threading.ExecutionContext>各コールバックを登録したときにキャプチャされ、コールバックが呼び出されるときに確立されます。  
+  
+   
+  
+## Examples  
+ 次の例では、11 個の異なる機器から 10 個の整数値を読み取るデータ コレクションのアプリケーションをエミュレートするために、乱数ジェネレーターを使用します。 ゼロの値は、操作を取り消す必要がある場合とない全体の平均を計算する必要があります、1 つの機器に測定が失敗したことを示します。  
+  
+ 例では、インスタンス化可能な操作のキャンセルを処理するために、<xref:System.Threading.CancellationTokenSource>に渡されるキャンセル トークンを生成するオブジェクト、<xref:System.Threading.Tasks.TaskFactory>オブジェクト。 <xref:System.Threading.Tasks.TaskFactory>オブジェクトはさらに、キャンセル トークンを渡しますの各タスクを特定のインストルメント化の測定値を収集します。 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%60%602%28System.Threading.Tasks.Task%7B%60%600%7D%5B%5D%2CSystem.Func%7BSystem.Threading.Tasks.Task%7B%60%600%7D%5B%5D%2C%60%601%7D%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType>メソッドが呼び出され、すべての測定値が正常に収集された後でのみ平均を計算することを確認します。 タスクがあるキャンセルされたためにない場合に呼び出し、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType>メソッドが例外をスローします。  
+  
+ [!code-csharp[System.Threading.CancellationTokenSource.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.cancellationtokensource.class/cs/cancel1.cs#1)]
+ [!code-vb[System.Threading.CancellationTokenSource.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.cancellationtokensource.class/vb/cancel1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">これは、<see cref="T:System.Threading.CancellationTokenSource" />は破棄されました。</exception>
+        <exception cref="T:System.AggregateException">関連付けられている登録済みのコールバックによってスローされたすべての例外を含んでいる集計例外<see cref="T:System.Threading.CancellationToken" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel (bool throwOnFirstException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cancel(bool throwOnFirstException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.Cancel(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="throwOnFirstException" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="throwOnFirstException">
+          例外を直ちに伝達する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>キャンセルの要求を伝え、残りのコールバックとキャンセル可能な操作を続けるかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられている<xref:System.Threading.CancellationToken>、キャンセルの通知し、状態に移行します場所<xref:System.Threading.CancellationToken.IsCancellationRequested%2A>返します`true`です。  
+  
+ 登録されているすべてのコールバックまたはキャンセル可能な操作、<xref:System.Threading.CancellationToken>実行されます。  
+  
+ キャンセル可能な操作と、トークンを使用して登録されたコールバックは、例外をスローする必要があります。  
+  
+ 場合`throwOnFirstException`は`true`、例外への呼び出しからすぐに反映<xref:System.Threading.CancellationTokenSource.Cancel%2A>、残りのコールバックとキャンセル可能な操作の処理を防止します。  
+  
+ 場合`throwOnFirstException`は`false`、このオーバー ロードにスローされる例外を集計、<xref:System.AggregateException>例外をスローして 1 つのコールバックが、実行されるをその他の登録済みのコールバック防ぐことはできません。  
+  
+ <xref:System.Threading.ExecutionContext>各コールバックを登録したときにキャプチャされ、コールバックが呼び出されるときに確立されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">これは、<see cref="T:System.Threading.CancellationTokenSource" />は破棄されました。</exception>
+        <exception cref="T:System.AggregateException">関連付けられている登録済みのコールバックによってスローされたすべての例外を含んでいる集計例外<see cref="T:System.Threading.CancellationToken" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAfter">
+      <MemberSignature Language="C#" Value="public void CancelAfter (int millisecondsDelay);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAfter(int32 millisecondsDelay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.CancelAfter(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsDelay" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsDelay">この <see cref="T:System.Threading.CancellationTokenSource" /> を取り消すまで待機する時間。</param>
+        <summary>指定したミリ秒数が経過した後の、この <see cref="T:System.Threading.CancellationTokenSource" /> の取り消し操作をスケジュールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウント ダウン、`millisecondsDelay`この呼び出し中に起動します。 ときに、`millisecondsDelay`経過すると、この<xref:System.Threading.CancellationTokenSource>が取り消されると、既にキャンセルされていない場合。  
+  
+ CancelAfter 後続の呼び出しがリセットされます、`millisecondsDelay`この<xref:System.Threading.CancellationTokenSource>既にキャンセルされていない場合は、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">場合にスローされる例外この<see cref="T:System.Threading.CancellationTokenSource" />は破棄されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">場合にスローされる例外<paramref name="millisecondsDelay" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelAfter">
+      <MemberSignature Language="C#" Value="public void CancelAfter (TimeSpan delay);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAfter(valuetype System.TimeSpan delay) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.CancelAfter(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delay" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="delay">この <see cref="T:System.Threading.CancellationTokenSource" /> を取り消すまで待機する時間。</param>
+        <summary>指定した期間が経過した後の、この <see cref="T:System.Threading.CancellationTokenSource" /> の取り消し操作を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">場合にスローされる例外この<see cref="T:System.Threading.CancellationTokenSource" />は破棄されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">ときにスローされる例外<paramref name="delay" />が-1 Int32.MaxValue より大きいか小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLinkedTokenSource">
+      <MemberSignature Language="C#" Value="public static System.Threading.CancellationTokenSource CreateLinkedTokenSource (params System.Threading.CancellationToken[] tokens);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.CancellationTokenSource CreateLinkedTokenSource(valuetype System.Threading.CancellationToken[] tokens) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.CreateLinkedTokenSource(System.Threading.CancellationToken[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationTokenSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokens" Type="System.Threading.CancellationToken[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="tokens">観察するためのキャンセル トークン インスタンスを含む配列。</param>
+        <summary>指定された配列のすべてのソース トークンが取り消された状態であるときに、取り消された状態になる <see cref="T:System.Threading.CancellationTokenSource" /> を作成します。</summary>
+        <returns>ソース トークンにリンクされている <see cref="T:System.Threading.CancellationTokenSource" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">A<see cref="T:System.Threading.CancellationTokenSource" />関連付けられているソースのいずれかのトークンは破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokens" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="tokens" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLinkedTokenSource">
+      <MemberSignature Language="C#" Value="public static System.Threading.CancellationTokenSource CreateLinkedTokenSource (System.Threading.CancellationToken token1, System.Threading.CancellationToken token2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.CancellationTokenSource CreateLinkedTokenSource(valuetype System.Threading.CancellationToken token1, valuetype System.Threading.CancellationToken token2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.CreateLinkedTokenSource(System.Threading.CancellationToken,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationTokenSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token1" Type="System.Threading.CancellationToken" />
+        <Parameter Name="token2" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="token1">観察する最初のキャンセル トークン。</param>
+        <param name="token2">観察する 2 番目のキャンセル トークン。</param>
+        <summary>すべてのソース トークンが取り消された状態であるときに、取り消された状態になる <see cref="T:System.Threading.CancellationTokenSource" /> を作成します。</summary>
+        <returns>ソース トークンにリンクされている <see cref="T:System.Threading.CancellationTokenSource" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">A<see cref="T:System.Threading.CancellationTokenSource" />関連付けられているソースのいずれかのトークンは破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.CancellationTokenSource" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Threading.CancellationTokenSource> を呼び出します。 `Dispose` メソッドによって、<xref:System.Threading.CancellationTokenSource> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Threading.CancellationTokenSource>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Threading.CancellationTokenSource>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Threading.CancellationTokenSource> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Threading.CancellationTokenSource> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CancellationTokenSource.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Threading.CancellationTokenSource" /> クラスによって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCancellationRequested">
+      <MemberSignature Language="C#" Value="public bool IsCancellationRequested { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCancellationRequested" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CancellationTokenSource.IsCancellationRequested" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Threading.CancellationTokenSource" /> に対して取り消しが要求されているかどうかを取得します。</summary>
+        <value>
+          この <see cref="T:System.Threading.CancellationTokenSource" /> に対して取り消しが要求されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを示すかどうかキャンセルが要求されてこのトークンのソースのように呼び出されたため、<xref:System.Threading.CancellationTokenSource.Cancel%2A>メソッドです。  
+  
+ このプロパティを返す場合`true`、ことが保証されるだけ取り消しが要求されていること。 対応するトークンを使用して登録されているすべてのハンドラーの実行が完了したこともキャンセル要求が完了したすべての登録済みハンドラーに反映することは保証されません。 追加の同期は特に関連するオブジェクトが同時にキャンセルされている状況で必要になる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Token">
+      <MemberSignature Language="C#" Value="public System.Threading.CancellationToken Token { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken Token" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CancellationTokenSource.Token" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Threading.CancellationToken" /> に関連付けられている <see cref="T:System.Threading.CancellationTokenSource" /> を取得します。</summary>
+        <value>この <see cref="T:System.Threading.CancellationToken" /> に関連付けられている <see cref="T:System.Threading.CancellationTokenSource" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">トークンのソースは破棄されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

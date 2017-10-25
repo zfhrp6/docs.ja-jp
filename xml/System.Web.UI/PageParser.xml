@@ -1,0 +1,208 @@
+<Type Name="PageParser" FullName="System.Web.UI.PageParser">
+  <TypeSignature Language="C#" Value="public sealed class PageParser : System.Web.UI.TemplateControlParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageParser extends System.Web.UI.TemplateControlParser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PageParser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.TemplateControlParser</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.Aspx ファイルのパーサーを実装します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、このクラスを使用して、.aspx ページを解析します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageParser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.PageParser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ページの解析中に使用する既定値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultApplicationBaseType">
+      <MemberSignature Language="C#" Value="public static Type DefaultApplicationBaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type DefaultApplicationBaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParser.DefaultApplicationBaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または元の型を設定、<see cref="T:System.Web.HttpApplication" />派生したインスタンス。</summary>
+        <value>元の型、<see cref="T:System.Web.HttpApplication" />派生したインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは前に、の Global.asax ファイルにアクセスする必要があります、`PreApplicationStart`イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPageBaseType">
+      <MemberSignature Language="C#" Value="public static Type DefaultPageBaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type DefaultPageBaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParser.DefaultPageBaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべてのページの派生元の型を設定します。</summary>
+        <value>型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、前にのみ設定できる、 `PreApplicationStart` Global.asax ファイルでイベントが発生します。 このプロパティは、いつでも読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPageParserFilterType">
+      <MemberSignature Language="C#" Value="public static Type DefaultPageParserFilterType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type DefaultPageParserFilterType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParser.DefaultPageParserFilterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または解析時に使用されるページのパーサー フィルターの種類を設定します。</summary>
+        <value>ページのパーサーのフィルターの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、前にアクセスする必要があります、 `PreApplicationStart` Global.asax ファイルでイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultUserControlBaseType">
+      <MemberSignature Language="C#" Value="public static Type DefaultUserControlBaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type DefaultUserControlBaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParser.DefaultUserControlBaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、すべてのユーザー コントロールの派生元の型を設定します。</summary>
+        <value>ユーザー コントロールの派生元の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、前にアクセスする必要があります、 `PreApplicationStart` Global.asax ファイルでイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EnableLongStringsAsResources">
+      <MemberSignature Language="C#" Value="public static bool EnableLongStringsAsResources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableLongStringsAsResources" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageParser.EnableLongStringsAsResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET が ASP.NET ページまたはコントロールを解析するときに発生する長い文字列の内部的な処理を最適化するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET が長さの文字列の内部的な処理を最適化する場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ASP.NET ページのパーサーは 256 以上の文字を含む一時的なリソースの文字列にリテラルの文字列に変換します。 このプロパティを設定できます`false`この動作を無効にするために、代わりにリテラル文字列を応答ストリームに直接書き込む。 このプロパティは、前に、Global.asax ファイルでのみ設定できる、`PreApplicationStart`イベントが発生します。 このプロパティは、いつでも読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompiledPageInstance">
+      <MemberSignature Language="C#" Value="public static System.Web.IHttpHandler GetCompiledPageInstance (string virtualPath, string inputFile, System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.IHttpHandler GetCompiledPageInstance(string virtualPath, string inputFile, class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageParser.GetCompiledPageInstance(System.String,System.String,System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="inputFile" Type="System.String" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">要求されたファイルの仮想パス。</param>
+        <param name="inputFile">ページの物理パス。</param>
+        <param name="context">現在の Web 要求に関する情報を含むオブジェクトです。</param>
+        <summary>特定の仮想パスのコンパイルされたページのインスタンスを返します。</summary>
+        <returns>要求されたページのコンパイル済みのインスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

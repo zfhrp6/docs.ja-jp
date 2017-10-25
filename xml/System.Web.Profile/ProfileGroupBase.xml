@@ -1,0 +1,348 @@
+<Type Name="ProfileGroupBase" FullName="System.Web.Profile.ProfileGroupBase">
+  <TypeSignature Language="C#" Value="public class ProfileGroupBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProfileGroupBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileGroupBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>グループ化された ASP.NET プロファイル プロパティの値に型指定されていないアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileGroupBase>でグループ化されたプロパティを作成するクラスが ASP.NET で使用される、<xref:System.Web.HttpContext.Profile%2A>現在のプロパティ<xref:System.Web.HttpContext>です。 使用してプロパティのグループとしてこれらのプロパティが指定されている場合、[プロファイル (ASP.NET 設定スキーマ) のプロパティの要素をグループ化](http://msdn.microsoft.com/en-us/b4e3672f-9653-4034-a178-fb358b02730e)ASP.NET は、グループ内の各プロパティの厳密に型指定されたアクセサーで新しいクラスを作成します。 新しいクラスが継承、<xref:System.Web.Profile.ProfileGroupBase>基本クラスです。 クラスの新しい呼び出しの厳密に型指定されたアクセサー、<xref:System.Web.Profile.ProfileGroupBase.GetPropertyValue%2A>と<xref:System.Web.Profile.ProfileGroupBase.SetPropertyValue%2A>のメソッド、<xref:System.Web.Profile.ProfileGroupBase>基底クラスを取得し、プロファイル プロパティの値をそれぞれ設定します。  
+  
+ <xref:System.Web.Profile.ProfileGroupBase>パスへの呼び出しを取得およびクラス プロパティの値を設定が継承、<xref:System.Web.Profile.ProfileBase>クラスに用意されている、<xref:System.Web.Profile.ProfileGroupBase.Init%2A>のメソッド、<xref:System.Web.Profile.ProfileGroupBase>クラスです。 参照してください、<xref:System.Web.Profile.ProfileBase>動作や、例外の詳細についてのクラスです。  
+  
+ このクラスは、コードから作成するものではありません。  
+  
+   
+  
+## Examples  
+ 次の Web.config ファイルのグループ名を持つプロパティのグループを含むユーザー プロファイルを指定して`Address`です。 に対して生成されるグループ化されたプロパティ、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>グループ名、たとえば、前に`Profile.Address.Street`です。 2 番目の例では、保管および構成済みのプロファイル プロパティを取得する ASP.NET ページを示します。  
+  
+```xml
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString=  
+      "Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx"  
+        name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <authorization>  
+      <deny users="?" />  
+    </authorization>  
+  
+    <membership defaultProvider="SqlProvider"   
+      userIsOnlineTimeWindow="15">  
+      <providers>  
+        <clear />  
+        <add   
+          name="SqlProvider"   
+          type="System.Web.Security.SqlMembershipProvider"   
+          connectionStringName="SqlServices"  
+          enablePasswordRetrieval="false"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"   
+          requiresUniqueEmail="false"  
+          passwordFormat="Hashed"  
+          applicationName="MyApplication" />  
+      </providers>  
+    </membership>  
+  
+    <profile enabled="true" defaultProvider="SqlProvider">  
+      <providers>  
+        <add  
+          name="SqlProvider"  
+          connectionStringName="SqlServices"  
+          applicationName="MyApplication"  
+          type="System.Web.Profile.SqlProfileProvider" />  
+      </providers>  
+  
+      <properties>  
+        <add name="ZipCode" />  
+        <group name="Address">  
+          <add name="Street" />  
+          <add name="City" />  
+          <add name="State" />  
+          <add name="CountryOrRegion" />  
+        </group>  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、ASP.NET ページを読み取り、ユーザー プロファイルに指定されたグループ化されたプロパティの設定を示しています。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileGroupBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileGroupBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Profile.ProfileGroupBase" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileGroupBase>でグループ化されたプロパティを作成するクラス、<xref:System.Web.HttpContext.Profile%2A>現在のプロパティ<xref:System.Web.HttpContext>です。 使用してプロパティのグループとしてこれらのプロパティが指定されている場合、[プロファイル (ASP.NET 設定スキーマ) のプロパティの要素をグループ化](http://msdn.microsoft.com/en-us/b4e3672f-9653-4034-a178-fb358b02730e)要素、ASP.NET 新しいクラスを作成、グループ内の各プロパティの厳密に型指定されたアクセサーでします。 新しいクラスが継承、<xref:System.Web.Profile.ProfileGroupBase>基本クラスです。  
+  
+ このクラスは、コードから作成するものではありません。  
+  
+   
+  
+## Examples  
+ 次の Web.config ファイルのグループ名を持つプロパティのグループを含むユーザー プロファイルを指定して`Address`です。 に対して生成されるグループ化されたプロパティ、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>グループ名、たとえば、前に`Profile.Address.Street`です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx"  
+             name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <authorization>  
+      <deny users="?" />  
+    </authorization>  
+  
+    <membership defaultProvider="SqlProvider"  
+                userIsOnlineTimeWindow="15">  
+      <providers>  
+        <clear />  
+        <add   
+          name="SqlProvider"   
+          type="System.Web.Security.SqlMembershipProvider"   
+          connectionStringName="SqlServices"  
+          enablePasswordRetrieval="false"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"   
+          requiresUniqueEmail="false"  
+          passwordFormat="Hashed"  
+          applicationName="MyApplication" />  
+      </providers>  
+    </membership>  
+  
+    <profile enabled="true" defaultProvider="SqlProvider">  
+      <providers>  
+        <add  
+          name="SqlProvider"  
+          connectionStringName="SqlServices"  
+          applicationName="MyApplication"  
+          type="System.Web.Profile.SqlProfileProvider" />  
+      </providers>  
+  
+      <properties>  
+        <add name="ZipCode" />  
+        <group name="Address">  
+          <add name="Street" />  
+          <add name="City" />  
+          <add name="State" />  
+          <add name="CountryOrRegion" />  
+        </group>  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次の ASP.NET ページを読み込んでユーザー プロファイルに指定されたグループ化されたプロパティを設定します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyValue (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyValue(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileGroupBase.GetPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">グループ化されたプロファイル プロパティの名前。</param>
+        <summary>グループ化されたプロファイルのプロパティの値を取得します。</summary>
+        <returns>として型指定されたグループ化されたプロファイル プロパティの値<see langword="object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルのクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`の各グループとプロパティで定義されているクラス、 [profile 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/ccb9bf3a-a044-464d-b89b-5cb5a3d389dd)構成セクション。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileGroupBase.GetPropertyValue%2A>から型指定されていない値を取得する方法を<xref:System.Web.Profile.ProfileProvider>生成されたアクセサーが指定された型としてキャストし、グループ化されたプロパティの値として返します。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileGroupBase.GetPropertyValue%2A>を名前で、アプリケーションのユーザー プロファイルのグループ化されたプロパティ値を取得する方法です。 返される値は、入力`object`取得されたときに特定のオブジェクト型としてキャストする必要があります。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、グループ化された名前のグループのメンバーとして、<xref:System.Web.HttpContext.Profile%2A>プロパティ、たとえば、`Profile.Address.City`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ASP.NET ページを読み取り、ユーザー プロファイルに指定されたグループ化されたプロパティの設定を示しています。 指定する Web.config ファイルの例では、ユーザー プロファイルのプロパティをグループ化の提示された例を参照してください、<xref:System.Web.Profile.ProfileGroupBase>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.Profile.ProfileBase parent, string myName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Init(class System.Web.Profile.ProfileBase parent, string myName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileGroupBase.Init(System.Web.Profile.ProfileBase,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.Profile.ProfileBase" />
+        <Parameter Name="myName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">継承するクラス<see cref="T:System.Web.Profile.ProfileBase" />に割り当てられている、<see cref="P:System.Web.HttpContext.Profile" />プロパティです。</param>
+        <param name="myName">プロファイル プロパティ グループの名前。</param>
+        <summary>ASP.NET で使用される、グループ化されたプロファイル プロパティの値と情報を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileGroupBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">グループ化されたプロファイル プロパティの名前。</param>
+        <summary>取得またはプロパティ名でインデックス付けされたグループ化されたプロファイル プロパティの値を設定します。</summary>
+        <value>指定したグループ化されたプロファイル プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、アプリケーションのユーザー プロファイルのグループ化されたプロパティ値を設定または取得することができます。 返される値は、入力<xref:System.Object>取得されたときに特定のオブジェクト型としてキャストする必要があります。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、名前のグループのメンバーとして、<xref:System.Web.HttpContext.Profile%2A?displayProperty=nameWithType>プロパティ、たとえば、`Profile.Address.City`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ASP.NET ページを読み取り、ユーザー プロファイルに指定されたグループ化されたプロパティの設定を示しています。 プロファイルのプロパティのグループを指定する Web.config ファイルの例は、の提示された例を参照してください、<xref:System.Web.Profile.ProfileGroupBase>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValue">
+      <MemberSignature Language="C#" Value="public void SetPropertyValue (string propertyName, object propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPropertyValue(string propertyName, object propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileGroupBase.SetPropertyValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">設定をグループ化されたプロパティの名前。</param>
+        <param name="propertyValue">グループ化されたプロパティに代入する値。</param>
+        <summary>グループ化されたプロファイルのプロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET を使用して、<xref:System.Web.Profile.ProfileBase>ユーザー プロファイルに使用されるクラスを作成するクラス。 ASP.NET が型の新しいクラスを作成して有効になっているユーザー プロファイルを持つアプリケーションが開始されると、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`の各グループとプロパティで定義されているクラス、 [profile 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/ccb9bf3a-a044-464d-b89b-5cb5a3d389dd)構成セクション。 厳密に型指定されたアクセサー、`ProfileCommon`クラスの呼び出し、<xref:System.Web.Profile.ProfileGroupBase.SetPropertyValue%2A>をグループ化されたプロパティを渡すメソッドが値を<xref:System.Web.Profile.ProfileProvider>データ ソースに保存するためです。  
+  
+ 使用することができます、<xref:System.Web.Profile.ProfileGroupBase.SetPropertyValue%2A>に値を代入するメソッド名で、アプリケーションのユーザー プロファイルのプロパティをグループ化します。 値は、入力`object,`型チェックは実行時に実行する、コンパイル時にないとします。 厳密に型指定のアクセス プロファイル プロパティの値をプロパティにアクセスできます、グループ化された名前のグループのメンバーとして、<xref:System.Web.HttpContext.Profile%2A>プロパティ、たとえば、`Profile.Address.City`です。  
+  
+   
+  
+## Examples  
+ 次の ASP.NET ページを読み込んでユーザー プロファイルに指定されたグループ化されたプロパティを設定します。 指定する Web.config ファイルの例では、ユーザー プロファイルのプロパティをグループ化の提示された例を参照してください、<xref:System.Web.Profile.ProfileGroupBase>クラスです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Profile.HttpProfileGroupBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.HttpProfileGroupBase/VB/defaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

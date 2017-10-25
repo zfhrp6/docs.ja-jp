@@ -1,0 +1,225 @@
+<Type Name="Saml2AuthorizationDecisionStatement" FullName="System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement">
+  <TypeSignature Language="C#" Value="public class Saml2AuthorizationDecisionStatement : System.IdentityModel.Tokens.Saml2Statement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2AuthorizationDecisionStatement extends System.IdentityModel.Tokens.Saml2Statement" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.Saml2Statement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;saml:AuthzDecisionStatement&gt;" /> SAML 2.0 で定義された要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2SecurityToken> セキュリティ トークンは、SAML アサーションを使用してそれぞれのクレームを指定します。サブジェクトが特定のリソースへのアクセスを承認されるかどうかを指定できます。 SAML アサーション内でクレームは、SAML ステートメントにより表されます。 SAML 2.0 の仕様が一連の SAML ステートメントの種類を定義し、それらのいずれかとして表されます、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement>クラスです。 内の SAML 2.0 アサーションで指定した場合、<xref:System.IdentityModel.Tokens.Saml2Assertion.Statements%2A?displayProperty=nameWithType>プロパティ、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement>指定のリソースへのアサーションのサブジェクトによるアクセスに関する承認決定をアサートします。 SAML 2.0 アサーションのサブジェクトがで指定された、<xref:System.IdentityModel.Tokens.Saml2Assertion.Subject%2A?displayProperty=nameWithType>プロパティです。 承認決定に関連するプロパティの一覧を次の表に示します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Decision%2A>|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A> プロパティで表されるリソースに関する SAML 証明機関によって与えられた承認許可。|  
+|<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Evidence%2A>|SAML 証明機関が承認決定のために依存する SAML アサーション セット。|  
+|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A>|アクセスが探索されるリソースを識別する URI 参照。|  
+|<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Actions%2A>|サブジェクトが <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A> プロパティによって表されるリソースに対して実行することを許可された一連のアクション。 各アクションがのインスタンスで表される<xref:System.IdentityModel.Tokens.Saml2Action>です。|  
+  
+ [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2AuthorizationDecisionStatement (Uri resource, System.IdentityModel.Tokens.SamlAccessDecision decision);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri resource, valuetype System.IdentityModel.Tokens.SamlAccessDecision decision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.#ctor(System.Uri,System.IdentityModel.Tokens.SamlAccessDecision)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resource" Type="System.Uri" />
+        <Parameter Name="decision" Type="System.IdentityModel.Tokens.SamlAccessDecision" />
+      </Parameters>
+      <Docs>
+        <param name="resource"><see cref="T:System.Uri" />リソースに関する承認決定が適用されます。 <see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource" /> プロパティを設定します。</param>
+        <param name="decision">A<see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" />意思決定を示す値。 <see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Decision" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement" />指定されたリソースの指定した意思決定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Actions%2A>プロパティが null の場合、新しいインスタンスを初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resource" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resource" />絶対 URI または空の相対 URI ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="decision" /> は有効な <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2AuthorizationDecisionStatement (Uri resource, System.IdentityModel.Tokens.SamlAccessDecision decision, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.Saml2Action&gt; actions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri resource, valuetype System.IdentityModel.Tokens.SamlAccessDecision decision, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.Saml2Action&gt; actions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.#ctor(System.Uri,System.IdentityModel.Tokens.SamlAccessDecision,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.Saml2Action})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resource" Type="System.Uri" />
+        <Parameter Name="decision" Type="System.IdentityModel.Tokens.SamlAccessDecision" />
+        <Parameter Name="actions" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.Saml2Action&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="resource"><see cref="T:System.Uri" />リソースに関する承認決定が適用されます。 <see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource" /> プロパティを設定します。</param>
+        <param name="decision">A<see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" />意思決定を示す値。 <see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Decision" /> プロパティを設定します。</param>
+        <param name="actions">コレクション<see cref="T:System.IdentityModel.Tokens.Saml2Action" />リソースに対して承認されるように操作を指定します。 <see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Actions" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement" />に対する指定されたアクションを指定されたリソースで指定した意思決定を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="resource" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="resource" />絶対 URI または空の相対 URI ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="decision" /> は有効な <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2Action&gt; Actions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.Saml2Action&gt; Actions" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2Action&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一連のアクションが、指定されたリソースに対して実行する権限を設定します。</summary>
+        <value>型のコレクション<see cref="T:System.IdentityModel.Tokens.Saml2Action" />承認済みのアクションを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応する、`<saml:Actions>`子要素です。 [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decision">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlAccessDecision Decision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Tokens.SamlAccessDecision Decision" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Decision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAccessDecision</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたリソースに関する SAML 証明機関で表示される決定を設定します。</summary>
+        <value>指定のリソースへのサブジェクトによるアクセスについて SAML 証明機関により実施された承認決定を指定する <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応する、`<saml:Decision>`子要素です。 [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">無効な値を設定しようとすると、<see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" />値が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EmptyResource">
+      <MemberSignature Language="C#" Value="public static readonly Uri EmptyResource;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Uri EmptyResource" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.EmptyResource" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の URI 参照を取得します。 その参照を使用して設定することがあります、<see cref="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource" />プロパティです。 使用すると、現在のドキュメントの開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の URI 参照。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evidence">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Evidence Evidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Evidence Evidence" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Evidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Evidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサーションのセットの設定の決定を下すの SAML 証明機関に依存します。 [Saml2Core、2.7.4]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2Evidence" />アサーションを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応する、`<saml:Evidence>`子要素です。 [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public Uri Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクセスの承認を要求するリソースを識別する URI 参照を設定します。</summary>
+        <value>A<see cref="T:System.Uri" />リソースを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応する、`Resource`属性[!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]です。  
+  
+ <xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource%2A>を絶対 URI または空の URI 参照には、プロパティを設定することがあります (<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.EmptyResource>)。 空の URI 参照に設定されている場合、意味は現在のドキュメントの先頭に定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ある値を設定しようとすると、<see langword="null" />に発生します。</exception>
+        <exception cref="T:System.ArgumentException">絶対 URI ではなくまたは空の相対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

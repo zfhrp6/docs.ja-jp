@@ -1,0 +1,249 @@
+<Type Name="ServiceKnownTypeAttribute" FullName="System.ServiceModel.ServiceKnownTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ServiceKnownTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceKnownTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceKnownTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シリアル化または逆シリアル化するときに、サービスによって使用される既知の型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute> は、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービス コントラクト (サービスとそのメソッドを定義するインターフェイス) の作成時に使用することを目的としています。 *既知の型*はシリアル化または逆シリアル化が発生したときに、オブジェクト グラフ内に存在する可能性があります。 既知の型の詳細については、次を参照してください。[データ コントラクトの既知の型](~/docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
+  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute.MethodName%2A> プロパティを使用するには、それぞれが既知の型である型の配列を返すメソッドを含むクラスを作成します。 属性を適用する場合は、`methodName` を型のリストを返すメソッドの名前に設定し、`declaringType` をメソッドを含む型に設定します。 メソッドは、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装する型を返す必要があります。 さらに、メソッドには、<xref:System.Reflection.ICustomAttributeProvider> 型のパラメーターを含める必要があります。  
+  
+ 属性は、インターフェイス、クラス、またはメソッドに複数回適用でき、適用するたびに新しい既知の型を指定できます。  
+  
+> [!NOTE]
+>  Microsoft Visual Basic または C# のコードでは、`ServiceKnownType` の代わりに `ServiceKnownTypeAttribute` という短い語を使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性がメソッド名と宣言型を指定するインターフェイスに、その属性を適用しています。  
+  
+ [!code-csharp[ServiceKnownTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/serviceknowntypeattribute/cs/source.cs#1)]
+ [!code-vb[ServiceKnownTypeAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/serviceknowntypeattribute/vb/source.vb#1)]  
+  
+ または、含める既知の型を指定する属性をインターフェイスに適用します。  
+  
+ [!code-csharp[ServiceKnownTypeAttribute#2](~/samples/snippets/csharp/VS_Snippets_CFX/serviceknowntypeattribute/cs/source.cs#2)]
+ [!code-vb[ServiceKnownTypeAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/serviceknowntypeattribute/vb/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceKnownTypeAttribute (string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceKnownTypeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">既知の型を返すメソッドの名前。</param>
+        <summary><see cref="T:System.ServiceModel.ServiceKnownTypeAttribute" /> クラスの新しいインスタンスを初期化し、既知の型を返すメソッドの名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.ServiceModel.ServiceKnownTypeAttribute> を既知の型を返すメソッドを含むクラスに適用するときに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceKnownTypeAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceKnownTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">サービスによって定義されるパラメーターまたは戻り値の中で使用できる既知の型を指定します。</param>
+        <summary>指定した既知の型を使用して <see cref="T:System.ServiceModel.ServiceKnownTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute> はメソッドに複数回適用でき、適用するたびに、メソッドによって返されるオブジェクト グラフ内に存在可能な、異なる既知の型を指定できます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性が含める型を指定するインターフェイスに、その属性を適用しています。  
+  
+ [!code-csharp[ServiceKnownTypeAttribute#2](~/samples/snippets/csharp/VS_Snippets_CFX/serviceknowntypeattribute/cs/source.cs#2)]
+ [!code-vb[ServiceKnownTypeAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/serviceknowntypeattribute/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceKnownTypeAttribute (string methodName, Type declaringType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string methodName, class System.Type declaringType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceKnownTypeAttribute.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="declaringType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">既知の型を返すメソッドの名前。</param>
+        <param name="declaringType">オブジェクト グラフの中で既知の型を使用できる型。</param>
+        <summary>既知の型を返すメソッドの名前と、既知の型を返すメソッドを含む型を指定して、<see cref="T:System.ServiceModel.ServiceKnownTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性がメソッド名と宣言型を指定するインターフェイスに、その属性を適用しています。  
+  
+ [!code-csharp[ServiceKnownTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/serviceknowntypeattribute/cs/source.cs#1)]
+ [!code-vb[ServiceKnownTypeAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/serviceknowntypeattribute/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public Type DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceKnownTypeAttribute.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の型を返すメソッドを含む型を取得します。</summary>
+        <value>既知の型を返すメソッドを含む <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceKnownTypeAttribute.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の型のコレクションを返すメソッドの名前を取得します。</summary>
+        <value>既知の型を返すメソッドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute.MethodName%2A> は、<xref:System.ServiceModel.ServiceKnownTypeAttribute.DeclaringType%2A> プロパティによって指定される型に対するメソッドの名前でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceKnownTypeAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト グラフに含めることができる既知の型。</summary>
+        <value>既知の型の <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

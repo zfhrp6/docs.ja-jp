@@ -1,0 +1,173 @@
+<Type Name="StreamInfo" FullName="System.IO.Packaging.StreamInfo">
+  <TypeSignature Language="C#" Value="public class StreamInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StreamInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.StreamInfo" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセスおよび内の I/O ストリームを操作するための情報を提供する<see cref="T:System.IO.Packaging.Package" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompressionOption">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.CompressionOption CompressionOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.CompressionOption CompressionOption" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.StreamInfo.CompressionOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CompressionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Packaging.CompressionOption" />ストリームを設定します。</summary>
+        <value>パッケージ ストリームの圧縮オプションの設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.FreezableCollection%601.Enumerator.System%23IDisposable%23Dispose%2A>は、ストリームで呼び出されて、 <xref:System.IO.Packaging.StreamInfo.CompressionOption%2A> CompressionOption を返します。<xref:System.IO.Packaging.CompressionOption.NotCompressed>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionOption">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.EncryptionOption EncryptionOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.EncryptionOption EncryptionOption" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.StreamInfo.EncryptionOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Packaging.EncryptionOption" />ストリームを設定します。</summary>
+        <value>パッケージ ストリームの暗号化オプションの設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.FreezableCollection%601.Enumerator.System%23IDisposable%23Dispose%2A>は、ストリームで呼び出されて、 <xref:System.IO.Packaging.StreamInfo.EncryptionOption%2A> EncryptionOption を返します。<xref:System.IO.Packaging.EncryptionOption.None>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StreamInfo.GetStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返しますが、既定値に、ストリームが開かれている<see cref="T:System.IO.FileMode" />と<see cref="T:System.IO.FileAccess" />です。</summary>
+        <returns>既定で、I/O ストリームが開いている<see cref="T:System.IO.Packaging.Package" />ルート<see cref="T:System.IO.FileMode" />と<see cref="T:System.IO.FileAccess" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、 <xref:System.IO.Packaging.StreamInfo.GetStream%2A> (パラメーターなし)、メソッドは、ファイル モードで、ストリームを開いて<xref:System.IO.FileMode.OpenOrCreate>と既定のストレージ ルート<xref:System.IO.FileAccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream (System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream(valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StreamInfo.GetStream(System.IO.FileMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">ストリームを開くファイル モード。</param>
+        <summary>返しますが、指定した I/O ストリームが開かれた<see cref="T:System.IO.FileMode" />です。</summary>
+        <returns>指定したファイルに、ストリームが開いている<paramref name="mode" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.IO.Packaging.StreamInfo.GetStream%2A>メソッドは、既定ストレージのルートでストリームを開きます<xref:System.IO.FileAccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream (System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.StreamInfo.GetStream(System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mode">ストリームを開くファイル モード。</param>
+        <param name="access">ストリームに対する読み取りまたは書き込みするためのファイル アクセス モード。</param>
+        <summary>返しますが、指定した I/O ストリームが開かれた<see cref="T:System.IO.FileMode" />を使用して、指定された<see cref="T:System.IO.FileAccess" />です。</summary>
+        <returns>指定した I/O ストリームが開いている<see cref="T:System.IO.FileMode" />を使用して、指定された<see cref="T:System.IO.FileAccess" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.StreamInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームの名前を取得します。</summary>
+        <value>このストリームの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.FreezableCollection%601.Enumerator.System%23IDisposable%23Dispose%2A>は、ストリームで呼び出されて、<xref:System.IO.Packaging.StreamInfo.Name%2A>プロパティが空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,119 @@
+<Type Name="PlaceHolder" FullName="System.Web.UI.WebControls.PlaceHolder">
+  <TypeSignature Language="C#" Value="public class PlaceHolder : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PlaceHolder extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PlaceHolder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.PlaceHolderControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上に動的に追加されたサーバー コントロールを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、 <xref:System.Web.UI.WebControls.PlaceHolder> Web ページに動的に追加されたサーバー コントロールを格納するコンテナーと同様に制御します。 <xref:System.Web.UI.WebControls.PlaceHolder>コントロールが表示される出力を生成しないと、Web ページの他のコントロールのコンテナーとしてのみ使用されます。 使用することができます、<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>を追加、挿入、または内のコントロールを削除するコレクション、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:PlaceHolder  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、動的にコントロールを追加する方法を示します、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。  
+  
+ [!code-aspx-csharp[PlaceHolder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PlaceHolder/CS/placeholdercs.aspx#1)]
+ [!code-aspx-vb[PlaceHolder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PlaceHolder/VB/placeholdervb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PlaceHolder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PlaceHolder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.PlaceHolder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PlaceHolder.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのコントロールにテーマを適用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テーマを使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>プロパティは、テーマが有効になっているかどうかを示す、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。 <xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>プロパティに含まれるコントロールのテーマが有効になっているかどうかにも影響その<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>コレクション。 ときに、<xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するテーマのアプリケーションのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。  
+  
+ ときに、<xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>プロパティは`false`、テーマのディレクトリは検索されませんの内容と、<xref:System.Web.UI.Control.SkinID%2A>プロパティは使用されません。  
+  
+ テーマは、ページ、コンテナー、または制御レベルで有効にすることができます。 テーマは、ページまたはコンテナー レベルで無効にすると、ページまたはコンテナーに含まれるすべてのコントロールは無効です。  
+  
+ できます、<xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>プロパティおよび<xref:System.Web.UI.Control.EnableTheming%2A>別にするプロパティです。 たとえば場合、<xref:System.Web.UI.Page>テーマを無効にすると、コントロールを含むが、<xref:System.Web.UI.WebControls.PlaceHolder.EnableTheming%2A>コントロールのプロパティを指定できます`true`中に、<xref:System.Web.UI.Control.EnableTheming%2A>プロパティは`false`します。 テーマは、ページ レベルで無効になっていますが、テーマに適用されるなし、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,73 @@
+<Type Name="PersistableIdleAction" FullName="System.Activities.PersistableIdleAction">
+  <TypeSignature Language="C#" Value="public enum PersistableIdleAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PersistableIdleAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.PersistableIdleAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>永続化が許可されている場合に、ワークフローがアイドル状態になると発生するアクションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スケジューラーにそれ以上保留中の作業項目がなくなり、ワークフロー ランタイムが永続できる場合、<xref:System.Activities.WorkflowApplication.PersistableIdle%2A> 関数が呼び出されます。 永続化が許可されていない場合には <xref:System.Activities.WorkflowApplication.Idle%2A> 関数が呼び出され、永続化が許可されている場合には <xref:System.Activities.WorkflowApplication.Idle%2A> と <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> の両方が呼び出されることに注意してください。 ない場合、既定のアクションは、none<xref:System.Activities.WorkflowApplication.PersistableIdle%2A>ハンドラーを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.PersistableIdleAction None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.PersistableIdleAction.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.PersistableIdleAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクションが何も起こされないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="Persist" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.PersistableIdleAction Persist = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.PersistableIdleAction.Persist" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.PersistableIdleAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.WorkflowApplication" /> がワークフローを永続化するよう指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="Unload" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Activities.PersistableIdleAction Unload = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.PersistableIdleAction.Unload" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.PersistableIdleAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.WorkflowApplication" /> がワークフローを永続化してアンロードするよう指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

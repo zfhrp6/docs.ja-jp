@@ -1,0 +1,222 @@
+<Type Name="StringLengthAttribute" FullName="System.ComponentModel.DataAnnotations.StringLengthAttribute">
+  <TypeSignature Language="C#" Value="public class StringLengthAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringLengthAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.StringLengthAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.ValidationAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドで使用できる最小文字長と最大文字長を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、データ モデルでの CRUD (作成、読み取り、更新、削除) 操作を使用します。 各フィールドの文字の最小値と最大の長さを指定するには、データを挿入または更新します。 文字データ型の場合、<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength%2A>と<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength%2A>プロパティは、文字列を格納するために必要なバイトの最大数を識別します。  
+  
+   
+  
+## Examples  
+ 次の例では、フィールド内の文字数を制限する方法を示します。 この例は、AdventureWorksLT データベースの Products テーブル内の ThumbnailPhotoFileName フィールドで動作します。 フィールドでは、制限の 4 文字を適用することで、<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute>部分クラスを Product エンティティを表す属性です。  
+
+```csharp  
+[MetadataType(typeof(ProductMetadata))]  
+public partial class Product  
+{  
+  
+}  
+  
+public class ProductMetadata  
+{  
+  
+    [ScaffoldColumn(true)]  
+    [StringLength(4, ErrorMessage = "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")]  
+    public object ThumbnailPhotoFileName;  
+  
+}  
+```  
+  
+```vb  
+<MetadataType(GetType(ProductMetadata))> _   
+Public Partial Class Product   
+  
+End Class   
+  
+Public Class ProductMetadata   
+  
+    <ScaffoldColumn(True)> _   
+    <StringLength(4, ErrorMessage := "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")> _   
+    Public ThumbnailPhotoFileName As Object   
+  
+End Class  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringLengthAttribute (int maximumLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 maximumLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="maximumLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="maximumLength">文字列の最大長。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.StringLengthAttribute" />指定された最大長を使用して、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatErrorMessage">
+      <MemberSignature Language="C#" Value="public override string FormatErrorMessage (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string FormatErrorMessage(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証エラーの原因となったフィールドの名前。</param>
+        <summary>指定したエラー メッセージに書式を適用します </summary>
+        <returns>書式設定されたエラー メッセージ。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="maximumLength" /> が負の値です。  
+  
+ または  
+  
+ <paramref name="maximumLength" /> は <paramref name="minimumLength" /> より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが有効かどうかを判断します </summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトが無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトが有効かどうかを判断します。 オブジェクトの値が場合`null`メソッドは、オブジェクトを自動的に検証します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="maximumLength" /> が負の値です。  
+  
+ または  
+  
+ <paramref name="maximumLength" /> は <see cref="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength" /> より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumLength">
+      <MemberSignature Language="C#" Value="public int MaximumLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumLength" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または文字列の最大長を設定します。</summary>
+        <value>文字列の最大長。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumLength">
+      <MemberSignature Language="C#" Value="public int MinimumLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumLength" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または文字列の最小の長さを設定します。</summary>
+        <value>文字列の最小長。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

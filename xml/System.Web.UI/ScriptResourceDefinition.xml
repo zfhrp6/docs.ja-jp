@@ -1,0 +1,218 @@
+<Type Name="ScriptResourceDefinition" FullName="System.Web.UI.ScriptResourceDefinition">
+  <TypeSignature Language="C#" Value="public class ScriptResourceDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScriptResourceDefinition extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptResourceDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スクリプト リソースの場所を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.ScriptResourceDefinition>オブジェクトが 1 つの論理スクリプト リソースを表します。 このリソースは、コンテンツ配信ネットワーク (CDN) で、デバッグ バージョン、リリース バージョンでは、バージョンなど、いくつか異なる物理の表現があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptResourceDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptResourceDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ScriptResourceDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CdnDebugPath">
+      <MemberSignature Language="C#" Value="public string CdnDebugPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CdnDebugPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.CdnDebugPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテンツ配信ネットワーク (CDN) で、スクリプト リソースのデバッグ モードのパスを設定します。</summary>
+        <value>デバッグ スクリプト リソースが含まれている CDN のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、ページの CDN サポートを有効にできます CDN パスを参照するとき、<xref:System.Web.UI.ScriptManager.EnableCdn%2A>プロパティ<xref:System.Web.UI.ScriptManager>に`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CdnPath">
+      <MemberSignature Language="C#" Value="public string CdnPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CdnPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.CdnPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテンツ配信ネットワーク (CDN) で、スクリプト リソースのリリース モードのパスを設定します。</summary>
+        <value>CDN のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、ページの CDN サポートを有効にできます CDN パスを参照するとき、<xref:System.Web.UI.ScriptManager.EnableCdn%2A>プロパティ<xref:System.Web.UI.ScriptManager>に`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CdnSupportsSecureConnection">
+      <MemberSignature Language="C#" Value="public bool CdnSupportsSecureConnection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CdnSupportsSecureConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.CdnSupportsSecureConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、 <see cref="T:System.Web.UI.ScriptManager" /> HTTPS を使用して、ページにアクセスする場合は、コンテンツ配信ネットワーク (CDN) のパスへの接続をセキュリティで保護を使用して、スクリプト リソースをアクセスする必要があるかどうか。</summary>
+        <value>
+          <see langword="true" />HTTPS を使用して、CDN にアクセスする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ScriptResourceDefinition.CdnSupportsSecureConnection%2A>から関連付けられているスクリプト リソースにアクセスする必要があるかどうかを確認するプロパティ、 <xref:System.Web.UI.ScriptManager> CDN へのセキュリティで保護された接続 (SSL) を使用します。 使用して、<xref:System.Web.UI.ScriptResourceDefinition.CdnSupportsSecureConnection%2A>プロパティ、Web アプリケーションが SSL をサポートする CDN からセキュリティで保護されたコンテンツを要求しようとすると、ブラウザーから警告メッセージを回避できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugPath">
+      <MemberSignature Language="C#" Value="public string DebugPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DebugPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.DebugPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデバッグ モードが有効になっているときに使用されるスクリプト リソースのデバッグ モードのパスを設定します。</summary>
+        <value>デバッグ モードが有効になっているときに使用されるスクリプト リソースのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadSuccessExpression">
+      <MemberSignature Language="C#" Value="public string LoadSuccessExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoadSuccessExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.LoadSuccessExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または JavaScript ファイルが正常に読み込まれたかどうかを検出するために使用される JavaScript 式を設定します。</summary>
+        <value>JavaScript 式です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 組み合わせてこのプロパティは使用、<xref:System.Web.UI.ScriptManager.EnableCdnFallback%2A?displayProperty=nameWithType>スクリプトは、CDN からの読み込みに失敗した場合、ローカル サーバーの場所から、ライブラリを読み込むには戻ることインライン スクリプトを表示するプロパティです。  
+  
+ Microsoft からのスクリプト ライブラリ、この値が既に設定されます。 スクリプトを登録して、CDN フォールバック サポートを取得する場合は、式にこのプロパティを設定するとします。 たとえば、jQuery ライブラリが読み込まれているかどうかをテストするには、次のような式を使用することができます。  
+  
+ `typeof(window.jQuery) !== "undefined"`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定スクリプト リソースのリリース モードのパス。</summary>
+        <value>スクリプト リソースのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly ResourceAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly ResourceAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.ResourceAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスクリプトのリソースを格納しているアセンブリ オブジェクトを設定します。</summary>
+        <value>スクリプト リソースを含むアセンブリのオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceName">
+      <MemberSignature Language="C#" Value="public string ResourceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResourceName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptResourceDefinition.ResourceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したリソース アセンブリにスクリプト リソースの名前を設定します。</summary>
+        <value>スクリプト リソースの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,399 @@
+<Type Name="X509AsymmetricSecurityKey" FullName="System.IdentityModel.Tokens.X509AsymmetricSecurityKey">
+  <TypeSignature Language="C#" Value="public class X509AsymmetricSecurityKey : System.IdentityModel.Tokens.AsymmetricSecurityKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509AsymmetricSecurityKey extends System.IdentityModel.Tokens.AsymmetricSecurityKey" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.X509AsymmetricSecurityKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.AsymmetricSecurityKey</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>X.509 証明書の非対称キーを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509AsymmetricSecurityKey (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を表す <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>指定した X.509 証明書を使用して、<see cref="T:System.IdentityModel.Tokens.X509AsymmetricSecurityKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptKey">
+      <MemberSignature Language="C#" Value="public override byte[] DecryptKey (string algorithm, byte[] keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] DecryptKey(string algorithm, unsigned int8[] keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.DecryptKey(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="keyData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">キーを復号化する暗号アルゴリズム。</param>
+        <param name="keyData">暗号化されたキーを格納する <see cref="T:System.Byte" /> の配列。</param>
+        <summary>指定した暗号アルゴリズムを使用して、指定した暗号化キーを復号化します。</summary>
+        <returns>復号化されたキーを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url> または <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl> フィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コンストラクターで指定した X.509 証明書には秘密キーはありません。  
+  
+ または  
+  
+ X.509 証明書に秘密キーはありますが、それは <see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムを使用して生成されたものではありません。  
+  
+ または  
+  
+ X.509 証明書に公開キーがあり、<see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムを使用して生成されていますが、<see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.KeyExchangeAlgorithm" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="algorithm" /> パラメーターがサポートされていません。 サポートされるアルゴリズムは <see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" /> と <see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptKey">
+      <MemberSignature Language="C#" Value="public override byte[] EncryptKey (string algorithm, byte[] keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] EncryptKey(string algorithm, unsigned int8[] keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.EncryptKey(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="keyData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">キーを暗号化する暗号アルゴリズム。</param>
+        <param name="keyData">暗号化するキーを含む <see cref="T:System.Byte" /> の配列。</param>
+        <summary>指定した暗号アルゴリズムを使用して、指定した暗号化キーを暗号化します。</summary>
+        <returns>暗号化されたキーを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url> または <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl> フィールドを使用して、アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コンストラクターに指定された X.509 証明書に公開キーはありますが、それは <see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムを使用して生成されたものではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> パラメーターがサポートされていません。 サポートされるアルゴリズムは <see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" /> と <see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsymmetricAlgorithm">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.AsymmetricAlgorithm GetAsymmetricAlgorithm (string algorithm, bool privateKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.AsymmetricAlgorithm GetAsymmetricAlgorithm(string algorithm, bool privateKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+        <Parameter Name="privateKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">作成する非対称アルゴリズム。</param>
+        <param name="privateKey">
+          アルゴリズムの作成に秘密キーが必要な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>指定された非対称暗号アルゴリズムを取得します。</summary>
+        <returns>指定した非対称暗号アルゴリズムを表す <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl>、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url>、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl>、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url>、または <xref:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature> フィールドを使用して、`algorithm` パラメーターを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="privateKey" /> が <see langword="true" /> ですが、コンストラクターで指定した X.509 証明書に秘密キーがありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" /> ですが、コンストラクターで指定した X.509 証明書の公開キーまたは秘密キーの種類が <see cref="T:System.Security.Cryptography.DSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" />、<see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" />、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" />、または <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /> ですが、コンストラクターで指定した X.509 証明書の公開キーまたは秘密キーの種類が <see cref="T:System.Security.Cryptography.RSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> がサポートされていません。 サポートされるアルゴリズムは、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" />、<see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" />、<see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" />、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" />、および <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashAlgorithmForSignature">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.HashAlgorithm GetHashAlgorithmForSignature (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.HashAlgorithm GetHashAlgorithmForSignature(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">ハッシュアルゴリズム。</param>
+        <summary>デジタル署名のハッシュを生成する暗号アルゴリズムを取得します。</summary>
+        <returns>デジタル署名のハッシュを生成する <see cref="T:System.Security.Cryptography.HashAlgorithm" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl>、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url>、または <xref:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature> フィールドを使用して、`algorithm` パラメーターを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="algorithm" /> がサポートされていません。 サポートされるアルゴリズムは <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" />、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" />、および <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignatureDeformatter">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.AsymmetricSignatureDeformatter GetSignatureDeformatter (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.AsymmetricSignatureDeformatter GetSignatureDeformatter(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.GetSignatureDeformatter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricSignatureDeformatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">インスタンスを取得するためのデジタル署名のデフォーマッタ アルゴリズム。</param>
+        <summary>デジタル署名のデフォーマッタ アルゴリズムを取得します。</summary>
+        <returns>デジタル署名のデフォーマッタ アルゴリズムを表す <see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl>、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url>、または <xref:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature> フィールドを使用して、`algorithm` パラメーターを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" /> ですが、コンストラクターで指定した X.509 証明書の公開キーの種類が <see cref="T:System.Security.Cryptography.DSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" /> または <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /> ですが、コンストラクターで指定した X.509 証明書の公開キーの種類が <see cref="T:System.Security.Cryptography.RSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> がサポートされていません。 サポートされるアルゴリズムは <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" /> です。  
+  
+ <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" /> および <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignatureFormatter">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.AsymmetricSignatureFormatter GetSignatureFormatter (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.AsymmetricSignatureFormatter GetSignatureFormatter(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.GetSignatureFormatter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricSignatureFormatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">インスタンスを取得するためのデジタル署名のフォーマッタ アルゴリズム。</param>
+        <summary>デジタル署名のフォーマッタ アルゴリズムを取得します。</summary>
+        <returns>デジタル署名のフォーマッタ アルゴリズムを表す <see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl>、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url>、または <xref:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature> フィールドを使用して、`algorithm` パラメーターを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コンストラクターで指定した X.509 証明書には秘密キーはありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" /> ですが、コンストラクターで指定した X.509 証明書の秘密キーの種類が <see cref="T:System.Security.Cryptography.DSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> が <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" /> または <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /> ですが、コンストラクターで指定した X.509 証明書の秘密キーの種類が <see cref="T:System.Security.Cryptography.RSA" /> ではありません。  
+  
+ または  
+  
+ <paramref name="algorithm" /> がサポートされていません。 サポートされるアルゴリズムは <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" /> です。  
+  
+ <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" /> および <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPrivateKey">
+      <MemberSignature Language="C#" Value="public override bool HasPrivateKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool HasPrivateKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.HasPrivateKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>秘密キーが使用可能かどうかを示す値を取得します。</summary>
+        <returns>
+          秘密キーが使用可能な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsymmetricAlgorithm">
+      <MemberSignature Language="C#" Value="public override bool IsAsymmetricAlgorithm (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsAsymmetricAlgorithm(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.IsAsymmetricAlgorithm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">暗号アルゴリズム。</param>
+        <summary>指定したアルゴリズムが非対称キーを使用するかどうか示す値を取得します。</summary>
+        <returns>
+          指定したアルゴリズムが <see langword="true" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.DsaSha1Signature" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha1Signature" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" />、または <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaOaepKeyWrap" /> の場合は <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaV15KeyWrap" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedAlgorithm">
+      <MemberSignature Language="C#" Value="public override bool IsSupportedAlgorithm (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSupportedAlgorithm(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.IsSupportedAlgorithm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">暗号アルゴリズム。</param>
+        <summary>指定したアルゴリズムがこのクラスでサポートされるかどうか示す値を取得します。</summary>
+        <returns>
+          指定したアルゴリズムが <see langword="true" />、<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl" />、<see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" />、<see cref="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" />、または <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url" /> であり、公開キーが適切な種類である場合は <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.IsSupportedAlgorithm%2A> メソッドは、次のいずれかに該当する場合に `true` を返します。  
+  
+-   `algorithm` パラメーターが <xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigDSAUrl> ですが、コンストラクターで指定した X.509 証明書の公開キーの種類が <xref:System.Security.Cryptography.DSA> ではありません。  
+  
+-   `algorithm` パラメーターが <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url>、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl>、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA1Url>、または <xref:System.IdentityModel.Tokens.SecurityAlgorithms.RsaSha256Signature> ですが、コンストラクターで指定した X.509 証明書の公開キーの種類が <xref:System.Security.Cryptography.RSA> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSymmetricAlgorithm">
+      <MemberSignature Language="C#" Value="public override bool IsSymmetricAlgorithm (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSymmetricAlgorithm(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.IsSymmetricAlgorithm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">暗号アルゴリズム。</param>
+        <summary>指定したアルゴリズムが対称キーを使用するかどうか示す値を取得します。</summary>
+        <returns>
+          指定したアルゴリズムが <see langword="true" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.HmacSha1Signature" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes128Encryption" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes192Encryption" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes256Encryption" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.TripleDesEncryption" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes128KeyWrap" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes192KeyWrap" />、<see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Aes256KeyWrap" />、または <see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.TripleDesKeyWrap" /><see cref="F:System.IdentityModel.Tokens.SecurityAlgorithms.Psha1KeyDerivation" />の場合は <see langword="false" />。それ以外の場合は 。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public override int KeySize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509AsymmetricSecurityKey.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書に関連付けられた公開キーのビット単位のサイズを取得します。</summary>
+        <value>X.509 証明書に関連付けられた公開キーのビット単位のサイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

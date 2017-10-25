@@ -1,0 +1,310 @@
+<Type Name="WsdlEndpointConversionContext" FullName="System.ServiceModel.Description.WsdlEndpointConversionContext">
+  <TypeSignature Language="C#" Value="public class WsdlEndpointConversionContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WsdlEndpointConversionContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.WsdlEndpointConversionContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム WSDL エクスポーターおよびインポーターに渡され、WSDL エンドポイントのメタデータのエクスポートおよびインポート プロセスをカスタマイズできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlEndpointConversionContext> クラスは、エンドポイントのカスタム WSDL が <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> を使用してエクスポートされるか、または <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> を使用してインポートされるコンテキストを表します。 次のプロパティを使用して、現在の WSDL の WSDL ドキュメント オブジェクト モデルを取得できます。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.ContractConversionContext%2A> プロパティは、エンドポイント コントラクトの <xref:System.ServiceModel.Description.WsdlContractConversionContext?displayProperty=nameWithType> を取得します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.Endpoint%2A> プロパティは、現在のエンドポイントの <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> を取得します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.WsdlBinding%2A> プロパティは、現在のエンドポイントのバインディングを取得します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.WsdlPort%2A> プロパティは、現在のエンドポイントのポートを取得します。  
+  
+-  
+  
+-   次のメソッドを使用して、エクスポートまたはインポートした WSDL 内で、適切なスコープでカスタム WSDL 要素の追加または削除を実行できます。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultBinding%2A> メソッドは、指定したエラーのエラー バインディングを返します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultDescription%2A> メソッドは、指定したエラー バインディングのエラーを返します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageBinding%2A> メソッドは、指定したメッセージのメッセージ バインディングを返します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageDescription%2A> メソッドは、指定したメッセージ バインディングのメッセージを返します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationBinding%2A> メソッドは、指定した操作の操作バインディングを返します。  
+  
+-   <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationDescription%2A> メソッドは、指定した操作バインディングの操作を返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContractConversionContext">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.WsdlContractConversionContext ContractConversionContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.WsdlContractConversionContext ContractConversionContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlEndpointConversionContext.ContractConversionContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.WsdlContractConversionContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポートまたはインポートされる <see cref="T:System.ServiceModel.Description.WsdlContractConversionContext" /> を取得します。</summary>
+        <value>エクスポートまたはインポートされる <see cref="T:System.ServiceModel.Description.WsdlContractConversionContext" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.ContractConversionContext%2A> を使用して、エンドポイントのコントラクトの変換コンテキストを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Endpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint Endpoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceEndpoint Endpoint" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlEndpointConversionContext.Endpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポートまたはインポートされる <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> を取得します。</summary>
+        <value>エクスポートまたはインポートされる <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlEndpointConversionContext.Endpoint%2A> プロパティを使用して、エクスポートまたはインポートされるサービス エンドポイントの説明を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFaultBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.FaultBinding GetFaultBinding (System.ServiceModel.Description.FaultDescription fault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.FaultBinding GetFaultBinding(class System.ServiceModel.Description.FaultDescription fault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultBinding(System.ServiceModel.Description.FaultDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.FaultBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fault" Type="System.ServiceModel.Description.FaultDescription" />
+      </Parameters>
+      <Docs>
+        <param name="fault">WSDL バインディングに関連付けられているエラーの <see cref="T:System.ServiceModel.Description.FaultDescription" />。</param>
+        <summary>エラーに関連付けられている WSDL バインディングを取得します。</summary>
+        <returns>エラーに関連付けられている WSDL <see cref="T:System.Web.Services.Description.FaultBinding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultDescription%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFaultDescription">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.FaultDescription GetFaultDescription (System.Web.Services.Description.FaultBinding faultBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.FaultDescription GetFaultDescription(class System.Web.Services.Description.FaultBinding faultBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultDescription(System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.FaultDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="faultBinding" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="faultBinding">WSDL エラー バインディングに関連付けられている <see cref="T:System.Web.Services.Description.FaultBinding" />。</param>
+        <summary>WSDL エラー バインディングに関連付けられているエラーの説明を取得します。</summary>
+        <returns>WSDL バインディングに関連付けられているエラーの <see cref="T:System.ServiceModel.Description.FaultDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetFaultBinding%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMessageBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.MessageBinding GetMessageBinding (System.ServiceModel.Description.MessageDescription message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.MessageBinding GetMessageBinding(class System.ServiceModel.Description.MessageDescription message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageBinding(System.ServiceModel.Description.MessageDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.MessageBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Description.MessageDescription" />
+      </Parameters>
+      <Docs>
+        <param name="message">説明に関連付けられている <see cref="T:System.ServiceModel.Description.MessageDescription" />。</param>
+        <summary>説明で指定されたメッセージの WSDL バインディングを取得します。</summary>
+        <returns>説明で指定されたメッセージの <see cref="T:System.Web.Services.Description.MessageBinding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageDescription%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMessageDescription">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessageDescription GetMessageDescription (System.Web.Services.Description.MessageBinding messageBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MessageDescription GetMessageDescription(class System.Web.Services.Description.MessageBinding messageBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageDescription(System.Web.Services.Description.MessageBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessageDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBinding" Type="System.Web.Services.Description.MessageBinding" />
+      </Parameters>
+      <Docs>
+        <param name="messageBinding">メッセージに関連付けられている <see cref="T:System.Web.Services.Description.MessageBinding" />。</param>
+        <summary>WSDL バインディングで指定されたメッセージの、メッセージの説明を取得します。</summary>
+        <returns>バインディングで指定されたメッセージの <see cref="T:System.ServiceModel.Description.MessageDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetMessageBinding%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationBinding GetOperationBinding (System.ServiceModel.Description.OperationDescription operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.OperationBinding GetOperationBinding(class System.ServiceModel.Description.OperationDescription operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationBinding(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operation" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="operation">バインディングに関連付けられている操作の <see cref="T:System.ServiceModel.Description.OperationDescription" />。</param>
+        <summary>説明で指定された操作の WSDL バインディングを取得します。</summary>
+        <returns>説明で指定された操作の <see cref="T:System.Web.Services.Description.OperationBinding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationDescription%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOperationDescription">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.OperationDescription GetOperationDescription (System.Web.Services.Description.OperationBinding operationBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.OperationDescription GetOperationDescription(class System.Web.Services.Description.OperationBinding operationBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationDescription(System.Web.Services.Description.OperationBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.OperationDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationBinding" Type="System.Web.Services.Description.OperationBinding" />
+      </Parameters>
+      <Docs>
+        <param name="operationBinding">説明に関連付けられている <see cref="T:System.Web.Services.Description.OperationBinding" />。</param>
+        <summary>WSDL バインディングに関連付けられた操作の操作説明を返します。</summary>
+        <returns>バインディングに関連付けられている操作の <see cref="T:System.ServiceModel.Description.OperationDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.WsdlEndpointConversionContext.GetOperationBinding%2A> メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WsdlBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Binding WsdlBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Binding WsdlBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlEndpointConversionContext.WsdlBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSDL エンドポイントの <see cref="T:System.Web.Services.Description.Binding" /> を取得します。</summary>
+        <value>WSDL エンドポイントの <see cref="T:System.Web.Services.Description.Binding" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WsdlPort">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Port WsdlPort { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Port WsdlPort" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlEndpointConversionContext.WsdlPort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Port</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSDL エンドポイントの <see cref="T:System.Web.Services.Description.Port" /> を取得します。</summary>
+        <value>WSDL エンドポイントの <see cref="T:System.Web.Services.Description.Port" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

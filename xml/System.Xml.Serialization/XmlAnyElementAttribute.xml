@@ -1,0 +1,323 @@
+<Type Name="XmlAnyElementAttribute" FullName="System.Xml.Serialization.XmlAnyElementAttribute">
+  <TypeSignature Language="C#" Value="public class XmlAnyElementAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlAnyElementAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlAnyElementAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するメンバー (の配列を返すフィールド<see cref="T:System.Xml.XmlElement" />または<see cref="T:System.Xml.XmlNode" />オブジェクト) をシリアル化または逆シリアル化対象のオブジェクト内の対応するメンバーを持たない任意の XML 要素を表すオブジェクトが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!TIP]
+>  ポータブル クラス ライブラリを使用して Silverlight、Windows Phone または Windows ストア アプリのプロジェクト、およびするなど、.NET Framework 4.0.3 を使用しているし、上、使用する<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XNode>の代わりに<xref:System.Xml.XmlElement>と<xref:System.Xml.XmlNode>です。  
+  
+ 使用して、<xref:System.Xml.Serialization.XmlAnyElementAttribute>メタデータ ドキュメントの一部として送信されるなど、XML ドキュメントの一部として送信されることができます (XML 要素) として任意のデータを格納します。  
+  
+ 適用、<xref:System.Xml.Serialization.XmlAnyElementAttribute>の配列を返すフィールドに<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクト。 オブジェクトがされているかどうかに応じて、次の 2 つの方法でこのようなフィールドを使用できるシリアル化または逆シリアル化します。 シリアル化、ノード、または XML 要素として、なしに対応するメンバー (、またはメンバー) オブジェクトのシリアル化される含まれていても、オブジェクトが生成されます。 指定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティの値、属性を適用するときにすべて<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトの配列に挿入される必要があります、同じ要素名と既定の名前空間、または、例外がスローされます。 設定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティ値を設定する必要がある、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティも、および<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトは同じ名前と名前空間の値にも必要です。 ない場合は<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値が指定されて、<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトは、要素名を持つことができます。  
+  
+ 呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>のメソッド、<xref:System.Xml.Serialization.XmlSerializer>クラス、逆シリアル化されるオブジェクトに対応するメンバーを持たないすべての要素を配列に収集されます。 逆シリアル化後のコレクションを反復処理する<xref:System.Xml.XmlElement>データを処理する項目。 指定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値、配列には、その名前を持つ XML 要素のみが含まれています。 指定しない場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値、配列には、クラスに対応するメンバーを持たないすべての要素が含まれています。 クラス、属性が適用される 1 つ以上のフィールドが含まれている場合を使用して、 <xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>、または<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>と<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティ、配列の内容を区別するためにします。 かどうか (複数のフィールド) のようなクラスにはも設定し、識別プロパティ値がない 1 つのフィールドが含まれます (つまり、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>と<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>) この配列には逆シリアル化には、既に他の配列に含まれていないすべての不明な XML 要素が含まれています。 クラスには、区別がない 2 つ以上のフィールドが含まれている場合<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>、または<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>と<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>値セットを逆シリアル化時の動作は指定されていません。  
+  
+ 適用することも、<xref:System.Xml.Serialization.XmlAnyElementAttribute>を返す 1 つのフィールドに<xref:System.Xml.XmlElement>オブジェクト。 これを行う場合のプロパティとメソッドを使用する必要があります、<xref:System.Xml.XmlElement>クラスを再帰的には、不明な要素を反復処理します。  
+  
+ 複数のインスタンスを適用することができます、<xref:System.Xml.Serialization.XmlAnyElementAttribute>クラスにメンバーを各インスタンスがあります明確な<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティの値。 または、同じ<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>インスタンスごとに、個別のプロパティが設定されて<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>インスタンスごとにプロパティ値を設定する必要があります。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnknownNode>と<xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute>のイベント、<xref:System.Xml.Serialization.XmlSerializer>を適用する場合は発生しません、<xref:System.Xml.Serialization.XmlAnyElementAttribute>クラスのメンバーにします。  
+  
+> [!NOTE]
+>  語を使用できます`XmlAnyElement`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlAnyElementAttribute>です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlAnyElementAttribute>という名前のフィールドに`AllElements`の配列を返す<xref:System.Xml.XmlElement>オブジェクト。  
+  
+ [!code-cpp[Classic XmlAnyElementAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlAnyElementAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlAnyElementAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlAnyElementAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlAnyElementAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlAnyElementAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlAnyElementAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.XmlAnyElementAttribute>コンス トラクター、フィールドのシリアル化をオーバーライドしているときにします。 シリアル化のオーバーライドの詳細については、次を参照してください。、<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlAnyElementAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML 要素の名前を<see cref="T:System.Xml.Serialization.XmlSerializer" />が生成されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />クラスし、XML ドキュメントで生成される XML 要素名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.XmlAnyElementAttribute>コンス トラクター、フィールドのシリアル化をオーバーライドしているときにします。 シリアル化のオーバーライドの詳細については、次を参照してください。、<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlAnyElementAttribute (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML 要素の名前を<see cref="T:System.Xml.Serialization.XmlSerializer" />が生成されます。</param>
+        <param name="ns">XML 要素の XML 名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />クラスし、XML ドキュメントと XML 名前空間で生成される XML 要素名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.XmlAnyElementAttribute>コンス トラクター、フィールドのシリアル化をオーバーライドしているときにします。 シリアル化のオーバーライドの詳細については、次を参照してください。、<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlAnyElementAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 要素名を設定します。</summary>
+        <value>XML 要素の名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティの値、属性を適用するときにすべて<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトの配列に挿入される必要があります、同じ要素名と既定の名前空間、または、例外がスローされます。 設定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティ値を設定する必要がある、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティも、および<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトは同じ名前と名前空間の値にも必要です。 ない場合は<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値が指定されて、<xref:System.Xml.XmlElement>または<xref:System.Xml.XmlNode>オブジェクトは、要素名を持つことができます。  
+  
+ 呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>のメソッド、<xref:System.Xml.Serialization.XmlSerializer>クラス、逆シリアル化されるオブジェクトに対応するメンバーを持たないすべての属性は、配列に収集されます。 指定した場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値、配列には、その名前を持つ XML 要素のみが含まれています。 指定しない場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>値、配列には、クラスに対応するメンバーを持たないすべての要素が含まれています。 クラス、属性が適用される 1 つ以上のフィールドが含まれている場合を使用して、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>と<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティ、配列の内容を区別するためにします。 かどうか (複数のフィールド) のようなクラスにはも設定し、識別プロパティ値がない 1 つのフィールドが含まれます (つまり、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>と<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>)、配列には逆シリアル化には、既に他の配列に含まれていない任意の XML 要素が含まれています。 ない、区別する 1 つ以上のフィールドを追加するかどうかは<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>または<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>値を設定クラスの最後のフィールドには、既に他の配列に含まれていないすべての不明な要素が含まれています。 およびその他のフィールドがに設定されます`null`です。  
+  
+ 複数のインスタンスを適用することができます、<xref:System.Xml.Serialization.XmlAnyElementAttribute>クラスにメンバーを各インスタンスがあります明確な<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>プロパティの値。 または、同じ<xref:System.Xml.Serialization.XmlAnyElementAttribute.Name%2A>インスタンスごとに、個別のプロパティが設定されて<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>インスタンスごとにプロパティ値を設定する必要があります。  
+  
+   
+  
+## Examples  
+ [!code-cpp[XmlAnyElementAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlAnyElementAttribute Example/CPP/anyelement.cpp#1)]
+ [!code-csharp[XmlAnyElementAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlAnyElementAttribute Example/CS/anyelement.cs#1)]
+ [!code-vb[XmlAnyElementAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlAnyElementAttribute Example/VB/anyelement.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">配列のメンバーの要素名がで指定された要素名と一致しません、<see cref="P:System.Xml.Serialization.XmlAnyElementAttribute.Name" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlAnyElementAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML ドキュメントで生成される XML 名前空間を設定します。</summary>
+        <value>XML 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティでは、XML 属性の一意の名前を設定することができます。 <xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティは、ドキュメントでは、World Wide Web Consortium) (www.w3.org)、「Namespaces in XML」にある XML 名前空間を作成するための規則に準拠しています  
+  
+ 設定する、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティ プレフィックス付きの名前を作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>名前空間と XML ドキュメントで使用されるプレフィックスを格納しています。 設定、<xref:System.Xml.Serialization.XmlAnyElementAttribute.Namespace%2A>プロパティの名前空間のいずれかを<xref:System.Xml.Serialization.XmlSerializerNamespaces>です。 XML が生成されると、属性名が正しく指定された名前空間に関連付けられているプレフィックスで付けられます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[XmlAnyElementAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlAnyElementAttribute Example/CPP/anyelement.cpp#1)]
+ [!code-csharp[XmlAnyElementAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlAnyElementAttribute Example/CS/anyelement.cs#1)]
+ [!code-vb[XmlAnyElementAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlAnyElementAttribute Example/VB/anyelement.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public int Order { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Order" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlAnyElementAttribute.Order" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素をシリアル化または逆シリアル化は、明示的な順序を設定します。</summary>
+        <value>コード生成の順序。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.CodeGenerationOptions.GenerateOrder>に指示するための列挙、<xref:System.Web.Services.Description.ServiceDescriptionImporter>を設定するコードを生成する、<xref:System.Xml.Serialization.XmlElementAttribute.Order%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  1 回、<xref:System.Xml.Serialization.XmlElementAttribute.Order%2A>プロパティが 1 つのパブリック プロパティまたは型のフィールドで使用されている、すべてのパブリック プロパティおよびその型および継承されたすべての型のフィールドに適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

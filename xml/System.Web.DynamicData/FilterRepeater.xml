@@ -1,0 +1,381 @@
+<Type Name="FilterRepeater" FullName="System.Web.DynamicData.FilterRepeater">
+  <TypeSignature Language="C#" Value="public class FilterRepeater : System.Web.UI.WebControls.Repeater, System.Web.DynamicData.IWhereParametersProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FilterRepeater extends System.Web.UI.WebControls.Repeater implements class System.Web.DynamicData.IWhereParametersProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.FilterRepeater" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Repeater</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IWhereParametersProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フィルターを適用可能なテーブル列を列挙するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は互換性のために残されています。 使用して<xref:System.Web.DynamicData.QueryableFilterRepeater>、代わりにします。  
+  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.DynamicData.FilterRepeater>コントロールは ASP.NET Dynamic Data framework でのコントロールです。 テーブルに表示されているデータ行をフィルター処理するために使用するコントロールを自動的に表示します。 フィルターの動作の一覧を提供することによって`Where`の各データ ソースへのパラメーターには、列の型がサポートされています。 既定では、動的なデータが foreign key 制約とブール型の列をフィルター処理し、それらを使用して表示、`DropDownList`リスト コントロール。  
+  
+ <xref:System.Web.DynamicData.FilterRepeater>コントロールは、特殊な<xref:System.Web.UI.WebControls.Repeater>自動的にフィルターを適用できる、現在のページに表示されるテーブル列のコレクションにバインドするコントロール。 /Products/List.aspx、に対して、要求が行われた場合など、<xref:System.Web.DynamicData.FilterRepeater>コントロールは、Products テーブル内の列にバインドします。 テーブルが、要求と一致するルートに基づいて選択されます。 設定してもオーバーライドすることができます、<xref:System.Web.DynamicData.FilterRepeater.TableName%2A>と<xref:System.Web.DynamicData.FilterRepeater.ContextTypeName%2A>のプロパティ、<xref:System.Web.DynamicData.FilterRepeater>コントロール。  
+  
+ フィルターの UI を表示する、`ItemTemplate`テンプレートでは、<xref:System.Web.DynamicData.FilterRepeater>コントロールは、既知の ID を持つコントロールを含める必要があります 既定では、既知の ID は"DynamicFilter"です。 項目テンプレート内のコントロールから派生しなければなりません<xref:System.Web.DynamicData.FilterUserControlBase>です。 データ バインディングが発生すると、<xref:System.Web.DynamicData.FilterRepeater>コントロールをフィルターする列に関する情報を含むフィルター コントロールのインスタンスを初期化します。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:FilterRepeater  
+    ContextTypeName="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    DynamicFilterContainerId="string"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnItemCommand="ItemCommand event handler"  
+    OnItemCreated="ItemCreated event handler"  
+    OnItemDataBound="ItemDataBound event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    TableName="string"  
+    Visible="True|False"  
+>  
+        <AlternatingItemTemplate>  
+            <!-- child controls -->  
+        </AlternatingItemTemplate>  
+        <FooterTemplate>  
+            <!-- child controls -->  
+        </FooterTemplate>  
+        <HeaderTemplate>  
+            <!-- child controls -->  
+        </HeaderTemplate>  
+        <ItemTemplate>  
+            <!-- child controls -->  
+        </ItemTemplate>  
+        <SeparatorTemplate>  
+            <!-- child controls -->  
+        </SeparatorTemplate>  
+</asp:FilterRepeater>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FilterRepeater ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.FilterRepeater" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextTypeName">
+      <MemberSignature Language="C#" Value="public string ContextTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContextTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FilterRepeater.ContextTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用してデータを取得するデータ ソース オブジェクトの名前。</summary>
+        <value>使用してデータを取得するデータ ソース オブジェクトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド、<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロールをデータ ソースから取得されるデータにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicFilterContainerId">
+      <MemberSignature Language="C#" Value="public string DynamicFilterContainerId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DynamicFilterContainerId" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FilterRepeater.DynamicFilterContainerId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("DynamicFilter")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty(typeof(System.Web.DynamicData.FilterUserControlBase))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の ID、<see cref="T:System.Web.DynamicData.FilterRepeater" />内の制御、<see cref="P:System.Web.UI.WebControls.TemplateColumn.ItemTemplate" />インスタンス。</summary>
+        <value>フィルターの UI を表示するために使用するコントロールの ID で、 <see cref="P:System.Web.UI.WebControls.TemplateColumn.ItemTemplate" /> ID が指定された、それ以外の場合、"DynamicFilter"のインスタンスします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilteredColumns">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt; GetFilteredColumns ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.DynamicData.MetaColumn&gt; GetFilteredColumns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.GetFilteredColumns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>並べ替え可能な列に現在関連付けられているテーブルに属しているの列挙を返します<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</summary>
+        <returns>並べ替え可能な列に現在関連付けられているテーブルに属しているの列挙体<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ブール型の列と外部キー列が並べ替え可能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWhereParameters">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.WebControls.Parameter&gt; GetWhereParameters (System.Web.DynamicData.IDynamicDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.WebControls.Parameter&gt; GetWhereParameters(class System.Web.DynamicData.IDynamicDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.GetWhereParameters(System.Web.DynamicData.IDynamicDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.WebControls.Parameter&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.DynamicData.IDynamicDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソース、<see langword="Where" />パラメーター。</param>
+        <summary>一覧を取得<see langword="Where" />に追加するパラメーター、<see langword="Where" />のパラメーターのコレクション、<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</summary>
+        <returns>一連の<see langword="Where" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFilterItemCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnFilterItemCreated (System.Web.UI.WebControls.RepeaterItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFilterItemCreated(class System.Web.UI.WebControls.RepeaterItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.OnFilterItemCreated(System.Web.UI.WebControls.RepeaterItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.RepeaterItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">項目テンプレートの内容。</param>
+        <summary>すべての項目やがこのインスタンス化される代替の項目テンプレートと呼ばれる<see cref="T:System.Web.DynamicData.FilterRepeater" />データ バインド時に制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目の作成中は、項目テンプレートの内容をカスタマイズするには、このメソッドをオーバーライドすることができます。 データは、このメソッドが呼び出されたときの各項目に対して使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Control.Init" />初期化するためにイベント、<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemCreated">
+      <MemberSignature Language="C#" Value="protected override void OnItemCreated (System.Web.UI.WebControls.RepeaterItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemCreated(class System.Web.UI.WebControls.RepeaterItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterRepeater.OnItemCreated(System.Web.UI.WebControls.RepeaterItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.RepeaterItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.Repeater.ItemCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Repeater.ItemCreated>内の項目が作成されるときにイベントが発生、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FilterRepeater.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているテーブルを取得、<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</summary>
+        <value>関連付けられているテーブル、<see cref="T:System.Web.DynamicData.FilterRepeater" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TableName">
+      <MemberSignature Language="C#" Value="public string TableName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TableName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FilterRepeater.TableName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター処理するテーブルの名前を取得します。</summary>
+        <value>フィルター処理するテーブルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FilterRepeater.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが表示されるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールを表示する場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

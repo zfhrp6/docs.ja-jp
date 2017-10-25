@@ -1,0 +1,92 @@
+<Type Name="GiveFeedbackEventArgs" FullName="System.Windows.GiveFeedbackEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class GiveFeedbackEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GiveFeedbackEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.GiveFeedbackEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>引数を格納、<see cref="E:System.Windows.DragDrop.GiveFeedback" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.GiveFeedback>イベント ドラッグ アンド ドロップ操作が開始されたときに発生します。 <xref:System.Windows.DragDrop.GiveFeedback>イベントにより、ドラッグ アンド ドロップ操作中に視覚的なフィードバックをユーザーに提供する、マウス ポインターの外観を変更するドラッグ イベントのソース。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Effects">
+      <MemberSignature Language="C#" Value="public System.Windows.DragDropEffects Effects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.DragDropEffects Effects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GiveFeedbackEventArgs.Effects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ アンド ドロップ操作の効果を示す値を取得します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.DragDropEffects" />をドラッグ アンド ドロップ操作の効果を示す列挙体です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GiveFeedbackEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultCursors">
+      <MemberSignature Language="C#" Value="public bool UseDefaultCursors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCursors" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GiveFeedbackEventArgs.UseDefaultCursors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連するドラッグ アンド ドロップ操作の既定のカーソルからのフィードバックの動作を使用するかどうかを示すブール値を設定します。</summary>
+        <value>ブール値は、関連するドラッグ アンド ドロップ操作の既定のカーソルからのフィードバックの動作を使用するかどうかを示す値です。 <see langword="true" />既定のフィードバック カーソル動作を使用するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ドラッグ アンド ドロップ操作中に許可される操作に関するフィードバックを提供する、マウス カーソルが変化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,144 @@
+<Type Name="ServiceOperationRights" FullName="System.Data.Services.ServiceOperationRights">
+  <TypeSignature Language="C#" Value="public enum ServiceOperationRights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceOperationRights extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.ServiceOperationRights" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WCF Data Services で配置されたサービス操作へのアクセス権を定義するための列挙。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、サービス操作 `OrdersByCity` に対する全権アクセスを設定します。  
+  
+```  
+namespace AccountingServiceWebApp  
+{  
+  public class AccountingService : DataService<DataModel>  
+  {  
+      public static void InitializeService(IDataServiceConfiguration config)  
+      {  
+          config.SetServiceOperationAccessRule("OrdersInCity", ServiceOperationRights.All);  
+      }  
+      public IQueryable<Orders> OrdersByCity(string city)  
+      {  
+          return this.CurrentDataSource.Orders.Where(o => o.ShippingCity == city);  
+      }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights All = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作に対するすべての権限が割り当てられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllRead">
+      <MemberSignature Language="C#" Value="AllRead" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights AllRead = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.AllRead" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作によって配置された 1 つまたは複数のデータ項目を読み取ることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作に対するアクセスは承認されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideEntitySetRights">
+      <MemberSignature Language="C#" Value="OverrideEntitySetRights" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights OverrideEntitySetRights = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.OverrideEntitySetRights" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスで明示的に定義されているエンティティ セットの権限をサービス操作の権限でオーバーライドします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMultiple">
+      <MemberSignature Language="C#" Value="ReadMultiple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights ReadMultiple = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.ReadMultiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作を使用して複数のデータ項目を読み取ることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSingle">
+      <MemberSignature Language="C#" Value="ReadSingle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.ServiceOperationRights ReadSingle = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.ServiceOperationRights.ReadSingle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.ServiceOperationRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作を使用して単一のデータ項目を読み取ることができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

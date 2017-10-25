@@ -1,0 +1,32 @@
+<Type Name="InstallEventHandler" FullName="System.Configuration.Install.InstallEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void InstallEventHandler(object sender, InstallEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstallEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.InstallEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Configuration.Install.InstallEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Configuration.Install.InstallEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.Configuration.Install.Installer.BeforeInstall" />、 <see cref="E:System.Configuration.Install.Installer.AfterInstall" />、 <see cref="E:System.Configuration.Install.Installer.Committing" />、 <see cref="E:System.Configuration.Install.Installer.Committed" />、 <see cref="E:System.Configuration.Install.Installer.BeforeRollback" />、 <see cref="E:System.Configuration.Install.Installer.AfterRollback" />、 <see cref="E:System.Configuration.Install.Installer.BeforeUninstall" />、または<see cref="E:System.Configuration.Install.Installer.AfterUninstall" />のイベント、<see cref="T:System.Configuration.Install.Installer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.InstallEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

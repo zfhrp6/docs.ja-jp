@@ -1,0 +1,434 @@
+<Type Name="CommaDelimitedStringCollection" FullName="System.Configuration.CommaDelimitedStringCollection">
+  <TypeSignature Language="C#" Value="public sealed class CommaDelimitedStringCollection : System.Collections.Specialized.StringCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CommaDelimitedStringCollection extends System.Collections.Specialized.StringCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.CommaDelimitedStringCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.StringCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンマで区切られた文字列要素のコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、文字列の要素のコンマ区切りリストとしてシリアル化される文字列のコレクションを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.CommaDelimitedStringCollection>型です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#1)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommaDelimitedStringCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.CommaDelimitedStringCollection" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.CommaDelimitedStringCollection.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#2)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">文字列値。</param>
+        <summary>コンマで区切られたコレクションに文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>設定するプロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (string[] range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(string[] range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.AddRange(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="range">コレクションに追加する文字列の配列。</param>
+        <summary>コレクションに文字列の配列内のすべての文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `range`パラメーターは、コンマ区切りの文字列ではなく配列でなければなりません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.CommaDelimitedStringCollection.AddRange%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#3)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを空にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>設定するプロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Configuration.CommaDelimitedStringCollection Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.CommaDelimitedStringCollection Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.CommaDelimitedStringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションのコピーを作成します。</summary>
+        <returns><see cref="T:System.Configuration.CommaDelimitedStringCollection" /> のコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.Insert(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">新しい要素を追加するコレクション内のインデックス。</param>
+        <param name="value">コレクションに追加する新しい要素の値。</param>
+        <summary>コレクション内の指定したインデックス位置に文字列の要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>設定するプロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.CommaDelimitedStringCollection.Insert%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#9)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="public bool IsModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsModified" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.CommaDelimitedStringCollection.IsModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが変更されているかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Configuration.CommaDelimitedStringCollection" /> 、それ以外の変更された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>プロパティは`true`後、 <xref:System.Configuration.CommaDelimitedStringCollection.Add%2A>、 <xref:System.Configuration.CommaDelimitedStringCollection.Clear%2A>、 <xref:System.Configuration.CommaDelimitedStringCollection.Insert%2A>、または<xref:System.Configuration.CommaDelimitedStringCollection.Remove%2A>メソッドが呼び出されました。 また、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>プロパティは`true`後、<xref:System.Configuration.CommaDelimitedStringCollection.Item%2A>文字列コレクションの要素を変更するプロパティを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#7)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.CommaDelimitedStringCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション オブジェクトが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合内の指定した文字列の要素、<see cref="T:System.Configuration.CommaDelimitedStringCollection" />は読み取り専用です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`true`コレクションは読み取り専用とマークされている場合。 これは、デザイン時ではなく、実行時に、要素を保護するために役立ちます。 詳細については、次を参照してください。、<xref:System.Configuration.ConfigurationElement.IsReadOnly%2A>メソッドを、<xref:System.Configuration.ConfigurationElement?displayProperty=nameWithType>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.CommaDelimitedStringCollection.IsReadOnly%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#8)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.CommaDelimitedStringCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の文字列要素のインデックス。</param>
+        <summary>取得またはインデックスに基づいて、コレクション内の文字列要素を設定します。</summary>
+        <value>コレクション内の文字列要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクション内のインデックスに基づいて、コレクション内の設定または取得する文字列を使用します。 このプロパティが生じる原因にも、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>設定するプロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する文字列。</param>
+        <summary>文字列要素をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Configuration.CommaDelimitedStringCollection.IsModified%2A>設定するプロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.CommaDelimitedStringCollection.Remove%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.CommaDelimitedStringCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.CommaDelimitedStringCollection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/CS/CommaDelimitedStringCollection.cs#10)]
+ [!code-vb[System.Configuration.CommaDelimitedStringCollection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.CommaDelimitedStringCollection/VB/CommaDelimitedStringCollection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="public void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取り専用コレクション オブジェクトに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認するかどうか、<xref:System.Configuration.CommaDelimitedStringCollection>コレクションが変更できる、呼び出し、<xref:System.Configuration.CommaDelimitedStringCollection.IsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.CommaDelimitedStringCollection.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの文字列表現を返します。</summary>
+        <returns>オブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

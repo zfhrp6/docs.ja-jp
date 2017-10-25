@@ -1,0 +1,155 @@
+<Type Name="PrinterResolution" FullName="System.Drawing.Printing.PrinterResolution">
+  <TypeSignature Language="C#" Value="public class PrinterResolution" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PrinterResolution extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PrinterResolution" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリンターでサポートされている解像度を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用、<xref:System.Drawing.Printing.PrinterSettings.PrinterResolutions%2A?displayProperty=nameWithType>と<xref:System.Drawing.Printing.PageSettings.PrinterResolution%2A?displayProperty=nameWithType>プロパティをプリンターで使用可能なプリンターの解像度を取得し、ページの印刷の解像度をそれぞれ設定をします。  
+  
+ 使用して、<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>プリンターの解像度タイプかどうかを決定するプロパティ、<xref:System.Drawing.Printing.PrinterResolutionKind>値<xref:System.Drawing.Printing.PrinterResolutionKind.Custom>です。 場合は、使用、<xref:System.Drawing.Printing.PrinterResolution.X%2A>と<xref:System.Drawing.Printing.PrinterResolution.Y%2A>プロパティをそれぞれ、水平方向および垂直方向、プリンターの解像度を確認します。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+   
+  
+## Examples  
+ 次のコード例、`comboPrintResolution`コンボ ボックスに、サポートされている解決策にします。 例では、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在することと、特定のコンボ ボックスが存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#3)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#3)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrinterResolution ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterResolution.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PrinterResolution" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrinterResolution> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>|<xref:System.Drawing.Printing.PrinterResolutionKind.Custom>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kind">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterResolutionKind Kind { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Printing.PrinterResolutionKind Kind" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrinterResolution.Kind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterResolutionKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンターの解像度を設定します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrinterResolutionKind" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられた値がのメンバーではない、<see cref="T:System.Drawing.Printing.PrinterResolutionKind" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterResolution.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、<see cref="M:System.Object.ToString" /> メソッドをオーバーライドします。</summary>
+        <returns><see cref="T:System.String" /> に関する情報を格納している <see cref="T:System.Drawing.Printing.PrinterResolution" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrinterResolution.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドット/インチで水平方向のプリンターの解像度を取得します。</summary>
+        <value>水平方向のプリンターの解像度、ドット/インチ場合、<see cref="P:System.Drawing.Printing.PrinterResolution.Kind" />に設定されている<see cref="F:System.Drawing.Printing.PrinterResolutionKind.Custom" />です。 それ以外の場合、<see langword="dmPrintQuality" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `dmPrintQuality`メンバーである、 `DEVMODE` (デバイス モード) の構造は、プリンター品質 設定にマップする定数を定義します。 <xref:System.Drawing.Printing.PrinterResolution.X%2A>プロパティ値を格納`DMRES_HIGH`場合<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>に設定されている<xref:System.Drawing.Printing.PrinterResolutionKind.High>、`DMRES_MEDIUM`場合<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>に設定されている<xref:System.Drawing.Printing.PrinterResolutionKind.Medium>、`DMRES_LOW`場合<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>に設定されている<xref:System.Drawing.Printing.PrinterResolutionKind.Low>、および`DMRES_DRAFT`場合<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>に設定されている<xref:System.Drawing.Printing.PrinterResolutionKind.Draft>です。  
+  
+ 詳細については、`DEVMODE`構造体、MSDN ライブラリを参照してください[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrinterResolution.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドット/インチの垂直方向のプリンターの解像度を取得します。</summary>
+        <value>垂直方向プリンターの解像度、ドット/インチにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Drawing.Printing.PrinterResolution.Kind%2A>プロパティに設定されていない<xref:System.Drawing.Printing.PrinterResolutionKind.Custom>の既定値、<xref:System.Drawing.Printing.PrinterResolution.Y%2A>プロパティは-1。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,123 @@
+<Type Name="SoapFaultSubCode" FullName="System.Web.Services.Protocols.SoapFaultSubCode">
+  <TypeSignature Language="C#" Value="public class SoapFaultSubCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SoapFaultSubCode extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapFaultSubCode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>省略可能な内容を表す<see langword="Subcode" />SOAP バージョン 1.2 をクライアントと XML Web サービス間の通信に使用する場合は、SOAP エラーの要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 1.2 エラーが含まれています、`Code`要素および省略可能な特に`Subcode`要素。 `Code`要素が SOAP プロトコルによって指定される定義済みのエラー コードの数に制限を使用して発生したエラーの種類を指定する、`Subcode`要素は、アプリケーション固有のエラー コードを提供する SOAP エラーのセンダを使用します。 このクラスの内容を表す、`Subcode`要素。  
+  
+ XML Web サービスでは、SOAP エラーを返すスローすることによって、 <xref:System.Web.Services.Protocols.SoapException>、.NET クライアントは、キャッチすることにより、SOAP エラーを受信し、<xref:System.Web.Services.Protocols.SoapException>です。 A<xref:System.Web.Services.Protocols.SoapException>が、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティを表す、`Code`要素、および<xref:System.Web.Services.Protocols.SoapException.SubCode%2A>プロパティを表す、`Subcode`要素。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapFaultSubCode (System.Xml.XmlQualifiedName code);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName code) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapFaultSubCode.#ctor(System.Xml.XmlQualifiedName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="code"><see cref="T:System.Xml.XmlQualifiedName" />アプリケーション固有のエラー コードを指定します。 <see cref="P:System.Web.Services.Protocols.SoapFaultSubCode.Code" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapFaultSubCode" />クラスおよびアプリケーション固有のエラー コードを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapFaultSubCode (System.Xml.XmlQualifiedName code, System.Web.Services.Protocols.SoapFaultSubCode subcode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName code, class System.Web.Services.Protocols.SoapFaultSubCode subcode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapFaultSubCode.#ctor(System.Xml.XmlQualifiedName,System.Web.Services.Protocols.SoapFaultSubCode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="code" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="subCode" Type="System.Web.Services.Protocols.SoapFaultSubCode" />
+      </Parameters>
+      <Docs>
+        <param name="code"><see cref="T:System.Xml.XmlQualifiedName" />アプリケーション固有のエラー コードを指定します。 <see cref="P:System.Web.Services.Protocols.SoapFaultSubCode.Code" /> プロパティを設定します。</param>
+        <param name="subcode">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapFaultSubCode" />クラスは、アプリケーション固有のエラー コードとエラーの詳細情報を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Code">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Code { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Code" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapFaultSubCode.Code" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 修飾名の形式でのアプリケーション固有のエラー コードを取得します。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" />アプリケーション固有のエラー コードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するコンス トラクターを使用して、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A>プロパティです。  
+  
+ 値、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A>プロパティは、任意のユーザー定義 XML 修飾名で表されるコードを含むをすることができます、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcProcedureNotPresentFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcBadArgumentsFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingMissingIdFaultCode?displayProperty=nameWithType>、および<xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingUntypedValueFaultCode?displayProperty=nameWithType>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubCode">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapFaultSubCode SubCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.SoapFaultSubCode SubCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapFaultSubCode.SubCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapFaultSubCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子内に含まれる追加のエラー情報を取得<see langword="Subcode" />要素。</summary>
+        <value>A<see cref="T:System.Web.Services.Protocols.SoapFaultSubCode" />追加のエラー情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定するコンス トラクターを使用して、<xref:System.Web.Services.Protocols.SoapFaultSubCode.SubCode%2A>プロパティです。 <xref:System.Web.Services.Protocols.SoapFaultSubCode.SubCode%2A>プロパティは、入れ子になったエラー情報を提供する XML Web サービスを使用します。 これは、XML Web サービスと呼ばれるコンポーネントから返されたエラー情報を渡すときに、XML Web サービスに固有のエラー コードを示すに便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="IProvideStarLayoutInfo" FullName="System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfo">
+  <TypeSignature Language="C#" Value="public interface IProvideStarLayoutInfo : System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfoBase" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProvideStarLayoutInfo implements class System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfoBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfoBase</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>星のレイアウトに必要なデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、リボンのレイアウトされるパネルを使用して*スター サイズ変更*が使用可能な領域に収まる最大の可能なコントロール バリエーションを表示します。 スター サイズ変更は、使用可能な領域が均等に領域を占有する必要がある要素の間に分割され、規則です。 名前に由来 XAML でアスタリスク (*) を使用して、スター サイズ変更を指定することです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnStarSizeAllocationCompleted">
+      <MemberSignature Language="C#" Value="public void OnStarSizeAllocationCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnStarSizeAllocationCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfo.OnStarSizeAllocationCompleted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>領域の割り当てが完了すると呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StarLayoutCombinations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo&gt; StarLayoutCombinations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo&gt; StarLayoutCombinations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Primitives.IProvideStarLayoutInfo.StarLayoutCombinations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.Ribbon.Primitives.StarLayoutInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重複しない星型の組み合わせを含んだコレクションを取得します。</summary>
+        <value>重複しない星型の組み合わせを含むコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

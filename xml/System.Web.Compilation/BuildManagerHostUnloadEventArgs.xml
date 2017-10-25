@@ -1,0 +1,76 @@
+<Type Name="BuildManagerHostUnloadEventArgs" FullName="System.Web.Compilation.BuildManagerHostUnloadEventArgs">
+  <TypeSignature Language="C#" Value="public class BuildManagerHostUnloadEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildManagerHostUnloadEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildManagerHostUnloadEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント データを含む、<see cref="E:System.Web.Compilation.ClientBuildManager.AppDomainShutdown" />イベントおよび<see cref="E:System.Web.Compilation.ClientBuildManager.AppDomainUnloaded" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.AppDomain>インスタンスがシャット ダウンまたは、アンロード、<xref:System.Web.Compilation.ClientBuildManager.AppDomainShutdown>イベントまたは<xref:System.Web.Compilation.ClientBuildManager.AppDomainUnloaded>イベントは、それぞれします。 <xref:System.Web.Compilation.BuildManagerHostUnloadEventArgs>オブジェクトは、シャット ダウンやアンロードの理由を格納し、そのパラメーターの 1 つとして、イベント ハンドラーに渡されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildManagerHostUnloadEventArgs (System.Web.ApplicationShutdownReason reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.ApplicationShutdownReason reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildManagerHostUnloadEventArgs.#ctor(System.Web.ApplicationShutdownReason)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reason" Type="System.Web.ApplicationShutdownReason" />
+      </Parameters>
+      <Docs>
+        <param name="reason">ホストされているアプリケーション ドメインのシャット ダウンの理由です。</param>
+        <summary><see cref="T:System.Web.Compilation.BuildManagerHostUnloadEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する<xref:System.Web.Compilation.BuildManagerHostUnloadEventArgs>で、<xref:System.Web.Compilation.BuildManagerHostUnloadEventArgs.Reason%2A>プロパティに設定`reason`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public System.Web.ApplicationShutdownReason Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.ApplicationShutdownReason Reason" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildManagerHostUnloadEventArgs.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ApplicationShutdownReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるアプリケーション ドメインがシャット ダウンされた理由を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Web.ApplicationShutdownReason" />列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildManagerHostUnloadEventArgs.Reason%2A>プロパティ ストア、<xref:System.Web.ApplicationShutdownReason>理由を説明する値としてオブジェクト、<xref:System.AppDomain>インスタンスがシャット ダウンされました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

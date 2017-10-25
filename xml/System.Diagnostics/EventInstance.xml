@@ -1,0 +1,935 @@
+<Type Name="EventInstance" FullName="System.Diagnostics.EventInstance">
+  <TypeSignature Language="C#" Value="public class EventInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventInstance extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント ログ エントリの言語に依存しない情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Diagnostics.EventInstance>文字列値ではなく、リソース id でイベント ログ エントリの書き込みにします。 イベント ログ エントリを書き込みは、初期化、<xref:System.Diagnostics.EventInstance.InstanceId%2A>プロパティ インスタンスを渡すと、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。 イベント ビューアーでは、インスタンス識別子を使用して、検索し、現在の言語設定に基づくローカライズされたリソース ファイルから対応する文字列を表示します。 リソース識別子を使用してイベントを記述する前に、対応するリソース ファイルと、イベント ソースを登録する必要があります。  
+  
+ イベントを書き込む場合は、設定、<xref:System.Diagnostics.EventInstance.EntryType%2A>プロパティ エントリのイベント ビューアーを表示するアイコンを指定します。 指定することも、<xref:System.Diagnostics.EventInstance.CategoryId%2A>エントリのイベント ビューアーを表示するカテゴリを指定するプロパティです。  
+  
+ イベント ビューアーでは、イベント ソースによって書き込まれたイベントのフィルターを適用するカテゴリを使用します。 カテゴリ ローカライズされたカテゴリ文字列を表示するリソースの識別子として使用できるまたはイベント ビューアーは、数値の値として、カテゴリを表示できます。  
+  
+ イベント ビューアーでは、ローカライズされたカテゴリ文字列を表示するには、イベント ソース、カテゴリのリソース ファイルで構成され、設定を使用する必要があります、<xref:System.Diagnostics.EventInstance.CategoryId%2A>カテゴリのリソース ファイル内のリソース識別子。 イベント ソースが構成されているカテゴリのリソース ファイル、または指定した<xref:System.Diagnostics.EventInstance.CategoryId%2A>カテゴリ リソース ファイルと、イベント ビューアー内の文字列のインデックスなしは、そのエントリの数値のカテゴリ値を表示します。 リソース ファイル内のカテゴリ文字列の数と共に、カテゴリのリソース ファイルの構成を使用して、<xref:System.Diagnostics.EventLogInstaller>または<xref:System.Diagnostics.EventSourceCreationData>クラスです。  
+  
+ 使用する前に、イベント ログのソースを登録する必要があります<xref:System.Diagnostics.EventInstance>でイベントを書き込む、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。 ローカライズされたエントリをログに書き込むためのソースを構成する必要があり、ソースは、少なくともメッセージ リソース ファイルを定義する必要があります。  
+  
+ アプリケーションのインストール中に新しいイベント ソースを作成します。 これにより、登録されたイベント ソースの一覧とその構成を更新するオペレーティング システムの時間です。 オペレーティング システムがイベント ソースの一覧を更新していないしようとして、新しいソースとイベントを書き込む、書き込み操作は失敗します。 新しいソースを使用して、構成することができます、 <xref:System.Diagnostics.EventLogInstaller>、またはを使用して、<xref:System.Diagnostics.EventLog.CreateEventSource%2A>メソッドです。 新しいイベント ソースを作成するコンピューターで管理者権限が必要です。  
+  
+ イベント メッセージの定義とリソースのイベント ログ ファイルを作成する詳細については、プラットフォーム SDK のドキュメントの「メッセージ コンパイラ」トピックを参照してください[http://msdn.microsoft.com](http://msdn.microsoft.com)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、情報イベント エントリを書き込み、再利用し、<xref:System.Diagnostics.EventInstance>既存のイベント ログに警告イベントのエントリを書き込めません。 イベントのメッセージ テキストを指定するには、メッセージ リソース ファイル内のリソース識別子を使用します。 コード例では、対応するメッセージ リソース ファイルをソースとして登録されていることを前提としています。  
+  
+ [!code-cpp[EventLog_WriteEvent#9](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#9)]
+ [!code-csharp[EventLog_WriteEvent#9](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#9)]
+ [!code-vb[EventLog_WriteEvent#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#9)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventInstance (long instanceId, int categoryId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 instanceId, int32 categoryId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventInstance.#ctor(System.Int64,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Int64" />
+        <Parameter Name="categoryId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">イベント ソースのメッセージ リソース ファイルで定義された文字列に対応するリソースの識別子です。</param>
+        <param name="categoryId">イベント ソース、または 0 を指定して、イベントのカテゴリのカテゴリのリソース ファイルで定義された文字列に対応するリソースの識別子です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.EventInstance" />クラス イベント エントリのローカライズされたメッセージとカテゴリ文字列の指定したリソース識別子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ログに情報のエントリを書き込む、初期化、<xref:System.Diagnostics.EventInstance>に渡すと、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。 設定、 `instanceId` 、対応するイベント メッセージのリソース識別子を<xref:System.Diagnostics.EventSourceCreationData.MessageResourceFile%2A>ソースのプロパティです。 設定、`categoryId`数値カテゴリの値では、またはイベントのカテゴリのリソース識別子を<xref:System.Diagnostics.EventSourceCreationData.CategoryResourceFile%2A>ソースのプロパティです。 セット、`categoryId`ありませんイベント カテゴリに属するゼロにします。 <xref:System.Diagnostics.EventInstance.EntryType%2A>の新しいインスタンス プロパティに設定されて<xref:System.Diagnostics.EventLogEntryType.Information>既定です。  
+  
+ イベント ビューアーでは、リソースの識別子を使用して、ソースのローカライズされたリソース ファイルから対応する文字列を表示します。 リソース識別子を使用してイベントを記述する前に、対応するリソース ファイルのソースを登録する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、情報イベント エントリを書き込み、再利用し、<xref:System.Diagnostics.EventInstance>既存のイベント ログに警告イベントのエントリを書き込めません。 イベントのメッセージ テキストを指定するには、メッセージ リソース ファイル内のリソース識別子を使用します。 コード例では、対応するメッセージ リソース ファイルをソースとして登録されていることを前提としています。  
+  
+ [!code-cpp[EventLog_WriteEvent#9](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#9)]
+ [!code-csharp[EventLog_WriteEvent#9](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#9)]
+ [!code-vb[EventLog_WriteEvent#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#9)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="instanceId" />パラメーターが負の値または値よりも大きい<see cref="F:System.UInt32.MaxValue" />です。  
+  
+ または  
+  
+ <paramref name="categoryId" />パラメーターが負の値または値よりも大きい<see cref="F:System.UInt16.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventInstance (long instanceId, int categoryId, System.Diagnostics.EventLogEntryType entryType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 instanceId, int32 categoryId, valuetype System.Diagnostics.EventLogEntryType entryType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventInstance.#ctor(System.Int64,System.Int32,System.Diagnostics.EventLogEntryType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Int64" />
+        <Parameter Name="categoryId" Type="System.Int32" />
+        <Parameter Name="entryType" Type="System.Diagnostics.EventLogEntryType" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">イベント ソースのメッセージ リソース ファイルで定義された文字列に対応するリソースの識別子です。</param>
+        <param name="categoryId">イベント ソース、または 0 を指定して、イベントのカテゴリのカテゴリのリソース ファイルで定義された文字列に対応するリソースの識別子です。</param>
+        <param name="entryType"><see cref="T:System.Diagnostics.EventLogEntryType" />イベントの種類を示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.EventInstance" />クラスのイベントの開始と指定したイベント ログ エントリの種類のローカライズされたメッセージとカテゴリのテキストの指定したリソース識別子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ログにエントリを書き込む、初期化、<xref:System.Diagnostics.EventInstance>に渡すと、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。 設定、 `instanceId` 、対応するイベント メッセージのリソース識別子を<xref:System.Diagnostics.EventSourceCreationData.MessageResourceFile%2A>ソースのプロパティです。 設定、`categoryId`数値カテゴリの値では、またはイベントのカテゴリのリソース識別子を<xref:System.Diagnostics.EventSourceCreationData.CategoryResourceFile%2A>ソースのプロパティです。 セット、`categoryId`ありませんイベント カテゴリに属するゼロにします。  
+  
+ イベント ビューアーでは、リソースの識別子を使用して、ソースのローカライズされたリソース ファイルから対応する文字列を表示します。 リソース識別子を使用してイベントを記述する前に、対応するリソース ファイルのソースを登録する必要があります。  
+  
+ 設定、`entryType`定義済みのエントリの種類のいずれかにします。 イベント ビューアーでは、イベントの種類を使用して、イベント ログのリスト ビューに表示するアイコンを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの監査イベント ログにイベントのエントリを書き込みます`myNewLog`です。 コード例では、ローカル コンピューターに存在しない場合、新しいイベント ソースと、新しいイベント ログを作成します。 イベントのメッセージ テキストを指定するには、リソース ファイルにリソース識別子を使用します。  
+  
+ [!code-cpp[EventLog_WriteEvent#7](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#7)]
+ [!code-csharp[EventLog_WriteEvent#7](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#7)]
+ [!code-vb[EventLog_WriteEvent#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#7)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="entryType" /> は有効な <see cref="T:System.Diagnostics.EventLogEntryType" /> 値ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="instanceId" />負の値または値を超える<see cref="F:System.UInt32.MaxValue" />です。  
+  
+ または  
+  
+ <paramref name="categoryId" />負の値または値を超える<see cref="F:System.UInt16.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryId">
+      <MemberSignature Language="C#" Value="public int CategoryId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CategoryId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventInstance.CategoryId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント エントリのアプリケーション定義のカテゴリを指定するリソース識別子を設定します。</summary>
+        <value>数値カテゴリ値またはリソースに対応する識別子、カテゴリのリソース ファイル、イベント ソースで定義されている文字列。 既定ではゼロ イベント エントリのカテゴリが表示されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ログのカテゴリは、イベントをフィルター処理、またはさらに、イベントに関する情報を提供するアプリケーション定義の値です。 たとえば、アプリケーションでは、異なるコンポーネントまたは操作ごとに個別のカテゴリを定義できます。  
+  
+ 設定、<xref:System.Diagnostics.EventInstance.CategoryId%2A>エントリのイベント ビューアーを表示するカテゴリを指定するプロパティです。 イベント ビューアーが数値の値として、カテゴリを表示したり、使用できる、<xref:System.Diagnostics.EventInstance.CategoryId%2A>リソースとして、ローカライズされたカテゴリ文字列を表示する識別子が現在の言語設定に基づいています。  
+  
+ イベント ビューアーでは、ローカライズされたカテゴリ文字列を表示するには、イベント ソース、カテゴリのリソース ファイルで構成され、設定を使用する必要があります、<xref:System.Diagnostics.EventInstance.CategoryId%2A>カテゴリのリソース ファイル内のリソース識別子。 イベント ソースが構成されているカテゴリのリソース ファイル、または指定した<xref:System.Diagnostics.EventInstance.CategoryId%2A>カテゴリ リソース ファイルと、イベント ビューアー内の文字列のインデックスなしは、そのエントリの数値のカテゴリ値を表示します。  
+  
+ リソース識別子を使用してイベント カテゴリを記述する前に、対応するリソース ファイルとソースを登録する必要があります。 リソース ファイル内のカテゴリ文字列の数と共に、カテゴリのリソース ファイルの構成を使用して、<xref:System.Diagnostics.EventLogInstaller>または<xref:System.Diagnostics.EventSourceCreationData>クラスです。 構成された最大の 1 から始まる連続したリソースのカテゴリの識別子を番号必要がありますをリソース ファイル内のカテゴリの文字列を定義するとき<xref:System.Diagnostics.EventSourceCreationData.CategoryCount%2A>プロパティの値。  
+  
+ イベント カテゴリはオプションです。 アプリケーションがカテゴリを使用していない場合は設定しないで、<xref:System.Diagnostics.EventInstance.CategoryId%2A>のイベント ログ エントリです。  
+  
+ 詳細については、イベント メッセージを定義し、イベントのリソース ファイルを構築する、プラットフォーム SDK のドキュメントの「メッセージ コンパイラ」トピックを参照してください[http://msdn.microsoft.com](http://msdn.microsoft.com/)です。リソース ファイル内のイベント カテゴリを定義する方法については、プラットフォーム SDK の「イベントのカテゴリ」トピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、情報イベント エントリを書き込み、再利用し、<xref:System.Diagnostics.EventInstance>既存のイベント ログに警告イベントのエントリを書き込めません。 イベントのメッセージ テキストを指定するには、メッセージ リソース ファイル内のリソース識別子を使用します。 コード例では、対応するメッセージ リソース ファイルをソースとして登録されていることを前提としています。  
+  
+ [!code-cpp[EventLog_WriteEvent#9](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#9)]
+ [!code-csharp[EventLog_WriteEvent#9](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#9)]
+ [!code-vb[EventLog_WriteEvent#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#9)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティは、負の値または値よりも大きい設定<see cref="F:System.UInt16.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogEntryType EntryType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.EventLogEntryType EntryType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventInstance.EntryType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogEntryType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログ エントリのイベントの種類を設定します。</summary>
+        <value><see cref="T:System.Diagnostics.EventLogEntryType" />イベント エントリの種類を示す値。 既定値は <see cref="F:System.Diagnostics.EventLogEntryType.Information" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各イベントは、アプリケーションがイベントをレポートするときを示す 1 つの型です。 イベント ビューアーでは、イベントの種類を使用して、イベント ログのリスト ビューに表示するアイコンを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、情報イベント エントリを書き込み、再利用し、<xref:System.Diagnostics.EventInstance>既存のイベント ログに警告イベントのエントリを書き込めません。 イベントのメッセージ テキストを指定するには、メッセージ リソース ファイル内のリソース識別子を使用します。 コード例では、対応するメッセージ リソース ファイルをソースとして登録されていることを前提としています。  
+  
+ [!code-cpp[EventLog_WriteEvent#9](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#9)]
+ [!code-csharp[EventLog_WriteEvent#9](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#9)]
+ [!code-vb[EventLog_WriteEvent#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#9)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティが有効に設定されていない<see cref="T:System.Diagnostics.EventLogEntryType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public long InstanceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventInstance.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント エントリのメッセージ テキストを指定するリソース識別子を設定します。</summary>
+        <value>イベント ソースのメッセージ リソース ファイルで定義された文字列に対応するリソースの識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.EventInstance.InstanceId%2A>プロパティが構成されているイベント ソースのイベントのエントリを一意に識別します。 メッセージ リソース ファイルで定義されたイベントの<xref:System.Diagnostics.EventInstance.InstanceId%2A>メッセージの定義のフィールドをメッセージのテキスト ファイルにコンパイルされたリソースの識別子に対応しています。 アプリケーションは、設定してローカライズされたイベント ログ エントリを書き込むことができます、<xref:System.Diagnostics.EventInstance.InstanceId%2A>リソースの識別子。 イベント ビューアーを使用して、<xref:System.Diagnostics.EventInstance.InstanceId%2A>現在の言語設定に基づいて、リソースの識別子を検索して、ローカライズされたリソース ファイルから対応する文字列を表示します。 リソース識別子を使用してイベントを記述する前に、対応するリソース ファイルとソースを登録する必要があります。  
+  
+ イベント メッセージの定義とリソースのイベント ログ ファイルを作成する詳細については、プラットフォーム SDK のドキュメントの「メッセージ コンパイラ」トピックを参照してください[http://msdn.microsoft.com](http://msdn.microsoft.com/)です。詳細については、イベント ログの識別子は、プラットフォーム SDK の「イベント Identifiers」トピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、情報イベント エントリを書き込み、再利用し、<xref:System.Diagnostics.EventInstance>既存のイベント ログに警告イベントのエントリを書き込めません。 イベントのメッセージ テキストを指定するには、メッセージ リソース ファイル内のリソース識別子を使用します。 コード例では、対応するメッセージ リソース ファイルをソースとして登録されていることを前提としています。  
+  
+ [!code-cpp[EventLog_WriteEvent#9](~/samples/snippets/cpp/VS_Snippets_CLR/eventlog_WriteEvent/CPP/source.cpp#9)]
+ [!code-csharp[EventLog_WriteEvent#9](~/samples/snippets/csharp/VS_Snippets_CLR/eventlog_WriteEvent/CS/source.cs#9)]
+ [!code-vb[EventLog_WriteEvent#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventlog_WriteEvent/VB/source.vb#9)]  
+  
+ コード例では、リソース ライブラリ EventLogMsgs.dll に組み込まれている次のメッセージ テキスト ファイルを使用します。 メッセージのテキスト ファイルは、メッセージ リソース ファイルの作成元のソースです。 メッセージのテキスト ファイルでは、リソース識別子とカテゴリ、イベント メッセージ、および挿入の文字列のパラメーターのテキストを定義します。  
+  
+```  
+; // EventLogMsgs.mc  
+; // ********************************************************  
+  
+; // Use the following commands to build this file:  
+  
+; //   mc -s EventLogMsgs.mc  
+; //   rc EventLogMsgs.rc  
+; //   link /DLL /SUBSYSTEM:WINDOWS /NOENTRY /MACHINE:x86 EventLogMsgs.Res   
+; // ********************************************************  
+  
+; // - Event categories -  
+; // Categories must be numbered consecutively starting at 1.  
+; // ********************************************************  
+  
+MessageId=0x1  
+Severity=Success  
+SymbolicName=INSTALL_CATEGORY  
+Language=English  
+Installation  
+.  
+  
+MessageId=0x2  
+Severity=Success  
+SymbolicName=QUERY_CATEGORY  
+Language=English  
+Database Query  
+.  
+  
+MessageId=0x3  
+Severity=Success  
+SymbolicName=REFRESH_CATEGORY  
+Language=English  
+Data Refresh  
+.  
+  
+; // - Event messages -  
+; // *********************************  
+  
+MessageId = 1000  
+Severity = Success  
+Facility = Application  
+SymbolicName = AUDIT_SUCCESS_MESSAGE_ID_1000  
+Language=English  
+My application message text, in English, for message id 1000, called from %1.  
+.  
+  
+MessageId = 1001  
+Severity = Warning  
+Facility = Application  
+SymbolicName = AUDIT_FAILED_MESSAGE_ID_1001  
+Language=English  
+My application message text, in English, for message id 1001, called from %1.  
+.  
+  
+MessageId = 1002  
+Severity = Success  
+Facility = Application  
+SymbolicName = GENERIC_INFO_MESSAGE_ID_1002  
+Language=English  
+My generic information message in English, for message id 1002.  
+.  
+  
+MessageId = 1003  
+Severity = Warning  
+Facility = Application  
+SymbolicName = GENERIC_WARNING_MESSAGE_ID_1003  
+Language=English  
+My generic warning message in English, for message id 1003, called from %1.  
+.  
+  
+MessageId = 1004  
+Severity = Success  
+Facility = Application  
+SymbolicName = UPDATE_CYCLE_COMPLETE_MESSAGE_ID_1004  
+Language=English  
+The update cycle is complete for %%5002.  
+.  
+  
+MessageId = 1005  
+Severity = Warning  
+Facility = Application  
+SymbolicName = SERVER_CONNECTION_DOWN_MESSAGE_ID_1005  
+Language=English  
+The refresh operation did not complete because the connection to server %1 could not be established.  
+.  
+  
+; // - Event log display name -  
+; // ********************************************************  
+  
+MessageId = 5001  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_DISPLAY_NAME_MSGID  
+Language=English  
+Sample Event Log  
+.  
+  
+; // - Event message parameters -  
+; //   Language independent insertion strings  
+; // ********************************************************  
+  
+MessageId = 5002  
+Severity = Success  
+Facility = Application  
+SymbolicName = EVENT_LOG_SERVICE_NAME_MSGID  
+Language=English  
+SVC_UPDATE.EXE  
+.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティは、負の値または値よりも大きい設定<see cref="F:System.UInt32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,434 @@
+<Type Name="PersonalizationStateInfoCollection" FullName="System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection">
+  <TypeSignature Language="C#" Value="public sealed class PersonalizationStateInfoCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit PersonalizationStateInfoCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを提供<see cref="T:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo" />と<see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection>クラス ラッパーを提供、コレクション ベースのセットに対して<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>と<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンス。 これらのインスタンスをコレクションを順番に反復処理して、序数に基づくインデックスまたはキーの値が取得されます。  
+  
+ インスタンスは、パスとユーザー名の組み合わせでインデックスを作成します。 これは、必要なため<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>共有のデータを表すインスタンスは、インデックスに従って<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Path%2A>オブジェクト、一方<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンスの両方に応じてインデックスが作成、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo.Path%2A>オブジェクトおよび<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.Username%2A>オブジェクト。  
+  
+ プロバイダーから受信した順序でコレクションには、オブジェクトの情報が保持されます。 インスタンスの順序を変更したり、コレクション内の特定の並べ替え順序を維持するのには、コレクションが行われません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationStateInfoCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空のコレクションを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.WebParts.PersonalizationStateInfo data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.WebParts.PersonalizationStateInfo data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Add(System.Web.UI.WebControls.WebParts.PersonalizationStateInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />-派生インスタンスを追加します。</param>
+        <summary>追加、 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />-コレクションの末尾にインスタンスを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追加、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-コレクションの末尾にインスタンスを派生します。 内部的には、コレクションの数は 1 ずつインクリメントされます。 コレクションに対して現在アクティブな列挙子が無効になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用とマークされました。</exception>
+        <exception cref="T:System.ArgumentException">オブジェクトと同じ共有インスタンスのコレクションに追加しようとしましたが、またはユーザーごとの状態は、コレクションに既に存在します。</exception>
+        <exception cref="T:System.ArgumentNullException">データのパラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションに対して現在アクティブな列挙子が無効になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用とマークされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.PersonalizationStateInfo[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.PersonalizationStateInfo[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.CopyTo(System.Web.UI.WebControls.WebParts.PersonalizationStateInfo[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.PersonalizationStateInfo[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列にコレクション内の要素がコピーされます。</param>
+        <param name="index">コピー操作を開始する位置。</param>
+        <summary>要素をコピー、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />のコレクションを<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />指定位置にある開始位置として、配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する場合は、このメソッドを使用して、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>配列。 このメソッドを呼び出すだけ、<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>メソッドおよびパス、`array`と`index`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目数を取得します。</summary>
+        <value>コレクション内の項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例のように、コレクションを反復処理するコレクション内の項目の数を使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Count%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_PersAdmin#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理できる標準の列挙子を返します。 このメソッドは継承できません。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A>メソッドがこの位置に戻さも、列挙子を表示します。 この位置にある、<xref:System.Collections.IEnumerator.Current%2A>プロパティが定義されていません。 そのため、呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.IEnumerator.Current%2A>です。 列挙子の詳細については、次を参照してください。<xref:System.Collections.IEnumerator>です。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。 コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />コレクションが同期されている (スレッド セーフである)。</summary>
+        <value>
+          <see langword="true" />コレクションへのアクセスが同期されている場合それ以外の場合、<see langword="false" />です。 値は常に<see langword="false" />の<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />Web パーツ コントロール セットによって作成されたオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SyncRoot%2A> プロパティは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection> へのアクセスを同期するために使用できるオブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationStateInfo this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.PersonalizationStateInfo Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するオブジェクトの序数インデックス。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />インスタンスがコレクション内の指定した序数インデックスにあります。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />インスタンスがコレクション内の指定した序数インデックスにあります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>インスタンスがコレクション内の指定した序数インデックスにあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /> が <see cref="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Count" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationStateInfo this[string path, string username] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.PersonalizationStateInfo Item(string, string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Item(System.String,System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationStateInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">パーソナル化状態オブジェクトを取得するのアプリケーションの相対パス。</param>
+        <param name="username">ユーザー名、<see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" />を取得するオブジェクト。</param>
+        <summary>指定したパラメーターに基づくコレクションから要素を取得します。</summary>
+        <value>指定したパラメーターに基づくコレクションの要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションの既定のインデクサーです。 だけの場合`path`を指定すると、このプロパティを返します、<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>インスタンス。 両方`path`と`username`プロパティを返す、提供される、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>インスタンスの組み合わせの`path`と`username`です。  
+  
+ 場合`path`(の場合を`username`に設定されている`null`) が存在しない場合、または`username`と`path`が存在しない`null`が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string path, string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string path, string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Remove(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">パーソナル化状態オブジェクトを削除するのアプリケーションの相対パス。</param>
+        <param name="username">ユーザー名、 <see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" />-派生オブジェクトを削除します。</param>
+        <summary>削除、 <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />-オブジェクトをコレクションから派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、削除、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-インスタンスをコレクションから派生します。 削除されたインスタンスの後の要素は、空いた位置を占めるように移動されます。 内部的には、コレクションの数は 1 だけデクリメントします。 コレクションに対して現在アクティブな列挙子が無効になります。  
+  
+ だけの場合`path`が指定されて、<xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo>そのパスが削除されるをインスタンス化します。 両方`path`と`username`についても説明、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>の組み合わせのインスタンス`path`と`username`を削除します。  
+  
+> [!NOTE]
+>  存在しない項目をコレクションから削除しようとすることができます。この操作では、例外は発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用とマークされました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null です。  
+  
+ \- または  
+  
+ 両方のパラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="public void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取り専用コレクションをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドなど、読み取り専用コレクションを変更しようとする<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Add%2A>と<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.Remove%2A>、スロー、<xref:System.NotSupportedException>例外。  
+  
+> [!NOTE]
+>  呼び出すことができます、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SetReadOnly%2A>コレクションで複数回のメソッドです。 このは、例外は発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" />インスタンス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection" /> へのアクセスを同期するために使用できるオブジェクト。 Web パーツ コントロール セットでは、現在のコレクション オブジェクトへの参照を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ 派生クラスのコレクションを使用して、独自の同期されたバージョンを提供できます、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.SyncRoot%2A>コレクション自体で直接ではなく、コレクション。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 特に、コレクション インスタンスを同時に変更する可能性がある別スレッドとの間で、正常な同期を維持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">先の配列のコレクション<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />オブジェクトがコピーされます。</param>
+        <param name="index">内のポイント<c>配列</c>のコピーを開始する位置を示す、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />オブジェクト。</param>
+        <summary>基本の実装<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと同様、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection.CopyTo%2A>メソッドを呼び出すだけ、<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>メソッドおよびパス、`array`と`index`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,3628 @@
+<Type Name="HttpWebRequest" FullName="System.Net.HttpWebRequest">
+  <TypeSignature Language="C#" Value="public class HttpWebRequest : System.Net.WebRequest, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable HttpWebRequest extends System.Net.WebRequest implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpWebRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebRequest</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Net.WebRequest" /> クラスの HTTP 固有の実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest>クラスは、プロパティのサポートを提供し、メソッド内で定義<xref:System.Net.WebRequest>と HTTP を使用するサーバーと直接対話するユーザーを有効にするメソッドとプロパティを追加します。  
+  
+ 使用しないで、<xref:System.Net.HttpWebRequest.%23ctor%2A>コンス トラクターです。 使用して、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>新しい初期化するメソッドを<xref:System.Net.HttpWebRequest>オブジェクト。 かどうか、パターンの Uniform Resource Identifier () は`http://`または`https://`、<xref:System.Net.WebRequest.Create%2A>を返します、<xref:System.Net.HttpWebRequest>オブジェクト。  
+  
+ <xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドに同期要求で指定されたリソースを<xref:System.Net.HttpWebRequest.RequestUri%2A>プロパティを返す、<xref:System.Net.HttpWebResponse>応答オブジェクトを格納しています。 によって返されたストリームを使用して、応答データが受信される<xref:System.Net.HttpWebResponse.GetResponseStream%2A>です。 応答オブジェクトまたは応答のストリームを閉じると、残りのデータが失われます。 残りのデータが消耗して、次の条件が保持される場合に、応答オブジェクトまたはストリームを閉じるときに、ソケットが後続の要求を再度使用する: keep alive またはパイプライン処理要求は、少量のデータのみを受信する必要がありますか残りのデータは、短い時間間隔で受信されます。 保持に説明した条件に該当しないか、ドレインの時間がしきい値を超過、ソケットは閉じられます。 Keep alive またはパイプラインの接続、アプリケーションが EOF までストリームを読み取ることを強くお勧めします。 これは、結果、ソケットのパフォーマンスが向上しより少ないリソースの使用を結果として得られる後続の要求用に再利用されます。  
+  
+ リソースにデータを送信するときに、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドを返します、<xref:System.IO.Stream>を使用してデータを送信するオブジェクト。 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>と<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッドは、送信データ ストリームに非同期アクセスを提供します。  
+  
+ クライアントでの認証<xref:System.Net.HttpWebRequest>、クライアント証明書をインストールする必要があります、現在のユーザーの My 証明書ストア。  
+  
+ <xref:System.Net.HttpWebRequest>クラスがスローされます、<xref:System.Net.WebException>リソースへのアクセス中にエラーが発生します。 <xref:System.Net.WebException.Status%2A?displayProperty=nameWithType>プロパティが含まれています、<xref:System.Net.WebExceptionStatus>エラーの原因を示す値。 ときに<xref:System.Net.WebException.Status%2A?displayProperty=nameWithType>は<xref:System.Net.WebExceptionStatus.ProtocolError?displayProperty=nameWithType>、<xref:System.Net.WebException.Response%2A>プロパティが含まれています、<xref:System.Net.HttpWebResponse>リソースから受信します。  
+  
+ <xref:System.Net.HttpWebRequest>一般的な HTTP ヘッダーの値のプロパティとして、インターネット リソースに送信される、メソッド、によって設定するか、システムによって設定を公開します。次の表には、完全な一覧が含まれています。 その他のヘッダーを設定することができます、<xref:System.Net.HttpWebRequest.Headers%2A>名前/値のペアとしてプロパティです。 あるサーバーおよびキャッシュは、変更または要求時にヘッダーを追加に注意してください。  
+  
+ 次の表は、プロパティ、メソッド、またはシステムのいずれかに設定されている HTTP ヘッダーを示します。  
+  
+|ヘッダー|によってを設定します。|  
+|------------|------------|  
+|そのまま使用します。|によって設定、<xref:System.Net.HttpWebRequest.Accept%2A>プロパティです。|  
+|接続|によって設定、<xref:System.Net.HttpWebRequest.Connection%2A>プロパティ、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティです。|  
+|コンテンツの長さ|によって設定、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティです。|  
+|コンテンツの種類|によって設定、<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティです。|  
+|期待|によって設定、<xref:System.Net.HttpWebRequest.Expect%2A>プロパティです。|  
+|日付|現在の日付に、システムによって設定されます。|  
+|Host|現在のホスト情報をシステムによって設定されます。|  
+|場合の変更-以降|によって設定、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティです。|  
+|範囲|によって設定、<xref:System.Net.HttpWebRequest.AddRange%2A>メソッドです。|  
+|Referer|によって設定、<xref:System.Net.HttpWebRequest.Referer%2A>プロパティです。|  
+|転送エンコード|によって設定、<xref:System.Net.HttpWebRequest.TransferEncoding%2A>プロパティ (、<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティである必要があります`true`)。|  
+|ユーザー エージェント|によって設定、<xref:System.Net.HttpWebRequest.UserAgent%2A>プロパティです。|  
+  
+> [!NOTE]
+>  <xref:System.Net.HttpWebRequest>自動的に登録されます。 呼び出す必要はありません、<xref:System.Net.WebRequest.RegisterPrefix%2A>メソッドを登録する<xref:System.Net.HttpWebRequest?displayProperty=nameWithType>Uri を使用する前に始まる`http://`または`https://`です。  
+  
+ ローカル コンピューターまたはアプリケーション構成ファイルが既定のプロキシを使用することを指定します。 場合、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティを指定すると、プロキシの設定から、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティは、ローカル コンピューターまたはアプリケーション構成ファイルをオーバーライドおよび<xref:System.Net.HttpWebRequest>インスタンスが指定したプロキシ設定を使用します。 プロキシが構成ファイルに指定されていない場合、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティは指定しません、<xref:System.Net.HttpWebRequest>クラスは、ローカル コンピューターで Internet Explorer から継承されたプロキシ設定を使用します。 Internet Explorer のプロキシ設定がない場合、要求は、サーバーに直接送信されます。  
+  
+ <xref:System.Net.HttpWebRequest>クラスがワイルドカード文字を Internet Explorer で直接バイパス リストが解析されるよりも異なる方法で Internet Explorer から継承プロキシ バイ パスの一覧を解析します。 たとえば、<xref:System.Net.HttpWebRequest>クラスでは「nt *」Internet Explorer からのバイパス一覧を解析の正規表現として"nt。 $"です。 これは、Internet Explorer のネイティブの動作とは異なります。 などの URL"`http://intxxxxx`"を使用してプロキシを使用しないと、<xref:System.Net.HttpWebRequest>クラスが、Internet Explorer を使用してプロキシをバイパスできません。  
+  
+> [!NOTE]
+>  フレームワークでは、SSL セッションを作成するときはキャッシュ、可能であれば、新しい要求のキャッシュされているセッションを再利用しようとします。 フレームワークでの最初の要素を使用するときに、SSL セッションを再利用する、 <xref:System.Net.HttpWebRequest.ClientCertificates%2A> (かどうかがある 1 つ)、匿名のセッションを再利用を試みる<xref:System.Net.HttpWebRequest.ClientCertificates%2A>が空です。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、cookie は、既定で無効にします。 Cookie を使用する場合は、使用、 <xref:System.Net.HttpWebRequest.CookieContainer%2A> cookie を有効にするプロパティです。  
+  
+ .NET Framework 4.6 には、安全性の低い暗号およびハッシュ アルゴリズムの接続をブロックする新しいセキュリティ機能が含まれています。 HttpClient、HttpWebRequest、FTPClient、SmtpClient、SslStream などの Api を介した TLS と SSL を使用して、.NET Framework 4.6 を対象とするアプリケーションでは、既定では、セキュリティが強化された動作を取得します。  
+  
+ 開発者は、既存 SSL3 サービスまたは TLS で RC4 サービスと相互運用性を維持するために、この動作を除外する必要あります。 [この記事](https://support.microsoft.com/kb/3069494)新しい動作を無効にするように、コードを変更する方法について説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Net.HttpWebRequest> URI http://www.contoso.com/ をします。  
+  
+ [!code-cpp[Classic HttpWebRequest Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpWebRequest Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpWebRequest Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebRequest Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpWebRequest Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpWebRequest Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Net.WebPermission">要求された URI またはに要求をリダイレクトする任意の URI にアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Net.HttpWebRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpWebRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.HttpWebRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpWebRequest (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HttpWebRequest (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Serialization is obsoleted for this type", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />新しいシリアル化に必要な情報を格納しているオブジェクト<see cref="T:System.Net.HttpWebRequest" />オブジェクト。</param>
+        <param name="streamingContext">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ソースと、新しいに関連付けられているシリアル化されたストリームの転送先を含むオブジェクト<see cref="T:System.Net.HttpWebRequest" />オブジェクト。</param>
+        <summary><see cref="T:System.Net.HttpWebRequest" /> クラスと <see cref="T:System.Runtime.Serialization.SerializationInfo" /> クラスの指定したインスタンスから、<see cref="T:System.Runtime.Serialization.StreamingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、シリアル化を使用する場合、完全信頼モードで実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">ネットワーク リソースに無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public override void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インターネット リソースへの要求を取り消します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Abort%2A>メソッドは、リソースへの要求をキャンセルします。 要求が取り消されると後の呼び出し、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、 <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>、 <xref:System.Net.HttpWebRequest.EndGetResponse%2A>、 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>、または<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッド原因、<xref:System.Net.WebException>で、<xref:System.Net.WebException.Status%2A>プロパティに設定<xref:System.Net.WebExceptionStatus.RequestCanceled>です。  
+  
+ <xref:System.Net.HttpWebRequest.Abort%2A>メソッドは、指定されたコールバックを実行して同期的に、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>または<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッド場合、<xref:System.Net.HttpWebRequest.Abort%2A>未処理はこれらの操作のいずれかのメソッドが呼び出されます。 これは、デッドロック問題が発生する可能性があります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。[ネットワークのトレース](http://msdn.microsoft.com/en-us/e993b7c3-087f-45d8-9c02-9dded936d804)です。  
+  
+   
+  
+## Examples  
+ 非同期要求の場合、独自のタイムアウト メカニズムを実装するクライアント アプリケーションの役割です。 次のコード例では、これを行う方法を示します。  
+  
+ [!code-cpp[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/CPP/begingetresponse.cpp#1)]
+ [!code-csharp[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/CS/begingetresponse.cs#1)]
+ [!code-vb[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/VB/begingetresponse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="public string Accept { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Accept" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Accept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Accept" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="Accept" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリアする、 `Accept` HTTP ヘッダーを設定、<xref:System.Net.HttpWebRequest.Accept%2A>プロパティを`null`です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.Accept%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_Accept#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Accept/CPP/httpwebrequest_accept.cpp#1)]
+ [!code-csharp[HttpWebRequest_Accept#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Accept/CS/httpwebrequest_accept.cs#1)]
+ [!code-vb[HttpWebRequest_Accept#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Accept/VB/httpwebrequest_accept.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddRange">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>要求に範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (int range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(int32 range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="range">範囲の先頭または末尾。</param>
+        <summary>要求されたデータの先頭または末尾からの特定の範囲の要求にバイト範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求にバイト範囲ヘッダーを追加します。  
+  
+ 場合`range`が正の値、`range`パラメーターが範囲の開始位置を指定します。 サーバーがからのデータの送信を開始する必要があります、 `range` HTTP エンティティ内のデータの末尾に指定されたパラメーター。  
+  
+ 場合`range`は負の値、`range`パラメーターが範囲の終了位置を指定します。 サーバーが HTTP エンティティ内のデータの先頭からのデータの送信を開始する必要があります、`range`パラメーターが指定されています。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ 以下になります (99 のバイト位置を先頭) から最初の 100 バイトの送信をサーバーに要求する、HTTP プロトコルの要求に Range ヘッダーの例:  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、 `range` -99 パラメーターになります。  
+  
+ HTTP サーバーでは、Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求に範囲ヘッダーを追加します。  
+  
+ [!code-cpp[System.Net.HttpWebRequest.AddRange#1](~/samples/snippets/cpp/VS_Snippets_Misc/system.net.httpwebrequest.addrange/cpp/source.cpp#1)]
+ [!code-csharp[System.Net.HttpWebRequest.AddRange#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.net.httpwebrequest.addrange/cs/source.cs#1)]
+ [!code-vb[System.Net.HttpWebRequest.AddRange#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.net.httpwebrequest.addrange/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+        <altmember cref="Overload:System.Net.HttpWebRequest.AddRange" />
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (long range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(int64 range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="range">範囲の先頭または末尾。</param>
+        <summary>要求されたデータの先頭または末尾からの特定の範囲の要求にバイト範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求にバイト範囲ヘッダーを追加します。  
+  
+ 場合`range`が正の値、`range`パラメーターが範囲の開始位置を指定します。 サーバーがからのデータの送信を開始する必要があります、 `range` HTTP エンティティ内のデータの末尾に指定されたパラメーター。  
+  
+ 場合`range`は負の値、`range`パラメーターが範囲の終了位置を指定します。 サーバーが HTTP エンティティ内のデータの先頭からのデータの送信を開始する必要があります、`range`パラメーターが指定されています。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ 以下になります (99 のバイト位置を先頭) から最初の 100 バイトの送信をサーバーに要求する、HTTP プロトコルの要求に Range ヘッダーの例:  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、 `range` -99 パラメーターになります。  
+  
+ HTTP サーバーでは、Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (int from, int to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(int32 from, int32 to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.Int32" />
+        <Parameter Name="to" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="from">データの送信を開始する位置。</param>
+        <param name="to">データの送信を終了する位置。</param>
+        <summary>指定した範囲の要求にバイト範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求にバイト範囲ヘッダーを追加します。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、`from`パラメーターが 0 として指定され、 `to` 99 としてパラメーターを指定するとします。 範囲指定子は、このメソッドによって自動的に「バイトを」として設定されます。  
+  
+ HTTP サーバーでは、Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求に範囲ヘッダーを追加します。  
+  
+ [!code-cpp[System.Net.HttpWebRequest.AddRange2#1](~/samples/snippets/cpp/VS_Snippets_Misc/system.net.httpwebrequest.addrange2/cpp/source.cpp#1)]
+ [!code-csharp[System.Net.HttpWebRequest.AddRange2#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.net.httpwebrequest.addrange2/cs/source.cs#1)]
+ [!code-vb[System.Net.HttpWebRequest.AddRange2#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.net.httpwebrequest.addrange2/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="from" /> は <paramref name="to" /> より大きい  
+  
+ または  
+  
+ <paramref name="from" /> または <paramref name="to" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+        <altmember cref="Overload:System.Net.HttpWebRequest.AddRange" />
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (long from, long to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(int64 from, int64 to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.Int64" />
+        <Parameter Name="to" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="from">データの送信を開始する位置。</param>
+        <param name="to">データの送信を終了する位置。</param>
+        <summary>指定した範囲の要求にバイト範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求にバイト範囲ヘッダーを追加します。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、`from`パラメーターが 0 として指定され、 `to` 99 としてパラメーターを指定するとします。 範囲指定子は、このメソッドによって自動的に「バイトを」として設定されます。  
+  
+ HTTP サーバーでは、Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="from" /> は <paramref name="to" /> より大きい  
+  
+ または  
+  
+ <paramref name="from" /> または <paramref name="to" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (string rangeSpecifier, int range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(string rangeSpecifier, int32 range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rangeSpecifier" Type="System.String" />
+        <Parameter Name="range" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rangeSpecifier">範囲の説明。</param>
+        <param name="range">範囲の先頭または末尾。</param>
+        <summary>要求されたデータの先頭または末尾からの特定の範囲の要求に Range ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求に範囲ヘッダーを追加します。  
+  
+ 場合`range`が正の値、`range`パラメーターが範囲の開始位置を指定します。 サーバーがからのデータの送信を開始する必要があります、 `range` HTTP エンティティ内のデータの末尾に指定されたパラメーター。  
+  
+ 場合`range`は負の値、`range`パラメーターが範囲の終了位置を指定します。 サーバーが HTTP エンティティ内のデータの先頭からのデータの送信を開始する必要があります、`range`パラメーターが指定されています。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ `rangeSpecifier`パラメーターは通常を指定する、""(バイト単位) としては、ほとんどの HTTP サーバーによって認識される唯一の範囲指定子のためです。 設定、`rangeSpecifier`他のいくつかの文字列へのパラメーターでは、バイト数 (バイト範囲指定子、IETF によって RFC 2616 で定義されている) 以外のカスタム範囲指定子のサポート。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=-99\r\n\r\n`  
+  
+ この例で、`rangeSpecifier`パラメーターが「バイトを」として指定され、 `range` -99 パラメーターになります。  
+  
+ HTTP サーバーでは、応答で Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rangeSpecifier" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (string rangeSpecifier, long range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(string rangeSpecifier, int64 range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rangeSpecifier" Type="System.String" />
+        <Parameter Name="range" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="rangeSpecifier">範囲の説明。</param>
+        <param name="range">範囲の先頭または末尾。</param>
+        <summary>要求されたデータの先頭または末尾からの特定の範囲の要求に Range ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求に範囲ヘッダーを追加します。  
+  
+ 場合`range`が正の値、`range`パラメーターが範囲の開始位置を指定します。 サーバーがからのデータの送信を開始する必要があります、 `range` HTTP エンティティ内のデータの末尾に指定されたパラメーター。  
+  
+ 場合`range`は負の値、`range`パラメーターが範囲の終了位置を指定します。 サーバーが HTTP エンティティ内のデータの先頭からのデータの送信を開始する必要があります、`range`パラメーターが指定されています。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ `rangeSpecifier`パラメーターは通常を指定する、""(バイト単位) としては、ほとんどの HTTP サーバーによって認識される唯一の範囲指定子のためです。 設定、`rangeSpecifier`他のいくつかの文字列へのパラメーターでは、バイト数 (バイト範囲指定子、IETF によって RFC 2616 で定義されている) 以外のカスタム範囲指定子のサポート。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=-99\r\n\r\n`  
+  
+ この例で、`rangeSpecifier`パラメーターが「バイトを」として指定され、 `range` -99 パラメーターになります。  
+  
+ HTTP サーバーでは、応答で Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rangeSpecifier" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (string rangeSpecifier, int from, int to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(string rangeSpecifier, int32 from, int32 to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rangeSpecifier" Type="System.String" />
+        <Parameter Name="from" Type="System.Int32" />
+        <Parameter Name="to" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rangeSpecifier">範囲の説明。</param>
+        <param name="from">データの送信を開始する位置。</param>
+        <param name="to">データの送信を終了する位置。</param>
+        <summary>指定した範囲の要求に範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求に範囲ヘッダーを追加します。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ `rangeSpecifier`パラメーターは通常を指定する、""(バイト単位) としては、ほとんどの HTTP サーバーによって認識される唯一の範囲指定子のためです。 設定、`rangeSpecifier`他のいくつかの文字列へのパラメーターでは、バイト数 (バイト範囲指定子、IETF によって RFC 2616 で定義されている) 以外のカスタム範囲指定子のサポート。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、`rangeSpecifier`パラメーターが、""(バイト単位) として指定された、`from`パラメーターが 0 になります、`to`パラメーター 99 になります。  
+  
+ HTTP サーバーでは、応答で Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ 範囲 Accept ヘッダーで指定した文字列は、範囲指定子内で指定される、`rangeSpecifier`このメソッドのパラメーターです。  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rangeSpecifier" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="from" /> は <paramref name="to" /> より大きい  
+  
+ または  
+  
+ <paramref name="from" /> または <paramref name="to" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (string rangeSpecifier, long from, long to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(string rangeSpecifier, int64 from, int64 to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.AddRange(System.String,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rangeSpecifier" Type="System.String" />
+        <Parameter Name="from" Type="System.Int64" />
+        <Parameter Name="to" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="rangeSpecifier">範囲の説明。</param>
+        <param name="from">データの送信を開始する位置。</param>
+        <param name="to">データの送信を終了する位置。</param>
+        <summary>指定した範囲の要求に範囲ヘッダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.AddRange%2A?displayProperty=nameWithType>メソッドが要求に範囲ヘッダーを追加します。  
+  
+ HTTP のすべてのエンティティは、HTTP メッセージのバイトのシーケンスとして表記は、ためバイトの範囲の概念は任意の HTTP エンティティ無効です。 ただし、すべてのクライアントとサーバーは、バイト範囲の操作をサポートする必要があります。  
+  
+ 要求に Range ヘッダーには、要求のみが必要である HTTP エンティティに指定されたバイトの範囲の一部を受信するクライアントができます。 範囲ヘッダーの要求をサポートするためには、サーバーは必要はありません。  
+  
+ `rangeSpecifier`パラメーターは通常を指定する、""(バイト単位) としては、ほとんどの HTTP サーバーによって認識される唯一の範囲指定子のためです。 設定、`rangeSpecifier`他のいくつかの文字列へのパラメーターでは、バイト数 (バイト範囲指定子、IETF によって RFC 2616 で定義されている) 以外のカスタム範囲指定子のサポート。  
+  
+ 要求の最初の 100 バイトになる HTTP プロトコルの要求に Range ヘッダーの例は、次のようになります  
+  
+ `Range: bytes=0-99\r\n\r\n`  
+  
+ この例で、`rangeSpecifier`パラメーターが、""(バイト単位) として指定された、`from`パラメーターが 0 になります、`to`パラメーター 99 になります。  
+  
+ HTTP サーバーでは、応答で Accept 範囲ヘッダーを持つ範囲ヘッダーのサポートを示します。 バイト範囲をサポートしているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: bytes\r\n\r\n`  
+  
+ 範囲 Accept ヘッダーで指定した文字列は、範囲指定子内で指定される、`rangeSpecifier`このメソッドのパラメーターです。  
+  
+ Accept 範囲ヘッダーが受信されない場合、サーバーからの応答のヘッダーに、し、サーバーはサポートしていません範囲ヘッダー。 範囲をサポートしていませんが、Accept 範囲ヘッダーを認識しているサーバーから Accept 範囲ヘッダーの例に次のようになります。  
+  
+ `Accept-Ranges: none\r\n\r\n`  
+  
+ 全体の要求に関連付けられている HTTP ヘッダーだけが解析され、プロパティを使用できる範囲の要求から応答を受信するときに、<xref:System.Net.HttpWebResponse>クラスです。 各範囲に関連付けられたヘッダーが応答で返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rangeSpecifier" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="from" /> は <paramref name="to" /> より大きい  
+  
+ または  
+  
+ <paramref name="from" /> または <paramref name="to" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rangeSpecifier" /> が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">範囲ヘッダーを追加できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public Uri Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に実際に応答するインターネット リソースの URI (Uniform Resource Identifier) を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />実際には、要求に応答したインターネット リソースを識別します。 既定値は、URI で使用される、<see cref="M:System.Net.WebRequest.Create(System.String)" />要求を初期化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Address%2A>プロパティは、要求時に発生するすべてのリダイレクトが完了した後、URI に設定されています。  
+  
+ 元の要求の URI が保持される、<xref:System.Net.HttpWebRequest.RequestUri%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Net.HttpWebRequest>オブジェクト`req`の値を設定は、要求を処理する別の場所にリダイレクトされ、`hasChanged`変数を`true`場合は、要求がリダイレクトされましたそれ以外の場合`hasChanged`。に設定されている`false`です。  
+  
+ [!code-cpp[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowAutoRedirect">
+      <MemberSignature Language="C#" Value="public virtual bool AllowAutoRedirect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowAutoRedirect" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.AllowAutoRedirect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求がリダイレクト応答に従うかどうかを示す値を取得または設定します。</summary>
+        <value>
+          要求がインターネット リソースからのリダイレクト応答に自動的に従う場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A>に`true`する場合は、リソースの新しい場所に自動的に次の HTTP リダイレクト ヘッダーを要求します。 リダイレクト先の最大数が設定、<xref:System.Net.HttpWebRequest.MaximumAutomaticRedirections%2A>プロパティです。  
+  
+ 場合<xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A>に設定されている`false`、すべての応答は HTTP ステータス コードで 300 から 399 には、アプリケーションに返されます。  
+  
+ 自動リダイレクトで Authorization ヘッダーがオフと<xref:System.Net.HttpWebRequest>リダイレクトされる場所を再認証に自動的に試みます。 実際には、つまり、アプリケーションも、リダイレクトが発生する可能性がある場合に、承認ヘッダーにカスタムの認証情報を置くことはできません。 代わりに、アプリケーションでは、実装してカスタム認証モジュールを登録する必要があります。 <xref:System.Net.AuthenticationManager?displayProperty=nameWithType>関連クラスを使用して、カスタム認証モジュールを実装します。 <xref:System.Net.AuthenticationManager.Register%2A?displayProperty=nameWithType>メソッドは、カスタム認証モジュールを登録します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A>要求をリダイレクト応答に従うようにするプロパティです。  
+  
+ [!code-cpp[HttpWebRequest_AllowAutoRedirect#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_AllowAutoRedirect/CPP/httpwebrequest_allowautoredirect.cpp#2)]
+ [!code-csharp[HttpWebRequest_AllowAutoRedirect#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_AllowAutoRedirect/CS/httpwebrequest_allowautoredirect.cs#2)]
+ [!code-vb[HttpWebRequest_AllowAutoRedirect#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_AllowAutoRedirect/VB/httpwebrequest_allowautoredirect.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowReadStreamBuffering">
+      <MemberSignature Language="C#" Value="public virtual bool AllowReadStreamBuffering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowReadStreamBuffering" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.AllowReadStreamBuffering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースから受け取ったデータをバッファリングするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          インターネット リソースから受信したデータのバッファリングを有効にする場合は <see langword="true" />。バッファリングを無効にする場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowWriteStreamBuffering">
+      <MemberSignature Language="C#" Value="public virtual bool AllowWriteStreamBuffering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowWriteStreamBuffering" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースに送信するデータをバッファリングするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />インターネット リソースに送信するデータのバッファリングを有効にするには<see langword="false" />バッファリングを無効にします。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A>は`true`要求のリダイレクトまたは認証が発生した場合は再送信できるように、データがメモリにバッファリングされています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A>プロパティをデータのバッファリングを無効にします。  
+  
+ [!code-cpp[HttpWebRequest_AllowWriteStreamBuffering#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_AllowWriteStreamBuffering/CPP/httpwebrequest_allowwritestreambuffering.cpp#1)]
+ [!code-csharp[HttpWebRequest_AllowWriteStreamBuffering#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_AllowWriteStreamBuffering/CS/httpwebrequest_allowwritestreambuffering.cs#1)]
+ [!code-vb[HttpWebRequest_AllowWriteStreamBuffering#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_AllowWriteStreamBuffering/VB/httpwebrequest_allowwritestreambuffering.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>設定<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" />に<see langword="true" />データ バッファーが使用可能なメモリを使用するために、大規模なデータセットをアップロードするときにパフォーマンスの問題が発生する可能性があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticDecompression">
+      <MemberSignature Language="C#" Value="public System.Net.DecompressionMethods AutomaticDecompression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.DecompressionMethods AutomaticDecompression" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.AutomaticDecompression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.DecompressionMethods</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用される圧縮解除の種類を取得または設定します。</summary>
+        <value>A<see cref="T:System.Net.DecompressionMethods" />のために使用される圧縮解除の種類を示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">オブジェクトの現在の状態では、このプロパティを設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetRequestStream">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetRequestStream (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetRequestStream(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">この要求に対して使用する状態オブジェクト。</param>
+        <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を開始します。</summary>
+        <returns>非同期の要求を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>メソッド用のデータの送信に使用されるストリームへの非同期要求の開始、<xref:System.Net.HttpWebRequest>です。 非同期コールバック メソッドを使用して、<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>実際のストリームを返すメソッド。  
+  
+ <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>メソッド (DNS の解決、プロキシ検出、および TCP ソケット接続など) にする前にこのメソッドが非同期状態にいくつかの同期のセットアップ タスクが必要です。 その結果、このメソッド呼び出さないでユーザー インターフェイス (UI) スレッドでエラーがスローされるため、例外の前に、初期同期のセットアップ タスクを完了する (ネットワークの設定によっては数分) までにかなりの時間がかかる場合がありますので、またはメソッドは成功します。  
+  
+ スレッド プールの詳細については、次を参照してください。 [、マネージ スレッド プール](~/docs/standard/threading/the-managed-thread-pool.md)です。  
+  
+> [!NOTE]
+>  アプリケーションでは、特定の要求を同期および非同期のメソッドを組み合わせることはできません。 呼び出す場合は、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>方法を使用する必要があります、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>応答を取得します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>をストリームのインスタンスへの非同期要求を行うメソッドです。  
+  
+ [!code-cpp[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/CPP/httpwebrequest_begingetrequeststream.cpp#2)]
+ [!code-csharp[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/CS/httpwebrequest_begingetrequeststream.cs#2)]
+ [!code-vb[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/VB/httpwebrequest_begingetrequeststream.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> プロパティは GET または HEAD です。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> が <see langword="true" />、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> が <see langword="false" />、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> が -1、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> で、<see cref="P:System.Net.HttpWebRequest.Method" /> が POST か PUT です。</exception>
+        <exception cref="T:System.InvalidOperationException">前回の <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> への呼び出しでストリームが使用中です。  
+  
+ または  
+  
+ <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> が値に設定されており、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> です。  
+  
+ または  
+  
+ スレッド プールは、スレッドを使い切りました。</exception>
+        <exception cref="T:System.NotSupportedException">要求キャッシュの検証コントロールは、この要求に対する応答がキャッシュから提供されることを示していますが、データを書き込む要求ではキャッシュを使用してはなりません。 正しく実装されていないカスタム キャッシュの検証コントロールを使用すると、この例外が発生する場合があります。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">.NET Compact Framework アプリケーションでコンテンツの長さが 0 の要求ストリームが取得されず、正しく閉じられませんでした。 コンテンツの長さが 0 の要求の処理の詳細については、次を参照してください。 [.NET Compact Framework でのネットワーク プログラミング](https://msdn.microsoft.com/subscriptions/downloads/1afx2b0f\(v=vs.80\).aspx)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetResponse">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetResponse (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetResponse(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.AsyncCallback" /> デリゲート</param>
+        <param name="state">この要求に対して使用する状態オブジェクト。</param>
+        <summary>インターネット リソースへの非同期要求を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />応答の非同期要求を参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドは、インターネット リソースからの応答の非同期要求を開始します。 非同期コールバック メソッドを使用して、<xref:System.Net.HttpWebRequest.EndGetResponse%2A>実際を返すメソッド<xref:System.Net.WebResponse>です。  
+  
+ A<xref:System.Net.ProtocolViolationException>プロパティに設定すると、いくつかのケースでスローされたが、<xref:System.Net.HttpWebRequest>クラスが競合しています。 アプリケーションを設定する場合、この例外が発生した、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティおよび<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを`true`、し、HTTP GET 要求を送信します。 この例外は、アプリケーションは、ここではサポートされていない HTTP 1.0 プロトコルのみをサポートするサーバーにチャンクを送信しようとした場合に発生します。 アプリケーション設定を指定せずにデータを送信しようとする場合、この例外が発生した、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティまたは<xref:System.Net.HttpWebRequest.SendChunked%2A>は`false`バッファリングを無効にする場合とキープア ライブ接続で (、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティは`true`)`.`  
+  
+ 場合、<xref:System.Net.WebException>がスローされた場合を使用して、<xref:System.Net.WebException.Response%2A>と<xref:System.Net.WebException.Status%2A>サーバーからの応答を決定する例外のプロパティです。  
+  
+ <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッド (DNS の解決、プロキシ検出、および TCP ソケット接続など) にする前にこのメソッドが非同期状態にいくつかの同期のセットアップ タスクが必要です。 その結果、このメソッド呼び出さないでユーザー インターフェイス (UI) スレッドでエラーがスローされるため、例外の前に、初期同期のセットアップ タスクを完了する (ネットワークの設定によっては数分) までにかなりの時間がかかる場合がありますので、またはメソッドは成功します。  
+  
+ スレッド プールの詳細については、次を参照してください[&#91;\< 。topic://cpconthreadpooling > & #93 です。](http://msdn.microsoft.com/en-us/2be05b06-a42e-4c9d-a739-96c21d673927).  
+  
+> [!NOTE]
+>  アプリケーションでは、特定の要求を同期および非同期のメソッドを組み合わせることはできません。 呼び出す場合は、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>方法を使用する必要があります、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>応答を取得します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください[&#91;\< 。topic://conUsingNetworkTracing > & #93 です。](http://msdn.microsoft.com/en-us/e993b7c3-087f-45d8-9c02-9dded936d804).  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>をインターネット リソースへの非同期要求を行うメソッドです。  
+  
+> [!NOTE]
+>  非同期要求の場合、独自のタイムアウト メカニズムを実装するクライアント アプリケーションの役割です。 次のコード例では、それを実行する方法を示します。  
+  
+ [!code-cpp[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/CPP/begingetresponse.cpp#1)]
+ [!code-csharp[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/CS/begingetresponse.cs#1)]
+ [!code-vb[System.Net.HttpWebRequest.BeginGetResponse#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.HttpWebRequest.BeginGetResponse/VB/begingetresponse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ストリームが前の呼び出しによって使用されて、既に<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />  
+  
+ または  
+  
+ <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> が値に設定されており、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> です。  
+  
+ または  
+  
+ スレッド プールは、スレッドが不足しています。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException">
+          <see cref="P:System.Net.HttpWebRequest.Method" />GET または HEAD で、<see cref="P:System.Net.HttpWebRequest.ContentLength" />が 0 より大きいまたは<see cref="P:System.Net.HttpWebRequest.SendChunked" />は<see langword="true" />します。  
+  
+ または  
+  
+ <see cref="P:System.Net.HttpWebRequest.KeepAlive" /><see langword="true" />、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" />は<see langword="false" />、いずれかと<see cref="P:System.Net.HttpWebRequest.ContentLength" />-1 で、<see cref="P:System.Net.HttpWebRequest.SendChunked" />は<see langword="false" />と<see cref="P:System.Net.HttpWebRequest.Method" />が POST か PUT です。  
+  
+ または  
+  
+ <see cref="T:System.Net.HttpWebRequest" />はエンティティ本体がありますが、<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />呼び出さずにメソッドが呼び出されます、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />メソッドです。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.ContentLength" />は、0 より大きい値が、アプリケーションではすべて保証されたデータの書き込みはありません。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCertificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ClientCertificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509CertificateCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求に関連付けられているセキュリティ証明書のコレクションを取得または設定します。</summary>
+        <value>この要求に関連付けられているセキュリティ証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、証明書をコレクションに追加できますが、それへのアクセス権がないです。 コレクション内の証明書を使用するのには、証明書を発行したエンティティと同じアクセス権がアプリケーションに必要です。  
+  
+> [!NOTE]
+>  フレームワークでは、SSL セッションを作成するときはキャッシュ、可能であれば、新しい要求のキャッシュされているセッションを再利用しようとします。 フレームワークでの最初の要素を使用するときに、SSL セッションを再利用する、 <xref:System.Net.HttpWebRequest.ClientCertificates%2A> (かどうかがある 1 つ)、匿名のセッションを再利用を試みる<xref:System.Net.HttpWebRequest.ClientCertificates%2A>が空です。  
+  
+> [!NOTE]
+>  パフォーマンス向上のためにクライアント証明書を追加することはできません、<xref:System.Net.HttpWebRequest>わかっているため、サーバーを依頼しない限り、します。  
+>   
+>  クライアント証明書ストアに証明書を列挙する方法を示すコード例は、次を参照してください。、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public string Connection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Connection" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="Connection" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の送信、<xref:System.Net.HttpWebRequest.Connection%2A>としてインターネット リソースへのプロパティ、 `Connection` HTTP ヘッダー。 場合の値、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティは`true`、"Keep alive"の値の末尾に追加、`Connection`ヘッダー。  
+  
+ クリアする、 `Connection` HTTP ヘッダーを設定、<xref:System.Net.HttpWebRequest.Connection%2A>プロパティを`null`です。  
+  
+ 変更、<xref:System.Net.HttpWebRequest.Connection%2A>プロパティを呼び出して、要求が開始された後、 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、または<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.Connection%2A>接続 HTTP ヘッダーの値を設定するプロパティです。  
+  
+ [!code-cpp[HttpWebRequest_Connection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Connection/CPP/httpwebrequest_connection.cpp#1)]
+ [!code-csharp[HttpWebRequest_Connection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Connection/CS/httpwebrequest_connection.cs#1)]
+ [!code-vb[HttpWebRequest_Connection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Connection/VB/httpwebrequest_connection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値<see cref="P:System.Net.HttpWebRequest.Connection" />keep-alive または Close に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionGroupName">
+      <MemberSignature Language="C#" Value="public override string ConnectionGroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionGroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ConnectionGroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用する接続グループの名前を取得または設定します。</summary>
+        <value>この要求に対して使用する接続グループの名前。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.ConnectionGroupName%2A>プロパティは、要求を接続グループに関連付けることができます。 これは、機能は、アプリケーションは、データベース サーバーから顧客情報を取得する Web サイトなど、さまざまなユーザーの 1 つのサーバーに要求を行うときに便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー情報を使用している場合、接続グループを形成する方法を表示する変数`username`、 `password`、および`domain`このコードを呼び出す前に、アプリケーションによって設定されます。  
+  
+ [!code-cpp[Classic HttpWebRequest.ConnectionGroupName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpWebRequest.ConnectionGroupName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpWebRequest.ConnectionGroupName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebRequest.ConnectionGroupName Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpWebRequest.ConnectionGroupName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpWebRequest.ConnectionGroupName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>各接続グループでは、サーバーの追加の接続を作成します。 これが原因で設定の接続数を超えた場合、<see cref="P:System.Net.ServicePoint.ConnectionLimit" />そのサーバーのプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Content-length" /> HTTP ヘッダーを取得または設定します。</summary>
+        <value>インターネット リソースに送信するデータのバイト数。 既定値は -1 です。このプロパティが設定されていないこと、および送信する要求データが存在しないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティにはとして送信する値が含まれています、 `Content-length` HTTP ヘッダー、要求を使用します。  
+  
+ -1 以外の値を<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティを示し、要求がデータをアップロードすることで設定するデータをアップロードするメソッドのみが許可されていること、<xref:System.Net.HttpWebRequest.Method%2A>プロパティです。  
+  
+ 後に、<xref:System.Net.HttpWebRequest.ContentLength%2A>値にプロパティを設定すると、そのバイト数に書き込まれると呼び出しによって返される要求ストリーム、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドまたはその両方、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>と<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッドです。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.ContentLength%2A>通知されている文字列の長さのプロパティです。  
+  
+ [!code-cpp[HttpWebRequest_ContentLength#4](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CPP/httpwebrequest_contentlength.cpp#4)]
+ [!code-csharp[HttpWebRequest_ContentLength#4](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CS/httpwebrequest_contentlength.cs#4)]
+ [!code-vb[HttpWebRequest_ContentLength#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_ContentLength/VB/httpwebrequest_contentlength.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />、<see cref="M:System.Net.HttpWebRequest.GetResponse" />、または <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> メソッドを呼び出すことにより要求が開始されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新規 <see cref="P:System.Net.HttpWebRequest.ContentLength" /> 値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Content-type" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="Content-type" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.ContentType%2A>プロパティには、要求のメディアの種類が含まれています。 割り当てられた値、<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティは、要求が送信する場合に既存の内容を置き換える、 `Content-type` HTTP ヘッダー。  
+  
+ クリアする、 `Content-type` HTTP ヘッダーを設定、<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティを`null`です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 場合<xref:System.Net.WebHeaderCollection>が設定されている、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_ContentLength#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CPP/httpwebrequest_contentlength.cpp#1)]
+ [!code-csharp[HttpWebRequest_ContentLength#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CS/httpwebrequest_contentlength.cs#1)]
+ [!code-vb[HttpWebRequest_ContentLength#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_ContentLength/VB/httpwebrequest_contentlength.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueDelegate">
+      <MemberSignature Language="C#" Value="public System.Net.HttpContinueDelegate ContinueDelegate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpContinueDelegate ContinueDelegate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ContinueDelegate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpContinueDelegate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースから HTTP 100-continue 応答を受信したときに呼び出されるデリゲート メソッドを取得または設定します。</summary>
+        <value>インターネット リソースから HTTP Continue 応答が返されたときに実行されるコールバック メソッドを実装するデリゲート。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.ContinueDelegate%2A>プロパティは、クライアントは、100 を受信したときに呼び出すコールバック メソッドを指定の応答を続行します。  
+  
+ ときに、<xref:System.Net.HttpWebRequest.ContinueDelegate%2A>プロパティが設定されて、クライアントは、デリゲートを呼び出すたびにプロトコルの種類の応答<xref:System.Net.HttpStatusCode.Continue?displayProperty=nameWithType>(100) が受信します。 これは、クライアントがインターネット リソースから受信されるデータの状態を表示する場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueTimeout">
+      <MemberSignature Language="C#" Value="public int ContinueTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ContinueTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ContinueTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>100 回の続行まで待機するミリ秒単位のタイムアウト値をサーバーから取得または設定します。</summary>
+        <value>100 回の続行まで待機するミリ秒単位のタイムアウト値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、100-タイムアウトになると、エンティティ本文を送信する前に、応答を受信したを続行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieContainer">
+      <MemberSignature Language="C#" Value="public virtual System.Net.CookieContainer CookieContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieContainer CookieContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.CookieContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.CookieContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に関連付けられているクッキーを取得または設定します。</summary>
+        <value>この要求に関連付けられているクッキーを格納している <see cref="T:System.Net.CookieContainer" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.CookieContainer%2A>プロパティのインスタンスを提供する、<xref:System.Net.CookieContainer>この要求に関連付けられているクッキーを格納するクラス。  
+  
+ <xref:System.Net.HttpWebRequest.CookieContainer%2A>`null`既定です。 割り当てる必要があります、<xref:System.Net.CookieContainer>オブジェクトで返されたクッキーを使用してプロパティを<xref:System.Net.HttpWebResponse.Cookies%2A>のプロパティ、<xref:System.Net.HttpWebResponse>によって返される、<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドです。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、cookie は、既定で無効にします。 Cookie を使用する場合は、使用、 <xref:System.Net.HttpWebRequest.CookieContainer%2A> cookie を有効にするプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、URL に要求を送信し、応答で返されたクッキーを表示します。  
+  
+ [!code-cpp[NCLCookies#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#1)]
+ [!code-csharp[NCLCookies#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#1)]
+ [!code-vb[NCLCookies#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用する認証情報を取得または設定します。</summary>
+        <value>要求と関連付けられた認証資格情報を格納する <see cref="T:System.Net.ICredentials" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Credentials%2A>プロパティには、要求のメーカーを識別する認証情報が含まれています。 <xref:System.Net.HttpWebRequest.Credentials%2A>プロパティには、いずれかを指定できます、<xref:System.Net.NetworkCredential>では、どの場合、ユーザー、パスワード、およびドメインの情報に含まれている、<xref:System.Net.NetworkCredential>オブジェクトは、要求の認証に使用することもできます、 <xref:System.Net.CredentialCache>、後者 Uniform Resource要求の識別子 (URI) を使用すると、要求の認証に使用するには、ユーザー、パスワード、およびドメインの情報を確認します。  
+  
+ クライアントのほとんどのシナリオで使用する必要があります、<xref:System.Net.CredentialCache.DefaultCredentials%2A>プロパティで、現在ログオンしているユーザーの資格情報が含まれています。 これを行うには、設定、<xref:System.Net.WebClient.UseDefaultCredentials%2A>プロパティを`true`このプロパティを設定する代わりにします。  
+  
+ 場合、<xref:System.Net.HttpWebRequest>クラスは、ASP.NET アプリケーション内の資格情報などの中間層アプリケーションで使用されている、<xref:System.Net.CredentialCache.DefaultCredentials%2A>プロパティは、ASP ページ (サーバー側の資格情報) を実行しているアカウントに属しています。 通常、に代わって、要求したクライアントの資格情報をこのプロパティを設定します。  
+  
+> [!NOTE]
+>  別のユーザーを偽装する、NTLM 認証スキームを使用できません。 Kerberos は、権限借用をサポートするために特別に構成されている必要があります。  
+  
+ 使用して 1 つまたは複数の認証方法に HttpWebRequest を制限、<xref:System.Net.CredentialCache>クラスし、資格情報を 1 つまたは複数の認証スキームにバインドします。  
+  
+ サポートされる認証方式には、ダイジェスト、ネゴシエート、Kerberos、NTLM、および Basic が含まれます。  
+  
+ セキュリティ上の理由から、自動的に次のリダイレクト時でリダイレクトの対象にするための資格情報を格納、<xref:System.Net.CredentialCache>し、このプロパティに割り当てます。 このプロパティが自動的に設定されます`null`以外のものが含まれている場合のリダイレクト時に、<xref:System.Net.CredentialCache>です。 自動的に設定するこのプロパティの値を持つ`null`これらの条件下で、意図しない先に送信されない資格情報を防止します。
+  
+## Examples  
+ 次のコード例では、要求の資格情報を設定します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Date">
+      <MemberSignature Language="C#" Value="public DateTime Date { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Date" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Date" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求で使用する <see langword="Date" /> HTTP ヘッダー値を取得または設定します。</summary>
+        <value>HTTP 要求の Date ヘッダーの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Date ヘッダーの場合`null`、戻り値に設定されます、<xref:System.DateTime.MinValue?displayProperty=nameWithType>です。  
+  
+ <xref:System.Net.HttpWebRequest.Date%2A>プロパティは、標準的な<xref:System.DateTime?displayProperty=nameWithType>オブジェクトを含めることができます、<xref:System.DateTimeKind?displayProperty=nameWithType>フィールド<xref:System.DateTimeKind.Local?displayProperty=nameWithType>、 <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>、または<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>です。 使用する場合は、時間の任意の種類を設定することができます、<xref:System.Net.HttpWebRequest.Date%2A>プロパティです。 場合<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>設定または取得されると、<xref:System.Net.HttpWebRequest.Date%2A>プロパティがあると見なされます<xref:System.DateTimeKind.Local?displayProperty=nameWithType>(ローカル時刻)。  
+  
+ 内のクラス、<xref:System.Net>名前空間常に書き込む、 <xref:System.Net.HttpWebRequest.Date%2A> GMT (Utc) 形式を使用して標準の形式で転送中に、ネットワーク上でのプロパティです。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.Date%2A>プロパティに設定されている<xref:System.DateTime.MinValue?displayProperty=nameWithType>、`Date`から HTTP ヘッダーを削除、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティおよび<xref:System.Net.WebHeaderCollection>です。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.Date%2A>プロパティは<xref:System.DateTime.MinValue?displayProperty=nameWithType>、ことを示します、`Date`に HTTP ヘッダーが含まれていない、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティおよび<xref:System.Net.WebHeaderCollection>です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.Date%2A>設定されている送信が試行され、<xref:System.Net.HttpWebRequest>本文なしで、<xref:System.Net.ProtocolViolationException?displayProperty=nameWithType>によってスローされます、 <xref:System.Net.HttpWebRequest.BeginGetResponse%2A>、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、および<xref:System.Net.HttpWebRequest.EndGetResponse%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCachePolicy">
+      <MemberSignature Language="C#" Value="public static System.Net.Cache.RequestCachePolicy DefaultCachePolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.Cache.RequestCachePolicy DefaultCachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.DefaultCachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.RequestCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求の既定のキャッシュ ポリシーを取得または設定します。</summary>
+        <value>他のポリシーが適用できない場合に、この要求で有効なキャッシュ ポリシーを指定する <see cref="T:System.Net.Cache.HttpRequestCachePolicy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、HTTP および HTTPS スキームの場合、指定したポリシーが登録されます。 場合、このポリシーはこの要求に対して使用します。  
+  
+ ない<xref:System.Net.WebRequest.CachePolicy%2A?displayProperty=nameWithType>プロパティがこの要求に対して指定します。  
+  
+ \- または  
+  
+ コンピューターとアプリケーション構成ファイルを指定しない、統一リソース識別子 (URI) に適用可能なキャッシュ ポリシーは、この要求の作成に使用します。  
+  
+ キャッシュ ポリシーは、要求されたリソースがリソースのホスト コンピューターに要求を送信する代わりにキャッシュから実行できるかどうかを判断します。  
+  
+ リソースの応答ストリームが取得され、ストリームの末尾に読み込まれる場合、リソースのコピーはキャッシュに追加だけです。 同じリソースに対して別の要求は、この要求のキャッシュ ポリシー レベルに応じて、キャッシュされたコピーを使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">ネットワーク リソースに無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaximumErrorResponseLength">
+      <MemberSignature Language="C#" Value="public static int DefaultMaximumErrorResponseLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DefaultMaximumErrorResponseLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.DefaultMaximumErrorResponseLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP エラー応答の既定の最大長を取得または設定します。</summary>
+        <value>HTTP エラー応答の既定の最大長。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は 0 より小さく、-1 とは異なっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMaximumResponseHeadersLength">
+      <MemberSignature Language="C#" Value="public static int DefaultMaximumResponseHeadersLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DefaultMaximumResponseHeadersLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.DefaultMaximumResponseHeadersLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Use this")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Net.HttpWebRequest.MaximumResponseHeadersLength" /> プロパティの既定値を取得または設定します。</summary>
+        <value>受信した応答ヘッダーの KB (1024 バイト) 単位の既定の最大長。 既定の構成ファイルは、この値を 64 KB に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答ヘッダーの長さは、応答のステータス行と HTTP プロトコルの一部として受信されるすべての余分な制御文字を受信します。 値-1 は、受信した応答ヘッダーに制限は適用されません。値 0 は、すべての要求が失敗することを意味します。  
+  
+ この値は、構成ファイルにも変更できます。 設定してこのプロパティの影響をオーバーライドすることができます、<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>プロパティのインスタンスを<xref:System.Net.HttpWebRequest>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は -1 と等しくなく、0 未満です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EndGetRequestStream">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を終了します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EndGetRequestStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream EndGetRequestStream (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream EndGetRequestStream(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">ストリームの保留中の要求。</param>
+        <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトの非同期要求を終了します。</summary>
+        <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッドによって開始されたストリームへの非同期要求を完了すると、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>メソッドです。 後に、<xref:System.IO.Stream>オブジェクトが返されたを使用してデータを送信することができます、<xref:System.Net.HttpWebRequest>を使用して、<xref:System.IO.Stream.Write%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  値を設定する必要があります、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティ データをストリームに書き込む前にします。  
+  
+> [!CAUTION]
+>  呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 ストリームを閉じると、アプリケーションを接続から実行します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>ストリームのインスタンスへの非同期要求を終了します。  
+  
+ [!code-cpp[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/CPP/httpwebrequest_begingetrequeststream.cpp#2)]
+ [!code-csharp[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/CS/httpwebrequest_begingetrequeststream.cs#2)]
+ [!code-vb[HttpWebRequest_BeginGetRequestStream#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_BeginGetRequestStream/VB/httpwebrequest_begingetrequeststream.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">要求が完了しませんでした。使用できるストリームはありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" /> は、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> の呼び出しから現在のインスタンスにより返されたものではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは以前に <paramref name="asyncResult" /> を使用して呼び出されました。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetRequestStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream EndGetRequestStream (IAsyncResult asyncResult, out System.Net.TransportContext transportContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream EndGetRequestStream(class System.IAsyncResult asyncResult, [out] class System.Net.TransportContext&amp; transportContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.EndGetRequestStream(System.IAsyncResult,System.Net.TransportContext@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="context" Type="System.Net.TransportContext&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">ストリームの保留中の要求。</param>
+        <param name="transportContext">To be added.</param>
+        <summary>データを書き込むために使用する <see cref="T:System.IO.Stream" /> オブジェクトに対する非同期要求を終了し、そのストリームに関連付けられている <see cref="T:System.Net.TransportContext" /> を出力します。</summary>
+        <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッドによって開始されたストリームへの非同期要求を完了すると、<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>メソッド呼び出し力、<xref:System.Net.TransportContext>ストリームに関連付けられています。 後に、<xref:System.IO.Stream>オブジェクトが返されたを使用してデータを送信することができます、<xref:System.Net.HttpWebRequest>を使用して、<xref:System.IO.Stream.Write%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 拡張保護付き統合 Windows 認証を使用する一部のアプリケーションは、トランスポート層で使用されるクエリを実行できる必要があります<xref:System.Net.HttpWebRequest>チャネル バインディング トークン (CBT) を基になる TLS チャネルから取得するためです。 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドは、要求本文である必要が HTTP メソッドのこの情報へのアクセスを提供 (`POST`と`PUT`要求)。 これは、アプリケーションが独自の認証を実装して、CBT へのアクセスを必要な場合のみ必要です。  
+  
+> [!NOTE]
+>  アプリケーションがの値を設定する必要がある場合、<xref:System.Net.HttpWebRequest.ContentLength%2A>ストリームを取得して、データを書き込む前に、プロパティ、し、これを行う必要があります。  
+  
+> [!CAUTION]
+>  呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 ストリームを閉じると、アプリケーションを接続から実行します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" /> は、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> の呼び出しから現在のインスタンスにより返されたものではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは以前に <paramref name="asyncResult" /> を使用して呼び出されました。</exception>
+        <exception cref="T:System.IO.IOException">要求が完了しませんでした。使用できるストリームはありません。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetResponse">
+      <MemberSignature Language="C#" Value="public override System.Net.WebResponse EndGetResponse (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse EndGetResponse(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.EndGetResponse(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">応答の保留中の要求。</param>
+        <summary>インターネット リソースへの非同期要求を終了します。</summary>
+        <returns>A<see cref="T:System.Net.WebResponse" />インターネット リソースからの応答を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.EndGetResponse%2A>メソッドの呼び出しによって開始されたインターネット リソースへの非同期要求を完了すると、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドです。  
+  
+> [!CAUTION]
+>  呼び出す必要があります、<xref:System.Net.HttpWebResponse.Close%2A>ストリームを閉じ、接続を解放するメソッド。 そのためにはエラーの接続が不足するアプリケーションがあります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.EndGetResponse%2A>メソッドをインターネット リソースへの非同期要求を終了します。  
+  
+ [!code-cpp[HttpWebRequest_BeginGetResponse#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_BeginGetResponse/CPP/httpwebrequest_begingetresponse.cpp#2)]
+ [!code-csharp[HttpWebRequest_BeginGetResponse#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_BeginGetResponse/CS/httpwebrequest_begingetresponse.cs#2)]
+ [!code-vb[HttpWebRequest_BeginGetResponse#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_BeginGetResponse/VB/httpwebrequest_begingetresponse.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">このメソッドは、以前に使用して呼び出されました<paramref name="asyncResult." />  
+  
+ または  
+  
+ <see cref="P:System.Net.HttpWebRequest.ContentLength" />プロパティは 0 より大きい値が、要求のストリームにデータが書き込まれていません。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" /> は、<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> の呼び出しから現在のインスタンスにより返されたものではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expect">
+      <MemberSignature Language="C#" Value="public string Expect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expect" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Expect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Expect" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value>内容、 <see langword="Expect" /> HTTP ヘッダー。 既定値は <see langword="null" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティの値が格納されている<see cref="T:System.Net.WebHeaderCollection" />です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see langword="Expect" />含む文字列に設定されている"100-続行"部分文字列として。</exception>
+        <altmember cref="P:System.Net.Configuration.HttpWebRequestElement.MaximumUnauthorizedUploadLength" />
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected override void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、ターゲット オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetRequestStream">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Stream" />要求データの書き込みに使用するオブジェクト。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetRequestStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetRequestStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetRequestStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.GetRequestStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Stream" />要求データの書き込みに使用するオブジェクト。</summary>
+        <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドを使用してデータを送信するストリームを返します、<xref:System.Net.HttpWebRequest>です。 後に、<xref:System.IO.Stream>オブジェクトが返されたを使用してデータを送信することができます、<xref:System.Net.HttpWebRequest>を使用して、<xref:System.IO.Stream.Write%2A?displayProperty=nameWithType>メソッドです。  
+  
+ アプリケーションがの値を設定する必要がある場合、<xref:System.Net.HttpWebRequest.ContentLength%2A>ストリームを取得する前に、プロパティ、し、これを行う必要があります。  
+  
+ 呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 ストリームを閉じると、アプリケーションを接続から実行します。  
+  
+> [!NOTE]
+>  アプリケーションでは、特定の要求を同期および非同期のメソッドを組み合わせることはできません。 呼び出す場合は、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>方法を使用する必要があります、<xref:System.Net.HttpWebRequest.GetResponse%2A>応答を取得します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>ストリーム インスタンスを返すメソッド。  
+  
+ [!code-cpp[HttpWebRequest_ContentLength#4](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CPP/httpwebrequest_contentlength.cpp#4)]
+ [!code-csharp[HttpWebRequest_ContentLength#4](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CS/httpwebrequest_contentlength.cs#4)]
+ [!code-vb[HttpWebRequest_ContentLength#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_ContentLength/VB/httpwebrequest_contentlength.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> プロパティは GET または HEAD です。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> が <see langword="true" />、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> が <see langword="false" />、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> が -1、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> で、<see cref="P:System.Net.HttpWebRequest.Method" /> が POST か PUT です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />メソッドが複数回呼び出されます。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> が値に設定されており、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">要求キャッシュの検証コントロールは、この要求に対する応答がキャッシュから提供されたことを示していますが、データを書き込む要求ではキャッシュを使用してはなりません。 正しく実装されていないカスタム キャッシュの検証コントロールを使用すると、この例外が発生する場合があります。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ -または-  
+  
+ 要求のタイムアウト期間の期限が切れました。  
+  
+ -または-  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">.NET Compact Framework アプリケーションでコンテンツの長さが 0 の要求ストリームが取得されず、正しく閉じられませんでした。 コンテンツの長さが 0 の要求の処理の詳細については、次を参照してください。 [.NET Compact Framework でのネットワーク プログラミング](https://msdn.microsoft.com/subscriptions/downloads/1afx2b0f\(v=vs.80\).aspx)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetRequestStream (out System.Net.TransportContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetRequestStream([out] class System.Net.TransportContext&amp; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.GetRequestStream(System.Net.TransportContext@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Net.TransportContext&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">
+          <see cref="T:System.Net.TransportContext" /> の <see cref="T:System.IO.Stream" />。</param>
+        <summary>取得、<see cref="T:System.IO.Stream" />要求データと出力の書き込みに使用するオブジェクト、<see cref="T:System.Net.TransportContext" />ストリームに関連付けられています。</summary>
+        <returns>要求データを書き込むために使用する <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドを使用してデータを送信するストリームを返します、<xref:System.Net.HttpWebRequest>し、出力、<xref:System.Net.TransportContext>ストリームに関連付けられています。 後に、<xref:System.IO.Stream>オブジェクトが返されたを使用してデータを送信することができます、<xref:System.Net.HttpWebRequest>を使用して、<xref:System.IO.Stream.Write%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 拡張保護付き統合 Windows 認証を使用する一部のアプリケーションは、トランスポート層で使用されるクエリを実行できる必要があります<xref:System.Net.HttpWebRequest>チャネル バインディング トークン (CBT) を基になる TLS チャネルから取得するためです。 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドは、要求本文である必要が HTTP メソッドのこの情報へのアクセスを提供 (`POST`と`PUT`要求)。 これは、アプリケーションが独自の認証を実装して、CBT へのアクセスを必要な場合のみ必要です。  
+  
+ アプリケーションがの値を設定する必要がある場合、<xref:System.Net.HttpWebRequest.ContentLength%2A>ストリームを取得する前に、プロパティ、し、これを行う必要があります。  
+  
+ 呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 ストリームを閉じると、アプリケーションを接続から実行します。  
+  
+> [!NOTE]
+>  アプリケーションでは、特定の要求を同期および非同期のメソッドを組み合わせることはできません。 呼び出す場合は、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>方法を使用する必要があります、<xref:System.Net.HttpWebRequest.GetResponse%2A>応答を取得します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />メソッドを取得できませんでした、<see cref="T:System.IO.Stream" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />メソッドが複数回呼び出されます。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> が値に設定されており、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">要求キャッシュの検証コントロールは、この要求に対する応答がキャッシュから提供されたことを示していますが、データを書き込む要求ではキャッシュを使用してはなりません。 正しく実装されていないカスタム キャッシュの検証コントロールを使用すると、この例外が発生する場合があります。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.HttpWebRequest.Method" /> プロパティは GET または HEAD です。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> が <see langword="true" />、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> が <see langword="false" />、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> が -1、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> で、<see cref="P:System.Net.HttpWebRequest.Method" /> が POST か PUT です。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ -または-  
+  
+ 要求のタイムアウト期間の期限が切れました。  
+  
+ -または-  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponse">
+      <MemberSignature Language="C#" Value="public override System.Net.WebResponse GetResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse GetResponse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.GetResponse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インターネット リソースからの応答を返します。</summary>
+        <returns>A<see cref="T:System.Net.WebResponse" />インターネット リソースからの応答を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドを返します、<xref:System.Net.WebResponse>インターネット リソースからの応答を格納しているオブジェクト。 実際のインスタンスが返される、 <xref:System.Net.HttpWebResponse>、アクセス HTTP 固有のプロパティには、そのクラスを型にキャストするとします。  
+  
+ A<xref:System.Net.ProtocolViolationException>プロパティに設定すると、いくつかのケースでスローされたが、<xref:System.Net.HttpWebRequest>クラスが競合しています。 アプリケーションを設定する場合、この例外が発生した、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティおよび<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを`true`、し、HTTP GET 要求を送信します。 この例外は、アプリケーションは、ここではサポートされていない HTTP 1.0 プロトコルのみをサポートするサーバーにチャンクを送信しようとした場合に発生します。 アプリケーション設定を指定せずにデータを送信しようとする場合、この例外が発生した、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティまたは<xref:System.Net.HttpWebRequest.SendChunked%2A>は`false`バッファリングを無効にする場合とキープア ライブ接続で (、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティは`true`)`.`  
+  
+> [!CAUTION]
+>  呼び出す必要があります、<xref:System.Net.HttpWebResponse.Close%2A>ストリームを閉じ、接続を解放するメソッド。 そのためにはエラーの接続が不足するアプリケーションがあります。  
+  
+ POST メソッドを使用する場合は、要求ストリームを取得して、ポストするデータを書き込むし、ストリームを閉じます必要があります。 このメソッドは、コンテンツがポスト; の待機をブロックします。タイムアウトが設定されていないコンテンツ、呼び出しスレッドは無期限にブロックを指定しない場合は。  
+  
+> [!NOTE]
+>  複数回呼び出す<xref:System.Net.HttpWebRequest.GetResponse%2A>同じ応答オブジェクトを返す要求を再発行していません。  
+  
+> [!NOTE]
+>  アプリケーションでは、特定の要求を同期および非同期のメソッドを組み合わせることはできません。 呼び出す場合は、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>方法を使用する必要があります、<xref:System.Net.HttpWebRequest.GetResponse%2A>応答を取得します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Net.WebException>がスローされた場合を使用して、<xref:System.Net.WebException.Response%2A>と<xref:System.Net.WebException.Status%2A>サーバーからの応答を決定する例外のプロパティです。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、cookie は、既定で無効にします。 Cookie を使用する場合は、使用、 <xref:System.Net.HttpWebRequest.CookieContainer%2A> cookie を有効にするプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求に対する応答を取得します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ストリームが前の呼び出しによって使用されて、既に<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />です。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.TransferEncoding" /> が値に設定されており、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> です。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException">
+          <see cref="P:System.Net.HttpWebRequest.Method" />GET または HEAD で、<see cref="P:System.Net.HttpWebRequest.ContentLength" />が大きいまたは 0 に等しいまたは<see cref="P:System.Net.HttpWebRequest.SendChunked" />は<see langword="true" />します。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.KeepAlive" /> が <see langword="true" />、<see cref="P:System.Net.HttpWebRequest.AllowWriteStreamBuffering" /> が <see langword="false" />、<see cref="P:System.Net.HttpWebRequest.ContentLength" /> が -1、<see cref="P:System.Net.HttpWebRequest.SendChunked" /> が <see langword="false" /> で、<see cref="P:System.Net.HttpWebRequest.Method" /> が POST か PUT です。  
+  
+ -または-  
+  
+ <see cref="T:System.Net.HttpWebRequest" />はエンティティ本体がありますが、<see cref="M:System.Net.HttpWebRequest.GetResponse" />呼び出さずにメソッドが呼び出されます、<see cref="M:System.Net.HttpWebRequest.GetRequestStream" />メソッドです。  
+  
+ -または-  
+  
+ <see cref="P:System.Net.HttpWebRequest.ContentLength" />は、0 より大きい値が、アプリケーションではすべて保証されたデータの書き込みはありません。</exception>
+        <exception cref="T:System.NotSupportedException">要求キャッシュの検証コントロールは、この要求に対する応答がキャッシュから提供されたことを示していますが、この要求にはサーバーに送信されるデータが含まれています。 データを送信する要求には、キャッシュを使用できません。 正しく実装されていないカスタム キャッシュの検証コントロールを使用すると、この例外が発生する場合があります。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="M:System.Net.HttpWebRequest.Abort" /> は以前に呼び出されました。  
+  
+ -または-  
+  
+ 要求のタイムアウト期間の期限が切れました。  
+  
+ -または-  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HaveResponse">
+      <MemberSignature Language="C#" Value="public virtual bool HaveResponse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HaveResponse" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.HaveResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースから応答が受信されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />応答が受信されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のチェック、<xref:System.Net.HttpWebRequest.HaveResponse%2A>インターネット リソースから応答が受信されたかどうかを決定するプロパティです。  
+  
+ [!code-cpp[Httpwebrequest_HaveResponse#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Httpwebrequest_HaveResponse/CPP/httpwebrequest_haveresponse.cpp#1)]
+ [!code-csharp[Httpwebrequest_HaveResponse#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Httpwebrequest_HaveResponse/CS/httpwebrequest_haveresponse.cs#1)]
+ [!code-vb[Httpwebrequest_HaveResponse#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Httpwebrequest_HaveResponse/VB/httpwebrequest_haveresponse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP ヘッダーを構成する名前と値のペアのコレクションを指定します。</summary>
+        <value>HTTP 要求のヘッダーを構成する名前と値のペアを格納している <see cref="T:System.Net.WebHeaderCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Headers%2A>コレクションには、要求に関連付けられたプロトコル ヘッダーが含まれています。 次の表に格納されていない HTTP ヘッダー、<xref:System.Net.HttpWebRequest.Headers%2A>コレクションが、システムによって設定またはのいずれかのプロパティまたはメソッドによって設定します。  
+  
+|ヘッダー|によってを設定します。|  
+|------------|------------|  
+|そのまま使用します。|によって設定、<xref:System.Net.HttpWebRequest.Accept%2A>プロパティです。|  
+|接続|によって設定、<xref:System.Net.HttpWebRequest.Connection%2A>プロパティおよび<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティです。|  
+|コンテンツの長さ|によって設定、<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティです。|  
+|コンテンツの種類|によって設定、<xref:System.Net.HttpWebRequest.ContentType%2A>プロパティです。|  
+|期待|によって設定、<xref:System.Net.HttpWebRequest.Expect%2A>プロパティです。|  
+|日付|によって設定、<xref:System.Net.HttpWebRequest.Date%2A>プロパティです。|  
+|Host|によって設定、<xref:System.Net.HttpWebRequest.Host%2A>プロパティです。|  
+|場合の変更-以降|によって設定、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティです。|  
+|範囲|によって設定、<xref:System.Net.HttpWebRequest.AddRange%2A>メソッドです。|  
+|Referer|によって設定、<xref:System.Net.HttpWebRequest.Referer%2A>プロパティです。|  
+|転送エンコード|によって設定、<xref:System.Net.HttpWebRequest.TransferEncoding%2A>プロパティ (、<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを true にする必要があります)。|  
+|ユーザー エージェント|によって設定、<xref:System.Net.HttpWebRequest.UserAgent%2A>プロパティです。|  
+  
+ <xref:System.Net.WebHeaderCollection.Add%2A>メソッドがスローされます、<xref:System.ArgumentException>これらの保護されているヘッダーのいずれかを設定しようとする場合。  
+  
+ 変更、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティを呼び出して、要求が開始された後<xref:System.Net.HttpWebRequest.GetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、または<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+ あるヘッダーの値は変更されません、Web サーバーおよびキャッシュは、変更または Web 要求にヘッダーを追加するためと想定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティをコンソールに HTTP ヘッダーの名前/値ペアを印刷します。  
+  
+ [!code-cpp[HttpWebRequest_Headers#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Headers/CPP/httpwebrequest_headers.cpp#1)]
+ [!code-csharp[HttpWebRequest_Headers#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Headers/CS/httpwebrequest_headers.cs#1)]
+ [!code-vb[HttpWebRequest_Headers#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Headers/VB/httpwebrequest_headers.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />、<see cref="M:System.Net.HttpWebRequest.GetResponse" />、または <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> メソッドを呼び出すことにより要求が開始されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public string Host { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Host" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求 URI に依存しない HTTP 要求で使用する Host ヘッダー値を取得または設定します。</summary>
+        <value>HTTP 要求の Host ヘッダーの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Host%2A>ホスト要求 URI に依存しない HTTP 要求で使用するヘッダーの値を設定するプロパティを使用できます。 <xref:System.Net.HttpWebRequest.Host%2A>プロパティは、ホスト名と、省略可能なポート番号で構成できます。 ポート情報がない場合、ホスト ヘッダーは、要求されたサービス (ポート 80 の HTTP URL、たとえば) の既定のポートを意味します。  
+  
+ ホストとポートの指定の形式は、IETF によって発行された RFC2616 のセクション 14.23 の規則に従う必要があります。 これらの要件に準拠する 8080 のポートを指定する例として次の値があります、<xref:System.Net.HttpWebRequest.Host%2A>プロパティ。  
+  
+ `www.contoso.com:8080`  
+  
+ 使用して、<xref:System.Net.HttpWebRequest.Host%2A>カスタム ホスト ヘッダーの値を明示的に指定するプロパティは、キャッシュ領域、cookie、および認証にも影響します。 アプリケーションは、特定の URI プレフィックスの資格情報を提供、ときにアプリケーションは、URI でターゲット サーバーではなく、ホスト ヘッダーの値を含む URI を使用することを確認する必要があります。 リソースをキャッシュする場合に使用するキーは、要求 URI ではなく、ホスト ヘッダー値を使用します。 Cookie が格納されている、<xref:System.Net.CookieContainer>とサーバーのドメイン名によって論理的にグループ化します。 アプリケーションでは、ホスト ヘッダーを指定する場合、この値は、ドメインとして使用します。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.Host%2A>プロパティが設定されていない、し、HTTP 要求で使用するホスト ヘッダーの値は、要求 URI に基づきます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ホスト ヘッダーを設定できません<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">ホスト ヘッダーを無効な値には設定できません。</exception>
+        <exception cref="T:System.InvalidOperationException">後に、ホスト ヘッダーを設定することはできません、<see cref="T:System.Net.HttpWebRequest" />は既に送信を開始します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IfModifiedSince">
+      <MemberSignature Language="C#" Value="public DateTime IfModifiedSince { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IfModifiedSince" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.IfModifiedSince" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="If-Modified-Since" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />の内容を格納している、 <see langword="If-Modified-Since" /> HTTP ヘッダー。 既定値は、現在の日付と時刻です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティは、標準的な<xref:System.DateTime?displayProperty=nameWithType>オブジェクトを含めることができます、<xref:System.DateTimeKind?displayProperty=nameWithType>フィールド<xref:System.DateTimeKind.Local?displayProperty=nameWithType>、 <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>、または<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>です。 使用する場合は、時間の任意の種類を設定することができます、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティです。 場合<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>設定または取得されると、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティがあると見なされます<xref:System.DateTimeKind.Local?displayProperty=nameWithType>(ローカル時刻)。  
+  
+ 内のクラス、<xref:System.Net>名前空間常に書き込む、 <xref:System.Net.HttpWebRequest.IfModifiedSince%2A> GMT (Utc) 形式を使用して標準の形式で転送中に、ネットワーク上でのプロパティです。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティに設定されている<xref:System.DateTime.MinValue?displayProperty=nameWithType>、`If-Modified-Since`から HTTP ヘッダーを削除、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティおよび<xref:System.Net.WebHeaderCollection>です。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティは<xref:System.DateTime.MinValue?displayProperty=nameWithType>、ことを示します、`If-Modified-Since`に HTTP ヘッダーが含まれていない、<xref:System.Net.HttpWebRequest.Headers%2A>プロパティおよび<xref:System.Net.WebHeaderCollection>です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のチェック、<xref:System.Net.HttpWebRequest.IfModifiedSince%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_IfModifiedSince#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_IfModifiedSince/CPP/httpwebrequest_ifmodifiedsince.cpp#1)]
+ [!code-csharp[HttpWebRequest_IfModifiedSince#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_IfModifiedSince/CS/httpwebrequest_ifmodifiedsince.cs#1)]
+ [!code-vb[HttpWebRequest_IfModifiedSince#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_IfModifiedSince/VB/httpwebrequest_ifmodifiedsince.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public bool KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースへの永続的な接続を行うかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />インターネット リソースへの要求に含める場合、 <see langword="Connection" /> HTTP ヘッダー値を使用、それ以外のキープ アライブ<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`を送信する、 `Connection` HTTP ヘッダー値 keep-alive を使用します。 アプリケーションを使用して<xref:System.Net.HttpWebRequest.KeepAlive%2A>を永続的な接続の設定を示します。 ときに、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティは`true`、アプリケーションがそれらをサポートするサーバーへの永続的な接続を作成します。  
+  
+> [!NOTE]
+>  Http/1.1 を使用する場合にキープアは既定でオンです。 設定<xref:System.Net.HttpWebRequest.KeepAlive%2A>に`false`送信中に発生する可能性があります、`Connection: Close`ヘッダー、サーバーにします。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティを`false`インターネット リソースの永続的な接続を確立するようにします。  
+  
+ [!code-cpp[HttpWebRequest_Connection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Connection/CPP/httpwebrequest_connection.cpp#1)]
+ [!code-csharp[HttpWebRequest_Connection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Connection/CS/httpwebrequest_connection.cs#1)]
+ [!code-vb[HttpWebRequest_Connection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Connection/VB/httpwebrequest_connection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumAutomaticRedirections">
+      <MemberSignature Language="C#" Value="public int MaximumAutomaticRedirections { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumAutomaticRedirections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.MaximumAutomaticRedirections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求によって実行されるリダイレクトの最大数を取得または設定します。</summary>
+        <value>要求によって実行されるリダイレクト応答の最大数。 既定値は 50 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.MaximumAutomaticRedirections%2A>プロパティを設定する場合は、次の要求のリダイレクトの最大数、<xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定値が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumResponseHeadersLength">
+      <MemberSignature Language="C#" Value="public int MaximumResponseHeadersLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumResponseHeadersLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.MaximumResponseHeadersLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Use this")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答ヘッダーの許容最大長を取得または設定します。</summary>
+        <value>応答ヘッダーの長さ (KB 単位、1 KB = 1024 バイト)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答ヘッダーの長さには、応答のステータス行と HTTP プロトコルの一部として受信されるすべての余分な制御文字が含まれています。 値の-1 の場合は、応答ヘッダーに制限は適用されません。値 0 は、すべての要求が失敗することを意味します。  
+  
+ 場合、<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>プロパティが明示的に設定されていない、既定値はの値、<xref:System.Net.HttpWebRequest.DefaultMaximumResponseHeadersLength%2A>プロパティです。  
+  
+ 受信した応答ヘッダーの長さがの値を超えるかどうか、 <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A> 、プロパティ、<xref:System.Net.HttpWebRequest.EndGetResponse%2A>または<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドがスローされます、<xref:System.Net.WebException>で、<xref:System.Net.WebException.Status%2A>プロパティに設定<xref:System.Net.WebExceptionStatus.MessageLengthLimitExceeded>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティは、要求が送信された後に設定されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は 0 より小さく、-1 とは異なっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaType">
+      <MemberSignature Language="C#" Value="public string MediaType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MediaType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.MediaType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求のメディア タイプを取得または設定します。</summary>
+        <value>要求のメディア タイプ。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Net.HttpWebRequest.MediaType%2A>プロパティへの影響、<xref:System.Net.HttpWebResponse.CharacterSet%2A>プロパティです。 設定すると、<xref:System.Net.HttpWebRequest.MediaType%2A>要求に対応するメディアの種類が、応答で返される文字セットの一覧から選択`Content-type`HTTP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public override string Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用するメソッドを取得または設定します。</summary>
+        <value>インターネット リソースと通信するために使用する要求メソッド。 既定値は GET です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Method%2A>プロパティは、HTTP 1.1 プロトコル動詞のいずれかに設定することができます: GET、HEAD、POST、PUT、DELETE、トレース、またはオプション。  
+  
+ 場合、 <xref:System.Net.HttpWebRequest.ContentLength%2A> -1 以外の値に設定されて、<xref:System.Net.HttpWebRequest.Method%2A>プロパティは、データをアップロードするプロトコルのプロパティに設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.Method%2A>プロパティを POST します。  
+  
+ [!code-cpp[HttpWebRequest_ContentLength#4](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CPP/httpwebrequest_contentlength.cpp#4)]
+ [!code-csharp[HttpWebRequest_ContentLength#4](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_ContentLength/CS/httpwebrequest_contentlength.cs#4)]
+ [!code-vb[HttpWebRequest_ContentLength#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_ContentLength/VB/httpwebrequest_contentlength.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メソッドが提供されていません。  
+  
+ または  
+  
+ メソッドの文字列に正しくない文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pipelined">
+      <MemberSignature Language="C#" Value="public bool Pipelined { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Pipelined" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Pipelined" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースへの要求をパイプライン処理するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、要求パイプラインを設定する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Net.HttpWebRequest.Pipelined%2A>プロパティをパイプライン接続に対する設定を示します。 ときに<xref:System.Net.HttpWebRequest.Pipelined%2A>は`true`アプリケーションがパイプライン接続をサポートしているサーバーにします。  
+  
+ パイプラインに接続する場合にのみ、<xref:System.Net.HttpWebRequest.KeepAlive%2A>プロパティも`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Net.HttpWebRequest.Pipelined%2A>プロパティをコンソールにします。  
+  
+ [!code-cpp[HttpWebRequest_PipeLined#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_PipeLined/CPP/httpwebrequest_pipelined.cpp#1)]
+ [!code-csharp[HttpWebRequest_PipeLined#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_PipeLined/CS/httpwebrequest_pipelined.cs#1)]
+ [!code-vb[HttpWebRequest_PipeLined#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_PipeLined/VB/httpwebrequest_pipelined.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreAuthenticate">
+      <MemberSignature Language="C#" Value="public override bool PreAuthenticate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreAuthenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.PreAuthenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求で Authorization ヘッダーを送信するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />認証が行われた; 後に要求と共に HTTP Authorization ヘッダーを送信するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のクライアント要求後から<xref:System.Uri>が正常に認証されると場合、<xref:System.Net.HttpWebRequest.PreAuthenticate%2A>は`true`資格情報が提供されると、承認ヘッダーは、いずれかに各要求と一緒に送信される<xref:System.Uri>固有の仕様に一致する<xref:System.Uri>最後のスラッシュの前までです。 クライアントの要求が正常に特定の認証された場合は<xref:System.Uri>以下を格納しています。  
+  
+ `http://www.contoso.com/firstpath/`  
+  
+ 事前認証の承認ヘッダーは、次のいずれかに各要求と一緒に送信される、<xref:System.Uri>インスタンス。  
+  
+ `http://www.contoso.com/firstpath/`  
+  
+ `http://www.contoso.com/firstpath/default`  
+  
+ `http://www.contoso.com/firstpath/default.html`  
+  
+ `http://www.contoso.com/firstpath/sample.html`  
+  
+ ただし、承認ヘッダーが要求と共に送信されません、次のいずれかに<xref:System.Uri>インスタンス。  
+  
+ `http://www.contoso.com/`  
+  
+ `http://www.contoso.com/firstpath`  
+  
+ `http://www.contoso.com/secondpath/`  
+  
+ 場合は、クライアントは要求を特定<xref:System.Uri>は正常に認証されると、要求標準の認証はプロシージャを使用します。  
+  
+ 最初の要求を除き、<xref:System.Net.WebRequest.PreAuthenticate%2A>プロパティには、それ以降の要求の認証情報を送信するかどうかを示します、 <xref:System.Uri> 、固有の仕様に一致する<xref:System.Uri>サーバーを待機することがなくスラッシュ最後までです。  
+  
+ クライアントとサーバー間で次のダイアログ ボックスは、このプロパティの効果を示しています。 ダイアログ ボックスでは、基本認証では使用を前提としています。  
+  
+ <xref:System.Net.HttpWebRequest.PreAuthenticate%2A>`false`:  
+  
+ GET someUrl のクライアント:  
+  
+ サーバー: 401 Www-authenticate Basic  
+  
+ 承認ヘッダーのクライアント: GET  
+  
+ サーバー: 200 OK  
+  
+ GET someUrl のクライアント:  
+  
+ サーバー: 401 Www-authenticate Basic  
+  
+ 承認ヘッダーのクライアント: GET  
+  
+ サーバー: 200 OK  
+  
+ <xref:System.Net.HttpWebRequest.PreAuthenticate%2A>`true`:  
+  
+ GET someUrl のクライアント:  
+  
+ サーバー: 401 Www-authenticate Basic  
+  
+ 承認ヘッダーのクライアント: GET  
+  
+ サーバー: 200 OK  
+  
+ クライアント: someUrl 承認ヘッダーを取得します。  
+  
+ 認証スキームをサポートしていない事前認証の場合、このプロパティの値は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public Version ProtocolVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用する HTTP バージョンを取得または設定します。</summary>
+        <value>要求に対して使用する HTTP バージョン。 既定値は、<see cref="F:System.Net.HttpVersion.Version11" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest>クラスには、バージョン 1.0 および 1.1 の HTTP のみがサポートしています。 設定<xref:System.Net.HttpWebRequest.ProtocolVersion%2A>別のバージョンには例外をスローします。  
+  
+> [!NOTE]
+>  現在の要求の HTTP バージョンを設定するには、使用、<xref:System.Net.HttpVersion.Version10>と<xref:System.Net.HttpVersion.Version11>のフィールド、<xref:System.Net.HttpVersion>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.ProtocolVersion%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_ProtocolVersion#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_ProtocolVersion/CPP/httpwebrequest_protocolversion.cpp#1)]
+ [!code-csharp[HttpWebRequest_ProtocolVersion#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_ProtocolVersion/CS/httpwebrequest_protocolversion.cs#1)]
+ [!code-vb[HttpWebRequest_ProtocolVersion#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_ProtocolVersion/VB/httpwebrequest_protocolversion.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">HTTP バージョンが 1.0 または 1.1 以外の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Proxy">
+      <MemberSignature Language="C#" Value="public override System.Net.IWebProxy Proxy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IWebProxy Proxy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Proxy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用するプロキシ情報を取得または設定します。</summary>
+        <value><see cref="T:System.Net.IWebProxy" />要求をプロキシに使用するオブジェクト。 既定値は、呼び出すことによって設定されて、<see cref="P:System.Net.GlobalProxySelection.Select" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Proxy%2A>プロパティを識別、<xref:System.Net.WebProxy>インターネット リソースへの要求の処理に使用するオブジェクト。 プロキシを使用しないことを指定するには、設定、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティによって返されるプロキシ インスタンスを<xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ローカル コンピューターまたはアプリケーション構成ファイルが既定のプロキシを使用することを指定します。 場合、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティを指定すると、プロキシの設定から、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティは、ローカル コンピューターまたはアプリケーション構成ファイルをオーバーライドおよび<xref:System.Net.HttpWebRequest>インスタンスが指定したプロキシ設定を使用します。 プロキシが構成ファイルに指定されていない場合、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティは指定しません、<xref:System.Net.HttpWebRequest>クラスは、ローカル コンピューターで Internet Explorer から継承されたプロキシ設定を使用します。 Internet Explorer のプロキシ設定がない場合、要求は、サーバーに直接送信されます。  
+  
+ <xref:System.Net.HttpWebRequest>クラス解析ワイルドカード文字を含むプロキシ バイ パス一覧から継承された Internet Explorer と同じように Internet Explorer で直接バイパス一覧を解析します。 たとえば、<xref:System.Net.HttpWebRequest>クラスでは「nt *」Internet Explorer からのバイパス一覧を解析の正規表現として"nt。\*"です。 などの URL"`http://nt.com`"を使用してプロキシを使用しないと、<xref:System.Net.HttpWebRequest>クラスと Internet Explorer を使用します。  
+  
+ <xref:System.Net.HttpWebRequest>クラスには、ローカル プロキシ バイ パスがサポートしています。 クラスは、次の条件のいずれかが満たされた場合にローカルに変換先を検討します。  
+  
+-   転送先には、フラットな名前 (URL にドットがない) が含まれています。  
+  
+-   転送先には、ループバック アドレスが含まれています (<xref:System.Net.IPAddress.Loopback>または<xref:System.Net.IPAddress.IPv6Loopback>) または変換先が含まれている、<xref:System.Net.IPAddress>ローカル コンピューターに割り当てられています。  
+  
+-   変換先のドメイン サフィックスが、ローカル コンピューターのドメイン サフィックスに一致 (<xref:System.Net.NetworkInformation.IPGlobalProperties.DomainName%2A>)。  
+  
+ 変更、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティを呼び出して、要求が開始された後、 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、または<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。 Proxy 要素に関する情報を参照してください[ \&lt; defaultProxy\&gt;。要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpWebRequest.Proxy%2A>要求のプロキシ情報を取得します。  
+  
+ [!code-cpp[Httpwebrequest_proxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Httpwebrequest_proxy/CPP/httpwebrequest_proxy.cpp#1)]
+ [!code-csharp[Httpwebrequest_proxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Httpwebrequest_proxy/CS/httpwebrequest_proxy.cs#1)]
+ [!code-vb[Httpwebrequest_proxy#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Httpwebrequest_proxy/VB/httpwebrequest_proxy.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Net.HttpWebRequest.Proxy" /> が <see langword="null" /> に設定されます。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出して、要求が開始されました<see cref="M:System.Net.HttpWebRequest.GetRequestStream" />、 <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />、 <see cref="M:System.Net.HttpWebRequest.GetResponse" />、または<see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、要求された操作に対するアクセス許可がありません。</exception>
+        <permission cref="T:System.Net.WebPermission">取得または設定する、<see cref="P:System.Net.HttpWebRequest.Proxy" />プロパティです。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWriteTimeout">
+      <MemberSignature Language="C#" Value="public int ReadWriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadWriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ReadWriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームへの書き込み時またはストリームからの読み取り時のタイムアウト (ミリ秒単位) を取得または設定します。</summary>
+        <value>書き込みまたは読み取りがタイムアウトするまでのミリ秒単位の時間。既定値は、300,000 ミリ秒 (5 分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.ReadWriteTimeout%2A>プロパティには、によって返されるストリームに書き込む際に、使用、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドまたはによって返されるストリームからの読み取り、<xref:System.Net.HttpWebResponse.GetResponseStream%2A>メソッドです。  
+  
+ 具体的には、<xref:System.Net.HttpWebRequest.ReadWriteTimeout%2A>プロパティのタイムアウトを制御する、<xref:System.IO.Stream.Read%2A>メソッドによって返されるストリームの読み取りに使用すると、<xref:System.Net.HttpWebResponse.GetResponseStream%2A>メソッド、および、<xref:System.IO.Stream.Write%2A>によって返されるストリームに書き込むために使用するメソッド、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドです。  
+  
+ 要求が完了するまで待機する時間を指定するには、使用、<xref:System.Net.HttpWebRequest.Timeout%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.HttpWebRequest.ReadWriteTimeout%2A> プロパティを設定する方法を次のコード例に示します。  
+  
+ [!code-csharp[Classic HttpWebRequest Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebRequest Example/CS/source.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求が既に送信されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作に指定された値が 0 未満と等しくないです。<see cref="F:System.Threading.Timeout.Infinite" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Referer">
+      <MemberSignature Language="C#" Value="public string Referer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Referer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Referer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Referer" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="Referer" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A>プロパティは`true`、<xref:System.Net.HttpWebRequest.Referer%2A>プロパティは、要求は別のサイトにリダイレクト時に自動的に設定します。  
+  
+ クリアする、 `Referer` HTTP ヘッダーを設定、<xref:System.Net.HttpWebRequest.Referer%2A>プロパティを`null`です。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.Referer%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_Referer#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Referer/CPP/httpwebrequest_referer.cpp#1)]
+ [!code-csharp[HttpWebRequest_Referer#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Referer/CS/httpwebrequest_referer.cs#1)]
+ [!code-vb[HttpWebRequest_Referer#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Referer/VB/httpwebrequest_referer.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUri">
+      <MemberSignature Language="C#" Value="public override Uri RequestUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RequestUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.RequestUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の元の URI (Uniform Resource Identifier) を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />に渡されたインターネット リソースの URI を格納している、<see cref="M:System.Net.WebRequest.Create(System.String)" />メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Uri>オブジェクトに渡される<xref:System.Net.HttpWebRequest>への呼び出しによって<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>です。  
+  
+ 次のリダイレクト ヘッダー変わらないので、<xref:System.Net.HttpWebRequest.RequestUri%2A>プロパティです。 要求に応答する実際の URI を取得するには、確認、<xref:System.Net.HttpWebRequest.Address%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Net.HttpWebRequest>オブジェクト`req`の値を設定は、要求を処理する別の場所にリダイレクトされ、`hasChanged`変数を`true`要求がリダイレクトされる、それ以外の場合は`hasChanged`に設定されている`false`です。  
+  
+ [!code-cpp[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpWebRequest.RequestUri Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpWebRequest.RequestUri Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendChunked">
+      <MemberSignature Language="C#" Value="public bool SendChunked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SendChunked" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.SendChunked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースへセグメント単位でデータを送信するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />セグメント内のインターネット リソースにデータを送信するにはそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Net.HttpWebRequest.SendChunked%2A>は`true`要求は、セグメント内のインターネット リソースにデータを送信します。 インターネット リソースは、チャンクになったデータを受信をサポートする必要があります。  
+  
+ 変更、<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを呼び出して、要求が開始された後、 <xref:System.Net.HttpWebRequest.GetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.HttpWebRequest.GetResponse%2A>、または<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを`true`インターネット リソースへセグメント単位でデータを送信できるようにします。  
+  
+ [!code-cpp[HttpWebRequest_SendChunked#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_SendChunked/CPP/httpwebrequest_sendchunked.cpp#2)]
+ [!code-csharp[HttpWebRequest_SendChunked#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_SendChunked/CS/httpwebrequest_sendchunked.cs#2)]
+ [!code-vb[HttpWebRequest_SendChunked#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_SendChunked/VB/httpwebrequest_sendchunked.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.HttpWebRequest.GetRequestStream" />、<see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />、<see cref="M:System.Net.HttpWebRequest.GetResponse" />、または <see cref="M:System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> メソッドを呼び出すことにより要求が開始されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerCertificateValidationCallback">
+      <MemberSignature Language="C#" Value="public System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ServerCertificateValidationCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.RemoteCertificateValidationCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書を検証するコールバック関数を取得または設定します。</summary>
+        <value>サーバー証明書を検証するコールバック関数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、コールバック関数が設定されていないと、<xref:System.Net.HttpWebRequest.ServerCertificateValidationCallback%2A>プロパティは`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePoint">
+      <MemberSignature Language="C#" Value="public System.Net.ServicePoint ServicePoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ServicePoint ServicePoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.ServicePoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ServicePoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対して使用するサービス ポイントを取得します。</summary>
+        <value>A<see cref="T:System.Net.ServicePoint" />インターネット リソースへのネットワーク接続を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePoint.Address%2A?displayProperty=nameWithType>プロパティが異なる場合がある<xref:System.Net.HttpWebRequest.Address%2A?displayProperty=nameWithType>場合は、要求をリダイレクトします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Net.ServicePoint#6](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#6)]
+ [!code-csharp[System.Net.ServicePoint#6](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#6)]
+ [!code-vb[System.Net.ServicePoint#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCookieContainer">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCookieContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCookieContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.SupportsCookieContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求がサポートを提供するかどうかを示す値を取得、<see cref="T:System.Net.CookieContainer" />です。</summary>
+        <value>
+          <see langword="true" />要求のサポートを提供している場合、 <see cref="T:System.Net.CookieContainer" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebRequest.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public override int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのミリ秒単位のタイムアウト値の設定、<see cref="M:System.Net.HttpWebRequest.GetResponse" />と<see cref="M:System.Net.HttpWebRequest.GetRequestStream" />メソッドです。</summary>
+        <value>要求がタイムアウトするまでのミリ秒単位の待機時間。既定値は 100,000 ミリ秒 (100 秒) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebRequest.Timeout%2A>後続の同期要求が行われたミリ秒数には、<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドは、応答の待機と<xref:System.Net.HttpWebRequest.GetRequestStream%2A>メソッドは、ストリームの待機です。 <xref:System.Net.HttpWebRequest.Timeout%2A>全体の要求と応答にいないに個別に適用されます、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>と<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドの呼び出しです。 タイムアウト期間内にリソースが返されない場合、要求をスロー、<xref:System.Net.WebException>で、<xref:System.Net.WebException.Status%2A>プロパティに設定<xref:System.Net.WebExceptionStatus.Timeout?displayProperty=nameWithType>です。  
+  
+ <xref:System.Net.HttpWebRequest.Timeout%2A>前にプロパティを設定する必要があります、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>または<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドが呼び出されます。 変更、<xref:System.Net.HttpWebRequest.Timeout%2A>プロパティを呼び出した後、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>または<xref:System.Net.HttpWebRequest.GetResponse%2A>メソッドは影響を与えません  
+  
+ <xref:System.Net.HttpWebRequest.Timeout%2A>プロパティも何も起こりませんが使用した非同期の要求で、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>または<xref:System.Net.HttpWebRequest.BeginGetRequestStream%2A>メソッドです。  
+  
+> [!CAUTION]
+>  非同期要求の場合は、クライアント アプリケーションは、独自のタイムアウト メカニズムを実装します。 例を参照してください、<xref:System.Net.HttpWebRequest.BeginGetResponse%2A>メソッドです。  
+  
+ 待ってから、読み取りまたは書き込み操作がタイムアウトになる時間を指定するには、使用、<xref:System.Net.HttpWebRequest.ReadWriteTimeout%2A>プロパティです。  
+  
+ ドメイン ネーム システム (DNS) クエリは、最大 15 秒を返すまたはタイムアウトにかかる場合があります。設定すると、要求には、解像度を必要とするホスト名が含まれています。<xref:System.Net.FileWebRequest.Timeout%2A>値に、未満である 15 秒かかる場合がありますする前に 15 秒以上、<xref:System.Net.WebException>要求タイムアウトを示すためにスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.Timeout%2A>のプロパティ、<xref:System.Net.HttpWebRequest>オブジェクト。  
+  
+ [!code-cpp[HttpWebRequest_Timeout#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_Timeout/CPP/httpwebrequest_timeout.cpp#1)]
+ [!code-csharp[HttpWebRequest_Timeout#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_Timeout/CS/httpwebrequest_timeout.cs#1)]
+ [!code-vb[HttpWebRequest_Timeout#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_Timeout/VB/httpwebrequest_timeout.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値より小さい値 0 は、<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransferEncoding">
+      <MemberSignature Language="C#" Value="public string TransferEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransferEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.TransferEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="Transfer-encoding" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="Transfer-encoding" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する前に、<xref:System.Net.HttpWebRequest.TransferEncoding%2A>プロパティを設定する必要あります最初、<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティを`true`です。 オフにすると<xref:System.Net.HttpWebRequest.TransferEncoding%2A>に設定して`null`の値に影響を与えません<xref:System.Net.HttpWebRequest.SendChunked%2A>です。  
+  
+ 割り当てられた値、<xref:System.Net.HttpWebRequest.TransferEncoding%2A>プロパティは、既存の内容を置き換えます。  
+  
+> [!NOTE]
+>  このプロパティの値が格納されている<xref:System.Net.WebHeaderCollection>です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Net.HttpWebRequest.TransferEncoding" />設定されている場合に<see cref="P:System.Net.HttpWebRequest.SendChunked" />は<see langword="false" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.HttpWebRequest.TransferEncoding" />"Chunked"値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeAuthenticatedConnectionSharing">
+      <MemberSignature Language="C#" Value="public bool UnsafeAuthenticatedConnectionSharing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UnsafeAuthenticatedConnectionSharing" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.UnsafeAuthenticatedConnectionSharing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高速 NTLM 認証された接続共有を許可するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />開いている; 認証された接続を維持するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は`false`、それが原因で、現在の接続要求が完了した後、終了します。 アプリケーションを通過する認証シーケンスは新しい要求を発行するたびにします。  
+  
+ このプロパティ設定されている場合`true`認証が行われた後、応答を取得するための接続が開いたままです。 このプロパティに設定があることを要求他の例では、`true`再認証なしで接続を使用することがあります。 つまり、ユーザー A の接続が認証されたユーザー B 可能性がありますを再利用 A の接続です。ユーザー B の要求がユーザー A の資格情報に基づく  
+  
+> [!CAUTION]
+>  ないこと脆弱性の管理システム内このプロパティを設定するときに確認する必要があります、アプリケーションを認証なしの接続を使用することは、ため`true`です。 アプリケーションは、複数のユーザーの要求を送信する場合 (複数のユーザー アカウントの権限を借用) し、依存するリソースを保護する認証にはこのプロパティを設定`true`以下に示すように接続グループを使用する場合を除き、します。  
+  
+ 場合にこのメカニズムを有効化の検討することも、パフォーマンスの問題が発生し、アプリケーションが統合 Windows 認証を使用した Web サーバーで実行されています。  
+  
+ この設定を有効にするには、セキュリティ上のリスクにシステムが表示されます。 設定した場合、<xref:System.Net.HttpWebRequest.UnsafeAuthenticatedConnectionSharing%2A>プロパティを`true`は次の予防措置を講じてください。  
+  
+-   使用して、<xref:System.Net.HttpWebRequest.ConnectionGroupName%2A>プロパティを別のユーザーの接続を管理します。 認証されていないアプリケーションで、接続の潜在的な使用を回避できます。 たとえば、ユーザー A がユーザー B とは異なる一意の接続グループ名を持つ必要があります。これは、各ユーザー アカウントの分離のレイヤーを提供します。  
+  
+-   有効な接続の悪用を回避できるように、保護された環境でアプリケーションを実行します。  
+  
+ バック エンド サーバーを制御する場合、別の方法として可能性がありますを考慮する認証の永続化を無効にすること。 これほど、パフォーマンスが向上ほうが安全です。 詳細については、MSDN ライブラリで AuthPersistence 検索[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+> [!NOTE]
+>  両方<xref:System.Net.WebRequest.PreAuthenticate%2A>と<xref:System.Net.HttpWebRequest.UnsafeAuthenticatedConnectionSharing%2A>に設定されている`true`、承認ヘッダー。 ですが、安全でないプールから接続を使用して各要求を送信します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">このプロパティを設定するには、無制限の Web アクセス許可が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultCredentials">
+      <MemberSignature Language="C#" Value="public override bool UseDefaultCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.UseDefaultCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />値の既定の資格情報が要求と共に送信されるかどうかを制御します。</summary>
+        <value>
+          既定の資格情報を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`この要求が行われるときに<xref:System.Net.HttpWebRequest>オブジェクト認証が必要、サーバーによって要求された場合、現在ログオンしているユーザーの資格情報を使用します。 クライアント アプリケーションでは、これはほとんどのシナリオでは、目的の動作です。 中間層アプリケーションの場合、このプロパティを使用する代わりに、ASP.NET アプリケーションなど、通常、設定、<xref:System.Net.HttpWebRequest.Credentials%2A>プロパティが代わりに、要求が行われるクライアントの資格情報をします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求の送信後に、このプロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebRequest.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="User-agent" /> HTTP ヘッダーの値を取得または設定します。</summary>
+        <value><see langword="User-agent" /> HTTP ヘッダーの値。 既定値は <see langword="null" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティの値が格納されている<see cref="T:System.Net.WebHeaderCollection" />です。 WebHeaderCollection が設定されている場合、プロパティ値は失われます。  
+  
+</para></block></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.HttpWebRequest.UserAgent%2A>プロパティです。  
+  
+ [!code-cpp[HttpWebRequest_UserAgent#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebRequest_UserAgent/CPP/httpwebrequest_useragent.cpp#1)]
+ [!code-csharp[HttpWebRequest_UserAgent#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebRequest_UserAgent/CS/httpwebrequest_useragent.cs#1)]
+ [!code-vb[HttpWebRequest_UserAgent#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebRequest_UserAgent/VB/httpwebrequest_useragent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

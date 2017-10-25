@@ -1,0 +1,716 @@
+<Type Name="WebPermission" FullName="System.Net.WebPermission">
+  <TypeSignature Language="C#" Value="public sealed class WebPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit WebPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Net.WebPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>HTTP インターネット リソースにアクセスする権限を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermission>インターネット リソースへのアクセスを制御するメソッドとプロパティのセットを提供します。 使用することができます、<xref:System.Net.WebPermission>に基づいて、リソースに制限されているか、無制限のアクセスを提供するのには、<xref:System.Security.Permissions.PermissionState>ときに設定されている、<xref:System.Net.WebPermission>を作成します。  
+  
+ 作成、<xref:System.Net.WebPermission>パラメーターのセットを次のいずれかを使用して、コンス トラクターを呼び出すことによってインスタンス。  
+  
+-   パラメーターがいません。 既定値 <xref:System.Security.Permissions.PermissionState> は <xref:System.Security.Permissions.PermissionState.None> です。  
+  
+-   <xref:System.Security.Permissions.PermissionState> いずれかを指定<xref:System.Security.Permissions.PermissionState.Unrestricted>対象のクラスで使用する任意の URI を許可するのにまたは<xref:System.Security.Permissions.PermissionState.None>のみを使用すると指定した Uri にアクセスできるように、<xref:System.Net.WebPermission.AddPermission%2A>メソッドです。  
+  
+-   A<xref:System.Net.NetworkAccess>値と URI の文字列。 指定された URI が与えられたアクセス許可、<xref:System.Net.NetworkAccess>値。  
+  
+-   A<xref:System.Net.NetworkAccess>指定子は、正規表現の URI。  
+  
+ <xref:System.Net.WebPermission.ConnectList%2A>と<xref:System.Net.WebPermission.AcceptList%2A>アクセス許可を付与する Uri を保持します。 これらのリストのいずれかに URI を追加するには、使用<xref:System.Net.WebPermission.AddPermission%2A>です。 渡す場合<xref:System.Net.NetworkAccess.Accept>として、<xref:System.Net.NetworkAccess>パラメーター、URI に追加されます、<xref:System.Net.WebPermission.AcceptList%2A>です。 <xref:System.Net.WebPermission>対象クラスと一致する Uri の接続を許可、<xref:System.Net.WebPermission.AcceptList%2A>です。  
+  
+> [!CAUTION]
+>  インターネット リソースへのアクセスを拒否するには、そのリソースへのすべての可能なパスへのアクセスを拒否する必要があります。 これにより、呼び出し元が必要です。<xref:System.Net.WebPermission.%23ctor%2A?displayProperty=nameWithType>状態パラメーターを設定して<xref:System.Security.CodeAccessPermission.Deny%2A>です。 特定のリソースのみにアクセスできるようにすることをお勧めします。 このトピックの詳細についてを参照してください、 [NIB: メソッドの使用](http://msdn.microsoft.com/en-us/6b4d2e01-c504-4ac3-b50e-d6f5e7f5df25)トピックです。  
+  
+> [!NOTE]
+>  リソースの正規パスのみを使用してアクセスを拒否する必要があります。 すべてのパスの構文を使用する必要はありません。  
+  
+> [!NOTE]
+>  ユーザー名と既定のポート情報はから削除されて、<xref:System.Uri>に用意されている正規表現の引数と比較した結果の前に、<xref:System.Net.WebPermission.%23ctor%28System.Net.NetworkAccess%2CSystem.Text.RegularExpressions.Regex%29>コンス トラクターです。 正規表現には、ユーザー情報または既定のポート番号、すべての入力が含まれている場合<xref:System.Uri>s は正規表現に一致に失敗します。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを作成する方法を示します<xref:System.Net.WebPermission>を使用して、<xref:System.Text.RegularExpressions.Regex>です。 他のホストが接続に追加され、一覧を受け入れます<xref:System.Net.WebPermission>です。 最後に、接続し、同意をコンソールに一覧が表示されます。  
+  
+ [!code-cpp[WebPermission_Regex#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Regex/CPP/regex.cpp#1)]
+ [!code-csharp[WebPermission_Regex#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Regex/CS/regex.cs#1)]
+ [!code-vb[WebPermission_Regex#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Regex/VB/regex.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.WebPermission" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermission> クラスの新しいインスタンスを作成します。 このコンス トラクターでは、任意の権限を付与されていない空のアクセス許可を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.WebPermission" />すべて合格したクラスは、要求またはすべての要求は失敗します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`state`パラメーターは、いずれかの<xref:System.Security.Permissions.PermissionState?displayProperty=nameWithType>または<xref:System.Security.Permissions.PermissionState?displayProperty=nameWithType>、それぞれを生成する完全に制限されるか、セキュリティのすべての変数に完全に無制限にアクセスします。 指定した場合<xref:System.Security.Permissions.PermissionState?displayProperty=nameWithType>、アクセスできるように個々 の Uri を使用し、<xref:System.Net.WebPermission.AddPermission%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する<xref:System.Net.WebPermission>によりアクセス権を特定の Url とします。  
+  
+ [!code-cpp[WebPermission_Copy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Copy/CPP/webpermission_copy.cpp#1)]
+ [!code-csharp[WebPermission_Copy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Copy/CS/webpermission_copy.cs#1)]
+ [!code-vb[WebPermission_Copy#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Copy/VB/webpermission_copy.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPermission (System.Net.NetworkAccess access, string uriString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkAccess access, string uriString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Net.NetworkAccess,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="uriString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="access">指定された URI に付与するアクセスの種類を示す NetworkAccess 値です。 <see cref="F:System.Net.NetworkAccess.Accept" />ローカル リソースにインターネットからの接続を受け入れるように、アプリケーションが許可されていることを示します。 <see cref="F:System.Net.NetworkAccess.Connect" />アプリケーションが特定のインターネット リソースに接続できることを示します。</param>
+        <param name="uriString">アクセス権限が与えられる URI 文字列を返します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebPermission" />指定された URI の指定したアクセス権を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Net.WebPermission>リモート接続をホストまたはによって記述された URI を使用してリモート ホスト接続を許可するか、その対象の権限を付与し、`uriString`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例の新しいインスタンスを作成する<xref:System.Net.WebPermission>指定した URI の connect 権限を持つ。  
+  
+ [!code-cpp[WebPermission_Union#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Union/CPP/webpermission_union.cpp#1)]
+ [!code-csharp[WebPermission_Union#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Union/CS/webpermission_union.cs#1)]
+ [!code-vb[WebPermission_Union#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Union/VB/webpermission_union.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uriString" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPermission (System.Net.NetworkAccess access, System.Text.RegularExpressions.Regex uriRegex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkAccess access, class System.Text.RegularExpressions.Regex uriRegex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Net.NetworkAccess,System.Text.RegularExpressions.Regex)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="uriRegex" Type="System.Text.RegularExpressions.Regex" />
+      </Parameters>
+      <Docs>
+        <param name="access">A<see cref="T:System.Net.NetworkAccess" />を指定された URI に付与するアクセスの種類を示す値。 <see cref="F:System.Net.NetworkAccess.Accept" />ローカル リソースにインターネットからの接続を受け入れるように、アプリケーションが許可されていることを示します。 <see cref="F:System.Net.NetworkAccess.Connect" />アプリケーションが特定のインターネット リソースに接続できることを示します。</param>
+        <param name="uriRegex">アクセスの付与先となる URI を記述する正規表現。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Net.WebPermission" /> URI の指定された正規表現の指定したアクセス権を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Net.WebPermission>リモート接続をホストまたはによって記述された URI を使用してリモート ホスト接続を許可するか、その対象の権限を付与し、`uriRegex`パラメーター。  
+  
+> [!NOTE]
+>  作成することをお勧め`uriRegex`を使用して、 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>、 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>、および<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>フラグ。  
+  
+> [!NOTE]
+>  候補 URI の文字列は、関連する正規表現の一覧に照らし合わせてチェックされます (<xref:System.Net.WebPermission.AcceptList%2A>または<xref:System.Net.WebPermission.ConnectList%2A>) は 2 つあります。 最初に、候補 URI 文字列が一覧に照らし合わせて確認、適切です;次に、一致が存在しない場合、候補 URI の文字列に変換する<xref:System.Uri>し、適切なリストと照合します。  
+  
+   
+  
+## Examples  
+ 次の例の新しいインスタンスを作成する<xref:System.Net.WebPermission>、指定の connect 権限を持つ<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>します。  
+  
+ [!code-cpp[WebPermission_Constructor4#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Constructor4/CPP/webpermission_constructor4.cpp#1)]
+ [!code-csharp[WebPermission_Constructor4#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Constructor4/CS/webpermission_constructor4.cs#1)]
+ [!code-vb[WebPermission_Constructor4#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Constructor4/VB/webpermission_constructor4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptList">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator AcceptList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator AcceptList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermission.AcceptList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、1 つの列挙を返します。 これによって保持されているアクセス許可をそのまま使用<see cref="T:System.Net.WebPermission" />です。 返される列挙体に含まれる型は、可能なオブジェクト<see cref="T:System.String" />と<see cref="T:System.Text.RegularExpressions.Regex" />です。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />を含むインターフェイスは、アクセス許可をそのまま使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、これによって許可されているローカル リソースの一覧を取得します。<xref:System.Net.WebPermission>です。 適用されているクラス<xref:System.Net.WebPermission>のみがこのリストに見つかったローカル リソースへの着信接続を受信する権限です。  
+  
+> [!NOTE]
+>  この一覧を使用する Uri を追加することができます<xref:System.Net.WebPermission.AddPermission%2A>です。  
+  
+> [!NOTE]
+>  候補 URI の文字列は、関連する正規表現の一覧に照らし合わせてチェックされます (<xref:System.Net.WebPermission.AcceptList%2A>または<xref:System.Net.WebPermission.ConnectList%2A>) は 2 つあります。 最初に、候補 URI 文字列が一覧に照らし合わせて確認、適切です;次に、一致が存在しない場合、候補 URI の文字列に変換する<xref:System.Uri>し、適切なリストと照合します。  
+  
+   
+  
+## Examples  
+ 次の例の出力内の Url、<xref:System.Net.WebPermission.AcceptList%2A>コンソールにします。  
+  
+ [!code-cpp[WebPermission_AcceptConnectList#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_AcceptConnectList/CPP/webpermission_acceptconnectlist.cpp#2)]
+ [!code-csharp[WebPermission_AcceptConnectList#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_AcceptConnectList/CS/webpermission_acceptconnectlist.cs#2)]
+ [!code-vb[WebPermission_AcceptConnectList#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_AcceptConnectList/VB/webpermission_acceptconnectlist.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkAccess access, string uriString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkAccess access, string uriString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="uriString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="access">A <see cref="T:System.Net.NetworkAccess" /> URI に与えられているアクセス権を指定します。</param>
+        <param name="uriString">アクセス権限が与えられる URI を説明する文字列。</param>
+        <summary>現在指定されたアクセス権を持つ指定した URI 文字列を追加<see cref="T:System.Net.WebPermission" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した場合に<xref:System.Security.Permissions.PermissionState.None>として、<xref:System.Security.Permissions.PermissionState>を使用して<xref:System.Net.WebPermission.AddPermission%2A>の使用を許可するように`uriString`ターゲット クラスにします。 方法`uriString`使用できるターゲット クラスがで指定された`access`です。 指定<xref:System.Net.NetworkAccess.Accept>で指定された URI を追加するアクセス パラメーターとして、 `uriString` URI の一覧にパラメーターが、文字列を受け入れるかを指定<xref:System.Net.NetworkAccess.Connect>URI の一覧に、URI を追加するパラメーターが文字列を接続としてアクセスします。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.Net.WebPermission.AddPermission%2A>で<xref:System.Security.Permissions.PermissionState.Unrestricted><xref:System.Net.WebPermission>は効果がなく、すべての Uri に権限が与えられているためです。  
+  
+> [!NOTE]
+>  候補 URI の文字列は、関連する正規表現の一覧に照らし合わせてチェックされます (<xref:System.Net.WebPermission.AcceptList%2A>または<xref:System.Net.WebPermission.ConnectList%2A>) は 2 つあります。 最初に、候補 URI 文字列が一覧に照らし合わせて確認、適切です;次に、一致が存在しない場合、候補 URI の文字列に変換する<xref:System.Uri>し、適切なリストと照合します。  
+  
+   
+  
+## Examples  
+ 次の例では、特定の URL 文字列へのアクセス権を追加する方法を示します。  
+  
+ [!code-cpp[WebPermission_Intersect#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Intersect/CPP/webpermission_intersect.cpp#2)]
+ [!code-csharp[WebPermission_Intersect#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Intersect/CS/webpermission_intersect.cs#2)]
+ [!code-vb[WebPermission_Intersect#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Intersect/VB/webpermission_intersect.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uriString" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkAccess access, System.Text.RegularExpressions.Regex uriRegex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkAccess access, class System.Text.RegularExpressions.Regex uriRegex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.Text.RegularExpressions.Regex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="uriRegex" Type="System.Text.RegularExpressions.Regex" />
+      </Parameters>
+      <Docs>
+        <param name="access">URI に与えられているアクセス権を指定する NetworkAccess です。</param>
+        <param name="uriRegex">アクセス権限が与えられる Uri のセットを記述する正規表現。</param>
+        <summary>現在指定されたアクセス権を持つ指定した URI を追加<see cref="T:System.Net.WebPermission" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した場合に<xref:System.Security.Permissions.PermissionState.None>として、<xref:System.Security.Permissions.PermissionState>を使用して<xref:System.Net.WebPermission.AddPermission%2A>の使用を許可する`uriRegex`ターゲット クラスにします。 指定<xref:System.Net.NetworkAccess.Accept>として、`access`で指定された URI を追加するパラメーター、 `uriRegex` URI の一覧にパラメーターが、文字列を受け入れるかを指定して<xref:System.Net.NetworkAccess.Connect>URI の一覧に、URI を追加するパラメーターの接続文字列へのアクセス。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.Net.WebPermission.AddPermission%2A>上、 <xref:System.Security.Permissions.PermissionState.Unrestricted> <xref:System.Net.WebPermission>インスタンスは効果がなくすべての Uri へのアクセス許可が付与されています。  
+  
+> [!NOTE]
+>  作成することをお勧め`uriRegex`を使用して、 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>、 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>、および<xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>フラグ。  
+  
+> [!NOTE]
+>  候補 URI の文字列は、関連する正規表現の一覧に照らし合わせてチェックされます (<xref:System.Net.WebPermission.AcceptList%2A>または<xref:System.Net.WebPermission.ConnectList%2A>) は 2 つあります。 最初に、候補 URI 文字列が一覧に照らし合わせて確認、適切です;次に、一致が存在しない場合、候補 URI の文字列に変換する<xref:System.Uri>し、適切なリストと照合します。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.WebPermission.AddPermission%2A>に指定した URI 用アクセス権を付与します。  
+  
+ [!code-cpp[WebPermission_IsSubset#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_IsSubset/CPP/webpermission_issubset.cpp#1)]
+ [!code-csharp[WebPermission_IsSubset#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_IsSubset/CS/webpermission_issubset.cs#1)]
+ [!code-vb[WebPermission_IsSubset#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_IsSubset/VB/webpermission_issubset.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="uriRegex" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectList">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator ConnectList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator ConnectList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermission.ConnectList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、1 つの列挙を返します。 これによって保持されているアクセス許可を接続<see cref="T:System.Net.WebPermission" />です。 返される列挙体に含まれる型は、可能なオブジェクト<see cref="T:System.String" />と<see cref="T:System.Text.RegularExpressions.Regex" />です。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />接続権限を含むインターフェイスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、これによって許可されているリモート リソースの一覧を取得します。<xref:System.Net.WebPermission>です。 適用されているクラス<xref:System.Net.WebPermission>のみこの一覧に記載のリソースに接続する権限を持っています。  
+  
+> [!NOTE]
+>  この一覧を使用する Uri を追加することができます<xref:System.Net.WebPermission.AddPermission%2A>です。  
+  
+> [!NOTE]
+>  候補 URI の文字列は、関連する正規表現の一覧に照らし合わせてチェックされます (<xref:System.Net.WebPermission.AcceptList%2A>または<xref:System.Net.WebPermission.ConnectList%2A>) は 2 つあります。 最初に、候補 URI 文字列が一覧に照らし合わせて確認、適切です;次に、一致が存在しない場合、候補 URI の文字列に変換する<xref:System.Uri>し、適切なリストと照合します。  
+  
+   
+  
+## Examples  
+ 次の例の出力内の Url、<xref:System.Net.WebPermission.ConnectList%2A>コンソールにします。  
+  
+ [!code-cpp[WebPermission_AcceptConnectList#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_AcceptConnectList/CPP/webpermission_acceptconnectlist.cpp#1)]
+ [!code-csharp[WebPermission_AcceptConnectList#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_AcceptConnectList/CS/webpermission_acceptconnectlist.cs#1)]
+ [!code-vb[WebPermission_AcceptConnectList#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_AcceptConnectList/VB/webpermission_acceptconnectlist.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピーを作成、<see cref="T:System.Net.WebPermission" />です。</summary>
+        <returns>新しいインスタンス、<see cref="T:System.Net.WebPermission" />元と同じ値を持つクラスであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.IPermission>このメソッドは、元のリソースへのアクセスを同じによって返される<xref:System.Net.WebPermission>です。 このメソッドは<xref:System.Security.CodeAccessPermission.Copy%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例は、2 番目のインスタンスを作成する方法を示します<xref:System.Net.WebPermission>を使用して<xref:System.Net.WebPermission.Copy%2A>です。 この 2 番目のインスタンスは、最初と同じです。  
+  
+ [!code-cpp[WebPermission_Copy#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Copy/CPP/webpermission_copy.cpp#2)]
+ [!code-csharp[WebPermission_Copy#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Copy/CS/webpermission_copy.cs#2)]
+ [!code-vb[WebPermission_Copy#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Copy/VB/webpermission_copy.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">再構築する XML エンコード、<see cref="T:System.Net.WebPermission" />です。</param>
+        <summary>再構築、 <see cref="T:System.Net.WebPermission" /> XML エンコードからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermission.FromXml%2A>メソッドの再構築、 <xref:System.Net.WebPermission> XML からによって定義されているエンコーディング、<xref:System.Security.SecurityElement>クラスです。  
+  
+ 使用して、 <xref:System.Net.WebPermission.ToXml%2A> XML エンコード方法、 <xref:System.Net.WebPermission>、状態情報を含むです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Security.SecurityElement?displayProperty=nameWithType>、その属性を設定および使用<xref:System.Net.WebPermission.FromXml%2A>のインスタンスにこの情報を転送する<xref:System.Net.WebPermission>です。  
+  
+ [!code-cpp[WebPermission_FromToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_FromToXml/CPP/webpermission_fromtoxml.cpp#1)]
+ [!code-csharp[WebPermission_FromToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_FromToXml/CS/webpermission_fromtoxml.cs#1)]
+ [!code-vb[WebPermission_FromToXml#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_FromToXml/VB/webpermission_fromtoxml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="securityElement" />パラメーターは、<see langword="null." /></exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="securityElement" />この種類のアクセス許可要素ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のインスタンスと比較する <see cref="T:System.Net.WebPermission" />。</param>
+        <summary>2 つの論理積集合を返します<see cref="T:System.Net.WebPermission" />インスタンス。</summary>
+        <returns>新しい<see cref="T:System.Net.WebPermission" />、現在のインスタンスの積集合を表す、<paramref name="target" />パラメーター。 このメソッドを返しますの積集合が空<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermission.Intersect%2A>返します、<xref:System.Net.WebPermission>両方で共通しているこれらのアクセス許可を格納している`target`と現在のインスタンス。  
+  
+ このメソッドは<xref:System.Security.CodeAccessPermission.Intersect%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例は、のインスタンスを作成する方法を示しています。<xref:System.Net.WebPermission>既存の 2 つの論理積集合を使用して<xref:System.Net.WebPermission>インスタンス。  
+  
+ [!code-cpp[WebPermission_Intersect#3](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Intersect/CPP/webpermission_intersect.cpp#3)]
+ [!code-csharp[WebPermission_Intersect#3](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Intersect/CS/webpermission_intersect.cs#3)]
+ [!code-vb[WebPermission_Intersect#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Intersect/VB/webpermission_intersect.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /><see langword="null" />または型の<see cref="T:System.Net.WebPermission" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Net.WebPermission" />現在と比較する<see cref="T:System.Net.WebPermission" />です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Net.WebPermission" />指定したオブジェクトのサブセットです。</summary>
+        <returns>
+          <see langword="true" />現在のインスタンスのサブセットである場合、<paramref name="target" />パラメーターです。 それ以外の場合、<see langword="false" />です。 ターゲットがある場合<see langword="null" />、メソッドを返します<see langword="true" />は無制限ではない空の現在の権限に対してと<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.Net.WebPermission>によって完全に含まれる関連付けられているリソースのセットを示す、`target`パラメーターを現在の<xref:System.Net.WebPermission>のサブセットである`target`です。 このメソッドは<xref:System.Net.WebPermission.IsSubsetOf%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.WebPermission.IsSubsetOf%2A>アクセス権を 1 つのインスタンスで見つかったかどうかを判断<xref:System.Net.WebPermission>の別のインスタンス内にある<xref:System.Net.WebPermission>です。  
+  
+ [!code-cpp[WebPermission_IsSubset2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_IsSubset2/CPP/source.cpp#1)]
+ [!code-csharp[WebPermission_IsSubset2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_IsSubset2/CS/source.cs#1)]
+ [!code-vb[WebPermission_IsSubset2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_IsSubset2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ターゲット パラメーターは、のインスタンスではない<see cref="T:System.Net.WebPermission" />です。</exception>
+        <exception cref="T:System.NotSupportedException">現在のインスタンスには、正規表現でエンコードされた権限が含まれています。 およびだけではない対象のインスタンスに権利が同じです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>全体的なアクセス許可状態を調べ、<see cref="T:System.Net.WebPermission" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Net.WebPermission" />で作成された、 <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /> <see cref="T:System.Security.Permissions.PermissionState" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Net.WebPermission>は<xref:System.Security.Permissions.PermissionState.Unrestricted>、ターゲット クラスがすべての Uri を使用します。 それ以外の場合、特定のアクセス許可は、ターゲット クラスを使用する任意の URI を指定してください。  
+  
+> [!NOTE]
+>  使用して<xref:System.Net.WebPermission.AddPermission%2A>URI を追加し、アクセス許可を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML エンコードを作成、<see cref="T:System.Net.WebPermission" />と現在の状態。</summary>
+        <returns>A<see cref="T:System.Security.SecurityElement" />の XML でエンコードされた表現を格納する、 <see cref="T:System.Net.WebPermission" />、状態情報を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.WebPermission.FromXml%2A>から状態情報を復元する方法、<xref:System.Security.SecurityElement>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.WebPermission.ToXml%2A>を作成する、<xref:System.Security.SecurityElement?displayProperty=nameWithType>およびコンソールにその属性を印刷します。  
+  
+ [!code-cpp[WebPermission_FromToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_FromToXml/CPP/webpermission_fromtoxml.cpp#1)]
+ [!code-csharp[WebPermission_FromToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_FromToXml/CS/webpermission_fromtoxml.cs#1)]
+ [!code-vb[WebPermission_FromToXml#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_FromToXml/VB/webpermission_fromtoxml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Net.WebPermission" />現在とを組み合わせる<see cref="T:System.Net.WebPermission" />です。</param>
+        <summary>2 つのインスタンス間の論理的な和集合を返します、<see cref="T:System.Net.WebPermission" />クラスです。</summary>
+        <returns>A <see cref="T:System.Net.WebPermission" /> 、現在のインスタンスの和集合を表す、<paramref name="target" />パラメーター。 いずれか<see langword="WebPermission" />は<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />、メソッドを返します、<see cref="T:System.Net.WebPermission" />つまり<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。 ターゲットがある場合<see langword="null" />、メソッドは、現在のコピーを返します<see cref="T:System.Net.WebPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermission.Union%2A>返します、<xref:System.Net.WebPermission>両方でのすべてのアクセス許可を格納している`target`と現在のインスタンス。  
+  
+   
+  
+## Examples  
+ 次の例は 2 つの論理的な和集合<xref:System.Net.WebPermission>の 3 番目のインスタンスを作成するインスタンス<xref:System.Net.WebPermission>です。  
+  
+ [!code-cpp[WebPermission_Union#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Union/CPP/webpermission_union.cpp#2)]
+ [!code-csharp[WebPermission_Union#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Union/CS/webpermission_union.cs#2)]
+ [!code-vb[WebPermission_Union#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermission_Union/VB/webpermission_union.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ターゲットが<see langword="null" />または型の<see cref="T:System.Net.WebPermission" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

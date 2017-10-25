@@ -1,0 +1,280 @@
+<Type Name="DataKeyCollection" FullName="System.Web.UI.WebControls.DataKeyCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataKeyCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataKeyCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataKeyCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ソース内の各レコードのキー フィールドを含むコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataKeyCollection>クラス、データ ソース内のキー フィールドのコレクションを表します。 データ ソース内の各レコードのキー フィールドは、このコレクションに格納されます。 これにより、キー フィールドをコントロールに表示せずにコントロールを一覧表示するデータを格納できます。 このコレクションがで指定されたフィールドの値が自動的に入力、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A?displayProperty=nameWithType>プロパティです。 このコレクションでは、手動で追加またはコレクションから項目を削除するにはできません。  
+  
+ キー フィールドは、一般的な用途ハンドラーで、イベントなど`ItemCommand`または`DeleteCommand`更新、データ ソースの特定のレコードを変更するクエリ文字列の一部として。 キー フィールドでは、update クエリ文字列を変更する適切なレコードを識別するのに役立ちます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.DataKeyCollection.Count%2A>プロパティ コレクション内の項目数を決定します。 プログラムからのキー フィールドを取得する、 <xref:System.Web.UI.WebControls.DataKeyCollection>、次のいずれかを使用します。  
+  
+-   インデクサーを使用して、配列表記を使用して、コレクションから 1 つのキー フィールドを取得します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataKeyCollection.CopyTo%2A>にコレクションの内容をコピーする方法、<xref:System.Array?displayProperty=nameWithType>オブジェクトをコレクションから項目を取得するために使用されます。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataKeyCollection.GetEnumerator%2A>メソッドを作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>実装されているオブジェクトをコレクションから項目を取得するために使用されます。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[BaseDataListDataKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListDataKeys/CS/basedatalistdatakeyscs.aspx#1)]
+ [!code-aspx-vb[BaseDataListDataKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListDataKeys/VB/basedatalistdatakeysvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataKeyCollection (System.Collections.ArrayList keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataKeyCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="keys">A<see cref="T:System.Collections.ArrayList" />データ ソースからのキー フィールドを格納しています。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataKeyCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataKeyCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataKeyCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />です。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受け取るオブジェクト。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />を指定した<see cref="T:System.Array" />オブジェクト、指定したインデックスから始まる、<see cref="T:System.Array" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.WebControls.DataKeyCollection>に指定された<xref:System.Array?displayProperty=nameWithType>オブジェクト、指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataKeyCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目の数を取得します。</summary>
+        <value>コレクション内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataKeyCollection.Count%2A>プロパティ コレクション内の項目数を決定します。 上限を確認するのには、このプロパティは、コレクションを反復処理するときに使用して一般的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataKeyCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Collections.IEnumerator" />内のすべてのキー フィールドを含むオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />です。</summary>
+        <returns>A<see cref="T:System.Collections.IEnumerator" />内のすべてのキー フィールドを含むオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>各項目を取得する反復できるオブジェクトを実装する、<xref:System.Web.UI.WebControls.DataKeyCollection>です。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクションで示される現在の項目を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を初期位置に移動するメソッド。  
+  
+> [!NOTE]
+>  作成した後、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクトまたはを使用して実装、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataKeyCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかの項目を<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />変更できます。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.WebControls.DataKeyCollection>常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataKeyCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Web.UI.WebControls.DataKeyCollection" /> (スレッド セーフである) が同期されています。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスし、常にオーバーライド`false`ことを示す、<xref:System.Web.UI.WebControls.DataKeyCollection>はスレッド セーフではありません。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataKeyCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataKeyCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得するキー フィールドの 0 から始まるインデックス。</param>
+        <summary>キー フィールド、コレクション内の指定したインデックス位置を取得します。</summary>
+        <value>コレクション内で指定したインデックスにあるキー フィールドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーからのキー フィールドの取得を使用して、<xref:System.Web.UI.WebControls.DataKeyCollection>配列表記を使用して、指定したインデックス位置。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[BaseDataListDataKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListDataKeys/CS/basedatalistdatakeyscs.aspx#1)]
+ [!code-aspx-vb[BaseDataListDataKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListDataKeys/VB/basedatalistdatakeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataKeyCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用するオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />です。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.DataKeyCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataKeyCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

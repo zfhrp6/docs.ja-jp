@@ -1,0 +1,219 @@
+<Type Name="Trustee" FullName="System.Messaging.Trustee">
+  <TypeSignature Language="C#" Value="public class Trustee" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Trustee extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.Trustee" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー アカウント、グループ アカウント、またはアクセス制御エントリを適用するログオン セッションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラスティは、ユーザーに許可またはアクセス制御エントリを作成するときに、アクセス権を拒否するエンティティです。 設定、<xref:System.Messaging.Trustee.TrusteeType%2A>メンバー (直接またはを使用して、<xref:System.Messaging.Trustee.%23ctor%2A>コンス トラクター) をトラスティは、ユーザー、コンピューター、またはその他の型かどうかを指定します。 トラスティのアクセス許可を設定する前に trustee の種類を指定しない場合、型は既定で`Unknown`です。  
+  
+ 値を指定する必要があります、<xref:System.Messaging.Trustee.Name%2A>プロパティを使用する前に、<xref:System.Messaging.Trustee>アクセス許可を設定します。 <xref:System.Messaging.Trustee.Name%2A>新しいアクセス権の割り当てられたユーザー、グループ、またはコンピューター アカウントの名前が含まれています。 必要に応じて、設定することができます、<xref:System.Messaging.Trustee.SystemName%2A>プロパティを識別する、トラスティ アカウントは、参照が、名前のセキュリティ識別子を解決するのには、システムの名前。 値を指定しない場合<xref:System.Messaging.Trustee.SystemName%2A>、ローカル コンピューターは、アカウント名を検索します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Trustee ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Trustee.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.Trustee" />クラスに対する読み取り/書き込みプロパティの設定がない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定する必要があります、<xref:System.Messaging.Trustee.Name%2A>プロパティを使用する前に、<xref:System.Messaging.Trustee>インスタンス アクセス許可を設定します。 必要に応じて、設定することができます、<xref:System.Messaging.Trustee.SystemName%2A>プロパティを識別する、トラスティ アカウントは、参照が、名前のセキュリティ識別子を解決するのには、システムの名前。 値を指定しない場合<xref:System.Messaging.Trustee.SystemName%2A>、ローカル コンピューターは、アカウント名を検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Trustee (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Trustee.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">代入する値、<see cref="P:System.Messaging.Trustee.Name" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.Trustee" />型のクラス<see langword="Unknown" />、設定、<see cref="P:System.Messaging.Trustee.Name" />プロパティを指定すると、値、および<see cref="P:System.Messaging.Trustee.SystemName" />に<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラスティ アカウントを設定し、ローカル コンピューターが、アカウントの検索に使用するように指定するには、このオーバー ロードを使用します。 <xref:System.Messaging.Trustee.TrusteeType%2A>プロパティに設定されている`Unknown`のこのインスタンスを使用する前にその値を変更することができますが、<xref:System.Messaging.Trustee>アクセス許可を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Trustee (string name, string systemName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string systemName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Trustee.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="systemName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">代入する値、<see cref="P:System.Messaging.Trustee.Name" />プロパティです。</param>
+        <param name="systemName">代入する値、<see cref="P:System.Messaging.Trustee.SystemName" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.Trustee" />型のクラス<see langword="Unknown" />、設定、<see cref="P:System.Messaging.Trustee.Name" />と<see langword="SystemName" />プロパティを指定した値にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラスティ アカウントを設定し、ネットワーク コンピューターが、アカウントの検索に使用するように指定するには、このオーバー ロードを使用します。 <xref:System.Messaging.Trustee.TrusteeType%2A>プロパティに設定されている`Unknown`のこのインスタンスを使用する前にその値を変更することができますが、<xref:System.Messaging.Trustee>アクセス許可を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Trustee (string name, string systemName, System.Messaging.TrusteeType trusteeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string systemName, valuetype System.Messaging.TrusteeType trusteeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.Trustee.#ctor(System.String,System.String,System.Messaging.TrusteeType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="systemName" Type="System.String" />
+        <Parameter Name="trusteeType" Type="System.Messaging.TrusteeType" />
+      </Parameters>
+      <Docs>
+        <param name="name">代入する値、<see cref="P:System.Messaging.Trustee.Name" />プロパティです。</param>
+        <param name="systemName">代入する値、<see cref="P:System.Messaging.Trustee.SystemName" />プロパティです。</param>
+        <param name="trusteeType">A<see cref="T:System.Messaging.TrusteeType" />トラスティのアカウントの種類を示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.Trustee" />設定の指定した型のクラス、<see cref="P:System.Messaging.Trustee.Name" />と<see cref="P:System.Messaging.Trustee.SystemName" />プロパティを指定した値にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラスティ アカウントを設定およびアカウントの検索に使用されるネットワーク コンピューターを指定する、トラスティ型がわかっている場合は、このオーバー ロードを使用します。  
+  
+ このオーバー ロードの設定、<xref:System.Messaging.Trustee.TrusteeType%2A>のこのインスタンスを使用する前にその値を変更できますが、構築時のプロパティ<xref:System.Messaging.Trustee>アクセス許可を設定します。 `Unknown`使用されているが、有効であることを知っている信頼の種類がわからない場合にのみ、trustee の種類 (これは、コンス トラクターの他のオーバー ロードは、既定で設定) を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.Trustee.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラスティの名前を設定します。</summary>
+        <value>新しい権利の割り当てられたアカウントの名前。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定する必要があります、<xref:System.Messaging.Trustee.Name%2A>プロパティを使用する前に、<xref:System.Messaging.Trustee>アクセス許可を設定します。 <xref:System.Messaging.Trustee.Name%2A>新しいアクセス権の割り当てられたユーザー、グループ、またはコンピューター アカウントの名前が含まれています。  
+  
+ 値を指定しない場合、<xref:System.Messaging.Trustee.SystemName%2A>プロパティを指定したアカウントで、<xref:System.Messaging.Trustee.Name%2A>プロパティは、ローカル コンピューター上で検索します。 指定した場合、<xref:System.Messaging.Trustee.SystemName%2A>アカウントが指定したコンピューター上で検索します。  
+  
+ (たとえば、ワークグループ モードである) 場合、ネットワークに接続されていない場合、<xref:System.Messaging.Trustee.Name%2A>プロパティは、ローカル ユーザーまたはグループを指定できます。 この例では、任意の値を指定しないで<xref:System.Messaging.Trustee.SystemName%2A>、ワークグループ モードが定義でローカルです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Messaging.Trustee.Name" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemName">
+      <MemberSignature Language="C#" Value="public string SystemName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SystemName" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.Trustee.SystemName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラスティのアカウントを検索対象のコンピューターを設定します。</summary>
+        <value>アカウントが存在するローカルまたはリモート コンピューター。 既定値は<see langword="null" />名前は、ローカル コンピューターでルックアップしているはことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定する必要があります<xref:System.Messaging.Trustee.Name%2A>のこのインスタンスを使用する前に<xref:System.Messaging.Trustee>、アクセス許可を設定するが、<xref:System.Messaging.Trustee.SystemName%2A>は省略可能です。 移動すると<xref:System.Messaging.Trustee.SystemName%2A>`null`で指定するアカウントを検索するローカル コンピューターが使用される、<xref:System.Messaging.Trustee.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrusteeType">
+      <MemberSignature Language="C#" Value="public System.Messaging.TrusteeType TrusteeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.TrusteeType TrusteeType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.Trustee.TrusteeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.TrusteeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラスティがユーザー、グループ、コンピューター、ドメイン、またはエイリアスであるかどうかを識別する、トラスティの種類を設定します。</summary>
+        <value>A<see cref="T:System.Messaging.TrusteeType" />システムにトラスティをアカウントの種類を示すです。 既定値は、<see langword="Unknown" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Trustee.TrusteeType%2A>アカウントの種類、トラスティがドメイン コント ローラーまたはローカル コンピューター上で関連付けられたことを示します。 これは、指定できますが、たとえば、ユーザー アカウント、グループ アカウント、またはコンピューター アカウント。  
+  
+ 定義済みグループの名前を指定する場合、 <xref:System.Messaging.Trustee.Name%2A> 、Everyone などのプロパティ、<xref:System.Messaging.Trustee.TrusteeType%2A>は`Group`、なく`Alias`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">トラスティを指定した型は、のいずれかではありません、<see cref="T:System.Messaging.TrusteeType" />列挙型メンバー。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

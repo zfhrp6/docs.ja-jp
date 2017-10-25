@@ -1,0 +1,188 @@
+<Type Name="TraceContextRecord" FullName="System.Web.TraceContextRecord">
+  <TypeSignature Language="C#" Value="public sealed class TraceContextRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TraceContextRecord extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.TraceContextRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET のトレース メッセージと、関連付けられたデータを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.TraceContextRecord>オブジェクトによってカプセル化、トレース メッセージ、カテゴリ、関連付けられた<xref:System.Exception>、によってトレース レコードが書き込まれたかどうかと、<xref:System.Web.TraceContext.Warn%2A?displayProperty=nameWithType>メソッドです。  
+  
+ すべての呼び出しに、<xref:System.Web.TraceContext.Write%2A?displayProperty=nameWithType>と<xref:System.Web.TraceContext.Warn%2A?displayProperty=nameWithType>メソッドの生成、<xref:System.Web.TraceContextRecord>に追加されるオブジェクト、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A?displayProperty=nameWithType>メッセージのコレクション。 処理することによりレコードのコレクションにアクセスすることができます、<xref:System.Web.TraceContext.TraceFinished>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、登録する方法を示しています、<xref:System.Web.TraceContextEventHandler>を処理するデリゲート、<xref:System.Web.TraceContext.TraceFinished>イベント。 この例では、`OnTraceFinished`メソッドのコレクションにアクセスする<xref:System.Web.TraceContextRecord>オブジェクトを介して、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>プロパティは、それらを反復処理し、応答ストリームに書き込みます。  
+  
+ [!code-aspx-csharp[System.Web.Trace_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_3/CS/form3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_3/VB/form3vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceContextRecord (string category, string msg, bool isWarning, Exception errorInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string category, string msg, bool isWarning, class System.Exception errorInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContextRecord.#ctor(System.String,System.String,System.Boolean,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="msg" Type="System.String" />
+        <Parameter Name="isWarning" Type="System.Boolean" />
+        <Parameter Name="errorInfo" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="category">メッセージを受信するトレース カテゴリ。</param>
+        <param name="msg">トレース メッセージ。</param>
+        <param name="isWarning">
+          <see langword="true" />メソッドに関連付けられている場合、<see cref="T:System.Web.TraceContextRecord" />は、<see cref="Overload:System.Web.TraceContext.Warn" />メソッドです。<see langword="false" />トレース メソッドがある場合、<see cref="Overload:System.Web.TraceContext.Write" />メソッドです。</param>
+        <param name="errorInfo">A<see cref="T:System.Exception" />追加のエラー情報を含むオブジェクト。</param>
+        <summary><see cref="T:System.Web.TraceContextRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての呼び出しに、<xref:System.Web.TraceContext.Write%2A?displayProperty=nameWithType>と<xref:System.Web.TraceContext.Warn%2A?displayProperty=nameWithType>メソッドの生成、<xref:System.Web.TraceContextRecord>に追加されるオブジェクト、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A?displayProperty=nameWithType>メッセージのコレクション。 <xref:System.Web.TraceContext.Warn%2A>メソッド呼び出しのセット、<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティを`true`中、<xref:System.Web.TraceContext.Write%2A>メソッドの呼び出しには、設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContextRecord.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トレース レコードのユーザー定義のカテゴリを取得します。</summary>
+        <value>トレース レコードのカテゴリを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カテゴリは、わかりやすいグループは、トレース メッセージをよりよく整理するために使用が、任意の文字列にすることができます。 <xref:System.Web.TraceContext>クラス<xref:System.String.Empty?displayProperty=nameWithType>だけを受け取るメソッドは、既定のカテゴリとして、`message`パラメーター。 Asp.net で、トレースが有効な場合は、いくつかのトレース レコードを書き込む、既定のカテゴリは、"aspx.page"です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.TraceContextRecord.Category%2A>のプロパティ、 <xref:System.Web.TraceContextRecord>、その関連するトレース メッセージを印刷し、`Response`ストリーム。  
+  
+ [!code-aspx-csharp[System.Web.Trace_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_5/CS/form5cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_5/VB/form5vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorInfo">
+      <MemberSignature Language="C#" Value="public Exception ErrorInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception ErrorInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContextRecord.ErrorInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Exception" />がある場合は、トレース レコードに関連付けられています。</summary>
+        <value>A<see cref="T:System.Exception" />いずれかが存在する場合は、トレース レコードに関連付けられているまたは<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トレースを使用するアプリケーションのデバッグやエラーと例外処理のトラブルシューティングを行う場合は、トレース レコードに例外を含めることができます。 <xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティは`null`トレース レコードがのいずれかで関連付けられている場合、<xref:System.Web.TraceContext>メソッドがない、明示的な`errorInfo`パラメーターまたはない例外を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWarning">
+      <MemberSignature Language="C#" Value="public bool IsWarning { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWarning" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContextRecord.IsWarning" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トレース レコードに関連付けられているかどうかを示す値を取得、<see cref="Overload:System.Web.TraceContext.Warn" />メソッドの呼び出しです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.TraceContextRecord" />に関連付けられている、<see cref="Overload:System.Web.TraceContext.Warn" />メソッドの呼び出し、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、<xref:System.Web.TraceContextRecord.IsWarning%2A>のプロパティ、<xref:System.Web.TraceContextRecord>によってレコードが含まれているメッセージが書き込まれたかどうかを決定する、<xref:System.Web.TraceContext.Warn%2A>または<xref:System.Web.TraceContext.Write%2A>メソッドの呼び出しです。 トレース レコードが、警告メッセージの場合は、エラー メッセージである場合は、別の操作が実行します。  
+  
+ [!code-aspx-csharp[System.Web.Trace_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_4/CS/form4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_4/VB/form4vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContextRecord.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義のトレース メッセージを取得します。</summary>
+        <value>トレース レコードのメッセージを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージは、任意の文字列を指定でき、詳細なトレース情報を書き込むために使用します。 渡されるメッセージのパラメーターに対応して、<xref:System.Web.TraceContext.Write%2A?displayProperty=nameWithType>と<xref:System.Web.TraceContext.Warn%2A?displayProperty=nameWithType>メソッドです。 情報は、実行時の値、通知や、プログラムの実行、または他の診断データを指示するメッセージを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します、<xref:System.Web.TraceContextRecord.Message%2A>のプロパティ、 <xref:System.Web.TraceContextRecord>、印刷して、`Response`ストリーム。  
+  
+ [!code-aspx-csharp[System.Web.Trace_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_4/CS/form4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_4/VB/form4vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

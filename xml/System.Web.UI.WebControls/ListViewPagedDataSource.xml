@@ -1,0 +1,443 @@
+<Type Name="ListViewPagedDataSource" FullName="System.Web.UI.WebControls.ListViewPagedDataSource">
+  <TypeSignature Language="C#" Value="public class ListViewPagedDataSource : System.Collections.ICollection, System.ComponentModel.ITypedList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewPagedDataSource extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ComponentModel.ITypedList" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewPagedDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ITypedList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ページングに関連するプロパティをカプセル化、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListViewPagedDataSource>クラスを有効にするプロパティをカプセル化、<xref:System.Web.UI.WebControls.ListView>コントロールでページングを実行します。  
+  
+ このクラスは、関連付けられているデータを列挙するのに最適な使用可能なメソッドを使用します。 基になるデータ ソースは、インデックス付きのアクセスをサポートしている場合 (など<xref:System.Array?displayProperty=nameWithType>と<xref:System.Collections.IList?displayProperty=nameWithType>オブジェクト)、そのアクセスを使用するクラス。 それ以外の場合、によって作成される列挙子を使用するクラス、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewPagedDataSource> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewPagedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewPagedDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewPagedDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.ListViewPagedDataSource>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewPagedDataSource> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewPagedDataSource.AllowServerPaging%2A>|`false`|  
+|<xref:System.Web.UI.WebControls.ListViewPagedDataSource.TotalRowCount%2A>|0|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowServerPaging">
+      <MemberSignature Language="C#" Value="public bool AllowServerPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowServerPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.AllowServerPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバー ベースのページングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サーバー ベースのページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.AllowServerPaging%2A>サーバー ベースのページングが有効になっているかどうかを指定するプロパティです。 このプロパティ設定されている場合`true`、データ ソース オブジェクトには、サーバー ベースのページングを実行します。 それ以外の場合、<xref:System.Windows.Forms.ListView>コントロールが UI ベースのページングを実行します。 UI ベースのページング、<xref:System.Windows.Forms.ListView>コントロールがデータ ソースからすべてのレコードを要求し、現在のページのみが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewPagedDataSource.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />をデータ ソースからコピーされた項目を受け取るオブジェクト。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受け取るオブジェクト。</param>
+        <summary>指定したデータ ソースからのすべての項目をコピー<see cref="T:System.Array" />オブジェクト、指定したインデックスから始まる<see cref="T:System.Array" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定したにデータ ソースの内容をコピー<xref:System.Array?displayProperty=nameWithType>オブジェクト、指定したインデックスから始まります。 <xref:System.Array?displayProperty=nameWithType>オブジェクトは、データ ソース内の項目を反復処理によく使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページのデータ ソースから使用される項目の数を取得します。</summary>
+        <value>現在のページのデータ ソースから使用される項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.Count%2A>データ ソースから使用される項目の数を決定するプロパティです。 返される値は、次の条件によって決定されます。  
+  
+-   現在のページが、最後のページではない場合、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.MaximumRows%2A>プロパティが 0 の場合の値以上である値に設定、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.MaximumRows%2A>プロパティが返されます。  
+  
+-   現在のページが、最後のページではない場合、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.MaximumRows%2A>プロパティが 0 の値より小さい値に設定、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSourceCount%2A>プロパティは、の値から減算されます、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.StartRowIndex%2A>プロパティが返される前にします。  
+  
+-   最後のページでは、値のかどうか、現在のページには、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSourceCount%2A>プロパティは、の値から減算されます、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.StartRowIndex%2A>プロパティに返されます。  
+  
+-   場合、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSource%2A>プロパティは`null`0 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースを設定します。</summary>
+        <value>実装するオブジェクト<see cref="T:System.Collections.IEnumerable" />データ ソースを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSource%2A>ページングされるプロパティを取得またはデータ ソースを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceCount">
+      <MemberSignature Language="C#" Value="public int DataSourceCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DataSourceCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.DataSourceCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース内の項目数を取得します。</summary>
+        <value>データ ソース内の項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSourceCount%2A>プロパティをデータ ソース内にあるアイテムの数を決定します。 サーバー ベースのページングを使用する場合の値、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.TotalRowCount%2A>プロパティが返されます。 それ以外の場合、データ ソース内の項目の合計数が返されます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSource%2A>プロパティは`null`0 が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">データ ソース オブジェクトを実装しません、<see cref="T:System.Collections.ICollection" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewPagedDataSource.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装するオブジェクトを返します<see cref="T:System.Collections.IEnumerator" />データ ソース内のすべての項目を格納しているとします。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />データ ソース内のすべての項目を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、取得、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクト データ ソース内の個々 のアイテムへのアクセスに使用することです。 列挙子の現在位置にあるアイテムにアクセスするには、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティです。 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。 列挙子を元の位置に移動するには、使用、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  取得するときに最初に、列挙子または呼び出すと、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 それ以外の場合で表される項目、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetItemProperties (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewPagedDataSource.GetItemProperties(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">コレクションから検索するバインド可能な <see cref="T:System.ComponentModel.PropertyDescriptor" /> オブジェクトの配列。 これは、<see langword="null" />です。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データ バインドに使用されるプロパティを表すオブジェクト。</summary>
+        <returns><see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データ バインドに使用されるプロパティを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.GetItemProperties%2A>を取得するメソッド、<xref:System.ComponentModel.PropertyDescriptorCollection?displayProperty=nameWithType>データ バインドに使用されるプロパティを表すオブジェクト。 <xref:System.Web.UI.WebControls.ListViewPagedDataSource.GetItemProperties%2A>メソッドの呼び出し、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A?displayProperty=nameWithType>基になるデータ ソース オブジェクトのメソッドです。 場合、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.DataSource%2A>プロパティは`null`を実装していませんか、<xref:System.ComponentModel.ITypedList?displayProperty=nameWithType>インターフェイス、`null`が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="public string GetListName (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetListName(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewPagedDataSource.GetListName(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">配列<see cref="T:System.ComponentModel.PropertyDescriptor" />に関してこのリストの名前が返されるオブジェクト。</param>
+        <summary>リストの名前を返します。 このメソッドは、このクラスには適用されません。</summary>
+        <returns>常に空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの継承元、<xref:System.ComponentModel.ITypedList?displayProperty=nameWithType>インターフェイスし、このクラスには適用されません。 返すように実装されて<xref:System.String.Empty?displayProperty=nameWithType>すべてのケース。 <xref:System.Web.UI.WebControls.ListViewPagedDataSource.GetListName%2A> メソッドの詳細については、<xref:System.ComponentModel.ITypedList.GetListName%2A?displayProperty=nameWithType> を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewPagedDataSource" /> オブジェクトが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsServerPagingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsServerPagingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsServerPagingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.IsServerPagingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーベースのページングが有効であるかどうかを示す値を取得します。</summary>
+        <value>
+          サーバー ベースのページングが <see cref="P:System.Web.UI.WebControls.ListViewPagedDataSource.AllowServerPaging" /> プロパティを使用して示されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(スレッド セーフである) データ ソースへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスし、常にオーバーライド`false`、このクラスがスレッド セーフでないことを示します。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRows">
+      <MemberSignature Language="C#" Value="public int MaximumRows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.MaximumRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのページに表示する項目の最大数を設定します。</summary>
+        <value>1 つのページに表示する項目の最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRowIndex">
+      <MemberSignature Language="C#" Value="public int StartRowIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartRowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.StartRowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのページに表示される最初のレコードのインデックスを設定します。</summary>
+        <value>ページに表示される最初のレコードのインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.ListViewPagedDataSource>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.ListViewPagedDataSource.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalRowCount">
+      <MemberSignature Language="C#" Value="public int TotalRowCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewPagedDataSource.TotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバー ベースのページングが使用されているときに、データ ソースの項目の合計数を設定します。</summary>
+        <value>サーバー ベースのページングが使用されているときに、データ ソース内の項目の合計数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

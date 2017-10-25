@@ -1,0 +1,582 @@
+<Type Name="DynamicRenderer" FullName="System.Windows.Input.StylusPlugIns.DynamicRenderer">
+  <TypeSignature Language="C#" Value="public class DynamicRenderer : System.Windows.Input.StylusPlugIns.StylusPlugIn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicRenderer extends System.Windows.Input.StylusPlugIns.StylusPlugIn" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusPlugIns.DynamicRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.StylusPlugIns.StylusPlugIn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>描画表面にインクをユーザーとしてでは、タブレット ペンを移動します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>クラスから継承、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラス、およびユーザーは、タブレット ペンや他のポインティング デバイスでマウス ポインターを移動すると、画面に描画するインクを許可します。 使用することができます、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>動的にカスタム コントロールでインクをレンダリングするか、それから継承する<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>などインク対応の要素では、リアルタイムでカスタム レンダリングを実行する、<xref:System.Windows.Controls.InkCanvas>です。  
+  
+ 動的な表示は、ユーザーは、タブレット ペンを使用してインクを入力するときに、アプリケーションのユーザー インターフェイス スレッドから別のスレッドで行われます。 マウスを使用する場合は、UI スレッドで動的レンダリングが行われます。  
+  
+> [!NOTE]
+>  としてこのクラスを参照するために、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]要素にマップする必要がある、 <xref:System.Windows.Input.StylusPlugIns?displayProperty=nameWithType> CLR 名前空間プレフィックス、およびプレフィックス修飾するために使用する、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>要素。 詳細については、「 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+<a name="xamlTextUsage_DynamicRenderer"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 通常、このクラスは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、アタッチ、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を<xref:System.Windows.Controls.InkPresenter>です。 動的にレンダリングするコントロールを作成するインクは、「[インク入力コントロールを作成する](~/docs/framework/wpf/advanced/creating-an-ink-input-control.md)です。  
+  
+ [!code-csharp[StylusPluginSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/StylusControl.cs#3)]
+ [!code-vb[StylusPluginSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/StylusControl.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicRenderer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.StylusPlugIns.DynamicRenderer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawingAttributes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.DrawingAttributes DrawingAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.DrawingAttributes DrawingAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.DrawingAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Ink.DrawingAttributes" />描画されるインクの外観を指定します。</summary>
+        <value><see cref="T:System.Windows.Ink.DrawingAttributes" />描画されるインクの外観を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_DrawingAttributes"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 通常、このプロパティは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.DrawingAttributes>オブジェクトに対して、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>です。 この例で指定されたプロパティが動的に描画されるインクに一致する`inkDA`です。 動的にレンダリングするコントロールを作成するインクは、「[インク入力コントロールを作成する](~/docs/framework/wpf/advanced/creating-an-ink-input-control.md)です。  
+  
+ [!code-csharp[StylusPluginSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/StylusControl.cs#3)]
+ [!code-vb[StylusPluginSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/StylusControl.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDispatcher">
+      <MemberSignature Language="C#" Value="protected System.Windows.Threading.Dispatcher GetDispatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Windows.Threading.Dispatcher GetDispatcher() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.GetDispatcher" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.Dispatcher</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Threading.Dispatcher" />レンダリング スレッドです。</summary>
+        <returns>A<see cref="T:System.Windows.Threading.Dispatcher" />レンダリング スレッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.GetDispatcher%2A>レンダリング スレッドで何かの操作を実行するメソッド。  
+  
+ [!code-csharp[StylusPluginSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#19)]
+ [!code-vb[StylusPluginSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAdded">
+      <MemberSignature Language="C#" Value="protected override void OnAdded ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAdded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnAdded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.StylusPlugIns.DynamicRenderer" />要素に追加します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnAdded" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnAdded" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDraw">
+      <MemberSignature Language="C#" Value="protected virtual void OnDraw (System.Windows.Media.DrawingContext drawingContext, System.Windows.Input.StylusPointCollection stylusPoints, System.Windows.Media.Geometry geometry, System.Windows.Media.Brush fillBrush);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDraw(class System.Windows.Media.DrawingContext drawingContext, class System.Windows.Input.StylusPointCollection stylusPoints, class System.Windows.Media.Geometry geometry, class System.Windows.Media.Brush fillBrush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw(System.Windows.Media.DrawingContext,System.Windows.Input.StylusPointCollection,System.Windows.Media.Geometry,System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+        <Parameter Name="stylusPoints" Type="System.Windows.Input.StylusPointCollection" />
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="fillBrush" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext"><see cref="T:System.Windows.Media.DrawingContext" />に線が表示されるオブジェクトします。</param>
+        <param name="stylusPoints"><see cref="T:System.Windows.Input.StylusPointCollection" />を描画する線のセグメントを表すです。</param>
+        <param name="geometry">A<see cref="T:System.Windows.Media.Geometry" />マウス ポインターのパスを表すです。</param>
+        <param name="fillBrush">現在の線の外観を指定するブラシ。</param>
+        <summary>タブレット ペンや他のポインティング デバイスから「フロー」に表示されるため、リアルタイムのインクを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A>メソッドを使用してデジタル インクを動的に表示するために、<xref:System.Windows.Media.LinearGradientBrush>です。  
+  
+ [!code-csharp[StylusPluginSamples#11](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#11)]
+ [!code-vb[StylusPluginSamples#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw(System.Windows.Media.DrawingContext,System.Windows.Input.StylusPointCollection,System.Windows.Media.Geometry,System.Windows.Media.Brush)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw(System.Windows.Media.DrawingContext,System.Windows.Input.StylusPointCollection,System.Windows.Media.Geometry,System.Windows.Media.Brush)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawingAttributesReplaced">
+      <MemberSignature Language="C#" Value="protected virtual void OnDrawingAttributesReplaced ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDrawingAttributesReplaced() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDrawingAttributesReplaced" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.StylusPlugIns.DynamicRenderer.DrawingAttributes" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDrawingAttributesReplaced%2A> メソッドをオーバーライドする例を次に示します。  
+  
+ [!code-csharp[StylusPluginSamples#21](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#21)]
+ [!code-vb[StylusPluginSamples#21](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDrawingAttributesReplaced" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDrawingAttributesReplaced" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEnabledChanged">
+      <MemberSignature Language="C#" Value="protected override void OnEnabledChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEnabledChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnEnabledChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.Enabled" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnEnabledChanged" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnEnabledChanged" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsActiveForInputChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsActiveForInputChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsActiveForInputChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnIsActiveForInputChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.IsActiveForInput" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnIsActiveForInputChanged" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnIsActiveForInputChanged" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoved">
+      <MemberSignature Language="C#" Value="protected override void OnRemoved ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRemoved() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnRemoved" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />要素から削除されます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnRemoved" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnRemoved" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusDown">
+      <MemberSignature Language="C#" Value="protected override void OnStylusDown (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusDown(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDown(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>タブレット ペンがデジタイザーに触れたときに、ペンのスレッド プール内のスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDown(System.Windows.Input.StylusPlugIns.RawStylusInput)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDown(System.Windows.Input.StylusPlugIns.RawStylusInput)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusDownProcessed">
+      <MemberSignature Language="C#" Value="protected override void OnStylusDownProcessed (object callbackData, bool targetVerified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusDownProcessed(object callbackData, bool targetVerified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDownProcessed(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callbackData" Type="System.Object" />
+        <Parameter Name="targetVerified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackData">渡される、アプリケーション オブジェクト、<see cref="M:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed(System.Object)" />メソッドです。</param>
+        <param name="targetVerified">
+          <see langword="true" />ペンの入力が適切にルーティング、 <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />、それ以外の<see langword="false" />します。</param>
+        <summary>タブレット ペンがデジタイザーに触れたときに、アプリケーションの UI (ユーザー インターフェイス) スレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサブスクライブする<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDown%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDownProcessed(System.Object,System.Boolean)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusDownProcessed(System.Object,System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusEnter">
+      <MemberSignature Language="C#" Value="protected override void OnStylusEnter (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusEnter(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusEnter(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+        <Parameter Name="confirmed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <param name="confirmed">
+          <see langword="true" />ペンが実際には、要素の境界を入力した場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>カーソルが要素の境界に入ったときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusEnter(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusEnter(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusLeave">
+      <MemberSignature Language="C#" Value="protected override void OnStylusLeave (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusLeave(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusLeave(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+        <Parameter Name="confirmed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <param name="confirmed">
+          <see langword="true" />ペンが実際には、要素の境界を左する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>要素の境界をカーソルが離れるときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusLeave(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusLeave(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusMove">
+      <MemberSignature Language="C#" Value="protected override void OnStylusMove (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusMove(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusMove(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>タブレット ペンがデジタイザー上で移動したときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusMove(System.Windows.Input.StylusPlugIns.RawStylusInput)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusMove(System.Windows.Input.StylusPlugIns.RawStylusInput)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusUp">
+      <MemberSignature Language="C#" Value="protected override void OnStylusUp (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusUp(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUp(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>ユーザー タブレット ペンをデジタイザーから離したときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUp(System.Windows.Input.StylusPlugIns.RawStylusInput)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUp(System.Windows.Input.StylusPlugIns.RawStylusInput)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusUpProcessed">
+      <MemberSignature Language="C#" Value="protected override void OnStylusUpProcessed (object callbackData, bool targetVerified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStylusUpProcessed(object callbackData, bool targetVerified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUpProcessed(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callbackData" Type="System.Object" />
+        <Parameter Name="targetVerified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackData">渡される、アプリケーション オブジェクト、<see cref="M:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed(System.Object)" />メソッドです。</param>
+        <param name="targetVerified">
+          <see langword="true" />ペンの入力が適切にルーティング、 <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />、それ以外の<see langword="false" />します。</param>
+        <summary>ユーザー タブレット ペンをデジタイザーから離したときに、アプリケーションの UI (ユーザー インターフェイス) のスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサブスクライブする<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>メソッド  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUpProcessed(System.Object,System.Boolean)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnStylusUpProcessed(System.Object,System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public virtual void Reset (System.Windows.Input.StylusDevice stylusDevice, System.Windows.Input.StylusPointCollection stylusPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset(class System.Windows.Input.StylusDevice stylusDevice, class System.Windows.Input.StylusPointCollection stylusPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.Reset(System.Windows.Input.StylusDevice,System.Windows.Input.StylusPointCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylusDevice" Type="System.Windows.Input.StylusDevice" />
+        <Parameter Name="stylusPoints" Type="System.Windows.Input.StylusPointCollection" />
+      </Parameters>
+      <Docs>
+        <param name="stylusDevice">現在のスタイラス デバイス。</param>
+        <param name="stylusPoints">再描画されるスタイラス ポイント。</param>
+        <summary>現在のストロークのレンダリングをクリアし、再描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>に渡された現在の線、および任意のスタイラス ポイントを再描画、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.Reset%2A>メソッドです。 このメソッドでは、ストロークをまだ作成しているときにストロークを再描画することができます。 タブレット ペンをタッチする必要があります、デジタイザーまたはときにマウスの左ボタンを押す必要があります<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.Reset%2A>と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例が描画されると、現在の線の色を変更します。  
+  
+ [!code-csharp[StylusPluginSamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/StylusControl.cs#13)]
+ [!code-vb[StylusPluginSamples#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/StylusControl.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">スタイラスでも、マウスがダウン状態です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.Reset(System.Windows.Input.StylusDevice,System.Windows.Input.StylusPointCollection)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Input.StylusPlugIns.DynamicRenderer.Reset(System.Windows.Input.StylusDevice,System.Windows.Input.StylusPointCollection)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RootVisual">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual RootVisual { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual RootVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートのビジュアルを取得、<see cref="T:System.Windows.Input.StylusPlugIns.DynamicRenderer" />です。</summary>
+        <value>ルート<see cref="T:System.Windows.Media.Visual" />の<see cref="T:System.Windows.Input.StylusPlugIns.DynamicRenderer" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、 <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>、アタッチする必要があります、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>プロパティを<xref:System.Windows.Controls.InkPresenter>を使用して、<xref:System.Windows.Controls.InkPresenter.AttachVisuals%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>を追加し、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.RootVisual%2A>を<xref:System.Windows.Controls.InkPresenter>です。 動的にレンダリングするコントロールを作成するインクは、「[インク入力コントロールを作成する](~/docs/framework/wpf/advanced/creating-an-ink-input-control.md)です。  
+  
+ [!code-csharp[StylusPluginSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/StylusControl.cs#3)]
+ [!code-vb[StylusPluginSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/StylusControl.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

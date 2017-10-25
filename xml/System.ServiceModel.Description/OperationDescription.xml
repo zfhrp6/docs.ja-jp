@@ -1,0 +1,536 @@
+<Type Name="OperationDescription" FullName="System.ServiceModel.Description.OperationDescription">
+  <TypeSignature Language="C#" Value="public class OperationDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OperationDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.OperationDescription" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Name={name}, IsInitiating={isInitiating}, IsTerminating={isTerminating}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>操作を構成するメッセージの説明を提供する、コントラクトの操作の説明を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] コントラクトは、エンドポイントが外部と通信する内容を指定する操作のコレクションです。 それぞれの操作は、メッセージ交換です。 たとえば、要求メッセージとそれに関連する応答メッセージは要求/応答メッセージ交換を行います。  
+  
+ <xref:System.ServiceModel.Description.ContractDescription> オブジェクトは、WCF のコントラクトとその操作を記述するために使用されます。 <xref:System.ServiceModel.Description.ContractDescription> では、各コントラクト操作に、対応する <xref:System.ServiceModel.Description.OperationDescription> があります。ここでは、操作が一方向か要求/応答かなど、操作面を説明します。 また、それぞれの <xref:System.ServiceModel.Description.OperationDescription> では、<xref:System.ServiceModel.Description.MessageDescription> オブジェクトのコレクションを使用して、操作を構成するメッセージを記述します。 <xref:System.ServiceModel.Description.ContractDescription> には、プログラミング モデルを使用してコントラクトを定義するインターフェイスへの参照が含まれます。 このインターフェイスは <xref:System.ServiceModel.ServiceContractAttribute> でマークされ、エンドポイントの操作に対応するメソッドは <xref:System.ServiceModel.OperationContractAttribute> でマークされます。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription> のプロパティの多くには、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] プログラミング モデルの <xref:System.ServiceModel.OperationContractAttribute> に対応するプロパティ (<xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A> など) があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Description.OperationDescription>によって返されるコレクションから返される、<xref:System.ServiceModel.Description.ContractDescription.Operations%2A>のプロパティ、<xref:System.ServiceModel.Description.ContractDescription>クラスです。  このコードではエンドポイントのコレクションが反復処理され、各エンドポイントの名前とエンドポイント内の各操作の名前が出力されます。  
+  
+ [!code-csharp[DataContractSerializerOperationBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractserializeroperationbehavior/cs/source.cs#2)]
+ [!code-vb[DataContractSerializerOperationBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/datacontractserializeroperationbehavior/vb/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationDescription (string name, System.ServiceModel.Description.ContractDescription declaringContract);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.ServiceModel.Description.ContractDescription declaringContract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.OperationDescription.#ctor(System.String,System.ServiceModel.Description.ContractDescription)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="declaringContract" Type="System.ServiceModel.Description.ContractDescription" />
+      </Parameters>
+      <Docs>
+        <param name="name">操作の説明の名前。</param>
+        <param name="declaringContract">操作の説明の初期化に使用される <see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <summary>指定した名前とコントラクトの説明を使用して、<see cref="T:System.ServiceModel.Description.OperationDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo BeginMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo BeginMethod" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.BeginMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の開始メソッドを取得または設定します。</summary>
+        <value>メソッドの属性およびメタデータへのアクセスを提供する <see cref="T:System.Reflection.MethodInfo" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Behaviors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IOperationBehavior&gt; Behaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IOperationBehavior&gt; Behaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.Behaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IOperationBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作に関連付けられている操作の動作を取得または設定します。</summary>
+        <value>操作に関連付けられている <see cref="T:System.Collections.Generic.KeyedByTypeCollection`1" /> オブジェクトを含む <see cref="T:System.ServiceModel.Description.IOperationBehavior" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IOperationBehavior> インターフェイスは、クライアントまたはサービス アプリケーションで、操作全体にわたる実行の一部の側面をアプリケーション レベルで変更、確認、または拡張するために実装されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringContract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ContractDescription DeclaringContract { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ContractDescription DeclaringContract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.DeclaringContract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ContractDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が属するコントラクトを取得または設定します。</summary>
+        <value>操作する <see cref="T:System.ServiceModel.Description.ContractDescription" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo EndMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo EndMethod" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.EndMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の終了メソッドを取得または設定します。</summary>
+        <value>メソッドの属性およびメタデータへのアクセスを提供する <see cref="T:System.Reflection.MethodInfo" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Faults">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.FaultDescriptionCollection Faults { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.FaultDescriptionCollection Faults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.Faults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.FaultDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の説明に関連付けられているエラーの説明を取得します。</summary>
+        <value>操作の説明に関連付けられているエラーの詳細を含む <see cref="T:System.ServiceModel.Description.FaultDescriptionCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作に保護レベルが設定されているかどうかを示す値を取得します。</summary>
+        <value>
+          保護レベルが設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> が設定されると、<xref:System.ServiceModel.Description.OperationDescription.HasProtectionLevel%2A> プロパティは `true` に設定されます。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.HasProtectionLevel%2A> は、<xref:System.ServiceModel.OperationContractAttribute.HasProtectionLevel%2A> プログラミング モデルの [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プロパティに対応しています。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.HasProtectionLevel%2A> プロパティを使用して、この操作のメッセージによって特定の保護レベルが要求されることを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitiating">
+      <MemberSignature Language="C#" Value="public bool IsInitiating { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitiating" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.IsInitiating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドがこのようなセッションが存在する場合)、サーバー上のセッションを開始できる操作を実装するかどうかを示す値を設定します。</summary>
+        <value>
+          サーバーでのセッションの開始操作が許可されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A> プロパティは、ある操作を、セッションが作成されるときに呼び出される最初の操作にできるかどうかを制御します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> の値は、`true` にする必要があります。また、使用されるバインディングは、<xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A> プロパティを適切に機能させるためにセッションをサポートする必要があります。  
+  
+ 既定値は `true` で、操作をチャネルで最初に呼び出される操作にできることを意味します。 開始メソッドのそれ以降の呼び出しでは、そのメソッドを呼び出す以外の機能はありません。 他のセッションは作成されません。  
+  
+ 通常は、<xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A> を `false` に設定して、クライアントが、このメソッドを呼び出す前にサービスで他のメソッドを呼び出すようにします。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.IsInitiating%2A> は、<xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A> プログラミング モデルの [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プロパティに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOneWay">
+      <MemberSignature Language="C#" Value="public bool IsOneWay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOneWay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.IsOneWay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が応答メッセージを返すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          このメソッドが要求メッセージを受け取り、応答メッセージを返さない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.OperationDescription.IsOneWay%2A> プロパティを使用して、操作が応答メッセージを返さないことを指定します。 この種類の操作は、特に双方向の通信での通知またはイベントスタイルの通信に便利です。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.IsOneWay%2A> プロパティが `false` (既定) に設定されている場合は、`void` を返すメソッドであっても、応答メッセージが返されます。 この場合、インフラストラクチャは、空のメッセージを作成して送信することで、メソッドが戻ったことを呼び出し元に示します。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A> は、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プログラミング モデルの [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プロパティに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTerminating">
+      <MemberSignature Language="C#" Value="public bool IsTerminating { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTerminating" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.IsTerminating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答メッセージが存在する場合に、そのメッセージの送信後にセッションを終了するようにサービス操作がサーバーに指示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          操作によってサーバーがセッションを終了する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A> プロパティを使用して、サービス操作の呼び出しで通信セッションを終了することを示します。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A> は、<xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A> プログラミング モデルの [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プロパティに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KnownTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Type&gt; KnownTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Type&gt; KnownTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.KnownTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の説明に関連付けられている既知の型を取得します。</summary>
+        <value>操作の説明に関連付けられている既知の型のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *既知の型*はシリアル化または逆シリアル化が発生したときに、オブジェクト グラフ内に存在可能な型です。 既知の型の詳細については、次を参照してください。[データ コントラクトの既知の型](~/docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Messages">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessageDescriptionCollection Messages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.MessageDescriptionCollection Messages" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.Messages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessageDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作を構成するメッセージの説明を取得または設定します。</summary>
+        <value>操作を構成するメッセージの説明を含む <see cref="T:System.ServiceModel.Description.MessageDescriptionCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の説明の名前を取得または設定します。</summary>
+        <value>操作の説明の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.OperationDescription.Name%2A>プロパティのオーバーライド、<`operation`> WSDL 内の要素名。 既定の操作名は、実装するメソッドの名前です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationBehaviors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.KeyedCollection&lt;Type,System.ServiceModel.Description.IOperationBehavior&gt; OperationBehaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.KeyedCollection`2&lt;class System.Type, class System.ServiceModel.Description.IOperationBehavior&gt; OperationBehaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.OperationBehaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.KeyedCollection&lt;System.Type,System.ServiceModel.Description.IOperationBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の動作のセットを取得します。</summary>
+        <value>操作の動作のセット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の保護レベルを取得または設定します。</summary>
+        <value>操作する <see cref="T:System.Net.Security.ProtectionLevel" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> プロパティは、操作のメッセージの暗号化、署名、または両方が必要かどうかを制御します。 ここで設定される値は、この操作で指定されるすべてのメッセージの既定値です。より狭いスコープでこの値をオーバーライドする場合は除きます。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> は、<xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A> プログラミング モデルの [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プロパティに対応しています。  
+  
+ <xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> が設定されると、<xref:System.ServiceModel.Description.OperationDescription.HasProtectionLevel%2A> プロパティは `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeProtectionLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeProtectionLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.OperationDescription.ShouldSerializeProtectionLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Description.OperationDescription.ProtectionLevel" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.Description.OperationDescription.ProtectionLevel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo SyncMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo SyncMethod" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.SyncMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の説明のサービス同期メソッドを取得または設定します。</summary>
+        <value>メソッドの属性およびメタデータへのアクセスを提供する <see cref="T:System.Reflection.MethodInfo" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo TaskMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo TaskMethod" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.OperationDescription.TaskMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスクの操作を使用する方法を設定します。</summary>
+        <value>タスク操作に使用されるメソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

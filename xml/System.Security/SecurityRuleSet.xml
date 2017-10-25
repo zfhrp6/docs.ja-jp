@@ -1,0 +1,109 @@
+<Type Name="SecurityRuleSet" FullName="System.Security.SecurityRuleSet">
+  <TypeSignature Language="C#" Value="public enum SecurityRuleSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecurityRuleSet extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecurityRuleSet" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>共通言語ランタイムがアセンブリに適用されるセキュリティ規則のセットを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、共通言語ランタイムがアセンブリに適用されるセキュリティ規則のセットを示します。 マークされているアセンブリなど、`[SecurityRules(SecurityRuleSet.Level1)]`がセキュリティ クリティカルなパブリックの型とメンバー扱われるようセキュリティ セーフ クリティカル アセンブリの外側では、.NET Framework version 2.0 の透過性ルールを使用します。 これは、セキュリティ クリティカルな型とメンバーを完全な信頼のリンク確認要求を実行する外部の呼び出し元によってアクセスされるときに、セキュリティ上重要な動作を適用する必要があります。 通常、レベル 1 のルールは、アセンブリの .NET Framework 2.0 のプロセスなど、互換性のためだけ使用する必要があります。 既定では、.NET Framework 2.0 アセンブリになるレベル 2 のアセンブリの再コンパイルするときに、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]です。 レベル 1 としてこれらのアセンブリをコンパイルする必要があります明示的としてマーク レベル 1。 レベル 1 の動作の詳細については、次を参照してください。[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)です。 レベル 2 の動作については、次を参照してください。[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Level1">
+      <MemberSignature Language="C#" Value="Level1" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.SecurityRuleSet Level1 = unsigned int8(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.SecurityRuleSet.Level1" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityRuleSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイムがレベル 1 (.NET Framework version 2.0) の透過性規則を適用することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Level2">
+      <MemberSignature Language="C#" Value="Level2" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.SecurityRuleSet Level2 = unsigned int8(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.SecurityRuleSet.Level2" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityRuleSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイムがレベル 2 の透過性規則を適用することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.SecurityRuleSet None = unsigned int8(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.SecurityRuleSet.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityRuleSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サポートされていません。 この値を使用する、<see cref="T:System.IO.FileLoadException" />がスローされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

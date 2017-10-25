@@ -1,0 +1,299 @@
+<Type Name="DependencyPropertyChangedEventArgs" FullName="System.Windows.DependencyPropertyChangedEventArgs">
+  <TypeSignature Language="C#" Value="public struct DependencyPropertyChangedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DependencyPropertyChangedEventArgs extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyPropertyChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまなプロパティ変更イベントにデータを提供します。 通常、これらのイベントは、読み取り専用の依存関係プロパティの有効値の変更を報告します。 もう 1 つの用途は、<see cref="T:System.Windows.PropertyChangedCallback" /> 実装の一部として使用することです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するイベント、<xref:System.Windows.DependencyPropertyChangedEventArgs>イベント データのクラスと<xref:System.Windows.DependencyPropertyChangedEventHandler>、ハンドラーのメソッドの実装は、名前付けパターンを通常に従って`Is*Changed`、として一般に実装されます[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]イベントを<xref:System.Windows.RoutedEvent>バッキング (されていないときのルーティング イベント)。 それ以外の場合"handle"メソッドを処理するクラスのいくつかのように、プロパティの変更を状態の変更をレポートするイベントを露出されていない<xref:System.Windows.Controls.Primitives.ButtonBase.OnIsPressedChanged%2A?displayProperty=nameWithType>、使用しても、<xref:System.Windows.DependencyPropertyChangedEventArgs>イベント データのクラスです。  
+  
+ シナリオは<xref:System.Windows.PropertyChangedCallback>プロパティのプロパティのシステムの評価からレポートの新旧の値の引数を使用することです。 古い値と新しい値を処理するコールバックには、意味のないと考えられる値の変更に応答しないように選択するなど、これらの値によって特別な処理こともできます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.DependencyPropertyChangedEventArgs>のコンテキスト内のクラス、<xref:System.Windows.PropertyChangedCallback>もイベントを定義するカスタム クラスの特定のプロパティです。 コールバックとを受け取り、結果の古いプロパティ システムから新しい値で受け渡される<xref:System.Windows.DependencyPropertyChangedEventArgs>、これらのさまざまなイベント引数クラスには再パッケージ化と<xref:System.Windows.RoutedPropertyChangedEventArgs%601>です。 新しい引数は、イベントに使用されるデータとして"ValueChanged"によって定義され、カスタムのクラスによって発生します。  
+  
+ [!code-csharp[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/CSharp/NumericUpDown.cs#dependencypropertychangedeventargs)]
+ [!code-vb[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/visualbasic/numericupdown.vb#dependencypropertychangedeventargs)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DependencyPropertyChangedEventArgs (System.Windows.DependencyProperty property, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DependencyProperty property, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.#ctor(System.Windows.DependencyProperty,System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="property" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="property">変更された依存関係プロパティの識別子。</param>
+        <param name="oldValue">関連するイベントや状態の変更によって報告された、変更前に、のプロパティの値です。</param>
+        <param name="newValue">関連するイベントや状態の変更によって報告された、変更後にプロパティの値。</param>
+        <summary><see cref="T:System.Windows.DependencyPropertyChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存関係プロパティの変更を報告するカスタム イベントの実装では、イベントが発生したときに、変更の詳細を使用してイベント データを設定するため、このコンス トラクターを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</param>
+        <summary>指定されたオブジェクトが現在のと同じかどうかを判断<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</summary>
+        <returns>
+          <see langword="true" />指定されたオブジェクトが現在に等しい場合<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、内部プロパティを含む、すべてのプロパティの値の等価性に依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.DependencyPropertyChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.DependencyPropertyChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.Equals(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args"><see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />現在と比較するには<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" /></param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />は現在と同じ<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />は現在と同じ<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、内部プロパティを含む、すべてのプロパティの値の等価性に依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これのハッシュ コードを取得<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public object NewValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyPropertyChangedEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更後、プロパティの値を取得します。</summary>
+        <value>変更の後にプロパティ値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型は、常に報告される依存関係プロパティの型にキャストできるである必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.DependencyPropertyChangedEventArgs>のコンテキスト内のクラス、<xref:System.Windows.PropertyChangedCallback>もイベントを定義するカスタム クラスの特定のプロパティです。 コールバックとを受け取り、結果の古いプロパティ システムから新しい値で受け渡される<xref:System.Windows.DependencyPropertyChangedEventArgs>、これらのさまざまなイベント引数クラスには再パッケージ化と<xref:System.Windows.RoutedPropertyChangedEventArgs%601>です。 新しい引数は、イベントに使用されるデータとして"ValueChanged"によって定義され、カスタムのクラスによって発生します。  
+  
+ [!code-csharp[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/CSharp/NumericUpDown.cs#dependencypropertychangedeventargs)]
+ [!code-vb[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/visualbasic/numericupdown.vb#dependencypropertychangedeventargs)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValue">
+      <MemberSignature Language="C#" Value="public object OldValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object OldValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyPropertyChangedEventArgs.OldValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の前にプロパティの値を取得します。</summary>
+        <value>変更の前にプロパティ値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型は、常に報告される依存関係プロパティの型にキャストできるである必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.DependencyPropertyChangedEventArgs>のコンテキスト内のクラス、<xref:System.Windows.PropertyChangedCallback>もイベントを定義するカスタム クラスの特定のプロパティです。 コールバックとを受け取り、結果の古いプロパティ システムから新しい値で受け渡される<xref:System.Windows.DependencyPropertyChangedEventArgs>、これらのさまざまなイベント引数クラスには再パッケージ化と<xref:System.Windows.RoutedPropertyChangedEventArgs%601>です。 新しい引数は、イベントに使用されるデータとして"ValueChanged"によって定義され、カスタムのクラスによって発生します。  
+  
+ [!code-csharp[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/CSharp/NumericUpDown.cs#dependencypropertychangedeventargs)]
+ [!code-vb[CustomControlNumericUpDownOneProject#DependencyPropertyChangedEventArgs](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDownOneProject/visualbasic/numericupdown.vb#dependencypropertychangedeventargs)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.DependencyPropertyChangedEventArgs left, System.Windows.DependencyPropertyChangedEventArgs right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.DependencyPropertyChangedEventArgs left, valuetype System.Windows.DependencyPropertyChangedEventArgs right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.op_Equality(System.Windows.DependencyPropertyChangedEventArgs,System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+        <Parameter Name="right" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />。</param>
+        <summary>指定した 2 つの <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" /> オブジェクトの値が同一かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />インスタンスと等価である、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装では、同様のロジックを使用して<xref:System.Windows.DependencyPropertyChangedEventArgs.Equals%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.DependencyPropertyChangedEventArgs left, System.Windows.DependencyPropertyChangedEventArgs right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.DependencyPropertyChangedEventArgs left, valuetype System.Windows.DependencyPropertyChangedEventArgs right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyPropertyChangedEventArgs.op_Inequality(System.Windows.DependencyPropertyChangedEventArgs,System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+        <Parameter Name="right" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />。</param>
+        <summary>指定した 2 つあるかどうかを判断<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />オブジェクトが異なる。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />インスタンスが、それ以外のさまざまな<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装は、同様のロジックの否定を返します<xref:System.Windows.DependencyPropertyChangedEventArgs.Equals%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty Property { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyPropertyChangedEventArgs.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値の変更が発生した依存関係プロパティの識別子を取得します。</summary>
+        <value>値の変更が発生する、依存関係プロパティの識別子フィールドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、一般的な内で使用される場合<xref:System.Windows.PropertyChangedCallback>いくつかのプロパティでは、登録されていると、どのプロパティの変更には、コールバックが呼び出されるあいまいさを解消する必要があります。 <xref:System.Windows.DependencyPropertyChangedEventArgs.Property%2A>通常、1 対 1 で対応プロパティとイベントのプロパティの変更を報告するためには、イベントを発生させるための通常関係ありません。 発生したイベント自体は、プロパティの変更を示す値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,99 @@
+<Type Name="XmlnsCompatibleWithAttribute" FullName="System.Windows.Markup.XmlnsCompatibleWithAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XmlnsCompatibleWithAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlnsCompatibleWithAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XmlnsCompatibleWithAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XAML 名前空間を別の XAML 名前空間によって包括できることを指定します。 通常は、包含の XAML 名前空間が示されている、あらかじめ定義したで<see cref="T:System.Windows.Markup.XmlnsDefinitionAttribute" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用する、<xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>によって示される前に、別の XAML 名前空間に新しいと互換性のある名前空間を提供するアセンブリを有効に<xref:System.Windows.Markup.XmlnsDefinitionAttribute>です。  たとえば、`"http://www.adatum.com/2003/controls"`マークを付けるでしたとして識別された、定義された XAML 名前空間と互換性のある`"http://www.adatum.com/2005/controls"`を通じて、次のアセンブリ レベル属性。  
+  
+```  
+[assembly:System.Windows.Markup.XmlnsDefinition("http://www.adatum.com/2005/controls", "Adatum.Controls")]  
+[assembly: System.Windows.Markup.XmlnsCompatibleWith("http://www.adatum.com/2003/controls", "http://www.adatum.com/2005/controls")]  
+```  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlnsCompatibleWithAttribute (string oldNamespace, string newNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string oldNamespace, string newNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsCompatibleWithAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldNamespace" Type="System.String" />
+        <Parameter Name="newNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldNamespace">参照 XAML 名前空間の識別子。</param>
+        <param name="newNamespace">包含している XAML 名前空間の識別子。</param>
+        <summary><see cref="T:System.Windows.Markup.XmlnsCompatibleWithAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="oldNamespace" />または<paramref name="newNamespace" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NewNamespace">
+      <MemberSignature Language="C#" Value="public string NewNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsCompatibleWithAttribute.NewNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性によって報告される、包含している名前空間の識別子を取得します。</summary>
+        <value>この属性によって報告される、包含している名前空間の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldNamespace">
+      <MemberSignature Language="C#" Value="public string OldNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsCompatibleWithAttribute.OldNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性によって報告される参照名前空間の識別子を取得します。</summary>
+        <value>参照名前空間の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

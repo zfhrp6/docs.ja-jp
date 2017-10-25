@@ -1,0 +1,91 @@
+<Type Name="MessageProtectionOrder" FullName="System.ServiceModel.Security.MessageProtectionOrder">
+  <TypeSignature Language="C#" Value="public enum MessageProtectionOrder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MessageProtectionOrder extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.MessageProtectionOrder" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージを保護する操作の順序を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> クラスの <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> プロパティと <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> クラスの <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> プロパティで使用します。  
+  
+ メッセージが (たとえば、メッセージが短い場合やエントロピが低い場合)、ダイジェスト攻撃に対して脆弱な場合は、SignBeforeEncryptAndEncryptSignature または EncryptBeforeSign オプションを使用する必要があります。 (*エントロピ*サーバー、クライアント、またはその両方によって提供されるランダムなデータは、データを暗号化および暗号化の共有キーを作成するために使用します)。  
+  
+## <a name="what-is-ordered"></a>順序付けの対象  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] には、SOAP メッセージ セキュリティを使用してメッセージをセキュリティで保護する方法を指定するための 3 つの保護レベルが用意されています。 既定では、SignBeforeEncryptAndEncryptSignature は。 この設定では、最初にメッセージに署名し、メッセージ本文を暗号化してから、XML 署名を暗号化します。 これにより、署名に対する暗号解読攻撃が成功する可能性を低くすることができます。  
+  
+ ただし、既定値を使用すると、パフォーマンスへの影響があります。 実際、セキュリティを向上させるために、パフォーマンスのトレードオフが発生します。 署名の暗号化により、パフォーマンスが 10% ～ 40% 低下する可能性があります。 メッセージのデータ コンテンツ価値が低く、パフォーマンス スループットがさらに重要な場合は、SignBeforeEncrypt を使用します。 この設定では、署名ダイジェストがクリア テキストで送信されるため、エントロピが低い場合はメッセージが推測と検証による攻撃を受けやすくなります。  
+  
+## <a name="custom-bindings-only"></a>カスタム バインディングのみに使用  
+ `MessageProtectionOrder` プロパティを変更するには、カスタム セキュリティ バインディングを作成する必要があります。 カスタム バインディングの作成の詳細については、次を参照してください。[ユーザー定義バインディング](~/docs/framework/wcf/extending/creating-user-defined-bindings.md)です。 特定の認証モード用のカスタム バインドの作成の詳細については、次を参照してください。[する方法: 指定された認証モードでは、SecurityBindingElement を作成する](~/docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>要素とセットの<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A>SignBeforeEncrypt するプロパティです。  
+  
+ [!code-csharp[c_CustomBinding#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#3)]
+ [!code-vb[c_CustomBinding#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_custombinding/vb/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EncryptBeforeSign">
+      <MemberSignature Language="C#" Value="EncryptBeforeSign" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.MessageProtectionOrder EncryptBeforeSign = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.MessageProtectionOrder.EncryptBeforeSign" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessageProtectionOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのデジタル署名を生成する前に SOAP メッセージを暗号化するように指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SignBeforeEncrypt">
+      <MemberSignature Language="C#" Value="SignBeforeEncrypt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.MessageProtectionOrder SignBeforeEncrypt = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessageProtectionOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージの一部を暗号化する前に SOAP メッセージのデジタル署名を生成し、デジタル署名を暗号化しないように指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SignBeforeEncryptAndEncryptSignature">
+      <MemberSignature Language="C#" Value="SignBeforeEncryptAndEncryptSignature" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.MessageProtectionOrder SignBeforeEncryptAndEncryptSignature = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessageProtectionOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージの一部を暗号化する前に SOAP メッセージのデジタル署名を生成し、デジタル署名を暗号化するように指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

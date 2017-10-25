@@ -1,0 +1,53 @@
+<Type Name="ICustomIdentityConfiguration" FullName="System.IdentityModel.Configuration.ICustomIdentityConfiguration">
+  <TypeSignature Language="C#" Value="public interface ICustomIdentityConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomIdentityConfiguration" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Configuration.ICustomIdentityConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム構成をロードするクラスを有効にするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.IdentityModel.Configuration.ICustomIdentityConfiguration>インターフェイスは、XML からカスタム構成を読み込むことができます。  
+  
+ Windows Identity Foundation (WIF) クラスのいくつかの実装、<xref:System.IdentityModel.Configuration.ICustomIdentityConfiguration>のカスタム構成を定義するための機能を提供するインターフェイスは、構成ファイルからクラスを派生します。 WIF クラスの多くは、それらが表すオブジェクトの既定の構成を提供するには、このメソッドの基本実装を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public void LoadCustomConfiguration (System.Xml.XmlNodeList nodeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList nodeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.ICustomIdentityConfiguration.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeList" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodeList">カスタム構成を含む XML ノードです。 型のリスト内の各ノードは、<see cref="T:System.Xml.XmlElement" />です。</param>
+        <summary>XML からカスタム構成を読み込みます。 構成要素のカスタム処理を指定するには、このメソッドをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Configuration.ICustomIdentityConfiguration.LoadCustomConfiguration%2A>メソッドは、構成のインフラストラクチャによって呼び出されます。 このメソッドが呼び出されたときに、`nodelist`パラメーターには、構成ファイルからオブジェクトのクラスを構成する親要素の最上位レベルの子要素が含まれています。 派生したクラスなど、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>の子要素を持つ、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)要素が渡された、`nodelist`パラメーター。 `nodelist`は完全で構成<xref:System.Xml.XmlElement>オブジェクト。 これらの各属性と、スキーマに応じて、構成が構成されているクラスに対して定義されている子要素があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,832 @@
+<Type Name="Clipboard" FullName="System.Windows.Clipboard">
+  <TypeSignature Language="C#" Value="public static class Clipboard" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Clipboard extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Clipboard" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>システムのクリップボードとの間でデータ転送を容易にする静的メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのアプリケーション[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]のため、別のアプリケーションに切り替えるときに、内容が変更される可能性がありますが、システム クリップボードを共有します。  
+  
+ 使用できる定義済みの形式の一覧については、<xref:System.Windows.Clipboard>クラスを参照してください、<xref:System.Windows.DataFormats>クラスです。  
+  
+ **セキュリティ アラート:**セキュリティのために、次の点おく必要があることに注意します。  
+  
+-   貼り付けの操作は、ユーザーが開始した (ctrl + V、貼り付けのメニュー) である必要があります。  
+  
+-   コピーできるだけのユーザーが選択したコンテンツです。  
+  
+-   コピーまたは切り取りでは、部分信頼コードがプレーン テキストを格納および[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]クリップボードにログオンします。 プレーン テキストには、テキスト、Unicode テキスト、OEM (Exchange のオブジェクト モデル) のテキスト、および CSV (コンマ区切り値) が含まれています。  
+  
+-   貼り付け、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]貼り付けることは[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]そのコンテンツのソースは、同じように信頼されているまたは信頼性の高いサイトからかどうか。 具体的には、次のように使用します。  
+  
+    -   部分信頼アプリケーションに貼り付けることができます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]完全信頼アプリケーションからです。  
+  
+    -   部分信頼アプリケーションに貼り付けることができます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]部分信頼アプリケーションからです。  
+  
+    -   完全信頼アプリケーションでは、完全に信頼された別のアプリケーションからのみ、XAML を貼り付けることができます。  
+  
+    -   以外[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]完全信頼アプリケーションがクリップボードに、ApplicationTrust 形式を確認し、該当する場合、XAML 不要部分を削除できます。  
+  
+   
+  
+## Examples  
+ 次の例では、システム クリップボードにデータを追加する方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_SetData](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_setdata)]
+ [!code-vb[DragDrop_DragDropMiscCode#_SetData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_setdata)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public static void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>システム クリップボードからデータをすべてをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの呼び出しは呼び出すことと同じ**OleSetClipboard**(**null**)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsAudio">
+      <MemberSignature Language="C#" Value="public static bool ContainsAudio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsAudio() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsAudio" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボード内のデータの存在を照会、<see cref="F:System.Windows.DataFormats.WaveAudio" />データ形式。</summary>
+        <returns>
+          <see langword="true" />クリップボードにデータが含まれている場合、<see cref="F:System.Windows.DataFormats.WaveAudio" />データ形式です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`クリップボードに指定したデータ形式がネイティブで存在する場合のみこのメソッドは自動的に変換できるデータ形式の有無をチェックしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsData">
+      <MemberSignature Language="C#" Value="public static bool ContainsData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">検索するデータの形式です。 参照してください<see cref="T:System.Windows.DataFormats" />定義済みの形式です。</param>
+        <summary>指定したデータ形式でデータが存在するためにクリップボードを照会します。</summary>
+        <returns>
+          <see langword="true" />指定された形式でデータがクリップボードに利用可能な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データの形式のクエリを<xref:System.Windows.DataFormats.Bitmap>または<xref:System.Windows.DataFormats.FileDrop>戻ります`true`データを自動的に指定したデータ形式に変換する場合。  その他のデータ形式の場合、このメソッドが戻る`true`指定の形式がクリップボードにネイティブで利用可能な場合にのみです。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_ContainsDataGetData](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_containsdatagetdata)]
+ [!code-vb[DragDrop_DragDropMiscCode#_ContainsDataGetData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_containsdatagetdata)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsFileDropList">
+      <MemberSignature Language="C#" Value="public static bool ContainsFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボード内のデータの存在を照会、<see cref="F:System.Windows.DataFormats.FileDrop" />データ形式。</summary>
+        <returns>
+          <see langword="true" />クリップボードにデータが含まれている場合、<see cref="F:System.Windows.DataFormats.FileDrop" />データ形式です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`指定したデータ形式がネイティブで存在するかがクリップボードに自動変換可能なデータ形式として使用可能な場合にのみこのメソッドは自動的に変換できるデータ形式の有無をチェックしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsImage">
+      <MemberSignature Language="C#" Value="public static bool ContainsImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボード内のデータの存在を照会、<see cref="F:System.Windows.DataFormats.Bitmap" />データ形式。</summary>
+        <returns>
+          <see langword="true" />クリップボードにデータが含まれている場合、<see cref="F:System.Windows.DataFormats.Bitmap" />データ形式です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`指定したデータ形式がネイティブで存在するかがクリップボードに自動変換可能なデータ形式として使用可能な場合にのみこのメソッドは自動的に変換できるデータ形式の有無をチェックしません。  
+  
+ ビットマップ グラフィックをコンピューターのメモリ内のビット配列として表し、これらのビットがイメージ内の個々 のピクセルの属性を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public static bool ContainsText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボード内のデータの存在を照会、<see cref="F:System.Windows.DataFormats.UnicodeText" />形式です。</summary>
+        <returns>
+          <see langword="true" />クリップボードにデータが含まれている場合、<see cref="F:System.Windows.DataFormats.UnicodeText" />データ形式です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`クリップボードに指定したデータ形式がネイティブで存在する場合のみこのメソッドは自動的に変換できるデータ形式の有無をチェックしません。  
+  
+ <xref:System.Windows.DataFormats.UnicodeText>データ形式でエンコードされた Unicode、utf-16、および USC 2 とも呼びますの 16 ビット文字を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public static bool ContainsText (System.Windows.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsText(valuetype System.Windows.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.ContainsText(System.Windows.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">メンバー、<see cref="T:System.Windows.TextDataFormat" />列挙クエリの実行にテキスト データ形式を指定します。</param>
+        <summary>クリップボードにテキスト データの形式でデータが存在するを照会します。</summary>
+        <returns>
+          <see langword="true" />クリップボードには、指定したテキストのデータ形式のデータが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`指定したデータ形式は、ネイティブのデータ オブジェクトに存在する場合にのみこのメソッドは自動変換可能なデータ形式の有無をチェックしません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="format" />有効なメンバーが指定されていません<see cref="T:System.Windows.TextDataFormat" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public static void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>永続的に上にあるデータを追加、<see cref="T:System.Windows.Clipboard" />データの元のアプリケーションが終了したらそれを利用できるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAudioStream">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream GetAudioStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream GetAudioStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetAudioStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードのデータのストリームを返す、<see cref="F:System.Windows.DataFormats.WaveAudio" />データ形式。</summary>
+        <returns>内のデータを格納しているストリーム、<see cref="F:System.Windows.DataFormats.WaveAudio" />形式、または<see langword="null" />クリップボードにこの形式でデータが含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したストリームの場合にのみ返します形式ネイティブ オブジェクトに存在する、データです。このメソッドは、自動変換可能なデータを返しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public static object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式を指定する文字列。 定義済みのデータ形式のセット、次を参照してください。、<see cref="T:System.Windows.DataFormats" />クラスです。</param>
+        <summary>クリップボードから指定された形式でデータを取得します。</summary>
+        <returns>指定された形式でデータを格納しているオブジェクトまたは<see langword="null" />データが指定された形式で使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_ContainsDataGetData](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_containsdatagetdata)]
+ [!code-vb[DragDrop_DragDropMiscCode#_ContainsDataGetData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_containsdatagetdata)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataObject">
+      <MemberSignature Language="C#" Value="public static System.Windows.IDataObject GetDataObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.IDataObject GetDataObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetDataObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.IDataObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードの内容全体を表すデータ オブジェクトを返します。</summary>
+        <returns>システムのクリップボードの内容全体へのアクセスを有効にするデータ オブジェクトまたは<see langword="null" />クリップボードにデータがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ を通じて、システムのクリップボード上のデータへのアクセスが有効になっている、*データ オブジェクト*、つまり、実装するオブジェクトを<xref:System.Windows.IDataObject>インターフェイスです。 定義済みの形式の一覧がによって定義された、<xref:System.Windows.DataFormats>クラスです。  指定されたメソッドを使用して<xref:System.Windows.IDataObject>およびフィールド<xref:System.Windows.DataFormats>を調査して、データ オブジェクトからデータを抽出します。  
+  
+ システム クリップボード上のデータ形式を検証するには、呼び出す<xref:System.Windows.IDataObject.GetFormats%2A>このメソッドによって返されるデータ オブジェクトにします。  システム クリップボードからデータを取得する<xref:System.Windows.IDataObject.GetData%2A>し、目的のデータ形式を指定します。  
+  
+ クリップボードは、すべてのアプリケーションによって共有される、システム クリップボードのためのデータは、他のアプリケーションによって変更される可能性です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">システムのクリップボードのデータにアクセスする権限です。  関連する列挙値:**関連**です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDropList">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.StringCollection GetFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.StringCollection GetFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードの使用可能なドロップされたファイルの一覧を含む文字列コレクションを返します。</summary>
+        <returns>ここで各文字列は、クリップボードにドロップされたファイルの一覧で、ファイルの名前を指定、文字列のコレクションまたは<see langword="null" />データがこの形式で使用できない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSource GetImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapSource GetImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />オブジェクト内のデータが含まれています、クリップボードから、<see cref="F:System.Windows.DataFormats.Bitmap" />形式です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />内のデータを格納しているオブジェクト、<see cref="F:System.Windows.DataFormats.Bitmap" />形式、または<see langword="null" />データがこの形式で使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト、データがネイティブで利用可能な場合、またはデータに自動変換することができる、<xref:System.Windows.DataFormats.Bitmap>データ形式。  
+  
+ ビットマップ グラフィックをコンピューターのメモリ内のビット配列として表し、これらのビットがイメージ内の個々 のピクセルの属性を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public static string GetText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含む文字列を返します、<see cref="F:System.Windows.DataFormats.UnicodeText" />クリップボード上のデータ。</summary>
+        <returns>含む文字列、<see cref="F:System.Windows.DataFormats.UnicodeText" />データ、またはしない場合は空の文字列<see cref="F:System.Windows.DataFormats.UnicodeText" />データがクリップボードでご確認いただけます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DataFormats.UnicodeText>データ形式でエンコードされた Unicode、utf-16、および UCS 2 とも呼びますの 16 ビット文字を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public static string GetText (System.Windows.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetText(valuetype System.Windows.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.GetText(System.Windows.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">メンバー<see cref="T:System.Windows.TextDataFormat" />を取得するテキストのデータ形式を指定します。</param>
+        <summary>クリップボードのテキスト データを含む文字列を返します。</summary>
+        <returns>指定したデータ形式のテキスト データを含む文字列、または対応するテキスト データが使用できない場合は空の文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrent">
+      <MemberSignature Language="C#" Value="public static bool IsCurrent (System.Windows.IDataObject data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsCurrent(class System.Windows.IDataObject data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.IsCurrent(System.Windows.IDataObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Windows.IDataObject" />
+      </Parameters>
+      <Docs>
+        <param name="data">システムのクリップボードの内容と比較するデータ オブジェクト。</param>
+        <summary>クリップボードの内容に指定されたデータ オブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />指定されたデータ オブジェクトはシステム クリップボードにあるものと一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、クリップボードに設定されているデータ オブジェクトがまだ存在し、変更されていないかを判断します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_SetDataObjectIsCurrent](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_setdataobjectiscurrent)]
+ [!code-vb[DragDrop_DragDropMiscCode#_SetDataObjectIsCurrent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_setdataobjectiscurrent)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードにアクセスするときにエラーが発生しました。 例外の詳細が含まれます、<see langword="HResult" />特定のエラーを識別する; を参照してください<see cref="P:System.Runtime.InteropServices.ErrorWrapper.ErrorCode" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public static void SetAudio (byte[] audioBytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAudio(unsigned int8[] audioBytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetAudio(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioBytes" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="audioBytes">クリップボードに格納するオーディオ データを格納するバイト配列。</param>
+        <summary>オーディオ データの格納 (<see cref="F:System.Windows.DataFormats.WaveAudio" />データ形式) クリップボードにコピーします。  オーディオ データは、バイト配列として指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、自動変換が無効にされたデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioBytes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public static void SetAudio (System.IO.Stream audioStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAudio(class System.IO.Stream audioStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetAudio(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="audioStream">クリップボードに格納するオーディオ データを格納するストリーム。</param>
+        <summary>オーディオ データの格納 (<see cref="F:System.Windows.DataFormats.WaveAudio" />データ形式) クリップボードにコピーします。  オーディオ データはストリームとして指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、自動変換が無効にされたデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="audioStream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public static void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">データの格納に使用する形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <param name="data">クリップボードに格納するデータを表すオブジェクト。</param>
+        <summary>指定された形式でクリップボードに指定されたデータを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、自動変換の場合に、対応するデータ形式が有効にされたデータを追加<xref:System.Windows.DataFormats.FileDrop>または<xref:System.Windows.DataFormats.Bitmap>です。  それ以外の場合、自動変換は無効です。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_SetData](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_setdata)]
+ [!code-vb[DragDrop_DragDropMiscCode#_SetData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_setdata)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public static void SetDataObject (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDataObject(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetDataObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">データ オブジェクト (実装するオブジェクト<see cref="T:System.Windows.IDataObject" />)、システムのクリップボードに配置します。</param>
+        <summary>システム クリップボードには、指定した非永続的データ オブジェクトを配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、データは、システムのクリップボードに配置と<xref:System.Windows.Clipboard.SetDataObject%2A>アプリケーションの終了時に、クリップボードから自動的にクリアします。  
+  
+> [!NOTE]
+>  アプリケーションの終了時に、クリップボードをクリアする既定の動作は、他の実装では、既定でオフにすることのではなく、アプリケーションの終了時に、クリップボードのデータが残っている可能性が異なる場合があります。  使用して、<xref:System.Windows.Clipboard.SetDataObject%2A>オーバー ロードして、指定、`copy`パラメーターとして`true`データ アプリケーションの終了時に、クリップボードから消去したくない場合。  
+>   
+>  <xref:System.Windows.DataObject>基本実装を提供、<xref:System.Windows.IDataObject>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードにアクセスするときにエラーが発生しました。 例外の詳細が含まれます、<see langword="HResult" />特定のエラーを識別する; を参照してください<see cref="P:System.Runtime.InteropServices.ErrorWrapper.ErrorCode" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システムのクリップボードのデータにアクセスする権限です。  関連する列挙値:**関連**です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public static void SetDataObject (object data, bool copy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetDataObject(object data, bool copy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetDataObject(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="copy" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="data">データ オブジェクト (実装するオブジェクト<see cref="T:System.Windows.IDataObject" />)、システムのクリップボードに配置します。</param>
+        <param name="copy">
+          <see langword="true" />アプリケーションの終了時に、システム クリップボードにデータのままにするには<see langword="false" />をアプリケーションの終了時に、システムのクリップボードからデータをオフにします。</param>
+        <summary>指定されたデータ オブジェクトをシステムのクリップボードに配置し、アプリケーションの終了時、データ オブジェクトをクリップボードに残しておく必要があるかどうかを示すブール値パラメーターを受け入れます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DataObject>基本実装を提供、<xref:System.Windows.IDataObject>インターフェイスです。 <xref:System.Windows.Clipboard.IsCurrent%2A>最後でクリップボードにコピーしたデータ オブジェクトが決まります<xref:System.Windows.Clipboard.SetDataObject%2A>呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+ [!code-csharp[DragDrop_DragDropMiscCode#_SetDataObjectIsCurrent](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_setdataobjectiscurrent)]
+ [!code-vb[DragDrop_DragDropMiscCode#_SetDataObjectIsCurrent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_setdataobjectiscurrent)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">クリップボードにアクセスするときにエラーが発生しました。  例外の詳細が含まれます、<see langword="HResult" />特定のエラーを識別する; を参照してください<see cref="P:System.Runtime.InteropServices.ErrorWrapper.ErrorCode" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">システムのクリップボードのデータにアクセスする権限です。  関連する列挙値:**関連**です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileDropList">
+      <MemberSignature Language="C#" Value="public static void SetFileDropList (System.Collections.Specialized.StringCollection fileDropList);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetFileDropList(class System.Collections.Specialized.StringCollection fileDropList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileDropList" Type="System.Collections.Specialized.StringCollection" />
+      </Parameters>
+      <Docs>
+        <param name="fileDropList">データ オブジェクトに格納する、削除されたファイルの一覧を含む文字列コレクションです。</param>
+        <summary>ストア<see cref="F:System.Windows.DataFormats.FileDrop" />クリップボード上のデータ。  削除するファイルのリストは、文字列コレクションとして指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、自動変換が有効になっていると、データを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileDropList" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="fileDropList" />ゼロの文字列を含むか、一覧で指定されたファイルへの完全パスを解決することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImage">
+      <MemberSignature Language="C#" Value="public static void SetImage (System.Windows.Media.Imaging.BitmapSource image);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetImage(class System.Windows.Media.Imaging.BitmapSource image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetImage(System.Windows.Media.Imaging.BitmapSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Windows.Media.Imaging.BitmapSource" />
+      </Parameters>
+      <Docs>
+        <param name="image">A<see cref="T:System.Windows.Media.Imaging.BitmapSource" />をクリップボードに格納するイメージ データを含むオブジェクト。</param>
+        <summary>ストア<see cref="F:System.Windows.DataFormats.Bitmap" />クリップボード上のデータ。  イメージ データとして指定されます、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットマップ グラフィックをコンピューターのメモリ内のビット配列として表し、これらのビットがイメージ内の個々 のピクセルの属性を表します。  
+  
+ このメソッドは、自動変換が有効になっていると、データを追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public static void SetText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">含む文字列、<see cref="F:System.Windows.DataFormats.UnicodeText" />クリップボードに格納するデータ。</param>
+        <summary>ストア<see cref="F:System.Windows.DataFormats.UnicodeText" />クリップボード上のデータ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデータ形式は、エンコードされた Unicode、utf-16、および UCS 2 とも呼びますの 16 ビット文字を表します。  
+  
+ このメソッドは、自動変換が無効にされたデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public static void SetText (string text, System.Windows.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetText(string text, valuetype System.Windows.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Clipboard.SetText(System.String,System.Windows.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="format" Type="System.Windows.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="text">クリップボードに格納するテキスト データを含む文字列です。</param>
+        <param name="format">メンバー<see cref="T:System.Windows.TextDataFormat" />を格納する特定のテキスト データ形式を指定します。</param>
+        <summary>指定したテキストのデータ形式でクリップボードにテキスト データを格納します。  <see cref="F:System.Windows.DataFormats.UnicodeText" />文字列として格納するデータを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、自動変換が無効にされたデータを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

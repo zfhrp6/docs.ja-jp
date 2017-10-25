@@ -1,0 +1,115 @@
+<Type Name="X509KeyIdentifierClauseType" FullName="System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType">
+  <TypeSignature Language="C#" Value="public enum X509KeyIdentifierClauseType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed X509KeyIdentifierClauseType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用される可能性がある X.509 キー識別子句の種類を一覧表示する列挙体。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters.X509ReferenceStyle%2A> プロパティをこの列挙体のメンバーに設定する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UEAssymetricSecurityBindingElement#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueassymetricsecuritybindingelement/cs/source.cs#4)]
+ [!code-vb[S_UEAssymetricSecurityBindingElement#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueassymetricsecuritybindingelement/vb/source.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="Any" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType Any = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          X.509 証明書内に <see cref="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.SubjectKeyIdentifier" /> が存在する場合はそれが使用されます。それ以外の場合は <see cref="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial" /> が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerSerial">
+      <MemberSignature Language="C#" Value="IssuerSerial" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType IssuerSerial = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行者 ID に発行者固有のシリアル番号を加えた <see langword="IssuerSerial" /> 参照が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RawDataKeyIdentifier">
+      <MemberSignature Language="C#" Value="RawDataKeyIdentifier" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType RawDataKeyIdentifier = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.RawDataKeyIdentifier" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照には、X.509 証明書全体の生データが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectKeyIdentifier">
+      <MemberSignature Language="C#" Value="SubjectKeyIdentifier" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType SubjectKeyIdentifier = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.SubjectKeyIdentifier" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照は、X.509 証明書のサブジェクト キー識別子の拡張 (すべての証明書に存在するとは限らない、省略可能なプロパティ) に基づきます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbprint">
+      <MemberSignature Language="C#" Value="Thumbprint" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType Thumbprint = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.Thumbprint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 サムプリントが使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

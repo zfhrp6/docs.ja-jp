@@ -1,0 +1,377 @@
+<Type Name="Authorization" FullName="System.Net.Authorization">
+  <TypeSignature Language="C#" Value="public class Authorization" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Authorization extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Authorization" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット サーバーの認証メッセージに含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager>のインスタンスを返します、<xref:System.Net.Authorization>認証メッセージを格納するクラス。 このメッセージは送信を示すためにインターネット サーバー クライアント (など<xref:System.Net.WebRequest>またはその子孫のいずれか) サーバーへのアクセスが承認されています。  
+  
+ <xref:System.Net.Authorization>認証モジュールによってインスタンスが作成される、<xref:System.Net.AuthenticationManager>要求を処理するを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Authorization (string token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Authorization.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="token">サーバーで想定されている暗号化された承認メッセージです。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.Authorization" />指定した承認メッセージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization>でインスタンスが作成、<xref:System.Net.Authorization.Message%2A>プロパティに設定`token`と<xref:System.Net.Authorization.Complete%2A>プロパティに設定`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Net.Authorization>オブジェクト。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#3)]
+ [!code-csharp[System.Net.Authentication#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#3)]
+ [!code-vb[System.Net.Authentication#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Authorization (string token, bool finished);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string token, bool finished) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Authorization.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.String" />
+        <Parameter Name="finished" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="token">サーバーで想定されている暗号化された承認メッセージです。</param>
+        <param name="finished">認証の試行の完了状態。 <see langword="true" />失敗した場合の承認は完了しました。それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.Authorization" />指定した承認メッセージと完了の状態を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization>でインスタンスが作成、<xref:System.Net.Authorization.Message%2A>プロパティに設定`token`と<xref:System.Net.Authorization.Complete%2A>プロパティに設定`finished`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Net.Authorization>指定した承認メッセージと完了の状態を持つクラス。  
+  
+ [!code-cpp[Authorization_ProtectionRealm#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Authorization_ProtectionRealm/CPP/authorization_protectionrealm.cpp#1)]
+ [!code-csharp[Authorization_ProtectionRealm#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Authorization_ProtectionRealm/CS/authorization_protectionrealm.cs#1)]
+ [!code-vb[Authorization_ProtectionRealm#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Authorization_ProtectionRealm/VB/authorization_protectionrealm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Authorization (string token, bool finished, string connectionGroupId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string token, bool finished, string connectionGroupId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Authorization.#ctor(System.String,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.String" />
+        <Parameter Name="finished" Type="System.Boolean" />
+        <Parameter Name="connectionGroupId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="token">サーバーで想定されている暗号化された承認メッセージです。</param>
+        <param name="finished">認証の試行の完了状態。 <see langword="true" />失敗した場合の承認は完了しました。それ以外の場合、<see langword="false" />です。</param>
+        <param name="connectionGroupId">秘密のクライアントとサーバーにのみこの認証スキームにバインドされている接続を作成するために使用する一意の識別子。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.Authorization" />クラスの指定した承認メッセージ、完了ステータス、および接続グループの識別子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Net.Authorization>クラスの指定した承認メッセージ、完了ステータス、および接続グループの識別子を使用します。  
+  
+ [!code-cpp[Authorization_Constructor3#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Authorization_Constructor3/CPP/authorization_constructor3.cpp#1)]
+ [!code-csharp[Authorization_Constructor3#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Authorization_Constructor3/CS/authorization_constructor3.cs#1)]
+ [!code-vb[Authorization_Constructor3#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Authorization_Constructor3/VB/authorization_constructor3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public bool Complete { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Complete" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Authorization.Complete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証の完了ステータスを取得します。</summary>
+        <value>
+          <see langword="true" />場合は、認証プロセスは完了しました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization.Complete%2A>プロパティに設定されている`true`クライアントとサーバー間の認証プロセスが完了するとします。 Kerberos モジュールなど、一部の認証モジュールでは、クライアントとサーバー間の複数のラウンド トリップを使用して、認証プロセスを完了します。 保持する、<xref:System.Net.WebRequest>または承認の実行中、認証モジュールのセットを中断して、認証プロセスを開始した子孫、<xref:System.Net.Authorization.Complete%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Authorization.Complete%2A>認証の完了ステータスを取得するプロパティです。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#5)]
+ [!code-csharp[System.Net.Authentication#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#5)]
+ [!code-vb[System.Net.Authentication#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionGroupId">
+      <MemberSignature Language="C#" Value="public string ConnectionGroupId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionGroupId" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Authorization.ConnectionGroupId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー固有の接続の一意の識別子を取得します。</summary>
+        <value>接続を認証エンティティに関連付ける一意の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization.ConnectionGroupId%2A>プロパティは、特定の認証を行うエンティティに接続を関連付ける一意の文字列。 たとえば、NTLM 認証モジュールは、接続の無効な再利用を防止する特定の接続に認証の資格情報を関連付けます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Authorization.ConnectionGroupId%2A>サーバーによって返されるグループの識別子を取得するプロパティです。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#5)]
+ [!code-csharp[System.Net.Authentication#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#5)]
+ [!code-vb[System.Net.Authentication#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Authorization.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証チャレンジに対する応答でサーバーに返されたメッセージを取得します。</summary>
+        <value>認証チャレンジに対する応答でサーバーに返されるメッセージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization.Message%2A>プロパティには、保護されたリソースへのアクセス時にクライアントがサーバーに返す承認文字列が含まれています。 メッセージの実際の内容は、クライアントとサーバーを使用している認証の種類によって定義されます。 基本 HTTP 認証の場合は、たとえば、Kerberos 認証よりも別のメッセージを使用します。  
+  
+ 認証モジュールが事前認証をサポートしている場合、<xref:System.Net.Authorization.Message%2A>プロパティは、最初の要求と共に送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Authorization.Message%2A>認証チャレンジに対する応答でサーバーにメッセージを取得するプロパティが返されます。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#5)]
+ [!code-csharp[System.Net.Authentication#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#5)]
+ [!code-vb[System.Net.Authentication#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MutuallyAuthenticated">
+      <MemberSignature Language="C#" Value="public bool MutuallyAuthenticated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MutuallyAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Authorization.MutuallyAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />相互認証が行われたかどうかを示す値。</summary>
+        <value>
+          クライアントとサーバーの両方が認証された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`false`認証が完了していない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionRealm">
+      <MemberSignature Language="C#" Value="public string[] ProtectionRealm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ProtectionRealm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Authorization.ProtectionRealm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、プレフィックスを使用して認証できる Uniform Resource Identifier (Uri)、<see cref="P:System.Net.Authorization.Message" />プロパティです。</summary>
+        <value>URI のプレフィックスを含む文字列の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Authorization.ProtectionRealm%2A>プロパティの一覧を含む URI プレフィックス、<xref:System.Net.Authorization.Message%2A>プロパティは、認証に使用することができます。 <xref:System.Net.WebRequest>その子孫がかどうかをこのリストに URI を比較し、<xref:System.Net.Authorization>は、特定の URI に対して有効です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得または設定、プレフィックスを使用して認証できる Uri、<xref:System.Net.Authorization.Message%2A>プロパティです。  
+  
+ [!code-cpp[Authorization_ProtectionRealm#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Authorization_ProtectionRealm/CPP/authorization_protectionrealm.cpp#1)]
+ [!code-csharp[Authorization_ProtectionRealm#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Authorization_ProtectionRealm/CS/authorization_protectionrealm.cs#1)]
+ [!code-vb[Authorization_ProtectionRealm#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Authorization_ProtectionRealm/VB/authorization_protectionrealm.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

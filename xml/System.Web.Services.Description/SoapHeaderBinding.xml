@@ -1,0 +1,293 @@
+<Type Name="SoapHeaderBinding" FullName="System.Web.Services.Description.SoapHeaderBinding">
+  <TypeSignature Language="C#" Value="public class SoapHeaderBinding : System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapHeaderBinding extends System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapHeaderBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionFormatExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtension("header", "http://schemas.xmlsoap.org/wsdl/soap/", typeof(System.Web.Services.Description.InputBinding), typeof(System.Web.Services.Description.OutputBinding))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追加された機能拡張要素を表す、<see cref="T:System.Web.Services.Description.InputBinding" />または<see cref="T:System.Web.Services.Description.OutputBinding" />XML Web サービス内で。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス用のプロトコルを指定する方法の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeaderBinding#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderBinding/CPP/soapheaderbinding.cpp#1)]
+ [!code-csharp[SoapHeaderBinding#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderBinding/CS/soapheaderbinding.cs#1)]
+ [!code-vb[SoapHeaderBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderBinding/VB/soapheaderbinding.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapHeaderBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.SoapHeaderBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public string Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("encodingStyle")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーのエンコードに使用されるエンコード スタイルを表す URI を設定します。</summary>
+        <value>URI を含む文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合にのみ、このプロパティの値を設定する必要がありますの値、<xref:System.Web.Services.Description.SoapHeaderBinding.Use%2A>プロパティは`Encoded`します。 それ以外の場合、XML Web サービスが予期しない動作を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fault">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapHeaderFaultBinding Fault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.SoapHeaderFaultBinding Fault" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Fault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("headerfault")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapHeaderFaultBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のために WSDL ドキュメントの出力を制御する拡張機能の種類、 <see langword="headerfault" /> SOAP ヘッダーの XML 要素です。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.SoapHeaderFaultBinding" />の SOAP ヘッダーの型を表すエラー情報を転送するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Microsoft .NET Framework SDK のバージョン 1.0 ではありませんでした。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapToProperty">
+      <MemberSignature Language="C#" Value="public bool MapToProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MapToProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.MapToProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.Services.Description.SoapHeaderBinding" />インスタンスが生成されたプロキシ クラスの特定のプロパティにマップされています。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.Services.Description.SoapHeaderBinding" /> ; 特定のプロパティにマップそれ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderBinding_MapToProperty#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderBinding_MapToProperty/CPP/soapheaderbinding_maptoproperty.cpp#1)]
+ [!code-csharp[SoapHeaderBinding_MapToProperty#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderBinding_MapToProperty/CS/soapheaderbinding_maptoproperty.cs#1)]
+ [!code-vb[SoapHeaderBinding_MapToProperty#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderBinding_MapToProperty/VB/soapheaderbinding_maptoproperty.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("message")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前を指定する値、<see cref="T:System.Web.Services.Description.Message" />する XML Web サービス内で、<see cref="T:System.Web.Services.Description.SoapHeaderBinding" />適用されます。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" />の名前を表す、<see cref="T:System.Web.Services.Description.Message" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeaderBinding_Use#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderBinding_Use/CPP/soapheaderbinding_use.cpp#2)]
+ [!code-csharp[SoapHeaderBinding_Use#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderBinding_Use/CS/soapheaderbinding_use.cs#2)]
+ [!code-vb[SoapHeaderBinding_Use#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderBinding_Use/VB/soapheaderbinding_use.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("namespace")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって特に定義されているコンテンツのエンコードの指定の場所を表す URI、<see cref="P:System.Web.Services.Description.SoapHeaderBinding.Encoding" />プロパティです。</summary>
+        <value>URI を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、空の文字列を返します ("") プロパティの値が設定されていない場合。 値は、場合にのみ設定する必要がありますの値、<xref:System.Web.Services.Description.SoapHeaderBinding.Use%2A>プロパティは`Encoded`します。 それ以外の場合、XML Web サービスが予期しない動作を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Part">
+      <MemberSignature Language="C#" Value="public string Part { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Part" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Part" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("part")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得することを示す値を設定または<see cref="T:System.Web.Services.Description.MessagePart" />XML Web サービス内で、<see cref="T:System.Web.Services.Description.SoapHeaderBinding" />適用されます。</summary>
+        <value>名前を表す文字列、<see cref="T:System.Web.Services.Description.MessagePart" />先、<see cref="T:System.Web.Services.Description.SoapHeaderBinding" />適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderBinding_Use#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderBinding_Use/CPP/soapheaderbinding_use.cpp#3)]
+ [!code-csharp[SoapHeaderBinding_Use#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderBinding_Use/CS/soapheaderbinding_use.cs#3)]
+ [!code-vb[SoapHeaderBinding_Use#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderBinding_Use/VB/soapheaderbinding_use.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Use">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapBindingUse Use { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.SoapBindingUse Use" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapHeaderBinding.Use" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("use")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBindingUse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された規則を使用して、ヘッダーをエンコードするかどうかを指定します、<see cref="P:System.Web.Services.Description.SoapHeaderBinding.Encoding" />プロパティ、または具体的な XML スキーマ内にカプセル化します。</summary>
+        <value><see cref="T:System.Web.Services.Description.SoapBindingUse" /> 値のいずれか。 既定値は、<see langword="Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ SoapHeaderBinding_Use 4  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

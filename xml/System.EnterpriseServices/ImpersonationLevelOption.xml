@@ -1,0 +1,116 @@
+<Type Name="ImpersonationLevelOption" FullName="System.EnterpriseServices.ImpersonationLevelOption">
+  <TypeSignature Language="C#" Value="public enum ImpersonationLevelOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ImpersonationLevelOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ImpersonationLevelOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サーバー アプリケーションのターゲットを呼び出すときに許可される偽装レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 権限借用に成功した場合、クライアントには、サーバーをある程度のクライアントを偽装ことができます。 権限借用の度合いは、偽装レベルを呼び出され、それらを指定する権限がサーバーにクライアントを偽装します。  
+  
+ 唯一の有効な設定は、ライブラリ (インプロセス) アプリケーション、`Default`または指定されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますと共にこの列挙体の使用、<xref:System.EnterpriseServices.ApplicationAccessControlAttribute>属性。  
+  
+ [!code-cpp[EnterpriseServices_Security#2](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#2)]
+ [!code-csharp[EnterpriseServices_Security#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#2)]
+ [!code-vb[EnterpriseServices_Security#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anonymous">
+      <MemberSignature Language="C#" Value="Anonymous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ImpersonationLevelOption Anonymous = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ImpersonationLevelOption.Anonymous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ImpersonationLevelOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントはサーバーに対して匿名です。 サーバー プロセスは、クライアントを偽装できますが、権限借用トークンにはクライアントに関する情報が含まれていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ImpersonationLevelOption Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ImpersonationLevelOption.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ImpersonationLevelOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された認証サービスの既定の偽装レベルを使用します。 COM + の場合、この設定が用意されて、<see langword="DefaultImpersonationLevel" />プロパティに、<see langword="LocalComputer" />コレクション。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Delegate">
+      <MemberSignature Language="C#" Value="Delegate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ImpersonationLevelOption Delegate = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ImpersonationLevelOption.Delegate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ImpersonationLevelOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も強力な偽装レベル。 このレベルを選択すると、サーバー (ローカルまたはリモート) かどうか、クライアントのセキュリティ コンテキストを偽装、クライアントの代理として機能している間</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Identify">
+      <MemberSignature Language="C#" Value="Identify" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ImpersonationLevelOption Identify = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ImpersonationLevelOption.Identify" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ImpersonationLevelOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム既定のレベル。 サーバーは、クライアントの id を取得でき、サーバーは、ACL のチェックを実行するクライアントを偽装できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="Impersonate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.EnterpriseServices.ImpersonationLevelOption Impersonate = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.EnterpriseServices.ImpersonationLevelOption.Impersonate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ImpersonationLevelOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは、クライアントの代理として機能している間、クライアントのセキュリティ コンテキストを偽装できます。 サーバーは、クライアントとローカル リソースにアクセスできます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

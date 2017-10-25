@@ -1,0 +1,210 @@
+<Type Name="PrintPageEventArgs" FullName="System.Drawing.Printing.PrintPageEventArgs">
+  <TypeSignature Language="C#" Value="public class PrintPageEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintPageEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PrintPageEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Drawing.Printing.PrintDocument.PrintPage" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintPageEventArgs.MarginBounds%2A>プロパティは、ページの余白間の部分を表す四角形の領域を取得します。 <xref:System.Drawing.Printing.PrintPageEventArgs.PageBounds%2A>プロパティは、ページの合計領域を表す四角形の領域を取得します。 <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A>プロパティを描画を行うには、グラフィックス オブジェクトを定義します。 <xref:System.Drawing.Printing.PrintPageEventArgs.PageSettings%2A>プロパティは、現在のページのプリンター設定を取得します。 その他のプロパティは、印刷ジョブを取り消す必要があるかどうかや、印刷ジョブより多くのページかどうかを示します。  
+  
+ Windows フォームで印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。 Windows Presentation Foundation アプリケーションから印刷する場合を参照してください、<xref:System.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例で、<xref:System.Windows.Forms.Button>という名前`printButton`と<xref:System.Drawing.Printing.PrintDocument>という`pd`で作成された、<xref:System.Windows.Forms.Form>です。 確認してください、<xref:System.Windows.Forms.Control.Click>イベントを<xref:System.Windows.Forms.Button>に関連付けられている、`printButton_Click`メソッドおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、<xref:System.Drawing.Printing.PrintDocument>に関連付けられている、`pd_PrintPage`例のメソッドです。 `printButton_Click`メソッド呼び出しの例から、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドを発生させる、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント、および印刷で指定された .bmp ファイル、`pd_PrintPage`メソッドです。 この例を実行するには、印刷するビットマップをパスを変更します。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintPageEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintPageEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintPageEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintPageEventArgs (System.Drawing.Graphics graphics, System.Drawing.Rectangle marginBounds, System.Drawing.Rectangle pageBounds, System.Drawing.Printing.PageSettings pageSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle marginBounds, valuetype System.Drawing.Rectangle pageBounds, class System.Drawing.Printing.PageSettings pageSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintPageEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Printing.PageSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="marginBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="pageBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="pageSettings" Type="System.Drawing.Printing.PageSettings" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />項目を描画するために使用します。</param>
+        <param name="marginBounds">余白の間の領域。</param>
+        <param name="pageBounds">用紙の合計領域。</param>
+        <param name="pageSettings"><see cref="T:System.Drawing.Printing.PageSettings" />ページ。</param>
+        <summary><see cref="T:System.Drawing.Printing.PrintPageEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または印刷ジョブを取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />印刷ジョブをキャンセルする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Graphics" />ページの描画に使用します。</summary>
+        <value><see cref="T:System.Drawing.Graphics" />ページの描画に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例で、<xref:System.Windows.Forms.Button>という名前`printButton`と<xref:System.Drawing.Printing.PrintDocument>という`pd`で作成された、<xref:System.Windows.Forms.Form>です。 確認してください、<xref:System.Windows.Forms.Control.Click>イベントを<xref:System.Windows.Forms.Button>に関連付けられている、`printButton_Click`メソッドおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、<xref:System.Drawing.Printing.PrintDocument>に関連付けられている、`pd_PrintPage`例のメソッドです。 `printButton_Click`メソッド呼び出しの例から、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドを発生させる、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント、および印刷で指定された .bmp ファイル、`pd_PrintPage`メソッドです。 この例を実行するには、印刷するビットマップをパスを変更します。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintPageEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintPageEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintPageEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasMorePages">
+      <MemberSignature Language="C#" Value="public bool HasMorePages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasMorePages" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.HasMorePages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加のページを印刷するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />追加のページを印刷する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例で、<xref:System.Windows.Forms.Button>という名前`printButton`と<xref:System.Drawing.Printing.PrintDocument>という`pd`で作成された、<xref:System.Windows.Forms.Form>です。 確認してください、<xref:System.Windows.Forms.Control.Click>イベントを<xref:System.Windows.Forms.Button>に関連付けられている、`printButton_Click`メソッドおよび<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、<xref:System.Drawing.Printing.PrintDocument>に関連付けられている、`pd_PrintPage`例のメソッドです。 `printButton_Click`メソッド呼び出しの例から、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドを発生させる、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント、および印刷で指定された .bmp ファイル、`pd_PrintPage`メソッドです。 この例を実行するには、印刷するビットマップをパスを変更します。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintPageEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintPageEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintPageEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintPageEventArgs Example/VB/source.vb#1)]  
+  
+ 使用する方法を示しています別の例について<xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A>、を参照してください[する方法: Windows フォームで複数ページのテキスト ファイルの印刷。](~/docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle MarginBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle MarginBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.MarginBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページ余白の内側の部分を表す四角形の領域を取得します。</summary>
+        <value>四角形の領域は、100 ページ余白の内側の部分を表す、インチで測定されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle PageBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle PageBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.PageBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの合計領域を表す四角形の領域を取得します。</summary>
+        <value>ページの合計領域を表す四角形の領域。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  ほとんどのプリンターは、ページの端で印刷できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PageSettings PageSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PageSettings PageSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintPageEventArgs.PageSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PageSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページのページの設定を取得します。</summary>
+        <value>現在のページのページの設定。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

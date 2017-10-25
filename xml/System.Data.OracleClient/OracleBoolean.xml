@@ -1,0 +1,899 @@
+<Type Name="OracleBoolean" FullName="System.Data.OracleClient.OracleBoolean">
+  <TypeSignature Language="C#" Value="public struct OracleBoolean : IComparable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleBoolean extends System.ValueType implements class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleBoolean" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Oracle データ型の間でデータベースの比較演算から返された値を表し、データ型変換を実行するために使用するメソッドを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 主な違い、<xref:System.Data.OracleClient.OracleBoolean>構造と、標準的な**ブール**値は、ですが、標準的な`Boolean`2 つの値を持つ`true`と`false`、<xref:System.Data.OracleClient.OracleBoolean>構造体には 3 つの値、 <xref:System.Data.OracleClient.OracleBoolean.True>、 <xref:System.Data.OracleClient.OracleBoolean.False>、または<xref:System.Data.OracleClient.OracleBoolean.Null>です。  
+  
+ <xref:System.Data.OracleClient.OracleBoolean>構造は Oracle にマップされない`Boolean`利便性のためのサポート クラスとして公開されるデータ型します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleBoolean (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see langword="Boolean" />の初期値として使用する、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleBoolean" />指定して構造体<see langword="Boolean" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleBoolean (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see langword="integer" />の初期値として使用する、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OracleClient.OracleBoolean" />指定の整数を使用して構造体します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`value`0 の場合は、<xref:System.Data.OracleClient.OracleBoolean>は`false`; 以外の場合は`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="And">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean And (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean And(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.And(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>指定した 2 つのビットごとの AND を計算<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <returns>次の表に示すように論理 AND 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="true" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="false" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較するオブジェクトまたは null 参照 (<see langword="Nothing" /> Visual Basic で)。</param>
+        <summary>これと比較<see cref="T:System.Data.OracleClient.OracleBoolean" />指定されたオブジェクトの構造をこれらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスと値の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>負の整数  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ </description></item><item><term>正の整数  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ または  
+  
+ <paramref name="value" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のインスタンス<xref:System.Data.OracleClient.OracleBoolean>、その値に関係なくと見なされます、null 参照より大きい (`Nothing` Visual Basic で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較されるオブジェクト。</param>
+        <summary>指定したオブジェクトのパラメーターを<see cref="T:System.Data.OracleClient.OracleBoolean" />です。</summary>
+        <returns>
+          <see langword="true" />オブジェクトのインスタンスでは場合<see cref="T:System.Data.OracleClient.OracleBoolean" />、それ以外の 2 つ<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Equals (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Equals(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.Equals(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Data.OracleClient.OracleBoolean" />それらが等しいかを決定する構造体。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しい場合、または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しくない場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleBoolean" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="False">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBoolean False;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleBoolean False" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBoolean.False" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが false の値を表す、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBoolean.False>フィールドは、<xref:System.Data.OracleClient.OracleBoolean>構造定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFalse">
+      <MemberSignature Language="C#" Value="public bool IsFalse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFalse" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBoolean.IsFalse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、現在<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />は<see cref="F:System.Data.OracleClient.OracleBoolean.False" />します。</summary>
+        <value>
+          <see langword="true" />場合<see langword="Value" />は<see langword="False" />それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.OracleClient.OracleBoolean.Value%2A>は<xref:System.Data.OracleClient.OracleBoolean.Null>、このプロパティは、まだ`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBoolean.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうかの値、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造が null です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体の値は**Null**それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrue">
+      <MemberSignature Language="C#" Value="public bool IsTrue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBoolean.IsTrue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、現在<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />は<see cref="F:System.Data.OracleClient.OracleBoolean.True" />します。</summary>
+        <value>
+          <see langword="true" />場合<see langword="Value" />は<see langword="True" />それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.OracleClient.OracleBoolean.Value%2A>は<xref:System.Data.OracleClient.OracleBoolean.Null>、このプロパティは、まだ`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEquals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean NotEquals (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean NotEquals(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.NotEquals(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleBoolean" />両者が等しくないかどうかを決定します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleBoolean" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBoolean Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleBoolean Null" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBoolean.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが null 値を表す、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBoolean.Null>フィールドは、<xref:System.Data.OracleClient.OracleBoolean>構造定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="One">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBoolean One;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleBoolean One" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBoolean.One" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることのできる 1 つの値を表す、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBoolean.One>フィールドは、<xref:System.Data.OracleClient.OracleBoolean>構造定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnesComplement">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean OnesComplement (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean OnesComplement(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.OnesComplement(System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>引数のビットごとの補数で操作を実行、指定された<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <returns>指定された 1 の補数<see cref="T:System.Data.OracleClient.OracleBoolean" />です。 場合、 <see langword="Boolean" /> null 値を含む、null 値にもなります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_BitwiseAnd">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &amp; (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_BitwiseAnd(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_BitwiseAnd(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>指定した 2 つのビットごとの AND を計算<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <returns>次の表に示すように論理 AND 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="true" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.And%28System.Data.OracleClient.OracleBoolean%2CSystem.Data.OracleClient.OracleBoolean%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_BitwiseOr">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator | (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_BitwiseOr(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_BitwiseOr(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>その 2 つのビットごとの OR を計算<see cref="T:System.Data.OracleClient.OracleBoolean" />オペランド。</summary>
+        <returns>次の表に示すようにビットごとの OR 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="true" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.Or%28System.Data.OracleClient.OracleBoolean%2CSystem.Data.OracleClient.OracleBoolean%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator == (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Equality(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Equality(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" />。</param>
+        <summary>2 つのインスタンスを比較し、<see cref="T:System.Data.OracleClient.OracleBoolean" />等しいかどうか。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しい場合、または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しくない場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleBoolean" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_ExclusiveOr">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator ^ (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_ExclusiveOr(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_ExclusiveOr(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>指定されたに対してビットごとの排他的 OR 演算を実行<see cref="T:System.Data.OracleClient.OracleBoolean" />パラメーター。</summary>
+        <returns>次の表に示すようにビットごとの XOR 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.Xor%28System.Data.OracleClient.OracleBoolean%2CSystem.Data.OracleClient.OracleBoolean%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator bool (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Explicit(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Explicit(System.Data.OracleClient.OracleBoolean)~System.Boolean" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Data.OracleClient.OracleBoolean (System.Data.OracleClient.OracleNumber x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Explicit(valuetype System.Data.OracleClient.OracleNumber x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Explicit(System.Data.OracleClient.OracleNumber)~System.Data.OracleClient.OracleBoolean" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleNumber" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Data.OracleClient.OracleBoolean (string x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Explicit(string x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Explicit(System.String)~System.Data.OracleClient.OracleBoolean" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_False">
+      <MemberSignature Language="C#" Value="public static bool operator false (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_False(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_False(System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" />をテストする構造体。</param>
+        <summary>テストするため、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />false かどうかを判別します。</summary>
+        <returns>
+          <see langword="true" />場合、指定されたパラメーター<see cref="T:System.Data.OracleClient.OracleBoolean" />それ以外の場合は false<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.IsFalse?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Data.OracleClient.OracleBoolean (bool x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Implicit(bool x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Implicit(System.Boolean)~System.Data.OracleClient.OracleBoolean" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator != (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Inequality(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_Inequality(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" />。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" />。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleBoolean" />等しくないです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleBoolean" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.NotEquals%28System.Data.OracleClient.OracleBoolean%2CSystem.Data.OracleClient.OracleBoolean%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LogicalNot">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator ! (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LogicalNot(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_LogicalNot(System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" />の NOT 演算を実行します。</param>
+        <summary>に対して NOT 演算を実行、<see cref="T:System.Data.OracleClient.OracleBoolean" />です。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />で、 <see cref="P:System.Data.OracleClient.OracleBoolean.Value" /> <see cref="F:System.Data.OracleClient.OracleBoolean.True" />引数が true の場合場合、<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />引数は null だった場合、<see cref="F:System.Data.OracleClient.OracleBoolean.False" />それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_OnesComplement">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator ~ (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_OnesComplement(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_OnesComplement(System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>1 つのビットごとの補数に対して演算を実行、指定した<see cref="T:System.Data.OracleClient.OracleBoolean" />です。</summary>
+        <returns>指定した 1 の補数<see cref="T:System.Data.OracleClient.OracleBoolean" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.OnesComplement%28System.Data.OracleClient.OracleBoolean%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_True">
+      <MemberSignature Language="C#" Value="public static bool operator true (System.Data.OracleClient.OracleBoolean x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_True(valuetype System.Data.OracleClient.OracleBoolean x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.op_True(System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" />をテストする構造体。</param>
+        <summary>テストするため、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />true かどうかを判別します。</summary>
+        <returns>
+          <see langword="true" />場合、指定されたパラメーター<see cref="T:System.Data.OracleClient.OracleBoolean" />は true。 それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleBoolean.IsTrue?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Or">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Or (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Or(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.Or(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>指定した 2 つのビットごとの OR 演算を実行<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <returns>次の表に示すようにビットごとの OR 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="true" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換される <see cref="T:System.String" />。</param>
+        <summary>指定された変換<see cref="T:System.String" />の論理値を表すその<see cref="T:System.Data.OracleClient.OracleBoolean" />と同等です。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />解析された値を含む構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の変換<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />を文字列にします。</summary>
+        <returns>値を含む文字列、<see cref="T:System.Data.OracleClient.OracleBoolean" />です。 値が null の場合、文字列には、null 値が含まれています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="True">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBoolean True;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleBoolean True" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBoolean.True" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが true の値を表す、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBoolean.True>フィールドは、<xref:System.Data.OracleClient.OracleBoolean>構造定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public bool Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleBoolean.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体の値。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.True" />それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Xor (System.Data.OracleClient.OracleBoolean x, System.Data.OracleClient.OracleBoolean y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Xor(valuetype System.Data.OracleClient.OracleBoolean x, valuetype System.Data.OracleClient.OracleBoolean y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleBoolean.Xor(System.Data.OracleClient.OracleBoolean,System.Data.OracleClient.OracleBoolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleBoolean" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleBoolean" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleBoolean" /> 構造体。</param>
+        <summary>指定されたパラメーターのビットごとの排他的 OR 演算を実行します。</summary>
+        <returns>次の表に示すように論理 XOR 演算の結果。  
+  
+ <list type="table"><listheader><term>値の<paramref name="x" /> </term> <description>の値の<paramref name="y" /> </description> <description>結果  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see langword="true" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="false" /></description><description><see langword="true" /></description></item><item><term><see langword="false" /></term><description><see langword="false" /></description><description><see langword="false" /></description></item><item><term><see langword="true" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="false" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item><item><term><see langword="unknown" /></term><description><see langword="unknown" /></description><description><see langword="unknown" /></description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zero">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleBoolean Zero;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleBoolean Zero" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleBoolean.Zero" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることがゼロの値を表す、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleBoolean" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleBoolean.Zero>フィールドは、<xref:System.Data.OracleClient.OracleBoolean>構造定数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

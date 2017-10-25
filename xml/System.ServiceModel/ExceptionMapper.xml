@@ -1,0 +1,105 @@
+<Type Name="ExceptionMapper" FullName="System.ServiceModel.ExceptionMapper">
+  <TypeSignature Language="C#" Value="public class ExceptionMapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExceptionMapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ExceptionMapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エラーに変換する例外を使用するマッピングを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExceptionMapper ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ExceptionMapper.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ExceptionMapper" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromException">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.FaultException FromException (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.FaultException FromException(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ExceptionMapper.FromException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.FaultException</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex">エラーにマップする例外。</param>
+        <summary>エラーには、入力の例外を変換します。</summary>
+        <returns>入力の例外に対応するエラー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromException">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.FaultException FromException (Exception ex, string soapNamespace, string trustNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.FaultException FromException(class System.Exception ex, string soapNamespace, string trustNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ExceptionMapper.FromException(System.Exception,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.FaultException</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="soapNamespace" Type="System.String" />
+        <Parameter Name="trustNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ex">エラーにマップする例外。</param>
+        <param name="soapNamespace">マップされたエラーを生成するときに使用される SOAP Namespace です。</param>
+        <param name="trustNamespace">マップされたエラーを生成するときに使用する Ws-trust Namespace です。</param>
+        <summary>エラーには、入力の例外を変換します。</summary>
+        <returns>入力の例外に対応するエラー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleSecurityTokenProcessingException">
+      <MemberSignature Language="C#" Value="public virtual bool HandleSecurityTokenProcessingException (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HandleSecurityTokenProcessingException(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ExceptionMapper.HandleSecurityTokenProcessingException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex">入力の例外。</param>
+        <summary>セキュリティ トークンの処理中に発生した例外を処理するかどうかを判断します。</summary>
+        <returns>
+          <see langword="True" />場合は、例外を処理する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

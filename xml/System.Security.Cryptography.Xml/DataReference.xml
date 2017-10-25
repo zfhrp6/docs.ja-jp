@@ -1,0 +1,142 @@
+<Type Name="DataReference" FullName="System.Security.Cryptography.Xml.DataReference">
+  <TypeSignature Language="C#" Value="public sealed class DataReference : System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataReference extends System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.DataReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.EncryptedReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;DataReference&gt;" /> XML 暗号化に使用される要素。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.DataReference>クラスを表します、`<DataReference>`の XML 暗号化に使用する暗号化されたデータの場所を格納する要素。  
+  
+ `<DataReference>`要素を参照してくださいを使用して`<EncryptedData>`要素の外側で定義されているキーを使用して暗号化された`<EncryptedKey>`要素。 複数`<DataReference>`要素は、複数の場合に発生する可能性が`<EncryptedData>`存在する要素は、同じキーを使用して暗号化します。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.Xml.DataReference>を暗号化し、別のセッション キーを使用して複数の XML 要素を復号化するクラス。  
+  
+ [!code-csharp[Cryptography.XML.DataReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.DataReference/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.DataReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.DataReference/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DataReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.DataReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.DataReference>を表すクラス、`<DataReference>`要素。 `<DataReference>`子要素、`<ReferenceList>`要素。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.Xml.DataReference>を暗号化し、別のセッション キーを使用して複数の XML 要素を復号化するクラス。  
+  
+ [!code-csharp[Cryptography.XML.DataReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.DataReference/cs/sample.cs#1)]
+ [!code-vb[Cryptography.XML.DataReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.DataReference/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataReference (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DataReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">識別子 URI (Uniform Resource) 暗号化されたデータを指します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.DataReference" />クラス、指定された Uniform Resource Identifier () を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、指定された Uniform Resource Identifier () を使用して、<xref:System.Security.Cryptography.Xml.DataReference>クラスを表す、`<DataReference>`要素。 URI では、暗号化されたデータの場所を示します。 `<DataReference>` 要素は、`<ReferenceList>` 要素の子要素です。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataReference (string uri, System.Security.Cryptography.Xml.TransformChain tc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri, class System.Security.Cryptography.Xml.TransformChain tc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DataReference.#ctor(System.String,System.Security.Cryptography.Xml.TransformChain)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="transformChain" Type="System.Security.Cryptography.Xml.TransformChain" />
+      </Parameters>
+      <Docs>
+        <param name="uri">識別子 URI (Uniform Resource) 暗号化されたデータを指します。</param>
+        <param name="tc">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.DataReference" />クラスの指定された Uniform Resource Identifier () を使用して、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する (Uniform Resource Identifier) と変換の指定されたチェーンを使用して、<xref:System.Security.Cryptography.Xml.DataReference>クラスを表す、`<DataReference>`要素。 URI は、暗号化されたデータの場所を示しの変換チェーンは、XPath 変換、圧縮解除変換、またはドキュメント ストレージ機能から、暗号化されたデータを取得する方法に関する情報を含めることができます。 `<DataReference>`子要素、`<ReferenceList>`要素。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

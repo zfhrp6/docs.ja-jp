@@ -1,0 +1,128 @@
+<Type Name="X509IssuerSerial" FullName="System.Security.Cryptography.Xml.X509IssuerSerial">
+  <TypeSignature Language="C#" Value="public struct X509IssuerSerial" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit X509IssuerSerial extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.X509IssuerSerial" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 &lt; <see langword="X509IssuerSerial" /> &gt; XML デジタル署名の要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.X509IssuerSerial>構造体を表す、 `<X509IssuerSerial`> XML デジタル署名の仕様によって定義された XML デジタル署名の要素。 `<X509IssuerSerial`> 要素のサブ要素は、<`X509Data`> 要素を含む x.509 v3 証明書の発行者の識別名とシリアル番号のペア。 識別名とシリアル番号のペアは、特定の X.509v3 証明書を識別します。  
+  
+ X.509 証明書の発行者は、証明書を発行した証明機関の名前です。 証明機関では、識別のための一意のシリアル番号を発行する各証明書を割り当てます。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.X509IssuerSerial>を使用する場合、構造体を指定、証明書発行者の識別名とシリアル番号のペア、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data>クラスです。  追加することができます、<xref:System.Security.Cryptography.Xml.X509IssuerSerial>に構造体、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data>クラスを使用して、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data.IssuerSerials%2A>プロパティです。  また、X.509 証明書の発行者の識別名とを使用してシリアル番号ペアを表す文字列値を追加することができます、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data.AddIssuerSerial%2A>メソッドです。  
+  
+ 詳細については、 `<X509IssuerSerial`> 要素、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) 仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、署名および証明書ストアから X.509 証明書を使用して XML ドキュメントを検証する方法を示します。  この例を使用して、署名付きのドキュメントにキー情報を保存、<xref:System.Security.Cryptography.Xml.X509IssuerSerial>オブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IssuerName">
+      <MemberSignature Language="C#" Value="public string IssuerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IssuerName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.X509IssuerSerial.IssuerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または X.509 証明書の発行者の識別名を設定します。</summary>
+        <value>X.509 証明書の発行者の識別名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.X509IssuerSerial.IssuerName%2A>プロパティで指定された X.509 証明書の発行者の識別名を表す、 `<X509IssuerSerial`> 要素。  
+  
+ 詳細については、 `<X509IssuerSerial`> 要素、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) 仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、署名および証明書ストアから X.509 証明書を使用して XML ドキュメントを検証する方法を示します。  この例を使用して、署名付きのドキュメントにキー情報を保存、<xref:System.Security.Cryptography.Xml.X509IssuerSerial>オブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerialNumber">
+      <MemberSignature Language="C#" Value="public string SerialNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerialNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.X509IssuerSerial.SerialNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または X.509 証明書の発行者のシリアル番号を設定します。</summary>
+        <value>X.509 証明書の発行者のシリアル番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.X509IssuerSerial.SerialNumber%2A>プロパティで指定された X.509 証明書の発行者のシリアル番号を表す、 `<X509IssuerSerial`> 要素。  
+  
+ 詳細については、 `<X509IssuerSerial`> 要素、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) 仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、署名および証明書ストアから X.509 証明書を使用して XML ドキュメントを検証する方法を示します。  この例を使用して、署名付きのドキュメントにキー情報を保存、<xref:System.Security.Cryptography.Xml.X509IssuerSerial>オブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.X509IssuerSerial#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.X509IssuerSerial/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

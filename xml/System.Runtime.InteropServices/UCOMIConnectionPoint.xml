@@ -1,0 +1,182 @@
+<Type Name="UCOMIConnectionPoint" FullName="System.Runtime.InteropServices.UCOMIConnectionPoint">
+  <TypeSignature Language="C#" Value="public interface UCOMIConnectionPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract UCOMIConnectionPoint" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.UCOMIConnectionPoint" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("b196b286-bab4-101a-b69c-00aa00341d07")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>代わりに、<see cref="T:System.Runtime.InteropServices.ComTypes.IConnectionPoint" /> を使用してください。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint`MSDN ライブラリの com サブフォルダーにあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Advise">
+      <MemberSignature Language="C#" Value="public void Advise (object pUnkSink, out int pdwCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Advise(object pUnkSink, [out] int32&amp; pdwCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIConnectionPoint.Advise(System.Object,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pUnkSink" Type="System.Object" />
+        <Parameter Name="pdwCookie" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pUnkSink">この接続ポイントによって管理されている発信インターフェイスへの呼び出しを受信するためのシンクへの参照。</param>
+        <param name="pdwCookie">正常に返された場合は、接続の cookie が含まれています。</param>
+        <summary>接続ポイントと、呼び出し元のシンク オブジェクトのアドバイザリ コネクションを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint::Advise`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumConnections">
+      <MemberSignature Language="C#" Value="public void EnumConnections (out System.Runtime.InteropServices.UCOMIEnumConnections ppEnum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EnumConnections([out] class System.Runtime.InteropServices.UCOMIEnumConnections&amp; ppEnum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIConnectionPoint.EnumConnections(System.Runtime.InteropServices.UCOMIEnumConnections@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ppEnum" Type="System.Runtime.InteropServices.UCOMIEnumConnections&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ppEnum">正常に返された場合は、新しく作成された列挙子が含まれています。</param>
+        <summary>この接続ポイントに存在する接続を反復処理する列挙子オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint::EnumConnections`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionInterface">
+      <MemberSignature Language="C#" Value="public void GetConnectionInterface (out Guid pIID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetConnectionInterface([out] valuetype System.Guid&amp; pIID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIConnectionPoint.GetConnectionInterface(System.Guid@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pIID" Type="System.Guid&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pIID">正常に返された場合は、この接続ポイントによって管理されている発信インターフェイスの IID を格納します。</param>
+        <summary>この接続ポイントによって管理されている発信インターフェイスの IID を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint::GetConnectionInterface`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionPointContainer">
+      <MemberSignature Language="C#" Value="public void GetConnectionPointContainer (out System.Runtime.InteropServices.UCOMIConnectionPointContainer ppCPC);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetConnectionPointContainer([out] class System.Runtime.InteropServices.UCOMIConnectionPointContainer&amp; ppCPC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIConnectionPoint.GetConnectionPointContainer(System.Runtime.InteropServices.UCOMIConnectionPointContainer@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ppCPC" Type="System.Runtime.InteropServices.UCOMIConnectionPointContainer&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ppCPC">正常に返された場合は、接続可能なオブジェクトにはが含まれています。<see langword="IConnectionPointContainer" />インターフェイスです。</param>
+        <summary>取得、<see langword="IConnectionPointContainer" />概念的には この接続ポイントを所有している接続可能なオブジェクトへのインターフェイス ポインター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint::GetConnectionPointContainer`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unadvise">
+      <MemberSignature Language="C#" Value="public void Unadvise (int dwCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unadvise(int32 dwCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIConnectionPoint.Unadvise(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dwCookie" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dwCookie">返される以前接続クッキー<see cref="M:System.Runtime.InteropServices.UCOMIConnectionPoint.Advise(System.Object,System.Int32@)" />です。</param>
+        <summary>以前にを介して確立アドバイザリ コネクションを終了する<see cref="M:System.Runtime.InteropServices.UCOMIConnectionPoint.Advise(System.Object,System.Int32@)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IConnectionPoint::Unadvise`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

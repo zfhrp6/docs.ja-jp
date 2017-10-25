@@ -1,0 +1,423 @@
+<Type Name="HttpCookieCollection" FullName="System.Web.HttpCookieCollection">
+  <TypeSignature Language="C#" Value="public sealed class HttpCookieCollection : System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpCookieCollection extends System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCookieCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>複数の HTTP Cookie をタイプ セーフな方法で操作できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用して cookie を読み取る方法を示します、<xref:System.Web.HttpRequest.Cookies%2A>のプロパティ、<xref:System.Web.HttpRequest>オブジェクトし、を使用して cookie を書き込み、<xref:System.Web.HttpResponse.Cookies%2A>のプロパティ、<xref:System.Web.HttpResponse>オブジェクト。 両方のプロパティを返す<xref:System.Web.HttpCookieCollection>オブジェクト。 という名前の 2 つの cookie のいずれかの場合`userName`と`lastVisit`が HTTP 応答内で作成し、HTTP 要求に含まれない。 2 つの cookie がある場合、cookie のプロパティが表示されます。  
+  
+ [!code-aspx-csharp[System.Web.HttpCookieCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpCookieCollection/cs/HttpCookieCollection.cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpCookieCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpCookieCollection/vb/HttpCookieCollection.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCookieCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpCookieCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、2 つの組み込みクッキー コレクションが含まれています。 経由でアクセスできるコレクション<xref:System.Web.HttpRequest.Cookies%2A>内のサーバーにクライアントによって送信された cookie が含まれています、`Cookie`ヘッダー。 経由でアクセスできるコレクション<xref:System.Web.HttpResponse.Cookies%2A>サーバーで生成され、クライアントに送信される cookie が含まれています、`Set-Cookie`ヘッダー。  
+  
+   
+  
+## Examples  
+ 次の例では、新しいクッキー コレクション オブジェクトを作成し、クライアントから受信した cookie で塗りつぶします。  
+  
+ [!code-csharp[Classic HttpCookieCollection.HttpCookieCollection Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.HttpCookieCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.HttpCookieCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.HttpCookieCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.HttpCookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.HttpCookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Add(System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">コレクションに追加する <see cref="T:System.Web.HttpCookie" />。</param>
+        <summary>クッキー コレクションを指定された cookie を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クッキー コレクションの任意の数が、アプリケーションが組み込みによって参照されるコレクションのみに配置できます<xref:System.Web.HttpResponse.Cookies%2A>オブジェクトは、クライアントに送信します。  
+  
+ <xref:System.Web.HttpCookieCollection.Add%2A>メソッドは、クッキー コレクションの重複する cookie を許可します。 使用して、<xref:System.Web.HttpCookieCollection.Set%2A>クッキー コレクションのクッキーの一意性を保証するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、新しいクッキー コレクションと「例」をという名前の新しい cookie を作成、現在の日付と時刻に cookie の値を設定し、新しいコレクションに、cookie を追加します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCookieCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クッキー コレクションのすべてのキー (cookie の名前) を含む文字列配列を取得します。</summary>
+        <value>Cookie 名の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、クライアントのクッキー コレクションの cookie の名前を含む文字列配列を作成します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.AllKeys Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.AllKeys Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.AllKeys Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.AllKeys Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クッキー コレクションからすべての cookie を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、クッキーのコレクションからすべての cookie を削除します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest">コピー先 <see cref="T:System.Array" />。</param>
+        <param name="index">コピーを開始するコピー先の配列のインデックス。</param>
+        <summary>Cookie のコレクションのメンバーをコピー、<see cref="T:System.Array" />配列の指定したインデックス位置を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、全体のクッキー コレクションを新しい配列オブジェクトにコピーします。  
+  
+ [!code-csharp[Classic HttpCookieCollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookie Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.HttpCookie Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから返されるクッキーのインデックス。</param>
+        <summary>返します、<see cref="T:System.Web.HttpCookie" />クッキー コレクションから指定されたインデックスを持つ項目。</summary>
+        <returns><see cref="T:System.Web.HttpCookie" /> で指定された <paramref name="index" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は「例」という名前だかどうかを確認クッキー コレクションから各 cookie が返されます、および、この「例」が見つかった場合は、現在の日付と時刻にその値を更新します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Get1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Get1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Get1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Get1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookie Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.HttpCookie Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから取得する cookie の名前です。</param>
+        <summary>クッキー コレクションから指定の名前を持つ cookie を返します。</summary>
+        <returns><see cref="T:System.Web.HttpCookie" /> で指定された <paramref name="name" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きの cookie が存在しない場合、このメソッドは、その名前を持つ新しいクッキーを作成します。  
+  
+   
+  
+## Examples  
+ 次の例に新しいクッキー コレクションに、クライアントによって送信されたクッキーのコレクションをキャプチャし、新しいコレクションから「例」をという名前の cookie を取得して、現在の日付と時刻に cookie の値を更新します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Get Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Get Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Get Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Get Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得するキーのインデックス。</param>
+        <summary>指定した数値インデックスの cookie のキー (名前) を返します。</summary>
+        <returns>指定された cookie の名前<paramref name="index" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は「例」という名前だかどうかを確認クッキー コレクションから各 cookie が返されます、および、この「例」が見つかった場合は、現在の日付と時刻にその値を更新します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.GetKey Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.GetKey Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.GetKey Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.GetKey Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookie this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookie Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCookieCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得する cookie のインデックス。</param>
+        <summary>クッキー コレクションから指定の数値インデックスを持つ cookie を取得します。</summary>
+        <value><see cref="T:System.Web.HttpCookie" /> で指定された <paramref name="index" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、最初の cookie の名前を格納した文字列変数として (インデックス = 0) のクッキー コレクション。  
+  
+ [!code-csharp[Classic HttpCookieCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookie this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookie Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpCookieCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する cookie の名前です。</param>
+        <summary>クッキー コレクションから指定の名前を持つ cookie を取得します。</summary>
+        <value><see cref="T:System.Web.HttpCookie" />の指定<paramref name="name." /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、名前「例」の cookie を取得し、その値を抽出します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから削除する cookie の名前です。</param>
+        <summary>コレクションから指定の名前を持つ cookie を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定された cookie`name`存在しません、コレクション内の例外はスローされません。  
+  
+   
+  
+## Examples  
+ 次の例では、cookie をコレクションから削除します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (System.Web.HttpCookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(class System.Web.HttpCookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpCookieCollection.Set(System.Web.HttpCookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Web.HttpCookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie"><see cref="T:System.Web.HttpCookie" />を更新するオブジェクト。</param>
+        <summary>クッキー コレクションの既存のクッキーの値を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpCookieCollection.Set%2A> Cookie が既にコレクションに存在し、その場合は更新するかどうかに表示するメソッドが最初に確認します。 <xref:System.Web.HttpCookieCollection.Set%2A>メソッドがクッキー コレクションの重複する cookie を許可していません。 クッキー コレクションの重複する cookie を追加するには、使用、<xref:System.Web.HttpCookieCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、既存のクッキーの値を更新します。  
+  
+ [!code-csharp[Classic HttpCookieCollection.Set Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpCookieCollection.Set Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpCookieCollection.Set Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpCookieCollection.Set Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

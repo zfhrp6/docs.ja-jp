@@ -1,0 +1,119 @@
+<Type Name="IProvideValueTarget" FullName="System.Windows.Markup.IProvideValueTarget">
+  <TypeSignature Language="C#" Value="public interface IProvideValueTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProvideValueTarget" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IProvideValueTarget" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationFramework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マークアップ拡張機能の評価に対する状況的なオブジェクトとプロパティの関係を報告するサービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.IProvideValueTarget>値コンバーターが呼び出される周囲オブジェクト プロパティの構造に関する情報を報告するサービスを表します。  
+  
+ 型コンバーターおよびマークアップ拡張機能を照会できます<xref:System.Windows.Markup.IProvideValueTarget>XAML オブジェクト ライターは、値変換の動作を呼び出すときは、XAML オブジェクト ライターによって提供されるサービスのコンテキストでサービスとして。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ マークアップ拡張機能のシナリオでは具体的には、ここで<xref:System.Windows.Markup.IProvideValueTarget>役に立ちます、マークアップ拡張機能の状況に左右の使用状況の有効性を特定することです。 たとえば、マークアップ拡張機能が、値の遅延メカニズムを実装する可能性がありますがそのメカニズムを使用して可能性がありますのみを指定対象のオブジェクトが実行時に、遅延メカニズムの他のコンポーネントを使用できる場合に適しています。 として返されるオブジェクトの型システムの特性を確認することが<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>し、そのオブジェクトが、遅延の手法をサポートしているかどうかを確認します。 マークアップ拡張機能が値を返す場合は、およびマークアップ拡張機能が取得されるを内部例外として、XAML オブジェクト ライターによって例外をスローされていない場合。 型システムの特性をチェックして、特定のプロパティが、機能をサポートしているようなシナリオを保証、<xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>です。  
+  
+ その API 名<xref:System.Windows.Markup.IProvideValueTarget>こととの関連付けを示唆<xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A?displayProperty=nameWithType>、によって報告された、情報<xref:System.Windows.Markup.IProvideValueTarget>も役に立ちます、<xref:System.ComponentModel.TypeConverter>または<xref:System.Windows.Markup.ValueSerializer>です。 A<xref:System.ComponentModel.TypeConverter>または<xref:System.Windows.Markup.ValueSerializer>型の特定のターゲットまたはターゲット プロパティが専用であるために、通常、マークアップ拡張機能よりも詳細なコンテキストがあるし、状況に左右の有効性が通常の型システムで予測可能なためです。 ただし、他のシナリオがあります。 型コンバーターまたはマークアップ拡張機能のいずれかで実装する場合がありますのあるいくつかのシナリオの一覧を次に示します。  
+  
+-   取得<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>をそのオブジェクトに対する他のプロパティのインスタンスの値を読み取る。 処理をここで必要とする可能性に設定されていない値は、堅牢なターゲット オブジェクトの XAML メンバーの処理順序は非決定的であることができますに注意してください。  
+  
+-   取得<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>型レベルのメタデータを読み取り、必要なインターフェイスが、型によって実装されることを確認してください。  
+  
+-   取得<xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>プロパティ メタデータを読み取る。  
+  
+ 1 つのシナリオは、使用する<xref:System.Windows.Markup.IProvideValueTarget>については、どのオブジェクトまたはプロパティは、マークアップ拡張機能によって設定する許可を制限します。  
+  
+ サービスを使用する前に、サービス自体がないことを確認します`null`コンテキストを使用している関連するサービス プロバイダーのパラメーターによって返されるときにします。  
+  
+> [!IMPORTANT]
+>  によって参照されるオブジェクトを変更することがなく、特に重要では、サービスを使用する場合、<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>プロパティ、またはそのオブジェクトによって参照される他のオブジェクト。 WPF 具体的には、これらの変更により、予期しない変更 WPF プロパティ システムを無効にします。  
+  
+> [!NOTE]
+>  型を使用しないで<xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>正確な型をマークアップ拡張機能または型コンバーターを返す必要があります。 ベスト プラクティスれていません。 戻り値の型は属性と一致する必要があります (<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>のマークアップ拡張機能) またはパターン (型コンバーターのクラス名)。  
+  
+ .NET Framework の以前のバージョンでは、このインターフェイスは、WPF 固有の WindowsBase アセンブリに存在します。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.IProvideValueTarget>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ このサービスは、依存関係プロパティのバインドなどのフレームワークの機能をサポートします。  
+  
+ WPF では、によって表されるサービス<xref:System.Windows.Markup.IProvideValueTarget>マークアップ拡張機能または型コンバーターから返される値をコンテキストに依存する場所の場合のオブジェクトとプロパティを返すことができます。  
+  
+ <xref:System.Windows.Markup.IProvideValueTarget>内部実装で大きくを活用<xref:System.Windows.Data.BindingBase>WPF の依存関係プロパティの関連付けの機構を実装するクラス。  
+  
+ WPF 実装の既定の内部サービス プロバイダー<xref:System.Windows.Markup.IProvideValueTarget>カスタム マークアップ拡張機能または型コンバーターで使用するためです。 オブジェクトとプロパティによって報告された<xref:System.Windows.Markup.IProvideValueTarget>内部 WPF サービスによってのみ設定できます。 この方法の定義を超えると<xref:System.Windows.Markup.IProvideValueTarget>動作少なくともを実装する独自のサービス プロバイダーのマークアップ拡張機能と型コンバーターの使用を定義する必要があります、<xref:System.Windows.Markup.IProvideValueTarget>と<xref:System.Windows.Markup.IXamlTypeResolver>services、およびはここで説明されていない高度なシナリオです。  
+  
+ Null 値を<xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>または<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>が必ずしもいるマークアップ拡張機能または型コンバーターは機能しません、実装に依存するがします。 例のケースから値<xref:System.Windows.Markup.IProvideValueTarget>null では、サービスが利用可能な場合でもはマークアップ拡張機能が他のマークアップ拡張機能内でなど入れ子になったかどうか、<xref:System.Windows.Data.Binding>です。 実装に依存している<xref:System.Windows.Markup.IProvideValueTarget>null 値の場合は、その特定の例外をスローするために、目的の設計はだけの場合に常に確認します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TargetObject">
+      <MemberSignature Language="C#" Value="public object TargetObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TargetObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.IProvideValueTarget.TargetObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>報告されるターゲット オブジェクトを取得します。</summary>
+        <value>報告されるターゲット オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>実際の参照、型システム識別子またはその他の識別子。 値を指定できますも`null`; を参照してください<xref:System.Windows.Markup.IProvideValueTarget>です。  
+  
+> [!IMPORTANT]
+>  によって参照されるオブジェクトを変更することがなく、特に重要では、サービスを使用する場合、<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>プロパティ、または具体的には、値の変換ではないプロパティ ケースすると、そのオブジェクトによって参照される他のオブジェクトを処理します。 WPF の具体的には、ターゲット オブジェクトを変更する変更される可能性が予期しない WPF プロパティ システムを無効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetProperty">
+      <MemberSignature Language="C#" Value="public object TargetProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TargetProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.IProvideValueTarget.TargetProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>報告されるターゲット プロパティの識別子を取得します。</summary>
+        <value>報告されるターゲット プロパティの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定できますも`null`; を参照してください<xref:System.Windows.Markup.IProvideValueTarget>です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 依存関係プロパティの既定の WPF サービスが返す可能性があります、 <xref:System.Windows.DependencyProperty>、マークアップ拡張機能または型コンバーターは、メタデータを使用できるようにします。 それ以外の場合、返されたオブジェクトには、 <xref:System.Reflection.PropertyInfo> CLR プロパティ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

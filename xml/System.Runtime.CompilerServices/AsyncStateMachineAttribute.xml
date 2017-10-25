@@ -1,0 +1,93 @@
+<Type Name="AsyncStateMachineAttribute" FullName="System.Runtime.CompilerServices.AsyncStateMachineAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AsyncStateMachineAttribute : System.Runtime.CompilerServices.StateMachineAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit AsyncStateMachineAttribute extends System.Runtime.CompilerServices.StateMachineAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.AsyncStateMachineAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.CompilerServices.StateMachineAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドがいずれかでマークされているかどうかを示す、 [Async](~/docs/visual-basic/language-reference/modifiers/async.md)または[async](~/docs/csharp/language-reference/keywords/async.md)修飾子です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用することはできません、`AsyncStateMachine`属性をコード内のメソッドにします。 Async 修飾子を持つメソッドの場合、コンパイラが適用されます、`AsyncStateMachine`コンパイラは、IL での属性です。  
+  
+ メソッドが、(*MethodName*) が、非同期または async 修飾子、コンパイラは、ステート マシンの構造体を含む IL を出力します。 この構造体には、メソッドのコードが含まれています。 IL がスタブ メソッドにはも含まれている (*MethodName*) に、ステート マシンを呼び出します。 コンパイラは追加、`AsyncStateMachine`ツールは、対応するステート マシンを識別できるように、スタブ メソッドに属性します。 生成された IL の詳細については、将来のコンパイラのリリースで変更可能性があります。  
+  
+ 非同期機能については、次を参照してください。 [Async および Await を使用した非同期プログラミング](http://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)です。  
+  
+   
+  
+## Examples  
+ 次の例に示すようにメソッドをマークするかどうかを判断できます[Async](~/docs/visual-basic/language-reference/modifiers/async.md)または[async](~/docs/csharp/language-reference/keywords/async.md)修飾子です。 例では、`IsAsyncMethod`は、次の手順を実行します。  
+  
+-   取得、<xref:System.Reflection.MethodInfo>メソッド名を使用してオブジェクト<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>です。  
+  
+-   取得、<xref:System.Type>オブジェクトを使用して属性を[GetType 演算子](~/docs/visual-basic/language-reference/operators/gettype-operator.md)または[typeof](~/docs/csharp/language-reference/keywords/typeof.md)です。  
+  
+-   メソッドと属性の型の属性オブジェクトで使用して取得`MethodInfo.GetCustomAttribute`です。 場合`GetCustomAttribute`返します`Nothing`(Visual Basic) または`null`(c#)、メソッドが含まれていない属性にはです。  
+  
+ [!code-csharp[Runtime.CompilerServices.AsyncStateMachineAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/runtime.compilerservices.asyncstatemachineattribute/cs/program.cs#1)]
+ [!code-vb[Runtime.CompilerServices.AsyncStateMachineAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/runtime.compilerservices.asyncstatemachineattribute/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncStateMachineAttribute (Type stateMachineType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type stateMachineType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.AsyncStateMachineAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stateMachineType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="stateMachineType">ステート マシン メソッドの実装に使用される基になるステート マシン型の型のオブジェクト。</param>
+        <summary><see cref="T:System.Runtime.CompilerServices.AsyncStateMachineAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

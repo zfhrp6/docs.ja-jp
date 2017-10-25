@@ -1,0 +1,211 @@
+<Type Name="DesignerAction" FullName="System.Workflow.ComponentModel.Design.DesignerAction">
+  <TypeSignature Language="C#" Value="public sealed class DesignerAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignerAction extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.DesignerAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイス上のアクティビティ デザイナーに対するアクションを、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> に関連付けます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ デザイナー アクションとは、ワークフロー デザイン サーフェイス上のデザイナー グリフをアクティブにすると実行されるユーザー アクションのことです。 <xref:System.Workflow.ComponentModel.Design.DesignerAction> クラスは、アクションを示すために使用されます。 装飾サービスがタスク アイテムを追加するときも、<xref:System.Workflow.ComponentModel.Design.DesignerAction> クラスが使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerAction (System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, int actionId, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, int32 actionId, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerAction.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="actionId" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activityDesigner">デザイナー アクションの対象の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="actionId"><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> の識別子を表す整数値。</param>
+        <param name="text">デザイナー アクションに関連付けられているテキストを表す文字列。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" />、整数、および文字列を使用して、<see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityDesigner" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> に null 参照 (<see langword="Nothing" />) が含まれているか、その長さが 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerAction (System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, int actionId, string text, System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner activityDesigner, int32 actionId, string text, class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerAction.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Int32,System.String,System.Drawing.Image)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="actionId" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="activityDesigner">デザイナー アクションが表示される <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="actionId"><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> の識別子を表す整数値。</param>
+        <param name="text">デザイナー アクションに関連付けられているテキストを表す文字列。</param>
+        <param name="image">デザイナー アクションに関連付けられる <see cref="T:System.Drawing.Image" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" />、整数、文字列、および <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> を使用して、<see cref="T:System.Drawing.Image" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityDesigner" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> に null 参照 (<see langword="Nothing" />) が含まれているか、その長さが 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionId">
+      <MemberSignature Language="C#" Value="public int ActionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ActionId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerAction.ActionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー アクションの識別子を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> オブジェクトの識別子を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image Image { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image Image" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerAction.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー アクションに関連付けられたイメージを取得します。</summary>
+        <value><see cref="T:System.Drawing.Image" /> に関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.DesignerAction.Invoke" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデザイナー アクションに関連付けられたアクティビティ デザイナーの <see cref="M:System.Workflow.ComponentModel.Design.ActivityDesigner.OnExecuteDesignerAction(System.Workflow.ComponentModel.Design.DesignerAction)" /> メソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.OnExecuteDesignerAction%2A> メソッドは、アクティビティ デザイナーによってワークフロー デザイン サーフェイスに表示される検証エラーをクリックしたときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerAction.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> が関連付けられたプロパティの名前を表します。</summary>
+        <value>プロパティの名前を格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ エディターでは、<xref:System.Workflow.ComponentModel.Design.DesignerAction.PropertyName%2A> の <xref:System.Workflow.ComponentModel.Design.DesignerAction> に対応するプロパティには、関連付けられた <xref:System.Workflow.ComponentModel.Design.DesignerAction> が存在することを知らせるビジュアル キューがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerAction.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー アクションに関連付けられたテキストを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> に関連付けられたテキストを表す文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary UserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.DesignerAction.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー アクションに関連付けられたユーザー データのディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" /> に関連付けられたユーザー データを表す <see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

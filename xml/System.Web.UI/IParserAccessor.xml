@@ -1,0 +1,46 @@
+<Type Name="IParserAccessor" FullName="System.Web.UI.IParserAccessor">
+  <TypeSignature Language="C#" Value="public interface IParserAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IParserAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IParserAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロールは、HTML または XML のいずれかの要素が解析される際に識別するために実装する必要がありますメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素が解析されると、このインターフェイスを実装する、サーバー コントロールの子コントロールとして認識されます。 これらの要素は、オブジェクトに変換されます。 このインターフェイスを実装するときに作成するコントロールは、要素が解析されたことが通知されましたが 1 回にどのような処理が行われますを定義します。  
+  
+ <xref:System.Web.UI.Control>クラスは、このインターフェイスを実装して、そのクラスを拡張し、その実装をオーバーライドしやすく、<xref:System.Web.UI.IParserAccessor.AddParsedSubObject%2A>にこのインターフェイスを自分で実装よりもメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="public void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IParserAccessor.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />を解析されました。</param>
+        <summary>ASP.NET サーバー コントロールに実装すると、XML または HTML 要素が解析されたことをサーバー コントロールに通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

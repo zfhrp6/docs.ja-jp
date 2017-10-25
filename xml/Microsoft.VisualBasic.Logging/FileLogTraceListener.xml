@@ -1,0 +1,1064 @@
+<Type Name="FileLogTraceListener" FullName="Microsoft.VisualBasic.Logging.FileLogTraceListener">
+  <TypeSignature Language="C#" Value="public class FileLogTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileLogTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ログ出力をファイルに指示する単純なリスナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスには、必要に応じて、毎日ごとまたはアプリケーションごとに、ログ ファイルをアーカイブする自動メンテナンス機能が用意されています。 この自動アーカイブ機能により、開発者および管理者の保守作業の負担を軽減できます。  
+  
+ インスタンス<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>に追加することができます、<xref:System.Diagnostics.Debug.Listeners%2A?displayProperty=nameWithType>または<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>をテキスト ファイルにログ記録からの出力にリダイレクトするコレクション。 このクラスのインスタンスを追加することも`My.Application.Log`または`My.Log`(用 Web アプリケーション) で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーションです。 詳細については、次を参照してください[チュートリアル: 変更場所 My.Application.Log 書き込みます情報。](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)`.`  
+  
+ このクラスの主な機能は次のとおりです。  
+  
+1.  *アーカイブ機能*します。 このクラスで生成されるログ ファイルは、基本名と、ログの連続するバージョンのログ ファイルを区別するための番号と共に、日付に従ってという名前です。 新しいログ ファイルは、必要に応じてごとに作成されます。  
+  
+     ファイル名の明示的な形式は`baseName`[-`dateStamp`] [-`version`] .log、場所。  
+  
+    -   `baseName`要素は、基本的なログ名で指定された、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A>プロパティです。  
+  
+    -   `dateStamp`ときに表示され、一部が、形式"YYYY MM DD"、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>は<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>または<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>です。  
+  
+    -   同じ 2 つ以上のログ ファイルが必要な場合は`baseName`と`dateStamp`、`version`パート、正の値`Integer`ファイル名に追加されます。  
+  
+2.  *複数のクラス インスタンス*です。 インスタンスの場合、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスが使用されているファイルに書き込みます。  
+  
+    -   クラスは、別のインスタンスで使用されている場合にファイルを共有、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>同じプロセス内のクラスです。  
+  
+    -   クラスでは、ファイルが別のプロセスによって使用されている場合は、[次へ] の使用可能な名前を使用して、新しいログ ファイルを作成します。  
+  
+3.  *スレッド セーフ*です。 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスはスレッド セーフであります。 これにより、安全なメッセージ ログに書き込む、複数のスレッドからロックを使用せずにできます。  
+  
+ **ログ ファイルの場所**  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>プロパティが受け取る、<xref:Microsoft.VisualBasic.Logging.LogFileLocation>にログ ファイルを書き込むための一般的なディレクトリのいずれかを指定する列挙体です。  
+  
+-   ログに書き込まれる別の場所に、設定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>プロパティをその場所にします。  
+  
+ **ログ ファイル名**  
+  
+-   ログ ファイルのベース名が指定された、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A>プロパティです。  
+  
+-   現在のログ ファイル名を読み取ることができます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>プロパティです。 これについては、ファイル システムにその他のいくつかのプロパティと、ログの現在の状態から派生します。  
+  
+ **ログのメンテナンス**  
+  
+-   新しいログ ファイルを作成するための最低限の頻度によって決まります、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>プロパティです。 値が<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>または<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>、日または週ごとに少なくとも 1 回、新しいログ ファイルが作成され、日付スタンプに組み込まれます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>名。  
+  
+-   によって決まりますが、最大サイズ (バイト単位)、ログ ファイルの<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>プロパティです。 ログに書き込まれた追加のメッセージは破棄され、に応じてログ ファイルのサイズがこのサイズを超える場合、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティ、例外がスローされます。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace%2A>プロパティは、どの程度空き容量 (バイト単位) を使用する必要がありますを決定します。 こうことを確認、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスはすべての利用可能なディスク領域を消費していません。 使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>があるときにログの動作を指定するプロパティに書き込むより小さい<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace%2A>空きバイト数。  
+  
+ **ログ ファイルの出力設定**  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.AutoFlush%2A>かどうか、基になるストリームをフラッシュする自動的にそれぞれの書き込み後に、ログ ファイルにプロパティを指定します。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Append%2A>プロパティでは、許可された場合、メッセージを現在のログ ファイルに追加したり、新しいログ ファイルに書き込むかどうかを指定します。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティ ログ メッセージ内のフィールドの区切り記号として使用する文字列を指定します。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Encoding%2A>プロパティは、新しいログ ファイルを作成するときに使用するエンコーディングを指定します。  
+  
+ **ログ ファイルの出力**  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A>と<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent%2A>メソッドは、ログ ファイルにメッセージを書き込みます。 これらのメソッドを確認して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>と共に、新しいログを作成するかどうかを判断する同じ基本名を持つ既存のログのプロパティです。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush%2A>メソッドは、ログ ファイルに出力バッファーに現在あるメッセージをフラッシュします。  
+  
+-   <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close%2A>メソッドは、他のプロセスで使用できるように、ログ ファイルを閉じます。  
+  
+ **出力を有効にします。**  
+  
+ トレースまたはトレース リスナーを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 C# 以外のコンパイラを使用する場合または[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`するを追加したり、コードをコンパイルするときに、コンパイラのコマンドラインにフラグ`#define DEBUG`ファイルの先頭にします。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+ リスナーのレベルを設定するには、アプリケーションの構成ファイルを編集します。 このファイル内でことができます、リスナーを追加、その型およびパラメーターの設定、リスナーの削除またはオフにするアプリケーションで設定したすべてのリスナーです。 構成ファイルは、次の例のようにフォーマットされている必要があります。  
+  
+ この例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+```  
+<configuration>  
+    <system.diagnostics>  
+        <sharedListeners>  
+            <add name="FileLog"  
+                type="Microsoft.VisualBasic.Logging.FileLogTraceListener,   
+                      Microsoft.VisualBasic, Version=8.0.0.0,   
+                      Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a,   
+                      processorArchitecture=MSIL"   
+                initializeData="FileLogWriter"/>  
+        </sharedListeners>  
+    </system.diagnostics>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLogTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />既定の名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのインスタンス名を設定、 <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> FileLogTraceListener するクラス。  
+  
+ 使って、インスタンス名にアクセスすることができます、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLogTraceListener (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+          <see langword="String" />。 インスタンスのオブジェクトの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />指定された名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのインスタンス名を設定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスを`name`です。  
+  
+ 考えるインスタンス名にアクセスすることができます、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public bool Append { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Append" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Append" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルに出力を追加または新しいファイルに書き込むかどうかを判断します。</summary>
+        <value>
+          <see langword="Boolean" />、で<see langword="True" />、出力が、現在のファイルに追加されることを示すと<see langword="False" />新しいファイルに出力を書き込むことを示すです。 このプロパティは、の既定の設定<see langword="True" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Append%2A>プロパティは`False`、新しいファイルに出力が書き込まれます。 このプロパティが`True`、しない限り、現在のファイルに出力が追加されます。  
+  
+-   出力ファイルは、別のプロセスによってロックされています。 このような状況に組み込まれているバージョン番号を持つ、新しいログ ファイルを作成、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>名。  
+  
+-   現在のファイル サイズがどのようなより大きい、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>プロパティを使用します。 この場合、追加のメッセージは破棄され、に応じて、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティ、例外がスローされます。  
+  
+-   既存のファイル名がで指定されたログの作成のスケジュールに従って期限切れ、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>プロパティです。 このような状況で、新しいログ ファイルが作成され、日付スタンプに組み込まれます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>名。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFlush">
+      <MemberSignature Language="C#" Value="public bool AutoFlush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoFlush" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.AutoFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ ファイルのストリームへの書き込みが、バッファーをフラッシュするかどうかを示します。</summary>
+        <value>
+          <see langword="Boolean" />、で<see langword="True" />; すべての書き込み後にストリームがフラッシュされることを示すそれ以外の場合、ログ エントリがバッファーされより効率的に書き込まれます。 このプロパティは、の既定の設定<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `False`の設定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.AutoFlush%2A>プロパティは、ログ ファイルに同時に複数のメッセージを記述する方が効率的になっているため、ほとんどのアプリケーションのパフォーマンスを最高を提供します。 使用することができます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush%2A>ログ ファイルに現在あるメッセージをフラッシュするメソッドのバッファーを出力します。 使用することも、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close%2A>メソッドで、暗黙的に、ログ ファイルを閉じる前に、ストリームをフラッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseFileName">
+      <MemberSignature Language="C#" Value="public string BaseFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログ ファイルの完全名の作成に使用されるログ ファイルのベース名を設定します。</summary>
+        <value>
+          <see langword="String" />。 ログ ファイルの基本名です。 既定では、アプリケーションの製品名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A>プロパティをログ ファイルのベース名を決定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスに書き込みます。  
+  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>プロパティの現在のログ ファイルの完全名を示します。 ログの異なるバージョンを区別するためにログのパス、基本名、日付、および数値に基づいて生成されます。 新しいログ ファイルは、必要に応じてごとに作成されます。  
+  
+ 完全なログ ファイル名の明示的な形式は`path` \\ `baseName`[-`dateStamp`] [-`iteration`] .log、場所  
+  
+-   `path`部分はによって決定されます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>プロパティと、そのプロパティの値に設定されている場合<xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>プロパティです。  
+  
+-   `baseName`要素は、基本的なログ名で指定された、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A>プロパティです。  
+  
+-   `dateStamp`ときに表示され、一部が、形式"YYYY MM DD"、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>に設定されている<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>または<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>です。  
+  
+-   同じ 2 つ以上のログ ファイルが必要な場合は`baseName`と`dateStamp`、`iteration`パート、正の値`Integer`ファイル名に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のログ ファイルの基になるストリームを閉じ、現在のストリームに関連付けられているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close%2A>メソッドを明示的にため、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスは、基になるストリームを管理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomLocation">
+      <MemberSignature Language="C#" Value="public string CustomLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログ ファイルのディレクトリを設定するときに、<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />プロパティに設定されている<see cref="F:Microsoft.VisualBasic.Logging.LogFileLocation.Custom" />です。</summary>
+        <value>
+          <see langword="String" />、これは、ログ ファイル ディレクトリの名前。 このプロパティの既定の設定は、アプリケーション データ用のユーザーのディレクトリです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>プロパティが設定されており、また、設定、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>プロパティを<xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>です。  
+  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>プロパティ ディレクトリは解決できない場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delimiter">
+      <MemberSignature Language="C#" Value="public string Delimiter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Delimiter" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログ メッセージ内のフィールドを区切るために使用する区切り記号を設定します。</summary>
+        <value>
+          <see langword="String" />、これは、ログ メッセージのフィールドの区切り記号。 このプロパティの既定の設定は、タブ文字です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティでは、既定の区切り記号を変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiskSpaceExhaustedBehavior">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption DiskSpaceExhaustedBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption DiskSpaceExhaustedBehavior" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ ファイルに書き込むときの対処方法を決定し、小さいディスクの空き領域が使用可能なで指定されて、<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />プロパティです。</summary>
+        <value>
+          <see cref="T:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption" />。 ファイルし、小さいディスクの空き領域が使用可能なで指定されて、ログに書き込むしようとするときの対処方法を決定、<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />プロパティ、またはログ ファイルのサイズがどのようなより大きい場合、<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize" />プロパティを使用します。 既定値は <see cref="F:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティに設定されている<xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages>、十分な予約済みのディスク領域がない場合、サイレント モードで、ログ メッセージは破棄されます。 これは、既定の動作であり、ディスクが十分な空き領域を取得する場合に失敗したことによる単純なアプリケーションが妨げられるため。  
+  
+ 堅牢なアプリケーションを設定できます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティを<xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.ThrowException>、し、追加`Try...Catch`ブロックですべてのコードをログに書き込みますを囲みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="True" />マネージ コードとアンマネージの両方のリソースを解放します。<see langword="False" />アンマネージ リソースだけを解放します。</param>
+        <summary>基になるストリームを閉じ、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `disposing` パラメーターが `True` の場合、このメソッドは、この <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。  
+  
+ このメソッドは、 <see langword="Dispose" /> 、基底クラスのメソッド<see langword="Dispose" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しいログ ファイルを作成するときに使用するエンコーディングを設定します。</summary>
+        <value>
+          <see cref="T:System.Text.Encoding" />、新しいログ ファイル作成するときに使用するエンコードされます。 このプロパティの既定値は <see cref="T:System.Text.UTF8Encoding" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたエンコーディングの代わりにそのファイルのエンコーディングを使用する既存のログ ファイルにテキストを追加するときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Encoding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のログ ファイルに書き込む基になるストリームをフラッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush%2A>にバッファリングされているすべてのデータを現在のログ ファイルに書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullLogFileName">
+      <MemberSignature Language="C#" Value="public string FullLogFileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullLogFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のログ ファイルの完全名を取得します。</summary>
+        <value>
+          <see langword="String" />、名前は、現在のログ ファイルの完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>プロパティの現在のログ ファイルの完全名を示します。 ログの異なるバージョンを区別するためにログのパス、基本名、日付、および数値に基づいて生成されます。 新しいログ ファイルは、必要に応じてごとに作成されます。  
+  
+ ログ ファイルの完全名の明示的な形式は`path` \\ `baseName`[-`dateStamp`] [-`iteration`] .log、場所。  
+  
+-   `path`部分はによって決定されます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>プロパティと、そのプロパティの値に設定されている場合<xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>プロパティです。  
+  
+-   `baseName`要素は、基本的なログ名で指定された、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A>プロパティです。  
+  
+-   `dateStamp`ときに表示され、一部が形式 YYYY MM DD、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>は<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>または<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>です。  
+  
+-   同じ 2 つ以上のログ ファイルが必要な場合は`baseName`と`dateStamp`、`iteration`パート、正の値`Integer`ファイル名に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSupportedAttributes">
+      <MemberSignature Language="C#" Value="protected override string[] GetSupportedAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string[] GetSupportedAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.GetSupportedAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トレース リスナーによってサポートされるカスタムの XML 構成属性を取得します。</summary>
+        <returns>
+          <see langword="String" />このリスナーによって認識される XML 構成属性を含む配列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム属性、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>のインスタンスの動作を制御するための XML 構成ファイルで使用できます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスです。 他の属性を使用して、構成例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeHostName">
+      <MemberSignature Language="C#" Value="public bool IncludeHostName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeHostName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力のログ記録のマシンのホスト名を含める必要があるかどうかを示します。</summary>
+        <value>
+          <see langword="Boolean" />。 使用して<see langword="True" />ホストの識別子が含まれる場合はそれ以外の場合使用<see langword="False" />です。 既定値は <see langword="False" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動作を構成するプロパティを使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A>と<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.LogFileLocation Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.LogFileLocation Location" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログ ファイルの場所を設定します。</summary>
+        <value>
+          <see cref="T:Microsoft.VisualBasic.Logging.LogFileLocation" />、これは、ログ ファイルの場所。 既定値は <see cref="F:Microsoft.VisualBasic.Logging.LogFileLocation.LocalUserApplicationDirectory" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>によって決定されます、定義済みパスのいずれかにログのパスを設定するプロパティ、<xref:Microsoft.VisualBasic.Logging.LogFileLocation>列挙値。  
+  
+|**場所の値**|**Path**|  
+|------------------------|--------------|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.CommonApplicationDirectory>|形式で、すべてのユーザーが共有するアプリケーション データのパス。<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> 一般的な値`BasePath`は。<br /><br /> C:\Documents and settings \all \all データ<br /><br /> 値`CompanyName`、 `ProductName`、および`ProductVersion`アセンブリから取得します。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.ExecutableDirectory>|アプリケーションを開始した実行可能ファイルのパス。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.LocalUserApplicationDirectory>|形式を持つ、ユーザーのアプリケーション データのパス。<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> 一般的な値`BasePath`は。<br /><br /> C:\Documents and Settings\\`username`\Application Data<br /><br /> 値`CompanyName`、 `ProductName`、および`ProductVersion`アセンブリのフォームを取得します。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.TempDirectory>|現在のシステムの一時フォルダーのパス。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>|文字列を指定して場合<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>いない空の場合、し、パスとして使用。 それ以外の場合、ユーザーのアプリケーション データのパスを使用します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogFileCreationSchedule">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption LogFileCreationSchedule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption LogFileCreationSchedule" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ ファイルの名前に含める日付を決定します。</summary>
+        <value>
+          <see cref="T:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption" />。 これは、ログ ファイル名に追加する日付を示します。 既定値は <see cref="F:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかに割り当てます、<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>列挙の値を<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A>プロパティをログ ファイルの名前に含める日付を指定します。  
+  
+ 日付の形式は、YYYY-MM-DD です。 ログ ファイル名の形式の詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>です。  
+  
+|**LogFileCreationSchedule 値**|**ログ ファイル名を日付します。**|  
+|---------------------------------------|-----------------------------------|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>|ログ ファイルの名前で、現在の日付が含まれます。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.None>|ログ ファイル名、日付を含めないでください。|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>|ログ ファイルの名前に、現在の週の最初の日を含めます。<br /><br /> 週開始日は土曜日です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxFileSize">
+      <MemberSignature Language="C#" Value="public long MaxFileSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxFileSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログ ファイルの最大許容サイズをバイト単位で設定します。</summary>
+        <value>
+          <see langword="Long" />。 これは、ログのファイルの最大許容サイズ、(バイト単位) です。 既定値は、5000000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるログ ファイルは大きくなりすぎないかどうかを確認するには、このプロパティを使用します。  
+  
+ 場合は、ログ ファイルのサイズ (バイト単位) が、このプロパティの値よりも大きい場合、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>の値に応じて、メッセージは破棄され、障害がサイレント モードまたは例外をログにメッセージを書き込むクラス試行がスローされます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティです。 それ以外の場合、メッセージを記述、ログに空きディスク領域 (バイト単位) の量がある場合より小さい<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティに設定すると、値 1000 より小さい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReserveDiskSpace">
+      <MemberSignature Language="C#" Value="public long ReserveDiskSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ReserveDiskSpace" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、空きディスク領域の量 (バイト単位) で必要なメッセージをログ ファイルに書き込む前にします。</summary>
+        <value>
+          <see langword="Long" />。 これは、必要な空きディスク領域の量です。 既定値は 10000000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるログ ファイルに完全に収まらないディスクかどうかを確認するには、このプロパティを使用します。  
+  
+ 空きディスク容量 (バイト単位) の領域の場合は、このプロパティの値よりも小さい、ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>の値に応じて、メッセージは破棄され、障害がサイレント モードまたは例外をログにメッセージを書き込むクラス試行がスローされます、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A>プロパティです。 それ以外の場合、メッセージがログに書き込まれます、ログ ファイル サイズ (バイト単位) がより大きい場合<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを 0 より小さい値に設定するとします。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TraceData">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>トレース出力ファイルにデータを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メンバーによってこれらのメソッドが呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>を出力するトレース データを書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">このメソッドを呼び出したトレース ソースの名前です。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 列挙値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">出力するトレース データ。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法では:  
+  
+1.  出力のデータとコンテキスト情報を書式設定します。  
+  
+2.  必要な場合は、新しいログ ファイルを作成します。  
+  
+3.  ログ ファイルに情報を書き込みます。  
+  
+ 新しいログ ファイルを作成する方法の詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>です。  
+  
+ 次の表では、出力フィールドを出現順に一覧表示します。 フィールドは文字列で区切られますを<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティを指定すると、および行終端記号が続きます。  
+  
+|**フィールド**|**出力条件**|**説明**|  
+|---------------|--------------------------|---------------------|  
+|`source`|Always|`name` の値。|  
+|`severity`|Always|列挙値の名前`eventType`です。|  
+|`id`|Always|`id` の文字列形式。|  
+|`message`|Always|`data` の文字列形式。|  
+|`callStack`|ときに、<xref:System.Diagnostics.TraceOptions.Callstack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.Callstack%2A>プロパティ`eventCache`です。|  
+|`CorrelationID`|ときに、<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`DateTime`|ときに、<xref:System.Diagnostics.TraceOptions.DateTime>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.DateTime%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ProcessID`|ときに、<xref:System.Diagnostics.TraceOptions.ProcessId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.ProcessId%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ThreadID`|ときに、<xref:System.Diagnostics.TraceOptions.ThreadId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`Timestamp`|ときに、<xref:System.Diagnostics.TraceOptions.Timestamp>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.Timestamp%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`HostName`|ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A>プロパティは`True`します。|コンピューターの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">このメソッドを呼び出したトレース ソースの名前。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 列挙値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">データとして出力するオブジェクトの配列。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報を出力ファイルまたはストリームの配列に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法では:  
+  
+1.  出力のデータとコンテキスト情報を書式設定します。  
+  
+2.  必要に応じて、新しいログ ファイルを作成します。  
+  
+3.  ログ ファイルに情報を書き込みます。  
+  
+ 新しいログ ファイルを作成する方法の詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>です。  
+  
+ 次の表では、出力フィールドを出現順に一覧表示します。 フィールドは文字列で区切られますを<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティを指定すると、および行終端記号が続きます。  
+  
+|**フィールド**|**出力条件**|**説明**|  
+|---------------|--------------------------|---------------------|  
+|`source`|Always|`name` の値。|  
+|`severity`|Always|列挙値の名前`eventType`です。|  
+|`id`|Always|`id` の文字列形式。|  
+|`message`|Always|内の各要素の文字列形式から成る文字列`data`各区切って<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>です。|  
+|`callStack`|ときに、<xref:System.Diagnostics.TraceOptions.Callstack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.Callstack%2A>プロパティ`eventCache`です。|  
+|`CorrelationID`|ときに、<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`DateTime`|ときに、<xref:System.Diagnostics.TraceOptions.DateTime>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.DateTime%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ProcessID`|ときに、<xref:System.Diagnostics.TraceOptions.ProcessId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.ProcessId%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ThreadID`|ときに、<xref:System.Diagnostics.TraceOptions.ThreadId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`Timestamp`|ときに、<xref:System.Diagnostics.TraceOptions.Timestamp>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.Timestamp%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`HostName`|ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A>プロパティは`True`します。|コンピューターの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TraceEvent">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>出力ファイルまたはストリームにトレースとイベントの情報を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メンバーによってこれらのメソッドが呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>を出力するトレース データを書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">このメソッドを呼び出したトレース ソースの名前です。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 列挙値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>トレース情報、メッセージ、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法では:  
+  
+1.  出力のデータとコンテキスト情報を書式設定します。  
+  
+2.  必要な場合は、新しいログ ファイルを作成します。  
+  
+3.  ログ ファイルに情報を書き込みます。  
+  
+ 新しいログ ファイルを作成する方法の詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>です。  
+  
+ 次の表は、表示される順序で出力フィールドを一覧表示します。 フィールドは文字列で区切られますを<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティを指定すると、および行終端記号が続きます。  
+  
+|**フィールド**|**出力条件**|**説明**|  
+|---------------|--------------------------|---------------------|  
+|`source`|常に。|`name` の値。|  
+|`severity`|常に。|列挙値の名前`eventType`です。|  
+|`id`|常に。|`id` の文字列形式。|  
+|`message`|常に。|`message` の値。|  
+|`callStack`|ときに、<xref:System.Diagnostics.TraceOptions.Callstack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.Callstack%2A>プロパティ`eventCache`です。|  
+|`CorrelationID`|ときに、<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`DateTime`|ときに、<xref:System.Diagnostics.TraceOptions.DateTime>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.DateTime%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ProcessID`|ときに、<xref:System.Diagnostics.TraceOptions.ProcessId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.ProcessId%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ThreadID`|ときに、<xref:System.Diagnostics.TraceOptions.ThreadId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`Timestamp`|ときに、<xref:System.Diagnostics.TraceOptions.Timestamp>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.Timestamp%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`HostName`|ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A>プロパティは`True`します。|コンピューターの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">このメソッドを呼び出したトレース ソースの名前です。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 列挙値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する、0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ <see langword="Object" /> 配列。</param>
+        <summary>トレース情報、書式付き配列、オブジェクト、およびイベント情報を出力ファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法では:  
+  
+1.  出力のデータとコンテキスト情報を書式設定します。  
+  
+2.  新しい新しいログ ファイルでは、必要に応じて作成します。  
+  
+3.  ログ ファイルに情報を書き込みます。  
+  
+ 新しいログ ファイルを作成する方法の詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A>です。  
+  
+ 次の表は、表示される順序で出力フィールドを一覧表示します。 フィールドは文字列で区切られますを<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>プロパティを指定し、続けて行終端記号です。  
+  
+|**フィールド**|**出力条件**|**説明**|  
+|---------------|--------------------------|---------------------|  
+|`source`|Always|`name` の値。|  
+|`severity`|Always|列挙値の名前`eventType`です。|  
+|`id`|Always|`id` の文字列形式。|  
+|`message`|Always|内のデータ`args`でフォーマットされている、`format`文字列および文字列変換にインバリアント カルチャを使用します。|  
+|`callStack`|ときに、<xref:System.Diagnostics.TraceOptions.Callstack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.Callstack%2A>プロパティ`eventCache`です。|  
+|`CorrelationID`|ときに、<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`DateTime`|ときに、<xref:System.Diagnostics.TraceOptions.DateTime>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.DateTime%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ProcessID`|ときに、<xref:System.Diagnostics.TraceOptions.ProcessId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.ProcessId%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`ThreadID`|ときに、<xref:System.Diagnostics.TraceOptions.ThreadId>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache.ThreadId%2A>プロパティ`eventCache`です。|  
+|`Timestamp`|ときに、<xref:System.Diagnostics.TraceOptions.Timestamp>フラグが設定されて、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|文字列形式を、<xref:System.Diagnostics.TraceEventCache.Timestamp%2A>プロパティ`eventCache`です。 文字列変換、インバリアント カルチャが使用されます。|  
+|`HostName`|ときに、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A>プロパティは`True`します。|コンピューターの名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">
+          <see langword="String" />。 記述するカスタム メッセージです。</param>
+        <summary>追加のコンテキスト情報がないまま、ディスクにもそのままメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Write%2A>メソッドは、ログ ファイルは、追加のコンテキスト情報なしに、特定のメッセージを書き込みます。  
+  
+ いずれかを使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A>ログの出力にコンテキスト情報を含める方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">
+          <see langword="String" />。 記述するカスタム メッセージです。</param>
+        <summary>現在の行終端記号、追加のコンテキスト情報なしの後に、ディスクにもそのままメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.WriteLine%2A>メソッドは、ログ ファイルは、追加のコンテキスト情報なしに、特定のメッセージを書き込みます。  
+  
+ いずれかを使用して、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A>ログの出力にコンテキスト情報を含める方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

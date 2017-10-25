@@ -1,0 +1,246 @@
+<Type Name="DataGridView+HitTestInfo" FullName="System.Windows.Forms.DataGridView+HitTestInfo">
+  <TypeSignature Language="C#" Value="public sealed class DataGridView.HitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed beforefieldinit DataGridView/HitTestInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridView.HitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>詳細についてには、行と列のインデックスなどの特定の座標が含まれています、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.HitTest%2A>のメソッド、<xref:System.Windows.Forms.DataGridView>クラスを返します、<xref:System.Windows.Forms.DataGridView.HitTestInfo>です。 このメソッドを使用するにはのどの部分を決定する、<xref:System.Windows.Forms.DataGridView>コントロールは、指定した座標にあります。 たとえば、クリックされたセルやヘッダー セルまたはスクロール バーがクリックされたかどうかの行と列のインデックスを決定する をクリックして、マウスの座標を指定してこのメソッドを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、この型の使用を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>プロパティの参照トピックです。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/VB/form1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnIndex">
+      <MemberSignature Language="C#" Value="public int ColumnIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.HitTestInfo.ColumnIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の説明されている座標が含まれている列のインデックスを取得<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</summary>
+        <value>内の列のインデックス、<see cref="T:System.Windows.Forms.DataGridView" />現在によって記述された座標を格納している<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>プロパティの参照トピックです。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnX">
+      <MemberSignature Language="C#" Value="public int ColumnX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.HitTestInfo.ColumnX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の説明されている座標が含まれている列の先頭の x 座標を取得<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</summary>
+        <value>内の列の x 座標、<see cref="T:System.Windows.Forms.DataGridView" />現在によって記述された座標を格納している<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.HitTestInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />。</param>
+        <summary>指定した <see cref="T:System.Object" /> が現在の <see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" /> と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は、<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />の値、 <see cref="P:System.Windows.Forms.DataGridView.HitTestInfo.Type" />、 <see cref="P:System.Windows.Forms.DataGridView.HitTestInfo.RowIndex" />、および<see cref="P:System.Windows.Forms.DataGridView.HitTestInfo.ColumnIndex" />プロパティは、現在と同じ<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.HitTestInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nowhere">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.DataGridView.HitTestInfo Nowhere;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Forms.DataGridView/HitTestInfo Nowhere" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridView.HitTestInfo.Nowhere" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridView+HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポイントがセルまたはセルのヘッダーにないことを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.HitTest%2A>メソッドを返します。<xref:System.Windows.Forms.DataGridView.HitTestInfo.Nowhere>の空の領域に指定したポイントがある場合、<xref:System.Windows.Forms.DataGridView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.HitTestInfo.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の説明されている座標が含まれる行のインデックスを取得<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</summary>
+        <value>内の行のインデックス、<see cref="T:System.Windows.Forms.DataGridView" />現在によって記述された座標を格納している<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>プロパティの参照トピックです。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowY">
+      <MemberSignature Language="C#" Value="public int RowY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.HitTestInfo.RowY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の説明されている座標が含まれる行の上部の y 座標を取得<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</summary>
+        <value>内の行の y 座標、<see cref="T:System.Windows.Forms.DataGridView" />現在によって記述された座標を格納している<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridView.HitTestInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</summary>
+        <returns>表す文字列、<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.HitTestInfo.ToString%2A>メソッドの値を含む文字列を返します、 <xref:System.Windows.Forms.DataGridView.HitTestInfo.Type%2A>、 <xref:System.Windows.Forms.DataGridView.HitTestInfo.ColumnIndex%2A>、および<xref:System.Windows.Forms.DataGridView.HitTestInfo.RowIndex%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewHitTestType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewHitTestType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridView.HitTestInfo.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewHitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataGridViewHitTestType" />のどの部分を示す、<see cref="T:System.Windows.Forms.DataGridView" />現在によって説明されている座標<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />に属しています。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewHitTestType" />を現在の説明されている座標にあるコントロールの部分を示す値<see cref="T:System.Windows.Forms.DataGridView.HitTestInfo" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>プロパティの参照トピックです。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.GridViewAutoSize#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewAutoSize/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1144 @@
+<Type Name="Geometry" FullName="System.Windows.Media.Geometry">
+  <TypeSignature Language="C#" Value="public abstract class Geometry : System.Windows.Media.Animation.Animatable, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract Geometry extends System.Windows.Media.Animation.Animatable implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Geometry" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.GeometryConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Converters.GeometryValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この抽象基底クラスから派生するクラスは、幾何学図形を定義します。 <see cref="T:System.Windows.Media.Geometry" /> オブジェクトは、クリップ、ヒット テスト、2-D グラフィック データのレンダリングに使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="geometry-compared-to-shape"></a>図形と比較した geometry  
+ <xref:System.Windows.Shapes.Shape?displayProperty=nameWithType>クラスには、 <xref:System.Windows.Shapes.Shape.Fill%2A>、 <xref:System.Windows.Shapes.Shape.Stroke%2A>、およびその他のプロパティをレンダリング<xref:System.Windows.Media.Geometry>とその派生クラスが不足しています。 <xref:System.Windows.Shapes.Shape>クラスは、<xref:System.Windows.FrameworkElement>レイアウト システムに参加するため、その派生クラスをサポートする任意の要素の内容として使用できます<xref:System.Windows.UIElement>子。  
+  
+ <xref:System.Windows.Media.Geometry>クラス、その一方は単に、図形の形状を定義し、それ自体にレンダーできません。 そのわかりやすくするため、ため広範な用途があります。  
+  
+ **Freezable 機能:**から継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.Geometry>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.Geometry>オブジェクトを複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>このクラスは抽象クラスですはパブリックに拡張できません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Rect Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Geometry.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Rect" />境界ボックスの軸に沿ったを指定する、<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <value>境界ボックスの軸に沿った、<see cref="T:System.Windows.Media.Geometry" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは考慮されませんストロークによって追加された可能性のある領域。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Geometry" /> の変更可能な複製を作成し、オブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更可能な複製を作成、<see cref="T:System.Windows.Media.Geometry" />オブジェクト、オブジェクトの現在の値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.PathGeometry Combine (System.Windows.Media.Geometry geometry1, System.Windows.Media.Geometry geometry2, System.Windows.Media.GeometryCombineMode mode, System.Windows.Media.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.PathGeometry Combine(class System.Windows.Media.Geometry geometry1, class System.Windows.Media.Geometry geometry2, valuetype System.Windows.Media.GeometryCombineMode mode, class System.Windows.Media.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.Combine(System.Windows.Media.Geometry,System.Windows.Media.Geometry,System.Windows.Media.GeometryCombineMode,System.Windows.Media.Transform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry1" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="geometry2" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="mode" Type="System.Windows.Media.GeometryCombineMode" />
+        <Parameter Name="transform" Type="System.Windows.Media.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="geometry1">最初に結合するジオメトリ。</param>
+        <param name="geometry2">結合する 2 番目のジオメトリ。</param>
+        <param name="mode">ジオメトリを結合する方法を指定する列挙値の 1 つ。</param>
+        <param name="transform">結合のジオメトリに適用する変換または<see langword="null" />です。</param>
+        <summary>指定された 2 つのジオメトリを組み合わせた<see cref="T:System.Windows.Media.GeometryCombineMode" />し、結果の形状を指定した変換を適用します。</summary>
+        <returns>結合したジオメトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定値の許容範囲の要素を使用して (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) のジオメトリを結合するときにします。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.Combine%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.Combine%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ 使用する場合は、慎重に考慮を関係している必要があります<xref:System.Windows.Media.Geometry.Combine%2A>に使用する非常に CPU 負荷の高い共用体を実行します。 ほとんどの場合、<xref:System.Windows.Media.GeometryGroup>または<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>にも適しています。  
+  
+ 使用して<xref:System.Windows.Media.Geometry.Combine%2A>場合にのみ以下のいずれか。  
+  
+-   幾何学模様の操作は、共用体ではありません。  
+  
+-   ジオメトリのいずれか、<xref:System.Windows.Media.FillRule>の値<xref:System.Windows.Media.FillRule.EvenOdd>、ジオメトリは自己交差して (つまり、<xref:System.Windows.Media.FillRule>実際には重要です)。  
+  
+-   時間は、問題になりませんが、領域が (インスタンスの場合は、geometry は 1 度作成して、その後、キャッシュ)。 通常、<xref:System.Windows.Media.Geometry.Combine%2A>の出力は<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>します。  
+  
+-   結果の形状を描画またはパス アニメーションで使用されると<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>目的のアウトラインは提供されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.PathGeometry Combine (System.Windows.Media.Geometry geometry1, System.Windows.Media.Geometry geometry2, System.Windows.Media.GeometryCombineMode mode, System.Windows.Media.Transform transform, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.PathGeometry Combine(class System.Windows.Media.Geometry geometry1, class System.Windows.Media.Geometry geometry2, valuetype System.Windows.Media.GeometryCombineMode mode, class System.Windows.Media.Transform transform, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.Combine(System.Windows.Media.Geometry,System.Windows.Media.Geometry,System.Windows.Media.GeometryCombineMode,System.Windows.Media.Transform,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry1" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="geometry2" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="mode" Type="System.Windows.Media.GeometryCombineMode" />
+        <Parameter Name="transform" Type="System.Windows.Media.Transform" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="geometry1">最初に結合するジオメトリ。</param>
+        <param name="geometry2">結合する 2 番目のジオメトリ。</param>
+        <param name="mode">ジオメトリを結合する方法を指定する列挙値の 1 つ。</param>
+        <param name="transform">結合のジオメトリに適用する変換または<see langword="null" />です。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>使用して、指定した 2 つのジオメトリを組み合わせた<see cref="T:System.Windows.Media.GeometryCombineMode" />と許容範囲の要素、し、結果の形状を指定した変換を適用します。</summary>
+        <returns>結合したジオメトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.Combine%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ 使用する場合は、慎重に考慮を関係している必要があります<xref:System.Windows.Media.Geometry.Combine%2A>に使用する非常に CPU 負荷の高い共用体を実行します。 ほとんどの場合、<xref:System.Windows.Media.GeometryGroup>または<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>にも適しています。  
+  
+ 使用して<xref:System.Windows.Media.Geometry.Combine%2A>場合にのみ以下のいずれか。  
+  
+-   幾何学模様の操作は、共用体ではありません。  
+  
+-   ジオメトリのいずれか、<xref:System.Windows.Media.FillRule>の値<xref:System.Windows.Media.FillRule.EvenOdd>、ジオメトリは自己交差して (つまり、<xref:System.Windows.Media.FillRule>実際には重要です)。  
+  
+-   時間は、問題になりませんが、領域が (インスタンスの場合は、geometry は 1 度作成して、その後、キャッシュ)。 通常、<xref:System.Windows.Media.Geometry.Combine%2A>の出力は<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>します。  
+  
+-   結果の形状を描画またはパス アニメーションで使用されると<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>目的のアウトラインは提供されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Geometry Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Geometry Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Geometry.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空のオブジェクトを取得します。</summary>
+        <value>空のジオメトリのオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContains">
+      <MemberSignature Language="C#" Value="public bool FillContains (System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FillContains(class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContains(System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <summary>かどうか、現在のジオメトリを完全に含む、指定したことを示します<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <returns>
+          <see langword="true" />現在のジオメトリは完全に含まれている場合<paramref name="geometry" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーの既定の余白 (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) は、現在のジオメトリが指定されたジオメトリを含むかどうかを決定するときに使用します。 エラーのマージン設定を指定するには、使用、<xref:System.Windows.Media.Geometry.FillContains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContains">
+      <MemberSignature Language="C#" Value="public bool FillContains (System.Windows.Point hitPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FillContains(valuetype System.Windows.Point hitPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContains(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitPoint" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="hitPoint">含有をテストする点です。</param>
+        <summary>指定されたジオメトリを含むかどうかを示します<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>
+          <see langword="true" />ジオメトリが含まれている場合<paramref name="hitPoint" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の許容範囲の要素 (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) は、ジオメトリが指定したポイントを含むかどうかを決定するときに使用します。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.FillContains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContains">
+      <MemberSignature Language="C#" Value="public bool FillContains (System.Windows.Media.Geometry geometry, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FillContains(class System.Windows.Media.Geometry geometry, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContains(System.Windows.Media.Geometry,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>現在のジオメトリを含む、指定したかどうかを示す<see cref="T:System.Windows.Media.Geometry" />エラーの指定された余白を指定します。</summary>
+        <returns>
+          <see langword="true" />現在のジオメトリに含まれる場合<paramref name="geometry" />、エラーの指定された余白を指定それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.FillContains%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContains">
+      <MemberSignature Language="C#" Value="public bool FillContains (System.Windows.Point hitPoint, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FillContains(valuetype System.Windows.Point hitPoint, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContains(System.Windows.Point,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitPoint" Type="System.Windows.Point" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="hitPoint">含有をテストする点です。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>指定されたジオメトリを含むかどうかを示します<see cref="T:System.Windows.Point" />エラーの指定された余白を指定します。</summary>
+        <returns>
+          <see langword="true" />ジオメトリが含まれている場合<paramref name="hitPoint" />、エラーの指定された余白を指定されたそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.FillContains%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContainsWithDetail">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.IntersectionDetail FillContainsWithDetail (System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.IntersectionDetail FillContainsWithDetail(class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContainsWithDetail(System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <summary>現在の geometry と指定した geometry の交差部分を記述する値を返します。</summary>
+        <returns>列挙値の 1 つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の許容範囲の要素 (によって定義された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) は、現在のジオメトリが指定されたジオメトリを含むかどうかを決定するときに使用します。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.FillContainsWithDetail%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.FillContainsWithDetail%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillContainsWithDetail">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.IntersectionDetail FillContainsWithDetail (System.Windows.Media.Geometry geometry, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.IntersectionDetail FillContainsWithDetail(class System.Windows.Media.Geometry geometry, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.FillContainsWithDetail(System.Windows.Media.Geometry,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>エラーの指定された余白を指定された現在の geometry と、指定した geometry の交差部分を記述する値を返します。</summary>
+        <returns>列挙値の 1 つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.FillContainsWithDetail%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArea">
+      <MemberSignature Language="C#" Value="public double GetArea ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetArea() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetArea" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>塗りつぶされた領域の領域を取得、<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+        <returns>ジオメトリの塗りつぶし領域の領域。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetArea%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArea">
+      <MemberSignature Language="C#" Value="public virtual double GetArea (double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 GetArea(float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetArea(System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>塗りつぶされた領域の指定された許容範囲内の領域を取得、<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+        <returns>ジオメトリの塗りつぶし領域の領域。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetArea%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFlattenedPathGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry GetFlattenedPathGeometry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.PathGeometry GetFlattenedPathGeometry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetFlattenedPathGeometry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.PathGeometry" />の多角形近似は、<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+        <returns>多角形近似、<see cref="T:System.Windows.Media.Geometry" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定値の許容範囲の要素を使用して (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) ジオメトリを処理するときにします。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.GetFlattenedPathGeometry%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetFlattenedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFlattenedPathGeometry">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.PathGeometry GetFlattenedPathGeometry (double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.PathGeometry GetFlattenedPathGeometry(float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetFlattenedPathGeometry(System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>取得、<see cref="T:System.Windows.Media.PathGeometry" />の多角形近似を指定された許容範囲内で、<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+        <returns>多角形近似、<see cref="T:System.Windows.Media.Geometry" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetFlattenedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutlinedPathGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry GetOutlinedPathGeometry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.PathGeometry GetOutlinedPathGeometry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetOutlinedPathGeometry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.PathGeometry" />塗りつぶされた領域の概要は、<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <returns>塗りつぶされた領域の概要を<see cref="T:System.Windows.Media.Geometry" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定値の許容範囲の要素を使用して (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) ジオメトリを処理するときにします。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.GetOutlinedPathGeometry%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetOutlinedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutlinedPathGeometry">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.PathGeometry GetOutlinedPathGeometry (double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.PathGeometry GetOutlinedPathGeometry(float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetOutlinedPathGeometry(System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>取得、 <see cref="T:System.Windows.Media.PathGeometry" />、塗りつぶされた領域の概要を指定された許容範囲内で、<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <returns>塗りつぶされた領域の概要を<see cref="T:System.Windows.Media.Geometry" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetOutlinedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRenderBounds">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect GetRenderBounds (System.Windows.Media.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Rect GetRenderBounds(class System.Windows.Media.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetRenderBounds(System.Windows.Media.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="pen">ジオメトリのストロークの領域を記述するオブジェクト。</param>
+        <summary>正確に説明されている後に、geometry を格納できる大きさである軸に沿った四角形を返します、指定した<see cref="T:System.Windows.Media.Pen" />です。</summary>
+        <returns>輪郭付きのジオメトリを正確に格納できる大きさである四角形を軸に配置されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定値の許容範囲の要素を使用して (により記述された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) ジオメトリを処理するときにします。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.GetRenderBounds%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetRenderBounds%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRenderBounds">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Rect GetRenderBounds (System.Windows.Media.Pen pen, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Rect GetRenderBounds(class System.Windows.Media.Pen pen, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetRenderBounds(System.Windows.Media.Pen,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="pen">ジオメトリのストロークの領域を記述するオブジェクト。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>正確に説明されている後に、geometry を格納できる大きさである軸に沿った四角形を返します、指定した<see cref="T:System.Windows.Media.Pen" />、指定された許容範囲の要素を指定します。</summary>
+        <returns>輪郭付きのジオメトリを正確に格納できる大きさである四角形を軸に配置されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetRenderBounds%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWidenedPathGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry GetWidenedPathGeometry (System.Windows.Media.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.PathGeometry GetWidenedPathGeometry(class System.Windows.Media.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetWidenedPathGeometry(System.Windows.Media.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="pen">ジオメトリのストロークの領域を記述するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Windows.Media.PathGeometry" />上線で定義されている図形、<see cref="T:System.Windows.Media.Geometry" />指定によって生成される<see cref="T:System.Windows.Media.Pen" />です。</summary>
+        <returns>輪郭付きのジオメトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetWidenedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWidenedPathGeometry">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.PathGeometry GetWidenedPathGeometry (System.Windows.Media.Pen pen, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.PathGeometry GetWidenedPathGeometry(class System.Windows.Media.Pen pen, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.GetWidenedPathGeometry(System.Windows.Media.Pen,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="pen">ジオメトリのストロークの領域を定義するために使用するオブジェクト。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>取得、<see cref="T:System.Windows.Media.PathGeometry" />上線で定義されている図形、<see cref="T:System.Windows.Media.Geometry" />指定によって生成される<see cref="T:System.Windows.Media.Pen" />、指定された許容範囲の要素を指定します。</summary>
+        <returns>によって、ジオメトリが拡大された<paramref name="pen" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.GetWidenedPathGeometry%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public abstract bool IsEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.IsEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが空かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、geometry は空です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MayHaveCurves">
+      <MemberSignature Language="C#" Value="public abstract bool MayHaveCurves ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MayHaveCurves() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.MayHaveCurves" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが曲線のセグメントを持つことがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />形状のオブジェクトが曲線のセグメントを持つ可能性があります場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Geometry Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Geometry Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">作成するジオメトリを説明する文字列。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Geometry" />現在のカルチャを使用して、指定した文字列からのインスタンス。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Geometry" />指定した文字列から作成されたインスタンスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[パス マークアップ構文](~/docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)については、この文字列の書式設定方法  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransform">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransform() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.ShouldSerializeTransform" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうかの値、<see cref="P:System.Windows.Media.Geometry.Transform" />プロパティをシリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />場合のジオメトリの値<see cref="P:System.Windows.Media.Geometry.Transform" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardFlatteningTolerance">
+      <MemberSignature Language="C#" Value="public static double StandardFlatteningTolerance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property float64 StandardFlatteningTolerance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Geometry.StandardFlatteningTolerance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>多角形近似を使用する標準の許容範囲を取得します。</summary>
+        <value>標準的な許容範囲、0.25 します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeContains">
+      <MemberSignature Language="C#" Value="public bool StrokeContains (System.Windows.Media.Pen pen, System.Windows.Point hitPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool StrokeContains(class System.Windows.Media.Pen pen, valuetype System.Windows.Point hitPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.StrokeContains(System.Windows.Media.Pen,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="hitPoint" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pen">ジオメトリのストロークの領域を決定するオブジェクト。</param>
+        <param name="hitPoint">含有をテストする点です。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Point" />、指定された適用することによって生成されるストロークに含まれる<see cref="T:System.Windows.Media.Pen" />ジオメトリにします。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="hitPoint" />、指定された適用することによって生成されるストロークに含まれる<see cref="T:System.Windows.Media.Pen" />; ジオメトリにそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の許容範囲の要素 (によって指定された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) はジオメトリのストロークに指定したポイントがあるかどうかを決定するときに使用します。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.StrokeContains%2A>オーバー ロードします。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.StrokeContains%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeContains">
+      <MemberSignature Language="C#" Value="public bool StrokeContains (System.Windows.Media.Pen pen, System.Windows.Point hitPoint, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool StrokeContains(class System.Windows.Media.Pen pen, valuetype System.Windows.Point hitPoint, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.StrokeContains(System.Windows.Media.Pen,System.Windows.Point,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="hitPoint" Type="System.Windows.Point" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="pen">Geometry の線を定義するオブジェクト。</param>
+        <param name="hitPoint">含有をテストする点です。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Point" />、指定された適用することによって生成されるストロークに含まれる<see cref="T:System.Windows.Media.Pen" />ジオメトリには、エラーの指定された余白を指定します。</summary>
+        <returns>
+          <see langword="true" />指定された適用することでつながるようにひと筆が作成された場合<see cref="T:System.Windows.Media.Pen" />ジオメトリ ポイントを含む指定した、; 指定された許容範囲の要素を指定それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.StrokeContains%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeContainsWithDetail">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.IntersectionDetail StrokeContainsWithDetail (System.Windows.Media.Pen pen, System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.IntersectionDetail StrokeContainsWithDetail(class System.Windows.Media.Pen pen, class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.StrokeContainsWithDetail(System.Windows.Media.Pen,System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="pen">現在のジオメトリのストロークの領域を決定するオブジェクト。</param>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <summary>指定したの交差部分を記述する値を返します<see cref="T:System.Windows.Media.Geometry" />と、指定された適用することで作成したストローク<see cref="T:System.Windows.Media.Pen" />現在のジオメトリ。</summary>
+        <returns>列挙値の 1 つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値の許容範囲の要素 (によって定義された、<xref:System.Windows.Media.Geometry.StandardFlatteningTolerance%2A>プロパティ) は現在のジオメトリの線に指定したジオメトリがあるかどうかを決定するときに使用します。 独自の許容範囲の要素を指定するには、使用、<xref:System.Windows.Media.Geometry.StrokeContainsWithDetail%2A>メソッドです。  
+  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.StrokeContainsWithDetail%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeContainsWithDetail">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.IntersectionDetail StrokeContainsWithDetail (System.Windows.Media.Pen pen, System.Windows.Media.Geometry geometry, double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.IntersectionDetail StrokeContainsWithDetail(class System.Windows.Media.Pen pen, class System.Windows.Media.Geometry geometry, float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.StrokeContainsWithDetail(System.Windows.Media.Pen,System.Windows.Media.Geometry,System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Windows.Media.Pen" />
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="pen">現在のジオメトリのストロークの領域を決定するオブジェクト。</param>
+        <param name="geometry">包含をテストするジオメトリ。</param>
+        <param name="tolerance">多角形近似のジオメトリの点の間の距離の上限。 小さい値より正確な結果の作成が、実行速度が低下します。 場合<c>トレランス</c>未満の.000001 は.000001 が代わりに使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Media.ToleranceType" />許容範囲の要素が、絶対値であるかどうか、または、ジオメトリの領域と相対的に指定する値。</param>
+        <summary>指定した期間の交差部分を記述する値を取得<see cref="T:System.Windows.Media.Geometry" />と、指定された適用することで作成したストローク<see cref="T:System.Windows.Media.Pen" />現在のジオメトリには、エラーの指定された余白を指定します。</summary>
+        <returns>列挙値の 1 つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.Windows.Media.Geometry>メソッド (など<xref:System.Windows.Media.Geometry.StrokeContainsWithDetail%2A>) を生成またはジオメトリの多角形近似を使用します。 許容範囲の要素は、この多角形近似のポイント間の最大距離を指定します。 小さい許容範囲の値より優れた概数を生成けれども、大きなの許容範囲の要素の概算値よりも多くの処理が必要  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のカルチャに基づいて、オブジェクトの文字列表現を作成します。</summary>
+        <returns>オブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Geometry.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式設定情報、または<see langword="null" />現在のカルチャを使用します。</param>
+        <summary>指定したカルチャに固有の書式情報を使用してオブジェクトの文字列表現を作成します。</summary>
+        <returns>オブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Geometry.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Transform" />オブジェクトに適用される、<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+        <value>適用する変換、<see cref="T:System.Windows.Media.Geometry" />です。 この値は、1 つである可能性があります<see cref="T:System.Windows.Media.Transform" />または<see cref="T:System.Windows.Media.TransformCollection" />としてキャスト、<see cref="T:System.Windows.Media.Transform" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のオブジェクトが変換値を持たない場合に、identity 変換を返します。 返しますそれ以外の場合、<xref:System.Windows.Media.Transform>現在のオブジェクトに適用します。  
+  
+<a name="dependencyPropertyInfo_Transform"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Geometry.TransformProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Geometry.Transform%2A>を適用するプロパティ、<xref:System.Windows.Media.RotateTransform>を<xref:System.Windows.Media.Geometry>オブジェクト。  
+  
+ この例では、<xref:System.Windows.Media.GeometryGroup>から 3 つの複合図形を作成する<xref:System.Windows.Media.Geometry>オブジェクトしを使用して、ジオメトリ キーを 45 度回転、<xref:System.Windows.Media.Geometry.Transform%2A>プロパティです。  
+  
+ [!code-xaml[Transforms_snip#GeometryTransformExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/GeometryTransformExample.xaml#geometrytransformexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TransformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TransformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Geometry.TransformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Geometry.Transform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

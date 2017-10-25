@@ -1,0 +1,1445 @@
+<Type Name="ToolboxService" FullName="System.Drawing.Design.ToolboxService">
+  <TypeSignature Language="C#" Value="public abstract class ToolboxService : System.ComponentModel.Design.IComponentDiscoveryService, System.Drawing.Design.IToolboxService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolboxService extends System.Object implements class System.ComponentModel.Design.IComponentDiscoveryService, class System.Drawing.Design.IToolboxService" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IComponentDiscoveryService</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Drawing.Design.IToolboxService</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既定の実装を提供、<see cref="T:System.Drawing.Design.IToolboxService" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService>クラスの実装の一部は、<xref:System.Drawing.Design.IToolboxService>インターフェイスです。 この実装を使用するには、このクラスから派生し、抽象メソッドを実装する必要があります。 実装されると、このクラスはデザイナー アプリケーションのサービス コンテナーに追加できます。 デザイナー アプリケーションごとに 1 つのツールボックス サービスを設定する必要があります。  
+  
+ <xref:System.Drawing.Design.ToolboxService>ツールボックス サービス作成の複雑なロジックが数多く提供されますが、カテゴリとアイテムのストレージ コンテナーを定義する必要があります。 単純なツールボックスまたは非常に複雑なものにできます。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolboxService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Design.ToolboxService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CategoryNames">
+      <MemberSignature Language="C#" Value="protected abstract System.Drawing.Design.CategoryNameCollection CategoryNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Design.CategoryNameCollection CategoryNames" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxService.CategoryNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.CategoryNameCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールボックスの使用可能なカテゴリを表す文字列のコレクションを取得します。</summary>
+        <value>カテゴリ名のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カテゴリの名前は、さまざまなツールボックス カテゴリに対応します。 ツールボックスは、カテゴリのすべての語形を実装していない場合、<xref:System.Drawing.Design.ToolboxService.CategoryNames%2A>プロパティが空のコレクションを返す可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItemContainer">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Design.ToolboxItemContainer CreateItemContainer (System.Windows.Forms.IDataObject dataObject);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemContainer CreateItemContainer(class System.Windows.Forms.IDataObject dataObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.CreateItemContainer(System.Windows.Forms.IDataObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataObject" Type="System.Windows.Forms.IDataObject" />
+      </Parameters>
+      <Docs>
+        <param name="dataObject">データ オブジェクトを格納すると、ツールボックスのデータが保存されます。</param>
+        <summary>保存されたデータ オブジェクトから新しいツールボックス アイテムのコンテナーを作成します。</summary>
+        <returns>新しいツールボックス アイテムのコンテナー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.CreateItemContainer%2A>メソッドが正しければ、派生バージョンを提供する、<xref:System.Drawing.Design.ToolboxItemContainer>です。 既定では、<xref:System.Drawing.Design.ToolboxService>クラスがリンクされた項目をサポートしていませんので、それを返します`null`リンクでパラメーターの`null`します。 リンクのサポートを提供するには、派生を作成するには、このメソッドをオーバーライドする必要があります<xref:System.Drawing.Design.ToolboxItemContainer>ことができるリンクを処理します。  
+  
+ 渡されたデータ オブジェクトが前回の呼び出しから取得したデータを含める必要があります、<xref:System.Drawing.Design.ToolboxItemContainer.ToolboxData%2A?displayProperty=nameWithType>ツールボックス アイテムのコンテナーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataObject" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>リンクされたツールボックス項目では、存在は特定のデザイナー ホストの記憶域に関連付けられています。 そのため、一般的なプロジェクト システムで、デザイナー ホストに関連付けられた、特定のファイル。 デザイナー ホストにリンクされたツールボックス項目に自動的になると削除、ツールボックスからデザイナー ホストのソース ファイルが削除されるか、プロジェクトから削除します。  
+  
+ リンクされたツールボックス項目が無効にするなどの可能なシナリオを実現、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]ツールボックス項目を Windows フォーム デザイナーが開いているときにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateItemContainer">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Design.ToolboxItemContainer CreateItemContainer (System.Drawing.Design.ToolboxItem item, System.ComponentModel.Design.IDesignerHost link);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemContainer CreateItemContainer(class System.Drawing.Design.ToolboxItem item, class System.ComponentModel.Design.IDesignerHost link) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.CreateItemContainer(System.Drawing.Design.ToolboxItem,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Drawing.Design.ToolboxItem" />
+        <Parameter Name="link" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="item">項目コンテナーを作成する対象のツールボックス項目。</param>
+        <param name="link">このツールボックス項目にリンクする必要がある省略可能なデザイナー ホスト。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <summary>ツールボックス項目から新しいツールボックス アイテムのコンテナーを作成します。</summary>
+        <returns>新しいツールボックス アイテムのコンテナー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.CreateItemContainer%2A>メソッドが正しければ、派生バージョンを提供する、<xref:System.Drawing.Design.ToolboxItemContainer>です。 既定では、<xref:System.Drawing.Design.ToolboxService>クラスがリンクされた項目をサポートしていませんので、それを返します`null`リンクでパラメーターの`null`します。 リンクのサポートを提供するには、派生を作成するには、このメソッドをオーバーライドする必要があります<xref:System.Drawing.Design.ToolboxItemContainer>ことができるリンクを処理します。  
+  
+ 場合、指定した<xref:System.ComponentModel.Design.IDesignerHost>リンクのパラメーターが割り当てられている、リンクされたツールボックス項目であることを示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>リンクされたツールボックス項目では、存在は特定のデザイナー ホストの記憶域に関連付けられています。 そのため、一般的なプロジェクト システムで、デザイナー ホストに関連付けられた、特定のファイル。 デザイナー ホストにリンクされたツールボックス項目に自動的になると削除、ツールボックスからデザイナー ホストのソース ファイルが削除されるか、プロジェクトから削除します。  
+  
+ リンクされたツールボックス項目が無効にするなどの可能なシナリオを実現、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]ツールボックス項目を Windows フォーム デザイナーが開いているときにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterChanged">
+      <MemberSignature Language="C#" Value="protected virtual void FilterChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void FilterChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.FilterChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス サービスがアクティブ デザイナーのツールボックス項目のフィルターが変更されたことを検出したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetItemContainers">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IList" />ツールボックスのすべての項目を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト内の項目がある必要があります<xref:System.Drawing.Design.ToolboxItemContainer>オブジェクト。 ツールボックスの実装がカテゴリで整理されている場合は、すべてのカテゴリの組み合わせの一覧が取得されます。 一覧は、ようにして新しいアイテムを追加することがあります、読み取り/書き込みにすることがあります。  
+  
+ 最初に呼び出してツールボックス サービスは、新しい項目を追加するときに、<xref:System.Drawing.Design.ToolboxService.CreateItemContainer%2A>メソッドに新しい項目を追加し、<xref:System.Collections.IList>から返される、<xref:System.Drawing.Design.ToolboxService.GetItemContainers%2A>メソッドです。  
+  
+ カテゴリ名を指定すると、そのカテゴリ内のアイテムだけが返されます。 カテゴリが指定されていないすべての項目が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetItemContainers">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.IList GetItemContainers ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IList GetItemContainers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetItemContainers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IList" />ツールボックスのすべての項目を格納します。</summary>
+        <returns><see cref="T:System.Collections.IList" />ツールボックスのすべての項目を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemContainers">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.IList GetItemContainers (string categoryName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IList GetItemContainers(string categoryName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetItemContainers(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="categoryName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="categoryName">項目コンテナーの一覧を取得する対象のカテゴリ。</param>
+        <summary>返します、 <see cref="T:System.Collections.IList" /> 1 つのカテゴリ内のすべての項目を格納します。</summary>
+        <returns><see cref="T:System.Collections.IList" />で指定されたカテゴリ内のすべての項目を含む<paramref name="categoryName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カテゴリが指定されている場合、`categoryName`パラメーターが存在しない、<xref:System.Drawing.Design.ToolboxService.GetItemContainers%2A>メソッドが意味のある例外をスローする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItem">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Design.ToolboxItem GetToolboxItem (Type toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Design.ToolboxItem GetToolboxItem(class System.Type toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItem(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ツールボックス項目を取得する対象のコンポーネントの型。</param>
+        <summary>指定された型のツールボックス項目を返します。</summary>
+        <returns>指定された型に関連付けられているツールボックス項目または<see langword="null" />型の対応するツールボックス項目がありません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="toolType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItem">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Design.ToolboxItem GetToolboxItem (Type toolType, bool nonPublic);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Design.ToolboxItem GetToolboxItem(class System.Type toolType, bool nonPublic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItem(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="System.Type" />
+        <Parameter Name="nonPublic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ツールボックス項目を取得する対象のコンポーネントの型。</param>
+        <param name="nonPublic">
+          <see langword="true" />型の非パブリック コンス トラクターを検索するには<see langword="false" />パブリック コンス トラクターを検索します。</param>
+        <summary>指定された型のツールボックス項目を返します。</summary>
+        <returns>指定された型に関連付けられているツールボックス項目または<see langword="null" />型の対応するツールボックス項目がありません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="toolType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetToolboxItems (System.Reflection.AssemblyName an);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetToolboxItems(class System.Reflection.AssemblyName an) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItems(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="an" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="an">アセンブリの読み込み元のアセンブリ名。</param>
+        <summary>返します、<see cref="T:System.Collections.ICollection" />の<see cref="T:System.Drawing.Design.ToolboxItem" />指定されたアセンブリのオブジェクト。</summary>
+        <returns>指定されたアセンブリ名で表されるアセンブリ内のすべてのツールボックス項目を含むコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>メソッドは、ツールボックス アイテムをサポートし、それらの型の項目を返すすべての型のアセンブリをスキャンします。 ツールボックス項目をサポートするには、型は、次の特性が必要です。  
+  
+-   パブリックであります。  
+  
+-   <xref:System.ComponentModel.IComponent> を実装します。  
+  
+-   抽象はできません。  
+  
+-   されませんが、 <xref:System.ComponentModel.ToolboxItemAttribute> 'éý'`false`型にします。  
+  
+-   ジェネリック パラメーターが含まれていません。  
+  
+ アセンブリはロックされ、処理の期間を使用してさまざまなファイルを列挙するため<xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>多数のアセンブリを読み込む可能性があります。 <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>アセンブリ名を受け取るメソッドを作成、個別<xref:System.AppDomain>アセンブリを検索します。 終了したら列挙<xref:System.Drawing.Design.ToolboxItem>、アセンブリのセットのオブジェクトを呼び出すことができます、<xref:System.Drawing.Design.ToolboxService.UnloadToolboxItems%2A>メソッドのアンロード、<xref:System.AppDomain>と読み込まれたアセンブリのファイル参照を解放します。  
+  
+ この方法で読み込まれるアセンブリは、個別に読み込まれる<xref:System.AppDomain>後でアンロードできるようにします。 これは、アセンブリ ファイルのみ一時的にロックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="an" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetToolboxItems (System.Reflection.Assembly a, string newCodeBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetToolboxItems(class System.Reflection.Assembly a, string newCodeBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItems(System.Reflection.Assembly,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Reflection.Assembly" />
+        <Parameter Name="newCodeBase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="a">列挙対象のアセンブリ。</param>
+        <param name="newCodeBase">アセンブリの場所を表す文字列。</param>
+        <summary>返します、<see cref="T:System.Collections.ICollection" />指定したアセンブリ内のすべてのツールボックス項目を格納します。</summary>
+        <returns>指定したアセンブリ内のすべてのツールボックス項目を含むコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>メソッドは、ツールボックス アイテムをサポートし、それらの型の項目を返すすべての型のアセンブリをスキャンします。 ツールボックス項目をサポートするには、型は、次の特性が必要です。  
+  
+-   パブリックであります。  
+  
+-   <xref:System.ComponentModel.IComponent> を実装します。  
+  
+-   抽象はできません。  
+  
+-   されませんが、 <xref:System.ComponentModel.ToolboxItemAttribute> 'éý'`false`型にします。  
+  
+-   ジェネリック パラメーターが含まれていません。  
+  
+ アセンブリはロックされ、処理の期間を使用してさまざまなファイルを列挙するため<xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>多数のアセンブリを読み込む可能性があります。 <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>アセンブリ名を受け取るメソッドを作成、個別<xref:System.AppDomain>アセンブリを検索します。 終了したら列挙<xref:System.Drawing.Design.ToolboxItem>、アセンブリのセットのオブジェクトを呼び出すことができます、<xref:System.Drawing.Design.ToolboxService.UnloadToolboxItems%2A>メソッドのアンロード、<xref:System.AppDomain>と読み込まれたアセンブリのファイル参照を解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="a" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetToolboxItems (System.Reflection.AssemblyName an, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetToolboxItems(class System.Reflection.AssemblyName an, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItems(System.Reflection.AssemblyName,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="an" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="an">アセンブリの読み込み元のアセンブリ名。</param>
+        <param name="throwOnError">
+          <see langword="true" />エラーに例外をスローするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>返します、<see cref="T:System.Collections.ICollection" />の<see cref="T:System.Drawing.Design.ToolboxItem" />指定されたアセンブリのオブジェクト。</summary>
+        <returns>指定されたアセンブリ名で表されるアセンブリ内のすべてのツールボックス項目を含むコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>メソッドは、ツールボックス アイテムをサポートし、それらの型の項目を返すすべての型のアセンブリをスキャンします。 ツールボックス項目をサポートするには、型は、次の特性が必要です。  
+  
+-   パブリックであります。  
+  
+-   <xref:System.ComponentModel.IComponent> を実装します。  
+  
+-   抽象はできません。  
+  
+-   されませんが、 <xref:System.ComponentModel.ToolboxItemAttribute> 'éý'`false`型にします。  
+  
+-   ジェネリック パラメーターが含まれていません。  
+  
+ アセンブリはロックされ、処理の期間を使用してさまざまなファイルを列挙するため<xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>多数のアセンブリを読み込む可能性があります。 <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>アセンブリ名を受け取るメソッドを作成、個別<xref:System.AppDomain>アセンブリを検索します。 終了したら列挙<xref:System.Drawing.Design.ToolboxItem>、アセンブリのセットのオブジェクトを呼び出すことができます、<xref:System.Drawing.Design.ToolboxService.UnloadToolboxItems%2A>メソッドのアンロード、<xref:System.AppDomain>と読み込まれたアセンブリのファイル参照を解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="an" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItems">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetToolboxItems (System.Reflection.Assembly a, string newCodeBase, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetToolboxItems(class System.Reflection.Assembly a, string newCodeBase, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.GetToolboxItems(System.Reflection.Assembly,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Reflection.Assembly" />
+        <Parameter Name="newCodeBase" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="a">列挙対象のアセンブリ。</param>
+        <param name="newCodeBase">アセンブリの場所を表す文字列。</param>
+        <param name="throwOnError">
+          <see langword="true" />エラーに例外をスローするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>返します、<see cref="T:System.Collections.ICollection" />の<see cref="T:System.Drawing.Design.ToolboxItem" />指定されたアセンブリのオブジェクト。</summary>
+        <returns>指定されたアセンブリ名で表されるアセンブリ内のすべてのツールボックス項目を含むコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>メソッドは、ツールボックス アイテムをサポートし、それらの型の項目を返すすべての型のアセンブリをスキャンします。 ツールボックス項目をサポートするには、型は、次の特性が必要です。  
+  
+-   パブリックであります。  
+  
+-   <xref:System.ComponentModel.IComponent> を実装します。  
+  
+-   抽象はできません。  
+  
+-   されませんが、 <xref:System.ComponentModel.ToolboxItemAttribute> 'éý'`false`型にします。  
+  
+-   ジェネリック パラメーターが含まれていません。  
+  
+ アセンブリはロックされ、処理の期間を使用してさまざまなファイルを列挙するため<xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>多数のアセンブリを読み込む可能性があります。 <xref:System.Drawing.Design.ToolboxService.GetToolboxItems%2A>アセンブリ名を受け取るメソッドを作成、個別<xref:System.AppDomain>アセンブリを検索します。 終了したら列挙<xref:System.Drawing.Design.ToolboxItem>、アセンブリのセットのオブジェクトを呼び出すことができます、<xref:System.Drawing.Design.ToolboxService.UnloadToolboxItems%2A>メソッドのアンロード、<xref:System.AppDomain>と読み込まれたアセンブリのファイル参照を解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="a" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemContainer">
+      <MemberSignature Language="C#" Value="protected virtual bool IsItemContainer (System.Windows.Forms.IDataObject dataObject, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsItemContainer(class System.Windows.Forms.IDataObject dataObject, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.IsItemContainer(System.Windows.Forms.IDataObject,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataObject" Type="System.Windows.Forms.IDataObject" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="dataObject">ツールボックス項目コンテナーの存在を確認するデータ オブジェクト。</param>
+        <param name="host">省略可能なデザイナー ホスト。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <summary>指定されたデータ オブジェクトが、項目コンテナーを表すかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定されたデータ オブジェクトを表す項目コンテナーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ オブジェクトは、項目コンテナーを直接表すことがあります。 またはデータ オブジェクトに含まれる形式の処理に登録されているカスタム ツールボックス作成者である可能性があります。  
+  
+ 場合、`host`パラメーターが有効なデザイナー ホスト、<xref:System.Drawing.Design.ToolboxService.IsItemContainer%2A>メソッドは、デザイナー ホストに関連付けられているツールボックス アイテムの作成者を検索します。 場合`host`が指定すると、ホストに関連付けられているツールボックス アイテムの作成者も比較します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataObject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemContainerSupported">
+      <MemberSignature Language="C#" Value="protected bool IsItemContainerSupported (System.Drawing.Design.ToolboxItemContainer container, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool IsItemContainerSupported(class System.Drawing.Design.ToolboxItemContainer container, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.IsItemContainerSupported(System.Drawing.Design.ToolboxItemContainer,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Drawing.Design.ToolboxItemContainer" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="container">ツールボックス アイテムのコンテナーです。</param>
+        <param name="host">指定したデザイナー ホスト。</param>
+        <summary>指定したデザイナー ホストによってツールボックス項目コンテナーがサポートされているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定されたデザイナー ホストによってツールボックス項目コンテナーがサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="container" /> または <paramref name="host" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="protected abstract void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス アイテムの状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.IToolboxService.Refresh%2A>メソッドは、ユーザーが項目のコレクションを更新することを要求されたときにツールボックス サービスによって呼び出されます。 場合は、コレクションは、現在は常に、ここで、実装を提供する必要はありません。 返されたコレクション場合<xref:System.Drawing.Design.ToolboxService.GetItemContainers%2A>ただし、ツールボックス項目のスナップショットを表しますこのメソッドは、それらを更新する機会を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedCategory">
+      <MemberSignature Language="C#" Value="protected abstract string SelectedCategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxService.SelectedCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在選択されているカテゴリの名前を設定します。</summary>
+        <value>現在選択されているカテゴリの名前を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、ツールボックス アイテムは、カテゴリに分類されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemContainer">
+      <MemberSignature Language="C#" Value="protected abstract System.Drawing.Design.ToolboxItemContainer SelectedItemContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Design.ToolboxItemContainer SelectedItemContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxService.SelectedItemContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在選択されているアイテムのコンテナーを設定します。</summary>
+        <value>現在選択されているツールボックスの項目の項目コンテナーまたは<see langword="null" />項目が選択されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemContainerUsed">
+      <MemberSignature Language="C#" Value="protected virtual void SelectedItemContainerUsed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SelectedItemContainerUsed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.SelectedItemContainerUsed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーが選択したツールボックス アイテムが使用されたことを報告したときに、ツールボックス サービスからの呼び出しを受信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxService.SelectedItemContainerUsed%2A>メソッドは、ユーザーが選択したツールボックス アイテムが使用されたことを報告したときにツールボックス サービスによって呼び出されます。 ツールボックス項目を呼び出した後は、ツールボックス アイテムの選択を解除する一般的なユーザー インターフェイス (UI) の動作を勧めします。 このメソッドの既定の実装選択したアイテムのコンテナーを設定して、このツールボックス項目の選択を解除します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCursor">
+      <MemberSignature Language="C#" Value="protected virtual bool SetCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool SetCursor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.SetCursor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在選択されているツールを表すようにカーソルを現在のアプリケーションのカーソルを設定します。</summary>
+        <returns>
+          <see langword="true" />アイテムを選択します。 がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールボックス サービスは、現在選択されているツールボックス項目を表すイメージをユーザー インターフェイス (UI) のカーソルを設定するためのサポートを提供します。 <xref:System.Drawing.Design.ToolboxService.SetCursor%2A>カーソルを設定するメソッドを呼び出すことができます。 返します`true`カーソルが設定されている場合または`false`されていない場合。 既定の実装が十字カーソルにカーソルを設定し、返します`true`選択された項目がある場合。 返します`false`れ、カーソルの項目が選択されていない場合は変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.IComponentDiscoveryService.GetComponentTypes">
+      <MemberSignature Language="C#" Value="System.Collections.ICollection IComponentDiscoveryService.GetComponentTypes (System.ComponentModel.Design.IDesignerHost designerHost, Type baseType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.ICollection System.ComponentModel.Design.IComponentDiscoveryService.GetComponentTypes(class System.ComponentModel.Design.IDesignerHost designerHost, class System.Type baseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#ComponentModel#Design#IComponentDiscoveryService#GetComponentTypes(System.ComponentModel.Design.IDesignerHost,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="baseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost">デザイン時のサービスを提供するデザイナー ホスト。</param>
+        <param name="baseType">取得するコンポーネントに指定する基本型。 指定できます<see langword="null" />です。</param>
+        <summary>使用可能なコンポーネントの種類の一覧を取得します。</summary>
+        <returns>使用可能なコンポーネントの種類の一覧。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddCreator">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddCreator (System.Drawing.Design.ToolboxItemCreatorCallback creator, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddCreator(class System.Drawing.Design.ToolboxItemCreatorCallback creator, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddCreator(System.Drawing.Design.ToolboxItemCreatorCallback,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="creator" Type="System.Drawing.Design.ToolboxItemCreatorCallback" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="creator">A<see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />ツールボックス項目が呼び出されたときに、コンポーネントを作成することができます。</param>
+        <param name="format">作成者が処理するデータ形式。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddCreator(System.Drawing.Design.ToolboxItemCreatorCallback,System.String)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddCreator">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddCreator (System.Drawing.Design.ToolboxItemCreatorCallback creator, string format, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddCreator(class System.Drawing.Design.ToolboxItemCreatorCallback creator, string format, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddCreator(System.Drawing.Design.ToolboxItemCreatorCallback,System.String,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="creator" Type="System.Drawing.Design.ToolboxItemCreatorCallback" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="creator">A<see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />ツールボックス項目が呼び出されたときに、コンポーネントを作成することができます。</param>
+        <param name="format">作成者が処理するデータ形式。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />作成者に関連付けるデザイナー ホストを表すです。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddCreator(System.Drawing.Design.ToolboxItemCreatorCallback,System.String,System.ComponentModel.Design.IDesignerHost)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddLinkedToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddLinkedToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddLinkedToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddLinkedToolboxItem(System.Drawing.Design.ToolboxItem,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem">リンクされた<see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスに追加します。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddLinkedToolboxItem(System.Drawing.Design.ToolboxItem,System.ComponentModel.Design.IDesignerHost)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddLinkedToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddLinkedToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem, string category, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddLinkedToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem, string category, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddLinkedToolboxItem(System.Drawing.Design.ToolboxItem,System.String,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem">リンクされた<see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスに追加します。</param>
+        <param name="category">ツールボックス項目を追加するツールボックス項目のカテゴリ。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddLinkedToolboxItem(System.Drawing.Design.ToolboxItem,System.String,System.ComponentModel.Design.IDesignerHost)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddToolboxItem(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスに追加します。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddToolboxItem(System.Drawing.Design.ToolboxItem)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.AddToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.AddToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.AddToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#AddToolboxItem(System.Drawing.Design.ToolboxItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスに追加します。</param>
+        <param name="category">追加するツールボックス項目のカテゴリ、<see cref="T:System.Drawing.Design.ToolboxItem" />にします。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.AddToolboxItem(System.Drawing.Design.ToolboxItem,System.String)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.CategoryNames">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.CategoryNameCollection System.Drawing.Design.IToolboxService.CategoryNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Design.CategoryNameCollection System.Drawing.Design.IToolboxService.CategoryNames" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#CategoryNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.CategoryNameCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの説明については、<see cref="P:System.Drawing.Design.IToolboxService.CategoryNames" /> プロパティを参照してください。</summary>
+        <value>A<see cref="T:System.Drawing.Design.CategoryNameCollection" />ツールの分類を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.DeserializeToolboxItem">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItem IToolboxService.DeserializeToolboxItem (object serializedObject);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItem System.Drawing.Design.IToolboxService.DeserializeToolboxItem(object serializedObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#DeserializeToolboxItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">オブジェクトを含む、<see cref="T:System.Drawing.Design.ToolboxItem" />を取得します。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.DeserializeToolboxItem(System.Object)" /> メソッドのトピックを参照してください。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />逆シリアル化からを作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.DeserializeToolboxItem">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItem IToolboxService.DeserializeToolboxItem (object serializedObject, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItem System.Drawing.Design.IToolboxService.DeserializeToolboxItem(object serializedObject, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#DeserializeToolboxItem(System.Object,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">オブジェクトを含む、<see cref="T:System.Drawing.Design.ToolboxItem" />を取得します。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />に関連付けるこの<see cref="T:System.Drawing.Design.ToolboxItem" />です。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.DeserializeToolboxItem(System.Object,System.ComponentModel.Design.IDesignerHost)" /> メソッドのトピックを参照してください。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />逆シリアル化からを作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetSelectedToolboxItem">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItem IToolboxService.GetSelectedToolboxItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItem System.Drawing.Design.IToolboxService.GetSelectedToolboxItem() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetSelectedToolboxItem" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの説明については、<see cref="Overload:System.Drawing.Design.IToolboxService.GetSelectedToolboxItem" /> メソッドのトピックを参照してください。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />現在選択されているまたは<see langword="null" />ツールボックス項目が選択されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetSelectedToolboxItem">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItem IToolboxService.GetSelectedToolboxItem (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItem System.Drawing.Design.IToolboxService.GetSelectedToolboxItem(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetSelectedToolboxItem(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />選択したツールに返されるには、関連付けられている必要があります。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.IToolboxService.GetSelectedToolboxItem(System.ComponentModel.Design.IDesignerHost)" /> メソッドのトピックを参照してください。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />現在選択されているまたは<see langword="null" />ツールボックス項目が選択されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetToolboxItems">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItemCollection IToolboxService.GetToolboxItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemCollection System.Drawing.Design.IToolboxService.GetToolboxItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetToolboxItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックスから ツールボックス アイテムのコレクション全体を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Design.ToolboxItemCollection" />現在のツールボックス項目を格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetToolboxItems">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItemCollection IToolboxService.GetToolboxItems (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemCollection System.Drawing.Design.IToolboxService.GetToolboxItems(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetToolboxItems(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />取得するツールボックス項目に関連付けられています。</param>
+        <summary>ツールボックスから、指定したデザイナー ホストに関連付けられているツールボックス項目のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Design.ToolboxItemCollection" />指定したデザイナー ホストに関連付けられている現在のツールボックス項目を格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="host" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetToolboxItems">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItemCollection IToolboxService.GetToolboxItems (string category);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemCollection System.Drawing.Design.IToolboxService.GetToolboxItems(string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetToolboxItems(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="category">すべてのツールボックス項目を取得する対象のツールボックス項目のカテゴリ。</param>
+        <summary>指定したカテゴリに一致する ツールボックス から ツールボックス アイテムのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Design.ToolboxItemCollection" />指定されたカテゴリに関連付けられている現在のツールボックス項目を格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="host" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.GetToolboxItems">
+      <MemberSignature Language="C#" Value="System.Drawing.Design.ToolboxItemCollection IToolboxService.GetToolboxItems (string category, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItemCollection System.Drawing.Design.IToolboxService.GetToolboxItems(string category, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#GetToolboxItems(System.String,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="category">ツールボックス項目を取得するツールボックス項目のカテゴリ。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />取得するツールボックス項目に関連付けられています。</param>
+        <summary>指定したデザイナー ホストと、ツールボックスからカテゴリに関連付けられているツールボックス項目のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Design.ToolboxItemCollection" />指定されたカテゴリおよびデザイナー ホストに関連付けられている現在のツールボックス項目を格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="category" /> または <paramref name="host" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.IsSupported">
+      <MemberSignature Language="C#" Value="bool IToolboxService.IsSupported (object serializedObject, System.Collections.ICollection filterAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Drawing.Design.IToolboxService.IsSupported(object serializedObject, class System.Collections.ICollection filterAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#IsSupported(System.Object,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+        <Parameter Name="filterAttributes" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">オブジェクトを含む、<see cref="T:System.Drawing.Design.ToolboxItem" />を取得します。</param>
+        <param name="filterAttributes"><see cref="T:System.Collections.ICollection" />のシリアル化されたオブジェクトをテストする属性を格納しています。</param>
+        <summary>シリアル化されたツールボックス項目を表す、指定したオブジェクトが、指定された属性と一致するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが指定された属性と一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serializedObject" /> または <paramref name="filterAttributes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.IsSupported">
+      <MemberSignature Language="C#" Value="bool IToolboxService.IsSupported (object serializedObject, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Drawing.Design.IToolboxService.IsSupported(object serializedObject, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#IsSupported(System.Object,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">オブジェクトを含む、<see cref="T:System.Drawing.Design.ToolboxItem" />を取得します。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />のサポートをテストする、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</param>
+        <summary>シリアル化されたツールボックス項目を表す、指定したオブジェクトを指定したデザイナー ホストで使用できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトが指定したデザイナー ホストに互換性がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serializedObject" /> または <paramref name="host" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.IsToolboxItem">
+      <MemberSignature Language="C#" Value="bool IToolboxService.IsToolboxItem (object serializedObject);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Drawing.Design.IToolboxService.IsToolboxItem(object serializedObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#IsToolboxItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">確認するオブジェクト。</param>
+        <summary>指定したオブジェクトがシリアル化されたツールボックス項目であるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトには、ツールボックス項目オブジェクトが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.IsToolboxItem">
+      <MemberSignature Language="C#" Value="bool IToolboxService.IsToolboxItem (object serializedObject, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Drawing.Design.IToolboxService.IsToolboxItem(object serializedObject, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#IsToolboxItem(System.Object,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializedObject" Type="System.Object" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="serializedObject">確認するオブジェクト。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />この要求を行うことができます。</param>
+        <summary>指定したオブジェクトがシリアル化されたツールボックス項目によって、指定したデザイナー ホストであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトには、ツールボックス項目オブジェクトが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.Refresh">
+      <MemberSignature Language="C#" Value="void IToolboxService.Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツールボックス アイテムの状態を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.RemoveCreator">
+      <MemberSignature Language="C#" Value="void IToolboxService.RemoveCreator (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.RemoveCreator(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#RemoveCreator(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">削除するクリエーターのデータ形式。</param>
+        <summary>指定したデータ形式の以前に追加されたツールボックス項目の作成者を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.RemoveCreator">
+      <MemberSignature Language="C#" Value="void IToolboxService.RemoveCreator (string format, System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.RemoveCreator(string format, class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#RemoveCreator(System.String,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="format">削除するクリエーターのデータ形式。</param>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />を削除する作成者に関連付けられています。</param>
+        <summary>指定したデータ形式と、指定したデザイナー ホストに関連付けられている以前に追加されたツールボックスの作成者を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> または <paramref name="host" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.RemoveToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.RemoveToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.RemoveToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#RemoveToolboxItem(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスから削除します。</param>
+        <summary>ツールボックスから、指定したツールボックス項目を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="toolboxItem" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.RemoveToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.RemoveToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.RemoveToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#RemoveToolboxItem(System.Drawing.Design.ToolboxItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />をツールボックスから削除します。</param>
+        <param name="category">削除するツールボックス項目のカテゴリ、<see cref="T:System.Drawing.Design.ToolboxItem" />からです。</param>
+        <summary>ツールボックスから、指定したツールボックス項目を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="toolboxItem" /> または <paramref name="category" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.SelectedCategory">
+      <MemberSignature Language="C#" Value="string System.Drawing.Design.IToolboxService.SelectedCategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string System.Drawing.Design.IToolboxService.SelectedCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#SelectedCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの説明については、<see cref="P:System.Drawing.Design.IToolboxService.SelectedCategory" /> プロパティを参照してください。</summary>
+        <value>現在選択されているカテゴリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxService> のインスタンスが <xref:System.Drawing.Design.IToolboxService> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.SelectedToolboxItemUsed">
+      <MemberSignature Language="C#" Value="void IToolboxService.SelectedToolboxItemUsed ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.SelectedToolboxItemUsed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#SelectedToolboxItemUsed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択したツールが使用されたことをツールボックス サービスに通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.SerializeToolboxItem">
+      <MemberSignature Language="C#" Value="object IToolboxService.SerializeToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Drawing.Design.IToolboxService.SerializeToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#SerializeToolboxItem(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem">シリアル化する <see cref="T:System.Drawing.Design.ToolboxItem" />。</param>
+        <summary>指定したツールボックス項目を表すシリアル化可能なオブジェクトを取得します。</summary>
+        <returns>表す、指定したオブジェクト<see cref="T:System.Drawing.Design.ToolboxItem" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="toolboxItem" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.SetCursor">
+      <MemberSignature Language="C#" Value="bool IToolboxService.SetCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Drawing.Design.IToolboxService.SetCursor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#SetCursor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在選択されているツールを表すようにカーソルを現在のアプリケーションのカーソルを設定します。</summary>
+        <returns>
+          <see langword="true" />現在選択されているツールによって、カーソルが設定されている場合<see langword="false" />ツールを選択していないとカーソルがある場合は、標準の Windows カーソルに設定します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Drawing.Design.IToolboxService.SetSelectedToolboxItem">
+      <MemberSignature Language="C#" Value="void IToolboxService.SetSelectedToolboxItem (System.Drawing.Design.ToolboxItem toolboxItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Drawing.Design.IToolboxService.SetSelectedToolboxItem(class System.Drawing.Design.ToolboxItem toolboxItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.System#Drawing#Design#IToolboxService#SetSelectedToolboxItem(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolboxItem" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="toolboxItem"><see cref="T:System.Drawing.Design.ToolboxItem" />を選択します。</param>
+        <summary>指定したツールボックス項目を選択します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadToolboxItems">
+      <MemberSignature Language="C#" Value="public static void UnloadToolboxItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnloadToolboxItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxService.UnloadToolboxItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出しの結果がロックされていたすべてのアセンブリをアンロード、<see cref="Overload:System.Drawing.Design.ToolboxService.GetToolboxItems" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

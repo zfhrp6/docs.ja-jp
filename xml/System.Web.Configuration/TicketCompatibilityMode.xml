@@ -1,0 +1,71 @@
+<Type Name="TicketCompatibilityMode" FullName="System.Web.Configuration.TicketCompatibilityMode">
+  <TypeSignature Language="C#" Value="public enum TicketCompatibilityMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TicketCompatibilityMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.TicketCompatibilityMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>フォーム認証のチケットの有効期限の日付を世界協定時刻 (UTC) または現地時刻を使用するかどうかを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET フォーム認証のチケットの有効期限の日付は協定世界時 (UTC) または現地時刻を使用して格納できます。 使用して、チケットの有効期限を指定することができます、アプリケーション間で互換性のため、.NET Framework の異なるバージョン間の互換性のためには、`ticketCompatilityMode`要素の属性です。 既定値、`ticketCompatibilityMode`属性は Framework20 します。  
+  
+   
+  
+## Examples  
+ 次の例では、UTC 時刻としてフォーム認証チケットの期限を構成します。  
+  
+```  
+<system.web>  
+  <authentication mode="Forms">   
+    <forms ticketCompatilityMode="Framework40">  
+    </forms>  
+  </authentication>  
+</system.web>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Framework20">
+      <MemberSignature Language="C#" Value="Framework20" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.TicketCompatibilityMode Framework20 = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.TicketCompatibilityMode.Framework20" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TicketCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットの有効期限が現地時刻として格納されていることを指定します。 これが既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Framework40">
+      <MemberSignature Language="C#" Value="Framework40" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.TicketCompatibilityMode Framework40 = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.TicketCompatibilityMode.Framework40" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TicketCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットの有効期限の日付は UTC として格納されていることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

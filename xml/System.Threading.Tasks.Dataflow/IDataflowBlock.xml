@@ -1,0 +1,112 @@
+<Type Name="IDataflowBlock" FullName="System.Threading.Tasks.Dataflow.IDataflowBlock">
+  <TypeSignature Language="C#" Value="public interface IDataflowBlock" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataflowBlock" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>データフロー ブロックを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public void Complete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Complete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>信号を<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />ことにする必要がありますいないを受け入れるも、これ以上メッセージを生成もより延期されたメッセージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A>されましたデータフロー ブロックで呼び出されると、そのブロックが完了してその<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion%2A>タスクは、以前使用可能なすべてのデータを処理した後に、最終的な状態になる、します。 <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A>発生すると、完了の待機をブロックしませんではなく、要求が開始されますが、実行すると、完了するまで待って、<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion%2A>タスクを使用することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completion">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task Completion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Task Completion" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.Task" />非同期操作や、データ フロー ブロックの完了を表すです。</summary>
+        <value>タスクです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フロー ブロックは、それが処理中でないメッセージと、これ以上メッセージが処理されることを保証がされているときに完了したと見なされます。 返された<xref:System.Threading.Tasks.Task>関連するブロックが完了した場合は、完了した状態に遷移します。 移行、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>ブロックには、データ フロー ブロックのに従って正常に処理が完了したときの状態がセマンティクスを定義します。 移行、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.Faulted>状態、データ フロー ブロックが未処理の例外によって処理の途中で処理を完了に移行すると、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.Canceled>データ フロー ブロックには、キャンセル要求を受信したため途中で処理が完了したときの状態。 タスクが完了した場合、<xref:System.Threading.Tasks.TaskStatus.Faulted>状態、その`Exception`が返される、<xref:System.AggregateException>が失敗するブロックを引き起こした 1 つまたは複数の例外を含んでいます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fault">
+      <MemberSignature Language="C#" Value="public void Fault (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Fault(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception"><see cref="T:System.Exception" />フォールトの原因となった。</param>
+        <summary>により、<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />で完了する、<see cref="F:System.Threading.Tasks.TaskStatus.Faulted" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Fault%2A>されましたデータフロー ブロックで呼び出されると、そのブロックが完了してその<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion%2A>タスクは、最終的な状態を入力してください。 ブロックにエラーが発生、としてで、ブロックをキャンセルすると、バッファー内のメッセージ (未処理の入力メッセージと unoffered 出力メッセージ) が失われます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="exception" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1090 @@
+<Type Name="ExpressionTextBox" FullName="System.Activities.Presentation.View.ExpressionTextBox">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionTextBox : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExpressionTextBox extends System.Windows.Controls.UserControl implements class System.Windows.Markup.IComponentConnector" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.ExpressionTextBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IComponentConnector</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ユーザーがアクティビティ デザイナーで式を編集できるようにするコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] で式を編集する場合、<xref:System.Activities.Presentation.View.ExpressionTextBox> によって IntelliSense などの機能が提供されます。 このような機能は、ホスト可能エディターと呼ばれるコンポーネントによって提供されます。 式エディターのインターフェイスは拡張可能であり、式の編集に使用するエディターを置き換えられます。  
+  
+> [!NOTE]
+>  このコンポーネントは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] 外で再ホストされたアプリケーションでは使用できません。  
+  
+ **ExpressionTextBlock**式を編集するときに、次のように動作します。  
+  
+1.  クリックすると、 **ExpressionTextBox**、<xref:System.Activities.Presentation.View.IExpressionEditorInstance>オブジェクトが作成されでホスト可能エディター セッションがインスタンス化[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]です。  
+  
+2.  ホスト可能エディター内での入力時には、この機能には 2 種類の可用性があることに注意してください。  
+  
+    1.  IntelliSense、完了、および色付けのサポートはすぐに使用できます。  
+  
+    2.  検証はバックグラウンドで呼び出され、少し待たないと使用できるようになりません。 式が無効な場合は、ホストされているコンパイラによってエラーがレポートされ、式の右側に赤いエラー アイコンが表示されます。  
+  
+3.  キーを押して、 **Enter**キー、 **ExpressionTextBox**フォーカスが内の新しい行を挿入する、<xref:System.Activities.Presentation.View.IExpressionEditorInstance>オブジェクト。 これによって、ホスト可能エディター内に行がコミットされ、見た目のよい一覧が作成され、波線が表示されます。  
+  
+4.  エディター インスタンスが破棄されるときに、 **ExpressionTextBox**が、フォーカスを失うと、画面に戻ります、 **TextBlock**です。 デザイナー画面またはプロパティ グリッドが表示されている場合は、モデル アイテムに加えられた変更がコミットされ、同じ式を表示したすべての <xref:System.Activities.Presentation.View.ExpressionTextBox> コントロールが同期化されます。 ただし、ダイアログ ボックスが表示されている場合、モデル アイテムへの変更は ［OK］ がクリックされるまでコミットされません。 モデル アイテムがコミットされると、<xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> が呼び出され、ワークフロー全体が検証されます。  
+  
+5.  クリックすると、 **ExpressionTextBox**エディターの新しいインスタンスを作成するもう一度、します。 ホスト可能エディターには、見た目のよい一覧、色付け、および波線などが編集開始前に表示されます。  
+  
+ 式テキスト ボックスをバインドする**OwnerActivity**を使用して<xref:System.Activities.Presentation.Converters.ModelPropertyEntryToModelItemConverter>データ コンテキストが正しく設定します。 次のコード サンプルでは正しくへのバインディングのデータ コンテキストを設定する**OwnerActivity**です。  
+  
+```  
+<sapc:ModelPropertyEntryToModelItemConverter x:Key="ModelPropertyEntryToContainerConverter"/>  
+  
+    <DataTemplate x:Key="StringInArgumentPropertyValueEditorTemplate" >  
+        <Grid Margin="5" Background="LightGreen" DataContext="{Binding Converter={StaticResource ModelPropertyEntryToContainerConverter}}">  
+            <sapv:ExpressionTextBox   
+            Expression="{Binding Path=ModelItem.MyVal, Mode=TwoWay,   Converter={StaticResource ArgumentToExpressionConverter},  ConverterParameter=In }"  
+            ExpressionType="sys:String"  
+            OwnerActivity="{Binding Path=ModelItem}"   
+                 />  
+        </Grid>  
+    </DataTemplate>  
+```  
+  
+ 詳細については、<xref:System.Activities.Presentation.View.IExpressionEditorInstance> および <xref:System.Activities.Presentation.View.IExpressionEditorService> を参照してください。 参照してください、[カスタム アクティビティ デザイナーでの ExpressionTextBox の使用](~/docs/framework/windows-workflow-foundation/samples/using-the-expressiontextbox-in-a-custom-activity-designer.md)サンプル トピックです。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Presentation.View.ExpressionTextBox> は、カスタム アクティビティ デザイナーの作成時に宣言的に使用されます。 サンプル コードについては、 [ExpressionTextBox101](http://go.microsoft.com/fwlink/?LinkId=193145)ブログ。  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionTextBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.View.ExpressionTextBox" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsReturn">
+      <MemberSignature Language="C#" Value="public bool AcceptsReturn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcceptsReturn" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.AcceptsReturn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスが改行を受け入れるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />返しますが受け付けられた場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsReturnProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AcceptsReturnProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AcceptsReturnProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.AcceptsReturnProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.AcceptsReturn" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsTab">
+      <MemberSignature Language="C#" Value="public bool AcceptsTab { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcceptsTab" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.AcceptsTab" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスがタブを受け入れるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />タブが受け付けられた場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsTabProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AcceptsTabProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AcceptsTabProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.AcceptsTabProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.AcceptsTab" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public void BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集を開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompleteWordCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand CompleteWordCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand CompleteWordCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.CompleteWordCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスで単語を補完するために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseFilterLevelCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand DecreaseFilterLevelCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand DecreaseFilterLevelCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.DecreaseFilterLevelCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター レベルを変更するために使用されるコマンド、**共通**タブ、**すべて** タブの IntelliSense のフィルター処理を使用しているときにします。 このコマンドは、式を編集するときにのみ使用できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public string DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得または設定します。</summary>
+        <value>既定値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValueProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DefaultValueProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DefaultValueProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.DefaultValueProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.DefaultValue" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditorLostLogicalFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler EditorLostLogicalFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler EditorLostLogicalFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.View.ExpressionTextBox.EditorLostLogicalFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式エディターが論理フォーカスを失ったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッド呼び出しを使用して意図的にフォーカスを外しているにもかかわらず、直前のキーボード フォーカスが異なるスコープ内に存在する場合、論理フォーカスはキーボード フォーカスとは異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditorLostLogicalFocusEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent EditorLostLogicalFocusEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent EditorLostLogicalFocusEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.EditorLostLogicalFocusEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Activities.Presentation.View.ExpressionTextBox.EditorLostLogicalFocus" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExplicitCommit">
+      <MemberSignature Language="C#" Value="public bool ExplicitCommit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExplicitCommit" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.ExplicitCommit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コミットが明示的であるかどうかを示す値を取得または設定します。</summary>
+        <value>返します<see langword="true" />コミットが明示的なそれ以外の場合は<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExplicitCommitProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExplicitCommitProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExplicitCommitProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ExplicitCommitProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.ExplicitCommit" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.Model.ModelItem Expression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式を取得または設定します。</summary>
+        <value>式を含む <see cref="T:System.Activities.Presentation.Model.ModelItem" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.View.ExpressionTextBox.Expression%2A> は必ず必要です。 使用する場合、<xref:System.Activities.Presentation.View.ExpressionTextBox>宣言的に引数をバインドする必要があります常に使用する、<xref:System.Activities.Presentation.Converters.ArgumentToExpressionConverter>式を設定、引数にバインドする、`ConverterParameter`に`In`または`Out`によっては、引数の方向。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionActivityEditor">
+      <MemberSignature Language="C#" Value="public string ExpressionActivityEditor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExpressionActivityEditor" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.ExpressionActivityEditor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または式アクティビティ エディターを設定します。</summary>
+        <value>式のアクティビティ エディター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionActivityEditorOptionName">
+      <MemberSignature Language="C#" Value="public const string ExpressionActivityEditorOptionName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ExpressionActivityEditorOptionName" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ExpressionActivityEditorOptionName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式のアクティビティのエディター オプションの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionActivityEditorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExpressionActivityEditorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExpressionActivityEditorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ExpressionActivityEditorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.ExpressionActivityEditor" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionEditorService">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.IExpressionEditorService ExpressionEditorService { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.View.IExpressionEditorService ExpressionEditorService" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.ExpressionEditorService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.IExpressionEditorService</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式エディター サービスを取得します。</summary>
+        <value>式エディター サービスを含む <see cref="T:System.Activities.Presentation.View.IExpressionEditorService" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExpressionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExpressionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ExpressionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.Expression" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionType">
+      <MemberSignature Language="C#" Value="public Type ExpressionType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExpressionType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.ExpressionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の型を取得または設定します。</summary>
+        <value>式の型を含む <see cref="T:System.Type" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型を設定することを強くお勧めします。 <xref:System.Activities.Presentation.View.ExpressionTextBox.ExpressionType%2A> を設定しない場合、<xref:System.Activities.Presentation.View.ExpressionTextBox> を使用してデリゲート型にバインドすることも、ホストされているコンパイラから検証を取得することもできません。 このコンパイラ検証をチェックするかどうかは、入力された式の型と一致するか、予期された型では、周囲が赤いボックスが表示されます、 **ExpressionTextBox**アクティビティ デザイナー上に無効なデータが入力されている場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionTypeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExpressionTypeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExpressionTypeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ExpressionTypeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.ExpressionType" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalIntellisenseCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand GlobalIntellisenseCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand GlobalIntellisenseCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.GlobalIntellisenseCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスでグローバル IntelliSense のために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HintText">
+      <MemberSignature Language="C#" Value="public string HintText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HintText" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.HintText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒント テキストを取得または設定します。</summary>
+        <value>ヒント テキストを含む <see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HintTextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HintTextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HintTextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.HintTextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.HintText" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ScrollBarVisibility HorizontalScrollBarVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ScrollBarVisibility HorizontalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.HorizontalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平スクロール バーの可視性を取得または設定します。</summary>
+        <value>水平スクロール バーの可視性を含む <see cref="T:System.Windows.Controls.ScrollBarVisibility" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.HorizontalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.HorizontalScrollBarVisibility" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseFilterLevelCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand IncreaseFilterLevelCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand IncreaseFilterLevelCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.IncreaseFilterLevelCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター レベルを変更するために使用されるコマンド、**すべて**タブ、**共通** タブの IntelliSense のフィルター処理を使用しているときにします。 このコマンドは、式を編集するときにのみ使用できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeComponent">
+      <MemberSignature Language="C#" Value="public void InitializeComponent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeComponent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.InitializeComponent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このフォームを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マークアップ コンパイラでのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスが読み取り専用であるかどうかを示す値を取得または設定します。</summary>
+        <value>式テキスト ボックスが読み取り専用であるかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnlyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsReadOnlyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsReadOnlyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.IsReadOnlyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.View.ExpressionTextBox.IsReadOnly" /> プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedExpression">
+      <MemberSignature Language="C#" Value="public bool IsSupportedExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSupportedExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.IsSupportedExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式がサポートされているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、式がサポートされています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedExpressionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsSupportedExpressionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsSupportedExpressionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.IsSupportedExpressionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.IsSupportedExpression" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLines">
+      <MemberSignature Language="C#" Value="public int MaxLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLines" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.MaxLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大行数を取得または設定します。</summary>
+        <value>最大行数を含む <see cref="T:System.Int32" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.MaxLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.MaxLines" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinLines">
+      <MemberSignature Language="C#" Value="public int MinLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinLines" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.MinLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小行数を取得または設定します。</summary>
+        <value>最小行数を含む <see cref="T:System.Int32" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.MinLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.MinLines" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialized">
+      <MemberSignature Language="C#" Value="protected override void OnInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.OnInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerActivity">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.Model.ModelItem OwnerActivity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.Model.ModelItem OwnerActivity" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.OwnerActivity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.Model.ModelItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>所有者のアクティビティを取得または設定します。</summary>
+        <value>所有者のアクティビティを含む <see cref="T:System.Activities.Presentation.Model.ModelItem" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerActivityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OwnerActivityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OwnerActivityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.OwnerActivityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.OwnerActivity" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterInfoCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand ParameterInfoCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand ParameterInfoCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.ParameterInfoCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスでパラメーター情報のために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathToArgument">
+      <MemberSignature Language="C#" Value="public string PathToArgument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathToArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.PathToArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>引数へのパスを取得または設定します。</summary>
+        <value>引数へのパスを含む <see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathToArgumentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PathToArgumentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PathToArgumentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.PathToArgumentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.PathToArgument" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuickInfoCommand">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Input.ICommand QuickInfoCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Input.ICommand QuickInfoCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.QuickInfoCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式テキスト ボックスでクイック ヒントのために使用されるコマンドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterExpressionActivityEditor">
+      <MemberSignature Language="C#" Value="public static void RegisterExpressionActivityEditor (string name, Type expressionActivityEditorType, System.Activities.Presentation.Expressions.CreateExpressionFromStringCallback convertFromString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterExpressionActivityEditor(string name, class System.Type expressionActivityEditorType, class System.Activities.Presentation.Expressions.CreateExpressionFromStringCallback convertFromString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.RegisterExpressionActivityEditor(System.String,System.Type,System.Activities.Presentation.Expressions.CreateExpressionFromStringCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="expressionActivityEditorType" Type="System.Type" />
+        <Parameter Name="convertFromString" Type="System.Activities.Presentation.Expressions.CreateExpressionFromStringCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">Epression エディターの名前。</param>
+        <param name="expressionActivityEditorType">式アクティビティ エディターの型。</param>
+        <param name="convertFromString">式の文字列形式。</param>
+        <summary>式アクティビティ エディターを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IComponentConnector.Connect">
+      <MemberSignature Language="C#" Value="void IComponentConnector.Connect (int connectionId, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IComponentConnector.Connect(int32 connectionId, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.ExpressionTextBox.System#Windows#Markup#IComponentConnector#Connect(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CodeDom.Compiler.GeneratedCode("PresentationBuildTasks", "4.0.0.0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerNonUserCode</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionId" Type="System.Int32" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="connectionId">接続 ID。</param>
+        <param name="target">ターゲット。</param>
+        <summary>イベントと名前をコンパイルされたコンテンツにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ コンパイラでのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLocationExpression">
+      <MemberSignature Language="C#" Value="public bool UseLocationExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseLocationExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.UseLocationExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで配置式が使用されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このインスタンスは、場所の式を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A*配置式*(または左辺値式) は、代入ステートメントの左側に配置できる識別子に評価される式の型です。 バインドするときに、<xref:System.Activities.Presentation.View.ExpressionTextBox>を`Out`引数このプロパティを設定すると`True`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseLocationExpressionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty UseLocationExpressionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty UseLocationExpressionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.UseLocationExpressionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.UseLocationExpression" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ScrollBarVisibility VerticalScrollBarVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.View.ExpressionTextBox.VerticalScrollBarVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollBarVisibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直スクロール バーの可視性を取得または設定します。</summary>
+        <value>スクロール バーの可視性を含む <see cref="T:System.Windows.Controls.ScrollBarVisibility" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollBarVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalScrollBarVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalScrollBarVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Activities.Presentation.View.ExpressionTextBox.VerticalScrollBarVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="P:System.Activities.Presentation.View.ExpressionTextBox.VerticalScrollBarVisibility" /> 依存プロパティを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

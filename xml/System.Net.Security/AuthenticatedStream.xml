@@ -1,0 +1,434 @@
+<Type Name="AuthenticatedStream" FullName="System.Net.Security.AuthenticatedStream">
+  <TypeSignature Language="C#" Value="public abstract class AuthenticatedStream : System.IO.Stream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AuthenticatedStream extends System.IO.Stream" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Security.AuthenticatedStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Stream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ストリーム間で資格情報を渡すことを要求またはクライアント/サーバー アプリケーションの認証を実行するメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この抽象クラスは、認証されたストリームに共通するメソッドとプロパティを提供します。  
+  
+ 認証されたストリームを認証、署名、データを提供し、役立つ暗号化サービスを使用して送信されるデータの機密性と整合性を維持、<xref:System.Net.Security.AuthenticatedStream.InnerStream%2A>です。  
+  
+ 派生したクラスによって実装されたセキュリティ プロトコル<xref:System.Net.Security.AuthenticatedStream>セキュリティと共にクライアントとサーバーでサポートされているプロトコルがアプリケーションに備わっているセキュリティ機能を決定します。 <xref:System.Net.Security.NegotiateStream>と<xref:System.Net.Security.SslStream>クラスから継承<xref:System.Net.Security.AuthenticatedStream>し、それぞれ、Negotiate、および Secure Sockets Layer のセキュリティ プロトコルを実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、認証されたストリームのプロパティを表示するを示します。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>次のメンバーは、派生クラスでオーバーライドする必要があります: <see cref="P:System.Net.Security.AuthenticatedStream.IsAuthenticated" />、 <see cref="P:System.Net.Security.AuthenticatedStream.IsEncrypted" />、 <see cref="P:System.Net.Security.AuthenticatedStream.IsMutuallyAuthenticated" />、 <see cref="P:System.Net.Security.AuthenticatedStream.IsServer" />、および<see cref="P:System.Net.Security.AuthenticatedStream.IsSigned" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AuthenticatedStream (System.IO.Stream innerStream, bool leaveInnerStreamOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream, bool leaveInnerStreamOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.AuthenticatedStream.#ctor(System.IO.Stream,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+        <Parameter Name="leaveInnerStreamOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.AuthenticatedStream" />のデータを送受信します。</param>
+        <param name="leaveInnerStreamOpen">A<see cref="T:System.Boolean" />を示すこれを閉じるかどうか<see cref="T:System.Net.Security.AuthenticatedStream" />オブジェクトも閉じます<c>パラメーター</c>です。</param>
+        <summary><see cref="T:System.Net.Security.AuthenticatedStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると`true`の`leaveStreamOpen`パラメーター、閉じる、<xref:System.Net.Security.AuthenticatedStream>に影響を与えません、`innerStream`ストリーム。  
+  
+ このコンス トラクターは、認証されたストリームの実装を提供しから派生したクラスによってのみ呼び出すことができる<xref:System.Net.Security.AuthenticatedStream>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.AuthenticatedStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Net.Security.AuthenticatedStream" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Net.Security.AuthenticatedStream>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerStream">
+      <MemberSignature Language="C#" Value="protected System.IO.Stream InnerStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream InnerStream" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.InnerStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって使用されるストリームを取得<see cref="T:System.Net.Security.AuthenticatedStream" />のデータを送受信します。</summary>
+        <value><see cref="T:System.IO.Stream" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス<xref:System.Net.Security.AuthenticatedStream>に渡されたストリームにアクセスするこのプロパティを使用することができます、<xref:System.Net.Security.AuthenticatedStream.%23ctor%28System.IO.Stream%2CSystem.Boolean%29>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public abstract bool IsAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.IsAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />認証が成功したかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />認証成功した場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラスに認証を実行すると呼ばれるメソッドが定義されている<xref:System.Net.Security.AuthenticatedStream>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncrypted">
+      <MemberSignature Language="C#" Value="public abstract bool IsEncrypted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEncrypted" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.IsEncrypted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />データでは、これを使用して送信するかどうかを示す値<see cref="T:System.Net.Security.AuthenticatedStream" />が暗号化されています。</summary>
+        <value>
+          <see langword="true" />データがネットワーク経由で送信される前に暗号化および復号化する場合に着いたときに、リモート エンドポイントです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化したデータのプライバシーの保護を利用します。つまり、ことデータは、転送中は、サード パーティが解読できないことを確認するのに役立ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutuallyAuthenticated">
+      <MemberSignature Language="C#" Value="public abstract bool IsMutuallyAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMutuallyAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.IsMutuallyAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />サーバーとクライアントの両方が認証されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />クライアントとサーバーが認証されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのセキュリティ プロトコルは、相互認証をサポートします。 継承するクラスで実装されたセキュリティ プロトコルで相互認証がサポートされているかどうかを判断する<xref:System.Net.Security.AuthenticatedStream>クラスのドキュメントを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsServer">
+      <MemberSignature Language="C#" Value="public abstract bool IsServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsServer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.IsServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />サーバーとローカル側の接続が認証されたかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />ローカル エンドポイントがクライアントとサーバーの認証された接続のサーバー側として認証された場合<see langword="false" />ローカル エンドポイントがクライアントとして認証された場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントとサーバー認証に使用されるセキュリティ プロトコルのほとんどは、特定の動作と、クライアントまたはサーバーかどうかに基づく認証の資格情報を提供するための要件を定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSigned">
+      <MemberSignature Language="C#" Value="public abstract bool IsSigned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSigned" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.IsSigned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />をこのストリームを使用して送信されるデータが署名されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />送信する前に、データが署名されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データの整合性を保護することにデータの署名つまり、データが転送中に改ざんされているかどうかを決定する受信者と役に立ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclNegoAsyncClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNegoasyncClient/CPP/NclNegoasyncClient.cpp#6)]
+ [!code-csharp[NclNegoAsyncClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNegoasyncClient/CS/client.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaveInnerStreamOpen">
+      <MemberSignature Language="C#" Value="public bool LeaveInnerStreamOpen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LeaveInnerStreamOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.AuthenticatedStream.LeaveInnerStreamOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで、ストリームが使用されるかどうかを取得<see cref="T:System.Net.Security.AuthenticatedStream" />のデータの送受信が開いたままになっています。</summary>
+        <value>
+          <see langword="true" />内部ストリームが開かれている残されていますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`true`、このクラスのインスタンスが閉じられた後、このクラスのコンス トラクターに渡されたストリームは閉じられません。 設定すると`false`、このクラスのインスタンスを閉じると、基になるトランスポート ストリームも閉じられます。 このプロパティの既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

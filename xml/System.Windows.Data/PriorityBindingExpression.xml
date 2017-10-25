@@ -1,0 +1,158 @@
+<Type Name="PriorityBindingExpression" FullName="System.Windows.Data.PriorityBindingExpression">
+  <TypeSignature Language="C#" Value="public sealed class PriorityBindingExpression : System.Windows.Data.BindingExpressionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PriorityBindingExpression extends System.Windows.Data.BindingExpressionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.PriorityBindingExpression" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.BindingExpressionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つのインスタンスに関するインスタンス情報が含まれています、<see cref="T:System.Windows.Data.PriorityBinding" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.PriorityBinding>1 つの実行時インスタンスが、<xref:System.Windows.Data.PriorityBindingExpression>です。 コレクションを記述するため、<xref:System.Windows.Data.BindingExpression>最初からその値を受け取って、1 つのバインド ターゲット プロパティに関連付けられているオブジェクト<xref:System.Windows.Data.BindingExpression>が正常に値を取得するコレクション内のオブジェクト。 バインディング式については、バインディングと BindingExpression のセクションを参照して、[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ バインディング エンジンによって異なります、<xref:System.Windows.Data.BindingExpression>オブジェクトは、<xref:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression%2A>優先度に基づきます。 詳細については、「<xref:System.Windows.Data.PriorityBinding>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveBindingExpression">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingExpressionBase ActiveBindingExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingExpressionBase ActiveBindingExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpressionBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな取得<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト。</summary>
+        <value>アクティブな<see cref="T:System.Windows.Data.BindingExpression" />オブジェクトです。 または<see langword="null" />いない場合、<see cref="T:System.Windows.Data.BindingExpression" />オブジェクトをアクティブにします。 戻り値の型は<see cref="T:System.Windows.Data.BindingExpressionBase" />、返されたオブジェクトは、のみ、<see cref="T:System.Windows.Data.BindingExpression" />オブジェクトのため、<see cref="T:System.Windows.Data.PriorityBinding" />のみクラスを現在サポート<see cref="T:System.Windows.Data.Binding" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディング エンジンによって異なります、<xref:System.Windows.Data.BindingExpression>オブジェクトは、<xref:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression%2A>優先度に基づきます。 詳細については、「<xref:System.Windows.Data.PriorityBinding>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingExpressions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt; BindingExpressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Data.BindingExpressionBase&gt; BindingExpressions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PriorityBindingExpression.BindingExpressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Data.BindingExpression" />のこのインスタンス内のオブジェクト<see cref="T:System.Windows.Data.PriorityBindingExpression" />です。</summary>
+        <value>読み取り専用のコレクション、<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト。 戻り値の型のコレクションが<see cref="T:System.Windows.Data.BindingExpressionBase" />オブジェクト、のみ、返されるコレクションを含む<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト、<see cref="T:System.Windows.Data.PriorityBinding" />のみクラスを現在サポート<see cref="T:System.Windows.Data.Binding" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasValidationError">
+      <MemberSignature Language="C#" Value="public override bool HasValidationError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasValidationError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PriorityBindingExpression.HasValidationError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親のバインドが失敗した検証規則を持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は親のバインドがある失敗した検証規則です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentPriorityBinding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.PriorityBinding ParentPriorityBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.PriorityBinding ParentPriorityBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PriorityBindingExpression.ParentPriorityBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.PriorityBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Data.PriorityBinding" />オブジェクトからこの<see cref="T:System.Windows.Data.PriorityBindingExpression" />を作成します。</summary>
+        <value><see cref="T:System.Windows.Data.PriorityBinding" />オブジェクトからこの<see cref="T:System.Windows.Data.PriorityBindingExpression" />を作成します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateSource">
+      <MemberSignature Language="C#" Value="public override void UpdateSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBindingExpression.UpdateSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティブなバインディング上のソースを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Data.BindingExpression.UpdateSource%2A>メソッドを<xref:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateTarget">
+      <MemberSignature Language="C#" Value="public override void UpdateTarget ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateTarget() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBindingExpression.UpdateTarget" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティブなバインディング上のターゲットを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Data.BindingExpression.UpdateTarget%2A>メソッドを<xref:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

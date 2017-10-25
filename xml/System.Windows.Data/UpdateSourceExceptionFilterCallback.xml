@@ -1,0 +1,70 @@
+<Type Name="UpdateSourceExceptionFilterCallback" FullName="System.Windows.Data.UpdateSourceExceptionFilterCallback">
+  <TypeSignature Language="C#" Value="public delegate object UpdateSourceExceptionFilterCallback(object bindExpression, Exception exception);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UpdateSourceExceptionFilterCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.UpdateSourceExceptionFilterCallback" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="bindExpression" Type="System.Object" />
+    <Parameter Name="exception" Type="System.Exception" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Object</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="bindExpression">例外を発生させたオブジェクト。</param>
+    <param name="exception">発生した例外。</param>
+    <summary>バインディング ソースの値の更新中にスローされる例外をハンドルするメソッドを表します。 これで使用する必要があります、<see cref="T:System.Windows.Controls.ExceptionValidationRule" />です。</summary>
+    <returns>通常、次のいずれかのオブジェクト:  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term><see langword="null" /></term><description>すべての例外を無視します。 既定の動作 (がある場合ありません<see cref="T:System.Windows.Data.UpdateSourceExceptionFilterCallback" />) を作成するには、<see cref="T:System.Windows.Controls.ValidationError" />例外を使用し、それを追加、<see cref="P:System.Windows.Controls.Validation.Errors" />バインドされている要素のコレクション。  
+  
+ </description></item><item><term>任意のオブジェクト  
+  
+ </term><description>作成する、<see cref="T:System.Windows.Controls.ValidationError" />オブジェクトを<see cref="P:System.Windows.Controls.ValidationError.ErrorContent" />そのオブジェクトに設定します。  
+  
+ <see cref="T:System.Windows.Controls.ValidationError" />オブジェクトに追加<see cref="P:System.Windows.Controls.Validation.Errors" />バインドされている要素のコレクション。  
+  
+ </description></item><item><term>A<see cref="T:System.Windows.Controls.ValidationError" />オブジェクト  
+  
+ </term><description>設定する、<see cref="T:System.Windows.Data.BindingExpression" />または<see cref="T:System.Windows.Data.MultiBindingExpression" />オブジェクトとして、<see cref="P:System.Windows.Controls.ValidationError.BindingInError" />です。 <see cref="T:System.Windows.Controls.ValidationError" />オブジェクトに追加<see cref="P:System.Windows.Controls.Validation.Errors" />バインドされている要素のコレクション。  
+  
+ </description></item></list></returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられている場合、<xref:System.Windows.Controls.ExceptionValidationRule>で、<xref:System.Windows.Data.Binding>オブジェクトを使用するオプションがある、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>プロパティを例外を処理するためのカスタム ロジックを提供するには、このコールバックを設定します。 バインディング エンジンは、バインディング ソースの値を更新する際に例外が発生するたびに、このコールバックが呼び出されます。  
+  
+ 場合、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>が指定されていない、 <xref:System.Windows.Data.Binding>、バインディング エンジンを作成、<xref:System.Windows.Controls.ValidationError>例外を使用し、それを追加、<xref:System.Windows.Controls.Validation.Errors%2A?displayProperty=nameWithType>バインドされている要素のコレクション。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.TextBox.Text%2A> 、次のプロパティ<xref:System.Windows.Controls.TextBox>データにバインドされて、ソース プロパティ`Age3`型である`int`です。 <xref:System.Windows.Controls.ExceptionValidationRule> (ときに、ユーザーを整数に変換できない値を入力) などのソース プロパティの更新中にスローされる例外をチェックします。  
+  
+ [!code-xaml[BindValidation#tbExceptionFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#tbexceptionfilter)]  
+  
+ これらの例外を処理するためのカスタム ロジックを提供するオプションがあります。 次の例を使用する方法を示しています、<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>プロパティを設定、 <xref:System.Windows.Data.UpdateSourceExceptionFilterCallback>:  
+  
+ [!code-csharp[BindValidation#filtercallback](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml.cs#filtercallback)]  
+  
+ 実装例を次に示します、 <xref:System.Windows.Data.UpdateSourceExceptionFilterCallback>:  
+  
+ [!code-csharp[BindValidation#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml.cs#handler)]  
+  
+ サンプル全体については、次を参照してください。[のバインドの検証のサンプル](http://go.microsoft.com/fwlink/?LinkID=159972)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

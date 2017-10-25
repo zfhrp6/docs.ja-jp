@@ -1,0 +1,388 @@
+<Type Name="IMenuCommandService" FullName="System.ComponentModel.Design.IMenuCommandService">
+  <TypeSignature Language="C#" Value="public interface IMenuCommandService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMenuCommandService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IMenuCommandService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グローバル デザイナー動詞とデザイン モードで使用できるメニュー コマンドを管理し、ショートカット メニューのいくつかの型を表示するメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、メソッドを提供します。  
+  
+-   検索、起動、追加およびグローバル デザイナー動詞のコマンドを削除します。  
+  
+-   検索、起動、追加および標準のメニュー コマンドを削除します。  
+  
+-   標準のメニュー コマンドに関連付けられているイベント ハンドラーを変更します。  
+  
+-   メニューに関連付けられている標準のコマンドのショートカット メニューを表示<xref:System.ComponentModel.Design.CommandID>です。  
+  
+ デザイナー動詞は、デザイン モードで、ショートカット メニューに表示されているカスタム定義のコマンドを表します。 デザイナー動詞は、指定したテキスト ラベルを指定できます。 各デザイナー動詞が自動的に割り当てられる一意な<xref:System.ComponentModel.Design.CommandID>します。 デザイナーはを通じてデザイナー動詞を提供できます、<xref:System.ComponentModel.Design.IDesigner.Verbs%2A>プロパティが、これらは使用可能な場合にのみ、デザイナーのコンポーネントが現在選択されています。 グローバル デザイナー動詞は、選択したコンポーネントに関係なく、デザイン モードのショートカット メニューからアクセス可能なデザイナー動詞コマンドです。 このインターフェイスでは、デザイン モードで使用できるグローバルのデザイナー動詞のセットを管理することができます。  
+  
+ 使用して、グローバル デザイナー動詞を追加することができます、<xref:System.ComponentModel.Design.IMenuCommandService.AddVerb%2A>メソッド、ことができますを削除して、グローバル デザイナー動詞を使用して、<xref:System.ComponentModel.Design.IMenuCommandService.RemoveVerb%2A>メソッドです。 デザイナー動詞を使用して、呼び出すことができます、<xref:System.ComponentModel.Design.IMenuCommandService.GlobalInvoke%2A>メソッドわかっている場合、<xref:System.ComponentModel.Design.CommandID>動詞のです。 <xref:System.ComponentModel.Design.IMenuCommandService.Verbs%2A>このインターフェイスのプロパティには、現在のショートカット メニューに表示するデザイナー動詞コマンドのセットが含まれています。 このデザイナー動詞コマンドのセットは、すべてのグローバル デザイナー動詞と、現在選択されているコンポーネントのデザイナーによって提供されるデザイナー動詞で構成されます。 この一連の動詞には、デザイナー動詞コマンドを提供しているデザイナーでコンポーネントを選択または選択解除するたびには更新されます。  
+  
+ メニュー コマンドは、定義済みの標準コマンドのセットに制限されます。 定義済みの標準コマンドのほとんどがで定義されている、<xref:System.ComponentModel.Design.StandardCommands>と<xref:System.Windows.Forms.Design.MenuCommands>列挙体です。 追加できますが、削除、メニュー コマンドを呼び出すし、このインターフェイスのメソッドを使用してメニューに追加されているメニュー コマンドを検索します。  
+  
+ 使用して標準のメニュー コマンドを追加することができます、<xref:System.ComponentModel.Design.IMenuCommandService.AddCommand%2A>メソッド、および標準のメニュー コマンドを使用して、削除、<xref:System.ComponentModel.Design.IMenuCommandService.RemoveCommand%2A>メソッドです。 ドキュメントに記載の手順に従って定義済みの標準的なメニュー コマンドにイベント ハンドラーをアタッチすることができます、<xref:System.ComponentModel.Design.IMenuCommandService.AddCommand%2A>メソッドです。 メニュー コマンドを取得する<xref:System.ComponentModel.Design.CommandID>がメニューを使用して、追加された場合、<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A>メソッドです。 メニュー コマンドや、デザイナー動詞のコマンドを呼び出すことができます<xref:System.ComponentModel.Design.CommandID>を使用して、<xref:System.ComponentModel.Design.IMenuCommandService.GlobalInvoke%2A>メソッドです。  
+  
+> [!NOTE]
+>  既に既存のメニュー コマンドを追加する試み<xref:System.ComponentModel.Design.CommandID>がスローされます、<xref:System.InvalidOperationException>です。 メニュー コマンドを追加するときに必ずチェックことになっていないを使用して、メニューで、<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A>メソッド、またはを使用して例外が適切に処理します。  
+  
+> [!NOTE]
+>  メニュー コマンド、メニューに追加できるいてその<xref:System.ComponentModel.Design.MenuCommand.Visible%2A>または<xref:System.ComponentModel.Design.MenuCommand.Enabled%2A>プロパティに設定`false`です。 メニューに追加されているメニュー コマンド、視覚的に見つからない場合はこれらのプロパティのいずれかの可能性がありますに設定されている`false`です。  
+  
+ 使用して、指定した場所にメニュー コマンドを含む特定の標準のショートカット メニューを表示することができます、<xref:System.ComponentModel.Design.IMenuCommandService.ShowContextMenu%2A>メソッドです。 このメソッドのドキュメントには、有効なメニューを表示するを指定するコマンド Id を一覧表示するテーブルが含まれています。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.ComponentModel.Design.IMenuCommandService>を追加する、<xref:System.ComponentModel.Design.MenuCommand>です。  
+  
+ [!code-cpp[MenuCommand Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MenuCommand Example/CPP/component1.cpp#1)]
+ [!code-csharp[MenuCommand Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MenuCommand Example/CS/component1.cs#1)]
+ [!code-vb[MenuCommand Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MenuCommand Example/VB/component1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddCommand">
+      <MemberSignature Language="C#" Value="public void AddCommand (System.ComponentModel.Design.MenuCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddCommand(class System.ComponentModel.Design.MenuCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.AddCommand(System.ComponentModel.Design.MenuCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.ComponentModel.Design.MenuCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command">追加する <see cref="T:System.ComponentModel.Design.MenuCommand" />。</param>
+        <summary>指定した標準メニュー コマンドをメニューに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.MenuCommands>と<xref:System.ComponentModel.Design.StandardCommands>列挙体を含む<xref:System.ComponentModel.Design.CommandID>識別子定義済みの標準的なコマンドとメニュー コマンドが既にのために関連付けられている特定のメニュー上の場所。  
+  
+> [!NOTE]
+>  既に既存のメニュー コマンドを追加する試み<xref:System.ComponentModel.Design.CommandID>がスローされます、<xref:System.InvalidOperationException>です。 メニュー コマンドを追加するときに必ずチェックことになっていないを使用して、メニューで、<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A>メソッド、またはを使用して例外が適切に処理します。  
+  
+ 次の手順で定義済みのメニュー コマンドには、イベント ハンドラーをアタッチすることができます。  
+  
+1.  イベント ハンドラーとリンクするメニュー コマンドがメニューに追加されましたまたはである場合、<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A>メソッド、後で、このメニュー コマンドを復元するかどうかと、新しいイベント ハンドラーから現在のイベント ハンドラーを起動するかどうかを検討してください。 コード可能性があります復元する場合、メニュー コマンドまたはイベント ハンドラーの呼び出しチェーンは、メニュー コマンドを任意の場所への参照を格納することを確認します。  
+  
+2.  すべて既存のメニュー コマンドと、同じことを確認<xref:System.ComponentModel.Design.CommandID>を使用して、メニューから削除されましたが、<xref:System.ComponentModel.Design.IMenuCommandService.RemoveCommand%2A>メソッドです。  
+  
+3.  新しい<xref:System.ComponentModel.Design.MenuCommand>と共に、コンス トラクターでイベント ハンドラーを指定し、<xref:System.ComponentModel.Design.CommandID>を追加するコマンドを表すです。 各標準のメニュー コマンドに追加される定義済みのメニューの場所に関連付けられます。 サポートされているコマンド Id が定義されている、<xref:System.ComponentModel.Design.StandardCommands>と<xref:System.Windows.Forms.Design.MenuCommands>列挙体です。  
+  
+4.  メニュー コマンドの既存のイベント ハンドラーを呼び出す場合は、呼び出し、<xref:System.ComponentModel.Design.MenuCommand.Invoke%2A>メニューを表示し、メニュー コマンドの呼び出しイベントを処理するイベント ハンドラーに置き換わりますが、メニュー コマンドのメソッドです。  
+  
+5.  置き換えられた既存のメニュー コマンドのイベント ハンドラーを復元する場合は、格納されている追加、作成した既存のメニュー コマンド、交換用のメニュー コマンドを削除した後です。 この動作を追加することも、`Dispose`型のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ComponentModel.Design.CommandID" />の指定した<see cref="T:System.ComponentModel.Design.MenuCommand" />はメニューに既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddVerb">
+      <MemberSignature Language="C#" Value="public void AddVerb (System.ComponentModel.Design.DesignerVerb verb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddVerb(class System.ComponentModel.Design.DesignerVerb verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.AddVerb(System.ComponentModel.Design.DesignerVerb)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verb" Type="System.ComponentModel.Design.DesignerVerb" />
+      </Parameters>
+      <Docs>
+        <param name="verb">追加する <see cref="T:System.ComponentModel.Design.DesignerVerb" />。</param>
+        <summary>グローバル デザイナー動詞のセットを指定したデザイナー動詞を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー動詞を提供するコンポーネントのデザイナーを使用する必要があります、<xref:System.ComponentModel.Design.IDesigner.Verbs%2A>このメソッドを呼び出すのではなく、そのデザイナーのプロパティです。 このメソッドは、現在選択されているコンポーネントに関係なく、デザイン モードで右クリックしてショートカット メニューからアクセス可能なグローバル デザイナー動詞を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindCommand">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.MenuCommand FindCommand (System.ComponentModel.Design.CommandID commandID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.MenuCommand FindCommand(class System.ComponentModel.Design.CommandID commandID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.FindCommand(System.ComponentModel.Design.CommandID)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.MenuCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandID" Type="System.ComponentModel.Design.CommandID" />
+      </Parameters>
+      <Docs>
+        <param name="commandID">検索対象の <see cref="T:System.ComponentModel.Design.CommandID" />。</param>
+        <summary>指定されたコマンド ID を検索し、それに関連付けられているメニュー コマンドを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.MenuCommand" />コマンド ID に関連付けられているまたは<see langword="null" />コマンドが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalInvoke">
+      <MemberSignature Language="C#" Value="public bool GlobalInvoke (System.ComponentModel.Design.CommandID commandID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GlobalInvoke(class System.ComponentModel.Design.CommandID commandID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.GlobalInvoke(System.ComponentModel.Design.CommandID)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandID" Type="System.ComponentModel.Design.CommandID" />
+      </Parameters>
+      <Docs>
+        <param name="commandID"><see cref="T:System.ComponentModel.Design.CommandID" />のコマンドを検索しを実行します。</param>
+        <summary>指定されたコマンド ID に一致するメニューまたはデザイナー動詞コマンドを呼び出します</summary>
+        <returns>
+          <see langword="true" />コマンドが見つかり、正常に呼び出される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メニュー コマンドやとデザイナー動詞を検索、 <xref:System.ComponentModel.Design.CommandID> 、指定した照合<xref:System.ComponentModel.Design.CommandID>です。 このメソッドは、必要に応じて、グローバル環境コマンド サービスを通じて、検索を続行する前にグローバル、アクティブなデザイナーが提供動詞から成るデザイナー動詞のコレクション内で最初に検索します。 一致するメニュー コマンドやデザイナー動詞が見つかった場合は、コマンドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCommand">
+      <MemberSignature Language="C#" Value="public void RemoveCommand (System.ComponentModel.Design.MenuCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveCommand(class System.ComponentModel.Design.MenuCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.RemoveCommand(System.ComponentModel.Design.MenuCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.ComponentModel.Design.MenuCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command">削除する <see cref="T:System.ComponentModel.Design.MenuCommand" />。</param>
+        <summary>メニューから、指定された標準のメニュー コマンドを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された削除<xref:System.ComponentModel.Design.MenuCommand>見つかった場合は。 このメソッドが例外を発生させるまたは場合、値を返すしていない、指定した<xref:System.ComponentModel.Design.MenuCommand>が見つかりません。 使用して、<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A>メソッドを呼び出せば確認するかどうか、 <xref:System.ComponentModel.Design.MenuCommand> 、指定した照合<xref:System.ComponentModel.Design.CommandID>メニュー上にあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveVerb">
+      <MemberSignature Language="C#" Value="public void RemoveVerb (System.ComponentModel.Design.DesignerVerb verb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveVerb(class System.ComponentModel.Design.DesignerVerb verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.RemoveVerb(System.ComponentModel.Design.DesignerVerb)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verb" Type="System.ComponentModel.Design.DesignerVerb" />
+      </Parameters>
+      <Docs>
+        <param name="verb">削除する <see cref="T:System.ComponentModel.Design.DesignerVerb" />。</param>
+        <summary>グローバル デザイナー動詞のコレクションから指定したデザイナー動詞を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、グローバル デザイナー動詞のコレクション内にある場合に、指定したグローバル デザイナー動詞を削除します。 デザイナー動詞を追加するには、グローバル デザイナー動詞を使用してコレクションに、<xref:System.ComponentModel.Design.IMenuCommandService.AddVerb%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowContextMenu">
+      <MemberSignature Language="C#" Value="public void ShowContextMenu (System.ComponentModel.Design.CommandID menuID, int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowContextMenu(class System.ComponentModel.Design.CommandID menuID, int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IMenuCommandService.ShowContextMenu(System.ComponentModel.Design.CommandID,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menuID" Type="System.ComponentModel.Design.CommandID" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="menuID"><see cref="T:System.ComponentModel.Design.CommandID" />のショートカット メニューを表示します。</param>
+        <param name="x">画面座標で、メニューを表示する位置の x 座標。</param>
+        <param name="y">画面座標で、メニューを表示する位置の y 座標。</param>
+        <summary>指定した位置に指定されたショートカット メニューを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IMenuCommandService.ShowContextMenu%2A>メソッドは、特定の時点でのメニュー コマンドを含む次の Visual Studio のショートカット メニューのいずれかを表示できます。  
+  
+|メニュー|CommandID|  
+|----------|---------------|  
+|コンテナーに対して表示されるショートカット メニュー|<xref:System.Windows.Forms.Design.MenuCommands.ContainerMenu>|  
+|コンポーネント トレイに表示されるショートカット メニュー|<xref:System.Windows.Forms.Design.MenuCommands.ComponentTrayMenu>|  
+|ショートカット メニューを選択するための表示|<xref:System.Windows.Forms.Design.MenuCommands.SelectionMenu>|  
+|トレイを選択するために表示されるショートカット メニュー|<xref:System.Windows.Forms.Design.MenuCommands.TraySelectionMenu>|  
+  
+ このメソッドは、その他の登録済みのショートカット メニューを表示もできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IMenuCommandService.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在利用可能なデザイナー動詞のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />現在利用可能なデザイナー動詞を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてグローバル デザイナー動詞によって追加されるのでは現在使用可能なデザイナー動詞のセット、<xref:System.ComponentModel.Design.IMenuCommandService.AddVerb%2A>のこのインターフェイス、および個々 のデザイナー動詞で提供されるメソッド、<xref:System.ComponentModel.Design.IDesigner.Verbs%2A>個々 のデザイナーのプロパティです。 グローバルの動詞の名前は、デザイナー動詞の名前と競合する場合は、デザイナーが指定したデザイナー動詞が優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1884 @@
+<Type Name="DataTableReader" FullName="System.Data.DataTableReader">
+  <TypeSignature Language="C#" Value="public sealed class DataTableReader : System.Data.Common.DbDataReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataTableReader extends System.Data.Common.DbDataReader" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataTableReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbDataReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Data.DataTableReader" /> は、1 つ以上の <see cref="T:System.Data.DataTable" /> オブジェクトの内容を、読み取り専用、前方参照専用の 1 つ以上の結果セットとして取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader>などはその他のデータ リーダーの場合は、同様に機能、<xref:System.Data.SqlClient.SqlDataReader>する点を除いて、<xref:System.Data.DataTableReader>内の行を反復処理するための提供、<xref:System.Data.DataTable>です。 つまり、キャッシュ内の行を反復処理することができます。 キャッシュされたデータを変更できる中に、<xref:System.Data.DataTableReader>がアクティブで、リーダーの位置を自動的に維持するとします。  
+  
+ 作成するときに、<xref:System.Data.DataTableReader>から、 <xref:System.Data.DataTable>、結果として得られる<xref:System.Data.DataTableReader>オブジェクトには、1 つを含む結果セットと同じデータが含まれています、<xref:System.Data.DataTable>作成元であることが、削除済みとしてマークされている行は除く。 元と同じ順序で列が表示される<xref:System.Data.DataTable>です。 返された結果の構造は、元のスキーマとデータと同じ<xref:System.Data.DataTable>です。 A<xref:System.Data.DataTableReader>呼び出すことによって作成された、<xref:System.Data.DataSet.CreateDataReader*>のメソッド、<xref:System.Data.DataSet>オブジェクトには複数の結果セットが含まれる場合、<xref:System.Data.DataSet>複数のテーブルが含まれています。 結果は、同じシーケンス内の<xref:System.Data.DataTable>内のオブジェクト、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>オブジェクト。  
+  
+ 返された結果セットには、それぞれの現在のバージョンのみが含まれています。 <xref:System.Data.DataRow>; 削除対象としてマークされた行はスキップされます。  
+  
+ `DataTableReader`安定は、反復子です。 つまり、の内容、`DataTableReader`イテレーション中に、基になるコレクションのサイズが変更された場合は無効です。 例では、1 つまたは複数の行では、<xref:System.Data.DataTable.Rows%2A>コレクションが削除または内の現在位置の反復処理で削除された、`DataTableReader`は適切に維持されます、反復子を無効にしないとします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTableReader (System.Data.DataTable dataTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataTable dataTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.#ctor(System.Data.DataTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataTable" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="dataTable"><see cref="T:System.Data.DataTable" />元となる新しい<see cref="T:System.Data.DataTableReader" />結果セットを取得します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataTableReader" />から、指定されたデータを使用してクラス<see cref="T:System.Data.DataTable" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTableReader (System.Data.DataTable[] dataTables);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataTable[] dataTables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.#ctor(System.Data.DataTable[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataTables" Type="System.Data.DataTable[]" />
+      </Parameters>
+      <Docs>
+        <param name="dataTables">配列<see cref="T:System.Data.DataTable" />を新しい結果を提供するオブジェクト<see cref="T:System.Data.DataTableReader" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataTableReader" />クラスの指定された配列を使用して<see cref="T:System.Data.DataTable" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する場合は、<xref:System.Data.DataTableReader>すべてまたは特定の内のテーブルのサブセットに基づく<xref:System.Data.DataSet>、呼び出し、`DataSet`の<xref:System.Data.DataSet.CreateDataReader*>メソッドです。 新規作成する場合は、<xref:System.Data.DataTableReader>インスタンスのグループに基づいて`DataTable`しないインスタンスにそれ以外の場合、関連するは、このコンス トラクターを使用します。 このコンス トラクターの順序を変更するのもを利用することができます、`DataTables`内で、`DataTableReader`場合は、それらのソース内でそれらの順序`DataSet`ニーズを満たしていません。  
+  
+   
+  
+## Examples  
+ 次の例では、TestConstructor メソッド 2 つ作成されます<xref:System.Data.DataTable>インスタンス。 このコンス トラクターを実行するために、<xref:System.Data.DataTableReader>クラス、サンプルを作成、新しい`DataTableReader`を 2 つを含む配列に基づく`DataTables`内容を印刷する最初のいくつかの列からコンソールに、単純な操作を実行ウィンドウです。 このアプリケーションをテストするために、新しいコンソール アプリケーションを作成し、サンプル コードを新しく作成されたファイルに貼り付けます。  
+  
+ [!code-csharp[DataWorks DataTableReader.ctor#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.ctor/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.ctor/VB/source.vb#1)]  
+  
+ コンソール ウィンドウには、次の結果が表示されます。  
+  
+```  
+1 Mary  
+2 Andy  
+3 Peter  
+4 Russ  
+1 Wireless Network Card  
+2 Hard Drive  
+3 Monitor  
+4 CPU  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の終了<see cref="T:System.Data.DataTableReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`Close()`、閉じられたで`DataTableReader`オブジェクトでは、エラーは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public override int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の入れ子の深さ、<see cref="T:System.Data.DataTableReader" />です。</summary>
+        <value>現在の行の入れ子の深さ常に 0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DataTableReader`入れ子はサポートされません。 `Depth`プロパティは常に 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldCount">
+      <MemberSignature Language="C#" Value="public override int FieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.FieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行に列の数を返します。</summary>
+        <value>0、有効な結果セットに配置されない場合それ以外の場合、現在の行の列の数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">内、閉じられたフィールド数を取得しようとしましたが<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public override bool GetBoolean (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetBoolean(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetBoolean(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Boolean" />です。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため取得されたデータ既にブール値か、ブール型に強制変換できるかがあります、例外が生成します。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 列内のデータが正しい型でない場合の例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetBoolean#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetBoolean/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetBoolean#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetBoolean/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列を含まない、<see langword="Boolean" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public override byte GetByte (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8 GetByte(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetByte(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値をバイトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため取得されたデータがバイトかバイトに強制変換できるに既にあります。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetByte#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetByte/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetByte#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetByte/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列にバイトが含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override long GetBytes (int ordinal, long dataIndex, byte[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetBytes(int32 ordinal, int64 dataIndex, unsigned int8[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始するフィールド内のインデックス。</param>
+        <param name="buffer">バイトのストリームを読み込むバッファー。</param>
+        <param name="bufferIndex">データの配置を開始する位置を示すバッファー内のインデックス。</param>
+        <param name="length">バッファーにコピーする最大の長さ。</param>
+        <summary>指定したバッファー オフセットから始まる配列として、バッファーに指定した列オフセットから始まるバイトのストリームを読み取ります。</summary>
+        <returns>実際に読み取られたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetBytes`フィールドに使用できるバイト数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetBytes`バイトを取得するフィールドからは既に使用されています。 たとえば、ケース可能性があります、ときに、<xref:System.Data.DataTableReader>バッファーへの大規模なデータ構造体の読み込みが  
+  
+ バッファーを渡した場合`null`(`Nothing` Visual Basic で)、`GetBytes`バッファー オフセット パラメーターに基づく残りサイズではなくバイト単位で全体のフィールドの長さを返します。  
+  
+ 変換は実行されません。したがって取得されたデータおく必要があります、バイト配列またはバイト配列に強制します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.DataTableReader> C:\ フォルダー内の別のファイルを取得して、各イメージの保存、AdventureWorks サンプル データベース内のデータに基づきます。 このアプリケーションをテストするために、新しいコンソール アプリケーションを作成、System.Drawing.dll アセンブリを参照およびサンプル コードを新しく作成されたファイルに貼り付けます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetBytes#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetBytes/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetBytes#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetBytes/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列にバイト配列が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public override char GetChar (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetChar(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetChar(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>文字として指定された列の値を取得します。</summary>
+        <returns>列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため取得されたデータが文字または文字を強制に既にあります。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、番号付きの渡された DataTableReader 内で 2 列の内容を表示します。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetChar#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetChar/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetChar#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetChar/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定したフィールドに文字が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public override long GetChars (int ordinal, long dataIndex, char[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetChars(int32 ordinal, int64 dataIndex, char[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始するフィールド内のインデックス。</param>
+        <param name="buffer">文字のストリームを読み取るバッファー。</param>
+        <param name="bufferIndex">データの配置を開始する位置を示すバッファー内のインデックス。</param>
+        <param name="length">バッファーにコピーする最大の長さ。</param>
+        <summary>指定された列の値を 1 つの文字配列として返します。</summary>
+        <returns>実際に読み取られた文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetChars`フィールドに使用できる文字数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetChars`フィールドから文字を取得するは既に使用されています。  
+  
+ 実際に読み取られた文字数は、フィールドの末尾に達した場合、要求された長さよりも小さいできます。 Null であるバッファーを渡す場合 (`Nothing` Visual Basic で)、`GetChars`文字バッファー オフセット パラメーターに基づく残りサイズではなく全体のフィールドの長さを返します。  
+  
+ 変換は実行されません。そのため、データを取得する必要があります文字配列または文字列の配列に強制します。  
+  
+   
+  
+## Examples  
+ 次の例で、`GetChars`メソッドです。 `TestGetChars`メソッドが渡されるが必要ですが、 `DataTableReader` 2 列のデータを格納: 最初の列と 2 番目の文字の配列内のファイル名。 さらに、`TestGetChars`内の文字配列からデータを読み取るときに使用するバッファー サイズを指定することができます、`DataTableReader`です。 `TestGetChars`内のデータの各行に対応するファイルを作成、`DataTableReader`の最初の列で、指定されたデータを使用して、`DataTableReader`ファイル名として。  
+  
+ この手順の使用方法を示します、`GetChars`メソッドに格納されていたデータの読み取り、`DataTable`文字配列として。 データの原因の他の種類、`GetChars`をスローするメソッド、`InvalidCastException`です。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetChars#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetChars/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetChars#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetChars/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列に文字配列が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataTypeName">
+      <MemberSignature Language="C#" Value="public override string GetDataTypeName (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDataTypeName(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetDataTypeName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列のデータ型を表す文字列を取得します。</summary>
+        <returns>列のデータ型を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader.GetDataTypeName%2A>メソッドは常に、基になる型を返します<xref:System.Data.DataColumn>プロバイダー固有の型の代わりにします。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションには、フィールドと、単純なそれぞれの種類の名前の一覧が表示されます<xref:System.Data.DataTable>:。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetDataTypeName#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDataTypeName/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetDataTypeName#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDataTypeName/VB/source.vb#1)]  
+  
+ コンソール ウィンドウには、次の結果が表示されます。  
+  
+```  
+ID: Int32  
+Name: String  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime GetDateTime (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime GetDateTime(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetDateTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.DateTime" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。取得されたデータが既ににする必要がありますので、<xref:System.DateTime>に強制変換、または、`DataTime`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetDateTime#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDateTime/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetDateTime#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDateTime/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列には、DateTime 値がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecimal">
+      <MemberSignature Language="C#" Value="public override decimal GetDecimal (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Decimal GetDecimal(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetDecimal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Decimal" />です。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。取得されたデータが既ににする必要がありますので、<xref:System.Decimal>に強制変換、または、`Decimal`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetDecimal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDecimal/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetDecimal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDecimal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列を含まない、<see langword="Decimal" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDouble">
+      <MemberSignature Language="C#" Value="public override double GetDouble (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float64 GetDouble(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetDouble(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列の序数。</param>
+        <summary>倍精度浮動小数点数として、列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがって取得されたデータは、倍精度浮動小数点数が既にあります。 または倍精度浮動小数点数に強制変換できる必要があります。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetDouble#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDouble/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetDouble#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetDouble/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see langword="DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列では、倍精度浮動小数点数は含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>項目のコレクションを反復処理に使用できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />項目のコレクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子のみでのデータの読み取りを許可する、<xref:System.Data.DataTableReader>です。 列挙子を使用して、基になるコレクションを変更することはできません。  
+  
+ 最初は、列挙子はコレクション内の最初の要素の前に位置付けられます。 この位置で、呼び出す<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 そのため、`MoveNext` の値を読み取る前に、`Current` を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ `Current`返します、 <xref:System.Data.Common.DbDataRecord>、いずれかのまで同じオブジェクトを返しますと<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>と呼びます。 `MoveNext` は、`Current` を次の要素に設定します。  
+  
+ 列挙子が呼び出すと、コレクション内の最後の要素の後ろに配置され、コレクションの末尾が渡されると、 `MoveNext` false を返します。 場合は、最後の呼び出し`MoveNext`返される`false`、呼び出し元`Current`例外をスローします。 さらに、ため、<xref:System.Data.DataTableReader>順方向専用のアクセスを呼び出し、そのデータを提供、 <xref:System.Collections.IEnumerator.Reset%2A> 、IEnumerator のメソッドをスロー、<xref:System.NotSupportedException>です。  
+  
+ <xref:System.Data.DataTableReader>安定した列挙子を提供します。 つまり、基になるデータ内の行の削除や追加が発生した場合でもへの呼び出しによって返される列挙子<xref:System.Data.DataTableReader.GetEnumerator%2A>がまだ有効です。  
+  
+   
+  
+## Examples  
+ <xref:System.Data.DataTableReader.GetEnumerator%2A> メソッドの使用例を次に示します。 これから、基になる行が削除されたときに、列挙子の動作が含まれます<xref:System.Data.DataTable>列挙子がアクティブな状態です。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetEnumerator/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetEnumerator/VB/source.vb#1)]  
+  
+ プロシージャには、コンソール ウィンドウに次のテキストが表示されます。  
+  
+```  
+Peter  
+Mary  
+Russ  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetFieldType (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetFieldType(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトのデータ型です。</summary>
+        <returns>オブジェクトのデータ型である <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 渡して、次の手順を呼び出して、<xref:System.Data.DataTableReader>コンソール ウィンドウで、すべてのフィールドと各型の完全な名前の一覧を表示するためにインスタンス。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetFieldType#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetFieldType/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetFieldType#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetFieldType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFloat">
+      <MemberSignature Language="C#" Value="public override float GetFloat (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float32 GetFloat(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetFloat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を単精度浮動小数点値として取得します。</summary>
+        <returns>列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがって取得されたデータは、単精度浮動小数点数が既にあります。 または単精度浮動小数点数に強制変換できる必要があります。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetFloat#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetFloat/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetFloat#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetFloat/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列では、単精度浮動小数点数は含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGuid">
+      <MemberSignature Language="C#" Value="public override Guid GetGuid (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Guid GetGuid(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetGuid(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値をグローバル一意識別子 (GUID) として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。取得されたデータが既ににする必要がありますので、<xref:System.Guid>に強制変換、または、`Guid`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、番号付きの渡された DataTableReader 内で 2 列の内容を表示します。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetGuid#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetGuid/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetGuid#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetGuid/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列には GUID が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt16">
+      <MemberSignature Language="C#" Value="public override short GetInt16 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int16 GetInt16(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetInt16(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>16 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.Int16>に強制変換、または、`Int16`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetInt16#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt16/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetInt16#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt16/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列に 16 ビット符号付き整数が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt32">
+      <MemberSignature Language="C#" Value="public override int GetInt32 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetInt32(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetInt32(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>32 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.Int32>に強制変換、または、`Int32`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetInt32#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt32/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetInt32#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt32/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列は、32 ビット符号付き整数値を含んでいません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt64">
+      <MemberSignature Language="C#" Value="public override long GetInt64 (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetInt64(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetInt64(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定された列の値を 64 ビット符号付き整数として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.Int64>に強制変換、または、`Int64`です。  
+  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 適切な型の列内のデータがない場合は、例には、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetInt64#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt64/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetInt64#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetInt64/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列に 64 ビット符号付き整数値が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public override string GetName (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetName(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.String" />です。</summary>
+        <returns>指定された列の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetName`と<xref:System.Data.DataTableReader.GetOrdinal%2A>メソッドは逆の機能を提供します。 つまり、呼び出す`GetOrdinal`呼び出しの戻り値の`GetName`に渡された元のパラメーターを返す必要があります`GetName`; 順序は逆に、プロシージャの呼び出しにも当てはまります。  
+  
+   
+  
+## Examples  
+ 単純な例次にはには、指定したすべての列の名前を一覧表示するプロシージャが含まれます。 `DataTableReader`、コンソール ウィンドウに、列の序数。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetName#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetName/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetName#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetName/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrdinal">
+      <MemberSignature Language="C#" Value="public override int GetOrdinal (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetOrdinal(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetOrdinal(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前。</param>
+        <summary>列の名前を指定して、列の序数を取得します。</summary>
+        <returns>0 から始まる列序数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドのほとんどは、によって提供されるため、<xref:System.Data.DataTableReader>クラスが使用することができますを序数の列番号で指定する必要があります、`GetOrdinal`列の名前を指定された列数を取得します。  
+  
+ `GetOrdinal`最初に区別する検索を実行します。 失敗した場合、2 番目の検索が行われます。 列番号が見つからない場合、`IndexOutOfRangeException`がスローされます。  
+  
+ `GetOrdinal`カタカナの全角区別されません。  
+  
+ 呼び出す効率的ではありません序数に基づく参照は、名前による参照よりも効率的であるため`GetOrdinal`ループ内で。 呼び出すことによって、時間を節約`GetOrdinal`1 回は、ループ内で使用する整数の変数に結果を割り当てる  
+  
+   
+  
+## Examples  
+ 列名のみがあれば、場合、列名はユーザーが、指定した列から情報を取得する必要があります、必要な情報を抽出する次のようにプロシージャを使用することができます。 この例では、プロシージャは、列名を受け取りの現在の行の列に含まれるデータを返す、 <xref:System.Data.DataTableReader> :  
+  
+ [!code-csharp[DataWorks DataTableReader.GetOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetOrdinal/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.ArgumentException">指定された名前は、有効な列名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetProviderSpecificFieldType (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetProviderSpecificFieldType(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetProviderSpecificFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>プロバイダー固有の書式指定された列の型を取得します。</summary>
+        <returns>オブジェクトのデータ型である <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader>常に、基になる内で格納されている型を返します<xref:System.Data.DataColumn>、呼び出すことによって返される値、<xref:System.Data.DataTableReader.GetProviderSpecificFieldType%2A>メソッドは常に格納されている型と同じ型、<xref:System.Data.DataTable>です。 使用するときに、<xref:System.Data.DataTableReader>クラス、呼び出し、<xref:System.Data.DataTableReader.GetProviderSpecificFieldType%2A>メソッドを呼び出すことと同じ型を返します、<xref:System.Type.GetType%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificValue">
+      <MemberSignature Language="C#" Value="public override object GetProviderSpecificValue (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetProviderSpecificValue(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetProviderSpecificValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">値を取得する列の 0 から始まる番号。</param>
+        <summary>プロバイダー固有の書式指定された列の値を取得します。</summary>
+        <returns>プロバイダー固有の書式指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader>常に、基になる内で格納されている型を返します<xref:System.Data.DataColumn>、呼び出すことによって返される値、<xref:System.Data.DataTableReader.GetProviderSpecificValue%2A>メソッドは常に格納されたデータと同じ型のデータ、<xref:System.Data.DataTable>です。 使用するときに、<xref:System.Data.DataTableReader>クラス、呼び出し、<xref:System.Data.DataTableReader.GetProviderSpecificValue%2A>メソッドと同じ値し、として呼び出し元の型を返します、<xref:System.Data.DataTableReader.GetValue%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificValues">
+      <MemberSignature Language="C#" Value="public override int GetProviderSpecificValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetProviderSpecificValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetProviderSpecificValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">内の列の型情報を使用して入力するオブジェクトの配列、<see cref="T:System.Data.DataTableReader" />です。</param>
+        <summary>内のすべての列については、プロバイダー固有の型で指定した配列を埋めます、<see cref="T:System.Data.DataTableReader" />です。</summary>
+        <returns>列の値の数は、配列にコピーします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader>常に、基になる内に格納された型のデータを返します<xref:System.Data.DataColumn>、呼び出すことによって返される値、<xref:System.Data.DataTableReader.GetProviderSpecificValues%2A>内に格納されたデータと同じ型のメソッドは、常に、<xref:System.Data.DataTable>です。 使用するときに、<xref:System.Data.DataTableReader>クラス、呼び出し、<xref:System.Data.DataTableReader.GetProviderSpecificValues%2A>メソッドの呼び出しと同じ値と型を返します、<xref:System.Data.DataTableReader.GetValues%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchemaTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchemaTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetSchemaTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> の列メタデータを記述する <see cref="T:System.Data.DataTableReader" /> を返します。</summary>
+        <returns>列メタデータを記述する <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GetSchemaTable メソッドは、次の順序で各列に関するメタデータを返します。  
+  
+|DataReader 列|説明|  
+|-----------------------|-----------------|  
+|ColumnName|列の名前が表示されます、<xref:System.Data.DataTable>です。|  
+|ColumnOrdinal|列の序数|  
+|ColumnSize|場合は-1、 <xref:System.Data.Common.SchemaTableColumn.ColumnSize> (または<xref:System.Data.DataColumn.MaxLength%2A>) のプロパティ、<xref:System.Data.DataColumn>特定できないか、関連する、それ以外ではありません 0 または正の整数を含む、`MaxLength`値。|  
+|NumericPrecision|列のデータ型が数値型の場合は、これは、列の最大有効桁数です。 列のデータ型が数値データ型でない場合は、これは、null 値になります。|  
+|NumericScale|列のデータ型コンポーネントは、小数点以下桁数、小数点の右側に桁の数字の数を返します。 それ以外の場合、null 値を返します。|  
+|DataType|列の基になる型。|  
+|プロバイダーの種類|列のデータ型のインジケーター。 この値は、列のデータ型は、行ごとに変化する場合<xref:System.Object>です。 この列は、null 値を含めることはできません。|  
+|IsLong|`true`列のデータ型が場合<xref:System.String>とその<xref:System.Data.DataColumn.MaxLength%2A>プロパティは-1。 それ以外の場合は `false`。|  
+|AllowDBNull|`true`AllowDbNull 制約が設定されている場合、列が true とそれ以外の場合、`false`です。|  
+|IsReadOnly|`true`場合は、列を変更できません。それ以外の場合`false`です。|  
+|IsRowVersion|`false`、すべての列です。|  
+|IsUnique|`true`: で 2 つの行、<xref:System.Data.DataTable>この列の値が同じであることができます。 `IsUnique`この列にのみ適用される UNIQUE 型の制約があるかどうかはそれ自体またはによって列がキーを表す場合は true である保証されます。 `false`: 列に重複する値を含めることができます、`DataTable`です。 この列の既定値は`false`します。|  
+|IsKey|`true`: 列は、一連の列の 1 つ、まとめると、内の行を一意に識別、<xref:System.Data.DataTable>です。 列のセット`IsKey`'éý'`true`内の行を一意に識別する必要があります、`DataTable`です。 この列のセットが列の最小セットである必要はありません。 この列のセットを生成することがあります、`DataTable`主キー、unique 制約または一意のインデックス。 `false`: 列は、行を一意に識別する必要はありません。 この値は`true`列は、単一または複合主キーに参加している場合。 それ以外の場合、その値は`false`します。|  
+|IsAutoIncrement|`true`: 列は、固定された増分で新しい行に値を割り当てます。 `false`: 列は、固定された増分で新しい行に値を割り当てられません。 この列の既定値は`false`します。|  
+|BaseCatalogName|列を含むデータ ストア内のカタログの名前。 `Null`場合は、基本のカタログ名を特定できません。 この列の既定値は、`null`値。|  
+|BaseSchemaName|この値は常に`Null`です。|  
+|BaseTableName|<xref:System.Data.DataTable> の名前。|  
+|BaseColumnName|内の列の名前、<xref:System.Data.DataTable>です。|  
+|AutoIncrementSeed|値、<xref:System.Data.DataTable>の<xref:System.Data.DataColumn.AutoIncrementSeed%2A>プロパティです。|  
+|AutoIncrementStep|値、<xref:System.Data.DataTable>の<xref:System.Data.DataColumn.AutoIncrementStep%2A>プロパティです。|  
+|defaultValue|値、<xref:System.Data.DataColumn>の<xref:System.Data.DataColumn.DefaultValue%2A>プロパティです。|  
+|式|現在の列が式列と同じ式で使用されるすべての列が属している場合は、式の文字列`T:System.Data.DataTable`式列を含むです。 それ以外の場合`null`です。|  
+|ColumnMapping|<xref:System.Data.MappingType>に関連付けられた値、<xref:System.Data.DataColumn>です。 型には、いずれかを指定できます`Attribute`、 `Element`、 `Hidden`、または`SimpleContent`です。 既定値は `Element` です。|  
+|BaseTableNamespace|値、<xref:System.Data.DataTable>の<xref:System.Data.DataTable.Namespace%2A>プロパティです。|  
+|BaseColumnNamespace|値、<xref:System.Data.DataColumn>の<xref:System.Data.DataColumn.Namespace%2A>プロパティです。|  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションの例では、指定された列に関するスキーマ情報を取得します。 渡す、`DisplaySchemaTableInfo`プロシージャ、<xref:System.Data.DataTableReader>および内の列の序数位置を表す整数を`DataTableReader`と、プロシージャは、コンソール ウィンドウにスキーマ情報を出力します。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetSchemaTable#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetSchemaTable/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetSchemaTable#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetSchemaTable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.DataTableReader" /> が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public override string GetString (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetString(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>文字列として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Data.DataTableReader.IsDBNull%2A>このメソッドを呼び出す前に null 値があるかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 場合の例、適切な型の列内のデータには、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetString#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetString/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetString#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetString/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">指定された列に文字列が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>ネイティブ形式で指定された列の値を取得します。</summary>
+        <returns>指定された列の値。 このメソッドが戻る<see langword="DBNull" />列の null です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことができます<xref:System.Data.DataTableReader.IsDBNull%2A>して、このメソッドを呼び出す前に null 値がある場合はこれを実行する必要はありません。  
+  
+   
+  
+## Examples  
+ 次の例は、すべての列内の現在の行を反復処理、 <xref:System.Data.DataTableReader>、各列と列名の内容が表示されます。 一般に、によって取得された行の中のすべての列を操作するが目的の場合、 <xref:System.Data.DataTableReader>、使用を検討して、<xref:System.Data.DataTableReader.GetValues%2A>メソッド代わりより効率的になっているためです。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetValue#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValue/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValue/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public override int GetValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.GetValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">配列<see cref="T:System.Object" />から列の値をコピー先の<see cref="T:System.Data.DataTableReader" />です。</param>
+        <summary>現在の行の列の値を持つオブジェクトの配列を追加します。</summary>
+        <returns>列の値の数は、配列にコピーします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのアプリケーションは、このメソッドは、各列を個別に取得する代わりに、すべての列を取得するための効率的な手段を提供します。 内の行からすべての列値を取得するを目的のかどうか、 <xref:System.Data.DataTableReader>、`GetValues`メソッドは、最も効率的なソリューションを提供します。  
+  
+ 渡すことができます、<xref:System.Object>結果の行に含まれる列数より少ないを格納する配列。 データの量のみ、`Object`配列が配列にコピーを保持することができます。 渡すことも、`Object`配列の長さが、メソッドの呼び出しによって、その他の配列要素のままの場合がそのまま結果の行に含まれる列の数を超える。  
+  
+ このメソッドは`DBNull`出力配列内の null 列です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定された現在の行からすべての値を読み取る適切なサイズである配列の使用方法を示します<xref:System.Data.DataTableReader>です。 さらに、使用可能な列の数より大きいか小さい可能性のある固定サイズの配列を使用するかどうかを示します。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetValueObject#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.GetValueObject#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasRows">
+      <MemberSignature Language="C#" Value="public override bool HasRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasRows" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.HasRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Data.DataTableReader" /> 1 つまたは複数の行が含まれています。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Data.DataTableReader" /> 1 つまたは複数の行が含まれます。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HasRows`プロパティは、現在の結果セットに関する情報を返します。 場合、<xref:System.Data.DataTableReader>複数の結果を含む、セットの値を確認することができます、`HasRows`プロパティを呼び出した後すぐに、<xref:System.Data.DataTableReader.NextResult%2A>新しい結果セットに行が含まれているかどうかを判断するためのメソッドです。  
+  
+ 使用して、`HasRows`プロパティを呼び出すという要件を避けるために、<xref:System.Data.DataTableReader.Read%2A>のメソッド、<xref:System.Data.DataTableReader>現在の結果セット内の行が存在しない場合。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つを塗りつぶします<xref:System.Data.DataTable>インスタンス データを使用します。 最初の<xref:System.Data.DataTable>1 つの行を含む、2 番目に行が含まれていません。 作成し、<xref:System.Data.DataTableReader>両方を含む<xref:System.Data.DataTable>オブジェクト、しの値を調べ、それぞれの内容を表示する PrintData メソッドを呼び出して、 <xref:System.Data.DataTableReader.HasRows%2A> PrintData に呼び出しを行う前にそれぞれのプロパティです。  
+  
+ [!code-csharp[DataWorks DataTableReader.HasRows#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.HasRows/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.HasRows#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.HasRows/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">クローズしたに関する情報を取得しようとしました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public override bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.DataTableReader" />が閉じられます。</summary>
+        <value>返します<see langword="true" />場合、<see cref="T:System.Data.DataTableReader" />が閉じられた場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableReader.Close%2A>唯一の方法と`IsClosed`と<xref:System.Data.DataTableReader.RecordsAffected%2A>後にアクセスできる唯一のプロパティ、<xref:System.Data.DataTableReader>が閉じられました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNull">
+      <MemberSignature Language="C#" Value="public override bool IsDBNull (int ordinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDBNull(int32 ordinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.IsDBNull(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>列に値が存在しないまたは欠損値が含まれるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定された列の値と等しい場合<see cref="T:System.DBNull" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型指定された get メソッドを呼び出す前に null 列値があるかどうかに表示するには、このメソッドを呼び出す (たとえば、 <xref:System.Data.DataTableReader.GetByte%2A>、<xref:System.Data.DataTableReader.GetChar%2A>など) エラーの発生を防ぐためにします。  
+  
+   
+  
+## Examples  
+ 次の例は、番号付きの渡された内で 2 列の内容を表示<xref:System.Data.DataTableReader>です。 コードがテキストを表示、値の特定の行での列が null の場合\<NULL >。 場合の例、適切な型の列内のデータには、行ごとに、エラー メッセージが表示されます。  
+  
+ [!code-csharp[DataWorks DataTableReader.IsDbNull#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.IsDbNull/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.IsDbNull#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.IsDbNull/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[int ordinal] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">0 から始まる列序数。</param>
+        <summary>序数の列を指定して、ネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードの<xref:System.Data.DataTableReader.Item%2A>の動作は、<xref:System.Data.DataTableReader.GetValue%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、すべての列の内容を表示から、指定されたすべての行で<xref:System.Data.DataTableReader>です。 コードを使用して、<xref:System.Data.DataTableReader.Item%2A>メソッド (、インデクサー、Microsoft c# で) の各列に含まれている値を取得します。  
+  
+ [!code-csharp[DataWorks DataTableReader.Item#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.Item/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.Item#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.Item/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前。</param>
+        <summary>列の名前を指定されたネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字小文字を区別ルックアップが最初に実行されます。 失敗した場合、2 番目の検索が行われます。  
+  
+ このメソッドは、カタカナの全角を区別します。  
+  
+ このオーバー ロードされたバージョンの<xref:System.Data.DataTableReader.Item%2A>呼び出しに対応する、<xref:System.Data.DataTableReader.GetOrdinal%2A>メソッド、およびし、後で呼び出し、<xref:System.Data.DataTableReader.GetValue%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 指定された、<xref:System.Data.DataTableReader>列名、GetValueByName プロシージャは、指定された列の値を返します。 このプロシージャを呼び出す前に作成する必要が新しい<xref:System.Data.DataTableReader>インスタンス化し、データの行の行のポインターを配置するには、少なくとも 1 回の読み取りメソッドを呼び出します。  
+  
+ [!code-csharp[DataWorks DataTableReader.ItemName#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.ItemName/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.ItemName#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.ItemName/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された名前は、有効な列名ではありません。</exception>
+        <exception cref="T:System.Data.DeletedRowInaccessibleException">削除された行からデータを取得しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResult">
+      <MemberSignature Language="C#" Value="public override bool NextResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool NextResult() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.NextResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>進めます、<see cref="T:System.Data.DataTableReader" />存在する場合は [次へ] の結果セットにします。</summary>
+        <returns>
+          <see langword="true" />別の結果セットがあった場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成することで生成できる複数の結果を処理するために使用する<xref:System.Data.DataTableReader>経由で、 <xref:System.Data.DataSet> 2 つ以上のテーブル、または 2 つ以上を格納する配列を含む<xref:System.Data.DataTable>インスタンス。  
+  
+ 新しい<xref:System.Data.DataTableReader>は最初の結果上に位置します。  
+  
+   
+  
+## Examples  
+ 次の例では、TestConstructor メソッド 2 つ作成されます<xref:System.Data.DataTable>インスタンス。 このコンス トラクターを実行するために、<xref:System.Data.DataTableReader>クラス、サンプルを作成、新しい`DataTableReader`を 2 つを含む配列に基づく`DataTables`内容を印刷する最初のいくつかの列からコンソールに、単純な操作を実行ウィンドウです。 このアプリケーションをテストするために、新しいコンソール アプリケーションを作成し、サンプル コードを新しく作成されたファイルに貼り付けます。  
+  
+ [!code-csharp[DataWorks DataTableReader.NextResult#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.NextResult/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.NextResult#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.NextResult/VB/source.vb#1)]  
+  
+ コンソール ウィンドウには、次の結果が表示されます。  
+  
+```  
+1 Mary  
+2 Andy  
+3 Peter  
+4 Russ  
+1 Wireless Network Card  
+2 Hard Drive  
+3 Monitor  
+4 CPU  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">閉じた内を移動しようとしました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTableReader" /> を次のレコードに進めます。</summary>
+        <returns>
+          <see langword="true" />読み取り、別の行があった場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の位置、<xref:System.Data.DataTableReader>最初のレコードの前に、です。 そのため、呼び出す必要があります`Read`をデータへのアクセスを開始します。  
+  
+   
+  
+## Examples  
+ 内のすべての行をループ処理 PrintColumns プロシージャ、 <xref:System.Data.DataTableReader>、コンソール ウィンドウに各列の内容を表示します。  
+  
+ [!code-csharp[DataWorks DataTableReader.Read#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.Read/CS/source.cs#1)]
+ [!code-vb[DataWorks DataTableReader.Read#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.Read/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.DataTableReader" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordsAffected">
+      <MemberSignature Language="C#" Value="public override int RecordsAffected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecordsAffected" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableReader.RecordsAffected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入、変更、または SQL ステートメントの実行によって削除された行の数を取得します。</summary>
+        <value><see cref="T:System.Data.DataTableReader" />このプロパティをサポートしておらず、常に 0 を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

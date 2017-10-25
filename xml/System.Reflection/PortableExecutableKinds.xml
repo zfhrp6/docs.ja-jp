@@ -1,0 +1,195 @@
+<Type Name="PortableExecutableKinds" FullName="System.Reflection.PortableExecutableKinds">
+  <TypeSignature Language="C#" Value="public enum PortableExecutableKinds" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PortableExecutableKinds extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.PortableExecutableKinds" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行可能ファイル内のコードの性質を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュールの場合は、この値を取得するには、<xref:System.Reflection.Module.GetPEKind%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  この列挙体に対応しています、`CorPEKind`アンマネージ リフレクション API、内の列挙には、アンマネージによって`GetPEKind`関数。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ILOnly">
+      <MemberSignature Language="C#" Value="ILOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds ILOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.ILOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルはのみ Microsoft intermediate language (MSIL) が含まれています、32 ビットまたは 64 ビット プラットフォームに対して中立的なためです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAPortableExecutableImage">
+      <MemberSignature Language="C#" Value="NotAPortableExecutableImage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds NotAPortableExecutableImage = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.NotAPortableExecutableImage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルは、ポータブル実行可能 (PE) ファイル形式ではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PE32Plus">
+      <MemberSignature Language="C#" Value="PE32Plus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds PE32Plus = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.PE32Plus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルには、64 ビット プラットフォームが必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Preferred32Bit">
+      <MemberSignature Language="C#" Value="Preferred32Bit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds Preferred32Bit = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.Preferred32Bit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルは、プラットフォームに依存しないが、可能な場合は、32 ビット プラットフォームで実行する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required32Bit">
+      <MemberSignature Language="C#" Value="Required32Bit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds Required32Bit = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.Required32Bit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルは、64 ビット プラットフォーム上で 32 ビット プラットフォーム上または 32 ビット Windows on Windows (WOW) 環境で実行できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmanaged32Bit">
+      <MemberSignature Language="C#" Value="Unmanaged32Bit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Reflection.PortableExecutableKinds Unmanaged32Bit = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Reflection.PortableExecutableKinds.Unmanaged32Bit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PortableExecutableKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルには、純粋なアンマネージ コードが含まれています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

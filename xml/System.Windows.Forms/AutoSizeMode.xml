@@ -1,0 +1,67 @@
+<Type Name="AutoSizeMode" FullName="System.Windows.Forms.AutoSizeMode">
+  <TypeSignature Language="C#" Value="public enum AutoSizeMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutoSizeMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AutoSizeMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コントロールときの動作を指定します。 その<see cref="P:System.Windows.Forms.Control.AutoSize" />プロパティを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールに取得する同じ動作が生成される GrowAndShrink 値の設定、<xref:System.Windows.Forms.Control.AutoSize%2A>有効なプロパティがありません  
+  
+ `AutoSizeMode` プロパティ。 <xref:System.Windows.Forms.Control.MinimumSize%2A>と<xref:System.Windows.Forms.Control.MaximumSize%2A>の現在の値が、プロパティが守られて、<xref:System.Windows.Forms.Control.Size%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、その内容に合わせて自動的にサイズを変更するコードを使用して作成されたフォームを示しています。 ときに実行すると、フォームに表示されます、 <xref:System.Windows.Forms.Label>、 <xref:System.Windows.Forms.TextBox> 、URL を入力するため、<xref:System.Windows.Forms.Button>ユーザーの既定の Web ブラウザー内でその URL を表示するためです。 コード例では、<xref:System.Windows.Forms.FlowLayoutPanel>レイアウトに格納されている、後いずれかを制御し、設定、<xref:System.Windows.Forms.Control.AutoSize%2A>と<xref:System.Windows.Forms.AutoSizeMode>は、フォームの内容に合わせて増減します。  
+  
+ [!code-csharp[Form.AutoSize#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Form.AutoSize/CS/Form1.cs#1)]
+ [!code-vb[Form.AutoSize#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Form.AutoSize/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GrowAndShrink">
+      <MemberSignature Language="C#" Value="GrowAndShrink" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoSizeMode GrowAndShrink = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoSizeMode.GrowAndShrink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoSizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールは、拡大またはその内容に合わせて縮小します。 コントロールは、手動でサイズ変更することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GrowOnly">
+      <MemberSignature Language="C#" Value="GrowOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoSizeMode GrowOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoSizeMode.GrowOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoSizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの内容に合わせて必要に応じて拡張しますがの値より小さい圧縮されないその<see cref="P:System.Windows.Forms.Control.Size" />プロパティです。 フォームはサイズ変更できるが、非常に小さいため、そのコンテナー内のコントロールのいずれかが非表示にすることはできません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,117 @@
+<Type Name="SortKey" FullName="System.DirectoryServices.Protocols.SortKey">
+  <TypeSignature Language="C#" Value="public class SortKey" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential beforefieldinit SortKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.SortKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.SortKey" />クラスは、並べ替えコントロールで使用するための並べ替えの条件を格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortKey.#ctor" />コンス トラクターを作成しの新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.Protocols.SortKey" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortKey (string attributeName, string matchingRule, bool reverseOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string attributeName, string matchingRule, bool reverseOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.SortKey.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="matchingRule" Type="System.String" />
+        <Parameter Name="reverseOrder" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">並べ替えキーとして使用する属性の名前。</param>
+        <param name="matchingRule">並べ替えの照合ルールのオブジェクト識別子 (OID)。</param>
+        <param name="reverseOrder">
+          <see langword="true" />最低値から順序で並べ替える場合に最も高いまたは<see langword="false" />並べ替え順序は、高いものから低い方がある場合。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.SortKey.#ctor(System.String,System.String,System.Boolean)" />コンス トラクターを作成しの新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.Protocols.SortKey" />照合ルールを指定した属性名を使用してクラスし、並べ替え順です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeName">
+      <MemberSignature Language="C#" Value="public string AttributeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AttributeName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SortKey.AttributeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SortKey.AttributeName" />プロパティを並べ替えキーとして使用する属性の名前を指定します。</summary>
+        <value>並べ替えキーとして使用する属性の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchingRule">
+      <MemberSignature Language="C#" Value="public string MatchingRule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MatchingRule" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SortKey.MatchingRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SortKey.MatchingRule" />プロパティは、並べ替えの照合ルールのオブジェクト識別子 (OID) を指定します。</summary>
+        <value>並べ替えの照合ルールの OID です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReverseOrder">
+      <MemberSignature Language="C#" Value="public bool ReverseOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReverseOrder" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.SortKey.ReverseOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.SortKey.ReverseOrder" />並べ替えが逆の順序で返されるプロパティを指定します。</summary>
+        <value>このプロパティは<see langword="true" />、小さい方から順序で並べ替える場合に最も高いまたは<see langword="false" />順序で並べ替えるを高いものから最も低い場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

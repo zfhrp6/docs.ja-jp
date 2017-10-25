@@ -1,0 +1,173 @@
+<Type Name="ListBoxItem" FullName="Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem">
+  <TypeSignature Language="C#" Value="public class ListBoxItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ListBoxItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の項目を表す、<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />Visual Basic 6.0 からアップグレードしたアプリケーションで制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`ListBox`と`ComboBox`使用を制御、`List`リスト項目を格納するプロパティと`ItemData`オプションで格納するプロパティ、`Integer`各リスト項目に関連付けられています。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]では、<xref:System.Windows.Forms.ListBox>と<xref:System.Windows.Forms.ComboBox>使用を制御、<xref:System.Windows.Forms.ListBox.Items%2A>リスト項目を格納するプロパティと`ItemData`プロパティは現在サポートされていません。  
+  
+ Visual Basic 6.0 アプリケーションをアップグレードするとき[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アップグレード ツールを作成、`ListBoxItem`内の各アイテムのクラス、<xref:System.Windows.Forms.ListBox>または<xref:System.Windows.Forms.ComboBox>コントロール。 <xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>関数を参照するコードを有効にするのには使用して、`ItemData`プロパティです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListBoxItem (string ItemString);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string ItemString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ItemString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ItemString">A<see cref="T:System.String" />リスト項目を格納しています。</param>
+        <summary>
+          <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 アプリケーションをアップグレードするとき[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アップグレード ツールを作成、<xref:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem>内の各アイテムのクラス、<xref:System.Windows.Forms.ListBox>または<xref:System.Windows.Forms.ComboBox>コントロール。 <xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>関数を参照するコードを有効にするのには使用して、`ItemData`プロパティです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListBoxItem (string ItemString, int ItemData);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string ItemString, int32 ItemData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ItemString" Type="System.String" />
+        <Parameter Name="ItemData" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ItemString">A<see cref="T:System.String" />リスト項目を格納しています。</param>
+        <param name="ItemData"><see langword="Integer" />を表す Visual Basic 6.0<see langword="ItemData" />値。</param>
+        <summary>
+          <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 アプリケーションをアップグレードするとき[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アップグレード ツールを作成、<xref:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem>内の各アイテムのクラス、<xref:System.Windows.Forms.ListBox>または<xref:System.Windows.Forms.ComboBox>コントロール。 <xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>関数を参照するコードを有効にするのには使用して、`ItemData`プロパティです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemData">
+      <MemberSignature Language="C#" Value="public int ItemData;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 ItemData" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストア、<see langword="ItemData" />内の項目の値、<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />Visual Basic 6.0 からアップグレードしたアプリケーションで制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 アプリケーションをアップグレードするとき[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アップグレード ツールを作成、<xref:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem>内の各アイテムのクラス、<xref:System.Windows.Forms.ListBox>または<xref:System.Windows.Forms.ComboBox>コントロール。 <xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>関数を参照するコードを有効にするのには使用して、`ItemData`プロパティです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemString">
+      <MemberSignature Language="C#" Value="public string ItemString;" />
+      <MemberSignature Language="ILAsm" Value=".field public string ItemString" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ItemString" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストア、<see langword="List" />内の項目の値、<see cref="T:System.Windows.Forms.ListBox" />または<see cref="T:System.Windows.Forms.ComboBox" />Visual Basic 6.0 からアップグレードしたアプリケーションで制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 アプリケーションをアップグレードするとき[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]、アップグレード ツールを作成、<xref:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem>内の各アイテムのクラス、<xref:System.Windows.Forms.ListBox>または<xref:System.Windows.Forms.ComboBox>コントロール。 <xref:Microsoft.VisualBasic.Compatibility.VB6.Support.SetItemData%2A>と<xref:Microsoft.VisualBasic.Compatibility.VB6.Support.GetItemData%2A>関数を参照するコードを有効にするのには使用して、`ItemData`プロパティです。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns>A<see cref="T:System.String" />の値を格納している、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.VisualBasic.Compatibility.VB6.ListBoxItem>に変換できない、 <xref:System.String>; 呼び出す必要があります、`ToString`型に変換します。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,135 @@
+<Type Name="PageContentCollection" FullName="System.Windows.Documents.PageContentCollection">
+  <TypeSignature Language="C#" Value="public sealed class PageContentCollection : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.PageContent&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageContentCollection extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Documents.PageContent&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.PageContentCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.PageContent&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ドキュメントのページのコレクションのコレクションのサポートを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Windows.Documents.PageContent newPageContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Documents.PageContent newPageContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.PageContentCollection.Add(System.Windows.Documents.PageContent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newPageContent" Type="System.Windows.Documents.PageContent" />
+      </Parameters>
+      <Docs>
+        <param name="newPageContent">コレクションに追加する新しいページです。</param>
+        <summary>ページのコレクションに新しいページを追加します。</summary>
+        <returns>ページが追加されたコレクション内の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="newPageContent" />として渡された<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">として渡されるページ<paramref name="newPageContent" />コレクションに既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.PageContentCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのコレクションに含まれる要素の数を取得します。</summary>
+        <value>コレクション内の要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.Windows.Documents.PageContent&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Documents.PageContent&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.PageContentCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Documents.PageContent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページのコレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションの反復処理に使用できる列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、コレクション内のデータの読み取りのみ許可します。 列挙子を使用して、基になるコレクションを変更することはできません。  
+  
+ 参照してください<xref:System.Collections.IEnumerable>.<xref:System.Collections.IEnumerable.GetEnumerator%2A>列挙子を使用する方法に関するその他のコメントにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.PageContent this[int pageIndex] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.PageContent Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.PageContentCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.PageContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pageIndex">取得するには、ページの 0 から始まるインデックス。</param>
+        <summary>取得、<see cref="T:System.Windows.Documents.PageContent" />コレクション内で指定したインデックス位置にある要素。</summary>
+        <value>コレクション内の指定したインデックスにページのコンテンツ要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.PageContentCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  代わりに、タイプ セーフ <see cref="M:System.Windows.Documents.PageContentCollection.GetEnumerator" /> メソッドを使用します。</summary>
+        <returns>列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

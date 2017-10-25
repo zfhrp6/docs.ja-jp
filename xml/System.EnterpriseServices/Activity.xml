@@ -1,0 +1,173 @@
+<Type Name="Activity" FullName="System.EnterpriseServices.Activity">
+  <TypeSignature Language="C#" Value="public sealed class Activity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Activity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Activity" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>COM + コンポーネントを作成することがなく COM + サービスを使用できる同期または非同期のバッチ処理を実行できるアクティビティを作成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティに関連付けられているコンテキストが完全にによって、<xref:System.EnterpriseServices.ServiceConfig>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.EnterpriseServices.Activity>クラスし、の同期サービスを使用します。  
+  
+ [!code-csharp[EnterpriseServices_Activity#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Activity/CS/EnterpriseServices_Activity.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Activity (System.EnterpriseServices.ServiceConfig cfg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.EnterpriseServices.ServiceConfig cfg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Activity.#ctor(System.EnterpriseServices.ServiceConfig)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cfg" Type="System.EnterpriseServices.ServiceConfig" />
+      </Parameters>
+      <Docs>
+        <param name="cfg">A<see cref="T:System.EnterpriseServices.ServiceConfig" />を使用するサービスの構成情報が含まれています。</param>
+        <summary><see cref="T:System.EnterpriseServices.Activity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.EnterpriseServices.Activity>バッチに作業 COM + サービスを送信するために使用されます。 アクティビティに関連付けられているコンテキストが完全にによって、<xref:System.EnterpriseServices.ServiceConfig>を通じて渡されるオブジェクト、`cfg`パラメーター。  
+  
+   
+  
+## Examples  
+ <xref:System.EnterpriseServices.Activity> クラスの新しいインスタンスを初期化する方法を次のコード例に示します。  
+  
+ [!code-csharp[EnterpriseServices_Activity#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Activity/CS/EnterpriseServices_Activity.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.EnterpriseServices.Activity" />現在のプラットフォームでサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AsynchronousCall">
+      <MemberSignature Language="C#" Value="public void AsynchronousCall (System.EnterpriseServices.IServiceCall serviceCall);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AsynchronousCall(class System.EnterpriseServices.IServiceCall serviceCall) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Activity.AsynchronousCall(System.EnterpriseServices.IServiceCall)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceCall" Type="System.EnterpriseServices.IServiceCall" />
+      </Parameters>
+      <Docs>
+        <param name="serviceCall">A<see cref="T:System.EnterpriseServices.IServiceCall" />をバッチ処理を実装するために使用できるオブジェクト。</param>
+        <summary>指定されたユーザー定義のバッチ処理を非同期的に実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドを使用する方法を示します。  
+  
+ [!code-csharp[EnterpriseServices_Activity#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Activity/CS/EnterpriseServices_Activity.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindToCurrentThread">
+      <MemberSignature Language="C#" Value="public void BindToCurrentThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindToCurrentThread() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Activity.BindToCurrentThread" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー定義の作業を現在のスレッドにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Activity.BindToCurrentThread%2A>バインドで送信されるバッチ作業、<xref:System.EnterpriseServices.Activity.SynchronousCall%2A>または<xref:System.EnterpriseServices.Activity.AsynchronousCall%2A>メソッドを現在のシングル スレッド アパートメント (STA)。 <xref:System.EnterpriseServices.Activity.BindToCurrentThread%2A>効果はありません、現在のスレッドはマルチ スレッド アパートメント (MTA) で実行されている場合。 現在のスレッド モデルがの構成によって決まりますが、<xref:System.EnterpriseServices.ServiceConfig.ThreadPool%2A>のプロパティ、<xref:System.EnterpriseServices.ServiceConfig>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronousCall">
+      <MemberSignature Language="C#" Value="public void SynchronousCall (System.EnterpriseServices.IServiceCall serviceCall);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SynchronousCall(class System.EnterpriseServices.IServiceCall serviceCall) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Activity.SynchronousCall(System.EnterpriseServices.IServiceCall)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceCall" Type="System.EnterpriseServices.IServiceCall" />
+      </Parameters>
+      <Docs>
+        <param name="serviceCall">A<see cref="T:System.EnterpriseServices.IServiceCall" />をバッチ処理を実装するために使用できるオブジェクト。</param>
+        <summary>指定されたユーザー定義バッチの作業を同期的に実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnbindFromThread">
+      <MemberSignature Language="C#" Value="public void UnbindFromThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnbindFromThread() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Activity.UnbindFromThread" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>送信されるバッチの作業をバインド解除、<see cref="M:System.EnterpriseServices.Activity.SynchronousCall(System.EnterpriseServices.IServiceCall)" />または<see cref="M:System.EnterpriseServices.Activity.AsynchronousCall(System.EnterpriseServices.IServiceCall)" />バッチ作業を実行しているスレッドからのメソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Activity.UnbindFromThread%2A>効果はありません、バッチ作業が以前のスレッドにバインドされていない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

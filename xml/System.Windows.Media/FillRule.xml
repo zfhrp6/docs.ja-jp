@@ -1,0 +1,50 @@
+<Type Name="FillRule" FullName="System.Windows.Media.FillRule">
+  <TypeSignature Language="C#" Value="public enum FillRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FillRule extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FillRule" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定方法の交差領域<see cref="T:System.Windows.Media.PathFigure" />に含まれるオブジェクト、<see cref="T:System.Windows.Media.Geometry" />がの領域に組み合わされた、<see cref="T:System.Windows.Media.Geometry" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EvenOdd">
+      <MemberSignature Language="C#" Value="EvenOdd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.FillRule EvenOdd = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.FillRule.EvenOdd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FillRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>あるポイントから任意の方向に無制限に光線を描画し、その光線が交差する特定の形状からのパス セグメントの数をカウントすることで、そのポイントが塗りつぶし領域内にあるかどうかを決定するルール。 この数値が偶数の場合は、ポイントは内側にあります。偶数の場合は、ポイントは外側にあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Nonzero">
+      <MemberSignature Language="C#" Value="Nonzero" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.FillRule Nonzero = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.FillRule.Nonzero" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FillRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>あるポイントから任意の方向に無制限に光線を描画し、形状のセグメントが光線と交差する場所を調べることで、そのポイントがパスの塗りつぶし領域内にあるかどうかを決定するルール。 カウントは 0 から始まり、セグメントが光線と左から右に交差するごとに 1 を追加し、パス セグメントが光線と右から左に交差するごとに 1 を減算します。 交差のカウント後、結果が 0 の場合は、ポイントは、パスの外側にあります。 それ以外の場合は、内側にあります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

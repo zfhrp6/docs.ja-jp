@@ -1,0 +1,143 @@
+<Type Name="WebFaultException&lt;T&gt;" FullName="System.ServiceModel.Web.WebFaultException&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class WebFaultException&lt;T&gt; : System.ServiceModel.FaultException&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WebFaultException`1&lt;T&gt; extends System.ServiceModel.FaultException`1&lt;!T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Web.WebFaultException`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ServiceModel.FaultException&lt;T&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">T</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">シリアル化可能なエラーの詳細な型。</typeparam>
+    <summary>HTTP ステータス コードが関連付けられているエラーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WCF REST エンドポイント (<xref:System.ServiceModel.WebHttpBinding> および <xref:System.ServiceModel.Description.WebHttpBehavior>/<xref:System.ServiceModel.Description.WebScriptEnablingBehavior>) を使用している場合、応答には HTTP ステータス コードが適宜設定されます。 ただし、<xref:System.ServiceModel.Web.WebFaultException> は、REST 以外のエンドポイントで使用することもでき、その場合は、通常の <xref:System.ServiceModel.FaultException> のように動作します。  
+  
+ このクラスを使用することによって、操作と同じ形式を使用してエラーの詳細を返すことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebFaultException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebFaultException`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報。</param>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Web.WebFaultException`1" /> と <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を使用して、<see cref="T:System.Runtime.Serialization.StreamingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebFaultException (T detail, System.Net.HttpStatusCode statusCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T detail, valuetype System.Net.HttpStatusCode statusCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="detail" Type="T" />
+        <Parameter Name="statusCode" Type="System.Net.HttpStatusCode" />
+      </Parameters>
+      <Docs>
+        <param name="detail">エラー。</param>
+        <param name="statusCode">応答メッセージで設定する HTTP ステータス コード。</param>
+        <summary>指定した例外の詳細と呼び出し元に返す <see cref="T:System.ServiceModel.Web.WebFaultException`1" /> を使用して、<see cref="M:System.ServiceModel.Web.WebFaultException.#ctor(System.Net.HttpStatusCode)" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebFaultException (T detail, System.Net.HttpStatusCode statusCode, System.Collections.Generic.IEnumerable&lt;Type&gt; knownTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T detail, valuetype System.Net.HttpStatusCode statusCode, class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; knownTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode,System.Collections.Generic.IEnumerable{System.Type})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="detail" Type="T" />
+        <Parameter Name="statusCode" Type="System.Net.HttpStatusCode" />
+        <Parameter Name="knownTypes" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="detail">エラー。</param>
+        <param name="statusCode">応答メッセージで設定する HTTP ステータス コード。</param>
+        <param name="knownTypes">シリアル化と逆シリアル化で使用される既知の型のセット。</param>
+        <summary>指定した例外の詳細と呼び出し元に返す <see cref="T:System.ServiceModel.Web.WebFaultException`1" /> を使用して、<see cref="P:System.ServiceModel.Web.WebFaultException`1.StatusCode" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.WebFaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化の際のオブジェクト データの追加先シリアル化情報。</param>
+        <param name="context">シリアル化されるオブジェクトのシリアル化先。</param>
+        <summary>オブジェクトがストリームにシリアル化されるときに呼び出される <see cref="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" /> メソッドの実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public System.Net.HttpStatusCode StatusCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.HttpStatusCode StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.WebFaultException`1.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーに関連付けられた <see cref="T:System.Net.HttpStatusCode" /> を取得します。</summary>
+        <value>エラーに関連付けられている HTTP ステータス コード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

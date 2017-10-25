@@ -1,0 +1,69 @@
+<Type Name="StreamSecurityUpgradeAcceptor" FullName="System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor">
+  <TypeSignature Language="C#" Value="public abstract class StreamSecurityUpgradeAcceptor : System.ServiceModel.Channels.StreamUpgradeAcceptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamSecurityUpgradeAcceptor extends System.ServiceModel.Channels.StreamUpgradeAcceptor" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.StreamUpgradeAcceptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム セキュリティ アップグレード アクセプタを実装するには、この <see langword="abstract" /> 基本クラスを継承します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、<xref:System.ServiceModel.Channels.StreamSecurityUpgradeInitiator> および <xref:System.ServiceModel.Channels.StreamSecurityUpgradeProvider> と共に使用されて、セキュリティ ストリーム アップグレードを実装します。  
+  
+ アップグレード プロセスの詳細については、<xref:System.ServiceModel.Channels.StreamUpgradeProvider> を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamSecurityUpgradeAcceptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemoteSecurity">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Security.SecurityMessageProperty GetRemoteSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Security.SecurityMessageProperty GetRemoteSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor.GetRemoteSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームで提供され、セキュリティ コンテキストで提供される情報に基づいてカスタム セキュリティ ネゴシエーションを実行するセキュリティ メッセージ プロパティを取得します。</summary>
+        <returns><see cref="T:System.ServiceModel.Security.SecurityMessageProperty" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この情報は、セキュリティ コンテキストで提供される ID に基づくストリーム レベルの認証メカニズムの実装に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

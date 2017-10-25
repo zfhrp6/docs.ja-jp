@@ -1,0 +1,321 @@
+<Type Name="UnmanagedMarshal" FullName="System.Reflection.Emit.UnmanagedMarshal">
+  <TypeSignature Language="C#" Value="public sealed class UnmanagedMarshal" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit UnmanagedMarshal extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.UnmanagedMarshal" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("An alternate API is available: Emit the MarshalAs custom attribute instead.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アンマネージ コードからフィールドをマーシャ リングする方法を説明するクラスを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード例では、この旧式の型の回避策を示します。  
+  
+ マーシャ リングは、リモート プロシージャ コールを確立するためのパッケージ化とアンパッケージ化パラメーターのプロセスです。 、マーシャ リング中にフィールドをマネージ型の形式が、対応するアンマネージ型の形式と異なる場合に形式変換を行うこともできます。 マーシャ リングするなど、`String`アンマネージ BSTR と型。 いくつかの形式の変換は、ランタイムによって自動的に処理されます。 既定の動作をオーバーライドするには、使用する必要があります、`UnmanagedMarshal`形式変換を定義するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、古い形式に置換コードを示しています<xref:System.Reflection.Emit.UnmanagedMarshal>型です。 例では、という名前の単一モジュール アセンブリの出力`EmitMarshalAs.dll`、という名前の型を含む`Sample`です。 型のという名前のメソッドが`Test`、型の 1 つのパラメーターを持つ<xref:System.String>します。 コード例では適用、<xref:System.Runtime.InteropServices.MarshalAsAttribute>で<xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>パラメーターにします。  
+  
+ 使用することができます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)生成のアセンブリを調べるし、パラメーターをマークすることを確認する`marshal(bstr)`です。  
+  
+ [!code-cpp[UnmanagedMarshalObsolete#1](~/samples/snippets/cpp/VS_Snippets_CLR/UnmanagedMarshalObsolete/cpp/source.cpp#1)]
+ [!code-csharp[UnmanagedMarshalObsolete#1](~/samples/snippets/csharp/VS_Snippets_CLR/UnmanagedMarshalObsolete/cs/source.cs#1)]
+ [!code-vb[UnmanagedMarshalObsolete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/UnmanagedMarshalObsolete/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseType">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.UnmanagedType BaseType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.UnmanagedType BaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.BaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.UnmanagedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンマネージの基本型を取得します。 このプロパティは読み取り専用です。</summary>
+        <value><see langword="UnmanagedType" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">管理されていない種類ではありません、<see langword="LPArray" />または<see langword="SafeArray" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineByValArray">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineByValArray (int elemCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineByValArray(int32 elemCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineByValArray(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.UnmanagedMarshal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elemCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="elemCount">固定長配列の要素の数。</param>
+        <summary>固定長配列をアンマネージ コードにマーシャ リングする (ByValArray) を指定します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.UnmanagedMarshal" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DefineByValArray`メソッドは、単純なネイティブ マーシャ リングではありません。  
+  
+ これらの静的コンス トラクターを使用してアンマネージ マーシャ リングの構成要素のみが可能です。  
+  
+ 配列のマーシャ リングは、整数パラメーターをマーシャ リングよりも複雑なプロセスです。 配列メンバーは、相手側に正確に配列を再構築できるように、特定の順序でコピーされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、単純なネイティブ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineByValTStr">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineByValTStr (int elemCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineByValTStr(int32 elemCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineByValTStr(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.UnmanagedMarshal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elemCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="elemCount">固定長配列バッファー内の要素の数。</param>
+        <summary>固定長配列バッファーをアンマネージ コードにマーシャ リングする (ByValTStr) の文字列を指定します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.UnmanagedMarshal" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DefineByValStr`メソッドは、単純なネイティブ マーシャ リングではありません。  
+  
+ これらの静的コンス トラクターを使用してアンマネージ マーシャ リングの構成要素のみが可能です。  
+  
+ 配列のマーシャ リングは、整数パラメーターをマーシャ リングよりも複雑なプロセスです。 配列メンバーは、相手側に正確に配列を再構築できるように、特定の順序でコピーされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、単純なネイティブ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineLPArray">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineLPArray (System.Runtime.InteropServices.UnmanagedType elemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineLPArray(valuetype System.Runtime.InteropServices.UnmanagedType elemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineLPArray(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.UnmanagedMarshal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elemType" Type="System.Runtime.InteropServices.UnmanagedType" />
+      </Parameters>
+      <Docs>
+        <param name="elemType">アンマネージの型、配列にマーシャ リングします。</param>
+        <summary>指定します、<see langword="LPArray" />アンマネージ コードにマーシャ リングします。 長さ、<see langword="LPArray" />は実行時に実際のマーシャ リングされた配列のサイズによって決まります。</summary>
+        <returns><see cref="T:System.Reflection.Emit.UnmanagedMarshal" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DefineLPArray`メソッドは、単純なネイティブ マーシャ リングではありません。  
+  
+ これらの静的コンス トラクターを使用してアンマネージ マーシャ リングの構成要素のみが可能です。  
+  
+ 配列のマーシャ リングは、整数パラメーターをマーシャ リングよりも複雑なプロセスです。 配列メンバーは、相手側に正確に配列を再構築できるように、特定の順序でコピーされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、単純なネイティブ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineSafeArray">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineSafeArray (System.Runtime.InteropServices.UnmanagedType elemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineSafeArray(valuetype System.Runtime.InteropServices.UnmanagedType elemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineSafeArray(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.UnmanagedMarshal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elemType" Type="System.Runtime.InteropServices.UnmanagedType" />
+      </Parameters>
+      <Docs>
+        <param name="elemType">基本型、または<see langword="UnmanagedType" />配列の各要素のです。</param>
+        <summary>指定します、<see langword="SafeArray" />アンマネージ コードにマーシャ リングします。</summary>
+        <returns><see cref="T:System.Reflection.Emit.UnmanagedMarshal" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DefineSafeArray`メソッドは、単純なネイティブ マーシャ リングではありません。  
+  
+ これらの静的コンス トラクターを使用してアンマネージ マーシャ リングの構成要素のみが可能です。  
+  
+ 配列のマーシャ リングは、整数パラメーターをマーシャ リングよりも複雑なプロセスです。 配列メンバーは、相手側に正確に配列を再構築できるように、特定の順序でコピーされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、単純なネイティブ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineUnmanagedMarshal">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineUnmanagedMarshal (System.Runtime.InteropServices.UnmanagedType unmanagedType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineUnmanagedMarshal(valuetype System.Runtime.InteropServices.UnmanagedType unmanagedType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineUnmanagedMarshal(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.UnmanagedMarshal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unmanagedType" Type="System.Runtime.InteropServices.UnmanagedType" />
+      </Parameters>
+      <Docs>
+        <param name="unmanagedType">型のマーシャ リング先のアンマネージ型。</param>
+        <summary>アンマネージ コードにマーシャ リングするのには、特定の型を指定します。</summary>
+        <returns><see cref="T:System.Reflection.Emit.UnmanagedMarshal" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.UnmanagedType>このメソッドに渡される単純なネイティブ型でなければなりません。 次の値のいずれも使用することがあります: <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>、 <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>、 <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>、 <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>、または<xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=nameWithType>です。  
+  
+ このメソッドを使用してアンマネージ マーシャ リングの構成要素のみが可能です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、単純なネイティブ型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementCount">
+      <MemberSignature Language="C#" Value="public int ElementCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ElementCount" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.ElementCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の数を取得します。 このプロパティは読み取り専用です。</summary>
+        <value>要素の数を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ElementCount`がある場合にのみ、`NativeTypeFixedArray`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、アンマネージの要素数ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnmanagedType">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.UnmanagedType GetUnmanagedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.UnmanagedType GetUnmanagedType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.GetUnmanagedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.UnmanagedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンマネージ型を示します。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Runtime.InteropServices.UnmanagedType" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetUnmanagedType`プロパティは、ネイティブ型のアクセサー関数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IIDGuid">
+      <MemberSignature Language="C#" Value="public Guid IIDGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid IIDGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.IIDGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GUID を取得します。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Guid" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、常に Guid.Empty を返します。 このプロパティは、将来のリリースで削除する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は、カスタム マーシャラーではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

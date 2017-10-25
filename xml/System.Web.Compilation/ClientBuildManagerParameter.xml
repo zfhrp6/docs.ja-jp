@@ -1,0 +1,187 @@
+<Type Name="ClientBuildManagerParameter" FullName="System.Web.Compilation.ClientBuildManagerParameter">
+  <TypeSignature Language="C#" Value="public class ClientBuildManagerParameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ClientBuildManagerParameter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ClientBuildManagerParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリコンパイル時に、ASP.NET コンパイラに渡された値が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET Web ページおよびコード ファイルをプリコンパイルすると、ユーザーへの高速な応答を容易にし、ソース コードを配置することがなく、サイトの展開を許可することができます。 ASP.NET Web サイトをプリコンパイルの詳細については、次を参照してください。 [ASP.NET Web サイト プロジェクト プリコンパイル概要](http://msdn.microsoft.com/library/a88e56f9-b232-47c5-92e0-f9674ed15e5a)です。  
+  
+ <xref:System.Web.Compilation.ClientBuildManagerParameter>クラスはプリコンパイル時に使用される値を格納します。 <xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>プロパティは、アセンブリをビルドする方法を決定します。 たとえば、設定することができます<xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>に<xref:System.Web.Compilation.PrecompilationFlags.Clean>、コンパイル済みのコンポーネントを再コンパイルやには、設定を<xref:System.Web.Compilation.PrecompilationFlags.OverwriteTarget>ターゲット ディレクトリ内のすべてのコンポーネントを上書きする結果として得られるアセンブリを許可するようにします。 <xref:System.Web.Compilation.PrecompilationFlags>列挙子が、<xref:System.FlagsAttribute>メンバー値のビットごとの組み合わせを可能にする属性。 <xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>プロパティから 1 つ以上の値を含めることができます、<xref:System.Web.Compilation.PrecompilationFlags>プリコンパイル動作の組み合わせを指定する列挙体です。  
+  
+ いずれか、<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyContainer%2A>プロパティまたは<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyFile%2A>プロパティには、厳密な名前のアセンブリを作成する値が割り当てられます。 両方の値は、厳密な名前のアセンブリを作成するために設定する必要はありません。  
+  
+ A<xref:System.Web.Compilation.ClientBuildManagerParameter>にオブジェクトが渡される、<xref:System.Web.Compilation.ClientBuildManager>オブジェクトを介して、<xref:System.Web.Compilation.ClientBuildManager.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例については、コード例の一部である、<xref:System.Web.Compilation.ClientBuildManager>クラスの概要です。 この例で、<xref:System.Web.Compilation.ClientBuildManagerParameter>オブジェクトが作成され、その値を設定します。 生成されたアセンブリが指定されたキー ファイルに基づいて、厳密な名前を持つし、に従って提供されているプリコンパイルされます<xref:System.Web.Compilation.PrecompilationFlags>値。  
+  
+ [!code-csharp[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientBuildManagerParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManagerParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ClientBuildManagerParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、すべてのプロパティ値を初期化できません。 使ってそれらの値を設定する必要があります、 <xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyContainer%2A>、 <xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyFile%2A>、および<xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>プロパティ オブジェクトが作成された後にします。  
+  
+   
+  
+## Examples  
+ 次のコード例については、コード例の一部である、<xref:System.Web.Compilation.ClientBuildManager>クラスの概要です。 この例で、<xref:System.Web.Compilation.ClientBuildManagerParameter>オブジェクトが作成され、その値を設定します。 生成されたアセンブリが指定されたキー ファイルに基づいて、厳密な名前を持つし、に従って提供されているプリコンパイルされます<xref:System.Web.Compilation.PrecompilationFlags>値。  
+  
+ [!code-csharp[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludedVirtualPaths">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;string&gt; ExcludedVirtualPaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;string&gt; ExcludedVirtualPaths" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManagerParameter.ExcludedVirtualPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は、仮想パスを除外します。</summary>
+        <value>仮想パスを除外します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrecompilationFlags">
+      <MemberSignature Language="C#" Value="public System.Web.Compilation.PrecompilationFlags PrecompilationFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Compilation.PrecompilationFlags PrecompilationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.PrecompilationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリコンパイル動作を決定するフラグを設定します。</summary>
+        <value><see cref="T:System.Web.Compilation.PrecompilationFlags" />クライアント ビルドします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>プロパティは、アセンブリをビルドする方法を決定します。 たとえば、設定することができます<xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>に<xref:System.Web.Compilation.PrecompilationFlags.Clean>、コンパイル済みのコンポーネントを再コンパイルやには、設定を<xref:System.Web.Compilation.PrecompilationFlags.OverwriteTarget>ターゲット ディレクトリ内のすべてのコンポーネントを上書きする結果として得られるアセンブリを許可するようにします。 <xref:System.Web.Compilation.PrecompilationFlags>列挙子が、<xref:System.FlagsAttribute>メンバー値のビットごとの組み合わせを可能にする属性。 <xref:System.Web.Compilation.ClientBuildManagerParameter.PrecompilationFlags%2A>プロパティから 1 つ以上の値を含めることができます、<xref:System.Web.Compilation.PrecompilationFlags>プリコンパイル動作の組み合わせを指定する列挙体です。  
+  
+   
+  
+## Examples  
+ 次のコード例については、コード例の一部である、<xref:System.Web.Compilation.ClientBuildManager>クラスの概要です。 この例で、<xref:System.Web.Compilation.ClientBuildManagerParameter>オブジェクトが作成され、その値を設定します。 生成されたアセンブリが指定されたキー ファイルに基づいて、厳密な名前を持つし、に従って提供されているプリコンパイルされます<xref:System.Web.Compilation.PrecompilationFlags>値。  
+  
+ [!code-csharp[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrongNameKeyContainer">
+      <MemberSignature Language="C#" Value="public string StrongNameKeyContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StrongNameKeyContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル時に使用されるキー コンテナーを設定します。</summary>
+        <value>A<see cref="T:System.String" />キー コンテナーの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか、<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyContainer%2A>プロパティまたは<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyFile%2A>プロパティには、厳密な名前のアセンブリを作成する値が割り当てられます。 両方の値は、厳密な名前のアセンブリを作成するために設定する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例はについては、コード例のように、<xref:System.Web.Compilation.ClientBuildManager>クラスの概要を生成されたアセンブリが厳密な名前を指定したキー コンテナーに基づいている点が異なります。 に従って提供されていることをプリコンパイルは<xref:System.Web.Compilation.PrecompilationFlags>値。  
+  
+ [!code-csharp[System.Web.Compilation.ClientBuildManager_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager_2/CS/source.cs#1)]
+ [!code-vb[System.Web.Compilation.ClientBuildManager_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager_2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrongNameKeyFile">
+      <MemberSignature Language="C#" Value="public string StrongNameKeyFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StrongNameKeyFile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル時に使用されるキー ファイルを設定します。</summary>
+        <value>A<see cref="T:System.String" />のキー ファイルの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか、<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyContainer%2A>プロパティまたは<xref:System.Web.Compilation.ClientBuildManagerParameter.StrongNameKeyFile%2A>プロパティには、厳密な名前のアセンブリを作成する値が割り当てられます。 両方の値は、厳密な名前のアセンブリを作成するために設定する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例については、コード例の一部である、<xref:System.Web.Compilation.ClientBuildManager>クラスの概要です。 この例で、<xref:System.Web.Compilation.ClientBuildManagerParameter>オブジェクトが作成され、その値を設定します。 生成されたアセンブリが指定されたキー ファイルに基づいて、厳密な名前を持つし、に従って提供されているプリコンパイルされます<xref:System.Web.Compilation.PrecompilationFlags>値。  
+  
+ [!code-csharp[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ClientBuildManager#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ClientBuildManager/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

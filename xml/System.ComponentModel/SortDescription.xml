@@ -1,0 +1,202 @@
+<Type Name="SortDescription" FullName="System.ComponentModel.SortDescription">
+  <TypeSignature Language="C#" Value="public struct SortDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit SortDescription extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.SortDescription" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションの並べ替えの基準として使用する方向とプロパティ名を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SortDescription (string propertyName, System.ComponentModel.ListSortDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, valuetype System.ComponentModel.ListSortDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SortDescription.#ctor(System.String,System.ComponentModel.ListSortDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="direction" Type="System.ComponentModel.ListSortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">リストの並べ替えに使用するプロパティの名前です。</param>
+        <param name="direction">並べ替え順序。</param>
+        <summary><see cref="T:System.ComponentModel.SortDescription" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="propertyName" />パラメーターを null にすることはできません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="propertyName" />パラメーターを空にすることはできません</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="direction" />パラメーターが有効な値を指定していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ListSortDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.ListSortDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.SortDescription.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListSortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>昇順または降順のどちらで並べ替えるかを示す値を取得または設定します。</summary>
+        <value>昇順または降順のどちらで並べ替えるかを示す <see cref="T:System.ComponentModel.ListSortDirection" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SortDescription.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象の <see cref="T:System.ComponentModel.SortDescription" /> インスタンス。</param>
+        <summary>指定したインスタンスと <see cref="T:System.ComponentModel.SortDescription" /> の現在のインスタンスを比較し、値が等しいかどうかを確認します。</summary>
+        <returns>
+          <paramref name="obj" /> と、この <see cref="T:System.ComponentModel.SortDescription" /> のインスタンスが同じ値を持つ場合は <see langword="true" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SortDescription.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します<see cref="T:System.ComponentModel.SortDescription" />です。</summary>
+        <returns>このインスタンスのハッシュ コード<see cref="T:System.ComponentModel.SortDescription" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSealed">
+      <MemberSignature Language="C#" Value="public bool IsSealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSealed" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.SortDescription.IsSealed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが変更できない状態にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトは使用中です。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.ComponentModel.SortDescription sd1, System.ComponentModel.SortDescription sd2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.ComponentModel.SortDescription sd1, valuetype System.ComponentModel.SortDescription sd2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SortDescription.op_Equality(System.ComponentModel.SortDescription,System.ComponentModel.SortDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sd1" Type="System.ComponentModel.SortDescription" />
+        <Parameter Name="sd2" Type="System.ComponentModel.SortDescription" />
+      </Parameters>
+      <Docs>
+        <param name="sd1">比較する 1 番目のインスタンス。</param>
+        <param name="sd2">比較する 2 番目のインスタンス。</param>
+        <summary>2 つの <see cref="T:System.ComponentModel.SortDescription" /> オブジェクトの値が等しいかどうかを比較します。</summary>
+        <returns>
+          2 つのオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ComponentModel.SortDescription.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.ComponentModel.SortDescription sd1, System.ComponentModel.SortDescription sd2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.ComponentModel.SortDescription sd1, valuetype System.ComponentModel.SortDescription sd2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SortDescription.op_Inequality(System.ComponentModel.SortDescription,System.ComponentModel.SortDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sd1" Type="System.ComponentModel.SortDescription" />
+        <Parameter Name="sd2" Type="System.ComponentModel.SortDescription" />
+      </Parameters>
+      <Docs>
+        <param name="sd1">比較する 1 番目のインスタンス。</param>
+        <param name="sd2">比較する 2 番目のインスタンス。</param>
+        <summary>比較する 2 つ<see cref="T:System.ComponentModel.SortDescription" />値の非等値のオブジェクト。</summary>
+        <returns>
+          <see langword="true" />値が等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ComponentModel.SortDescription.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.SortDescription.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えの基準として使用されるプロパティ名を取得または設定します。</summary>
+        <value>既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、基になるコレクション内の項目のパブリック プロパティを指定する必要があります。  
+  
+ 文字列は、特定<xref:System.ComponentModel.ICollectionView>並べ替えに関係しているオブジェクト。 <xref:System.Windows.Data.BindingListCollectionView>単純な列名のみをサポートします。 <xref:System.Windows.Data.ListCollectionView>[全般] プロパティのパスをサポートし、`XPath`の[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ。 そのため、ビューがの場合、<xref:System.Windows.Data.ListCollectionView>オブジェクトを並べ替えることができます[!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)]内のノード、<xref:System.Windows.Data.XmlDataProvider>それらのノードの属性に基づきます。 たとえば、属性名が`Cost`を指定する場合"@Cost"を<xref:System.ComponentModel.SortDescription.PropertyName%2A>で、<xref:System.ComponentModel.SortDescription>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

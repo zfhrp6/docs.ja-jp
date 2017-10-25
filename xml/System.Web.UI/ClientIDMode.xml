@@ -1,0 +1,114 @@
+<Type Name="ClientIDMode" FullName="System.Web.UI.ClientIDMode">
+  <TypeSignature Language="C#" Value="public enum ClientIDMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientIDMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ClientIDMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ASP.NET の生成方法を指定します、<see cref="P:System.Web.UI.Control.ClientID" />クライアント スクリプトでアクセスできるコントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.UI.ClientIDMode>列挙型を設定すると、<xref:System.Web.UI.Control.ClientIDMode%2A>コントロールのプロパティです。 割り当てられる値、<xref:System.Web.UI.Control.ClientIDMode%2A>プロパティを決定する方法、<xref:System.Web.UI.Control.ClientID%2A>プロパティは、生成します。 値、<xref:System.Web.UI.Control.ClientID%2A>としてプロパティが表示される、`id`マークアップ、およびその属性は、クライアント スクリプトからのコントロールのアクセスに使用する値。 割り当てられる値、<xref:System.Web.UI.Control.ClientIDMode%2A>プロパティには影響しません、<xref:System.Web.UI.Control.ID%2A>のみサーバー コントロールのプロパティ、`id`対応する HTML 要素の属性です。  
+  
+ 既定値の<xref:System.Web.UI.Control.ClientIDMode%2A>ページは、予測可能にします。 既定値の<xref:System.Web.UI.Control.ClientIDMode%2A>コントロールが継承されます。  
+  
+ コントロールの既定値は、継承であるために、既定の世代モードは、予測可能がします。 (ただし、以前のバージョンの ASP.NET 4 Web プロジェクトを変換する Visual Studio を使用する場合 Visual Studio に自動的にサイトの既定値を設定 AutoID Web.config ファイルにします。)  
+  
+ 設定することができます、`ClientIDMode`サイトの Web.config ファイルで要素を設定して Web サイトのすべてのページの値。 設定することができます、`ClientIDMode`ディレクティブ内のページの値。  
+  
+ 詳細については、[ASP.NET Web サーバー コントロールの識別](http://msdn.microsoft.com/library/45a8c3ef-5ac7-48f1-862a-0cd5073742e7)に関する記事をご覧ください。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Web.UI.WebControls.Label>コントロールに含まれている、<xref:System.Web.UI.WebControls.ListView>コントロール。 <xref:System.Web.UI.WebControls.ListView>コントロール、<xref:System.Web.UI.Control.ClientIDMode%2A>プロパティが予測可能に設定され、<xref:System.Web.UI.WebControls.ListView.ClientIDRowSuffix%2A>プロパティに設定されている`ProductID`です。 クライアント スクリプトからの特定のインスタンスにアクセスすることができます、<xref:System.Web.UI.WebControls.Label>に基づいて、`ProductID`にアクセスしようとしているインスタンスの値。  
+  
+ この例では、3 つの HTML を作成`ProductIDLabel`コントロール。 ページの実行時に、コントロールの Id は、次になります。  
+  
+-   `ListView1_ProductIDLabel_1`  
+  
+-   `ListView1_ProductIDLabel_34`  
+  
+-   `ListView1_ProductIDLabel_43`  
+  
+ 詳細については、次を参照してください[ASP.NET Web サーバー コントロールの識別。](http://msdn.microsoft.com/library/45a8c3ef-5ac7-48f1-862a-0cd5073742e7)  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutoID">
+      <MemberSignature Language="C#" Value="AutoID" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ClientIDMode AutoID = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ClientIDMode.AutoID" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.Control.ClientID" />値が連結して生成された、<see cref="P:System.Web.UI.Control.ID" />それぞれの値の名前付けコンテナーの親、<see cref="P:System.Web.UI.Control.ID" />コントロールの値。 コントロールの複数のインスタンスが表示されるデータ バインディングのシナリオで、増分の値がコントロールの前に挿入された<see cref="P:System.Web.UI.Control.ID" />値。 各セグメントは、アンダー スコア文字 (_) で区切られます。 このアルゴリズムは、ASP.NET 4 より前のバージョンの ASP.NET で使用可能な 1 つだけです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherit">
+      <MemberSignature Language="C#" Value="Inherit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ClientIDMode Inherit = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ClientIDMode.Inherit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの継承、<see cref="T:System.Web.UI.ClientIDMode" />の設定、<see cref="P:System.Web.UI.Control.NamingContainer" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Predictable">
+      <MemberSignature Language="C#" Value="Predictable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ClientIDMode Predictable = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ClientIDMode.Predictable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアルゴリズムは、データ バインド コントロール内にあるコントロールに使用されます。 <see cref="P:System.Web.UI.Control.ClientID" />値が連結して生成された、<see cref="P:System.Web.UI.Control.ClientID" />と親の名前付けコンテナーの値、<see cref="P:System.Web.UI.Control.ID" />コントロールの値。 データ フィールドの値がで指定されたコントロールが複数の行を生成するデータ バインド コントロールの場合、<see cref="P:System.Web.UI.WebControls.IDataBoundListControl.ClientIDRowSuffix" />プロパティが最後に追加します。 <see cref="T:System.Web.UI.WebControls.GridView" />制御、複数のデータ フィールドを指定することができます。 場合、<see cref="P:System.Web.UI.WebControls.IDataBoundListControl.ClientIDRowSuffix" />プロパティが空白である連続番号がデータ フィールドの値ではなく末尾に追加します。 各セグメントは、アンダー スコア文字 (_) で区切られます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Static">
+      <MemberSignature Language="C#" Value="Static" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ClientIDMode Static = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ClientIDMode.Static" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.Control.ClientID" />の値に値が設定されている、<see cref="P:System.Web.UI.Control.ID" />プロパティです。 コントロールは、名前付けコンテナーは、コントロールがそれに含まれる任意のコントロールの名前付けコンテナーの階層の最上位として使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

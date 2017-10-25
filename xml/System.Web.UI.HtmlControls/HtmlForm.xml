@@ -1,0 +1,712 @@
+<Type Name="HtmlForm" FullName="System.Web.UI.HtmlControls.HtmlForm">
+  <TypeSignature Language="C#" Value="public class HtmlForm : System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlForm extends System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlForm" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlContainerControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プログラムによるアクセスは、HTML<see langword="&lt;form&gt;" />サーバー上の要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm>コントロールは、Web フォーム ページ上のサーバー コントロールのコンテナーです。 開始タグと終了タグの間に、すべてのサーバー コントロールを配置する必要があります、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。  
+  
+> [!NOTE]
+>  ASP.NET では、1 つだけ<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールを Web フォーム ページ上でアクティブにします。 1 つ以上を使用する必要がある場合 active <xref:System.Web.UI.HtmlControls.HtmlForm> Web フォーム ページ、共通言語ランタイムへのコントロールがスローされます、<xref:System.Web.HttpException?displayProperty=nameWithType>ページを要求するときに例外です。 ただし、使用することができます、<xref:System.Web.UI.WebControls.MultiView>場所を制御各<xref:System.Web.UI.WebControls.View>オブジェクトでは、1 つ含まれています<xref:System.Web.UI.HtmlControls.HtmlForm>を制御するため 1 つだけ<xref:System.Web.UI.WebControls.View>任意の時点でアクティブになっています。  
+  
+ 動作を制御することができます、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールのプロパティを設定します。 フォームのデータのエンコードの種類を指定するには、設定、<xref:System.Web.UI.HtmlControls.HtmlForm.Enctype%2A>プロパティです。 メソッド (`GET`または`POST`)、ブラウザーを使用して処理を設定して指定のサーバーにデータをフォームを投稿する、<xref:System.Web.UI.HtmlControls.HtmlForm.Method%2A>プロパティです。  
+  
+> [!CAUTION]
+>  既定では、<xref:System.Web.UI.HtmlControls.HtmlForm.Method%2A> プロパティは `POST` に設定されます。 このプロパティの値を変更することができます`GET`が、これは可能性があります組み込みの状態を解除、ASP.NET ページ フレームワークによって提供されるサービスをポストバックします。  
+  
+ 実装するコントロールを構成することができます、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを別のターゲットのページにポストします。 これは、ページ間ポスティングと呼ばれます。 詳細については、次を参照してください。[ページ間の ASP.NET Web フォームの送信](http://msdn.microsoft.com/library/fedf234e-b7c4-4644-a9e8-c1c0870b043b)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlForm>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlForm.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlForm>単純なフォームを作成するクラス。  
+  
+ [!code-aspx-csharp[HtmlForm#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm/CS/htmlformcs.aspx#1)]
+ [!code-aspx-vb[HtmlForm#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm/VB/htmlformvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlForm ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlForm>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlForm>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|「式」のリテラル文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlForm>制御し、Web ページ上に配置します。  
+  
+ [!code-aspx-csharp[HtmlFormCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlFormCtor/CS/htmlformctorcs.aspx#1)]
+ [!code-aspx-vb[HtmlFormCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlFormCtor/VB/htmlformctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML フォームの action 属性を取得または設定します。</summary>
+        <value>HTML フォームの action 属性。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.UI.HtmlControls.HtmlForm.Action%2A>プロパティの元の要求の URL の書き換えが HTML フォームのアクション属性の元の URL を保持する場合にします。 設定、<xref:System.Web.UI.HtmlControls.HtmlForm.Action%2A>プロパティを保持する URL の値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientID">
+      <MemberSignature Language="C#" Value="public override string ClientID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.ClientID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって生成されるコントロールの識別子を取得[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]の<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール</summary>
+        <value>によって生成されたコントロール id[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]の<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 防ぐために、コントロールの複数のインスタンスが表示されると、名前の競合[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]一意を自動的に生成<xref:System.Web.UI.HtmlControls.HtmlForm.ClientID%2A>ページ上の各コントロールの値。 詳細については、<xref:System.Web.UI.Control.ClientID%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Web.UI.ControlCollection" />のコレクション、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ControlCollection" />を格納している、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールの子サーバー コントロールです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultButton">
+      <MemberSignature Language="C#" Value="public string DefaultButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.DefaultButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の子コントロール、 <see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> ENTER キーを押したとき、ポストバックを実行するコントロール。</summary>
+        <value><see cref="P:System.Web.UI.Control.ID" />既定値として表示するボタン コントロールのボタン、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />が読み込まれます。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>プロパティを使用して、ユーザーのユーザーが ENTER キーを押して、テキスト ボックスなど、フォームの入力コントロールのポストバックことを指定できます。 派生した任意のコントロールの既定のボタンとして指定できます、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを除く、<xref:System.Web.UI.WebControls.LinkButton>コントロール。 場合によって参照されているコントロール、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>プロパティがから派生していない<xref:System.Web.UI.WebControls.IButtonControl>、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ マスター ページを使用して設定すると、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>プロパティを使用して、コンテンツ ページから、<xref:System.Web.UI.Control.UniqueID%2A>のプロパティ、<xref:System.Web.UI.WebControls.IButtonControl>ボタンをクリックします。 マスター ページの詳細については、次を参照してください。 [ASP.NET マスター ページ](http://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b)です。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>プロパティで、次のシナリオ内のポストバックが発生可能性があります。  
+  
+-   フォームの入力コントロールの外部にフォーカスがあるときに、ENTER キーを押します。 既定のポストバック アクションは、トリガーするは保証されません。  
+  
+-   複数行テキスト ボックス内にフォーカスがある場合、ENTER キーを押します。 複数行テキスト ボックスでは、動作は、ENTER キーを押して、テキスト ボックスに新しい行が作成されます。 一部のブラウザーで ENTER キーを押して複数行テキスト ボックス トリガー内のポストバックします。 その場合は、代わりに新しい行を作成するには ENTER 場合は、入力コントロールに JavaScript 関数をアタッチできます。 スクリプトは、ENTER キーをキャプチャし、ポストバックを停止する必要があります。 たとえば、使用することができます、<xref:System.Web.UI.WebControls.WebControl.Attributes%2A>用のクライアント スクリプトを追加するプロパティのコレクション、`onKeyPress`イベント。  
+  
+-   指定する、<xref:System.Web.UI.WebControls.LinkButton>既定のボタンと同様に制御します。 のみ<xref:System.Web.UI.WebControls.Button>と<xref:System.Web.UI.WebControls.ImageButton>コントロールがサポートされています。  
+  
+-   変更、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>非同期ポストバック中にプログラムでのプロパティです。 非同期ポストバックを 1 つまたは複数を追加することで、ページで有効にする<xref:System.Web.UI.UpdatePanel>ページへのコントロールです。 詳細については、次を参照してください。 [UpdatePanel コントロールの概要](http://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a)と[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>ポストバックを発生させる既定のコントロールを設定するプロパティです。  
+  
+ [!code-aspx-csharp[HtmlForm.DefaultButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm.DefaultButton/CS/htmlform.defaultbuttoncs.aspx#1)]
+ [!code-aspx-vb[HtmlForm.DefaultButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm.DefaultButton/VB/htmlform.defaultbuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">参照される既定のボタンが型ではないコントロール<see cref="T:System.Web.UI.WebControls.IButtonControl" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFocus">
+      <MemberSignature Language="C#" Value="public string DefaultFocus { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力を持つコントロールとして表示するフォームのコントロールの設定を取得またはフォーカス、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールが読み込まれます。</summary>
+        <value><see cref="P:System.Web.UI.Control.ClientID" />入力を持つコントロールとして表示するフォームのコントロールのフォーカス時に、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />が読み込まれます。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>プロパティ、コントロールの入力と表示するフォームのコントロールへのアクセスをフォーカス、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールが読み込まれます。 選択できるコントロールにフォーカスがあることを示す視覚上の手掛かりが表示されます。 たとえば、<xref:System.Web.UI.WebControls.TextBox>フォーカスを持つコントロールが表示され、挿入ポイントがその内部に配置します。  
+  
+ 使用してコントロールにフォーカスを設定することも、<xref:System.Web.UI.Control.Focus%2A>または<xref:System.Web.UI.Page.SetFocus%2A>メソッドです。 これらのメソッドが優先順位を上にある、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>プロパティです。 コントロールを設定するこれらのメソッドのいずれかが呼び出された場合の特化の値、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>フォームが読み込まれるときに、入力フォーカスを持つコントロールとして、フォーム上の指定したコントロールを表示するプロパティです。 ときに`Form1`のレンダリングで、カーソルが配置されていることに注意してください`TextBox1`ことを示すを`TextBox1`がフォーカスを持つコントロール。  
+  
+ [!code-aspx-csharp[HtmlForm.DefaultButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm.DefaultButton/CS/htmlform.defaultbuttoncs.aspx#1)]
+ [!code-aspx-vb[HtmlForm.DefaultButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm.DefaultButton/VB/htmlform.defaultbuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enctype">
+      <MemberSignature Language="C#" Value="public string Enctype { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Enctype" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.Enctype" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーに、フォームのデータの送信時にブラウザーを使用してエンコードの種類を設定します。</summary>
+        <value>エンコードの種類を表す文字列。 既定値は空の文字列 ("")、ブラウザーの既定のコンテンツ タイプを使用することを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.Enctype%2A>エンコード、ブラウザーの種類を指定するには、サーバーにデータがポストバックを使用しています。  
+  
+ 次の表は、一般的なエンコードの種類を示します。  
+  
+|エンコードの種類|説明|  
+|-------------------|-----------------|  
+|application/x-www-form-urlencoded|フォームのデータは、名前と値のペアとしてエンコードされます。 これは、標準のエンコード形式です。|  
+|マルチパート フォーム データ|フォームのデータは、ページ上の各コントロールの別の部分のメッセージとしてエンコードされます。|  
+|テキスト/プレーン|フォームのデータは、コントロールまたは書式設定文字なしのテキスト形式でエンコードされます。|  
+  
+ エンコードの種類の詳細については、次を参照してください。、 [World Wide Web Consortium (W3C Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlForm.Enctype%2A>データをサーバーに送信する、エンコード、ブラウザーの種類を指定するプロパティを使用します。  
+  
+ [!code-aspx-csharp[HtmlForm#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm/CS/htmlformcs.aspx#1)]
+ [!code-aspx-vb[HtmlForm#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm/VB/htmlformvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public string Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブラウザーがポストバック フォームのデータを処理するため、サーバーを参照する方法を示す値を設定します。</summary>
+        <value>ブラウザーがポストバックをサーバーにフォームのデータを参照する方法を示す文字列です。 既定値は <see langword="POST" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、ブラウザーがフォームのデータを処理するため、サーバーに送信する方法を指定できます。 すべてのブラウザーでサポートされている 2 つの一般的なメソッドは`GET`と`POST`です。  
+  
+> [!CAUTION]
+>  このプロパティと使用の既定値をオーバーライドすることができます、`GET`メソッドの代わりに`POST`です。 ただし、ため`GET`要求は、限られたデータ量に含めることができますを使用して、`GET`メソッドがいくつかの場合、原因で失敗する ASP.NET ページ フレームワークによって提供されるポストバックおよび状態管理機能。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlForm.Method%2A>フォーム データがサーバーにポストバックされたことを指定するプロパティです。  
+  
+ [!code-aspx-csharp[HtmlForm#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm/CS/htmlformcs.aspx#1)]
+ [!code-aspx-vb[HtmlForm#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm/VB/htmlformvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別子名を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</summary>
+        <value>識別子名を含む文字列、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.Name%2A>の一意の識別子名を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。 この実装でこのプロパティの取得の値を返します、<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>プロパティです。 ただし、プロパティの設定は割り当てません値プロパティにします。 プロパティの設定は値プロパティに代入しないこのため、<xref:System.Web.UI.HtmlControls.HtmlForm.Name%2A>プロパティと同じ値には、<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>プロパティです。  
+  
+> [!NOTE]
+>  `name`属性は、XHTML 準拠の属性ではないに関係なく、ASP.NET によってはレンダリングされません、`xhtmlConformance`設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.EventArgs" />イベント データを格納します。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> コントロールの <see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって通知されると、<xref:System.Web.UI.HtmlControls.HtmlForm.OnInit%2A>メソッド、Web サーバー コントロールは、インスタンスを作成および設定するために必要な初期化の手順を実行する必要があります。 サーバー コントロールのライフ サイクルのこの段階で、コントロールのビュー状態を設定する必要があります。 さらがこのコントロールを親または子に関係なく、このメソッドが呼び出されたときにその他のサーバー コントロールにアクセスすることはできません。 他のサーバー コントロールが作成され、アクセスできる状態である保証はありません。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.GridView.OnInit%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.OnInit%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlForm.OnInit(System.EventArgs)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.HtmlControls.HtmlForm.OnInit(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。 さらに、呼び出し、基本クラスの<see cref="M:System.Web.UI.HtmlControls.HtmlForm.OnInit(System.EventArgs)" />メソッドにより、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールは、Web ページの形式が正しく設定して、ページのビュー状態が永続化します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> コントロールの <see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.OnPreRender%2A>レンダリングする直前にメソッドが呼び出される、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。 場合、<xref:System.Web.UI.Page.SmartNavigation%2A?displayProperty=nameWithType>プロパティに設定されている`true`、<xref:System.Web.UI.HtmlControls.HtmlForm.OnPreRender%2A>メソッドは、その出力を取得できるように、スマート ナビゲーション スクリプト ファイルの参照を登録します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Page.SmartNavigation%2A?displayProperty=nameWithType> ASP.NET version 2.0 ではプロパティは廃止されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="output">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.Render%2A>メソッドは HTML をレンダリング`<iframe>`要素場合、<xref:System.Web.UI.Page.SmartNavigation%2A>プロパティに設定されている`true`です。 <xref:System.Web.UI.HtmlControls.HtmlForm.Render%2A>メソッドは、ベース<xref:System.Web.UI.Control.Render%2A>メソッドです。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.Render%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.UI.HtmlControls.HtmlForm" />への参照がないコントロールは表示されません、<see cref="T:System.Web.UI.Page" />インスタンス。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlForm.Render(System.Web.UI.HtmlTextWriter)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.HtmlControls.HtmlForm.Render(System.Web.UI.HtmlTextWriter)" />メソッドできるように、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールの子コントロールは正しくレンダリングされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlForm" /> コントロールの属性を指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes%2A>メソッドを使用、<xref:System.Web.UI.HtmlTextWriter.IsValidFormAttribute%2A>をチェックするメソッド、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールの属性の開始タグで、表示できることを確認する、 `<form>` HTML 要素です。  
+  
+ さらに、<xref:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes%2A>メソッドでの表示、 `method`、 `action`、および`onsubmit`の属性、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。 コントロール ID 設定されている場合、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultButton%2A>プロパティを実装していません、 <xref:System.Web.UI.WebControls.IButtonControl> 、インターフェイス、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コントロール ID に設定、<see cref="P:System.Web.UI.HtmlControls.HtmlForm.DefaultButton" />型のプロパティは使用されません<see cref="T:System.Web.UI.WebControls.IButtonControl" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(System.Web.UI.HtmlTextWriter)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.HtmlControls.HtmlForm.RenderAttributes(System.Web.UI.HtmlTextWriter)" />メソッドできるように、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールの属性が正しくレンダリングされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderChildren">
+      <MemberSignature Language="C#" Value="protected override void RenderChildren (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderChildren(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.RenderChildren(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>子のコントロールを描画、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.RenderChildren%2A>メソッドで指定したコントロールにブラウザーのフォーカスが設定されていることを確認するクライアント スクリプトの表示、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>プロパティです。  
+  
+> [!NOTE]
+>  指定されたコントロール、<xref:System.Web.UI.Page.SetFocus%2A?displayProperty=nameWithType>プロパティで指定されたコントロールよりも優先、<xref:System.Web.UI.HtmlControls.HtmlForm.DefaultFocus%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">Web ページが 2 つ以上のサーバー側<see langword="&lt;form&gt;" />タグ。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlForm.RenderChildren(System.Web.UI.HtmlTextWriter)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.HtmlControls.HtmlForm.RenderChildren(System.Web.UI.HtmlTextWriter)" />メソッドできるように、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールの子コントロールは正しくレンダリングされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderControl">
+      <MemberSignature Language="C#" Value="public override void RenderControl (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderControl(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlForm.RenderControl(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />フォーム コントロールの内容を受け取る。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.HtmlControls.HtmlForm.RenderControl(System.Web.UI.HtmlTextWriter)" />を呼び出して、基底クラスの派生クラスでメソッドが必ず<see cref="M:System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter)" />メソッドできるように、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロールが正しくレンダリングされます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmitDisabledControls">
+      <MemberSignature Language="C#" Value="public virtual bool SubmitDisabledControls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SubmitDisabledControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページがサーバーにポストバック後に、その値を保持すること、その値を送信するクライアントで無効にコントロールを強制するかどうかを示すブール値を設定します。</summary>
+        <value>
+          <see langword="true" />値を送信するクライアントで無効になっているコントロールが強制された場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls%2A>プロパティを強制的にコントロールをページのポストバックときに、その値を送信するクライアントで無効にするかどうかを指定します。 これにより、ページがサーバーにポストバック後にその値を保持するために無効なコントロールです。 ときに、<xref:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls%2A>プロパティに設定されている`false`、クライアント スクリプトを使用して無効になっている、フォーム上のコントロールは送信できませんをサーバーに、次回、ページがポストバックします。 その結果、無効なコントロールで格納されている任意の値は失われます。 ページがサーバーにポストバック後に、その値を保持するために無効になっているコントロールを許可するのには、設定、<xref:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls%2A>プロパティをフォームに`true`させるコントロールをページがサーバーにポストバック後に、その値を維持するためにクライアント スクリプトで無効にします。 設定した場合、この例では、<xref:System.Web.UI.HtmlControls.HtmlForm.SubmitDisabledControls%2A>プロパティを`false`をクリックし、**ポストバック** ボタンは、HTML テキスト ボックス内のテキストが失われ、HTML チェック ボックスが選択されていません。  
+  
+ [!code-aspx-csharp[HtmlForm.SubmitDisabledControls#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm.SubmitDisabledControls/CS/htmlform.submitdisabledcontrolscs.aspx#1)]
+ [!code-aspx-vb[HtmlForm.SubmitDisabledControls#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm.SubmitDisabledControls/VB/htmlform.submitdisabledcontrolsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフレームまたはサーバーに送信される情報の結果を表示するウィンドウを設定します。</summary>
+        <value>ブラウザー ウィンドウまたはフレームをサーバーにポストバックされた情報の結果が表示されます。 既定値は空の文字列 ("")、ウィンドウまたはフォーカスのあるフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.Target%2A>プロパティを指定するターゲット ウィンドウかフレームをサーバーに送信される情報の結果が表示されます。 高度なタスクには、サーバーにポストされた情報の結果をリダイレクトすることです。 このプロパティを使ってポスト バックするだけでは推奨されません。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.HtmlControls.HtmlForm.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`form`要素は、XHTML 1.1 では許可されません。 したがって場合、表示されるマークアップでは、XHTML 標準に準拠する必要がありますか、ユーザー補助の標準に準拠する必要がありますは設定しないで、<xref:System.Web.UI.HtmlControls.HtmlForm.Target%2A>プロパティです。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)と[Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)します。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.Target%2A>値は、範囲の A ~ Z (大文字)、次の特殊な値を除く、アンダー スコアで始まるの文字で始める必要があります。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  ブラウザーのマニュアルを参照するかどうかを`_search`値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、`_search`ターゲット値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlForm.Target%2A>サーバーにポストバックされたプロパティ情報の結果を表示するフレームなしに新しいウィンドウを指定します。  
+  
+ [!code-aspx-csharp[HtmlFormTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlFormTarget/CS/htmlformtargetcs.aspx#1)]
+ [!code-aspx-vb[HtmlFormTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlFormTarget/VB/htmlformtargetvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueID">
+      <MemberSignature Language="C#" Value="public override string UniqueID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UniqueID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlForm.UniqueID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられた一意なプログラム識別子を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</summary>
+        <value>割り当てられた一意なプログラム識別子、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>に割り当てられた一意なプログラム識別子を取得するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。 このプロパティ値を返す定数にコントロールが含まれている場合に基本実装をオーバーライドします、 <xref:System.Web.UI.INamingContainer>-カスタム サーバー コントロールなどのページ以外のオブジェクトを実装します。 名前付けコンテナーが、ページの値であるかどうか、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールの<xref:System.Web.UI.Control.ID%2A>プロパティが返されます。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>プロパティおよび<xref:System.Web.UI.HtmlControls.HtmlForm.Name%2A>プロパティは常に同じ値を返します。 これによりときに、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールが必要なブラウザーで表示される、<xref:System.Web.UI.HtmlControls.HtmlForm>コントロールの<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>と<xref:System.Web.UI.HtmlControls.HtmlForm.Name%2A>同じにするプロパティです。 同期されていれば、これらのプロパティを保持する、<xref:System.Web.UI.HtmlControls.HtmlForm.Name%2A>プロパティは常の値を返します、<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>プロパティです。  
+  
+> [!NOTE]
+>  `name`属性が XHTML 準拠の属性ではないと、既定では、ASP.NET によって表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlForm.UniqueID%2A>の一意の識別子を取得するプロパティを<xref:System.Web.UI.HtmlControls.HtmlForm>コントロール。  
+  
+ [!code-aspx-csharp[HtmlForm.UniqueID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlForm.UniqueID/CS/htmlform.uniqueidcs.aspx#1)]
+ [!code-aspx-vb[HtmlForm.UniqueID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlForm.UniqueID/VB/htmlform.uniqueidvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

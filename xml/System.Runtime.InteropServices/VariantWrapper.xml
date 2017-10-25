@@ -1,0 +1,128 @@
+<Type Name="VariantWrapper" FullName="System.Runtime.InteropServices.VariantWrapper">
+  <TypeSignature Language="C#" Value="public sealed class VariantWrapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit VariantWrapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.VariantWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型のデータをマーシャ リング<see langword="VT_VARIANT | VT_BYREF" />からアンマネージ コードを管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目的は、<xref:System.Runtime.InteropServices.VariantWrapper>は、対応するマネージ型をマーシャ リングする場合は、1 つのレベルの間接参照を追加する`VARIANT`型です。  
+  
+ ラップするこのクラスを使用することができます、<xref:System.Object>として、相互運用マーシャラーが渡される`VT_VARIANT | VT_BYREF`です。 1.0 および 1.1 の .NET Framework のバージョンでことはできませんでしたバリアント データ型のマーシャ リングする`VT_VARIANT | VT_BYREF`アンマネージ コードにします。 相互運用マーシャラーは、マネージ型のバリアントを渡される (たとえば、`VT_BSTR | VT_BYREF`の<xref:System.String>、または`VT_I4 | VT_BYREF`の<xref:System.Int32>)、ではなく`VT_VARIANT | VT_BYREF`です。  
+  
+ 使用する利点の 1 つ`VT_VARIANT | VT_BYREF`バリアント型は、データの種類は、メソッドの呼び出し中に変更できます。 などを渡すことができます、`VT_VARIANT | VT_BYREF`バリアント型を含む、`VT_BSTR`とを含むバリアント型が返される get、`VT_I4`メソッド呼び出しの後にします。 COM 相互運用マーシャラーに渡す場合を知ることがあるないため`VT_BSTR | VT_BYREF`で渡す場合と`VT_VARIANT | VT_BYREF`を含んでいるバリアントを指す、`BSTR`として宣言したパラメーターの`VARIANT *`を使用して、マーシャラーに指示できます<xref:System.Runtime.InteropServices.VariantWrapper>です。  
+  
+ 事前バインディングがサポートされていません。使用することができます<xref:System.Runtime.InteropServices.VariantWrapper>呼び出すときにのみ<xref:System.Type.InvokeMember%2A>または事前バインドされた方式でと呼ばれる、ディスパッチ専用インターフェイスを使用します。 C# で行う必要がありますも、`ref`を指定するキーワード`ByRef`型のパラメーターのセマンティクス<xref:System.Runtime.InteropServices.VariantWrapper>です。 Visual basic で`ByRef`セマンティクスは、暗黙的な遅延バインディング呼び出しのたびに自動的に追加されます。 なお、その入れ子<xref:System.Runtime.InteropServices.VariantWrapper>オブジェクトと配列の<xref:System.Runtime.InteropServices.VariantWrapper>オブジェクトはサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.InteropServices.VariantWrapper>をラップするクラス、<xref:System.Object>として、相互運用マーシャラーが渡される`VT_VARIANT | VT_BYREF`です。  
+  
+ [!code-csharp[System.Runtime.InteropServices.VariantWrapper#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.VariantWrapper/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.VariantWrapper#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.VariantWrapper/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VariantWrapper (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.VariantWrapper.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">マーシャ リングするオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.InteropServices.VariantWrapper" /> 、指定されたクラス<see cref="T:System.Object" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.InteropServices.VariantWrapper>をラップするクラス、<xref:System.Object>として、相互運用マーシャラーが渡される`VT_VARIANT | VT_BYREF`です。  
+  
+ [!code-csharp[System.Runtime.InteropServices.VariantWrapper#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.VariantWrapper/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.VariantWrapper#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.VariantWrapper/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrappedObject">
+      <MemberSignature Language="C#" Value="public object WrappedObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WrappedObject" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.VariantWrapper.WrappedObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってラップされたオブジェクトを取得、<see cref="T:System.Runtime.InteropServices.VariantWrapper" />オブジェクト。</summary>
+        <value>によってラップされたオブジェクト、<see cref="T:System.Runtime.InteropServices.VariantWrapper" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

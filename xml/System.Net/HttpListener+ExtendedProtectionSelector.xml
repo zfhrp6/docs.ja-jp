@@ -1,0 +1,40 @@
+<Type Name="HttpListener+ExtendedProtectionSelector" FullName="System.Net.HttpListener+ExtendedProtectionSelector">
+  <TypeSignature Language="C#" Value="public delegate System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy HttpListener.ExtendedProtectionSelector(HttpListenerRequest request);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed HttpListener/ExtendedProtectionSelector extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="request" Type="System.Net.HttpListenerRequest" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="request"><see cref="T:System.Net.HttpListenerRequest" />拡張保護ポリシーを決定する、<see cref="T:System.Net.HttpListener" />インスタンスを使用して拡張保護を提供します。</param>
+    <summary>決定する、デリゲートが呼び出されて、<see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />ごとに使用する<see cref="T:System.Net.HttpListener" />要求します。</summary>
+    <returns><see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />この要求に使用する拡張保護ポリシーを指定するオブジェクト。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener.ExtendedProtectionSelector>クラスは、拡張保護を提供する統合 Windows 認証を使用します。 要求ごとに、デリゲートを選択できます、設定を<xref:System.Net.HttpListener>インスタンスを使用して拡張保護を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

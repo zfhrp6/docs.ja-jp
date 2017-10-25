@@ -1,0 +1,1915 @@
+<Type Name="ConnectionsZone" FullName="System.Web.UI.WebControls.WebParts.ConnectionsZone">
+  <TypeSignature Language="C#" Value="public class ConnectionsZone : System.Web.UI.WebControls.WebParts.ToolZone" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionsZone extends System.Web.UI.WebControls.WebParts.ToolZone" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.ToolZone</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.ConnectionsZoneDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> と、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" /> ゾーンにある他のサーバー コントロールとの間の接続をユーザーが確立できるようにするユーザー インターフェイス (UI) を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セットを使用して、接続を構築して、プロバイダーとデータのコンシューマーとして機能するコントロールを 1 つと、データを共有する 2 つのサーバー コントロールを有効にできます。 2 つのコントロールできる<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたはその他の任意の種類のサーバー コントロールは、接続を処理するように設計されているに置かれていることを指定、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 Web パーツの接続に関する詳細についてを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>と<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>クラスの概要、だけでなく[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ 必要なコントロールと条件がある Web パーツの接続を構成することは、実際には、コントロールを接続する必要があります。 サーバー コントロールの間の接続を構成する 3 つの方法: Web ページ内の接続を宣言する、コードでは、接続の作成や追加、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールをページのユーザーが要求時にコントロールを接続できるようにします。 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> UI に接続または接続を形成するために必要な条件を満たしているサーバーのコントロール、ページ上の接続を切断できるコントロールを生成します。 これは、省略可能なコントロール接続の構成にする必要はありませんが、コントロールをサーバー コントロールの接続または切断されたユーザーに付与する場合に便利です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>から継承する Web パーツのツールのゾーン コントロールのいずれかのコントロールは、<xref:System.Web.UI.WebControls.WebParts.ToolZone>基本クラスです。 ツールのゾーンとして、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールがその Web ページが特定の表示モードではときにのみ表示されるように設計されています。 ここでは、表示モードが名前付き接続モード (ページは、このモードでときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>ページ上のコントロールがその<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode%2A>プロパティ値に設定<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode>)。 接続モードのユーザーがページを切り替えると、サーバー コントロールのいずれかの動詞メニューの connect 動詞をクリックして、接続 UI が表示します。  
+  
+ Web パーツ ゾーン コントロールとして、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールの種類は、<xref:System.Web.UI.WebControls.WebParts.WebZone>ゾーン (から継承される、<xref:System.Web.UI.WebControls.CompositeControl>クラス) を他のコントロールを格納するよう設計されています。 一般に、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>ゾーンでは、ほとんどの同じ要素を他の Web パーツのツールのゾーンとして: ヘッダー、本文や内容の領域およびフッターです。 どのような Web パーツ ゾーン、およびゾーンのさまざまな部分の詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.WebZone>クラスの概要です。  
+  
+> [!IMPORTANT]
+>  重要な点が他のほとんどの Web パーツ ゾーンとは異なり、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>ゾーンに関連付けられているサーバー コントロールの一意の型が含まれていません。 ゾーンと関連付けられているコントロールを含んでいるの一覧は、グラフを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebZone>クラスの概要です。 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>ゾーンが含まれていない<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>コントロール。 ユーザーが接続または切断中に存在するサーバー コントロールの UI を提供する、非常に限定された目的を代わりに、機能している<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ページ上の領域。 含まれているコントロールだけ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールは、接続を形成するために UI の一部として生成される標準の ASP.NET サーバー コントロールです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールが表示される、接続を形成するのに対応するページ上のサーバー コントロールに基づく UI が生成されます。 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールを決定するサーバー コントロールで、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ページのゾーンは、どの接続ポイントは、コンシューマーは、プロバイダーとし、UI の生成を適宜接続または切断されると、サーバー コントロールがいるかどうか。  
+  
+ たとえば、1 つを使用する必要がある<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール プロバイダーをすることのできる 1 つ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール コンシューマーをすることのできるで宣言する、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone>  ページで、現在切断されているとします。 ユーザー ページを接続モードに切り替えるし、コントロールの 1 つの connect 動詞がクリックしたときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールがクリックすると、表示できるユーザーのフォームにオプションを選択できますが、接続を作成、リンクを使用して UI を生成します。 (コントロールが接続した場合、初期表示代わりには表示ユーザー コントロールを切断するためのボタン) します。 新しい接続を作成する接続 UI、どのコントロールは、プロバイダー、およびコントロールは、コンシューマー ユーザーを示しています。 ドロップダウン リスト コントロールが、使用可能なを一覧表示する、各サーバー コントロールの下に表示されます<xref:System.Web.UI.WebControls.WebParts.ConnectionPoint>コントロールのオブジェクト。 それぞれのドロップダウン リストからユーザーを選択してください<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>を決定するどのようなインターフェイスとデータはコンシューマーと共有されます)、プロバイダーのオブジェクトと 1 つ<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>プロバイダーに接続されている、各コンシューマーを決定するどのようなインターフェイスおよびデータ コンシューマーが使用されます) のオブジェクトします。  
+  
+> [!NOTE]
+>  Web パーツ コントロール セットの既定の実装、1 つのプロバイダーは、多くのコンシューマーに接続できますが、コンシューマーは、1 つのプロバイダーを持つことができます。  
+  
+ 使用する、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールは宣言内で、 `<form>` (ただし、別の Web パーツ ゾーン要素内で入れ子になったされません) ページの Web 上の要素を使用して、`<asp:connectionszone>`要素、または、ページにプログラムによって追加できます。 他の Web パーツ ゾーンとは異なり、ページ内の要素を宣言する場合は、サーバー コントロールのタグの間の他の種類を宣言することはできません、`<asp:connectionszone>`要素。 独自のプロパティとスタイルの詳細についてに関連する要素を宣言することができますはスタンドアロン要素であり、他のサーバー コントロールを宣言できるテンプレート コントロールではありません。  
+  
+> [!NOTE]
+>  アクセシビリティを向上させるために、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>内でコントロールを表示、`<fieldset>`要素。 `<fieldset>`要素内の接続を確立するために使用するコントロールの関連するセットをグループ化、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>制御、およびそのビジュアル ユーザー エージェント (通常 Web ブラウザーなど) と音声指向のユーザー エージェント (画面読み取りソフトウェアなど) の両方のこれらのコントロール間のタブ付きのナビゲーションを容易にします。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールがさまざまなプロパティが接続の UI の描画に使用します。 プロパティの 1 つのセットには、いくつかの動詞--ui 操作を実行する--接続関連する場合のみ使用が含まれています: <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb%2A>、および<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.DisconnectVerb%2A>です。 接続ゾーン UI、特に、使用されるプロパティの大規模なセットは、さまざまな場所で (またはエラーが発生したときなど、特定の状況) を UI に表示されるテキスト文字列で構成されます: <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ExistingConnectionErrorMessage%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NewConnectionErrorMessage%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText%2A>、および<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText%2A>です。 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスには、他の Web パーツ ゾーン内で検索する共通のプロパティの数も含まれています: <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.Display%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.EmptyZoneText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A>、および<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.PartChromeType%2A>です。 最後に、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect%2A>プロパティが接続を開始するコントロールを参照する、クラスには一意では (これは、ユーザーが接続する動詞で参照されているメニュー コントロールではまた、その動詞をクリックするコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart%2A>プロパティ)。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスもいくつかのメソッド、これらのすべてが継承およびオーバーライドの基本クラスからがあり、それらのほとんどは、Web パーツ ゾーンの基本クラスから取得します。 詳細については、個々 のメソッドを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> Web パーツ ページ上のコントロールです。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   すべてのコントロールをホストする Web ページを宣言する方法を示しています、`<asp:connectionszone>`要素、およびさまざまな接続のプロパティの宣言とプログラムでのゾーンを設定します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを切り替えるにはできるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ この例の 2 番目の部分は、インターフェイスとカスタム コントロールを持つソース ファイルです。 注意して、`ZipCodeWebPart`制御を実装して、`IZipCode`インターフェイスを追加する、`ConnectionProvider`属性のコントロールは、接続のプロバイダーとして操作できるようにします。 `WeatherWebPart`コントロールがあるとマークされたメソッド、`ConnectionConsumer`属性を使用する場所、`IZipCode`インターフェイス、接続でコンシューマーとして動作できるようにします。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 この例では、動的コンパイルで使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_ConnectionZone_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/ZipCodeComponent.cs#2)]
+ [!code-vb[WebParts_ConnectionZone_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/ZipCodeComponent.vb#2)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 上部にある、`Register`ユーザー コントロールとの接続で使用するカスタム コントロールのディレクティブ。 <`asp:connectionszone>`の使用例として、ページの要素が宣言されている、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>宣言によって制御されます。 要素内で宣言によってプロパティの数が設定されます。 接続ゾーンの他のプロパティをプログラムで設定されて、`<script>`ページのセクションです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーで Web ページを読み込みます。 使用して、**表示モード**ページを接続モードを切り替えるにはドロップダウン リスト コントロール。 動詞メニューを開き、 **ZIP コード プロバイダー**コントロール (動詞メニューは、コントロールのタイトル バーに下向きの矢印によって示されます)、connect 動詞をクリックします。 A<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールが表示されます。 接続の UI で、**エンド接続**ボタンが表示されます。 接続は既に宣言されて、ページのマークアップで、コントロールが既に接続されているためです。 をクリックして**エンド接続**、しを使用して、**表示モード**もう一度ページを返す、ブラウズ モードを制御します。 次に、ページをもう一度接続モードに戻ります、コントロールのいずれかの接続の動詞をクリックし、ハイパーリンク コントロール間の接続を形成することができますを今すぐ接続 UI に表示されます。 リンクをクリックし、接続ポイントを選択し、接続を確立する接続の UI を使用します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />開発者が、動作または既定の接続を使用するので提供される UI を変更する場合、クラスを拡張できます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionsZone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定のコンス トラクターは、宣言するときに呼び出されますが、 `<asp:connectionszone>` ASP.NET ページ内の要素。 暗黙的にこのコンス トラクター以外の場合に呼び出すを追加するコントロールのページにプログラムで必要はありません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>プログラムによって Web ページに追加するコントロール。 例では、コンス トラクターの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページと、その`Page_Init`メソッドを使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>を制御し、ページに追加します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページ上で、`Page_Init`メソッドは、新しい<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールが (コンス トラクターを使用して) 作成し、ページに追加します。 ユーザーが接続モードに設定し、の 1 つの connect 動詞がクリックしたときに、 <xref:System.Web.UI.WebControls.WebParts.WebPart> 、コントロール、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールが表示されます。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/CS/connectionZoneCtorCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/VB/connectionZoneCtorVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 接続 UI が表示され、コントロールは、接続が、ページのマークアップで宣言されているために既に接続されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelVerb">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb CancelVerb { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb CancelVerb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />接続を確立するプロセスをキャンセルするエンドユーザーを有効にするオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />をエンドユーザーの接続された 2 つのコントロールには、この処理を取り消します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される、[キャンセル] 動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>制御、ゾーン レベルの動詞に表示される接続のユーザー インターフェイス (UI) ビューの一部としてユーザーには、コントロールの接続ポイントを選択します。 ユーザーは、動詞を [キャンセル] をクリックして、、接続ポイントを選択した場合のプロセスをキャンセル、新しい接続を確立するためにユーザーをクリックできますハイパーリンクに接続ゾーンの表示を返します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb%2A>対応への参照を取得するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>UI 内のオブジェクト。 プロパティ自体が読み取り専用動詞への参照を作成したら、必要に応じて、プロパティの値を変更できます。  
+  
+ 宣言することにより宣言によって、cancel 動詞のプロパティ値を設定することができます、`<cancelverb>`のタグ内の要素、`<asp:connectionszone>`要素。 フォームの動詞のプロパティを宣言して設定されることができます`Property-Subproperty`ここで、`Subproperty`のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト (たとえば、 `CancelVerb-Text`)。 プログラムでは、フォームにもプロパティを設定することができます`Property.Subproperty`(たとえば、 `CancelVerb.Text`)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素宣言によって、プログラムでプロパティを使用する方法を示します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素、しを宣言では、要素内で、`<cancelverb>`要素および属性を使用して一部のプロパティを設定します。 また、`Page_PreRender`メソッド、コードは、いくつかのプロパティの設定の cancel 動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続** ページで、宣言的な接続のために既に接続されているコントロールを切断するボタンをクリックします。 クリックして、**に接続するプロバイダーのコンシューマーを選択**ハイパーリンク、およびさまざまなプロパティの設定の効果に注意してください。 上にマウス ポインターを配置する場合、 **Terminate**  ボタン、ツールヒントにカスタムの説明テキストが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="protected override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって作成された接続のユーザー インターフェイス (UI) を閉じ、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.Close%2A>ユーザーをクリックすると、ゾーン レベル閉じる動詞には、接続の UI にメソッドが呼び出されます。 メソッドの実行、UI を表示すると、接続後、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect%2A>プロパティの値が`null`ページを開いたまま、接続の表示モードにします。 この時点でユーザーがコントロールの動詞メニューで、接続する動詞をクリックして、コントロールを選択またはページを別の表示モードに切り替えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseVerb">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb CloseVerb { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb CloseVerb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />エンドユーザーによって作成された接続のユーザー インターフェイス (UI) を終了するを有効にするオブジェクト、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />エンドユーザー接続 UI を閉じることができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、閉じる動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>接続 UI の下部 (フッター) で表示されるゾーン レベルの動詞には、制御します。 ユーザーは、閉じる動詞をクリックして、接続プロセスをキャンセルし、UI の接続を閉じますがリーフ ページは接続の表示モード。 この時点では、ユーザーはブラウズ モードまたは接続 UI をもう一度別のサーバー コントロールに接続する動詞をクリックしてページを返すことができますか。  
+  
+ 閉じる動詞は、ヘッダーの close 動詞と区別する必要があります (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.ToolZone.HeaderCloseVerb%2A>プロパティ)。 両方の動詞アクションを実行、同一の接続を終了して、UI がヘッダー閉じる動詞が、UI の上部に表示され、閉じる動詞が、UI の下部に表示され、既定では、ボタンで表される、既定では、ハイパーリンクによって表されます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb%2A>対応への参照を取得するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>UI 内のオブジェクト。 プロパティ自体が読み取り専用動詞への参照を作成したら、必要に応じて、プロパティの値を変更できます。  
+  
+ 宣言することにより宣言によって、閉じる動詞のプロパティ値を設定することができます、`<closeverb>`のタグ内の要素、`<asp:connectionszone>`要素。 フォームの動詞のプロパティを宣言して設定されることができます`Property-Subproperty`ここで、`Subproperty`のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト (たとえば、 `CloseVerb-Text`)。 プログラムでは、フォームにもプロパティを設定することができます`Property.Subproperty`(たとえば、 `CloseVerb.Text`)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素宣言によって、プログラムでプロパティを使用する方法を示します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素、しを宣言では、要素内で、`<closeverb>`要素と属性を使用してプロパティを設定します。 さらに、`Page_PreRender`メソッド、コードでプロパティを設定、閉じるの動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続** ページで、宣言的な接続のために既に接続されているコントロールを切断するボタンをクリックします。 クリックして、**に接続するプロバイダーのコンシューマーを選択**ハイパーリンク、およびさまざまなプロパティの設定の効果に注意してください。 上にマウス ポインターを配置する場合、**閉じるゾーン**接続 UI の下部にあるボタン、ツールヒントにカスタムの説明テキストが表示されます。 接続ゾーンの上部にあるヘッダーの閉じる動詞は、ハイパーリンクによって表される閉じる動詞でのプロパティの割り当てがヘッダーの close 動詞に影響を与えるないことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureConnectionTitle">
+      <MemberSignature Language="C#" Value="public virtual string ConfigureConnectionTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigureConnectionTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって作成された接続のユーザー インターフェイス (UI) のサブセクションのタイトルとして表示されるテキスト、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <value>接続の構成セクションのタイトルを含む文字列。 既定のタイトルは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A>接続 UI のこのセクションのタイトルのカスタム値を使用するプロパティです。 ユーザーが既存の接続との接続を UI が表示されますが、構成動詞をクリックすると、UI の接続の構成セクションが表示されます (既定では、これは、**構成**接続 UI のボタン)。  
+  
+ プロパティの値を宣言によって、設定するには、文字列を割り当てることによって、`configureconnectiontitle`属性を`<asp:connectionszone>`Web ページ内のタグ。 または、プログラムで文字列をプロパティに割り当てることができます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素、および、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 接続は既に存在するため、表示、**エンド接続**ボタン、および**構成**ボタンで、構成する動詞を表します。 接続が構成可能な場合 (そうでないこのコード例では)、**構成**ボタンが有効になります以外の場合はそれを開くには、接続の構成セクションをクリックすることし、タイトル、に割り当てられているコードの値になります<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureVerb">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb ConfigureVerb { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb ConfigureVerb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureVerb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />オブジェクト接続のユーザー インターフェイス (UI) の構成 ビューを開くために使用します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />接続 UI で接続の構成セクションを開くために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Configure 動詞は、接続は既に存在し、ユーザーが UI の接続を開いたときに、UI で、接続の接続の管理セクションに表示されます。 UI を持つユーザーを表示する、**エンド接続**、接続を終了するにはボタンと**構成** ボタンを構成する動詞を表します) を接続を構成するためです。 ユーザーがクリックした場合、**構成** ボタン、UI の接続の構成セクションが表示されたら、接続を構成するユーザーを有効にします。 接続を構成するには、このオプション (と同じよう、**構成**ボタン) 接続が、トランスフォーマーを使用し、トランスフォーマーには、構成ウィザード コントロールが含まれています。 場合にのみが有効になって (<xref:System.Web.UI.WebControls.Wizard>) のユーザーによって構成を有効にします。 詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureVerb%2A>対応への参照を取得するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>UI 内のオブジェクト。 プロパティ自体が読み取り専用動詞への参照を作成したら、必要に応じて、プロパティの値を変更できます。  
+  
+ 宣言することにより宣言によって、configure 動詞のプロパティ値を設定することができます、`<configureverb>`のタグ内の要素、`<asp:connectionszone>`要素。 フォームの動詞のプロパティを宣言して設定されることができます`Property-Subproperty`ここで、`Subproperty`のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト (たとえば、 `ConfigureVerb-Text`)。 プログラムでは、フォームにもプロパティを設定することができます`Property.Subproperty`(たとえば、 `ConfigureVerb.Text`)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureVerb%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素宣言によって、プログラムでプロパティを使用する方法を示します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素、しを宣言では、要素内で、`<configureverb>`要素と属性を使用してプロパティを設定します。 さらに、`Page_PreRender`メソッド、コードでプロパティを設定の構成の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 あることに注意してください、**エンド接続**を既に接続されているコントロールを切断するボタンをクリックし、無効な**構成**ボタンをクリックします。 コード例は、構成ウィザードでは、含まれているトランスフォーマーを使用する場合、**構成** ボタンを有効にすると、しをクリックして、接続を構成することです。 上にマウス ポインターを配置する場合、**構成**接続 UI のボタンをクリックして、ツールヒントにカスタムの説明テキストが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToConsumerInstructionText">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerInstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerInstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが、プロバイダーに接続するコンシューマー接続ポイントを選択する、接続ユーザー インターフェイス (UI) のセクションに表示される説明テキストを設定します。</summary>
+        <value>プロバイダーへの接続をコンシューマーを作成するための手順を含む文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックしたときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール接続コンシューマーを選択できる UI の一部が表示されます。 ユーザーが、コンシューマーで接続する動詞を選択した場合、接続 UI は、逆の操作し、プロバイダーへの接続に関する情報を表示します。  
+  
+ 内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>プロパティは、プロバイダーの接続を使用可能なコンシューマー接続ポイントを格納しているドロップダウン リスト コントロールのすぐ上に表示されます。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToConsumerInstructionText`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続**、接続を終了するボタンをクリックし、をクリックして、**に接続するプロバイダーのコンシューマーを選択**ハイパーリンクです。 コンシューマー接続 UI が表示されに割り当てられているカスタム テキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A>プロバイダーへの接続用のコンシューマー接続ポイントを選択できるコントロールを使用して領域のすぐ上にプロパティが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToConsumerText">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがクリックすると、接続のコンシューマー コントロールを選択できるビューを開くハイパーリンクのテキストを設定します。</summary>
+        <value>ユーザーがコンシューマーを選択するビューを開くハイパーリンクのテキストとして表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックし、接続が存在しない場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールはテキストとハイパーリンクを表示**に接続するプロバイダーのコンシューマーを選択**です。 ユーザーは、ハイパーリンクをクリックして、プロバイダーとの接続に使用できるコンシューマーを選択できるビューが開きます。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToConsumerText`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続**、接続を終了するボタンをクリックし、に割り当てられているカスタム テキストとハイパーリンクが表示されることに注意してください、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToConsumerTitle">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセクションのタイトルのテキストをユーザーが接続する特定のコンシューマーを選択できる接続のユーザー インターフェイス (UI) に設定します。</summary>
+        <value>ユーザーがコンシューマーを選択するセクションのタイトルとして機能している文字列。 既定のタイトルは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザー接続動詞プロバイダー コントロール上をクリックすると、接続が存在しない、ときは、以前に選択したプロバイダーに接続するコンシューマーを選択できるビューが最終的に表示します。 このビューのタイトルは、によって提供される、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>プロパティです。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToConsumerTitle`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続**接続を終了するボタンをクリックし、リンクをクリックしてコンシューマーを選択します。 コンシューマーを選択するため、ビューでセクションのタイトルのテキストが、コードを割り当てます、テキストであることを確認します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToProviderInstructionText">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToProviderInstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderInstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが、コンシューマーに接続するプロバイダー接続ポイントを選択する、接続ユーザー インターフェイス (UI) のセクションに表示される説明テキストを設定します。</summary>
+        <value>コンシューマーへのプロバイダー接続を作成する方法の手順を含む文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーをクリックすると、コンシューマー コントロールでの接続の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、接続プロバイダーを選択できる UI の一部が表示されます。 ユーザーがプロバイダーに接続する動詞を選択した場合、接続 UI は、逆の操作し、コンシューマーへの接続に関する情報を表示します。  
+  
+ 内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>コンシューマーを接続することが可能なプロバイダー接続ポイントを格納しているドロップダウン リスト コントロールのすぐ上にプロパティが表示されます。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToProviderInstructionText`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 をクリックして、**エンド接続**、接続を終了するボタンをクリックし、をクリックして、**接続するコンシューマーのプロバイダーを選択して**ハイパーリンクです。 プロバイダー接続 UI が表示されに割り当てられているカスタム テキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A>コンシューマーへの接続用のプロバイダー接続ポイントを選択できるコントロールを使用して領域のすぐ上にプロパティが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToProviderText">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToProviderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがクリックすると、接続のプロバイダーのコントロールを選択できるビューを開くハイパーリンクのテキストを設定します。</summary>
+        <value>ユーザーがプロバイダーを選択するビューを開くハイパーリンクのテキストとして表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コンシューマーのコントロールの connect 動詞をクリックし、接続が存在しない場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールはテキストとハイパーリンクを表示**に接続するコンシューマーのプロバイダーを選択して**です。 ユーザーは、ハイパーリンクをクリックして、ときにコンシューマーとの接続に使用可能なプロバイダーを選択できるビューを開きます。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToProviderText`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続**、接続を終了するボタンをクリックし、に割り当てられているカスタム テキストとハイパーリンクが表示されることに注意してください、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToProviderTitle">
+      <MemberSignature Language="C#" Value="public virtual string ConnectToProviderTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが接続する特定のプロバイダーを選択できます接続ユーザー インターフェイス (UI) のセクションのタイトルのテキストを設定します。</summary>
+        <value>ユーザーがプロバイダーを選択するセクションのタイトルとして機能している文字列。 既定のタイトルは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザー接続動詞コンシューマー コントロール上をクリックすると、接続が存在しない、最終的に届く選択済みのコンシューマーに接続するプロバイダーを選択できるビュー。 このビューのタイトルは、によって提供される、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>プロパティです。  
+  
+ 使用して宣言によって、このプロパティを設定することができます、`ConnectToProviderTitle`の開始タグ内の属性、`<asp:connectionszone>`するか、ページ内の要素は、プロパティをプログラムで設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続**接続を終了するボタンをクリックし、プロバイダーを選択するリンクをクリックします。 ビューで、プロバイダーを選択するため、ことを確認セクションのタイトルのテキストに代入するテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectVerb">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb ConnectVerb { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb ConnectVerb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" /> 2 を有効にするオブジェクト<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールの接続を確立します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />接続を確立する 2 つのコントロールを有効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される、接続の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>制御、ゾーン レベルの動詞に表示される接続のユーザー インターフェイス (UI) ビューの一部としてユーザーに 2 つのコントロール間の接続を終了します。 ユーザーが接続ポイントを選択できる UI の一部で、UI の下部にある接続動詞が有効になっている場合は 2 つのコントロールは、接続することは、します。 接続ポイントを選択すると、ユーザー接続を作成する動詞を接続をクリックしています。  
+  
+> [!NOTE]
+>  ゾーン レベルの接続このトピックで説明されている動詞は、実際に、コントロール間の接続を確立しの動詞メニューに表示されている動詞とは異なる、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コントロールは、接続を形成する場合は、表示モードを接続する Web ページを切り替えるときに、<xref:System.Web.UI.WebControls.WebParts.WebPart>接続動詞メニューの動詞が表示されます。 これは、<xref:System.Web.UI.WebControls.WebParts.WebPart>接続動詞が単に、接続によって作成された UI を開き、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 これに対し、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb%2A>ゾーン レベルで動作する、このトピックで説明されている動詞が実際には、接続を作成します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb%2A>対応への参照を取得するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>UI 内のオブジェクト。 プロパティ自体が読み取り専用動詞への参照を作成したら、必要に応じて、プロパティの値を変更できます。  
+  
+ 宣言することにより宣言によって、connect 動詞のプロパティ値を設定することができます、`<connectverb>`要素開始タグと終了タグの間、`<asp:connectionszone>`要素。 動詞のプロパティがの開始タグ内で宣言して設定することもできます、`<asp:connectionszone>`形式で属性を追加することによって、要素`Property-Subproperty`ここで、`Subproperty`のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト (たとえば、 `ConnectVerb-Text`)。 プログラムでは、フォームにもプロパティを設定することができます`Property.Subproperty`(たとえば、 `ConnectVerb.Text`)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素宣言によって、プログラムでプロパティを使用する方法を示します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素内に要素タグを宣言し、`<connectverb>`要素および属性を使用して一部のプロパティを設定します。 また、`Page_PreRender`メソッド、コードは、いくつかのプロパティの設定の接続の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 クリックして、**エンド接続** ページで、宣言的な接続のために既に接続されているコントロールを切断するボタンをクリックします。 クリックして、**に接続するプロバイダーのコンシューマーを選択**ハイパーリンク、およびさまざまなプロパティの設定の効果に注意してください。 上にマウス ポインターを配置する場合、**接続コントロール** ボタン、ツールヒントにカスタムの説明テキストが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumersInstructionText">
+      <MemberSignature Language="C#" Value="public virtual string ConsumersInstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConsumersInstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続が既に存在する場合に、接続のユーザー インターフェイス (UI) の消費者セクションに表示される説明テキストを設定します。</summary>
+        <value>接続に参加しているコンシューマーの指示テキストとして使用される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックし、接続は既に存在するときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが接続を切断できるビューが表示されます。 また、接続に参加しているすべてのコンシューマーが表示されます。 コンシューマーの一覧のすぐ上、既定では、複数のコンシューマー コントロールが接続で実行する内容の説明をコンシューマーの命令テキストです。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`ConsumersInstructionText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、コンシューマー セクションで、確認に割り当てられているカスタム テキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumersTitle">
+      <MemberSignature Language="C#" Value="public virtual string ConsumersTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConsumersTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続が既に存在する場合は、接続のユーザー インターフェイス (UI) の消費者セクションの上に表示されるタイトルを設定します。</summary>
+        <value>接続に参加しているコンシューマーのタイトルのテキストとして使用される文字列。 既定のタイトルは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックし、接続は既に存在するときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが接続を切断できるビューが表示されます。 また、接続に参加しているすべてのコンシューマーが表示されます。 コンシューマーの一覧のすぐ上のコンシューマーの指示テキストは、その上コンシューマー セクションのタイトルを<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>プロパティは、テキストを提供します。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`ConsumersTitle`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、コンシューマー セクションで、確認に割り当てられているカスタム テキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれているすべての子コントロールを作成、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />準備として、サーバーにポストされた内容または表示のためのコントロールです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ベース<xref:System.Web.UI.Control.CreateChildControls%2A?displayProperty=nameWithType>メソッドです。 接続に必要なすべての接続に関連するオブジェクトを準備 (たとえば、接続ポイント オブジェクトから取得コンシューマーおよびプロバイダーの使用可能なコントロール)、さまざまなユーザー インターフェイス (UI) コントロールを作成、およびユーザーが接続の接続を確立するために UI でやり取りします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectVerb">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb DisconnectVerb { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb DisconnectVerb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.DisconnectVerb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" /> 2 つの接続を切断するユーザーを有効にするオブジェクトが接続されている<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />接続されている 2 つの接続を解除する<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される、切断動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>制御、ゾーン レベルの動詞に表示される接続のユーザー インターフェイス (UI) ビューの一部としてユーザーには、2 つのコントロール間の既存の接続を管理します。 ユーザーがクリックした後、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの動詞メニューの動詞を接続し、接続では、UI が表示されたら、次の 2 つのコントロール間の接続が既にある場合、UI の下部にあるアクティブに切断動詞が表示されます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.DisconnectVerb%2A>対応への参照を取得するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>UI 内のオブジェクト。 プロパティ自体が読み取り専用動詞への参照を作成したら、必要に応じて、プロパティの値を変更できます。  
+  
+ 宣言することにより宣言によって、切断動詞のプロパティ値を設定することができます、`<disconnectverb>`要素開始タグと終了タグの間、`<asp:connectionszone>`要素。 動詞のプロパティがの開始タグ内で宣言して設定することもできます、`<asp:connectionszone>`形式で属性を追加することによって、要素`Property-Subproperty`ここで、`Subproperty`のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト (たとえば、 `DisconnectVerb-Text`)。 プログラムでは、フォームにもプロパティを設定することができます`Property.Subproperty`(たとえば、 `DisconnectVerb.Text`)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.DisconnectVerb%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素宣言によって、プログラムでプロパティを使用する方法を示します。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素内に要素タグを宣言し、`<disconnectverb>`要素および属性を使用して一部のプロパティを設定します。 また、`Page_PreRender`メソッド、コードは、いくつかのプロパティの設定の切断動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、 **ZIP コード プロバイダー**制御、および connect 動詞をクリックします。 切断の動詞に設定されたプロパティ値の影響に注意してください。 上にマウス ポインターを配置する場合、**エンド接続** ボタン、ツールヒントにカスタムの説明テキストが表示されます。 クリックして、**エンド接続** ページで、宣言的な接続のために既に接続されているコントロールを切断するボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Display">
+      <MemberSignature Language="C#" Value="protected override bool Display { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Display" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.Display" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ToolZone" /> コントロールが現在表示されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Web.UI.WebControls.WebParts.ToolZone" /> が現在表示されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmptyZoneText">
+      <MemberSignature Language="C#" Value="public override string EmptyZoneText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EmptyZoneText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.EmptyZoneText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を空に表示されるテキスト メッセージ<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />が不足しているコントロールの接続を確立するために、Web ページ上にある場合を制御します。</summary>
+        <value>A<see cref="T:System.String" />空のゾーンのメッセージを含むです。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExistingConnectionErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string ExistingConnectionErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExistingConnectionErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ExistingConnectionErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、エラーまたは警告は、既存の接続がある場合に、接続のユーザー インターフェイス (UI) に表示されるメッセージのテキストを設定します。</summary>
+        <value>A<see cref="T:System.String" />メッセージのテキストを格納しています。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFromText">
+      <MemberSignature Language="C#" Value="public virtual string GetFromText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GetFromText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コンシューマーの取得元となる名前付きのプロバイダーの前にある接続のユーザー インターフェイス (UI) のセクションに表示されるテキストを設定します。</summary>
+        <value>名前付きのプロバイダー、コンシューマーからのデータを取得する前に表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーをクリックすると、コンシューマー コントロールでの接続の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが、プロバイダーへの接続を確立するためにできるビューが表示されます。 プロバイダー接続を選択するユーザーに指示する UI の一部で、ポイントは、ユーザーが、コンシューマーがそのデータを取得する接続ポイントを選択できるドロップダウン リスト コントロールの前にいくつかのテキスト表示されます。 ドロップダウン コントロールの前にあるこのテキストは、内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>プロパティです。 テキスト値は、既定では、**から**です。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`GetFromText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビュー、名前付きのプロバイダーを前にあるテキストのプロバイダーのセクションで確認します。 割り当てられているテキストが、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public virtual string GetText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GetText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前付きコンシューマー プロバイダーからデータを受け取る前に使用される接続のユーザー インターフェイス (UI) のセクションに表示されるテキストを設定します。</summary>
+        <value>名前付きのコンシューマー接続の前に表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーをクリックすると、コンシューマー コントロールでの接続の動詞、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが、プロバイダーへの接続を確立するためにできるビューが表示されます。 プロバイダー接続を選択するユーザーに指示する UI の一部で、ポイントは、名前付きのコンシューマー接続に参加する前に使用されるいくつかのテキスト表示されます。 この前にテキストが、コンシューマーは内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>プロパティです。 テキスト値は、既定では、**取得**です。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`GetText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビュー、名前付きコンシューマーを前にあるテキストのプロバイダーのセクションで確認します。 割り当てられているテキストが、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public override string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって作成された接続のユーザー インターフェイス (UI) の上部に表示されるヘッダー文字列、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <value>接続の UI のヘッダー テキストを含む文字列です。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>プロパティは、接続の UI が表示されるたびに表示します。 ユーザーが接続動詞の動詞メニューを開き、 <xref:System.Web.UI.WebControls.WebParts.WebPart> UI が表示されたら、接続を制御し、ヘッダーのテキストが接続 UI の最上部にラベルとして機能します。 既定のテキストは**接続ゾーン**です。  
+  
+ このプロパティのオーバーライド ベース<xref:System.Web.UI.WebControls.WebParts.WebZone.HeaderText%2A>プロパティから、<xref:System.Web.UI.WebControls.WebParts.WebZone>クラス、プロパティの既定の接続ゾーンのヘッダー テキストを割り当てることができるようにします。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`HeaderText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで接続ゾーンの上部にあるヘッダーのテキストに割り当てられた値は、ことに注意してください、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>コード例ではプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstructionText">
+      <MemberSignature Language="C#" Value="public override string InstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の既存の接続を管理するために、接続のユーザー インターフェイス (UI) のセクションで選択したコントロールに関する一般的な手順について使用されるテキストです。</summary>
+        <value>接続 UI の命令のテキストを含む文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A>プロパティは、UI が表示される接続との接続は既に存在するときに表示します。 ヘッダーのテキストのすぐ下 (に含まれている、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>プロパティ)、接続、UI の一番上にあるが命令のタイトルは、そのすぐ下の指示テキストです。 命令のテキストは、実行できるアクションの種類をユーザーに通知で現在選択されている<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (選択したコントロールをユーザーには、コントロールの動詞メニューの connect 動詞がクリックした 1 つ)。 命令のテキストは、既定では、**現在の Web パーツの接続を管理**です。  
+  
+ このプロパティのオーバーライド ベース<xref:System.Web.UI.WebControls.WebParts.ToolZone.InstructionText%2A>プロパティから、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラス、既定の接続ゾーンの命令のテキストは、プロパティに割り当てることができるようにします。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`InstructionText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、接続ゾーンの上部付近の指示テキストに割り当てられている値であるに注意してください、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A>コード例ではプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstructionTitle">
+      <MemberSignature Language="C#" Value="public virtual string InstructionTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InstructionTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または全般の詳細については、コンシューマーまたはプロバイダー内のコントロール、既存の接続を管理するための接続のユーザー インターフェイス (UI) で実行できるアクションに使用されるテキストを設定します。</summary>
+        <value>接続の UI の命令のタイトルを含む文字列です。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A>プロパティは、UI が表示される接続との接続は既に存在するときに表示します。 ヘッダーのテキストのすぐ下の命令のタイトルのテキストは、(に含まれている、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A>プロパティ)、接続の UI の一番上にあるがします。 アクションの種類は、コンシューマーまたはプロバイダーがユーザーに通知する一般的な説明は、命令タイトルは<xref:System.Web.UI.WebControls.WebParts.WebPart>既存の接続に参加しているコントロール。 既定では、命令のタイトルはで始まる**の接続の管理**、動詞メニューの connect 動詞 をクリックして、ユーザーが選択されているコンシューマーまたはプロバイダーのコントロールの名前で終わります。  
+  
+> [!NOTE]
+>  このプロパティにカスタム値を割り当てるときは、接続を管理する、カスタムの命令タイトル必要がありますコンシューマーを参照するのに十分な一般的なプロバイダーまたはコンシューマーのコントロールまたはプロバイダーのコントロールをユーザーが選択するかどうか、デザイン時に認識できないことに注意してください。 これに対し、プロパティの既定値が表示されるように、ユーザーが選択した任意のコンシューマーまたはプロバイダー コントロールの名前を動的に追加します。 この動作を模倣したプロパティのカスタム値を指定する場合から継承する必要があります、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラス、し、このプロパティをオーバーライドまたは<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody%2A>メソッドです。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`InstructionTitle`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、ヘッダーのテキスト、接続ゾーンの上部付近のすぐ下の命令のタイトルに割り当てられている値であるに注意してください、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A>コード例ではプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>コントロールによって保存された前回のページ要求からの状態情報を復元、<see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、かどうが決定コントロールの状態コントロールの以前に保存した場合は、コントロールの状態を保存した値に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="savedState" />によって作成された配列の長さと等しくない、<see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />復元するビュー ステートを格納しています。</param>
+        <summary>によって保存された前回のページ要求からビューステート情報を復元、<see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ このメソッドが呼び出されると、かどうが決定ビューステート コントロールの以前に保存した場合は、ビュー ステートを保存した値に設定します。 メソッドのオーバーライド、<xref:System.Web.UI.WebControls.WebParts.ToolZone.LoadViewState%2A>から継承されたメソッド、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスの基底の実装に追加し、で使用されるいくつかのゾーン レベルの動詞の状態を復元できるように、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="savedState" />によって作成された配列の長さと等しくない、<see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NewConnectionErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string NewConnectionErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewConnectionErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NewConnectionErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、エラーまたはユーザーが作成しようとする新しい接続で警告がある場合に、接続のユーザー インターフェイス (UI) に表示されるメッセージのテキストを設定します。</summary>
+        <value>A<see cref="T:System.String" />メッセージのテキストを格納しています。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoExistingConnectionInstructionText">
+      <MemberSignature Language="C#" Value="public virtual string NoExistingConnectionInstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NoExistingConnectionInstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールには、既存の接続があるない場合は、接続のユーザー インターフェイス (UI) の本文に表示される指示テキストを設定します。</summary>
+        <value>文字列の場合、テキスト メッセージを含む既存の接続が存在しません。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A>プロパティは、UI が表示される接続と接続がありませんが存在するときに表示します。 ユーザーが接続の表示モードを切り替えますの動詞メニューを開き、接続の動詞をクリックすると、 <xref:System.Web.UI.WebControls.WebParts.WebPart> UI が表示されるメインの接続を制御します。 現在の接続からのテキストがないかどうか、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A>閉じる動詞、ゾーンのフッター領域には、すぐ上の接続、UI の下部にあるプロパティが表示されます。 テキストは、既存の接続がないという事実を説明し、ユーザー、UI 内で接続を作成するための基本的な手順については、します。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`NoExistingConnectionInstructionText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、クリックして、**エンド接続**ボタンをクリックします。 閉じる動詞、ゾーンのフッター領域には、すぐ上の接続、UI の下部にない既存の接続についての指示テキストが表示されることに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoExistingConnectionTitle">
+      <MemberSignature Language="C#" Value="public virtual string NoExistingConnectionTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NoExistingConnectionTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールには、既存の接続があるない場合は、接続のユーザー インターフェイス (UI) の本文に表示されるタイトルのテキストを設定します。</summary>
+        <value>場合、タイトル テキストを含む文字列の既存の接続が存在しません。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれるテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A>プロパティは、UI が表示される接続と接続がありませんが存在するときに表示します。 ユーザーが接続の表示モードを切り替えますの動詞メニューを開き、接続の動詞をクリックすると、 <xref:System.Web.UI.WebControls.WebParts.WebPart> UI が表示されるメインの接続を制御します。 現在の接続からのテキストがないかどうか、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A>接続 UI、新しい接続を作成するユーザーがクリックしてできるリンクのすぐ下の本体の先頭付近にあるプロパティが表示されます。 接続が存在しないと、既定のタイトルはという事実を簡潔に説明**アクティブな接続がない**です。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`NoExistingConnectionTitle`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 既存の接続用に開かれたビューで、クリックして、**エンド接続**ボタンをクリックします。 ユーザーが新しい接続を作成できるリンクのすぐ下にない既存の接続の命令のタイトルが発生することに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDisplayModeChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDisplayModeChanged (object sender, System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDisplayModeChanged(object sender, class System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnDisplayModeChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを発生させる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged>イベントしをカスタム ハンドラーを提供します。 Web ページが入力または接続の表示モードを終了すると、このメソッドに固有のいくつかの手順、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 メソッドが保留中でこの時点で、設定してから、接続のユーザー インターフェイス (UI) の子コントロールが表示されないことにより、接続アクティビティのキャンセル、<xref:System.Web.UI.Control.ChildControlsCreated%2A>プロパティを`false`、および場合は、ユーザーが接続を作成するプロセスが続行されます接続 UI を既存の接続に関する情報を表示できるモードに設定します。  
+  
+ 提供される処理に特殊な処理を追加する、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnDisplayModeChanged%2A>メソッド、開発者から継承できます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスし、このメソッドをオーバーライドします。 代わりに、開発者ものハンドラーを提供、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged>でイベントを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールを追加することによって、`OnDisplayModeChanged`属性を`<asp:webpartmanager>`Web ページ、およびイベントを処理するカスタム メソッドの値を割り当てる要素。 このメソッドでは、開発者がの現在の値を確認できます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode%2A>プロパティである場合と<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode>に必要な変更が実行されることができます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ベース<xref:System.Web.UI.WebControls.WebParts.ToolZone.OnInit%2A?displayProperty=nameWithType>メソッドを表示する Web ページを準備するカスタム処理を追加し、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedWebPartChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedWebPartChanged (object sender, System.Web.UI.WebControls.WebParts.WebPartEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedWebPartChanged(object sender, class System.Web.UI.WebControls.WebParts.WebPartEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnSelectedWebPartChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender"><see cref="T:System.Object" />イベントの送信者を識別します。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.WebParts.WebPartEventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.WebControls.WebParts.ToolZone>子コントロールを再作成する必要があるという事実の接続のユーザー インターフェイス (UI) をリセットする実装。 これが必要なにあるため、選択したコントロールの変更接続 UI でいくつかのオプションは変更と、選択したコントロールは、コンシューマーまたはプロバイダー、かどうかに応じてコントロール ポイント (接続ポイントは、ドロップダウン リスト コントロールに表示されます)、およびその他の詳細。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartChromeType">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.PartChromeType PartChromeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeType PartChromeType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.PartChromeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれるサーバー コントロールを囲む境界線の種類、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" />接続ゾーンに含まれるコントロールを囲む境界線の種類を決定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvidersInstructionText">
+      <MemberSignature Language="C#" Value="public virtual string ProvidersInstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProvidersInstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続が既に存在する場合に、接続のユーザー インターフェイス (UI) のプロバイダー セクションに表示される説明テキストを設定します。</summary>
+        <value>接続に参加しているプロバイダーの説明のテキストとして使用される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コンシューマーのコントロールの connect 動詞をクリックし、接続は既に存在するときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが接続を切断できるビューが表示されます。 接続に参加しているすべてのプロバイダーも表示されます。 プロバイダーの一覧のすぐ上、プロバイダーが命令、既定では複数のコントロールのプロバイダーが接続で実行する内容の説明をします。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`ProvidersInstructionText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 割り当てられているカスタムのテキストのプロバイダーのセクションで確認して、既存の接続用に開かれたビューで、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvidersTitle">
+      <MemberSignature Language="C#" Value="public virtual string ProvidersTitle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProvidersTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続が既に存在する場合は、接続のユーザー インターフェイス (UI) のプロバイダーのセクションの上に表示されるタイトルを設定します。</summary>
+        <value>接続に参加しているプロバイダーのタイトルのテキストとして使用される文字列。 既定のタイトルは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コンシューマーのコントロールの connect 動詞をクリックし、接続は既に存在するときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、ユーザーが接続を切断できるビューが表示されます。 接続に参加しているすべてのプロバイダーも表示されます。 だけプロバイダーの一覧の上、プロバイダー命令のテキストは、その上 providers セクションのタイトルを<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>プロパティは、テキストを提供します。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`ProvidersTitle`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>を持つプロパティ、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 例では、プロパティの使用方法を示す Web ページのコードのみが含まれています2 つのコード例を実行の例」のセクションを参照して必要なファイルを他の<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールをすると、Web ページの表示モードを切り替えることができます。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   郵便番号のインターフェイスでは、および 2 つのコードを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。 次のコードを取得、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスの概要です。  
+  
+-   すべてのコントロールをホストする Web ページを宣言、`<asp:connectionszone>`要素、プロパティをプログラムで使用する方法を示しています。  
+  
+-   ブラウザーでの例の動作についての説明。  
+  
+ Web ページを宣言、`<asp:connectionszone>`要素と、`Page_PreRender`メソッド、コードに値を割り当てます、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 接続モードでは、スイッチを使用して、**表示モード**コントロール。 動詞メニュー矢印をクリックして、**郵便コンシューマー**制御、および connect 動詞をクリックします。 割り当てられているカスタムのテキストのプロバイダーのセクションで確認して、既存の接続用に開かれたビューで、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected override void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">A<see cref="T:System.String" />イベントの引数のデータを格納しています。</param>
+        <summary>イベントを発生させる、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />サーバーへのそれを含むフォームのポストバック時を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RaisePostBackEvent%2A>メソッドは、フォームを含む場合に発生することがいくつかの可能な結果を処理する<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールは、サーバーにポストバックされます。 場合は、最初の値、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect%2A>プロパティは`null`それ以上の接続に関連するアクションがするために、保留中の接続が取り消されたため、およびメソッドを返します。 次に、接続のユーザー インターフェイス (UI) が実際に表示され、ユーザーが接続を作成するプロセスが場合、メソッドは考えられるシナリオを処理します。 接続動詞を、ユーザーがクリックした、ユーザーには、切断動詞がクリックした、UI が表示されている、トランスフォーマー ゾーンが閉じられる、プロバイダーへの接続が作成されている、またはコンシューマーへの接続が作成されています。 各ケースで、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RaisePostBackEvent%2A>メソッドは、`eventArgument`渡されるパラメーターと更新プログラム、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>それに応じてを制御します。 最後に、上記のケースのいずれもをしないする場合、メソッドの呼び出し、基本メソッドで、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> Web パーツ コントロールの内容を受け取る。</param>
+        <summary>内容を表示、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.Render%2A>メソッドで子コントロールが作成された後に発生した変更されたまたはプリレンダ リングの段階では、接続のユーザー インターフェイス (UI) を更新してから、ベース<xref:System.Web.UI.WebControls.CompositeControl.Render%2A?displayProperty=nameWithType>Web ページに、ゾーンの内容を書き込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBody">
+      <MemberSignature Language="C#" Value="protected override void RenderBody (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderBody(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />コントロールの本文の内容を受け取る。</param>
+        <summary>コンテンツを送信、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />を指定したコントロールの本体領域<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクトで、Web ページに、コンテンツを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールの本体は、そのヘッダーおよびフッター領域間の部分です。 <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody%2A>メソッドのオーバーライドは、ベースで行われる本体領域のレンダリング<xref:System.Web.UI.WebControls.WebParts.WebZone.RenderBody%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドに適用される属性の一意のスタイルをレンダリング ベースに追加、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>制御、およびそのも、適切なコンテンツの表示子 UI 内のユーザーによって行われた以前の選択に基づく接続のユーザー インターフェイス (UI) 内のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderVerbs">
+      <MemberSignature Language="C#" Value="protected override void RenderVerbs (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderVerbs(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderVerbs(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />接続ゾーンで表示する動詞の内容を受け取る。</param>
+        <summary>ゾーン レベルの動詞を表示、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに含まれているいくつかのゾーン レベルの動詞を表示、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。 このメソッドの一部として、<xref:System.Web.UI.WebControls.WebParts.ToolZone.RenderVerb%2A?displayProperty=nameWithType>各動詞のそれぞれの詳細を表示するためにメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>任意の Web パーツ コントロール、ページがサーバーにポストされた最終時刻以降に発生した状態の変更を保存します。</summary>
+        <returns>Web パーツ コントロールの現在の状態を返します。 状態がいないかどうか、コントロールに関連付け、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールは、既存の接続詳細が表示されるモード以外のモードのいずれかで表示し、コントロールに関連付けられている接続の詳細についての状態データがある場合、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState%2A>メソッドは、サーバーへのラウンド トリップ間で永続化できるように、データを保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保存、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />サーバーにポストバックされたコントロールのビュー状態が変化した後、ページが最後に発生します。</summary>
+        <returns>返します、<see cref="T:System.Object" />コントロールの現在のビュー ステートを格納します。 ビュー ステートがいないかどうか、コントロールに関連付け、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステートが、Web パーツ コントロールのプロパティの値の累積します。 これらの値は自動的に、コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のコントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState%2A>メソッドが基底の実装にでさまざまなコマンドのビュー ステートを保存する機能を追加、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendText">
+      <MemberSignature Language="C#" Value="public virtual string SendText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SendText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンシューマーにデータを送信している名前付きのプロバイダーの前にある接続のユーザー インターフェイス (UI) のセクションに表示されるテキストを設定します。</summary>
+        <value>名前付きのプロバイダー接続の前に表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックしたときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、コンシューマーへの接続を確立できるビューが表示されます。 コンシューマー接続を選択するユーザーに指示する UI の一部で、ポイントは、名前付きのプロバイダーの接続に参加する前に使用されるいくつかのテキスト表示されます。 このテキスト プロバイダーの前に、内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText%2A>プロパティです。 テキスト値は、既定では、**送信**です。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`SendText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendToText">
+      <MemberSignature Language="C#" Value="public virtual string SendToText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SendToText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前付きのコンシューマーはプロバイダーがデータを送信する前に使用される接続のユーザー インターフェイス (UI) のセクションに表示されるテキストを設定します。</summary>
+        <value>名前付きコンシューマー、プロバイダーがデータを送信する前に表示される文字列。 既定のテキストは、.NET Framework によって提供されるカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText%2A>プロパティは、特定の接続シナリオで有効になります。 ユーザーが、コントロールの connect 動詞、プロバイダーをクリックしたときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロールには、コンシューマーへの接続を確立できるビューが表示されます。 コンシューマー接続を選択するユーザーに指示する UI の一部で、ポイントは、ユーザーが、プロバイダーがデータを送信先となる接続ポイントを選択できるドロップダウン リスト コントロールの前にいくつかのテキスト表示されます。 ドロップダウン コントロールの前にあるこのテキストは、内のテキスト、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText%2A>プロパティです。 テキスト値は、既定では、**に**です。  
+  
+ このプロパティの開始タグ内で宣言によっての値を設定することができます、`<asp:connectionszone>`という名前の属性を追加することによって、要素`SendToText`値を割り当てるとします。 プロパティの値はプログラムによっても設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートの変更を追跡、 <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" /> 、コントロールの変更を保存できるように制御<see cref="T:System.Web.UI.StateBag" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド基本メソッドを呼び出して、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスともビュー ステートに関連付けられている動詞の追跡のトリガー、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartToConnect">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPart WebPartToConnect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart WebPartToConnect" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されている取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />への接続を制御します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが接続の表示モードの Web ページのスイッチし、の動詞メニューの connect 動詞がクリックした、<xref:System.Web.UI.WebControls.WebParts.WebPart>接続、接続のユーザー インターフェイス (UI) が表示されます、およびコントロールを有効になっているコントロールがによって参照されるようになりました、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect%2A>プロパティです。  
+  
+> [!NOTE]
+>  によって参照される、コントロール、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect%2A>プロパティから値を取得する、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart%2A> 、現在のプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartManager>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

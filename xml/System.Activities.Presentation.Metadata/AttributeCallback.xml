@@ -1,0 +1,32 @@
+<Type Name="AttributeCallback" FullName="System.Activities.Presentation.Metadata.AttributeCallback">
+  <TypeSignature Language="C#" Value="public delegate void AttributeCallback(AttributeCallbackBuilder builder);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AttributeCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Metadata.AttributeCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="builder" Type="System.Activities.Presentation.Metadata.AttributeCallbackBuilder" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="builder">属性の追加に使用できる <see cref="T:System.Activities.Presentation.Metadata.AttributeCallbackBuilder" />。</param>
+    <summary>ある型に対して属性が必要な場合に呼び出されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバックによって、メタデータ属性の遅延登録、および適用する必要がある属性を動的に決定するコードの指定が可能になります。 このコールバックは、<xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCallback%2A> クラスの <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> メソッドに提供されます。  
+  
+ <xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder> オブジェクトは、メタデータを要求する型に対してのみ属性を作成できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,356 @@
+<Type Name="EncryptedKeyIdentifierClause" FullName="System.IdentityModel.Tokens.EncryptedKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public sealed class EncryptedKeyIdentifierClause : System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EncryptedKeyIdentifierClause extends System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.BinaryKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>暗号化キーを識別するキー識別子句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause> を使用する必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。 結び付けられている参照は、SOAP メッセージのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。 暗号化キーを参照するために、<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause> クラスを使用します。 <xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey%2A> メソッドは暗号化キーを返します。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、ワイヤ形式に対応した適切な形式のラップされたキーを受け入れます。 ネットワークで指定されたキー ラップ アルゴリズムが受け入れられ、使用されます。 これがエンドポイントで指定された <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> と互換性があるかどうかは検証されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedKeyIdentifierClause (byte[] encryptedKey, string encryptionMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] encryptedKey, string encryptionMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.#ctor(System.Byte[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Byte[]" />
+        <Parameter Name="encryptionMethod" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">暗号化されるキーを格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" /> メソッドから返される値を設定します。</param>
+        <param name="encryptionMethod">キーの暗号化に使用される暗号アルゴリズム。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" /> プロパティの値を設定します。</param>
+        <summary>暗号化するキーと、キーを暗号化するために使用する暗号アルゴリズムを指定して、<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> の静的定数文字列を使用して、`encryptionMethod` パラメーターの暗号アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encryptionMethod" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="encryptedKey" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedKeyIdentifierClause (byte[] encryptedKey, string encryptionMethod, System.IdentityModel.Tokens.SecurityKeyIdentifier identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] encryptedKey, string encryptionMethod, class System.IdentityModel.Tokens.SecurityKeyIdentifier identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.#ctor(System.Byte[],System.String,System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Byte[]" />
+        <Parameter Name="encryptionMethod" Type="System.String" />
+        <Parameter Name="encryptingKeyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">暗号化されるキーを格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" /> メソッドから返される値を設定します。</param>
+        <param name="encryptionMethod">キーの暗号化に使用される暗号アルゴリズム。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" /> プロパティの値を設定します。</param>
+        <param name="identifier">To be added.</param>
+        <summary>暗号化するキー、キーを暗号化するために使用する暗号アルゴリズム、および暗号化キーのキー識別子を指定して、<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> の静的定数文字列を使用して、`encryptionMethod` パラメーターの暗号アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encryptionMethod" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="encryptedKey" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedKeyIdentifierClause (byte[] encryptedKey, string encryptionMethod, System.IdentityModel.Tokens.SecurityKeyIdentifier identifier, string carriedKeyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] encryptedKey, string encryptionMethod, class System.IdentityModel.Tokens.SecurityKeyIdentifier identifier, string carriedKeyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.#ctor(System.Byte[],System.String,System.IdentityModel.Tokens.SecurityKeyIdentifier,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Byte[]" />
+        <Parameter Name="encryptionMethod" Type="System.String" />
+        <Parameter Name="encryptingKeyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+        <Parameter Name="carriedKeyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">暗号化されるキーを格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" /> メソッドから返される値を設定します。</param>
+        <param name="encryptionMethod">キーの暗号化に使用される暗号アルゴリズム。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" /> プロパティの値を設定します。</param>
+        <param name="identifier">To be added.</param>
+        <param name="carriedKeyName">指定されたキーに関連付けられているユーザーが判読できる名前、 <c>encryptedKey</c>パラメーター。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.CarriedKeyName" /> プロパティの値を設定します。</param>
+        <summary>暗号化するキー、キーを暗号化するために使用する暗号アルゴリズム、暗号化キーのキー識別子、およびユーザーが判読できる名前を指定して、<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> の静的定数文字列を使用して、`encryptionMethod` パラメーターの暗号アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encryptionMethod" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="encryptedKey" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedKeyIdentifierClause (byte[] encryptedKey, string encryptionMethod, System.IdentityModel.Tokens.SecurityKeyIdentifier identifier, string carriedKeyName, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] encryptedKey, string encryptionMethod, class System.IdentityModel.Tokens.SecurityKeyIdentifier identifier, string carriedKeyName, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.#ctor(System.Byte[],System.String,System.IdentityModel.Tokens.SecurityKeyIdentifier,System.String,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Byte[]" />
+        <Parameter Name="encryptionMethod" Type="System.String" />
+        <Parameter Name="encryptingKeyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+        <Parameter Name="carriedKeyName" Type="System.String" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">暗号化されるキーを格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" /> メソッドから返される値を設定します。</param>
+        <param name="encryptionMethod">キーの暗号化に使用される暗号アルゴリズム。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" /> プロパティの値を設定します。</param>
+        <param name="identifier">To be added.</param>
+        <param name="carriedKeyName">指定されたキーに関連付けられているユーザーが判読できる名前、 <c>encryptedKey</c>パラメーター。 <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.CarriedKeyName" /> プロパティの値を設定します。</param>
+        <param name="derivationNonce">派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.GetDerivationNonce" /> メソッドから返される値を設定します。</param>
+        <param name="derivationLength">派生キーのサイズ。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.DerivationLength" /> プロパティの値を設定します。</param>
+        <summary>暗号化するキー、キーを暗号化するために使用する暗号アルゴリズム、キーのキー識別子、およびユーザーが判読できる名前を指定して、<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `derivationNonce` パラメーターと `derivationLength` パラメーターを指定した場合は、トークンの直接的なセキュリティ キーの代わりに暗黙的な派生キーが使用されます。  
+  
+ <xref:System.IdentityModel.Tokens.SecurityAlgorithms> の静的定数文字列を使用して、`encryptionMethod` パラメーターの暗号アルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="encryptionMethod" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encryptedKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="encryptedKey" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CarriedKeyName">
+      <MemberSignature Language="C#" Value="public string CarriedKeyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CarriedKeyName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.CarriedKeyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化されたキーに関連付けられている、ユーザーが判読できる名前を取得します。</summary>
+        <value>暗号化されたキーに関連付けられている、ユーザーが判読できる名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.CarriedKeyName%2A>プロパティを XML にシリアル化に配置されている、<`CarriedKeyName`> 要素。 暗号化されたキーの場合、<`CarriedKeyName`> 要素が省略可能な要素をキー値を持つユーザーが判読できる名前を関連付けます。 この名前は、キーを使用して、参照するは使用して、<`KeyName`> 内の要素、<`KeyInfo`> 要素。 同じ <`CarriedKeyName`> ID の値とは異なり、要素の値が 1 つのドキュメント内で複数回を発生できます。 キーの値はすべて同じである必要があります <`EncryptedKey`> 要素が同じで識別される <`CarriedKeyName`> XML ドキュメント内の名前。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptingKeyIdentifier">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKeyIdentifier EncryptingKeyIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityKeyIdentifier EncryptingKeyIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptingKeyIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化するキーのキー識別子を取得します。</summary>
+        <value>暗号化するキーのキー識別子を表す <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionMethod">
+      <MemberSignature Language="C#" Value="public string EncryptionMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncryptionMethod" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの暗号化に使用される暗号アルゴリズムを取得します。</summary>
+        <value>キーの暗号化に使用される暗号アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod%2A> プロパティの値は、<xref:System.IdentityModel.Tokens.SecurityAlgorithms> クラスの静的定数文字列のいずれかです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEncryptedKey">
+      <MemberSignature Language="C#" Value="public byte[] GetEncryptedKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetEncryptedKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>暗号化されたキーを取得します。</summary>
+        <returns>暗号化されたキーを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey%2A> メソッドによって返される配列は、暗号化されたキーの複製です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別句と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="clause" /> 型であり、暗号化キー、暗号化方法、およびユーザーが判読できる名前が現在のインスタンスと同じ場合は <see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="clause" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (byte[] encryptedKey, string encryptionMethod, string carriedKeyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(unsigned int8[] encryptedKey, string encryptionMethod, string carriedKeyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.Matches(System.Byte[],System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Byte[]" />
+        <Parameter Name="encryptionMethod" Type="System.String" />
+        <Parameter Name="carriedKeyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">暗号化されるキーを格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="encryptionMethod">キーの暗号化に使用される暗号アルゴリズム。</param>
+        <param name="carriedKeyName">暗号化されたキーに関連付けられている、ユーザーが判読できる名前。</param>
+        <summary>このインスタンスのキー識別子が、指定した暗号化キー、暗号化方法、およびユーザーが判読できる名前に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />、<paramref name="encryptedKey" />、および <paramref name="encryptionMethod" /> の各パラメーターの値が、<paramref name="carriedKeyName" /> メソッドによって返された値、<see cref="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.GetEncryptedKey" /> プロパティの値、および <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.EncryptionMethod" /> プロパティの値と同じ場合は <see cref="P:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.CarriedKeyName" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause.ToString%2A> メソッドは、暗号化キーと、キーを暗号化するために使用される暗号アルゴリズムを格納する文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

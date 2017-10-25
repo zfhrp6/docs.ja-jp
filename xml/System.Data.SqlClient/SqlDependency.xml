@@ -1,0 +1,545 @@
+<Type Name="SqlDependency" FullName="System.Data.SqlClient.SqlDependency">
+  <TypeSignature Language="C#" Value="public sealed class SqlDependency" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlDependency extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlDependency" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクトは、アプリケーションと SQL Server のインスタンス間でのクエリ通知の依存関係を表します。 アプリケーションを作成できます、<see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクトおよび経由で通知を受信登録、<see cref="T:System.Data.SqlClient.OnChangeEventHandler" />イベント ハンドラー。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency>キャッシュの ASP.NET アプリケーションまたは中間層サービスがメモリにキャッシュされた特定の情報を保持する必要があるシナリオに最適です。 <xref:System.Data.SqlClient.SqlDependency>キャッシュを更新することができるように、データベース内の元のデータが変更されたときに通知を受信できます。  
+  
+ 依存関係を設定するに関連付ける必要があります、<xref:System.Data.SqlClient.SqlDependency>を 1 つ以上のオブジェクト<xref:System.Data.SqlClient.SqlCommand>オブジェクト。 通知を受信するをサブスクライブする必要があります、<xref:System.Data.SqlClient.SqlDependency.OnChange>イベント。 通知のクエリを作成するための要件の詳細については、「を作成するクエリ通知の」SQL Server オンライン ブックを参照してください。  
+  
+> [!NOTE]
+>  <xref:System.Data.SqlClient.SqlDependency>ASP.NET または中間層サービスで使用するように設計されましたが、比較的少数のデータベースに対してアクティブな依存関係にあるサーバーです。 数百または数千のクライアント コンピューターには、クライアント アプリケーションでの使用向けに設計されていない<xref:System.Data.SqlClient.SqlDependency>オブジェクトの 1 つのデータベース サーバーを設定します。 を開発しているアプリケーション データが変更されたときに、信頼性の高いの 1 秒未満の通知が必要な場合は、セクションを参照**効率的なクエリ通知戦略の計画**と**クエリ通知に代わる方法**で、[通知の計画](http://go.microsoft.com/fwlink/?LinkId=211984)SQL Server オンライン ブックの「します。  
+  
+ 詳細については、次を参照してください。 [SQL server クエリ通知](~/docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)と SQL Server オンライン ブックの"通知ソリューションの構築"します。  
+  
+> [!NOTE]
+>  <xref:System.Data.SqlClient.SqlDependency.OnChange>コマンドの実行を開始したスレッドから別のスレッドでイベントを生成することができます。  
+  
+ クエリ通知は、特定の要件を満たす SELECT ステートメントでのみサポートされます。 次の表に、SQL Server オンライン ブックの Service Broker とクエリ通知に関するドキュメントへのリンクを示します。  
+  
+ **SQL Server オンライン ブック**  
+  
+-   [クエリ通知の作成](http://msdn.microsoft.com/library/ms181122.aspx)  
+  
+-   [Service Broker のセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms166059.aspx)  
+  
+-   [セキュリティと保護 (Service Broker)](http://msdn.microsoft.com/library/bb522911.aspx)  
+  
+-   [通知サービスのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms172604.aspx)  
+  
+-   [クエリ通知の権限](http://msdn.microsoft.com/library/ms188311.aspx)  
+  
+-   [Service Broker の国際化に関する考慮事項](http://msdn.microsoft.com/library/ms166028.aspx)  
+  
+-   [ソリューション設計に関する考慮事項 (Service Broker)](http://msdn.microsoft.com/library/bb522899.aspx)  
+  
+-   [Service Broker 開発者向けの情報](http://msdn.microsoft.com/library/ms166100.aspx)  
+  
+-   [開発者ガイド (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDependency ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Data.SqlClient.SqlDependency" />既定の設定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、<xref:System.Data.SqlClient.SqlDependency>オブジェクトの既定の Service Broker サービス名とタイムアウトを使用します。作成した後は、ある時点で使用する必要があります、<xref:System.Data.SqlClient.SqlDependency.AddCommandDependency%2A>にこれを 1 つまたは複数のコマンドを関連付けるメソッド<xref:System.Data.SqlClient.SqlDependency>オブジェクト。  
+  
+ クエリ通知は、特定の要件を満たす SELECT ステートメントでのみサポートされます。 次の表に、SQL Server オンライン ブックの Service Broker とクエリ通知に関するドキュメントへのリンクを示します。  
+  
+ **SQL Server オンライン ブック**  
+  
+-   [クエリ通知の作成](http://msdn.microsoft.com/library/ms181122.aspx)  
+  
+-   [Service Broker のセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms166059.aspx)  
+  
+-   [セキュリティと保護 (Service Broker)](http://msdn.microsoft.com/library/bb522911.aspx)  
+  
+-   [通知サービスのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms172604.aspx)  
+  
+-   [クエリ通知の権限](http://msdn.microsoft.com/library/ms188311.aspx)  
+  
+-   [Service Broker の国際化に関する考慮事項](http://msdn.microsoft.com/library/ms166028.aspx)  
+  
+-   [ソリューション設計に関する考慮事項 (Service Broker)](http://msdn.microsoft.com/library/bb522899.aspx)  
+  
+-   [Service Broker 開発者向けの情報](http://msdn.microsoft.com/library/ms166100.aspx)  
+  
+-   [開発者ガイド (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDependency (System.Data.SqlClient.SqlCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.#ctor(System.Data.SqlClient.SqlCommand)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.SqlClient.SqlCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトに関連付けられているこの<see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクト。 コンス トラクターが設定されます、<see cref="T:System.Data.Sql.SqlNotificationRequest" />オブジェクトし、コマンドにバインドします。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Data.SqlClient.SqlDependency" />クラスおよびに関連付けます、<see cref="T:System.Data.SqlClient.SqlCommand" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが内部的には、インスタンスを作成、<xref:System.Data.Sql.SqlNotificationRequest>クラス、およびバインドに、<xref:System.Data.SqlClient.SqlCommand>オブジェクト。  
+  
+ クエリ通知は、特定の要件を満たす SELECT ステートメントでのみサポートされます。 次の表に、SQL Server オンライン ブックの Service Broker とクエリ通知に関するドキュメントへのリンクを示します。  
+  
+ **SQL Server オンライン ブック**  
+  
+-   [クエリ通知の作成](http://msdn.microsoft.com/library/ms181122.aspx)  
+  
+-   [Service Broker のセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms166059.aspx)  
+  
+-   [セキュリティと保護 (Service Broker)](http://msdn.microsoft.com/library/bb522911.aspx)  
+  
+-   [通知サービスのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms172604.aspx)  
+  
+-   [クエリ通知の権限](http://msdn.microsoft.com/library/ms188311.aspx)  
+  
+-   [Service Broker の国際化に関する考慮事項](http://msdn.microsoft.com/library/ms166028.aspx)  
+  
+-   [ソリューション設計に関する考慮事項 (Service Broker)](http://msdn.microsoft.com/library/bb522899.aspx)  
+  
+-   [Service Broker 開発者向けの情報](http://msdn.microsoft.com/library/ms166100.aspx)  
+  
+-   [開発者ガイド (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="command" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトは既に、<see cref="T:System.Data.Sql.SqlNotificationRequest" />オブジェクトに割り当てられているその<see cref="P:System.Data.SqlClient.SqlCommand.Notification" />プロパティ、およびを<see cref="T:System.Data.Sql.SqlNotificationRequest" />この依存関係に関連付けられていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDependency (System.Data.SqlClient.SqlCommand command, string options, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlCommand command, string options, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.#ctor(System.Data.SqlClient.SqlCommand,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.SqlClient.SqlCommand" />
+        <Parameter Name="options" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトに関連付けられているこの<see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクト。 コンス トラクターを設定、<see cref="T:System.Data.Sql.SqlNotificationRequest" />オブジェクトし、コマンドにバインドします。</param>
+        <param name="options">この依存関係で使用される通知の要求オプション。  <c>null</c>既定のサービスを使用します。</param>
+        <param name="timeout">秒単位では、この通知のタイムアウト値。 既定値は 0 で、サーバーのタイムアウトを使用することを示すです。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Data.SqlClient.SqlDependency" />クラスに関連付けます、<see cref="T:System.Data.SqlClient.SqlCommand" />パラメーター、通知オプションとタイムアウト値を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ通知は、特定の要件を満たす SELECT ステートメントでのみサポートされます。 次の表に、SQL Server オンライン ブックの Service Broker とクエリ通知に関するドキュメントへのリンクを示します。  
+  
+ **SQL Server オンライン ブック**  
+  
+-   [クエリ通知の作成](http://msdn.microsoft.com/library/ms181122.aspx)  
+  
+-   [Service Broker のセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms166059.aspx)  
+  
+-   [セキュリティと保護 (Service Broker)](http://msdn.microsoft.com/library/bb522911.aspx)  
+  
+-   [通知サービスのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms172604.aspx)  
+  
+-   [クエリ通知の権限](http://msdn.microsoft.com/library/ms188311.aspx)  
+  
+-   [Service Broker の国際化に関する考慮事項](http://msdn.microsoft.com/library/ms166028.aspx)  
+  
+-   [ソリューション設計に関する考慮事項 (Service Broker)](http://msdn.microsoft.com/library/bb522899.aspx)  
+  
+-   [Service Broker 開発者向けの情報](http://msdn.microsoft.com/library/ms166100.aspx)  
+  
+-   [開発者ガイド (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="command" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムアウト値が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトは既に、<see cref="T:System.Data.Sql.SqlNotificationRequest" />オブジェクトに割り当てられているその<see cref="P:System.Data.SqlClient.SqlCommand.Notification" />プロパティおよび<see cref="T:System.Data.Sql.SqlNotificationRequest" />この依存関係に関連付けられていません。  
+  
+ 作成しようとしましたが、 **SqlDependency** SQLCLR 内からインスタンス化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCommandDependency">
+      <MemberSignature Language="C#" Value="public void AddCommandDependency (System.Data.SqlClient.SqlCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCommandDependency(class System.Data.SqlClient.SqlCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.AddCommandDependency(System.Data.SqlClient.SqlCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.SqlClient.SqlCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command">A<see cref="T:System.Data.SqlClient.SqlCommand" />通知に対して有効なステートメントを含むオブジェクト。</param>
+        <summary>関連付けます、<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトをこの<see cref="T:System.Data.SqlClient.SqlDependency" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ通知は、特定の要件を満たす SELECT ステートメントでのみサポートされます。 次の表に、SQL Server オンライン ブックの Service Broker とクエリ通知に関するドキュメントへのリンクを示します。  
+  
+ **SQL Server オンライン ブック**  
+  
+-   [クエリ通知の作成](http://msdn.microsoft.com/library/ms181122.aspx)  
+  
+-   [Service Broker のセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms166059.aspx)  
+  
+-   [セキュリティと保護 (Service Broker)](http://msdn.microsoft.com/library/bb522911.aspx)  
+  
+-   [通知サービスのセキュリティに関する考慮事項](http://msdn.microsoft.com/library/ms172604.aspx)  
+  
+-   [クエリ通知の権限](http://msdn.microsoft.com/library/ms188311.aspx)  
+  
+-   [Service Broker の国際化に関する考慮事項](http://msdn.microsoft.com/library/ms166028.aspx)  
+  
+-   [ソリューション設計に関する考慮事項 (Service Broker)](http://msdn.microsoft.com/library/bb522899.aspx)  
+  
+-   [Service Broker 開発者向けの情報](http://msdn.microsoft.com/library/ms166100.aspx)  
+  
+-   [開発者ガイド (Service Broker)](http://msdn.microsoft.com/library/bb522908.aspx)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="command" />パラメーターが null です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトは既に、<see cref="T:System.Data.Sql.SqlNotificationRequest" />オブジェクトに割り当てられているその<see cref="P:System.Data.SqlClient.SqlCommand.Notification" />プロパティ、およびを<see cref="T:System.Data.Sql.SqlNotificationRequest" />この依存関係に関連付けられていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasChanges">
+      <MemberSignature Language="C#" Value="public bool HasChanges { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDependency.HasChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係に関連付けられている結果セットのいずれかが変更されたかどうかを示す値を取得します。</summary>
+        <value>結果のいずれかを設定するかどうかを示すブール値が変更されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用していない場合、<xref:System.Data.SqlClient.SqlDependency.OnChange>イベントを確認できます、<xref:System.Data.SqlClient.SqlDependency.HasChanges%2A>クエリの結果が変更されたかどうかを決定するプロパティです。  
+  
+ <xref:System.Data.SqlClient.SqlDependency.HasChanges%2A>プロパティが必ずしもデータの変更を意味します。 タイムアウトなど、他の状況が期限切れになり、通知要求の設定に失敗したも変更イベントを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDependency.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスを一意に識別する値を取得、<see cref="T:System.Data.SqlClient.SqlDependency" />クラスです。</summary>
+        <value>各インスタンスに対して生成される GUID の文字列表現、<see cref="T:System.Data.SqlClient.SqlDependency" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency.Id%2A>を一意に識別するプロパティが使用される、指定された<xref:System.Data.SqlClient.SqlDependency>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChange">
+      <MemberSignature Language="C#" Value="public event System.Data.SqlClient.OnChangeEventHandler OnChange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Data.SqlClient.OnChangeEventHandler OnChange" />
+      <MemberSignature Language="DocId" Value="E:System.Data.SqlClient.SqlDependency.OnChange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.OnChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているコマンドのいずれかの通知を受け取ったときに発生<see cref="T:System.Data.SqlClient.SqlDependency" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency.OnChange>関連付けられているコマンドの結果が変わると発生します。 使用していない場合<xref:System.Data.SqlClient.SqlDependency.OnChange>、確認することができます、<xref:System.Data.SqlClient.SqlDependency.HasChanges%2A>クエリの結果が変更されたかどうかを決定するプロパティです。  
+  
+ <xref:System.Data.SqlClient.SqlDependency.OnChange>イベントが必ずしもデータの変更を意味します。 その他のような場合に、タイムアウトの有効期限が切れてし、通知要求の設定に失敗したがまた生成など<xref:System.Data.SqlClient.SqlDependency.OnChange>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Start">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>依存関係の変更通知を受信するためには、リスナーを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency>でエラーが発生したときに、リスナーが再起動されます、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続します。  
+  
+ 複数回呼び出す、<xref:System.Data.SqlClient.SqlDependency.Start%2A>次の制限の下のメソッドを行んだことができます。  
+  
+-   (同じ接続文字列と呼び出し元のスレッドでの Windows 資格情報) と同じパラメーターを持つ複数の呼び出しは有効です。  
+  
+-   有効な別の接続文字列で複数回呼び出して限り。  
+  
+    -   各接続文字列が別のデータベースを指定または  
+  
+    -   各接続文字列が別のユーザーを指定または  
+  
+    -   呼び出しは、異なるアプリケーション ドメインから取得されます。  
+  
+ ことができます、<xref:System.Data.SqlClient.SqlDependency>さまざまなユーザーがサブスクライブおよびリッスンするために、グループに dbo ロールを与えることがなく別のユーザーの資格情報を表すために複数のスレッドを使用するアプリケーションで正しく動作 (を使用して<xref:System.Web.Caching.SqlCacheDependency>または<xref:System.Data.SqlClient.SqlCommand>)管理者によって作成された通知キューにします。 関連するアプリケーション ドメインの開始時に、サービス/キュー (キューの作成とサービスの作成のアクセス許可、データベース) を初期化する権限を持つユーザーの (Windows) の資格情報で開始を呼び出します。 開始があたり AppDomain では、それ以外の場合、あいまいさにより例外が発生したらのみ呼び出されることを確認します。  ユーザー スレッド通知 (データベースの SUBSCRIBE QUERY NOTIFICATIONS 権限) をサブスクライブする権限が必要です。 <xref:System.Data.SqlClient.SqlDependency>管理者以外のユーザーが管理者によって作成されたサービス/キューへのサブスクリプションの要求と関連付けられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public static bool Start (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Start(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.Start(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">インスタンスの接続文字列[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]から取得するには、通知を変更します。</param>
+        <summary>接続文字列で指定された SQL Server のインスタンスから依存関係の変更通知を受信するためには、リスナーを開始します。</summary>
+        <returns>**true**リスナーが正常に初期化される場合**false**互換性のあるリスナーが既に存在する場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リスナーを開始、<xref:System.AppDomain>のインスタンスから依存関係の通知を受信するため[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]によって指定された、`connectionString`パラメーター。 このメソッドに対して呼び出すことは 1 回以上の異なる接続文字列に複数のサーバー。  
+  
+ 追加の「解説」を参照してください。<xref:System.Data.SqlClient.SqlDependency.Start%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="connectionString" />パラメーターは、このメソッドを前回の呼び出しと同じですが、パラメーターは異なります。  
+  
+ メソッドは、CLR 内からを呼び出されました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Data.SqlClient.SqlClientPermission" />コード アクセス セキュリティ (CAS) 許可します。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">同等のメソッドへの後続の呼び出しが行わ<paramref name="connectionString" />別のユーザーと同じスキーマに特に指定しない限り、ユーザーのパラメーターです。  
+  
+ また、任意の基になる**SqlClient**例外。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public static bool Start (string connectionString, string queue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Start(string connectionString, string queue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.Start(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="queue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">取得する対象の SQL Server のインスタンスの接続文字列は変更通知です。</param>
+        <param name="queue">使用する既存の SQL Server Service Broker キュー。 場合<see langword="null" />既定のキューを使用します。</param>
+        <summary>指定された SQL Server Service Broker キューを使用して、接続文字列で指定された SQL Server のインスタンスから依存関係の変更通知を受信するためには、リスナーを開始します。</summary>
+        <returns>**true**リスナーが正常に初期化される場合**false**互換性のあるリスナーが既に存在する場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リスナーを開始、<xref:System.AppDomain>で指定された SQL Server のインスタンスから依存関係の通知を受信するため、`connectionString`パラメーター。 このメソッドに対して呼び出すことは 1 回以上の異なる接続文字列に複数のサーバー。  
+  
+ キュー名が指定されていない場合<xref:System.Data.SqlClient.SqlDependency>サーバーを作成、一時キューおよびサービス全体のプロセスでは、使用される場合でも、プロセスでは、1 つ以上<xref:System.AppDomain>です。 キューおよびサービスは、アプリケーションのシャット ダウン時に自動的に削除します。  
+  
+ 追加の「解説」を参照してください。<xref:System.Data.SqlClient.SqlDependency.Start%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="connectionString" />パラメーターは、このメソッドを前回の呼び出しと同じですが、パラメーターは異なります。  
+  
+ メソッドは、CLR 内からを呼び出されました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Data.SqlClient.SqlClientPermission" />コード アクセス セキュリティ (CAS) 許可します。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">同等のメソッドへの後続の呼び出しが行わ<paramref name="connectionString" />パラメーターが、別のユーザーまたは同じスキーマに特に指定しない限り、ユーザー。  
+  
+ また、任意の基になる**SqlClient**例外。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Stop">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>以前に指定された接続用のリスナーを停止する<see cref="Overload:System.Data.SqlClient.SqlDependency.Start" />呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency>リスナーが SQL Server の接続でエラーが発生したときに再起動されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public static bool Stop (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Stop(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.Stop(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">以前に使用された SQL Server のインスタンスの接続文字列<see cref="M:System.Data.SqlClient.SqlDependency.Start(System.String)" />呼び出します。</param>
+        <summary>以前に指定された接続用のリスナーを停止する<see cref="Overload:System.Data.SqlClient.SqlDependency.Start" />呼び出します。</summary>
+        <returns>**true**場合は、リスナーが完全に停止しました。**false**場合、<see cref="T:System.AppDomain" />リスナーからバインドがありませんでしたが、あるが少なくとも 1 つの他の<see cref="T:System.AppDomain" />同じリスナーを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency.Stop%2A>各メソッドを呼び出す必要があります<xref:System.Data.SqlClient.SqlDependency.Start%2A>呼び出します。 指定されたリスナーがのみがシャット ダウン、完全に受信すると、同じ数の<xref:System.Data.SqlClient.SqlDependency.Stop%2A>要求として<xref:System.Data.SqlClient.SqlDependency.Start%2A>要求します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、SQLCLR 内からを呼び出されました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Data.SqlClient.SqlClientPermission" />コード アクセス セキュリティ (CAS) 許可します。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">基になる**SqlClient**例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public static bool Stop (string connectionString, string queue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Stop(string connectionString, string queue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDependency.Stop(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="queue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">以前に使用された SQL Server のインスタンスの接続文字列<see cref="M:System.Data.SqlClient.SqlDependency.Start(System.String,System.String)" />呼び出します。</param>
+        <param name="queue">以前に使用された SQL Server Service Broker キュー<see cref="M:System.Data.SqlClient.SqlDependency.Start(System.String,System.String)" />呼び出します。</param>
+        <summary>以前に指定された接続用のリスナーを停止する<see cref="Overload:System.Data.SqlClient.SqlDependency.Start" />呼び出します。</summary>
+        <returns>**true**場合は、リスナーが完全に停止しました。**false**場合、<see cref="T:System.AppDomain" />リスナーからバインドがでしたが、少なくとも 1 つであるその他の<see cref="T:System.AppDomain" />同じリスナーを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDependency.Stop%2A>各メソッドを呼び出す必要があります<xref:System.Data.SqlClient.SqlDependency.Start%2A>呼び出します。 指定されたリスナーがのみがシャット ダウン、完全に受信すると、同じ数の<xref:System.Data.SqlClient.SqlDependency.Stop%2A>要求として<xref:System.Data.SqlClient.SqlDependency.Start%2A>要求します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="connectionString" />パラメーターが NULL です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、SQLCLR 内からを呼び出されました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元を必須にすることはない<see cref="T:System.Data.SqlClient.SqlClientPermission" />コード アクセス セキュリティ (CAS) 許可します。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">基になると**SqlClient**例外が発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

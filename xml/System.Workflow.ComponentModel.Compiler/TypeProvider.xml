@@ -1,0 +1,745 @@
+<Type Name="TypeProvider" FullName="System.Workflow.ComponentModel.Compiler.TypeProvider">
+  <TypeSignature Language="C#" Value="public sealed class TypeProvider : IDisposable, IServiceProvider, System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeProvider extends System.Object implements class System.IDisposable, class System.IServiceProvider, class System.Workflow.ComponentModel.Compiler.ITypeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.TypeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Workflow.ComponentModel.Compiler.ITypeProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.Compiler.ITypeProvider" /> の実装。指定したアセンブリおよびコード コンパイル単位内で、型コンテナーとして振る舞います。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ この <xref:System.Workflow.ComponentModel.Compiler.ITypeProvider> の実装では、コンパイル済みアセンブリ (<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly%2A> および <xref:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference%2A> メソッド) に加え、まだコンパイルしていない型 (<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.AddCodeCompileUnit%2A>) も扱えます。 <xref:System.Type?displayProperty=nameWithType> を使用して参照される型を扱う、可能な操作を制限した <xref:System.CodeDom.CodeCompileUnit> の実装を返します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.ComponentModel.Compiler.TypeProvider> は、参照先アセンブリからはパブリック型のみを返し、ローカル アセンブリからはパブリック型と非パブリック型の両方を返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeProvider (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">このインスタンスのカプセル化された <see cref="T:System.IServiceProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.TypeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Compiler.TypeProvider> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  このコード例は、WorkflowLoader.cs ファイルから抜粋した BasicDesignerHosting SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][基本デザイナー ホスティング](http://msdn.microsoft.com/en-us/55925adf-2daa-4dc2-b1bf-61aa0190d734)です。  
+  
+ [!code-csharp[WF_Samples#256](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#256)]
+ [!code-vb[WF_Samples#256](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#256)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAssembly">
+      <MemberSignature Language="C#" Value="public void AddAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">参照を追加する <see cref="P:System.Type.Assembly" />。</param>
+        <summary>読み込み済みのアセンブリを追加します。 アセンブリを読み込むのは呼び出し元の役割です。<see cref="T:System.Workflow.ComponentModel.Compiler.TypeProvider" /> には、<see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType" /> が呼び出されたときに備え、このアセンブリ内で使われている型に関する情報が取り込まれます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assembly" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAssemblyReference">
+      <MemberSignature Language="C#" Value="public void AddAssemblyReference (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAssemblyReference(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">追加する <see cref="P:System.Type.Assembly" /> のパス。</param>
+        <summary><see cref="P:System.Type.Assembly" /> の参照を内部リストに追加します。 このアセンブリは、<see cref="T:System.Type" /> メソッドで <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" /> を検索するために使います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider> クラスの新しいインスタンスを作成して <xref:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference%2A> メソッドを実行する方法を示しています。 このコード例は、WorkflowLoader.cs ファイルから抜粋した BasicDesignerHosting SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][基本デザイナー ホスティング](http://msdn.microsoft.com/en-us/55925adf-2daa-4dc2-b1bf-61aa0190d734)です。  
+  
+ [!code-csharp[Wf_samples#256](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#256)]
+ [!code-vb[Wf_samples#256](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#256)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public void AddCodeCompileUnit (System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCodeCompileUnit(class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddCodeCompileUnit(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeCompileUnit">追加する <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <summary><see cref="T:System.CodeDom.CodeCompileUnit" /> の参照を内部リストに追加します。 この <see cref="T:System.CodeDom.CodeCompileUnit" /> は、<see cref="T:System.Type" /> メソッドで <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" /> を検索するために使います。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codeCompileUnit" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeCompileUnit" /> は既にこのインスタンスで参照されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyNameResolver">
+      <MemberSignature Language="C#" Value="public Func&lt;Type,string&gt; AssemblyNameResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Type, string&gt; AssemblyNameResolver" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.TypeProvider.AssemblyNameResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Type,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのパラメーターと 1 つの戻り値を持ち、指定した型が属するアセンブリ表示名を返すメソッドを参照するデリゲートを取得または設定します。</summary>
+        <value>1 つのパラメーターと 1 つの戻り値を持ち、指定した型が属するアセンブリ表示名を返すメソッドを参照するデリゲート。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.Compiler.TypeProvider" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssemblyName">
+      <MemberSignature Language="C#" Value="public string GetAssemblyName (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAssemblyName(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetAssemblyName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">取得するアセンブリ名の型。</param>
+        <summary>指定した型が宣言されているアセンブリの表示名を返します。</summary>
+        <returns>指定した型が宣言されているアセンブリの表示名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumNames">
+      <MemberSignature Language="C#" Value="public static string[] GetEnumNames (Type enumType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetEnumNames(class System.Type enumType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetEnumNames(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">名前を取得する対象の型。</param>
+        <summary>指定された <see cref="T:System.Enum" /> の名前をインデックス順に列挙した文字列配列を返します。</summary>
+        <returns>指定した <see cref="T:System.Enum" /> の名前をインデックス順に列挙したもの。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEventHandlerType">
+      <MemberSignature Language="C#" Value="public static Type GetEventHandlerType (System.Reflection.EventInfo eventInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetEventHandlerType(class System.Reflection.EventInfo eventInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetEventHandlerType(System.Reflection.EventInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventInfo" Type="System.Reflection.EventInfo" />
+      </Parameters>
+      <Docs>
+        <param name="eventInfo"><see cref="T:System.Reflection.EventInfo" /> の型を取得する <see cref="T:System.EventHandler" />。</param>
+        <summary><see cref="T:System.Type" /> に該当する、<see cref="T:System.EventHandler" /> の <see cref="T:System.Reflection.EventInfo" /> を取得します。</summary>
+        <returns><see cref="T:System.Type" /> に該当する、<see cref="T:System.EventHandler" /> の <see cref="T:System.Reflection.EventInfo" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="eventInfo" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">サービスの <see cref="T:System.Type" />。これを表す <see cref="T:System.Object" /> を取得します。</param>
+        <summary>指定したサービス <see cref="T:System.Object" /> を提供する <see cref="T:System.Type" /> を取得します。</summary>
+        <returns>指定したサービス <see cref="T:System.Object" /> を提供する <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンスのカプセル化された <xref:System.IServiceProvider> が null 参照 (Visual Basic では `Nothing`) の場合は、null 参照 (`Nothing`) が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">型名。</param>
+        <summary><see langword="TypeProvider" />、<see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly(System.Reflection.Assembly)" />、<see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference(System.String)" /> のいずれかを使用して <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddCodeCompileUnit(System.CodeDom.CodeCompileUnit)" /> に追加した一連のアセンブリから、型を取得します。</summary>
+        <returns>要求された <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンスのアセンブリおよびコンパイル済み単位のキャッシュで名前を解決できない場合は、null 参照 (Visual Basic では `Nothing`) が返されます。 このオーバーロードの呼び出しは、パラメーター `throwOnError` を `true` に設定して 2 つのパラメーター オーバーロード呼び出した場合と同等です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string name, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType(string name, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetType(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">型名。</param>
+        <param name="throwOnError">例外をスローするかどうかを示す値<c>名前</c>を解決できません。</param>
+        <summary><see langword="TypeProvider" />、<see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly(System.Reflection.Assembly)" />、<see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssemblyReference(System.String)" /> のいずれかを使用して <see cref="M:System.Workflow.ComponentModel.Compiler.TypeProvider.AddCodeCompileUnit(System.CodeDom.CodeCompileUnit)" /> に追加した一連のアセンブリから、型を取得します。</summary>
+        <returns>要求された <see cref="T:System.Type" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Nothing` が `throwOnError` であれば、このインスタンスのアセンブリおよびコンパイル済み単位のキャッシュ内で名前を解決できない場合に null 参照 (Visual Basic では `false`) が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.Exception">
+          <paramref name="name" /> が解決できず、<paramref name="throwOnError" /> が <see langword="true" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypes">
+      <MemberSignature Language="C#" Value="public Type[] GetTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.GetTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスが認識できる各 <see cref="T:System.Type" /> を格納している配列を作成します。</summary>
+        <returns>このインスタンスが認識できる各 <see cref="T:System.Type" /> を格納している配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Reflection.ReflectionTypeLoadException">読み込めない <see cref="T:System.Type" /> があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssignable">
+      <MemberSignature Language="C#" Value="public static bool IsAssignable (Type toType, Type fromType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsAssignable(class System.Type toType, class System.Type fromType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.IsAssignable(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toType" Type="System.Type" />
+        <Parameter Name="fromType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="toType">変換先の <see cref="T:System.Type" />。</param>
+        <param name="fromType">変換元の <see cref="T:System.Type" />。</param>
+        <summary>ある型から別の型に、安全に変換できるかどうかを表します。</summary>
+        <returns>
+          安全に変換できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnum">
+      <MemberSignature Language="C#" Value="public static bool IsEnum (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsEnum(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.IsEnum(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">調べる <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Type" /> が <see cref="T:System.Enum" /> 型かどうかを調べます。</summary>
+        <returns>
+          <see langword="true" /> が <see cref="T:System.Type" /> であれば <see cref="T:System.Enum" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubclassOf">
+      <MemberSignature Language="C#" Value="public static bool IsSubclassOf (Type subclass, Type superClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSubclassOf(class System.Type subclass, class System.Type superClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.IsSubclassOf(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subclass" Type="System.Type" />
+        <Parameter Name="superClass" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="subclass">派生クラスかどうかを確認する <see cref="T:System.Type" />。</param>
+        <param name="superClass">クラスかどうかを確認する <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Type" /> が別の <see cref="T:System.Type" /> の派生クラスかどうかを調べます。</summary>
+        <returns>
+          サブクラスとスーパークラスの関係にあれば <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedProperty">
+      <MemberSignature Language="C#" Value="public bool IsSupportedProperty (System.Reflection.PropertyInfo property, object declaringInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSupportedProperty(class System.Reflection.PropertyInfo property, object declaringInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.IsSupportedProperty(System.Reflection.PropertyInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Reflection.PropertyInfo" />
+        <Parameter Name="declaringInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="property">解決するプロパティ。</param>
+        <param name="declaringInstance">指定したプロパティが宣言されているインスタンス。</param>
+        <summary>指定したプロパティがターゲット [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] でサポートされているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定したプロパティがターゲットでサポートされている場合[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedPropertyResolver">
+      <MemberSignature Language="C#" Value="public Func&lt;System.Reflection.PropertyInfo,object,bool&gt; IsSupportedPropertyResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`3&lt;class System.Reflection.PropertyInfo, object, bool&gt; IsSupportedPropertyResolver" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.TypeProvider.IsSupportedPropertyResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Reflection.PropertyInfo,System.Object,System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのパラメーターと 1 つの戻り値を持ち、指定したプロパティがターゲット [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] でサポートされているかどうかを示すメソッドを参照するデリゲートを取得または設定します。</summary>
+        <value>2 つのパラメーターと 1 つの戻り値を持ち、指定したプロパティがターゲット [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] でサポートされているかどうかを示すメソッドを参照するデリゲート。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LocalAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly LocalAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.TypeProvider.LocalAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルに定義されたこのインスタンスの <see cref="T:System.Reflection.Assembly" /> を表す値を取得します。</summary>
+        <value>ローカルに定義されたこのインスタンスの <see cref="T:System.Reflection.Assembly" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt; ReferencedAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Reflection.Assembly&gt; ReferencedAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.TypeProvider.ReferencedAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> によって参照されるすべてのアセンブリのコレクションを取得します。</summary>
+        <value><see cref="T:System.Type" /> によって参照されるすべてのアセンブリのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public void RefreshCodeCompileUnit (System.CodeDom.CodeCompileUnit codeCompileUnit, EventHandler refresher);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshCodeCompileUnit(class System.CodeDom.CodeCompileUnit codeCompileUnit, class System.EventHandler refresher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.RefreshCodeCompileUnit(System.CodeDom.CodeCompileUnit,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="refresher" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="codeCompileUnit">更新する <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <param name="refresher">このイベントをデリゲートする <see cref="T:System.EventHandler" />。</param>
+        <summary>このインスタンスに関連付けられた <see cref="T:System.CodeDom.CodeCompileUnit" /> の参照を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codeCompileUnit" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">このインスタンスは既に該当する <see cref="T:System.CodeDom.CodeCompileUnit" /> を参照しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAssembly">
+      <MemberSignature Language="C#" Value="public void RemoveAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.RemoveAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">このインスタンスから削除する <see cref="T:System.Reflection.Assembly" />。</param>
+        <summary>このインスタンスから、指定した <see cref="T:System.Reflection.Assembly" /> に対する参照をすべて削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assembly" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAssemblyReference">
+      <MemberSignature Language="C#" Value="public void RemoveAssemblyReference (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAssemblyReference(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.RemoveAssemblyReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除する <see cref="T:System.Reflection.Assembly" /> のパス。</param>
+        <summary>このインスタンスから、指定したパスで表される <see cref="T:System.Reflection.Assembly" /> の参照を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public void RemoveCodeCompileUnit (System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveCodeCompileUnit(class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.RemoveCodeCompileUnit(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeCompileUnit">削除する <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <summary>このインスタンスから、指定した <see cref="T:System.CodeDom.CodeCompileUnit" /> に対する参照をすべて削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="codeCompileUnit" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalAssembly">
+      <MemberSignature Language="C#" Value="public void SetLocalAssembly (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalAssembly(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.TypeProvider.SetLocalAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">この値を設定するために使用する <see cref="T:System.Reflection.Assembly" />。</param>
+        <summary><see cref="T:System.Reflection.Assembly" /> を参照するローカル <see cref="T:System.Reflection.Assembly" /> の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged> が発生します。 <xref:System.Workflow.ComponentModel.Compiler.TypeProvider.SetLocalAssembly%28System.Reflection.Assembly%29> を呼び出す前に <xref:System.Workflow.ComponentModel.Compiler.TypeProvider.AddAssembly%28System.Reflection.Assembly%29> を呼び出します。そうしないと、<xref:System.Workflow.ComponentModel.Compiler.TypeProvider> に対して効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeLoadErrors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;object,Exception&gt; TypeLoadErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;object, class System.Exception&gt; TypeLoadErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.TypeProvider.TypeLoadErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Object,System.Exception&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.IDictionary" /> の原因となった、<see cref="T:System.Object" /> によって識別される読み込みエラー例外の <see cref="T:System.Exception" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" /> の原因となった、<see cref="T:System.Object" /> によって識別される読み込みエラー例外の <see cref="T:System.Exception" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新、解除された <xref:System.Collections.IDictionary> を、このプロパティの参照ごとに作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeLoadErrorsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TypeLoadErrorsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TypeLoadErrorsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Compiler.TypeProvider.TypeLoadErrorsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.Compiler.TypeProvider.TypeLoadErrors" /> コレクションが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypesChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TypesChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TypesChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Compiler.TypeProvider.TypesChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みの型のコレクションを変更したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

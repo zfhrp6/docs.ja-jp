@@ -1,0 +1,171 @@
+<Type Name="VisualBasicDesignerHelper" FullName="Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper">
+  <TypeSignature Language="C#" Value="public static class VisualBasicDesignerHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VisualBasicDesignerHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> 式および <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> 式を作成してコンパイルします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CreatePrecompiledVisualBasicReference">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity CreatePrecompiledVisualBasicReference (Type targetType, string expressionText, System.Collections.Generic.IEnumerable&lt;string&gt; namespaces, System.Collections.Generic.IEnumerable&lt;string&gt; referencedAssemblies, System.Activities.LocationReferenceEnvironment environment, out Type returnType, out System.Activities.ExpressionParser.SourceExpressionException compileError, out Microsoft.VisualBasic.Activities.VisualBasicSettings vbSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity CreatePrecompiledVisualBasicReference(class System.Type targetType, string expressionText, class System.Collections.Generic.IEnumerable`1&lt;string&gt; namespaces, class System.Collections.Generic.IEnumerable`1&lt;string&gt; referencedAssemblies, class System.Activities.LocationReferenceEnvironment environment, [out] class System.Type&amp; returnType, [out] class System.Activities.ExpressionParser.SourceExpressionException&amp; compileError, [out] class Microsoft.VisualBasic.Activities.VisualBasicSettings&amp; vbSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper.CreatePrecompiledVisualBasicReference(System.Type,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Activities.LocationReferenceEnvironment,System.Type@,System.Activities.ExpressionParser.SourceExpressionException@,Microsoft.VisualBasic.Activities.VisualBasicSettings@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="expressionText" Type="System.String" />
+        <Parameter Name="namespaces" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="referencedAssemblies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="environment" Type="System.Activities.LocationReferenceEnvironment" />
+        <Parameter Name="returnType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compileError" Type="System.Activities.ExpressionParser.SourceExpressionException&amp;" RefType="out" />
+        <Parameter Name="vbSettings" Type="Microsoft.VisualBasic.Activities.VisualBasicSettings&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">予想される式の型。</param>
+        <param name="expressionText">Visual Basic 構文の式。</param>
+        <param name="namespaces">インポートされた名前空間。</param>
+        <param name="referencedAssemblies">参照アセンブリ</param>
+        <param name="environment">名前を関連する <see cref="T:System.Activities.Argument" /> オブジェクトおよび <see cref="T:System.Activities.Variable" /> オブジェクトに解決するためのメカニズム。</param>
+        <param name="returnType">このメソッドから戻る時点で、式の結果の型が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="compileError">このメソッドが戻るとき、発生したコンパイル エラーが含まれています。 または<see langword="null" />コンパイルが成功した場合。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="vbSettings">このメソッドから戻るときに、式のコンパイルに必要な設定が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>プリコンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> 式を作成して返します。</summary>
+        <returns>プリコンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> 式。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePrecompiledVisualBasicValue">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity CreatePrecompiledVisualBasicValue (Type targetType, string expressionText, System.Collections.Generic.IEnumerable&lt;string&gt; namespaces, System.Collections.Generic.IEnumerable&lt;string&gt; referencedAssemblies, System.Activities.LocationReferenceEnvironment environment, out Type returnType, out System.Activities.ExpressionParser.SourceExpressionException compileError, out Microsoft.VisualBasic.Activities.VisualBasicSettings vbSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity CreatePrecompiledVisualBasicValue(class System.Type targetType, string expressionText, class System.Collections.Generic.IEnumerable`1&lt;string&gt; namespaces, class System.Collections.Generic.IEnumerable`1&lt;string&gt; referencedAssemblies, class System.Activities.LocationReferenceEnvironment environment, [out] class System.Type&amp; returnType, [out] class System.Activities.ExpressionParser.SourceExpressionException&amp; compileError, [out] class Microsoft.VisualBasic.Activities.VisualBasicSettings&amp; vbSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper.CreatePrecompiledVisualBasicValue(System.Type,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Activities.LocationReferenceEnvironment,System.Type@,System.Activities.ExpressionParser.SourceExpressionException@,Microsoft.VisualBasic.Activities.VisualBasicSettings@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="expressionText" Type="System.String" />
+        <Parameter Name="namespaces" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="referencedAssemblies" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="environment" Type="System.Activities.LocationReferenceEnvironment" />
+        <Parameter Name="returnType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compileError" Type="System.Activities.ExpressionParser.SourceExpressionException&amp;" RefType="out" />
+        <Parameter Name="vbSettings" Type="Microsoft.VisualBasic.Activities.VisualBasicSettings&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">予想される式の型。</param>
+        <param name="expressionText">Visual Basic 構文の式。</param>
+        <param name="namespaces">インポートされた名前空間。</param>
+        <param name="referencedAssemblies">参照アセンブリ</param>
+        <param name="environment">名前を関連する <see cref="T:System.Activities.Argument" /> オブジェクトおよび <see cref="T:System.Activities.Variable" /> オブジェクトに解決するためのメカニズム。</param>
+        <param name="returnType">このメソッドから戻る時点で、式の結果の型が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="compileError">このメソッドが戻るとき、発生したコンパイル エラーが含まれています。 または<see langword="null" />コンパイルが成功した場合。 このパラメーターは初期化せずに渡されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="vbSettings">このメソッドから戻るときに、式のコンパイルに必要な設定が格納されます。</param>
+        <summary>プリコンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> 式を作成して返します。</summary>
+        <returns>プリコンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> 式。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NameShadowingConstraint">
+      <MemberSignature Language="C#" Value="public static System.Activities.Validation.Constraint NameShadowingConstraint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Activities.Validation.Constraint NameShadowingConstraint" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper.NameShadowingConstraint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Validation.Constraint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前のシャドウで使用される制約を取得します。</summary>
+        <value>名前のシャドウで使用する制約です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RecompileVisualBasicReference">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity RecompileVisualBasicReference (System.Activities.ActivityWithResult visualBasicReference, out Type returnType, out System.Activities.ExpressionParser.SourceExpressionException compileError, out Microsoft.VisualBasic.Activities.VisualBasicSettings vbSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity RecompileVisualBasicReference(class System.Activities.ActivityWithResult visualBasicReference, [out] class System.Type&amp; returnType, [out] class System.Activities.ExpressionParser.SourceExpressionException&amp; compileError, [out] class Microsoft.VisualBasic.Activities.VisualBasicSettings&amp; vbSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper.RecompileVisualBasicReference(System.Activities.ActivityWithResult,System.Type@,System.Activities.ExpressionParser.SourceExpressionException@,Microsoft.VisualBasic.Activities.VisualBasicSettings@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visualBasicReference" Type="System.Activities.ActivityWithResult" />
+        <Parameter Name="returnType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compileError" Type="System.Activities.ExpressionParser.SourceExpressionException&amp;" RefType="out" />
+        <Parameter Name="vbSettings" Type="Microsoft.VisualBasic.Activities.VisualBasicSettings&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="visualBasicReference">再コンパイルする式。</param>
+        <param name="returnType">このメソッドから戻る時点で、式の結果の型が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="compileError">このメソッドが戻るとき、発生したコンパイル エラーが含まれています。 または<see langword="null" />コンパイルが成功した場合。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="vbSettings">このメソッドから戻るときに、式のコンパイルに必要な設定が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>以前コンパイルした <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> 式を再度コンパイルします。</summary>
+        <returns>再コンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> 式。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RecompileVisualBasicValue">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity RecompileVisualBasicValue (System.Activities.ActivityWithResult visualBasicValue, out Type returnType, out System.Activities.ExpressionParser.SourceExpressionException compileError, out Microsoft.VisualBasic.Activities.VisualBasicSettings vbSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity RecompileVisualBasicValue(class System.Activities.ActivityWithResult visualBasicValue, [out] class System.Type&amp; returnType, [out] class System.Activities.ExpressionParser.SourceExpressionException&amp; compileError, [out] class Microsoft.VisualBasic.Activities.VisualBasicSettings&amp; vbSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Activities.VisualBasicDesignerHelper.RecompileVisualBasicValue(System.Activities.ActivityWithResult,System.Type@,System.Activities.ExpressionParser.SourceExpressionException@,Microsoft.VisualBasic.Activities.VisualBasicSettings@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visualBasicValue" Type="System.Activities.ActivityWithResult" />
+        <Parameter Name="returnType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compileError" Type="System.Activities.ExpressionParser.SourceExpressionException&amp;" RefType="out" />
+        <Parameter Name="vbSettings" Type="Microsoft.VisualBasic.Activities.VisualBasicSettings&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="visualBasicValue">再コンパイルする式。</param>
+        <param name="returnType">このメソッドから戻る時点で、式の結果の型が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="compileError">このメソッドが戻るとき、発生したコンパイル エラーが含まれています。 または<see langword="null" />コンパイルが成功した場合。 このパラメーターは初期化せずに渡されます。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="vbSettings">このメソッドから戻るときに、式のコンパイルに必要な設定が格納されます。</param>
+        <summary>以前コンパイルした <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> 式を再度コンパイルします。</summary>
+        <returns>再コンパイルされた <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> 式。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

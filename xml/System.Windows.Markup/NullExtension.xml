@@ -1,0 +1,91 @@
+<Type Name="NullExtension" FullName="System.Windows.Markup.NullExtension">
+  <TypeSignature Language="C#" Value="public class NullExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NullExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.NullExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationFramework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Object))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XAML で値を明示的に null に設定するときに使用できる null オブジェクトを返すために、XAML マークアップ拡張機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML では、null および空の文字列は、通常は異なります。 使用する、`{x:Null}`を基になるプロパティを設定する属性を設定するために拡張機能の使用`null`です。  Null 値の設定は、xaml シナリオに関連する方法の詳細については、次を参照してください。 [X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md)します。  
+  
+ このクラスは、マークアップ拡張機能の実装です。 マークアップ拡張機能クラスは、XAML プロセッサが特定の拡張を解釈する方法のインフラストラクチャをサポートするには、主に存在します。 マークアップ拡張機能の実装クラスが公開されるメンバーは、コードから呼び出すことを通常ものでありません。 このマークアップ拡張機能クラスをサポートしている、 [X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md).NET XAML サービスの使用量。  
+  
+ 以前のバージョンの .NET Framework は、このクラス (および`x:Null`マークアップ拡張機能の XAML の動作のサポートと、関連する xmlns マッピング) WPF 固有の PresentationFramework アセンブリに存在していました。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.NullExtension>は System.Xaml アセンブリにします。 これにより、 `x:Null` .NET XAML サービスを参照するフレームワークを使用してアプリケーションを使用します。 必要としない PresentationFramework 参照先アセンブリと対象としている限り、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]です。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ System.Xaml アセンブリ使用<xref:System.Windows.Markup.XmlnsDefinitionAttribute>アセンブリ内のすべての型を XAML 言語の XAML 名前空間にマップする ([!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)])。 プレフィックスを宣言する通常[!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)]では、ルート要素のマッピングを使用してプレフィックス`x`です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 依存関係プロパティの値を設定するときに、WPF 依存関係プロパティの`null`、する設定とは限りませんプロパティの既定値に参照プロパティがある場合でもです。 依存関係プロパティの既定値は、その依存関係プロパティの登録に依存します。 未設定の値は必ずしも`null`か; 表示<xref:System.Windows.DependencyProperty.UnsetValue>です。 詳細については、次を参照してください。<xref:System.Windows.DependencyObject.ClearValue%2A>または[依存関係プロパティの概要](~/docs/framework/wpf/advanced/dependency-properties-overview.md)です。  
+  
+<a name="xamlTextUsage_NullExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NullExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NullExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.NullExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NullExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能の実装のためのサービスを提供できるオブジェクト。</param>
+        <summary>提供<see langword="null" />このマークアップ拡張機能の出力と同じ値として使用します。</summary>
+        <returns>null 参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、XAML プロセッサの実装をサポートし、直接呼び出すものではありません。 XAML プロセッサの実装を含むオブジェクト グラフを作成するときにこのメソッドを使用して、`x:Null`拡張機能を使用します。 これには、XAML プロセッサの全般的な動作のいずれかを処理するときに<xref:System.Windows.Markup.MarkupExtension>呼び出しとその`ProvideValue`実装します。  
+  
+ この実装が基づいているサービスに依存せずに渡された`serviceProvider`です。 常に、コンテキストに関係なく、null 参照を返します。 参照して .NET Framework XAML サービス実装では、戻り値が取得した、<xref:System.Xaml.XamlLanguage.Null%2A?displayProperty=nameWithType>静的な値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

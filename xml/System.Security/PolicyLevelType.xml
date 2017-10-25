@@ -1,0 +1,127 @@
+<Type Name="PolicyLevelType" FullName="System.Security.PolicyLevelType">
+  <TypeSignature Language="C#" Value="public enum PolicyLevelType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PolicyLevelType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.PolicyLevelType" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ コードのポリシー レベルの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最上位レベルのセキュリティ ポリシーは、エンタープライズ全体です。 階層の連続する下位レベルでは、さらに、ポリシーの制限を表しますより高いレベルで許可されている以上のアクセス許可を与えることはできません。 次の順序でのポリシー レベルに示します。  
+  
+ 1. エンタープライズ  
+  
+ 2. コンピューター  
+  
+ 3. User  
+  
+ 4. アプリケーション ドメイン  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppDomain">
+      <MemberSignature Language="C#" Value="AppDomain" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.PolicyLevelType AppDomain = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.PolicyLevelType.AppDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PolicyLevelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション内のすべてのマネージ コードのセキュリティ ポリシー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Enterprise">
+      <MemberSignature Language="C#" Value="Enterprise" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.PolicyLevelType Enterprise = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.PolicyLevelType.Enterprise" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PolicyLevelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンタープライズ内のすべてのマネージ コードのセキュリティ ポリシー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Machine">
+      <MemberSignature Language="C#" Value="Machine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.PolicyLevelType Machine = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.PolicyLevelType.Machine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PolicyLevelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューター上で実行されるすべてのマネージ コードのセキュリティ ポリシー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="User" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.PolicyLevelType User = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.PolicyLevelType.User" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PolicyLevelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーによって実行されるすべてのマネージ コードのセキュリティ ポリシー。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

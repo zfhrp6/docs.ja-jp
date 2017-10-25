@@ -1,0 +1,577 @@
+<Type Name="MessageEnumerator" FullName="System.Messaging.MessageEnumerator">
+  <TypeSignature Language="C#" Value="public class MessageEnumerator : MarshalByRefObject, IDisposable, System.Collections.IEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageEnumerator extends System.MarshalByRefObject implements class System.Collections.IEnumerator, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerator</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージ キュー内のメッセージを列挙するための順方向専用カーソルを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Messaging.MessageEnumerator>キュー内のメッセージと動的な対話するためです。 メソッドを介して使用できる、<xref:System.Messaging.MessageQueue>クラスは、いずれかを返すことができます、<xref:System.Messaging.MessageEnumerator>キュー、または時に指定された時点のスナップショットのキューのコピーを格納する配列内のメッセージの動的な一覧を指定したメソッドを指すが呼び出されました。  
+  
+ 列挙子では、静的なスナップショットとは異なり、コレクションを変更できます。 使用して、<xref:System.Messaging.MessageEnumerator>キューからメッセージを削除することができます、および変更がすぐにキューに反映されます。  
+  
+ キューを照会したときに、列挙子は、キューからメッセージを削除できません。 現在のカーソル位置にあるメッセージに関する情報を返しますが、メッセージはキューにそのままです。  
+  
+ A<xref:System.Messaging.MessageEnumerator>カーソル、動的なリストの先頭に初期化します。 一覧の順序は、メッセージの優先順位に従って、キュー内のメッセージの順序と同じです。 最初のメッセージ キューにカーソルを移動するには呼び出すことによって<xref:System.Messaging.MessageEnumerator.MoveNext%2A>です。 列挙子が初期化された後に行うこともできます<xref:System.Messaging.MessageEnumerator.MoveNext%2A>残りのメッセージにします。 使用可能になるにタイムアウトを渡すことによって、メッセージに対して待機するかどうかを指定することができます、<xref:System.Messaging.MessageEnumerator.MoveNext%2A>メソッドです。  
+  
+ 列挙子は動的であるため (たとえば、ため低優先度)、カーソルの現在位置より後に追加するメッセージは、列挙子によってアクセスできます。 カーソルの現在位置にアクセスすることはできません前に挿入されているメッセージです。 ステップ後退することはできません、<xref:System.Messaging.MessageEnumerator>です。 カーソルでは、順方向専用の移動が可能です。 <xref:System.Messaging.MessageEnumerator.Reset%2A>メソッドでは、キューの先頭に戻る、カーソルを配置することができます。  
+  
+ インスタンス<xref:System.Messaging.MessageEnumerator>を特定のキューは独立して動作します。 2 つ作成することができます<xref:System.Messaging.MessageEnumerator>同一のキューに適用されるインスタンスです。 変更はいずれか<xref:System.Messaging.MessageEnumerator>キュー内のメッセージに反映されますすぐに、列挙子を 2 番目、2 番目の列挙子が 1 つ目の前に配置されている場合。 ただし、2 つの列挙子が同じ位置にある場合、それらのいずれか、メッセージを削除位置に、例外がスローされます他の列挙子の値を取得しようとすると、<xref:System.Messaging.MessageEnumerator.Current%2A>削除メッセージのプロパティです。  
+  
+> [!NOTE]
+>  インスタンスを作成する場合<xref:System.Messaging.MessageQueue>で<xref:System.Messaging.MessageQueue.DenySharedReceive%2A?displayProperty=nameWithType>'éý' `true`、他のアプリケーションは変更できません、列挙子内のメッセージをキューに接続しているときにします。  
+  
+   
+  
+## Examples  
+ 次の例は、キュー内のメッセージの動的な一覧を取得し、すべてのメッセージのカウント、<xref:System.Messaging.Message.Priority%2A>プロパティに設定<xref:System.Messaging.MessagePriority?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[MessageQueue.GetMessageEnumerator#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.GetMessageEnumerator/CPP/mqgetmessageenumerator.cpp#1)]
+ [!code-csharp[MessageQueue.GetMessageEnumerator#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.GetMessageEnumerator/CS/mqgetmessageenumerator.cs#1)]
+ [!code-vb[MessageQueue.GetMessageEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.GetMessageEnumerator/VB/mqgetmessageenumerator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子に関連付けられているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムでは、カーソルの有効期間中に、キューを開いているハンドルを保持します。 列挙子の操作が完了したら、呼び出す<xref:System.Messaging.MessageEnumerator.Close%2A>ハンドルに関連付けられているリソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.Message Current" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その列挙子が指している現在の <see cref="T:System.Messaging.Message" /> を取得します。</summary>
+        <value>現在のメッセージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子の作成時に、最初のメッセージより前に、の位置、キューの先頭を指します。 この場合、<xref:System.Messaging.MessageEnumerator.Current%2A>が無効である場合は、アクセス例外がスローされます。 呼び出す必要があります<xref:System.Messaging.MessageEnumerator.MoveNext%2A>にキューにある最初のメッセージをカーソルを移動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="P:System.Messaging.MessageEnumerator.Current" />最初の呼び出しの前に<see cref="M:System.Messaging.MessageEnumerator.MoveNext" />です。 カーソルは、メッセージの列挙の最初の要素の前に位置します。  
+  
+ または  
+  
+ 呼び出す<see cref="P:System.Messaging.MessageEnumerator.Current" />への呼び出し後<see cref="M:System.Messaging.MessageEnumerator.MoveNext" />返しました<see langword="false" />(カーソルを示す後に配置されるメッセージの列挙の最後の要素です)。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">列挙子が現在指して不要になったメッセージが存在します。 削除された可能性があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CursorHandle">
+      <MemberSignature Language="C#" Value="public IntPtr CursorHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int CursorHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageEnumerator.CursorHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューにメッセージを参照するために使用ネイティブのメッセージ キュー カーソル ハンドルを取得します。</summary>
+        <value>ネイティブなカーソルのハンドルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、列挙型へのネイティブ ハンドルが含まれています。 列挙子の操作が完了したら、呼び出す<xref:System.Messaging.MessageEnumerator.Close%2A>をこのリソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Messaging.MessageQueueException">ハンドルが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Messaging.MessageEnumerator" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Messaging.MessageEnumerator.Dispose%2A>によりによって使用されるリソース、<xref:System.Messaging.MessageEnumerator>を他の目的に再割り当てされます。 詳細については<xref:System.Messaging.MessageEnumerator.Dispose%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Messaging.MessageEnumerator" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.Messaging.MessageEnumerator.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Messaging.MessageEnumerator> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~MessageEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>いずれかが現在使用可能な場合は、キュー内の次のメッセージに、列挙子を進めます。</summary>
+        <returns>
+          <see langword="true" />列挙子が次のメッセージに詳細に成功した場合<see langword="false" />列挙子は、キューの末尾に達した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、キューにメッセージがないかどうかに直ちに返されます。 指定したが待機する別のオーバー ロードがある<xref:System.TimeSpan>メッセージが到着するのです。  
+  
+ キューが空であるため、または、コレクション内の最後の要素より後に移動するため、メッセージを現在使用可能なことができない場合<xref:System.Messaging.MessageEnumerator.MoveNext%2A>返します`false`呼び出し元のメソッドです。  
+  
+ 作成した場合、列挙子は概念的には、キュー、および最初の呼び出しの最初のメッセージの前に配置<xref:System.Messaging.MessageEnumerator.MoveNext%2A>キューの最初のメッセージを表示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Messaging.MessageQueueException">メッセージ キューに固有の例外がスローされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MoveNext(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.MoveNext(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout"><see cref="T:System.TimeSpan" />列挙子がキューの末尾に配置されている場合に使用するメッセージを待機します。</param>
+        <summary>次のメッセージをキューに、列挙子を進めます。 列挙子が、キューの末尾に配置されている場合<see cref="M:System.Messaging.MessageEnumerator.MoveNext" />メッセージが利用するか、指定したタイムアウト時間の有効期限が切れるまで待機します。</summary>
+        <returns>
+          <see langword="true" />列挙子は、次のメッセージに正常に進んだ場合<see langword="false" />列挙子は、キューの末尾に達したし、メッセージがで指定された時間内では使用可能なならない場合、<paramref name="timeout" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、キューにメッセージがない場合、またはカーソルは、キューの末尾に達した場合に待機します。 キューが空であるため、または、コレクション内の最後の要素より後に移動するため、メッセージを現在使用可能なことができない場合<xref:System.Messaging.MessageEnumerator.MoveNext%2A>指定したタイムアウト時間を待機します。  
+  
+ 場合は、キューの末尾にカーソルは既に<xref:System.Messaging.MessageEnumerator.MoveNext%2A>のみが返されます`true`場合は、指定された時間間隔内で新しいメッセージが到着すると、キューに現在のすべてのメッセージより低い優先順位を持つし、は、キューの末尾に置かれます。 パラメーターなしのオーバー ロードは、キューにこれ以上メッセージがないかどうかに直ちに返されます。  
+  
+ 作成時に列挙子は概念的には、列挙、および最初の呼び出しの最初のメッセージの前に配置<xref:System.Messaging.MessageEnumerator.MoveNext%2A>ビューには、列挙体の最初のメッセージを表示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">タイムアウト パラメーターに指定された値が正しくありません。 負の数を表すことができます。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">メッセージ キューに固有の例外がスローされました。  
+  
+ または  
+  
+ タイムアウトの有効期限が切れました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RemoveCurrent">
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在のメッセージをキューから削除して、呼び出し元のアプリケーションにメッセージを返します。 メッセージを削除すると、キューから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのオーバー ロードについて説明した動作が適用可能な場合にのみ、<xref:System.Messaging.MessageEnumerator>を使用してインスタンスを取得、<xref:System.Messaging.MessageQueue.GetMessageEnumerator2%2A>です。 使用しないでください<xref:System.Messaging.MessageQueue.GetMessageEnumerator%2A>のインスタンスを取得する<xref:System.Messaging.MessageEnumerator>ようにこのメソッドは廃止されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションまたは非トランザクション キューから現在のメッセージを削除し、呼び出し元アプリケーションにメッセージを返します。 キューに到着するメッセージの指定したタイムアウト値はありません。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、カーソルの現在の場所でメッセージを返します。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ トランザクション キューでこのオーバー ロードを呼び出すと、メッセージ キューは 1 つの内部トランザクションを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent (System.Messaging.MessageQueueTransaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent(class System.Messaging.MessageQueueTransaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent(System.Messaging.MessageQueueTransaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Messaging.MessageQueueTransaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction"><see cref="T:System.Messaging.MessageQueueTransaction" />でメッセージを削除するトランザクションを指定するオブジェクト。</param>
+        <summary>トランザクション キューから現在のメッセージを削除し、呼び出し元アプリケーションにメッセージを返します。 キューに到着するメッセージの指定したタイムアウト値はありません。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、によって定義された内部トランザクション コンテキストを使用して、カーソルの現在の場所でメッセージを返します、`transaction`パラメーター。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ トランザクション キューを使用する場合、トランザクションのロールバックするへの呼び出しによって削除されたすべてのメッセージ<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>キューに返されます。 トランザクションがコミットされるまで、取り外しは取り消すことができません。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="transaction" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent (System.Messaging.MessageQueueTransactionType transactionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent(valuetype System.Messaging.MessageQueueTransactionType transactionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent(System.Messaging.MessageQueueTransactionType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transactionType" Type="System.Messaging.MessageQueueTransactionType" />
+      </Parameters>
+      <Docs>
+        <param name="transactionType">1 つ、<see cref="T:System.Messaging.MessageQueueTransactionType" />メッセージと関連付けるトランザクション コンテキストの型を記述する値。</param>
+        <summary>現在のメッセージをキューから削除し、呼び出し元のアプリケーションにメッセージを返します。 キューに到着するメッセージの指定したタイムアウト値はありません。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、によって定義されたトランザクション コンテキストを使用して、カーソルの現在の場所でメッセージを返します、`transactionType`パラメーター。  
+  
+ 指定`Automatic`の`transactionType`パラメーター外部トランザクション コンテキストが既に存在する場合は、メッセージの受信に使用するスレッドにアタッチします。 指定`Single`単一の内部トランザクションとしてメッセージを受信する場合。 指定できます`None`トランザクション コンテキストの外部でトランザクション キューからメッセージを受信する場合。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ トランザクション キューを使用する場合、トランザクションのロールバックするへの呼び出しによって削除されたすべてのメッセージ<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>キューに返されます。 トランザクションがコミットされるまで、取り外しは取り消すことができません。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="transactionType" />パラメーターは、のいずれかではない、<see cref="T:System.Messaging.MessageQueueTransactionType" />メンバー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">メッセージがキューに到達するまで待機する時間間隔。</param>
+        <summary>現在のメッセージをキューから削除して、呼び出し元のアプリケーションにメッセージを返します。 削除するメッセージがある場合、メソッドを返します、すぐにします。 それ以外の場合、メソッドは、新しいメッセージが到着する指定のタイムアウトを待機します。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、カーソルの現在の場所でメッセージを返します。 カーソルが、キューの末尾にある場合は、このメソッドのオーバー ロードを待つ、メッセージが利用可能かによって指定される間隔、`timeout`パラメーターの有効期限が切れました。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ トランザクション キューでこのオーバー ロードを呼び出すと、メッセージ キューは 1 つの内部トランザクションを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値、<paramref name="timeout" />パラメーターが無効です。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">タイムアウトの有効期限が切れました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent (TimeSpan timeout, System.Messaging.MessageQueueTransaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent(valuetype System.TimeSpan timeout, class System.Messaging.MessageQueueTransaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent(System.TimeSpan,System.Messaging.MessageQueueTransaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="transaction" Type="System.Messaging.MessageQueueTransaction" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">削除するメッセージを待機する時間間隔。</param>
+        <param name="transaction"><see cref="T:System.Messaging.MessageQueueTransaction" />メッセージのトランザクション コンテキストを指定するオブジェクト。</param>
+        <summary>トランザクション キューから現在のメッセージを削除し、呼び出し元アプリケーションにメッセージを返します。 削除するメッセージがある場合、メソッドを返します、すぐにします。 それ以外の場合、メソッドは、新しいメッセージが到着する指定のタイムアウトを待機します。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、カーソルの現在の場所でメッセージを返します。 カーソルが、キューの末尾にある場合は、このメソッドのオーバー ロードを待つ、メッセージが利用可能かによって指定される間隔、`timeout`パラメーターの有効期限が切れました。  
+  
+ トランザクション キューを使用する場合、トランザクションのロールバックするへの呼び出しによって削除されたすべてのメッセージ<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>キューに返されます。 トランザクションがコミットされるまで、取り外しは取り消すことができません。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値、<paramref name="timeout" />パラメーターが無効です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="transaction" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">タイムアウトの有効期限が切れました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCurrent">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message RemoveCurrent (TimeSpan timeout, System.Messaging.MessageQueueTransactionType transactionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Messaging.Message RemoveCurrent(valuetype System.TimeSpan timeout, valuetype System.Messaging.MessageQueueTransactionType transactionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.RemoveCurrent(System.TimeSpan,System.Messaging.MessageQueueTransactionType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="transactionType" Type="System.Messaging.MessageQueueTransactionType" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">削除するメッセージを待機する時間間隔。</param>
+        <param name="transactionType">1 つ、<see cref="T:System.Messaging.MessageQueueTransactionType" />メッセージと関連付けるトランザクション コンテキストの型を記述する値。</param>
+        <summary>現在のメッセージをキューから削除し、呼び出し元のアプリケーションにメッセージを返します。 削除するメッセージがある場合、メソッドを返します、すぐにします。 それ以外の場合、メソッドは、新しいメッセージが到着する指定のタイムアウトを待機します。</summary>
+        <returns>A<see cref="T:System.Messaging.Message" />キューで利用可能な最初のメッセージを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>削除し、によって定義されたトランザクション コンテキストを使用して、カーソルの現在の場所でメッセージを返します、`transactionType`パラメーター。 カーソルが、キューの末尾にある場合は、このメソッドのオーバー ロードを待つ、メッセージが利用可能かによって指定される間隔、`timeout`パラメーターの有効期限が切れました。  
+  
+ 指定`Automatic`の`transactionType`パラメーター外部トランザクション コンテキストが既に存在する場合は、メッセージの受信に使用するスレッドにアタッチします。 指定`Single`単一の内部トランザクションとしてメッセージを受信する場合。 指定できます`None`トランザクション コンテキストの外部でトランザクション キューからメッセージを受信する場合。  
+  
+ メッセージの削除によりと同様に、ジャーナル キューで保持するコピーであるキューのジャーナルを使用している場合、<xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.Receive%2A>メソッドです。  
+  
+ トランザクション キューを使用する場合、トランザクションのロールバックするへの呼び出しによって削除されたすべてのメッセージ<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>キューに返されます。 トランザクションがコミットされるまで、取り外しは取り消すことができません。  
+  
+ 現在のメッセージを削除すると、カーソルを次のメッセージに移動します。 呼び出していない<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値、<paramref name="timeout" />パラメーターが無効です。</exception>
+        <exception cref="T:System.Messaging.MessageQueueException">タイムアウトの有効期限が切れました。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="transactionType" />パラメーターは、のいずれかではない、<see cref="T:System.Messaging.MessageQueueTransactionType" />メンバー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キューの先頭を指すように、現在の列挙子をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、順方向にのみ移動できます。 キューの先頭に最初からやり直すには、このメソッドを使用します。  
+  
+ 呼び出した後<xref:System.Messaging.MessageEnumerator.Reset%2A>カーソルが最初のメッセージを指します。 呼び出す必要はありません<xref:System.Messaging.MessageEnumerator.MoveNext%2A>呼び出した後<xref:System.Messaging.MessageEnumerator.Reset%2A>最初のメッセージ キューでカーソルを前方に移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerator.Current">
+      <MemberSignature Language="C#" Value="object System.Collections.IEnumerator.Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IEnumerator.Current" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageEnumerator.System#Collections#IEnumerator#Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:System.Messaging.Message" />現在のカーソル位置にあるメッセージを参照します。</summary>
+        <value>A<see cref="T:System.Messaging.Message" />現在のカーソル位置にあるメッセージを参照します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,204 @@
+<Type Name="StaticExtension" FullName="System.Windows.Markup.StaticExtension">
+  <TypeSignature Language="C#" Value="public class StaticExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.StaticExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.StaticExtensionConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationFramework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Object))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>静的フィールドおよびプロパティの参照を返すマークアップ拡張機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ拡張機能の実装の`{x:Static}`.NET xaml サービスの XAML 言語機能のサポート。 XAML の使用状況について、次を参照してください。 [X:static マークアップ拡張機能](~/docs/framework/xaml-services/x-static-markup-extension.md)します。  
+  
+ 通常、静的参照を使用するには、型は静的なので、XAML でインスタンス化できない型を含む型から静的な値を取得します。 ケースの一般的な例として、`{x:Static}`役に立ちますはようなものの固定の数値演算の値または状態に対して一意のキーなどの定数値が含まれます。 参照されている静的メンバーは、XAML スキーマ コンテキストに関連付けられている特定のフレームワーク アセンブリから取得する必要はありません。 他のアセンブリおよび XAML の使用方法の CLR 名前空間にマップできるし、マップしたプレフィックスを使用して、XAML の型の静的メンバーを参照できます。  
+  
+<a name="xamlTextUsage_StaticExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.StaticExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StaticExtension (string member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="member">参照先のメンバーを識別する文字列。 この文字列の形式は<c>prefix:typeName.fieldOrPropertyName</c>です。 <c>プレフィックス</c>の XAML 名前空間マッピング プレフィックスであり、既定の XAML 名前空間にマップされない静的な値を参照するために必要なだけです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.StaticExtension" />クラスの指定されたを使用して<paramref name="member" />文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `member`設定すると、値は評価されません。 初期値がない場合`null`、値が受け入れられます。 実際に解析およびの評価、`member`値がまで延期される<xref:System.Windows.Markup.StaticExtension.ProvideValue%2A>は XAML ライターが拡張機能の使用を処理するときに呼び出されます。 時間、XAML スキーマ コンテキストに通知する型のマッピングと、値を取得できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="member" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public string Member { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Member" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.StaticExtension.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("member")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスで提供される型リゾルバーに基づいて静的フィールドまたはプロパティを解決するために使用される、メンバー名文字列を取得または設定します。</summary>
+        <value>参照先のメンバーを識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、<xref:System.Windows.Markup.StaticExtension.Member%2A>形式を使用して通常*プレフィックス*`:`*typeName*`.`*fieldOrPropertyName*です。 (*プレフィックス*XML 名前空間のマッピング プレフィックスであり、既定の XML 名前空間にマップされない静的な値を参照するために必要なだけ)。 文字列名も指定できますのみ、メンバー、くらいとして<xref:System.Windows.Markup.StaticExtension.MemberType%2A>も提供します。、ですがこの手法は、XML 名前空間およびプレフィックスはサポートされません以外の型システム レベルで動作していること。  
+  
+ XAML の使用状況について、次を参照してください。 [X:static マークアップ拡張機能](~/docs/framework/xaml-services/x-static-markup-extension.md)します。  
+  
+ 設定すると、この値は評価されません。値がない限り、`null`が受け入れられます。 実際の解析と値の評価がまで延期される<xref:System.Windows.Markup.StaticExtension.ProvideValue%2A>の解析中に呼び出されます。  
+  
+ 使用するは、通常のシナリオで、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] XAML プロセッサでは、XAML プロセッサは、そのサービス コントラクトの一部として CLR 型の型競合回避モジュールを渡しますこの競合回避モジュールに使用し、<xref:System.Windows.Markup.StaticExtension.ProvideValue%2A>呼び出します。  
+  
+<a name="xamlTextUsage_Member"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Markup.StaticExtension.Member" /> を <see langword="null" /> に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public Type MemberType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.StaticExtension.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Type" />を返す静的メンバーを定義します。</summary>
+        <value><see cref="T:System.Type" />を返す静的メンバーを定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、<xref:System.Windows.Markup.StaticExtension>に基づいて静的メンバーを返すことができます、代替のモードをサポートする<xref:System.Windows.Markup.StaticExtension.Member%2A>いる単純なメンバーの名前ととして指定された、所有している型<xref:System.Windows.Markup.StaticExtension.MemberType%2A>、なく<xref:System.Windows.Markup.StaticExtension.Member%2A>形式で完全な名前を指定する*型*`.`*メンバー*です。 型競合回避モジュールは引き続き機能し、ここでは、<xref:System.Windows.Markup.StaticExtension.Member%2A>と<xref:System.Windows.Markup.StaticExtension.MemberType%2A>は基本的に組み合わされます:`memberFullName = MemberType.FullName + "." + Member`です。 XAML 名前空間およびプレフィックスです。 この方法はサポートされていませんXAML 型システムではなく、バッキング型システムに対して機能します。  
+  
+ 文字列は、<xref:System.Windows.Markup.StaticExtension.Member%2A>形式を使用して通常*プレフィックス*`:`*typeName*`.`*fieldOrPropertyName*です。 (*プレフィックス*XML 名前空間のマッピング プレフィックスであり、既定の XML 名前空間にマップされない静的な値を参照するために必要なだけ)。  
+  
+ XAML の使用状況について、次を参照してください。 [X:static マークアップ拡張機能](~/docs/framework/xaml-services/x-static-markup-extension.md)します。  
+  
+<a name="xamlTextUsage_MemberType"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Markup.StaticExtension.MemberType" /> を <see langword="null" /> に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。 サービス プロバイダーが型リゾルバーを実装するサービスの提供が必要です (<see cref="T:System.Windows.Markup.IXamlTypeResolver" />)。</param>
+        <summary>この拡張機能を適用するプロパティで設定するオブジェクトの値を返します。 <see cref="T:System.Windows.Markup.StaticExtension" />、戻り値が要求された静的なメンバーに評価される静的な値です。</summary>
+        <returns>拡張機能が適用されたプロパティで設定する静的な値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、XAML 言語機能をサポートし、直接呼び出す通常ものでありません。 XAML プロセッサの実装では、このメソッドを使用して、適切に処理して、`x:Static`オブジェクトの作成中に拡張機能の値。  
+  
+ この実装はベースは、サービスに渡された`serviceProvider`です。 `serviceProvider`ことはできません`null`です。 `serviceProvider`を返すためのサービス オブジェクトが期待どおり<xref:System.Windows.Markup.IXamlTypeResolver>です。 既定の XAML リーダーと XAML ライターによって使用の通常のシナリオでは、適切なサービス プロバイダーは使用できます。 無効な XAML スキーマ コンテキスト型のマッピングを中断する副作用がありますであるため、<xref:System.Windows.Markup.IXamlTypeResolver>サービス。  
+  
+ [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、<xref:System.Windows.Markup.StaticExtension>に基づいて静的メンバーを返すことができます、代替のモードをサポートする<xref:System.Windows.Markup.StaticExtension.Member%2A>いる単純なメンバーの名前ととして指定された、所有している型<xref:System.Windows.Markup.StaticExtension.MemberType%2A>、なく<xref:System.Windows.Markup.StaticExtension.Member%2A>形式で完全な名前を指定する*型*`.`*メンバー*です。 型競合回避モジュールは引き続き機能し、ここでは、<xref:System.Windows.Markup.StaticExtension.Member%2A>と<xref:System.Windows.Markup.StaticExtension.MemberType%2A>は基本的に組み合わされます:`memberFullName = MemberType.FullName + "." + Member`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="member" />値、拡張機能は<see langword="null" />評価時にします。</exception>
+        <exception cref="T:System.ArgumentException">一部、<paramref name="member" />文字列に正しく解析されなかった  
+  
+ または  
+  
+ <paramref name="serviceProvider" />サービスを提供できませんでした。<see cref="T:System.Windows.Markup.IXamlTypeResolver" />  
+  
+ または  
+  
+ <paramref name="member" />値は、静的メンバーに解決されませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceProvider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

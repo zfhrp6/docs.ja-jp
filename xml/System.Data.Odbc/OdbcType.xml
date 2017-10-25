@@ -1,0 +1,509 @@
+<Type Name="OdbcType" FullName="System.Data.Odbc.OdbcType">
+  <TypeSignature Language="C#" Value="public enum OdbcType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OdbcType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用するためのプロパティ、フィールドのデータ型を指定します、<see cref="T:System.Data.Odbc.OdbcParameter" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、間のマッピングを示しています。<xref:System.Data.Odbc.OdbcType>データ型、ODBC データ型 (かっこ内に表示)、および .NET Framework の型。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BigInt">
+      <MemberSignature Language="C#" Value="BigInt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType BigInt = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.BigInt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正確な数値有効桁数 19 (署名) の場合または 20 (符号なし) の場合、0 の拡張 (署名: – 2 [63] &lt;= n &lt;= 2 [63] – の符号なし、1:0&lt;= n &lt;= 2 [64]: 1) (SQL_BIGINT)。 これはマップ<see cref="T:System.Int64" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Binary">
+      <MemberSignature Language="C#" Value="Binary" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Binary = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Binary" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バイナリ データ (sql_binary 型) のストリーム。 これにマップする<see cref="T:System.Array" />型の<see cref="T:System.Byte" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Bit">
+      <MemberSignature Language="C#" Value="Bit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Bit = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Bit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのビットのバイナリ データ (SQL_BIT)。 これはマップ<see cref="T:System.Boolean" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Char">
+      <MemberSignature Language="C#" Value="Char" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Char = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Char" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定長文字の文字列 (SQL_CHAR)。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Date">
+      <MemberSignature Language="C#" Value="Date" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Date = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Date" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式設定 yyyymmdd 形式で指定 (SQL_TYPE_DATE) の日付データ。 これはマップ<see cref="T:System.DateTime" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTime">
+      <MemberSignature Language="C#" Value="DateTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType DateTime = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.DateTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付形式 yyyymmddhhmmss (SQL_TYPE_TIMESTAMP) でのデータ。 これはマップ<see cref="T:System.DateTime" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Decimal">
+      <MemberSignature Language="C#" Value="Decimal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Decimal = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Decimal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名の場合は、ここで、1、正確な数値の値には、少なくとも p と s、小数点以下桁数の有効桁数を持つ&lt;p = &lt;= 15 と s &lt;p を = です。 最大有効桁数は、ドライバー固有 (SQL_DECIMAL)。 これはマップ<see cref="T:System.Decimal" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Double">
+      <MemberSignature Language="C#" Value="Double" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Double = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Double" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名済み、バイナリ有効桁数が 53 概数の数値の値 (0 または絶対値 10 [– 308] 10[308]) (SQL_DOUBLE) にします。 これはマップ<see cref="T:System.Double" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="Image" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Image = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Image" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可変長バイナリ データ。 最大長は、データ ソースに依存する (SQL_LONGVARBINARY) です。 これにマップする<see cref="T:System.Array" />型の<see cref="T:System.Byte" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Int">
+      <MemberSignature Language="C#" Value="Int" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Int = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Int" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>10 の有効桁数で数値および 0 のスケール (署名: – 2 [31] &lt;= n &lt;= 2 [31] – の符号なし、1:0&lt;= n &lt;= 2 [32]: 1) (SQL_INTEGER)。 これはマップ<see cref="T:System.Int32" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NChar">
+      <MemberSignature Language="C#" Value="NChar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType NChar = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.NChar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定文字列の長さ (SQL_WCHAR) の Unicode 文字列です。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NText">
+      <MemberSignature Language="C#" Value="NText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType NText = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.NText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode の可変長の文字データです。 最大長は、データ ソースに依存します。 (SQL_WLONGVARCHAR)。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Numeric">
+      <MemberSignature Language="C#" Value="Numeric" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Numeric = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Numeric" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>符号付き、正確な数値有効桁数 p と小数点 s、ここで、1 &lt;p = &lt;= 15、および秒&lt;= p (SQL_NUMERIC)。 これはマップ<see cref="T:System.Decimal" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NVarChar">
+      <MemberSignature Language="C#" Value="NVarChar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType NVarChar = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.NVarChar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode 文字 (SQL_WVARCHAR) の可変長のストリーム。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Real">
+      <MemberSignature Language="C#" Value="Real" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Real = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Real" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名済み、バイナリ有効桁数 24 を持つ概数の数値の値 (0 または絶対値 10 [–38] 10[38]) にします。(SQL_REAL)。 これはマップ<see cref="T:System.Single" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallDateTime">
+      <MemberSignature Language="C#" Value="SmallDateTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType SmallDateTime = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.SmallDateTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データと時間データ形式 yyyymmddhhmmss (SQL_TYPE_TIMESTAMP)。 これはマップ<see cref="T:System.DateTime" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallInt">
+      <MemberSignature Language="C#" Value="SmallInt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType SmallInt = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.SmallInt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定精度が 5 で数値および 0 のスケール (署名: –32,768 &lt;= n &lt;= 32,767、符号なし: 0 &lt;= n &lt;65,535 を =) (SQL_SMALLINT)。 これはマップ<see cref="T:System.Int16" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Text = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可変長文字データ。 最大長は、データ ソースに依存する (SQL_LONGVARCHAR) です。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Time">
+      <MemberSignature Language="C#" Value="Time" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Time = int32(24)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Time" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(SQL_TYPE_TIMES) hhmmss 形式で日付データ。 これはマップ<see cref="T:System.DateTime" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Timestamp">
+      <MemberSignature Language="C#" Value="Timestamp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType Timestamp = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.Timestamp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バイナリ データ (sql_binary 型) のストリーム。 これにマップする<see cref="T:System.Array" />型の<see cref="T:System.Byte" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TinyInt">
+      <MemberSignature Language="C#" Value="TinyInt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType TinyInt = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.TinyInt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定精度が 3 で数値および 0 のスケール (署名: – 128 &lt;= n &lt;= 127 文字で、符号なし: 0&lt;= n &lt;255)(SQL_TINYINT) を = です。 これはマップ<see cref="T:System.Byte" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueIdentifier">
+      <MemberSignature Language="C#" Value="UniqueIdentifier" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType UniqueIdentifier = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.UniqueIdentifier" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定長の GUID (SQL_GUID)。 これはマップ<see cref="T:System.Guid" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VarBinary">
+      <MemberSignature Language="C#" Value="VarBinary" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType VarBinary = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.VarBinary" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可変長バイナリ。 最大値は、ユーザー (SQL_VARBINARY) によって設定されます。 これにマップする<see cref="T:System.Array" />型の<see cref="T:System.Byte" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VarChar">
+      <MemberSignature Language="C#" Value="VarChar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Odbc.OdbcType VarChar = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Odbc.OdbcType.VarChar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームの可変長文字列 (SQL_CHAR)。 これはマップ<see cref="T:System.String" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

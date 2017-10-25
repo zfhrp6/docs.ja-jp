@@ -1,0 +1,423 @@
+<Type Name="EditorPart" FullName="System.Web.UI.WebControls.WebParts.EditorPart">
+  <TypeSignature Language="C#" Value="public abstract class EditorPart : System.Web.UI.WebControls.WebParts.Part" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EditorPart extends System.Web.UI.WebControls.WebParts.Part" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.EditorPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.Part</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.EditorPartDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" /> ゾーン内に存在するコントロールの基底クラスとして機能し、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロールの編集に使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスが使用されるプロパティとメソッドの基本セットを提供する派生クラスによって<xref:System.Web.UI.WebControls.WebParts.EditorPart>Web パーツ コントロール セットとはカスタムによって提供されるコントロール<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールにより、ユーザーが関連付けられている編集<xref:System.Web.UI.WebControls.WebParts.WebPart>レイアウト、外観、プロパティ、動作、またはその他の特性を変更することによって制御します。  
+  
+ 構成される編集のユーザー インターフェイス (UI)<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>含まれているゾーン<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、Web ページが編集モードが表示されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールを派生元となるゾーン内でのみ使用できます、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスなど、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール。  
+  
+ ユーザーが選択できるページが編集モードに入った、後に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを選択したコントロールの動詞メニューを開き、編集動詞をクリックして編集します。 1 つだけ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを一度に編集することができます。  
+  
+ いくつかの派生<xref:System.Web.UI.WebControls.WebParts.EditorPart>次の表に示すように、Web パーツ コントロール セットで、コントロールが用意されています。 これらのコントロールは、ほとんどのアプリケーションに必要なすべての編集機能を提供します。 内のページ永続形式で宣言することは、Web パーツ ページで、これらのコントロールを使用するための一般的な方法、`<zonetemplate>`要素、場所`<zonetemplate>`の子要素、`<asp:editorzone>`要素。 コード例は、このトピックの例」のセクションを参照してください。  
+  
+|コントロールの種類|説明|  
+|---------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.WebParts.AppearanceEditorPart>|そのタイトルのテキスト、高さ、幅、および境界線属性などのプロパティを含む、関連付けられたコントロールの外観を編集します。|  
+|<xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart>|編集できるかどうか、かどうか閉じていること、または別のゾーンに移動するかどうかなど、関連付けられたコントロールの特定の動作を編集します。 このコントロールをページに表示されるは、共有パーソナル化スコープでコントロールが編集されている場合だけです。|  
+|<xref:System.Web.UI.WebControls.WebParts.LayoutEditorPart>|標準または最小化した (折りたたまれている) の状態にあるかどうかや、ゾーンの新機能など、関連付けられたコントロールのレイアウト属性を編集が配置されます。|  
+|<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>|これらのプロパティは、ソース コードで宣言されていた場合は、関連付けられたコントロールのプロパティを編集、`WebBrowsable`属性。|  
+  
+> [!NOTE]
+>  アクセシビリティを向上させるためにすべて、<xref:System.Web.UI.WebControls.WebParts.EditorPart>提供内で Web パーツ コントロール セットの表示を制御する`<fieldset>`要素。 `<fieldset>`要素グループ コントロールでの編集に使用される一連の関連する、指定された<xref:System.Web.UI.WebControls.WebParts.EditorPart>制御、およびそのビジュアル ユーザー エージェント (通常 Web ブラウザーなど) と音声指向のユーザー エージェント (画面読み取りソフトウェアなど) の両方のこれらのコントロール間のタブ付きのナビゲーションを容易にします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.EditorZone>のいくつかのコントロール、 <xref:System.Web.UI.WebControls.WebParts.EditorPart> 、ゾーン、およびカスタムへの参照で宣言されている設定、Web パーツ コントロールからコントロール<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ユーザー設定を含むクラス<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、およびカスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>内のプロパティを編集用のコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_EditorPart_Overview#14](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/displaymodecs.ascx#14)]
+ [!code-aspx-vb[WebParts_EditorPart_Overview#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/displaymodevb.ascx#14)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 参照を宣言型が含まれている、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロールの子を持つ、`<zonetemplate>`要素を Web パーツ コントロール セットの 2 つの宣言型の参照を含む<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 ページを参照するカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを使用して、 `Register` 、アセンブリのディレクティブと`<aspSample:TextDisplayWebPart>`コントロールの要素。  
+  
+ [!code-aspx-csharp[WebParts_EditorPart_Overview#12](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/editorpart_overview_cs.aspx#12)]
+ [!code-aspx-vb[WebParts_EditorPart_Overview#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/editorpart_overview_vb.aspx#12)]  
+  
+ コード例の 3 番目の部分は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のクラス`TextDisplayWebPart`です。 クラスを実装、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスです。 このクラスはコードを含むプライベートの入れ子になった、プライベート クラス<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスに関連付けられている、`TextDisplayWebPart`クラスし、名前付き`TextDisplayEditorPart`します。 として実行時に、`TextDisplayWebPart`制御での編集モードの開始、`TextDisplayWebPart.CreateEditorParts`メソッド、インスタンスの作成、`TextDisplayEditorPart`クラス、およびで表示、<xref:System.Web.UI.WebControls.WebParts.EditorZone>と共に、その他のコントロール<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+ [!code-csharp[WebParts_EditorPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/textdisplaywebpart.cs#1)]
+ [!code-vb[WebParts_EditorPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/textdisplaywebpart.vb#1)]  
+  
+ ブラウザーでページを読み込む、**表示モード**コントロールで、**編集モードの**編集モードに切り替える。 動詞メニュー (下向きの矢印) のタイトル バーをクリックして、`TextDisplayWebPart`を制御して、をクリックして**編集**コントロールを編集します。 編集用の UI が表示されているときに、3 つを確認できます<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、カスタムを含むを編集することができます、`TextDisplayWebPart.FontStyle`プロパティです。 編集 UI にいくつかの変更を加えた場合、**適用**ボタン、ブラウズ モードと編集の変更の効果を確認するページを返すため、ドロップダウン リスト コントロールを使用することができます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタムを作成する<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール、2 つの重要なメソッドをオーバーライドする必要があります。 <see cref="M:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges" />メソッドがエディター コントロールで行われた変更を適用、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />編集されているかを制御します。 <see cref="M:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges" />メソッド、現在の値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />エディター コントロールが編集できるように編集されているを制御します。 これら 2 つの重要なメソッドを使用して取得および設定の値、カスタムの間で<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールと<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが編集されます。  
+  
+ 派生した場合、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />カスタム エディター コントロールを作成するクラス、カスタム コントロールを追加することができます、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />実装することによってゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.IWebEditable" />インターフェイスで、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール、ユーザー コントロール、またはサーバー コントロールです。 詳細とコード例では、次を参照してください。、<see cref="T:System.Web.UI.WebControls.WebParts.IWebEditable" />クラスの概要です。 また、使用例」のコード例が実装する方法を示します<see cref="T:System.Web.UI.WebControls.WebParts.IWebEditable" />カスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EditorPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンス トラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyChanges">
+      <MemberSignature Language="C#" Value="public abstract bool ApplyChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ApplyChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内の値を保存、 <see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" /> 、対応するプロパティに関連付けられたコントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <returns>
+          <see langword="true" />保存のアクション値の場合、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールを<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが成功しなかった場合は (かどうかにエラーが発生する)<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>メソッドは、の重要なメソッド、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 抽象メソッドとして定義されて、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラス、および継承されたコントロールで実装する必要があります。 メソッドの目的は、ユーザーによって入力された値を保存する、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール内の対応するプロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>で参照されているコントロール、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>メソッドは、[ok] または編集のユーザー インターフェイス (UI) の適用の動詞を表すボタンをクリックします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスの概要です。  
+  
+ このコード例の最初の部分の実装を示します、<xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>メソッドにカスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>という名前のクラス`TextDisplayEditorPart`です。 このメソッドは、関連付けられているへの参照を取得`TextDisplayWebPart`制御を使用して、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティです。 値を更新し、`TextDisplayWebPart.FontStyle`プロパティです。  
+  
+ [!code-csharp[WebParts_EditorPart_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/textdisplaywebpart.cs#5)]
+ [!code-vb[WebParts_EditorPart_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/textdisplaywebpart.vb#5)]  
+  
+ コード例の 2 番目の部分を示して 方法、関連付けられている<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`のコレクションを作成関連付けられている<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール (この場合は 1 つだけ<xref:System.Web.UI.WebControls.WebParts.EditorPart>という名前のコントロール`TextDisplayEditorPart`コレクション内) に実装、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドです。 このメソッドが実行されるときに、`TextDisplayWebPart`コントロールが編集モードに入ります。  
+  
+ [!code-csharp[WebParts_EditorPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/textdisplaywebpart.cs#4)]
+ [!code-vb[WebParts_EditorPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/textdisplaywebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />クラスを実装する必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges" />メソッドです。 実装されたメソッドを使用して、関連付けられているコントロールへの参照を取得する、<see cref="P:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit" />プロパティの現在の値でそのコントロールのプロパティを更新し、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Display">
+      <MemberSignature Language="C#" Value="public virtual bool Display { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Display" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorPart.Display" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールができるかどうかを示す値を取得ときに表示される、関連する<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールが編集モードにします。</summary>
+        <value>コントロールを表示するかどうかを示すブール値。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ At 特定の時点で、編集、処理を含むゾーン、<xref:System.Web.UI.WebControls.WebParts.EditorPart>チェックを制御、<xref:System.Web.UI.WebControls.WebParts.EditorPart.Display%2A>コントロールを表示するかどうかを決定するプロパティです。  
+  
+ 2 つのシナリオがある場所、<xref:System.Web.UI.WebControls.WebParts.EditorPart.Display%2A>プロパティから返される`false`と<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールは表示されません。 編集されているコントロールに最初のシナリオで発生する<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart>コントロール。 編集されているコントロールがあるときに、2 番目のシナリオが発生したその<xref:System.Web.UI.WebControls.WebParts.WebPart.AllowEdit%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A>プロパティに設定`true`ユーザー レベルでページのパーソナル化スコープが設定されているとき、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayTitle">
+      <MemberSignature Language="C#" Value="public string DisplayTitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorPart.DisplayTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイトル バーに表示されるタイトルのテキストを表す文字列を取得、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value>コントロールの完全な表示されるタイトルを表す文字列。 既定値は、.NET Framework によって提供される、カルチャ固有の計算される文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.DisplayTitle%2A>プロパティ ベースの現在値を返します<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティまたはコントロールにタイトル、計算値がありません。 計算された値は、タイトルのないコントロールのローカライズ可能なリソースの文字列で構成されます。 値が割り当てられていない場合、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティ、値の<xref:System.Web.UI.WebControls.WebParts.EditorPart.DisplayTitle%2A>プロパティと異なります、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.DisplayTitle%2A>プロパティが、読み取り専用であるために設計のタイトルを設定するこのプロパティを使用して計算されたプロパティを実行時に表示されるタイトルの実際の現在の値を取得するがしないで、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 タイトルを設定するには、ベースを使用<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IDictionary GetDesignModeState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.IDictionary GetDesignModeState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.GetDesignModeState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の状態を取得、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールの親ゾーンです。</summary>
+        <returns><see cref="T:System.Collections.IDictionary" />の現在の状態を持つ、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />を含むゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.GetDesignModeState%2A>メソッドを含むゾーンの状態に関する情報を返します、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 ディクショナリの形式では、状態情報が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基数を呼び出すだけでなく<xref:System.Web.UI.Control.OnPreRender%2A>、メソッド、<xref:System.Web.UI.WebControls.WebParts.EditorPart.OnPreRender%2A>メソッドも確認、<xref:System.Web.UI.WebControls.WebParts.EditorPart.Display%2A>プロパティです。 値の場合`false`、されるコントロールは表示されません、つまり、<xref:System.Web.UI.Control.Visible%2A>プロパティに設定されても`false`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロールが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override void SetDesignModeState (System.Collections.IDictionary data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDesignModeState(class System.Collections.IDictionary data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.SetDesignModeState(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Collections.IDictionary" />ゾーンを表示するための状態データを格納しています。</param>
+        <summary>現在のデザイン モードの状態の特性を適用<see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />を含むゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncChanges">
+      <MemberSignature Language="C#" Value="public abstract void SyncChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SyncChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティ値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />それに関連するためのコントロール<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>メソッドは、の重要なメソッド、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 抽象メソッドとして定義されて、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラス、および継承されたコントロールで実装する必要があります。 メソッドの目的は、の現在の値を取得する、<xref:System.Web.UI.WebControls.WebParts.WebPart>で参照されているコントロール、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティ、フィールドを更新し、<xref:System.Web.UI.WebControls.WebParts.EditorPart>ユーザーが編集できるように、それらの値を持つコントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>メソッドが呼び出されるたびに、関連する値<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを変更した可能性があります。 すべて<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>ゾーン コントロールの呼び出しが含まれて、<xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>メソッドを呼び出した後すぐに、<xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>メソッド、ように内の値、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールは、常に、関連する値を持つ同期<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 別のケースで、<xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>メソッドが呼び出された場合は、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが編集モードを開始しています。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>後にメソッドが呼び出されない、<xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>メソッドの場合はそのメソッドを返します`false`場合は、エラーが発生したため、します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.EditorPart>クラスの概要です。  
+  
+ このコード例の最初の部分の実装を示します、<xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>メソッドにカスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>という名前のクラス`TextDisplayEditorPart`です。 このメソッドは、関連付けられているへの参照を取得`TextDisplayWebPart`制御を使用して、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティです。 値を取得し、`TextDisplayWebPart.FontStyle`プロパティ、および、ドロップダウン リスト コントロールで選択されている項目の更新プログラム (により参照されている、`TextDisplayEditorPart.PartContentFontStyle`プロパティ)、カスタム<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+ [!code-csharp[WebParts_EditorPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/textdisplaywebpart.cs#6)]
+ [!code-vb[WebParts_EditorPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/textdisplaywebpart.vb#6)]  
+  
+ コード例の 2 番目の部分を示して 方法、関連付けられている<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`のコレクションを作成関連付けられている<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール (この場合は 1 つだけ<xref:System.Web.UI.WebControls.WebParts.EditorPart>という名前のコントロール`TextDisplayEditorPart`コレクション内) に実装、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドです。 このメソッドが実行されるときに、`TextDisplayWebPart`コントロールが編集モードに入ります。  
+  
+ [!code-csharp[WebParts_EditorPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_EditorPart_Overview/CS/textdisplaywebpart.cs#4)]
+ [!code-vb[WebParts_EditorPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_EditorPart_Overview/VB/textdisplaywebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />クラスを実装する必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges" />メソッドです。 実装されたメソッドを使用して、関連付けられているコントロールへの参照を取得する、<see cref="P:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit" />プロパティ、および 更新プログラム、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />から、関連付けられているプロパティ値を持つコントロール<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartManager">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorPart.WebPartManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />現在の Web ページに関連付けられているコントロール。</summary>
+        <value>参照、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />  ページでします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールへの参照が必要、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>インスタンスため、現在のパーソナル化スコープの値を決定するページを確認する必要があります、<xref:System.Web.UI.WebControls.WebParts.EditorPart.Display%2A>プロパティです。 チェックしてパーソナル化スコープが決定されます、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope%2A>プロパティからアクセスできる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartToEdit">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPart WebPartToEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart WebPartToEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />現在編集されているコントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ですが、現在編集モードでします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (またはその他のサーバーまたはユーザー コントロール) を現在の値に対応する編集されている、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart%2A>プロパティです。 1 つだけ<xref:System.Web.UI.WebControls.WebParts.WebPart>、時を使用して、コントロールが編集モードでは、コントロールを編集することができます、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティがそのコントロールへの参照を提供します。  
+  
+ 後に、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>ゾーンが追加、<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロールのコントロールのコレクションに、値を割り当てます、独自の<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase.WebPartToEdit%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.EditorPart.WebPartToEdit%2A>その 2 つの重要なメソッド--で特にプロパティ<xref:System.Web.UI.WebControls.WebParts.EditorPart.ApplyChanges%2A>と<xref:System.Web.UI.WebControls.WebParts.EditorPart.SyncChanges%2A>--を取得し、関連付けられたコントロールのプロパティ値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.EditorZoneBase Zone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.EditorZoneBase Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.EditorPart.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.EditorZoneBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />を含むゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.EditorZoneBase" />コントロールを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただし、<xref:System.Web.UI.WebControls.WebParts.EditorPart.Zone%2A>プロパティが読み取り専用の場合を含むゾーンのオブジェクトへの参照を提供、<xref:System.Web.UI.WebControls.WebParts.EditorPart>制御、およびするプログラムを変更できますゾーン自体のプロパティ値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,59 @@
+<Type Name="IUriContext" FullName="System.Windows.Markup.IUriContext">
+  <TypeSignature Language="C#" Value="public interface IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IUriContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationCore, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションのコンテキストを使って、指定された相対 URI を絶対 URI に解決するサービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.IUriContext>URI 形式のプロパティを完了できない可能性がある特定のアプリケーション コンテキストを使用して型コンバーターを有効にするサービスとして実装されます。  
+  
+ 型コンバーターおよびマークアップ拡張機能を照会できます<xref:System.Windows.Markup.IUriContext>XAML オブジェクト ライターは、値変換の動作を呼び出すときは、XAML オブジェクト ライターによって提供されるサービスのコンテキストでサービスとして。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ <xref:System.Windows.Markup.IUriContext>値の変換とサービス コンテキストだけではなくです。 UI 要素または包含をサポートするその他のクラスのクラスのロジックを実装も<xref:System.Windows.Markup.IUriContext>子要素の基本 URI については、呼び出しまたは保存できる認識されているパターンとして、サービスのベース URI を XAML から取得した、ルート要素の解析します。  
+  
+ .NET Framework の以前のバージョンでは、このインターフェイスは PresentationCore WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.IUriContext>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ シナリオ例<xref:System.Windows.Markup.IUriContext>WPF 内に存在します。  
+  
+ 値コンバーターの例として、<xref:System.Windows.Media.FontFamilyConverter>クラスなどのプロパティに対して提供されている相対 URI を使用できます<xref:System.Windows.Controls.Page.FontFamily%2A?displayProperty=nameWithType>場合は、<xref:System.Windows.Markup.IUriContext>上のサービスとして使用できますが、<xref:System.ComponentModel.ITypeDescriptorContext>入力します。  
+  
+ 要素の文字の例として<xref:System.Windows.Documents.Hyperlink>実装<xref:System.Windows.Markup.IUriContext>、次を変更できるように、解析時にベース URI の値を渡すことができます、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション コンテキストのベース URI を取得または設定します。</summary>
+        <value>アプリケーション コンテキストのベース URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

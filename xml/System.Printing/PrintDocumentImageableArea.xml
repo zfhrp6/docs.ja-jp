@@ -1,0 +1,155 @@
+<Type Name="PrintDocumentImageableArea" FullName="System.Printing.PrintDocumentImageableArea">
+  <TypeSignature Language="C#" Value="public class PrintDocumentImageableArea" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintDocumentImageableArea extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintDocumentImageableArea" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>用紙 (またはその他のメディア) のサイズを指定のサイズ、イメージ可能領域および可能領域の場所。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのレーザー プリンターとインク ジェット プリンターはふちなし印刷をサポートしません。 余白を取得中に用紙をプリンターの部分からトナーを防ぐために、用紙の端を離れる必要があります。 ふちなし印刷をサポートしないプリンター、用紙のイメージの領域は、用紙の寸法よりも小さいです。  
+  
+ 使用して<xref:System.Printing.PrintDocumentImageableArea>オブジェクトをパラメーターとして、主に、<xref:System.Printing.PrintQueue.CreateXpsDocumentWriter%2A>メソッドです。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExtentHeight">
+      <MemberSignature Language="C#" Value="public double ExtentHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.ExtentHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能領域の高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />原点からの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintDocumentImageableArea.ExtentHeight%2A>プロパティは、可能領域の左下隅に (画像領域の '配信元' とも呼ばれます) 可能領域の左上隅からの距離を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentWidth">
+      <MemberSignature Language="C#" Value="public double ExtentWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.ExtentWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能領域の幅を取得します。</summary>
+        <value>A<see cref="T:System.Double" />原点からの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintDocumentImageableArea.ExtentWidth%2A>プロパティは、可能領域の右上隅に (画像領域の '配信元' とも呼ばれます) 可能領域の左上隅からの距離を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaSizeHeight">
+      <MemberSignature Language="C#" Value="public double MediaSizeHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MediaSizeHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.MediaSizeHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>用紙またはメディアの高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />左下隅に、ページの左上隅からの距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaSizeWidth">
+      <MemberSignature Language="C#" Value="public double MediaSizeWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MediaSizeWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.MediaSizeWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>用紙またはメディアの幅を取得します。</summary>
+        <value>A<see cref="T:System.Double" />右上隅に、ページの左上隅からの距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginHeight">
+      <MemberSignature Language="C#" Value="public double OriginHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OriginHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.OriginHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの上端に最も近いポイントに (画像領域の '配信元' とも呼ばれます) 可能領域の左上隅からの距離を取得します。</summary>
+        <value>A <see cref="T:System.Double" /> (画像領域の '配信元' とも呼ばれます) 可能領域の左上隅からページの上端に最も近いポイントへの間隔 (ピクセル単位の 1/96 インチ) を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginWidth">
+      <MemberSignature Language="C#" Value="public double OriginWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OriginWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintDocumentImageableArea.OriginWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Origin 幅を取得します (可能領域の「発生元」とも呼ばれます) 可能領域の左上隅には、ページ左端からの距離であります。</summary>
+        <value>A<see cref="T:System.Double" />を表す、origin 幅 (ピクセル単位の 1/96 インチ)、(画像領域の「発生元」とも呼ばれます) 可能領域の左上隅には、ページ左端からの距離であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

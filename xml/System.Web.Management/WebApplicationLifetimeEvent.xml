@@ -1,0 +1,192 @@
+<Type Name="WebApplicationLifetimeEvent" FullName="System.Web.Management.WebApplicationLifetimeEvent">
+  <TypeSignature Language="C#" Value="public class WebApplicationLifetimeEvent : System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebApplicationLifetimeEvent extends System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebApplicationLifetimeEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebManagementEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションの有効期間中に重大なイベントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ アプリケーションの有効期間のイベントには、アプリケーションの起動などのイベントとシャット ダウン イベントが含まれます。 アプリケーションが終了した場合は、関連するイベント メッセージのフィールドを表示して理由を確認できます。  
+  
+ ときに、<xref:System.Web.Management.WebApplicationLifetimeEvent>インスタンスが発生すると、アプリケーションの有効期間イベントのパフォーマンス カウンターを更新 ASP.NET 正常性の監視します。 追加することによってこれらのイベント ログに記録できます、<xref:System.Web.Management.WebApplicationLifetimeEvent>オブジェクトを`rules`のサブセクション、`healthMonitoring`次の例のように、構成ファイルのセクションです。  
+  
+```  
+<rules>  
+  <add name="Application Events"  
+    eventName="Application Lifetime Events"  
+    provider="EventLogProvider"  
+    profile="Default"  
+    minInterval="00:01:00" />  
+</rules>  
+  
+```  
+  
+ アプリケーションの有効期間イベントのパフォーマンス カウンターには、ASP.NET の有効期間のすべてのイベントの合計が含まれています。 システム モニター (PerfMon) には、このパフォーマンス カウンターを表示する、**カウンターの追加**ウィンドウ選択**ASP.NET**から、**パフォーマンス オブジェクト**ドロップダウン リスト。 選択、**アプリケーションの有効期間イベント**パフォーマンス カウンター、およびをクリックして、**追加**ボタンをクリックします。 詳細については、「を使用して ASP.NET アプリケーションをシステム モニター (PerfMon)」を参照してください[MSDN](http://go.microsoft.com/fwlink/?linkid=37118)です。 標準でログに記録するイベントを許可するかどうかは<xref:System.Web.Management.EventLogWebEventProvider>を選択してイベント ビューアーで表示できます、**アプリケーション**ログ。 詳細については、次を参照してください。[イベント ビューアー](http://go.microsoft.com/fwlink/?linkid=24845&clcid=0x409) TechNet の Windows Server 2003 のドキュメントにします。  
+  
+> [!CAUTION]
+>  <xref:System.Web.Management.WebApplicationLifetimeEvent>オブジェクトは、大量のイベント ログを記録するリソースを消費して、システムの速度が低下する可能性があります。 場合は上書きするには、その他のイベントが発生する場合も、<xref:System.Web.Management.EventLogWebEventProvider>大量のイベントと、方法によりクラスのイベント ログの動作です。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebApplicationLifetimeEvent>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する方法を示しています、<xref:System.Web.Management.WebApplicationLifetimeEvent>カスタム イベントを作成するクラス。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationLifetimeEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/CS/webapplicationlifetimeevent.cs#1)]
+ [!code-vb[System.Web.Management.WebApplicationLifetimeEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/VB/webapplicationlifetimeevent.vb#1)]  
+  
+ 次の構成ファイルの抜粋を構成する方法を示しています、`healthMonitoring`を追加する構成ファイルのセクション、 `SampleWebApplicationLifetimeEvent` ASP.NET の稼働状況の監視システムを上記で定義されたコード。 システムにイベントを追加するには、新しいエントリを追加することでイベントを定義する必要があります、`eventMappings`セクションし、新しいエントリを追加することによって、イベントをプロバイダーに割り当てる、`rules`セクションです。  
+  
+```  
+<healthMonitoring  
+  enabled="true"  
+  heartBeatInterval="0">  
+  
+    <eventMappings>  
+       <clear />  
+       <!-- Configure the application lifetime event -->  
+       <!-- object to handle the Web application events. -->  
+       <add name="SampleApplicationLifetimeEvents"  
+         type="System.Web.Management.SampleWebApplicationLifetimeEvent,  
+         System.Web,Version=2.0.3600.0,  
+         Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a" />  
+     </eventMappings>  
+  
+    <rules>  
+      <clear/>  
+       // Configure the connection between the   
+       // application lifetime event object   
+       // and the provider that must process it.  
+       <add name="Custom Application Events"  
+         eventName="SampleApplicationLifetimeEvents"  
+         provider="EventLogProvider"  
+         profile="Default"  
+         minInterval="00:01:00" />  
+    </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>表示するため、カスタム イベントの情報を書式設定と上書き、<see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" />メソッドではなく、<see cref="Overload:System.Web.Management.WebBaseEvent.ToString" />メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebApplicationLifetimeEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebApplicationLifetimeEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントに関連付けられているメッセージ。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebApplicationLifetimeEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.WebApplicationLifetimeEvent>がクラスでは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+> [!NOTE]
+>  <xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebApplicationLifetimeEvent>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A> ASP.NET カスタムの正常性イベント。 このコード例の主な目的を使用する正しい構文を表示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationLifetimeEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/CS/webapplicationlifetimeevent.cs#2)]
+ [!code-vb[System.Web.Management.WebApplicationLifetimeEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/VB/webapplicationlifetimeevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebApplicationLifetimeEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebApplicationLifetimeEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントに関連付けられているメッセージ。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebApplicationLifetimeEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.WebApplicationLifetimeEvent>がクラスでは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+> [!NOTE]
+>  <xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebApplicationLifetimeEvent>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.Management.WebApplicationLifetimeEvent.%23ctor%2A> ASP.NET カスタムの正常性イベント。 このコード例の主な目的を使用する正しい構文を表示します。  
+  
+ [!code-csharp[System.Web.Management.WebApplicationLifetimeEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/CS/webapplicationlifetimeevent.cs#3)]
+ [!code-vb[System.Web.Management.WebApplicationLifetimeEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebApplicationLifetimeEvent/VB/webapplicationlifetimeevent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebApplicationLifetimeEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パフォーマンス カウンターをインクリメントするには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

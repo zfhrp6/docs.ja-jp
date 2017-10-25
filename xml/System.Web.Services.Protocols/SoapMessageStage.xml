@@ -1,0 +1,143 @@
+<Type Name="SoapMessageStage" FullName="System.Web.Services.Protocols.SoapMessageStage">
+  <TypeSignature Language="C#" Value="public enum SoapMessageStage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SoapMessageStage extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapMessageStage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>SOAP メッセージの処理ステージを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、SOAP を使用して Web サービスを呼び出すための機能拡張機構を提供します。 機能拡張メカニズムを中心に、<xref:System.Web.Services.Protocols.SoapExtension>検査またはメッセージ処理、クライアントまたはサーバーのいずれかの特定の段階でメッセージを変更することができます。 この列挙体の処理ステージを指定する、<xref:System.Web.Services.Protocols.SoapMessage>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、SOAP 拡張機能は、実装の一部、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>メソッドです。 内で、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A>メソッドは、処理、<xref:System.Web.Services.Protocols.SoapMessage>に固有の処理、<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+ [!code-cpp[SoapMessageState#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapMessageState/CPP/SoapMessageState.cpp#1)]
+ [!code-csharp[SoapMessageState#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapMessageState/CS/soapmessagestate.cs#1)]
+ [!code-vb[SoapMessageState#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapMessageState/VB/soapmessagestate.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AfterDeserialize">
+      <MemberSignature Language="C#" Value="AfterDeserialize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapMessageStage AfterDeserialize = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapMessageStage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステージ直後、<see cref="T:System.Web.Services.Protocols.SoapMessage" />オブジェクトに SOAP メッセージから逆シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に<xref:System.Web.Services.Protocols.SoapClientMessage>処理、AfterDeserialize ステージが発生した XML Web サービス メソッドの呼び出しからの応答を含む SOAP メッセージが、オブジェクトには、クライアントの逆シリアル化された結果を受信する前に、逆シリアル化された後にします。  
+  
+ 中に<xref:System.Web.Services.Protocols.SoapServerMessage>処理、AfterDeserialize ステージ後に発生 XML Web サービス メソッドの呼び出しを表す SOAP メッセージを含むネットワーク要求が、オブジェクトに逆シリアル化が、サービス メソッドが呼び出され、そのオブジェクトを表す XML Web メソッドの前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterSerialize">
+      <MemberSignature Language="C#" Value="AfterSerialize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapMessageStage AfterSerialize = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapMessageStage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステージ直後、<see cref="T:System.Web.Services.Protocols.SoapMessage" />はシリアル化、ただし、SOAP の前に、ネットワーク経由でメッセージを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に<xref:System.Web.Services.Protocols.SoapClientMessage>処理、AfterSerialize ステージが発生した後、クライアントが、XML Web サービス メソッドを呼び出すと、パラメーターは、XML にシリアル化が SOAP の前にその XML を含むメッセージは、ネットワークを介して送信されます。  
+  
+ 中に<xref:System.Web.Services.Protocols.SoapServerMessage>処理、AfterSerialize ステージが発生した XML Web サービス メソッドが返すおよび戻り値が XML にシリアル化されますが、SOAP の前にその XML を含むメッセージは、ネットワークを介して送信後にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeDeserialize">
+      <MemberSignature Language="C#" Value="BeforeDeserialize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapMessageStage BeforeDeserialize = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapMessageStage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステージは、直前に、<see cref="T:System.Web.Services.Protocols.SoapMessage" />がオブジェクトに、ネットワーク経由で送信される SOAP メッセージから逆シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に<xref:System.Web.Services.Protocols.SoapClientMessage>処理、BeforeDeserialize ステージが発生する後 XML Web サービス メソッドの呼び出しからネットワークの応答を受信すると、オブジェクトに逆シリアル化メッセージを含む SOAP 応答の直前にします。  
+  
+ 中に<xref:System.Web.Services.Protocols.SoapServerMessage>処理、BeforeDeserialize ステージ後に発生では、Web サーバーがオブジェクトに逆シリアル化される SOAP メッセージの前に、XML Web サービス メソッドの呼び出しの SOAP メッセージを含むネットワーク要求を受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeSerialize">
+      <MemberSignature Language="C#" Value="BeforeSerialize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapMessageStage BeforeSerialize = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapMessageStage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直前の段階、<see cref="T:System.Web.Services.Protocols.SoapMessage" />シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に<xref:System.Web.Services.Protocols.SoapClientMessage>処理、BeforeSerialize の段階が発生した後、クライアントが、XML Web サービス メソッドを呼び出すが、シリアル化される呼び出しの前にします。  
+  
+ 中に<xref:System.Web.Services.Protocols.SoapServerMessage>サービス メソッドから返されるが戻り値をシリアル化され、ネットワーク上を送信する前に、クライアントに戻す処理、BeforeSerialize の段階は、XML Web への呼び出し後に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

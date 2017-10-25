@@ -1,0 +1,1081 @@
+<Type Name="Cookie" FullName="System.Net.Cookie">
+  <TypeSignature Language="C#" Value="public sealed class Cookie" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Cookie extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Cookie" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>3.9.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クッキーを管理するために使用される一連のプロパティおよびメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Cookie>クラスは、HTTP 応答で受信される cookie に関する情報を取得するクライアント アプリケーションによって使用されます。 HTTP 応答ヘッダーの解析中に、次の cookie の形式がサポートされている: 元の Netscape 仕様、RFC 2109 および RFC 2965 です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Net.Cookie>を参照してください、さまざまな<xref:System.Net.Cookie>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、URL に要求を送信し、応答で返されたクッキーを表示します。  
+  
+ [!code-cpp[NCLCookies#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#1)]
+ [!code-csharp[NCLCookies#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#1)]
+ [!code-vb[NCLCookies#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cookie ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Cookie" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、空の文字列を使用して、既定値にすべてのフィールドを初期化します ("") の`name`、 `value`、 `path`、および`domain`です。 なおには、少なくとも、<xref:System.Net.Cookie.Name%2A>のインスタンスを使用する前にプロパティを初期化する必要があります、<xref:System.Net.Cookie>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cookie (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Net.Cookie" />です。 内に次の文字を使用しないでください<c>名前</c>: 等号 (=)、セミコロン、コンマ、改行文字 (\n)、戻り値 (\r)、タブ (\t)、および空白文字。 ドル記号 (「$」) は、最初の文字にすることはできません。</param>
+        <param name="value">値、<see cref="T:System.Net.Cookie" />です。 内に次の文字を使用しないでください<c>値</c>: セミコロン、カンマします。</param>
+        <summary>指定した <see cref="T:System.Net.Cookie" /> および <see cref="P:System.Net.Cookie.Name" /> を使用して、<see cref="P:System.Net.Cookie.Value" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、`value`パラメーターは空の文字列 ("") です。  
+  
+ `value`のパラメーター、<xref:System.Net.Cookie>することはできません、`null`参照 (Visual Basic では Nothing) です。 セミコロン (「;」) およびコンマ (「,」) 文字は予約されているしで渡されることはできません、`value`パラメーターに文字列が渡されていない限り、`value`パラメーターが二重引用符で囲まれています。 次の例のコンス トラクターは成功しますが、これを追加しようとすると<xref:System.Net.Cookie>を<xref:System.Net.CookieContainer>インスタンスを使用、<xref:System.Net.CookieContainer.Add(System.Net.Cookie)>または<xref:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)>操作は失敗して、例外をスローします。  
+  
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "123,456");
+ cookie.Domain = "https://contoso.com";
+ new CookieContainer().Add(cookie);
+ ```  
+  
+ ただし、これらの特殊文字をエスケープで、次のコンス トラクターで作成、<xref:System.Net.Cookie>に追加できる、<xref:System.Net.CookieContainer>インスタンス。  
+ 
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "\"123,456\"");
+ cookie.Domain = "https://contoso.com";
+ new CookieContainer().Add(cookie);
+ ```
+  
+ コンマ文字は、同じ行に個別の cookie を区切る区切り記号として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.CookieException"><paramref name="name" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターは長さが 0 です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターに無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターは<see langword="null" />します。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターに無効な文字を引用符で囲まれていない文字列が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cookie (string name, string value, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string value, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Net.Cookie" />です。 内に次の文字を使用しないでください<c>名前</c>: 等号 (=)、セミコロン、コンマ、改行文字 (\n)、戻り値 (\r)、タブ (\t)、および空白文字。 ドル記号 (「$」) は、最初の文字にすることはできません。</param>
+        <param name="value">値、<see cref="T:System.Net.Cookie" />です。 内に次の文字を使用しないでください<c>値</c>: セミコロン、カンマします。</param>
+        <param name="path">この配信元サーバー上の Uri のサブセット<see cref="T:System.Net.Cookie" />適用されます。 既定値は「/」です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cookie" />と指定したクラス<see cref="P:System.Net.Cookie.Name" />、 <see cref="P:System.Net.Cookie.Value" />、および<see cref="P:System.Net.Cookie.Path" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、`path`パラメーターは空の文字列 ("") です。  
+  
+ `value`のパラメーター、<xref:System.Net.Cookie>することはできません、`null`参照 (Visual Basic では Nothing) です。 セミコロン (「;」) およびコンマ (「,」) 文字は予約されているしで渡されることはできません、`value`パラメーターに文字列が渡されていない限り、`value`パラメーターが二重引用符で囲まれています。 次の例のコンス トラクターは成功しますが、これを追加しようとすると<xref:System.Net.Cookie>を<xref:System.Net.CookieContainer>インスタンスを使用、<xref:System.Net.CookieContainer.Add(System.Net.Cookie)>または<xref:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)>操作は失敗して、例外をスローします。  
+  
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "123,456", "");
+ cookie.Domain = "https://contoso.com";
+ new CookieContainer().Add(cookie);
+ ```  
+  
+ ただし、これらの特殊文字をエスケープで、次のコンス トラクターで作成、<xref:System.Net.Cookie>に追加できる、<xref:System.Net.CookieContainer>インスタンス。  
+ 
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "\"123,456\"", "");
+ cookie.Domain = "https://contoso.com";
+ new CookieContainer().Add(cookie);
+ ``` 
+  
+ コンマ文字は、同じ行に個別の cookie を区切る区切り記号として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.CookieException"><paramref name="name" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターは長さが 0 です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターに無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターは<see langword="null" />します。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターに無効な文字を引用符で囲まれていない文字列が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cookie (string name, string value, string path, string domain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string value, string path, string domain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="domain" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Net.Cookie" />です。 内に次の文字を使用しないでください<c>名前</c>: 等号 (=)、セミコロン、コンマ、改行文字 (\n)、戻り値 (\r)、タブ (\t)、および空白文字。 ドル記号 (「$」) は、最初の文字にすることはできません。</param>
+        <param name="value">値、<see cref="T:System.Net.Cookie" />オブジェクト。 内に次の文字を使用しないでください<c>値</c>: セミコロン、カンマします。</param>
+        <param name="path">この配信元サーバー上の Uri のサブセット<see cref="T:System.Net.Cookie" />適用されます。 既定値は「/」です。</param>
+        <param name="domain">この省略可能なインターネット ドメイン<see cref="T:System.Net.Cookie" />が無効です。 既定値は、ホスト<see cref="T:System.Net.Cookie" />から受信しました。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Cookie" />と指定したクラス<see cref="P:System.Net.Cookie.Name" />、 <see cref="P:System.Net.Cookie.Value" />、 <see cref="P:System.Net.Cookie.Path" />、および<see cref="P:System.Net.Cookie.Domain" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値を`domain`と`path`パラメーターは空の文字列を使用して ("") です。  
+  
+ `value`のパラメーター、<xref:System.Net.Cookie>することはできません、`null`参照 (Visual Basic では Nothing) です。 セミコロン (「;」) およびコンマ (「,」) 文字は予約されているしで渡されることはできません、`value`パラメーターに文字列が渡されていない限り、`value`パラメーターが二重引用符で囲まれています。 次の例のコンス トラクターは成功しますが、これを追加しようとすると<xref:System.Net.Cookie>を<xref:System.Net.CookieContainer>インスタンスを使用、<xref:System.Net.CookieContainer.Add(System.Net.Cookie)>または<xref:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)>操作は失敗して、例外をスローします。  
+  
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "123,456", "", "https://contoso.com");
+ new CookieContainer().Add(cookie);
+ ```  
+  
+ ただし、これらの特殊文字をエスケープで、次のコンス トラクターで作成、<xref:System.Net.Cookie>に追加できる、<xref:System.Net.CookieContainer>インスタンス。  
+ 
+ ```
+ System.Net.Cookie cookie = new System.Net.Cookie("contoso", "\"123,456\"", "", "https://contoso.com");
+ new CookieContainer().Add(cookie);
+ ```  
+  
+ コンマ文字は、同じ行に個別の cookie を区切る区切り記号として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.CookieException"><paramref name="name" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターは長さが 0 です。  
+  
+ または  
+  
+ <paramref name="name" />パラメーターに無効な文字が含まれています。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターは<see langword="null" />します。  
+  
+ または  
+  
+ <paramref name="value" />パラメーターに無効な文字を引用符で囲まれていない文字列が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Comment">
+      <MemberSignature Language="C#" Value="public string Comment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comment" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Comment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に、サーバーを追加できますされるコメントを<see cref="T:System.Net.Cookie" />です。</summary>
+        <value>このオプションのコメントをドキュメントの使用法<see cref="T:System.Net.Cookie" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントは、サーバーによって追加される情報のオプションのコメントを検査できます。 たとえば、サーバーは、プライバシー ポリシーまたは意図したもの使用するような問題に関する情報を含めることがします。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommentUri">
+      <MemberSignature Language="C#" Value="public Uri CommentUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CommentUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.CommentUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で、サーバーが提供できる URI コメント、<see cref="T:System.Net.Cookie" />です。</summary>
+        <value>この URI 参照の使用目的を表す省略可能なコメント<see cref="T:System.Net.Cookie" />です。 値は、URI の形式に準拠する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URI が、サーバーでの使用方法などの省略可能な情報を提供できる、<xref:System.Net.Cookie>です。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Discard">
+      <MemberSignature Language="C#" Value="public bool Discard { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Discard" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Discard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は、server によって破棄フラグを設定します。</summary>
+        <value>
+          <see langword="true" />クライアントが破棄する場合、 <see cref="T:System.Net.Cookie" /> 、現在のセッションの最後にそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`true`、このプロパティを保存しないようにクライアント アプリケーションに指示、<xref:System.Net.Cookie>ユーザーのハード_ディスク上のセッションが終了するとします。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象の URI を設定、<see cref="T:System.Net.Cookie" />が無効です。</summary>
+        <value>対象の URI、<see cref="T:System.Net.Cookie" />が無効です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーは、独自の URI 以外のドメインを示すことはできません。 ただし、ドメイン内の 1 つ以上のサーバーを示します。 既定値は、この cookie がから受信されたホストです。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand">参照、<see cref="T:System.Net.Cookie" />です。</param>
+        <summary><see cref="M:System.Object.Equals(System.Object)" /> メソッドをオーバーライドします。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="T:System.Net.Cookie" />と等しい<paramref name="comparand" />です。 2 つ<see cref="T:System.Net.Cookie" />インスタンスが等しい場合は、 <see cref="P:System.Net.Cookie.Name" />、 <see cref="P:System.Net.Cookie.Value" />、 <see cref="P:System.Net.Cookie.Path" />、 <see cref="P:System.Net.Cookie.Domain" />、および<see cref="P:System.Net.Cookie.Version" />プロパティが等しい。 <see cref="P:System.Net.Cookie.Name" />および<see cref="P:System.Net.Cookie.Domain" />文字列の比較は区別されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="public bool Expired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Expired" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Expired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在の状態、<see cref="T:System.Net.Cookie" />です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Net.Cookie" />が、それ以外の有効期限が切れた<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 期限切れの cookie、受信した場合は、クライアント アプリケーションによって破棄する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expires">
+      <MemberSignature Language="C#" Value="public DateTime Expires { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Expires" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Expires" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の有効期限の日付と時刻、<see cref="T:System.Net.Cookie" />として、<see cref="T:System.DateTime" />です。</summary>
+        <value>有効期限の日付と時刻、<see cref="T:System.Net.Cookie" />として、<see cref="T:System.DateTime" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Net.Cookie.Expires%2A>プロパティを<xref:System.DateTime>このセッション<xref:System.Net.Cookie>、これは、既定値です。  
+  
+ <xref:System.DateTimeKind>プロパティ<xref:System.Net.Cookie.Expires%2A>かどうかを使用する、<xref:System.Net.Cookie>設定されている<xref:System.DateTimeKind>または<xref:System.DateTimeKind>です。 場合、<xref:System.DateTimeKind>プロパティに設定されている<xref:System.DateTimeKind>、し<xref:System.DateTimeKind>と見なされます。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Object.GetHashCode" /> メソッドをオーバーライドします。</summary>
+        <returns>このインスタンスの 32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ テーブル内のキーとして使用されるクラスは、このメソッドを独自のハッシュ コードを生成するハッシュ テーブル内のキーとして使用されるオブジェクトが必要なためこのオーバーライドを指定しなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpOnly">
+      <MemberSignature Language="C#" Value="public bool HttpOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.HttpOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページ スクリプトまたはその他のアクティブなコンテンツがこの cookie にアクセスできるかどうかを判断します。</summary>
+        <value>ページ スクリプトまたはその他のアクティブなコンテンツがこの cookie にアクセスできるかどうかを決定するブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`、ページ スクリプトまたはその他のアクティブなコンテンツがこの cookie にアクセスできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Net.Cookie" />です。</summary>
+        <value><see cref="T:System.Net.Cookie" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Cookie.Name%2A> プロパティは、<xref:System.Net.Cookie> クラスのインスタンスを使用する前に初期化される必要があります。  
+  
+ 次の文字は予約されており、この属性値は使用できません: 等号 (=)、セミコロン、コンマ、改行 (\n)、戻り値 (\r)、タブ (\t)、および空白文字。 ドル記号 ($) は最初の文字として使用できません。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.CookieException">設定操作は指定された値<see langword="null" />または空の文字列  
+  
+ \- または  
+  
+ 設定操作に指定された値には、無効な文字が含まれています。 内に次の文字を使用しないでください、<see cref="P:System.Net.Cookie.Name" />プロパティ: 等号 (=)、セミコロン、コンマ、改行文字 (\n)、戻り値 (\r)、タブ (\t)、および空白文字。 ドル記号 (「$」) は、最初の文字にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Uri を<see cref="T:System.Net.Cookie" />適用されます。</summary>
+        <value>Uri、<see cref="T:System.Net.Cookie" />適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Cookie.Path%2A>プロパティは、この配信元サーバーの Uri のサブセットを指定<xref:System.Net.Cookie>適用されます。 このプロパティが指定されていない場合、この<xref:System.Net.Cookie>は元のサーバーまたはサーバー上のすべてのページに送信されます。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public string Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または TCP ポートの一覧の設定、<see cref="T:System.Net.Cookie" />に適用されます。</summary>
+        <value>一連の TCP ポートを<see cref="T:System.Net.Cookie" />に適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、このポートを制限<xref:System.Net.Cookie>送信される可能性があります。 既定値は、制限がないことを示します。 空の文字列に設定 ("")、HTTP 応答で使用するポートを制限します。 それ以外の場合、値は、二重引用符で囲まれた文字列をコンマで区切られたポート値を含む場合があります。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.CookieException">設定操作に指定された値は、解析できませんでしたまたは二重引用符で囲まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Secure">
+      <MemberSignature Language="C#" Value="public bool Secure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Secure" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Secure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレベルのセキュリティを設定、<see cref="T:System.Net.Cookie" />です。</summary>
+        <value>
+          <see langword="true" />クライアントがそれらの要求がセキュリティで保護されたハイパー テキスト転送プロトコル (HTTPS); を使用する場合、後続の要求で cookie を返す場合にのみがある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際には、このプロパティが`true`https:// 要求でのみこの cookie を送信することがあります。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeStamp">
+      <MemberSignature Language="C#" Value="public DateTime TimeStamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeStamp" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.TimeStamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時刻を取得しますとして cookie が発行されて、<see cref="T:System.DateTime" />です。</summary>
+        <value>Cookie のとして発行された時、<see cref="T:System.DateTime" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは読み取り専用プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cookie.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Object.ToString" /> メソッドをオーバーライドします。</summary>
+        <returns>この文字列表現を返します<see cref="T:System.Net.Cookie" />HTTP クッキーに含めるために適切なオブジェクト: 要求ヘッダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の正確な形式は、RFC に準拠しているこの cookie をによって異なります。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返されるクッキーの文字列値を表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#4)]
+ [!code-csharp[NCLCookies#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#4)]
+ [!code-vb[NCLCookies#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Net.Cookie.Value" /> の <see cref="T:System.Net.Cookie" /> を取得または設定します。</summary>
+        <value><see cref="P:System.Net.Cookie.Value" /> の <see cref="T:System.Net.Cookie" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Cookie.Value%2A>の<xref:System.Net.Cookie>することはできません`null`です。 場合、`null`値がこのプロパティに割り当てられている、空の文字列に置き換えられます。 
+
+ コンマ、セミコロンは、このプロパティの値では使用できませんの予約文字です。 このプロパティに無効な文字を割り当てることで例外をスローしませんこれを追加しようとすると、<xref:System.Net.Cookie>を<xref:System.Net.CookieContainer>インスタンス、<xref:System.Net.CookieContainer.Add%2A>メソッド、操作は失敗し、例外をスローします。
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cookie.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または cookie が準拠する HTTP 状態のメンテナンスのバージョンを設定します。</summary>
+        <value>Cookie が準拠する HTTP 状態のメンテナンスのバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Net.Cookie.Version%2A>プロパティが 0 の場合、元の Netscape 仕様に準拠します。 値が明示的に設定し、この 1 <xref:System.Net.Cookie> RFC 2109 に準拠する必要があります。 されている場合、<xref:System.Net.Cookie>受信準拠セット Cookie2 HTTP 応答ヘッダーが RFC 2965 に設定して自動的に作成されました。  
+  
+ 設定の試行、<xref:System.Net.Cookie.Version%2A>プロパティを 0 より小さい値に例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、応答で返される cookie のプロパティを表示します。 完全な例については、<xref:System.Net.Cookie>クラスに関するトピック。  
+  
+ [!code-cpp[NCLCookies#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#3)]
+ [!code-csharp[NCLCookies#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#3)]
+ [!code-vb[NCLCookies#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">バージョンの指定された値を指定することはできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

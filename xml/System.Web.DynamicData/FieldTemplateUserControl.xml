@@ -1,0 +1,925 @@
+<Type Name="FieldTemplateUserControl" FullName="System.Web.DynamicData.FieldTemplateUserControl">
+  <TypeSignature Language="C#" Value="public class FieldTemplateUserControl : System.Web.UI.UserControl, System.Web.DynamicData.IFieldTemplate, System.Web.UI.IBindableControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FieldTemplateUserControl extends System.Web.UI.UserControl implements class System.Web.DynamicData.IFieldTemplate, class System.Web.UI.IBindableControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.FieldTemplateUserControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.UserControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IFieldTemplate</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IBindableControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>すべてのフィールド テンプレート コントロールの基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データ フィールドのテンプレートは、データ コントロールをデータ モデルのデータ型にマップされる ASP.NET ユーザー コントロールです。 派生してフィールド テンプレート<xref:System.Web.DynamicData.FieldTemplateUserControl>、データ フィールド、データ列、およびデータ モデル内のメタデータにアクセスできるようにするクラス。 動的なデータ プロジェクトでは、既定ではフィールド テンプレートを提供します。 既定で用意されているフィールド テンプレートを変更したり、カスタム フィールド テンプレートを作成します。  
+  
+ このクラスから継承、<xref:System.Web.UI.UserControl>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、多対一のリレーションシップとレンダリングを持つデータ フィールドを表示するフィールド テンプレートを作成、<xref:System.Web.UI.WebControls.HyperLink>関係 ページにユーザーをリダイレクトするコントロール。  
+  
+ 次の例では、ForeignKey.ascx ユーザー コントロールのコード ファイルを示します。  
+  
+```vb  
+Public Partial Class ForeignKeyField   
+    Inherits System.Web.DynamicData.FieldTemplateUserControl   
+  
+    Protected Function GetDisplayString() As String   
+        Return FormatFieldValue( _  
+            ForeignKeyColumn.ParentTable.GetDisplayString(FieldValue))   
+    End Function   
+  
+    Public Overloads Overrides ReadOnly Property DataControl() As Control   
+        Get   
+            Return HyperLink1   
+        End Get   
+    End Property   
+End Class   
+```  
+  
+```csharp  
+public partial class ForeignKeyField :   
+                        System.Web.DynamicData.FieldTemplateUserControl   
+{  
+    protected string GetDisplayString()   
+    {  
+       Return         FormatFieldValue(ForeignKeyColumn.ParentTable.GetDisplayString(FieldValue));  
+  
+    public override Control DataControl   
+    {  
+        get   
+        {  
+          return HyperLink1;  
+    }  
+}  
+```  
+  
+ 次の例では、ForeignKey.aspx ファイルを示します。  
+  
+```vb  
+<%@ Control Language="VB" CodeFile="ForeignKey.ascx.vb" Inherits="ForeignKeyField" %>  
+  
+<asp:HyperLink ID="HyperLink1" runat="server"  
+    Text="<%# GetDisplayString() %>" />  
+```  
+  
+```csharp  
+<%@ Control Language="C#" CodeFile="ForeignKey.ascx.cs" Inherits="ForeignKeyField" %>  
+  
+<asp:HyperLink ID="HyperLink1" runat="server"  
+    Text="<%# GetDisplayString() %>" />  
+```  
+  
+ コード例をコンパイルするには、次のものが必要。  
+  
+-   [!INCLUDE[vs_dev10_long](~/includes/vs-dev10-long-md.md)] または [!INCLUDE[vwd_exp_dev10_long](~/includes/vwd-exp-dev10-long-md.md)]。  
+  
+-   動的データ Web サイトです。 詳細については、次を参照してください。[チュートリアル: 作成、新しい動的データ Web サイトを使用してスキャフォールディング](http://msdn.microsoft.com/library/1564aef2-9103-436a-9806-c8ad7abd616a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FieldTemplateUserControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.FieldTemplateUserControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChildrenPath">
+      <MemberSignature Language="C#" Value="protected string BuildChildrenPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string BuildChildrenPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.BuildChildrenPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">オーバーライドへのパス。</param>
+        <summary>子エンティティの一覧が表示され、オーバーライドへのパスをページにリンクする URL を取得します。</summary>
+        <returns>子ページに表示されるページにリンクする URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのような<xref:System.Web.DynamicData.FieldTemplateUserControl.ChildrenPath%2A>をオーバーライドする URL へのパス部分を使用する点を除いて、します。 このメソッドは、ページが動的なデータ プロジェクトの DynamicData\CustomPages フォルダー内に存在しない場合に使用されます。 このメソッドは、子列だけに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildForeignKeyPath">
+      <MemberSignature Language="C#" Value="protected string BuildForeignKeyPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string BuildForeignKeyPath(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.BuildForeignKeyPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">オーバーライドへのパス。</param>
+        <summary>外部キーのエンティティの詳細が表示され、パスを上書きできるページに、現在のページにリンクする URL を取得します。</summary>
+        <returns>外部キー ページの詳細を表示するページにリンクする URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのような<xref:System.Web.DynamicData.FieldTemplateUserControl.ForeignKeyPath%2A>をオーバーライドする URL のパスを許可する点が異なります。 ページが見つからない場合、このプロパティは使用 DynamicData\CustomPages フォルダーいる動的データ プロジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenColumn">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaChildrenColumn ChildrenColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaChildrenColumn ChildrenColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.ChildrenColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaChildrenColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaChildrenColumn" />フィールド テンプレートに関連付けられているオブジェクト。</summary>
+        <value>一対多のリレーションシップを表す列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはキャスト、<xref:System.Web.DynamicData.MetaColumn>を<xref:System.Web.DynamicData.MetaChildrenColumn>です。 場合、<xref:System.Web.DynamicData.MetaColumn>クラスは子列ではありません、このプロパティは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Web.DynamicData.FieldTemplateUserControl.ChildrenColumn" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenPath">
+      <MemberSignature Language="C#" Value="protected string ChildrenPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChildrenPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.ChildrenPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子エンティティの一覧を表示するページにリンクする URL を取得します。</summary>
+        <value>表示されているページを子エンティティにリンクする URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、子エンティティの一覧を表示するページにリンクする URL を返します。 たとえば、製品テーブル内の列、ProductCategories AdventureWorksLT サンプル データベース内では、選択したカテゴリに含まれる製品のリストにリンクする Url があります。 このプロパティは、子の列にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaColumn" />フィールド テンプレートに関連付けられています。</summary>
+        <value>データベースの列を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.ContainerType ContainerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.DynamicData.ContainerType ContainerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.ContainerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.ContainerType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるデータ バインド コントロールの種類を取得、<see cref="T:System.Web.DynamicData.FieldTemplateUserControl" />クラスです。</summary>
+        <value>コンテナー コントロールの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEditedValue">
+      <MemberSignature Language="C#" Value="protected virtual object ConvertEditedValue (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object ConvertEditedValue(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.ConvertEditedValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">入力値。</param>
+        <summary>入力値を取得または<see langword="null" />に基づいて<see cref="P:System.Web.DynamicData.MetaColumn.ConvertEmptyStringToNull" />と<see cref="P:System.Web.DynamicData.DynamicField.NullDisplayText" />です。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る<xref:System.Web.DynamicData.DynamicControl.ConvertEmptyStringToNull%2A>プロパティおよび<xref:System.Web.DynamicData.DynamicField.NullDisplayText%2A>メタデータを使用して設定できるプロパティ、または<xref:System.Web.DynamicData.DynamicField>クラスまたは<xref:System.Web.DynamicData.DynamicControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataControl">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Control DataControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control DataControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.DataControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールド テンプレート内のデータ フィールドを処理するデータ コントロールを取得します。</summary>
+        <value>フィールド テンプレート内のデータ フィールドを処理するデータ コントロールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractForeignKey">
+      <MemberSignature Language="C#" Value="protected virtual void ExtractForeignKey (System.Collections.IDictionary dictionary, string selectedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ExtractForeignKey(class System.Collections.IDictionary dictionary, string selectedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.ExtractForeignKey(System.Collections.IDictionary,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.IDictionary" />
+        <Parameter Name="selectedValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">すべての新しい値を格納するディクショナリ。</param>
+        <param name="selectedValue">保存する値。</param>
+        <summary>外部キーの値を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、外部キー列を保存するときに使用されます。 外部キーの値が選択されて、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>ドロップ ダウン リストのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValues">
+      <MemberSignature Language="C#" Value="protected virtual void ExtractValues (System.Collections.Specialized.IOrderedDictionary dictionary);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ExtractValues(class System.Collections.Specialized.IOrderedDictionary dictionary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.ExtractValues(System.Collections.Specialized.IOrderedDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">すべての新しい値を格納するディクショナリ。</param>
+        <summary>現在の行のすべてのデータへのアクセスのディクショナリを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.IBindableControl.ExtractValues%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldValue">
+      <MemberSignature Language="C#" Value="public virtual object FieldValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FieldValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.FieldValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の行内の列の値を設定します。</summary>
+        <value>現在の行に列の値を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldValueEditString">
+      <MemberSignature Language="C#" Value="public virtual string FieldValueEditString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FieldValueEditString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.FieldValueEditString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が編集モードにときは、現在の行に列の値の文字列形式を取得します。</summary>
+        <value>編集されている行の列の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定が有効になっている場合、文字列の編集後に書式設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldValueString">
+      <MemberSignature Language="C#" Value="public virtual string FieldValueString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FieldValueString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.FieldValueString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行に列の値の書式設定された文字列形式を取得します。</summary>
+        <value>現在の行に列の書式設定された値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOtherFieldTemplate">
+      <MemberSignature Language="C#" Value="protected System.Web.DynamicData.FieldTemplateUserControl FindOtherFieldTemplate (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.DynamicData.FieldTemplateUserControl FindOtherFieldTemplate(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.FindOtherFieldTemplate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.FieldTemplateUserControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">データ列フィールド テンプレートを表示します。</param>
+        <summary>指定されたデータ列を表示するために使用するフィールド テンプレートを決定します。</summary>
+        <returns>指定されたデータ列を表示するために使用されるフィールド テンプレートです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeignKeyColumn">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaForeignKeyColumn ForeignKeyColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaForeignKeyColumn ForeignKeyColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.ForeignKeyColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaForeignKeyColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaForeignKeyColumn" />外部キー列に関連付けられています。</summary>
+        <value>多対一のリレーションシップを表す列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスにより、<xref:System.Web.DynamicData.MetaColumn>を<xref:System.Web.DynamicData.MetaForeignKeyColumn>です。 クラスは例外をスロー<xref:System.Web.DynamicData.MetaColumn>外部キー列ではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">場合、<see cref="T:System.Web.DynamicData.MetaForeignKeyColumn" />外部キー列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeignKeyPath">
+      <MemberSignature Language="C#" Value="protected string ForeignKeyPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ForeignKeyPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.ForeignKeyPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部キーのエンティティの詳細を表示するページに現在のページにリンクする URL を取得します。</summary>
+        <value>外部キー データの詳細をリンクする URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ列に多対一のリレーションシップがある場合は、このプロパティを返します URL リンクしている外部キーのエンティティの詳細を表示するページにします。 たとえば、Northwind データベースの Product テーブルの [カテゴリ] 列でこのメソッドは、製品が属するカテゴリの詳細へのリンクを返すことができます。 このプロパティは、外部キー列だけに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatFieldValue">
+      <MemberSignature Language="C#" Value="public virtual string FormatFieldValue (object fieldValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string FormatFieldValue(object fieldValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.FormatFieldValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="fieldValue">書式設定するデータ フィールドからの値。</param>
+        <summary>HTML エンコードし、表示される文字列に書式設定を適用します。</summary>
+        <returns>書式設定された値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattingOptions">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.IFieldFormattingOptions FormattingOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.IFieldFormattingOptions FormattingOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.FormattingOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.IFieldFormattingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML エンコーディングおよび書式指定フィールド テンプレートに適用するオプションを設定します。</summary>
+        <value>HTML エンコードおよび書式指定フィールド テンプレートに適用するオプションを公開するインターフェイスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnValue">
+      <MemberSignature Language="C#" Value="protected virtual object GetColumnValue (System.Web.DynamicData.MetaColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetColumnValue(class System.Web.DynamicData.MetaColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.GetColumnValue(System.Web.DynamicData.MetaColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column">値を取得する列。</param>
+        <summary>現在の行に指定された列の値を取得します。</summary>
+        <returns>現在の行に指定された列の値を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedValueString">
+      <MemberSignature Language="C#" Value="protected string GetSelectedValueString ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetSelectedValueString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.GetSelectedValueString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列の値の文字列表現を返します。</summary>
+        <returns>列の現在値が外部キー列または列挙型列、選択した値の文字列表現それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.FieldTemplateUserControl.GetSelectedValueString%2A>メソッドを使用して列の型の外部キーまたは列挙型の文字列表現を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.IFieldTemplateHost Host { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.IFieldTemplateHost Host" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.IFieldTemplateHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をこのコンテキストを提供するホスト<see cref="T:System.Web.DynamicData.FieldTemplateUserControl" />クラスです。</summary>
+        <value>このフィールドのテンプレート クラスのコンテキストを提供するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreModelValidationAttribute">
+      <MemberSignature Language="C#" Value="protected void IgnoreModelValidationAttribute (Type attributeType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void IgnoreModelValidationAttribute(class System.Type attributeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.IgnoreModelValidationAttribute(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">無視する属性です。</param>
+        <summary>により、<see cref="T:System.Web.DynamicData.DynamicValidator" />を特定の種類のモデル検証属性を無視します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する、<xref:System.Web.DynamicData.DynamicValidator>を特定の種類のモデルの検証属性を無視します。 このメソッドは、ASP.NET によって属性の型がまだ処理されているときに検証コントロール。 この呼び出しがない、検証を行う 2 回、その結果、重複するエラー メッセージ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataAttributes">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.AttributeCollection MetadataAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection MetadataAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.MetadataAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の列に適用されるメタデータ属性のコレクションを取得します。</summary>
+        <value>列に適用されるメタデータ属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataBoundControlMode Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.DataBoundControlMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataBoundControlMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールド テンプレートを使用してモードを取得します。</summary>
+        <value>フィールド テンプレートの現在のモード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataBoundControlMode>フィールド テンプレートの使用が含まれている`Insert`、 `Edit`、および`ReadOnly`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateListControl">
+      <MemberSignature Language="C#" Value="protected void PopulateListControl (System.Web.UI.WebControls.ListControl listControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PopulateListControl(class System.Web.UI.WebControls.ListControl listControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.PopulateListControl(System.Web.UI.WebControls.ListControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listControl" Type="System.Web.UI.WebControls.ListControl" />
+      </Parameters>
+      <Docs>
+        <param name="listControl">設定するリスト コントロール。</param>
+        <summary>親テーブルからのすべての値を持つリスト コントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、外部キー列のみで動作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public virtual object Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Row" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデータ行オブジェクトを取得します。</summary>
+        <value>現在のデータ行オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに返されるオブジェクトと<xref:System.Web.UI.Page.GetDataItem%2A>メソッドは等価です。 このプロパティを使用して、`Page.GetDataItem`データ行オブジェクトを返すメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUpValidator">
+      <MemberSignature Language="C#" Value="protected virtual void SetUpValidator (System.Web.UI.WebControls.BaseValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetUpValidator(class System.Web.UI.WebControls.BaseValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.SetUpValidator(System.Web.UI.WebControls.BaseValidator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Web.UI.WebControls.BaseValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">設定する検証コントロール。</param>
+        <summary>設定、<see cref="P:System.Web.DynamicData.IFieldTemplateHost.ValidationGroup" />ですべての検証コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、実行ロジックを追加の特定の検証コントロールなど、<xref:System.Web.UI.WebControls.RangeValidator>を設定し、<xref:System.Web.DynamicData.DynamicControl.ValidationGroup%2A>ですべての検証コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUpValidator">
+      <MemberSignature Language="C#" Value="protected virtual void SetUpValidator (System.Web.UI.WebControls.BaseValidator validator, System.Web.DynamicData.MetaColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetUpValidator(class System.Web.UI.WebControls.BaseValidator validator, class System.Web.DynamicData.MetaColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.SetUpValidator(System.Web.UI.WebControls.BaseValidator,System.Web.DynamicData.MetaColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Web.UI.WebControls.BaseValidator" />
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+      </Parameters>
+      <Docs>
+        <param name="validator">設定する検証の種類。</param>
+        <param name="column">検証対象の列が設定されています。</param>
+        <summary>設定、<see cref="T:System.Web.DynamicData.DynamicValidator" />を検証する検証コントロールと列の型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定するために使用<xref:System.Web.DynamicData.DynamicControl.ValidationGroup%2A>ですべての検証コントロール。  
+  
+ このメソッド内の特定の検証コントロール型の追加のロジックを実行します。 たとえば、範囲の値をデータ モデルの終了とこのメソッドを設定<xref:System.Web.UI.WebControls.RangeValidator>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.DynamicData.IFieldTemplate.SetHost">
+      <MemberSignature Language="C#" Value="void IFieldTemplate.SetHost (System.Web.DynamicData.IFieldTemplateHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.DynamicData.IFieldTemplate.SetHost(class System.Web.DynamicData.IFieldTemplateHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.System#Web#DynamicData#IFieldTemplate#SetHost(System.Web.DynamicData.IFieldTemplateHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Web.DynamicData.IFieldTemplateHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">フィールド テンプレート クラスをホストしているオブジェクト。 フィールド テンプレートの使用を制御します。</param>
+        <summary>フィールド テンプレートの使用方法を制御するオブジェクト フィールド テンプレートに関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.Web.DynamicData.IFieldTemplate.SetHost%2A>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IBindableControl.ExtractValues">
+      <MemberSignature Language="C#" Value="void IBindableControl.ExtractValues (System.Collections.Specialized.IOrderedDictionary dictionary);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IBindableControl.ExtractValues(class System.Collections.Specialized.IOrderedDictionary dictionary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FieldTemplateUserControl.System#Web#UI#IBindableControl#ExtractValues(System.Collections.Specialized.IOrderedDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">含んでいるディクショナリ名前/値ペア。</param>
+        <summary>フィールド テンプレート コントロールで双方向データ バインディングを実装する名前/値ペアのセットを取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.FieldTemplateUserControl.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaTable" />フィールド テンプレートの列が属しています。</summary>
+        <value>フィールド テンプレートに関連付けられている列に属しているテーブル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

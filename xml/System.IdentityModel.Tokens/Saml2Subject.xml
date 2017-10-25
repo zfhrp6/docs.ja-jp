@@ -1,0 +1,138 @@
+<Type Name="Saml2Subject" FullName="System.IdentityModel.Tokens.Saml2Subject">
+  <TypeSignature Language="C#" Value="public class Saml2Subject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2Subject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2Subject" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>[Saml2Core、2.4.1] で指定されたサブジェクト要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.Saml2Subject.NameId%2A>プロパティは`null`と<xref:System.IdentityModel.Tokens.Saml2Subject.SubjectConfirmations%2A>コレクションは空では、<xref:System.InvalidOperationException>がシリアル化中にスローされます。  
+  
+ このクラスが表す要素の詳細については、SAML V2.0 のコア仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Subject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Subject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.Saml2Subject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Subject (System.IdentityModel.Tokens.Saml2NameIdentifier nameId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.Saml2NameIdentifier nameId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Subject.#ctor(System.IdentityModel.Tokens.Saml2NameIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nameId" Type="System.IdentityModel.Tokens.Saml2NameIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="nameId">A<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />名前識別子を表すです。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Tokens.Saml2Subject" /> 、指定したクラス<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2Subject.NameId%2A>によって指定された値に設定されて、`nameId`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Subject (System.IdentityModel.Tokens.Saml2SubjectConfirmation subjectConfirmation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.Saml2SubjectConfirmation subjectConfirmation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Subject.#ctor(System.IdentityModel.Tokens.Saml2SubjectConfirmation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="subjectConfirmation" Type="System.IdentityModel.Tokens.Saml2SubjectConfirmation" />
+      </Parameters>
+      <Docs>
+        <param name="subjectConfirmation">A<see cref="T:System.IdentityModel.Tokens.Saml2SubjectConfirmation" />確認情報を格納します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Tokens.Saml2Subject" /> 、指定したクラス<see cref="T:System.IdentityModel.Tokens.Saml2SubjectConfirmation" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2Subject.SubjectConfirmations%2A>コレクションがで指定された値で初期化されて、`subjectConfirmation`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subjectConfirmation" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NameId">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2NameIdentifier NameId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2NameIdentifier NameId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Subject.NameId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2NameIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブジェクトの識別子を設定します。 [Saml2Core、2.4.1]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2NameIdentifier" />識別子を含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectConfirmations">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2SubjectConfirmation&gt; SubjectConfirmations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.Saml2SubjectConfirmation&gt; SubjectConfirmations" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Subject.SubjectConfirmations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2SubjectConfirmation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>確認するにをサブジェクトをできるようにする情報を格納するコレクションを取得します。 [Saml2Core、2.4.1]</summary>
+        <value>型のコレクション<see cref="T:System.IdentityModel.Tokens.Saml2SubjectConfirmation" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のサブジェクトの確認も指定されていない場合は、アサーションを適用するためにサブジェクトを確認するのに十分ではそれらのいずれかを満たすことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

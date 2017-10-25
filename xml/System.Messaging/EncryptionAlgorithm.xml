@@ -1,0 +1,80 @@
+<Type Name="EncryptionAlgorithm" FullName="System.Messaging.EncryptionAlgorithm">
+  <TypeSignature Language="C#" Value="public enum EncryptionAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed EncryptionAlgorithm extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.EncryptionAlgorithm" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>プライベート メッセージのメッセージ本文を暗号化するために使用する暗号化アルゴリズムを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号モードは、データを暗号化するメソッドを定義します。 ストリーム暗号モードは、一度に 1 ビットのデータをエンコードします。 ブロック暗号モードは、一度に 1 ブロックずつデータをエンコードします。 実行ストリーム暗号よりも速度が遅い、傾向がありますが、ブロック暗号は安全です。 次の表の各暗号モードを説明する、<xref:System.Messaging.EncryptionAlgorithm>値。  
+  
+|暗号化|暗号モード|  
+|----------------|-----------------|  
+|RC2|64 ビットのブロック|  
+|RC4|ストリーム|  
+  
+ メッセージ キュー メッセージ オブジェクトのプロパティは、最終的には、オペレーティング システムの暗号化レベルへのアクセスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.EncryptionAlgorithm None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.EncryptionAlgorithm.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.EncryptionAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化なし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rc2">
+      <MemberSignature Language="C#" Value="Rc2" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.EncryptionAlgorithm Rc2 = int32(26114)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.EncryptionAlgorithm.Rc2" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.EncryptionAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MQMSG_CALG_RC2 値です。 これは、暗号化、メッセージ キュー アプリケーションのメッセージ オブジェクトのプロパティの既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rc4">
+      <MemberSignature Language="C#" Value="Rc4" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.EncryptionAlgorithm Rc4 = int32(26625)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.EncryptionAlgorithm.Rc4" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.EncryptionAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MQMSG_CALG_RC4 値です。 これは、暗号化、メッセージ キュー アプリケーション オブジェクトのプロパティのメッセージの安全性の低いオプションに対応します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

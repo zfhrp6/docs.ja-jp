@@ -1,0 +1,196 @@
+<Type Name="MetadataImporter" FullName="System.ServiceModel.Description.MetadataImporter">
+  <TypeSignature Language="C#" Value="public abstract class MetadataImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MetadataImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MetadataImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メタデータを <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトにインポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataImporter> 抽象クラスの実装を使用して、サービス メタデータをインポートします。 <xref:System.ServiceModel.Description.MetadataImporter> クラスから派生した型では、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] の WS-Policy インポート ロジックを利用したメタデータ形式のインポートをサポートします。  
+  
+ <xref:System.ServiceModel.Description.MetadataImporter> の実装は、<xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> オブジェクトでサービス メタデータに結び付けられたポリシー表現を収集します。 その後、<xref:System.ServiceModel.Description.MetadataImporter> は、<xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> プロパティ内の <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> インターフェイスの実装を呼び出すことによって、メタデータのインポートの一部として、ポリシーを処理します。  
+  
+ <xref:System.ServiceModel.Description.MetadataImporter> インスタンスの <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> プロパティに <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> インターフェイスの独自の実装を追加することによって、新しいポリシー アサーションをインポートするためのサポートを <xref:System.ServiceModel.Description.MetadataImporter> に追加できます。 または、アプリケーション構成ファイルにポリシー インポート拡張を登録することができます。  
+  
+ <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 型は、<xref:System.ServiceModel.Description.MetadataImporter> に含まれる [!INCLUDE[indigo2](~/includes/indigo2-md.md)] 抽象クラスの実装です。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 型は、<xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> オブジェクトにまとめられた、結び付けられているポリシーを使用して WSDL メタデータをインポートします。  
+  
+ <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> インターフェイスを実装し、この実装を <xref:System.ServiceModel.Description.WsdlImporter.WsdlImportExtensions%2A?displayProperty=nameWithType> インスタンスの <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> プロパティに追加することで、WSDL 拡張のインポートのサポートを追加できます。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> は、アプリケーション構成ファイルに登録された <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> インターフェイスの実装を読み込むこともできます。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Description.MetadataImporter> コンストラクターは内部用のため、このバージョンでは <xref:System.ServiceModel.Description.MetadataImporter> から派生させることはできません。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> 派生クラスを使用してメタデータをインポートする例を次に示します。カスタム状態を使用してインポートし、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを確認し、インポートされたメタデータをマネージ型にコンパイルし、結果をコード ファイルに保存します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.MetadataConversionError&gt; Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.MetadataConversionError&gt; Errors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataImporter.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.MetadataConversionError&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータのインポート中にエラーが発生したかどうかを示す値を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Description.MetadataConversionError" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータをインポートしたら、メタデータを使用する前に必ず <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportAllContracts">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataImporter.ImportAllContracts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ContractDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メタデータからインポートされたコントラクトのコレクションを返します。</summary>
+        <returns>メタデータからインポートされたコントラクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportAllEndpoints">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataImporter.ImportAllEndpoints" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メタデータ内のすべてのエンドポイントを返します。</summary>
+        <returns>サービスによって公開された <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インポートされたメタデータ内のすべてのエンドポイントを返すには、<xref:System.ServiceModel.Description.MetadataImporter.ImportAllEndpoints%2A> メソッドを実装します。 サービス エンドポイントとしてインポートされたメタデータは、ランタイムの作成やメタデータのエクスポートには使用できません。これは、インポートされたエンドポイントにマネージ型の情報が含まれないからです。 メタデータを使用してクライアントまたはサービスのランタイムを作成したりメタデータを生成したりするには、最初にメタデータからコードを生成してコンパイルし、その型情報を使用して、<xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> によって新しい <xref:System.ServiceModel.Description.ContractDescription.GetContract%2A> オブジェクトを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KnownContracts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;System.Xml.XmlQualifiedName,System.ServiceModel.Description.ContractDescription&gt; KnownContracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;class System.Xml.XmlQualifiedName, class System.ServiceModel.Description.ContractDescription&gt; KnownContracts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataImporter.KnownContracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.Xml.XmlQualifiedName,System.ServiceModel.Description.ContractDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポーターが認識する名前でコントラクトのディクショナリを取得します。</summary>
+        <value>XML 修飾名で一覧表示されたコントラクトのディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> プロパティを使用して、インポーターが参照できるコントラクトの説明とそれに関連付けられた XML 名を追加または削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyImportExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; PolicyImportExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; PolicyImportExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IPolicyImportExtension&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポーターがポリシー アサーションを処理するために呼び出すポリシー インポーターのコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Description.MetadataImporter" /> がポリシー アサーションを処理するために使用するポリシー インポーターのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A> プロパティを使用して、メタデータ内でポリシー アサーションを処理するために呼び出されるポリシー インポーターを追加または削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;object,object&gt; State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;object, object&gt; State" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataImporter.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.Object,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータのインポートに使用するオブジェクトのコレクションを取得または設定します。</summary>
+        <value>種類をキーとするオブジェクトのディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `State` プロパティを使用して、メタデータのインポートに使用するオブジェクトを追加または削除します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataImporter.State%2A> プロパティを使用して、特定の方法でカスタム <xref:System.Runtime.Serialization.XsdDataContractImporter?displayProperty=nameWithType> をインポート データ構造に追加する例を次に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

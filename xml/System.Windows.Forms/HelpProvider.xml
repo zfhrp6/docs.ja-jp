@@ -1,0 +1,534 @@
+<Type Name="HelpProvider" FullName="System.Windows.Forms.HelpProvider">
+  <TypeSignature Language="C#" Value="public class HelpProvider : System.ComponentModel.Component, System.ComponentModel.IExtenderProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HelpProvider extends System.ComponentModel.Component implements class System.ComponentModel.IExtenderProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HelpProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IExtenderProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("HelpString", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("HelpKeyword", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("HelpNavigator", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("ShowHelp", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールのポップアップ ヘルプまたはオンライン ヘルプを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各インスタンス<xref:System.Windows.Forms.HelpProvider>関連付けられているコントロールへの参照のコレクションを保持します。 ヘルプ ファイルを関連付ける、 <xref:System.Windows.Forms.HelpProvider>、設定、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティです。 呼び出しによって提供されるヘルプの種類を指定する、<xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A>メソッドを提供して、<xref:System.Windows.Forms.HelpNavigator>指定したコントロールの値。 呼び出してのヘルプ キーワードまたはトピックを提供する、<xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A>メソッドです。 特定のトピックにヘルプを開くに、フォームで、キーワードを渡す必要があります*topicName*.htm です。  
+  
+ 特定のヘルプ文字列をコントロールに関連付けるを使用して、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>メソッドです。 このメソッドを使用して、コントロールに関連付ける文字列は、コントロールにフォーカスがある状態で F1 キーを押したときに、ポップアップ ウィンドウに表示されます。  
+  
+ 場合、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティが設定されていない、使用する必要があります、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ テキストを提供するメソッド。 両方を設定した場合<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>ヘルプ文字列ヘルプに基づいて、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>が優先されます。  
+  
+ <xref:System.Windows.Forms.HelpProvider>メソッドを呼び出して、<xref:System.Windows.Forms.Help>ヘルプ機能を提供するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.HelpProvider>アドレス フィールドを 4 つ含んだフォームに状況依存のヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ ヒントのテキストを設定します。 状況依存のヘルプ ボタンを使用してヘルプ カーソル アドレス フィールドをクリックすると、指定されたテキストで役立つツールヒントが表示されます。 に、ヘルプ ファイルを表示、住所フィールドがフォーカスされた F1 キーを押すと、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティに設定されています。 <xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>利用可能なヘルプ コンテンツを使用している各アドレス コントロールを識別するメソッドが呼び出されます。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CPP/helpprovider.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CS/helpprovider.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/VB/helpprovider.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HelpProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.HelpProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成した後、<xref:System.Windows.Forms.HelpProvider>クラスを使用して、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティ、<xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A>メソッド、および<xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A>に、ヘルプ トピックをコントロールに関連付けるメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.HelpProvider>アドレス フィールドを 4 つ含んだフォームに状況依存のヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ ヒントのテキストを設定します。 状況依存のヘルプ ボタンを使用してヘルプ カーソル アドレス フィールドをクリックすると、指定されたテキストで役立つツールヒントが表示されます。 に、ヘルプ ファイルを表示、住所フィールドがフォーカスされた F1 キーを押すと、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティに設定された`mspaint.chm`です。 <xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>利用可能なヘルプ コンテンツを使用している各アドレス コントロールを識別するメソッドが呼び出されます。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CPP/helpprovider.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CS/helpprovider.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/VB/helpprovider.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExtend">
+      <MemberSignature Language="C#" Value="public virtual bool CanExtend (object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExtend(object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.CanExtend(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="target">Externder プロパティが用意されているオブジェクト。</param>
+        <summary>このオブジェクトが、指定したオブジェクトにエクステンダー プロパティを提供できるかどうかを指定します。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトは、エクステンダー プロパティを提供できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpKeyword">
+      <MemberSignature Language="C#" Value="public virtual string GetHelpKeyword (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetHelpKeyword(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.GetHelpKeyword(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプ トピックを取得します。</param>
+        <summary>指定したコントロールのヘルプ キーワードを返します。</summary>
+        <returns>このコントロールに関連付けられたヘルプ キーワードまたは<see langword="null" />場合、<see cref="T:System.Windows.Forms.HelpProvider" />全体のヘルプ ファイルを表示するように構成が現在またはヘルプ文字列を指定するように構成します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpNavigator">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.HelpNavigator GetHelpNavigator (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Forms.HelpNavigator GetHelpNavigator(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.GetHelpNavigator(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプ ナビゲーターを取得します。</param>
+        <summary>現在を返して<see cref="T:System.Windows.Forms.HelpNavigator" />指定したコントロールを設定します。</summary>
+        <returns><see cref="T:System.Windows.Forms.HelpNavigator" />指定したコントロールを設定します。 既定値は、<see cref="F:System.Windows.Forms.HelpNavigator.AssociateIndex" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpString">
+      <MemberSignature Language="C#" Value="public virtual string GetHelpString (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetHelpString(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.GetHelpString(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />元となるヘルプ文字列を取得します。</param>
+        <summary>指定したコントロールのポップアップ ヘルプ ウィンドウの内容を返します。</summary>
+        <returns>このコントロールに関連付けられているヘルプ文字列。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時にこのヘルプ文字列を表示するのには、ユーザーは、指定したコントロールに入力フォーカスがあるときに F1 キーを押します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.KeyPressEventHandler>と<xref:System.Windows.Forms.KeyEventHandler>入力をフィルター処理するクラス。 また、<xref:System.Windows.Forms.HelpProvider.GetHelpString%2A>メソッドです。 これは、完全な例プロジェクトに追加すると実行できる状態になります。  
+  
+ [!code-cpp[System.Windows.Forms.KeyEventsHelpAndErrors#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.KeyEventsHelpAndErrors/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.KeyEventsHelpAndErrors#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.KeyEventsHelpAndErrors/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.KeyEventsHelpAndErrors#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.KeyEventsHelpAndErrors/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetShowHelp">
+      <MemberSignature Language="C#" Value="public virtual bool GetShowHelp (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetShowHelp(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.GetShowHelp(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプが表示されます。</param>
+        <summary>指定したコントロールのヘルプを表示するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />コントロールのヘルプが表示される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A>または<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>にキーワードまたはプロンプトを自動的を返します。 このメソッドを呼び出して、指定されたコントロールに関連付けるメソッド`true`です。 渡すことによってこの動作をオーバーライドできます`false`を<xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpNamespace">
+      <MemberSignature Language="C#" Value="public virtual string HelpNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HelpProvider.HelpNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.HelpNamespaceEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているヘルプ ファイルの名前を指定する値の設定を取得または<see cref="T:System.Windows.Forms.HelpProvider" />オブジェクト。</summary>
+        <value>ヘルプ ファイルの名前。 C:\path\sample.chm または/folder/file.htm、フォームの指定できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって取得されたファイル名は、このオブジェクトのヘルプを提供するすべてのコントロールのヘルプのサポートを提供するファイルを識別します。 このファイル名には、コンパイル済みヘルプ (.chm) ファイルまたは生の HTML ファイルのいずれかを指定できます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.HelpProvider>アドレス フィールドを 4 つ含んだフォームに状況依存のヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ ツールヒント テキストを設定します。 ときに、状況依存のヘルプ ボタンを使用して、住所フィールドの上にヘルプ カーソルをクリックして、指定されたテキストでヘルプ ツールヒントが表示されます。 アドレス フィールドにフォーカスを持つ F1 キーを押すと、`mspaint.chm`ために表示されるヘルプ ファイル、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティに設定されて`mspaint.chm`です。 <xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>利用可能なヘルプ コンテンツを使用している各アドレス コントロールを識別するメソッドが呼び出されます。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CPP/helpprovider.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CS/helpprovider.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/VB/helpprovider.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetShowHelp">
+      <MemberSignature Language="C#" Value="public virtual void ResetShowHelp (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetShowHelp(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.ResetShowHelp(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">ヘルプを削除するコントロール。</param>
+        <summary>指定したコントロールに関連付けられているヘルプを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デザイナーによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHelpKeyword">
+      <MemberSignature Language="C#" Value="public virtual void SetHelpKeyword (System.Windows.Forms.Control ctl, string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetHelpKeyword(class System.Windows.Forms.Control ctl, string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.SetHelpKeyword(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプ トピックを設定する対象のコントロールを指定します。</param>
+        <param name="keyword">コントロールに関連付けるヘルプ キーワード。</param>
+        <summary>ユーザーが指定したコントロールのヘルプを呼び出したときにヘルプを取得するために使用するキーワードを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘルプ キーワードに指定されたヘルプ ファイルからこのコントロールに関連付けられているヘルプの取得にキー情報を提供する、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティです。 特定のトピックにヘルプを開くに、フォームで、キーワードを渡す必要があります*topicName*.htm です。 クリアするには、キーワードを呼び出す、<xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A>メソッドを`keyword`値`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHelpNavigator">
+      <MemberSignature Language="C#" Value="public virtual void SetHelpNavigator (System.Windows.Forms.Control ctl, System.Windows.Forms.HelpNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetHelpNavigator(class System.Windows.Forms.Control ctl, valuetype System.Windows.Forms.HelpNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.SetHelpNavigator(System.Windows.Forms.Control,System.Windows.Forms.HelpNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプ キーワードを設定します。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <summary>指定したコントロールのヘルプ ファイルからヘルプを検索するときに使用するヘルプ コマンドを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A>メソッドです。  
+  
+ この例を実行する配置を含むフォーム、<xref:System.Windows.Forms.HelpProvider>という名前`HelpProvider1`と<xref:System.Windows.Forms.TextBox>という名前`TextBox1`です。 例では、C:\Windows ディレクトリ内の input.chm をという名前のヘルプ ファイルの存在が必要です。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProviderAndImageListExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProviderAndImageListExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProviderAndImageListExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値<paramref name="navigator" />のいずれかではない、<see cref="T:System.Windows.Forms.HelpNavigator" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHelpString">
+      <MemberSignature Language="C#" Value="public virtual void SetHelpString (System.Windows.Forms.Control ctl, string helpString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetHelpString(class System.Windows.Forms.Control ctl, string helpString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.SetHelpString(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="helpString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />に関連付けるヘルプ文字列です。</param>
+        <param name="helpString">コントロールに関連付けられているヘルプ文字列。</param>
+        <summary>指定したコントロールに関連付けられているヘルプ文字列を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘルプ文字列で指定した、`helpString`パラメーターは、指定したコントロールにフォーカスがあるときに、ユーザーが F1 キーを押したときに、ポップアップ ウィンドウに表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.HelpProvider>アドレス フィールドを 4 つ含んだフォームに状況依存のヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ ヒントのテキストを設定します。 状況依存のヘルプ ボタンを使用してヘルプ カーソル アドレス フィールドをクリックすると、指定されたテキストで役立つツールヒントが表示されます。 に、ヘルプ ファイルを表示、住所フィールドがフォーカスされた F1 キーを押すと、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティに設定された`mspaint.chm`です。 <xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>利用可能なヘルプ コンテンツを使用している各アドレス コントロールを識別するメソッドが呼び出されます。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CPP/helpprovider.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CS/helpprovider.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/VB/helpprovider.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetShowHelp">
+      <MemberSignature Language="C#" Value="public virtual void SetShowHelp (System.Windows.Forms.Control ctl, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetShowHelp(class System.Windows.Forms.Control ctl, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.SetShowHelp(System.Windows.Forms.Control,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ctl">A<see cref="T:System.Windows.Forms.Control" />ヘルプのオンまたはオフにします。</param>
+        <param name="value">
+          <see langword="true" />コントロールのヘルプを表示する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定したコントロールのヘルプを表示するかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前に呼び出された場合、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>または<xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A>で指定したコントロールの`ctl`、パラメーター、<xref:System.Windows.Forms.HelpProvider>自動的にそのコントロールのヘルプを表示します。 この動作を変更するには、呼び出し、<xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>メソッドを指定する`false`で、`value`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.HelpProvider>アドレス フィールドを 4 つ含んだフォームに状況依存のヘルプを表示するクラス。 この例では、<xref:System.Windows.Forms.HelpProvider.SetHelpString%2A>ヘルプ ヒントのテキストを設定します。 状況依存のヘルプ ボタンを使用してヘルプ カーソル アドレス フィールドをクリックすると、指定されたテキストで役立つツールヒントが表示されます。 に、ヘルプ ファイルを表示、住所フィールドがフォーカスされた F1 キーを押すと、<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>プロパティに設定された`mspaint.chm`です。 <xref:System.Windows.Forms.HelpProvider.SetShowHelp%2A>利用可能なヘルプ コンテンツを使用している各アドレス コントロールを識別するメソッドが呼び出されます。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CPP/helpprovider.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/CS/helpprovider.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProvider/VB/helpprovider.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HelpProvider.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関する補足データを格納するオブジェクト、<see cref="T:System.Windows.Forms.HelpProvider" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.HelpProvider" /> に関するデータを格納している <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HelpProvider.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Forms.HelpProvider" /> を表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.HelpProvider" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HelpProvider.ToString%2A>メソッド型を含む文字列を返しますと<xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A>のプロパティ、<xref:System.Windows.Forms.HelpProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

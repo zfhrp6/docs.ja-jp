@@ -1,0 +1,238 @@
+<Type Name="ActiveXMessageFormatter" FullName="System.Messaging.ActiveXMessageFormatter">
+  <TypeSignature Language="C#" Value="public class ActiveXMessageFormatter : ICloneable, System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveXMessageFormatter extends System.Object implements class System.ICloneable, class System.Messaging.IMessageFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.ActiveXMessageFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Messaging.IMessageFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>シリアル化またはプリミティブ データ型とその他のオブジェクトにまたは MSMQ ActiveX コンポーネントと互換性がある形式を使用して、メッセージ キューのメッセージの本文から逆シリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.ActiveXMessageFormatter> MSMQ COM コントロールを使用するアプリケーションとの相互運用性をできるように、メッセージ キューの COM コンポーネントを使用して送信されたメッセージとの互換性ができます。  
+  
+ <xref:System.Messaging.ActiveXMessageFormatter>ほとんどのプリミティブとして実装するオブジェクトをシリアル化できる、 `IPersistStream` OLE インターフェイスです。 同じプリミティブのセットを逆シリアル化できるがを実装する COM オブジェクト (たとえば、Visual Basic 6.0 を使用して作成されたオブジェクト) を逆シリアル化時に、作業がさらに`IPersistStream`です。 逆シリアル化するオブジェクトは、.NET Framework アプリケーションにオブジェクトをインポートしてメモリ内でなければなりません。  
+  
+ アプリケーションがのインスタンスを使用してキューにメッセージを送信すると、<xref:System.Messaging.MessageQueue>クラス、フォーマッタ オブジェクトをストリームにシリアル化し、メッセージ本文に挿入します。 使用してキューから読み取るときに、 <xref:System.Messaging.MessageQueue>、フォーマッタにメッセージ データを逆シリアル化、<xref:System.Messaging.Message.Body%2A>のプロパティ、<xref:System.Messaging.Message>です。  
+  
+ これを使用して ActiveX のシリアル化が非常にコンパクト、<xref:System.Messaging.ActiveXMessageFormatter>および MSMQ COM がシリアル化の非常に高速メソッドを制御します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveXMessageFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.ActiveXMessageFormatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public bool CanRead (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanRead(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.CanRead(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />を検査します。</param>
+        <summary>フォーマッタがメッセージの内容を逆シリアル化できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Messaging.ActiveXMessageFormatter" />メッセージを逆シリアル化できる、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.ActiveXMessageFormatter.CanRead%2A>返します`false`を実装していない場合、メッセージ本文が、メッセージ キューの ActiveX コントロールの逆シリアル化できるプリミティブではない場合や、`IPersistStream`インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Messaging.ActiveXMessageFormatter" />現在と同じであるクラス<see cref="T:System.Messaging.ActiveXMessageFormatter" />です。</summary>
+        <returns>オブジェクトのプロパティがこのと同じ<see cref="T:System.Messaging.ActiveXMessageFormatter" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、<xref:System.Messaging.MessageQueue>クラス (たとえば、アプリケーションが非同期的に受信して) 場合は、同時に複数のメッセージを受信するためにします。 通常は、アプリケーション コードでこのメソッドを呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitStreamedObject">
+      <MemberSignature Language="C#" Value="public static void InitStreamedObject (object streamedObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InitStreamedObject(object streamedObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.InitStreamedObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamedObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="streamedObject">実装する OLE オブジェクト<see langword="IPersistStreamInit" />です。</param>
+        <summary>COM をシリアル化を支援するためのユーティリティを実装するオブジェクトを提供<see langword="IPersistStream" />を必要と<see langword="IPersistStreamInit" />呼び出せるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public object Read (System.Messaging.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Read(class System.Messaging.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.Read(System.Messaging.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />、逆シリアル化する、MSMQ ActiveX コントロールの形式でします。</param>
+        <summary>指定されたメッセージの内容を読み取りますを逆シリアル化されたメッセージを格納しているオブジェクトを作成します。</summary>
+        <returns>逆シリアル化されたメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージの本文がプリミティブ型、メッセージを表すかどうか<xref:System.Messaging.Message.BodyType%2A>プロパティは、次の表で、マネージ型のいずれかを指定する必要があります。  
+  
+|BodyType 値|マネージ型|  
+|--------------------|------------------|  
+|VT_LPSTR|<xref:System.Char>配列 (ASCII エンコーディングを使用して逆シリアル化)|  
+|VT_BSTR、VT_LPWSTR|<xref:System.String>(Unicode エンコーディングを使用して逆シリアル化)|  
+|VT_VECTOR & #124 です。VT_UI1|<xref:System.Byte> 配列|  
+|VT_BOOL|<xref:System.Boolean>|  
+|VT_CLSID|<xref:System.Guid>|  
+|VT_CY|<xref:System.Decimal>|  
+|VT_DATE|<xref:System.DateTime>|  
+|VT_I1、VT_UI1|<xref:System.Byte>|  
+|VT_I2|<xref:System.Int16>|  
+|VT_UI2|<xref:System.UInt16>|  
+|VT_I4|<xref:System.Int32>|  
+|VT_UI4|<xref:System.UInt32>|  
+|VT_I8|<xref:System.Int64>|  
+|VT_UI8|<xref:System.UInt64>|  
+|VT_R4|<xref:System.Single>|  
+|VT_R8|<xref:System.Double>|  
+|VT_|`null`|  
+|VT_STREAMED_OBJECT|<xref:System.Object>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Messaging.Message.BodyType" />のプロパティ、<paramref name="message" />パラメーターは、プリミティブ型にマップすることはできず、、ストリーム オブジェクトを表してとして渡されました。</exception>
+        <exception cref="T:System.NotSupportedException">本文は、格納されているオブジェクトを表します。 <see cref="T:System.Messaging.ActiveXMessageFormatter" />は保存されているオブジェクトの逆シリアル化をサポートしていません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.Messaging.Message message, object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(class System.Messaging.Message message, object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.ActiveXMessageFormatter.Write(System.Messaging.Message,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Messaging.Message" />
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Messaging.Message" />が<see cref="P:System.Messaging.Message.Body" />プロパティがシリアル化されたオブジェクトが格納されます。</param>
+        <param name="obj">メッセージの本文にシリアル化するオブジェクト。</param>
+        <summary>メッセージの本文にオブジェクトをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、マネージ型の関係を示しています。 および<xref:System.Messaging.Message.BodyType%2A>プロパティです。 シリアル化するオブジェクトがこれらのマネージ型のいずれかを指定する必要がありますまたは OLE を実装する必要があります`IPersistStream`インターフェイスです。  
+  
+|BodyType 値|マネージ型|  
+|--------------------|------------------|  
+|VT_LPSTR|<xref:System.Char>|  
+|VT_BSTR、VT_LPWSTR|<xref:System.String>|  
+|VT_VECTOR & #124 です。VT_UI1|<xref:System.Byte>|  
+|VT_BOOL|<xref:System.Boolean>|  
+|VT_CLSID|<xref:System.Guid>|  
+|VT_CY|<xref:System.Decimal>|  
+|VT_DATE|<xref:System.DateTime>|  
+|VT_I1、VT_UI1|<xref:System.Byte>|  
+|VT_I2|<xref:System.Int16>|  
+|VT_UI2|<xref:System.UInt16>|  
+|VT_I4|<xref:System.Int32>|  
+|VT_UI4|<xref:System.UInt32>|  
+|VT_I8|<xref:System.Int64>|  
+|VT_UI8|<xref:System.UInt64>|  
+|VT_R4|<xref:System.Single>|  
+|VT_R8|<xref:System.Double>|  
+|VT_|`null`|  
+|VT_STREAMED_OBJECT|`IPersistStream`(OLE)<xref:System.Object>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化するオブジェクトは、プリミティブでも、OLE を実装するストリーム オブジェクト<see langword="IPersistStream" />インターフェイスです。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="message" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

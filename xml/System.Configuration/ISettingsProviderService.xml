@@ -1,0 +1,62 @@
+<Type Name="ISettingsProviderService" FullName="System.Configuration.ISettingsProviderService">
+  <TypeSignature Language="C#" Value="public interface ISettingsProviderService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISettingsProviderService" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ISettingsProviderService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>別のアプリケーションの設定プロバイダーを定義するためのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.IPersistComponentSettings>コントロールおよびコンポーネントをアプリケーションにほぼ透過的な方法で、アプリケーションの設定を保持するアプリケーションでホストされているインターフェイスを有効にします。 ただし、場合によっては、アプリケーションや環境ならない場合があります、独自に選択のいずれかのコンポーネントで使用されるネイティブ設定プロバイダーをオーバーライドします。 <xref:System.Configuration.ISettingsProviderService>インターフェイスには、軽量な通信するサービスをこのような代替の設定プロバイダー、所有しているから提供される通常の作成ができるように<xref:System.ComponentModel.Container>です。  
+  
+ <xref:System.Configuration.ISettingsProviderService>デザイン時ツールおよびアプリケーションの設定の特別なサポートを提供するデバッガーでよく使用されます。 シームレスに、このような配置関数を作成する、<xref:System.Configuration.ApplicationSettingsBase>クラスには、所有しているコンポーネントへの参照を取得するコンス トラクターが含まれています。 これらのコンス トラクターは、互換性のある設定プロバイダーを自動的に照会します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSettingsProvider">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsProvider GetSettingsProvider (System.Configuration.SettingsProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.SettingsProvider GetSettingsProvider(class System.Configuration.SettingsProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ISettingsProviderService.GetSettingsProvider(System.Configuration.SettingsProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.Configuration.SettingsProperty" />シリアル化を必要とします。</param>
+        <summary>指定した設定のプロパティとの互換性設定プロバイダーを返します。</summary>
+        <returns>場合、検出された、<see cref="T:System.Configuration.SettingsProvider" />プロパティを指定した設定を保存することができます、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ISettingsProviderService.GetSettingsProvider%2A>メソッドにより、<xref:System.Configuration.ISettingsProviderService>配置コンポーネントへのシリアル化サービスを提供します。 このメソッドは、関連付けられている設定プロバイダーが指定されたアプリケーション設定のプロパティの型を永続化できるかどうかを判断します。 このメソッドがその設定プロバイダーへの参照を取得できる場合は、返しますそれ以外の場合`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

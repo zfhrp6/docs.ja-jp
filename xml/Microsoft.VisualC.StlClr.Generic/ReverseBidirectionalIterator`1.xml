@@ -1,0 +1,545 @@
+<Type Name="ReverseBidirectionalIterator&lt;TValue&gt;" FullName="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt;">
+  <TypeSignature Language="C#" Value="public class ReverseBidirectionalIterator&lt;TValue&gt; : Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReverseBidirectionalIterator`1&lt;TValue&gt; extends System.Object implements class Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1&lt;!TValue&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TValue" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TValue">[!INCLUDE[cpp_iter_arg](~/includes/cpp-iter-arg-md.md)]</typeparam>
+    <summary>逆方向のコンテナー内の要素にアクセスできる反復子を定義します。 要素およびアクセスできます前方にデクリメント演算子を使用して、旧バージョンとの方向にインクリメント演算子を使用して、します。 反復子が指す要素両方に書き込まれたして何度でもからの読み取り。 反転双方向反復子は、逆方向の入力または反転出力反復子が必要である任意の場所で使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[unnamed_parm](~/includes/unnamed-parm-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReverseBidirectionalIterator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" /> オブジェクトを割り当て、初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReverseBidirectionalIterator (Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt; _Iter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1&lt;!TValue&gt; _Iter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.#ctor(Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_Iter" Type="Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Iter">既存の<see cref="T:Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1" />コピー先のオブジェクト。</param>
+        <summary>新しい初期化<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />、既存のオブジェクト<see cref="T:Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReverseBidirectionalIterator (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.#ctor(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="base">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt; base ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1&lt;!TValue&gt; base() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.base" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になる基本反復子を取得、<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</summary>
+        <returns>基になる基本反復子、<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーを返します<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</summary>
+        <returns>現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" /> オブジェクトのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="container">
+      <MemberSignature Language="C#" Value="public virtual object container ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object container() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.container" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復子を通過するコンテナーを取得します。</summary>
+        <returns>反復子を通過するコンテナーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="equal_to">
+      <MemberSignature Language="C#" Value="public virtual bool equal_to (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool equal_to(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.equal_to(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在と同じ<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子は、同じオブジェクトです。 場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="equal_to">
+      <MemberSignature Language="C#" Value="public bool equal_to (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool equal_to(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.equal_to(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="next">
+      <MemberSignature Language="C#" Value="public virtual void next ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void next() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.next" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デクリメント、コンテナーが完全にスキャンされている場合、コンテナーの最初の位置を先頭の前に、基になるコンテナーに前の位置に反復子。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Assign">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator op_Assign (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) op_Assign(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Assign(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Decrement">
+      <MemberSignature Language="C#" Value="public void operator -- (ref Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt; );" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Decrement(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1&lt;!TValue&gt;&amp; ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Decrement(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt;&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <summary>1 要素ずつ反復子をデクリメントします。 逆順反復子をデクリメントする操作は、通常の反復子をインクリメントする操作と同じです。 これは、デクリメント演算子の前置バージョンです。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Decrement">
+      <MemberSignature Language="C#" Value="public void operator -- (ref Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt; , int A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Decrement(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1&lt;!TValue&gt;&amp; , int32 A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Decrement(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="A_0" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="A_0">これが後置バージョンの演算子であることを示す未使用のパラメーターです。</param>
+        <summary>1 要素ずつ反復子をデクリメントします。 逆順反復子をデクリメントする操作は、通常の反復子をインクリメントする操作と同じです。 これは、後置バージョンのデクリメント演算子です。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public bool operator == (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Equality(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Equality(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在と同じ<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子は、同じオブジェクトです。 場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:Microsoft.VisualC.StlClr.%2A>Gene ric です。ReverseBidirectionalIterator`1.Equals(Microsoft.VisualC.StlClr. Gene ric.IInputIterator{`0})? qualifyHint = True & autoUpgrade = False]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public bool operator == (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Equality(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Equality(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public implicit operator Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator`1&lt;!TValue&gt; op_Implicit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Implicit~Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator{`0}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.IBidirectionalIterator&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Increment">
+      <MemberSignature Language="C#" Value="public void operator ++ (ref Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt; );" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Increment(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1&lt;!TValue&gt;&amp; ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Increment(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt;&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <summary>1 要素ずつ反復子をインクリメントします。 逆順反復子をインクリメントする操作は、通常の反復子をデクリメントする操作と同じです。 これは、インクリメント演算子の前置バージョンです。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Increment">
+      <MemberSignature Language="C#" Value="public void operator ++ (ref Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt; , int A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Increment(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1&lt;!TValue&gt;&amp; , int32 A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Increment(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="A_0" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="A_0">これが後置バージョンの演算子であることを示す未使用のパラメーターです。</param>
+        <summary>1 要素ずつ反復子をインクリメントします。 逆順反復子をインクリメントする操作は、通常の反復子をデクリメントする操作と同じです。 これは、後置バージョンのインクリメント演算子です。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public bool operator != (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Inequality(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Inequality(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在とは異なる<see cref="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子が別のオブジェクトである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:Microsoft.VisualC.StlClr.%2A>Gene ric です。ReverseBidirectionalIterator`1.Compare(Microsoft.VisualC.StlClr. Gene ric.IInputIterator{`0})? qualifyHint = True & autoUpgrade = False]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public bool operator != (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Inequality(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_Inequality(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_MemberSelection">
+      <MemberSignature Language="C#" Value="public static TValue op_MemberSelection (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Left);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname !TValue op_MemberSelection(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Left) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_MemberSelection(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TValue@</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_PointerDereference">
+      <MemberSignature Language="C#" Value="public static TValue op_PointerDereference (Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator _Left);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname !TValue op_PointerDereference(class Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Left) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.op_PointerDereference(Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TValue@</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="prev">
+      <MemberSignature Language="C#" Value="public virtual void prev ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void prev() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.prev" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテナーが完全にスキャンされている場合は、コンテナーの末尾を超えた最初の位置を基になるコンテナーで、[次へ] の位置に反復子をインクリメントします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="valid">
+      <MemberSignature Language="C#" Value="public virtual bool valid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool valid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1.valid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復子が有効であり、基になるコンテナーを走査する安全に使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、反復子は有効かつ安全に使用します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

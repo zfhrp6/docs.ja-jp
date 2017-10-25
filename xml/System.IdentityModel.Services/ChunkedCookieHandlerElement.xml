@@ -1,0 +1,76 @@
+<Type Name="ChunkedCookieHandlerElement" FullName="System.IdentityModel.Services.ChunkedCookieHandlerElement">
+  <TypeSignature Language="C#" Value="public class ChunkedCookieHandlerElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChunkedCookieHandlerElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.ChunkedCookieHandlerElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="&lt;chunkedCookieHandler&gt;" />構成要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、のチャンク サイズを構成、<xref:System.IdentityModel.Services.ChunkedCookieHandler>を介して構成されているオブジェクト、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChunkedCookieHandlerElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ChunkedCookieHandlerElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.ChunkedCookieHandlerElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChunkSize">
+      <MemberSignature Language="C#" Value="public int ChunkSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChunkSize" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.ChunkedCookieHandlerElement.ChunkSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("chunkSize", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1000)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはハンドラーのチャンク サイズを設定します。</summary>
+        <value>チャンク サイズ (バイト単位)。 既定値は、<see cref="F:System.IdentityModel.Services.ChunkedCookieHandler.DefaultChunkSize" /> です。 によって定義される最小のチャンク サイズ未満の値を設定しないでください<see cref="F:System.IdentityModel.Services.ChunkedCookieHandler.MinimumChunkSize" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャンク サイズを調整するときに注意する必要があります。 Web ブラウザーの cookie と cookie ドメインごとの合計、および使用可能な数のサイズに異なる制限されている場合。 元の Netscape 仕様がこれらの制限を指定するなど、: (cookie の値だけでなく、メタデータを含む)、[cookie] ヘッダーあたり 4096 バイトと 20 cookie ドメインごと、300 cookie の合計します。 詳細については、「<xref:System.IdentityModel.Services.ChunkedCookieHandler>」を参照してください。  
+  
+ 表す、`chunkSize`の属性、 [ &lt;chunkedCookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

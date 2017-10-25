@@ -1,0 +1,80 @@
+<Type Name="ComponentActionsType" FullName="System.ComponentModel.Design.ComponentActionsType">
+  <TypeSignature Language="C#" Value="public enum ComponentActionsType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ComponentActionsType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentActionsType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コンポーネントに関連付けられているかに関してオブジェクト バインド スマート タグの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表では、オブジェクト バインド スマート タグをコンポーネントに関連付けるための 2 つのオプションについて説明します。  
+  
+|スマート タグのモデル|説明|  
+|----------------------|-----------------|  
+|プル|クラスから派生する<xref:System.ComponentModel.Design.ComponentDesigner>コンポーネントのオーバーライドに関連付けられている、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>プロパティをそのコンポーネントのスマート タグのコレクションを返します。|  
+|プッシュ|呼び出し、<xref:System.ComponentModel.Design.DesignerActionService.Add%2A>メソッドは明示的に指定されたコンポーネントで指定されたスマート タグを関連付けます。|  
+  
+ これらのスマート タグのモデルの詳細については、次を参照してください。、<xref:System.ComponentModel.Design.DesignerActionService>と<xref:System.ComponentModel.Design.DesignerActionListCollection>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ComponentActionsType All = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ComponentActionsType.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ComponentActionsType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スマート タグの両方の種類。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Component">
+      <MemberSignature Language="C#" Value="Component" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ComponentActionsType Component = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ComponentActionsType.Component" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ComponentActionsType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルのスマート タグのみをプルします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Service">
+      <MemberSignature Language="C#" Value="Service" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.ComponentActionsType Service = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.ComponentActionsType.Service" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ComponentActionsType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルのスマート タグのみをプッシュします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

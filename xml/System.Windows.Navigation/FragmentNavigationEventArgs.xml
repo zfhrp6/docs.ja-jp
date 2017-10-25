@@ -1,0 +1,114 @@
+<Type Name="FragmentNavigationEventArgs" FullName="System.Windows.Navigation.FragmentNavigationEventArgs">
+  <TypeSignature Language="C#" Value="public class FragmentNavigationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FragmentNavigationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.FragmentNavigationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 **FragmentNavigation**イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのイベント引数には T には、移動先とのハンドラーに渡されるコンテンツ フラグメントに関する情報が含まれて、 **FragmentNavigation**次によって実装されるイベント。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.FragmentNavigation?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.Frame.FragmentNavigation?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType>  
+  
+ 既定では、コンテンツ フラグメントは、コンテンツに含まれている名前付き<xref:System.Windows.UIElement>、これは、<xref:System.Windows.UIElement>が<xref:System.Windows.FrameworkElement.Name%2A>属性が設定されてなど。  
+  
+```  
+<TextBlock Name="FragmentName">...</TextBlock>  
+```  
+  
+ 移動すると、[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]フラグメントを提供することによって、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を次の形式でのサフィックス。  
+  
+ \#*FragmentName*  
+  
+ 次の例を示しています、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]コンテンツ フラグメントへ参照します。  
+  
+ [http://www.microsoft.com/targetpage.xaml#FragmentName](http://www.www.com/homepage.xaml)  
+  
+ 処理することができます、 **FragmentNavigation**イベント<xref:System.Windows.Navigation.FragmentNavigationEventArgs>実装の処理のカスタム コンテンツ フラグメントを実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Fragment">
+      <MemberSignature Language="C#" Value="public string Fragment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Fragment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.FragmentNavigationEventArgs.Fragment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] フラグメントを取得します。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)] フラグメント。 このプロパティを空の文字列に設定した場合、既定ではコンテンツの最上部に移動します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.FragmentNavigationEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フラグメント ナビゲーションが処理されたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ナビゲーションが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Navigation.FragmentNavigationEventArgs.Handled%2A>に設定されている`false`システムがフラグメントの名前を持つ要素を検索して表示するように試みます。  
+  
+ 処理するときに、 **FragmentNavigation**イベントと使用<xref:System.Windows.Navigation.FragmentNavigationEventArgs>実装の処理のカスタム コンテンツ フラグメントを実装するのには、設定する必要があります<xref:System.Windows.Navigation.FragmentNavigationEventArgs.Handled%2A>に設定されている`true`を既定の動作をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigator">
+      <MemberSignature Language="C#" Value="public object Navigator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Navigator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.FragmentNavigationEventArgs.Navigator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" /> イベントを発生させたナビゲーター。</summary>
+        <value>コンテンツ フラグメントに移動しているナビゲーター ([!INCLUDE[TLA2#tla_iegeneric](~/includes/tla2sharptla-iegeneric-md.md)]、<see cref="T:System.Windows.Navigation.NavigationWindow" />、<see cref="T:System.Windows.Controls.Frame" />) を参照する <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

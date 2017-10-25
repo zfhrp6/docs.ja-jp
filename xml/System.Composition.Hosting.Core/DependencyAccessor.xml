@@ -1,0 +1,158 @@
+<Type Name="DependencyAccessor" FullName="System.Composition.Hosting.Core.DependencyAccessor">
+  <TypeSignature Language="C#" Value="public abstract class DependencyAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DependencyAccessor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Hosting.Core.DependencyAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Hosting</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>により、<see cref="T:System.Composition.Hosting.Core.ExportDescriptorProvider" />その依存関係を検索するオブジェクト。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DependencyAccessor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.DependencyAccessor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Composition.Hosting.Core.DependencyAccessor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、派生クラスからのみ呼び出すことの protected コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPromises">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt; GetPromises (System.Composition.Hosting.Core.CompositionContract exportKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.ExportDescriptorPromise&gt; GetPromises(class System.Composition.Hosting.Core.CompositionContract exportKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.DependencyAccessor.GetPromises(System.Composition.Hosting.Core.CompositionContract)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exportKey" Type="System.Composition.Hosting.Core.CompositionContract" />
+      </Parameters>
+      <Docs>
+        <param name="exportKey">エクスポートするキー、promise を指定する必要があります。</param>
+        <summary>指定されたコントラクトのすべての promise を取得します。</summary>
+        <returns>コントラクトの promise のコレクション。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveDependencies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.CompositionDependency&gt; ResolveDependencies (object site, System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.CompositionDependency&gt; ResolveDependencies(object site, class System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.DependencyAccessor.ResolveDependencies(System.Object,System.Composition.Hosting.Core.CompositionContract,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.CompositionDependency&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Object" />
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="site">依存関係のサイトを説明するタグです。</param>
+        <param name="contract">サイトで必要なコントラクトです。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />エクスポート可能な; 前に、依存関係を満たす必要がありますを指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コントラクトのすべての実装への依存関係を解決します。</summary>
+        <returns>解決済みの依存関係のコレクション。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveRequiredDependency">
+      <MemberSignature Language="C#" Value="public System.Composition.Hosting.Core.CompositionDependency ResolveRequiredDependency (object site, System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Hosting.Core.CompositionDependency ResolveRequiredDependency(object site, class System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.DependencyAccessor.ResolveRequiredDependency(System.Object,System.Composition.Hosting.Core.CompositionContract,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Object" />
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="site">依存関係のサイトを説明するタグです。</param>
+        <param name="contract">サイトで必要なコントラクトです。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />エクスポート可能な; 前に、依存関係を満たす必要がありますを指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コントラクトの 1 つの実装に必要な依存関係を解決します。</summary>
+        <returns>解決済みの依存関係。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveOptionalDependency">
+      <MemberSignature Language="C#" Value="public bool TryResolveOptionalDependency (object site, System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite, out System.Composition.Hosting.Core.CompositionDependency dependency);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryResolveOptionalDependency(object site, class System.Composition.Hosting.Core.CompositionContract contract, bool isPrerequisite, [out] class System.Composition.Hosting.Core.CompositionDependency&amp; dependency) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.DependencyAccessor.TryResolveOptionalDependency(System.Object,System.Composition.Hosting.Core.CompositionContract,System.Boolean,System.Composition.Hosting.Core.CompositionDependency@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Object" />
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+        <Parameter Name="dependency" Type="System.Composition.Hosting.Core.CompositionDependency&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="site">依存関係のサイトを説明するタグです。</param>
+        <param name="contract">サイトで必要なコントラクトです。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />エクスポート可能な; 前に、依存関係を満たす必要がありますを指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="dependency">このメソッドが返されると、解決済みの依存関係が含まれています。 または<see langword="null" />です。</param>
+        <summary>コントラクトの 1 つの実装への省略可能な依存関係を解決します。</summary>
+        <returns>
+          <see langword="true" />場合は、依存関係が解決されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

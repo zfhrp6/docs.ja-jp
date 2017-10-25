@@ -1,0 +1,86 @@
+<Type Name="Action&lt;T1,T2&gt;" FullName="System.Action&lt;T1,T2&gt;">
+  <TypeSignature Language="C#" Value="public delegate void Action&lt;in T1,in T2&gt;(T1 arg1, T2 arg2);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Action`2&lt;- T1, - T2&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Action`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T1">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="T2">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Core, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="arg1" Type="T1" />
+    <Parameter Name="arg2" Type="T2" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T1">このデリゲートによってカプセル化されるメソッドの最初のパラメーターの型。</typeparam>
+    <typeparam name="T2">このデリゲートによってカプセル化されるメソッドの 2 番目のパラメーターの型。</typeparam>
+    <param name="arg1">このデリゲートによってカプセル化されるメソッドの最初のパラメーター。</param>
+    <param name="arg2">このデリゲートによってカプセル化されるメソッドの 2 番目のパラメーター。</param>
+    <summary>2 個のパラメーターを持ち、値を返さないメソッドをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Action%602>をパラメーターとして明示的にカスタム デリゲートを宣言しなくても、メソッドに渡すデリゲート。 カプセル化されるメソッドは、このデリゲートによって定義されているメソッドのシグネチャに対応する必要があります。 つまり、値を返す必要がありますいないをカプセル化されるメソッドは、値を渡し、2 つのパラメーターを持つ必要があります。 (C# の場合、メソッドが返す必要があります`void`です。 Visual Basic で定義する必要があります、`Sub`しています.`End Sub` 構築します。 できますが無視される値を返すメソッド。)通常、このようなメソッドは、操作の実行に使用されます。  
+  
+> [!NOTE]
+>  2 つのパラメーターを持ち、値を返すメソッドを参照するには、ジェネリックを使用して<xref:System.Func%603>代わりに委任します。  
+  
+ 使用すると、<xref:System.Action%602>デリゲートがありませんを明示的に 2 つのパラメーターを持つメソッドをカプセル化するデリゲートを定義します。 たとえば、次のコードを明示的に宣言という名前のデリゲート`ConcatStrings`です。 これは、後、デリゲート インスタンスに 2 つのメソッドのいずれかへの参照を割り当てます。 1 つのメソッドは、コンソールに 2 つの文字列を書き込みます2 つ目は、2 つの文字列をファイルに書き込みます。  
+  
+ [!code-csharp[System.Action~2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Action~2/cs/Delegate.cs#1)]
+ [!code-vb[System.Action~2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Action~2/vb/Delegate.vb#1)]  
+  
+ 次の例は、インスタンス化してこのコードを簡略化、<xref:System.Action%602>明示的に新しいデリゲートを定義して、名前付きメソッドをそこに割り当てるのではなくデリゲート。  
+  
+ [!code-csharp[System.Action~2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Action~2/cs/Action2.cs#2)]
+ [!code-vb[System.Action~2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Action~2/vb/action2.vb#2)]  
+  
+ 使用することも、<xref:System.Action%602>次の例に示すように、C# の場合は、匿名メソッドを持つデリゲートします。 (匿名メソッドの概要については、次を参照してください[匿名メソッド](~/docs/csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)。)。  
+  
+ [!code-csharp[System.Action~2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Action~2/cs/Anon.cs#3)]  
+  
+ ラムダ式を割り当てることができます、<xref:System.Action%602>次の例に示すように、インスタンスを委任します。 (ラムダ式の概要については、次を参照してください[ラムダ式](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)。)。  
+  
+ [!code-csharp[System.Action~2#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Action~2/cs/Lambda.cs#4)]
+ [!code-vb[System.Action~2#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Action~2/vb/lambda.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

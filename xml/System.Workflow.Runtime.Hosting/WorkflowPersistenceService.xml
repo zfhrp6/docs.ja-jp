@@ -1,0 +1,432 @@
+<Type Name="WorkflowPersistenceService" FullName="System.Workflow.Runtime.Hosting.WorkflowPersistenceService">
+  <TypeSignature Language="C#" Value="public abstract class WorkflowPersistenceService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WorkflowPersistenceService extends System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.WorkflowPersistenceService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowRuntimeService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての永続性サービスの派生元となる抽象基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフローの実行中に特定の状態になると、ワークフロー ランタイム エンジンはワークフロー インスタンスに関する状態情報を永続化します。 永続化が行われるのは、たとえば、アトミック トランザクションが完了したとき、ワークフロー インスタンスがアイドル状態になったとき、ホストがワークフロー インスタンスに対する <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A?displayProperty=nameWithType> を呼び出したとき、ワークフロー インスタンスが終了または完了したときです。 永続化を行う必要があることがワークフロー ランタイム エンジンのセマンティクスにより決定されると、ワークフロー ランタイム エンジンは永続性サービスによって提供されるメソッドを呼び出し、ワークフロー インスタンスに関する状態情報を保存します。 同様に、ワークフロー ランタイム エンジンが以前に永続化されたワークフロー インスタンスを復元する必要がある場合、ワークフロー ランタイム エンジンは永続性サービスによって提供されるメソッドを呼び出し、その状態情報を読み込みます。 ワークフロー ランタイム エンジンは、永続化を行う必要がある場合についてのすべてのセマンティクスを扱います。 永続性サービスは、ワークフロー状態情報のデータ ストアへの保存およびデータ ストアからの読み込みを実際に処理します。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラスからクラスを派生させることにより、永続性サービスを作成できます。  永続性サービスをワークフロー ランタイム エンジンに追加するには、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> を呼び出すか、アプリケーション構成ファイルに適切なエントリを追加します。 <xref:System.Workflow.Runtime.WorkflowRuntime> に含めることができる永続性サービスは 1 つだけです。 Windows Workflow Foundation に用意されている <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> クラスは、そのまますぐに使用できる永続性サービスですが、拡張して使用することもできます。  
+  
+ ワークフロー ランタイム エンジンは、ワークフロー状態情報をロックするためのセマンティクスを持っています。これは、異なるプロセスで実行される永続性サービスが単一のデータ ストアにアクセスできる環境で使用されます。 <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラスを使用すると、ワークフロー ランタイム エンジンのこの機能をサポートできます。そのためには、データ ストア内のワークフロー インスタンスの状態情報のロックを解除するかどうかを指定するパラメーターを <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState%2A> に提供し、以前にロックされたワークフロー状態情報のロックを解除する <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnlockWorkflowInstanceState%2A> メソッドを提供します。 ロックを実装する永続性サービスでは、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState%2A> を呼び出してワークフロー インスタンスの状態情報をロックする必要があります。  
+  
+ 永続性サービスは、状態情報をデータ ストアに保存できなかった場合、またはデータ ストアから状態情報を読み込めなかった場合は、<xref:System.Workflow.Runtime.Hosting.PersistenceException> をスローする必要があります。 ワークフロー ランタイム エンジンにはこの動作が必要です。  
+  
+ 耐久性のあるストアを使用してワークフローの状態情報を保存するサービスには、バッチ メカニズムが用意されています。 このような場合には、永続性サービスで使用する耐久性のあるストアとワークフロー ランタイム エンジンの内部状態の整合性を保持することが重要です。 <xref:System.Workflow.Runtime.IPendingWork> インターフェイスで定義されている機能をサービスに追加してから、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> によって提供されているワークフロー トランザクション バッチに参加することができます。これは、データ ストアに対する変更を <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に対する作業項目として追加することにより実行されます。 永続的ストア自体によって <xref:System.Transactions.IEnlistmentNotification> インターフェイスが実装されるため、トランザクション ロールバックが発生した場合でもワークフロー情報が誤って永続化されることはありません。 詳細については、「<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveCompletedContextActivity%2A>」または「<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowPersistenceService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Hosting.WorkflowPersistenceService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `SqlWorkflowPersistenceService` から派生した `WorkflowPersistenceService` クラスのインスタンスを作成する例を次に示します。 この例は、Program.cs クラスに含まれている、入れ子にされた例外ハンドラーを示す SDK サンプルです。  詳細については、次を参照してください。、[例外ハンドラーのサンプルの入れ子になった](http://msdn.microsoft.com/en-us/d1da0209-842b-41c8-9b7c-0cbaa1034265)です。  
+  
+ [!code-csharp[WF_Samples#161](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#161)]
+ [!code-vb[WF_Samples#161](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#161)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultSerializedForm">
+      <MemberSignature Language="C#" Value="protected static byte[] GetDefaultSerializedForm (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig unsigned int8[] GetDefaultSerializedForm(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.GetDefaultSerializedForm(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">シリアル化された形式が要求される <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>シリアル化された既定の形式の <see cref="T:System.Workflow.ComponentModel.Activity" /> を取得します。</summary>
+        <returns>シリアル化された既定の形式の <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsBlocked">
+      <MemberSignature Language="C#" Value="protected static bool GetIsBlocked (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblystatic hidebysig bool GetIsBlocked(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.GetIsBlocked(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <summary>指定したアクティビティがブロックされているかどうかを示します。</summary>
+        <returns>
+          指定したアクティビティがブロックされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSuspendOrTerminateInfo">
+      <MemberSignature Language="C#" Value="protected static string GetSuspendOrTerminateInfo (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblystatic hidebysig string GetSuspendOrTerminateInfo(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.GetSuspendOrTerminateInfo(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <summary>指定したアクティビティの終了または中断の情報を取得します。</summary>
+        <returns>終了または中断の情報を格納している <see cref="T:System.String" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowStatus">
+      <MemberSignature Language="C#" Value="protected static System.Workflow.Runtime.WorkflowStatus GetWorkflowStatus (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblystatic hidebysig valuetype System.Workflow.Runtime.WorkflowStatus GetWorkflowStatus(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.GetWorkflowStatus(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <summary>ワークフローのステータスを取得します。</summary>
+        <returns>ワークフローのステータスを示す <see cref="T:System.Workflow.Runtime.WorkflowStatus" /> 列挙値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompletedContextActivity">
+      <MemberSignature Language="C#" Value="protected abstract System.Workflow.ComponentModel.Activity LoadCompletedContextActivity (Guid scopeId, System.Workflow.ComponentModel.Activity outerActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.ComponentModel.Activity LoadCompletedContextActivity(valuetype System.Guid scopeId, class System.Workflow.ComponentModel.Activity outerActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity(System.Guid,System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scopeId" Type="System.Guid" />
+        <Parameter Name="outerActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="scopeId">完了したスコープの <see cref="T:System.Guid" />。</param>
+        <param name="outerActivity">完了したスコープを囲むアクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>派生クラスとして実装された場合、指定した完了スコープをメモリに戻します。</summary>
+        <returns>完了したスコープを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、補正を実装するために <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity%2A> を使用します。 完了したスコープの完全なコピーを復元する必要があります。 そのためには、データ ストア内の完了スコープを表すものから有効な <xref:System.IO.Stream> を復元する必要があります。 次に、オーバーロードされた <xref:System.IO.Stream> メソッドの 1 つに、この <xref:System.Workflow.ComponentModel.Activity.Load%2A> を渡してスコープの逆シリアル化を実行します。  
+  
+ 永続性サービスは、データ ストアから完了スコープを読み込めなかった場合に、適切なメッセージを含めた <xref:System.Workflow.Runtime.Hosting.PersistenceException> をスローする必要があります。  
+  
+   
+  
+## Examples  
+ `LoadCompletedContextActivity` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#269](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#269)]
+ [!code-vb[WF_Samples#269](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#269)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected abstract System.Workflow.ComponentModel.Activity LoadWorkflowInstanceState (Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.ComponentModel.Activity LoadWorkflowInstanceState(valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">ワークフロー インスタンスのルート アクティビティの <see cref="T:System.Guid" />。</param>
+        <summary>派生クラスとして実装された場合、指定したワークフロー インスタンス状態をメモリに戻します。</summary>
+        <returns>ワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティの完全なコピーを復元する必要があります。 そのためには、データ ストア内のワークフロー インスタンスを表すものから有効な <xref:System.IO.Stream> を復元し、オーバーロードされた <xref:System.IO.Stream> メソッドの 1 つに、この <xref:System.Workflow.ComponentModel.Activity.Load%2A> を渡してワークフロー インスタンス状態を逆シリアル化する必要があります。 永続性サービスは、データ ストアからワークフロー インスタンス状態を読み込めなかった場合に、適切なメッセージを含めた <xref:System.Workflow.Runtime.Hosting.PersistenceException> をスローする必要があります。  
+  
+ ワークフロー ランタイム エンジンは、データ ストアに保存されたワークフロー インスタンス状態へのアクセスを制限するためのロック セマンティクスを実装しています。 これは、複数のプロセスで実行される永続性サービスによって利用されます。 ロック セマンティクスは、2 つの異なるプロセスで実行される永続性サービスが同時に同じワークフロー インスタンスをメモリに読み込むことがないようにするためのものです。 永続性サービスがサポートする目的の環境のタイプに応じて、この機能をサポートするかどうかを選択できます。 ランタイム ロック セマンティクスをサポートすることを選択した場合は、そのワークフロー インスタンス状態が既に別のプロセスによってロックされているときに、<xref:System.Workflow.Runtime.WorkflowOwnershipException> をスローする必要があります。 その他の場合は、データ ストア内のワークフロー インスタンス状態へのアクセスをロックする必要があります。 ワークフロー インスタンス状態のロックを解除するには、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnlockWorkflowInstanceState%2A> を呼び出すか、ロック解除パラメーターを <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState%2A> に設定して `true` を呼び出します。  
+  
+   
+  
+## Examples  
+ `LoadWorkflowInstanceState` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#266](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#266)]
+ [!code-vb[WF_Samples#266](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#266)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreFromDefaultSerializedForm">
+      <MemberSignature Language="C#" Value="protected static System.Workflow.ComponentModel.Activity RestoreFromDefaultSerializedForm (byte[] activityBytes, System.Workflow.ComponentModel.Activity outerActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Workflow.ComponentModel.Activity RestoreFromDefaultSerializedForm(unsigned int8[] activityBytes, class System.Workflow.ComponentModel.Activity outerActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.RestoreFromDefaultSerializedForm(System.Byte[],System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityBytes" Type="System.Byte[]" />
+        <Parameter Name="outerActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activityBytes">シリアル化された形式の <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="outerActivity">復元する <see cref="T:System.Workflow.ComponentModel.Activity" /> を含む外側の <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>シリアル化された形式から <see cref="T:System.Workflow.ComponentModel.Activity" /> を復元します。</summary>
+        <returns>復元された <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `RestoreFromDefaultSerializedForm` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#269](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#269)]
+ [!code-vb[WF_Samples#269](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#269)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveCompletedContextActivity">
+      <MemberSignature Language="C#" Value="protected abstract void SaveCompletedContextActivity (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SaveCompletedContextActivity(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveCompletedContextActivity(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">完了したスコープを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>派生クラスとして実装された場合、指定した完了スコープをデータ ストアに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、補正を実装するために完了スコープのアクティビティの状態を保存します。 オーバーロードされた <xref:System.Workflow.ComponentModel.Activity.Save%2A> メソッドの 1 つを呼び出して、`activity` を <xref:System.IO.Stream> にシリアル化する必要があります。その後、<xref:System.IO.Stream> を追加処理してからデータ ストアに書き込むこともできます。 ただし、ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity%2A> を呼び出したときは、アクティビティの完全なコピーを復元する必要があります。  
+  
+ 完了したスコープを、それが囲まれるワークフロー インスタンスに関連付け、ワークフロー インスタンスが完了または終了したときに、データ ストア内のそのスコープを不要とマークすることが可能である必要があります。 したがって、完了したスコープに関連付けられたワークフロー インスタンスの <xref:System.Guid> も保存する必要があります。これは、<xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> に関連付けられた <xref:System.Workflow.Runtime.WorkflowInstance> の `activity` プロパティから取得できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity%2A> は、完了したスコープの <xref:System.Guid> をパラメーターとして受け取ります。 したがって、<xref:System.Workflow.ComponentModel.ActivityExecutionContext.ContextGuid%2A> に関連付けられた `activity` プロパティも保存する必要があります。 このプロパティは、<xref:System.Workflow.ComponentModel.Activity.ActivityContextGuidProperty> の `activity` フィールドを通じて参照できます。  
+  
+ 永続的ストアを使用する永続性サービスを実装する場合は、ワークフロー ランタイム エンジンの内部状態との整合性を維持するために、ワークフロー トランザクション バッチに参加する必要があります。こうすることで、永続的ストアへの実際の書き込みをワークフロー コミット ポイントに達するまで遅らせます。 バッチに参加するには、データベースに対する保留中の変更を表す <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> プロパティに作業項目を追加し、永続性サービスに <xref:System.Workflow.Runtime.IPendingWork> インターフェイスを実装します。  
+  
+ 完了したスコープをデータ ストアに保存できなかった場合は、適切なエラー メッセージを含めた <xref:System.Workflow.Runtime.Hosting.PersistenceException> をスローする必要があります。  
+  
+   
+  
+## Examples  
+ `SaveCompletedContextActivity` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#268](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#268)]
+ [!code-vb[WF_Samples#268](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#268)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected abstract void SaveWorkflowInstanceState (System.Workflow.ComponentModel.Activity rootActivity, bool unlock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SaveWorkflowInstanceState(class System.Workflow.ComponentModel.Activity rootActivity, bool unlock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState(System.Workflow.ComponentModel.Activity,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="unlock" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <param name="unlock">
+          ワークフロー インスタンスをロックしない場合は <see langword="true" />、ロックする場合は <see langword="false" />。</param>
+        <summary>派生クラスとして実装された場合、ワークフロー インスタンス状態をデータ ストアに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーロードされた <xref:System.Workflow.ComponentModel.Activity.Save%2A> メソッドの 1 つを呼び出し、`rootActivity` を <xref:System.IO.Stream> にシリアル化する必要があります。 その後、<xref:System.IO.Stream> を追加処理してからデータ ストアに書き込むこともできます。 ただし、ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState%2A> を呼び出したときは、ルート アクティビティの完全なコピーを復元する必要があります。 ワークフロー インスタンス状態をデータ ストアに保存できなかった場合は、適切なエラー メッセージを含めた <xref:System.Workflow.Runtime.Hosting.PersistenceException> をスローする必要があります。  
+  
+ ワークフロー ランタイム エンジンは、データ ストアに保存されたワークフロー インスタンス状態へのアクセスを制限するためのロック セマンティクスを提供します。 これは、複数のホストで実行される、同じデータ ストアを指す永続性サービスによって利用されます。 ロック セマンティクスは、2 つの異なるワークフロー ランタイムで実行される永続性サービスが同時に同じワークフロー インスタンスをメモリに読み込むことを防ぐように設計されています。 永続性サービスがサポートする目的の環境のタイプに応じて、この機能をサポートするかどうかを選択できます。 ランタイム ロック セマンティクスをサポートすることにした場合、永続性サービスが保存しようとしているワークフロー インスタンス状態が別の永続性サービスによって既にロックされているときは、<xref:System.Workflow.Runtime.WorkflowOwnershipException> をスローする必要があります。 `unlock` を `true` にした場合、ワークフロー インスタンス状態を保存した後、保存したワークフロー インスタンス状態へのアクセスのロックを解除する必要があります。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState%2A> は、ワークフロー インスタンスの <xref:System.Guid> をパラメーターとして受け取ります。 したがって、この <xref:System.Guid> を保存する必要があります。 また、この <xref:System.Guid> を使用して、ワークフロー インスタンスを、保存されたその完了スコープの状態に関連付けることができます。 この操作は必須です。これは、ワークフロー インスタンスが完了したときに、このような完了スコープを不要とマークすることが可能である必要があるためです。  
+  
+ ワークフロー インスタンスが完了または終了した最終的な時点で、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState%2A> を呼び出します。 したがって、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.GetWorkflowStatus%2A> で <xref:System.Workflow.Runtime.WorkflowStatus.Completed> または <xref:System.Workflow.Runtime.WorkflowStatus.Terminated> になった場合は、ワークフロー インスタンスとそれに関連付けられたすべての完了スコープを、データ ストアから安全に削除できます。 あるいは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted> イベントまたは <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> イベントに定期受信することによって、ワークフロー インスタンスに関連付けられたレコードを安全に削除できるタイミングを判断することもできます。 データ ストアからレコードを実際に削除するかどうかは、実装に依存します。  
+  
+ 永続的ストアを使用する永続性サービスを実装する場合は、ワークフロー ランタイム エンジンの内部状態との整合性を維持するために、ワークフロー トランザクション バッチに参加する必要があります。こうすることで、永続的ストアへの実際の書き込みをワークフロー コミット ポイントに達するまで遅らせます。 バッチに参加するには、永続的ストアに対する保留中の変更を表す作業項目を <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> プロパティに追加し、永続性サービスに <xref:System.Workflow.Runtime.IPendingWork> インターフェイスを実装します。  
+  
+   
+  
+## Examples  
+ `SaveWorkflowInstanceState` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#264](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#264)]
+ [!code-vb[WF_Samples#264](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#264)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadOnIdle">
+      <MemberSignature Language="C#" Value="protected abstract bool UnloadOnIdle (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool UnloadOnIdle(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnloadOnIdle(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">完了したスコープを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>アイドル状態になったワークフローがアンロードされるかどうかを判断します。</summary>
+        <returns><see langword="true" /> の場合、ワークフロー ランタイム エンジンは、指定したワークフローがアイドル状態になると、そのワークフローをアンロードします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `UnloadOnIdle` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#270](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#270)]
+ [!code-vb[WF_Samples#270](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#270)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected abstract void UnlockWorkflowInstanceState (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void UnlockWorkflowInstanceState(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnlockWorkflowInstanceState(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <summary>派生クラスでオーバーライドされると、ワークフロー インスタンス状態のロックを解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは抽象メソッドであるため、ロックおよびロック解除に関する既定の実装を含んでいません。  
+  
+ カスタム永続性サービスの実装では、ロック スキームを実装する場合は、このメソッドをオーバーライドし、ロック解除パラメーターの値に基づいて、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState%2A> メソッドのロック/ロック解除機構を提供する必要があります。  
+  
+   
+  
+## Examples  
+ `UnlockWorkflowInstanceState` メソッドの実装例を次に示します。 この例は、FilePersistenceService.cs ファイルに含まれているカスタム永続性サービスのサンプルです。 詳細については、次を参照してください。[カスタム永続性サービスのサンプル](http://msdn.microsoft.com/en-us/869dfadf-5298-4551-bc80-f4cf7918729d)です。  
+  
+ [!code-csharp[WF_Samples#267](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#267)]
+ [!code-vb[WF_Samples#267](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#267)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

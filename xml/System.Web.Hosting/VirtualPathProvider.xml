@@ -1,0 +1,622 @@
+<Type Name="VirtualPathProvider" FullName="System.Web.Hosting.VirtualPathProvider">
+  <TypeSignature Language="C#" Value="public abstract class VirtualPathProvider : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit VirtualPathProvider extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.VirtualPathProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>仮想ファイル システムからリソースを取得する Web アプリケーションを有効にするメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualPathProvider>クラスには、Web アプリケーションの仮想ファイル システムを実装するためのメソッドのセットが用意されています。 仮想ファイル システム内のファイルおよびディレクトリは、サーバーのオペレーティング システムによって提供されるファイル システム以外のデータ ストアによって管理されます。 たとえば、SQL Server データベース内のコンテンツを保存するのに仮想ファイル システムを使用することができます。  
+  
+ 仮想ファイル システムに要求を処理するすべてのファイルを格納できます。 バインディングには、以下の項目が含まれます。  
+  
+-   ASP.NET ページ、マスター ページ、ユーザー コントロール、およびその他のオブジェクト。  
+  
+-   .Htm および .jpg などの拡張機能と標準の Web ページ。  
+  
+-   マップされている任意のカスタム拡張機能、<xref:System.Web.Compilation.BuildProvider>インスタンス。  
+  
+-   テーマの任意の名前付き、`App_Theme`フォルダーです。  
+  
+ ASP.NET アプリケーションのフォルダーや仮想ファイル システムでアプリケーション レベルのアセンブリを生成するファイルを格納することはできません。 バインディングには、以下の項目が含まれます。  
+  
+-   Global.asax ファイルです。  
+  
+-   Web.config ファイルです。  
+  
+-   サイト マップ データのファイルによって使用される、<xref:System.Web.XmlSiteMapProvider>です。  
+  
+-   ディレクトリを含むアプリケーション アセンブリまたはアプリケーション アセンブリを生成する: `Bin`、 `App_Code`、 `App_GlobalResources`、any`App_LocalResources`です。  
+  
+-   アプリケーション データ フォルダー`App_Data`です。  
+  
+> [!NOTE]
+>  展開のために、Web サイトをプリコンパイル、コンテンツがによって提供される、<xref:System.Web.Hosting.VirtualPathProvider>インスタンスはコンパイルされていない、および no<xref:System.Web.Hosting.VirtualPathProvider>インスタンスは、プリコンパイル済みサイトで使用されます。  
+  
+## <a name="registering-a-virtualpathprovider"></a>VirtualPathProvider を登録します。  
+ カスタム<xref:System.Web.Hosting.VirtualPathProvider>インスタンスは、使用して ASP.NET コンパイル システムに登録する必要があります、<xref:System.Web.Hosting.HostingEnvironment.RegisterVirtualPathProvider%2A?displayProperty=nameWithType>メソッド ページ解析やコンパイルが Web アプリケーションが実行される前にします。  
+  
+ 通常、<xref:System.Web.Hosting.VirtualPathProvider>でインスタンスが登録されている、`AppInitialize`で定義されたメソッド、`App_Code`ディレクトリ、または期間中、`Application_Start`内のイベント、`Global.asax`ファイル。 登録する次の例については、<xref:System.Web.Hosting.VirtualPathProvider>でインスタンス、`AppInitialize`メソッドの使用例を参照してください。  
+  
+ 登録することができます、<xref:System.Web.Hosting.VirtualPathProvider>が他のイベントをページの中にインスタンスがコンパイルされ、前にキャッシュ、<xref:System.Web.Hosting.VirtualPathProvider>インスタンスが登録されている無効化されませんが、場合でも、新しい<xref:System.Web.Hosting.VirtualPathProvider>インスタンスは、以前にコンパイルされたページのソースに指定ようになりました。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Hosting.VirtualPathProvider>に格納されている情報を使用して仮想ファイル システムを作成するクラスの実装、<xref:System.Data.DataSet>オブジェクト。 コード例のコード例では処理、<xref:System.Web.Hosting.VirtualFile>と<xref:System.Web.Hosting.VirtualDirectory>に、データからの仮想リソース ストアが提供するクラスが読み込まれる、<xref:System.Data.DataSet>オブジェクト。  
+  
+ この例は、4 つの部分を:<xref:System.Web.Hosting.VirtualPathProvider>クラスの実装、設定に使用する XML データ ファイル、<xref:System.Data.DataSet>オブジェクト、`AppStart`を含むオブジェクト、`AppInitialize`登録に使用する方法、<xref:System.Web.Hosting.VirtualPathProvider>コンパイルを持つクラスシステム、および仮想のファイルへのリンクを提供する ASP.NET ページです。  
+  
+ このサンプル コードを使用して、アプリケーションで、以下の手順を実行します。  
+  
+1.  Web サーバー上には、サンプル アプリケーションを作成します。  
+  
+2.  カスタムのソース コードをコピー<xref:System.Web.Hosting.VirtualPathProvider>オブジェクト (下記参照) アプリケーションのファイルに`App_Code`ディレクトリ。  
+  
+3.  カスタムのソース コードをコピー<xref:System.Web.Hosting.VirtualDirectory>オブジェクト (例を参照してください、<xref:System.Web.Hosting.VirtualDirectory>クラスの概要に関するトピック) アプリケーションのファイルに`App_Code`ディレクトリ。  
+  
+4.  カスタムのソース コードをコピー<xref:System.Web.Hosting.VirtualFile>オブジェクト (例を参照してください、<xref:System.Web.Hosting.VirtualFile>クラスの概要に関するトピック) アプリケーションのファイルに`App_Code`ディレクトリ。  
+  
+5.  ソース コードをコピー、`AppStart`オブジェクト (下記参照) アプリケーションのファイルに`App_Code`ディレクトリ。  
+  
+6.  という名前のファイルに XML データ (下記参照) をコピー`XMLData.xml`アプリケーションのファイルに`App_Data`ディレクトリ。  
+  
+7.  コピー、`default.aspx`サンプル アプリケーションのルート ディレクトリにファイル (下記参照)。 開くには、Web ブラウザーを使用して、`default.aspx`ファイル、および仮想ファイルの内容を表示するページのリンクをクリックします。  
+  
+ 最初の例は、カスタム<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 <xref:System.Web.Hosting.VirtualPathProvider.DirectoryExists%2A>と<xref:System.Web.Hosting.VirtualPathProvider.FileExists%2A>要求されたディレクトリが仮想ファイル システム内に存在するかどうかを示すメソッドをオーバーライドします。 <xref:System.Web.Hosting.VirtualPathProvider.GetDirectory%2A>と<xref:System.Web.Hosting.VirtualPathProvider.GetFile%2A>を返すカスタム メソッドがオーバーライドされる<xref:System.Web.Hosting.VirtualDirectory>と<xref:System.Web.Hosting.VirtualFile>仮想ファイル システムからの情報を含むインスタンス。  
+  
+ クラスにも用意されています、`GetVirtualData`で使用する方法、<xref:System.Web.Hosting.VirtualDirectory>と<xref:System.Web.Hosting.VirtualFile>にアクセスするクラス、<xref:System.Data.DataSet>仮想ファイル システム データを含むオブジェクト。 実装では、運用に、データ ストアとの対話を担当するビジネス オブジェクトでこのメソッドを実装する場合と通常します。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#20](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#20)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#20)]  
+  
+ 2 番目の例は、XML データ ファイルの作成に使用する、<xref:System.Data.DataSet>カスタムによって返されるオブジェクト<xref:System.Web.Hosting.VirtualPathProvider>オブジェクト。 この XML データは、使用方法を示すために使用、 <xref:System.Web.Hosting.VirtualPathProvider>、 <xref:System.Web.Hosting.VirtualDirectory>、および<xref:System.Web.Hosting.VirtualFile>外部のデータからデータを取得するオブジェクトし、実稼働品質データ ストアを表すものではありません。  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>  
+  <resource type="dir"   
+    path="/vrDir"   
+    parentPath=""   
+    content="">  
+    <resource type="file"   
+      path="/vrDir/Level1FileA.vrf"  
+      parentPath="/vrDir"   
+      content="This is the content of file Level1FileA.">  
+    </resource>  
+    <resource type="file"   
+      path="/vrDir/Level1FileB.vrf"  
+      parentPath="/vrDir"   
+      content="This is the content of file Level1FileB.">  
+    </resource>  
+    <resource type="dir"   
+      path="/vrDir/Level2DirA"   
+      parentPath="/vrDir"   
+      content="">  
+    <resource type="file"   
+      path="/vrDir/Level2DirA/Level2FileA.vrf"   
+      parentPath="/vrDir/Level2DirA"   
+      content="This is the content of file Level2FileA.">  
+    </resource>  
+    <resource type="file"   
+      path="/vrDir/Level2DirA/Level2FileB.vrf"  
+      parentPath="/vrDir/Level2DirA"   
+      content="This is the content of file Level2FileB.">  
+    </resource>  
+  </resource>  
+  <resource type="dir"   
+    path="/vrDir/Level2DirB"   
+    parentPath="/vrDir"   
+    content="">  
+    <resource type="file"   
+      path="/vrDir/Level2DirB/Level2FileA.vrf"   
+      parentPath="/vrDir/Level2DirB"   
+      content="This is the content of file Level2FileA.">  
+    </resource>  
+    <resource type="file"   
+      path="/vrDir/Level2DirB/Level2FileB.vrf"  
+      parentPath="/vrDir/Level2DirB"   
+      content="This is the content of file Level2FileB.">  
+    </resource>  
+  </resource>  
+</resource>  
+```  
+  
+ 3 番目の例では、`AppStart`オブジェクトを含む、`AppInitialize`メソッドです。 このメソッドは、必要なカスタム初期化を実行する ASP.NET アプリケーションの初期化中に呼び出されます。 ここでは、登録するカスタム<xref:System.Web.Hosting.VirtualPathProvider>ASP.NET でのオブジェクトがシステムを構築します。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#10](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/AppStart.cs#10)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/AppStart.vb#10)]  
+  
+ 最後の例は、仮想ファイル システム内の仮想ファイルへのリンクを含む ASP.NET ページです。  
+  
+ [!code-aspx-csharp[System.Web.Hosting.VirtualPathProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.Hosting.VirtualPathProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Web.Hosting.VirtualPathProvider" />、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" />  
+  
+ 場合、カスタム<see cref="T:System.Web.Hosting.VirtualPathProvider" />クラスが仮想ファイル システムのディレクトリをサポートしている、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />  
+  
+-   <see cref="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" /><block subset="none" type="note"><para>  
+ 仮想ファイル システム Web サイトのテーマが含まれます (バーチャル マシンを作成して<c>App_Themes</c>ディレクトリ)、カスタム<see cref="T:System.Web.Hosting.VirtualPathProvider" />クラスは、ディレクトリをサポートする必要があります。  
+  
+</para></block>  
+  
+ カスタム<see cref="T:System.Web.Hosting.VirtualPathProvider" />クラスから派生したクラスと協力、<see cref="T:System.Web.Hosting.VirtualFile" />と<see cref="T:System.Web.Hosting.VirtualDirectory" />クラスです。 仮想ファイル システムからファイルおよびディレクトリの情報を提供するような型から派生クラスを実装する必要があります。 カスタムの例については<see cref="T:System.Web.Hosting.VirtualFile" />の実装の例を参照してください、<see cref="T:System.Web.Hosting.VirtualFile" />クラスの概要に関するトピック。 カスタムの例については<see cref="T:System.Web.Hosting.VirtualDirectory" />の実装の例を参照してください、<see cref="T:System.Web.Hosting.VirtualDirectory" />クラスの概要に関するトピック。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected VirtualPathProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンス トラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドする場合、<xref:System.Web.Hosting.VirtualPathProvider.%23ctor%2A>コンス トラクター、遅延後に行う必要のある任意の初期化、<xref:System.Web.Hosting.VirtualPathProvider>にオブジェクトが登録されている、<xref:System.Web.Hosting.VirtualPathProvider.Initialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.%23ctor%2A>カスタムを初期化するコンス トラクター<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#25](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#25)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#25](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombineVirtualPaths">
+      <MemberSignature Language="C#" Value="public virtual string CombineVirtualPaths (string basePath, string relativePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CombineVirtualPaths(string basePath, string relativePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="basePath" Type="System.String" />
+        <Parameter Name="relativePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="basePath">アプリケーションのベース パスです。</param>
+        <param name="relativePath">基本パスへの相対仮想リソースへのパス。</param>
+        <summary>仮想リソースへの完全なパスを返すへの相対パスのベース パスを結合します。</summary>
+        <returns>仮想リソースへの完全パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths%2A>メソッドを仮想リソースへの相対パスの内容を検査し、必要な変更を実行します。  
+  
+ 既定の実装を組み合わせて、`basePath`と`relativePath`標準の ASP.NET パスの処理に従ってパラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>既定の実装をオーバーライドする場合、<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />で特殊な構文に変換する必要があるメソッドを<paramref name="relativePath" />有効な仮想パスのパラメーターです。 ユーザーは、構文の確認には、パスの検証、および整形式の入力のエッジ ケースと同様に、形式が正しくない入力の処理を担当します。  
+  
+ ほとんどの場合でない必要があります、既定をオーバーライドする<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />メソッドです。 ただし、パスを変更する必要がある場合をお勧めを制限すること、<see cref="M:System.Web.Hosting.VirtualPathProvider.CombineVirtualPaths(System.String,System.String)" />トークンで、仮想パス プロバイダーに固有の変更を実装、<paramref name="relativeUrl" />パラメーター、および、呼び出すことを実行する基本実装通常ASP.NET のパスの処理</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryExists">
+      <MemberSignature Language="C#" Value="public virtual bool DirectoryExists (string virtualDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool DirectoryExists(string virtualDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.DirectoryExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualDir">仮想ディレクトリへのパス。</param>
+        <summary>ディレクトリが仮想ファイル システムに存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />仮想ファイル システム内のディレクトリが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Web.Hosting.VirtualPathProvider.DirectoryExists%2A>によって表されるリソース コンパイル システムに示すためにメソッド`virtualDir`これによって提供される仮想ファイル システム内に存在する<xref:System.Web.Hosting.VirtualPathProvider>インスタンス。  
+  
+ 場合、カスタム<xref:System.Web.Hosting.VirtualPathProvider>クラスは、ディレクトリをサポートしていません、<xref:System.Web.Hosting.VirtualPathProvider.DirectoryExists%2A>メソッドが返す`false`です。  
+  
+> [!NOTE]
+>  仮想ファイル システム Web サイトのテーマが含まれます (バーチャル マシンを作成して`App_Themes`ディレクトリ)、カスタム<xref:System.Web.Hosting.VirtualPathProvider>クラスは、ディレクトリをサポートする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.DirectoryExists%2A>カスタム メソッド<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#22](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#22)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExists">
+      <MemberSignature Language="C#" Value="public virtual bool FileExists (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FileExists(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.FileExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想ファイルへのパス。</param>
+        <summary>仮想ファイル システムにファイルが存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />仮想ファイル システムにファイルが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Web.Hosting.VirtualPathProvider.FileExists%2A>によって表されるリソース コンパイル システムに示すためにメソッド`virtualPath`これによって提供される仮想ファイル システム内に存在する<xref:System.Web.Hosting.VirtualPathProvider>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.FileExists%2A>カスタム メソッド<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#21](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#21)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheDependency">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Caching.CacheDependency GetCacheDependency (string virtualPath, System.Collections.IEnumerable virtualPathDependencies, DateTime utcStart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Caching.CacheDependency GetCacheDependency(string virtualPath, class System.Collections.IEnumerable virtualPathDependencies, valuetype System.DateTime utcStart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.GetCacheDependency(System.String,System.Collections.IEnumerable,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="virtualPathDependencies" Type="System.Collections.IEnumerable" />
+        <Parameter Name="utcStart" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">プライマリ仮想リソースへのパス。</param>
+        <param name="virtualPathDependencies">プライマリ仮想リソースに必要なその他のリソースへのパスの配列。</param>
+        <param name="utcStart">仮想リソースを読み取った UTC 時刻。</param>
+        <summary>指定した仮想パスに基づくキャッシュの依存関係を作成します。</summary>
+        <returns>A<see cref="T:System.Web.Caching.CacheDependency" />指定された仮想リソースのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.Web.Hosting.VirtualPathProvider.GetCacheDependency%2A>メソッドを返します。`null`です。 キャッシュの仮想リソースに後で使用する必要がありますをオーバーライドするか、<xref:System.Web.Hosting.VirtualPathProvider.GetCacheDependency%2A>メソッドまたは<xref:System.Web.Hosting.VirtualPathProvider.GetFileHash%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を実装して、<xref:System.Web.Hosting.VirtualPathProvider.GetCacheDependency%2A>カスタム メソッド<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#28](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#28)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#28](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheKey">
+      <MemberSignature Language="C#" Value="public virtual string GetCacheKey (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCacheKey(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想リソースへのパス。</param>
+        <summary>指定した仮想パスを使用するキャッシュ キーを返します。</summary>
+        <returns>指定された仮想リソースのキャッシュ キー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Hosting.VirtualPathProvider.GetCacheKey%2A>仮想リソースのカスタム キャッシュ キーを提供するメソッド。 オーバーライドしていない場合、<xref:System.Web.Hosting.VirtualPathProvider.GetCacheKey%2A>メソッド、仮想パスは、キャッシュ キーを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>既定値のみ<see cref="M:System.Web.Hosting.VirtualPathProvider.GetCacheKey(System.String)" />メソッドの仮想パスに基づくキャッシュ キーを作成する場合は、アプリケーションの機能しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectory">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Hosting.VirtualDirectory GetDirectory (string virtualDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Hosting.VirtualDirectory GetDirectory(string virtualDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.GetDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.VirtualDirectory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualDir">仮想ディレクトリへのパス。</param>
+        <summary>仮想ファイル システムから仮想ディレクトリを取得します。</summary>
+        <returns>子孫、<see cref="T:System.Web.Hosting.VirtualDirectory" />仮想ファイル システム内のディレクトリを表すクラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualPathProvider.GetDirectory%2A>の子孫を返します、<xref:System.Web.Hosting.VirtualDirectory>ファイルとで指定したディレクトリに含まれているディレクトリを含むクラス、`virtualDir`パラメーター。  
+  
+ 場合、カスタム<xref:System.Web.Hosting.VirtualPathProvider>クラスは、ディレクトリをサポートしていません、<xref:System.Web.Hosting.VirtualPathProvider.GetDirectory%2A>メソッドが返す`null`です。  
+  
+> [!NOTE]
+>  仮想ファイル システム Web サイトのテーマが含まれます (バーチャル マシンを作成して`App_Themes`ディレクトリ)、カスタム<xref:System.Web.Hosting.VirtualPathProvider>クラスは、ディレクトリをサポートする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.GetDirectory%2A>カスタム メソッド<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#24](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#24)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#24](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFile">
+      <MemberSignature Language="C#" Value="public virtual System.Web.Hosting.VirtualFile GetFile (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Hosting.VirtualFile GetFile(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.GetFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.VirtualFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想ファイルへのパス。</param>
+        <summary>仮想ファイル システムから仮想ファイルを取得します。</summary>
+        <returns>子孫、<see cref="T:System.Web.Hosting.VirtualFile" />仮想ファイル システムにファイルを表すクラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualPathProvider.GetFile%2A>の子孫を返します、<xref:System.Web.Hosting.VirtualFile>によって指定されたファイルを表すクラス、`virtualPath`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.GetFile%2A>カスタム メソッド<xref:System.Web.Hosting.VirtualPathProvider>クラスです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#23](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#23)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#23](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileHash">
+      <MemberSignature Language="C#" Value="public virtual string GetFileHash (string virtualPath, System.Collections.IEnumerable virtualPathDependencies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetFileHash(string virtualPath, class System.Collections.IEnumerable virtualPathDependencies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.GetFileHash(System.String,System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="virtualPathDependencies" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">プライマリ仮想リソースへのパス。</param>
+        <param name="virtualPathDependencies">プライマリ仮想リソースに必要なその他の仮想リソースへのパスの配列。</param>
+        <summary>指定した仮想パスのハッシュを返します。</summary>
+        <returns>指定した仮想パスのハッシュです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Hosting.VirtualPathProvider.GetFileHash%2A>仮想ファイル システム リソースの依存関係のハッシュを指定するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Hosting.VirtualPathProvider" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualPathProvider.Initialize%2A> ASP.NET コンパイル システムに、プロバイダーが登録された後にメソッドが呼び出されます。 <xref:System.Web.Hosting.VirtualPathProvider.Initialize%2A>後に必要な初期化を提供するメソッドが使用される、<xref:System.Web.Hosting.VirtualPathProvider>インスタンスは、アプリケーションが占める環境に配置されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.Initialize%2A>メソッドから、アプリケーションのデータ ファイルへのパスを設定する<xref:System.Web.Hosting.HostingEnvironment>インスタンス。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#26](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#26)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#26](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Web.Hosting.VirtualPathProvider" />リースが作成されるようにすることによって、無期限の有効期間のオブジェクトします。</summary>
+        <returns>常に <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.MarshalByRefObject.InitializeLifetimeService%2A>基本クラス メソッド。 常に返します`null`なり、それによってを制限するリースが作成されない、<xref:System.Web.Hosting.VirtualPathProvider>オブジェクトの有効期間。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream OpenFile (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream OpenFile(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.VirtualPathProvider.OpenFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想ファイルへのパス。</param>
+        <summary>仮想ファイルからストリームを返します。</summary>
+        <returns>読み取り専用<see cref="T:System.IO.Stream" />の指定した仮想ファイルまたはリソース オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.VirtualPathProvider.OpenFile%2A>メソッドは、便利なメソッドを作成しなくても仮想ファイルからストリームを取得することができます、<xref:System.Web.Hosting.VirtualPathProvider>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Previous">
+      <MemberSignature Language="C#" Value="protected System.Web.Hosting.VirtualPathProvider Previous { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Hosting.VirtualPathProvider Previous" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Hosting.VirtualPathProvider.Previous" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.VirtualPathProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前に登録されたへの参照を取得<see cref="T:System.Web.Hosting.VirtualPathProvider" />コンパイル システム内のオブジェクト。</summary>
+        <value>次<see cref="T:System.Web.Hosting.VirtualPathProvider" />コンパイル システム内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、 <xref:System.Web.Hosting.VirtualPathProvider> ASP.NET コンパイル システムでオブジェクトを登録すると、プロバイダーのチェーンに追加されます。 使用して、<xref:System.Web.Hosting.VirtualPathProvider.Previous%2A>オフ、前の手の形の処理にプロパティ<xref:System.Web.Hosting.VirtualPathProvider>これによって、要求されたパスが指定されていない場合、チェーン内のオブジェクト<xref:System.Web.Hosting.VirtualPathProvider>インスタンス。  
+  
+ パスのプロバイダーのチェーンは、常に、ファイル システムからファイルを提供する既定の ASP.NET プロバイダーで終了します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装の<xref:System.Web.Hosting.VirtualPathProvider.GetFile%2A>メソッドです。 かどうか、要求された仮想ディレクトリで始まらない文字列`"/vrdir"`、メソッドを使用して、<xref:System.Web.Hosting.VirtualPathProvider.Previous%2A>プロパティを次に、要求を渡す<xref:System.Web.Hosting.VirtualPathProvider>チェーン内のオブジェクト。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Hosting.VirtualPathProvider>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Hosting.VirtualPathProvider#23](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/CS/SamplePathProvider.cs#23)]
+ [!code-vb[System.Web.Hosting.VirtualPathProvider#23](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.hosting.virtualpathprovider/VB/SamplePathProvider.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

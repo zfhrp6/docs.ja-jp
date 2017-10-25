@@ -1,0 +1,134 @@
+<Type Name="ActivityChangeAction" FullName="System.Workflow.ComponentModel.ActivityChangeAction">
+  <TypeSignature Language="C#" Value="public abstract class ActivityChangeAction : System.Workflow.ComponentModel.WorkflowChangeAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ActivityChangeAction extends System.Workflow.ComponentModel.WorkflowChangeAction" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.ActivityChangeAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.WorkflowChangeAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.ActivityChangeActionMarkupSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行中のワークフロー インスタンスで、<see cref="T:System.Workflow.ComponentModel.CompositeActivity" /> に対する変更案を表します。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 追加、削除など、典型的な変更アクションを表す基本クラスであり、コレクションに対して適用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ActivityChangeAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityChangeAction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityChangeAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ActivityChangeAction (System.Workflow.ComponentModel.CompositeActivity compositeActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.CompositeActivity compositeActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityChangeAction.#ctor(System.Workflow.ComponentModel.CompositeActivity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="compositeActivity" Type="System.Workflow.ComponentModel.CompositeActivity" />
+      </Parameters>
+      <Docs>
+        <param name="compositeActivity">変更事項に関連付けられている <see cref="T:System.Workflow.ComponentModel.CompositeActivity" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityChangeAction" /> クラスの新しいインスタンスを初期化します。この中で、関連する <see cref="T:System.Workflow.ComponentModel.CompositeActivity" /> も初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="compositeActivity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerActivityDottedPath">
+      <MemberSignature Language="C#" Value="public string OwnerActivityDottedPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OwnerActivityDottedPath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityChangeAction.OwnerActivityDottedPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられた <see cref="P:System.Workflow.ComponentModel.ActivityChangeAction.OwnerActivityDottedPath" /> の <see cref="T:System.Workflow.ComponentModel.CompositeActivity" /> を取得または設定します。</summary>
+        <value>このインスタンスに関連付けられた <see cref="P:System.Workflow.ComponentModel.ActivityChangeAction.OwnerActivityDottedPath" /> の <see cref="T:System.Workflow.ComponentModel.CompositeActivity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、関連付けられた <xref:System.Workflow.ComponentModel.ActivityChangeAction.OwnerActivityDottedPath%2A> の <xref:System.Workflow.ComponentModel.CompositeActivity> メンバーを操作します。 したがって、関連付けられた <xref:System.Workflow.ComponentModel.CompositeActivity> を初期化せずにこれを設定しようとすると、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateChanges">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateChanges (System.Workflow.ComponentModel.Activity contextActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.ComponentModel.Compiler.ValidationErrorCollection ValidateChanges(class System.Workflow.ComponentModel.Activity contextActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityChangeAction.ValidateChanges(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.ValidationErrorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="contextActivity">変更内容を検証するアクティビティ。</param>
+        <summary>対象アクティビティで保留になっている変更を検証します。</summary>
+        <returns>対象アクティビティに対して定義された各 <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection" /> を実行し、その結果として生成された <see cref="T:System.Workflow.ComponentModel.Compiler.ValidationError" /> を含む <see cref="T:System.Workflow.ComponentModel.Compiler.Validator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextActivity` を安全に <xref:System.Workflow.ComponentModel.CompositeActivity> にキャストできない場合、null 参照を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="contextActivity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

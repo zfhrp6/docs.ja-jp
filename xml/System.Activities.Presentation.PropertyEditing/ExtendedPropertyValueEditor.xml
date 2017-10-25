@@ -1,0 +1,97 @@
+<Type Name="ExtendedPropertyValueEditor" FullName="System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor">
+  <TypeSignature Language="C#" Value="public class ExtendedPropertyValueEditor : System.Activities.Presentation.PropertyEditing.PropertyValueEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExtendedPropertyValueEditor extends System.Activities.Presentation.PropertyEditing.PropertyValueEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Presentation.PropertyEditing.PropertyValueEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティのすべての拡張エディター ロジックのコンテナーです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor> クラスには、インライン エディターおよび拡張エディターそれぞれに対して 1 つずつ、合計 2 つの <xref:System.Windows.DataTemplate> オブジェクトを保持できます。 インライン エディターの境界内に表示されるカスタム インターフェイスを提供、`Properties`ウィンドウ、および拡張エディターの新しいウィンドウに表示されるインターフェイスを提供します。  
+  
+ <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> プロパティは、インライン エディターのビジュアル インターフェイスの XAML テンプレートを返します。<xref:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor.ExtendedEditorTemplate%2A> プロパティは、拡張エディターの XAML テンプレートを返します。 これらのテンプレートは、通常、プロジェクト内の ResourceDictionary に用意されています。  
+  
+ カスタムの <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> を呼び出すには、<xref:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor> を使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedPropertyValueEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>拡張エディターおよびインライン エディターの <see cref="T:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor" /> オブジェクトを指定しないで、<see cref="T:System.Windows.DataTemplate" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedPropertyValueEditor (System.Windows.DataTemplate extendedEditorTemplate, System.Windows.DataTemplate inlineEditorTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DataTemplate extendedEditorTemplate, class System.Windows.DataTemplate inlineEditorTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor.#ctor(System.Windows.DataTemplate,System.Windows.DataTemplate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="extendedEditorTemplate" Type="System.Windows.DataTemplate" />
+        <Parameter Name="inlineEditorTemplate" Type="System.Windows.DataTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="extendedEditorTemplate">拡張ポップアップまたは固定エディターに使用される <see cref="T:System.Windows.DataTemplate" />。</param>
+        <param name="inlineEditorTemplate">インライン エディターに使用される <see cref="T:System.Windows.DataTemplate" />。</param>
+        <summary>指定した拡張エディターおよびインライン エディターの <see cref="T:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor" /> オブジェクトを使用して、<see cref="T:System.Windows.DataTemplate" /> の新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用された場合は、<xref:System.Activities.ActivityContext.DataContext%2A> が <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedEditorTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate ExtendedEditorTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate ExtendedEditorTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.ExtendedPropertyValueEditor.ExtendedEditorTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張ポップアップまたは固定エディターに使用される <see cref="T:System.Windows.DataTemplate" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.DataTemplate" />拡張ポップアップまたは固定エディターに使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.ActivityContext.DataContext%2A> が <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,301 @@
+<Type Name="LinqDataSourceValidationException" FullName="System.Web.UI.WebControls.LinqDataSourceValidationException">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceValidationException : Exception, System.Web.DynamicData.IDynamicValidatorException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit LinqDataSourceValidationException extends System.Exception implements class System.Runtime.Serialization.ISerializable, class System.Web.DynamicData.IDynamicValidatorException" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceValidationException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IDynamicValidatorException</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>新規の検証中に発生したか、値が挿入、更新、または削除する前に、値を変更する例外を記述、<see cref="T:System.Web.UI.WebControls.LinqDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceValidationException>クラスには、型変換とプロパティ set アクセス操作子の例外が含まれています。 含まれるすべての検証中にスローされる例外、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>コレクション。 反復処理するそれぞれの検証例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>コレクション。  
+  
+ 通常の例外を処理する、 <xref:System.Web.UI.WebControls.LinqDataSource.Updating>、 <xref:System.Web.UI.WebControls.LinqDataSource.Deleting>、および<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 検証例外がスローされた場合、`Exception`のプロパティ、 <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs>、 <xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs>、または<xref:System.Web.UI.WebControls.LinqDataSourceInsertEventArgs>オブジェクトが含まれています、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException>オブジェクト。 例外がスローされない場合、`Exception`プロパティが含まれます`null`です。  
+  
+ 検証の例外を処理するためのハンドラーを作成、 <xref:System.Web.UI.WebControls.LinqDataSource.Updating>、 <xref:System.Web.UI.WebControls.LinqDataSource.Deleting>、または<xref:System.Web.UI.WebControls.LinqDataSource.Inserting>イベント。 イベント ハンドラーで確認するかどうか、`Exception`以外の場合、イベント引数クラスのプロパティに値が含まれています`null`です。 場合、`Exception`プロパティが null でない、1 つまたは複数の検証例外がスローされたおよび内の各検証例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>プロパティです。  
+  
+ 検証例外は、値がプロパティの型と一致しない場合に発生することができます。 たとえば、数字以外の文字を使用して、整数のプロパティを更新しようとするいると、検証例外が発生します。 LINQ to SQL クラスは、プロパティに、予期される範囲またはパターン内にある値が含まれているかどうかを確認するカスタマイズされた検証条件を含めることもできます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Updating(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceUpdateEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+               In e.Exception.InnerExceptions  
+            Label1.Text &= innerException.Key & ": " & _  
+                innerException.Value.Message & "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Updating(object sender,   
+        LinqDataSourceUpdateEventArgs e)  
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+             e.Exception.InnerExceptions)  
+        {  
+        Label1.Text += innerException.Key + ": " +   
+            innerException.Value.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceValidationException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>エラーを説明するシステム提供のメッセージを使用して、<see cref="T:System.Web.UI.WebControls.LinqDataSourceValidationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーを説明するシステム提供のメッセージでは、現在のシステム カルチャが考慮されます。  
+  
+ <xref:System.Web.UI.WebControls.LinqDataSourceValidationException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|システム提供のローカライズされた説明。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceValidationException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>エラーを説明する指定したメッセージを使用して、<see cref="T:System.Web.UI.WebControls.LinqDataSourceValidationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceValidationException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|`message` に指定されたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LinqDataSourceValidationException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">ソースまたは転送先に関するコンテキスト情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Web.UI.WebControls.LinqDataSourceValidationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ストリームを介して送信される例外オブジェクトを再構成する逆シリアル化中に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceValidationException (string message, System.Collections.Generic.IDictionary&lt;string,Exception&gt; innerExceptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Collections.Generic.IDictionary`2&lt;string, class System.Exception&gt; innerExceptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Exception})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerExceptions" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Exception&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <param name="innerExceptions">検証の例外のコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceValidationException" />指定したメッセージ エラー、および内部例外への参照のコレクションを記述するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceValidationException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceValidationException" />指定したエラー メッセージと内部例外への参照を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は使用しませんこのコンス トラクターに検証例外が格納されているため、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>プロパティのない、<xref:System.Exception.InnerException%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceValidationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされる例外のシリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">ソースまたは転送先に関するコンテキスト情報。</param>
+        <summary>例外に関する情報を取得し、それを追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceValidationException.GetObjectData%2A>メソッドを追加する例外に関する情報、<xref:System.Runtime.Serialization.SerializationInfo>シリアル化の対象となるオブジェクト。 逆シリアル化中に例外が再構成されて、<xref:System.Runtime.Serialization.SerializationInfo>ストリームで送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerExceptions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,Exception&gt; InnerExceptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class System.Exception&gt; InnerExceptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Exception&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいまたは変更されたデータの検証中に発生した 1 つまたは複数の例外を取得します。</summary>
+        <value>例外を格納するコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>コレクションには、更新の前にデータの検証中にスローされたすべての検証例外が含まれている、挿入、または削除操作です。 検証例外は、値がプロパティの型と一致しない場合に発生することができます。 たとえば、数値以外の文字を使用して整数のプロパティを更新しようとすると、検証例外がスローされます。 LINQ to SQL クラスは、プロパティに、予期される範囲またはパターン内にある値が含まれているかどうかを確認するカスタマイズされた検証条件を含めることもできます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.UI.WebControls.LinqDataSource.Updating>イベント。 使用して検証例外メッセージが表示されて、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+```vb  
+Protected Sub LinqDataSource_Updating(ByVal sender As Object, _  
+        ByVal e As LinqDataSourceUpdateEventArgs)  
+    If (e.Exception IsNot Nothing) Then  
+        For Each innerException As KeyValuePair(Of String, Exception) _  
+                In e.Exception.InnerExceptions  
+          Label1.Text &= innerException.Key & ": " & _   
+                  innerException.Value.Message & "<br />"  
+        Next  
+        e.ExceptionHandled = True  
+    End If  
+End Sub  
+```  
+  
+```csharp  
+protected void LinqDataSource_Updating(object sender,   
+        LinqDataSourceUpdateEventArgs e)   
+{  
+    if (e.Exception != null)  
+    {  
+        foreach (KeyValuePair<string, Exception> innerException in   
+            e.Exception.InnerExceptions)  
+        {  
+            Label1.Text += innerException.Key + ": " +   
+                innerException.Message + "<br />";  
+        }  
+        e.ExceptionHandled = true;  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

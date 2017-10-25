@@ -1,0 +1,2993 @@
+<Type Name="Complex" FullName="System.Numerics.Complex">
+  <TypeSignature Language="C#" Value="public struct Complex : IEquatable&lt;System.Numerics.Complex&gt;, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Complex extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Numerics.Complex&gt;, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Numerics.Complex" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Numerics</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Numerics</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Numerics.Complex&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>複素数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の実数部と虚数部で構成される数値です。 複素数 z は通常、z のフォームで書き込まれ = x + イ語、場所*x*と*y*は実数と*すれば*プロパティを持つ仮想的な単位です*すれば*<sup>2</sup> -1 を = です。 複素数の実数部として表されます*x*、によっての複素数の虚数部が表されます*y*です。  
+  
+ <xref:System.Numerics.Complex>型はデカルト座標系 (実際、虚数部) を使用してインスタンス化して、複素数を操作するときにします。 複素数は、システムでは 2 次元座標、複素平面と呼ばれるポイントとして表現できます。 複素数の実数部が x 軸 (水平軸) に配置されているし、虚数部が、y 軸 (縦軸) に配置されています。  
+  
+ 絶対値を使用して極座標グラフの座標系、極座標のに基づいて複素平面内の任意の時点を表現することできますも、ポイントは、2 つの数値によって特徴付けられます。  
+  
+-   原点からの距離である大きさ (つまり、0, 0、または x 軸と y 軸の交差ポイント)。  
+  
+-   そのはフェーズを実際の軸と原点から点を結ぶ直線の角度。  
+  
+## <a name="instantiating-a-complex-number"></a>複素数をインスタンス化します。  
+ 次の方法のいずれかの値から複素数へ値を割り当てることができます。  
+  
+-   2 つを渡すことによって<xref:System.Double>コンス トラクターの値。 最初の値は、複素数の実数部を表し、2 番目の値がその虚数部を表します。 これらの値は、2 次元のデカルト座標システム内の複素数の位置を表します。  
+  
+-   静的なを呼び出すことによって (`Shared` Visual Basic で)<xref:System.Numerics.Complex.FromPolarCoordinates%2A?displayProperty=nameWithType>極座標から複素数を作成するメソッド。  
+  
+-   割り当てることによって、 <xref:System.Byte>、 <xref:System.SByte>、 <xref:System.Int16>、 <xref:System.UInt16>、 <xref:System.Int32>、 <xref:System.UInt32>、 <xref:System.Int64>、 <xref:System.UInt64>、 <xref:System.Single>、または<xref:System.Double>値を<xref:System.Numerics.Complex>オブジェクト。 複素数の実数部の値になります、虚数部が 0 と等しい。  
+  
+-   キャスト (c#) または (Visual Basic) の変換によって、<xref:System.Decimal>または<xref:System.Numerics.BigInteger>値を<xref:System.Numerics.Complex>オブジェクト。 複素数の実数部の値になります、虚数部が 0 と等しい。  
+  
+-   メソッドまたはに演算子によって返される複素数を割り当てることによって、<xref:System.Numerics.Complex>オブジェクト。 たとえば、<xref:System.Numerics.Complex.Add%2A?displayProperty=nameWithType>を 2 つの複素数の和である複素数を返す静的メソッドは、および<xref:System.Numerics.Complex.op_Addition%2A?displayProperty=nameWithType>演算子が 2 つの複素数を加算し、結果を返します。  
+  
+ 次の例では、各値から複素数への値を割り当てることのこれら 5 つの方法を示します。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/create1.cs#2)]
+ [!code-vb[System.Numerics.Complex.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/create1.vb#2)]  
+  
+## <a name="operations-with-complex-numbers"></a>複素数の操作  
+ <xref:System.Numerics.Complex> .NET Framework の構造体には、次の機能を提供するメンバーが含まれています。  
+  
+-   それらが等しいかどうかを決定する 2 つの複素数を比較するメソッド。  
+  
+-   複素数の算術演算を実行する演算子です。 <xref:System.Numerics.Complex>演算子を使用すると、加算、減算、乗算、除算、および複素数の単項否定演算を実行できます。  
+  
+-   複素数の他の数値の操作を実行するメソッド。 だけでなく 4 つの基本的な算術演算を指定した複素数を発生させる、複素数の平方根を求めるして複素数の絶対値を取得できます。  
+  
+-   複素数の三角関数演算を実行するメソッド。 たとえば、複合型で表される角度のタンジェントを計算できます。  
+  
+ なお、ため、<xref:System.Numerics.Complex.Real%2A>と<xref:System.Numerics.Complex.Imaginary%2A>プロパティは読み取り専用、既存の値を変更することはできません<xref:System.Numerics.Complex>オブジェクト。  操作を実行するすべてのメソッド、<xref:System.Numerics.Complex>番号、戻り値の型の場合<xref:System.Numerics.Complex>を返す新しい<xref:System.Numerics.Complex>数。  
+  
+## <a name="precision-and-complex-numbers"></a>精度と複素数  
+ 複素数の実数部と虚数部の部分は、次の 2 つの倍精度浮動小数点値で表されます。 つまり、<xref:System.Numerics.Complex>倍精度浮動小数点値などの値には、数値演算の結果の精度が失われる可能性がします。 つまり、その厳密な 2 つの等価性の比較<xref:System.Numerics.Complex>値が失敗する、2 つの値の違いは、有効桁数の損失による場合でもです。 詳細については、「<xref:System.Double>」を参照してください。  
+  
+ たとえば、数値の対数の指数演算を実行すると、元の番号を返す必要があります。 しかし、場合によっては、浮動小数点値の有効桁数の損失が 2 つの値の間で若干異なります次の例に示すようにします。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/precision1.cs#5)]
+ [!code-vb[System.Numerics.Complex.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/precision1.vb#5)]  
+  
+ 同様に、次の例の平方根を計算する、<xref:System.Numerics.Complex>番号、32 ビット、IA64 バージョンの .NET Framework に若干異なる結果を生成します。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/precision1.cs#6)]
+ [!code-vb[System.Numerics.Complex.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/precision1.vb#6)]  
+  
+## <a name="complex-numbers-infinity-and-nan"></a>複素数、無限大および NaN  
+ 複素数の実数部と虚数部の部分がによって表される<xref:System.Double>値。 範囲だけでなく<xref:System.Double.MinValue?displayProperty=nameWithType>に<xref:System.Double.MaxValue?displayProperty=nameWithType>、複素数の実数部または虚数部の一部の値をとります。 <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、 <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、または<xref:System.Double.NaN?displayProperty=nameWithType>です。 <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、 <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、および<xref:System.Double.NaN?displayProperty=nameWithType>算術演算または三角関数演算ですべてを伝達します。  
+  
+ 次の例では、除算<xref:System.Numerics.Complex.Zero>複素数の実数部と虚数部構成の両方が生成する<xref:System.Double.NaN?displayProperty=nameWithType>です。 その結果、この値で乗算を実行するも生成複素数の実数部と虚数部の部分は<xref:System.Double.NaN?displayProperty=nameWithType>します。 同様の範囲からオーバーフローする乗算を実行する、<xref:System.Double>型が複素数の実数部を生成する<xref:System.Double.NaN?displayProperty=nameWithType>虚数部と<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。 複素数の実数部を返します、後でこの複素数で除算を実行する<xref:System.Double.NaN?displayProperty=nameWithType>虚数部と<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/nan1.cs#3)]
+ [!code-vb[System.Numerics.Complex.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/nan1.vb#3)]  
+  
+ 無効なまたは範囲をオーバーフローする複素数の算術演算、<xref:System.Double>データ型が例外をスローしないでください。 代わりに、返す、 <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、 <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、または<xref:System.Double.NaN?displayProperty=nameWithType>次の条件下で。  
+  
+-   0 を返しますで正の数値で除算<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。  
+  
+-   上限の境界オーバーフローが発生する操作を行う、<xref:System.Double>データ型を返します<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>です。  
+  
+-   0 を返しますで負の数値で除算<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+-   下限の境界オーバーフローが発生する操作を行う、<xref:System.Double>データ型を返します<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+-   0 を 0 で除算を返します<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+-   値を持つオペランドに対して実行する操作を行う<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、 <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、または<xref:System.Double.NaN?displayProperty=nameWithType>を返します<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>、 <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、または<xref:System.Double.NaN?displayProperty=nameWithType>、特定の操作によって異なります。  
+  
+ このメソッドによって実行される中間の計算に適用されることに注意してください。 乗算など、`new Complex(9e308, 9e308) and new Complex(2.5, 3.5)`数式を使用して (ac - bd) + (ad + bc) しました。 実数部、乗算を実行した結果の計算に評価される式 9 e 308 * 2.5 - 9 e 308 * 3.5。 この式では各中間の乗算を返します<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>と減算する試行<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>から<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>返します<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+## <a name="formatting-a-complex-number"></a>複素数の書式設定  
+ 複素数の文字列形式を既定では、形式になります`(`*実際*`,` *虚数*`)`ここで、*実際*と*虚数部*の文字列形式には、<xref:System.Double>複素数の実数部と虚数部のコンポーネントを構成する値。 一部のオーバー ロード、<xref:System.Numerics.Complex.ToString%2A>メソッドには、これらの文字列形式のカスタマイズができるように<xref:System.Double>特定のカルチャの書式指定規則を反映するように、または標準またはカスタム数値書式指定文字列によって定義された特定の形式で表示される値。 (詳細については、次を参照してください[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)。)。  
+  
+ 複素数の文字列形式を表す一般的な方法のいずれかの形式を + bi ここで、複素数の実数部、かつ b が複素数の虚数部。 電気エンジニア リングの複素数を最もよくとして表す、+ bj です。 これら 2 つの形式のいずれかでは、複雑な数値の文字列形式を取得できます。 これを行うには、実装することによって、カスタム書式プロバイダーを定義、<xref:System.ICustomFormatter>と<xref:System.IFormatProvider>インターフェイス、および、呼び出し、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドです。  
+  
+ 次の例では定義、`ComplexFormatter`をいずれかの形式の文字列として複素数を表すクラスを + bi または + bj です。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/customfmt1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/customfmt1.vb#1)]  
+  
+ 次の例は、このカスタム フォーマッタを使用して複雑な数値の文字列形式を表示します。  
+  
+ [!code-csharp[System.Numerics.Complex.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.class/cs/customfmt1.cs#4)]
+ [!code-vb[System.Numerics.Complex.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.class/vb/customfmt1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Complex (double real, double imaginary);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 real, float64 imaginary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="real" Type="System.Double" />
+        <Parameter Name="imaginary" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="real">複素数の実数部。</param>
+        <param name="imaginary">複素数の虚数部。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Numerics.Complex" />指定された実数部と虚数部の値を使用して構造体します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `real`または`imaginary`への明示的なキャストが必要なデータ型では場合、引数は精度を失う可能性があります<xref:System.Double>です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの複素数をインスタンス化し、それらを加算、減算、乗算、および除算操作で使用します。  
+  
+ [!code-csharp[System.Numerics.Complex.ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.ctor/cs/ctor1.cs#1)]
+ [!code-vb[System.Numerics.Complex.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.ctor/vb/ctor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abs">
+      <MemberSignature Language="C#" Value="public static double Abs (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Abs(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Abs(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>複素数の絶対値 (または大きさ) を取得します。</summary>
+        <returns><paramref name="value" /> の絶対値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の絶対値はその<xref:System.Numerics.Complex.Magnitude%2A>プロパティです。 実数値の絶対値を + bi は、次のように計算します。  
+  
+-   場合 b = 0 の場合、結果は 0 です。  
+  
+-   場合、> b、結果は、*<xref:System.Math.Sqrt%2A?displayProperty=nameWithType>(1 + b<sup>2</sup>/a<sup>2</sup>)。  
+  
+-   場合 b > の結果は b * <xref:System.Math.Sqrt%2A?displayProperty=nameWithType>(1 + a<sup>2</sup>/b<sup>2</sup>)。  
+  
+ 絶対値の計算の結果、オーバーフローになる場合は、いずれかが返されます<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。 どちらの場合、<xref:System.Numerics.Complex.Real%2A>または<xref:System.Numerics.Complex.Imaginary%2A>プロパティは<xref:System.Double.NaN?displayProperty=nameWithType>し、その他のプロパティがどちらも<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>も<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>、メソッドを返します<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例は、複素数の絶対値を計算しの値に相当あることを示しています、<xref:System.Numerics.Complex.Magnitude%2A>プロパティです。  
+  
+ [!code-csharp[System.Numerics.Complex.Abs#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.abs/cs/abs1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Abs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.abs/vb/abs1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Acos">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Acos (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Acos(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Acos(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">コサインを表す複素数。</param>
+        <summary>指定した複素数のアーク コサインである角度を返します。</summary>
+        <returns>これはアーク コサイン ラジアン単位の角度の<paramref name="value" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Acos%2A>複素数のメソッドに対応して、<xref:System.Math.Acos%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Acos%2A>メソッドは、次の式を使用します。  
+  
+ (-<xref:System.Numerics.Complex.ImaginaryOne>) * <xref:System.Numerics.Complex.Log%2A>(`value` + <xref:System.Numerics.Complex.ImaginaryOne>*<xref:System.Numerics.Complex.Sqrt%2A>(<xref:System.Numerics.Complex.One> - `value` * `value`)))    
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Acos%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Acos%2A>メソッドを<xref:System.Numerics.Complex.Cos%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Acos#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.acos/cs/acos1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Acos#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.acos/vb/acos1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Add (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Add(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Add(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">加算する 1 番目の複素数。</param>
+        <param name="right">加算する 2 番目の複素数。</param>
+        <summary>2 つの複素数を加算し、その結果を返します。</summary>
+        <returns><paramref name="left" /> と <paramref name="right" /> の合計。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑なを追加、+、bi、番号し、2 番目の複素数、c + di は次の形式になります。  
+  
+ (a + c) + (b + d) i。  
+  
+ コンポーネントの値は、いずれかの場合は、メソッドのいずれかでオーバーフローが発生、結果が実数部または虚数部のコンポーネントで呼び出し、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ カスタム演算子をサポートしない言語を使用して、<xref:System.Numerics.Complex.Add%2A>複素数の加算を実行するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、複素数の加算を示しています。  
+  
+ [!code-csharp[System.Numerics.Complex.Add#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.add/cs/add1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Add#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.add/vb/add1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Asin">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Asin (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Asin(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Asin(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のアーク サインである角度を返します。</summary>
+        <returns>アーク サインである角度の<paramref name="value" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Asin%2A>複素数のメソッドに対応して、<xref:System.Math.Asin%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Asin%2A>メソッドは、次の式を使用します。  
+  
+ -<xref:System.Numerics.Complex.ImaginaryOne> * <xref:System.Numerics.Complex.Log%2A>(<xref:System.Numerics.Complex.ImaginaryOne> * 値 + <xref:System.Numerics.Complex.Sqrt%2A>(<xref:System.Numerics.Complex.One> -値 * 値))    
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Asin%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Asin%2A>メソッドを<xref:System.Numerics.Complex.Sin%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Asin#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.asin/cs/asin1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Asin#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.asin/vb/asin1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Atan">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Atan (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Atan(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Atan(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のアーク タンジェントである角度を返します。</summary>
+        <returns>アーク タンジェントである角度<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Atan%2A>複素数のメソッドに対応して、<xref:System.Math.Atan%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Atan%2A>メソッドは、次の式を使用します。  
+  
+ <xref:System.Numerics.Complex.ImaginaryOne>/新しい複合型 (2.0、0.0)) * (<xref:System.Numerics.Complex.Log%2A>(<xref:System.Numerics.Complex.One>  -  <xref:System.Numerics.Complex.ImaginaryOne> * 値)- <xref:System.Numerics.Complex.Log%2A>(<xref:System.Numerics.Complex.One> + ImaginaryOne * 値)   
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Atan%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Atan%2A>メソッドを<xref:System.Numerics.Complex.Tan%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Atan#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.atan/cs/atan1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Atan#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.atan/vb/atan1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conjugate">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Conjugate (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Conjugate(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Conjugate(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>複素数の共役を計算し、結果を返します。</summary>
+        <returns>共役<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の共役虚数の符号を反転させます。つまり、虚数部を単項否定演算を適用します。 場合は、+ bi 複素数で、その共役-bi です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの複素数の共役を表示します。  
+  
+ [!code-csharp[System.Numerics.Complex.Conjugate#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.conjugate/cs/conjugate1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Conjugate#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.conjugate/vb/conjugate1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cos">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Cos (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Cos(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Cos(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のコサインを返します。</summary>
+        <returns><paramref name="value" /> のコサイン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Cos%2A>複素数のメソッドに対応して、<xref:System.Math.Cos%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Cos%2A>メソッドでは、次の数式を使用して、複素数のコサインを計算する + bi:  
+  
+ (<xref:System.Math.Cos%2A>(a) * <xref:System.Math.Cosh%2A>(b)、-(<xref:System.Math.Sin%2A>(a) * <xref:System.Math.Sinh%2A>(b)))  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Acos%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Acos%2A>メソッドを<xref:System.Numerics.Complex.Cos%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Acos#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.acos/cs/acos1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Acos#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.acos/vb/acos1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cosh">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Cosh (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Cosh(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Cosh(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のハイパーボリック コサインを返します。</summary>
+        <returns><paramref name="value" /> のハイパーボリック コサイン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Cosh%2A>複素数のメソッドに対応して、<xref:System.Math.Cosh%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Cosh%2A>メソッドでは、次の数式を使用して、複素数のハイパーボリック コサインを計算する + bi:  
+  
+ (<xref:System.Math.Cosh%2A>(a) * <xref:System.Math.Cos%2A>(b)、 <xref:System.Math.Sinh%2A>(a) * <xref:System.Math.Sin%2A>(b))  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Divide">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Divide (System.Numerics.Complex dividend, System.Numerics.Complex divisor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Divide(valuetype System.Numerics.Complex dividend, valuetype System.Numerics.Complex divisor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Divide(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dividend" Type="System.Numerics.Complex" />
+        <Parameter Name="divisor" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="dividend">被除数の複素数。</param>
+        <param name="divisor">除数の複素数。</param>
+        <summary>複素数を別の複素数で除算し、その結果を返します。</summary>
+        <returns>除算の商。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数を除算、+、2 番目の複素数、数、c + di での bi は次の形式になります。  
+  
+ ((ac + bd)/(c<sup>2</sup> + d<sup>2</sup>)) + ((bc-ad)/(c<sup>2</sup> + d<sup>2</sup>) i  
+  
+ 商の計算結果が実数部または虚数部のいずれかのコンポーネントで、オーバーフローになる場合は、そのコンポーネントの値は<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ <xref:System.Numerics.Complex.Divide%2A>メソッドは、カスタム演算子をサポートしない言語で使用できます。 その動作は、除算演算子を使用する除算と同じです。  
+  
+   
+  
+## Examples  
+ 次の例では、複素数の配列内の各要素で複素数を除算します。  
+  
+ [!code-csharp[System.Numerics.Complex.Divide#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.divide/cs/divide1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Divide#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.divide/vb/divide1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Equals(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象の複素数。</param>
+        <summary>現在のインスタンスの値と指定した複素数の値が等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合この複素数と<paramref name="value" />値が同じである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29>メソッドには、<xref:System.IEquatable%601>の実装、<xref:System.Numerics.Complex>構造体。 若干の実行よりも高く<xref:System.Numerics.Complex.Equals%28System.Object%29>メソッド値から複素数へのパラメーターの変換先があるないためです。  
+  
+ その実数部が等しいとその虚数部が等しい場合、2 つの複素数が等しいです。 <xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29>メソッドは、次の式に相当します。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/equals1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/equals1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>使用して、<see cref="M:System.Numerics.Complex.Equals(System.Numerics.Complex)" />メソッド、注意を 2 つの値が等しいためにと見なされます。 その実数部と虚数部のコンポーネントの有効桁数が異なるため等しくないです。 次の例では、レポートを<c>(3.33333, 0.142857)</c>と<c>(10/3, 1/7)</c>が等しくないです。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/precision1.cs#4)]
+ [!code-vb[System.Numerics.Complex.Equals#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/precision1.vb#4)]  
+  
+ 手法は、次の 2 つの値の差の許容の余白を定義することをお勧めいずれか (などです。 値の実数部と虚数部のコンポーネントの 1 つの 01%) 等しいかどうかの値を比較するのではなくです。 2 つの値の差の絶対値は、以下が許容範囲は、違いは、多くの場合、精度の違いにより、そのため、値が一致することです。 次の例では、このテクニックを使用して、等しくない場合に上記のコード例にある 2 つの複雑な値を比較します。 2 つの複素数が等しい場合を検索します。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/precision1.cs#5)]
+ [!code-vb[System.Numerics.Complex.Equals#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/precision1.vb#5)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>現在のインスタンスの値と指定されたオブジェクトの値が等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="obj" />パラメーターは、<see cref="T:System.Numerics.Complex" />オブジェクトまたは型への暗黙的な変換の対応、<see cref="T:System.Numerics.Complex" />オブジェクト、およびその値が現在に等しい<see cref="T:System.Numerics.Complex" />オブジェクトです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その実数部が等しいとその虚数部が等しい場合、2 つの複素数が等しいです。 <xref:System.Numerics.Complex.Equals%28System.Object%29>メソッドは、次の式に相当します。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/equals1.cs#2)]
+ [!code-vb[System.Numerics.Complex.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/equals1.vb#2)]  
+  
+ 場合、`obj`パラメーターではありません、<xref:System.Numerics.Complex>オブジェクトが、暗黙的な変換が定義されているデータ型、<xref:System.Numerics.Complex.Equals%28System.Object%29>メソッドに変換`obj`を<xref:System.Numerics.Complex>実数部の値と等しいオブジェクト`obj`比較を実行する前に、虚数部は 0 に等しいとします。 次の例では、複素数および倍精度浮動小数点値が等しいことを見つけることによってこれを示します。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/equals3.cs#6)]
+ [!code-vb[System.Numerics.Complex.Equals#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/equals3.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>使用して、<see cref="M:System.Numerics.Complex.Equals(System.Numerics.Complex)" />メソッド、注意を 2 つの値が等しいためにと見なされます。 その実数部と虚数部のコンポーネントの有効桁数が異なるため等しくないです。 問題がある顕著になる場合<paramref name="obj" />に変換する必要があります、<see cref="T:System.Double" />比較を実行する前にします。 次の例では、複素数の実数部を値と等しくなりますが表示されます、<see cref="T:System.Single" />を持つ値<see cref="T:System.Single" />値。 出力を等価性の比較を返します<see langword="False" />です。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/equals4.cs#8)]
+ [!code-vb[System.Numerics.Complex.Equals#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/equals4.vb#8)]  
+  
+ 手法は、次の 2 つの値の差の許容の余白を定義することをお勧めいずれか (などです。 値の実数部と虚数部のコンポーネントの 1 つの 01%) 等しいかどうかの値を比較するのではなくです。 2 つの値の差の絶対値は、以下が許容範囲は、違いは、有効桁数の違いによりする可能性があります、したがって、値は等しいと考えられます。 次の例では、このテクニックを使用して、等しくない場合に上記のコード例にある 2 つの値を比較します。 等しい場合に検索されます。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/precision2.cs#7)]
+ [!code-vb[System.Numerics.Complex.Equals#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/precision2.vb#7)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Exp">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Exp (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Exp(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Exp(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">累乗に使用する値を指定する複素数。</param>
+        <summary>返します<see langword="e" />累乗した値から複素数で指定します。</summary>
+        <returns>数値 <see langword="e" /> を <paramref name="value" /> で累乗した値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Numerics.Complex.Pow%2A>メソッドを他のベースのべき乗を計算します。  
+  
+ <xref:System.Numerics.Complex.Exp%2A>複素数のメソッドに対応して、<xref:System.Math.Exp%2A?displayProperty=nameWithType>実数のメソッドです。 <xref:System.Numerics.Complex.Exp%2A>逆関数は、<xref:System.Numerics.Complex.Log%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Exp%2A>メソッドです。 示しています、有効桁数の欠落をいくつかの状況において、<xref:System.Double>によって返される値を渡すと、データ型、<xref:System.Numerics.Complex.Log%2A>メソッドを<xref:System.Numerics.Complex.Exp%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Log#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.log/cs/log1.cs#1)] 
+ [!code-vb[System.Numerics.Complex.Log#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.log/vb/log1.vb#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPolarCoordinates">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex FromPolarCoordinates (double magnitude, double phase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex FromPolarCoordinates(float64 magnitude, float64 phase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.FromPolarCoordinates(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="magnitude" Type="System.Double" />
+        <Parameter Name="phase" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="magnitude">原点 (X 軸と Y 軸の交点) から値までの距離である大きさ。</param>
+        <param name="phase">線から水平軸までの角度であるフェーズ (ラジアン単位)。</param>
+        <summary>ポイントの極座標から複素数を作成します。</summary>
+        <returns>複素数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.FromPolarCoordinates%2A>メソッドは、極座標に基づく値から複素数をインスタンス化します。  
+  
+ 複素平面での戻り値のポイントの複数の表現があるため、<xref:System.Numerics.Complex.FromPolarCoordinates%2A>メソッドは正規化されます。 正の数値に大きさを正規化し、フェーズの範囲内の値は正規化<xref:System.Math.PI>に<xref:System.Math.PI>です。 その結果の値、<xref:System.Numerics.Complex.Phase%2A>と<xref:System.Numerics.Complex.Magnitude%2A>結果として得られる複素数のプロパティではの元の値が等しくない場合があります、`magnitude`と`phase`パラメーター。  
+  
+ 値を度数からラジアンに変換する、`phase`ことによって乗算パラメーター  <xref:System.Math.PI?displayProperty=nameWithType> /180 です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Numerics.Complex.FromPolarCoordinates%2A>する複素数をインスタンス化、極座標に基づくメソッドとの値を表示し、その<xref:System.Numerics.Complex.Magnitude%2A>と<xref:System.Numerics.Complex.Phase%2A>プロパティです。  
+  
+ [!code-csharp[System.Numerics.Complex.Phase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.phase/cs/phase1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Phase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.phase/vb/phase1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Numerics.Complex" /> オブジェクトのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imaginary">
+      <MemberSignature Language="C#" Value="public double Imaginary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Imaginary" />
+      <MemberSignature Language="DocId" Value="P:System.Numerics.Complex.Imaginary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の虚数部を取得<see cref="T:System.Numerics.Complex" />オブジェクト。</summary>
+        <value>複素数の虚数部。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の指定、+、bi、 <xref:System.Numerics.Complex.Imaginary%2A> b の値を返します。  
+  
+   
+  
+## Examples  
+ 次の例の配列をインスタンス化<xref:System.Numerics.Complex>オブジェクトし、フォームでは、それぞれの実数部と虚数部のコンポーネントが表示されます、+ bi です。  
+  
+ [!code-csharp[System.Numerics.Complex.Real#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.real/cs/real1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Real#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.real/vb/real1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImaginaryOne">
+      <MemberSignature Language="C#" Value="public static readonly System.Numerics.Complex ImaginaryOne;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Numerics.Complex ImaginaryOne" />
+      <MemberSignature Language="DocId" Value="F:System.Numerics.Complex.ImaginaryOne" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Numerics.Complex" />0 と 1 に等しい仮想的な数に等しく実数を持つインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Numerics.Complex>値を使用して、<xref:System.Numerics.Complex.ImaginaryOne>プロパティです。 この値を呼び出すことによってインスタンス化される別の値を比較して、 <xref:System.Numerics.Complex> 0 に等しい実数部と虚数部 1 に等しいを持つコンス トラクターです。 例の出力に示す 2 つの値が等しいです。  
+  
+ [!code-csharp[System.Numerics.Complex.ImaginaryOne#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.imaginaryone/cs/imaginaryone1.cs#1)]
+ [!code-vb[System.Numerics.Complex.ImaginaryOne#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.imaginaryone/vb/imaginaryone1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Log (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Log(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Log(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>自然を返します (基本<see langword="e" />) と指定した複素数の対数。</summary>
+        <returns>自然 (基本<see langword="e" />) の対数<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Log%28System.Numerics.Complex%29>複素数のメソッドに対応して、<xref:System.Math.Log%28System.Double%29?displayProperty=nameWithType>実数のメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Log%2A>メソッドです。 示しています、有効桁数の欠落をいくつかの状況において、<xref:System.Double>によって返される値を渡すと、データ型、<xref:System.Numerics.Complex.Log%2A>メソッドを<xref:System.Numerics.Complex.Exp%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Log#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.log/cs/log1.cs#1)] 
+ [!code-vb[System.Numerics.Complex.Log#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.log/vb/log1.vb#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Log (System.Numerics.Complex value, double baseValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Log(valuetype System.Numerics.Complex value, float64 baseValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Log(System.Numerics.Complex,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+        <Parameter Name="baseValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <param name="baseValue">対数の底。</param>
+        <summary>指定した複素数の指定した底での対数を返します。</summary>
+        <returns>対数<paramref name="value" />ベース<paramref name="baseValue" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Log%28System.Numerics.Complex%2CSystem.Double%29>複素数のメソッドに対応して、<xref:System.Math.Log%28System.Double%2CSystem.Double%29?displayProperty=nameWithType>実数のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log10">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Log10 (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Log10(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Log10(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数の底 10 の対数を返します。</summary>
+        <returns>底 10 の対数<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Log10%2A>複素数のメソッドに対応して、<xref:System.Math.Log10%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Magnitude">
+      <MemberSignature Language="C#" Value="public double Magnitude { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Magnitude" />
+      <MemberSignature Language="DocId" Value="P:System.Numerics.Complex.Magnitude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複素数の大きさ (または絶対値) を取得します。</summary>
+        <value>現在のインスタンスの大きさ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Magnitude%2A>プロパティは、複素数の絶対値に相当します。 複素数で表される 2 次元の点を原点 (x 軸とデカルト座標システムで y 軸の交点) からの距離が指定します。 絶対値は次のように計算されます。  
+  
+ & #124 です。+ bi & #124 です。= <xref:System.Math.Sqrt%2A?displayProperty=nameWithType>(a * a + b * b)  
+  
+ このプロパティに、いずれかを返します絶対値の計算の結果、オーバーフローになる場合<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ <xref:System.Numerics.Complex.Magnitude%2A>と<xref:System.Numerics.Complex.Phase%2A>プロパティは、極座標グラフの座標系で複素数を表すポイントの位置を定義します。  
+  
+ 呼び出して、デカルト座標ではなく、極座標に基づく値から複素数をインスタンス化することができます、<xref:System.Numerics.Complex.FromPolarCoordinates%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、複素数の絶対値を計算しの値に相当あることを示しています、<xref:System.Numerics.Complex.Magnitude%2A>プロパティです。  
+  
+ [!code-csharp[System.Numerics.Complex.Abs#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.abs/cs/abs1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Abs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.abs/vb/abs1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Multiply (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Multiply(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Multiply(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">乗算する 1 番目の複素数。</param>
+        <param name="right">乗算する 2 番目の複素数。</param>
+        <summary>2 つの複素数の積を返します。</summary>
+        <returns>製品、<paramref name="left" />と<paramref name="right" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑なの乗算 number, a + bi、および 2 番目の複素数、c + di は次の形式になります。  
+  
+ (ac - bd) + (ad + bc) i  
+  
+ そのコンポーネントの値がいずれかの場合は、乗算の結果は実数部または虚数部のいずれかのコンポーネントでオーバーフローが発生、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ <xref:System.Numerics.Complex.Multiply%2A>カスタム演算子をサポートしない言語のメソッドを実装します。 その動作は、乗算演算子を使用する乗算と同じです。  
+  
+   
+  
+## Examples  
+ 次の例の複素数の配列の各要素によっての複素数を乗算します。  
+  
+ [!code-csharp[System.Numerics.Complex.Multiply#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.multiply/cs/multiply1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Multiply#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.multiply/vb/multiply1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Negate">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Negate (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Negate(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Negate(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数の加法に関する逆元を返します。</summary>
+        <returns>結果、<see cref="P:System.Numerics.Complex.Real" />と<see cref="P:System.Numerics.Complex.Imaginary" />のコンポーネント、<paramref name="value" />パラメーターが-1 を乗算します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の加法に関する逆元は、複素数の値を生成する<xref:System.Numerics.Complex>複素数を元に追加されたとき。 このメソッドは、元の複素数の実数部と虚数部のコンポーネントが-1 で乗算される複素数を返します。  
+  
+ <xref:System.Numerics.Complex.Negate%2A>カスタム演算子をサポートしない言語のメソッドを実装します。 この動作は、単項否定演算子を使用した否定演算<xref:System.Numerics.Complex.op_UnaryNegation%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、複素数の配列内の各要素の加法に関する逆元を取得します。  
+  
+ [!code-csharp[System.Numerics.Complex.Negate#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.negate/cs/negate1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Negate#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.negate/vb/negate1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="One">
+      <MemberSignature Language="C#" Value="public static readonly System.Numerics.Complex One;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Numerics.Complex One" />
+      <MemberSignature Language="DocId" Value="F:System.Numerics.Complex.One" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Numerics.Complex" />実数と虚数部番号 0 に等しいのいずれかに等しいとインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Numerics.Complex>値を使用して、<xref:System.Numerics.Complex.One>プロパティです。 この値を呼び出すことによってインスタンス化される別の値を比較して、 <xref:System.Numerics.Complex> 1 に等しい実数部と虚数部を 0 に等しいを持つコンス トラクターです。 例の出力に示す 2 つの値が等しいです。  
+  
+ [!code-csharp[System.Numerics.Complex.One#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.one/cs/one1.cs#1)]
+ [!code-vb[System.Numerics.Complex.One#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.one/vb/one1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex operator + (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Addition(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Addition(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">加算する 1 番目の値。</param>
+        <param name="right">加算する 2 番目の値。</param>
+        <summary>2 つの複素数を加算します。</summary>
+        <returns><paramref name="left" /> と <paramref name="right" /> の合計。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Addition%2A>メソッドは、複素数の加算演算を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Add#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.add/cs/add3.cs#3)]
+ [!code-vb[System.Numerics.Complex.Add#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.add/vb/add3.vb#3)]  
+  
+ 複雑なを追加、+、bi、番号し、2 番目の複素数、c + di は次の形式になります。  
+  
+ (a + c) + (b + d) i  
+  
+ そのコンポーネントの値は、いずれかの場合は、メソッドのいずれかでオーバーフローが発生、結果が実数部または虚数部のコンポーネントで呼び出し、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Add%2A>メソッド代わりにします。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Add%28System.Numerics.Complex%2CSystem.Numerics.Complex%29?displayProperty=nameWithType>  
+  
+## Examples  
+ 次の例は、複素数の加算を示しています。  
+  
+ [!code-csharp[System.Numerics.Complex.Add#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.add/cs/add2.cs#2)]
+ [!code-vb[System.Numerics.Complex.Add#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.add/vb/add2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Division">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex operator / (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Division(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Division(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">被除数。</param>
+        <param name="right">除数。</param>
+        <summary>指定した複素数を別の指定した複素数で除算します。</summary>
+        <returns><paramref name="left" /> を <paramref name="right" /> で除算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Division%2A>メソッドは、複素数を除算演算を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Divide#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.divide/cs/divide2.cs#2)]
+ [!code-vb[System.Numerics.Complex.Divide#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.divide/vb/divide2.vb#2)]  
+  
+ 複雑な除算 number, a + bi、および 2 番目の複素数、c + di は次の形式になります。  
+  
+ ((ac + bd)/(c<sup>2</sup> + d<sup>2</sup>)) + ((bc-ad)/(c<sup>2</sup> + d<sup>2</sup>) i  
+  
+ 除算した結果が実数部または虚数部のいずれかのコンポーネントでオーバーフローが、そのコンポーネントの値がいずれかの<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ カスタム演算子と演算子のオーバー ロードをサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Divide%2A>メソッド代わりにします。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Divide%28System.Numerics.Complex%2CSystem.Numerics.Complex%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Equality(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象の 1 番目の複素数。</param>
+        <param name="right">比較対象の 2 番目の複素数。</param>
+        <summary>2 つの複素数が等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="left" />と<paramref name="right" />パラメーター値が同じである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Equality%2A>メソッド定義の等値演算子の動作<xref:System.Numerics.Complex>値。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/eqoperator1.cs#9)]
+ [!code-vb[System.Numerics.Complex.Equals#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/eqoperator1.vb#9)]  
+  
+ カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29>メソッド代わりにします。  
+  
+ その実数部が等しいとその虚数部が等しい場合、2 つの複素数が等しいです。 <xref:System.Numerics.Complex.op_Equality%2A>メソッドは、次の式に相当します。  
+  
+ [!code-csharp[System.Numerics.Complex.Equals#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.equals/cs/equals1.cs#3)]
+ [!code-vb[System.Numerics.Complex.Equals#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.equals/vb/equals1.vb#3)]  
+  
+ 有効桁数が異なる、ため明らかと等価である 2 つの複素数できると見なされる等しくないに注意してください。 詳細と回避策は、次を参照してください。、<xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29>メソッドです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Numerics.Complex (decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Explicit(valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Explicit(System.Decimal)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>明示的な変換を定義、<see cref="T:System.Decimal" />値から複素数への値。</summary>
+        <returns>実数部にある複素数<paramref name="value" />と虚数 0 に等しい。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的な変換演算子に変換できる型を定義する、<xref:System.Numerics.Complex>オブジェクト。 言語コンパイラは実行されませんこの変換に自動的にデータの損失が生じる可能性があるためです。 代わりに、実行、変換、キャスト演算子 (C# の場合) または変換関数の場合のみ (など`CType`Visual Basic で) を使用します。 それ以外の場合、コンパイラ エラーが表示されます。
+
+ 変換、<xref:System.Decimal>複素数の実数部の値につながる精度が失われるのため、 <xref:System.Double>、これは、型の複素数の<xref:System.Numerics.Complex.Real%2A>プロパティが有効桁数よりも少ない、<xref:System.Decimal>です。
+
+
+
+## Examples
+ 次の例では、明示的に変換<xref:System.Decimal>値<xref:System.Numerics.Complex>値。
+
+ [!code-csharp[System.Numerics.Complex.Explicit#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.explicit/cs/explicit1.cs#1)]   
+ [!code-vb[System.Numerics.Complex.Explicit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.explicit/vb/explicit1.vb#1)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Numerics.Complex (System.Numerics.BigInteger value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Explicit(valuetype System.Numerics.BigInteger value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Explicit(System.Numerics.BigInteger)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.BigInteger" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>明示的な変換を定義、<see cref="T:System.Numerics.BigInteger" />値から複素数への値。</summary>
+        <returns>実数部にある複素数<paramref name="value" />と虚数 0 に等しい。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的な変換演算子に変換できる型を定義する、<xref:System.Numerics.Complex>オブジェクト。 言語コンパイラは実行されませんこの変換に自動的にデータの損失が生じる可能性があるためです。 代わりに、実行、変換、キャスト演算子 (C# の場合) または変換関数の場合のみ (など`CType`Visual Basic で) を使用します。 それ以外の場合、コンパイラ エラーが表示されます。
+
+ 変換、<xref:System.Numerics.BigInteger>複素数の実数部の値につながる精度が失われるのため、 <xref:System.Double>、これは、型の複素数の<xref:System.Numerics.Complex.Real%2A>プロパティが有効桁数よりも少ない、<xref:System.Numerics.BigInteger>です。
+
+ 変換が成功しなかった場合ため、<xref:System.Numerics.BigInteger>の範囲外の値は、<xref:System.Double>型、操作はスローされません、<xref:System.OverflowException>です。 代わりに場合、`value`はより小さい<xref:System.Double.MinValue>、結果は、複素数を持つ、<xref:System.Numerics.Complex.Real%2A>プロパティの値に等しい<xref:System.Double.NegativeInfinity>です。 場合`value`がより大きい<xref:System.Double.MaxValue>、結果は、複素数を持つ、<xref:System.Numerics.Complex.Real%2A>プロパティの値に等しい<xref:System.Double.PositiveInfinity>です。
+
+
+
+## Examples
+ 次の例では、明示的に変換<xref:System.Numerics.BigInteger>値<xref:System.Numerics.Complex>値。
+
+ [!code-csharp[System.Numerics.Complex.Explicit#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.explicit/cs/explicit1.cs#2)]   
+ [!code-vb[System.Numerics.Complex.Explicit#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.explicit/vb/explicit1.vb#2)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Byte)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>符号なしバイト値から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードにより、コンパイラからの変換を処理する<xref:System.Byte>から次の例のように、複素数の値。 変換の結果は、複素数の実数部と等しいことに注意してください、<xref:System.Byte>値と虚数部は 0 です。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#1)]   
+ [!code-vb[System.Numerics.Complex.Implicit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#1)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Double)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>倍精度浮動小数点数から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードにより、コンパイラからの変換を処理する<xref:System.Double>から次の例のように、複素数の値。 変換の結果は、複素数の実数部と等しいことに注意してください、<xref:System.Double>値と虚数部は 0 です。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#2)]   
+ [!code-vb[System.Numerics.Complex.Implicit#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#2)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Int16)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>16 ビット符号付き整数値から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、符号付き 16 ビット整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は 16 ビット符号付き整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#3)]   
+ [!code-vb[System.Numerics.Complex.Implicit#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#3)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Int32)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>32 ビット符号付き整数値から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、符号付き 32 ビット整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は符号付き 32 ビット整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#4)]   
+ [!code-vb[System.Numerics.Complex.Implicit#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#4)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Int64)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>64 ビット符号付き整数値から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、64 ビットの符号付き整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は 64 ビットの符号付き整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#5)]   
+ [!code-vb[System.Numerics.Complex.Implicit#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#5)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.SByte)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>符号付きバイト値から複素数への暗黙の型変換を定義します。   
+           
+この API は、CLS に準拠していません。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、符号付きバイトから複素数への変換を処理することができます。 変換の結果は、複素数の実数部を符号付きバイトと虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#6)]   
+ [!code-vb[System.Numerics.Complex.Implicit#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#6)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.Single)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>単精度浮動小数点数から複素数への暗黙の型変換を定義します。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードにより、コンパイラからの変換を処理する<xref:System.Single>から次の例のように、複素数の値。 変換の結果は、複素数の実数部と等しいことに注意してください、<xref:System.Single>値と虚数部は 0 です。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#7)]   
+ [!code-vb[System.Numerics.Complex.Implicit#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#7)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.UInt16)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>16 ビット符号なし整数値から複素数への暗黙の型変換を定義します。   
+           
+この API は、CLS に準拠していません。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、16 ビット符号なし整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は 16 ビット符号なし整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#8)]   
+ [!code-vb[System.Numerics.Complex.Implicit#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#8)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.UInt32)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>32 ビット符号なし整数値から複素数への暗黙の型変換を定義します。   
+           
+この API は、CLS に準拠していません。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、符号なし 32 ビット整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は 32 ビットの符号なし整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#9)]   
+ [!code-vb[System.Numerics.Complex.Implicit#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#9)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Numerics.Complex (ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Implicit(unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Implicit(System.UInt64)~System.Numerics.Complex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数に変換する値。</param>
+        <summary>64 ビット符号なし整数値から複素数への暗黙の型変換を定義します。   
+           
+この API は、CLS に準拠していません。</summary>
+        <returns>値を格納しているオブジェクト、<paramref name="value" />としてその実数部と虚数部として 0 個のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Numerics.Complex.op_Implicit%2A>演算子は、コンパイラを自動的に変換する元の型を定義、<xref:System.Numerics.Complex>せずに明示的なキャスト演算子 (c#) または (Visual Basic) の変換関数の呼び出しオブジェクト。 これらには、拡大変換をデータの損失を伴わないおよびスローしないでください、<xref:System.OverflowException>です。
+
+ このオーバー ロードでは、コンパイラは、次の例のように、符号なし 64 ビット整数から複素数への変換を処理することができます。 変換の結果は、複素数の実数部は 64 ビットの符号なし整数と虚数部は 0 に等しいことに注意してください。
+
+ [!code-csharp[System.Numerics.Complex.Implicit#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.implicit/cs/implicit1.cs#10)]   
+ [!code-vb[System.Numerics.Complex.Implicit#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.implicit/vb/implicit1.vb#10)]   
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Inequality(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>2 つの複素数が等しくないかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> と <paramref name="right" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Equality%2A>メソッドは、複素数の非等値演算子の動作を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Inequality#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.inequality/cs/inequality1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Inequality#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.inequality/vb/inequality1.vb#1)]  
+  
+ カスタム演算子をサポートしない言語を呼び出すことによって非等値をテストできます、<xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29>メソッドとその値を反転します。  
+  
+ 有効桁数が異なる、ため明らかと等価である 2 つの複素数できると見なされる等しくないに注意してください。 1 つの可能な回避策を返す比較メソッドを実装する`true`2 つの複素数の実数部と虚数部部分部分の違いは、特定のしきい値を超えた場合にのみ (など。 01 の % の値の 1 つの複素数の実数部または虚数部のコンポーネントの)。 詳細については、<xref:System.Numerics.Complex.Equals%28System.Numerics.Complex%29> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex operator * (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Multiply(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Multiply(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">乗算する 1 番目の値。</param>
+        <param name="right">乗算する 2 番目の値。</param>
+        <summary>指定した 2 つの複素数を乗算します。</summary>
+        <returns>製品<paramref name="left" />と<paramref name="right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Multiply%2A>メソッドは、複素数を乗算演算子の操作を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Multiply#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.multiply/cs/multiply2.cs#2)]
+ [!code-vb[System.Numerics.Complex.Multiply#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.multiply/vb/multiply2.vb#2)]  
+  
+ 複雑なの乗算 number, a + bi、および 2 番目の複素数、c + di は次の形式になります。  
+  
+ (ac - bd) + (ad + bc) i  
+  
+ そのコンポーネントの値がいずれかの場合は、乗算の結果は実数部または虚数部のいずれかのコンポーネントでオーバーフローが発生、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Multiply%2A>メソッド代わりにします。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Multiply%28System.Numerics.Complex%2CSystem.Numerics.Complex%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex operator - (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_Subtraction(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_Subtraction(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">減算される値 (被減数)。</param>
+        <param name="right">減算する値 (減数)。</param>
+        <summary>複素数を別の複素数から減算します。</summary>
+        <returns><paramref name="right" /> から <paramref name="left" /> を減算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_Subtraction%2A>メソッドは、複素数を減算演算子の操作を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Subtract#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.subtract/cs/subtract2.cs#2)]
+ [!code-vb[System.Numerics.Complex.Subtract#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.subtract/vb/subtract2.vb#2)]  
+  
+ そのコンポーネントの値は、いずれかの場合は、メソッドのいずれかでオーバーフローが発生、結果が実数部または虚数部のコンポーネントで呼び出し、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ 複素数、c + di、別の複素数から減算、+、bi は次の形式になります。  
+  
+ (c、-) + (b、d) i  
+  
+ カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Subtract%2A>メソッド代わりにします。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Subtract%28System.Numerics.Complex%2CSystem.Numerics.Complex%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_UnaryNegation">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex operator - (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Numerics.Complex op_UnaryNegation(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.op_UnaryNegation(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">否定する値。</param>
+        <summary>指定した複素数の加法に関する逆元を返します。</summary>
+        <returns>結果、<see cref="P:System.Numerics.Complex.Real" />と<see cref="P:System.Numerics.Complex.Imaginary" />のコンポーネント、<paramref name="value" />パラメーターが-1 を乗算します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.op_UnaryNegation%2A>メソッドは、複素数の単項否定 (加法に関する逆元) 演算子の動作を定義します。 次のようなコードが有効にします。  
+  
+ [!code-csharp[System.Numerics.Complex.Negate#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.negate/cs/negate2.cs#2)]
+ [!code-vb[System.Numerics.Complex.Negate#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.negate/vb/negate2.vb#2)]  
+  
+ 結果として得られる複素数の値を生成する<xref:System.Numerics.Complex>0 (ゼロ) 元の値に追加されたとき。 カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Numerics.Complex.Negate%2A>メソッド代わりにします。  
+  
+ この演算子を同等の方法は、します。<xref:System.Numerics.Complex.Negate%28System.Numerics.Complex%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Phase">
+      <MemberSignature Language="C#" Value="public double Phase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Phase" />
+      <MemberSignature Language="DocId" Value="P:System.Numerics.Complex.Phase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複素数のフェーズを取得します。</summary>
+        <value>複素数のフェーズ (ラジアン単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の bi、フェーズが算出 + <xref:System.Math.Atan2%2A?displayProperty=nameWithType>(b、)。  
+  
+ 複素平面上、デカルト座標または極座標によっての複素数を識別できます。 複素数のフェーズ (引数) は、複素数で表されるポイントの原点 (x 軸と y 軸の交点) から描画される線での実際の軸を角度です。 絶対値 (によって表される、<xref:System.Numerics.Complex.Magnitude%2A>プロパティ) の原点から複素数で表されるポイントまでの距離がします。  
+  
+ 呼び出して、デカルト座標ではなく、極座標に基づく値から複素数をインスタンス化することができます、<xref:System.Numerics.Complex.FromPolarCoordinates%2A>メソッドです。  
+  
+ フェーズをラジアンから度に変換する 180 で乗算/<xref:System.Math.PI?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Numerics.Complex.FromPolarCoordinates%2A>する複素数をインスタンス化、極座標に基づくメソッドとの値を表示し、その<xref:System.Numerics.Complex.Magnitude%2A>と<xref:System.Numerics.Complex.Phase%2A>プロパティです。  
+  
+ [!code-csharp[System.Numerics.Complex.Phase#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.phase/cs/phase1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Phase#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.phase/vb/phase1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pow">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Pow (System.Numerics.Complex value, double power);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Pow(valuetype System.Numerics.Complex value, float64 power) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Pow(System.Numerics.Complex,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+        <Parameter Name="power" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">累乗する複素数。</param>
+        <param name="power">累乗を指定する倍精度浮動小数点数。</param>
+        <summary>倍精度浮動小数点数で指定した値で複素数を累乗した値を返します。</summary>
+        <returns>複素数<paramref name="value" />を累乗した<paramref name="power" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value` が <xref:System.Numerics.Complex?displayProperty=nameWithType> の場合、メソッドは <xref:System.Numerics.Complex?displayProperty=nameWithType> を返します。 その他の値の場合は`power`0 の場合は、メソッドが返される<xref:System.Numerics.Complex?displayProperty=nameWithType>、場合`power`は 1 を返します`value`です。  
+  
+ このメソッドに対応、<xref:System.Math.Pow%2A?displayProperty=nameWithType>のプリミティブ数値型のメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、値の範囲が-1 から 10 に複雑な数と指数部を使用して指数演算を示します。  
+  
+ [!code-csharp[System.Numerics.Complex.Pow#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.pow/cs/pow1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Pow#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.pow/vb/pow1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pow">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Pow (System.Numerics.Complex value, System.Numerics.Complex power);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Pow(valuetype System.Numerics.Complex value, valuetype System.Numerics.Complex power) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Pow(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+        <Parameter Name="power" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">累乗する複素数。</param>
+        <param name="power">累乗に使用する値を指定する複素数。</param>
+        <summary>別の複素数で指定した値で複素数を累乗した値を返します。</summary>
+        <returns>複素数<paramref name="value" />を累乗した<paramref name="power" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Real">
+      <MemberSignature Language="C#" Value="public double Real { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Real" />
+      <MemberSignature Language="DocId" Value="P:System.Numerics.Complex.Real" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の実数部を取得<see cref="T:System.Numerics.Complex" />オブジェクト。</summary>
+        <value>複素数の実数部。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の指定、+、bi、<xref:System.Numerics.Complex.Real%2A>プロパティの値を返します、します。  
+  
+   
+  
+## Examples  
+ 次の例の配列をインスタンス化<xref:System.Numerics.Complex>オブジェクトし、フォームでは、それぞれの実数部と虚数部のコンポーネントが表示されます、+ bi です。  
+  
+ [!code-csharp[System.Numerics.Complex.Real#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.real/cs/real1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Real#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.real/vb/real1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reciprocal">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Reciprocal (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Reciprocal(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Reciprocal(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>複素数の逆数を返します。</summary>
+        <returns>逆数<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆数、または数の逆数*x*数値*y*場所*x*を掛けた*y* 1 となります。 複素数の逆数を生成する複素数<xref:System.Numerics.Complex?displayProperty=nameWithType>2 つの数値が乗算されます。 その逆数を式で表される値から複素数は、a + bi で表される場合、/(、<sup>2</sup>+ b<sup>2</sup>) + b/(、<sup>2</sup> + b<sup>2</sup>)。  
+  
+ 値が場合<xref:System.Numerics.Complex?displayProperty=nameWithType>、メソッドを返します<xref:System.Numerics.Complex?displayProperty=nameWithType>です。 それ以外の場合、式の結果を返します<xref:System.Numerics.Complex?displayProperty=nameWithType> /`value`です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Numerics.Complex.Reciprocal%2A>メソッドをいくつかの複素数の相互の値を計算します。 その逆数で複素数を乗算した結果ことも示します<xref:System.Numerics.Complex?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Numerics.Complex.Reciprocal#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.reciprocal/cs/reciprocal1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Reciprocal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.reciprocal/vb/reciprocal1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sin">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Sin (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Sin(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Sin(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のサインを返します。</summary>
+        <returns><paramref name="value" /> のサイン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Sin%2A>複素数のメソッドに対応して、<xref:System.Math.Sin%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Sin%2A>メソッドでは、次の数式を使用して、複素数のサインを計算する + bi:  
+  
+ (<xref:System.Math.Sin%2A>(a) * <xref:System.Math.Cosh%2A>(b)、 <xref:System.Math.Cos%2A>(a) * <xref:System.Math.Sinh%2A>(b))  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Sin%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Asin%2A>メソッドを<xref:System.Numerics.Complex.Sin%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Asin#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.asin/cs/asin1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Asin#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.asin/vb/asin1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sinh">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Sinh (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Sinh(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Sinh(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のハイパーボリック サインを返します。</summary>
+        <returns><paramref name="value" /> のハイパーボリック サイン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Sinh%2A>複素数のメソッドに対応して、<xref:System.Math.Sinh%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Sinh%2A>メソッドでは、次の数式を使用して、複素数のハイパーボリック サインを計算する + bi:  
+  
+ (<xref:System.Math.Sinh%2A>(a) * <xref:System.Math.Cos%2A>(b)、 <xref:System.Math.Cosh%2A>(a) * <xref:System.Math.Sin%2A>(b))  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sqrt">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Sqrt (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Sqrt(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Sqrt(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数の平方根を返します。</summary>
+        <returns><paramref name="value" /> の平方根。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の平方根`value`次の数式を使用して計算されます。  
+  
+ <xref:System.Numerics.Complex.FromPolarCoordinates%2A?displayProperty=nameWithType>(<xref:System.Math.Sqrt%2A?displayProperty=nameWithType>(`value`.<xref:System.Numerics.Complex.Magnitude%2A>), `value`.<xref:System.Numerics.Complex.Phase%2A>/2.0)   
+  
+ <xref:System.Numerics.Complex.Sqrt%2A>複素数のメソッドに対応して、<xref:System.Math.Sqrt%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Subtract (System.Numerics.Complex left, System.Numerics.Complex right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Subtract(valuetype System.Numerics.Complex left, valuetype System.Numerics.Complex right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Subtract(System.Numerics.Complex,System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Numerics.Complex" />
+        <Parameter Name="right" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="left">減算される値 (被減数)。</param>
+        <param name="right">減算する値 (減数)。</param>
+        <summary>複素数を別の複素数から減算し、その結果を返します。</summary>
+        <returns><paramref name="right" /> から <paramref name="left" /> を減算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数、c + di、別の複素数から減算、+、bi は次の形式になります。  
+  
+ (c、-) + (b、d) i  
+  
+ そのコンポーネントの値は、いずれかの場合は、メソッドのいずれかでオーバーフローが発生、結果が実数部または虚数部のコンポーネントで呼び出し、<xref:System.Double.PositiveInfinity?displayProperty=nameWithType>または<xref:System.Double.NegativeInfinity?displayProperty=nameWithType>です。  
+  
+ カスタム演算子をサポートしない言語を使用して、<xref:System.Numerics.Complex.Subtract%2A>複素数を使用して減算を実行するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例では、複素数から、配列内の各複素数を減算します。  
+  
+ [!code-csharp[System.Numerics.Complex.Subtract#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.subtract/cs/subtract1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Subtract#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.subtract/vb/subtract1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tan">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Tan (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Tan(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Tan(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のタンジェントを返します。</summary>
+        <returns><paramref name="value" /> のタンジェント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Tan%2A>複素数のメソッドに対応して、<xref:System.Math.Tan%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Tan%2A>メソッドでは、次の数式を使用して、複素数のタンジェントを計算`value`:  
+  
+ <xref:System.Numerics.Complex.Sin%2A>(`value`) / <xref:System.Numerics.Complex.Cos%2A>(`value`)  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Numerics.Complex.Tan%2A>メソッドです。 によって返される値を渡すことを示しています、<xref:System.Numerics.Complex.Atan%2A>メソッドを<xref:System.Numerics.Complex.Tan%2A>メソッドは、元を返します<xref:System.Numerics.Complex>値。  
+  
+ [!code-csharp[System.Numerics.Complex.Atan#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.atan/cs/atan1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Atan#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.atan/vb/atan1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tanh">
+      <MemberSignature Language="C#" Value="public static System.Numerics.Complex Tanh (System.Numerics.Complex value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Numerics.Complex Tanh(valuetype System.Numerics.Complex value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.Tanh(System.Numerics.Complex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Numerics.Complex" />
+      </Parameters>
+      <Docs>
+        <param name="value">複素数。</param>
+        <summary>指定した複素数のハイパーボリック タンジェントを返します。</summary>
+        <returns><paramref name="value" /> のハイパーボリック タンジェント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Tanh%2A>複素数のメソッドに対応して、<xref:System.Math.Tanh%2A?displayProperty=nameWithType>実数のメソッドです。  
+  
+ <xref:System.Numerics.Complex.Tanh%2A>メソッドでは、次の数式を使用して、複素数のハイパーボリック タンジェントを計算`value`:  
+  
+ <xref:System.Numerics.Complex.Sinh%2A>(`value`) / <xref:System.Numerics.Complex.Cosh%2A>(`value`)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の複素数の値を等価のデカルト形式の文字列形式に変換します。</summary>
+        <returns>現在のインスタンスを表すデカルト形式の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複素数の既定の文字列表現形式で、デカルト座標を使用して数を表示する`(` *、* `,` *b*`)`ここで、 *、*は、複素数の実数部と*b*虚数部は、します。 両方*、*と*b*一般書式指定子 ("G") と、現在のシステムのカルチャの規則を使用してフォーマットされています。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかの複雑な数値の文字列形式を表示します。 出力は、英語 - 米国 ("EN-US") カルチャである、この例では、現在のシステムのカルチャの書式指定規則を使用します。  
+  
+ [!code-csharp[System.Numerics.Complex.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.tostring/cs/tostring1.cs#1)]
+ [!code-vb[System.Numerics.Complex.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.tostring/vb/tostring1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>指定したカルチャ固有の書式情報を使用して、現在の複素数を等価のデカルト形式の文字列形式に変換します。</summary>
+        <returns>現在のインスタンスで指定したとおりのデカルト形式の文字列形式を<paramref name="provider" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される複雑な数の文字列形式には、フォームで、デカルト座標を使用する番号が表示されます。 `(` *、* `,` *b*`)`ここで、 *、*は、複素数の実数部と*b*虚数部は、します。 両方*、*と*b*一般書式指定子 ("G") として定義されているカルチャの規則を使用してフォーマットされて`provider`です。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>実数と虚数で返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 場合`provider`は`null`、返される文字列を使用して、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+ `provider`パラメーターは、次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>の書式情報を提供するカルチャを表すオブジェクト  
+  
+-   <xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+-   実装するカスタム オブジェクト、<xref:System.IFormatProvider>インターフェイスです。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかの複雑な数値の文字列形式を表示します。 結果は、英語 - 米国 ("EN-US") とフランス語 - フランス ("FR-FR") のカルチャの書式指定規則を使用します。  
+  
+ [!code-csharp[System.Numerics.Complex.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.tostring/cs/tostring2.cs#2)]
+ [!code-vb[System.Numerics.Complex.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.tostring/vb/tostring2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.ToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">標準またはカスタムの数値書式指定文字列。</param>
+        <summary>実数部と虚数部で構成される指定した書式を使用して、現在の複素数を等価のデカルト形式の文字列形式に変換します。</summary>
+        <returns>現在のインスタンスを表すデカルト形式の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される複雑な数の文字列形式には、フォームで、デカルト座標を使用する番号が表示されます。 `(` *、* `,` *b*`)`ここで、 *、*は、複素数の実数部と*b*虚数部は、します。 両方*、*と*b*で指定された書式指定文字列を使用してフォーマットされて`format`です。 `format`パラメーターには、任意の有効な標準の数値書式指定子、またはカスタムの数値書式指定子の任意の組み合わせを指定できます。 場合`format`と等しい<xref:System.String?displayProperty=nameWithType>かが`null`複素数の実数部と虚数部の部分は、一般書式指定子 ("G") でフォーマットされています。 場合`format`その他の値、メソッドがスローされますが、<xref:System.FormatException>です。  
+  
+ .NET Framework では、次のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定文字列の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   .NET Framework における書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ によって返される文字列の形式が決定されます、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。 によって、`format`パラメーター、このオブジェクトは、マイナス記号、桁区切り記号で、出力文字列に小数点記号などのシンボルを制御します。 現在のカルチャ以外のカルチャの書式情報を提供するには、呼び出し、<xref:System.Numerics.Complex.ToString%28System.String%2CSystem.IFormatProvider%29>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例では、複素数を初期化し、いくつかの標準書式指定文字列を使用して、表示します。  
+  
+ [!code-csharp[System.Numerics.Complex.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.tostring/cs/tostring3.cs#3)]
+ [!code-vb[System.Numerics.Complex.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.tostring/vb/tostring3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" /> は有効な文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Numerics.Complex.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">標準またはカスタムの数値書式指定文字列。</param>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>実数部と虚数部で構成される指定した書式およびカルチャ固有の書式情報を使用して、現在の複素数を等価のデカルト形式の文字列形式に変換します。</summary>
+        <returns>現在のインスタンスで指定したとおりのデカルト形式の文字列形式を<paramref name="format" />と<paramref name="provider" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される複雑な数の文字列形式には、フォームで、デカルト座標を使用する番号が表示されます。 `(` *、* `,` *b*`)`ここで、 *、*は、複素数の実数部と*b*虚数部は、します。 両方*、*と*b*で指定された書式指定文字列を使用してフォーマットされて`format`です。 `format`パラメーターには、任意の有効な標準の数値書式指定子、またはカスタムの数値書式指定子の任意の組み合わせを指定できます。 場合`format`と等しい<xref:System.String?displayProperty=nameWithType>かが`null`複素数の実数部と虚数部の部分は、一般書式指定子 ("G") でフォーマットされています。 場合`format`その他の値、メソッドがスローされますが、<xref:System.FormatException>です。  
+  
+ .NET Framework では、次のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定文字列の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   .NET Framework における書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>実数と虚数で返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 によって、`format`パラメーター、このオブジェクトは、マイナス記号、桁区切り記号で、出力文字列に小数点記号などのシンボルを制御します。 場合`provider`は`null`、返される文字列を使用して、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+ `provider`パラメーターは、次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>の書式情報を提供するカルチャを表すオブジェクト  
+  
+-   <xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+-   実装するカスタム オブジェクト、<xref:System.IFormatProvider>インターフェイスです。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、複素数の配列を作成し、いくつかの標準書式指定文字列を使用して各表示だけでなく<xref:System.Globalization.CultureInfo>英語 - 米国 ("EN-US") とフランス語 - フランス ("FR-FR") のカルチャを表すオブジェクト。  
+  
+ [!code-csharp[System.Numerics.Complex.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.tostring/cs/tostring4.cs#4)]
+ [!code-vb[System.Numerics.Complex.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.tostring/vb/tostring4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" /> は有効な文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Zero">
+      <MemberSignature Language="C#" Value="public static readonly System.Numerics.Complex Zero;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Numerics.Complex Zero" />
+      <MemberSignature Language="DocId" Value="F:System.Numerics.Complex.Zero" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Numerics</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Numerics</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Numerics.Complex</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Numerics.Complex" />0 および虚数 0 に等しい実数を持つインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Numerics.Complex.Zero>プロパティが最もよく使用される比較に、<xref:System.Numerics.Complex>値を 0 にします。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Numerics.Complex>値を使用して、<xref:System.Numerics.Complex.Zero>プロパティです。 この値を呼び出すことによってインスタンス化される別の値を比較して、 <xref:System.Numerics.Complex> 0 に等しい実数部と虚数部 0 に等しいを持つコンス トラクターです。 例の出力に示す 2 つの値が等しいです。  
+  
+ [!code-csharp[System.Numerics.Complex.Zero#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.numerics.complex.zero/cs/zero1.cs#1)]
+ [!code-vb[System.Numerics.Complex.Zero#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.numerics.complex.zero/vb/zero1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

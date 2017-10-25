@@ -1,0 +1,772 @@
+<Type Name="DataSourceView" FullName="System.Web.UI.DataSourceView">
+  <TypeSignature Language="C#" Value="public abstract class DataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataSourceView extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのデータ ソース ビューのクラス、データ ソース コントロールの機能を定義する基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、Web サーバー コントロールの一貫した方法でデータをバインドできるようにするためのデータ バインディング アーキテクチャがサポートされています。 データにバインドする web サーバー コントロールは、データ バインド コントロールとバインディングは、という名前のデータ ソース コントロールを促進するクラスと呼ばれます。 データ ソース コントロールが任意のデータ ソースを表すことができます。 リレーショナル データベース、ファイル、ストリーム、ビジネス オブジェクト、およびなどです。 データ ソースは、ソースまたは基になるデータの形式に関係なく、データ バインド コントロールに一貫した方法でデータ表示を制御します。  
+  
+ ASP.NET で提供されているデータ ソース コントロールを使用して、含む<xref:System.Web.UI.WebControls.SqlDataSource>、 <xref:System.Web.UI.WebControls.AccessDataSource>、および<xref:System.Web.UI.WebControls.XmlDataSource>、ほとんどの Web 開発タスクを実行します。 基数を使用する<xref:System.Web.UI.DataSourceControl>と<xref:System.Web.UI.DataSourceView>クラスを独自のカスタム データを実装するときにソース管理します。  
+  
+ 組み合わせとしてデータ ソース コントロールの考えることができます、<xref:System.Web.UI.IDataSource>オブジェクトと関連付けられているデータ ソース ビューと呼ばれる、データの一覧です。 データの各リストで表される、<xref:System.Web.UI.DataSourceView>オブジェクト。 <xref:System.Web.UI.DataSourceView>クラスは、すべてのデータ ソース ビュー、またはデータ ソース コントロールに関連付けられているデータのリストの基本クラスです。 データ ソース ビューでは、データ ソース コントロールの機能を定義します。 基になるデータ ストレージにデータの 1 つまたは複数のリストが含まれているためデータ ソース コントロールは 1 つまたは複数の名前付きのデータ ソース ビューに関連付けられた常にします。 データ ソース コントロールを使用して、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>ソース、データ ソース コントロールに関連付けられているビューのデータを列挙するメソッドを<xref:System.Web.UI.DataSourceControl.GetView%2A>を名前で、特定のデータ ソース ビューのインスタンスを取得する方法です。  
+  
+ すべて<xref:System.Web.UI.DataSourceView>オブジェクトから基になるデータ ソースを使用して、データの取得をサポートする、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッドです。 すべてのビューが必要に応じて操作を含め操作などの基本的なセットをサポート<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>、 <xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>、および<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>です。 関連付けられたデータ ソースを取得することによってデータ ソース コントロールの機能の表示を使用して、データ バインド コントロールを検出できる、<xref:System.Web.UI.DataSourceControl.GetView%2A>と<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>メソッド、およびデザイン時または実行時にビューをクエリすることによってです。  
+  
+   
+  
+## Examples  
+ 次のコード例を拡張する方法を示しています、<xref:System.Web.UI.DataSourceView>厳密に型指定されたビュー コントロールのクラスをデータ ソースを作成するクラス。 `CsVDataSourceView`クラスの機能を定義する、`CsvDataSource`データがソース管理と、コンマ区切り値 (.csv) ファイルに格納されたデータを使用するデータ バインド コントロールの実装を提供します。 詳細については、`CsvDataSource`のデータ ソース コントロールを参照してください、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#5](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#5)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataSourceView (System.Web.UI.IDataSource owner, string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.IDataSource owner, string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.#ctor(System.Web.UI.IDataSource,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.IDataSource" />
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">データ ソースを制御する、<see cref="T:System.Web.UI.DataSourceView" />に関連付けられています。</param>
+        <param name="viewName"><see cref="T:System.Web.UI.DataSourceView" /> オブジェクトの名前。</param>
+        <summary><see cref="T:System.Web.UI.DataSourceView" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owner" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="viewName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDelete">
+      <MemberSignature Language="C#" Value="public virtual bool CanDelete { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanDelete" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanDelete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />オブジェクトのサポート、<see cref="M:System.Web.UI.DataSourceView.ExecuteDelete(System.Collections.IDictionary,System.Collections.IDictionary)" />操作します。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 基本クラスの実装を返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.CanDelete%2A>プロパティに反映だけでなく、データ ソース コントロールの機能も現在操作を実行する適切なであるかどうか。 たとえば、データ ソースがサポートを表示場合でも、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>一般に、必要なプロパティまたはその他のいくつかのデータが設定されていない場合、操作、<xref:System.Web.UI.DataSourceView.CanDelete%2A>プロパティから返される`false`、削除操作が失敗します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.DataSourceView.CanDelete%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>を拡張するクラスのメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#8](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#8)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExecute">
+      <MemberSignature Language="C#" Value="public virtual bool CanExecute (string commandName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExecute(string commandName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.CanExecute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="commandName">コマンドの名前。</param>
+        <summary>指定されたコマンドを実行できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合に、コマンドを実行できます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInsert">
+      <MemberSignature Language="C#" Value="public virtual bool CanInsert { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanInsert" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanInsert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />オブジェクトのサポート、<see cref="M:System.Web.UI.DataSourceView.ExecuteInsert(System.Collections.IDictionary)" />操作します。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 基本クラスの実装を返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.CanInsert%2A>プロパティに反映だけでなく、データ ソース コントロールの機能も現在操作を実行する適切なであるかどうか。 たとえば、いなくてもデータ ソース コントロールをサポートしている、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>に必要な insert コマンドやその他のいくつかのデータが設定されていない場合は、操作、<xref:System.Web.UI.DataSourceView.CanInsert%2A>プロパティから返される`false`挿入操作が失敗すると、します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.DataSourceView.CanInsert%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>を拡張するクラスのメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#9](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#9)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPage">
+      <MemberSignature Language="C#" Value="public virtual bool CanPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanPage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />オブジェクトには、によって取得されたデータを介してページングがサポートしている、<see cref="M:System.Web.UI.DataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />メソッドです。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 基本クラスの実装を返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールは、追加することでページングを要求することができます、<xref:System.Web.UI.DataSourceCapabilities.Page>フィールドを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッドです。 データ バインド コントロールは、ページングを要求する場合ですが、<xref:System.Web.UI.DataSourceView.CanPage%2A>プロパティから返される`false`、データ ソース ビューが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRetrieveTotalRowCount">
+      <MemberSignature Language="C#" Value="public virtual bool CanRetrieveTotalRowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRetrieveTotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanRetrieveTotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />データではなく、データ行の合計数を取得するオブジェクトをサポートします。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 基本クラスの実装を返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールは追加することによって行の合計数を要求することができます、<xref:System.Web.UI.DataSourceCapabilities?displayProperty=nameWithType>フィールドを<xref:System.Web.UI.DataSourceSelectArguments?displayProperty=nameWithType>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッドです。 データ バインド コントロールは、行の合計数を要求する場合ですが、<xref:System.Web.UI.DataSourceView.CanRetrieveTotalRowCount%2A>プロパティから返される`false`、データ ソース ビューが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSort">
+      <MemberSignature Language="C#" Value="public virtual bool CanSort { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSort" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanSort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />オブジェクトには、基になるデータ ソースでの並べ替え表示がサポートしています。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 既定の実装では、<see langword="false" /> が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールが追加することで並べ替えを要求することができます、<xref:System.Web.UI.DataSourceCapabilities.Sort>フィールドを<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッドです。 データ バインド、並べ替えの要求を制御する場合ですが、<xref:System.Web.UI.DataSourceView.CanSort%2A>プロパティから返される`false`、データ ソース ビューが例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.DataSourceView.CanSort%2A>を拡張するクラスのプロパティ、<xref:System.Web.UI.DataSourceView>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#7](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#7)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUpdate">
+      <MemberSignature Language="C#" Value="public virtual bool CanUpdate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUpdate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.CanUpdate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.DataSourceControl" />オブジェクトのサポート、<see cref="M:System.Web.UI.DataSourceView.ExecuteUpdate(System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary)" />操作します。</summary>
+        <value>
+          <see langword="true" />場合は、操作がサポートされています。それ以外の場合、<see langword="false" />です。 既定の実装では、<see langword="false" /> が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.CanUpdate%2A>プロパティに反映だけでなく、データ ソース コントロールの機能も現在操作を実行する適切なであるかどうか。 たとえば、いなくても、データ バインド コントロールをサポートしている、 <xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A> 、必要な更新プログラムのコマンドまたはその他のいくつかのデータが設定されていない場合は、操作、<xref:System.Web.UI.DataSourceView.CanUpdate%2A>プロパティから返される`false`更新操作が失敗すると、します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.DataSourceView.CanUpdate%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>を拡張するクラスのメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#10](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#10)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceViewChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataSourceViewChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataSourceViewChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataSourceView.DataSourceViewChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース ビューが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソース ビューへの変更、またはデータ ソース ビューによって実行されるデータの操作により、データの変更に、そのプロパティの値の変更が考えられます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public virtual void Delete (System.Collections.IDictionary keys, System.Collections.IDictionary oldValues, System.Web.UI.DataSourceViewOperationCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Delete(class System.Collections.IDictionary keys, class System.Collections.IDictionary oldValues, class System.Web.UI.DataSourceViewOperationCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.Delete(System.Collections.IDictionary,System.Collections.IDictionary,System.Web.UI.DataSourceViewOperationCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="oldValues" Type="System.Collections.IDictionary" />
+        <Parameter Name="callback" Type="System.Web.UI.DataSourceViewOperationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="keys"><see cref="T:System.Collections.IDictionary" />によって削除されるオブジェクトまたは行のキーの<see cref="M:System.Web.UI.DataSourceView.ExecuteDelete(System.Collections.IDictionary,System.Collections.IDictionary)" />操作します。</param>
+        <param name="oldValues"><see cref="T:System.Collections.IDictionary" />データ要素とその元の値を表す名前/値ペア。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.DataSourceViewOperationCallback" />非同期操作が完了すると、データ バインド コントロールに通知するために使用するデリゲート。</param>
+        <summary>データの一覧で、非同期の削除操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.Delete%2A>メソッドは、すべてのデータ ソース ビュー オブジェクトに非同期データ削除インターフェイスです。 <xref:System.Web.UI.DataSourceView.Delete%2A>メソッドの呼び出し、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>メソッドのいずれかを使用して`keys`と`oldValues`指定されるパラメーター値。 `callback`パラメーター、データ バインド コントロールをデータ ソースに渡すデリゲートは、ビュー、データ バインドを通知するために使用するタイミングを制御、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>操作が完了します。 メソッドのパラメーターを使用して、<xref:System.Web.UI.DataSourceViewOperationCallback>および影響を受けるレコードの数を返すデリゲート<xref:System.Exception>によってスローされる例外、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.DataSourceViewOperationCallback" />が提供される<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Events">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.EventHandlerList Events { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.EventHandlerList Events" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.Events" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventHandlerList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース ビューのイベント ハンドラー デリゲートの一覧を取得します。</summary>
+        <value>イベント ハンドラー デリゲートの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの型は<xref:System.ComponentModel.EventHandlerList>、一方向の検索アルゴリズムを使用して、デリゲートの一覧でエントリを確認します。 多数のエントリを使用する場合、一方向の検索アルゴリズムは効率的ではありません。 そのため、大規模な一覧がある場合は、このプロパティを持つエントリが遅くなりますを検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteCommand">
+      <MemberSignature Language="C#" Value="protected virtual int ExecuteCommand (string commandName, System.Collections.IDictionary keys, System.Collections.IDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 ExecuteCommand(string commandName, class System.Collections.IDictionary keys, class System.Collections.IDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteCommand(System.String,System.Collections.IDictionary,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandName" Type="System.String" />
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="commandName">コマンドの名前。</param>
+        <param name="keys">オブジェクトのキーまたはの行キーで動作するディクショナリ。</param>
+        <param name="values">データ要素とその値を表す名前/値ペアのディクショナリ。</param>
+        <summary>指定されたコマンドを実行します。</summary>
+        <returns>操作の影響を受けたアイテムの数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteCommand">
+      <MemberSignature Language="C#" Value="public virtual void ExecuteCommand (string commandName, System.Collections.IDictionary keys, System.Collections.IDictionary values, System.Web.UI.DataSourceViewOperationCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ExecuteCommand(string commandName, class System.Collections.IDictionary keys, class System.Collections.IDictionary values, class System.Web.UI.DataSourceViewOperationCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteCommand(System.String,System.Collections.IDictionary,System.Collections.IDictionary,System.Web.UI.DataSourceViewOperationCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandName" Type="System.String" />
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+        <Parameter Name="callback" Type="System.Web.UI.DataSourceViewOperationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="commandName">コマンドの名前。</param>
+        <param name="keys">オブジェクトのキーまたはの行キーで動作するディクショナリ。</param>
+        <param name="values">データ要素とその値を表す名前/値ペアのディクショナリ。</param>
+        <param name="callback"><see cref="T:System.Web.UI.DataSourceViewOperationCallback" /> オブジェクト。</param>
+        <summary>指定されたコマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは値を返しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDelete">
+      <MemberSignature Language="C#" Value="protected virtual int ExecuteDelete (System.Collections.IDictionary keys, System.Collections.IDictionary oldValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 ExecuteDelete(class System.Collections.IDictionary keys, class System.Collections.IDictionary oldValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteDelete(System.Collections.IDictionary,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="oldValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="keys"><see cref="T:System.Collections.IDictionary" />によって削除されるオブジェクトまたは行のキーの<see cref="M:System.Web.UI.DataSourceView.ExecuteDelete(System.Collections.IDictionary,System.Collections.IDictionary)" />操作します。</param>
+        <param name="oldValues"><see cref="T:System.Collections.IDictionary" />データ要素とその元の値を表す名前/値ペア。</param>
+        <summary>データの一覧で削除操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトを表します。</summary>
+        <returns>基になるデータ ストレージから削除された項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールを決定できるかどうか、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>取得することによって操作がデータ ソース コントロールによってサポートされて、<xref:System.Web.UI.DataSourceView>オブジェクトを使用して、<xref:System.Web.UI.DataSourceControl.GetView%2A?displayProperty=nameWithType>メソッド、およびチェック、<xref:System.Web.UI.DataSourceView.CanDelete%2A>プロパティです。  
+  
+ `keys`パラメーターを削除するデータのキー オブジェクトまたは行キーを表します。 データ ソースの場合など、リレーショナル データを表す、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、`keys`パラメーターは、データベースの主キーのコレクション。 他のシナリオで、`keys`パラメーターは名前/値ペアのコレクションでありデータの一覧をフィルター処理するために使用します。 名前/値ペアに一致するすべてのデータが削除されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceView>クラスの既定の実装をスローする、<xref:System.NotSupportedException>例外。 拡張する場合、<xref:System.Web.UI.DataSourceView>クラス、オーバーライド、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>メソッド、クラスには、基になるデータ ストレージからの削除がサポートされている場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法を拡張するクラスについて説明します。、<xref:System.Web.UI.DataSourceView>クラスをオーバーライドして、<xref:System.Web.UI.DataSourceView.CanDelete%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#8](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#8)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="M:System.Web.UI.DataSourceView.ExecuteDelete(System.Collections.IDictionary,System.Collections.IDictionary)" />によって操作がサポートされていません、<see cref="T:System.Web.UI.DataSourceView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteInsert">
+      <MemberSignature Language="C#" Value="protected virtual int ExecuteInsert (System.Collections.IDictionary values);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 ExecuteInsert(class System.Collections.IDictionary values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteInsert(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="values"><see cref="T:System.Collections.IDictionary" />名前/値のペアの挿入操作中に使用します。</param>
+        <summary>データの一覧で挿入操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトが表すです。</summary>
+        <returns>基になるデータ ストレージに挿入されたアイテムの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールを決定できるかどうか、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>取得することによって操作がデータ ソース コントロールによってサポートされて、<xref:System.Web.UI.DataSourceView>オブジェクトを使用して、<xref:System.Web.UI.DataSourceControl.GetView%2A>メソッド、およびチェック、<xref:System.Web.UI.DataSourceView.CanInsert%2A>プロパティです。  
+  
+ `values`パラメーターは、名前/値ペアを表すセットのデータ列、またはフィールドと対応する値を挿入します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceView>クラスの既定の実装をスローする、<xref:System.NotSupportedException>例外。 拡張する場合、<xref:System.Web.UI.DataSourceView>クラス、オーバーライド、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>メソッド、クラスは、基になるデータ ストレージへの挿入をサポートしている場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法を拡張するクラスについて説明します。、<xref:System.Web.UI.DataSourceView>クラスをオーバーライドして、<xref:System.Web.UI.DataSourceView.CanInsert%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#9](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#9)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="M:System.Web.UI.DataSourceView.ExecuteInsert(System.Collections.IDictionary)" />によって操作がサポートされていません、<see cref="T:System.Web.UI.DataSourceView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteSelect">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.IEnumerable ExecuteSelect (System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Collections.IEnumerable ExecuteSelect(class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータの操作を要求に使用されます。</param>
+        <summary>基になるデータ ストレージからデータの一覧を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />基になるデータ ストレージからデータの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>を基になるデータ ストアからデータを取得し、として返すメソッドが呼び出された、<xref:System.Collections.IEnumerable>オブジェクト。 すべてのデータ ソース コントロールは、カーソルや並べ替えなどの他の操作がサポートされていない場合でも、基になるデータ ストレージからデータの取得をサポートします。 データ バインド コントロールがの結果として、いつでもデータの一覧を要求できるため、<xref:System.Web.UI.IDataSource.DataSourceChanged>イベントまたは<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッドの呼び出し、要求時にデータの取得を行う必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>を拡張するクラスのメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 `CsvDataSourceView`をコンマ区切り値 (.csv) ファイルを開きます、1 行を解析し、作成、<xref:System.Data.DataTable>オブジェクトおよび<xref:System.Data.DataView>メモリにデータを保持するオブジェクト。 提供されている場合に、並べ替え式を最後に、適用、<xref:System.Web.UI.DataSourceSelectArguments>オブジェクト、および<xref:System.Data.DataView>としてオブジェクトが返されます、<xref:System.Collections.IEnumerable>インスタンス。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#6)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteUpdate">
+      <MemberSignature Language="C#" Value="protected virtual int ExecuteUpdate (System.Collections.IDictionary keys, System.Collections.IDictionary values, System.Collections.IDictionary oldValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 ExecuteUpdate(class System.Collections.IDictionary keys, class System.Collections.IDictionary values, class System.Collections.IDictionary oldValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.ExecuteUpdate(System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+        <Parameter Name="oldValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="keys"><see cref="T:System.Collections.IDictionary" />更新操作で更新するオブジェクトまたは行のキー。</param>
+        <param name="values"><see cref="T:System.Collections.IDictionary" />データ要素とその新しい値を表す名前/値ペア。</param>
+        <param name="oldValues"><see cref="T:System.Collections.IDictionary" />データ要素とその元の値を表す名前/値ペア。</param>
+        <summary>データの一覧の更新操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトが表すです。</summary>
+        <returns>基になるデータ記憶域に更新された項目の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールを決定できるかどうか、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>を使用してデータ ソース コントロールによって操作がサポートされている、<xref:System.Web.UI.DataSourceControl.GetView%2A?displayProperty=nameWithType>を取得する方法、<xref:System.Web.UI.DataSourceView>オブジェクトとの値を確認、<xref:System.Web.UI.DataSourceView.CanUpdate%2A>プロパティです。  
+  
+ `keys`パラメーターを更新するデータのキー オブジェクトまたは行キーを表します。 データ ソースの場合など、リレーショナル データを表す、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、`keys`パラメーターは、データベースの主キーのコレクション。 他のシナリオで、`keys`パラメーターは名前/値ペアのコレクションでありデータの一覧をフィルター処理するために使用します。 見つかった値を持つ名前/値ペアに一致するすべてのデータを更新、`values`パラメーターは、既存のフィールドまたは列の新しい値を表す名前/値ペアのセットです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceView>クラスの既定の実装をスローする、<xref:System.NotSupportedException>例外。 拡張する場合、<xref:System.Web.UI.DataSourceView>クラス、オーバーライド、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>メソッド、クラスは、基になるデータ ストレージでデータの更新をサポートしている場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法を拡張するクラスについて説明します。、<xref:System.Web.UI.DataSourceView>クラスをオーバーライドして、<xref:System.Web.UI.DataSourceView.CanUpdate%2A>プロパティおよび<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceView>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#10](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#10)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="M:System.Web.UI.DataSourceView.ExecuteUpdate(System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary)" />によって操作がサポートされていません、<see cref="T:System.Web.UI.DataSourceView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual void Insert (System.Collections.IDictionary values, System.Web.UI.DataSourceViewOperationCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(class System.Collections.IDictionary values, class System.Web.UI.DataSourceViewOperationCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.Insert(System.Collections.IDictionary,System.Web.UI.DataSourceViewOperationCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+        <Parameter Name="callback" Type="System.Web.UI.DataSourceViewOperationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="values"><see cref="T:System.Collections.IDictionary" />名前/値のペアの挿入操作中に使用します。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.DataSourceViewOperationCallback" />非同期操作が完了すると、データ バインド コントロールに通知するために使用するデリゲート。</param>
+        <summary>データの一覧に非同期の挿入操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.Insert%2A>メソッドは、すべてのデータ ソース ビュー オブジェクトに非同期データ挿入インターフェイスです。 <xref:System.Web.UI.DataSourceView.Insert%2A>メソッドの呼び出し、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>メソッドのいずれかを使用して`values`指定します。 `callback`パラメーター、データ バインド コントロールをデータ ソースに渡すデリゲートは、ビュー、データ バインドを通知するために使用するタイミングを制御、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>操作が完了します。 メソッドのパラメーターを使用して、<xref:System.Web.UI.DataSourceViewOperationCallback>および影響を受けるレコードの数を返すデリゲート<xref:System.Exception>によってスローされる例外、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>メソッドの呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.DataSourceViewOperationCallback" />が提供される<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceView.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース ビューの名前を取得します。</summary>
+        <value>名前、<see cref="T:System.Web.UI.DataSourceView" />されている場合、します。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceViewChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceViewChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataSourceViewChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.OnDataSourceViewChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.DataSourceView.DataSourceViewChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.OnDataSourceViewChanged%2A>メソッドは、基になるデータ ソースが変更されたことと、コントロールがバインドし必要な作業を実行する必要がありますにデータ バインド コントロールに通知します。 通常、<xref:System.Web.UI.DataSourceView.OnDataSourceViewChanged%2A>データ ソース ビューのプロパティが変更されたときに、メソッドが呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.DataSourceView.OnDataSourceViewChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.DataSourceView.OnDataSourceViewChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.DataSourceView.OnDataSourceViewChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseUnsupportedCapabilityError">
+      <MemberSignature Language="C#" Value="protected virtual void RaiseUnsupportedCapabilityError (System.Web.UI.DataSourceCapabilities capability);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void RaiseUnsupportedCapabilityError(valuetype System.Web.UI.DataSourceCapabilities capability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.RaiseUnsupportedCapabilityError(System.Web.UI.DataSourceCapabilities)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="capability" Type="System.Web.UI.DataSourceCapabilities" />
+      </Parameters>
+      <Docs>
+        <param name="capability">1 つ、<see cref="T:System.Web.UI.DataSourceCapabilities" />ビューをサポートする機能が比較される値。</param>
+        <summary>によって呼び出される、<see cref="M:System.Web.UI.DataSourceSelectArguments.RaiseUnsupportedCapabilitiesError(System.Web.UI.DataSourceView)" />に対して要求された機能を比較するメソッド、<see cref="M:System.Web.UI.DataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />ビューをサポートしているものに対して操作を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.RaiseUnsupportedCapabilityError%2A>メソッドは、データ ソース ビューを調べるの各機能によって表される、データ バインドされたコントロールによって要求された使用、<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトに渡される、<xref:System.Web.UI.DataSourceView.Select%2A>メソッド、およびデータ ソース ビューでサポートされている機能を比較します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データ ソース ビューは、指定されたデータ ソースの機能をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public virtual void Select (System.Web.UI.DataSourceSelectArguments arguments, System.Web.UI.DataSourceViewSelectCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Select(class System.Web.UI.DataSourceSelectArguments arguments, class System.Web.UI.DataSourceViewSelectCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.Select(System.Web.UI.DataSourceSelectArguments,System.Web.UI.DataSourceViewSelectCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+        <Parameter Name="callback" Type="System.Web.UI.DataSourceViewSelectCallback" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータの操作を要求に使用されます。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.DataSourceViewSelectCallback" />非同期操作が完了すると、データ バインド コントロールに通知するために使用するデリゲート。</param>
+        <summary>基になるデータ ストレージから非同期的にデータの一覧を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.Select%2A>メソッドは、すべてのデータ ソース ビュー オブジェクトの非同期のデータ取得のインターフェイスです。 <xref:System.Web.UI.DataSourceView.Select%2A>メソッドの呼び出し、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッド、いずれかを渡す<xref:System.Web.UI.DataSourceSelectArguments>指定します。 `callback`パラメーター、データ バインド コントロールをデータ ソースに渡すデリゲートは、ビュー、データ バインドを通知するために使用するタイミングを制御、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>操作が完了します。 によって返されるデータ、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>のパラメーターで呼び出しが返される、<xref:System.Web.UI.DataSourceViewSelectCallback>を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.DataSourceViewSelectCallback" />が提供される<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public virtual void Update (System.Collections.IDictionary keys, System.Collections.IDictionary values, System.Collections.IDictionary oldValues, System.Web.UI.DataSourceViewOperationCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Update(class System.Collections.IDictionary keys, class System.Collections.IDictionary values, class System.Collections.IDictionary oldValues, class System.Web.UI.DataSourceViewOperationCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceView.Update(System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary,System.Web.UI.DataSourceViewOperationCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.Collections.IDictionary" />
+        <Parameter Name="values" Type="System.Collections.IDictionary" />
+        <Parameter Name="oldValues" Type="System.Collections.IDictionary" />
+        <Parameter Name="callback" Type="System.Web.UI.DataSourceViewOperationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="keys"><see cref="T:System.Collections.IDictionary" />更新操作で更新するオブジェクトまたは行のキー。</param>
+        <param name="values"><see cref="T:System.Collections.IDictionary" />データ要素とその新しい値を表す名前/値ペア。</param>
+        <param name="oldValues"><see cref="T:System.Collections.IDictionary" />データ要素とその元の値を表す名前/値ペア。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.DataSourceViewOperationCallback" />非同期操作が完了すると、データ バインド コントロールに通知するために使用するデリゲート。</param>
+        <summary>データの一覧で、非同期更新操作を実行する、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトが表すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceView.Update%2A>メソッドは、すべてのデータ ソース ビュー オブジェクトの非同期のデータ変更のインターフェイスです。 <xref:System.Web.UI.DataSourceView.Update%2A>メソッドの呼び出し、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>メソッドのいずれかを使用して`keys`、 `values`、および`oldValues`指定されるパラメーター値。 `callback`パラメーター、データ バインド コントロールをデータ ソースに渡すデリゲートは、ビュー、データ バインドを通知するために使用するタイミングを制御、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>操作が完了します。 メソッドのパラメーターを使用して、<xref:System.Web.UI.DataSourceViewOperationCallback>および影響を受けるレコードの数を返すデリゲート<xref:System.Exception>によってスローされる例外です、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.DataSourceViewOperationCallback" />が提供される<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

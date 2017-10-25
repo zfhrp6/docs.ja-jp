@@ -1,0 +1,115 @@
+<Type Name="WebConfigurationFileMap" FullName="System.Web.Configuration.WebConfigurationFileMap">
+  <TypeSignature Language="C#" Value="public sealed class WebConfigurationFileMap : System.Configuration.ConfigurationFileMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebConfigurationFileMap extends System.Configuration.ConfigurationFileMap" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebConfigurationFileMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationFileMap</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションの構成ファイルのマッピングを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.WebConfigurationFileMap> Web 構成ファイルの階層を指定するクラスを使用します。 既定では、構成システムは IIS メタベースを使用して、Web ファイル階層を確認します。 IIS がインストールされていない場合、またはアプリケーションが、サーバーにインストールされている最新バージョンではない .NET Framework のバージョンを対象とする場合、<xref:System.Web.Configuration.WebConfigurationFileMap>クラスには、カスタムの階層を定義するための手段が用意されています。  
+  
+ <xref:System.Web.Configuration.WebConfigurationFileMap>クラスは、1 つのパスまたは構成ファイルに関連する複数のパスを指定できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebConfigurationFileMap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationFileMap.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.WebConfigurationFileMap" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebConfigurationFileMap (string machineConfigFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string machineConfigFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationFileMap.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="machineConfigFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="machineConfigFileName">完全な物理パスを持つマシン構成ファイルの名前 (たとえば、 <c>c:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG\machine.config</c>)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.WebConfigurationFileMap" />指定されたマシン構成ファイルの名前を使用して、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンを対象としているときに、このコンス トラクターを使用する、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]するよりも前か、コンピューターにインストールされている最新のものです。 メソッドでは、マシン構成ファイルのバージョンに適切なを指定することができます、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]対象となります。  
+  
+> [!NOTE]
+>  コンス トラクターには、Machine.config ファイルへのパスのみが受け付ける、場合でも、構成システムは、Machine.config ファイルが存在する同じディレクトリのルート Web.config ファイルを参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationFileMap.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.Configuration.WebConfigurationFileMap" />既存のインスタンスと同じ値を持つクラス。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Web.Configuration.WebConfigurationFileMap" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualDirectories">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.VirtualDirectoryMappingCollection VirtualDirectories { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.VirtualDirectoryMappingCollection VirtualDirectories" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebConfigurationFileMap.VirtualDirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.VirtualDirectoryMappingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションの仮想ディレクトリのコレクションのリストを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.VirtualDirectoryMapping" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web アプリケーションの仮想ディレクトリは、サーバー上の物理ディレクトリに必ずしもにマップされない場合があります。 <xref:System.Web.Configuration.VirtualDirectoryMapping>クラスは IIS に依存しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

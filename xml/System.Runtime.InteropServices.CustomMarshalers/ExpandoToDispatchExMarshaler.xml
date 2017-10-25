@@ -1,0 +1,209 @@
+<Type Name="ExpandoToDispatchExMarshaler" FullName="System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler">
+  <TypeSignature Language="C#" Value="public class ExpandoToDispatchExMarshaler : System.Runtime.InteropServices.ICustomMarshaler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpandoToDispatchExMarshaler extends System.Object implements class System.Runtime.InteropServices.ICustomMarshaler" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler" />
+  <AssemblyInfo>
+    <AssemblyName>CustomMarshalers</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices.ICustomMarshaler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>COM マーシャ リング<see langword="IDispatchEx" />.NET フレームワーク インターフェイス<see cref="T:System.Runtime.InteropServices.Expando.IExpando" />インターフェイス、または、<see cref="T:System.Reflection.IReflect" />インターフェイス、およびその逆です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR でこのカスタム マーシャラーが自動的に使用されていないために、次のように宣言する必要があります。  
+  
+```  
+void UseCustomMarshaler([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef=typeof(ExpandoToDispatchExMarhsaler))] IExpando expando);  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CleanUpManagedData">
+      <MemberSignature Language="C#" Value="public virtual void CleanUpManagedData (object pManagedObj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CleanUpManagedData(object pManagedObj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.CleanUpManagedData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pManagedObj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pManagedObj">マネージ オブジェクトを破棄します。</param>
+        <summary>不要になったときに、管理対象のデータの必要なクリーンアップを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR で割り当てられた管理対象のデータをクリーンアップするのには、このメソッドを呼び出し、<xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.MarshalManagedToNative%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CleanUpNativeData">
+      <MemberSignature Language="C#" Value="public virtual void CleanUpNativeData (IntPtr pNativeData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CleanUpNativeData(native int pNativeData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.CleanUpNativeData(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pNativeData" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="pNativeData">破棄するアンマネージ データへのポインター。</param>
+        <summary>不要になったときに、アンマネージ データの必要なクリーンアップを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR で割り当てられたアンマネージ データをクリーンアップするのには、このメソッドを呼び出し、<xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.MarshalManagedToNative%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInstance">
+      <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.ICustomMarshaler GetInstance (string pstrCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.InteropServices.ICustomMarshaler GetInstance(string pstrCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.GetInstance(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ICustomMarshaler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pstrCookie" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pstrCookie">カスタム マーシャラーで使用できる文字列"cookie"パラメーター。</param>
+        <summary>カスタム マーシャラーのインスタンスを返します。</summary>
+        <returns>カスタム マーシャラーのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ありませんが、すべてのカスタム マーシャラーは、このメソッドを実装する必要がありますの一部、<xref:System.Runtime.InteropServices.ICustomMarshaler>インターフェイス定義です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pstrCookie" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNativeDataSize">
+      <MemberSignature Language="C#" Value="public virtual int GetNativeDataSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetNativeDataSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.GetNativeDataSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マーシャ リングされるアンマネージ データのバイト単位のサイズを返します。</summary>
+        <returns>マーシャラーはこの処理の種類を示す-1 は、値型ではありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の型のカスタム マーシャ リングは、.NET Framework ではサポートされていません、このメソッドは常に-1 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarshalManagedToNative">
+      <MemberSignature Language="C#" Value="public virtual IntPtr MarshalManagedToNative (object pManagedObj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int MarshalManagedToNative(object pManagedObj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.MarshalManagedToNative(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pManagedObj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pManagedObj">変換するマネージ オブジェクト。</param>
+        <summary>マネージ コードからアンマネージ コードにオブジェクトをマーシャ リングします。</summary>
+        <returns>アンマネージ オブジェクトへのポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR はそのオブジェクトをマネージ コードからアンマネージ コードに変換するマネージ オブジェクトのインスタンスを指定してこのメソッドであり、適切なアンマネージ オブジェクトに、そのオブジェクトの COM のビューを表すへのポインターを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pManagedObj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MarshalNativeToManaged">
+      <MemberSignature Language="C#" Value="public virtual object MarshalNativeToManaged (IntPtr pNativeData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object MarshalNativeToManaged(native int pNativeData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler.MarshalNativeToManaged(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>CustomMarshalers</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pNativeData" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="pNativeData">変換するアンマネージ オブジェクトへのポインター。</param>
+        <summary>アンマネージ コードからマネージ コードにオブジェクトをマーシャ リングします。</summary>
+        <returns>マネージ オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR では、アンマネージ コードからマネージ コードにそのオブジェクトを変換するアンマネージ オブジェクトを指すポインターを指定してこのメソッドを呼び出しし、アンマネージ データのマネージ ビューを表すマネージ オブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pNativeData" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,182 @@
+<Type Name="TemplatedMailWebEventProvider" FullName="System.Web.Management.TemplatedMailWebEventProvider">
+  <TypeSignature Language="C#" Value="public sealed class TemplatedMailWebEventProvider : System.Web.Management.MailWebEventProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TemplatedMailWebEventProvider extends System.Web.Management.MailWebEventProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.TemplatedMailWebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.MailWebEventProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>テンプレートを使用して定義し、イベント通知を送信する電子メールの書式を設定したイベント プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ このクラスは、コードから使用するものではありません。 作成、構成、およびイベント通知を電子メールで送信する ASP.NET の稼働状況の監視システムで使用されることがします。 このトピックのセクションの例に示すように、構成ファイルで電子メール Web イベント プロバイダーを定義できます。 アクセスして、プロバイダーのセクションをプログラムで構成するさらに、<xref:System.Web.Configuration.HealthMonitoringSection.Providers%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このクラスを生成する電子メールが定義され、テンプレートを使用して書式設定。 このテンプレートは、メッセージ本文のテキストを出力する標準的な .aspx ファイルで定義されたマークアップ コードで構成されます。 によって、テンプレートで使用されるイベント情報が提供される、<xref:System.Web.Management.MailEventNotificationInfo>オブジェクトは、静的で利用できる<xref:System.Web.Management.TemplatedMailWebEventProvider.CurrentNotification%2A>このクラスのプロパティです。  
+  
+ このプロバイダーは、包括的な一連の動作方法のカスタマイズに使用できる構成属性を備えています。  
+  
+   
+  
+## Examples  
+ 次の例は、型プロバイダーを指定する方法を示しています構成ファイルの抜粋<xref:System.Web.Management.SimpleMailWebEventProvider>で、`<healthMonitoring>`セクション、`<add>`内の要素、`<rules>`セクションでは、プロバイダーが要求の処理を処理することを指定します。。エラーおよびインフラストラクチャ エラーです。  
+  
+```  
+<system.web>  
+  <healthMonitoring  
+    enabled="true"  
+    heartBeatInterval="0">  
+    <bufferModes>  
+      <add name="Critical Notification"  
+        maxBufferSize="100"  
+        maxFlushSize="20"  
+        urgentFlushThreshold="1"  
+        regularFlushInterval="Infinite"  
+        urgentFlushInterval="00:01:00"  
+        maxBufferThreads="1"  
+      />  
+    </bufferModes>  
+    <providers>  
+      <add name="CriticalMailEventProvider"  
+        type="System.Web.Management.TemplatedMailWebEventProvider,   
+        System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+        PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+        template="../mailtemplates/critical.aspx"  
+        from="sender address"  
+        to="someone@example.com"   
+        cc="someone@example.com"  
+        bcc="someone@example.com"  
+        priority="High"  
+        bodyHeader="Warning!"  
+        bodyFooter="Please investigate ASAP."  
+        subjectPrefix="Action required."  
+        buffer="true"  
+        bufferMode="Critical Notification"  
+        maxEventLength="4096"  
+        maxSize="4096"  
+        maxMessagesPerNotification="1"  
+      />  
+    </providers>  
+    <eventMappings>  
+      <add name="Request Processing Events"  
+        type="System.Web.Management.WebRequestEvent, System.Web",   
+        Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+        PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+      />  
+      <add name="Infrastructure Errors"  
+        type="System.Web.Management.WebErrorEvent, System.Web,   
+        Version=%ASSEMBLY_VERSION%, Culture=neutral,   
+        PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+      />  
+    </eventMappings>  
+    <profiles>  
+      <add name="Default"  
+        minInstances="1"  
+        maxLimit="Infinite"  
+        minInterval="00:10:00"  
+      />  
+      <add name="Critical"  
+        minInstances="1"  
+        maxLimit="1024"  
+        minInterval="00:00:00"  
+      />  
+    </profiles>  
+    <rules>  
+      <add name="Request Processing Errors"  
+        eventName="Request Processing Errors"  
+        provider="CriticalMailEventProvider"  
+        profile="Default"  
+      />  
+      <add name="Infrastructure Notifications"  
+        eventName="Infrastructure Errors"  
+        provider="CriticalMailEventProvider"  
+        profile="Critical"  
+      />  
+    </rules>  
+  </healthMonitoring>   
+</system.web>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentNotification">
+      <MemberSignature Language="C#" Value="public static System.Web.Management.MailEventNotificationInfo CurrentNotification { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Management.MailEventNotificationInfo CurrentNotification" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.TemplatedMailWebEventProvider.CurrentNotification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.MailEventNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電子メール テンプレートで使用されるイベント情報を提供するイベント通知オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.Management.MailEventNotificationInfo" />現在処理されているオブジェクトします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Web.Management.MailEventNotificationInfo>オブジェクトが処理されているイベントに関する情報を提供する電子メール テンプレート内で使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.TemplatedMailWebEventProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">このイベント プロバイダーの名前。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />イベント プロバイダーの構成設定を指定するオブジェクト。</param>
+        <summary>このオブジェクトの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはコードから直接使用するためのものではありません。 ASP.NET の稼働状況の監視システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="config" />"template"という名前の属性は含まれません。  
+  
+ \- または  
+  
+ によって提供されるテンプレート属性<paramref name="config" />が、<see cref="P:System.String.Length" />の<see langword="0" />します。  
+  
+ \- または  
+  
+ テンプレートの属性で指定された URL は、アプリケーションの相対 URL ではありません。  
+  
+ \- または  
+  
+ URL は、アプリ ドメイン パスの外側に指定されたテンプレートです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

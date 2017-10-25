@@ -1,0 +1,290 @@
+<Type Name="NotSupportedException" FullName="System.NotSupportedException">
+  <TypeSignature Language="C#" Value="public class NotSupportedException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit NotSupportedException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.NotSupportedException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>呼び出されたメソッドがサポートされていない場合、または呼び出された機能をサポートしないストリームに対して読み取り、シーク、または書き込みを行おうとした場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.NotSupportedException>呼び出されたメソッドまたはプロパティの実装が存在しないことを示します。  
+  
+ <xref:System.NotSupportedException>値は 0x80131515 HRESULT COR_E_NOTSUPPORTED を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.NotSupportedException>を参照してください、<xref:System.NotSupportedException.%23ctor%2A>コンス トラクターです。  
+  
+## <a name="throwing-a-notsupportedexception-exception"></a>NotSupportedException 例外をスロー  
+ スローされることを検討する可能性があります、<xref:System.NotSupportedException>次の場合、例外。  
+  
+-   汎用のインターフェイスを実装しているされ、メソッドの数には意味のある実装はありません。 たとえば、作成する場合は、日付と時刻型を実装する、<xref:System.IConvertible>スローすると、インターフェイス、<xref:System.NotSupportedException>変換のほとんどの例外。  
+  
+-   いくつかのメソッドをオーバーライドすることが必要な抽象クラスから継承しました。 ただし、これらのサブセットの実装を提供する準備しているだけです。 これらのメソッドを実装していないをことができますをスローする、<xref:System.NotSupportedException>です。  
+  
+-   条件付きで操作を有効にする状態を持つ汎用的な型を定義します。 たとえばの種類には、読み取り専用か読み取り/書き込みができます。 その場合：  
+  
+    -   オブジェクトが読み取り専用の場合は、インスタンスの状態を変更するインスタンスまたは呼び出しメソッドのプロパティに値を代入しようとしています。 スローされることは、<xref:System.NotSupportedException>例外。  
+  
+    -   返すプロパティを実装する必要があります、<xref:System.Boolean>特定の機能が使用できるかどうかを示す値。 たとえば、読み取り専用か読み取り/書き込みの種類、でしたを実装する、`IsReadOnly`読み取り/書き込みメソッドのセットが使用可能または利用できないかどうかを示すプロパティです。  
+  
+## <a name="handling-a-notsupportedexception-exception"></a>NotSupportedException 例外を処理します。  
+ <xref:System.NotSupportedException>例外を示し、メソッドに実装されていないことを呼び出す必要はありませんが。  例外を処理する必要があります。 代わりに、例外の原因に依存行ってください: かどうか、実装が完全に存在しない、またはメンバーの呼び出しに目的のオブジェクトに設定された整合性がありません (への呼び出しなど、<xref:System.IO.FileStream.Read%2A?displayProperty=nameWithType>読み取り専用にメソッド<xref:System.IO.FileStream>オブジェクト。  
+  
+ **有意義な方法で、操作を実行できないため、実装が指定されていません。**  
+ これは一般的な例外と、汎用的なインターフェイスを実装する抽象基本クラスのメソッドの実装を提供するオブジェクトのメソッドを呼び出している場合、メソッドが意味のある実装を持ちません。  
+  
+ たとえば、<xref:System.Convert>クラスが実装する、<xref:System.IConvertible>インターフェイスで、すべてのプリミティブ型を他のすべてのプリミティブ型に変換するメソッドを含める必要があることを意味します。 多くの変換のこと、ただしはありません可能です。 その結果への呼び出し、 <xref:System.Convert.ToBoolean%28System.DateTime%29?displayProperty=nameWithType> 、たとえばがスローされます、<xref:System.NotSupportedException>例外の間で変換の可能性がないため、<xref:System.DateTime>と<xref:System.Boolean>値  
+  
+ 例外を回避するのには、メソッドの呼び出しを除去する必要があります。  
+  
+ **メソッドの呼び出しでは、オブジェクトの状態を指定することはできません。**  
+ 機能を持つことはできません、オブジェクトの状態ではメンバーを呼び出すしようとするとします。 3 つの方法のいずれかで例外を排除することができます。  
+  
+-   オブジェクトの状態を事前にわかってがサポートされていないメソッドまたはプロパティで呼び出した。 この場合、メンバーの呼び出しは、エラーであり、除去することができます。  
+  
+-   オブジェクトの状態があらかじめわかって (通常、コードではそれをインスタンス化) ためが、オブジェクトは正しく構成されていません。 次の例は、この問題を示しています。 読み取り専用作成<xref:System.IO.FileStream>オブジェクトへの書き込みを試みます。  
+  
+     [!code-csharp[System.NotSupportedException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.NotSupportedException/cs/BadState1.cs#1)]
+     [!code-vb[System.NotSupportedException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.NotSupportedException/vb/BadState1.vb#1)]  
+  
+     オブジェクトのインスタンスが意図した機能をサポートするようにすることで例外を回避できます。 次の例は、読み取り専用の問題を解決<xref:System.IO.FileStream>オブジェクトに適切な引数を提供することによって、<xref:System.IO.FileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+-   オブジェクトの状態を事前にわかっていないし、オブジェクトは、特定の操作をサポートしていません。 ほとんどの場合は、オブジェクトはプロパティまたはメソッドを特定の一連の操作がサポートしているかどうかを示すを含める必要があります。 オブジェクトの値をチェックし、適切な場合にのみ、メンバーを呼び出して例外を回避できます。  
+  
+     次の例では定義、`DetectEncoding`をスローするメソッド、<xref:System.NotSupportedException>例外への読み取りアクセスをサポートしないストリームの先頭から読み取るしようとしたとき。  
+  
+     [!code-csharp[System.NotSupportedException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.NotSupportedException/cs/TestProp1.cs#3)]
+     [!code-vb[System.NotSupportedException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.NotSupportedException/vb/TestProp1.vb#3)]  
+  
+     値を確認するには、例外を排除することができます、<xref:System.IO.FileStream.CanRead%2A?displayProperty=nameWithType>プロパティおよびストリームが読み取り専用の場合、メソッドを終了します。  
+  
+     [!code-csharp[System.NotSupportedException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.NotSupportedException/cs/TestProp2.cs#4)]
+     [!code-vb[System.NotSupportedException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.NotSupportedException/vb/TestProp2.vb#4)]  
+  
+## <a name="related-exception-types"></a>関連する例外の種類  
+ <xref:System.NotSupportedException>例外に関連して他の 2 つの例外型です。  
+  
+ <xref:System.NotImplementedException>。  
+ メソッドを実装できますが、この例外がスローされますがあるため、メンバーは、以降のバージョンで実装する、メンバー、特定のプラットフォームで利用可能なまたはメンバーが所属する抽象クラスでは、派生クラスで実装を提供する必要がありますか。  
+  
+ <xref:System.InvalidOperationException>  
+ できることが一般的に、要求された操作を実行するオブジェクトのシナリオでこの例外がスローされ、オブジェクトの状態は、操作を実行するかどうかを決定します。  
+  
+## <a name="net-compact-framework-notes"></a>.NET compact Framework の注意事項  
+ [!INCLUDE[Compact](~/includes/compact-md.md)] での作業でネイティブ関数に P/Invoke を使用しているとき、この例外は次の場合にスローされます。  
+  
+-   マネージ コード内の宣言が正しくない。  
+  
+-   実行しようとしている操作を [!INCLUDE[Compact](~/includes/compact-md.md)] がサポートしていない。  
+  
+-   エクスポート時に DLL 名が変形処理されている。  
+  
+ 場合、<xref:System.NotSupportedException.%23ctor%2A>例外がスローされると、確認します。  
+  
+-   [!INCLUDE[Compact](~/includes/compact-md.md)] の P/Invoke 制限違反。  
+  
+-   割り当て済みのメモリを必要とする引数。 存在する場合は、既存の変数への参照を渡す必要があります。  
+  
+-   エクスポートされた関数の名前が正しいかどうか。 これを検証する[DumpBin.exe](https://msdn.microsoft.com/library/c1h23y6c.aspx)です。  
+  
+-   渡そうとしている引数の数が多すぎないかどうか。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotSupportedException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.NotSupportedException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.NotSupportedException" />クラス、設定、<see cref="P:System.Exception.Message" />エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティです。 このメッセージには、現在のシステムのカルチャが考慮されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.NotSupportedException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotSupportedException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.NotSupportedException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。 コンテンツ<c>メッセージ</c>ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.NotSupportedException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.NotSupportedException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected NotSupportedException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.NotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.NotSupportedException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotSupportedException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.NotSupportedException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照でないで現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.NotSupportedException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ <xref:System.NotSupportedException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,578 @@
+<Type Name="StatisticFormula" FullName="System.Windows.Forms.DataVisualization.Charting.StatisticFormula">
+  <TypeSignature Language="C#" Value="public class StatisticFormula" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StatisticFormula extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.StatisticFormula" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>統計数式を計算します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式は、次のカテゴリに疎分類できます逆のディストリビューションを含む、すべての分布。テストです。基本的な統計式。 各グループには、その入力値と戻り値に関する一般的な特性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anova">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AnovaResult Anova (double probability, string inputSeriesNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.AnovaResult Anova(float64 probability, string inputSeriesNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Anova(System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AnovaResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="inputSeriesNames" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="inputSeriesNames">入力系列名のコンマ区切りの一覧。</param>
+        <summary>データの 2 つ以上のグループの平均値の統計的に有意な違いがあるかどうかを判断する分散テストを実行します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.AnovaResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分散テストを使用すると、データの 2 つ以上のグループの平均の差をテストします。  
+  
+ 系列データの 2 つ以上のグループを指定する必要があります。、および各系列には、同じデータ ポイントの数です。 必要があります。それ以外の場合、例外が生成されます。  
+  
+ 指定された入力系列が存在しない場合、<xref:System.Windows.Forms.DataVisualization.Charting.SeriesCollection>メソッドの呼び出し時、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BetaFunction">
+      <MemberSignature Language="C#" Value="public double BetaFunction (double m, double n);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 BetaFunction(float64 m, float64 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.BetaFunction(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Double" />
+        <Parameter Name="n" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="m">ベータ関数の最初の値。</param>
+        <param name="n">ベータ関数の 2 番目の値。</param>
+        <summary>2 つの指定された値のベータ関数の値を返します。</summary>
+        <returns>A<see langword="double" />ベータ関数の 2 つの指定された値を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定されている 2 つの指定された値のベータ関数値を返します`m`と`n`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Correlation">
+      <MemberSignature Language="C#" Value="public double Correlation (string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Correlation(string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Correlation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>2 つのデータ系列の相関関係値を返します。</summary>
+        <returns>A<see langword="double" />を 2 つのデータ系列間の相関関係を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相関関係は、測定単位の依存関係のないが拡大縮小される 2 つのデータ セット間のリレーションシップを測定します。 <xref:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Correlation%2A>メソッドは、標準偏差の製品で割った値 2 つのデータセットの共分散を返し、-1 から 1 の範囲は常にします。  
+  
+ 相関関係を使用して、2 つのデータの範囲がまとめて; に移動するかどうかを決定するにはつまり、1 つのセットの値が大きいが、その他の (正の相関関係) の値が大きいに関連付けられているかどうか、1 セットの値が小さいが、その他の (負の値の相関関係) の値が大きいに関連付けられているかどうかまたは両方の値は、関連のない (0 に近い相関) かどうか。  
+  
+ メソッドの呼び出し時に系列のコレクションで指定された入力系列が存在しない場合、例外がスローされます。 例外が、指定した系列に同じ数のデータ ポイントがない場合も生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Covariance">
+      <MemberSignature Language="C#" Value="public double Covariance (string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Covariance(string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Covariance(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>2 つのデータ系列の共変性値を返します。</summary>
+        <returns>A<see langword="double" />を 2 つのデータ系列間の共分散を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FDistribution">
+      <MemberSignature Language="C#" Value="public double FDistribution (double value, int firstDegreeOfFreedom, int secondDegreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 FDistribution(float64 value, int32 firstDegreeOfFreedom, int32 secondDegreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.FDistribution(System.Double,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="firstDegreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="secondDegreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">F の値。</param>
+        <param name="firstDegreeOfFreedom">最初の自由度。</param>
+        <param name="secondDegreeOfFreedom">2 番目の自由度。</param>
+        <summary>累積的な F 分布関数の確率を返します。</summary>
+        <returns>A <see langword="double" /> F 分布関数の累積的な確率を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FTest">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.FTestResult FTest (double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.FTestResult FTest(float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.FTest(System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.FTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>フィッシャー分布を使用して 2-サンプル F テストを実行します。 このテストを使用して、サンプルに差異があるかどうかを決定します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.FTestResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GammaFunction">
+      <MemberSignature Language="C#" Value="public double GammaFunction (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GammaFunction(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.GammaFunction(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">入力変数。</param>
+        <summary>指定した変数のガンマ関数の値を返します。</summary>
+        <returns>A<see langword="double" />ガンマ関数を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseFDistribution">
+      <MemberSignature Language="C#" Value="public double InverseFDistribution (double probability, int firstDegreeOfFreedom, int secondDegreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseFDistribution(float64 probability, int32 firstDegreeOfFreedom, int32 secondDegreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.InverseFDistribution(System.Double,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstDegreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="secondDegreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstDegreeOfFreedom">最初の自由度。</param>
+        <param name="secondDegreeOfFreedom">2 番目の自由度。</param>
+        <summary>F 累積分布の逆数を返します。</summary>
+        <returns>逆 F 分布関数からの <see langword="double" /> 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された F 分布の確率の F の値を返します。  
+  
+ フィッシャー分布は、次の 2 つのデータ セットでの変動の程度を比較する F テストで使用できます。  
+  
+ このメソッドは、パラメーターの値によって例外を返す可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">条件: 制限があるため、指定されたパラメーターの値を使用して計算を続行できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseNormalDistribution">
+      <MemberSignature Language="C#" Value="public double InverseNormalDistribution (double probability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseNormalDistribution(float64 probability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.InverseNormalDistribution(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <summary>標準の正規の累積分布の逆数を返します。</summary>
+        <returns>A<see langword="double" />逆標準正規の累積分布関数からの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された F 分布の確率の F の値を返します。  
+  
+ 分布は、0 (ゼロ) の意味と 1 つの標準偏差と見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseTDistribution">
+      <MemberSignature Language="C#" Value="public double InverseTDistribution (double probability, int degreeOfFreedom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 InverseTDistribution(float64 probability, int32 degreeOfFreedom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.InverseTDistribution(System.Double,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="degreeOfFreedom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="degreeOfFreedom">自由度。</param>
+        <summary>確率およびの自由度の関数として、逆の t 値スチューデントの t 分布を返します。</summary>
+        <returns>A<see langword="double" />逆 T 分布を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、特定の T 分布の確率の t 値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mean">
+      <MemberSignature Language="C#" Value="public double Mean (string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Mean(string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Mean(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">入力系列名。</param>
+        <summary>指定した系列に格納されているすべてのデータ ポイントの平均を返します。</summary>
+        <returns>A<see langword="double" />をすべてのデータ ポイントの平均値を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、系列に格納されているポイントの平均値 (つまり、平均値) を計算できます。  
+  
+ 指定した入力系列が存在しない場合、<xref:System.Windows.Forms.DataVisualization.Charting.SeriesCollection>メソッドの呼び出し時、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Median">
+      <MemberSignature Language="C#" Value="public double Median (string inputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Median(string inputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Median(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">入力系列名。</param>
+        <summary>指定した系列のすべてのデータ ポイントの中央値を返します。</summary>
+        <returns>A<see langword="double" />中央値を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、系列に格納されているポイントの中央値を計算できます。  
+  
+ 中央値は、ここで、メンバーの半分はサイズの大きい、半分のメンバーはサイズの小さい方のサンプル セットの中央値です。  
+  
+ 指定した入力系列が存在しない場合、<xref:System.Windows.Forms.DataVisualization.Charting.SeriesCollection>メソッドの呼び出し時、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalDistribution">
+      <MemberSignature Language="C#" Value="public double NormalDistribution (double zValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 NormalDistribution(float64 zValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.NormalDistribution(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="zValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="zValue">Z 値は、確率が必要です。</param>
+        <summary>標準正規累積分布関数の確率を返します。</summary>
+        <returns>A<see langword="double" />標準正規累積分布関数からの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TDistribution">
+      <MemberSignature Language="C#" Value="public double TDistribution (double value, int degreeOfFreedom, bool oneTail);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 TDistribution(float64 value, int32 degreeOfFreedom, bool oneTail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.TDistribution(System.Double,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="degreeOfFreedom" Type="System.Int32" />
+        <Parameter Name="oneTail" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">T 値</param>
+        <param name="degreeOfFreedom">自由度</param>
+        <param name="oneTail">場合<see langword="true" />、片側配布が使用されます。 それ以外の場合、両側の配布を使用します。</param>
+        <summary>(スチューデントの分布) の T 分布の確率を返します。</summary>
+        <returns>A <see langword="double" /> T 分布の累積的な機能を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestEqualVariances">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TTestResult TTestEqualVariances (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.TTestResult TTestEqualVariances(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.TTestEqualVariances(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">仮説平均差。</param>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>スチューデントの分布 (T 分布) を使用して、検定 T 検定を実行します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestPaired">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TTestResult TTestPaired (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.TTestResult TTestPaired(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.TTestPaired(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">仮説平均差。</param>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>ペアのサンプルを使ってスチューデントの分布 (T 分布) を使用して T 検定を実行します。 これは、機能は、サンプルでデータの自然な組み合わせがある場合に便利です。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TTestUnequalVariances">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TTestResult TTestUnequalVariances (double hypothesizedMeanDifference, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.TTestResult TTestUnequalVariances(float64 hypothesizedMeanDifference, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.TTestUnequalVariances(System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">仮説平均差。</param>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>スチューデントの分布 (T 分布) を使用して、検定 T 検定を実行します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.TTestResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variance">
+      <MemberSignature Language="C#" Value="public double Variance (string inputSeriesName, bool sampleVariance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 Variance(string inputSeriesName, bool sampleVariance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.Variance(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputSeriesName" Type="System.String" />
+        <Parameter Name="sampleVariance" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inputSeriesName">入力系列名。</param>
+        <param name="sampleVariance">
+          <see langword="True" />場合は、データが母集団のサンプル<see langword="false" />データが母集団全体である場合。</param>
+        <summary>一連の分散を返します。</summary>
+        <returns>A<see langword="double" />分散を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZTest">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ZTestResult ZTest (double hypothesizedMeanDifference, double varianceFirstGroup, double varianceSecondGroup, double probability, string firstInputSeriesName, string secondInputSeriesName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.ZTestResult ZTest(float64 hypothesizedMeanDifference, float64 varianceFirstGroup, float64 varianceSecondGroup, float64 probability, string firstInputSeriesName, string secondInputSeriesName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.StatisticFormula.ZTest(System.Double,System.Double,System.Double,System.Double,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ZTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hypothesizedMeanDifference" Type="System.Double" />
+        <Parameter Name="varianceFirstGroup" Type="System.Double" />
+        <Parameter Name="varianceSecondGroup" Type="System.Double" />
+        <Parameter Name="probability" Type="System.Double" />
+        <Parameter Name="firstInputSeriesName" Type="System.String" />
+        <Parameter Name="secondInputSeriesName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hypothesizedMeanDifference">仮説平均差。</param>
+        <param name="varianceFirstGroup">最初のグループの分散します。</param>
+        <param name="varianceSecondGroup">2 番目のグループの分散します。</param>
+        <param name="probability">アルファ値。仮説を拒否する確率です。 許容範囲は、0 - 1 です。</param>
+        <param name="firstInputSeriesName">最初の入力系列名。</param>
+        <param name="secondInputSeriesName">2 番目の入力系列名。</param>
+        <summary>正規分布を使用して、Z のテストを実行します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.ZTestResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,193 @@
+<Type Name="HtmlTitle" FullName="System.Web.UI.HtmlControls.HtmlTitle">
+  <TypeSignature Language="C#" Value="public class HtmlTitle : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlTitle extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTitle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サーバーの HTML <see langword="&lt;title&gt;" /> 要素へのプログラムによるアクセスを可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTitle>クラスをプログラムで HTML を指定する`<title>`Web フォーム ページの要素。  
+  
+> [!NOTE]
+>  使用して、ページのタイトルを設定することも、`title`の属性、 [@ Page](http://msdn.microsoft.com/en-us/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)ディレクティブ、または設定によって、<xref:System.Web.UI.Page.Title%2A>のプロパティ、<xref:System.Web.UI.Page>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web ページのタイトル バーに現在の日付と時刻を表示する方法を示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/CS/htmltitlecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/VB/htmltitlevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlTitle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTitle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTitle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlTitle>既定値を使用して制御します。 HTML が作成`<title>`Web ページ上の要素。 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.HtmlControls.HtmlTitle>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|「タイトル」リテラル文字列です。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web ページのタイトル バーに現在の日付と時刻を表示する方法を示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/CS/htmltitlecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/VB/htmltitlevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTitle.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表す <see cref="T:System.Object" />。</param>
+        <summary>通知、 <see cref="T:System.Web.UI.HtmlControls.HtmlTitle" /> XML または HTML 要素が解析されたし、その要素を追加するコントロールを<see cref="T:System.Web.UI.ControlCollection" />コントロールのコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素が追加された場合、<xref:System.Web.UI.HtmlControls.HtmlTitle>コントロールは、<xref:System.Web.UI.LiteralControl>コントロール、<xref:System.Web.UI.HtmlControls.HtmlTitle.AddParsedSubObject%2A>メソッドのセット、<xref:System.Web.UI.HtmlControls.HtmlTitle.Text%2A>リテラル文字列の値を持つプロパティそれ以外の場合、ベース<xref:System.Web.UI.Control.AddParsedSubObject%2A>メソッドが呼び出されます。 <xref:System.Web.UI.HtmlControls.HtmlTitle.AddParsedSubObject%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlTitle>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTitle.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Web.UI.ControlCollection" />のコレクション、<see cref="T:System.Web.UI.HtmlControls.HtmlTitle" />コントロール。</summary>
+        <returns>現在のサーバー コントロールの子サーバー コントロールを格納する <see cref="T:System.Web.UI.ControlCollection" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTitle.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlTitle" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTitle.Render%2A>メソッドの最初の呼び出し、<xref:System.Web.UI.HtmlTextWriter.RenderBeginTag%2A>メソッドを使用して、`Title`のメンバー、<xref:System.Web.UI.HtmlTextWriterTag>列挙します。 すべての子が次に、制御、<xref:System.Web.UI.HtmlControls.HtmlTitle>コントロールを表示します。 最後に、<xref:System.Web.UI.HtmlTextWriter.RenderEndTag%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTitle.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の HTML テキスト<see langword="&lt;title&gt;" />要素。</summary>
+        <value>Html テキスト<see langword="&lt;title&gt;" />要素。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTitle.Text%2A>プロパティを指定または Web ページのタイトルを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.HtmlControls.HtmlTitle.Text%2A>のプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTitle>コントロールを Web ページのタイトルを動的に変更します。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/CS/htmltitlecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlTitleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlTitleClass/VB/htmltitlevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

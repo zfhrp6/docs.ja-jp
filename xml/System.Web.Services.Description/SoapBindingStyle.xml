@@ -1,0 +1,99 @@
+<Type Name="SoapBindingStyle" FullName="System.Web.Services.Description.SoapBindingStyle">
+  <TypeSignature Language="C#" Value="public enum SoapBindingStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SoapBindingStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapBindingStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>この列挙体を適用するクラス階層のレベルで XML Web サービスで発生するアクションの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、送信されたメッセージがプロシージャ指向またはドキュメント指向かどうかを指定できます。 プロシージャ指向のメッセージ パラメーターを含む値を返す、ドキュメント指向のメッセージは、ドキュメント。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapBinding_SoapOperationBinding#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapBinding_SoapOperationBinding/CPP/soapprotocol.cpp#3)]
+ [!code-csharp[SoapBinding_SoapOperationBinding#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapBinding_SoapOperationBinding/CS/soapprotocol.cs#3)]
+ [!code-vb[SoapBinding_SoapOperationBinding#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapBinding_SoapOperationBinding/VB/soapprotocol.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.SoapBindingStyle Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.SoapBindingStyle.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBindingStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) ファイルの現在の階層レベルのアクションの既定値の型。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="Document" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.SoapBindingStyle Document = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.SoapBindingStyle.Document" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("document")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBindingStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信されたメッセージは、ドキュメント指向です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rpc">
+      <MemberSignature Language="C#" Value="Rpc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.SoapBindingStyle Rpc = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.SoapBindingStyle.Rpc" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlEnum("rpc")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBindingStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信されたメッセージには、そのプロシージャからプロシージャまたは戻り値の呼び出しにパラメーターが含まれています。 RPC は、「リモート プロシージャ コールです」の頭字語</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

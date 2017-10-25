@@ -1,0 +1,164 @@
+<Type Name="PixelFormatChannelMask" FullName="System.Windows.Media.PixelFormatChannelMask">
+  <TypeSignature Language="C#" Value="public struct PixelFormatChannelMask" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit PixelFormatChannelMask extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.PixelFormatChannelMask" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のピクセル形式をビット マスクと shift キーを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormatChannelMask.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />現在のマスクと比較します。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Media.PixelFormatChannelMask" /> が <paramref name="obj" /> に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.PixelFormatChannelMask left, System.Windows.Media.PixelFormatChannelMask right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.PixelFormatChannelMask left, valuetype System.Windows.Media.PixelFormatChannelMask right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormatChannelMask.Equals(System.Windows.Media.PixelFormatChannelMask,System.Windows.Media.PixelFormatChannelMask)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormatChannelMask" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormatChannelMask" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のマスク。</param>
+        <param name="right">比較する 2 番目のマスク。</param>
+        <summary>2 つのピクセル形式チャネル マスクが等しいかどうかを決定します。</summary>
+        <returns>
+          <see langword="true" />マスクが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormatChannelMask.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マスクのハッシュ コードを取得します。</summary>
+        <returns>マスクのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mask">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;byte&gt; Mask { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;unsigned int8&gt; Mask" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PixelFormatChannelMask.Mask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Byte&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カラー チャネルのビットマスクを取得します。 値を大きくすることはありませんが、0 xffffffff</summary>
+        <value>カラー チャネルのビットマスクです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Mask"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ XAML では、このプロパティを使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.PixelFormatChannelMask left, System.Windows.Media.PixelFormatChannelMask right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.PixelFormatChannelMask left, valuetype System.Windows.Media.PixelFormatChannelMask right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormatChannelMask.op_Equality(System.Windows.Media.PixelFormatChannelMask,System.Windows.Media.PixelFormatChannelMask)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormatChannelMask" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormatChannelMask" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のマスク。</param>
+        <param name="right">比較する 2 番目のマスク。</param>
+        <summary>2 つの <see cref="T:System.Windows.Media.PixelFormatChannelMask" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />2 つのマスクが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.PixelFormatChannelMask left, System.Windows.Media.PixelFormatChannelMask right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.PixelFormatChannelMask left, valuetype System.Windows.Media.PixelFormatChannelMask right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormatChannelMask.op_Inequality(System.Windows.Media.PixelFormatChannelMask,System.Windows.Media.PixelFormatChannelMask)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormatChannelMask" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormatChannelMask" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のマスク。</param>
+        <param name="right">比較する 2 番目のマスク。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.PixelFormatChannelMask" />非等値のインスタンス。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Media.PixelFormatChannelMask" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

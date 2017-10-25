@@ -1,0 +1,544 @@
+<Type Name="ActiveDirectorySiteLink" FullName="System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink">
+  <TypeSignature Language="C#" Value="public class ActiveDirectorySiteLink : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectorySiteLink extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />クラスは、スケジュールに設定できる、統一された料金でと、特定のトランスポート経由の通信に、レプリケーションの 2 つまたは複数のサイトのセットを表します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySiteLink (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteLinkName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />をこのサイト リンクを作成するオブジェクト。</param>
+        <param name="siteLinkName">サイト リンクの名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />クラス<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクトと名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のトランスポートの種類は、RPC です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、以下の理由のうちいずれかによって発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="siteLinkName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteLinkName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySiteLink (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteLinkName" Type="System.String" />
+        <Parameter Name="transport" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />をこのサイト リンクを作成するオブジェクト。</param>
+        <param name="siteLinkName">サイト リンクの名前です。</param>
+        <param name="transport"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />トランスポートの種類を指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />クラス<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクト、名、およびトランスポートを入力します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、以下の理由のうちいずれかによって発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="siteLinkName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" />パラメーターまたは<paramref name="siteLinkName" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="transport" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" /> 値ではありません。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="transport" />型がサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySiteLink (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport, System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule schedule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport, class System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule schedule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType,System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteLinkName" Type="System.String" />
+        <Parameter Name="transport" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />
+        <Parameter Name="schedule" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />をこのサイト リンクを作成するオブジェクト。</param>
+        <param name="siteLinkName">サイト リンクの名前です。</param>
+        <param name="transport"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />トランスポートの種類を指定するオブジェクト。</param>
+        <param name="schedule"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />このサイト リンクのレプリケーション スケジュールを指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />クラス<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクト、名、トランスポートの種類、およびレプリケーション スケジュールします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、以下の理由のうちいずれかによって発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="siteLinkName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" />or the <paramref name="siteLinkName" /> is <see langword="null" />.</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="transport" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" /> 値ではありません。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="transport" />型がサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cost">
+      <MemberSignature Language="C#" Value="public int Cost { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Cost" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Cost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイト リンク コストを設定します。</summary>
+        <value>このサイト リンクに関連付けられているコストです。 既定値は 100 です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ArgumentException">コストが 0 未満です。 (セットのみに適用されます)</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataCompressionEnabled">
+      <MemberSignature Language="C#" Value="public bool DataCompressionEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DataCompressionEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.DataCompressionEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイト リンクのデータ圧縮モードを設定します。</summary>
+        <value>
+          <see langword="true" />データ圧縮モードが有効である場合<see langword="false" />データ圧縮が無効になっている場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のサイト リンクを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />オブジェクトが Active Directory ドメイン サービスに保存されていないを格納します。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放する必要がある場合は <see langword="true" />、アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>オブジェクトによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByName">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink FindByName (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink FindByName(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.FindByName(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteLinkName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクトはこのサイト リンクに対して有効です。</param>
+        <param name="siteLinkName">検索するサイト リンクの名前。</param>
+        <summary>サイト リンク名に基づいてサイト リンクを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />要求されたサイト リンクのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">サイトが見つかりませんでした、指定された<paramref name="siteLinkName" />で、<paramref name="context" />指定します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、次の理由のいずれかの発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="siteLinkName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteLinkName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByName">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink FindByName (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink FindByName(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteLinkName, valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.FindByName(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteLinkName" Type="System.String" />
+        <Parameter Name="transport" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクトはこのサイト リンクに対して有効です。</param>
+        <param name="siteLinkName">検索するサイト リンクの名前。</param>
+        <param name="transport"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />トランスポートの種類を指定するオブジェクト。</param>
+        <summary>サイト リンク名およびトランスポートに基づくサイト リンクを返します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />要求されたサイト リンクのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">サイトが見つかりませんでした、指定された<paramref name="siteLinkName" />で、<paramref name="context" />指定します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、次の理由のいずれかの発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="siteLinkName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteLinkName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="transport" />パラメーターが有効ではありません<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />値。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="transport" />型がサポートされていません。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.GetDirectoryEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.DirectoryEntry" />このオブジェクトにします。</summary>
+        <returns><see cref="T:System.DirectoryServices.DirectoryEntry" />このサイト リンクのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />オブジェクトが Active Directory ドメイン サービスに保存されていないを格納します。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InterSiteReplicationSchedule">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule InterSiteReplicationSchedule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule InterSiteReplicationSchedule" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.InterSiteReplicationSchedule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />の現在のサイト リンク オブジェクトのオブジェクト。</summary>
+        <value>取得または設定、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />の現在のサイト リンク オブジェクトのオブジェクト。 このプロパティを設定すると、サイト リンクのレプリケーション スケジュールが変更されます。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト リンクの名前を取得します。</summary>
+        <value>サイト リンクの名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NotificationEnabled">
+      <MemberSignature Language="C#" Value="public bool NotificationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NotificationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.NotificationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または通知を有効にするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />通知が有効な場合<see langword="false" />通知が無効になっている場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReciprocalReplicationEnabled">
+      <MemberSignature Language="C#" Value="public bool ReciprocalReplicationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReciprocalReplicationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.ReciprocalReplicationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイト間で、逆方向のレプリケーションのモードを設定します。</summary>
+        <value>
+          <see langword="true" />逆方向のレプリケーションが有効である場合<see langword="false" />逆方向のレプリケーションが無効になっている場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplicationInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan ReplicationInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ReplicationInterval" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.ReplicationInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイト間のレプリケーション間隔を設定します。</summary>
+        <value>サイト間レプリケーションの間隔。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">無効な<paramref name="ReplicationInterval" />指定します。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての変更を Active Directory ドメイン サービス ストアをオブジェクトに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、少なくとも 1 つのサイトを含める必要がありますか、操作は失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">サイト オブジェクトは既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sites">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection Sites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection Sites" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.Sites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサイト リンクを含むサイトの読み取り/書き込みコレクションを取得します。</summary>
+        <value>書き込み可能な<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection" />このサイト リンクを含むサイトのコレクション。 サイトの追加し、このコレクションから削除されることができます。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">Active Directory ドメイン サービス操作に失敗しました。 詳細については、例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サイト リンク名を返します。</summary>
+        <returns>サイト リンクの名前を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink.TransportType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト リンクのトランスポートの種類を取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />このサイト リンクのトランスポートの種類を示す値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

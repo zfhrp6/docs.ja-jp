@@ -1,0 +1,107 @@
+<Type Name="GridViewSelectEventArgs" FullName="System.Web.UI.WebControls.GridViewSelectEventArgs">
+  <TypeSignature Language="C#" Value="public class GridViewSelectEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewSelectEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewSelectEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.GridView.SelectedIndexChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>制御を発生させます、<xref:System.Web.UI.WebControls.GridView.SelectedIndexChanging>選択ボタンをクリックしたときにイベント (ボタンをその`CommandName`プロパティを"Select"に設定) をクリックすると、その前に、<xref:System.Web.UI.WebControls.GridView>コントロールは、select 操作を処理します。 これにより、このイベントが発生するたびに、選択操作の取り消しなどのカスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>オブジェクトが、ユーザーが選択されている行のインデックスを確認したり、選択操作を取り消す必要があることを示すために、イベント処理メソッドに渡されます。 選択操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>オブジェクトを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>を参照してください、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>オブジェクトの選択操作をキャンセルするイベント ハンドラー メソッドに渡される、<xref:System.Web.UI.WebControls.GridView>オンにすると、作成者姓空白を制御します。  
+  
+ [!code-aspx-csharp[GridViewSelect#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSelect/CS/gridviewselectcs.aspx#1)]
+ [!code-aspx-vb[GridViewSelect#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSelect/VB/gridviewselectvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewSelectEventArgs (int newSelectedIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 newSelectedIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewSelectEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newSelectedIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="newSelectedIndex">選択する新しい行のインデックス、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.GridViewSelectEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.GridViewSelectEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.NewSelectedIndex%2A>|`newSelectedIndex` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSelectedIndex">
+      <MemberSignature Language="C#" Value="public int NewSelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewSelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewSelectEventArgs.NewSelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に選択する新しい行のインデックス、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+        <value>選択する新しい行のインデックス、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView.SelectedIndexChanging>イベントが発生する前に、<xref:System.Web.UI.WebControls.GridView>コントロールは、select 操作を実行、<xref:System.Web.UI.WebControls.GridView.SelectedIndex%2A>コントロールのプロパティは、ユーザーが選択されている、新しい行のインデックスを決定するのには使用できません。 <xref:System.Web.UI.WebControls.GridView.SelectedIndex%2A>プロパティには、以前に選択した行のインデックスも含まれています。 ユーザーが選択されている、新しい行のインデックスを確認するを使用して、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.NewSelectedIndex%2A>プロパティです。 このプロパティを使用して、プログラムで別の値に設定することによって、ユーザーが選択した行のインデックスをオーバーライドすることができますも。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.NewSelectedIndex%2A>プロパティをユーザーが選択した行のインデックスを確認します。  
+  
+ [!code-aspx-csharp[GridViewSelect#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSelect/CS/gridviewselectcs.aspx#1)]
+ [!code-aspx-vb[GridViewSelect#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSelect/VB/gridviewselectvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

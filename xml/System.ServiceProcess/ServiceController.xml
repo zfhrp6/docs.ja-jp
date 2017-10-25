@@ -1,0 +1,1317 @@
+<Type Name="ServiceController" FullName="System.ServiceProcess.ServiceController">
+  <TypeSignature Language="C#" Value="public class ServiceController : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceController extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceController" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.ServiceProcess.Design.ServiceControllerDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceProcess.ServiceProcessDescription("ServiceControllerDesc")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows サービスを表し、実行中のサービスまたは停止したサービスへの接続、サービスの操作、またはサービスに関する情報の取得を実現します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.ServiceProcess.ServiceController>クラスに接続し、既存のサービスの動作を制御します。 インスタンスを作成する場合、<xref:System.ServiceProcess.ServiceController>クラス、そのプロパティを設定するには、特定の Windows サービスとやり取りするようにします。 クラスを使用して、開始、停止、およびそれ以外の場合、サービスを操作することができますし、します。  
+  
+ 使用するほとんどの場合、<xref:System.ServiceProcess.ServiceController>管理用の容量のコンポーネントです。 たとえば、Windows を作成することがまたはカスタムを送信する Web アプリケーション経由でサービスを実行するコマンド、<xref:System.ServiceProcess.ServiceController>インスタンス。 サービス コントロール マネージャー (SCM) Microsoft 管理コンソール スナップインではサポートされていませんカスタムのコマンドは、便利になります。  
+  
+ インスタンスを作成した後<xref:System.ServiceProcess.ServiceController>で連携するサービスを識別するために 2 つのプロパティを設定する必要があります。 コンピューター名とを制御するサービスの名前。  
+  
+> [!NOTE]
+>  既定では、<xref:System.ServiceProcess.ServiceController.MachineName%2A>ので、別のコンピューター をポイントするインスタンスを設定する場合を除き、これを変更する必要はありませんが、ローカル コンピューターに設定します。  
+  
+ 一般に、サービスの作成者は、特定のコマンドに関連付けられているアクションをカスタマイズするコードを記述します。 たとえば、サービスに応答するコードを含めることができます、<xref:System.ServiceProcess.ServiceBase.OnPause%2A?displayProperty=nameWithType>コマンド。 その場合、カスタム処理を<xref:System.ServiceProcess.ServiceController.Pause%2A>システム サービスを一時停止する前に、タスクが実行されます。  
+  
+ サービスが処理できるコマンドのセットは、プロパティによって異なります。たとえば、設定、<xref:System.ServiceProcess.ServiceController.CanStop%2A>にサービスのプロパティ`false`です。 この設定により、`Stop`コマンドの特定のサービスで使用できなくなった; できなくために必要なボタンを無効にして、SCM でサービスを停止します。 コードからサービスを停止しようとする場合、システムはエラーが発生し、エラー メッセージが表示されます"を停止できませんでした`servicename`"。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController>コントロールをクラス、`SimpleService`サービスの例です。  
+  
+ [!code-csharp[ServiceControllerClass#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#1)]
+ [!code-vb[ServiceControllerClass#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceController ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceProcess.ServiceController" />特定のサービスに関連付けられていないクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceController (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">システムでサービスを識別するための名前。 これは、サービスの表示名とすることもできます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceProcess.ServiceController" />ローカル コンピューター上の既存のサービスに関連付けられているクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクターを作成する、<xref:System.ServiceProcess.ServiceController>を使用するサンプルのサービスを制御するオブジェクト。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#2)]
+ [!code-vb[ServiceControllerClass#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceController (string name, string machineName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string machineName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="machineName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">システムでサービスを識別するための名前。 これは、サービスの表示名とすることもできます。</param>
+        <param name="machineName">サービスが常駐するコンピューター。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceProcess.ServiceController" />指定したコンピューター上の既存のサービスに関連付けられているクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `machineName`使用するパラメーター、"です。"ローカル コンピューターを表すです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が無効です。  
+  
+ または  
+  
+ <paramref name="machineName" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPauseAndContinue">
+      <MemberSignature Language="C#" Value="public bool CanPauseAndContinue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanPauseAndContinue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.CanPauseAndContinue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPCanPauseAndContinue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスを一時中断および再開できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、サービスを一時停止できます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.CanPauseAndContinue%2A>プロパティをサービスが一時停止し、続行するかどうかを判断します。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#2)]
+ [!code-vb[ServiceControllerClass#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanShutdown">
+      <MemberSignature Language="C#" Value="public bool CanShutdown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanShutdown" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.CanShutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPCanShutdown")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムのシャットダウン時に、サービスにそれを通知する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、システムのシャット ダウン時にサービスに通知する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.CanShutdown%2A>サービスがシャット ダウン イベントのハンドラーを提供するかどうかを決定するプロパティです。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#2)]
+ [!code-vb[ServiceControllerClass#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanStop">
+      <MemberSignature Language="C#" Value="public bool CanStop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanStop" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.CanStop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPCanStop")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスをいったん開始してから停止できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サービスを停止する場合、<see cref="M:System.ServiceProcess.ServiceBase.OnStop" />メソッドが呼び出されます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.CanStop%2A>サービスが停止イベントのハンドラーを提供するかどうかを決定するプロパティです。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#2)]
+ [!code-vb[ServiceControllerClass#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この接続が切断<see cref="T:System.ServiceProcess.ServiceController" />サービスからインスタンス化し、インスタンスが割り当てられているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.Close%2A>関連付けられているすべてのハンドルを解放、<xref:System.ServiceProcess.ServiceController>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Continue">
+      <MemberSignature Language="C#" Value="public void Continue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Continue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Continue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスが一時中断された後に、続行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと<xref:System.ServiceProcess.ServiceController.Continue%2A>、サービスの状態が最初に変更`ContinuePending`し、<xref:System.ServiceProcess.ServiceController.Continue%2A>を変更したメソッドが戻る`Running`です。  
+  
+ 呼び出すことはできません<xref:System.ServiceProcess.ServiceController.Continue%2A>サービス コント ローラーの状態になるまで、サービスの`Paused`します。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.Continue%2A>メソッドを一時停止したサービスを続行します。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#5](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#5)]
+ [!code-vb[ServiceControllerClass#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DependentServices">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceController[] DependentServices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceProcess.ServiceController[] DependentServices" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.DependentServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPDependentServices")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているサービスに依存するサービスのセットを取得<see cref="T:System.ServiceProcess.ServiceController" />インスタンス。</summary>
+        <value>配列<see cref="T:System.ServiceProcess.ServiceController" />インスタンス、それぞれがこのサービスに依存するサービスに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.DependentServices%2A>配列は、アプリケーションが呼び出す場合、システムが停止したサービスを表す<xref:System.ServiceProcess.ServiceController.Stop%2A>このサービスを使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>イベント ログ サービスに依存するサービスのセットを表示するクラス。  
+  
+ [!code-cpp[ServiceController#3](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#3)]
+ [!code-csharp[ServiceController#3](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#3)]
+ [!code-vb[ServiceController#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上の既存のサービスに接続します。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Browse" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPDisplayName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの表示名を取得または設定します。</summary>
+        <value>サービスの表示名。サービスを識別するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.ServiceProcess.ServiceController.DisplayName%2A>に空の文字列 ("")、プロパティを設定が、`null`例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>イベント ログ サービスに依存するサービスのセットを表示するクラス。  
+  
+ [!code-cpp[ServiceController#3](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#3)]
+ [!code-csharp[ServiceController#3](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#3)]
+ [!code-vb[ServiceController#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.ServiceProcess.ServiceController.DisplayName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ServiceProcess.ServiceController" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.ServiceProcess.ServiceController>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteCommand">
+      <MemberSignature Language="C#" Value="public void ExecuteCommand (int command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExecuteCommand(int32 command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.ExecuteCommand(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="command">実行するカスタム コマンドを示す、アプリケーション定義のコマンド フラグ。 有効値の範囲は 128 ～ 256 です。</param>
+        <summary>サービスでカスタム コマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと<xref:System.ServiceProcess.ServiceController.ExecuteCommand%2A>サービスの状態は変わりません。 サービスが開始された場合、状態のまま`Running`です。 サービスが停止された場合、状態のまま`Stopped`のようにします。 カスタム コマンドを処理するサービスをオーバーライドする必要があります、<xref:System.ServiceProcess.ServiceBase.OnCustomCommand%2A>メソッドによって識別されるコマンドのハンドラーを用意し、`command`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.ServiceProcess.ServiceController.ExecuteCommand%28System.Int32%29?displayProperty=nameWithType>にカスタム コマンドを実行するメソッド、`SimpleService`サービスの例です。  
+  
+ [!code-csharp[ServiceContoller_ExecuteCommand#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceContoller_ExecuteCommand/CS/program.cs#1)]
+ [!code-vb[ServiceContoller_ExecuteCommand#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceContoller_ExecuteCommand/VB/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevices">
+      <MemberSignature Language="C#" Value="public static System.ServiceProcess.ServiceController[] GetDevices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceProcess.ServiceController[] GetDevices() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.GetDevices" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカル コンピューターのデバイス ドライバー サービスを取得します。</summary>
+        <returns>型の配列<see cref="T:System.ServiceProcess.ServiceController" />で各要素に、ローカル コンピューター上のデバイス ドライバー サービスに関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.GetDevices%2A>ローカル コンピューターからのみ、デバイス ドライバー サービスを返します。 デバイス ドライバー以外のサービスまたはドライバーではないサービスを取得する、<xref:System.ServiceProcess.ServiceController.GetServices%2A>メソッドです。 同時に、2 つのメソッドは、コンピューター上のすべてのサービスへのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>ローカル コンピューター上のデバイス ドライバー サービスを表示するクラス。  
+  
+ [!code-cpp[ServiceController#5](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#5)]
+ [!code-csharp[ServiceController#5](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#5)]
+ [!code-vb[ServiceController#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDevices">
+      <MemberSignature Language="C#" Value="public static System.ServiceProcess.ServiceController[] GetDevices (string machineName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceProcess.ServiceController[] GetDevices(string machineName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.GetDevices(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="machineName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="machineName">デバイス ドライバー サービスを取得する対象のコンピューター。</param>
+        <summary>指定したコンピューターのデバイス ドライバー サービスを取得します。</summary>
+        <returns>型の配列<see cref="T:System.ServiceProcess.ServiceController" />で各要素に指定したコンピューター上のデバイス ドライバー サービスに関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.GetDevices%2A>指定したコンピューターからのみ、デバイス ドライバー サービスを返します。 デバイス ドライバー以外のサービスまたはドライバーではないサービスを取得する、<xref:System.ServiceProcess.ServiceController.GetServices%2A>メソッドです。 同時に、2 つのメソッドは、コンピューター上のすべてのサービスへのアクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="machineName" />パラメーターが無効な構文を持ちます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServices">
+      <MemberSignature Language="C#" Value="public static System.ServiceProcess.ServiceController[] GetServices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceProcess.ServiceController[] GetServices() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.GetServices" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デバイス ドライバー サービス以外の、ローカル コンピューターのすべてのサービスを取得します。</summary>
+        <returns>型の配列<see cref="T:System.ServiceProcess.ServiceController" />で各要素に関連付けられているローカル コンピューター上のサービスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.GetServices%2A>デバイス ドライバー以外のサービスだけと、ローカル コンピューターからドライバーではないサービスを返します。 デバイス ドライバー サービスを取得する、<xref:System.ServiceProcess.ServiceController.GetDevices%2A>メソッドです。 同時に、2 つのメソッドは、コンピューター上のすべてのサービスへのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>ローカル コンピューターで実行されているサービスを表示するクラス。  
+  
+ [!code-cpp[ServiceController#6](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#6)]
+ [!code-csharp[ServiceController#6](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#6)]
+ [!code-vb[ServiceController#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServices">
+      <MemberSignature Language="C#" Value="public static System.ServiceProcess.ServiceController[] GetServices (string machineName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceProcess.ServiceController[] GetServices(string machineName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.GetServices(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="machineName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="machineName">サービスを取得する対象のコンピューター。</param>
+        <summary>デバイス ドライバー サービス以外の、指定したコンピューターのすべてのサービスを取得します。</summary>
+        <returns>型の配列<see cref="T:System.ServiceProcess.ServiceController" />で各要素に指定したコンピューター上のサービスに関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.GetServices%2A>デバイス ドライバー以外のサービスだけと、指定されたコンピューターからドライバーではないサービスを返します。 デバイス ドライバー サービスを取得する、<xref:System.ServiceProcess.ServiceController.GetDevices%2A>メソッドです。 同時に、2 つのメソッドは、コンピューター上のすべてのサービスへのアクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="machineName" />パラメーターが無効な構文を持ちます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(".")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPMachineName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスが常駐しているコンピューターの名前を取得または設定します。</summary>
+        <value>これに関連付けられているサービスを実行しているコンピューターの名前<see cref="T:System.ServiceProcess.ServiceController" />インスタンス。 既定値はローカル コンピューター (".") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンピューター名が前にバック スラッシュ文字が、このサービスを実行しているサーバーの名前 (\\\\)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.ServiceProcess.ServiceController.MachineName" />構文が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスの操作を中断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことはできません<xref:System.ServiceProcess.ServiceController.Continue%2A>サービス コント ローラーの状態になるまで、サービスの`Paused`します。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.Pause%2A>サービスを一時停止するメソッド。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#4](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#4)]
+ [!code-vb[ServiceControllerClass#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを現在の値に再設定し、プロパティ値を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.Refresh%2A>メソッド原因、 <xref:System.ServiceProcess.ServiceController.ServicesDependedOn%2A>、 <xref:System.ServiceProcess.ServiceController.DependentServices%2A>、および<xref:System.ServiceProcess.ServiceController.Status%2A>プロパティを次に参照されている場合、その現在の値にリセットされます。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.ServiceProcess.ServiceController.Refresh%2A>サービスの状態を取得します。 コードでは、サービスの一時停止にし、変更を反映するように状態を待機するように指示します。 この例は提供されている長い例の一部である、<xref:System.ServiceProcess.ServiceController>クラスです。  
+  
+ [!code-csharp[ServiceControllerClass#4](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceControllerClass/CS/program.cs#4)]
+ [!code-vb[ServiceControllerClass#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceControllerClass/VB/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceHandle">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.SafeHandle ServiceHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.InteropServices.SafeHandle ServiceHandle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.ServiceHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.SafeHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのハンドルを取得します。</summary>
+        <value>A<see cref="T:System.Runtime.InteropServices.SafeHandle" />サービスのハンドルを格納しています。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceName">
+      <MemberSignature Language="C#" Value="public string ServiceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.ServiceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceProcess.Design.ServiceNameConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPServiceName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが参照するサービスを識別する名前を取得または設定します。</summary>
+        <value>サービスを識別する名前をこの<see cref="T:System.ServiceProcess.ServiceController" />インスタンスの参照。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceController.ServiceName%2A>サービス コントロール マネージャーにサービスを識別します。 このプロパティを変更すると、<xref:System.ServiceProcess.ServiceController>インスタンスの別のサービスにバインドするには変更されません。 どのようなサービス コントロール マネージャーの Microsoft 管理コンソール スナップインが表示されます。  
+  
+ カスタム サービスを実装しているときにこのプロパティの値が、そのサービスに対して記録された名前と同じにする必要があります、<xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A>の対応するプロパティ<xref:System.ServiceProcess.ServiceInstaller>クラスです。 コードでは、<xref:System.ServiceProcess.ServiceController.ServiceName%2A>設定は通常、`main()`実行可能ファイルの関数。  
+  
+ リセットすると、<xref:System.ServiceProcess.ServiceController.ServiceName%2A>プロパティ、メソッド、プロパティの設定を設定とこのインスタンスの<xref:System.ServiceProcess.ServiceController.DisplayName%2A>に空の文字列 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.ServiceProcess.ServiceController.ServiceName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">構文、<see cref="P:System.ServiceProcess.ServiceController.ServiceName" />プロパティが無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicesDependedOn">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceController[] ServicesDependedOn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceProcess.ServiceController[] ServicesDependedOn" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.ServicesDependedOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPServicesDependedOn")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceController[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となるサービスが依存している一連のサービス。</summary>
+        <value>配列<see cref="T:System.ServiceProcess.ServiceController" />インスタンス、それぞれを実行するには、このサービスが実行されている必要があります、サービスに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスのいずれかの場合、<xref:System.ServiceProcess.ServiceController.ServicesDependedOn%2A>配列が実行されていない、このサービスを開始することはできません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>メッセンジャー サービスが依存するサービスのセットを表示するクラス。  
+  
+ [!code-cpp[ServiceController#4](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#4)]
+ [!code-csharp[ServiceController#4](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#4)]
+ [!code-vb[ServiceController#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上の既存のサービスに接続します。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Browse" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceType">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceType ServiceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.ServiceType ServiceType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.ServiceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPServiceType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となるオブジェクトが参照するサービスの種類を取得します。</summary>
+        <value>1 つ、<see cref="T:System.ServiceProcess.ServiceType" />ネットワーク サービスの種類を示すために使用される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスの種類は、システムによって、サービスを使用する方法を示します。 値、<xref:System.ServiceProcess.ServiceController.ServiceType%2A>プロパティは、ビットごとの OR 演算子を使用して結合フラグのセットを表します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>ローカル コンピューター上のデバイス ドライバー サービスを表示するクラス。  
+  
+ [!code-cpp[ServiceController#5](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#5)]
+ [!code-csharp[ServiceController#5](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#5)]
+ [!code-vb[ServiceController#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>引数を渡さずに、サービスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことはできません<xref:System.ServiceProcess.ServiceController.Stop%2A>サービス コント ローラーの状態になるまで、サービスの`Running`します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>警告サービスを停止するかどうかを確認するクラス。 例では、サービスを開始し、サービスの状態が に設定されているを待つ場合は、サービスを停止すると、<xref:System.ServiceProcess.ServiceControllerStatus.Running>です。  
+  
+ [!code-cpp[ServiceController#1](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#1)]
+ [!code-csharp[ServiceController#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#1)]
+ [!code-vb[ServiceController#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start (string[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start(string[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Start(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="args">サービスを開始するときに、サービスに渡す引数の配列。</param>
+        <summary>指定した引数を渡して、サービスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことはできません<xref:System.ServiceProcess.ServiceController.Stop%2A>サービス コント ローラーの状態になるまで、サービスの`Running`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスを開始することはできません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="args" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ 配列のメンバーは<see langword="null" />します。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StartType">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceStartMode StartType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.ServiceStartMode StartType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.StartType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPStartType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceStartMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceProcess.ServiceController" /> オブジェクトによって表されるサービスの開始方法を示す値を取得します。</summary>
+        <value>サービスを開始する方法を示す値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを参照します。 関連する列挙値:<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Browse" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceControllerStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.ServiceControllerStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceController.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("SPStatus")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceControllerStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となるインスタンスが参照するサービスのステータスを取得します。</summary>
+        <value>1 つ、<see cref="T:System.ServiceProcess.ServiceControllerStatus" />サービスが実行されている、停止、または一時停止しているか、かどうか、開始、停止、停止、またはコマンドを続行が保留されているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状態では、サービスの現在の状態を示します。 使用可能な値のセットには、いくつかの状態を変更するコマンドの保留中かどうかを示すことが含まれます。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.ServiceProcess.ServiceController> Telnet サービスの現在の状態を確認するクラス。 サービスが停止している場合の例は、サービスを開始します。 サービスが実行されている場合の例は、サービスを停止します。  
+  
+ [!code-cpp[ServiceController#2](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#2)]
+ [!code-csharp[ServiceController#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#2)]
+ [!code-vb[ServiceController#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このサービスと、このサービスに依存しているすべてのサービスを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのサービスは、その操作には、このサービスに依存している、このサービスを停止するには、停止します。 <xref:System.ServiceProcess.ServiceController.DependentServices%2A>プロパティには、このいずれかに依存するサービスのセットが含まれています。  
+  
+ このサービスが依存するサービスを停止する場合、<xref:System.ServiceProcess.ServiceController.Stop%2A>メソッド内でこのサービスで、<xref:System.ServiceProcess.ServiceController.Stop%2A>親サービスのメソッドです。 <xref:System.ServiceProcess.ServiceController.ServicesDependedOn%2A>プロパティには、このサービスが依存するサービスが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.ServiceProcess.ServiceController> Telnet サービスの現在の状態を確認するクラス。 サービスが停止している場合の例は、サービスを開始します。 サービスが実行されている場合の例は、サービスを停止します。  
+  
+ [!code-cpp[ServiceController#2](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#2)]
+ [!code-csharp[ServiceController#2](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#2)]
+ [!code-vb[ServiceController#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">システム API にアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは見つかりませんでした。</exception>
+        <permission cref="T:System.ServiceProcess.ServiceControllerPermission">コンピューター上のサービスを制御するためです。 関連する列挙。<see cref="F:System.ServiceProcess.ServiceControllerPermissionAccess.Control" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">サービス情報への無制限のアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForStatus">
+      <MemberSignature Language="C#" Value="public void WaitForStatus (System.ServiceProcess.ServiceControllerStatus desiredStatus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WaitForStatus(valuetype System.ServiceProcess.ServiceControllerStatus desiredStatus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="desiredStatus" Type="System.ServiceProcess.ServiceControllerStatus" />
+      </Parameters>
+      <Docs>
+        <param name="desiredStatus">待機に対するステータス。</param>
+        <summary>サービスが指定したステータスになるまで、無期限に待機します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>アプリケーションを中断するのには、サービスが必要な状態に到達するまでの処理です。  
+  
+> [!NOTE]
+>  <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>メソッドは、約 250 ミリ秒間での各状態の確認を待機します。  <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>変更する、検出されたサービスの大文字と小文字を検出することはできません、`desiredStatus`し、別の状態をすぐにその間隔でします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>警告サービスを停止するかどうかを確認するクラス。 例では、サービスを開始し、サービスの状態が に設定されているを待つ場合は、サービスを停止すると、<xref:System.ServiceProcess.ServiceControllerStatus.Running>です。  
+  
+ [!code-cpp[ServiceController#1](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#1)]
+ [!code-csharp[ServiceController#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#1)]
+ [!code-vb[ServiceController#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="desiredStatus" /> パラメーターは、<see cref="T:System.ServiceProcess.ServiceControllerStatus" /> 列挙値に定義されている値のいずれかではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForStatus">
+      <MemberSignature Language="C#" Value="public void WaitForStatus (System.ServiceProcess.ServiceControllerStatus desiredStatus, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WaitForStatus(valuetype System.ServiceProcess.ServiceControllerStatus desiredStatus, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceController.WaitForStatus(System.ServiceProcess.ServiceControllerStatus,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="desiredStatus" Type="System.ServiceProcess.ServiceControllerStatus" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="desiredStatus">待機に対するステータス。</param>
+        <param name="timeout">サービスが指定したステータスになるまでの待機時間を指定する <see cref="T:System.TimeSpan" /> オブジェクト。</param>
+        <summary>サービスが指定したステータスになるまで、または指定したタイムアウトの期限が切れるまで待機します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>アプリケーションを中断するのには、サービスが必要な状態に到達するまでの処理です。  
+  
+> [!NOTE]
+>  <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>メソッドは、約 250 ミリ秒間での各状態の確認を待機します。  <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A>変更する、検出されたサービスの大文字と小文字を検出することはできません、`desiredStatus`し、別の状態をすぐにその間隔でします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="desiredStatus" /> パラメーターは、<see cref="T:System.ServiceProcess.ServiceControllerStatus" /> 列挙値に定義されている値のいずれかではありません。</exception>
+        <exception cref="T:System.ServiceProcess.TimeoutException"><paramref name="timeout" /> パラメーターに指定した値は期限切れです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

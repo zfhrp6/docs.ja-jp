@@ -1,0 +1,129 @@
+<Type Name="HttpModulesSection" FullName="System.Web.Configuration.HttpModulesSection">
+  <TypeSignature Language="C#" Value="public sealed class HttpModulesSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpModulesSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpModulesSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションの HTTP モジュールを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpModulesSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`httpModules`構成ファイルのセクションです。  
+  
+ この型が所属するグループの一部、<xref:System.Web.Configuration.HttpModuleAction>と<xref:System.Web.Configuration.HttpModuleActionCollection>型です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.HttpModulesSection>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+   
+  
+## Examples  
+ この例は、宣言の属性の値を指定する方法を示します、`add`内の要素、`httpModules`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.HttpModulesSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、 [httpModules 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/5e28e921-ab9b-4584-a2f9-0f9aa08372e3)セクションです。  
+  
+```  
+<httpModules>  
+    <add name="TimerModule"   
+      type="Samples.Aspnet.Configuration.RequestTimeInterval, RequestTimeInterval Version=1.0.1557.23158, Culture=neutral,  
+      PublicKeyToken=7bfb33146a87b52e, processorArchitecture=MSIL"/>  
+</httpModules>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.HttpModulesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModulesSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModulesSection/CS/httpmodulessection.cs#1)]
+ [!code-vb[System.Web.Configuration.HttpModulesSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModulesSection/VB/httpmodulessection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpModulesSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModulesSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpModulesSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpModulesSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.HttpModulesSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modules">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.HttpModuleActionCollection Modules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.HttpModuleActionCollection Modules" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModulesSection.Modules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", IsDefaultCollection=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.HttpModuleActionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.HttpModuleActionCollection" />の<see cref="T:System.Web.Configuration.HttpModuleAction" />に含まれるモジュール、<see cref="T:System.Web.Configuration.HttpModulesSection" />です。</summary>
+        <value>A<see cref="T:System.Web.Configuration.HttpModuleActionCollection" />を格納している、<see cref="T:System.Web.Configuration.HttpModuleAction" />オブジェクト、またはによって定義されているモジュール、<see cref="T:System.Web.Configuration.HttpModulesSection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるコレクションは、基になる構成ファイル内の実際の要素を参照していません。 これは、含まれているモジュールに簡単にアクセスできるようにする ASP.NET インフラストラクチャ コンストラクトです。 これは、構成ファイルの要素を処理するための一般的なパターンです。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスする方法を示しています、<xref:System.Web.Configuration.HttpModuleAction>モジュール。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModulesSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModulesSection/CS/httpmodulessection.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpModulesSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModulesSection/VB/httpmodulessection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModulesSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

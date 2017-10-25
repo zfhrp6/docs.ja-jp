@@ -1,0 +1,79 @@
+<Type Name="Int16Converter" FullName="System.ComponentModel.Int16Converter">
+  <TypeSignature Language="C#" Value="public class Int16Converter : System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Int16Converter extends System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Int16Converter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.BaseNumberConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>16 ビット符号付き整数オブジェクトから他のさまざまな表現への変換や、その逆の変換を実行する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンバーターは、文字列との間にのみ、16 ビット符号付き整数オブジェクトに変換できます。 <xref:System.Int16>値型は、負の 32768 から正の 32767 までの値を符号付き整数を表します。  
+  
+ <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>メソッドを使用、<xref:System.Int16.Parse%2A>メソッドの<xref:System.Int16>の整数値を持つ<xref:System.Globalization.NumberStyles>します。  
+  
+ <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>メソッドが返される文字列の [全般] ("G") 形式を使用します。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+> [!NOTE]
+>  インスタンスは作成しないで、<xref:System.ComponentModel.Int16Converter>です。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>します。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、型の変数を変換<xref:System.Int16>文字列、およびその逆です。  
+  
+ [!code-cpp[Converters#14](~/samples/snippets/cpp/VS_Snippets_Winforms/Converters/CPP/converters.cpp#14)]
+ [!code-csharp[Converters#14](~/samples/snippets/csharp/VS_Snippets_Winforms/Converters/CS/converters.cs#14)]
+ [!code-vb[Converters#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Converters/VB/converters.vb#14)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Int16Converter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Int16Converter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Int16Converter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

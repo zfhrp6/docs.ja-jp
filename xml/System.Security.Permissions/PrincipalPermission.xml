@@ -1,0 +1,572 @@
+<Type Name="PrincipalPermission" FullName="System.Security.Permissions.PrincipalPermission">
+  <TypeSignature Language="C#" Value="public sealed class PrincipalPermission : System.Security.IPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit PrincipalPermission extends System.Object implements class System.Security.IPermission, class System.Security.ISecurityEncodable, class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.PrincipalPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.IPermission</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティブなプリンシパルに対してチェックを許可 (を参照してください<see cref="T:System.Security.Principal.IPrincipal" />) 両方の宣言型プログラミングと命令型のセキュリティ アクションに対して定義されている言語構成要素を使用します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id 情報 (ユーザー名とロール) をコンス トラクターに渡すことによって<xref:System.Security.Permissions.PrincipalPermission>アクティブなプリンシパルの id がこの情報と一致することを要求するために使用できます。  
+  
+ アクティブなを一致するように<xref:System.Security.Principal.IPrincipal>と関連付けられた<xref:System.Security.Principal.IIdentity>、指定された id とロールの両方に一致する必要があります。 場合`null`id 文字列を使用すると、任意の id に一致する要求として解釈されます。 使用`null`ロールの文字列の任意のロールは一致します。 黙示的、渡す`null`パラメーター`name`または`role`に<xref:System.Security.Permissions.PrincipalPermission>id といずれかでロールが一致<xref:System.Security.Principal.IPrincipal>です。 構築することも、<xref:System.Security.Permissions.PrincipalPermission>のみを決定するかどうか、<xref:System.Security.Principal.IIdentity>認証または認証されていないエンティティを表します。 この場合、`name`と`role`は無視されます。  
+  
+ その他のほとんどのアクセス許可とは異なり<xref:System.Security.Permissions.PrincipalPermission>が及ばない<xref:System.Security.CodeAccessPermission>です。 ただしを実装して、<xref:System.Security.IPermission>インターフェイスです。 これは、ため<xref:System.Security.Permissions.PrincipalPermission>; コード アクセス許可ではありませんは、これが許可されていない実行アセンブリの id に基づきます。 代わりに、操作を実行するコードを許可 (<xref:System.Security.Permissions.PrincipalPermission.Demand%2A>、 <xref:System.Security.Permissions.PrincipalPermission.Union%2A>、<xref:System.Security.Permissions.PrincipalPermission.Intersect%2A>など) コードにアクセスし、コードの id アクセス許可に対して方法に一貫性のある方法では、現在のユーザー id に対してそれらのアクションが実行されます。  
+  
+> [!IMPORTANT]
+>  プリンシパルのアクセス許可を要求する前に、列挙値にプリンシパルに現在のアプリケーション ドメインのポリシーを設定するために必要な<xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>します。 既定では、プリンシパル ポリシー éý ' è<xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>です。 プリンシパルのポリシー設定しない場合<xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>、プリンシパルのアクセス許可の要求は失敗します。 プリンシパルのアクセス許可を要求する前に、次のコードを実行する必要があります。  
+>   
+>  `AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal).`  
+  
+   
+  
+## Examples  
+ 次の例では、アクティブなプリンシパルには、管理者が必要です。 `name`パラメーターは`null`要求を渡すため、管理者になっているユーザーを有効にします。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理者であることを要求するコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ [!code-cpp[Classic PrincipalPermission Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrincipalPermission Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CS/source.cs#1)]
+ [!code-vb[Classic PrincipalPermission Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.PrincipalPermission" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `None`認証されていないプリンシパルのみと一致する (<xref:System.Security.Permissions.PrincipalPermissionAttribute.Name%2A>空の文字列 ("")、no <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>、<xref:System.Security.Permissions.PrincipalPermissionAttribute.Authenticated%2A>は`false`)。 `Unrestricted`すべてのプリンシパルと一致する (<xref:System.Security.Permissions.PrincipalPermissionAttribute.Name%2A>は`null`、<xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>は`null`)。  
+  
+> [!NOTE]
+>  このコンス トラクターは、他のアクセス許可の設計との一貫性の含まれていますは実際には役に立ちません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.PermissionState" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalPermission (string name, string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Security.Principal.IPrincipal" />オブジェクトのユーザーです。</param>
+        <param name="role">役割、<see cref="T:System.Security.Principal.IPrincipal" />オブジェクトのユーザー (管理者など)。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Permissions.PrincipalPermission" /> 、指定されたクラス<paramref name="name" />と<paramref name="role" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`name`パラメーターおよび`role`パラメーターは、アクティブなを一致するようにこのアクセス許可と一致する必要があります<xref:System.Security.Principal.IPrincipal>と関連付けられた<xref:System.Security.Principal.IIdentity>です。 設定`name`に`null`ロール内のユーザーを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、アクティブなプリンシパルには、管理者が必要です。 `name`パラメーターは`null`要求を渡すため、管理者になっているユーザーを有効にします。  
+  
+ **注**Windows Vista で、ユーザー アカウント制御 (UAC) は、ユーザーの権限を決定します。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理者であることを要求するコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ [!code-cpp[Classic PrincipalPermission Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrincipalPermission Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CS/source.cs#1)]
+ [!code-vb[Classic PrincipalPermission Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalPermission (string name, string role, bool isAuthenticated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string role, bool isAuthenticated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="isAuthenticated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Security.Principal.IPrincipal" />オブジェクトのユーザーです。</param>
+        <param name="role">役割、<see cref="T:System.Security.Principal.IPrincipal" />オブジェクトのユーザー (管理者など)。</param>
+        <param name="isAuthenticated">
+          <see langword="true" />ユーザーが認証されたことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Permissions.PrincipalPermission" /> 、指定されたクラス<paramref name="name" />、 <paramref name="role" />、および認証ステータス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`name`パラメーターおよび`role`パラメーターは、アクティブなを一致するようにこのアクセス許可と一致する必要があります<xref:System.Security.Principal.IPrincipal>と関連付けられた<xref:System.Security.Principal.IIdentity>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可と、同一のプリンシパルとの id を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Demand">
+      <MemberSignature Language="C#" Value="public void Demand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.Demand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行時に、現在のプリンシパルが、現在のアクセス許可で指定されたプリンシパルと一致するかどうかを判別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ない場合は<xref:System.Security.SecurityException>発生すると、<xref:System.Security.Permissions.PrincipalPermission.Demand%2A>が成功します。  
+  
+ このメソッドは、呼び出し元のスレッドにアタッチされているプリンシパルに対して機能します。  
+  
+> [!IMPORTANT]
+>  呼び出しの前に、<xref:System.Security.Permissions.PrincipalPermission.Demand%2A>列挙値にプリンシパルに現在のアプリケーション ドメインのポリシーを設定する必要があるメソッド、<xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>です。 既定では、プリンシパルのポリシーに設定<xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>です。 プリンシパルのポリシー設定しない場合<xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>、プリンシパルのアクセス許可の要求は失敗します。 プリンシパルのアクセス許可要求が発生する前に、次のコードを実行する必要があります。  
+>   
+>  `AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal).`  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">現在のプリンシパルは、現在のアクセス許可で指定されたプリンシパルに対するセキュリティ チェックに合格しません。  
+  
+ または  
+  
+ 現在の <see cref="T:System.Security.Principal.IPrincipal" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Security.Permissions.PrincipalPermission" /> と比較する <see cref="T:System.Security.Permissions.PrincipalPermission" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.PrincipalPermission" /> オブジェクトが、現在の <see cref="T:System.Security.Permissions.PrincipalPermission" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see cref="T:System.Security.Permissions.PrincipalPermission" /> が現在の <see cref="T:System.Security.Permissions.PrincipalPermission" /> オブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Object.Equals%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement elem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXml(class System.Security.SecurityElement elem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elem" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="elem">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="elem" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="elem" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="elem" />パラメーターのバージョン番号が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適している、<see cref="T:System.Security.Permissions.PrincipalPermission" /> オブジェクトのハッシュ コードを取得します。</summary>
+        <returns>現在の <see cref="T:System.Security.Permissions.PrincipalPermission" /> オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じアクセス許可の 2 つのインスタンスのハッシュ コードが異なる可能性があります、ためハッシュ コードを比較する 2 つ使用するされません<xref:System.Security.Permissions.PrincipalPermission>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可がある<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは適していませんので、2 人のユーザーは交差しない、<xref:System.Security.Permissions.PrincipalPermission>です。 次に例を示します。  
+  
+ [!code-cpp[System.Security.Permissions.PrincipalPermission#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cpp/remarks.cpp#1)]
+ [!code-csharp[System.Security.Permissions.PrincipalPermission#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cs/remarks.cs#1)]
+ [!code-vb[System.Security.Permissions.PrincipalPermission#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.security.permissions.principalpermission/vb/remarks.vb#1)]  
+  
+ 上記の式は、次の式と同じです。  
+  
+ [!code-cpp[System.Security.Permissions.PrincipalPermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cpp/remarks.cpp#2)]
+ [!code-csharp[System.Security.Permissions.PrincipalPermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cs/remarks.cs#2)]
+ [!code-vb[System.Security.Permissions.PrincipalPermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.security.permissions.principalpermission/vb/remarks.vb#2)]  
+  
+ identity できる同時を表すためありません Bob とルイズの両方です。 実際には、`pp1.Demand()`認証されていないプリンシパルの場合にのみ成功 (空の文字列と同じ名前で ("")) は、管理者の役割で動作する許可します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />し、現在のアクセス許可と同じクラスのインスタンスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可に対して成功したすべての要求は、指定した権限も成功した場合、指定したアクセス許可のサブセットです。  
+  
+   
+  
+## Examples  
+ 次の例は、のインスタンスを定義します。 <xref:System.Security.Permissions.PrincipalPermission> 3 つの個別のユーザーに対応します。 2 つの追加インスタンスは、ユーザーのグループとして作成されます。 `pp1`表し、Bob ルイズ、 `pp2` Bob、ルイズ、および Greg を表します。  
+  
+ [!code-cpp[Classic PrincipalPermission.IsSubsetOf Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PrincipalPermission.IsSubsetOf Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrincipalPermission.IsSubsetOf Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PrincipalPermission.IsSubsetOf Example/CS/source.cs#1)]
+ [!code-vb[Classic PrincipalPermission.IsSubsetOf Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic PrincipalPermission.IsSubsetOf Example/VB/source.vb#1)]  
+  
+ 前の宣言で`pp1.IsSubsetOf(pp2)`返します`true`、および`pp2.IsSubsetOf(pp1)`を返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターは、現在のアクセス許可と同じ型のではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限<xref:System.Security.Permissions.PrincipalPermission>任意のプリンシパルに一致します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可を表す文字列を作成して返します。</summary>
+        <returns>現在のアクセス許可の表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Union (System.Security.IPermission other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Union(class System.Security.IPermission other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.PrincipalPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.PrincipalPermission.Union%2A>個々 の指定された一連の条件を表すアクセス許可を作成<xref:System.Security.Permissions.PrincipalPermission>オブジェクト。 コンパクトにテストする条件のセットを表す場合に便利です。 たとえば、宣言を持つ  
+  
+ [!code-cpp[System.Security.Permissions.PrincipalPermission#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cpp/remarks.cpp#3)]
+ [!code-csharp[System.Security.Permissions.PrincipalPermission#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.permissions.principalpermission/cs/remarks.cs#3)]
+ [!code-vb[System.Security.Permissions.PrincipalPermission#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.security.permissions.principalpermission/vb/remarks.vb#3)]  
+  
+ `(ppBob.Union(ppLouise)).Demand()`現在のプリンシパルが管理者の役割を担う管理者またはルイズの役割を担う Bob を表している場合は成功します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="other" />パラメーターは、現在のアクセス許可と同じ型のではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

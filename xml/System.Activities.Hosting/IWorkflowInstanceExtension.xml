@@ -1,0 +1,56 @@
+<Type Name="IWorkflowInstanceExtension" FullName="System.Activities.Hosting.IWorkflowInstanceExtension">
+  <TypeSignature Language="C#" Value="public interface IWorkflowInstanceExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWorkflowInstanceExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Hosting.IWorkflowInstanceExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>このインターフェイスは、複合拡張機能、またはワークフロー インスタンスへのアクセスが必要な拡張機能によって実装されます。 このインターフェイスの実装は、追加の拡張機能を提供するため、または<see cref="T:System.Activities.Hosting.WorkflowInstance" /> を介して <see cref="T:System.Activities.Hosting.WorkflowInstance" /> にアクセスするために、実行前に <see cref="T:System.Activities.Hosting.WorkflowInstanceProxy" /> によって呼び出されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAdditionalExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;object&gt; GetAdditionalExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;object&gt; GetAdditionalExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.IWorkflowInstanceExtension.GetAdditionalExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装時は、実装クラスが必要とする追加の拡張機能を返します。</summary>
+        <returns>追加のワークフロー拡張機能のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetInstance">
+      <MemberSignature Language="C#" Value="public void SetInstance (System.Activities.Hosting.WorkflowInstanceProxy instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetInstance(class System.Activities.Hosting.WorkflowInstanceProxy instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Hosting.IWorkflowInstanceExtension.SetInstance(System.Activities.Hosting.WorkflowInstanceProxy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Activities.Hosting.WorkflowInstanceProxy" />
+      </Parameters>
+      <Docs>
+        <param name="instance">設定する対象のワークフロー インスタンス。</param>
+        <summary>指定された対象の <see cref="T:System.Activities.Hosting.WorkflowInstanceProxy" /> を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

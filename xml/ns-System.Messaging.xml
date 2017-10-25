@@ -1,0 +1,53 @@
+<Namespace Name="System.Messaging">
+  <Docs>
+    <summary><see cref="N:System.Messaging" />名前空間に接続して、監視、ネットワーク、および送信、メッセージ キューを管理できるクラスは、受信、または、メッセージのピークを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバー、<xref:System.Messaging.MessageQueue>クラスは、読み取りや、キューにメッセージを書き込む次のメソッドを含めます。  
+  
+-   <xref:System.Messaging.MessageQueue.Send%2A>メソッドにより、アプリケーションでキューにメッセージを書き込めません。 メソッドのオーバー ロードを使用して、メッセージを送信するかどうかを指定できます。、 <xref:System.Messaging.Message> (提供を詳細に制御を送信する情報) またはその他のマネージ オブジェクト、アプリケーション固有のクラスを含むです。 メソッドには、トランザクションの一部としてメッセージの送信もサポートしています。  
+  
+-   <xref:System.Messaging.MessageQueue.Receive%2A>、 <xref:System.Messaging.MessageQueue.ReceiveById%2A>、および<xref:System.Messaging.MessageQueue.ReceiveByCorrelationId%2A>メソッドは、キューからメッセージを読み取るための機能を提供します。 同様に、<xref:System.Messaging.MessageQueue.Send%2A>メソッド、これらのメソッドは、トランザクション キュー処理をサポートするオーバー ロードを提供します。 これらのメソッドでは、タイムアウトを持つオーバー ロードも提供します。  
+  
+     Out パラメーターは、処理を続行かどうか、キューは空にできるようにします。 これらのメソッドは同期処理の例であるために、タイムアウトを指定していない限り、メッセージが使用されるまで、現在のスレッドに割り込むです。  
+  
+-   <xref:System.Messaging.MessageQueue.Peek%2A>メソッドは<xref:System.Messaging.MessageQueue.Receive%2A>は、メッセージが読み取られると、キューから削除するのには発生しません。 <xref:System.Messaging.MessageQueue.Peek%2A>キューの内容は変わりません。 トランザクション処理をサポートするためにオーバー ロードはありません。 ただし、ため<xref:System.Messaging.MessageQueue.Peek%2A>と同様、 <xref:System.Messaging.MessageQueue.Receive%2A>、キューからメッセージを同期的に読み取り、メソッドのオーバー ロードは、スレッドが無期限に待機していることを防ぐために、タイムアウトを指定することをサポートします。  
+  
+-   <xref:System.Messaging.MessageQueue.BeginPeek%2A>、 <xref:System.Messaging.MessageQueue.EndPeek%28System.IAsyncResult%29>、 <xref:System.Messaging.MessageQueue.BeginReceive%2A>、および<xref:System.Messaging.MessageQueue.EndReceive%28System.IAsyncResult%29>メソッドが非同期的に、キューからメッセージを読み取る方法を提供します。 キューに到着するメッセージの待機中に、現在のスレッドを中断するしません。  
+  
+ 次のメソッド、<xref:System.Messaging.MessageQueue>クラスは、指定した条件によってキューの一覧を取得し、特定のキューが存在するかどうかを決定するための機能を提供します。  
+  
+-   <xref:System.Messaging.MessageQueue.GetPrivateQueuesByMachine%28System.String%29>コンピューター上のプライベート キューの取得を有効にします。  
+  
+-   <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory%28System.Guid%29>、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel%28System.String%29>、および<xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine%28System.String%29>共通の条件でパブリック キューを取得する方法を提供します。 オーバー ロード<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>検索条件の数に基づいてキューを選択するためにさらに細分化の詳細を提供します。  
+  
+ 他の方法で、<xref:System.Messaging.MessageQueue>クラスは、次の機能を提供します。  
+  
+-   作成して、メッセージ キューのキューを削除します。  
+  
+-   メッセージの列挙子を使用して、キュー内のメッセージをステップスルーします。  
+  
+-   キューの列挙子を使用して、システム上のキューを反復処理します。  
+  
+-   ACL ベースのアクセス権を設定します。  
+  
+-   接続キャッシュを使用します。  
+  
+ <xref:System.Messaging.Message>クラスは、キューに送信する情報の詳細に制御を提供は、オブジェクトを使用、キューからメッセージを受信またはピークするとします。 メッセージの本文のプロパティだけでなく、<xref:System.Messaging.Message>クラスは、確認の設定、フォーマッタの選択、id、認証および暗号化情報、タイムスタンプ、トレース、サーバーの履歴、および配信不能メッセージ キュー、およびトランザクション データの使用に関する指示します。  
+  
+ <xref:System.Messaging.MessageQueue>コンポーネント、およびキューから送受信されるメッセージを逆シリアル化を可能にする次の 3 つフォーマッタに関連付けられました。  
+  
+-   <xref:System.Messaging.XmlMessageFormatter>クライアントとサーバーでのシリアル化された型の独立したバージョン管理を有効にする疎結合メッセージングを提供します。  
+  
+-   <xref:System.Messaging.ActiveXMessageFormatter> MSMQ COM コントロールとの互換性ができます。 コントロールによって受信可能な型を送信して、コントロールから送信された型を受信する、実行できます。  
+  
+-   <xref:System.Messaging.BinaryMessageFormatter>を高速代替手段、 <xref:System.Messaging.XmlMessageFormatter>、せず疎結合メッセージングの利点です。  
+  
+ 他のクラス、`Messaging`名前空間は、コード アクセスおよび ACL ベースのセキュリティをサポート フィルター<xref:System.Messaging.Message>プロパティがメッセージをキューからメッセージを読み取ると、送受信するときにトランザクションを使用するとします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

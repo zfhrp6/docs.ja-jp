@@ -1,0 +1,101 @@
+<Type Name="SqlDataSourceCommandEventArgs" FullName="System.Web.UI.WebControls.SqlDataSourceCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class SqlDataSourceCommandEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlDataSourceCommandEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.SqlDataSource.Updating" />、<see cref="E:System.Web.UI.WebControls.SqlDataSource.Deleting" />と<see cref="E:System.Web.UI.WebControls.SqlDataSource.Inserting" />のイベント、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するイベント ハンドラー デリゲートを追加することによって、 <xref:System.Web.UI.WebControls.SqlDataSource.Updating>、 <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>、または<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>イベント、必要な追加処理を実行または完全 database コマンドをキャンセルできます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>から派生したクラスは、<xref:System.ComponentModel.CancelEventArgs>取り消すことができます、クラス、保留中<xref:System.Web.UI.WebControls.SqlDataSource>データベース コマンドを設定して、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 チェックおよび操作することができます、 <xref:System.Data.Common.DbCommand.CommandText%2A>、<xref:System.Data.Common.DbCommand.Parameters%2A>コレクション、およびその他のコマンド プロパティにアクセスして、コマンドを実行する前に、<xref:System.Data.Common.DbCommand>オブジェクトによって公開されている、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs.Command%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>クラスが使用されて、 <xref:System.Web.UI.WebControls.SqlDataSourceView.OnUpdating%2A>、 <xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>、および<xref:System.Web.UI.WebControls.SqlDataSourceView.OnDeleting%2A>へのアクセスを提供するメソッド、<xref:System.Web.UI.WebControls.SqlDataSource>の実行前に、データベース コマンド。 <xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、基になるデータ オブジェクト、データの操作の実行中に操作を処理できる多くのイベントを公開します。 次の表は、イベントの一覧し、関連付けられている<xref:System.EventArgs>とイベント ハンドラー クラスより適切な操作を使用してデータのライフ サイクルに対応するさまざまなイベントを探すには<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+|イベント|EventArgs|EventHandler|  
+|-----------|---------------|------------------|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>データが取得される前に発生します。|<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>、 <xref:System.Web.UI.WebControls.SqlDataSource.Updating>、 <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> update、または削除操作が実行される挿入、前に発生します。|<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventHandler>|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Selected>、 <xref:System.Web.UI.WebControls.SqlDataSource.Inserted>、 <xref:System.Web.UI.WebControls.SqlDataSource.Updated>、<xref:System.Web.UI.WebControls.SqlDataSource.Deleted>発生後、データの取得、insert、update、または削除操作が完了します。|<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventHandler>|  
+  
+   
+  
+## Examples  
+ 次のコード例では、Microsoft SQL Server データベースから取得されたデータを表示する方法を示します、<xref:System.Web.UI.WebControls.DropDownList>を制御して、レコードを使用して、更新、<xref:System.Web.UI.WebControls.TextBox>コントロール。 使用する方法の例を示しています、<xref:System.Data.Common.DbTransaction>を使用する場合は、トランザクション コンテキストを追加するオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールにデータを更新します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/CS/sql9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/VB/sql9vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSourceCommandEventArgs (System.Data.Common.DbCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Common.DbCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs.#ctor(System.Data.Common.DbCommand)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.Common.DbCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.Common.DbCommand" />を表す、キャンセル可能なオブジェクト<see cref="M:System.Web.UI.WebControls.SqlDataSource.Update" />、 <see cref="M:System.Web.UI.WebControls.SqlDataSource.Insert" />、または<see cref="M:System.Web.UI.WebControls.SqlDataSource.Delete" />コマンド。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs" />クラス、指定されたデータベース コマンド オブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand Command { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbCommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保留中のデータベース コマンドを取得します。</summary>
+        <value><see cref="T:System.Data.Common.DbCommand" />保留中のデータベース コマンドを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理することができます、 <xref:System.Web.UI.WebControls.SqlDataSource.Updating>、 <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>、または<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>を調べてのプロパティを操作するイベント、<xref:System.Data.Common.DbCommand>によって実行される前に、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 基になるデータ ソースへの接続がまだ開いていないイベント ハンドラー デリゲートが呼び出されるとします。 そのため、呼び出すことによって、データベースの操作を取り消すことはできません、<xref:System.Data.Common.DbCommand.Cancel%2A>メソッドを<xref:System.Data.Common.DbCommand>オブジェクトに直接できます。 ただし、設定して、データベースの操作を取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>に`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server からデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>制御、および使用する方法、<xref:System.Web.UI.WebControls.DetailsView>コントロールで選択した行の詳細を表示する、<xref:System.Web.UI.WebControls.GridView>と新しいレコードを挿入するためのフォームです。  
+  
+ データが最初に表示、<xref:System.Web.UI.WebControls.GridView>制御、および選択した行の<xref:System.Web.UI.WebControls.GridView>にも表示されます、<xref:System.Web.UI.WebControls.DetailsView>です。 <xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>コントロールが別のデータを使用してソース コントロール; に関連付けられている 1 つ、<xref:System.Web.UI.WebControls.DetailsView>が、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>ように、選択した行の<xref:System.Web.UI.WebControls.GridView>が表示されます。  
+  
+ 挿入を自動的に生成 ボタンをクリックした場合、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>新しいレコードを挿入するために使用する別のユーザー インターフェイスを示しています。 この例では、ストアド プロシージャを使用してレコードを挿入し、挿入された行の主キーを返します。 レコードを挿入する場合、<xref:System.Web.UI.WebControls.DetailsView>を自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>呼び出し、バインドされた列から値を使用して、コレクション、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドです。 <xref:System.Web.UI.WebControls.DetailsView>から適切なパラメーターを推論できる<xref:System.Web.UI.WebControls.BoundField>、パラメーター、 <xref:System.Web.UI.WebControls.TemplateField> ASP.NET 双方向データ バインディングの構文を使用する場合。 この例では、追加のパラメーターが追加された、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>ストアド プロシージャによって返される主キーを処理するイベント ハンドラー。  
+  
+ 最後に、によってデータが挿入された後、<xref:System.Web.UI.WebControls.DetailsView>をデータベースに、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>を処理するイベント ハンドラーが呼び出されると、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント、挿入された行の主キーの値が表示されたら、および<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>のメソッド<xref:System.Web.UI.WebControls.GridView>データを更新するコントロールを明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

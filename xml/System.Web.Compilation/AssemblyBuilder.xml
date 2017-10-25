@@ -1,0 +1,274 @@
+<Type Name="AssemblyBuilder" FullName="System.Web.Compilation.AssemblyBuilder">
+  <TypeSignature Language="C#" Value="public class AssemblyBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssemblyBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.AssemblyBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET プロジェクト内の 1 つまたは複数の仮想パスからアセンブリを構築するためのコンテナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.Compilation.AssemblyBuilder>でクラスを使用<xref:System.Web.Compilation.BuildProvider>クラスに 1 つまたは複数のファイルをコンパイルされたアセンブリに組み込むメソッドです。  
+  
+ <xref:System.Web.Compilation.BuildProvider>クラスは、個々 のファイルのビルド機能を定義し、<xref:System.Web.Compilation.AssemblyBuilder>クラスが提供された各ソース コードを組み合わせた<xref:System.Web.Compilation.BuildProvider>インスタンスを 1 つのアセンブリにします。 ASP.NET ビルド環境、<xref:System.Web.Compilation.AssemblyBuilder>オブジェクトを<xref:System.Web.Compilation.BuildProvider>メソッドの 1 つまたは複数のファイルからアセンブリを作成するときにそのように各<xref:System.Web.Compilation.BuildProvider>インスタンスは、全体的なアセンブリには、そのファイルのソース コードを行うことができます。  
+  
+ ASP.NET ビルド環境を調べ、言語コンパイラを基に、プロジェクト内のファイルに必要な<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A?displayProperty=nameWithType>プロパティです。 ビルド環境のグループ ファイルは、コンパイラ設定に基づいており、同じコンパイラが必要なファイルからアセンブリをビルドします。  
+  
+ <xref:System.Web.Compilation.AssemblyBuilder.CodeDomProvider%2A>プロパティを示します、 <xref:System.CodeDom.Compiler.CodeDomProvider> ASP.NET ビルド環境を使用して、ソース コードからアセンブリをコンパイルするための実装が各によって得られた<xref:System.Web.Compilation.BuildProvider>実装します。  
+  
+ A<xref:System.Web.Compilation.BuildProvider>オブジェクトを使用して CodeDOM グラフの形式でソース コードの貢献、<xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A>メソッドです。 A<xref:System.Web.Compilation.BuildProvider>オブジェクトを使用して、物理ファイルに格納されているソース コードの貢献、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>メソッドです。  
+  
+ 各後<xref:System.Web.Compilation.BuildProvider>オブジェクトは、使用して、適切なソース コードを使用できます。<xref:System.Web.Compilation.AssemblyBuilder>メソッド、ASP.NET ビルド環境の使用、<xref:System.Web.Compilation.AssemblyBuilder>アセンブリに収集されたソース コードをコンパイルするクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、抽象型から継承する簡単なビルド プロバイダーの実装を示しています。<xref:System.Web.Compilation.BuildProvider>基本クラスです。 ビルド プロバイダーは、 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>、 <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>、および<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>基底クラスのメンバーです。  
+  
+ <xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>メソッドの実装、ビルド プロバイダーのアセンブリのコンパイルを使用して、生成されたコードを追加する、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>メソッドです。 この例では、実装は含まれません、`SampleClassGenerator`クラスです。 詳細については、「<xref:System.CodeDom.CodeCompileUnit>」を参照してください。  
+  
+ [!code-csharp[System.Web.Compilation_SampleBuildProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation_SampleBuildProvider/CS/samplebuildprovider.cs#2)]
+ [!code-vb[System.Web.Compilation_SampleBuildProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation_SampleBuildProvider/VB/samplebuildprovider.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddAssemblyReference">
+      <MemberSignature Language="C#" Value="public void AddAssemblyReference (System.Reflection.Assembly a);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAssemblyReference(class System.Reflection.Assembly a) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="a">アセンブリ コンパイルに含まれるコード コンパイル単位またはソース ファイルによって参照されるアセンブリ。</param>
+        <summary>ファイルに対して生成されたソース コードによって参照されるアセンブリを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>実装を使用して、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A>メソッドの入力アセンブリ内の型を参照するソース コードを生成するときにします。  
+  
+ ASP.NET ビルド環境によって初期化でビルド プロバイダーによって参照に使用できるアセンブリの既定のコレクション、<xref:System.Web.Compilation.BuildProvider.ReferencedAssemblies%2A?displayProperty=nameWithType>プロパティです。 ビルド プロバイダーを使用して、追加のアセンブリに追加のビルド プロバイダーは、追加のアセンブリを参照するソース コードを生成する場合、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A>メソッドです。 ASP.NET ビルド環境では、プロバイダーとの参照で使用できるアセンブリの既定のコレクションをビルドによって追加された両方の参照先アセンブリを使用してアセンブリのコンパイル時に外部のタイプを解決します。  
+  
+ 通常、<xref:System.Web.Compilation.BuildProvider>オブジェクトは、ソース コードを追加、<xref:System.Web.Compilation.AssemblyBuilder>内のオブジェクト、<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>メソッドです。 ビルド プロバイダーが使用して、型のアセンブリを追加するビルド プロバイダーは、外部型を使用するソース コードを生成する場合、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 使用して、<xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference%2A>によって生成されたソース コードで必要な参照先アセンブリを追加するメソッドを<xref:System.Web.Compilation.BuildProvider>特定のファイル タイプのインスタンス。 使用して、 [compilation の assemblies 要素の (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/3811c448-af1c-498d-be2b-6ed2634c51e9)プロジェクト内の複数のファイル種類で参照アセンブリを構成する構成要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public void AddCodeCompileUnit (System.Web.Compilation.BuildProvider buildProvider, System.CodeDom.CodeCompileUnit compileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCodeCompileUnit(class System.Web.Compilation.BuildProvider buildProvider, class System.CodeDom.CodeCompileUnit compileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit(System.Web.Compilation.BuildProvider,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buildProvider" Type="System.Web.Compilation.BuildProvider" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="buildProvider">生成するためのビルド プロバイダー<c>これ</c>です。</param>
+        <param name="compileUnit">アセンブリのコンパイルに含めるコード コンパイル ユニット。</param>
+        <summary>CodeDOM グラフの形式でアセンブリのソース コードを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>実装の呼び出し、<xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A>メソッドの仮想パスの CodeDOM グラフを生成するときにします。 ソース コードを使用して追加<xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A>アセンブリのコンパイルに含まれています。  
+  
+ 通常、ビルド プロバイダーの<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>メソッドの実装の読み取り、<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティは、内容を解析しを指定した、生成されたソース コードを追加<xref:System.Web.Compilation.AssemblyBuilder>オブジェクト。 ビルド プロバイダーを使用して、 <xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A> CodeDOM グラフとしてアセンブリにソース コードを追加します。 または、ビルド プロバイダーを使用できる、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>アセンブリへの物理ファイルとしてソース コードを追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeDomProvider">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CodeDomProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CodeDomProvider CodeDomProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.AssemblyBuilder.CodeDomProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリにソース コードをビルドするためのコンパイラを取得します。</summary>
+        <value>読み取り専用<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />アセンブリにビルド プロバイダーによって提供された実装のソース コードのコンパイルに使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.AssemblyBuilder.CodeDomProvider%2A>プロパティを示します、 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> ASP.NET ビルド環境を使用して、ソース コードからアセンブリをコンパイルするための実装が各によって得られた<xref:System.Web.Compilation.BuildProvider>実装します。  
+  
+ ASP.NET ビルド環境を調べ、言語コンパイラを基に、プロジェクト内のファイルに必要な<xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A?displayProperty=nameWithType>プロパティです。 ビルド環境のグループ ファイルは、コンパイラ設定に基づいており、同じコンパイラが必要なファイルからアセンブリをビルドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCodeFile">
+      <MemberSignature Language="C#" Value="public System.IO.TextWriter CreateCodeFile (System.Web.Compilation.BuildProvider buildProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.TextWriter CreateCodeFile(class System.Web.Compilation.BuildProvider buildProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.CreateCodeFile(System.Web.Compilation.BuildProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buildProvider" Type="System.Web.Compilation.BuildProvider" />
+      </Parameters>
+      <Docs>
+        <param name="buildProvider">コードのソース ファイルを生成するビルド プロバイダー。</param>
+        <summary>ビルド プロバイダーに一時的なソース ファイルを作成し、アセンブリのコンパイルにソース ファイルを含めるを許可します。</summary>
+        <returns>開いている<see cref="T:System.IO.TextWriter" />を使用して、ソース コードを一時ファイルに書き込むことができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>実装の呼び出し、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>メソッドの仮想パスのソース ファイルを生成するときにします。 ソース コードを使用して追加<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>アセンブリのコンパイルに含まれています。  
+  
+ ビルド プロバイダーでは通常、<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>メソッドの実装の読み取り、<xref:System.Web.Compilation.BuildProvider.VirtualPath%2A>プロパティは、内容を解析しを指定した、生成されたソース コードを追加<xref:System.Web.Compilation.AssemblyBuilder>オブジェクト。 ビルド プロバイダーを使用して、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>アセンブリへの物理ファイルとしてソース コードを追加するメソッド。 または、ビルド プロバイダーを使用できる、 <xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit%2A> CodeDOM グラフとしてアセンブリにソース コードを追加します。  
+  
+ 呼び出した後<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>、ビルド プロバイダー書き込みます、ソース ファイルの内容を使用して、返された<xref:System.IO.TextWriter>オブジェクト。 ソース ファイルの書き込み後に、<xref:System.Web.Compilation.BuildProvider>オブジェクトを使用する必要があります、<xref:System.IO.TextWriter.Close%2A>を終了するメソッド、<xref:System.IO.TextWriter>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、抽象型から継承する簡単なビルド プロバイダーの実装を示しています。<xref:System.Web.Compilation.BuildProvider>基本クラスです。 ビルド プロバイダーは、 <xref:System.Web.Compilation.BuildProvider.CodeCompilerType%2A>、 <xref:System.Web.Compilation.BuildProvider.GetGeneratedType%2A>、および<xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>基底クラスのメンバーです。  
+  
+ <xref:System.Web.Compilation.BuildProvider.GenerateCode%2A>メソッドの実装、ビルド プロバイダーのアセンブリのコンパイルを使用して、生成されたコードを追加する、<xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile%2A>メソッドです。 この例では、実装は含まれません、`SampleClassGenerator`クラスです。 詳細については、「<xref:System.CodeDom.CodeCompileUnit>」を参照してください。  
+  
+ [!code-csharp[System.Web.Compilation_SampleBuildProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation_SampleBuildProvider/CS/samplebuildprovider.cs#2)]
+ [!code-vb[System.Web.Compilation_SampleBuildProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation_SampleBuildProvider/VB/samplebuildprovider.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEmbeddedResource">
+      <MemberSignature Language="C#" Value="public System.IO.Stream CreateEmbeddedResource (System.Web.Compilation.BuildProvider buildProvider, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream CreateEmbeddedResource(class System.Web.Compilation.BuildProvider buildProvider, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.CreateEmbeddedResource(System.Web.Compilation.BuildProvider,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buildProvider" Type="System.Web.Compilation.BuildProvider" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="buildProvider">リソースを生成するビルド プロバイダー。</param>
+        <param name="name">作成するリソース ファイルの名前。</param>
+        <summary>アセンブリのコンパイルに含めるリソース ファイルを作成するビルド プロバイダーを使用します。</summary>
+        <returns>開いている<see cref="T:System.IO.Stream" />アセンブリのコンパイルに含まれているリソースの記述に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、 <xref:System.Web.Compilation.AssemblyBuilder.CreateEmbeddedResource%2A> 、メソッド、<xref:System.Web.Compilation.BuildProvider>オブジェクトに書き込みますリソース ファイルの内容を使用して、返された<xref:System.IO.Stream>オブジェクト。 ビルド プロバイダーが使用しているリソースを記述するなど、<xref:System.Resources.ResourceWriter>オブジェクト。 リソース ファイルを書き込み後のビルド プロバイダーを使用する必要があります、<xref:System.IO.Stream.Close%2A>を終了するメソッド、<xref:System.IO.Stream>オブジェクトし、関連付けられたシステム リソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> は有効なファイル名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateTypeFactory">
+      <MemberSignature Language="C#" Value="public void GenerateTypeFactory (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GenerateTypeFactory(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.GenerateTypeFactory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">生成する型の名前。</param>
+        <summary>種類の高速のオブジェクト ファクトリ テンプレートをコンパイルされたアセンブリに挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>実装の呼び出し、<xref:System.Web.Compilation.AssemblyBuilder.GenerateTypeFactory%2A>型のインスタンスを頻繁に作成するためのパフォーマンスを最適化する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTempFilePhysicalPath">
+      <MemberSignature Language="C#" Value="public string GetTempFilePhysicalPath (string extension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetTempFilePhysicalPath(string extension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.AssemblyBuilder.GetTempFilePhysicalPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extension" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extension">一時ファイルに使用するファイル拡張子。</param>
+        <summary>一時ファイルのパスを生成します。</summary>
+        <returns>指定したファイル拡張子を持つ、一時ファイルへのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>実装の呼び出し、<xref:System.Web.Compilation.AssemblyBuilder.GetTempFilePhysicalPath%2A>アセンブリをコンパイルした後に自動的に削除される一時ファイルのパスを取得します。  
+  
+ <xref:System.Web.Compilation.AssemblyBuilder.GetTempFilePhysicalPath%2A>メソッドは、一意の一時ファイルのパスが生成されますが、ファイルを作成できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

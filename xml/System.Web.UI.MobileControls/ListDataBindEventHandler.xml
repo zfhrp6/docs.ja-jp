@@ -1,0 +1,39 @@
+<Type Name="ListDataBindEventHandler" FullName="System.Web.UI.MobileControls.ListDataBindEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ListDataBindEventHandler(object sender, ListDataBindEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ListDataBindEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ListDataBindEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.MobileControls.ListDataBindEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.MobileControls.List" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.MobileControls.ListDataBindEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.MobileControls.List.ItemDataBind" />のイベント、<see cref="T:System.Web.UI.MobileControls.List" />コントロール。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.MobileControls.List>コントロールには項目のコレクションが含まれています。 これらの項目は、<xref:System.Web.UI.MobileControls.MobileListItem>クラスです。 既定のレンダリングを提供するときに、<xref:System.Web.UI.MobileControls.List>制御を表す、<xref:System.Web.UI.MobileControls.MobileListItem>オブジェクトを使用してその<xref:System.Web.UI.MobileControls.MobileListItem.Text%2A>プロパティです。 テンプレート レンダリングは、テンプレートが任意のプロパティを表示できる、<xref:System.Web.UI.MobileControls.MobileListItem>オブジェクトまたは関連するデータ バインドされたオブジェクト。  
+  
+ 作成するときに、<xref:System.Web.UI.MobileControls.ListDataBindEventHandler>の委任、<xref:System.Web.UI.MobileControls.List>コントロール、イベントを処理するメソッドを指定します。 <xref:System.Web.UI.MobileControls.List>項目イベントが生成されたときに、コントロールは、ハンドラーを通知します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると必ずイベント ハンドラーが呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

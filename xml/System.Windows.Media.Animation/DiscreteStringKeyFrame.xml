@@ -1,0 +1,126 @@
+<Type Name="DiscreteStringKeyFrame" FullName="System.Windows.Media.Animation.DiscreteStringKeyFrame">
+  <TypeSignature Language="C#" Value="public class DiscreteStringKeyFrame : System.Windows.Media.Animation.StringKeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscreteStringKeyFrame extends System.Windows.Media.Animation.StringKeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.DiscreteStringKeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.StringKeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>離散補間を使用して、前のキー フレームの <see cref="T:System.String" /> 値から独自の <see cref="P:System.Windows.Media.Animation.StringKeyFrame.Value" /> にアニメーション化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.StringKeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>アニメーション化する、<xref:System.String>一連のキー フレームに沿って。  
+  
+ キー フレームのセグメントを定義する、<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>属しています。 各キー フレームがターゲット<xref:System.Windows.Media.Animation.StringKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.StringKeyFrame.KeyTime%2A>です。 <xref:System.Windows.Media.Animation.StringKeyFrame.KeyTime%2A>どの時点を指定します、キー フレームの<xref:System.Windows.Media.Animation.StringKeyFrame.Value%2A>に到達します。 キー フレームは、前のキー フレームのターゲット値から独自のターゲット値をアニメーション化します。 前のキー フレームが終了し、独自のキーの日時に達したときに終了時に開始します。  
+  
+ などの個別のキー フレーム<xref:System.Windows.Media.Animation.DiscreteStringKeyFrame>突然「間のジャンプ」値 (補間) を作成します。 つまり、キー フレームのキー時刻は、この時点でアニメーションのプロパティが突然ターゲット値に達した限りには、このアニメーションのプロパティは変更されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscreteStringKeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DiscreteStringKeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.DiscreteStringKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscreteStringKeyFrame (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DiscreteStringKeyFrame.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <summary>指定した終了値を使用して、<see cref="T:System.Windows.Media.Animation.DiscreteStringKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscreteStringKeyFrame (string value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DiscreteStringKeyFrame.#ctor(System.String,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <summary>指定した終了値とキー時刻を使用して <see cref="T:System.Windows.Media.Animation.DiscreteStringKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DiscreteStringKeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.DiscreteStringKeyFrame" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override string InterpolateValueCore (string baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string InterpolateValueCore(string baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DiscreteStringKeyFrame.InterpolateValueCore(System.String,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.String" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>離散補間を使用して、前のキー フレーム値と現在のキー フレーム値とを切り替えます。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

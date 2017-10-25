@@ -1,0 +1,1260 @@
+<Type Name="DataPager" FullName="System.Web.UI.WebControls.DataPager">
+  <TypeSignature Language="C#" Value="public class DataPager : System.Web.UI.Control, System.Web.UI.IAttributeAccessor, System.Web.UI.INamingContainer, System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPager extends System.Web.UI.Control implements class System.Web.UI.IAttributeAccessor, class System.Web.UI.INamingContainer, class System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataPager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAttributeAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.ICompositeControlDesignerAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.DataPagerDesigner, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.DataPager), "DataPager.bmp")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.IPageableItemContainer" /> インターフェイスを実装するデータ バインド コントロール (<see cref="T:System.Web.UI.WebControls.ListView" /> コントロールなど) にページング機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ページャー フィールド](#pager_fields)  
+  
+-   [ページのプロパティ](#page_properties)  
+  
+-   [ユーザー補助](#Accessibility)  
+  
+-   [宣言型の構文](#DeclarativeSyntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.DataPager>クラスには、ページ データをデータ バインド コントロールを実装するためのナビゲーション コントロールを表示して、使用、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスです。 (インターフェイスを実装するコントロールの例は、<xref:System.Web.UI.WebControls.ListView>コントロールです)。  
+  
+ 関連付けることができます、<xref:System.Web.UI.WebControls.DataPager>を使用してデータ バインド コントロールでのコントロール、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティです。 また、配置することができます、<xref:System.Web.UI.WebControls.DataPager>データ バインド コントロールの階層内のコントロールです。 たとえば、<xref:System.Web.UI.WebControls.ListView>配置できるコントロール、<xref:System.Web.UI.WebControls.DataPager>内を制御、<xref:System.Web.UI.WebControls.ListView.LayoutTemplate%2A?displayProperty=nameWithType>テンプレート。  
+  
+ 変更することによってデータの各ページに表示される項目の数をカスタマイズすることができます、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティです。 設定して、サーバーに、ページの送信方法を変更することも、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>プロパティです。  
+  
+<a name="pager_fields"></a>   
+## <a name="pager-fields"></a>ページャー フィールド  
+ 順序で、<xref:System.Web.UI.WebControls.DataPager>ナビゲーション コントロールを表示するコントロールをコントロールにページャー フィールドを追加する必要があります。 派生してページャー フィールド、<xref:System.Web.UI.WebControls.DataPagerField>クラスです。 次の表は、使用できるページャー フィールドの種類を一覧表示します。  
+  
+|ページャー フィールドの種類|説明|  
+|----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.NextPreviousPagerField>|一度にでは、ページを 1 ページ内を移動するか、最初と最後のページに移動することができます。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField>|ページ番号を選択することができます。|  
+|<xref:System.Web.UI.WebControls.TemplatePagerField>|カスタム ページング UI を作成できます。|  
+  
+ 宣言するページャー フィールドを追加する、<xref:System.Web.UI.WebControls.DataPager>コントロールを追加、`Fields`要素を<xref:System.Web.UI.WebControls.DataPager>コントロール。 ページャー フィールドを追加することができますし、`Fields`要素。 ページャー フィールドに追加されます、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>に出現する順序でコレクション、`Fields`要素。 <xref:System.Web.UI.WebControls.DataPager.Fields%2A>コレクションでは、プログラムでページャーのフィールドを管理することができます、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+<a name="page_properties"></a>   
+## <a name="page-properties"></a>ページのプロパティ  
+ 次の表の読み取り専用のプロパティの一覧、<xref:System.Web.UI.WebControls.DataPager>コントロールをページのデータの特性を指定します。 通常、これらのプロパティはバインディングで式の使用、<xref:System.Web.UI.WebControls.TemplatePagerField>オブジェクト。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataPager.MaximumRows%2A>|データの各ページに表示されるレコードの最大数。|  
+|<xref:System.Web.UI.WebControls.DataPager.StartRowIndex%2A>|データのページに表示される最初のレコードのインデックス。|  
+|<xref:System.Web.UI.WebControls.DataPager.TotalRowCount%2A>|基になるデータ ソースで使用可能なレコードの合計数。|  
+  
+<a name="Accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定値が表示される既定のマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなど、ユーザー補助の標準に準拠していない可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DataPager  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    PagedControlID="string"  
+    PageSize="integer"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+>  
+        <Fields>  
+            <asp:NextPreviousPagerField  
+                ButtonCssClass="string"  
+                ButtonType="Button|Image|Link"  
+                FirstPageImageUrl="string"  
+                FirstPageText="string"  
+                LastPageImageUrl="string"  
+                LastPageText="string"  
+                NextPageImageUrl="string"  
+                NextPageText="string"  
+                PreviousPageImageUrl="string"  
+                PreviousPageText="string"  
+                RenderDisabledButtonsAsLabels="True|False"  
+                RenderNonBreakingSpacesBetweenControls="True|False"  
+                ShowFirstPageButton="True|False"  
+                ShowLastPageButton="True|False"  
+                ShowNextPageButton="True|False"  
+                ShowPreviousPageButton="True|False"  
+                Visible="True|False"  
+            />  
+            <asp:NumericPagerField  
+                ButtonCount="integer"  
+                ButtonType="Button|Image|Link"  
+                CurrentPageLabelCssClass="string"  
+                NextPageImageUrl="string"  
+                NextPageText="string"  
+                NextPreviousButtonCssClass="string"  
+                NumericButtonCssClass="string"                 PreviousPageImageUrl="string"  
+                PreviousPageText="string"  
+                RenderNonBreakingSpacesBetweenControls="True|False"  
+                Visible="True|False"  
+            />  
+            <asp:TemplatePagerField  
+                OnPagerCommand="PagerCommand event handler"  
+                Visible="True|False"  
+            />  
+        </Fields>  
+</asp:DataPager>  
+```  
+  
+   
+  
+## Examples  
+ 次の例にページング機能を追加する方法を示しています、<xref:System.Web.UI.WebControls.ListView>コントロール。 この例には 2 つ<xref:System.Web.UI.WebControls.DataPager>使用されるコントロールが同じデータをページングする<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager/CS/DataPagerCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager/VB/DataPagerVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataPager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的に追加する、<xref:System.Web.UI.WebControls.DataPager>ページにコントロールを新規作成<xref:System.Web.UI.WebControls.DataPager>オブジェクト。 そのプロパティを設定し、それを追加、<xref:System.Web.UI.Control.Controls%2A>コンテナーのコレクションを制御するように、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、コンス トラクターを使用して動的に追加する方法を示しています、<xref:System.Web.UI.WebControls.DataPager>ページを制御します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPager.Ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.Ctor/CS/DataPagerCtorCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPager.Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.Ctor/VB/DataPagerCtorVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected virtual void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML ブラウザーにコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>HTML 属性およびスタイルを指定されたブラウザーで表示される追加<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.AddAttributesToRender%2A>メソッドが追加の属性を挿入するコントロールの開発者によって使用される、主とにスタイル、<xref:System.Web.UI.HtmlTextWriter>の出力ストリームは、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム属性の名前/値ペアのコレクションを取得、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value>カスタム属性の名前/値ペアのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPager.Attributes%2A>の開始タグで宣言されている属性の名前/値ペアを管理するコレクション、<xref:System.Web.UI.WebControls.DataPager>コントロールが直接サポートされていないクラスでします。 プログラムで追加するか、コレクションに属性を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToEvents">
+      <MemberSignature Language="C#" Value="protected virtual void ConnectToEvents (System.Web.UI.WebControls.IPageableItemContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ConnectToEvents(class System.Web.UI.WebControls.IPageableItemContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.ConnectToEvents(System.Web.UI.WebControls.IPageableItemContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.WebControls.IPageableItemContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container">データ バインド コントロールを発生させる、<see cref="E:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable" />イベント。</param>
+        <summary>内のイベント ハンドラー メソッドにイベントを接続する、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.ConnectToEvents%2A>メソッドを指定します、<xref:System.Web.UI.WebControls.DataPager.OnTotalRowCountAvailable%2A>のハンドラーとしてメソッド、<xref:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable?displayProperty=nameWithType>で指定したコントロールのイベント`container`です。 `container`パラメーターを実装するデータ バインド コントロールを含める必要があります、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスなど、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+> [!NOTE]
+>  このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="container" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />の子を表すオブジェクトを制御、 <see cref="T:System.Web.UI.WebControls.DataPager" /> UI 階層内のコントロールです。</summary>
+        <value>子コントロールのコレクション、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションにコントロールを追加、コントロールをコレクションから削除、またはコレクション内のサーバー コントロールを反復処理することができます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="P:System.Web.UI.WebControls.DataPager.Controls" />プロパティを呼び出すことを確認してください、<see cref="M:System.Web.UI.Control.EnsureChildControls" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePagerFields">
+      <MemberSignature Language="C#" Value="protected virtual void CreatePagerFields ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreatePagerFields() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.CreatePagerFields" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.DataPagerField" />オブジェクトに含まれる、<see cref="P:System.Web.UI.WebControls.DataPager.Fields" />のプロパティ、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.CreatePagerFields%2A>がメソッドを使用、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティおよび、<xref:System.Web.UI.WebControls.DataPager.OnTotalRowCountAvailable%2A>メソッドを作成、<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトに含まれる、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>プロパティです。 このメソッドは、<xref:System.Web.UI.WebControls.DataPagerField.CreateDataPagers%2A?displayProperty=nameWithType>コントロールを作成するユーザー インターフェイス (UI) の各フィールドのコレクション内のメソッドです。  
+  
+ ページャー フィールドで作成、<xref:System.Web.UI.WebControls.DataPager>コントロールのページャー フィールドの順序で、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>コレクション。 次の表は、ページャー フィールド クラスから派生する、<xref:System.Web.UI.WebControls.DataPagerField>では、クラスとを作成することができます、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+|ページャー フィールドの種類|説明|  
+|----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.NextPreviousPagerField>|一度に 1 ページのページ間を移動する、またはデータの最初と最後のページに移動することができます。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField>|ページ番号によるデータのページを選択することができます。|  
+|<xref:System.Web.UI.WebControls.TemplatePagerField>|カスタム ページング UI を作成できます。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールとそのすべての子コントロールをデータ ソースにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装、<xref:System.Web.UI.WebControls.DataPager.DataBind>メソッドが基底クラスの実装をオーバーライドします。 オーバーライドされたメソッドは、すべての子コントロールがデータ ソースにバインドする前に作成されたことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fields">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataPagerFieldCollection Fields { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPagerFieldCollection Fields" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.Fields" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Default")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.DataPagerFieldTypeEditor, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerFieldCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.DataPagerField" />で指定されているページャー フィールドを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value>指定されているすべてのページャー フィールドを含んでいるコレクション オブジェクト、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページャー フィールドで表示する、<xref:System.Web.UI.WebControls.DataPager>コントロールのページャー フィールドの順序で、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>コレクション。 次の表は、ページャー フィールド クラスから派生する、<xref:System.Web.UI.WebControls.DataPagerField>クラスで使用できます、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>コレクション。  
+  
+|ページャー フィールドの種類|説明|  
+|----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.NextPreviousPagerField>|一度に 1 ページのページ間を移動する、またはデータの最初と最後のページに移動することができます。|  
+|<xref:System.Web.UI.WebControls.NumericPagerField>|ページ番号によるデータのページを選択することができます。|  
+|<xref:System.Web.UI.WebControls.TemplatePagerField>|カスタム ページング UI を作成できます。|  
+  
+ ページャー フィールドを宣言によって指定する、<xref:System.Web.UI.WebControls.DataPager>コントロールを配置、`Fields`内の要素、<xref:System.Web.UI.WebControls.DataPager>コントロール。 開始タグと終了の間に挿入するページャー フィールドの一覧を表示することができますし、`<Fields>`タグ。  
+  
+ プログラムでするページャー フィールドを追加することができます、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>コレクション。 ただし、宣言のページャー フィールドが一覧に簡単には、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言するページャー フィールドを追加する方法を示します、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>のコレクション、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPagerField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerField/CS/DataPagerFieldCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPagerField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPagerField/VB/DataPagerFieldVB.aspx#1)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataPager.Fields%2A>動的に追加するプロパティ、<xref:System.Web.UI.WebControls.NextPreviousPagerField>オブジェクトを<xref:System.Web.UI.WebControls.DataPager>コントロール。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.NextPreviousPagerField.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.NextPreviousPagerField.Ctor#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.NextPreviousPagerField.Ctor/CS/NextPreviousPagerFieldCtorCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.NextPreviousPagerField.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.NextPreviousPagerField.Ctor/VB/NextPreviousPagerFieldCtorVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindPageableItemContainer">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.IPageableItemContainer FindPageableItemContainer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.IPageableItemContainer FindPageableItemContainer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.FindPageableItemContainer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.IPageableItemContainer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられているデータ バインド コントロールを取得、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <returns>データ バインド コントロールに関連付けられている、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって取得されたデータ バインド コントロールがデータを含むデータ ソース オブジェクトを参照する、<xref:System.Web.UI.WebControls.DataPager>ページを制御します。 <xref:System.Web.UI.WebControls.DataPager>制御できるようにこのデータをページングするために、データ バインド コントロールを実装する必要があります、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスです。  
+  
+ <xref:System.Web.UI.WebControls.DataPager.FindPageableItemContainer%2A>メソッド チェックするかどうか、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティがデータ バインド コントロールの ID に設定します。 場合、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティが設定されていない、<xref:System.Web.UI.WebControls.DataPager.FindPageableItemContainer%2A>メソッドがデータ バインド コントロールを検索するためにコンテナーの名前付けのスタック上へ移動します。 たとえば場合、<xref:System.Web.UI.WebControls.DataPager>内のコントロールは、<xref:System.Web.UI.WebControls.ListView.LayoutTemplate%2A?displayProperty=nameWithType>のテンプレート、<xref:System.Web.UI.WebControls.ListView>コントロール、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティが設定する必要はありません。 これは、ため、<xref:System.Web.UI.WebControls.DataPager.FindPageableItemContainer%2A>メソッドが自動的に検出、<xref:System.Web.UI.WebControls.ListView>コントロールのツリーを調べることで制御します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">実装するコントロール、 <see cref="T:System.Web.UI.WebControls.IPageableItemContainer" />  ページでインターフェイスが見つかりませんでした。  
+  
+ または  
+  
+ 指定されたコントロール、<see cref="P:System.Web.UI.WebControls.DataPager.PagedControlID" />プロパティを実装していません、<see cref="T:System.Web.UI.WebControls.IPageableItemContainer" />インターフェイスです。  
+  
+ または  
+  
+ <see cref="T:System.Web.UI.WebControls.DataPager" />コントロールには、名前付けコンテナーはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">状態を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</param>
+        <summary>内のプロパティの状態情報を読み込みます、<see cref="T:System.Web.UI.WebControls.DataPager" />ポストバック間で保持する必要がありますコントロール場合でも、<see cref="P:System.Web.UI.Control.EnableViewState" />プロパティに設定されている<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられているデータ バインド コントロールがない、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元する状態を表すオブジェクト。</param>
+        <summary>ビュー ステート情報を復元する、<see cref="T:System.Web.UI.WebControls.DataPager" />によって保存されたコントロール、<see cref="M:System.Web.UI.WebControls.DataPager.SaveViewState" />前のページ要求中にメソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に使用、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]インフラストラクチャ コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRows">
+      <MemberSignature Language="C#" Value="public int MaximumRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.MaximumRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの各ページに表示されるレコードの最大数を取得します。</summary>
+        <value>データの各ページに表示されるレコードの最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPager.MaximumRows%2A>データ ページのサイズを取得するプロパティです。 <xref:System.Web.UI.WebControls.DataPager.MaximumRows%2A>プロパティにはと同じ値が含まれています、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティです。 このプロパティの値を変更するには設定して、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>イベントをするかどうか、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールは、ページのユーザー インターフェイス (UI) サーバー コントロールの階層構造に渡されます</summary>
+        <returns>
+          <see langword="true" />親コントロールにイベントが送信された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されたら、Web サーバー コントロールは、インスタンスを作成および設定するために必要な初期化の手順を実行する必要があります。 この段階で、サーバー コントロールのライフ サイクルのコントロールのビュー ステートがまだ設定されていません。 さらがこのコントロールを親または子に関係なく、このメソッドが呼び出されたときにその他のサーバー コントロールにアクセスすることはできません。 他のサーバー コントロールが作成され、アクセスできる状態である保証はありません。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.DataPager.OnInit%2A>メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataPager.OnInit(System.EventArgs)" />派生クラスで、基本クラスを呼び出すことを確認します<see cref="M:System.Web.UI.WebControls.DataPager.OnInit(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Load" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.OnLoad%2A>メソッドは、関連付けられているページの各 HTTP 要求に共通するアクションを実行する必要があることをサーバー コントロールに通知します。 ページのライフ サイクルでこの段階で、階層内のサーバー コントロールの作成および初期化します。 ビュー ステートが復元され、フォーム上のコントロールがクライアントからアップロードされた値を反映します。 この実装を呼び出すも、<xref:System.Web.UI.WebControls.DataPager.FindPageableItemContainer%2A>メソッドを実装するコンテナー コントロールを検索する、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイス、およびそのプロパティを初期化します ページ。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.DataPager.OnLoad%2A>メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">実装するコンテナー コントロール、<see cref="T:System.Web.UI.WebControls.IPageableItemContainer" />インターフェイスが見つかりませんでした。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.DataPager.OnLoad(System.EventArgs)" />派生クラスで、基本クラスを呼び出すことを確認します<see cref="M:System.Web.UI.WebControls.DataPager.OnLoad(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTotalRowCountAvailable">
+      <MemberSignature Language="C#" Value="protected virtual void OnTotalRowCountAvailable (object sender, System.Web.UI.WebControls.PageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTotalRowCountAvailable(object sender, class System.Web.UI.WebControls.PageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.OnTotalRowCountAvailable(System.Object,System.Web.UI.WebControls.PageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.Web.UI.WebControls.PageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable?displayProperty=nameWithType>イベントの基になるデータ ソース内のレコードの合計数が使用可能な場合です。 <xref:System.Web.UI.WebControls.DataPager.OnTotalRowCountAvailable%2A>はこのイベントのハンドラーをページに関連するプロパティを更新してページャー フィールド オブジェクトを再作成を担当します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PagedControlID">
+      <MemberSignature Language="C#" Value="public virtual string PagedControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PagedControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.PagedControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty(typeof(System.Web.UI.WebControls.IPageableItemContainer))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.WebCategory("Paging")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Web.UI.Control.ID" />によってページがデータを含むコントロールの<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value><see cref="P:System.Web.UI.Control.ID" />によってページがデータを含むコントロールの<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。 既定値は、このプロパティが設定されていないことを示す空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティを指定する、<xref:System.Web.UI.Control.ID%2A>によってページがデータを含むコントロールの<xref:System.Web.UI.WebControls.DataPager>コントロール。 指定したコントロールを実装する必要があります、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスと同じ名前付けコンテナーを使用する必要があります、<xref:System.Web.UI.WebControls.DataPager>コントロール。 指定できるコントロールの例は、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ このプロパティが空の文字列である場合または`null`、<xref:System.Web.UI.WebControls.DataPager>コントロールは、そのコンテナー コントロールが実装されているかどうかをチェック、<xref:System.Web.UI.WebControls.IPageableItemContainer>インターフェイスです。 たとえば、<xref:System.Web.UI.WebControls.ListView>コントロール、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティは配置する場合に設定する必要はありません、<xref:System.Web.UI.WebControls.DataPager>内を制御、<xref:System.Web.UI.WebControls.ListView.LayoutTemplate%2A?displayProperty=nameWithType>テンプレート。 これは、ため、<xref:System.Web.UI.WebControls.DataPager>コントロールが自動的に検出、<xref:System.Web.UI.WebControls.ListView>コントロールのツリーを調べることで制御します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティを動的に関連付ける、<xref:System.Web.UI.WebControls.ListView>コントロールを<xref:System.Web.UI.WebControls.DataPager>コントロール。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataPager.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.DataPager.Ctor#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.Ctor/CS/DataPagerCtorCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.DataPager.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.Ctor/VB/DataPagerCtorVB.aspx#2)]  
+  
+ 次の例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataPager.PagedControlID%2A>プロパティに、<xref:System.Web.UI.WebControls.DataPager>するページのデータにコントロール、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPager.PagedControlID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.PagedControlID/CS/DataPagerPagedControlIDCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPager.PagedControlID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.PagedControlID/VB/DataPagerPagedControlIDVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.WebCategory("Paging")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータの各ページに表示されるレコードの数を設定します。</summary>
+        <value>データの各ページに表示されるレコードの数。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティ ページのデータのサイズを指定します。  
+  
+ 複数ある場合<xref:System.Web.UI.WebControls.DataPager>コントロールに同じバインドされているページの<xref:System.Web.UI.WebControls.ListView>コントロールを設定してください、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>同じ値にこれらのコントロールのプロパティです。 場合、<xref:System.Web.UI.WebControls.DataPager>制御が最後に、別のページ サイズを使用する設定<xref:System.Web.UI.WebControls.DataPager>初期化するコントロールの実際のページ サイズを決定する、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataPager.PageSize%2A>プロパティに、<xref:System.Web.UI.WebControls.DataPager>コントロールとその値を動的に変更する方法です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPager.PageSize#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.PageSize/CS/DataPagerPageSizeCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPager.PageSize#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.PageSize/VB/DataPagerPageSizeVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.DataPager.PageSize" />プロパティが 1 未満の値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryStringField">
+      <MemberSignature Language="C#" Value="public string QueryStringField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryStringField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.QueryStringField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.WebCategory("Paging")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリ文字列フィールドの名前を設定します。</summary>
+        <value>クエリ文字列フィールドの名前。 既定値は空の文字列であることを示す、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールがページ間の移動に HTTP POST コマンドを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>ことを指定するプロパティ、<xref:System.Web.UI.WebControls.DataPager>コントロールでは、HTTP GET コマンドを使用して、ページ間の移動をします。 GET 要求では名前/値ペアで構成されるクエリ文字列フィールドが、ページの URL に追加されます。 使用して名前が設定されて、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>プロパティです。 値は、対応するページ数です。 場合<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>空の文字列または`null`コントロールでのページをナビゲートする HTTP POST コマンドを使用します。  
+  
+ このプロパティの設定は、検索エンジンによってインデックス付けされたデータのすべてのページがある場合に便利です。 これは、コントロールがデータの各ページの別の URL を生成するために発生します。  
+  
+ 設定すると、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>プロパティ、次の条件の適用可能性があります。  
+  
+-   複数ある<xref:System.Web.UI.WebControls.DataPager>ページ、およびそれらの参照を同じデータ バインド コントロールを制御します。 その場合は、ことを確認して、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>これらのプロパティ<xref:System.Web.UI.WebControls.DataPager>コントロールが同じ値に設定します。  
+  
+-   複数ある<xref:System.Web.UI.WebControls.DataPager>ページ、およびそれらの参照を別のデータ バインド コントロールを制御します。 その場合は、ことを確認して、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>これらのプロパティ<xref:System.Web.UI.WebControls.DataPager>コントロールが別の値に設定します。 設定した場合、<xref:System.Web.UI.WebControls.DataPager>コントロール、同じ値に関連付けられているデータ バインド コントロールが改ページ調整する、同時に同じクエリ文字列フィールドを使用しているためです。  
+  
+ 以前のガイドラインに従わない、ページングの予期しない動作が発生することができます。 ただし、例外がスローされますなしコントロールによってです。  
+  
+ 場合<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>プロパティが空の文字列または`null`の値、<xref:System.Web.UI.WebControls.NextPreviousPagerField.ButtonType%2A>プロパティの<xref:System.Web.UI.WebControls.NumericPagerField>または<xref:System.Web.UI.WebControls.NextPreviousPagerField>オブジェクトは無視されます。 その場合は、これらのオブジェクトを使用して、<xref:System.Web.UI.WebControls.HyperLink>ナビゲーション ボタンを作成するコントロール。  
+  
+   
+  
+## Examples  
+ 次の例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataPager.QueryStringField%2A>プロパティに、<xref:System.Web.UI.WebControls.DataPager>クエリ文字列を使用してページ間を移動するために管理します。 この例では、2 つ含まれています<xref:System.Web.UI.WebControls.DataPager>使用されるコントロールを 1 つ表示されるデータをページングする<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataPager.QueryStringField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.QueryStringField/CS/DataPagerQueryStringFieldCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataPager.QueryStringField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataPager.QueryStringField/VB/DataPagerQueryStringFieldVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecreateChildControls">
+      <MemberSignature Language="C#" Value="protected virtual void RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子のコントロールを作成、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.RecreateChildControls%2A>メソッドの実装は、<xref:System.Web.UI.WebControls.DataPager.System%23Web%23UI%23WebControls%23ICompositeControlDesignerAccessor%23RecreateChildControls%2A>インターフェイス メソッドです。  
+  
+> [!NOTE]
+>  このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">受け取るオブジェクト、<see cref="T:System.Web.UI.WebControls.DataPager" />コンテンツを制御します。</param>
+        <summary>送信、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールの内容を指定した<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクトをブラウザーに表示される内容を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.Render%2A>メソッドの内容を書き込む、<xref:System.Web.UI.WebControls.DataPager>コントロールとその子コントロールでは、指定されたを使用して、ブラウザーに<xref:System.Web.UI.HtmlTextWriter>オブジェクト。  
+  
+> [!NOTE]
+>  このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="public virtual void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML ブラウザーにコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>Html のタグを開始、<see cref="T:System.Web.UI.WebControls.DataPager" />を指定されたライターにコントロールできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected virtual void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML ブラウザーにコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>内容を表示、<see cref="T:System.Web.UI.WebControls.DataPager" />を指定されたライターにコントロールできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.RenderContents%2A>メソッドの呼び出し、<xref:System.Web.UI.Control.Render%2A?displayProperty=nameWithType>メソッドの内容を表示するためにします。  
+  
+> [!NOTE]
+>  このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したプロパティの状態を保存、<see cref="T:System.Web.UI.WebControls.DataPager" />ポストバック間で保持する必要がありますコントロール場合でも、<see cref="P:System.Web.UI.Control.EnableViewState" />プロパティに設定されている<see langword="false" />です。</summary>
+        <returns>現在のビュー ステートを返します、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。 コントロールに関連付けられているビューステートがない場合、メソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を保存、<see cref="T:System.Web.UI.WebControls.DataPager" />ページ時間以降に発生したコントロールのビューステートがサーバーにポストされました。</summary>
+        <returns>返します、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールの現在のビュー ステート。 コントロールに関連付けられているビューステートがない場合、メソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値が、サーバー コントロールの配置は自動的に<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 このプロパティの値は、文字列オブジェクトに、サーバー コントロールのライフ サイクルの保存状態の段階の後に永続化します。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ビューステートを保存すると、この文字列オブジェクトは、ページ内の非表示の要素に格納されている変数としてブラウザーに送信されます。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます`ViewState`プロパティです。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+> [!NOTE]
+>  このメソッドが拡張するコントロールの開発者によって使用、主に、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPageProperties">
+      <MemberSignature Language="C#" Value="public virtual void SetPageProperties (int startRowIndex, int maximumRows, bool databind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetPageProperties(int32 startRowIndex, int32 maximumRows, bool databind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.SetPageProperties(System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+        <Parameter Name="databind" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="startRowIndex">データのページの最初のレコードのインデックス。</param>
+        <param name="maximumRows">データの 1 つのページ上の項目の最大数。</param>
+        <param name="databind">
+          <see langword="true" />プロパティが設定されます。 後にコントロールを再バインドするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>ページに関連するプロパティを設定、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.SetPageProperties%2A>メソッドの新しい値を設定、<xref:System.Web.UI.WebControls.DataPager.StartRowIndex%2A>と<xref:System.Web.UI.WebControls.DataPager.MaximumRows%2A>プロパティです。 また、<xref:System.Web.UI.WebControls.IPageableItemContainer.SetPageProperties%2A?displayProperty=nameWithType>関連のデータ バインド コントロール内のページに関連するプロパティを更新するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられているデータ バインド コントロールがない、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRowIndex">
+      <MemberSignature Language="C#" Value="public int StartRowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartRowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.StartRowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データのページに表示される最初のレコードのインデックスを取得します。</summary>
+        <value>データのページに表示される最初のレコードのインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.GetAttribute">
+      <MemberSignature Language="C#" Value="string IAttributeAccessor.GetAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IAttributeAccessor.GetAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.System#Web#UI#IAttributeAccessor#GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性の名前。</param>
+        <summary>指定した名前の属性値を取得、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <returns>属性の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataPager> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.SetAttribute">
+      <MemberSignature Language="C#" Value="void IAttributeAccessor.SetAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IAttributeAccessor.SetAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.System#Web#UI#IAttributeAccessor#SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定する属性名です。</param>
+        <param name="value">属性の値。</param>
+        <summary>属性を設定、<see cref="T:System.Web.UI.WebControls.DataPager" />指定した名前と値を持つコントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.DataPager> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls">
+      <MemberSignature Language="C#" Value="void ICompositeControlDesignerAccessor.RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.System#Web#UI#WebControls#ICompositeControlDesignerAccessor#RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子のコントロールを作成、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロールをデザイン時です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.System%23Web%23UI%23WebControls%23ICompositeControlDesignerAccessor%23RecreateChildControls%2A>メソッドをデザイナーを使用する、<xref:System.Web.UI.WebControls.DataPager>コントロールをデザイン時にコントロールの子コントロールを再作成します。  
+  
+ <xref:System.Web.UI.WebControls.DataPager.System%23Web%23UI%23WebControls%23ICompositeControlDesignerAccessor%23RecreateChildControls%2A>インターフェイス メソッドを呼び出して、<xref:System.Web.UI.WebControls.DataPager.RecreateChildControls%2A>メソッド、実際の実装が含まれていると、コントロールの開発者によって拡張することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示するために使用される HTML 要素を取得、<see cref="T:System.Web.UI.WebControls.DataPager" />コントロール。</summary>
+        <value>常に <see cref="F:System.Web.UI.HtmlTextWriterTag.Span" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.TagKey%2A>によって使用される HTML 要素を返します、<xref:System.Web.UI.WebControls.DataPager.RenderBeginTag%2A>の適切なマークアップを書き込みます、<xref:System.Web.UI.WebControls.DataPager>コントロール。 このプロパティのオーバーライドは基本実装を常に返す<xref:System.Web.UI.HtmlTextWriterTag?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  拡張するコントロールの開発者によってこのプロパティが、主に使用される、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>指定するには、このプロパティをオーバーライドすることができます<see cref="T:System.Web.UI.HtmlTextWriterTag" />派生したコントロールに使用する値。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalRowCount">
+      <MemberSignature Language="C#" Value="public int TotalRowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPager.TotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールに関連付けられた参照されている基になるデータ ソース オブジェクトから取得されるレコードの合計数を取得します。</summary>
+        <value>基になるデータ ソース オブジェクトから取得されるレコードの合計数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPager.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートの変更を追跡、<see cref="T:System.Web.UI.WebControls.DataPager" />制御、コントロールの保存できるように<see cref="T:System.Web.UI.StateBag" />オブジェクト。 このオブジェクトを介してアクセスできる、<see cref="P:System.Web.UI.Control.ViewState" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataPager.TrackViewState%2A>の最後に、メソッドが自動的に呼び出されます、<xref:System.Web.UI.Control.Init>内のイベント、<xref:System.Web.UI.WebControls.DataPager>コントロールの有効期間。 このメソッドは警告に変更を監視する ASP.NET、<xref:System.Web.UI.WebControls.DataPager>サーバー コントロールのビュー ステート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

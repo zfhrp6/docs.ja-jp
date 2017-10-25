@@ -1,0 +1,140 @@
+<Type Name="DataSetDateTime" FullName="System.Data.DataSetDateTime">
+  <TypeSignature Language="C#" Value="public enum DataSetDateTime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSetDateTime extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataSetDateTime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>シリアル化形式を記述<see cref="T:System.DateTime" />内の列、<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataSetDateTime>設定できません以外<xref:System.DateTime>列です。 設定、<xref:System.Data.DataColumn.DateTimeMode%2A>プロパティで、既定値 UnspecifiedLocall 非<xref:System.DateTime>列は許可します。 列データ型を変更する<xref:System.DateTime>他の型をリセット、 <xref:System.Data.DataColumn.DateTimeMode%2A> UnspecifiedLocal の値、既定値にします。  
+  
+ マージするためのスキーマを確認するには、リレーション、および ForeignKeyConstraints できます間で実行される<xref:System.DateTime>が一致する列<xref:System.Data.DataColumn.DateTimeMode%2A>プロパティです。 それ以外の場合、列はスキーマが一致するいないと見なすべきです。 唯一の例外では、未指定 ~ UnspecifiedLocal です。 リレーションシップが許可または`ForeignKeyConstraint`2 つ`DateTime`でいずれかの列`Unspecified`およびでその他の`UnspecifiedLocal`<xref:System.Data.DataColumn.DateTimeMode%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Local">
+      <MemberSignature Language="C#" Value="Local" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataSetDateTime Local = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataSetDateTime.Local" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSetDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see langword="DateTime" />常にローカルに格納されます。 場合<see cref="F:System.Data.DataSetDateTime.Utc" />または<see cref="F:System.Data.DataSetDateTime.Unspecified" />が割り当てられているこのモードでの列に最初に変換ローカルです。 このモードでのシリアル化は、常にローカルで実行します。 シリアル化中にはオフセットが発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unspecified">
+      <MemberSignature Language="C#" Value="Unspecified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataSetDateTime Unspecified = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataSetDateTime.Unspecified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSetDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see langword="DateTime" />常に、未指定で格納されます。 場合<see cref="F:System.Data.DataSetDateTime.Local" />または<see cref="F:System.Data.DataSetDateTime.Utc" />が割り当てられているこのモードでの列に最初に変換<see cref="F:System.Data.DataSetDateTime.Unspecified" />です。 このモードでのシリアル化では、オフセットは発生しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnspecifiedLocal">
+      <MemberSignature Language="C#" Value="UnspecifiedLocal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataSetDateTime UnspecifiedLocal = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataSetDateTime.UnspecifiedLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSetDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see langword="DateTime" />未指定に格納されます。 場合<see cref="F:System.Data.DataSetDateTime.Local" />または<see cref="F:System.Data.DataSetDateTime.Utc" />が割り当てられているこのモードでの列に最初に変換<see cref="F:System.Data.DataSetDateTime.Unspecified" />です。 このモードでのシリアル化では、オフセットが発生します。 これは既定の動作、下位互換性を維持します。 このオプションと見なすがストレージに未指定が次のようなオフセットを適用する<see cref="F:System.Data.DataSetDateTime.Local" />シリアル化中にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Utc">
+      <MemberSignature Language="C#" Value="Utc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataSetDateTime Utc = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataSetDateTime.Utc" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSetDateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see langword="DateTime" />世界協定時刻 (UTC) で格納されます。 場合<see cref="F:System.Data.DataSetDateTime.Local" />または<see cref="F:System.Data.DataSetDateTime.Unspecified" />が割り当てられているこのモードでの列に最初に変換<see langword="Utc" />形式です。 このモードでのシリアル化が常に実行<see langword="Utc" />です。 シリアル化中には、オフセットはありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

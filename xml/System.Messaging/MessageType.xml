@@ -1,0 +1,77 @@
+<Type Name="MessageType" FullName="System.Messaging.MessageType">
+  <TypeSignature Language="C#" Value="public enum MessageType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed MessageType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージの種類を識別します。 一般的なメッセージ キュー メッセージ、(到着および読み取り) の正または負の値 (到着および読み取り) の受信確認メッセージが表示できるメッセージ、またはレポート メッセージ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な (`Normal`型) メッセージは、いずれかを使用してキューに送信する、<xref:System.Messaging.Message>クラスまたはオーバー ロードの<xref:System.Messaging.MessageQueue.Send%2A?displayProperty=nameWithType>メソッドです。  
+  
+ メッセージ キューは、送信元アプリケーションによって要求されるたびに、受信確認メッセージを生成します。 使用してメッセージを送信する場合、<xref:System.Messaging.Message>クラスを使用することができます、<xref:System.Messaging.Message.AcknowledgeType%2A>プロパティを受信する受信確認の種類を指定します。 たとえば、メッセージ キューは、元のメッセージが到達したかまたは読み取られたことを示すために肯定受信確認メッセージまたは否定受信確認メッセージを生成できます。 メッセージ キューは、送信元アプリケーションによって指定される管理キューに適切な受信確認メッセージを返します。 受信または受信確認メッセージを使用して、ここに表示する場合、 <xref:System.Messaging.Message>、その<xref:System.Messaging.Message.Acknowledgment%2A>プロパティは、受信確認を送信するメッセージ キューの理由を示します。  
+  
+ メッセージ キューは、レポート キューは送信元キュー マネージャーで定義されるたびに、レポート メッセージを生成します。 トレースが有効な場合 (設定して、<xref:System.Messaging.Message.UseTracing%2A?displayProperty=nameWithType>元のメッセージのプロパティを)、メッセージ キュー レポート メッセージを送信、メッセージ キュー レポート キューごとに、元のメッセージの入力またはメッセージ キュー サーバーを出力します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Acknowledgment">
+      <MemberSignature Language="C#" Value="Acknowledgment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageType Acknowledgment = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageType.Acknowledgment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信確認メッセージ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageType Normal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageType.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準メッセージ キューのメッセージ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Report">
+      <MemberSignature Language="C#" Value="Report" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.MessageType Report = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.MessageType.Report" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レポート メッセージです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

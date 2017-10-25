@@ -1,0 +1,96 @@
+<Type Name="AutoScaleMode" FullName="System.Windows.Forms.AutoScaleMode">
+  <TypeSignature Language="C#" Value="public enum AutoScaleMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutoScaleMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AutoScaleMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Windows フォームでサポートされている、さまざまな種類の自動スケーリング モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ContainerControl>クラスおよびクラスから派生したなど<xref:System.Windows.Forms.Form>自動的にサイズを変更できる自体、および単位はその内容を現在のシステム フォントまたはディスプレイの解像度のいずれかに従ってドット/インチ (DPI)。 <xref:System.Windows.Forms.AutoScaleMode>列挙体は、これらのクラスとその派生型でサポートされている自動スケーリング モードを定義します。 コントロールの現在のモードはを介してアクセスできる、<xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ほとんどのビジネス アプリケーションでは、フォントの自動スケーリング モードを使用する必要があります。 Dpi スケーリング モードでは、グラフィックス ベースのアプリケーションで役に立ちますおり、.NET Compact Framework で使用される既定のスケーリングと互換性がします。  
+  
+> [!IMPORTANT]
+>  .NET Framework version 1.0 および 1.1 では、自動スケーリング サポートされていましたが常に現在のシステム フォントに依存する単純なメカニズムを使用します。 このメカニズムは、今後使用しませんが、旧バージョンとの互換性のため、まだサポートされているようになりました。 以前のスケーリングの動作を取得するには、設定を<xref:System.Windows.Forms.Form.AutoScale%2A>プロパティを含むの<xref:System.Windows.Forms.Form>に`true`も暗黙的に設定するが、<xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A?displayProperty=nameWithType>プロパティを None です。 逆に、設定、<xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A?displayProperty=nameWithType>フォームのプロパティは設定<xref:System.Windows.Forms.Form.AutoScale%2A>に`false`、.NET Framework version 2.0 で導入された新しいスケーリング メカニズムを有効にします。  
+  
+ スマート フォンのアプリケーションでこの列挙する必要がある Windows Mobile Version 5.0 ソフトウェア スマート フォンに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dpi">
+      <MemberSignature Language="C#" Value="Dpi" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoScaleMode Dpi = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoScaleMode.Dpi" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoScaleMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイの解像度に応じてスケールを制御します。 一般的な解像度は 96 dpi と 120 dpi です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="Font" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoScaleMode Font = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoScaleMode.Font" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoScaleMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスが使用するフォント (通常はシステム フォント) のサイズに応じてスケールを制御します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherit">
+      <MemberSignature Language="C#" Value="Inherit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoScaleMode Inherit = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoScaleMode.Inherit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoScaleMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスの親のスケーリング モードに従ってスケールを制御します。 親が存在しない場合、自動スケーリングは無効になっています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoScaleMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoScaleMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoScaleMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動スケーリングが無効になっています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

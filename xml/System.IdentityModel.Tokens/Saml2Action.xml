@@ -1,0 +1,118 @@
+<Type Name="Saml2Action" FullName="System.IdentityModel.Tokens.Saml2Action">
+  <TypeSignature Language="C#" Value="public class Saml2Action" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2Action extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2Action" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;saml:Action&gt;" /> SAML 2.0 で定義された要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.Saml2Action>クラス リソースを承認は、要求、許可または拒否でアクションを指定する、<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement>です。  
+  
+ <xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement> 2 の SAML アサーションのサブジェクトの指定したリソースに対して指定された一連のアクションを実行する機能に関するクレームを表します。 A<xref:System.IdentityModel.Tokens.Saml2Action>に追加することができます、<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Actions%2A?displayProperty=nameWithType>プロパティに目的の操作を指定します。 <xref:System.IdentityModel.Tokens.Saml2Action.Value%2A>プロパティは、アクションを表す、<xref:System.IdentityModel.Tokens.Saml2Action.Namespace%2A>プロパティは、アクションが定義されている XML 名前空間を指定します。 <xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Resource%2A?displayProperty=nameWithType>プロパティ アクセスは、意思決定が適用されるリソースを指定して、<xref:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement.Decision%2A>プロパティがアクセス決定を指定します。  
+  
+ [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Action (string value, Uri actionNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value, class System.Uri actionNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Action.#ctor(System.String,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="actionNamespace" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="value">実行するアクション。</param>
+        <param name="actionNamespace">指定されたアクションの名前が解釈するのには名前空間を表す URI。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.Saml2Action" />指定した名前空間とアクションを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="actionNamespace" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="value" /> が <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="actionNamespace" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public Uri Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Action.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたアクションの名前が解釈するための XML 名前空間を表す URI 参照を設定します。</summary>
+        <value><see cref="T:System.Uri" />名前空間を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Namespace` 要素の `<saml:Action>` 属性。 この属性は必須です。 [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+        <exception cref="T:System.ArgumentException">絶対 URI ではない値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Action.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定操作の対象、<see cref="T:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement" />リソースに対して実行できます。</summary>
+        <value>アクションの件名、<see cref="T:System.IdentityModel.Tokens.Saml2AuthorizationDecisionStatement" />リソースに対して実行できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<saml:Action>` 要素の値。 [!INCLUDE[wif_saml2_ref](~/includes/wif-saml2-ref-md.md)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ある値を設定しようとすると、<see langword="null" />または空の文字列が発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

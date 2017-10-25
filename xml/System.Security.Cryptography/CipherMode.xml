@@ -1,0 +1,170 @@
+<Type Name="CipherMode" FullName="System.Security.Cryptography.CipherMode">
+  <TypeSignature Language="C#" Value="public enum CipherMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CipherMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.CipherMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>暗号化に使用するブロック暗号モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブロック暗号アルゴリズムは、一度に 1 バイトではなく、ブロック単位でデータを暗号化します。 最も一般的なブロック サイズは 8 バイトです。 各ブロックが処理される頻度の高いために、使用したブロック暗号は、ストリーム暗号よりも高いレベルのセキュリティを提供します。 ただし、ブロック暗号アルゴリズムは、実行ストリーム暗号よりも速度が低下する傾向があります。  
+  
+ ブロック暗号では、各ブロックに対して同じ暗号化アルゴリズムを使用します。 このため、プレーン テキストのブロックは、同じ暗号化テキストと同じキーとアルゴリズムで暗号化されている場合を常に返します。 この動作を使用して、暗号を解読することができますため、前のブロックの暗号化からのフィードバックに基づく暗号化プロセスを変更できる暗号モードが導入されました。 結果の暗号化は、単純なブロックの暗号化よりも高いレベルのセキュリティを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CBC">
+      <MemberSignature Language="C#" Value="CBC" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.CipherMode CBC = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.CipherMode.CBC" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号ブロック チェーン (<see langword="CBC" />) モードにフィードバックが導入されています。 各プレーン テキストのブロックを暗号化すると、前にビットごとの排他的 or 演算によって、前のブロックの暗号化テキストと組み合わされます。 こうこと場合でも、プレーン テキストには、多くの同じブロックが含まれている、これらはそれぞれ暗号化異なる暗号テキスト ブロックになります。 初期化ベクトルは、ブロックを暗号化する前に、ビットごとの排他的 or 演算によって最初の平文ブロックと組み合わされます。 暗号文ブロックの 1 ビットを破損すると、対応するプレーン テキストのブロックも破損します。 さらに、元の破損ビットと同じ位置で、後続のブロックのビットが破損します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CFB">
+      <MemberSignature Language="C#" Value="CFB" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.CipherMode CFB = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.CipherMode.CFB" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号フィードバック (<see langword="CFB" />) モードは、ブロック全体を一度に処理ではなく、暗号化テキストにプレーン テキストの小さなインクリメントを処理します。 このモードでは、セクションにシフト レジスタを 1 つのブロックの長さは、分割を使用します。 たとえば、ブロック サイズが 8 バイトで、1 バイトを同時に処理の場合は、シフト レジスタが 8 つのセクションに分割されます。 ビット暗号テキストが破損すると、1 ビットをプレーン テキストが破損し、シフト レジスタが破損しています。 これは、結果、シフト レジスタから不適切なビットをシフトするまでに変形されている [次へ] のいくつかのプレーン テキスト単位。 既定のフィードバック サイズは、アルゴリズムによって異なることができますは、通常の 8 ビットまたはブロック サイズのビット数のいずれか。 使用してフィードバックのビット数を変更することができます、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSize" />プロパティです。 CFB をサポートするアルゴリズムでは、このプロパティを使用して、フィードバックを設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CTS">
+      <MemberSignature Language="C#" Value="CTS" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.CipherMode CTS = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.CipherMode.CTS" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号テキストを盗む (<see langword="CTS" />) モードがプレーン テキストの任意の長さを処理し、生成して暗号テキストの長さがプレーン テキストの長さと一致します。 このモードの動作と同様に、<see langword="CBC" />すべてのモードがプレーン テキストの最後の 2 つのブロックです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ECB">
+      <MemberSignature Language="C#" Value="ECB" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.CipherMode ECB = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.CipherMode.ECB" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Electronic Codebook (<see langword="ECB" />) モードで各ブロックは個別に暗号化します。 一致しており、同じメッセージ内にあるか、同じキーで暗号化された異なるメッセージにプレーン テキストのブロックは、同一の暗号文ブロックに変換されます。 **重要な**: このモードは複数のセキュリティ攻撃のドアを開くためにはお勧めしません。 暗号化されるプレーン テキストに繰り返しが多いが含まれている場合の場合は、暗号テキストを一度に 1 つのブロックを分割できます。 ブロックの分析を使用して、暗号化キーを確認することもできます。 また、アクティブな敵対者は置き換えるし、検出で、ブロックできるように保存され、他のポイントを検出せずにストリームに挿入することがなく個々 のブロックを交換できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OFB">
+      <MemberSignature Language="C#" Value="OFB" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.CipherMode OFB = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.CipherMode.OFB" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力からのフィードバック (<see langword="OFB" />) モードに暗号文ブロック全体を一度に処理ではなくプレーン テキストの少しずつ処理します。 このモードはのような<see langword="CFB" />以外の場合は、2 つのモード間の違いは、shift キーを登録する方法のみを入力します。 ビット暗号テキストが破損すると、プレーン テキストの対応するビットが破損します。 ただし、暗号テキストから余分なまたは不足している bits がある場合は、プレーン テキストが破損その時点からにします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

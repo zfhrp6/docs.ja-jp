@@ -1,0 +1,186 @@
+<Type Name="DrawingVisual" FullName="System.Windows.Media.DrawingVisual">
+  <TypeSignature Language="C#" Value="public class DrawingVisual : System.Windows.Media.ContainerVisual" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawingVisual extends System.Windows.Media.ContainerVisual" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.DrawingVisual" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.ContainerVisual</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+      <see cref="T:System.Windows.Media.DrawingVisual" /> は、画面にベクター グラフィックスをレンダリングするために使用できるビジュアル オブジェクトです。 コンテンツはシステムによって永続化されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.DrawingVisual>図形、画像、またはテキストを表示するために使用される軽量の描画クラスです。 このクラスはレイアウト、入力、フォーカス、またはイベントの処理は、そのパフォーマンスを向上させますが提供しないために、軽量と見なされます。 そのため、背景やクリップ アートの描画に適しています。  
+  
+ 使用するために<xref:System.Windows.Media.DrawingVisual>オブジェクト、オブジェクトのホストのコンテナーを作成する必要があります。 ホストのコンテナー オブジェクトから派生する必要があります、<xref:System.Windows.FrameworkElement>レイアウトやイベント処理のサポートを提供するクラス、<xref:System.Windows.Media.DrawingVisual>クラスをサポートしません。 その主な目的は、子オブジェクトを格納するため、ホストのコンテナー オブジェクトは、ビジュアルのプロパティを表示されません。 詳しくは、「[DrawingVisual オブジェクトの使用](~/docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)」をご覧ください。  
+  
+ 作成する方法を示すコード例全体について<xref:System.Windows.Media.DrawingVisual>ホスト コンテナーを持つオブジェクトを参照してください、 [DrawingVisuals サンプルを使用してテストをヒット](http://go.microsoft.com/fwlink/?LinkID=159994)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DrawingVisual ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingVisual.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.DrawingVisual" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Windows.Media.DrawingVisual>オブジェクトの描画コンテンツがありません。 オブジェクトの描画のコンテキストを取得して、そこに描画して、テキスト、グラフィック、またはイメージのコンテンツを追加できます。 描画のコンテキストが呼び出しによって返される、<xref:System.Windows.Media.DrawingVisual.RenderOpen%2A>のメソッド、<xref:System.Windows.Media.DrawingVisual>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Media.DrawingVisual>オブジェクトが作成され、その描画のコンテキストに四角形を描画します。 呼び出す必要がありますに注意してください、<xref:System.Windows.Media.DrawingContext.Close%2A>のメソッド、<xref:System.Windows.Media.DrawingContext>描画の内容を保持します。  
+  
+ [!code-csharp[DrawingVisualSample#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[DrawingVisualSample#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Drawing">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingGroup Drawing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DrawingGroup Drawing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingVisual.Drawing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画のコンテンツを取得、<see cref="T:System.Windows.Media.DrawingVisual" />オブジェクト。</summary>
+        <value>型の値を取得<see cref="T:System.Windows.Media.DrawingGroup" />のコレクションを表す<see cref="T:System.Windows.Media.Drawing" />内のオブジェクト、<see cref="T:System.Windows.Media.DrawingVisual" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル オブジェクトは、ベクター グラフィックス命令リストとして、レンダリング データを格納します。 命令の一覧内の各項目では、グラフィック データをシリアル化された形式での低レベルのセットを表します。 どの visual オブジェクトの詳細については、グラフィック データの格納を参照してください[WPF グラフィックス レンダリングの概要](~/docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)です。  
+  
+ 返されたに変更を加えた<xref:System.Windows.Media.DrawingGroup>によって値が永続化されていない、<xref:System.Windows.Media.DrawingVisual>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Media.DrawingGroup>の各値<xref:System.Windows.Media.DrawingVisual>visual の列挙でホストします。  
+  
+ [!code-csharp[VisualSnippets#DrawingVisualSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/DrawingVisual.xaml.cs#drawingvisualsnippet1)]
+ [!code-vb[VisualSnippets#DrawingVisualSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/drawingvisual.xaml.vb#drawingvisualsnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.GeometryHitTestResult HitTestCore (System.Windows.Media.GeometryHitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.GeometryHitTestResult HitTestCore(class System.Windows.Media.GeometryHitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingVisual.HitTestCore(System.Windows.Media.GeometryHitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryHitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.GeometryHitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="hitTestParameters">型の値<see cref="T:System.Windows.Media.GeometryHitTestParameters" />を指定する、<see cref="T:System.Windows.Media.Geometry" />ヒット テストの対象にします。</param>
+        <summary>ジオメトリ値がビジュアル オブジェクトの境界内にあるかどうかを判断します。</summary>
+        <returns><see cref="T:System.Windows.Media.GeometryHitTestResult" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.HitTestResult HitTestCore (System.Windows.Media.PointHitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.HitTestResult HitTestCore(class System.Windows.Media.PointHitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingVisual.HitTestCore(System.Windows.Media.PointHitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.PointHitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="hitTestParameters">型の値<see cref="T:System.Windows.Media.PointHitTestParameters" />を指定する、<see cref="T:System.Windows.Point" />ヒット テストの対象にします。</param>
+        <summary>ポイント座標の値がの境界内にあるかどうかを判断、<see cref="T:System.Windows.Media.DrawingVisual" />オブジェクト。</summary>
+        <returns>型の値<see cref="T:System.Windows.Media.HitTestResult" />を表す、<see cref="T:System.Windows.Media.Visual" />ヒット テストから返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.HitTestResult.VisualHit%2A>戻り値のプロパティがヒットしたビジュアル オブジェクトを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderOpen">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingContext RenderOpen ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DrawingContext RenderOpen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingVisual.RenderOpen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開く、<see cref="T:System.Windows.Media.DrawingVisual" />表示するためのオブジェクト。 返された<see cref="T:System.Windows.Media.DrawingContext" />に表示するために値を使用することができます、<see cref="T:System.Windows.Media.DrawingVisual" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.DrawingContext" /> 型の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、<xref:System.Windows.Media.DrawingContext.Close%2A>のメソッド、 <xref:System.Windows.Media.DrawingContext>、現在のコンテンツの後継に対して定義されている前の描画コンテンツの描画、<xref:System.Windows.Media.DrawingVisual>です。 これは既存の描画コンテンツに新しい描画コンテンツを追加する方法がないことを意味します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Media.DrawingVisual>オブジェクトが作成されると、その<xref:System.Windows.Media.DrawingContext>が返されます。  
+  
+ [!code-csharp[DrawingVisualSample#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[DrawingVisualSample#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
+  
+ 描画のコンテキストに描画する順序は重要 — 各後続の描画は、その他の上に描画します。 次の例では、四角形は、描画最初に、次のテキストです。  
+  
+ [!code-csharp[VisualSnippets#RenderOrderSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Snippets.cs#renderordersnippet1)]
+ [!code-vb[VisualSnippets#RenderOrderSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/snippets.vb#renderordersnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

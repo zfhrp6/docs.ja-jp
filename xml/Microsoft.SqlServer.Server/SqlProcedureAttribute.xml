@@ -1,0 +1,92 @@
+<Type Name="SqlProcedureAttribute" FullName="Microsoft.SqlServer.Server.SqlProcedureAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SqlProcedureAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SqlProcedureAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlProcedureAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ストアド プロシージャとアセンブリのメソッドの定義を示すために使用します。 属性のプロパティは、種類が SQL Server に登録されているときに使用する物理的な特性を反映します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlProcedureAttribute>ストアド プロシージャとして指定されたメソッドを自動的に登録する Microsoft Visual Studio でのみ使用されます。 SQL Server では使用されません。  
+  
+ 「CLR ストアド プロシージャ」SQL Server 2005 Books Online の詳細については、CLR ストアド プロシージャと例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、ストアド プロシージャとして属性付けられていますが、アセンブリのメソッドの宣言を示します。 <xref:Microsoft.SqlServer.Server.SqlProcedureAttribute>プロパティが、ストアド プロシージャの名前に設定されています。  
+  
+ [!code-csharp[DataWorks SqlProcedureAttribute#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlProcedureAttribute/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlProcedureAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlProcedureAttribute/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlProcedureAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlProcedureAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>アセンブリでは、SQL Server のストアド プロシージャとして特定のメソッドを登録するかを示すために使用されるメソッドの定義の属性です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlProcedureAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストアド プロシージャの名前。</summary>
+        <value>A<see cref="T:System.String" />ストアド プロシージャの名前を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティはオプションです。  
+  
+ 次の例では、名前を使用して、ストアド プロシージャが参照されているを指定します`sp_sqlName`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/InsertCurrency.cs#7)]
+ [!code-vb[VbRaddataSQLObjects#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/InsertCurrency.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

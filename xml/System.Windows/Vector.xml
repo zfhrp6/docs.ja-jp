@@ -1,0 +1,1348 @@
+<Type Name="Vector" FullName="System.Windows.Vector">
+  <TypeSignature Language="C#" Value="public struct Vector : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Vector extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Vector" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.VectorConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Converters.VectorValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 次元空間での置き換えを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Point>固定の位置を表しますが、<xref:System.Windows.Vector>方向と大きさ (速度やアクセラレータなど) を表します。 したがって、直線セグメントの端点点ですが、その違いは、ベクターです。つまり、方向とその長さは、セグメントを行です。  
+  
+ XAML では、間の区切り文字、<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>の値、<xref:System.Windows.Vector>コンマまたは空白にすることができます。  
+  
+ 一部のカルチャは、ピリオドではなく 10 進区切り記号としてコンマ文字を使用する可能性があります。 インバリアント カルチャの XAML 処理では、既定値のほとんどの XAML プロセッサの実装では、EN-US あり、小数点区切り文字にピリオドが必要です。 指定する場合、10 進区切り記号としてコンマ文字の使用を避ける必要があります、 <xref:System.Windows.Vector> 、XAML での文字列型の変換に競合が発生するため、<xref:System.Windows.Vector>属性の値に、<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>コンポーネントです。  
+  
+<a name="xamlAttributeUsage_Vector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="x,y"/>  
+-or-  
+<object property="x y"/>  
+```  
+  
+<a name="xamlValues_Vector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *x*  
+ ベクトルの X コンポーネント。 詳細については、<xref:System.Windows.Vector.X%2A> プロパティを参照してください。  
+  
+ *y*  
+ ベクトルの Y 成分。 詳細については、<xref:System.Windows.Vector.Y%2A> プロパティを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つ追加する方法を示します<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorSample#10](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorSample/CSharp/Window1.xaml.cs#10)]
+ [!code-vb[VectorSample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorSample/visualbasic/window1.xaml.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Vector (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="P:System.Windows.Vector.X" />-新しいオフセット<see cref="T:System.Windows.Vector" />です。</param>
+        <param name="y"><see cref="P:System.Windows.Vector.Y" />-新しいオフセット<see cref="T:System.Windows.Vector" />です。</param>
+        <summary><see cref="T:System.Windows.Vector" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つのベクトルを作成し、一緒に追加する方法を示します。  
+  
+ [!code-csharp[VectorExamples_snip#AddTwoVectorsExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#addtwovectorsexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point Add (System.Windows.Vector vector, System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point Add(valuetype System.Windows.Vector vector, valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Add(System.Windows.Vector,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="vector">指定したポイントを平行移動量。</param>
+        <param name="point">変換対象のポイント。</param>
+        <summary>指定したベクトルを指定したポイントを変換し、結果として得られるポイントを返します。</summary>
+        <returns>変換した結果<paramref name="point" />によって<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して追加する方法を示しています、<xref:System.Windows.Point>に構造体、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#AddPointAndVectorExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#addpointandvectorexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Add (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Add(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Add(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">加算する最初のベクトル。</param>
+        <param name="vector2">加算する 2 番目のベクトル。</param>
+        <summary>2 つのベクトルを追加し、その結果、<see cref="T:System.Windows.Vector" />構造体。</summary>
+        <returns><paramref name="vector1" /> と <paramref name="vector2" /> の合計。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、2 つ追加する方法を示しています。<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#AddTwoVectorsExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#addtwovectorsexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AngleBetween">
+      <MemberSignature Language="C#" Value="public static double AngleBetween (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 AngleBetween(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.AngleBetween(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">評価する最初のベクトル。</param>
+        <param name="vector2">評価する 2 番目のベクトル。</param>
+        <summary>角度を度、2 つの指定したベクトルの間で表現を取得します。</summary>
+        <returns>角度を度数で間<paramref name="vector1" />と<paramref name="vector2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、2 つの間の角度を取得する方法を示しています。<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#AngleBetweenExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#anglebetweenexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CrossProduct">
+      <MemberSignature Language="C#" Value="public static double CrossProduct (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 CrossProduct(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.CrossProduct(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">評価する最初のベクトル。</param>
+        <param name="vector2">評価する 2 番目のベクトル。</param>
+        <summary>2 つのベクターのクロス積を計算します。</summary>
+        <returns>クロス積<paramref name="vector1" />と<paramref name="vector2" />です。 次の数式はクロス積を計算に使用されます。  
+  
+ <c>(Vector1.X * Vector2.Y)-(Vector1.Y * Vector2.X)</c></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、2 つのクロス積を計算する方法を示しています。<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#CrossProductExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#crossproductexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Determinant">
+      <MemberSignature Language="C#" Value="public static double Determinant (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Determinant(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Determinant(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">評価する最初のベクトル。</param>
+        <param name="vector2">評価する 2 番目のベクトル。</param>
+        <summary>2 つのベクトルの行列式を計算します。</summary>
+        <returns>行列式<paramref name="vector1" />と<paramref name="vector2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 つの行列式を計算する方法を示しています。<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#DeterminantExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#determinantexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Divide">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Divide (System.Windows.Vector vector, double scalar);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Divide(valuetype System.Windows.Vector vector, float64 scalar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Divide(System.Windows.Vector,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="scalar" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="vector">分割するベクター構造体。</param>
+        <param name="scalar">量<c>ベクター</c>は分割されます。</param>
+        <summary>指定したスカラーで指定したベクトルを除算し、結果として返します、<see cref="T:System.Windows.Vector" />です。</summary>
+        <returns><paramref name="vector" /> を <paramref name="scalar" /> で除算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して分割する方法を示しています、<xref:System.Windows.Vector>スカラーでします。  
+  
+ [!code-csharp[VectorExamples_snip#DivideExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#divideexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>2 つのベクトルが等しいかどうかを比較します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較するベクトル。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.Vector" />構造体、および場合は、同じ<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />としてこのベクトルの値。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Windows.Vector" />と、同じ<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />値としてこのベクターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Windows.Vector>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用して確認する方法を示しています。 かどうか、<xref:System.Windows.Vector>と<xref:System.Object>が等しい。  
+  
+ [!code-csharp[VectorExamples_snip#EqualsExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#equalsexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Vector value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Vector value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Equals(System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="value">このベクターと比較するベクトル。</param>
+        <summary>2 つのベクトルが等しいかどうかを比較します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />が同じ<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />値としてこのベクターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Windows.Vector>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用して、2 つあるかどうかを確認する方法を示しています。<xref:System.Windows.Vector>構造体が等しい。  
+  
+ [!code-csharp[VectorExamples_snip#EqualsExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#equalsexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Equals(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">比較する最初のベクトル。</param>
+        <param name="vector2">比較する 2 番目のベクトル。</param>
+        <summary>2 つの指定したベクトルの等価性を比較します。</summary>
+        <returns>
+          <see langword="true" />場合 t 彼<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />のコンポーネント<paramref name="vector1" />と<paramref name="vector2" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、このメソッドを使用して、2 つあるかどうかを確認する方法を示しています。<xref:System.Windows.Vector>構造体が等しい。  
+  
+ [!code-csharp[VectorExamples_snip#EqualsExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#equalsexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このベクトルのハッシュ コードを返します。</summary>
+        <returns>対象のインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のハッシュ コードを取得する方法を示しています、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#GetHashCodeExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#gethashcodeexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public double Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Vector.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このベクトルの長さを取得します。</summary>
+        <value>このベクトルの長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクトルの長さは絶対値としても呼ばれます。  
+  
+   
+  
+## Examples  
+ 例を次には、このプロパティを使用してどのようにベクトルの長さを取得します。  
+  
+ [!code-csharp[VectorExamples_snip#LengthExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#lengthexample)]
+ [!code-vb[VectorExamples_snip#LengthExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#lengthexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LengthSquared">
+      <MemberSignature Language="C#" Value="public double LengthSquared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LengthSquared" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Vector.LengthSquared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このベクトルの長さの 2 乗を取得します。</summary>
+        <value>2 乗、<see cref="P:System.Windows.Vector.Length" />このベクター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクトルの長さは、その絶対値と言われることもあります。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、ベクターの長さの 2 乗を取得する方法を示します。  
+  
+ [!code-csharp[VectorExamples_snip#LengthSquaredExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#lengthsquaredexample)]
+ [!code-vb[VectorExamples_snip#LengthSquaredExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#lengthsquaredexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Multiply (double scalar, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Multiply(float64 scalar, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Multiply(System.Double,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scalar" Type="System.Double" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="scalar">乗算するスカラーです。</param>
+        <param name="vector">乗算するベクトル。</param>
+        <summary>指定したベクトルを指定したスカラーを乗算し、その結果を返します<see cref="T:System.Windows.Vector" />です。</summary>
+        <returns><paramref name="scalar" /> と <paramref name="vector" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用してスカラーを乗算する方法を示します、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#MultiplyVectorByScalarExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#multiplyvectorbyscalarexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Multiply (System.Windows.Vector vector, double scalar);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Multiply(valuetype System.Windows.Vector vector, float64 scalar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Multiply(System.Windows.Vector,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="scalar" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="vector">乗算するベクトル。</param>
+        <param name="scalar">乗算するスカラーです。</param>
+        <summary>指定したスカラーで指定したベクトルを乗算し、その結果を返します<see cref="T:System.Windows.Vector" />です。</summary>
+        <returns><paramref name="vector" /> と <paramref name="scalar" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して乗算する方法を示しています。、<xref:System.Windows.Vector>スカラーでします。  
+  
+ [!code-csharp[VectorExamples_snip#MultiplyVectorByScalarExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#multiplyvectorbyscalarexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Multiply (System.Windows.Vector vector, System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Multiply(valuetype System.Windows.Vector vector, valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Multiply(System.Windows.Vector,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="vector">変換するベクトル構造体。</param>
+        <param name="matrix">適用する変換<c>ベクター</c>です。</param>
+        <summary>座標空間を指定して指定したベクトルの<see cref="T:System.Windows.Media.Matrix" />します。</summary>
+        <returns>変換した結果<paramref name="vector" />によって<paramref name="matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して乗算する方法を示しています。、<xref:System.Windows.Vector>によって、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[VectorExamples_snip#MultiplyVectorByMatrixExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#multiplyvectorbymatrixexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static double Multiply (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Multiply(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Multiply(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">乗算する最初のベクトル。</param>
+        <param name="vector2">乗算する 2 番目のベクター構造体。</param>
+        <summary>指定された 2 つのドット積ベクトルし、結果として返します計算、<see cref="T:System.Double" />です。</summary>
+        <returns>A<see cref="T:System.Double" />スカラーのドット積を含む<paramref name="vector1" />と<paramref name="vector2" />、次の数式を使用して計算されます。  
+  
+ <c>(vector1 です。X * vector2 です。X) + (vector1 です。Y * vector2 です。Y)</c></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して乗算する方法を示しています。、<xref:System.Windows.Vector>によって、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#GetDotProductExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#getdotproductexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Negate">
+      <MemberSignature Language="C#" Value="public void Negate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Negate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Negate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このベクトルを符号反転します。 ベクターが前と同じ大きさが、方向が逆ようになりました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用するベクトルを符号反転する方法を示します。  
+  
+ [!code-csharp[VectorExamples_snip#NegateExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#negateexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public void Normalize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Normalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Normalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このベクターを正規化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規化されたベクターの方向を保持するが、その<xref:System.Windows.Vector.Length%2A>1 になります。 結果のベクトルは、単位ベクターと呼ばれます。 ベクターがそれ自体でベクトルを除算して正規化される<xref:System.Windows.Vector.Length%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、ベクターを正規化する方法を示します。  
+  
+ [!code-csharp[VectorExamples_snip#NormalizeExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#normalizeexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point operator + (System.Windows.Vector vector, System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Point op_Addition(valuetype System.Windows.Vector vector, valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Addition(System.Windows.Vector,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="vector">変換に使用されるベクトル<c>ポイント</c>です。</param>
+        <param name="point">変換対象のポイント。</param>
+        <summary>指定されたベクトルに変換し、結果として得られる点を返します。</summary>
+        <returns>変換した結果<paramref name="point" />によって<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (+) を使用して変換する方法を示しています、<xref:System.Windows.Point>に構造体、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedAdditionOperatorExample2](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedadditionoperatorexample2)]
+ [!code-vb[VectorExamples_snip#OverloadedAdditionOperatorExample2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedadditionoperatorexample2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator + (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Addition(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Addition(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">加算する最初のベクトル。</param>
+        <param name="vector2">加算する 2 番目のベクトル。</param>
+        <summary>2 つのベクトルを追加し、結果として、ベクトルを返します。</summary>
+        <returns><paramref name="vector1" /> と <paramref name="vector2" /> の合計。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (+) を使用して、2 つ追加する方法を示しています。<xref:System.Windows.Vector>構造体と戻り値、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedAdditionOperatorExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedadditionoperatorexample1)]
+ [!code-vb[VectorExamples_snip#OverloadedAdditionOperatorExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedadditionoperatorexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Division">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator / (System.Windows.Vector vector, double scalar);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Division(valuetype System.Windows.Vector vector, float64 scalar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Division(System.Windows.Vector,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="scalar" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="vector">除算するベクトル。</param>
+        <param name="scalar">これによってスカラー<c>ベクター</c>分割されます。</param>
+        <summary>指定したスカラーで指定したベクトルを除算し、結果のベクトルを返します。</summary>
+        <returns><paramref name="vector" /> を <paramref name="scalar" /> で除算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (/) を使用して分割する方法を示しています、<xref:System.Windows.Vector>したスカラー構造です。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedDivisionOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadeddivisionoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedDivisionOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadeddivisionoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Equality(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">比較する最初のベクトル。</param>
+        <param name="vector2">比較する 2 番目のベクトル。</param>
+        <summary>2 つのベクトルが等しいかどうかを比較します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />のコンポーネント<paramref name="vector1" />と<paramref name="vector2" />が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Windows.Vector>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、この演算子 (= =) を使用して、2 つあるかどうかを確認する方法を示しています。<xref:System.Windows.Vector>構造体が等しい。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedequalityoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Windows.Point (System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Point op_Explicit(valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Explicit(System.Windows.Vector)~System.Windows.Point" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Windows.Size (System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Size op_Explicit(valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Explicit(System.Windows.Vector)~System.Windows.Size" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Inequality(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">比較する最初のベクトル。</param>
+        <param name="vector2">比較する 2 番目のベクトル。</param>
+        <summary>非等値を 2 つのベクトルを比較します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />のコンポーネント<paramref name="vector1" />と<paramref name="vector2" />が、それ以外のさまざまな<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベクターの<xref:System.Windows.Vector.X%2A>と<xref:System.Windows.Vector.Y%2A>プロパティの説明を使用して<xref:System.Double>値。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Windows.Vector>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、この演算子を使用する方法を示します (! =) を 2 つあるかどうかを確認する<xref:System.Windows.Vector>構造が等しくないです。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedinequalityoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedinequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator * (double scalar, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Multiply(float64 scalar, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Multiply(System.Double,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scalar" Type="System.Double" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="scalar">乗算するスカラーです。</param>
+        <param name="vector">乗算するベクトル。</param>
+        <summary>指定したベクトルを指定したスカラーを乗算し、結果のベクトルを返します。</summary>
+        <returns><paramref name="scalar" /> と <paramref name="vector" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例ではスカラーを乗算するこの演算子 (*) を使用する方法を示しています、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedMultiplicationOperatorExample2](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedmultiplicationoperatorexample2)]
+ [!code-vb[VectorExamples_snip#OverloadedMultiplicationOperatorExample2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedmultiplicationoperatorexample2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator * (System.Windows.Vector vector, double scalar);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Multiply(valuetype System.Windows.Vector vector, float64 scalar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Multiply(System.Windows.Vector,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="scalar" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="vector">乗算するベクトル。</param>
+        <param name="scalar">乗算するスカラーです。</param>
+        <summary>指定したスカラーで指定したベクトルを乗算し、結果のベクトルを返します。</summary>
+        <returns><paramref name="vector" /> と <paramref name="scalar" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (*) を使用して乗算する方法を示しています、<xref:System.Windows.Vector>したスカラー構造です。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedMultiplicationOperatorExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedmultiplicationoperatorexample1)]
+ [!code-vb[VectorExamples_snip#OverloadedMultiplicationOperatorExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedmultiplicationoperatorexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator * (System.Windows.Vector vector, System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Multiply(valuetype System.Windows.Vector vector, valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Multiply(System.Windows.Vector,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="vector">変換するベクトル。</param>
+        <param name="matrix">適用する変換<c>ベクター</c>です。</param>
+        <summary>座標空間を指定して指定したベクトルの<see cref="T:System.Windows.Media.Matrix" />します。</summary>
+        <returns>変換した結果<paramref name="vector" />によって<paramref name="matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (*) を使用して乗算する方法を示しています、<xref:System.Windows.Vector>で構造体、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedMultiplyVectorByMatrixOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedmultiplyvectorbymatrixoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedMultiplyVectorByMatrixOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedmultiplyvectorbymatrixoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static double operator * (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname float64 op_Multiply(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Multiply(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">乗算する最初のベクトル。</param>
+        <param name="vector2">乗算する 2 番目のベクトル。</param>
+        <summary>2 つの指定したベクトルの構造体のドット積を計算し、結果として返します、<see cref="T:System.Double" />です。</summary>
+        <returns>返します、<see cref="T:System.Double" />スカラーのドット積を含む<paramref name="vector1" />と<paramref name="vector2" />、次の数式を使用して計算されます。  
+  
+ <c>vector1 です。X * vector2 です。X + vector1 です。Y * vector2 です。Y</c></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (*) を使用して乗算する方法を示しています、<xref:System.Windows.Vector>で構造体、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedOperatorGetDotProductExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedoperatorgetdotproductexample)]
+ [!code-vb[VectorExamples_snip#OverloadedOperatorGetDotProductExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedoperatorgetdotproductexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator - (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_Subtraction(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_Subtraction(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">元のベクター <c>vector2</c>差し引かれます。</param>
+        <param name="vector2">1 から減算するベクター <c>vector1</c>です。</param>
+        <summary>別の 1 つの指定したベクトルを減算します。</summary>
+        <returns>違い<paramref name="vector1" />と<paramref name="vector2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、この演算子 (-) を使用して、減算する方法を示しています。、<xref:System.Windows.Vector>から構造体、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedSubtractionOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadedsubtractionoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedSubtractionOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadedsubtractionoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_UnaryNegation">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector operator - (System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Vector op_UnaryNegation(valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.op_UnaryNegation(System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector">符号反転するベクトル。</param>
+        <summary>指定したベクトルを符号反転します。</summary>
+        <returns>持つベクトル<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />の反対の値、<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />値<paramref name="vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を無効にするこの否定演算子を使用する方法を示しています、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#OverloadedNegationOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#overloadednegationoperatorexample)]
+ [!code-vb[VectorExamples_snip#OverloadedNegationOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#overloadednegationoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">ベクトルの文字列形式。</param>
+        <summary>それと同等のベクトルの文字列形式に変換<see cref="T:System.Windows.Vector" />構造体。</summary>
+        <returns>該当するショートカットは、<see cref="T:System.Windows.Vector" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用してにベクトルの文字列形式に変換する方法、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#ParseExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#parseexample)]
+ [!code-vb[VectorExamples_snip#ParseExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#parseexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector Subtract (System.Windows.Vector vector1, System.Windows.Vector vector2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector Subtract(valuetype System.Windows.Vector vector1, valuetype System.Windows.Vector vector2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.Subtract(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector1" Type="System.Windows.Vector" />
+        <Parameter Name="vector2" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector1">元のベクター <c>vector2</c>差し引かれます。</param>
+        <param name="vector2">1 から減算するベクター <c>vector1</c>です。</param>
+        <summary>指定したもう 1 つのベクターから指定したベクトルを減算します。</summary>
+        <returns>違い<paramref name="vector1" />と<paramref name="vector2" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用して、減算する方法、<xref:System.Windows.Vector>から構造体、<xref:System.Windows.Vector>構造体。  
+  
+ [!code-csharp[VectorExamples_snip#SubtractExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#subtractexample)]
+ [!code-vb[VectorExamples_snip#SubtractExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#subtractexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する形式を指定する文字列。  
+  
+ または  
+  
+ <see langword="null" />型に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider"><see langword="IFormatProvider" />を使用して値の書式設定します。  
+  
+ または  
+  
+ <see langword="null" />オペレーティング システムの現在のロケール設定から数値の書式情報を取得できます。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 このメンバーの詳細については、「<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>指定された形式で現在のインスタンスの値を含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.Vector" />構造体。</summary>
+        <returns>表す文字列、<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />この値<see cref="T:System.Windows.Vector" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用しての文字列表現を取得する方法を示しています、<xref:System.Windows.Vector>です。  
+  
+ [!code-csharp[VectorExamples_snip#ToStringExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#tostringexample)]
+ [!code-vb[VectorExamples_snip#ToStringExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#tostringexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Vector.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.Vector" />指定した書式情報を含む構造体。</summary>
+        <returns>表す文字列、<see cref="P:System.Windows.Vector.X" />と<see cref="P:System.Windows.Vector.Y" />この値<see cref="T:System.Windows.Vector" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public double X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Vector.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Vector.X" />このベクトルのコンポーネントです。</summary>
+        <value><see cref="P:System.Windows.Vector.X" />このベクトルのコンポーネントです。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Vector>構造が等しいかどうか。  
+  
+ [!code-csharp[VectorExamples_snip#VectorEqualityExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#vectorequalityexample)]
+ [!code-vb[VectorExamples_snip#VectorEqualityExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#vectorequalityexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public double Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Vector.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Vector.Y" />このベクトルのコンポーネントです。</summary>
+        <value><see cref="P:System.Windows.Vector.Y" />このベクトルのコンポーネントです。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Vector>構造が等しいかどうか。  
+  
+ [!code-csharp[VectorExamples_snip#VectorEqualityExample](~/samples/snippets/csharp/VS_Snippets_Wpf/VectorExamples_snip/CSharp/VectorExample.cs#vectorequalityexample)]
+ [!code-vb[VectorExamples_snip#VectorEqualityExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VectorExamples_snip/visualbasic/vectorexample.vb#vectorequalityexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1779 @@
+<Type Name="Network" FullName="Microsoft.VisualBasic.Devices.Network">
+  <TypeSignature Language="C#" Value="public class Network" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Network extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Network" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ、イベント、およびコンピューターが接続されているネットワークと対話するメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、関連するタスクの例については、`My.Computer.Network`オブジェクト。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+|接続状態を確認します。|[方法 : 接続ステータスをチェックする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`http://www.cohowinery.com/uploads にします。  
+  
+ [!code-vb[VbVbalrMyNetwork#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Network ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Network" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (string address, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(string address, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー先ファイルが既に存在する場合、`DownloadFile`メソッドでは、既存のファイルは上書きされません。 他のオーバー ロードのいずれかを使用することができます、 <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> 、既存のファイルを上書きするように指定するメソッドが、ユーザー資格情報を提供または特定のタイムアウト値を指定します。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー先ファイルが既に存在する場合、`DownloadFile`メソッドでは、既存のファイルは上書きされません。 他のオーバー ロードのいずれかを使用することができます、 <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> 、既存のファイルを上書きするように指定するメソッドが、ユーザー資格情報を提供または特定のタイムアウト値を指定します。 `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (string address, string destinationFileName, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(string address, string destinationFileName, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー先ファイルが既に存在する場合、`DownloadFile`メソッドでは、既存のファイルは上書きされません。 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>メソッドを既存のファイルを上書きするか、特定のタイムアウト値を指定するように指定します。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー先ファイルが既に存在する場合、`DownloadFile`メソッドでは、既存のファイルは上書きされません。 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>メソッドを既存のファイルを上書きするか、特定のタイムアウト値を指定するように指定します。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName, System.Net.ICredentials networkCredentials, bool showUI, int connectionTimeout, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName, class System.Net.ICredentials networkCredentials, bool showUI, int32 connectionTimeout, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String,System.Net.ICredentials,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="networkCredentials" Type="System.Net.ICredentials" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="address">
+          <see langword="String" /> または <see cref="T:System.Uri" />。 ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">
+          <see langword="String" />。 ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="networkCredentials">
+          <see cref="T:System.Net.ICredentials" />。 指定する資格情報です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (string address, string destinationFileName, string userName, string password, bool showUI, int connectionTimeout, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(string address, string destinationFileName, string userName, string password, bool showUI, int32 connectionTimeout, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.String,System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">
+          <see cref="T:System.Int32" />。 タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName, System.Net.ICredentials networkCredentials, bool showUI, int connectionTimeout, bool overwrite, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName, class System.Net.ICredentials networkCredentials, bool showUI, int32 connectionTimeout, bool overwrite, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String,System.Net.ICredentials,System.Boolean,System.Int32,System.Boolean,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="networkCredentials" Type="System.Net.ICredentials" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="networkCredentials">指定する資格情報です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときの動作を指定**キャンセル**または**なし**の結果として表示されるダイアログ ボックスで<c>showUI</c> 'éý'<see langword="True" />です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName, string userName, string password, bool showUI, int connectionTimeout, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName, string userName, string password, bool showUI, int32 connectionTimeout, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (string address, string destinationFileName, string userName, string password, bool showUI, int connectionTimeout, bool overwrite, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(string address, string destinationFileName, string userName, string password, bool showUI, int32 connectionTimeout, bool overwrite, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.String,System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときの動作を指定**キャンセル**または**なし**の結果として表示されるダイアログ ボックスで<c>ShowUI</c> 'éý'<see langword="True" />です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadFile">
+      <MemberSignature Language="C#" Value="public void DownloadFile (Uri address, string destinationFileName, string userName, string password, bool showUI, int connectionTimeout, bool overwrite, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DownloadFile(class System.Uri address, string destinationFileName, string userName, string password, bool showUI, int32 connectionTimeout, bool overwrite, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.DownloadFile(System.Uri,System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="address">ファイル名とホスト アドレスを含む、ダウンロードするファイルのパス。</param>
+        <param name="destinationFileName">ファイル名と、ダウンロードしたファイルのパス。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列""です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列""です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒)。 既定値は、100 秒です。</param>
+        <param name="overwrite">
+          <see langword="True" />既存のファイルを上書きするにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときの動作を指定**キャンセル**または**なし**の結果として表示されるダイアログ ボックスで<c>ShowUI</c> 'éý'<see langword="True" />です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定されたリモート ファイルをダウンロードし、指定した場所に保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、操作の進行状況が表示されるダイアログ ボックスが表示されます。 ダイアログ ボックスが含まれています、**キャンセル**操作をキャンセルするために使用するボタンをクリックします。 ダイアログ ボックスでは、モーダルではないと、プログラムでは、他のウィンドウにユーザー入力をブロックしません。  
+  
+ 指定したサーバーが応答しない場合`connectionTimeout`操作が取り消され、例外がスローされます。  
+  
+ `DownloadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  `DownloadFile`メソッドは省略可能な HTTP ヘッダーを送信しません。 省略可能なユーザー エージェントのヘッダーが見つからない場合、一部のサーバーは 500 (内部サーバー エラー) を返す可能性があります。 省略可能なヘッダーを送信する要求を使用して、構築する必要があります、<xref:System.Net.WebClient>クラスです。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.DownloadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#7)]  
+  
+ この例は、ファイルをダウンロード`WineList.txt`から`http://www.cohowinery.com/downloads`に保存および`C:\Documents and Settings\All Users\Documents`、500 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destinationFileName" />末尾のスラッシュで終わっています。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="overwrite" />設定されている<see langword="False" />とコピー先ファイルが既に存在します。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAvailable">
+      <MemberSignature Language="C#" Value="public bool IsAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAvailable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Network.IsAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターがネットワークに接続されているかどうかを示します。</summary>
+        <value>
+          <see langword="True" />コンピューターがネットワークに接続されている場合それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsAvailable`常に返します`False`から呼び出された場合、`Click Once`アプリケーションまたはユーザーがいないかどうかは<xref:System.Net.NetworkInformation.NetworkInformationPermission>します。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Network.IsAvailable`プロパティです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|コンピューターがネットワークに接続されているかどうかを確認します。|[方法 : 接続ステータスをチェックする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)|  
+  
+   
+  
+## Examples  
+ この例では、プロパティの状態を確認し、それを報告します。  
+  
+ [!code-vb[VbVbalrMyNetwork#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkAvailabilityChanged">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.Devices.Network.NetworkAvailabilityChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワークの可用性が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、`NetworkAvailabilityChanged`イベント、ネットワークの可用性が変更されるたびにします。 使用することができます、<xref:Microsoft.VisualBasic.Devices.NetworkAvailableEventArgs.IsNetworkAvailable%2A>のプロパティ、`e`パラメーターをネットワーク接続の新しい状態を取得します。 ネットワーク接続の現在の状態を取得する、<xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>プロパティです。  
+  
+ Windows フォーム アプリケーションでこのイベントは、他のユーザー インターフェイスのイベントと、アプリケーションのメイン スレッドで発生します。 これにより、アプリケーションのユーザー インターフェイスに直接アクセスする、イベント ハンドラーです。 ただし場合、アプリケーションがこのイベントが発生したときに別のユーザー インターフェイス イベントを処理でビジー状態である場合、このイベントは処理できません、他のイベント ハンドラーが完了するかを呼び出すまで、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.DoEvents%2A>メソッドです。  
+  
+ 使用することはできません、`Handles`を処理するステートメント、`NetworkAvailabilityChanged`イベントです。 使用する必要があります、`AddHandler`ステートメントです。  
+  
+ Windows フォーム アプリケーションで、`MyApplication`オブジェクトの公開、`NetworkAvailabilityChanged`がこのイベントと同じ機能を提供するイベントが処理して、`Handles`ステートメントです。  
+  
+> [!NOTE]
+>  ハブがより大きなネットワークから切断されている場合でも、多くのネットワーク ハブは、ネットワーク接続を提供します。 その結果、ワイヤード (有線) 接続は、このイベントは、コンピューターとハブの間の接続の変更を示します。  
+  
+> [!NOTE]
+>  `NetworkAvailabilityChanged` Windows 95 および Windows 98 で実行されるアプリケーションや Windows 2000 で非管理者によって実行されるアプリケーションによって、イベントは発生しません。 場合は、アプリケーションがこれらのプラットフォームで実行されるを使用して、<xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Network.NetworkAvailabilityChanged`フォームまたはコントロールのユーザー インターフェイスを更新するイベントです。  
+  
+ このコードは、フォームまたはコントロールを持つことが必要な<xref:System.Windows.Forms.Label>という`Label1`です。  
+  
+ [!code-vb[VbVbalrMyApplication#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ping">
+      <MemberSignature Language="C#" Value="public bool Ping (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool Ping(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.Ping(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">URL、コンピューター名、またはサーバーの IP の数に ping を実行します。</param>
+        <summary>指定したサーバーに ping を実行します。</summary>
+        <returns>
+          処理が正常に実行された場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Ping`メソッドは、リモート コンピューターの可用性を決定するための緊急時のメソッドではありません。 ターゲット コンピューターに ping ポートをオフにすることがありますまたは ping 要求は、ファイアウォールまたはルーターによってブロックされる可能性があります。  
+  
+ 渡されるアドレス、`Ping`メソッドは、DNS で解決可能なをする必要があるあり、前に"http://"することはできません。  
+  
+   
+  
+## Examples  
+ この例は、決定することにより、サーバーの ping を実行できるかどうかを報告するかどうか、`Ping`メソッドを返します。`True`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#4)]  
+  
+ 置き換える`"198.01.01.01"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ この例では確認することで、サーバーの ping を実行できるかどうかどうか、`Ping`メソッドが返されます`True`し 1000 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#5)]  
+  
+ 置き換える`"www.cohowinery.com"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ネットワーク接続がありません。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">URL が無効でした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.SocketPermission">作成およびトランスポート アドレスで接続を受け入れる権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">Windows NT パフォーマンス カウンター コンポーネントへのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">ネットワーク情報と、ローカル コンピューターのトラフィックの統計情報へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Ping">
+      <MemberSignature Language="C#" Value="public bool Ping (Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool Ping(class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.Ping(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">Ping を実行するサーバーの URI。</param>
+        <summary>指定したサーバーに ping を実行します。</summary>
+        <returns>
+          処理が正常に実行された場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Ping`メソッドは、リモート コンピューターの可用性を決定するための緊急時のメソッドではありません。 ターゲット コンピューターに ping ポートをオフにすることがありますまたは ping 要求は、ファイアウォールまたはルーターによってブロックされる可能性があります。  
+  
+ 渡されるアドレス、`Ping`メソッドは、DNS で解決可能なをする必要があるあり、前に"http://"することはできません。  
+  
+   
+  
+## Examples  
+ この例は、決定することにより、サーバーの ping を実行できるかどうかを報告するかどうか、`Ping`メソッドを返します。`True`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#4)]  
+  
+ 置き換える`"198.01.01.01"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ この例では確認することで、サーバーの ping を実行できるかどうかどうか、`Ping`メソッドが返されます`True`し 1000 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#5)]  
+  
+ 置き換える`"www.cohowinery.com"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ネットワーク接続がありません。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">URL が無効でした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.SocketPermission">作成およびトランスポート アドレスで接続を受け入れる権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">Windows NT パフォーマンス カウンター コンポーネントへのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">ネットワーク情報と、ローカル コンピューターのトラフィックの統計情報へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Ping">
+      <MemberSignature Language="C#" Value="public bool Ping (string hostNameOrAddress, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool Ping(string hostNameOrAddress, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.Ping(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">URL、コンピューター名、またはサーバーの IP の数に ping を実行します。</param>
+        <param name="timeout">接続先のミリ秒単位で時間のしきい値。 既定値は 500 です。</param>
+        <summary>指定したサーバーに ping を実行します。</summary>
+        <returns>
+          処理が正常に実行された場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Ping`メソッドは、リモート コンピューターの可用性を決定するための緊急時のメソッドではありません。 ターゲット コンピューターに ping ポートをオフにすることがありますまたは ping 要求は、ファイアウォールまたはルーターによってブロックされる可能性があります。  
+  
+ 渡されるアドレス、`Ping`メソッドは、DNS で解決可能なをする必要があるあり、前に"http://"することはできません。  
+  
+   
+  
+## Examples  
+ この例は、決定することにより、サーバーの ping を実行できるかどうかを報告するかどうか、`Ping`メソッドを返します。`True`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#4)]  
+  
+ 置き換える`"198.01.01.01"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ この例では確認することで、サーバーの ping を実行できるかどうかどうか、`Ping`メソッドが返されます`True`し 1000 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#5)]  
+  
+ 置き換える`"www.cohowinery.com"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ネットワーク接続がありません。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">URL が無効でした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.SocketPermission">作成およびトランスポート アドレスで接続を受け入れる権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">Windows NT パフォーマンス カウンター コンポーネントへのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">ネットワーク情報と、ローカル コンピューターのトラフィックの統計情報へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Ping">
+      <MemberSignature Language="C#" Value="public bool Ping (Uri address, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool Ping(class System.Uri address, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.Ping(System.Uri,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address">Ping を実行するサーバーの URI。</param>
+        <param name="timeout">接続先のミリ秒単位で時間のしきい値。 既定値は 500 です。</param>
+        <summary>指定したサーバーに ping を実行します。</summary>
+        <returns>
+          処理が正常に実行された場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Ping`メソッドは、リモート コンピューターの可用性を決定するための緊急時のメソッドではありません。 ターゲット コンピューターに ping ポートをオフにすることがありますまたは ping 要求は、ファイアウォールまたはルーターによってブロックされる可能性があります。  
+  
+ 渡されるアドレス、`Ping`メソッドは、DNS で解決可能なをする必要があるあり、前に"http://"することはできません。  
+  
+   
+  
+## Examples  
+ この例は、決定することにより、サーバーの ping を実行できるかどうかを報告するかどうか、`Ping`メソッドを返します。`True`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#4)]  
+  
+ 置き換える`"198.01.01.01"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ この例では確認することで、サーバーの ping を実行できるかどうかどうか、`Ping`メソッドが返されます`True`し 1000 ミリ秒のタイムアウト間隔を指定します。  
+  
+ [!code-vb[VbVbalrMyNetwork#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#5)]  
+  
+ 置き換える`"www.cohowinery.com"`に ping を実行するサーバーの IP アドレス、URL、またはコンピューターの名前を持つ。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ネットワーク接続がありません。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">URL が無効でした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.SocketPermission">作成およびトランスポート アドレスで接続を受け入れる権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">Windows NT パフォーマンス カウンター コンポーネントへのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">ネットワーク情報と、ローカル コンピューターのトラフィックの統計情報へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>ユーザーの資格情報を指定するか、特定のタイムアウト値を指定します。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ソース ファイルのパスが正しくありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>ユーザーの資格情報を指定するか、特定のタイムアウト値を指定します。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ソース ファイルのパスが正しくありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, string address, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, string address, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>固有のタイムアウト値を指定します。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のオーバー ロードのいずれかを使用することができます、<xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>固有のタイムアウト値を指定します。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">既定のタイムアウト時間 (100 秒) 内のサーバーが応答しません。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address, System.Net.ICredentials networkCredentials, bool showUI, int connectionTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address, class System.Net.ICredentials networkCredentials, bool showUI, int32 connectionTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri,System.Net.ICredentials,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="networkCredentials" Type="System.Net.ICredentials" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="networkCredentials">認証の資格情報。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, string address, string userName, string password, bool showUI, int connectionTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, string address, string userName, string password, bool showUI, int32 connectionTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.String,System.String,System.String,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address, System.Net.ICredentials networkCredentials, bool showUI, int connectionTimeout, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address, class System.Net.ICredentials networkCredentials, bool showUI, int32 connectionTimeout, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri,System.Net.ICredentials,System.Boolean,System.Int32,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="networkCredentials" Type="System.Net.ICredentials" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="networkCredentials">認証の資格情報。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときに実行するアクションを**キャンセル**です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address, string userName, string password, bool showUI, int connectionTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address, string userName, string password, bool showUI, int32 connectionTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri,System.String,System.String,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="showUI">
+          <see langword="True" />操作の進行状況を表示するにはそれ以外の場合<see langword="False" />です。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, string address, string userName, string password, bool showUI, int connectionTimeout, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, string address, string userName, string password, bool showUI, int32 connectionTimeout, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.String,System.String,System.String,System.Boolean,System.Int32,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="showUI">操作の進行状況を表示するかどうか。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときに実行するアクションを**キャンセル**です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadFile">
+      <MemberSignature Language="C#" Value="public void UploadFile (string sourceFileName, Uri address, string userName, string password, bool showUI, int connectionTimeout, Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void UploadFile(string sourceFileName, class System.Uri address, string userName, string password, bool showUI, int32 connectionTimeout, valuetype Microsoft.VisualBasic.FileIO.UICancelOption onUserCancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Network.UploadFile(System.String,System.Uri,System.String,System.String,System.Boolean,System.Int32,Microsoft.VisualBasic.FileIO.UICancelOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="connectionTimeout" Type="System.Int32" />
+        <Parameter Name="onUserCancel" Type="Microsoft.VisualBasic.FileIO.UICancelOption" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">パスと、アップロードするファイルの名前。</param>
+        <param name="address">URL、IP アドレス、または移行先サーバーの URI。</param>
+        <param name="userName">認証するユーザー名。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="password">認証するパスワードです。 既定値は空の文字列: <c>""</c>です。</param>
+        <param name="showUI">操作の進行状況を表示するかどうか。 既定値は <see langword="False" /> です。</param>
+        <param name="connectionTimeout">タイムアウト間隔 (ミリ秒単位)。 既定値は、100 秒です。</param>
+        <param name="onUserCancel">ユーザーがクリックしたときに実行するアクションを**キャンセル**です。 既定値は <see cref="F:Microsoft.VisualBasic.FileIO.UICancelOption.ThrowException" /> です。</param>
+        <summary>指定したホスト アドレスを指定したファイルを送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`showUI`に設定されている`True`、ダイアログ ボックスは、操作の進行状況が表示され、含まれています、**キャンセル**操作を取り消す、ユーザーがクリックしてボタンをクリックします。 ダイアログがモーダルではないため、プログラムでは、他のウィンドウにユーザー入力はブロックされません。  
+  
+ 指定した間隔内で、サーバーが応答しない場合`connectionTimeout`操作は取り消され、例外がスローされます。  
+  
+ `My.Computer.Network.UploadFile`出力は、アプリケーションでネットワーク トレースを有効にすると、情報をトレースします。 詳細については、次を参照してください。[ネットワーク トレースを有効にすると](~/docs/framework/network-programming/enabling-network-tracing.md)です。  
+  
+> [!NOTE]
+>  FTP プロトコルはについては、プレーン テキストでパスワードを含むを送信し、機密情報を送信するのには使用できません。  
+  
+ 次の表に、関連するタスクの例、`My.Computer.Network.UploadFile`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`に`http://www.cohowinery.com/uploads`です。  
+  
+ [!code-vb[VbVbalrMyNetwork#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#2)]  
+  
+ この例では、`Order.txt` ファイルを `http://www.cohowinery.com/uploads` にアップロードします。ユーザー名やパスワードは指定せず、アップロードの進行状況を表示し、タイムアウト間隔は 500 ミリ秒に設定しています。  
+  
+ [!code-vb[VbVbalrMyNetwork#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="connectionTimeout" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="address" />ファイル名は含まれません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、ネットワーク操作の実行に必要なアクセス許可が不足しています。</exception>
+        <exception cref="T:System.TimeoutException">指定した、サーバーが応答しない<paramref name="connectionTimeout" />です。</exception>
+        <exception cref="T:System.Net.WebException">要求は、ターゲット web サーバーによって拒否されます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

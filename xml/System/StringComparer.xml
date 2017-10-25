@@ -1,0 +1,852 @@
+<Type Name="StringComparer" FullName="System.StringComparer">
+  <TypeSignature Language="C#" Value="public abstract class StringComparer : System.Collections.Generic.IComparer&lt;string&gt;, System.Collections.Generic.IEqualityComparer&lt;string&gt;, System.Collections.IComparer, System.Collections.IEqualityComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit StringComparer extends System.Object implements class System.Collections.Generic.IComparer`1&lt;string&gt;, class System.Collections.Generic.IEqualityComparer`1&lt;string&gt;, class System.Collections.IComparer, class System.Collections.IEqualityComparer" />
+  <TypeSignature Language="DocId" Value="T:System.StringComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IComparer&lt;System.String&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEqualityComparer&lt;System.String&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IEqualityComparer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>大文字と小文字の区別、およびカルチャ ベースまたは序数ベースの特定の比較規則を使用する文字列比較操作を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したオブジェクト、<xref:System.StringComparer>クラスは、文字列ベースの比較、等しいかどうか、および両方のユース ケース、およびカルチャに固有の比較規則を考慮するハッシュ コードの操作を具体化します。 使用することができます、<xref:System.StringComparer>をジェネリック コレクションに要素を並べ替えるための比較を型固有を作成するクラス。 などのクラス<xref:System.Collections.Hashtable>、 <xref:System.Collections.Generic.Dictionary%602>、 <xref:System.Collections.SortedList>、および<xref:System.Collections.Generic.SortedList%602>を使用して、<xref:System.StringComparer>を並べ替える目的でクラスです。  
+  
+ 比較演算で表される、<xref:System.StringComparer>大文字小文字を区別や大文字と小文字、いずれかの単語 (カルチャ) を使用するクラスが定義されているまたは序数に基づく (カルチャに依存しない) 比較ルールです。 Word と序数に基づく比較の規則に関する詳細については、次を参照してください。<xref:System.Globalization.CompareOptions?displayProperty=nameWithType>です。  
+  
+## <a name="implemented-properties"></a>実装されたプロパティ  
+ 使用方法に関する混乱を防ぐ必要があります、<xref:System.StringComparer>クラス上の矛盾が原因のプロパティです。 <xref:System.StringComparer>クラスが宣言されている`abstract`(`MustInherit` Visual Basic で)、つまり、そのメンバーがから派生したクラスのオブジェクトでのみ呼び出すことができます、<xref:System.StringComparer>クラスです。 否定は、の各プロパティ、<xref:System.StringComparer>クラスが宣言されている`static`(`Shared` Visual Basic で)、つまり、プロパティが派生クラスを作成しなくても呼び出すことができます。  
+  
+ 呼び出すことができます、<xref:System.StringComparer>プロパティを直接の各プロパティが実際には、匿名がから派生したクラスのインスタンスを返すため、<xref:System.StringComparer>クラスです。 そのため、各プロパティ値の型は<xref:System.StringComparer>、匿名のクラスの基底クラスではない、匿名の型クラス自体です。 各<xref:System.StringComparer>クラスのプロパティから返される、<xref:System.StringComparer>定義済みの場合と比較規則をサポートするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティ、および<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StringComparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.StringComparer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較するオブジェクト<c>y</c>です。</param>
+        <param name="y">比較するオブジェクト<c>x</c>です。</param>
+        <summary>派生クラスでオーバーライドされた場合、2 つのオブジェクトを比較し、相対的な並べ替え順序を表す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" />前に<paramref name="y" />並べ替え順序で。  
+ 
+  または  
+ 
+  <paramref name="x" /> が <see langword="null" /> で、<paramref name="y" /> が <see langword="null" /> ではありません。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> が等価です。  
+ 
+  または  
+ 
+  <paramref name="x" /> と <paramref name="y" /> が両方とも <see langword="null" /> です。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" />依存<paramref name="y" />並べ替え順序で。  
+ 
+  または  
+ 
+  <paramref name="y" /> が <see langword="null" /> で、<paramref name="x" /> が <see langword="null" /> ではありません。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType>メソッドはよりも若干効率的、<xref:System.StringComparer.Compare%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>メソッドのための変換はありません、`x`と`y`比較を実行する引数が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">どちらも<paramref name="x" />も<paramref name="y" />は、<see cref="T:System.String" />オブジェクト、およびどちら<paramref name="x" />も<paramref name="y" />を実装する、<see cref="T:System.IComparable" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public abstract int Compare (string x, string y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(string x, string y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.Compare(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.String" />
+        <Parameter Name="y" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する文字列<c>y</c>です。</param>
+        <param name="y">比較する文字列<c>x</c>です。</param>
+        <summary>派生クラスでオーバーライドされた場合、2 つの文字列を比較し、相対的な並べ替え順序を表す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" />前に<paramref name="y" />並べ替え順序で。  
+ 
+  または  
+ 
+  <paramref name="x" /> が <see langword="null" /> で、<paramref name="y" /> が <see langword="null" /> ではありません。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> が等価です。  
+ 
+  または  
+ 
+  <paramref name="x" /> と <paramref name="y" /> が両方とも <see langword="null" /> です。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" />依存<paramref name="y" />並べ替え順序で。  
+ 
+  または  
+ 
+  <paramref name="y" /> が <see langword="null" /> で、<paramref name="x" /> が <see langword="null" /> ではありません。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType>メソッドはよりも若干効率的、<xref:System.StringComparer.Compare%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>メソッドのための変換はありません、`x`と`y`比較を実行する引数が必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static StringComparer Create (System.Globalization.CultureInfo culture, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.StringComparer Create(class System.Globalization.CultureInfo culture, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.Create(System.Globalization.CultureInfo,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="culture">文字列比較を実行するための言語的な規則を定義したカルチャ。</param>
+        <param name="ignoreCase">
+          比較操作で大文字と小文字を区別しない場合は、<see langword="true" /> を指定します。比較操作で大文字と小文字を区別する場合は、<see langword="false" /> を指定します。</param>
+        <summary>指定したカルチャの規則に基づいて文字列を比較する <see cref="T:System.StringComparer" /> オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.StringComparer" /> パラメーターで使用する比較規則と <paramref name="culture" /> パラメーターで指定する大文字と小文字の区別の規則に基づいて文字列を比較する新しい <paramref name="ignoreCase" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、プロパティを示します、<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="culture" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCulture">
+      <MemberSignature Language="C#" Value="public static StringComparer CurrentCulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer CurrentCulture" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.CurrentCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカルチャの単語ベースの比較規則を使用して、大文字と小文字を区別して文字列を比較する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value>新しい <see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.CurrentCulture%2A>文字列は、言語的な意味と、プロパティを使用できます。 たとえば、文字列が、ユーザーに表示されている場合、または文字列は、ユーザーの操作の結果である場合は、文字列データの並べ替えにカルチャに依存した文字列比較を使用してください。  
+  
+ 現在のカルチャが、<xref:System.Globalization.CultureInfo>現在のスレッドに関連付けられているオブジェクト。  
+  
+ <xref:System.StringComparer.CurrentCulture%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+ 呼び出しごとに、<xref:System.StringComparer.CurrentCulture%2A>プロパティ`get`アクセサーは、新しいを返します<xref:System.StringComparer>として、次のコードに示すオブジェクト。  
+  
+ [!code-csharp[System.StringComparer.CurrentCulture#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer.CurrentCulture/cs/CompareObjects.cs#1)]
+ [!code-vb[System.StringComparer.CurrentCulture#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer.CurrentCulture/vb/CompareObjects.vb#1)]  
+  
+ パフォーマンスを向上させるには、保存することができます、<xref:System.StringComparer>の値を取得するのではなく、ローカル変数にオブジェクト、<xref:System.StringComparer.CurrentCulture%2A>プロパティ複数回です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティを示します、<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCultureIgnoreCase">
+      <MemberSignature Language="C#" Value="public static StringComparer CurrentCultureIgnoreCase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer CurrentCultureIgnoreCase" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.CurrentCultureIgnoreCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカルチャの単語ベースの比較規則を使用して、大文字と小文字を区別せずに文字列を比較する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value>新しい <see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のカルチャが、<xref:System.Globalization.CultureInfo>現在のスレッドに関連付けられているオブジェクト。  
+  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.CurrentCultureIgnoreCase%2A>文字列は、言語的な意味は、大文字小文字の場合、プロパティを使用できます。 たとえば、文字列がユーザーに表示されますが、ケースは重要でない、カルチャに依存した場合、文字列データの並べ替えに大文字と小文字の文字列比較を使用する必要があります。  
+  
+ <xref:System.StringComparer.CurrentCultureIgnoreCase%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+ 呼び出しごとに、<xref:System.StringComparer.CurrentCultureIgnoreCase%2A>プロパティ`get`アクセサーは、新しいを返します<xref:System.StringComparer>として、次のコードに示すオブジェクト。  
+  
+ [!code-csharp[System.StringComparer.CurrentCulture#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer.CurrentCulture/cs/CompareObjects.cs#2)]
+ [!code-vb[System.StringComparer.CurrentCulture#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer.CurrentCulture/vb/CompareObjects.vb#2)]  
+  
+ パフォーマンスを向上させるには、保存することができます、<xref:System.StringComparer>の値を取得するのではなく、ローカル変数にオブジェクト、<xref:System.StringComparer.CurrentCultureIgnoreCase%2A>プロパティ複数回です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.Equals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較するオブジェクト<c>y</c>です。</param>
+        <param name="y">比較するオブジェクト<c>x</c>です。</param>
+        <summary>派生クラスでオーバーライドされた場合、2 つのオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="x" /> が同じオブジェクトを参照している場合、または <paramref name="y" /> と <paramref name="x" /> が同じ型のオブジェクトでこれらのオブジェクトが等しい場合、または <paramref name="y" /> と <paramref name="x" /> が両方とも <paramref name="y" /> の場合は <see langword="null" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイムはボックス化を解除する必要はありませんので`x`または`y`値型または試行にキャストされる場合`x`または`y`文字列参照型では場合に、<xref:System.StringComparer.Equals%28System.String%2CSystem.String%29>メソッドをよりも若干効率的にすることがあります、<xref:System.StringComparer.Equals%28System.Object%2CSystem.Object%29>メソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public abstract bool Equals (string x, string y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(string x, string y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.Equals(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.String" />
+        <Parameter Name="y" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する文字列<c>y</c>です。</param>
+        <param name="y">比較する文字列<c>x</c>です。</param>
+        <summary>派生クラスでオーバーライドされた場合、2 つの文字列が等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="x" /> が同じオブジェクトを参照している場合、または <paramref name="y" /> と <paramref name="x" /> が等しい場合、または <paramref name="y" /> と <paramref name="x" /> が <paramref name="y" /> の場合は <see langword="null" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイムはボックス化を解除する必要はありませんので`x`または`y`値型または試行にキャストされる場合`x`または`y`文字列参照型では場合に、<xref:System.StringComparer.Equals%28System.String%2CSystem.String%29>メソッドをよりも若干効率的にすることがあります、<xref:System.StringComparer.Equals%28System.Object%2CSystem.Object%29>メソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromComparison">
+      <MemberSignature Language="C#" Value="public static StringComparer FromComparison (StringComparison comparisonType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.StringComparer FromComparison(valuetype System.StringComparison comparisonType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.FromComparison(System.StringComparison)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparisonType" Type="System.StringComparison" />
+      </Parameters>
+      <Docs>
+        <param name="comparisonType">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.GetHashCode(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定したオブジェクトのハッシュ コードを取得します。</summary>
+        <returns><paramref name="obj" /> パラメーターの値から計算された 32 ビットの符号付きハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer.GetHashCode%28System.String%29>メソッドより効率的、<xref:System.StringComparer.GetHashCode%2A>メソッドのため、`obj`パラメーターは、操作を実行するボックス化解除する必要はありません。  
+  
+ <xref:System.StringComparer.GetHashCode%28System.Object%29>メソッドの割り当てのサイズに比例したメモリの量が`obj`のハッシュ コードを計算する`obj`です。 長い文字列の場合、ハッシュ コードを取得中にスローする可能性が、<xref:System.ArgumentException>です。 代わりに、ハッシュ コードを計算するときに、固定量のメモリを割り当てを行うための代替アルゴリズムを使用することができます。 このアルゴリズムを使用するのには、追加、 [< NetFx45_CultureAwareComparerGetHashCode_LongStrings >](~/docs/framework/configure-apps/file-schema/runtime/netfx45-cultureawarecomparergethashcode-longstrings-element.md)要素を[\<ランタイム >](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md)アプリケーションの構成ファイルのセクションです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ハッシュ コードを計算するために必要なバッファーに十分なメモリを割り当てることができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public abstract int GetHashCode (string obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(string obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.GetHashCode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="obj">文字列。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定した文字列のハッシュ コードを取得します。</summary>
+        <returns><paramref name="obj" /> パラメーターの値から計算された 32 ビットの符号付きハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer.GetHashCode%28System.String%29>メソッドより効率的、<xref:System.StringComparer.GetHashCode%28System.Object%29>メソッドのため、`obj`パラメーターは、操作を実行するボックス化解除する必要はありません。  
+  
+ <xref:System.StringComparer.GetHashCode%28System.String%29>メソッドの割り当てのサイズに比例したメモリの量が`obj`のハッシュ コードを計算する`obj`です。 長い文字列の場合、ハッシュ コードを取得中にスローする可能性が、<xref:System.ArgumentException>です。 代わりに、ハッシュ コードを計算するときに、固定量のメモリを割り当てを行うための代替アルゴリズムを使用することができます。 このアルゴリズムを使用するのには、追加、 [< NetFx45_CultureAwareComparerGetHashCode_LongStrings >](~/docs/framework/configure-apps/file-schema/runtime/netfx45-cultureawarecomparergethashcode-longstrings-element.md)要素を[\<ランタイム >](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md)アプリケーションの構成ファイルのセクションです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ハッシュ コードを計算するために必要なバッファーに十分なメモリを割り当てることができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantCulture">
+      <MemberSignature Language="C#" Value="public static StringComparer InvariantCulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer InvariantCulture" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.InvariantCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インバリアント カルチャの単語ベースの比較規則を使用して、大文字と小文字を区別して文字列を比較する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value>新しい <see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.InvariantCulture%2A>プロパティ、言語的な意味的に文字列を比較しますには、特定のカルチャでの表示に適していません。 主要なアプリケーションは、複数のカルチャで同じような方法で順序文字列にです。  
+  
+ インバリアント カルチャが、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。  
+  
+ <xref:System.StringComparer.InvariantCulture%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティを示します、<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantCultureIgnoreCase">
+      <MemberSignature Language="C#" Value="public static StringComparer InvariantCultureIgnoreCase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer InvariantCultureIgnoreCase" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.InvariantCultureIgnoreCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インバリアント カルチャの単語ベースの比較規則を使用して、大文字と小文字を区別せずに文字列を比較する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value>新しい <see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.InvariantCultureIgnoreCase%2A>プロパティは、大文字小文字、言語的な意味の方法で文字列を比較するが、特定カルチャでの表示に適したではありません。 主要なアプリケーションは、複数のカルチャで同じような方法で順序文字列にです。  
+  
+ インバリアント カルチャが、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。  
+  
+ <xref:System.StringComparer.InvariantCultureIgnoreCase%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="public static StringComparer Ordinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer Ordinal" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.Ordinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字と小文字を区別して序数の文字列比較を実行する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.Ordinal%2A>プロパティが、言語の独立した単純なバイト比較を実行します。 これは、機能は、パスワードなどの大文字小文字を区別のリソースを比較する場合やプログラムでは、文字列を比較する生成されたときに最も適しています。  
+  
+ <xref:System.StringComparer.Ordinal%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティを示します、<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrdinalIgnoreCase">
+      <MemberSignature Language="C#" Value="public static StringComparer OrdinalIgnoreCase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.StringComparer OrdinalIgnoreCase" />
+      <MemberSignature Language="DocId" Value="P:System.StringComparer.OrdinalIgnoreCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大文字と小文字を区別せずに序数の文字列比較を実行する <see cref="T:System.StringComparer" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.StringComparer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparer>によって返される、<xref:System.StringComparer.OrdinalIgnoreCase%2A>プロパティは、インバリアント カルチャの規則を使用して大文字に変換された場合、比較対象の文字列で文字を扱うし、は独立した単純なバイト比較を実行し、言語。 これは、機能は、パスとファイル名などの大文字と小文字のリソースを比較する場合やプログラムで生成されたは文字列を比較するときに最も適しています。  
+  
+ <xref:System.StringComparer.OrdinalIgnoreCase%2A>プロパティが実際には匿名から派生したクラスのインスタンスを返します、<xref:System.StringComparer>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プロパティを示します、<xref:System.StringComparer.Create%2A>のメソッド、<xref:System.StringComparer>クラスです。 例に示す別の方法<xref:System.StringComparer>オブジェクト並べ替え 3 つのバージョン、ラテン文字 I。  
+  
+ [!code-cpp[System.StringComparer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.StringComparer/cpp/omni.cpp#1)]
+ [!code-csharp[System.StringComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.StringComparer/cs/omni.cs#1)]
+ [!code-vb[System.StringComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.StringComparer/vb/omni.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IComparer.Compare">
+      <MemberSignature Language="C#" Value="int IComparer.Compare (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IComparer.Compare(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.System#Collections#IComparer#Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <param name="y">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEqualityComparer.Equals">
+      <MemberSignature Language="C#" Value="bool IEqualityComparer.Equals (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IEqualityComparer.Equals(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.System#Collections#IEqualityComparer#Equals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <param name="y">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEqualityComparer.GetHashCode">
+      <MemberSignature Language="C#" Value="int IEqualityComparer.GetHashCode (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IEqualityComparer.GetHashCode(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.StringComparer.System#Collections#IEqualityComparer#GetHashCode(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

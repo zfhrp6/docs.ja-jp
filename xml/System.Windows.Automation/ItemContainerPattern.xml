@@ -1,0 +1,78 @@
+<Type Name="ItemContainerPattern" FullName="System.Windows.Automation.ItemContainerPattern">
+  <TypeSignature Language="C#" Value="public class ItemContainerPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ItemContainerPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ItemContainerPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アイテムを管理し、プロパティ値による項目の取得をサポートしているオブジェクトを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FindItemByProperty">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement FindItemByProperty (System.Windows.Automation.AutomationElement startAfter, System.Windows.Automation.AutomationProperty property, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement FindItemByProperty(class System.Windows.Automation.AutomationElement startAfter, class System.Windows.Automation.AutomationProperty property, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ItemContainerPattern.FindItemByProperty(System.Windows.Automation.AutomationElement,System.Windows.Automation.AutomationProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startAfter" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="property" Type="System.Windows.Automation.AutomationProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="startAfter">検索を開始する位置の後、コンテナー内の項目。</param>
+        <param name="property">取得する値を格納するプロパティ。</param>
+        <param name="value">取得する値。</param>
+        <summary>指定されたプロパティ値によって要素を取得します。</summary>
+        <returns>検索条件に一致する最初の項目それ以外の場合、<see langword="null" />アイテムと一致しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、`propertyId`パラメーターを`0`後の次の項目を取得する`startAfter`で指定された値に関係なく、`value`です。 設定`startAfter`に`null`最初の項目で検索を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ItemContainerPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.ItemContainerPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.SynchronizedInputPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>、指定された対象から目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

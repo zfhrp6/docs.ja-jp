@@ -1,0 +1,166 @@
+<Type Name="UpdatedConditionAction" FullName="System.Workflow.Activities.Rules.UpdatedConditionAction">
+  <TypeSignature Language="C#" Value="public sealed class UpdatedConditionAction : System.Workflow.Activities.Rules.RuleConditionChangeAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit UpdatedConditionAction extends System.Workflow.Activities.Rules.RuleConditionChangeAction" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.UpdatedConditionAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.Rules.RuleConditionChangeAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動的更新に際して実際に変更される <see cref="T:System.Workflow.Activities.Rules.RuleSet" /> を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、動的更新中に変更された <xref:System.Workflow.Activities.Rules.RuleCondition> オブジェクトを判断するために、追跡サービスによって使用されます。 このオブジェクトのインスタンスは、動的更新の後もそのまま存在し続けるけれども式は変更されている、各 RuleCondition ごとに生成されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpdatedConditionAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.UpdatedConditionAction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.UpdatedConditionAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpdatedConditionAction (System.Workflow.Activities.Rules.RuleCondition conditionDefinition, System.Workflow.Activities.Rules.RuleCondition newConditionDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.Activities.Rules.RuleCondition conditionDefinition, class System.Workflow.Activities.Rules.RuleCondition newConditionDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.UpdatedConditionAction.#ctor(System.Workflow.Activities.Rules.RuleCondition,System.Workflow.Activities.Rules.RuleCondition)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditionDefinition" Type="System.Workflow.Activities.Rules.RuleCondition" />
+        <Parameter Name="newConditionDefinition" Type="System.Workflow.Activities.Rules.RuleCondition" />
+      </Parameters>
+      <Docs>
+        <param name="conditionDefinition">変更前の条件です。</param>
+        <param name="newConditionDefinition">新しい条件です。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.UpdatedConditionAction" /> クラスの新しいインスタンスを初期化します。変更前と変更後の条件を引数として渡します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="newConditionDefinition" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="conditionDefinition" /> の名前が <paramref name="newConditionDefinition." /> の名前と一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTo">
+      <MemberSignature Language="C#" Value="protected override bool ApplyTo (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ApplyTo(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.UpdatedConditionAction.ApplyTo(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionDefinition">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleCondition ConditionDefinition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.Rules.RuleCondition ConditionDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.UpdatedConditionAction.ConditionDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクションにより置き換えられる条件を取得または設定します。</summary>
+        <value>このアクションにより置き換えられる条件。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クラスを逆シリアル化できるように設定可能になっています。 このプロパティを設定する必要はありません。 動的更新中に変更すると、予期しない結果になる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに null 参照 (Visual Basic では <see langword="Nothing" />) を設定しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionName">
+      <MemberSignature Language="C#" Value="public override string ConditionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConditionName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.UpdatedConditionAction.ConditionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>置き換えられる条件の名前を取得します。</summary>
+        <value>置き換えられる条件の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewConditionDefinition">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleCondition NewConditionDefinition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.Rules.RuleCondition NewConditionDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.UpdatedConditionAction.NewConditionDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の条件に代わる新しい条件を取得または設定します。</summary>
+        <value>既存の条件に代わる新しい条件。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クラスを逆シリアル化できるように設定可能になっています。 このプロパティを設定する必要はありません。 動的更新中に変更すると、予期しない結果になる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに null 参照 (Visual Basic では <see langword="Nothing" />) を設定しています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

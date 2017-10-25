@@ -1,0 +1,89 @@
+<Type Name="IHasXmlNode" FullName="System.Xml.IHasXmlNode">
+  <TypeSignature Language="C#" Value="public interface IHasXmlNode" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHasXmlNode" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.IHasXmlNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>返されるクラスを有効にする<see cref="T:System.Xml.XmlNode" />から現在のコンテキストまたは位置。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IHasXmlNode`インターフェイスを返すクラスを有効にするインターフェイスを提供する、<xref:System.Xml.XmlNode>から現在のコンテキストまたは位置。 によって実装されている<xref:System.Xml.XPath.XPathNavigator>オブジェクトを持つクラス上で動作する<xref:System.Xml.XmlNode>ノード。 たとえば場合、`XPathNavigator`オブジェクトによって作成されて、 <xref:System.Xml.XmlDocument>、使用することができます、<xref:System.Xml.IHasXmlNode.GetNode%2A>を返すメソッドを`XmlNode`ナビゲーターの現在位置を表すです。  
+  
+   
+  
+## Examples  
+ 次の例では、`GetNode`メソッドを取得し、選択したノードを変更します。  
+  
+ [!code-cpp[IHasXmlNode.GetNode#1](~/samples/snippets/cpp/VS_Snippets_Data/IHasXmlNode.GetNode/CPP/hasxmlnode.cpp#1)]
+ [!code-csharp[IHasXmlNode.GetNode#1](~/samples/snippets/csharp/VS_Snippets_Data/IHasXmlNode.GetNode/CS/hasxmlnode.cs#1)]
+ [!code-vb[IHasXmlNode.GetNode#1](~/samples/snippets/visualbasic/VS_Snippets_Data/IHasXmlNode.GetNode/VB/hasxmlnode.vb#1)]  
+  
+ この例では、`books.xml`として入力します。  
+  
+ [!code-xml[IHasXmlNode.GetNode#2](~/samples/snippets/xml/VS_Snippets_Data/IHasXmlNode.GetNode/XML/books.xml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetNode">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNode GetNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode GetNode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.IHasXmlNode.GetNode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xml.XmlNode" />の現在の位置。</summary>
+        <returns><see langword="XmlNode" />の現在の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の c# コードを使用して`GetNode`ノードにアクセスする、<xref:System.Xml.XPath.XPathNavigator>の現在位置にします。  
+  
+```  
+XmlDocument doc = new XmlDocument();  
+doc.Load("books.xml");  
+XPathNavigator nav =  doc.CreateNavigator();  
+XmlNode node = ((IHasXmlNode)nav).GetNode();  
+Console.WriteLine(node.LocalName);   
+//You can edit the returned XmlNode.  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

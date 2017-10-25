@@ -1,0 +1,38 @@
+<Type Name="DesignerActionUIStateChangeEventHandler" FullName="System.ComponentModel.Design.DesignerActionUIStateChangeEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DesignerActionUIStateChangeEventHandler(object sender, DesignerActionUIStateChangeEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DesignerActionUIStateChangeEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionUIStateChangeEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントの発生元の <see cref="T:System.Object" />。</param>
+    <param name="e">イベントに固有の情報です。</param>
+    <summary><see cref="E:System.ComponentModel.Design.DesignerActionUIService.DesignerActionUIStateChange" /> の <see cref="T:System.ComponentModel.Design.DesignerActionUIService" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント モデル、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]イベント デリゲート、イベントのハンドラーを関連付けるを持つに基づきます。 発生させるために、<xref:System.ComponentModel.Design.DesignerActionUIService.DesignerActionUIStateChange>イベント、2 つの要素が必要があります。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs>から派生したクラス<xref:System.EventArgs?displayProperty=nameWithType>、イベント データを格納します。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionUIStateChangeEventHandler>デリゲート、イベントに応答を提供するメソッドを指しています。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionUIStateChangeEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,299 @@
+<Type Name="IEngine2" FullName="Microsoft.JScript.IEngine2">
+  <TypeSignature Language="C#" Value="public interface IEngine2" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEngine2" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.IEngine2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("BFF6C97F-0705-4394-88B8-A03A4B8B4CD7")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>IActiveScript ホストが必要とする追加の機能を定義します。 によって実装される、<see cref="T:Microsoft.JScript.Vsa.VsaEngine" />エンジンです。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.Vsa.IJSVsaEngine Clone (AppDomain domain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.JScript.Vsa.IJSVsaEngine Clone(class System.AppDomain domain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.Clone(System.AppDomain)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.Vsa.IJSVsaEngine</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+      </Parameters>
+      <Docs>
+        <param name="domain">新しいエンジンを作成するためのアプリケーション ドメイン。</param>
+        <summary>クラスで実装された場合、コンパイル済みの状態と名前付きの項目を含む、新しいアプリケーション ドメインで実行されている同一の新しいエンジンを作成します。 これは、JScript では実装されていません。</summary>
+        <returns>新しいエンジン。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompileEmpty">
+      <MemberSignature Language="C#" Value="public bool CompileEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CompileEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.CompileEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、エンジンの現在のすべての状態のコンパイルをトリガーします。 すべての参照、コード項目、ホスト項目、およびリソースは、コンパイラで実行されます。</summary>
+        <returns>
+          <see langword="true" />場合は、コンパイルが成功すると、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectEvents">
+      <MemberSignature Language="C#" Value="public void ConnectEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ConnectEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.ConnectEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、グローバル イベント ハンドラーにイベントを持つすべての登録イベント ソースを接続できることをエンジンに通信します。 これは、JScript では実装されていません。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectEvents">
+      <MemberSignature Language="C#" Value="public void DisconnectEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisconnectEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.DisconnectEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、イベント ハンドラーからイベント ソースをアンフックするエンジンに指示します。 これは、JScript では実装されていません。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly GetAssembly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly GetAssembly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.GetAssembly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、コンパイル手順で生成されるコンパイル済みのアセンブリを取得します。</summary>
+        <returns>コンパイル済みのアセンブリ。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalScope">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.IVsaScriptScope GetGlobalScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.JScript.IVsaScriptScope GetGlobalScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.GetGlobalScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.IVsaScriptScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、グローバル スコープのオブジェクトを取得します。</summary>
+        <returns>グローバル スコープのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetModule">
+      <MemberSignature Language="C#" Value="public System.Reflection.Module GetModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Module GetModule() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.GetModule" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Module</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、コンパイルされたアセンブリから、このコード モジュールを取得します。</summary>
+        <returns>コンパイルされたアセンブリからのコード モジュールです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InitVsaEngine">
+      <MemberSignature Language="C#" Value="public void InitVsaEngine (string rootMoniker, Microsoft.JScript.Vsa.IJSVsaSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitVsaEngine(string rootMoniker, class Microsoft.JScript.Vsa.IJSVsaSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.InitVsaEngine(System.String,Microsoft.JScript.Vsa.IJSVsaSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootMoniker" Type="System.String" />
+        <Parameter Name="site" Type="Microsoft.JScript.Vsa.IJSVsaSite" />
+      </Parameters>
+      <Docs>
+        <param name="rootMoniker">スクリプト エンジンのルート モニカーです。 詳細については、「<see cref="P:Microsoft.Vsa.IVsaEngine.RootMoniker" />」を参照してください。</param>
+        <param name="site">ホスト実装<see cref="T:Microsoft.Vsa.IVsaSite" />ホストと通信するために、スクリプト エンジンによって使用されるオブジェクト。 詳細については、「<see cref="P:Microsoft.Vsa.IVsaEngine.Site" />」を参照してください。</param>
+        <summary>クラスで実装された場合、初期化、<see cref="T:Microsoft.JScript.Vsa.VsaEngine" />です。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Interrupt">
+      <MemberSignature Language="C#" Value="public void Interrupt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Interrupt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.Interrupt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、呼び出す<see cref="M:System.Threading.Thread.Abort" />スクリプト コードを実行しているスレッドにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードを実行するために使用したスレッドで呼び出すことはできません。 これを行う場合は、独自のスレッドを停止します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterEventSource">
+      <MemberSignature Language="C#" Value="public void RegisterEventSource (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterEventSource(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.RegisterEventSource(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">イベントを提供する追加の項目の名前です。</param>
+        <summary>クラスで実装された場合、イベントのソースとしてマークされているアイテムの名前を指定できるように、<see cref="M:Microsoft.JScript.IEngine2.ConnectEvents" />メソッドが接続するには、どのイベントを確認できます。 これは、JScript では実装されていません。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Restart">
+      <MemberSignature Language="C#" Value="public void Restart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Restart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.Restart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、新しい式を評価する前に、エンジンをクリーンな状態にリセットする必要があるときにこのメソッドは、デバッガーによって呼び出されます。 メソッドは、項目が追加されたとグローバル スコープを元の状態にリセットします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public void Run (AppDomain domain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Run(class System.AppDomain domain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.Run(System.AppDomain)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="domain" Type="System.AppDomain" />
+      </Parameters>
+      <Docs>
+        <param name="domain">コンパイル済みコードを実行するためのアプリケーション ドメイン。</param>
+        <summary>クラスとして実装された場合は、指定したアプリケーション ドメインで、コンパイルされたコードを実行します。 これはマネージ エンジンでは、コードを実行するユーザー指定のアプリケーション ドメインでサポートされないために、JScript では実装されません。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RunEmpty">
+      <MemberSignature Language="C#" Value="public void RunEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RunEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IEngine2.RunEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、現在のコンパイル済みコードを実行<see cref="T:System.AppDomain" />です。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,343 @@
+<Type Name="PhysicalAddress" FullName="System.Net.NetworkInformation.PhysicalAddress">
+  <TypeSignature Language="C#" Value="public class PhysicalAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PhysicalAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.PhysicalAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク インターフェイス (アダプター) のメディア アクセス コントロール (MAC) アドレスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MAC アドレス、または物理アドレスは、コンピューターまたはネットワーク上のプリンターなど、各ノードを一意に識別するハードウェア アドレスです。  
+  
+ このクラスのインスタンスがによって返される、<xref:System.Net.NetworkInformation.NetworkInterface.GetPhysicalAddress%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル コンピューター上の物理アドレスのすべてのインターフェイスを表示します。  
+  
+ [!code-cpp[NCLPhysicalAddress#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#2)]
+ [!code-csharp[NCLPhysicalAddress#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PhysicalAddress (byte[] address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="address">A<see cref="T:System.Byte" />アドレスを含む配列。</param>
+        <summary><see cref="T:System.Net.NetworkInformation.PhysicalAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通のシナリオでは、アプリケーションする必要はありませんこのコンス トラクターを呼び出すこのクラスのインスタンスがによって返される、<xref:System.Net.NetworkInformation.NetworkInterface.GetPhysicalAddress%2A>メソッドです。  
+  
+ 使用することもなお、<xref:System.Net.NetworkInformation.PhysicalAddress.Parse%2A>の新しいインスタンスを作成するメソッド<xref:System.Net.NetworkInformation.PhysicalAddress>です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Net.NetworkInformation.PhysicalAddress>オブジェクト。  
+  
+ [!code-cpp[NCLPhysicalAddress#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#4)]
+ [!code-csharp[NCLPhysicalAddress#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand"><see cref="T:System.Net.NetworkInformation.PhysicalAddress" />を現在のインスタンスを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Net.NetworkInformation.PhysicalAddress" />インスタンス。</summary>
+        <returns>
+          <see langword="true" />このインスタンスと指定されたインスタンスに同じアドレスが含まれている場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、2 つを比較して<xref:System.Net.NetworkInformation.PhysicalAddress>インスタンス。  
+  
+ [!code-cpp[NCLPhysicalAddress#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#3)]
+ [!code-csharp[NCLPhysicalAddress#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAddressBytes">
+      <MemberSignature Language="C#" Value="public byte[] GetAddressBytes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetAddressBytes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.GetAddressBytes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのアドレスを返します。</summary>
+        <returns>A<see cref="T:System.Byte" />アドレスを含む配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、のアドレスを取得するには、このメソッドを呼び出して、<xref:System.Net.NetworkInformation.PhysicalAddress>および表示するアドレスの形式です。  
+  
+ [!code-cpp[NCLPhysicalAddress#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#2)]
+ [!code-csharp[NCLPhysicalAddress#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>物理アドレスのハッシュ値を返します。</summary>
+        <returns>整数ハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.NetworkInformation.PhysicalAddress None;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.NetworkInformation.PhysicalAddress None" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.PhysicalAddress.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PhysicalAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Net.NetworkInformation.PhysicalAddress" />長さ 0 のアドレスを持つインスタンス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.PhysicalAddress.Parse%2A>メソッドを返します。<xref:System.Net.NetworkInformation.PhysicalAddress.None>を指定する場合`null`アドレス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このフィールドを使用して、アドレスの解析結果をテストするを示しています。  
+  
+ [!code-cpp[NCLPhysicalAddress#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#5)]
+ [!code-csharp[NCLPhysicalAddress#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Net.NetworkInformation.PhysicalAddress Parse (string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.NetworkInformation.PhysicalAddress Parse(string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PhysicalAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">A<see cref="T:System.String" />初期化するために使用されるアドレスを含む、<see cref="T:System.Net.NetworkInformation.PhysicalAddress" />このメソッドによって返されるインスタンス。</param>
+        <summary>指定した解析<see cref="T:System.String" />アドレス バイト数としてその内容を保存し、<see cref="T:System.Net.NetworkInformation.PhysicalAddress" />このメソッドによって返されます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PhysicalAddress" />指定されたアドレスを持つインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `address`パラメーターは数字のみで構成される文字列を含める必要があり、大文字の文字と 16 進数。 許容される文字列形式の例をいくつかは次のとおりです。  
+  
+ `001122334455`  
+  
+ `00-11-22-33-44-55`  
+  
+ `F0-E1-D2-C3-B4-A5`  
+  
+ アドレスを含むことに注意してください`f0-e1-d2-c3-b4-a5`を解析し、例外がスローは失敗します。  
+  
+ 使用して、 <xref:System.Net.NetworkInformation.PhysicalAddress.GetAddressBytes%2A> 、既存のアドレスを取得する方法を<xref:System.Net.NetworkInformation.PhysicalAddress>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.NetworkInformation.PhysicalAddress>を呼び出してインスタンス、<xref:System.Net.NetworkInformation.PhysicalAddress.Parse%2A>メソッドです。  
+  
+ [!code-cpp[NCLPhysicalAddress#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#5)]
+ [!code-csharp[NCLPhysicalAddress#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException"><paramref name="address" />パラメーターに無効なハードウェア アドレスが含まれています。  
+  
+ この例外は、場合にも発生、<paramref name="address" />パラメーターが正しくない形式の文字列に含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.PhysicalAddress.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />このインスタンスのアドレスの形式です。</summary>
+        <returns>A<see cref="T:System.String" />このインスタンスに含まれるアドレスを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 内のアドレスを表示する次のコード例に示します、<xref:System.Net.NetworkInformation.PhysicalAddress>インスタンス。  
+  
+ [!code-cpp[NCLPhysicalAddress#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPhysicalAddress/CPP/NCLPhysicalAddress.cpp#3)]
+ [!code-csharp[NCLPhysicalAddress#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPhysicalAddress/CS/physaddresstester.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

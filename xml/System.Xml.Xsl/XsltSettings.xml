@@ -1,0 +1,284 @@
+<Type Name="XsltSettings" FullName="System.Xml.Xsl.XsltSettings">
+  <TypeSignature Language="C#" Value="public sealed class XsltSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XsltSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XsltSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XSLT スタイル シートの実行中にサポートするために、XSLT の機能を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スクリプト ブロックと、XSLT に埋め込まれた`document()`関数が省略可能な機能、<xref:System.Xml.Xsl.XslCompiledTransform>クラスです。 これらの機能は、既定で無効にします。 <xref:System.Xml.Xsl.XsltSettings>クラスでは、これらの省略可能な機能をサポートするを指定します。 機能が有効か、クラスのプロパティを使用して無効にします。 その後、<xref:System.Xml.Xsl.XsltSettings> オブジェクトは <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A?displayProperty=nameWithType> メソッドに渡されます。  
+  
+> [!IMPORTANT]
+>  XSLT スタイル シートには、他のファイルへの参照や埋め込みのスクリプト ブロックを含めることができます。 悪意のあるユーザーがこれを悪用して、コンピューターがリソース不足に陥るまでシステムに処理を行わせようとするデータやスタイル シートを提供する可能性があります。 スクリプトを有効にしない、または`document()`スタイル シートが信頼できる発行元がない限り、機能します。 スタイル シートのソースを確認できない場合、またはスタイル シートが信頼できる発行元から付属していない場合は、既定の XSLT 設定を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、スタイル シートを読み込みし、XSLT スクリプトのサポートを有効にします。  
+  
+ [!code-csharp[XslCompiledTransform.Load#6](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#6)]
+ [!code-vb[XslCompiledTransform.Load#6](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsltSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Xml.Xsl.XsltSettings" /> クラスの新しいインスタンスを既定の設定で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Xml.Xsl.XsltSettings>オブジェクトは、XSLT をサポートしていません`document()`関数または埋め込みのスクリプト ブロックです。  
+  
+> [!IMPORTANT]
+>  XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。 有効にした場合、`document()`関数を渡すことによってアクセスできるリソースを制限することができます、<xref:System.Xml.XmlSecureResolver>オブジェクトを<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsltSettings (bool enableDocumentFunction, bool enableScript);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enableDocumentFunction, bool enableScript) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XsltSettings.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enableDocumentFunction" Type="System.Boolean" />
+        <Parameter Name="enableScript" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enableDocumentFunction">
+          <see langword="true" />XSLT のサポートを有効に<c>document()</c>関数です。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="enableScript">
+          <see langword="true" />埋め込みスクリプト ブロックのサポートを有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Xsl.XsltSettings" />指定した設定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。 有効にした場合、`document()`関数を渡すことによってアクセスできるリソースを制限することができます、<xref:System.Xml.XmlSecureResolver>オブジェクトを<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、スタイル シートを読み込みし、XSLT スクリプトのサポートを有効にします。  
+  
+ [!code-csharp[XslCompiledTransform.Load#6](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#6)]
+ [!code-vb[XslCompiledTransform.Load#6](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Xml.Xsl.XsltSettings Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xml.Xsl.XsltSettings Default" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltSettings.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.XsltSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Xsl.XsltSettings" />既定の設定を持つオブジェクト。 XSLT のサポート<c>document()</c>関数と埋め込みのスクリプト ブロックが無効になっています。</summary>
+        <value><see cref="T:System.Xml.Xsl.XsltSettings" />オブジェクトを<see cref="P:System.Xml.Xsl.XsltSettings.EnableDocumentFunction" />と<see cref="P:System.Xml.Xsl.XsltSettings.EnableScript" />プロパティに設定<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、XSLT 設定の既定のスタイル シートを読み込みます。  
+  
+ [!code-csharp[XslCompiledTransform.Load#7](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#7)]
+ [!code-vb[XslCompiledTransform.Load#7](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDocumentFunction">
+      <MemberSignature Language="C#" Value="public bool EnableDocumentFunction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableDocumentFunction" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltSettings.EnableDocumentFunction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XSLT のサポートを有効にするかどうかを示す値を取得または<c>document()</c>関数。</summary>
+        <value>
+          <see langword="true" />XSLT をサポートするために<c>document()</c>関数です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  有効にした場合、`document()`関数を渡すことによってアクセスできるリソースを制限することができます、<xref:System.Xml.XmlSecureResolver>オブジェクトを<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableScript">
+      <MemberSignature Language="C#" Value="public bool EnableScript { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableScript" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltSettings.EnableScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または埋め込みのスクリプト ブロックのサポートを有効にするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />XSLT スタイル シートにスクリプト ブロックをサポートするためにそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedXslt">
+      <MemberSignature Language="C#" Value="public static System.Xml.Xsl.XsltSettings TrustedXslt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xml.Xsl.XsltSettings TrustedXslt" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XsltSettings.TrustedXslt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.XsltSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Xml.Xsl.XsltSettings" /> XSLT のサポートを有効にするオブジェクト<c>document()</c>関数と埋め込みのスクリプト ブロックです。</summary>
+        <value><see cref="T:System.Xml.Xsl.XsltSettings" />オブジェクトを<see cref="P:System.Xml.Xsl.XsltSettings.EnableDocumentFunction" />と<see cref="P:System.Xml.Xsl.XsltSettings.EnableScript" />プロパティに設定<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。 有効にした場合、`document()`関数を渡すことによってアクセスできるリソースを制限することができます、<xref:System.Xml.XmlSecureResolver>オブジェクトを<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、サポートが、XSLT のスタイル シートを読み込み`document()`関数と埋め込みのスクリプト ブロック機能を有効にします。  
+  
+ [!code-csharp[XslCompiledTransform.Load#8](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#8)]
+ [!code-vb[XslCompiledTransform.Load#8](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

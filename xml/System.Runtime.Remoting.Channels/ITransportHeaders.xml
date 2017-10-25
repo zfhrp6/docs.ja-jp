@@ -1,0 +1,101 @@
+<Type Name="ITransportHeaders" FullName="System.Runtime.Remoting.Channels.ITransportHeaders">
+  <TypeSignature Language="C#" Value="public interface ITransportHeaders" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITransportHeaders" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.ITransportHeaders" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シンクのチャネルで使用されるヘッダーのコレクションを保存します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ITransportHeaders_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ITransportHeaders_Item/CPP/itransportheaders_3_server.cpp#1)]
+ [!code-csharp[ITransportHeaders_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ITransportHeaders_Item/CS/itransportheaders_3_server.cs#1)]
+ [!code-vb[ITransportHeaders_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ITransportHeaders_Item/VB/itransportheaders_3_server.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ITransportHeaders.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />のすべてのエントリを反復処理する、<see cref="T:System.Runtime.Remoting.Channels.ITransportHeaders" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Collections.IEnumerator" />のすべてのエントリを反復処理する、<see cref="T:System.Runtime.Remoting.Channels.ITransportHeaders" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ITransportHeaders_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ITransportHeaders_Item/CPP/itransportheaders_3_server.cpp#1)]
+ [!code-csharp[ITransportHeaders_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ITransportHeaders_Item/CS/itransportheaders_3_server.cs#1)]
+ [!code-vb[ITransportHeaders_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ITransportHeaders_Item/VB/itransportheaders_3_server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.ITransportHeaders.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">キー、要求されたトランスポート ヘッダーが関連付けられています。</param>
+        <summary>取得または指定したキーに関連付けられたトランスポート ヘッダーを設定します。</summary>
+        <value>指定したキーに関連付けられたトランスポート ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストアドのヘッダーに設定されている場合`null`キー/値ペアを削除します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ITransportHeaders_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ITransportHeaders_Item/CPP/itransportheaders_3_server.cpp#1)]
+ [!code-csharp[ITransportHeaders_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ITransportHeaders_Item/CS/itransportheaders_3_server.cs#1)]
+ [!code-vb[ITransportHeaders_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ITransportHeaders_Item/VB/itransportheaders_3_server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

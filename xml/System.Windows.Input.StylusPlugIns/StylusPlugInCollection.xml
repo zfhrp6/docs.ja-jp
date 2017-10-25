@@ -1,0 +1,122 @@
+<Type Name="StylusPlugInCollection" FullName="System.Windows.Input.StylusPlugIns.StylusPlugInCollection">
+  <TypeSignature Language="C#" Value="public sealed class StylusPlugInCollection : System.Collections.ObjectModel.Collection&lt;System.Windows.Input.StylusPlugIns.StylusPlugIn&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StylusPlugInCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Input.StylusPlugIns.StylusPlugIn&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusPlugIns.StylusPlugInCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Windows.Input.StylusPlugIns.StylusPlugIn&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Windows.Input.StylusPlugIns.StylusPlugIn</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表す<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.UIElement>が、<xref:System.Windows.UIElement.StylusPlugIns%2A>であるプロパティ、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>です。 追加、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>要素の<xref:System.Windows.UIElement.StylusPlugIns%2A>リアルタイムのスレッドでインクを操作するプロパティです。 順序、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>内のオブジェクト、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>がレンダリングされるとき、インクの外観に影響します。 あると、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>と呼ばれる`dynamicRenderer`とカスタム<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>と呼ばれる`translatePlugin`タブレット ペンのインクをオフセットします。 場合`translatePlugin`最初<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>と`dynamicRenderer`2 つ目は、ユーザーがペンを移動すると、「流れ出て」、インクがオフセットされます。 場合`dynamicRenderer`は最初、および`translatePlugin`ペンの下にあるを使用して、ユーザーは、インクが移動、ペンを持ち上げるを「フロー」するインクがあるかもしれませんが 2 番目、します。  
+  
+   
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>カスタム コントロールです。 インクを収集するコントロールを作成するを参照してください。[インク入力コントロールを作成する](~/docs/framework/wpf/advanced/creating-an-ink-input-control.md)です。  
+  
+ [!code-csharp[StylusPluginSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/StylusControl.cs#3)]
+ [!code-vb[StylusPluginSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/StylusControl.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugInCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Windows.Input.StylusPlugIns.StylusPlugIn plugIn);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Windows.Input.StylusPlugIns.StylusPlugIn plugIn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugInCollection.InsertItem(System.Int32,System.Windows.Input.StylusPlugIns.StylusPlugIn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="plugIn" Type="System.Windows.Input.StylusPlugIns.StylusPlugIn" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="plugIn">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugInCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Windows.Input.StylusPlugIns.StylusPlugIn plugIn);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Windows.Input.StylusPlugIns.StylusPlugIn plugIn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugInCollection.SetItem(System.Int32,System.Windows.Input.StylusPlugIns.StylusPlugIn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="plugIn" Type="System.Windows.Input.StylusPlugIns.StylusPlugIn" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="plugIn">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

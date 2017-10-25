@@ -1,0 +1,109 @@
+<Type Name="XmlWriteMode" FullName="System.Data.XmlWriteMode">
+  <TypeSignature Language="C#" Value="public enum XmlWriteMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlWriteMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.XmlWriteMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>XML データとリレーショナル スキーマを作成する方法を指定、<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する場合は、この列挙体のメンバーを使用して、`WriteMode`のパラメーター、<xref:System.Data.DataSet.WriteXml%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DiffGram">
+      <MemberSignature Language="C#" Value="DiffGram" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlWriteMode DiffGram = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlWriteMode.DiffGram" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlWriteMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元の値と現在の値を含め、<see cref="T:System.Data.DataSet" /> 全体を DiffGram として書き込みます。 DiffGram を格納するだけで変更された値を生成するには、呼び出す<see cref="M:System.Data.DataSet.GetChanges" />、まず<see cref="M:System.Data.DataSet.WriteXml(System.IO.Stream)" />、返されるの DiffGram として<see cref="T:System.Data.DataSet" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreSchema">
+      <MemberSignature Language="C#" Value="IgnoreSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlWriteMode IgnoreSchema = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlWriteMode.IgnoreSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlWriteMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の内容を書き込みます、 <see cref="T:System.Data.DataSet" /> XSD スキーマを含まない、XML データとして。 データが読み込まれていない場合、 <see cref="T:System.Data.DataSet" />、何も書き込まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSchema">
+      <MemberSignature Language="C#" Value="WriteSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlWriteMode WriteSchema = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlWriteMode.WriteSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlWriteMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の内容を書き込みます、<see cref="T:System.Data.DataSet" />インライン XSD スキーマとリレーショナルの構造と XML データとして。 場合、<see cref="T:System.Data.DataSet" />スキーマのみがあるデータのない、インライン スキーマのみが書き込まれます。 場合、<see cref="T:System.Data.DataSet" />は現在のスキーマでなく、何も書き込まれません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2737 @@
+<Type Name="MenuItemBinding" FullName="System.Web.UI.WebControls.MenuItemBinding">
+  <TypeSignature Language="C#" Value="public sealed class MenuItemBinding : ICloneable, System.Web.UI.IDataSourceViewSchemaAccessor, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MenuItemBinding extends System.Object implements class System.ICloneable, class System.Web.UI.IDataSourceViewSchemaAccessor, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MenuItemBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataSourceViewSchemaAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("TextField")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ項目とそのバインド先のメニュー項目の間のリレーションシップを定義、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールが各データ項目が複数のフィールドを含むデータ ソースにバインドされている (XML 要素などいくつかの属性を持つ)、メニュー項目のバインディングが定義されていない場合、メニュー項目が表示されますによって返される値、`ToString()`既定ではデータ項目のメソッドです。 XML 要素の場合は、メニュー項目には、要素名が、メニューの基になる構造を示していますが、それ以外が非常に便利ですが表示されます。 メニュー項目のプロパティは、メニュー項目のバインディングを指定することによって、特定のフィールドにバインドできます。 A<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトは、各データ項目とそのバインド先のメニュー項目間のリレーションシップを定義します。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.Menu>コントロールにバインドする、<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロール、メニュー項目のバインディングがある影響しません。 バインディングは、サイト マップ プロバイダーを使用して自動的に実行します。  
+  
+ <xref:System.Web.UI.WebControls.Menu>ストアを制御、<xref:System.Web.UI.WebControls.MenuItemBinding>内のオブジェクト、<xref:System.Web.UI.WebControls.Menu.DataBindings%2A>プロパティ メニュー階層と、データ ソースの階層間で一対一のリレーションシップを作成するデータ ソースにバインドを適用します。 データ ソース内の各データ項目の<xref:System.Web.UI.WebControls.Menu>コントロールがデータ項目を照合しようとした場合、 <xref:System.Web.UI.WebControls.MenuItemBinding> 、対応するを作成するオブジェクト<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+ 作成するときに、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト、バインディングの基準を指定する必要があります。 データ項目をメニュー項目にバインドするときに、条件を示します。 指定することができます、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A>、 <xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>、またはその両方です。  
+  
+ メニュー項目の深さは、バインドを取得するメニュー レベルを指定します。 たとえば、次<xref:System.Web.UI.WebControls.MenuItemBinding>宣言するデータ ソースの名前と ID フィールドに結合され、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ、それぞれに、すべてのノードの深さが 0 の。  
+  
+```  
+<asp:MenuItemBinding Depth="0" TextField="Name" ValueField="ID">  
+```  
+  
+ データ メンバーは、基になるデータ ソースのデータ項目の種類を指定しますが、データ ソースに応じて、異なる情報を表すことができます。 階層データ ソース内の各データ項目 (によって表される、<xref:System.Web.UI.IHierarchyData>オブジェクト) を公開、<xref:System.Web.UI.IHierarchyData.Type%2A>プロパティをデータ項目の種類を指定します。 たとえば、XML 要素のデータ メンバーは、要素の名前を指定します。 データ メンバーがデータを指定して、データ ソースには、複数のデータ項目の種類が含まれている、項目の種類を使用します。 次<xref:System.Web.UI.WebControls.MenuItemBinding>宣言バインド、`<Book>`の要素、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール メニューで、階層内の場所に関係なくすべてのメニュー項目を。  
+  
+```  
+<asp:MenuItemBinding DataMember="Book" TextField="Title" ValueField= "ISBN">  
+```  
+  
+ 場合によっては、深さと、データ メンバーの両方を指定するメニュー項目のバインディングを作成する必要があります。 これにより、データ ソースには、異なるレベルを同じデータ メンバーの値を持つ項目が含まれている場合がよく使用されます。 たとえば、ことが`<Item>`XML ファイル内の異なるレベルに出現する要素。 次<xref:System.Web.UI.WebControls.MenuItemBinding>の宣言は、別のメニューの深さでメンバーを同一のデータに適用されるメニュー項目のバインディングを指定する方法を示します。  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="1" TextField="Title">`  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="2" TextField="ISBN">`  
+  
+ メニュー項目のバインディングが深さとデータ メンバーのない定義されている場合、メニュー項目のバインディングは、メニュー内のすべてのメニュー項目に適用されます。 通常、すべてのデータ項目が同じプロパティを持つし、メニューの深さに関係なく同じ、表示する場合に使用します。  
+  
+ バインディングの基準が確立されるのプロパティにバインドすることができますし、<xref:System.Web.UI.WebControls.MenuItem>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.MenuItem>オブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用される同じ値を共有します。 フィールドにバインドされているプロパティには、データ ソースから対応するフィールドの値が格納されます。  
+  
+> [!NOTE]
+>  バインドされたプロパティを選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを対応するプロパティを直接設定します。  
+  
+ 次の表のプロパティの一覧、<xref:System.Web.UI.WebControls.MenuItemBinding>クラスのプロパティをバインドするため、<xref:System.Web.UI.WebControls.MenuItem>データ項目のフィールドへのオブジェクト。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+  
+ 次の表のプロパティの一覧、<xref:System.Web.UI.WebControls.MenuItemBinding>クラスのプロパティをバインドするため、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを静的な値にします。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。|  
+  
+ 競合している場合<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが定義されて、<xref:System.Web.UI.WebControls.Menu>制御には、次の優先順位でメニュー項目のバインディングが適用されます。  
+  
+1.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、深さと、データ メンバーの両方に一致するオブジェクト。  
+  
+2.  <xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト定義し、一致するデータ メンバーのみです。  
+  
+3.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、のみの深さに一致するオブジェクト。  
+  
+4.  <xref:System.Web.UI.WebControls.MenuItemBinding>深さでも、データ メンバーを定義するオブジェクト。 (この種類のメニュー項目のバインドは、メニューの すべてのメニュー項目に適用します。)  
+  
+5.  <xref:System.Web.UI.WebControls.MenuItemBinding>データ ソースに一致していないオブジェクトです。 ここでは、によって返される値、`ToString()`データ項目のメソッドにバインドし、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>するメニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+ <xref:System.Web.UI.WebControls.MenuItemBinding>クラスでは設定して、メニュー項目に表示されるテキストの書式を設定することもできます、<xref:System.Web.UI.WebControls.MenuItemBinding.FormatString%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.MenuItemBinding>のフィールド間のリレーションシップを定義するオブジェクト、<xref:System.Web.UI.WebControls.XmlDataSource>コントロールおよび内のメニュー項目、<xref:System.Web.UI.WebControls.Menu>コントロール。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItemBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.MenuItemBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItemBinding>クラスです。 動的に設定するときによく使用される、<xref:System.Web.UI.WebControls.Menu.DataBindings%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンス トラクターを使用して動的に設定する方法を示します、<xref:System.Web.UI.WebControls.Menu.DataBindings%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロール。 この例を正しく動作する MenuDepth.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingCtor/CS/menuitembindingctorcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingCtor/VB/menuitembindingctorvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメニュー項目にバインドするデータ メンバーを設定します。</summary>
+        <value>メニュー項目にバインドするデータ メンバーです。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト、バインディングの基準を指定する必要があります。 データ項目をメニュー項目にバインドするときに、条件を示します。 指定することができます、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ データ ソースには、複数の要素またはテーブルが含まれている、使用、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>要素またはメニュー項目にバインドするテーブルを指定するプロパティです。 データ メンバーは、基になるデータ ソースのデータ項目の種類を指定しますが、データ ソースに応じて、異なる情報を表すことができます。 階層データ ソース内の各データ項目 (によって表される、<xref:System.Web.UI.IHierarchyData?displayProperty=nameWithType>オブジェクト) を公開、<xref:System.Web.UI.IHierarchyData.Type%2A?displayProperty=nameWithType>プロパティをデータ項目の種類を指定します。 たとえば、XML 要素のデータ メンバーは、要素の名前を指定します。 次<xref:System.Web.UI.WebControls.MenuItemBinding>宣言バインド、`<Book>`の要素、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール メニューで、階層内の場所に関係なくすべてのメニュー項目を。  
+  
+```  
+<asp:MenuItemBinding DataMember="Book" TextField="Title" ValueField= "ISBN">  
+```  
+  
+ 場合によっては、深さと、データ メンバーの両方を指定するメニュー項目のバインディングを作成する必要があります。 これにより、データ ソースには、異なるレベルを同じデータ メンバーの値を持つ項目が含まれている場合がよく使用されます。 たとえば、ことが`<Item>`XML ファイル内の異なるレベルに出現する要素。 次<xref:System.Web.UI.WebControls.MenuItemBinding>の宣言は、別のメニューの深さでメンバーを同一のデータに適用されるメニュー項目のバインディングを指定する方法を示します。  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="1" TextField="Title">`  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="2" TextField="ISBN">`  
+  
+ メニュー項目のバインディングが深さまたはデータ メンバーなし定義されている場合、メニュー項目のバインディングは、メニュー内のすべてのメニュー項目に適用されます。 通常、すべてのデータ項目が同じプロパティを持つし、メニューの深さに関係なく同じ、表示する場合に使用します。  
+  
+ バインディングの基準が確立されるのプロパティにバインドすることができますし、<xref:System.Web.UI.WebControls.MenuItem>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.MenuItem>オブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用される同じ値を共有します。 フィールドにバインドされているプロパティには、データ ソースからのフィールドの値が格納されます。  
+  
+ 競合している場合<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが定義されて、<xref:System.Web.UI.WebControls.Menu>制御には、次の優先順位でメニュー項目のバインディングが適用されます。  
+  
+1.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、深さと、データ メンバーの両方に一致するオブジェクト。  
+  
+2.  <xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト定義し、一致するデータ メンバーのみです。  
+  
+3.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、のみの深さに一致するオブジェクト。  
+  
+4.  <xref:System.Web.UI.WebControls.MenuItemBinding>深さでも、データ メンバーを定義するオブジェクト。 (この種類のメニュー項目のバインドは、メニューの すべてのメニュー項目に適用します。)  
+  
+5.  <xref:System.Web.UI.WebControls.MenuItemBinding>データ ソースに一致していないオブジェクトです。 ここでは、によって返される値、`ToString()`データ項目のメソッドにバインドし、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>するメニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>でのメニュー項目にバインドされる XML 要素を指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。 この例を正しく動作する MenuDataMember.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingDataMember#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingDataMember/CS/menuitembindingdatamembercs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingDataMember#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingDataMember/VB/menuitembindingdatamembervb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapNodeHome ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNodeCategory ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNodeCategory>`  
+  
+ `<MapNodeCategory ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNodeSection ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNodeCategory>`  
+  
+ `</MapNodeHome>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public int Depth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.WebControls.TreeNodeBindingDepthConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定メニューの深さを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニューの深さを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は -1 です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト、バインディングの基準を指定する必要があります。 データ項目をメニュー項目にバインドするときに、条件を示します。 指定することができます、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A>プロパティを適用するメニューの深さを指定する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト。 たとえば、次<xref:System.Web.UI.WebControls.MenuItemBinding>宣言するデータ ソースの名前と ID フィールドに結合され、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ、0 の深さをすべてのメニュー項目のそれぞれを。  
+  
+```  
+<asp:MenuItemBinding Depth="0" TextField="Name" ValueField="ID">  
+```  
+  
+ 場合によっては、深さと、データ メンバーの両方を指定するメニュー項目のバインディングを作成する必要があります。 これにより、データ ソースには、異なるレベルを同じデータ メンバーの値を持つ項目が含まれている場合がよく使用されます。 たとえば、ことが`<Item>`XML ファイル内の異なるレベルに出現する要素。 次<xref:System.Web.UI.WebControls.MenuItemBinding>の宣言は、別のメニューの深さでメンバーを同一のデータに適用されるメニュー項目のバインディングを指定する方法を示します。  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="1" TextField="Title">`  
+  
+ `<asp:MenuItemBinding DataMember="Item" Depth="2" TextField="ISBN">`  
+  
+ メニュー項目のバインディングが深さとデータ メンバーのない定義されている場合、メニュー項目のバインディングは、メニュー内のすべてのメニュー項目に適用されます。 通常、すべてのデータ項目が同じプロパティを持つし、メニューの深さに関係なく同じ、表示する場合に使用します。  
+  
+ バインディングの基準が確立されるのプロパティにバインドすることができますし、<xref:System.Web.UI.WebControls.MenuItem>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.MenuItem>オブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用される同じ値を共有します。 フィールドにバインドされているプロパティには、データ ソースからのフィールドの値が格納されます。  
+  
+ 競合している場合<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが定義されて、<xref:System.Web.UI.WebControls.Menu>制御には、次の優先順位でメニュー項目のバインディングが適用されます。  
+  
+1.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、深さと、データ メンバーの両方に一致するオブジェクト。  
+  
+2.  <xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト定義し、一致するデータ メンバーのみです。  
+  
+3.  <xref:System.Web.UI.WebControls.MenuItemBinding>を定義し、のみの深さに一致するオブジェクト。  
+  
+4.  <xref:System.Web.UI.WebControls.MenuItemBinding>深さでも、データ メンバーを定義するオブジェクト。 (この種類のメニュー項目のバインドは、メニューの すべてのメニュー項目に適用します。)  
+  
+5.  <xref:System.Web.UI.WebControls.MenuItemBinding>データ ソースに一致していないオブジェクトです。 ここでは、によって返される値、`ToString()`データ項目のメソッドにバインドし、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>するメニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A>プロパティを適用するメニューの深さを指定する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクト。 この例を正しく動作する MenuDepth.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingDepth#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingDepth/CS/menuitembindingdepthcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingDepth#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingDepth/VB/menuitembindingdepthvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、メニュー項目を<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトの適用が有効になり、ポップアウト イメージとその子を表示する項目のメニュー項目。</summary>
+        <value>
+          <see langword="true" />メニュー項目をする場合、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />が適用されるが有効であるそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Enabled%2A>プロパティを設定、<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この設定が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 このプロパティに設定するときに`false`、メニュー項目が無効になり、子項目を示すポップアウト イメージは表示されません。 このプロパティを設定`false`本質的ににより、ここで詳細レベルが表示されないそのノードから、そのノードの最後の項目、メニューをメニュー項目にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnabledField">
+      <MemberSignature Language="C#" Value="public string EnabledField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EnabledField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.EnabledField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.Enabled" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.Enabled" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.EnabledField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+> [!NOTE]
+>  有効にする個々 のメニュー項目の設定をオーバーライドするその<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Enabled%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.EnabledField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.EnabledField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatString">
+      <MemberSignature Language="C#" Value="public string FormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.FormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するメニュー項目のテキストの表示形式を指定する文字列、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>書式指定文字列をメニュー項目のテキストの表示形式を指定する、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItemBinding.FormatString%2A>プロパティを使用するメニュー項目のテキストのカスタム書式を指定します。 書式指定文字列は、リテラル文字列、プレース ホルダー、またはその両方で構成できます。 メニュー項目のテキストにバインドされている値でプレース ホルダーを置き換えている間、逐語的、リテラル文字列が表示されます。  
+  
+ プレース ホルダーは、フォームで、コロンで区切られた 2 つの部分に分割 {`A`:`Bxx`}。 たとえば、{0: f2} には、小数点以下 2 桁の固定小数点数が表示されます。  
+  
+> [!NOTE]
+>  プレース ホルダー文字列は、プレース ホルダーとリテラル文字列ではなくであることを示すために中かっこで囲む必要があります。 かっこの外側の任意のテキストは、リテラル テキストとして表示されます。  
+  
+ 標準の書式設定文字列の構文、コロンの前に値を保持する (`A`一般的な例で) パラメーターの 0 から始まるリストのパラメーターのインデックスを指定します。 1 つの値は、各メニュー項目に表示されることができます、ために、パラメーター インデックスは 0 に設定できます。  
+  
+ コロンの後に文字 (`B`一般的な例で) 値の表示形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|説明|  
+|----------------------|-----------------|  
+|`C`|通貨書式の数値の値を表示します。|  
+|`D`|10 進数形式で数値を表示します。|  
+|`E`|指数表記の指数の数値を表示します。|  
+|`F`|固定形式で数値を表示します。|  
+|`G`|数値を表示は一般に書式設定します。|  
+|`N`|数値書式の数値の値を表示します。|  
+|`X`|16 進形式で数値を表示します。|  
+  
+> [!NOTE]
+>  書式指定文字が以外の大文字小文字が区別されない`X`、指定した場合、16 進文字が表示されます。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.FormatString%2A>のメニュー項目に表示されるテキストを書式設定プロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するメニュー項目のテキストの横に表示されるイメージの URL を設定または、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニュー項目のテキストの横に表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A>プロパティにバインドするカスタム イメージの URL を指定する、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 このイメージはすべてと共有<xref:System.Web.UI.WebControls.MenuItem>オブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 イメージは、メニュー項目のテキストの横にあるが表示され、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) することができます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のイメージを上書きするには、設定してその<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、各メニュー項目に同じイメージを表示するの代わりに使用することも、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト データ ソースのフィールドにします。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A>プロパティ メニュー項目のテキストの横に表示するイメージの URL を指定します。 このイメージが各メニュー項目に表示されます、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingText/CS/menuitembindingtextcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingText/VB/menuitembindingtextvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrlField">
+      <MemberSignature Language="C#" Value="public string ImageUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.ImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.ImageUrl" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 イメージは、メニュー項目のテキストの横にあるが表示され、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) することができます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のイメージを上書きするには、設定してその<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目に同じイメージを表示する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.ImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>メニュー項目のプロパティです。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時にメニュー項目にリンクする URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用して、クリックします。</summary>
+        <value>ときにメニュー項目のリンク先の URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />が適用されるをクリックします。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>プロパティにバインドする URL を指定する、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この URL が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 ユーザーには、メニュー項目がクリックすると、指定した URL にユーザーが少なくなります。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、各メニュー項目に同じ URL に移動して、代わりにバインドすることも、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>プロパティ メニュー項目がクリックされたときに移動する URL を指定します。 この URL が各メニュー項目に使用される、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingText/CS/menuitembindingtextcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingText/VB/menuitembindingtextvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrlField">
+      <MemberSignature Language="C#" Value="public string NavigateUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.NavigateUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするデータ ソースのフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.NavigateUrl" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 メニュー項目がクリックされたときに、ユーザーは、対応する URL に取得されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目から同じ URL に移動する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>メニュー項目のプロパティです。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopOutImageUrl">
+      <MemberSignature Language="C#" Value="public string PopOutImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PopOutImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するメニュー項目の動的なサブメニューのプレゼンスを示すイメージの URL を設定または、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニュー項目の動的なサブメニューのプレゼンスを示すイメージの URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrl%2A>の URL を指定するプロパティ、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この URL が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>プロパティを直接です。  
+  
+ バインドすることができます、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopOutImageUrlField">
+      <MemberSignature Language="C#" Value="public string PopOutImageUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PopOutImageUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.PopOutImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするデータ ソースのフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.PopOutImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 各メニュー項目に対応する URL にイメージが表示されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrl%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目から同じ URL に移動する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.PopOutImageUrlField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selectable">
+      <MemberSignature Language="C#" Value="public bool Selectable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selectable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Selectable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、メニュー項目を<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトが適用されることを選択するか、「クリック可能な」。</summary>
+        <value>
+          <see langword="true" />メニュー項目をする場合、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />が適用されるは、選択可能なそれ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Selectable%2A>プロパティを設定、<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この設定が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 このプロパティに設定するときに`false`、メニュー項目が「クリック可能な」ではありませんが、子項目が表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectableField">
+      <MemberSignature Language="C#" Value="public string SelectableField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectableField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.SelectableField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.Selectable" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.Selectable" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.SelectableField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+> [!NOTE]
+>  有効にする個々 のメニュー項目の設定をオーバーライドするその<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Selectable%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.SelectableField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.SelectableField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorImageUrl">
+      <MemberSignature Language="C#" Value="public string SeparatorImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SeparatorImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するメニュー項目 (他のメニュー項目から分離するため) にメニュー項目のテキストの下に表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニュー項目のメニュー項目のテキストの下に表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrl%2A>の URL を指定するプロパティ、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この URL が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、各メニュー項目に同じ URL を示すために、代わりにバインドすることも、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorImageUrlField">
+      <MemberSignature Language="C#" Value="public string SeparatorImageUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SeparatorImageUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするデータ ソースのフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 各メニュー項目に対応する URL にイメージが表示されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の URL をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrl%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目から同じ URL に移動する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrl%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.SeparatorImageUrlField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.MenuItemBinding" /> オブジェクトのコピーを作成します。</summary>
+        <returns><see cref="T:System.Object" />のコピーを表す、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItemBinding.System%23ICloneable%23Clone%2A>メソッドのコピーを作成するヘルパー関数では、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトからこのメソッドが呼び出されます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.System#Web#UI#IDataSourceViewSchemaAccessor#DataSourceViewSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema" />」をご覧ください。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.MenuItemBinding> のインスタンスが <xref:System.Web.UI.IDataSourceViewSchemaAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトのビューステートへ変更を保存します。</summary>
+        <value>
+          <see langword="true" />コントロールがその状態を保存するマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />保存されているビュー ステートの値を格納しています。</param>
+        <summary>ノードの以前保存したビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー状態の変更を保存、<see cref="T:System.Object" />です。</summary>
+        <returns><see cref="T:System.Object" />ビュー ステートの変化を格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートへの変更を追跡するように <see cref="T:System.Web.UI.WebControls.MenuItemBinding" /> オブジェクトに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールでは、このメソッドが呼び出された後、<xref:System.Web.UI.Control.IsTrackingViewState%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のウィンドウまたはフレーム、メニュー項目に関連付けられている Web ページの内容を表示するための取得または設定、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>リンクされた Web ページの内容を表示する対象のウィンドウまたはフレーム。 既定値は空の文字列 ("") です。フォーカスのあるウィンドウまたはフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>ウィンドウまたは Web コンテンツを表示するフレームを指定するには、そのメニュー項目がクリックされたときにメニュー項目にリンクします。  
+  
+> [!NOTE]
+>  このプロパティの設定、<xref:System.Web.UI.WebControls.Menu.Target%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.Menu>するメニュー項目のコントロール、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されます。 選択的に設定してこのプロパティをオーバーライドすることができます、<xref:System.Web.UI.WebControls.MenuItem.Target%2A?displayProperty=nameWithType>直接各メニュー項目のプロパティです。  
+  
+ ターゲット値は、範囲の A ~ Z (大文字)、次の表に示すように、アンダー スコアで始まる特殊な値以外の文字で始める必要があります。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  ブラウザーのマニュアルを参照するかどうかを`_search`値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、`_search`ターゲット値。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>プロパティ場合に表示される出力、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトは XHTML 1.1 に準拠する必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>プロパティ メニュー項目がクリックしてされたときに、メニュー項目に関連付けられている Web コンテンツを表示するためのウィンドウを指定します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetField">
+      <MemberSignature Language="C#" Value="public string TargetField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.TargetField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.Target" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.Target" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.TargetField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Target%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem.Target%2A?displayProperty=nameWithType>ウィンドウまたはフレームを表示するために Web コンテンツ項目にリンク メニューのメニュー項目がクリックしてされたときに、プロパティを指定します。 値は、範囲の A ~ Z (大文字)、次の表に示すように、アンダー スコアで始まる特殊な値以外の文字で始まる必要があります。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.MenuItemBinding> XHTML 1.1 を準拠にする必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+ このプロパティの設定をオーバーライドするメモ、<xref:System.Web.UI.WebControls.Menu.Target%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.Menu>メニュー項目のコントロールです。 設定、<xref:System.Web.UI.WebControls.Menu.Target%2A?displayProperty=nameWithType>プロパティを開くには、新しいウィンドウが難しいこと支援テクノロジ デバイスのユーザー ページを使用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の有効化設定をオーバーライドするその<xref:System.Web.UI.WebControls.MenuItem.Target%2A?displayProperty=nameWithType>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Target%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.TargetField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.TargetField%2A>プロパティが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するメニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>プロパティをバインドするテキストを指定する、<xref:System.Web.UI.WebControls.MenuItem.Text%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 このテキストはメニュー項目に表示されが共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のテキストを上書きするには設定してその<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、各メニュー項目に同じテキストを表示するの代わりにバインドすることも、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティが優先されます。  
+  
+ 空のノードを作成することはできません、<xref:System.Web.UI.WebControls.Menu>コントロールを設定して、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>または<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティを空の文字列 ("") です。 プロパティを設定しないと同じ効果を持つ空の文字列にこれらのプロパティを設定します。 その場合は、<xref:System.Web.UI.WebControls.Menu>コントロールは、既定値を使用してバインディングを作成、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティです。 詳細については、次を参照してください。 [ASP.NET データ アクセス コンテンツ マップ](http://msdn.microsoft.com/en-us/f9219396-a0fa-481f-894d-e3d9c67d64f2)です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>プロパティ メニュー項目に表示するテキストを指定します。 各メニュー項目にこのテキストが表示されます、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingText/CS/menuitembindingtextcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingText/VB/menuitembindingtextvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextField">
+      <MemberSignature Language="C#" Value="public string TextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.TextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.Text" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするデータ ソースのフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.Text" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 このテキストは、メニュー項目に表示されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のテキストを上書きするには設定してその<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ 空のノードを作成することはできません、<xref:System.Web.UI.WebControls.Menu>コントロールを設定して、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>または<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティを空の文字列 ("") です。 プロパティを設定しないと同じ効果を持つ空の文字列にこれらのプロパティを設定します。 その場合は、<xref:System.Web.UI.WebControls.Menu>コントロールは、既定値を使用してバインディングを作成、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティです。 詳細については、次を参照してください。 [ASP.NET データ アクセス コンテンツ マップ](http://msdn.microsoft.com/en-us/f9219396-a0fa-481f-894d-e3d9c67d64f2)です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目に同じテキストを表示する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Text%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.TextField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>メニュー項目のプロパティです。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定メニュー項目のツールヒントのテキストを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>メニュー項目のツールヒントのテキスト、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A>プロパティをバインドするテキストを指定する、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 このツールヒントと共有するすべてのメニュー項目、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 メニュー項目の上にマウス ポインターを置くと、指定したテキストが表示されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のツールヒントを上書きするには、設定してその<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、メニュー項目ごとに、そのツールヒントを指定して、代わりにバインドすることも、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A>プロパティをユーザーがメニュー項目の上にマウス ポインターを置いたときに表示されるツールヒントを指定します。 各メニュー項目のこのツールヒントが表示されます、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingText/CS/menuitembindingtextcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingText/VB/menuitembindingtextvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipField">
+      <MemberSignature Language="C#" Value="public string ToolTipField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.ToolTipField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.ToolTip" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.ToolTip" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 ユーザーがメニュー項目の上にマウス ポインターを置いたときに、指定したテキストが表示されます。  
+  
+> [!NOTE]
+>  個々 のメニュー項目のテキストを上書きするには設定してその<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A?displayProperty=nameWithType>プロパティです。 メニュー項目ごとに、そのツールヒントを表示できます、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTip%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.ToolTipField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>メニュー項目のプロパティです。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemBinding.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するメニュー項目の追加データを格納するために使用 nondisplayed 値、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />ポストバック イベントを処理するために使用されるデータなど、オブジェクトを適用します。</summary>
+        <value>項目のメニューに関する補足データ、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />が適用されます。 このデータは表示されません。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.MenuItem.Value%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この値が共有されているすべてのメニュー項目を<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 指定した値がメニュー項目には表示されず、先のメニュー項目に関するその他のデータの格納に使用、<xref:System.Web.UI.WebControls.MenuItemBinding>ポストバック イベントを処理するために使用されるデータなど、オブジェクトを適用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の値をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、メニュー項目ごとに同じ値を指定して、代わりにバインドすることも、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティです。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A>プロパティ メニュー項目に関連付けられている nondisplayed 値を指定します。 この値は、各メニュー項目に使用、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBindingText/CS/menuitembindingtextcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBindingText/VB/menuitembindingtextvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueField">
+      <MemberSignature Language="C#" Value="public string ValueField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemBinding.ValueField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.MenuItem.Value" />のプロパティ、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.MenuItem.Value" />の<see cref="T:System.Web.UI.WebControls.MenuItem" />先、<see cref="T:System.Web.UI.WebControls.MenuItemBinding" />を適用します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 レンダリング時に、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>各メニュー項目のプロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトが適用されるフィールドの対応する値が含まれています。 指定した値がメニュー項目には表示されず、先のメニュー項目に関するその他のデータの格納に使用、<xref:System.Web.UI.WebControls.MenuItemBinding>ポストバック イベントを処理するために使用されるデータなど、オブジェクトを適用します。  
+  
+> [!NOTE]
+>  個々 のメニュー項目の値をオーバーライドするには設定してその<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティを直接です。  
+  
+ 設定して、バインディングの基準を確立する場合は、データ ソースには、複数のテーブルまたは属性が含まれています、まず必要があります、 <xref:System.Web.UI.WebControls.MenuItemBinding.Depth%2A> 、プロパティ、<xref:System.Web.UI.WebControls.MenuItemBinding.DataMember%2A>プロパティ、またはその両方です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>バインドすることも、静的な値に設定して、フィールドにオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A?displayProperty=nameWithType>プロパティです。 これにより、各メニュー項目に対して同じ値を指定する、<xref:System.Web.UI.WebControls.MenuItemBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItemBinding.Value%2A>と<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティは、両方の設定、<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemBinding.ValueField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>メニュー項目のプロパティです。 この例を正しく動作する Menu.xml をという名前のファイルに以下のサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemBinding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemBinding/CS/menuitembindingcs.aspx#1)]
+ [!code-aspx-vb[MenuItemBinding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemBinding/VB/menuitembindingvb.aspx#1)]  
+  
+ 次のコードは、前の例のサンプル サイト マップ データです。  
+  
+ `<MapHomeNode ImageUrl="~\Images\Home.gif"`  
+  
+ `Title="Home"`  
+  
+ `Description="Root Page"`  
+  
+ `ToolTip="Home Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Music.gif"`  
+  
+ `Title="Music"`  
+  
+ `Description="Music Category"`  
+  
+ `ToolTip="Music Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Classical.gif"`  
+  
+ `Title="Classical"`  
+  
+ `Description="Classical Section"`  
+  
+ `ToolTip="Classical Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Rock.gif"`  
+  
+ `Title="Rock"`  
+  
+ `Description="Rock Section"`  
+  
+ `ToolTip="Rock Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Jazz.gif"`  
+  
+ `Title="Jazz"`  
+  
+ `Description="Jazz Section"`  
+  
+ `ToolTip="Jazz Page"/>`  
+  
+ `</MapNode>`  
+  
+ `<MapNode ImageUrl="~\Images\Movies.gif"`  
+  
+ `Title="Movies"`  
+  
+ `Description="Movies Category"`  
+  
+ `ToolTip="Movies Page">`  
+  
+ `<MapNode ImageUrl="~\Images\Action.gif"`  
+  
+ `Title="Action"`  
+  
+ `Description="Action Section"`  
+  
+ `ToolTip="Action Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Drama.gif"`  
+  
+ `Title="Drama"`  
+  
+ `Description="Drama Section"`  
+  
+ `ToolTip="Drama Page"/>`  
+  
+ `<MapNode ImageUrl="~\Images\Musical.gif"`  
+  
+ `Title="Musical"`  
+  
+ `Description="Musical Section"`  
+  
+ `ToolTip="Musical Page"/>`  
+  
+ `</MapNode>`  
+  
+ `</MapHomeNode>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

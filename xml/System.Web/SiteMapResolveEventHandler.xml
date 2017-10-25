@@ -1,0 +1,46 @@
+<Type Name="SiteMapResolveEventHandler" FullName="System.Web.SiteMapResolveEventHandler">
+  <TypeSignature Language="C#" Value="public delegate System.Web.SiteMapNode SiteMapResolveEventHandler(object sender, SiteMapResolveEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SiteMapResolveEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMapResolveEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.SiteMapResolveEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Web.SiteMapNode</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">インスタンスをイベントのソース、<see cref="T:System.Web.SiteMapProvider" />クラスです。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.SiteMapResolveEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.SiteMapProvider.SiteMapResolve" />の特定のインスタンスのイベント、<see cref="T:System.Web.SiteMapProvider" />または静的<see cref="T:System.Web.SiteMap" />クラスです。</summary>
+    <returns><see cref="T:System.Web.SiteMapNode" />の結果を表す、<see cref="T:System.Web.SiteMapResolveEventHandler" />操作します。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.Web.SiteMap>クラスが公開、<xref:System.Web.SiteMap.SiteMapResolve>既定のサイト マップ プロバイダーのイベントです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Web.SiteMap.SiteMapResolve>など、サイトのナビゲーション コントロールで表示される対象 Url を変更する ASP.NET Web ページ上のイベント、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 この例では、現在のページは、オンラインの掲示板またはフォーラムで送信ページがします。 わかりやすく表示するためには、サイトのナビゲーション、ナビゲーション コントロールによって表示されるノードの Url は、コンテキストに関連するクエリ文字列に付加されます。  
+  
+> [!NOTE]
+>  アクセスは安全では、<xref:System.Web.SiteMap.CurrentNode%2A>内からのプロパティ、<xref:System.Web.SiteMapResolveEventHandler>クラスです。 ASP.NET サイトのナビゲーション インフラストラクチャは、ここでは無限再帰を防ぐ。  
+  
+ [!code-csharp[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

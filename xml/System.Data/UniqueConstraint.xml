@@ -1,0 +1,561 @@
+<Type Name="UniqueConstraint" FullName="System.Data.UniqueConstraint">
+  <TypeSignature Language="C#" Value="public class UniqueConstraint : System.Data.Constraint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UniqueConstraint extends System.Data.Constraint" />
+  <TypeSignature Language="DocId" Value="T:System.Data.UniqueConstraint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Constraint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ConstraintName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.UniqueConstraintEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の列が一意である必要がありますすべての値に対する制限を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.UniqueConstraint>は主キーの値が一意であることを確認する 1 つの列 (または列) に対して適用されます。  
+  
+ しない限り、制約が適用されない、<xref:System.Data.DataSet.EnforceConstraints%2A>プロパティに設定されている`true`です。  
+  
+ ときに、 <xref:System.Data.DataSet> 1 秒あたりにマージされて<xref:System.Data.DataSet>制約は、すべてのマージが完了するまでは設定されません。  
+  
+   
+  
+## Examples  
+ 次の例では追加、<xref:System.Data.UniqueConstraint>を<xref:System.Data.DataSet>設定と、<xref:System.Data.DataSet.EnforceConstraints%2A>プロパティを`true`です。  
+  
+ [!code-vb[Classic WebData UniqueConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に適しています。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.Data.DataColumn)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />を制限します。</param>
+        <summary>指定した <see cref="T:System.Data.UniqueConstraint" /> を使用して、<see cref="T:System.Data.DataColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.UniqueConstraint>に割り当てます、<xref:System.Data.DataRelation.ParentKeyConstraint%2A>のプロパティ、<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.UniqueConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.UniqueConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (System.Data.DataColumn[] columns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataColumn[] columns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.Data.DataColumn[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columns" Type="System.Data.DataColumn[]" />
+      </Parameters>
+      <Docs>
+        <param name="columns">配列<see cref="T:System.Data.DataColumn" />を制限するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />の特定の配列を持つクラス<see cref="T:System.Data.DataColumn" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (System.Data.DataColumn column, bool isPrimaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataColumn column, bool isPrimaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.Data.DataColumn,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="isPrimaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="column"><see cref="T:System.Data.DataColumn" />を制限します。</param>
+        <param name="isPrimaryKey">
+          <see langword="true" />制約が主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />クラス、<see cref="T:System.Data.DataColumn" />を制限、および制約が主キーであるかどうかを指定する値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (System.Data.DataColumn[] columns, bool isPrimaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataColumn[] columns, bool isPrimaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.Data.DataColumn[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="isPrimaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="columns">配列<see cref="T:System.Data.DataColumn" />を制限するオブジェクト。</param>
+        <param name="isPrimaryKey">
+          <see langword="true" />制約が主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />の配列を持つクラス<see cref="T:System.Data.DataColumn" />を制限するには、オブジェクトと制約が主キーであるかどうかを指定する値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (string name, System.Data.DataColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Data.DataColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.String,System.Data.DataColumn)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="name">制約の名前。</param>
+        <param name="column"><see cref="T:System.Data.DataColumn" />を制限します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />指定した名前のクラスと<see cref="T:System.Data.DataColumn" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.UniqueConstraint>に割り当てます、<xref:System.Data.DataRelation.ParentKeyConstraint%2A>のプロパティ、<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.UniqueConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.UniqueConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (string name, System.Data.DataColumn[] columns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Data.DataColumn[] columns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.String,System.Data.DataColumn[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="columns" Type="System.Data.DataColumn[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">制約の名前。</param>
+        <param name="columns">配列<see cref="T:System.Data.DataColumn" />を制限するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />の配列と指定した名前を持つクラス<see cref="T:System.Data.DataColumn" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.DataTable> 、2 つの列を持つ新しいと<xref:System.Data.UniqueConstraint>を<xref:System.Data.ConstraintCollection>です。  
+  
+ [!code-csharp[Classic WebData UniqueConstraint.UniqueConstraint2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.UniqueConstraint2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData UniqueConstraint.UniqueConstraint2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.UniqueConstraint2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (string name, System.Data.DataColumn column, bool isPrimaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Data.DataColumn column, bool isPrimaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.String,System.Data.DataColumn,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="column" Type="System.Data.DataColumn" />
+        <Parameter Name="isPrimaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">制約の名前。</param>
+        <param name="column"><see cref="T:System.Data.DataColumn" />を制限します。</param>
+        <param name="isPrimaryKey">
+          <see langword="true" />制約が主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.UniqueConstraint" /> 、指定した名前を持つクラス、<see cref="T:System.Data.DataColumn" />を制限、および制約が主キーであるかどうかを指定する値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (string name, System.Data.DataColumn[] columns, bool isPrimaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Data.DataColumn[] columns, bool isPrimaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.String,System.Data.DataColumn[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="columns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="isPrimaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">制約の名前。</param>
+        <param name="columns">配列<see cref="T:System.Data.DataColumn" />を制限するオブジェクト。</param>
+        <param name="isPrimaryKey">
+          <see langword="true" />制約が主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />の配列、指定した名前を持つクラス<see cref="T:System.Data.DataColumn" />を制限するには、オブジェクトと制約が主キーであるかどうかを指定する値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniqueConstraint (string name, string[] columnNames, bool isPrimaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string[] columnNames, bool isPrimaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.#ctor(System.String,System.String[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="columnNames" Type="System.String[]" />
+        <Parameter Name="isPrimaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">制約の名前。</param>
+        <param name="columnNames">配列<see cref="T:System.Data.DataColumn" />を制限するオブジェクト。</param>
+        <param name="isPrimaryKey">
+          <see langword="true" />制約が主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.UniqueConstraint" />の配列、指定した名前を持つクラス<see cref="T:System.Data.DataColumn" />を制限するには、オブジェクトと制約が主キーであるかどうかを指定する値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、Visual Studio .NET 環境でのデザイン時サポートの提供されます。 <xref:System.Data.UniqueConstraint>このコンス トラクターを使用して作成されたオブジェクトを使用してコレクションに追加する必要があります<xref:System.Data.ConstraintCollection.AddRange%2A>です。 メソッドが呼び出されたときに、指定した名前の列が存在する必要がありますまたは<xref:System.Data.DataTable.BeginInit%2A>が呼び出し時にこのコンス トラクターで指定した名前の列に存在する必要がありますの前に呼び出されたを<xref:System.Data.DataTable.EndInit%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataColumn[] Columns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataColumn[] Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Data.UniqueConstraint.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この制約に影響する列の配列を取得します。</summary>
+        <value><see cref="T:System.Data.DataColumn" /> オブジェクトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を返します、<xref:System.Data.DataColumn>オブジェクトを<xref:System.Data.UniqueConstraint>ように制約します。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.Columns Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.Columns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object key2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object key2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key2" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key2">このオブジェクト<see cref="T:System.Data.UniqueConstraint" />と比較されます。</param>
+        <summary>両方が同じかどうかを決定する 2 つ目は、この制約を比較します。</summary>
+        <returns>
+          <see langword="true" />、、制約が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの制約は、同じ列を制約している場合は等しい。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの UiqueConstraint オブジェクトを比較します。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.Equals Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.Equals Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.UniqueConstraint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを取得、<see cref="T:System.Data.UniqueConstraint" />オブジェクト。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrimaryKey">
+      <MemberSignature Language="C#" Value="public bool IsPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.UniqueConstraint.IsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>制約が主キーにあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、制約の主キー以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、テーブルには、確実にすべての行が一意では、主キーが含まれています。 一部のテーブルで、主キーを 1 つ以上の列の構成可能性があります。 たとえば、名を含むテーブルの主キーは、両方の最初と最後の名前もの構成可能性があります。 1 つ以上の列を持つプライマリ キーを作成するには、DataColumn オブジェクトの配列に列プロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次の例のチェック、<xref:System.Data.UniqueConstraint.IsPrimaryKey%2A>プロパティです。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.IsPrimaryKey Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.IsPrimaryKey Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Data.UniqueConstraint.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この制約が所属するテーブルを取得します。</summary>
+        <value><see cref="T:System.Data.DataTable" />制約が属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を返します、<xref:System.Data.UniqueConstraint>オブジェクトの<xref:System.Data.DataTable>します。  
+  
+ [!code-vb[Classic WebData UniqueConstraint.Table Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData UniqueConstraint.Table Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

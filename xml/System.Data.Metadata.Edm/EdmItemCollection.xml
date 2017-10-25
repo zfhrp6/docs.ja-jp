@@ -1,0 +1,125 @@
+<Type Name="EdmItemCollection" FullName="System.Data.Metadata.Edm.EdmItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class EdmItemCollection : System.Data.Metadata.Edm.ItemCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmItemCollection extends System.Data.Metadata.Edm.ItemCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.EdmItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.ItemCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>概念モデルに関するメタデータを読み込みます。 **EdmItemCollection**概念スキーマ定義言語 (CSDL) ファイルからメタデータを読み込みます。 このクラスは、<see cref="T:System.Data.Metadata.Edm.ItemCollection" /> クラスから派生しています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmItemCollection (System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt; xmlReaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlReader&gt; xmlReaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.EdmItemCollection.#ctor(System.Collections.Generic.IEnumerable{System.Xml.XmlReader})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReaders" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReaders">概念スキーマ定義言語 (CSDL) ファイルが存在する XMLReader オブジェクトのコレクション。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.Metadata.Edm.EdmItemCollection" /> XMLReader オブジェクトのコレクションを使用して、概念スキーマ定義言語 (CSDL) ファイルが存在する場合、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmItemCollection (params string[] filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.EdmItemCollection.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="filePaths">概念スキーマ定義言語 (CSDL) ファイルのパス。</param>
+        <summary>概念スキーマ定義言語 (CSDL) ファイルが存在するパスを使用して、<see cref="T:System.Data.Metadata.Edm.EdmItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmVersion">
+      <MemberSignature Language="C#" Value="public double EdmVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 EdmVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmItemCollection.EdmVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションの概念モデルのバージョンを取得します。</summary>
+        <value>このコレクションの概念モデルのバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimitiveTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.EdmItemCollection.GetPrimitiveTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトのコレクションを返します。</summary>
+        <returns>ReadOnlyCollection オブジェクトのコレクションを表す、<see cref="T:System.Data.Metadata.Edm.PrimitiveType" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimitiveTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes (double edmVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes(float64 edmVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.EdmItemCollection.GetPrimitiveTypes(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmVersion" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="edmVersion">概念モデルのバージョン。</param>
+        <summary>コレクションを返します、<see cref="T:System.Data.Metadata.Edm.PrimitiveType" />指定された概念モデルのバージョンを持つオブジェクト。</summary>
+        <returns>ReadOnlyCollection オブジェクトのコレクションを表す、<see cref="T:System.Data.Metadata.Edm.PrimitiveType" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

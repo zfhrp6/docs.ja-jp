@@ -1,0 +1,81 @@
+<Type Name="IHashCodeProvider" FullName="System.Collections.IHashCodeProvider">
+  <TypeSignature Language="C#" Value="public interface IHashCodeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHashCodeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IHashCodeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Please use IEqualityComparer instead.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>カスタムのハッシュ関数を使用して、オブジェクトのハッシュ コードを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IHashCodeProvider>と共にインターフェイスが使用される、<xref:System.Collections.Hashtable>クラスです。 キーとして使用されるオブジェクト、<xref:System.Collections.Hashtable>オブジェクトをオーバーライドする必要があります、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>と<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>または、キーの実装の<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>ハッシュ コード プロバイダーとして使用されます。 <xref:System.Object.Equals%2A?displayProperty=nameWithType>または、キーの実装の<xref:System.Object.Equals%2A?displayProperty=nameWithType>比較演算子として使用されます。  
+  
+ ただし、一部のオーバー ロードが、<xref:System.Collections.Hashtable>コンス トラクターがあるパラメーターを受け取る、<xref:System.Collections.IHashCodeProvider>実装、またはパラメーターが、<xref:System.Collections.IComparer>実装、またはその両方です。 場合、<xref:System.Collections.IHashCodeProvider>実装は、コンス トラクターに渡される、<xref:System.Collections.IHashCodeProvider.GetHashCode%2A?displayProperty=nameWithType>その実装のメソッドは、ハッシュ コード プロバイダーとして使用します。 場合、<xref:System.Collections.IComparer>実装は、コンス トラクターに渡される、<xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType>その実装のメソッドは、比較演算子として使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IHashCodeProvider.GetHashCode(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />が返されるハッシュ コード。</param>
+        <summary>指定したオブジェクトのハッシュ コードを返します。</summary>
+        <returns>指定したオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドからの戻り値は、2 つの理由の永続化されません必要があります。 最初に、古いハッシュ関数からの値が役に立ちませんレンダリングより優れた分布を生成するクラスのハッシュ関数を変更する可能性があります。 次に、このクラスの既定の実装では、同じ値を別のインスタンスによって返されることは限りません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">型<paramref name="obj" />参照型であると<paramref name="obj" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

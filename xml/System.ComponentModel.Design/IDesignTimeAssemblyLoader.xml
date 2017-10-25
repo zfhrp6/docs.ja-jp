@@ -1,0 +1,89 @@
+<Type Name="IDesignTimeAssemblyLoader" FullName="System.ComponentModel.Design.IDesignTimeAssemblyLoader">
+  <TypeSignature Language="C#" Value="public interface IDesignTimeAssemblyLoader" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignTimeAssemblyLoader" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDesignTimeAssemblyLoader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("665f0ba5-ce72-4e87-9ba0-3c461de74d0b")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイナーでのアセンブリを読み込むためのユーティリティです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetTargetAssemblyPath">
+      <MemberSignature Language="C#" Value="public string GetTargetAssemblyPath (System.Reflection.AssemblyName runtimeOrTargetAssemblyName, string suggestedAssemblyPath, System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTargetAssemblyPath(class System.Reflection.AssemblyName runtimeOrTargetAssemblyName, string suggestedAssemblyPath, class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignTimeAssemblyLoader.GetTargetAssemblyPath(System.Reflection.AssemblyName,System.String,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="runtimeOrTargetAssemblyName" Type="System.Reflection.AssemblyName" />
+        <Parameter Name="suggestedAssemblyPath" Type="System.String" />
+        <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeOrTargetAssemblyName">実行時またはターゲット アセンブリの完全なアセンブリ名。</param>
+        <param name="suggestedAssemblyPath">アセンブリの読み込み元の推奨されるパス。</param>
+        <param name="targetFramework">デザイナーのターゲット フレームワーク。</param>
+        <summary>指定されたアセンブリのターゲット フレームワークでは、読み込みパスを決定します。</summary>
+        <returns>アセンブリの実際の読み込みパスまたは<see langword="null" />アセンブリが読み込み可能でない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー アセンブリをプロジェクト参照ではないと、.NET Framework 再配布の一部ではないことを解決する機会が与えられます。 デザイナー、ランタイム アセンブリがロックされているを防ぐためにパスを変更することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadRuntimeAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly LoadRuntimeAssembly (System.Reflection.AssemblyName targetAssemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly LoadRuntimeAssembly(class System.Reflection.AssemblyName targetAssemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDesignTimeAssemblyLoader.LoadRuntimeAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetAssemblyName" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="targetAssemblyName">完全ターゲット アセンブリの名前。</param>
+        <summary>指定したランタイム アセンブリを読み込みます。</summary>
+        <returns>読み込まれているランタイムのアセンブリまたは<see langword="null" />場合は、アセンブリをロードできませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーに、特定のアセンブリ バージョンを読み込むランタイム機会が与えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

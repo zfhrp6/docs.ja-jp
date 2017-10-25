@@ -1,0 +1,65 @@
+<Type Name="SqlDataSourceCommandType" FullName="System.Web.UI.WebControls.SqlDataSourceCommandType">
+  <TypeSignature Language="C#" Value="public enum SqlDataSourceCommandType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlDataSourceCommandType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SqlDataSourceCommandType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>によって使用される SQL コマンドの型を記述、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />と<see cref="T:System.Web.UI.WebControls.AccessDataSource" />データベース操作の実行を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSourceCommandType>列挙型を使用して、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.AccessDataSource>コントロールに含まれる SQL コマンドの型を記述する、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>、および<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティです。 テキスト値は、テキストである SQL クエリまたはコマンド文字列テキストは、ストアド プロシージャの名前であることを示し、ストアド プロシージャの値を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>ストアド プロシージャの名前にテキストと<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType%2A>プロパティに、Microsoft SQL Server データベースからデータを取得し、表示するのに [storedprocedure] 値を<xref:System.Web.UI.WebControls.DropDownList>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/CS/sql14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/VB/sql14vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="StoredProcedure">
+      <MemberSignature Language="C#" Value="StoredProcedure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SqlDataSourceCommandType StoredProcedure = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するテキスト プロパティに含まれるテキストは、ストアド プロシージャの名前です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SqlDataSourceCommandType Text = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SqlDataSourceCommandType.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するテキスト プロパティに含まれるテキストは、SQL クエリまたはコマンドです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

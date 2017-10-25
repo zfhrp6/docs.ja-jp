@@ -1,0 +1,363 @@
+<Type Name="CookieHandlerElement" FullName="System.IdentityModel.Services.CookieHandlerElement">
+  <TypeSignature Language="C#" Value="public class CookieHandlerElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CookieHandlerElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.CookieHandlerElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="&lt;cookieHandler&gt;" />構成要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<cookieHandler>`要素の子要素、`<federatedAuthentication>`要素以外の場合は、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A?displayProperty=nameWithType>プロパティのインスタンスに設定されて、<xref:System.IdentityModel.Services.CookieHandlerElement>クラスです。 `<cookieHandler>`セッション認証モジュール (SAM) によってで表されるために使用するクッキー ハンドラーを構成する要素が使用される、<xref:System.IdentityModel.Services.SessionAuthenticationModule>クラスです。  
+  
+ クッキー ハンドラーは、次の方法のいずれかで構成できます。  
+  
+-   チャンクされたクッキー ハンドラーを構成するのには、設定、<xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A>プロパティを<xref:System.IdentityModel.Services.CookieHandlerMode.Default>または<xref:System.IdentityModel.Services.CookieHandlerMode.Chunked>設定と、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>チャンクされたクッキー ハンドラーの構成要素を持つプロパティです。 <xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>プロパティを設定しないでください。  
+  
+-   チャンクされたクッキー ハンドラーを既定のチャンク サイズを構成するのに設定することができます、 <xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A> 、前述のようにプロパティ両方まま、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>と<xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>プロパティの設定を解除します。  
+  
+-   カスタム クッキー ハンドラーを構成するには設定、<xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A>プロパティを<xref:System.IdentityModel.Services.CookieHandlerMode.Custom>設定と、<xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>カスタム クッキー ハンドラーの種類を識別する構成要素を持つプロパティです。 この型はから派生する必要があります、<xref:System.IdentityModel.Services.CookieHandler>クラスです。 <xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティを設定しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CookieHandlerElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.CookieHandlerElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.CookieHandlerElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChunkedCookieHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.ChunkedCookieHandlerElement ChunkedCookieHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.ChunkedCookieHandlerElement ChunkedCookieHandler" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("chunkedCookieHandler", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.ChunkedCookieHandlerElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチャンクされたクッキー ハンドラーを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Services.ChunkedCookieHandlerElement" />チャンクされたクッキー ハンドラーの追加の構成を提供します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、`<chunkedCookieHandler>`の子要素、`<cookieHandler>`要素。 チャンクされたクッキー ハンドラーのインスタンスを指定、<xref:System.IdentityModel.Services.ChunkedCookieHandler>に使用するクラス。 設定されている場合、<xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A>プロパティを設定する必要がありますはどちらかに<xref:System.IdentityModel.Services.CookieHandlerMode.Default>または<xref:System.IdentityModel.Services.CookieHandlerMode.Chunked>です。 場合、<xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A>これらの値のいずれかに設定されますが、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティが設定されていない、既定のチャンク サイズのチャンクされたクッキー ハンドラー (<xref:System.IdentityModel.Services.ChunkedCookieHandler.DefaultChunkSize?displayProperty=nameWithType>) が構成されています。  
+  
+ いずれか、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティまたは<xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>プロパティ セットが、両方が適用される場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCookieHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.CustomTypeElement CustomCookieHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.CustomTypeElement CustomCookieHandler" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("customCookieHandler", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.CustomTypeElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム クッキー ハンドラー型を設定します。 カスタム クッキー ハンドラーを構成しているときに、このプロパティを設定する必要があります。</summary>
+        <value>A<see cref="T:System.IdentityModel.Configuration.CustomTypeElement" />カスタム クッキー ハンドラーの型を定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、`<customCookieHandler>`の子要素、`<cookieHandler>`要素。 使用するカスタム クッキー ハンドラー型を指定します。 このプロパティが設定されている場合、<xref:System.IdentityModel.Services.CookieHandlerElement.Mode%2A>プロパティに設定する必要があります<xref:System.IdentityModel.Services.CookieHandlerMode.Custom>です。 このプロパティで指定されたカスタム型から派生する必要があります、<xref:System.IdentityModel.Services.CookieHandler>クラスです。  
+  
+ いずれか、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティまたは<xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>プロパティ セットが、両方が適用される場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("domain", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドメイン ハンドラーによって書き込まれた cookie の値を設定します。</summary>
+        <value>ドメインの値。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`domain`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfiguredCookieHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.CookieHandler GetConfiguredCookieHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Services.CookieHandler GetConfiguredCookieHandler() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.CookieHandlerElement.GetConfiguredCookieHandler" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.CookieHandler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成プロパティを基に新しいクッキー ハンドラーを取得します。</summary>
+        <returns>クッキー ハンドラー。 インスタンスになります。 この<see cref="T:System.IdentityModel.Services.CookieHandler" />または<see cref="T:System.IdentityModel.Services.ChunkedCookieHandler" />、現在のインスタンスのプロパティで構成されているハンドラーの種類によって異なります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、構成と整合性がある cookie のハンドラーを返します。 返されるクッキー ハンドラーは、チャンクされたクッキー ハンドラーまたは構成プロパティを設定する方法に応じてカスタム クッキー ハンドラーのいずれかになります。 詳細については、「<xref:System.IdentityModel.Services.CookieHandlerElement>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">現在のインスタンスのプロパティからクッキー ハンドラーを作成できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HideFromScript">
+      <MemberSignature Language="C#" Value="public bool HideFromScript { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HideFromScript" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.HideFromScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("hideFromScript", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see langword="httpOnly" />このハンドラーによって書き込まれた cookie のプロパティを設定する必要があります。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="httpOnly" />プロパティが、それ以外の設定にする必要があります<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ "HttpOnly"フラグは、書き込まれた cookie に対して生成するかどうかを制御します。 一部の Web ブラウザーでは、cookie の値へのアクセスをクライアント側スクリプトを保持することでこのフラグが無視されます。  
+  
+ 表す、`hideFromScript`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.CookieHandlerMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Services.CookieHandlerMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mode", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.CookieHandlerMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクッキー ハンドラー モードを設定します。</summary>
+        <value>有効な<see cref="T:System.IdentityModel.Services.CookieHandlerMode" />が構成されているクッキー ハンドラーの種類を示す値。 既定値は<see cref="F:System.IdentityModel.Services.CookieHandlerMode.Default" />、チャンクされたクッキー ハンドラーを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャンクされたクッキー ハンドラー (、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>プロパティが設定)、モードを設定する必要がありますいずれかに<xref:System.IdentityModel.Services.CookieHandlerMode.Chunked>または<xref:System.IdentityModel.Services.CookieHandlerMode.Default>です。 カスタム クッキー ハンドラー (、<xref:System.IdentityModel.Services.CookieHandlerElement.CustomCookieHandler%2A>プロパティが設定)、モード設定されている必要があります<xref:System.IdentityModel.Services.CookieHandlerMode.Custom>です。  
+  
+ 表す、`mode`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはハンドラーによって書き込まれた cookie のベース名を設定します。</summary>
+        <value>Cookie の基本名です。 既定値は、"FedAuth"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`name`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("path", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはハンドラーによって書き込まれた cookie のパスの値を設定します。</summary>
+        <value>パスを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスがによって定義されたパスが定義されていない場合、<xref:System.Web.HttpRuntime.AppDomainAppVirtualPath%2A>プロパティを使用します。  
+  
+ 表す、`path`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistentSessionLifetime">
+      <MemberSignature Language="C#" Value="public TimeSpan PersistentSessionLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PersistentSessionLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.PersistentSessionLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("persistentSessionLifetime", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="365.0:0:0", MinValueString="0:0:0")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはハンドラーによって発行されたクッキーの有効期間を設定します。</summary>
+        <value>A <see cref="T:System.TimeSpan" /> cookie の有効期間を表すです。 既定では 0 日 (「0.0:0:0」) です。 値は、0 (「0.0:0:0」) と (「365.0:0:0」) の 365 日間の値にする必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`persistentSessionLifetime`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSsl">
+      <MemberSignature Language="C#" Value="public bool RequireSsl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireSsl" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.CookieHandlerElement.RequireSsl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireSsl", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SSL でのみ、クッキーを使用するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />cookie です。 SSL 接続経由でのみ使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「セキュリティで保護された」フラグは、書き込まれた cookie に対して生成するかどうかを制御します。 この値が場合`true`、サインイン セッション cookie はのみで使用できる HTTPS です。  
+  
+ 表す、`requireSSL`の属性、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

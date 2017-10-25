@@ -1,0 +1,621 @@
+<Type Name="XmlWriterTraceListener" FullName="System.Diagnostics.XmlWriterTraceListener">
+  <TypeSignature Language="C#" Value="public class XmlWriterTraceListener : System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlWriterTraceListener extends System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.XmlWriterTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TextWriterTraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース出力またはデバッグ出力を XML でエンコードされたデータとして転送、<see cref="T:System.IO.TextWriter" />または、 <see cref="T:System.IO.Stream" />、ように、<see cref="T:System.IO.FileStream" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  インスタンスを作成するコードのアクセス許可を管理する必要があります、<xref:System.Diagnostics.XmlWriterTraceListener>クラスです。  
+  
+ <xref:System.Diagnostics.XmlWriterTraceListener>クラスは、トレースとデバッグ情報を XML でエンコードされたテキスト ストリームに変換します。 XML 出力の説明は、次の表に表示されます。 使用することができます、[サービス トレース ビューアー ツール (SvcTraceViewer.exe)](http://go.microsoft.com/fwlink/p/?LinkId=240129) XML を表示する出力します。  
+  
+ 有効または無効にすることができます、<xref:System.Diagnostics.XmlWriterTraceListener>しを使用して、構成された、アプリケーション構成ファイルを通じて<xref:System.Diagnostics.XmlWriterTraceListener>アプリケーションでします。 また、作成することができます、<xref:System.Diagnostics.XmlWriterTraceListener>コードにします。  
+  
+ 構成する、<xref:System.Diagnostics.XmlWriterTraceListener>アプリケーションの名前に対応する構成ファイルを編集します。 このファイルに追加またはリスナーの削除、リスナーのプロパティを設定したりリスナーを削除します。 構成ファイルは、次の例のようにフォーマットされている必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="xmlListener"   
+          type="System.Diagnostics.XmlWriterTraceListener"   
+          initializeData="xmlOutput.xml"   
+          traceOutputOptions="ProcessId, DateTime" />  
+        <remove name="Default" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ <xref:System.Diagnostics.XmlWriterTraceListener>クラスは継承、<xref:System.Diagnostics.TraceListener.Filter%2A>基底クラスからプロパティ<xref:System.Diagnostics.TraceListener>です。  <xref:System.Diagnostics.TraceListener.Filter%2A>プロパティは、リスナーでのフィルター処理のトレース出力の追加レベルを使用します。  フィルターが存在する場合、`Trace`トレース リスナーの呼び出しのメソッド、<xref:System.Diagnostics.TraceFilter.ShouldTrace%2A>トレースを出力するかどうかを判断するフィルターのメソッドです。  
+  
+> [!NOTE]
+>  使用されているファイルへの書き込みを試行または使用できない、ファイル名を自動的に付けた GUID。  
+  
+> [!NOTE]
+>  リスナーのメソッドのメソッドによって呼び出されるものでは、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>クラスです。  リスナーのメソッドは、アプリケーション コードから直接呼び出されるものではありません。 <xref:System.Diagnostics.XmlWriterTraceListener>リスナーは、主にで使用するもの、<xref:System.Diagnostics.TraceSource>クラスです。 <xref:System.Diagnostics.XmlWriterTraceListener.Write%2A>と<xref:System.Diagnostics.XmlWriterTraceListener.WriteLine%2A>メソッドを呼び出すことができます、<xref:System.Diagnostics.Trace>と<xref:System.Diagnostics.Debug>クラス、および既定値は XML 要素を提供する<xref:System.Diagnostics.Trace>と<xref:System.Diagnostics.Debug>の値を指定しません。  
+  
+ 次の表は、要素と、XML 出力の属性について説明します。  
+  
+|要素|属性|出力|メモ|  
+|-------------|----------------|------------|-----------|  
+|`CallStack`|なし|存在に依存、<xref:System.Diagnostics.TraceOptions.Callstack>フラグ、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|などの特殊文字 > または < エスケープ シーケンスに置き換えられます。 これに続くエスケープ文字の変換テーブルを参照してください。|  
+|`Computer`|なし|常に存在します。|<xref:System.Environment.MachineName%2A> プロパティの値。|  
+|`Correlation`|`ActivityID`|常に存在します。|指定しない場合、既定では空の GUID です。|  
+||`RelatedActivityID`|存在に依存、`relatedActivityId`トレース メソッド呼び出しのパラメーターです。|`relatedActivityId`のパラメーター、<xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer%2A>メソッドです。|  
+|`DataItem`|なし|によって異なります、`data`のパラメーター、<xref:System.Diagnostics.XmlWriterTraceListener.TraceData%2A>メソッドです。|値のセットとして書き込まれるように、この要素は配列の要素または 1 つの要素を含めることができます`DataItem`の下のノード、`TraceData`要素。<br /><br /> データの出力は、`ToString`渡されたデータ オブジェクトのメソッドです。|  
+|`EventID`|なし|常に存在します。|パラメーターの入力 (`id`)。|  
+|`Execution`|`ProcessName`|常に存在します。|<xref:System.Diagnostics.TraceEventCache>です。|  
+||`ProcessID`|常に存在します。|<xref:System.Diagnostics.TraceEventCache>です。 Windows 98 および Windows オペレーティング システムで Me`ProcessID`が負の数値の正の値の表現です、正しいプロセス識別子の取得に変換する必要があります 2,147, 483,647 を超える。|  
+||`ThreadID`|常に存在します。|<xref:System.Diagnostics.TraceEventCache>です。|  
+|`Level`|なし|常に存在します。|パラメーターの入力 (の数値`eventType`)。 255 よりも大きいパラメーター値は、255 として出力されます。|  
+|`LogicalOperationStack`|なし|存在に依存、<xref:System.Diagnostics.TraceOptions.LogicalOperationStack>フラグ、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|値として書き込まれるように、1 つ以上の論理操作にすることができます`LogicalOperation`の下のノード、`LogicalOperationStack`要素。|  
+|`Message`|なし|トレースのメソッド呼び出しでメッセージの有無によって異なります。|この要素は、書式指定の引数を指定する場合、書式設定されたメッセージです。|  
+|`Source`|`Name`|常に存在します。|パラメーターを入力します。|  
+|`SubType`|`Name`|常に存在します。|パラメーターを入力します。|  
+|`TimeCreated`|`SystemTime`|常に存在します。|内に存在しない場合、 <xref:System.Diagnostics.TraceEventCache>、既定値は、現在の時刻。|  
+|`TimeStamp`|なし|存在に依存、<xref:System.Diagnostics.TraceOptions.Timestamp>フラグ、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。|<xref:System.Diagnostics.TraceEventCache>です。|  
+|`Type`|なし|常に存在します。|常に値 3 です。|  
+  
+ 次の表は、XML 出力でエスケープされている文字を示します。 エスケープのすべての要素で発生して、属性は例外です、`DataItem`要素は、文字はエスケープされませんにオブジェクトが渡された場合、`data`のパラメーター、<xref:System.Diagnostics.XmlWriterTraceListener.TraceData%2A>メソッドは、<xref:System.Xml.XPath.XPathNavigator>オブジェクト。 場合、<xref:System.Xml.XPath.XPathNavigator>データ オブジェクトが使用される、<xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A>メソッドが呼び出され、エスケープ解除されたデータとして、全体のルート ノードが追跡されます。  
+  
+|エスケープ文字|値|  
+|-----------------------|-----------|  
+|&|&amp;|  
+|\<|&lt;|  
+|>|&gt;|  
+|"|&quot;|  
+|\|&apos;|  
+|0xD|&\#xD;|  
+|0 xa|&\#xA;|  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Diagnostics.XmlWriterTraceListener>エスケープと非エスケープの両方のデータ ファイルのログを書き込むクラスです。  
+  
+ [!code-csharp[System.Diagnostics.XmlWriterTraceListener#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.XmlWriterTraceListener/CS/program.cs#1)]
+ [!code-vb[System.Diagnostics.XmlWriterTraceListener#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.XmlWriterTraceListener/VB/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />を表すストリームをトレース リスナーに書き込みます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />クラス、デバッグ出力およびトレース出力の受信者として指定したストリームを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />トレース リスナーからの出力を受信します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />クラス、デバッグの受信者として指定したライターを使用して、トレースの出力。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">書き込み先のファイルの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />クラス、デバッグ出力およびトレース出力の受信者として指定されたファイルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、 <xref:System.IO.StreamWriter> 、指定したパスで指定したファイルのクラスを使用して<xref:System.Text.Encoding.UTF8%2A>エンコードします。 ファイルが存在する場合に追加されます。 ファイルが存在しない場合、新しいファイルが作成されます。  
+  
+> [!NOTE]
+>  例外が発生する可能性を減らすためには、出力が無効になる任意の文字が置き換えられます、"?"文字です。  
+  
+ <xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filename" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (System.IO.Stream stream, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.IO.Stream,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />を表すストリームをトレース リスナーに書き込みます。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />デバッグの受信者として指定したストリームを使用して出力およびトレース出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを`name`パラメーターの値または空の文字列 ("") 場合、`name`パラメーターが`null`です。 名前をインデックスとして使用できます、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>のインスタンスのプロパティを<xref:System.Diagnostics.XmlWriterTraceListener>が<xref:System.Diagnostics.TraceListener.Name%2A>プロパティが"xmlListener"です。  
+  
+```  
+((XmlWriterTraceListener)Trace.Listeners["xmlListener"]).TraceOutputOptions =   
+    TraceOptions.Timestamp  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (System.IO.TextWriter writer, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.IO.TextWriter,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />トレース リスナーからの出力を受信します。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />デバッグの受信者として指定したライターを使用して出力およびトレース出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを`name`パラメーターの値または空の文字列 ("") 場合、`name`パラメーターが`null`です。 名前をインデックスとして使用できます、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>のインスタンスのプロパティを<xref:System.Diagnostics.XmlWriterTraceListener>が<xref:System.Diagnostics.TraceListener.Name%2A>プロパティが"xmlListener"です。  
+  
+```  
+((XmlWriterTraceListener)Trace.Listeners["xmlListener"]).TraceOutputOptions =   
+    TraceOptions.Timestamp.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterTraceListener (string filename, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">書き込み先のファイルの名前。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.XmlWriterTraceListener" />デバッグの受信者として指定されたファイルを使用して出力およびトレース出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、 <xref:System.IO.StreamWriter> 、指定したパスで指定したファイルのクラスを使用して<xref:System.Text.Encoding.UTF8%2A>エンコードします。 ファイルが存在する場合に追加されます。 ファイルが存在しない場合、新しいファイルが作成されます。  
+  
+> [!NOTE]
+>  例外が発生する可能性を減らすためには、出力が無効になる任意の文字が置き換えられます、"?"文字です。  
+  
+ <xref:System.Diagnostics.TraceListener.Name%2A>プロパティに設定されている、`name`パラメーターの値または空の文字列 ("") 場合、`name`パラメーターは`null`します。 名前をインデックスとして使用できます、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>リスナーのプロパティをプログラムで変更するコレクション。 たとえば、次のコード セット、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>のインスタンスのプロパティを<xref:System.Diagnostics.XmlWriterTraceListener>が<xref:System.Diagnostics.TraceListener.Name%2A>プロパティが"xmlListener"です。  
+  
+```  
+((XmlWriterTraceListener)Trace.Listeners["xmlListener"]).TraceOutputOptions =  
+    TraceOptions.Timestamp.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>閉じる、<see cref="P:System.Diagnostics.TextWriterTraceListener.Writer" />このリスナーがトレース出力またはデバッグ出力を受信しないようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fail">
+      <MemberSignature Language="C#" Value="public override void Fail (string message, string detailMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Fail(string message, string detailMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.Fail(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="detailMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むエラー メッセージ。</param>
+        <param name="detailMessage">エラー メッセージに追加する詳細なエラー メッセージ。</param>
+        <summary>トレース情報、エラー メッセージなど、詳細なエラー メッセージをファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作がユーザー インターフェイス モードとに、アプリケーションが実行されているときに、メッセージ ボックスに、メッセージと詳細なメッセージを表示するには、<xref:System.Diagnostics.TraceListener>のインスタンスにある、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション。 既定では、コレクションにはインスタンスが含まれています<xref:System.Diagnostics.DefaultTraceListener>です。 この動作をカスタマイズするには追加または削除して、<xref:System.Diagnostics.TraceListener>コレクションからです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" />。</param>
+        <param name="source">ソース名。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">出力するデータ オブジェクト。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報をファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eventCache`、 `source`、 `eventType`、および`id`パラメーター ヘッダーとフッターのトレースで使用されます。 `id`パラメーターは、書き込みの前に符号なし整数にそのため、負の値`id`値が大きい正の整数として書き込まれます。 `data`としてパラメーターを記述、`DataItem`内のノード、`TraceData`要素。 `ToString`データ オブジェクトのメソッドを使用して、オブジェクトを文字列に変換します。  
+  
+> [!IMPORTANT]
+>  このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。  メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" />。</param>
+        <param name="source">ソース名。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">出力するデータ オブジェクトの配列。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報をファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eventCache`、 `source`、 `eventType`、および`id`パラメーター ヘッダーとフッターのトレースで使用されます。 `id`パラメーターは、書き込みの前に符号なし整数にそのため、負の値`id`値が大きい正の整数として書き込まれます。 内のオブジェクト、`data`パラメーター配列として書き込まれる`DataItem`内のノード、`TraceData`要素。 `ToString`各データ オブジェクトのメソッドを使用して、オブジェクトを文字列に変換します。  
+  
+> [!IMPORTANT]
+>  このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。  メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" />。</param>
+        <param name="source">ソース名。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>トレース情報、メッセージ、およびイベント情報をファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eventCache`、 `source`、 `eventType`、および`id`パラメーター ヘッダーとフッターのトレースで使用されます。 `id`パラメーターは、書き込みの前に符号なし整数にそのため、負の値`id`値が大きい正の整数として書き込まれます。 `message`としてパラメーターを記述、`Message`要素。  
+  
+> [!IMPORTANT]
+>  このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。  メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" />。</param>
+        <param name="source">ソース名。</param>
+        <param name="eventType"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する 0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">書式指定する 0 個以上のオブジェクトを格納するオブジェクト配列。</param>
+        <summary>トレース情報、書式設定されたメッセージ、およびイベント情報をファイルまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eventCache`、 `source`、 `eventType`、および`id`パラメーター ヘッダーとフッターのトレースで使用されます。 `id`パラメーターは、書き込みの前に符号なし整数にそのため、負の値`id`値が大きい正の整数として書き込まれます。 <xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>に渡して、メソッドが呼び出されます、`format`文字列と`args`形式へのパラメーターとしての配列、`args`オブジェクトの配列として、`Message`要素。  
+  
+> [!IMPORTANT]
+>  このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。  メソッドによって呼び出されます、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceTransfer">
+      <MemberSignature Language="C#" Value="public override void TraceTransfer (System.Diagnostics.TraceEventCache eventCache, string source, int id, string message, Guid relatedActivityId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceTransfer(class System.Diagnostics.TraceEventCache eventCache, string source, int32 id, string message, valuetype System.Guid relatedActivityId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="relatedActivityId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" />。</param>
+        <param name="source">ソース名。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">書き込むトレース メッセージ。</param>
+        <param name="relatedActivityId">関連するアクティビティを識別する <see cref="T:System.Guid" /> 構造体。</param>
+        <summary>トレース ファイルまたはストリームに関連するアクティビティ、メッセージ、およびイベント情報の id などの情報に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer%2A>メソッドは、関連するトレースの相関関係を使用します。 `eventCache`、 `source`、 `id`、および`relatedActivityId`パラメーター ヘッダーとフッターのトレースで使用されます。 `id`パラメーターは、書き込みの前に符号なし整数にそのため、負の値`id`値が大きい正の整数として書き込まれます。 `message`としてパラメーターを記述、`Message`要素。 <xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>に変換するメソッドが呼び出された、 `relatedActivityId`"B"に値がヘッダーに表示される文字列を書式設定します。 `SubTypeName`フッター内の要素としてトレース イベントの種類を識別する、<xref:System.Diagnostics.TraceEventType.Transfer>です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。  によって呼び出されるものでは、<xref:System.Diagnostics.TraceSource>のトレース情報を出力するオブジェクト、<xref:System.Diagnostics.TraceSource.TraceTransfer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>ファイルまたはストリームに追加のコンテキスト情報がないまま逐語的メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.XmlWriterTraceListener.TraceData%2A>ログの出力にコンテキスト情報を含める方法です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.XmlWriterTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>ファイルまたはストリームに書き込み、続けて現在の行終端記号の追加のコンテキスト情報がない場合に、逐語的メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.XmlWriterTraceListener.TraceData%2A>ログの出力にコンテキスト情報を含める方法です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

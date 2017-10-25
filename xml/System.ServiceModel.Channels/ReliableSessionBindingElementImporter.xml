@@ -1,0 +1,83 @@
+<Type Name="ReliableSessionBindingElementImporter" FullName="System.ServiceModel.Channels.ReliableSessionBindingElementImporter">
+  <TypeSignature Language="C#" Value="public sealed class ReliableSessionBindingElementImporter : System.ServiceModel.Description.IPolicyImportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReliableSessionBindingElementImporter extends System.Object implements class System.ServiceModel.Description.IPolicyImportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ReliableSessionBindingElementImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyImportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>信頼できるセッションのバインド要素と、メタデータ内のそれに対応するポリシー アサーションの表現の間をマップします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] は、このクラスを使用して、信頼できるセッションのバインド要素を、メタデータ内のバインド ポリシー アサーションにインポートします。 このクラスは、サービスでは、信頼できるセッションのバインド要素を受け取り、カスタム ポリシー アサーションを WSDL ファイルに書き込みます。 クライアントでは、これらのアサーションを探して、対応するバインド要素をクライアント バインドに挿入します。 バインド内に信頼できるセッションが存在すると、WS-Reliable Messaging Policy の仕様で説明されている信頼できるメッセージのアサーションとしてレンダリングされることに注意してください。  
+  
+ WSDL 情報へのバインド間でのポリシー アサーションの交換[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.ServiceModel.Description.IPolicyImportExtension> インターフェイスおよび <xref:System.ServiceModel.Description.IPolicyExportExtension> インターフェイスを参照してください。  
+  
+-   特定のエンドポイントによって公開されている WSDL 情報でエンドポイントの機能または要件に関するカスタム ポリシー アサーションを検索するには、<xref:System.ServiceModel.Description.IPolicyImportExtension> インターフェイスを実装します。  
+  
+-   エンドポイントの機能または要件に関するステートメントを、特定のエンドポイントによって公開される WSDL 情報に書き込むには、<xref:System.ServiceModel.Description.IPolicyExportExtension> オブジェクトで <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> インターフェイスを実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliableSessionBindingElementImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElementImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ReliableSessionBindingElementImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy">
+      <MemberSignature Language="C#" Value="void IPolicyImportExtension.ImportPolicy (System.ServiceModel.Description.MetadataImporter importer, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy(class System.ServiceModel.Description.MetadataImporter importer, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ReliableSessionBindingElementImporter.System#ServiceModel#Description#IPolicyImportExtension#ImportPolicy(System.ServiceModel.Description.MetadataImporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="importer" Type="System.ServiceModel.Description.MetadataImporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="importer">WSDL メタデータをバインド要素にインポートする <see cref="T:System.ServiceModel.Description.MetadataImporter" />。</param>
+        <param name="context">バインディング要素に変換する必要があるバインディング ポリシー アサーションを含むサービス エンドポイントの <see cref="T:System.ServiceModel.Description.PolicyConversionContext" />。</param>
+        <summary>WS-Reliable Message のポリシー アサーションを、クライアント上のバインド内の信頼できるセッションのバインド要素に変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" /> または <paramref name="importer" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Channels.InvalidChannelBindingException">読み取っているポリシー アサーションは、WS-Reliable Messaging ポリシーに準拠していないため、無効です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

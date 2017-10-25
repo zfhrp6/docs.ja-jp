@@ -1,0 +1,464 @@
+<Type Name="ContextBindingElement" FullName="System.ServiceModel.Channels.ContextBindingElement">
+  <TypeSignature Language="C#" Value="public class ContextBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.IContextBindingElement, System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContextBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Channels.IContextBindingElement, class System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ContextBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IContextBindingElement</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyExportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.WorkflowServices, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインド要素のコンテキストとチャネル リスナーおよびファクトリを構築するための機能の一環として保護レベルと交換機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ContextBindingElement> を使用すると、そのコンテキスト交換プロトコルを管理するためのサービスのバインドに要素を追加できます。 <xref:System.ServiceModel.Channels.ContextBindingElement> は通常、信頼性要素、セキュリティ要素、およびトランスポート バインド要素の上に積み重ねられます。 <xref:System.ServiceModel.Channels.ContextBindingElement> では構成オプションは必要とはせず、<xref:System.ServiceModel.Channels.IRequestChannel>、<xref:System.ServiceModel.Channels.IRequestSessionChannel>、および <xref:System.ServiceModel.Channels.IDuplexSessionChannel> のチャネル ファクトリを作成できます。 さらに、<xref:System.ServiceModel.Channels.IReplyChannel>、<xref:System.ServiceModel.Channels.IReplySessionChannel>、および <xref:System.ServiceModel.Channels.IDuplexSessionChannel> のチャネル リスナーも生成できます。 コンテキスト チャネルはチャネル インターフェイスを変更しません。基になるチャネル スタックでは、要求されたチャネル形状およびセッション機能をサポートする必要があります。  
+  
+ チャネル リスナーとチャネル ファクトリは、受信メッセージと送信メッセージを処理するために使用されるチャネル スタックの一部を構築するために使用されます。  
+  
+> [!NOTE]
+>  セッション ベースのバインディングが作成された場合、<xref:System.ServiceModel.Channels.ContextBindingElement>を指定したコントラクトと共に使用して<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A>  =  <xref:System.ServiceModel.SessionMode.NotAllowed>、<xref:System.InvalidOperationException>が、次のテキストをチャネルが作成されるときにスローされます:「チャネルのコンテキスト管理できない有効または無効チャネルが開かれた後にします」。 <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> を <xref:System.ServiceModel.SessionMode.Allowed> または <xref:System.ServiceModel.SessionMode.Required> に設定してください。それ以外の場合は、セッションベースのチャネルを使用しないでください。  
+  
+ カスタム バインドの作成時、信頼性バインドおよびセキュリティ バインド要素 (ある場合) を追加する前に、カスタム バインドの <xref:System.ServiceModel.Channels.ContextBindingElement> に <xref:System.ServiceModel.Channels.BindingElementCollection> を追加することをお勧めします。 これを行わない場合、次のメッセージと共に <xref:System.ServiceModel.ProtocolException> がサービスによってスローされる可能性があります。  
+  
+ "コンテキストのチャネルが、現在チャネルにキャッシュされているコンテキストと一致しないコンテキストを含むメッセージを受信しました。 コンテキストが最初に設定された後、またはチャネル プロパティ 'IContextManager.Enabled' を false に設定してコンテキストの管理が無効にされた後に、サービスによってコンテキストが変更されていないことを確認してください。"  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Security.ProtectionLevel.Sign> の <xref:System.Net.Security.ProtectionLevel> の既定値、および <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader> の <xref:System.ServiceModel.Channels.ContextExchangeMechanism> の既定値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextBindingElement (System.Net.Security.ProtectionLevel protectionLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Security.ProtectionLevel protectionLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.#ctor(System.Net.Security.ProtectionLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Net.Security.ProtectionLevel" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">バインディング要素の <see cref="T:System.Net.Security.ProtectionLevel" />。</param>
+        <summary>保護レベルを指定して <see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader> の <xref:System.ServiceModel.Channels.ContextExchangeMechanism> の既定値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="protectionLevel" /> が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextBindingElement (System.Net.Security.ProtectionLevel protectionLevel, System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Security.ProtectionLevel protectionLevel, valuetype System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.#ctor(System.Net.Security.ProtectionLevel,System.ServiceModel.Channels.ContextExchangeMechanism)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Net.Security.ProtectionLevel" />
+        <Parameter Name="contextExchangeMechanism" Type="System.ServiceModel.Channels.ContextExchangeMechanism" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">バインディング要素の <see cref="T:System.Net.Security.ProtectionLevel" />。</param>
+        <param name="contextExchangeMechanism">バインド要素のコンテキストを交換するための機構を指定する <see cref="T:System.ServiceModel.Channels.ContextExchangeMechanism" />。</param>
+        <summary>保護レベルおよび交換機構を指定して、<see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="protectionLevel" /> または <paramref name="contextExchangeMechanism" /> が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextBindingElement (System.Net.Security.ProtectionLevel protectionLevel, System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism, Uri clientCallbackAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Security.ProtectionLevel protectionLevel, valuetype System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism, class System.Uri clientCallbackAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.#ctor(System.Net.Security.ProtectionLevel,System.ServiceModel.Channels.ContextExchangeMechanism,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Net.Security.ProtectionLevel" />
+        <Parameter Name="contextExchangeMechanism" Type="System.ServiceModel.Channels.ContextExchangeMechanism" />
+        <Parameter Name="clientCallbackAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">バインド要素の保護レベル。</param>
+        <param name="contextExchangeMechanism">バインド要素のコンテキストを交換するために使用される機構。</param>
+        <param name="clientCallbackAddress">クライアント コールバック アドレス。</param>
+        <summary>保護レベル、コンテキスト交換機構、およびクライアント コールバック アドレスを指定して、<see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextBindingElement (System.Net.Security.ProtectionLevel protectionLevel, System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism, Uri clientCallbackAddress, bool contextManagementEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Security.ProtectionLevel protectionLevel, valuetype System.ServiceModel.Channels.ContextExchangeMechanism contextExchangeMechanism, class System.Uri clientCallbackAddress, bool contextManagementEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.#ctor(System.Net.Security.ProtectionLevel,System.ServiceModel.Channels.ContextExchangeMechanism,System.Uri,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Net.Security.ProtectionLevel" />
+        <Parameter Name="contextExchangeMechanism" Type="System.ServiceModel.Channels.ContextExchangeMechanism" />
+        <Parameter Name="clientCallbackAddress" Type="System.Uri" />
+        <Parameter Name="contextManagementEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">バインド要素の保護レベル。</param>
+        <param name="contextExchangeMechanism">バインド要素のコンテキストを交換するために使用される機構。</param>
+        <param name="clientCallbackAddress">クライアント コールバック アドレス。</param>
+        <param name="contextManagementEnabled">
+          <see langword="true" />コンテキスト管理が有効である場合それ以外の場合<see langword="false" />です。</param>
+        <summary>保護レベル、コンテキスト交換機構、クライアント コールバック アドレス、コンテキスト管理が有効になっているかどうかを示す値を指定して、<see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="context">チャネルの <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストに対して指定した種類のチャネルを作成するチャネル ファクトリ スタックをクライアント上に作成します。</summary>
+        <returns>指定したコンテキストの <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> 型の <paramref name="TChannel" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          設定されている <paramref name="context" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。</typeparam>
+        <param name="context">リスナーの <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストに対する、指定した種類のチャネルを受け入れるチャネル リスナー スタックをクライアント上に作成します。</summary>
+        <returns>指定したコンテキストの <see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> 型の <paramref name="TChannel" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          設定されている <paramref name="context" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリが作成するチャネルの種類。 既定では、<see cref="T:System.ServiceModel.Channels.IRequestChannel" />、<see cref="T:System.ServiceModel.Channels.IRequestSessionChannel" />、および <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> のみ許可されます。</typeparam>
+        <param name="context">ファクトリの <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネルとコンテキストに対するファクトリを現在のバインド要素が作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル ファクトリ スタックをクライアントで作成できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーが受け入れるチャネルの種類。 既定では、<see cref="T:System.ServiceModel.Channels.IReplyChannel" />、<see cref="T:System.ServiceModel.Channels.IReplySessionChannel" />、および <see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> のみ許可されます。</typeparam>
+        <param name="context">リスナーの <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネルとコンテキストに対するリスナーを現在のバインディングが作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したチャネル リスナー スタックをサービスで作成できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCallbackAddress">
+      <MemberSignature Language="C#" Value="public Uri ClientCallbackAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ClientCallbackAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextBindingElement.ClientCallbackAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド要素のクライアント コールバック アドレスを取得または設定します。</summary>
+        <value>クライアント コールバック アドレス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> オブジェクトを作成し、現在のオブジェクトを使用して初期化します。</summary>
+        <returns>現在のオブジェクトを使用して初期化された <see cref="T:System.ServiceModel.Channels.ContextBindingElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製された <xref:System.ServiceModel.Channels.ContextBindingElement> オブジェクトは、現在の <xref:System.ServiceModel.Channels.ContextBindingElement.ProtectionLevel%2A> オブジェクトと同じ <xref:System.ServiceModel.Channels.ContextExchangeMechanism> および <xref:System.ServiceModel.Channels.ContextBindingElement> 値を持っています。  
+  
+ これは、現在のバインド要素のオブジェクト ツリーの完全なコピーを作成します。これはディープ クローンとも呼ばれます。 オブジェクトのディープ クローンでは、オブジェクトのコピーと、このオブジェクトによって直接的または間接的に参照されるすべての対象のコピーが作成されます。 これは、オブジェクトのグラフ全体をコピーして呼び出されます。 ディープ クローンを返すと、ランタイムでは、複数のカスタム バインドがカスタム バインド要素を共有する場合をサポートできます。 ディープ クローンが返されない場合、ランタイムの動作は未定義です。 これとは対照的に、オブジェクトのシャロー クローンは、オブジェクトだけをコピーしたものです。 オブジェクトが他のオブジェクトへの参照を含んでいる場合、シャロー コピーでは、参照されるオブジェクトのコピーは作成されません。代わりに元のオブジェクトへの参照だけがコピーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextExchangeMechanism">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.ContextExchangeMechanism ContextExchangeMechanism { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Channels.ContextExchangeMechanism ContextExchangeMechanism" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.ContextExchangeMechanism</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド要素のコンテキストをやり取りするための交換機構を取得または設定します。</summary>
+        <value>バインド要素のコンテキストを交換するための機構を指定する <see cref="T:System.ServiceModel.Channels.ContextExchangeMechanism" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextManagementEnabled">
+      <MemberSignature Language="C#" Value="public bool ContextManagementEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContextManagementEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextBindingElement.ContextManagementEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト管理が有効にされるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンテキスト管理が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportPolicy">
+      <MemberSignature Language="C#" Value="public virtual void ExportPolicy (System.ServiceModel.Description.MetadataExporter exporter, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ExportPolicy(class System.ServiceModel.Description.MetadataExporter exporter, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">メタデータ情報をエクスポートする <see cref="T:System.ServiceModel.Description.MetadataExporter" />。</param>
+        <param name="context">エクスポートされた WSDL 要素からコントラクトの説明へのマッピングを提供する <see cref="T:System.ServiceModel.Description.WsdlContractConversionContext" /> オブジェクト。</param>
+        <summary>カスタム ポリシー アサーションをバインド要素のコンテキストに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> が <see langword="null" /> であるか、バインディング内のポリシー アサーションが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />指定します。</param>
+        <summary>チャネル スタックの適切な層から、指定されたコンテキストと共に型指定されたオブジェクトを返します。</summary>
+        <returns>要求される、型指定された <paramref name="T" /> オブジェクト (ある場合)。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextBindingElement.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキストからバインド要素を保護するレベルを取得または設定します。</summary>
+        <value>バインディング要素の <see cref="T:System.Net.Security.ProtectionLevel" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定されている値が有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

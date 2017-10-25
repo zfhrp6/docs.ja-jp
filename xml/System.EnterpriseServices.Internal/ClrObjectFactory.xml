@@ -1,0 +1,187 @@
+<Type Name="ClrObjectFactory" FullName="System.EnterpriseServices.Internal.ClrObjectFactory">
+  <TypeSignature Language="C#" Value="public class ClrObjectFactory : System.EnterpriseServices.Internal.IClrObjectFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClrObjectFactory extends System.Object implements class System.EnterpriseServices.Internal.IClrObjectFactory" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.ClrObjectFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.Internal.IClrObjectFactory</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("ecabafd1-7f19-11d2-978e-0000f8757e2a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントから SOAP 対応の COM + アプリケーション プロキシを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.ClrObjectFactory>.NET Framework によって内部的に使用されます。 コード内で直接、クラスを使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClrObjectFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClrObjectFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.Internal.ClrObjectFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromAssembly">
+      <MemberSignature Language="C#" Value="public object CreateFromAssembly (string AssemblyName, string TypeName, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromAssembly(string AssemblyName, string TypeName, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromAssembly(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AssemblyName" Type="System.String" />
+        <Parameter Name="TypeName" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AssemblyName">アクティブ化するアセンブリの名前。</param>
+        <param name="TypeName">アクティブにする型の名前。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>アセンブリの構成ファイルを使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />型に、引数、カルチャを表すし、バインディングとアクティベーション属性を設定<see langword="null" />、または<see langword="null" />場合、<paramref name="TypeName" />パラメーターが見つかりません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">クラスが登録されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromMailbox">
+      <MemberSignature Language="C#" Value="public object CreateFromMailbox (string Mailbox, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromMailbox(string Mailbox, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromMailbox(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Mailbox" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Mailbox">Web サービス上のメールボックスです。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>リモート アセンブリのメールボックスを使用してリモートのアセンブリ、.NET リモート処理を有効にします。 現在は実装されていません。スロー、<see cref="T:System.Runtime.InteropServices.COMException" />呼び出された場合。</summary>
+        <returns>このメソッドは、呼び出された場合に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出された場合は、例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">簡易メール転送プロトコル (SMTP) が実装されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromVroot">
+      <MemberSignature Language="C#" Value="public object CreateFromVroot (string VrootUrl, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromVroot(string VrootUrl, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromVroot(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VrootUrl" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="VrootUrl">アクティブ化するオブジェクトの仮想ルート URL です。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>リモート アセンブリの仮想ルートの URL を使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />に設定されたカルチャ、引数、およびバインディングとアクティベーション属性を型を表す<see langword="null" />、または<see langword="null" />でアセンブリが識別される場合、<paramref name="VrootUrl" />パラメーターが見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromVroot%2A>文字列を追加"? wsdl"を`VrootUrl`と呼び出し<xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromWsdl%2A>リモート オブジェクトをアクティブにします。  
+  
+ .NET リモート処理で使用される SOAP のバージョンが、RPC/エンコード、いないドキュメント/リテラル、必要な SOAP 相互運用性。 したがって、 <xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromVroot%2A> ASMX Web サービスのほとんどでは動作しません。  
+  
+ <xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromVroot%2A>初めてを作成し、リモートのアセンブリとの通信用のクライアント プロキシをインストールするため、実行をローカル コンピューターの管理者権限が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スレッド トークンを開くことができませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromWsdl">
+      <MemberSignature Language="C#" Value="public object CreateFromWsdl (string WsdlUrl, string Mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateFromWsdl(string WsdlUrl, string Mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromWsdl(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="WsdlUrl" Type="System.String" />
+        <Parameter Name="Mode" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="WsdlUrl">Web サービスの WSDL の URL です。</param>
+        <param name="Mode">使用しません。</param>
+        <summary>Web サービス記述言語 (WSDL) の XML Web サービスを使用してリモートのアセンブリ、.NET リモート処理を有効にします。</summary>
+        <returns>インスタンス、<see cref="T:System.Object" />に設定されたカルチャ、引数、およびバインディングとアクティベーション属性を型を表す<see langword="null" />、または<see langword="null" />でアセンブリが識別される場合、<paramref name="WsdlUrl" />パラメーターが見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡された WSDL を処理し、必要に応じて、プロキシを生成する場合、リモート オブジェクトをアクティブになります。  
+  
+ .NET リモート処理で使用される SOAP のバージョンが、RPC/エンコード、いないドキュメント/リテラル、必要な SOAP 相互運用性。 したがって、 <xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromWsdl%2A> ASMX Web サービスのほとんどでは動作しません。  
+  
+ <xref:System.EnterpriseServices.Internal.ClrObjectFactory.CreateFromWsdl%2A>初めてを作成し、リモートのアセンブリとの通信用のクライアント プロキシをインストールするため、実行をローカル コンピューターの管理者権限が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出しチェーン内の呼び出し元には、アンマネージ コードへのアクセス許可がありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スレッド トークンを開くことができませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

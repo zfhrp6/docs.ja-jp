@@ -1,0 +1,193 @@
+<Type Name="StandardPrintController" FullName="System.Drawing.Printing.StandardPrintController">
+  <TypeSignature Language="C#" Value="public class StandardPrintController : System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StandardPrintController extends System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.StandardPrintController" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Printing.PrintController</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリンターに情報を送信するプリント コント ローラーを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument>このクラスを使用します。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StandardPrintController ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.StandardPrintController.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.StandardPrintController" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPage">
+      <MemberSignature Language="C#" Value="public override void OnEndPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.StandardPrintController.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />印刷されるドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />ドキュメント内のページを印刷する方法に関するデータを格納します。</param>
+        <summary>ドキュメントのページを印刷するタイミングと方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>直後後に呼び出される、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 内部例外がスローされた場合、<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、 <xref:System.Drawing.Printing.PrintDocument>、<xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>は呼び出されません。  
+  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>が呼び出される、<xref:System.Drawing.Printing.StandardPrintController.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ときに<xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>の印刷コンテキストから呼び出される、 <xref:System.Windows.Forms.PrintDialog> 、<xref:System.Drawing.Printing.PrintingPermission>の<xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>が必要です。 既定のプリンターに印刷必要があります、<xref:System.Drawing.Printing.PrintingPermission>の<xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>します。 このメソッドではその他のすべての呼び出し、<xref:System.Drawing.Printing.PrintingPermission>の<xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">ネイティブの Win32 アプリケーション プログラミング インターフェイス (API) は、ページの書き込みを完了できませんでした。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">プリンターへのアクセスを制御するためです。 関連する列挙体:<see cref="T:System.Drawing.Printing.PrintingPermissionLevel" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPrint">
+      <MemberSignature Language="C#" Value="public override void OnEndPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.StandardPrintController.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />印刷されるドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintEventArgs" />文書を印刷する方法に関するデータを格納します。</param>
+        <summary>ドキュメントを印刷するタイミングと方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>直後後に呼び出される<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.EndPrint>イベント。 印刷処理中にキャッチされない例外がスローされた場合でも<xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>と呼びます。  
+  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>が呼び出される、<xref:System.Drawing.Printing.StandardPrintController.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">ネイティブの Win32 アプリケーション プログラミング インターフェイス (API) は、印刷ジョブを完了できませんでした。  
+  
+ または  
+  
+ ネイティブの Win32 API は、指定したデバイス コンテキスト (DC) を削除できませんでした。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">プリンターへのアクセスを制御するためです。 関連する列挙体:<see cref="T:System.Drawing.Printing.PrintingPermissionLevel" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Graphics OnStartPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Drawing.Graphics OnStartPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.StandardPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />印刷されるドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintPageEventArgs" />ドキュメント内のページを印刷する方法に関するデータを格納します。 最初に、<see cref="P:System.Drawing.Printing.PrintPageEventArgs.Graphics" />このパラメーターのプロパティになります<see langword="null" />です。 返される値、<see cref="M:System.Drawing.Printing.StandardPrintController.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />メソッドは、このプロパティを設定するために使用されます。</param>
+        <summary>ドキュメント内のページを印刷するタイミングと方法を決定する制御シーケンスを開始します。</summary>
+        <returns>A<see cref="T:System.Drawing.Graphics" />からページを表すオブジェクト、<see cref="T:System.Drawing.Printing.PrintDocument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPage%2A>直前に呼び出されます<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。  
+  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷で使用されるオブジェクト。 後に<xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>が呼び出される、<xref:System.Drawing.Printing.StandardPrintController.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">ネイティブの Win32 アプリケーション プログラミング インターフェイス (API) は、データを受け入れるように、プリンター ドライバーを準備できませんでした。  
+  
+ または  
+  
+ ネイティブの Win32 API には、指定されたプリンター デバイス コンテキスト (DC) 指定した情報を使用して更新できませんでした。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">プリンターへのアクセスを制御するためです。 関連する列挙体:<see cref="T:System.Drawing.Printing.PrintingPermissionLevel" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPrint">
+      <MemberSignature Language="C#" Value="public override void OnStartPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnStartPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.StandardPrintController.OnStartPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />印刷されるドキュメントを表すです。</param>
+        <param name="e">A<see cref="T:System.Drawing.Printing.PrintEventArgs" />文書を印刷する方法に関するデータを格納します。</param>
+        <summary>ドキュメントを印刷するタイミングと方法を決定する制御シーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>直後後に呼び出される<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>イベント。  
+  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>印刷で使用されるオブジェクト。 後に<xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>が呼び出される、<xref:System.Drawing.Printing.StandardPrintController.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Drawing.Printing.StandardPrintController.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Drawing.Printing.StandardPrintController.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ <xref:System.Drawing.Printing.StandardPrintController.OnStartPrint%2A>プリンターの設定が有効であることを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターの設定が有効ではありません。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">ネイティブの Win32 アプリケーション プログラミング インターフェイス (API) は、印刷ジョブを開始できませんでした。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">プリンターへのアクセスを制御するためです。 関連する列挙。<see cref="T:System.Drawing.Printing.PrintingPermissionLevel" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

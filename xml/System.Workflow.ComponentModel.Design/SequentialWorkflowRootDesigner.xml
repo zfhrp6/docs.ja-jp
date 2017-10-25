@@ -1,0 +1,494 @@
+<Type Name="SequentialWorkflowRootDesigner" FullName="System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner">
+  <TypeSignature Language="C#" Value="public class SequentialWorkflowRootDesigner : System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SequentialWorkflowRootDesigner extends System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.SequentialActivityDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイス上のすべてのルート デザイナーに一貫性のある外観を提供するためのプロパティとメソッドを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ シーケンシャル ワークフロー ルート デザイナー クラスのインスタンスは通常、ワークフロー デザイナーでワークフローが作成されるときに作成され、ユーザーがアクティビティを追加および編集できるデザイナー画面を表します。 ワークフロー ルート デザイナーは、<xref:System.Workflow.Activities.InvokeWorkflowActivity> アクティビティの子でない限り、親デザイナーを持ちません。 すべてのワークフロー ルート デザイナーは、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner> から派生しなければなりません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SequentialWorkflowRootDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeParentedTo">
+      <MemberSignature Language="C#" Value="public override bool CanBeParentedTo (System.Workflow.ComponentModel.Design.CompositeActivityDesigner parentActivityDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBeParentedTo(class System.Workflow.ComponentModel.Design.CompositeActivityDesigner parentActivityDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.CanBeParentedTo(System.Workflow.ComponentModel.Design.CompositeActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentActivityDesigner" Type="System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="parentActivityDesigner">確認対象の <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.CompositeActivity" /> を、デザイナーに関連付けられたアクティビティの親として設定できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> に関連付けられたアクティビティを、<paramref name="parentActivityDesigner" /> に関連付けられたアクティビティの親にできる場合は <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート デザイナーは、ワークフロー デザイン サーフェイス上に親アクティビティ デザイナーを持つことはできません。 継承クラスでオーバーライドしない限り、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.CanBeParentedTo%2A> は常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExpandCollapse">
+      <MemberSignature Language="C#" Value="public override bool CanExpandCollapse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanExpandCollapse" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.CanExpandCollapse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーを展開および折りたたむことができるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> を展開および折りたたむことができる場合は <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドしない限り、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.CanExpandCollapse%2A> は常に `false` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Footer">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter Footer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter Footer" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Footer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーに関連付けられたフッターを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter" /> に関連付けられたフッターを表す <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Footer%2A> の内容は、ワークフロー デザイン サーフェイス上のルート デザイナーの下部に表示されます。 アイコンとテキストをフッターに表示できます。たとえばボタン アイコンを表示して、ユーザーがいずれかのボタン アイコンを選択するとデザイナー ビューが変更されるようにすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInnerConnections">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt; GetInnerConnections (System.Workflow.ComponentModel.Design.DesignerEdges edges);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Drawing.Point&gt; GetInnerConnections(valuetype System.Workflow.ComponentModel.Design.DesignerEdges edges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.GetInnerConnections(System.Workflow.ComponentModel.Design.DesignerEdges)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edges" Type="System.Workflow.ComponentModel.Design.DesignerEdges" />
+      </Parameters>
+      <Docs>
+        <param name="edges">コネクション ポイントのコレクションの収集対象場所となる <see cref="T:System.Workflow.ComponentModel.Design.DesignerEdges" />。</param>
+        <summary>デザイナーの内部接続を表すポイントの読み取り専用コレクションを返します。</summary>
+        <returns>接続可能デザイナーに使用される <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> オブジェクトを格納しているコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーは内部にコネクタを持つことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Glyphs">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Glyphs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> に表示されるグリフのコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection" /> に表示されるグリフを格納している <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter Header { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter Header" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Header" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーに関連付けられたヘッダーを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter" /> に関連付けられたヘッダーを表す <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Header%2A> の内容は、ワークフロー デザイン サーフェイス上のルート デザイナーの上部に表示されます。 アイコンとテキストをヘッダーに表示できます。たとえば、デザイン サーフェイスに現在表示されているデザイナー ビューを示すテキストを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image Image { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image Image" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに関連付けられたイメージを取得します。</summary>
+        <value>デザイナーに関連付ける <see cref="T:System.Drawing.Image" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Image%2A> プロパティには、表示する <xref:System.Drawing.Image> が設定されます。 このプロパティは、デザイン時または実行時に指定できます。  
+  
+ 派生クラスでオーバーライドしない限り、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Image%2A> は null 参照 (Visual Basic の場合は `Nothing`) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageRectangle">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle ImageRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle ImageRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ImageRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに関連付けられたイメージを囲む境界の論理座標値を取得します。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" /> 用に表示される <see cref="T:System.Drawing.Image" /> を囲む <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーに関連付けられているイメージを囲む四角形の座標を取得するには、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ImageRectangle%2A> を使用します。 これらの座標は、コネクタの描画やグラフィックスのオーバーレイに使用できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ImageRectangle%2A> プロパティをオーバーライドする方法を次の例に示します。 この例では、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ImageRectangle%2A> は、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> の Bounds を使用して計算されます。  
+  
+ [!code-csharp[wf_samples#74](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#74)]
+ [!code-vb[wf_samples#74](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#74)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokingDesigner">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.CompositeActivityDesigner InvokingDesigner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.CompositeActivityDesigner InvokingDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.InvokingDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.CompositeActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シーケンシャル ワークフロー ルート デザイナーの初期化を要求した <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> を取得または設定します。</summary>
+        <value>ワークフロー ルート デザイナーの初期化を要求した <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> の最小サイズを取得します。</summary>
+        <value>シーケンシャル ワークフロー デザイナーの最小サイズを表す <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.MinimumSize%2A> は、ユーザーが <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner> のサイズを変更する場合の可能な最小サイズを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size OnLayoutSize (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size OnLayoutSize(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnLayoutSize(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">レイアウト引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> 内に含まれるデザイナーでのビジュアル キューのサイズを設定します。</summary>
+        <returns><see cref="T:System.Drawing.Size" /> でのビジュアル キューのサイズを表す <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> に関連付けられたヘッダーとフッターを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnPaint%2A> は、該当するテーマ設定を使用して、ヘッダーとフッターに含めるテキストを描画します。 また、ヘッダーとフッターに含めるイメージも描画します。  
+  
+ **注**オーバーライドする場合<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnPaint%2A>派生クラスでは、呼び出しに必ず、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.OnPaint%2A>デリゲートを登録するための基本クラスのメソッドは、イベントを受け取る。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSmartTagVisibilityChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSmartTagVisibilityChanged (bool visible);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSmartTagVisibilityChanged(bool visible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnSmartTagVisibilityChanged(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visible" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="visible">
+          デザイナー画面にスマート タグを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> にスマート タグを表示するかしないかを、デザイナーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnSmartTagVisibilityChanged%2A> を呼び出すと、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Header%2A> に関連付けられたテキストの四角形が無効になります。  
+  
+ **注**オーバーライドする場合<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.OnSmartTagVisibilityChanged%2A>派生クラスでは、基本クラスの呼び出しを必ず<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.OnSmartTagVisibilityChanged%2A>デリゲートを登録するためのメソッドがイベントを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSmartTag">
+      <MemberSignature Language="C#" Value="protected override bool ShowSmartTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSmartTag" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ShowSmartTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーがスマート タグを表示するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> がスマート タグを表示する場合は <see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Header%2A> プロパティが null 参照 (Visual Basic の場合は `Nothing`) に設定されていない場合、対応する <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowHeaderFooter.Text%2A> プロパティが空の文字列でもなく null 参照 (`Nothing`) にも設定されていなければ、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.ShowSmartTag%2A> は `true` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmartTagRectangle">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle SmartTagRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle SmartTagRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.SmartTagRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー画面上のスマート タグが表示される四角形を取得します。</summary>
+        <value>スマート タグの表示の境界を定義する <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.ShowSmartTag%2A> によって指定された場所に使用可能な <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.SmartTagVerbs%2A> のスマート タグを表示するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.DesignerActions%2A> と <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.SmartTagRectangle%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーに関連付けられた説明を取得します。</summary>
+        <value>デザイナーに関連付けられた説明を格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承クラスでオーバーライドしない限り、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Text%2A> は常に <xref:System.String?displayProperty=nameWithType> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleHeight">
+      <MemberSignature Language="C#" Value="protected override int TitleHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TitleHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.TitleHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのタイトル領域の高さを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner" /> のタイトル領域の高さを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート デザイナーのタイトル領域には通常、デザイナーに関連付けられたヘッダーとアイコンが入ります。  
+  
+ <xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.TitleHeight%2A> は、その基本実装の値を取得し、<xref:System.Workflow.ComponentModel.Design.SequentialWorkflowRootDesigner.Header%2A> の分として定義される高さの整数を加えることによって、返す整数を計算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

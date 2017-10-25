@@ -1,0 +1,495 @@
+<Type Name="AddInStore" FullName="System.AddIn.Hosting.AddInStore">
+  <TypeSignature Language="C#" Value="public static class AddInStore" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AddInStore extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInStore" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドを格納し、使用可能なアドインに関する情報を検索およびパイプライン セグメントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に示すように、ビルド、再構築、および 2 つのキャッシュ ファイルを更新するこのクラスを使用します。  
+  
+|キャッシュ ファイル|ファイルを作成する方法|  
+|----------------|----------------------------------|  
+|PipelineSegments.store<br /><br /> このファイルは、パイプライン ディレクトリ構造のルート ディレクトリにあります。|<xref:System.AddIn.Hosting.AddInStore.Update%2A><br /><br /> 新しいパイプライン セグメントでファイルを更新します。 新しいセグメントがインストールされていない場合、このメソッドは、キャッシュの検証だけをします。<br /><br /> <xref:System.AddIn.Hosting.AddInStore.Rebuild%2A><br /><br /> ファイルを実行して、新しいパイプライン セグメントが含まれています。|  
+|AddIns.store<br /><br /> このファイルは、1 つ以上のアドインでは、サブディレクトリを格納するディレクトリにあります。 このディレクトリが、パイプライン ディレクトリ構造内にある場合は、アドインが名前する必要があります。|<xref:System.AddIn.Hosting.AddInStore.UpdateAddIns%2A><br /><br /> 指定した位置の新しいアドインで、ファイルを更新します。 アドイン パイプライン ディレクトリ構造内に存在しない場合は、このメソッドを呼び出します。<br /><br /> 新しいバージョンのアドインがインストールされていない場合、このメソッドは、キャッシュの検証だけをします。<br /><br /> <xref:System.AddIn.Hosting.AddInStore.RebuildAddIns%2A><br /><br /> ファイルを実行して、指定した位置のアドインが含まれています。 アドイン パイプライン ディレクトリ構造内に存在しない場合は、このメソッドを呼び出します。<br /><br /> <xref:System.AddIn.Hosting.AddInStore.Update%2A><br /><br /> アドインが、パイプライン ディレクトリ構造である場合は、このメソッドは、新しいアドインで、ファイルを更新します。<br /><br /> <xref:System.AddIn.Hosting.AddInStore.Rebuild%2A><br /><br /> アドインは、パイプライン ディレクトリ構造では、このメソッドは、ファイルを再構築し、新しいアドインが含まれています。|  
+  
+ これらのメソッドは、以前存在しない場合、キャッシュ ファイルを作成します。  
+  
+ キャッシュ ファイルを作成すると、使用して、<xref:System.AddIn.Hosting.AddInStore.FindAddIns%2A>アドインでの指定したホスト ビューに一致するすべてのアドインを検索するファイルをチェックするメソッド。 使用することも、<xref:System.AddIn.Hosting.AddInStore.FindAddIn%2A>固有のアドインを検索するメソッド。  
+  
+> [!IMPORTANT]
+>  PipelineSegments.store および Addins.store にアクセスするには、信頼されていないユーザーまたはエンティティを許可するのにはサポートされていません。 これにより、アプリケーションのデータ破損の問題を可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、キャッシュ ファイルを更新する方法を示します。  
+  
+ [!code-csharp[AddInP3Host#2](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#2)]
+ [!code-vb[AddInP3Host#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FindAddIn">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt; FindAddIn (Type hostViewOfAddIn, string pipelineRootFolderPath, string addInFilePath, string addInTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.Collection`1&lt;class System.AddIn.Hosting.AddInToken&gt; FindAddIn(class System.Type hostViewOfAddIn, string pipelineRootFolderPath, string addInFilePath, string addInTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.FindAddIn(System.Type,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostViewOfAddIn" Type="System.Type" />
+        <Parameter Name="pipelineRootFolderPath" Type="System.String" />
+        <Parameter Name="addInFilePath" Type="System.String" />
+        <Parameter Name="addInTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostViewOfAddIn">アドインのホストのビューを定義する型。</param>
+        <param name="pipelineRootFolderPath">パイプライン ディレクトリ構造のルートへのパス。</param>
+        <param name="addInFilePath">検索するアドインのパスとファイル名。</param>
+        <param name="addInTypeName">アドインでの型名。</param>
+        <summary>特定のアドインを検索します。</summary>
+        <returns>アドインを表すことが検出されたトークンのみを含むトークンのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドインでの 1 つのパイプラインが見つかった場合の唯一の項目があります、<xref:System.AddIn.Hosting.AddInToken>コレクション。 指定されたアドインに複数のパイプラインが見つかった場合、区別できるを調べることによって、<xref:System.AddIn.Hosting.AddInToken.QualificationData%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、特定のアドインを検索します。  
+  
+ [!code-csharp[AddInP3Host#6](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#6)]
+ [!code-vb[AddInP3Host#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="pipelineRootFolderPath" />または<paramref name="addInFilePath" />または<paramref name="addInTypeName" />は 0 です。  
+  
+ \- または  
+  
+ 追加のファイルが存在しません<paramref name="addInfilePath" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">1 つ以上のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元への読み取りアクセス許可はありません。<paramref name="pipelineRootFolderPath" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">アドイン フォルダーを読み取る必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAddIns">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt; FindAddIns (Type hostViewOfAddIn, System.AddIn.Hosting.PipelineStoreLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.Collection`1&lt;class System.AddIn.Hosting.AddInToken&gt; FindAddIns(class System.Type hostViewOfAddIn, valuetype System.AddIn.Hosting.PipelineStoreLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.FindAddIns(System.Type,System.AddIn.Hosting.PipelineStoreLocation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostViewOfAddIn" Type="System.Type" />
+        <Parameter Name="location" Type="System.AddIn.Hosting.PipelineStoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="hostViewOfAddIn">アドインのホストのビューを定義する型。</param>
+        <param name="location">ホスト アプリケーションのベース ディレクトリ。</param>
+        <summary>アドインによって指定された位置の指定したホスト ビューを対象のすべてのアドインの検索、<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />列挙値。</summary>
+        <returns>検出されたアドインを表すトークンのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Hosting.PipelineStoreLocation>列挙体にのみ格納現在、<xref:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase>ホストのアプリケーション ベース ディレクトリを指している値。  
+  
+   
+  
+## Examples  
+ 次の例で指定された場所にアドインの検索、<xref:System.AddIn.Hosting.PipelineStoreLocation>列挙します。  
+  
+ [!code-csharp[AddInP3Host#4](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#4)]
+ [!code-vb[AddInP3Host#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="location" />無効な<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAddIns">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt; FindAddIns (Type hostViewOfAddIn, System.AddIn.Hosting.PipelineStoreLocation location, params string[] addInFolderPaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.Collection`1&lt;class System.AddIn.Hosting.AddInToken&gt; FindAddIns(class System.Type hostViewOfAddIn, valuetype System.AddIn.Hosting.PipelineStoreLocation location, string[] addInFolderPaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.FindAddIns(System.Type,System.AddIn.Hosting.PipelineStoreLocation,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostViewOfAddIn" Type="System.Type" />
+        <Parameter Name="location" Type="System.AddIn.Hosting.PipelineStoreLocation" />
+        <Parameter Name="addInFolderPaths" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="hostViewOfAddIn">アドインのホストのビューを定義する型。</param>
+        <param name="location">列挙値の 1 つ。  
+  
+ この列挙体の唯一の値で指定されたディレクトリは、現在、<see cref="P:System.AppDomainSetup.ApplicationBase" />ホストのアプリケーション ドメインを設定するために使用されたプロパティ。</param>
+        <param name="addInFolderPaths">(省略可能) アドインの 1 つ以上のサブディレクトリを格納するディレクトリのパス。このパラメーターは文字列の配列を受け取るために、複数のパスを指定できます。  
+  
+ 独自のアドインは、パイプライン ディレクトリ構造にアドイン フォルダーの下にある場合、このパラメーターは必要ありません。</param>
+        <summary>アドインによって指定された位置の指定したホスト ビューを対象のすべてのアドインの検索、<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値と省略可能なアドイン フォルダーです。</summary>
+        <returns>検出されたアドインを表すトークンのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 部分的に信頼されたホストに、自身の場所を検出するのにパス検索アクセス許可がない可能性があります、独自のディレクトリ内のアドインの検索を有効にするのにには、このメソッドのオーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="location" />無効な<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAddIns">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt; FindAddIns (Type hostViewOfAddIn, string pipelineRootFolderPath, params string[] addInFolderPaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.Collection`1&lt;class System.AddIn.Hosting.AddInToken&gt; FindAddIns(class System.Type hostViewOfAddIn, string pipelineRootFolderPath, string[] addInFolderPaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.FindAddIns(System.Type,System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.AddIn.Hosting.AddInToken&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostViewOfAddIn" Type="System.Type" />
+        <Parameter Name="pipelineRootFolderPath" Type="System.String" />
+        <Parameter Name="addInFolderPaths" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="hostViewOfAddIn">アドインのホストのビューを定義する型。</param>
+        <param name="pipelineRootFolderPath">パイプライン ディレクトリ構造のルートのパス。</param>
+        <param name="addInFolderPaths">(省略可能) アドインの 1 つ以上のサブディレクトリを格納するディレクトリのパス。このパラメーターは文字列の配列を受け取るために、複数のパスを指定できます。  
+  
+ 独自のアドインは、パイプライン ディレクトリ構造にアドイン フォルダーの下にある場合、このパラメーターは必要ありません。</param>
+        <summary>指定したルート ディレクトリからのアドインの指定したホスト ビューのすべてのアドインを検索します。</summary>
+        <returns>検出されたアドインを表すトークンのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ストアのファイルを指定された一致するすべてのアドインを検索するアドインとパイプライン セグメント情報がキャッシュされた`hostAddInView`型です。 行うこともできますし、トークンのいずれかで返された<xref:System.AddIn.Hosting.AddInToken>を呼び出すことによって特定のアドインをアクティブ化するコレクション、<xref:System.AddIn.Hosting.AddInToken.Activate%2A>のメソッド、<xref:System.AddIn.Hosting.AddInToken>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Rebuild">
+      <MemberSignature Language="C#" Value="public static string[] Rebuild (System.AddIn.Hosting.PipelineStoreLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] Rebuild(valuetype System.AddIn.Hosting.PipelineStoreLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.Rebuild(System.AddIn.Hosting.PipelineStoreLocation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.AddIn.Hosting.PipelineStoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="location">列挙値の 1 つ。  
+  
+ この列挙体の唯一の値で指定されたディレクトリは、現在、<see cref="P:System.AppDomainSetup.ApplicationBase" />ホストのアプリケーション ドメインを設定するために使用されたプロパティ。</param>
+        <summary>パイプライン セグメントのキャッシュを実行して、によって指定された位置に新しいセグメントが含まれています、<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 部分的に信頼されたホストに、自身の場所を検出するのにアクセス許可がない可能性があります、独自のディレクトリ内のアドインを検出を有効にするのにには、このメソッドのオーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="location" />無効な<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Rebuild">
+      <MemberSignature Language="C#" Value="public static string[] Rebuild (string pipelineRootFolderPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] Rebuild(string pipelineRootFolderPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.Rebuild(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pipelineRootFolderPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pipelineRootFolderPath">パイプライン ディレクトリ構造のルートのパス。</param>
+        <summary>パイプライン セグメントのキャッシュを実行して、指定したルート ディレクトリから新しいセグメントが含まれています。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アドインが、パイプライン ディレクトリ構造内にある場合も、アドインのキャッシュを再構築します。  
+  
+ このメソッドを使用して、のみと、キャッシュに問題がある可能性があります、再構築する必要があります。 パフォーマンスを向上させるを使用して、<xref:System.AddIn.Hosting.AddInStore.Update%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RebuildAddIns">
+      <MemberSignature Language="C#" Value="public static string[] RebuildAddIns (string addInsFolderPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] RebuildAddIns(string addInsFolderPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.RebuildAddIns(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addInsFolderPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addInsFolderPath">アドインの 1 つ以上のサブディレクトリを格納するディレクトリのパス。</param>
+        <summary>アドインのキャッシュを実行して、指定したルート ディレクトリから新しいアドインが含まれています。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドイン パイプライン ディレクトリ構造内に存在しない場合は、このメソッドを呼び出します。  
+  
+ このメソッドを使用して、のみと、キャッシュに問題がある可能性があります、再構築する必要があります。 パフォーマンスを向上させるを使用して、<xref:System.AddIn.Hosting.AddInStore.UpdateAddIns%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="addInsFolderPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元で指定されている場所に読み取りおよび書き込みアクセスの両方のアクセス許可を持たない<paramref name="addInsFolderPath" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りし、追加のフォルダーを更新する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public static string[] Update (System.AddIn.Hosting.PipelineStoreLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] Update(valuetype System.AddIn.Hosting.PipelineStoreLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.Update(System.AddIn.Hosting.PipelineStoreLocation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.AddIn.Hosting.PipelineStoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="location">列挙値の 1 つ。  
+  
+ この列挙体の唯一の値で指定されたディレクトリは、現在、<see cref="P:System.AppDomainSetup.ApplicationBase" />ホストのアプリケーション ドメインを設定するために使用されたプロパティ。</param>
+        <summary>更新プログラム、パイプライン セグメントのキャッシュによって指定された位置に新しいセグメントを含む、<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 部分的に信頼されたホストに、自身の場所を検出するのにアクセス許可がない可能性があります、独自のディレクトリ内のアドインを検出を有効にするのにには、このメソッドのオーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="location" />無効な<see cref="T:System.AddIn.Hosting.PipelineStoreLocation" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public static string[] Update (string pipelineRootFolderPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] Update(string pipelineRootFolderPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.Update(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pipelineRootFolderPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pipelineRootFolderPath">パイプライン ディレクトリ構造のルートのパス。</param>
+        <summary>指定したルート ディレクトリから新しいセグメントを含むパイプライン セグメントのキャッシュを更新します。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アドインが、パイプライン ディレクトリ構造内にある場合にも、アドインのキャッシュを更新します。  
+  
+ 新しいパイプライン セグメントまたはアドインしない場合は、このメソッドには、キャッシュのみを検証します。  
+  
+   
+  
+## Examples  
+ 次の例では、キャッシュ ファイルを更新する方法を示します。 このコード例に示されている例の一部である、<xref:System.AddIn.Hosting.AddInStore>クラスです。  
+  
+ [!code-csharp[AddInP3Host#3](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#3)]
+ [!code-vb[AddInP3Host#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateAddIns">
+      <MemberSignature Language="C#" Value="public static string[] UpdateAddIns (string addInsFolderPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] UpdateAddIns(string addInsFolderPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInStore.UpdateAddIns(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addInsFolderPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addInsFolderPath">アドインの 1 つ以上のサブディレクトリを格納するディレクトリのパス。</param>
+        <summary>アドインのキャッシュを更新し、新しいアドイン指定した位置にはが含まれています。</summary>
+        <returns>パイプライン セグメントが評価された警告を表す文字列のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドイン パイプライン ディレクトリ構造内に存在しない場合は、このメソッドを呼び出します。  
+  
+ 新しいバージョンのアドインがインストールされていない場合、このメソッドは、キャッシュの検証だけをします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">セグメント ディレクトリが、パイプライン ディレクトリ構造にありません。</exception>
+        <exception cref="T:System.AddIn.Hosting.InvalidPipelineStoreException">アクセス違反をパイプライン ディレクトリ構造があります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="addInsFolderPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元で指定されている場所に読み取りおよび書き込みアクセスの両方のアクセス許可を持たない<paramref name="addInsFolderPath" />です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りし、追加のフォルダーを更新する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

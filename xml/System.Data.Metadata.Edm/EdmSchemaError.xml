@@ -1,0 +1,164 @@
+<Type Name="EdmSchemaError" FullName="System.Data.Metadata.Edm.EdmSchemaError">
+  <TypeSignature Language="C#" Value="public sealed class EdmSchemaError : System.Data.Metadata.Edm.EdmError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EdmSchemaError extends System.Data.Metadata.Edm.EdmError" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.EdmSchemaError" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.EdmError</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>概念モデルのスキーマのエラーに関する詳細情報をカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public int Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Column" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが発生した列を取得します。</summary>
+        <value>エラーが発生した列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorCode">
+      <MemberSignature Language="C#" Value="public int ErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ErrorCode" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.ErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー コードを取得します。</summary>
+        <value>エラー コード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="public int Line { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Line" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが発生した行番号を取得します。</summary>
+        <value>エラーが発生した行番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaLocation">
+      <MemberSignature Language="C#" Value="public string SchemaLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.SchemaLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが存在するスキーマの場所を取得します。 この文字列の最後には、スキーマの名前も含まれます。</summary>
+        <value>エラーが存在するスキーマの場所。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaName">
+      <MemberSignature Language="C#" Value="public string SchemaName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.SchemaName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが存在するスキーマの名前を取得します。</summary>
+        <value>エラーが存在するスキーマの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Severity">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmSchemaErrorSeverity Severity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.EdmSchemaErrorSeverity Severity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.Severity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmSchemaErrorSeverity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの重大度レベルを取得します。</summary>
+        <value><see cref="T:System.Data.Metadata.Edm.EdmSchemaErrorSeverity" /> 値のいずれか。 既定値は、<see cref="F:System.Data.Metadata.Edm.EdmSchemaErrorSeverity.Warning" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StackTrace">
+      <MemberSignature Language="C#" Value="public string StackTrace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StackTrace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.EdmSchemaError.StackTrace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー発生時点のスタック トレースの文字列表記を取得します。</summary>
+        <value>エラー発生時点のスタック トレースの文字列表記。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.EdmSchemaError.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラー メッセージを返します。</summary>
+        <returns>エラー メッセージ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

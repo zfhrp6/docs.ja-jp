@@ -1,0 +1,82 @@
+<Type Name="CertificateEmbeddingOption" FullName="System.IO.Packaging.CertificateEmbeddingOption">
+  <TypeSignature Language="C#" Value="public enum CertificateEmbeddingOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CertificateEmbeddingOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.CertificateEmbeddingOption" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>署名に使用される X.509 証明書を格納する場所を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書は、ワークシートをパッケージには場合の署名を検証するアプリケーションでは、署名によって署名されていることを確認するために、証明書のコピーを提供する必要があります。  
+  
+ InSignaturePart 情報の 2 つの要素を追加する`<KeyName>`と`<KeyValue>`の一部として、<xref:System.Security.Cryptography.Xml.Signature.KeyInfo%2A>ストアドのデジタル署名のフィールドです。 `<KeyName>`と`<KeyValue>`要素は署名の検証の一部として処理されず、したがってセキュリティ保護されていない変更からです。 アプリケーションは、これら 2 つの要素の有効性に関する想定しないようにします。 検出されない変更と混同を避けるため、アプリケーションは InSignaturePart ではなく InCertificatePart オプションを使用する必要があります。 InCertificatePart オプションが提供またはいずれかを公開していない`<KeyName>`または`<KeyValue>`です。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.IO.Packaging.CertificateEmbeddingOption.InSignaturePart>を設定するために、 <xref:System.IO.Packaging.PackageDigitalSignatureManager>。<xref:System.IO.Packaging.PackageDigitalSignatureManager.CertificateOption%2A>プロパティです。 サンプル全体については、次を参照してください。[デジタル署名のサンプルを使用してパッケージを作成する](http://go.microsoft.com/fwlink/?LinkID=159966)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InCertificatePart">
+      <MemberSignature Language="C#" Value="InCertificatePart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.CertificateEmbeddingOption InCertificatePart = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.CertificateEmbeddingOption.InCertificatePart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CertificateEmbeddingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書は、独自の <see cref="T:System.IO.Packaging.PackagePart" /> に埋め込まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InSignaturePart">
+      <MemberSignature Language="C#" Value="InSignaturePart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.CertificateEmbeddingOption InSignaturePart = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.CertificateEmbeddingOption.InSignaturePart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CertificateEmbeddingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書は、追加された署名に対して作成された <see cref="P:System.IO.Packaging.PackageDigitalSignature.SignaturePart" /> に埋め込まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEmbedded">
+      <MemberSignature Language="C#" Value="NotEmbedded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.CertificateEmbeddingOption NotEmbedded = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.CertificateEmbeddingOption.NotEmbedded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CertificateEmbeddingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パッケージに埋め込まれていない証明書。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

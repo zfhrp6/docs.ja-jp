@@ -1,0 +1,181 @@
+<Type Name="MessageQuery" FullName="System.ServiceModel.Dispatcher.MessageQuery">
+  <TypeSignature Language="C#" Value="public abstract class MessageQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MessageQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.MessageQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージ内の特定の関連データを検索するために使用するクラスの主な動作を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.MessageQuery> クラスは <xref:System.ServiceModel.Dispatcher.MessageFilter> クラスに類似しています。  ただし、<xref:System.ServiceModel.Dispatcher.MessageQuery.Evaluate%2A> メソッドは、一致結果ではなく、メッセージに対するクエリの評価結果を返します。 クエリの結果は、そのメッセージ内の値です。 この値をキーとして使用し、メッセージを他のメッセージに関連付けます。 データの新しいプロパティを追加するには、<xref:System.ServiceModel.Channels.CorrelationDataMessageProperty.Add%2A> クラスの <xref:System.ServiceModel.Channels.CorrelationDataMessageProperty> メソッドを使用します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.MessageQuery> の具象実装については、「<xref:System.ServiceModel.XPathMessageQuery> クラス」を参照してください。  
+  
+## <a name="using-the-xpathmessagequery-and-messagequerycollection-classes"></a>XPathMessageQuery クラスと MessageQueryCollection クラスの使用  
+ クエリ処理を最適化するには、一連のクエリ オブジェクトを作成し、それらを <xref:System.ServiceModel.Dispatcher.MessageQueryCollection> クラスのインスタンスに挿入します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.MessageQueryCollection> の具象実装については、「<xref:System.ServiceModel.Dispatcher.XPathMessageQueryCollection> クラス」を参照してください。  
+  
+ 一般的に、同じ XPath 述語を持ち最後のリーフ値のみが異なるクエリをコレクションに挿入するために使用されます。 たとえば、次の XPath クエリは最後の句を除いて同一です。 数量属性を持つすべての要素に対する最初のクエリは 1 に設定され、製品属性を持つ要素に対する 2 番目のクエリは 'Contoso' に設定されています。  
+  
+```  
+"/s12:Envelope/s12:Body/PurchaseOrder/Items/Item[@quantity = 1]"  
+"/s12:Envelope/s12:Body/PurchaseOrder/Items/Item[@product = 'Contoso']"  
+```  
+  
+ <xref:System.ServiceModel.Dispatcher.MessageQueryCollection> クラスを使用すると、違いの小さいクエリのテーブルを作成でき、より効果的に処理できます。  
+  
+ また、<xref:System.ServiceModel.Dispatcher.MessageQueryTable%601> クラスを使用して、メッセージ クエリを格納および評価することもできます。  
+  
+   
+  
+## Examples  
+ 次の例では、メッセージと XPath メッセージ クエリを作成します。 クエリは、<xref:System.ServiceModel.XPathMessageQuery> オブジェクトに格納されている <xref:System.ServiceModel.Dispatcher.XPathMessageQueryCollection> オブジェクトによって評価されます。 各クエリの結果は、<xref:System.ServiceModel.Dispatcher.XPathResult.ResultType%2A> クラスの <xref:System.ServiceModel.Dispatcher.XPathResult> プロパティを使用してテストされます。  
+  
+ [!code-csharp[XPathMessageQuery#0](~/samples/snippets/csharp/VS_Snippets_CFX/xpathmessagequery/cs/source.cs#0)]
+ [!code-vb[XPathMessageQuery#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/xpathmessagequery/vb/source.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.MessageQuery" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageQueryCollection">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.Dispatcher.MessageQueryCollection CreateMessageQueryCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Dispatcher.MessageQueryCollection CreateMessageQueryCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageQuery.CreateMessageQueryCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageQueryCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられた特定のデータ型を返すクエリのコレクションを作成します。</summary>
+        <returns>
+          <see cref="T:System.ServiceModel.Dispatcher.MessageQueryCollection" /> データ型に関連付けられたクエリのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.MessageQueryCollection> クラスによって使用されることを想定しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Evaluate&lt;TResult&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メッセージに対してクエリが実行され、そのクエリを満たす値が返されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのオーバーロードの違いは、一方は <xref:System.ServiceModel.Channels.Message> パラメーターを受け取り、本文を検査することはできないのに対し、他方は <xref:System.ServiceModel.Channels.MessageBuffer> パラメーターを受け取り、メッセージのどの部分でも検査できるということです。 メッセージ ヘッダーは自動的にバッファーに格納され、その内容を取り込まずにメッセージ ヘッダーに対してクエリを実行できます。 ただし、メッセージ本文に対してクエリを実行する場合は、メッセージ全体がバッファーに格納されている必要があります。バッファーに格納されていないメッセージ本文は、クエリによって取り込まれる可能性があるためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Evaluate&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public abstract TResult Evaluate&lt;TResult&gt; (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!TResult Evaluate&lt;TResult&gt;(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageQuery.Evaluate``1(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">戻り値の型。</typeparam>
+        <param name="message">クエリを実行するメッセージ。</param>
+        <summary>派生クラスでオーバーライドされると、メッセージに対してクエリが実行され、結果が返されます。 本文に対してはクエリを実行できません。</summary>
+        <returns>
+          <see cref="T:System.ServiceModel.Dispatcher.MessageQueryCollection" />  
+  
+ クエリを満たす結果の列挙可能なコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public abstract TResult Evaluate&lt;TResult&gt; (System.ServiceModel.Channels.MessageBuffer buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!TResult Evaluate&lt;TResult&gt;(class System.ServiceModel.Channels.MessageBuffer buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.MessageQuery.Evaluate``1(System.ServiceModel.Channels.MessageBuffer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">返すオブジェクトの型。</typeparam>
+        <param name="buffer">クエリを実行するメッセージ。</param>
+        <summary>派生クラスでオーバーライドされると、メッセージに対してクエリが実行され、結果が返されます。</summary>
+        <returns>
+          <see cref="T:System.ServiceModel.Dispatcher.MessageQueryCollection" />  
+  
+ クエリを満たす結果の列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メッセージと XPath メッセージ クエリを作成します。 クエリは、<xref:System.ServiceModel.XPathMessageQuery> オブジェクトに格納されている <xref:System.ServiceModel.Dispatcher.XPathMessageQueryCollection> オブジェクトによって評価されます。 各クエリの結果は、<xref:System.ServiceModel.Dispatcher.XPathResult.ResultType%2A> クラスの <xref:System.ServiceModel.Dispatcher.XPathResult> プロパティを使用してテストされます。  
+  
+ [!code-csharp[XPathMessageQuery#0](~/samples/snippets/csharp/VS_Snippets_CFX/xpathmessagequery/cs/source.cs#0)]
+ [!code-vb[XPathMessageQuery#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/xpathmessagequery/vb/source.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

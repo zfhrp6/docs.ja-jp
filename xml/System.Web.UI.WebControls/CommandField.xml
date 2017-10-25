@@ -1,0 +1,1145 @@
+<Type Name="CommandField" FullName="System.Web.UI.WebControls.CommandField">
+  <TypeSignature Language="C#" Value="public class CommandField : System.Web.UI.WebControls.ButtonFieldBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommandField extends System.Web.UI.WebControls.ButtonFieldBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CommandField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ButtonFieldBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインドされたコントロールでの選択、編集、挿入、または削除の各操作を実行するコマンド ボタンを表示する特別なフィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandField>クラスは、データ バインドされたコントロールによって使用される特別なフィールド (など<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>) を削除を実行するコマンド ボタンを表示するには、編集、挿入、または操作を選択します。 これらの操作を実行するコマンド ボタンは、表示されるか、次の表に示すようにプロパティを使用して非表示になります。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.CommandField.ShowDeleteButton%2A>|表示または [削除] ボタンを非表示、<xref:System.Web.UI.WebControls.CommandField>データ バインド コントロール内の各レコードのフィールドです。 [削除] ボタンは、データ ソースからレコードを削除できます。|  
+|<xref:System.Web.UI.WebControls.CommandField.ShowEditButton%2A>|[編集] ボタンの表示と非表示を切り替えます、<xref:System.Web.UI.WebControls.CommandField>データ バインド コントロール内の各レコードのフィールドです。 [編集] ボタンは、データ ソースからレコードを編集できます。 ユーザーが編集される特定のレコードの編集 ボタンをクリックしたときに、ボタンは、更新ボタンをクリックし、キャンセル ボタンに置き換えられます。 その他のすべてのコマンド ボタンも非表示にします。|  
+|<xref:System.Web.UI.WebControls.CommandField.ShowInsertButton%2A>|表示またはの新しいボタンを非表示、<xref:System.Web.UI.WebControls.CommandField>フィールドです。 新しいボタンは、データ ソースに新しいレコードを挿入するユーザーを使用します。 ユーザーには、新しいボタンがクリックすると、挿入ボタンと [キャンセル] ボタンに置き換えられます。 その他のすべてのコマンド ボタンも非表示にします。 **注:**など、挿入操作をサポートするデータ バインド コントロールにのみ、このプロパティが適用されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField.ShowSelectButton%2A>|表示またはの選択 ボタンを非表示、<xref:System.Web.UI.WebControls.CommandField>データ バインド コントロール内の各レコードのフィールドです。 [選択] ボタンは、データ バインド コントロール内のレコードを選択できます。|  
+  
+ [キャンセル] ボタンは、レコードの編集したときに表示または挿入モードを表示または非表示にするにはさらに、<xref:System.Web.UI.WebControls.CommandField.ShowCancelButton%2A>プロパティです。  
+  
+> [!NOTE]
+>  データ バインド コントロールをデータ ソース コントロールと組み合わせて使用する場合 (など、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール)、データ バインド コントロールは、データ ソース コントロールの機能を活用し、自動を指定を削除、更新、および機能を挿入します。 その他のデータ ソースには、データ バインド コントロールの適切なイベントの中にこれらの操作を実行するルーチンを提供する必要があります。  
+  
+ <xref:System.Web.UI.WebControls.CommandField>フィールドが使用されているデータ バインドされたコントロールによって異なる方法で表示されます。 たとえば、<xref:System.Web.UI.WebControls.GridView>表示の制御、<xref:System.Web.UI.WebControls.CommandField>フィールドを列として中に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として表示します。  
+  
+ 表示するボタンの種類を指定するには、使用、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティです。 ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定されている`ButtonType.Button`または`ButtonType.Link`、次の表に示すようにプロパティを設定して、ボタンに表示するテキストを指定することができます。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.CommandField.CancelText%2A>|[キャンセル] ボタンのキャプションです。|  
+|<xref:System.Web.UI.WebControls.CommandField.DeleteText%2A>|[削除] ボタンのキャプションです。|  
+|<xref:System.Web.UI.WebControls.CommandField.EditText%2A>|[編集] ボタンのキャプションです。|  
+|<xref:System.Web.UI.WebControls.CommandField.InsertText%2A>|[挿入] ボタンのキャプションです。 **注:**サポートなど、操作を挿入するデータ バインド コントロールにのみ、このプロパティが適用されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField.NewText%2A>|新しいボタンのキャプションです。 **注:**サポートなど、操作を挿入するデータ バインド コントロールにのみ、このプロパティが適用されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField.SelectText%2A>|[選択] ボタンのキャプションです。|  
+|<xref:System.Web.UI.WebControls.CommandField.UpdateText%2A>|[更新] ボタンのキャプションです。|  
+  
+ コマンド ボタンまたはリンク ボタンを表示するには、代わりに設定してイメージ ボタンを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`し、次の表に示されているプロパティを設定します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.CommandField.CancelImageUrl%2A>|[キャンセル] ボタンを表示するイメージ|  
+|<xref:System.Web.UI.WebControls.CommandField.DeleteImageUrl%2A>|[削除] ボタンを表示する画像。|  
+|<xref:System.Web.UI.WebControls.CommandField.EditImageUrl%2A>|[編集] ボタンを表示する画像。|  
+|<xref:System.Web.UI.WebControls.CommandField.InsertText%2A>|[挿入] ボタンを表示する画像。 **注:**サポートなど、操作を挿入するデータ バインド コントロールにのみ、このプロパティが適用されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField.NewImageUrl%2A>|新しいボタンに表示する画像。 **注:**サポートなど、操作を挿入するデータ バインド コントロールにのみ、このプロパティが適用されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField.SelectImageUrl%2A>|[選択] ボタンを表示する画像。|  
+|<xref:System.Web.UI.WebControls.CommandField.UpdateImageUrl%2A>|[更新] ボタンを表示する画像。|  
+  
+ 既定では、ユーザーのボタンをクリックしたときに、<xref:System.Web.UI.WebControls.CommandField>フィールドでは、ページ上のすべての検証コントロールの検証を実行します。 ボタンのクリックして時に発生する検証を防ぐためには、設定、<xref:System.Web.UI.WebControls.CommandField.CausesValidation%2A>プロパティを`false`です。  
+  
+ 非表示にすることができます、<xref:System.Web.UI.WebControls.CommandField>フィールドを設定して、データ バインド コントロールで、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを`false`です。  
+  
+ <xref:System.Web.UI.WebControls.CommandField>フィールドでは、そのヘッダー セクションとフッター セクションをカスタマイズすることができます。 ヘッダーまたはフッター セクションで、キャプションを表示するには、設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>または<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>プロパティ、それぞれします。 設定して、イメージを表示するテキストを表示する、ヘッダー セクションに、代わりに、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティです。 ヘッダー セクションを非表示にする、<xref:System.Web.UI.WebControls.CommandField>オブジェクト、設定、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロール (など、<xref:System.Web.UI.WebControls.GridView>コントロール) を表示またはコントロールのすべてのヘッダー セクションだけを非表示にできます。 これらのデータ バインド コントロールをサポートしていない、<xref:System.Web.UI.WebControls.ButtonFieldBase.ShowHeader%2A>個々 のボタン フィールドのプロパティです。 表示または (使用可能な場合) は、ヘッダー セクション全体のデータ バインド コントロールを非表示、コントロールの使用`ShowHeader`プロパティです。  
+  
+ 外観をカスタマイズできる、<xref:System.Web.UI.WebControls.CommandField>オブジェクト (フォントの色や背景色、)、フィールドの各部分のスタイル プロパティを設定します。 次の表は、異なるスタイル プロパティを一覧表示します。  
+  
+|スタイル プロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>|子の Web サーバー コントロールのスタイルの設定、<xref:System.Web.UI.WebControls.CommandField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>|フッター セクションのスタイルの設定、<xref:System.Web.UI.WebControls.CommandField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>|ヘッダー セクションのスタイルの設定、<xref:System.Web.UI.WebControls.CommandField>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>|データ項目のスタイルの設定、<xref:System.Web.UI.WebControls.CommandField>オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField>でレコードを編集するコントロールを表示するフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandField2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandField2/CS/commandfield2cs.aspx#1)]
+ [!code-aspx-vb[CommandField2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandField2/VB/commandfield2vb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.CommandField.CancelText%2A>、 <xref:System.Web.UI.WebControls.CommandField.EditText%2A>、および<xref:System.Web.UI.WebControls.CommandField.UpdateText%2A>プロパティの編集コントロールのテキストをカスタマイズします。  
+  
+ [!code-aspx-csharp[CommandField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandField/CS/commandfieldcs.aspx#1)]
+ [!code-aspx-vb[CommandField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandField/VB/commandfieldvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommandField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CommandField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.CommandField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.UI.WebControls.CommandField>フィールド、データ バインド コントロールを作成、新しい<xref:System.Web.UI.WebControls.CommandField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.UI.WebControls.CommandField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コンス トラクターを使用して動的に追加する方法を示します、<xref:System.Web.UI.WebControls.CommandField>フィールド列を<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldCtor/CS/commandfieldctorcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldCtor/VB/commandfieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string CancelImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CancelImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.CancelImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、URL で、[キャンセル] ボタンを表示するイメージ、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[キャンセル] ボタンに表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.CancelImageUrl%2A>プロパティを [キャンセル] ボタンを表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  [キャンセル] ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.CancelText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.CancelImageUrl%2A>にキャンセル ボタンとして表示するカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`のイメージを表示する [キャンセル] ボタンをクリックします。  
+  
+ [!code-aspx-csharp[CommandFieldEditImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldEditImageUrl/CS/commandfieldeditimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldEditImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldEditImageUrl/VB/commandfieldeditimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelText">
+      <MemberSignature Language="C#" Value="public virtual string CancelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CancelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.CancelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示される [キャンセル] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[キャンセル] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値が"Cancel"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.CancelText%2A>プロパティを [キャンセル] ボタンを表示するテキストを指定します。  
+  
+> [!NOTE]
+>  [キャンセル] ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.CancelImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.CancelText%2A>プロパティをカスタムに表示される [キャンセル] ボタンのキャプションを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandField/CS/commandfieldcs.aspx#1)]
+ [!code-aspx-vb[CommandField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandField/VB/commandfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public override bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーのボタンをクリックしたときに、検証を実行するかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />検証を実行するユーザーのボタンをクリックしたときに、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.CausesValidation%2A>ときに、ボタンに、検証を実行するかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>フィールドをクリックします。 このプロパティに設定するときに`true`既定では、ページ上のすべての検証コントロールが検証されます。 検証コントロールの特定のグループだけに検証を制限するための 検証グループを作成し、設定、<xref:System.Web.UI.WebControls.ButtonFieldBase.ValidationGroup%2A>プロパティ検証グループの名前にします。 検証グループの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.CausesValidation%2A>時のボタンに発生する検証を防ぐためにプロパティ、<xref:System.Web.UI.WebControls.CommandField>フィールドをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CommandFieldCausesValidation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldCausesValidation/CS/commandfieldcausesvalidationcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldCausesValidation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldCausesValidation/VB/commandfieldcausesvalidationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.CommandField" />にします。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.UI.WebControls.CommandField" />を指定したオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandField.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.CommandField>オブジェクトを<xref:System.Web.UI.WebControls.DataControlField>メソッドによって作成されたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.Web.UI.WebControls.CommandField" /> オブジェクトを作成します。</summary>
+        <returns>空の <see cref="T:System.Web.UI.WebControls.CommandField" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandField.CreateField%2A>メソッドで使用されるヘルパー メソッド、 <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A?displayProperty=nameWithType> 、空を作成するメソッド<xref:System.Web.UI.WebControls.CommandField>オブジェクトが現在のプロパティをコピーする<xref:System.Web.UI.WebControls.CommandField>オブジェクトをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string DeleteImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.DeleteImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または [削除] ボタンを表示するイメージへの URL を設定、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[削除] ボタンを表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.DeleteImageUrl%2A>プロパティを削除 ボタンを表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  [削除] ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.DeleteText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.DeleteImageUrl%2A>プロパティを [削除] ボタンを表示するカスタム イメージを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`のイメージを表示する [削除] ボタン。  
+  
+ [!code-aspx-csharp[CommandFieldDeleteImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldDeleteImageUrl/CS/commandfielddeleteimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldDeleteImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldDeleteImageUrl/VB/commandfielddeleteimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteText">
+      <MemberSignature Language="C#" Value="public virtual string DeleteText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.DeleteText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の削除 ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[削除] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は、「削除」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.DeleteText%2A>プロパティを削除 ボタンを表示するテキストを指定します。  
+  
+> [!NOTE]
+>  [削除] ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.DeleteImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.DeleteText%2A>プロパティをカスタムに表示される [削除] ボタンのキャプションを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldDeleteText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldDeleteText/CS/commandfielddeletetextcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldDeleteText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldDeleteText/VB/commandfielddeletetextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string EditImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.EditImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[編集] ボタンを表示するイメージへの URL を設定を取得または、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[編集] ボタンを表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.EditImageUrl%2A>プロパティを編集 ボタンを表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  [編集] ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.EditText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.EditImageUrl%2A>プロパティを [編集] ボタンを表示するカスタム イメージを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`の編集 ボタン イメージを表示します。  
+  
+ [!code-aspx-csharp[CommandFieldEditImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldEditImageUrl/CS/commandfieldeditimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldEditImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldEditImageUrl/VB/commandfieldeditimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditText">
+      <MemberSignature Language="C#" Value="public virtual string EditText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.EditText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の編集 ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[編集] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は、"Edit"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にオブジェクトが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.EditText%2A>プロパティを編集 ボタンを表示するテキストを指定します。  
+  
+> [!NOTE]
+>  [編集] ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.EditImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.EditText%2A>プロパティをカスタムに表示される [編集] ボタンのキャプションを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandField/CS/commandfieldcs.aspx#1)]
+ [!code-aspx-vb[CommandField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandField/VB/commandfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">初期化する <see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="rowIndex">セルが含まれる行の 0 から始まるインデックス。</param>
+        <summary>指定された初期化<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />オブジェクトを指定した行の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandField.InitializeCell%2A>メソッドはによって実装<xref:System.Web.UI.WebControls.DataControlField>-派生型のテキストとコントロールを追加する、<xref:System.Web.UI.WebControls.TableCell>テーブルを使用してユーザー インターフェイス (UI) を表示するデータ コントロールのオブジェクト。 これらのデータ コントロールは、完全なテーブル構造で行を作成するときに、コントロールの`CreateChildControls`メソッドが呼び出されます。 <xref:System.Web.UI.WebControls.CommandField.InitializeCell%2A>メソッドによって呼び出されます、`InitializeRow`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.TableCell>コントロールやデータを含むテーブル構造のセルを初期化するためにします。 作成している場合は、このメソッドを実装して、 <xref:System.Web.UI.WebControls.CommandField>-クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string InsertImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InsertImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.InsertImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Insert のボタンを表示するイメージへの URL を設定、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[挿入] ボタンを表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.InsertImageUrl%2A>挿入ボタンに表示するイメージを指定するプロパティです。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  [挿入] ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.InsertText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.InsertImageUrl%2A>の挿入 ボタンを表示するカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`挿入ボタン イメージを表示するのです。  
+  
+ [!code-aspx-csharp[CommandFieldInsertImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldInsertImageUrl/CS/commandfieldinsertimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldInsertImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldInsertImageUrl/VB/commandfieldinsertimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertText">
+      <MemberSignature Language="C#" Value="public virtual string InsertText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InsertText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.InsertText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の [挿入] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[挿入] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は、"Insert"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>フィールドに設定されて`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.InsertText%2A>プロパティ [挿入] ボタンを表示するテキストを指定します。  
+  
+> [!NOTE]
+>  [挿入] ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.InsertImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.InsertText%2A>プロパティをカスタムのキャプションに表示される挿入 を指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldInsertText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldInsertText/CS/commandfieldinserttextcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldInsertText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldInsertText/VB/commandfieldinserttextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string NewImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.NewImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはで新しいボタンに表示するイメージへの URL を設定、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>新しいボタンに表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.NewImageUrl%2A>プロパティを新しいボタンに表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  新しいボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.NewText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.NewImageUrl%2A>で新しいボタンに表示するカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>の列のフィールド、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`のイメージを表示する新しいボタンをクリックします。  
+  
+ [!code-aspx-csharp[CommandFieldInsertImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldInsertImageUrl/CS/commandfieldinsertimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldInsertImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldInsertImageUrl/VB/commandfieldinsertimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewText">
+      <MemberSignature Language="C#" Value="public virtual string NewText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.NewText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の新しいボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>新しいボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。 既定値は、「新規」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>に設定されているオブジェクト`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.NewText%2A>プロパティは、新しいボタンに表示するテキストを指定します。  
+  
+> [!NOTE]
+>  新しいボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.NewImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.NewText%2A>で表示される新しいボタンにカスタムのキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldInsertText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldInsertText/CS/commandfieldinserttextcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldInsertText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldInsertText/VB/commandfieldinserttextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string SelectImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.SelectImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、URL の選択 ボタンを表示するイメージ、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[選択] ボタンを表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.SelectImageUrl%2A>プロパティを選択 ボタンを表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  [選択] ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.SelectText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.SelectImageUrl%2A>プロパティを選択 ボタンの表示するカスタム イメージを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`の画像を表示するボタンを選択します。  
+  
+ [!code-aspx-csharp[CommandFieldSelectImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldSelectImageUrl/CS/commandfieldselectimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldSelectImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldSelectImageUrl/VB/commandfieldselectimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectText">
+      <MemberSignature Language="C#" Value="public virtual string SelectText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.SelectText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の選択 ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は、"Select"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.SelectText%2A>プロパティを選択 ボタンを表示するテキストを指定します。  
+  
+> [!NOTE]
+>  [選択] ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.SelectImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.SelectText%2A>プロパティをカスタムに表示される選択ボタンのキャプションを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldSelectText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldSelectText/CS/commandfieldselecttextcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldSelectText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldSelectText/VB/commandfieldselecttextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCancelButton">
+      <MemberSignature Language="C#" Value="public virtual bool ShowCancelButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowCancelButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.ShowCancelButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に [キャンセル] ボタンを表示するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />[キャンセル] ボタンを表示する、 <see cref="T:System.Web.UI.WebControls.CommandField" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.ShowCancelButton%2A>に [キャンセル] ボタンを表示するかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>オブジェクト。 [キャンセル] ボタンを表示できる、<xref:System.Web.UI.WebControls.CommandField>フィールド、データ バインド コントロールに対応するレコードは編集時または挿入モード。 [キャンセル] ボタンは、ユーザー、編集をキャンセルまたは挿入操作に許可しを通常の表示モードにレコードを返します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.CancelText%2A>プロパティを [キャンセル] ボタンを表示するテキストを指定します。 また、最初の設定でイメージを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.CancelImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.ShowCancelButton%2A>ときの行に表示 [キャンセル] ボタンを非表示にするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールが編集モードになっています。  
+  
+ [!code-aspx-csharp[CommandFieldShowCancelButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldShowCancelButton/CS/commandfieldshowcancelbuttoncs.aspx#1)]
+ [!code-aspx-vb[CommandFieldShowCancelButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldShowCancelButton/VB/commandfieldshowcancelbuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDeleteButton">
+      <MemberSignature Language="C#" Value="public virtual bool ShowDeleteButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowDeleteButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.ShowDeleteButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の削除 ボタンを表示するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />[削除] ボタンを表示する、 <see cref="T:System.Web.UI.WebControls.CommandField" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.ShowDeleteButton%2A>の削除 ボタンが表示されるかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>データ ソース コントロール内の各レコードのフィールドです。 [削除] ボタンでは、データ ソースからレコードを削除することができます。  
+  
+> [!NOTE]
+>  データ バインド コントロールをデータ ソース コントロールと組み合わせて使用する場合 (など、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール)、データ バインド コントロールは、データ ソース コントロールの機能を活用し、削除の自動機能を提供します。 その他のデータ ソースには、データ バインド コントロールの適切なイベントの中で、削除操作を実行するルーチンを提供する必要があります。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.DeleteText%2A>プロパティを削除 ボタンを表示するテキストを指定します。 また、最初の設定でイメージを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.DeleteImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.ShowDeleteButton%2A>内の各レコードの削除 ボタンを表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldShowDeleteButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldShowDeleteButton/CS/commandfieldshowdeletebuttoncs.aspx#1)]
+ [!code-aspx-vb[CommandFieldShowDeleteButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldShowDeleteButton/VB/commandfieldshowdeletebuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowEditButton">
+      <MemberSignature Language="C#" Value="public virtual bool ShowEditButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowEditButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.ShowEditButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の編集 ボタンが表示されるかどうかを示す値、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />[編集] ボタンを表示する、 <see cref="T:System.Web.UI.WebControls.CommandField" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.ShowEditButton%2A>プロパティの編集 ボタンが表示されるかどうかを指定する、<xref:System.Web.UI.WebControls.CommandField>データ ソース コントロール内の各レコードのフィールドです。 [編集] ボタンでは、レコードの値を編集することができます。  
+  
+ ユーザーは、[編集] ボタンをクリックすると、レコード内の各フィールドの入力コントロールが表示されます。 レコードの編集 ボタンが更新 ボタンと キャンセル ボタンと置き換え、レコードの他のすべてのコマンド ボタンは表示されません。 [更新] ボタンをクリックするとレコードを更新しますデータ ソースに新しい値では [キャンセル] ボタンをクリックすると操作をキャンセルします。  
+  
+> [!NOTE]
+>  データ バインド コントロールをデータ ソース コントロールと組み合わせて使用する場合 (など、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール)、データ バインド コントロールは、データ ソース コントロールの機能を活用し、自動更新機能を提供します。 その他のデータ ソースには、データ バインド コントロールの適切なイベント処理中に、更新操作を実行するルーチンを提供する必要があります。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.EditText%2A>プロパティを編集 ボタンを表示するテキストを指定します。 また、最初の設定でイメージを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.EditImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.ShowEditButton%2A>内の各レコードの編集 ボタンを表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldEditImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldEditImageUrl/CS/commandfieldeditimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldEditImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldEditImageUrl/VB/commandfieldeditimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInsertButton">
+      <MemberSignature Language="C#" Value="public virtual bool ShowInsertButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowInsertButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.ShowInsertButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に、新しいボタンを表示するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />新しいボタンを表示する、 <see cref="T:System.Web.UI.WebControls.CommandField" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.ShowInsertButton%2A>に新しいボタンを表示するかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>フィールドです。 新しいボタンが 1 回だけ表示されます、<xref:System.Web.UI.WebControls.CommandField>フィールドし、データ ソースで新しいレコードを追加することができます。  
+  
+> [!NOTE]
+>  このプロパティはサポートがなど、操作を挿入するデータ バインド コントロールにのみ、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ ユーザーには、新しいボタンがクリックすると、ユーザーが新しいレコードの値を入力できるように、データ バインド コントロールに表示される各フィールドの入力コントロールが表示されます。 新しいボタンが、[挿入] ボタンと [キャンセル] ボタンに置き換えられ、他のすべてのコマンドのボタンをクリックして、<xref:System.Web.UI.WebControls.CommandField>フィールドを非表示します。 一方、[キャンセル] ボタンをキャンセル操作をクリックすると、データ ソースにレコードを追加する [挿入] ボタンをクリックします。  
+  
+> [!NOTE]
+>  データ バインド コントロールをデータ ソース コントロールと組み合わせて使用する場合 (など、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール)、データ バインド コントロールは、データ ソース コントロールの機能を活用し、挿入の自動機能を提供します。 その他のデータ ソースには、データ バインド コントロールの適切なイベント処理中に、挿入操作を実行するルーチンを提供する必要があります。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.NewText%2A>プロパティを新しいボタンに表示するテキストを指定します。 また、最初の設定でイメージを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.NewImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.ShowInsertButton%2A>の新しいボタンを表示するプロパティを<xref:System.Web.UI.WebControls.DetailsView>コントロールで、データ ソースに新しいレコードを追加することができます。  
+  
+ [!code-aspx-csharp[CommandFieldShowInsertButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldShowInsertButton/CS/commandfieldshowinsertbuttoncs.aspx#1)]
+ [!code-aspx-vb[CommandFieldShowInsertButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldShowInsertButton/VB/commandfieldshowinsertbuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSelectButton">
+      <MemberSignature Language="C#" Value="public virtual bool ShowSelectButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSelectButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.ShowSelectButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の選択 ボタンが表示されるかどうかを示す値、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>
+          <see langword="true" />[選択] ボタンを表示する、 <see cref="T:System.Web.UI.WebControls.CommandField" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandField.ShowSelectButton%2A>の選択 ボタンが表示されるかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.CommandField>データ ソース コントロール内の各レコードのフィールドです。 [選択] ボタンは、データ ソース コントロール内の行を選択できます。 レコードの選択 ボタンがクリックされたときに、データ ソース コントロールは必要に応じて応答します。 たとえば、<xref:System.Web.UI.WebControls.GridView>の更新を制御、 <xref:System.Web.UI.WebControls.GridView.SelectedDataKey%2A>、 <xref:System.Web.UI.WebControls.GridView.SelectedIndex%2A>、 <xref:System.Web.UI.WebControls.GridView.SelectedRow%2A>、および<xref:System.Web.UI.WebControls.GridView.SelectedValue%2A>プロパティを選択した行に対応する値。 <xref:System.Web.UI.WebControls.GridView.SelectedRowStyle%2A>スタイルを選択した行に適用され、<xref:System.Web.UI.WebControls.GridView.SelectedIndexChanged>と<xref:System.Web.UI.WebControls.GridView.SelectedIndexChanging>イベントが発生します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.SelectText%2A>プロパティを選択 ボタンを表示するテキストを指定します。 また、最初の設定でイメージを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.SelectImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.ShowSelectButton%2A>内の各レコードの選択 ボタンを表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandFieldShowSelectButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldShowSelectButton/CS/commandfieldshowselectbuttoncs.aspx#1)]
+ [!code-aspx-vb[CommandFieldShowSelectButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldShowSelectButton/VB/commandfieldshowselectbuttonvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string UpdateImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdateImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.UpdateImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または更新ボタンを表示するイメージへの URL を設定、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>内の更新ボタンに表示するイメージの URL、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Image`を使用して、<xref:System.Web.UI.WebControls.CommandField.UpdateImageUrl%2A>プロパティを更新 ボタンを表示するイメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  更新ボタンの画像を表示する代わりに、最初の設定によってテキストを表示することができます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Button`または`ButtonType.Link`設定し、<xref:System.Web.UI.WebControls.CommandField.UpdateText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.UpdateImageUrl%2A>プロパティを更新ボタンを表示するカスタム イメージを指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティに設定する必要があります`ButtonType.Image`のイメージを表示するにはの更新ボタンをクリックします。  
+  
+ [!code-aspx-csharp[CommandFieldEditImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandFieldEditImageUrl/CS/commandfieldeditimageurlcs.aspx#1)]
+ [!code-aspx-vb[CommandFieldEditImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandFieldEditImageUrl/VB/commandfieldeditimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateText">
+      <MemberSignature Language="C#" Value="public virtual string UpdateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandField.UpdateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の更新 ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />フィールドです。</summary>
+        <value>[更新] ボタンのキャプション、<see cref="T:System.Web.UI.WebControls.CommandField" />です。 既定値は、「更新」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandField>にフィールドが設定されている`ButtonType.Button`または`ButtonType.Link`を使用して、<xref:System.Web.UI.WebControls.CommandField.UpdateText%2A>更新ボタンに表示するテキストを指定するプロパティです。  
+  
+> [!NOTE]
+>  更新ボタンのテキストを表示する代わりに、最初の設定によって、イメージを表示できます、<xref:System.Web.UI.WebControls.ButtonFieldBase.ButtonType%2A>プロパティを`ButtonType.Image`設定し、<xref:System.Web.UI.WebControls.CommandField.UpdateImageUrl%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.CommandField.UpdateText%2A>プロパティをカスタムのキャプションに表示される更新プログラム を指定する、<xref:System.Web.UI.WebControls.CommandField>のフィールド、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CommandField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CommandField/CS/commandfieldcs.aspx#1)]
+ [!code-aspx-vb[CommandField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CommandField/VB/commandfieldvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public override void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールが含まれるかどうかを判断、<see cref="T:System.Web.UI.WebControls.CommandField" />サポート コールバック オブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandField.ValidateSupportsCallback%2A>メソッドは、コントロールに含まれているかどうかを判断するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.CommandField>サポート コールバック オブジェクトします。 <xref:System.Web.UI.WebControls.CommandField>クラスは、選択ボタンが表示されるときにコールバックをサポートしません。 スローするこのメソッドが実装されて、<xref:System.NotSupportedException>選択ボタンが表示されるときに例外です。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">選択ボタンが表示され、<see cref="T:System.Web.UI.WebControls.CommandField" />オブジェクト。 <see cref="T:System.Web.UI.WebControls.CommandField" />クラスは、選択ボタンが表示されるときにコールバックをサポートします。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.CommandField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

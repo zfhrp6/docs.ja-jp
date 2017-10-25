@@ -1,0 +1,806 @@
+<Type Name="AccessDataSource" FullName="System.Web.UI.WebControls.AccessDataSource">
+  <TypeSignature Language="C#" Value="public class AccessDataSource : System.Web.UI.WebControls.SqlDataSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AccessDataSource extends System.Web.UI.WebControls.SqlDataSource" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AccessDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.SqlDataSource</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.AccessDataSourceDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.AccessDataSource))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ バインド コントロールで使用するための Microsoft Access データベースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AccessDataSource>クラスは、Microsoft Access データベースで動作するデータ ソース コントロール。 などのその基本クラス<xref:System.Web.UI.WebControls.SqlDataSource>、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールでは、SQL クエリを使用して、データの取得を実行します。  
+  
+ 固有の特性の 1 つ、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールは、設定しないこと、<xref:System.Web.UI.WebControls.AccessDataSource.ConnectionString%2A>プロパティです。 Access (.mdb) ファイルの場所に設定を行うだけで済みますが、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティおよび<xref:System.Web.UI.WebControls.AccessDataSource>基になるデータベースへの接続を行います。 Web サイトの App_Data ディレクトリに Access データベースを配置し、それらを相対パスで参照する必要があります (たとえば、 `~/App_Data/Northwind.mdb`)。 クライアントの Web ブラウザーから直接要求された場合は提供されないために、この場所は、データ ファイルの追加のセキュリティを提供します。  
+  
+ <xref:System.Web.UI.WebControls.AccessDataSource>クラスは設定できないため、ユーザー名またはパスワードで保護されている Access データベースへの接続をサポートしていない、<xref:System.Web.UI.WebControls.AccessDataSource.ConnectionString%2A>プロパティです。 使用して、Access データベースがユーザー名またはパスワードで保護されている場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールに接続するための接続文字列を指定できるようにします。  
+  
+ データ バインド コントロールをバインドする、<xref:System.Web.UI.WebControls.AccessDataSource>を使用して、`DataSourceID`データ バインド コントロールのプロパティです。 データ ソース コントロールにデータ バインド コントロールをバインドの詳細については、次を参照してください。[データ ソース コントロールを使用してデータをバインド](http://msdn.microsoft.com/en-us/e41adfff-8fb8-449e-9cd1-9bd49788c5f7)です。  
+  
+ <xref:System.Web.UI.WebControls.AccessDataSource>は 1 つだけデータベース製品に固有のコントロール、常に同じプロバイダーを使用:、 <xref:System.Data.OleDb?displayProperty=nameWithType> .NET データ プロバイダー。 このため、<xref:System.Web.UI.WebControls.AccessDataSource.ProviderName%2A>プロパティは読み取り専用です。 使用する場合、<xref:System.Data.OleDb?displayProperty=nameWithType>プロバイダーはパラメーター化された SQL ステートメント内のパラメーターの順序は重要です。 パラメーター化されたいずれかの SQL クエリで指定した、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommand%2A>、および<xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommand%2A>プロパティは任意の順序と一致する必要があります<xref:System.Web.UI.WebControls.Parameter>対応するパラメーターのコレクションに含まれるオブジェクト。 パラメーターのコレクションが指定されていない場合、 <xref:System.Web.UI.WebControls.AccessDataSource>、これらの操作に渡されるパラメーターの順序は、基になる SQL ステートメントで表示される順序と一致する必要があります。 詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.AccessDataSource>コントロールは、基本クラスをサポートする同じキャッシュ動作をサポートします。 使用するページのパフォーマンスを向上させるキャッシュの使用、<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。 データ ソースのキャッシュの詳細については、次を参照してください。[キャッシュ データを使用してデータ ソース コントロール](http://msdn.microsoft.com/en-us/8f534a06-3136-4048-bb2e-6563a8238d15)です。  
+  
+ 次の表の機能、<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。  
+  
+|機能|要件|  
+|----------------|------------------|  
+|並べ替え|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値。|  
+|フィルター処理|設定、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティ データをフィルター処理するために使用するフィルター式をときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが呼び出されます。|  
+|ページング|<xref:System.Web.UI.WebControls.AccessDataSource> Access データベースに直接のページング操作をサポートしません。 データ バインドを制御するように、 <xref:System.Web.UI.WebControls.GridView>、によって返される項目をページングすることができます、<xref:System.Web.UI.WebControls.AccessDataSource>場合は、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値。|  
+|Updating|設定、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティを使用してデータを更新する SQL ステートメントにします。 このステートメントは、通常パラメーター化されます。|  
+|Deleting|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティ データの削除に使用する SQL ステートメントをします。 このステートメントは、通常パラメーター化されます。|  
+|挿入|設定、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>プロパティ データの挿入に使用する SQL ステートメントをします。 このステートメントは、通常パラメーター化されます。|  
+|キャッシュ|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値、<xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティを`true`、および<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに従って、キャッシュされたデータのキャッシュ動作をします。|  
+  
+ すべてのデータ ソース コントロールと同様、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールが厳密に型指定されたデータ ソース ビュー クラスを使用すると、関連付けられています。 同様、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールを拡張、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、<xref:System.Web.UI.WebControls.AccessDataSourceView>クラスを拡張、<xref:System.Web.UI.WebControls.SqlDataSourceView>クラスです。 <xref:System.Web.UI.WebControls.AccessDataSourceView>のいくつかの上書きをクラス、<xref:System.Web.UI.WebControls.SqlDataSourceView>に使用する方法、 <xref:System.Data.OleDb?displayProperty=nameWithType> .NET データ プロバイダー。  
+  
+ ビジュアル表示はありません、<xref:System.Web.UI.WebControls.AccessDataSource>制御; 宣言の永続化を有効にして、必要に応じて、状態管理への参加を許可するように、コントロールとして実装されます。 その結果など visual の機能をサポートするプロパティを設定することはできません、<xref:System.Web.UI.DataSourceControl.EnableTheming%2A>と<xref:System.Web.UI.DataSourceControl.SkinID%2A>プロパティです。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:AccessDataSource  
+    CacheDuration="string|Infinite"  
+    CacheExpirationPolicy="Absolute|Sliding"  
+    CacheKeyDependency="string"  
+    CancelSelectOnNullParameter="True|False"  
+    ConflictDetection="OverwriteChanges|CompareAllValues"  
+    DataFile="uri"  
+    DataSourceMode="DataReader|DataSet"  
+    DeleteCommand="string"  
+    DeleteCommandType="Text|StoredProcedure"  
+    EnableCaching="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    FilterExpression="string"  
+    ID="string"  
+    InsertCommand="string"  
+    InsertCommandType="Text|StoredProcedure"  
+    OldValuesParameterFormatString="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleted="Deleted event handler"  
+    OnDeleting="Deleting event handler"  
+    OnDisposed="Disposed event handler"  
+    OnFiltering="Filtering event handler"  
+    OnInit="Init event handler"  
+    OnInserted="Inserted event handler"  
+    OnInserting="Inserting event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelected="Selected event handler"  
+    OnSelecting="Selecting event handler"  
+    OnUnload="Unload event handler"  
+    OnUpdated="Updated event handler"  
+    OnUpdating="Updating event handler"  
+    runat="server"  
+    SelectCommand="string"  
+    SelectCommandType="Text|StoredProcedure"  
+    SkinID="string"  
+    SortParameterName="string"  
+    UpdateCommand="string"  
+    UpdateCommandType="Text|StoredProcedure"  
+    Visible="True|False"  
+>  
+        <DeleteParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|  
+                        ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|  
+                        ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64  
+                        |Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </DeleteParameters>  
+        <FilterParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </FilterParameters>  
+        <InsertParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </InsertParameters>  
+        <SelectParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </SelectParameters>  
+        <UpdateParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                       Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </UpdateParameters>  
+</asp:AccessDataSource>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、一般的な表示と更新シナリオを示しています。、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティが適切な SQL クエリに設定され、Northwind データベースからデータに表示されます、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティが指定されても、<xref:System.Web.UI.WebControls.GridView.AutoGenerateEditButton%2A>プロパティに設定されている`true`、編集および追加のコードを持たないレコードを更新できます。 <xref:System.Web.UI.WebControls.GridView>コントロール ハンドルするパラメーターの追加、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクション以外の場合は、<xref:System.Web.UI.WebControls.GridView>コントロール パラメーターの値を渡す、<xref:System.Web.UI.WebControls.BoundField>続くで指定されているフィールドの値を最初に、オブジェクト、 <xref:System.Web.UI.WebControls.GridView.DataKeyNames%2A>プロパティ。 <xref:System.Web.UI.WebControls.GridView>呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドに自動的にします。 パラメーターの順序を明示的にする場合は、指定、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクションに、<xref:System.Web.UI.WebControls.AccessDataSource>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_5access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_5access/CS/access5cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_5access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_5access/VB/access5vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.AccessDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.AccessDataSource.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Web.UI.WebControls.AccessDataSource>データ ソースの管理およびバインド、 <xref:System.Web.UI.WebControls.CheckBoxList> Microsoft Access データベース内のデータを制御します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_6access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_6access/CS/access6cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_6access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_6access/VB/access6vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AccessDataSource (string dataFile, string selectCommand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dataFile, string selectCommand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSource.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataFile" Type="System.String" />
+        <Parameter Name="selectCommand" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataFile">Access .mdb ファイルの場所です。 現在の Web フォームのフォルダー、絶対物理パス、または仮想パスの基準とした場所を指定できます。</param>
+        <param name="selectCommand">SQL クエリは、Access データベースからデータを取得するために使用します。 SQL クエリがパラメーター化された SQL 文字列の場合は、追加<see cref="T:System.Web.UI.WebControls.Parameter" />オブジェクトを<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />コレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.AccessDataSource" />指定されたデータ ファイルのパスを持つクラスと**選択**コマンド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.AccessDataSource.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Web.UI.WebControls.AccessDataSource>データ ソースの管理およびバインド、 <xref:System.Web.UI.WebControls.CheckBoxList> Microsoft Access データベース内のデータを制御します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_7access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_7access/CS/access7cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_7access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_7access/VB/access7vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataFile" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public override string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AccessDataSource.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Access データベースへの接続に使用される接続文字列を取得します。</summary>
+        <value>OLE DB 接続文字列を<see cref="T:System.Web.UI.WebControls.AccessDataSource" />を介して、Access データベースに接続するコントロールを使用して、 <see cref="N:System.Data.OleDb" /> .NET データ プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AccessDataSource>コントロールでのみ使用できます、 <xref:System.Data.OleDb?displayProperty=nameWithType> .NET データ プロバイダー、および、接続文字列を<xref:System.Web.UI.WebControls.AccessDataSource>用途は、このプロバイダーに固有です。 そのため、<xref:System.Web.UI.WebControls.AccessDataSource>コントロールなど、接続文字列の設定を公開、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティ、プロパティと接続文字列がの値を使用して、実行時の構成要素として、<xref:System.Web.UI.WebControls.AccessDataSource.ConnectionString%2A>プロパティ場合に、設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Web.UI.WebControls.AccessDataSource.ConnectionString%2A>のプロパティ、 <xref:System.Web.UI.WebControls.AccessDataSource> ASP.NET Web ページにコントロールできます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_24access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_24access/CS/access24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_24access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_24access/VB/access24vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Web.UI.WebControls.AccessDataSource.ConnectionString" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSourceView">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.SqlDataSourceView CreateDataSourceView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.SqlDataSourceView CreateDataSourceView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSource.CreateDataSourceView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">データ ソース ビューの名前。</param>
+        <summary>データ ソース コントロールに関連付けられているデータ ソース ビュー オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.AccessDataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.AccessDataSource" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Web.UI.WebControls.AccessDataSource>クラスをオーバーライドできます、<xref:System.Web.UI.WebControls.AccessDataSource.CreateDataSourceView%2A>強くを返すメソッドがデータ ソース ビュー オブジェクトを入力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFile">
+      <MemberSignature Language="C#" Value="public string DataFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AccessDataSource.DataFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.MdbDataFileEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Microsoft Access の .mdb ファイルの場所を設定します。</summary>
+        <value>Access .mdb ファイルの場所です。 絶対パス、相対パスと仮想パスはサポートされています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティは、仮想絶対パス、または、Access .mdb ファイルへのディレクトリ パスを UNC ファイルが、<xref:System.Web.UI.WebControls.AccessDataSource>制御を表します。 ファイルの名前を入力すると、専用の場合は、.mdb ファイルが現在実行中の Web フォーム ページやコードと同じディレクトリで見つかったことを示します。 前方と後方の両スラッシュで相対パスはサポートされています。 たとえば、`"./test/test/Northwind.mdb"`と同じパスにマップ`".\test\test\Northwind.mdb"`と`"test/test/Northwind.mdb"`です。 UNC パスなど`"\\mymachine\somedatadirectory\Northwind.mdb"`もサポートされています。 絶対物理パスはサポートされていますが、展開が複雑になる可能性があるために、それらを使用してを避ける必要があります。  
+  
+## <a name="configuring-permissions-for-an-access-database"></a>Access データベースのアクセス許可の構成  
+ Access の .mdb ファイルの使用の重要な側面では、アクセス許可を適切に構成します。 Web アプリケーションでは、Access データベースを使用するときに、アプリケーションは、データにアクセスできるように .mdb ファイルに読み取りアクセス許可が必要です。 さらに、アプリケーションは、.mdb ファイルを含むフォルダーに書き込みアクセス許可が必要です。 書き込みアクセスの同時実行ユーザーのデータベースのロックに関する情報を保持する拡張 .ldb で追加のファイルを作成するため、アクセス許可が必要です。 .Ldb ファイルは実行時に作成されます。  
+  
+ 既定では、ASP.NET Web アプリケーションは、ASPNET を (用 Microsoft Windows 2000 および Microsoft Windows XP) と呼ばれる、ローカル コンピューター アカウントのコンテキストで、または (Microsoft Windows Server 2003) のネットワーク サービス アカウントのコンテキストで実行します。 たとえば、Windows 2000 または Windows XP の場合は場合"myserver"という名前の Web サーバーは MyServer コンピューター上の ASP.NET アプリケーション実行 MyServer\ASPNET のローカル アカウントのコンテキストでします。  
+  
+ そのため、Access データベースを ASP.NET Web アプリケーションを使用するのには、読み取りと書き込みの両方のアクセス許可を持つ Access データベースを含むフォルダーを構成する必要があります。  
+  
+ Microsoft Visual Web Developer Web 開発ツールで Web サイトを作成するときに、Visual Web Developer は、現在のルート フォルダーの下の App_Data をという名前のフォルダーを作成します。 フォルダーは、Access データベースなどのアプリケーション データのストアに設計されています。 App_Data フォルダーは、メンバーシップとロール用のデータベースなど、システムを保持するデータベースを格納するのに、ASP.NET によっても使用されます。 Visual Web Developer は、App_Data フォルダーを作成するときは、aspnet アカウントまたはネットワーク サービスのユーザー アカウントにフォルダーの読み取りと書き込みのアクセス許可を付与します。  
+  
+> [!NOTE]
+>  セキュリティ対策として Visual Web Developer では、フォルダー内のファイルは、Web サーバーで処理されないように、App_Data フォルダーも構成します。 そのフォルダーからページを要求する場合、ユーザーのエラーが表示するため、App_Data フォルダーにすべての Web ページを格納しないでください。  
+  
+   
+  
+## Examples  
+ このセクションには、3 つのコード例が含まれています。 最初のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティを Web フォーム ページと同じディレクトリ内にある Northwind.mdb ファイルにします。 2 番目のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>という名前で Web フォーム ページは、ディレクトリの下にあるデータベースのプロパティをディレクトリに存在する Northwind.mdb ファイルの仮想パス。 3 番目のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティ UNC 共有で利用可能な Northwind.mdb ファイルの UNC パスにします。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティを Web フォーム ページと同じディレクトリ内にある Northwind.mdb ファイルにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_4access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_4access/CS/access4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_4access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_4access/VB/access4vb.aspx#1)]  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>という名前で Web フォーム ページは、ディレクトリの下にあるデータベースのプロパティをディレクトリに存在する Northwind.mdb ファイルの仮想パス。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_23access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_23access/CS/access23cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_23access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_23access/VB/access23vb.aspx#1)]  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>プロパティ UNC 共有で利用可能な Northwind.mdb ファイルの UNC パスにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_22access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_22access/CS/access22cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_22access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_22access/VB/access22vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効なパスが指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDbProviderFactory">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbProviderFactory GetDbProviderFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbProviderFactory GetDbProviderFactory() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AccessDataSource.GetDbProviderFactory" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Common.DbProviderFactory" />によって識別される .NET データ プロバイダーに関連付けられているオブジェクト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.ProviderName" />プロパティです。</summary>
+        <returns><see cref="T:System.Data.OleDb.OleDbFactory" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public override string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AccessDataSource.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET データ プロバイダーの名前を取得、<see cref="T:System.Web.UI.WebControls.AccessDataSource" />コントロールを使用して Microsoft Access データベースに接続します。</summary>
+        <value>文字列"System.Data.OleDb"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中に、<xref:System.Web.UI.WebControls.AccessDataSource>公開を制御、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティを設定しようとして、基底クラスから継承されているため、<xref:System.Web.UI.WebControls.AccessDataSource.ProviderName%2A>プロパティの結果、<xref:System.NotSupportedException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Web.UI.WebControls.AccessDataSource.ProviderName%2A>のプロパティ、 <xref:System.Web.UI.WebControls.AccessDataSource> Web フォーム ページ内のコントロールです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.AccessDataSource_25access#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_25access/CS/access25cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.AccessDataSource_25access#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.AccessDataSource_25access/VB/access25vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Web.UI.WebControls.AccessDataSource.ProviderName" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlCacheDependency">
+      <MemberSignature Language="C#" Value="public override string SqlCacheDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SqlCacheDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency" />プロパティのオーバーライド、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency" />プロパティです。</summary>
+        <value>スロー、<see cref="T:System.NotSupportedException" />常にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスに<xref:System.Web.UI.WebControls.SqlDataSource>、<xref:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency%2A>プロパティを取得または対象のデータベースを示し、Microsoft SQL Server のキャッシュの依存関係を使用するテーブルをセミコロンで区切られた文字列を設定します。 Microsoft Access、およびそのキャッシュの依存関係はサポートされていませんへのアクセス、<xref:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency%2A>プロパティの結果、<xref:System.NotSupportedException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">取得または設定を試みました、<see cref="P:System.Web.UI.WebControls.AccessDataSource.SqlCacheDependency" />プロパティです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,583 @@
+<Type Name="DataGridViewImageCell" FullName="System.Windows.Forms.DataGridViewImageCell">
+  <TypeSignature Language="C#" Value="public class DataGridViewImageCell : System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewImageCell extends System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewImageCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マークを表示、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewImageCell>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewCell>表示に使用される、<xref:System.Drawing.Image>または<xref:System.Drawing.Icon>の値に応じて、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティです。 通常、<xref:System.Windows.Forms.DataGridViewCell.ReadOnly%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewImageCell>に設定されている`true`ユーザーがセルの内容を編集できないことを示すためにします。  
+  
+ <xref:System.Windows.Forms.DataGridViewImageColumn>は、この種類のセルを保持するために特化した列の型。 既定では、<xref:System.Windows.Forms.DataGridViewImageColumn.CellTemplate%2A?displayProperty=nameWithType>を新しい初期化<xref:System.Windows.Forms.DataGridViewImageCell>です。 既存の後に、列内のセルのパターンに<xref:System.Windows.Forms.DataGridViewImageCell>、列の設定<xref:System.Windows.Forms.DataGridViewImageColumn.CellTemplate%2A>プロパティのパターンとして使用するセルをします。  
+  
+ 列のセルに関連するプロパティは、テンプレートのセルの同様の名前付きプロパティのラッパーです。 テンプレート セルのプロパティの値を変更すると、セルのみ、テンプレートに基づいて、変更後に追加されるが影響されます。 列のセルに関連するプロパティ値を変更するには、ただしはテンプレート セルとその他のすべてのセルの列で、更新し、必要な場合は、列の表示を更新します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、イメージを使用してセルの画像を変更する方法を示します<xref:System.Windows.Forms.DataGridViewCell>です。 このコード例は、トピックに示されている例の一部[する方法: Windows フォーム DataGridView コントロールでのイメージ列を操作](~/docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/CPP/tictactoe.cpp#10)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/CS/tictactoe.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/VB/tictactoe.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewImageCell" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewImageCell.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewImageCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewImageCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewImageCell" />用に構成するセルの値で使用する以外の場合、クラス<see cref="T:System.Drawing.Icon" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを呼び出す<xref:System.Windows.Forms.DataGridViewImageCell.%23ctor%28System.Boolean%29>で、`valueIsIcon`のパラメーター値`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewImageCell (bool valueIsIcon);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool valueIsIcon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="valueIsIcon" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="valueIsIcon">セルが表示されます、<see cref="T:System.Drawing.Icon" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewImageCell" />クラス、オプションで使用する用に構成する<see cref="T:System.Drawing.Icon" />セル値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>の値に設定されて、`valueIsIcon`パラメーター。  
+  
+ アルファ チャネルを確実に<xref:System.Drawing.Icon>値を正しく描画する、このコンス トラクターを使用して、`valueIsIcon`のパラメーター値`true`です。  
+  
+ 場合、`valueIsIcon`パラメーターは`true`、<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>と<xref:System.Windows.Forms.DataGridViewImageCell.ValueType%2A>プロパティの戻り値、<xref:System.Type>オブジェクトを表す、<xref:System.Drawing.Icon>型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のセルの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewImageCell" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Forms.DataGridViewImageCell.Clone%2A>メソッドから派生するたびに<xref:System.Windows.Forms.DataGridViewImageCell>し、派生クラスに新しいプロパティを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewImageCell.Clone" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Windows.Forms.DataGridViewImageCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされも、派生クラスに追加されたプロパティの値をコピーすることを確認するようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewImageCell" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataGridViewImageCell.DataGridViewImageCellAccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.DataGridViewImageCell" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DataGridViewImageCell.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A>への参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNewRowValue">
+      <MemberSignature Language="C#" Value="public override object DefaultNewRowValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultNewRowValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.DefaultNewRowValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい行を作成するときに使用される既定値を取得します。</summary>
+        <value>既定の画像のプレース ホルダーを含むオブジェクトまたは<see langword="null" />を空のセルを表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値型でなければなりません<xref:System.Drawing.Image>または型<xref:System.Drawing.Icon>の値に応じて、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティです。  
+  
+ されるたびに、<xref:System.Windows.Forms.DataGridView>表示されるどの新しい行を追加できる、最後の行は既定値で読み込まれるセルの空の新しい行。 これらのセルの別の既定のイメージを提供するかを返すには、このプロパティをオーバーライド`null`イメージを表示するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージに関連付けられているテキストを設定します。</summary>
+        <value>セルに表示されるイメージに関連付けられているテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、イメージの各セルのテキストの説明を提供、します。 この説明は、イメージにアクセス可能な代替を提供します。 さらに、説明のテキストがセルの値をクリップボードにコピーするときに使用されます。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewImageColumn.Description%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewImageCell.Description%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewImageColumn.Description%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロールでのイメージ列を操作](~/docs/framework/winforms/controls/how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/CPP/tictactoe.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/CS/tictactoe.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/VB/tictactoe.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditType">
+      <MemberSignature Language="C#" Value="public override Type EditType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EditType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.EditType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルのホストされる編集コントロールの種類を取得します。</summary>
+        <value><see cref="T:System.Type" />基になる編集コントロールのです。 このプロパティは常に、このクラスに実装された<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewImageCell.EditType%2A>プロパティは常に`null`イメージを編集するための関連する Windows フォーム コントロールが存在しないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattedValueType">
+      <MemberSignature Language="C#" Value="public override Type FormattedValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FormattedValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.FormattedValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルに関連付けられている、書式設定された値の型を取得します。</summary>
+        <value>A<see cref="T:System.Type" />これは、セルの値の型を表示するオブジェクトを表す、<see cref="T:System.Drawing.Image" />入力、<see cref="P:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon" />プロパティに設定されている<see langword="false" />または<see cref="T:System.Drawing.Icon" />それ以外の場合に入力します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、プロパティは、<xref:System.Type>いずれかを表すオブジェクトを<xref:System.Drawing.Image>型または<xref:System.Drawing.Icon>ため、型、<xref:System.Windows.Forms.DataGridViewImageCell>グラフィック イメージのみを処理します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>プロパティ セルの内容の種類を判断します。 この例では、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>セルに含まれるかどうかを決定するプロパティが使用される、<xref:System.String>値に変換する前にします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.SelectionChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetContentBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetContentBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.GetContentBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>指定されたを使用して計算されるセルの内容領域を囲んだ外接する四角形を返します<see cref="T:System.Drawing.Graphics" />とセル スタイルです。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />セルの内容領域に外接します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorIconBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetErrorIconBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetErrorIconBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルのエラー アイコンが表示されている場合に、そのエラー アイコンを囲む外接する四角形を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />いずれかが表示されている、それ以外の場合、セルのエラーのアイコンに外接する<see cref="F:System.Drawing.Rectangle.Empty" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormattedValue">
+      <MemberSignature Language="C#" Value="protected override object GetFormattedValue (object value, int rowIndex, ref System.Windows.Forms.DataGridViewCellStyle cellStyle, System.ComponentModel.TypeConverter valueTypeConverter, System.ComponentModel.TypeConverter formattedValueTypeConverter, System.Windows.Forms.DataGridViewDataErrorContexts context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetFormattedValue(object value, int32 rowIndex, class System.Windows.Forms.DataGridViewCellStyle&amp; cellStyle, class System.ComponentModel.TypeConverter valueTypeConverter, class System.ComponentModel.TypeConverter formattedValueTypeConverter, valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.GetFormattedValue(System.Object,System.Int32,System.Windows.Forms.DataGridViewCellStyle@,System.ComponentModel.TypeConverter,System.ComponentModel.TypeConverter,System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle&amp;" RefType="ref" />
+        <Parameter Name="valueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="formattedValueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="context" Type="System.Windows.Forms.DataGridViewDataErrorContexts" />
+      </Parameters>
+      <Docs>
+        <param name="value">書式指定される値。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに対して有効です。</param>
+        <param name="valueTypeConverter">A<see cref="T:System.ComponentModel.TypeConverter" />書式設定された値型に変換のカスタム値の型に関連付けられているまたは<see langword="null" />場合、このようなカスタムの変換は必要ありません。</param>
+        <param name="formattedValueTypeConverter">A<see cref="T:System.ComponentModel.TypeConverter" />値の型からカスタムの変換を提供する書式設定された値型に関連付けられているまたは<see langword="null" />場合、このようなカスタムの変換は必要ありません。</param>
+        <param name="context">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />書式設定された値が必要とされるコンテキストを記述する値。</param>
+        <summary>セルに表示されるようにグラフィックを返します。</summary>
+        <returns>書式設定されたイメージを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールがセルの値を同等の表示の値によって示される型に変換するには、このメソッドを呼び出して、<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>プロパティです。 このメソッドにコントロールがセルの値を渡します、`value`パラメーター。  
+  
+ 場合、`context`パラメーターの値が含まれています、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent>値、このメソッドは、の値を返します、<xref:System.Windows.Forms.DataGridViewImageCell.Description%2A>をクリップボードにコピーするためのプロパティです。 それ以外の場合、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>イベントが発生します。  
+  
+ A<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント ハンドラーは、両方を変更できる`value`と`cellStyle`です。 ハンドラーが設定されていない場合、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティを`true`、ただし、このメソッドはフォーマット`value`の書式設定のプロパティを使用して、`cellStyle`オブジェクト。  
+  
+ 書式設定が、失敗した場合、<xref:System.Windows.Forms.DataGridView.DataError>イベントが発生します。 このイベント ハンドラーのセットのハンドラーがない場合、<xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>プロパティを`true`例外がスローされます。  
+  
+ 書式設定が成功し、書式設定された値の型の値に一致する場合、<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>プロパティ、このメソッドは、書式設定された値を返します。 このメソッドがによって示される型の標準エラー グラフィックを返しますそれ以外の場合、<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex, System.Drawing.Size constraintSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex, valuetype System.Drawing.Size constraintSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="constraintSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルを描画するために使用します。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルのスタイルを表すです。</param>
+        <param name="rowIndex">セルの 0 から始まる行インデックス番号。</param>
+        <param name="constraintSize">セルの最大許容サイズ。</param>
+        <summary>セルの推奨されるサイズをピクセル単位で計算します。</summary>
+        <returns>A <see cref="T:System.Drawing.Size" /> (ピクセル単位) のセルの推奨されるサイズを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected override object GetValue (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetValue(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルの値を取得します。</summary>
+        <returns>含まれる値、<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageLayout">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewImageCellLayout ImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewImageCellLayout ImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.ImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewImageCellLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルのグラフィックスのレイアウトを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewImageCellLayout" />このセルのです。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewImageCellLayout.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを変更すると、自動的に再描画するセルが発生されます。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewImageColumn.ImageLayout%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewImageCell.ImageLayout%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定された<see cref="T:System.Windows.Forms.DataGridViewImageCellLayout" />値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="elementState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="advancedBorderStyle" Type="System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルの描画に使用します。</param>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</param>
+        <param name="cellBounds">A<see cref="T:System.Drawing.Rectangle" />描画されるセルの境界を格納しています。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="elementState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの状態を指定する値。</param>
+        <param name="value">描画されるセルのデータです。</param>
+        <param name="formattedValue">描画されるセルの書式設定されたデータ。</param>
+        <param name="errorText">セルに関連付けられたエラー メッセージ。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに関する書式とスタイル情報を格納します。</param>
+        <param name="advancedBorderStyle">A<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />描画されるセルの境界線スタイルを格納します。</param>
+        <param name="paintParts">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />セルのどの部分を描画する必要がありますを指定する値。</param>
+        <summary>現在の描画<see cref="T:System.Windows.Forms.DataGridViewImageCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewImageCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを説明する文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueIsIcon">
+      <MemberSignature Language="C#" Value="public bool ValueIsIcon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValueIsIcon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセルを表示するかどうかを示す値を取得または、<see cref="T:System.Drawing.Icon" />値。</summary>
+        <value>
+          <see langword="true" />このセルが表示される場合、<see cref="T:System.Drawing.Icon" />値。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アルファ チャネルを確実に<xref:System.Drawing.Icon>値を正しく描画する、このプロパティを設定`true`です。 このプロパティが`true`、<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>と<xref:System.Windows.Forms.DataGridViewImageCell.ValueType%2A>プロパティの戻り値、<xref:System.Type>オブジェクトを表す、<xref:System.Drawing.Icon>型。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewImageColumn.ValuesAreIcons%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ 現在の値をセルに表示されるイメージが更新された新しいレコードの行にあるセルのこのプロパティの値が変更されたときに、<xref:System.Windows.Forms.DataGridViewImageCell.DefaultNewRowValue%2A>プロパティです。  
+  
+ 列とは異なり<xref:System.Windows.Forms.DataGridViewImageColumn.ValuesAreIcons%2A>プロパティ、セル<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティが自動的に更新されない、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>その値を変更するときに関連付けられているセルのスタイルのプロパティです。 セルを変更すると<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティの値を`true`、必ず設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCell.Style%2A>プロパティを有効な<xref:System.Drawing.Icon>します。 変更すると、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティの値を`false`に設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティを有効な<xref:System.Drawing.Image>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public override Type ValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewImageCell.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セル内の値のデータ型を取得または設定します。</summary>
+        <value><see cref="T:System.Type" />のセルの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、このプロパティを取得するときに、<xref:System.Windows.Forms.DataGridViewImageCell.ValueType%2A>セルが設定されていないため、<xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A?displayProperty=nameWithType>存在する場合に、所有している列が使用されます。 既定値の型を使用する所有している列が存在しない場合、これは、<xref:System.Drawing.Image>に応じて入力、<xref:System.Windows.Forms.DataGridViewImageCell.ValueIsIcon%2A>プロパティに設定されている`false`と<xref:System.Drawing.Icon>それ以外の場合に入力します。  
+  
+ <xref:System.Windows.Forms.DataGridViewCell.Value%2A> 、セルに含まれる実際のデータ オブジェクトがありますが、<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>プロパティは、このオブジェクトの書式設定された表現です。 <xref:System.Windows.Forms.DataGridViewImageCell.ValueType%2A>と<xref:System.Windows.Forms.DataGridViewImageCell.FormattedValueType%2A>プロパティはそれぞれこれらの値のデータ型に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

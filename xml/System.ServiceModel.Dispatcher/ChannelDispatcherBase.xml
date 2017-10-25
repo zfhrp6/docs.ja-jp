@@ -1,0 +1,194 @@
+<Type Name="ChannelDispatcherBase" FullName="System.ServiceModel.Dispatcher.ChannelDispatcherBase">
+  <TypeSignature Language="C#" Value="public abstract class ChannelDispatcherBase : System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ChannelDispatcherBase extends System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.CommunicationObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>チャネルを受け入れてサービスと関連付けるチャネル ディスパッチャーの抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] のプログラミング モデルを維持しながら、一方でシステムが提供するランタイムは置き換えようとする開発者は、このクラスを使用します。 このようなアプリケーションでは、チャネルからメッセージを取得し、ユーザー定義のディスパッチャーでメッセージを直接処理します。 <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> を使用するには、このクラスから派生するクラスを作成し、<xref:System.ServiceModel.ServiceHost> を拡張し、<xref:System.ServiceModel.ServiceHostBase.InitializeRuntime%2A> をオーバーライドして、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> から派生するユーザー独自のクラスのインスタンスを <xref:System.ServiceModel.ServiceHostBase.ChannelDispatchers%2A> に追加します。  
+  
+ <xref:System.ServiceModel.Channels.IChannelListener> オブジェクトと関連付けられた <xref:System.ServiceModel.ServiceHost> および <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> はそれぞれ、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Listener%2A> および <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Host%2A> を通して、検査または変更を行うために使用できます。  
+  
+ <xref:System.ServiceModel.ServiceHost> コレクションに <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Attach%28System.ServiceModel.ServiceHostBase%29> 項目を追加するとき、またはコレクションから項目を削除するときに、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Detach%28System.ServiceModel.ServiceHostBase%29> は <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> メソッドまたは <xref:System.ServiceModel.ServiceHostBase.ChannelDispatchers%2A> メソッドを呼び出します。  
+  
+ シャットダウンのとき、<xref:System.ServiceModel.ServiceHost> は、InstanceContext を閉じる前に <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.CloseInput%2A> を呼び出します。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] は、この呼び出しを使用してデータグラム チャネルを閉じ、すべてのメッセージが InstanceContext に到着するのを待ちます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelDispatcherBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcherBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcherBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="protected virtual void Attach (System.ServiceModel.ServiceHostBase host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Attach(class System.ServiceModel.ServiceHostBase host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Attach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="host">サービスの <see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>派生クラスでオーバーライドされると、チャネル ディスパッチャーを特定のホストに結び付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定できます。これは、この状態が、変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+ <xref:System.ServiceModel.ServiceHost> は、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> が <xref:System.ServiceModel.ServiceHostBase.ChannelDispatchers%2A> コレクションに追加されると、このメソッドを呼び出します。  これにより、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> にはイベントをフックして <xref:System.ServiceModel.ServiceHost> を検査する機会が与えられ、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Host%2A> プロパティから返される必要のある値が提供されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="host" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトが <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態です。または、ホストは既に設定されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseInput">
+      <MemberSignature Language="C#" Value="public virtual void CloseInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CloseInput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcherBase.CloseInput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、チャネル ディスパッチャーに関連付けられているエンドポイント ディスパッチャーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHost> は、シャットダウン時にこのメソッドを呼び出して、ディスパッチャーにメッセージをドレインする機会を与えます。 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、この呼び出しを使用してデータグラム チャネルを閉じます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="protected virtual void Detach (System.ServiceModel.ServiceHostBase host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Detach(class System.ServiceModel.ServiceHostBase host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Detach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>派生クラスでオーバーライドされると、特定のホストからチャネル ディスパッチャーを結合解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHostBase> は、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ切断可能です。この状態が変更可能で、かつ破棄されていない唯一の状態であるためです  
+  
+ チャネル ディスパッチャーに関連付けられている <xref:System.ServiceModel.ServiceHostBase> を `null` に設定する必要があります。  
+  
+ <xref:System.ServiceModel.ServiceHost> は、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> が <xref:System.ServiceModel.ServiceHostBase.ChannelDispatchers%2A> コレクションから削除されると、このメソッドを呼び出します。 これにより、<xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> には、イベントをアンフックし、<xref:System.ServiceModel.ServiceHost> を検査する機会が与えられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="host" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトが <see cref="F:System.ServiceModel.CommunicationState.Opening" /> 状態または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態です。または、ホストは既に設定されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.ServiceHostBase Host { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ServiceHostBase Host" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHostBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、チャネル ディスパッチャーに関連付けられているサービス ホストを取得します。</summary>
+        <value>ディスパッチャーと関連付けられたサービスの <see cref="T:System.ServiceModel.ServiceHostBase" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各 <xref:System.ServiceModel.ServiceHost> オブジェクトは、そのサービスの異なる <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> に関連付けられた多数の <xref:System.ServiceModel.Channels.IChannelListener> オブジェクトを持つことができます。 ホストは、これらの <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> オブジェクトの一覧を、<xref:System.ServiceModel.ServiceHostBase.ChannelDispatchers%2A> コレクションに保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Listener">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.IChannelListener Listener { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.IChannelListener Listener" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcherBase.Listener" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、チャネル ディスパッチャーに関連付けられているチャネル リスナーを取得します。</summary>
+        <value>チャネル ディスパッチャーに関連付けられている <see cref="T:System.ServiceModel.Channels.IChannelListener" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、この <xref:System.ServiceModel.Channels.IChannelListener> がディスパッチしているチャネルおよびメッセージの <xref:System.ServiceModel.Dispatcher.ChannelDispatcherBase> を関連付けます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

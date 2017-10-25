@@ -1,0 +1,268 @@
+<Type Name="CustomLabelsCollection" FullName="System.Web.UI.DataVisualization.Charting.CustomLabelsCollection">
+  <TypeSignature Language="C#" Value="public class CustomLabelsCollection : System.Web.UI.DataVisualization.Charting.ChartElementCollection&lt;System.Web.UI.DataVisualization.Charting.CustomLabel&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomLabelsCollection extends System.Web.UI.DataVisualization.Charting.ChartElementCollection`1&lt;class System.Web.UI.DataVisualization.Charting.CustomLabel&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartElementCollection&lt;System.Web.UI.DataVisualization.Charting.CustomLabel&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Web.UI.DataVisualization.Charting.CustomLabel</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection>クラスのコレクションを表します<xref:System.Web.UI.DataVisualization.Charting.CustomLabel>ラベルをさらに、ユーザー設定を表す、<xref:System.Web.UI.DataVisualization.Charting.Axis>オブジェクトを使用できます。 このクラスとして公開される、<xref:System.Web.UI.DataVisualization.Charting.Axis.CustomLabels%2A>の collection プロパティ、<xref:System.Web.UI.DataVisualization.Charting.Axis>オブジェクト。  
+  
+> [!NOTE]
+>  カスタムの軸のラベルの全体の行を自動的に設定できる<xref:System.DateTime>いずれかを使用してラベル<xref:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add%2A>メソッドの定義を含む、`DateTimeIntervalType`引数。  
+  
+ <xref:System.Collections.ObjectModel.Collection%601.Count%2A>プロパティ、コレクション内の項目の合計数を示し、コレクションの上限値を検索に一般的に使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (double labelsStep, System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(float64 labelsStep, valuetype System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Web.UI.DataVisualization.Charting.DateTimeIntervalType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="labelsStep" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />
+      </Parameters>
+      <Docs>
+        <param name="labelsStep">A<see langword="Double" />カスタム ラベルの描画頻度を決定する値。</param>
+        <param name="intervalType">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />間隔の種類を決定する列挙値。</param>
+        <summary>複数の追加<see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" />型のオブジェクト<see cref="T:System.DateTime" />をコレクションにします。 軸ラベルの全体の最初の行を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add%2A>メソッドを作成して初期化<xref:System.Web.UI.DataVisualization.Charting.CustomLabel>全体のオブジェクトと軸の最初のラベル行<xref:System.DateTime>指定した型のラベル。  
+  
+ `labelsStep`パラメーターは、カスタム ラベルの描画頻度を決定します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale%2A>メソッドは、この特定のメソッドの定義を呼び出す前に呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.CustomLabel Add (double fromPosition, double toPosition, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.CustomLabel Add(float64 fromPosition, float64 toPosition, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.CustomLabel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromPosition" Type="System.Double" />
+        <Parameter Name="toPosition" Type="System.Double" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fromPosition">軸のラベルを適用する範囲の最小値。</param>
+        <param name="toPosition">軸のラベルを適用する範囲の最大値。</param>
+        <param name="text">ラベルのテキスト。</param>
+        <summary>追加、<see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" />オブジェクトを指定した軸の範囲とテキストを使用して、コレクションにします。</summary>
+        <returns>新しく追加された<see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連する軸の最初のラベル行に 1 つのカスタム ラベルを追加します。 ラベルのマークは使用されません。  
+  
+ カスタム ラベルは、最初のラベル行のどこでも使用、ラベルが自動的に生成されなくその最初の行。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale%2A>メソッドは、この特定のメソッドの定義を呼び出す前に呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (double labelsStep, System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(float64 labelsStep, valuetype System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Web.UI.DataVisualization.Charting.DateTimeIntervalType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="labelsStep" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="labelsStep">A<see langword="Double" />カスタム ラベルの描画頻度を決定する値。</param>
+        <param name="intervalType">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />の測定単位を決定する列挙値、 <c>labelsStep</c>パラメーター。</param>
+        <param name="format">カスタム ラベルの書式を決定する値。 詳細については、日付と時刻の書式指定文字列を参照してください。</param>
+        <summary>複数の追加<see cref="T:System.DateTime" /><see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection" />をコレクションにオブジェクト。 指定した書式を使用するラベルと軸の最初の行全体を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成して初期化<xref:System.Web.UI.DataVisualization.Charting.CustomLabel>で、軸全体の最初のラベルのオブジェクトの行の<xref:System.DateTime>指定した型のラベル。  
+  
+ 手順では、カスタムのラベルを描画する頻度を決定し、省略可能なラベルの書式設定しも指定できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale%2A>メソッドは、この特定のメソッドの定義を呼び出す前に呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.CustomLabel Add (double fromPosition, double toPosition, string text, int rowIndex, System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.CustomLabel Add(float64 fromPosition, float64 toPosition, string text, int32 rowIndex, valuetype System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Double,System.String,System.Int32,System.Web.UI.DataVisualization.Charting.LabelMarkStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.CustomLabel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromPosition" Type="System.Double" />
+        <Parameter Name="toPosition" Type="System.Double" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Web.UI.DataVisualization.Charting.LabelMarkStyle" />
+      </Parameters>
+      <Docs>
+        <param name="fromPosition">軸ラベルの範囲の最小値に適用されます。</param>
+        <param name="toPosition">軸の範囲のラベルの最大値に適用されます。</param>
+        <param name="text">ラベルのテキスト。</param>
+        <param name="rowIndex">ラベルの行インデックス。</param>
+        <param name="markStyle">A<see cref="T:System.Web.UI.DataVisualization.Charting.LabelMarkstyle" />ティックを指定する列挙値がラベルに使用されるスタイルをマークします。</param>
+        <summary>指定した軸の範囲、テキスト、行のインデックスを使用してスタイルをマークして、このコレクションにカスタム ラベルを追加します。</summary>
+        <returns>新しく追加された<see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (double labelsStep, System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, string format, int rowIndex, System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(float64 labelsStep, valuetype System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, string format, int32 rowIndex, valuetype System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Web.UI.DataVisualization.Charting.DateTimeIntervalType,System.String,System.Int32,System.Web.UI.DataVisualization.Charting.LabelMarkStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="labelsStep" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Web.UI.DataVisualization.Charting.LabelMarkStyle" />
+      </Parameters>
+      <Docs>
+        <param name="labelsStep">A<see langword="Double" />カスタム ラベルの描画頻度を決定する値。</param>
+        <param name="intervalType">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />の測定単位を決定する列挙値、 <c>labelsStep</c>パラメーター。</param>
+        <param name="format">ラベル テキストの書式。</param>
+        <param name="rowIndex">ラベルの行インデックス。</param>
+        <param name="markStyle">A<see cref="T:System.Web.UI.DataVisualization.Charting.LabelMarkstyle" />ティックを指定する列挙値がラベルに使用されるスタイルをマークします。</param>
+        <summary>コレクションに複数のカスタム ラベルを追加します。 ラベルになります<see cref="T:System.DateTime" />指定した間隔の種類、テキスト形式を使用してラベル行のインデックスとマーク付けのスタイル。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.CustomLabel Add (double fromPosition, double toPosition, string text, int rowIndex, System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle, System.Web.UI.DataVisualization.Charting.GridTickTypes gridTick);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.CustomLabel Add(float64 fromPosition, float64 toPosition, string text, int32 rowIndex, valuetype System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle, valuetype System.Web.UI.DataVisualization.Charting.GridTickTypes gridTick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Double,System.String,System.Int32,System.Web.UI.DataVisualization.Charting.LabelMarkStyle,System.Web.UI.DataVisualization.Charting.GridTickTypes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.CustomLabel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromPosition" Type="System.Double" />
+        <Parameter Name="toPosition" Type="System.Double" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Web.UI.DataVisualization.Charting.LabelMarkStyle" />
+        <Parameter Name="gridTick" Type="System.Web.UI.DataVisualization.Charting.GridTickTypes" />
+      </Parameters>
+      <Docs>
+        <param name="fromPosition">軸ラベルの範囲の最小値に適用されます。</param>
+        <param name="toPosition">軸の範囲のラベルの最大値に適用されます。</param>
+        <param name="text">ラベルのテキスト。</param>
+        <param name="rowIndex">ラベルの行インデックス。</param>
+        <param name="markStyle">A<see cref="T:System.Web.UI.DataVisualization.Charting.LabelMarkstyle" />ティックを指定する列挙値がラベルに使用されるスタイルをマークします。</param>
+        <param name="gridTick">A<see cref="T:System.Web.UI.DataVisualization.Charting.GridTickTypes" />軸目盛り、ラベルの使用の種類をグリッドを指定する列挙値。</param>
+        <summary>カスタム ラベルを指定した軸の範囲、テキスト、スタイル、グリッドの目盛りの種類をマークする、行のインデックスを使用して、コレクションに追加します。</summary>
+        <returns>新しく追加された<see cref="T:System.Web.UI.DataVisualization.Charting.CustomLabel" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (double labelsStep, System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, double min, double max, string format, int rowIndex, System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(float64 labelsStep, valuetype System.Web.UI.DataVisualization.Charting.DateTimeIntervalType intervalType, float64 min, float64 max, string format, int32 rowIndex, valuetype System.Web.UI.DataVisualization.Charting.LabelMarkStyle markStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.CustomLabelsCollection.Add(System.Double,System.Web.UI.DataVisualization.Charting.DateTimeIntervalType,System.Double,System.Double,System.String,System.Int32,System.Web.UI.DataVisualization.Charting.LabelMarkStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="labelsStep" Type="System.Double" />
+        <Parameter Name="intervalType" Type="System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />
+        <Parameter Name="min" Type="System.Double" />
+        <Parameter Name="max" Type="System.Double" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Web.UI.DataVisualization.Charting.LabelMarkStyle" />
+      </Parameters>
+      <Docs>
+        <param name="labelsStep">A<see langword="Double" />カスタム ラベルの描画頻度を決定する値。</param>
+        <param name="intervalType">A<see cref="T:System.Web.UI.DataVisualization.Charting.DateTimeIntervalType" />の測定単位を決定する列挙値、 <c>labelsStep</c>パラメーター。</param>
+        <param name="min">軸の範囲の最小値。</param>
+        <param name="max">軸の範囲の最大値。</param>
+        <param name="format">ラベル テキストの書式。</param>
+        <param name="rowIndex">ラベルの行インデックス。</param>
+        <param name="markStyle">A<see cref="T:System.Web.UI.DataVisualization.Charting.LabelMarkstyle" />ティックを指定する列挙値がラベルに使用されるスタイルをマークします。</param>
+        <summary>コレクションに複数のカスタム ラベルを追加します。 ラベルになります<see cref="T:System.DateTime" />に、指定した間隔の種類のラベルし、軸の範囲によって決定されるが生成されます、<paramref name="min" />と<paramref name="max" />引数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

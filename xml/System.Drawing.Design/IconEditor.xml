@@ -1,0 +1,268 @@
+<Type Name="IconEditor" FullName="System.Drawing.Design.IconEditor">
+  <TypeSignature Language="C#" Value="public class IconEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IconEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.IconEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Drawing.Design.UITypeEditor" />の視覚的にアイコンを選択します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IconEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Design.IconEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateExtensionsString">
+      <MemberSignature Language="C#" Value="protected static string CreateExtensionsString (string[] extensions, string sep);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string CreateExtensionsString(string[] extensions, string sep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.CreateExtensionsString(System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extensions" Type="System.String[]" />
+        <Parameter Name="sep" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extensions">有効なファイル拡張子を保持する文字列の配列。</param>
+        <param name="sep">区切り文字を指定する文字列。</param>
+        <summary>アイコンの有効なファイル拡張子を表す文字列を作成します。</summary>
+        <returns>アイコン ファイルの拡張子を含む文字列または<see langword="null" />場合<paramref name="extensions" />は<see langword="null" />または空です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Drawing.Design.IconEditor.CreateExtensionsString%2A>でメソッドが使用される、<xref:System.Windows.Forms.OpenFileDialog>のアイコン ファイルを選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterEntry">
+      <MemberSignature Language="C#" Value="protected static string CreateFilterEntry (System.Drawing.Design.IconEditor e);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string CreateFilterEntry(class System.Drawing.Design.IconEditor e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.CreateFilterEntry(System.Drawing.Design.IconEditor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Design.IconEditor" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Drawing.Design.IconEditor" />フィルター文字列を作成するためです。</param>
+        <summary>ファイル ダイアログ ボックスのフィルター文字列を作成します。</summary>
+        <returns>によって返される文字列から作成される、フィルター文字列<see cref="M:System.Drawing.Design.IconEditor.CreateExtensionsString(System.String[],System.String)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Drawing.Design.IconEditor.CreateFilterEntry%2A>でメソッドが使用される、<xref:System.Windows.Forms.OpenFileDialog>アイコン ファイルをフィルター処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を提供するために使用する型記述子コンテキスト。</param>
+        <param name="provider">使用するサービスを編集取得できるサービス プロバイダー オブジェクト。</param>
+        <param name="value">編集中の値のインスタンス。</param>
+        <summary>提供するエディター スタイルを使用して指定したオブジェクトの値を編集、<see cref="M:System.Drawing.Design.IconEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />メソッドです。</summary>
+        <returns>オブジェクトの新しい値。 オブジェクトの値が変更されていない場合は、このメソッドは渡されたオブジェクトと同じオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プロバイダーが提供するは、任意の必要な編集サービスを取得できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を提供するために使用する型記述子コンテキスト。</param>
+        <summary>編集スタイルを取得、<see cref="Overload:System.Drawing.Design.IconEditor.EditValue" />メソッドです。</summary>
+        <returns>1 つ、<see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />スタイル指定の編集を示す値を設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Drawing.Design.IconEditor.EditValue%2A>メソッドがサポートされていません、<xref:System.Drawing.Design.IconEditor.GetEditStyle%2A>メソッドが返す<xref:System.Drawing.Design.UITypeEditorEditStyle.None>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtensions">
+      <MemberSignature Language="C#" Value="protected virtual string[] GetExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string[] GetExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.GetExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アイコンの有効なファイル拡張子の配列を取得します。</summary>
+        <returns>アイコンの有効なファイル拡張子の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDialogDescription">
+      <MemberSignature Language="C#" Value="protected virtual string GetFileDialogDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetFileDialogDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.GetFileDialogDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このエディターによって提供される既定のファイル リスト フィルターの説明を取得します。</summary>
+        <returns>既定のファイル リストをフィルター処理するファイルの種類の説明です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPaintValueSupported">
+      <MemberSignature Language="C#" Value="public override bool GetPaintValueSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetPaintValueSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を提供するために使用する型記述子コンテキスト。</param>
+        <summary>このエディターが、オブジェクトの値の形式の描画をサポートしているかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="Overload:System.Drawing.Design.UITypeEditor.PaintValue" />が実装されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromStream">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Icon LoadFromStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Drawing.Icon LoadFromStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.LoadFromStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">アイコンの作成元となるソース ストリーム。</param>
+        <summary>新たに作成<see cref="T:System.Drawing.Icon" />指定したストリームからです。</summary>
+        <returns>新しく作成された <see cref="T:System.Drawing.Icon" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintValue">
+      <MemberSignature Language="C#" Value="public override void PaintValue (System.Drawing.Design.PaintValueEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PaintValue(class System.Drawing.Design.PaintValueEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IconEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Design.PaintValueEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">ペイントを描画する場所を何か。</param>
+        <summary>指定したキャンバスに指定したオブジェクトの代表的な値を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ペイントは、指定された四角形の境界内で行う必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

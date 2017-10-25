@@ -1,0 +1,137 @@
+<Type Name="TreeViewEventArgs" FullName="System.Windows.Forms.TreeViewEventArgs">
+  <TypeSignature Language="C#" Value="public class TreeViewEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TreeViewEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeViewEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Windows.Forms.TreeView.AfterCheck" />、 <see cref="E:System.Windows.Forms.TreeView.AfterCollapse" />、 <see cref="E:System.Windows.Forms.TreeView.AfterExpand" />、または<see cref="E:System.Windows.Forms.TreeView.AfterSelect" />のイベント、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例をカスタマイズされた<xref:System.Windows.Forms.TreeView>です。 継承することによって、<xref:System.Windows.Forms.TreeView>クラス、このカスタムのバージョンには、通常の機能がすべて<xref:System.Windows.Forms.TreeView>です。 コンス トラクターは、さまざまなプロパティ値を変更する独自の外観を提供します。 <xref:System.Windows.Forms.TreeView.ShowPlusMinus%2A>プロパティが false に設定すると、カスタマイズされたコントロールを上書きも、<xref:System.Windows.Forms.TreeView.OnAfterSelect%2A>メソッド ノードを展開およびクリックした場合を折りたたむことができます。  
+  
+ この方法でカスタマイズされているコントロールは、やすくをそれぞれのプロジェクトで指定するコントロールのプロパティを必要とせず、一貫性のあるインターフェイスを提供するため、組織全体で使用できます。  
+  
+ [!code-cpp[TreeViewCustomization#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewCustomization/CPP/treeviewcustomization.cpp#2)]
+ [!code-csharp[TreeViewCustomization#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewCustomization/CS/treeviewcustomization.cs#2)]
+ [!code-vb[TreeViewCustomization#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewCustomization/VB/treeviewcustomization.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeViewEventArgs (System.Windows.Forms.TreeNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeViewEventArgs.#ctor(System.Windows.Forms.TreeNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Windows.Forms.TreeNode" />にイベントが応答しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeViewEventArgs" />指定されたツリー ノードのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeViewEventArgs (System.Windows.Forms.TreeNode node, System.Windows.Forms.TreeViewAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node, valuetype System.Windows.Forms.TreeViewAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeViewEventArgs.#ctor(System.Windows.Forms.TreeNode,System.Windows.Forms.TreeViewAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="action" Type="System.Windows.Forms.TreeViewAction" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Windows.Forms.TreeNode" />にイベントが応答しています。</param>
+        <param name="action">型<see cref="T:System.Windows.Forms.TreeViewAction" />イベントが発生しました。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeViewEventArgs" />イベントを発生させたアクションの指定した型を使用して、指定されたツリー ノードのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeViewAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TreeViewAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたアクションの種類を取得します。</summary>
+        <value>型<see cref="T:System.Windows.Forms.TreeViewAction" />イベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をカスタマイズされた<xref:System.Windows.Forms.TreeView>です。 継承することによって、<xref:System.Windows.Forms.TreeView>クラス、このカスタムのバージョンには、通常の機能がすべて<xref:System.Windows.Forms.TreeView>です。 コンス トラクターは、さまざまなプロパティ値を変更する独自の外観を提供します。 <xref:System.Windows.Forms.TreeView.ShowPlusMinus%2A>プロパティが false に設定すると、カスタマイズされたコントロールを上書きも、<xref:System.Windows.Forms.TreeView.OnAfterSelect%2A>メソッド ノードを展開およびクリックした場合を折りたたむことができます。  
+  
+ この方法でカスタマイズされているコントロールは、やすくをそれぞれのプロジェクトで指定するコントロールのプロパティを必要とせず、一貫性のあるインターフェイスを提供するため、組織全体で使用できます。  
+  
+ [!code-cpp[TreeViewCustomization#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewCustomization/CPP/treeviewcustomization.cpp#2)]
+ [!code-csharp[TreeViewCustomization#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewCustomization/CS/treeviewcustomization.cs#2)]
+ [!code-vb[TreeViewCustomization#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewCustomization/VB/treeviewcustomization.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェックされた、展開された、折りたたまれた、または選択されたツリー ノードを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeNode" />がされてチェック、展開、折りたたまれた、または選択します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をカスタマイズされた<xref:System.Windows.Forms.TreeView>です。 継承することによって、<xref:System.Windows.Forms.TreeView>クラス、このカスタムのバージョンには、通常の機能がすべて<xref:System.Windows.Forms.TreeView>です。 独自の外観は、コンス トラクターでさまざまなプロパティ値を変更することによって提供されます。 <xref:System.Windows.Forms.TreeView.ShowPlusMinus%2A>設定されているカスタマイズされたコントロールのものオーバーライドを false に<xref:System.Windows.Forms.TreeView.OnAfterSelect%2A>ノードを展開し、クリックしたときに折りたたまれているようにします。  
+  
+ この方法でカスタマイズされているコントロールは、やすくをそれぞれのプロジェクトで指定するコントロールのプロパティを必要とせず、一貫性のあるインターフェイスを提供するため、組織全体で使用できます。  
+  
+ [!code-cpp[TreeViewCustomization#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewCustomization/CPP/treeviewcustomization.cpp#2)]
+ [!code-csharp[TreeViewCustomization#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewCustomization/CS/treeviewcustomization.cs#2)]
+ [!code-vb[TreeViewCustomization#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewCustomization/VB/treeviewcustomization.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="ResolveProgressChangedEventArgs" FullName="System.Net.PeerToPeer.ResolveProgressChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class ResolveProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveProgressChangedEventArgs extends System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.ResolveProgressChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.ProgressChangedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シグナルと組み合わせて使用、<see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged" />イベント。  通知を受けるたびに、<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />オブジェクトへの応答が、 <see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 、特定の操作<see cref="T:System.Net.PeerToPeer.PeerName" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピア名の複数レコード オブジェクトは、照会中に存在する場合レコード オブジェクトが見つかるたびにこのイベントが 1 回通知されます。 <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>イベントは、すべてのエンドポイントが見つかったとき 1 回だけ発生します。  
+  
+ プロセスが正常に完了は、競合回避モジュール オブジェクトをピアの名前を照会するクラウドの終わりに達したかあるに到達したレコードのエントリの最大数のピアの名前のレコード コレクションは構築を意味します。  
+  
+ 競合回避モジュールのこのインスタンスへのすべての参照がトークンの userState を使用して調整<xref:System.Object>、これは、この非同期解決要求の一意の識別子。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveProgressChangedEventArgs (System.Net.PeerToPeer.PeerNameRecord peerNameRecord, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.PeerToPeer.PeerNameRecord peerNameRecord, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.ResolveProgressChangedEventArgs.#ctor(System.Net.PeerToPeer.PeerNameRecord,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="peerNameRecord" Type="System.Net.PeerToPeer.PeerNameRecord" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerNameRecord">検索する <see cref="T:System.Net.PeerToPeer.PeerNameRecord" /> オブジェクト。</param>
+        <param name="userToken"><see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 操作が開始された場合に指定した一意のユーザー状態オブジェクト。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.ResolveProgressChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 解決されたピア名が使用してアクセスできる、<xref:System.Net.PeerToPeer.PeerNameRecord.PeerName%2A>プロパティです。  
+  
+ ユーザー状態を継承<xref:System.ComponentModel.AsyncCompletedEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerNameRecord">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecord PeerNameRecord { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.PeerNameRecord PeerNameRecord" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.ResolveProgressChangedEventArgs.PeerNameRecord" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecord</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />を解決するオブジェクト。</summary>
+        <value>ピア名前レコード オブジェクトへの応答で検出、 <see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 、特定の操作<see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" />です。  
+  
+ すべてのプロパティの既定値は、明示的に指定しない限り、<see langword="null" />ゼロ (0) のプロパティの型の参照型で<see langword="int" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ保護されていないピア名と同じで別のユーザーによって同時に登録できる<xref:System.Net.PeerToPeer.Cloud>、さまざまなエンドポイントに関連付けられているとします。 その結果、<xref:System.Net.PeerToPeer.PeerNameResolver>クラスは、クラウドにピア名を解決するか、ピア ツー ピアのピアの名前のレコードに名前を使用します。 進行状況をレポートにこのイベントは、競合回避モジュールはクエリを実行するクラウドの中にピア名が見つかるたびに、<xref:System.Net.PeerToPeer.PeerName>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

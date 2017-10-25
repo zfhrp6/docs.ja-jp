@@ -1,0 +1,146 @@
+<Type Name="TickMark" FullName="System.Web.UI.DataVisualization.Charting.TickMark">
+  <TypeSignature Language="C#" Value="public class TickMark : System.Web.UI.DataVisualization.Charting.Grid" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TickMark extends System.Web.UI.DataVisualization.Charting.Grid" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.TickMark" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.Grid</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Enabled")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表す線と補助目盛りを軸に沿ったマークします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.TickMark>クラスでは、すべてのグラフの目盛りの機能がカプセル化します。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.TickMark>としてクラスが公開されている、<xref:System.Web.UI.DataVisualization.Charting.Axis.MajorTickMark%2A>と<xref:System.Web.UI.DataVisualization.Charting.Axis.MinorTickMark%2A>プロパティの<xref:System.Web.UI.DataVisualization.Charting.Axis>オブジェクト。  
+  
+ 既定では、補助目盛りを明示的に表示される必要がありますが、目盛りはグリッド線に表示されます。  
+  
+ MajorTickMark.Interval が設定されていない (`Double.NaN`)、既定では、目盛りが描画によると<xref:System.Web.UI.DataVisualization.Charting.Axis.Interval%2A>です。 設定されている MinorTickMark.Interval `Auto` (`0`)、既定では、グラフ コントロールに自動的に間隔を決定します。  
+  
+ 開発者に、このクラスを使用できます。  
+  
+-   有効にするにまたは目盛りを無効にします。  
+  
+-   目盛りの色、幅、長さ、および行のスタイルのマークを設定します。  
+  
+-   軸の内側または軸に沿って、軸の外側に目盛りを表示するかどうかを決定するスタイルを指定します。  
+  
+-   開始位置を指定: 最初の目盛りが描画される — の数に関連するティックの間隔、およびです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TickMark ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.TickMark.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.TickMark" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public float Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.TickMark.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りの長さにマークを設定します。 長さは、高さに対する比率またはによっては、軸、グラフ画像の幅を表す単位で測定されます。</summary>
+        <value>A<see langword="float" />サイズ、または目盛りの長さを表す値です。 既定値は、1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ティックのサイズでは、目盛りの長さを決定します。  
+  
+ `Size`プロパティは、グラフ イメージの幅または高さのパーセンテージを表す単位で測定されます。 目盛りが縦軸に表示されている場合は、グラフ イメージの幅の割合はの測定単位です。 目盛りは水平軸に沿って表示される、メジャーの単位がグラフ イメージの高さの割合。  
+  
+ グラフ イメージの幅の変更は、すべてのグラフ領域の垂直の軸に表示されるすべての目盛りのサイズ変更になります。 同様に、グラフ画像の高さの変更は、すべてのグラフ領域に対して、水平軸に表示されるすべての目盛りのサイズ変更になります。  
+  
+ 壁の幅だけ描画されるように、3 次元 (3 D) グラフでは、目盛りを表示するには、設定、<xref:System.Web.UI.DataVisualization.Charting.TickMark.TickMarkStyle%2A>プロパティを<xref:System.Web.UI.DataVisualization.Charting.TickMarkStyle.AcrossAxis>ゼロ (0) を使用しての目盛りマーク サイズを指定して、<xref:System.Web.UI.DataVisualization.Charting.TickMark.Size%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TickMarkStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TickMarkStyle TickMarkStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.TickMarkStyle TickMarkStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.TickMark.TickMarkStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TickMarkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または目盛りのスタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.TickMarkStyle" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.TickMarkStyle.OutsideArea" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.TickMark.TickMarkStyle%2A>プロパティは、目盛りのスタイルを決定します。  
+  
+ 目盛りは、軸線の間でグラフ領域の外側でグラフ領域内に描画できるまたは無効にすることができます。  
+  
+ 壁の幅だけ描画されるように、3 次元 (3 D) グラフでは、目盛りを表示するには、設定、<xref:System.Web.UI.DataVisualization.Charting.TickMark.TickMarkStyle%2A>プロパティを<xref:System.Web.UI.DataVisualization.Charting.TickMarkStyle.AcrossAxis>です。 ゼロ (0) を使用しての目盛りマーク サイズを指定し、<xref:System.Web.UI.DataVisualization.Charting.TickMark.Size%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.TickMark.TickMarkStyle%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.TickMarkStyle.None?displayProperty=nameWithType>目盛りは表示されません。 目盛りも切り替え可能、オンまたはオフを設定して、 [Tickmark.Enabled](<xref:System.Web.UI.DataVisualization.Charting.Grid.Enabled%2A>)プロパティを`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

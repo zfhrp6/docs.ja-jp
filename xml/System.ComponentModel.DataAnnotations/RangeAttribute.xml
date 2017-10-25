@@ -1,0 +1,319 @@
+<Type Name="RangeAttribute" FullName="System.ComponentModel.DataAnnotations.RangeAttribute">
+  <TypeSignature Language="C#" Value="public class RangeAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RangeAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.RangeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.ValidationAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドの値について数値範囲の制約を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フィールドにこの属性を適用するときに、検証属性の使用方法のガイドラインに従う必要があります。 詳細については、次を参照してください。 [ASP.NET 動的データ ガイドライン](http://msdn.microsoft.com/en-us/c563bbf3-feb9-484e-81d1-a585f1b0e192)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.RangeAttribute>データ フィールドの書式設定をカスタマイズします。 例では、次の手順を実行します。  
+  
+-   メタデータの部分クラスと関連するメタデータ クラスを実装します。  
+  
+-   適用される、関連するメタデータ クラスで、<xref:System.ComponentModel.DataAnnotations.RangeAttribute>を次の結果を取得する属性。  
+  
+    -   整数型のデータ フィールドに属性を適用します。  
+  
+    -   整数型のデータ フィールドに属性を適用し、カスタムの検証エラー メッセージを定義します。  
+  
+    -   適用する属性、`DateTime`データ フィールドし、カスタム検証エラー メッセージを定義します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RangeAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/CS/Product.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RangeAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/VB/Product.vb#1)]  
+  
+ この例をコンパイルするには、以下が必要。  
+  
+-   [!INCLUDE[vs_orcas_ext](~/includes/vs-orcas-ext-md.md)]Service Pack 1 または[!INCLUDE[vwd_exp_orcas_long](~/includes/vwd-exp-orcas-long-md.md)]SP1。  
+  
+-   データ ドリブン Web サイトです。 これにより、データベースおよびカスタマイズするデータ フィールドを含むクラスのデータ コンテキストを作成することができます。 詳細については、「`Walkthrough: Creating a New Dynamic Data Web Site using Scaffolding`」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeAttribute (double minimum, double maximum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 minimum, float64 maximum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minimum" Type="System.Double" />
+        <Parameter Name="maximum" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="minimum">データ フィールドの値の許容される最小値を指定します。</param>
+        <param name="maximum">データ フィールドの値の許容最大値を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.RangeAttribute" />指定した最小値と最大値を使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeAttribute (int minimum, int maximum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minimum, int32 maximum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minimum" Type="System.Int32" />
+        <Parameter Name="maximum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minimum">データ フィールドの値の許容される最小値を指定します。</param>
+        <param name="maximum">データ フィールドの値の許容最大値を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.RangeAttribute" />指定した最小値と最大値を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.RangeAttribute.%23ctor%2A>整数のデータ フィールドの範囲を指定します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RangeAttribute#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/CS/Product.cs#11)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RangeAttribute#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/VB/Product.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeAttribute (Type type, string minimum, string maximum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string minimum, string maximum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Type,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="minimum" Type="System.String" />
+        <Parameter Name="maximum" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">テストするオブジェクトの種類を指定します。</param>
+        <param name="minimum">データ フィールドの値の許容される最小値を指定します。</param>
+        <param name="maximum">データ フィールドの値の許容最大値を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.RangeAttribute" />指定した最小値と最大値と特定の種類を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証対象のオブジェクトを実装する必要があります、<xref:System.IComparable>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.RangeAttribute.%23ctor%2A>の範囲を指定するメソッド、`DateTime`フィールドです。 書式設定機能を使用する方法を示すカスタム エラー メッセージも含まれています、<xref:System.ComponentModel.DataAnnotations.RangeAttribute.FormatErrorMessage%2A>メソッドです。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RangeAttribute#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/CS/Product.cs#12)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RangeAttribute#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RangeAttribute/VB/Product.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatErrorMessage">
+      <MemberSignature Language="C#" Value="public override string FormatErrorMessage (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string FormatErrorMessage(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RangeAttribute.FormatErrorMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証エラーの原因となったフィールドの名前。</param>
+        <summary>範囲検証が失敗したときに表示されるエラー メッセージの書式を設定します。</summary>
+        <returns>書式設定されたエラー メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.RangeAttribute.FormatErrorMessage%2A>は検証の失敗の原因となったデータ フィールドの名前を使用して、エラー メッセージを作成します。 エラーの作成方法をカスタマイズしたり、実行時に評価されるパラメーターを含むより複雑なメッセージを提供するカスタム検証属性では、このメソッドをオーバーライドすることができます。 例については、 <xref:System.ComponentModel.DataAnnotations.RangeAttribute.%23ctor%2A?displayProperty=nameWithType> コンストラクターに関する説明を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RangeAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証するデータ フィールドの値。</param>
+        <summary>指定した範囲内のデータ フィールドの値を確認します。</summary>
+        <returns>
+          <see langword="true" />指定した値が範囲の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">データ フィールドの値は許容範囲外にありました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public object Maximum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RangeAttribute.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許可されているフィールドの最大値を取得します。</summary>
+        <value>データ フィールドが使用できる最大値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public object Minimum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RangeAttribute.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小の許可されているフィールドの値を取得します。</summary>
+        <value>データ フィールドが使用できる最小許容値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フィールドが使用できる最小値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperandType">
+      <MemberSignature Language="C#" Value="public Type OperandType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type OperandType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RangeAttribute.OperandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を持つかを検証するデータ フィールドの種類を取得します。</summary>
+        <value>値を検証する必要がありますデータ フィールドの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするオブジェクトを実装する必要があります、<xref:System.IComparable>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

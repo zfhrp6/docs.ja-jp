@@ -1,0 +1,32 @@
+<Type Name="HttpWorkerRequest+EndOfSendNotification" FullName="System.Web.HttpWorkerRequest+EndOfSendNotification">
+  <TypeSignature Language="C#" Value="public delegate void HttpWorkerRequest.EndOfSendNotification(HttpWorkerRequest wr, object extraData);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed HttpWorkerRequest/EndOfSendNotification extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpWorkerRequest.EndOfSendNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="wr" Type="System.Web.HttpWorkerRequest" />
+    <Parameter Name="extraData" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="wr">現在の <see cref="T:System.Web.HttpWorkerRequest" /> です。</param>
+    <param name="extraData">その他のデータは、要求の処理に必要です。</param>
+    <summary>応答の送信時に呼び出し元に通知が完了したメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストは、この通知を使用して、バッファーの再利用を実装することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

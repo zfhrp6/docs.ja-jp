@@ -1,0 +1,61 @@
+<Type Name="RecycleOption" FullName="Microsoft.VisualBasic.FileIO.RecycleOption">
+  <TypeSignature Language="C#" Value="public enum RecycleOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RecycleOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.FileIO.RecycleOption" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ファイルを完全に削除またはに配置するかどうかを指定します、**ごみ箱**です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使用、<xref:Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory%2A>と<xref:Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile%2A>メソッドです。  
+  
+ 重要なファイルを誤って削除されないようにに対してユーザーを保護するために、**ごみ箱**削除収集ファイルし、それらのファイルを復元するためのメソッドを提供します。 ファイルを明示的に削除する必要があります、**ごみ箱**永続的な削除します。 ファイルが削除されるまで、**ごみ箱**、それらのファイルによって占有されているディスク領域を他の使用方法については利用できません。  
+  
+ バイパスすると役に立つ場合があります、**ごみ箱**されなく、必要とするディスク領域を解放することを確認しているファイル (または非常に大きなファイルの数を減らして) の数が多いを削除する場合は特に、します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeletePermanently">
+      <MemberSignature Language="C#" Value="DeletePermanently" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileIO.RecycleOption DeletePermanently = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileIO.RecycleOption.DeletePermanently" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileIO.RecycleOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルまたはディレクトリを完全に削除します。 既定モード。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SendToRecycleBin">
+      <MemberSignature Language="C#" Value="SendToRecycleBin" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileIO.RecycleOption SendToRecycleBin = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileIO.RecycleOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルまたはディレクトリへの送信、**ごみ箱**です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

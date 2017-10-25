@@ -1,0 +1,107 @@
+<Type Name="LogRecord" FullName="System.EnterpriseServices.CompensatingResourceManager.LogRecord">
+  <TypeSignature Language="C#" Value="public sealed class LogRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogRecord extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.CompensatingResourceManager.LogRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>COM + として構造化されていないログ レコードが配信を表します<see langword="CrmLogRecordRead" />構造体。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造化されていないログ レコードは、COM + として配信される`CrmLogRecordRead`構造体。 ユーザー データ (1 つの BLOB) に加え、デバッグやエラーの検索に役立つ追加のフィールドが含まれます。 <xref:System.EnterpriseServices.CompensatingResourceManager.LogRecord.Flags%2A>フィールドは、ある時点で、このレコードが忘れてされたかどうかに関する詳細情報を提供するビット フィールドが記述されている場合とします。 <xref:System.EnterpriseServices.CompensatingResourceManager.LogRecord.Sequence%2A>フィールドは、ログ レコードのシーケンス番号を提供します。 ほとんどの場合、シーケンス番号は連続性が、マネージャー CRM (Compensating Resource) Compensator に配信されない内部ログ レコードのため、必ずしも連続していません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスの使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Crm#28](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Crm/cpp/crmserver.cpp#28)]
+ [!code-csharp[EnterpriseServices_Crm#28](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Crm/CS/crmserver.cs#28)]
+ [!code-vb[EnterpriseServices_Crm#28](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Crm/VB/crmserver.vb#28)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.CompensatingResourceManager.LogRecordFlags Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.CompensatingResourceManager.LogRecordFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.LogRecord.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.CompensatingResourceManager.LogRecordFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ レコードが書き込まれたときを示す値を取得します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.LogRecordFlags" />このレコードが記述されたに関する情報を提供する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Record">
+      <MemberSignature Language="C#" Value="public object Record { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Record" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.LogRecord.Record" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ レコードのユーザー データを取得します。</summary>
+        <value>ユーザー データを含む 1 つの BLOB。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Crm#28](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Crm/cpp/crmserver.cpp#28)]
+ [!code-csharp[EnterpriseServices_Crm#28](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Crm/CS/crmserver.cs#28)]
+ [!code-vb[EnterpriseServices_Crm#28](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Crm/VB/crmserver.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sequence">
+      <MemberSignature Language="C#" Value="public int Sequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Sequence" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.LogRecord.Sequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ レコードのシーケンス番号。</summary>
+        <value>ログ レコードのシーケンス番号を指定する整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーケンス番号は、内部ログ レコードまたはコンペンセート リソース マネージャー (CRM) Compensator に配信されないされなかったログ レコードのため、連続しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

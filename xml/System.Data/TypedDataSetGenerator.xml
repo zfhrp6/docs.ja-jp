@@ -1,0 +1,116 @@
+<Type Name="TypedDataSetGenerator" FullName="System.Data.TypedDataSetGenerator">
+  <TypeSignature Language="C#" Value="public class TypedDataSetGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypedDataSetGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.TypedDataSetGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("TypedDataSetGenerator class will be removed in a future release. Please use System.Data.Design.TypedDataSetGenerator in System.Design.dll.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>厳密に型指定を作成するために使用<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.TypedDataSetGenerator>クラスは、他のクラスが標準的な機能を派生するクラスとしては、スタンドアロンのコンポーネントとして使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypedDataSetGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedDataSetGenerator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.TypedDataSetGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.TypedDataSetGenerator>クラスは、他のクラスが標準的な機能を派生するクラスとしては、スタンドアロンのコンポーネントとして使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (System.Data.DataSet dataSet, System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.Compiler.ICodeGenerator codeGen);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(class System.Data.DataSet dataSet, class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.Compiler.ICodeGenerator codeGen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedDataSetGenerator.Generate(System.Data.DataSet,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.ICodeGenerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeGen" Type="System.CodeDom.Compiler.ICodeGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet">ソース<see cref="T:System.Data.DataSet" />、型指定のメタデータを指定する<see cref="T:System.Data.DataSet" />です。</param>
+        <param name="codeNamespace">名前空間は、型指定のターゲット名前空間を<see cref="T:System.Data.DataSet" />です。</param>
+        <param name="codeGen">そのため、型指定されたジェネレーター<see cref="T:System.Data.DataSet" />です。</param>
+        <summary>厳密に型が生成されます<see cref="T:System.Data.DataSet" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.TypedDataSetGenerator>クラスは、他のクラスが標準的な機能を派生するクラスとしては、スタンドアロンのコンポーネントとして使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateIdName">
+      <MemberSignature Language="C#" Value="public static string GenerateIdName (string name, System.CodeDom.Compiler.ICodeGenerator codeGen);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateIdName(string name, class System.CodeDom.Compiler.ICodeGenerator codeGen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedDataSetGenerator.GenerateIdName(System.String,System.CodeDom.Compiler.ICodeGenerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="codeGen" Type="System.CodeDom.Compiler.ICodeGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="name">ソースの名前を有効な変換を型指定された<see cref="T:System.Data.DataSet" />名。</param>
+        <param name="codeGen">コード ジェネレーターが変換を実行するために使用します。</param>
+        <summary>有効な文字列を変換入力<see cref="T:System.Data.DataSet" />名。</summary>
+        <returns>変換後の名前を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.TypedDataSetGenerator>クラスは、他のクラスが標準的な機能を派生するクラスとしては、スタンドアロンのコンポーネントとして使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

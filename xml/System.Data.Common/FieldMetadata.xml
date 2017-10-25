@@ -1,0 +1,75 @@
+<Type Name="FieldMetadata" FullName="System.Data.Common.FieldMetadata">
+  <TypeSignature Language="C#" Value="public struct FieldMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit FieldMetadata extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.FieldMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Data.Common.DataRecordInfo" /> オブジェクトのフィールド メタデータにアクセスします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FieldMetadata (int ordinal, System.Data.Metadata.Edm.EdmMember fieldType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 ordinal, class System.Data.Metadata.Edm.EdmMember fieldType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.FieldMetadata.#ctor(System.Int32,System.Data.Metadata.Edm.EdmMember)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ordinal" Type="System.Int32" />
+        <Parameter Name="fieldType" Type="System.Data.Metadata.Edm.EdmMember" />
+      </Parameters>
+      <Docs>
+        <param name="ordinal">メタデータの場所を指定した整数。</param>
+        <param name="fieldType">フィールドの型。</param>
+        <summary>指定した序数値とフィールドの型を使用して新しい <see cref="T:System.Data.Common.FieldMetadata" /> オブジェクトを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmMember FieldType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EdmMember FieldType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.FieldMetadata.FieldType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Common.FieldMetadata" /> オブジェクトのフィールドの型を取得します。</summary>
+        <value>このフィールドの種類<see cref="T:System.Data.Common.FieldMetadata" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="public int Ordinal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Ordinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.FieldMetadata.Ordinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Common.FieldMetadata" /> オブジェクトの序数を取得します。</summary>
+        <value>序数値を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

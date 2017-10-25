@@ -1,0 +1,291 @@
+<Type Name="DecoderFallbackBuffer" FullName="System.Text.DecoderFallbackBuffer">
+  <TypeSignature Language="C#" Value="public abstract class DecoderFallbackBuffer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DecoderFallbackBuffer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.DecoderFallbackBuffer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encoding</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力バイト シーケンスをデコードできない場合に、フォールバック ハンドラーがデコーダーに代替文字列を返すことを可能にするためのバッファーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコーディングは、Unicode 文字をエンコード済みバイト シーケンスの間のマッピングを定義します。 特定のバイト シーケンスのマッピングが定義されていない場合、入力バイト シーケンスを出力文字に変換をデコード操作が失敗します。  
+  
+ .NET Framework では、エラー処理、変換を実行できない場合に、フォールバックと呼ばれるメカニズムを提供します。 すべてのデコーダー フォールバック ハンドラーを次に実装する必要があります。  
+  
+-   派生したクラスによって表されるデコーダー フォールバックにおいて、<xref:System.Text.DecoderFallback>クラスです。  
+  
+-   派生した型で表される、デコーダー フォールバック バッファー、<xref:System.Text.DecoderFallbackBuffer>変換演算に文字列を返すことができるクラスです。  
+  
+ フォールバックは、3 つの戦略を使用して、変換エラーを処理できます。  
+  
+-   最適マッピングします。 デコーダー フォールバック バッファーには、入力バイト シーケンスに近い概数を表す文字列を返すことができます。 .NET Framework では、最適パブリック達しません<xref:System.Text.DecoderFallbackBuffer>実装します。  
+  
+-   置換します。 デコーダー フォールバック バッファーが疑問符 () などの文字列を返すことができます ("?") を示すバイト シーケンスをデコードできませんでした。 .NET Framework で、<xref:System.Text.DecoderReplacementFallback>と<xref:System.Text.DecoderReplacementFallbackBuffer>クラス パブリック置換フォールバック バッファー実装を提供します。 コンス トラクター、<xref:System.Text.DecoderReplacementFallback>クラスでは、置換文字列を定義することができます。  
+  
+-   例外。 <xref:System.Text.DecoderFallbackBuffer>実装をバイト シーケンスをデコードすることはできませんし、デコード操作の終了を示す例外をスローします。 ここでは、フォールバック ハンドラーが提供する必要があります、<xref:System.Text.DecoderFallbackBuffer>実装がデコーダーに文字列を返すことはできません。 .NET Framework で、<xref:System.Text.DecoderExceptionFallback>と<xref:System.Text.DecoderExceptionFallbackBuffer>クラスをスローするパブリック例外フォールバックの実装を提供する、<xref:System.Text.DecoderFallbackException>バイト シーケンスをデコードできない場合。  
+  
+ バッファー、<xref:System.Text.DecoderFallbackBuffer>実装は、フォールバック、デコーダー デコーダーへの応答に返される文字列全体を表します。 一般に、実装には、返されるには、デコーダーと残りの文字数に戻るには次の文字のインデックスなど、状態の情報にはもが含まれます。 <xref:System.Text.DecoderFallbackBuffer>抽象クラスでは、派生クラスには、少なくとも次のメンバーを実装する必要があります。  
+  
+-   <xref:System.Text.DecoderFallbackBuffer.Fallback%2A>バイト シーケンスをデコードできない場合、デコーダーによって呼び出されるメソッド。 デコーダー フォールバック バッファーの実装に 2 つの情報を渡します。 デコードできないバイトを格納する配列と、入力バイト配列の最初のバイトのインデックス。 デコーダー フォールバック例外ハンドラーでは、このメソッドで例外がスローされます。 メソッドを返しますそれ以外の場合、 `true` 、フォールバックを提供する場合または`false`そうでない場合。  
+  
+-   <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A>場合デコーダーによって繰り返し呼び出されるメソッド、<xref:System.Text.DecoderFallbackBuffer.Fallback%2A>メソッドを返します。`true`です。 ハンドラーは、連続呼び出しで、バッファー内の各文字を返す必要があります。 これには、すべての文字が返されて、u+0000 を返します。 例外フォールバック ハンドラーは、u+0000 を常に返します。  
+  
+-   <xref:System.Text.DecoderFallbackBuffer.MovePrevious%2A>メソッドは、バッファー内の前の位置にポインターを移動しようとする、移動が成功したかどうかを示します。 例外ハンドラーが常に返します`false`です。  
+  
+-   <xref:System.Text.DecoderFallbackBuffer.Remaining%2A>デコーダーに返される残りの文字の数を示すプロパティです。 例外フォールバック ハンドラーは、常に 0 を返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DecoderFallbackBuffer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Text.DecoderFallbackBuffer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public abstract bool Fallback (byte[] bytesUnknown, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Fallback(unsigned int8[] bytesUnknown, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.Fallback(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytesUnknown" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bytesUnknown">入力バイト配列。</param>
+        <param name="index">内のバイトのインデックス位置<c>bytesUnknown</c>です。</param>
+        <summary>派生クラスでオーバーライドされると、指定した入力バイト シーケンスを処理するフォールバック バッファーを準備します。</summary>
+        <returns>
+          <see langword="true" />フォールバック バッファーが処理できる場合<paramref name="bytesUnknown" />です。<see langword="false" />フォールバック バッファーを無視する場合<paramref name="bytesUnknown" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>、 <xref:System.Text.Encoding.GetString%2A?displayProperty=nameWithType>、および<xref:System.Text.Decoder.Convert%2A?displayProperty=nameWithType>メソッド呼び出し<xref:System.Text.DecoderFallbackBuffer.Fallback%2A>デコードできない不明な入力バイト シーケンスが発生した場合。 戻り値の`true`フォールバック バッファーが、これにより、呼び出し元のメソッドを呼び出して、入力バイト シーケンスを処理できることを示します、<xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A>フォールバック バッファーの各文字を取得します。 個々 のバイトは処理されないため、<xref:System.Text.DecoderFallbackBuffer.Fallback%2A>例外フォールバック ハンドラーのメソッドが例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextChar">
+      <MemberSignature Language="C#" Value="public abstract char GetNextChar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance char GetNextChar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.GetNextChar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、フォールバック バッファー内の次の文字を取得します。</summary>
+        <returns>フォールバック バッファー内の次の文字です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デコード操作を呼び出す、<xref:System.Text.DecoderFallbackBuffer.Fallback%2A>メソッド操作には、不明なバイト シーケンスの入力が検出されるとします。 場合、<xref:System.Text.DecoderFallbackBuffer.Fallback%2A>メソッドを返します。 `true`、代替文字列が存在し、不明な入力をデコードすることではなく、出力に挿入することができます。 デコード操作の呼び出し、<xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A>メソッド繰り返しし、一度に置換文字列の 1 つの文字を取得します。 デコーダーにフォールバック バッファー内のすべての文字が返された、メソッドは u+0000 を返す必要があります。  
+  
+ 例外フォールバック ハンドラーで、<xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A>メソッドは u+0000 を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovePrevious">
+      <MemberSignature Language="C#" Value="public abstract bool MovePrevious ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MovePrevious() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.MovePrevious" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、原因を次に呼び出した、<see cref="M:System.Text.DecoderFallbackBuffer.GetNextChar" />メソッドは、現在の文字位置の前にデータ バッファーの文字位置にアクセスします。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.Text.DecoderFallbackBuffer.MovePrevious" />操作が成功しなかった場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外フォールバック ハンドラーが返す必要があります`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remaining">
+      <MemberSignature Language="C#" Value="public abstract int Remaining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Remaining" />
+      <MemberSignature Language="DocId" Value="P:System.Text.DecoderFallbackBuffer.Remaining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在の文字数を取得<see cref="T:System.Text.DecoderFallbackBuffer" />を処理するための残存オブジェクト。</summary>
+        <value>まだ処理されていない現在フォールバック バッファー内の文字の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.DecoderFallbackBuffer.Fallback%2A>メソッドを返します。`true`場合<xref:System.Text.DecoderFallbackBuffer.Remaining%2A>は 0 以外の値。  
+  
+ 例外フォールバック ハンドラーで、<xref:System.Text.DecoderFallbackBuffer.Remaining%2A>メソッドは 0 を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public virtual void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このフォールバック バッファーに関連するすべてのデータと状態情報を初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>呼び出した後、<see cref="M:System.Text.DecoderFallbackBuffer.Reset" />メソッド、<see cref="P:System.Text.DecoderFallbackBuffer.Remaining" />プロパティは、0 を返す必要があります、<see cref="M:System.Text.DecoderFallbackBuffer.GetNextChar" />メソッドは u+0000 を返す必要があります、<see cref="M:System.Text.DecoderFallbackBuffer.MovePrevious" />メソッドが返す<see langword="false" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

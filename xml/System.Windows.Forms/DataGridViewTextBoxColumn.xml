@@ -1,0 +1,215 @@
+<Type Name="DataGridViewTextBoxColumn" FullName="System.Windows.Forms.DataGridViewTextBoxColumn">
+  <TypeSignature Language="C#" Value="public class DataGridViewTextBoxColumn : System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewTextBoxColumn extends System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewTextBoxColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.DataGridViewTextBoxColumn), "DataGridViewTextBoxColumn.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションをホスト<see cref="T:System.Windows.Forms.DataGridViewTextBoxCell" />セル。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewTextBoxColumn>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewColumn>論理的にホストするためのクラスのセルを有効にする を表示して、テキスト文字列の編集します。 A<xref:System.Windows.Forms.DataGridViewTextBoxColumn>が関連付けられている<xref:System.Windows.Forms.DataGridViewTextBoxCell>内のオブジェクトすべて<xref:System.Windows.Forms.DataGridViewRow>と交差することです。 ときに、<xref:System.Windows.Forms.DataGridViewTextBoxCell>がアクティブ化を提供、<xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>ユーザー入力を処理するコントロール。  
+  
+ この型の列の並べ替えモードの既定値は<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、この型の使用を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewTextBoxColumn" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewTextBoxColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewTextBoxColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewTextBoxColumn" />クラスが既定の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、次のプロパティを設定して、列を初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Windows.Forms.DataGridViewTextBoxColumn.CellTemplate%2A>|新しく作成した <xref:System.Windows.Forms.DataGridViewTextBoxCell>。|  
+|<xref:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode%2A>|<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewTextBoxColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルのセルの外観に使用するテンプレートを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCell" />列内のすべてのセルが後にモデル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクター、<xref:System.Windows.Forms.DataGridViewTextBoxColumn>クラスは、新しく作成するには、このプロパティを初期化<xref:System.Windows.Forms.DataGridViewTextBoxCell>です。  
+  
+> [!CAUTION]
+>  セル テンプレートのプロパティの変更はすぐに影響しません、列の既存のセルのユーザー インターフェイス (UI)。 これらの変更のみが明らかな列が再生成 (列を並べ替えることで、たとえば、またはを呼び出すことによって、<xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType>メソッド)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロール内の列の操作](~/docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">このセット型に型と互換性がありません<see cref="T:System.Windows.Forms.DataGridViewTextBoxCell" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxInputLength">
+      <MemberSignature Language="C#" Value="public int MaxInputLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxInputLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewTextBoxColumn.MaxInputLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(32767)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスに入力できる文字の最大数を設定します。</summary>
+        <value>テキスト ボックスに入力できる文字の最大数既定値は 32767 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewTextBoxColumn.MaxInputLength%2A>プロパティでは、セルの値、またはセルの書式設定を通じてプログラムで入力したテキストの長さには影響しません。 これは、ユーザーによる入力し、編集のみに影響します。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewTextBoxCell.MaxInputLength%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewTextBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewTextBoxCell.MaxInputLength%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewTextBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumnSortMode SortMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewColumnSortMode SortMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnSortMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の並べ替えモードを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewColumnSortMode" />列のセルの値に基づいて行の並べ替えに使用される条件を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridView>を持つ列を使用して、コントロールが並べ替えられて、<xref:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>、並べ替えグリフが自動的に列ヘッダーに表示されます。  
+  
+ 持つ列を使用して、コントロールが並べ替えられるときに、<xref:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Programmatic>、を介して、手動で並べ替えグリフに表示する必要があります、<xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A>プロパティです。  
+  
+ 既定の並べ替えモード、<xref:System.Windows.Forms.DataGridViewTextBoxColumn>は<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>します。 その他の列の型の既定の並べ替えモードは<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>します。  
+  
+ <xref:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode%2A>値は防止しませんするプログラムでは、列の並べ替えはその他の制限が適用可能性があります。 詳細については、<xref:System.Windows.Forms.DataGridView.Sort%2A> メソッドを参照してください。  
+  
+ A<xref:System.Windows.Forms.DataGridViewTextBoxColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>防ぐことはできません、<xref:System.Windows.Forms.DataGridView.ColumnHeaderMouseClick?displayProperty=nameWithType>イベントが発生しているが、これからできなくなりますヘッダーがクリックされたときの外観を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#066)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#066)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewTextBoxColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列を説明する文字列を取得します。</summary>
+        <returns>A<see cref="T:System.String" />列を説明します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

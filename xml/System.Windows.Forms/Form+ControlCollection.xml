@@ -1,0 +1,134 @@
+<Type Name="Form+ControlCollection" FullName="System.Windows.Forms.Form+ControlCollection">
+  <TypeSignature Language="C#" Value="public class Form.ControlCollection : System.Windows.Forms.Control.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Form/ControlCollection extends System.Windows.Forms.Control/ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Form.ControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control+ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォーム上のコントロールのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、フォーム内に含まれるコントロールのコレクションを表します。 使用することができます、<xref:System.Windows.Forms.Form.ControlCollection.Add%2A>をフォームにコントロールを追加する方法、および<xref:System.Windows.Forms.Form.ControlCollection.Remove%2A>フォームからコントロールを削除する方法です。 特定のフォームにバインドせずに、このクラスで表されるコントロールのコレクションを作成できません。 その結果、このコントロールのコレクションの複数のインスタンスを作成して、別のコントロールのレイアウトを提供するアクティブなフォームでインターチェンジにできません。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Label>コントロールをフォームのコントロール コレクションにします。 例は、フォームが作成され、ということが必要です。`Form1`です。  
+  
+ [!code-cpp[Classic Form.ControlCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Form.ControlCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Form.ControlCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Form.ControlCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic Form.ControlCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Form.ControlCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlCollection (System.Windows.Forms.Form owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Form owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Form.ControlCollection.#ctor(System.Windows.Forms.Form)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.Form" />コントロール コレクションに追加されたコントロールを格納します。</param>
+        <summary><see cref="T:System.Windows.Forms.Form.ControlCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、コントロールをフォームに追加するようにするフォームにコントロールのコレクションを正しくバインドできます。  
+  
+> [!NOTE]
+>  指定されたフォームでは、コントロール コレクションを作成する必要があります、ためコントロールの複数のコレクションを作成して、フォームのインターチェンジにできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Windows.Forms.Control value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Windows.Forms.Control value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Form.ControlCollection.Add(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.Control" />をフォームに追加します。</param>
+        <summary>フォームにコントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、コントロールをフォームに追加することができます。 フォームに作成済みのコントロールのグループを追加する場合を使用して、<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A?displayProperty=nameWithType>のメソッド、<xref:System.Windows.Forms.Control.ControlCollection>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.Label>コントロールをフォームのコントロール コレクションにします。 例は、フォームが作成され、ということが必要です。`Form1`です。  
+  
+ [!code-cpp[Classic Form.ControlCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Form.ControlCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Form.ControlCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Form.ControlCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic Form.ControlCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Form.ControlCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">マルチ ドキュメント インターフェイス (MDI) 親フォーム コントロールを追加することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override void Remove (System.Windows.Forms.Control value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Remove(class System.Windows.Forms.Control value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Form.ControlCollection.Remove(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Windows.Forms.Control" />フォームからを削除します。</param>
+        <summary>フォームからコントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、不要になった、フォームにコントロールを削除します。 削除された後にコントロールを表示するを使用して、フォームにコントロールを追加する必要があります、<xref:System.Windows.Forms.Form.ControlCollection.Add%2A>メソッドです。 コントロールをフォーム上に残りますが、表示されませんを使用して、<xref:System.Windows.Forms.Control.Visible%2A>コントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

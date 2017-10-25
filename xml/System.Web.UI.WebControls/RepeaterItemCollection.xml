@@ -1,0 +1,312 @@
+<Type Name="RepeaterItemCollection" FullName="System.Web.UI.WebControls.RepeaterItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class RepeaterItemCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RepeaterItemCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeaterItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.Repeater" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスのコレクションを表します<xref:System.Web.UI.WebControls.RepeaterItem>順番のデータ項目を表す、<xref:System.Web.UI.WebControls.Repeater>コントロール。 プログラムで取得する<xref:System.Web.UI.WebControls.RepeaterItem>オブジェクトから、<xref:System.Web.UI.WebControls.Repeater>コントロールを使用して、次のメソッドのいずれか。  
+  
+-   1 つを取得するインデクサーを使用して<xref:System.Web.UI.WebControls.RepeaterItem>配列表記を使用して、コレクションからオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.RepeaterItemCollection.CopyTo%2A>にコレクションの内容をコピーする方法、<xref:System.Array?displayProperty=nameWithType>オブジェクトをコレクションから項目を取得するために使用されます。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.RepeaterItemCollection.GetEnumerator%2A>メソッドを作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>コレクションから項目を取得するために使用するインターフェイスです。  
+  
+-   使用して`foreach`(c#) または`For Each`コレクションを反復処理する (Visual Basic)。  
+  
+ <xref:System.Web.UI.WebControls.RepeaterItemCollection.Count%2A>プロパティ コレクション内のアイテムの合計数を指定およびコレクションの上限を確認に一般的に使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[RepeaterItemCollection_Members#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#1)]
+ [!code-vb[RepeaterItemCollection_Members#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeaterItemCollection (System.Collections.ArrayList items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItemCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="items">A<see cref="T:System.Collections.ArrayList" />コレクションの初期化に使用するアイテムを格納しています。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[RepeaterItemCollection_Members#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#1)]
+ [!code-vb[RepeaterItemCollection_Members#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>これからすべての項目をコピー<see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" />を指定した<see cref="T:System.Array" />オブジェクト、指定したインデックスから始まる、<see cref="T:System.Array" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.WebControls.RepeaterItemCollection>に指定された<xref:System.Array?displayProperty=nameWithType>オブジェクト、指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>オブジェクト。  
+  
+   
+  
+## Examples  
+ 完全な例のコンテキストでこのコードを参照してください、<xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスに関するトピック。  
+  
+ [!code-csharp[RepeaterItemCollection_Members#4](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#4)]
+ [!code-vb[RepeaterItemCollection_Members#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.WebControls.RepeaterItem" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Web.UI.WebControls.DataListItem" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeaterItemCollection.Count%2A>の数を決定するプロパティ<xref:System.Web.UI.WebControls.RepeaterItem>内のオブジェクト、<xref:System.Web.UI.WebControls.RepeaterItemCollection>コレクション。 <xref:System.Web.UI.WebControls.RepeaterItemCollection.Count%2A>プロパティは通常、コレクションのバインド上の決定にコレクションを反復処理する場合に使用します。  
+  
+   
+  
+## Examples  
+ 完全な例のコンテキストでこのコードを参照してください、<xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスに関するトピック。  
+  
+ [!code-csharp[RepeaterItemCollection_Members#3](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#3)]
+ [!code-vb[RepeaterItemCollection_Members#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />すべてを反復処理できるインターフェイス、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" />です。</summary>
+        <returns>A<see cref="T:System.Collections.IEnumerator" />すべてを含むインターフェイス<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>内の各項目を反復処理に使用できる、<xref:System.Web.UI.WebControls.RepeaterItemCollection>です。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクションで示される現在の項目を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を移動する方法は、最初の位置をバックアップします。  
+  
+> [!NOTE]
+>  作成した後、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクト、またはを使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+   
+  
+## Examples  
+ 完全な例のコンテキストでこのコードを参照してください、<xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスに関するトピック。  
+  
+ [!code-csharp[RepeaterItemCollection_Members#5](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#5)]
+ [!code-vb[RepeaterItemCollection_Members#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" />変更できます。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.WebControls.RepeaterItemCollection>常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>クラスし、常にオーバーライド`false`です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RepeaterItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.RepeaterItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeaterItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />のコレクションを取得します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.RepeaterItem" />オブジェクト、コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.WebControls.RepeaterItem>オブジェクトから、<xref:System.Web.UI.WebControls.RepeaterItemCollection>配列表記を使用して、指定したインデックス位置。  
+  
+   
+  
+## Examples  
+ 完全な例のコンテキストでこのコードを参照してください、<xref:System.Web.UI.WebControls.RepeaterItemCollection>クラスに関するトピック。  
+  
+ [!code-csharp[RepeaterItemCollection_Members#3](~/samples/snippets/csharp/VS_Snippets_WebNet/RepeaterItemCollection_Members/CS/repeateritemcollection_members.cs.aspx#3)]
+ [!code-vb[RepeaterItemCollection_Members#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RepeaterItemCollection_Members/VB/repeateritemcollection_members.vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItemCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.RepeaterItemCollection" />コレクション。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.RepeaterItemCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

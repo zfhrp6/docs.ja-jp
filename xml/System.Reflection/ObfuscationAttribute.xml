@@ -1,0 +1,293 @@
+<Type Name="ObfuscationAttribute" FullName="System.Reflection.ObfuscationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ObfuscationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObfuscationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ObfuscationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Event | System.AttributeTargets.Interface | System.AttributeTargets.Parameter | System.AttributeTargets.Delegate, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>難読化ツール、アセンブリ、型、またはメンバーの指定したアクションを実行するように指示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ObfuscationAttribute>と<xref:System.Reflection.ObfuscateAssemblyAttribute>属性に注釈を難読化ツールが処理できるようにして正しく外部の最小構成で、バイナリを付けるアセンブリの作成者を使用します。  
+  
+> [!IMPORTANT]
+>  この属性を適用することはない自動的に難読化コード エンティティを適用します。 難読化ツールの構成ファイルを作成する代わりには、属性を適用します。 難読化ツールの指示を提供だけを実行します。 マイクロソフトでは、難読化ツールの販売元がここで説明したセマンティクスに従うことをお勧めします。 ただし、特定のツールが Microsoft の推奨事項に従うことの保証はありません。  
+  
+ <xref:System.Reflection.ObfuscationAttribute>属性の文字列を持つ<xref:System.Reflection.ObfuscationAttribute.Feature%2A>プロパティです。 難読化ツールは、実装する機能に、可能であればユーザーがアクセスできる XML 構成ファイルを使用して、このプロパティの文字列値をマップできます。 <xref:System.Reflection.ObfuscationAttribute> 2 つのフィーチャーの文字列、"default"、"all"を定義します。 ツールの既定の隠ぺい機能にマップされる、文字列"default"と「すべて」ツールでサポートされる難読化機能の完全なセットにマップする必要があります。 既定値、<xref:System.Reflection.ObfuscationAttribute.Feature%2A>プロパティが"all"、難読化機能の完全なセットを有効にします。  
+  
+ アセンブリに適用されるときに<xref:System.Reflection.ObfuscationAttribute>アセンブリ内のすべての型にも適用されます。 場合、<xref:System.Reflection.ObfuscationAttribute.ApplyToMembers%2A>プロパティが指定されていない、またはに設定されている`true`、すべてのメンバーが同様に、属性が適用されます。 <xref:System.Reflection.ObfuscationAttribute>アセンブリがパブリックかプライベートかどうかを指定しません。 アセンブリがパブリックかプライベートかどうかを指定するには、使用、<xref:System.Reflection.ObfuscateAssemblyAttribute>属性。  
+  
+ クラスと構造体に適用されるときに<xref:System.Reflection.ObfuscationAttribute>場合に、型のすべてのメンバーにも適用されます、<xref:System.Reflection.ObfuscationAttribute.ApplyToMembers%2A>プロパティが指定されていない、またはに設定されている`true`です。  
+  
+ メソッド、パラメーター、フィールド、およびプロパティに適用する場合、属性を適用するエンティティのみに影響します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの型を持つパブリック アセンブリを示しています。`Type1`と`Type2`です。 アセンブリの難読化が設定されています、 <xref:System.Reflection.ObfuscateAssemblyAttribute>、public として扱われるアセンブリをマークする (つまり、<xref:System.Reflection.ObfuscateAssemblyAttribute.AssemblyIsPrivate%2A>プロパティは`false`)。  
+  
+ `Type1`アセンブリは、難読化に設定されているために、難読化のマークが。 1 つのメンバー`Type1`難読化から除外を使用して、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティです。  
+  
+ `Type2`難読化から除外されるため、そのメンバーは難読化用にマークされたが、<xref:System.Reflection.ObfuscationAttribute.ApplyToMembers%2A>プロパティは`false`します。  
+  
+ `MethodA`メソッドの`Type2`値でマークされている`"default"`の<xref:System.Reflection.ObfuscationAttribute.Feature%2A>プロパティです。 指定する必要がある`false`の<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティを除外しないように`MethodA`難読化からための既定値、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティは`true`します。 難読化ツールは、されません、ため難読化後に属性を削除する必要があります、<xref:System.Reflection.ObfuscationAttribute.StripAfterObfuscation%2A>プロパティは`false`します。 このコード例ではその他のすべての属性が難読化後に削除されたため、<xref:System.Reflection.ObfuscationAttribute.StripAfterObfuscation%2A>プロパティが指定されていない、したがって既定値は`true`します。  
+  
+ コード例には、属性とそのプロパティを表示するコードが含まれます。 DLL を開くことによって、属性を確認することもできます、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)です。  
+  
+ [!code-csharp[ObfuscationAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/ObfuscationAttribute/cs/source.cs#1)]
+ [!code-vb[ObfuscationAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObfuscationAttribute/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObfuscationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ObfuscationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.ObfuscationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ObfuscationAttribute>アセンブリがパブリックかプライベートかどうかを指定しません。 アセンブリがパブリックかプライベートかどうかを指定する<xref:System.Reflection.ObfuscateAssemblyAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyToMembers">
+      <MemberSignature Language="C#" Value="public bool ApplyToMembers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyToMembers" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ObfuscationAttribute.ApplyToMembers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />型の属性は、型のメンバーに適用するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />属性の型のメンバーに適用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値には、属性がメンバーに適用される場合は無視されます。  
+  
+> [!IMPORTANT]
+>  この属性を適用することはない自動的に難読化コード エンティティを適用します。 難読化ツールの構成ファイルを作成する代わりには、属性を適用します。 難読化ツールの指示を提供だけを実行します。 マイクロソフトでは、難読化ツールの販売元がここで説明したセマンティクスに従うことをお勧めします。 ただし、特定のツールが Microsoft の推奨事項に従うことの保証はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、難読化から除外されている型を示していますが、そのメンバーには、ので、排他領域は適用されません、<xref:System.Reflection.ObfuscationAttribute.ApplyToMembers%2A>プロパティは`false`します。  
+  
+ このコードは、コンパイルして実行することができる例の一部です。 詳細については、<xref:System.Reflection.ObfuscationAttribute> クラスのトピックを参照してください。  
+  
+ [!code-csharp[ObfuscationAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR/ObfuscationAttribute/cs/source.cs#2)]
+ [!code-vb[ObfuscationAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObfuscationAttribute/vb/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="public bool Exclude { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Exclude" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ObfuscationAttribute.Exclude" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />かどうか、難読化ツールから除外して、型またはメンバー難読化を示す値。</summary>
+        <value>
+          <see langword="true" />型またはこの属性を適用するメンバーを隠ぺいから除外する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  この属性を適用することはない自動的に難読化コード エンティティを適用します。 難読化ツールの構成ファイルを作成する代わりには、属性を適用します。 難読化ツールの指示を提供だけを実行します。 マイクロソフトでは、難読化ツールの販売元がここで説明したセマンティクスに従うことをお勧めします。 ただし、特定のツールが Microsoft の推奨事項に従うことの保証はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、難読化の対象外としてマークされている型を示します。 指定する必要はありません、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティのため、既定値は`true`、ですが明示的に指定すること、インテントをクリアします。 <xref:System.Reflection.ObfuscationAttribute.ApplyToMembers%2A>に設定されている`false`、難読化からの除外がクラスのメンバーに適用しないようにします。 つまり、クラス名が表示されているが、メンバーが隠ぺいされます。  
+  
+ `MethodA`メソッドが値でマークされた`"default"`の<xref:System.Reflection.ObfuscationAttribute.Feature%2A>プロパティです。 指定する必要がある`false`の<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>除外を回避するためにプロパティ`MethodA`難読化からための既定値、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティは`true`します。 <xref:System.Reflection.ObfuscationAttribute.StripAfterObfuscation%2A>プロパティは`false`できるように、難読化ツールは難読化後に属性を削除できません。  
+  
+ このコードは、コンパイルして実行することができる例の一部です。 詳細については、<xref:System.Reflection.ObfuscationAttribute> クラスのトピックを参照してください。  
+  
+ [!code-csharp[ObfuscationAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR/ObfuscationAttribute/cs/source.cs#4)]
+ [!code-vb[ObfuscationAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObfuscationAttribute/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Feature">
+      <MemberSignature Language="C#" Value="public string Feature { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Feature" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ObfuscationAttribute.Feature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または難読化ツールによって認識され、処理オプションを指定する文字列値を設定します。</summary>
+        <value>難読化ツールによって認識され、処理オプションを指定する文字列値です。 既定値は"all"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに渡される値は、使用、難読化ツールによって異なります。 そのベンダーの難読化ツールのサポートには、少なくとも"default"と"all"をお勧めします。 ベンダーは、XML 構成ファイルと、これらの設定を組み合わせて使用できます。  
+  
+> [!IMPORTANT]
+>  この属性を適用することはない自動的に難読化コード エンティティを適用します。 難読化ツールの構成ファイルを作成する代わりには、属性を適用します。 難読化ツールの指示を提供だけを実行します。 マイクロソフトでは、難読化ツールの販売元がここで説明したセマンティクスに従うことをお勧めします。 ただし、特定のツールが Microsoft の推奨事項に従うことの保証はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、値でマークされているメソッドを示しています。`"default"`の、<xref:System.Reflection.ObfuscationAttribute.Feature%2A>プロパティです。 指定する必要がある`false`の<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティを除外しないように`MethodA`難読化からための既定値、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティは`true`します。 <xref:System.Reflection.ObfuscationAttribute.StripAfterObfuscation%2A>プロパティは`false`できるように、難読化ツールは難読化後に属性を削除できません。  
+  
+ このコードは、コンパイルして実行することができる例の一部です。 詳細については、<xref:System.Reflection.ObfuscationAttribute> クラスのトピックを参照してください。  
+  
+ [!code-csharp[ObfuscationAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR/ObfuscationAttribute/cs/source.cs#3)]
+ [!code-vb[ObfuscationAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObfuscationAttribute/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StripAfterObfuscation">
+      <MemberSignature Language="C#" Value="public bool StripAfterObfuscation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StripAfterObfuscation" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ObfuscationAttribute.StripAfterObfuscation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />難読化ツールが処理した後にこの属性を削除するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />場合は、難読化ツールは、処理後に属性を削除する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のアプリケーションの一部として含まれているし、そのアプリケーションの一部として難読化は、ライブラリの場合、属性を削除しないようにする必要があります。  
+  
+> [!IMPORTANT]
+>  この属性を適用することはない自動的に難読化コード エンティティを適用します。 難読化ツールの構成ファイルを作成する代わりには、属性を適用します。 難読化ツールの指示を提供だけを実行します。 マイクロソフトでは、難読化ツールの販売元がここで説明したセマンティクスに従うことをお勧めします。 ただし、特定のツールが Microsoft の推奨事項に従うことの保証はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Reflection.ObfuscationAttribute>が<xref:System.Reflection.ObfuscationAttribute.StripAfterObfuscation%2A>プロパティは`false`できるように、難読化ツールは難読化後に属性を削除できません。 指定する必要がある`false`の<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティを除外しないように`MethodA`難読化からための既定値、<xref:System.Reflection.ObfuscationAttribute.Exclude%2A>プロパティは`true`します。  
+  
+ このコードは、コンパイルして実行することができる例の一部です。 詳細については、<xref:System.Reflection.ObfuscationAttribute> クラスのトピックを参照してください。  
+  
+ [!code-csharp[ObfuscationAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR/ObfuscationAttribute/cs/source.cs#4)]
+ [!code-vb[ObfuscationAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObfuscationAttribute/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

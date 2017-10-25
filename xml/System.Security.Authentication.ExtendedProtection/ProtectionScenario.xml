@@ -1,0 +1,80 @@
+<Type Name="ProtectionScenario" FullName="System.Security.Authentication.ExtendedProtection.ProtectionScenario">
+  <TypeSignature Language="C#" Value="public enum ProtectionScenario" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProtectionScenario extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />列挙体は、ポリシーによって適用される保護シナリオを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TransportSelected">
+      <MemberSignature Language="C#" Value="TransportSelected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Authentication.ExtendedProtection.ProtectionScenario TransportSelected = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ProtectionScenario</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポートが使用するチャネルの種類によってはセキュリティで保護されたと標準的な保護のシナリオの間で選択されます。 セキュリティで保護された保護の場合は、統合 Windows 認証は、セキュリティで保護されたチャネルにラップされ、サービス プロバイダー名 (SPN) の検証は行われません、完全に一致するチャネル バインディング トークンを持ちます。 標準的な保護の場合は、統合 Windows 認証は、必要に応じてと省略可能なチャネル バインディング トークンをセキュリティで保護されたチャネルにラップされ、SPN の検証が必要なです。 したがって、要求がセキュリティで保護されたチャネルを介してになる場合、チャネル バインディング トークン (CBT) がチェックされ、それ以外の場合、SPN がチェックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedProxy">
+      <MemberSignature Language="C#" Value="TrustedProxy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Authentication.ExtendedProtection.ProtectionScenario TrustedProxy = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TrustedProxy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ProtectionScenario</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>統合 Windows 認証は、信頼されたプロキシによって終了セキュリティで保護されたチャネルにラップされ、チャネル バインド トークンを検証が必要な SPN がします。 これが必要ですが、CBT、CBT SPN のチェック中にはチェックされません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

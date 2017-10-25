@@ -1,0 +1,393 @@
+<Type Name="XmlNamedNodeMap" FullName="System.Xml.XmlNamedNodeMap">
+  <TypeSignature Language="C#" Value="public class XmlNamedNodeMap : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNamedNodeMap extends System.Object implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlNamedNodeMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>名前またはインデックスによってアクセス可能なノードのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlNamedNodeMap`次の 3 つのプロパティによって返されます。  
+  
+-   <xref:System.Xml.XmlElement.Attributes%2A?displayProperty=nameWithType>-返します<xref:System.Xml.XmlAttributeCollection>から継承されるクラス`XmlNamedNodeMap`です。  
+  
+-   <xref:System.Xml.XmlDocumentType.Entities%2A?displayProperty=nameWithType>返します、`XmlNamedNodeMap`を含む<xref:System.Xml.XmlEntity>オブジェクト。 `XmlNamedNodeMap` は読み取り専用です。  
+  
+-   <xref:System.Xml.XmlDocumentType.Notations%2A?displayProperty=nameWithType>返します、`XmlNamedNodeMap`を含む<xref:System.Xml.XmlNotation>オブジェクト。 `XmlNamedNodeMap` は読み取り専用です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNamedNodeMap.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のノードの数を取得、<see langword="XmlNamedNodeMap" />です。</summary>
+        <value>ノードの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XmlAttributeCollection>クラス (から継承される`XmlNamedNodeMap`) を book のすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のノードのコレクションに対する"foreach"形式の繰り返し処理のサポートを提供、<see langword="XmlNamedNodeMap" />です。</summary>
+        <returns>列挙子オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、コレクション内のすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetEnumerator Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode GetNamedItem (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode GetNamedItem(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.GetNamedItem(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するノードの修飾名。 一致するノードの <see cref="P:System.Xml.XmlNode.Name" /> プロパティに一致します。</param>
+        <summary>取得、<see cref="T:System.Xml.XmlNode" />名で指定します。</summary>
+        <returns><see langword="XmlNode" />指定した名前または<see langword="null" />一致するノードが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XmlAttributeCollection>クラス (から継承される`XmlNamedNodeMap`) の属性を修正します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.GetNamedItem Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetNamedItem Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.GetNamedItem Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetNamedItem Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.GetNamedItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.GetNamedItem Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode GetNamedItem (string localName, string namespaceURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode GetNamedItem(string localName, string namespaceURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.GetNamedItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">取得するノードのローカル名。</param>
+        <param name="namespaceURI">名前空間 Uniform Resource Identifier () のノードを取得します。</param>
+        <summary>いうのノードを取得する<see cref="P:System.Xml.XmlNode.LocalName" />と<see cref="P:System.Xml.XmlNode.NamespaceURI" />です。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />名前空間 URI と一致するローカルの名前でまたは<see langword="null" />一致するノードが見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode Item (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode Item(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.Item(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するノードのインデックス位置、<see langword="XmlNamedNodeMap" />です。 インデックスが 0 から始まります。したがって、最初のノードのインデックスが 0 で、最後のノードのインデックスが<see cref="P:System.Xml.XmlNamedNodeMap.Count" />-1 です。</param>
+        <summary>指定したインデックス位置のノードを取得、<see langword="XmlNamedNodeMap" />です。</summary>
+        <returns>指定されたインデックス位置にある <see cref="T:System.Xml.XmlNode" />。 場合<paramref name="index" />がより小さい 0 より大きいまたは等しい、<see cref="P:System.Xml.XmlNamedNodeMap.Count" />プロパティ、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XmlAttributeCollection>クラス (から継承される`XmlNamedNodeMap`) を book のすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveNamedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode RemoveNamedItem (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode RemoveNamedItem(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.RemoveNamedItem(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するノードの修飾名。 名前と照合、<see cref="P:System.Xml.XmlNode.Name" />一致するノードのプロパティです。</param>
+        <summary>ノードを削除、<see langword="XmlNamedNodeMap" />です。</summary>
+        <returns><see langword="XmlNode" />これから削除<see langword="XmlNamedNodeMap" />または<see langword="null" />一致するノードが見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XmlAttributeCollection>クラス (から継承される`XmlNamedNodeMap`)、属性を削除します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.RemoveNamedItem1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveNamedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode RemoveNamedItem (string localName, string namespaceURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode RemoveNamedItem(string localName, string namespaceURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.RemoveNamedItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">削除するノードのローカル名。</param>
+        <param name="namespaceURI">名前空間を削除するノードの URI。</param>
+        <summary>いうのノードを削除する<see cref="P:System.Xml.XmlNode.LocalName" />と<see cref="P:System.Xml.XmlNode.NamespaceURI" />です。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />削除または<see langword="null" />一致するノードが見つからなかった場合です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNamedItem">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNode SetNamedItem (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode SetNamedItem(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamedNodeMap.SetNamedItem(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see langword="XmlNode" />に格納する、<see langword="XmlNamedNodeMap" />です。 その名前のノードがマップ内に存在では既に、新しいものに置き換えられます。</param>
+        <summary>追加、<see cref="T:System.Xml.XmlNode" />を使用してその<see cref="P:System.Xml.XmlNode.Name" />プロパティです。</summary>
+        <returns>場合、<paramref name="node" />置き換えます。 置き換え前のノード、同じ名前の既存のノードを返します。 それ以外の場合、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XmlAttributeCollection>クラス (から継承される`XmlNamedNodeMap`) 属性をコレクションに追加します。  
+  
+ [!code-cpp[Classic WebData XmlNamedNodeMap.SetNamedItem Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.SetNamedItem Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamedNodeMap.SetNamedItem Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.SetNamedItem Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamedNodeMap.SetNamedItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamedNodeMap.SetNamedItem Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="node" />別から作成された<see cref="T:System.Xml.XmlDocument" />を作成したよりも、 <see langword="XmlNamedNodeMap" />; または<see langword="XmlNamedNodeMap" />は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

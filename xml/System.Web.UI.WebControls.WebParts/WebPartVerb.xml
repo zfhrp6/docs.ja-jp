@@ -1,0 +1,798 @@
+<Type Name="WebPartVerb" FullName="System.Web.UI.WebControls.WebParts.WebPartVerb">
+  <TypeSignature Language="C#" Value="public class WebPartVerb : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartVerb extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.EmptyStringExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーが Web パーツのページでアクションを実行できるようにする対話型のユーザー インターフェイス (UI) 要素を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツの動詞は、通常ボタンまたは Web パーツ コントロールを使用するページに表示されるハイパーリンクによって表される、対話型の UI 要素です。 ユーザーは、終了などの Web パーツ コントロールの共通の UI 操作を実行する動詞をクリックして、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたは編集表示モードを終了 (特別なページ ビューに関連付けられている、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール)。 Web パーツ コントロール セットに用意されているすべての標準的な動詞が Web パーツ ゾーンに関連付けられている (<xref:System.Web.UI.WebControls.WebParts.WebPartZone>、 <xref:System.Web.UI.WebControls.WebParts.EditorZone>、 <xref:System.Web.UI.WebControls.WebParts.CatalogZone>、または<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>) または Web パーツ<xref:System.Web.UI.WebControls.WebParts.Part>コントロール (<xref:System.Web.UI.WebControls.WebParts.WebPart>、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart>、 <xref:System.Web.UI.WebControls.WebParts.EditorPart>、または<xref:System.Web.UI.WebControls.WebParts.CatalogPart>)。  
+  
+ 標準的な動詞が、ゾーンに関連付けられている場合は、ゾーン レベルでは、そのアクションを適用し、動詞は通常、ゾーンのヘッダーまたはフッター領域に表示されます。 次の表は、ゾーン レベルの一般的な動詞とそれらのアクションを示しています。  
+  
+|ゾーン レベルの動詞|アクション|  
+|----------------------|------------|  
+|閉じる動詞|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスです。 ゾーンの UI を非表示にし、通常する通常のブラウズ モード ビュー ページを返します。|  
+|動詞を適用します。|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスです。 ユーザーが行った変更を適用します。|  
+|[Ok] の動詞|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.EditorZoneBase>クラスです。 閉じる動詞および適用の効果を組み合わせた変更を適用し、ゾーンの UI を非表示にします。|  
+|動詞をキャンセルします。|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラスです。 保留中のユーザーが行った変更を取り消します。|  
+|動詞を追加します。|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>クラスです。 指定したコントロールのカタログのユーザーが選択したコントロールを追加<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンです。|  
+|動詞を構成します。|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスです。 既存の接続を構成するユーザーを有効にするビューを開きます。|  
+|動詞を切断します。|継承するゾーンで使用される、<xref:System.Web.UI.WebControls.WebParts.ConnectionsZone>クラスです。 2 つのコントロール間の既存の接続を終了します。|  
+  
+ 関連付けられている標準的な動詞と<xref:System.Web.UI.WebControls.WebParts.Part>コントロール、そのアクションは、コントロール自体を (またはその子コントロールに) を適用します。 一部のコントロールは、動詞のコンテナーとして機能し、動詞のレンダリングを管理します。 一部のコントロールに関連付けられているほとんどの標準の動詞を使うと、か、直接タイトル バーのタイトル バー内の動詞のドロップダウン メニューに表示されます。 これらの動詞がヘッダーで直接または動詞メニューを表示するかどうかによって決まりますが、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.WebPartVerbRenderMode%2A>プロパティ動詞メニューに既定では、動詞が表示されます。 次の表に、さまざまなに関連付けられた一般的な動詞<xref:System.Web.UI.WebControls.WebParts.Part>を制御し、そのアクションの説明。  
+  
+|一部のコントロール動詞|アクション|  
+|-----------------------|------------|  
+|動詞を最小限に抑える|含まれている各サーバー コントロールの動詞メニューに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 Restore 動詞を除く、UI 内のすべての非表示にする、最小限の表現にコントロールが減少します。|  
+|動詞を復元します。|含まれている各サーバー コントロールの動詞メニューに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 通常のサイズおよび表示するには、最小化されたコントロールを返します。|  
+|閉じる動詞|含まれている各サーバー コントロールの動詞メニューに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 コントロールを閉じ、ページから、コントロールが削除されたが、ユーザーが終了したコントロールを再度開くし、ページに戻ります適切にデザインされたカタログがある場合はページ カタログに追加します。|  
+|動詞を接続します。|含まれるコントロールの動詞メニューに表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーン、ページがの場合は表示モードとコントロールが接続を構成できるかどうかに接続します。 ユーザーは、コントロール間の接続を作成できるように、UI の接続を開きます。|  
+|動詞を削除します。|含まれるコントロールの動詞メニューに表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンの場合は、コントロールがページに追加されたプログラムではなく保存形式で宣言されている)。 これにより、クローズドのコントロールとは異なり、削除済みのインスタンスは復元できません ページに、コントロールのインスタンスと関連付けられたパーソナル化データを完全に削除します。|  
+|Edit 動詞|含まれるコントロールの動詞メニューに表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンの場合は、ページがコントロールの編集を許可し、ページがの場合は、表示モードを編集するように設計されています。 編集するためのコントロールを選択し、編集用の UI を開きます。|  
+|動詞をエクスポートします。|含まれるコントロールの動詞メニューに表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンの場合は、コントロールとアプリケーションのエクスポートが有効です。 コントロールのシリアル化された状態を含む記述ファイルをエクスポートできるようにする ダイアログ ボックスを開きます。 詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティです。|  
+|動詞をヘルプします。|含まれるコントロールの動詞メニューに表示されます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンの場合は、コントロールがヘルプ ファイルを提供するように設計されています。 コントロールのヘルプを提供するページを起動します。|  
+  
+ コントロール セットには、Web パーツで提供される標準的な動詞と共に、カスタム動詞を作成することもできます。 関連付けられた動詞を作成するカスタム動詞を作成するための一般的なシナリオは、<xref:System.Web.UI.WebControls.WebParts.Part>コントロール。 既定では、標準的な動詞と動詞メニューに表示されるこれらの動詞を作成する場合。 などの動詞を作成するための基本的な方法はから継承する、 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb> 1 つまたは複数のカスタム動詞を作成するクラス。 継承されるコントロールを作成し、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスと、カスタムの追加<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクトを<xref:System.Web.UI.WebControls.WebParts.WebPartVerbCollection>コレクション。 このコレクションに追加できます、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>原因となるに表示されるカスタムの動詞に自動的に管理の動詞メニューの 実行時にコントロールのコレクション。 標準の動詞とプログラムでのカスタム動詞にアクセスすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ Web パーツ アプリケーションから継承していないサーバー コントロールを使用できます、 <xref:System.Web.UI.WebControls.WebParts.WebPart> 、カスタム コントロール、ユーザー コントロール、または ASP.NET コントロールなどのクラスです。 これらのサーバーのコントロールに追加された場合、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンで動的にラップされて、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>ランタイムとして機能することができます、実行時にオブジェクト<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 継承していないサーバー コントロールにカスタム動詞を追加する、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、サーバー コントロールを実装する必要があります、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスし、オーバーライドの<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>プロパティです。  
+  
+ 動詞を作成するときは、2 つの種類のユーザーには、動詞がクリックしたときに実行される関連するイベント ハンドラーを作成できます。 サーバー側のイベント ハンドラー (サーバー上で実行するコード) とクライアント側のイベント ハンドラー (クライアントのブラウザーで実行されるコード)。 また、動詞のカスタム状態を定義する、視覚的な手掛かりをユーザーに提供するための便利な方法はします。 たとえば、動詞が選択されていることを示す状態を作成し、動詞が既に選択されていることをユーザーに通知するための UI で適切な変更を提供する可能性があります。 他の役に立つ動作は動詞; を無効にする機能です。これにより、実行のため問題が発生したり、アプリケーションの状態に基づいて非効率的な場合は、動詞をクリックしてからユーザーをできないようにすることができます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスに固有のメソッドを一切公開しない以外の場合は、公開されたメソッドは基本メソッドのすべての上書きします。 ただしが認識する開発者のプロパティの数。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Checked%2A>プロパティは、動詞が現在選択されているかどうかを示します。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ClientClickHandler%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ServerClickHandler%2A>プロパティを参照してください、クラス内でそれぞれのハンドラー (ある場合) クライアントとサーバーの [イベント] をクリックします。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Description%2A>プロパティには、ユーザーが UI 内の動詞にマウス ポインターを合わせるツールヒント内の動詞の目的を説明するテキストが含まれています。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Enabled%2A>プロパティは、ユーザーが動詞をクリックして、そのアクションを実行するかどうかを決定する動詞の現在の状態を示します。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ID%2A>プロパティは、動詞オブジェクトの一意の ID を提供します。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl%2A>プロパティには、通常のボタン (ハイパーリンク) は、既定のレンダリングの代わりに、UI 内の動詞を表すために使用できるイメージの URL が含まれています。 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Text%2A>プロパティには UI の動詞に直接表示されるラベルのテキストが含まれています。 オーバーライドされた<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Visible%2A>プロパティは、動詞が UI に現在表示されているかどうかを決定します。 動詞が多くの場合、非表示または Web パーツ アプリケーション; で、異なるタイミングで無効になっていますたとえば、適切なコントロール、設定、および表示モードが [意味のあるアクションを実行するには、その動詞を有効にする] ページが存在する場合にのみ (edit 動詞および connect 動詞) などの特別な動詞が表示されます。  
+  
+ 動詞の使用に関するその他のキー メンバーが含まれて、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A?displayProperty=nameWithType>は動詞の作成プロセスのカスタム処理をオーバーライドできるイベント ハンドラーでは、メソッド、および<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateVerbs?displayProperty=nameWithType>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを作成する方法を示しています。<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト、およびカスタム ゾーンを使用する、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A>動詞をそれぞれの動詞メニューに追加するメソッドを<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーンに含まれるコントロール。 これには、コード例に 4 つの部分があります。  
+  
+-   単純なカスタムを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>をいくつかのテキストを表示するコントロール。  
+  
+-   カスタムを含むソース ファイル<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト、および単純なカスタム<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>をオーバーライドするゾーン、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A>にカスタム動詞を追加するメソッドを<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーン内のコントロールです。  
+  
+-   カスタムのゾーンとカスタムを含む Web ページ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   例の動作についての説明。  
+  
+ このコード例の最初の部分には、単純なを作成するソース コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPart>をいくつかのテキストを表示するコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的コンパイルのアプローチを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/SimpleControl.cs#2)]
+ [!code-vb[WebParts_WebPartVerb2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/SimpleControl.vb#2)]  
+  
+ 例の 2 番目の部分には、カスタムのゾーンとカスタムを作成するソース コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト。 ゾーンの上書き、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A>にカスタム動詞を追加するメソッドを<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーン内のコントロールです。 動詞は、既定では、コントロールの動詞メニューに追加されます。 注こと、カスタムの動詞は、コードで動詞は、コンス トラクターは、サーバーを使用してクリックしてハンドラー、およびから直接継承するメソッドを呼び出す任意のコントロールの完全なコピーを作成、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、新しく作成されたコピーを同じゾーンに追加します。 コード例の最初の部分と同様にこのソース コードをコンパイルする必要があります、およびこの例では、ソース ファイルが動的にコンパイルする App_Code サブフォルダーに配置されます。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/ZoneWithAddedVerb.cs#3)]
+ [!code-vb[WebParts_WebPartVerb2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/ZoneWithAddedVerb.vb#3)]  
+  
+ コード例の 3 番目の部分は、コントロールをホストする Web ページです。 あることに注意してください、`Register`ディレクティブをカスタム コントロールの名前空間を宣言するページの上部にあります。 この例は、動的なコンパイルを使用しているために、アセンブリは宣言されていません。 カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがカスタムのゾーン内で宣言します。 その他を宣言することもできます<xref:System.Web.UI.WebControls.WebParts.WebPart>このゾーンとカスタム動詞のコントロールは自らの動詞メニューにもに追加します。  
+  
+ [!code-aspx-csharp[WebParts_WebPartVerb2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/Defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartVerb2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/Defaultvb.aspx#1)]  
+  
+ ブラウザーでページを読み込むし、カスタムの動詞メニューをクリックして<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 **コピー Web パーツ**動詞を表示する必要があります。 動詞をクリックし、コントロールのコピーがゾーンに追加されていることに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.%23ctor%2A>コンス トラクターは、の新しいインスタンスを作成、 <xref:System.Web.UI.WebControls.WebParts.WebPartVerb> 3 つの可能なパラメーターのいずれかに渡すことでクラス: ID 文字列では、クライアント側の click イベント ハンドラーへの参照を ID の文字列でサーバー側の click イベント ハンドラーへの参照または両方の種類への参照は、イベント ハンドラーをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartVerb (string id, string clientClickHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, string clientClickHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="clientClickHandler" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">A<see cref="T:System.String" />動詞の一意の識別子はします。</param>
+        <param name="clientClickHandler">A<see cref="T:System.String" />を参照するクライアント側のハンドラーのイベントをクリックします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスし、インスタンスをクライアント側の click イベント ハンドラーを関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコンス トラクターは、ユーザーには、ユーザー インターフェイス (UI) 内の動詞がクリックしたときに呼び出すクライアント側のイベント ハンドラーを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="clientClickHandler" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartVerb (string id, System.Web.UI.WebControls.WebParts.WebPartEventHandler serverClickHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, class System.Web.UI.WebControls.WebParts.WebPartEventHandler serverClickHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.#ctor(System.String,System.Web.UI.WebControls.WebParts.WebPartEventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="serverClickHandler" Type="System.Web.UI.WebControls.WebParts.WebPartEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="id">A<see cref="T:System.String" />動詞の一意の識別子はします。</param>
+        <param name="serverClickHandler">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartEventHandler" />クリック、サーバー上のイベントを処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスし、インスタンスをサーバー側の click イベント ハンドラーを関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコンス トラクターは、ユーザーには、ユーザー インターフェイス (UI) 内の動詞がクリックしたときに呼び出すサーバー側の click イベント ハンドラーを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serverClickHandler" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartVerb (string id, System.Web.UI.WebControls.WebParts.WebPartEventHandler serverClickHandler, string clientClickHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, class System.Web.UI.WebControls.WebParts.WebPartEventHandler serverClickHandler, string clientClickHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.#ctor(System.String,System.Web.UI.WebControls.WebParts.WebPartEventHandler,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="serverClickHandler" Type="System.Web.UI.WebControls.WebParts.WebPartEventHandler" />
+        <Parameter Name="clientClickHandler" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">A<see cref="T:System.String" />動詞の一意の識別子はします。</param>
+        <param name="serverClickHandler">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartEventHandler" />クリック、サーバー上のイベントを処理します。</param>
+        <param name="clientClickHandler">A<see cref="T:System.String" />を参照するクライアント側のハンドラーのイベントをクリックします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスと関連付けられたクライアントとサーバー側の両方のインスタンスとイベント ハンドラーをクリックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコンス トラクターは、ユーザーには、ユーザー インターフェイス (UI) 内の動詞がクリックしたときに呼び出す両方クライアント側およびサーバー側のクリック イベント ハンドラーを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="clientClickHandler" /> パラメーターが <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="serverClickHandler" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public virtual bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム動詞を使用して関連付けられているいくつかの状態が現在アクティブなまたは選択されていることを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />カスタム動詞が現在アクティブな状態に関連付けられている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Web パーツ コントロール セットで提供される標準的な動詞のいずれかでは使用されません。 ときにカスタム動詞を使用し、プロパティ値に設定`true`動詞のアクティブな状態を示すために、動詞の横にあるチェック ボックスがオンが表示されます。  
+  
+ このプロパティの目的は、動詞を使用して関連付けられているカスタム状態が現在アクティブになっていることを示す方法を開発者に提供を開始します。 たとえば、開発者が作成 (ユーザー補助用) 上のすべての本文のテキストのサイズを拡大するカスタム動詞<xref:System.Web.UI.WebControls.WebParts.WebPart>ゾーン内のコントロールです。 このプロパティ値を設定することがユーザーには、動詞がクリックすると、 `true`、下に表示する チェック ボックスがオンが発生すると、**テキスト サイズの拡大**動詞 (拡大テキスト) に関連付けられている状態がアクティブであるユーザーを示す、動詞メニューの動詞です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientClickHandler">
+      <MemberSignature Language="C#" Value="public string ClientClickHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientClickHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.ClientClickHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義されている、クライアント側のイベント ハンドラーのメソッド名を含む文字列を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />コンス トラクターです。</summary>
+        <value>クライアント側を処理するメソッドの名前を表す文字列は、イベントをクリックします。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、クリック イベントをクライアント上の動詞を処理するメソッドの名前を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または動詞の簡単な説明を設定します。</summary>
+        <value>説明を含む文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得またはユーザーが動詞の上にマウス ポインターを置いたときにツールヒントとして表示される動詞の説明を設定するには、このプロパティを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Description%2A>から継承する派生クラスでプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>です。 このソース コードに、カスタムのゾーンのコードの部分のみが表示され、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>プロパティをオーバーライドするクラス。 使用例」の例を実行するために必要なコードの残りの部分が見つかりません、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスの概要です。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/ZoneWithAddedVerb.cs#3)]
+ [!code-vb[WebParts_WebPartVerb2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/ZoneWithAddedVerb.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public virtual bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または動詞が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />動詞が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または動詞が有効になっているかどうかを示す値を設定するには、このプロパティを使用します。 有効にする動詞または無効にできると便利ですが、ページおよびコントロールのライフ サイクルの特定の時点でします。 たとえば、開発者が、ユーザーが終了できないことを防止する場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>何らかの理由、開発者は、ゾーン内のコントロールを設定できます、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Enabled%2A>プロパティ値、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CloseVerb%2A>する動詞`false`、し、ユーザーは実行されませんをそのゾーン内のコントロールを閉じるとします。 既定では、無効な動詞は視覚的にわかる明るいテキストの色などの動詞メニューに表示されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Enabled%2A>から継承する派生クラスでプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>です。 このソース コードに、カスタムのゾーンのコードの部分のみが表示され、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>プロパティをオーバーライドするクラス。 使用例」の例を実行するために必要なコードの残りの部分が見つかりません、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスの概要です。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/ZoneWithAddedVerb.cs#3)]
+ [!code-vb[WebParts_WebPartVerb2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/ZoneWithAddedVerb.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public string ID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動詞の一意の ID を含む文字列を取得します。</summary>
+        <value>ID を含む文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードのいずれかを呼び出すときに、パラメーターとして ID プロパティの値を指定する必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.%23ctor%2A>のコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をユーザー インターフェイス (UI) 内の動詞を表すイメージの URL を含む文字列。</summary>
+        <value>イメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl%2A>プロパティが既定のレンダリングは、通常、ボタンまたはハイパーリンクの代わりとしての動詞カスタマイズしたビジュアル表現を使用する方法を提供します。 プロパティの URL を割り当てると、(動詞) に次の動詞メニューにか (の代わりに、ボタンやハイパーリンクの動詞を表す) のフォームで直接、イメージが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl%2A>から継承する派生クラスでプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>です。 このソース コードに、カスタムのゾーンのコードの部分のみが表示され、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>プロパティをオーバーライドするクラス。 使用例」の例を実行するために必要なコードの残りの部分が見つかりません、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスの概要です。 サンプル コードが、架空のアイコンを割り当てることに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl%2A>プロパティ以外のかどうかを割り当てる、実際のイメージまたはアイコン、動詞動詞メニューには、横に表示されます。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/ZoneWithAddedVerb.cs#3)]
+ [!code-vb[WebParts_WebPartVerb2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/ZoneWithAddedVerb.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected virtual bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動詞のビュー ステートが現在追跡されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ビューステートが追跡されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />復元するビュー ステートを格納しています。</param>
+        <summary>によって保存された前回のページ要求からビューステート情報を復元、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartVerb.SaveViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ このメソッドは、既存のすべてがあるかどうかを判断`savedState`前のページ要求から、その場合、復元します。 ビューの状態がの値によって決定される動詞の可視性を復元する処理を行って含まれている、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Visible%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保存、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />サーバーにポストバックされたオブジェクトのビュー ステートの変更した後、ページが最後に発生します。</summary>
+        <returns><see cref="T:System.Object" />状態データ保存するにはことが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のビュー状態データがある場合、このメソッドは基本メソッドを呼び出して、データを保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerClickHandler">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartEventHandler ServerClickHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartEventHandler ServerClickHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.ServerClickHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー側を処理するメソッドへの参照を取得では、動詞のイベントをクリックします。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartEventHandler" />サーバー側を処理するイベント をクリックします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、クリック、動詞のイベントをサーバー側の処理メソッドへの参照を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装して、<see cref="P:System.Web.UI.IStateManager.IsTrackingViewState" />プロパティを呼び出して、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスの<see cref="P:System.Web.UI.WebControls.WebParts.WebPartVerb.IsTrackingViewState" />プロパティです。</summary>
+        <value>
+          <see langword="true" />動詞のビューステートが追跡されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。 メソッドを呼び出すだけ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.IsTrackingViewState%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />復元するビュー ステートを格納しています。</param>
+        <summary>実装して、<see cref="M:System.Web.UI.IStateManager.LoadViewState(System.Object)" />のメソッド、<see cref="T:System.Web.UI.IStateManager" />インターフェイスを呼び出して、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartVerb.LoadViewState(System.Object)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。 メソッドを呼び出すだけ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.LoadViewState%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装して、<see cref="M:System.Web.UI.IStateManager.SaveViewState" />メソッドを呼び出して、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartVerb.SaveViewState" />メソッドです。</summary>
+        <returns>返します、<see cref="T:System.Object" />コントロールの現在のビュー ステートを格納します。 ビュー ステートがいないかどうか、コントロールに関連付け、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。 メソッドを呼び出すだけ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.SaveViewState%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装して、<see cref="M:System.Web.UI.IStateManager.TrackViewState" />メソッドを呼び出して、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />クラスの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartVerb.TrackViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb> のインスタンスが <xref:System.Web.UI.IStateManager> インターフェイスにキャストされる場合にのみ、使用できます。 メソッドを呼び出すだけ、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.TrackViewState%2A>メソッドを<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー インターフェイス (UI) に表示されている動詞のテキスト ラベルを設定します。</summary>
+        <value>動詞のテキスト ラベルを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、のラベルのテキストを設定、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクト; UI 内のユーザーに動詞が何を表すことができます。  
+  
+ 開発者が (必要に応じて) に値を割り当てる場合、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.ImageUrl%2A>を表す UI では、動詞のプロパティ、イメージまたはアイコンとテキスト ラベルではなく (表示する際に、動詞は通常、ボタンやハイパーリンクによって) などの特定の場合、イメージが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Text%2A>から継承する派生クラスでプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>です。 このソース コードに、カスタムのゾーンのコードの部分のみが表示され、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>プロパティをオーバーライドするクラス。 使用例」の例を実行するために必要なコードの残りの部分が見つかりません、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラスの概要です。  
+  
+ ブラウザーでページを読み込んだ後に値が割り当てられたことに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Text%2A>のソース コードでプロパティの動詞メニューに表示されて、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-csharp[WebParts_WebPartVerb2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartVerb2/CS/ZoneWithAddedVerb.cs#3)]
+ [!code-vb[WebParts_WebPartVerb2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartVerb2/VB/ZoneWithAddedVerb.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected virtual void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerb.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>動詞には、変更を保存できるように、動詞のビュー ステートの変更を追跡<see cref="T:System.Web.UI.StateBag" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、追跡するビュー ステートを<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.StateBag ViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.StateBag ViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.ViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.StateBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態情報を保存し、同じページに対する複数の要求をサーバー コントロールのビューステートを復元できるようにするのディクショナリを取得します。</summary>
+        <value>インスタンス<see cref="T:System.Web.UI.StateBag" />サーバー コントロールのビュー ステート情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerb>オブジェクトは、ビューステートを追跡、まだを保持している多数のプロパティ ページの複数の要求で追跡するビュー ステートを必要とする任意のクラスから継承しません、ビュー状態を維持するために、独自のプロパティを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public virtual bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerb.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または動詞がユーザーに表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />動詞を表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動詞は、非表示または Web パーツ アプリケーションの内容によっては、表示する必要があります。 たとえば、コントロールは既に最小化されていると restore 動詞が非表示コントロールが、通常の最小化されていない状態に逆に、最小化動詞は表示されません。  
+  
+ 動詞が<xref:System.Web.UI.WebControls.WebParts.WebPartVerb.Visible%2A>プロパティに設定されている`false`、ユーザーから非表示はまだページに表示されますが、プログラムでアクセスできます、およびページおよびコントロールのライフ サイクル イベントにも引き続き完全に参加しています。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

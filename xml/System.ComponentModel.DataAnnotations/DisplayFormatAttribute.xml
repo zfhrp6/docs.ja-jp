@@ -1,0 +1,288 @@
+<Type Name="DisplayFormatAttribute" FullName="System.ComponentModel.DataAnnotations.DisplayFormatAttribute">
+  <TypeSignature Language="C#" Value="public class DisplayFormatAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DisplayFormatAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.DisplayFormatAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドの表示方法および ASP.NET 動的データを書式設定された方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フィールドにこの属性を適用する場合は、属性の使用に関するガイドラインに従ってください。 詳細については、次を参照してください。 [ASP.NET 動的データ ガイドライン](http://msdn.microsoft.com/en-us/c563bbf3-feb9-484e-81d1-a585f1b0e192)です。  
+  
+   
+  
+## Examples  
+ この機能のオンラインの例を参照してください:[実行](http://go.microsoft.com/fwlink/?LinkId=120736&sref=System.ComponentModel.DataAnnotations.DisplayFormatAttribute)です。  
+  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>データ フィールドの書式設定をカスタマイズします。 例では、次の手順を実行します。  
+  
+-   メタデータの部分クラスと関連するメタデータ クラスを実装します。  
+  
+-   適用される、関連するメタデータ クラスで、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性を次の結果を指定します。  
+  
+    -   データ フィールドが空の場合は、"[Null]"のテキストを表示します。  
+  
+    -   ロケール固有の通貨書式では、通貨データを表示します。  
+  
+    -   (月/日/年) の短い形式で日付の情報を表示します。 この形式は編集モードにも適用されます。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#1)]  
+  
+ この例をコンパイルするには、以下が必要。  
+  
+-   [!INCLUDE[vs_orcas_ext](~/includes/vs-orcas-ext-md.md)]Service Pack 1 または[!INCLUDE[vwd_exp_orcas_long](~/includes/vwd-exp-orcas-long-md.md)]Service Pack 1。  
+  
+-   AdventureWorksLT サンプル データベース。 ダウンロードして、SQL Server サンプル データベースをインストールする方法については、次を参照してください。 [Microsoft SQL Server Product Samples: Database](http://go.microsoft.com/fwlink/?LinkId=117483) CodePlex サイトにします。 実行している SQL Server のバージョンのサンプル データベースの正しいバージョンをインストールすることを確認してください ([!INCLUDE[sqprsqext](~/includes/sqprsqext-md.md)]または[!INCLUDE[ssKatmai_long](~/includes/sskatmai-long-md.md)])。  
+  
+-   データ ドリブン Web サイトです。 これにより、データベースおよびカスタマイズするデータ フィールドを含むクラスのデータ コンテキストを作成することができます。 詳細については、「`Walkthrough: Creating a New Dynamic Data Web Site using Scaffolding`」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayFormatAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.DisplayFormatAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFormatInEditMode">
+      <MemberSignature Language="C#" Value="public bool ApplyFormatInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyFormatInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ApplyFormatInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定されているかどうか、書式設定文字列を示す値、<see cref="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString" />データ フィールドが編集モードの場合、フィールド値にプロパティが適用されます。</summary>
+        <value>
+          <see langword="true" />編集モードでフィールドの値を書式指定文字列が適用される場合。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、書式指定文字列で指定されている、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A>プロパティがフィールドの値、データ バインド コントロールが読み取り専用モードの場合のみに適用します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ApplyFormatInEditMode%2A>プロパティをデータ フィールドが編集モードの場合は、日付情報の表示形式を設定します。 データ フィールドに使用するデータ フィールドの形式が設定で指定された、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A>プロパティです。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#4)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値の文字列値を空にするかどうか ("") に自動的に変換されます<see langword="null" />データ ソースのデータ フィールドが更新されたとき。</summary>
+        <value>
+          <see langword="true" />空の文字列値を自動的に変換される場合<see langword="null" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、フィールド値として空の文字列を入力する可能性があります。 使用して、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull%2A>プロパティを空の文字列値を自動的に変換するかどうかを指定する`null`データベースでデータ フィールドが更新される場合。  
+  
+> [!NOTE]
+>  既定では、<xref:System.Web.DynamicData.DynamicField>オブジェクトの表示`null`として空の文字列値です。 表示するには、別の値を設定、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.NullDisplayText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull%2A>に空の文字列値の変換を有効にする`null`です。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#2)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public string DataFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドの値の表示形式を設定します。</summary>
+        <value>データ フィールドの値の表示形式を指定する書式指定文字列。 既定値は空の文字列 ("") です。この値は、フィールド値に適用される特定の書式が設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A>に表示される値のカスタム表示形式を指定するプロパティ、<xref:System.Web.DynamicData.DynamicField>オブジェクト。 場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A>プロパティが設定されていないと、特別な書式なし、フィールドの値が表示されます。 詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.DynamicData.DynamicField.HtmlEncode%2A?displayProperty=nameWithType>プロパティは`true`フィールドの値が HTML の書式指定文字列が適用される前に、文字列形式にエンコードします。 日付など、一部のオブジェクトを書式設定文字列とオブジェクトを表示する方法を制御する可能性があります。 その場合で設定する必要があります、<xref:System.Web.DynamicData.DynamicField.HtmlEncode%2A?displayProperty=nameWithType>プロパティを`false`です。  
+  
+ 既定では、書式指定文字列が適用されるフィールドの値をデータ バインド コントロールを格納している場合にのみ、<xref:System.Web.DynamicData.DynamicField>オブジェクトは読み取り専用モードにします。 適用する書式指定文字列フィールドの値が編集モードの場合、設定、<xref:System.Web.DynamicData.DynamicField.ApplyFormatInEditMode%2A>プロパティを`true`です。  
+  
+ 書式指定文字列は、任意のリテラル文字列を指定でき、通常、フィールドの値のプレース ホルダーが含まれます。 たとえば、書式指定文字列で"項目の値: {0}"、フィールドの値が代入される {0} プレース ホルダー文字列が表示されたら、<xref:System.Web.DynamicData.DynamicField>オブジェクト。 書式指定文字列の残りの部分は、リテラル テキストとして表示されます。  
+  
+> [!NOTE]
+>  書式指定文字列にプレース ホルダーが含まれていない場合、データ ソースからのフィールドの値は、最終的な表示テキストには含まれません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示して、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A>プロパティをデータ フィールドの表示形式を設定します。 最初の例では、通貨型のデータ フィールドの表示形式を設定します。 2 番目の例では、date 型のデータ フィールドの表示形式を設定します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#3)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#3)]  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#4)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public bool HtmlEncode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.HtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML でエンコードされたフィールドができるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、フィールドは、HTML エンコードする必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値がフィールドに表示されるテキストを取得または<see langword="null" />です。</summary>
+        <value>フィールドの値がフィールドに表示されるテキスト<see langword="null" />です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合によってデータ フィールドの値は、ソースの null 値として格納されます。 設定して、null 値を持つデータ フィールドに表示するカスタム テキストを指定することができます、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.NullDisplayText%2A>プロパティです。 Null フィールドの値が空の文字列として表示されるこのプロパティが設定されていない場合 ("") です。  
+  
+> [!NOTE]
+>  空の文字列フィールドの値を null 値に変換する必要がありますを設定する、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.NullDisplayText%2A>データ フィールドがときに表示されるキャプションを定義する`null`です。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/CS/product.cs#2)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DisplayFormatAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DisplayFormatAttribute/VB/product.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

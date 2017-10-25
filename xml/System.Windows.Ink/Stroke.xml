@@ -1,0 +1,1397 @@
+<Type Name="Stroke" FullName="System.Windows.Ink.Stroke">
+  <TypeSignature Language="C#" Value="public class Stroke : System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Stroke extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.Stroke" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>1 回分のひと筆を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Ink.Stroke>タブレット ペンやマウスなどのポインティング デバイスから収集されるデータ オブジェクトです。 <xref:System.Windows.Ink.Stroke>を作成してプログラムで操作と表示可能が視覚的に、インクが有効な要素のように、<xref:System.Windows.Controls.InkCanvas>です。 A<xref:System.Windows.Ink.Stroke>の位置と外観に関する情報を格納します。 <xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティのコレクションは、<xref:System.Windows.Input.StylusPoint>オブジェクトの位置を示す、<xref:System.Windows.Ink.Stroke>です。 <xref:System.Windows.Ink.DrawingAttributes>プロパティが線の外観を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stroke (System.Windows.Input.StylusPointCollection stylusPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusPointCollection stylusPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.#ctor(System.Windows.Input.StylusPointCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusPoints" Type="System.Windows.Input.StylusPointCollection" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPoints">A<see cref="T:System.Windows.Input.StylusPointCollection" />を表す、<see cref="T:System.Windows.Ink.Stroke" />です。</param>
+        <summary><see cref="T:System.Windows.Ink.Stroke" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.Stroke>から、<xref:System.Windows.Input.StylusPointCollection>と<xref:System.Windows.Ink.DrawingAttributes>オブジェクト。 この例では、<xref:System.Windows.Controls.InkPresenter>と呼ばれる`myInkPresenter`です。  
+  
+ [!code-csharp[StrokeSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#2)]
+ [!code-vb[StrokeSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stylusPoints" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stylusPoints" />空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stroke (System.Windows.Input.StylusPointCollection stylusPoints, System.Windows.Ink.DrawingAttributes drawingAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusPointCollection stylusPoints, class System.Windows.Ink.DrawingAttributes drawingAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.#ctor(System.Windows.Input.StylusPointCollection,System.Windows.Ink.DrawingAttributes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusPoints" Type="System.Windows.Input.StylusPointCollection" />
+        <Parameter Name="drawingAttributes" Type="System.Windows.Ink.DrawingAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPoints">A<see cref="T:System.Windows.Input.StylusPointCollection" />を表す、<see cref="T:System.Windows.Ink.Stroke" />です。</param>
+        <param name="drawingAttributes">A<see cref="T:System.Windows.Ink.DrawingAttributes" />の外観を指定するオブジェクト、<see cref="T:System.Windows.Ink.Stroke" />です。</param>
+        <summary><see cref="T:System.Windows.Ink.Stroke" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.Stroke>から、<xref:System.Windows.Input.StylusPointCollection>と<xref:System.Windows.Ink.DrawingAttributes>オブジェクト。  この例では、<xref:System.Windows.Controls.InkPresenter>と呼ばれる`myInkPresenter`です。  
+  
+ [!code-csharp[StrokeSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#2)]
+ [!code-vb[StrokeSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stylusPoints" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="drawingAtrributes" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stylusPoints" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPropertyData">
+      <MemberSignature Language="C#" Value="public void AddPropertyData (Guid propertyDataId, object propertyData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPropertyData(valuetype System.Guid propertyDataId, object propertyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.AddPropertyData(System.Guid,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDataId" Type="System.Guid" />
+        <Parameter Name="propertyData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDataId">プロパティの一意の識別子。</param>
+        <param name="propertyData">カスタム プロパティの値です。 <c>propertyData</c>型でなければなりません<see cref="T:System.Char" />、 <see cref="T:System.Byte" />、 <see cref="T:System.Int16" />、 <see cref="T:System.UInt16" />、 <see cref="T:System.Int32" />、 <see cref="T:System.UInt32" />、 <see cref="T:System.Int64" />、 <see cref="T:System.UInt64" />、 <see cref="T:System.Single" />、 <see cref="T:System.Double" />、 <see cref="T:System.DateTime" />、 <see cref="T:System.Boolean" />、 <see cref="T:System.String" />、 <see cref="T:System.Decimal" /> 、またはこれらのデータ型の配列を除く<see cref="T:System.String" />、これは許可されません。</param>
+        <summary>カスタム プロパティを追加、<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは余分な情報を格納する必要がある場合、<xref:System.Windows.Ink.Stroke>です。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム プロパティを追加する方法、<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[StrokeSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#3)]
+ [!code-vb[StrokeSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="propertyData" />引数に表示されている有効なデータ型のいずれかではありません、<see langword="Parameters" />セクションです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Ink.Stroke Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Ink.Stroke Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.Stroke</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存のディープ コピーを返します<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <returns>新しい <see cref="T:System.Windows.Ink.Stroke" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のオブジェクトのディープ コピーであるオブジェクトのプロパティは、元のオブジェクトのプロパティと同じ値を持ちます。  
+  
+   
+  
+## Examples  
+ 次の例は、現在のコピーを取得する方法を示します<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[StrokeSnippets#5](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#5)]
+ [!code-vb[StrokeSnippets#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsPropertyData">
+      <MemberSignature Language="C#" Value="public bool ContainsPropertyData (Guid propertyDataId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsPropertyData(valuetype System.Guid propertyDataId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.ContainsPropertyData(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDataId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDataId">プロパティの一意の識別子。</param>
+        <summary>示す値を返すかどうか、<see cref="T:System.Windows.Ink.Stroke" />オブジェクトには、指定のカスタム プロパティが含まれています。</summary>
+        <returns>返します<see langword="true" />カスタム プロパティが存在する場合を返しますそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で確認する方法かどうか、<xref:System.Windows.Ink.Stroke>オブジェクト カスタム プロパティがあります。  
+  
+ [!code-csharp[StrokeSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#3)]
+ [!code-vb[StrokeSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public void Draw (System.Windows.Media.DrawingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Draw(class System.Windows.Media.DrawingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.Draw(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ストロークを描画する <see cref="T:System.Windows.Media.DrawingContext" />オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.DrawingContext" /> に基づいて <see cref="T:System.Windows.Ink.Stroke" /> オブジェクトを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、描画、<xref:System.Windows.Ink.Stroke>オブジェクトを使用して、<xref:System.Windows.Media.DrawingContext>です。  
+  
+ [!code-csharp[DrawTransform#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawTransform/CSharp/Program.cs#1)]
+ [!code-vb[DrawTransform#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawTransform/VisualBasic/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public void Draw (System.Windows.Media.DrawingContext drawingContext, System.Windows.Ink.DrawingAttributes drawingAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Draw(class System.Windows.Media.DrawingContext drawingContext, class System.Windows.Ink.DrawingAttributes drawingAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.Draw(System.Windows.Media.DrawingContext,System.Windows.Ink.DrawingAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+        <Parameter Name="drawingAttributes" Type="System.Windows.Ink.DrawingAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext">ストロークを描画する <see cref="T:System.Windows.Media.DrawingContext" />オブジェクト。</param>
+        <param name="drawingAttributes"><see cref="T:System.Windows.Ink.DrawingAttributes" />描かれたストロークの属性を定義するオブジェクト。</param>
+        <summary>表示、<see cref="T:System.Windows.Ink.Stroke" />オブジェクトに基づいて、指定した<see cref="T:System.Windows.Media.DrawingContext" />と<see cref="T:System.Windows.Ink.DrawingAttributes" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、描画、<xref:System.Windows.Ink.Stroke>オブジェクトを使用して、<xref:System.Windows.Media.DrawingContext>と<xref:System.Windows.Ink.DrawingAttributes>です。  
+  
+ [!code-csharp[DrawTransform#2](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawTransform/CSharp/Program.cs#2)]
+ [!code-vb[DrawTransform#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawTransform/VisualBasic/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCore">
+      <MemberSignature Language="C#" Value="protected virtual void DrawCore (System.Windows.Media.DrawingContext drawingContext, System.Windows.Ink.DrawingAttributes drawingAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DrawCore(class System.Windows.Media.DrawingContext drawingContext, class System.Windows.Ink.DrawingAttributes drawingAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.DrawCore(System.Windows.Media.DrawingContext,System.Windows.Ink.DrawingAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+        <Parameter Name="drawingAttributes" Type="System.Windows.Ink.DrawingAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext">ストロークを描画する <see cref="T:System.Windows.Media.DrawingContext" />オブジェクト。</param>
+        <param name="drawingAttributes"><see cref="T:System.Windows.Ink.DrawingAttributes" />描かれたストロークの属性を定義するオブジェクト。</param>
+        <summary>表示、<see cref="T:System.Windows.Ink.Stroke" />指定した<see cref="T:System.Windows.Media.DrawingContext" />指定して<see cref="T:System.Windows.Ink.DrawingAttributes" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Ink.Stroke.DrawCore%2A>から継承する場合は、カスタムの描画を実行するメソッドを<xref:System.Windows.Ink.Stroke>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、各円を描画する方法を示します<xref:System.Windows.Input.StylusPoint>の<xref:System.Windows.Ink.Stroke>です。 場合、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティに設定されている`true`、<xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>スタイラス ポイントを取得するために使用します。 それ以外の場合、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティを使用します。  
+  
+ [!code-csharp[StrokeSnippets#23](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyStroke.cs#23)]
+ [!code-vb[StrokeSnippets#23](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyStroke.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawingAttributes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.DrawingAttributes DrawingAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.DrawingAttributes DrawingAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.Stroke.DrawingAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.DrawingAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Ink.DrawingAttributes" />の<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色と太さなど、これらの属性に適用されます、<xref:System.Windows.Ink.Stroke>が描画されるオブジェクトします。  
+  
+ 変更する<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>により、<xref:System.Windows.Ink.Stroke.DrawingAttributesChanged>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>ストロークを緑色にします。  
+  
+ [!code-csharp[StrokeSnippets#7](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#7)]
+ [!code-vb[StrokeSnippets#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値の設定は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawingAttributesChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Ink.PropertyDataChangedEventHandler DrawingAttributesChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Ink.PropertyDataChangedEventHandler DrawingAttributesChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.DrawingAttributesChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.PropertyDataChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Ink.Stroke.DrawingAttributes" />に関連付けられている、<see cref="T:System.Windows.Ink.Stroke" />オブジェクトの変更。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.PropertyDataChangedEventArgs>変更されたプロパティに関する情報を格納します。 比較することができます、<xref:System.Windows.Ink.PropertyDataChangedEventArgs.PropertyGuid%2A>プロパティのメンバーに対して<xref:System.Windows.Ink.DrawingAttributeIds>される値の変更を確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、このイベントのハンドラーを追加する方法を示します。  
+  
+ [!code-csharp[StrokeSnippets#8](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#8)]
+ [!code-vb[StrokeSnippets#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawingAttributesReplaced">
+      <MemberSignature Language="C#" Value="public event System.Windows.Ink.DrawingAttributesReplacedEventHandler DrawingAttributesReplaced;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Ink.DrawingAttributesReplacedEventHandler DrawingAttributesReplaced" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.DrawingAttributesReplaced" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.DrawingAttributesReplacedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの描画属性、<see cref="T:System.Windows.Ink.Stroke" />オブジェクトが置き換えられます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このイベントのハンドラーを追加する方法を示します。  
+  
+ [!code-csharp[StrokeSnippets#9](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#9)]
+ [!code-vb[StrokeSnippets#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBezierStylusPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointCollection GetBezierStylusPoints ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StylusPointCollection GetBezierStylusPoints() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetBezierStylusPoints" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>以外の場合は、<see cref="T:System.Windows.Ink.Stroke" />時使用<see cref="P:System.Windows.Ink.DrawingAttributes.FitToCurve" />は<see langword="true" />します。</summary>
+        <returns>A<see cref="T:System.Windows.Input.StylusPointCollection" />のスパインに沿ったスタイラス ポイントを格納している、<see cref="T:System.Windows.Ink.Stroke" />とき<see cref="P:System.Windows.Ink.DrawingAttributes.FitToCurve" />は<see langword="true" /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>メソッドは、新しいを返します<xref:System.Windows.Input.StylusPointCollection>スタイラスを格納している点を<xref:System.Windows.Ink.Stroke>時に使用、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティを<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>プロパティに設定されている`true`です。  スタイラス ポイントを取得する際に使用される<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>に設定されている`false`を使用して、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、各円を描画する方法を示します<xref:System.Windows.Input.StylusPoint>の<xref:System.Windows.Ink.Stroke>です。 場合、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティに設定されている`true`、<xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>スタイラス ポイントを取得するために使用します。 それ以外の場合、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティを使用します。  
+  
+ [!code-csharp[StrokeSnippets#23](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyStroke.cs#23)]
+ [!code-vb[StrokeSnippets#23](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyStroke.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Rect GetBounds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Rect GetBounds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetBounds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>境界ボックスの取得、<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Windows.Rect" />の境界を定義する構造体をボックス、<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、境界長方形を取得する方法を示します、<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[StrokeSnippets#11](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#11)]
+ [!code-vb[StrokeSnippets#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClipResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetClipResult (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; lassoPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetClipResult(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; lassoPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetClipResult(System.Collections.Generic.IEnumerable{System.Windows.Point})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lassoPoints" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="lassoPoints">クリップする場所を定義する行を指定する点です。</param>
+        <summary>現在のセグメントを返します<see cref="T:System.Windows.Ink.Stroke" />指定した範囲内にあります。</summary>
+        <returns>A <see cref="T:System.Windows.Ink.StrokeCollection" /> 、現在のセグメントのコピーを格納している<see cref="T:System.Windows.Ink.Stroke" />指定した範囲内にあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetClipResult%2A>メソッドを返します、<xref:System.Windows.Ink.StrokeCollection>のセグメントを表す線を格納している、<xref:System.Windows.Ink.Stroke>内にある`lassoPoints`です。 <xref:System.Windows.Ink.Stroke.GetClipResult%2A>元は変わりません<xref:System.Windows.Ink.Stroke>です。  
+  
+ <xref:System.Windows.Ink.Stroke.GetClipResult%2A>メソッド内の最初と最後のポイントを接続する`lassoPoints`なげなわを作成します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した範囲外にあるインクを削除します。  
+  
+ [!code-csharp[HitTestSample#6](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#6)]
+ [!code-vb[HitTestSample#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClipResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetClipResult (System.Windows.Rect bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetClipResult(valuetype System.Windows.Rect bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetClipResult(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bounds" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="bounds">A<see cref="T:System.Windows.Rect" />クリップ領域を指定します。</param>
+        <summary>現在のセグメントを返します<see cref="T:System.Windows.Ink.Stroke" />指定した四角形内にあります。</summary>
+        <returns>A <see cref="T:System.Windows.Ink.StrokeCollection" /> 、現在のセグメントのコピーを格納している<see cref="T:System.Windows.Ink.Stroke" />の境界内にある<paramref name="bounds" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetClipResult%2A>メソッドを返します、<xref:System.Windows.Ink.StrokeCollection>のセグメントを表す線を格納している、<xref:System.Windows.Ink.Stroke>内にある`bounds`です。 <xref:System.Windows.Ink.Stroke.GetClipResult%2A>元は変わりません<xref:System.Windows.Ink.Stroke>です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した範囲外にあるインクを削除します。  
+  
+ [!code-csharp[HitTestSample#5](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#5)]
+ [!code-vb[HitTestSample#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEraseResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetEraseResult (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; lassoPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetEraseResult(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; lassoPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetEraseResult(System.Collections.Generic.IEnumerable{System.Windows.Point})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lassoPoints" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="lassoPoints">型の配列<see cref="T:System.Windows.Point" />消去する領域を指定します。</param>
+        <summary>現在のセグメントを返します<see cref="T:System.Windows.Ink.Stroke" />指定の境界の外側にあります。</summary>
+        <returns>A <see cref="T:System.Windows.Ink.StrokeCollection" /> 、現在のセグメントが含まれている<see cref="T:System.Windows.Ink.Stroke" />指定の境界の外側にあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>メソッドを返します、<xref:System.Windows.Ink.StrokeCollection>のセグメントを表す線を格納している、<xref:System.Windows.Ink.Stroke>の外部にある`lassoPoints`です。 <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>元は変わりません<xref:System.Windows.Ink.Stroke>です。  
+  
+ <xref:System.Windows.Ink.Stroke.GetClipResult%2A>メソッド内の最初と最後のポイントを接続する`lassoPoints`なげなわを作成します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した範囲内にあるインクを削除します。  
+  
+ [!code-csharp[HitTestSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#1)]
+ [!code-vb[HitTestSample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEraseResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetEraseResult (System.Windows.Rect bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetEraseResult(valuetype System.Windows.Rect bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetEraseResult(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bounds" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="bounds">A<see cref="T:System.Windows.Rect" />消去する領域を指定します。</param>
+        <summary>現在のセグメントを返します<see cref="T:System.Windows.Ink.Stroke" />指定した四角形の外部にあります。</summary>
+        <returns>A <see cref="T:System.Windows.Ink.StrokeCollection" /> 、現在のセグメントが含まれている<see cref="T:System.Windows.Ink.Stroke" />の指定された境界の外側にある<see cref="T:System.Windows.Rect" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>メソッドを返します、<xref:System.Windows.Ink.StrokeCollection>のセグメントを表す線を格納している、<xref:System.Windows.Ink.Stroke>の外部にある`bounds`です。 <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>元は変わりません<xref:System.Windows.Ink.Stroke>です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した範囲内にあるインクを削除します。  
+  
+ [!code-csharp[HitTestSample#4](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#4)]
+ [!code-vb[HitTestSample#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEraseResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection GetEraseResult (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; eraserPath, System.Windows.Ink.StylusShape eraserShape);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Ink.StrokeCollection GetEraseResult(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; eraserPath, class System.Windows.Ink.StylusShape eraserShape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetEraseResult(System.Collections.Generic.IEnumerable{System.Windows.Point},System.Windows.Ink.StylusShape)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eraserPath" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+        <Parameter Name="eraserShape" Type="System.Windows.Ink.StylusShape" />
+      </Parameters>
+      <Docs>
+        <param name="eraserPath">型の配列<see cref="T:System.Windows.Point" />あげて詳しく説明するパスを指定する、<see cref="T:System.Windows.Ink.Stroke" />です。</param>
+        <param name="eraserShape">A<see cref="T:System.Windows.Ink.StylusShape" />消しゴムの形状を指定します。</param>
+        <summary>現在のセグメントを返します<see cref="T:System.Windows.Ink.Stroke" />指定して、指定されたパスによってそれがより細かく分析後<see cref="T:System.Windows.Ink.StylusShape" />です。</summary>
+        <returns>A <see cref="T:System.Windows.Ink.StrokeCollection" /> 、現在のセグメントのコピーを格納している<see cref="T:System.Windows.Ink.Stroke" />指定されたパスによってより細かく分析が後にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>メソッドを使用`eraserShape`ヒットに沿ったストロークをテスト`eraserPath`を返します、 <xref:System.Windows.Ink.StrokeCollection> dissected セグメントを表すです。 <xref:System.Windows.Ink.Stroke.GetEraseResult%2A>元は変わりません<xref:System.Windows.Ink.Stroke>です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたパスの交差するインクを消去する方法を示します。  
+  
+ [!code-csharp[HitTestSample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#2)]
+ [!code-vb[HitTestSample#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry GetGeometry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry GetGeometry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetGeometry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Media.Geometry" /> の <see cref="T:System.Windows.Ink.Stroke" /> を取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Geometry" />を表す、<see cref="T:System.Windows.Ink.Stroke" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Ink.Stroke.GetGeometry%2A>取得するメソッド、<xref:System.Windows.Media.PathGeometry>の形状をカスタマイズする、<xref:System.Windows.Ink.Stroke>です。 キャッシュを検討してください、<xref:System.Windows.Media.Geometry>を呼び出すことを回避する<xref:System.Windows.Ink.Stroke.GetGeometry%2A>複数回、パフォーマンスに影響する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry GetGeometry (System.Windows.Ink.DrawingAttributes drawingAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry GetGeometry(class System.Windows.Ink.DrawingAttributes drawingAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetGeometry(System.Windows.Ink.DrawingAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingAttributes" Type="System.Windows.Ink.DrawingAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="drawingAttributes"><see cref="T:System.Windows.Ink.DrawingAttributes" />を決定する、<see cref="T:System.Windows.Media.Geometry" />の<see cref="T:System.Windows.Ink.Stroke" />です。</param>
+        <summary>取得、 <see cref="T:System.Windows.Media.Geometry" /> 、現在の<see cref="T:System.Windows.Ink.Stroke" />指定して<see cref="T:System.Windows.Ink.DrawingAttributes" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Geometry" />を表す、<see cref="T:System.Windows.Ink.Stroke" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.GetGeometry%2A>メソッドを使用、 <xref:System.Windows.Ink.DrawingAttributes.Width%2A>、 <xref:System.Windows.Ink.DrawingAttributes.Height%2A>、 <xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>、<xref:System.Windows.Ink.DrawingAttributes.StylusTip%2A>と<xref:System.Windows.Ink.DrawingAttributes.StylusTipTransform%2A>プロパティの`drawingAttributes`を決定する、<xref:System.Windows.Media.Geometry>です。 キャッシュを検討してください、<xref:System.Windows.Media.Geometry>を呼び出すことを回避する<xref:System.Windows.Ink.Stroke.GetGeometry%2A>複数回、パフォーマンスに影響する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、各円を描画する方法を示します<xref:System.Windows.Input.StylusPoint>の<xref:System.Windows.Ink.Stroke>です。 場合、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティに設定されている`true`、<xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>スタイラス ポイントを取得するために使用します。 それ以外の場合、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティを使用します。  
+  
+ [!code-csharp[StrokeSnippets#23](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyStroke.cs#23)]
+ [!code-vb[StrokeSnippets#23](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyStroke.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyData">
+      <MemberSignature Language="C#" Value="public object GetPropertyData (Guid propertyDataId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyData(valuetype System.Guid propertyDataId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetPropertyData(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDataId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDataId">プロパティの一意の識別子。</param>
+        <summary>指定された GUID のプロパティのデータを取得します。</summary>
+        <returns><see langword="object" />プロパティ データを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、カスタム プロパティを取得する方法を示します、<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[StrokeSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#3)]
+ [!code-vb[StrokeSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="propertyDataId" />カスタム プロパティに関連付けられていない、<see cref="T:System.Windows.Ink.Stroke" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyDataIds">
+      <MemberSignature Language="C#" Value="public Guid[] GetPropertyDataIds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Guid[] GetPropertyDataIds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.GetPropertyDataIds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのカスタム プロパティに関連付けられている Guid を取得、<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <returns><see cref="T:System.Guid" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ストロークのカスタム プロパティの Guid を取得する方法を示します。  
+  
+ [!code-csharp[DrawTransform#3](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawTransform/CSharp/Program.cs#3)]
+ [!code-vb[DrawTransform#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawTransform/VisualBasic/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="HitTest">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>返すかどうか、<see cref="T:System.Windows.Ink.Stroke" />と交差するか、特定の領域内にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Ink.Stroke.HitTest%2A>を決定するメソッドかどうか、<xref:System.Windows.Ink.Stroke>の特定の時点と交差するか、指定した範囲内がします。  
+  
+ 次のメソッドのチェックするかどうか、<xref:System.Windows.Ink.Stroke>が交差します。  
+  
+-   <xref:System.Windows.Ink.Stroke.HitTest%28System.Windows.Point%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Ink.Stroke.HitTest%28System.Windows.Point%2CSystem.Double%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Ink.Stroke.HitTest%28System.Collections.Generic.IEnumerable%7BSystem.Windows.Point%7D%2CSystem.Windows.Ink.StylusShape%29?displayProperty=nameWithType>  
+  
+ 次のメソッドのチェックするかどうか、<xref:System.Windows.Ink.Stroke>が囲まれています。  
+  
+-   <xref:System.Windows.Ink.Stroke.HitTest%28System.Collections.Generic.IEnumerable%7BSystem.Windows.Point%7D%2CSystem.Int32%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Ink.Stroke.HitTest%28System.Windows.Rect%2CSystem.Int32%29?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public bool HitTest (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HitTest(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.HitTest(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ヒット テストを行う対象の <see cref="T:System.Windows.Point" />。</param>
+        <summary>示す値を返す現在あるかどうか<see cref="T:System.Windows.Ink.Stroke" />指定した点と交差しています。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="point" />現在ストロークと交差する、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはオーバー ロードされたのと同じように動作<xref:System.Windows.Ink.Stroke.HitTest%28System.Windows.Point%2CSystem.Double%29>メソッドではいつ`diameter`は 1 です。  
+  
+   
+  
+## Examples  
+ 次の例の色を変更する、<xref:System.Windows.Ink.Stroke>特定の分野が交差する場合。  
+  
+ [!code-csharp[HitTestSample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#3)]
+ [!code-vb[HitTestSample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public bool HitTest (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; lassoPoints, int percentageWithinLasso);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HitTest(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; lassoPoints, int32 percentageWithinLasso) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.HitTest(System.Collections.Generic.IEnumerable{System.Windows.Point},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lassoPoints" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+        <Parameter Name="percentageWithinLasso" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lassoPoints">型の配列<see cref="T:System.Windows.Point" />ヒット テスト領域の境界を表すです。</param>
+        <param name="percentageWithinLasso">長さの割合、<see cref="T:System.Windows.Ink.Stroke" />に置く必要があります<c>lassoPoints</c>の<see cref="T:System.Windows.Ink.Stroke" />ヒントとして見なされるにします。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Windows.Ink.Stroke" />が、指定した範囲内で。</summary>
+        <returns>
+          <see langword="true" />現在の線が指定した境界内にある場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.HitTest%2A>メソッド内の最初と最後のポイントを接続する`lassoPoints`なげなわを作成します。  
+  
+   
+  
+## Examples  
+ 次の例を表示、ストローク紫ストロークの少なくとも 80% がの境界内にある場合`myPoints`です。  
+  
+ [!code-csharp[HitTestSample#7](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#7)]
+ [!code-vb[HitTestSample#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public bool HitTest (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; path, System.Windows.Ink.StylusShape stylusShape);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HitTest(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; path, class System.Windows.Ink.StylusShape stylusShape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.HitTest(System.Collections.Generic.IEnumerable{System.Windows.Point},System.Windows.Ink.StylusShape)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+        <Parameter Name="stylusShape" Type="System.Windows.Ink.StylusShape" />
+      </Parameters>
+      <Docs>
+        <param name="path">パスを<c>際</c>ヒット テストの</param>
+        <param name="stylusShape">形状<c>パス</c>ヒット テストするときに使用します。</param>
+        <summary>指定されたパスと交差するかどうかを返します、<see cref="T:System.Windows.Ink.Stroke" />指定して<see cref="T:System.Windows.Ink.StylusShape" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="stylusShape" />現在ストロークと交差する、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.Stroke.HitTest%2A>メソッドを使用`stylusShape`ヒット テストに沿ったストローク`eraserPath`です。  
+  
+   
+  
+## Examples  
+ 次のコードを表示、ストローク紫ストロークのパスと交差している場合`myPoints`です。  
+  
+ [!code-csharp[HitTestSample#9](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#9)]
+ [!code-vb[HitTestSample#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public bool HitTest (System.Windows.Point point, double diameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HitTest(valuetype System.Windows.Point point, float64 diameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.HitTest(System.Windows.Point,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="diameter" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Point" />ヒット テスト領域の中心を定義します。</param>
+        <param name="diameter">ヒット テスト領域の直径します。</param>
+        <summary>示す値を返す現在あるかどうか<see cref="T:System.Windows.Ink.Stroke" />指定された領域と交差しています。</summary>
+        <returns>
+          <see langword="true" />指定された領域は、現在のストロークと交差する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の色を変更する、<xref:System.Windows.Ink.Stroke>特定の分野が交差する場合。  
+  
+ [!code-csharp[HitTestSample#3](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#3)]
+ [!code-vb[HitTestSample#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public bool HitTest (System.Windows.Rect bounds, int percentageWithinBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HitTest(valuetype System.Windows.Rect bounds, int32 percentageWithinBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.HitTest(System.Windows.Rect,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bounds" Type="System.Windows.Rect" />
+        <Parameter Name="percentageWithinBounds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bounds">ヒット テスト領域の境界を表す <see cref="T:System.Windows.Rect" />。</param>
+        <param name="percentageWithinBounds">長さの割合、<see cref="T:System.Windows.Ink.Stroke" />に置く必要があります<c>percentageWithinBounds</c>の<see cref="T:System.Windows.Ink.Stroke" />ヒントとして見なされるに.</param>
+        <summary><see cref="T:System.Windows.Ink.Stroke" /> が指定した四角形の境界内にあるかどうかを示す値を返します。</summary>
+        <returns>
+          現在のストロークが <paramref name="bounds" /> の境界内にある場合は <see langword="true" />。それ以外の場合は <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を表示、ストローク紫ストロークの少なくとも 80% が内にある場合、<xref:System.Windows.Rect>です。  
+  
+ [!code-csharp[HitTestSample#8](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestSample/CSharp/Program.cs#8)]
+ [!code-vb[HitTestSample#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestSample/VisualBasic/Module1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler Invalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Invalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.Invalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときの外観、<see cref="T:System.Windows.Ink.Stroke" />変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.InkPresenter>ハンドル、<xref:System.Windows.Ink.Stroke.Invalidated>イベントと呼び出し、<xref:System.Windows.Ink.Stroke.DrawCore%2A>メソッドです。 継承する場合、<xref:System.Windows.Ink.Stroke>クラスと線の外観は、カスタムの状態に基づいて、呼び出す必要があります、<xref:System.Windows.Ink.Stroke.OnInvalidated%2A>させる方法、<xref:System.Windows.Ink.Stroke.Invalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawingAttributesChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDrawingAttributesChanged (System.Windows.Ink.PropertyDataChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDrawingAttributesChanged(class System.Windows.Ink.PropertyDataChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnDrawingAttributesChanged(System.Windows.Ink.PropertyDataChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Ink.PropertyDataChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Ink.PropertyDataChangedEventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>派生クラスの既定の動作を変更する、<see cref="E:System.Windows.Ink.Stroke.DrawingAttributesChanged" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このメソッドをオーバーライドする場合、<xref:System.Windows.Ink.Stroke.OnDrawingAttributesChanged%2A>デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawingAttributesReplaced">
+      <MemberSignature Language="C#" Value="protected virtual void OnDrawingAttributesReplaced (System.Windows.Ink.DrawingAttributesReplacedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDrawingAttributesReplaced(class System.Windows.Ink.DrawingAttributesReplacedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnDrawingAttributesReplaced(System.Windows.Ink.DrawingAttributesReplacedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Ink.DrawingAttributesReplacedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Ink.DrawingAttributesReplacedEventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>派生クラスの既定の動作を変更する、<see cref="E:System.Windows.Ink.Stroke.DrawingAttributesReplaced" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このメソッドをオーバーライドする場合、<xref:System.Windows.Ink.Stroke.OnDrawingAttributesReplaced%2A>デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInvalidated">
+      <MemberSignature Language="C#" Value="protected virtual void OnInvalidated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInvalidated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnInvalidated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Ink.Stroke.Invalidated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承する場合、<xref:System.Windows.Ink.Stroke>クラスと線の外観は、カスタムの状態に基づいて、呼び出す必要があります、<xref:System.Windows.Ink.Stroke.OnInvalidated%2A>させる方法、<xref:System.Windows.Ink.Stroke.Invalidated>イベント。 <xref:System.Windows.Controls.InkPresenter>ハンドル、<xref:System.Windows.Ink.Stroke.Invalidated>イベントと呼び出し、<xref:System.Windows.Ink.Stroke.DrawCore%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、描画、<xref:System.Windows.Ink.Stroke>線、または一連のとして<xref:System.Windows.Input.StylusPoint>に応じて、オブジェクト、`Mode`プロパティです。 呼び出しの例、<xref:System.Windows.Ink.Stroke.OnInvalidated%2A>メソッドを呼び出して、<xref:System.Windows.Ink.Stroke.DrawCore%2A>ストロークを描画する場所です。  
+  
+ [!code-csharp[StrokeSnippets#24](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/CustomRenderedStroke.cs#24)]
+ [!code-vb[StrokeSnippets#24](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/CustomRenderedStroke.vb#24)]  
+[!code-csharp[StrokeSnippets#25](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/CustomRenderedStroke.cs#25)]
+[!code-vb[StrokeSnippets#25](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/CustomRenderedStroke.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (System.ComponentModel.PropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(class System.ComponentModel.PropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更されたプロパティと、新旧の値を記述するイベント データ。</param>
+        <summary>されたときに発生<see cref="T:System.Windows.Ink.Stroke" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyDataChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyDataChanged (System.Windows.Ink.PropertyDataChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyDataChanged(class System.Windows.Ink.PropertyDataChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnPropertyDataChanged(System.Windows.Ink.PropertyDataChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Ink.PropertyDataChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Windows.Ink.PropertyDataChangedEventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>派生クラスの既定の動作を変更する、<see cref="E:System.Windows.Ink.Stroke.PropertyDataChanged" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、このメソッドをオーバーライドする場合、<xref:System.Windows.Ink.Stroke.OnPropertyDataChanged%2A>デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusPointsChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusPointsChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusPointsChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnStylusPointsChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Ink.Stroke.StylusPointsChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusPointsReplaced">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusPointsReplaced (System.Windows.Ink.StylusPointsReplacedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusPointsReplaced(class System.Windows.Ink.StylusPointsReplacedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.OnStylusPointsReplaced(System.Windows.Ink.StylusPointsReplacedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Ink.StylusPointsReplacedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Ink.StylusPointsReplacedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Ink.Stroke.StylusPointsReplaced" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyDataChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Ink.PropertyDataChangedEventHandler PropertyDataChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Ink.PropertyDataChangedEventHandler PropertyDataChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.PropertyDataChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.PropertyDataChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのカスタム プロパティ、<see cref="T:System.Windows.Ink.Stroke" />オブジェクトに対する変更。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このイベントのハンドラーを追加する方法を示します。  
+  
+ [!code-csharp[StrokeSnippets#20](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#20)]
+ [!code-vb[StrokeSnippets#20](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePropertyData">
+      <MemberSignature Language="C#" Value="public void RemovePropertyData (Guid propertyDataId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemovePropertyData(valuetype System.Guid propertyDataId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.RemovePropertyData(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDataId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDataId">プロパティの一意の識別子。</param>
+        <summary>カスタム プロパティを削除、<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例からカスタム プロパティを削除する方法を示します、<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[StrokeSnippets#30](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#30)]
+ [!code-vb[StrokeSnippets#30](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointCollection StylusPoints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.StylusPointCollection StylusPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.Stroke.StylusPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスのポイントを返します、<see cref="T:System.Windows.Ink.Stroke" />です。</summary>
+        <value><see cref="T:System.Windows.Input.StylusPointCollection" />現在を表すスタイラス ポイントを格納している<see cref="T:System.Windows.Ink.Stroke" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタイラス ポイントを取得する際に使用される、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティを<xref:System.Windows.Ink.Stroke.DrawingAttributes%2A>プロパティに設定されている`true`を使用して、<xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Input.StylusPointCollection>に割り当てられている、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティには、少なくとも 1 つが必要<xref:System.Windows.Input.StylusPoint>にします。  場合は、空を割り当てようとすると<xref:System.Windows.Input.StylusPointCollection>に<xref:System.Windows.Ink.Stroke.StylusPoints%2A>、またはすべてを削除する、<xref:System.Windows.Input.StylusPoint>オブジェクトから<xref:System.Windows.Ink.Stroke.StylusPoints%2A>例外が発生します。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバーライドの一部<xref:System.Windows.Ink.Stroke>各円を描画する<xref:System.Windows.Input.StylusPoint>です。 場合、<xref:System.Windows.Ink.DrawingAttributes.FitToCurve%2A>プロパティに設定されている`true`、<xref:System.Windows.Ink.Stroke.GetBezierStylusPoints%2A>スタイラス ポイントを取得するために使用します。 それ以外の場合、<xref:System.Windows.Ink.Stroke.StylusPoints%2A>プロパティを使用します。  
+  
+ [!code-csharp[StrokeSnippets#23](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyStroke.cs#23)]
+ [!code-vb[StrokeSnippets#23](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyStroke.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusPointsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler StylusPointsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StylusPointsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.StylusPointsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Ink.Stroke.StylusPoints" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、処理する方法を示します、<xref:System.Windows.Ink.Stroke.StylusPointsChanged>イベント。  
+  
+ [!code-csharp[StrokeSnippets#28](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#28)]
+ [!code-vb[StrokeSnippets#28](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylusPointsReplaced">
+      <MemberSignature Language="C#" Value="public event System.Windows.Ink.StylusPointsReplacedEventHandler StylusPointsReplaced;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Ink.StylusPointsReplacedEventHandler StylusPointsReplaced" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.Stroke.StylusPointsReplaced" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StylusPointsReplacedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、 <see cref="P:System.Windows.Ink.Stroke.StylusPoints" /> 、新しいプロパティが割り当てられている<see cref="T:System.Windows.Input.StylusPointCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、処理する方法を示します、<xref:System.Windows.Ink.Stroke.StylusPointsReplaced>イベント。  
+  
+ [!code-csharp[StrokeSnippets#29](~/samples/snippets/csharp/VS_Snippets_Wpf/StrokeSnippets/CSharp/MyBorder.cs#29)]
+ [!code-vb[StrokeSnippets#29](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StrokeSnippets/VisualBasic/MyBorder.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public virtual void Transform (System.Windows.Media.Matrix transformMatrix, bool applyToStylusTip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Transform(valuetype System.Windows.Media.Matrix transformMatrix, bool applyToStylusTip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.Stroke.Transform(System.Windows.Media.Matrix,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transformMatrix" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="applyToStylusTip" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="transformMatrix"><see cref="T:System.Windows.Media.Matrix" />変換を定義します。</param>
+        <param name="applyToStylusTip">
+          <see langword="true" />スタイラスの先端に変換を適用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>に基づいて、指定した変換を実行する<see cref="T:System.Windows.Media.Matrix" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Matrix>オブジェクトは 2 次元空間での変換に使用される 3 x 3 行列を表します。 Stroke オブジェクトの各ポイントは、指定した行列によって変換されます。 たとえば、元の Point.Y 値は 55、および変換 Matrix.Scale (0.5, 0.5) 元の Point.X 値が 100 の場合は、新しい Point.X 値は 50、および新しい Point.Y 値は 27.5 です。  
+  
+   
+  
+## Examples  
+ 次の例では、変換、<xref:System.Windows.Ink.Stroke>オブジェクト。  
+  
+ [!code-csharp[DrawTransform#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawTransform/CSharp/Program.cs#1)]
+ [!code-vb[DrawTransform#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawTransform/VisualBasic/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

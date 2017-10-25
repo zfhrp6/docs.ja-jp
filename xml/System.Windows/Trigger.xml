@@ -1,0 +1,415 @@
+<Type Name="Trigger" FullName="System.Windows.Trigger">
+  <TypeSignature Language="C#" Value="public class Trigger : System.Windows.TriggerBase, System.ComponentModel.ISupportInitialize, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Trigger extends System.Windows.TriggerBase implements class System.ComponentModel.ISupportInitialize, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Trigger" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Setters")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetTypeConverter("ReceiveTypeConverter")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ値を適用するか、または条件付きでアクションを実行するトリガーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]など、エンドユーザーのアクションに対応するプロパティを定義、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティに設定されている`true`ユーザーが上にカーソルを置くと、<xref:System.Windows.UIElement>対応または<xref:System.Windows.ContentElement.IsMouseOver%2A>のプロパティ、<xref:System.Windows.ContentElement>です。 と共にプロパティの値のエンドユーザーの操作を表す、<xref:System.Windows.Trigger>要素は、ように[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ値を変更するスタイルに基づいてそのエンドユーザー操作からすべてマークアップ内で。  
+  
+ トリガーによって変更されたプロパティは、トリガーの条件が満たされて不要になった場合に自動的に前の値にリセットされます。 一時的な状態のされる頻度を変更して、元に戻り値の状態などのトリガーに最適化された<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>で<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.ListBoxItem.IsSelected%2A>で<xref:System.Windows.Controls.ListBoxItem>です。 <xref:System.Windows.Trigger.Property%2A>関心のある依存関係プロパティをする必要があります。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.Trigger.Property%2A>と<xref:System.Windows.Trigger.Value%2A>プロパティを<xref:System.Windows.Trigger>の意味を持つようにトリガーします。 1 つまたは両方のプロパティが設定されていない場合、例外がスローされます。  
+  
+ <xref:System.Windows.Trigger.Setters%2A>のプロパティ、<xref:System.Windows.Trigger>オブジェクトのみで構成できます<xref:System.Windows.Setter>オブジェクト。 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.Trigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.Trigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+ トリガーの他の種類があります。 <xref:System.Windows.MultiTrigger>複数のプロパティの状態に基づいて変更を適用できます。 <xref:System.Windows.EventTrigger>イベントの発生時に変更を適用できます。 <xref:System.Windows.DataTrigger>および<xref:System.Windows.MultiDataTrigger>は、データ バインドされたプロパティ。  
+  
+   
+  
+## Examples  
+ 次の例は、名前付き<xref:System.Windows.Style>できる<xref:System.Windows.Controls.Button>コントロール。 <xref:System.Windows.Style>定義、<xref:System.Windows.Trigger>要素を変更する、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは`true`します。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Trigger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Trigger" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty Property { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Trigger.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のプロパティと比較される値を返す、<see cref="P:System.Windows.Trigger.Value" />トリガーのプロパティです。 比較では参照等価性のチェックです。</summary>
+        <value>A<see cref="T:System.Windows.DependencyProperty" />要素のプロパティの値を返します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される値で指定された値と比較は、<xref:System.Windows.Trigger.Value%2A>プロパティです。 実行される比較は、参照の等価性チェックです。 2 つの値と一致する場合、関連付けられている<xref:System.Windows.Setter>s が、指定したプロパティの値を適用します。  
+  
+ 使用して、`ClassName.PropertyName`かどうかスタイルまたはテンプレートをこのトリガーを含む必要はありませんを指定するプロパティを修飾するための構文、`TargetType`プロパティ セットです。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.Trigger.Property%2A>と<xref:System.Windows.Trigger.Value%2A>プロパティを<xref:System.Windows.Trigger>の意味を持つようにトリガーします。 1 つまたは両方のプロパティが設定されていない場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例には、2 つのトリガーが含まれています。 最初の変更、<xref:System.Windows.Controls.Control.Background%2A>のプロパティ、<xref:System.Windows.Controls.Button>ときに、<xref:System.Windows.UIElement.IsMouseOver%2A>プロパティは**true**です。 2 番目の変更、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは**true**です。 <xref:System.Windows.Style.TargetType%2A>の<xref:System.Windows.Style>に設定されている<xref:System.Windows.Controls.Button>ためを修飾する必要はありません、`Property`クラス名を持つプロパティです。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">A<see cref="T:System.Windows.Style" />含めることはできません、<see cref="T:System.Windows.Trigger" />を参照する、<see cref="T:System.Windows.Style" />プロパティです。</exception>
+        <exception cref="T:System.InvalidOperationException">後に、<see cref="T:System.Windows.Trigger" />は使用中で、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTypeConverter">
+      <MemberSignature Language="C#" Value="public static void ReceiveTypeConverter (object targetObject, System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveTypeConverter(object targetObject, class System.Windows.Markup.XamlSetTypeConverterEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.ReceiveTypeConverter(System.Object,System.Windows.Markup.XamlSetTypeConverterEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetTypeConverterEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">型コンバーターは、値が設定されるオブジェクト。</param>
+        <param name="eventArgs">型コンバーターの処理に関連するデータ。</param>
+        <summary>実行する型コンバーターがのプロパティの値を提供する場合の処理、<see cref="T:System.Windows.Trigger" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetTypeConverterAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.Trigger>型コンバーターを使用しました。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Setters">
+      <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Trigger.Setters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.SetterBaseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Setter" />オブジェクトで、指定した条件が満たされているときに適用するプロパティの値を説明します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Setters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Setters>  
+    ZeroOrMoreSetters  
+  </object.Setters>  
+</object>  
+```  
+  
+<a name="xamlValues_Setters"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ZeroOrMoreSetters*  
+ 0 個以上<xref:System.Windows.Setter>オブジェクト。 サポートしていません<xref:System.Windows.EventSetter>オブジェクト。  
+  
+ A<xref:System.Windows.Trigger>を使用することができます<xref:System.Windows.Setter>プロパティを適用する値の要素が、指定した条件を満たす場合です。 たとえば、フォーカスにあるときに、要素の背景色を変更することがあります。  
+  
+ 同じプロパティが複数回設定されている場合は、最後のプロパティ値が適用されます。  
+  
+ <xref:System.Windows.Trigger.Setters%2A>のプロパティ、<xref:System.Windows.Trigger>オブジェクトのみで構成できます<xref:System.Windows.Setter>オブジェクト。 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.Trigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.Trigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+   
+  
+## Examples  
+ 前述のように、追加、<xref:System.Windows.Setter>子を<xref:System.Windows.Trigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.Trigger>オブジェクト。 次の例では、`<Trigger.Setters>`は暗黙の型。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#TriggerSettersRef](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#triggersettersref)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceName">
+      <MemberSignature Language="C#" Value="public string SourceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Trigger.SourceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を適用する関連付けられている setter の原因となるプロパティを使用してオブジェクトの名前。</summary>
+        <value>既定のプロパティは<see langword="null" />します。 このプロパティが場合<see langword="null" />、<see cref="P:System.Windows.Trigger.Property" />プロパティは、このスタイルまたはテンプレート (スタイルを指定した親またはテンプレートの親) に適用されている要素に対して評価されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Where のスコープ内の要素の名前に、このプロパティを設定することができます、トリガーのコレクション (コレクションこの<xref:System.Windows.Trigger>の一部である) を適用します。 これは、これを格納しているテンプレート内にある名前付きの要素では通常<xref:System.Windows.Trigger>です。  
+  
+ オブジェクトを使用して、名前を付けることができます、 [X:name ディレクティブ](~/docs/framework/xaml-services/x-name-directive.md)構文です。  
+  
+   
+  
+## Examples  
+ 1 つのシナリオを使用する場合、<xref:System.Windows.Trigger.SourceName%2A>プロパティは、関心のあるプロパティは、次の例のように、親テンプレートのプロパティではない場合。  
+  
+ [!code-xaml[ControlTemplateExamples#TriggerSourceName](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/menu.xaml#triggersourcename)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">後に、<see cref="T:System.Windows.Trigger" />は使用中で、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の開始を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Setter> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の完了を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Setter> のインスタンスが <xref:System.ComponentModel.ISupportInitialize> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Trigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Trigger.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Trigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Trigger.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.SetterTriggerConditionValueConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Property")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("SourceName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素のプロパティの値と比較する値を設定します。 比較では参照等価性のチェックです。</summary>
+        <value>既定値は <see langword="null" /> です。 [例外] セクションを参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、によって返されるプロパティの値と比較されて、<xref:System.Windows.Trigger.Property%2A>のプロパティ、<xref:System.Windows.Trigger>です。 実行される比較は、参照品質チェックです。 2 つの値が等しいかどうか、関連付けられた場合<xref:System.Windows.Setter>s が、指定したプロパティの値を適用します。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.Trigger.Property%2A>と<xref:System.Windows.Trigger.Value%2A>プロパティを<xref:System.Windows.Trigger>の意味を持つようにトリガーします。 そのため、1 つまたは両方のプロパティが指定されていない場合は、例外がスローされます。  
+  
+<a name="xamlPropertyElementUsage_Value"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Value>  
+    Value  
+  </object.Value>  
+</object>  
+```  
+  
+   
+  
+## Examples  
+ 次の例の変更、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは**true**です。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バインドなどの式はサポートされていません。</exception>
+        <exception cref="T:System.InvalidOperationException">後に、<see cref="T:System.Windows.Trigger" />は使用中で、変更できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

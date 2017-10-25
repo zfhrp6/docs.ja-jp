@@ -1,0 +1,79 @@
+<Type Name="InsertItemPosition" FullName="System.Web.UI.WebControls.InsertItemPosition">
+  <TypeSignature Language="C#" Value="public enum InsertItemPosition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InsertItemPosition extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.InsertItemPosition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>場所を指定します、<see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレートの一部としてレポートが表示される、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.WebControls.ListView>コントロールを表示するように構成を<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>コントロール内の最後のアイテムとしてテンプレート。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemInserted#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemInserted#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FirstItem">
+      <MemberSignature Language="C#" Value="FirstItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.InsertItemPosition FirstItem = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.InsertItemPosition.FirstItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.InsertItemPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレートは最初の項目として表示されます、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LastItem">
+      <MemberSignature Language="C#" Value="LastItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.InsertItemPosition LastItem = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.InsertItemPosition.LastItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.InsertItemPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレートはの最後の項目として表示されます、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.InsertItemPosition None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.InsertItemPosition.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.InsertItemPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレートは表示されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

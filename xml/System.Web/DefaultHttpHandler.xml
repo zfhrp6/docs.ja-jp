@@ -1,0 +1,309 @@
+<Type Name="DefaultHttpHandler" FullName="System.Web.DefaultHttpHandler">
+  <TypeSignature Language="C#" Value="public class DefaultHttpHandler : System.Web.IHttpAsyncHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultHttpHandler extends System.Object implements class System.Web.IHttpAsyncHandler, class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DefaultHttpHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpAsyncHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>プロパティと既定の HTTP ハンドラーのメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.DefaultHttpHandler>オブジェクトが、HTTP パイプラインで受信要求をインターセプトと両方の要求のインターセプトにインターネット インフォメーション サービス (IIS) 6.0 を通じてが構成されて、要求された拡張機能に明示的なバインドが適用されません。  
+  
+ 要求のインターセプトは、IIS 6.0 で導入された、アプリケーションのワイルドカード マッピング機能を設定できます。 詳細については、検索、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)ワイルドカード アプリケーション マップを使用して URL を再マップする方法についてはします。  
+  
+ <xref:System.Web.DefaultHttpHandler>クラスが実装する、<xref:System.Web.IHttpAsyncHandler>非同期要求の処理を提供するインターフェイスです。 HTTP ハンドラーの概要については、次を参照してください。 [HTTP ハンドラーと HTTP モジュールの概要](http://msdn.microsoft.com/library/f540bdeb-d22e-4e1d-ba8a-fe6c9926283b)です。 さらに、詳細については、次のように表示します。  
+  
+-   非同期 HTTP ハンドラーを作成するには、次を参照してください。[チュートリアル: 非同期 HTTP ハンドラーを作成する](http://msdn.microsoft.com/library/1b5c4a27-599b-44d0-8a06-72edc6765aa9)です。  
+  
+-   HTTP ハンドラーを登録するは、次を参照してください。[する方法: HTTP ハンドラーの登録](http://msdn.microsoft.com/library/d5633f9a-03fb-4ccc-a799-dc67d656fa60)です。  
+  
+ クラスが派生できる、<xref:System.Web.DefaultHttpHandler>要求のカスタマイズされた処理を提供するクラス。 派生した非同期 HTTP ハンドラー、<xref:System.Web.DefaultHttpHandler>オーバーライド、<xref:System.Web.DefaultHttpHandler.BeginProcessRequest%2A>メソッド要求の処理方法を変更します。  
+  
+ A <xref:System.Web.DefaultHttpHandler> ASP.NET エラーを使用しません。 既存のコンテンツまたは IIS のエラーを使用する、こうした ISAPI のカスタム エラー メカニズムは変更なしで動作します。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生することで、カスタマイズされた HTTP ハンドラーを実装する方法を示します、<xref:System.Web.DefaultHttpHandler>クラスです。  
+  
+ [!code-csharp[System.Web.DefaultHttpHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DefaultHttpHandler/CS/source.cs#1)]
+ [!code-vb[System.Web.DefaultHttpHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DefaultHttpHandler/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultHttpHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DefaultHttpHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginProcessRequest">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginProcessRequest (System.Web.HttpContext context, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginProcessRequest(class System.Web.HttpContext context, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">組み込みのサーバーへの参照を提供するオブジェクトは、HTTP 要求を処理するために使用されるオブジェクトです。</param>
+        <param name="callback">非同期メソッドの呼び出しが完了したときに呼び出すメソッド。 場合<c>コールバック</c>は<see langword="null" />デリゲートは呼び出されません。</param>
+        <param name="state">要求を処理するために必要な任意の状態データ。</param>
+        <summary>HTTP ハンドラーへの非同期呼び出しを開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />プロセスの状態に関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期に使用する HTTP ハンドラーを作成するときに非同期のハンドラーを実装する必要が<xref:System.Web.DefaultHttpHandler.BeginProcessRequest%2A>と<xref:System.Web.DefaultHttpHandler.EndProcessRequest%2A>ASP.NET によって非同期的に呼び出されるメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">要求失敗して、要求されたファイルを処理するための前提条件がサフィックス .asp または、POST 要求が送信されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="protected System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DefaultHttpHandler.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在関連付けられているコンテキストを取得<see cref="T:System.Web.DefaultHttpHandler" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在のコンテキストを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DefaultHttpHandler.Context%2A>プロパティは、現在へのアクセスを提供<xref:System.Web.HttpContext>派生クラスのオブジェクト。 <xref:System.Web.HttpContext>オブジェクトは、組み込み<xref:System.Web.HttpApplication.Request%2A>、 <xref:System.Web.HttpApplication.Response%2A>、および<xref:System.Web.HttpApplication.Server%2A>要求のプロパティです。 コンテキスト情報にアクセスする方法の詳細については、次を参照してください。<xref:System.Web.HttpContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndProcessRequest">
+      <MemberSignature Language="C#" Value="public virtual void EndProcessRequest (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndProcessRequest(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.EndProcessRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">プロセスの状態に関する情報を格納するオブジェクト。</param>
+        <summary>非同期プロセスの終了メソッドを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.DefaultHttpHandler.EndProcessRequest%2A>が非同期処理中にキャッチする例外をスローするメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteUrlHeaders">
+      <MemberSignature Language="C#" Value="protected System.Collections.Specialized.NameValueCollection ExecuteUrlHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection ExecuteUrlHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DefaultHttpHandler.ExecuteUrlHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求ヘッダーと、要求と共に転送要求の値のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameValueCollection" />要求ヘッダーと値を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DefaultHttpHandler.ExecuteUrlHeaders%2A>はから派生したクラスで指定される場合を除き、プロパティを空のコレクションを返します、<xref:System.Web.DefaultHttpHandler>クラスです。 追加されるヘッダーは、バックアップにインターネット インフォメーション サービス (IIS) の要求を渡す前に、要求のヘッダーのコレクションに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="public virtual bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DefaultHttpHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求の現在のインスタンスを使用できることを示すブール値を取得、<see cref="T:System.Web.DefaultHttpHandler" />クラスです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.DefaultHttpHandler" />は再利用可能なそれ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に設定する、<xref:System.Web.DefaultHttpHandler.IsReusable%2A>プロパティを`true`または`false`、オーバーライド、<xref:System.Web.DefaultHttpHandler.IsReusable%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnExecuteUrlPreconditionFailure">
+      <MemberSignature Language="C#" Value="public virtual void OnExecuteUrlPreconditionFailure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnExecuteUrlPreconditionFailure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.OnExecuteUrlPreconditionFailure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態、<see cref="T:System.Web.DefaultHttpHandler" />から要求を処理するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前提条件は、要求ヘッダー フィールドにクライアントによって指定され、Web サーバーで評価されます。 たとえば、前提条件を使用すると、クライアントされないようにできます (たとえば、GET) 要求されたメソッド、1 つを意図したもの以外のリソースに適用されています。 詳細については、14、「Header Field Definitions」セクションを参照してください、[ハイパー テキスト転送プロトコル--http/1.1](http://go.microsoft.com/fwlink/?LinkID=73147) World Wide Web Consortium (W3C) の Web サイトを指定します。  
+  
+ <xref:System.Web.DefaultHttpHandler.OnExecuteUrlPreconditionFailure%2A>メソッドが呼び出されて前提条件を防ぐ、<xref:System.Web.DefaultHttpHandler>から要求を処理するオブジェクト。 派生クラスの方が優先、<xref:System.Web.DefaultHttpHandler.OnExecuteUrlPreconditionFailure%2A>前提条件が失敗したときに例外をスローするメソッド。 <xref:System.Web.DefaultHttpHandler>例外をスローしませんが、<xref:System.Web.DefaultHttpHandler.OnExecuteUrlPreconditionFailure%2A>メソッドです。  
+  
+ 前提条件が失敗する、次のいずれかが発生します。  
+  
+-   <xref:System.Web.HttpResponse.Write%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   <xref:System.Web.HttpResponse.AddHeader%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   <xref:System.Web.HttpResponse.Flush%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   応答のキャッシュ ポリシーを変更します。  
+  
+-   追加する、<xref:System.IO.Stream>オブジェクトをフィルターとして、<xref:System.Web.HttpResponse.Filter%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideExecuteUrlPath">
+      <MemberSignature Language="C#" Value="public virtual string OverrideExecuteUrlPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string OverrideExecuteUrlPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.OverrideExecuteUrlPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の要求のターゲット URL をオーバーライドします。</summary>
+        <returns>要求で使用するオーバーライドの URLまたは<see langword="null" />オーバーライドされた URL が指定されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DefaultHttpHandler.OverrideExecuteUrlPath%2A>メソッドを返します。`null`から派生したクラスでオーバーライドされた場合を除き、<xref:System.Web.DefaultHttpHandler>クラスです。  
+  
+ <xref:System.Web.DefaultHttpHandler.OverrideExecuteUrlPath%2A>だけで、応答がなかった場合、ASP.NET は IIS 6.0 ワーカー プロセス分離モードで実行されている場合は、前に変更メソッドが呼び出される、<xref:System.Web.DefaultHttpHandler>オブジェクトが呼び出されました。 応答は、次のいずれかが変更されます。  
+  
+-   <xref:System.Web.HttpResponse.Write%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   <xref:System.Web.HttpResponse.AddHeader%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   <xref:System.Web.HttpResponse.Flush%2A?displayProperty=nameWithType> の呼び出し  
+  
+-   応答のキャッシュ ポリシーを変更します。  
+  
+-   追加する、<xref:System.IO.Stream>オブジェクトをフィルターとして、<xref:System.Web.HttpResponse.Filter%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public virtual void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DefaultHttpHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">HTTP 要求を処理するために使用組み込みサーバー オブジェクトへの参照を提供するオブジェクト。</param>
+        <summary>により、 <see cref="T:System.Web.DefaultHttpHandler" /> HTTP Web 要求の処理するオブジェクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DefaultHttpHandler.ProcessRequest%2A>メソッドを同期的に呼び出すことはできません。 派生したクラス、<xref:System.Web.DefaultHttpHandler>クラスをオーバーライドして、<xref:System.Web.DefaultHttpHandler.ProcessRequest%2A>をカスタマイズした要求の処理を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.DefaultHttpHandler.ProcessRequest(System.Web.HttpContext)" />は同期的に呼び出されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

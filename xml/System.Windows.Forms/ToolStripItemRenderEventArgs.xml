@@ -1,0 +1,173 @@
+<Type Name="ToolStripItemRenderEventArgs" FullName="System.Windows.Forms.ToolStripItemRenderEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolStripItemRenderEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripItemRenderEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripItemRenderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生したオブジェクトの背景を表示するイベントのデータを提供<see cref="T:System.Windows.Forms.ToolStripItem" />で、<see cref="T:System.Windows.Forms.ToolStripRenderer" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripItemRenderEventArgs>クラスは、次のイベントのデータを提供します。  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderItemBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.RenderSplitButtonBackground>  
+  
+ さらに、次のメソッドのデータを提供します。  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawItemBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground%2A>  
+  
+-   <xref:System.Windows.Forms.ToolStripRenderer.DrawSplitButton%2A>  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>の周囲に罫線を描画するメソッド、<xref:System.Windows.Forms.ToolStripButton>コントロールの<xref:System.Windows.Forms.ToolStripItem.Image%2A>します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#14)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#14)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripItemRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStripItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStripItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripItemRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStripItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="item" Type="System.Windows.Forms.ToolStripItem" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />項目の描画に使用されるオブジェクト。</param>
+        <param name="item"><see cref="T:System.Windows.Forms.ToolStripItem" />が描画されます。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.ToolStripItemRenderEventArgs" /> 、指定されたクラス<see cref="T:System.Windows.Forms.ToolStripItem" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemRenderEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画に使用するグラフィックスを取得、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</summary>
+        <value><see cref="T:System.Drawing.Graphics" />描画に使用される、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>の周囲に罫線を描画するメソッド、<xref:System.Windows.Forms.ToolStripButton>コントロールの<xref:System.Windows.Forms.ToolStripItem.Image%2A>します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#14)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemRenderEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ToolStripItem" />を描画します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripItem" />を描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>の周囲に罫線を描画するメソッド、<xref:System.Windows.Forms.ToolStripButton>コントロールの<xref:System.Windows.Forms.ToolStripItem.Image%2A>します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#14)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolStrip">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStrip ToolStrip { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStrip ToolStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripItemRenderEventArgs.ToolStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Windows.Forms.ToolStripItem.Owner" />プロパティを<see cref="T:System.Windows.Forms.ToolStripItem" />を描画します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStrip" />の所有者は、<see cref="T:System.Windows.Forms.ToolStripItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ToolStripItem>のオーバーフロー領域では、 <xref:System.Windows.Forms.Form>、<xref:System.Windows.Forms.ToolStripItemRenderEventArgs.ToolStrip%2A>プロパティが空の文字列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A>の周囲に罫線を描画するメソッド、<xref:System.Windows.Forms.ToolStripButton>コントロールの<xref:System.Windows.Forms.ToolStripItem.Image%2A>します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#14)]
+ [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

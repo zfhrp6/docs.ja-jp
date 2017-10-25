@@ -1,0 +1,139 @@
+<Type Name="EmptyControlCollection" FullName="System.Web.UI.EmptyControlCollection">
+  <TypeSignature Language="C#" Value="public class EmptyControlCollection : System.Web.UI.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EmptyControlCollection extends System.Web.UI.ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.EmptyControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>標準的なサポートを提供する<see cref="T:System.Web.UI.ControlCollection" />は常に空のコレクション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、子コントロールが許可されていないカスタム コントロールを定義するときに使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[SystemWebUI_EmptyControlCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_EmptyControlCollection/CS/emptycontrolcollection.cs#1)]
+ [!code-vb[SystemWebUI_EmptyControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_EmptyControlCollection/VB/emptycontrolcollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EmptyControlCollection (System.Web.UI.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.EmptyControlCollection.#ctor(System.Web.UI.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.Control" />その子コントロールのコレクションとして、このコレクションを所有しています。</param>
+        <summary><see cref="T:System.Web.UI.EmptyControlCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、例外を発生させる、子コントロールでコントロールを設定しようとします。 これは、コンテナー コントロールで子コントロールが許可されていません。 実行可能ファイルをビルドするためのコマンドラインを次に示します。  
+  
+```vb  
+vbc /r:System.dll /r:System.Web.dll /t:library  
+       /out:myWebAppPath/bin/vb_myEmptyControlCollection.dll  
+       myEmptyControlCollection.vb  
+```  
+  
+```csharp  
+csc /t:library /out:myWebAppPath/bin/cs_myEmptyControlCollection.dll  
+    myEmptyControlCollection.cs  
+```  
+  
+ [!code-csharp[SystemWebUI_EmptyControlCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_EmptyControlCollection/CS/emptycontrolcollection.cs#1)]
+ [!code-vb[SystemWebUI_EmptyControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_EmptyControlCollection/VB/emptycontrolcollection.vb#1)]  
+  
+ 次のコード例では、上記で定義された空のカスタム コントロールを使用します。 この例を実行するときに例外が表示されます。 表示される値に注意してください、`Register`ディレクティブは、前のコマンドラインを反映します。  
+  
+```vb  
+<%@ Register TagPrefix="custom" Assembly="vb_myEmptyControlCollection" Namespace="CustomControls" %>  
+ <html>  
+  <body>  
+  <h1>Using an Empty Control</h1>  
+  <custom:MyVB_EmptyControl id="vbEmptyControlId" runat="server"/>  
+  </body>  
+ </html>  
+```  
+  
+```csharp  
+<%@ Register TagPrefix="custom" Assembly="cs_myEmptyControlCollection" Namespace="CustomControls" %>  
+ <html>  
+  <body>  
+  <h1>Using an Empty Control </h1>  
+  <custom:MyCS_EmptyControl id="csEmptyControlId" runat="server"/>  
+  </body>  
+ </html>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.EmptyControlCollection.Add(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加される <see cref="T:System.Web.UI.Control" />。 このパラメーターは常に無視されます。</param>
+        <summary>指定した追加の拒否<see cref="T:System.Web.UI.Control" />オブジェクトをコレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">常に発行される、コントロールで子コントロールが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public override void AddAt (int index, System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAt(int32 index, class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.EmptyControlCollection.AddAt(System.Int32,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="index">追加する位置のインデックス、<see cref="T:System.Web.UI.Control" />です。 このパラメーターは常に無視されます。</param>
+        <param name="child">追加される <see cref="T:System.Web.UI.Control" />。 このパラメーターは常に無視されます。</param>
+        <summary>指定した追加の拒否<see cref="T:System.Web.UI.Control" />オブジェクトをコレクションの指定したインデックス位置にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">常に発行される、コントロールで子コントロールが許可されていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

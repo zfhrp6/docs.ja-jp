@@ -1,0 +1,90 @@
+<Type Name="EventDeliveryFailedException" FullName="System.Workflow.Activities.EventDeliveryFailedException">
+  <TypeSignature Language="C#" Value="public sealed class EventDeliveryFailedException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EventDeliveryFailedException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.EventDeliveryFailedException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ホストから発生したイベントをワークフロー インスタンスに配信できないときにスローされる例外です。 通常、イベントは、ワークフロー インスタンスの <see cref="T:System.Workflow.Activities.ExternalDataExchangeService" /> から発生します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ この例外がスローされると、"インスタンス ID "{2}" のインターフェイス型 "{0}" のイベント "{1}" は配信できません。" という文字列がイベント ログに追加されます。  
+  
+ ステート マシン ワークフローを使用すると、"キュー '{0}' は有効ではありません" というメッセージを含む例外が発生する場合があります。 これは、ステート マシンの現在の状態では特定のイベントの処理方法を識別できないときに起こります。 たとえば、現在の状態以外の状態に、キュー '{0}' で表現される <xref:System.Workflow.Activities.EventDrivenActivity> を含む <xref:System.Workflow.Activities.HandleExternalEventActivity> が含まれている場合です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDeliveryFailedException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventDeliveryFailedException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.EventDeliveryFailedException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDeliveryFailedException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventDeliveryFailedException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>例外の理由を説明するエラー メッセージを使用して、<see cref="T:System.Workflow.Activities.EventDeliveryFailedException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDeliveryFailedException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventDeliveryFailedException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">この例外の原因となった <see cref="T:System.Exception" />。</param>
+        <summary>例外の理由を説明するエラー メッセージおよびこの例外の原因となった <see cref="T:System.Workflow.Activities.EventDeliveryFailedException" /> を使用して、<see cref="T:System.Exception" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

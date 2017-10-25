@@ -1,0 +1,187 @@
+<Type Name="SetStateActivity" FullName="System.Workflow.Activities.SetStateActivity">
+  <TypeSignature Language="C#" Value="public sealed class SetStateActivity : System.Workflow.ComponentModel.Activity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SetStateActivity extends System.Workflow.ComponentModel.Activity" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.SetStateActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Activity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.SetStateDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Workflow.ComponentModel.Design.ActivityToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.SetStateActivity), "Resources.SetStateActivity.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.SetStateValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ステート マシン ワークフローの <see cref="T:System.Workflow.Activities.StateActivity" /> への遷移を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.SetStateActivity> は、ステート マシン ワークフローでのみ使用できます。  
+  
+ <xref:System.Workflow.Activities.SetStateActivity> は、リーフ <xref:System.Workflow.Activities.StateActivity> アクティビティ (他の <xref:System.Workflow.Activities.StateActivity> アクティビティを格納していない <xref:System.Workflow.Activities.StateActivity>) への遷移だけを提供します。  
+  
+ <xref:System.Workflow.Activities.SetStateActivity> は、2 つの <xref:System.Workflow.Activities.StateActivity> クラス間の遷移だけを提供し、<xref:System.Workflow.Activities.StateActivity> から親 <xref:System.Workflow.Activities.StateActivity> への遷移などその他の組み合わせをサポートしません。  
+  
+ <xref:System.Workflow.Activities.SetStateActivity> は、イベント ハンドラーのアクティビティ ツリー内のリーフ ノードである必要があります。  
+  
+ 複数の <xref:System.Workflow.Activities.SetStateActivity> が存在できますが、そのすべてがリーフ ノードである必要があります。  
+  
+ <xref:System.Workflow.Activities.SetStateActivity> は、常に、<xref:System.Workflow.Activities.EventDrivenActivity> アクティビティの実行パスの最後のアクティビティです。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)サンプルです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SetStateActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SetStateActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.SetStateActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.SetStateActivity> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 詳細については、次を参照してください。[簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[WF_Samples#310](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets38.cs#310)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SetStateActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SetStateActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティのユーザー定義名。</param>
+        <summary>アクティビティ名を使用して、<see cref="T:System.Workflow.Activities.SetStateActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.SetStateActivity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetStateName">
+      <MemberSignature Language="C#" Value="public string TargetStateName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetStateName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.SetStateActivity.TargetStateName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.Activities.StateDropDownEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>遷移先の状態の名前を取得または設定します。</summary>
+        <value>遷移先のストリームの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Workflow.Activities.SetStateActivity> クラスの新しいインスタンスを作成して、3 つの状態間を遷移する簡単なステート マシンを実装し、<xref:System.Workflow.Activities.SetStateActivity.TargetStateName%2A> プロパティの値を設定する方法を示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 詳細については、次を参照してください。[簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[WF_Samples#183](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#183)]
+ [!code-vb[WF_Samples#183](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#183)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetStateNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty TargetStateNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty TargetStateNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.SetStateActivity.TargetStateNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> プロパティをターゲットとする <see cref="P:System.Workflow.Activities.SetStateActivity.TargetStateName" /> を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DependencyPropertyRemark](~/includes/dependencypropertyremark-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

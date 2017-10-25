@@ -1,0 +1,189 @@
+<Type Name="Run" FullName="System.Windows.Documents.Run">
+  <TypeSignature Language="C#" Value="public class Run : System.Windows.Documents.Inline" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Run extends System.Windows.Documents.Inline" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Run" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Inline</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Text")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>書式設定されたか、または書式設定されていない一続きのテキストを格納するための、インライン レベルのフロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降では、 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、<xref:System.Windows.Documents.Run.Text%2A>のプロパティ、<xref:System.Windows.Documents.Run>オブジェクトが依存関係プロパティをバインドできますを意味、<xref:System.Windows.Documents.Run.Text%2A>データ ソースへのプロパティです。 <xref:System.Windows.Documents.Run.Text%2A>プロパティで一方向のバインディングを完全にサポートする<xref:System.Windows.Controls.FlowDocumentReader>と読み取り専用のテキストを表示するその他のコントロールです。 データ バインディングの詳細については、「[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+  
+> [!NOTE]
+>  バインドするテキスト、<xref:System.Windows.Documents.Run>オブジェクト内に含まれる<xref:System.Windows.Controls.RichTextBox>はサポートされていません。 編集操作内で、<xref:System.Windows.Controls.RichTextBox>をクリアするバインドが発生する可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Run ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Run.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい既定のインスタンスを初期化、<see cref="T:System.Windows.Documents.Run" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Run (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Run.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">初期コンテンツを指定する文字列、<see cref="T:System.Windows.Documents.Run" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Run" />クラス、実行テキストの初期内容として、指定した文字列を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-csharp[RunSnippets#_Run_Const1](~/samples/snippets/csharp/VS_Snippets_Wpf/RunSnippets/CSharp/Window1.xaml.cs#_run_const1)]
+ [!code-vb[RunSnippets#_Run_Const1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RunSnippets/visualbasic/window1.xaml.vb#_run_const1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Run (string text, System.Windows.Documents.TextPointer insertionPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Windows.Documents.TextPointer insertionPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Run.#ctor(System.String,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="insertionPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="text">初期コンテンツを指定する文字列、<see cref="T:System.Windows.Documents.Run" />オブジェクト。</param>
+        <param name="insertionPosition">A<see cref="T:System.Windows.Documents.TextPointer" />を作成すると後に、実行するテキストを挿入する位置の挿入位置を指定または<see langword="null" />ありませんを自動挿入するためです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Run" />クラス、指定した文字列のテキストの初期コンテンツを実行し、<see cref="T:System.Windows.Documents.TextPointer" />テキスト ランの挿入位置を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-csharp[RunSnippets#_Run_Const2](~/samples/snippets/csharp/VS_Snippets_Wpf/RunSnippets/CSharp/Window1.xaml.cs#_run_const2)]
+ [!code-vb[RunSnippets#_Run_Const2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RunSnippets/visualbasic/window1.xaml.vb#_run_const2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeText">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeText (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeText(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Run.ShouldSerializeText(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">このオブジェクトのシリアル化サービス マネージャー オブジェクトです。</param>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Documents.Run.Text" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Documents.Run" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Documents.Run.Text" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Run.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このテキストの書式設定されていないテキストの内容を取得または<see cref="T:System.Windows.Documents.Run" />です。</summary>
+        <value>このテキストの書式設定されていないテキストの内容を指定する文字列<see cref="T:System.Windows.Documents.Run" />です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降では、 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、<xref:System.Windows.Documents.Run.Text%2A>のプロパティ、<xref:System.Windows.Documents.Run>オブジェクトが依存関係プロパティをバインドできますを意味、<xref:System.Windows.Documents.Run.Text%2A>データ ソースへのプロパティです。 <xref:System.Windows.Documents.Run.Text%2A>プロパティで一方向のバインディングを完全にサポートする<xref:System.Windows.Controls.FlowDocumentReader>と読み取り専用のテキストを表示するその他のコントロールです。 データ バインディングの詳細については、「[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)」を参照してください。  
+  
+> [!NOTE]
+>  バインドするテキスト、<xref:System.Windows.Documents.Run>オブジェクト内に含まれる<xref:System.Windows.Controls.RichTextBox>はサポートされていません。 編集操作内で、<xref:System.Windows.Controls.RichTextBox>をクリアするバインドが発生する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Run.Text%2A>の属性、<xref:System.Windows.Documents.Run>しを使用して、直接バインド要素。  
+  
+ [!code-xaml[BindableRunSnippet#BindableRun](~/samples/snippets/csharp/VS_Snippets_Wpf/bindablerunsnippet/CS/window1.xaml#bindablerun)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Run.TextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Run.Text" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,160 @@
+<Type Name="MouseButtons" FullName="System.Windows.Forms.MouseButtons">
+  <TypeSignature Language="C#" Value="public enum MouseButtons" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MouseButtons extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MouseButtons" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>押されたマウス ボタンを定義する定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は含む、多くのクラスによって使用<xref:System.Windows.Forms.AxHost>、 <xref:System.Windows.Forms.Control>、 <xref:System.Windows.Forms.DataGrid>、 <xref:System.Windows.Forms.Form>、 <xref:System.Windows.Forms.RadioButton>、 <xref:System.Windows.Forms.Splitter>、 <xref:System.Windows.Forms.StatusBar>、および<xref:System.Windows.Forms.UpDownBase>です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Forms.TextBoxBase.GetCharFromPosition%2A>の内容から文字を取得するメソッド、<xref:System.Windows.Forms.RichTextBox>のコントロールの座標を指定します。 コード例にある座標を使用して、<xref:System.Windows.Forms.MouseEventArgs>文字を取得するコントロールの場所を特定するイベント ハンドラーにパラメーターとして渡されるオブジェクト。 文字が表示されます、<xref:System.Windows.Forms.MessageBox>スペース文字ではない場合。 この例では、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`が作成されたコード例に接続されていると、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ [!code-cpp[RichTextBox.GetCharAtIndex#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.GetCharAtIndex/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.GetCharAtIndex#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.GetCharAtIndex/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.GetCharAtIndex#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.GetCharAtIndex/VB/form1.vb#1)]  
+  
+ 次の例に、マウスのパスを描画する別のマウス イベントを使用して、<xref:System.Windows.Forms.Panel>です。 直線セグメントを追加、<xref:System.Drawing.Drawing2D.GraphicsPath>各<xref:System.Windows.Forms.Control.MouseMove>と<xref:System.Windows.Forms.Control.MouseDown>発生するイベントです。 グラフィックスを更新する、<xref:System.Windows.Forms.Control.Invalidate%2A>のメソッドは、<xref:System.Windows.Forms.Panel>ごとに`MouseDown`と`MouseUp`イベント。 さらに、グラフィックのパスがときに上下にスクロールされる基準、<xref:System.Windows.Forms.Control.MouseWheel>イベントが発生します。 その他のマウス イベントと同様に<xref:System.Windows.Forms.Control.MouseHover>、画面にも識別されます。 マウスでに関する追加情報も、画面に表示されますが、<xref:System.Windows.Forms.SystemInformation>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.MouseEvent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/CPP/mouseeventexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MouseEvent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/CS/mouseeventexample.cs#1)]
+ [!code-vb[System.Windows.Forms.MouseEvent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/VB/mouseeventexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="Left" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons Left = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.Left" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ボタンが押されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Middle">
+      <MemberSignature Language="C#" Value="Middle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons Middle = int32(4194304)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.Middle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの中央ボタンが押されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ボタンが押されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons Right = int32(2097152)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右ボタンが押されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton1">
+      <MemberSignature Language="C#" Value="XButton1" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons XButton1 = int32(8388608)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.XButton1" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の XButton が押されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft の Windows 2000 では、5 つのボタン付きのマウスは、Microsoft IntelliMouse Explorer のサポートが導入しています。 2 つの新しいマウス ボタン (XBUTTON1 および XBUTTON2) は、旧バージョンと/前方ナビゲーションを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton2">
+      <MemberSignature Language="C#" Value="XButton2" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MouseButtons XButton2 = int32(16777216)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MouseButtons.XButton2" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の XButton が押されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft の Windows 2000 では、5 つのボタン付きのマウスは、Microsoft IntelliMouse Explorer のサポートが導入しています。 2 つの新しいマウス ボタン (XBUTTON1 および XBUTTON2) は、旧バージョンと/前方ナビゲーションを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,62 @@
+<Type Name="AuthorizationFailedEventArgs" FullName="System.IdentityModel.Services.AuthorizationFailedEventArgs">
+  <TypeSignature Language="C#" Value="public class AuthorizationFailedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthorizationFailedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.AuthorizationFailedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>承認が失敗したときにイベントが発生し、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) は、id プロバイダー (STS) にリダイレクトするかどうかを決定することです。  
+  
+ 設定、 <xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider%2A> WSFAM によってリダイレクトのランタイム ロジックが呼び出されるかどうかを決定するプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthorizationFailedEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.AuthorizationFailedEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.AuthorizationFailedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToIdentityProvider">
+      <MemberSignature Language="C#" Value="public bool RedirectToIdentityProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RedirectToIdentityProvider" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、実行時 (<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />) を id プロバイダーにリダイレクトする必要があります。</summary>
+        <value>
+          <see langword="true" />リダイレクトします。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

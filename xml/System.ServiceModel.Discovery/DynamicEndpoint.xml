@@ -1,0 +1,89 @@
+<Type Name="DynamicEndpoint" FullName="System.ServiceModel.Discovery.DynamicEndpoint">
+  <TypeSignature Language="C#" Value="public class DynamicEndpoint : System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicEndpoint extends System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DynamicEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.ServiceEndpoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行時にエンドポイント アドレスを動的に検索するために WS-Discovery を使用するエンドポイント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DynamicEndpoint> を使用するときに、<xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> がない場合は、<xref:System.ServiceModel.Discovery.DynamicEndpoint> コンストラクターでユーザーが指定するバインディングに追加されます。 <xref:System.ServiceModel.Discovery.DynamicEndpoint.FindCriteria%2A> プロパティを使用すると、使用するサービスを説明できるようになります。 <xref:System.ServiceModel.Discovery.DynamicEndpoint.FindCriteria%2A> によって使用される <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> と <xref:System.ServiceModel.Discovery.DynamicEndpoint> は、<xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> で指定されているこれらの値をオーバーライドします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicEndpoint (System.ServiceModel.Description.ContractDescription contract, System.ServiceModel.Channels.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ContractDescription contract, class System.ServiceModel.Channels.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DynamicEndpoint.#ctor(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Channels.Binding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="contract">コントラクト。</param>
+        <param name="binding">バインディング。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.DynamicEndpoint" /> と <see cref="T:System.ServiceModel.Description.ContractDescription" /> を使用して、<see cref="T:System.ServiceModel.Channels.Binding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoveryEndpointProvider">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryEndpointProvider DiscoveryEndpointProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.DiscoveryEndpointProvider DiscoveryEndpointProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DynamicEndpoint.DiscoveryEndpointProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryEndpointProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>探索エンドポイントを提供するオブジェクトを取得または設定します。</summary>
+        <value>探索エンドポイント プロバイダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindCriteria">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.FindCriteria FindCriteria { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.FindCriteria FindCriteria" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DynamicEndpoint.FindCriteria" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.FindCriteria</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスを検索するために使用される <see cref="T:System.ServiceModel.Discovery.FindCriteria" /> を取得または設定します。</summary>
+        <value>検索基準。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.FindCriteria> は、呼び出すサービスを説明するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

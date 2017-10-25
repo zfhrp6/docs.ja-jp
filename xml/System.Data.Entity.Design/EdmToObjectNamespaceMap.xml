@@ -1,0 +1,196 @@
+<Type Name="EdmToObjectNamespaceMap" FullName="System.Data.Entity.Design.EdmToObjectNamespaceMap">
+  <TypeSignature Language="C#" Value="public class EdmToObjectNamespaceMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EdmToObjectNamespaceMap extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コードの名前空間のマッピングに概念モデルのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間マッピングは、<xref:System.Data.Entity.Design.EntityClassGenerator> クラスで、別のコードの名前空間を指定して CSDL ファイルで指定したコードとは別のコードを生成する場合に使用します。 名前空間マッピングは、型への参照が生成された場合に検討されます。 エントリが見つかると、この値を使用して型への修飾参照が生成されます。見つからない場合は CSDL 名前空間が使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string edmNamespace, string objectNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string edmNamespace, string objectNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EdmToObjectNamespaceMap.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmNamespace" Type="System.String" />
+        <Parameter Name="objectNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="edmNamespace">モデルの名前空間名。</param>
+        <param name="objectNamespace">コードの名前空間名。</param>
+        <summary><see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> に名前空間マッピングを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EdmToObjectNamespaceMap.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> からすべての名前空間マッピングを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string edmNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string edmNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EdmToObjectNamespaceMap.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="edmNamespace">モデルの名前空間名。</param>
+        <summary><see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> で指定したモデルの名前空間名が格納されているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />モデル名前空間の名前が見つかった場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EdmToObjectNamespaceMap.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> のマッピング数を取得します。</summary>
+        <value>マッピングの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmNamespaces">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;string&gt; EdmNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;string&gt; EdmNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EdmToObjectNamespaceMap.EdmNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Entity.Design.EdmToObjectNamespaceMap" /> のモデルの名前空間名の一覧を取得します。</summary>
+        <value>モデルの名前空間名の一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string edmNamespace] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.EdmToObjectNamespaceMap.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="edmNamespace">モデルの名前空間名。</param>
+        <summary>指定したモデルの名前空間名のコードの名前空間名を取得します。値の設定も可能です。</summary>
+        <value>指定したモデルの名前空間名にマップされるコードの名前空間名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (string edmNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(string edmNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EdmToObjectNamespaceMap.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="edmNamespace">削除するモデルの名前空間マッピング。</param>
+        <summary>指定した名前空間マッピングを削除します。</summary>
+        <returns>
+          <see langword="true" />名前空間のマッピングが正常に削除された場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetObjectNamespace">
+      <MemberSignature Language="C#" Value="public bool TryGetObjectNamespace (string edmNamespace, out string objectNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectNamespace(string edmNamespace, [out] string&amp; objectNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.EdmToObjectNamespaceMap.TryGetObjectNamespace(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmNamespace" Type="System.String" />
+        <Parameter Name="objectNamespace" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="edmNamespace">モデルの名前空間名。</param>
+        <param name="objectNamespace">コードの名前空間名。</param>
+        <summary>オブジェクトの名前空間が取得されたかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトの名前空間が取得された場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

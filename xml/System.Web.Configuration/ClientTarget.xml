@@ -1,0 +1,183 @@
+<Type Name="ClientTarget" FullName="System.Web.Configuration.ClientTarget">
+  <TypeSignature Language="C#" Value="public sealed class ClientTarget : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientTarget extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ClientTarget" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロールがコンテンツを表示するターゲット ユーザー エージェントに関連付けられているエイリアスを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTarget>クラスに追加される要素を指す、`clientTarget`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.ClientTarget>クラスを含むグループが属する、<xref:System.Web.Configuration.ClientTargetCollection>クラスおよび<xref:System.Web.Configuration.ClientTargetSection>クラスです。  
+  
+ <xref:System.Web.Configuration.ClientTarget>クラスには、ユーザー エージェントとも呼ばれます、クライアントのブラウザーを識別する 2 つのプロパティが含まれています。 1 つのプロパティは、2 番目のプロパティで識別される、クライアント ブラウザーに関連付けられているエイリアスです。 ASP.NET では、この情報を使用して、ページ内のサーバー コントロールを表示します。  
+  
+ 使用方法については、ユーザー エージェント、またはそのエイリアスは、プログラムで、次を参照してください。、<xref:System.Web.UI.Page.ClientTarget%2A?displayProperty=nameWithType>プロパティです。 使用方法については、ユーザー エージェント、またはそのエイリアスは、宣言によって、次を参照してください。 [@ Page](http://msdn.microsoft.com/en-us/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)です。  
+  
+ 場合、<xref:System.Web.UI.Page.ClientTarget%2A?displayProperty=nameWithType>プロパティが設定されていない、<xref:System.Web.HttpBrowserCapabilities>オブジェクトに関連付けられている、<xref:System.Web.UI.Page.Request%2A?displayProperty=nameWithType>プロパティには、クライアント ブラウザーの機能が反映されます。 (ブラウザーの種類は必ずしもそのブラウザーの特定のインスタンスの設定の機能を反映)。プロパティを設定すると、クライアント ブラウザーの検出が無効になり、ページが定義したユーザー エージェント文字列に関連付けられているブラウザーの機能を使用します。 任意の有効なユーザー エージェント文字列には、このプロパティを設定することができます。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかのプロパティの値を宣言によって指定する方法を説明、<xref:System.Web.Configuration.ClientTarget>クラスです。 2 つ目は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetCollection>構成ファイルからのオブジェクト。 このオブジェクトを使用してアクセスする、<xref:System.Web.Configuration.ClientTarget>オブジェクトが含まれています。  
+  
+ 次のコード例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.ClientTarget>クラスです。  
+  
+```  
+<clientTarget>  
+  <add alias=  
+    "uplevel"   
+    userAgent="Mozilla/5.0 (compatible;MSIE 6.0;Windows NT 5.1)"/>  
+  <add alias="downlevel" userAgent="Generic Downlevel"/>  
+</clientTarget>  
+```  
+  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetCollection>構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#1)]
+ [!code-vb[System.Web.Configuration.ClientTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientTarget (string alias, string userAgent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string alias, string userAgent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTarget.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="alias" Type="System.String" />
+        <Parameter Name="userAgent" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="alias">特定のユーザー エージェントを参照するために使用する名前です。</param>
+        <param name="userAgent">ユーザー エージェントの識別名。</param>
+        <summary><see cref="T:System.Web.Configuration.ClientTarget" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alias">
+      <MemberSignature Language="C#" Value="public string Alias { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Alias" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTarget.Alias" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("alias", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー エージェントのエイリアスを取得します。</summary>
+        <value>特定のユーザー エージェントを参照するために使用する名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTarget.Alias%2A>プロパティを指す、`alias`の属性、`add`内の要素、`clientTarget`構成ファイルのセクションです。  
+  
+ ASP.NET 構成の既定値には、次のエイリアスが含まれます。  
+  
+-   `uplevel`、HTML および Internet Explorer 6.0 とそれ以降のバージョンでサポートする ECMAScript に送信する ASP.NET に指示します。  
+  
+-   `downlevel`、HTML と Internet Explorer 6.0 より前のブラウザーでサポートされているバージョンにスクリプトを制限する ASP.NET に指示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTarget.Alias%2A>既存の Web アプリケーションの構成ファイルからです。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#3)]
+ [!code-vb[System.Web.Configuration.ClientTarget#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTarget.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTarget.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("userAgent", IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー エージェントの識別名を取得します。</summary>
+        <value>ユーザー エージェントの識別名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTarget.UserAgent%2A>プロパティを指す、`userAgent`の属性、`add`内の要素、`clientTarget`構成ファイルのセクションです。  
+  
+ ASP.NET 構成の既定値は、さまざまな Microsoft Internet Explorer のバージョンのページをカスタマイズできるようにします。 それらの間、別名を検索`uplevel`、HTML および ECMAScript でサポートされている Internet Explorer 4.0 以降、クライアントに送信する ASP.NET に指示するおよび`downlevel`HTML と Internet Explorer 4.0 より前のブラウザーがサポートするスクリプトを制限する ASP.NET に指示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTarget.UserAgent%2A>既存の Web アプリケーションの構成ファイルからです。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#4)]
+ [!code-vb[System.Web.Configuration.ClientTarget#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

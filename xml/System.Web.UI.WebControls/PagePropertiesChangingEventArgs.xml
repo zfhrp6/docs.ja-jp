@@ -1,0 +1,102 @@
+<Type Name="PagePropertiesChangingEventArgs" FullName="System.Web.UI.WebControls.PagePropertiesChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class PagePropertiesChangingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PagePropertiesChangingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PagePropertiesChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.PagePropertiesChanging" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.ListView.PagePropertiesChanging?displayProperty=nameWithType>イベントされるたびに、<xref:System.Web.UI.WebControls.ListView.SetPageProperties%2A?displayProperty=nameWithType>メソッドが呼び出されます。 これで、ボタンの場合に発生、<xref:System.Web.UI.WebControls.DataPager>に関連付けられているコントロール、<xref:System.Web.UI.WebControls.ListView>コントロールがクリックされた、および、新しい<xref:System.Web.UI.WebControls.ListView.StartRowIndex%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.ListView.MaximumRows%2A?displayProperty=nameWithType>値を指定して、<xref:System.Web.UI.WebControls.DataPager>コントロール。 これは、ように消去など、このイベントが発生するたびに、カスタムのルーチンを提供する、<xref:System.Web.UI.WebControls.ListView.SelectedIndex%2A>または<xref:System.Web.UI.WebControls.ListView.EditIndex%2A>のプロパティ、<xref:System.Web.UI.WebControls.ListView>コントロール。  
+  
+ A<xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs>オブジェクトは、イベント ハンドラーに渡されます。 このオブジェクトでは、ユーザーによって選択されたページの最初の項目のインデックスを確認することができます。 各ページに表示する項目の最大数を指定することもできます。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PagePropertiesChangingEventArgs (int startRowIndex, int maximumRows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 startRowIndex, int32 maximumRows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startRowIndex">ページの最初の項目のインデックス。</param>
+        <param name="maximumRows">データの各ページに表示する項目の最大数。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.PagePropertiesChangingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはイベントを発生させるときにコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.StartRowIndex%2A>|`startRowIndex` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.MaximumRows%2A>|`maximumRows` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRows">
+      <MemberSignature Language="C#" Value="public int MaximumRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.MaximumRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの各ページに表示する項目の最大数を取得します。</summary>
+        <value>データのページに表示するアイテムの最大数、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRowIndex">
+      <MemberSignature Language="C#" Value="public int StartRowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartRowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagePropertiesChangingEventArgs.StartRowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの最初の項目のインデックスを取得します。</summary>
+        <value>内のデータのページに表示する最初の項目のインデックス、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

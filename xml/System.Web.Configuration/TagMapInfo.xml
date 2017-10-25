@@ -1,0 +1,257 @@
+<Type Name="TagMapInfo" FullName="System.Web.Configuration.TagMapInfo">
+  <TypeSignature Language="C#" Value="public sealed class TagMapInfo : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TagMapInfo extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.TagMapInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ステートメントを再マップの 1 つの構成タグが含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagMapInfo>クラスでは、コンパイル時にタグの種類を再マップすることができます。 代わりに使用される元のタグの種類、構成ファイルのスコープ内の ASP.NET アプリケーション内のすべてのページとコントロールのマップされた型をこの再マップします。  
+  
+ <xref:System.Web.Configuration.TagMapCollection>クラスでは、プログラムでアクセスして変更することができます、`tagMapping`のサブセクション、`pages`構成ファイルのセクションです。 内で、`tagMappings`サブセクション、追加したり、型の完全修飾の厳密な名前を指定するタグの種類間のマッピングを削除します。  
+  
+> [!NOTE]
+>  その他の属性およびコレクションとは異なり、 `pages`  セクションで、対応する ASP.NET ページ ディレクティブがないタグの再マップします。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、宣言のいくつかのプロパティの値を指定する方法を示します、<xref:System.Web.Configuration.TagMapInfo>クラスです。  
+  
+```  
+<system.web>  
+  <pages>  
+    <tagMapping>  
+      <add  
+        tagType=  
+          "System.Web.UI.WebControls.WebParts.WebPartManager"  
+        mappedTagType=  
+          "Microsoft.Sharepoint.WebPartPartManager,   
+           MSPS.Web.dll, Version='2.0.0.0'"   
+      />  
+    </tagMapping>  
+  </pages>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TagMapCollection>タグ マッピングの設定をプログラムで変更するクラス。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#17)]
+ [!code-vb[System.Web.Configuration.PagesSection#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#17)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TagMapInfo (string tagTypeName, string mappedTagTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string tagTypeName, string mappedTagTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagMapInfo.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tagTypeName" Type="System.String" />
+        <Parameter Name="mappedTagTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagTypeName">リマップ対象タグの種類の完全修飾名。</param>
+        <param name="mappedTagTypeName">リマップ先となるタグ、およびサポート情報の種類の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.TagMapInfo" />クラスが、渡されたプロパティの値に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TagMapInfo.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#42](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#42)]
+ [!code-vb[System.Web.Configuration.PagesSection#42](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagMapInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較するオブジェクト。</param>
+        <summary>このインスタンスを別のオブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />場合は、オブジェクトが同じです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagMapInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのハッシュ値を返します。</summary>
+        <returns>現在のインスタンスのハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MappedTagType">
+      <MemberSignature Language="C#" Value="public string MappedTagType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MappedTagType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagMapInfo.MappedTagType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mappedTagType")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタグのリマップ先となる型の名前を設定します。</summary>
+        <value>タグのリマップ先となる型の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タグの再マップは、コンパイル時に発生します。 このリマップによって、マップされた型 (によって指定された、<xref:System.Web.Configuration.TagMapInfo.MappedTagType%2A>プロパティ) 元のタグの種類の代わりに使用する (によって指定された、<xref:System.Web.Configuration.TagMapInfo.TagType%2A>プロパティ)、構成ファイルのスコープ内の ASP.NET アプリケーション内のすべてのページとコントロール。  
+  
+> [!NOTE]
+>  このプロパティに空の文字列値には、オブジェクトがシリアル化されるときに例外をスローする構成システムが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagMapInfo.MappedTagType%2A> プロパティの使用方法を示しています。 例の一部では、<xref:System.Web.Configuration.PagesSection>型です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagMapInfo.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeElement">
+      <MemberSignature Language="C#" Value="protected override bool SerializeElement (System.Xml.XmlWriter writer, bool serializeCollectionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool SerializeElement(class System.Xml.XmlWriter writer, bool serializeCollectionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TagMapInfo.SerializeElement(System.Xml.XmlWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="serializeCollectionKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <param name="serializeCollectionKey">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagType">
+      <MemberSignature Language="C#" Value="public string TagType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TagMapInfo.TagType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("tagType", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリマップ対象タグの元の型の名前を設定します。</summary>
+        <value>リマップ対象タグの元の型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タグの再マップは、コンパイル時に発生します。 このリマップによって、マップされた型 (によって指定された、<xref:System.Web.Configuration.TagMapInfo.MappedTagType%2A>プロパティ) 元のタグの種類の代わりに使用する (によって指定された、<xref:System.Web.Configuration.TagMapInfo.TagType%2A>プロパティ)、構成ファイルのスコープ内の ASP.NET アプリケーション内のすべてのページとコントロール。  
+  
+> [!NOTE]
+>  このプロパティに空の文字列値には、オブジェクトがシリアル化されるときに例外をスローする構成システムが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TagMapInfo.TagType%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,240 @@
+<Type Name="IHierarchyData" FullName="System.Web.UI.IHierarchyData">
+  <TypeSignature Language="C#" Value="public interface IHierarchyData" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHierarchyData" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IHierarchyData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ノードのオブジェクトと、ノードの特性を説明するいくつかのプロパティを含む、階層データ構造のノードを公開します。 実装するオブジェクト、<see cref="T:System.Web.UI.IHierarchyData" />に格納できるインターフェイス<see cref="T:System.Web.UI.IHierarchicalEnumerable" />コレクション、され、使用される ASP.NET サイト ナビゲーションおよびデータ ソース コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchyData>インターフェイスは、階層構造のノードを表すし、その親と子ノードへの階層リレーションシップを追跡するクラスによって実装されます。 実装するクラス、<xref:System.Web.UI.IHierarchyData>インターフェイスを実装するコレクションに格納できる、<xref:System.Web.UI.IHierarchicalEnumerable>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.IHierarchyData>インターフェイスをラップするクラスを<xref:System.IO.FileSystemInfo>オブジェクト。 <xref:System.IO.FileSystemInfo>クラスは、階層的なデータ ノードの良い例を<xref:System.Web.UI.IHierarchyData>ASP.NET 階層的なデータ ソース コントロールのインターフェイスを表します。 このコード例に示されている例の一部である、<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#5](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#5)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#5)]  
+  
+ 次のコード例を示す方法を再帰的に反復処理、<xref:System.Web.UI.IHierarchicalEnumerable>コレクション、展開、<xref:System.Web.UI.IHierarchyData>を使用して列挙子からの項目、<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>メソッド、し、データ項目で基本的な作業を実行します。  
+  
+ [!code-aspx-csharp[System.Web.UI.IHierarchyData_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/CS/ihd_1.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.IHierarchyData_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/VB/ihd_1.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetChildren">
+      <MemberSignature Language="C#" Value="public System.Web.UI.IHierarchicalEnumerable GetChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable GetChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IHierarchyData.GetChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の階層ノードのすべての子ノードを表す列挙オブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchicalEnumerable" />現在の階層ノードの子ノードのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.IHierarchyData.HasChildren%2A>プロパティを決定するかどうか、<xref:System.Web.UI.IHierarchyData>ノードが子ノードです。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、 <xref:System.Web.UI.IHierarchyData.HasChildren%2A> 、現在の階層的なデータ ノードが子ノードを持つかどうかを特定し、資格情報を取得するプロパティを使用して、<xref:System.Web.UI.IHierarchyData.GetChildren%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.IHierarchyData>インターフェイスです。  
+  
+ [!code-csharp[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/CS/ihd_1.aspx.cs#2)]
+ [!code-vb[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/VB/ihd_1.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public System.Web.UI.IHierarchyData GetParent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchyData GetParent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IHierarchyData.GetParent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchyData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.IHierarchyData" />を現在の階層ノードの親ノードを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchyData" />を現在の階層ノードの親ノードを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchyData>インターフェイスが HasParent 便利なプロパティを定義していないので、呼び出し元の戻り値を確認する必要があります、<xref:System.Web.UI.IHierarchyData.GetParent%2A>メソッド`null`を決定するかどうか、現在<xref:System.Web.UI.IHierarchyData>ノード、ノードが属している、階層データ構造のルート ノードです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.IHierarchyData.GetParent%2A>を実装するクラスのメソッド、<xref:System.Web.UI.IHierarchyData>インターフェイスです。 `FileSystemHierarchyData`ラップ、<xref:System.IO.FileSystemInfo>オブジェクト、および<xref:System.Web.UI.IHierarchyData.GetParent%2A>メソッドの実装の種類のチェック、<xref:System.IO.FileSystemInfo>オブジェクト、および種類に基づいて、適切な親オブジェクトを返します。 このコード例に示されている例の一部である、<xref:System.Web.UI.IHierarchyData>インターフェイスおよび<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#10](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#10)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasChildren">
+      <MemberSignature Language="C#" Value="public bool HasChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IHierarchyData.HasChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、階層的なデータ ノードを<see cref="T:System.Web.UI.IHierarchyData" />を表すオブジェクトを持つすべての子ノードです。</summary>
+        <value>
+          <see langword="true" />現在のノードに子ノードがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchyData.HasChildren%2A>プロパティは、呼び出し元の戻り値のチェックを避けるためにできるようにする便利なプロパティ、<xref:System.Web.UI.IHierarchyData.GetChildren%2A>メソッド`null`です。 場合、<xref:System.Web.UI.IHierarchyData.HasChildren%2A>プロパティから返される`true`を呼び出し、<xref:System.Web.UI.IHierarchyData.GetChildren%2A>を取得する方法、<xref:System.Web.UI.IHierarchicalEnumerable>子ノードのコレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ASP.NET の階層的なデータ バインド コントロールの使用方法を示しています、<xref:System.Web.UI.IHierarchyData>再帰的なデータ バインディング メソッドのオブジェクト。 内の項目、<xref:System.Web.UI.IHierarchicalEnumerable>コレクションは列挙型、および各、<xref:System.Web.UI.IHierarchyData>を使用してオブジェクトを取得、<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>メソッドです。 最後に、<xref:System.Web.UI.IHierarchyData.HasChildren%2A>プロパティのチェックが再帰的に検索するかどうかを判断します。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#5](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#5)]
+ [!code-vb[Samples.AspNet.GeneologyTree#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IHierarchyData.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層的なデータ ノードを取得、<see cref="T:System.Web.UI.IHierarchyData" />オブジェクトを表します。</summary>
+        <value><see cref="T:System.Object" />階層的なデータ ノード オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くのクラスなど、階層的なデータ ノードを表すときに、<xref:System.Web.SiteMapNode>クラスを実装、<xref:System.Web.UI.IHierarchyData>インターフェイスを直接、その他のクラスは、インターフェイスが実装されているクラスのラッパーとしてのみ機能します。 <xref:System.Web.UI.IHierarchyData.Item%2A>プロパティは、ビジネス オブジェクトが機能的に等価の場合、これらのデザインの状況では、提供、<xref:System.Web.UI.IHierarchyData>オブジェクトが、簡単に再設計することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスする方法を示します<xref:System.Web.UI.IHierarchyData>プロパティの型を調べて、<xref:System.Web.UI.IHierarchyData>オブジェクトを使用して、<xref:System.Web.UI.IHierarchyData.Type%2A>プロパティ、およびキャストをより多くの種類に固有の操作を実行するオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.IHierarchyData>インターフェイスです。  
+  
+ [!code-csharp[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/CS/ihd_1.aspx.cs#2)]
+ [!code-vb[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/VB/ihd_1.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IHierarchyData.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの階層パスを取得します。</summary>
+        <value>A<see cref="T:System.String" />階層的な基準としたパス、現在のノードを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchyData.Path%2A>にプロパティを渡すことができます、<xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView%2A>を取得する方法、<xref:System.Web.UI.HierarchicalDataSourceView>オブジェクトで識別されるノードに対応する<xref:System.Web.UI.IHierarchyData.Path%2A>です。  
+  
+> [!CAUTION]
+>  <xref:System.Web.UI.IHierarchyData.Path%2A>プロパティ含めることはできません、ホスト環境に関する機密情報がデータ バインド コントロール内のクライアントに表示されるためです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.IHierarchyData.Path%2A>を実装するクラスのプロパティ、<xref:System.Web.UI.IHierarchyData>インターフェイスです。 `FileSystemHierarchyData`ラップ、<xref:System.IO.FileSystemInfo>オブジェクト、および<xref:System.Web.UI.IHierarchyData.Path%2A>プロパティの実装は、ファイル システム パスを返します。 このコード例に示されている例の一部である、<xref:System.Web.UI.IHierarchyData>インターフェイスおよび<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#7](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#7)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IHierarchyData.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の名前を取得<see cref="T:System.Object" />に含まれている、<see cref="P:System.Web.UI.IHierarchyData.Item" />プロパティです。</summary>
+        <value>オブジェクトの種類の名前、<see cref="T:System.Web.UI.IHierarchyData" />オブジェクトを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchyData.Type%2A>プロパティは返されません、<xref:System.Type?displayProperty=nameWithType>で表されるオブジェクトの<xref:System.Web.UI.IHierarchyData>オブジェクト。 別のバインド可能なプロパティを持つ階層内の項目を区別するためにデータ バインド コントロールで使用される名前を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、basic を記述する方法を示します<xref:System.Web.UI.IHierarchyData>プロパティを<xref:System.Web.HttpResponse>ストリームの種類を確認して、<xref:System.Web.UI.IHierarchyData>オブジェクトを使用して、<xref:System.Web.UI.IHierarchyData.Type%2A>プロパティは、複数の種類に固有の操作を実行するオブジェクトをキャストします。 このコード例に示されている例の一部である、<xref:System.Web.UI.IHierarchyData>インターフェイスです。  
+  
+ [!code-csharp[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/CS/ihd_1.aspx.cs#2)]
+ [!code-vb[System.Web.UI.IHierarchyData_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IHierarchyData_1/VB/ihd_1.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

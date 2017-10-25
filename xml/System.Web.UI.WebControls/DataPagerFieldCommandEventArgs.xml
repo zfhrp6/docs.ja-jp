@@ -1,0 +1,114 @@
+<Type Name="DataPagerFieldCommandEventArgs" FullName="System.Web.UI.WebControls.DataPagerFieldCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class DataPagerFieldCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPagerFieldCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see langword="Command" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Command`イベントが発生したときに、 <xref:System.Web.UI.WebControls.Button>、 <xref:System.Web.UI.WebControls.ImageButton>、または<xref:System.Web.UI.WebControls.LinkButton>コントロール ボタン、<xref:System.Web.UI.WebControls.DataPagerField>オブジェクトがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs>クラスは内部で使用される、<xref:System.Web.UI.WebControls.DataPager.OnBubbleEvent%2A?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.TemplatePagerField.HandleEvent%2A?displayProperty=nameWithType>発生したイベントに関する情報にアクセスするメソッド。  
+  
+ <xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs> コンストラクターに関するトピックを参照してください。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPagerFieldCommandEventArgs (System.Web.UI.WebControls.DataPagerFieldItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataPagerFieldItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.#ctor(System.Web.UI.WebControls.DataPagerFieldItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataPagerFieldItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Web.UI.WebControls.DataPagerFieldItem" />イベントを生成するオブジェクト。</param>
+        <param name="commandSource">イベントのソース。</param>
+        <param name="originalArgs">元のイベント データを含む、<see cref="P:System.Web.UI.WebControls.CommandEventArgs.CommandName" />と<see cref="P:System.Web.UI.WebControls.CommandEventArgs.CommandArgument" />プロパティです。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させるときにコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.PagePropertiesChangingEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.Item%2A>|`item` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.CommandSource%2A>|`commandSource` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたコントロールを取得します。</summary>
+        <value>イベントを発生させたコントロールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataPagerFieldItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataPagerFieldItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataPagerFieldItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataPagerFieldItem" />イベントを発生させたコントロールを格納するオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataPagerFieldItem" />イベントを発生させたコントロールを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataPagerFieldCommandEventArgs.Item%2A>取得するプロパティを<xref:System.Web.UI.WebControls.DataPagerFieldItem>オブジェクト。 <xref:System.Web.UI.WebControls.DataPagerFieldItem.PagerField%2A?displayProperty=nameWithType>プロパティは、イベントを発生させたコントロールを含むページャー フィールド オブジェクトを表します。 <xref:System.Web.UI.WebControls.DataPagerFieldItem.Pager%2A?displayProperty=nameWithType>プロパティを表す、<xref:System.Web.UI.WebControls.DataPager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

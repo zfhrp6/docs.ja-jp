@@ -1,0 +1,266 @@
+<Type Name="DataGrid+HitTestInfo" FullName="System.Windows.Forms.DataGrid+HitTestInfo">
+  <TypeSignature Language="C#" Value="public sealed class DataGrid.HitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed beforefieldinit DataGrid/HitTestInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGrid.HitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.DataGrid" /> 内の指定された座標に位置する部分についての情報を格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGrid.HitTestInfo>と共に、クラス、<xref:System.Windows.Forms.DataGrid.HitTest%2A>のメソッド、<xref:System.Windows.Forms.DataGrid>制御、のどの部分を決定するために使用、<xref:System.Windows.Forms.DataGrid>コントロール、ユーザーがクリックしました。 <xref:System.Windows.Forms.DataGrid.HitTestInfo>クラスには、行、列、およびクリックされたグリッドの一部が含まれています。 参照してください、<xref:System.Windows.Forms.DataGrid.HitTestType>によって返される列挙型、<xref:System.Windows.Forms.DataGrid.HitTestInfo.Type%2A>プロパティ グリッドのパーツの完全な一覧についてはします。  
+  
+ 返される、 <xref:System.Windows.Forms.DataGrid.HitTestInfo>、呼び出し、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッドから、<xref:System.Windows.Forms.Control.MouseDown>のイベント<xref:System.Windows.Forms.DataGrid>コントロール。 渡す、`x`と`y`のプロパティ、<xref:System.Windows.Forms.MouseEventArgs>を<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッドで、<xref:System.Windows.Forms.Control.MouseDown>に返すイベント、<xref:System.Windows.Forms.DataGrid.HitTestInfo>オブジェクト。 行、列、およびグリッドの一部が出力されます。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public int Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Column" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGrid.HitTestInfo.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがクリックした列の数を取得します。</summary>
+        <value>列の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 座標がセルでない場合は、-1 を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、クリックした行と列の番号を出力を呼び出して、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッド内から、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。 これを返します、<xref:System.Windows.Forms.DataGrid.HitTestInfo>オブジェクト。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.Column Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Column Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.Column Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Column Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.Column Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Column Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGrid.HitTestInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">として型指定された 2 番目のオブジェクトを比較して、<see cref="T:System.Object" />です。</param>
+        <summary>2 つのオブジェクトが同一かどうかを示します。</summary>
+        <returns>
+          オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、ユーザーが有効ではありません、グリッドの領域をクリックするとかどうかをテストします。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGrid.HitTestInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを取得、<see cref="T:System.Windows.Forms.DataGrid.HitTestInfo" />インスタンス。</summary>
+        <returns>対象のインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.GetHashCode%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例のハッシュ コードを出力する、<xref:System.Windows.Forms.DataGrid.HitTestInfo>です。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.GetHashCode Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.GetHashCode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.GetHashCode Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.GetHashCode Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.GetHashCode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.GetHashCode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nowhere">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Forms.DataGrid.HitTestInfo Nowhere;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Forms.DataGrid/HitTestInfo Nowhere" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestInfo.Nowhere" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>座標がの一部に対応していることを示します、<see cref="T:System.Windows.Forms.DataGrid" />が機能していないコントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他の部分、 <xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>、ように、 <xref:System.Windows.Forms.DataGrid.HitTestType.Caption>、有用な情報を返すことができます。 グリッドの一部は、(灰色の領域が非常に少ないグリッド テーブルの背後にある) などは関数がないかどうか、<xref:System.Windows.Forms.DataGrid.HitTestInfo.Nowhere>フィールドが返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、ユーザーが有効ではありません、グリッドの領域をクリックするとかどうかをテストします。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.Nowhere Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Nowhere Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public int Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Row" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGrid.HitTestInfo.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがクリックした行の数を取得します。</summary>
+        <value>クリックされた行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 座標がセルでない場合は、-1 を返します。 座標の場合、 <xref:System.Windows.Forms.DataGrid.HitTestType.RowHeader>、プロパティは、ヘッダーの行番号を返しますが、<xref:System.Windows.Forms.DataGrid.HitTestInfo.Column%2A>プロパティは-1 を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、クリックした行と列の数を出力を呼び出して、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッド内から、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。 これを返します、<xref:System.Windows.Forms.DataGrid.HitTestInfo>オブジェクト。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.Row Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Row Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.Row Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Row Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.Row Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Row Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGrid.HitTestInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型、行番号および列番号を取得します。</summary>
+        <returns>型、行番号および列番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 出力例を次の種類、行番号および列番号、ユーザーがクリックしたときに、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>です。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.ToString Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.ToString Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGrid.HitTestType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGrid/HitTestType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGrid.HitTestInfo.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>部分を取得、<see cref="T:System.Windows.Forms.DataGrid" />コントロールを行または列には、以外がクリックしてされました。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.DataGrid.HitTestType" />列挙体です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、グリッドのクリックされた部分を出力を呼び出して、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッド内から、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。 これを返します、<xref:System.Windows.Forms.DataGrid.HitTestInfo>オブジェクト。  
+  
+ [!code-cpp[Classic DataGrid.HitTestInfo.Type Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Type Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestInfo.Type Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Type Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestInfo.Type Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestInfo.Type Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

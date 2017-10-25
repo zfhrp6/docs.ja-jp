@@ -1,0 +1,202 @@
+<Type Name="SuffixOrigin" FullName="System.Net.NetworkInformation.SuffixOrigin">
+  <TypeSignature Language="C#" Value="public enum SuffixOrigin" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SuffixOrigin extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.SuffixOrigin" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>IP アドレスのホスト サフィックスが配置された方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IP アドレスが 2 つの部分に分かれています。 プレフィックスとサフィックス。 アドレス プレフィックス、IP アドレスのネットワークの部分を識別し、アドレスのサフィックスが、ホスト部分を識別します。 プレフィックスはグローバルの機関によって割り当てられ、サフィックスは、ローカルのシステム管理者によって割り当てられます。  
+  
+ この列挙は、<xref:System.Net.NetworkInformation.UnicastIPAddressInformation> クラスで使用します。 このクラスのインスタンスが返されるは、ユニキャスト アドレスの情報を取得するときに、<xref:System.Net.NetworkInformation.NetworkInterface>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユニキャスト アドレスのプレフィックスとサフィックスの情報が表示されます。  
+  
+ [!code-cpp[NclNetInfo2#45](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#45)]
+ [!code-csharp[NclNetInfo2#45](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#45)]
+ [!code-vb[NclNetInfo2#45](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#45)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LinkLayerAddress">
+      <MemberSignature Language="C#" Value="LinkLayerAddress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin LinkLayerAddress = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.LinkLayerAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスは、リンク ローカル サフィックスです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Manual">
+      <MemberSignature Language="C#" Value="Manual" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin Manual = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.Manual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスが手動で構成されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginDhcp">
+      <MemberSignature Language="C#" Value="OriginDhcp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin OriginDhcp = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.OriginDhcp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスは、動的ホスト構成プロトコル (DHCP) サーバーが指定されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Other">
+      <MemberSignature Language="C#" Value="Other" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin Other = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.Other" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスは、未指定のソースを使用して配置されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Random">
+      <MemberSignature Language="C#" Value="Random" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin Random = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.Random" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスがランダムに割り当てられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WellKnown">
+      <MemberSignature Language="C#" Value="WellKnown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.SuffixOrigin WellKnown = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.SuffixOrigin.WellKnown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.SuffixOrigin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サフィックスは、よく知られたサフィックスです。 既知のサフィックスでは、標準トラック Request for Comments (RFC) ドキュメントに指定され、Internet Assigned Numbers Authority (Iana) またはアドレス レジストリによって割り当てられます。 このようなサフィックスは、特別な目的で予約されています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

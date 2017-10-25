@@ -1,0 +1,306 @@
+<Type Name="GacInstalled" FullName="System.Security.Policy.GacInstalled">
+  <TypeSignature Language="C#" Value="public sealed class GacInstalled : System.Security.Policy.EvidenceBase, System.Security.Policy.IIdentityPermissionFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit GacInstalled extends System.Security.Policy.EvidenceBase implements class System.Security.Policy.IIdentityPermissionFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.GacInstalled" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Policy.EvidenceBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Policy.IIdentityPermissionFactory</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ポリシー評価の証拠として、そのコードのアセンブリがグローバル アセンブリ キャッシュ (GAC) に送信されたことを確認します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在する<xref:System.Security.Policy.GacInstalled>証拠に生成、<xref:System.Security.Permissions.GacIdentityPermission>許可を設定します。 ある場合、<xref:System.Security.CodeAccessPermission.Demand%2A>の<xref:System.Security.Permissions.GacIdentityPermission>、<xref:System.Security.Permissions.GacIdentityPermission>に対応する、<xref:System.Security.Policy.GacInstalled>証拠要求されたアクセス許可と比較されます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#1)]
+ [!code-csharp[System.Security.Policy.Gac#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#1)]
+ [!code-vb[System.Security.Policy.Gac#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GacInstalled ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Policy.GacInstalled" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターにはプロパティの値設定されませんので、<xref:System.Security.Policy.GacInstalled>オブジェクトにプロパティがありません。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.%23ctor%2A>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#2)]
+ [!code-csharp[System.Security.Policy.Gac#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#2)]
+ [!code-vb[System.Security.Policy.Gac#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.EvidenceBase Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.EvidenceBase Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.EvidenceBase</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public object Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの同等のコピーを作成します。</summary>
+        <returns>同等のコピー<see cref="T:System.Security.Policy.GacInstalled" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.Copy%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#4)]
+ [!code-csharp[System.Security.Policy.Gac#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#4)]
+ [!code-vb[System.Security.Policy.Gac#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIdentityPermission">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission CreateIdentityPermission (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission CreateIdentityPermission(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.CreateIdentityPermission(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" /> Id アクセス許可が構築されるからです。</param>
+        <summary>現在のオブジェクトに対応する新しい id アクセス許可を作成します。</summary>
+        <returns>現在のオブジェクトに対応する新しい identity 権限です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.GacIdentityPermission>呼び出し元のコードがグローバル アセンブリ キャッシュかどうかを判断するために使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.CreateIdentityPermission%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#3)]
+ [!code-csharp[System.Security.Policy.Gac#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#3)]
+ [!code-vb[System.Security.Policy.Gac#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>現在のオブジェクトが、指定したオブジェクトに等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Security.Policy.GacInstalled" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.GacInstalled>オブジェクトがすべて、別の 1 つを区別するためにプロパティを持っていない<xref:System.Security.Policy.GacInstalled>オブジェクトが等しい。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.Equals%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.GacMembershipCondition#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.GacMembershipCondition/CPP/gacmembershipcondition.cpp#5)]
+ [!code-csharp[System.Security.Policy.GacMembershipCondition#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.GacMembershipCondition/CS/gacmembershipcondition.cs#5)]
+ [!code-vb[System.Security.Policy.GacMembershipCondition#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.GacMembershipCondition/VB/gacmembershipcondition.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトのハッシュ コードを返します。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.GacInstalled.GetHashCode%2A>ために、メソッドは 0 (ゼロ) を返します<xref:System.Security.Policy.GacInstalled>オブジェクトが別の 1 つを区別するためにプロパティを持っていません。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.GetHashCode%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#5)]
+ [!code-csharp[System.Security.Policy.Gac#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#5)]
+ [!code-vb[System.Security.Policy.Gac#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.GacInstalled.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトの文字列表現を返します。</summary>
+        <returns>現在のオブジェクトの文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のオブジェクトの XML エンコーディングを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Policy.GacInstalled.ToString%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Policy.GacInstalled>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.Gac#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CPP/gac.cpp#6)]
+ [!code-csharp[System.Security.Policy.Gac#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.Gac/CS/gac.cs#6)]
+ [!code-vb[System.Security.Policy.Gac#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.Gac/VB/gac.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

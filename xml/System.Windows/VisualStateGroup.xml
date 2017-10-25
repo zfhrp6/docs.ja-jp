@@ -1,0 +1,221 @@
+<Type Name="VisualStateGroup" FullName="System.Windows.VisualStateGroup">
+  <TypeSignature Language="C#" Value="public class VisualStateGroup : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualStateGroup extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.VisualStateGroup" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("States")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.RuntimeNameProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>相互に排他的なが含まれています<see cref="T:System.Windows.VisualState" />オブジェクトおよび<see cref="T:System.Windows.VisualTransition" />1 つの状態間を移動するに使用されるオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.VisualStateGroup>のコレクションを格納<xref:System.Windows.VisualState>オブジェクト。 A<xref:System.Windows.VisualState>のコレクションを格納<xref:System.Windows.Media.Animation.Storyboard>コントロールが特定の状態のときに、コントロールの外観がどのように変化するかを指定するオブジェクト。 たとえば、<xref:System.Windows.Controls.Button>が押されていない場合よりもそれが押されたとき、少し異なる外観を持つ可能性があります。 2 つの状態を<xref:System.Windows.Controls.Button>定義が押されたときに対応 (`"Pressed"`)、されていないと (`"Normal"`)。  
+  
+ 追加する<xref:System.Windows.VisualState>を設定して、コントロールを`VisualStateManager.VisualStateGroups`コントロールのプロパティを添付します。 同じで互いに相互に排他的である状態を格納する<xref:System.Windows.VisualStateGroup>です。 たとえば、 <xref:System.Windows.Controls.CheckBox> 2 つの<xref:System.Windows.VisualStateGroup>オブジェクト。 州を 1 つ含まれる`Normal`、 `MouseOver`、 `Pressed`、および`Disabled`です。 状態が含まれている`Checked`、 `UnChecked`、および`Indeterminate`です。 <xref:System.Windows.Controls.CheckBox>は状態になり`MouseOver`と`UnChecked`、同時にすることはできませんで、`MouseOver`と`Pressed`同時状態です。  
+  
+ 追加できますが、<xref:System.Windows.VisualState>オブジェクトの任意の要素を他のユーザーの視覚的な動作を再定義を有効に特に便利な方法は、<xref:System.Windows.Controls.Control>です。 使用するカスタム コントロールを作成する場合、 <xref:System.Windows.Controls.ControlTemplate>、制御できることで追加することによって示すを指定することができます、<xref:System.Windows.TemplateVisualStateAttribute>クラス定義にします。 すべてのユーザーを作成、新しい<xref:System.Windows.Controls.ControlTemplate>コントロールを追加できるの<xref:System.Windows.VisualState>テンプレートにオブジェクト。 <xref:System.Windows.TemplateVisualStateAttribute>コントロールの状態を公開する、Expression Blend などのデザイナー ツールを有効にします。 状態を同じ<xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A?displayProperty=nameWithType>同じ内で所属<xref:System.Windows.VisualStateGroup>です。  
+  
+ 使用する方法の詳細についての<xref:System.Windows.VisualStateGroup>内のオブジェクト、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。 作成する方法の詳細についてはコントロールを使用する、<xref:System.Windows.VisualStateManager>を参照してください[を作成する、コントロールのある外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。  
+  
+ <xref:System.Windows.VisualStateGroup.Transitions%2A>プロパティが含まれます<xref:System.Windows.VisualTransition>でコントロールの移行間という場合に適用されるオブジェクトが定義されている、<xref:System.Windows.VisualStateGroup>です。  
+  
+   
+  
+## Examples  
+ 次の例では、単純な<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>いずれかを格納している<xref:System.Windows.Controls.Grid>です。 含まれています、<xref:System.Windows.VisualStateGroup>という`CommonStates`を定義する、`MouseOver`と`Normal`状態です。 <xref:System.Windows.VisualStateGroup>も、 <xref:System.Windows.VisualTransition> 0.5 秒間のかかるを指定する、<xref:System.Windows.Controls.Grid>上にマウス ポインターを置いたときに、緑から赤に変更する、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-xaml[VSMButtonTemplate#11](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/window1.xaml#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualStateGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.VisualStateGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentState">
+      <MemberSignature Language="C#" Value="public System.Windows.VisualState CurrentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.VisualState CurrentState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateGroup.CurrentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.VisualState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.VisualState" />コントロールに現在適用されています。</summary>
+        <value><see cref="T:System.Windows.VisualState" />コントロールに現在適用されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.VisualStateChangedEventArgs&gt; CurrentStateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.VisualStateChangedEventArgs&gt; CurrentStateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.VisualStateGroup.CurrentStateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.VisualStateChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが別の状態に遷移した後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、コントロール、新規の状態に遷移した後に発生し、<xref:System.Windows.VisualStateGroup.CurrentStateChanging>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateChanging">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.VisualStateChangedEventArgs&gt; CurrentStateChanging;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.VisualStateChangedEventArgs&gt; CurrentStateChanging" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.VisualStateGroup.CurrentStateChanging" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.VisualStateChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の状態に遷移するコントロールの開始時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールが状態の遷移を開始すると、イベントが発生します。 場合、<xref:System.Windows.VisualTransition>が適用される移行の開始時に状態の変更をこのイベントが発生します。 場合、<xref:System.Windows.VisualTransition>が適用されず、このイベントが発生したコントロールがその前に、新しい状態に遷移した後、<xref:System.Windows.VisualStateGroup.CurrentStateChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateGroup.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.VisualStateGroup" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.VisualStateGroup" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの作成者を指定する状態コントロールがで追加することによって、<xref:System.Windows.TemplateVisualStateAttribute>クラス定義にします。 状態を同じ<xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A?displayProperty=nameWithType>同じ内で所属<xref:System.Windows.VisualStateGroup>です。 設定、<xref:System.Windows.VisualStateGroup.Name%2A>の<xref:System.Windows.VisualStateGroup>の値に、<xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Windows.VisualStateGroup>は名前付きオブジェクト`CommonStates`と`FocusStates`です。 コントロールは、それぞれから 1 つの状態になります<xref:System.Windows.VisualStateGroup>を常にします。 全体の例では、次を参照してください。 [、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ [!code-xaml[VSMButtonTemplate#5](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="States">
+      <MemberSignature Language="C#" Value="public System.Collections.IList States { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList States" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateGroup.States" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相互に排他的のコレクションを取得<see cref="T:System.Windows.VisualState" />オブジェクト。</summary>
+        <value>一連の相互に排他的な<see cref="T:System.Windows.VisualState" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、単純な<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>いずれかを格納している<xref:System.Windows.Controls.Grid>です。 含まれています、<xref:System.Windows.VisualStateGroup>という`CommonStates`を定義する、`MouseOver`と`Normal`状態です。 <xref:System.Windows.VisualStateGroup>も、 <xref:System.Windows.VisualTransition> 0.5 秒間のかかるを指定する、<xref:System.Windows.Controls.Grid>上にマウス ポインターを置いたときに、緑から赤に変更する、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-xaml[VSMButtonTemplate#11](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/window1.xaml#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transitions">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Transitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Transitions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateGroup.Transitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.VisualTransition" />オブジェクト。</summary>
+        <value><see cref="T:System.Windows.VisualTransition" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.VisualTransition>オブジェクト<xref:System.Windows.VisualStateGroup.Transitions%2A>コントロール間の遷移の状態で定義されている場合に適用される、<xref:System.Windows.VisualStateGroup>です。  
+  
+   
+  
+## Examples  
+ 次の例では、単純な<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>いずれかを格納している<xref:System.Windows.Controls.Grid>です。 含まれています、<xref:System.Windows.VisualStateGroup>という`CommonStates`を定義する、`MouseOver`と`Normal`状態です。 <xref:System.Windows.VisualStateGroup>も、 <xref:System.Windows.VisualTransition> 0.5 秒間のかかるを指定する、<xref:System.Windows.Controls.Grid>上にマウス ポインターを置いたときに、緑から赤に変更する、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-xaml[VSMButtonTemplate#11](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/window1.xaml#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

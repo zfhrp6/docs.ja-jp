@@ -1,0 +1,71 @@
+<Type Name="ProjectImportGroupElement" FullName="Microsoft.Build.Construction.ProjectImportGroupElement">
+  <TypeSignature Language="C#" Value="public class ProjectImportGroupElement : Microsoft.Build.Construction.ProjectElementContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectImportGroupElement extends Microsoft.Build.Construction.ProjectElementContainer" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectImportGroupElement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Construction.ProjectElementContainer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("#Imports={Count} Condition={Condition} Label={Label}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ImportGroup 要素 MSBuild プロジェクトを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddImport">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectImportElement AddImport (string project);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Construction.ProjectImportElement AddImport(string project) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectImportGroupElement.AddImport(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectImportElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="project" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="project">インポートするプロジェクトです。</param>
+        <summary>このグループのインポートの最後のインポート後、新しいインポートを追加します。</summary>
+        <returns>新しいインポートを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒューリスティックに基づく場所を取得するための便利なメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Imports">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectImportElement&gt; Imports { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Construction.ProjectImportElement&gt; Imports" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectImportGroupElement.Imports" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectImportElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロジェクトのインポートでは、すべてのプロパティを取得します。</summary>
+        <value>このプロジェクトのインポートでは、すべてのプロパティを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

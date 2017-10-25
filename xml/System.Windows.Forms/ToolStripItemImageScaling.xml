@@ -1,0 +1,76 @@
+<Type Name="ToolStripItemImageScaling" FullName="System.Windows.Forms.ToolStripItemImageScaling">
+  <TypeSignature Language="C#" Value="public enum ToolStripItemImageScaling" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolStripItemImageScaling extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripItemImageScaling" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうか上のイメージのサイズ、<see cref="T:System.Windows.Forms.ToolStripItem" />に収まるように自動的に調整、<see cref="T:System.Windows.Forms.ToolStrip" />元のイメージの縦横比を維持したままです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripItem.Image%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageIndex%2A>、 <xref:System.Windows.Forms.ToolStripItem.ImageKey%2A>、および<xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A>プロパティは、イメージ処理のさまざまな側面に関連します。 内のイメージを使用して<xref:System.Windows.Forms.ToolStrip>コントロール直接これらのプロパティを設定するか、実行時間: 専用に設定して<xref:System.Windows.Forms.ToolStrip.ImageList%2A>プロパティです。  
+  
+ イメージのスケーリングは両方のプロパティの相互作用によって決まります<xref:System.Windows.Forms.ToolStrip>と<xref:System.Windows.Forms.ToolStripItem>、次のようにします。  
+  
+-   <xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A>イメージの組み合わせによって決定される最終的なイメージの小数点以下桁数<xref:System.Windows.Forms.ToolStripItem.ImageScaling%2A>設定と、コンテナーの<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>設定します。  
+  
+    -   場合<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>は`true`(既定) と<xref:System.Windows.Forms.ToolStripItemImageScaling>SizeToFit は、イメージのスケーリングは行われません、および<xref:System.Windows.Forms.ToolStripItemImageScaling.SizeToFit>サイズが最大のアイテム、または指定された最小サイズのです。  
+  
+    -   場合<xref:System.Windows.Forms.ToolStrip.AutoSize%2A>は`false`と<xref:System.Windows.Forms.ToolStripItemImageScaling>は None、どちらのイメージも<xref:System.Windows.Forms.ToolStripItemImageScaling>スケーリングが発生します。  
+  
+ イメージのサイズを制御する、<xref:System.Windows.Forms.ToolStrip.ImageScalingSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する SizeToFit メンバー、<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolStrip1#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/CPP/form1.cpp#20)]
+ [!code-csharp[System.Windows.Forms.ToolStrip1#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.ToolStrip1#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/VB/form1.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripItemImageScaling None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripItemImageScaling.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemImageScaling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定のイメージのサイズ、<see cref="T:System.Windows.Forms.ToolStripItem" />に収まるように自動的に調整されません、<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToFit">
+      <MemberSignature Language="C#" Value="SizeToFit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripItemImageScaling SizeToFit = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripItemImageScaling.SizeToFit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItemImageScaling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定のイメージのサイズ、<see cref="T:System.Windows.Forms.ToolStripItem" />に収まるように自動的に調整、<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,100 @@
+<Type Name="ValidatedControlConverter" FullName="System.Web.UI.WebControls.ValidatedControlConverter">
+  <TypeSignature Language="C#" Value="public class ValidatedControlConverter : System.Web.UI.WebControls.ControlIDConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidatedControlConverter extends System.Web.UI.WebControls.ControlIDConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ValidatedControlConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ControlIDConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検証コントロールで検証可能な Web フォーム ページ上のコントロールをコントロールの ID を含む文字列に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証コントロールでは、すべてのコントロールを検証できます。 このクラスは、検証コントロールに関連付けることができる Web フォーム ページ上のコントロール Id のコレクションを作成します。 このコレクションは、検証コントロールに関連付けることができる Web フォーム ページ上のコントロールの一覧を表示する、デザイナーでよく使用されます。  
+  
+ 独自の検証コントロールを作成する場合は、検証コントロールをサポートするコントロールの一覧を表示するデザイナーを有効にできます。 次のように、検証するコントロールを表す文字列プロパティに属性を追加します。  
+  
+```vb  
+<TypeConverter(GetType(ValidatedControlConverter))> _  
+ Public Property ControlToValidate() As String  
+    Get      
+       // Add code to get the ID of the control to validate.  
+    End Get  
+    Set  
+       // Add code to set the ID of the control to validate.  
+    End Set  
+ End Property  
+```  
+  
+```csharp  
+[TypeConverter(typeof(ValidatedControlConverter))]  
+ public string ControlToValidate  
+ {  
+    get   
+    {  
+       // Add code to get the ID of the control to validate.  
+    }  
+    set  
+    {  
+       // Add code to set the ID of the control to validate.  
+    }  
+ }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidatedControlConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidatedControlConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ValidatedControlConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterControl">
+      <MemberSignature Language="C#" Value="protected override bool FilterControl (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool FilterControl(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ValidatedControlConverter.FilterControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">チェックするコントロール。</param>
+        <summary>検証可能なコントロールのリストに指定されたコントロールを追加する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、コントロールは、検証可能なコントロールのリストに追加する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ValidatedControlConverter.FilterControl%2A>メソッドを返します。 `true`、<xref:System.Web.UI.WebControls.ValidatedControlConverter>インスタンスはコントロールのパラメーターで指定したコントロールの ID を追加、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection>によって返される、<xref:System.Web.UI.WebControls.ControlIDConverter.GetStandardValues%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

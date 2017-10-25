@@ -1,0 +1,301 @@
+<Type Name="WebService" FullName="System.Web.Services.WebService">
+  <TypeSignature Language="C#" Value="public class WebService : System.ComponentModel.MarshalByValueComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebService extends System.ComponentModel.MarshalByValueComponent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.WebService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.MarshalByValueComponent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションとセッションの状態など、ASP.NET の共通のオブジェクトへの直接アクセスを提供する XML Web サービスの省略可能な基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生することがなく XML Web サービスを作成する一般的な ASP.NET オブジェクトへのアクセスを必要としない場合もできます<xref:System.Web.Services.WebService>です。 ASP.NET の他のオブジェクトを介してアクセスできます<xref:System.Web.Services.WebService.Context%2A>です。  
+  
+ XML Web サービス メソッドを<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute.OneWay%2A>いずれかのプロパティ<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>または<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>'éý'`true`へのアクセスはありません、<xref:System.Web.HttpContext>です。 アクセスのプロパティのいずれかのような場合、<xref:System.Web.Services.WebService>クラスからその XML Web サービス メソッド内で返す`null`です。  
+  
+ どちらかである .NET Framework version 1.0 XML Web サービス メソッドを使用している場合、<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>または<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>でそれらに適用された属性、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>にセットのプロパティ`true`へのアクセスはありません、<xref:System.Web.HttpContext>静的<xref:System.Web.HttpContext.Current%2A>プロパティです。 アクセスする、<xref:System.Web.HttpContext>から XML Web サービス メソッドを実装するクラスを派生させる<xref:System.Web.Services.WebService>にアクセスし、<xref:System.Web.Services.WebService.Context%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例から派生する、XML Web サービスを作成する<xref:System.Web.Services.WebService>を使用するため、<xref:System.Web.Services.WebService.Context%2A>サーバーで要求の時刻を取得するプロパティです。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.WebService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.WebService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="public System.Web.HttpApplicationState Application { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpApplicationState Application" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.Application" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Description("The ASP.NET application object for the current request.")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpApplicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の HTTP 要求のアプリケーション オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.HttpApplicationState" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスには、アプリケーションの状態とセッション状態の両方を使用できます。 すべてのセッションでセッション状態がメソッドの入っているかどうかに関係なく、XML Web サービスにアクセスするアプリケーションの状態が維持されます (を使用して、<xref:System.Web.Services.WebMethodAttribute.EnableSession%2A>のプロパティ、 <xref:System.Web.Services.WebMethodAttribute>)。  
+  
+   
+  
+## Examples  
+ 次の例では、ブラウザーは、XML Web サービス メソッドを呼び出すたびに、カウントをインクリメントするヒット カウンターを示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET の取得<see cref="T:System.Web.HttpContext" />を現在の要求に対して、プロセスの Web 要求に HTTP サーバーで使用されるすべての HTTP 固有のコンテキストをカプセル化します。</summary>
+        <value>ASP.NET<see cref="T:System.Web.HttpContext" />現在の要求。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どちらかである XML Web サービス メソッド、<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>または<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>でそれらに適用された属性、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>にセットのプロパティ`true`へのアクセスはありません、<xref:System.Web.HttpContext>静的<xref:System.Web.HttpContext.Current%2A>プロパティです。 アクセスする、<xref:System.Web.HttpContext>から XML Web サービス メソッドを実装するクラスを派生させる<xref:System.Web.Services.WebService>にアクセスし、<xref:System.Web.Services.WebService.Context%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 使用して次の例、<xref:System.Web.Services.WebService.Context%2A>サーバーで要求の時刻を取得するプロパティです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="Context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public System.Web.HttpServerUtility Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpServerUtility Server" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpServerUtility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.HttpServerUtility" />現在の要求。</summary>
+        <value><see cref="T:System.Web.HttpServerUtility" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility>クラスも含めて、Web 要求の処理に使用できるいくつかのメソッドを提供<xref:System.Web.HttpServerUtility.CreateObject%2A>の COM オブジェクトをインスタンス化する)。  
+  
+   
+  
+## Examples  
+ 次の例は、Web サーバーを使用して、コンピューター名を返します、<xref:System.Web.Services.WebService.Server%2A>プロパティです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="public System.Web.SessionState.HttpSessionState Session { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.HttpSessionState Session" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.Session" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.HttpSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.SessionState.HttpSessionState" />現在の要求のインスタンス。</summary>
+        <value><see cref="T:System.Web.SessionState.HttpSessionState" />現在のセッションの ASP.NET セッション状態オブジェクトを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 回数を判断する特定のセッションにセッション状態を使用して次の例には、XML Web サービス メソッドがアクセスする`SessionHitCounter`です。 この例では、<xref:System.Web.Services.WebMethodAttribute.EnableSession%2A>のプロパティ、<xref:System.Web.Services.WebMethodAttribute>に設定されている`true`セッション状態にアクセスするためにします。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapVersion">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapProtocolVersion SoapVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapProtocolVersion SoapVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.SoapVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapProtocolVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスに SOAP 要求に使用される SOAP プロトコルのバージョンを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapProtocolVersion" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Services.Protocols.SoapProtocolVersion.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を HTTP GET または HTTP POST をなど、XML Web サービスと通信する SOAP プロトコルを使用しなかった場合、<xref:System.Web.Services.WebService.SoapVersion%2A>プロパティは<xref:System.Web.Services.Protocols.SoapProtocolVersion.Default>します。  
+  
+ 派生していない XML Web サービスの<xref:System.Web.Services.WebService>クラス、XML Web サービスでアクセスすることもの"WebServiceSoapVersion"エントリを使用する SOAP 要求に使用される SOAP プロトコルのバージョン、<xref:System.Web.HttpContext.Items%2A?displayProperty=nameWithType>プロパティです。 型のエントリがある<xref:System.Web.Services.Protocols.SoapProtocolVersion>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal User { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal User" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebService.User" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET サーバーを取得<see cref="P:System.Web.HttpContext.User" />オブジェクト。 ユーザーの承認要求を実行するかどうかの認証に使用できます。</summary>
+        <value>A <see cref="T:System.Security.Principal.IPrincipal" /> ASP.NET サーバーを表す<see cref="P:System.Web.HttpContext.User" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット インフォメーション サービス (IIS) と .NET Framework の両方の順序での認証用に構成する必要があります、<xref:System.Web.Services.WebService.User%2A>プロパティを意味します。 認証は、ユーザーからの資格情報を受け入れて、それらの資格情報をいくつかの証明機関を検証するプロセスです。 資格情報が有効な場合は、認証済み id を持ちます。 .NET Framework での認証を構成するには、web.config ファイルにエントリを配置します。  
+  
+ 次の例では、エントリを Windows 認証を有効にする web.config ファイルに配置します。  
+  
+```  
+<security>  
+ <authentication mode="Windows"> <!-- Mode Options are Windows, Cookie, Passport and None or Empty String -->  
+ </authentication>  
+ </security>  
+```  
+  
+ XML Web サービスのセキュリティを設定する方法の詳細についてを参照してください[&#91;\< 。topic://cpconSecuringASPNETWebServices > & #93 です。](http://msdn.microsoft.com/en-us/354b2ab1-2782-4542-b32a-dc560178b90c).  
+  
+   
+  
+## Examples  
+ 次の例では、認証されたユーザー名を検索し、その名前を返します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

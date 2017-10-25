@@ -1,0 +1,84 @@
+<Type Name="LocalDataStoreSlot" FullName="System.LocalDataStoreSlot">
+  <TypeSignature Language="C#" Value="public sealed class LocalDataStoreSlot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LocalDataStoreSlot extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.LocalDataStoreSlot" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ローカル データを格納するメモリ スロットをカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework には、スレッド ローカル ストレージ (TLS) を使用するための 2 つのメカニズムが用意されています: スレッド相対静的フィールド、およびデータ スロット。  
+  
+-   スレッド相対静的フィールドは`static`フィールド (`Shared` Visual Basic でのフィールド) でマークされている、<xref:System.ThreadStaticAttribute>属性。 データ スロットよりも優れたパフォーマンスを提供およびコンパイル時の型チェックを有効にします。  
+  
+-   データ スロットは、低速とよりスレッド相対静的フィールドを使用するメッセージが不適切です。 また、データが型として格納された<xref:System.Object>ので、使用する前に、正しい型にキャストする必要があります。 ただし、静的フィールドを割り当てるには、コンパイル時の十分な情報がある場合は、データ スロットを使用できます。  
+  
+ 詳細については、TLS を使用して、次を参照してください。[スレッド ローカル ストレージ: スレッド相対静的フィールドとデータ スロット](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md)です。  
+  
+ 同様に、.NET Framework は、ローカル ストレージのコンテキストを使用するための 2 つのメカニズムを提供します。 コンテキストの相対静的フィールドとデータ スロット。 コンテキストの相対静的フィールドが静的でマークされている、<xref:System.ContextStaticAttribute>属性。 これら 2 つのメカニズムを使用して間のトレードオフは、スレッド相対静的フィールドとデータ スロットを使用する間のトレードオフに似ています。  
+  
+ <xref:System.LocalDataStoreSlot>構造として、ローカルがスレッドのメモリのメカニズムを保存し、それぞれのスレッドおよびコンテキストに固有のデータを格納するコンテキストを使用できます。 共通言語ランタイムは、作成時に各プロセスにマルチ スロットのデータ ストア配列を割り当てます。 スレッドまたはコンテキストの呼び出しをさまざまな関数をデータ ストア内のデータ スロットを割り当てるに保存して、スロット内のデータ値を取得、およびデータ スロットを解放するには、スレッドまたはコンテキスト オブジェクトの有効期限が切れた後が再利用します。  
+  
+ データ スロットがスレッドまたはコンテキストごとに一意ですその値は、スレッドまたはコンテキストのオブジェクト間で共有されません。 名前またはインデックス番号、データ スロットを割り当てることができます。  
+  
+ ローカル データの保存の詳細については、次を参照してください。<xref:System.Threading.Thread>または<xref:System.Runtime.Remoting.Contexts.Context>です。 <xref:System.LocalDataStoreSlot>など、クラスがメソッドで使用される<xref:System.Threading.Thread.AllocateNamedDataSlot%2A?displayProperty=nameWithType>、 <xref:System.Runtime.Remoting.Contexts.Context.AllocateNamedDataSlot%2A?displayProperty=nameWithType>、 <xref:System.Threading.Thread.GetData%2A?displayProperty=nameWithType>、および<xref:System.Runtime.Remoting.Contexts.Context.GetData%2A?displayProperty=nameWithType>; がないいずれかを独自のメソッドを使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~LocalDataStoreSlot ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.LocalDataStoreSlot.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクターが <see cref="T:System.LocalDataStoreSlot" /> を再利用しているときに、リソースが解放され、他のクリーンアップ操作が確実に実行されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクター<xref:System.LocalDataStoreSlot.Finalize%2A>現在のオブジェクトが完了する準備ができています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

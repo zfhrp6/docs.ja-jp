@@ -1,0 +1,302 @@
+<Type Name="CopyPixelOperation" FullName="System.Drawing.CopyPixelOperation">
+  <TypeSignature Language="C#" Value="public enum CopyPixelOperation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CopyPixelOperation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.CopyPixelOperation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>最終的な色で発生するコピー先の色コピー ピクセル操作で元の色を結合する方法を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.CopyPixelOperation>列挙型を使用して、<xref:System.Drawing.Graphics.CopyFromScreen%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Blackness">
+      <MemberSignature Language="C#" Value="Blackness" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation Blackness = int32(66)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.Blackness" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先領域は、物理パレット内のインデックス 0 に関連付けられている色を使用して入力されます。 (この色は、既定の物理パレットの場合は黒です)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptureBlt">
+      <MemberSignature Language="C#" Value="CaptureBlt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation CaptureBlt = int32(1073741824)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.CaptureBlt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果のイメージでは、現在のウィンドウの上にレイヤー化されている windows が含まれています。 既定では、イメージには、ウィンドウのみが含まれています。 この一般的に使用できないことの印刷デバイス コンテキストに注意してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationInvert">
+      <MemberSignature Language="C#" Value="DestinationInvert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation DestinationInvert = int32(5570569)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.DestinationInvert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先領域が反転されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeCopy">
+      <MemberSignature Language="C#" Value="MergeCopy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation MergeCopy = int32(12583114)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.MergeCopy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー元領域の色は、ブール値を使用して、コピー先デバイス コンテキストの選択されたブラシの色とマージ<see langword="AND" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MergePaint">
+      <MemberSignature Language="C#" Value="MergePaint" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation MergePaint = int32(12255782)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.MergePaint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>反転されたコピー元領域の色は、ブール値を使用して、コピー先領域の色とマージされます<see langword="OR" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoMirrorBitmap">
+      <MemberSignature Language="C#" Value="NoMirrorBitmap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation NoMirrorBitmap = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.NoMirrorBitmap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビットマップは、ミラー化されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSourceCopy">
+      <MemberSignature Language="C#" Value="NotSourceCopy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation NotSourceCopy = int32(3342344)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.NotSourceCopy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>反転されたコピー元領域は、先にコピーされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSourceErase">
+      <MemberSignature Language="C#" Value="NotSourceErase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation NotSourceErase = int32(1114278)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.NotSourceErase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信元と送信先の色が結合されて、ブール値を使用して<see langword="OR" />演算子、および、結果の色は、逆にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PatCopy">
+      <MemberSignature Language="C#" Value="PatCopy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation PatCopy = int32(15728673)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.PatCopy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先デバイス コンテキストで現在選択されているブラシをコピー先ビットマップにコピーします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PatInvert">
+      <MemberSignature Language="C#" Value="PatInvert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation PatInvert = int32(5898313)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.PatInvert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先デバイス コンテキストで現在選択されているブラシの色が併せて、変換先の色は、ブール値を使用している<see langword="XOR" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PatPaint">
+      <MemberSignature Language="C#" Value="PatPaint" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation PatPaint = int32(16452105)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.PatPaint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先デバイス コンテキストで現在選択されているブラシの色がブール値を使用して、反転されたコピー元領域の色と結合<see langword="OR" />演算子。 この操作の結果がブール値を使用してコピー先領域の色と組み合わせる<see langword="OR" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceAnd">
+      <MemberSignature Language="C#" Value="SourceAnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation SourceAnd = int32(8913094)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.SourceAnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元とコピー先領域の色が結合されて、ブール値を使用して<see langword="AND" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceCopy">
+      <MemberSignature Language="C#" Value="SourceCopy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation SourceCopy = int32(13369376)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.SourceCopy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー元領域は、コピー先領域に直接コピーされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceErase">
+      <MemberSignature Language="C#" Value="SourceErase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation SourceErase = int32(4457256)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.SourceErase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブール値を使用してコピー元領域の色とコピー先領域の反対側の色が結合<see langword="AND" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceInvert">
+      <MemberSignature Language="C#" Value="SourceInvert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation SourceInvert = int32(6684742)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.SourceInvert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元とコピー先領域の色が結合されて、ブール値を使用して<see langword="XOR" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SourcePaint">
+      <MemberSignature Language="C#" Value="SourcePaint" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation SourcePaint = int32(15597702)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.SourcePaint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元とコピー先領域の色が結合されて、ブール値を使用して<see langword="OR" />演算子。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Whiteness">
+      <MemberSignature Language="C#" Value="Whiteness" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.CopyPixelOperation Whiteness = int32(16711778)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.CopyPixelOperation.Whiteness" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.CopyPixelOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コピー先領域は、物理パレット内のインデックス 1 に関連付けられている色を使用して入力されます。 (この色は、既定の物理パレットの白) です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

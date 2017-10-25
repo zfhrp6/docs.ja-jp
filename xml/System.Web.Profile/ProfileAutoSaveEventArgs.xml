@@ -1,0 +1,128 @@
+<Type Name="ProfileAutoSaveEventArgs" FullName="System.Web.Profile.ProfileAutoSaveEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ProfileAutoSaveEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileAutoSaveEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileAutoSaveEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.Profile.ProfileModule.ProfileAutoSaving" />のイベント、<see cref="T:System.Web.Profile.ProfileModule" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileAutoSaveEventHandler>のデリゲートを定義、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 アクセスすることができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、 <xref:System.Web.Profile.ProfileModule> ASP.NET アプリケーションの Global.asax ファイルでクラスのこのトピックの例に示すようにします。 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントは、ページの実行の最後、<xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A?displayProperty=nameWithType>プロパティは`true`します。  
+  
+ <xref:System.Configuration.SettingsBase.Save%2A>メソッドに自動的にするかどうかのプロパティをプリミティブ型、文字列の構成または<xref:System.DateTime>をチェックして、オブジェクトが変更されて、<xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>の各プロパティの値<xref:System.Configuration.SettingsPropertyValue>ユーザー プロファイルにします。 <xref:System.Configuration.SettingsBase.Save%2A>メソッドが、カスタム クラスが変更されたかどうかを判定できません明示的にします。 使用することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム オブジェクトが変更されているかどうかを判断し、自動保存を続行し、オブジェクトが変更されている場合またはオブジェクトが変更されていない場合は、自動保存を取り消すイベント。  
+  
+ プロファイルの自動保存の操作をキャンセルする、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`false`で、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントです。 それ以外の場合、設定、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`true`です。  
+  
+ 複数のサブスクライバーがある可能性があります、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベント。 <xref:System.Web.Profile.ProfileModule>が使用する最後の値を<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに設定します。 その結果、お勧めする明示的に設定する、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>を取り消すか、値を上書きする必要がある可能性があります、自動、保存を続行するかに関係なくイベントは、以前のサブスクライバーによって設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/CS/global.asax#11)]
+ [!code-vb[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/VB/global.asax#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileAutoSaveEventArgs (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileAutoSaveEventArgs.#ctor(System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />の現在の要求。</param>
+        <summary><see cref="T:System.Web.Profile.ProfileAutoSaveEventArgs" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileAutoSaveEventArgs.%23ctor%2A>のインスタンスを作成、<xref:System.Web.Profile.ProfileAutoSaveEventArgs>クラスとセット、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.Context%2A>プロパティを指定した<xref:System.Web.HttpContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileAutoSaveEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.HttpContext" />現在の要求。</summary>
+        <value><see cref="T:System.Web.HttpContext" />現在の要求</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileAutoSaveEventArgs>オブジェクトにイベント情報を提供、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 <xref:System.Web.Profile.ProfileAutoSaveEventArgs.Context%2A>プロパティへのアクセスを提供する、<xref:System.Web.HttpContext>の現在の要求。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWithProfileAutoSave">
+      <MemberSignature Language="C#" Value="public bool ContinueWithProfileAutoSave { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContinueWithProfileAutoSave" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.Profile.ProfileModule" />ユーザー プロファイルが自動的に保存します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.Profile.ProfileModule" />ユーザー プロファイルを自動的に保存されます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsBase.Save%2A>メソッドに自動的にするかどうかのプロパティをプリミティブ型、文字列の構成または<xref:System.DateTime>をチェックして、オブジェクトが変更されて、<xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>の各プロパティの値<xref:System.Configuration.SettingsPropertyValue>ユーザー プロファイルにします。 <xref:System.Configuration.SettingsBase.Save%2A>メソッドが、カスタム クラスが変更されたかどうかを判定できません明示的にします。 使用することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム オブジェクトが変更されているかどうかを判断し、自動保存を続行し、オブジェクトが変更されている場合またはオブジェクトが変更されていない場合は、自動保存を取り消すイベント。  
+  
+ プロファイルの自動保存の操作をキャンセルする、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`false`で、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントです。 それ以外の場合、設定、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`true`です。  
+  
+ 複数のサブスクライバーがある可能性があります、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベント。 <xref:System.Web.Profile.ProfileModule>が使用する最後の値を<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに設定します。 その結果、お勧めする明示的に設定する、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントを取り消すまたは自動を続行するかどうかを付けて、以前のサブスクライバーによって設定された値を上書きする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/CS/global.asax#11)]
+ [!code-vb[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/VB/global.asax#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

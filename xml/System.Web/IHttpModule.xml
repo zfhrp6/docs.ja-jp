@@ -1,0 +1,81 @@
+<Type Name="IHttpModule" FullName="System.Web.IHttpModule">
+  <TypeSignature Language="C#" Value="public interface IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.Web.IHttpModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>モジュールの初期化イベントと破棄イベントを実装するクラスに提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 実装するカスタム モジュールの例については<xref:System.Web.IHttpModule>を参照してください[チュートリアル: カスタム HTTP モジュールの登録の作成と](http://msdn.microsoft.com/library/7787d5be-40a4-4072-9075-c2b767428453)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IHttpModule.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装するモジュールで使用される (メモリを除く) のリソースを破棄<see cref="T:System.Web.IHttpModule" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IHttpModule.Dispose%2A>メソッドが実行パイプラインからモジュールを削除する前に最終的なクリーンアップ作業を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IHttpModule.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpApplication" />メソッド、プロパティ、および ASP.NET アプリケーション内のすべてのアプリケーション オブジェクトに共通のイベントへのアクセスを提供します。</param>
+        <summary>モジュールを初期化し、要求を処理できるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.IHttpModule.Init%2A>特定のイベントにイベント処理メソッドを登録します。  
+  
+   
+  
+## Examples  
+ 実装するカスタム モジュールの例については<xref:System.Web.IHttpModule>を参照してください[チュートリアル: カスタム HTTP モジュールの登録の作成と](http://msdn.microsoft.com/library/7787d5be-40a4-4072-9075-c2b767428453)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

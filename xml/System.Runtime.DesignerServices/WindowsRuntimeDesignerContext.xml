@@ -1,0 +1,234 @@
+<Type Name="WindowsRuntimeDesignerContext" FullName="System.Runtime.DesignerServices.WindowsRuntimeDesignerContext">
+  <TypeSignature Language="C#" Value="public sealed class WindowsRuntimeDesignerContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WindowsRuntimeDesignerContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタマイズ アセンブリを Windows 8.x ストア アプリの作成に使用する、デザイナーのバインディングを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能は開発者モードでのみ使用[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリ。 これにより、デザイナーがアセンブリに反復開発するときに、必要に応じて分離バインディング コンテキストを指定できます。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsRuntimeDesignerContext (System.Collections.Generic.IEnumerable&lt;string&gt; paths, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;string&gt; paths, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.#ctor(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="paths" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paths">検索するパス。</param>
+        <param name="name">コンテキストの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext" />クラス、サード パーティ製の検索へのパスのセットを指定する[!INCLUDE[wrt](~/includes/wrt-md.md)]型と、マネージ アセンブリおよびコンテキストの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">現在のアプリケーション ドメインは、既定のアプリケーション ドメインではありません。  
+  
+ または  
+  
+ プロセスは、アプリ コンテナー内で実行されていません。  
+  
+ または  
+  
+ コンピューターには、開発者用ライセンスがありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="paths" /> が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly GetAssembly (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Assembly GetAssembly(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.GetAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">読み込むアセンブリの完全名。 アセンブリの完全名の説明は、次を参照してください。、<see cref="P:System.Reflection.Assembly.FullName" />プロパティです。</param>
+        <summary>現在のコンテキストから指定したアセンブリを読み込みます。</summary>
+        <returns>見つかった場合は現在のコンテキストでは、アセンブリそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetType(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.GetType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">読み込む型のアセンブリ修飾名。 アセンブリ修飾名の説明は、次を参照してください。、<see cref="P:System.Type.AssemblyQualifiedName" />プロパティです。</param>
+        <summary>現在のコンテキストから指定された型を読み込みます。</summary>
+        <returns>見つかった場合は現在のコンテキストでは、型それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeSharedContext">
+      <MemberSignature Language="C#" Value="public static void InitializeSharedContext (System.Collections.Generic.IEnumerable&lt;string&gt; paths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InitializeSharedContext(class System.Collections.Generic.IEnumerable`1&lt;string&gt; paths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.InitializeSharedContext(System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paths" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="paths">イテレーションのコンテキストによって満たすことができないバインディング要求の解決に使用されるパスの列挙可能なコレクション。</param>
+        <summary>コンテキストを作成し、共有のコンテキストとして設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有コンテキストを 2 回以上設定できません。  
+  
+ <xref:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext>既定のアプリケーション ドメインでのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">アプリケーション ドメインで、共有コンテキストは既に設定されています。  
+  
+ または  
+  
+ 現在のアプリケーション ドメインは、既定のアプリケーション ドメインではありません。  
+  
+ または  
+  
+ プロセスは、アプリ コンテナー内で実行されていません。  
+  
+ または  
+  
+ コンピューターには、開発者用ライセンスがありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="paths" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのバインド コンテキストの名前を取得します。</summary>
+        <value>コンテキストの名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetIterationContext">
+      <MemberSignature Language="C#" Value="public static void SetIterationContext (System.Runtime.DesignerServices.WindowsRuntimeDesignerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIterationContext(class System.Runtime.DesignerServices.WindowsRuntimeDesignerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext.SetIterationContext(System.Runtime.DesignerServices.WindowsRuntimeDesignerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.DesignerServices.WindowsRuntimeDesignerContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">アセンブリ バインディング要求を次のイテレーションを処理するコンテキスト。</param>
+        <summary>アセンブリは、デザイン プロセス中に再コンパイルとは、アセンブリ バインディング要求を次のイテレーションを処理するときにコンテキストを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストは、デザイナーのニーズによって必要に応じていつでも新しいバインド コンテキストを交換できます。  
+  
+ <xref:System.Runtime.DesignerServices.WindowsRuntimeDesignerContext>既定のアプリケーション ドメインでのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在のアプリケーション ドメインは、既定のアプリケーション ドメインではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,979 @@
+<Type Name="ServiceDocumentFormatter" FullName="System.ServiceModel.Syndication.ServiceDocumentFormatter">
+  <TypeSignature Language="C#" Value="public abstract class ServiceDocumentFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceDocumentFormatter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Syndication.ServiceDocumentFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>他のフォーマッタの基本クラスとして使用される抽象クラス (たとえば、<see cref="T:System.ServiceModel.Syndication.AtomPub10ServiceDocumentFormatter" />)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは抽象クラスであり、直接インスタンスを作成することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceDocumentFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Syndication.ServiceDocumentFormatter" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceDocumentFormatter (System.ServiceModel.Syndication.ServiceDocument documentToWrite);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Syndication.ServiceDocument documentToWrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.#ctor(System.ServiceModel.Syndication.ServiceDocument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="documentToWrite" Type="System.ServiceModel.Syndication.ServiceDocument" />
+      </Parameters>
+      <Docs>
+        <param name="documentToWrite">シリアル化する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <summary><see cref="T:System.ServiceModel.Syndication.ServiceDocumentFormatter" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public abstract bool CanRead (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanRead(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CanRead(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">確認する XML リーダー。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> に有効なサービス ドキュメントが含まれているかどうかを確認します。</summary>
+        <returns>
+          XML リーダーに有効なサービス ドキュメントが含まれている場合は <see langword="true" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCategory">
+      <MemberSignature Language="C#" Value="protected static System.ServiceModel.Syndication.SyndicationCategory CreateCategory (System.ServiceModel.Syndication.InlineCategoriesDocument inlineCategories);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.ServiceModel.Syndication.SyndicationCategory CreateCategory(class System.ServiceModel.Syndication.InlineCategoriesDocument inlineCategories) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateCategory(System.ServiceModel.Syndication.InlineCategoriesDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.SyndicationCategory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inlineCategories" Type="System.ServiceModel.Syndication.InlineCategoriesDocument" />
+      </Parameters>
+      <Docs>
+        <param name="inlineCategories">新しいカテゴリ ドキュメントを作成するために使用される <see cref="T:System.ServiceModel.Syndication.InlineCategories" /> インスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.Syndication.SyndicationCategory" /> クラスの新しいインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.SyndicationCategory" /> インスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCollection">
+      <MemberSignature Language="C#" Value="protected static System.ServiceModel.Syndication.ResourceCollectionInfo CreateCollection (System.ServiceModel.Syndication.Workspace workspace);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.ServiceModel.Syndication.ResourceCollectionInfo CreateCollection(class System.ServiceModel.Syndication.Workspace workspace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateCollection(System.ServiceModel.Syndication.Workspace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.ResourceCollectionInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+      </Parameters>
+      <Docs>
+        <param name="workspace">新しいコレクションを作成するために使用される <see cref="T:System.ServiceModel.Syndication.Workspace" /> インスタンス。</param>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" /> のインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" /> インスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDocumentInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.Syndication.ServiceDocument CreateDocumentInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Syndication.ServiceDocument CreateDocumentInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateDocumentInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.ServiceDocument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> のインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> インスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInlineCategories">
+      <MemberSignature Language="C#" Value="protected static System.ServiceModel.Syndication.InlineCategoriesDocument CreateInlineCategories (System.ServiceModel.Syndication.ResourceCollectionInfo collection);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.ServiceModel.Syndication.InlineCategoriesDocument CreateInlineCategories(class System.ServiceModel.Syndication.ResourceCollectionInfo collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateInlineCategories(System.ServiceModel.Syndication.ResourceCollectionInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.InlineCategoriesDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+      </Parameters>
+      <Docs>
+        <param name="collection">新しい <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" /> を作成するために使用する <see cref="T:System.ServiceModel.Syndication.InlineCategoriesDocument" />。</param>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.InlineCategoriesDocument" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.InlineCategoriesDocument" /> インスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateReferencedCategories">
+      <MemberSignature Language="C#" Value="protected static System.ServiceModel.Syndication.ReferencedCategoriesDocument CreateReferencedCategories (System.ServiceModel.Syndication.ResourceCollectionInfo collection);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.ServiceModel.Syndication.ReferencedCategoriesDocument CreateReferencedCategories(class System.ServiceModel.Syndication.ResourceCollectionInfo collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateReferencedCategories(System.ServiceModel.Syndication.ResourceCollectionInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.ReferencedCategoriesDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+      </Parameters>
+      <Docs>
+        <param name="collection">新しい <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" /> を作成するために使用する <see cref="T:System.ServiceModel.Syndication.ReferencedCategoriesDocument" /> インスタンス。</param>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.ReferencedCategoriesDocument" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.ReferencedCategoriesDocument" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkspace">
+      <MemberSignature Language="C#" Value="protected static System.ServiceModel.Syndication.Workspace CreateWorkspace (System.ServiceModel.Syndication.ServiceDocument document);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.ServiceModel.Syndication.Workspace CreateWorkspace(class System.ServiceModel.Syndication.ServiceDocument document) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.CreateWorkspace(System.ServiceModel.Syndication.ServiceDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.Workspace</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+      </Parameters>
+      <Docs>
+        <param name="document">新しいワークスペースを作成するために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <summary>新しい <see cref="T:System.ServiceModel.Syndication.Workspace" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.ServiceModel.Syndication.Workspace" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Syndication.ServiceDocument Document { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Syndication.ServiceDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.ServiceDocumentFormatter.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Syndication.ServiceDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーマッタと関連付けられている <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> を取得します。</summary>
+        <value>フォーマッタに関連付けられた <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void LoadElementExtensions (System.Xml.XmlReader reader, System.ServiceModel.Syndication.CategoriesDocument categories, int maxExtensionSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void LoadElementExtensions(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.CategoriesDocument categories, int32 maxExtensionSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.LoadElementExtensions(System.Xml.XmlReader,System.ServiceModel.Syndication.CategoriesDocument,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="categories" Type="System.ServiceModel.Syndication.CategoriesDocument" />
+        <Parameter Name="maxExtensionSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="categories">要素拡張を読み込むために使用する <see cref="T:System.ServiceModel.Syndication.CategoriesDocument" />。</param>
+        <param name="maxExtensionSize">読み込む要素拡張の最大サイズ。</param>
+        <summary>要素拡張を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void LoadElementExtensions (System.Xml.XmlReader reader, System.ServiceModel.Syndication.ResourceCollectionInfo collection, int maxExtensionSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void LoadElementExtensions(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.ResourceCollectionInfo collection, int32 maxExtensionSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.LoadElementExtensions(System.Xml.XmlReader,System.ServiceModel.Syndication.ResourceCollectionInfo,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+        <Parameter Name="maxExtensionSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="collection">要素拡張を読み込むために使用する <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" />。</param>
+        <param name="maxExtensionSize">読み込む拡張の最大サイズ。</param>
+        <summary>要素拡張を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void LoadElementExtensions (System.Xml.XmlReader reader, System.ServiceModel.Syndication.ServiceDocument document, int maxExtensionSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void LoadElementExtensions(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.ServiceDocument document, int32 maxExtensionSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.LoadElementExtensions(System.Xml.XmlReader,System.ServiceModel.Syndication.ServiceDocument,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+        <Parameter Name="maxExtensionSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="document">要素拡張を読み込むために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <param name="maxExtensionSize">読み込む拡張の最大サイズ。</param>
+        <summary>要素拡張を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void LoadElementExtensions (System.Xml.XmlReader reader, System.ServiceModel.Syndication.Workspace workspace, int maxExtensionSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void LoadElementExtensions(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.Workspace workspace, int32 maxExtensionSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.LoadElementExtensions(System.Xml.XmlReader,System.ServiceModel.Syndication.Workspace,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+        <Parameter Name="maxExtensionSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="workspace">要素拡張を読み込むために使用する <see cref="T:System.ServiceModel.Syndication.Workspace" />。</param>
+        <param name="maxExtensionSize">読み込む拡張の最大サイズ。</param>
+        <summary>要素拡張を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadFrom">
+      <MemberSignature Language="C#" Value="public abstract void ReadFrom (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadFrom(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.ReadFrom(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> からサービス ドキュメントを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDocument">
+      <MemberSignature Language="C#" Value="protected virtual void SetDocument (System.ServiceModel.Syndication.ServiceDocument document);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetDocument(class System.ServiceModel.Syndication.ServiceDocument document) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.SetDocument(System.ServiceModel.Syndication.ServiceDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+      </Parameters>
+      <Docs>
+        <param name="document">書き込む <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <summary>書き込む <see cref="T:System.ServiceModel.Syndication.ServiceDocument" /> を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseAttribute">
+      <MemberSignature Language="C#" Value="protected static bool TryParseAttribute (string name, string ns, string value, System.ServiceModel.Syndication.CategoriesDocument categories, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseAttribute(string name, string ns, string value, class System.ServiceModel.Syndication.CategoriesDocument categories, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseAttribute(System.String,System.String,System.String,System.ServiceModel.Syndication.CategoriesDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="categories" Type="System.ServiceModel.Syndication.CategoriesDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要素の名前。</param>
+        <param name="ns">要素の名前空間。</param>
+        <param name="value">解析する属性。</param>
+        <param name="categories">属性拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.CategoriesDocument" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>属性の拡張の解析を試みます。</summary>
+        <returns>属性拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseAttribute">
+      <MemberSignature Language="C#" Value="protected static bool TryParseAttribute (string name, string ns, string value, System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseAttribute(string name, string ns, string value, class System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseAttribute(System.String,System.String,System.String,System.ServiceModel.Syndication.ResourceCollectionInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要素の名前。</param>
+        <param name="ns">要素の名前空間。</param>
+        <param name="value">解析する属性。</param>
+        <param name="collection">属性を解析するために使用する <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>属性の拡張の解析を試みます。</summary>
+        <returns>属性拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseAttribute">
+      <MemberSignature Language="C#" Value="protected static bool TryParseAttribute (string name, string ns, string value, System.ServiceModel.Syndication.ServiceDocument document, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseAttribute(string name, string ns, string value, class System.ServiceModel.Syndication.ServiceDocument document, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseAttribute(System.String,System.String,System.String,System.ServiceModel.Syndication.ServiceDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要素の名前。</param>
+        <param name="ns">要素の名前空間。</param>
+        <param name="value">解析する属性拡張。</param>
+        <param name="document">属性拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>属性の拡張の解析を試みます。</summary>
+        <returns>属性拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseAttribute">
+      <MemberSignature Language="C#" Value="protected static bool TryParseAttribute (string name, string ns, string value, System.ServiceModel.Syndication.Workspace workspace, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseAttribute(string name, string ns, string value, class System.ServiceModel.Syndication.Workspace workspace, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseAttribute(System.String,System.String,System.String,System.ServiceModel.Syndication.Workspace,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要素の名前。</param>
+        <param name="ns">要素の名前空間。</param>
+        <param name="value">解析する属性。</param>
+        <param name="workspace">属性を解析するために使用する <see cref="T:System.ServiceModel.Syndication.Workspace" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>属性の拡張の解析を試みます。</summary>
+        <returns>属性拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseElement">
+      <MemberSignature Language="C#" Value="protected static bool TryParseElement (System.Xml.XmlReader reader, System.ServiceModel.Syndication.CategoriesDocument categories, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseElement(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.CategoriesDocument categories, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseElement(System.Xml.XmlReader,System.ServiceModel.Syndication.CategoriesDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="categories" Type="System.ServiceModel.Syndication.CategoriesDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="categories">要素拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.CategoriesDocument" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>要素拡張の解析を試みます。</summary>
+        <returns>要素拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseElement">
+      <MemberSignature Language="C#" Value="protected static bool TryParseElement (System.Xml.XmlReader reader, System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseElement(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseElement(System.Xml.XmlReader,System.ServiceModel.Syndication.ResourceCollectionInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="collection">要素拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>要素拡張の解析を試みます。</summary>
+        <returns>要素拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseElement">
+      <MemberSignature Language="C#" Value="protected static bool TryParseElement (System.Xml.XmlReader reader, System.ServiceModel.Syndication.ServiceDocument document, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseElement(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.ServiceDocument document, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseElement(System.Xml.XmlReader,System.ServiceModel.Syndication.ServiceDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="document">要素拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>要素拡張の解析を試みます。</summary>
+        <returns>要素拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseElement">
+      <MemberSignature Language="C#" Value="protected static bool TryParseElement (System.Xml.XmlReader reader, System.ServiceModel.Syndication.Workspace workspace, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool TryParseElement(class System.Xml.XmlReader reader, class System.ServiceModel.Syndication.Workspace workspace, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.TryParseElement(System.Xml.XmlReader,System.ServiceModel.Syndication.Workspace,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取り元の <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="workspace">要素拡張を解析するために使用する <see cref="T:System.ServiceModel.Syndication.Workspace" />。</param>
+        <param name="version">解析の際に使用する配信バージョン。</param>
+        <summary>要素拡張の解析を試みます。</summary>
+        <returns>要素拡張が正常に解析されたかどうかを示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public abstract string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Syndication.ServiceDocumentFormatter.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーマッタのバージョンを取得します。</summary>
+        <value>フォーマッタのバージョンが格納された <see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteAttributeExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.CategoriesDocument categories, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteAttributeExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.CategoriesDocument categories, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteAttributeExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.CategoriesDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="categories" Type="System.ServiceModel.Syndication.CategoriesDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="categories">要素拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.CategoriesDocument" />。</param>
+        <param name="version">書き込みの際に使用する配信バージョン。</param>
+        <summary>属性の拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteAttributeExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteAttributeExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteAttributeExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.ResourceCollectionInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="collection">属性拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" />。</param>
+        <param name="version">属性拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>属性の拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteAttributeExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.ServiceDocument document, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteAttributeExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.ServiceDocument document, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteAttributeExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.ServiceDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="document">属性拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <param name="version">属性拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>属性の拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteAttributeExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.Workspace workspace, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteAttributeExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.Workspace workspace, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteAttributeExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.Workspace,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="workspace">属性拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.Workspace" />。</param>
+        <param name="version">属性拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>属性の拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteElementExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.CategoriesDocument categories, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteElementExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.CategoriesDocument categories, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteElementExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.CategoriesDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="categories" Type="System.ServiceModel.Syndication.CategoriesDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="categories"><see cref="T:System.ServiceModel.Syndication.CategoriesDocument" />要素拡張の書き込みに使用します。</param>
+        <param name="version">要素拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>要素拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteElementExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteElementExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.ResourceCollectionInfo collection, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteElementExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.ResourceCollectionInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="collection" Type="System.ServiceModel.Syndication.ResourceCollectionInfo" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="collection">要素拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.ResourceCollectionInfo" />。</param>
+        <param name="version">要素拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>要素拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteElementExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.ServiceDocument document, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteElementExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.ServiceDocument document, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteElementExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.ServiceDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="document" Type="System.ServiceModel.Syndication.ServiceDocument" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="document">要素拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.ServiceDocument" />。</param>
+        <param name="version">要素拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>要素拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementExtensions">
+      <MemberSignature Language="C#" Value="protected static void WriteElementExtensions (System.Xml.XmlWriter writer, System.ServiceModel.Syndication.Workspace workspace, string version);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void WriteElementExtensions(class System.Xml.XmlWriter writer, class System.ServiceModel.Syndication.Workspace workspace, string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteElementExtensions(System.Xml.XmlWriter,System.ServiceModel.Syndication.Workspace,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="workspace" Type="System.ServiceModel.Syndication.Workspace" />
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="workspace">要素拡張を書き込むために使用する <see cref="T:System.ServiceModel.Syndication.Workspace" />。</param>
+        <param name="version">要素拡張の書き込みの際に使用する配信バージョン。</param>
+        <summary>要素拡張を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public abstract void WriteTo (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteTo(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Syndication.ServiceDocumentFormatter.WriteTo(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlWriter" /> にサービス ドキュメントを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

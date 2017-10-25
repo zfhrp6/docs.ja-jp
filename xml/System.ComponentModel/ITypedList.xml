@@ -1,0 +1,149 @@
+<Type Name="ITypedList" FullName="System.ComponentModel.ITypedList">
+  <TypeSignature Language="C#" Value="public interface ITypedList" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypedList" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ITypedList" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>バインディングで使用できるプロパティがバインド先のオブジェクトのパブリック プロパティの異なるバインド可能な一覧は、スキーマを検出する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを使用している場合は、このインターフェイスを使用して、<xref:System.Data.DataView>を表すオブジェクト、`customer`プロパティにバインドするテーブル、`customer`オブジェクトを<xref:System.Data.DataView>を表すのプロパティではなく、<xref:System.Data.DataView>です。  
+  
+ このインターフェイスは、バインド可能な一連のデザイン時サポートの必要はありません。  
+  
+ 実行時に、または、デザイナーで、データへのバインディングが発生することができますが、両方の規則があります。 実行時に、次のいずれかのデータにバインドできます。  
+  
+-   <xref:System.Array>  
+  
+-   実行者<xref:System.Collections.IList>、実装者がある厳密に型指定された、<xref:System.Collections.IList.Item%2A>プロパティ (つまり、<xref:System.Type>以外は<xref:System.Object>)。 これを行うの既定の実装をすることにより<xref:System.Collections.IList.Item%2A>プライベートです。 作成する場合、<xref:System.Collections.IList>厳密に型指定されたコレクションの規則に従っているから派生する必要があります<xref:System.Collections.CollectionBase>です。  
+  
+-   実行者<xref:System.ComponentModel.ITypedList>です。  
+  
+ デザイナーでは、バインディングを初期化できます<xref:System.ComponentModel.Component>オブジェクトを同じ規則に従います。  
+  
+ データ ソースにバインドする方法の詳細については、次を参照してください。、<xref:System.Windows.Forms.Binding?displayProperty=nameWithType>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.ITypedList>インターフェイスです。 という名前のジェネリック型`SortableBindingList`から派生した、<xref:System.ComponentModel.BindingList%601>クラスと実装、<xref:System.ComponentModel.ITypedList>インターフェイスです。 完全なコードの一覧については、次を参照してください。[する方法: ITypedList インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-itypedlist-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.ITypedList#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ITypedList/CS/SortableBindingList.cs#1)]
+ [!code-vb[System.ComponentModel.ITypedList#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ITypedList/VB/SortableBindingList.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetItemProperties (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ITypedList.GetItemProperties(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">コレクションから検索するバインド可能な <see cref="T:System.ComponentModel.PropertyDescriptor" /> オブジェクトの配列。 これは、<see langword="null" />です。</param>
+        <summary>データ バインドに使用される各項目のプロパティを表す <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> を返します。</summary>
+        <returns>データ バインドに使用される各項目のプロパティを表す <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`listAccessors`パラメーターではありません`null`、プロパティ記述子を実装するオブジェクトを取得するためにコンテナーの一覧を示す通常含まれています。<xref:System.ComponentModel.ITypedList>です。 たとえば、 <xref:System.Data.DataSet> 2 つのテーブルを含む`myCustomers`と`myOrders`と呼ばれるそれらの間の関係を持つ`myCustOrders`します。 作成する場合、<xref:System.Data.DataView>を表示するオブジェクト`myCustomers`、呼び出すことで、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A>メソッドを`null`内の列のプロパティ記述子を返します`myCustomers`です。 返されるプロパティ記述子の 1 つのプロパティ記述子は、結果として、`myCustOrders`として呼び出し元だけで、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A>のプロパティ記述子を含むリスト アクセサーの配列を持つメソッド`myCustOrders`のプロパティ記述子を返す`myOrders`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A>メソッドです。 完全なコードの一覧については、次を参照してください。[する方法: ITypedList インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-itypedlist-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.ITypedList#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ITypedList/CS/SortableBindingList.cs#3)]
+ [!code-vb[System.ComponentModel.ITypedList#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ITypedList/VB/SortableBindingList.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="public string GetListName (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetListName(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ITypedList.GetListName(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">配列<see cref="T:System.ComponentModel.PropertyDescriptor" />オブジェクト、リストの名前が返されます。 これは、<see langword="null" />です。</param>
+        <summary>リストの名前を返します。</summary>
+        <returns>リストの名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、デザイン時のフレームワークでのみ、廃止された使用<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.ITypedList.GetListName%2A>メソッドです。 完全なコードの一覧については、次を参照してください。[する方法: ITypedList インターフェイスを実装して](~/docs/framework/winforms/how-to-implement-the-itypedlist-interface.md)です。  
+  
+ [!code-csharp[System.ComponentModel.ITypedList#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.ITypedList/CS/SortableBindingList.cs#4)]
+ [!code-vb[System.ComponentModel.ITypedList#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.ITypedList/VB/SortableBindingList.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

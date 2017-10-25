@@ -1,0 +1,111 @@
+<Type Name="ExpressionsCollectionEditor" FullName="System.Web.UI.Design.ExpressionsCollectionEditor">
+  <TypeSignature Language="C#" Value="public class ExpressionsCollectionEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpressionsCollectionEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ExpressionsCollectionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>選択し、デザイン時にコレクションをバインドする式を編集するためには、ユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.Design.ExpressionsCollectionEditor>クラスは、<xref:System.Drawing.Design.UITypeEditor>オブジェクトを選択し、式のバインドのコレクションを編集するデザイン時に使用でき、コントロールのプロパティに式を割り当てます。  
+  
+ デザイナー ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.Compilation.ExpressionBuilder>と<xref:System.Web.UI.Design.ExpressionEditor>クラスの実装、<xref:System.Web.UI.Design.ExpressionsCollectionEditor>と<xref:System.Web.UI.Design.ExpressionsCollectionConverter>、デザイン時にコントロールのプロパティの式のバインドを設定するクラスと<xref:System.Web.UI.Design.ControlPersister>実行時の式を保持するクラス。 式の文字列は、ローカライズ可能なリソース、アプリケーション設定は、接続文字列、またはカスタム式の型を参照します。 式の文字列は、デザイン時に、コントロールのプロパティにバインドされ、プロパティの値を決定する実行時に使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionsCollectionEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ExpressionsCollectionEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ExpressionsCollectionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ExpressionsCollectionEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />関連付けられたコントロールなどの追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <param name="provider">使用する編集サービスを取得するサービス プロバイダー オブジェクト。</param>
+        <param name="value">編集中のオブジェクトのインスタンス。</param>
+        <summary>指定したサービス プロバイダー コンテキストと指定したオブジェクトの値を編集します。</summary>
+        <returns><see cref="T:System.Web.UI.ExpressionBindingCollection" />を選択した式を含むオブジェクトをそれ以外の場合、式が選択されていない場合、<paramref name="value" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ExpressionsCollectionEditor.EditValue%2A>メソッドは、編集するためのユーザー インターフェイスを起動、`value`オブジェクト。 デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.ExpressionsCollectionEditor.EditValue%2A>このエディターが関連付けられているメソッド、プロパティの値を編集しようとしたときにします。 内で必要とされるすべての編集サービスを取得する、入力のサービス プロバイダーが使用される、<xref:System.Web.UI.Design.ExpressionsCollectionEditor.EditValue%2A>です。  
+  
+ デザイナー ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.Compilation.ExpressionBuilder>と<xref:System.Web.UI.Design.ExpressionEditor>クラスの実装、<xref:System.Web.UI.Design.ExpressionsCollectionEditor>と<xref:System.Web.UI.Design.ExpressionsCollectionConverter>、デザイン時にコントロールのプロパティの式のバインドを設定するクラスと<xref:System.Web.UI.Design.ControlPersister>実行時の式を保持するクラス。 式の文字列は、ローカライズ可能なリソース、アプリケーション設定は、接続文字列、またはカスタム式の型を参照します。 式の文字列は、デザイン時に、コントロールのプロパティにバインドされ、プロパティの値を決定する実行時に使用されます。  
+  
+ ユーザーが、コレクションをバインドする式を変更することがなく、ユーザー インターフェイスを取り消した場合、<xref:System.Web.UI.Design.ExpressionsCollectionEditor.EditValue%2A>メソッドは、入力を返します`value`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ExpressionsCollectionEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <summary>指定したコンテキストに対してこのエディターに関連付けられている編集スタイルを取得します。</summary>
+        <returns><see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />編集を示す列挙値の指定されたユーザー インターフェイスのスタイルを設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ExpressionsCollectionEditor.GetEditStyle%2A>メソッドを返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.Modal>既定値です。  
+  
+ 場合<xref:System.Web.UI.Design.ExpressionsCollectionEditor.GetEditStyle%2A>は、指定されたコンテキストではサポートされていません、<xref:System.Web.UI.Design.ExpressionsCollectionEditor.GetEditStyle%2A>返します<xref:System.Drawing.Design.UITypeEditorEditStyle.None>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

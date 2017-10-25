@@ -1,0 +1,107 @@
+<Type Name="SiteMapNodeItemType" FullName="System.Web.UI.WebControls.SiteMapNodeItemType">
+  <TypeSignature Language="C#" Value="public enum SiteMapNodeItemType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SiteMapNodeItemType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SiteMapNodeItemType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.SiteMapNodeItemType" />列挙型を使用して、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールの種類を識別する、<see cref="T:System.Web.UI.WebControls.SiteMapNodeItem" />ノード階層内のノードです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapPath>コントロールのコレクションとしてサイト ナビゲーション情報を管理する<xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクト。 <xref:System.Web.UI.WebControls.SiteMapNodeItem>オブジェクトを表す機能的にはさまざまな種類の<xref:System.Web.SiteMapNode>ノード。 同様に、管理している、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 次に、使用可能なノードの種類を説明します。  
+  
+-   表示されているページを表す 1 つのノードです。  
+  
+-   1 つのノードは、サイトのナビゲーション階層の最上位ノードです。  
+  
+-   最上位ノードと現在のノード (親ノード) の間での 0 個以上のノードです。  
+  
+-   サイト ナビゲーション パスの区切り記号を表す 0 個以上のノードです。  
+  
+ 各ノードのデータにバインドされて、基になる<xref:System.Web.SiteMapNode>可能型のノードを除きます。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.UI.WebControls.SiteMapPath.OnItemCreated%2A>メソッドを作成した後に、<xref:System.Web.UI.WebControls.SiteMapNodeItem>内で、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>メソッドです。 このコード例に示されている例のコードの一部である、<xref:System.Web.UI.WebControls.SiteMapPath.InitializeItem%2A>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/CS/dropdownnavigationpath.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.DropDownNavigationPath_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.DropDownNavigationPath_1/VB/dropdownnavigationpath.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="Current" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SiteMapNodeItemType Current = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SiteMapNodeItemType.Current" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトのナビゲーション パスに表示されているページ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="Parent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SiteMapNodeItemType Parent = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SiteMapNodeItemType.Parent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトのナビゲーション パスに表示されているページの親ノードです。 ナビゲーション階層のルート ノードと現在のノードの間に存在する任意のノードは、親ノードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PathSeparator">
+      <MemberSignature Language="C#" Value="PathSeparator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SiteMapNodeItemType PathSeparator = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SiteMapNodeItemType.PathSeparator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイト マップ ナビゲーション パス区切りです。 既定の区切り記号、<see cref="T:System.Web.UI.WebControls.SiteMapPath" />コントロールは、"&gt;"文字です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="Root" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SiteMapNodeItemType Root = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SiteMapNodeItemType.Root" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapNodeItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイトのナビゲーション階層の最上位ノード。 1 つだけのルート ノードが存在することができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

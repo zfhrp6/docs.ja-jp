@@ -1,0 +1,130 @@
+<Type Name="DomainUpDown+DomainUpDownAccessibleObject" FullName="System.Windows.Forms.DomainUpDown+DomainUpDownAccessibleObject">
+  <TypeSignature Language="C#" Value="public class DomainUpDown.DomainUpDownAccessibleObject : System.Windows.Forms.Control.ControlAccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit DomainUpDown/DomainUpDownAccessibleObject extends System.Windows.Forms.Control/ControlAccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control+ControlAccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.DomainUpDown" /> コントロールの情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームでは、ユーザー補助機能が組み込まれているし、ユーザー補助クライアント アプリケーションで使用できるように、アプリケーションに関する情報を提供します。 ユーザー補助クライアント アプリケーションの例は、ツールとレビュー担当者のユーティリティを画面には、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ。 <xref:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject>クラスから継承、<xref:System.Windows.Forms.AccessibleObject>に関する情報を提供するクラス、<xref:System.Windows.Forms.DomainUpDown>ユーザー補助クライアント アプリケーションに制御します。  
+  
+ インスタンスがあるコントロールの名前や説明、ユーザー補助クライアント アプリケーションなどのカスタム情報を提供する場合。 この情報を提供する 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>、 <xref:System.Windows.Forms.Control.AccessibleDescription%2A>、 <xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>、および<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+ ユーザー補助機能については、コントロールに含まれているを必要とする場合から派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.AccessibleObject>または<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラスです。 たとえば、共通のコントロールから派生していない、独自のコントロールを作成している場合、またはコントロール内でヒット テストなどの操作が必要な作成する必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject>呼び出すことによって、コントロールの<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DomainUpDownAccessibleObject (System.Windows.Forms.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary><see cref="T:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetChild">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject GetChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.AccessibleObject GetChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.GetChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセス可能な子の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスに対応する子ユーザー補助オブジェクトを取得します。</summary>
+        <returns>指定したインデックスに対応する子ユーザー補助オブジェクトを表す <see cref="T:System.Windows.Forms.AccessibleObject" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject>のさまざまな部分に対応する子ユーザー補助オブジェクトを含む、<xref:System.Windows.Forms.DomainUpDown>コントロール。 次の表に、インデックスと子ユーザー補助オブジェクトの値、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.GetChild%2A>メソッドを返します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|0|テキスト ボックスのユーザー補助オブジェクト|  
+|1|上矢印と下矢印ボタンは、ユーザー補助オブジェクト。|  
+|2|ユーザー補助オブジェクトのアイテム プロパティの<xref:System.Windows.Forms.DomainUpDown>コントロール。|  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildCount">
+      <MemberSignature Language="C#" Value="public override int GetChildCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetChildCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.GetChildCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー補助オブジェクトに属する子の数を取得します。</summary>
+        <returns>常に 3 が返されます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトのロールを取得します。</summary>
+        <value><see cref="F:System.Windows.Forms.AccessibleRole.ComboBox" /> 値。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

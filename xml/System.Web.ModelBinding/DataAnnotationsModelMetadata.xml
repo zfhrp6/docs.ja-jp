@@ -1,0 +1,66 @@
+<Type Name="DataAnnotationsModelMetadata" FullName="System.Web.ModelBinding.DataAnnotationsModelMetadata">
+  <TypeSignature Language="C#" Value="public class DataAnnotationsModelMetadata : System.Web.ModelBinding.ModelMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataAnnotationsModelMetadata extends System.Web.ModelBinding.ModelMetadata" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.DataAnnotationsModelMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.ModelBinding.ModelMetadata</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>共通のメタデータのコンテナーを提供、<see cref="T:System.Web.ModelBinding.DataAnnotationsModelMetadataProvider" />クラス、および、<see cref="T:System.Web.ModelBinding.DataAnnotationsModelValidator" />データ モデルのクラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataAnnotationsModelMetadata (System.Web.ModelBinding.DataAnnotationsModelMetadataProvider provider, Type containerType, Func&lt;object&gt; modelAccessor, Type modelType, string propertyName, System.ComponentModel.DataAnnotations.DisplayColumnAttribute displayColumnAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ModelBinding.DataAnnotationsModelMetadataProvider provider, class System.Type containerType, class System.Func`1&lt;object&gt; modelAccessor, class System.Type modelType, string propertyName, class System.ComponentModel.DataAnnotations.DisplayColumnAttribute displayColumnAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelMetadata.#ctor(System.Web.ModelBinding.DataAnnotationsModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String,System.ComponentModel.DataAnnotations.DisplayColumnAttribute)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.ModelBinding.DataAnnotationsModelMetadataProvider" />
+        <Parameter Name="containerType" Type="System.Type" />
+        <Parameter Name="modelAccessor" Type="System.Func&lt;System.Object&gt;" />
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="displayColumnAttribute" Type="System.ComponentModel.DataAnnotations.DisplayColumnAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="provider">プロバイダー オブジェクト。</param>
+        <param name="containerType">コンテナーの種類または<see langword="null" />コンテナーが存在しない場合。</param>
+        <param name="modelAccessor">モデル アクセサー。</param>
+        <param name="modelType">モデルの型。</param>
+        <param name="propertyName">プロパティの名前または<see langword="null" />場合は、モデルがプロパティではありません。</param>
+        <param name="displayColumnAttribute">表示列の属性です。</param>
+        <summary><see cref="T:System.Web.ModelBinding.DataAnnotationsModelMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSimpleDisplayText">
+      <MemberSignature Language="C#" Value="protected override string GetSimpleDisplayText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetSimpleDisplayText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelMetadata.GetSimpleDisplayText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに表示されるモデルのモデルが複雑なオブジェクトを表すテキストを返します。</summary>
+        <returns>複雑なオブジェクトを表示するテキスト。 ある場合、<see cref="T:System.ComponentModel.DataAnnotations.DisplayColumnAttribute" />モデルでは、既定値の属性は、表示列の名前。 既定値を呼び出すことによって決まりますがそれ以外の場合、<see cref="M:System.Web.ModelBinding.ModelMetadata.GetSimpleDisplayText" />のメソッド、<see cref="T:System.Web.ModelBinding.ModelMetadata" />基本クラスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

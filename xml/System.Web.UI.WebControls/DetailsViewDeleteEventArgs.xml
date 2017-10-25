@@ -1,0 +1,194 @@
+<Type Name="DetailsViewDeleteEventArgs" FullName="System.Web.UI.WebControls.DetailsViewDeleteEventArgs">
+  <TypeSignature Language="C#" Value="public class DetailsViewDeleteEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewDeleteEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewDeleteEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.DetailsView.ItemDeleting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>昇給を制御、<xref:System.Web.UI.WebControls.DetailsView.ItemDeleting>イベントと削除 ボタン (ボタンがその`CommandName`プロパティが"Delete"に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールには、レコードが削除されます。 これにより、このイベントが発生するたびに、削除する前にレコードを検査するなど、カスタムのルーチンを実行するイベント ハンドラーを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.DetailsViewDeletedEventArgs>オブジェクトが削除されるレコードのインデックスを確認し、削除操作を取り消す必要があることを示すために使用できるイベント ハンドラーに渡されます。 レコードのインデックスを確認するを使用して、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.RowIndex%2A>プロパティです。 削除操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 使用しても、キー フィールドと非キー フィールドにアクセスすることができます、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>と<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values%2A>プロパティ、それぞれします。 これらの値を削除する前に、レコードを確認したい場合に便利です。  
+  
+> [!NOTE]
+>  キー フィールド値を変更することは、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>プロパティです。 これらの値を変更する場合は、新しいキー フィールドの値に対応するレコードが削除されます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs>クラスを参照してください、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs>オブジェクトのイベント ハンドラーに渡される、 <xref:System.Web.UI.WebControls.DetailsView.ItemDeleting> delete 操作をキャンセルするイベントです。  
+  
+ [!code-aspx-csharp[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/CS/detailsviewdeleteeventargsinlinecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/VB/detailsviewdeleteeventargsinlinevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewDeleteEventArgs (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">削除される行のインデックス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DetailsViewDeleteEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs>クラスです。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.RowIndex%2A>|`rowIndex` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>順序付けられた辞書のキー フィールドの名前/値ペアの名前を格納して、削除された項目のキー フィールドの値を取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を削除するキー フィールドの名前/値ペアのアイテムと一致するために使用の順序付けられた辞書を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>キー フィールド、または削除するレコードのフィールドの値にアクセスするプロパティです。 たとえば、これらの値を使用して、レコードを削除する前に、削除、または削除されたレコードのログを保持するレコードを変更することを確認することができます。  
+  
+> [!NOTE]
+>  このプロパティには、キー フィールドのみが含まれています。 非キー フィールドの名前/値ペアの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>キー フィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>キー フィールドの値にアクセスするオブジェクト。 インデクサーを使用するメリットは、キー フィールドの値が直接返されることです。  
+  
+ このプロパティは読み取り専用です。ただしのキー フィールドの値を変更することができます、<xref:System.Collections.Specialized.IOrderedDictionary>オブジェクトを返します。 キー フィールドの値を変更する場合の対応するレコードをデータ ソースから削除するされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>削除されるレコードのキー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/CS/detailsviewdeleteeventargsinlinecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/VB/detailsviewdeleteeventargsinlinevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除される行のインデックスを取得します。</summary>
+        <value>削除される行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.RowIndex%2A>プロパティが削除される行のインデックスを確認します。 指定した行を取得する行のインデックスが使用される多くの場合、<xref:System.Web.UI.WebControls.DetailsView.Rows%2A>のコレクション、<xref:System.Web.UI.WebControls.DetailsView>コントロールで、行のプロパティにアクセスすることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.RowIndex%2A>プロパティが削除される行のインデックスを確認します。  
+  
+ [!code-aspx-csharp[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/CS/detailsviewdeleteeventargsinlinecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/VB/detailsviewdeleteeventargsinlinevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除する項目のキー以外のフィールドの名前/値ペアのディクショナリを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.IOrderedDictionary" />を削除する項目の非キー フィールドの名前/値ペアのディクショナリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values%2A>プロパティを削除するレコードのキー以外のフィールドの値にアクセスします。 たとえばを削除するには、前に、レコードを確認するか削除されたレコードのログを保持する、これらの値を使用できます。  
+  
+> [!NOTE]
+>  このプロパティには、複数のキー フィールドがありません。 キー フィールドまたはフィールドの名前/値ペアの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Keys%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>キー以外のフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>フィールド値にアクセスするオブジェクト。 インデクサーを使用するメリットは、フィールドの値が直接返されることです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewDeleteEventArgs.Values%2A>削除されているレコードの非キー フィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/CS/detailsviewdeleteeventargsinlinecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewDeleteEventArgsCodeInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewDeleteEventArgsCodeInline/VB/detailsviewdeleteeventargsinlinevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

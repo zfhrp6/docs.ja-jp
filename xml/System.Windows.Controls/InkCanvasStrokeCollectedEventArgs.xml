@@ -1,0 +1,85 @@
+<Type Name="InkCanvasStrokeCollectedEventArgs" FullName="System.Windows.Controls.InkCanvasStrokeCollectedEventArgs">
+  <TypeSignature Language="C#" Value="public class InkCanvasStrokeCollectedEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InkCanvasStrokeCollectedEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.InkCanvas.StrokeCollected" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InkCanvasStrokeCollectedEventArgs (System.Windows.Ink.Stroke stroke);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Ink.Stroke stroke) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs.#ctor(System.Windows.Ink.Stroke)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stroke" Type="System.Windows.Ink.Stroke" />
+      </Parameters>
+      <Docs>
+        <param name="stroke">収集した<see cref="T:System.Windows.Ink.Stroke" />オブジェクト。</param>
+        <summary><see cref="T:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">イベント ハンドラー。</param>
+        <param name="genericTarget">イベント ターゲット。</param>
+        <summary>型固有の方法でイベント ハンドラーを呼び出す方法を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスで実装された場合<xref:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs.InvokeEventHandler%2A>基本実装より効率を高めることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stroke">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.Stroke Stroke { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.Stroke Stroke" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.InkCanvasStrokeCollectedEventArgs.Stroke" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.Stroke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加された線を取得、<see cref="T:System.Windows.Controls.InkCanvas" />です。</summary>
+        <value>追加された線、<see cref="T:System.Windows.Controls.InkCanvas" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

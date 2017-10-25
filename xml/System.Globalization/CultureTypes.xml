@@ -1,0 +1,309 @@
+<Type Name="CultureTypes" FullName="System.Globalization.CultureTypes">
+  <TypeSignature Language="C#" Value="public enum CultureTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CultureTypes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.CultureTypes" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes)" /> メソッドを使用して取得できるカルチャ リストの種類を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのカルチャの種類の値がによって返される、<xref:System.Globalization.CultureInfo.CultureTypes%2A?displayProperty=nameWithType>プロパティ、およびもによって返されるカルチャを制限するフィルターとして機能、<xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType>メソッドです。 カルチャの詳細については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+ 一般に、アプリケーションでは、AllCultures 値を使用して、すべてのカルチャを列挙する必要があります。 これにより、カスタムのカルチャだけでなく、他のカルチャの種類を列挙します。  
+  
+ FrameworkCultures と WindowsOnlyCultures メンバーが廃止されたことに注意してください。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.CultureTypes.AllCultures>列挙型、および<xref:System.Globalization.CultureInfo.CultureTypes%2A>プロパティです。  
+  
+ [!code-cpp[System.Globalization.CultureTypes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cpp/ct.cpp#1)]
+ [!code-csharp[System.Globalization.CultureTypes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cs/ct.cs#1)]
+ [!code-vb[System.Globalization.CultureTypes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureTypes/vb/ct.vb#1)]  
+  
+ 次の例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllCultures">
+      <MemberSignature Language="C#" Value="AllCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes AllCultures = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.AllCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ニュートラル カルチャまたは特定のカルチャや、Windows オペレーティング システムにインストールされているカルチャ、ユーザーが作成したカスタム カルチャなど、.NET Framework に付属しているすべてのカルチャ。  
+  
+ <see cref="F:System.Globalization.CultureTypes.AllCultures" /> は、<see cref="F:System.Globalization.CultureTypes.NeutralCultures" />、<see cref="F:System.Globalization.CultureTypes.SpecificCultures" />、および <see cref="F:System.Globalization.CultureTypes.InstalledWin32Cultures" /> の値を含む複合フィールドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameworkCultures">
+      <MemberSignature Language="C#" Value="FrameworkCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes FrameworkCultures = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.FrameworkCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This value has been deprecated.  Please use other values in CultureTypes.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは廃止されました。この値を使用して<see cref="M:System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes)" />付属の .NET Framework 2.0 ニュートラル カルチャまたは特定のカルチャを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledWin32Cultures">
+      <MemberSignature Language="C#" Value="InstalledWin32Cultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes InstalledWin32Cultures = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.InstalledWin32Cultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows オペレーティング システムにインストールされているすべてのカルチャ。 .NET Framework でサポートされているすべてのカルチャがオペレーティング システムにインストールされているわけではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NeutralCultures">
+      <MemberSignature Language="C#" Value="NeutralCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes NeutralCultures = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.NeutralCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語に関連付けらているが、国/地域に固有ではないカルチャ。 .NET Framework カルチャの名前は、ISO 639-1 から派生した 2 文字の小文字のコードで構成されます。 例:"en"(英語) は、ニュートラル カルチャです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム カルチャでは、2 文字のコードだけでなく以外にユーザー指定の名前を持つことができます。  
+  
+ インバリアント カルチャがによって返されるカルチャの配列に含まれる、<xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType>メソッドを指定する値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplacementCultures">
+      <MemberSignature Language="C#" Value="ReplacementCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes ReplacementCultures = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.ReplacementCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.NET Framework に付属するカルチャを置換する、ユーザーが作成したカスタムのカルチャ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecificCultures">
+      <MemberSignature Language="C#" Value="SpecificCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes SpecificCultures = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.SpecificCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域に固有のカルチャ。 これらのカルチャの名前は RFC 4646 に準拠しています (Windows Vista 以降)。 形式は"&lt;languagecode2&gt;-&lt;country/regioncode2&gt;"ここで、 &lt;languagecode2&gt;は小文字の 2 文字コードを ISO 639-1 とから派生&lt;country/regioncode2&gt;は 2 文字の大文字のコードを ISO 3166 から派生します。 たとえば、英語 (米国) の "en-US" は、特定のカルチャです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム カルチャでは、標準に準拠した名だけでなく以外にユーザー指定の名前を持つことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserCustomCulture">
+      <MemberSignature Language="C#" Value="UserCustomCulture" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes UserCustomCulture = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.UserCustomCulture" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが作成したカスタムのカルチャ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows 10 より前のバージョンの Windows では、開発者によって作成されるカスタムのカルチャを UserCustomCulture 値が割り当てられます。 Windows 10、UserCustomCulture 値がシステムのカルチャをカルチャのデータの完全なセットではバックアップされませんし、一意なローカル識別子を持っていないにも割り当てられています。 (UserCustomCulture の種類のすべてのカルチャの共有、<xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>値`LOCALE_CUSTOM_UNSPECIFIED`(0x1000、または 4096)。 その結果、コードのように  
+  
+ [!code-csharp[System.Globalization.CultureTypes#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cs/getcultures3.cs#2)]
+ [!code-vb[System.Globalization.CultureTypes#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureTypes/vb/getcultures3.vb#2)]  
+  
+ または  
+  
+ [!code-csharp[System.Globalization.CultureTypes#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cs/getcultures3.cs#3)]
+ [!code-vb[System.Globalization.CultureTypes#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureTypes/vb/getcultures3.vb#3)]  
+  
+ 異なるバージョンの Windows で異なるカルチャのセットを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsOnlyCultures">
+      <MemberSignature Language="C#" Value="WindowsOnlyCultures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureTypes WindowsOnlyCultures = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureTypes.WindowsOnlyCultures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This value has been deprecated.  Please use other values in CultureTypes.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは非推奨です。 これが <see cref="M:System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes)" /> メソッドの引数として使用されている場合、メソッドは空の配列を返します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,480 @@
+<Type Name="CanonicalTrackedInputFiles" FullName="Microsoft.Build.Utilities.CanonicalTrackedInputFiles">
+  <TypeSignature Language="C#" Value="public class CanonicalTrackedInputFiles" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CanonicalTrackedInputFiles extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.CanonicalTrackedInputFiles" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、.read の filetracking ログ インタープリターです。 正規の形式または正規ようにルート (^) をされているものを追跡記録します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedInputFiles (Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] sourceFiles, Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] sourceFiles, class Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.#ctor(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Utilities.CanonicalTrackedOutputFiles,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="sourceFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Utilities.CanonicalTrackedOutputFiles" />
+        <Parameter Name="useMinimalRebuildOptimization" Type="System.Boolean" />
+        <Parameter Name="maintainCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Read です。 tlog ファイルの解釈</param>
+        <param name="sourceFiles">依存関係を解釈するプライマリ ソース ファイル</param>
+        <param name="outputs">この一連のソースをコンパイルすることによって生成された出力ファイル</param>
+        <param name="useMinimalRebuildOptimization">警告: 簡易リビルドの最適化を指定する、100% 正確な計算の出力が必要です。</param>
+        <param name="maintainCompositeRootingMarkers">複合ルート マーカー (多対一の場合) または (一対一または一対多の場合) に細分化する場合は false を保持する場合は true</param>
+        <summary>複数の入力ソース ファイルのコンス トラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedInputFiles (Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] sourceFiles, Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] sourceFiles, class Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, class Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.#ctor(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Utilities.CanonicalTrackedOutputFiles,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="sourceFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="excludedInputPaths" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Utilities.CanonicalTrackedOutputFiles" />
+        <Parameter Name="useMinimalRebuildOptimization" Type="System.Boolean" />
+        <Parameter Name="maintainCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Read です。 tlog ファイルの解釈</param>
+        <param name="sourceFiles">依存関係を解釈するプライマリ ソース ファイル</param>
+        <param name="excludedInputPaths">最新の状態の確認中に無視するファイルを含むパスのセット</param>
+        <param name="outputs">この一連のソースをコンパイルすることによって生成された出力ファイル</param>
+        <param name="useMinimalRebuildOptimization">警告: 簡易リビルドの最適化を指定する、100% 正確な計算の出力が必要です。</param>
+        <param name="maintainCompositeRootingMarkers">複合ルート マーカー (多対一の場合) または (一対一または一対多の場合) に細分化する場合は false を保持する場合は true</param>
+        <summary>複数の入力ソース ファイルのコンス トラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedInputFiles (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem sourceFile, Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem sourceFile, class Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, class Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Utilities.CanonicalTrackedOutputFiles,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="sourceFile" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="excludedInputPaths" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Utilities.CanonicalTrackedOutputFiles" />
+        <Parameter Name="useMinimalRebuildOptimization" Type="System.Boolean" />
+        <Parameter Name="maintainCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">.Read です。 tlog ファイルの解釈</param>
+        <param name="sourceFile">依存関係を解釈するプライマリ ソース ファイル</param>
+        <param name="excludedInputPaths">最新の状態の確認中に無視するファイルを含むパスのセット</param>
+        <param name="outputs">このソースをコンパイルすることによって生成された出力ファイル</param>
+        <param name="useMinimalRebuildOptimization">警告: 簡易リビルドの最適化を指定する、100% 正確な計算の出力が必要です。</param>
+        <param name="maintainCompositeRootingMarkers">複合ルート マーカー (多対一の場合) または (一対一または一対多の場合) に細分化する場合は false を保持する場合は true</param>
+        <summary>1 つの入力ソース ファイルのコンス トラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedInputFiles (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] sourceFiles, Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, Microsoft.Build.Framework.ITaskItem[] outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] sourceFiles, class Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, class Microsoft.Build.Framework.ITaskItem[] outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="sourceFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="excludedInputPaths" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="useMinimalRebuildOptimization" Type="System.Boolean" />
+        <Parameter Name="maintainCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">.Read です。 tlog ファイルの解釈</param>
+        <param name="sourceFiles">依存関係を解釈するプライマリ ソース ファイル</param>
+        <param name="excludedInputPaths">最新の状態の確認中に無視するファイルを含むパスのセット</param>
+        <param name="outputs">この一連のソースをコンパイルすることによって生成された出力ファイル</param>
+        <param name="useMinimalRebuildOptimization">警告: 簡易リビルドの最適化を指定する、100% 正確な計算の出力が必要です。</param>
+        <param name="maintainCompositeRootingMarkers">複合ルート マーカー (多対一の場合) または (一対一または一対多の場合) に細分化する場合は false を保持する場合は true</param>
+        <summary>複数の入力ソース ファイルのコンス トラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedInputFiles (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, Microsoft.Build.Framework.ITaskItem[] sourceFiles, Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, class Microsoft.Build.Framework.ITaskItem[] sourceFiles, class Microsoft.Build.Framework.ITaskItem[] excludedInputPaths, class Microsoft.Build.Utilities.CanonicalTrackedOutputFiles outputs, bool useMinimalRebuildOptimization, bool maintainCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Utilities.CanonicalTrackedOutputFiles,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="sourceFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="excludedInputPaths" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Utilities.CanonicalTrackedOutputFiles" />
+        <Parameter Name="useMinimalRebuildOptimization" Type="System.Boolean" />
+        <Parameter Name="maintainCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">.Read です。 tlog ファイルの解釈</param>
+        <param name="sourceFiles">依存関係を解釈するプライマリ ソース ファイル</param>
+        <param name="excludedInputPaths">最新の状態の確認中に無視するファイルを含むパスのセット</param>
+        <param name="outputs">この一連のソースをコンパイルすることによって生成された出力ファイル</param>
+        <param name="useMinimalRebuildOptimization">警告: 簡易リビルドの最適化を指定する、100% 正確な計算の出力が必要です。</param>
+        <param name="maintainCompositeRootingMarkers">複合ルート マーカー (多対一の場合) または (一対一または一対多の場合) に細分化する場合は false を保持する場合は true</param>
+        <summary>複数の入力ソース ファイルのコンス トラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeSourcesNeedingCompilation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ComputeSourcesNeedingCompilation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Framework.ITaskItem[] ComputeSourcesNeedingCompilation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.ComputeSourcesNeedingCompilation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、出力ファイルおよび入力の完全な依存関係グラフに基づいて、コンパイルする必要のあるソースを計算します。</summary>
+        <returns>コンパイルする必要のあるファイルの配列</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeSourcesNeedingCompilation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ComputeSourcesNeedingCompilation (bool searchForSubRootsInCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Framework.ITaskItem[] ComputeSourcesNeedingCompilation(bool searchForSubRootsInCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.ComputeSourcesNeedingCompilation(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchForSubRootsInCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="searchForSubRootsInCompositeRootingMarkers">True の場合は、subroots の複合ルート マーカーを検索します。</param>
+        <summary>このメソッドは、出力ファイルおよび必要に応じて検索複合ルート マーカーを入力ファイルがあるのため、入力の完全な依存関係グラフに基づいて、コンパイルする必要のあるソースを計算します。</summary>
+        <returns>コンパイルする必要のあるファイルの配列</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyTable">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,System.Collections.Generic.Dictionary&lt;string,string&gt;&gt; DependencyTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Collections.Generic.Dictionary`2&lt;string, string&gt;&gt; DependencyTable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.DependencyTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係テーブルを取得します。</summary>
+        <value>依存関係テーブルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileIsExcludedFromDependencyCheck">
+      <MemberSignature Language="C#" Value="public bool FileIsExcludedFromDependencyCheck (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FileIsExcludedFromDependencyCheck(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.FileIsExcludedFromDependencyCheck(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">テストするファイルの完全なパス</param>
+        <summary>指定したファイルは追跡対象の依存関係のチェックから除外されているかどうかはどうかを確認します。</summary>
+        <returns>ファイルの true を返しますは除外されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem[] source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem[] source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem correspondingOutput);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem correspondingOutput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="correspondingOutput" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutput">(同じファイルの処理に使用) ソースに対応する出力</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem[] source, Microsoft.Build.Framework.ITaskItem[] correspondingOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem[] source, class Microsoft.Build.Framework.ITaskItem[] correspondingOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="correspondingOutputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutputs">(同じファイルの処理に使用) ソースに対応する出力</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependencyFromEntry">
+      <MemberSignature Language="C#" Value="public void RemoveDependencyFromEntry (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem dependencyToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependencyFromEntry(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem dependencyToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependencyFromEntry(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="dependencyToRemove" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="dependencyToRemove">削除する依存関係です。</param>
+        <summary>指定されたソースと対応する出力の出力グラフ エントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependencyFromEntry">
+      <MemberSignature Language="C#" Value="public void RemoveDependencyFromEntry (Microsoft.Build.Framework.ITaskItem[] sources, Microsoft.Build.Framework.ITaskItem dependencyToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependencyFromEntry(class Microsoft.Build.Framework.ITaskItem[] sources, class Microsoft.Build.Framework.ITaskItem dependencyToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveDependencyFromEntry(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="dependencyToRemove" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="sources">ソース グラフから削除する必要があります。</param>
+        <param name="dependencyToRemove">削除する依存関係です。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem[] source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem[] source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntryForSourceRoot">
+      <MemberSignature Language="C#" Value="public void RemoveEntryForSourceRoot (string rootingMarker);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntryForSourceRoot(string rootingMarker) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.RemoveEntryForSourceRoot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootingMarker" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rootingMarker">削除するルート。</param>
+        <summary>ルートに対応する入力依存関係グラフ内のエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.SaveTlog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、再書き込み tlog、現在の出力テーブルから新しいエントリが追跡されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog (Microsoft.Build.Utilities.DependencyFilter includeInTLog);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog(class Microsoft.Build.Utilities.DependencyFilter includeInTLog) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedInputFiles.SaveTlog(Microsoft.Build.Utilities.DependencyFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeInTLog" Type="Microsoft.Build.Utilities.DependencyFilter" />
+      </Parameters>
+      <Docs>
+        <param name="includeInTLog">デリゲートは、特定のファイルを圧縮された tlog に含める必要があるかどうかを判断するために使用します。</param>
+        <summary>このメソッドでは、現在の依存関係から tlog 再書き込みされます。 ソースがコンパイルされると、新しいエントリが追跡されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

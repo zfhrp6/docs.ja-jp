@@ -1,0 +1,174 @@
+<Type Name="AudioSignalProblem" FullName="System.Speech.Recognition.AudioSignalProblem">
+  <TypeSignature Language="C#" Value="public enum AudioSignalProblem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AudioSignalProblem extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.AudioSignalProblem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>音声認識エンジンが受け取った、オーディオ信号に考えられる問題の一覧が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CcurredEventArgs.AudioSignalProblem のクラスのプロパティ、ccurredEventArgs この列挙体のメンバーを取得するときに、<xref:System.Speech.Recognition.SpeechRecognitionEngine>または<xref:System.Speech.Recognition.SpeechRecognizer>を発生させます、<xref:System.Speech.Recognition.SpeechRecognitionEngine.AudioSignalProblemOccurred>イベント。  
+  
+   
+  
+## Examples  
+ 次の例に関する情報を収集するイベント ハンドラーを定義する、<xref:System.Speech.Recognition.SpeechRecognitionEngine.AudioSignalProblemOccurred>イベント。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine sre;  
+  
+// Initialize the speech recognition engine.  
+private void Initialize()  
+{  
+  sre = new SpeechRecognitionEngine();  
+  
+  // Add a handler for the AudioSignalProblemOccurred event.  
+  sre.AudioSignalProblemOccurred += new EventHandler<AudioSignalProblemOccurredEventArgs>(sre_AudioSignalProblemOccurred);  
+}  
+  
+// Gather information when the AudioSignalProblemOccurred event is raised.  
+void sre_AudioSignalProblemOccurred(object sender, AudioSignalProblemOccurredEventArgs e)  
+{  
+  StringBuilder details = new StringBuilder();  
+  
+  details.AppendLine("Audio signal problem information:");  
+  details.AppendFormat(  
+    " Audio level:               {0}" + Environment.NewLine +  
+    " Audio position:            {1}" + Environment.NewLine +  
+    " Audio signal problem:      {2}" + Environment.NewLine +  
+    " Recognition engine audio position: {3}" + Environment.NewLine,  
+    e.AudioLevel, e.AudioPosition, e.AudioSignalProblem,  
+    e.recoEngineAudioPosition);  
+  
+  // Insert additional event handler code here.  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力に関する問題はありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoSignal">
+      <MemberSignature Language="C#" Value="NoSignal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem NoSignal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.NoSignal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力は検出されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TooFast">
+      <MemberSignature Language="C#" Value="TooFast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem TooFast = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.TooFast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力が速すぎます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TooLoud">
+      <MemberSignature Language="C#" Value="TooLoud" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem TooLoud = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.TooLoud" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力が大きすぎます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TooNoisy">
+      <MemberSignature Language="C#" Value="TooNoisy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem TooNoisy = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.TooNoisy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力が、バック グラウンド ノイズが多すぎます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TooSlow">
+      <MemberSignature Language="C#" Value="TooSlow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem TooSlow = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.TooSlow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力が遅すぎます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TooSoft">
+      <MemberSignature Language="C#" Value="TooSoft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.AudioSignalProblem TooSoft = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.AudioSignalProblem.TooSoft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioSignalProblem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオ入力は小さすぎる場合です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,58 @@
+<Type Name="SecurityContext" FullName="System.Messaging.SecurityContext">
+  <TypeSignature Language="C#" Value="public sealed class SecurityContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.SecurityContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>キュー内のメッセージのセキュリティ コンテキストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ コンテキストには、内部の証明書、ユーザーの SID では、対応する秘密キー、証明書と送信者の id は、認証を要求するときに、メッセージに添付するために必要などのキャッシュされたセキュリティ情報が含まれています。  
+  
+ ASP.NET アプリケーションなどのクライアントは、キューにメッセージを送信するユーザーを偽装する、キューにアクセスするユーザーの id が使用されます。 キューがリモートの場合は、これらの資格情報がキャッシュされ、その後、キューに送信されるメッセージに使用します。 そのため、後続のメッセージで SID は、最初に、キューにメッセージを送信したユーザーのキャッシュされた id になります。 最初に、キューにメッセージを送信したユーザーのキャッシュされた id は、後続のユーザーに使用されます。  
+  
+ この問題を解決するには、設定のセキュリティ コンテキストを使用して、<xref:System.Messaging.Message.SecurityContext%2A>を現在のユーザーの資格情報がキューにアクセスするために使用されるようにするリモート キューにメッセージを送信する前にします。 ただし、推奨されるベスト プラクティスには。  
+  
+1.  認証されているキューのキューを作成します。  
+  
+2.  ドメインの id として、ASP.NET アプリケーションを実行し、そのキューへの書き込みアプリケーションを承認します。  
+  
+3.  キューの使用時にユーザーを偽装しません。 代わりに、呼び出し元の id を取得し、ASP.NET アプリケーションの承認チェックを実行またはメッセージの一部として、呼び出し元の id を含めるし、受信側アプリケーションの承認チェックを実行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.SecurityContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.SecurityContext" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

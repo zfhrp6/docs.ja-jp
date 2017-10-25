@@ -1,0 +1,3934 @@
+<Type Name="XmlTextReader" FullName="System.Xml.XmlTextReader">
+  <TypeSignature Language="C#" Value="public class XmlTextReader : System.Xml.XmlReader, System.Xml.IXmlLineInfo, System.Xml.IXmlNamespaceResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextReader extends System.Xml.XmlReader implements class System.Xml.IXmlLineInfo, class System.Xml.IXmlNamespaceResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlTextReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlReader</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.IXmlLineInfo</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Xml.IXmlNamespaceResolver</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML データへの高速で非キャッシュの前方向アクセスを提供するリーダーを表します。  
+  
+ .NET Framework 2.0 以降では、代わりに <see cref="T:System.Xml.XmlReader" /> クラスを使用することをお勧めします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>XML データのストリームに順方向専用、読み取り専用のアクセスを提供します。 現在のノードとは、現在リーダーが置かれているノードのことです。 リーダーが読み取りのメソッドのいずれかを使用して高度なし、プロパティは、現在のノードの値を反映します。  
+  
+ このクラスは実装<xref:System.Xml.XmlReader>W3C 拡張マークアップ言語 (XML) 1.0 と XML の推奨事項の名前空間に準拠しているとします。 `XmlTextReader`次の機能を提供します。  
+  
+-   整形式 XML の規則を適用します。  
+  
+-   `XmlTextReader`データの検証を提供しません。  
+  
+-   確認`DocumentType`ノードが整形式です。 `XmlTextReader`整形式での DTD をチェックしますが、DTD を使用して検証されません。  
+  
+-   ノードの場所<xref:System.Xml.XmlTextReader.NodeType%2A>は`XmlNodeType.EntityReference`、1 つの空`EntityReference`ノードが返されます (つまり、<xref:System.Xml.XmlTextReader.Value%2A>プロパティは`String.Empty`)。  
+  
+> [!NOTE]
+>  DTD 内のエンティティの実際の宣言と呼びます`Entity`ノード。 データでこれらのノードを参照するときに呼び出される`EntityReference`ノード。  
+  
+-   既定の属性は展開しません。  
+  
+ `XmlTextReader`データの検証に必要な追加のチェックは行われず、高速整形パーサーが用意されています。  
+  
+ データの検証を実行する検証を使用して<xref:System.Xml.XmlReader>です。  
+  
+ XML データを読み取る、<xref:System.Xml.XmlDocument>を使用して<xref:System.Xml.XmlNodeReader>です。  
+  
+ `XmlTextReader`スロー、 <xref:System.Xml.XmlException> XML の解析エラーです。 例外がスローされた後にリーダーの状態は予測できません。 たとえば、報告されたノード型は、現在のノードの実際のノード型よりも異なる場合があります。 使用して、<xref:System.Xml.XmlTextReader.ReadState%2A>リーダーがエラー状態にするかどうかを確認するプロパティです。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ 使用する場合の考慮事項は、次のとおり、<xref:System.Xml.XmlTextReader>クラスです。  
+  
+-   スローされた例外、<xref:System.Xml.XmlTextReader>たくないパス情報に送られ、アプリケーションを公開することができます。 アプリケーションは例外をキャッチし、それらを適切に処理する必要があります。  
+  
+-   DTD の処理は既定で有効になっています。 サービス拒否攻撃や信頼されていないソースを扱うかどうかに関する問題がある場合は、DTD 処理を無効にします。 設定、<xref:System.Xml.XmlTextReader.DtdProcessing%2A>プロパティを<xref:System.Xml.DtdProcessing.Prohibit>DTD 処理を無効にします。  
+  
+     DTD 処理を有効にした場合、<xref:System.Xml.XmlSecureResolver> を使用して <xref:System.Xml.XmlTextReader> でアクセス可能なリソースを制限できます。 また、XML 処理に対するメモリと時間の割り当てが制限されるようにアプリケーションをデザインすることもできます。 たとえば、ASP.NET アプリケーション内でタイムアウト制限を設定します。  
+  
+-   XML データは、DTD ファイルなどの外部リソースへの参照を含めることができます。 既定では、外部リソースはユーザー資格情報なしで、<xref:System.Xml.XmlUrlResolver> オブジェクトを使用して解決されます。 この点については、次のいずれかの方法でセキュリティを強化できます。  
+  
+    -   <xref:System.Xml.XmlTextReader> プロパティを <xref:System.Xml.XmlTextReader.XmlResolver%2A> オブジェクトに設定することによって、<xref:System.Xml.XmlSecureResolver> がアクセスできるリソースを制限します。  
+  
+    -   <xref:System.Xml.XmlReader> プロパティを <xref:System.Xml.XmlTextReader.XmlResolver%2A> に設定することにより、`null` が外部リソースを開けないようにする。  
+  
+-   XML データには、処理に長時間を要する大量の属性、名前空間宣言、入れ子になった要素などが含まれることがあります。 送信される入力のサイズを制限する、<xref:System.Xml.XmlTextReader>カスタム IStream 実装を作成を指定して、<xref:System.Xml.XmlTextReader>です。  
+  
+-   <xref:System.Xml.XmlReader.ReadValueChunk%2A>大量のデータ ストリームを処理するメソッドを使用できます。 このメソッドは、値全体に 1 つの文字列を割り当てる代わりに、一度に少数の文字を読みます。  
+  
+-   既定では、一般エンティティは展開されません。 一般エンティティは <xref:System.Xml.XmlTextReader.ResolveEntity%2A> メソッドを呼び出したときに展開されます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>このクラスには、継承確認要求があります。 継承する完全な信頼が必要な<see langword="XmlTextReader" />します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>
+          <see cref="T:System.Xml.XmlTextReader" />の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlTextReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see langword="XmlTextReader" />の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input">読み取る XML データを格納しているストリーム。</param>
+        <summary>指定したストリームで <see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>を使用して、ストリームのデコード<xref:System.Text.Encoding?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.TextReader input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextReader input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.TextReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="input">読み取る XML データを格納している <see langword="TextReader" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlTextReader" /> を使用して、<see cref="T:System.IO.TextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ように仮定、`TextReader`は既に、正しいエンコーディングに設定します。 マルチパート MIME シナリオでは、ストリームからいくつかの点を開封してクライアントによって使用されます。  
+  
+   
+  
+## Examples  
+ 次の例に、XML 文字列を読み込みます、`XmlTextReader`オブジェクトを使用して、<xref:System.IO.StringReader>クラスです。  
+  
+ [!code-cpp[XmlTextReader.cctor1#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.cctor1/CPP/rdrcctor1.cpp#1)]
+ [!code-csharp[XmlTextReader.cctor1#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.cctor1/CS/rdrcctor1.cs#1)]
+ [!code-vb[XmlTextReader.cctor1#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.cctor1/VB/rdrcctor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML データを格納しているファイルの URL。 <see cref="P:System.Xml.XmlTextReader.BaseURI" /> は、この値に設定されます。</param>
+        <summary>指定したファイルで、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ アクセス資格情報が必要なリソースには、ファイルが存在する場合を使用して、<xref:System.Xml.XmlTextReader.XmlResolver%2A>プロパティを必要な資格情報を指定します。  
+  
+> [!NOTE]
+>  バージョン 1.1 で、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、部分信頼コードを設定できません、`XmlResolver`プロパティです。 作成の回避策は、<xref:System.Xml.XmlUrlResolver>への URI を渡すために必要な資格情報を持つ、<xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType>メソッド、および、コンストラクト、 `XmlTextReader` 、その結果を使用して<xref:System.IO.Stream>オブジェクト。 回避策は、次の c# コードの説明です。  
+  
+```  
+// Create a resolver with the necessary credentials.  
+XmlUrlResolver resolver = new XmlUrlResolver();  
+NetworkCredential nc = new NetworkCredential(SecurelyStoredUserName, SecurelyStoredPassword, SecurelyStoredDomain);  
+resolver.Credentials = nc;   
+// Get a Stream object containing the XML file.  
+Uri myUri = new Uri ("http://myServer/data/books.xml");  
+Stream s=(Stream)resolver.GetEntity(myUri, null, typeof(Stream));  
+// Construct a reader using the Stream object.  
+XmlTextReader reader = new XmlTextReader(s);  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、XML ファイルを読み取るし、各ノードを表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/VB/source.vb#1)]  
+  
+ この例では、`items.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ファイル名またはディレクトリの一部が見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="url" /> が空の文字列です。</exception>
+        <exception cref="T:System.Net.WebException">リモート ファイルの名前を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="url" /> は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlTextReader (System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlTextReader" /> を使用して、<see cref="T:System.Xml.XmlNameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream input, System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream input, class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream,System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="input">読み取る XML データを格納しているストリーム。</param>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定したストリームと <see cref="T:System.Xml.XmlNameTable" /> で <see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>を使用して、ストリームのデコード<xref:System.Text.Encoding?displayProperty=nameWithType>です。  
+  
+ 名前テーブルを指定する場合、このコンス トラクターは、そのテーブルで既に定義されている名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="input" />または<paramref name="nt" />値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.TextReader input, System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextReader input, class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.TextReader,System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.TextReader" />
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="input">読み取る XML データを格納している <see langword="TextReader" />。</param>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定された <see cref="T:System.Xml.XmlTextReader" /> と <see cref="T:System.IO.TextReader" /> を使用して、<see cref="T:System.Xml.XmlNameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ように仮定、`TextReader`は既に、正しいエンコーディングに設定します。 マルチパート MIME シナリオでは、ストリームからいくつかの点を開封してクライアントによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="nt" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.Stream input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.Stream input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="input" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="url">外部リソースを解決するために使用する URL。 <see cref="P:System.Xml.XmlTextReader.BaseURI" /> は、この値に設定されます。</param>
+        <param name="input">読み取る XML データを格納しているストリーム。</param>
+        <summary>指定した URL とストリームで、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.TextReader input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.TextReader input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.TextReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="input" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="url">外部リソースを解決するために使用する URL。 <see cref="P:System.Xml.XmlTextReader.BaseURI" /> は、この値に設定されます。</param>
+        <param name="input">読み取る XML データを格納している <see langword="TextReader" />。</param>
+        <summary>指定した URL と <see cref="T:System.IO.TextReader" /> で、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ように仮定、`TextReader`は既に、正しいエンコーディングに設定します。 マルチパート MIME シナリオでは、ストリームからいくつかの点を開封してクライアントによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="url">読み取る XML データを格納しているファイルの URL。</param>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定したファイルと <see cref="T:System.Xml.XmlNameTable" /> で、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="nt" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ファイル名またはディレクトリの一部が見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="url" /> が空の文字列です。</exception>
+        <exception cref="T:System.Net.WebException">リモート ファイルの名前を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="url" /> は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream xmlFragment, System.Xml.XmlNodeType fragType, System.Xml.XmlParserContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream xmlFragment, valuetype System.Xml.XmlNodeType fragType, class System.Xml.XmlParserContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream,System.Xml.XmlNodeType,System.Xml.XmlParserContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlFragment" Type="System.IO.Stream" />
+        <Parameter Name="fragType" Type="System.Xml.XmlNodeType" />
+        <Parameter Name="context" Type="System.Xml.XmlParserContext" />
+      </Parameters>
+      <Docs>
+        <param name="xmlFragment">解析する XML フラグメントを含んでいるストリーム。</param>
+        <param name="fragType">XML フラグメントの <see cref="T:System.Xml.XmlNodeType" />。 これもフラグメントに何を含めることができるかを判断します。 下の表を参照してください。</param>
+        <param name="context"><see cref="T:System.Xml.XmlParserContext" />を<c>xmlFragment</c>の解析します。 これが含まれています、<see cref="T:System.Xml.XmlNameTable" />を使用して、エンコーディング、名前空間スコープ、現在<c>xml:lang</c>、および<c>xml:space</c>スコープ。</param>
+        <summary>指定したストリーム、<see cref="T:System.Xml.XmlNodeType" /> および <see cref="T:System.Xml.XmlParserContext" /> で <see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このコンス トラクターは、XML の一部として指定した文字列を解析します。 XML フラグメントが要素または属性の場合は、整形式 XML ドキュメントのルート レベルの規則をバイパスできます。  
+  
+ 次の表に、有効な値の`fragType`します。  
+  
+|XmlNodeType|フラグメントを含めることがあります。|  
+|-----------------|--------------------------|  
+|`Element`|任意の有効な要素の内容 (たとえば、要素、コメント、処理命令、CDATA セクションでは、テキスト、およびエンティティ参照の任意の組み合わせなど)。<br /><br /> XML 宣言を渡すこともできます。 設定することのではなく、XML フラグメントのエンコーディングを指定できます、<xref:System.Xml.XmlParserContext>オブジェクト。|  
+|`Attribute`|属性 (引用符内の部分) の値。|  
+|`Document`|XML ドキュメント全体のコンテンツ。 これは、ドキュメント レベルの規則を強制します。|  
+  
+ リーダーでは、次を使用して、ストリームのエンコーディングを決定します。  
+  
+1.  チェック、<xref:System.Xml.XmlParserContext.Encoding%2A?displayProperty=nameWithType>のエンコーディングを決定するプロパティです。  
+  
+2.  場合、`Encoding`プロパティは`null`リーダーがストリームの先頭のバイト順マークをチェックします。  
+  
+3.  場合、`Encoding`プロパティは`null`バイト順マークが存在しないと、リーダーは、ストリームが utf-8 でエンコードされた前提としています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="fragType" />要素、属性、またはドキュメントではない<see langword="XmlNodeType" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlFragment" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.Stream input, System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.Stream input, class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.Stream,System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="input" Type="System.IO.Stream" />
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="url">外部リソースを解決するために使用する URL。 <see cref="P:System.Xml.XmlTextReader.BaseURI" /> は、この値に設定されます。 場合<c>url</c>は<see langword="null" />、<see langword="BaseURI" />に設定されている<see langword="String.Empty" />です。</param>
+        <param name="input">読み取る XML データを格納しているストリーム。</param>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定した URL、ストリーム、および <see cref="T:System.Xml.XmlNameTable" /> で、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="input" />または<paramref name="nt" />値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.TextReader input, System.Xml.XmlNameTable nt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.TextReader input, class System.Xml.XmlNameTable nt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.TextReader,System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="input" Type="System.IO.TextReader" />
+        <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="url">外部リソースを解決するために使用する URL。 <see cref="P:System.Xml.XmlTextReader.BaseURI" /> は、この値に設定されます。 場合<c>url</c>は<see langword="null" />、<see langword="BaseURI" />に設定されている<see langword="String.Empty" />です。</param>
+        <param name="input">読み取る XML データを格納している <see langword="TextReader" />。</param>
+        <param name="nt">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定した URL、<see cref="T:System.IO.TextReader" />、および <see cref="T:System.Xml.XmlNameTable" /> で、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ように仮定、`TextReader`は既に、正しいエンコーディングに設定します。 マルチパート MIME シナリオでは、ストリームからいくつかの点を開封してクライアントによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="nt" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlTextReader (string xmlFragment, System.Xml.XmlNodeType fragType, System.Xml.XmlParserContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xmlFragment, valuetype System.Xml.XmlNodeType fragType, class System.Xml.XmlParserContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.Xml.XmlNodeType,System.Xml.XmlParserContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlFragment" Type="System.String" />
+        <Parameter Name="fragType" Type="System.Xml.XmlNodeType" />
+        <Parameter Name="context" Type="System.Xml.XmlParserContext" />
+      </Parameters>
+      <Docs>
+        <param name="xmlFragment">解析する XML フラグメントを含んでいる文字列。</param>
+        <param name="fragType">XML フラグメントの <see cref="T:System.Xml.XmlNodeType" />。 これもフラグメント文字列に何を含めることができるかを判断します。 下の表を参照してください。</param>
+        <param name="context"><see cref="T:System.Xml.XmlParserContext" />を<c>xmlFragment</c>の解析します。 これが含まれています、<see cref="T:System.Xml.XmlNameTable" />を使用して、エンコーディング、名前空間スコープ、現在<c>xml:lang</c>、および<c>xml:space</c>スコープ。</param>
+        <summary>指定した文字列、<see cref="T:System.Xml.XmlNodeType" />、および <see cref="T:System.Xml.XmlParserContext" /> で、<see cref="T:System.Xml.XmlTextReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このコンス トラクターは、XML の一部として指定した文字列を解析します。 XML フラグメントが要素または属性の場合は、整形式 XML ドキュメントのルート レベルの規則をバイパスできます。 このコンス トラクターから返される文字列を処理できる<xref:System.Xml.XmlReader.ReadInnerXml%2A>です。  
+  
+ 次の表に、有効な値の`fragType`リーダーがの別のノード型はそれぞれを解析する方法です。  
+  
+|XmlNodeType|フラグメントを含めることがあります。|  
+|-----------------|--------------------------|  
+|要素|任意の有効な要素の内容 (たとえば、要素、コメント、処理命令、CDATA セクションでは、テキスト、およびエンティティ参照の任意の組み合わせなど)。<br /><br /> XML 宣言を渡すこともできます。 設定することのではなく、XML フラグメントのエンコーディングを指定できます、<xref:System.Xml.XmlParserContext>オブジェクト。|  
+|属性|属性 (引用符内の部分) の値。|  
+|ドキュメント|XML ドキュメント全体のコンテンツ。 これは、ドキュメント レベルの規則を強制します。|  
+  
+   
+  
+## Examples  
+ 次の例では、XML フラグメントを解析します。 使用して、`XmlParserContext`とその<xref:System.Xml.XmlNamespaceManager>を名前空間の解決を処理します。  
+  
+ [!code-cpp[XmlTextReader.Cctor#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.Cctor/CPP/readfrag.cpp#1)]
+ [!code-csharp[XmlTextReader.Cctor#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.Cctor/CS/readfrag.cs#1)]
+ [!code-vb[XmlTextReader.Cctor#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.Cctor/VB/readfrag.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="fragType" /><see langword="Element" />、 <see langword="Attribute" />、または<see langword="Document" /><see langword="XmlNodeType" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlFragment" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeCount">
+      <MemberSignature Language="C#" Value="public override int AttributeCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AttributeCount" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.AttributeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードにある属性の数を取得します。</summary>
+        <value>現在のノードにある属性の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは`Element`、`DocumentType`と`XmlDeclaration`ノードのみです。 (他のノード型属性がありません。)  
+  
+   
+  
+## Examples  
+ 次の例では、現在のノードにすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseURI">
+      <MemberSignature Language="C#" Value="public override string BaseURI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.BaseURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードのベース URI を取得します。</summary>
+        <value>現在のノードのベース URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ネットワークに接続された XML ドキュメントでは、さまざまな W3C 標準包含メカニズムを使用して集計データのチャンクで構成され、したがって各所に由来するノードが含まれます。 DTD エンティティが、この例が、これは Dtd に限定されません。 ベース URI を示しますからこれらのノードの入手先。 返されるノードのベース URI がないかどうか (たとえば、解析されたメモリ内の文字列から)、`String.Empty`が返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、各ノードのベース URI を表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.BaseURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.BaseURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.BaseURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.BaseURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.BaseURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.BaseURI Example/VB/source.vb#1)]  
+  
+ この例では、`baseuri.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.BaseURI Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.BaseURI Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadBinaryContent">
+      <MemberSignature Language="C#" Value="public override bool CanReadBinaryContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReadBinaryContent" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanReadBinaryContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlTextReader" /> がバイナリ コンテンツ用の読み取りメソッドを実装するかどうかを示す値を取得します。</summary>
+        <value>
+          バイナリ コンテンツ用の読み取りメソッドを実装する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 <see cref="T:System.Xml.XmlTextReader" /> クラスは、常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ バイナリ コンテンツを読み取る方法を示します、 <xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>、 <xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>、 <xref:System.Xml.XmlTextReader.ReadElementContentAsBase64%2A>、および<xref:System.Xml.XmlTextReader.ReadElementContentAsBinHex%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadValueChunk">
+      <MemberSignature Language="C#" Value="public override bool CanReadValueChunk { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReadValueChunk" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanReadValueChunk" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlTextReader" /> が <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)" /> メソッドを実装しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Xml.XmlTextReader" /> が <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)" /> メソッドを実装している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 <see cref="T:System.Xml.XmlTextReader" /> クラスは、常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>スロー、<xref:System.NotSupportedException>場合、<xref:System.Xml.XmlReader.ReadValueChunk%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanResolveEntity">
+      <MemberSignature Language="C#" Value="public override bool CanResolveEntity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanResolveEntity" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanResolveEntity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリーダーがエンティティを解析および解決できるかどうかを示す値を取得します。</summary>
+        <value>
+          リーダーがエンティティを解析および解決できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 <see langword="XmlTextReader" /> クラスは、常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ これは、変更、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]を解放します。 以前のバージョンで、`XmlTextReader`クラスは、エンティティを解決できませんでしたと`CanResolveEntity`常に返される`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Xml.XmlReader.ReadState" /> を <see langword="Closed" /> に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、読み取り中に保持されているすべてのリソースも解放します。 このリーダーは、ストリームを使用して構築された場合、このメソッドも呼び出します`Close`基になるストリーム。  
+  
+ 場合`Close`は既に呼び出されると、アクションは実行されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public override int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML ドキュメント内の現在のノードの深さを取得します。</summary>
+        <value>XML ドキュメント内の現在のノードの深さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、各ノードの深さ、行番号、行の位置などが表示されます。  
+  
+ [!code-cpp[XmlTextReader.LineNum#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.LineNum/CPP/readlinenum.cpp#1)]
+ [!code-csharp[XmlTextReader.LineNum#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.LineNum/CS/readlinenum.cs#1)]
+ [!code-vb[XmlTextReader.LineNum#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.LineNum/VB/readlinenum.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DtdProcessing">
+      <MemberSignature Language="C#" Value="public System.Xml.DtdProcessing DtdProcessing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.DtdProcessing DtdProcessing" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.DtdProcessing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.DtdProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.DtdProcessing" /> 列挙体を取得または設定します。</summary>
+        <value><see cref="T:System.Xml.DtdProcessing" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.DtdProcessing>列挙が含まれています、 <xref:System.Xml.DtdProcessing.Prohibit>、 <xref:System.Xml.DtdProcessing.Ignore>、および<xref:System.Xml.DtdProcessing.Parse>列挙子。 <xref:System.Xml.DtdProcessing.Parse>既定の動作です。 <xref:System.Xml.XmlTextReader.DtdProcessing%2A>プロパティ置換、`ProhibitDTD`プロパティ DOCTYPE 要素を無視する機能を追加します。  
+  
+> [!IMPORTANT]
+>  場合、<xref:System.Xml.XmlTextReader.DtdProcessing%2A>プロパティに設定されている<xref:System.Xml.DtdProcessing?displayProperty=nameWithType>、 <xref:System.Xml.XmlTextReader> Dtd を報告しません。 これは、DTD/DOCTYPE が出力時に失われるということを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのエンコーディングを取得します。</summary>
+        <value>エンコーディング値。 エンコーディング属性が存在せず、バイト順のマークもない場合は、既定として UTF-8 が使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>を使用して、<xref:System.Text.Encoding?displayProperty=nameWithType>クラス、`XmlTextReader`もそのクラスでサポートされているすべてのエンコーディングをサポートします。 この例外は、エンコーディング、utf-7、マップする EBCDIC など、`<?xml`シーケンスを utf-8 以外のバイト値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityHandling">
+      <MemberSignature Language="C#" Value="public System.Xml.EntityHandling EntityHandling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.EntityHandling EntityHandling" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.EntityHandling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.EntityHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーによるエンティティの処理方法を指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Xml.EntityHandling" /> 値のいずれか。 <see langword="EntityHandling" /> が指定されていない場合は、既定で <see langword="EntityHandling.ExpandCharEntities" /> に設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 次の後に実行時とでは有効でこのプロパティを変更できます<xref:System.Xml.XmlTextReader.Read%2A>呼び出します。  
+  
+ ときに`EntityHandling`に設定されている`ExpandCharEntities`属性値は部分的に正規化します。 リーダーは、隣接するエンティティ参照ノードのコンテンツから個別に各個々 のテキスト ノードを正規化します。  
+  
+ エンティティ間の違いを説明するためには、処理モードは、次の XML を検討します。  
+  
+```  
+<!DOCTYPE doc [<!ENTITY num "123">]>  
+    <doc> &#65; &num; </doc>  
+```  
+  
+ ときに`EntityHandling`に設定されている`ExpandEntities`"doc"要素ノードに展開されたエンティティのテキストを含む 1 つのテキスト ノードが含まれています。  
+  
+|奥行|ノード型|名前|値|  
+|-----------|---------------|----------|-----------|  
+|1|`Text`||123|  
+  
+ ときに`EntityHandling`に設定されている`ExpandCharEntites`、および<xref:System.Xml.XmlTextReader.WhitespaceHandling%2A>に設定されている`Significant`または`All`、"doc"要素を文字エンティティを展開して、一般的なエンティティ ノードとしてを返します。  
+  
+|奥行|ノード型|名前|値|  
+|-----------|---------------|----------|-----------|  
+|1|`Text`||A|  
+|1|`EntityReference`|num||  
+|1|`SignificantWhitespace`|||  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EOF">
+      <MemberSignature Language="C#" Value="public override bool EOF { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EOF" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.EOF" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーがストリームの末尾に配置されているかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームの末尾にリーダーが配置されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAttribute">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>属性の値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetAttribute">
+      <MemberSignature Language="C#" Value="public override string GetAttribute (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">属性のインデックス。 インデックスの値は、0 から始まります。 最初の属性のインデックスは 0 です。</param>
+        <summary>指定したインデックスの属性の値を取得します。</summary>
+        <returns>指定した属性の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、リーダーを移動しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" />パラメーターが 0 またはより小さいより大きいか等しい<see cref="P:System.Xml.XmlTextReader.AttributeCount" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttribute">
+      <MemberSignature Language="C#" Value="public override string GetAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性の限定名。</param>
+        <summary>指定した名前の属性の値を取得します。</summary>
+        <returns>指定した属性の値。 指定した属性が見つからない場合は <see langword="null" /> が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、リーダーを移動しません。  
+  
+ リーダーが配置されている場合、 `DocumentType`  ノードを取得、公開キーとシステム リテラル、たとえば、このメソッドを使用できます`reader.GetAttribute("PUBLIC")`  
+  
+   
+  
+## Examples  
+ 次の例では、ISBN 属性の値を取得します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.GetAttribute1 Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.GetAttribute1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.GetAttribute1 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.GetAttribute1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.GetAttribute1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.GetAttribute1 Example/VB/source.vb#1)]  
+  
+ この例では、`attrs.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.GetAttribute1 Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.GetAttribute1 Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttribute">
+      <MemberSignature Language="C#" Value="public override string GetAttribute (string localName, string namespaceURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(string localName, string namespaceURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">属性のローカル名。</param>
+        <param name="namespaceURI">属性の名前空間 URI。</param>
+        <summary>指定したローカル名および名前空間 URI に関連付けられた属性の値を取得します。</summary>
+        <returns>指定した属性の値。 指定した属性が見つからない場合は <see langword="null" /> が返されます。 このメソッドは、リーダーを移動しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 次の XML には、特定の名前空間内の属性が含まれています。  
+  
+```  
+<test xmlns:dt="urn:datatypes" dt:type="int"/>  
+```  
+  
+ 検索することができます、`dt:type`属性の 1 つの引数 (プレフィックスとローカル名) または 2 つの引数 (ローカル名と名前空間 URI) を使用します。  
+  
+```  
+String dt = reader.GetAttribute("dt:type");  
+String dt2 = reader.GetAttribute("type","urn:datatypes");  
+```  
+  
+ 参照する、`xmlns:dt`属性は、次の引数のいずれかを使用します。  
+  
+```  
+String dt3 = reader.GetAttribute("xmlns:dt");  
+String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);  
+```  
+  
+ 使用してこの情報を取得することも、<xref:System.Xml.XmlTextReader.Prefix%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespacesInScope">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Xml.XmlNamespaceScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">返される名前空間ノードの種類を指定する <see cref="T:System.Xml.XmlNamespaceScope" /> 値。</param>
+        <summary>現在スコープ内にあるすべての名前空間が含まれたコレクションを取得します。</summary>
+        <returns>現在スコープ内にあるすべての名前空間が含まれた <see cref="T:System.Collections.IDictionary" /> オブジェクト。 要素にリーダーが配置されていない場合は、名前空間が含まれていない空のディクショナリが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ディクショナリは、プレフィックスによってキー指定された名前空間名のコレクションで構成されます。 スコープに名前空間を列挙するために使用します。 ディクショナリは、リーダーの名前空間の一覧の切断されたコピーです。 リーダーの位置、現在のスコープ内の名前空間の一覧、変更内容は変更されません。  
+  
+ 次の表方法、<xref:System.Xml.XmlNamespaceScope>列挙値に影響するかまたはない、既定値と組み込みの名前空間がによって返される<xref:System.Xml.XmlTextReader.GetNamespacesInScope%2A>です。  
+  
+|XmlNamespaceScope 値|xmlns:xml|xmlns:xmlns|xmlns =""|  
+|-----------------------------|---------------|-----------------|---------------|  
+|`All`|可|no|no|  
+|`ExcludeXml`|no|no|no|  
+|`Local`|no|no|可|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRemainder">
+      <MemberSignature Language="C#" Value="public System.IO.TextReader GetRemainder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.TextReader GetRemainder() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetRemainder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッファー内の XML の剰余を取得します。</summary>
+        <returns>バッファー内の XML の剰余を格納している <see cref="T:System.IO.TextReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ <xref:System.Xml.XmlTextReader>をバッファーは`Read`データが失われないように、使用されていないバッファーの残りの部分を返すできる必要があります。 これにより、パッケージの他のものと同じストリーム内の XML をマルチパート MIME) などのプロトコルです。  
+  
+ このメソッドを呼び出した後<xref:System.Xml.XmlTextReader.EOF%2A>に設定されている`true`です。  
+  
+   
+  
+## Examples  
+ 次の例は、XML ドキュメントの最初の部分を読み取りを使用して、`GetRemainder`を 2 番目のリーダーを使用してドキュメントの読み取りを完了します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.GetRemainder Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.GetRemainder Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.GetRemainder Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.GetRemainder Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.GetRemainder Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.GetRemainder Example/VB/source.vb#1)]  
+  
+ この例では、入力`tworeads.xml`です。  
+  
+ [!code-xml[Classic WebData XmlTextReader.GetRemainder Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.GetRemainder Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasLineInfo">
+      <MemberSignature Language="C#" Value="public bool HasLineInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasLineInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.HasLineInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスが行情報を返すことができるかどうかを示す値を取得します。</summary>
+        <returns>
+          クラスが行情報を返せる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasValue">
+      <MemberSignature Language="C#" Value="public override bool HasValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasValue" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.HasValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードが <see langword="String.Empty" /> 以外の <see cref="P:System.Xml.XmlTextReader.Value" /> を保持できるかどうかを示す値を取得します。</summary>
+        <value>
+          リーダーが現在配置されているノードが <see langword="Value" /> を持つことができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 返す値を持つノード型の一覧を次の表に示します。  
+  
+|ノード型|値|  
+|---------------|-----------|  
+|`Attribute`|属性の値。|  
+|`CDATA`|CDATA セクションの内容。|  
+|`Comment`|コメントの内容。|  
+|`DocumentType`|内部サブセット。|  
+|`ProcessingInstruction`|ターゲットを除く全内容。|  
+|`SignificantWhitespace`|混合コンテンツ モデル内でのマークアップ間に空白文字。|  
+|`Text`|テキスト ノードの内容。|  
+|`Whitespace`|マークアップ間の空白。|  
+|`XmlDeclaration`|宣言の内容。|  
+  
+   
+  
+## Examples  
+ 次の例では、値を持つことができるすべてのノードの値を表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.HasValue Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.HasValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.HasValue Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.HasValue Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.HasValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.HasValue Example/VB/source.vb#1)]  
+  
+ この例では、`book1.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.HasValue Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.HasValue Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefault">
+      <MemberSignature Language="C#" Value="public override bool IsDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.IsDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードが、DTD またはスキーマで定義された既定値から生成された属性であるかどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。 (<see cref="T:System.Xml.XmlTextReader" /> は既定の属性を展開しません。)</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、属性ノードにのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmptyElement">
+      <MemberSignature Language="C#" Value="public override bool IsEmptyElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmptyElement" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.IsEmptyElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードが空の要素であるかどうかを示す値を取得 (たとえば、 <c> &lt;MyElement/&gt;</c>)。</summary>
+        <value>
+          <see langword="true" />現在のノードが要素の場合 (<see cref="P:System.Xml.XmlTextReader.NodeType" /> equals <see langword="XmlNodeType.Element" />) で終わるを<c> / &gt; </c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティにより、次のことが区別できます。  
+  
+ `<item num="123"/>`(`IsEmptyElement` is `true`).  
+  
+ `<item num="123">`(`IsEmptyElement`は`false`要素の内容が空ですが、)。  
+  
+ 対応する`EndElement`空の要素のノードは生成されません。  
+  
+ `IsEmptyElement`単に、ソース ドキュメント内の要素がある終了要素タグかどうかを報告します。  
+  
+   
+  
+## Examples  
+ 次の例では、各要素のテキストの内容を表示します。  
+  
+ [!code-cpp[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/VB/source.vb#1)]  
+  
+ この例では、`elems.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlReader.IsStartElement Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumber">
+      <MemberSignature Language="C#" Value="public int LineNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行番号を取得します。</summary>
+        <value>現在の行番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、エラーの報告、最もよく使用されますが、いつでも呼び出すことができます。 このプロパティは、開始値`1`です。  
+  
+ 組み合わせて<xref:System.Xml.XmlTextReader.LinePosition%2A>、値の`1,1`ドキュメントの開始を示します。  
+  
+   
+  
+## Examples  
+ 次の例では、各ノードの深さ、行番号、行の位置などが表示されます。  
+  
+ [!code-cpp[XmlTextReader.LineNum#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.LineNum/CPP/readlinenum.cpp#1)]
+ [!code-csharp[XmlTextReader.LineNum#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.LineNum/CS/readlinenum.cs#1)]
+ [!code-vb[XmlTextReader.LineNum#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.LineNum/VB/readlinenum.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePosition">
+      <MemberSignature Language="C#" Value="public int LinePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の位置を取得します。</summary>
+        <value>現在の行の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、エラーの報告、最もよく使用されますが、いつでも呼び出すことができます。 プロパティの開始値は`1`します。  
+  
+ 指定された位置は、マークアップのテキストの最初の文字です。  
+  
+```  
+<root>  
+abc<tag/>  
+</root>  
+```  
+  
+ 上記の XML テキストの最初の行で、`LinePosition`の`2`文字に対応`r`以外の場合は、2 行目で、`LinePosition`の`5`文字に対応`t`; と 3 番目の行に、`LinePosition`の`3`文字に対応`r`です。  
+  
+ 組み合わせて<xref:System.Xml.XmlTextReader.LineNumber%2A>、値の`1,1`ドキュメントの開始を示します。  
+  
+   
+  
+## Examples  
+ 次の例では、各ノードの深さ、行番号、行の位置などが表示されます。  
+  
+ [!code-cpp[XmlTextReader.LineNum#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.LineNum/CPP/readlinenum.cpp#1)]
+ [!code-csharp[XmlTextReader.LineNum#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.LineNum/CS/readlinenum.cs#1)]
+ [!code-vb[XmlTextReader.LineNum#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.LineNum/VB/readlinenum.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードのローカル名を取得します。</summary>
+        <value>プリフィックスを削除した現在のノードの名前。 たとえば、<see langword="LocalName" />は<see langword="book" />要素の<c> &lt;bk:book&gt;</c>です。  
+  
+ 名前を持たないノード型 (<see langword="Text" />、<see langword="Comment" /> など) の場合、このプロパティは <see langword="String.Empty" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例は、各ノードのローカル名を表示し、プレフィックスと名前空間 URI、存在しない場合。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/VB/source.vb#1)]  
+  
+ この例では、`book2.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.LocalName Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupNamespace">
+      <MemberSignature Language="C#" Value="public override string LookupNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string LookupNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.LookupNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">解決する対象となる名前空間 URI のプレフィックス。 既定の名前空間と一致させるには、空の文字列を渡します。 この文字列は、最小単位に分割する必要はありません。</param>
+        <summary>現在の要素のスコープ内の名前空間プリフィックスを解決します。</summary>
+        <returns>プレフィックスの割り当て先の名前空間 URI。条件に合うプレフィックスが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ リーダーが配置されている場合、次の XML で、`href`属性をプレフィックス`a`は呼び出すことによって解決`reader.LookupNamespace("a")`です。 返される文字列は`urn:456`します。  
+  
+```  
+<root xmlns:a="urn:456">  
+ <item>  
+ <ref href="a:b"/>  
+ </item>  
+</root>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Xml.XmlTextReader.Namespaces" />プロパティに設定されている<see langword="true" />と<paramref name="prefix" />値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="MoveToAttribute">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された属性に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="MoveToAttribute">
+      <MemberSignature Language="C#" Value="public override void MoveToAttribute (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MoveToAttribute(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">属性のインデックス。</param>
+        <summary>指定したインデックスを持つ属性に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のノードにすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="i" />パラメーターが 0 またはより小さいより大きいか等しい<see cref="P:System.Xml.XmlReader.AttributeCount" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToAttribute">
+      <MemberSignature Language="C#" Value="public override bool MoveToAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性の限定名。</param>
+        <summary>指定した名前を持つ属性へ移動します。</summary>
+        <returns>
+          属性が見つかった場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 <see langword="false" /> の場合、リーダーの位置は変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 呼び出した後`MoveToAttribute`、 <xref:System.Xml.XmlTextReader.Name%2A>、 <xref:System.Xml.XmlTextReader.NamespaceURI%2A>、および<xref:System.Xml.XmlTextReader.Prefix%2A>プロパティは、その属性のプロパティを反映します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToAttribute">
+      <MemberSignature Language="C#" Value="public override bool MoveToAttribute (string localName, string namespaceURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToAttribute(string localName, string namespaceURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">属性のローカル名。</param>
+        <param name="namespaceURI">属性の名前空間 URI。</param>
+        <summary>指定したローカル名および名前空間 URI の属性に移動します。</summary>
+        <returns>
+          属性が見つかった場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 <see langword="false" /> の場合、リーダーの位置は変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 呼び出した後`MoveToAttribute`、 <xref:System.Xml.XmlTextReader.Name%2A>、 <xref:System.Xml.XmlTextReader.NamespaceURI%2A>、および<xref:System.Xml.XmlTextReader.Prefix%2A>プロパティは、その属性のプロパティを反映します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToElement">
+      <MemberSignature Language="C#" Value="public override bool MoveToElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の属性ノードを含む要素に移動します。</summary>
+        <returns>
+          リーダーが属性の位置に配置されている場合は <see langword="true" /> で、属性を所有している要素の位置にリーダーが移動します。リーダーが属性の位置に配置されていない場合は <see langword="false" /> で、リーダーの位置が変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドを使用すると、その属性間を移動した後はその要素に戻ります。 このメソッドでは、リーダーを移動し、次のノード型のいずれかに: `Element`、 `DocumentType`、または`XmlDeclaration`です。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のノードにすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.MoveToElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToElement Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToFirstAttribute">
+      <MemberSignature Language="C#" Value="public override bool MoveToFirstAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToFirstAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToFirstAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最初の属性に移動します。</summary>
+        <returns>
+          属性が存在する場合は <see langword="true" /> で、リーダーが最初の属性へ移動します。それ以外の場合は <see langword="false" /> で、リーダーの位置が変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート ノードの最初の属性の値を取得します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.MoveToFirstAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToFirstAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.MoveToFirstAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToFirstAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.MoveToFirstAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToFirstAttribute Example/VB/source.vb#1)]  
+  
+ この例では、`attrs.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.MoveToFirstAttribute Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.MoveToFirstAttribute Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveToNextAttribute">
+      <MemberSignature Language="C#" Value="public override bool MoveToNextAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToNextAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToNextAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の属性に移動します。</summary>
+        <returns>
+          次の属性が存在する場合は <see langword="true" />。それ以上、属性が存在しない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 現在のノードが要素ノードの場合は、このメソッドは<xref:System.Xml.XmlTextReader.MoveToFirstAttribute%2A>します。 場合`MoveToNextAttribute`返します`true`、[次へ] の属性にリーダーを移動です。 それ以外の場合、リーダーの位置は変更されません。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のノードにすべての属性を表示します。  
+  
+ [!code-cpp[Classic WebData XmlReader.HasAttributes Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlReader.HasAttributes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlReader.HasAttributes Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlReader.HasAttributes Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlReader.HasAttributes Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlReader.HasAttributes Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの限定名を取得します。</summary>
+        <value>現在のノードの限定名。 たとえば、<see langword="Name" />は<see langword="bk:book" />要素の<c> &lt;bk:book&gt;</c>です。  
+  
+ 返される名前は、ノードの <see cref="P:System.Xml.XmlTextReader.NodeType" /> によって異なります。 リストされた値を返すノード型を次に示します。 その他のすべてのノード型は、空の文字列を返します。  
+  
+ <list type="table"><listheader><term>ノード型  
+  
+ </term><description>名  
+  
+ </description></listheader><item><term><see langword="Attribute" /></term><description>属性の名前です。  
+  
+ </description></item><item><term><see langword="DocumentType" /></term><description>ドキュメント型の名前。  
+  
+ </description></item><item><term><see langword="Element" /></term><description>タグ名。  
+  
+ </description></item><item><term><see langword="EntityReference" /></term><description>参照されたエンティティの名前。  
+  
+ </description></item><item><term><see langword="ProcessingInstruction" /></term><description>処理命令の対象。  
+  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description>リテラル文字列<see langword="xml" />です。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、XML ファイルを読み取るし、各ノードを表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用して`items.xml`です。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public bool Namespaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前空間をサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          名前空間をサポートする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、リーダーが www.w3.org/TR/REC-xml-names にある XML の推奨設定での W3C 名前空間をサポートしているかどうかを判断します。  
+  
+ `Namespaces`読み取り操作が発生した後、プロパティを設定できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティを設定する読み取り操作が発生した後 (<see cref="P:System.Xml.XmlTextReader.ReadState" />は<see langword="ReadState.Initial" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceURI">
+      <MemberSignature Language="C#" Value="public override string NamespaceURI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NamespaceURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーが配置されているノードの名前空間 URI (W3C の名前空間の仕様における定義に準拠) を取得します。</summary>
+        <value>現在のノードの名前空間 URI。それ以外の場合は空の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは`Element`と`Attribute`ノードのみです。  
+  
+   
+  
+## Examples  
+ 次の例は、各ノードのローカル名を表示し、プレフィックスと名前空間 URI、存在しない場合。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/VB/source.vb#1)]  
+  
+ この例では、`book2.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.LocalName Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNameTable NameTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この実装に関連付けられている <see cref="T:System.Xml.XmlNameTable" /> を取得します。</summary>
+        <value>ノード内の最小単位に分割された文字列を取得できる <see langword="XmlNameTable" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ すべてのノードと属性名が返される<xref:System.Xml.XmlTextReader>を使用して最小単位に分割されて、`NameTable`です。 同じ名前が複数回を返される場合 (たとえば、 `Customer`)、し、同じ`String`名に対応するオブジェクトが返されます。 これによりオブジェクト負荷の高い文字列比較ではなく、これらの文字列で比較する効率的なコードを記述します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの種類を取得します。</summary>
+        <value>現在のノードの型を表す <see cref="T:System.Xml.XmlNodeType" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティを返しません次`XmlNodeType`型: `Document`、 `DocumentFragment`、 `Entity`、 `EndEntity`、または`Notation`です。  
+  
+   
+  
+## Examples  
+ 次の例では、XML ファイルを読み取るし、各ノードを表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用して`items.xml`です。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normalization">
+      <MemberSignature Language="C#" Value="public bool Normalization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Normalization" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Normalization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空白と属性値を正規化するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          正規化する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、いつでも変更でき、[次へ] の読み取り操作を有効になります。  
+  
+> [!NOTE]
+>  場合、<xref:System.Xml.XmlTextReader>構築に使用される、 <xref:System.Xml.XmlValidatingReader>、属性値を正規化する`Normalization`に設定する必要があります`true`です。  
+  
+ 場合`Normalization`に設定されている`false`、文字範囲の数値エンティティのチェックも無効になります。 その結果などのエンティティの文字`&#0;`、許可されます。  
+  
+ 属性値の正規化を次に示します。  
+  
+-   文字参照については、参照されている文字を属性値に追加します。  
+  
+-   エンティティ参照については、エンティティの置換テキストを再帰的に処理します。  
+  
+-   空白文字 (#x20、#xD、#xA、#x9) の正規化された値に #x20 を追加します。 (単一 #x13 20 のみは内部解析エンティティのエンティティのリテラル値または外部解析エンティティの一部である"#xD #xA"シーケンスに追加されます。)  
+  
+-   その他の文字は、正規化された値にそのまま追加します。  
+  
+-   宣言された値が CDATA でない場合、先頭および末尾のスペース (#x20) 文字を破棄し、スペース (#x20) 文字のシーケンスを 1 つのスペース (#x20) 文字に置換します。  
+  
+ `XmlTextReader`だけ属性または CDATA 正規化が実行されます。 内でラップしない限り、DTD に固有の正規化を実行しない、`XmlValidatingReader`です。  
+  
+ 正規化の詳細については、w3c 勧告 『 XML 1.0 の推奨事項を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、リーダーの動作を示します正規化をオンにし、オフします。  
+  
+ [!code-cpp[XmlTextReader.Normalization#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.Normalization/CPP/readnormal.cpp#1)]
+ [!code-csharp[XmlTextReader.Normalization#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.Normalization/CS/readnormal.cs#1)]
+ [!code-vb[XmlTextReader.Normalization#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.Normalization/VB/readnormal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">リーダーが閉じられたときにこのプロパティの設定 (<see cref="P:System.Xml.XmlTextReader.ReadState" />は<see langword="ReadState.Closed" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public override string Prefix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードに関連付けられた名前空間プリフィックスを取得します。</summary>
+        <value>現在のノードに関連付けられた名前空間プリフィックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例は、各ノードのローカル名を表示し、プレフィックスと名前空間 URI、存在しない場合。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.LocalName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/VB/source.vb#1)]  
+  
+ この例では、`book2.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.LocalName Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.LocalName Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProhibitDtd">
+      <MemberSignature Language="C#" Value="public bool ProhibitDtd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProhibitDtd" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.ProhibitDtd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use DtdProcessing property instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DTD 処理を許可するかどうかを示す値を取得または設定します。 このプロパティは今後使用しません。 代わりに、<see cref="P:System.Xml.XmlTextReader.DtdProcessing" /> を使用してください。</summary>
+        <value>
+          DTD 処理を許可しない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ DTD の処理が有効になっている既定では旧バージョンとの互換性。 ただし、アプリケーションは、DTD 処理を必要とする場合を除き、この設定を無効にする必要があります。 DTD 処理を無効にすると、一部のサービス不能攻撃の防止に役立つ場合があります。 場合に設定`true`、リーダーをスロー、 <xref:System.Xml.XmlException> DTD コンテンツが発生したとき。  
+  
+ DTD 処理を有効にした場合は、信頼されていないソースおよび可能なサービス拒否攻撃からの Dtd を含むに注意する必要があります。 使用して、<xref:System.Xml.XmlSecureResolver>リソースを制限する、<xref:System.Xml.XmlTextReader>にアクセスできます。 また、XML 処理に対するメモリと時間の割り当てが制限されるようにアプリケーションをデザインすることもできます。 たとえば、ASP.NET アプリケーションでタイムアウト制限を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteChar">
+      <MemberSignature Language="C#" Value="public override char QuoteChar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char QuoteChar" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.QuoteChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性ノードの値を囲むために使用する引用符文字を取得します。</summary>
+        <value>属性ノードの値を囲むために使用されている引用符 (" または ')。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、属性ノードにのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームから次のノードを読み取ります。</summary>
+        <returns>
+          次のノードが正常に読み取られた場合は <see langword="true" />。それ以上読み取る対象となるノードが存在しない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ リーダーが最初に作成および初期化時にある情報がありません。 呼び出す必要があります`Read`を最初のノードを読み取る。  
+  
+ このメソッドでは、解析を開始するのには、データ ストリームから 4 バイト以上が必要です。 4 バイトよりも少ないが返され、ストリームに複数のデータはありませんが、このメソッドは失敗します。 ストリーム内のより多くのデータの場合は、4 番目のバイトを受信するまで解析メソッドをブロックします。  
+  
+   
+  
+## Examples  
+ 次の例では、XML ファイルを読み取るし、各ノードを表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用して`items.xml`です。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML の解析中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttributeValue">
+      <MemberSignature Language="C#" Value="public override bool ReadAttributeValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ReadAttributeValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadAttributeValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>属性値を解析して、1 つ以上の <see langword="Text" />、<see langword="EntityReference" />、<see langword="EndEntity" /> の各ノードに格納します。</summary>
+        <returns>
+          返すノードがある場合は <see langword="true" />。  
+  
+ 初めて呼び出すときにリーダーの位置が属性ノード上にない場合、またはすべての属性値が読み込まれている場合は <see langword="false" />。  
+  
+ 空の属性など、<c>その他 =""</c>、返します<see langword="true" />の値を持つ 1 つのノードで<see langword="String.Empty" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 呼び出した後にこのメソッドを使用して`MoveToAttribute`を属性値を構成するテキストまたはエンティティ参照ノードを読み取る。 <xref:System.Xml.XmlReader.Depth%2A>属性値のノードのいずれかと、属性ノードの深さです。 増加および一般エンティティ参照に出入りしたときに 1 つデクリメントします。  
+  
+   
+  
+## Examples  
+ 次の例では、テキストとエンティティ ノードを使用して属性を読み取ります。  
+  
+ [!code-cpp[XmlTextReader.ReadAttributeValue#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.ReadAttributeValue/CPP/readattrval.cpp#1)]
+ [!code-csharp[XmlTextReader.ReadAttributeValue#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.ReadAttributeValue/CS/readattrval.cs#1)]
+ [!code-vb[XmlTextReader.ReadAttributeValue#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.ReadAttributeValue/VB/readattrval.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBase64">
+      <MemberSignature Language="C#" Value="public int ReadBase64 (byte[] array, int offset, int len);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadBase64(unsigned int8[] array, int32 offset, int32 len) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="len" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">テキストの内容が書き込まれるバッファーとして機能する文字の配列。</param>
+        <param name="offset">メソッドがバッファーへの書き込みを開始できる位置を示す配列のインデックス (0 から始まる)。</param>
+        <param name="len">バッファーに書き込むバイト数。</param>
+        <summary>Base64 をデコードし、デコードされたバイナリ バイトを返します。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 同様に<xref:System.Xml.XmlTextReader.ReadChars%2A>、埋め込みのテキストの大量のストリームの読み取りにこのメソッドが連続して呼び出されます。 Base64 のコンテンツをデコードし、デコードされたバイナリ バイトを返します (たとえば、Base64 エンコードされたインライン GIF 画像) をバッファーします。 RFC 1521 を参照してください。 (Http://www.rfc-editor.org コメント Web サイトへの要求の Rfc を取得できます)  
+  
+   
+  
+## Examples  
+ 次の例では、Base64、binhex でデータを含むファイルを読み取ります。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用します。`binary.xml`  
+  
+ [!code-xml[Classic WebData XmlTextReader.ReadBase64 Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">Base64 シーケンスが無効です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> の値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />&lt; 0、または<paramref name="len" /> &lt; 0、または<paramref name="len" /> &gt; <paramref name="array" />です。長さ-<paramref name="offset" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBinHex">
+      <MemberSignature Language="C#" Value="public int ReadBinHex (byte[] array, int offset, int len);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadBinHex(unsigned int8[] array, int32 offset, int32 len) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="len" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">デコードされたバイナリ バイトが書き込まれるバッファーとして機能するバイト配列。</param>
+        <param name="offset">メソッドがバッファーへの書き込みを開始できる位置を示す配列のインデックス (0 から始まる)。</param>
+        <param name="len">バッファーに書き込むバイト数。</param>
+        <summary><see langword="BinHex" /> をデコードし、デコードされたバイナリ バイトを返します。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 同様に<xref:System.Xml.XmlTextReader.ReadChars%2A>、埋め込みのテキストの大量のストリームの読み取りにこのメソッドが連続して呼び出されます。 デコード`BinHex`コンテンツをデコードされたバイナリ バイトを返します (たとえば、インライン`BinHex`エンコードされる GIF イメージ) をバッファーにします。  
+  
+   
+  
+## Examples  
+ 次の例を格納するファイルを読み取って`Base64`と`BinHex`データ。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.ReadBase64 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用します。`binary.xml`  
+  
+ [!code-xml[Classic WebData XmlTextReader.ReadBase64 Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.ReadBase64 Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException"><see langword="BinHex" />シーケンスが無効です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> の値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />&lt; 0、または<paramref name="len" /> &lt; 0、または<paramref name="len" /> &gt; <paramref name="array" />です。長さ-<paramref name="offset" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadChars">
+      <MemberSignature Language="C#" Value="public int ReadChars (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadChars(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadChars(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テキストの内容が書き込まれるバッファーとして機能する文字の配列。</param>
+        <param name="index">内の位置<c>バッファー</c>メソッドがテキストの内容の書き込みを開始できます。</param>
+        <param name="count">書き込む文字数<c>バッファー</c>です。</param>
+        <summary>要素のテキストの内容を文字バッファーに読み取ります。 このメソッドは、連続して呼び出すことによって埋め込みテキストの大量のストリームを読み取るように設計されています。</summary>
+        <returns>読み取った文字数。 リーダーが要素に配置されていない場合、または返す対象となるテキストの内容が現在のコンテキスト内にこれ以上ない場合は、<see langword="0" /> になる可能性があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ これは、XML ドキュメントに埋め込まれたテキストの非常に大量のストリームを処理する最も効率的な方法です。 大きな文字列オブジェクトの割り当てではなく`ReadChars`テキストの内容が一度にバッファーを返します。 このメソッドは、要素ノードでのみ動作するよう設計されています。 その他のノード型は原因`ReadChars`を返す`0`です。  
+  
+ 開始タグにリーダーが配置されている場合、次の XML で`ReadChars`を返します`test`し、終了タグの後、リーダーを配置します。  
+  
+```  
+<Item>test</Item>  
+```  
+  
+ `ReadChars`次の機能があります。  
+  
+-   このメソッドは、要素ノードのみで機能するよう設計されています。 その他のノード型は原因`ReadChars`0 を返します。  
+  
+-   このメソッドは、実際の文字のコンテンツを返します。 エンティティ、CDATA、または発生したその他のマークアップを解決することはありません。 `ReadChars`開始タグと終了タグは、マークアップを含む間には、すべてのものを返します。  
+  
+-   `ReadChars`整形式 XML マークアップは無視されます。 たとえば、次の XML 文字列を読み取るとき`<A>1<A>2</A>`、`ReadChars`返します`1<A>2</A>`です。 (一致する要素のペアからマークアップを返しますおり、他のユーザーは無視されます。)  
+  
+-   このメソッドでは、どのような正規化は実行しません。  
+  
+-   ときに`ReadChars`終わりに達した文字ストリームの値 0 を返し、終了タグの後にリーダーが配置されています。  
+  
+-   メソッドには使用中には使用できませんの属性を読み取る`ReadChars`です。  
+  
+ たとえば、次の XML を使用します。  
+  
+```  
+<thing>  
+ some text  
+</thing>  
+<item>  
+</item>  
+```  
+  
+ リーダーが配置されている、 `<item>` while の末尾に要素をループします。  
+  
+```  
+if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)  
+{  
+ while(0 != reader.ReadChars(buffer, 0, 1)  
+ {  
+ // Do something.  
+ // Attribute values are not available at this point.  
+ }  
+}  
+```  
+  
+   
+  
+## Examples  
+ 次の例を使用して、XML で読み取り`ReadChars`です。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.ReadChars Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadChars Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.ReadChars Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.ReadChars Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.ReadChars Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.ReadChars Example/VB/source.vb#1)]  
+  
+ この例は、`items.xml` ファイルを入力として使用します。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="count" />指定された領域よりも大きい、 <paramref name="buffer" /> (バッファー サイズ - <paramref name="index" />)。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />
+          <see langword="&lt; 0" />または<paramref name="count" /><see langword="&lt; 0" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadContentAsBase64">
+      <MemberSignature Language="C#" Value="public override int ReadContentAsBase64 (byte[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadContentAsBase64(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">結果として得られるテキストのコピー先のバッファー。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="index">バッファー内の結果のコピー開始位置を示すオフセット。</param>
+        <param name="count">バッファーにコピーする最大バイト数。 コピーされた実際のバイト数は、このメソッドから返されます。</param>
+        <summary>コンテンツを読み取り、<see langword="Base64" /> でデコードされたバイナリ バイトを返します。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、コンテンツをストリームをデコード、`Base64`コンテンツ、およびデコードされたバイナリ バイトを返します (たとえば、インライン`Base64`-エンコードされる GIF イメージ) バッファーにします。 このメソッドは、埋め込みのテキストの大量のストリームを読み取るに連続して呼び出すことができます。 詳細については、RFC 1521 を参照してください。"MIME (Multipurpose Internet Mail Extensions) パート 1: を指定すると、Internet Message Bodies の形式を記述するためのメカニズム"です。 Http://www.rfc-editor.org コメント Web サイトへの要求は、Rfc を取得できます。  
+  
+> [!NOTE]
+>  呼び出しの間のリーダーのプロパティのいずれかにアクセスする必要がありますできません、<xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>メソッドまで、メソッドは値 0 を返します。  
+  
+ このメソッドには、次の動作があります。  
+  
+-   <xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>操作のバイト ストリームの末尾に到達したときに、値 0 を返します。 最初の非コンテンツ ノードでは、リーダーが配置します。  
+  
+-   以下に問い合わせる必要がまたはのバイト内に残っているストリーム リーダーよりも、正確な数は、現在の位置に留まります。  
+  
+-   <xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>次の XML ノード型でサポートされていません: `Element`、 `XmlDeclaration`、 `None`、 `Document`、 `DocumentType`、 `Notation`、 `Entity`、`DocumentFragment`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Xml.XmlTextReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />現在のノードでサポートされていません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">バッファー、またはインデックス + count へのインデックスは、割り当てられたバッファーのサイズを超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadContentAsBinHex">
+      <MemberSignature Language="C#" Value="public override int ReadContentAsBinHex (byte[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadContentAsBinHex(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">結果として得られるテキストのコピー先のバッファー。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="index">バッファー内の結果のコピー開始位置を示すオフセット。</param>
+        <param name="count">バッファーにコピーする最大バイト数。 コピーされた実際のバイト数は、このメソッドから返されます。</param>
+        <summary>コンテンツを読み取り、<see langword="BinHex" /> でデコードされたバイナリ バイトを返します。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、コンテンツをストリームをデコード、`BinHex`コンテンツ、およびデコードされたバイナリ バイトを返します (たとえば、インライン`BinHex`エンコードされる GIF イメージ) バッファーにします。 このメソッドは、埋め込みのテキストの大量のストリームを読み取るに連続して呼び出すことができます。  
+  
+> [!NOTE]
+>  呼び出しの間のリーダーのプロパティのいずれかにアクセスする必要がありますできません、<xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>メソッドまで、メソッドは値 0 を返します。  
+  
+ このメソッドには、次の動作があります。  
+  
+-   <xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>操作のバイト ストリームの末尾に到達したときに、値 0 を返します。 最初の非コンテンツ ノードでは、リーダーが配置します。  
+  
+-   以下に問い合わせる必要がまたはのバイト内に残っているストリーム リーダーよりも、正確な数は、現在の位置に留まります。  
+  
+-   <xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>次の XML ノード型でサポートされていません: `Element`、 `XmlDeclaration`、 `None`、 `Document`、 `DocumentType`、 `Notation`、 `Entity`、`DocumentFragment`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Xml.XmlTextReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />現在のノードでサポートされていません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">バッファー、またはインデックス + count へのインデックスは、割り当てられたバッファーのサイズを超えています。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlTextReader" />実装はこのメソッドをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadElementContentAsBase64">
+      <MemberSignature Language="C#" Value="public override int ReadElementContentAsBase64 (byte[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadElementContentAsBase64(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">結果として得られるテキストのコピー先のバッファー。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="index">バッファー内の結果のコピー開始位置を示すオフセット。</param>
+        <param name="count">バッファーにコピーする最大バイト数。 コピーされた実際のバイト数は、このメソッドから返されます。</param>
+        <summary>要素を読み取り、Base64 のコンテンツをデコードします。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは、要素コンテンツを読み取り、Base64 エンコーディングを使用してデコードし、デコードされたバイナリ バイトを返します (たとえば、Base64 エンコードされたインライン GIF 画像) をバッファーします。 詳細については、RFC 1521 を参照してください。"MIME (Multipurpose Internet Mail Extensions) パート 1: を指定すると、Internet Message Bodies の形式を記述するためのメカニズム"です。 Http://www.rfc-editor.org コメント Web サイトへの要求は、Rfc を取得できます。  
+  
+ このメソッドは、単純なコンテンツ要素のみを読み取ることができます。 要素には、テキスト、空白、有意の空白、CDATA セクション、コメントおよび処理命令を含めることができます。 または自動的に展開されるエンティティ参照を含めることもできます。 要素は、子要素を持つことはできません。  
+  
+ このメソッドとよく似ています、<xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>点を除けばメソッドは、要素ノードの型でのみ呼び出すことができます。  
+  
+ 場合、`count`値は、ドキュメント内のバイト数よりも大きく、ドキュメント内のバイト数と等しい場合、または、<xref:System.Xml.XmlTextReader>ドキュメント内の残りのすべてのバイトを読み取り、読み取ったバイト数を返します。 次<xref:System.Xml.XmlTextReader>メソッドの呼び出しが、ゼロが返され、ノード、次に、リーダーを移動、<xref:System.Xml.XmlNodeType.EndElement>です。  
+  
+ 呼び出す場合<xref:System.Xml.XmlTextReader.Read%2A>リーダーが最初のコンテンツに使用された場合の動作のすべての要素の内容を使用すると、前にし、<xref:System.Xml.XmlTextReader.Read%2A>メソッドが呼び出されました。 つまり、リーダーは、終了要素が出現するまでのすべてのテキストを読み上げます。 終了タグのノードを読み取ります、次のノードを読み取り、後続のノード上に自身を配置します。  
+  
+   
+  
+## Examples  
+ 参照してください<xref:System.Xml.XmlReader.ReadElementContentAsBase64%2A?displayProperty=nameWithType>にこのメソッドの使用例を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のノードは、要素ノードではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">バッファー、またはインデックス + count へのインデックスは、割り当てられたバッファーのサイズを超えています。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlTextReader" />実装はこのメソッドをサポートしていません。</exception>
+        <exception cref="T:System.Xml.XmlException">要素には、混合コンテンツが含まれています。</exception>
+        <exception cref="T:System.FormatException">コンテンツは、要求された型に変換できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadElementContentAsBinHex">
+      <MemberSignature Language="C#" Value="public override int ReadElementContentAsBinHex (byte[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadElementContentAsBinHex(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">結果として得られるテキストのコピー先のバッファー。 この値を <see langword="null" /> にすることはできません。</param>
+        <param name="index">バッファー内の結果のコピー開始位置を示すオフセット。</param>
+        <param name="count">バッファーにコピーする最大バイト数。 コピーされた実際のバイト数は、このメソッドから返されます。</param>
+        <summary>要素を読み取り、<see langword="BinHex" /> の内容をデコードします。</summary>
+        <returns>バッファーに書き込まれたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドは要素の内容を使用してデコード`BinHex`のエンコードとデコードされたバイナリ バイトを返します (たとえば、インライン`BinHex`エンコードされる GIF イメージ) バッファーにします。  
+  
+ このメソッドは、単純なコンテンツ要素のみを読み取ることができます。 要素には、テキスト、空白、有意の空白、CDATA セクション、コメントおよび処理命令を含めることができます。 または自動的に展開されるエンティティ参照を含めることもできます。 要素は、子要素を持つことはできません。  
+  
+ このメソッドとよく似ています、<xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>点を除けばメソッドは、要素ノードの型でのみ呼び出すことができます。  
+  
+ 場合、`count`値は、ドキュメント内のバイト数よりも大きく、ドキュメント内のバイト数と等しい場合、または、<xref:System.Xml.XmlTextReader>ドキュメント内の残りのすべてのバイトを読み取り、読み取ったバイト数を返します。 次<xref:System.Xml.XmlTextReader>メソッドの呼び出しが、ゼロが返され、ノード、次に、リーダーを移動、<xref:System.Xml.XmlNodeType.EndElement>です。  
+  
+ 呼び出す場合<xref:System.Xml.XmlTextReader.Read%2A>リーダーが最初のコンテンツに使用された場合の動作のすべての要素の内容を使用すると、前にし、<xref:System.Xml.XmlTextReader.Read%2A>メソッドが呼び出されました。 つまり、リーダーは、終了要素が出現するまでのすべてのテキストを読み上げます。 終了タグのノードを読み取ります、次のノードを読み取り、後続のノード上に自身を配置します。  
+  
+   
+  
+## Examples  
+ 参照してください<xref:System.Xml.XmlReader.ReadElementContentAsBinHex%2A?displayProperty=nameWithType>にこのメソッドの使用例を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のノードは、要素ノードではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">バッファー、またはインデックス + count へのインデックスは、割り当てられたバッファーのサイズを超えています。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Xml.XmlReader" />実装はこのメソッドをサポートしていません。</exception>
+        <exception cref="T:System.Xml.XmlException">要素には、混合コンテンツが含まれています。</exception>
+        <exception cref="T:System.FormatException">コンテンツは、要求された型に変換できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadState">
+      <MemberSignature Language="C#" Value="public override System.Xml.ReadState ReadState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.ReadState ReadState" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.ReadState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ReadState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーの状態を取得します。</summary>
+        <value><see cref="T:System.Xml.ReadState" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadString">
+      <MemberSignature Language="C#" Value="public override string ReadString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素ノードまたはテキスト ノードの内容を文字列として読み取ります。</summary>
+        <returns>要素ノードまたはテキスト ノードの内容。 要素ノードまたはテキスト ノード以外にリーダーが配置されている場合、または返す対象となるテキスト コンテンツが現在のコンテキスト内にこれ以上ない場合は、これが空の文字列になる場合があります。  
+  
+ <see langword="Note:" /> テキスト ノードは、要素テキスト ノードまたは属性テキスト ノードのいずれかが可能です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 要素に配置されている場合`ReadString`すべてのテキスト、有意の空白、空白文字を連結し、`CData`セクション ノード型を連結し、要素の内容として連結されたデータを返します。 すべてのマークアップが発生した場合、コメントを含む、処理命令を停止します。 これは混合コンテンツ モデル内で、または要素の終了タグが読み込まれると発生します。  
+  
+ テキスト ノードに配置されている場合`ReadString`要素の終了タグへのテキスト ノードから同じを連結したものを実行します。 リーダーが属性のテキスト ノード上にある場合、`ReadString` は、あたかもリーダーが要素の開始タグ上にあるのと同様に機能します。 連結されたすべての要素テキスト ノードが返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、各要素のテキストの内容を表示します。  
+  
+ [!code-cpp[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlReader.IsStartElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/VB/source.vb#1)]  
+  
+ この例では、`elems.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlReader.IsStartElement Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlReader.IsStartElement Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML の解析中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">無効な操作が試行されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetState">
+      <MemberSignature Language="C#" Value="public void ResetState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ResetState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リーダーの状態を ReadState.Initial にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このメソッドでは、1 つのストリームでの複数の XML ドキュメントを解析することができます。 XML ドキュメントの最後に到達したときに呼び出す`ResetState`準備として次の XML ドキュメント内のリーダーの状態をリセットします。  
+  
+> [!IMPORTANT]
+>  ストリーム内のドキュメントでは、同じエンコーディングを共有する必要があります。 ない場合は、ケースと`ResetState`が呼び出された、<xref:System.Xml.XmlException>がスローされます。 (これは、.NET Framework 1.1 およびそれ以前のバージョンからの動作の変更です。)  
+  
+ 次のプロパティは影響ありません`ResetState`です。  
+  
+-   <xref:System.Xml.XmlTextReader.Normalization%2A>  
+  
+-   <xref:System.Xml.XmlTextReader.Namespaces%2A>  
+  
+-   <xref:System.Xml.XmlTextReader.XmlResolver%2A>  
+  
+-   <xref:System.Xml.XmlTextReader.WhitespaceHandling%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、1 つのストリーム内の 2 つの XML ドキュメントを解析します。  
+  
+ [!code-cpp[XmlTextReader.ResetState#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.ResetState/CPP/resetstate.cpp#1)]
+ [!code-csharp[XmlTextReader.ResetState#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.ResetState/CS/resetstate.cs#1)]
+ [!code-vb[XmlTextReader.ResetState#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.ResetState/VB/resetstate.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see langword="ResetState" />リーダーを使用して構築した場合、<see cref="T:System.Xml.XmlParserContext" />です。</exception>
+        <exception cref="T:System.Xml.XmlException">1 つのストリーム内のドキュメントでは、同じエンコーディングが共有されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveEntity">
+      <MemberSignature Language="C#" Value="public override void ResolveEntity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResolveEntity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ResolveEntity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="EntityReference" /> ノードのエンティティ参照を解決します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ リーダーが配置されている場合、`EntityReference`ノード (`XmlNodeType.EntityReference`) 場合は、<xref:System.Xml.XmlTextReader.Read%2A>呼び出し元がこのメソッドでは、エンティティ置換テキストは解析後に呼び出されます。 エンティティ置換テキストが完了すると、`EndEntity`エンティティ参照のスコープを閉じるノードが返されます。  
+  
+> [!NOTE]
+>  このメソッドを呼び出した後、エンティティ、属性値の一部である必要がありますを呼び出した場合<xref:System.Xml.XmlTextReader.ReadAttributeValue%2A>エンティティにステップ インします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Skip">
+      <MemberSignature Language="C#" Value="public override void Skip ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Skip() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Skip" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードの子をスキップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ 次の XML の入力にリーダーが配置されているかどうか、`<a>`ノードまたはその属性、呼び出しのいずれか`Skip`、リーダーを`<b>`ノード。  
+  
+ リーダーがリーフ ノードに既に配置されているかどうか (など、`<x>`ノードまたはテキスト ノード`abc`) を呼び出す`Skip`は呼び出すことと同じ<xref:System.Xml.XmlTextReader.Read%2A>です。  
+  
+```  
+<a name="bob" age="123">  
+  <x/>abc<y/>  
+</a>  
+<b>  
+ ...  
+</b>  
+```  
+  
+ このメソッドは、整形式の XML を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.IXmlNamespaceResolver.GetNamespacesInScope">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IDictionary&lt;string,string&gt; IXmlNamespaceResolver.GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Xml.XmlNamespaceScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">返される名前空間ノードの種類を指定する <see cref="T:System.Xml.XmlNamespaceScope" /> 値。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />」をご覧ください。</summary>
+        <returns>現在のスコープ内にある名前空間が格納された <see cref="T:System.Collections.IDictionary" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlTextReader> のインスタンスが <xref:System.Xml.IXmlNamespaceResolver> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.IXmlNamespaceResolver.LookupNamespace">
+      <MemberSignature Language="C#" Value="string IXmlNamespaceResolver.LookupNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Xml.IXmlNamespaceResolver.LookupNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#LookupNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">検索対象の名前空間 URI を持つプレフィックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)" />」をご覧ください。</summary>
+        <returns>プレフィックスに割り当てられている名前空間 URI。このプレフィックスに名前空間 URI が割り当てられていない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XmlTextReader> のインスタンスが <xref:System.Xml.IXmlNamespaceResolver> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.IXmlNamespaceResolver.LookupPrefix">
+      <MemberSignature Language="C#" Value="string IXmlNamespaceResolver.LookupPrefix (string namespaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Xml.IXmlNamespaceResolver.LookupPrefix(string namespaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#LookupPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="namespaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceName">検索対象のプレフィックスを持つ名前空間 URI。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />」をご覧ください。</summary>
+        <returns>名前空間 URI に割り当てられているプレフィックス。この名前空間 URI にプレフィックスが割り当てられていない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードのテキスト値を取得します。</summary>
+        <value>返される値は、ノードの <see cref="P:System.Xml.XmlTextReader.NodeType" /> によって異なります。 返す値を持つノード型の一覧を次の表に示します。 これ以外のノード型はすべて <see langword="String.Empty" /> を返します。  
+  
+ <list type="table"><listheader><term>ノード型  
+  
+ </term><description>値  
+  
+ </description></listheader><item><term><see langword="Attribute" /></term><description>属性の値です。  
+  
+ </description></item><item><term><see langword="CDATA" /></term><description>CDATA セクションの内容。  
+  
+ </description></item><item><term><see langword="Comment" /></term><description>コメントの内容。  
+  
+ </description></item><item><term><see langword="DocumentType" /></term><description>内部サブセット。  
+  
+ </description></item><item><term><see langword="ProcessingInstruction" /></term><description>全体のコンテンツ、ターゲットを除外します。  
+  
+ </description></item><item><term><see langword="SignificantWhitespace" /></term><description>内の空白文字、 <see langword="xml:space" />= 'preserve' スコープ。  
+  
+ </description></item><item><term><see langword="Text" /></term><description>テキスト ノードのコンテンツ。  
+  
+ </description></item><item><term><see langword="Whitespace" /></term><description>マークアップ間に空白文字。  
+  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description>宣言の内容。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、XML ファイルを読み取るし、各ノードを表示します。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/VB/source.vb#1)]  
+  
+ サンプル ファイルを使用して`items.xml`です。  
+  
+ [!code-xml[Classic WebData XmlTextReader.Name Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlTextReader.Name Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WhitespaceHandling">
+      <MemberSignature Language="C#" Value="public System.Xml.WhitespaceHandling WhitespaceHandling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.WhitespaceHandling WhitespaceHandling" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.WhitespaceHandling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.WhitespaceHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空白の処理方法を指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Xml.WhitespaceHandling" /> 値のいずれか。 既定値は <see langword="WhitespaceHandling.All" /> で、<see langword="Whitespace" /> と <see langword="SignificantWhitespace" /> ノードを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティは、いつでも変更でき、[次へ] の読み取り操作を有効になります。  
+  
+ `XmlTextReader`は、使用可能な DTD 情報がない`SignificantWhitepsace`ノードのみ結果として返される、`xml:space='preserve'`スコープ。  
+  
+   
+  
+## Examples  
+ 次の例では、XML フラグメントを読み取ります。  
+  
+ [!code-cpp[Classic WebData XmlTextReader.WhitespaceHandling Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlTextReader.WhitespaceHandling Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlTextReader.WhitespaceHandling Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlTextReader.WhitespaceHandling Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlTextReader.WhitespaceHandling Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlTextReader.WhitespaceHandling Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーが閉じられたときにこのプロパティの設定 (<see cref="P:System.Xml.XmlTextReader.ReadState" />は<see langword="ReadState.Closed" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlLang">
+      <MemberSignature Language="C#" Value="public override string XmlLang { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlLang" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlLang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see langword="xml:lang" /> スコープを取得します。</summary>
+        <value>現在の <see langword="xml:lang" /> スコープ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ このプロパティを表す、`xml:lang`スコープ内で、現在のノードが存在します。 たとえばと XML フラグメントを次に示します`xml:lang`ルート要素に英語 (米国) に設定します。  
+  
+ \<ルートの xml:lang ="en-us">  
+  
+ \<名前 > Fred \< /名 >  
+  
+ \</root >  
+  
+ リーダーが配置されている場合、`name`要素を英語 (米国) のスコープ内にあることを検索するこのプロパティを使用することができます`xml:lang`属性。  
+  
+   
+  
+## Examples  
+ 次の例を表示、`xml:lang`の各ノードの値。  
+  
+ [!code-cpp[XmlTextReader.XmlLang#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.XmlLang/CPP/readlang.cpp#1)]
+ [!code-csharp[XmlTextReader.XmlLang#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.XmlLang/CS/readlang.cs#1)]
+ [!code-vb[XmlTextReader.XmlLang#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.XmlLang/VB/readlang.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlResolver">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlResolver XmlResolver { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver XmlResolver" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DTD 参照を解決するために使用する <see cref="T:System.Xml.XmlResolver" /> を設定します。</summary>
+        <value>使用する <see langword="XmlResolver" />。 <see langword="null" /> に設定されていると、外部リソースが解決されません。  
+  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] バージョン 1.1 では、<see langword="XmlResolver" /> を指定するには呼び出し元が完全に信頼されている必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+ リーダーを使用して`XmlResolver`リーダーに読み込まれるファイルの場所を解決するのには、DTD 参照を解決するのにはさらにです。 たとえば、XML には、DOCTYPE 宣言が含まれている場合`<!DOCTYPE book SYSTEM book.dtd>`リーダーは、この外部のファイルを解決し、DTD が整形式であることを確認します。 リーダーは、検証のため、DTD を使用しません。  
+  
+ このプロパティは、いつでも変更でき、[次へ] の読み取り操作を有効になります。 このプロパティ設定されている場合`null`、リーダーによって発生した任意の外部 DTD 参照は解決されません。  
+  
+ バージョン 1.1 で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アプリケーションの信頼レベルが既定の動作を決定する場合、このプロパティが設定されていません。  
+  
+ `Fully trusted code:`リーダーは、既定値を使用して<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 ネットワーク リソースへのアクセスを認証が必要な場合を使用して、`XmlResolver`プロパティを指定する、`XmlResolver`必要な資格情報を使用します。  
+  
+ `Semi-trusted code:``XmlResolver`プロパティに設定されている`null`です。 外部リソースは解決されません。  
+  
+   
+  
+## Examples  
+ 次の例では、`XmlResolver`プロパティをネットワーク上のファイルにアクセスするために必要な資格情報を指定します。  
+  
+ [!code-cpp[XmlTextReader.XmlResolver#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.XmlResolver/CPP/rdr_resolver.cpp#1)]
+ [!code-csharp[XmlTextReader.XmlResolver#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.XmlResolver/CS/rdr_resolver.cs#1)]
+ [!code-vb[XmlTextReader.XmlResolver#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.XmlResolver/VB/rdr_resolver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSpace">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlSpace XmlSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlSpace XmlSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlSpace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see langword="xml:space" /> スコープを取得します。</summary>
+        <value><see cref="T:System.Xml.XmlSpace" /> 値のいずれか。 <see langword="xml:space" /> スコープが存在しない場合、このプロパティは既定の <see langword="XmlSpace.None" /> に設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  作成することお勧め、.NET Framework 2.0 以降で、<xref:System.Xml.XmlReader>インスタンスを使用して、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>新機能を活用する方法です。  
+  
+   
+  
+## Examples  
+ 次の例は、ファイルを解析し、有意の空白を返す場合、`xml:space='preserve'`スコープに存在します。  
+  
+ [!code-cpp[XmlTextReader.XmlSpace#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlTextReader.XmlSpace/CPP/readspace.cpp#1)]
+ [!code-csharp[XmlTextReader.XmlSpace#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlTextReader.XmlSpace/CS/readspace.cs#1)]
+ [!code-vb[XmlTextReader.XmlSpace#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlTextReader.XmlSpace/VB/readspace.vb#1)]  
+  
+ この例では、`authors.xml`の入力として、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

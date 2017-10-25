@@ -1,0 +1,248 @@
+<Type Name="RequestNotification" FullName="System.Web.RequestNotification">
+  <TypeSignature Language="C#" Value="public enum RequestNotification" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RequestNotification extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.RequestNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントとその他のライフ サイクル イベントが発生することを示します中に、<see cref="T:System.Web.HttpApplication" />要求を処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.RequestNotification>と列挙が使用される、<xref:System.Web.HttpContext.CurrentNotification%2A>のプロパティ、<xref:System.Web.HttpContext>パイプラインにどのようなイベントが現在の処理を決めるクラスをします。 タイミングを決定する特定のイベントのすべてのハンドラー、<xref:System.Web.HttpApplication>インスタンスは処理が完了したらを使用して、<xref:System.Web.HttpContext.IsPostNotification%2A>プロパティです。  
+  
+ <xref:System.Web.RequestNotification>型がで導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.RequestNotification>列挙が、<xref:System.Web.HttpContext.CurrentNotification%2A>プロパティの現在のイベント<xref:System.Web.HttpApplication>インスタンスが要求を処理します。  
+  
+ [!code-csharp[System.Web.HttpResponse.IsPostNotification#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpResponse.IsPostNotification/CS/App_Code/TestModule.cs#1)]
+ [!code-vb[System.Web.HttpResponse.IsPostNotification#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpResponse.IsPostNotification/VB/App_Code/TestModule.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcquireRequestState">
+      <MemberSignature Language="C#" Value="AcquireRequestState" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification AcquireRequestState = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.AcquireRequestState" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.AcquireRequestState" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateRequest">
+      <MemberSignature Language="C#" Value="AuthenticateRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification AuthenticateRequest = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.AuthenticateRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizeRequest">
+      <MemberSignature Language="C#" Value="AuthorizeRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification AuthorizeRequest = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.AuthorizeRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.AuthorizeRequest" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRequest">
+      <MemberSignature Language="C#" Value="BeginRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification BeginRequest = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.BeginRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.BeginRequest" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRequest">
+      <MemberSignature Language="C#" Value="EndRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification EndRequest = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.EndRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.EndRequest" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteRequestHandler">
+      <MemberSignature Language="C#" Value="ExecuteRequestHandler" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification ExecuteRequestHandler = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.ExecuteRequestHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたリソースにマップされているハンドラーが要求を処理する呼び出されていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LogRequest">
+      <MemberSignature Language="C#" Value="LogRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification LogRequest = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.LogRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.LogRequest" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MapRequestHandler">
+      <MemberSignature Language="C#" Value="MapRequestHandler" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification MapRequestHandler = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.MapRequestHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.MapRequestHandler" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreExecuteRequestHandler">
+      <MemberSignature Language="C#" Value="PreExecuteRequestHandler" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification PreExecuteRequestHandler = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.PreExecuteRequestHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求を処理するハンドラーをマップする前に、アプリケーションのライフ サイクルを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseRequestState">
+      <MemberSignature Language="C#" Value="ReleaseRequestState" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification ReleaseRequestState = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.ReleaseRequestState" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.ReleaseRequestState" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveRequestCache">
+      <MemberSignature Language="C#" Value="ResolveRequestCache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification ResolveRequestCache = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.ResolveRequestCache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.ResolveRequestCache" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SendResponse">
+      <MemberSignature Language="C#" Value="SendResponse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification SendResponse = int32(536870912)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.SendResponse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の処理が完了したことと、応答が送信されていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateRequestCache">
+      <MemberSignature Language="C#" Value="UpdateRequestCache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.RequestNotification UpdateRequestCache = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.RequestNotification.UpdateRequestCache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.RequestNotification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<see cref="E:System.Web.HttpApplication.UpdateRequestCache" />イベントは、要求に対して生成され、処理します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,135 @@
+<Type Name="WebBodyFormatMessageProperty" FullName="System.ServiceModel.Channels.WebBodyFormatMessageProperty">
+  <TypeSignature Language="C#" Value="public sealed class WebBodyFormatMessageProperty : System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebBodyFormatMessageProperty extends System.Object implements class System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.WebBodyFormatMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IMessageProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>受信メッセージおよび送信メッセージについて、複合 Web メッセージ エンコーダーで使用されるメッセージ エンコード形式を格納し取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにより、たとえば、複合 Web メッセージ フォーマッタは、複合 Web メッセージ エンコーダーがメッセージをエンコードした方法を認識できます。 <xref:System.ServiceModel.Channels.WebBodyFormatMessageProperty> は、<xref:System.ServiceModel.Channels.IMessageProperty> を実装します。 このインターフェイスを実装するオブジェクトは、値により、アクセス キーを提供する <xref:System.ServiceModel.Channels.Message.Properties%2A> を持つ <xref:System.ServiceModel.Channels.WebBodyFormatMessageProperty.Name> に追加されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBodyFormatMessageProperty (System.ServiceModel.Channels.WebContentFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.Channels.WebContentFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.WebBodyFormatMessageProperty.#ctor(System.ServiceModel.Channels.WebContentFormat)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="System.ServiceModel.Channels.WebContentFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">メッセージ本文の <see cref="T:System.ServiceModel.Channels.WebContentFormat" />。</param>
+        <summary>指定した形式を使用して、<see cref="T:System.ServiceModel.Channels.WebBodyFormatMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">コンストラクターでは、形式は <see cref="F:System.ServiceModel.Channels.WebContentFormat.Default" /> 値に設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.WebBodyFormatMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロパティの現在のインスタンスを返します。</summary>
+        <returns>現在の <see cref="T:System.ServiceModel.Channels.IMessageProperty" /> のコピーである <see cref="T:System.ServiceModel.Channels.WebBodyFormatMessageProperty" /> インターフェイスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.WebContentFormat Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Channels.WebContentFormat Format" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.WebBodyFormatMessageProperty.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.WebContentFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ本文で使用される形式を取得します。</summary>
+        <value>メッセージ本文で使用される形式を表す <see cref="T:System.ServiceModel.Channels.WebContentFormat" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public const string Name;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Name" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.WebBodyFormatMessageProperty.Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ名を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理注釈としてアクセスされ、使用される値の <xref:System.ServiceModel.Channels.WebBodyFormatMessageProperty> コレクション内のキーのように、<xref:System.ServiceModel.Channels.MessageProperties> オブジェクトの名前は必ず "WebBodyFormatMessageProperty" になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.WebBodyFormatMessageProperty.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティ名と、構築時に使用されるエンコード形式を返します。</summary>
+        <returns>"WebBodyFormatMessageProperty: EncodingFormat={0}" を返します。ここで、{0} は <see langword="WebContentFormat.ToString()" /> で、使用されているエンコード形式を表します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

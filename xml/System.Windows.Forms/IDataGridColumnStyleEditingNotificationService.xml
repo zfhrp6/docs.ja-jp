@@ -1,0 +1,51 @@
+<Type Name="IDataGridColumnStyleEditingNotificationService" FullName="System.Windows.Forms.IDataGridColumnStyleEditingNotificationService">
+  <TypeSignature Language="C#" Value="public interface IDataGridColumnStyleEditingNotificationService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataGridColumnStyleEditingNotificationService" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IDataGridColumnStyleEditingNotificationService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>編集の通知インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>という列の特殊なプロパティである必要があります最初から継承する、<xref:System.Windows.Forms.DataGridColumnStyle>クラスです。 <xref:System.Windows.Forms.IDataGridColumnStyleEditingNotificationService>に通知するインターフェイスが提供されている、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>列が編集されている場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnStartedEditing">
+      <MemberSignature Language="C#" Value="public void ColumnStartedEditing (System.Windows.Forms.Control editingControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ColumnStartedEditing(class System.Windows.Forms.Control editingControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataGridColumnStyleEditingNotificationService.ColumnStartedEditing(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingControl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="editingControl">列を編集中の <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>ユーザーが列の編集を開始したことを <see cref="T:System.Windows.Forms.DataGrid" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されると、<xref:System.Windows.Forms.IDataGridColumnStyleEditingNotificationService.ColumnStartedEditing%2A>メソッドを使用する、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>編集されている行を示す、行ヘッダーに鉛筆を表示するコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

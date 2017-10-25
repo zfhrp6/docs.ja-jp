@@ -1,0 +1,677 @@
+<Type Name="ImportCatalogPart" FullName="System.Web.UI.WebControls.WebParts.ImportCatalogPart">
+  <TypeSignature Language="C#" Value="public sealed class ImportCatalogPart : System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImportCatalogPart extends System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ImportCatalogPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.CatalogPart</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>記述ファイルをインポート、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール (またはその他の ASP.NET サーバー コントロールとして使用、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール)、ユーザーは定義済みの設定で Web ページにコントロールを追加することができるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールにより、ユーザーに設定を記述する説明ファイルをインポートする、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールやサーバー コントロールに追加するユーザーが、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。  
+  
+ ユーザーが、記述ファイルをインポートした後、<xref:System.Web.UI.WebControls.WebParts.WebPart>内で、ファイルで参照されているコントロールが表示されます、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>制御、およびユーザーは、ページにコントロールを追加できます。  
+  
+ 説明のファイルは、コントロール自体と同じではありません。 終了する XML ファイルでは、します。Web パーツの拡張機能が名前/値ペア----コントロールの状態を記述するプロパティ値ほとんど含まれています。 トピックの説明に従って、指定された XML 形式に従って記述ファイルが作成された[Web パーツ コントロールの記述ファイル](http://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8)です。  
+  
+ Description ファイルを表すコントロールをアセンブリにコンパイルすることができますか、または .ascx ファイルで定義されているユーザー コントロールであることができます。 どちらの場合、インポートされた記述ファイルで参照されているコントロールは、コントロールをインポートしようとするページをホストする Web サーバーでが必要です。 Description ファイルは、コントロールを含むコントロール名とアセンブリ (またはファイル) を参照し、記述ファイルには、コントロールのプロパティの値、外観、および動作に影響する設定が含まれています。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールにより、ユーザーがコントロール上の設定を共有します。 複雑なコントロールには、多くのプロパティと設定を持つことができます。 たとえば、カスタム、大規模な企業内の一般的なイントラネット サイトで<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、データベース接続、部門別の情報などのユーザーの環境に固有の値を保持するプロパティの数を含めることがあります。 コントロールは、さまざまな外観に影響するプロパティを含むも可能性があります。 1 人のユーザーは、特定のサイトのコントロールのカスタマイズ、正しく動作させると、コントロールの記述ファイルをエクスポート、および他のユーザーと、完全に構成されたコントロールをカスタマイズすることが許可されている他のイントラネット サイトを追加するファイルをインポートすることが description ファイルを共有でした。 そのサイトをホストする Web サーバーで、コンパイルされたアセンブリまたはコントロールを含むユーザー コントロール ファイルが存在する限り、ユーザーは、他の Web サイトにコントロールを追加できます。  
+  
+ メカニズムをユーザー ファイルをインポートする説明 (および関連付けられている server が制御するため)、Web ページには、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールで、ページの開発者が Web ページに追加する必要があります。 ユーザーが、カタログの表示モードにページを切り替えるときに、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールが表示され、ユーザーを参照するには、このコントロールで、ユーザーは、します。サーバー コントロールに対応する web パーツの説明ファイルをインポートします。 UI とにより提供される指示に従って、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、ユーザーは Web ページの外観およびプロパティが完全に指定されたファイルで構成、インポートされた説明に、目的のサーバー コントロールを追加することができます。  
+  
+ 前に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの記述ファイルをインポートできる、ユーザーが (エクスポート) を作成する必要があります最初、ファイルが、既存に基づいて<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 次の条件が満たされた場合、コントロールの記述ファイルをエクスポートできます。  
+  
+-   コントロールでマークされたプロパティがある、`Personalizable`属性。  
+  
+-   Web.config ファイルが、`enableExport`属性の値に設定`true`上、`<webParts>`要素。  
+  
+-   開発者は、の値を設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティの既定値以外の値にコントロールを<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.None>エクスポートを禁止します。 場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>にプロパティの値が設定されている<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.NonSensitiveData>を含む任意のプロパティ、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>を持つパラメーター、`Personalizable`属性は、ユーザーが記述ファイルをエクスポートする際にエクスポートされません。 これにより、コントロールの開発者を接続文字列などの機密データが特定の状況でエクスポートされることを防ぐためにします。  
+  
+ ユーザーが、コントロール、および保存する」の指示に従い、動詞メニューに表示されるエクスポート動詞 をクリックしてエクスポートを有効になっているコントロールをエクスポートします。Web パーツ コントロールのファイルを説明します。 他のユーザーは、コントロールの独自のインスタンスを構成するのには、このファイルをインポートできます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスには、いくつかのプロパティが含まれています。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A> Description ファイルを検索するを参照するときに、プロパティにはユーザーの手順について説明テキストが含まれます。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>プロパティには内で表示されるように、インポートされたコントロールのラベルとして機能するテキストが含まれています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>コントロールの説明がインポートされているときにエラーが発生した場合に表示されるテキストが含まれています。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>プロパティの既定のタイトルを割り当てるの基本プロパティをオーバーライドする<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>開発者は、タイトルを割り当てない場合を制御します。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティには、記述ファイルをアップロードするユーザーがクリックしたボタンのテキストが含まれています。 および<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティには、実際のアップロード処理する方法について説明します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスには、いくつかの固有のメソッドも含まれています。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドの取得、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>ごとにオブジェクト<xref:System.Web.UI.WebControls.WebParts.WebPart>できるカタログ内のコントロール、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>しなくても、そのインスタンスを作成する各サーバー コントロールに関する情報を表示するコントロール。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>メソッドは、特定のインスタンスを取得<xref:System.Web.UI.WebControls.WebParts.WebPart>メソッドに渡された説明に基づくコントロールです。  
+  
+ 使用してに関連するいくつかの本質的なリスクがある、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 1 つの例は、記述ファイルをインポートするために使用されるを通じて、悪意のあるデータを Web アプリケーションにインポートする可能性です。 場合他のユーザーが、配置している悪意のあるスクリプト コードの description ファイル内の文字列プロパティの値として、スクリプトをでした可能性のある実行されるときに、ユーザーが記述ファイルをインポートし、Web ページに、参照先のサーバー コントロールを追加します。 悪意のあるデータ記述ファイルをインポートするリスクを最小限に抑える、文字列型のプロパティを持つサーバー コントロールではプロパティのデータを常にエンコードする必要があります。 別のリスクには、記述ファイルからの種類のインポートが含まれます (を参照してください[Web パーツ コントロールの記述ファイル](http://msdn.microsoft.com/library/480992e4-8fc7-43f8-bffc-ae97bbdfe5b8))。 悪意のあるユーザーに多数のアセンブリを読み込む要求を送信できなかった、 <xref:System.AppDomain>、過度な量のメモリが消費されるとなります。  
+  
+ インポートに関連するリスクを避けるためを無効にする機能は、まとめてインポート機能を使用していない、または<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 または、コントロールに対してどのようなユーザーにアクセスを制限することができます。 これを行うプログラムでは、ロール管理を使用して (を参照してください[承認を使用してロールの管理](http://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195))。 インスタンスのページが読み込まれると、ユーザーが管理者の役割などの特定のロールでかどうかをテストするでした。 かどうか、ユーザーは、ロールでは、追加することがプログラムによって、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールをそのユーザーのページにします。 使用できるユーザーのセットを制限する宣言型の方法を使用することも、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。  カタログを含む web ページ内で 2 つの配置でした<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール: インポートには、ユーザーのいずれかとのことはできません。 ユーザーをインポートできますのゾーンには、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 内のゾーン自体を配置する可能性があります、<xref:System.Web.UI.WebControls.LoginView>コントロールで、使用すると、ユーザーまたはロールを指定した認証されたもののみに、ゾーン内のコントロールの使用を制限します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> Web ページ上の宣言とプログラムを制御します。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 ファイルに次のソース コードを配置し、Displaymodemenucs.ascx または Displaymodemenuvb.ascx (言語に応じて使用している) という名前を付けます必要があります。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページの上部には、2 つ`register`ディレクティブ、ユーザー コントロールおよびコンパイル済みのコンポーネントを含む 2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 ページがへの参照を宣言型であることを確認、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、宣言型の要素の適切な階層内に入れ子にします。 いくつかのプロパティの値は宣言的に割り当てられているにも注意してください、`<asp:importcatalogpart>`要素。 また、`Button1_Click`メソッドでプロパティ値の数を更新する、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。  
+  
+ ページの <xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを宣言します。 `<aspSample:userinfowebpart>`コントロールが、`exportmode="all"`の属性です。 ユーザー別のユーザー説明ファイルを使用してコントロールをインポートしようとしていますが、インポート可能なコントロールの記述ファイルをエクスポートするには、この属性が必要です。  
+  
+> [!NOTE]
+>  記述ファイルをエクスポートする Web パーツ アプリケーションのユーザーを有効にする<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールを追加して Web アプリケーションのエクスポート機能を有効にすることも必要があります、`enableExport="true"`属性を`<webParts>`要素 (これは、の子`<system.web>`要素)、Web.config ファイルにします。 既定で無効なエクスポート、ためまだアプリケーションのエクスポートを有効にない場合、Web.config ファイルを編集し、実行するようになりました。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#1)]  
+  
+ コード例の 3 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これらのコントロールにいくつかのプロパティが付いていることを確認、`WebBrowsable`属性。 これにより、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールを動的に、コントロールが編集モードにする場合は、これらのプロパティを編集するユーザーのユーザー インターフェイス (UI) を生成します。 プロパティが付いているも、`WebDisplayName`編集用の UI 内の各コントロールの横に表示されるラベルのテキストを指定するための属性です。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ カスタム コントロールと呼ばれる`TextDisplayWebPart`で Web ページで参照される、`<aspSample:TextDisplayWebPart>`要素。 その他のコントロールと呼ばれる`UserInfoWebPart`、宣言されて、Web ページで最初に、コントロールの記述ファイルをインポートできることを示す後に削除されますがします。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/userinfowebpart.vb#6)]  
+  
+ これで、コード例を実行します。 ブラウザーで Web ページを読み込みます。 編集するのには、まず、`UserInfoWebPart`コントロール。 使用して、**表示モード**ドロップダウン リスト コントロールを選択**編集**編集モードにページに切り替えます。 動詞メニューをクリックして、`UserInfoWebPart`コントロール (タイトル バーに下向きの矢印) をクリックして**編集**です。 編集用の UI が表示されたら、いくつかの編集コントロールが下に表示されます、`UserInfoWebPart`そのフィールドの値を編集する使用できるコントロールです。 一部のフィールドを編集 をクリックして**OK**、しを使用して、**表示モード**をブラウズ モードのページを返すには、ドロップダウンします。  
+  
+ 2 番目の手順では、エクスポート、します。Web パーツの記述ファイルを`UserInfoWebPart`コントロール。 (タイトル バーに下向きの矢印で表される)、カスタム コントロールの動詞メニューをクリックし、をクリックして**エクスポート**です。 保存を指示に従って、します。Web パーツ コントロールのファイルを説明します。 Web ページを閉じてをエディターでページ ソースを編集します。 削除、`<aspSample:userinfowebpart>`宣言要素を制御し、保存してファイルを閉じます。 (まだないユーザーをシミュレートするには、この手順を実行している、`UserInfoWebPart`コントロールをページにコントロールをインポートできるように) します。  
+  
+ ブラウザーに再度 Web ページを読み込みます。 `UserInfoWebPart`削除したため、コントロールは表示されない必要があります。 使用して、**表示モード**ドロップダウン リスト コントロールと選択**カタログ**モードに切り替えるページ カタログ。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール をクリックして、**参照**ボタンをクリックしを参照します。Web パーツは、作成したファイルにし、クリックして、**アップロード**ボタンをクリックします。 コントロールへの参照は、隣のチェック ボックスと共に表示する必要があります。 チェック ボックスを選択し、クリックして**追加**ページにコントロールを追加します。  
+  
+ このページのビューをクリックして、**更新 ImportCatalogPart**プロパティ値の数をプログラムで更新の影響を確認する ページの下部にあるボタン、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 ボタンをクリックすると、UI のさまざまなプロパティを変更する方法を確認します。  
+  
+ 最後に、をクリックして**閉じる**カタログ モードを終了し、ページをブラウズ モードを返します。 `UserInfoWebPart`以前エクスポートしたときに使用されていた値を含むコントロールがページで、表示されるようになりました。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportCatalogPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ImportCatalogPart" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.%23ctor%2A>コンス トラクターは、既定値以外のコンス トラクターが宣言されていなければ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスとそのため、不要に特別なタスクが実行されます。 クラスの新しいインスタンスが作成されるときです。 .NET Framework は、クラスのインスタンスを作成するのに内部コンス トラクターを使用します。  
+  
+ 通常使用する必要はありません、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.%23ctor%2A>独自のコードでプログラムでコンス トラクターです。 コントロールの用途では、デザイン時に、ページに宣言によって追加、ページ開発者用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowseHelpText">
+      <MemberSignature Language="C#" Value="public string BrowseHelpText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BrowseHelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または記述ファイルの場所を参照するユーザーに指示するテキスト メッセージを設定します。</summary>
+        <value>メッセージのテキストを含む文字列です。 既定値は、.NET Framework によって提供されるカルチャに固有のメッセージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A>プロパティは、ユーザー、まず、インポートされたコントロールを追加しているように設定する必要がありますの簡単な概要: パスで入力するか、ファイルを参照して、記述ファイルの場所を指定します。 このプロパティのカスタム値を指定する一般的な理由は、記述ファイルを検索するように、参照する必要があります、特定のネットワーク共有など、ユーザーの特別な指示があるかどうかです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.BrowseHelpText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultButton">
+      <MemberSignature Language="C#" Value="public override string DefaultButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.DefaultButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ユーザー インターフェイス (UI) のボタンの動作は既定のボタン、ボタンを含むフォームをレンダリングするときに、フォーカスを受け取るとして扱われます。 このプロパティは、ページの開発者のコードから呼び出されるものではありません。</summary>
+        <value>ID を表す文字列、<see cref="T:System.Web.UI.WebControls.Button" />で既定のフォーカスを受け取る、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのコードから継承される基本プロパティをオーバーライドする、<xref:System.Web.UI.WebControls.Panel>クラス デザイナーでのプロパティを非表示にし、テーマに影響されるを防ぐことです。 パブリックですが、このプロパティはこのコントロールの既定のレンダリングの設定、Web パーツ コントロールの内部で使用し、ページの開発者によって使用されるものではありません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAvailableWebPartDescriptions">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能な説明のコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カタログ内のコントロールです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />カタログの各コントロールに対してです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>で抽象基本メソッドが宣言されているために、メソッドは実装を提供、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドは、カタログの各コントロールの説明情報を返します。 場合に注意してください、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>制御を使用できます 1 台のサーバー コントロール カタログで、一度に場合でも、複数のコントロールがあった場合、メソッドは機能します。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>がに関する重要な情報を含むオブジェクトでは、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、その ID では、コントロール、およびから継承されているいくつかの重要なプロパティの値へのオブジェクト参照を含む、<xref:System.Web.UI.WebControls.WebParts.Part>クラスなど<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>と<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドのパフォーマンスが向上します。 カタログが作成されると、一部の情報が含まれている、タイトル、説明、アイコン (が存在する場合)、および ID を含む各コントロールについて、必要があります。 この情報を取得するには、各コントロールのインスタンスを作成する必要はなく、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>呼び出しのカタログを作成するゾーン、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、および呼び出しは、コントロールのインスタンスではなく、コントロールの説明情報のみを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A> Web ページ上のメソッドです。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コードを使用すると、コントロール、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドです。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 ファイルに次のソース コードを配置し、Displaymodemenucs.ascx または Displaymodemenuvb.ascx (言語に応じて使用している) という名前を付けます必要があります。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページの上部には、2 つ`register`ディレクティブ、ユーザー コントロールおよびコンパイル済みのコンポーネントを含む 2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これらのコントロールは、ページのマークアップで宣言によって参照されます。 宣言型の参照で、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (から始まる、`aspSample`プレフィックス)、それぞれが、`exportMode="all"`属性を追加します。 この属性では、エクスポートすることができます、します。ページにコントロールをインポートするためのステップを後で使用すると、コントロールの web パーツの説明ファイルです。  
+  
+> [!NOTE]
+>  記述ファイルをエクスポートする Web パーツ アプリケーションのユーザーを有効にする<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールを追加して Web アプリケーションのエクスポート機能を有効にすることも必要があります、`enableExport="true"`属性を`<webParts>`要素 (これは、の子`<system.web>`要素)、Web.config ファイルにします。 既定で無効なエクスポート、ためまだアプリケーションのエクスポートを有効にない場合、Web.config ファイルを編集し、実行するようになりました。  
+  
+ Web ページにもへの参照を宣言、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、宣言型の要素の適切な階層内に入れ子にします。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>のコード内でメソッドが呼び出された、`Button1_Click`メソッドです。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/ImportCatalogPart_GetCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/ImportCatalogPart_GetVB.aspx#1)]  
+  
+ コード例の 3 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/userinfowebpart.vb#6)]  
+  
+ これで、コード例を実行します。 ブラウザーで Web ページを読み込みます。 最初の手順では、エクスポート、します。各 web パーツの説明ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (用、`TextDisplayWebPart`との`UserInfoWebPart`コントロール)。 各コントロールの (タイトル バーに下向きの矢印によって表される)、コントロールの動詞メニューをクリックし、をクリックして**エクスポート**です。 保存を指示に従って、します。Web パーツ コントロールのファイルを説明します。 各コントロールの記述ファイルをエクスポートした後は、Web ページを閉じてエディターでページ ソースを編集します。 削除、`<aspSample:userinfowebpart>`と`<aspSample:textdisplaywebpart>`宣言要素を制御、保存して、ファイルを閉じます。 (まだないこれらのコントロールをページにコントロールをインポートできるようにするユーザーをシミュレートするには、この手順を行っている。)  
+  
+ ブラウザーに再度 Web ページを読み込みます。 使用して、**表示モード**ドロップダウン リスト コントロールと選択**カタログ**モードに切り替えるページ カタログ。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール をクリックして、**参照** ボタンをクリックしを参照してください、します。作成した web パーツ ファイルは、1 つを選択し、クリックして、**アップロード**ボタンをクリックします。 コントロールへの参照は、隣のチェック ボックスと共に表示する必要があります。 チェック ボックスを選択し、クリックして**追加**ページにコントロールを追加します。 別のコントロールには、このプロセスを繰り返します。  
+  
+ このページのビューをクリックして、 **web パーツの説明を取得**プログラムでアクセスするための影響を確認する ページの下部にあるボタンをクリック、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトにコントロールの説明が現在読み込まれているため、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 については、説明の詳細へのアクセスに使用する方法、`Button1_Click`ページのソースのメソッドは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドです。 ボタンの下にラベルは、コントロールに関する基本情報を表示します。  
+  
+ 最初のコントロールを追加すると、プロセスを繰り返して、2 つ目のコントロールをページに追加します。 最後に、をクリックして**閉じる**カタログ モードを終了し、ページをブラウズ モードを返します。 両方のカスタム コントロール ページで、前の記述ファイルにエクスポートしたときの値を含む表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebPart">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPart GetWebPart (System.Web.UI.WebControls.WebParts.WebPartDescription description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.WebPart GetWebPart(class System.Web.UI.WebControls.WebParts.WebPartDescription description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.Web.UI.WebControls.WebParts.WebPartDescription" />
+      </Parameters>
+      <Docs>
+        <param name="description">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />コントロールに関する詳細情報を格納しています。</param>
+        <summary>参照を返します、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのメソッドに渡される説明の値に基づきます。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />の説明の値に一致するコントロール<paramref name="description" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>メソッドへの参照を返します、<xref:System.Web.UI.WebControls.WebParts.WebPart>詳細を説明の値に一致するコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>メソッドに渡されたオブジェクト。 通常、このメソッドはと共に使用、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.GetAvailableWebPartDescriptions%2A>メソッドで、カタログ内のコントロールの説明を取得するために使用します。 各<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、取得または個別に渡すことによって、必要に応じて操作<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトを<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A> Web ページ上のメソッドです。 この例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   含む Web ページ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コードを使用すると、コントロール、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>メソッドです。  
+  
+-   2 つのカスタムを含むソース コード ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   ブラウザーでページを読み込むときの例の動作の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 ファイルに次のソース コードを配置し、Displaymodemenucs.ascx または Displaymodemenuvb.ascx (言語に応じて使用している) という名前を付けます必要があります。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Get#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページの上部には、2 つ`register`ディレクティブ、ユーザー コントロールおよびコンパイル済みのコンポーネントを含む 2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これらのコントロールは、ページのマークアップで宣言によって参照されます。 宣言型の参照で、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (から始まる、`aspSample`プレフィックス)、それぞれが、`exportMode="all"`属性を追加します。 この属性では、エクスポートすることができます、します。ページにコントロールをインポートするためのステップを後で使用すると、コントロールの web パーツの説明ファイルです。  
+  
+> [!NOTE]
+>  記述ファイルをエクスポートする Web パーツ アプリケーションのユーザーを有効にする<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールを追加して Web アプリケーションのエクスポート機能を有効にすることも必要があります、`enableExport="true"`属性を`<webParts>`要素 (これは、の子`<system.web>`要素)、Web.config ファイルにします。 既定で無効なエクスポート、ためまだアプリケーションのエクスポートを有効にない場合、Web.config ファイルを編集し、実行するようになりました。  
+  
+ Web ページにもへの参照を宣言、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、宣言型の要素の適切な階層内に入れ子にします。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>のコード内でメソッドが呼び出された、`Button2_Click`メソッドです。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/ImportCatalogPart_GetCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Get#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/ImportCatalogPart_GetVB.aspx#1)]  
+  
+ コード例の 3 番目の部分は、2 つのソース コード<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/CS/userinfowebpart.cs#6)]
+ [!code-vb[WebParts_ImportCatalogPart_Get#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Get/VB/userinfowebpart.vb#6)]  
+  
+ これで、コード例を実行します。 ブラウザーで Web ページを読み込みます。 最初の手順では、エクスポート、します。各 web パーツの説明ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール (用、`TextDisplayWebPart`との`UserInfoWebPart`コントロール)。 各コントロールの (タイトル バーに下向きの矢印によって表される)、コントロールの動詞メニューをクリックし、をクリックして**エクスポート**です。 保存を指示に従って、します。Web パーツ コントロールのファイルを説明します。 各コントロールの記述ファイルをエクスポートした後は、Web ページを閉じてエディターでページ ソースを編集します。 削除、`<aspSample:userinfowebpart>`と`<aspSample:textdisplaywebpart>`宣言要素を制御、保存して、ファイルを閉じます。 (まだないこれらのコントロールをページにコントロールをインポートできるようにするユーザーをシミュレートするには、この手順を行っている。)  
+  
+ ブラウザーに再度 Web ページを読み込みます。 使用して、**表示モード**ドロップダウン リスト コントロールと選択**カタログ**モードに切り替えるページ カタログ。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール をクリックして、**参照** ボタンをクリックしを参照してください、します。作成した web パーツ ファイルは、1 つを選択し、クリックして、**アップロード**ボタンをクリックします。 コントロールへの参照は、隣のチェック ボックスと共に表示する必要があります。 コントロールの説明をアップロードするようになりました、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール をクリックして、**使用 GetWebPart**ページの下部にあるボタンをクリックします。 呼び出す場合の効果を示しますこの、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>メソッドおよびで現在読み込まれているコントロールの説明を渡す、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 関連付けられたサーバー コントロールが追加すぐに Web ページにユーザーがクリックしてしなくても、**追加**ボタンをクリックします。 <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.GetWebPart%2A>で呼び出されるメソッド、`Button2_Click`ページのソースのメソッドを返します、<xref:System.Web.UI.WebControls.WebParts.WebPart>に読み込まれている現在の説明に関連付けられたコントロール、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 [次へ]、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart%2A>メソッドを呼び出すと、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがページに直接追加します。 これからプログラムによってコントロールを追加する方法を示して、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>ユーザーの介入なしのコントロールです。  
+  
+ 最初のコントロールを追加すると、プロセスを繰り返して、2 つ目のコントロールをページに追加します。 最後に、をクリックして**閉じる**カタログ モードを終了し、ページをブラウズ モードを返します。 両方のカスタム コントロール ページで、前の記述ファイルにエクスポートしたときの値を含む表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="description" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="description" />利用できません<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportedPartLabelText">
+      <MemberSignature Language="C#" Value="public string ImportedPartLabelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImportedPartLabelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが表すまたはインポートされたコントロールのカタログ内にインポートされたコントロールの説明を記述ファイルをインポートした後に表示されるテキストを設定します。</summary>
+        <value>ラベルのテキストを含む文字列です。 既定値は、.NET Framework によって提供されるカルチャに固有のメッセージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>に含まれるコントロールを説明する短い、一般的なラベルを格納するプロパティが使用される通常の<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.ImportedPartLabelText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartImportErrorLabelText">
+      <MemberSignature Language="C#" Value="public string PartImportErrorLabelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PartImportErrorLabelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインポート処理中にエラーが発生した場合に表示されるエラー メッセージを設定します。</summary>
+        <value>ラベルのテキストを含む文字列です。 既定値は、.NET Framework によって提供されるカルチャに固有のメッセージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>プロパティはいくつかの問題またはエラーが発生した場合、ページの説明ファイルをインポートしようとしました。 ユーザーに通知するために役立ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.PartImportErrorLabelText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ImportCatalogPart.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのタイトル バーに表示されるタイトルを設定、<see cref="T:System.Web.UI.WebControls.WebParts.ImportCatalogPart" />コントロール。</summary>
+        <value>コントロールのタイトルとして使用される文字列。 既定値は、Web パーツ コントロール セットによって提供される演算コントロール名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>プロパティの値がのタイトル バーに表示される、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>ときに、コントロールは、カタログのモードで表示を制御します。 使用して、プロパティの値を設定するには、コントロールがページで宣言されている場合、`Title`属性。 タイトルの値を指定しない、このコントロールでユーザーが編集できるプロパティの種類を記述する、カルチャに固有の既定値が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.Title%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadButtonText">
+      <MemberSignature Language="C#" Value="public string UploadButtonText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UploadButtonText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを取得または設定、<see cref="T:System.Web.UI.WebControls.Button" />記述ファイルのアップロードを開始するコントロール。</summary>
+        <value>テキストとして使用される文字列、<see cref="T:System.Web.UI.WebControls.Button" />です。 既定値は、Web パーツ コントロール セットによって指定されたカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティのテキストを提供する、<xref:System.Web.UI.WebControls.Button>アップロード プロセスを開始するコントロール。 このプロパティは、または、カスタム テキストを割り当てるかどうか、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティのテキストをユーザーが記述ファイルをアップロードすることが明確にする必要があります。 テキストは必要がありますいない言うまたはアップロード プロセスが実際には、コントロール自体をアップロードすることを意味します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UploadHelpText">
+      <MemberSignature Language="C#" Value="public string UploadHelpText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UploadHelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または記述ファイルをアップロードする方法をユーザーに通知するメッセージのテキストを設定します。</summary>
+        <value>ユーザーの命令として記述ファイルをアップロードに使用される文字列。 既定値は、Web パーツ コントロール セットによって指定されたカルチャに固有の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティは、簡単な文や指示 description ファイルをアップロードするためのボタンをクリックして、ユーザーに対する命令の語句を提供します。 このプロパティは、または、カスタム テキストを割り当てるかどうか、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadButtonText%2A>プロパティのテキストをユーザーが記述ファイルをアップロードすることが明確にする必要があります。 テキストは必要がありますいない言うまたはアップロード プロセスが実際には、コントロール自体をアップロードすることを意味します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティをプログラムで宣言します。 完全なコードと、例を実行するために必要な手順の例」のセクションを参照してください。、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスの概要です。  
+  
+ コードの次のセクションでは、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>コントロールのプロパティ値が宣言して設定します。  
+  
+ [!code-aspx-csharp[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#2)]
+ [!code-aspx-vb[WebParts_ImportCatalogPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#2)]  
+  
+ コードのこのセクションで、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティの値がプログラムによって割り当てられます。  
+  
+ [!code-csharp[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/CS/ImportCatalogPartOverviewCS.aspx#3)]
+ [!code-vb[WebParts_ImportCatalogPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ImportCatalogPart_Overview/VB/ImportCatalogPartOverviewVB.aspx#3)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**選択するドロップダウン リスト コントロール**カタログ モード**カタログ モードに切り替えるとします。 カタログ モードやアップロード description ファイル内のページでのユーザー インターフェイス (UI) に表示されるさまざまなテキスト文字列をメモ、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 クリックした場合、**記述ファイルのアップロード**ボタン、ui プロパティをいくつかのテキストを変更するのテキストを含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart.UploadHelpText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

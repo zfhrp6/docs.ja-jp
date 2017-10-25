@@ -1,0 +1,1623 @@
+<Type Name="Image" FullName="System.Drawing.Image">
+  <TypeSignature Language="C#" Value="public abstract class Image : MarshalByRefObject, ICloneable, IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Image extends System.MarshalByRefObject implements class System.ICloneable, class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Image" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.ImageEditor, System.Drawing.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ImmutableObject(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ImageConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>機能を提供する抽象基本クラス、<see cref="T:System.Drawing.Bitmap" />と<see cref="T:System.Drawing.Imaging.Metafile" />クラスの子です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画する、 <xref:System.Drawing.Image> Windows フォームのいずれかを使用する必要があります、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Windows フォームで使用するために設計されています。 ハンドラーは、<xref:System.Windows.Forms.Control.Paint>イベント。 A<xref:System.Drawing.Graphics>オブジェクトは、イベントが渡され、フォームのイメージを描画するために使用します。 コードは、次のアクションを実行します。  
+  
+-   SampImag.jpg をという名前のファイルからイメージを作成します。 このファイルは、アプリケーションの実行可能ファイルと同じフォルダーに配置する必要があります。  
+  
+-   イメージの左上隅を描画するポイントを作成します。  
+  
+-   フォームのスケーリングのイメージを描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicGraphicsExamples#55](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicGraphicsExamples/CPP/form1.cpp#55)]
+ [!code-csharp[System.Drawing.ClassicGraphicsExamples#55](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicGraphicsExamples/CS/form1.cs#55)]
+ [!code-vb[System.Drawing.ClassicGraphicsExamples#55](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicGraphicsExamples/VB/form1.vb#55)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Image" /> の同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Image" />オブジェクトとしてキャスト、このメソッドを作成します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Image" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Image> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Image> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Image" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Drawing.Image.Dispose%2A>メソッドにより、これによって使用されているリソース<xref:System.Drawing.Image>を他の目的に再割り当てされます。  
+  
+ <xref:System.Drawing.Image.Dispose%2A> を使い終わったら <xref:System.Drawing.Image> を呼び出します。 <xref:System.Drawing.Image.Dispose%2A> メソッドによって、<xref:System.Drawing.Image> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.Image.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.Image>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.Image>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Image> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Image> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Drawing.Image" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Image> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Image> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Image ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public int Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得属性のピクセル データのこのフラグ<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>ビットごとの組み合わせを表す整数を<see cref="T:System.Drawing.Imaging.ImageFlags" />この<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返された整数値の合計に対応<xref:System.Drawing.Imaging.ImageFlags>次の表で説明されている。  
+  
+|ImageFlag 値|整数表現|  
+|---------------------|----------------------------|  
+|`ImageFlagsNone`|0|  
+|`ImageFlagsScalable`|1|  
+|`ImageFlagsHasAlpha`|2|  
+|`ImageFlagsHasTranslucent`|4|  
+|`ImageFlagsPartiallyScalable`|8|  
+|`ImageFlagsColorSpaceRGB`|16|  
+|`ImageFlagsColorSpaceCMYK`|32|  
+|`ImageFlagsColorSpaceGRAY`|64|  
+|`ImageFlagsColorSpaceYCBCR`|128|  
+|`ImageFlagsColorSpaceYCCK`|256|  
+|`ImageFlagsHasRealDPI`|4096|  
+|`ImageFlagsHasRealPixelSize`|8192|  
+|`ImageFlagsReadOnly`|65536|  
+|`ImageFlagsCaching`|131072|  
+  
+ たとえば場合、<xref:System.Drawing.Image.Flags%2A>イメージのプロパティには、77960 が返されます、<xref:System.Drawing.Imaging.ImageFlags>をイメージにすると<xref:System.Drawing.Imaging.ImageFlags.ReadOnly>、 <xref:System.Drawing.Imaging.ImageFlags.HasRealDpi>、 <xref:System.Drawing.Imaging.ImageFlags.HasRealPixelSize>、 <xref:System.Drawing.Imaging.ImageFlags.ColorSpaceYcbcr>、および<xref:System.Drawing.Imaging.ImageFlags.PartiallyScalable>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameDimensionsList">
+      <MemberSignature Language="C#" Value="public Guid[] FrameDimensionsList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid[] FrameDimensionsList" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.FrameDimensionsList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフレームのサイズを表す Guid の配列を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>このフレームのサイズを指定する Guid の配列<see cref="T:System.Drawing.Image" />最下位に最上位からです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、2 つのスタイルに付属する多重フレーム イメージに関する情報を返します。 複数のページと複数の解像度。  
+  
+ 複数のページ イメージは 1 つ以上のイメージが含まれています。 各ページには、単一のイメージ (またはフレーム) が含まれています。 これらのページ (またはのイメージ、またはフレーム) 通常アニメーション .gif ファイルなどのアニメーション シーケンスを生成するために連続的に表示されます。  
+  
+ 複数の解像度のイメージは異なる解像度でイメージの 1 つ以上のコピーを格納します。 これは一般的に使用 MIP マッピングによって表示されるイメージのサイズが描画に使用する画像の解像度を決定します。 [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]解像度の任意の数だけでなく任意の数のページ (または、イメージ、またはフレーム) をサポートできます。 定義されたプロパティの<xref:System.Drawing.Imaging.FrameDimension>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFile">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image FromFile (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image FromFile(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">作成元のファイルの名前を表す文字列、<see cref="T:System.Drawing.Image" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Image" />指定したファイルからです。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Image" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ GDI + 組み込みエンコーダーとデコーダー ファイルの種類をサポートするには。  
+  
+-   BMP  
+  
+-   GIF  
+  
+-   JPEG  
+  
+-   PNG  
+  
+-   TIFF  
+  
+ ファイルがまでロックされたまま、<xref:System.Drawing.Image>が破棄されています。  
+  
+ ファイルには、有効な画像形式にいない場合、または場合[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ピクセル形式をサポートしていないファイルのこのメソッドがスローされます、<xref:System.OutOfMemoryException>例外。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image>クラスがビットマップのアルファ透明度をサポートしていません。 アルファの透過性を有効にするには、ピクセルあたり 32 ビットの PNG 画像を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Drawing.Image.FromFile%2A> <xref:System.Drawing.Image.GetPropertyItem%2A>と<xref:System.Drawing.Image.SetPropertyItem%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 この例を実行する、フォームに貼り付けるし、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントを呼び出すことによって、`DemonstratePropertyItem`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ImageExample#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ImageExample#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">ファイルには、有効な画像形式はありません。  
+  
+ または  
+  
+ [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ファイルのピクセル形式はサポートされません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイルが存在しません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filename" />is a <see cref="T:System.Uri" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFile">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image FromFile (string filename, bool useEmbeddedColorManagement);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image FromFile(string filename, bool useEmbeddedColorManagement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromFile(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="useEmbeddedColorManagement" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filename">作成元のファイルの名前を表す文字列、<see cref="T:System.Drawing.Image" />です。</param>
+        <param name="useEmbeddedColorManagement">設定<see langword="true" />イメージ ファイルに埋め込まれている色の管理情報を使用してそれ以外の場合、<see langword="false" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Image" />ファイルで、色の管理情報の埋め込まれたを使用して指定したファイルからです。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Image" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ GDI + 組み込みエンコーダーとデコーダー ファイルの種類をサポートするには。  
+  
+-   BMP  
+  
+-   GIF  
+  
+-   JPEG  
+  
+-   PNG  
+  
+-   TIFF  
+  
+ ファイルには、有効な画像形式にいない場合、または場合[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ピクセル形式をサポートしていないファイルのこのメソッドがスローされます、<xref:System.OutOfMemoryException>例外。  
+  
+ ファイルがまでロックされたまま、<xref:System.Drawing.Image>が破棄されています。  
+  
+ `useEmbeddedColorManagement`パラメーターを指定するかどうか、新しい<xref:System.Drawing.Image>色補正イメージ ファイルに埋め込まれている色の管理情報に従って適用されます。 埋め込まれた情報には、International Color Consortium (ICC) プロファイル、ガンマ値、およびが一番の情報を含めることができます。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image>クラスがビットマップのアルファ透明度をサポートしていません。 アルファの透過性を有効にするには、ピクセルあたり 32 ビットの PNG 画像を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して新しいビットマップを取得する方法を示しています、<xref:System.Drawing.Image.FromFile%2A>メソッドです。 また、<xref:System.Drawing.TextureBrush>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 という名前のボタンを含むフォームを作成`Button2`です。 コードをフォームに貼り付け、`Button2_Click`ボタンのメソッド<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ImageExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ImageExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">ファイルには、有効な画像形式はありません。  
+  
+ または  
+  
+ [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ファイルのピクセル形式はサポートされません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイルが存在しません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filename" />is a <see cref="T:System.Uri" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHbitmap">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Bitmap FromHbitmap (IntPtr hbitmap);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Bitmap FromHbitmap(native int hbitmap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromHbitmap(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Bitmap</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hbitmap" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hbitmap">[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]作成元のビットマップのハンドル、<see cref="T:System.Drawing.Bitmap" />です。</param>
+        <summary>作成、 <see cref="T:System.Drawing.Bitmap" /> GDI ビットマップへのハンドルからです。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Bitmap" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Image.FromHbitmap%2A>メソッドは、のコピー、[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ビットマップ; 受信を解放するように[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ビットマップを使用して、 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)] `DeleteObject`新しいの作成後すぐにメソッド<xref:System.Drawing.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHbitmap">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Bitmap FromHbitmap (IntPtr hbitmap, IntPtr hpalette);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Bitmap FromHbitmap(native int hbitmap, native int hpalette) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromHbitmap(System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Bitmap</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hbitmap" Type="System.IntPtr" />
+        <Parameter Name="hpalette" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hbitmap">[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]作成元のビットマップのハンドル、<see cref="T:System.Drawing.Bitmap" />です。</param>
+        <param name="hpalette">ハンドル、[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]パレットにビットマップが指定されている場合にビットマップの色を定義するために使用、 <c>hBitmap</c>パラメーターがデバイスに依存しないビットマップ (DIB) ではありません。</param>
+        <summary>作成、 <see cref="T:System.Drawing.Bitmap" /> GDI ビットマップと GDI パレットへのハンドルへのハンドルからです。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Bitmap" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Image.FromHbitmap%2A>メソッドは、のコピー、[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ビットマップ; 受信を解放するように[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ビットマップを使用して、 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)] `DeleteObject`新しいの作成後すぐにメソッド<xref:System.Drawing.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromStream">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image FromStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image FromStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Image" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Image" />指定したデータ ストリームから。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Image" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要があります、ストリームを開いておくの有効期間、<xref:System.Drawing.Image>です。  
+  
+ このメソッドが同じストリームを連続して呼び出された場合は、ストリームをゼロにリセットします。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image>クラスがビットマップのアルファ透明度をサポートしていません。 アルファの透過性を有効にするには、ピクセルあたり 32 ビットの PNG 画像を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームには、有効な画像形式はありません。  
+  
+ または  
+  
+ <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromStream">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image FromStream (System.IO.Stream stream, bool useEmbeddedColorManagement);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image FromStream(class System.IO.Stream stream, bool useEmbeddedColorManagement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromStream(System.IO.Stream,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="useEmbeddedColorManagement" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Image" />です。</param>
+        <param name="useEmbeddedColorManagement">
+          <see langword="true" />データ ストリームに埋め込まれた色の管理情報を使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Image" />指定したデータ ストリームからを使用して必要に応じてに埋め込まれている色の管理情報ストリーム。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Image" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要があります、ストリームを開いておくの有効期間、<xref:System.Drawing.Image>です。  
+  
+ `useEmbeddedColorManagement`パラメーターを指定するかどうか、新しい<xref:System.Drawing.Image>色補正データ ストリームに埋め込まれている色の管理情報に従って適用されます。 埋め込まれた情報には、International Color Consortium (ICC) プロファイル、ガンマ値、およびが一番の情報を含めることができます。  
+  
+ このメソッドが同じストリームを連続して呼び出された場合は、ストリームをゼロにリセットします。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image>クラスがビットマップのアルファ透明度をサポートしていません。 アルファの透過性を有効にするには、ピクセルあたり 32 ビットの PNG 画像を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームには、有効な画像形式はありません。  
+  
+ または  
+  
+ <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromStream">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Image FromStream (System.IO.Stream stream, bool useEmbeddedColorManagement, bool validateImageData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image FromStream(class System.IO.Stream stream, bool useEmbeddedColorManagement, bool validateImageData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.FromStream(System.IO.Stream,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="useEmbeddedColorManagement" Type="System.Boolean" />
+        <Parameter Name="validateImageData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />このデータを格納している<see cref="T:System.Drawing.Image" />です。</param>
+        <param name="useEmbeddedColorManagement">
+          <see langword="true" />データ ストリームに埋め込まれた色の管理情報を使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="validateImageData">
+          <see langword="true" />イメージ データを検証するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Image" />指定したデータ ストリームから必要に応じてを使用して埋め込まれている色の管理情報およびイメージ データを検証します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Image" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `useEmbeddedColorManagement`パラメーターを指定するかどうか、新しい<xref:System.Drawing.Image>色補正データ ストリームに埋め込まれている色の管理情報に従って適用されます。 埋め込まれた情報には、International Color Consortium (ICC) プロファイル、ガンマ値、およびが一番の情報を含めることができます。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Image>クラスがビットマップのアルファ透明度をサポートしていません。 アルファの透過性を有効にするには、ピクセルあたり 32 ビットの PNG 画像を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームには、有効な画像形式はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetBounds (ref System.Drawing.GraphicsUnit pageUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetBounds(valuetype System.Drawing.GraphicsUnit&amp; pageUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetBounds(System.Drawing.GraphicsUnit@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageUnit" Type="System.Drawing.GraphicsUnit&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="pageUnit">1 つ、<see cref="T:System.Drawing.GraphicsUnit" />外接する四角形の測定単位を示す値。</param>
+        <summary>指定した単位でイメージの境界を取得します。</summary>
+        <returns><see cref="T:System.Drawing.RectangleF" />イメージには、指定した単位の境界を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例からビットマップを読み込む方法を示します、<xref:System.Drawing.Icon>を使用して、処理、<xref:System.Drawing.GraphicsUnit>列挙型、および使用する方法、<xref:System.Drawing.Rectangle.Round%2A>ビットマップの長方形の境界を描画するメソッド。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 という名前のボタンを含むフォームを作成する`Button2`です。 フォームにコードを貼り付け、ボタンにこのメソッドを関連付ける<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.BitmapMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.BitmapMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEncoderParameterList">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.EncoderParameters GetEncoderParameterList (Guid encoder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Imaging.EncoderParameters GetEncoderParameterList(valuetype System.Guid encoder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetEncoderParameterList(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderParameters</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encoder" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="encoder">イメージ エンコーダーを指定する GUID です。</param>
+        <summary>指定したイメージ エンコーダーでサポートされるパラメーターについての情報を返します。</summary>
+        <returns><see cref="T:System.Drawing.Imaging.EncoderParameters" />の配列を格納している<see cref="T:System.Drawing.Imaging.EncoderParameter" />オブジェクト。 各<see cref="T:System.Drawing.Imaging.EncoderParameter" />についてには、指定したイメージ エンコーダーでサポートされているパラメーターのいずれかが含まれています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFrameCount">
+      <MemberSignature Language="C#" Value="public int GetFrameCount (System.Drawing.Imaging.FrameDimension dimension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFrameCount(class System.Drawing.Imaging.FrameDimension dimension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetFrameCount(System.Drawing.Imaging.FrameDimension)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dimension" Type="System.Drawing.Imaging.FrameDimension" />
+      </Parameters>
+      <Docs>
+        <param name="dimension">A<see cref="T:System.Drawing.Imaging.FrameDimension" />ディメンションの種類の id を指定します。</param>
+        <summary>指定したディメンションのフレームの数を返します。</summary>
+        <returns>指定したディメンションのフレームの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、2 つのスタイルに付属する多重フレーム イメージに関する情報を返します。 複数のページと複数の解像度。  
+  
+ 複数のページ イメージは 1 つ以上のイメージが含まれています。 各ページには、単一のイメージ (またはフレーム) が含まれています。 これらのページ (またはのイメージ、またはフレーム) 通常アニメーション .gif ファイルなどのアニメーション シーケンスを生成するために連続的に表示されます。  
+  
+ 複数の解像度のイメージは異なる解像度でイメージの 1 つ以上のコピーを格納します。 これは一般的に使用 MIP マッピングによって表示されるイメージのサイズが描画に使用する画像の解像度を決定します。 [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]解像度の任意の数だけでなく任意の数のページ (または、イメージ、またはフレーム) をサポートできます。 定義されたプロパティの<xref:System.Drawing.Imaging.FrameDimension>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPixelFormatSize">
+      <MemberSignature Language="C#" Value="public static int GetPixelFormatSize (System.Drawing.Imaging.PixelFormat pixfmt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetPixelFormatSize(valuetype System.Drawing.Imaging.PixelFormat pixfmt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetPixelFormatSize(System.Drawing.Imaging.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixfmt" Type="System.Drawing.Imaging.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixfmt"><see cref="T:System.Drawing.Imaging.PixelFormat" />サイズを検索する対象の形式を指定するメンバー。</param>
+        <summary>指定したピクセル形式の色深度 (1 ピクセルあたりのビットの数) を返します。</summary>
+        <returns>指定したピクセル形式の色深度。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyItem">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.PropertyItem GetPropertyItem (int propid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Imaging.PropertyItem GetPropertyItem(int32 propid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetPropertyItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PropertyItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propid" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="propid">取得するプロパティ項目の ID。</param>
+        <summary>これから指定したプロパティの項目を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <returns><see cref="T:System.Drawing.Imaging.PropertyItem" />このメソッドを取得します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ項目の Id と詳細情報へのリンクの一覧は、次を参照してください。<xref:System.Drawing.Imaging.PropertyItem.Id%2A>です。  
+  
+ 項目のプロパティを設定するが困難でため、<xref:System.Drawing.Imaging.PropertyItem>クラスにパブリック コンス トラクターがありません。 この制限を回避する方法の 1 つは取得する、<xref:System.Drawing.Imaging.PropertyItem>取得することによって、<xref:System.Drawing.Image.PropertyItems%2A>プロパティの値または呼び出し、<xref:System.Drawing.Image.GetPropertyItem%2A>のメソッド、<xref:System.Drawing.Image>がすでにあるプロパティ項目。 フィールドを設定することができます、<xref:System.Drawing.Imaging.PropertyItem>に渡すと<xref:System.Drawing.Image.SetPropertyItem%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Image.GetPropertyItem%2A>と<xref:System.Drawing.Image.SetPropertyItem%2A>メソッドです。 この例では<xref:System.Drawing.Image.GetPropertyItem%2A>ID 値を渡すことです。 ID の一覧の値は、「の<xref:System.Drawing.Imaging.PropertyItem.Id%2A>します。 この例は、Windows フォームで使用するよう設計されています。 この例を実行する、フォームに貼り付けるし、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントを呼び出すことによって、`DemonstratePropertyItem`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ImageExample#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ImageExample#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このイメージのイメージ形式は、プロパティ項目をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThumbnailImage">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image GetThumbnailImage (int thumbWidth, int thumbHeight, System.Drawing.Image.GetThumbnailImageAbort callback, IntPtr callbackData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Image GetThumbnailImage(int32 thumbWidth, int32 thumbHeight, class System.Drawing.Image/GetThumbnailImageAbort callback, native int callbackData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.GetThumbnailImage(System.Int32,System.Int32,System.Drawing.Image.GetThumbnailImageAbort,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thumbWidth" Type="System.Int32" />
+        <Parameter Name="thumbHeight" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.Drawing.Image+GetThumbnailImageAbort" />
+        <Parameter Name="callbackData" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="thumbWidth">要求されたサムネイル イメージのピクセル単位の幅。</param>
+        <param name="thumbHeight">要求されたサムネイル イメージのピクセル単位の高さ。</param>
+        <param name="callback"><see cref="T:System.Drawing.Image.GetThumbnailImageAbort" /> デリゲート。  
+  
+ **注**デリゲートを作成し、としてデリゲートへの参照を渡す必要があります、<c>コールバック</c>パラメーターは、デリゲートは使用されません。</param>
+        <param name="callbackData"><see cref="F:System.IntPtr.Zero" /> にする必要があります。</param>
+        <summary>このサムネイルを返します<see cref="T:System.Drawing.Image" />です。</summary>
+        <returns><see cref="T:System.Drawing.Image" />サムネイルを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Drawing.Image>埋め込みサムネイル画像を含むこのメソッドは、埋め込みサムネイルを取得し、要求されたサイズに拡大します。 場合、<xref:System.Drawing.Image>埋め込みサムネイル画像が含まれていないこのメソッドは、メインのイメージをスケーリングしてサムネイル イメージを作成します。  
+  
+ <xref:System.Drawing.Image.GetThumbnailImage%2A>方法は、要求されたサムネイル画像が約 120 x 120 ピクセルのサイズを持つ場合にもします。 大きな縮小表示画像 (たとえば、300 x 300) を要求した場合、<xref:System.Drawing.Image>埋め込みサムネイルを持つ、サムネイル画像の品質の低下があります。 呼び出すことによって (埋め込みサムネイルをスケーリング) ではなく主なイメージをスケーリングする方がよい場合があります、<xref:System.Drawing.Graphics.DrawImage%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、作成し、サムネイル画像を表示します。 このデリゲートは呼び出されません。  
+  
+ [!code-csharp[System.Drawing.Misc3#GetThumbnail](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#getthumbnail)]
+ [!code-vb[System.Drawing.Misc3#GetThumbnail](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#getthumbnail)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高さを取得します (ピクセル単位) のこの<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>この <see cref="T:System.Drawing.Image" /> の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ファイルから新しいビットマップを作成する方法を示しますを使用して、<xref:System.Drawing.Bitmap.GetPixel%2A>と<xref:System.Drawing.Bitmap.SetPixel%2A>イメージの色を変更する方法です。 また、使用、<xref:System.Drawing.Image.PixelFormat%2A>と<xref:System.Drawing.Image.Height%2A>プロパティです。  
+  
+ この例を含む Windows フォームで使用するように設計された、 <xref:System.Windows.Forms.Label>、 <xref:System.Windows.Forms.PictureBox>、および<xref:System.Windows.Forms.Button>という名前`Label1`、 `PictureBox1`、および`Button1`、それぞれします。 コードをフォームに貼り付け、`Button1_Click`ボタンのメソッド<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ImageExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ImageExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalResolution">
+      <MemberSignature Language="C#" Value="public float HorizontalResolution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 HorizontalResolution" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.HorizontalResolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインチあたりのピクセルで水平方向の解像度を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>このインチあたりのピクセルで、水平方向の解像度<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAlphaPixelFormat">
+      <MemberSignature Language="C#" Value="public static bool IsAlphaPixelFormat (System.Drawing.Imaging.PixelFormat pixfmt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsAlphaPixelFormat(valuetype System.Drawing.Imaging.PixelFormat pixfmt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.IsAlphaPixelFormat(System.Drawing.Imaging.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixfmt" Type="System.Drawing.Imaging.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixfmt">テスト対象の <see cref="T:System.Drawing.Imaging.PixelFormat" />。</param>
+        <summary>示す値を返します、ピクセルがこの形式かどうか<see cref="T:System.Drawing.Image" />アルファ情報が含まれています。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="pixfmt" />アルファ情報が含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCanonicalPixelFormat">
+      <MemberSignature Language="C#" Value="public static bool IsCanonicalPixelFormat (System.Drawing.Imaging.PixelFormat pixfmt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsCanonicalPixelFormat(valuetype System.Drawing.Imaging.PixelFormat pixfmt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.IsCanonicalPixelFormat(System.Drawing.Imaging.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixfmt" Type="System.Drawing.Imaging.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixfmt">テスト対象の <see cref="T:System.Drawing.Imaging.PixelFormat" />。</param>
+        <summary>1 ピクセルあたり 32 ビットのピクセル形式であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="pixfmt" />が正規であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準のピクセル形式では、1 ピクセルあたり 32 ビットのピクセル形式を示します。 この形式は、色深度 24 ビットと 8 ビットのアルファ チャネルを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExtendedPixelFormat">
+      <MemberSignature Language="C#" Value="public static bool IsExtendedPixelFormat (System.Drawing.Imaging.PixelFormat pixfmt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsExtendedPixelFormat(valuetype System.Drawing.Imaging.PixelFormat pixfmt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.IsExtendedPixelFormat(System.Drawing.Imaging.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixfmt" Type="System.Drawing.Imaging.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixfmt"><see cref="T:System.Drawing.Imaging.PixelFormat" />列挙型をテストします。</param>
+        <summary>1 ピクセルあたり 64 ビットのピクセル形式であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="pixfmt" />が拡張されている場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.ColorPalette Palette { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Imaging.ColorPalette Palette" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Palette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ColorPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを使用するカラー パレットを取得または<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Imaging.ColorPalette" />これを使用するカラー パレットを表す<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのコピーを返します、<xref:System.Drawing.Imaging.ColorPalette>これによって使用されるオブジェクト<xref:System.Drawing.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhysicalDimension">
+      <MemberSignature Language="C#" Value="public System.Drawing.SizeF PhysicalDimension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.SizeF PhysicalDimension" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.PhysicalDimension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.SizeF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイメージの幅と高さを取得します。</summary>
+        <value>A<see cref="T:System.Drawing.SizeF" />幅と高さはこれを表す構造<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージがビットマップの場合は、幅と高さがピクセル単位で返されます。 イメージがメタファイルの場合は、幅と高さが 0.01 ミリメートル単位で返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelFormat">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.PixelFormat PixelFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Imaging.PixelFormat PixelFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.PixelFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このピクセル形式を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Imaging.PixelFormat" />このピクセル形式を表す<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ファイルから新しいビットマップを作成する方法を示しますを使用して、<xref:System.Drawing.Bitmap.GetPixel%2A>と<xref:System.Drawing.Bitmap.SetPixel%2A>イメージの色を変更する方法です。 また、使用、<xref:System.Drawing.Image.PixelFormat%2A>プロパティです。  
+  
+ この例を含む Windows フォームで使用するように設計された、 <xref:System.Windows.Forms.Label>、<xref:System.Windows.Forms.PictureBox>と<xref:System.Windows.Forms.Button>という名前`Label1`、 `PictureBox1`、および`Button1`、それぞれします。 コードをフォームに貼り付け、`Button1_Click`ボタンのメソッド<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ImageExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ImageExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyIdList">
+      <MemberSignature Language="C#" Value="public int[] PropertyIdList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] PropertyIdList" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.PropertyIdList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに格納されているプロパティ項目の Id を取得します<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>このイメージに格納された各プロパティ項目に対して 1 つずつ存在するプロパティ ID の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージのプロパティ項目があるない場合、またはイメージの形式は、のプロパティ項目をサポートしていない場合、<xref:System.Drawing.Image.PropertyIdList%2A>プロパティが空の配列 (つまり、長さ 0 の配列) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyItems">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.PropertyItem[] PropertyItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Imaging.PropertyItem[] PropertyItems" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.PropertyItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PropertyItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての項目を取得プロパティ (メタデータ個) これに格納されている<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>配列<see cref="T:System.Drawing.Imaging.PropertyItem" />オブジェクト、イメージに格納された項目の各プロパティの 1 つです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージのプロパティ項目があるない場合、またはイメージの形式は、のプロパティ項目をサポートしていない場合<xref:System.Drawing.Image.PropertyItems%2A>空の配列 (つまり、長さ 0 の配列) を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データを使用してイメージ ファイルにメタデータを表示する方法を示します、<xref:System.Drawing.Imaging.PropertyItem?displayProperty=nameWithType>クラスおよび<xref:System.Drawing.Image.PropertyItems%2A>プロパティです。  
+  
+ この例は、インポートする Windows フォームを使用する、<xref:System.Drawing.Imaging?displayProperty=nameWithType>名前空間。 パスを変更してコードをフォームに貼り付け`fakePhoto.jpg`には、システム上の画像ファイルをポイントします。 呼び出す、`ExtractMetaData`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ImageExample#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ImageExample#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawFormat">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.ImageFormat RawFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Imaging.ImageFormat RawFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.RawFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイル形式を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <value><see cref="T:System.Drawing.Imaging.ImageFormat" />これのファイル形式を表す<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePropertyItem">
+      <MemberSignature Language="C#" Value="public void RemovePropertyItem (int propid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemovePropertyItem(int32 propid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.RemovePropertyItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propid" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="propid">削除するプロパティ項目の ID。</param>
+        <summary>これから指定したプロパティ項目が削除<see cref="T:System.Drawing.Image" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目のプロパティを設定するが困難でため、<xref:System.Drawing.Imaging.PropertyItem>クラスにパブリック コンス トラクターがありません。 この制限を回避する方法の 1 つは取得する、<xref:System.Drawing.Imaging.PropertyItem>取得することによって、<xref:System.Drawing.Image.PropertyItems%2A>プロパティの値または呼び出し、<xref:System.Drawing.Image.GetPropertyItem%2A>のメソッド、<xref:System.Drawing.Image>がすでにあるプロパティ項目。 フィールドを設定することができます、<xref:System.Drawing.Imaging.PropertyItem>に渡すと<xref:System.Drawing.Image.SetPropertyItem%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">イメージには、要求されたプロパティ項目がありません。  
+  
+ または  
+  
+ このイメージのイメージの形式では、プロパティのアイテムはサポートされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateFlip">
+      <MemberSignature Language="C#" Value="public void RotateFlip (System.Drawing.RotateFlipType rotateFlipType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateFlip(valuetype System.Drawing.RotateFlipType rotateFlipType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.RotateFlip(System.Drawing.RotateFlipType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rotateFlipType" Type="System.Drawing.RotateFlipType" />
+      </Parameters>
+      <Docs>
+        <param name="rotateFlipType">A<see cref="T:System.Drawing.RotateFlipType" />をイメージに適用する回転または反転の種類を指定します。</param>
+        <summary>回転、反転、または回転し、反転、<see cref="T:System.Drawing.Image" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Image.RotateFlip%2A>メソッドが画像を時計回りに回転させます。  
+  
+ 回転したら、イメージを描画する場合は、する必要があります常にオブジェクトを取得する、新しいグラフィックス、イメージから、例外が発生するそれ以外の場合。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Drawing.Image.RotateFlip%2A>メソッドを<xref:System.Drawing.Image>と<xref:System.Drawing.RotateFlipType>列挙します。  
+  
+ この例を含む Windows フォームで使用するように設計された、<xref:System.Windows.Forms.PictureBox>という名前`PictureBox1`という名前のボタンと`Button1`です。 フォームの呼び出しにコードを貼り付けます`InitializeBitmap`フォームのコンス トラクター、および関連付けるから`Button1_Click`ボタンの<xref:System.Windows.Forms.Control.Click>イベント。 ビットマップへのファイル パスは、システム上で有効なことを確認します。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.BitmapMembers#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.BitmapMembers#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Save(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">この保存先ファイルの名前を表す文字列<see cref="T:System.Drawing.Image" />です。</param>
+        <summary>この保存<see cref="T:System.Drawing.Image" />を指定したファイルまたはストリームします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージのファイル形式のエンコーダーが存在しない場合は、ポータブル ネットワーク グラフィックス (PNG) エンコーダーが使用されます。 使用すると、 <xref:System.Drawing.Image.Save%2A> Windows メタファイル形式 (WMF) または拡張メタファイル形式 (EMF) ファイルで、結果として得られるファイルとして画像を保存する方法が、ポータブル ネットワーク グラフィックス (PNG) ファイルとして保存します。 この問題の原因、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]コンポーネント、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] .wmf または .emf ファイルとしてファイルを保存するのに使用できるエンコーダーではありません。  
+  
+ 構築されている同じファイルにイメージの保存は許可されていませんし、例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Drawing.Image.Save%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 という名前のボタンを含むフォームを作成する`Button5`です。 フォームにコードを貼り付け、ボタンのメソッドに関連付ける<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ImageExample#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ImageExample#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filename" /> は <see langword="null." /> です</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">イメージが正しくないイメージ形式で保存されました。  
+  
+ または  
+  
+ イメージは、作成元の同じファイルに保存されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, System.Drawing.Imaging.ImageFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, class System.Drawing.Imaging.ImageFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Save(System.IO.Stream,System.Drawing.Imaging.ImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="format" Type="System.Drawing.Imaging.ImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />イメージを保存します。</param>
+        <param name="format"><see cref="T:System.Drawing.Imaging.ImageFormat" />保存されたイメージの形式を指定します。</param>
+        <summary>このイメージを、指定した形式で指定したストリームに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージの構築に使用された同じストリームに保存を避ける必要があります。 そうと、ストリームが破損する可能性があります。  
+  
+ イメージは、0 のオフセットでストリームに保存する必要があります。 イメージを保存する前に、その他のデータをストリームに書き込まれたが、ストリーム内の画像データが破損します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="format" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">間違ったイメージ形式で保存された画像</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string filename, System.Drawing.Imaging.ImageFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string filename, class System.Drawing.Imaging.ImageFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Save(System.String,System.Drawing.Imaging.ImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="format" Type="System.Drawing.Imaging.ImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="filename">この保存先ファイルの名前を表す文字列<see cref="T:System.Drawing.Image" />です。</param>
+        <param name="format">この <see cref="T:System.Drawing.Imaging.ImageFormat" /> の <see cref="T:System.Drawing.Image" />。</param>
+        <summary>この保存<see cref="T:System.Drawing.Image" />指定された形式で指定したファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、型からビットマップを作成する方法と使用方法を示しています、<xref:System.Drawing.Image.Save%2A>メソッドです。 この例を実行するには、Windows フォームにコードを貼り付けます。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベント、および呼び出し、`ConstructFromResourceSaveAsGif`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>  
+  
+ [!code-cpp[System.Drawing.BmpCtorAndSave#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BmpCtorAndSave/cpp/form1.cpp#1)]
+ [!code-csharp[System.Drawing.BmpCtorAndSave#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BmpCtorAndSave/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.BmpCtorAndSave#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BmpCtorAndSave/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filename" />or <paramref name="format" /> is<see langword="null." /></exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">イメージが正しくないイメージ形式で保存されました。  
+  
+ または  
+  
+ イメージは、作成元の同じファイルに保存されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, System.Drawing.Imaging.ImageCodecInfo encoder, System.Drawing.Imaging.EncoderParameters encoderParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, class System.Drawing.Imaging.ImageCodecInfo encoder, class System.Drawing.Imaging.EncoderParameters encoderParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Save(System.IO.Stream,System.Drawing.Imaging.ImageCodecInfo,System.Drawing.Imaging.EncoderParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoder" Type="System.Drawing.Imaging.ImageCodecInfo" />
+        <Parameter Name="encoderParams" Type="System.Drawing.Imaging.EncoderParameters" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />イメージを保存します。</param>
+        <param name="encoder">この <see cref="T:System.Drawing.Imaging.ImageCodecInfo" /> の <see cref="T:System.Drawing.Image" />。</param>
+        <param name="encoderParams"><see cref="T:System.Drawing.Imaging.EncoderParameters" />イメージ エンコーダーで使用されるパラメーターを指定します。</param>
+        <summary>指定したエンコーダー パラメーターおよびイメージ エンコーダー パラメーターを使用して、このイメージを指定したストリームに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージを構築するために使用された同じストリームには、イメージを保存できません。 そうと、ストリームが破損する可能性があります。  
+  
+ イメージは、0 のオフセットでストリームに保存する必要があります。 イメージを保存する前に、その他のデータをストリームに書き込まれたが、ストリーム内の画像データが破損します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">イメージが正しくないイメージ形式で保存されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string filename, System.Drawing.Imaging.ImageCodecInfo encoder, System.Drawing.Imaging.EncoderParameters encoderParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string filename, class System.Drawing.Imaging.ImageCodecInfo encoder, class System.Drawing.Imaging.EncoderParameters encoderParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.Save(System.String,System.Drawing.Imaging.ImageCodecInfo,System.Drawing.Imaging.EncoderParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="encoder" Type="System.Drawing.Imaging.ImageCodecInfo" />
+        <Parameter Name="encoderParams" Type="System.Drawing.Imaging.EncoderParameters" />
+      </Parameters>
+      <Docs>
+        <param name="filename">この保存先ファイルの名前を表す文字列<see cref="T:System.Drawing.Image" />です。</param>
+        <param name="encoder">この <see cref="T:System.Drawing.Imaging.ImageCodecInfo" /> の <see cref="T:System.Drawing.Image" />。</param>
+        <param name="encoderParams"><see cref="T:System.Drawing.Imaging.EncoderParameters" />これを使用する<see cref="T:System.Drawing.Image" />です。</param>
+        <summary>この保存<see cref="T:System.Drawing.Image" />指定したエンコーダーおよびイメージ エンコーダー パラメーターを使用して、指定したファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築されている同じファイルにイメージの保存は許可されていませんし、例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Drawing.Bitmap> BMP ファイルからオブジェクト。 コードは、ビットマップをさまざまな品質レベルの 3 つの JPEG ファイルに保存します。  
+  
+ [!code-cpp[System.Drawing.ClassicImagingEndcoder3#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicImagingEndcoder3/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicImagingEndcoder3#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicImagingEndcoder3/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicImagingEndcoder3#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicImagingEndcoder3/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filename" />or <paramref name="encoder" /> is<see langword="null." /></exception>
+        <exception cref="T:System.Runtime.InteropServices.ExternalException">イメージが正しくないイメージ形式で保存されました。  
+  
+ または  
+  
+ イメージは、作成元の同じファイルに保存されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAdd">
+      <MemberSignature Language="C#" Value="public void SaveAdd (System.Drawing.Imaging.EncoderParameters encoderParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAdd(class System.Drawing.Imaging.EncoderParameters encoderParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.SaveAdd(System.Drawing.Imaging.EncoderParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encoderParams" Type="System.Drawing.Imaging.EncoderParameters" />
+      </Parameters>
+      <Docs>
+        <param name="encoderParams"><see cref="T:System.Drawing.Imaging.EncoderParameters" />によって使用されるイメージ エンコーダーに必要なパラメーターを保持する、操作を保存/追加します。</param>
+        <summary>ファイルまたは前の呼び出しで指定されたストリームにフレームを追加、<see cref="Overload:System.Drawing.Image.Save" />メソッドです。 このメソッドは、多重フレーム イメージから選択したフレームを別の多重フレーム イメージに保存する場合に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAdd">
+      <MemberSignature Language="C#" Value="public void SaveAdd (System.Drawing.Image image, System.Drawing.Imaging.EncoderParameters encoderParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAdd(class System.Drawing.Image image, class System.Drawing.Imaging.EncoderParameters encoderParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.SaveAdd(System.Drawing.Image,System.Drawing.Imaging.EncoderParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="encoderParams" Type="System.Drawing.Imaging.EncoderParameters" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />を追加するフレームが含まれています。</param>
+        <param name="encoderParams"><see cref="T:System.Drawing.Imaging.EncoderParameters" />によって使用されるイメージ エンコーダーに必要なパラメーターを保持する、操作を保存/追加します。</param>
+        <summary>ファイルまたは前の呼び出しで指定されたストリームにフレームを追加、<see cref="Overload:System.Drawing.Image.Save" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="image" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectActiveFrame">
+      <MemberSignature Language="C#" Value="public int SelectActiveFrame (System.Drawing.Imaging.FrameDimension dimension, int frameIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 SelectActiveFrame(class System.Drawing.Imaging.FrameDimension dimension, int32 frameIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.SelectActiveFrame(System.Drawing.Imaging.FrameDimension,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dimension" Type="System.Drawing.Imaging.FrameDimension" />
+        <Parameter Name="frameIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dimension">A<see cref="T:System.Drawing.Imaging.FrameDimension" />ディメンションの種類の id を指定します。</param>
+        <param name="frameIndex">アクティブなフレームのインデックス。</param>
+        <summary>ディメンションおよびインデックスで指定されたフレームを選択します。</summary>
+        <returns>常に 0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な値、`dimensionID`パラメーターのプロパティは、<xref:System.Drawing.Imaging.FrameDimension>です。 これらは、時刻、解像度、またはページ番号でイメージを識別に使用できます。  
+  
+ このメソッドを呼び出すと、破棄する前のフレームに行われたすべての変更が原因です。 別のフレームを選択する前にピクセル値およびプロパティの変更を含め、現在のフレームに加えられたすべての変更を保存します。 場合に呼び出し、<xref:System.Drawing.Image.SelectActiveFrame%2A>メソッドが成功した (例外は発生しません)、メソッドは 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyItem">
+      <MemberSignature Language="C#" Value="public void SetPropertyItem (System.Drawing.Imaging.PropertyItem propitem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPropertyItem(class System.Drawing.Imaging.PropertyItem propitem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.SetPropertyItem(System.Drawing.Imaging.PropertyItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propitem" Type="System.Drawing.Imaging.PropertyItem" />
+      </Parameters>
+      <Docs>
+        <param name="propitem">格納される <see cref="T:System.Drawing.Imaging.PropertyItem" />。</param>
+        <summary>この <see cref="T:System.Drawing.Image" /> に、プロパティ項目 (メタデータの一部) を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージの形式が項目のプロパティをサポートしていない場合に、このメソッドがスロー<xref:System.ArgumentException>メッセージ「プロパティはサポートされていません」。 イメージの形式で項目のプロパティをサポートしている場合を設定しようとする特定のプロパティをサポートしていません、このメソッドは要求を無視しますが、例外はスローされません。  
+  
+ 項目のプロパティを設定するが困難でため、<xref:System.Drawing.Imaging.PropertyItem>クラスにパブリック コンス トラクターがありません。 この制限を回避する方法の 1 つは取得する、<xref:System.Drawing.Imaging.PropertyItem>取得することによって、<xref:System.Drawing.Image.PropertyItems%2A>プロパティの値または呼び出し、<xref:System.Drawing.Image.GetPropertyItem%2A>のメソッド、<xref:System.Drawing.Image>がすでにあるプロパティ項目。 フィールドを設定することができます、<xref:System.Drawing.Imaging.PropertyItem>に渡すと<xref:System.Drawing.Image.SetPropertyItem%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Image.GetPropertyItem%2A>と<xref:System.Drawing.Image.SetPropertyItem%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 この例を実行する、フォームに貼り付けるし、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントを呼び出すことによって、`DemonstratePropertyItem`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ImageExample#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ImageExample#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このイメージのイメージ形式は、プロパティ項目をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイメージの幅と高さ (ピクセル単位) を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />幅と高さ (ピクセル単位) のこのイメージを表す構造です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Image.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージに関する追加データを提供するオブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Object" />イメージに関する追加データを提供します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalResolution">
+      <MemberSignature Language="C#" Value="public float VerticalResolution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 VerticalResolution" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.VerticalResolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインチあたりのピクセルで、垂直方向の解像度を取得<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>このインチあたりのピクセルで、垂直方向の解像度<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Image.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>幅を取得します (ピクセル単位) のこの<see cref="T:System.Drawing.Image" />です。</summary>
+        <value>幅 (ピクセル単位) のこの<see cref="T:System.Drawing.Image" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Drawing.Bitmap>ファイルを使用して、<xref:System.Drawing.Bitmap.GetPixel%2A>と<xref:System.Drawing.Bitmap.SetPixel%2A>イメージの色を変更する方法です。 また、使用、 <xref:System.Drawing.Image.PixelFormat%2A>、 <xref:System.Drawing.Image.Width%2A>、および<xref:System.Drawing.Image.Height%2A>プロパティです。  
+  
+ この例を含む Windows フォームで使用するように設計された、 <xref:System.Windows.Forms.Label> 、<xref:System.Windows.Forms.PictureBox>と<xref:System.Windows.Forms.Button>という名前`Label1`、`PictureBox1`と`Button1`、それぞれします。 コードをフォームに貼り付け、`Button1_Click`ボタンのメソッド<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ImageExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ImageExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

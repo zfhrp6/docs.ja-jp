@@ -1,0 +1,304 @@
+<Type Name="ViewStateException" FullName="System.Web.UI.ViewStateException">
+  <TypeSignature Language="C#" Value="public sealed class ViewStateException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ViewStateException extends System.Exception implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ViewStateException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビューステートの読み込みまたは検証できない場合にスローされる例外を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページ ビュー ステート情報が読み込まれるときに、例外が発生する場合、ページが作成されます、<xref:System.Web.UI.ViewStateException>オブジェクトおよび内の内部の例外として渡し、<xref:System.Web.HttpException>例外。 <xref:System.Web.HttpException>例外は、アプリケーションによって処理される再スローされます。  
+  
+ <xref:System.Web.UI.ViewStateException>クラス内の例外に関する情報を格納、<xref:System.Web.UI.ViewStateException.Message%2A>プロパティです。 要求へのアクセス許可が含まれる場合、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティ、<xref:System.Web.UI.ViewStateException.Message%2A>プロパティにはから返された値が含まれています、 <xref:System.Web.UI.ViewStateException.RemoteAddress%2A>、 <xref:System.Web.UI.ViewStateException.RemotePort%2A>、 <xref:System.Web.UI.ViewStateException.UserAgent%2A>、 <xref:System.Web.UI.ViewStateException.PersistedState%2A>、 <xref:System.Web.UI.ViewStateException.Referer%2A>、および<xref:System.Web.UI.ViewStateException.Path%2A>プロパティです。 それ以外の場合、<xref:System.Web.UI.ViewStateException.Message%2A>プロパティには、ビュー ステートの一般的なエラー メッセージが含まれています。  
+  
+ ビューステート例外は、メッセージ認証コード (MAC) の検証エラーの結果を指定できます。 場合、ページの属性`enableViewStateMac`に設定されている`true`MAC の識別子を持つビュー ステート情報をエンコードします。 ビュー ステート情報は、サーバーにポストバックされた、ページは、ユーザーによって変更されていないことを確認するエンコードを確認します。 スローする場合は、ページには、ビュー ステート情報をエンコードする MAC を検証できません、<xref:System.Web.HttpException>を使用して例外、<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。  
+  
+ MAC 検証が成功するは、ビュー ステート情報をハッシュ化と同じキーで送信および受信時にする必要があります。 Web ファーム内では、共通のキーを各サーバーのマシン キーを設定してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッド、<xref:System.Web.HttpException>含まれる例外を<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。 例では、キャッチする方法を示しています、<xref:System.Web.HttpException>例外からのプロパティを取得し、<xref:System.Web.UI.ViewStateException>オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.ViewStateException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateException/CS/Class1.cs#2)]
+ [!code-vb[System.Web.UI.ViewStateException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateException/VB/Class1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ViewStateException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ViewStateException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ViewStateException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ViewStateException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Web.UI.ViewStateException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConnected">
+      <MemberSignature Language="C#" Value="public bool IsConnected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConnected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.IsConnected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントがサーバーに現在接続されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クライアントがサーバーにまだ接続されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことと同じ値を返します、<xref:System.Web.HttpResponse.IsClientConnected%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッド、<xref:System.Web.HttpException>含まれる例外を<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。 例では、キャッチする方法を示しています、<xref:System.Web.HttpException>例外からのプロパティを取得し、<xref:System.Web.UI.ViewStateException>オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.ViewStateException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateException/CS/Class1.cs#2)]
+ [!code-vb[System.Web.UI.ViewStateException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateException/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグ ビュー ステートの例外が発生した HTTP 要求に関する情報を取得します。</summary>
+        <value>A<see cref="T:System.String" />例外に関する情報と書式設定されたメッセージを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求がサーバー変数にアクセスする権限を持たない場合、このプロパティは、ビュー ステートの一般的なエラー メッセージを返します。 要求には、サーバー変数にアクセスする権限がある場合、<xref:System.Web.UI.ViewStateException.Message%2A>プロパティにはから返された値が含まれています、 <xref:System.Web.UI.ViewStateException.RemoteAddress%2A>、 <xref:System.Web.UI.ViewStateException.RemotePort%2A>、 <xref:System.Web.UI.ViewStateException.UserAgent%2A>、 <xref:System.Web.UI.ViewStateException.PersistedState%2A>、 <xref:System.Web.UI.ViewStateException.Referer%2A>、および<xref:System.Web.UI.ViewStateException.Path%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューステート例外になった HTTP 要求のパスを取得します。</summary>
+        <value>A<see cref="T:System.String" />要求からのパスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ値を返します、`PATH_INFO`に変数が、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティです。 ホスト名の後に、パスの部分を返します。 たとえば、URL http://www.contoso.com/virdir/page.html で<xref:System.Web.UI.ViewStateException.Path%2A>/virdir/page.html を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッド、<xref:System.Web.HttpException>含まれる例外を<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。 例では、キャッチする方法を示しています、<xref:System.Web.HttpException>例外からのプロパティを取得し、<xref:System.Web.UI.ViewStateException>オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.ViewStateException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateException/CS/Class1.cs#2)]
+ [!code-vb[System.Web.UI.ViewStateException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateException/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistedState">
+      <MemberSignature Language="C#" Value="public string PersistedState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PersistedState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.PersistedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー ステート文字列を読み取るときに例外が発生したビューステートの内容を取得します。</summary>
+        <value>A<see cref="T:System.String" />ビューステート例外の原因となった値の表示状態を格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Referer">
+      <MemberSignature Language="C#" Value="public string Referer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Referer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.Referer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューステート例外が発生したページにリンクされたページの URL を取得します。</summary>
+        <value>A <see cref="T:System.String" /> HTTP 参照元を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ値を返します、`HTTP_REFERER`に変数が、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティです。 値は空の文字列 ("")、ページに前の要求が関連付けられていない場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッド、<xref:System.Web.HttpException>含まれる例外を<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。 例では、キャッチする方法を示しています、<xref:System.Web.HttpException>例外からのプロパティを取得し、<xref:System.Web.UI.ViewStateException>オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.ViewStateException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateException/CS/Class1.cs#2)]
+ [!code-vb[System.Web.UI.ViewStateException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateException/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteAddress">
+      <MemberSignature Language="C#" Value="public string RemoteAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RemoteAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.RemoteAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューステート例外になった HTTP 要求の IP アドレスを取得します。</summary>
+        <value>A<see cref="T:System.String" />クライアントのリモート IP アドレスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ値を返します、`REMOTE_ADDR`に変数が、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemotePort">
+      <MemberSignature Language="C#" Value="public string RemotePort { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RemotePort" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.RemotePort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューステート例外になった HTTP 要求のポート番号を取得します。</summary>
+        <value>A<see cref="T:System.String" />リモート ポート番号を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ値を返します、`REMOTE_PORT`に変数が、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ViewStateException.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューステート例外になった HTTP 要求のブラウザーの種類を取得します。</summary>
+        <value>A<see cref="T:System.String" />ユーザー エージェントは、一般的にこれは、ブラウザーの種類を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ値を返します、`HTTP_USER_AGENT`に変数が、<xref:System.Web.HttpRequest.ServerVariables%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、base64 でエンコードされた文字列を逆シリアル化して返すメソッドを実装する方法を示します、<xref:System.Collections.ICollection>プロパティ設定のコレクション。 <xref:System.Web.UI.ObjectStateFormatter.Deserialize%2A>メソッド、<xref:System.Web.HttpException>含まれる例外を<xref:System.Web.UI.ViewStateException>内部例外としてオブジェクト。 例では、キャッチする方法を示しています、<xref:System.Web.HttpException>例外からのプロパティを取得し、<xref:System.Web.UI.ViewStateException>オブジェクト。  
+  
+ [!code-csharp[System.Web.UI.ViewStateException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateException/CS/Class1.cs#2)]
+ [!code-vb[System.Web.UI.ViewStateException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateException/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

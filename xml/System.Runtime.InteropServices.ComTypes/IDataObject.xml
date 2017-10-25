@@ -1,0 +1,511 @@
+<Type Name="IDataObject" FullName="System.Runtime.InteropServices.ComTypes.IDataObject">
+  <TypeSignature Language="C#" Value="public interface IDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.IDataObject" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("0000010e-0000-0000-C000-000000000046")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ定義を提供、<see langword="IDataObject" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`IDataObject`インターフェイスでは、MSDN ライブラリを参照してください。  
+  
+ COM メソッドのネイティブ コードでは、HRESULT を返すと、共通言語ランタイムは例外をスローします。 詳細については、次を参照してください。[する方法: マップの Hresult と例外](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DAdvise">
+      <MemberSignature Language="C#" Value="public int DAdvise (ref System.Runtime.InteropServices.ComTypes.FORMATETC pFormatetc, System.Runtime.InteropServices.ComTypes.ADVF advf, System.Runtime.InteropServices.ComTypes.IAdviseSink adviseSink, out int connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DAdvise([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pFormatetc, valuetype System.Runtime.InteropServices.ComTypes.ADVF advf, class System.Runtime.InteropServices.ComTypes.IAdviseSink adviseSink, [out] int32&amp; connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pFormatetc" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="advf" Type="System.Runtime.InteropServices.ComTypes.ADVF" />
+        <Parameter Name="adviseSink" Type="System.Runtime.InteropServices.ComTypes.IAdviseSink" />
+        <Parameter Name="connection" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pFormatetc">A<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、ターゲット デバイス、縦横、および以降の通知に使用されるメディアを定義するには、参照によって渡されます。</param>
+        <param name="advf">1 つ、<see cref="T:System.Runtime.InteropServices.ComTypes.ADVF" />アドバイザリ コネクションを制御するためのフラグのグループを指定する値。</param>
+        <param name="adviseSink">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.IAdviseSink" />変更通知を受信するアドバイズ シンク インターフェイスです。</param>
+        <param name="connection">このメソッドから制御が戻るときに、この接続を識別する DWORD トークンへのポインターを格納します。 このトークンを後で使用するに渡すことによってアドバイザリ コネクションを削除する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise(System.Int32)" />です。 この値が 0 の場合、接続は確立されていません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>データ オブジェクトとアドバイズ シンク間の接続を作成します。 このメソッドは、アドバイズ シンクをサポートするオブジェクトによって呼び出され、オブジェクトのデータの変更をアドバイズ シンクに通知できるようにします。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>アドバイザリ コネクションが作成されました。  
+  
+ </description></item><item><term>E_NOTIMPL  
+  
+ </term><description>このメソッドは、データ オブジェクトに実装されていません。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値がある<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値がある、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>OLE_E_ADVISENOTSUPPORTED  
+  
+ </term><description>データ オブジェクトは変更通知をサポートしていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::DAdvise`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DUnadvise">
+      <MemberSignature Language="C#" Value="public void DUnadvise (int connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DUnadvise(int32 connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="connection">削除する接続を指定する DWORD トークン。 接続が最初に確立されたときに、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)" /> から返された値を使用します。</param>
+        <summary>以前に確立されていた通知の接続を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::DUnAdvise`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumDAdvise">
+      <MemberSignature Language="C#" Value="public int EnumDAdvise (out System.Runtime.InteropServices.ComTypes.IEnumSTATDATA enumAdvise);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 EnumDAdvise([out] class System.Runtime.InteropServices.ComTypes.IEnumSTATDATA&amp; enumAdvise) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.EnumDAdvise(System.Runtime.InteropServices.ComTypes.IEnumSTATDATA@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumAdvise" Type="System.Runtime.InteropServices.ComTypes.IEnumSTATDATA&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="enumAdvise">このメソッドが戻るとき、<see cref="T:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA" />新しい列挙子オブジェクトへのインターフェイス ポインターを受け取る。 実装では、設定する場合<c>enumAdvise</c>に<see langword="null" />現時点でアドバイズ シンクへの接続はありません。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>現在のアドバイザリ コネクションを列挙するために使用できるオブジェクトを作成します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>列挙子オブジェクトが正常にインスタンス化されるか、接続がありません。  
+  
+ </description></item><item><term>OLE_E_ADVISENOTSUPPORTED  
+  
+ </term><description>このオブジェクトは、アドバイザリの通知をサポートしていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::EnumDAdvise`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumFormatEtc">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ComTypes.IEnumFORMATETC EnumFormatEtc (System.Runtime.InteropServices.ComTypes.DATADIR direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.InteropServices.ComTypes.IEnumFORMATETC EnumFormatEtc(valuetype System.Runtime.InteropServices.ComTypes.DATADIR direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.EnumFormatEtc(System.Runtime.InteropServices.ComTypes.DATADIR)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ComTypes.IEnumFORMATETC</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="direction" Type="System.Runtime.InteropServices.ComTypes.DATADIR" />
+      </Parameters>
+      <Docs>
+        <param name="direction">1 つ、<see cref="T:System.Runtime.InteropServices.ComTypes.DATADIR" />データの方向を指定する値。</param>
+        <summary>列挙するオブジェクトを作成、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />データ オブジェクトの構造体。 呼び出しで使用されるこれらの構造体<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />または<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />です。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>列挙子オブジェクトが作成されました。  
+  
+ </description></item><item><term>E_NOTIMPL  
+  
+ </term><description>指定した方向、<paramref name="direction" />パラメーターはサポートされていません。  
+  
+ </description></item><item><term>OLE_S_USEREG  
+  
+ </term><description>OLE がレジストリから形式を列挙することを要求します。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::EnumFormatEtc`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCanonicalFormatEtc">
+      <MemberSignature Language="C#" Value="public int GetCanonicalFormatEtc (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, out System.Runtime.InteropServices.ComTypes.FORMATETC formatOut);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCanonicalFormatEtc([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatIn, [out] valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatOut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatIn" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="formatOut" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="formatIn">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />形式、メディア、および呼び出し元がなどの後続の呼び出しでデータを取得するにはターゲット デバイスを定義するには、参照によって渡された構造<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />メンバーは、ここでは重要ではありません、無視してください。</param>
+        <param name="formatOut">このメソッドが戻るときへのポインターを含む、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />正規と同じになります、特定の表示について考えられる最も一般的な情報を格納する構造体<c>formatetIn</c>です。 呼び出し元がこの構造体を割り当てる必要があります、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" />メソッドは、データを入力する必要があります。 などの後続の呼び出し内のデータを取得する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />、呼び出し元の指定された値を使用して<c>formatOut</c>指定された値がない限り、<see langword="null" />です。 この値は<see langword="null" />メソッドを返す場合<see langword="DATA_S_SAMEFORMATETC" />です。 <see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />メンバーは、ここでは重要ではありません、無視してください。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>標準の提供<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />より複雑な構造と論理的に等価である構造体。 2 つあるかどうかを判断するには、このメソッドを使用して異なる<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体は重複するレンダリングの必要性を削除する、同じデータを返します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>返された<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体が渡されたものと異なります。  
+  
+ </description></item><item><term>DATA_S_SAMEFORMATETC  
+  
+ </term><description><see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体は、同じおよび<see langword="null" />で返される、<paramref name="formatOut" />パラメーター。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値がある<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値がある、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>OLE_E_NOTRUNNING  
+  
+ </term><description>アプリケーションが実行されていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::GetCanonicalFormatEtc`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public void GetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC format, out System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format, [out] valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="medium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="format">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびデータを渡すときに使用するターゲット デバイスを定義するには、参照によって渡されます。 ブール型の OR 演算子を使用して複数のメディアを指定し、メソッドがそれらの指定の中から最良のメディアを選択できるようにします。</param>
+        <param name="medium">このメソッドが戻るときへのポインターを含む、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造から返されたデータを含む記憶域メディアを示すその<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.tymed" />メンバー、および責任の値を使用してメディアを解放するため、<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />メンバー。 場合<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />は<see langword="null" />、メディアの受信側は、それ以外の解放を担当する<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />を指す、<see langword="IUnknown" />ためインターフェイスの適切なオブジェクトをその<see langword="Release" />メソッドを呼び出すことができます。 メディアを割り当てられているし、で読み込む必要があります<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ソース データ オブジェクトからデータを取得します。 <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />データ コンシューマーによって呼び出される、メソッドは、指定した説明されているデータをレンダリング<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体し、指定したを介して転送<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造体。 呼び出し元が、解放するための責任を引き継ぎます、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::GetData`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataHere">
+      <MemberSignature Language="C#" Value="public void GetDataHere (ref System.Runtime.InteropServices.ComTypes.FORMATETC format, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetDataHere([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="medium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="format">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびデータを渡すときに使用するターゲット デバイスを定義するには、参照によって渡されます。 指定できる 1 つだけのメディア<see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />、し、次のオプションのみ<see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />有効な値: <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_ISTORAGE" />、 <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_ISTREAM" />、 <see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_HGLOBAL" />、または<see cref="F:System.Runtime.InteropServices.ComTypes.TYMED.TYMED_FILE" />です。</param>
+        <param name="medium">A <see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />、転送されるデータを含む記憶域メディアを定義するには、参照によって渡されます。 メディアを呼び出し元によって割り当てられで読み込む必要があります<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />です。 呼び出し元は、メディアを解放する必要もあります。 常に、このメソッドの実装の値を指定する可能性があります<see langword="null" />の<see cref="F:System.Runtime.InteropServices.ComTypes.STGMEDIUM.pUnkForRelease" />のメンバー、<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />をこのパラメーターが指す構造体。</param>
+        <summary>ソース データ オブジェクトからデータを取得します。 このメソッドは、データのコンシューマーによって呼び出されるとは異なります、<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />メソッドを呼び出し元の割り当てし、指定されたストレージ メディアを解放する必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::GetDataHere`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryGetData">
+      <MemberSignature Language="C#" Value="public int QueryGetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 QueryGetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.QueryGetData(System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="format">ポインター、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、形式、メディア、およびクエリに使用するターゲット デバイスを定義するには、参照によって渡されます。</param>
+        <summary>データ オブジェクトで記述されているデータを表示できるかどうかを判断、<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造体。 オブジェクトを呼び出す前にこのメソッドを呼び出すことができます、貼り付け操作または drop 操作をしようとした<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />操作が成功する可能性があるかどうかを示す値を取得します。</summary>
+        <returns>このメソッドは、標準の戻り値である E_INVALIDARG、E_UNEXPECTED、および E_OUTOFMEMORY をサポートすると同時に、次の値もサポートしています。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>S_OK  
+  
+ </term><description>後続の呼び出しに<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />成功でしょう。  
+  
+ </description></item><item><term>DV_E_LINDEX  
+  
+ </term><description>に対して無効な値<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />以外の場合は現時点では、-1 だけがサポートされています。  
+  
+ </description></item><item><term>DV_E_FORMATETC  
+  
+ </term><description>無効な値、<paramref name="pFormatetc" />パラメーター。  
+  
+ </description></item><item><term>DV_E_TYMED  
+  
+ </term><description>無効な<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.tymed" />値。  
+  
+ </description></item><item><term>DV_E_DVASPECT  
+  
+ </term><description>無効な<see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect" />値。  
+  
+ </description></item><item><term>OLE_E_NOTRUNNING  
+  
+ </term><description>アプリケーションが実行されていません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::QueryGetData`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM medium, bool release);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatIn, [in]valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium, bool release) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatIn" Type="System.Runtime.InteropServices.ComTypes.FORMATETC&amp;" RefType="ref" />
+        <Parameter Name="medium" Type="System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp;" RefType="ref" />
+        <Parameter Name="release" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="formatIn">A<see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />構造、ストレージ メディアに含まれるデータを解釈するときに、データ オブジェクトを使用する書式を定義するには、参照によって渡されます。</param>
+        <param name="medium">A<see cref="T:System.Runtime.InteropServices.ComTypes.STGMEDIUM" />構造、データが渡されるストレージ メディアを定義するには、参照によって渡されます。</param>
+        <param name="release">
+          <see langword="true" />データは、呼び出されるを実装するオブジェクトを指定する<see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />呼び出しが返された後に、ストレージ メディアを所有します。 つまり、呼び出すことによって使用された後に、データ オブジェクトが、メディアを解放する必要があります、<see langword="ReleaseStgMedium" />関数。 <see langword="false" />呼び出し元は、ストレージ メディアの所有権を保持してをデータ オブジェクトと呼ばれることを指定するには、のみ呼び出しの間の記憶域メディアを使用します。</param>
+        <summary>このメソッドを実装するオブジェクトにデータを転送します。 このメソッドは、データ ソースを格納しているオブジェクトから呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については`IDataObject::SetData`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

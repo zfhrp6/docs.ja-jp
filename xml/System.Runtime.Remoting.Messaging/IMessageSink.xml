@@ -1,0 +1,134 @@
+<Type Name="IMessageSink" FullName="System.Runtime.Remoting.Messaging.IMessageSink">
+  <TypeSignature Language="C#" Value="public interface IMessageSink" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageSink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.IMessageSink" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージのシンク インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロキシでメソッドの呼び出しが行われると、リモート処理インフラストラクチャは、引数、引数と実際のオブジェクト メソッドを呼び出すと、結果を返す、リモート処理境界を越えて、実際のオブジェクトをクライアントに返信、プロキシ オブジェクトの引き渡しを必要なサポートを提供します。  
+  
+ リモート メソッド呼び出しはサーバー側にクライアント側から移動するメッセージであり、もう一度バックアップ可能性があります。 リモート処理の境界を越える方法で、リモート メソッド呼び出しの連鎖を通じて渡す`IMessageSink`オブジェクト。 チェーン内の各シンクは、メッセージ オブジェクトを受信、特定の操作を実行し、チェーン内の次のシンクに代行させます。 プロキシ オブジェクトには、最初の参照が含まれています。`IMessageSink`を使用して、チェーンを開始する必要があります。  
+  
+ 非同期の呼び出し時、委任の各シンクは、応答シンク (別`IMessageSink`) するときに呼び出されます次のシンクで戻る途中では、応答します。  
+  
+ シンクの種類は、受信したメッセージ オブジェクトの種類によって、別の操作を実行します。 たとえば、シンクには、ロックが実行される可能性があります、呼び出しのセキュリティを強制したり、フローの呼び出しの制御や信頼性サービスを実行し、別の呼び出しをトランスポート別まだ<xref:System.AppDomain>プロセス、またはコンピューター。 チェーン内の 2 つ以上のメッセージ シンクは、特定の各アクションに関して互いと対話できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Runtime.Remoting.Messaging.IMessageSink>インターフェイスです。 このサンプルには、型の定義とサンプルをコンパイルを指定する必要がありますのあるアセンブリ参照を想定していることを注意してください。  
+  
+ [!code-cpp[IMessageSink_Client#3](~/samples/snippets/cpp/VS_Snippets_Remoting/IMessageSink_Client/CPP/imessagesink_client.cpp#3)]
+ [!code-csharp[IMessageSink_Client#3](~/samples/snippets/csharp/VS_Snippets_Remoting/IMessageSink_Client/CS/imessagesink_client.cs#3)]
+ [!code-vb[IMessageSink_Client#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMessageSink_Client/VB/imessagesink_client.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>現在のインターフェイスを実装するコードは両方の実装に指定することが重要<see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)" />と<see cref="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />非同期呼び出しにし、その逆の場合、同期呼び出しを変換できるため、します。 シンクは非同期処理をサポートしていない場合でも、両方のメソッドを実装する必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncProcessMessage">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageCtrl AsyncProcessMessage (System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Messaging.IMessageSink replySink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageCtrl AsyncProcessMessage(class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Messaging.IMessageSink replySink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IMessageSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageCtrl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="replySink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="msg">処理するメッセージ。</param>
+        <param name="replySink">応答メッセージを返信シンクです。</param>
+        <summary>指定されたメッセージを非同期的に処理します。</summary>
+        <returns>返します、<see cref="T:System.Runtime.Remoting.Messaging.IMessageCtrl" />ディスパッチされた後に非同期メッセージを制御する方法を提供するインターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リモート処理インフラストラクチャによって、または非同期のメッセージの直前のシンクによって、メッセージのシンク上でこのメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NextSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink NextSink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Messaging.IMessageSink NextSink" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMessageSink.NextSink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンク チェーン内の次のメッセージ シンクを取得します。</summary>
+        <value>次のメッセージは、シンク チェーン内のシンクします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncProcessMessage">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessage SyncProcessMessage (System.Runtime.Remoting.Messaging.IMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessage SyncProcessMessage(class System.Runtime.Remoting.Messaging.IMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg">処理するメッセージ。</param>
+        <summary>指定されたメッセージを同期的に処理します。</summary>
+        <returns>要求に対する応答で応答メッセージです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage%2A>リモート処理インフラストラクチャによって、または同期メッセージの直前のシンクによってメッセージ シンクでメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

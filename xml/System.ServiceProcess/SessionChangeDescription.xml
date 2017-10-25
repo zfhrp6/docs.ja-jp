@@ -1,0 +1,235 @@
+<Type Name="SessionChangeDescription" FullName="System.ServiceProcess.SessionChangeDescription">
+  <TypeSignature Language="C#" Value="public struct SessionChangeDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit SessionChangeDescription extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.SessionChangeDescription" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ターミナル サービス セッションの変更の理由を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.ServiceProcess.SessionChangeDescription>クラスの実装に、<xref:System.ServiceProcess.ServiceBase.OnSessionChange%2A>から派生したクラスのメソッド<xref:System.ServiceProcess.ServiceBase>です。  このコード例に示されている例の一部である、<xref:System.ServiceProcess.ServiceBase>クラスです。  
+  
+ [!code-csharp[ServiceBase_Commands#9](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceBase_Commands/CS/simpleservice.cs#9)]
+ [!code-vb[ServiceBase_Commands#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceBase_Commands/VB/simpleservice.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.SessionChangeDescription.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造体と比較する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のセッション変更記述と等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在の <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造体に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は`false`場合`obj`されませんが、<xref:System.ServiceProcess.SessionChangeDescription>である場合、または`null`です。 比較して等しいかどうかが決定されます、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>と<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>の指定したプロパティ<xref:System.ServiceProcess.SessionChangeDescription>に構造体、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>と<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>、現在のプロパティ<xref:System.ServiceProcess.SessionChangeDescription>構造体。 2 つの構造は、そのプロパティが等しい場合、等しいと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.ServiceProcess.SessionChangeDescription changeDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.ServiceProcess.SessionChangeDescription changeDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.SessionChangeDescription.Equals(System.ServiceProcess.SessionChangeDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changeDescription" Type="System.ServiceProcess.SessionChangeDescription" />
+      </Parameters>
+      <Docs>
+        <param name="changeDescription">現在の <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造体と比較する <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造体。</param>
+        <summary>指定したセッションの変更説明が現在のセッションの変更説明と等しいかどうかを判定します。</summary>
+        <returns>
+          <paramref name="changeDescription" /> が現在の <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造体に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較して等しいかどうかが決定されます、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>と<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>の指定したプロパティ<xref:System.ServiceProcess.SessionChangeDescription>に構造体、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>と<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>、現在のプロパティ<xref:System.ServiceProcess.SessionChangeDescription>構造体。 2 つの構造は、そのプロパティが等しい場合、等しいと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.SessionChangeDescription.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセッションの変更説明のハッシュ コードを取得します。</summary>
+        <returns>現在のセッションの変更説明のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値から返されるハッシュ コードを計算、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>と<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>プロパティです。 ハッシュ コードは、比較には使用できません<xref:System.ServiceProcess.SessionChangeDescription>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.ServiceProcess.SessionChangeDescription a, System.ServiceProcess.SessionChangeDescription b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.ServiceProcess.SessionChangeDescription a, valuetype System.ServiceProcess.SessionChangeDescription b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.SessionChangeDescription.op_Equality(System.ServiceProcess.SessionChangeDescription,System.ServiceProcess.SessionChangeDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.ServiceProcess.SessionChangeDescription" />
+        <Parameter Name="b" Type="System.ServiceProcess.SessionChangeDescription" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造。</param>
+        <param name="b"><see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造。</param>
+        <summary>2 つの <see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造が等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="a" /> が等しい場合は <paramref name="b" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してこの演算子を実装、<xref:System.ServiceProcess.SessionChangeDescription.Equals%28System.Object%29>メソッドです。  
+  
+ この演算子を同等の方法は、します。<xref:System.ServiceProcess.SessionChangeDescription.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.ServiceProcess.SessionChangeDescription a, System.ServiceProcess.SessionChangeDescription b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.ServiceProcess.SessionChangeDescription a, valuetype System.ServiceProcess.SessionChangeDescription b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.SessionChangeDescription.op_Inequality(System.ServiceProcess.SessionChangeDescription,System.ServiceProcess.SessionChangeDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.ServiceProcess.SessionChangeDescription" />
+        <Parameter Name="b" Type="System.ServiceProcess.SessionChangeDescription" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造。</param>
+        <param name="b"><see cref="T:System.ServiceProcess.SessionChangeDescription" /> 構造。</param>
+        <summary>2 つあるかどうかを示す値を返します<see cref="T:System.ServiceProcess.SessionChangeDescription" />構造が等しくないです。</summary>
+        <returns>
+          <paramref name="a" /> と <paramref name="b" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してこの演算子を実装、<xref:System.ServiceProcess.SessionChangeDescription.Equals%28System.Object%29>メソッドです。  
+  
+ この演算子を同等の方法は、します。<xref:System.ServiceProcess.SessionChangeDescription.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.SessionChangeReason Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.SessionChangeReason Reason" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.SessionChangeDescription.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.SessionChangeReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションの変更の理由を取得します。</summary>
+        <value><see cref="T:System.ServiceProcess.SessionChangeReason" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.ServiceProcess.SessionChangeDescription.Reason%2A>プロパティの実装で、<xref:System.ServiceProcess.ServiceBase.OnSessionChange%2A>から派生したクラスのメソッド<xref:System.ServiceProcess.ServiceBase>です。  このコード例に示されている例の一部である、<xref:System.ServiceProcess.ServiceBase>クラスです。  
+  
+ [!code-csharp[ServiceBase_Commands#10](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceBase_Commands/CS/simpleservice.cs#10)]
+ [!code-vb[ServiceBase_Commands#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceBase_Commands/VB/simpleservice.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionId">
+      <MemberSignature Language="C#" Value="public int SessionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SessionId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.SessionChangeDescription.SessionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているセッションのセッション ID を取得します。</summary>
+        <value>関連付けられているセッションのセッション ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.ServiceProcess.SessionChangeDescription.SessionId%2A>プロパティの実装で、<xref:System.ServiceProcess.ServiceBase.OnSessionChange%2A>から派生したクラスのメソッド<xref:System.ServiceProcess.ServiceBase>です。  このコード例に示されている例の一部である、<xref:System.ServiceProcess.ServiceBase>クラスです。  
+  
+ [!code-csharp[ServiceBase_Commands#10](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceBase_Commands/CS/simpleservice.cs#10)]
+ [!code-vb[ServiceBase_Commands#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceBase_Commands/VB/simpleservice.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,196 @@
+<Type Name="MimeParameterWriter" FullName="System.Web.Services.Protocols.MimeParameterWriter">
+  <TypeSignature Language="C#" Value="public abstract class MimeParameterWriter : System.Web.Services.Protocols.MimeFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MimeParameterWriter extends System.Web.Services.Protocols.MimeFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.MimeParameterWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.MimeFormatter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP ことがなく HTTP を使用して実装されている Web サービス クライアントの要求パラメーターを発信ライターの共通の基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.MimeParameterWriter>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。  
+  
+ <xref:System.Web.Services.Protocols.MimeParameterWriter>クラスは、HTTP 要求のストリームに Web メソッドのパラメーターのクライアント側の書き込みのための一般的な要求の記述形式を確立します。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.MimeParameterWriter>またはその派生クラスを直接です。 代わりに、Wsdl.exe ツールは、HTTP GET または HTTP POST の実装に応じて、クライアント プロキシ コードを生成するときに適用されます、<xref:System.Web.Services.Protocols.HttpMethodAttribute>各 Web メソッドに属性の設定と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>プロパティを適切な型です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MimeParameterWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeParameterWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.MimeParameterWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestUrl">
+      <MemberSignature Language="C#" Value="public virtual string GetRequestUrl (string url, object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetRequestUrl(string url, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeParameterWriter.GetRequestUrl(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="url">HTTP 要求の元ロケーター URL (Uniform Resource)。</param>
+        <param name="parameters">必要な場合、URL に追加する Web メソッドのパラメーター値。</param>
+        <summary>派生クラスでオーバーライドされると、送信 HTTP 要求の要求 URL (Uniform Locator) を変更します。</summary>
+        <returns>A<see cref="T:System.String" />オブジェクトを含む、変更された、HTTP 要求の要求 URL (Uniform Locator) を送信します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスの<xref:System.Web.Services.Protocols.MimeParameterWriter>、のみ<xref:System.Web.Services.Protocols.UrlParameterWriter>HTTP 要求の URL を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRequest">
+      <MemberSignature Language="C#" Value="public virtual void InitializeRequest (System.Net.WebRequest request, object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeRequest(class System.Net.WebRequest request, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeParameterWriter.InitializeRequest(System.Net.WebRequest,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="request">発信の要求では、ここで、<see cref="T:System.Net.WebRequest" />クラスは、HTTP 以外のトランスポート プロトコルを使用できます。</param>
+        <param name="values">Web メソッドのパラメーター値。</param>
+        <summary>派生クラスでオーバーライドされると、発信 HTTP 要求を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスの<xref:System.Web.Services.Protocols.MimeParameterWriter>、のみ<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>を実装する、<xref:System.Web.Services.Protocols.MimeParameterWriter>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestEncoding">
+      <MemberSignature Language="C#" Value="public virtual System.Text.Encoding RequestEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding RequestEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MimeParameterWriter.RequestEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求へのパラメーターを書き込むために使用するエンコーディングを取得または設定します。</summary>
+        <value>HTTP 要求へのパラメーターを書き込むために使用するエンコーディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコードで表される、<xref:System.Text.Encoding>クラス、文字をバイト シーケンスに変換する方法を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesWriteRequest">
+      <MemberSignature Language="C#" Value="public virtual bool UsesWriteRequest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesWriteRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.MimeParameterWriter.UsesWriteRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発信 HTTP 要求本文に Web メソッドのパラメーター値がシリアル化するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />Web メソッドのパラメーター値は、発信 HTTP 要求本文にシリアル化する場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.MimeParameterWriter.UsesWriteRequest%2A>プロパティを決定するかどうか、<xref:System.Web.Services.Protocols.MimeParameterWriter.WriteRequest%2A>メソッドが呼び出されます。  
+  
+ <xref:System.Web.Services.Protocols.MimeParameterWriter>のクラスの実装<xref:System.Web.Services.Protocols.MimeParameterWriter.UsesWriteRequest%2A>の値を返します`false`です。 唯一の派生クラスをオーバーライドする<xref:System.Web.Services.Protocols.MimeParameterWriter.UsesWriteRequest%2A>は<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>、これらの実装に値を返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRequest">
+      <MemberSignature Language="C#" Value="public virtual void WriteRequest (System.IO.Stream requestStream, object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteRequest(class System.IO.Stream requestStream, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeParameterWriter.WriteRequest(System.IO.Stream,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestStream" Type="System.IO.Stream" />
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="requestStream">送信 HTTP 要求の本文の入力ストリーム。</param>
+        <param name="values">Web メソッドのパラメーター値。</param>
+        <summary>派生クラスでオーバーライドされると、出力方向の HTTP 要求本体を表すストリーム Web メソッドのパラメーター値にシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスの<xref:System.Web.Services.Protocols.MimeParameterWriter>、のみ<xref:System.Web.Services.Protocols.HtmlFormParameterWriter>を実装する、<xref:System.Web.Services.Protocols.MimeParameterWriter.WriteRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

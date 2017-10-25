@@ -1,0 +1,220 @@
+<Type Name="ConfigurationPermission" FullName="System.Configuration.ConfigurationPermission">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ConfigurationPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メソッドまたは構成ファイルにアクセスするクラスを許可するアクセス許可の構成を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationPermission>クラスはメソッドまたは構成ファイルにアクセスするクラスを許可するアクセス許可の構成を提供します。 また、<xref:System.Configuration.ConfigurationPermission>などのメソッドを複数のアクセス許可値を解決する方法を提供<xref:System.Configuration.ConfigurationPermission.Union%2A>と<xref:System.Configuration.ConfigurationPermission.Intersect%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state">付与するアクセス許可レベル。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値<paramref name="state" />も<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />も<see cref="F:System.Security.Permissions.PermissionState.None" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいを返します<see cref="T:System.Configuration.ConfigurationPermission" />同じアクセス許可レベルを持つオブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Configuration.ConfigurationPermission" />同じアクセス許可レベルでします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">アクセス許可の状態の読み取り元となる構成要素。</param>
+        <summary>XML からのアクセス許可の状態の値を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityElement" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see langword="unrestricted" />属性を指定された<paramref name="securityElement" />も<see langword="true" />も<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">共通部分を実行するアクセス許可を格納するオブジェクト。</param>
+        <summary>間で論理積集合を返します、<see cref="T:System.Configuration.ConfigurationPermission" />オブジェクトおよび指定したオブジェクトを実装する、<see cref="T:System.Security.IPermission" />インターフェイスです。</summary>
+        <returns>間で論理積集合、<see cref="T:System.Configuration.ConfigurationPermission" />と指定したオブジェクトを実装する<see cref="T:System.Security.IPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドのシグネチャを実装するオブジェクトをすべてを受け入れますが、 <xref:System.Security.IPermission> 、インターフェイス、<xref:System.ArgumentException>を呼び出す場合、例外がスローされます、<xref:System.Object.GetType%2A>によって参照されるオブジェクトのメソッド、`target`パラメーターは返されません<xref:System.Configuration.ConfigurationPermission?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" />として型指定されていない<see cref="T:System.Configuration.ConfigurationPermission" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">比較するオブジェクト。</param>
+        <summary>比較、<see cref="T:System.Configuration.ConfigurationPermission" />実装するオブジェクトを持つオブジェクト、<see cref="T:System.Security.IPermission" />インターフェイスです。</summary>
+        <returns>
+          <see langword="true" />アクセス許可の状態が等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドのシグネチャを実装するオブジェクトをすべてを受け入れますが、 <xref:System.Security.IPermission> 、インターフェイス、<xref:System.ArgumentException>を呼び出す場合、例外がスローされます、<xref:System.Object.GetType%2A>によって参照されるオブジェクトのメソッド、`target`パラメーターは返されません<xref:System.Configuration.ConfigurationPermission?displayProperty=nameWithType>です。  
+  
+ によってオブジェクトが参照されている場合、`target`パラメーターが`null`、比較がアクセス許可の状態の間で行われる、<xref:System.Configuration.ConfigurationPermission>オブジェクトおよび<xref:System.Security.Permissions.PermissionState.None>の値、<xref:System.Security.Permissions.PermissionState>列挙です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" />として型指定されていない<see cref="T:System.Configuration.ConfigurationPermission" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すかどうかのアクセス許可の状態、<see cref="T:System.Configuration.ConfigurationPermission" />オブジェクトが、<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />の値、<see cref="T:System.Security.Permissions.PermissionState" />列挙します。</summary>
+        <returns>
+          <see langword="true" />場合のアクセス許可の状態、<see cref="T:System.Configuration.ConfigurationPermission" />は、<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />値<see cref="T:System.Security.Permissions.PermissionState" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Security.SecurityElement" />属性値を持つオブジェクトが現在に基づく<see cref="T:System.Configuration.ConfigurationPermission" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Security.SecurityElement" />現在に基づいて属性の値を持つ<see cref="T:System.Configuration.ConfigurationPermission" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">和集合を実行するオブジェクト。</param>
+        <summary>論理的な和集合を返します、<see cref="T:System.Configuration.ConfigurationPermission" />オブジェクトおよびを実装するオブジェクト、<see cref="T:System.Security.IPermission" />インターフェイスです。</summary>
+        <returns>論理的な和集合、<see cref="T:System.Configuration.ConfigurationPermission" />を実装するオブジェクトと<see cref="T:System.Security.IPermission" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" />として型指定されていない<see cref="T:System.Configuration.ConfigurationPermission" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

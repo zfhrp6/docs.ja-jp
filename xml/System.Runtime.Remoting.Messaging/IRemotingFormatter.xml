@@ -1,0 +1,104 @@
+<Type Name="IRemotingFormatter" FullName="System.Runtime.Remoting.Messaging.IRemotingFormatter">
+  <TypeSignature Language="C#" Value="public interface IRemotingFormatter : System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemotingFormatter implements class System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.IRemotingFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのフォーマッタのリモート プロシージャ コール (RPC) インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>インターフェイスにより、リモート プロシージャ コール (Rpc) を送受信するフォーマッタが実装されます。 詳細については、「<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>」を参照してください。 派生したこのインターフェイスは<xref:System.Runtime.Serialization.IFormatter>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IRemotingFormatter.Deserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Messaging.HeaderHandler" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream"><see cref="T:System.IO.Stream" />データが逆シリアル化します。</param>
+        <param name="handler">処理するように設計デリゲート<see cref="T:System.Runtime.Remoting.Messaging.Header" />オブジェクト。 指定できます<see langword="null" />です。</param>
+        <summary>リモート プロシージャ コール (RPC) の逆シリアル化プロセスを開始します。</summary>
+        <returns>逆シリアル化されたオブジェクト グラフのルートです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.Header>オブジェクトは、リモート関数呼び出し (たとえば、トランザクション ID またはメソッドのシグネチャ) に関する情報を含むです。  
+  
+> [!NOTE]
+>  ヘッダーの詳細については、SOAP 仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph, System.Runtime.Remoting.Messaging.Header[] headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph, class System.Runtime.Remoting.Messaging.Header[] headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IRemotingFormatter.Serialize(System.IO.Stream,System.Object,System.Runtime.Remoting.Messaging.Header[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Messaging.Header[]" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream"><see cref="T:System.IO.Stream" />に指定したグラフをシリアル化します。</param>
+        <param name="graph">シリアル化されるオブジェクト グラフのルートです。</param>
+        <param name="headers">配列<see cref="T:System.Runtime.Remoting.Messaging.Header" />で指定された graph を使用して転送するオブジェクト、<c>グラフ</c>パラメーター。 指定できます<see langword="null" />です。</param>
+        <summary>リモート プロシージャ コール (RPC) のシリアル化プロセスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.Header>オブジェクトは、リモート関数呼び出し (たとえば、トランザクション ID またはメソッドのシグネチャ) に関する情報を含むです。  
+  
+> [!NOTE]
+>  ヘッダーの詳細については、SOAP 仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

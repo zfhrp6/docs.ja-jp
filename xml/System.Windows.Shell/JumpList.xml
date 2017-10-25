@@ -1,0 +1,631 @@
+<Type Name="JumpList" FullName="System.Windows.Shell.JumpList">
+  <TypeSignature Language="C#" Value="public sealed class JumpList : System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed JumpList extends System.Object implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shell.JumpList" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("JumpItems")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>項目と Windows 7 のタスク バー ボタンのメニューとして表示されるタスクのリストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[win7](~/includes/win7-md.md)]タスク バーがジャンプ リストを使用して、タスク バー ボタンから直接プログラムを起動するための拡張機能を提供します。 ジャンプ リスト、でも使用されて、[!INCLUDE[win7](~/includes/win7-md.md)]スタート メニューです。 ジャンプ リストは、タスク バーのボタンを右クリックするか、[スタート] メニューでプログラムの横にある矢印をクリックしてアクセスします。 ジャンプ リストの詳細については、次を参照してください。、[タスクバー](http://go.microsoft.com/fwlink/?LinkId=178478) 、Windows ユーザー エクスペリエンス ガイドラインのセクションです。  
+  
+ <xref:System.Windows.Shell.JumpList>のジャンプ リスト機能のためのマネージ ラッパーを提供するクラス、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーに渡されるデータを管理し、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルです。 によって公開される機能、<xref:System.Windows.Shell.JumpList>クラスでは使用できませんのバージョンの[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]よりも前[!INCLUDE[win7](~/includes/win7-md.md)]です。 使用するアプリケーション、<xref:System.Windows.Shell.JumpList>クラスは、他のバージョンのでは実行[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]がジャンプ リストは利用できません。 Windows シェルおよびネイティブのジャンプ リスト Api の詳細については、次を参照してください。[タスク バーの拡張機能](http://go.microsoft.com/fwlink/?LinkId=178479)します。  
+  
+ 次の図は、ジャンプ リストを Windows Media Player で項目を含む、**タスク**と**利用頻度**カテゴリ。  
+  
+ ![Windows メディア プレーヤーのジャンプ リスト](~/add/media/wpfshell-jumplist.png "Windows メディア プレーヤーのジャンプ リスト")  
+Windows メディア プレーヤーのジャンプ リスト  
+  
+## <a name="configuring-a-jump-list"></a>ジャンプ リストを構成します。  
+ ジャンプ リストが 2 つの種類のアイテムを含めることができます、<xref:System.Windows.Shell.JumpTask>と<xref:System.Windows.Shell.JumpPath>です。 A<xref:System.Windows.Shell.JumpTask>プログラムへのリンクは、および<xref:System.Windows.Shell.JumpPath>ファイルへのリンクします。 作成することで視覚的にジャンプ リスト内の項目を区切ることができます、<xref:System.Windows.Shell.JumpTask>を持たない、<xref:System.Windows.Shell.JumpTask.Title%2A>と<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>指定します。 この空<xref:System.Windows.Shell.JumpTask>ジャンプ リストに水平の線として表示されます。  
+  
+> [!NOTE]
+>  ファイルの種類が指定されている場合、<xref:System.Windows.Shell.JumpPath>ジャンプ リストには、ファイルは表示されません、アプリケーションに登録されていません。 たとえば、追加する場合、 <xref:System.Windows.Shell.JumpPath> .txt ファイルを指す、.txt ファイルを処理するアプリケーションを登録する必要があります。 詳細については、次を参照してください。[ファイルの関連付けの概要](http://go.microsoft.com/fwlink/?LinkId=178480)です。  
+  
+ カテゴリにジャンプ先の項目を配置している、<xref:System.Windows.Shell.JumpList>です。 既定では、<xref:System.Windows.Shell.JumpItem>に表示される、**タスク**カテゴリ。 または、指定することができます、<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>の<xref:System.Windows.Shell.JumpItem>です。  
+  
+ 指定することができるかどうか、標準**最近使ったもの**と**利用頻度**でカテゴリが表示されます、<xref:System.Windows.Shell.JumpList>を設定して、<xref:System.Windows.Shell.JumpList.ShowRecentCategory%2A>と<xref:System.Windows.Shell.JumpList.ShowFrequentCategory%2A>プロパティです。 これらのカテゴリの内容で管理されて、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルです。 これらのカテゴリには、同じデータの多くが含まれている可能性があります、ため通常表示するいずれか一方で、 <xref:System.Windows.Shell.JumpList>、両方は使用しません。 [!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]コモン ファイル ダイアログ ボックスから開いたまたはファイルの種類の関連付けを使用してアプリケーションを開くために使用された場合に、最近使った項目を自動的に管理します。 ジャンプ リストから項目がアクセスされる場合は、通知、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルでは、項目の追加、**最近使ったもの**を呼び出してカテゴリ、<xref:System.Windows.Shell.JumpList.AddToRecentCategory%2A>メソッドです。  
+  
+## <a name="applying-a-jump-list-to-the-windows-shell"></a>Windows シェルへのジャンプ リストの適用  
+ シェルのジャンプ リストに直接アクセスしたりには、その内容を読み取ったりすることはできません、<xref:System.Windows.Shell.JumpList>クラスです。 代わりに、<xref:System.Windows.Shell.JumpList>クラスは、使用して適用、したジャンプ リストの表現を提供、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルです。 通常、作成、<xref:System.Windows.Shell.JumpList>し、アプリケーションが最初に実行すると 1 つの時間を設定します。 ただし、変更または置換できます、<xref:System.Windows.Shell.JumpList>実行時にします。  
+  
+ 設定した場合、<xref:System.Windows.Shell.JumpList>プロパティを適用する必要がある、<xref:System.Windows.Shell.JumpList>ジャンプ リスト タスク バーにその内容が表示される前に、Windows シェルにします。 これは、自動的にすると、<xref:System.Windows.Shell.JumpList>は最初の呼び出しでまたは XAML でのアプリケーションにアタッチされている、<xref:System.Windows.Shell.JumpList.SetJumpList%2A>メソッドです。 内容を変更する場合、 <xref:System.Windows.Shell.JumpList> 、実行時に呼び出す必要があります、 <xref:System.Windows.Shell.JumpList.Apply%2A> Windows シェルに、現在の内容を適用する方法です。  
+  
+## <a name="setting-a-jump-list-in-xaml"></a>XAML でのジャンプ リストの設定  
+ A<xref:System.Windows.Shell.JumpList>に自動的にアタッチされていない、<xref:System.Windows.Application>オブジェクト。 アタッチする、<xref:System.Windows.Shell.JumpList>を<xref:System.Windows.Application>添付プロパティの構文を使用して XAML でのオブジェクト。 <xref:System.Windows.Shell.JumpList>クラスが実装する、<xref:System.ComponentModel.ISupportInitialize>インターフェイスの XAML 宣言をサポートするために、<xref:System.Windows.Shell.JumpList>です。 場合、<xref:System.Windows.Shell.JumpList>は XAML で宣言され、現在接続されている<xref:System.Windows.Application>に自動的に適用されている、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルのときに、<xref:System.Windows.Shell.JumpList>が初期化されます。  
+  
+## <a name="setting-and-modifying-a-jump-list-in-code"></a>設定およびコードでのジャンプ リストを変更します。  
+ アタッチする、<xref:System.Windows.Shell.JumpList>を<xref:System.Windows.Application>、静的なを呼び出すことによってコード内のオブジェクト<xref:System.Windows.Shell.JumpList.SetJumpList%2A>メソッドです。 これも適用されます、<xref:System.Windows.Shell.JumpList>を[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルです。  
+  
+ 変更する、<xref:System.Windows.Shell.JumpList>を呼び出し、実行時に、<xref:System.Windows.Shell.JumpList.GetJumpList%2A>取得するメソッド、<xref:System.Windows.Shell.JumpList>に現在接続されている、<xref:System.Windows.Application>です。 プロパティを変更した後、 <xref:System.Windows.Shell.JumpList>、呼び出す必要があります、 <xref:System.Windows.Shell.JumpList.Apply%2A> Windows シェルに変更を適用する方法です。  
+  
+> [!NOTE]
+>  通常 1 つ作成する<xref:System.Windows.Shell.JumpList>に接続されている、<xref:System.Windows.Application>に適用されると、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェルです。 ただし、複数作成できます<xref:System.Windows.Shell.JumpList>オブジェクト。 1 つだけ<xref:System.Windows.Shell.JumpList>一度にに適用できる、[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]シェル、および 1 つだけ<xref:System.Windows.Shell.JumpList>一度に関連付けることができる、<xref:System.Windows.Application>です。 .NET Framework は同じであるこれら<xref:System.Windows.Shell.JumpList>です。  
+  
+> [!NOTE]
+>  このクラスには、クラス レベルのすべてのメンバーに適用されるリンク確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元に完全信頼アクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、次を参照してください。[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ジャンプ リストを持つアプリケーションを示します。 アプリケーションでは、使用すると、現在のジャンプ リストにタスクを追加、ジャンプ リストの内容をオフにして、アプリケーションに新しいジャンプ リストを適用する 3 つのボタンがあります。  
+  
+ 次の例は、宣言する方法を示します、<xref:System.Windows.Shell.JumpList>マークアップでします。 <xref:System.Windows.Shell.JumpList>は 2 つ<xref:System.Windows.Shell.JumpTask>リンクと 1 つ<xref:System.Windows.Shell.JumpPath>です。 適用する、<xref:System.Windows.Shell.JumpPath>シェルには、.txt ファイル名拡張子を処理するアプリケーションが登録されていない場合は失敗します。  
+  
+ [!code-xaml[Shell_JumpListSample#000](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#000)]  
+  
+ 次の例ではの分離コード ページ`App.xaml`です。 このコードで処理、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+ [!code-csharp[Shell_JumpListSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml.cs#100)]  
+  
+ 次の例は、アプリケーションのユーザー インターフェイスを作成するために使用するマークアップを示しています。  
+  
+ [!code-xaml[Shell_JumpListSample#300](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml#300)]  
+  
+ 次の例ではの分離コード ページ`MainWindow.xaml`です。 このコードは、変更、消去、および作成する方法を示して、<xref:System.Windows.Shell.JumpList>手続き型コードにします。 一覧については、新しいジャンプ、静的な<xref:System.Windows.Shell.JumpList.SetJumpList%2A>に関連付けるにはメソッドが呼び出された、 <xref:System.Windows.Shell.JumpList> 、現在のアプリケーションで適用し、 <xref:System.Windows.Shell.JumpList> Windows シェルにします。  
+  
+ [!code-csharp[Shell_JumpListSample#200](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#200)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">フル アクセス用 Windows シェルを変更します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JumpList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shell.JumpList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JumpList (System.Collections.Generic.IEnumerable&lt;System.Windows.Shell.JumpItem&gt; items, bool showFrequent, bool showRecent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Shell.JumpItem&gt; items, bool showFrequent, bool showRecent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Shell.JumpItem},System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Shell.JumpItem&gt;" />
+        <Parameter Name="showFrequent" Type="System.Boolean" />
+        <Parameter Name="showRecent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="items">コレクション<see cref="T:System.Windows.Shell.JumpItem" />ジャンプ リストに表示されるオブジェクトです。</param>
+        <param name="showFrequent">ジャンプ リストに頻繁に使用するアイテムを表示するかどうかを示す値。</param>
+        <param name="showRecent">最近使用された項目がジャンプ リストに表示されるかどうかを示す値。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Windows.Shell.JumpList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **最近使ったもの**と**利用頻度**カテゴリ多くの場合、含まれる多くの同じジャンプ項目。 その結果、アプリケーション通常表示するか、**最近使ったもの**または**利用頻度**ジャンプ リストが、両方のカテゴリ。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToRecentCategory">
+      <MemberSignature Language="C#" Value="public static void AddToRecentCategory (string itemPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddToRecentCategory(string itemPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.AddToRecentCategory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemPath">ジャンプ リストに追加するパス。</param>
+        <summary>指定した項目のパスを追加、**最近使ったもの**ジャンプ リストのカテゴリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、**最近使ったもの**カテゴリは、Windows シェルで管理されています。 ジャンプ リストで最近使用された項目を表示するには、設定、<xref:System.Windows.Shell.JumpList.ShowRecentCategory%2A>プロパティを`true`です。  
+  
+ 呼び出すことができます、 <xref:System.Windows.Shell.JumpList.AddToRecentCategory%28System.String%29> Windows シェルにアイテム パスを追加することを要求するメソッド、**最近使ったもの**項目の一覧です。 項目のファイルの種類の処理には、アプリケーションは登録されていないもには表示されません、**最近使ったもの**一覧と、呼び出しと<xref:System.Windows.Shell.JumpList.AddToRecentCategory%28System.String%29>サイレント モードでは失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToRecentCategory">
+      <MemberSignature Language="C#" Value="public static void AddToRecentCategory (System.Windows.Shell.JumpPath jumpPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddToRecentCategory(class System.Windows.Shell.JumpPath jumpPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.AddToRecentCategory(System.Windows.Shell.JumpPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="jumpPath" Type="System.Windows.Shell.JumpPath" />
+      </Parameters>
+      <Docs>
+        <param name="jumpPath"><see cref="T:System.Windows.Shell.JumpPath" />ジャンプ リストに追加します。</param>
+        <summary>ジャンプ先の指定されたパスを追加、**最近使ったもの**ジャンプ リストのカテゴリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、**最近使ったもの**カテゴリは、Windows シェルで管理されています。 ジャンプ リストで最近使用された項目を表示するには、設定、<xref:System.Windows.Shell.JumpList.ShowRecentCategory%2A>プロパティを`true`です。  
+  
+ 呼び出すことができます、 <xref:System.Windows.Shell.JumpList.AddToRecentCategory%28System.Windows.Shell.JumpPath%29> Windows シェルが指定のジャンプ先のパスを追加することを要求するメソッド、**最近使ったもの**項目の一覧です。 項目のファイルの種類の処理には、アプリケーションは登録されていないもには表示されません、**最近使ったもの**一覧と、呼び出しと<xref:System.Windows.Shell.JumpList.AddToRecentCategory%28System.Windows.Shell.JumpPath%29>サイレント モードでは失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToRecentCategory">
+      <MemberSignature Language="C#" Value="public static void AddToRecentCategory (System.Windows.Shell.JumpTask jumpTask);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddToRecentCategory(class System.Windows.Shell.JumpTask jumpTask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.AddToRecentCategory(System.Windows.Shell.JumpTask)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="jumpTask" Type="System.Windows.Shell.JumpTask" />
+      </Parameters>
+      <Docs>
+        <param name="jumpTask"><see cref="T:System.Windows.Shell.JumpTask" />ジャンプ リストに追加します。</param>
+        <summary>ジャンプを指定したタスクを追加、**最近使ったもの**ジャンプ リストのカテゴリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、**最近使ったもの**カテゴリは、Windows シェルで管理されています。 ジャンプ リストで最近使用された項目を表示するには、設定、<xref:System.Windows.Shell.JumpList.ShowRecentCategory%2A>プロパティを`true`です。  
+  
+ 呼び出すことができます、 <xref:System.Windows.Shell.JumpList.AddToRecentCategory%28System.Windows.Shell.JumpTask%29> Windows シェルがへのジャンプを指定したタスクを追加することを要求するメソッド、**最近使ったもの**項目の一覧です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Apply">
+      <MemberSignature Language="C#" Value="public void Apply ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Apply() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.Apply" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>送信、 <see cref="T:System.Windows.Shell.JumpList" /> Windows シェルの現在の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.JumpList.Apply%2A>メソッドのコンテンツを送信する、 <xref:System.Windows.Shell.JumpList> Windows シェルの現在の状態にします。 この呼び出しが完了した後、 <xref:System.Windows.Shell.JumpList.JumpItems%2A> Windows シェルは、タスク バーのジャンプ リストに正常に追加したアイテムのみを格納するプロパティを変更します。 イベント ハンドラーから削除された項目の一覧にアクセスできます、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、現在を取得する方法を示しています。<xref:System.Windows.Shell.JumpList>の内容を消去し、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクション。 <xref:System.Windows.Shell.JumpList.Apply%2A>を適用するメソッドが呼び出されます、 <xref:System.Windows.Shell.JumpList> Windows シェルに変更します。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#230](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#230)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Shell.JumpList" />が完全に初期化されていません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開始を通知、<see cref="T:System.Windows.Shell.JumpList" />初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.JumpList>クラスが実装する、<xref:System.ComponentModel.ISupportInitialize>インターフェイスの XAML 宣言をサポートするために、<xref:System.Windows.Shell.JumpList>です。 <xref:System.Windows.Shell.JumpList.BeginInit%2A>メソッドでのみ呼び出すときに、<xref:System.Windows.Shell.JumpList>は XAML で宣言されに接続されている、<xref:System.Windows.Application>添付プロパティの構文を使用しています。 コードからこのメソッドを呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">この呼び出しを<see cref="M:System.Windows.Shell.JumpList.BeginInit" />を前回呼び出したときに入れ子にされて<see cref="M:System.Windows.Shell.JumpList.BeginInit" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>終端を表す、<see cref="T:System.Windows.Shell.JumpList" />初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.JumpList>クラスが実装する、<xref:System.ComponentModel.ISupportInitialize>インターフェイスの XAML 宣言をサポートするために、<xref:System.Windows.Shell.JumpList>です。 <xref:System.Windows.Shell.JumpList.EndInit%2A>メソッドでのみ呼び出すときに、<xref:System.Windows.Shell.JumpList>は XAML で宣言されに接続されている、<xref:System.Windows.Application>添付プロパティの構文を使用しています。 コードからこのメソッドを呼び出すことはできません。  
+  
+ <xref:System.Windows.Shell.JumpList.EndInit%2A>メソッドと同じ効果を持つ、<xref:System.Windows.Shell.JumpList.Apply%2A>メソッドです。 <xref:System.Windows.Shell.JumpList.EndInit%2A>コンテンツを送信、 <xref:System.Windows.Shell.JumpList> Windows シェルの現在の状態にします。 この呼び出しが完了した後、<xref:System.Windows.Shell.JumpList.JumpItems%2A>をジャンプ リストに、Windows シェルが正常に追加したアイテムのみを格納するプロパティを変更します。 イベント ハンドラーから削除された項目の一覧にアクセスできます、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">この呼び出しを<see cref="M:System.Windows.Shell.JumpList.EndInit" />への呼び出しと組み合わされていない<see cref="M:System.Windows.Shell.JumpList.BeginInit" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetJumpList">
+      <MemberSignature Language="C#" Value="public static System.Windows.Shell.JumpList GetJumpList (System.Windows.Application application);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Shell.JumpList GetJumpList(class System.Windows.Application application) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.GetJumpList(System.Windows.Application)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Shell.JumpList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.Windows.Application" />
+      </Parameters>
+      <Docs>
+        <param name="application">関連付けられているアプリケーション、<see cref="T:System.Windows.Shell.JumpList" />です。</param>
+        <summary>返します、<see cref="T:System.Windows.Shell.JumpList" />アプリケーションに関連付けられているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Shell.JumpList" />指定されたアプリケーションに関連付けられているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことができます、<xref:System.Windows.Shell.JumpList.GetJumpList%2A>取得するメソッド、<xref:System.Windows.Shell.JumpList>現在関連付けられている、<xref:System.Windows.Application>です。 .NET Framework はこれであること、 <xref:System.Windows.Shell.JumpList> Windows シェルに現在適用されています。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Shell.JumpList>現在のアプリケーションに関連付けられています。 A<xref:System.Windows.Shell.JumpTask>に追加、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクションに追加し、**最近使ったもの**カテゴリ。 <xref:System.Windows.Shell.JumpList.Apply%2A> 、更新を適用するメソッドが呼び出された<xref:System.Windows.Shell.JumpList>Windows シェルにします。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#240](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#240)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JumpItems">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;System.Windows.Shell.JumpItem&gt; JumpItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class System.Windows.Shell.JumpItem&gt; JumpItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpList.JumpItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Windows.Shell.JumpItem&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Shell.JumpItem" />ジャンプ リストに表示されるオブジェクトです。</summary>
+        <value>コレクション<see cref="T:System.Windows.Shell.JumpItem" />ジャンプ リストに表示されるオブジェクト。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジャンプ リストが 2 つの種類のアイテムを含めることができます、<xref:System.Windows.Shell.JumpTask>と<xref:System.Windows.Shell.JumpPath>です。 A<xref:System.Windows.Shell.JumpTask>プログラムへのリンクは、および<xref:System.Windows.Shell.JumpPath>ファイルへのリンクします。  
+  
+ ときに、<xref:System.Windows.Shell.JumpList>が作成される、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクションが空です。 追加することができます<xref:System.Windows.Shell.JumpTask>または<xref:System.Windows.Shell.JumpPath>をコレクションにオブジェクト。 コレクションには、プログラムによって追加されている項目のみが含むされます。 後に、<xref:System.Windows.Shell.JumpList>呼び出しは成功するかによって、Windows シェルに渡された、<xref:System.Windows.Shell.JumpList.EndInit%2A>または<xref:System.Windows.Shell.JumpList.Apply%2A>メソッド、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクションは、タスク バーのジャンプ リストに正常に追加された項目のみが格納されます。 正常に追加されていない項目から除外されます、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクション。 イベント ハンドラーから削除された項目の一覧にアクセスできます、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、現在を取得する方法を示しています。<xref:System.Windows.Shell.JumpList>の内容を消去し、<xref:System.Windows.Shell.JumpList.JumpItems%2A>コレクション。 <xref:System.Windows.Shell.JumpList.Apply%2A>を適用するメソッドが呼び出されます、 <xref:System.Windows.Shell.JumpList> Windows シェルに変更します。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#230](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#230)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JumpItemsRejected">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Shell.JumpItemsRejectedEventArgs&gt; JumpItemsRejected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Shell.JumpItemsRejectedEventArgs&gt; JumpItemsRejected" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Shell.JumpList.JumpItemsRejected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Shell.JumpItemsRejectedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジャンプ先の項目が正常にでは追加されませんジャンプ リストに、Windows シェルと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容の後、 <xref:System.Windows.Shell.JumpList> Windows シェルに適用される、<xref:System.Windows.Shell.JumpList.JumpItems%2A>をジャンプ リストに、Windows シェルが正常に追加したアイテムのみを格納するプロパティを変更します。 イベント ハンドラーから削除された項目の一覧にアクセスできます、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>メッセージ ボックスに、拒否された項目を表示するイベントです。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#110](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JumpItemsRemovedByUser">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Shell.JumpItemsRemovedEventArgs&gt; JumpItemsRemovedByUser;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Shell.JumpItemsRemovedEventArgs&gt; JumpItemsRemovedByUser" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Shell.JumpList.JumpItemsRemovedByUser" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Shell.JumpItemsRemovedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジャンプ リストで以前のジャンプ先アイテムが、ユーザーが一覧から削除されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容の後、 <xref:System.Windows.Shell.JumpList> Windows シェルに適用される、<xref:System.Windows.Shell.JumpList.JumpItems%2A>をジャンプ リストに、Windows シェルが正常に追加したアイテムのみを格納するプロパティを変更します。 イベント ハンドラーから削除された項目の一覧にアクセスできます、<xref:System.Windows.Shell.JumpList.JumpItemsRejected>と<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています、<xref:System.Windows.Shell.JumpList.JumpItemsRemovedByUser>メッセージ ボックスに、拒否された項目を表示するイベントです。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#120](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml.cs#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetJumpList">
+      <MemberSignature Language="C#" Value="public static void SetJumpList (System.Windows.Application application, System.Windows.Shell.JumpList value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetJumpList(class System.Windows.Application application, class System.Windows.Shell.JumpList value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.JumpList.SetJumpList(System.Windows.Application,System.Windows.Shell.JumpList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.Windows.Application" />
+        <Parameter Name="value" Type="System.Windows.Shell.JumpList" />
+      </Parameters>
+      <Docs>
+        <param name="application">関連付けられているアプリケーション、<see cref="T:System.Windows.Shell.JumpList" />です。</param>
+        <param name="value"><see cref="T:System.Windows.Shell.JumpList" />アプリケーションに関連付けます。</param>
+        <summary>セット、<see cref="T:System.Windows.Shell.JumpList" />アプリケーションに関連付けられているオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数作成できます<xref:System.Windows.Shell.JumpList>オブジェクト。 ただし、1 つだけ<xref:System.Windows.Shell.JumpList>一度に関連付けることができる、<xref:System.Windows.Application>です。 呼び出す、<xref:System.Windows.Shell.JumpList.SetJumpList%2A>を設定するメソッド、<xref:System.Windows.Shell.JumpList>現在関連付けられている、<xref:System.Windows.Application>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.JumpList>のコードにします。 静的な<xref:System.Windows.Shell.JumpList.SetJumpList%2A>に関連付けるにはメソッドが呼び出された、<xref:System.Windows.Shell.JumpList>現在のアプリケーションにします。 <xref:System.Windows.Shell.JumpList>設定されている場合、Windows シェルに自動的に適用します。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-csharp[Shell_JumpListSample#210](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/mainwindow.xaml.cs#210)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowFrequentCategory">
+      <MemberSignature Language="C#" Value="public bool ShowFrequentCategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowFrequentCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpList.ShowFrequentCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用頻度の高い項目がジャンプ リストに表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ジャンプ一覧にある頻繁に使用するアイテムが表示されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、**利用頻度**カテゴリは、Windows シェルで管理されています。 ジャンプ リストでよく使用される項目を表示するには、設定、<xref:System.Windows.Shell.JumpList.ShowFrequentCategory%2A>プロパティを`true`です。  
+  
+ **最近使ったもの**と**利用頻度**カテゴリ多くの場合、含まれる多くの同じジャンプ項目。 その結果、アプリケーション通常表示するか、**最近使ったもの**または**利用頻度**ジャンプ リストが、両方のカテゴリ。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Shell.JumpList>を表示するように構成、**利用頻度**カテゴリ。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-xaml[Shell_JumpListSample#001](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#001)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowRecentCategory">
+      <MemberSignature Language="C#" Value="public bool ShowRecentCategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowRecentCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpList.ShowRecentCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはジャンプ リストに、最近使用された項目が表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />最近使用された項目がジャンプ リストに表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、**最近使ったもの**カテゴリは、Windows シェルで管理されています。 ジャンプ リストでよく使用される項目を表示するには、設定、<xref:System.Windows.Shell.JumpList.ShowRecentCategory%2A>プロパティを`true`です。  
+  
+ **最近使ったもの**と**利用頻度**カテゴリ多くの場合、含まれる多くの同じジャンプ項目。 その結果、アプリケーション通常表示するか、**最近使ったもの**または**利用頻度**ジャンプ リストが、両方のカテゴリ。  
+  
+ 呼び出すことができます、 <xref:System.Windows.Shell.JumpList.AddToRecentCategory%2A> Windows シェルが項目を追加することを要求するメソッド、**最近使ったもの**項目の一覧です。 項目のファイル名の種類の処理には、アプリケーションは登録されていないもには表示されません、**最近使ったもの**一覧と、呼び出しと<xref:System.Windows.Shell.JumpList.AddToRecentCategory%2A>サイレント モードでは失敗します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Shell.JumpList>を表示するように構成、**最近使ったもの**カテゴリ。 この例で使用できる例の一部である、<xref:System.Windows.Shell.JumpList>クラスの概要です。  
+  
+ [!code-xaml[Shell_JumpListSample#001](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_jumplistsample/cs/app.xaml#001)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

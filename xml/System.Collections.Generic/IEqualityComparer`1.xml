@@ -1,0 +1,154 @@
+<Type Name="IEqualityComparer&lt;T&gt;" FullName="System.Collections.Generic.IEqualityComparer&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IEqualityComparer&lt;in T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEqualityComparer`1&lt;- T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.IEqualityComparer`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <summary>オブジェクトの等価比較をサポートするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、コレクションのカスタマイズされた等価比較の実装を使用します。 つまり、型の等価性の定義を作成することができます`T`、型がコレクション型を受け入れるこの定義を使用することを指定し、<xref:System.Collections.Generic.IEqualityComparer%601>ジェネリック インターフェイス。 .NET framework でのコンス トラクター、<xref:System.Collections.Generic.Dictionary%602>ジェネリック コレクション型は、このインターフェイスをそのまま使用します。  
+  
+ このインターフェイスの既定の実装がによって提供される、<xref:System.Collections.Generic.EqualityComparer%601.Default%2A>のプロパティ、<xref:System.Collections.Generic.EqualityComparer%601>ジェネリック クラスです。 <xref:System.StringComparer>クラスが実装する<xref:System.Collections.Generic.IEqualityComparer%601>型の<xref:System.String>します。  
+  
+ このインターフェイスには、等値比較のみがサポートしています。 並べ替えと順序付けの比較のカスタマイズがによって提供される、<xref:System.Collections.Generic.IComparer%601>ジェネリック インターフェイス。  
+  
+ 派生させることをお勧め、<xref:System.Collections.Generic.EqualityComparer%601>クラスの実装ではなく、<xref:System.Collections.Generic.IEqualityComparer%601>ため、インターフェイス、<xref:System.Collections.Generic.EqualityComparer%601>等しいかどうかを使用するためのテストのクラス、<xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType>メソッドの代わりに、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。 これは、同じ、 `Contains`、 `IndexOf`、 `LastIndexOf`、および`Remove`のメソッド、<xref:System.Collections.Generic.Dictionary%602>クラスやその他のジェネリック コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム`Box`ディクショナリ コレクションのオブジェクト。 `Box`オブジェクトが等しい場合は、ディメンションは同じです。  
+  
+ [!code-csharp[System.Collections.Generic.IEqualityComparer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.iequalitycomparer/cs/program.cs#1)]
+ [!code-vb[System.Collections.Generic.IEqualityComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.iequalitycomparer/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (T x, T y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(!T x, !T y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="T" />
+        <Parameter Name="y" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="x">型の最初のオブジェクト<c>T</c>を比較します。</param>
+        <param name="y">2 番目のオブジェクトの種類の<c>T</c>を比較します。</param>
+        <summary>指定したオブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          指定したオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のカスタマイズされた等値比較を提供するには、このメソッドを実装`T`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装が確認された場合に必要な<see cref="M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)" />メソッドを返します<see langword="true" />2 つのオブジェクトの<c>x</c>と<c>y</c>、によって返される値、 <see cref="M:System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)" /> メソッド<c>。x</c>に対して返される値でなければなりません。 <c>y</c>です。  
+  
+ <see cref="M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)" />メソッドが再帰的、対称、推移的です。 つまり、返します<see langword="true" />自体を持つオブジェクトを比較に使用する場合<see langword="true" /> 2 つのオブジェクトの<c>x</c>と<c>y</c>である場合<see langword="true" />の<c>y</c>と<c>x</c>; と<see langword="true" />2 つのオブジェクト<c>x</c>と<c>z</c>である場合<see langword="true" />の<c>x</c>と<c>y</c> 、さらに<see langword="true" />の<c>y</c>と<c>z</c>です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (T obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(!T obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />が返されるハッシュ コード。</param>
+        <summary>指定したオブジェクトのハッシュ コードを返します。</summary>
+        <returns>指定したオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型のカスタマイズされたハッシュ コードを提供するには、このメソッドを実装`T`、によって提供されるカスタマイズされた等価比較に対応する、<xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">型<paramref name="obj" />参照型であると<paramref name="obj" />は<see langword="null" />します。</exception>
+        <block subset="none" type="overrides">
+          <para>実装が確認された場合に必要な<see cref="M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)" />メソッドを返します<see langword="true" />2 つのオブジェクトの<c>x</c>と<c>y</c>、によって返される値、 <see cref="M:System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)" /> メソッド<c>。x</c>に対して返される値でなければなりません。 <c>y</c>です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

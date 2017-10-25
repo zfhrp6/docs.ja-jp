@@ -1,0 +1,379 @@
+<Type Name="ListViewGroup" FullName="System.Windows.Forms.ListViewGroup">
+  <TypeSignature Language="C#" Value="public sealed class ListViewGroup : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ListViewGroup extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Header")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ListViewGroupConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表示されるアイテムのグループを表す、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView>グループ化機能では、論理的に関連する複数の視覚的なグループを作成できます。<xref:System.Windows.Forms.ListView>項目。 各グループは、水平方向に続くテキスト ベースのヘッダーとそのグループに割り当てられている項目で構成されます。 左、右、またはコントロールの中央ヘッダー テキストを揃えることができます。 割り当てられているすべてのグループ、<xref:System.Windows.Forms.ListView>コントロールが表示されるたびに、<xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.View?displayProperty=nameWithType>です。  
+  
+ <xref:System.Windows.Forms.ListView>グループには、便利なカテゴリにアイテムを分離することで探している項目の検索、ユーザーが役立ちます。 必要なすべてのカテゴリを作成できます。 項目をグループ化する 1 つの一般的な方法は、並べ替えの方法にです。 たとえば、アルファベット順に並べ替えた場合、項目の名前の最初の文字またはサブ項目の種類の詳細ビューでの列見出しをクリックして一覧を並べ替えるときに日付などの項目をグループ化できます。 Windows エクスプ ローラーでは、この種類のグループ化を使用します。  
+  
+ グループ化機能を使用する 1 つ以上追加<xref:System.Windows.Forms.ListViewGroup>オブジェクトを<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>のコレクション、<xref:System.Windows.Forms.ListView>コントロール。 グループ ヘッダーのテキストとヘッダーの配置を設定、<xref:System.Windows.Forms.ListViewGroup.%23ctor%2A>コンス トラクター、またはそれらの設定を使用して、<xref:System.Windows.Forms.ListViewGroup.Header%2A>と<xref:System.Windows.Forms.ListViewGroup.HeaderAlignment%2A>プロパティです。  
+  
+ 内のグループを指定することで項目をグループに割り当てることができます、<xref:System.Windows.Forms.ListViewItem.%23ctor%2A>コンス トラクターを設定して、<xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=nameWithType>プロパティ、または直接、項目を追加することによって、<xref:System.Windows.Forms.ListViewGroup.Items%2A>グループのコレクション。 表示される前に、すべての項目をグループに割り当てる必要があります。 グループに割り当てられていないすべての項目は、ヘッダー ラベルが"DefaultGroup {0}"既定のグループに表示されます。 既定のグループが含まれていない、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションを変更することはできません。 すべての項目がグループに正しく追加されていることを確認する、デバッグで、主に便利です。  
+  
+ 項目の 1 つのグループで一度にできます。 設定して、項目が属するグループを変更することができます、<xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=nameWithType>プロパティは実行時に追加することによって、<xref:System.Windows.Forms.ListViewGroup.Items%2A>自動的に前のグループから削除されますが、別のグループのコレクション。  
+  
+> [!NOTE]
+>  グループを使用するときに、挿入マーク機能は無効です。 これは、挿入マーク機能の使用にドラッグ アンド ドロップを再配置中に、グループ化機能がグループのメンバーシップによって項目を並べ替えますため、<xref:System.Windows.Forms.ListView>コントロールをその項目が既に順序付けされません。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>アプリケーションが呼び出すと、グループが Windows XP および Windows Server 2003 ファミリでのみ使用できますが、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>メソッドです。 以前のオペレーティング システムでグループに関連するすべてのコードは無視され、グループが表示されません。 結果として、グループ化機能に依存する任意のコードが正常に動作していない可能性があります。 グループ化機能が使用できるかどうかを決定するテストを含めるようにが利用できない場合は、代替機能を提供してください。 たとえば、グループ別に並べ替えをサポートしないオペレーティング システムで実行されているときに、別の並べ替えを提供することができます。  
+>   
+>  挿入マーク機能は、オペレーティング システムのテーマの機能を提供する同じライブラリによって提供されます。 このライブラリの可用性を確認するには、呼び出し、<xref:System.Windows.Forms.FeatureSupport.IsPresent%28System.Object%29?displayProperty=nameWithType>メソッドのオーバー ロードを渡します、<xref:System.Windows.Forms.OSFeature.Themes?displayProperty=nameWithType>値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ListView>アイテムを整理する詳細ビューのサブアイテム値によってグループ化機能します。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 列のヘッダーをクリックすると、その列に対して作成されたグループに項目が並べ替えられます。 同じ列ヘッダーを再度クリックすると、グループの順序を反転させます。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewGroup" />クラス"ListViewGroup"とヘッダーの配置の既定の既定のヘッダー テキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewGroup (string header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="header" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="header">グループ ヘッダーを表示するテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewGroup" />クラスの初期化するために、指定された値を使用して、<see cref="P:System.Windows.Forms.ListViewGroup.Header" />プロパティと既定値を使用してヘッダーの配置のままです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewGroup (string key, string headerText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string key, string headerText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="headerText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">初期値、<see cref="P:System.Windows.Forms.ListViewGroup.Name" />プロパティです。</param>
+        <param name="headerText">初期値、<see cref="P:System.Windows.Forms.ListViewGroup.Header" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewGroup" />クラスの初期化するために、指定した値を使用して、<see cref="P:System.Windows.Forms.ListViewGroup.Name" />と<see cref="P:System.Windows.Forms.ListViewGroup.Header" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewGroup (string header, System.Windows.Forms.HorizontalAlignment headerAlignment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string header, valuetype System.Windows.Forms.HorizontalAlignment headerAlignment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.#ctor(System.String,System.Windows.Forms.HorizontalAlignment)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="header" Type="System.String" />
+        <Parameter Name="headerAlignment" Type="System.Windows.Forms.HorizontalAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="header">グループ ヘッダーを表示するテキスト。</param>
+        <param name="headerAlignment">1 つ、<see cref="T:System.Windows.Forms.HorizontalAlignment" />ヘッダーのテキストの配置を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewGroup" />クラスの指定したヘッダーのテキストと指定したヘッダーの配置を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示します、`ListViewGroup`コンス トラクターを編成するアプリケーションで使用できます<xref:System.Windows.Forms.ListView>サブ項目に値の詳細ビューで項目。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 各列に対して作成されたグループは、サブ項目のテキストまたは先頭の文字とハッシュ テーブルに格納されます。 列ヘッダーがクリックされたときに、このテキスト値は、項目を適切な列のグループに一致するように使用されます。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要リファレンス トピックです。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#3)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#3)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="public string Header { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Header" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.Header" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグループのヘッダー テキストを設定します。</summary>
+        <value>グループ ヘッダーを表示するテキスト。 既定値は、"ListViewGroup"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダー テキストを取得するか、実行時にヘッダーの値を変更するのには、このプロパティを使用します。 ヘッダーのテキストを設定することも、<xref:System.Windows.Forms.ListViewGroup.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment HeaderAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment HeaderAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.HeaderAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグループ ヘッダーのテキストの配置を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.HorizontalAlignment" />ヘッダーのテキストの配置を指定する値。 既定値は、<see cref="F:System.Windows.Forms.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダーの配置を取得するか、実行時に配置を変更するのには、このプロパティを使用します。 ヘッダーの配置を設定することも、<xref:System.Windows.Forms.ListViewGroup.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定時に指定した値が、有効な <see cref="T:System.Windows.Forms.HorizontalAlignment" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListView.ListViewItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListView/ListViewItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListView+ListViewItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このグループに関連付けられているすべての項目を含むコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />グループ内のすべての項目を格納しています。 グループで、空の項目がないかどうか<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />オブジェクトが返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のグループを指定することで項目をグループに割り当てることができます、<xref:System.Windows.Forms.ListViewItem.%23ctor%2A>コンス トラクターを設定して、<xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=nameWithType>プロパティ、または直接、項目を追加することによって、<xref:System.Windows.Forms.ListViewGroup.Items%2A>グループのコレクション。 表示される前に、すべての項目をグループに割り当てる必要があります。 グループに割り当てられていないすべての項目は、ヘッダー ラベルが"DefaultGroup {0}"既定のグループに表示されます。 既定のグループが含まれていない、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションを変更することはできません。 すべての項目がグループに正しく追加されていることを確認する、デバッグで、主に便利です。  
+  
+ 項目の 1 つのグループで一度にできます。 設定して、項目が属するグループを変更することができます、<xref:System.Windows.Forms.ListViewItem.Group%2A?displayProperty=nameWithType>プロパティは実行時に追加することによって、<xref:System.Windows.Forms.ListViewGroup.Items%2A>自動的に前のグループから削除されますが、別のグループのコレクション。  
+  
+> [!NOTE]
+>  項目が内に存在することができます、<xref:System.Windows.Forms.ListViewGroup.Items%2A>それが存在しない場合も内では、グループのコレクション、<xref:System.Windows.Forms.ListView.Items%2A?displayProperty=nameWithType>のコレクション、<xref:System.Windows.Forms.ListView>コントロール自体には、コントロールでは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListView">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListView ListView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListView ListView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.ListView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListView" />コントロールをこのグループが含まれています。</summary>
+        <value><see cref="T:System.Windows.Forms.ListView" />コントロールをこのグループが含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグループの名前を設定します。</summary>
+        <value>グループの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroup.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグループに関するデータを格納しているオブジェクトを設定します。</summary>
+        <value><see cref="T:System.Object" />追加のデータを格納するためです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した任意の型、<xref:System.Object>クラスは、このプロパティに割り当てることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroup.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

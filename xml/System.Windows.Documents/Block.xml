@@ -1,0 +1,1227 @@
+<Type Name="Block" FullName="System.Windows.Documents.Block">
+  <TypeSignature Language="C#" Value="public abstract class Block : System.Windows.Documents.TextElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Block extends System.Windows.Documents.TextElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Block" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.TextElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのブロック レベルのフロー コンテンツ要素のベースを提供する抽象クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素から継承する、<xref:System.Windows.Documents.Block>クラス (など<xref:System.Windows.Documents.Section>)、共通の親の下にある要素をグループ化またはグループに共通の属性を適用するために使用できます。 概念的には、使用する方法に似ています、 \<DIV > タグで[!INCLUDE[TLA#tla_html](~/includes/tlasharptla-html-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Block ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化<see cref="T:System.Windows.Documents.Block" />基本クラスの派生クラスによって呼び出されたときの値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush BorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush BorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.BorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />要素の境界線を描画するときに使用します。</summary>
+        <value>要素の罫線を適用するために使用するブラシ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な定義済みのブラシの色の表は、次を参照してください。<xref:System.Windows.Media.Brushes>です。  
+  
+<a name="dependencyPropertyInfo_BorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.BorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.BorderBrush%2A>の属性、<xref:System.Windows.Documents.Block>要素 (<xref:System.Windows.Documents.Paragraph>)。  
+  
+ [!code-xaml[BlockSnippets#_Block_BordersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_bordersxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: 青、1 &#47; 4 インチ ブロック境界線](~/add/media/block-borders.png "スクリーン ショット: 青、1/4 インチ境界線ブロック")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.BorderBrush%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_Borders](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_borders)]
+ [!code-vb[BlockSnippets#_Block_Borders](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_borders)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.BorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.BorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderThickness">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness BorderThickness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness BorderThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.BorderThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の境界線の太さを取得または設定します。</summary>
+        <value>適用する境界線の量を指定する <see cref="T:System.Windows.Thickness" /> 構造体。デバイス非依存のピクセル単位で指定します。 既定では 0 (0.0) の均一の幅です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_BorderThickness"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object BorderThickness="uniformThickness"/>  
+- or -  
+<object BorderThickness="independentThickness"/>  
+- or -  
+<object BorderThickness="qualifiedUniformThickness"/>  
+- or -  
+<object BorderThickness="qualifiedIndependentThickness"/>  
+```  
+  
+<a name="xamlValues_BorderThickness"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *uniformThickness*  
+ 1 つの文字列表現<xref:System.Double>4 つすべての厚みを一様に適用する値。  たとえば、値の`"10"`はの値に相当`"10,10,10,10"`です。  修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *independentThickness*  
+ 順序付けに 4 つの文字列表現<xref:System.Double>左、上の太さの独立したディメンションに対応する値が右、および下には、この順序で。  4 つの値をコンマで区切る必要があります。スペースは使用できません。  たとえば、「5,10,15,20」結果 5 ピクセルの境界線のコンテンツ、コンテンツの上枠線のピクセルを 10、15 ピクセル、コンテンツの右に罫線のおよびコンテンツの下罫線の 20 ピクセルの左側にします。  
+  
+ *qualifiedUniformThickness*  
+ 記述された値*uniformThickness*後に、次の単位指定子の 1 つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1in"`すべての方向に 1 インチの均一の境界を提供します。  
+  
+ *qualifiedIndependentThickness*  
+ 記述された値*independentThickness*、後に、次の単位指定子の 1 つの独立した各値を持つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1.5in,0.8in,1.5in,0.8in"` のようにします。  単位指定子は、混合または 1 つまたは複数の値からを省略すると場合があります。  
+  
+<a name="dependencyPropertyInfo_BorderThickness"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.BorderThicknessProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.BorderThickness%2A>の属性、<xref:System.Windows.Documents.Block>要素 (<xref:System.Windows.Documents.Paragraph>)。  
+  
+ [!code-xaml[BlockSnippets#_Block_BordersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_bordersxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: 青、1 &#47; 4 インチ ブロック境界線](~/add/media/block-borders.png "スクリーン ショット: 青、1/4 インチ境界線ブロック")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.BorderThickness%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_Borders](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_borders)]
+ [!code-vb[BlockSnippets#_Block_Borders](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_borders)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderThicknessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BorderThicknessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BorderThicknessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.BorderThicknessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.BorderThickness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakColumnBefore">
+      <MemberSignature Language="C#" Value="public bool BreakColumnBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BreakColumnBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.BreakColumnBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ベースのプレゼンテーションの要素が参加する場合、この要素の前に段区切りを自動的に挿入するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />この要素の前に段区切りを自動的に挿入するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_BreakColumnBefore"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.BreakColumnBeforeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakColumnBeforeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BreakColumnBeforeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BreakColumnBeforeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.BreakColumnBeforeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.BreakColumnBefore" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakPageBefore">
+      <MemberSignature Language="C#" Value="public bool BreakPageBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BreakPageBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.BreakPageBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または自動的にこの要素の前に改行を挿入するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />自動的にこの要素の前に改行を挿入するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_BreakPageBefore"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.BreakColumnBeforeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakPageBeforeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BreakPageBeforeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BreakPageBeforeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.BreakPageBeforeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.BreakPageBefore" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearFloaters">
+      <MemberSignature Language="C#" Value="public System.Windows.WrapDirection ClearFloaters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WrapDirection ClearFloaters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.ClearFloaters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WrapDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかの方向に設定を取得または<see cref="T:System.Windows.Documents.Floater" />要素に含まれる、<see cref="T:System.Windows.Documents.Block" />要素の位置を変更する必要があります。</summary>
+        <value>1 つ、<see cref="T:System.Windows.WrapDirection" />いずれかを分割する方向を指定する値<see cref="T:System.Windows.Documents.Floater" />要素に含まれるその他のコンテンツを<see cref="T:System.Windows.Documents.Block" />要素。 既定値は<see cref="F:System.Windows.WrapDirection.None" />、インプレース floater を表示するかを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Block.ClearFloaters%2A>プロパティは、内のコンテンツのレイアウト方法に影響する<xref:System.Windows.Documents.Block>を防ぐために使用するためのものでは<xref:System.Windows.Documents.Floater>要素の内容が混雑を<xref:System.Windows.Documents.Block>要素。  このプロパティにより floater 内で統一された方向に位置を変更するには、方向を指定する、<xref:System.Windows.Documents.Block>コンテンツ。  Floater の位置は、親の外部ではありません<xref:System.Windows.Documents.Block>です。  
+  
+<a name="dependencyPropertyInfo_ClearFloaters"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.ClearFloatersProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearFloatersProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ClearFloatersProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ClearFloatersProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.ClearFloatersProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.ClearFloaters" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.FlowDirection FlowDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のコンテンツのフローの相対的な方向、<see cref="T:System.Windows.Documents.Block" />要素。</summary>
+        <value>1 つ、<see cref="T:System.Windows.FlowDirection" />相対フローの方向を指定する値。 既定値は、<see cref="F:System.Windows.FlowDirection.LeftToRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、現在有効なフローの方向が返されます。  このプロパティを設定するの内容、<xref:System.Windows.Documents.Block>再指定された方向にフローする要素。  
+  
+ コンテンツのフローの方向は、通常、表される言語の固有のフロー方向に対応します。  ヘブライ語やアラビア語は、必然的に右から左に流れる言語の例を示します。  英語、ドイツ語、およびロシア語は、左から右に必然的にフローする言語の例を示します。  
+  
+> [!NOTE]
+>  **このプロパティの値は、オペレーティング システムで使用される言語に合わせて自動的には変更されません。異なるを使用する必要がある場合番目の値**、**n の既定の** <xref:System.Windows.FlowDirection.LeftToRight> **、自分でに指定する必要があります。**  
+  
+<a name="dependencyPropertyInfo_FlowDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.FlowDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsParentArrange%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.FlowDirection%2A>の属性、<xref:System.Windows.Documents.Block>要素 (<xref:System.Windows.Documents.Paragraph>)。  
+  
+ [!code-xaml[BlockSnippets#_Block_FlowDirectionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_flowdirectionxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.FlowDirection%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_flowdirection)]
+ [!code-vb[BlockSnippets#_Block_FlowDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_flowdirection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FlowDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FlowDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.FlowDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.FlowDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsHyphenationEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsHyphenationEnabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsHyphenationEnabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.GetIsHyphenationEnabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineHeight">
+      <MemberSignature Language="C#" Value="public static double GetLineHeight (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetLineHeight(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.GetLineHeight(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.Block.LineHeight" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.Block.LineHeight" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.Block.LineHeight" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineStackingStrategy">
+      <MemberSignature Language="C#" Value="public static System.Windows.LineStackingStrategy GetLineStackingStrategy (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.LineStackingStrategy GetLineStackingStrategy(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.GetLineStackingStrategy(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineStackingStrategy</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.Block.LineStackingStrategy" />添付プロパティ。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.Block.LineStackingStrategy" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.Block.LineStackingStrategy" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextAlignment">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextAlignment GetTextAlignment (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.TextAlignment GetTextAlignment(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.GetTextAlignment(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">値を取得する対象の依存関係オブジェクト、<see cref="P:System.Windows.Documents.Block.TextAlignment" />プロパティです。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Documents.Block.TextAlignment" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値、<see cref="P:System.Windows.Documents.Block.TextAlignment" />指定した依存関係オブジェクトのプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabled">
+      <MemberSignature Language="C#" Value="public bool IsHyphenationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHyphenationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.IsHyphenationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または単語の自動ハイフネーションが有効か無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />自動改行と単語のハイフネーションが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動単語ハイフネーション機能により、<xref:System.Windows.Documents.Block>現在のレイアウトの条件に基づいて、自動的に中断して、単語を単語を区切る要素。  これにより、長い単語を 1 行で開始し、その次のまま続行して、揃えのテキスト内の空白のより均等に配分を実現する傾向があります。  単語が分割され、標準の文法規則に従って設定されます。  
+  
+<a name="dependencyPropertyInfo_IsHyphenationEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.IsHyphenationEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.IsHyphenationEnabled%2A>の属性、<xref:System.Windows.Documents.Block>要素。  
+  
+ [!code-xaml[BlockSnippets#_Block_HyphenateXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_hyphenatexaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: FlowDocument ハイフンが有効になっている](~/add/media/flowdoc-hyphenenabled.png "スクリーン ショット: FlowDocument ハイフンが有効になっています。")  
+  
+ 次の図で既定の設定と同じ例を表示する方法を示しています。 <xref:System.Windows.Documents.Block.IsHyphenationEnabled%2A> =`false`です。  
+  
+ ![スクリーン ショット: ハイフンが無効に FlowDocument](~/add/media/flowdoc-hyphendisabled.png "スクリーン ショット: ハイフンが無効になった FlowDocument")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.IsHyphenationEnabled%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_Hyphenate](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_hyphenate)]
+ [!code-vb[BlockSnippets#_Block_Hyphenate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_hyphenate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHyphenationEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsHyphenationEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsHyphenationEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.IsHyphenationEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeight">
+      <MemberSignature Language="C#" Value="public double LineHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.LineHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの各行の高さを取得または設定します。</summary>
+        <value>デバイス非依存のピクセル、0.0034 ~ 160000 ですの範囲内の各行の高さまたは<see cref="F:System.Double.NaN" />高さを自動的に決定します。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Double?displayProperty=nameWithType>(属性値に相当`Auto`)、行の高さを現在のフォント特性から自動的に決定することを示します。  
+  
+ この値を変更しても、関連付けられているテキストの高さは変更されません。代わりに、テキストを含む行の高さを変更します。 テキストのサイズを変更するには、使用、<xref:System.Windows.Documents.FlowDocument.FontSize%2A>プロパティです。  
+  
+ このプロパティでは、内の行のレイアウトだけでなく、<xref:System.Windows.Documents.Block>の影響を受けるその<xref:System.Windows.Documents.Block.LineStackingStrategy%2A>プロパティです。  
+  
+<a name="xamlAttributeUsage_LineHeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object LineHeight="double"/>  
+- or -  
+<object LineHeight="qualifiedDouble"/>  
+- or -  
+<object LineHeight="Auto"/>  
+```  
+  
+<a name="xamlValues_LineHeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>に等しいまたは 0.0034 に等しいまたは 160000 よりも小さい値です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 原因は、行の高さは現在のフォント特性から自動的に決定されます。  プロパティの値に相当<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_LineHeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.LineHeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.LineHeight%2A>の属性、<xref:System.Windows.Documents.Block>要素。  
+  
+ [!code-xaml[BlockSnippets#_Block_LineHeightXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_lineheightxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  
+  
+ ![スクリーン ショット: FlowDocument LineHeight](~/add/media/flowdocument-lineheight.png "スクリーン ショット: FlowDocument LineHeight")  
+  
+ 方法を次の図に示す同じ<xref:System.Windows.Documents.FlowDocument>の既定の設定を使用してレンダリング<xref:System.Windows.Documents.FlowDocument.LineHeight%2A> =<xref:System.Double.NaN?displayProperty=nameWithType>です。  
+  
+ ![スクリーン ショット: FlowDocument LineHeight の既定](~/add/media/flowdocument-lineheightdefault.png "スクリーン ショット: FlowDocument LineHeight の既定値")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.LineHeight%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_LineHeight](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_lineheight)]
+ [!code-vb[BlockSnippets#_Block_LineHeight](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_lineheight)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Controls.TextBlock.LineHeight" />負の値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineHeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineHeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.LineHeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.LineHeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategy">
+      <MemberSignature Language="C#" Value="public System.Windows.LineStackingStrategy LineStackingStrategy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LineStackingStrategy LineStackingStrategy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.LineStackingStrategy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LineStackingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブロック レベルのフロー コンテンツ要素内のテキストの行ごとに行ボックスを決定する方法を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.LineStackingStrategy" />ブロック レベルのフロー コンテンツ要素内のテキストの行ごとに行ボックスを決定する方法を指定する値。 既定値は <see cref="F:System.Windows.LineStackingStrategy.MaxHeight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が\<*オブジェクト* <xref:System.Windows.Documents.Block.LineStackingStrategy%2A?displayProperty=nameWithType>="*値*".../> ここで、*オブジェクト*内に含まれる、オブジェクト要素 (通常はフロー要素) は、<xref:System.Windows.Documents.Block>派生クラスと*値*の文字列値です、<xref:System.Windows.LineStackingStrategy>列挙します。 コードでは、添付プロパティの使用がサポートされている、<xref:System.Windows.Documents.Block.GetLineStackingStrategy%2A>と<xref:System.Windows.Documents.Block.SetLineStackingStrategy%2A>メソッドです。 添付プロパティの使用が一般的ではありません。  
+  
+<a name="dependencyPropertyInfo_LineStackingStrategy"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.LineStackingStrategyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>のテキスト行に行ボックスを作成する方法を決定するプロパティ、<xref:System.Windows.Controls.TextBlock>です。 最初の<xref:System.Windows.Controls.TextBlock>が、<xref:System.Windows.Controls.TextBlock.LineStackingStrategy%2A>値<xref:System.Windows.LineStackingStrategy.MaxHeight>、2 番目<xref:System.Windows.Controls.TextBlock>の値を持つ<xref:System.Windows.LineStackingStrategy.BlockLineHeight>します。  
+  
+ [!code-xaml[FlowMiscSnippets_snip#LineStackingStrategyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_snip/cs/linestackingstrategyexample.xaml#linestackingstrategyexamplewholepage)]  
+  
+ 次の図は、上記のコードの結果を示します。  
+  
+ ![スクリーン ショット: LineStackingStrategy 値の比較](~/add/media/flow-linestackingstrategy.gif "スクリーン ショット: LineStackingStrategy の比較値")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineStackingStrategyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LineStackingStrategyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LineStackingStrategyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.LineStackingStrategyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.LineStackingStrategy" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Margin">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness Margin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness Margin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.Margin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の余白の厚みを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Thickness" />デバイス非依存ピクセルで、適用する余白の量を指定します。 既定では 0 (0.0) の均一の幅です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Block.Margin%2A>要素のコンテンツ エリアの端と親要素の端との間の要素のコンテンツ エリアの外側にあるバッファー領域がありません。  比較して<xref:System.Windows.Documents.Block.Padding%2A>要素のコンテンツと要素の内部の端の間の要素のコンテンツ領域の内側にあるバッファー領域があります。  
+  
+<a name="xamlAttributeUsage_Margin"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Margin="uniformThickness"/>  
+- or -  
+<object Margin="independentThickness"/>  
+- or -  
+<object Margin="qualifiedUniformThickness"/>  
+- or -  
+<object Margin="qualifiedIndependentThickness"/>  
+```  
+  
+<a name="xamlValues_Margin"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *uniformThickness*  
+ 1 つの文字列表現<xref:System.Double>4 つすべての厚みを一様に適用する値。  たとえば、値の`"10"`はの値に相当`"10,10,10,10"`です。  修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *independentThickness*  
+ 順序付けに 4 つの文字列表現<xref:System.Double>左、上の太さの独立したディメンションに対応する値が右、および下には、この順序で。  4 つの値をコンマで区切る必要があります。スペースは使用できません。  たとえば、「5,10,15,20」結果余白の 5 ピクセル コンテンツ、コンテンツの上余白の 10 のピクセル、コンテンツの右側の余白の 15 ピクセルおよびコンテンツ下の余白 20 ピクセルの左側にします。  
+  
+ *qualifiedUniformThickness*  
+ 記述された値*uniformThickness*後に、次の単位指定子の 1 つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1in"`すべての方向に 1 インチの均一の余白を提供します。  
+  
+ *qualifiedIndependentThickness*  
+ 記述された値*independentThickness*、後に、次の単位指定子の 1 つの独立した各値を持つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1.5in,0.8in,1.5in,0.8in"` のようにします。  単位指定子は、混合または 1 つまたは複数の値からを省略すると場合があります。  
+  
+<a name="dependencyPropertyInfo_Margin"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.MarginProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.Margin%2A>の属性、<xref:System.Windows.Documents.Block>要素 (<xref:System.Windows.Documents.Paragraph>)。  
+  
+ [!code-xaml[BlockSnippets#_Block_MarginPaddingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_marginpaddingxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  大ぶりの太さと色は、説明のために使用されます。  
+  
+ ![スクリーン ショット: パディングと余白段落](~/add/media/block-marginpadding.png "スクリーン ショット: 埋め込みと余白がある段落")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.Margin%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_MarginPadding](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_marginpadding)]
+ [!code-vb[BlockSnippets#_Block_MarginPadding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_marginpadding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarginProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MarginProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MarginProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.MarginProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.Margin" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextBlock">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Block NextBlock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Block NextBlock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.NextBlock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Block</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>兄弟を取得<see cref="T:System.Windows.Documents.Block" />直接現在後ろにある要素<see cref="T:System.Windows.Documents.Block" />要素。</summary>
+        <value>兄弟<see cref="T:System.Windows.Documents.Block" />直接現在後ろにある要素<see cref="T:System.Windows.Documents.Block" />要素、または<see langword="null" />このような要素が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のパディングの厚みを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Thickness" />デバイス非依存ピクセルで、適用するパディングの量を指定します。 既定では 0 (0.0) の均一の幅です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Block.Padding%2A>要素のコンテンツと要素の内部の端の間の要素のコンテンツ領域の内側にあるバッファー領域がありません。  比較して<xref:System.Windows.Documents.Block.Margin%2A>要素のコンテンツ エリアの端と親要素の端との間の要素のコンテンツ エリアの外側にあるバッファー領域があります。  
+  
+<a name="xamlAttributeUsage_Padding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Padding="uniformThickness"/>  
+- or -  
+<object Padding="independentThickness"/>  
+- or -  
+<object Padding="qualifiedUniformThickness"/>  
+- or -  
+<object Padding="qualifiedIndependentThickness"/>  
+```  
+  
+<a name="xamlValues_Padding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *uniformThickness*  
+ 1 つの文字列表現<xref:System.Double>4 つすべての厚みを一様に適用する値。  たとえば、値の`"10"`はの値に相当`"10,10,10,10"`です。  修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *independentThickness*  
+ 順序付けに 4 つの文字列表現<xref:System.Double>左、上の太さの独立したディメンションに対応する値が右、および下には、この順序で。  4 つの値をコンマで区切る必要があります。スペースは使用できません。  たとえば、「5,10,15,20」結果パディングの 5 ピクセル コンテンツ、コンテンツの上の余白の 10 のピクセル、右の余白の 15 ピクセルおよびコンテンツの下の余白の 20 ピクセルの左側にします。  
+  
+ *qualifiedUniformThickness*  
+ 記述された値*uniformThickness*後に、次の単位指定子の 1 つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1in"`すべての方向に 1 インチの統一されたパディングを提供します。  
+  
+ *qualifiedIndependentThickness*  
+ 記述された値*independentThickness*、後に、次の単位指定子の 1 つの独立した各値を持つ: `px`、`in`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ たとえば、`"1.5in,0.8in,1.5in,0.8in"` のようにします。  単位指定子は、混合または 1 つまたは複数の値からを省略すると場合があります。  
+  
+<a name="dependencyPropertyInfo_Padding"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.PaddingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.Padding%2A>の属性、<xref:System.Windows.Documents.Block>要素 (<xref:System.Windows.Documents.Paragraph>)。  
+  
+ [!code-xaml[BlockSnippets#_Block_MarginPaddingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_marginpaddingxaml)]  
+  
+ 次の図は、前の例をレンダリングする方法を示します。  大ぶりの太さと色は、説明のために使用されます。  
+  
+ ![スクリーン ショット: パディングと余白段落](~/add/media/block-marginpadding.png "スクリーン ショット: 埋め込みと余白がある段落")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.Padding%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_MarginPadding](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_marginpadding)]
+ [!code-vb[BlockSnippets#_Block_MarginPadding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_marginpadding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PaddingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PaddingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.PaddingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.Padding" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousBlock">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Block PreviousBlock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Block PreviousBlock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.PreviousBlock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Block</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>兄弟を取得<see cref="T:System.Windows.Documents.Block" />直前に、現在の要素<see cref="T:System.Windows.Documents.Block" />要素。</summary>
+        <value>兄弟<see cref="T:System.Windows.Documents.Block" />直前に、現在の要素<see cref="T:System.Windows.Documents.Block" />要素、または<see langword="null" />このような要素が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsHyphenationEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsHyphenationEnabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsHyphenationEnabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.SetIsHyphenationEnabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.Block.IsHyphenationEnabled" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineHeight">
+      <MemberSignature Language="C#" Value="public static void SetLineHeight (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLineHeight(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.SetLineHeight(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Documents.Block.LineHeight" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.Block.LineHeight" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineStackingStrategy">
+      <MemberSignature Language="C#" Value="public static void SetLineStackingStrategy (System.Windows.DependencyObject element, System.Windows.LineStackingStrategy value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLineStackingStrategy(class System.Windows.DependencyObject element, valuetype System.Windows.LineStackingStrategy value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.SetLineStackingStrategy(System.Windows.DependencyObject,System.Windows.LineStackingStrategy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.LineStackingStrategy" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Documents.Block.LineStackingStrategy" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.Block.LineStackingStrategy" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTextAlignment">
+      <MemberSignature Language="C#" Value="public static void SetTextAlignment (System.Windows.DependencyObject element, System.Windows.TextAlignment value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTextAlignment(class System.Windows.DependencyObject element, valuetype System.Windows.TextAlignment value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Block.SetTextAlignment(System.Windows.DependencyObject,System.Windows.TextAlignment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.TextAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクトの値を設定する、<see cref="P:System.Windows.Documents.Block.TextAlignment" />プロパティです。</param>
+        <param name="value">プロパティを設定する新しい値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Documents.Block.TextAlignment" />添付プロパティを指定した依存関係オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Documents.Block.GetTextAlignment%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SiblingBlocks">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.BlockCollection SiblingBlocks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.BlockCollection SiblingBlocks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.SiblingBlocks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.BlockCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Documents.Block" />現在兄弟<see cref="T:System.Windows.Documents.Block" />要素。</summary>
+        <value>A<see cref="T:System.Windows.Documents.BlockCollection" />子を格納している<see cref="T:System.Windows.Documents.Block" />、現在の親によって直接ホストされている要素<see cref="T:System.Windows.Documents.Block" />要素、または<see langword="null" />場合、現在<see cref="T:System.Windows.Documents.Block" />要素に親がありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.BlockCollection>このプロパティによって返されるが含まれています、<xref:System.Windows.Documents.Block>要素をコレクションにはアクセスです。 つまり、このプロパティを所有する要素が兄弟のコレクションを生成する目的で、独自の兄弟であると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.TextAlignment TextAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Block.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストの内容の水平方向の配置を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextAlignment" />目的の配置を指定する値。 既定値は、<see cref="F:System.Windows.TextAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TextAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Block.TextAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.TextAlignment%2A>の属性、<xref:System.Windows.Documents.Block>要素。  
+  
+ [!code-xaml[BlockSnippets#_Block_TextAlignmentXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_block_textalignmentxaml)]  
+  
+ 次の図は、前の例で表示する方法を示します<xref:System.Windows.TextAlignment.Left>テキストの配置 (既定)。  
+  
+ ![スクリーン ショット: 左の TextAlign プロパティ値](~/add/media/flowdoc-textalign-left.png "スクリーン ショット: 左の TextAlign プロパティ値")  
+  
+ 同じ例を表示する方法を次に示します<xref:System.Windows.TextAlignment.Right>テキストの配置。  
+  
+ ![スクリーン ショット: 右の TextAlign 値の](~/add/media/flowdoc-textalign-right.png "スクリーン ショット: 右の TextAlign 値")  
+  
+ 同じ例を表示する方法を次に示します<xref:System.Windows.TextAlignment.Center>テキストの配置。  
+  
+ ![スクリーン ショット: 中央の TextAlign プロパティ値](~/add/media/flowdoc-textalign-center.png "スクリーン ショット: 中央の TextAlign プロパティ値")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Block.TextAlignment%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[BlockSnippets#_Block_TextAlignment](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml.cs#_block_textalignment)]
+ [!code-vb[BlockSnippets#_Block_TextAlignment](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BlockSnippets/visualbasic/window1.xaml.vb#_block_textalignment)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Block.TextAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Block.TextAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

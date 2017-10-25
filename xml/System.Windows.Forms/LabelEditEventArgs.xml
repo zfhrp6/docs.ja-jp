@@ -1,0 +1,184 @@
+<Type Name="LabelEditEventArgs" FullName="System.Windows.Forms.LabelEditEventArgs">
+  <TypeSignature Language="C#" Value="public class LabelEditEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LabelEditEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LabelEditEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ListView.BeforeLabelEdit" /> イベントおよび <see cref="E:System.Windows.Forms.ListView.AfterLabelEdit" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.LabelEditEventArgs>のキャプションとインデックスを指定、<xref:System.Windows.Forms.ListViewItem>と、ユーザーが編集された後のキャプション。 このクラスも用意されています、<xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A>プロパティです。 このプロパティを使用することができます、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>をユーザーが、ラベルを編集することを防ぐためにイベント ハンドラー。 これを使用することもできます、<xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>ラベルを返す、変更を元に戻すイベント ハンドラーが元の値にします。 これは、変更をコミットする前にユーザー入力を検証する場合に便利です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>イベントはラベルの編集がコミットされを呼び出す前に実行、<xref:System.Windows.Forms.ListView.Sort%2A?displayProperty=nameWithType>このイベントのハンドラーのメソッドは、元の値を使用して項目を並べ替えられます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>イベントを使用して、<xref:System.Windows.Forms.LabelEditEventArgs.Item%2A>と<xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A>プロパティです。 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.ListView>という名前のコントロール`ListView1`し、少なくとも 3 つの項目を格納します。 すべてのイベントがイベント処理メソッドに関連付けられていることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView3/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LabelEditEventArgs (int item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LabelEditEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="item">0 から始まるインデックス、 <see cref="T:System.Windows.Forms.ListViewItem" />、編集するラベルを含むです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LabelEditEventArgs" />に指定したインデックスを持つクラス、<see cref="T:System.Windows.Forms.ListViewItem" />を編集します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用するには、発生したとき、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>または<xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>で特定のリスト項目を指定して実行時にイベント、<xref:System.Windows.Forms.ListView>を編集します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LabelEditEventArgs (int item, string label);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 item, string label) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LabelEditEventArgs.#ctor(System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Int32" />
+        <Parameter Name="label" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="item">0 から始まるインデックス、 <see cref="T:System.Windows.Forms.ListViewItem" />、編集するラベルを含むです。</param>
+        <param name="label">新しいテキストのラベルに割り当てられた、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LabelEditEventArgs" />に指定したインデックスを持つクラス、<see cref="T:System.Windows.Forms.ListViewItem" />編集されていると、新しいテキストのラベルの<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用するには、発生したとき、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>または<xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>でリスト項目を指定して実行時にイベント、<xref:System.Windows.Forms.ListView>を編集します。 コンス トラクターではのラベルに関連付けられている新しいテキストを指定することもできます、<xref:System.Windows.Forms.ListViewItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelEdit">
+      <MemberSignature Language="C#" Value="public bool CancelEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.CancelEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のラベルへの変更が行われたかどうかを示す値、<see cref="T:System.Windows.Forms.ListViewItem" />キャンセルする必要があります。</summary>
+        <value>
+          <see langword="true" />場合のラベルの編集操作、<see cref="T:System.Windows.Forms.ListViewItem" />それ以外の処理が取り消されました<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ラベルに加えられた変更を取り消すためにこのプロパティを使用することができます、<xref:System.Windows.Forms.ListViewItem>し、元のテキストに戻します。 このプロパティを使用して、項目のキャプションが、アプリケーションの要件を満たしていない値に変更されていることを防止します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>イベントを使用して、<xref:System.Windows.Forms.LabelEditEventArgs.Item%2A>と<xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A>プロパティです。 例を実行するには、次のコードを貼り付けますで、フォームとを含む ListView コントロール ListView1 をという名前には、少なくとも 3 つの項目で設定されます。 すべてのイベントがイベント処理メソッドに関連付けられていることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView3/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public int Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>0 から始まるインデックスを取得、<see cref="T:System.Windows.Forms.ListViewItem" />を編集するラベルを含むです。</summary>
+        <value>0 から始まるインデックス、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType>イベントを使用して、<xref:System.Windows.Forms.LabelEditEventArgs.Item%2A>と<xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A>プロパティです。 例を実行するには、次のコードを貼り付けますで、フォームとを含む ListView コントロール ListView1 をという名前には、少なくとも 3 つの項目で設定されます。 すべてのイベントがイベント処理メソッドに関連付けられていることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView3/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラベルに割り当てられた新しいテキストを取得、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value>関連付けられる新しいテキスト、<see cref="T:System.Windows.Forms.ListViewItem" />または<see langword="null" />テキストが変更されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#463](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#463)]
+ [!code-vb[System.Windows.Forms.EventExamples#463](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#463)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

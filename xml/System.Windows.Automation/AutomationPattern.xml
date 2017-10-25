@@ -1,0 +1,58 @@
+<Type Name="AutomationPattern" FullName="System.Windows.Automation.AutomationPattern">
+  <TypeSignature Language="C#" Value="public class AutomationPattern : System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutomationPattern extends System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationIdentifier</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール パターンを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型のインスタンスは、特定のコントロール パターンを識別します。 たとえば、<xref:System.Windows.Automation.DockPattern.Pattern?displayProperty=nameWithType>を識別するフィールド、<xref:System.Windows.Automation.DockPattern>コントロール パターン。  
+  
+   
+  
+## Examples  
+ 次の例を表示、<xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A>でサポートされるパターンの<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ 次の例では、特定のパターンを要求する方法を示します。  
+  
+ [!code-csharp[UIAClient_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#104)]
+ [!code-vb[UIAClient_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#104)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LookupById">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.AutomationPattern LookupById (int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.AutomationPattern LookupById(int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AutomationPattern.LookupById(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">パターンの識別子。</param>
+        <summary>取得、<see cref="T:System.Windows.Automation.AutomationPattern" />指定した数値識別子をカプセル化します。</summary>
+        <returns><see cref="T:System.Windows.Automation.AutomationPattern" /> で指定された <paramref name="id" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

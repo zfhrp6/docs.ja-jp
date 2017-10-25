@@ -1,0 +1,190 @@
+<Type Name="SoapHeaderAttribute" FullName="System.Web.Services.Protocols.SoapHeaderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SoapHeaderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapHeaderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHeaderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この属性は、XML Web サービス メソッドまたは XML Web サービス メソッドまたは XML Web サービス クライアントが処理できる SOAP ヘッダーを指定する XML Web サービス クライアントに適用されます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本的な手順を SOAP ヘッダーの受信および処理します。  
+  
+1.  派生するクラスを作成する<xref:System.Web.Services.Protocols.SoapHeader>データを表す SOAP ヘッダーで渡されます。  
+  
+2.  XML Web サービス クラスは、手順 1. で作成した型の XML Web サービス クライアント プロキシ クラスにメンバーを追加します。  
+  
+3.  適用、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス メソッドまたはプロキシ クラスで対応するメソッドは、手順 2. で作成されたメンバーを指定する、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティです。  
+  
+4.  XML Web サービス メソッドまたは XML Web サービス クライアント コードの中でアクセス、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A> SOAP ヘッダーで送信されるデータを処理するプロパティです。  
+  
+ 詳細については、次を参照してください。、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービスには、1 つを定義<xref:System.Web.Services.Protocols.SoapHeader>型の`MyHeader`します。 `Hello` XML Web サービス メソッドには、この XML Web サービス メソッドを呼び出すクライアントが必要です。<xref:System.Web.Services.Protocols.SoapHeader>です。 `Hello` XML Web サービスで任意の SOAP ヘッダーを以外のキャッチも`MyHeader`します。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderAttribute (string memberName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string memberName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="memberName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="memberName">SOAP ヘッダーの内容を表す XML Web サービス クラスのメンバー。 <see cref="P:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName" />プロパティは、このパラメーターの値に設定されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Protocols.SoapHeaderAttribute" />クラス、SOAP ヘッダーの内容を表す XML Web サービス クラスのメンバーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントまたは XML Web サービスは、する必要がある処理の特定の XML Web サービス メソッドの適用することで、SOAP ヘッダーを指定できます、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス クラスまたはプロキシ クラスで対応するメソッドの XML Web サービス メソッドにします。 XML Web サービス クラスに、XML Web サービス メソッドの SOAP ヘッダーの内容を受信するためには、メンバーが追加される、<xref:System.Type>から派生した<xref:System.Web.Services.Protocols.SoapHeader>です。 XML Web サービス クライアントがから派生するプロキシ クラスにメンバーを追加する同様に、<xref:System.Web.Services.Protocols.SoapHeader>です。 <xref:System.Type>から派生<xref:System.Web.Services.Protocols.SoapHeader>SOAP ヘッダーの内容を表し、XML Web サービスまたは SOAP ヘッダーを受信する XML Web サービス クライアントの開発者が作成されます。 クラスを作成した後、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス メソッドや SOAP ヘッダーを受信するメンバーの内容を XML Web サービス クライアント プロキシ クラスの指定に対応するメソッドに適用されることができます、`memberName`このコンス トラクターにパラメーターまたは<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティです。  
+  
+ XML Web サービス メソッドは、XML Web サービス クラスまたは XML Web サービス プロキシ クラスに複数のメンバーを追加し、さらに複数を適用して複数の SOAP ヘッダーを受信できる<xref:System.Web.Services.Protocols.SoapHeaderAttribute>XML Web サービス メソッドへの属性です。  
+  
+ XML Web サービスの作成時に不明な SOAP ヘッダーを処理を受信して、指定、<xref:System.Type>次のいずれかのメンバーの<xref:System.Web.Services.Protocols.SoapUnknownHeader>、<xref:System.Web.Services.Protocols.SoapHeader>またはいずれかのクラスの配列。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービスには、1 つを定義<xref:System.Web.Services.Protocols.SoapHeader>型の`MyHeader`します。 `Hello` XML Web サービス メソッドを指定します、`myHeader`メンバーとして、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティの内容を受信する`MyHeader`SOAP ヘッダーは、XML Web サービス メソッドに渡されます。  
+  
+ [!code-cpp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapHeaderDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapHeaderDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeaderAttribute.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーは、XML Web サービスまたは XML Web サービス クライアントのためのものであるかどうかを設定します。</summary>
+        <value>SOAP ヘッダーの目的の受信者です。 既定値は<see cref="F:System.Web.Services.Protocols.SoapHeaderDirection.In" />、つまり、目的の受信者は、XML Web サービスだけです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次`MyWebService`XML Web サービスには、1 つを定義<xref:System.Web.Services.Protocols.SoapHeader>型の`MyHeader`します。 `Hello` XML Web サービス メソッドを指定する`MyHeader`invocate XML Web サービス メソッドに XML Web サービス メソッドと、クライアントに送信する必要があります。  
+  
+ [!code-cpp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberName">
+      <MemberSignature Language="C#" Value="public string MemberName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MemberName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーの内容を表す XML Web サービス クラスのメンバーを設定します。</summary>
+        <value>SOAP ヘッダーの内容を表す XML Web サービス クラスのメンバー。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスまたは XML Web サービス クライアントは、適用することで処理する必要がある SOAP ヘッダーを指定できます、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス クラスまたはプロキシ クラスで対応するメソッドの XML Web サービス メソッドにします。 派生した型の XML Web サービス クラスに、XML Web サービス メソッドの SOAP ヘッダーの内容を受信するためには、メンバーが追加される<xref:System.Web.Services.Protocols.SoapHeader>です。 XML Web サービス クライアントがから派生するプロキシ クラスにメンバーを追加する同様に、<xref:System.Web.Services.Protocols.SoapHeader>です。 <xref:System.Type>から派生<xref:System.Web.Services.Protocols.SoapHeader>SOAP ヘッダーの内容を表し、XML Web サービスまたは SOAP ヘッダーを受信する XML Web サービス クライアントの開発者が作成されます。 クラスを作成した後、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> 、XML Web サービス メソッドの SOAP ヘッダーの内容を受信するメンバーを指定する XML Web サービス クライアント プロキシ クラスの対応するメソッドに適用されることができます、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティです。  
+  
+ XML Web サービス メソッドは、XML Web サービス クラスまたは XML Web サービス プロキシ クラスに複数のメンバーを追加し、さらに複数を適用して複数の SOAP ヘッダーを受信できる<xref:System.Web.Services.Protocols.SoapHeaderAttribute>XML Web サービス メソッドへの属性です。  
+  
+ XML Web サービスの作成時に不明な SOAP ヘッダーを処理を受信して、次のいずれかのメンバーの種類を指定<xref:System.Web.Services.Protocols.SoapUnknownHeader>、<xref:System.Web.Services.Protocols.SoapHeader>またはいずれかのクラスの配列。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービスには、1 つを定義<xref:System.Web.Services.Protocols.SoapHeader>型の`MyHeader`します。 `Hello` XML Web サービス メソッドを指定します、`myHeader`メンバーとして、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティの内容を受信する`MyHeader`SOAP ヘッダーは、XML Web サービス メソッドに渡されます。  
+  
+ [!code-cpp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeaderAttribute.MemberName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeaderAttribute.MemberName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="public bool Required { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Required" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeaderAttribute.Required" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property will be removed from a future version. The presence of a particular header in a SOAP message is no longer enforced", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは廃止されており機能がありません。</summary>
+        <value><see cref="T:System.Boolean" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスに SOAP ヘッダーを送信することを確認するメンバーがで指定されていることを確認します、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティは`null`します。 場合は`null`、SOAP ヘッダーは送信されませんでした。  
+  
+ .NET Framework SDK のバージョン 1.0 で、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Required%2A>プロパティは、SOAP ヘッダーを理解し、受信者の XML Web サービスまたは XML Web サービス クライアントで処理する必要があるかどうかを示します。 受信者は、SOAP ヘッダーを処理できませんでした例外がスローされました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

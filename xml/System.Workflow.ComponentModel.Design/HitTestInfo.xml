@@ -1,0 +1,256 @@
+<Type Name="HitTestInfo" FullName="System.Workflow.ComponentModel.Design.HitTestInfo">
+  <TypeSignature Language="C#" Value="public class HitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HitTestInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.HitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> 内の指定された座標に位置する部分についての情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.HitTestInfo> クラスは、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.HitTest%2A> 内のどの部分をユーザーがクリックしたかを判断するために、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner> の <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> メソッドと組み合わせて使用されます。 <xref:System.Workflow.ComponentModel.Design.HitTestInfo> クラスには、クリックされた位置および関連付けられたデザイナーが格納されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HitTestInfo (System.Workflow.ComponentModel.Design.ActivityDesigner designer, System.Workflow.ComponentModel.Design.HitTestLocations location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ActivityDesigner designer, valuetype System.Workflow.ComponentModel.Design.HitTestLocations location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.HitTestInfo.#ctor(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Workflow.ComponentModel.Design.HitTestLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="location" Type="System.Workflow.ComponentModel.Design.HitTestLocations" />
+      </Parameters>
+      <Docs>
+        <param name="designer">関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="location">関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> 上のクリックされた位置。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> オブジェクトのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesigner AssociatedDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesigner AssociatedDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.AssociatedDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> クラスに関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> クラスに関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.HitTestInfo.AssociatedDesigner%2A> プロパティは、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner> オブジェクトに関連付けられた <xref:System.Workflow.ComponentModel.Design.HitTestInfo> への参照を格納します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> に関連付けられたデザイナーに関する拡張情報を参照するには、<xref:System.Workflow.ComponentModel.Design.HitTestInfo> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした領域の境界を返します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> オブジェクトに関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> を囲む四角形。<see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> オブジェクトがデザイナーに関連付けられていない場合は空の四角形。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この境界は画面上のヒットした領域を示し、通常は、関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> を囲む領域を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitLocation">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.HitTestLocations HitLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.HitTestLocations HitLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.HitLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした場所に関する情報を格納します。</summary>
+        <value>ヒットした領域を示す <see cref="T:System.Workflow.ComponentModel.Design.HitTestLocations" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのどの領域にヒットしたかを判断するには、<xref:System.Workflow.ComponentModel.Design.HitTestInfo.HitLocation%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapToIndex">
+      <MemberSignature Language="C#" Value="public virtual int MapToIndex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 MapToIndex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.HitTestInfo.MapToIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ヒットしたデザイナーのインデックスを返します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> がヒットしたデザイナーのインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どのデザイナーにヒットしたかを判断するには、<xref:System.Workflow.ComponentModel.Design.HitTestInfo.MapToIndex%2A> が返す値を使用します。 これは、挿入操作または削除操作に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nowhere">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.HitTestInfo Nowhere { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Workflow.ComponentModel.Design.HitTestInfo Nowhere" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.Nowhere" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> を取得します。</summary>
+        <value>空の <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の `Nowhere` を取得するには、<xref:System.Workflow.ComponentModel.Design.HitTestInfo> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectableObject">
+      <MemberSignature Language="C#" Value="public virtual object SelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.SelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした領域に関連付けられた選択可能オブジェクトを取得します。</summary>
+        <value>ヒットした領域に関連付けられた選択可能オブジェクト。デザイナーが <see langword="Nothing" /> に関連付けられていない場合は null 参照 (Visual Basic の場合は <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒットした領域に関連付けられた選択可能オブジェクトを取得するには、`SelectableObject` を使用します。 デザイナーが <xref:System.Workflow.ComponentModel.Design.HitTestInfo> に関連付けられている場合、<xref:System.Workflow.ComponentModel.Design.HitTestInfo.SelectableObject%2A> はデザイナーに関連付けられたアクティビティを返します。デザイナーが `Nothing` に関連付けられていない場合は null 参照 (<xref:System.Workflow.ComponentModel.Design.HitTestInfo>) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary UserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.HitTestInfo.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> に関連付けられたユーザー データを取得します。</summary>
+        <value>ユーザー データの新しいディクショナリ、または既存のユーザー データへの参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.HitTestInfo.UserData%2A> に関するユーザー情報を格納するには、<xref:System.Workflow.ComponentModel.Design.HitTestInfo> を使用します。 ユーザー データが格納されていない場合に <xref:System.Workflow.ComponentModel.Design.HitTestInfo.UserData%2A> を呼び出すと、使用するための新しい空のディクショナリが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

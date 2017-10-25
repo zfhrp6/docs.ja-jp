@@ -1,0 +1,21 @@
+<Namespace Name="System.Web.Security">
+  <Docs>
+    <summary><see cref="N:System.Web.Security" />名前空間には、セキュリティを実装する ASP.NET Web サーバー アプリケーションで使用されるクラスが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Membership>クラスは、ASP.NET アプリケーションでユーザーの資格情報の検証しパスワードなどのユーザー設定を管理、および電子メール アドレスを使用します。 <xref:System.Web.Security.Roles>クラスでは、Web アプリケーションのロールに割り当てられているユーザーのグループに基づくアプリケーションの承認を管理することができます。  
+  
+ 両方の<xref:System.Web.Security.Membership>クラスおよび<xref:System.Web.Security.Roles>メンバーシップとロールの情報を取得するアプリケーションのデータ ストアにアクセスするクラスのプロバイダーでの作業のクラスです。 メンバーシップとロールの詳細についてを使用して Microsoft SQL Server データベースに格納できる、<xref:System.Web.Security.SqlMembershipProvider>と<xref:System.Web.Security.SqlRoleProvider>; クラスを使用して、Active Directory で、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>と<xref:System.Web.Security.AuthorizationStoreRoleProvider>クラス、またはカスタム データ ソースの実装を使用して、<xref:System.Web.Security.MembershipProvider>と<xref:System.Web.Security.RoleProvider>クラスです。  
+  
+ ASP.NET メンバーシップの使用を構成する、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)です。 ASP.NET がのインスタンスを作成するメンバーシップを使用してアプリケーションにアクセスする場合、<xref:System.Web.Security.Membership>メンバーシップ情報のクエリに使用できるクラスです。 プロバイダー固有の実装、<xref:System.Web.Security.MembershipUser>クラスには、ページにアクセスするユーザーに関する情報が含まれています。 カスタム実装を作成することができます、<xref:System.Web.Security.MembershipUser>アプリケーションのクラスです。  
+  
+ 使用して ASP.NET のロールを構成する、 [roleManager 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b0f6078-4824-4fc8-a5ee-4ae00ee3ceec)です。 ASP.NET のインスタンスを作成する、<xref:System.Web.Security.Roles>現在のユーザー ロールのメンバーシップに関する情報を含むクラスです。  
+  
+ ASP.NET との対話をサーバー コントロールを提供する、<xref:System.Web.Security.Membership>クラスおよび<xref:System.Web.Security.Roles>クラスです。 <xref:System.Web.UI.WebControls.Login>、<xref:System.Web.UI.WebControls.CreateUserWizard>と<xref:System.Web.UI.WebControls.ChangePassword>コントロールで動作、<xref:System.Web.Security.Membership>を簡単に認証の Web アプリケーションを作成するクラスと<xref:System.Web.UI.WebControls.LoginView>コントロールでは、ロール固有のテンプレートを使用して特定のユーザー グループ用の Web ページをカスタマイズします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

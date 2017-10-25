@@ -1,0 +1,111 @@
+<Type Name="ListSourceHelper" FullName="System.Web.UI.ListSourceHelper">
+  <TypeSignature Language="C#" Value="public static class ListSourceHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ListSourceHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ListSourceHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって定義されたメンバーを実装するときに、データ ソース コントロールによって使用される、<see cref="T:System.ComponentModel.IListSource" />インターフェイスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ListSourceHelper>クラスは、ユーティリティ クラスの実装を簡単に提供される、<xref:System.ComponentModel.IListSource>データ ソース コントロールによってインターフェイスです。 データ ソース コントロールを実装する、<xref:System.Web.UI.IDataSource>インターフェイスしますが、拡張しない、<xref:System.Web.UI.DataSourceControl>クラスは、静的なを使用することができます<xref:System.Web.UI.ListSourceHelper>によって定義されたメソッドの実装内のメソッド、<xref:System.ComponentModel.IListSource>インターフェイスです。 データ ソースから拡張コントロール、<xref:System.Web.UI.DataSourceControl>クラスが自動的にこれらのメソッドの実装を継承します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソースを実装するクラスのデザイン パターンを示して、<xref:System.ComponentModel.IListSource>メソッドです。  
+  
+ [!code-csharp[Samples.AspNet.Controls.IListSourceHelper#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/CS/somedatasource.cs#2)]
+ [!code-vb[Samples.AspNet.Controls.IListSourceHelper#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/VB/somedatasource.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContainsListCollection">
+      <MemberSignature Language="C#" Value="public static bool ContainsListCollection (System.Web.UI.IDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ContainsListCollection(class System.Web.UI.IDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ListSourceHelper.ContainsListCollection(System.Web.UI.IDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.IDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.Web.UI.IDataSource" />関連付けられているデータ ソース ビュー オブジェクトをテストするデータ ソース コントロールを指定します。</param>
+        <summary>指定されたデータ ソース コントロールがデータ ソース ビュー オブジェクトのコレクションを格納するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />データ ソース コントロールには、データ ソース ビュー オブジェクトのコレクションが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装でこのメソッドを使用して、<xref:System.ComponentModel.IListSource.ContainsListCollection%2A>プロパティ、データ ソース コントロールへの参照を渡します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソースを実装するクラスのデザイン パターンを示して、<xref:System.ComponentModel.IListSource>メソッドです。 <xref:System.ComponentModel.IListSource.ContainsListCollection%2A>プロパティを呼び出し、静的な<xref:System.Web.UI.ListSourceHelper.ContainsListCollection%2A>メソッドです。  
+  
+ [!code-csharp[Samples.AspNet.Controls.IListSourceHelper#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/CS/somedatasource.cs#3)]
+ [!code-vb[Samples.AspNet.Controls.IListSourceHelper#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/VB/somedatasource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetList">
+      <MemberSignature Language="C#" Value="public static System.Collections.IList GetList (System.Web.UI.IDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IList GetList(class System.Web.UI.IDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ListSourceHelper.GetList(System.Web.UI.IDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.IDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.Web.UI.IDataSource" />を含む 1 つ以上の関連付けられている<see cref="T:System.Web.UI.DataSourceView" />、オブジェクトへの呼び出しによって取得される<see cref="M:System.Web.UI.DataSourceControl.GetViewNames" />です。</param>
+        <summary>取得、<see cref="T:System.Collections.IList" />データ ソース オブジェクトのコレクション。</summary>
+        <returns><see cref="T:System.Collections.IList" />いずれかの<see cref="T:System.Web.UI.IDataSource" />場合は、 <see cref="T:System.Web.UI.IDataSource" /> 1 つ以上の関連付けられている<see cref="T:System.Web.UI.DataSourceView" />オブジェクト。 それ以外の場合を返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装でこのメソッドを使用して、<xref:System.Web.UI.DataSourceControl.System%23ComponentModel%23IListSource%23GetList%2A>メソッド、データ ソース コントロールへの参照を渡します。  
+  
+ <xref:System.Collections.IList>実装を返されるオブジェクト、<xref:System.ComponentModel.ITypedList>インターフェイスです。 使用することができます、<xref:System.ComponentModel.ITypedList.GetItemProperties%2A>の一覧を取得する方法を<xref:System.ComponentModel.PropertyDescriptor>記述子に対応する、<xref:System.Web.UI.DataSourceView>一覧から、データ ソース コントロールに関連付けられた名前。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソースを実装するクラスのデザイン パターンを示して、<xref:System.ComponentModel.IListSource>メソッドです。 <xref:System.ComponentModel.IListSource.GetList%2A>メソッドを呼び出す、静的な<xref:System.Web.UI.ListSourceHelper.GetList%2A>メソッドです。  
+  
+ [!code-csharp[Samples.AspNet.Controls.IListSourceHelper#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/CS/somedatasource.cs#3)]
+ [!code-vb[Samples.AspNet.Controls.IListSourceHelper#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Controls.IListSourceHelper/VB/somedatasource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

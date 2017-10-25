@@ -1,0 +1,233 @@
+<Type Name="XmlLanguage" FullName="System.Windows.Markup.XmlLanguage">
+  <TypeSignature Language="C#" Value="public class XmlLanguage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlLanguage extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XmlLanguage" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.XmlLanguageConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XAML マークアップで使用するための言語タグを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 言語タグ可能性がありますか、登録されていることがない可能性があります<xref:System.Globalization.CultureInfo>XAML が解釈される、システムに存在します。  
+  
+ このクラスを使用して表された値を処理するのに役立ちます`xml:lang`XML 内です。  
+  
+ 2 桁の形式で、またはハイフンでつながれた言語とロケールの形式で、言語タグを指定できます。 参照してください[RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454)です。  
+  
+ XML 仕様が可能ですが、空の文字列の`xml:lang`は RFC 3066; で許可されていませんが、そのため、<xref:System.Windows.Markup.XmlLanguage>許可の入力""(空の属性の文字列)。 既定で構築される<xref:System.Windows.Markup.XmlLanguage>で構築されるように動作""(空の文字列)。  
+  
+<a name="xamlAttributeUsage_XmlLanguage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="prefix"/>  
+- or -  
+<object property="prefix-subcode"/>  
+```  
+  
+<a name="xamlValues_XmlLanguage"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *プレフィックス*  
+ ISO 639-1 言語のプレフィックス値を使用して言語プレフィックスです。 たとえば、"en"や"zh"などです。 大文字の値が受け入れられ、小文字に変換します。 空の属性もあります""です。  
+  
+ *サブコード*  
+ 指定した場合は、1 つのハイフンで前しなければなりません。 その後、サブコード RFC 3066 で定義されています。 最も一般的な使用状況と正常にマップする可能性がある、 <xref:System.Globalization.CultureInfo>、国または地域の指定はなど、"-us"または"-hk"です。 大文字の値が受け入れられ、小文字に変換します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Markup.XmlLanguage Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Markup.XmlLanguage Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlLanguage.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XmlLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>静的なを取得<see cref="T:System.Windows.Markup.XmlLanguage" />インスタンスによって作成された、<see cref="M:System.Windows.Markup.XmlLanguage.GetLanguage(System.String)" />空の属性の文字列としては、言語タグです。</summary>
+        <value>空の言語タグ バージョン<see cref="T:System.Windows.Markup.XmlLanguage" />、比較演算で使用するためです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値が有効では、<xref:System.Windows.Markup.XmlLanguage>に対応する<xref:System.String.Empty?displayProperty=nameWithType>が<xref:System.Windows.Markup.XmlLanguage.GetEquivalentCulture%2A>結果は<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEquivalentCulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo GetEquivalentCulture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Globalization.CultureInfo GetEquivalentCulture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlLanguage.GetEquivalentCulture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な対応を返す<see cref="T:System.Globalization.CultureInfo" />この<see cref="T:System.Windows.Markup.XmlLanguage" />、場合にのみ、このような<see cref="T:System.Globalization.CultureInfo" />に登録されて、<see cref="P:System.Windows.Markup.XmlLanguage.IetfLanguageTag" />の値<see cref="T:System.Windows.Markup.XmlLanguage" /></summary>
+        <returns>A<see cref="T:System.Globalization.CultureInfo" />のローカリゼーション グローバリゼーション API 呼び出しを受け取るその型を引数として使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 該当するショートカットはありません場合、<xref:System.Globalization.CultureInfo>生成された、このメソッドは例外を発生させます。 例外を処理しない場合は、呼び出す<xref:System.Windows.Markup.XmlLanguage.GetSpecificCulture%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">登録されているいいえ<see cref="T:System.Globalization.CultureInfo" />を指定した<see cref="T:System.Windows.Markup.XmlLanguage" />への呼び出しによって決定されるが、存在する<see cref="M:System.Globalization.CultureInfo.GetCultureInfoByIetfLanguageTag(System.String)" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLanguage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Markup.XmlLanguage GetLanguage (string ietfLanguageTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Markup.XmlLanguage GetLanguage(string ietfLanguageTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlLanguage.GetLanguage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XmlLanguage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ietfLanguageTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ietfLanguageTag">RFC 3066 言語識別文字列、または空の文字列の場合。</param>
+        <summary>返します、 <see cref="T:System.Windows.Markup.XmlLanguage" /> RFC 3066 ごとに、言語を表す文字列に基づいて、インスタンス。</summary>
+        <returns>新しい<see cref="T:System.Windows.Markup.XmlLanguage" />として指定された文字列とその<see cref="P:System.Windows.Markup.XmlLanguage.IetfLanguageTag" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、事実上、コンス トラクターです。  
+  
+ 言語識別文字列が空であるかに準拠する必要があります[RFC 3066](http://go.microsoft.com/fwlink/?LinkId=132454)規則。  
+  
+-   最初のサブタグがのみ成ります[!INCLUDE[TLA#tla_ascii](~/includes/tlasharptla-ascii-md.md)]文字です。  
+  
+-   サブタグを追加する必要がありますで構成されている[!INCLUDE[TLA#tla_ascii](~/includes/tlasharptla-ascii-md.md)]文字または数字。  
+  
+-   サブタグは、1 つのハイフンで区切られます。  
+  
+-   サブタグは、すべては、1 ~ 8 文字にする必要があります。  
+  
+-   先頭または末尾にハイフンは許可されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ietfLanguageTag" />パラメーターを null にすることはできません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ietfLanguageTag" />パラメーターは、空でないをしましたが、RFC 3066 で指定されている構文に準拠していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpecificCulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo GetSpecificCulture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Globalization.CultureInfo GetSpecificCulture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlLanguage.GetSpecificCulture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、密接に関連するニュートラルでない<see cref="T:System.Globalization.CultureInfo" />この<see cref="T:System.Windows.Markup.XmlLanguage" />です。</summary>
+        <returns>A<see cref="T:System.Globalization.CultureInfo" />ローカリゼーション グローバリゼーションに使用できる[!INCLUDE[TLA2#tla_api](~/includes/tla2sharptla-api-md.md)]を受け取るその型を引数として呼び出します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Windows.Markup.XmlLanguage>と等しい<xref:System.Windows.Markup.XmlLanguage.Empty%2A?displayProperty=nameWithType>このメソッドは戻ります<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。  
+  
+ このメソッドは、登録されている検索<xref:System.Globalization.CultureInfo>これの最も長い可能なプレフィックスに一致する<xref:System.Windows.Markup.XmlLanguage>です。 登録されているかどうかは<xref:System.Globalization.CultureInfo>がニュートラル (<xref:System.Globalization.CultureInfo.IsNeutralCulture%2A>は`true`)、このメソッドの呼び出しに依存し、 <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A> 、neutral からマップする<xref:System.Globalization.CultureInfo>特定の 1 つにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ありません関連するニュートラルでない<see cref="T:System.Globalization.CultureInfo" />が現在の登録されている<see cref="T:System.Windows.Markup.XmlLanguage" /><see cref="P:System.Windows.Markup.XmlLanguage.IetfLanguageTag" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IetfLanguageTag">
+      <MemberSignature Language="C#" Value="public string IetfLanguageTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IetfLanguageTag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlLanguage.IetfLanguageTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語タグの文字列形式を取得します。</summary>
+        <value>言語タグの文字列形式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、最初に指定された文字列の正規化されたバージョンを返す可能性がありますに提供される<xref:System.Windows.Markup.XmlLanguage.GetLanguage%2A>です。  
+  
+ このプロパティが返す可能性がありますも<xref:System.String.Empty>に空の文字列が提供されている場合<xref:System.Windows.Markup.XmlLanguage.GetLanguage%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlLanguage.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.String" /> を表す <see cref="T:System.Windows.Markup.XmlLanguage" /> を返します </summary>
+        <returns>現在の <see cref="T:System.Windows.Markup.XmlLanguage" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを返します、 <xref:System.Windows.Markup.XmlLanguage.IetfLanguageTag%2A> 、現在の<xref:System.Windows.Markup.XmlLanguage>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,481 @@
+<Type Name="SocketTaskExtensions" FullName="System.Net.Sockets.SocketTaskExtensions">
+  <TypeSignature Language="C#" Value="public static class SocketTaskExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SocketTaskExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.SocketTaskExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスには <see cref="T:System.Net.Sockets.Socket" /> クラスへの拡張メソッドが含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceptAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt; AcceptAsync (this System.Net.Sockets.Socket socket);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.Sockets.Socket&gt; AcceptAsync(class System.Net.Sockets.Socket socket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.AcceptAsync(System.Net.Sockets.Socket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="socket">接続をリッスンするソケット。</param>
+        <summary>ソケットでの受信接続の試行を受け入れる非同期操作を実行します。</summary>
+        <returns>リモート ホストとの通信を処理する <see cref="T:System.Net.Sockets.Socket" /> で完了する非同期タスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt; AcceptAsync (this System.Net.Sockets.Socket socket, System.Net.Sockets.Socket acceptSocket);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.Sockets.Socket&gt; AcceptAsync(class System.Net.Sockets.Socket socket, class System.Net.Sockets.Socket acceptSocket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.AcceptAsync(System.Net.Sockets.Socket,System.Net.Sockets.Socket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="acceptSocket" Type="System.Net.Sockets.Socket" />
+      </Parameters>
+      <Docs>
+        <param name="socket">受信接続をリッスンするソケット。</param>
+        <param name="acceptSocket">受け入れた <see cref="T:System.Net.Sockets.Socket" /> オブジェクト。 この値は <see langword="null" /> の場合もあります。</param>
+        <summary>ソケットでの受信接続の試行を受け入れる非同期操作を実行します。</summary>
+        <returns>リモート ホストとの通信を処理する <see cref="T:System.Net.Sockets.Socket" /> で完了する非同期タスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task ConnectAsync (this System.Net.Sockets.Socket socket, System.Net.EndPoint remoteEP);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task ConnectAsync(class System.Net.Sockets.Socket socket, class System.Net.EndPoint remoteEP) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ConnectAsync(System.Net.Sockets.Socket,System.Net.EndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="remoteEP" Type="System.Net.EndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="socket">接続の確立に使用されるソケット。</param>
+        <param name="remoteEP">リモート デバイスを表すエンドポイント。</param>
+        <summary>リモート ホストへの接続を確立します。</summary>
+        <returns>非同期タスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task ConnectAsync (this System.Net.Sockets.Socket socket, System.Net.IPAddress address, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task ConnectAsync(class System.Net.Sockets.Socket socket, class System.Net.IPAddress address, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ConnectAsync(System.Net.Sockets.Socket,System.Net.IPAddress,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="socket">接続操作を実行するソケット。</param>
+        <param name="address">リモート ホストの IP アドレス。</param>
+        <param name="port">リモート ホストのポート番号。</param>
+        <summary>リモート ホストへの接続を確立します。 ホストは、IP アドレスとポート番号で指定されます。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task ConnectAsync (this System.Net.Sockets.Socket socket, System.Net.IPAddress[] addresses, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task ConnectAsync(class System.Net.Sockets.Socket socket, class System.Net.IPAddress[] addresses, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ConnectAsync(System.Net.Sockets.Socket,System.Net.IPAddress[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="addresses" Type="System.Net.IPAddress[]" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="socket">接続操作を実行するソケット。</param>
+        <param name="addresses">リモート ホストの IP アドレス。</param>
+        <param name="port">リモート ホストのポート番号。</param>
+        <summary>リモート ホストへの接続を確立します。 ホストは、IP アドレスの配列とポート番号で指定されます。</summary>
+        <returns>非同期の接続操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task ConnectAsync (this System.Net.Sockets.Socket socket, string host, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task ConnectAsync(class System.Net.Sockets.Socket socket, string host, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ConnectAsync(System.Net.Sockets.Socket,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="socket">接続操作を実行するソケット。</param>
+        <param name="host">リモート ホストの名前。</param>
+        <param name="port">リモート ホストのポート番号。</param>
+        <summary>リモート ホストへの接続を確立します。 ホストはホスト名とポート番号で指定されます。</summary>
+        <returns>非同期タスクを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;int&gt; ReceiveAsync (this System.Net.Sockets.Socket socket, ArraySegment&lt;byte&gt; buffer, System.Net.Sockets.SocketFlags socketFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;int32&gt; ReceiveAsync(class System.Net.Sockets.Socket socket, valuetype System.ArraySegment`1&lt;unsigned int8&gt; buffer, valuetype System.Net.Sockets.SocketFlags socketFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ReceiveAsync(System.Net.Sockets.Socket,System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+      </Parameters>
+      <Docs>
+        <param name="socket">受信操作を実行するソケット。</param>
+        <param name="buffer">受信したデータの格納場所である配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>接続されたソケットからデータを受信します。</summary>
+        <returns>非同期の受信操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、受信バイト数が含まれます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;int&gt; ReceiveAsync (this System.Net.Sockets.Socket socket, System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; buffers, System.Net.Sockets.SocketFlags socketFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;int32&gt; ReceiveAsync(class System.Net.Sockets.Socket socket, class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; buffers, valuetype System.Net.Sockets.SocketFlags socketFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ReceiveAsync(System.Net.Sockets.Socket,System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Net.Sockets.SocketFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffers" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+      </Parameters>
+      <Docs>
+        <param name="socket">受信操作を実行するソケット。</param>
+        <param name="buffers">受信したデータの格納場所である配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>接続されたソケットからデータを受信します。</summary>
+        <returns>非同期の受信操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、受信バイト数が含まれます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveFromAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.Sockets.SocketReceiveFromResult&gt; ReceiveFromAsync (this System.Net.Sockets.Socket socket, ArraySegment&lt;byte&gt; buffer, System.Net.Sockets.SocketFlags socketFlags, System.Net.EndPoint remoteEndPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;valuetype System.Net.Sockets.SocketReceiveFromResult&gt; ReceiveFromAsync(class System.Net.Sockets.Socket socket, valuetype System.ArraySegment`1&lt;unsigned int8&gt; buffer, valuetype System.Net.Sockets.SocketFlags socketFlags, class System.Net.EndPoint remoteEndPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ReceiveFromAsync(System.Net.Sockets.Socket,System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.SocketReceiveFromResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+        <Parameter Name="remoteEndPoint" Type="System.Net.EndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="socket">ReceiveFrom 操作を実行するソケット。</param>
+        <param name="buffer">受信したデータの格納場所である、Byte 型の配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="remoteEndPoint">データのソースを表すエンドポイント。</param>
+        <summary>指定したネットワーク デバイスからデータを受信します。</summary>
+        <returns>SocketReceiveFromResult 構造体と共に完了する非同期タスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveMessageFromAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.Sockets.SocketReceiveMessageFromResult&gt; ReceiveMessageFromAsync (this System.Net.Sockets.Socket socket, ArraySegment&lt;byte&gt; buffer, System.Net.Sockets.SocketFlags socketFlags, System.Net.EndPoint remoteEndPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;valuetype System.Net.Sockets.SocketReceiveMessageFromResult&gt; ReceiveMessageFromAsync(class System.Net.Sockets.Socket socket, valuetype System.ArraySegment`1&lt;unsigned int8&gt; buffer, valuetype System.Net.Sockets.SocketFlags socketFlags, class System.Net.EndPoint remoteEndPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.ReceiveMessageFromAsync(System.Net.Sockets.Socket,System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.SocketReceiveMessageFromResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+        <Parameter Name="remoteEndPoint" Type="System.Net.EndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="socket">操作を実行するソケット。</param>
+        <param name="buffer">受信したデータの格納場所である配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="remoteEndPoint">リモート サーバーを表す <see cref="T:System.Net.EndPoint" />。</param>
+        <summary>指定した <see cref="T:System.Net.Sockets.SocketFlags" /> を使用して、指定したバイト数のデータをデータ バッファー内の指定した位置で受信して、エンドポイントおよびパケット情報を格納します。</summary>
+        <returns><see cref="T:System.Net.Sockets.SocketReceiveMessageFromResult" /> 構造体と共に完了する非同期タスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;int&gt; SendAsync (this System.Net.Sockets.Socket socket, ArraySegment&lt;byte&gt; buffer, System.Net.Sockets.SocketFlags socketFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;int32&gt; SendAsync(class System.Net.Sockets.Socket socket, valuetype System.ArraySegment`1&lt;unsigned int8&gt; buffer, valuetype System.Net.Sockets.SocketFlags socketFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.SendAsync(System.Net.Sockets.Socket,System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+      </Parameters>
+      <Docs>
+        <param name="socket">操作を実行するソケット。</param>
+        <param name="buffer">送信するデータを含む Byte 型の配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>接続されたソケットにデータを送信します。</summary>
+        <returns>操作が成功した場合に、ソケットに送信されたバイト数を示して完了する非同期タスク。 それ以外の場合、タスクは無効なソケット エラーを示して完了します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;int&gt; SendAsync (this System.Net.Sockets.Socket socket, System.Collections.Generic.IList&lt;ArraySegment&lt;byte&gt;&gt; buffers, System.Net.Sockets.SocketFlags socketFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;int32&gt; SendAsync(class System.Net.Sockets.Socket socket, class System.Collections.Generic.IList`1&lt;valuetype System.ArraySegment`1&lt;unsigned int8&gt;&gt; buffers, valuetype System.Net.Sockets.SocketFlags socketFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.SendAsync(System.Net.Sockets.Socket,System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Net.Sockets.SocketFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffers" Type="System.Collections.Generic.IList&lt;System.ArraySegment&lt;System.Byte&gt;&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+      </Parameters>
+      <Docs>
+        <param name="socket">操作を実行するソケット。</param>
+        <param name="buffers">送信するデータを格納する配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>接続されたソケットにデータを送信します。</summary>
+        <returns>操作が成功した場合に、ソケットに送信されたバイト数を示して完了する非同期タスク。 それ以外の場合、タスクは無効なソケット エラーを示して完了します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendToAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;int&gt; SendToAsync (this System.Net.Sockets.Socket socket, ArraySegment&lt;byte&gt; buffer, System.Net.Sockets.SocketFlags socketFlags, System.Net.EndPoint remoteEP);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;int32&gt; SendToAsync(class System.Net.Sockets.Socket socket, valuetype System.ArraySegment`1&lt;unsigned int8&gt; buffer, valuetype System.Net.Sockets.SocketFlags socketFlags, class System.Net.EndPoint remoteEP) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.SocketTaskExtensions.SendToAsync(System.Net.Sockets.Socket,System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socket" Type="System.Net.Sockets.Socket" RefType="this" />
+        <Parameter Name="buffer" Type="System.ArraySegment&lt;System.Byte&gt;" />
+        <Parameter Name="socketFlags" Type="System.Net.Sockets.SocketFlags" />
+        <Parameter Name="remoteEP" Type="System.Net.EndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="socket">操作を実行するソケット。</param>
+        <param name="buffer">送信するデータを格納する配列。</param>
+        <param name="socketFlags"><see cref="T:System.Net.Sockets.SocketFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="remoteEP">リモート デバイスを表す <see cref="T:System.Net.EndPoint" />。</param>
+        <summary>特定のリモート ホストにデータを非同期的に送信します。</summary>
+        <returns>操作が成功した場合に、送信されたバイト数を示して完了する非同期タスク。 それ以外の場合、タスクは無効なソケット エラーを示して完了します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

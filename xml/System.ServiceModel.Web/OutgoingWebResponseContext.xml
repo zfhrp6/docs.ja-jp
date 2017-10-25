@@ -1,0 +1,361 @@
+<Type Name="OutgoingWebResponseContext" FullName="System.ServiceModel.Web.OutgoingWebResponseContext">
+  <TypeSignature Language="C#" Value="public class OutgoingWebResponseContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OutgoingWebResponseContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Web.OutgoingWebResponseContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>送信 Web 応答のコンテキストにプログラムでアクセスできるようにします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BindingWriteEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding BindingWriteEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding BindingWriteEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.BindingWriteEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングに設定されたエンコーディングを取得します。</summary>
+        <value>エンコーディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public long ContentLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答からコンテンツ長のヘッダーを取得して設定します。</summary>
+        <value>送信 Web 応答のコンテンツ長のヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答からコンテンツ タイプのヘッダーを取得して設定します。</summary>
+        <value>送信 Web 応答のコンテンツ タイプのヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ETag">
+      <MemberSignature Language="C#" Value="public string ETag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ETag" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.ETag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答から etag ヘッダーを取得して設定します。</summary>
+        <value>送信 Web 応答の etag ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.ServiceModel.Web.WebMessageFormat&gt; Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.ServiceModel.Web.WebMessageFormat&gt; Format" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.ServiceModel.Web.WebMessageFormat&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web メッセージ形式を取得または設定します。</summary>
+        <value>Web メッセージ形式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答からヘッダーを取得します。</summary>
+        <value>送信 Web 応答のヘッダーを含む <see cref="T:System.Net.WebHeaderCollection" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModified">
+      <MemberSignature Language="C#" Value="public DateTime LastModified { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastModified" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.LastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答の最後に変更されたヘッダーを取得して設定します。</summary>
+        <value>要求されたリソースが最後に変更された時間を含む <see cref="T:System.DateTime" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public string Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Location" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答からロケーション ヘッダーを取得して設定します。</summary>
+        <value>送信 Web 応答のロケーション ヘッダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETag">
+      <MemberSignature Language="C#" Value="public void SetETag (Guid entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETag(valuetype System.Guid entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">設定する ETag。</param>
+        <summary>指定した ETag を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETag">
+      <MemberSignature Language="C#" Value="public void SetETag (int entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETag(int32 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">設定する ETag。</param>
+        <summary>指定した ETag を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETag">
+      <MemberSignature Language="C#" Value="public void SetETag (long entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETag(int64 entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">設定する ETag。</param>
+        <summary>指定した ETag を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetETag">
+      <MemberSignature Language="C#" Value="public void SetETag (string entityTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetETag(string entityTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetETag(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entityTag">設定する ETag。</param>
+        <summary>指定した ETag を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetStatusAsCreated">
+      <MemberSignature Language="C#" Value="public void SetStatusAsCreated (Uri locationUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetStatusAsCreated(class System.Uri locationUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetStatusAsCreated(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="locationUri">要求されたリソースに対する <see cref="T:System.Uri" /> インスタンス。</param>
+        <summary>送信 Web 応答の HTTP ステータス コードを <see cref="F:System.Net.HttpStatusCode.Created" /> に設定し、Location ヘッダーを指定された URI に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetStatusAsNotFound">
+      <MemberSignature Language="C#" Value="public void SetStatusAsNotFound ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetStatusAsNotFound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetStatusAsNotFound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>送信 Web 応答の HTTP ステータス コードを <see cref="F:System.Net.HttpStatusCode.NotFound" /> に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetStatusAsNotFound">
+      <MemberSignature Language="C#" Value="public void SetStatusAsNotFound (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetStatusAsNotFound(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Web.OutgoingWebResponseContext.SetStatusAsNotFound(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">ステータスの説明。</param>
+        <summary>送信 Web 応答の HTTP ステータス コードを、指定された説明と共に <see cref="F:System.Net.HttpStatusCode.NotFound" /> に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public System.Net.HttpStatusCode StatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.HttpStatusCode StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答のステータス コードを取得して設定します。</summary>
+        <value>送信 Web 応答のステータス コードを含む <see cref="T:System.Net.HttpStatusCode" /> インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusDescription">
+      <MemberSignature Language="C#" Value="public string StatusDescription { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.StatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信 Web 応答のステータスの説明を取得して設定します。</summary>
+        <value>送信 Web 応答のステータスの説明。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressEntityBody">
+      <MemberSignature Language="C#" Value="public bool SuppressEntityBody { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressEntityBody" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Web.OutgoingWebResponseContext.SuppressEntityBody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が通常は応答のエンティティ本体に書き込まれるデータを省略し、空の応答が返されるようにするかどうかを示す値を取得して設定します。</summary>
+        <value><see langword="true" /> の場合は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] が通常は応答のエンティティ本体に書き込まれるデータを省略し、空の応答が返されるようにします。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

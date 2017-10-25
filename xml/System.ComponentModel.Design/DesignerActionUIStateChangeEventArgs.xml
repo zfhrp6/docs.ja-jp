@@ -1,0 +1,103 @@
+<Type Name="DesignerActionUIStateChangeEventArgs" FullName="System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs">
+  <TypeSignature Language="C#" Value="public class DesignerActionUIStateChangeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerActionUIStateChangeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.DesignerActionUIService.DesignerActionUIStateChange" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.Design.DesignerActionUIService.DesignerActionUIStateChange>イベント スマート タグ パネルを表示または非表示のときに発生します。 パネルを直接が代わりに、このイベントは生成されません、<xref:System.ComponentModel.Design.DesignerActionUIService>場合にクラス、<xref:System.ComponentModel.Design.DesignerActionUIService.ShowUI%2A>と<xref:System.ComponentModel.Design.DesignerActionUIService.HideUI%2A>メソッドが実行されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionUIStateChangeEventArgs (object relatedObject, System.ComponentModel.Design.DesignerActionUIStateChangeType changeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object relatedObject, valuetype System.ComponentModel.Design.DesignerActionUIStateChangeType changeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs.#ctor(System.Object,System.ComponentModel.Design.DesignerActionUIStateChangeType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relatedObject" Type="System.Object" />
+        <Parameter Name="changeType" Type="System.ComponentModel.Design.DesignerActionUIStateChangeType" />
+      </Parameters>
+      <Docs>
+        <param name="relatedObject">パネルに関連付けられているオブジェクト。</param>
+        <param name="changeType">パネルがされているかどうかを指定する値を表示または非表示にします。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント、`relatedObject`パラメーターは常に参照、<xref:System.ComponentModel.Component?displayProperty=nameWithType>パネルが関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerActionUIStateChangeType ChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Design.DesignerActionUIStateChangeType ChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs.ChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionUIStateChangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示または非表示されているが、スマート タグ パネルかどうかを示すフラグを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerActionUIStateChangeType" />パネルの状態を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによって、パネルが隠ぺいされているかどうか、<xref:System.ComponentModel.Design.DesignerActionUIService.HideUI%2A>メソッドでは、このプロパティの値を持つ<xref:System.ComponentModel.Design.DesignerActionUIStateChangeType.Hide>します。 呼び出すことによって、パネルが表示されているかどうかは<xref:System.ComponentModel.Design.DesignerActionUIService.ShowUI%2A>、このプロパティの値を持つ<xref:System.ComponentModel.Design.DesignerActionUIStateChangeType.Show>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedObject">
+      <MemberSignature Language="C#" Value="public object RelatedObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object RelatedObject" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs.RelatedObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スマート タグ パネルに関連付けられているオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />スマート タグ パネルに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs.RelatedObject%2A>プロパティにより、プログラマはオブジェクトのインスタンスに関連付ける、<xref:System.ComponentModel.Design.DesignerActionUIStateChangeEventArgs>クラスです。 このオブジェクトを処理するメソッドを使用できますが、<xref:System.ComponentModel.Design.DesignerActionUIService.DesignerActionUIStateChange>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

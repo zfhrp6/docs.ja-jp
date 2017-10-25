@@ -1,0 +1,308 @@
+<Type Name="RSAParameters" FullName="System.Security.Cryptography.RSAParameters">
+  <TypeSignature Language="C#" Value="public struct RSAParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit RSAParameters extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RSAParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの標準のパラメーターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.RSA>クラスが公開する<xref:System.Security.Cryptography.RSA.ExportParameters%2A>メソッドの形式で生の RSA キーを取得することができます、<xref:System.Security.Cryptography.RSAParameters>構造体。 この構造体の内容を理解する方法に関する知識を必要と<xref:System.Security.Cryptography.RSA>アルゴリズムの動作です。 次のセクションでは、アルゴリズムが簡単にについて説明します。  
+  
+## <a name="rsa-algorithm"></a>RSA アルゴリズム  
+ キー ペアを生成するには、まず次の 2 つの大きな素数 p と q をという名前を作成します。 これらの数値を乗算し、結果は n を呼び出されます。 P と q いるため両方素数、n は 1、p、q、n の唯一の要素です。  
+  
+ N より小さい数字だけを考える場合は n には、数値のカウントがあるない要因に共通 n、equals (p - 1)(q-1) です。  
+  
+ ここでは計算した値に素数値 e を選択します。 公開キーは、今すぐ {e、n} として表されます。  
+  
+ 秘密キーを作成するには、d で、数値を計算する必要がありますになるよう (d)(e) mod (p - 1)(q-1) = 1 です。 秘密キーをここでは、ユークリッド アルゴリズムに従って {d、n}。  
+  
+ 暗号化テキスト c m をプレーン テキストの暗号化は c として定義されて = (m ^ e) mod n です。 M として定義し、復号化 = (c ^ d) mod n です。  
+  
+## <a name="summary-of-fields"></a>フィールドの概要  
+ セクションの A.1.2、 [PKCS #1: RSA 暗号化標準](http://go.microsoft.com/fwlink/?LinkId=113155)RSA Laboratories の web サイトが RSA 秘密キーの形式を定義します。  
+  
+ 次の表のフィールド、<xref:System.Security.Cryptography.RSAParameters>構造体。 A.1.2 セクションで、対応するフィールドを提供する 3 番目の列の[PKCS #1: RSA 暗号化標準](http://go.microsoft.com/fwlink/?LinkId=113155)です。  
+  
+|<xref:System.Security.Cryptography.RSAParameters> のフィールド|次の値を含む|PKCS #1 の対応するフィールド|  
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|----------------------------------|  
+|<xref:System.Security.Cryptography.RSAParameters.D>|d、プライベートの指数|privateExponent|  
+|<xref:System.Security.Cryptography.RSAParameters.DP>|d mod (p - 1)|exponent1|  
+|<xref:System.Security.Cryptography.RSAParameters.DQ>|d mod (q - 1)|exponent2|  
+|<xref:System.Security.Cryptography.RSAParameters.Exponent>|e、パブリックの指数|publicExponent|  
+|<xref:System.Security.Cryptography.RSAParameters.InverseQ>|(InverseQ)(q) = 1 の mod p|係数|  
+|<xref:System.Security.Cryptography.RSAParameters.Modulus>|n|modulus|  
+|<xref:System.Security.Cryptography.RSAParameters.P>|p|prime1|  
+|<xref:System.Security.Cryptography.RSAParameters.Q>|q|prime2|  
+  
+ RSA のセキュリティは、指定されたパブリック キー {e, n}、されていないことを直接または p と q を n をファクタリングする d を計算する計算上不可能ファクトから派生します。 したがって、d、p、q に関連するキーの一部保持する必要がシークレット。 呼び出す場合  
+  
+ <xref:System.Security.Cryptography.RSACryptoServiceProvider.ExportParameters%2A>のみが表示されますが、公開キー情報のみを求めると<xref:System.Security.Cryptography.RSAParameters.Exponent>と<xref:System.Security.Cryptography.RSAParameters.Modulus>です。 他のフィールドは、秘密キーへのアクセスがあり、要求する場合にのみ使用できます。  
+  
+ <xref:System.Security.Cryptography.RSAParameters>ようにする必要がありますに注意する秘密キーの情報を使用する場合は、任意の方法で暗号化されません。 実際には、すべての秘密キー情報を含むフィールドをシリアル化することができます。 シリアル化しようとする場合、<xref:System.Security.Cryptography.RSAParameters>リモート処理では、構造体を呼び出すか、シリアライザーのいずれかを使用する公開キー情報のみが表示されます。 秘密キー情報を渡す場合は、手動でそのデータを送信する必要があります。 すべての場合、パラメーターを派生させるすべてのユーザーことができる場合、送信するキーは役に立ちませんになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="D">
+      <MemberSignature Language="C#" Value="public byte[] D;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] D" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.D" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="D" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DP">
+      <MemberSignature Language="C#" Value="public byte[] DP;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] DP" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.DP" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="DP" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DQ">
+      <MemberSignature Language="C#" Value="public byte[] DQ;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] DQ" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.DQ" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="DQ" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exponent">
+      <MemberSignature Language="C#" Value="public byte[] Exponent;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Exponent" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.Exponent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="Exponent" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InverseQ">
+      <MemberSignature Language="C#" Value="public byte[] InverseQ;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] InverseQ" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.InverseQ" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="InverseQ" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modulus">
+      <MemberSignature Language="C#" Value="public byte[] Modulus;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Modulus" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.Modulus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="Modulus" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="P">
+      <MemberSignature Language="C#" Value="public byte[] P;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] P" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.P" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="P" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Q">
+      <MemberSignature Language="C#" Value="public byte[] Q;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Q" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RSAParameters.Q" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSA" /> アルゴリズムの <see langword="Q" /> パラメーターを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

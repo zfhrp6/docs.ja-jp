@@ -1,0 +1,89 @@
+<Type Name="EventKeyword" FullName="System.Diagnostics.Eventing.Reader.EventKeyword">
+  <TypeSignature Language="C#" Value="public sealed class EventKeyword" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventKeyword extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventKeyword" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのキーワードを表します。 キーワードは、イベント プロバイダーで定義され、(イベントの使用法に基づく) のような他のイベントとイベントをグループ化に使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスをインスタンス化することはできません。 A<xref:System.Diagnostics.Eventing.Reader.ProviderMetadata>オブジェクトの一覧を意識<xref:System.Diagnostics.Eventing.Reader.EventKeyword>オブジェクト、プロバイダーのイベントによって使用されるキーワードごとに 1 つです。 各キーワードは、64 ビット マスクのビットです。 マニフェスト 0x0000000000000001 とから 0x0000800000000000 間でビットを使用するように、このマスクの上位 16 位置には、定義済みのビット値と予約済みのビットが使用されます。  
+  
+ 標準的なイベントのキーワードがで定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventKeywords>列挙します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventKeyword.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーワードのローカライズされた名前を取得します。</summary>
+        <value>このキーワードのローカライズされた名前を表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventKeyword.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーワードのローカライズされていない名前を取得します。</summary>
+        <value>このキーワードのローカライズされていない名前を含む文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public long Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventKeyword.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーワードに関連付けられている数値の値を取得します。</summary>
+        <value><see langword="long" /> 値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各キーワードは、64 ビット マスクのビットです。 マニフェスト 0x0000000000000001 とから 0x0000800000000000 間でビットを使用するように、このマスクの上位 16 位置には、定義済みのビット値と予約済みのビットが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

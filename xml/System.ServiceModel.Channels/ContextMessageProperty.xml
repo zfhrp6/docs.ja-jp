@@ -1,0 +1,259 @@
+<Type Name="ContextMessageProperty" FullName="System.ServiceModel.Channels.ContextMessageProperty">
+  <TypeSignature Language="C#" Value="public class ContextMessageProperty : System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ContextMessageProperty extends System.Object implements class System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ContextMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IMessageProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.WorkflowServices, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントまたはサービスのいずれかのアプリケーション層とチャネル層の間でコンテキストをやり取りするため使用されるプロパティ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントとサービス間の会話の一部を形成するメッセージを相関付ける <xref:System.ServiceModel.Channels.Message> に追加されるプロパティのコレクション。  
+  
+ <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A>`true`が の場合、チャネル層でコンテキストが確立され、クライアントとサービス上で受信されるすべてメッセージに、コンテキスト チャネルによってこのコンテキスト プロパティが付加されます。 <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> が `false` の場合、<xref:System.ServiceModel.Channels.ContextMessageProperty> を使用して、アプリケーション層のクライアントまたはサービス上で送信されるメッセージにコンテキストが付加されます。  
+  
+ <xref:System.ServiceModel.Channels.ContextMessageProperty> は、クライアントまたはサービスで使用できます。 あるいは、これはクライアントだけの場合ですが、<xref:System.ServiceModel.Channels.IContextManager.GetContext%2A> および <xref:System.ServiceModel.Channels.IContextManager.SetContext%2A> プロパティを使用して現在のコンテキストを取得したり、チャネル インスタンスで新しいコンテキストを設定したりできます  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextMessageProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextMessageProperty (System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.#ctor(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="context">クライアントとサービスの間の具体的な会話にメッセージを相関付けるために使用されるコンテキスト情報が含まれている <see cref="T:System.Collections.Generic.IDictionary`2" />。</param>
+        <summary>コンテキストを指定して、<see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrReplaceInMessage">
+      <MemberSignature Language="C#" Value="public void AddOrReplaceInMessage (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOrReplaceInMessage(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.AddOrReplaceInMessage(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">そのコンテキスト メッセージ プロパティが設定される <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary><see langword="ContextMessageProperty" /> の現在のインスタンスから指定された <see cref="T:System.ServiceModel.Channels.Message" /> 内の <see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既に値が設定されている場合、<xref:System.ServiceModel.Channels.ContextMessageProperty.AddOrReplaceInMessage%28System.ServiceModel.Channels.Message%29?displayProperty=nameWithType> メソッドは、`ContextMessageProperty` プロパティの値を上書きします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrReplaceInMessageProperties">
+      <MemberSignature Language="C#" Value="public void AddOrReplaceInMessageProperties (System.ServiceModel.Channels.MessageProperties properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOrReplaceInMessageProperties(class System.ServiceModel.Channels.MessageProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.AddOrReplaceInMessageProperties(System.ServiceModel.Channels.MessageProperties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+      </Parameters>
+      <Docs>
+        <param name="properties">そのコンテキスト メッセージ プロパティが設定される <see cref="T:System.ServiceModel.Channels.MessageProperties" /> のコレクション。</param>
+        <summary><see langword="ContextMessageProperty" /> の現在のインスタンスから指定された <see cref="T:System.ServiceModel.Channels.MessageProperties" /> のコレクション内の <see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="properties" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Context" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextMessageProperty.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサービス間の会話でメッセージを相関付けるために使用されるコンテキストを取得します。</summary>
+        <value>クライアントとサービス間の会話でメッセージを相関付けるために使用されるコンテキスト情報が含まれている <see cref="T:System.Collections.Generic.IDictionary`2" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> の現在のインスタンスのコピーを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IMessageProperty" /> の現在のインスタンスのシールされたコピーが含まれている <see cref="T:System.ServiceModel.Channels.ContextMessageProperty" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ContextMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト メッセージ プロパティの名前を取得します。</summary>
+        <value>文字列 "ContextMessageProperty"。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryCreateFromHttpCookieHeader">
+      <MemberSignature Language="C#" Value="public static bool TryCreateFromHttpCookieHeader (string httpCookieHeader, out System.ServiceModel.Channels.ContextMessageProperty context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreateFromHttpCookieHeader(string httpCookieHeader, [out] class System.ServiceModel.Channels.ContextMessageProperty&amp; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.TryCreateFromHttpCookieHeader(System.String,System.ServiceModel.Channels.ContextMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpCookieHeader" Type="System.String" />
+        <Parameter Name="context" Type="System.ServiceModel.Channels.ContextMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="httpCookieHeader">元となる HTTP クッキー ヘッダーの名前、<c>コンテキスト</c>プロパティの値は、初期化されるようにします。</param>
+        <param name="context">このメソッドが戻る<see langword="true" />、<c>コンテキスト</c>が含まれています、<see cref="T:System.ServiceModel.Channels.ContextMessageProperty" />を格納している、<see langword="ContextMessageProperty" />と関連付けられている、 <c>httpCookieHeader</c>です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された HTTP クッキーのキーと値のペアから <see cref="T:System.ServiceModel.Channels.ContextMessageProperty" /> のインスタンス化を試みます。</summary>
+        <returns>
+          <see langword="true" /> の値が <see langword="ContextMessageProperty" /> から取得された場合は、<paramref name="httpCookieHeader" />、そうでない場合は <see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="httpCookieHeader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.Message message, out System.ServiceModel.Channels.ContextMessageProperty contextMessageProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Channels.ContextMessageProperty&amp; contextMessageProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.TryGet(System.ServiceModel.Channels.Message,System.ServiceModel.Channels.ContextMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="contextMessageProperty" Type="System.ServiceModel.Channels.ContextMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">コンテキスト メッセージ プロパティの取得元となる <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="contextMessageProperty">このメソッドが戻る<see langword="true" />、 <c>contextMessageProperty</c>が含まれています、<see cref="T:System.ServiceModel.Channels.ContextMessageProperty" />を格納している、<see langword="ContextMessageProperty" />と関連付けられている、<c>メッセージ</c>です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージのプロパティから <see langword="ContextMessageProperty" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" /> の値が <see langword="ContextMessageProperty" /> から取得された場合は、<paramref name="message" />、そうでない場合は <see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.MessageProperties properties, out System.ServiceModel.Channels.ContextMessageProperty contextMessageProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.MessageProperties properties, [out] class System.ServiceModel.Channels.ContextMessageProperty&amp; contextMessageProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ContextMessageProperty.TryGet(System.ServiceModel.Channels.MessageProperties,System.ServiceModel.Channels.ContextMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+        <Parameter Name="contextMessageProperty" Type="System.ServiceModel.Channels.ContextMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コンテキスト メッセージ プロパティの取得元となる <see cref="T:System.ServiceModel.Channels.MessageProperties" />。</param>
+        <param name="contextMessageProperty">このメソッドが戻る<see langword="true" />、 <c>contextMessageProperty</c>が含まれています、<see cref="T:System.ServiceModel.Channels.ContextMessageProperty" />を格納している、<see langword="ContextMessageProperty" />と関連付けられている、<c>プロパティ</c>です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>メッセージ プロパティの指定されたコレクションから <see langword="ContextMessageProperty" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" /> の値が <see langword="ContextMessageProperty" /> から取得された場合は、<paramref name="properties" />、そうでない場合は <see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

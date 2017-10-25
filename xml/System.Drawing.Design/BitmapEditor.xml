@@ -1,0 +1,124 @@
+<Type Name="BitmapEditor" FullName="System.Drawing.Design.BitmapEditor">
+  <TypeSignature Language="C#" Value="public class BitmapEditor : System.Drawing.Design.ImageEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BitmapEditor extends System.Drawing.Design.ImageEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.BitmapEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.ImageEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ ブラウザーでのビットマップ ファイルを選択するためには、ユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.BitmapEditor>クラスには、プロパティのビットマップ イメージを選択する簡単な方法が用意されています。 エディターの表示を開始、**ファイルを開く** ダイアログ ボックス ディレクトリのナビゲーションと、ファイルを選択することができます。 ビットマップ (.bmp) ファイルに対しては、ファイルの一覧は最初にフィルター処理します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EditorAttribute>に関連付けるには、<xref:System.Drawing.Design.BitmapEditor>プロパティを設定します。  
+  
+ [!code-cpp[BitmapEditorExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BitmapEditorExample/CPP/usercontrol1.cpp#1)]
+ [!code-csharp[BitmapEditorExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BitmapEditorExample/CS/usercontrol1.cs#1)]
+ [!code-vb[BitmapEditorExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BitmapEditorExample/VB/usercontrol1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.BitmapEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Design.BitmapEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtensions">
+      <MemberSignature Language="C#" Value="protected override string[] GetExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string[] GetExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.BitmapEditor.GetExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビットマップ エディターは、ファイルの一覧をフィルター処理を使用して最初にファイル リスト フィルターの拡張機能を取得します。</summary>
+        <returns>既定では、ファイルの一覧をフィルター処理に使用されるファイル拡張子のセット。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDialogDescription">
+      <MemberSignature Language="C#" Value="protected override string GetFileDialogDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetFileDialogDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.BitmapEditor.GetFileDialogDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このエディターによって提供される既定のファイル リスト フィルターの説明を取得します。</summary>
+        <returns>既定のファイル リストをフィルター処理するファイルの種類の説明です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル リスト フィルターのドロップダウン ボックスで、既定ファイルの種類をフィルター処理の説明が表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFromStream">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Image LoadFromStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Drawing.Image LoadFromStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.BitmapEditor.LoadFromStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">イメージの読み込み元のストリーム。</param>
+        <summary>指定したストリームから画像を読み込みます。</summary>
+        <returns><see cref="T:System.Drawing.Image" />ストリームから読み込まれます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

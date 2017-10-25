@@ -1,0 +1,141 @@
+<Type Name="IDataItemContainer" FullName="System.Web.UI.IDataItemContainer">
+  <TypeSignature Language="C#" Value="public interface IDataItemContainer : System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataItemContainer implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IDataItemContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ バインディング操作を容易にデータ項目のオブジェクトを識別できるようにデータ バインド コントロール コンテナーです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナーを実装するクラス、<xref:System.Web.UI.IDataItemContainer>インターフェイスでは、そのプロパティの識別と遅延バインディングなどのデータ バインディング操作のデータ項目を指定できます、<xref:System.Web.UI.DataBinder>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。 `SimpleSpreadsheetControl`のような表形式データを表示するコントロールは、<xref:System.Web.UI.WebControls.DataGrid>または<xref:System.Web.UI.WebControls.GridView>コントロール。 セットが含まれている`SimpleSpreadsheetRow`オブジェクト。  
+  
+ `SimpleSpreadsheetRow`クラスは、コンテナー クラスを実装する、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。 この例ではデータ項目のプロパティの名前が直感的にも`Data`、<xref:System.Web.UI.IDataItemContainer.DataItem%2A>メソッドの任意のプロパティまたは戻り値にマップするプロパティを実装することができます。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#2)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、`SimpleSpreadsheetControl`と<xref:System.Web.UI.WebControls.AccessDataSource>Access データベースにデータを表示するコントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.IDataItemContainer_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainer1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.IDataItemContainer_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainer1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public object DataItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDataItemContainer.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装された場合、取得、<see langword="object" />つまりで使用されているデータ バインディング操作の簡素化します。</summary>
+        <value><see langword="object" />データ バインディング操作が実行されるときに使用する値を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IDataItemContainer.DataItem%2A>プロパティは、データ バインディング操作と遅延バインディング式で使用されているオブジェクトを識別します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する型を実装する方法を示します、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。 `SimpleSpreadsheetRow`クラスは、という名前のメンバーのコンテナー クラス`Data`です。 実装する、<xref:System.Web.UI.IDataItemContainer>インターフェイス マップすることによって、`Data`プロパティを<xref:System.Web.UI.IDataItemContainer.DataItem%2A>プロパティです。 データ バインディング式を簡略化されたが、オブジェクトを使用してデータにバインドできる、<xref:System.Web.UI.IDataItemContainer.DataItem%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#3)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItemIndex">
+      <MemberSignature Language="C#" Value="public int DataItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DataItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDataItemContainer.DataItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装された場合、コントロールにバインドされたデータ項目のインデックスを取得します。</summary>
+        <value><see langword="Integer" />データ ソースのデータ項目のインデックスを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのクラスを実装する際に<xref:System.Web.UI.WebControls.FormView>、 <xref:System.Web.UI.WebControls.GridViewRow>、および<xref:System.Web.UI.WebControls.DetailsView>、<xref:System.Web.UI.IDataItemContainer.DataItemIndex%2A>プロパティの使用をコントロールにバインドするデータ ソースからデータ項目のインデックスを決定します。 <xref:System.Web.UI.IDataItemContainer.DataItemIndex%2A>データ コントロールによって表示されるようにプロパティがデータ項目のインデックスを参照していません。  
+  
+   
+  
+## Examples  
+ 実装を次のコード例に示します、<xref:System.Web.UI.IDataItemContainer.DataItemIndex%2A>プロパティです。 例の一部では、<xref:System.Web.UI.IDataItemContainer>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#4)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayIndex">
+      <MemberSignature Language="C#" Value="public int DisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDataItemContainer.DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装された場合、コントロールに表示するデータ項目の位置を取得します。</summary>
+        <value><see langword="Integer" />データ アイテムの位置を表すコントロールに表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのクラスを実装する際に<xref:System.Windows.Forms.DataGridViewColumn>、<xref:System.Web.UI.IDataItemContainer.DisplayIndex%2A>プロパティが表示されている行の間で行のインデックスに従って設定されています。  
+  
+   
+  
+## Examples  
+ 実装を次のコード例に示します、<xref:System.Web.UI.IDataItemContainer.DisplayIndex%2A>プロパティです。 例の一部では、<xref:System.Web.UI.IDataItemContainer>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.UI.IDataItemContainer_1#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/CS/idataitemcontainersample.cs#5)]
+ [!code-vb[System.Web.UI.IDataItemContainer_1#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDataItemContainer_1/VB/idataitemcontainersample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

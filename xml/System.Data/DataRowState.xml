@@ -1,0 +1,172 @@
+<Type Name="DataRowState" FullName="System.Data.DataRowState">
+  <TypeSignature Language="C#" Value="public enum DataRowState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataRowState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRowState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>状態を取得、<see cref="T:System.Data.DataRow" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRowState>列挙体は、によって返される、<xref:System.Data.DataRow.RowState%2A>のプロパティ、<xref:System.Data.DataRow>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は最初に、新しい作成<xref:System.Data.DataTable>1 つの列を持つ 1 つを作成し、<xref:System.Data.DataRow>です。 として、<xref:System.Data.DataRow>作成、追加、変更、および削除するはその<xref:System.Data.DataRow.RowState%2A>が出力されます。  
+  
+ [!code-csharp[Classic WebData DataRowState Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRowState Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRowState Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRowState Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Added">
+      <MemberSignature Language="C#" Value="Added" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowState Added = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowState.Added" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が追加されて、 <see cref="T:System.Data.DataRowCollection" />、および<see cref="M:System.Data.DataRow.AcceptChanges" />が呼び出されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="Deleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowState Deleted = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowState.Deleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して行を削除した、<see cref="M:System.Data.DataRow.Delete" />のメソッド、<see cref="T:System.Data.DataRow" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Detached">
+      <MemberSignature Language="C#" Value="Detached" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowState Detached = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowState.Detached" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行は作成されましたが、<see cref="T:System.Data.DataRowCollection" /> の一部ではありません。 A<see cref="T:System.Data.DataRow" />がこの状態で作成された後、直ちにおよびコレクションに追加される前に、またはがコレクションから削除された場合。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Modified">
+      <MemberSignature Language="C#" Value="Modified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowState Modified = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowState.Modified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行が変更されたと<see cref="M:System.Data.DataRow.AcceptChanges" />が呼び出されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unchanged">
+      <MemberSignature Language="C#" Value="Unchanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.DataRowState Unchanged = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.DataRowState.Unchanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行は <see cref="M:System.Data.DataRow.AcceptChanges" /> が最後に呼び出されてから変更されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

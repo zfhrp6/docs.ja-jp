@@ -1,0 +1,93 @@
+<Type Name="SecurityStateEncoder" FullName="System.ServiceModel.Security.SecurityStateEncoder">
+  <TypeSignature Language="C#" Value="public abstract class SecurityStateEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityStateEncoder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SecurityStateEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ状態をエンコードするために実装できる抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ステートフルなセキュリティ コンテキスト トークンを使用するメッセージ セキュリティがバインディングで使用される場合に、セキュリティ コンテキスト トークンの内容をエンコードおよびデコードするために使用されます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]ステートフルなセキュリティ コンテキスト トークンを参照してください[する方法: セキュリティで保護されたセッションのセキュリティ コンテキスト トークンを作成](~/docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)トピックです。  
+  
+ Microsoft バージョンの <xref:System.ServiceModel.Security.SecurityStateEncoder> は、<xref:System.ServiceModel.Security.DataProtectionSecurityStateEncoder> です。 Microsoft を使用して[Windows Data Protection (DPAPI)](http://go.microsoft.com/fwlink/?LinkId=96704)クッキーの暗号化/暗号解除するテクノロジです。 このクラスを実装することにより、クッキーの暗号化および複号化を行う別の機構をプラグインできます。  
+  
+ セキュリティ状態のエンコードでは、セキュリティ状態がサービス用に署名および暗号化されるようにする必要があります。  
+  
+ このクラスは、サーバーが、クライアントに対して発行された `SecurityContextToken` 内のクッキーとしてセキュリティ状態を送信するときに使用します。  
+  
+ このクラスの実装の例として、サービスの証明書を使用してセキュリティ状態の署名と暗号化を行う `X509CertificateSecurityStateEncoder` があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityStateEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityStateEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.SecurityStateEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecodeSecurityState">
+      <MemberSignature Language="C#" Value="protected abstract byte[] DecodeSecurityState (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance unsigned int8[] DecodeSecurityState(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">セキュリティ データ。</param>
+        <summary>セキュリティ状態をデコードします。</summary>
+        <returns>セキュリティ状態を表すバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodeSecurityState">
+      <MemberSignature Language="C#" Value="protected abstract byte[] EncodeSecurityState (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance unsigned int8[] EncodeSecurityState(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">セキュリティ状態データ。</param>
+        <summary>セキュリティ状態をエンコードします。</summary>
+        <returns>セキュリティ状態のエンコードによって生成されるバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

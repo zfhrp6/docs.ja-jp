@@ -1,0 +1,36 @@
+<Type Name="IClientFormatterSinkProvider" FullName="System.Runtime.Remoting.Channels.IClientFormatterSinkProvider">
+  <TypeSignature Language="C#" Value="public interface IClientFormatterSinkProvider : System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IClientFormatterSinkProvider implements class System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IClientFormatterSinkProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IClientChannelSinkProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアント チャネル シンク プロバイダーをクライアント フォーマッタ シンク プロバイダーとしてのマークを付けます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.Channels.IClientFormatterSinkProvider>クライアントをリモート処理経由のメッセージ フロー クライアント チャネルのフォーマッタ シンクを作成します。 クライアント側で最初のシンクは、両方を実装する必要があります、<xref:System.Runtime.Remoting.Messaging.IMessageSink>と<xref:System.Runtime.Remoting.Channels.IClientChannelSink>インターフェイス、または<xref:System.Runtime.Remoting.Channels.IClientFormatterSink>インターフェイスです。  
+  
+ 使用する、`<formatter>`タグの代わりに、`<provider>`クライアント チャネル シンク プロバイダーの構成ファイルにタグを実装する必要があります、<xref:System.Runtime.Remoting.Channels.IClientFormatterSinkProvider>だけではなくインターフェイス<xref:System.Runtime.Remoting.Channels.IClientChannelSinkProvider>です。 リモート処理の構成に関する詳細については、次を参照してください[&#91;\< 。topic://cpconchannelformatterconfigurationproperties > & #93 です。](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)と[リモート処理設定スキーマ](http://msdn.microsoft.com/en-us/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e)です。  
+  
+ フォーマッタ シンクの実装によって実行時のフォーマッタを使用する (<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>と<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>)。 その他の実装では、独自の方法を使用してチャネル メッセージをストリームに変換できます。 フォーマッタ シンクは、チャネルのメッセージ要素 (戻り値メッセージ) に、メッセージ ストリームを変換します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

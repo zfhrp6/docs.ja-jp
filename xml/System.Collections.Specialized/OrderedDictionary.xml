@@ -1,0 +1,1211 @@
+<Type Name="OrderedDictionary" FullName="System.Collections.Specialized.OrderedDictionary">
+  <TypeSignature Language="C#" Value="public class OrderedDictionary : System.Collections.IDictionary, System.Collections.Specialized.IOrderedDictionary, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit OrderedDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.Collections.Specialized.IOrderedDictionary, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.OrderedDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Specialized.IOrderedDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>キーまたはインデックスからアクセスできるキーと値のペアのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各要素に格納されているキー/値ペアは、<xref:System.Collections.DictionaryEntry>オブジェクト。 キーには`null`値を指定できますが、します。  
+  
+ 要素、<xref:System.Collections.Specialized.OrderedDictionary>の要素とは異なり、キーによって並べ替えられていない、<xref:System.Collections.Generic.SortedDictionary%602>クラスです。 要素は、キーまたはインデックスのいずれかにアクセスすることができます。  
+  
+ `foreach` C# 言語のステートメント (`For Each` Visual Basic で) が、コレクション内の各要素の型を返します。 オブジェクト。 以降の各要素、<xref:System.Collections.Specialized.OrderedDictionary>コレクションは、キー/値ペアを要素型は、キーの型または値の型ではありません。 要素の型は、代わりに、<xref:System.Collections.DictionaryEntry>です。 次のコードは、c#、Visual Basic および C++ 構文を示しています。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#06](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/source2.cpp#06)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#06](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/source2.cs#06)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#06](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/source2.vb#06)]  
+  
+ `foreach`ステートメントがしか書き込まないことから、コレクションへの読み取りを許可する列挙子のラッパー。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成、カタログの作成と修正を示しています、<xref:System.Collections.Specialized.OrderedDictionary>の内容を表示する 2 つの手法と同様に、コレクション、 <xref:System.Collections.Specialized.OrderedDictionary>: 1 つを使用して、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>と<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティと、その他のを通じて列挙子を作成、<xref:System.Collections.Specialized.OrderedDictionary.GetEnumerator%2A>メソッドです。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#00)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#00)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrderedDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.OrderedDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.OrderedDictionary>コレクションを一意にする必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成およびの設定を示しています、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#01)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrderedDictionary (System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.#ctor(System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">2 つのキーが等しいかどうかを判断するために使用する <see cref="T:System.Collections.IComparer" />。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.OrderedDictionary" />クラスの指定した比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.OrderedDictionary>コレクションを一意にする必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムの比較演算子、大文字と小文字の文字列の検索を行うようなシナリオを有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrderedDictionary (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">最初の要素数を<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションを含めることができます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.OrderedDictionary" />クラスの指定した初期容量を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.OrderedDictionary>コレクションを一意にする必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrderedDictionary (int capacity, System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.#ctor(System.Int32,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">最初の要素数を<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションを含めることができます。</param>
+        <param name="comparer">2 つのキーが等しいかどうかを判断するために使用する <see cref="T:System.Collections.IComparer" />。  
+  
+ または  
+  
+ <see langword="null" />既定の比較子を使用するの各キーの実装は<see cref="M:System.Object.Equals(System.Object)" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.OrderedDictionary" />クラスの指定した初期量と比較子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.OrderedDictionary>コレクションを一意にする必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ カスタムの比較演算子、大文字と小文字の文字列の検索を行うようなシナリオを有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OrderedDictionary (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要な情報を含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納している <see cref="T:System.Collections.Specialized.OrderedDictionary" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.OrderedDictionary" />を使用して、指定したシリアル化できるクラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 内のすべてのキー、<xref:System.Collections.Specialized.OrderedDictionary>コレクションを一意にする必要があります。 既定の比較子は、キーの<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するエントリのキー。</param>
+        <param name="value">追加するエントリの値。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>指定したキーと値を持つエントリを追加、<see cref="T:System.Collections.Specialized.OrderedDictionary" />使用可能な最小のインデックスを持つコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーには`null`値を指定できますが、します。  
+  
+ 使用することも、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、<xref:System.Collections.Specialized.OrderedDictionary>コレクションです。 ただし、で指定したキーが既に存在する場合、 <xref:System.Collections.Specialized.OrderedDictionary>、設定、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Specialized.OrderedDictionary.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成およびの設定を示しています、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#01)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AsReadOnly">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.OrderedDictionary AsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Specialized.OrderedDictionary AsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.AsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.OrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の読み取り専用コピーを返します<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <returns>現在の読み取り専用コピー<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.OrderedDictionary.AsReadOnly%2A>メソッド ラッパーを作成、読み取り専用で、現在<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクションは読み取り専用コピーに反映されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての要素を削除、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、 <xref:System.Collections.Specialized.OrderedDictionary.Clear%2A> 、メソッド、<xref:System.Collections.Specialized.OrderedDictionary.Count%2A>プロパティが 0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。 このメソッドの呼び出しの結果として、容量は変更されません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Clear%2A>メソッドを使用して空、 <xref:System.Collections.Specialized.OrderedDictionary>、し、<xref:System.Collections.Specialized.OrderedDictionary>が再作成します。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#03)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#03)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#03)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">内で検索するキー、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</param>
+        <summary>指定するかどうか、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションには、特定のキーが含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションには、指定した要素が含まれるキー、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>プロパティは、キーが存在しない場合、またはキーがある場合、null 値を返すことができます`null`です。 使用して、<xref:System.Collections.Specialized.OrderedDictionary.Contains%2A>で特定のキーが存在するかどうかを調べる方法、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。  
+  
+ 以降、.NET Framework 2.0 では、このメソッドを使用して、コレクションのオブジェクトの<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>メソッド`item`を決定するかどうか`item`が存在します。 .NET Framework の以前のバージョンでは、この決定を使用して行われた、<xref:System.Object.Equals%2A>と<xref:System.IComparable.CompareTo%2A>のメソッド、`item`パラメーター コレクション内のオブジェクトにします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Contains%2A>エントリが削除を試みる前に存在するかどうかを決定するメソッドを使用します。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />のコピー先であるオブジェクトを<see cref="T:System.Collections.DictionaryEntry" />からコピーされるオブジェクト<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Collections.Specialized.OrderedDictionary" />要素を 1 次元<see cref="T:System.Array" />指定したインデックスにあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.OrderedDictionary.CopyTo%2A>メソッド内の要素の順序を維持は保証されません、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得の数のキー/値のペアに含まれている、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <value>含まれているキー/値ペアの数、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Count%2A>の最後の項目を削除するプロパティが使用される、<xref:System.Collections.Specialized.OrderedDictionary>です。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />を反復処理するオブジェクト、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" />オブジェクトに対して、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがってを使用して`foreach`列挙子を直接操作するのではなくをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Collections.Specialized.OrderedDictionary.GetEnumerator%2A>の内容を表示する方法、<xref:System.Collections.Specialized.OrderedDictionary>コンソールへのコレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.GetEnumerator%2A>を取得するメソッドが使用される、<xref:System.Collections.IDictionaryEnumerator>内容を表示するメソッドに渡されるオブジェクト。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#03)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#03)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#03)]  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#05](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#05)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#05](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#05)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#05](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#05)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要な情報を含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納している <see cref="T:System.Collections.Specialized.OrderedDictionary" /> オブジェクト。</param>
+        <summary>実装して、<see cref="T:System.Runtime.Serialization.ISerializable" />インターフェイスし、シリアル化に必要なデータを返します、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション: このクラスにアクセスする権限のリンク確認要求します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.Insert(System.Int32,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">要素 を挿入する位置の、0 から始まるインデックス番号。</param>
+        <param name="key">追加するエントリのキー。</param>
+        <param name="value">追加するエントリの値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>新しいエントリを挿入、<see cref="T:System.Collections.Specialized.OrderedDictionary" />指定したキーと指定したインデックス位置の値を持つコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`index`パラメーターは内のエントリの数と等しく、 <xref:System.Collections.Specialized.OrderedDictionary> 、コレクション、`key`と`value`パラメーターは、コレクションの末尾に追加されます。  
+  
+ カーソル位置の後にあるエントリは、新しいエントリに対応し、移動したエントリのインデックスも更新に下に移動します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Insert%2A>の先頭に新しいエントリを追加するメソッドが使用される、 <xref:System.Collections.Specialized.OrderedDictionary>、下層のエントリの残りの部分に移動します。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が範囲外です。</exception>
+        <exception cref="T:System.NotSupportedException">このコレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.OrderedDictionary" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションが読み取り専用です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、単純なコレクションの変更できないようにするラッパー コレクションです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.IsReadOnly%2A>プロパティの使用を確認するかどうか、<xref:System.Collections.Specialized.OrderedDictionary>変更できます。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する値の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックス位置にある値を取得または設定します。</summary>
+        <value>指定したインデックス位置にある項目の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、次の構文を使用して、コレクション内の特定の要素にアクセスすることができます:`myCollection[index]`です。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プロパティが設定されていると、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.Specialized.OrderedDictionary.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得または設定する値のキー。</param>
+        <summary>指定したキーの値を取得または設定します。</summary>
+        <value>指定されたキーに関連付けられている値。 返しますを取得しようとして、指定したキーが見つからない場合<see langword="null" />、し、指定したキーを使用して、新しい要素を作成するように設定しようとしています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、次の構文を使用して、コレクション内の特定の要素にアクセスすることができます:`myCollection[key]`です。  
+  
+ 使用することも、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、<xref:System.Collections.Specialized.OrderedDictionary>コレクション (たとえば、 `myCollection["myNonexistentKey"] = myValue`)。 ただしで指定したキーが既に存在する場合、 <xref:System.Collections.Specialized.OrderedDictionary>、設定、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>プロパティに古い値が上書きされます。 これに対し、<xref:System.Collections.Specialized.OrderedDictionary.Add%2A>メソッドでは、既存の要素は変更しません。  
+  
+ キーには`null`値を指定できますが、します。 区別するために`null`指定したキーが見つからないため、返されると`null`指定したキーの値が返される`null`を使用して、<xref:System.Collections.Hashtable.Contains%2A>にキーが存在するかどうかを決定するメソッド、<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Item%2A>プロパティを使用したキーを持つディクショナリ エントリを変更する`"testKey2"`です。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プロパティが設定されていると、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />オブジェクト内のキーを含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <value><see cref="T:System.Collections.ICollection" />オブジェクト内のキーを含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Collections.ICollection>オブジェクトは、静的なコピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元のキーを逆参照<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 そのため、変更、<xref:System.Collections.Specialized.OrderedDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成およびの設定を示しています、<xref:System.Collections.Specialized.OrderedDictionary>コレクション、および、コンソールに内容を出力します。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>と<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティ、内容を表示するメソッドに渡されます。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#01)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#01)]  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#04)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#04)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#04)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserialization">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、逆シリアル化が完了したときに逆シリアル化イベントによってコールバックされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトに現在関連付けられている<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するエントリのキー。</param>
+        <summary>指定したキーを持つエントリを削除、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除されたエントリの後にあるエントリは、繰りし、移動するエントリのインデックスも更新まで移動します。  
+  
+ 場合、<xref:System.Collections.Specialized.OrderedDictionary>コレクションが指定のキーを持つエントリを含まない、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクトは変更されず、例外はスローされません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Remove%2A>メソッドを使用したキーを持つエントリを削除を`"keyToDelete"`から、<xref:System.Collections.Specialized.OrderedDictionary>です。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するエントリの 0 から始まるインデックス。</param>
+        <summary>指定されたインデックスにあるエントリを削除、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除されたエントリの後にあるエントリは、繰りし、移動するエントリのインデックスも更新まで移動します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの変更、<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.RemoveAt%2A>メソッドを使用、<xref:System.Collections.Specialized.OrderedDictionary.Count%2A>から最後のエントリを削除するプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>です。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#02)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#02)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.Specialized.OrderedDictionary.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスをするかどうかを示す値を取得、<see cref="T:System.Collections.Specialized.OrderedDictionary" />オブジェクトが同期されている (スレッド セーフ)。</summary>
+        <value>このメソッドは常に <see langword="false" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.OrderedDictionary" /> オブジェクトへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.OrderedDictionary" /> オブジェクトへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IDictionary.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IDictionary.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.System#Collections#IDictionary#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.OrderedDictionary" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.Specialized.OrderedDictionary" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />を反復処理するオブジェクト、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" />オブジェクトに対して、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IDeserializationCallback.OnDeserialization">
+      <MemberSignature Language="C#" Value="void IDeserializationCallback.OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.OrderedDictionary.System#Runtime#Serialization#IDeserializationCallback#OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、逆シリアル化が完了したときに逆シリアル化イベントによってコールバックされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.OrderedDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />オブジェクトの値を含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</summary>
+        <value><see cref="T:System.Collections.ICollection" />オブジェクトの値を含む、<see cref="T:System.Collections.Specialized.OrderedDictionary" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Collections.ICollection>オブジェクトは、静的なコピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元の値を逆参照<xref:System.Collections.Specialized.OrderedDictionary>コレクション。 そのため、変更、<xref:System.Collections.Specialized.OrderedDictionary>に反映されるまでに続行、<xref:System.Collections.ICollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成およびの設定を示しています、<xref:System.Collections.Specialized.OrderedDictionary>コレクション、および、コンソールに内容を出力します。 この例では、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>と<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティ、内容を表示するメソッドに渡されます。 このコードで表示できるコード サンプルが大きくの一部である<xref:System.Collections.Specialized.OrderedDictionary>です。  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#01)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#01)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#01)]  
+  
+ [!code-cpp[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/cpp/ordereddictionary1.cpp#04)]
+ [!code-csharp[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/CS/OrderedDictionary1.cs#04)]
+ [!code-vb[System.Collections.Specialized.OrderedDictionary1#04](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.OrderedDictionary1/VB/OrderedDictionary1.vb#04)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

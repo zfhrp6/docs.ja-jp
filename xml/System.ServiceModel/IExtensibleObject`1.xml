@@ -1,0 +1,77 @@
+<Type Name="IExtensibleObject&lt;T&gt;" FullName="System.ServiceModel.IExtensibleObject&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IExtensibleObject&lt;T&gt; where T : IExtensibleObject&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtensibleObject`1&lt;(class System.ServiceModel.IExtensibleObject`1&lt;!T&gt;) T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.IExtensibleObject`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <InterfaceName>System.ServiceModel.IExtensibleObject&lt;T&gt;</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">拡張クラスの型。</typeparam>
+    <summary>オブジェクトが、イベントの登録や状態遷移の監視などのカスタム動作に参加できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.IExtensibleObject%601> を実装して、拡張の集約を可能にします。  
+  
+ たとえば、`TreeNode` クラスを実装するときに、外部コードで `TreeNode` のいくつかのインスタンスに注釈とメソッドを追加できるようにする場合は、`TreeNode` に `IExtensibleObject<TreeNode>` を実装することができます。 これにより、`TreeNode` を使用するコードで、`IExtensibleObject<TreeNode>` を実装するオブジェクトを <xref:System.ServiceModel.IExtensibleObject%601.Extensions%2A> コレクションに追加できます。  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] には次の 4 つの拡張可能オブジェクトが組み込まれています。  
+  
+-   <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>  
+  
+-   <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>  
+  
+-   <xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType>  
+  
+-   <xref:System.ServiceModel.OperationContext?displayProperty=nameWithType>  
+  
+ これらのオブジェクトを操作する拡張を作成する方法の詳細については、次を参照してください。[拡張可能なオブジェクト](~/docs/framework/wcf/extending/extensible-objects.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.IExtensionCollection&lt;T&gt; Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.IExtensionCollection`1&lt;!T&gt; Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IExtensibleObject`1.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.IExtensionCollection&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この拡張可能オブジェクトに対する拡張オブジェクトのコレクションを取得します。</summary>
+        <value>拡張オブジェクトの <see cref="T:System.ServiceModel.IExtensionCollection`1" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

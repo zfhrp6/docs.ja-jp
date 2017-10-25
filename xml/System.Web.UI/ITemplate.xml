@@ -1,0 +1,65 @@
+<Type Name="ITemplate" FullName="System.Web.UI.ITemplate">
+  <TypeSignature Language="C#" Value="public interface ITemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ITemplate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>子コントロールでテンプレートの ASP.NET サーバー コントロールを設定するための動作を定義します。 子コントロールは、ページで定義されているインライン テンプレートを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、カスタム サーバー コントロールによって使用されるが、それらによって実装されることはありません。 常に、ASP.NET では、それを実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する単純なテンプレート化されたサーバー コントロールを示しています、 <xref:System.Web.UI.ITemplate> template 宣言されたプロパティを作成するインターフェイスです。  
+  
+ [!code-csharp[Classic ITemplate Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic ITemplate Example/CS/source.cs#1)]
+ [!code-vb[Classic ITemplate Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic ITemplate Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InstantiateIn">
+      <MemberSignature Language="C#" Value="public void InstantiateIn (System.Web.UI.Control container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InstantiateIn(class System.Web.UI.Control container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ITemplate.InstantiateIn(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Web.UI.Control" />インライン テンプレートからのコントロールのインスタンスを格納するオブジェクト。</param>
+        <summary>クラスによって実装された場合、定義、<see cref="T:System.Web.UI.Control" />オブジェクトの子コントロールおよびテンプレートに属していること。 さらに、これらの子コントロールは、インライン テンプレート内で定義されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレート化されたサーバー コントロールを開発する場合はこのメソッドを実装する必要はありません。.NET Framework では、実装を提供します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[ITemplate_Interface#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ITemplate_Interface/CS/itemplate.cs#2)]
+ [!code-vb[ITemplate_Interface#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ITemplate_Interface/VB/itemplate.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

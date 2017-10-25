@@ -1,0 +1,161 @@
+<Type Name="TransformChain" FullName="System.Security.Cryptography.Xml.TransformChain">
+  <TypeSignature Language="C#" Value="public class TransformChain" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TransformChain extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.TransformChain" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>順序付きリストを定義<see cref="T:System.Security.Cryptography.Xml.Transform" />ダイジェストの計算前に符号なしのコンテンツに適用されるオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.TransformChain>クラスの一覧に含まれる<xref:System.Security.Cryptography.Xml.Transform>ダイジェストを作成する前に XML データを注文する方法を決定するオブジェクト。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.TransformChain>クラスのたびに、暗号化された XML ドキュメントまたは署名付き XML ドキュメントには、1 つまたは複数の変換オブジェクトを追加する必要があります。  
+  
+ 両方の<xref:System.Security.Cryptography.Xml.Reference>クラスおよび<xref:System.Security.Cryptography.Xml.EncryptedReference>クラスが含まれて、<xref:System.Security.Cryptography.Xml.TransformChain>オブジェクト。  追加することができます、<xref:System.Security.Cryptography.Xml.Transform>オブジェクトを<xref:System.Security.Cryptography.Xml.Reference>クラスを呼び出して、<xref:System.Security.Cryptography.Xml.Reference.AddTransform%2A>メソッドです。 追加することができます、<xref:System.Security.Cryptography.Xml.Transform>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptedReference>クラスを呼び出して、<xref:System.Security.Cryptography.Xml.EncryptedReference.AddTransform%2A>メソッドです。  作成することも、<xref:System.Security.Cryptography.Xml.TransformChain>手動でのオブジェクトし、いずれかに渡す、<xref:System.Security.Cryptography.Xml.Reference.TransformChain%2A>プロパティまたは<xref:System.Security.Cryptography.Xml.EncryptedReference.TransformChain%2A>プロパティです。  
+  
+ XML ドキュメントの一部だけに署名する場合は、署名する XML 要素を識別する、変換を使用できます。  なお、<xref:System.Security.Cryptography.Xml.Reference.Uri%2A>プロパティおよび<xref:System.Security.Cryptography.Xml.EncryptedReference.Uri%2A>プロパティは、ドキュメントの一部を署名することは内部の変換を自動的に作成します。  
+  
+ 変換の詳細については、www.w3.org/TR/xmldsig-core/ で W3C から利用できる XMLDSIG 仕様を参照してまたは www.w3.org/TR/xmlenc-core/ で W3C から利用できる XML 暗号化の仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TransformChain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.TransformChain.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.TransformChain" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Security.Cryptography.Xml.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Security.Cryptography.Xml.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.TransformChain.Add(System.Security.Cryptography.Xml.Transform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transform" Type="System.Security.Cryptography.Xml.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="transform">変換のリストに追加する変換です。</param>
+        <summary>ダイジェストの計算前に符号なしのコンテンツに適用する変換のリストに変換を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は符号なしのコンテンツに追加された順序に適用、<xref:System.Security.Cryptography.Xml.TransformChain>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.TransformChain.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換の数を取得、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</summary>
+        <value>変換の数、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.TransformChain.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換の列挙子を返します、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</summary>
+        <returns>変換の列挙子、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.Transform this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.Transform Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.TransformChain.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.Transform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクトを返す変換するを指定します。</param>
+        <summary>指定したインデックスに変換を取得、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</summary>
+        <value>指定したインデックスに変換、<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="index" />パラメーターは変換の数を超えています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

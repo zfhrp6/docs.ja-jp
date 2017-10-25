@@ -1,0 +1,873 @@
+<Type Name="InstancePersistenceContext" FullName="System.Runtime.DurableInstancing.InstancePersistenceContext">
+  <TypeSignature Language="C#" Value="public sealed class InstancePersistenceContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InstancePersistenceContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.DurableInstancing.InstancePersistenceContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>永続化コマンドの実行中の実行状態情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスは、永続化プロバイダーの実装の TryCommand メソッドに渡されます。 永続化プロバイダーは、インスタンスのメモリ内ビューを検査するためだけでなく、ビューまたはその他のメモリ内コンテキストに影響を与える可能性のある、外部ストアに対する操作の結果を示すためにも、このクラスを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AssociatedInstanceKey">
+      <MemberSignature Language="C#" Value="public void AssociatedInstanceKey (Guid key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AssociatedInstanceKey(valuetype System.Guid key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.AssociatedInstanceKey(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="key">関連付けられたキーのインスタンス キー識別子。 Guid.Empty にすることはできません。</param>
+        <summary>永続化プロバイダーによってインスタンス ストア内の現在のインスタンスにキーが正常に関連付けられたことを示します。 キーの識別子はパラメーターとして指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス キーは関連付けられていない必要があります。 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginBindReclaimedLock">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginBindReclaimedLock (long instanceVersion, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginBindReclaimedLock(int64 instanceVersion, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BeginBindReclaimedLock(System.Int64,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceVersion" Type="System.Int64" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instanceVersion">インスタンスに対して保持されているロックのバージョン。または、永続化プロバイダーがロック バージョンを実装しない場合はゼロ。</param>
+        <param name="timeout">非同期操作のタイムアウト期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>インスタンスの既存のロックを現在のインスタンス ハンドルにバインドするための非同期操作を開始します。 既存のロックのバージョンはパラメーターとして渡されます。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、ロックの取得を試みるときに、現在のインスタンスが現在のストアで既にロックされているものと判断する場合があります。 ロック トークンが現在のハンドルのロック トークンと一致している場合、永続化プロバイダーは、ロックのバージョンを検査して BeginBindReclaimedLock に渡すことによって、そのロックの再要求を試みることができます。 永続化プロバイダーは、ロックが正常に再要求されるまで、インスタンスに変更を加えることができません。 ロックにバインドされているハンドルが他にない場合は、BeginBindReclaimedLock 操作が成功し、現在のハンドルがロックにバインドされるようになります。 それ以外の場合は、BeginBindReclaimedLock または EndBindReclaimedLock が InstanceHandleConflictException をスローします。 他のハンドルに対するコマンドが実行中の場合、ロックを再要求できるかどうかを決定するためにそれらのコマンドの結果を待つ間、操作が完了しないことがあります。  
+  
+ 現在のインスタンス ハンドルはインスタンスとロックの所有者にバインドされている必要があります。 インスタンスは完了していないことが必要です。 ロック所有者に関連付けられたロック トークンは、ロックの所有者を識別するために使用されます。  
+  
+ あるロックがハンドルにバインドされると、そのロックはハンドルが有効な間バインドされたままとなります。 ロック トークンとインスタンス バージョンのいずれも変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginExecute">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecute (System.Runtime.DurableInstancing.InstancePersistenceCommand command, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecute(class System.Runtime.DurableInstancing.InstancePersistenceCommand command, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BeginExecute(System.Runtime.DurableInstancing.InstancePersistenceCommand,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Runtime.DurableInstancing.InstancePersistenceCommand" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="command">実行する永続化コマンド。</param>
+        <param name="timeout">操作で使用するタイムアウト値。</param>
+        <param name="callback">要求操作が完了したという非同期受信の通知を受信するデリゲート。</param>
+        <param name="state">状態情報。</param>
+        <summary>永続化コマンドの非同期実行を開始します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、このメソッドを使用して、サブコマンドをコマンドの一部として実行できます。 サブコマンドは、InstanceStore.BeginExecute に渡されるコマンドと同様に、BeginTryCommand を使用して実行されます。 コマンドは入れ子にできますが、1 つのコマンドが一度に複数のサブコマンドを実行することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindAcquiredLock">
+      <MemberSignature Language="C#" Value="public void BindAcquiredLock (long instanceVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindAcquiredLock(int64 instanceVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BindAcquiredLock(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceVersion" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="instanceVersion">インスタンスに対して取得したロックのバージョン。または、永続化プロバイダーがロック バージョンを実装しない場合はゼロ。</param>
+        <summary>インスタンスに対して新しく取得したロックを現在のインスタンス ハンドルにバインドします。 取得したロックのバージョンはパラメーターとして渡されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーがロックのバージョン管理を実装しない場合は、インスタンスのロックが 1 つ取得されるたびに、外部ストアでバージョンを 1 ずつ増分させる必要があります。 インスタンスが初めてロックされる場合、バージョンは 1 にする必要があります。 ロックが取得されるたびに、以前のロックは無効になります。 現在のインスタンス ハンドルはインスタンスとロックの所有者にバインドされている必要があります。 インスタンスは完了していないことが必要です。 ロック所有者に関連付けられたロック トークンは、ロックの所有者を識別するために使用されます。  
+  
+ あるロックがハンドルにバインドされると、そのロックはハンドルが有効な間バインドされたままとなります。 ロック トークンとインスタンス バージョンのいずれも変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindEvent">
+      <MemberSignature Language="C#" Value="public void BindEvent (System.Runtime.DurableInstancing.InstancePersistenceEvent persistenceEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindEvent(class System.Runtime.DurableInstancing.InstancePersistenceEvent persistenceEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BindEvent(System.Runtime.DurableInstancing.InstancePersistenceEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="persistenceEvent" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+      </Parameters>
+      <Docs>
+        <param name="persistenceEvent">イベントに関する情報を含んでいる <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクト。</param>
+        <summary><see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> をインスタンス ハンドルにバインドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindInstance">
+      <MemberSignature Language="C#" Value="public void BindInstance (Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindInstance(valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstance(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">インスタンス識別子。 Guid.Empty にすることはできません。</param>
+        <summary>パラメーターとして指定された識別子を持つインスタンスを現在のインスタンス ハンドルにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるインスタンスがハンドルにバインドされると、そのインスタンスはハンドルが有効な間バインドされたままとなります。 他のインスタンスをそのハンドルにバインドすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindInstanceOwner">
+      <MemberSignature Language="C#" Value="public void BindInstanceOwner (Guid instanceOwnerId, Guid lockToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindInstanceOwner(valuetype System.Guid instanceOwnerId, valuetype System.Guid lockToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BindInstanceOwner(System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceOwnerId" Type="System.Guid" />
+        <Parameter Name="lockToken" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceOwnerId">インスタンス所有者の識別子。</param>
+        <param name="lockToken">インスタンス所有者のロック トークン。 永続化プロバイダーは、インスタンス所有者の識別子とその所有者のロック トークンに同じ値を使用する場合があります。</param>
+        <summary>インスタンス所有者を現在のインスタンス ハンドルにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるインスタンス所有者がハンドルにバインドされると、そのインスタンス所有者はハンドルが有効な間バインドされたままとなります。 他のインスタンス所有者をそのハンドルにバインドすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindReclaimedLock">
+      <MemberSignature Language="C#" Value="public void BindReclaimedLock (long instanceVersion, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindReclaimedLock(int64 instanceVersion, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BindReclaimedLock(System.Int64,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceVersion" Type="System.Int64" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instanceVersion">インスタンスに対して保持されているロックのバージョン。または、永続化プロバイダーがロック バージョンを実装しない場合はゼロ。</param>
+        <param name="timeout">操作で使用するタイムアウト値。</param>
+        <summary>インスタンスの既存のロックを現在のインスタンス ハンドルにバインドします。 既存のロックのバージョンはパラメーターとして渡されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、ロックの取得を試みるときに、現在のインスタンスが現在のストアで既にロックされているものと判断する場合があります。 ロック トークンが現在のハンドルのロック トークンと一致している場合、永続化プロバイダーは、ロックのバージョンを検査して BindReclaimedLock に渡すことによって、そのロックの再要求を試みることができます。 永続化プロバイダーは、ロックが正常に再要求されるまで、インスタンスに変更を加えることができません。 ロックにバインドされているハンドルが他にない場合は、BindReclaimedLock が成功し、現在のハンドルがロックにバインドされるようになります。 それ以外の場合は、BindReclaimedLock が InstanceHandleConflictException をスローします。 他のハンドルに対するコマンドが実行中の場合、BindReclaimedLock がブロックされ、それらのコマンドの結果を待ってから、ロックを再要求できるかどうかを決定することがあります。  
+  
+ 現在のインスタンス ハンドルはインスタンスとロックの所有者にバインドされている必要があります。 インスタンスは完了していないことが必要です。 ロック所有者に関連付けられたロック トークンは、ロックの所有者を識別するために使用されます。  
+  
+ あるロックがハンドルにバインドされると、そのロックはハンドルが有効な間バインドされたままとなります。 ロック トークンとインスタンス バージョンのいずれも変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedInstance">
+      <MemberSignature Language="C#" Value="public void CompletedInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompletedInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.CompletedInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>永続化プロバイダーによってインスタンス ストア内の現在のインスタンスに完了のマークが正常に付けられたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。 インスタンスは、初期化されていなければならず、まだ完了していないことが必要です  (インスタンス データのセットがインスタンスに永続化されている場合、そのインスタンスは初期化されていることを意味します)。インスタンスに関連付けられたすべてのキーが完了している必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedInstanceKey">
+      <MemberSignature Language="C#" Value="public void CompletedInstanceKey (Guid key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompletedInstanceKey(valuetype System.Guid key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.CompletedInstanceKey(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="key">完了したキーのインスタンス キー識別子。 Guid.Empty にすることはできません。</param>
+        <summary>永続化プロバイダーによって外部ストア内のキーに完了のマークが正常に付けられたことを示します。 キーの識別子はパラメーターとして指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。 インスタンス キーは、現在のインスタンスに関連付けられていなければならず、まだ完了していないことが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindReclaimedLockException">
+      <MemberSignature Language="C#" Value="public Exception CreateBindReclaimedLockException (long instanceVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Exception CreateBindReclaimedLockException(int64 instanceVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.CreateBindReclaimedLockException(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceVersion" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="instanceVersion">インスタンスに対して保持されているロックのバージョン。または、永続化プロバイダーがロック バージョンを実装しない場合はゼロ。</param>
+        <summary>BindReclaimedLock 動作をトリガーするために TryCommand からスローされる場合がある例外のインスタンスを作成します。</summary>
+        <returns>例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サンプル コード:   
+  
+```  
+  
+protected override bool TryCommand(InstancePersistenceContext context, InstancePersistenceCommand command, TimeSpan timeout)  
+{  
+    throw context.CreateBindReclaimedLockException(5);  
+}  
+is equivalent to  
+protected override bool TryCommand(InstancePersistenceContext context, InstancePersistenceCommand command, TimeSpan timeout)  
+{  
+    context.BindReclaimedLock(5, timeout);  
+    throw new OperationCanceledException();  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndBindReclaimedLock">
+      <MemberSignature Language="C#" Value="public void EndBindReclaimedLock (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndBindReclaimedLock(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.EndBindReclaimedLock(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期操作の結果。</param>
+        <summary><see cref="M:System.Runtime.DurableInstancing.InstancePersistenceContext.BeginBindReclaimedLock(System.Int64,System.TimeSpan,System.AsyncCallback,System.Object)" /> メソッドによって開始される非同期操作を終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndExecute">
+      <MemberSignature Language="C#" Value="public void EndExecute (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndExecute(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.EndExecute(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期操作のステータス。</param>
+        <summary>非同期操作を終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public void Execute (System.Runtime.DurableInstancing.InstancePersistenceCommand command, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(class System.Runtime.DurableInstancing.InstancePersistenceCommand command, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.Execute(System.Runtime.DurableInstancing.InstancePersistenceCommand,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Runtime.DurableInstancing.InstancePersistenceCommand" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="command">実行する永続化コマンド。</param>
+        <param name="timeout">操作で使用するタイムアウト値。</param>
+        <summary>永続化コマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、このメソッドを使用して、サブコマンドをコマンドの一部として実行できます。 サブコマンドは、InstanceStore.Execute に渡されるコマンドと同様に、TryCommand を使用して実行されます。 コマンドは入れ子にできますが、1 つのコマンドが一度に複数のサブコマンドを実行することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceHandle">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceHandle InstanceHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.DurableInstancing.InstanceHandle InstanceHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンス ハンドルを取得します。</summary>
+        <value>現在のインスタンス ハンドル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceVersion">
+      <MemberSignature Language="C#" Value="public long InstanceVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 InstanceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンス ハンドルによって現在のインスタンスに保持されているロックのバージョンを取得します。</summary>
+        <value>現在のインスタンス ハンドルにバインドされているインスタンス ロックのバージョン。または、ハンドルがロックにバインドされていない場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、あるロックにバインドされているハンドルを使用して、そのロックを必要とする操作 (インスタンス データの永続化など) を実行する場合は、インスタンス ストア内のインスタンスに保持されているロックのロック バージョンとこの値を比較する必要があります。 ロックのバージョンがこの値と一致していない場合、コマンドは失敗し、InstanceLockLostException が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceView">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceView InstanceView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.DurableInstancing.InstanceView InstanceView" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceContext.InstanceView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスのメモリ内状態を表すインスタンス ビュー オブジェクトを取得します。 このビューには、実行中のコマンドによって加えられた更新が反映されます。</summary>
+        <value>インスタンス ビュー オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadedInstance">
+      <MemberSignature Language="C#" Value="public void LoadedInstance (System.Runtime.DurableInstancing.InstanceState state, System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; instanceData, System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; instanceMetadata, System.Collections.Generic.IDictionary&lt;Guid,System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;&gt; associatedInstanceKeyMetadata, System.Collections.Generic.IDictionary&lt;Guid,System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;&gt; completedInstanceKeyMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadedInstance(valuetype System.Runtime.DurableInstancing.InstanceState state, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; instanceData, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; instanceMetadata, class System.Collections.Generic.IDictionary`2&lt;valuetype System.Guid, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt;&gt; associatedInstanceKeyMetadata, class System.Collections.Generic.IDictionary`2&lt;valuetype System.Guid, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt;&gt; completedInstanceKeyMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.LoadedInstance(System.Runtime.DurableInstancing.InstanceState,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue},System.Collections.Generic.IDictionary{System.Guid,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue}},System.Collections.Generic.IDictionary{System.Guid,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Runtime.DurableInstancing.InstanceState" />
+        <Parameter Name="instanceData" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+        <Parameter Name="instanceMetadata" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+        <Parameter Name="associatedInstanceKeyMetadata" Type="System.Collections.Generic.IDictionary&lt;System.Guid,System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;&gt;" />
+        <Parameter Name="completedInstanceKeyMetadata" Type="System.Collections.Generic.IDictionary&lt;System.Guid,System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="state">インスタンス状態情報。</param>
+        <param name="instanceData"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリとしてのインスタンス データ。</param>
+        <param name="instanceMetadata"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのコレクションとしてのインスタンス メタデータ。</param>
+        <param name="associatedInstanceKeyMetadata">インスタンス識別子とインスタンス キーのメタデータのディクショナリとして関連付けられたインスタンス キー。これは、<see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリです。</param>
+        <param name="completedInstanceKeyMetadata">インスタンス識別子とインスタンス キーのメタデータのディクショナリとして完了済みのインスタンス メタデータ。これは、<see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリです。</param>
+        <summary>永続化プロバイダーによってインスタンス ストアから現在のインスタンスが正常に取得されたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルはインスタンスにバインドされている必要があります。 インスタンス ハンドルがロックにバインドされているか、読み込まれたインスタンスに完了のマークが付いている場合、読み込まれたデータは一貫性があると見なされます。それ以外の場合は、一貫性が不明であると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockToken">
+      <MemberSignature Language="C#" Value="public Guid LockToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid LockToken" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceContext.LockToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンス ハンドルにバインドされているインスタンス所有者のロック トークンを取得します。</summary>
+        <value>現在のインスタンス ハンドルにバインドされているロック トークン。または、ハンドルがインスタンス所有者にバインドされていない場合は Guid.Empty。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 永続化プロバイダーは、あるロックにバインドされているハンドルを使用して、そのロックを必要とする操作 (インスタンス データの永続化など) を実行する場合は、インスタンス ストア内のインスタンスに保持されているロックのロック トークンとこの値を比較する必要があります。 ロックのトークンがこの値と一致していない場合、コマンドは失敗し、InstanceLockLostException が発生します。  
+  
+ 永続化プロバイダーは、インスタンスの新しいロックを取得する場合 (ロックにまだバインドされていないハンドルを使用してインスタンス データを永続化する場合など) に、この値をロック トークンとして使用する必要があります。 インスタンスがインスタンス ストアで既にロックされており、ロック トークンがこのロック トークンと一致している場合、永続化プロバイダーは BindReclaimedLock を使用してインスタンスの再要求を試みることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistedInstance">
+      <MemberSignature Language="C#" Value="public void PersistedInstance (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PersistedInstance(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.PersistedInstance(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリとしてのインスタンス データ。</param>
+        <summary>永続化プロバイダーによってインスタンス データのセットがインスタンス ストアに正常に永続化されたことを示します。 これにより、インスタンスがまだ初期化されていない場合に、インスタンスの初期化が実行されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。 インスタンス データの各セットは、以前のセットを完全に置き換えます。 インスタンス データのセットは null に設定できます。これは、インスタンス データのセットを空にすることと同じです。 null のインスタンス データのセットを永続化すると、既存のインスタンス データのセットは削除されます  (インスタンス データのセットを永続化しても、インスタンス メタデータは影響を受けません)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueriedInstanceStore">
+      <MemberSignature Language="C#" Value="public void QueriedInstanceStore (System.Runtime.DurableInstancing.InstanceStoreQueryResult queryResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void QueriedInstanceStore(class System.Runtime.DurableInstancing.InstanceStoreQueryResult queryResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.QueriedInstanceStore(System.Runtime.DurableInstancing.InstanceStoreQueryResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queryResult" Type="System.Runtime.DurableInstancing.InstanceStoreQueryResult" />
+      </Parameters>
+      <Docs>
+        <param name="queryResult">インスタンス ストアに対するクエリの結果。</param>
+        <summary>パラメーターとして渡される <see cref="T:System.Runtime.DurableInstancing.InstanceStoreQueryResult" /> を、<see cref="T:System.Runtime.DurableInstancing.InstanceStoreQueryResult" /> にある <see cref="T:System.Runtime.DurableInstancing.InstanceView" /> オブジェクトのリストに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInstanceKeyMetadata">
+      <MemberSignature Language="C#" Value="public void ReadInstanceKeyMetadata (Guid key, System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadInstanceKeyMetadata(valuetype System.Guid key, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.ReadInstanceKeyMetadata(System.Guid,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Guid" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+        <Parameter Name="complete" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="key">読み取られたメタデータを持つキーのインスタンス キー識別子。 Guid.Empty にすることはできません。</param>
+        <param name="metadata"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリとしてのメタデータ。</param>
+        <param name="complete">
+          <see langword="True" />メタデータがすべてのそれ以外の場合、インスタンス キーに関連付けられているメタデータを表す場合<see langword="false" />です。</param>
+        <summary>永続化プロバイダーによって、現在のインスタンスに関連付けられたキーのインスタンス キー メタデータがインスタンス ストアから正常に読み取られたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルはインスタンスにバインドされている必要があります。 インスタンス ハンドルがロックにバインドされているか、現在のインスタンスに完了のマークが付いている場合、メタデータは一貫性があると見なされます。それ以外の場合は、一貫性が不明であると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInstanceMetadata">
+      <MemberSignature Language="C#" Value="public void ReadInstanceMetadata (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadInstanceMetadata(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.ReadInstanceMetadata(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+        <Parameter Name="complete" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="metadata"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリとしてのメタデータ。</param>
+        <param name="complete">
+          <see langword="True" />メタデータに、それ以外の場合、インスタンスに関連付けられているメタデータのすべてを表すかどうか<see langword="false" />です。</param>
+        <summary>永続化プロバイダーによって現在のインスタンスのインスタンス メタデータがインスタンス ストアから正常に読み取られたことを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInstanceOwnerMetadata">
+      <MemberSignature Language="C#" Value="public void ReadInstanceOwnerMetadata (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadInstanceOwnerMetadata(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.Runtime.DurableInstancing.InstanceValue&gt; metadata, bool complete) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.ReadInstanceOwnerMetadata(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue&gt;" />
+        <Parameter Name="complete" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="metadata"><see cref="T:System.Xml.Linq.XName" /> と <see cref="T:System.Runtime.DurableInstancing.InstanceValue" /> オブジェクトのディクショナリ。</param>
+        <param name="complete">一貫性を <see cref="F:System.Runtime.DurableInstancing.InstanceValueConsistency.InDoubt" /> または <see cref="F:System.Runtime.DurableInstancing.InstanceValueConsistency.Partial" /> に設定するかどうかを指定する値。</param>
+        <summary>パラメーターに渡されたデータを使用して、インスタンス所有者のメタデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルはインスタンスにバインドされている必要があります。 インスタンス ハンドルがロックにバインドされているか、現在のインスタンスに完了のマークが付いている場合、メタデータは一貫性があると見なされます。それ以外の場合は、一貫性が不明であると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCancellationHandler">
+      <MemberSignature Language="C#" Value="public void SetCancellationHandler (Action&lt;System.Runtime.DurableInstancing.InstancePersistenceContext&gt; cancellationHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCancellationHandler(class System.Action`1&lt;class System.Runtime.DurableInstancing.InstancePersistenceContext&gt; cancellationHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.SetCancellationHandler(System.Action{System.Runtime.DurableInstancing.InstancePersistenceContext})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationHandler" Type="System.Action&lt;System.Runtime.DurableInstancing.InstancePersistenceContext&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationHandler">呼び出される関数への参照。</param>
+        <summary>操作のキャンセルが要求された場合に呼び出されるキャンセル ハンドラーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャンセル ハンドラーが呼び出された場合、永続化プロバイダーは、保留中のすべての操作をキャンセルして、TryCommand から OperationCanceledException をスローすることによって、永続化コマンドが中断されたために完了できなかったことを示す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnassociatedInstanceKey">
+      <MemberSignature Language="C#" Value="public void UnassociatedInstanceKey (Guid key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnassociatedInstanceKey(valuetype System.Guid key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.UnassociatedInstanceKey(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="key">関連付けが解除されたキーのインスタンス キー識別子。 Guid.Empty にすることはできません。</param>
+        <summary>永続化プロバイダーによってインスタンス ストア内の現在のインスタンスとキーとの関連付けが正常に解除されたことを示します。 キーの識別子はパラメーターとして指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。 インスタンス キーは、現在のインスタンスに関連付けられていなければならず、完了のマークが付いていることが必要です。 現在のインスタンスに完了のマークを付けることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserContext">
+      <MemberSignature Language="C#" Value="public object UserContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserContext" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceContext.UserContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンス ハンドルにアタッチされたユーザー コンテキスト情報を取得します。</summary>
+        <value>ユーザーのコンテキスト情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトは、現在のインスタンス ハンドルの InstanceStore.OnNewInstanceHandle から返されるオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WroteInstanceKeyMetadataValue">
+      <MemberSignature Language="C#" Value="public void WroteInstanceKeyMetadataValue (Guid key, System.Xml.Linq.XName name, System.Runtime.DurableInstancing.InstanceValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WroteInstanceKeyMetadataValue(valuetype System.Guid key, class System.Xml.Linq.XName name, class System.Runtime.DurableInstancing.InstanceValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.WroteInstanceKeyMetadataValue(System.Guid,System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Guid" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+        <Parameter Name="value" Type="System.Runtime.DurableInstancing.InstanceValue" />
+      </Parameters>
+      <Docs>
+        <param name="key">キーのインスタンス キー識別子。 Guid.Empty にすることはできません。</param>
+        <param name="name">メタデータ プロパティの名前。</param>
+        <param name="value">メタデータ プロパティの値。</param>
+        <summary>永続化プロバイダーによって、現在のインスタンスに関連付けられたインスタンス キーのメタデータ値がインスタンス ストアに正常に書き込まれたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックにもバインドされている必要があります。 インスタンス キーは、現在のインスタンスに関連付けられていなければならず、完了のマークが付いていないことが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WroteInstanceMetadataValue">
+      <MemberSignature Language="C#" Value="public void WroteInstanceMetadataValue (System.Xml.Linq.XName name, System.Runtime.DurableInstancing.InstanceValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WroteInstanceMetadataValue(class System.Xml.Linq.XName name, class System.Runtime.DurableInstancing.InstanceValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.WroteInstanceMetadataValue(System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+        <Parameter Name="value" Type="System.Runtime.DurableInstancing.InstanceValue" />
+      </Parameters>
+      <Docs>
+        <param name="name">メタデータ プロパティの名前。</param>
+        <param name="value">メタデータ プロパティの値。</param>
+        <summary>永続化プロバイダーによって現在のインスタンスのメタデータ値が外部インスタンス ストアに正常に書き込まれたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルは、インスタンスにバインドされているだけでなく、そのインスタンスのロックも保持している必要があります。 インスタンスは完了していないことが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WroteInstanceOwnerMetadataValue">
+      <MemberSignature Language="C#" Value="public void WroteInstanceOwnerMetadataValue (System.Xml.Linq.XName name, System.Runtime.DurableInstancing.InstanceValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WroteInstanceOwnerMetadataValue(class System.Xml.Linq.XName name, class System.Runtime.DurableInstancing.InstanceValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceContext.WroteInstanceOwnerMetadataValue(System.Xml.Linq.XName,System.Runtime.DurableInstancing.InstanceValue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+        <Parameter Name="value" Type="System.Runtime.DurableInstancing.InstanceValue" />
+      </Parameters>
+      <Docs>
+        <param name="name">メタデータ プロパティの名前。</param>
+        <param name="value">メタデータ プロパティの値。</param>
+        <summary>永続化プロバイダーによって現在のインスタンスの所有者のメタデータ値がインスタンス ストアに正常に書き込まれたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス ハンドルはインスタンスの所有者にバインドされている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

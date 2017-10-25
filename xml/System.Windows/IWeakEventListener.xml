@@ -1,0 +1,71 @@
+<Type Name="IWeakEventListener" FullName="System.Windows.IWeakEventListener">
+  <TypeSignature Language="C#" Value="public interface IWeakEventListener" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWeakEventListener" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.IWeakEventListener" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>WeakEvent パターンを通じてイベントを受け取ることが予期されるクラスのイベントをリッスンしているサポートを提供し、<see cref="T:System.Windows.WeakEventManager" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.WeakEventManager> (ディスパッチャ) を呼び出してイベントを転送する、<xref:System.Windows.IWeakEventListener.ReceiveWeakEvent%2A>このインターフェイスを実装して、呼び出すことによってリスナーとして追加されたクラスのメソッド<xref:System.Windows.WeakEventManager>事前メソッドです。  
+  
+ WeakEvent パターンの主な理由は、イベント ソースがあるオブジェクトの有効期間、イベント リスナーの可能性がありますから独立している場合です。 サーバーの全体のイベントのディスパッチを使用して、<xref:System.Windows.WeakEventManager>により収集 (や手動で削除) がガベージ リスナーにハンドラーは、ソース オブジェクトの有効期間が、リスナーを超える場合でもです。 これに対し、通常のイベント フックアップを使用して、`+=`や構文のと同じ言語に固有のイベント ハンドラーへの強い参照を保持するために、可能性のある接続中のソースが発生します。 これは、適切なタイミングでガベージ コレクトされないリスナーの参照を保持します。  
+  
+ リスナーとソース間のリレーションシップがこのパターンの使用を提案する 1 つの一般的な状況は、データ バインディング用のソースから更新プログラムのイベントを処理します。  
+  
+ WeakEvent パターンを使用すると、外部アプリケーションにあるイベントをリッスンします。 のみを定義する必要があります、<xref:System.Windows.WeakEventManager>でリッスンしている動作を指定し、 <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent%2A>、使用して、<xref:System.Windows.WeakEventManager>参照、ハンドラーをアタッチするのにはなく`+=`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReceiveWeakEvent">
+      <MemberSignature Language="C#" Value="public bool ReceiveWeakEvent (Type managerType, object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ReceiveWeakEvent(class System.Type managerType, object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.IWeakEventListener.ReceiveWeakEvent(System.Type,System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="managerType" Type="System.Type" />
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="managerType">型、<see cref="T:System.Windows.WeakEventManager" />このメソッドを呼び出します。</param>
+        <param name="sender">イベントを発生させたオブジェクト。</param>
+        <param name="e">イベント データ。</param>
+        <summary>中央のイベント マネージャーからイベントを受信します。</summary>
+        <returns>
+          <see langword="true" />リスナーは、イベントを処理します。 エラーと見なされます、<see cref="T:System.Windows.WeakEventManager" />処理[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]リスナーが処理しないイベントのリスナーを登録します。 メソッドが返す必要がありますかに関係なく、<see langword="false" />は認識または処理しないイベントを受信した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では実装<xref:System.Windows.IWeakEventListener.ReceiveWeakEvent%2A>2 つの仮想的なイベントの WeakEvent パターンをサポートする`ClockwiseSpin`と`CounterclockwiseSpin`専用ある<xref:System.Windows.WeakEventManager>(非表示)。 イベント データをキャスト、サポートされている各イベントのクラスのハンドラーのスタブを実装 (ここでは 2 つのイベントがイベントのデータ型を共有`SpinEventArgs`)。 実装を返します`false`受信したイベントが予想される 1 つでない場合。  
+  
+ [!code-csharp[CorePseudocode#IWeakEventListener](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#iweakeventlistener)]
+ [!code-vb[CorePseudocode#IWeakEventListener](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#iweakeventlistener)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、受信側がリスナー リスト内にあるすべての可能なイベントを受信するものです。 受信の種類を確認する必要があります複数のイベントをリッスンしているクラスを実装する場合に特に<paramref name="managerType" />呼び出しイベントを知るためにパラメーターに対応します。 これが、各イベント、パターンの一部である必要があります専用理由<see cref="T:System.Windows.WeakEventManager" />です。 また、<paramref name="e" />パラメーターが、一般的なとして型指定された<see cref="T:System.EventArgs" />です。 そのため、順序でイベント データを使用して特定のプロパティを取得、実装が特定のイベントのデータ型にキャストする必要があります。  
+  
+ 基づいたイベントの id を確認した後は、通常、<see cref="T:System.Windows.WeakEventManager" />型、実装には、プライベート クラス ハンドラーを呼び出す必要があります。 クラス ハンドラーで、まったく同じクラス ハンドラーを使用して追加の従来のイベント パターンを通じて追加のリスナーのイベントを処理するために使用可能性がありますあるいは<see langword="+=" />イベント送信者にします。 次の例では、大まかな実装のテンプレートを説明します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

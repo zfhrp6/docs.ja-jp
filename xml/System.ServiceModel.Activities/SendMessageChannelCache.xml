@@ -1,0 +1,211 @@
+<Type Name="SendMessageChannelCache" FullName="System.ServiceModel.Activities.SendMessageChannelCache">
+  <TypeSignature Language="C#" Value="public sealed class SendMessageChannelCache : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SendMessageChannelCache extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.SendMessageChannelCache" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>キャッシュ共有レベルのカスタマイズ、チャネル ファクトリ キャッシュの設定、および <see cref="T:System.ServiceModel.Activities.Send" /> メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定を可能にする拡張機能を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、サービス エンドポイントにメッセージを送信するワークフローで使用するためのクラスです。 これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。  
+  
+ 既定では、<xref:System.ServiceModel.WorkflowServiceHost> によってホストされるワークフローでは、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティが使用するキャッシュは <xref:System.ServiceModel.WorkflowServiceHost> のすべてのワークフロー インスタンス間で共有されます (ホストレベルのキャッシュ)。 <xref:System.ServiceModel.WorkflowServiceHost> によってホストされないクライアント ワークフローの場合、キャッシュを使用できるのはワークフロー インスタンスだけです (インスタンスレベルのキャッシュ)。 構成でエンドポイントが定義されているワークフローに送信アクティビティがある場合、キャッシュは既定で無効になります。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]方法、既定のキャッシュ共有レベルを変更し、キャッシュのチャネル ファクトリおよびチャネル キャッシュ設定を参照してください[送信アクティビティのキャッシュ共有レベルを変更する](~/docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスを使用して、単一のアプリケーション ドメイン内の 2 つのワークフロー アプリケーション間でチャネル キャッシュを共有する方法を示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageChannelCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageChannelCache.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定のファクトリ キャッシュおよびチャネル キャッシュ設定を使用して、<see cref="T:System.ServiceModel.Activities.SendMessageChannelCache" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageChannelCache (System.ServiceModel.Activities.ChannelCacheSettings factorySettings, System.ServiceModel.Activities.ChannelCacheSettings channelSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Activities.ChannelCacheSettings factorySettings, class System.ServiceModel.Activities.ChannelCacheSettings channelSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageChannelCache.#ctor(System.ServiceModel.Activities.ChannelCacheSettings,System.ServiceModel.Activities.ChannelCacheSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="factorySettings" Type="System.ServiceModel.Activities.ChannelCacheSettings" />
+        <Parameter Name="channelSettings" Type="System.ServiceModel.Activities.ChannelCacheSettings" />
+      </Parameters>
+      <Docs>
+        <param name="factorySettings">キャッシュされたチャネル ファクトリのキャッシュ設定。</param>
+        <param name="channelSettings">キャッシュされたチャネルのキャッシュ設定。</param>
+        <summary>カスタム ファクトリ キャッシュおよびチャネル キャッシュ設定を使用して、<see cref="T:System.ServiceModel.Activities.SendMessageChannelCache" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル ファクトリ[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.ServiceModel.ChannelFactory>」および「<xref:System.ServiceModel.ChannelFactory%601>」を参照してください。  
+  
+ チャネル ファクトリ キャッシュのみを使用し、チャネル キャッシュを無効にするには、`channelSettings` 値が 0 の <xref:System.ServiceModel.Activities.ChannelCacheSettings> インスタンスに初期化されたこのコンストラクターに <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> パラメーターを渡します。 チャネル ファクトリ キャッシュとチャネル キャッシュの両方のキャッシュを完全に無効にするには、`factorySettings` 値が 0 の <xref:System.ServiceModel.Activities.ChannelCacheSettings> インスタンスに初期化されたこのコンストラクターに <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> パラメーターを渡します。 チャネル ファクトリ キャッシュが無効になっているときにチャネル キャッシュを有効にすることはできません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスを使用して、単一のアプリケーション ドメイン内の 2 つのワークフロー アプリケーション間でチャネル キャッシュを共有する方法を示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SendMessageChannelCache (System.ServiceModel.Activities.ChannelCacheSettings factorySettings, System.ServiceModel.Activities.ChannelCacheSettings channelSettings, bool allowUnsafeCaching);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Activities.ChannelCacheSettings factorySettings, class System.ServiceModel.Activities.ChannelCacheSettings channelSettings, bool allowUnsafeCaching) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageChannelCache.#ctor(System.ServiceModel.Activities.ChannelCacheSettings,System.ServiceModel.Activities.ChannelCacheSettings,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="factorySettings" Type="System.ServiceModel.Activities.ChannelCacheSettings" />
+        <Parameter Name="channelSettings" Type="System.ServiceModel.Activities.ChannelCacheSettings" />
+        <Parameter Name="allowUnsafeCaching" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="factorySettings">キャッシュされたチャネル ファクトリのキャッシュ設定。</param>
+        <param name="channelSettings">キャッシュされたチャネルのキャッシュ設定。</param>
+        <param name="allowUnsafeCaching">
+          <see langword="true" />キャッシュは有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタム ファクトリ キャッシュ設定、カスタム チャネル キャッシュ設定、およびキャッシュを有効にするかどうかを示す値を使用して、<see cref="T:System.ServiceModel.Activities.SendMessageChannelCache" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、構成で定義されているエンドポイントを使用しない <xref:System.ServiceModel.Activities.Send> アクティビティでのみキャッシュを使用できます。 ただし、有効にする場合でキャッシュをここではこのコンス トラクターを呼び出すと、`allowUnsafeCaching`パラメーターに設定`true`です。 次に、このクラスの新しいインスタンスをワークフロー サービス ホストまたはワークフロー インスタンスに拡張として追加します。  
+  
+ チャネル ファクトリ[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.ServiceModel.ChannelFactory>」および「<xref:System.ServiceModel.ChannelFactory%601>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowUnsafeCaching">
+      <MemberSignature Language="C#" Value="public bool AllowUnsafeCaching { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowUnsafeCaching" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendMessageChannelCache.AllowUnsafeCaching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュを有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />キャッシュは有効にするにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローの <xref:System.ServiceModel.Activities.Send> アクティビティのエンドポイントが構成で定義されている場合、キャッシュは安全性に問題がある可能性があるため、既定で無効になります。 ただし、有効にする場合のキャッシュにこのプロパティを設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Activities.ChannelCacheSettings ChannelSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Activities.ChannelCacheSettings ChannelSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendMessageChannelCache.ChannelSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activities.ChannelCacheSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル キャッシュの設定を取得または設定します。</summary>
+        <value>チャネル キャッシュの設定。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendMessageChannelCache.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.SendMessageChannelCache" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FactorySettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Activities.ChannelCacheSettings FactorySettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Activities.ChannelCacheSettings FactorySettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.SendMessageChannelCache.FactorySettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activities.ChannelCacheSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ファクトリ キャッシュの設定を取得または設定します。</summary>
+        <value>チャネル ファクトリ キャッシュの設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル ファクトリ キャッシュは、キャッシュされたチャネル ファクトリを表します。 チャネル ファクトリ[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.ServiceModel.ChannelFactory>」および「<xref:System.ServiceModel.ChannelFactory%601>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

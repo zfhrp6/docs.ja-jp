@@ -1,0 +1,126 @@
+<Type Name="SettingsProviderAttribute" FullName="System.Configuration.SettingsProviderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SettingsProviderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsProviderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsProviderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のアプリケーション設定クラスまたはプロパティの記憶域を提供するために使用する設定プロバイダーを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各アプリケーション設定クラスでは、アプリケーションの実行間で保持される情報を表すアプリケーション設定のプロパティのグループを定義します。 ただし、これは設定プロバイダー — から派生したクラス<xref:System.Configuration.SettingsProvider>: 実際には、ストレージ メカニズムを提供します。  
+  
+ <xref:System.Configuration.SettingsProviderAttribute>アプリケーション設定のプロパティの記憶域を提供するために使用する設定プロバイダーを指定します。 この属性は、アプリケーション設定クラス全体または個々 のアプリケーション設定のプロパティに適用できます。 A<xref:System.Configuration.SettingsProviderAttribute>プロパティ レベルにセットには、クラス レベルの属性がよりも優先されます。 設定プロバイダーが明示的に指定されていない、既定のプロバイダーが使用されます。 クライアント アプリケーションの既定のプロバイダーは<xref:System.Configuration.LocalFileSettingsProvider>します。  
+  
+ プロバイダーの設定は、実行時に決定できません。 設定プロバイダー クラス自体にストレージ メソッドを実行時に決定をコーディングする必要があります。  
+  
+> [!CAUTION]
+>  これらのプロバイダーが、アプリケーションの構成情報を完全な読み取り/書き込みアクセス権を持っているために、任意のサード パーティからのカスタム設定プロバイダーを使用して本質的に安全ではありません。 設定プロバイダーは、一般的に使用する前に、十分に調査する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProviderAttribute (string providerTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProviderAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerTypeName">A<see cref="T:System.String" />設定プロバイダーの名前を含むです。</param>
+        <summary>
+          <see cref="T:System.Configuration.SettingsProviderAttribute" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名から派生したクラスの名前は、 <xref:System.Configuration.SettingsProvider>、つまり設定プロバイダーとして指定されています。  
+  
+> [!CAUTION]
+>  これらのプロバイダーが、アプリケーションの構成情報を完全な読み取り/書き込みアクセス権を持っているために、任意のサード パーティからのカスタム設定プロバイダーを使用して本質的に安全ではありません。 設定プロバイダーは、一般的に使用する前に、十分に調査する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsProviderAttribute (Type providerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type providerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsProviderAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="providerType"><see cref="T:System.Type" /> はプロバイダーの種類の設定を格納しています。</param>
+        <summary><see cref="T:System.Configuration.SettingsProviderAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderTypeName">
+      <MemberSignature Language="C#" Value="public string ProviderTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsProviderAttribute.ProviderTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定プロバイダーの種類の名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />設定プロバイダーの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsProviderAttribute.ProviderTypeName%2A>にプロパティを設定、<xref:System.Configuration.SettingsProviderAttribute.%23ctor%2A>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

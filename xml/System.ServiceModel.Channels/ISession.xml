@@ -1,0 +1,82 @@
+<Type Name="ISession" FullName="System.ServiceModel.Channels.ISession">
+  <TypeSignature Language="C#" Value="public interface ISession" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISession" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ISession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>通信セッションの ID を提供して、メッセージを交換するパーティ間の共有コンテキストを確立するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.ISession> インターフェイスは、すべてのセッションの基本インターフェイスです。 このインターフェイスには、セッションを識別するための <xref:System.ServiceModel.Channels.ISession.Id%2A> プロパティが含まれます。  
+  
+ セッションは、通信交換における全参加者間の共有コンテキストです。 この共有コンテキストの特性は、次の 3 つのプロパティで設定されます。  
+  
+-   セッションの確立 : 全参加者間の共有コンテキストを確立するためのプロセス。  
+  
+-   メッセージの関連付け : メッセージのグループを共有コンテキストのインスタンスに関連付けるメソッド。  
+  
+-   <xref:System.ServiceModel.Channels.ISession> インターフェイスには、セッションの参加者数またはセッションの有効期間については通知されません。  
+  
+ これらのセッションのプロパティは、ID をセッションと関連付けることによって提供されます。  
+  
+ <xref:System.ServiceModel.Channels.ISession> は、次により継承されます。  
+  
+-   <xref:System.ServiceModel.Channels.IInputSession>  
+  
+-   <xref:System.ServiceModel.Channels.IOutputSession>  
+  
+-   <xref:System.ServiceModel.Channels.IDuplexSession>  
+  
+-   <xref:System.ServiceModel.Channels.ISessionChannel%601> 型の <xref:System.ServiceModel.Channels.ISession>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ISession.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションを一意に識別する ID を取得します。</summary>
+        <value>セッションを一意に識別する ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッションが中断された場合は、<xref:System.ServiceModel.Channels.ISession.Id%2A> を使用して取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

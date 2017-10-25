@@ -1,0 +1,399 @@
+<Type Name="CodeArrayCreateExpression" FullName="System.CodeDom.CodeArrayCreateExpression">
+  <TypeSignature Language="C#" Value="public class CodeArrayCreateExpression : System.CodeDom.CodeExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeArrayCreateExpression extends System.CodeDom.CodeExpression" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeArrayCreateExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>配列を作成する式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeArrayCreateExpression>配列を作成するコード式を表すために使用できます。 配列を作成する式は、要素の数または配列の初期化に使用する式の一覧のいずれかを指定する必要があります。  
+  
+ ほとんどの配列を初期化するには、宣言の直後です。 <xref:System.CodeDom.CodeArrayCreateExpression.Initializers%2A>プロパティは、配列の初期化に使用する式に設定できます。  
+  
+ A<xref:System.CodeDom.CodeArrayCreateExpression>のみ直接 1 次元の配列の作成をサポートします。 ネストして作成することは、言語は、配列の配列を許可している場合、<xref:System.CodeDom.CodeArrayCreateExpression>内で、<xref:System.CodeDom.CodeArrayCreateExpression>です。 すべての言語では、配列の配列をサポートします。 確認するかどうか、<xref:System.CodeDom.Compiler.ICodeGenerator>言語は、呼び出すことで入れ子にされた配列のサポートを宣言の<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>で、<xref:System.CodeDom.Compiler.GeneratorSupport.ArraysOfArrays>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコードでは、<xref:System.CodeDom.CodeArrayCreateExpression>を 10 個のインデックスに整数の配列を作成します。  
+  
+ [!code-cpp[CodeArrayCreateExpressionSnippet#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeArrayCreateExpressionSnippet/CPP/codearraycreateexpressionsnippet.cpp#1)]
+ [!code-csharp[CodeArrayCreateExpressionSnippet#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeArrayCreateExpressionSnippet/CS/codearraycreateexpressionsnippet.cs#1)]
+ [!code-vb[CodeArrayCreateExpressionSnippet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeArrayCreateExpressionSnippet/VB/codearraycreateexpressionsnippet.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeArrayCreateExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (System.CodeDom.CodeTypeReference createType, System.CodeDom.CodeExpression size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference createType, class System.CodeDom.CodeExpression size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="size" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="createType">A<see cref="T:System.CodeDom.CodeTypeReference" />を作成する配列のデータ型を示すです。</param>
+        <param name="size">作成する配列のインデックスの数を示す式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラス、配列のインデックスの数を示す指定した配列のデータ型とコード式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (System.CodeDom.CodeTypeReference createType, params System.CodeDom.CodeExpression[] initializers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference createType, class System.CodeDom.CodeExpression[] initializers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.CodeDom.CodeTypeReference,System.CodeDom.CodeExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="initializers" Type="System.CodeDom.CodeExpression[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="createType">A<see cref="T:System.CodeDom.CodeTypeReference" />を作成する配列のデータ型を示すです。</param>
+        <param name="initializers">配列の初期化に使用する式の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラスの指定した配列のデータ型と初期化式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (System.CodeDom.CodeTypeReference createType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference createType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.CodeDom.CodeTypeReference,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="createType">A<see cref="T:System.CodeDom.CodeTypeReference" />を作成する配列のデータ型を示すです。</param>
+        <param name="size">作成する配列のインデックスの数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラス、配列のインデックスの数と指定された配列のデータ型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (string createType, System.CodeDom.CodeExpression size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string createType, class System.CodeDom.CodeExpression size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.String" />
+        <Parameter Name="size" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型の名前。</param>
+        <param name="size">作成する配列のインデックスの数を示す式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />式を使用して、指定した配列データ型の名前とコード配列のインデックスの数を示すクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (string createType, params System.CodeDom.CodeExpression[] initializers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string createType, class System.CodeDom.CodeExpression[] initializers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.String,System.CodeDom.CodeExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.String" />
+        <Parameter Name="initializers" Type="System.CodeDom.CodeExpression[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型の名前。</param>
+        <param name="initializers">配列の初期化に使用する式の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラスのデータ型の名前を指定した配列および初期化子を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (string createType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string createType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.String" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型の名前。</param>
+        <param name="size">作成する配列のインデックスの数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラス、配列のインデックスの数と指定した配列のデータ型の名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (Type createType, System.CodeDom.CodeExpression size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type createType, class System.CodeDom.CodeExpression size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.Type,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.Type" />
+        <Parameter Name="size" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型。</param>
+        <param name="size">作成する配列のインデックスの数を示す式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラス、配列のインデックスの数を示す指定した配列のデータ型とコード式を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (Type createType, params System.CodeDom.CodeExpression[] initializers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type createType, class System.CodeDom.CodeExpression[] initializers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.Type,System.CodeDom.CodeExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.Type" />
+        <Parameter Name="initializers" Type="System.CodeDom.CodeExpression[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型。</param>
+        <param name="initializers">配列の初期化に使用する式の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラスの指定された配列のデータ型と初期化子を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeArrayCreateExpression (Type createType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type createType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeArrayCreateExpression.#ctor(System.Type,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="createType" Type="System.Type" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="createType">作成する配列のデータ型。</param>
+        <param name="size">作成する配列のインデックスの数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeArrayCreateExpression" />クラス、配列のインデックスの数と指定された配列のデータ型を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference CreateType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference CreateType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeArrayCreateExpression.CreateType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または作成する配列の型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />を示す、配列の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initializers">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpressionCollection Initializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpressionCollection Initializers" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeArrayCreateExpression.Initializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の初期化に使用する初期化子を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpressionCollection" />初期化値を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public int Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeArrayCreateExpression.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配列内のインデックスの数を設定します。</summary>
+        <value>配列のインデックスの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeExpression">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression SizeExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression SizeExpression" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeArrayCreateExpression.SizeExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配列のサイズを指定する式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を示す、配列のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列のサイズを表すことができます、<xref:System.CodeDom.CodeExpression>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

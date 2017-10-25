@@ -1,0 +1,119 @@
+<Type Name="IWorkflowCompilerOptionsService" FullName="System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService">
+  <TypeSignature Language="C#" Value="public interface IWorkflowCompilerOptionsService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWorkflowCompilerOptionsService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>検証およびコンパイル処理の実行時に環境固有のコンパイル情報を提供するインターフェイスを定義します。これは、ワークフロー デザイナーとコンパイラをホストする環境で実装されるインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CheckTypes">
+      <MemberSignature Language="C#" Value="public bool CheckTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService.CheckTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を検査するかどうかを示す値を取得します。</summary>
+        <value>
+          型を検査する場合は <see langword="true" />。それ以外の場合は <see langword="false" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー コンパイルの検証段階では、ワークフロー ソース ドキュメントが拒否された場合、<xref:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService.CheckTypes%2A>プロパティは`true`およびワークフローまたはコンパニオン ルール ファイル直接参照を .NET Framework 型が許可された型の一覧に存在しません。 許可された型の一覧は、XML ドキュメントの各エントリことを示します、 `Assembly`、 `Namespace`、 `TypeName`、および`Authorized`{`true`または`false`} インジケーター。 このクラスは、リストのエントリに対応しています。 また、完全な名前空間を含めたり除外したりするために、ワイルドカード文字を指定することもできます。 たとえばを使用して`Type="System.*"`のすべての型が含まれています<xref:System>、子名前空間に含まれる型を含むです。  
+  
+ 許可された型のリストの使用によって制御されます、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler>オプション**/checktypes**またはを使用して、<xref:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService.CheckTypes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public string Language { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Language" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローのコンパイル時に Visual Studio などの環境で使用するプログラミング言語を取得します。</summary>
+        <value>開発環境で使用するプログラミング言語の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `Language` プロパティを実装する例を次に示します。 この例は、追跡プロファイル デザイナーの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#123](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#123)]
+ [!code-vb[WF_Samples#123](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#123)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootNamespace">
+      <MemberSignature Language="C#" Value="public string RootNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RootNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.IWorkflowCompilerOptionsService.RootNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクトのルート名前空間セットを取得します。</summary>
+        <value>ルート名前空間の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、プロジェクトのルート名前空間をコンパイラに渡すために、Visual Basic のコンパイル環境で使用されます。  
+  
+   
+  
+## Examples  
+ `RootNamespace` プロパティを実装する例を次に示します。 この例は、追跡プロファイル デザイナーの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[Wf_samples#122](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#122)]
+ [!code-vb[Wf_samples#122](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#122)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

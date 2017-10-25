@@ -1,0 +1,498 @@
+<Type Name="IEditableCollectionView" FullName="System.ComponentModel.IEditableCollectionView">
+  <TypeSignature Language="C#" Value="public interface IEditableCollectionView" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEditableCollectionView" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IEditableCollectionView" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドとプロパティを定義する、<see cref="T:System.Windows.Data.CollectionView" />を実装してコレクションに編集機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション ビューを実装すると、<xref:System.ComponentModel.IEditableCollectionView>インターフェイスを直接変更できます、基になるコレクション メソッドとプロパティを使用して、に対する変更を許可する場合を<xref:System.ComponentModel.IEditableCollectionView>コレクションの種類に関係なく、公開します。  
+  
+ 種類<xref:System.Windows.Controls.ItemCollection>、 <xref:System.Windows.Data.BindingListCollectionView>、および<xref:System.Windows.Data.ListCollectionView>に付属している種類[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]から継承する<xref:System.Windows.Data.CollectionView>です。  これらの型が実装も、<xref:System.ComponentModel.IEditableCollectionView>ので、それらの型のいずれかを使用するコレクションを編集することができます。  <xref:System.Windows.Controls.ItemCollection>、具体的には、多くの場合、ため、<xref:System.Windows.Controls.ItemsControl.Items%2A?displayProperty=nameWithType>プロパティは、<xref:System.Windows.Controls.ItemCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例で定義されているメソッドを使用してコレクションに項目を追加する方法を示しています。<xref:System.ComponentModel.IEditableCollectionView>です。  このアプリケーションは、販売品目の一覧を表示し、ユーザーの追加、編集、または項目を削除するオプションを提供します。  ユーザーを追加または、項目を編集、ときにフォーム新しい項目を入力するように求めるプロンプトを表示します。  ユーザーは、フォームを送信する、項目がコレクションにコミットします。  ユーザーは、フォームをキャンセルした場合、項目は破棄されます。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#AddItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#additem)]
+ [!code-vb[EditingCollectionsSnippets#AddItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#additem)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddNew">
+      <MemberSignature Language="C#" Value="public object AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目をコレクションに追加します。</summary>
+        <returns>コレクションに追加された新しい項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.ComponentModel.IEditableCollectionView.AddNew%2A>追加トランザクションを開始します。  呼び出す必要があります<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>または<xref:System.ComponentModel.IEditableCollectionView.CancelNew%2A>追加トランザクションを終了します。 新しい項目は、コレクション ビューに常に表示されます。 任意のフィルター処理、並べ替えはグループ化に適用される新しいビューが適用されるアイテムの場合に<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Window>新しい項目を追加するユーザーを要求します。  呼び出すし、<xref:System.ComponentModel.IEditableCollectionView.AddNew%2A>新しいオブジェクトおよび設定を作成する、<xref:System.Windows.FrameworkElement.DataContext%2A>の<xref:System.Windows.Window>そのオブジェクトにします。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#AddItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#additem)]
+ [!code-vb[EditingCollectionsSnippets#AddItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#additem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanAddNew">
+      <MemberSignature Language="C#" Value="public bool CanAddNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanAddNew" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.CanAddNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい項目をコレクションに追加できるかどうかを示す値を取得します。</summary>
+        <value>
+          新しい項目をコレクションに追加できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IEditableCollectionView>次に該当する場合、新しい項目を追加できます。  
+  
+-   項目は、基になるコレクションに追加できます。  たとえば、コレクションが読み取り専用<xref:System.ComponentModel.IEditableCollectionView.CanAddNew%2A>は`false`します。  
+  
+-   <xref:System.ComponentModel.IEditableCollectionView>コレクションに含まれる型のオブジェクトを作成することができます。  たとえば、型のコレクションは、 <xref:System.Collections.ObjectModel.ObservableCollection%601>、<xref:System.ComponentModel.IEditableCollectionView>型のオブジェクトを作成できる必要があります`T`です。  
+  
+   
+  
+## Examples  
+ 次の例では、項目をコレクションに追加できるかどうかを確認します。  場合<xref:System.ComponentModel.IEditableCollectionView.CanAddNew%2A>は`false`の例は、項目を追加できないことをユーザーに通知します。  それ以外の場合、新しい項目を追加するユーザー入力が求められるフォームが表示されます。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#AddItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#additem)]
+ [!code-vb[EditingCollectionsSnippets#AddItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#additem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCancelEdit">
+      <MemberSignature Language="C#" Value="public bool CanCancelEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanCancelEdit" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.CanCancelEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが保留中の変更を破棄して、編集されたオブジェクトの元の値を復元できるかどうかを示す値を取得します。</summary>
+        <value>
+          コレクション ビューが保留中の変更を破棄して、編集されたオブジェクトの元の値を復元できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit%2A>`true`ビューが現在編集済みの項目に「保留中の変更」の概念をサポートするかどうか。   たとえば、コレクション ビューを返す可能性があります`true`編集済みの項目を実装する場合<xref:System.ComponentModel.IEditableObject>ビューがロールを使用すると、項目の状態に関する情報を持つかどうか、または変更をバックアップします。 <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit%2A>`false`場合は、ビューは、オブジェクトに対する変更を戻すことはできません。  その場合は、呼び出す<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>状態の編集を終了し、編集されたオブジェクトでの変更を元に戻すロジックを提供するビューが発生します。  
+  
+   
+  
+## Examples  
+ 次の例では取得<xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit%2A>を呼び出す前に編集された項目の元の値を復元できるかどうかを確認する<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>です。  値を復元できない場合は、そのためには追加のロジックを指定してください。  例では、呼び出したときに、値が復元された可能性がある場合<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>です。   サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#CancelEdit](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#canceledit)]
+ [!code-vb[EditingCollectionsSnippets#CancelEdit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#canceledit)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelEdit">
+      <MemberSignature Language="C#" Value="public void CancelEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.CancelEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集トランザクションを終了し、可能な場合は、項目の元の値を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>設定<xref:System.ComponentModel.IEditableCollectionView.CurrentEditItem%2A>に`null`コレクション ビューで状態の編集を終了するとします。  場合<xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit%2A>は`true`、<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>も編集されたオブジェクトの元の値を復元します。  
+  
+   
+  
+## Examples  
+ 次の例では取得<xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit%2A>を呼び出す前に編集された項目の元の値を復元できるかどうかを確認する<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>です。  値を復元できない場合は、そのためには追加のロジックを指定してください。  例では、呼び出したときに、値が復元された可能性がある場合<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>です。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#CancelEdit](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#canceledit)]
+ [!code-vb[EditingCollectionsSnippets#CancelEdit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#canceledit)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelNew">
+      <MemberSignature Language="C#" Value="public void CancelNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.CancelNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加トランザクションを終了し、保留中の新しい項目を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、新しい項目を追加するユーザー入力が求められるフォームを表示します。  この例では、ユーザーは、フォームを送信する、<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>項目をコレクションに追加します。  この例では、ユーザーは、フォームをキャンセルした場合<xref:System.ComponentModel.IEditableCollectionView.CancelNew%2A>項目を破棄します。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#AddItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#additem)]
+ [!code-vb[EditingCollectionsSnippets#AddItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#additem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRemove">
+      <MemberSignature Language="C#" Value="public bool CanRemove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRemove" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.CanRemove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションから項目を削除できるかどうかを示す値を取得します。</summary>
+        <value>
+          コレクションから項目を削除できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IEditableCollectionView.CanRemove%2A>`false`基になるコレクションが読み取り専用の場合。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.ComponentModel.IEditableCollectionView.CanRemove%2A>をコレクションから項目を削除できるかどうかを確認します。  項目を削除できる場合、例、確認を求めるアクションおよび呼び出し<xref:System.ComponentModel.IEditableCollectionView.Remove%2A>、ユーザーがクリックした場合**はい**です。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#RemoveItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#removeitem)]
+ [!code-vb[EditingCollectionsSnippets#RemoveItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#removeitem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitEdit">
+      <MemberSignature Language="C#" Value="public void CommitEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CommitEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.CommitEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集トランザクションを終了し、保留中の変更を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既存の項目を編集するユーザー入力が求められるフォームを作成します。  この例では、ユーザーは、フォームを送信する、<xref:System.ComponentModel.IEditableCollectionView.CommitEdit%2A>をコレクションに変更を保存します。  この例では、ユーザーは、フォームをキャンセルした場合<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>変更を破棄します。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#EditItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#edititem)]
+ [!code-vb[EditingCollectionsSnippets#EditItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#edititem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitNew">
+      <MemberSignature Language="C#" Value="public void CommitNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CommitNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.CommitNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加トランザクションを終了し、保留中の新しい項目を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のフィルター処理、並べ替えはグループ化に適用される、<xref:System.Windows.Data.CollectionView>新しいに適用されるアイテムの場合に<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>と呼びます。  
+  
+   
+  
+## Examples  
+ 次の例では、新しい項目を追加するユーザー入力が求められるフォームを表示します。  この例では、ユーザーは、フォームを送信する、<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>項目をコレクションに追加します。  この例では、ユーザーは、フォームをキャンセルした場合<xref:System.ComponentModel.IEditableCollectionView.CancelNew%2A>項目を破棄します。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#AddItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#additem)]
+ [!code-vb[EditingCollectionsSnippets#AddItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#additem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentAddItem">
+      <MemberSignature Language="C#" Value="public object CurrentAddItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CurrentAddItem" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.CurrentAddItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の追加トランザクション処理中に追加される項目を取得します。</summary>
+        <value>場合は追加される項目<see cref="P:System.ComponentModel.IEditableCollectionView.IsAddingNew" />は<see langword="true" />、それ以外の<see langword="null" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentEditItem">
+      <MemberSignature Language="C#" Value="public object CurrentEditItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CurrentEditItem" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.CurrentEditItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集されているコレクション内の項目を取得します。</summary>
+        <value><see cref="P:System.ComponentModel.IEditableCollectionView.IsEditingItem" /> が <see langword="true" /> である場合は、編集されているコレクション内の項目。それ以外の場合は、<see langword="null" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItem">
+      <MemberSignature Language="C#" Value="public void EditItem (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EditItem(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.EditItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">編集する項目。</param>
+        <summary>指定した項目の編集トランザクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既存の項目を編集するユーザー入力が求められるフォームを作成します。  ユーザーは、フォームを送信する、変更がコレクションにコミットします。  ユーザーは、フォームをキャンセルした場合、変更は破棄されます。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#EditItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#edititem)]
+ [!code-vb[EditingCollectionsSnippets#EditItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#edititem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAddingNew">
+      <MemberSignature Language="C#" Value="public bool IsAddingNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAddingNew" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.IsAddingNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加トランザクションが実行中かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />追加トランザクションが実行中である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して追加トランザクションを開始する<xref:System.ComponentModel.IEditableCollectionView.AddNew%2A>呼び出すことによって、追加のトランザクションを終了および<xref:System.ComponentModel.IEditableCollectionView.CommitNew%2A>または<xref:System.ComponentModel.IEditableCollectionView.CancelNew%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEditingItem">
+      <MemberSignature Language="C#" Value="public bool IsEditingItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEditingItem" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.IsEditingItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集トランザクションが実行中かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />編集トランザクションが実行中である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによって編集トランザクションを開始する<xref:System.ComponentModel.IEditableCollectionView.EditItem%2A>を呼び出して、トランザクションを終了および<xref:System.ComponentModel.IEditableCollectionView.CommitEdit%2A>または<xref:System.ComponentModel.IEditableCollectionView.CancelEdit%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewItemPlaceholderPosition">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.NewItemPlaceholderPosition NewItemPlaceholderPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.NewItemPlaceholderPosition NewItemPlaceholderPosition" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.NewItemPlaceholderPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューにある新しい項目のプレースホルダーの位置を取得または設定します。</summary>
+        <value>コレクション ビューにある新しい項目のプレースホルダーの位置を指定する列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する項目。</param>
+        <summary>指定した項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`item`、コレクションに含まれない<xref:System.ComponentModel.IEditableCollectionView.Remove%2A>何も行われません。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.ComponentModel.IEditableCollectionView.CanRemove%2A>をコレクションから項目を削除できるかどうかを確認します。  項目を削除できる場合、例、確認を求めるアクションおよび呼び出し<xref:System.ComponentModel.IEditableCollectionView.Remove%2A>、ユーザーがクリックした場合**はい**です。 サンプル全体については、次を参照してください。 [IEditableCollectionView サンプルを使用してコレクションを変更する](http://go.microsoft.com/fwlink/?LinkID=159974)です。  
+  
+ [!code-csharp[EditingCollectionsSnippets#RemoveItem](~/samples/snippets/csharp/VS_Snippets_Wpf/EditingCollectionsSnippets/CSharp/Window1.xaml.cs#removeitem)]
+ [!code-vb[EditingCollectionsSnippets#RemoveItem](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EditingCollectionsSnippets/visualbasic/window1.xaml.vb#removeitem)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IEditableCollectionView.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の位置。</param>
+        <summary>コレクション内の指定した位置にある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `index`コレクション ビュー、コレクションではなく相対パスです。  たとえば、コレクションは、10 個のアイテムとビューの場合は、 <xref:System.ComponentModel.ICollectionView.Filter%2A> 7 個の項目の表示、有効な値のように`index`は 0 から 6 までです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 未満か、コレクション ビュー内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

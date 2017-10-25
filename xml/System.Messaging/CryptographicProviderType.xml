@@ -1,0 +1,233 @@
+<Type Name="CryptographicProviderType" FullName="System.Messaging.CryptographicProviderType">
+  <TypeSignature Language="C#" Value="public enum CryptographicProviderType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed CryptographicProviderType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.CryptographicProviderType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>デジタル署名の検証に使用可能な暗号化サービス プロバイダーを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化サービス プロバイダーには、暗号化標準やアルゴリズムの実装が含まれています。 アプリケーションは、認証プロバイダーの名前またはデジタル署名を検証する暗号サービス プロバイダーの認証プロバイダーの種類に必要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dss">
+      <MemberSignature Language="C#" Value="Dss" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType Dss = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.Dss" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーのと同様に、種類<see langword="RsqSig" />ハッシュとデジタル署名のみをサポートします。 <see langword="Dss" />デジタル署名アルゴリズム (DSA) 署名アルゴリズムを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Fortezza">
+      <MemberSignature Language="C#" Value="Fortezza" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType Fortezza = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.Fortezza" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーの種類で、暗号化プロトコルと National Institute of Standards and Technology が所有してアルゴリズムのセットが含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MicrosoftExchange">
+      <MemberSignature Language="C#" Value="MicrosoftExchange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType MicrosoftExchange = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.MicrosoftExchange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Exchange のメール アプリケーションおよび Microsoft メールと互換性のある他のアプリケーションの暗号化の要件用に設計されたプロバイダーの種類。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロバイダーの種類は準備中です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号プロバイダーの種類を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RsaFull">
+      <MemberSignature Language="C#" Value="RsaFull" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType RsaFull = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.RsaFull" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全 RSA プロバイダーの種類、デジタル署名およびデータの暗号化の両方をサポートします。 汎用目的暗号化サービス プロバイダーと見なされます。 RSA 公開キー アルゴリズムは、公開キーのすべての操作に使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RSA Data Security, Inc. は、主要な開発者および公開キー暗号化の規格の発行元です。 名前に"RSA"は、会社の 3 人の開発者と所有者の名前を表します。 Rivest、Shamir、および Adelman です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RsqSig">
+      <MemberSignature Language="C#" Value="RsqSig" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType RsqSig = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.RsqSig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブセット、<see langword="RsaFull" />プロバイダーの種類は、これらの関数やハッシュとデジタル署名に必要なアルゴリズムをサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ssl">
+      <MemberSignature Language="C#" Value="Ssl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType Ssl = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.Ssl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Secure Sockets Layer (SSL) プロトコルをサポートするプロバイダーの種類。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SttAcq">
+      <MemberSignature Language="C#" Value="SttAcq" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType SttAcq = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.SttAcq" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護されたトランザクション テクノロジ プロバイダーの取得者です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SttBrnd">
+      <MemberSignature Language="C#" Value="SttBrnd" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType SttBrnd = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.SttBrnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション テクノロジ プロバイダーのブランドをセキュリティで保護します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SttIss">
+      <MemberSignature Language="C#" Value="SttIss" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType SttIss = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.SttIss" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護されたトランザクションのテクノロジのプロバイダーの発行者。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SttMer">
+      <MemberSignature Language="C#" Value="SttMer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType SttMer = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.SttMer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション テクノロジ プロバイダーの企業をセキュリティで保護します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SttRoot">
+      <MemberSignature Language="C#" Value="SttRoot" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.CryptographicProviderType SttRoot = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.CryptographicProviderType.SttRoot" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.CryptographicProviderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション テクノロジのプロバイダー ルートをセキュリティで保護します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

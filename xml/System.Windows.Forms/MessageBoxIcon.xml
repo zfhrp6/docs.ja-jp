@@ -1,0 +1,230 @@
+<Type Name="MessageBoxIcon" FullName="System.Windows.Forms.MessageBoxIcon">
+  <TypeSignature Language="C#" Value="public enum MessageBoxIcon" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MessageBoxIcon extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MessageBoxIcon" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>表示する情報を定義する定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、<xref:System.Windows.Forms.MessageBox> クラスで使用します。 この列挙体の各メンバーの説明には、シンボルの一般的な表現が含まれています。 表示されている実際のグラフィックスは、オペレーティング システムの定数の関数です。 現在の実装では、割り当てられている複数の値を持つ 4 つの一意な記号があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.MessageBox>にエントリがないユーザーが通知、<xref:System.Windows.Forms.TextBox>です。 この例で既存のフォームから、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.Button>と<xref:System.Windows.Forms.TextBox>にします。  
+  
+```csharp  
+private void Form1_FormClosing(object sender, FormClosingEventArgs e)  
+{  
+    const string message =  
+        "Are you sure that you would like to close the form?";  
+    const string caption = "Form Closing";  
+    var result = MessageBox.Show(message, caption,  
+                                 MessageBoxButtons.YesNo,  
+                                 MessageBoxIcon.Exclamation);  
+  
+    // If the no button was pressed ...  
+    if (result == DialogResult.No)  
+    {  
+        // cancel the closure of the form.  
+        e.Cancel = true;  
+    }  
+}  
+```  
+  
+```cpp  
+private:  
+   void Form1_FormClosing(Object^ sender, FormClosingEventArgs^ e)  
+   {  
+      // If the no button was pressed ...  
+      if ((MessageBox::Show(  
+         "Are you sure that you would like to close the form?",   
+         "Form Closing", MessageBoxButtons::YesNo,   
+         MessageBoxIcon::Exclamation) == DialogResult::No))  
+      {  
+         // cancel the closure of the form.  
+         e->Cancel = true;  
+      }  
+   }  
+```  
+  
+```vb  
+Private Sub Form1_FormClosing( _  
+    ByVal sender As System.Object, _  
+    ByVal e As System.Windows.Forms.FormClosingEventArgs) _  
+    Handles MyBase.FormClosing  
+  
+    Dim message As String = _  
+            "Are you sure that you would like to close the form?"  
+    Dim caption As String = "Form Closing"  
+    Dim result = MessageBox.Show(message, caption, _  
+                                 MessageBoxButtons.YesNo, _  
+                                 MessageBoxIcon.Exclamation)  
+  
+    ' If the no button was pressed ...  
+    If (result = DialogResult.No) Then  
+        ' cancel the closure of the form.  
+        e.Cancel = True  
+    End If  
+End Sub  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Asterisk">
+      <MemberSignature Language="C#" Value="Asterisk" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Asterisk = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Asterisk" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、円で囲んだ小文字の i から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="Error" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Error = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Error" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、背景が赤い円で囲んだ白い X から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Exclamation">
+      <MemberSignature Language="C#" Value="Exclamation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Exclamation = int32(48)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Exclamation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、背景が黄色い三角で囲んだ感嘆符から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Hand">
+      <MemberSignature Language="C#" Value="Hand" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Hand = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Hand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、背景が赤い円で囲んだ白い X から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Information">
+      <MemberSignature Language="C#" Value="Information" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Information = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Information" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、円で囲んだ小文字の i から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、シンボルが含まれていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Question">
+      <MemberSignature Language="C#" Value="Question" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Question = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Question" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、円で囲んだ疑問符から成るシンボルが含まれます。 疑問符は、質問の特定の種類を明確に表さず、メッセージの言い回しはどのメッセージの種類にも適用されるため、疑問符のメッセージ アイコンは推奨されなくなりました。 さらにユーザーは、疑問符のメッセージ シンボルをヘルプ情報と混同することがあります。 したがって、メッセージ ボックスには疑問符のメッセージ シンボルを使用しないでください。 システムは引き続き、下位互換性のためだけに、その組み込みをサポートします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="Stop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Stop = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Stop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、背景が赤い円で囲んだ白い X から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Warning">
+      <MemberSignature Language="C#" Value="Warning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MessageBoxIcon Warning = int32(48)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MessageBoxIcon.Warning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MessageBoxIcon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ボックスには、背景が黄色い三角で囲んだ感嘆符から成るシンボルが含まれます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

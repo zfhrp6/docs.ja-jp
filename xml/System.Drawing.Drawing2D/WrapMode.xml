@@ -1,0 +1,114 @@
+<Type Name="WrapMode" FullName="System.Drawing.Drawing2D.WrapMode">
+  <TypeSignature Language="C#" Value="public enum WrapMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WrapMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.WrapMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テクスチャまたはグラデーションが並べて表示する方法が入力されている領域よりも小さい場合を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラシでは、この列挙を使用して、図形を塗りつぶす方法を決定します。 影響に関する例を参照する、<xref:System.Drawing.Drawing2D.WrapMode>列挙値が並べて表示されるイメージを参照してください[する方法: イメージで図形をタイル](~/docs/framework/winforms/advanced/how-to-tile-a-shape-with-an-image.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して新しいビットマップを取得する方法を示しています、<xref:System.Drawing.Image.FromFile%2A>メソッドです。 についても示します、<xref:System.Drawing.TextureBrush>と<xref:System.Drawing.Drawing2D.WrapMode>列挙します。 この例は、Windows フォームで使用するよう設計されています。 という名前のボタンを含むフォームを作成`Button2`です。 コードをフォームに貼り付け、`Button2_Click`ボタンのメソッド<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ImageExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ImageExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clamp">
+      <MemberSignature Language="C#" Value="Clamp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.WrapMode Clamp = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.WrapMode.Clamp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テクスチャまたはグラデーションが並べて表示されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tile">
+      <MemberSignature Language="C#" Value="Tile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.WrapMode Tile = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.WrapMode.Tile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラデーション または テクスチャを並べて表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TileFlipX">
+      <MemberSignature Language="C#" Value="TileFlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.WrapMode TileFlipX = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.WrapMode.TileFlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テクスチャまたはグラデーションを水平方向に反転しを並べて表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TileFlipXY">
+      <MemberSignature Language="C#" Value="TileFlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.WrapMode TileFlipXY = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.WrapMode.TileFlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向および垂直方向に、テクスチャまたはグラデーションを反転しを並べて表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TileFlipY">
+      <MemberSignature Language="C#" Value="TileFlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.WrapMode TileFlipY = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.WrapMode.TileFlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テクスチャまたはグラデーションを垂直方向に反転しを並べて表示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,206 @@
+<Type Name="ITtsEngineSite" FullName="System.Speech.Synthesis.TtsEngine.ITtsEngineSite">
+  <TypeSignature Language="C#" Value="public interface ITtsEngineSite" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITtsEngineSite" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オーディオ データおよびイベントを書き込むためのメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public int Actions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Actions" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンジンは、実行するアクションまたはアクションを決定します。</summary>
+        <value><see langword="int" />の 1 つまたは複数のメンバーの合計を含む、<see langword="TtsEngineAction" />列挙します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEvents">
+      <MemberSignature Language="C#" Value="public void AddEvents (System.Speech.Synthesis.TtsEngine.SpeechEventInfo[] events, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddEvents(valuetype System.Speech.Synthesis.TtsEngine.SpeechEventInfo[] events, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.AddEvents(System.Speech.Synthesis.TtsEngine.SpeechEventInfo[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="events" Type="System.Speech.Synthesis.TtsEngine.SpeechEventInfo[]" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="events"><see langword="SpeechEventInfo" /> オブジェクトの配列。</param>
+        <param name="count">配列のサイズ。</param>
+        <summary>イベントを 1 つ以上の追加、<see langword="EventInterest" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompleteSkip">
+      <MemberSignature Language="C#" Value="public void CompleteSkip (int skipped);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CompleteSkip(int32 skipped) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.CompleteSkip(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skipped" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="skipped">項目の数がスキップされました。</param>
+        <summary>スキップするアイテムの数を返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventInterest">
+      <MemberSignature Language="C#" Value="public int EventInterest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventInterest" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンジンを発生させるイベントを決定します。</summary>
+        <value><see langword="int" />の 1 つまたは複数のメンバーの合計を含む、<see langword="TtsEventId" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ビットを`EventInterest`フラグ フィールドは、エンジンを発生させるイベントの種類を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSkipInfo">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.TtsEngine.SkipInfo GetSkipInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Speech.Synthesis.TtsEngine.SkipInfo GetSkipInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.GetSkipInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.SkipInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スキップされる番号と項目の型を返します。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadResource">
+      <MemberSignature Language="C#" Value="public System.IO.Stream LoadResource (Uri uri, string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream LoadResource(class System.Uri uri, string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.LoadResource(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">リソースの URI。</param>
+        <param name="mediaType">リソースのメディアの種類。</param>
+        <summary>指定された URI にリソースを読み込みます。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rate">
+      <MemberSignature Language="C#" Value="public int Rate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rate" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Rate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンジンの読み上げ速度を取得します。</summary>
+        <value><see langword="int" />話すを含むを評価します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Volume">
+      <MemberSignature Language="C#" Value="public int Volume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Volume" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Volume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンジンの音量を取得します。</summary>
+        <value><see langword="int" />話し方のボリュームを含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public int Write (IntPtr data, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Write(native int data, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Write(System.IntPtr,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.IntPtr" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="data">オーディオの出力データの場所です。</param>
+        <param name="count">出力のオーディオ ストリーム内の項目の数。</param>
+        <summary>オーディオ データを出力します。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

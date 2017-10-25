@@ -1,0 +1,570 @@
+<Type Name="Clock" FullName="System.Windows.Media.Animation.Clock">
+  <TypeSignature Language="C#" Value="public class Clock : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Clock extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Clock" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行時のタイミング状態を保持する、<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Media.Animation.Timeline>、単独で実際に何もしない以外の時間のセグメントについて説明します。 タイムラインの<xref:System.Windows.Media.Animation.Clock>実際の処理を行うオブジェクト: タイムラインの実行時のタイミングに関連する状態を保持します。  
+  
+ ほとんどの場合、タイムラインの時計が自動的に作成します。 使用してアニメーション化するときに、<xref:System.Windows.Media.Animation.Storyboard>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッド、クロックが自動的にタイムラインとアニメーションを作成し、その対象となるプロパティに適用します。 例については、次を参照してください。[する方法: ストーリー ボードを使用してプロパティをアニメーション化](~/docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)と[する方法: プロパティなしを使用して、ストーリー ボードのアニメーション化](~/docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)です。  
+  
+ 作成することも、<xref:System.Windows.Media.Animation.Clock>を使用して明示的に、<xref:System.Windows.Media.Animation.Timeline.CreateClock%2A>メソッドです。 多数の類似オブジェクトをアニメーション化するなど、パフォーマンス重視のシナリオで管理する独自<xref:System.Windows.Media.Animation.Clock>を使用して、パフォーマンスが向上します。  
+  
+ クロックがツリーの構造に合ったで配置された、<xref:System.Windows.Media.Animation.Timeline>オブジェクト ツリーから作成されます。 このようなタイミング ツリーのルート クロック対話的に操作できます (一時停止、再開、停止、およびなど) を取得してその<xref:System.Windows.Media.Animation.Clock.Controller%2A>です。 ルート以外のクロックを直接制御できません。  
+  
+ いったん作成されると、時計を変更できません (ただし、操作することができます)。  
+  
+## <a name="using-a-timeline-as-a-timer"></a>タイムラインをタイマーとして使用します。  
+ タイムラインのクロックは、関連付けられているイベント ハンドラーがある場合にのみ実行または (の場合、<xref:System.Windows.Media.Animation.AnimationClock>オブジェクト) のプロパティに関連付けられています。 この理由 (など)、これはお勧めしませんを使用すること、<xref:System.Windows.Media.Animation.Timeline>をタイマーとして。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスを実装する必要があります<see cref="M:System.Windows.Media.Animation.Clock.GetCurrentTimeCore" />この時計の時刻のフローを変更する場合。 派生クラスは、クロック繰り返されます、スキップ、シーク、開始、一時停止、再開されると、または停止時にオーバーライドすることで、追加の作業を行うに行われたことができます、 <see cref="M:System.Windows.Media.Animation.Clock.DiscontinuousTimeMovement" />、 <see cref="M:System.Windows.Media.Animation.Clock.SpeedChanged" />、および<see cref="M:System.Windows.Media.Animation.Clock.Stopped" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Clock (System.Windows.Media.Animation.Timeline timeline);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Animation.Timeline timeline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.#ctor(System.Windows.Media.Animation.Timeline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeline" Type="System.Windows.Media.Animation.Timeline" />
+      </Parameters>
+      <Docs>
+        <param name="timeline"><see cref="P:System.Windows.Media.Animation.Clock.Timeline" />からこの時計を構築する必要があります。 すべての子の時計は作成されません<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />オブジェクト、存在する場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Animation.Clock" />クラスを指定して<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />をテンプレートとして。 新しい<see cref="T:System.Windows.Media.Animation.Clock" />オブジェクトに子がありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="public event EventHandler Completed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Completed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Clock.Completed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクロックの再生が完全に完了と発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクロックがクロックのツリーのルート クロックである場合は、そのアクティブ期間 (繰り返しを含む) の末尾に達するし、そのすべての子はそれぞれのアクティブ期間の終わりに達しました後に、再生は完了します。 このクロックが子クロックである場合は、再生、ツリーのルート クロック、時計を所属先に達すると、アクティブな期間とそのすべての子のクロックの終了したら、再生が完了したと見なされます。  
+  
+ クロックを停止すると、その完了イベントがトリガーされませんが、塗りつぶし期間に進みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controller">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.ClockController Controller { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.ClockController Controller" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.Controller" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.Clock" /> を開始、一時停止、再開、シーク、スキップ、停止、削除するために使用できる <see cref="T:System.Windows.Media.Animation.ClockController" /> を取得します。</summary>
+        <value>これがルート クロックである場合は <see cref="T:System.Windows.Media.Animation.ClockController" />。それ以外の場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート クロックのみを対話的に制御できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentGlobalSpeed">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; CurrentGlobalSpeed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; CurrentGlobalSpeed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現実世界の時間と比較したときの、クロックの時間が現在進行しているレートを取得します。</summary>
+        <value>現実世界の時間と比較したときの、クロックの時間が現在進行しているレート。 クロックが停止している場合、このプロパティは <see langword="null" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentGlobalSpeedInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentGlobalSpeedInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentGlobalSpeedInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Clock.CurrentGlobalSpeedInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クロックの速度が更新されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止、再開を反転すること、加速する場合に、減速、シーク、停止、またはクロックの変更の対話型を使用して高速化、<xref:System.Windows.Media.Animation.ClockController>このイベントをトリガーします。  
+  
+ このイベントが発生しますが、ときに、<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed%2A>プロパティが変更されたプロパティ、必ずしもを無効になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentGlobalTime">
+      <MemberSignature Language="C#" Value="protected TimeSpan CurrentGlobalTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CurrentGlobalTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentGlobalTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されている現在のグローバル時間を取得、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]タイミング システムです。</summary>
+        <value>現在のグローバル時間、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]タイミング システムです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentIteration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; CurrentIteration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; CurrentIteration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentIteration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクロックの現在のイテレーションを取得します。</summary>
+        <value>その現在のアクティブな期間内でのクロックの現在のイテレーションまたは<see langword="null" />このクロックが停止している場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの最初のイテレーションでは、1 の値を持ちます。  
+  
+ この時計のタイムラインがある場合、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>設定`true`前方リバースのペアで構成全体の反復処理、セグメントを次のいずれかだけでなく、します。  
+  
+ 現在のイテレーションに関係なくクロックをシークの現在のイテレーション 1 を返します。 1 に現在の反復を返しますもクロックを再起動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentProgress">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; CurrentProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; CurrentProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この現在の進行状況を取得<see cref="T:System.Windows.Media.Animation.Clock" />その現在のイテレーション内で。</summary>
+        <value>
+          <see langword="null" />このクロックが場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />、またはこのクロックがアクティブな場合、0.0 とその<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />が、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />の<see cref="P:System.Windows.Duration.Forever" />以外の場合、0.0 ~ 1.0 の現在のイテレーションにおけるこのクロックの現在の進行状況を示す値。 値が 0.0 のない進行状況を示し、値が 1.0 の時計が、現在のイテレーションの終了値であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を示します、<xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>で正規化された、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>のクロックの<xref:System.Windows.Media.Animation.Clock.Timeline%2A>します。  
+  
+ あるクロック<xref:System.Windows.Media.Animation.ClockState.Filling>が、 <xref:System.Windows.Media.Animation.Clock.CurrentProgress%2A> 1.0 です。  
+  
+## <a name="using-a-timeline-as-a-timer"></a>タイムラインをタイマーとして使用します。  
+ タイムラインのクロックは、関連付けられているイベント ハンドラーがある場合にのみ実行または (の場合、<xref:System.Windows.Media.Animation.AnimationClock>オブジェクト) のプロパティに関連付けられています。 この理由 (など)、これはお勧めしませんを使用すること、<xref:System.Windows.Media.Animation.Timeline>をタイマーとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.ClockState CurrentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.ClockState CurrentState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クロックが現在 <see cref="F:System.Windows.Media.Animation.ClockState.Active" />、<see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または <see cref="F:System.Windows.Media.Animation.ClockState.Stopped" /> であるかどうかを示す値を取得します。</summary>
+        <value>クロックの現在の状態。<see cref="F:System.Windows.Media.Animation.ClockState.Active" />、<see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または <see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時計に注意してください<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>プロパティかは示されませんが一時停止するかどうか。 クロックが一時停止しているかどうかを判断するのには、使用、<xref:System.Windows.Media.Animation.Clock.IsPaused%2A>プロパティです。  
+  
+ <xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>このプロパティの値が変更されるたびに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentStateInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentStateInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentStateInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Clock.CurrentStateInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クロックの <see cref="P:System.Windows.Media.Animation.Clock.CurrentState" /> プロパティが更新されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>場合は、クロックの開始時に通知されるようにするときにイベントが停止すると、または入力します。 <xref:System.Object>のパラメーター、<xref:System.EventHandler>イベント ハンドラーは、<xref:System.Windows.Media.Animation.Clock>状態が無効になりました。  
+  
+ 一時停止、<xref:System.Windows.Media.Animation.Clock>変わらないので、<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>です。 クロックが一時停止しているときに通知するを使用して、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ このイベントが発生しますが、ときに、<xref:System.Windows.Media.Animation.ClockState>いって、必ずしもを無効になります、<xref:System.Windows.Media.Animation.ClockState>変更:<xref:System.Windows.Media.Animation.Clock>からに切り替えること<xref:System.Windows.Media.Animation.ClockState.Active>に<xref:System.Windows.Media.Animation.ClockState.Filling>に戻ると<xref:System.Windows.Media.Animation.ClockState.Active>同じティックの場合は、このイベントを起動がその<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>プロパティが実際に変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;TimeSpan&gt; CurrentTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; CurrentTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.CurrentTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得このクロックの現在の現在のイテレーションにおける現在の時刻。</summary>
+        <value>
+          <see langword="null" />このクロックが場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />以外の場合、このクロックの現在の時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="using-a-timeline-as-a-timer"></a>タイムラインをタイマーとして使用します。  
+ タイムラインのクロックは、関連付けられているイベント ハンドラーがある場合にのみ実行または (の場合、<xref:System.Windows.Media.Animation.AnimationClock>オブジェクト) のプロパティに関連付けられています。 この理由 (など)、これはお勧めしませんを使用すること、<xref:System.Windows.Media.Animation.Timeline>をタイマーとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTimeInvalidated">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentTimeInvalidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentTimeInvalidated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Clock.CurrentTimeInvalidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにこの時計の<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />は無効になります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの<xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>が無効になるときに、クロックが進行します。 次の対話型操作 CurrentTimeInvalidated イベントをトリガーも: <xref:System.Windows.Media.Animation.ClockController.Begin%2A>、 <xref:System.Windows.Media.Animation.ClockController.SkipToFill%2A>、 <xref:System.Windows.Media.Animation.ClockController.Seek%2A>、 <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A>、および<xref:System.Windows.Media.Animation.ClockController.Stop%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscontinuousTimeMovement">
+      <MemberSignature Language="C#" Value="protected virtual void DiscontinuousTimeMovement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DiscontinuousTimeMovement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.DiscontinuousTimeMovement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クロックが繰り返されます、スキップ、またはシークされるたびに、派生クラスとして実装された場合は呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCanSlip">
+      <MemberSignature Language="C#" Value="protected virtual bool GetCanSlip ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GetCanSlip() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.GetCanSlip" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうか、<see cref="T:System.Windows.Media.Animation.Clock" />が自身の外部のタイム ソース タイミング システムとの同期が必要です。</summary>
+        <returns>返します**true**場合、<see cref="T:System.Windows.Media.Animation.Clock" />自身の外部ソースを時間、タイミング システムとの同期が必要ですがそれ以外の場合、 **false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メディアを使用して再生されている<xref:System.Windows.Media.MediaTimeline>内で、<xref:System.Windows.Media.Animation.Storyboard>を作成する例を示します、<xref:System.Windows.Media.Animation.Clock>外部時刻ソース (たとえばビデオ クリップ) と他のタイムライン内で同期が必要ですがあるでしょう、<xref:System.Windows.Media.Animation.Storyboard>です。 詳細については、「<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentTimeCore">
+      <MemberSignature Language="C#" Value="protected virtual TimeSpan GetCurrentTimeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.TimeSpan GetCurrentTimeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.GetCurrentTimeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得このクロックの現在の現在のイテレーションにおける現在の時刻。</summary>
+        <returns>アクティブまたは保留されている場合は、このクロックの現在の時刻それ以外の場合、<see cref="F:System.TimeSpan.Zero" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装では、このメソッドを使用してください。、<xref:System.Windows.Media.Animation.Clock.CurrentTime%2A>メソッドと、コードから直接呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスは、現在の時刻を判断する方法を変更する場合は、このメソッドをオーバーライドする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HasControllableRoot">
+      <MemberSignature Language="C#" Value="public bool HasControllableRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasControllableRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.HasControllableRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Animation.Clock" />制御可能なクロックのツリーの一部です。</summary>
+        <value>
+          <see langword="true" />このクロックが、制御可能なルート クロックでクロックのツリーに属している場合、またはこのクロック自体が制御可能なルートです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPaused">
+      <MemberSignature Language="C#" Value="public bool IsPaused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPaused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.IsPaused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Animation.Clock" />、または一時停止は、親のいずれか。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Windows.Media.Animation.Clock" />または一時停止中です。 それ以外の場合、その親のいずれかが<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaturalDuration">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration NaturalDuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Duration NaturalDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.NaturalDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この時計の自然な期間を取得<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />です。</summary>
+        <value>によって決定されるこのクロックの自然な期間その<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自然な期間の詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.Timeline.GetNaturalDuration%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Clock Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.Clock Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクロックの親である、クロックを取得します。</summary>
+        <value>このクロックの親または<see langword="null" />このクロックがルートである場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRequested">
+      <MemberSignature Language="C#" Value="public event EventHandler RemoveRequested;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RemoveRequested" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.Animation.Clock.RemoveRequested" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Windows.Media.Animation.ClockController.Remove" />このメソッドが呼び出された<see cref="T:System.Windows.Media.Animation.Clock" />またはその親のクロックのいずれか。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedChanged">
+      <MemberSignature Language="C#" Value="protected virtual void SpeedChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SpeedChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.SpeedChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装される、時計されるたびに呼び出されるときに開始、スキップ、一時停止、再開されると、場合や、クロックの<see cref="P:System.Windows.Media.Animation.ClockController.SpeedRatio" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="protected virtual void Stopped ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Stopped() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Clock.Stopped" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装が呼び出され、クロックの使用を停止するたびに、<see cref="M:System.Windows.Media.Animation.ClockController.Stop" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeline">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Timeline Timeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.Timeline Timeline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Clock.Timeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Timeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />この<see cref="T:System.Windows.Media.Animation.Clock" />作成されました。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.Clock.Timeline" />この<see cref="T:System.Windows.Media.Animation.Clock" />作成されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの変更<xref:System.Windows.Media.MediaTimeline>; 時計は更新されません新しいクロックを作成する必要がありますから変更された<xref:System.Windows.Media.Animation.Timeline>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

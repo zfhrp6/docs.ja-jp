@@ -1,0 +1,141 @@
+<Type Name="SqlRowsCopiedEventArgs" FullName="System.Data.SqlClient.SqlRowsCopiedEventArgs">
+  <TypeSignature Language="C#" Value="public class SqlRowsCopiedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlRowsCopiedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlRowsCopiedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>渡された引数のセットを表す、<see cref="T:System.Data.SqlClient.SqlRowsCopiedEventHandler" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlRowsCopiedEventArgs (long rowsCopied);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 rowsCopied) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlRowsCopiedEventArgs.#ctor(System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowsCopied" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="rowsCopied"><see cref="T:System.Int64" />現在の一括コピー操作中にコピーされる行の数を示すです。</param>
+        <summary>
+          <see cref="T:System.Data.SqlClient.SqlRowsCopiedEventArgs" /> オブジェクトの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`rowsCopied`パラメーターがのいずれかを呼び出すたびにリセット、`SqlBulkCopy.WriteToServer`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public bool Abort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Abort" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一括コピー操作を中断するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、一括コピー操作を中止する必要があります。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort%2A>プロパティを一括コピー操作をキャンセルします。 設定<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort%2A>に`true`を一括コピー操作を中止します。  
+  
+ 呼び出す場合は、**閉じる**メソッドから<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>、例外が発生すると、および<xref:System.Data.SqlClient.SqlBulkCopy>オブジェクトの状態は変わりません。  
+  
+ 具体的には、アプリケーションを作成する場合、<xref:System.Data.SqlClient.SqlTransaction>内のオブジェクト、<xref:System.Data.SqlClient.SqlCommand>コンス トラクター、トランザクションはロールバックされません。 アプリケーションを決定するため、操作をロールバックするために必要である場合は、呼び出す必要があるかどうか、<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A?displayProperty=nameWithType>メソッドです。 アプリケーションがトランザクションを作成していない場合、現在のバッチに対応する内部トランザクションが自動的にロールバックします。 ただし、一括コピー操作の前回のバッチに関連する変更が保持されてコミットされたトランザクションが既にあるためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowsCopied">
+      <MemberSignature Language="C#" Value="public long RowsCopied { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RowsCopied" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlRowsCopiedEventArgs.RowsCopied" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の一括コピー操作中にコピーされる行の数を表す値を取得します。</summary>
+        <value>
+          <see langword="int" />コピーされた行数を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.RowsCopied%2A>プロパティは、のいずれかを呼び出すたびにリセット、`SqlBulkCopy.WriteToServer`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

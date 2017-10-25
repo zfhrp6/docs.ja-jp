@@ -1,0 +1,650 @@
+<Type Name="Shape" FullName="System.Windows.Shapes.Shape">
+  <TypeSignature Language="C#" Value="public abstract class Shape : System.Windows.FrameworkElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Shape extends System.Windows.FrameworkElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shapes.Shape" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>などの図形要素の基本クラスを提供<see cref="T:System.Windows.Shapes.Ellipse" />、 <see cref="T:System.Windows.Shapes.Polygon" />、および<see cref="T:System.Windows.Shapes.Rectangle" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Shape ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shapes.Shape.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shapes.Shape" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size finalSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size finalSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shapes.Shape.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="finalSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="finalSize">最後の評価のサイズ、<see cref="T:System.Windows.Shapes.Shape" />です。</param>
+        <summary>整列、<see cref="T:System.Windows.Shapes.Shape" />評価することによってその<see cref="P:System.Windows.Shapes.Shape.RenderedGeometry" />と<see cref="P:System.Windows.Shapes.Shape.Stretch" />プロパティです。</summary>
+        <returns>配置の最終的なサイズ<see cref="T:System.Windows.Shapes.Shape" />要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`finalsize`は無効な値 (null 参照または`empty`) は、画面に描画されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefiningGeometry">
+      <MemberSignature Language="C#" Value="protected abstract System.Windows.Media.Geometry DefiningGeometry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry DefiningGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.DefiningGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see cref="T:System.Windows.Media.Geometry" />の<see cref="T:System.Windows.Shapes.Shape" />です。</summary>
+        <value><see cref="T:System.Windows.Shapes.Shape" /> の <see cref="T:System.Windows.Media.Geometry" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Fill { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Fill" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.Fill" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />図形の内部を描画する方法を指定します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Brush" />図形の内部を描画する方法を説明します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Fill"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Shapes.Shape.FillProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、f<xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、<xref:System.Windows.Shapes.Shape.Fill%2A>の背景色を設定するプロパティ、<xref:System.Windows.Shapes.Ellipse>要素。  
+  
+ [!code-xaml[BrushesMiscSnippets_snip#SetBackgroundColorOfShapeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_snip/CS/SetBackgroundColorOfShapeExample.xaml#setbackgroundcolorofshapeexamplewholepage)]  
+  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/SetBackgroundColorOfShapeExample.cs#setbackgroundcolorofshapecodeexamplewholepage)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/setbackgroundcolorofshapeexample.vb#setbackgroundcolorofshapecodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FillProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FillProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.FillProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.Fill" /> 依存関係プロパティを識別します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeometryTransform">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Transform GeometryTransform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform GeometryTransform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.GeometryTransform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see cref="T:System.Windows.Media.Transform" />のジオメトリに適用されている、<see cref="T:System.Windows.Shapes.Shape" />を描画する前にします。</summary>
+        <value>A<see cref="T:System.Windows.Media.Transform" />のジオメトリに適用されている、<see cref="T:System.Windows.Shapes.Shape" />を描画する前にします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shapes.Shape.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">最大<see cref="T:System.Windows.Size" />を超えないようにします。</param>
+        <summary>メジャー、<see cref="T:System.Windows.Shapes.Shape" />最初のレイアウトの中に、配置する前に渡します。</summary>
+        <returns>最大<see cref="T:System.Windows.Size" />の<see cref="T:System.Windows.Shapes.Shape" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRender">
+      <MemberSignature Language="C#" Value="protected override void OnRender (System.Windows.Media.DrawingContext drawingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRender(class System.Windows.Media.DrawingContext drawingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shapes.Shape.OnRender(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext">A<see cref="T:System.Windows.Media.DrawingContext" />これのレンダリング パス中に描かれたオブジェクト<see cref="T:System.Windows.Shapes.Shape" />です。</param>
+        <summary>既定の外観を変更する手段を提供する<see cref="T:System.Windows.Shapes.Shape" />要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderedGeometry">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Geometry RenderedGeometry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry RenderedGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.RenderedGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のレンダリングを表す値を取得<see cref="T:System.Windows.Media.Geometry" />の<see cref="T:System.Windows.Shapes.Shape" />です。</summary>
+        <value>表示される最終的な<see cref="T:System.Windows.Media.Geometry" />の<see cref="T:System.Windows.Shapes.Shape" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stretch">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Stretch Stretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Stretch Stretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.Stretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シェイプによる割り当てられた領域の埋め方を説明する <see cref="T:System.Windows.Media.Stretch" /> 列挙値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Media.Stretch" /> 列挙値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.Stretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stroke">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Stroke { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Stroke" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.Stroke" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />を指定する方法、<see cref="T:System.Windows.Shapes.Shape" />輪郭を描画します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Brush" />を指定する方法、<see cref="T:System.Windows.Shapes.Shape" />輪郭を描画します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Stroke"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Shapes.Shape.StrokeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashArray">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection StrokeDashArray { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection StrokeDashArray" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeDashArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.Double" />アウトラインの描画に使用される破線のパターンを示す値。</summary>
+        <value>コレクション<see cref="T:System.Double" />破線のパターンを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Double>コレクション内の ダッシュまたはに対して相対的な間隔の長さを指定します、<xref:System.Windows.Thickness>ペンのです。 たとえば、値の`1`ダッシュまたは (四角形) のペンの幅と同じ長さのあるギャップを作成します。  
+  
+ インデックス 0 位置にある、コレクション内の最初のアイテムはダッシュの長さを指定します。インデックス 1 にある、2 番目の項目は、間隔の長さを指定します。  
+  
+ 偶数のインデックス値を持つオブジェクトを指定ダッシュを使用します。奇数のインデックス値を持つオブジェクトは、ギャップを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashArrayProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeDashArrayProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeDashArrayProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeDashArrayProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeDashArray" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashCap">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PenLineCap StrokeDashCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.PenLineCap StrokeDashCap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeDashCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.PenLineCap" />ダッシュの両端の描画方法を指定する列挙値。</summary>
+        <value>列挙体のいずれかの値<see cref="T:System.Windows.Media.PenLineCap" />です。 既定値は、<see cref="F:System.Windows.Media.PenLineCap.Flat" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、各破線の両端に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashCapProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeDashCapProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeDashCapProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeDashCapProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeDashCap" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashOffset">
+      <MemberSignature Language="C#" Value="public double StrokeDashOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrokeDashOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeDashOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Double" />破線パターン内のダッシュの始点までの距離を指定します。</summary>
+        <value>A<see cref="T:System.Double" />破線パターン内のダッシュの始点までの距離を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeDashOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeDashOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeDashOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeDashOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeDashOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeEndLineCap">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PenLineCap StrokeEndLineCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.PenLineCap StrokeEndLineCap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeEndLineCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.PenLineCap" />を示す列挙値、<see cref="T:System.Windows.Shapes.Shape" />行の末尾にします。</summary>
+        <value>列挙体のいずれかの値<see cref="T:System.Windows.Media.PenLineCap" />です。 既定値は、<see cref="F:System.Windows.Media.PenLineCap.Flat" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティも何も起こりませんを持たない図形に設定した場合<xref:System.Windows.Shapes.Shape.Stroke%2A>または、始点または終点です。 たとえば、このプロパティも何も起こりませんに設定した場合、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeEndLineCapProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeEndLineCapProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeEndLineCapProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeEndLineCapProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeEndLineCap" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeLineJoin">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PenLineJoin StrokeLineJoin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.PenLineJoin StrokeLineJoin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeLineJoin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineJoin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.PenLineJoin" />の頂点で使用される結合の種類を指定する列挙値、<see cref="T:System.Windows.Shapes.Shape" />です。</summary>
+        <value>列挙値のいずれか<see cref="T:System.Windows.Media.PenLineJoin" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティも何も起こりませんを持たない頂点などの要素に設定した場合、<xref:System.Windows.Shapes.Line>要素。  
+  
+   
+  
+## Examples  
+ 次の例では、図形の頂点で使用されるいくつかの異なる結合を示します。  
+  
+ [!code-xaml[drawingwithshapeelements#PolylineExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/polylineexample.xaml#polylineexample1)]  
+  
+ 次の図は、別の行の結合を示します。  
+  
+ ![線の結合の例です。](~/add/media/graphicslinejoins.png "線の結合の例です。")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeLineJoinProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeLineJoinProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeLineJoinProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeLineJoinProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeLineJoin" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeMiterLimit">
+      <MemberSignature Language="C#" Value="public double StrokeMiterLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrokeMiterLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeMiterLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または半分にマイター長の比率の上限を設定、<see cref="P:System.Windows.Shapes.Shape.StrokeThickness" />の<see cref="T:System.Windows.Shapes.Shape" />要素。</summary>
+        <value>マイター長との比率の制限、<see cref="P:System.Windows.Shapes.Shape.StrokeThickness" />の<see cref="T:System.Windows.Shapes.Shape" />要素。 この値より大きいかを 1 に等しい値を正の数値では常にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの結合された行の終端が、角を形成します。2 つの線分を満たす鋭角、マイター上回ることがあります、線の太さ描画するパス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeMiterLimitProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeMiterLimitProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeMiterLimitProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeMiterLimitProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeMiterLimit" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.Stroke" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeStartLineCap">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PenLineCap StrokeStartLineCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.PenLineCap StrokeStartLineCap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeStartLineCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.PenLineCap" />を示す列挙値、<see cref="T:System.Windows.Shapes.Shape" />の開始時、<see cref="P:System.Windows.Shapes.Shape.Stroke" />です。</summary>
+        <value><see cref="T:System.Windows.Media.PenLineCap" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Windows.Media.PenLineCap.Flat" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティも何も起こりませんを持たない図形に設定した場合<xref:System.Windows.Shapes.Shape.Stroke%2A>または、始点または終点です。 たとえば、このプロパティも何も起こりませんに設定した場合、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeStartLineCapProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeStartLineCapProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeStartLineCapProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeStartLineCapProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeStartLineCap" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeThickness">
+      <MemberSignature Language="C#" Value="public double StrokeThickness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrokeThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shapes.Shape.StrokeThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の幅、<see cref="T:System.Windows.Shapes.Shape" />アウトラインです。</summary>
+        <value>幅、<see cref="T:System.Windows.Shapes.Shape" />アウトラインです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeThicknessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StrokeThicknessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StrokeThicknessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shapes.Shape.StrokeThicknessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shapes.Shape.StrokeThickness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

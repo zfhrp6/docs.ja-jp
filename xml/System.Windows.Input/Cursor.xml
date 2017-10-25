@@ -1,0 +1,211 @@
+<Type Name="Cursor" FullName="System.Windows.Input.Cursor">
+  <TypeSignature Language="C#" Value="public sealed class Cursor : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cursor extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Cursor" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.CursorConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マウス ポインターに使用されるイメージを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Cursors>クラスには、既定のカーソルのセットが含まれています。  
+  
+ 既定のカーソルだけがで定義されている部分信頼で実行されている、ときに、<xref:System.Windows.Input.Cursors>クラスを使用します。  
+  
+<a name="xamlAttributeUsage_Cursor"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="cursorName"/>  
+```  
+  
+<a name="xamlValues_Cursor"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *カーソル名*  
+ 定義済みのカーソルのいずれかの名前、<xref:System.Windows.Input.Cursors>クラスです。  
+  
+   
+  
+## Examples  
+ [方法: カーソルの種類を変更します。](~/docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cursor (System.IO.Stream cursorStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream cursorStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cursorStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="cursorStream">カーソルを格納している <see cref="T:System.IO.Stream" />。</param>
+        <summary>指定した <see cref="T:System.IO.Stream" /> から <see cref="T:System.Windows.Input.Cursor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream>、WPF 一時ファイルにデータを書き込むし、ロード、<xref:System.Windows.Input.Cursor>ファイルからです。  このコンス トラクターが、一時ファイルを作成できない場合、<xref:System.IO.IOException>スローされる可能性があります。  たとえば、<xref:System.IO.IOException>一意の一時ファイルが使用できない場合にスローされる可能性があります。  このエラーを解決するには、不要な一時ファイルを削除してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cursorStream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">このコンス トラクターは、一時ファイルを作成できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cursor (string cursorFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cursorFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cursorFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cursorFile">カーソルを格納しているファイル。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.Cursor" />から、指定したクラス*.ani*または*.cur*ファイル。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cursorFile" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cursorFile" />*.ani*または*.cur*ファイル名。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cursor (System.IO.Stream cursorStream, bool scaleWithDpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream cursorStream, bool scaleWithDpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.#ctor(System.IO.Stream,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cursorStream" Type="System.IO.Stream" />
+        <Parameter Name="scaleWithDpi" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cursorStream">カーソルを格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="scaleWithDpi">
+          dpi でスケールを設定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Input.Cursor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Cursor (string cursorFile, bool scaleWithDpi);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cursorFile, bool scaleWithDpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cursorFile" Type="System.String" />
+        <Parameter Name="scaleWithDpi" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cursorFile">カーソルを格納している <see cref="T:System.IO.Stream" />。</param>
+        <param name="scaleWithDpi">
+          dpi でスケールを設定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Input.Cursor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.Cursor" /> クラスによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後に<xref:System.Windows.Input.Cursor.Dispose%2A>が呼び出されると、カーソル オブジェクトが有効ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Cursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの終了処理として、リソースを解放し、その他のクリーンアップ操作を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Cursor.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.Cursor" /> の文字列形式を返します。</summary>
+        <returns>カーソルの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

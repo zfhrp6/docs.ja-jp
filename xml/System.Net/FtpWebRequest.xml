@@ -1,0 +1,1433 @@
+<Type Name="FtpWebRequest" FullName="System.Net.FtpWebRequest">
+  <TypeSignature Language="C#" Value="public sealed class FtpWebRequest : System.Net.WebRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FtpWebRequest extends System.Net.WebRequest" />
+  <TypeSignature Language="DocId" Value="T:System.Net.FtpWebRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ファイル転送プロトコル (FTP: File Transfer Protocol) クライアントを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを取得する<xref:System.Net.FtpWebRequest>を使用して、<xref:System.Net.WebRequest.Create%2A>メソッドです。 使用することも、<xref:System.Net.WebClient>クラスをアップロードし、FTP サーバーから情報をダウンロードします。 これらのアプローチのいずれかを使用して、指定すると、FTP スキームを使用するネットワーク リソース (たとえば、 `"ftp://contoso.com"`)、<xref:System.Net.FtpWebRequest>クラスは、FTP サーバーとの対話機能を提供します。  
+  
+ 相対パスまたは絶対 URI があります。 URI の形式の場合`"ftp://contoso.com/%2fpath"`(%2 f は、エスケープされたスラッシュ '/') が絶対 URI、および現在のディレクトリが`/path`です。 かどうか、ただし、URI の形式では`"ftp://contoso.com/path"`、FTP サーバーに .NET Framework がログに記録する最初 (ユーザー名とパスワードを使用して設定、<xref:System.Net.FtpWebRequest.Credentials%2A>プロパティ)、現在のディレクトリに設定し、`<UserLoginDirectory>/path`です。  
+  
+ 有効なユーザー名が必要し、サーバーまたはサーバーのパスワードは匿名ログオンを許可する必要があります。 設定して、サーバーに接続するために使用する資格情報を指定することができます、<xref:System.Net.FtpWebRequest.Credentials%2A>プロパティまたはメッセージに含めることで、<xref:System.Uri.UserInfo%2A>に渡される URI の部分、<xref:System.Net.WebRequest.Create%2A>メソッドです。 含める場合は<xref:System.Uri.UserInfo%2A>については、URI で、<xref:System.Net.FtpWebRequest.Credentials%2A>プロパティが指定されたユーザー名とパスワード情報を新しいネットワーク資格情報に設定します。  
+  
+> [!CAUTION]
+>  しない限り、<xref:System.Net.FtpWebRequest.EnableSsl%2A>プロパティは`true`、すべてのデータと、ユーザー名とパスワード情報を含むコマンド クリア テキストでサーバーに送信されます。 認証情報を表示でき、それらを使用して、サーバーに接続するネットワーク トラフィックを監視している人ことができます。 設定する必要があります、資格情報を要求し、Secure Sockets Layer (SSL) をサポートする FTP サーバーに接続する場合<xref:System.Net.FtpWebRequest.EnableSsl%2A>に`true`です。  
+  
+ 必要があります<xref:System.Net.WebPermission>FTP リソースにアクセスするそれ以外の場合、<xref:System.Security.SecurityException>例外がスローされます。  
+  
+ 設定によって、サーバーに送信する FTP コマンドの指定、<xref:System.Net.FtpWebRequest.Method%2A>プロパティで定義された値を<xref:System.Net.WebRequestMethods.Ftp>構造体。 テキスト データを送信するには、変更、<xref:System.Net.FtpWebRequest.UseBinary%2A>プロパティの既定値から (`true`) に`false`です。 詳細および制限事項について、次を参照してください。<xref:System.Net.FtpWebRequest.Method%2A>です。  
+  
+ 使用する場合、<xref:System.Net.FtpWebRequest>オブジェクトをサーバーにファイルをアップロードするファイルの内容を呼び出すことによって取得要求のストリームに記述する必要があります、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドまたは対応する非同期、<xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>と<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>メソッドです。 ストリームに書き込むし、要求を送信する前に、ストリームを閉じる必要があります。  
+  
+ 要求は、呼び出すことによって、サーバーに送信される、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッドまたは対応する非同期、<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>と<xref:System.Net.FtpWebRequest.EndGetResponse%2A>メソッドです。 要求された操作が完了したら、<xref:System.Net.FtpWebResponse>オブジェクトが返されます。 <xref:System.Net.FtpWebResponse>オブジェクトは、操作と、サーバーからダウンロードされたすべてのデータの状態を提供します。  
+  
+ 読み取りまたは書き込みを使用して、サーバーのタイムアウト値を設定することができます、<xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A>プロパティです。 タイムアウト期間を超えた場合、呼び出し元のメソッドがスローされます、<xref:System.Net.WebException>で<xref:System.Net.WebExceptionStatus>'éý'<xref:System.Net.WebExceptionStatus.Timeout>です。  
+  
+ コマンドが成功した場合、FTP サーバーからファイルをダウンロードするとき、要求されたファイルの内容では使用応答オブジェクトのストリーム。 呼び出してこのストリームにアクセスすることができます、<xref:System.Net.FtpWebResponse.GetResponseStream%2A>メソッドです。 詳細については、「<xref:System.Net.FtpWebResponse>」を参照してください。  
+  
+ 場合、<xref:System.Net.FtpWebRequest.Proxy%2A>プロパティを設定するか、直接または構成ファイルでは、FTP サーバーとの通信は、指定されたプロキシを通じて行われます。 指定したプロキシが HTTP プロキシ、のみ、 <xref:System.Net.WebRequestMethods.Ftp.DownloadFile>、 <xref:System.Net.WebRequestMethods.Ftp.ListDirectory>、および<xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails>コマンドがサポートされています。  
+  
+ バイナリ コンテンツをダウンロードのみをキャッシュします。使用して受信したコンテンツは、<xref:System.Net.WebRequestMethods.Ftp.DownloadFile>コマンドと、<xref:System.Net.FtpWebRequest.UseBinary%2A>プロパティに設定`true`です。  
+  
+ 複数<xref:System.Net.FtpWebRequest>s が可能であれば、既存の接続を再利用します。  
+  
+ FTP プロトコルの詳細については、RFC 959、「ファイル転送プロトコル、」で使用可能なを参照してください。 [http://www.rfc-editor.org/](http://www.ietf.org/rfc/rfc959.txt)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、FTP サーバーからファイルの削除を示します。  
+  
+ [!code-cpp[NCLFtpClient#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#4)]
+ [!code-csharp[NCLFtpClient#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#4)]  
+  
+ 次のコード例を使用して、FTP サーバーからファイルのダウンロードを示しています、<xref:System.Net.WebClient>クラスです。  
+  
+ [!code-cpp[NCLFtpClient#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#5)]
+ [!code-csharp[NCLFtpClient#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#5)]  
+  
+ 次のコード例では、FTP サーバーにファイルをアップロードする非同期操作の使用を示します。  
+  
+ [!code-cpp[NCLFtpAsync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpAsync/CPP/async.cpp#1)]
+ [!code-csharp[NCLFtpAsync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpAsync/CS/async.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Net.WebPermission">この要求によって参照されるリソースにアクセスします。 関連する列挙値:<see cref="F:System.Net.NetworkAccess.Connect" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public override void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期の FTP 操作を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行中の操作がない場合は、このメソッドは何も行いません。 ファイル転送が実行中の場合、このメソッドは、転送を終了します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザーがローカル ディレクトリからサーバーへのファイルの非同期アップロードを終了する方法を示します。  
+  
+ [!code-cpp[NCLFtpClient#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#10)]
+ [!code-csharp[NCLFtpClient#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetRequestStream">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetRequestStream (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetRequestStream(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>コールバック</c>操作の完了時に委任します。</param>
+        <summary>書き込み用に、要求のコンテンツ ストリームの非同期的なオープンを開始します。</summary>
+        <returns>操作の状態を示す <see cref="T:System.IAsyncResult" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して非同期操作を完了する必要があります、<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>メソッドです。 通常、<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>によって参照されるメソッドによって呼び出される`callback`です。 操作の状態を確認するには、チェックイン、プロパティ、<xref:System.IAsyncResult>このメソッドによって返されるオブジェクト。  
+  
+ このメソッドは、ストリームの待機中にはブロックされません。 ブロックは、呼び出す<xref:System.Net.FtpWebRequest.GetRequestStream%2A>このメソッドの代わりにします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求のストリームを取得する非同期操作の開始を示します。 このコード例に示されている例の一部である、<xref:System.Net.FtpWebRequest>クラスの概要です。  
+  
+ [!code-cpp[NCLFtpAsync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpAsync/CPP/async.cpp#4)]
+ [!code-csharp[NCLFtpAsync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpAsync/CS/async.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドを前回呼び出したときまたは<see cref="M:System.Net.FtpWebRequest.GetRequestStream" />まだ完了していません。</exception>
+        <exception cref="T:System.Net.WebException">FTP サーバーへの接続を確立できませんでした。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.FtpWebRequest.Method" />プロパティに設定されていない<see cref="F:System.Net.WebRequestMethods.Ftp.UploadFile" />です。</exception>
+        <block subset="none" type="usage">
+          <para>このメソッドは、ネットワーク トラフィックを生成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetResponse">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetResponse (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetResponse(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>コールバック</c>操作の完了時に委任します。</param>
+        <summary>要求の非同期的な送信と、FTP サーバーからの応答の非同期的な受信を開始します。</summary>
+        <returns>操作の状態を示す <see cref="T:System.IAsyncResult" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して非同期操作を完了する必要があります、<xref:System.Net.FtpWebRequest.EndGetResponse%2A>メソッドです。 通常、<xref:System.Net.FtpWebRequest.EndGetResponse%2A>によって参照されるメソッドによって呼び出される`callback`です。 操作の状態を確認するには、チェックイン、プロパティ、<xref:System.IAsyncResult>によって返されるオブジェクト、<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッドです。  
+  
+ 場合、<xref:System.Net.FtpWebRequest.Proxy%2A>プロパティを設定するか、直接または構成ファイルでは、FTP サーバーとの通信は、指定されたプロキシを通じて行われます。  
+  
+ <xref:System.Net.FtpWebRequest.BeginGetResponse%2A>サーバーからの応答を待機している間はブロックされません。 ブロックは、呼び出し、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッドの代わりに<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>です。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Net.WebException>がスローされた場合を使用して、<xref:System.Net.WebException.Response%2A>と<xref:System.Net.WebException.Status%2A>サーバーからの応答を決定する例外のプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、要求のストリームを取得する非同期操作を終了し、応答を取得する要求を開始を示します。 このコード例に示されている例の一部である、<xref:System.Net.FtpWebRequest>クラスの概要です。  
+  
+ [!code-cpp[NCLFtpAsync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpAsync/CPP/async.cpp#5)]
+ [!code-csharp[NCLFtpAsync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpAsync/CS/async.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Net.FtpWebRequest.GetResponse" />または<see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />のこのインスタンスは既に呼び出されています。</exception>
+        <block subset="none" type="usage">
+          <para>このメソッドは、ネットワーク トラフィックを生成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCertificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ClientCertificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509CertificateCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーへの暗号化接続を確立するために使用する証明書を取得または設定します。</summary>
+        <value>クライアント証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント証明書は、初期の SSL 接続のネゴシエーション中にクライアントの認証に使用されます。 詳細については、「<xref:System.Net.FtpWebRequest.EnableSsl%2A>」を参照してください。  
+  
+> [!NOTE]
+>  .NET Framework では、SSL セッションを作成するときはキャッシュ、可能であれば、新しい要求のキャッシュされているセッションを再利用しようとします。 .NET Framework での最初の要素を使用するときに、SSL セッションを再利用する、 <xref:System.Net.HttpWebRequest.ClientCertificates%2A> (かどうかがある 1 つ)、匿名のセッションを再利用を試みる<xref:System.Net.HttpWebRequest.ClientCertificates%2A>が空です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionGroupName">
+      <MemberSignature Language="C#" Value="public override string ConnectionGroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionGroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ConnectionGroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求を送信するために使用するサービス ポイントが含まれる接続グループの名前を取得または設定します。</summary>
+        <value>接続グループ名を格納している <see cref="T:System.String" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続グループは、特定の接続または接続のセットに要求のセットを関連付けます。 接続グループでは、接続は、要求の資格情報は、同じ要求接続グループの名前を指定すると、同じアプリケーション ドメインで送信された要求で再利用できます。 要求では、接続グループ名を指定しない場合は、接続グループに関連付けられていない要求されたサーバーへの既存の接続を使用できます。 資格情報がない場合、同じ、既存の接続は閉じられ、新しい要求を再認証される必要があります。  
+  
+ これにより、すべてのユーザーの資格情報で認証された接続を再利用するユーザーの要求のため、接続グループを使用するとパフォーマンスが向上することができます。  
+  
+ 変更、<xref:System.Net.FtpWebRequest.ConnectionGroupName%2A>呼び出した後にプロパティ、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を取得します。  
+  
+ [!code-cpp[NCLFtpClient#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#16)]
+ [!code-csharp[NCLFtpClient#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.FtpWebRequest" /> クラスによって無視される値を取得または設定します。</summary>
+        <value>無視される必要がある <see cref="T:System.Int64" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.ContentLength%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。 使用する必要はありません<xref:System.Net.FtpWebRequest.ContentLength%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentOffset">
+      <MemberSignature Language="C#" Value="public long ContentOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求でダウンロードされるファイル内のバイト オフセットを取得または設定します。</summary>
+        <value>ファイルのオフセットをバイト単位で指定する <see cref="T:System.Int64" /> インスタンス。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Net.FtpWebRequest.ContentOffset%2A>プロパティ、FTP サーバーからファイルをダウンロードするときにします。 このオフセットは、ダウンロードされるデータの開始をマークする、サーバーのファイルの位置を示します。 オフセットは、ファイルの先頭からのバイト数として指定します。最初のバイト オフセットは 0 です。  
+  
+ 設定<xref:System.Net.FtpWebRequest.ContentOffset%2A>により、<xref:System.Net.FtpWebRequest>再起動を送信する (`REST`) サーバーにコマンド。 このコマンドは、サーバーにデータをアップロードする場合は、ほとんどの FTP サーバーの実装によって無視されます。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.ContentOffset%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サーバーとローカル ファイルにダウンロードされたデータを追加することから、ファイルのダウンロードの一部を示します。  
+  
+ [!code-cpp[NclFtpClient#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#7)]
+ [!code-csharp[NclFtpClient#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティは、指定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.ContentType%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。 使用する必要はありません<xref:System.Net.FtpWebRequest.ContentType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コンテンツ タイプの情報は FTP ではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーとの通信に使用する資格情報を取得または設定します。</summary>
+        <value><see cref="T:System.Net.ICredentials" /> インスタンス。プロパティが設定されていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 匿名ログオンを使用して接続するときに資格情報を指定する必要はありません。 設定する必要があります、<xref:System.Net.FtpWebRequest.Credentials%2A>プロパティの種類の資格情報を使用して<xref:System.Net.NetworkCredential>。 こうすること、ユーザー名とパスワードを読み取るしてサーバーに送信します。  
+  
+> [!CAUTION]
+>  しない限り、サーバーに送信されるときに、資格情報は暗号化されませんが、<xref:System.Net.FtpWebRequest.EnableSsl%2A>プロパティに設定されている`true`です。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.Credentials%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を取得し、それを使用してユーザー名を表示します。  
+  
+ [!code-cpp[NCLFtpClient#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#14)]
+ [!code-csharp[NCLFtpClient#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Net.ICredentials" />以外の型の<see cref="T:System.Net.NetworkCredential" />セット操作に対して指定されました。</exception>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCachePolicy">
+      <MemberSignature Language="C#" Value="public static System.Net.Cache.RequestCachePolicy DefaultCachePolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.Cache.RequestCachePolicy DefaultCachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.DefaultCachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.RequestCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての FTP 要求に対する既定のキャッシュ ポリシーを定義します。</summary>
+        <value>FTP 要求に対するキャッシュ ポリシーを定義する <see cref="T:System.Net.Cache.RequestCachePolicy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して受信したコンテンツのみ、<xref:System.Net.WebRequestMethods.Ftp.DownloadFile>コマンドがキャッシュされます。  
+  
+ 次の表に、FTP でのキャッシュ ポリシーの効果<xref:System.Net.FtpWebRequest>です。  
+  
+|ポリシー|効果|  
+|------------|------------|  
+|<xref:System.Net.Cache.RequestCacheLevel.Default>|リソースが新しい場合は、コンテンツの長さが、精度は有効期限、変更、およびコンテンツの長さの属性が存在は、キャッシュされたリソースを返します。|  
+|<xref:System.Net.Cache.RequestCacheLevel.BypassCache>|サーバーからリソースを返します。|  
+|<xref:System.Net.Cache.RequestCacheLevel.CacheOnly>|コンテンツの長さが存在し、エントリのサイズと一致する場合は、キャッシュされたリソースを返しますそれ以外の場合、スロー、<xref:System.Net.WebException>です。|  
+|<xref:System.Net.Cache.RequestCacheLevel.CacheIfAvailable>|コンテンツの長さが指定されたエントリのサイズと一致する場合は、キャッシュされたリソースを返しますそれ以外の場合、リソースは、サーバーからダウンロードされ、呼び出し元に返されます。|  
+|<xref:System.Net.Cache.RequestCacheLevel.Revalidate>|キャッシュされたリソースのタイムスタンプは、サーバー上のリソースのタイムスタンプと同じ場合は、キャッシュされたリソースを返しますそれ以外の場合、リソース サーバーからダウンロード、キャッシュに格納されているを呼び出し元に返されます。|  
+|<xref:System.Net.Cache.RequestCacheLevel.Reload>|サーバーからリソースをダウンロード、キャッシュに格納し、呼び出し元にリソースを返します。|  
+|<xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore>|キャッシュされたリソースが存在する場合は削除されます。 リソースは、サーバーからダウンロードされ、呼び出し元に返されます。|  
+  
+> [!NOTE]
+>  設定<xref:System.Net.FtpWebRequest.DefaultCachePolicy%2A>構成設定をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">呼び出し元が、このプロパティを設定しようとしています。<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableSsl">
+      <MemberSignature Language="C#" Value="public bool EnableSsl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableSsl" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.EnableSsl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SSL 接続を使用する必要があるかどうかを指定する <see cref="T:System.Boolean" /> を取得または設定します。</summary>
+        <value>
+          制御およびデータの伝送が暗号化されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  しない限り、<xref:System.Net.FtpWebRequest.EnableSsl%2A>プロパティは`true`、すべてのデータと、ユーザー名とパスワード情報を含むコマンド クリア テキストでサーバーに送信されます。 認証情報を表示でき、それらを使用して、サーバーに接続するネットワーク トラフィックを監視している人ことができます。 設定する必要があります資格情報が必要であり、SSL をサポートしている FTP サーバーに接続する場合<xref:System.Net.FtpWebRequest.EnableSsl%2A>に`true`です。  
+  
+ `"AUTH TLS"`コマンドは、暗号化されたセッションを要求するサーバーに送信されます。 受信する場合は、サーバーがこのコマンドを認識できない、<xref:System.Net.WebException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例では、暗号化された接続を使用して、ディレクトリ、FTP サーバーからの一覧をダウンロードします。  
+  
+ [!code-cpp[NCLFtpClient#8](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#8)]
+ [!code-csharp[NCLFtpClient#8](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">FTP サーバーへの接続が、既に確立されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetRequestStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream EndGetRequestStream (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream EndGetRequestStream(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.EndGetRequestStream(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">操作の開始時に返された <see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+        <summary><see cref="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" /> で開始された保留中の非同期操作を終了します。</summary>
+        <returns>このインスタンスに関連付けられている、書き込み可能な <see cref="T:System.IO.Stream" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作が完了していない場合、<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>メソッド操作が完了するまでブロックします。 操作が完了しているかどうかを確認するには<xref:System.IAsyncResult.IsCompleted%2A>呼び出す前にプロパティ<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>です。  
+  
+ 「例外、」に記載されている例外に加え<xref:System.Net.FtpWebRequest.EndGetRequestStream%2A>の書き込みストリームを開くときにスローされた例外を再スローします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求のストリームを取得する非同期操作の終了を示します。 このコード例に示されている例の一部である、<xref:System.Net.FtpWebRequest>クラスの概要です。  
+  
+ [!code-cpp[NCLFtpAsync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpAsync/CPP/async.cpp#5)]
+ [!code-csharp[NCLFtpAsync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpAsync/CS/async.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出して取得されませんでした<see cref="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">によって識別される操作に対してこのメソッドが既に呼び出さ<paramref name="asyncResult" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetResponse">
+      <MemberSignature Language="C#" Value="public override System.Net.WebResponse EndGetResponse (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse EndGetResponse(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.EndGetResponse(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">操作の開始時に返された <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" /> で開始された保留中の非同期操作を終了します。</summary>
+        <returns><see cref="T:System.Net.FtpWebResponse" /> インスタンスを格納している <see cref="T:System.Net.WebResponse" /> 参照。 このオブジェクトは、要求に対する FTP サーバーの応答を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時に、操作が完了していない場合、<xref:System.Net.FtpWebRequest.EndGetResponse%2A>メソッドを呼び出して、<xref:System.Net.FtpWebRequest.EndGetResponse%2A>操作が完了するまでブロックします。 ブロックを防ぐため、確認、<xref:System.IAsyncResult.IsCompleted%2A>呼び出す前にプロパティ<xref:System.Net.FtpWebRequest.EndGetResponse%2A>です。  
+  
+ 「例外、」に記載されている例外に加え<xref:System.Net.FtpWebRequest.EndGetResponse%2A>サーバーと通信中にスローされた例外を再スローします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、応答を受信する非同期操作の終了を示します。 このコード例に示されている例の一部である、<xref:System.Net.FtpWebRequest>クラスの概要です。  
+  
+ [!code-cpp[NCLFtpAsync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpAsync/CPP/async.cpp#6)]
+ [!code-csharp[NCLFtpAsync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpAsync/CS/async.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出して取得されませんでした<see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">によって識別される操作に対してこのメソッドが既に呼び出さ<paramref name="asyncResult" />です。</exception>
+        <exception cref="T:System.Net.WebException">HTTP プロキシを使用してエラーが発生しました。</exception>
+        <block subset="none" type="usage">
+          <para>このメソッドは、ネットワーク トラフィックを生成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetRequestStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetRequestStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.GetRequestStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>FTP サーバーにデータをアップロードするために使用するストリームを取得します。</summary>
+        <returns>現在の要求でサーバーに送信されるデータを格納するために使用する、書き込み可能な <see cref="T:System.IO.Stream" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に要求のプロパティを設定、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドです。 データをストリームに書き込んで、後に、要求を送信する前にストリームを閉じる必要があります。  
+  
+ 設定していない場合、<xref:System.Net.FtpWebRequest.Method%2A>プロパティを<xref:System.Net.WebRequestMethods.Ftp.UploadFile>または<xref:System.Net.WebRequestMethods.Ftp.AppendFile>ストリームを取得することはできません。  
+  
+ <xref:System.Net.FtpWebRequest.GetRequestStream%2A>ストリームの待機中にブロックされます。 これを防ぐためには、呼び出し、<xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>メソッドの代わりに<xref:System.Net.FtpWebRequest.GetRequestStream%2A>です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、要求のデータ ストリームにファイルをコピーし、要求を送信するデータをアップロードして、ファイルに追加するためにサーバーを示します。  
+  
+ [!code-cpp[NCLFtpClient#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#3)]
+ [!code-csharp[NCLFtpClient#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />呼び出されが完了していません。  
+  
+ \- または  
+  
+ HTTP プロキシが有効になっているし、以外の FTP コマンドを使用しようとしています。 <see cref="F:System.Net.WebRequestMethods.Ftp.DownloadFile" />、 <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectory" />、または<see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails" />です。</exception>
+        <exception cref="T:System.Net.WebException">FTP サーバーへの接続を確立できませんでした。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException"><see cref="P:System.Net.FtpWebRequest.Method" />プロパティに設定されていない<see cref="F:System.Net.WebRequestMethods.Ftp.UploadFile" />または<see cref="F:System.Net.WebRequestMethods.Ftp.AppendFile" />です。</exception>
+        <block subset="none" type="usage">
+          <para>このメソッドは、ネットワーク トラフィックを生成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponse">
+      <MemberSignature Language="C#" Value="public override System.Net.WebResponse GetResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse GetResponse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.GetResponse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>FTP サーバーの応答を返します。</summary>
+        <returns><see cref="T:System.Net.FtpWebResponse" /> インスタンスを格納している <see cref="T:System.Net.WebResponse" /> 参照。 このオブジェクトは、要求に対する FTP サーバーの応答を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャストする必要があります、FTP 固有のプロパティにアクセスするには<xref:System.Net.WebResponse>にこのメソッドによって返されるオブジェクト<xref:System.Net.FtpWebResponse>です。  
+  
+ <xref:System.Net.FtpWebRequest.GetResponse%2A>コントロールの接続を確立すると、また、データ接続を作成する場合があります。 <xref:System.Net.FtpWebRequest.GetResponse%2A>応答を受信するまでブロックします。 これを防ぐためには、操作を行うこの非同期的に呼び出すことによって、<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>と<xref:System.Net.FtpWebRequest.EndGetResponse%2A>メソッドの代わりに<xref:System.Net.FtpWebRequest.GetResponse%2A>です。  
+  
+ 場合、<xref:System.Net.FtpWebRequest.Proxy%2A>プロパティを設定するか、直接または構成ファイルでは、FTP サーバーとの通信は、プロキシを通じて行われます。  
+  
+ 場合、<xref:System.Net.WebException>がスローされた場合を使用して、<xref:System.Net.WebException.Response%2A>と<xref:System.Net.WebException.Status%2A>サーバーからの応答を決定する例外のプロパティです。  
+  
+ このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+> [!NOTE]
+>  複数回呼び出す<xref:System.Net.FtpWebRequest.GetResponse%2A>同じ応答オブジェクトを返す要求を再発行していません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、要求のデータ ストリームにファイルをコピーし、データをサーバーにファイルを追加する要求を送信するを示します。 呼び出しの例<xref:System.Net.FtpWebRequest.GetResponse%2A>に要求を送信し、応答がサーバーによって返されるまでブロックします。  
+  
+ [!code-cpp[NCLFtpClient#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#3)]
+ [!code-csharp[NCLFtpClient#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Net.FtpWebRequest.GetResponse" />または<see cref="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />のこのインスタンスは既に呼び出されています。  
+  
+ \- または  
+  
+ HTTP プロキシが有効になっているし、以外の FTP コマンドを使用しようとしています。 <see cref="F:System.Net.WebRequestMethods.Ftp.DownloadFile" />、 <see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectory" />、または<see cref="F:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails" />です。</exception>
+        <exception cref="T:System.Net.WebException">
+          <see cref="P:System.Net.FtpWebRequest.EnableSsl" />設定されている<see langword="true" />は、サーバーがこの機能をサポートしていません。  
+  
+ \- または  
+  
+ A<see cref="P:System.Net.FtpWebRequest.Timeout" />が指定されましたとタイムアウトの有効期限が切れています。</exception>
+        <block subset="none" type="usage">
+          <para>このメソッドは、ネットワーク トラフィックを生成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の <see cref="T:System.Net.WebHeaderCollection" /> オブジェクトを取得します。</summary>
+        <value>空の <see cref="T:System.Net.WebHeaderCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.Headers%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。 使用する必要はありません<xref:System.Net.FtpWebRequest.Headers%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public bool KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("We don't support KeepAlive = true")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の完了後に FTP サーバーへの制御接続を閉じるかどうかを指定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          サーバーへの接続を破棄させない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Net.FtpWebRequest.KeepAlive%2A>プロパティに設定されている`false`、呼び出したときにコントロールの接続が閉じられる、<xref:System.Net.FtpWebResponse.Close%2A>メソッドです。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.KeepAlive%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得し、プロパティの値を指定した表示<xref:System.Net.FtpWebRequest>オブジェクト。  
+  
+ [!code-cpp[NCLFtpClient#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#15)]
+ [!code-csharp[NCLFtpClient#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public override string Method { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーに送信するためのコマンドを取得または設定します。</summary>
+        <value>サーバーに送信するための FTP コマンドを格納している <see cref="T:System.String" /> 値。 既定値は <see cref="F:System.Net.WebRequestMethods.Ftp.DownloadFile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.Method%2A>プロパティは、どのコマンドがサーバーに送信されるを決定します。 設定する、<xref:System.Net.FtpWebRequest.Method%2A>のパブリック フィールドのメンバーで定義されている文字列を使用して、<xref:System.Net.WebRequestMethods.Ftp>クラスです。 文字列で定義されている、<xref:System.Net.WebRequestMethods.Ftp>クラスは、サポートされているオプションのみを<xref:System.Net.FtpWebRequest.Method%2A>プロパティです。 設定、<xref:System.Net.FtpWebRequest.Method%2A>プロパティをその他の値になります、<xref:System.ArgumentException>例外。  
+  
+ 設定するときに<xref:System.Net.FtpWebRequest.Method%2A>に<xref:System.Net.WebRequestMethods.Ftp.UploadFile>を呼び出す前に、これを行う必要があります、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドです。 これらのメンバーを正しい順序で呼び出しに失敗する、<xref:System.Net.ProtocolViolationException>要求ストリームを取得しようとしたときに例外です。  
+  
+ 資格情報を提供、<xref:System.Net.FtpWebRequest>オブジェクトは、指定したメソッドを実行する権限が必要です。 それ以外の場合は、FTP コマンドが失敗しました。  
+  
+ コマンドの成否を確認するには<xref:System.Net.FtpWebResponse.StatusCode%2A>と<xref:System.Net.FtpWebResponse.StatusDescription%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定<xref:System.Net.WebRequestMethods.Ftp.DeleteFile>です。  
+  
+ [!code-cpp[NCLFtpClient#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#4)]
+ [!code-csharp[NCLFtpClient#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+        <exception cref="T:System.ArgumentException">メソッドが正しくありません。  
+  
+ \- または  
+  
+ このメソッドはサポートされていません。  
+  
+ \- または  
+  
+ 複数のメソッドが指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreAuthenticate">
+      <MemberSignature Language="C#" Value="public override bool PreAuthenticate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreAuthenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.PreAuthenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.PreAuthenticate%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">FTP では、事前認証はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Proxy">
+      <MemberSignature Language="C#" Value="public override System.Net.IWebProxy Proxy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IWebProxy Proxy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Proxy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーとの通信に使用するプロキシを取得または設定します。</summary>
+        <value>FTP サーバーとの通信を行う <see cref="T:System.Net.IWebProxy" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.Proxy%2A>プロパティを識別、<xref:System.Net.IWebProxy>は FTP サーバーと通信するインスタンス。 プロキシは、構成ファイルと、Internet Explorer のローカル エリア ネットワーク設定を使用して、システムによって設定されます。 プロキシを使用しないことを指定するには、次のように設定します。<xref:System.Net.FtpWebRequest.Proxy%2A>によって返されるプロキシ インスタンスを、<xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=nameWithType>メソッドです。 自動プロキシ検出の詳細については、次を参照してください。[自動プロキシ検出](~/docs/framework/network-programming/automatic-proxy-detection.md)です。  
+  
+ 設定する必要があります<xref:System.Net.FtpWebRequest.Proxy%2A>要求のストリームにデータを書き込むまたは応答を取得する前にします。 変更する<xref:System.Net.FtpWebRequest.Proxy%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+ <xref:System.Net.FtpWebRequest>クラスは、HTTP および ISA ファイアウォール クライアント プロキシをサポートしています。  
+  
+ 指定したプロキシが HTTP プロキシ、のみ、 <xref:System.Net.WebRequestMethods.Ftp.DownloadFile>、 <xref:System.Net.WebRequestMethods.Ftp.ListDirectory>、および<xref:System.Net.WebRequestMethods.Ftp.ListDirectoryDetails>コマンドがサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLFtpClient#16](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#16)]
+ [!code-csharp[NCLFtpClient#16](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに設定することはできません<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWriteTimeout">
+      <MemberSignature Language="C#" Value="public int ReadWriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadWriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ReadWriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームからの読み取り時またはストリームへの書き込み時のタイムアウトを取得または設定します。</summary>
+        <value>読み取りまたは書き込みがタイムアウトするまでのミリ秒単位の時間。既定値は、300,000 ミリ秒 (5 分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A>によって返されるストリームに書き込むときに使用、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドまたはによって返されるストリームからの読み取り、<xref:System.Net.FtpWebResponse.GetResponseStream%2A>メソッドです。  
+  
+ 具体的には、<xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A>プロパティのタイムアウトを制御する、<xref:System.IO.Stream.Read%2A>メソッドによって返されるストリームの読み取りに使用すると、<xref:System.Net.FtpWebResponse.GetResponseStream%2A>メソッド、および、<xref:System.IO.Stream.Write%2A>によって返されるストリームに書き込むために使用するメソッド、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドです。 タイムアウト期間を超えた場合、呼び出し元のメソッドがスローされます、<xref:System.Net.WebException>で<xref:System.Net.WebExceptionStatus>'éý'<xref:System.Net.WebExceptionStatus.Timeout>です。  
+  
+ 要求が完了するまで待機する時間を指定するには、使用、<xref:System.Net.FtpWebRequest.Timeout%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求が既に送信されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作が、ゼロ未満と等しくないに指定された値<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenameTo">
+      <MemberSignature Language="C#" Value="public string RenameTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RenameTo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.RenameTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を変更されたファイルの新しい名前を取得または設定します。</summary>
+        <value>名前を変更されたファイルの新しい名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">設定操作は指定された値<see langword="null" />または空の文字列。</exception>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUri">
+      <MemberSignature Language="C#" Value="public override Uri RequestUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RequestUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.RequestUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで要求された URI を取得します。</summary>
+        <value>ファイル転送プロトコルを使用してアクセスされるリソースを識別する <see cref="T:System.Uri" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Net.FtpWebRequest.RequestUri%2A>プロパティは、URI 時に指定された、<xref:System.Net.WebRequest.Create%2A>をこのインスタンスを取得するメソッドが呼び出されました。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLFtpClient#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#14)]
+ [!code-csharp[NCLFtpClient#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePoint">
+      <MemberSignature Language="C#" Value="public System.Net.ServicePoint ServicePoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ServicePoint ServicePoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ServicePoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ServicePoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーに接続するために使用する <see cref="T:System.Net.ServicePoint" /> オブジェクトを取得します。</summary>
+        <value>接続の動作をカスタマイズするために使用できる <see cref="T:System.Net.ServicePoint" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ない場合は<xref:System.Net.ServicePoint>オブジェクトが存在する、FTP サーバーのいずれかが作成されます。 FTP サーバーを開くことができる接続の最大数を設定するには、設定、<xref:System.Net.ServicePoint.ConnectionLimit%2A>のプロパティ、<xref:System.Net.ServicePoint>このプロパティによって返されるインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求からサービス ポイントを取得し、接続の最大数を 1 に設定します。  
+  
+ [!code-cpp[NCLFtpClient#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#1)]
+ [!code-csharp[NCLFtpClient#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public override int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に対するミリ秒単位の待機時間を取得または設定します。</summary>
+        <value>要求がタイムアウトになるまでのミリ秒単位の待機期間を格納している <see cref="T:System.Int32" /> 値。既定値は <see cref="F:System.Threading.Timeout.Infinite" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無限の値を指定するには、設定、<xref:System.Net.FtpWebRequest.Timeout%2A>プロパティを<xref:System.Threading.Timeout.Infinite>(-1)。 これが既定値です。  
+  
+ <xref:System.Net.FtpWebRequest.Timeout%2A>同期要求が行われたミリ秒数には、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッドと応答の待機、<xref:System.Net.FtpWebRequest.GetRequestStream%2A>メソッドは、ストリームの待機です。 タイムアウト期間内のリソースが応答しなかった場合は、要求がスローされます、<xref:System.Net.WebException>で、<xref:System.Net.WebException.Status%2A>プロパティに設定<xref:System.Net.WebExceptionStatus.Timeout>です。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.Timeout%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+ ドメイン ネーム システム (DNS) クエリは、最大 15 秒を返すまたはタイムアウトにかかる場合があります。設定すると、要求には、解像度を必要とするホスト名が含まれています。<xref:System.Net.FtpWebRequest.Timeout%2A>値に、未満である 15 秒かかる場合がありますする前に 15 秒以上、<xref:System.Net.WebException>要求タイムアウトを示すためにスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[NCLFtpClient#23](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#23)]
+ [!code-csharp[NCLFtpClient#23](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値より小さい値 0 は、<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseBinary">
+      <MemberSignature Language="C#" Value="public bool UseBinary { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseBinary" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UseBinary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル転送のデータ型を指定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> の場合は、転送されるデータがバイナリであることがサーバーに示されます。<see langword="false" /> の場合は、データがテキストであることが示されます。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイナリを送信する場合、画像などのデータをこのプロパティを`true`です。 テキストを送信する場合は、プロパティを設定`false`です。 指定する`true`により、<xref:System.Net.FtpWebRequest>を送信する、`"TYPE I"`コマンドをサーバーにします。 指定する`false`により、<xref:System.Net.FtpWebRequest>を送信する、`"Type A"`コマンドをサーバーにします。 FTP サーバーは、これらのコマンドを無視することができます。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.UseBinary%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得し、プロパティの値を指定した表示<xref:System.Net.FtpWebRequest>オブジェクト。  
+  
+ [!code-cpp[NCLFtpClient#15](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#15)]
+ [!code-csharp[NCLFtpClient#15](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultCredentials">
+      <MemberSignature Language="C#" Value="public override bool UseDefaultCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UseDefaultCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebRequest.UseDefaultCredentials%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。 使用する必要はありません<xref:System.Net.FtpWebRequest.UseDefaultCredentials%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">FTP では、既定の資格情報はサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePassive">
+      <MemberSignature Language="C#" Value="public bool UsePassive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePassive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UsePassive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント アプリケーションのデータ転送処理の動作を取得または設定します。</summary>
+        <value>
+          クライアント アプリケーションのデータ転送処理がデータ ポートで接続を待機する場合は <see langword="false" />。それ以外で、クライアントがデータ ポートで接続を開始する必要がある場合は <see langword="true" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Net.FtpWebRequest.UsePassive%2A>プロパティを`true`送信、"`PASV"`コマンドをサーバーにします。 このコマンドは、データ ポートでリッスンするように、転送コマンドの受信時に開始するのではなく、接続の待機にサーバーを要求します。  
+  
+ 使用して指定されている動作の詳細については<xref:System.Net.FtpWebRequest.UsePassive%2A>を参照してください RFC 959、「ファイル転送プロトコル」3.2、「データ接続を確立する」および 4.1.2、"転送パラメーター、"使用できるコマンドに[http://www.rfc-editor.org/](http://www.ietf.org/rfc/rfc959.txt)です。  
+  
+ 変更する<xref:System.Net.FtpWebRequest.UsePassive%2A>呼び出した後、 <xref:System.Net.FtpWebRequest.GetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>、 <xref:System.Net.FtpWebRequest.GetResponse%2A>、または<xref:System.Net.FtpWebRequest.BeginGetResponse%2A>メソッド原因、<xref:System.InvalidOperationException>例外。  
+  
+ 場合<xref:System.Net.FtpWebRequest.UsePassive%2A>に設定されている`true`、FTP サーバーは、ファイルのサイズを送信していませんし、ダウンロードの進行状況を常に 0 にすることができます。 場合<xref:System.Net.FtpWebRequest.UsePassive%2A>に設定されている`false`ファイアウォールは警告を生成し、ファイルのダウンロードをブロックします。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得し、プロパティの値を指定した表示<xref:System.Net.FtpWebRequest>オブジェクト。  
+  
+ [!code-cpp[NCLFtpClient#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#6)]
+ [!code-csharp[NCLFtpClient#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しい値は、このプロパティは既に進行中のある要求に指定されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

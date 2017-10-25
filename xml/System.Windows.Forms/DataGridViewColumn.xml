@@ -1,0 +1,1308 @@
+<Type Name="DataGridViewColumn" FullName="System.Windows.Forms.DataGridViewColumn">
+  <TypeSignature Language="C#" Value="public class DataGridViewColumn : System.Windows.Forms.DataGridViewBand, IDisposable, System.ComponentModel.IComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewColumn extends System.Windows.Forms.DataGridViewBand implements class System.ComponentModel.IComponent, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewBand</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IComponent</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.DataGridViewColumnDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataGridViewColumnConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の列を表す、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewColumn>クラスで論理列を表す、<xref:System.Windows.Forms.DataGridView>コントロール。 列から列を取得することができます、<xref:System.Windows.Forms.DataGridView.Columns%2A>コントロールのコレクション。  
+  
+ 異なり、 <xref:System.Windows.Forms.DataGridViewRow>、内のセルの実際のコレクションを含む、 <xref:System.Windows.Forms.DataGridView>、<xref:System.Windows.Forms.DataGridViewColumn>列の幅とセル スタイルなどの列のユーザー インターフェイス (UI) の動作と外観を調整するには、主に使用します。 セルのスタイルの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
+  
+ 派生した型<xref:System.Windows.Forms.DataGridViewColumn>通常初期化、<xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A>から派生したプロパティの関連する型の新しいインスタンスを<xref:System.Windows.Forms.DataGridViewCell>クラスです。 表示や個別のセルの動作に関連する列のプロパティは、テンプレートのセルの対応するプロパティのラッパーです。 列のすべてのセルとセル テンプレートでの値を変更する列に対してこれらのプロパティのいずれかを自動的に変更します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例で Windows フォームを作成、<xref:System.Windows.Forms.DataGridView>とボタンのセット。 各ボタンのラベルに関連する操作の説明、<xref:System.Windows.Forms.DataGridViewColumn>最初と最後の列をスワップなどのプロパティ (を使用して、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>プロパティ) を列見出しのテキストの変更、または (を使用して、<xref:System.Windows.Forms.DataGridViewColumn.HeaderText%2A>プロパティ)。 関連付けられたプロパティを変更するボタンをクリックして、<xref:System.Windows.Forms.DataGridViewColumn>です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#100](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#100)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#100](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#100)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#100)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewColumn" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewColumn" />クラスが既定の状態にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewColumn (System.Windows.Forms.DataGridViewCell cellTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridViewCell cellTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.#ctor(System.Windows.Forms.DataGridViewCell)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cellTemplate" Type="System.Windows.Forms.DataGridViewCell" />
+      </Parameters>
+      <Docs>
+        <param name="cellTemplate">テンプレートとして使用する既存の <see cref="T:System.Windows.Forms.DataGridViewCell" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewColumn" />既存を使用してクラス<see cref="T:System.Windows.Forms.DataGridViewCell" />をテンプレートとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A>プロパティの値を`cellTemplate`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAutoSizeColumnMode AutoSizeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAutoSizeColumnMode AutoSizeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.AutoSizeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅を自動的に調整するときに使用するモードを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewAutoSizeColumnMode" />列が幅を自動的に調整するかどうかと、適切な幅の判断を決定する値。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値によって、列の自動サイズ変更動作が決定されます、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>値と同じであるプロパティの<xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>プロパティを除くすべての値を<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet>、値がから継承されたことを示します、<xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType>プロパティ代わりにします。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill>、そのモードでは、他の列と共に列をサイズ変更します。 コントロール内のすべてのフィル モード列が縦横比によって決まりますで使用可能な領域を分割、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>プロパティの値。 コントロールのクライアント領域の幅から他のすべての列の幅を差し引くことでは、フィル モードの使用可能な幅が決まります。 この幅よりも小さい場合、結合された<xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>すべてのフィル モード列の値は、水平スクロール バーが表示されます、最小の幅が、すべてのフィル モード列が表示されます、ユーザーの列のサイズ変更が無効になっています。 列フィル モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールで列フィル モード](~/docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>プロパティ以外の他の値に設定されて<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>、クリッピングなしのセルの値が完全に表示されるように、列が幅を管理します。 場合またはセルの内容を変更するたびに、コンテンツ ベースのサイズ変更モードでサイズの調整が発生する<xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>が有効にすると、行の高さを変更します。 一部のコンテンツに基づくサイズ変更モードを使用して、パフォーマンスが向上するために現在表示されている行のサイズ調整を制限できます。  
+  
+ 持つ列のみ、<xref:System.Windows.Forms.DataGridViewColumn.Visible%2A>のプロパティの値`true`サイズを変更する列の表示を変更しても発生するサイズ変更は発生しません。 さらに、列がサイズが自動的に設定されているユーザーは、マウスで列の幅を調整できません。  
+  
+ 列の幅をプログラムで調整するを使用して、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.AutoResizeColumn%2A>または<xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A>メソッドまたは列セット<xref:System.Windows.Forms.DataGridViewColumn.Width%2A>プロパティです。  
+  
+ コンテンツ ベースの自動サイズ変更の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](~/docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、自動的にその内容に合わせて幅サイズを変更する列を強制します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#109](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#109)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#109](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#109)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#109](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#109)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティを設定するときに指定された値が、<see cref="T:System.Windows.Forms.DataGridViewAutoSizeColumnMode" />が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティを設定するときに指定した値が結果に、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />の値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />列ヘッダーが非表示の場合、表示される列。  
+  
+ または  
+  
+ このプロパティを設定するときに指定した値が結果に、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />の値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />表示される列が固定されていること。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいセルの作成に使用するテンプレートを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCell" />列内のすべてのセルが後にモデル化します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクター、<xref:System.Windows.Forms.DataGridViewColumn>クラスは、このプロパティを初期化します。 既定のコンス トラクターでは、プロパティを設定`null`; 他のコンス トラクターは、そのパラメーターからセル テンプレートをコピーします。  
+  
+> [!NOTE]
+>  セル テンプレートのプロパティの変更はすぐに影響しません、列の既存のセルのユーザー インターフェイス (UI)。 これらの変更のみが明らかな列が再生成 (列を並べ替えることで、たとえば、またはを呼び出すことによって、<xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType>メソッド)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell>のテンプレートとして、<xref:System.Windows.Forms.DataGridViewColumn>です。 列の任意のセルにスタイルの変更では、すべての列のセルに影響します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellType">
+      <MemberSignature Language="C#" Value="public Type CellType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CellType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.CellType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セル テンプレートのランタイム型を取得します。</summary>
+        <value><see cref="T:System.Type" />の<see cref="T:System.Windows.Forms.DataGridViewCell" />この列のテンプレートとして使用します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本型、<xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A>は<xref:System.Windows.Forms.DataGridViewCell>します。 このプロパティを使用して、実際の派生型を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このバンドの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewBand" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuStrip">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenuStrip ContextMenuStrip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenuStrip ContextMenuStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.ContextMenuStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のショートカット メニューを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ContextMenuStrip" />に現在関連付けられている<see cref="T:System.Windows.Forms.DataGridViewColumn" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが列の表示領域でマウスの右ボタンをクリックしたときに、ショートカット メニューが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumn.ContextMenuStrip%2A>セルの背景色を変更するための機能を追加するプロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#130](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#130)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#130](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#130)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#130](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#130)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataPropertyName">
+      <MemberSignature Language="C#" Value="public string DataPropertyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataPropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.DataPropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataGridViewColumnDataPropertyNameEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ ソース プロパティまたはデータベース列の名前を<see cref="T:System.Windows.Forms.DataGridViewColumn" />がバインドされています。</summary>
+        <value>関連付けられているプロパティまたはデータベース列の大文字と小文字の名前、<see cref="T:System.Windows.Forms.DataGridViewColumn" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティに設定されている`true`、各列が自動的に設定、<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティで指定されたデータ ソースのプロパティまたはデータベース列の名前を<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティです。 このバインドも実行できます、手動では、データ ソースで利用可能なデータベース列またはプロパティのサブセットのみを表示するときに便利です。 このような場合、設定、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティを`false`、それぞれを手動で追加および<xref:System.Windows.Forms.DataGridViewColumn>、それぞれの値を設定<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティを表示するデータ ソースのデータベース列またはプロパティをします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、各列を表すプロパティを選択する方法を示します。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView._CollectionBound#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/CS/collectionbound.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView._CollectionBound#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/VB/collectionbound.vb#20)]  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView._CollectionBound#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/CS/collectionbound.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView._CollectionBound#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/VB/collectionbound.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCellStyle">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCellStyle DefaultCellStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle DefaultCellStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の既定のセル スタイルを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />列のセルの既定のスタイルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールのセルに示されているスタイルを使用してそのセルを表示する<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティで、型の他のプロパティからスタイルを継承<xref:System.Windows.Forms.DataGridViewCellStyle>です。 この列のセルのスタイルが指定された、<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>プロパティのオーバーライドで指定されたスタイル、<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>プロパティで指定されたスタイルによってオーバーライドされますが、 <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.DataGridViewRow.DefaultCellStyle%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType>プロパティ。  
+  
+ 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>プロパティをさまざまな列のコンテンツの配置を設定します。  
+  
+ [!code-csharp[System.Windows.Forms.GridViewContentAlignment#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewContentAlignment/CS/changecolumnalignment.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewContentAlignment#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewContentAlignment/VB/changecolumnalignment.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayIndex">
+      <MemberSignature Language="C#" Value="public int DisplayIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在表示されている列を基準とした列の表示順序を設定または取得します。</summary>
+        <value>列の 0 から始まる位置が表示される、関連付けられている<see cref="T:System.Windows.Forms.DataGridView" />、またはコントロール内で、バンドが含まれていない場合は-1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Windows.Forms.DataGridViewBand.Index%2A> 、プロパティ、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>プロパティは、ユーザー インターフェイス (UI) で表示される列の現在位置に対応します。 既定では、各列の<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>が追加された順序を反映して昇順の番号に設定します。 <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A>プロパティの値には影響しません、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>値。 その可視性、またはその他の状態に基づいて列の表示位置を確認するには<xref:System.Windows.Forms.DataGridViewColumnCollection.GetFirstColumn%2A>、 <xref:System.Windows.Forms.DataGridViewColumnCollection.GetLastColumn%2A>、または<xref:System.Windows.Forms.DataGridViewColumnCollection.GetNextColumn%2A>のメソッド、<xref:System.Windows.Forms.DataGridViewColumnCollection>クラス。  
+  
+ コントロール内のすべての列が一意な<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>値。 値は、0 から開始し、任意の値を省略せず番号順に進みます。 変更すると、 <xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A> 、列の値、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>値はその他の列は新しい順序を反映するように変更します。  
+  
+ 列に関連付けられている場合<xref:System.Windows.Forms.DataGridView>自体を再描画するコントロールと、制御、このプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A> visual 最初と最後の列の位置をスワップするプロパティです。 前に挿入が発生したことに注意してください、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>です。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#170)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#170)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#170)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Windows.Forms.DataGridViewElement.DataGridView" /><see langword="null" />と指定した値より小さい 0 より大きいまたはコントロール内の列の数と等しくがこのプロパティを設定します。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridViewElement.DataGridView" /><see langword="null" />および-1 より小さい値は、このプロパティの設定時に、指定された値。  
+  
+ または  
+  
+ このプロパティの設定と等しいときに指定した値<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewBand" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disposed">
+      <MemberSignature Language="C#" Value="public event EventHandler Disposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DataGridViewColumn.Disposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Forms.DataGridViewColumn" />が破棄されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridViewColumn.Disposed>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridViewColumn>という`DataGridViewColumn1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridViewColumn.Disposed>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#370](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#370)]
+ [!code-vb[System.Windows.Forms.EventExamples#370](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#370)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DividerWidth">
+      <MemberSignature Language="C#" Value="public int DividerWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DividerWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.DividerWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の区分線の幅 (ピクセル数) を取得または設定します。</summary>
+        <value>区分線 (列の右マージン) の太さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、固定された列とスクロールできる列の間で視覚的な境界を提供すると便利です。 関連付けられたの前景色がかかりますが、現在の列の一部である余分なエッジ<xref:System.Windows.Forms.DataGridView>です。 余分なエッジは、ユーザーが自動的に列のサイズをダブルクリックして、領域を拡張しません。 列のサイズを変更するには、ユーザー必要があります、境界線と隣接する列間の境界をダブルクリックします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、3 番目の列の後に垂直方向のエッジを追加します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#110](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#110)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#110](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#110)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillWeight">
+      <MemberSignature Language="C#" Value="public float FillWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 FillWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(100)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列が、コントロール内の他の塗りつぶしモードの列の幅を基準とする塗りつぶしモードの場合、列の幅を表す値を取得または設定します。</summary>
+        <value>A<see cref="T:System.Single" />他のフィル モード列の幅を基準とする塗りつぶしモードであるときに、列の幅を表すです。 既定値は 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill>コントロールで表示されているすべての列が正確に使用可能な表示領域の水平方向の幅を入力するように、そのモードでは、他の列と共に列をサイズ変更します。 コントロール内のすべてのフィル モード列が縦横比によって決まりますで使用可能な領域を分割、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>プロパティの値。 列フィル モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールで列フィル モード](~/docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ 最大合計<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>のすべての列の値、<xref:System.Windows.Forms.DataGridView>コントロールは、65535 です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロールのサイズ変更モードを設定](~/docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティを設定するときに指定した値は、0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Frozen">
+      <MemberSignature Language="C#" Value="public override bool Frozen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Frozen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Frozen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーをスクロールするときに列が移動するかどうかを示す値を設定、<see cref="T:System.Windows.Forms.DataGridView" />水平方向を制御します。</summary>
+        <value>
+          <see langword="true" />列を固定するのにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列が固定されると、(または右から左への言語では右側) の左側にあるすべての列が固定されているとします。 フリーズしたと凍結解除された列は、2 つのグループを形成します。 設定して列の移動が有効になっている場合、<xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A>プロパティを`true`ユーザーは、他の 1 つのグループから列をドラッグすることはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewBand.Frozen%2A?displayProperty=nameWithType>とほぼ同じであるプロパティ、<xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewBand>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewBandDemo.cpp#7)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewBandDemo.cs#7)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewbanddemo.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredWidth">
+      <MemberSignature Language="C#" Value="public virtual int GetPreferredWidth (System.Windows.Forms.DataGridViewAutoSizeColumnMode autoSizeColumnMode, bool fixedHeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetPreferredWidth(valuetype System.Windows.Forms.DataGridViewAutoSizeColumnMode autoSizeColumnMode, bool fixedHeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.GetPreferredWidth(System.Windows.Forms.DataGridViewAutoSizeColumnMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoSizeColumnMode" Type="System.Windows.Forms.DataGridViewAutoSizeColumnMode" />
+        <Parameter Name="fixedHeight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoSizeColumnMode">自動サイズ設定モードを指定する <see cref="T:System.Windows.Forms.DataGridViewAutoSizeColumnMode" /> 値。</param>
+        <param name="fixedHeight">
+          現在の行の高さに基づいて列の幅を計算する場合は <see langword="true" />。行の高さが調整されることを見込んで幅を計算する場合は <see langword="false" />。</param>
+        <summary>指定した基準に基づいて、列の適切な幅を計算します。</summary>
+        <returns>列の適切な幅 (ピクセル単位)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ ベースの自動サイズ変更機能によってこのプロパティは使用、<xref:System.Windows.Forms.DataGridView>列の適切な幅を判断します。  
+  
+ A`fixedHeight`のパラメーター値`false`が理想的なセルの高さと幅の比率を達成する計算される行の高さに基づいて列幅を計算します。 セルの内容に複数の行に折り返さに、有効で、セルのセル スタイルは必要があります、<xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewTriState.True>です。  
+  
+ 自動サイズ変更の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](~/docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="autoSizeColumnMode" /> が <see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet" />、<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None" />、または <see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="autoSizeColumnMode" /> は有効な <see cref="T:System.Windows.Forms.DataGridViewAutoSizeColumnMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderCell">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumnHeaderCell HeaderCell { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewColumnHeaderCell HeaderCell" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.HeaderCell" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnHeaderCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataGridViewColumnHeaderCell" />列ヘッダーを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewColumnHeaderCell" />列のヘッダー セルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のヘッダーは通常、列ラベルの表示に使用されます。 現在の値に応じて、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>と<xref:System.Windows.Forms.DataGridView.SelectionMode%2A?displayProperty=nameWithType>プロパティ、ユーザーは並べ替えまたは列を選択する列ヘッダーをクリックしてできますも。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumn.HeaderCell%2A>列ヘッダーのスタイルと内容を変更するプロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#150](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#150)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#150](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#150)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#150](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#150)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のヘッダー セルのキャプション テキストを取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />目的のテキスト。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、列に関連付けられたヘッダー セルがある場合にのみ便利です。 詳細については、<xref:System.Windows.Forms.DataGridViewBand.HeaderCellCore%2A> プロパティを参照してください。  
+  
+> [!NOTE]
+>  行の対応するヘッダー テキストのプロパティはありません。 行ヘッダーにラベルを表示するには、処理、<xref:System.Windows.Forms.DataGridView.CellPainting?displayProperty=nameWithType>イベントとペイントときに、独自のラベル<xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ColumnIndex%2A?displayProperty=nameWithType>-1 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumn.HeaderText%2A>列ヘッダーのテキストを変更するプロパティです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#160](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#160)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#160](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#160)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#160](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#160)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritedAutoSizeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAutoSizeColumnMode InheritedAutoSizeMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAutoSizeColumnMode InheritedAutoSizeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列に対して有効なサイズ変更モードを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAutoSizeColumnMode" />値列を有効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値によって、列の自動サイズ変更動作が決定されます、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>値と同じであるプロパティの<xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>プロパティを除くすべての値を<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet>、値がから継承されたことを示します、<xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType>プロパティ代わりにします。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill>コントロールで表示されているすべての列が正確に使用可能な表示領域の水平方向の幅を入力するように、そのモードでは、他の列と共に列をサイズ変更します。 コントロール内のすべてのフィル モード列が縦横比によって決まりますで使用可能な領域を分割、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>プロパティの値。 列フィル モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールで列フィル モード](~/docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A>プロパティ以外の他の値に設定されて<xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.None>、クリッピングなしのセルの値が完全に表示されるように、列が幅を管理します。 場合またはセルの内容を変更するたびに、コンテンツ ベースのサイズ変更モードでサイズの調整が発生する<xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>が有効にすると、行の高さを変更します。 一部のコンテンツに基づくサイズ変更モードを使用して、パフォーマンスが向上するために現在表示されている行のサイズ調整を制限できます。  
+  
+ 持つ列のみ、<xref:System.Windows.Forms.DataGridViewColumn.Visible%2A>のプロパティの値`true`サイズを変更する列の表示を変更しても発生するサイズ変更は発生しません。 さらに、列がサイズが自動的に設定されているユーザーは、マウスで列の幅を調整できません。  
+  
+ 列の幅をプログラムで調整するを使用して、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.AutoResizeColumn%2A>または<xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A>メソッドまたは列セット<xref:System.Windows.Forms.DataGridViewColumn.Width%2A>プロパティです。  
+  
+ コンテンツ ベースの自動サイズ変更の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](~/docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InheritedStyle">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCellStyle InheritedStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCellStyle InheritedStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.InheritedStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列に現在適用されているセル スタイルを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />を表すセル スタイルは、列を表示するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、セルに適用されている行のスタイルに関係なく列のすべてのセルに適用されているセル スタイルを決定するのに便利です。 列<xref:System.Windows.Forms.DataGridViewColumn.InheritedStyle%2A>プロパティの値からの継承、<xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A>と<xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>プロパティです。  
+  
+ セル スタイルの継承の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのセル スタイル](~/docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDataBound">
+      <MemberSignature Language="C#" Value="public bool IsDataBound { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDataBound" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.IsDataBound" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列がデータ ソースにバインドされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />列がデータ ソースに接続されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインドの一部である場合、列がデータ ソースにバインドが<xref:System.Windows.Forms.DataGridView>です。 列がデータ バインドの一部になることができます<xref:System.Windows.Forms.DataGridView>列が自動的に作成する場合、<xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A>プロパティに設定されている`true`、または列の<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>に列が手動で追加されるプロパティが設定されて、<xref:System.Windows.Forms.DataGridView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumWidth">
+      <MemberSignature Language="C#" Value="public int MinimumWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.MinimumWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(5)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の最小幅をピクセル単位で取得または設定します。</summary>
+        <value>2 ~ のピクセル数<see cref="F:System.Int32.MaxValue" />列の最小の幅を指定します。 既定値は 5 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>プロパティは、どの幅の狭い列サイズを変更できるユーザー インターフェイス (UI) での上限を設定します。 <xref:System.Windows.Forms.DataGridViewColumn.Width%2A>プロパティをオーバーライドできます、<xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、列の幅の最小値を設定します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#107](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#107)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#107](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#107)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#107](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 2 より小さいかより<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の名前を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />列の名前を格納しています。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクション内の列を識別するために使用する列に関連付けられている正式な名前を表します。 たとえば、<xref:System.Windows.Forms.DataGridViewColumnCollection.Remove%2A>と<xref:System.Windows.Forms.DataGridViewColumnCollection.Contains%2A>のメソッド、<xref:System.Windows.Forms.DataGridViewColumnCollection>クラスを使用して、<xref:System.Windows.Forms.DataGridViewColumn.Name%2A>プロパティです。 名前が区別されません。 <xref:System.Windows.Forms.DataGridView>は扱います`column1`と`COLUMN1`同じ列として。  
+  
+   
+  
+## Examples  
+ 次のコード例では、列名を設定する方法を示します。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView._CollectionBound#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/CS/collectionbound.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView._CollectionBound#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/VB/collectionbound.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public override bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが列のセルを編集できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが列のセルを編集できない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A>プロパティへの影響、<xref:System.Windows.Forms.DataGridViewCell.ReadOnly%2A?displayProperty=nameWithType>列内の各セルのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewBand.ReadOnly%2A?displayProperty=nameWithType>とほぼ同じであるプロパティ、<xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewBand>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#11](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewBandDemo.cpp#11)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewBandDemo.cs#11)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewbanddemo.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティに設定<see langword="false" />読み取り専用データ ソースにバインドされている列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resizable">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewTriState Resizable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewTriState Resizable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Resizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewTriState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のサイズを変更できるかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewTriState" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewTriState.True" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>プロパティは<xref:System.Windows.Forms.DataGridViewTriState.False>ユーザーを手動で列の幅を調整することにすることはできません。  
+  
+ 既定では、<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>プロパティの値がに基づいて、<xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A?displayProperty=nameWithType>プロパティの値。 明示的に設定する場合<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>に<xref:System.Windows.Forms.DataGridViewTriState.True>または<xref:System.Windows.Forms.DataGridViewTriState.False>、ただし、コントロールの値は無視されます。 設定<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>に<xref:System.Windows.Forms.DataGridViewTriState.NotSet>値の継承の動作を復元します。  
+  
+ <xref:System.Windows.Forms.DataGridViewTriState.NotSet>値の継承の復元、<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>プロパティは返されません、<xref:System.Windows.Forms.DataGridViewTriState.NotSet>値に列が追加されていない場合を除き、<xref:System.Windows.Forms.DataGridView>コントロール。 決定する必要がある場合かどうか、<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>列のプロパティの値を継承すると、確認、<xref:System.Windows.Forms.DataGridViewElement.State%2A>プロパティです。 場合、<xref:System.Windows.Forms.DataGridViewElement.State%2A>プロパティの値が含まれています、<xref:System.Windows.Forms.DataGridViewElementStates.ResizableSet>フラグを<xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A>プロパティの値は継承できません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザーは、列の幅を変更できないように、3 番目の列のサイズを修正するのにこのプロパティを使用します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.MouseBasedResizing#12](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.MouseBasedResizing/CPP/mousesizing.cpp#12)]
+ [!code-csharp[System.Windows.Forms.DataGridView.MouseBasedResizing#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.MouseBasedResizing/CS/mousesizing.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridView.MouseBasedResizing#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.MouseBasedResizing/VB/mousesizing.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISite Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のサイトを取得または設定します。</summary>
+        <value><see cref="T:System.ComponentModel.ISite" />存在する場合、列に関連付けられています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumnSortMode SortMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewColumnSortMode SortMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.SortMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumnSortMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の並べ替えモードを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewColumnSortMode" />列のセルの値に基づいて行の並べ替えに使用される条件を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridView>を持つ列を使用して、コントロールが並べ替えられて、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>、並べ替えグリフが自動的に列ヘッダーに表示されます。  
+  
+ 以降では、 [!INCLUDE[net_2015](~/includes/net-2015-md.md)]、app.config ファイルには、次のエントリが含まれている場合、システム DPI 設定に従って並べ替えグリフがサイズ変更します。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+```  
+  
+ 持つ列を使用して、コントロールが並べ替えられるときに、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.Programmatic>、を介して、手動で並べ替えグリフに表示する必要があります、<xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A>プロパティです。  
+  
+ 既定の並べ替えモード、<xref:System.Windows.Forms.DataGridViewTextBoxColumn>は<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>します。 その他の列の型の既定の並べ替えモードは<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>します。  
+  
+ <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>値は防止しませんするプログラムでは、列の並べ替えはその他の制限が適用可能性があります。 詳細については、<xref:System.Windows.Forms.DataGridView.Sort%2A> メソッドを参照してください。  
+  
+ A<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>のプロパティの値<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>防ぐことはできません、<xref:System.Windows.Forms.DataGridView.ColumnHeaderMouseClick?displayProperty=nameWithType>イベントが発生しているが、これからできなくなりますヘッダーがクリックされたときの外観を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#066)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#066)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティと競合する割り当てられた値<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールヒントに使用されるテキストを取得または設定します。</summary>
+        <value>列のツールヒントとして表示するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列ヘッダーにマウス ポインターを合わせると、列のツールヒントが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、列のツールヒントを設定する方法を示します。 このコード例に示されている例のコードの一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#145](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#145)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#145](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#145)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#145](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#145)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列を説明する文字列を取得します。</summary>
+        <returns>A<see cref="T:System.String" />列を説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドです。 返される文字列が含まれています、<xref:System.Windows.Forms.DataGridViewColumn.Name%2A>と<xref:System.Windows.Forms.DataGridViewBand.Index%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewColumn>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public Type ValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のセルの値のデータ型を取得または設定します。</summary>
+        <value>A<see cref="T:System.Type" />列のセルに格納されている値のランタイム クラスをについて説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルター処理や並べ替え、列のセルの内容に関してこのプロパティが使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A>プロパティの初期化時に、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>を格納している<xref:System.Drawing.Color>値。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/cs/misc2.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/vb/misc2.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列を表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />列を表示する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ、列を維持しながらビューから列を非表示を使用して、<xref:System.Windows.Forms.DataGridView>です。 列を完全に削除するを使用して、<xref:System.Windows.Forms.DataGridViewColumnCollection.Remove%2A?displayProperty=nameWithType>メソッドです。  
+  
+ データ ソースへのバインディングこのプロパティを設定するときに自動的に生成される列を非表示にする、<xref:System.Windows.Forms.DataGridView.DataBindingComplete>イベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewBand.Visible%2A?displayProperty=nameWithType>とほぼ同じであるプロパティ、<xref:System.Windows.Forms.DataGridViewColumn.Visible%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewBand>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewBandDemo.cpp#9)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewBandDemo.cs#9)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewbanddemo.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumn.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の現在の幅を取得または設定します。</summary>
+        <value>列の幅 (ピクセル単位)。 既定値は 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するときに指定した値がの値より小さい場合、 <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> 、プロパティ、<xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>プロパティの値が代わりに使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、列の幅を設定します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#108](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#108)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#108](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#108)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#108](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティを設定するときに指定した値は 65536 より大きいです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

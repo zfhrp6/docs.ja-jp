@@ -1,0 +1,228 @@
+<Type Name="WebPartZoneDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner">
+  <TypeSignature Language="C#" Value="public class WebPartZoneDesigner : System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartZoneDesigner extends System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.WebParts.WebPartZoneBaseDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" /> コントロールのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner>デザイン時のレンダリングを提供<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 デザイナーの編集可能な領域、テンプレート、およびページ開発者が、コントロールの外観を簡単に変更を許可する自動フォーマットのサポートが含まれています。  
+  
+ パブリック<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.AutoFormats%2A>と<xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.TemplateGroups%2A>コレクションが、ページの開発者向けクイックの書式設定オプションを提供およびオーバーライドすると安全にカスタム コントロールの既定の外観を変更します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>オーバーライドする場合、 <see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml" /> 、カスタム コントロールのデザイン時の外観を変更するメソッドを必ず使用<see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />の表示を作成するメソッドであるために、カスタム コードを追加する前に、親メソッドを呼び出すと、コントロール内の領域。 オーバーライドする場合は<see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml" />呼び出しを行わない<see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />どこかの方法で、デザイナーの領域はレンダリングされません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartZoneDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一連の定義済みの自動書式で表示するスキームを取得、**オート フォーマット**デザイン時に関連付けられたコントロールのダイアログ ボックス。</summary>
+        <value>事前に指定された<see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />既定 WebPartZone スキームでします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.AutoFormats%2A>プロパティのオーバーライドの基本実装に固有であるコレクションを返す、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に呼び出すことによって、コントロールを表すために使用するマークアップを取得、 <see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" /> null 引数を持つメソッドです。</summary>
+        <returns>メソッドの呼び出し<see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />パラメーターと引数を null にします。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドするときに呼び出す必要があります<see cref="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />で、<see cref="T:System.Web.UI.Design.DesignerRegionCollection" />または<see langword="null" />を引数としてデザイナー領域が正しくビルドされるようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml (System.Web.UI.Design.DesignerRegionCollection regions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml(class System.Web.UI.Design.DesignerRegionCollection regions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regions" Type="System.Web.UI.Design.DesignerRegionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="regions"><see cref="T:System.Web.UI.Design.DesignerRegionCollection" />コントロールに関連付けられている場合は、します。</param>
+        <summary>作成、<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />コントロールのデザイン時 HTML を生成する前に、デザイナーでします。</summary>
+        <returns>A<see cref="T:System.String" />を表すコントロールのデザイン時 HTML。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする場合は、デザイナーの領域を正しくビルドするための基本メソッドを呼び出す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override string GetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">指定した <see cref="T:System.Web.UI.Design.EditableDesignerRegion" />。</param>
+        <summary>指定されたコンテンツを取得<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />です。</summary>
+        <returns>A<see cref="T:System.String" />デザイナー領域のコンテンツの永続化の形式を表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の文字列 ("") 関連付けられたコントロールのデザイン時 HTML が存在しない場合。</summary>
+        <returns>空の文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">関連付けられた<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コントロール。</param>
+        <summary>デザイナーに関連付けられているアタッチ<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override void SetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.SetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region">指定した <see cref="T:System.Web.UI.Design.EditableDesignerRegion" />。</param>
+        <param name="content">A<see cref="T:System.String" />を表す、指定した領域のコンテンツ。</param>
+        <summary>指定したコンテンツ設定<see cref="T:System.Web.UI.Design.EditableDesignerRegion" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれが 1 つまたは複数のテンプレート定義を含む、テンプレート グループのコレクションを取得します。</summary>
+        <value>事前に指定された<see cref="T:System.Web.UI.Design.TemplateGroupCollection" />オブジェクトの既定の設定を<see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" />環境。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner.TemplateGroups%2A>プロパティに固有であるコレクションを返しますにその基本実装をオーバーライドする、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

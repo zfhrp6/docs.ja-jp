@@ -1,0 +1,332 @@
+<Type Name="Match" FullName="System.Text.RegularExpressions.Match">
+  <TypeSignature Language="C#" Value="public class Match : System.Text.RegularExpressions.Group" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Match extends System.Text.RegularExpressions.Group" />
+  <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.Match" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.RegularExpressions.Group</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 回の正規表現検索に一致した結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.RegularExpressions.Match>オブジェクトは変更不可にし、パブリック コンス トラクターを持たない。 インスタンス、<xref:System.Text.RegularExpressions.Match>クラスは、によって返される、<xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType>メソッドを表す文字列の最初のパターンに一致します。 後続の一致がによって表される<xref:System.Text.RegularExpressions.Match>によって返されるオブジェクト、<xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType>メソッドです。 さらに、 <xref:System.Text.RegularExpressions.MatchCollection> 0、1 つ、以上から成るオブジェクト<xref:System.Text.RegularExpressions.Match>によってオブジェクトが返される、<xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 場合、<xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>入力文字列内で正規表現パターンに一致するメソッドが失敗した場合、空白を返しますそれ<xref:System.Text.RegularExpressions.MatchCollection>オブジェクト。 使用してできます、 `foreach` c# で作成または`For Each`コレクションを反復処理する Visual Basic で作成します。  
+  
+ 場合、<xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType>メソッドは、正規表現パターンの照合に失敗すると、それを返します、<xref:System.Text.RegularExpressions.Match>と等しいオブジェクト<xref:System.Text.RegularExpressions.Match.Empty%2A?displayProperty=nameWithType>です。 使用することができます、<xref:System.Text.RegularExpressions.Group.Success%2A>プロパティを一致が成功したかどうかを判断します。 具体的な例を次に示します。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/cs/Match1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Match.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/vb/Match1.vb#1)]  
+  
+ パターン一致が成功した場合、<xref:System.Text.RegularExpressions.Capture.Value%2A>プロパティに一致した部分文字列が含まれています、<xref:System.Text.RegularExpressions.Capture.Index%2A>プロパティは、入力文字列内の一致した部分文字列の 0 から始まる開始位置を示すと<xref:System.Text.RegularExpressions.Capture.Length%2A>プロパティは、入力文字列内の一致した部分文字列の長さを示します。  
+  
+ 単一の一致が複数のキャプチャ グループに生じる可能性があるため<xref:System.Text.RegularExpressions.Match>が、<xref:System.Text.RegularExpressions.Match.Groups%2A>プロパティを返す、<xref:System.Text.RegularExpressions.GroupCollection>です。 <xref:System.Text.RegularExpressions.Match>インスタンス自体は、コレクションの最初のオブジェクトと同等に`Match.Groups[0]`(`Match.Groups(0)` Visual Basic で)、一致した文字列全体を表します。 検索一致でキャプチャされたグループは、次の方法でアクセスできます。  
+  
+-   メンバーを反復処理することができます、<xref:System.Text.RegularExpressions.GroupCollection>オブジェクトを使用して、 `foreach` (c#) または`For Each`(Visual Basic) コンストラクトです。  
+  
+-   使用することができます、<xref:System.Text.RegularExpressions.GroupCollection.Item%28System.Int32%29?displayProperty=nameWithType>でグループ化して、キャプチャ グループの数を取得するプロパティです。 注こと番号付きグループがインスタンスを呼び出すことによって、正規表現であるかを判断<xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   使用することができます、<xref:System.Text.RegularExpressions.GroupCollection.Item%28System.String%29?displayProperty=nameWithType>キャプチャ グループの名前でグループを取得するプロパティです。 注できるかを特定する名前付きグループは、インスタンスを呼び出すことによって、正規表現内に存在<xref:System.Text.RegularExpressions.Regex.GetGroupNames?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、正規表現を使用して`Console\.Write(Line)?`です。 この正規表現パターンは、次のように解釈されます。  
+  
+|||  
+|-|-|  
+|コンソール\\です。書き込み|文字列 "Console.Write" と一致します。 注意してください、"です。"文字がエスケープされた任意の文字に一致するワイルドカードとしてのではなく、リテラル期間として解釈されるようにします。|  
+|(行) ですか。|文字列 "Line" の 0 回または 1 回の繰り返しに一致します。|  
+  
+ **例 1**  
+  
+ 次の例では、<xref:System.Text.RegularExpressions.Regex.Matches%28System.String%2CSystem.String%29?displayProperty=nameWithType>入力文字列内のすべてのパターン マッチを取得します。 反復処理、 <xref:System.Text.RegularExpressions.Match> 、返されたオブジェクト<xref:System.Text.RegularExpressions.MatchCollection>各一致に関する情報を表示するオブジェクト。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/cs/Match2.cs#2)]
+ [!code-vb[System.Text.RegularExpressions.Match.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/vb/Match2.vb#2)]  
+  
+ **例 2**  
+  
+ 次の例では、<xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29>と<xref:System.Text.RegularExpressions.Match.NextMatch%2A>を一度に 1 つの一致を取得するメソッド。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/cs/Match3.cs#3)]
+ [!code-vb[System.Text.RegularExpressions.Match.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.RegularExpressions.Match.Class/vb/Match3.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Text.RegularExpressions.Match Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.RegularExpressions.Match Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.Match.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.Match</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空のグループを取得します。 一致する対象が見つからなかった検索は、この空一致を返します。</summary>
+        <value>空一致。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、一致が成功したかを判断できません使用する必要があります。 代わりに、使用、`Match.Success`プロパティ (から継承される<xref:System.Text.RegularExpressions.Group.Success%2A?displayProperty=nameWithType>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Groups">
+      <MemberSignature Language="C#" Value="public virtual System.Text.RegularExpressions.GroupCollection Groups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.RegularExpressions.GroupCollection Groups" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.Match.Groups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.GroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規表現に一致したグループのコレクションを取得します。</summary>
+        <value>パターンに一致した文字グループ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規表現パターンでは、正規表現パターンの一部をかっこで囲んでで定義されている部分式を含めることができます。 このようなすべての部分式は、グループを形成します。 <xref:System.Text.RegularExpressions.Match.Groups%2A>プロパティはこれらの部分文字列に関する情報へのアクセスを提供します。 たとえば、正規表現パターン`(\d{3})-(\d{3}-\d{4})`、2 つの部分式を持つ北アメリカの電話番号に一致します。 最初は、市外局番を表し、電話番号の最初の 3 つの桁で構成されます。 このグループは、正規表現の最初の部分でキャプチャ`(\d{3})`です。2 つ目は、個々 の電話番号を表し、電話番号の最後の 7 桁の数字で構成されます。 このグループは、正規表現の 2 番目の部分でキャプチャ`(\d{3}-\d{4})`です。 これら 2 つのグループから取得できます、<xref:System.Text.RegularExpressions.GroupCollection>によって返されるオブジェクト、<xref:System.Text.RegularExpressions.Match.Groups%2A>プロパティは、次の例のようにします。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.Groups#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.groups/cs/groups1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Match.Groups#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.groups/vb/groups1.vb#1)]  
+  
+ <xref:System.Text.RegularExpressions.GroupCollection>によって返されるオブジェクト、<xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>プロパティは 0 から始まるコレクション オブジェクトであり、常に少なくとも 1 つのメンバーを持ちます。 正規表現エンジンは、特定の入力文字列内ですべての一致を見つけられない場合、 <xref:System.Text.RegularExpressions.Group.Success%2A?displayProperty=nameWithType> 1 つのプロパティ<xref:System.Text.RegularExpressions.Group>(インデックス 0 位置にあるオブジェクト) のコレクション内のオブジェクトに設定されている`false`と<xref:System.Text.RegularExpressions.Group>オブジェクトの<xref:System.Text.RegularExpressions.Capture.Value%2A>プロパティに設定されている<xref:System.String.Empty?displayProperty=nameWithType>です。 正規表現エンジンが一致の最初の要素を見つけることができるかどうか、<xref:System.Text.RegularExpressions.GroupCollection>によって返されるオブジェクト (インデックス 0 位置にある要素)、<xref:System.Text.RegularExpressions.Match.Groups%2A>プロパティには、正規表現パターンに一致する文字列が含まれています。 後続の各要素のインデックスから上方向を表します、キャプチャされたグループ、正規表現では、キャプチャ グループが含まれる場合。 詳細については、の「グループ化を構築し、、正規表現オブジェクト」セクションを参照して、[グループ化構成体](~/docs/standard/base-types/grouping-constructs-in-regular-expressions.md)資料です。  
+  
+   
+  
+## Examples  
+ 次の例は、サンプルの文字列に対して正規表現パターンに一致を試みます。 この例では、<xref:System.Text.RegularExpressions.Match.Groups%2A>プロパティをコンソールに表示するための一致によって取得される情報を格納します。  
+  
+ [!code-cpp[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/cpp/VS_Snippets_CLR/regex match, nextmatch, groups, captures/cpp/snippet8.cpp#8)]
+ [!code-csharp[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/csharp/VS_Snippets_CLR/regex match, nextmatch, groups, captures/cs/snippet8.cs#8)]
+ [!code-vb[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/regex match, nextmatch, groups, captures/vb/snippet8.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextMatch">
+      <MemberSignature Language="C#" Value="public System.Text.RegularExpressions.Match NextMatch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Text.RegularExpressions.Match NextMatch() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.Match.NextMatch" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.Match</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一致する対象が最後に見つかった位置の終了位置 (最後に一致した文字の後の文字) から開始して、次に一致する対象を検索した結果の新しい <see cref="T:System.Text.RegularExpressions.Match" /> オブジェクトを返します。</summary>
+        <returns>次の正規表現一致。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは呼び出しに似ています<xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.Int32%29?displayProperty=nameWithType>再び、受け渡し (`Index+Length`) として、新しい開始される位置。  
+  
+> [!NOTE]
+>  このメソッドは、現在のインスタンスを変更しません。 代わりに、新しい返します<xref:System.Text.RegularExpressions.Match>次の一致に関する情報を含むオブジェクト。  
+  
+ スローする可能性が次の一致項目を取得しようとすると、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>かどうか、照合操作のタイムアウト値が有効になり、次の一致を検索しようとすると、そのタイムアウト間隔を超えています。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Text.RegularExpressions.Match.NextMatch%2A>最初の一致を超えると一致する正規表現をキャプチャする方法です。  
+  
+ [!code-cpp[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/cpp/VS_Snippets_CLR/regex match, nextmatch, groups, captures/cpp/snippet8.cpp#8)]
+ [!code-csharp[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/csharp/VS_Snippets_CLR/regex match, nextmatch, groups, captures/cs/snippet8.cs#8)]
+ [!code-vb[Regex Match, NextMatch, Groups, Captures#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/regex match, nextmatch, groups, captures/vb/snippet8.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">タイムアウトが発生しました。</exception>
+        <block subset="none" type="usage">
+          <para>呼び出して、一致する試行が繰り返された場合、<see cref="M:System.Text.RegularExpressions.Match.NextMatch" />メソッド、正規表現エンジンは、空一致特別な処理です。 通常、<see cref="M:System.Text.RegularExpressions.Match.NextMatch" />正確に前の一致するところから次の一致の検索を開始します。 ただし、空一致した後、<see cref="M:System.Text.RegularExpressions.Match.NextMatch" />メソッドが次の一致を試みる前に 1 文字進めます。 この動作は、正規表現エンジンはその文字列を進行状況のことを保証します。 それ以外の場合、空一致が前方移動に含まれていないため、前の一致項目とまったく同じ場所では次の一致を開始し、繰り返し同じ空の文字列は一致します。  
+  
+ 具体的な例を次に示します。 正規表現パターン<c>、*</c>の文字の 0 個以上の出現箇所を検索、文字列"abaabb"に"a"です。 例の出力では、検索は 6 つの一致を検索します。 最初の一致試行最初の検索"a"です。 ここで最初と一致する最初の b の前に終了すると、2 番目の一致が開始これにより、"a"の発生回数をゼロを検索して、空の文字列を返します。 3 番目の一致始まらない正確に 2 番目の一致の終了位置、2 番目の一致には、空の文字列が返されたためです。 代わりに、その後、最初の"b"に 1 つの文字を開始します。 3 番目の一致では、"a"の 2 回の出現を検索して、"aa"を返します。 4 番目の一致する試行が 2 番目"b"の前に、3 番目の一致の終了位置を開始し、空の文字列を返します。 5 番目の一致する試行は、3 番目の"b"の前に、から開始し、空の文字列を取得できるように、1 つの文字をもう一度進めます。 6 番目の一致では、最後の"b"の後から開始し、もう一度、空の文字列を返します。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/cs/nextmatch1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Match.NextMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.nextmatch/vb/nextmatch1.vb#1)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public virtual string Result (string replacement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Result(string replacement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.Match.Result(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="replacement" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="replacement">使用する置換パターン。</param>
+        <summary>指定された置換パターンを展開して返します。</summary>
+        <returns><paramref name="replacement" /> パラメーターの展開形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一方、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>メソッドは、指定された置換パターンで、入力文字列内のすべての一致項目を置き換えます、<xref:System.Text.RegularExpressions.Match.Result%2A>メソッドは、指定された置換パターンで単一の一致を置き換えます。 呼び出す前に、一致した文字列の処理を実行することがも個々 の一致を操作するため、<xref:System.Text.RegularExpressions.Match.Result%2A>メソッドです。  
+  
+ `replacement`パラメーターは、標準の正規表現置換パターン。 これは、リテラル文字および正規表現の置換ので構成できます。 詳細については、「[置換](~/docs/standard/base-types/substitutions-in-regular-expressions.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、始まりし、終わりかっこがある式をかっこで囲んだハイフンが置き換えられます。  
+  
+ [!code-csharp[System.Text.RegularExpressions.Match.Result#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.match.result/cs/result1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.Match.Result#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.match.result/vb/result1.vb#1)]  
+  
+ この正規表現パターン `--(.+?)--` の解釈を次の表に示します。  
+  
+|パターン|説明|  
+|-------------|-----------------|  
+|`--`|2 つのハイフンと一致します。|  
+|`(.+?)`|1 つまたは複数回、できるだけがだけ少ない回数を任意の文字に一致します。 これが最初のキャプチャ グループです。|  
+|`--`|2 つのハイフンと一致します。|  
+  
+ なお、正規表現パターン`--(.+?)--`最短一致の量指定子を使用して`+?`です。 場合、最長一致の量化子`+`使用された正規表現エンジンが入力文字列内で単一の一致のみを検索が代わりに、します。  
+  
+ 置換文字列`($1)`一致をかっこで囲まれた最初のキャプチャ グループに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="replacement" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">このパターンは、拡張することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.Text.RegularExpressions.Match Synchronized (System.Text.RegularExpressions.Match inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Text.RegularExpressions.Match Synchronized(class System.Text.RegularExpressions.Match inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.Match.Synchronized(System.Text.RegularExpressions.Match)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.RegularExpressions.Match</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inner" Type="System.Text.RegularExpressions.Match" />
+      </Parameters>
+      <Docs>
+        <param name="inner">要求する一致と等価の正規表現一致。</param>
+        <summary>指定されたオブジェクトと等価であり、かつ複数のスレッド間での共有に適した <see cref="T:System.Text.RegularExpressions.Match" /> インスタンスを返します。</summary>
+        <returns>複数のスレッド間での共有に適した正規表現一致。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inner" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,206 @@
+<Type Name="TextDecorations" FullName="System.Windows.TextDecorations">
+  <TypeSignature Language="C#" Value="public static class TextDecorations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed TextDecorations extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TextDecorations" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的な事前定義された文字の装飾のセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字の装飾の 4 つの種類があります。 基準、上線、取り消し線、および下線です。 次の例は、文字の装飾のテキストに対する相対位置を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+テキスト装飾の種類の例  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object textDecorationsProperty="textDecorationType[,textDecorationType]"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `textDecorationType`  
+ 文字の装飾の種類: <xref:System.Windows.TextDecorations.Baseline%2A>、 <xref:System.Windows.TextDecorations.OverLine%2A>、 <xref:System.Windows.TextDecorations.Strikethrough%2A>、または<xref:System.Windows.TextDecorations.Underline%2A>です。 コンマで区切られた値を持つ、1 つ以上の装飾を使用します。 "None"文字の装飾の型がない場合にも指定できます。  
+  
+   
+  
+## Examples  
+ 次の例では、取り消し線テキスト装飾は、フォントの既定値を使用します。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets1)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets1)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets1)]  
+  
+ 同じ文字列を複数の文字装飾を指定することもできます。 次の例、下線、上線テキスト装飾では、同じテキストに対して使用されます。  
+  
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets4](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets4)]  
+  
+ 文字列を使用する値の"None"で文字の装飾がないことを示すために、<xref:System.Windows.TextDecorations>コレクション。 次の例で、<xref:System.Windows.TextDecorations>コレクションは"None"に設定します。  
+  
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets5](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets5)]  
+  
+ 使用して、テキストからすべての文字装飾を削除することができます、<xref:System.Windows.TextDecorationCollection.Clear%2A>メソッドです。 次の例で、<xref:System.Windows.TextDecorations>コレクションをクリアします。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets5a](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets5a)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets5a](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets5a)]  
+  
+ 既定では、<xref:System.Windows.Documents.Hyperlink>を使用して、<xref:System.Windows.TextDecoration>下線を表示するオブジェクト。 次のマークアップのサンプルでは、<xref:System.Windows.Documents.Hyperlink>および下線を使用せずに定義されています。  
+  
+ [!code-xaml[Performance#PerformanceSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]  
+  
+ <xref:System.Windows.TextDecoration>オブジェクトができる処理を要するインスタンスを作成すると、パフォーマンスが多数ある場合に特に<xref:System.Windows.Documents.Hyperlink>オブジェクト。 詳細については、次を参照してください。[する方法: 指定するかどうか、ハイパーリンクの下線](~/docs/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Baseline">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextDecorationCollection Baseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.TextDecorationCollection Baseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecorations.Baseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した基準<see cref="T:System.Windows.TextDecoration" />です。</summary>
+        <value>ベースラインを表す値<see cref="T:System.Windows.TextDecoration" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、テキストの基準としたベースライン文字飾りの場所を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+ベースライン文字の装飾の例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverLine">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextDecorationCollection OverLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.TextDecorationCollection OverLine" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecorations.OverLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上線を示す<see cref="T:System.Windows.TextDecoration" />です。</summary>
+        <value>上線を表す値<see cref="T:System.Windows.TextDecoration" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、上線文字の装飾のテキストに対する相対位置を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+上線の文字飾りの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Strikethrough">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextDecorationCollection Strikethrough { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.TextDecorationCollection Strikethrough" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecorations.Strikethrough" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取り消し<see cref="T:System.Windows.TextDecoration" />です。</summary>
+        <value>取り消し線を表す値<see cref="T:System.Windows.TextDecoration" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、テキストに対して相対的取り消し線テキスト装飾の場所を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+取り消し線テキスト装飾の例  
+  
+   
+  
+## Examples  
+ 次の例では、取り消し線テキスト装飾を単色ブラシ、ペンを使用して作成されます。 <xref:System.Windows.TextDecoration.Location%2A> プロパティが <xref:System.Windows.TextDecorationLocation.Strikethrough> に設定されている。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets1)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets1)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Underline">
+      <MemberSignature Language="C#" Value="public static System.Windows.TextDecorationCollection Underline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.TextDecorationCollection Underline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TextDecorations.Underline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下線を示す<see cref="T:System.Windows.TextDecoration" />です。</summary>
+        <value>下線を表す値<see cref="T:System.Windows.TextDecoration" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、テキストに対して相対的下線の文字装飾の場所を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+下線の文字装飾の例  
+  
+ 既定では、<xref:System.Windows.Documents.Hyperlink>を使用して、<xref:System.Windows.TextDecoration>下線を表示するオブジェクト。 詳細については、次を参照してください。[する方法: 指定するかどうか、ハイパーリンクの下線](~/docs/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined.md)です。  
+  
+   
+  
+## Examples  
+ 次の図は、線形グラデーション ブラシとペンの破線スタイルが設定されている文字飾りを示します。  
+  
+ ![線形グラデーション下線付き文字飾り](~/add/media/textdecoration02.png "線形グラデーション下線付き文字飾り")  
+線形グラデーションのスタイルの下線の例ブラシ、ペンの破線  
+  
+ 次のコード例では、下線の文字装飾を破線のペンの線形グラデーション ブラシを使用して、作成されます。  
+  
+ [!code-csharp[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets3)]
+ [!code-vb[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets3)]
+ [!code-xaml[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

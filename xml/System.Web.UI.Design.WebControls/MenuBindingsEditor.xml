@@ -1,0 +1,128 @@
+<Type Name="MenuBindingsEditor" FullName="System.Web.UI.Design.WebControls.MenuBindingsEditor">
+  <TypeSignature Language="C#" Value="public class MenuBindingsEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MenuBindingsEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.MenuBindingsEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネント エディターを提供、<see cref="P:System.Web.UI.WebControls.Menu.DataBindings" />関連付けられているコレクション<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor>クラスを編集するためのユーザー インターフェイスの提供、<xref:System.Web.UI.WebControls.MenuItemBinding>の要素、<xref:System.Web.UI.WebControls.Menu.DataBindings%2A>関連付けられているコレクション<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor>オブジェクトは、省略記号ボタンを選択して呼び出される (**.**) のボタンでは、 **DataBindings**プロパティに、**プロパティ**グリッドまたは選択して、ビジュアル デザイナーの**メニュー項目の編集**から、**一般的なタスク**コントロールのコンテキスト メニュー。  
+  
+ <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor.EditValue%2A>メソッドが関連付けられているデータ バインディングのコレクションの値を編集<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor.GetEditStyle%2A>メソッドは、このエディターに関連付けられている編集スタイルを取得します。  
+  
+   
+  
+## Examples  
+ 使用するコード例を次に示します、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.WebControls.MenuBindingsEditor>クラスおよび<xref:System.Drawing.Design.UITypeEditor>クラス (バインディング エディター基本クラス) から派生したカスタムのコントロールでプロパティを使用して、<xref:System.Web.UI.WebControls.WebControl>を取得するクラスと設定、<xref:System.Web.UI.WebControls.MenuItemCollection>コレクション。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.MenuEditors#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuEditors/CS/MenuEditors.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.MenuEditors#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.MenuEditors/VB/MenuEditors.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuBindingsEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuBindingsEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.MenuBindingsEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.MenuBindingsEditor>クラスの省略記号ボタンを選択すると (**.**) のボタンでは、 **DataBindings**プロパティに、**プロパティ**グリッドまたは選択して、ビジュアル デザイナーの**メニュー項目の編集**から、**一般的なタスク**、関連付けられているを設計するときは、コントロールのコンテキスト メニュー<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuBindingsEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンテキスト情報の取得に使用されるインターフェイス。</param>
+        <param name="provider">実装するオブジェクト、<see cref="T:System.IServiceProvider" />インターフェイスを使用するサービスを編集取得できます。</param>
+        <param name="value">値を編集するオブジェクト。</param>
+        <summary>関連付けられているデータ バインディングのコレクションの値を編集<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <returns>新しい<paramref name="value" />、それ以外の場合は、オブジェクトの値が変更されていない<paramref name="value" />変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor.EditValue%2A>メソッドに関連付けられた抽出<xref:System.Web.UI.WebControls.Menu>コントロールと<xref:System.Web.UI.Design.WebControls.MenuDesigner>からそのコントロールに関連付けられているオブジェクト、`context`パラメーター。 続いて、<xref:System.Web.UI.Design.WebControls.MenuBindingsEditor.EditValue%2A>メソッドにコールバックし、<xref:System.Web.UI.Design.WebControls.MenuDesigner>編集に使用される編集 ダイアログ ボックスを表示するオブジェクト、<xref:System.Web.UI.WebControls.MenuItemBindingCollection>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><paramref name="provider" />パラメーターは、のこの実装では使用されません、<see cref="M:System.Web.UI.Design.WebControls.MenuBindingsEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />メソッドが利用できる派生クラスでオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.MenuBindingsEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />編集されているオブジェクトのコンテキストを示すインターフェイスです。</param>
+        <summary>このエディターに関連付けられている編集スタイルを取得します。</summary>
+        <returns>このエディターに関連付けられている編集スタイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.MenuBindingsEditor.GetEditStyle%2A>メソッドは常に返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.Modal>エディター ユーザー インターフェイス (UI) が、モーダル ダイアログ ボックスであることを示す値。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><paramref name="context" />パラメーターは、のこの実装では使用されません、<see cref="M:System.Web.UI.Design.WebControls.MenuBindingsEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />メソッドが利用できる派生クラスでオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

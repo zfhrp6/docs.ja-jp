@@ -1,0 +1,215 @@
+<Type Name="DictionaryEntry" FullName="System.Collections.DictionaryEntry">
+  <TypeSignature Language="C#" Value="public struct DictionaryEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit DictionaryEntry extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.DictionaryEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>設定または取得できる、ディクショナリのキー/値ペアを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IDictionaryEnumerator.Entry%2A?displayProperty=nameWithType>メソッドは、この型のインスタンスを返します。  
+  
+ `foreach` C# 言語のステートメント (`for each` Visual c で`For Each`Visual Basic で)、コレクション内の各要素の型が必要です。 以降の各要素、<xref:System.Collections.IDictionary>キー/値ペアは、要素型は、キーの型または値の型ではありません。 要素の型は、代わりに、<xref:System.Collections.DictionaryEntry>です。 例:  
+  
+ [!code-cpp[System.Collections.DictionaryEntry#01](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/cpp/dictionaryentrysample.cpp#01)]
+ [!code-csharp[System.Collections.DictionaryEntry#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/cs/DictionaryEntrySample.cs#01)]
+ [!code-vb[System.Collections.DictionaryEntry#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/vb/DictionaryEntrySample.vb#01)]  
+  
+ `foreach`ステートメントがしか書き込まないことから、コレクションへの読み取りを許可する列挙子のラッパー。  
+  
+   
+  
+## Examples  
+ 次の例で使用する<xref:System.Collections.DictionaryEntry>を反復処理する、<xref:System.Collections.Hashtable>オブジェクト。  
+  
+ [!code-cpp[System.Collections.DictionaryEntry#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/cpp/dictionaryentrysample.cpp#00)]
+ [!code-csharp[System.Collections.DictionaryEntry#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/cs/DictionaryEntrySample.cs#00)]
+ [!code-vb[System.Collections.DictionaryEntry#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.DictionaryEntry/vb/DictionaryEntrySample.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DictionaryEntry (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.DictionaryEntry.#ctor(System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">キー/値ペアで定義されているオブジェクト。</param>
+        <param name="value">関連付けられている定義<c>キー</c>です。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Collections.DictionaryEntry" />指定したキーと値の型。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] `key`できます`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /><see langword="null" /> .NET Framework のバージョンは 1.0 または 1.1 とします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deconstruct">
+      <MemberSignature Language="C#" Value="public void Deconstruct (out object key, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Deconstruct([out] object&amp; key, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.DictionaryEntry.Deconstruct(System.Object@,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object&amp;" RefType="out" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public object Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Key" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.DictionaryEntry.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー/値ペアのキーを設定します。</summary>
+        <value>キー/値ペアのキーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Collections.DictionaryEntry.Key%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Collections.DictionaryEntry>クラスです。  
+  
+ [!code-cpp[Dictionary#9](~/samples/snippets/cpp/VS_Snippets_CLR/Dictionary/cpp/Dictionary.cpp#9)]
+ [!code-csharp[Dictionary#9](~/samples/snippets/csharp/VS_Snippets_CLR/Dictionary/CS/Dictionary.cs#9)]
+ [!code-vb[Dictionary#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dictionary/VB/Dictionary.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.DictionaryEntry.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー/値ペアの値を設定します。</summary>
+        <value>キー/値ペア内の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Collections.DictionaryEntry.Value%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Collections.DictionaryEntry>クラスです。  
+  
+ [!code-cpp[Dictionary#9](~/samples/snippets/cpp/VS_Snippets_CLR/Dictionary/cpp/Dictionary.cpp#9)]
+ [!code-csharp[Dictionary#9](~/samples/snippets/csharp/VS_Snippets_CLR/Dictionary/CS/Dictionary.cs#9)]
+ [!code-vb[Dictionary#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dictionary/VB/Dictionary.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,81 @@
+<Type Name="IApplicationPreloadManager" FullName="System.Web.Hosting.IApplicationPreloadManager">
+  <TypeSignature Language="C#" Value="public interface IApplicationPreloadManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IApplicationPreloadManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IApplicationPreloadManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("AE54F424-71BC-4da5-AA2F-8C0CD53496FC")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>IIS 7.0 でアプリケーション プリロード機能を呼び出す ASP.NET で使用されるメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="SetApplicationPreloadState">
+      <MemberSignature Language="C#" Value="public void SetApplicationPreloadState (string context, string appId, bool enabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetApplicationPreloadState([in]string context, [in]string appId, [in]bool enabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadState(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="context">アプリケーションのコンテキスト。</param>
+        <param name="appId">アプリケーションの一意の ID。</param>
+        <param name="enabled">
+          <see langword="true" />アプリケーションをプリロードする必要がありますされたを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>によって呼び出されます[!INCLUDE[iisver](~/includes/iisver-md.md)]に ASP.NET アプリケーションをプリロードする必要があるかどうかを通知します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetApplicationPreloadUtil">
+      <MemberSignature Language="C#" Value="public void SetApplicationPreloadUtil (System.Web.Hosting.IApplicationPreloadUtil preloadUtil);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetApplicationPreloadUtil([in]class System.Web.Hosting.IApplicationPreloadUtil preloadUtil) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IApplicationPreloadManager.SetApplicationPreloadUtil(System.Web.Hosting.IApplicationPreloadUtil)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preloadUtil" Type="System.Web.Hosting.IApplicationPreloadUtil" />
+      </Parameters>
+      <Docs>
+        <param name="preloadUtil">アンマネージ インターフェイスへのハンドル[!INCLUDE[iisver](~/includes/iisver-md.md)]その ASP.NET 呼び出し情報を取得します。</param>
+        <summary>呼び出し[!INCLUDE[iisver](~/includes/iisver-md.md)]アプリケーションをプリロードするために必要な情報を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IIS を実装するオブジェクトへの参照を指定することのこのインターフェイスでは、ASP.NET を呼び出し、<xref:System.Web.Hosting.IApplicationPreloadUtil>インターフェイスです。 ASP.NET そのインターフェイスを使用して後で個々 のアプリケーションに対してプリロード情報を取得するように IIS でコールバックを実行します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

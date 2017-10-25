@@ -1,0 +1,59 @@
+<Type Name="ObjectDataSourceMethodEventHandler" FullName="System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ObjectDataSourceMethodEventHandler(object sender, ObjectDataSourceMethodEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectDataSourceMethodEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Selecting" />、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Updating" />、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Inserting" />、または<see cref="E:System.Web.UI.WebControls.ObjectDataSource.Deleting" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、または<xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>のイベント、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールでは、によって呼び出されるメソッドを判断するために使用されるパラメーターを操作することができます、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 詳細については、「<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>」を参照してください。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.DetailsView>データを挿入するコントロール。 2 番目のコード例では、最初のコード例で使用される中間層ビジネス オブジェクトの例を提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.DetailsView>データを挿入するコントロール。 最初に、<xref:System.Web.UI.WebControls.DetailsView>新しい表示`NorthwindEmployee`レコードを自動的に生成されたと共に**挿入**ボタンをクリックします。 フィールドにデータを入力した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール をクリックして、**挿入**ボタン、および<xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod%2A>プロパティを識別するメソッドを実行、<xref:System.Web.UI.WebControls.ObjectDataSource.Insert%2A>アクション。  
+  
+ この例では、`UpdateEmployeeInfo`の挿入を実行するメソッドが使用されます。 ただし、必要な、`NorthwindEmployee`データを挿入するパラメーターです。 コレクションではこのため、文字列の<xref:System.Web.UI.WebControls.DetailsView>コントロール パスに自動的には不十分です。 `NorthwindEmployeeInserting`デリゲートは、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>を処理するオブジェクト、<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>イベントの前に、入力パラメーターを操作することができます、<xref:System.Web.UI.WebControls.ObjectDataSource.Insert%2A>操作が実行されます。 `UpdateEmployeeInfo`メソッドが必要な`NorthwindEmployee`をパラメーターとしてオブジェクトのいずれかの文字列のコレクションを使用して作成されに追加、<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs.InputParameters%2A>コレクション。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/CS/objds4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/VB/objds4vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を提供します。 このコード例は、次の 2 つの基本クラスと 1 つのクラスで構成されます。  
+  
+-   `EmployeeLogic`クラスは、ビジネス ロジックをカプセル化するステートレスなクラスです。  
+  
+-   `NorthwindEmployee`を読み込んで、データ層からデータを永続化に必要な基本的な機能のみを含むモデル クラスであるクラスです。  
+  
+-   追加の`NorthwindDataException`便宜として提供されているクラスです。  
+  
+ この例のクラスのセットは、Northwind traders 社、データベースは、データベースは、Microsoft SQL Server および Microsoft Access で使用するサンプル データベースで動作します。 App_Code ディレクトリ アプリケーション ルートの下に置くことによって、またはライブラリへのコンパイル、Bin ディレクトリに、生成された DLL を格納して稼働させるためには、これらのクラスを使用します。 `UpdateEmployeeInfo`メソッドは完全に実装されていませんはないデータを挿入する、Northwind traders というデータベースにこの例を試す場合にようにします。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/CS/northwindemployee4.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_4/VB/northwindemployee4.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

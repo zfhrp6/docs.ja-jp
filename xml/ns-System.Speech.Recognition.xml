@@ -1,0 +1,45 @@
+<Namespace Name="System.Speech.Recognition">
+  <Docs>
+    <summary><see cref="N:System.Speech.Recognition" />名前空間には、音声認識を実装するための Windows デスクトップ音声テクノロジの種類が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows デスクトップ Speech 技術ソフトウェアは、音響の信号をデジタル化して、オーディオ入力からの単語と音声の要素を復旧する基本的な音声認識インフラストラクチャを提供します。  
+  
+ アプリケーションを使用して、<xref:System.Speech.Recognition>名前空間にアクセスし、識別し、特定の語句、単語パターンなどで機能するためのアルゴリズムを定義することで、この音声インフラストラクチャの実行時の動作を管理することによって、この基本的な音声認識のテクノロジを拡張します。  
+  
+ **文法を作成します**  
+  
+ 一連のルールや制約、意味のある入力として、アプリケーションが認識できる語句を定義するので構成される文法を作成します。 コンス トラクターを使用して、<xref:System.Speech.Recognition.Grammar>クラスから実行時に文法オブジェクトを作成することができます<xref:System.Speech.Recognition.GrammarBuilder>または<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンス、または、ファイル、文字列、または、文法の定義を含むストリーム。  
+  
+ 使用して、<xref:System.Speech.Recognition.GrammarBuilder>と<xref:System.Speech.Recognition.Choices>クラス、多くの一般的なシナリオについて認識を実行するために使用される中程度の複雑さを低の文法プログラムで作成できます。 文法に準拠するプログラムを作成する、[音声認識の文法仕様 1.0 (SRGS)](http://go.microsoft.com/fwlink/?LinkId=201761)と SRGS のオーサリングの柔軟性を利用、および使用の種類、<xref:System.Speech.Recognition.SrgsGrammar>名前空間。 任意のテキストを使用して XML 形式 SRGS 文法にエディターを作成して、作成する結果を使用することができますも<xref:System.Speech.Recognition.GrammarBuilder>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> 、または<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ さらに、<xref:System.Speech.Recognition.DictationGrammar>クラスには、従来のディクテーション モデルをサポートするために特別なケースの文法が用意されています。  
+  
+ 参照してください[作成文法](http://msdn.microsoft.com/en-us/dbea278c-21a5-4816-aee7-5fd88ef993dd)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細と例についてはします。  
+  
+ **音声認識エンジンを管理します。**  
+  
+ インスタンス<xref:System.Speech.Recognition.SpeechRecognizer>と<xref:System.Speech.Recognition.SpeechRecognitionEngine>付属<xref:System.Speech.Recognition.Grammar>オブジェクトが、音声認識エンジンに、Windows デスクトップ音声テクノロジのプライマリ アクセスを提供します。  
+  
+ 使用することができます、<xref:System.Speech.Recognition.SpeechRecognizer>クライアントを構成することができる Windows によって提供される音声認識のテクノロジを使用するアプリケーションを作成するクラス、**コントロール パネルの **です。 このようなアプリケーションでは、入力を受け入れて、コンピューターの既定のオーディオ入力メカニズムを利用します。  
+  
+ 構成と認識エンジンの種類をより細かく制御は、ビルドを使用して、アプリケーション<xref:System.Speech.Recognition.SpeechRecognitionEngine>インプロセスで実行します。 使用して、<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラス、オーディオ デバイス、ファイル、またはストリームからの入力を動的に選択できます。  
+  
+ 参照してください[初期化し、音声認識エンジンの管理](http://msdn.microsoft.com/en-us/6eed5b59-1258-4013-8a4c-a1ddabd93ae4)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細についてはします。  
+  
+ **イベントに応答します。**  
+  
+ <xref:System.Speech.Recognition.SpeechRecognizer>および<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクトは、音声認識エンジンにオーディオの入力への応答内のイベントを生成します。 `AudioLevelUpdated`、 `AudioSignalProblemOccurred`、`AudioStateChanged`入力信号の変更に応答でイベントが発生します。 `SpeechDetected`イベントは、音声認識エンジンが音声入力として受信オーディオを識別します。 音声認識エンジンを発生させる、`SpeechRecognized`の読み込まれた文法の 1 つに音声入力に一致し、発生したときにイベント、`SpeechRecognitionRejected`ときに音声入力と一致しません、読み込まれた文法のいずれか。  
+  
+ その他の種類イベントにはが含まれて、`LoadGrammarCompleted`文法が読み込まれたときに、音声認識エンジンが発生するイベントです。 <xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>が専用で、<xref:System.Speech.Recognition.SpeechRecognizer>クラスは、Windows 音声認識の状態が変更されたときにイベントを発生させます。  
+  
+ 音声認識エンジンを発生させるイベントの通知を受け取るしを使用してハンドラーを作成するを登録することができます、`EventsArgs`のイベントが発生したときに、アプリケーションの動作をプログラムするには、各イベントに関連付けられているクラスです。  
+  
+ 参照してください[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

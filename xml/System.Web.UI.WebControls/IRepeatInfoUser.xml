@@ -1,0 +1,191 @@
+<Type Name="IRepeatInfoUser" FullName="System.Web.UI.WebControls.IRepeatInfoUser">
+  <TypeSignature Language="C#" Value="public interface IRepeatInfoUser" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRepeatInfoUser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.IRepeatInfoUser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとリスト コントロール項目のリストを繰り返すことによって実装する必要がありますのあるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイス定義プロパティとメソッドなど、項目のリストを繰り返し表示されるすべてのリスト コントロールで実装する必要がありますのある<xref:System.Web.UI.WebControls.CheckBoxList>、 <xref:System.Web.UI.WebControls.DataList>、および<xref:System.Web.UI.WebControls.RadioButtonList>です。 リスト コントロールに見出しセクション、フッター セクションで、または区切り記号が含まれて かどうかを示すために、このインターフェイスを定義、 <xref:System.Web.UI.WebControls.IRepeatInfoUser.HasHeader%2A>、 <xref:System.Web.UI.WebControls.IRepeatInfoUser.HasFooter%2A>、および<xref:System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators%2A>プロパティ、それぞれします。 <xref:System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount%2A>リスト内の項目の数を表すプロパティを使用します。 使用して、<xref:System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle%2A>リスト内の項目のスタイルを決定するメソッド。 <xref:System.Web.UI.WebControls.IRepeatInfoUser.RenderItem%2A>項目を表示するメソッドを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetItemStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style GetItemStyle (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.Style GetItemStyle(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle(System.Web.UI.WebControls.ListItemType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト コントロールの項目の位置を指定する序数インデックス。</param>
+        <summary>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを取得します。</summary>
+        <returns>リスト コントロール内の指定したインデックス位置にある指定した項目の型のスタイルを表す <see cref="T:System.Web.UI.WebControls.Style" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.GetItemStyle%2A>リスト コントロール内の指定したインデックス位置の指定した項目の種類のスタイルを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFooter">
+      <MemberSignature Language="C#" Value="public bool HasFooter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasFooter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IRepeatInfoUser.HasFooter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールにフッター セクションが含まれるかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールにフッター セクションが格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.HasFooter%2A>リスト コントロールにフッター セクションが含まれるかどうかを示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasHeader">
+      <MemberSignature Language="C#" Value="public bool HasHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IRepeatInfoUser.HasHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールに見出しセクションが含まれるかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールに見出しセクションが格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.HasHeader%2A>リスト コントロールに見出しセクションが含まれて かどうかを示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSeparators">
+      <MemberSignature Language="C#" Value="public bool HasSeparators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSeparators" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールにリスト内の項目間の区切り記号が含まれるかどうかを示す値を取得します。</summary>
+        <value>
+          リスト コントロールに区切り記号が格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.HasSeparators%2A>リスト コントロールにリスト内の項目間の区切り記号が含まれるかどうかを示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItem">
+      <MemberSignature Language="C#" Value="public void RenderItem (System.Web.UI.WebControls.ListItemType itemType, int repeatIndex, System.Web.UI.WebControls.RepeatInfo repeatInfo, System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderItem(valuetype System.Web.UI.WebControls.ListItemType itemType, int32 repeatIndex, class System.Web.UI.WebControls.RepeatInfo repeatInfo, class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.IRepeatInfoUser.RenderItem(System.Web.UI.WebControls.ListItemType,System.Int32,System.Web.UI.WebControls.RepeatInfo,System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+        <Parameter Name="repeatIndex" Type="System.Int32" />
+        <Parameter Name="repeatInfo" Type="System.Web.UI.WebControls.RepeatInfo" />
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 列挙値のいずれか。</param>
+        <param name="repeatIndex">リスト コントロールの項目の位置を指定する序数インデックス。</param>
+        <param name="repeatInfo">リストの項目を表示するために使用する情報を表す <see cref="T:System.Web.UI.WebControls.RepeatInfo" />。</param>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定した情報を使用してリストの項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.RenderItem%2A>メソッドを指定した情報を使用してリスト内の項目を表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatedItemCount">
+      <MemberSignature Language="C#" Value="public int RepeatedItemCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RepeatedItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールの項目の数を取得します。</summary>
+        <value>リスト コントロールの項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト コントロールから継承する、<xref:System.Web.UI.WebControls.IRepeatInfoUser>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IRepeatInfoUser.RepeatedItemCount%2A>プロパティ、コントロール内の項目の数を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

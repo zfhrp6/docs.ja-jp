@@ -1,0 +1,84 @@
+<Type Name="EmptySecurityKeyIdentifierClause" FullName="System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class EmptySecurityKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EmptySecurityKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>空のキー識別子句を表します。 このクラスは、使用時に、<see langword="&lt;EncryptedData&gt;" />または<see langword="&lt;Signature&gt;" />要素が含まれていない、<see langword="&lt;KeyInfo&gt;" />要素は、データの暗号化解除または署名を確認するために必要なキーを表すために使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EmptySecurityKeyIdentifierClause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ユーザーが任意のコンテキストを使用せずに必要なキーを解決する方法を知っていることを前提としています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EmptySecurityKeyIdentifierClause (object context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">使用する必要があるときに、ヒントを指定する、特定のキーに空の句を解決します。 SAML11 と SAML2 トークンのシグネチャがない場合、<see langword="&lt;KeyInfo&gt;" />要素では、このプロパティには、現在処理されて、アサーションが格納されます。</param>
+        <summary>コンテキストを指定して、<see cref="T:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public object Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Context" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のキーに解決する必要がある場合に、ヒントを提供するために使用できるオブジェクトを取得します。</summary>
+        <value>特定のキーに解決する必要がある場合に、ヒントを提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SAML11 と SAML2 トークンのシグネチャがない場合、`<KeyInfo>`要素では、このプロパティには、現在処理されて、アサーションが格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

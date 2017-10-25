@@ -1,0 +1,121 @@
+<Type Name="IDesignerLoaderHost" FullName="System.ComponentModel.Design.Serialization.IDesignerLoaderHost">
+  <TypeSignature Language="C#" Value="public interface IDesignerLoaderHost : IServiceProvider, System.ComponentModel.Design.IDesignerHost" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerLoaderHost implements class System.ComponentModel.Design.IDesignerHost, class System.ComponentModel.Design.IServiceContainer, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.IDesignerLoaderHost" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IDesignerHost</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>シリアル化された状態からの読み込みをサポートするためにデザイナーのホストを拡張できるインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerHost>による読み込みを行うのためのサポートを有効にするには、このインターフェイスを実装することができます、<xref:System.ComponentModel.Design.Serialization.DesignerLoader>です。  
+  
+ デザイナー ローダーは、読み込みを呼び出すを読み込んだり、デザイナー ホストは、指定の時刻にその他のタスクを実行できるようにする必要があることをデザイナー ホストに通知します。  
+  
+ このクラスから分離<xref:System.ComponentModel.Design.IDesignerHost>デザイナー ローダー、デザイナーのホストではなくがすべての読み込みとデザイン ドキュメントの再読み込みを開始する必要があることを強調します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EndLoad">
+      <MemberSignature Language="C#" Value="public void EndLoad (string baseClassName, bool successful, System.Collections.ICollection errorCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndLoad(string baseClassName, bool successful, class System.Collections.ICollection errorCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerLoaderHost.EndLoad(System.String,System.Boolean,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseClassName" Type="System.String" />
+        <Parameter Name="successful" Type="System.Boolean" />
+        <Parameter Name="errorCollection" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="baseClassName">デザイナーがデザインされるドキュメントの基底クラスの完全修飾名。</param>
+        <param name="successful">
+          <see langword="true" />デザイナーが正常に読み込まれた場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="errorCollection">存在する場合は、読み込み中に発生したエラーを含むコレクション。 エラーが検出されなかった場合は、いずれか、空のコレクションを渡すまたは<see langword="null" />です。</param>
+        <summary>デザイナーの読み込み操作を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerLoader>負荷デザイン ドキュメント メソッドを呼び出すことこの負荷が終了したことを示すためにします。  
+  
+ 読み込み中にエラーが発生する場合で渡す必要があります、`errorCollection`例外のコレクションとしてのパラメーターです。 デザイナー ローダー ホストが呼び出すことができる場合は例外ではありません、<xref:System.Object.ToString%2A>にし、それらをコレクションとして渡します。 負荷が成功した場合、`errorCollection`パラメーターはいずれかである必要があります`null`または空のコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reload">
+      <MemberSignature Language="C#" Value="public void Reload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerLoaderHost.Reload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン ドキュメントを再読み込みします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.DesignerLoader>デザイン ドキュメントを再読み込みするには、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,104 @@
+<Type Name="OperationFormatStyle" FullName="System.ServiceModel.OperationFormatStyle">
+  <TypeSignature Language="C#" Value="public enum OperationFormatStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OperationFormatStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.OperationFormatStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービスの WSDL メタデータの書式設定方法を決定する SOAP スタイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、メッセージの本文にをドキュメントに設定スタイルが設定されています。 `RPC` スタイルは、操作で交換されるメッセージの WSDL 表現がリモート プロシージャ コールであるかのようにパラメーターを含むことを意味します。 次に例を示します。  
+  
+```  
+<wsdl:message name="IUseAndStyleCalculator_Add_InputMessage">  
+  <wsdl:part name="n1" type="xsd:double"/>  
+  <wsdl:part name="n2" type="xsd:double"/>  
+</wsdl:message>  
+  
+```  
+  
+ スタイルに対する `Document` への設定は、WSDL 表現には操作で交換されるドキュメントを表す単一の要素が含まれることを意味します。この例を次に示します。  
+  
+```  
+<wsdl:message name="IUseAndStyleCalculator_Add_InputMessage">  
+  <wsdl:part name="parameters" element="tns:Add"/>  
+</wsdl:message>  
+```  
+  
+ <xref:System.ServiceModel.XmlSerializerFormatAttribute?displayProperty=nameWithType> を使用してこの値を設定します。  
+  
+   
+  
+## Examples  
+ この列挙体の使用方法を次のコード例に示します。  
+  
+ [!code-csharp[style_and_Use#0](~/samples/snippets/csharp/VS_Snippets_CFX/style_and_use/cs/source.cs#0)]
+ [!code-vb[style_and_Use#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/style_and_use/vb/source.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="Document" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.OperationFormatStyle Document = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.OperationFormatStyle.Document" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OperationFormatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSDL 表現に、操作で交換されるドキュメントを表す単一の要素が含まれるようにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rpc">
+      <MemberSignature Language="C#" Value="Rpc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.OperationFormatStyle Rpc = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.OperationFormatStyle.Rpc" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OperationFormatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの WSDL 表現を操作で交換されるようにし、リモート プロシージャ コールであるかのようにパラメーターが含まれるようにします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

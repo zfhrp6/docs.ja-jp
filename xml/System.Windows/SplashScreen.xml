@@ -1,0 +1,219 @@
+<Type Name="SplashScreen" FullName="System.Windows.SplashScreen">
+  <TypeSignature Language="C#" Value="public class SplashScreen" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SplashScreen extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SplashScreen" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) アプリケーションの起動画面を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.SplashScreen>起動ウィンドウで、イメージを表示するクラスまたは*スプラッシュ スクリーン*WPF アプリケーションの起動時に、します。 呼び出す、<xref:System.Windows.SplashScreen.Show%2A>スプラッシュ画面を表示するメソッド。 呼び出す、<xref:System.Windows.SplashScreen.Close%2A>スプラッシュ画面を閉じます。 使用するイメージを指定して、<xref:System.Windows.SplashScreen>コンス トラクターです。  
+  
+ <xref:System.Windows.SplashScreen>クラスは、Windows イメージング コンポーネント (WIC) ではサポートされているすべてのイメージ形式を表示できます。 たとえば、BMP、GIF、JPEG、PNG、または TIFF の形式を使用することができます。 PNG ファイルは、イメージは、アルファ チャネルが含まれている場合は、アルファ チャネルで定義されている、透過性を使用して、イメージが表示されます。  
+  
+ 後で、コードによって追加されるスプラッシュ スクリーンにプレース ホルダー テキストを含めることはできません。 スプラッシュ スクリーンにテキストを含める場合は、イメージ ファイルに追加する必要があります。  
+  
+> [!NOTE]
+>  スプラッシュ画面を表示するためのコードを記述する必要はありません。 以降で[!INCLUDE[vs_orcas_long](~/includes/vs-orcas-long-md.md)]SP1 をすばやく構成できますスプラッシュ スクリーンと既定の設定。 詳細については、次を参照してください。[する方法: WPF アプリケーションのスプラッシュ スクリーンを追加](~/docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)です。  
+  
+ <xref:System.Windows.SplashScreen>クラス スプラッシュ スクリーンを表示できるだけ早く、アプリケーションの開始後にします。 WPF アプリケーションのインスタンスが作成される前に、ネイティブ コードを使用して、スプラッシュ スクリーンが表示されます。 スプラッシュ スクリーンは、画面の中央に表示されます。 アプリケーションが読み込まれると、スプラッシュ スクリーンがフェードアウトします。  
+  
+ アプリケーションをコンパイルすると、イメージはアセンブリでマネージ リソースとして埋め込まれます。 アプリケーションがローカライズされている場合、イメージは、ローカライズされたサテライト DLL に埋め込まれます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.SplashScreen>クラスは部分信頼で使用できません。  
+  
+> [!NOTE]
+>  <xref:System.Windows.SplashScreen>異なるスタートアップ アーキテクチャを使用するために、XAML ブラウザー アプリケーション (Xbap) でクラスを使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成しを使用して、[スタートアップ] ウィンドウを表示する方法を示しています、<xref:System.Windows.SplashScreen>クラスです。  
+  
+ [!code-csharp[System.Windows.SplashScreen#2](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.SplashScreen/CS/App.xaml.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ リソースにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplashScreen (string resourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SplashScreen.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceName">埋め込みリソースの名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.SplashScreen" />指定されたリソース クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `resourceName`パラメーター埋め込みリソースの通常の規則に従います。 詳細については、<xref:System.Resources.ResourceManager> クラスを参照してください。 `resourceName`パラメーターは、リソース ファイル、および URI ではありませんの名前を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ リソースにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplashScreen (System.Reflection.Assembly resourceAssembly, string resourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly resourceAssembly, string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SplashScreen.#ctor(System.Reflection.Assembly,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="resourceAssembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceAssembly">埋め込みリソースを格納しているアセンブリ。</param>
+        <param name="resourceName">埋め込みリソースの名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.SplashScreen" />指定されたリソース アセンブリのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `resourceAssembly`と`resourceName`パラメーター埋め込みリソースの通常の規則に従います。 詳細については、<xref:System.Resources.ResourceManager> クラスを参照してください。 `resourceName`パラメーターは、リソース ファイル、および URI ではありませんの名前を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close (TimeSpan fadeoutDuration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close(valuetype System.TimeSpan fadeoutDuration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SplashScreen.Close(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fadeoutDuration" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="fadeoutDuration">A<see cref="T:System.TimeSpan" />のスプラッシュ画面が閉じる操作が開始された後にフェード時間を指定します。</param>
+        <summary>スプラッシュ スクリーンを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した場合、<xref:System.Windows.SplashScreen.Show%2A>メソッドを`autoClose`パラメーターに設定`true`、呼び出すしなくても、<xref:System.Windows.SplashScreen.Close%2A>メソッドです。 スプラッシュ スクリーンは、アプリケーションが読み込まれた後に自動的に閉じられます。 フェードさせるためにかかる時間の長さがの既定値によって決まりますが、スプラッシュ スクリーンを終了するとき、 `fadeoutDuration` 300 ミリ秒であるパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public void Show (bool autoClose);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Show(bool autoClose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SplashScreen.Show(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoClose" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoClose">
+          <see langword="true" />自動的にスプラッシュ画面を閉じる<see langword="false" />スプラッシュ スクリーンを手動で閉じます。</param>
+        <summary>スプラッシュ画面が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す場合は、<xref:System.Windows.SplashScreen.Show%2A>メソッドを`autoClose`'éý' `true`、呼び出す必要はありません、<xref:System.Windows.SplashScreen.Close%2A>メソッドです。 スプラッシュ スクリーンは、アプリケーションが読み込まれた後に自動的に閉じられます。 フェードさせるためにかかる時間の長さがの既定値によって決まりますが、スプラッシュ スクリーンを終了するとき、 `fadeoutDuration` 300 ミリ秒であるパラメーターです。  
+  
+ 呼び出す、<xref:System.Windows.SplashScreen.Show%2A>メソッドを`autoClose`'éý'`false`フェード期間の既定ではない値を指定する場合。 呼び出す必要が、<xref:System.Windows.SplashScreen.Close%2A>スプラッシュ画面を閉じます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">コンス トラクターで指定されたリソースが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public void Show (bool autoClose, bool topMost);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Show(bool autoClose, bool topMost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SplashScreen.Show(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoClose" Type="System.Boolean" />
+        <Parameter Name="topMost" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoClose">
+          <see langword="true" />自動的にスプラッシュ画面を閉じる<see langword="false" />スプラッシュ スクリーンを手動で閉じます。</param>
+        <param name="topMost">
+          <see langword="true" />スプラッシュ画面表示ウィンドウで、WS_EX_TOPMOST スタイルが使用する場合それ以外の場合<see langword="false" />です。</param>
+        <summary>スプラッシュ画面が表示されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

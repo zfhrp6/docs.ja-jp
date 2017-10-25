@@ -1,0 +1,575 @@
+<Type Name="Connector" FullName="System.Workflow.ComponentModel.Design.Connector">
+  <TypeSignature Language="C#" Value="public class Connector : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Connector extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.Connector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Design.ConnectorLayoutSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー デザイン サーフェイス上の 2 つのアクティビティ デザイナー間のコネクタを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ コネクタは、2 つのアクティビティ デザイナーを接続するためのものとしてワークフロー デザイン サーフェイスに表示される線です。 <xref:System.Workflow.ComponentModel.Design.Connector> は、デザイン時にアクティビティ デザイナーが表示されるときに一連のコネクタをどのように描画するかをカスタマイズできるメソッドとプロパティを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Connector (System.Workflow.ComponentModel.Design.ConnectionPoint source, System.Workflow.ComponentModel.Design.ConnectionPoint target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.ConnectionPoint source, class System.Workflow.ComponentModel.Design.ConnectionPoint target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.#ctor(System.Workflow.ComponentModel.Design.ConnectionPoint,System.Workflow.ComponentModel.Design.ConnectionPoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+        <Parameter Name="target" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画を開始する <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</param>
+        <param name="target"><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画を終了する <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> または <paramref name="target" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibilityObject">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.AccessibleObject AccessibilityObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject AccessibilityObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.AccessibilityObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助アプリケーションが、障碍を持つユーザー用にアプリケーション UI を調整するのに使用する、<see cref="T:System.Windows.Forms.AccessibleObject" /> を取得します。</summary>
+        <value>ユーザー補助アプリケーションが、障碍を持つユーザー用にアプリケーション UI を調整するのに使用する <see cref="T:System.Windows.Forms.AccessibleObject" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでのコネクタの外接する四角形を取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでコネクタの境界となる <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorModified">
+      <MemberSignature Language="C#" Value="public bool ConnectorModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConnectorModified" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.ConnectorModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> が変更されているかどうかを示す値を取得します。</summary>
+        <value>
+          コネクタが変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorSegments">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt; ConnectorSegments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Drawing.Point&gt; ConnectorSegments" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.ConnectorSegments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> で見つかったすべてのセグメントを含む、読み取り専用のポイント コレクションを取得します。</summary>
+        <value><see cref="T:System.Drawing.Point" /> で見つかったすべてのセグメントを含む、読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のコネクタと比較する <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> と指定したコネクタが等しいかどうかを判断します。</summary>
+        <returns>
+          指定したコネクタが現在の <see langword="true" /> と等しい場合は <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等しい場合は、2 つのコネクタの <xref:System.Workflow.ComponentModel.Design.Connector.Source%2A> プロパティおよび <xref:System.Workflow.ComponentModel.Design.Connector.Target%2A> プロパティとも、同じ <xref:System.Workflow.ComponentModel.Design.ConnectionPoint> オブジェクトを参照していることになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludedRoutingRectangles">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.ICollection&lt;System.Drawing.Rectangle&gt; ExcludedRoutingRectangles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;valuetype System.Drawing.Rectangle&gt; ExcludedRoutingRectangles" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.ExcludedRoutingRectangles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Drawing.Rectangle&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Rectangle オブジェクトの空の配列を返します。 派生クラスがこのコレクションにデータを設定します。</summary>
+        <value>Rectangle オブジェクトのジェネリック コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> のハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected virtual object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">返すサービス オブジェクトの <see cref="T:System.Type" />。</param>
+        <summary>指定した型のサービス オブジェクトがある場合は、そのオブジェクトを返します。</summary>
+        <returns><paramref name="serviceType" /> 型のサービス オブジェクト。<see langword="Nothing" /> 型のサービス オブジェクトがない場合は null 参照 (Visual Basic の場合は <paramref name="serviceType" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.GetService%2A> は、<xref:System.Workflow.ComponentModel.Design.Connector.ParentDesigner%2A> を介して使用できるサービス オブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public virtual bool HitTest (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HitTest(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.HitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">テスト対象の <see cref="T:System.Drawing.Point" />。</param>
+        <summary>指定されたポイントが現在の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> にあるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が現在の <paramref name="point" /> にある場合は <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.HitTest%2A> は通常、ワークフロー デザイン サーフェイスに表示されたコネクタ上のポイントをユーザーがクリックしたかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalidate">
+      <MemberSignature Language="C#" Value="public void Invalidate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invalidate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.Invalidate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> を無効にして再描画されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.Invalidate%2A> によって、<xref:System.Workflow.ComponentModel.Design.Connector.Bounds%2A> 内で見つかったすべての内容が <xref:System.Workflow.ComponentModel.Design.Connector.ParentDesigner%2A> の更新領域に組み込みまれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public virtual void Offset (System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Offset(valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.Offset(System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="size">コネクタをオフセットするための高さと幅の設定を格納している <see cref="T:System.Drawing.Size" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> で定義された設定を使用して、<see cref="T:System.Drawing.Size" /> の高さと幅を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayout">
+      <MemberSignature Language="C#" Value="protected virtual void OnLayout (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnLayout(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.OnLayout(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary>レイアウト操作が行われていることを <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.OnLayout%2A> は <xref:System.Workflow.ComponentModel.Design.Connector.ConnectorSegments%2A> をクリアし、ポイントの新しい範囲を再設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaint (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnPaint(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">描画データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />。</param>
+        <summary>ワークフロー デザイン サーフェイスに <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> をレンダリングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaintEdited">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaintEdited (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, System.Drawing.Point[] segments, System.Drawing.Point[] segmentEditPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnPaintEdited(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, valuetype System.Drawing.Point[] segments, valuetype System.Drawing.Point[] segmentEditPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.OnPaintEdited(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs,System.Drawing.Point[],System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+        <Parameter Name="segments" Type="System.Drawing.Point[]" />
+        <Parameter Name="segmentEditPoints" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="e">オブジェクトの描画に使用するグラフィックスおよびそのオブジェクトの描画先のクリッピング四角形を指定する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" /> オブジェクト。</param>
+        <param name="segments"><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> 内のセグメントの座標。</param>
+        <param name="segmentEditPoints"><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> 上の編集ポイントの座標。</param>
+        <summary>ある状態から別の状態にドラッグされるコネクタを描画するのに使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーがコネクタを作成するとき、中央ポイントを移動するとき、またはエンドポイントをあるアクティビティから別のアクティビティに移動するときに、呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaintSelected">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaintSelected (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, bool primarySelection, System.Drawing.Point[] segmentEditPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnPaintSelected(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e, bool primarySelection, valuetype System.Drawing.Point[] segmentEditPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.OnPaintSelected(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs,System.Boolean,System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+        <Parameter Name="primarySelection" Type="System.Boolean" />
+        <Parameter Name="segmentEditPoints" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="e">オブジェクトの描画に使用するグラフィックスおよびそのオブジェクトの描画先のクリッピング四角形を指定する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" /> オブジェクト。</param>
+        <param name="primarySelection">使用しません。</param>
+        <param name="segmentEditPoints"><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> 上の編集ポイントの座標。</param>
+        <summary>ユーザーによって選択されたコネクタを描画するのに使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.FreeformActivityDesigner ParentDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.FreeformActivityDesigner ParentDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.ParentDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.FreeformActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスでコネクタが表示されるデザイナーを取得します。</summary>
+        <value>ワークフロー デザイン サーフェイスでコネクタが表示される <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentView">
+      <MemberSignature Language="C#" Value="protected System.Workflow.ComponentModel.Design.WorkflowView ParentView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.WorkflowView ParentView" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.ParentView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクタに関連付けられたワークフロー ビューを取得します。</summary>
+        <value>コネクタに関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.WorkflowView" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.ParentView%2A> は、コネクタが表示されるワークフロー デザイン サーフェイスへのアクセスを可能にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformLayout">
+      <MemberSignature Language="C#" Value="protected void PerformLayout ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PerformLayout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.PerformLayout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> のレイアウト タスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.Connector.PerformLayout%2A> は <xref:System.Workflow.ComponentModel.Design.WorkflowView.PerformLayout%2A?displayProperty=nameWithType> メソッドを呼び出し、レイアウト更新を直ちに行う必要がないことを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetConnectorSegments">
+      <MemberSignature Language="C#" Value="protected void SetConnectorSegments (System.Collections.Generic.ICollection&lt;System.Drawing.Point&gt; segments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void SetConnectorSegments(class System.Collections.Generic.ICollection`1&lt;valuetype System.Drawing.Point&gt; segments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.SetConnectorSegments(System.Collections.Generic.ICollection{System.Drawing.Point})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="segments" Type="System.Collections.Generic.ICollection&lt;System.Drawing.Point&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="segments">経路変更に使用する新しいコネクタ セグメントを表す <see cref="T:System.Drawing.Point" /> コレクション。</param>
+        <summary>コネクタが変更された場合に、コネクタのソースからターゲットへの経路を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ConnectionPoint Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ConnectionPoint Source" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画が始まる <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画が始まる <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを設定する場合、接続元の <see cref="P:System.Workflow.ComponentModel.Design.ConnectionPoint.AssociatedDesigner" /> と接続先の関連付けられているデザイナーは一致しません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Workflow.ComponentModel.Design.Connector.Source" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) に設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.Connector.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ConnectionPoint Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ConnectionPoint Target" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.Connector.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画が終わる <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の描画が終わる <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">このプロパティを設定する場合、接続元の <see cref="P:System.Workflow.ComponentModel.Design.ConnectionPoint.AssociatedDesigner" /> と接続先の関連付けられているデザイナーは一致しません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Workflow.ComponentModel.Design.Connector.Target" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) に設定されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

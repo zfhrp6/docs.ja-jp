@@ -1,0 +1,80 @@
+<Type Name="PrintTicketScope" FullName="System.Printing.PrintTicketScope">
+  <TypeSignature Language="C#" Value="public enum PrintTicketScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PrintTicketScope extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintTicketScope" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Printing.PrintTicket" />印刷ジョブ全体で、印刷ジョブ内の 1 つのドキュメントまたは印刷ジョブ内のページだけに適用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターとして、主に、この列挙を使用して、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>のメソッド、<xref:System.Printing.PrintQueue>です。  
+  
+ この列挙体並列内の値、 **PrintTicket**キーワードのプレフィックスのスコープ、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)ここで、 **PrintTicket**すべてキーワード始める必要がありますか"Job"または"Document"または「ページ」スコープのプレフィックスします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DocumentScope">
+      <MemberSignature Language="C#" Value="DocumentScope" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintTicketScope DocumentScope = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintTicketScope.DocumentScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicketScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのドキュメントです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="JobScope">
+      <MemberSignature Language="C#" Value="JobScope" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintTicketScope JobScope = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintTicketScope.JobScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicketScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷ジョブ全体です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PageScope">
+      <MemberSignature Language="C#" Value="PageScope" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PrintTicketScope PageScope = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PrintTicketScope.PageScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicketScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つのページです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

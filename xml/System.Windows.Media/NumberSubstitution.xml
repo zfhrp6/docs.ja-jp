@@ -1,0 +1,480 @@
+<Type Name="NumberSubstitution" FullName="System.Windows.Media.NumberSubstitution">
+  <TypeSignature Language="C#" Value="public class NumberSubstitution" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberSubstitution extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.NumberSubstitution" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまなカルチャでテキスト内の数字を表示する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのカルチャを表す数字、10 進法を使用して、カルチャの数が異なる数字形式を使用します。 次の表は、さまざまなカルチャで使用されるいくつかの番号付けシステムを示します。  
+  
+ ![番号代替グリフのテーブル](~/add/media/numbersubstitution01.png "番号代替グリフの表")  
+複数の異なるカルチャの数字の外観の例  
+  
+ 、文字、とは異なり桁の数字が計算で使用されるため、数字の形状のセットごとに代替の Unicode コード ポイントを提供するのに十分ではありません。 すべてのアプリケーション、オペレーティング システム、およびすべてのランタイム ライブラリ、内部のバイナリ形式の数値を文字の文字列に変換する専用のコードが含まれています。 その逆です。 これらの変換ルーチンを設計して、Unicode の数字「0039」から「0030」を使用します。  
+  
+ <xref:System.Windows.Media.NumberSubstitution>クラスには、レンダリング時に適切な数字の代わりに複数の異なるカルチャを可能にする機能が用意されています。 この機能は、フォントの置換および言語依存のフォントのレンダリングを提供するために使用したものに似ています。  
+  
+> [!NOTE]
+>  カルチャの数が、従来の数字形状を破棄すること、西洋の数字の形状を採用するには、数値の置換機能を認識して従来の数字と国内の標準的な数字形式の違いをカルチャごとにします。  
+  
+<a name="xamlTextUsage_NumberSubstitution"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型は、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]オブジェクト要素として。 ただし、型は、テキスト コンテンツが含まれる他のオブジェクト要素に対して設定できるいくつかの添付プロパティを公開します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumberSubstitution ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.NumberSubstitution" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumberSubstitution (System.Windows.Media.NumberCultureSource source, System.Globalization.CultureInfo cultureOverride, System.Windows.Media.NumberSubstitutionMethod substitution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.NumberCultureSource source, class System.Globalization.CultureInfo cultureOverride, valuetype System.Windows.Media.NumberSubstitutionMethod substitution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.#ctor(System.Windows.Media.NumberCultureSource,System.Globalization.CultureInfo,System.Windows.Media.NumberSubstitutionMethod)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Media.NumberCultureSource" />
+        <Parameter Name="cultureOverride" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="substitution" Type="System.Windows.Media.NumberSubstitutionMethod" />
+      </Parameters>
+      <Docs>
+        <param name="source">数字置換の指定に使用されるカルチャ値のソースを識別します。</param>
+        <param name="cultureOverride">ときに使用するカルチャを識別の値、<see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" />プロパティに設定されている<see cref="F:System.Windows.Media.NumberCultureSource.Override" />です。</param>
+        <param name="substitution">数字置換の指定に使用される代替メソッドを識別します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.NumberSubstitution" />明示的なプロパティ値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureOverride">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CultureOverride { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CultureOverride" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.NumberSubstitution.CultureOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" /> プロパティの値が <see cref="F:System.Windows.Media.NumberCultureSource.Override" /> に設定されている場合に使用するカルチャを識別する値を取得または設定します。</summary>
+        <value>オーバーライドとして使用するカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>プロパティは`null`、として解釈される、"en-us"(英語 (米国)) のカルチャ。  
+  
+ 場合<xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>に設定されていない<xref:System.Windows.Media.NumberCultureSource.Override>、このプロパティは無視されます。  
+  
+ このリファレンス ページの 2 つが、同じ名前を持つ、まったく同等ではない使用法を表す、<xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A>プロパティ。  
+  
+-   コードでは、このプロパティを設定することができます、<xref:System.Windows.Media.NumberSubstitution>インスタンスとして、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]プロパティです。 この使用法のプロパティは、依存関係プロパティの識別子ではバックアップされません、これはプライベート フィールドによってバックアップされ、依存関係プロパティとしては機能しません。  
+  
+-   添付プロパティの使用量として、このプロパティを設定することができます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 添付プロパティの使用は、添付プロパティは、依存関係プロパティの識別子で補助されているために、このプロパティは、依存プロパティ情報のセクションでは、理由理由です。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* **NumberSubstitution.CultureOverride**`="`*値*`".../>`ここで、*オブジェクト*object 要素は、指定した数値の置換ロジックが適用されますと*値*XAML 値で説明したようには文字列形式の値のいずれか。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Media.NumberSubstitution.GetCultureOverride%2A>と<xref:System.Windows.Media.NumberSubstitution.SetCultureOverride%2A>です。  
+  
+<a name="xamlAttributeUsage_CultureOverride"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object NumberSubstitution.CultureOverrideProperty="CultureInfo"/>  
+```  
+  
+<a name="xamlValues_CultureOverride"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *CultureInfo*  
+ 文字列表現を<xref:System.Globalization.CultureInfo>値。 たとえば、文字列"en-us"、米国英語のカルチャ設定を表します。  
+  
+<a name="dependencyPropertyInfo_CultureOverride"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.NumberSubstitution.CultureOverrideProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureOverrideProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CultureOverrideProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CultureOverrideProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitution.CultureOverrideProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.NumberSubstitution.CultureOverride" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSource">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.NumberCultureSource CultureSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.NumberCultureSource CultureSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.NumberSubstitution.CultureSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberCultureSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数字置換の指定に使用されるカルチャ値のソースを識別する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Media.NumberCultureSource" /> の列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>プロパティは<xref:System.Windows.Media.NumberCultureSource.Text>、これはテキスト ランのカルチャ。  
+  
+ このリファレンス ページの 2 つが、同じ名前を持つ、まったく同等ではない使用法を表す、<xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>プロパティ。  
+  
+-   コードでは、このプロパティを設定することができます、<xref:System.Windows.Media.NumberSubstitution>インスタンスとして、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]プロパティです。 この使用法のプロパティは、依存関係プロパティの識別子ではバックアップされません、これはプライベート フィールドによってバックアップされ、依存関係プロパティとしては機能しません。  
+  
+-   添付プロパティの使用量として、このプロパティを設定することができます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 添付プロパティの使用は、添付プロパティは、依存関係プロパティの識別子で補助されているために、このプロパティは、依存プロパティ情報のセクションでは、理由理由です。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* **NumberSubstitution.CultureSource**`="`*値*`".../>`ここで、*オブジェクト*object 要素は、指定した数値の置換ロジックが適用されますと*値*の文字列表現です、<xref:System.Windows.Media.NumberCultureSource>値。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Media.NumberSubstitution.GetCultureSource%2A>と<xref:System.Windows.Media.NumberSubstitution.SetCultureSource%2A>です。  
+  
+<a name="xamlAttributeUsage_CultureSource"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*オブジェクト* **NumberSubstitution.CultureSource**="<xref:System.Windows.Media.NumberCultureSource>"/>  
+  
+<a name="dependencyPropertyInfo_CultureSource"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.NumberSubstitution.CultureSourceProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureSourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CultureSourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CultureSourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitution.CultureSourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />現在と比較する<see cref="T:System.Windows.Media.NumberSubstitution" />オブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Media.NumberSubstitution" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="o" /> が現在の <see cref="T:System.Windows.Media.NumberSubstitution" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="o" />されませんが、<see cref="T:System.Windows.Media.NumberSubstitution" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.NumberSubstitution>オブジェクトが、次のプロパティが等しい場合は等しい。  
+  
+-   <xref:System.Windows.Media.NumberSubstitution.CultureOverride%2A>  
+  
+-   <xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>  
+  
+-   <xref:System.Windows.Media.NumberSubstitution.Substitution%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureOverride">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetCultureOverride (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetCultureOverride(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.GetCultureOverride(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CultureInfoIetfLanguageTagConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="P:System.Windows.Media.NumberSubstitution.CultureOverride" /> 値を返す要素。</param>
+        <summary>提供された要素から <see cref="P:System.Windows.Media.NumberSubstitution.CultureOverride" /> 値を返します。</summary>
+        <returns>オーバーライドとして使用するカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> 値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureSource">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.NumberCultureSource GetCultureSource (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.NumberCultureSource GetCultureSource(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.GetCultureSource(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberCultureSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" /> 値を返す要素。</param>
+        <summary>提供された要素から <see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" /> 値を返します。</summary>
+        <returns><see cref="T:System.Windows.Media.NumberCultureSource" /> の列挙値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.NumberSubstitution" />します。 ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns><see cref="T:System.Int32" />を現在のオブジェクトのハッシュ コードを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubstitution">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.NumberSubstitutionMethod GetSubstitution (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.NumberSubstitutionMethod GetSubstitution(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.GetSubstitution(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="P:System.Windows.Media.NumberSubstitution.Substitution" /> 値を返す要素。</param>
+        <summary>提供された要素から <see cref="P:System.Windows.Media.NumberSubstitution.Substitution" /> 値を返します。</summary>
+        <returns><see cref="T:System.Windows.Media.NumberSubstitutionMethod" /> の列挙値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCultureOverride">
+      <MemberSignature Language="C#" Value="public static void SetCultureOverride (System.Windows.DependencyObject target, System.Globalization.CultureInfo value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCultureOverride(class System.Windows.DependencyObject target, class System.Globalization.CultureInfo value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.SetCultureOverride(System.Windows.DependencyObject,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="target">カルチャを指定する要素をオーバーライドします。</param>
+        <param name="value">カルチャは、型の値をオーバーライド<see cref="T:System.Globalization.CultureInfo" />です。</param>
+        <summary>値を設定<see cref="P:System.Windows.Media.NumberSubstitution.CultureOverride" />指定した要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCultureSource">
+      <MemberSignature Language="C#" Value="public static void SetCultureSource (System.Windows.DependencyObject target, System.Windows.Media.NumberCultureSource value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCultureSource(class System.Windows.DependencyObject target, valuetype System.Windows.Media.NumberCultureSource value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.SetCultureSource(System.Windows.DependencyObject,System.Windows.Media.NumberCultureSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.NumberCultureSource" />
+      </Parameters>
+      <Docs>
+        <param name="target">カルチャを指定する要素をオーバーライドします。</param>
+        <param name="value">型のカルチャのソース値<see cref="T:System.Windows.Media.NumberCultureSource" />です。</param>
+        <summary>値を設定<see cref="P:System.Windows.Media.NumberSubstitution.CultureSource" />指定した要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSubstitution">
+      <MemberSignature Language="C#" Value="public static void SetSubstitution (System.Windows.DependencyObject target, System.Windows.Media.NumberSubstitutionMethod value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetSubstitution(class System.Windows.DependencyObject target, valuetype System.Windows.Media.NumberSubstitutionMethod value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.NumberSubstitution.SetSubstitution(System.Windows.DependencyObject,System.Windows.Media.NumberSubstitutionMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Media.NumberSubstitutionMethod" />
+      </Parameters>
+      <Docs>
+        <param name="target">代替方法を指定する要素。</param>
+        <param name="value">型の代替メソッド値<see cref="T:System.Windows.Media.NumberSubstitutionMethod" />です。</param>
+        <summary>値を設定<see cref="P:System.Windows.Media.NumberSubstitution.Substitution" />指定した要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Substitution">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.NumberSubstitutionMethod Substitution { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.NumberSubstitutionMethod Substitution" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.NumberSubstitution.Substitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数字置換の指定に使用される置換メソッドを識別する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Media.NumberSubstitutionMethod" /> の列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Windows.Media.NumberSubstitution.CultureSource%2A>プロパティは<xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>、番号、カルチャの置換方法を決定する必要がありますを指定するに基づいて<xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A>プロパティの値。  
+  
+ このリファレンス ページの 2 つが、同じ名前を持つ、まったく同等ではない使用法を表す、<xref:System.Windows.Media.NumberSubstitution.Substitution%2A>プロパティ。  
+  
+-   コードでは、このプロパティを設定することができます、<xref:System.Windows.Media.NumberSubstitution>インスタンスとして、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]プロパティです。 この使用法のプロパティは、依存関係プロパティの識別子ではバックアップされません、これはプライベート フィールドによってバックアップされ、依存関係プロパティとしては機能しません。  
+  
+-   添付プロパティの使用量として、このプロパティを設定することができます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 添付プロパティの使用は、添付プロパティは、依存関係プロパティの識別子で補助されているために、このプロパティは、依存プロパティ情報のセクションでは、理由理由です。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、使い方が`<`*オブジェクト* **NumberSubstitution.Substitution**`="`*値*`".../>`ここで、*オブジェクト*object 要素は、指定した数値の置換ロジックが適用されますと*値*の文字列表現です、<xref:System.Windows.Media.NumberSubstitutionMethod>値。 コードでは、添付プロパティの使用がサポートされている<xref:System.Windows.Media.NumberSubstitution.GetSubstitution%2A>と<xref:System.Windows.Media.NumberSubstitution.SetSubstitution%2A>です。  
+  
+<a name="xamlAttributeUsage_Substitution"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*オブジェクト* **NumberSubstitution.Substitution**="<xref:System.Windows.Media.NumberSubstitutionMethod>"/>  
+  
+<a name="dependencyPropertyInfo_Substitution"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.NumberSubstitution.SubstitutionProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubstitutionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SubstitutionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SubstitutionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitution.SubstitutionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.NumberSubstitution.Substitution" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

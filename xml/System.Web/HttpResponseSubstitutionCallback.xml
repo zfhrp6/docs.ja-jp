@@ -1,0 +1,43 @@
+<Type Name="HttpResponseSubstitutionCallback" FullName="System.Web.HttpResponseSubstitutionCallback">
+  <TypeSignature Language="C#" Value="public delegate string HttpResponseSubstitutionCallback(HttpContext context);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpResponseSubstitutionCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpResponseSubstitutionCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="context" Type="System.Web.HttpContext" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.String</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="context"><see cref="T:System.Web.HttpContext" />キャッシュ後置換を必要とするコントロールをページの HTTP 要求の情報を格納します。</param>
+    <summary>キャッシュ後置換を処理するメソッドを表します。</summary>
+    <returns>クライアントに送信される前に、キャッシュされた応答を挿入するコンテンツ。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpResponseSubstitutionCallback>と組み合わせて、デリゲート、<xref:System.Web.HttpResponse.WriteSubstitution%2A>の後のキャッシュの内容を表示するため、メソッドが使用される、<xref:System.Web.UI.WebControls.Substitution>と<xref:System.Web.UI.WebControls.AdRotator>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.Substitution>コントロールを使用して、<xref:System.Web.UI.WebControls.Substitution.MethodName%2A>に時に呼び出されるコールバック メソッドの名前を指定するプロパティ、<xref:System.Web.UI.WebControls.Substitution>コントロールを実行します。 指定したコールバック メソッドは、ページまたはを含むユーザー コントロールでの静的メソッドである必要があります、<xref:System.Web.UI.WebControls.Substitution>コントロール。 コールバック メソッドのシグネチャがのシグネチャに一致する必要があります、<xref:System.Web.HttpResponseSubstitutionCallback>を受け取るデリゲート、<xref:System.Web.HttpContext>パラメーター文字列を返します。  
+  
+ <xref:System.Web.UI.WebControls.AdRotator>コントロール、レンダリングは独立して、ページのキャッシュのイベント ハンドラーが入力されない限り、<xref:System.Web.UI.WebControls.AdRotator.AdCreated>イベント。 ない場合は<xref:System.Web.UI.WebControls.AdRotator.AdCreated>イベント ハンドラーは存在、キャッシュ後置換が表示するために使用する、<xref:System.Web.UI.WebControls.AdRotator>コンテンツ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.UI.WebControls.Substitution>出力キャッシュ Web ページにプログラムで制御します。 ページが読み込まれると、現在の日付と時刻がラベルでユーザーに表示されます。 ページのこのセクションでは、キャッシュされ、60 秒ごとに更新します。 ときに、<xref:System.Web.UI.WebControls.Substitution>コントロールが実行されると、呼び出し、`GetCurrentDateTime`メソッドのシグネチャに一致する必要があります、<xref:System.Web.HttpResponseSubstitutionCallback>を委任します。 によって返される文字列、`GetCurrentDateTime`メソッドは、ユーザーに表示されます。 ページのこのセクションでは、キャッシュされていないし、ページが更新されるたびに更新されます。 <xref:System.Web.UI.WebControls.Substitution.MethodName%2A>のプロパティ、<xref:System.Web.UI.WebControls.Substitution>コントロールを取得またはコールバック メソッドの名前を設定します。  
+  
+ [!code-aspx-csharp[SubstitutionCstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SubstitutionCstr/CS/substitutioncstrcs.aspx#1)]
+ [!code-aspx-vb[SubstitutionCstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SubstitutionCstr/VB/substitutioncstrvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

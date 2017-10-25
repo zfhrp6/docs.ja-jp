@@ -1,0 +1,77 @@
+<Type Name="INormalizeForIsolatedStorage" FullName="System.IO.IsolatedStorage.INormalizeForIsolatedStorage">
+  <TypeSignature Language="C#" Value="public interface INormalizeForIsolatedStorage" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INormalizeForIsolatedStorage" />
+  <TypeSignature Language="DocId" Value="T:System.IO.IsolatedStorage.INormalizeForIsolatedStorage" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>分離ストアとアプリケーション ドメインとアセンブリの証拠の比較を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分離ストレージは、識別し、一意のファイル記憶域の場所を提供するためにアセンブリについての証拠を使用します。 アセンブリは、ストアを要求するときに (読み込まれたものをホストによって提示される) とその証拠が処理され、既存のストアを作成するために使用する証拠と比較します。 これは、新しいストアを作成する必要がある場合、または対象のアセンブリに対して既に存在する場合を判断します。 ために使用される比較手法、機能的に同等である証拠のピースされない可能性があります true 比較シリアル化されたフォームが同一ではない場合。 カスタムの証拠を実装する場合は、場合は、このような証拠クラスかどうかを検討してください、実装<xref:System.IO.IsolatedStorage.INormalizeForIsolatedStorage>です。 このインターフェイスを実装する証拠を<xref:System.IO.IsolatedStorage.INormalizeForIsolatedStorage.Normalize%2A>メソッドが呼び出され、そのメソッドで返されるオブジェクトの正規化されたコピーに基づいて比較されます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタムの証拠を実装して、ストアが既に存在するかどうかを決定する必要があるときは、このインターフェイスを実装します。 シリアル化されたオブジェクトは、大文字と小文字の文字列などのいくつかのインスタンスで比較する場合は使用できません。 たとえば、www.MSN.com に等しく WWW.msn.com が返されます、<see langword="true" />と比較した場合。 作成する、<see cref="T:System.IO.IsolatedStorage.INormalizeForIsolatedStorage" />オブジェクトを実装する必要があります、<see cref="M:System.IO.IsolatedStorage.INormalizeForIsolatedStorage.Normalize" />メソッドです。</para>
+    </block>
+    <block subset="none" type="usage">
+      <para>分離ストアのアセンブリの証拠と既存の比較を行う前に、インスタンスを正規化するには、このインターフェイスのメソッドを呼び出します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public object Normalize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Normalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.INormalizeForIsolatedStorage.Normalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、呼び出されたオブジェクトの正規化されたコピーを返します。</summary>
+        <returns>このメソッドが呼び出された対象のインスタンスを表す正規化されたオブジェクト。 このインスタンスには、文字列、ストリーム、または任意のシリアル化可能なオブジェクトができます。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドすると、返されたオブジェクトは、ストリーム、シリアル化されると想定され、既存のストアを作成するために使用する証拠のシリアル化された形式に直接比較されます。 返されるオブジェクトが文字列の場合は、分離ストアの名前と見なされますに既存のストアの名前と比較します。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>通常、分離ストレージから派生するクラスを作成している現在のアセンブリの分離ストレージが既に存在するかどうかを確認する必要がある場合は、このメソッドを呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

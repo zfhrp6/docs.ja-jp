@@ -1,0 +1,1318 @@
+<Type Name="CultureAndRegionInfoBuilder" FullName="System.Globalization.CultureAndRegionInfoBuilder">
+  <TypeSignature Language="C#" Value="public sealed class CultureAndRegionInfoBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CultureAndRegionInfoBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.CultureAndRegionInfoBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>sysglobl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>新しいカスタム カルチャまたは別のカルチャおよび国/地域に基づいたカスタム カルチャを定義します。 カスタム カルチャは、コンピューターにインストールすることで、そのコンピューター上で実行される任意のアプリケーションで使用できます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo>クラスに関連する言語、サブ言語、国/地域、予定表、および文化的慣習など、カルチャに固有の情報を保持します。 このクラスは、のカルチャに固有のインスタンスも用意されています。、 <xref:System.Globalization.DateTimeFormatInfo>、 <xref:System.Globalization.NumberFormatInfo>、 <xref:System.Globalization.CompareInfo>、および<xref:System.Globalization.TextInfo>は大文字小文字の区別、書式設定し、日付および数字、および文字列の比較などのカルチャに固有の操作の必要なクラスです。  
+  
+ 既定では、.NET Framework でサポート<xref:System.Globalization.CultureInfo>定義済みのカルチャのセットを表すオブジェクト。 これらのカルチャの一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 <xref:System.Globalization.CultureAndRegionInfoBuilder>クラスでは、つまり、まったく新しいまたは定義済みのカルチャをオーバーライドするカスタム カルチャを作成することができます。  区別することがカスタム カルチャはインストールされているし、特定のコンピューターに登録されている、定義済み<xref:System.Globalization.CultureInfo>オブジェクト、およびインスタンス化し、それらのオブジェクトと同じように使用できます。  
+  
+> [!IMPORTANT]
+>  なお、 <xref:System.Globalization.CultureAndRegionInfoBuilder> sysglobl.dll をという名前のアセンブリのクラスを検出します。 この型を使用するコードを正常にコンパイルするには、sysglobl.dll への参照を追加することが必要です。  
+  
+ カスタム カルチャは、そのコンピューターで管理者権限を持っているユーザーのみがコンピューターに登録できます。 その結果、アプリ通常を作成してインストールしないカスタム カルチャ。 代わりに、使用することができます、<xref:System.Globalization.CultureAndRegionInfoBuilder>管理者が作成、インストール、およびカスタム カルチャの登録に使用できる特殊なツールを作成するクラス。 カスタム カルチャがコンピューターに登録されている後を使用して、<xref:System.Globalization.CultureInfo>インスタンスを作成するカスタム カルチャの定義済みのカルチャの場合と同様、アプリ内のクラスです。  
+  
+ 使用する必要がありますカスタム カルチャに対して生成された日付と時刻の文字列を解析する場合、<xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>または<xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>メソッドの代わりに、<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>または<xref:System.DateTime.TryParse%2A?displayProperty=nameWithType>解析操作が成功する確率を向上させる方法です。 カスタム カルチャの日付と時刻の文字列には、複雑なと解析が困難になりますができます。 <xref:System.DateTime.Parse%2A>と<xref:System.DateTime.TryParse%2A>メソッドが失敗するは、複数の暗黙的な解析パターンを含む文字列を解析しようとしました。 <xref:System.DateTime.TryParseExact%2A>メソッドには、これに対し、明示的に成功する可能性のある 1 つ以上の正確な解析のパターンを指定するアプリケーションが必要です。  
+  
+## <a name="defining-and-creating-a-custom-culture"></a>定義やカスタム カルチャの作成  
+ 使用する、<xref:System.Globalization.CultureAndRegionInfoBuilder>カスタム カルチャの名前を定義するクラス。 カスタム カルチャには、まったく新しいカルチャ、(つまり、補足カルチャ)、既存のカルチャに基づく新しいカルチャまたは既存の .NET Framework カルチャを置換するカルチャを指定できます。 各ケースでは、基本的な手順は同じです。  
+  
+1.  インスタンスを作成、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトを呼び出してその<xref:System.Globalization.CultureAndRegionInfoBuilder.%23ctor%28System.String%2CSystem.Globalization.CultureAndRegionModifiers%29>コンス トラクターです。 既存のカルチャを置換するには、そのカルチャの名前を渡しますと<xref:System.Globalization.CultureAndRegionModifiers?displayProperty=nameWithType>コンス トラクターは、列挙体の値。 新しいカルチャまたは補足のカルチャを作成する一意のカルチャ名といずれかを渡す、<xref:System.Globalization.CultureAndRegionModifiers?displayProperty=nameWithType>または<xref:System.Globalization.CultureAndRegionModifiers?displayProperty=nameWithType>列挙値。  
+  
+    > [!NOTE]
+    >  使用する場合、<xref:System.Globalization.CultureAndRegionModifiers?displayProperty=nameWithType>列挙体の値をインスタンス化、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト、<xref:System.Globalization.CultureAndRegionInfoBuilder>から値を持つオブジェクトのプロパティを自動的に設定、<xref:System.Globalization.CultureInfo>置き換えられるオブジェクトです。  
+  
+2.  新しいまたは追加のカルチャを作成する: 場合  
+  
+    -   追加、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトのプロパティを呼び出して、<xref:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromCultureInfo%2A>メソッドと受け渡しを<xref:System.Globalization.CultureInfo>オブジェクト プロパティ値を持つプロパティは、新しいオブジェクトに似ています。  
+  
+    -   追加、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトの地域のプロパティを呼び出して、<xref:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromRegionInfo%2A>メソッドと受け渡しを<xref:System.Globalization.RegionInfo>のカスタム カルチャの領域を表すオブジェクト。  
+  
+3.  プロパティを変更、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトを必要とします。  
+  
+4.  別のルーチンのカスタム カルチャの登録を計画している場合、<xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>メソッドです。 これには、ロードおよび別のカスタム カルチャ インストール ルーチンに登録できる XML ファイルが生成されます。  
+  
+## <a name="registering-a-custom-culture"></a>カスタム カルチャの登録  
+ カルチャを作成するを呼び出すは、アプリケーションから別のカスタム カルチャの登録アプリケーションを開発している場合、<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>カスタム カルチャの定義を含む XML ファイルの読み込みおよびインスタンス化するメソッド、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト。 登録を処理するために呼び出す、<xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>メソッドです。 正常に登録のカスタム カルチャの登録、アプリケーションする必要がありますで実行されている管理者特権を持つターゲット システムそれ以外の場合、呼び出し<xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>スロー、<xref:System.UnauthorizedAccessException>例外。  
+  
+> [!WARNING]
+>  カルチャのデータは、システム間で異なることができます。 使用している場合、<xref:System.Globalization.CultureAndRegionInfoBuilder>複数のシステムやする間で統一されているカスタム カルチャを作成するクラスは、既存のファイルからデータを読み込むことにより、カスタム カルチャを作成する<xref:System.Globalization.CultureInfo>と<xref:System.Globalization.RegionInfo>オブジェクトおよびカスタマイズすると、2 つの異なるユーティリティを開発する必要があります。 最初は、カスタムのカルチャを作成し、XML ファイルに保存します。 2 番目の使用、<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドは XML ファイルからカスタム カルチャの読み込みをターゲット コンピューターに登録します。  
+  
+ 登録プロセスでは、次のタスクを実行します。  
+  
+-   定義されている情報を含む .nlp ファイルを作成、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト。  
+  
+-   ターゲット コンピューター上の %windir%\Globalization システム ディレクトリに .nlp ファイルを格納します。 これにより、セッション間で永続化するカスタムのカルチャの設定です。 (、 <xref:System.Globalization.CultureAndRegionInfoBuilder> .Nlp ファイルは、システム ディレクトリに格納されるので、メソッドには管理特権が必要です)。  
+  
+-   要求を準備、次回の内部キャッシュではなく %windir%\Globalization システム ディレクトリを検索する .NET Framework は、新しいカスタム カルチャを作成します。  
+  
+ カスタム カルチャが正常に登録されているときに、.NET Framework で定義されているカルチャから区別することはありません。 呼び出しまでカスタムのカルチャが使用可能な<xref:System.Globalization.CultureAndRegionInfoBuilder>メソッドは、ローカル コンピューターから .nlp ファイルを削除します。  
+  
+## <a name="instantiating-a-custom-culture"></a>カスタム カルチャをインスタンス化します。  
+ カスタム カルチャのインスタンスを作成するには、次の方法のいずれかで。  
+  
+-   呼び出すことによって、<xref:System.Globalization.CultureInfo.%23ctor%2A?displayProperty=nameWithType>カルチャ名を持つコンス トラクターです。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>カルチャ名を持つメソッドです。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.GetCultureInfo%2A?displayProperty=nameWithType>カルチャ名を持つメソッドです。  
+  
+ さらに、配列の<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.GetCultures%2A?displayProperty=nameWithType>メソッドには、カスタムのカルチャが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、米国の州のロシア語の言語を表すカスタム ru 英語 (米国) カルチャを定義します。 例では、ロシア語 (ロシア) から設定を読み込むことにより、カスタムのカルチャを定義する<xref:System.Globalization.CultureInfo>オブジェクトと、米国<xref:System.Globalization.RegionInfo>オブジェクト、およびの数を設定し<xref:System.Globalization.CultureAndRegionInfoBuilder>プロパティです。 例では、カスタムのカルチャの登録しそれをインスタンス化し、現在のスレッド カルチャになります。  
+  
+ [!code-csharp[System.Globalization.CultureAndRegionInfoBuilder.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureandregioninfobuilder.class/cs/car.cs#1)]
+ [!code-vb[System.Globalization.CultureAndRegionInfoBuilder.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureandregioninfobuilder.class/vb/car.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureAndRegionInfoBuilder (string cultureName, System.Globalization.CultureAndRegionModifiers flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cultureName, valuetype System.Globalization.CultureAndRegionModifiers flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.#ctor(System.String,System.Globalization.CultureAndRegionModifiers)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Globalization.CultureAndRegionModifiers" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">カルチャの名前。</param>
+        <param name="flags">新しい <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトがニュートラル カルチャであるかどうか、既存のカルチャと国/地域を置換するかどうか、または新しいカルチャであるかどうかを指定する、<see cref="T:System.Globalization.CultureAndRegionModifiers" /> 値のいずれか 1 つ。</param>
+        <summary><see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `cultureName`パラメーターの新しい名前を指定<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト。  
+  
+ `flags`パラメーターが使用される、<xref:System.Globalization.CultureAndRegionModifiers>値を指定するかどうか、新しい<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトが新しいカスタム カルチャ、または既存のニュートラル カルチャ、特定のカルチャまたは Windows ロケールが置き換えられます。  
+  
+ 場合、`cultureName`パラメーターを指定する既存の .NET Framework カルチャ、登録済みのカスタム カルチャ、または Windows のロケールから生成されたカルチャ、<xref:System.Globalization.CultureAndRegionInfoBuilder.%23ctor%2A>コンス トラクターを自動的に新しい入力<xref:System.Globalization.CultureAndRegionInfoBuilder>カルチャおよび国/地域の情報を持つオブジェクト。  
+  
+ 新しい設定<xref:System.Globalization.CultureAndRegionInfoBuilder>を呼び出すことによってオブジェクトのカルチャおよび国/地域の情報を含む、<xref:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromCultureInfo%2A>と<xref:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromRegionInfo%2A>メソッドです。  
+  
+## <a name="custom-culture-names"></a>カスタム カルチャの名前  
+ 推奨される形式、 `cultureName` 、新しいカスタム カルチャのパラメーターは"[`prefix`-]`language`[-`region`] [-`suffix`[`…`]"ここで、`language`コンポーネントが必要と`prefix`、 `region`、および`suffix`コンポーネントは省略可能です。 各コンポーネントの最大長は 8 文字と全体の最大長`cultureName`パラメーターは 84 文字です。  
+  
+ `prefix`コンポーネントは、Internet Assigned Numbers Authority (IANA) 識別します。 指定"i"または"すれば-"、IANA、または"x"または「X、」カルチャ名に使用できる予約と登録されているカルチャ名にします。 それ以外の場合、プレフィックスは必要ありません。 詳細については、RFC 4646、「the Identification of Languages のタグ」を参照してください。  
+  
+ `language`コンポーネント、 `cultureName` ISO 639-1 から派生する小文字の 2 文字コードを指定し、 `region` ISO 3166 から派生した大文字の 2 文字コードを指定します。 たとえば、EN-US では、米国で話さ英語を表します。 ない場合、`region`コンポーネントがニュートラル カルチャを示します。  
+  
+ A`cultureName`されているのと同じ .NET Framework に含まれているカルチャの名前は、置換 (オーバーライド) カルチャを示します。 置換カルチャのプロパティに割り当てることができる値は限られます。 このような制限の詳細については、各プロパティの例外を参照してください。  
+  
+ アプリケーションを使用して、`suffix`類似のカルチャを区別するためのコンポーネントです。 たとえば、ABC と xyz という 2 つの会社では、作成しを世界各地のさまざまな市場で自社製品を昇格させる新しい ASP.NET Web サービスを共有します。 サービスの Web ページには、地域のロゴやユーザーのカルチャによって各会社の電話番号などの情報が表示されます。 各 Web ページのカルチャに固有のコンテンツは、別のリソース ファイルのカルチャ名で識別され、会社名で修飾するのにです。  たとえば、EN-US、JA-JP カルチャのリソース ファイル名前は en-米国-ABC、en 米国"xyz"、日本の JP-ABC 日本 JP"xyz"です。 "ABC"と"XYZ"サフィックスは、さまざまな市場固有の情報を表示する、同じアプリケーション ロジックを使用する Web サービスを有効にします。  
+  
+ `suffix`コンポーネントは、各サブコンポーネントがハイフンで区切られた、各サブコンポーネントの最大長は 8 文字以上のサブコンポーネントで構成できます。 たとえば、"en-米国-honda-cars"は、`cultureName`パラメーター、「- honda - 自動車」が、`suffix`コンポーネントです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プライベート プレフィックスを使用してカスタム カルチャを作成し、そのプロパティのセットを示します。 最初のプロパティには、カルチャの名前が一覧表示します。  
+  
+ [!code-cpp[sys.glob.carib1#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.carib1/CPP/carib.cpp#1)]
+ [!code-csharp[sys.glob.carib1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib1/CS/carib.cs#1)]
+ [!code-vb[sys.glob.carib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib1/VB/carib.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cultureName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cultureName" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="cultureName" />文字を含む以外「0」~「9」、"a"~"z"、"A"~"Z"、ハイフン (-)、またはアンダー スコア (_)。  
+  
+ または  
+  
+ <paramref name="cultureName" />ハイフン (-) をコンポーネントを区切るために、1 つ以上の含まれています、 <paramref name="prefix" />、 <paramref name="language" />、 <paramref name="region" />、または<paramref name="suffix" />コンポーネントが存在しません。 つまり、2 つ以上のハイフンが隣接します。  
+  
+ または  
+  
+ <paramref name="cultureName" />84 文字を超えています。  
+  
+ または  
+  
+ <paramref name="cultureName" />コンポーネントを区切るためにハイフンが含まれていますが、1 つまたは複数のコンポーネントは 8 文字より長い。  
+  
+ または  
+  
+ <paramref name="cultureName" />先頭または末尾のハイフン (-) またはアンダー スコア (_) が含まれています。  
+  
+ または  
+  
+ <paramref name="cultureName" />.NET Framework カルチャではなく、代替の並べ替え置換カルチャを指定します。 たとえば、<paramref name="culturenName" />は"de-de_phoneb"、カルチャをドイツ語 (ドイツ) カルチャ"DE-DE"ではなく、ドイツ語の電話番号帳に表示される文字列を並べ替えます。  
+  
+ または  
+  
+ <paramref name="flags" />無効な組み合わせを含む<see cref="T:System.Globalization.CultureAndRegionModifiers" />値。  
+  
+ または  
+  
+ <paramref name="flags" />含む<see cref="F:System.Globalization.CultureAndRegionModifiers.Replacement" />または<see cref="F:System.Globalization.CultureAndRegionModifiers.Neutral" />と<paramref name="cultureName" />載っていないカルチャを指定します。  
+  
+ または  
+  
+ <paramref name="flags" />含む<see cref="F:System.Globalization.CultureAndRegionModifiers.Replacement" />と<paramref name="cultureName" />.NET Framework に付属してカルチャを置き換えませんをユーザーが作成したカスタム カルチャを指定します。  
+  
+ または  
+  
+ <paramref name="flags" />含む<see cref="F:System.Globalization.CultureAndRegionModifiers.Neutral" />と<paramref name="cultureName" />がニュートラル カルチャではないカルチャを指定します。  
+  
+ または  
+  
+ <paramref name="flags" />含む<see cref="F:System.Globalization.CultureAndRegionModifiers.Neutral" />と<paramref name="cultureName" />を .NET Framework に付属して特定のカルチャを置換するユーザーが作成したカスタム カルチャを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AvailableCalendars">
+      <MemberSignature Language="C#" Value="public System.Globalization.Calendar[] AvailableCalendars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.Calendar[] AvailableCalendars" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.AvailableCalendars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.Calendar[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトによってサポートされるカレンダーの配列を取得または設定します。</summary>
+        <value>カレンダーの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.AvailableCalendars%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">割り当てられた配列は、設定操作で<see langword="null" />、割り当てられた配列の要素がまたは<see langword="null" />です。</exception>
+        <exception cref="T:System.NotSupportedException">このプロパティはニュートラル カルチャのサポートされていません。  
+  
+ または  
+  
+ 設定操作で割り当てられた配列が含まれます<see cref="T:System.Globalization.PersianCalendar" />、 <see cref="T:System.Globalization.TaiwanLunisolarCalendar" />、 <see cref="T:System.Globalization.KoreanLunisolarCalendar" />、 <see cref="T:System.Globalization.JapaneseLunisolarCalendar" />、 <see cref="T:System.Globalization.ChineseLunisolarCalendar" />、または<see cref="T:System.Globalization.JulianCalendar" />です。  
+  
+ または  
+  
+ 設定操作では、割り当てられた配列には、カスタムの予定表が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareInfo">
+      <MemberSignature Language="C#" Value="public System.Globalization.CompareInfo CompareInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CompareInfo CompareInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CompareInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャの文字列を比較する方法を定義する <see cref="T:System.Globalization.CompareInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>カルチャの文字列を比較する方法を定義する <see cref="T:System.Globalization.CompareInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CompareInfo%2A?displayProperty=nameWithType>プロパティに対応して、<xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Globalization.TextInfo>と<xref:System.Globalization.CompareInfo>に割り当てられているオブジェクト、<xref:System.Globalization.CultureAndRegionInfoBuilder.TextInfo%2A>と<xref:System.Globalization.CultureAndRegionInfoBuilder.CompareInfo%2A>プロパティの両方をサポートしてカルチャおよび大文字小文字を区別して文字列を比較します。 <xref:System.Globalization.CompareInfo>オブジェクトを含むメソッドにもあります、<xref:System.Globalization.CompareOptions>カルチャ、大文字と小文字の比較をサポートしているパラメーターです。 これら 2 つのプロパティを割り当てる必要があります<xref:System.Globalization.TextInfo>と<xref:System.Globalization.CompareInfo>を同じロケールを表すオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作では割り当てられている値は<see langword="null" />します。</exception>
+        <exception cref="T:System.NotSupportedException">このカスタム カルチャは、組み込みのカルチャのオーバーライドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsoleFallbackUICulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo ConsoleFallbackUICulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo ConsoleFallbackUICulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ConsoleFallbackUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフィック ユーザー インターフェイスの既定のカルチャが不適切な場合に、コンソール アプリケーションに適した代替のユーザー インターフェイス カルチャを取得または設定します。</summary>
+        <value>コンソール上のテキストの読み取りおよび表示に使用する代替カルチャ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Get 操作で、<xref:System.Globalization.CultureAndRegionInfoBuilder.ConsoleFallbackUICulture%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.GetConsoleFallbackUICulture%2A>メソッドです。 指定`null`を現在のカルチャが定義されていることを示す設定操作で<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトが別のユーザー インターフェイスのカルチャ。 プロパティを持つ別のコンソール フォールバック UI カルチャのカルチャを設定しようとする場合が割り当てられますその最終的な「リーフ」カルチャ。  
+  
+ アラビア語、ヘブライ語、ペルシア語、ウルドゥ語およびシリア語などの言語は、双方向のテキストに基づきます。 グラフィカル ユーザー インターフェイスを使用しているため、Windows アプリケーションでは、双方向言語をサポートします。 ただし、オペレーティング システム コンソールのユーザー インターフェイスのテキストを使用しているため、コンソール アプリケーションでは、双方向サポートは提供しません。 その結果、コンソール アプリケーションは、アラビア語やヘブライ語にローカライズされて表示されます読み取り不可能なテキスト コンソール画面に。  
+  
+ ユーザー インターフェイスのカルチャでは、リソース、アプリケーションがユーザー入力と出力をサポートする必要があるし、既定では、オペレーティング システムのカルチャと同じことを指定します。 たとえば、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティは、アラビア語のオペレーティング システムのアラビア語のカルチャを返します。 アプリケーションを使用する必要があります、<xref:System.Globalization.CultureAndRegionInfoBuilder.ConsoleFallbackUICulture%2A>コンソール アプリケーションのユーザー インターフェイスの適切なニュートラル カルチャを取得するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたカルチャは設定操作で<see langword="null" />、<see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ConsoleFallbackUICulture" />指定されたカルチャのプロパティは、指定したカルチャと同じではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromLdml">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureAndRegionInfoBuilder CreateFromLdml (string xmlFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureAndRegionInfoBuilder CreateFromLdml(string xmlFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureAndRegionInfoBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlFileName"><see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトの XML 表現を格納したファイルの名前。</param>
+        <summary>指定したオブジェクトの表現を格納した XML ファイルから <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトを再構成します。</summary>
+        <returns><paramref name="xmlFileName" /> パラメーターに格納されている情報と等価の新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `xmlFileName`パラメーターの XML 表現を含むファイル名を指定、<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト。 XML ファイルの形式には、ロケール データ マークアップ言語 (LDML) バージョン 1.1 が呼び出されます。 新しい<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトが作成され、内のデータで初期化`xmlFileName`です。 <xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>メソッドの逆の操作を実行する、<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドです。  
+  
+ LDML ファイル内のカルチャのプロパティを指定しての子要素として、`<special>`内の要素、`<identity>`セクションです。 プロパティの値は通常、要素のによって指定`type`属性。 たとえば、LDML ファイルから抜粋は、英語版のニュートラル カルチャとしてのカルチャの親を定義します。  
+  
+```  
+  
+<identity>  
+   <version number="1.1">ldml version 1.1</version>  
+   <generation date="2012-05-16" />  
+   <special xmlns:msLocale="http://schemas.microsoft.com/globalization/2004/08/carib/ldml">  
+      <!—content removed -->  
+      <msLocale:parentName type="en" />  
+      <!—content removed -->  
+   </special>  
+</identity>  
+  
+```  
+  
+ LDML 標準の詳細については、次を参照してください。 [Unicode 技術標準 #35、"ロケール データ マークアップ言語 (LDML)"](http://go.microsoft.com/fwlink/p/?LinkId=252840) Unicode コンソーシアムの web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>と<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.carib.saveLdml#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib.saveLdml/cs/sl.cs#1)]
+ [!code-vb[sys.glob.carib.saveLdml#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib.saveLdml/vb/sl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlFileName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="xmlFileName" />空の文字列 ("")、または無効なファイル名またはパス名。</exception>
+        <exception cref="T:System.Xml.XmlException">内のデータ<paramref name="xmlFileName" />有効な XML 形式ではありません。  
+  
+ または  
+  
+ アクセス中に I/O エラーが発生しました<paramref name="xmlFileName" />です。</exception>
+        <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">内のデータ<paramref name="xmlFileName" />LDML 形式が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureEnglishName">
+      <MemberSignature Language="C#" Value="public string CultureEnglishName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureEnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CultureEnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>英語のカルチャ名を取得または設定します。</summary>
+        <value>英語のカルチャ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CultureEnglishName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.EnglishName%2A>プロパティです。  
+  
+ 戻り値など、<xref:System.Globalization.CultureAndRegionInfoBuilder.CultureEnglishName%2A>英語、米国で話される特定のカルチャのプロパティが「英語 (米国)」です。  
+  
+ このプロパティの値は、.NET Framework の言語バージョンに関係なく同じです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プライベート プレフィックスを使用してカスタム カルチャを作成し、そのプロパティのセットを示します。 最初のプロパティには、カルチャの名前が一覧表示します。  
+  
+ [!code-cpp[sys.glob.carib1#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.carib1/CPP/carib.cpp#1)]
+ [!code-csharp[sys.glob.carib1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib1/CS/carib.cs#1)]
+ [!code-vb[sys.glob.carib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib1/VB/carib.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはいない範囲 0 ~ 79 文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureName">
+      <MemberSignature Language="C#" Value="public string CultureName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CultureName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成するカルチャの名前を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトのカルチャ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値で指定されたカルチャの名前、<xref:System.Globalization.CultureAndRegionInfoBuilder.%23ctor%2A>コンス トラクターです。 指定されたカルチャ名は、の場合を除き、既存のカルチャと同じ場合、戻り値は指定されたカルチャ名ではなく、既存のカルチャの名前です。  
+  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CultureName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.Name%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プライベート プレフィックスを使用してカスタム カルチャを作成し、そのプロパティのセットを示します。 最初のプロパティには、カルチャの名前が一覧表示します。  
+  
+ [!code-cpp[sys.glob.carib1#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.carib1/CPP/carib.cpp#1)]
+ [!code-csharp[sys.glob.carib1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib1/CS/carib.cs#1)]
+ [!code-vb[sys.glob.carib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib1/VB/carib.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureNativeName">
+      <MemberSignature Language="C#" Value="public string CultureNativeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureNativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CultureNativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャの表示用に設定されている形式および言語でカルチャ名を取得または設定します。</summary>
+        <value>カルチャの表示用に設定されている形式および言語でのカルチャ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CultureNativeName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.NativeName%2A>プロパティです。  
+  
+ このプロパティの値は、.NET Framework の言語バージョンに関係なく同じです。  
+  
+ カルチャの言語を正しく表示する、システムが設定されていない場合、カルチャの完全名が正しく表示されない場合があります。 たとえば場合、<xref:System.Globalization.CultureAndRegionInfoBuilder.CultureName%2A>プロパティは、"JA-JP"日本語 (日本) の<xref:System.Globalization.CultureAndRegionInfoBuilder.CultureNativeName%2A>のみ英語に設定されているシステムのプロパティが正しく表示されません。 ただし、Windows 2000 などの多言語のオペレーティング システムの表示、<xref:System.Globalization.CultureAndRegionInfoBuilder.CultureNativeName%2A>プロパティ正しくです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プライベート プレフィックスを使用してカスタム カルチャを作成し、そのプロパティのセットを示します。 最初のプロパティには、カルチャの名前が一覧表示します。  
+  
+ [!code-cpp[sys.glob.carib1#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.carib1/CPP/carib.cpp#1)]
+ [!code-csharp[sys.glob.carib1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib1/CS/carib.cs#1)]
+ [!code-vb[sys.glob.carib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib1/VB/carib.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはいない範囲 0 ~ 79 文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureTypes">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureTypes CultureTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CultureTypes CultureTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CultureTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトで表されるカルチャを記述する <see cref="T:System.Globalization.CultureTypes" /> 値を取得します。</summary>
+        <value><see cref="T:System.Globalization.CultureTypes" /> 値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyEnglishName">
+      <MemberSignature Language="C#" Value="public string CurrencyEnglishName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyEnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CurrencyEnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトで表される国/地域で使用される通貨の、英語での名前を取得または設定します。</summary>
+        <value>地域で使用される通貨を英語で表した名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CurrencyEnglishName%2A>プロパティは、<xref:System.Globalization.RegionInfo.CurrencyEnglishName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値は空の文字列 ("") です。</exception>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトがニュートラル カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyNativeName">
+      <MemberSignature Language="C#" Value="public string CurrencyNativeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyNativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.CurrencyNativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトで表される国/地域で使用される通貨の、ネイティブ言語での名前を取得または設定します。</summary>
+        <value>ISO 3166 の国/地域コードに関連付けられた言語で書式指定された、現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトで表される国/地域で使用される通貨の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.CurrencyNativeName%2A>プロパティは、<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値は空の文字列 ("") です。</exception>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトがニュートラル カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GeoId">
+      <MemberSignature Language="C#" Value="public int GeoId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GeoId" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.GeoId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>地理的な領域、国、都市、または場所の一意の識別番号を取得または設定します。</summary>
+        <value>地理的な場所を一意に識別する 32 ビットの符号付き数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.GeoId%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.GeoId%2A>プロパティです。  
+  
+ アプリケーションを使用する必要があります、<xref:System.Globalization.CultureAndRegionInfoBuilder.GeoId%2A>カルチャに固有のサービスをお客様に提供するプロパティです。 たとえば、<xref:System.Globalization.CultureAndRegionInfoBuilder.GeoId%2A>プロパティは、領域に関する特定の情報を格納するデータベース レコードへのアクセス キーとして使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトがニュートラル カルチャを定義します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GregorianDateTimeFormat">
+      <MemberSignature Language="C#" Value="public System.Globalization.DateTimeFormatInfo GregorianDateTimeFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.DateTimeFormatInfo GregorianDateTimeFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.GregorianDateTimeFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グレゴリオ暦に従って日付と時刻の書式を定義する <see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Globalization.DateTimeFormatInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在定義されているカルチャを含む、すべてのカルチャ<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクト、関連付けられているローカライズされたグレゴリオ暦が含まれています、<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。 <xref:System.Globalization.DateTimeFormatInfo>オブジェクトは、アプリケーションが日付と時刻を表示する方法を定義します。 <xref:System.Globalization.CultureAndRegionInfoBuilder.GregorianDateTimeFormat%2A>プロパティの値が、<xref:System.Globalization.DateTimeFormatInfo>によって返される最初のローカライズされた構成のグレゴリオ暦カレンダーに関連付けられているオブジェクト、<xref:System.Globalization.CultureAndRegionInfoBuilder.AvailableCalendars%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">セット操作の値のプロパティには、無効なプロパティ値が返されます。</exception>
+        <exception cref="T:System.NotSupportedException">現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトがニュートラル カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IetfLanguageTag">
+      <MemberSignature Language="C#" Value="public string IetfLanguageTag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IetfLanguageTag" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.IetfLanguageTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RFC 4646 標準『Tags for the Identification of Languages』に従って書式設定されたカルチャ名を取得または設定します。</summary>
+        <value>RFC 4646 に従って書式設定されたカルチャ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.IetfLanguageTag%2A>プロパティを取得または設定によって返されるカルチャ名と異なる場合が RFC 4646 に従って書式設定されたカルチャ名、<xref:System.Globalization.CultureInfo.Name%2A>プロパティです。 たとえば、.NET framework version 1.0 では、繁体字中国語のニュートラル カルチャの名前は"ZH-CHT"でした。 これに対し、RFC 4646 は、「それ」としてそのカルチャ名を定義します。 (で .NET Framework version 4 では、"ZH-CHT"の表示名は「中国語 (繁体字) レガシー」に注意してください)。  
+  
+ RFC 4646 カルチャ名は、いくつかのコンポーネントで構成されます。 通常のカルチャ名は、必須の言語識別子、オプションのスクリプト識別子、および国/地域の省略可能な識別子で構成されます。 たとえば、セルビア語、キリル文字、および地域がセルビアの有効な RFC 4646 カルチャ名は"sr という RS"です。  
+  
+ 2 つまたは複数のカルチャで同じ IETF 言語タグを持つことができるに注意してください。  
+  
+ 詳細についてを参照してください RFC 4646、「タグの 特定の言語、」[要求のコメント](http://go.microsoft.com/fwlink/?linkid=45286)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作では、値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で、値の長さは 1 ~ 84 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値で指定された名前のコンポーネントが空か、8 文字、いない英数字またはハイフン (-) より長いまたは名前には、先頭または末尾のハイフンが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMetric">
+      <MemberSignature Language="C#" Value="public bool IsMetric { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMetric" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.IsMetric" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域で、計測のためにメートル法を使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          国/地域で、計測のためにメートル法を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">この操作は、ニュートラル カルチャに対して有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ISOCurrencySymbol">
+      <MemberSignature Language="C#" Value="public string ISOCurrencySymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ISOCurrencySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ISOCurrencySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域に関連付けられた 3 文字の ISO 4217 通貨記号を取得または設定します。</summary>
+        <value>国/地域に関連付けられた 3 文字の ISO 4217 通貨記号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ISOCurrencySymbol%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A>プロパティです。  
+  
+ 3 文字の ISO 4217 通貨記号の一覧で提供される、<xref:System.Globalization.RegionInfo>クラスに関するトピック。 たとえば、米国ドルの ISO 4217 通貨記号は、"USD"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">これは、ニュートラル カルチャです。</exception>
+        <exception cref="T:System.ArgumentNullException">設定操作では、値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で、値は 0 ~ 8 文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRightToLeft">
+      <MemberSignature Language="C#" Value="public bool IsRightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.IsRightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトに関連付けられている書記体系のテキストの記述方向を取得または設定します。</summary>
+        <value>
+          現在の書記体系のテキストの記述方向が右から左の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Globalization.CultureAndRegionInfoBuilder.IsRightToLeft%2A>グラフィカル ユーザー インターフェイスでバーのボタンとスクロールなどのコントロールの相対位置を決定するプロパティです。  
+  
+ 現在から作成されたカスタム カルチャ内のテキストの方向にアクセスする<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトをアプリケーションを使用する必要があります、<xref:System.Globalization.TextInfo.IsRightToLeft%2A>によって返されるオブジェクトのプロパティ、<xref:System.Globalization.CultureInfo.TextInfo%2A>カスタム カルチャのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardLayoutId">
+      <MemberSignature Language="C#" Value="public int KeyboardLayoutId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyboardLayoutId" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.KeyboardLayoutId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな入力ロケール識別子を取得または設定します。</summary>
+        <value>入力ロケール識別子を指定する 32 ビットの符号付き数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.KeyboardLayoutId%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.KeyboardLayoutId%2A>プロパティです。  
+  
+ 入力ロケール識別子には、キーボード レイアウトと呼んでいました。 音声からテキストへのコンバーター、入力方式エディター (IME)、またはその他の入力の形式の識別子を使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作では、値は 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LCID">
+      <MemberSignature Language="C#" Value="public int LCID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LCID" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.LCID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトのカルチャ識別子を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトのカルチャ識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.LCID%2A?displayProperty=nameWithType>プロパティに対応して、<xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 置換カルチャでは、カルチャ識別子を対応するサポート NLS (National Language) ロケール識別子にマップされます。 ユーザー定義のカスタム カルチャの場合、このプロパティの値は常に値が 16 進数の 0x1000 します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadDataFromCultureInfo">
+      <MemberSignature Language="C#" Value="public void LoadDataFromCultureInfo (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadDataFromCultureInfo(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromCultureInfo(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">プロパティの使用元のオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトのプロパティを、指定した <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの対応するプロパティを使用して設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="culture" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadDataFromRegionInfo">
+      <MemberSignature Language="C#" Value="public void LoadDataFromRegionInfo (System.Globalization.RegionInfo region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadDataFromRegionInfo(class System.Globalization.RegionInfo region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.LoadDataFromRegionInfo(System.Globalization.RegionInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Globalization.RegionInfo" />
+      </Parameters>
+      <Docs>
+        <param name="region">プロパティの使用元のオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトのプロパティを、指定した <see cref="T:System.Globalization.RegionInfo" /> オブジェクトの対応するプロパティを使用して設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="region" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">国/地域の情報を設定できません現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトがニュートラル カルチャを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberFormat">
+      <MemberSignature Language="C#" Value="public System.Globalization.NumberFormatInfo NumberFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.NumberFormatInfo NumberFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.NumberFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値、通貨、および割合を表示する、カルチャに適切な書式を定義する <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>数値、通貨、および割合を表示する、カルチャに適切な書式を定義する <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.NumberFormat%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。  
+  
+ アプリケーションでは、特定のカルチャに対してのみ、このプロパティを呼び出す必要があります。  
+  
+ <xref:System.Globalization.NumberFormatInfo.PercentDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>、および<xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A>プロパティの<xref:System.Globalization.CultureAndRegionInfoBuilder.NumberFormat%2A>は無視されます。 カルチャの保存形式では、これらのプロパティの明示的な値は保存されません。 代わりに、カルチャが読み込まれるときに常に既定値は、 <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>、 <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>、および<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>、それぞれします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.NotSupportedException">この操作は、ニュートラル カルチャに対して有効ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">数値、通貨、またはこのカルチャ用の割合のプロパティの指定桁数が多すぎるまたはが範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Parent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカスタム カルチャの親カルチャを表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>現在のカスタム カルチャの親カルチャを表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カルチャでは、階層があります。 定義済みカルチャは、特定のカルチャの親がニュートラル カルチャは、ニュートラル カルチャの親は、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>です。 親カルチャには、その子の間で共通する情報のセットのみが含まれます。  
+  
+ 一般に、カスタムのカルチャがこの階層に準拠していることをお勧めします。 ただし、既定では、<xref:System.Globalization.CultureAndRegionInfoBuilder.Parent%2A>カスタム カルチャは、<xref:System.Globalization.CultureAndRegionInfoBuilder.Parent%2A>カルチャの基になるのです。 アプリケーションでカルチャを作成する場合<xref:System.Globalization.CultureAndRegionInfoBuilder.CultureName%2A>"en 米国 MyCulture"が"EN-US"に基づく、されているために、その親は"en"、<xref:System.Globalization.CultureAndRegionInfoBuilder.Parent%2A>の"EN-US"です。 として、アプリケーションが"EN-US"を使用するかどうか、<xref:System.Globalization.CultureAndRegionInfoBuilder.Parent%2A>新しいカスタム カルチャの必要があります値を明示的に設定します。  
+  
+ 特定のカルチャのリソースがシステムで利用できない場合は、ニュートラル カルチャのリソースが使用されます。 ニュートラル カルチャのリソースが利用できない場合は、メイン アセンブリに埋め込まれたリソースが使用されます。 リソース フォールバック プロセスの詳細については、次を参照してください。[パッケージ化と配置リソース](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。  
+  
+ Windows API のカルチャの一覧は .NET framework カルチャの一覧から若干異なります。 Windows と相互運用性が必要な場合など、プラットフォームを介して呼び出し機構、アプリケーションは、.NET Framework で定義されている特定のカルチャを使用する必要があります。 これにより、同じで識別される同等の Windows ロケールとの整合性を<xref:System.Globalization.CultureInfo.LCID%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定操作でカルチャ値が見つかりません。 場合によっては、割り当てられた値は、未登録のカスタム カルチャです。</exception>
+        <exception cref="T:System.ArgumentNullException">設定操作では、値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">現在のカルチャの先祖を走査するには、設定操作でインバリアント カルチャが先祖内に見つかりません。  
+  
+ または  
+  
+ 設定操作で、循環参照が見つかりました: 割り当てられている値は、現在のカスタム カルチャの先祖であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionEnglishName">
+      <MemberSignature Language="C#" Value="public string RegionEnglishName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionEnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.RegionEnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>英語で表した国/地域の完全名を取得または設定します。</summary>
+        <value>英語で表した国/地域の完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.RegionEnglishName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.EnglishName%2A>プロパティです。  
+  
+ 戻り値など、 <xref:System.Globalization.CultureAndRegionInfoBuilder.RegionEnglishName%2A> United States は「米国」です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">この操作は、ニュートラル カルチャに対して有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはいない範囲 0 ~ 79 文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionName">
+      <MemberSignature Language="C#" Value="public string RegionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.RegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトの国/地域の名前を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトの国/地域の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値で指定されたカルチャの名前、<xref:System.Globalization.CultureAndRegionInfoBuilder.%23ctor%2A>コンス トラクターです。 指定されたカルチャ名は、の場合を除き、既存のカルチャと同じ場合、戻り値は指定されたカルチャ名ではなく、既存のカルチャの名前です。  
+  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.RegionName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">この操作は、ニュートラル カルチャに対して有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionNativeName">
+      <MemberSignature Language="C#" Value="public string RegionNativeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionNativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.RegionNativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このカスタム カルチャが適用される人々の間で使用される国/地域の完全名を取得または設定します。</summary>
+        <value>国/地域のローカル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.RegionNativeName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.NativeName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">この操作は、ニュートラル カルチャに対して有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 79 文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public void Register ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Register() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.Register" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトをローカル コンピューター上でカスタム カルチャとして保持して、アプリケーションでカルチャを使用できるようにします。 管理特権が必要となります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>メソッドでは、カスタム カルチャを格納、グローバリゼーション ディレクトリのサブディレクトリに、Win32 によって返される、ローカル コンピューター上のファイルとして[GetWindowsDirectory](http://go.microsoft.com/fwlink/?LinkId=191561)関数。 このプロセスは、カスタムのカルチャの登録と呼ばれます。 カスタム カルチャが登録されると、新しいカスタム カルチャのカルチャ名を指定することで作成できません、<xref:System.Globalization.CultureInfo.%23ctor%2A>コンス トラクターを呼び出すとき、または、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>メソッドです。  
+  
+ カスタム カルチャを呼び出すことによって削除されることができます、<xref:System.Globalization.CultureAndRegionInfoBuilder.Unregister%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.carib.register#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib.register/CS/persist.cs#1)]
+ [!code-vb[sys.glob.carib.register#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib.register/VB/persist.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">カスタム カルチャは既に登録されています。  
+  
+ または  
+  
+ 現在<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクト、カルチャを登録する前に設定する必要があるプロパティがあります。 すべてのカルチャ、依存しない、または、特定の必要があります<see cref="P:System.Globalization.CultureAndRegionInfoBuilder.TextInfo" />と<see cref="P:System.Globalization.CultureAndRegionInfoBuilder.CompareInfo" />を設定します。 特定のカルチャが必要もあります<see cref="P:System.Globalization.CultureAndRegionInfoBuilder.NumberFormat" />、 <see cref="P:System.Globalization.CultureAndRegionInfoBuilder.GregorianDateTimeFormat" />、および<see cref="P:System.Globalization.CultureAndRegionInfoBuilder.AvailableCalendars" />を設定します。  
+  
+ このメソッドはスローも<see cref="T:System.InvalidOperationException" />次のプロパティが定義されていない場合。  
+  
+ <see cref="P:System.Globalization.CultureAndRegionInfoBuilder.CultureEnglishName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.CultureNativeName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.CurrencyEnglishName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.CurrencyNativeName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ISOCurrencySymbol" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.Parent" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.RegionEnglishName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.RegionNativeName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISOLanguageName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISORegionName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsLanguageName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsRegionName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISOLanguageName" /><see cref="P:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISORegionName" /></exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">A<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクト プロパティの値は、最大の長さや値を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、管理者特権がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.Save(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">このカスタム カルチャの XML 表現を格納するファイルの名前。</param>
+        <summary>現在の <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトの XML 表現を、指定したファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>メソッドは現在も書き込みます<xref:System.Globalization.CultureAndRegionInfoBuilder>オブジェクトによって指定されたファイルを`filename`XML 形式でパラメーターがロケール データ マークアップ言語 (LDML) バージョン 1.1 と呼ばれます。 <xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドの逆の操作を実行する、<xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>メソッドです。  
+  
+ LDML ファイルの形式については、次を参照してください。、<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドです。 LDML 標準については、次を参照してください。 [Unicode 技術標準 #35、"ロケール データ マークアップ言語 (LDML)"](http://go.microsoft.com/fwlink/p/?LinkId=252840) Unicode コンソーシアムの web サイトです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A>と<xref:System.Globalization.CultureAndRegionInfoBuilder.CreateFromLdml%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.carib.saveLdml#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib.saveLdml/cs/sl.cs#1)]
+ [!code-vb[sys.glob.carib.saveLdml#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib.saveLdml/vb/sl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filename" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filename" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティの値、 <see cref="T:System.Globalization.DateTimeFormatInfo" />、 <see cref="T:System.Globalization.TextInfo" />、または<see cref="T:System.Globalization.NumberFormatInfo" />オブジェクトに現在含まれている<see cref="T:System.Globalization.CultureAndRegionInfoBuilder" />オブジェクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextInfo">
+      <MemberSignature Language="C#" Value="public System.Globalization.TextInfo TextInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.TextInfo TextInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.TextInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.TextInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このカスタム カルチャに関連付けられている書記体系を定義する <see cref="T:System.Globalization.TextInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>このカスタム カルチャに関連付けられている書記体系を定義するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.TextInfo%2A?displayProperty=nameWithType>プロパティ文字列のカルチャに固有の大文字と小文字の情報を提供します。 対応して、<xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Globalization.TextInfo>と<xref:System.Globalization.CompareInfo>に割り当てられているオブジェクト、<xref:System.Globalization.CultureAndRegionInfoBuilder.TextInfo%2A>と<xref:System.Globalization.CultureAndRegionInfoBuilder.CompareInfo%2A>プロパティの両方をサポートしてカルチャおよび大文字小文字を区別して文字列を比較します。 <xref:System.Globalization.CompareInfo>オブジェクトを含むメソッドにもあります、<xref:System.Globalization.CompareOptions>カルチャ、大文字と小文字の比較をサポートしているパラメーターです。 これら 2 つのプロパティを割り当てる必要があります<xref:System.Globalization.TextInfo>と<xref:System.Globalization.CompareInfo>を同じロケールを表すオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">この操作は置換カルチャではサポートされていません。</exception>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">リスト区切り記号の文字数はない範囲 0 ~ 3 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterISOLanguageName">
+      <MemberSignature Language="C#" Value="public string ThreeLetterISOLanguageName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterISOLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISOLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このカスタム カルチャの言語に対する ISO 639-2 の 3 文字のコードを取得または設定します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの言語に対する ISO 639-2 の 3 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISOLanguageName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.ThreeLetterISOLanguageName%2A>プロパティです。  
+  
+ たとえば、英語の 3 文字の省略形は"eng です"。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterISORegionName">
+      <MemberSignature Language="C#" Value="public string ThreeLetterISORegionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterISORegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISORegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ISO 3166 で定義された国/地域の 3 文字コードを取得または設定します。</summary>
+        <value>ISO 3166 で定義された国/地域の 3 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISORegionName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティです。  
+  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISORegionName%2A>プロパティには、国/地域の ISO 3166 で定義されている 3 文字のコードのいずれかが含まれます。 たとえば、米国の 3 文字コードは、"USA"です。  
+  
+ 場合は、意味はありません。 ただし、 <xref:System.Globalization.CultureAndRegionInfoBuilder.RegionName%2A>、 <xref:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISORegionName%2A>、および<xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterISORegionName%2A>プロパティには、大文字で適切なコードが含まれています。  
+  
+ 事前定義された国/地域の名前にある、<xref:System.Globalization.RegionInfo>クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterWindowsLanguageName">
+      <MemberSignature Language="C#" Value="public string ThreeLetterWindowsLanguageName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterWindowsLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows API の定義に従って、言語に対する 3 文字のコードを取得または設定します。</summary>
+        <value>Windows API で定義されている言語に対する 3 文字のコード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsLanguageName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.ThreeLetterWindowsLanguageName%2A>プロパティです。  
+  
+ このプロパティは、Windows API のメソッドと同じ値を返します`GetLocaleInfo`はします。 たとえば、英語 (米国) は、Windows API で定義されているの 3 文字コードは、"enu"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+        <exception cref="T:System.NotSupportedException">設定操作では、現在のカスタム カルチャは、置換カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterWindowsRegionName">
+      <MemberSignature Language="C#" Value="public string ThreeLetterWindowsRegionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterWindowsRegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsRegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカスタム カルチャが表す国/地域に対して Windows が割り当てる 3 文字コードを取得または設定します。</summary>
+        <value>この <see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトが表す国/地域に対して Windows が割り当てる 3 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.ThreeLetterWindowsRegionName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.ThreeLetterWindowsRegionName%2A>プロパティです。  
+  
+ たとえば、米国の 3 文字コードは、"USA"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+        <exception cref="T:System.NotSupportedException">セット操作の現在のカスタム カルチャは置換カルチャまたはニュートラル カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoLetterISOLanguageName">
+      <MemberSignature Language="C#" Value="public string TwoLetterISOLanguageName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TwoLetterISOLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISOLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの言語に対する ISO 639-1 の 2 文字のコードを取得または設定します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの言語に対する ISO 639-1 の 2 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISOLanguageName%2A>プロパティに対応して、<xref:System.Globalization.CultureInfo.TwoLetterISOLanguageName%2A>プロパティです。  
+  
+ たとえば、英語の 2 文字コードは"en"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoLetterISORegionName">
+      <MemberSignature Language="C#" Value="public string TwoLetterISORegionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TwoLetterISORegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISORegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ISO 3166 で定義された国/地域の 2 文字のコードを取得または設定します。</summary>
+        <value>ISO 3166 で定義された国/地域の 2 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISORegionName%2A>プロパティに対応して、<xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>プロパティです。  
+  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.TwoLetterISORegionName%2A>プロパティの値が 2 文字のコードを ISO 3166 で定義された国/地域のいずれか。 たとえば、米国の 2 文字のコードは、"US"です。 定義済み<xref:System.Globalization.RegionInfo>名前にある、<xref:System.Globalization.RegionInfo>クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">セット操作の値は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で値の長さはない範囲 1 ~ 8 文字です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値には、範囲に含まれていない文字が含まれています。"a"に"z"、"z"、"A"または"0"から"9"です。</exception>
+        <exception cref="T:System.NotSupportedException">設定操作では、現在のカスタム カルチャは、ニュートラル カルチャです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public static void Unregister (string cultureName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(string cultureName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureAndRegionInfoBuilder.Unregister(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">削除するカスタム カルチャの名前。</param>
+        <summary>ローカル コンピューターからカスタム カルチャを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureAndRegionInfoBuilder.Unregister%2A>メソッドの逆では、<xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>メソッドです。 <xref:System.Globalization.CultureAndRegionInfoBuilder.Register%2A>メソッドでは、カスタム カルチャを格納、グローバリゼーション ディレクトリのサブディレクトリに、Win32 API によって返される、ローカル コンピューター上のファイルとして[GetWindowsDirectory](http://go.microsoft.com/fwlink/?LinkId=191561)関数。 <xref:System.Globalization.CultureAndRegionInfoBuilder.Unregister%2A>メソッドは、コンピューターからカスタム カルチャの永続化されたファイルを削除します。 ファイルを削除した後、コンピューターのメモリ内のカスタム カルチャの既存のインスタンスが作業を継続が、カスタム カルチャの新しいインスタンスを作成することはできません。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.CultureAndRegionInfoBuilder.Unregister%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.carib.unregister#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib.unregister/CS/unregister.cs#1)]
+ [!code-vb[sys.glob.carib.unregister#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib.unregister/VB/unregister.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="cultureName" />親カルチャまたは依存のカルチャのコンソール フォールバック ユーザー インターフェイス カルチャです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーには、管理者特権がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="cultureName" />見つからないカルチャを指定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

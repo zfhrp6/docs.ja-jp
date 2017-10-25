@@ -1,0 +1,546 @@
+<Type Name="KeyInfoX509Data" FullName="System.Security.Cryptography.Xml.KeyInfoX509Data">
+  <TypeSignature Language="C#" Value="public class KeyInfoX509Data : System.Security.Cryptography.Xml.KeyInfoClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyInfoX509Data extends System.Security.Cryptography.Xml.KeyInfoClause" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.KeyInfoClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;X509Data&gt;" /> XMLDSIG または XML 暗号化のサブ要素<see langword="&lt;KeyInfo&gt;" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.KeyInfoX509Data>クラスを表します、 `<X509Data>` X.509v3 証明書の情報を格納する要素が、検証または暗号化キーに関連します。 たとえば、`<X509Data>`要素は、X.509 証明書サブジェクト公開キーは、検証キー、または検証キー、証明書、またはその他の関連する X.509 証明書識別子を終了する X.509 証明書のチェーンを含めることができます。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data>クラスに X.509 証明書データを暗号化または署名された XML ドキュメントに含める必要がある場合。  
+  
+ 詳細については、`<X509Data>`要素、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) から入手できますが、XMLDSIG の仕様のセクション 4.4.4 を参照してください。 または www.w3.org/TR/xmlenc-core/で W3C から利用できる XML 暗号化の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、デタッチされた署名を使用して XML ファイルに署名する方法を示します。 2 番目の例では、エンベロープ署名を使用して XML ファイルに署名する方法を示します。  
+  
+ **例 1**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/CPP/examplecreatedetached.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/CS/examplecreatedetached.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/VB/examplecreatedetached.vb#1)]  
+  
+ **例 2**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/CPP/examplecreateenvelope.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/CS/examplecreateenvelope.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/VB/examplecreateenvelope.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyInfoX509Data ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyInfoX509Data (byte[] rgbCert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rgbCert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rgbCert" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbCert">ASN.1 DER エンコード、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />オブジェクトの新しいインスタンスを初期化するために<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />からです。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" /> X.509v3 証明書の指定した ASN.1 DER エンコードからのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyInfoX509Data (System.Security.Cryptography.X509Certificates.X509Certificate cert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate cert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cert" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="cert"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />オブジェクトの新しいインスタンスを初期化するために<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />からです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />指定の X.509v3 証明書からのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、デタッチされた署名を使用して XML ファイルに署名する方法を示します。 2 番目の例では、エンベロープ署名を使用して XML ファイルに署名する方法を示します。  
+  
+ **例 1**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/CPP/examplecreatedetached.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/CS/examplecreatedetached.cs#2)]
+ [!code-vb[System.Security.Cryptography.XML.KeyInfoX509Data_Detached#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Detached/VB/examplecreatedetached.vb#2)]  
+  
+ **例 2**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/CPP/examplecreateenvelope.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/CS/examplecreateenvelope.cs#2)]
+ [!code-vb[System.Security.Cryptography.XML.KeyInfoX509Data_Envelope#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.KeyInfoX509Data_Envelope/VB/examplecreateenvelope.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cert" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyInfoX509Data (System.Security.Cryptography.X509Certificates.X509Certificate cert, System.Security.Cryptography.X509Certificates.X509IncludeOption includeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate cert, valuetype System.Security.Cryptography.X509Certificates.X509IncludeOption includeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509IncludeOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cert" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="includeOption" Type="System.Security.Cryptography.X509Certificates.X509IncludeOption" />
+      </Parameters>
+      <Docs>
+        <param name="cert"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />オブジェクトの新しいインスタンスを初期化するために<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />からです。</param>
+        <param name="includeOption">1 つ、<see cref="T:System.Security.Cryptography.X509Certificates.X509IncludeOption" />に含める証明書チェーンの量を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />指定の X.509v3 証明書からのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data>署名と、XML ドキュメントの検証中にオブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.KeyInfoX509Data#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.KeyInfoX509Data/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.KeyInfoX509Data#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.KeyInfoX509Data/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cert" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書には、のみ部分的な証明書チェーンがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCertificate">
+      <MemberSignature Language="C#" Value="public void AddCertificate (System.Security.Cryptography.X509Certificates.X509Certificate certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCertificate(class System.Security.Cryptography.X509Certificates.X509Certificate certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.AddCertificate(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />に追加するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>指定された x.509 v3 証明書を追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="certificate" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddIssuerSerial">
+      <MemberSignature Language="C#" Value="public void AddIssuerSerial (string issuerName, string serialNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddIssuerSerial(string issuerName, string serialNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.AddIssuerSerial(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuerName" Type="System.String" />
+        <Parameter Name="serialNumber" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuerName">追加するペアの発行者名の部分、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <param name="serialNumber">追加するペアのシリアル番号の部分、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>指定した発行者名とシリアル番号のペアを追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id に、各 X.509v3 証明書は、証明機関によって割り当てられた一意のシリアル番号と組み合わせて使用する証明書を発行した証明機関の名前を実行します。  
+  
+ <xref:System.Security.Cryptography.Xml.KeyInfoX509Data.AddIssuerSerial%2A>メソッドの一覧に、発行者名とシリアル番号のペアについての情報を追加する<xref:System.Security.Cryptography.Xml.X509IssuerSerial>経由でアクセスできるオブジェクト、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data.IssuerSerials%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddSubjectKeyId">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>サブジェクト キー識別子 (SKI) を追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクト キー識別子 (Ski) は、特定の公開キーを含む証明書を識別するためのショートハンド方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddSubjectKeyId">
+      <MemberSignature Language="C#" Value="public void AddSubjectKeyId (byte[] subjectKeyId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSubjectKeyId(unsigned int8[] subjectKeyId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.AddSubjectKeyId(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subjectKeyId" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="subjectKeyId">サブジェクト キー識別子を追加するには、(SKI) を表すバイト配列、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>指定されたサブジェクト キー識別子 (SKI) バイト配列を追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクト キー識別子 (Ski) は、特定の公開キーを含む証明書を識別する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSubjectKeyId">
+      <MemberSignature Language="C#" Value="public void AddSubjectKeyId (string subjectKeyId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSubjectKeyId(string subjectKeyId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.AddSubjectKeyId(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subjectKeyId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subjectKeyId">サブジェクト キー識別子を追加するには、(SKI) を表す文字列、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>指定されたサブジェクト キー識別子 (SKI) 文字列を追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクト キー識別子 (Ski) は、特定の公開キーを含む証明書を識別するためのショートハンド方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSubjectName">
+      <MemberSignature Language="C#" Value="public void AddSubjectName (string subjectName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddSubjectName(string subjectName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.AddSubjectName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subjectName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subjectName">追加する X.509 証明書が発行されたエンティティの名前、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>X.509v3 証明書に発行されたエンティティのサブジェクト名を追加、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificates">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList Certificates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList Certificates" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.KeyInfoX509Data.Certificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれている X.509v3 証明書の一覧を取得、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <value>含まれている X.509 証明書の一覧、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CRL">
+      <MemberSignature Language="C#" Value="public byte[] CRL { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CRL" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.KeyInfoX509Data.CRL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれる証明書失効リスト (CRL)、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <value>証明書失効リスト (CRL) に含まれる、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <returns>XML 表現、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlElement>このメソッドによって返されるオブジェクトは XMLDSIG または XML 暗号化のサブ要素として使用するのに適した`<KeyInfo>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerSerials">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList IssuerSerials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList IssuerSerials" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.KeyInfoX509Data.IssuerSerials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />発行者名とシリアル番号ペアを表す構造体。</summary>
+        <value>一連の<see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />発行者名とシリアル番号ペアを表す構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.KeyInfoX509Data.IssuerSerials%2A>プロパティを表す、 `<X509IssuerSerial`> 要素のリストを使用して、XML デジタル署名の<xref:System.Security.Cryptography.Xml.X509IssuerSerial>内に含まれる構造体。  `<X509IssuerSerial`> 要素は、特定の X.509v3 証明書を識別する発行者名とシリアル番号ペアを表します。  
+  
+ X.509 証明書の発行者は、証明書を発行した証明機関の名前です。 証明機関では、一意のシリアル番号を発行する各証明書を割り当てます。  
+  
+ 名前を使用してシリアル番号ペアを追加することができます、<xref:System.Security.Cryptography.Xml.KeyInfoX509Data.AddIssuerSerial%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public override void LoadXml (System.Xml.XmlElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadXml(class System.Xml.XmlElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyInfoX509Data.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Xml.XmlElement" />の状態を指定するオブジェクト、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</param>
+        <summary>入力を解析して<see cref="T:System.Xml.XmlElement" />オブジェクトし、の内部状態を構成、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />と一致するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが使用される通常のプロセスに、`<X509Data>`のサブ要素、`<KeyInfo>`要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="element" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="element" />パラメーターが含まれていない、 &lt; <see langword="X509IssuerName" /> &gt;ノード。  
+  
+ または  
+  
+ <paramref name="element" />パラメーターが含まれていない、 &lt; <see langword="X509SerialNumber" /> &gt;ノード。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectKeyIds">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList SubjectKeyIds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList SubjectKeyIds" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.KeyInfoX509Data.SubjectKeyIds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるサブジェクト キー識別子 (Ski) の一覧を取得、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <value>含まれるサブジェクト キー識別子 (Ski) の一覧、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクト キー識別子 (Ski) は、特定の公開キーを含む証明書を識別する方法です。 SKI は、特定のサブジェクトのキー ペアに発行された証明書が 1 つまたは複数の識別に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList SubjectNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList SubjectNames" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.KeyInfoX509Data.SubjectNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるエンティティのサブジェクト名の一覧を取得、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</summary>
+        <value>含まれるエンティティのサブジェクト名の一覧、<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての X.509v3 証明書には、サブジェクト名が含まれています。 この名前は 1 つまたは複数の証明書を識別するためにことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

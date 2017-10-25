@@ -1,0 +1,1316 @@
+<Type Name="WindowsFormsApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase">
+  <TypeSignature Language="C#" Value="public class WindowsFormsApplicationBase : Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WindowsFormsApplicationBase extends Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ、メソッド、および現在のアプリケーションに関連するイベントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Application`オブジェクトの現在のアプリケーションまたは DLL にのみ関連付けられているデータを返す。 システム レベル以外の情報は、`My.Application` に変更される可能性があります。  
+  
+ `My.Application` オブジェクトは、次のクラスで構成されています。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> は、すべてのプロジェクトで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>Windows フォーム アプリケーションで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>コンソール アプリケーションで使用可能なメンバーを提供します。  
+  
+   
+  
+## Examples  
+ この例は、アプリケーションの開いているフォームを反復処理するループを使用して、フォームには、現在のスレッドで直接アクセスできるを選択しのタイトルを表示、<xref:System.Windows.Forms.ListBox>コントロール。 開いているフォームにアクセスする方法については、次を参照してください。<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>です。  
+  
+ [!code-vb[VbVbalrMyApplication#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#10)]  
+  
+ この例では、Windows フォーム アプリケーションは、という名前のフォームである必要があります`Form1`という名前のリスト ボックスを格納している`ListBox1`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsFormsApplicationBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsFormsApplicationBase (Microsoft.VisualBasic.ApplicationServices.AuthenticationMode authenticationMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(valuetype Microsoft.VisualBasic.ApplicationServices.AuthenticationMode authenticationMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor(Microsoft.VisualBasic.ApplicationServices.AuthenticationMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="authenticationMode" Type="Microsoft.VisualBasic.ApplicationServices.AuthenticationMode" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationMode">
+          <see cref="T:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode" />。 アプリケーションの認証モードを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />した認証モードを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`authenticationMode`パラメーターは、<xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows>列挙値が このコンス トラクターが現在のスレッドを設定しよう<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティを<xref:System.Security.Principal.WindowsPrincipal>現在のユーザーです。  
+  
+ 場合、`authenticationMode`パラメーターは、<xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.ApplicationDefined>列挙値が このコンス トラクターが現在のスレッドの<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ApplicationContext ApplicationContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ApplicationContext ApplicationContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ApplicationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ApplicationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Windows.Forms.ApplicationContext" /> Windows フォーム アプリケーションの現在のスレッドのオブジェクト。</summary>
+        <value>このプロパティを返します、<see cref="T:System.Windows.Forms.ApplicationContext" />現在のスレッド オブジェクト。 そのオブジェクトには、スレッドのコンテキスト情報が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、高度なメンバーの場合です。クリックするまで、IntelliSense では表示されない、**すべて**タブです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoEvents">
+      <MemberSignature Language="C#" Value="public void DoEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void DoEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.DoEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージ キューに現在ある Windows メッセージをすべて処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.DoEvents`メソッドにより、アプリケーションが発生したコードの実行を作成中に他のイベントを処理します。 `My.Application.DoEvents`メソッドと同じ動作には、<xref:System.Windows.Forms.Application.DoEvents%2A>メソッドです。  
+  
+ Windows フォーム アプリケーションを実行する場合は、イベントが処理されるを待機し、新しいフォームを作成します。 フォームは、イベントを処理するたびに、ボタンのクリックしてなどは処理そのイベントに関連付けられているすべてのコード。 その他のすべてのイベントは、キューで待機します。 コードでは、イベントを処理するときに、アプリケーションが応答しません。 たとえば、ウィンドウが再描画されない上で別のウィンドウがドラッグした場合。  
+  
+ 呼び出す場合`My.Application.DoEvents`コードで、アプリケーションが他のイベントを処理できます。 たとえば、次のコードを追加するデータ、<xref:System.Windows.Forms.ListBox>ループでとを呼び出すループの各手順の後に`My.Application.DoEvents`、上にある別のウィンドウがドラッグされると、フォームが再描画します。 削除する場合`My.Application.DoEvents`コードで、フォームが再描画されないボタンの click イベント ハンドラーが完了するまで実行します。  
+  
+ 通常、メッセージを処理するループ内でこのメソッドを使用します。  
+  
+> [!NOTE]
+>  `My.Application.DoEvents`の形式として、メソッドがまったく同じ方法でイベントを処理できません。 フォームを直接、イベントを処理するマルチ スレッドを使用します。 詳細については、次を参照してください。[マルチ スレッド アプリケーション](http://msdn.microsoft.com/library/a06a1a56-dd16-44e8-bc01-2c2255511bc6)です。  
+  
+> [!CAUTION]
+>  ユーザー インターフェイス (UI) のイベントを処理するメソッドを呼び出すかどうか、`My.Application.DoEvents`メソッド、メソッドがあります再入力が完了する前にします。 これは、ようになるため、`My.Application.DoEvents`メソッドは、Windows メッセージを処理し、Windows メッセージがイベントを発生させることができます。  
+  
+ 次の表に、関連するタスクの例、`My.Application.DoEvents`メソッドです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|フォームに入力でビジー状態で、UI に応答を許可します。|[チュートリアル : イベントの処理](~/docs/visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.DoEvents`メソッド用の UI を`TextBox1`を更新します。  
+  
+ [!code-vb[VbVbalrMyApplication#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#6)]  
+  
+ このコードがある形式にする必要があります、`TextBox1`コンポーネントを`Text`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連したアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableVisualStyles">
+      <MemberSignature Language="C#" Value="protected bool EnableVisualStyles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableVisualStyles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.EnableVisualStyles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションが windows、コントロール、およびなどの Windows XP スタイルを使用するかどうかを判断します。</summary>
+        <value>A<see cref="T:System.Boolean" />をこのアプリケーションが windows や、コントロールの XP Windows スタイルを使用するかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>メソッドを呼び出すかどうかを決定するこのプロパティを使用して<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideSplashScreen">
+      <MemberSignature Language="C#" Value="protected void HideSplashScreen ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance void HideSplashScreen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションのスプラッシュ スクリーンは表示されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>クラスは、別のスレッドで、スプラッシュ スクリーンを作成します。 このメソッドは、正しいスレッドの呼び出しをマーシャ リングします。  
+  
+ このメソッドは、メイン フォームが終わったときにロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSingleInstance">
+      <MemberSignature Language="C#" Value="protected bool IsSingleInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSingleInstance" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.IsSingleInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションが単一インスタンスのアプリケーションであるかどうかを判断します。</summary>
+        <value>A<see cref="T:System.Boolean" />をこのアプリケーションは、単一インスタンス アプリケーションかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run%2A>メソッドでは、このプロパティを使用してこのアプリケーションが単一インスタンスのアプリケーションであるかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MainForm">
+      <MemberSignature Language="C#" Value="protected System.Windows.Forms.Form MainForm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Form MainForm" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Form</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアプリケーションのメイン フォームを設定します。</summary>
+        <value>取得またはこのアプリケーションのメイン フォームを設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`MainForm`プロパティを取得または設定、<xref:System.Windows.Forms.Form>アプリケーションのメイン フォームとして、Visual Basic アプリケーションのスタートアップ/シャット ダウンのモデルを使用するオブジェクト。  
+  
+ このプロパティをサポートしている、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーションのスタートアップ/シャット ダウンのモデル。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ アプリケーションを閉じるときに、このプロパティに対する変更は保存されません。 メイン フォームを完全に変更するには、設定を変更する必要があります、**プロジェクト デザイナー**です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSplashScreenDisplayTime">
+      <MemberSignature Language="C#" Value="public int MinimumSplashScreenDisplayTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumSplashScreenDisplayTime" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スプラッシュ画面が表示される、ミリ秒単位の最小の長さを決定します。</summary>
+        <value>
+          <see langword="Integer" />。 最短時間 (ミリ秒)、スプラッシュ スクリーンが表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.MinimumSplashScreenDisplayTime`プロパティでは、アプリケーションのスプラッシュ画面を表示する時間の最小の長さを指定することができます。 メイン フォームでは、このプロパティによって指定されているより短時間での初期化が完了すると、スプラッシュ スクリーンが要求された時間が経過するれた時点で、メイン フォームが表示されるまでは保持されます。 アプリケーションは、開始する時間がかかり、スプラッシュ スクリーンが閉じられた場合、メイン フォームがアクティブになった時点です。  
+  
+ プロジェクト デザイナーを使用して、アプリケーションにスプラッシュ スクリーンを追加するときに、設定、 `My.Application.MinimumSplashScreenDisplayTime` 2000 では、2 秒間の最小の表示時間を提供するプロパティです。  
+  
+ このプロパティをサポートしている、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ 設定する必要があります、`My.Application.MinimumSplashScreenDisplayTime`プロパティをオーバーライドするメソッドに、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>または<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>メソッドです。 メソッドをオーバーライドするコード、 <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> ApplicationEvents.vb ファイルを既定で非表示のクラスを入力する必要があります。  
+  
+||  
+|-|  
+|メンバーをオーバーライドするためのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br />     詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、設定する方法を示します、`My.Application.MinimumSplashScreenDisplayTime`プロパティをオーバーライドすることで、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>プロパティです。  
+  
+ [!code-vb[VbVbalrMyApplication#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#51)]  
+  
+ この例では、プロジェクトのスプラッシュ スクリーンである必要があります。  
+  
+ アプリケーション イベントのコード エディター ウィンドウでこのコードを入力する必要があります。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkAvailabilityChanged">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワークの可用性が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、`NetworkAvailabilityChanged`イベント、ネットワークの可用性が変更されるたびにします。 使用することができます、<xref:Microsoft.VisualBasic.Devices.NetworkAvailableEventArgs.IsNetworkAvailable%2A>のプロパティ、`e`パラメーターをネットワーク接続の新しい状態を取得します。 ネットワーク接続の現在の状態を取得する、<xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>プロパティです。  
+  
+ このイベントは、他のユーザー インターフェイス イベントと、アプリケーションのメイン スレッドで発生します。 これにより、アプリケーションの UI に直接アクセスする、イベント ハンドラーです。 ただし場合、アプリケーションがこのイベントが発生したときに別のユーザー インターフェイス イベントを処理でビジー状態である場合、このイベントは処理できません、他のイベント ハンドラーが完了するかを呼び出すまで、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.DoEvents%2A>メソッドです。  
+  
+ <xref:Microsoft.VisualBasic.Devices.Network.NetworkAvailabilityChanged>イベントは、このイベントが利用できるあらゆる種類のアプリケーションのように同じ機能を提供します。  
+  
+ コードを`NetworkAvailabilityChanged`ApplicationEvents.vb ファイルを既定で非表示にイベント ハンドラーが格納されています。  
+  
+||  
+|-|  
+|アプリケーション イベントのコード エディター ウィンドウにアクセスするには|  
+|1.選択されているプロジェクトがある**ソリューション エクスプ ローラー。** をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br />     詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+> [!NOTE]
+>  ハブがより大きなネットワークから切断されている場合でも、多くのネットワーク ハブは、ネットワーク接続を提供します。 その結果、ワイヤード (有線) 接続は、このイベントは、コンピューターとハブの間の接続の変更を示します。  
+  
+> [!NOTE]
+>  `NetworkAvailabilityChanged` Windows 95 および Windows 98 で実行された場合、または Windows 2000 で、管理者以外で実行された場合、アプリケーションによってイベントが発生しません。 これらのオペレーティング システムが実行されるアプリケーション場合を使用して、<xref:Microsoft.VisualBasic.Devices.Network.IsAvailable%2A>ネットワークの可用性を確認するプロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、 `SetConnectionStatus` 、既定のメソッド`Form1`クラスのネットワークの可用性が変更されたときにします。  
+  
+ アプリケーション イベントのコード エディター ウィンドウで、コードを入力する必要があります。 このウィンドウにアクセスするにこのトピックの「解説」セクションから指示に従います。  
+  
+ プロジェクトは、という名前のフォームを持つ必要があります`Form1`です。 という名前のメソッドが必要となります`SetConnectionStatus`を受け取る、`Boolean`パラメーター。  
+  
+ [!code-vb[VbVbalrMyApplication#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateMainForm">
+      <MemberSignature Language="C#" Value="protected virtual void OnCreateMainForm ();" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnCreateMainForm() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、スプラッシュ スクリーンとメイン フォームを構成するコードを出力するデザイナーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドは何も行いません。 ただしでのアプリケーションのメイン フォームを選択すると、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **プロジェクト デザイナー**、デザイナー設定するメソッドでこのメソッドはオーバーライド、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>プロパティをメイン フォームの新しいインスタンスにします。  
+  
+ このメソッドは、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateSplashScreen">
+      <MemberSignature Language="C#" Value="protected virtual void OnCreateSplashScreen ();" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnCreateSplashScreen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、スプラッシュ スクリーンを初期化するコードを出力するデザイナーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドは何も行いません。 アプリケーションのスプラッシュ スクリーンを選択するかどうか、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>プロパティ スプラッシュ スクリーン フォームの新しいインスタンスをします。  
+  
+ このメソッドは、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialize">
+      <MemberSignature Language="C#" Value="protected virtual bool OnInitialize (System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; commandLineArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnInitialize(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; commandLineArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize(System.Collections.ObjectModel.ReadOnlyCollection{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.STAThread</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLineArgs" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="commandLineArgs">A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see langword="String" />、現在のアプリケーションの文字列としてコマンドライン引数を格納します。</param>
+        <summary>Visual スタイル、テキストの表示スタイル、および (アプリケーションでは、Windows 認証を使用) 場合は、メイン アプリケーション スレッドの現在のプリンシパルを設定し、定義されている場合は、スプラッシュ スクリーンを初期化します。</summary>
+        <returns>A<see cref="T:System.Boolean" />を示すかどうか、アプリケーションの起動が続行する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイル、テキストの表示スタイル、および (アプリケーションでは、Windows 認証を使用) 場合は、メイン アプリケーション スレッドの現在のプリンシパル既定では、このメソッドを設定および呼び出し`ShowSplashScreen`どちらの場合`/nosplash`も`-nosplash`コマンドラインの引数として使用されます。  
+  
+ このメソッドは、次のメソッドを呼び出します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None." />
+      </Docs>
+    </Member>
+    <Member MemberName="OnRun">
+      <MemberSignature Language="C#" Value="protected virtual void OnRun ();" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnRun() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>場合、メイン アプリケーション初期化の完了後も、実行を開始する準備が開始点を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、Windows フォームのメッセージ ループに入るまでこのメソッドは、 `OnCreateMainForm` (フォームを作成するアプリケーションのメイン) と`HideSplashScreen`にスプラッシュ スクリーン) メソッド。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>。 デザイナーでメイン フォームの初期化コードを出力する方法を提供します。  
+  
+     既定では、このメソッドは何も行いません。 ただしでのアプリケーションのメイン フォームを選択すると、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **プロジェクト デザイナー**、デザイナーをオーバーライドし、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm%2A>メソッドを設定するメソッドを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm%2A>プロパティをメイン フォームの新しいインスタンスにします。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen%2A>。 アプリケーションが定義されているスプラッシュ スクリーンが開いている場合は、このメソッドは、スプラッシュ スクリーンを閉じます。  
+  
+     既定では、このメソッドは、スプラッシュ スクリーンを閉じます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnShutdown">
+      <MemberSignature Language="C#" Value="protected virtual void OnShutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnShutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、アプリケーションのシャット ダウン時に実行するコードをできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メイン アプリケーションでハンドルされない例外が発生した場合に実行されません。  
+  
+ 既定では、このメソッドを発生させます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartup">
+      <MemberSignature Language="C#" Value="protected virtual bool OnStartup (Microsoft.VisualBasic.ApplicationServices.StartupEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnStartup(class Microsoft.VisualBasic.ApplicationServices.StartupEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup(Microsoft.VisualBasic.ApplicationServices.StartupEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgs" Type="Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgs">
+          <see cref="T:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />。 アプリケーションのコマンドライン引数を格納し、アプリケーションの起動を取り消す必要があるかどうかを示します。</param>
+        <summary>派生クラスでオーバーライドされるは、アプリケーションの起動時に実行するコードをできるようにします。</summary>
+        <returns>A<see cref="T:System.Boolean" />を示すかどうか、アプリケーションが起動を続行する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドを発生させます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>イベント。 イベント ハンドラーを設定できる、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>イベント引数のプロパティです。 場合<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>は`True`、このメソッドが戻る`False`をアプリケーションの起動を取り消します。 このメソッドを返しますそれ以外の場合、`True`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartupNextInstance">
+      <MemberSignature Language="C#" Value="protected virtual void OnStartupNextInstance (Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnStartupNextInstance(class Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgs" Type="Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgs">
+          <see cref="T:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />。 後続のアプリケーション インスタンスのコマンドライン引数を格納し、例外ハンドラーの終了時に、フォア グラウンドに最初のアプリケーション インスタンスを挿入する必要があるかどうかを示します。</param>
+        <summary>派生クラスでオーバーライドされるは、単一インスタンス アプリケーション、後続のインスタンスの起動時に実行するコードをできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドを発生させます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント。 イベント ハンドラーを設定できる、<xref:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.BringToForeground%2A>イベント引数のプロパティです。 場合<xref:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.BringToForeground%2A>は`True`メソッドがメイン フォームをアクティブにします。 それ以外の場合、メイン フォームは、現在の状態に残されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUnhandledException">
+      <MemberSignature Language="C#" Value="protected virtual bool OnUnhandledException (Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnUnhandledException(class Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException(Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">
+          <see cref="T:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />。</param>
+        <summary>派生クラスでオーバーライドされるは、アプリケーションでハンドルされない例外が発生したときに実行するコードをできるようにします。</summary>
+        <returns>A<see cref="T:System.Boolean" />を示すかどうか、<see cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException" />イベントが発生しました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドを発生させます、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>イベントをデバッガーがアタッチされていないと、ユーザーの処理とならない限り、`UnhandledException`イベント。 イベント ハンドラーを設定できる、<xref:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs.ExitApplication%2A>プロパティです。 場合<xref:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs.ExitApplication%2A>は`False`、例外ハンドラーから戻ったとき、アプリケーションが終了したイベントが処理されない場合またはします。 それ以外の場合、アプリケーションのコントロールは、Windows フォームのメッセージ ループに返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenForms">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FormCollection OpenForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.FormCollection OpenForms" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのすべての開いているフォームのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.FormCollection" />すべてのアプリケーションの開いているフォームを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.OpenForms`プロパティは、アプリケーションのすべての開いているフォームのコレクションを取得します。 動作と同じでは、<xref:System.Windows.Forms.Application.OpenForms%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  `My.Application.OpenForms`プロパティを返します、開いているすべてのフォームに関係なく開いたスレッドのです。 チェックする必要があります、 <xref:System.Windows.Forms.Control.InvokeRequired%2A> ; にアクセスする前に各フォームのプロパティがスローそれ以外の場合、<xref:System.InvalidOperationException>例外。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、アプリケーションの開いているフォームをループ処理し、現在のスレッドで直接アクセスできるを選択しのタイトルを表示、<xref:System.Windows.Forms.ListBox>コントロール。 この例では、Windows フォーム アプリケーションは、という名前のフォームである必要があります`Form1`という名前のリスト ボックスを格納している`ListBox1`です。  
+  
+ [!code-vb[VbVbalrMyApplication#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#10)]  
+  
+ この例は、アプリケーションの開いているフォームをループ処理しのタイトルを表示、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+ [!code-vb[VbVbalrMyApplication#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public void Run (string[] commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Run(string[] commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLine" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">型の配列<see langword="String" />です。 コマンドラインから<see langword="Sub Main" />です。</param>
+        <summary>設定し、Visual Basic アプリケーション モデルを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.Run`メソッドのサポートを提供する、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。 このメソッドは、アプリケーションからのみ呼び出す必要があります`Sub Main`です。 既定では、 `Sub Main` Windows フォームのアプリケーションがこのメソッドを呼び出します。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">すべての環境変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリ変数へのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連したアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+        <permission cref="T:System.Net.WebPermission">HTTP インターネット リソースにアクセスする権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Net.SocketPermission">作成およびトランスポート アドレスで接続を受け入れる権限を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Diagnostics.PerformanceCounterPermission">Windows NT パフォーマンス カウンター コンポーネントへのアクセスを制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveMySettingsOnExit">
+      <MemberSignature Language="C#" Value="public bool SaveMySettingsOnExit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SaveMySettingsOnExit" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SaveMySettingsOnExit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが終了時にユーザー設定を保存するかどうかを判断します。</summary>
+        <value>
+          <see langword="Boolean" />。 <see langword="True" />アプリケーションが終了時にユーザー設定を保存することを示します。 それ以外の場合、設定は暗黙的に保存されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SaveMySettingsOnExit`プロパティにより、ユーザーは、アプリケーションが実行時に、設定を保存する方法を変更します。 使用して設定の変更を明示的に保存することができます、<xref:System.Configuration.ApplicationSettingsBase.Save%2A>のメソッド、`My.Settings`オブジェクト。 詳細については、変更して、設定を保存して、次を参照してください。[アプリケーション プロパティ](http://msdn.microsoft.com/library/0ad4926f-636e-41f8-a5b1-faf9d9b0a254)です。  
+  
+ アプリケーションを閉じるときに、このプロパティに対する変更は保存されません。 変更する、`SaveMySettingsOnExit`プロパティ永続的にする必要がありますで設定を変更、**プロジェクト デザイナー**:  
+  
+||  
+|-|  
+|プロジェクト デザイナーで設定を変更するには|  
+|1.**ソリューション エクスプローラー**でプロジェクトを選択します。 をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.選択**シャット ダウン時に My.Settings を保存**です。|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例には、2 つの部分があります。  
+  
+-   `InitializeSaveMySettingsOnExit`のチェック状態を初期化するサブルーチン、<xref:System.Windows.Forms.CheckBox>コントロールの現在の値を`SaveMySettingsOnExit`プロパティです。  
+  
+-   `SaveMySettingsOnExit_CheckedChanged`への変更を処理するサブルーチン、<xref:System.Windows.Forms.CheckBox>更新コントロール、`My.Application.SaveMySettingsOnExit`プロパティです。  
+  
+ [!code-vb[VbVbalrMyApplication#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#12)]  
+  
+ この例を実行するアプリケーションが必要な<xref:System.Windows.Forms.CheckBox>という名前のコントロール`SaveMySettingsOnExit`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSplashScreen">
+      <MemberSignature Language="C#" Value="protected void ShowSplashScreen ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance void ShowSplashScreen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>かどうかをアプリケーション定義、スプラッシュ スクリーンし、そのような場合は、それを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドを呼び出す`OnCreateSplashScreen`スレッド セーフな方法でします。  
+  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>メソッドには、スプラッシュを表示するコードが含まれています。 少なくともで指定された時間をミリ秒単位での画面、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>プロパティです。 この機能を使用するに設定する必要があります、`My.Application.MinimumSplashScreenDisplayTime`プロパティをオーバーライドするメソッドに、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen%2A>または<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen%2A>メソッド、スプラッシュ スクリーンに追加するアプリケーションを使用して、または、**プロジェクト デザイナー**です。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime%2A>」を参照してください。  
+  
+ このメソッドは、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler Shutdown;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler Shutdown" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのシャット ダウン時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、`Shutdown`イベント セッションを終了する前にします。 これにより、アプリケーションがそのリソースを閉じる方法を制御できます。 このイベントの一部である、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ コードを`Shutdown`ApplicationEvents.vb ファイルを既定で非表示にイベント ハンドラーが格納されています。  
+  
+||  
+|-|  
+|アプリケーション イベントのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br />     詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、アプリケーションのシャット ダウン時にメッセージを記録します。  
+  
+ [!code-vb[VbVbalrMyApplication#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#13)]  
+  
+ アプリケーション イベントのコード エディター ウィンドウで、コードを入力する必要があります。 このウィンドウにアクセスするにこのトピックの「解説」セクションから指示に従います。 詳細については、次を参照してください。[する方法: ログ メッセージと、アプリケーションの起動時またはシャット ダウン](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownStyle">
+      <MemberSignature Language="C#" Value="protected Microsoft.VisualBasic.ApplicationServices.ShutdownMode ShutdownStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.ApplicationServices.ShutdownMode ShutdownStyle" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.ShutdownMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのメイン フォームが閉じたときの動作を決定します。</summary>
+        <value>A<see cref="T:Microsoft.VisualBasic.ApplicationServices.ShutdownMode" />アプリケーションに何がメイン フォームが閉じたときを示す、列挙型値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed%2A>メソッドがメイン フォームが閉じられる、または新しいメイン フォームとしてフォームを昇格する場合は別の開いているときに、アプリケーションをシャット ダウンかどうかを決定するには、このプロパティの値を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplashScreen">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Form SplashScreen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Form SplashScreen" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Form</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのアプリケーションのスプラッシュ スクリーンを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Form" />アプリケーションがスプラッシュ スクリーンとして使用するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.SplashScreen`プロパティでは、取得または設定することができます、<xref:System.Windows.Forms.Form>アプリケーションがスプラッシュ スクリーンとして使用するオブジェクト、アプリケーションの開始中に表示される最初のグラフィック形式です。  
+  
+ このプロパティは、Visual Basic アプリケーション モデルをサポートします。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ アプリケーションを閉じるときに、このプロパティに対する変更は保存されません。 スプラッシュ スクリーンを完全に変更するで設定を変更する必要があります、**プロジェクト デザイナー**です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.SplashScreen`プロパティおよび`My.Application.Startup`アプリケーションの起動時に状態情報とスプラッシュ スクリーンを更新するイベントです。  
+  
+ [!code-vb[VbVbalrMyApplication#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#14)]  
+  
+ この例では、プロジェクトのスプラッシュ スクリーンがという名前である必要があります`SplashScreen1`です。 スプラッシュ スクリーンがという名前のプロパティを持つ必要がある`Status`ユーザー インターフェイスを更新します。  
+  
+ アプリケーション イベントのコード エディター ウィンドウでこのコードを入力する必要があります。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに同じ値を代入し、<see cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Startup">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.StartupEventHandler Startup;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.StartupEventHandler Startup" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.StartupEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの起動時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常の (単一インスタンスではない) アプリケーションを発生させる、`Startup`イベントを起動するたびにします。 単一インスタンス アプリケーションが発生させる、`Startup`イベントを発生させる場合は、アプリケーションは既にアクティブです。 それ以外の場合、専用の開始時に、`StartupNextInstance`イベント。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>」を参照してください。  
+  
+ このイベントの一部である、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ 使用することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、`e`アプリケーションのスタートアップ フォームの読み込みを制御するパラメーターです。 ときに、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティに設定されている`True`、スタートアップ フォームが起動しません。 その場合は、コードでは、別のスタートアップ コード パスを呼び出す必要があります。  
+  
+ 使用することができます、<xref:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs.CommandLine%2A>のプロパティ、`e`パラメーターまたは<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>アプリケーションのコマンドライン引数にアクセスするプロパティです。  
+  
+ コードを`Startup`ApplicationEvents.vb ファイルを既定で非表示にイベント ハンドラーが格納されています。  
+  
+||  
+|-|  
+|アプリケーション イベントのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br /><br /> 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.SplashScreen`プロパティおよび`My.Application.Startup`アプリケーションの起動時に状態情報とスプラッシュ スクリーンを更新するイベントです。  
+  
+ [!code-vb[VbVbalrMyApplication#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#14)]  
+  
+ この例では、プロジェクトのスプラッシュ スクリーンがという名前である必要があります`SplashScreen1`です。 スプラッシュ スクリーンが必要という名前のプロパティ`Status`ユーザー インターフェイスを更新します。  
+  
+ アプリケーション イベントのコード エディター ウィンドウで、コードを入力する必要があります。 このウィンドウにアクセスするにこのトピックの「解説」セクションから指示に従います。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このイベントのイベント ハンドラーを追加する機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlAppDomain" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StartupNextInstance">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventHandler StartupNextInstance;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventHandler StartupNextInstance" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単一インスタンス アプリケーションとアプリケーションを起動しようとしていますが既にアクティブなときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一インスタンス アプリケーションが発生させる、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>が既にアクティブなときに、アプリケーションを再起動しようとしたときにイベント。 アプリケーションの起動時、単一インスタンスが最初に発生、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>イベント。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup>」を参照してください。  
+  
+ このイベントの一部である、[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]アプリケーション モデルです。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ このイベントは、他のユーザー インターフェイス イベントと、アプリケーションのメイン スレッドで発生します。 これにより、アプリケーションのユーザー インターフェイスに直接アクセスする、イベント ハンドラーです。 ただし場合、アプリケーションがこのイベントが発生したときに別のユーザー インターフェイス イベントを処理でビジー状態である場合、このイベントは処理できません、他のイベント ハンドラーが完了するかを呼び出すまで、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.DoEvents%2A>メソッドです。  
+  
+> [!NOTE]
+>  `StartupNextInstance`イベントは、単一インスタンス アプリケーションでのみ発生します。 アプリケーションの単一インスタンスの動作を有効にするをチェックする必要があります、**単一インスタンス アプリケーションを作成する**プロジェクト デザイナー チェック ボックスです。  
+  
+||  
+|-|  
+|アプリケーションを単一インスタンスを作成するには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.選択、**単一インスタンス アプリケーションを作成する**チェック ボックスをオンします。|  
+  
+ 使用する必要があります、<xref:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs.CommandLine%2A>のプロパティ、`e`後続の単一インスタンス アプリケーションを起動するための引数にアクセスするパラメーターです。 <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>プロパティは、単一インスタンス アプリケーションの最初のインスタンスを開始するための引数を提供します。  
+  
+ コードを<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>ApplicationEvents.vb ファイルを既定で非表示にイベント ハンドラーが格納されています。  
+  
+||  
+|-|  
+|アプリケーション イベントのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br />     詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+ 次の表に、関連するタスクの例については、`My.Application.StartupNextInstance`イベント。  
+  
+|目的|参照トピック|  
+|-|-|  
+|最初のアプリケーション インスタンスのコマンドライン引数をチェックします。|<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|はい|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`e`のパラメーター、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント ハンドラーをアプリケーションのコマンドライン引数を確認します。 始まる引数が見つかった場合`/input=`、その引数の残りの部分が表示されます。  
+  
+ [!code-vb[VbVbalrMyApplication#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#15)]  
+  
+ アプリケーション イベントのコード エディター ウィンドウで、コードを入力する必要があります。 このウィンドウにアクセスするにこのトピックの「解説」セクションから指示に従います。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledException">
+      <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler UnhandledException;" />
+      <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler UnhandledException" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドルされない例外がアプリケーションで生じたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、`UnhandledException`未処理の例外が発生したときにイベント。 このイベントは、Visual Basic アプリケーション モデルの一部です。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ 使用することができます、<xref:System.Threading.ThreadExceptionEventArgs.Exception%2A>のプロパティ、`e`このイベントの原因となった未処理の例外にアクセスするパラメーターです。  
+  
+ 使用することができます、<xref:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs.ExitApplication%2A>のプロパティ、`e`アプリケーションが終了するかどうかを制御するパラメーターです。 既定では、<xref:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs.ExitApplication%2A>は`True`します。 そのため、アプリケーションの完了後に終了、`UnhandledException`イベント ハンドラー。 値を設定することができます`False`で、`UnhandledException`イベント ハンドラーを実行しているアプリケーションを保持して、それを待っている状態に戻ります。  
+  
+ コードを`UnhandledException`ApplicationEvents.vb ファイルを既定で非表示にイベント ハンドラーが格納されています。  
+  
+||  
+|-|  
+|アプリケーション イベントのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。|  
+  
+ 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+> [!NOTE]
+>  Visual Basic コンパイラでは、未処理の例外を処理するデバッガーを有効にする、このイベントを発生させるからデバッグのために構築されたアプリケーションをできないようにします。 つまり、Visual Studio 統合開発環境デバッガーの下で実行して、アプリケーションをテストしている場合、`UnhandledException`イベント ハンドラーは呼び出されません。 デバッグ用のアプリケーションの構築に関する詳細については、次を参照してください。 [/debug (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/debug.md)です。  
+  
+## <a name="tasks"></a>タスク  
+ 次の表に、関連するタスクの例については、`My.Application.UnhandledException`イベント。  
+  
+|目的|参照トピック|  
+|-|-|  
+|未処理の例外を記録します。|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|いいえ|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|いいえ|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.UnhandledException`未処理の例外を記録するイベントです。  
+  
+ アプリケーション イベントのコード エディター ウィンドウで、コードを入力する必要があります。 このウィンドウにアクセスするには、このトピックの「解説」セクションで説明した手順をに従います。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ `UnhandledException`アプリケーションにデバッガーをアタッチするときに、イベントは発生しませんが、Visual Studio 統合開発環境の外部には、この例を実行する必要があります。  
+  
+ [!code-vb[VbVbalrMyApplication#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このイベントのイベント ハンドラーを追加する機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlAppDomain" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCompatibleTextRendering">
+      <MemberSignature Language="C#" Value="protected static bool UseCompatibleTextRendering { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UseCompatibleTextRendering" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このプロパティは、アプリケーションのフォームの既定のテキスト レンダリング エンジンを指定するデザイナーを使用します。</summary>
+        <value>
+          <see langword="Boolean" />。 値<see langword="False" />アプリケーションでの既定のテキスト レンダリング エンジンを使用することを示します[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]です。 値<see langword="True" />アプリケーションが Visual Basic .NET 2002 および Visual Basic .NET 2003 のテキスト レンダリング エンジンを使用することを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティを返します`False`レンダリング エンジンの GDI テキストを示すために[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]のアプリケーションのフォームに使用します。 ただし、返されるには、このプロパティを上書きできます`True`し、アプリケーションのフォームが、GDI + テキスト レンダリング エンジンは Visual Basic .NET 2002 および Visual Basic .NET 2003 で使用するを使用するように指定します。  
+  
+ このプロパティは、によって呼び出される、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>コンス トラクターです。  
+  
+ メソッドをオーバーライドするコード、 <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> ApplicationEvents.vb ファイルを既定で非表示のクラスを入力する必要があります。  
+  
+||  
+|-|  
+|メンバーをオーバーライドするためのコード エディター ウィンドウにアクセスするには|  
+|1.プロジェクトを選択**ソリューション エクスプ ローラー**をクリックして**プロパティ**上、**プロジェクト**メニュー。<br />2.**[アプリケーション]** タブをクリックします。<br />3.**[アプリケーション イベントの表示]** をクリックしてコード エディターを開きます。<br />     詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。|  
+  
+   
+  
+## Examples  
+ この例は、オーバーライドすることで、アプリケーションの既定のレンダリング エンジンとして、GDI + テキスト レンダリング エンジンを設定する方法を示します、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A>プロパティです。  
+  
+```  
+Protected Overloads Shared ReadOnly Property UseCompatibleTextRendering() As Boolean  
+    Get  
+        ' Use the GDI+ text rendering engine.  
+        Return True  
+    End Get  
+End Property  
+```  
+  
+ アプリケーション イベントのコード エディター ウィンドウでこのコードを入力する必要があります。 詳細については、「[[アプリケーション] ページ (プロジェクト デザイナー) (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

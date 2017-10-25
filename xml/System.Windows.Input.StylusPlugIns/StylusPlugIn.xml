@@ -1,0 +1,610 @@
+<Type Name="StylusPlugIn" FullName="System.Windows.Input.StylusPlugIns.StylusPlugIn">
+  <TypeSignature Language="C#" Value="public abstract class StylusPlugIn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StylusPlugIn extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールの追加できるプラグインを表す<see cref="P:System.Windows.UIElement.StylusPlugIns" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>を操作することができます<xref:System.Windows.Input.StylusPoint>個別のスレッド上のオブジェクト。 個別のスレッドは、インクが描画タブレット ペンの入力データとして、アプリケーションが処理を行う場合でもされるように使用されます。  
+  
+ ハードウェアからスタイラス ポイントをインターセプトするから継承するクラスを作成、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラスです。  <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラスには、次の方法を操作するようにオーバーライドできる<xref:System.Windows.Input.StylusPoint>スレッド プールのスレッド、ペンでのオブジェクト。  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDown%2A>  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove%2A>  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusEnter%2A>  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusLeave%2A>  
+  
+ ペンの要素にルーティングされる入力<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>ペン スレッドにします。 正確なヒット テストは、ペンのスレッドで実行されることはできません、によっては、いくつかの要素がスタイラス入力用の他の要素を受け取ることがあります。 サブスクライブしで操作を実行する操作を実行する前に、入力が正しく回送されたことを確認する必要がある場合、 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed%2A>、 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A>、または<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A>メソッドです。 これらのメソッドは、正確なヒット テストが実行された後に、メイン アプリケーション スレッドで呼び出されます。 これらのメソッドをサブスクライブする、<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>ペンのスレッドで使用されるメソッドのメソッドです。 呼び出す場合など、<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove%2A>、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A>に発生します。  
+  
+> [!NOTE]
+>  使用する場合、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>コントロールの内部には、プラグインをテストおよび意図しない例外をスローしないでくださいかどうかを確認する広範囲に制御する必要があります。  
+  
+<a name="xamlTextUsage_StylusPlugIn"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 通常、このクラスは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>コントロールの特定の部分にインクを制限します。  
+  
+ [!code-csharp[StylusPluginSamples#1](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/FilterPlugin.cs#1)]
+ [!code-vb[StylusPluginSamples#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/FilterPlugin.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StylusPlugIn ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement Element { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement Element" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.UIElement" /> がアタッチされる <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.UIElement" />先、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />がアタッチされています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.Element%2A>の<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>に追加されたとき、<xref:System.Windows.UIElement.StylusPlugIns%2A>コレクション。  
+  
+ [!code-csharp[StylusPluginSamples#22](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#22)]
+ [!code-vb[StylusPluginSamples#22](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementBounds">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect ElementBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect ElementBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.ElementBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされた要素の境界を取得します。</summary>
+        <value>要素のキャッシュされた境界です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>キャッシュを実行するには、その要素の境界のヒット テストします。  
+  
+   
+  
+## Examples  
+ 次の例でどのように、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>から継承される<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>を使用して、<xref:System.Windows.Media.ImageBrush>線を表示するためにします。  このブラシの一部に指定されたイメージ ファイルを描画`imageFile`です。  
+  
+ [!code-csharp[StylusPluginSamples#17](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/ImageRenderer.cs#17)]
+ [!code-vb[StylusPluginSamples#17](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/ImageRenderer.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうか、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />がアクティブです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />がアクティブであるそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Enabled"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 通常、このプロパティは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例の値を調べて、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.Enabled%2A>プロパティに、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnEnabledChanged%2A>メソッドです。  
+  
+ [!code-csharp[StylusPluginSamples#16](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#16)]
+ [!code-vb[StylusPluginSamples#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActiveForInput">
+      <MemberSignature Language="C#" Value="public bool IsActiveForInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsActiveForInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.IsActiveForInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />入力を受け入れることができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />の入力を受け付けることです。 それ以外の場合は、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の条件を満たす必要があります、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>の入力を受け付けます。  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>のメンバーである、<xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>です。  
+  
+-   <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.Element%2A>の<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>が表示され、有効にします。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnIsActiveForInputChanged%2A>メソッドです。  
+  
+ [!code-csharp[StylusPluginSamples#18](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#18)]
+ [!code-vb[StylusPluginSamples#18](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAdded">
+      <MemberSignature Language="C#" Value="protected virtual void OnAdded ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAdded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnAdded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />要素に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.Element%2A>の<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>に追加されたとき、<xref:System.Windows.UIElement.StylusPlugIns%2A>コレクション。  
+  
+ [!code-csharp[StylusPluginSamples#22](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#22)]
+ [!code-vb[StylusPluginSamples#22](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEnabledChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnEnabledChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEnabledChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnEnabledChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.Enabled" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を調べて、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.Enabled%2A>プロパティに、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnEnabledChanged%2A>メソッドです。  
+  
+ [!code-csharp[StylusPluginSamples#16](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#16)]
+ [!code-vb[StylusPluginSamples#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsActiveForInputChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnIsActiveForInputChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnIsActiveForInputChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnIsActiveForInputChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.StylusPlugIns.StylusPlugIn.IsActiveForInput" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnIsActiveForInputChanged%2A>メソッドで使用されるリソースのクリーンアップを割り当てたり、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnIsActiveForInputChanged%2A>メソッドです。  
+  
+ [!code-csharp[StylusPluginSamples#18](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/CustomDynamicRenderer.cs#18)]
+ [!code-vb[StylusPluginSamples#18](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/CustomDynamicRenderer.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoved">
+      <MemberSignature Language="C#" Value="protected virtual void OnRemoved ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemoved() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnRemoved" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />要素から削除されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusDown">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusDown (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusDown(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDown(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>タブレット ペンがデジタイザーに触れたときに、ペンのスレッド プール内のスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDown%2A>メソッドです。 作成する、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>インクを特定の領域に限定するを参照してください、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>の概要です。  
+  
+ [!code-csharp[StylusPluginSamples#8](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/FilterPlugin.cs#8)]
+ [!code-vb[StylusPluginSamples#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/FilterPlugin.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusDownProcessed">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusDownProcessed (object callbackData, bool targetVerified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusDownProcessed(object callbackData, bool targetVerified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callbackData" Type="System.Object" />
+        <Parameter Name="targetVerified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackData">渡される、アプリケーション オブジェクト、<see cref="M:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed(System.Object)" />メソッドです。</param>
+        <param name="targetVerified">
+          <see langword="true" />ペンの入力が適切にルーティング、 <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />、それ以外の<see langword="false" />します。</param>
+        <summary>タブレット ペンがデジタイザーに触れたときに、アプリケーションの UI (ユーザー インターフェイス) スレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサブスクライブする<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDown%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>をチェックする、<xref:System.Windows.Ink.ApplicationGesture.Down>ジェスチャ。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>呼び出し<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>をサブスクライブする、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A>メソッドで、アプリケーションの UI スレッドから呼び出されます。 間のリレーションシップ<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDown%2A>し<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusDownProcessed%2A>と同じです。  
+  
+ [!code-csharp[StylusPluginSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/RecognizerPlugin.cs#12)]
+ [!code-vb[StylusPluginSamples#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/RecognizerPlugin.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusEnter">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusEnter (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusEnter(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusEnter(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+        <Parameter Name="confirmed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <param name="confirmed">
+          <see langword="true" />ペンが実際には、要素の境界を入力した場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>カーソルが要素の境界に入ったときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusLeave">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusLeave (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusLeave(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput, bool confirmed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusLeave(System.Windows.Input.StylusPlugIns.RawStylusInput,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+        <Parameter Name="confirmed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <param name="confirmed">
+          <see langword="true" />ペンが実際には、要素の境界を左する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>要素の境界をカーソルが離れるときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、リセット、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>カーソルが要素の境界を離れるときにします。  
+  
+ [!code-csharp[StylusPluginSamples#20](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/RecognizerPlugin.cs#20)]
+ [!code-vb[StylusPluginSamples#20](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/RecognizerPlugin.vb#20)]  
+[!code-csharp[StylusPluginSamples#14](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/RecognizerPlugin.cs#14)]
+[!code-vb[StylusPluginSamples#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/RecognizerPlugin.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusMove">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusMove (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusMove(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>タブレット ペンがデジタイザー上で移動したときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove%2A>メソッドです。 作成する、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>インクを特定の領域に限定するを参照してください、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>の概要です。  
+  
+ [!code-csharp[StylusPluginSamples#9](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/FilterPlugin.cs#9)]
+ [!code-vb[StylusPluginSamples#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/FilterPlugin.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusMoveProcessed">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusMoveProcessed (object callbackData, bool targetVerified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusMoveProcessed(object callbackData, bool targetVerified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callbackData" Type="System.Object" />
+        <Parameter Name="targetVerified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackData">渡される、アプリケーション オブジェクト、<see cref="M:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed(System.Object)" />メソッドです。</param>
+        <param name="targetVerified">
+          <see langword="true" />ペンの入力が適切にルーティング、 <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />、それ以外の<see langword="false" />します。</param>
+        <summary>タブレット ペンがデジタイザー上で移動したときに、アプリケーションの UI (ユーザー インターフェイス) スレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサブスクライブする<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove%2A>メソッド  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>をチェックする、<xref:System.Windows.Ink.ApplicationGesture.Down>ジェスチャ。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>呼び出し<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>をサブスクライブする、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A>メソッドで、アプリケーションの UI スレッドから呼び出されます。 間のリレーションシップ<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMove%2A>し<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusMoveProcessed%2A>と同じです。  
+  
+ [!code-csharp[StylusPluginSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/RecognizerPlugin.cs#12)]
+ [!code-vb[StylusPluginSamples#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/RecognizerPlugin.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusUp">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusUp (System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusUp(class System.Windows.Input.StylusPlugIns.RawStylusInput rawStylusInput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp(System.Windows.Input.StylusPlugIns.RawStylusInput)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawStylusInput" Type="System.Windows.Input.StylusPlugIns.RawStylusInput" />
+      </Parameters>
+      <Docs>
+        <param name="rawStylusInput">A<see cref="T:System.Windows.Input.StylusPlugIns.RawStylusInput" />ペンからの入力に関する情報を格納します。</param>
+        <summary>ユーザー タブレット ペンをデジタイザーから離したときに、ペンのスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスに影響を回避するには、このメソッドでの作業を最小限に抑えるためこのメソッドは、ペンのスレッドで発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、オーバーライドする方法、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>メソッドです。 作成する、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>インクを特定の領域に限定するを参照してください、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>の概要です。  
+  
+ [!code-csharp[StylusPluginSamples#10](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/FilterPlugin.cs#10)]
+ [!code-vb[StylusPluginSamples#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/FilterPlugin.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylusUpProcessed">
+      <MemberSignature Language="C#" Value="protected virtual void OnStylusUpProcessed (object callbackData, bool targetVerified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStylusUpProcessed(object callbackData, bool targetVerified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callbackData" Type="System.Object" />
+        <Parameter Name="targetVerified" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callbackData">渡される、アプリケーション オブジェクト、<see cref="M:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed(System.Object)" />メソッドです。</param>
+        <param name="targetVerified">
+          <see langword="true" />ペンの入力が適切にルーティング、 <see cref="T:System.Windows.Input.StylusPlugIns.StylusPlugIn" />、それ以外の<see langword="false" />します。</param>
+        <summary>ユーザー タブレット ペンをデジタイザーから離したときに、アプリケーションの UI (ユーザー インターフェイス) のスレッドで発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサブスクライブする<xref:System.Windows.Input.StylusPlugIns.RawStylusInput.NotifyWhenProcessed%2A>で、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUp%2A>メソッド  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>をチェックする、<xref:System.Windows.Ink.ApplicationGesture.Down>ジェスチャ。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>でジェスチャを確認、<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn.OnStylusUpProcessed%2A>メソッドで、アプリケーションの UI スレッドから呼び出されます。  
+  
+ [!code-csharp[StylusPluginSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/StylusPluginSamples/CSharp/RecognizerPlugin.cs#12)]
+ [!code-vb[StylusPluginSamples#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StylusPluginSamples/VisualBasic/RecognizerPlugin.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

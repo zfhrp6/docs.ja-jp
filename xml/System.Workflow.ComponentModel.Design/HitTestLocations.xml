@@ -1,0 +1,173 @@
+<Type Name="HitTestLocations" FullName="System.Workflow.ComponentModel.Design.HitTestLocations">
+  <TypeSignature Language="C#" Value="public enum HitTestLocations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HitTestLocations extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.HitTestLocations" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Workflow.ComponentModel.Design.ActivityDesigner.HitTest(System.Drawing.Point)" /> メソッドに渡されるポイントを含むデザイナーの領域を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.HitTestLocations> は <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.HitTest%2A> メソッドによって使用され、マウス クリックおよびドラッグ アンド ドロップ操作でヒットしたデザイナーの領域を示します。 <xref:System.Workflow.ComponentModel.Design.HitTestLocations> を使用して、成功したヒット テストに対してどのようなアクションが必要かを決定します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> クラスから派生したデザイナーの新しい分岐の追加の例を、次に示します。 <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.CanInsertActivities%2A> が `true` を返した場合、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A> メソッドを使用して新しい分岐が作成されます。 A<xref:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo>へのパラメーターとしてオブジェクトを作成、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A>デザイナー フラグを指定することによって、ワークフロー デザイナーの場所を使用するメソッド。 これが完了すると、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.EnsureVisibleContainedDesigner%2A> メソッドが使用され、新しく追加された分岐がワークフロー デザイナーに表示されるようになります。  
+  
+ [!code-csharp[Wf_samples#29](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#29)]
+ [!code-vb[Wf_samples#29](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#29)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActionArea">
+      <MemberSignature Language="C#" Value="ActionArea" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations ActionArea = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.ActionArea" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>展開ボタンに含まれる領域にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="Bottom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Bottom = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Bottom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの下の部分にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Connector">
+      <MemberSignature Language="C#" Value="Connector" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Connector = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Connector" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのコネクタにヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Designer">
+      <MemberSignature Language="C#" Value="Designer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Designer = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Designer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのいずれかの部分にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="Left" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Left = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Left" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの左側の部分にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのどの部分にもヒットしなかったことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Right = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの右側の部分にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="Top" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.ComponentModel.Design.HitTestLocations Top = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.Design.HitTestLocations.Top" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの上の部分にヒットしたことを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

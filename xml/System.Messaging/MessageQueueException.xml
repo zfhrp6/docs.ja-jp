@@ -1,0 +1,134 @@
+<Type Name="MessageQueueException" FullName="System.Messaging.MessageQueueException">
+  <TypeSignature Language="C#" Value="public class MessageQueueException : System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MessageQueueException extends System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.InteropServices.ExternalException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Microsoft Message Queuing の内部エラーが発生した場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外に関連付けられている、<xref:System.Messaging.MessageQueueException>クラスは、コードを処理する必要がありますあるメッセージ キューの内部エラーによって生成されます。  
+  
+ すべての例外は、エラー コードとエラーの原因を説明するテキスト文字列で構成されます。 参照してください、<xref:System.Messaging.MessageQueueErrorCode>これらのエラー コードとその説明の一覧のクラスです。  
+  
+ <xref:System.Messaging.MessageQueue> パラメーターが true に設定されたキューを `sharedModeDenyReceive` が開いた後に、別の <xref:System.Messaging.MessageQueue> がキューを読み取ろうとすると、共有違反により <xref:System.Messaging.MessageQueueException> 例外が生成されます。 <xref:System.Messaging.MessageQueue> が既にキューに非排他的にアクセスできるときに、別の <xref:System.Messaging.MessageQueue> が排他モードでキューにアクセスしようとした場合にも、同じ例外がスローされます。  
+  
+> **アラートのタグはサポートされていません!!!**  
+> <xref:System.Messaging.MessageQueueTransaction> は、スレッド アパートメントに対応しています。 Visual Basic にメイン スレッドの状態を設定する`STA`適用する必要がありますので、<xref:System.MTAThreadAttribute>で、`Main`サブルーチンです。 適用しない場合、別のスレッドを使用してトランザクション メッセージを送信すると、<xref:System.Messaging.MessageQueueException> 例外がスローされます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MessageQueue.ExistsDelete#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.ExistsDelete/CPP/mqexistsdelete.cpp#1)]
+ [!code-csharp[MessageQueue.ExistsDelete#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.ExistsDelete/CS/mqexistsdelete.cs#1)]
+ [!code-vb[MessageQueue.ExistsDelete#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.ExistsDelete/VB/mqexistsdelete.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageQueueException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> と関連付けるシリアル化データを保持する <see cref="T:System.Messaging.MessageQueueException" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けるシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Messaging.MessageQueueException" />。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Messaging.MessageQueueException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> と関連付けるシリアル化データを保持する <see cref="T:System.Messaging.MessageQueueException" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けるシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Messaging.MessageQueueException" />。</param>
+        <summary>シリアル化情報オブジェクトを、<see cref="T:System.Messaging.MessageQueueException" /> のシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キューのエラーを記述する値を取得します。</summary>
+        <value>これを生成したメッセージ キュー内部エラーの説明<see cref="T:System.Messaging.MessageQueueException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドに関連付けられているテキスト文字列を取得しようとしたこのプロパティを取得するときに、<xref:System.Messaging.MessageQueueException.MessageQueueErrorCode%2A>プロパティです。 メソッドは、メッセージ キューが生成される、エラー コードを解釈できない場合、<xref:System.Messaging.MessageQueueException.Message%2A>プロパティ値を取得します`UnknownError`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageQueueErrorCode">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueueErrorCode MessageQueueErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessageQueueErrorCode MessageQueueErrorCode" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueException.MessageQueueErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外に関連付けられているエラー コードを示す値を取得します。</summary>
+        <value>A<see cref="T:System.Messaging.MessageQueueErrorCode" />メッセージ キューが生成されたエラーの種類を識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueException.Message%2A>プロパティには、これに関連付けられた文字列が含まれています。<xref:System.Messaging.MessageQueueException.MessageQueueErrorCode%2A>エラーの原因をより詳細に説明をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

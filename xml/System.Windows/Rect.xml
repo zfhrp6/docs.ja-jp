@@ -1,0 +1,1889 @@
+<Type Name="Rect" FullName="System.Windows.Rect">
+  <TypeSignature Language="C#" Value="public struct Rect : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Rect extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Rect" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.RectConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Converters.RectValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>四角形の幅、高さ、場所を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="x,y,width,height"/>  
+```  
+  
+<a name="xamlValues_MinWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *x*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 四角形の左側の x 座標位置。  
+  
+ *y*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 四角形の上側の y 座標位置。  
+  
+ *width*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 表す負でない値、<xref:System.Windows.Rect.Width%2A>四角形のです。  
+  
+ *高さ*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 表す負でない値、<xref:System.Windows.Rect.Height%2A>四角形のです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect (System.Windows.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.#ctor(System.Windows.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="size" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="size">A<see cref="T:System.Windows.Size" />四角形の高さと幅を指定する構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Rect" />構造体は、指定したサイズの (0, 0) にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しいを作成する方法を示しています。<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Rect.%23ctor%28System.Windows.Size%29>コンス トラクターです。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect (System.Windows.Point point1, System.Windows.Point point2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.#ctor(System.Windows.Point,System.Windows.Point)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point1">最初のポイントを新しい四角形を含める必要があります。</param>
+        <param name="point2">新しい四角形を含める必要がある 2 番目のポイント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Rect" />指定した 2 つの点を正確に格納できる大きさである構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しいを作成する方法を示しています。<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Rect.%23ctor%28System.Windows.Point%2CSystem.Windows.Point%29>コンス トラクターです。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample3_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample3_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect (System.Windows.Point location, System.Windows.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point location, valuetype System.Windows.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.#ctor(System.Windows.Point,System.Windows.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="location" Type="System.Windows.Point" />
+        <Parameter Name="size" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="location">四角形の左上隅の場所を指定する点です。</param>
+        <param name="size">A<see cref="T:System.Windows.Size" />四角形の高さと幅を指定する構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Rect" />左上隅を指定した場所と、指定した幅と高さを含む構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しいを作成する方法を示しています。<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Rect.%23ctor%28System.Windows.Point%2CSystem.Windows.Size%29>コンス トラクターです。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample4_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample4_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect (System.Windows.Point point, System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point, valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.#ctor(System.Windows.Point,System.Windows.Vector)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="point">四角形の最初のポイントを含める必要があります。</param>
+        <param name="vector">指定した点のオフセット量。 結果として得られる四角形は両方のポイントを正確に格納できる大きさになります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Rect" />正確に指定した点と、指定されたポイントと指定したベクトルの合計を格納できる大きさである構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しいを作成する方法を示しています。<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Rect.%23ctor%28System.Windows.Point%2CSystem.Windows.Vector%29>コンス トラクターです。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample5_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample5_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rect (double x, double y, double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 x, float64 y, float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">四角形の左上隅の X 座標。</param>
+        <param name="y">四角形の左上隅の y 座標。</param>
+        <param name="width">四角形の幅。</param>
+        <param name="height">四角形の高さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Rect" />を指定した x 座標、座標の y 座標、幅、および高さを持つ構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、新しいを作成する方法を示しています。<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Rect.%23ctor%28System.Double%2CSystem.Double%2CSystem.Double%2CSystem.Double%29>コンス トラクターです。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample6_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample6_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="width" />負の値です。  
+  
+ または  
+  
+ <paramref name="height" />負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public double Bottom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の下部の y 軸の値を取得します。</summary>
+        <value>四角形の下部の y 軸の値。 四角形が空の場合、値は、<see cref="F:System.Double.NegativeInfinity" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の下部の y 軸の値がの合計に等しく、<xref:System.Windows.Rect.Y%2A>と<xref:System.Windows.Rect.Height%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomLeft">
+      <MemberSignature Language="C#" Value="public System.Windows.Point BottomLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point BottomLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.BottomLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の左下隅の位置を取得します。</summary>
+        <value>四角形の左下隅の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の左下隅の位置と等しい (<xref:System.Windows.Rect.X%2A>、 <xref:System.Windows.Rect.Y%2A>  +  <xref:System.Windows.Rect.Height%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomRight">
+      <MemberSignature Language="C#" Value="public System.Windows.Point BottomRight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point BottomRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.BottomRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の右下隅の位置を取得します。</summary>
+        <value>四角形の右下隅の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の右下隅の位置と等しい (<xref:System.Windows.Rect.X%2A> + <xref:System.Windows.Rect.Width%2A>、 <xref:System.Windows.Rect.Y%2A>  +  <xref:System.Windows.Rect.Height%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Contains(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">確認するポイント。</param>
+        <summary>四角形に、指定したポイントが含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />四角形には、指定した点が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Contains%28System.Windows.Point%29>メソッドを呼び出せば確認四角形が含まれるかどうか、指定した<xref:System.Windows.Point>です。  
+  
+ [!code-csharp[RectExamples_snip#ContainsExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#containsexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Rect rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.Windows.Rect rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Contains(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect">チェックする四角形。</param>
+        <summary>四角形に指定された四角形が含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="rect" />完全四角形で格納されている以外の場合は、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Contains%28System.Windows.Rect%29>メソッドを別の四角形によって 1 つの四角形が含まれているかどうかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#ContainsExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#containsexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Contains(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">確認対象の点の x 座標。</param>
+        <param name="y">確認対象の点の y 座標。</param>
+        <summary>指定した x 座標と y 座標に四角形が含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合 (<paramref name="x" />、 <paramref name="y" />) が含まれている四角形であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Contains%28System.Double%2CSystem.Double%29>メソッド四角形に、指定した x 座標と y 座標で指定された点が含まれるかどうかを決定します。  
+  
+ [!code-csharp[RectExamples_snip#ContainsExample3_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#containsexample3_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Rect Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>なし、位置または領域の四角形を表す特殊な値を取得します。</summary>
+        <value>空の四角形<see cref="P:System.Windows.Rect.X" />と<see cref="P:System.Windows.Rect.Y" />プロパティの値を<see cref="F:System.Double.PositiveInfinity" />、おり<see cref="P:System.Windows.Rect.Width" />と<see cref="P:System.Windows.Rect.Height" />プロパティの値を<see cref="F:System.Double.NegativeInfinity" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の四角形を含む数学的計算を回避します。 両方<xref:System.Windows.Rect.X%2A>と<xref:System.Windows.Rect.Y%2A>無限の値を操作は、これらの操作で障害がある重大なプロセッサは、します。 これらの値に関連する比較では、アプリケーションのパフォーマンスは影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在の四角形と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の四角形と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Windows.Rect" />と、同じ<see cref="P:System.Windows.Rect.Location" />と<see cref="P:System.Windows.Rect.Size" />値を現在の四角形としてそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ この比較では、2 つのインスタンスで<xref:System.Double.NaN?displayProperty=nameWithType>等しいと見なされます。  
+  
+> [!NOTE]
+>  四角形の位置とサイズがで説明されている<xref:System.Double>値。 <xref:System.Double>値に操作したときに、有効桁数が失われる可能性が、論理的に等しい 2 つの値の間の比較が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Equals%28System.Object%29>メソッド四角形が指定したオブジェクトと等しいかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#EqualsExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#equalsexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Rect value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Rect value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Equals(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の四角形と比較する四角形。</param>
+        <summary>指定した四角形が現在の四角形と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定した四角形がある同じ場合<see cref="P:System.Windows.Rect.Location" />と<see cref="P:System.Windows.Rect.Size" />値を現在の四角形としてそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ この比較では、2 つのインスタンスで<xref:System.Double.NaN?displayProperty=nameWithType>等しいと見なされます。  
+  
+> [!NOTE]
+>  四角形の位置とサイズがで説明されている<xref:System.Double>値。 <xref:System.Double>値に操作したときに、有効桁数が失われる可能性が、論理的に等しい 2 つの値の間の比較が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Equals%28System.Windows.Rect%29>メソッド四角形が指定した四角形に等しいかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#EqualsExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#equalsexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Rect rect1, System.Windows.Rect rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Rect rect1, valuetype System.Windows.Rect rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Equals(System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Rect" />
+        <Parameter Name="rect2" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">比較する最初の四角形。</param>
+        <param name="rect2">比較する 2 つ目の四角形。</param>
+        <summary>指定した四角形が等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />四角形が同じである場合<see cref="P:System.Windows.Rect.Location" />と<see cref="P:System.Windows.Rect.Size" />値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ この比較では、2 つのインスタンスで<xref:System.Double.NaN?displayProperty=nameWithType>等しいと見なされます。  
+  
+> [!NOTE]
+>  四角形の位置とサイズがで説明されている<xref:System.Double>値。 <xref:System.Double>値に操作したときに、有効桁数が失われる可能性が、論理的に等しい 2 つの値の間の比較が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Equals%28System.Windows.Rect%2CSystem.Windows.Rect%29>メソッドを 1 つの四角形が別に等しいかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#EqualsExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#equalsexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>四角形のハッシュ コードを作成します。</summary>
+        <returns>現在のハッシュ コード<see cref="T:System.Windows.Rect" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用してハッシュ コードを作成する、 <xref:System.Windows.Rect.X%2A>、 <xref:System.Windows.Rect.Y%2A>、 <xref:System.Windows.Rect.Width%2A>、および<xref:System.Windows.Rect.Height%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.GetHashCode%2A>のハッシュ コードを取得するメソッド、<xref:System.Windows.Rect>です。  
+  
+ [!code-csharp[RectExamples_snip#GetHashCodeExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#gethashcodeexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public double Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の高さを取得または設定します。</summary>
+        <value>四角形の高さを表す正の数値。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Empty%2A>四角形、<xref:System.Windows.Rect.Height%2A>の<xref:System.Double.NegativeInfinity>します。 <xref:System.Windows.Rect.Empty%2A>四角形は読み取り専用です。<xref:System.Windows.Rect.Height%2A>変更できません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Rect.Height" />負の値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.Height" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inflate">
+      <MemberSignature Language="C#" Value="public void Inflate (System.Windows.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Inflate(valuetype System.Windows.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Inflate(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="size">四角形を拡大する量を指定します。 <see cref="T:System.Windows.Size" />構造体の<see cref="P:System.Windows.Size.Width" />プロパティは、四角形の増加量を指定<see cref="P:System.Windows.Rect.Left" />と<see cref="P:System.Windows.Rect.Right" />プロパティです。 <see cref="T:System.Windows.Size" />構造体の<see cref="P:System.Windows.Size.Height" />プロパティは、四角形の増加量を指定<see cref="P:System.Windows.Rect.Top" />と<see cref="P:System.Windows.Rect.Bottom" />プロパティです。</param>
+        <summary>指定されたを使用して、四角形を拡大<see cref="T:System.Windows.Size" />、すべての方向にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Width%2A>結果として得られる四角形の増加が 2 回、<xref:System.Windows.Size.Width%2A>の指定した<xref:System.Windows.Size>左と右の四角形の辺を拡大するために、構造体します。 同様に、<xref:System.Windows.Rect.Height%2A>結果として得られる四角形の増加が 2 回、<xref:System.Windows.Size.Height%2A>の指定した<xref:System.Windows.Size>構造体。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Inflate%28System.Windows.Size%29>四角形のサイズを増やす方法です。  
+  
+ [!code-csharp[RectExamples_snip#InflateExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#inflateexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inflate">
+      <MemberSignature Language="C#" Value="public void Inflate (double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Inflate(float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Inflate(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="width">拡大または縮小、左右の四角形の量。</param>
+        <param name="height">展開または四角形の上端と下端の辺を縮小する量。</param>
+        <summary>展開されるか、すべての方向に指定された幅と高さの金額を使用して、四角形を縮小します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Width%2A>の結果として得られる四角形を増加または減少幅の指定したオフセットを 2 倍、左と右の四角形の辺の両方に適用されるためです。 同様に、<xref:System.Windows.Rect.Height%2A>の結果として得られる四角形を増加または減少した指定した高さの 2 倍です。  
+  
+ 場合は、指定した幅または高さは、現在の複数の値で四角形を縮小<xref:System.Windows.Rect.Width%2A>または<xref:System.Windows.Rect.Height%2A>: 負の値の領域、四角形を与える — 四角形になります、<xref:System.Windows.Rect.Empty%2A>四角形。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Inflate%28System.Double%2CSystem.Double%29>四角形のサイズを変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#InflateExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#inflateexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inflate">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Inflate (System.Windows.Rect rect, System.Windows.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Inflate(valuetype System.Windows.Rect rect, valuetype System.Windows.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Inflate(System.Windows.Rect,System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="size" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Windows.Rect" />構造を変更します。</param>
+        <param name="size">四角形を拡大する量を指定します。 <see cref="T:System.Windows.Size" />構造体の<see cref="P:System.Windows.Size.Width" />プロパティは、四角形の増加量を指定<see cref="P:System.Windows.Rect.Left" />と<see cref="P:System.Windows.Rect.Right" />プロパティです。 <see cref="T:System.Windows.Size" />構造体の<see cref="P:System.Windows.Size.Height" />プロパティは、四角形の増加量を指定<see cref="P:System.Windows.Rect.Top" />と<see cref="P:System.Windows.Rect.Bottom" />プロパティです。</param>
+        <summary>指定した四角形を指定した展開に起因する四角形を返します<see cref="T:System.Windows.Size" />、すべての方向にします。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Width%2A>結果として得られる四角形の増加が 2 回、<xref:System.Windows.Size.Width%2A>の指定した<xref:System.Windows.Size>左と右の四角形の辺を拡大するために、構造体します。 同様に、<xref:System.Windows.Rect.Height%2A>結果として得られる四角形の増加が 2 回、<xref:System.Windows.Size.Height%2A>の指定した<xref:System.Windows.Size>構造体。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Inflate%28System.Windows.Rect%2CSystem.Windows.Size%29>四角形のサイズを変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#InflateExample3_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#inflateexample3_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="rect" /><see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inflate">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Inflate (System.Windows.Rect rect, double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Inflate(valuetype System.Windows.Rect rect, float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Inflate(System.Windows.Rect,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Windows.Rect" />構造を変更します。</param>
+        <param name="width">拡大または縮小、左右の四角形の量。</param>
+        <param name="height">展開または四角形の上端と下端の辺を縮小する量。</param>
+        <summary>拡大または指定した四角形を指定した幅と高さ量、すべての方向に縮小した四角形を作成します。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Width%2A>の結果として得られる四角形を増加または減少幅の指定したオフセットを 2 倍、左と右の四角形の辺の両方に適用されるためです。 同様に、<xref:System.Windows.Rect.Height%2A>の結果として得られる四角形を増加または減少した指定した高さの 2 倍です。  
+  
+ 場合は、指定した幅または高さの修飾子は、現在の複数の値で四角形を圧縮<xref:System.Windows.Rect.Width%2A>または<xref:System.Windows.Rect.Height%2A>: 負の値の領域、四角形を与える: このメソッドが戻る<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Inflate%28System.Windows.Rect%2CSystem.Double%2CSystem.Double%29>四角形のサイズを変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#InflateExample4_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#inflateexample4_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="rect" /><see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public void Intersect (System.Windows.Rect rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Intersect(valuetype System.Windows.Rect rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Intersect(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect">現在の四角形と交差する四角形。</param>
+        <summary>現在の四角形と指定した四角形の交差部分を検索して、現在の四角形として、結果を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 交差部分が存在しない場合、現在の四角形は次のようになります。<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Intersect%28System.Windows.Rect%29>メソッドを 2 つの四角形の交差部分を検索し、四角形として結果を格納します。  
+  
+ [!code-csharp[RectExamples_snip#IntersectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#intersectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Intersect (System.Windows.Rect rect1, System.Windows.Rect rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Intersect(valuetype System.Windows.Rect rect1, valuetype System.Windows.Rect rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Intersect(System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Rect" />
+        <Parameter Name="rect2" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">比較する最初の四角形。</param>
+        <param name="rect2">比較する 2 つ目の四角形。</param>
+        <summary>指定した四角形の交差部分を返します。</summary>
+        <returns>2 つの四角形の交差部分または<see cref="P:System.Windows.Rect.Empty" />交差部分が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.Rect.Intersect%28System.Windows.Rect%2CSystem.Windows.Rect%29> 2 つの四角形の交差部分を検索するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#IntersectExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#intersectexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntersectsWith">
+      <MemberSignature Language="C#" Value="public bool IntersectsWith (System.Windows.Rect rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IntersectsWith(valuetype System.Windows.Rect rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.IntersectsWith(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect">チェックする四角形。</param>
+        <summary>指定した四角形が現在の四角形と交差するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定した四角形が現在の四角形と交差する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.IntersectsWith%2A>メソッドを 2 つの四角形が交差するかどうかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#IntersectsWithExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#intersectswithexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形があるかどうかを示す値を取得、<see cref="P:System.Windows.Rect.Empty" />四角形。</summary>
+        <value>
+          <see langword="true" />四角形の場合、<see cref="P:System.Windows.Rect.Empty" />四角形以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 0 の領域をテストするこのプロパティを使用しないでください。0 の領域を含む四角形とは限りません、<xref:System.Windows.Rect.Empty%2A>四角形。 詳細については、<xref:System.Windows.Rect.Empty%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public double Left { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の左端の x 軸の値を取得します。</summary>
+        <value>四角形の左端の x 軸の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの取得は、<xref:System.Windows.Rect.X%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または四角形の左上隅の位置を設定します。</summary>
+        <value>四角形の左上隅の位置。 既定値は (0, 0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の左上隅の位置と等しい (<xref:System.Windows.Rect.X%2A>、 <xref:System.Windows.Rect.Y%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.Location" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (System.Windows.Vector offsetVector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(valuetype System.Windows.Vector offsetVector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Offset(System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetVector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="offsetVector">水平および垂直方向に四角形を移動する量を指定するベクター。</param>
+        <summary>指定したベクトルで四角形を移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の四角形でこのメソッドを呼び出す (<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>) は許可されていません。  
+  
+ 呼び出して、<xref:System.Windows.Rect.Offset%2A>メソッドのみが、特殊効果を変更できる場合、<xref:System.Windows.Rect.X%2A>と<xref:System.Windows.Rect.Y%2A>プロパティに直接できます。 <xref:System.Windows.Rect>値の型を参照する場合は、<xref:System.Windows.Rect>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Rect.X%2A>または<xref:System.Windows.Rect.Y%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Rect.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。  値を変更する場合、<xref:System.Windows.Rect>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Rect>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Rect>プロパティまたはインデクサーに戻します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Offset%28System.Windows.Vector%29>四角形の位置を変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#OffsetExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#offsetexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public void Offset (double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Offset(float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Offset(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">四角形を横方向に移動する量。</param>
+        <param name="offsetY">四角形を垂直方向に移動する量。</param>
+        <summary>指定された水平および垂直の量で四角形を移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の四角形でこのメソッドを呼び出す (<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>) は許可されていません。  
+  
+ 呼び出して、<xref:System.Windows.Rect.Offset%2A>メソッドのみが、特殊効果を変更できる場合、<xref:System.Windows.Rect.X%2A>と<xref:System.Windows.Rect.Y%2A>プロパティに直接できます。 <xref:System.Windows.Rect>値の型を参照する場合は、<xref:System.Windows.Rect>オブジェクト プロパティまたはインデクサーを使用すると、オブジェクトへの参照ではなく、オブジェクトのコピーを取得します。 変更しようとする場合<xref:System.Windows.Rect.X%2A>または<xref:System.Windows.Rect.Y%2A>プロパティまたはインデクサーの参照、コンパイラ エラーが発生します。 同様に、呼び出す<xref:System.Windows.Rect.Offset%2A>プロパティまたはインデクサーには変更されません、基になるオブジェクト。  値を変更する場合、<xref:System.Windows.Rect>プロパティまたはインデクサーとして参照される、新規作成<xref:System.Windows.Rect>、そのフィールドを変更し、割り当てます、<xref:System.Windows.Rect>プロパティまたはインデクサーに戻します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Offset%28System.Double%2CSystem.Double%29>四角形の位置を変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#OffsetExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#offsetexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Offset (System.Windows.Rect rect, System.Windows.Vector offsetVector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Offset(valuetype System.Windows.Rect rect, valuetype System.Windows.Vector offsetVector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Offset(System.Windows.Rect,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="offsetVector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="rect">元の四角形。</param>
+        <param name="offsetVector">新しい四角形の水平方向および垂直方向のオフセットを指定するベクター。</param>
+        <summary>指定したベクトルを使用して、指定した四角形からオフセットする四角形を返します。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の四角形では、このメソッドを呼び出し (<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>) は許可されていません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Offset%28System.Windows.Rect%2CSystem.Windows.Vector%29>四角形の位置を変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#OffsetExample3_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#offsetexample3_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="rect" /> は <see cref="P:System.Windows.Rect.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Offset (System.Windows.Rect rect, double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Offset(valuetype System.Windows.Rect rect, float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Offset(System.Windows.Rect,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="rect">移動する四角形。</param>
+        <param name="offsetX">新しい四角形の水平方向のオフセット。</param>
+        <param name="offsetY">新しい四角形の縦方向のオフセット。</param>
+        <summary>指定された水平および垂直の量を使用して、指定した四角形からオフセットする四角形を返します。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の四角形では、このメソッドを呼び出し (<xref:System.Windows.Rect.Empty%2A?displayProperty=nameWithType>) は許可されていません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Offset%28System.Windows.Rect%2CSystem.Double%2CSystem.Double%29>四角形の位置を変更するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#OffsetExample4_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#offsetexample4_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="rect" /> は <see cref="P:System.Windows.Rect.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Rect rect1, System.Windows.Rect rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Rect rect1, valuetype System.Windows.Rect rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.op_Equality(System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Rect" />
+        <Parameter Name="rect2" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">比較する最初の四角形。</param>
+        <param name="rect2">比較する 2 つ目の四角形。</param>
+        <summary>2 つの四角形の正確な等価性を比較します。</summary>
+        <returns>
+          <see langword="true" />四角形が同じである場合<see cref="P:System.Windows.Rect.Location" />と<see cref="P:System.Windows.Rect.Size" />値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの等価性をテストします。  
+  
+ この比較では、2 つのインスタンスで<xref:System.Double.NaN?displayProperty=nameWithType>等しいと見なされます。  
+  
+> [!NOTE]
+>  四角形の位置とサイズがで説明されている<xref:System.Double>値。 <xref:System.Double>値に操作したときに、有効桁数が失われる可能性が、論理的に等しい 2 つの値の間の比較が失敗する可能性があります。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Rect.Equals%28System.Windows.Rect%2CSystem.Windows.Rect%29?displayProperty=nameWithType>  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.op_Equality%2A>演算子を 2 つの四角形が正確に等しいかどうかを判断します。  
+  
+ [!code-csharp[RectExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#overloadedequalityoperatorexample)]
+ [!code-vb[RectExamples_snip#OverloadedEqualityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RectExamples_snip/visualbasic/rectexample.vb#overloadedequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Rect rect1, System.Windows.Rect rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Rect rect1, valuetype System.Windows.Rect rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.op_Inequality(System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Rect" />
+        <Parameter Name="rect2" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">比較する最初の四角形。</param>
+        <param name="rect2">比較する 2 つ目の四角形。</param>
+        <summary>非等値を 2 つの四角形を比較します。</summary>
+        <returns>
+          <see langword="true" />四角形はない場合、同じ<see cref="P:System.Windows.Rect.Location" />と<see cref="P:System.Windows.Rect.Size" />値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、オブジェクトの非等値をテストします。  
+  
+ この比較では、2 つのインスタンスで<xref:System.Double.NaN?displayProperty=nameWithType>等しいと見なされます。  
+  
+> [!NOTE]
+>  四角形の位置とサイズがで説明されている<xref:System.Double>値。 <xref:System.Double>値に操作したときに、有効桁数が失われる可能性が、論理的に等しい 2 つの値の間の比較が失敗する可能性があります。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Rect.Equals%28System.Windows.Rect%2CSystem.Windows.Rect%29?displayProperty=nameWithType>  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.op_Inequality%2A>演算子を 2 つの四角形が正確に一致しません。  
+  
+ [!code-csharp[RectExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#overloadedinequalityoperatorexample)]
+ [!code-vb[RectExamples_snip#OverloadedInequalityOperatorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RectExamples_snip/visualbasic/rectexample.vb#overloadedinequalityoperatorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">フォームで、四角形の文字列形式を「x、y、幅、高さ」です。</param>
+        <summary>指定した文字列形式から新しい四角形を作成します。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Parse%2A>に四角形の文字列形式に変換するメソッド、<xref:System.Windows.Rect>構造体。  
+  
+ [!code-csharp[RectExamples_snip#ParseExample](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#parseexample)]
+ [!code-vb[RectExamples_snip#ParseExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RectExamples_snip/visualbasic/rectexample.vb#parseexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public double Right { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右側にある四角形の x 軸の値を取得します。</summary>
+        <value>右側にある四角形の x 軸の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 右側にある四角形の x 軸の値がの合計に等しく、<xref:System.Windows.Rect.X%2A>と<xref:System.Windows.Rect.Width%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public void Scale (double scaleX, double scaleY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Scale(float64 scaleX, float64 scaleY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Scale(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Double" />
+        <Parameter Name="scaleY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">X 方向のスケール ファクター。</param>
+        <param name="scaleY">Y 方向のスケール ファクター。</param>
+        <summary>現在の四角形のサイズを乗算し、指定した x および y の値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Scale%2A>四角形の高さと幅を指定した量によって乗算するメソッド。  
+  
+ [!code-csharp[RectExamples_snip#ScaleExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#scaleexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Windows.Size Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または四角形の高さと幅を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Size" />四角形の高さと幅を指定する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.Size" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>四角形の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Rect> のインスタンスが <xref:System.IFormattable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public double Top { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の上端の y 軸の位置を取得します。</summary>
+        <value>四角形の上端の y 軸の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの取得は、<xref:System.Windows.Rect.Y%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopLeft">
+      <MemberSignature Language="C#" Value="public System.Windows.Point TopLeft { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point TopLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.TopLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の左上隅の位置を取得します。</summary>
+        <value>四角形の左上隅の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の左上隅の位置と等しい (<xref:System.Windows.Rect.X%2A>、 <xref:System.Windows.Rect.Y%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopRight">
+      <MemberSignature Language="C#" Value="public System.Windows.Point TopRight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point TopRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.TopRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の右上隅の位置を取得します。</summary>
+        <value>四角形の右上隅の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の右上隅の位置と等しい (<xref:System.Windows.Rect.X%2A> + <xref:System.Windows.Rect.Width%2A>、 <xref:System.Windows.Rect.Y%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>四角形の文字列表現を返します。</summary>
+        <returns>現在の四角形の文字列形式。 文字列には、次の形式:"<see cref="P:System.Windows.Rect.X" />、<see cref="P:System.Windows.Rect.Y" />、<see cref="P:System.Windows.Rect.Width" />、<see cref="P:System.Windows.Rect.Height" />"です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.ToString>の文字列表現を取得するメソッド、<xref:System.Windows.Rect>構造体。  
+  
+ [!code-csharp[RectExamples_snip#ToStringExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#tostringexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>指定された書式プロバイダーを使用して、四角形の文字列表現を返します。</summary>
+        <returns>指定された書式プロバイダーによって決定される現在の四角形の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Transform(System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">表す行列を適用する変換を指定します。</param>
+        <summary>指定した行列を適用することで、四角形を変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Transform%28System.Windows.Media.Matrix%29>に変換し、<xref:System.Windows.Rect>構造体を使用して、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[RectExamples_snip#TransformExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#transformexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Transform (System.Windows.Rect rect, System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Transform(valuetype System.Windows.Rect rect, valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Transform(System.Windows.Rect,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="rect">変換の基礎となる四角形。</param>
+        <param name="matrix">表す行列を適用する変換を指定します。</param>
+        <summary>指定した四角形を指定した行列を適用した結果の四角形を返します。</summary>
+        <returns>操作に起因する四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Transform%28System.Windows.Rect%2CSystem.Windows.Media.Matrix%29>メソッドを作成、新しい<xref:System.Windows.Rect>適用した結果の構造、<xref:System.Windows.Media.Matrix>既存の四角形にします。  
+  
+ [!code-csharp[RectExamples_snip#TransformExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#transformexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Union(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ポイントします。</param>
+        <summary>指定したポイントを格納するのに十分な正確に現在の四角形を展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Union%28System.Windows.Point%29>を格納するのに十分な正確に現在の四角形を展開する方法、指定された<xref:System.Windows.Point>です。  
+  
+ [!code-csharp[RectExamples_snip#UnionExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#unionexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public void Union (System.Windows.Rect rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Union(valuetype System.Windows.Rect rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Union(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect">対象の四角形。</param>
+        <summary>指定した四角形を格納するのに十分な正確に現在の四角形を展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Union%28System.Windows.Rect%29>メソッドを指定した四角形を格納するのに十分な正確に現在の四角形を展開します。  
+  
+ [!code-csharp[RectExamples_snip#UnionExample2_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#unionexample2_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Union (System.Windows.Rect rect, System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Union(valuetype System.Windows.Rect rect, valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Union(System.Windows.Rect,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="rect">対象の四角形。</param>
+        <param name="point">ポイントします。</param>
+        <summary>指定した四角形などの指定したポイントに十分な正確に大きさを四角形を作成します。</summary>
+        <returns>指定した四角形と指定したポイントを正確に格納できる大きさである四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用する次の例に示します、<xref:System.Windows.Rect.Union%28System.Windows.Rect%2CSystem.Windows.Point%29>メソッドを指定した四角形を正確に格納できる大きさの四角形を作成し、指定された<xref:System.Windows.Point>です。  
+  
+ [!code-csharp[RectExamples_snip#UnionExample3_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#unionexample3_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect Union (System.Windows.Rect rect1, System.Windows.Rect rect2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect Union(valuetype System.Windows.Rect rect1, valuetype System.Windows.Rect rect2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Rect.Union(System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect1" Type="System.Windows.Rect" />
+        <Parameter Name="rect2" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect1">含める最初の四角形。</param>
+        <param name="rect2">含める 2 番目の四角形。</param>
+        <summary>2 つの指定した四角形を正確に格納できる大きさの四角形を作成します。</summary>
+        <returns>結果として得られる四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect.Union%28System.Windows.Rect%2CSystem.Windows.Rect%29>メソッドを 2 つの指定された四角形を正確に格納できる大きさの四角形を作成します。  
+  
+ [!code-csharp[RectExamples_snip#UnionExample4_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#unionexample4_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public double Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形の幅を取得または設定します。</summary>
+        <value>四角形の幅を表す正の数値。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Rect.Empty%2A>四角形、<xref:System.Windows.Rect.Width%2A>の<xref:System.Double.NegativeInfinity>します。 <xref:System.Windows.Rect.Empty%2A>四角形は読み取り専用です。<xref:System.Windows.Rect.Width%2A>変更できません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Rect.Width" />負の値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.Width" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public double X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または四角形の左端の x 軸の値を設定します。</summary>
+        <value>四角形の左端の x 軸の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの取得は、<xref:System.Windows.Rect.Left%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.X" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public double Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Rect.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または四角形の上側の y 軸の値を設定します。</summary>
+        <value>四角形の上側の y 軸の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの取得は、<xref:System.Windows.Rect.Top%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Rect>構造のディメンションと XAML を使用して四角形の場所を指定します。  
+  
+ [!code-csharp[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/CSharp/RectExample.cs#rectexamplewholepage)]
+ [!code-vb[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/visualbasic/rectexample.vb#rectexamplewholepage)]
+ [!code-xaml[GeometriesMiscSnippets_snip#RectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/RectExample.xaml#rectexamplewholepage)]  
+  
+ 次の例では、コードを使用して、四角形を作成し、ページに追加する方法を示します。 新しい四角形のサイズと座標の情報を検索し、内の情報を表示する方法も示します、<xref:System.Windows.Controls.TextBox>四角形の下。  
+  
+ [!code-csharp[RectExamples_snip#CreateRectExample1_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/RectExamples_snip/CSharp/RectExample.cs#createrectexample1_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Rect.Y" />設定されている、<see cref="P:System.Windows.Rect.Empty" />四角形。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

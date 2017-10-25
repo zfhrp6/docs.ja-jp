@@ -1,0 +1,147 @@
+<Type Name="ConformanceLevel" FullName="System.Xml.ConformanceLevel">
+  <TypeSignature Language="C#" Value="public enum ConformanceLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConformanceLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.ConformanceLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>入力または出力チェックの量を指定<see cref="T:System.Xml.XmlReader" />と<see cref="T:System.Xml.XmlWriter" />オブジェクトを実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML リーダーまたはライター インスタンスを作成するときに行うこともできます、<xref:System.Xml.XmlReaderSettings>または<xref:System.Xml.XmlWriterSettings>クラスが、必要な機能をサポートするために、新しいインスタンスを指定します。 構成できる機能の 1 つは、XML データに適用する準拠のレベルです。  
+  
+ 対応のリーダーまたはライターを作成する処理されている XML データが指定の準拠レベルに準拠していることを保証します。 読み取りまたは書き込みストリームが準拠レベルに準拠していない場合は、例外がスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.ConformanceLevel Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.ConformanceLevel.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ConformanceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlReader" />または<see cref="T:System.Xml.XmlWriter" />とかどうかドキュメント レベルまたはフラグメント レベル チェックを実行する必要は適切なチェックをオブジェクトが自動的に検出します。 別に折り返す場合<see cref="T:System.Xml.XmlReader" />または<see cref="T:System.Xml.XmlWriter" />オブジェクトを外部のオブジェクトは、その他の一致チェックは行いません。 準拠のチェックは、基になるオブジェクトだけで実行されます。  
+  
+ 参照してください、<see cref="P:System.Xml.XmlReaderSettings.ConformanceLevel" />と<see cref="P:System.Xml.XmlWriterSettings.ConformanceLevel" />コンプライアンスのレベルを決定する方法の詳細プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="Document" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.ConformanceLevel Document = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.ConformanceLevel.Document" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ConformanceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML データを整形式の規則に準拠している[XML 1.0 ドキュメント](http://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed)W3C で定義されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このレベルのチェックにより、読み取りまたは書き込みストリームとしてのいずれかのプロセッサで利用できること、 [XML 1.0 ドキュメント](http://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed)です。  
+  
+ ドキュメント レベルのチェックは、フラグメント レベルのチェックを適用して、また 次を確認してください。  
+  
+-   XML 宣言、DTD、要素、コメント、空白文字、または処理命令以外のノードが最上位の項目にありません。  
+  
+-   XML データには、1 つだけの最上位の要素ノードがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fragment">
+      <MemberSignature Language="C#" Value="Fragment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.ConformanceLevel Fragment = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.ConformanceLevel.Fragment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ConformanceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML データは、[整形式の XML フラグメント](http://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities)W3C で定義されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この準拠レベルでは、ルート要素がない可能性がありますが、整形式ではそれを XML ドキュメントを表します。 このレベルのチェックにより、読み取りまたは書き込みストリームとしてのいずれかのプロセッサで利用できること、 [XML 1.0 の外部解析エンティティ](http://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

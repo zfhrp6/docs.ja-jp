@@ -1,0 +1,1437 @@
+<Type Name="TextBox" FullName="System.Windows.Controls.TextBox">
+  <TypeSignature Language="C#" Value="public class TextBox : System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi TextBox extends System.Windows.Controls.Primitives.TextBoxBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TextBox" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.TextBoxBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Text)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Text")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>書式なしテキストの表示または編集に使用できるコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.TextBox>コントロールの書式設定されていないテキストのみを含めることができます、<xref:System.Windows.Controls.TextBox.Text%2A>プロパティです。 次の図の例を示しています、<xref:System.Windows.Controls.TextBox>です。  
+  
+ ![テキスト ボックスのスクリーン ショット](~/add/media/ss-ctl-textbox.gif " テキスト ボックスのスクリーン ショット")  
+テキスト ボックスの例  
+  
+ <xref:System.Windows.Controls.TextBox>複数のカプセル化されたコンポーネントで構成される複合コントロールです。 その結果、一部のイベントはいないバブリング格納しているコントロールがカプセル化された子要素によって処理されるためです。 このため、アプリケーション開発者はトンネリングのバージョンの (プレフィックス「プレビュー」で表されます) イベントをリッスンする必要があります。  
+  
+ <xref:System.Windows.Controls.TextBox>書式なしテキストのみをサポートしています。 リッチ コンテンツのサポートを必要とするアプリケーションでは、次を参照してください。<xref:System.Windows.Controls.RichTextBox>です。 パスワードまたはその他の機密データをそのまま使用する必要があるアプリケーションでは、次を参照してください。<xref:System.Windows.Controls.PasswordBox>です。  
+  
+ 内のテキストの水平方向および垂直方向に整列、<xref:System.Windows.Controls.TextBox>処理が終わったら、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティです。 整列、<xref:System.Windows.Controls.TextBox>のページ レイアウト内で行われます、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティです。  
+  
+ 周りの境界線を非表示にする最善の方法、<xref:System.Windows.Controls.TextBox>を設定するには、<xref:System.Windows.Controls.Control.BorderThickness%2A>のプロパティ、<xref:System.Windows.Controls.TextBox>に`0`です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.Controls.TextBox>バブルの組み込みの処理が<xref:System.Windows.UIElement.MouseUp>と<xref:System.Windows.UIElement.MouseDown>イベント。 したがって、カスタム イベント ハンドラーをリッスン<xref:System.Windows.UIElement.MouseUp>または<xref:System.Windows.UIElement.MouseDown>からのイベント、<xref:System.Windows.Controls.TextBox>は呼び出されません。 これらのイベントに応答する必要がある場合は、トンネリングをリッスン<xref:System.Windows.UIElement.PreviewMouseUp>と<xref:System.Windows.UIElement.PreviewMouseDown>イベント代わりのハンドラーを登録または、<xref:System.Windows.EventSetter.HandledEventsToo%2A>引数 (この後者のオプションはコードで使用できるのみです)。 イベントを無効にする意図的にしない限り、処理済みのマークを付けないでください<xref:System.Windows.Controls.TextBox>ネイティブこれらのイベントを処理し、コントロールの注目すべきへの影響ことに注意してください[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  
+  
+ スクロール バーには表示されません、<xref:System.Windows.Controls.TextBox>既定です。 スクロール バーを表示するには、次のように設定します。、<xref:System.Windows.Controls.Primitives.TextBoxBase.VerticalScrollBarVisibility%2A>と<xref:System.Windows.Controls.Primitives.TextBoxBase.HorizontalScrollBarVisibility%2A>プロパティ<xref:System.Windows.Controls.ScrollBarVisibility.Visible>または<xref:System.Windows.Controls.ScrollBarVisibility.Auto>です。  
+  
+ 通常、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>を検出するたびにイベントを使用する必要があります内のテキスト、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>変更ではなく<xref:System.Windows.UIElement.KeyDown>想定される場合があります。 参照してください[する方法: 検出時にテキストをテキスト ボックスが変更された](~/docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)例についてはします。  
+  
+## <a name="customizing-the-textbox-control"></a>テキスト ボックス コントロールをカスタマイズします。  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.TextBox>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.TextBox>を参照してください[テキスト ボックスのスタイルとテンプレート](~/docs/framework/wpf/controls/textbox-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.TextBox>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ この例では、Text プロパティを使用して、TextBox コントロールの最初のテキスト内容を設定する方法を示します。  
+  
+> [!NOTE]
+>  例では、Extensible Application Markup Language (XAML) バージョンが使用できますが、 \<TextBox.Text > タグの各ボタンのテキスト ボックスのコンテンツのテキストを囲む必要はありません、テキスト ボックスに、ContentPropertyAttribute が適用されるため、プロパティのテキスト属性します。  
+  
+```xaml  
+<TextBox Name="tbSettingText">  
+  Initial text contents of the TextBox.  
+</TextBox>  
+```  
+  
+```csharp  
+tbSettingText.Text = "Initial text contents of the TextBox.";  
+```  
+  
+```vb  
+tbSettingText.Text = "Initial text contents of the TextBox."  
+```  
+  
+ その他の例は、このドキュメントの version 4.0 を参照してください: [TextBox クラス](https://msdn.microsoft.com/en-US/library/ms617604\(v=vs.100\).aspx)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.TextBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaretIndex">
+      <MemberSignature Language="C#" Value="public int CaretIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CaretIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.CaretIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカレットの挿入位置のインデックスを設定します。</summary>
+        <value>キャレットの 0 から始まる挿入位置を示すインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得する、そのキャレットの現在の挿入位置のインデックスを返します (を参照してください<xref:System.Windows.Documents.TextPointer>「挿入位置」のような用語について)。 このプロパティの設定を指定したカーソル位置にキャレットを移動します。  
+  
+ 挿入位置では、文字または要素のタグの間です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterCasing">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.CharacterCasing CharacterCasing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.CharacterCasing CharacterCasing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.CharacterCasing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.CharacterCasing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスに手動で入力されたときに文字が大文字と小文字区別方法を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Controls.CharacterCasing" />手動の方法で入力した文字を指定する値が大文字で入力します。 既定値は、<see cref="F:System.Windows.Controls.CharacterCasing.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、プログラムによって追加される文字は影響しません。  
+  
+<a name="dependencyPropertyInfo_CharacterCasing"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.CharacterCasingProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.TextBox.CharacterCasing%2A>プロパティ テキスト ボックスに大文字をすべて手動で入力した文字に変換します。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#CharacterCasingExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/charactercasingexample.xaml#charactercasingexamplewholepage)]  
+  
+ [!code-csharp[TextBoxMiscSnippets_procedural_snip#CharacterCasingCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/CSharp/CharacterCasingExample.cs#charactercasingcodeexamplewholepage)]
+ [!code-vb[TextBoxMiscSnippets_procedural_snip#CharacterCasingCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/visualbasic/charactercasingexample.vb#charactercasingcodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterCasingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CharacterCasingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CharacterCasingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.CharacterCasingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.CharacterCasing" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスからすべてのコンテンツを消去します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharacterIndexFromLineIndex">
+      <MemberSignature Language="C#" Value="public int GetCharacterIndexFromLineIndex (int lineIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCharacterIndexFromLineIndex(int32 lineIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetCharacterIndexFromLineIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineIndex">最初の文字インデックスを取得する行の 0 から始まるインデックス。</param>
+        <summary>指定した行の最初の文字の 0 から始まる文字インデックスを返します。</summary>
+        <returns>指定した行の最初の文字の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharacterIndexFromPoint">
+      <MemberSignature Language="C#" Value="public int GetCharacterIndexFromPoint (System.Windows.Point point, bool snapToText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCharacterIndexFromPoint(valuetype System.Windows.Point point, bool snapToText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetCharacterIndexFromPoint(System.Windows.Point,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="snapToText" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">特定の時点に<see cref="T:System.Windows.Controls.TextBox" />座標空間インデックスを取得します。</param>
+        <param name="snapToText">
+          <see langword="true" />指定した位置に文字がない場合に最も近いインデックスを返す<see langword="false" />を指定した位置に文字がない場合は、– 1 を返します。</param>
+        <summary>指定したポイントに最も近い文字の 0 から始まるインデックスを返します。</summary>
+        <returns>有効なインデックスが見つからない場合は、-1 を指定したポイントに最も近い文字のインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstVisibleLineIndex">
+      <MemberSignature Language="C#" Value="public int GetFirstVisibleLineIndex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFirstVisibleLineIndex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetFirstVisibleLineIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスに現在表示されている最初の行の行インデックスを返します。</summary>
+        <returns>テキスト ボックスに表示されている最初の行の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastVisibleLineIndex">
+      <MemberSignature Language="C#" Value="public int GetLastVisibleLineIndex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetLastVisibleLineIndex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetLastVisibleLineIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在、テキスト ボックスに表示されている最後の行の行インデックスを返します。</summary>
+        <returns>テキスト ボックスに表示されている最後の行の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineIndexFromCharacterIndex">
+      <MemberSignature Language="C#" Value="public int GetLineIndexFromCharacterIndex (int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetLineIndexFromCharacterIndex(int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetLineIndexFromCharacterIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">関連付けられている行のインデックスを取得する対象の 0 から始まる文字インデックス。</param>
+        <summary>指定した文字のインデックスを含む行の 0 から始まる行インデックスを返します。</summary>
+        <returns>指定した文字のインデックスを含む行の 0 から始まるインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineLength">
+      <MemberSignature Language="C#" Value="public int GetLineLength (int lineIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetLineLength(int32 lineIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetLineLength(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineIndex">文字数を取得する対象の 0 から始まる行インデックス。</param>
+        <summary>指定した行の文字数を返します。</summary>
+        <returns>指定した行の文字の数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineText">
+      <MemberSignature Language="C#" Value="public string GetLineText (int lineIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLineText(int32 lineIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetLineText(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineIndex">現在表示されているテキストを取得する対象の 0 から始まる行インデックス。</param>
+        <summary>指定した行に現在表示されているテキストを返します。</summary>
+        <returns>指定した行に現在表示されているテキストのコピーを格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSpellingErrorCharacterIndex">
+      <MemberSignature Language="C#" Value="public int GetNextSpellingErrorCharacterIndex (int charIndex, System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetNextSpellingErrorCharacterIndex(int32 charIndex, valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetNextSpellingErrorCharacterIndex(System.Int32,System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">[次へ] のスペル ミスの検索を開始位置を示す 0 から始まる文字インデックス。</param>
+        <param name="direction">1 つ、 <see cref="T:System.Windows.Documents.LogicalDirection" /> 、指定した、次のスペル ミスを検索する方向を指定する値<c>charIndex</c>です。</param>
+        <summary>テキスト ボックスの内容には、次のスペル ミスの先頭の文字インデックスを返します。</summary>
+        <returns>テキスト ボックス、またはスペル ミスを次にない場合は – 1 の内容は、次のスペル ミスの最初の文字のインデックスが存在します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRectFromCharacterIndex">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect GetRectFromCharacterIndex (int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Rect GetRectFromCharacterIndex(int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetRectFromCharacterIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">四角形を取得する対象の文字の 0 から始まる文字インデックス。</param>
+        <summary>指定したインデックス位置にある文字の最先端の四角形を返します。</summary>
+        <returns>指定した文字位置にある文字の最先端の四角形または<see cref="P:System.Windows.Rect.Empty" />外接する四角形を決定できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字のエッジを表す四角形を返す、ので、四角形の幅は 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRectFromCharacterIndex">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect GetRectFromCharacterIndex (int charIndex, bool trailingEdge);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Rect GetRectFromCharacterIndex(int32 charIndex, bool trailingEdge) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetRectFromCharacterIndex(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+        <Parameter Name="trailingEdge" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">四角形を取得する対象の文字の 0 から始まる文字インデックス。</param>
+        <param name="trailingEdge">
+          <see langword="true" />文字の後の縁を取得するには<see langword="false" />を文字の最先端を取得します。</param>
+        <summary>トップ レベルまたは指定したインデックス位置にある文字の末端の四角形を返します。</summary>
+        <returns>指定した文字位置にある文字の端に四角形または<see cref="P:System.Windows.Rect.Empty" />外接する四角形を決定できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字のエッジを表す四角形を返す、ので、四角形の幅は 0 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="charIndex" />負の値またはコンテンツの長さよりも大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpellingError">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.SpellingError GetSpellingError (int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Controls.SpellingError GetSpellingError(int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetSpellingError(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.SpellingError</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">スペル ミスがないかをチェックするコンテンツ内の位置の、0 から始まる文字インデックス。</param>
+        <summary>返します、<see cref="T:System.Windows.Controls.SpellingError" />指定された文字のインデックス位置にあるスペル ミスに関連付けられているオブジェクト。</summary>
+        <returns>A<see cref="T:System.Windows.Controls.SpellingError" />によって示される文字で見つかったスペル ミスの詳細を含むオブジェクト<paramref name="charIndex" />、または<see langword="null" />指定した文字にスペル ミスが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpellingErrorLength">
+      <MemberSignature Language="C#" Value="public int GetSpellingErrorLength (int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetSpellingErrorLength(int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetSpellingErrorLength(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">スペル ミスがないかをチェックするコンテンツ内の位置の、0 から始まる文字インデックス。</param>
+        <summary>指定した文字を含む、スペル ミスがの長さを返します。</summary>
+        <returns>指定した文字は、スペル ミスの一部ではない場合、charindex 関数、または 0 で指定された文字を含む、スペル ミスの長さ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpellingErrorStart">
+      <MemberSignature Language="C#" Value="public int GetSpellingErrorStart (int charIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetSpellingErrorStart(int32 charIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.GetSpellingErrorStart(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charIndex">スペル ミスがないかをチェックするコンテンツ内の位置の、0 から始まる文字インデックス。</param>
+        <summary>指定した文字を含む任意のスペル ミスの先頭の文字インデックスを返します。</summary>
+        <returns>指定された文字を含む任意のスペル ミスの先頭の文字インデックス<paramref name="charIndex" />、指定した文字は、スペル ミスの一部ではない場合は-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineCount">
+      <MemberSignature Language="C#" Value="public int LineCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.LineCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックス内の行の合計数を取得します。</summary>
+        <value>テキスト ボックス内の行の合計数。レイアウト情報が利用できない場合は –1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストの折り返しが有効になっている場合、テキスト ボックスの幅を変更すると、この値を変更ことがあります。  
+  
+ 返される値は、現在表示されている数に関係なく、テキスト ボックス内の行の合計数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の論理子の列挙子を取得、<see cref="T:System.Windows.Controls.TextBox" />です。</summary>
+        <value>論理子要素の列挙子、<see cref="T:System.Windows.Controls.TextBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBox.LogicalChildren%2A>プロパティを含むコレクションの列挙子を返します、<xref:System.String>を値が、<xref:System.Windows.Controls.TextBox.Text%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスに手動で入力できる文字の最大数を設定します。</summary>
+        <value>テキスト ボックスに手動で入力できる文字の最大数。 既定では 0 で、制限がないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、郵便番号や電話番号などの値のコントロールに入力されたテキストの長さを制限することができます。 このプロパティを使用して、データがコントロールに入力したテキストが、データベース内の対応するフィールドの最大長を超えないように、データベースに格納されるときに入力したテキストの長さを制限することができますも。  
+  
+ このプロパティでは、プログラムによって追加される文字は影響しません。  
+  
+ このプロパティが 0 に設定されている場合は、コントロールに入力できるテキストの最大の長さが使用可能なメモリによってのみ制限されます。  
+  
+<a name="dependencyPropertyInfo_MaxLength"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.MaxLengthProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.TextBox>で、 <xref:System.Windows.Controls.TextBox.MaxLength%2A> 500 文字までです。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#TextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/textboxexample.xaml#textboxexamplewholepage)]  
+  
+ [!code-csharp[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/CSharp/TextBoxExample.cs#textboxcodeexampleinline1)]
+ [!code-vb[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/visualbasic/textboxexample.vb#textboxcodeexampleinline1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLengthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxLengthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxLengthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.MaxLengthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.MaxLength" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLines">
+      <MemberSignature Language="C#" Value="public int MaxLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.MaxLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(2147483647)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示行の最大数を設定します。</summary>
+        <value>表示行の最大数。 既定値は、<see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得する、現在の値を返します<xref:System.Windows.Controls.TextBox.MaxLines%2A>です。 このプロパティを設定すると、表示されている行の数がで指定された制限を超えた場合のサイズを変更するテキスト ボックス<xref:System.Windows.Controls.TextBox.MaxLines%2A>です。  
+  
+ このプロパティは、表示の行にのみ適用され、実際の行の数を制限しません。 その構成によっては、スクロールによってアクセス可能なその他の非表示の行がテキスト ボックスにあります。  
+  
+ 場合、<xref:System.Windows.FrameworkElement.Height%2A>プロパティが明示的に設定されて、 <xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.TextBox.MaxLines%2A>と<xref:System.Windows.Controls.TextBox.MinLines%2A>プロパティの値は無視されます。  
+  
+<a name="dependencyPropertyInfo_MaxLines"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.MaxLinesProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.TextBox>で、 <xref:System.Windows.Controls.TextBox.MaxLines%2A> 5 の値。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#TextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/textboxexample.xaml#textboxexamplewholepage)]  
+  
+ [!code-csharp[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/CSharp/TextBoxExample.cs#textboxcodeexampleinline1)]
+ [!code-vb[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/visualbasic/textboxexample.vb#textboxcodeexampleinline1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">
+          <see cref="P:System.Windows.Controls.TextBox.MaxLines" /> は <see cref="P:System.Windows.Controls.TextBox.MinLines" /> より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.MaxLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.MaxLines" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">A<see cref="T:System.Windows.Size" />をテキスト ボックスのサイズの制約を指定します。</param>
+        <summary>そのコンテンツへのテキスト ボックスのサイズを設定します。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />テキスト ボックスの新しいサイズを示す構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムのサイズ変更動作を実装するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinLines">
+      <MemberSignature Language="C#" Value="public int MinLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.MinLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示行の最小数を設定します。</summary>
+        <value>表示されている行の最小数。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得する、現在の値を返します<xref:System.Windows.Controls.TextBox.MinLines%2A>です。 このプロパティを設定すると、表示されている行の数がで指定された値より小さい場合のサイズを変更するテキスト ボックス<xref:System.Windows.Controls.TextBox.MinLines%2A>です。  
+  
+ 場合、<xref:System.Windows.FrameworkElement.Height%2A>プロパティが明示的に設定されて、 <xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.TextBox.MaxLines%2A>と<xref:System.Windows.Controls.TextBox.MinLines%2A>プロパティの値は無視されます。  
+  
+<a name="dependencyPropertyInfo_MinLines"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.MinLinesProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.TextBox>で、 <xref:System.Windows.Controls.TextBox.MinLines%2A> 1 の値。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#TextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/textboxexample.xaml#textboxexamplewholepage)]  
+  
+ [!code-csharp[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/CSharp/TextBoxExample.cs#textboxcodeexampleinline1)]
+ [!code-vb[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/visualbasic/textboxexample.vb#textboxcodeexampleinline1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">
+          <see cref="P:System.Windows.Controls.TextBox.MinLines" /> が <see cref="P:System.Windows.Controls.TextBox.MaxLines" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.MinLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.MinLines" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />テキスト ボックスのオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />テキスト ボックスのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられているイベントの引数。</param>
+        <summary>要素に存在する 1 つ以上の依存関係プロパティの有効な値が変更された場合に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.FrameworkElement.OnPropertyChanged%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToLine">
+      <MemberSignature Language="C#" Value="public void ScrollToLine (int lineIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToLine(int32 lineIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.ScrollToLine(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineIndex">スクロールして表示する行の 0 から始まる行インデックス。</param>
+        <summary>ビューには、指定した直線インデックスにある行をスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、完全に指定した行の表示に必要な最低限、スクロール、テキスト ボックスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select (int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select(int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.Select(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="start">選択範囲の最初の文字の 0 から始まる文字インデックス。</param>
+        <param name="length">文字で、選択範囲の長さ。</param>
+        <summary>テキスト ボックスでテキストの範囲を選択します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="start" /> または <paramref name="length" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedText">
+      <MemberSignature Language="C#" Value="public string SelectedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.SelectedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックス内の現在の選択項目のコンテンツを取得または設定します。</summary>
+        <value>テキスト ボックスで現在択されているテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、現在選択されているテキストの文字列のコピーが返されます。 このプロパティを設定すると、指定された文字列で現在の選択項目が置き換えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionLength">
+      <MemberSignature Language="C#" Value="public int SelectionLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.SelectionLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスに現在の選択範囲内の文字の数を示す値を設定します。</summary>
+        <value>テキスト ボックスに現在の選択範囲内の文字の数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得する現在の選択範囲の文字数を返します。 このプロパティを設定すると、固定選択範囲の先頭を保持する、指定した値を現在の選択範囲の長さが調整されます。  
+  
+ 一般に、指定された選択範囲の長さが、選択範囲の末尾位置 (復帰と改行文字の間など、またはタグの内側) が無効です 選択範囲の長さに自動的がどのように発生するときに調整します。 選択範囲が開始し、有効な位置で終了できるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Windows.Controls.TextBox.SelectionLength" />負の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStart">
+      <MemberSignature Language="C#" Value="public int SelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.SelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の選択範囲の最初の文字インデックスを設定します。</summary>
+        <value>現在の選択範囲の最初の文字インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された選択範囲の長さが原因となり、選択範囲の末尾、復帰と改行文字の間の場合、選択範囲の長さは自動的に 1 ずつ増加範囲全体の行末マーカーにまたがるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Windows.Controls.TextBox.SelectionStart" />負の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeText">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeText (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeText(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.ShouldSerializeText(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">このオブジェクトのシリアル化サービス マネージャー オブジェクトです。</param>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Controls.TextBox.Text" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Controls.TextBox" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.TextBox.Text" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>すべてのケースでは、例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBox>経由でテキストのみを受け付ける、<xref:System.Windows.Markup.IAddChild>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">その他のすべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TextBox.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.TextBox> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Text)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスのテキスト内容を取得または設定します。</summary>
+        <value>テキストボックスのテキスト内容を格納している文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、テキスト ボックスの内容の文字列のコピーが返されます。 このプロパティを設定すると、指定された文字列で、テキスト ボックスの内容が置き換えられます。  
+  
+ このプロパティは、アニメーションをサポートしていません。  
+  
+ このプロパティがの既定の更新動作を使用してデータ バインディングのシナリオで使用されているときに<xref:System.Windows.Data.UpdateSourceTrigger?displayProperty=nameWithType>です。  
+  
+<a name="xamlPropertyElementUsage_Text"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  String  
+</object>  
+```  
+  
+<a name="dependencyPropertyInfo_Text"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.TextProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.TextAlignment TextAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスの内容の水平方向の配置を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextAlignment" />テキスト ボックスの内容の水平方向の配置を指定する値。 既定値は、<see cref="F:System.Windows.TextAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得するには、現在の配置が返されます。 このプロパティを設定すると、指定された配置を反映するように、テキスト ボックスの内容が調整されます。  
+  
+ このプロパティより高い優先順位、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_TextAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.TextAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.TextBox>で、<xref:System.Windows.Controls.TextBox.TextAlignment%2A>の<xref:System.Windows.TextAlignment?displayProperty=nameWithType>します。  
+  
+ [!code-xaml[TextBoxMiscSnippets_snip#TextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/textboxexample.xaml#textboxexamplewholepage)]  
+  
+ [!code-csharp[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/CSharp/TextBoxExample.cs#textboxcodeexampleinline1)]
+ [!code-vb[TextBoxMiscSnippets_procedural_snip#TextBoxCodeExampleInline1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_procedural_snip/visualbasic/textboxexample.vb#textboxcodeexampleinline1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.TextAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.TextAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorations">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationCollection TextDecorations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TextDecorationCollection TextDecorations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.TextDecorations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスに適用するテキスト装飾を取得します。</summary>
+        <value>A<see cref="T:System.Windows.TextDecorationCollection" />をテキスト ボックスに適用するテキスト装飾を含むコレクション。 既定値は<see langword="null" />(テキスト装飾は適用されません)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.TextDecoration>オブジェクトがテキストに追加できるビジュアルの装飾します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。 テキスト装飾の詳細については、次を参照してください。[する方法: テキスト装飾を作成する](~/docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)です。  
+  
+<a name="dependencyPropertyInfo_TextDecorations"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.TextDecorationsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.TextDecorations%2A>属性を使用して<xref:System.Windows.Documents.Run>例要素として。  
+  
+ [!code-xaml[InlineSnippets#_Inline_TextDecXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_inline_textdecxaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 既定の取り消し線が適用されたテキスト](~/add/media/inline-textdec-strike.png "スクリーン ショット: 既定取り消し線が適用されたテキスト")  
+  
+ 次の図が、どのように<xref:System.Windows.TextDecorations.OverLine%2A>、 <xref:System.Windows.TextDecorations.Baseline%2A>、および<xref:System.Windows.TextDecorations.Underline%2A>、それぞれします。  
+  
+ ![スクリーン ショット: TextDecorator を上線](~/add/media/inline-textdec-over.png "スクリーン ショット: TextDecorator の上線")  
+  
+ ![スクリーン ショット: 既定のテキストのベースライン効果](~/add/media/inline-textdec-base.png "スクリーン ショット: 既定のテキストのベースライン効果")  
+  
+ ![スクリーン ショット: 既定の下線が適用されたテキスト](~/add/media/inline-textdec-under.png "スクリーン ショット: 既定の下線が適用されたテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Inline.TextDecorations%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[InlineSnippets#_Inline_TextDec](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_inline_textdec)]
+ [!code-vb[InlineSnippets#_Inline_TextDec](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_inline_textdec)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorationsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextDecorationsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextDecorationsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.TextDecorationsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.TextDecorations" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBox.TextDecorations%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.TextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.Text" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextWrapping">
+      <MemberSignature Language="C#" Value="public System.Windows.TextWrapping TextWrapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextWrapping TextWrapping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.TextWrapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスでのテキストの折り返し方法を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextWrapping" />をテキスト ボックスでのテキストの折り返し方法を示す値。 既定値は、<see cref="F:System.Windows.TextWrapping.NoWrap" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Controls.TextBox.TextWrapping%2A>属性を<xref:System.Windows.TextWrapping.Wrap>原因入力テキストを折り返すを新しい行の端、<xref:System.Windows.Controls.TextBox>コントロールに達するの高さが自動的に拡大、<xref:System.Windows.Controls.TextBox>コントロールに必要な場合、新しい行のスペースを含めます。  
+  
+<a name="dependencyPropertyInfo_TextWrapping"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TextBox.TextWrappingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を設定する方法を示します。  
+  
+ [!code-csharp[TextBoxBase_Samp#TextBoxBase12](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxBase_Samp/CSharp/Window1.xaml.cs#textboxbase12)]
+ [!code-vb[TextBoxBase_Samp#TextBoxBase12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxBase_Samp/VisualBasic/Window1.xaml.vb#textboxbase12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextWrappingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextWrappingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextWrappingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TextBox.TextWrappingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TextBox.TextWrapping" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextBox.TextWrapping%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Typography">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Typography Typography { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.Typography Typography" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextBox.Typography" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Typography</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスのテキストの内容を現在有効な文字体裁のバリエーションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.Typography" />現在有効な文字体裁のバリエーションを指定するオブジェクト。 既定の文字体裁の値の一覧は、次を参照してください。<see cref="T:System.Windows.Documents.Typography" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument.Typography%2A>プロパティにのみ適用されます[!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)]フォントです。 文字体裁のバリエーションには影響しません、バリアント型をサポートしないフォントです。 このトピックの詳細については、次を参照してください。 [WPF のタイポグラフィ](~/docs/framework/wpf/advanced/typography-in-wpf.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.TextElement.Typography%2A>属性を使用して<xref:System.Windows.Documents.Paragraph>例要素として。  
+  
+ [!code-xaml[TextElementSnippets#_TextElement_TypogXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_typogxaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 変更されたタイポグラフィを含むテキスト](~/add/media/textelement-typog.png "スクリーン ショット: 変更されたタイポグラフィを含むテキスト")  
+  
+ これに対し、既定の文字体裁プロパティを設定した同様の例がどのように表示されるかを次の図に示します。  
+  
+ ![スクリーン ショット: 変更されたタイポグラフィを含むテキスト](~/add/media/textelement-typog-default.png "スクリーン ショット: 変更されたタイポグラフィを含むテキスト")  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.TextBox.Typography%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[TextElementSnippets#_TextElement_Typog](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_typog)]
+ [!code-vb[TextElementSnippets#_TextElement_Typog](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_typog)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

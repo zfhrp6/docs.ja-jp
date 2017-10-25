@@ -1,0 +1,425 @@
+<Type Name="CorrelationCallbackMessageProperty" FullName="System.ServiceModel.Channels.CorrelationCallbackMessageProperty">
+  <TypeSignature Language="C#" Value="public abstract class CorrelationCallbackMessageProperty : System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CorrelationCallbackMessageProperty extends System.Object implements class System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IMessageProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>すべての関連付けデータが使用可能になるまで関連付けキーの計算を延期するための抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、通常、メッセージがネットワーク上で送信される前に他のチャネルが関連付けデータを提供できるようにする目的で使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CorrelationCallbackMessageProperty (System.Collections.Generic.ICollection&lt;string&gt; neededData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.ICollection`1&lt;string&gt; neededData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.#ctor(System.Collections.Generic.ICollection{System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="neededData" Type="System.Collections.Generic.ICollection&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="neededData">関連付けの計算に必要な関連付けデータ。</param>
+        <summary>関連付けの計算に必要な指定された関連付けデータ コレクションを使用して派生クラスの新しいインスタンスを初期化するために、派生クラスによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CorrelationCallbackMessageProperty (System.ServiceModel.Channels.CorrelationCallbackMessageProperty callback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.CorrelationCallbackMessageProperty callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.#ctor(System.ServiceModel.Channels.CorrelationCallbackMessageProperty)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />
+      </Parameters>
+      <Docs>
+        <param name="callback">コピーする <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" /> 派生クラス インスタンス。</param>
+        <summary>別の <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" /> 派生クラス インスタンスからの必要な関連付けデータを使用して派生クラスの新しいインスタンスを初期化するために、派生クラスによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddData">
+      <MemberSignature Language="C#" Value="public void AddData (string name, Func&lt;string&gt; value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddData(string name, class System.Func`1&lt;string&gt; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.AddData(System.String,System.Func{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Func&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">関連付けデータ値の名前。</param>
+        <param name="value">関連付けデータの値を提供します。</param>
+        <summary>必要な関連付けデータをプロパティに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要な関連付けデータが追加されると、そのデータは <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.NeededData%2A> の一覧から削除されます。 ときに必要なすべてのデータを追加すると、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.NeededData%2A>リストが空と<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.IsFullyDefined%2A>返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginFinalizeCorrelation">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginFinalizeCorrelation (System.ServiceModel.Channels.Message message, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginFinalizeCorrelation(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.BeginFinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">関連付けられるメッセージ。</param>
+        <param name="timeout">関連付けを完了する必要がある期間。これを超えると、<see cref="T:System.TimeoutException" /> がスローされます。</param>
+        <param name="callback">関連付け計算が完了した時点で呼び出すメソッド。</param>
+        <param name="state">非同期操作についての情報を格納するオプションのアプリケーション固有オブジェクト。</param>
+        <summary>関連付けを非同期で構築するためにすべての関連付け情報が使用可能になると、関連付けプロトコルによって呼び出されます。</summary>
+        <returns>現在の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnBeginFinalizeCorrelation%2A> を呼び出して関連付けを構築します。 指定されたメッセージの関連付け計算を非同期で実行する <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnBeginFinalizeCorrelation%2A> の実装がアプリケーションによって提供される必要があります。  
+  
+ 非同期操作が完了したときに通知を受け取るには、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.EndFinalizeCorrelation%2A> メソッドから `callback` を呼び出します。 <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.EndFinalizeCorrelation%2A> は、非同期操作が完了する前に呼び出された場合、操作が完了するまでブロックされます。 指定されたタイムアウト期間内に操作が完了しない場合、<xref:System.TimeoutException> がスローされます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.FinalizeCorrelation%2A> 非同期デザイン パターンを使用する、<xref:System.IAsyncResult> の非同期版です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][非同期プログラミングの概要](http://go.microsoft.com/fwlink/?LinkId=141764)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、派生メッセージ プロパティ インスタンスのコピーを初期化して返します。</summary>
+        <returns>派生メッセージ プロパティ インスタンスのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndFinalizeCorrelation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndFinalizeCorrelation (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.Message EndFinalizeCorrelation(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.EndFinalizeCorrelation(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期の <see cref="T:System.IAsyncResult" /> 操作を参照する <see cref="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.BeginFinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>関連付け用に非同期で作成されたメッセージを返します。</summary>
+        <returns>関連付け用に作成されたメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnEndFinalizeCorrelation%2A> を呼び出してメッセージを取得します。 関連付け用に作成されたメッセージを返す <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnEndFinalizeCorrelation%2A> の実装がアプリケーションによって提供される必要があります。  
+  
+ <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.EndFinalizeCorrelation%2A> は、非同期操作が完了する前に呼び出された場合、操作が完了するまでブロックされます。 <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.BeginFinalizeCorrelation%2A> の呼び出しで指定されたタイムアウト期間内に操作が完了しなかった場合は、このメソッドが呼び出されると <xref:System.TimeoutException> がスローされます。  
+  
+ このメソッドは、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.FinalizeCorrelation%2A> 非同期デザイン パターンを使用する、<xref:System.IAsyncResult> の非同期版を完了します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][非同期プログラミングの概要](http://go.microsoft.com/fwlink/?LinkId=141764)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FinalizeCorrelation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message FinalizeCorrelation (System.ServiceModel.Channels.Message message, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.Message FinalizeCorrelation(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.FinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="message">関連付けられるメッセージ。</param>
+        <param name="timeout">関連付け計算を完了する必要がある期間。これを超えると、<see cref="T:System.TimeoutException" /> がスローされます。</param>
+        <summary>関連付けを構築するためにすべての関連付け情報が使用可能になると、関連付けプロトコルによって呼び出されます。</summary>
+        <returns>関連付けられるメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnFinalizeCorrelation%2A> を呼び出して関連付けを構築します。 指定されたメッセージの関連付け計算を実行する <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnFinalizeCorrelation%2A> の実装がアプリケーションによって提供される必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFullyDefined">
+      <MemberSignature Language="C#" Value="public bool IsFullyDefined { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFullyDefined" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.IsFullyDefined" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" /> にすべての必要な関連付けデータがあるかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />すべての必要な関連付けデータが存在する場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに必要なすべてのデータを追加すると、<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.NeededData%2A>リストが空と<xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.IsFullyDefined%2A>返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージ プロパティの名前を取得します。"CorrelationCallbackMessageProperty"。</summary>
+        <value>文字列値"CorrelationCallbackMessageProperty"。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NeededData">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; NeededData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; NeededData" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.NeededData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けを適用するために必要な関連付けデータの一覧を取得します。</summary>
+        <value>必要な関連付けデータの一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginFinalizeCorrelation">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginFinalizeCorrelation (System.ServiceModel.Channels.Message message, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginFinalizeCorrelation(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnBeginFinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">関連付けられるメッセージ。</param>
+        <param name="timeout">関連付け計算を完了する必要がある期間。これを超えると、<see cref="T:System.TimeoutException" /> がスローされます。</param>
+        <param name="callback">関連付け計算が完了した時点で呼び出すメソッド。</param>
+        <param name="state">非同期操作についての情報を格納するオプションのアプリケーション固有オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたメッセージの関連付け計算を非同期で実行します。</summary>
+        <returns>現在の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.BeginFinalizeCorrelation%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndFinalizeCorrelation">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.Message OnEndFinalizeCorrelation (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.Message OnEndFinalizeCorrelation(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnEndFinalizeCorrelation(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期の <see cref="T:System.IAsyncResult" /> 操作を参照する <see cref="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.BeginFinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>派生クラスでオーバーライドされると、関連付け用に非同期で作成されたメッセージを返します。</summary>
+        <returns>関連付けられるメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.EndFinalizeCorrelation%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFinalizeCorrelation">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.Message OnFinalizeCorrelation (System.ServiceModel.Channels.Message message, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.Message OnFinalizeCorrelation(class System.ServiceModel.Channels.Message message, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.OnFinalizeCorrelation(System.ServiceModel.Channels.Message,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="message">関連付けられるメッセージ。</param>
+        <param name="timeout">関連付け計算を完了する必要がある期間。これを超えると、<see cref="T:System.TimeoutException" /> がスローされます。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたメッセージの関連付け計算を実行します。</summary>
+        <returns>関連付けられるメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.FinalizeCorrelation%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.Message message, out System.ServiceModel.Channels.CorrelationCallbackMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Channels.CorrelationCallbackMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.TryGet(System.ServiceModel.Channels.Message,System.ServiceModel.Channels.CorrelationCallbackMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationCallbackMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">検査対象の <see cref="P:System.ServiceModel.Channels.Message.Properties" /> を格納するメッセージ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />内に指定されたメッセージの<see cref="P:System.ServiceModel.Channels.Message.Properties" />、それ以外の<see langword="null" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージの <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" /> から <see cref="P:System.ServiceModel.Channels.Message.Properties" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />場合、メッセージの<see cref="P:System.ServiceModel.Channels.Message.Properties" />を含む、 <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.MessageProperties properties, out System.ServiceModel.Channels.CorrelationCallbackMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.MessageProperties properties, [out] class System.ServiceModel.Channels.CorrelationCallbackMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationCallbackMessageProperty.TryGet(System.ServiceModel.Channels.MessageProperties,System.ServiceModel.Channels.CorrelationCallbackMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationCallbackMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="properties">検査対象のメッセージ プロパティ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />指定されたメッセージ プロパティに含まれている、それ以外の<see langword="null" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージ プロパティから <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />メッセージのプロパティが含まれている場合、 <see cref="T:System.ServiceModel.Channels.CorrelationCallbackMessageProperty" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

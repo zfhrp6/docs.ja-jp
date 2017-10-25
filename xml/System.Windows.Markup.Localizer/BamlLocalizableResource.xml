@@ -1,0 +1,262 @@
+<Type Name="BamlLocalizableResource" FullName="System.Windows.Markup.Localizer.BamlLocalizableResource">
+  <TypeSignature Language="C#" Value="public class BamlLocalizableResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BamlLocalizableResource extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Localizer.BamlLocalizableResource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>BAML ストリーム内のローカライズ可能なリソースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.Localizer.BamlLocalizableResource>クラスは、キーと値のペアで見つかった値コンポーネント、<xref:System.Windows.Markup.Localizer.BamlLocalizationDictionary>です。  
+  
+<a name="xamlTextUsage_BamlLocalizableResource"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Markup.Localizer.BamlLocalizableResource>です。  
+  
+ [!code-csharp[GrabBaml#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GrabBaml/CSharp/GrabBaml.cs#1)]
+ [!code-vb[GrabBaml#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GrabBaml/visualbasic/grabbaml.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizableResource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizableResource (string content, string comments, System.Windows.LocalizationCategory category, bool modifiable, bool readable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string content, string comments, valuetype System.Windows.LocalizationCategory category, bool modifiable, bool readable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResource.#ctor(System.String,System.String,System.Windows.LocalizationCategory,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="content" Type="System.String" />
+        <Parameter Name="comments" Type="System.String" />
+        <Parameter Name="category" Type="System.Windows.LocalizationCategory" />
+        <Parameter Name="modifiable" Type="System.Boolean" />
+        <Parameter Name="readable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="content">ローカライズ可能な値です。</param>
+        <param name="comments">コメントをローカライズするために使用します。</param>
+        <param name="category">リソースの文字列のカテゴリ。</param>
+        <param name="modifiable">
+          <see langword="true" />場合は、リソースを変更可能にする必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="readable">
+          <see langword="true" />翻訳の目的で、UI 内のテキストとして可能性のある読み取り可能になっているために、リソースが表示される場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResource" />クラス、ローカライズ可能な値を指定した、ローカリゼーション コメント、リソースのカテゴリ、ローカリゼーション ロックの状態、およびリソースの可視性を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public System.Windows.LocalizationCategory Category { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.LocalizationCategory Category" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResource.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LocalizationCategory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースのローカライズのカテゴリを設定します。</summary>
+        <value>ローカライズのカテゴリ、列挙体の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Category"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Comments">
+      <MemberSignature Language="C#" Value="public string Comments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comments" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResource.Comments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースに関連付けられているローカリゼーション コメントを設定します。</summary>
+        <value>ローカリゼーション コメント文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカリゼーション コメントは、ローカライズの規則やヒントを提供する開発者によって作成されます。 コメントは自由形式の文字列から抽出された[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]や、ローカリゼーション コメント ファイル。 内の要素にコメントを添付する[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]を使用して、<xref:System.Windows.Localization.Comments%2A?displayProperty=nameWithType>この添付プロパティの詳細については、添付プロパティを参照してください[ローカリゼーション属性とコメント](~/docs/framework/wpf/advanced/localization-attributes-and-comments.md)です。  
+  
+<a name="xamlTextUsage_Comments"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public string Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Content" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResource.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカライズ可能なコンテンツを設定します。</summary>
+        <value>ローカライズ可能なコンテンツの文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、子要素は、プレース ホルダーとして表されます。 プレース ホルダーが先頭に「#」、子要素の UID し、「;」です。 たとえば、「#TextBlock1; #TextBlock2;」です。 Normal「#」および「;」の文字をコンテンツ内でエスケープは、"\\"です。 これは、実際に当てはまります"\\"文字そのものです。 コンテンツ内の子のプレース ホルダーの削除は許可されないため、コードでは、ローカライズされたアプリケーションが実行時に失敗する原因となる要素を参照する可能性があります。 ただし、ローカライズ版で順序を変更することができます。  
+  
+ コンテンツ内の子要素は、読みやすさを向上させるために XML マークアップとして書式設定することもあります。 ためには、ときに<xref:System.Windows.Markup.Localizer.BamlLocalizer>クエリ、<xref:System.Windows.Markup.Localizer.ElementLocalizability>目的の要素の設定、<xref:System.Windows.Markup.Localizer.ElementLocalizability.FormattingTag%2A>プロパティを適切なタグ名。  
+  
+<a name="xamlTextUsage_Content"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResource.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResource" />等しいかどうかどうかを確認します。</param>
+        <summary>指定したかどうかを決定<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResource" />オブジェクトがこのオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="other" />と等しいオブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResource.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを表す整数のハッシュ コードを返します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiable">
+      <MemberSignature Language="C#" Value="public bool Modifiable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Modifiable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResource.Modifiable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカライズ可能なリソースが変更可能かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、リソースが変更可能です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_Modifiable"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Readable">
+      <MemberSignature Language="C#" Value="public bool Readable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Readable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResource.Readable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースが翻訳に表示されるかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />リソースが翻訳; 用に表示される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.Localizer.BamlLocalizableResource.Readable%2A>値が推奨するかどうかローカライズ可能なリソースのコンテンツを直接変換するプレーン文字列としてのローカライザーとして機能します。  
+  
+ たとえば、文字列"Red"使用すると、UI の文字列として直接変換できる別の言語にします。 この場合、<xref:System.Windows.Markup.Localizer.BamlLocalizableResource.Readable%2A>プロパティに設定する必要があります`true`です。  
+  
+ 定義済みの色の値として文字列"Red"を使用する場合、 <xref:System.Windows.Media.Brush>、変換することはできません。 したがって、<xref:System.Windows.Markup.Localizer.BamlLocalizableResource.Readable%2A>プロパティに設定する必要があります`false`です。  
+  
+<a name="xamlTextUsage_Readable"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

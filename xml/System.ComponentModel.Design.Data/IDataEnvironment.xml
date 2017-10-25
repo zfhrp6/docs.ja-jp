@@ -1,0 +1,251 @@
+<Type Name="IDataEnvironment" FullName="System.ComponentModel.Design.Data.IDataEnvironment">
+  <TypeSignature Language="C#" Value="public interface IDataEnvironment" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataEnvironment" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Data.IDataEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール デザイナーがデータ ストアまたはデータベース関連の機能をデザイン環境に統合できるようにするデータ サービスへのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するオブジェクト、<xref:System.ComponentModel.Design.Data.IDataEnvironment>インターフェイスがデザイン時にアプリケーションで使用できるデータ接続にアクセスできます。 <xref:System.ComponentModel.Design.Data.IDataEnvironment>インターフェイスが使用できるデータ接続を一覧表示、新しいデータ接続を作成、接続からスキーマ情報を取得、およびアプリケーションの構成ファイルにデータ接続の構成情報を保存するメソッドを提供します。  
+  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment>インターフェイスでは、デザイン環境でのデータ接続と対話することができますが、データ管理 API とものではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuildConnection">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Data.DesignerDataConnection BuildConnection (System.Windows.Forms.IWin32Window owner, System.ComponentModel.Design.Data.DesignerDataConnection initialConnection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Data.DesignerDataConnection BuildConnection(class System.Windows.Forms.IWin32Window owner, class System.ComponentModel.Design.Data.DesignerDataConnection initialConnection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection(System.Windows.Forms.IWin32Window,System.ComponentModel.Design.Data.DesignerDataConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Data.DesignerDataConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="initialConnection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+      </Parameters>
+      <Docs>
+        <param name="owner">接続ダイアログ ボックスの親ウィンドウ。</param>
+        <param name="initialConnection">接続の場合、いずれかを編集します。 新しい接続を作成する<c>接続</c>する必要があります<see langword="null" />です。</param>
+        <summary>新しいデータ接続を作成または、デザイン ツールの新しい接続のユーザー インターフェイスを使用して既存の接続を編集します。</summary>
+        <returns>新規または編集された a<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />オブジェクト、または<see langword="null" />場合は、ユーザーによって取り消されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection%2A>作成またはデータ接続を編集するためのデザイン環境のユーザー インターフェイスをアクティブ化するメソッド。 場合、`initialConnection`パラメーターは`null`ユーザーが新しい接続を作成することを示します。 場合、`initialConnection`パラメーターは、<xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクト、ユーザーが既存の接続を編集することを示します。  
+  
+ デザイン環境は、接続のグローバル リストまたは Web アプリケーションの構成ファイルへの接続を追加して、データ接続を作成して、新しい接続を追加することを担当、<xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections%2A>プロパティです。  
+  
+ 新しい接続は、アプリケーションが実行時にデータ接続を作成する必要がある情報を含める必要があります。 デザイン環境でデータ接続を使用する必要がある場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection%2A>を返すメソッドを<xref:System.Data.Common.DbConnection>デザイン環境からのデータ ストアに接続するオブジェクト。  
+  
+ ユーザーが、新しい接続の作成プロセスをキャンセルする場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection%2A>メソッドが返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildQuery">
+      <MemberSignature Language="C#" Value="public string BuildQuery (System.Windows.Forms.IWin32Window owner, System.ComponentModel.Design.Data.DesignerDataConnection connection, System.ComponentModel.Design.Data.QueryBuilderMode mode, string initialQueryText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string BuildQuery(class System.Windows.Forms.IWin32Window owner, class System.ComponentModel.Design.Data.DesignerDataConnection connection, valuetype System.ComponentModel.Design.Data.QueryBuilderMode mode, string initialQueryText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.BuildQuery(System.Windows.Forms.IWin32Window,System.ComponentModel.Design.Data.DesignerDataConnection,System.ComponentModel.Design.Data.QueryBuilderMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+        <Parameter Name="mode" Type="System.ComponentModel.Design.Data.QueryBuilderMode" />
+        <Parameter Name="initialQueryText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">ダイアログ ボックスの親ウィンドウ。</param>
+        <param name="connection">クエリに使用するデータ接続です。</param>
+        <param name="mode"><see cref="T:System.ComponentModel.Design.Data.QueryBuilderMode" /> 値のいずれか。</param>
+        <param name="initialQueryText">クエリの初期値または<see cref="F:System.String.Empty" />を新しいクエリを作成します。</param>
+        <summary>SQL クエリ文字列を作成するためのダイアログを起動します。</summary>
+        <returns>SQL クエリを含む文字列または<see langword="null" />場合は、ユーザーによって取り消されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildQuery%2A>メソッドは、編集または SQL クエリ文字列を作成するためのデザイン環境の UI を起動します。 場合、`initialQueryText`パラメーターは<xref:System.String.Empty>ユーザーが新しいクエリを作成することを示します。 場合、`initialQueryText`パラメーターが文字列を含む、ユーザーが、既存のクエリを編集することを示します。  
+  
+ `mode`パラメーターは、ユーザーが作成するクエリの種類を示す; を選択するか、更新、挿入、または削除します。 ユーザー インターフェイスを使用できる、`mode`自体の目的のクエリの種類の構成、必要に応じて、クエリの種類に対してのみ有効な SQL ステートメントを使用するユーザーを制限または目的の型に対するクエリを検証するパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureConnection">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Data.DesignerDataConnection ConfigureConnection (System.Windows.Forms.IWin32Window owner, System.ComponentModel.Design.Data.DesignerDataConnection connection, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Data.DesignerDataConnection ConfigureConnection(class System.Windows.Forms.IWin32Window owner, class System.ComponentModel.Design.Data.DesignerDataConnection connection, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection(System.Windows.Forms.IWin32Window,System.ComponentModel.Design.Data.DesignerDataConnection,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Data.DesignerDataConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">存在する場合、ダイアログ ボックスの親ウィンドウ。</param>
+        <param name="connection">A<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />を保存する接続のデータを格納します。</param>
+        <param name="name">新しい接続の構成エントリの名前。</param>
+        <summary>アプリケーションの構成ファイルに接続文字列を書き込みます。</summary>
+        <returns>A<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />オブジェクトに保存されている接続のデータを含む、<see cref="P:System.ComponentModel.Design.Data.DesignerDataConnection.Name" />プロパティに設定<paramref name="name" />、および<see cref="P:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured" />プロパティに設定<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection%2A>メソッドでは、接続をアプリケーションの構成ファイルに書き込みます。 接続文字列とプロバイダーの名前に書き込まれる、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de)に従ってという名前の構成要素、`name`パラメーター。 <xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name%2A>のプロパティ、`connection`パラメーターは無視されます。  
+  
+ 実装、<xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection%2A>メソッドは、次の例外をスローする必要があります。  
+  
+|例外|理由|  
+|---------------|------------|  
+|<xref:System.ArgumentException>|重複する名前は、アプリケーションの構成ファイルに存在します。|  
+|<xref:System.IO.FileNotFoundException>、 <xref:System.UnauthorizedAccessException>、またはその他の適切なファイル IO 例外。|アプリケーションの構成ファイルを更新できません。 <xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection%2A>メソッドの実装は、適切な例外をスローする必要があります。|  
+|<xref:System.ComponentModel.Design.CheckoutException>|アプリケーションの構成ファイルは、ソース管理システムからチェック アウトすることはできません。|  
+  
+ 構成管理の Api の使用を検討、<xref:System.Configuration>アプリケーションの構成ファイルを読み書きする名前空間。 <xref:System.Configuration.ConnectionStringsSection>クラスが読み取りし、書き込み、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de)構成要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connections">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Connections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Connections" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.IDataEnvironment.Connections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデザインのセッションで定義されているデータ接続のコレクションを取得します。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />デザインの現在のセッションで使用できるデータ接続を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections%2A>プロパティには、デザイン時に使用できる接続のセットが返されます。 実装、<xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections%2A>プロパティは、現在の Web アプリケーションで定義されている接続の一覧か、デザイン環境で管理されているデータ接続の一覧などのグローバル レベルで定義されている接続の一覧を返すことができます。  
+  
+ コレクション内の各接続には、一意の接続文字列が必要です。 コレクションには、アプリケーションの構成ファイルからの接続とグローバル接続の両方が含まれている場合、実装はグローバル リストと、構成ファイルからの接続と同じ接続文字列があるケースを処理する必要があります。 ここでは、重複を除去して、構成ファイルの接続のみを使用することが勧めします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression GetCodeExpression (System.ComponentModel.Design.Data.DesignerDataConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.ComponentModel.Design.Data.DesignerDataConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.GetCodeExpression(System.ComponentModel.Design.Data.DesignerDataConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">アプリケーションの構成ファイルから取得する接続です。</param>
+        <summary>アプリケーションの構成ファイルから接続文字列を取得するために必要なソース コードを含むコード式を返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeExpression" />アプリケーションの構成ファイルから接続文字列を取得するために必要なソース コードを含むオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionSchema">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Data.IDesignerDataSchema GetConnectionSchema (System.ComponentModel.Design.Data.DesignerDataConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Data.IDesignerDataSchema GetConnectionSchema(class System.ComponentModel.Design.Data.DesignerDataConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema(System.ComponentModel.Design.Data.DesignerDataConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Data.IDesignerDataSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">スキーマ情報を返す対象のデータ接続です。</param>
+        <summary>指定したデータ接続のスキーマを取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.Data.IDesignerDataSchema" />指定したデータ接続のスキーマ情報を格納しているオブジェクトまたは<see langword="null" />スキーマ情報が使用できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema%2A>メソッドには、指定したデータ接続のデータベース スキーマが返されます。 スキーマが使用できない場合、または接続のプロバイダーが使用できない場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema%2A>返す必要があります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeConnection">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbConnection GetDesignTimeConnection (System.ComponentModel.Design.Data.DesignerDataConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.Common.DbConnection GetDesignTimeConnection(class System.ComponentModel.Design.Data.DesignerDataConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection(System.ComponentModel.Design.Data.DesignerDataConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">目的のデータ接続です。</param>
+        <summary>デザイン時に使用できるデータベースの接続を取得します。</summary>
+        <returns>A<see cref="T:System.Data.Common.DbConnection" />デザイン時に使用できるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection%2A>メソッドは、コントロールのデザイナーで使用できるデータ ストアに有効な開いている接続を返します。  
+  
+ コントロール デザイナーを使用する必要があります、<xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection%2A>データ接続を取得する必要がありますを使用して接続を開くには試行されません、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.ConnectionString%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

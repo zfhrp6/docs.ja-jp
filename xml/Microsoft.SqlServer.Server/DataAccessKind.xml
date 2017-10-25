@@ -1,0 +1,64 @@
+<Type Name="DataAccessKind" FullName="Microsoft.SqlServer.Server.DataAccessKind">
+  <TypeSignature Language="C#" Value="public enum DataAccessKind" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed DataAccessKind extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.DataAccessKind" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ユーザー定義のメソッドまたは関数のユーザー データへのアクセスの種類について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー定義のメソッドまたは関数のユーザー データへのアクセスの種類について説明します。  
+  
+ この列挙体で使用<xref:Microsoft.SqlServer.Server.SqlMethodAttribute>と<xref:Microsoft.SqlServer.Server.SqlFunctionAttribute>メソッドまたは関数が"context connection"を使用して、データベースに接続する ADO.NET を使用しているかどうかを示すために  
+  
+ メソッドおよび関数が変更を加えるには、データベースはこの列挙体のオプションを使用できないことに注意してください`None`(れないことを意味データ アクセス メソッドまたは関数によって実行される) と`Read`(つまり、メソッドまたは関数の SELECT ステートメントの実行など、読み取り専用データ アクセス操作を実行) します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.SqlServer.Server.DataAccessKind None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.DataAccessKind.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.DataAccessKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドまたは関数がユーザー データにアクセスできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.SqlServer.Server.DataAccessKind Read = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.SqlServer.Server.DataAccessKind.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.DataAccessKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドまたは関数は、ユーザー データを読み取ります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

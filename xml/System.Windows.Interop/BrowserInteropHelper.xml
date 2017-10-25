@@ -1,0 +1,150 @@
+<Type Name="BrowserInteropHelper" FullName="System.Windows.Interop.BrowserInteropHelper">
+  <TypeSignature Language="C#" Value="public static class BrowserInteropHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed BrowserInteropHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.BrowserInteropHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML ブラウザー アプリケーション (XBAP) アプリケーションがホストされているブラウザー環境についての情報を提供するヘルパー クラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClientSite">
+      <MemberSignature Language="C#" Value="public static object ClientSite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property object ClientSite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.BrowserInteropHelper.ClientSite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(たとえば、IOleClientSite::GetContainer();) OLE コンテナー インターフェイスを使用して、ホストのブラウザーにアクセスするために使用できるオブジェクトへの参照を返します。</summary>
+        <value>オブジェクトにキャストできる<see cref="T:Microsoft.VisualStudio.OLE.Interop.IOleClientSite" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このオブジェクトを取得します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HostScript">
+      <MemberSignature Language="C#" Value="public static dynamic HostScript { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property object HostScript" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.BrowserInteropHelper.HostScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場合、HTML ページの HTML ウィンドウ オブジェクト、カスタム スクリプト関数、およびグローバル変数へのアクセスを提供するオブジェクトのスクリプトを取得、[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]フレームでホストされています。</summary>
+        <value>場合、HTML ページの HTML ウィンドウ オブジェクト、カスタム スクリプト関数、およびグローバル変数へのアクセスを提供するオブジェクトのスクリプト、 [!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)] 、それ以外のフレーム内でホスト<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A>オブジェクト、プロパティ、メソッド、および HTML ウィンドウ オブジェクトのイベントへのアクセス、スクリプト関数を直接呼び出すまたはグローバル変数にアクセスできます。 これらの項目にアクセスするための構文では、使い慣れたドット表記を使用します。  
+  
+ ウィンドウ オブジェクトの詳細については、次を参照してください。[ウィンドウ オブジェクト](http://go.microsoft.com/fwlink/?LinkId=160274)ダイナミック HTML (DHTML) ドキュメントにします。  
+  
+ <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A>プロパティから返される`null`フレームは、クロス ドメインの場所からナビゲートした場合。  
+  
+ この機能を無効にできます Internet Explorer の設定によって、 **ScriptInteropDisallow**レジストリ値です。 詳細については、次を参照してください。[セキュリティ (WPF)](~/docs/framework/wpf/security-wpf.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A>オブジェクトし、ブラウザー ウィンドウを閉じます。  
+  
+ [!code-xaml[XbapBrowserInterop#1](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml#1)]  
+[!code-csharp[XbapBrowserInterop#10](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
+[!code-vb[XbapBrowserInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowserHosted">
+      <MemberSignature Language="C#" Value="public static bool IsBrowserHosted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsBrowserHosted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する値を取得するかどうか、現在[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]アプリケーションがホストされているブラウザー。</summary>
+        <value>
+          <see langword="true" />アプリケーションがブラウザーによってホストされる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Page>できるホストに依存しませんでき、その結果などのホストのさまざまな種類に読み込まれ、 <xref:System.Windows.Controls.Frame>、 <xref:System.Windows.Navigation.NavigationWindow>、またはブラウザー。 これは、1 つまたは複数のページを格納していると、これは複数のスタンドアロンによって参照されていると、参照可能なライブラリ アセンブリがある場合に発生することができます ([!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]) アプリケーションをホストします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType>かどうかを<xref:System.Windows.Controls.Page>がブラウザーでホストされています。  
+  
+ [!code-csharp[HOWTOBrowserInteropHelperSnippets#IsBrowserHostedCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOBrowserInteropHelperSnippets/CSharp/Page1.xaml.cs#isbrowserhostedcode)]
+ [!code-vb[HOWTOBrowserInteropHelperSnippets#IsBrowserHostedCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOBrowserInteropHelperSnippets/visualbasic/page1.xaml.vb#isbrowserhostedcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public static Uri Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.BrowserInteropHelper.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]元の場所の[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]アプリケーションが起動されました。</summary>
+        <value><see cref="T:System.Uri" />元の場所の[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]アプリケーションが起動した、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.BrowserInteropHelper.Source%2A>プロパティにのみが含まれています、<xref:System.Uri>の[!INCLUDE[TLA#tla_xbap](~/includes/tlasharptla-xbap-md.md)]アプリケーションです。 例については、<xref:System.Windows.Interop.BrowserInteropHelper.Source%2A>プロパティを参照してください<xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

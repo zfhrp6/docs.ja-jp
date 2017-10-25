@@ -1,0 +1,111 @@
+<Type Name="AddInSecurityLevel" FullName="System.AddIn.Hosting.AddInSecurityLevel">
+  <TypeSignature Language="C#" Value="public enum AddInSecurityLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AddInSecurityLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInSecurityLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>アドインが読み込まれるアプリケーション ドメインに付与される信頼レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドイン システムでは、アドインのアプリケーション ドメインの指定された信頼レベルに対応するアクセス許可セットにアドインをアクティブになります。 そのアクセス許可セットは、共通言語ランタイムのコード アクセス セキュリティ (CAS) 構成で定義されます。  
+  
+ ビットごとの OR 演算を使用して、この列挙体の値を組み合わせて使用できません。  
+  
+   
+  
+## Examples  
+ 次の例は、信頼レベルを指定してアドインをアクティブにします。  
+  
+ [!code-csharp[AddInP3Host#5](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#5)]
+ [!code-vb[AddInP3Host#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FullTrust">
+      <MemberSignature Language="C#" Value="FullTrust" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AddIn.Hosting.AddInSecurityLevel FullTrust = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Hosting.AddInSecurityLevel.FullTrust" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインの読み取りおよび書き込みをローカル ファイル システム、ネットワーク接続を作成およびレジストリから読み取りを許可するには、完全信頼のセキュリティ レベルを使用します。 このセキュリティ レベルを適用するコード アクセス セキュリティ (CAS)、アドインのフル アクセスを許可、<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />フィールドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="Host" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AddIn.Hosting.AddInSecurityLevel Host = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Hosting.AddInSecurityLevel.Host" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストのセキュリティ レベルを使用して、アドインのホスティング コードに付与されている同じアクセス許可を与えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定には、2 つの目的があります。  
+  
+-   アドインをホストを与えることができます、最大のアクセス許可セットを表します。  
+  
+-   これにより、ClickOnce または Extensible Application Markup Language (XAML) ブラウザー アプリケーション (XBAP) ホストをそのサーバーに接続することができます、アドイン、元のサイトを伝達することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Internet">
+      <MemberSignature Language="C#" Value="Internet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AddIn.Hosting.AddInSecurityLevel Internet = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Hosting.AddInSecurityLevel.Internet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>低度の信頼レベルがアドインのインターネット セキュリティ レベルを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Intranet">
+      <MemberSignature Language="C#" Value="Intranet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AddIn.Hosting.AddInSecurityLevel Intranet = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Hosting.AddInSecurityLevel.Intranet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInSecurityLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>会社のイントラネットに配置されているアドインのイントラネットのセキュリティ レベルを使用します。 これらのアドインは、サーバーの情報は、企業のファイアウォール内であるためにより高い信頼レベルを持つことができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

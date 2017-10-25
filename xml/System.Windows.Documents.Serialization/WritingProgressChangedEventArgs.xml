@@ -1,0 +1,100 @@
+<Type Name="WritingProgressChangedEventArgs" FullName="System.Windows.Documents.Serialization.WritingProgressChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class WritingProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WritingProgressChangedEventArgs extends System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.ProgressChangedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WritingProgressChangedEventArgs (System.Windows.Documents.Serialization.WritingProgressChangeLevel writingLevel, int number, int progressPercentage, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Documents.Serialization.WritingProgressChangeLevel writingLevel, int32 number, int32 progressPercentage, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.#ctor(System.Windows.Documents.Serialization.WritingProgressChangeLevel,System.Int32,System.Int32,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writingLevel" Type="System.Windows.Documents.Serialization.WritingProgressChangeLevel" />
+        <Parameter Name="number" Type="System.Int32" />
+        <Parameter Name="progressPercentage" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writingLevel">複数のドキュメント シーケンスの全体、単一のドキュメント、単一のページなど、進行状況変更イベントの範囲を指定する列挙値。</param>
+        <param name="number">によって定義されたスコープに基づく<c>writingLevel</c>、ドキュメントまたは書き込まれたページ数の数。</param>
+        <param name="progressPercentage">書き込まれたデータの割合。</param>
+        <param name="state">書き込み操作を識別するユーザー指定のオブジェクト。</param>
+        <summary><see cref="T:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが指定した`state`パラメーターに渡されたオブジェクトは、<xref:System.Windows.Documents.Serialization.SerializerWriter.WriteAsync%2A>非同期の書き込み操作を識別するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Number">
+      <MemberSignature Language="C#" Value="public int Number { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Number" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.Number" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントまたは書き込まれたページの数を取得します。</summary>
+        <value>ドキュメントまたはイベントの時刻に書き込まれたページ数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.WritingLevel%2A>プロパティは<xref:System.Windows.Documents.Serialization.WritingProgressChangeLevel.FixedDocumentSequenceWritingProgress>、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.Number%2A>書き込まれているドキュメントの数を指定します。  他のすべての<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.WritingLevel%2A>の場合、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.Number%2A>に書き込まれたページ数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingLevel">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Serialization.WritingProgressChangeLevel WritingLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Documents.Serialization.WritingProgressChangeLevel WritingLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.WritingLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.WritingProgressChangeLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込みの進行状況のスコープを示す値を取得します。</summary>
+        <value>複数のドキュメント シーケンス、1 つのドキュメント、または 1 つのページの書き込みのスコープを示す列挙です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.WritingLevel%2A>プロパティは<xref:System.Windows.Documents.Serialization.WritingProgressChangeLevel.FixedDocumentSequenceWritingProgress>、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.Number%2A>プロパティが書き込まれているドキュメントの数を指定します。  他のすべての<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.WritingLevel%2A>の場合、<xref:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs.Number%2A>プロパティは、書き込まれたページ数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

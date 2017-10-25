@@ -1,0 +1,260 @@
+<Type Name="CaseInsensitiveHashCodeProvider" FullName="System.Collections.CaseInsensitiveHashCodeProvider">
+  <TypeSignature Language="C#" Value="public class CaseInsensitiveHashCodeProvider : System.Collections.IHashCodeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CaseInsensitiveHashCodeProvider extends System.Object implements class System.Collections.IHashCodeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.CaseInsensitiveHashCodeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IHashCodeProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Please use StringComparer instead.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列の大文字と小文字を区別しないハッシュ アルゴリズムを使用して、オブジェクトのハッシュ コードを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.CaseInsensitiveHashCodeProvider>実装する、<xref:System.Collections.IHashCodeProvider>と同様に、文字列の大文字と小文字の比較をサポートするインターフェイス<xref:System.Collections.CaseInsensitiveComparer>を実装する、<xref:System.Collections.IComparer>インターフェイスは、文字列の大文字と小文字の比較をサポートします。  
+  
+ キーとして使用されるオブジェクト、<xref:System.Collections.Hashtable>をオーバーライドするために必要な<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IHashCodeProvider>インターフェイス) および<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IComparer>インターフェイス)。 メソッドまたはインターフェイスの両方の実装でも、大文字小文字の区別を同じ方法で処理する必要があります。それ以外の場合、<xref:System.Collections.Hashtable>動作可能性があります。 たとえば、作成するときに、<xref:System.Collections.Hashtable>では、このクラスを使用する必要があります、<xref:System.Collections.CaseInsensitiveComparer>クラスまたはそのいずれかの大文字と小文字<xref:System.Collections.IComparer>実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CaseInsensitiveHashCodeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveHashCodeProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />クラスを使用して、<see cref="P:System.Threading.Thread.CurrentCulture" />現在のスレッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.CaseInsensitiveHashCodeProvider>インスタンスが作成される場合は、このコンス トラクターを使用して、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドを保存します。 比較のプロシージャでは、保存されているカルチャを使用して、大文字と小文字の規則; 決定するにはそのため、ハッシュ コードの比較には、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CaseInsensitiveHashCodeProvider (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveHashCodeProvider.#ctor(System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />に新しい使用<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />です。</param>
+        <summary><see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" /> を指定して <see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、指定した<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>を大文字小文字の規則を決定します。 ハッシュ コードの比較では、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="culture" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Collections.CaseInsensitiveHashCodeProvider Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.CaseInsensitiveHashCodeProvider Default" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CaseInsensitiveHashCodeProvider.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.CaseInsensitiveHashCodeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />と関連付けられている、<see cref="P:System.Threading.Thread.CurrentCulture" />ことと、現在のスレッドを常に使用できるのです。</summary>
+        <value>インスタンス<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />と関連付けられている、<see cref="P:System.Threading.Thread.CurrentCulture" />現在のスレッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.CaseInsensitiveHashCodeProvider>パラメーターなしのコンス トラクターを使用してインスタンスを作成、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドを保存します。 比較のプロシージャでは、保存されているカルチャを使用して、大文字と小文字の規則; 決定するにはそのため、ハッシュ コードの比較には、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInvariant">
+      <MemberSignature Language="C#" Value="public static System.Collections.CaseInsensitiveHashCodeProvider DefaultInvariant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.CaseInsensitiveHashCodeProvider DefaultInvariant" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CaseInsensitiveHashCodeProvider.DefaultInvariant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.CaseInsensitiveHashCodeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />と関連付けられている<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />は常に利用するとします。</summary>
+        <value>インスタンス<see cref="T:System.Collections.CaseInsensitiveHashCodeProvider" />と関連付けられている<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>を大文字小文字の規則を決定します。 ハッシュ コードの比較では、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveHashCodeProvider.GetHashCode(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />が返されるハッシュ コード。</param>
+        <summary>文字列の大文字と小文字を区別しないハッシュ アルゴリズムを使用して、指定されたオブジェクトのハッシュ コードを返します。</summary>
+        <returns>文字列の大文字と小文字を区別しないハッシュ アルゴリズムを使用して、特定のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドからの戻り値は、2 つの理由の永続化されません必要があります。 最初に、それによってレンダリング古いハッシュ関数からの値が役に立ちませんより優れた分布を生成するクラスのハッシュ関数を変更する可能性があります。 次に、このクラスの既定の実装では、同じ値を別のインスタンスによって返されることは限りません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,183 @@
+<Type Name="BeginStoryboard" FullName="System.Windows.Media.Animation.BeginStoryboard">
+  <TypeSignature Language="C#" Value="public sealed class BeginStoryboard : System.Windows.TriggerAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BeginStoryboard extends System.Windows.TriggerAction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.BeginStoryboard" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Storyboard")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.RuntimeNameProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>開始するトリガー アクション、<see cref="T:System.Windows.Media.Animation.Storyboard" />し、そのアニメーションを対象となるオブジェクトとプロパティを配布します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.BeginStoryboard>アクションが、<xref:System.Windows.EventTrigger>または<xref:System.Windows.Trigger>をターゲット プロパティにアニメーションを適用し、それらを開始します。 <xref:System.Windows.Media.Animation.BeginStoryboard>開始、<xref:System.Windows.Media.Animation.Storyboard>を呼び出して<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>でその<xref:System.Windows.Media.Animation.Storyboard>トリガーされたときに参照します。  
+  
+ 開始したとき、<xref:System.Windows.Media.Animation.Storyboard>プロパティは既にアニメーション化する別に<xref:System.Windows.Media.Animation.Storyboard>、<xref:System.Windows.Media.Animation.BeginStoryboard.HandoffBehavior%2A>プロパティの<xref:System.Windows.Media.Animation.BeginStoryboard>アニメーションの続行方法を決定します。  
+  
+## <a name="pause-resume-stop-or-otherwise-control-a-storyboard-interactively"></a>一時停止、再開、停止、またはそれ以外の場合、ストーリー ボードを対話的に制御  
+ 一時停止できるようにするには、再開、またはその他の制御、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>が宣言したマークアップで、対話的に設定する必要があります、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>のプロパティ、<xref:System.Windows.Media.Animation.BeginStoryboard>です。 制御できます、<xref:System.Windows.Media.Animation.Storyboard>を使用して、<xref:System.Windows.Media.Animation.ControllableStoryboardAction>オブジェクト (など<xref:System.Windows.Media.Animation.PauseStoryboard>、 <xref:System.Windows.Media.Animation.ResumeStoryboard>、または<xref:System.Windows.Media.Animation.StopStoryboard>) を参照することで制御するその<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>です。 場合、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>は指定されていない、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>を開始した後に対話的に制御できません。 参照してください[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)詳細についてはします。  
+  
+> [!NOTE]
+>  コードでは、対話型のメソッドを使用することがあります、<xref:System.Windows.Media.Animation.Storyboard>コントロールをクラス、<xref:System.Windows.Media.Animation.Storyboard>を使用して適用した、<xref:System.Windows.Media.Animation.BeginStoryboard>です。 同様に使用する場合、<xref:System.Windows.Media.Animation.ControllableStoryboardAction>オブジェクトを付ける必要があります、<xref:System.Windows.Media.Animation.BeginStoryboard>の名前、<xref:System.Windows.Media.Animation.Storyboard>を対話的に制御します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BeginStoryboard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BeginStoryboard.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BeginStoryboard" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandoffBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.HandoffBehavior HandoffBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.HandoffBehavior HandoffBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BeginStoryboard.HandoffBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.HandoffBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このストーリー ボードのアニメーション クロックを開始するための適切なハンドオフ動作を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Media.Animation.HandoffBehavior" /> 列挙値のいずれか。 既定値は <see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティに<xref:System.Windows.Media.Animation.HandoffBehavior?displayProperty=nameWithType>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除するいくつかの方法があります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックがプロパティから削除されます。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BeginStoryboard.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BeginStoryboard" /> オブジェクトの名前を取得または設定します。 名前付けによって、<see cref="T:System.Windows.Media.Animation.BeginStoryboard" />オブジェクト、<see cref="T:System.Windows.Media.Animation.Storyboard" />の開始後に制御できます。</summary>
+        <value><see cref="T:System.Windows.Media.Animation.BeginStoryboard" /> の名前。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止、再開、またはそれ以外の場合を対話的に制御、 <xref:System.Windows.Media.Animation.Storyboard>、設定、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>のプロパティ、<xref:System.Windows.Media.Animation.BeginStoryboard>を使用して、<xref:System.Windows.Media.Animation.ControllableStoryboardAction>のようなオブジェクト<xref:System.Windows.Media.Animation.PauseStoryboard>、 <xref:System.Windows.Media.Animation.ResumeStoryboard>、または<xref:System.Windows.Media.Animation.StopStoryboard>この名前を参照します。 場合、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>は指定しません、<xref:System.Windows.Media.Animation.Storyboard>対話的に影響を受けないを開始した後さらに、<xref:System.Windows.Media.Animation.Storyboard>終了したり、保留期間、クロックが破棄アニメーションを入力します。 参照してください[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)詳細についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Storyboard">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Storyboard Storyboard { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.Storyboard Storyboard" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BeginStoryboard.Storyboard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Storyboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Animation.Storyboard" />この<see cref="T:System.Windows.Media.Animation.BeginStoryboard" />を開始します。</summary>
+        <value><see cref="T:System.Windows.Media.Animation.Storyboard" />を<see cref="T:System.Windows.Media.Animation.BeginStoryboard" />を開始します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Storyboard"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.BeginStoryboard.StoryboardProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoryboardProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StoryboardProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StoryboardProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.BeginStoryboard.StoryboardProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.BeginStoryboard.Storyboard" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

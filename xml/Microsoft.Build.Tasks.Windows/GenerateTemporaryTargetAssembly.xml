@@ -1,0 +1,263 @@
+<Type Name="GenerateTemporaryTargetAssembly" FullName="Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly">
+  <TypeSignature Language="C#" Value="public sealed class GenerateTemporaryTargetAssembly : Microsoft.Build.Utilities.Task" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GenerateTemporaryTargetAssembly extends Microsoft.Build.Utilities.Task" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationBuildTasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Utilities.Task</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装して、 <c>GenerateTemporaryTargetAssembly</c>タスク。 使用して、 <c>GenerateTemporaryTargetAssembly</c>作成してこのタスクを実行するのには、プロジェクト ファイル内の要素。 使用法とパラメーターについては、次を参照してください。 [GenerateTemporaryTargetAssembly](http://msdn.microsoft.com/library/92b6539c-6897-45e0-8989-0c234bbfe782)です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenerateTemporaryTargetAssembly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、プロジェクトの生成され、一時的に生成される対象アセンブリの名前でも、アセンブリの短い名前を設定します。</summary>
+        <value>プロジェクトを生成し、一時的に生成される対象アセンブリの名前でもをアセンブリの短い名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompileTargetName">
+      <MemberSignature Language="C#" Value="public string CompileTargetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompileTargetName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CompileTargetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはソース コード ファイルからアセンブリを生成するために使用する Msbuild ターゲット名を設定します。</summary>
+        <value>ソース コード ファイルからアセンブリを生成するために使用する Msbuild ターゲットの名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompileTypeName">
+      <MemberSignature Language="C#" Value="public string CompileTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompileTypeName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CompileTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマネージ コンパイラ タスクでは受け入れられないことができます、適切な項目名を設定します。</summary>
+        <value>マネージ コンパイラ タスクでは受け入れられないことができます、適切な項目名。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentProject">
+      <MemberSignature Language="C#" Value="public string CurrentProject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentProject" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CurrentProject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のプロジェクト ファイルの完全なパスを設定します。</summary>
+        <value>現在のプロジェクト ファイルの完全パス。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タスクを実行します。</summary>
+        <returns>
+          <see langword="true" />タスクが正常に実行された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedCodeFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] GeneratedCodeFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] GeneratedCodeFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.GeneratedCodeFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または生成されたコード ファイルの一覧を設定します。</summary>
+        <value>生成されたコード ファイルの一覧。  これにより、0 個の項目があります。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IntermediateOutputPath">
+      <MemberSignature Language="C#" Value="public string IntermediateOutputPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IntermediateOutputPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.IntermediateOutputPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する一時ターゲット アセンブリが生成されるディレクトリ。</summary>
+        <value>一時的なターゲット アセンブリを生成するディレクトリ。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MSBuildBinPath">
+      <MemberSignature Language="C#" Value="public string MSBuildBinPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MSBuildBinPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.MSBuildBinPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Msbuild のバイナリ パスを設定します。</summary>
+        <value>Msbuild のバイナリ パス。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencePath">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ReferencePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ReferencePath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.ReferencePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または解決済みの参照アセンブリの一覧を設定します。</summary>
+        <value>解決済みの参照アセンブリの一覧。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencePathTypeName">
+      <MemberSignature Language="C#" Value="public string ReferencePathTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReferencePathTypeName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.ReferencePathTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationBuildTasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマネージ コンパイラ タスクで参照一覧を保持するために使用される項目の名前を設定します。</summary>
+        <value>マネージ コンパイラ タスクで参照一覧を保持するために使用される項目の名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

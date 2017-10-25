@@ -1,0 +1,601 @@
+<Type Name="PeerNameResolver" FullName="System.Net.PeerToPeer.PeerNameResolver">
+  <TypeSignature Language="C#" Value="public class PeerNameResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi PeerNameResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.PeerNameResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解決するには値を指定、<see cref="T:System.Net.PeerToPeer.PeerName" />を<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />PNRP Namespace プロバイダー API プロトコルを使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Net.PeerToPeer.PeerNameRecord>のすべての情報を含む、<xref:System.Net.PeerToPeer.PeerName>で発行された、<xref:System.Net.PeerToPeer.Cloud>または解決処理中にクエリを実行するクラウドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerNameResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Net.PeerToPeer.PeerNameResolver" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正常に解決した後、 <xref:System.Net.PeerToPeer.PeerName>、 <xref:System.Net.PeerToPeer.PeerNameRecord> 、指定されたすべての情報を含む<xref:System.Net.PeerToPeer.PeerNameRecord.PeerName%2A>中にクエリを実行するクラウドに発行された、<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResolveCompleted">
+      <MemberSignature Language="C#" Value="protected void OnResolveCompleted (System.Net.PeerToPeer.ResolveCompletedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnResolveCompleted(class System.Net.PeerToPeer.ResolveCompletedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.OnResolveCompleted(System.Net.PeerToPeer.ResolveCompletedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Net.PeerToPeer.ResolveCompletedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted" /> イベントによって返されたデータを格納している <see cref="T:System.Net.PeerToPeer.ResolveCompletedEventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted" /> イベントが発生した後、ピアの解像度のデータを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、非同期コールバック ピア解決が完了した後、ピア名解決のデータを処理するために使用します。  
+  
+ 派生型でオーバーライドできるメソッドを追加するときの操作、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>ピア リゾルバー オブジェクトによってイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResolveProgressChanged">
+      <MemberSignature Language="C#" Value="protected void OnResolveProgressChanged (System.Net.PeerToPeer.ResolveProgressChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnResolveProgressChanged(class System.Net.PeerToPeer.ResolveProgressChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged(System.Net.PeerToPeer.ResolveProgressChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Net.PeerToPeer.ResolveProgressChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">
+          <see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged" /> イベントによって返されたピア名前解決の進行状況情報を含む <see cref="T:System.Net.PeerToPeer.ResolveProgressChangedEventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged" /> イベントが発生する場合は、ピアの解像度の進行状況データを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、非同期コールバック ピア解決の進行状況が要求された後は、ピアの解像度データを処理するために使用します。  
+  
+ 派生型でオーバーライドできるメソッドを追加するときの操作、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生型では、このメソッドをオーバーライドするときは、基本型を呼び出す、<see cref="M:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged(System.Net.PeerToPeer.ResolveProgressChangedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Resolve">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>解決、<see cref="T:System.Net.PeerToPeer.PeerName" />オブジェクトを<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />PNRP プロトコルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラウドにピア名を関連付けます。 呼び出す、<xref:System.Net.PeerToPeer.PeerNameResolver>メソッドの呼び出しに似ていますが、<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッド内の各ピア名レコード、<xref:System.Net.PeerToPeer.PeerNameRecordCollection>です。 ピア名レコードで、Resolve メソッドを使用しても、複数のピア名の解決は無効に注意してください。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  メソッドに渡されるパラメーターと同じですという ResolveAsync メソッドには、非同期イベント処理のためのパラメーター リストのシステムのトークンが含まれています。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターが指定されていない、メソッドを使用して、<xref:System.Net.PeerToPeer.Cloud.Available>クラウド パラメーターを埋めるためのショートカットです。  場合、`maxRecords`パラメーターがありません、ゼロの原因の既定値、<xref:System.ArgumentOutOfRangeException>例外がスローされます。  
+  
+ このイベントが、解決操作のエラーで完了したかが取り消される場合も生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecordCollection Resolve (System.Net.PeerToPeer.PeerName peerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.PeerNameRecordCollection Resolve(class System.Net.PeerToPeer.PeerName peerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.Resolve(System.Net.PeerToPeer.PeerName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecordCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <summary>指定された解決<see cref="T:System.Net.PeerToPeer.PeerName" />呼び出し元のピアに既知のすべてのクラウドでします。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />ピア名のすべてのレコードを格納している (として表される<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />オブジェクト)、指定したピア名に関連付けられています。 セキュリティ保護されていないピア名に同じ<see cref="T:System.Net.PeerToPeer.PeerName" />は同じで別のユーザーを登録できません<see cref="T:System.Net.PeerToPeer.Cloud" />、さまざまなエンドポイントに関連付けられているとします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラウドにピア名を関連付けます。 すべてのクラウドが照会、<xref:System.Net.PeerToPeer.PeerName>です。 ピア名解決できない場合や、場合`null`、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。  
+  
+ 呼び出す、<xref:System.Net.PeerToPeer.PeerNameResolver>メソッドの呼び出しに似ていますが、<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッド内の各ピア名レコード、<xref:System.Net.PeerToPeer.PeerNameRecordCollection>です。 ピア名レコードで、Resolve メソッドを使用しても、複数のピア名の解決は無効に注意してください。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 する点を除いて同じですが、です。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターが指定されていない、メソッドを使用して、<xref:System.Net.PeerToPeer.Cloud.Available>クラウド パラメーターを埋めるためのショートカットです。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を解決する方法を示しています、<xref:System.Net.PeerToPeer.PeerName>いずれかでパブリッシュされた<xref:System.Net.PeerToPeer.Cloud>です。  
+  
+ [!code-csharp[NCLPNRPPeerNameResolver#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPPeerNameResolver/CS/PeerNameResolver.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> パラメーターを <see langword="null" /> に設定します。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定したピア名を解決することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecordCollection Resolve (System.Net.PeerToPeer.PeerName peerName, int maxRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.PeerNameRecordCollection Resolve(class System.Net.PeerToPeer.PeerName peerName, int32 maxRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.Resolve(System.Net.PeerToPeer.PeerName,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecordCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="maxRecords" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="maxRecords">最大数<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />すべてから取得するオブジェクト<see cref="T:System.Net.PeerToPeer.Cloud" />指定されたオブジェクト<c>peerName</c>です。</param>
+        <summary>も、指定した数を返す、呼び出し元のピアに既知のすべてのクラウドで指定されたピア名解決<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />に等しいまたはそれよりも小さいサイズが<paramref name="maxRecords" />エントリです。 このコレクションに関連付けられているピア名のレコードが含まれています、<see cref="T:System.Net.PeerToPeer.PeerName" />が解決されたことです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラウドにピア名を関連付けます。 ピア名のすべてのクラウドが照会されます。 同じで別のユーザーによって保護されていないピア名の場合は、同じピア名を登録できます<xref:System.Net.PeerToPeer.Cloud>、さまざまなエンドポイントに関連付けられているとします。 場合、<xref:System.Net.PeerToPeer.PeerName>解決できない (たとえば、ピア名が発行されません)、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 する点を除いて同じですが、です。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> パラメーターを <see langword="null" /> に設定します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxRecords" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定したピア名を解決できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecordCollection Resolve (System.Net.PeerToPeer.PeerName peerName, System.Net.PeerToPeer.Cloud cloud);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.PeerNameRecordCollection Resolve(class System.Net.PeerToPeer.PeerName peerName, class System.Net.PeerToPeer.Cloud cloud) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.Resolve(System.Net.PeerToPeer.PeerName,System.Net.PeerToPeer.Cloud)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecordCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="cloud" Type="System.Net.PeerToPeer.Cloud" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="cloud"><see cref="T:System.Net.PeerToPeer.Cloud" />をピア名を解決するためにします。</param>
+        <summary>指定された解決<see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" />、指定した<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <returns>
+          <see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />ピア名のすべてのレコードを格納している (として表される<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />オブジェクト)、指定したピア名に関連付けられています。 セキュリティ保護されていないピア名に同じ<see cref="T:System.Net.PeerToPeer.PeerName" />は同じで別のユーザーを登録できません<see cref="T:System.Net.PeerToPeer.Cloud" />、さまざまなエンドポイントに関連付けられているとします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.PeerToPeer.PeerName>解決できません (つまり、ピア名が発行されません)、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 する点を除いて同じですが、です。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターは`null`、<xref:System.Net.PeerToPeer.PeerNameResolver>を使用して、<xref:System.Net.PeerToPeer.Cloud.Available>ショートカットを埋めるために、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>です。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> パラメーターを <see langword="null" /> に設定します。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定したピア名を解決できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PeerNameRecordCollection Resolve (System.Net.PeerToPeer.PeerName peerName, System.Net.PeerToPeer.Cloud cloud, int maxRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.PeerNameRecordCollection Resolve(class System.Net.PeerToPeer.PeerName peerName, class System.Net.PeerToPeer.Cloud cloud, int32 maxRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.Resolve(System.Net.PeerToPeer.PeerName,System.Net.PeerToPeer.Cloud,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PeerNameRecordCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="cloud" Type="System.Net.PeerToPeer.Cloud" />
+        <Parameter Name="maxRecords" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="cloud"><see cref="T:System.Net.PeerToPeer.Cloud" />を解決するために、 <c>peerName</c>です。</param>
+        <param name="maxRecords">ピア名の指定された、指定されたクラウドから取得するレコード オブジェクトの最大数<c>peerName</c>です。</param>
+        <summary>指定された解決<see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" />、指定した<see cref="T:System.Net.PeerToPeer.Cloud" />よりも、指定した数を返す<see cref="T:System.Net.PeerToPeer.PeerNameRecord" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.PeerNameRecordCollection" />に等しいまたはそれよりも小さいサイズが<paramref name="maxRecords" />エントリです。 このコレクションに関連付けられているピア名のレコードが含まれています、<see cref="T:System.Net.PeerToPeer.PeerName" />が解決されたことです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。 ピア名前解決、できない場合、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 する点を除いて同じですが、です。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターは`null`、<xref:System.Net.PeerToPeer.PeerNameResolver>を使用して、<xref:System.Net.PeerToPeer.Cloud.Available>ショートカットを埋めるために、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>です。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> パラメーターを <see langword="null" /> に設定します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxRecords" /> パラメーターが 0 以下です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">指定したピア名を解決できません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ResolveAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>これらのメソッドは、指定された非同期解決操作を開始<see cref="T:System.Net.PeerToPeer.PeerName" />呼び出し元のピアに既知のすべてのクラウドでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべて<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>非同期処理が必要なときに使用されるメソッド。  ResolveAsync イベント処理のためのパラメーター リストのシステム トークンが含まする点を除いてはメソッドに渡されるパラメーターで同一です。  
+  
+ Resolve メソッドと ResolveAsync メソッドのパラメーターの不一致が発生した場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターが指定されていない、メソッドを使用して、<xref:System.Net.PeerToPeer.Cloud.Available>クラウド パラメーターを埋めるためのショートカットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ResolveAsync">
+      <MemberSignature Language="C#" Value="public void ResolveAsync (System.Net.PeerToPeer.PeerName peerName, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAsync(class System.Net.PeerToPeer.PeerName peerName, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync(System.Net.PeerToPeer.PeerName,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="userState">ピア名解決操作に関する状態情報を格納するユーザー定義のオブジェクト。</param>
+        <summary>呼び出し元のピアに既知のすべてのクラウドで、指定された <see cref="P:System.Net.PeerToPeer.PeerNameRecord.PeerName" /> の非同期のピア名解決操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラウドにピア名を非同期的に関連付けます。 すべてのクラウドが照会、<xref:System.Net.PeerToPeer.PeerName>です。 発生させる、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveCompleted%2A>メソッドです。 またはを生成、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged%2A>メソッドです。  
+  
+ ピア名前解決、できない場合、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。  
+  
+ 呼び出す、<xref:System.Net.PeerToPeer.PeerNameResolver>メソッドの呼び出しに似ていますが、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッド内の各ピア名レコード、<xref:System.Net.PeerToPeer.PeerNameRecordCollection>です。 ピア名レコードで、Resolve メソッドを使用しても、複数のピア名の解決は無効に注意してください。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 および、Resolve メソッドは、同期処理する点を除いて同じですが、です。  
+  
+ すべての非同期参照リゾルバー オブジェクトを一意の識別子トークンを使用して調整されます。 これは、`userState`トークンまたはメッセージ識別子により、オペレーティング システムにメッセージがメッセージ キューに置かれた後に、1 つの受信側プロセスにメッセージを配信します。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> と <paramref name="userState" /> のパラメーターの一方または両方が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAsync">
+      <MemberSignature Language="C#" Value="public void ResolveAsync (System.Net.PeerToPeer.PeerName peerName, int maxRecords, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAsync(class System.Net.PeerToPeer.PeerName peerName, int32 maxRecords, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync(System.Net.PeerToPeer.PeerName,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="maxRecords" Type="System.Int32" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="maxRecords">ピア名を取得するためのレコードの最大数。</param>
+        <param name="userState">解決操作に関する情報を格納するユーザー定義のオブジェクト。</param>
+        <summary><paramref name="maxRecords" /> 未満のピア名エントリを返して、呼び出し元のピアに既知のすべてのクラウドで、指定された <see cref="T:System.Net.PeerToPeer.PeerName" /> の非同期のピア名解決操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クラウドにピア名を非同期的に関連付けます。 すべてのクラウドが照会、<xref:System.Net.PeerToPeer.PeerName>です。 セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。 ピア名解決できない場合や、場合`null`、<xref:System.Net.PeerToPeer.PeerToPeerException>がスローされます。  
+  
+ このメソッドを発生させる、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveCompleted%2A>メソッドです。 またはを生成、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged%2A>メソッドです。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 および、Resolve メソッドは、同期処理する点を除いて同じですが、です。  
+  
+ すべての非同期参照リゾルバー オブジェクトを一意の識別子トークンを使用して調整されます<xref:System.Object>です。 これは、`userState`トークンまたはメッセージ識別子により、オペレーティング システムにメッセージがメッセージ キューに置かれた後に、1 つの受信側プロセスにメッセージを配信します。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> と <paramref name="userState" /> のパラメーターの一方または両方が <see langword="null" /> に設定されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxRecords" /> パラメーターが 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAsync">
+      <MemberSignature Language="C#" Value="public void ResolveAsync (System.Net.PeerToPeer.PeerName peerName, System.Net.PeerToPeer.Cloud cloud, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAsync(class System.Net.PeerToPeer.PeerName peerName, class System.Net.PeerToPeer.Cloud cloud, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync(System.Net.PeerToPeer.PeerName,System.Net.PeerToPeer.Cloud,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="cloud" Type="System.Net.PeerToPeer.Cloud" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerName">解決する <see cref="T:System.Net.PeerToPeer.PeerName" />。</param>
+        <param name="cloud"><see cref="T:System.Net.PeerToPeer.Cloud" />を解決するために、 <c>peerName</c>です。</param>
+        <param name="userState">ピア名解決操作に関する情報を格納するユーザー定義の <see cref="T:System.Object" />。</param>
+        <summary>指定された <see cref="T:System.Net.PeerToPeer.Cloud" /> で、指定された <see cref="T:System.Net.PeerToPeer.PeerName" /> の非同期のピア名解決操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを発生させる、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveCompleted%2A>メソッドです。 またはを生成、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged%2A>メソッドです。  
+  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターは`null`では名前解決を使用して、<xref:System.Net.PeerToPeer.Cloud.Available>ショートカットの既定値を初期化、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>プロパティです。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 および、Resolve メソッドは、同期処理する点を除いて同じですが、です。  
+  
+ すべての非同期参照リゾルバー オブジェクトを一意の識別子トークンを使用して調整されます。 これは、`userState`トークンまたはメッセージ識別子により、オペレーティング システムにメッセージがメッセージ キューに置かれた後に、1 つの受信側プロセスにメッセージを配信します。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> と <paramref name="userState" /> のパラメーターの一方または両方が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAsync">
+      <MemberSignature Language="C#" Value="public void ResolveAsync (System.Net.PeerToPeer.PeerName peerName, System.Net.PeerToPeer.Cloud cloud, int maxRecords, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAsync(class System.Net.PeerToPeer.PeerName peerName, class System.Net.PeerToPeer.Cloud cloud, int32 maxRecords, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync(System.Net.PeerToPeer.PeerName,System.Net.PeerToPeer.Cloud,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+        <Parameter Name="cloud" Type="System.Net.PeerToPeer.Cloud" />
+        <Parameter Name="maxRecords" Type="System.Int32" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerName"><c>PeerName</c>を解決します。</param>
+        <param name="cloud"><c>クラウド</c>を解決するために<c>peerName</c>です。</param>
+        <param name="maxRecords">取得するレコードの最大数<c>クラウド</c>の<c>peerName</c>です。</param>
+        <param name="userState">ピア名解決操作に関する情報を格納するユーザー定義のオブジェクト。</param>
+        <summary>指定された <see cref="T:System.Net.PeerToPeer.Cloud" /> で、指定された <see cref="T:System.Net.PeerToPeer.PeerName" /> の非同期のピア名解決操作を開始します。  この解決操作では、指定したピア名に対し <paramref name="maxRecords" /> エントリ以下の解決が行われます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ保護されていないピア名の場合は、同じ名前を登録 (して別のエンドポイントに関連付けられている)、同じクラウド内の別のピアがします。  
+  
+ このメソッドを発生させる、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveCompleted%2A>メソッドです。 またはを生成、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>にコールバックする、イベント、<xref:System.Net.PeerToPeer.PeerNameResolver.OnResolveProgressChanged%2A>メソッドです。  
+  
+ 場合、<xref:System.Net.PeerToPeer.Cloud>パラメーターは`null`では名前解決を使用して、<xref:System.Net.PeerToPeer.Cloud.Available>ショートカットの既定値を初期化、 <xref:System.Net.PeerToPeer.Cloud.Name%2A>、 <xref:System.Net.PeerToPeer.Cloud.Scope%2A>、および<xref:System.Net.PeerToPeer.Cloud.ScopeId%2A>プロパティです。  
+  
+ 各<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync%2A>メソッドに相当するものは<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>メソッドです。  パラメーター リストは、ResolveAsync メソッドには、非同期イベント処理のためのシステム トークンが含まれています。 および、Resolve メソッドは、同期処理する点を除いて同じですが、です。  
+  
+ ピア リゾルバー オブジェクトをすべて非同期参照の一意の識別子トークンを使用して調整されます<xref:System.Object>です。 これは、`userState`トークンまたはメッセージ識別子により、オペレーティング システムにメッセージがメッセージ キューに置かれた後に、1 つの受信側プロセスにメッセージを配信します。  
+  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>解決操作のエラーで完了したかが取り消される場合にイベントが生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="peerName" /> と <paramref name="userState" /> のパラメーターの一方または両方が <see langword="null" /> に設定されます。</exception>
+        <exception cref="T:System.ArgumentException">指定された 1 つ以上のパラメーターが無効です。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">この操作を正常に完了するには、少なくとも 1 つのイベント ハンドラーが必要です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="maxRecords" /> パラメーターが 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAsyncCancel">
+      <MemberSignature Language="C#" Value="public void ResolveAsyncCancel (object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAsyncCancel(object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.PeerNameResolver.ResolveAsyncCancel(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userState">解決操作を開始した <see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> メソッド インスタンスに提供されるオブジェクト。</param>
+        <summary>指定された非同期ピアの名前解決要求をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことが保証、システムは、指定された追加のレコードの取得を試行しません<xref:System.Net.PeerToPeer.PeerName>です。  非同期ピア名解決操作が存在しない場合、このメソッドは呼び出されると、その機能は、「操作なし」(NO OP)。  
+  
+ `userState`進行中の複数の呼び出し時に、特定の非同期呼び出しを追跡するために使用されているために、オブジェクトを指定する必要があります。 この呼び出し元が指定のオブジェクトは、ピア名解決の要求ごとに一意です。  
+  
+ このメソッドは、すぐに返しますが、操作の可能性がありますまたはすぐに取り消すことができません。 によって返されるイベントの引数、<xref:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted>イベントには、キャンセルが発生したかどうかを決定するクライアントがポーリングすることができるフィールドが含まれています。  
+  
+ このメソッドを呼び出すことにより、ResolveCompleted イベントは、イベントの引数にできるだけ早く通知<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>'éý'`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="userState" /> パラメーターとして <see langword="null" /> を使用することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.ResolveCompletedEventArgs&gt; ResolveCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.ResolveCompletedEventArgs&gt; ResolveCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.ResolveCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の <see cref="P:System.Net.PeerToPeer.PeerNameRegistration.PeerName" /> のピア名解決要求が完了したときに <see cref="E:System.Net.PeerToPeer.PeerNameResolver.ResolveCompleted" /> イベントが通知されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged>イベントが見つかると、エンドポイントごとに 1 回発生して、このイベントはすべてのエンドポイントが見つかったとき 1 回だけです。  
+  
+ 場合、このイベントは発生も、<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>操作がエラーで完了したかが取り消されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveProgressChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.ResolveProgressChangedEventArgs&gt; ResolveProgressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.ResolveProgressChangedEventArgs&gt; ResolveProgressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.PeerNameResolver.ResolveProgressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.ResolveProgressChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントは、<see cref="T:System.Net.PeerToPeer.PeerNameRecord" /> オブジェクトが特定の <see cref="T:System.Net.PeerToPeer.PeerName" /> の <see cref="Overload:System.Net.PeerToPeer.PeerNameResolver.ResolveAsync" /> 操作に対する応答で検索されるたびにシグナル状態に設定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数<xref:System.Net.PeerToPeer.PeerName>照会されているは、オブジェクトが存在するこのイベントがシグナル状態に各<xref:System.Net.PeerToPeer.PeerNameRecord>が見つかりました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,360 @@
+<Type Name="WebReference" FullName="System.Web.Services.Description.WebReference">
+  <TypeSignature Language="C#" Value="public sealed class WebReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebReference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.WebReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスのコレクションへの参照について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Description.WebReference>オブジェクトが、静的な一連の Web サービスに関する情報を渡すため<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>のメソッド、<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このクラスの使用を示しています。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#0](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReference (System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, System.CodeDom.CodeNamespace proxyCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, class System.CodeDom.CodeNamespace proxyCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReference.#ctor(System.Web.Services.Discovery.DiscoveryClientDocumentCollection,System.CodeDom.CodeNamespace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="documents" Type="System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />
+        <Parameter Name="proxyCode" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="documents">A<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />説明のドキュメントのコレクションを指定します。</param>
+        <param name="proxyCode">A<see cref="T:System.CodeDom.CodeNamespace" />コード コンパイルの名前空間を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Description.WebReference" />指定された説明ドキュメント コレクションとプロキシ コードの名前空間を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `documents`のみを含める必要がありますコレクション<xref:System.Web.Services.Description.ServiceDescription>と<xref:System.Xml.Schema.XmlSchema>オブジェクトで、<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>メソッドが解釈できない<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReference>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#4](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReference (System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, System.CodeDom.CodeNamespace proxyCode, string appSettingUrlKey, string appSettingBaseUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, class System.CodeDom.CodeNamespace proxyCode, string appSettingUrlKey, string appSettingBaseUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReference.#ctor(System.Web.Services.Discovery.DiscoveryClientDocumentCollection,System.CodeDom.CodeNamespace,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="documents" Type="System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />
+        <Parameter Name="proxyCode" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="appSettingUrlKey" Type="System.String" />
+        <Parameter Name="appSettingBaseUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="documents">A<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />説明のドキュメントのコレクションを指定します。</param>
+        <param name="proxyCode">A<see cref="T:System.CodeDom.CodeNamespace" />コード コンパイルの名前空間を指定します。</param>
+        <param name="appSettingUrlKey">Web 参照の URL キー。</param>
+        <param name="appSettingBaseUrl">Web 参照の基本 URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Description.WebReference" />指定されたデータを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `documents`のみを含める必要がありますコレクション<xref:System.Web.Services.Description.ServiceDescription>と<xref:System.Xml.Schema.XmlSchema>オブジェクトで、<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>メソッドが解釈できない<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReference (System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, System.CodeDom.CodeNamespace proxyCode, string protocolName, string appSettingUrlKey, string appSettingBaseUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Services.Discovery.DiscoveryClientDocumentCollection documents, class System.CodeDom.CodeNamespace proxyCode, string protocolName, string appSettingUrlKey, string appSettingBaseUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReference.#ctor(System.Web.Services.Discovery.DiscoveryClientDocumentCollection,System.CodeDom.CodeNamespace,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="documents" Type="System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />
+        <Parameter Name="proxyCode" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="protocolName" Type="System.String" />
+        <Parameter Name="appSettingUrlKey" Type="System.String" />
+        <Parameter Name="appSettingBaseUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="documents">A<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />説明のドキュメントのコレクションを指定します。</param>
+        <param name="proxyCode">A<see cref="T:System.CodeDom.CodeNamespace" />コード コンパイルの名前空間を指定します。</param>
+        <param name="protocolName">XML Web サービスによって使用されるプロトコル。</param>
+        <param name="appSettingUrlKey">Web 参照の URL キー。</param>
+        <param name="appSettingBaseUrl">Web 参照の基本 URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Description.WebReference" />指定されたデータを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `documents`のみを含める必要がありますコレクション<xref:System.Web.Services.Description.ServiceDescription>と<xref:System.Xml.Schema.XmlSchema>オブジェクトで、<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>メソッドが解釈できない<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReference#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReference/CS/webreference.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppSettingBaseUrl">
+      <MemberSignature Language="C#" Value="public string AppSettingBaseUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppSettingBaseUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.AppSettingBaseUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 参照のベース URL を取得します。</summary>
+        <value>A <see cref="T:System.String" /> Web 参照の基本 URL を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReference>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#5](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppSettingUrlKey">
+      <MemberSignature Language="C#" Value="public string AppSettingUrlKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppSettingUrlKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.AppSettingUrlKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 参照の URL キーを取得します。</summary>
+        <value>A <see cref="T:System.String" /> Web 参照の URL キーを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReference>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#5](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Documents">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryClientDocumentCollection Documents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Discovery.DiscoveryClientDocumentCollection Documents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.Documents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryClientDocumentCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 参照に関連付けられた説明のドキュメントのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />初期化するために使用される、<see cref="T:System.Web.Services.Description.WebReference" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web 参照に関連付けられている説明ドキュメント コレクションにのみ含まれる必要があります<xref:System.Web.Services.Description.ServiceDescription>と<xref:System.Xml.Schema.XmlSchema>オブジェクトで、<xref:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences%2A>メソッドが解釈できない<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReference>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#5](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolName">
+      <MemberSignature Language="C#" Value="public string ProtocolName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProtocolName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.ProtocolName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web 参照に関連付けられているプロトコルを設定します。</summary>
+        <value>A <see cref="T:System.String" /> Web 参照に関連付けられたプロトコルの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可 (SOAP 1.0 を示す)"Soap"と"Soap12"プロトコルの文字列が含まれます (SOAP 1.2 を示す) です。 このプロパティの値によって決まります内の XML Web サービスに接続するときに、プロキシのクライアントによって使用されるプロトコル、<xref:System.Web.Services.Description.WebReference.Documents%2A>コレクション。  
+  
+ SOAP の詳細については、www.w3.org に、World Wide Web コンソーシアムの Web サイトを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Services.Description.WebReference>クラスです。  
+  
+ [!code-csharp[WebServices_GenerateWebReferences#4](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_GenerateWebReferences/CS/webreference.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyCode">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeNamespace ProxyCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeNamespace ProxyCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.ProxyCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeNamespace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web 参照に関連付けられたコードの名前空間を取得します。</summary>
+        <value><see cref="T:System.CodeDom.CodeNamespace" />のプロキシ コードがなる時に生成される、<see cref="M:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences(System.Web.Services.Description.WebReferenceCollection,System.CodeDom.Compiler.CodeDomProvider,System.CodeDom.CodeCompileUnit,System.Web.Services.Description.WebReferenceOptions)" />メソッドが呼び出されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Services.Description.WebReference.ProxyCode%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReference#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReference/CS/webreference.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationWarnings">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection ValidationWarnings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection ValidationWarnings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.ValidationWarnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明のドキュメントを検証するときに生成された警告のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.StringCollection" />の検証警告テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Services.Description.WebReference.ValidationWarnings%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReference#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReference/CS/webreference.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warnings">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionImportWarnings Warnings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.ServiceDescriptionImportWarnings Warnings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReference.Warnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportWarnings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) サービスの説明のドキュメントをインポートするときに生成された警告のコレクションを取得します。</summary>
+        <value>A <see cref="T:System.Web.Services.Description.ServiceDescriptionImportWarnings" /> WSDL サービス説明のドキュメントをインポートするときに生成された警告のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Services.Description.WebReference.Warnings%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Services.Description.WebReference#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Web.Services.Description.WebReference/CS/webreference.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

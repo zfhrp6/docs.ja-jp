@@ -1,0 +1,127 @@
+<Type Name="DataGridViewCellValidatingEventArgs" FullName="System.Windows.Forms.DataGridViewCellValidatingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewCellValidatingEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCellValidatingEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellValidatingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.CellValidating" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.CellValidating?displayProperty=nameWithType>イベントには、新しい値が無効な場合は、現在のセルへの変更を取り消すことができます。 使用して、<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs.FormattedValue%2A>プロパティを現在の値を決定します。 現在のセルの状態を調べるには使用、<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs.RowIndex%2A>と<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs.ColumnIndex%2A>をセルにアクセスするプロパティ、<xref:System.Windows.Forms.DataGridView.Rows%2A?displayProperty=nameWithType>コレクション。 変更をキャンセルするには、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ データ バインド モードでこのイベントが取り消されると、新しい値は、基になるデータ ソースへプッシュされません。 仮想モードでこのイベントが取り消されたときに、<xref:System.Windows.Forms.DataGridView.CellValuePushed?displayProperty=nameWithType>イベントは発生しません。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.CellValidating>イベントを正の整数のみが、ユーザーが入力したことを確認してください。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#40)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnIndex">
+      <MemberSignature Language="C#" Value="public int ColumnIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValidatingEventArgs.ColumnIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証に使用する必要のあるセルの列インデックスを取得します。</summary>
+        <value>検証に使用する必要のあるセルの列インデックスを指定する 0 から始まる整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロール内のデータの検証](~/docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattedValue">
+      <MemberSignature Language="C#" Value="public object FormattedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FormattedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValidatingEventArgs.FormattedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証に使用する必要があるセルの書式設定されたコンテンツを取得します。</summary>
+        <value>書式設定された値への参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー インターフェイス (UI) を介してユーザーが入力したテキストになる、<xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs.FormattedValue%2A>プロパティの値。 これは、検証できる値は解析結果は、セルにする前に<xref:System.Windows.Forms.DataGridViewCell.Value%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.CellValidating>イベントを正の整数のみが、ユーザーが入力したことを確認してください。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValidatingEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証に使用する必要のあるセルの行インデックスを取得します。</summary>
+        <value>検証に使用する必要のあるセルの行インデックスを指定する 0 から始まる整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロール内のデータの検証](~/docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

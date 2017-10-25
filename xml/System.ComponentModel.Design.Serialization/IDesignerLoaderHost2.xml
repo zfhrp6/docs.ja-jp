@@ -1,0 +1,109 @@
+<Type Name="IDesignerLoaderHost2" FullName="System.ComponentModel.Design.Serialization.IDesignerLoaderHost2">
+  <TypeSignature Language="C#" Value="public interface IDesignerLoaderHost2 : IServiceProvider, System.ComponentModel.Design.Serialization.IDesignerLoaderHost" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerLoaderHost2 implements class System.ComponentModel.Design.IDesignerHost, class System.ComponentModel.Design.IServiceContainer, class System.ComponentModel.Design.Serialization.IDesignerLoaderHost, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.Serialization.IDesignerLoaderHost</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>拡張するインターフェイスを提供<see cref="T:System.ComponentModel.Design.Serialization.IDesignerLoaderHost" />デザイン ドキュメントの読み込み中にエラーが許容されるかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2>デザイナー ローダーが逆シリアル化中にエラーが発生したときの読み込みを続行できるかどうかを指定するインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanReloadWithErrors">
+      <MemberSignature Language="C#" Value="public bool CanReloadWithErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReloadWithErrors" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.CanReloadWithErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、エラーが再読み込みすることがあるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />エラーが検出されたときに、デザイナー ローダーがデザイン ドキュメントを再読み込みできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のシナリオで読み込みエラーは無視できません。 デザイナー ローダーの実装を返す必要があります`false`このようなときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreErrorsDuringReload">
+      <MemberSignature Language="C#" Value="public bool IgnoreErrorsDuringReload { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreErrorsDuringReload" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.IgnoreErrorsDuringReload" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーができるかどうかを示す値を設定するときに無視<see cref="M:System.ComponentModel.Design.Serialization.IDesignerLoaderHost.Reload" />と呼びます。</summary>
+        <value>
+          <see langword="true" />を再読み込み時に、デザイナー ローダーのエラーは無視する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.IgnoreErrorsDuringReload%2A>プロパティのみ設定できます`true`場合<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.CanReloadWithErrors%2A>は`true`します。 場合<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.CanReloadWithErrors%2A>は`false`の値<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost2.IgnoreErrorsDuringReload%2A>は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

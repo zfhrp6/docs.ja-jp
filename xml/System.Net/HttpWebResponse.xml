@@ -1,0 +1,1105 @@
+<Type Name="HttpWebResponse" FullName="System.Net.HttpWebResponse">
+  <TypeSignature Language="C#" Value="public class HttpWebResponse : System.Net.WebResponse, IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit HttpWebResponse extends System.Net.WebResponse implements class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpWebResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebResponse</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Net.WebResponse" /> クラスの HTTP 固有の実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスにはプロパティとメソッドを使用する HTTP 固有のサポートが含まれます、<xref:System.Net.WebResponse>クラスです。 <xref:System.Net.HttpWebResponse>クラスを使用して HTTP 要求を送信し、HTTP 応答を受信する HTTP スタンドアロン クライアント アプリケーションをビルドします。  
+  
+> [!NOTE]
+>  混同しないでください<xref:System.Net.HttpWebResponse>で、<xref:System.Web.HttpResponse>クラス ASP.NET アプリケーションで使用されると、あるメソッドとプロパティは、ASP を介して公開されます。NET の組み込み`Response`オブジェクト。  
+  
+ インスタンスを直接作成する必要があります、<xref:System.Net.HttpWebResponse>クラスです。 代わりへの呼び出しによって返されるインスタンス<xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType>です。 いずれかを呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>または<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>応答を閉じ、再利用するための接続を解放するメソッド。 両方を呼び出す必要はありません<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>と<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>を行うと、エラーは発生しませんので、します。  
+  
+ インターネット リソースから返される共通のヘッダー情報は、クラスのプロパティとして公開されます。 完全な一覧については、次の表を参照してください。 その他のヘッダーを読み取ることができます、<xref:System.Net.HttpWebResponse.Headers%2A>名前/値のペアとしてプロパティです。  
+  
+ 次の表に、共通の HTTP ヘッダーのプロパティから使用可能な<xref:System.Net.HttpWebResponse>クラスです。  
+  
+|ヘッダー|プロパティ|  
+|------------|--------------|  
+|コンテンツ エンコーディング|<xref:System.Net.HttpWebResponse.ContentEncoding%2A>|  
+|コンテンツの長さ|<xref:System.Net.HttpWebResponse.ContentLength%2A>|  
+|コンテンツの種類|<xref:System.Net.HttpWebResponse.ContentType%2A>|  
+|最終更新|<xref:System.Net.HttpWebResponse.LastModified%2A>|  
+|サーバー|<xref:System.Net.HttpWebResponse.Server%2A>|  
+  
+ インターネット リソースからの応答の内容として返されます、<xref:System.IO.Stream>を呼び出して、<xref:System.Net.HttpWebResponse.GetResponseStream%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を返します、<xref:System.Net.HttpWebResponse>から、<xref:System.Net.HttpWebRequest>です。  
+  
+ [!code-cpp[Classic HttpWebResponse Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpWebResponse Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpWebResponse Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpWebResponse Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpWebResponse Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpWebResponse Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <altmember cref="T:System.Net.WebResponse" />
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Net.HttpWebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpWebResponse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.HttpWebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HttpWebResponse (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Serialization is obsoleted for this type", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">新しい <see cref="T:System.Net.HttpWebRequest" /> をシリアル化するために必要な情報を格納している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">新しい <see cref="T:System.Net.HttpWebRequest" /> に関連付けられるシリアル化ストリームの転送元を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>指定した <see cref="T:System.Runtime.Serialization.SerializationInfo" /> インスタンスと <see cref="T:System.Runtime.Serialization.StreamingContext" /> インスタンスから、<see cref="T:System.Net.HttpWebResponse" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを実装して、<xref:System.Runtime.Serialization.ISerializable>のためのインターフェイス、<xref:System.Net.HttpWebRequest>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.Runtime.Serialization.ISerializable" />
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterSet">
+      <MemberSignature Language="C#" Value="public string CharacterSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CharacterSet" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.CharacterSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答の文字セットを取得します。</summary>
+        <value>応答の文字セットを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.CharacterSet%2A>プロパティには、応答の文字セットを記述する値が含まれています。 この文字セットの情報は、応答で返されるヘッダーから取得されます。  
+  
+   
+  
+## Examples  
+ 次の例では、応答の文字セットを取得します。  
+  
+ [!code-cpp[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/CPP/source.cpp#1)]
+ [!code-csharp[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/CS/source.cs#1)]
+ [!code-vb[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>応答ストリームを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.Close%2A>メソッドは、応答ストリームを閉じます、その他の要求によって再利用するためのリソースへの接続を解放します。  
+  
+ いずれかを呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>または<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 両方を呼び出す必要はありません<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>と<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>を行うと、エラーは発生しませんので、します。 ストリームを閉じないには、アプリケーションの接続が不足する可能性があります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、閉じる、<xref:System.Net.HttpWebResponse>です。  
+  
+ [!code-cpp[HttpWebResponse_Close#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_Close/CPP/httpwebresponse_close.cpp#1)]
+ [!code-csharp[HttpWebResponse_Close#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_Close/CS/httpwebresponse_close.cs#1)]
+ [!code-vb[HttpWebResponse_Close#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_Close/VB/httpwebresponse_close.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncoding">
+      <MemberSignature Language="C#" Value="public string ContentEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.ContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答の本体をエンコードするために使用するメソッドを取得します。</summary>
+        <value>応答の本文をエンコードするために使用するメソッドを記述する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.ContentEncoding%2A>プロパティには、応答で返される Content-encoding ヘッダーの値が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Net.HttpWebResponse.ContentEncoding%2A> Content-encoding ヘッダーの値を取得するプロパティの応答で返されます。  
+  
+ [!code-cpp[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/CPP/source.cpp#1)]
+ [!code-csharp[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/CS/source.cs#1)]
+ [!code-vb[HttpWebResponse_ContentEncoding_CharacterSet#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_ContentEncoding_CharacterSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求で返されるコンテンツ長を取得します。</summary>
+        <value>要求で返されるバイト数。 コンテンツ長には、ヘッダー情報は含まれません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.ContentLength%2A>プロパティには、応答で返されるコンテンツ長のヘッダーの値が含まれています。 Content-length ヘッダーが応答で設定されていない場合<xref:System.Net.HttpWebResponse.ContentLength%2A>が-1 の値に設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のコンテンツ タイプを取得します。</summary>
+        <value>応答のコンテンツ タイプを格納する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.ContentType%2A>プロパティには、応答で返される Content-type ヘッダーの値が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLResponse1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLResponse1/CPP/httpwebrequest1.cpp#1)]
+ [!code-csharp[NCLResponse1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLResponse1/CS/httpwebrequest1.cs#1)]
+ [!code-vb[NCLResponse1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLResponse1/VB/httpwebrequest1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public virtual System.Net.CookieCollection Cookies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.CookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この応答に関連付けられているクッキーを取得または設定します。</summary>
+        <value>この要求に関連付けられているクッキーを格納する <see cref="T:System.Net.CookieCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.Cookies%2A>プロパティのインスタンスを提供する、<xref:System.Net.CookieCollection>この応答に関連付けられているクッキーを保持するクラス。  
+  
+ 場合、 <xref:System.Net.HttpWebRequest.CookieContainer%2A> 、関連するプロパティ<xref:System.Net.HttpWebRequest>は`null`、<xref:System.Net.HttpWebResponse.Cookies%2A>プロパティにもなります`null`です。 サーバーによって送信されたすべての cookie 情報がで使用できる、<xref:System.Net.HttpWebResponse.Headers%2A>プロパティ、ただしです。  
+  
+   
+  
+## Examples  
+ 次の例では、URL に要求を送信し、応答で返されたクッキーを表示します。  
+  
+ [!code-cpp[NCLCookies#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCookies/CPP/cookiessnippets.cpp#1)]
+ [!code-csharp[NCLCookies#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCookies/CS/cookiessnippets.cs#1)]
+ [!code-vb[NCLCookies#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLCookies/VB/cookiessnippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+        <altmember cref="T:System.Net.CookieContainer" />
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Net.HttpWebResponse" /> が使用しているアンマネージ リソースを解放します。オプションでマネージ リソースも破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Net.WebResponse> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see cref="M:System.Net.HttpWebResponse.Dispose(System.Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see cref="M:System.Net.HttpWebResponse.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected override void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれているすべてのオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseHeader">
+      <MemberSignature Language="C#" Value="public string GetResponseHeader (string headerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetResponseHeader(string headerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.GetResponseHeader(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="headerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="headerName">返されるヘッダー値。</param>
+        <summary>応答で返されたヘッダーの内容を取得します。</summary>
+        <returns>指定したヘッダーの内容。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Net.HttpWebResponse.GetResponseHeader%2A>を特定のヘッダーの内容を取得します。 取得するヘッダーを指定する必要があります。  
+  
+   
+  
+## Examples  
+ この例では、Web 要求と応答のクエリを作成します。 サイトには、認証が必要とする場合、この例はチャレンジ文字列で応答します。 使用してこの文字列を抽出<xref:System.Net.HttpWebResponse.GetResponseHeader%2A>です。  
+  
+ [!code-cpp[HttpWebResponse_GetResponseHeader#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_GetResponseHeader/CPP/httpwebresponse_getresponseheader.cpp#1)]
+ [!code-csharp[HttpWebResponse_GetResponseHeader#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_GetResponseHeader/CS/httpwebresponse_getresponseheader.cs#1)]
+ [!code-vb[HttpWebResponse_GetResponseHeader#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_GetResponseHeader/VB/httpwebresponse_getresponseheader.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetResponseStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetResponseStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.GetResponseStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバーから応答の本文を読み取るために使用するストリームを取得します。</summary>
+        <returns>応答の本文を格納している <see cref="T:System.IO.Stream" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.GetResponseStream%2A>メソッドが要求されたインターネット リソースからデータ ストリームを返します。  
+  
+> [!NOTE]
+>  いずれかを呼び出す必要があります、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>または<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>ストリームを閉じ、再利用するための接続を解放するメソッド。 両方を呼び出す必要はありません<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>と<xref:System.Net.HttpWebResponse.Close%2A?displayProperty=nameWithType>を行うと、エラーは発生しませんので、します。 ストリームを閉じないと、アプリケーションで接続が不足します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.HttpWebResponse.GetResponseStream%2A>を返す、<xref:System.IO.Stream>インスタンスのサーバーからの応答を読み取るために使用します。  
+  
+ [!code-cpp[HttpWebResponse_GetResponseStream#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_GetResponseStream/CPP/httpwebresponse_getresponsestream.cpp#1)]
+ [!code-csharp[HttpWebResponse_GetResponseStream#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_GetResponseStream/CS/httpwebresponse_getresponsestream.cs#1)]
+ [!code-vb[HttpWebResponse_GetResponseStream#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_GetResponseStream/VB/httpwebresponse_getresponsestream.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.ProtocolViolationException">応答ストリームがありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答に関連付けられているヘッダーをサーバーから取得します。</summary>
+        <value>応答で返されるヘッダー情報を格納する <see cref="T:System.Net.WebHeaderCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.Headers%2A>プロパティ値は、応答と共に返される HTTP ヘッダーの値を格納する名前/値ペアのコレクション。 インターネット リソースから返される共通のヘッダー情報がのプロパティとして公開されている、<xref:System.Net.HttpWebResponse>クラスです。 次の表は、API でのプロパティとして公開される一般的なヘッダーを示します。  
+  
+|ヘッダー|プロパティ|  
+|------------|--------------|  
+|コンテンツ エンコーディング|<xref:System.Net.HttpWebResponse.ContentEncoding%2A>|  
+|コンテンツの長さ|<xref:System.Net.HttpWebResponse.ContentLength%2A>|  
+|コンテンツの種類|<xref:System.Net.HttpWebResponse.ContentType%2A>|  
+|最終更新|<xref:System.Net.HttpWebResponse.LastModified%2A>|  
+|サーバー|<xref:System.Net.HttpWebResponse.Server%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、コンソールにすべての応答ヘッダーの内容を書き込みます。  
+  
+ [!code-cpp[HttpWebResponse_Headers#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_Headers/CPP/httpwebresponse_headers.cpp#1)]
+ [!code-csharp[HttpWebResponse_Headers#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_Headers/CS/httpwebresponse_headers.cs#1)]
+ [!code-vb[HttpWebResponse_Headers#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_Headers/VB/httpwebresponse_headers.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutuallyAuthenticated">
+      <MemberSignature Language="C#" Value="public override bool IsMutuallyAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMutuallyAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.IsMutuallyAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントとサーバーの両方が認証されたかどうかを示す <see cref="T:System.Boolean" /> 値を取得します。</summary>
+        <value>
+          相互認証が行われた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して相互認証を指定することができます、<xref:System.Net.WebRequest.AuthenticationLevel%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModified">
+      <MemberSignature Language="C#" Value="public DateTime LastModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastModified" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.LastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答の内容が最後に変更された日付と時刻を取得します。</summary>
+        <value>応答の内容が変更された日付と時刻を格納する <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.LastModified%2A>プロパティには、応答を受信しました Last-modified ヘッダーの値が含まれています。 日付と時刻は現地時刻であると見なされます。  
+  
+   
+  
+## Examples  
+ この例で作成、<xref:System.Net.HttpWebRequest>と応答をクエリします。 この例は、いつでも現在した要求のエンティティに変更されたかどうかをチェックします。  
+  
+ [!code-cpp[HttpWebResponse_LastModified#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_LastModified/CPP/httpwebresponse_lastmodified.cpp#1)]
+ [!code-csharp[HttpWebResponse_LastModified#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_LastModified/CS/httpwebresponse_lastmodified.cs#1)]
+ [!code-vb[HttpWebResponse_LastModified#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_LastModified/VB/httpwebresponse_lastmodified.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public virtual string Method { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Method" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答を返すために使用するメソッドを取得します。</summary>
+        <value>応答を返すために使用する HTTP メソッドを格納する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.Method%2A>応答を返すために使用するメソッドを返します。 共通の HTTP メソッドは、GET、HEAD、POST、PUT、および削除されます。  
+  
+   
+  
+## Examples  
+ 次の例に含まれる文字列の確認<xref:System.Net.HttpWebResponse.Method%2A>が、Web サーバーによって起動される Http メソッドを決定します。  
+  
+ [!code-cpp[HttpWebResponse_Method_Server#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_Method_Server/CPP/httpwebresponse_method_server.cpp#1)]
+ [!code-csharp[HttpWebResponse_Method_Server#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_Method_Server/CS/httpwebresponse_method_server.cs#1)]
+ [!code-vb[HttpWebResponse_Method_Server#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_Method_Server/VB/httpwebresponse_method_server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public Version ProtocolVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答で使用される HTTP プロトコルのバージョンを取得します。</summary>
+        <value>応答の HTTP プロトコルのバージョンを格納する <see cref="T:System.Version" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.ProtocolVersion%2A>プロパティには、インターネット リソースから送信された応答の HTTP プロトコルのバージョン番号が含まれています。  
+  
+   
+  
+## Examples  
+ この例で作成、<xref:System.Net.HttpWebRequest>クエリを実行し、<xref:System.Net.HttpWebResponse>です。 例は、同じバージョンのサーバーが応答しているを確認します。  
+  
+ [!code-cpp[HttpWebResponse_ProtocolVersion#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_ProtocolVersion/CPP/httpwebresponse_protocolversion.cpp#1)]
+ [!code-csharp[HttpWebResponse_ProtocolVersion#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_ProtocolVersion/CS/httpwebresponse_protocolversion.cs#1)]
+ [!code-vb[HttpWebResponse_ProtocolVersion#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_ProtocolVersion/VB/httpwebresponse_protocolversion.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseUri">
+      <MemberSignature Language="C#" Value="public override Uri ResponseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.ResponseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に応答したインターネット リソースの URI を取得します。</summary>
+        <value>要求に応答したインターネット リソースの URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.ResponseUri%2A>プロパティには、実際には、要求に応答したインターネット リソースの URI が含まれています。 この URI できない可能性があります、最初に要求された URI と同じ場合は、元のサーバーが要求をリダイレクトします。  
+  
+ <xref:System.Net.HttpWebResponse.ResponseUri%2A>プロパティでは、存在する場合に、コンテンツ-場所ヘッダーを使用します。  
+  
+ 最後にアクセスする必要があるアプリケーションのリダイレクト<xref:System.Net.HttpWebResponse.ResponseUri%2A>を使用する必要があります、<xref:System.Net.HttpWebRequest.Address%2A?displayProperty=nameWithType>プロパティなく<xref:System.Net.HttpWebResponse.ResponseUri%2A>の使用から<xref:System.Net.HttpWebResponse.ResponseUri%2A>プロパティは、セキュリティの脆弱性を開くことがあります。  
+  
+   
+  
+## Examples  
+ この例で作成、<xref:System.Net.HttpWebRequest>クエリを実行し、<xref:System.Net.HttpWebResponse>サーバーによって元の URI がリダイレクトされたかどうかを確認し、します。  
+  
+ [!code-cpp[HttpWebResponse_ResponseUri#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_ResponseUri/CPP/httpwebresponse_responseuri.cpp#1)]
+ [!code-csharp[HttpWebResponse_ResponseUri#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_ResponseUri/CS/httpwebresponse_responseuri.cs#1)]
+ [!code-vb[HttpWebResponse_ResponseUri#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_ResponseUri/VB/httpwebresponse_responseuri.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public string Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Server" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答を送信したサーバーの名前を取得します。</summary>
+        <value>応答を送信したサーバーの名前を格納する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.Server%2A>プロパティには、応答で返されるサーバーのヘッダーの値が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.HttpWebResponse.Server%2A>プロパティを Web サーバーの名前をコンソールに表示します。  
+  
+ [!code-cpp[HttpWebResponse_Method_Server#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_Method_Server/CPP/httpwebresponse_method_server.cpp#2)]
+ [!code-csharp[HttpWebResponse_Method_Server#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_Method_Server/CS/httpwebresponse_method_server.cs#2)]
+ [!code-vb[HttpWebResponse_Method_Server#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_Method_Server/VB/httpwebresponse_method_server.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public virtual System.Net.HttpStatusCode StatusCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.HttpStatusCode StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のステータスを取得します。</summary>
+        <value><see cref="T:System.Net.HttpStatusCode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpWebResponse.StatusCode%2A>パラメーターは、HTTP 応答の状態を示す番号。 状態の予期される値が定義されている、<xref:System.Net.HttpStatusCode>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.HttpWebResponse.StatusCode%2A>ことを確認の状態、<xref:System.Net.HttpWebResponse>は、[ok] です。  
+  
+ [!code-cpp[HttpWebResponse_StatusCode_StatusDescription#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/CPP/httpwebresponse_statuscode_statusdescription.cpp#1)]
+ [!code-csharp[HttpWebResponse_StatusCode_StatusDescription#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/CS/httpwebresponse_statuscode_statusdescription.cs#1)]
+ [!code-vb[HttpWebResponse_StatusCode_StatusDescription#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/VB/httpwebresponse_statuscode_statusdescription.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusDescription">
+      <MemberSignature Language="C#" Value="public virtual string StatusDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.StatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答で返されるステータス記述を取得します。</summary>
+        <value>応答のステータスを記述する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なステータス メッセージとは、[ok] です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.HttpWebResponse.StatusDescription%2A>ことを確認の状態、<xref:System.Net.HttpWebResponse>は、[ok] です。  
+  
+ [!code-cpp[HttpWebResponse_StatusCode_StatusDescription#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/CPP/httpwebresponse_statuscode_statusdescription.cpp#2)]
+ [!code-csharp[HttpWebResponse_StatusCode_StatusDescription#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/CS/httpwebresponse_statuscode_statusdescription.cs#2)]
+ [!code-vb[HttpWebResponse_StatusCode_StatusDescription#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpWebResponse_StatusCode_StatusDescription/VB/httpwebresponse_statuscode_statusdescription.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsHeaders">
+      <MemberSignature Language="C#" Value="public override bool SupportsHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpWebResponse.SupportsHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダーがサポートされているかどうかを示す値を取得します。</summary>
+        <value>
+          ヘッダーがサポートされる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 常に <see langword="true" /> を返します。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpWebResponse.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">この <see cref="T:System.Net.HttpWebResponse" /> のシリアル化の転送先となるオブジェクト。</param>
+        <param name="streamingContext">シリアル化の転送先。</param>
+        <summary>このインスタンスを、指定した <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトにシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

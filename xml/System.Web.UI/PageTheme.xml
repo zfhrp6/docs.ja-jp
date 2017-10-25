@@ -1,0 +1,441 @@
+<Type Name="PageTheme" FullName="System.Web.UI.PageTheme">
+  <TypeSignature Language="C#" Value="public abstract class PageTheme" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PageTheme extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PageTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ページのテーマ、これは、Web サイトのページおよびコントロールの間で一貫した外観を定義するために使用されるリソースのコレクションの基底クラスを表します。 ページのテーマは、構成または page ディレクティブで設定できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページおよびコントロールの開発者は使用しないで、 <xref:System.Web.UI.ControlSkinDelegate>、 <xref:System.Web.UI.ControlSkin>、または<xref:System.Web.UI.PageTheme>直接クラスです。 これらのクラスは、ASP.NET のテーマとページおよびコントロールの特定の種類にコントロール スキン ファイルで定義されているスタイル シートの要素を適用する、ASP.NET のパーサーとランタイムで使用されます。  
+  
+ ページの開発者を有効にする (または無効にする) を使用してページのテーマ、<xref:System.Web.UI.Page.Theme%2A>と<xref:System.Web.UI.Control.EnableTheming%2A>プロパティです。 ページ テーマの詳細については、次を参照してください。 [ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PageTheme ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.PageTheme" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppRelativeTemplateSourceDirectory">
+      <MemberSignature Language="C#" Value="protected abstract string AppRelativeTemplateSourceDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppRelativeTemplateSourceDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageTheme.AppRelativeTemplateSourceDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスをオーバーライドされると、取得用のディレクトリの相対 URL、<see cref="T:System.Web.UI.PageTheme" />オブジェクト。</summary>
+        <value>相対 URL を含む文字列値、<see cref="T:System.Web.UI.PageTheme" />ディレクトリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.AppRelativeTemplateSourceDirectory%2A>プロパティは抽象クラスです。 テーマがオーバーライドするコードを生成、コンパイル時、<xref:System.Web.UI.PageTheme.AppRelativeTemplateSourceDirectory%2A>プロパティです。 <xref:System.Web.UI.Control.ResolveUrl%2A>メソッドを使用、<xref:System.Web.UI.PageTheme.AppRelativeTemplateSourceDirectory%2A>にプロパティが絶対 URL に相対 URL を解決します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlSkins">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.IDictionary ControlSkins { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary ControlSkins" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageTheme.ControlSkins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.Collections.IDictionary" />コントロールの種類でインデックス付けされた、現在のページ テーマの使用可能なすべての既定のスキンの名前のインターフェイスです。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />ページの現在のテーマに関連付けられているコントロール スキンを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.ControlSkins%2A>プロパティは抽象クラスです。 コンパイルすると、テーマにはこのプロパティをオーバーライドするコードが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSkinKey">
+      <MemberSignature Language="C#" Value="public static object CreateSkinKey (Type controlType, string skinID);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateSkinKey(class System.Type controlType, string skinID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.CreateSkinKey(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="skinID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="controlType"><see cref="T:System.Type" />コントロール スキンが適用される、コントロールから通常渡される、<see cref="P:System.Web.UI.ControlBuilder.ControlType" />です。</param>
+        <param name="skinID">キーを作成する対象のコントロール スキンの名前。</param>
+        <summary>特定のコントロール型とスキン ID のルックアップ キー オブジェクトを作成します。</summary>
+        <returns>コントロール型とスキンの ID 情報を含むディクショナリ スタイル コレクション内でルックアップ キーとして使用できるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="controlType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="protected object Eval (string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object Eval(string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.Eval(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">パブリック プロパティの値に、コンテナーのナビゲーション パスです。 詳細については、「<see cref="T:System.Web.UI.DataBinder" />」を参照してください。</param>
+        <summary>使用して、<see cref="M:System.Web.UI.DataBinder.Eval(System.Object,System.String)" />のメソッド、<see cref="P:System.Web.UI.PageTheme.Page" />プロパティのインスタンス、<see cref="T:System.Web.UI.PageTheme" />クラスに関連付けられてデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式を評価して得た結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.Eval%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>データ項目のコンテナーを解決する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="protected string Eval (string expression, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string Eval(string expression, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.Eval(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expression">パブリック プロパティの値に、コンテナーのナビゲーション パスです。 詳細については、「<see cref="T:System.Web.UI.DataBinder" />」を参照してください。</param>
+        <param name="format">.NET Framework の書式指定文字列。 詳細については、「<see cref="T:System.Web.UI.DataBinder" />」を参照してください。</param>
+        <summary>使用して、<see cref="M:System.Web.UI.DataBinder.Eval(System.Object,System.String,System.String)" />のメソッド、<see cref="P:System.Web.UI.PageTheme.Page" />プロパティのインスタンス、<see cref="T:System.Web.UI.PageTheme" />クラスに関連付けられてデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.Eval%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>データ項目のコンテナーを解決する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkedStyleSheets">
+      <MemberSignature Language="C#" Value="protected abstract string[] LinkedStyleSheets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] LinkedStyleSheets" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageTheme.LinkedStyleSheets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このページにリンクされているスタイル シートの配列を取得します。</summary>
+        <value>このページにリンクされているスタイル シートの文字列配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.LinkedStyleSheets%2A>プロパティは抽象であり、派生クラスで実装する必要があります。 コンパイルすると、テーマにはこのプロパティをオーバーライドするコードが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Page">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Page Page { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Page Page" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageTheme.Page" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Page</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.Page" />のインスタンスに関連付けられているオブジェクト、<see cref="T:System.Web.UI.PageTheme" />クラスです。</summary>
+        <value><see cref="T:System.Web.UI.Page" /> に関連付けられている <see cref="T:System.Web.UI.PageTheme" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.Page%2A>プロパティは読み取り専用とインスタンスのときに内部的に割り当てられた、<xref:System.Web.UI.PageTheme>クラスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TestDeviceFilter">
+      <MemberSignature Language="C#" Value="public bool TestDeviceFilter (string deviceFilterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TestDeviceFilter(string deviceFilterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.TestDeviceFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deviceFilterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="deviceFilterName">確認するデバイス フィルターの文字列名。</param>
+        <summary>デバイス フィルターを適用するかどうかをテスト、<see cref="T:System.Web.UI.Page" />コントロールによって、インスタンスの<see cref="T:System.Web.UI.PageTheme" />クラスに関連付けられています。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="deviceFilterName" />; ページに適用されます。 それ以外の場合です。<see langword="false" />.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected object XPath (string xPathExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object XPath(string xPathExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <summary>XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディングの評価の結果をオブジェクト<paramref name="xPathExpression" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPath%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected string XPath (string xPathExpression, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string XPath(string xPathExpression, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="format">結果に適用する .NET Framework の書式指定文字列。</param>
+        <summary>結果を表示する、指定した書式指定文字列を使用して、XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPath%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected object XPath (string xPathExpression, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object XPath(string xPathExpression, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPath(System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>名前空間の解決、指定したプレフィックスと名前空間のマッピングを使用して、XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディングの評価の結果をオブジェクト<paramref name="xPathExpression" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPath%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="protected string XPath (string xPathExpression, string format, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string XPath(string xPathExpression, string format, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPath(System.String,System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="format">結果に適用する .NET Framework の書式指定文字列。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>使用して、<see cref="M:System.Web.UI.TemplateControl.XPath(System.String,System.String,System.Xml.IXmlNamespaceResolver)" />のメソッド、<see cref="P:System.Web.UI.PageTheme.Page" />コントロールによって、インスタンスの<see cref="T:System.Web.UI.PageTheme" />クラスに関連付けられて、XPath のデータ バインディング式を評価します。</summary>
+        <returns>データ バインディング式と文字列型への変換の評価の結果を文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPath%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPathSelect">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable XPathSelect (string xPathExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IEnumerable XPathSelect(string xPathExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPathSelect(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <summary>XPath のデータ バインディング式を評価しを実装するノードのコレクションを返します、<see cref="T:System.Collections.IEnumerable" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPathSelect%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XPathSelect">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable XPathSelect (string xPathExpression, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IEnumerable XPathSelect(string xPathExpression, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageTheme.XPathSelect(System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xPathExpression" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="xPathExpression">評価する XPath 式。 詳細については、「<see cref="T:System.Web.UI.XPathBinder" />」を参照してください。</param>
+        <param name="resolver">名前空間の解決に使用されるプレフィックスと名前空間のマッピングのセット。</param>
+        <summary>名前空間の解決の指定したプレフィックスと名前空間のマッピングを使用して、XPath のデータ バインディング式を評価しを実装するノードのコレクションを返します、<see cref="T:System.Collections.IEnumerable" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageTheme.XPathSelect%2A>メソッドを使用、<xref:System.Web.UI.Page.GetDataItem%2A>を解決する方法、<xref:System.Xml.XPath.IXPathNavigable>オブジェクト参照に対して評価される式。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

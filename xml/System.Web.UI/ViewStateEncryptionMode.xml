@@ -1,0 +1,81 @@
+<Type Name="ViewStateEncryptionMode" FullName="System.Web.UI.ViewStateEncryptionMode">
+  <TypeSignature Language="C#" Value="public enum ViewStateEncryptionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ViewStateEncryptionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ViewStateEncryptionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ビュー ステート情報を暗号化するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ViewStateEncryptionMode>列挙型を指定する値を提供するかどうかのビュー ステート情報は、<xref:System.Web.UI.Page>オブジェクトが暗号化されています。 <xref:System.Web.UI.ViewStateEncryptionMode>でのみ値を設定することができます、 [@ Page](http://msdn.microsoft.com/en-us/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)ディレクティブまたは構成ファイルのセクションでします。  
+  
+   
+  
+## Examples  
+ ビュー ステートの暗号化モードを設定する次のコード例を示します、<xref:System.Web.UI.Page>オブジェクトおよびからビュー ステート情報の暗号化を要求している、<xref:System.Web.UI.Page.RegisterRequiresViewStateEncryption%2A>メソッドです。 この例では、ビュー ステート情報をデータベースから顧客情報を取得時に暗号化されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.ViewStateEncryptionMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ViewStateEncryptionMode/CS/encryptViewState.cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ViewStateEncryptionMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ViewStateEncryptionMode/VB/encryptViewState.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ViewStateEncryptionMode Always = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ViewStateEncryptionMode.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ViewStateEncryptionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー ステート情報は常に暗号化します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ViewStateEncryptionMode Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ViewStateEncryptionMode.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ViewStateEncryptionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールは、呼び出すことで暗号化を要求する場合、ビュー状態情報が暗号化されて、<see cref="M:System.Web.UI.Page.RegisterRequiresViewStateEncryption" />メソッドです。 既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.ViewStateEncryptionMode Never = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ViewStateEncryptionMode.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ViewStateEncryptionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー ステート情報は暗号化されず、コントロールが要求した場合でもです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

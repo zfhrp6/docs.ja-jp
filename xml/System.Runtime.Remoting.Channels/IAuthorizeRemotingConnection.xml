@@ -1,0 +1,83 @@
+<Type Name="IAuthorizeRemotingConnection" FullName="System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection">
+  <TypeSignature Language="C#" Value="public interface IAuthorizeRemotingConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAuthorizeRemotingConnection" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection" />インターフェイスは、クライアントのネットワーク アドレスとユーザー id に基づいて、現在のチャネルに接続するクライアントを承認するかどうかを示すメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection>にインターフェイスが渡される<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.%23ctor%28System.Collections.IDictionary%2CSystem.Runtime.Remoting.Channels.IServerChannelSinkProvider%2CSystem.Runtime.Remoting.Channels.IAuthorizeRemotingConnection%29>です。 上のすべての着信接続の承認の 1 つのポイントが提供する<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel>です。 これにより、すべての受信メッセージが信頼されていないソースからセキュリティ上の脅威を最小限に抑えるに逆シリアル化する前に、呼び出し元の承認できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsConnectingEndPointAuthorized">
+      <MemberSignature Language="C#" Value="public bool IsConnectingEndPointAuthorized (System.Net.EndPoint endPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsConnectingEndPointAuthorized(class System.Net.EndPoint endPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection.IsConnectingEndPointAuthorized(System.Net.EndPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endPoint" Type="System.Net.EndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="endPoint"><see cref="T:System.Net.EndPoint" />クライアントのネットワーク アドレスを識別します。</param>
+        <summary>現在のチャネルに接続するクライアントのネットワーク アドレスが承認済みかどうかを示すブール値を取得します。</summary>
+        <returns>
+          <see langword="true" />クライアントのネットワーク アドレスが承認されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection>にインターフェイスが渡される<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.%23ctor%28System.Collections.IDictionary%2CSystem.Runtime.Remoting.Channels.IServerChannelSinkProvider%2CSystem.Runtime.Remoting.Channels.IAuthorizeRemotingConnection%29>です。 上のすべての着信接続の承認の 1 つのポイントが提供する<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel>です。 これにより、すべての受信メッセージが信頼されていないソースからセキュリティ上の脅威を最小限に抑えるに逆シリアル化する前に、呼び出し元の承認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConnectingIdentityAuthorized">
+      <MemberSignature Language="C#" Value="public bool IsConnectingIdentityAuthorized (System.Security.Principal.IIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsConnectingIdentityAuthorized(class System.Security.Principal.IIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection.IsConnectingIdentityAuthorized(System.Security.Principal.IIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity"><see cref="T:System.Security.Principal.IIdentity" />クライアントのユーザー id を表すです。</param>
+        <summary>現在のチャネルに接続するクライアントのユーザー id が承認済みかどうかを示すブール値を取得します。</summary>
+        <returns>
+          <see langword="true" />クライアントのユーザー id が承認されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection>にインターフェイスが渡される<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.%23ctor%28System.Collections.IDictionary%2CSystem.Runtime.Remoting.Channels.IServerChannelSinkProvider%2CSystem.Runtime.Remoting.Channels.IAuthorizeRemotingConnection%29>です。 上のすべての着信接続の承認の 1 つのポイントが提供する<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel>です。 これにより、すべての受信メッセージが信頼されていないソースからセキュリティ上の脅威を最小限に抑えるに逆シリアル化する前に、呼び出し元の承認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

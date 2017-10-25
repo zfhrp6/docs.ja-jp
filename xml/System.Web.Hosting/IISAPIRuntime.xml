@@ -1,0 +1,109 @@
+<Type Name="IISAPIRuntime" FullName="System.Web.Hosting.IISAPIRuntime">
+  <TypeSignature Language="C#" Value="public interface IISAPIRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IISAPIRuntime" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IISAPIRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("08a2c56f-7c16-41c1-a8be-432917a1a2d1")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>作成に使用するメソッドを定義<see cref="T:System.Web.HttpWorkerRequest" />.NET Framework 内のオブジェクト。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="DoGCCollect">
+      <MemberSignature Language="C#" Value="public void DoGCCollect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DoGCCollect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IISAPIRuntime.DoGCCollect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的にガベージ コレクションを行います。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public int ProcessRequest (IntPtr ecb, int useProcessModel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 ProcessRequest([in]native int ecb, [in]int32 useProcessModel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IISAPIRuntime.ProcessRequest(System.IntPtr,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ecb" Type="System.IntPtr" />
+        <Parameter Name="useProcessModel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ecb">ISAPI 拡張機能の制御ブロックします。</param>
+        <param name="useProcessModel">
+          <see langword="0" />アウト プロセス要求; を作成するにはそれ以外の場合、プロセスで要求が作成されます。</param>
+        <summary>新たに作成<see cref="T:System.Web.HttpWorkerRequest" />現在の要求を処理するオブジェクト。</summary>
+        <returns>
+          <see langword="0" />場合<see cref="T:System.Web.HttpWorkerRequest" />正常です。 それ以外の場合に作成された<see langword="1" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcessing">
+      <MemberSignature Language="C#" Value="public void StartProcessing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartProcessing() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IISAPIRuntime.StartProcessing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワーカー プロセス パイプラインのすべてのアイテムの処理を開始します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopProcessing">
+      <MemberSignature Language="C#" Value="public void StopProcessing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopProcessing() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IISAPIRuntime.StopProcessing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワーカー プロセス パイプライン内の項目の処理を停止します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

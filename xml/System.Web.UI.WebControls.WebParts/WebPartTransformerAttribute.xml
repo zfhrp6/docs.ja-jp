@@ -1,0 +1,200 @@
+<Type Name="WebPartTransformerAttribute" FullName="System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebPartTransformerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartTransformerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>トランスフォーマーをサポートする接続ポイントの種類を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーを使用して、互換性のない接続ポイントを持つ 2 つの Web パーツ コントロールの間でデータを変換します。 接続ポイントは、提供または別のインターフェイスを使用してデータを使用するときに互換性がありません。 たとえば、型のプロバイダー接続ポイントを実装するプロバイダー<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>型のプロバイダー接続ポイントを予期するコンシューマーに直接接続できませんでした<xref:System.Web.UI.WebControls.WebParts.IWebPartTable>です。 代わりに、トランスフォーマーを使用して、2 つの接続ポイントを接続する必要があります。 クラスを派生させることによってカスタマイズされたトランスフォーマーを作成することができます、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute>属性に適用する、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。 これは、プロバイダー接続ポイントの種類とトランスフォーマーをサポートするコンシューマー接続ポイントの種類を定義します。 トランスフォーマーでサポートされているコンシューマーおよびプロバイダーの接続ポイントの種類は、コンシューマーおよびプロバイダーの Web パーツ コントロールできるは、コントロールへの接続の接続ポイントと一致する必要があります。 を介して、実行時に特定のトランスフォーマーをサポートする接続ポイントの種類を取得できる、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetConsumerType%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetProviderType%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute>カスタマイズされた属性<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。 属性には、ことを示します、`RowToStringTransformer`クラスは、型のプロバイダー接続ポイントを変換できる`IWebPartRow`型のコンシューマー接続ポイントを`IString`です。  
+  
+ このコード例については、例の一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスの概要です。  
+  
+ [!code-csharp[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/TransformerSource.cs#4)]
+ [!code-vb[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/TransformerSource.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartTransformerAttribute (Type consumerType, Type providerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type consumerType, class System.Type providerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="consumerType" Type="System.Type" />
+        <Parameter Name="providerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="consumerType"><see cref="T:System.Type" />のコンシューマー接続ポイントでサポートされているインターフェイス。</param>
+        <param name="providerType"><see cref="T:System.Type" />のプロバイダー接続ポイントでサポートされているインターフェイス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.%23ctor%2A>コンス トラクター トランスフォーマーのコンシューマー接続ポイントの種類とプロバイダー接続ポイントの種類を設定します。 を通じてこれらの値を取得できます、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ConsumerType%2A>プロパティおよび<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ProviderType%2A>プロパティ、それぞれします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute>カスタマイズされた属性<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。 属性には、ことを示します、`RowToStringTransformer`クラスは、型のプロバイダー接続ポイントを変換できる`IWebPartRow`型のコンシューマー接続ポイントを`IString`です。  
+  
+ このコード例については、例の一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスの概要です。  
+  
+ [!code-csharp[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/TransformerSource.cs#4)]
+ [!code-vb[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/TransformerSource.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="consumerType" />または<paramref name="providerType" />が指定されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="consumerType" /> と <paramref name="providerType" /> は等しい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumerType">
+      <MemberSignature Language="C#" Value="public Type ConsumerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ConsumerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ConsumerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />のコンシューマー接続ポイントでサポートされているインターフェイス。</summary>
+        <value><see cref="T:System.Type" />のコンシューマー接続ポイントでサポートされているインターフェイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ConsumerType%2A>プロパティが設定されてから、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConsumerType">
+      <MemberSignature Language="C#" Value="public static Type GetConsumerType (Type transformerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetConsumerType(class System.Type transformerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetConsumerType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transformerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="transformerType">トランスフォーマーの型。</param>
+        <summary>返しますトランスフォーマーのコンシューマーの種類は、接続ポイントで受け入れることができます。</summary>
+        <returns><see cref="T:System.Type" />のコンシューマー接続ポイント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>オブジェクトおよび<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトの使用、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetConsumerType%2A>トランスフォーマーのコンシューマーの種類が、Web パーツ コントロールのコンシューマー接続ポイントと一致するかどうかを調べます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="transformerType" />指定されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="transformerType" />派生したオブジェクトではなく、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderType">
+      <MemberSignature Language="C#" Value="public static Type GetProviderType (Type transformerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetProviderType(class System.Type transformerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetProviderType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transformerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="transformerType">トランスフォーマーの型。</param>
+        <summary>返しますトランスフォーマー プロバイダーの種類は、接続ポイントで受け入れることができます。</summary>
+        <returns><see cref="T:System.Type" />のプロバイダー接続ポイント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>オブジェクトおよび<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクトの使用、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.GetProviderType%2A>トランスフォーマーのプロバイダーの種類が、Web パーツ コントロールのプロバイダー接続ポイントと一致するかどうかを調べます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="transformerType" />指定されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="transformerType" />派生したオブジェクトではなく、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderType">
+      <MemberSignature Language="C#" Value="public Type ProviderType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ProviderType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ProviderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />のプロバイダー接続ポイントでサポートされているインターフェイス。</summary>
+        <value><see cref="T:System.Type" />のプロバイダー接続ポイントでサポートされているインターフェイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.ProviderType%2A>プロパティが設定されてから、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformerAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

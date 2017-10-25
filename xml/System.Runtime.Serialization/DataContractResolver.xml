@@ -1,0 +1,178 @@
+<Type Name="DataContractResolver" FullName="System.Runtime.Serialization.DataContractResolver">
+  <TypeSignature Language="C#" Value="public abstract class DataContractResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataContractResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.DataContractResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>型を動的なマッピングとの間のメカニズムを備えています<see langword="xsi:type" />シリアル化と逆シリアル化表現です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者は、ネットワーク経由で送信されるどのようなデータは注意が必要になります。 トランスポートまたはメッセージのセキュリティを使用して、そのデータを保護することができます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]参照してください[セキュリティ](~/docs/framework/wcf/samples/security-in-wcf.md)です。  
+  
+> [!WARNING]
+>  のみを使用して<xref:System.Runtime.Serialization.DataContractResolver>を確実に完全にどのような情報をシリアル化の場合。 悪意のある型には、予期しない動作を起こすことができます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.Serialization.DataContractResolver> からクラスを派生させる方法を示します。 作業用サンプルについては、次を参照してください。 [DataContractResolver](~/docs/framework/wcf/samples/datacontractresolver.md)です。  
+  
+ [!code-csharp[DataContractResolver#2](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractresolver/cs/datacontractresolver.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataContractResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.DataContractResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.DataContractResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveName">
+      <MemberSignature Language="C#" Value="public abstract Type ResolveName (string typeName, string typeNamespace, Type declaredType, System.Runtime.Serialization.DataContractResolver knownTypeResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type ResolveName(string typeName, string typeNamespace, class System.Type declaredType, class System.Runtime.Serialization.DataContractResolver knownTypeResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.DataContractResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeNamespace" Type="System.String" />
+        <Parameter Name="declaredType" Type="System.Type" />
+        <Parameter Name="knownTypeResolver" Type="System.Runtime.Serialization.DataContractResolver" />
+      </Parameters>
+      <Docs>
+        <param name="typeName"><see langword="xsi:type" />名にマップします。</param>
+        <param name="typeNamespace"><see langword="xsi:type" />名前空間にマップします。</param>
+        <param name="declaredType">データ コントラクト内で宣言された型。</param>
+        <param name="knownTypeResolver">既知の型リゾルバー。</param>
+        <summary>指定したマップするには、このメソッドをオーバーライド<see langword="xsi:type" />逆シリアル化中のコントラクト型の名前と名前空間データにします。</summary>
+        <returns>型、<see langword="xsi:type" />名前と名前空間にマップされています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装内部の既知の型解決ロジックを使用する場合は、その参照は `knownTypeResolver` パラメーターとして渡されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[DataContractResolver#0](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractresolver/cs/datacontractresolver.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveType">
+      <MemberSignature Language="C#" Value="public abstract bool TryResolveType (Type type, Type declaredType, System.Runtime.Serialization.DataContractResolver knownTypeResolver, out System.Xml.XmlDictionaryString typeName, out System.Xml.XmlDictionaryString typeNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryResolveType(class System.Type type, class System.Type declaredType, class System.Runtime.Serialization.DataContractResolver knownTypeResolver, [out] class System.Xml.XmlDictionaryString&amp; typeName, [out] class System.Xml.XmlDictionaryString&amp; typeNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.DataContractResolver.TryResolveType(System.Type,System.Type,System.Runtime.Serialization.DataContractResolver,System.Xml.XmlDictionaryString@,System.Xml.XmlDictionaryString@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="declaredType" Type="System.Type" />
+        <Parameter Name="knownTypeResolver" Type="System.Runtime.Serialization.DataContractResolver" />
+        <Parameter Name="typeName" Type="System.Xml.XmlDictionaryString&amp;" RefType="out" />
+        <Parameter Name="typeNamespace" Type="System.Xml.XmlDictionaryString&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">マップする型。</param>
+        <param name="declaredType">データ コントラクト内で宣言された型。</param>
+        <param name="knownTypeResolver">既知の型リゾルバー。</param>
+        <param name="typeName">xsi:type の名前。</param>
+        <param name="typeNamespace">xsi:type の名前空間。</param>
+        <summary>データ コントラクト型にマップするには、このメソッドをオーバーライドして、<see langword="xsi:type" />名とシリアル化中に名前空間。</summary>
+        <returns>
+          <see langword="true" />マッピングが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装内部の既知の型解決ロジックを使用する場合は、その参照は `knownTypeResolver` パラメーターとして渡されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> メソッドを実装する例を次に示します。  
+  
+ [!code-csharp[DataContractResolver#1](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractresolver/cs/datacontractresolver.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

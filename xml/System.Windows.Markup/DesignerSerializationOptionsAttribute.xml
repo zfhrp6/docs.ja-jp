@@ -1,0 +1,80 @@
+<Type Name="DesignerSerializationOptionsAttribute" FullName="System.Windows.Markup.DesignerSerializationOptionsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DesignerSerializationOptionsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignerSerializationOptionsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.DesignerSerializationOptionsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティのシリアル化フラグを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.DesignerSerializationOptionsAttribute>デザイナーおよびデザイン サーフェイスは、属性付きのプロパティとやり取りするときに使用する必要があります、フォームの制約のヒントを提供します。 通常、その理由は、ようにすることです。 ヒント<xref:System.Windows.Markup.DesignerSerializationOptions.SerializeAsAttribute>です。 見かけ上の空白文字を導入する際のリスクが、コンテンツがシリアル化された形式の文字列とそのプロパティと対話する場合に、これを行う場合があります。 例のケース<xref:System.Windows.Markup.DesignerSerializationOptionsAttribute>この理由は、適用されて、<xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>です。  
+  
+ 属性の使用状況を<xref:System.Windows.Markup.DesignerSerializationOptionsAttribute>メソッドへの割り当てをサポートしています。 これを割り当てることによって XAML のシリアル化オプションの添付プロパティを宣言することできます<xref:System.Windows.Markup.DesignerSerializationOptionsAttribute>上、`Get`添付プロパティの使用状況パターンをサポートするアクセサー メソッドです。 WPF 型でこの例は、<xref:System.Windows.Markup.XmlAttributeProperties.XmlSpace%2A>とその`Get`アクセサー<xref:System.Windows.Markup.XmlAttributeProperties.GetXmlSpace%2A>です。  
+  
+ なお<xref:System.Windows.Markup.DesignerSerializationOptionsAttribute>ヒント必要なシリアル化形式のプロパティをシリアル化されていないかどうかにできません。 プロパティのシリアル化の他の側面に影響する場合は、行うこともできます<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>、または実装できる`ShouldSerialize`所有者クラスのメソッドのパターンします。 デザイン時の一般的な .NET シリアル化パターンの詳細については、次を参照してください。[デザイナー シリアル化の概要](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerSerializationOptionsAttribute (System.Windows.Markup.DesignerSerializationOptions designerSerializationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Markup.DesignerSerializationOptions designerSerializationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.DesignerSerializationOptionsAttribute.#ctor(System.Windows.Markup.DesignerSerializationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designerSerializationOptions" Type="System.Windows.Markup.DesignerSerializationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="designerSerializationOptions">プロパティのシリアル化する方法を指定します。</param>
+        <summary><see cref="T:System.Windows.Markup.DesignerSerializationOptionsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="designerSerializationOptions" /> は有効な <see cref="T:System.Windows.Markup.DesignerSerializationOptions" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerSerializationOptions">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.DesignerSerializationOptions DesignerSerializationOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Markup.DesignerSerializationOptions DesignerSerializationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.DesignerSerializationOptionsAttribute.DesignerSerializationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.DesignerSerializationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Markup.DesignerSerializationOptions" />属性に設定します。</summary>
+        <value>列挙体の値としてのシリアル化オプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能な唯一の値は、現在<xref:System.Windows.Markup.DesignerSerializationOptions?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

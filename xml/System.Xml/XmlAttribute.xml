@@ -1,0 +1,1165 @@
+<Type Name="XmlAttribute" FullName="System.Xml.XmlAttribute">
+  <TypeSignature Language="C#" Value="public class XmlAttribute : System.Xml.XmlNode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlAttribute extends System.Xml.XmlNode" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlNode</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つの属性を表します。 属性の有効値と既定値は、ドキュメント型定義 (DTD) またはスキーマの中で定義されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、要素を使用して関連付けることができます。 使用して、<xref:System.Xml.XmlAttribute.OwnerElement%2A>を取得するプロパティ、<xref:System.Xml.XmlElement>属性が属しています。  
+  
+ `XmlElement`クラス属性のノードにアクセスすることがいくつかのメソッドがあります (<xref:System.Xml.XmlElement.GetAttribute%2A?displayProperty=nameWithType>、 <xref:System.Xml.XmlElement.SetAttribute%2A?displayProperty=nameWithType>、<xref:System.Xml.XmlElement.RemoveAttribute%2A?displayProperty=nameWithType>など)。 さらに、呼び出すことができます、<xref:System.Xml.XmlElement.Attributes%2A?displayProperty=nameWithType>プロパティが返されます、<xref:System.Xml.XmlAttributeCollection>コレクションから名前またはインデックスによって属性にアクセスできるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlAttribute (string prefix, string localName, string namespaceURI, System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string prefix, string localName, string namespaceURI, class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.#ctor(System.String,System.String,System.String,System.Xml.XmlDocument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceURI" Type="System.String" />
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">名前空間プレフィックス。</param>
+        <param name="localName">属性のローカル名。</param>
+        <param name="namespaceURI">名前空間の uniform resource identifier (URI)。</param>
+        <param name="doc">親 XML ドキュメント。</param>
+        <summary><see cref="T:System.Xml.XmlAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス化しないで、<xref:System.Xml.XmlAttribute>直接。 代わりに、メソッドを使用してなど<xref:System.Xml.XmlDocument.CreateAttribute%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendChild">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode AppendChild (System.Xml.XmlNode newChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode AppendChild(class System.Xml.XmlNode newChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.AppendChild(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="newChild">追加する <see cref="T:System.Xml.XmlNode" />。</param>
+        <summary>このノードの子ノードのリストの末尾に、指定したノードを追加します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />を追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`newChild`は、既にツリーで、最初に削除されます。  
+  
+ 挿入されるノードは、別のドキュメントから作成された場合、は、使用<xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType>を現在のドキュメントにノードをインポートします。 インポートされたノードは、現在のドキュメントに挿入できます。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.AppendChild%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.AppendChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このノードの子の型のノードを許可しない型が、<paramref name="newChild" />ノード。  
+  
+ <paramref name="newChild" />は、このノードの先祖であります。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newChild" />このノードを作成したドキュメントとは異なるドキュメントから作成されました。  
+  
+ このノードは、読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseURI">
+      <MemberSignature Language="C#" Value="public override string BaseURI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.BaseURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本 Uniform Resource Identifier () のノードを取得します。</summary>
+        <value>ノードの読み込み元の場所。ノードにベース URI がない場合は String.Empty。 属性ノードでは、その所有者要素と同じベース URI があります。 属性ノードが、所有者要素を持たない場合<see langword="BaseURI" />は String.Empty を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネットワークに接続された XML ドキュメントでは、さまざまな World Wide Web Consortium (W3C) 標準包含メカニズムを使用して集計データのチャンクで構成され、したがって各所に由来するノードが含まれます。 `BaseURI`でこれらのノードの出所がわかります。  
+  
+ 詳細については`BaseURI`し、他のノード型で動作する方法を参照してください。<xref:System.Xml.XmlNode.BaseURI%2A?displayProperty=nameWithType>です。  
+  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 次の例では、ベース URI を含む、属性ノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.BaseURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.BaseURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.BaseURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.BaseURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.BaseURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.BaseURI Example/VB/source.vb#1)]  
+  
+ サンプルは、ファイルを使用して`baseuri.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlAttribute.BaseURI Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlAttribute.BaseURI Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneNode">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode CloneNode (bool deep);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode CloneNode(bool deep) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.CloneNode(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deep" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deep">
+          <see langword="true" />再帰的に指定されたノードの下のサブツリーのクローンを作成します。<see langword="false" />したノードだけのクローンを作成するには</param>
+        <summary>このノードの複製を作成します。</summary>
+        <returns>複製されたノード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ノードのコピー コンス トラクターとして機能します。 複製されたノードに親がありません (<xref:System.Xml.XmlAttribute.ParentNode%2A>返します`null`)。  
+  
+ 指定した属性指定されていない属性の複製を返します (<xref:System.Xml.XmlAttribute.Specified%2A>返します`true`)。  
+  
+   
+  
+## Examples  
+ 次の例で`CloneNode`に 2 つの異なる要素ノードに属性を追加します。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.CloneNode Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.CloneNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.CloneNode Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.CloneNode Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.CloneNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.CloneNode Example/VB/source.vb#1)]  
+  
+ この例では、`2elems.xml`の入力として、します。  
+  
+ [!code-xml[Classic WebData XmlAttribute.CloneNode Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlAttribute.CloneNode Example/XML/source.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerText">
+      <MemberSignature Language="C#" Value="public override string InnerText { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerText" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.InnerText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードとそのすべての子の連結された値を設定します。</summary>
+        <value>ノードとすべての子の連結された値。 このプロパティは属性ノードの場合と同じ機能を、<see cref="P:System.Xml.XmlAttribute.Value" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、すべての子が指定された文字列の解析済みの内容に置き換えられます。  
+  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerXml">
+      <MemberSignature Language="C#" Value="public override string InnerXml { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerXml" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.InnerXml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の値を設定します。</summary>
+        <value>属性値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ドキュメント オブジェクト モデル (DOM) の Microsoft 拡張機能です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">このプロパティの設定時に指定される XML は、整形式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAfter">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode InsertAfter (System.Xml.XmlNode newChild, System.Xml.XmlNode refChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode InsertAfter(class System.Xml.XmlNode newChild, class System.Xml.XmlNode refChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.InsertAfter(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newChild" Type="System.Xml.XmlNode" />
+        <Parameter Name="refChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="newChild">挿入する <see cref="T:System.Xml.XmlNode" />。</param>
+        <param name="refChild"><see cref="T:System.Xml.XmlNode" />参照ノードはします。 <c>NewChild</c>後に置かれます、 <c>refChild</c>です。</param>
+        <summary>指定したノードを指定した参照ノードの直後に挿入します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`refChild`は`null`、挿入`newChild`子ノードのリストの先頭にします。 場合`newChild`は、<xref:System.Xml.XmlDocumentFragment>オブジェクト、その子ノードは、同じ順序で後に挿入`refChild`です。 場合、`newChild`は、既にツリーで、最初に削除されます。  
+  
+ 挿入されるノードは、別のドキュメントから作成された場合、は、使用<xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType>を現在のドキュメントにノードをインポートします。 インポートされたノードは、現在のドキュメントに挿入できます。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.InsertAfter%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.InsertAfter%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このノードの子の型のノードを許可しない型が、<paramref name="newChild" />ノード。  
+  
+ <paramref name="newChild" />は、このノードの先祖であります。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newChild" />このノードを作成したドキュメントとは異なるドキュメントから作成されました。  
+  
+ <paramref name="refChild" />このノードの子ではありません。  
+  
+ このノードは、読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertBefore">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode InsertBefore (System.Xml.XmlNode newChild, System.Xml.XmlNode refChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode InsertBefore(class System.Xml.XmlNode newChild, class System.Xml.XmlNode refChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.InsertBefore(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newChild" Type="System.Xml.XmlNode" />
+        <Parameter Name="refChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="newChild">挿入する <see cref="T:System.Xml.XmlNode" />。</param>
+        <param name="refChild"><see cref="T:System.Xml.XmlNode" />参照ノードはします。 <c>NewChild</c>はこのノードの前に配置されます。</param>
+        <summary>指定したノードを指定した参照ノードの直前に挿入します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`refChild`は`null`、挿入`newChild`子ノードのリストの最後にします。 場合`newChild`は、<xref:System.Xml.XmlDocumentFragment>オブジェクト、その子ノードが挿入、同じ順序で前に`refChild`です。 場合、`newChild`は、既にツリーで、最初に削除されます。  
+  
+ 挿入されるノードは、別のドキュメントから作成された場合、は、使用<xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType>を現在のドキュメントにノードをインポートします。 インポートされたノードは、現在のドキュメントに挿入できます。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.InsertBefore%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.InsertBefore%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のノードが許可されていない子ノードの型の型が、<paramref name="newChild" />ノード。  
+  
+ <paramref name="newChild" />は、このノードの先祖であります。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newChild" />このノードを作成したドキュメントとは異なるドキュメントから作成されました。  
+  
+ <paramref name="refChild" />このノードの子ではありません。  
+  
+ このノードは、読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードのローカル名を取得します。</summary>
+        <value>プリフィックスを削除した属性ノードの名前。 次の例で&lt;たとえば = 'novel'&gt;、<see langword="LocalName" />は、属性の<see langword="genre" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードには、プレフィックスがない場合`LocalName`と同じ<xref:System.Xml.XmlAttribute.Name%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、各属性のコレクション内のノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの限定名を取得します。</summary>
+        <value>属性ノードの限定名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各属性のコレクション内のノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceURI">
+      <MemberSignature Language="C#" Value="public override string NamespaceURI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.NamespaceURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このノードの名前空間 URI を取得します。</summary>
+        <value>このノードの名前空間 URI。 属性は、名前空間が明示的に指定しない場合、このプロパティは String.Empty を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、要素にアタッチされてから、名前空間を継承しません。 属性が明示的に指定されていない場合、名前空間、名前空間 URI は String.Empty と見なされます。  
+  
+   
+  
+## Examples  
+ 次の例では、各属性のコレクション内のノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの種類を取得します。</summary>
+        <value>ノード型<see langword="XmlAttribute" />ノードは XmlNodeType.Attribute します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerDocument">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlDocument OwnerDocument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDocument OwnerDocument" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.OwnerDocument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlDocument" />このノードが属しています。</summary>
+        <value>このノードが属している XML ドキュメントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、属性を作成し、表示、`OwnerDocument`です。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.OwnerDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.OwnerDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.OwnerDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerElement">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlElement OwnerElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement OwnerElement" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.OwnerElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlElement" />属性が属しています。</summary>
+        <value><see langword="XmlElement" />属性が属するまたは<see langword="null" />この属性がない場合の一部、<see langword="XmlElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、属性を作成し、表示、`OwnerElement`の属性です。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.OwnerElement Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerElement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.OwnerElement Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerElement Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.OwnerElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.OwnerElement Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentNode">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode ParentNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode ParentNode" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.ParentNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このノードの親を取得します。 <see langword="XmlAttribute" />ノードでは、このプロパティは常に返します<see langword="null" />です。</summary>
+        <value><see langword="XmlAttribute" />ノードでは、このプロパティは常に返します<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.XmlAttribute.OwnerElement%2A>を取得するプロパティ、<xref:System.Xml.XmlElement>属性が属しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public override string Prefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このノードの名前空間プリフィックスを取得または設定します。</summary>
+        <value>このノードの名前空間プリフィックス。 プリフィックスがない場合、このプロパティは String.Empty を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性のプレフィックスを変更しても、名前空間 URI が変更されないため、既定値があることがわかっている属性のプレフィックスを変更するは作成されません新しい属性を既定値および元のプレフィックスを使用。  
+  
+   
+  
+## Examples  
+ 次の例では、各属性のコレクション内のノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">このノードは、読み取り専用です。</exception>
+        <exception cref="T:System.Xml.XmlException">指定したプレフィックスに無効な文字が含まれています。  
+  
+ 指定されたプリフィックスの書式が正しくありません。  
+  
+ このノードの namespaceURI が<see langword="null" />です。  
+  
+ 指定したプレフィックスは"xml"と、このノードの名前空間 Uri とは異なる"http://www.w3.org/XML/1998/namespace"です。  
+  
+ このノードが属性で、指定したプレフィックスは"xmlns"、およびこのノードの名前空間 Uri とは異なる"http://www.w3.org/2000/xmlns/"です。  
+  
+ このノードは、属性であり、このノードの qualifiedName は"xmlns"[名前空間] です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrependChild">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode PrependChild (System.Xml.XmlNode newChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode PrependChild(class System.Xml.XmlNode newChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.PrependChild(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="newChild">追加する <see cref="T:System.Xml.XmlNode" />。 ある場合、 <see cref="T:System.Xml.XmlDocumentFragment" />、ドキュメント フラグメントの内容全体がこのノードの子リストに移動されます。</param>
+        <summary>このノードの子ノードのリストの先頭に、指定したノードを追加します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />を追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`newChild`は、既にツリーで、最初に削除されます。  
+  
+ 挿入されるノードは、別のドキュメントから作成された場合、は、使用<xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType>を現在のドキュメントにノードをインポートします。 インポートされたノードは、現在のドキュメントに挿入できます。  
+  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.PrependChild%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.PrependChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このノードの子の型のノードを許可しない型が、<paramref name="newChild" />ノード。  
+  
+ <paramref name="newChild" />は、このノードの先祖であります。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newChild" />このノードを作成したドキュメントとは異なるドキュメントから作成されました。  
+  
+ このノードは、読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveChild">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode RemoveChild (System.Xml.XmlNode oldChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode RemoveChild(class System.Xml.XmlNode oldChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.RemoveChild(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="oldChild">削除する <see cref="T:System.Xml.XmlNode" />。</param>
+        <summary>指定した子ノードを削除します。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />削除します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.RemoveChild%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.RemoveChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="oldChild" />このノードの子ではありません。 または、このノードは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceChild">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode ReplaceChild (System.Xml.XmlNode newChild, System.Xml.XmlNode oldChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode ReplaceChild(class System.Xml.XmlNode newChild, class System.Xml.XmlNode oldChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.ReplaceChild(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newChild" Type="System.Xml.XmlNode" />
+        <Parameter Name="oldChild" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="newChild">新しい子<see cref="T:System.Xml.XmlNode" />です。</param>
+        <param name="oldChild"><see cref="T:System.Xml.XmlNode" />を置き換えます。</param>
+        <summary>指定された新しい子ノードで指定された子ノードを置き換えます。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />を交換してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`newChild`は、既にツリーで、最初に削除されます。  
+  
+ 場合、`newChild`が作成された別のドキュメントから行うこともできます<xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType>を現在のドキュメントにノードをインポートします。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.XmlAttribute.ReplaceChild%2A>メソッドを参照してください、<xref:System.Xml.XmlNode.ReplaceChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このノードの子の型のノードを許可しない型が、<paramref name="newChild" />ノード。  
+  
+ <paramref name="newChild" />は、このノードの先祖であります。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="newChild" />このノードを作成したドキュメントとは異なるドキュメントから作成されました。  
+  
+ このノードは、読み取り専用です。  
+  
+ <paramref name="oldChild" />このノードの子ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaInfo">
+      <MemberSignature Language="C#" Value="public override System.Xml.Schema.IXmlSchemaInfo SchemaInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.IXmlSchemaInfo SchemaInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.SchemaInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.IXmlSchemaInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポスト-スキーマの検証の情報セットをスキーマ検証の結果には、このノードに割り当てられているを取得します。</summary>
+        <value><see cref="T:System.Xml.Schema.IXmlSchemaInfo" /> Infoset を含む、ポスト-スキーマの検証 - このノードのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlAttribute.SchemaInfo%2A>このノードが検証されるときにプロパティが設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Specified">
+      <MemberSignature Language="C#" Value="public virtual bool Specified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Specified" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Specified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の値が明示的に設定されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この属性が、元のインスタンス ドキュメントで値を明示的に指定された場合それ以外の場合、<see langword="false" />です。 値<see langword="false" />DTD から属性の値が取得されたことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装では、ユーザーではなく、このプロパティを担当します。 ユーザーは、(既定値または固定値と同じ値になった場合でも) の属性の値を変更する場合、指定したフラグ自動的に反転して、`true`です。 再指定する属性を DTD の既定値または固定値として、ユーザーは、属性を削除する必要があります。 実装し、使用可能、新しい属性に設定された指定した`false`既定/固定値の 1 つ存在する場合) とします。  
+  
+ 概要:  
+  
+1.  属性に割り当てられた値がある場合は、ドキュメントで`Specified`は`true`値は、割り当てられた値。  
+  
+2.  属性は、ドキュメントに割り当てられた値が存在しないと、DTD では、既定値または固定値を持つ場合`Specified`は`false`値は、DTD で既定値または固定値とします。  
+  
+3.  それ以外の場合、属性は、ドキュメントの構造体のモデルでは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの値を取得または設定します。</summary>
+        <value>返される値は、ノードの <see cref="P:System.Xml.XmlNode.NodeType" /> によって異なります。 <see langword="XmlAttribute" />ノード、このプロパティは、属性の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各属性のコレクション内のノードの情報が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlAttribute.NamespaceURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlAttribute.NamespaceURI Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ノードは読み取り専用と、設定操作が呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteContentTo">
+      <MemberSignature Language="C#" Value="public override void WriteContentTo (System.Xml.XmlWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteContentTo(class System.Xml.XmlWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.WriteContentTo(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w">保存先の <see langword="XmlWriter" />。</param>
+        <summary>指定したノードのすべての子を保存<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。 これは機能的に等価、<xref:System.Xml.XmlAttribute.InnerXml%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public override void WriteTo (System.Xml.XmlWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteTo(class System.Xml.XmlWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.WriteTo(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlDocument</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w">保存先の <see langword="XmlWriter" />。</param>
+        <summary>指定したノードを保存<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ドキュメント オブジェクト モデル (DOM) に Microsoft 拡張機能です。 これは機能的に等価、<xref:System.Xml.XmlNode.OuterXml%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,207 @@
+<Type Name="DSAKeyValue" FullName="System.Security.Cryptography.Xml.DSAKeyValue">
+  <TypeSignature Language="C#" Value="public class DSAKeyValue : System.Security.Cryptography.Xml.KeyInfoClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DSAKeyValue extends System.Security.Cryptography.Xml.KeyInfoClause" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.KeyInfoClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Security.Cryptography.DSA" />の秘密キー、<see langword="&lt;KeyInfo&gt;" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.KeyInfo>クラスを表します、`<KeyInfo>`を含む要素、<xref:System.Security.Cryptography.DSA>公開キー。  
+  
+ 使用して<xref:System.Security.Cryptography.Xml.DSAKeyValue>に対応する公開キーを識別する、<xref:System.Security.Cryptography.DSA>デジタル署名の作成に使用された秘密キーです。  
+  
+ キーが、コンス トラクターを明示的に指定されていない場合、新しい<xref:System.Security.Cryptography.DSA>キーのペアはランダムに生成します。  
+  
+ <xref:System.Security.Cryptography.Xml.DSAKeyValue> XML シグネチャを持つクラスを使用します。 W3C の仕様の詳細については、http://www.w3.org/TR/xmldsig-core/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.Xml.DSAKeyValue>デタッチされた署名を作成する XML 暗号化にクラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.XML.DSAKeyValue_Detached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/CPP/exampledetached.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.DSAKeyValue_Detached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/CS/exampledetached.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.DSAKeyValue_Detached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/VB/exampledetached.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.Xml.DSAKeyValue>エンベロープ署名を作成する XML 暗号化にクラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.XML.DSAKeyValue_Envelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/CPP/exampleenvelope.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.DSAKeyValue_Envelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/CS/exampleenvelope.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.DSAKeyValue_Envelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/VB/exampleenvelope.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DSAKeyValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DSAKeyValue.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />を新しいクラスにランダムに生成された、<see cref="T:System.Security.Cryptography.DSA" />公開キー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新たに作成するときに<xref:System.Security.Cryptography.DSA>キー、このコンス トラクターを使用して既定の実装<xref:System.Security.Cryptography.DSA>で定義されている、<xref:System.Security.Cryptography.CryptoConfig>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DSAKeyValue (System.Security.Cryptography.DSA key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.DSA key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DSAKeyValue.#ctor(System.Security.Cryptography.DSA)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.DSA" />
+      </Parameters>
+      <Docs>
+        <param name="key">実装のインスタンス、<see cref="T:System.Security.Cryptography.DSA" />公開キーを保持するクラス。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" /> 、指定したクラス<see cref="T:System.Security.Cryptography.DSA" />公開キー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.DSAKeyValue> XML 暗号化にクラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.XML.DSAKeyValue_Detached#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/CPP/exampledetached.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.XML.DSAKeyValue_Detached#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/CS/exampledetached.cs#2)]
+ [!code-vb[System.Security.Cryptography.XML.DSAKeyValue_Detached#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Detached/VB/exampledetached.vb#2)]  
+  
+ [!code-cpp[System.Security.Cryptography.XML.DSAKeyValue_Envelope#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/CPP/exampleenvelope.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.XML.DSAKeyValue_Envelope#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/CS/exampleenvelope.cs#2)]
+ [!code-vb[System.Security.Cryptography.XML.DSAKeyValue_Envelope#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.DSAKeyValue_Envelope/VB/exampleenvelope.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DSAKeyValue.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />要素。</summary>
+        <returns>XML 表現、<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの XML の出力を使用して、<xref:System.Security.Cryptography.Xml.DSAKeyValue>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.DSA Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.DSA Key" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.DSAKeyValue.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.DSA</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって表されるキーの値、<see cref="T:System.Security.Cryptography.DSA" />オブジェクト。</summary>
+        <value>によって表される公開キー、<see cref="T:System.Security.Cryptography.DSA" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、XML の署名に使用する DSA キーを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public override void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.DSAKeyValue.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value">XML 要素を読み込む、<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />状態からです。</param>
+        <summary>読み込み、<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />状態の XML 要素からです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは XML 要素を追加して、使用できます、<xref:System.Security.Cryptography.Xml.DSAKeyValue>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />パラメーターが有効ではありません<see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />XML 要素です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

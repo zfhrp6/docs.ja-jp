@@ -1,0 +1,153 @@
+<Type Name="IPropertyValueUIService" FullName="System.Drawing.Design.IPropertyValueUIService">
+  <TypeSignature Language="C#" Value="public interface IPropertyValueUIService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPropertyValueUIService" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.IPropertyValueUIService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>画像、ツールヒント、およびイベント ハンドラーのプロパティ ブラウザーに表示されるコンポーネントのプロパティを管理するユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントを使用できる、<xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスを提供する<xref:System.Drawing.Design.PropertyValueUIItem>コンポーネントのプロパティは任意のオブジェクト。 A<xref:System.Drawing.Design.PropertyValueUIItem>に関連付けられているプロパティは、プロパティに関連付けられているイメージがクリックされたときに発生するイベントの画像、ツールヒント、およびイベント ハンドラーを提供できます。  
+  
+ <xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスを追加、削除、および取得するメソッドを提供する<xref:System.Drawing.Design.PropertyValueUIHandler>デリゲートとの間、内部の一覧です。 コンポーネントのプロパティが、プロパティ ブラウザーで表示されるときに各<xref:System.Drawing.Design.PropertyValueUIHandler>一覧の機会が与えられますを提供する、<xref:System.Drawing.Design.PropertyValueUIItem>コンポーネントの各プロパティのです。  
+  
+ オブジェクトのプロパティを表示する、プロパティ ブラウザーを設定すると、呼び出し、<xref:System.Drawing.Design.IPropertyValueUIService.GetPropertyUIValueItems%2A>渡す、コンポーネントの各プロパティのこのインターフェイスのメソッド、<xref:System.ComponentModel.PropertyDescriptor>プロパティを表すです。 <xref:System.Drawing.Design.IPropertyValueUIService.GetPropertyUIValueItems%2A>メソッドを呼び出して各<xref:System.Drawing.Design.PropertyValueUIHandler>サービスに追加されています。 各<xref:System.Drawing.Design.PropertyValueUIHandler>を追加できます、<xref:System.Drawing.Design.PropertyValueUIItem>を<xref:System.Collections.ArrayList>渡される入力パラメーター、`valueUIItemList`によって表されるプロパティのための UI を提供するパラメーターの項目、<xref:System.ComponentModel.PropertyDescriptor>に渡された、`propDesc`パラメーター。  
+  
+ A<xref:System.Drawing.Design.PropertyValueUIItem>プロパティの名前、ツールヒント文字列、およびプロパティに関連付けられているイメージがダブルクリックされたときに呼び出されるイベント ハンドラーの横に表示するイメージを含めることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例のインスタンスを取得するコンポーネントを作成して、<xref:System.Drawing.Design.IPropertyValueUIService>インターフェイスし、追加、<xref:System.Drawing.Design.PropertyValueUIHandler>サービスにします。 ハンドラーを提供する<xref:System.Drawing.Design.PropertyValueUIItem>という名前のコンポーネントのプロパティのオブジェクト`HorizontalMargin`または`VerticalMargin`です。 <xref:System.Drawing.Design.PropertyValueUIItem>これらのプロパティは、画像、ツールヒント、およびプロパティのイメージがクリックされたときに、メッセージ ボックスを表示するイベント ハンドラーを提供します。 イメージと、ツールヒントに表示されます、<xref:System.Windows.Forms.PropertyGrid>グリッドが表示されているとき、コンポーネントのこれらのプロパティです。  
+  
+ [!code-cpp[IPropertyValueUIServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CPP/propertyuicomponent.cpp#1)]
+ [!code-csharp[IPropertyValueUIServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CS/propertyuicomponent.cs#1)]
+ [!code-vb[IPropertyValueUIServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IPropertyValueUIServiceExample/VB/propertyuicomponent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddPropertyValueUIHandler">
+      <MemberSignature Language="C#" Value="public void AddPropertyValueUIHandler (System.Drawing.Design.PropertyValueUIHandler newHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddPropertyValueUIHandler(class System.Drawing.Design.PropertyValueUIHandler newHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IPropertyValueUIService.AddPropertyValueUIHandler(System.Drawing.Design.PropertyValueUIHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newHandler" Type="System.Drawing.Design.PropertyValueUIHandler" />
+      </Parameters>
+      <Docs>
+        <param name="newHandler">追加するプロパティ値 UI ハンドラー。</param>
+        <summary>指定した追加<see cref="T:System.Drawing.Design.PropertyValueUIHandler" />このサービスにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Drawing.Design.IPropertyValueUIService.GetPropertyUIValueItems%2A>が呼び出されると、このサービスに追加される各ハンドラーが呼び出され、プロパティのアイコンを追加することを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyUIValueItems">
+      <MemberSignature Language="C#" Value="public System.Drawing.Design.PropertyValueUIItem[] GetPropertyUIValueItems (System.ComponentModel.ITypeDescriptorContext context, System.ComponentModel.PropertyDescriptor propDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Drawing.Design.PropertyValueUIItem[] GetPropertyUIValueItems(class System.ComponentModel.ITypeDescriptorContext context, class System.ComponentModel.PropertyDescriptor propDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IPropertyValueUIService.GetPropertyUIValueItems(System.ComponentModel.ITypeDescriptorContext,System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.PropertyValueUIItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="propDesc" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="propDesc">A<see cref="T:System.ComponentModel.PropertyDescriptor" />に返されるプロパティと一致するプロパティを示すです。</param>
+        <summary>取得、<see cref="T:System.Drawing.Design.PropertyValueUIItem" />指定したコンテキストとプロパティ記述子の特性に一致するオブジェクト。</summary>
+        <returns>配列<see cref="T:System.Drawing.Design.PropertyValueUIItem" />指定したパラメーターに一致するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyPropertyValueUIItemsChanged">
+      <MemberSignature Language="C#" Value="public void NotifyPropertyValueUIItemsChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void NotifyPropertyValueUIItemsChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IPropertyValueUIService.NotifyPropertyValueUIItemsChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通知、<see cref="T:System.Drawing.Design.IPropertyValueUIService" />実装のグローバル リスト<see cref="T:System.Drawing.Design.PropertyValueUIItem" />オブジェクトが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyUIValueItemsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PropertyUIValueItemsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PropertyUIValueItemsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Design.IPropertyValueUIService.PropertyUIValueItemsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに一連の<see cref="T:System.Drawing.Design.PropertyValueUIItem" />オブジェクトを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 役割を果たすコンポーネント<xref:System.Drawing.Design.PropertyValueUIItem>オブジェクトを呼び出すことができます<xref:System.Drawing.Design.IPropertyValueUIService.NotifyPropertyValueUIItemsChanged%2A>項目の一覧を変更する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePropertyValueUIHandler">
+      <MemberSignature Language="C#" Value="public void RemovePropertyValueUIHandler (System.Drawing.Design.PropertyValueUIHandler newHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemovePropertyValueUIHandler(class System.Drawing.Design.PropertyValueUIHandler newHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.IPropertyValueUIService.RemovePropertyValueUIHandler(System.Drawing.Design.PropertyValueUIHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newHandler" Type="System.Drawing.Design.PropertyValueUIHandler" />
+      </Parameters>
+      <Docs>
+        <param name="newHandler">削除するハンドラー。</param>
+        <summary>指定された削除<see cref="T:System.Drawing.Design.PropertyValueUIHandler" />UI サービス プロパティの値からです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

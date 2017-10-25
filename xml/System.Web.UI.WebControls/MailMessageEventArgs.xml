@@ -1,0 +1,92 @@
+<Type Name="MailMessageEventArgs" FullName="System.Web.UI.WebControls.MailMessageEventArgs">
+  <TypeSignature Language="C#" Value="public class MailMessageEventArgs : System.Web.UI.WebControls.LoginCancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailMessageEventArgs extends System.Web.UI.WebControls.LoginCancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MailMessageEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.LoginCancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>電子メール関連のイベント データを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailMessageEventArgs>クラスへのアクセスを提供する、<xref:System.Web.Mail.MailMessage>電子メール メッセージを含むオブジェクトです。 <xref:System.Web.UI.WebControls.MailMessageEventArgs>から派生したクラスは、<xref:System.Web.UI.WebControls.LoginCancelEventArgs>クラス、取り消すことができますを設定して、イベント ハンドラーで電子メール メッセージの送信、<xref:System.Web.UI.WebControls.LoginCancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MailMessageEventArgs>は送信前に、メッセージの内容を変更するには、電子メール メッセージ イベント ハンドラー内のクラスです。  
+  
+ [!code-aspx-csharp[PasswordRecoveryOnBeforeSendMail#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PasswordRecoveryOnBeforeSendMail/CS/passwordrecoveryonbeforesendmailcs.aspx#1)]
+ [!code-aspx-vb[PasswordRecoveryOnBeforeSendMail#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PasswordRecoveryOnBeforeSendMail/VB/passwordrecoveryonbeforesendmailvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessageEventArgs (System.Net.Mail.MailMessage message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Mail.MailMessage message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MailMessageEventArgs.#ctor(System.Net.Mail.MailMessage)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.Net.Mail.MailMessage" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Net.Mail.MailMessage" />メッセージを含むです。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.MailMessageEventArgs" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成、<xref:System.Web.UI.WebControls.MailMessageEventArgs>クラスを渡す場合、<xref:System.Net.Mail.MailMessage>オブジェクトをイベント ハンドラーを送信する前に、メッセージを変更することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailMessage Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailMessage Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MailMessageEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailMessage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電子メール メッセージの内容を取得します。</summary>
+        <value>A<see cref="T:System.Web.Mail.MailMessage" />メッセージの内容を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MailMessageEventArgs.Message%2A>プロパティから返される、<xref:System.Web.Mail.MailMessage>電子メール メッセージのデータを含むオブジェクト。 <xref:System.Web.UI.WebControls.MailMessageEventArgs.Message%2A>プロパティは読み取り専用です。 ただし、使用することができます、<xref:System.Web.Mail.MailMessage>電子メール メッセージのプロパティを変更するが返されることをオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MailMessageEventArgs.Message%2A>は送信前に、メッセージの内容を変更するには、電子メール メッセージ イベント ハンドラーのプロパティです。  
+  
+ [!code-aspx-csharp[PasswordRecoveryOnBeforeSendMail#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PasswordRecoveryOnBeforeSendMail/CS/passwordrecoveryonbeforesendmailcs.aspx#1)]
+ [!code-aspx-vb[PasswordRecoveryOnBeforeSendMail#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PasswordRecoveryOnBeforeSendMail/VB/passwordrecoveryonbeforesendmailvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

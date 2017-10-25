@@ -1,0 +1,370 @@
+<Type Name="CheckBoxRenderer" FullName="System.Windows.Forms.CheckBoxRenderer">
+  <TypeSignature Language="C#" Value="public sealed class CheckBoxRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CheckBoxRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CheckBoxRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual スタイルの有無のチェック ボックス コントロールを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CheckBoxRenderer>クラスのセットを提供`static` チェック ボックス コントロールを表示するために使用できるメソッドです。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 チェック ボックスを描画するのいずれかの操作を使用して、<xref:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox%2A>メソッドです。 これらのメソッドは、さまざまなテキストの描画や、チェック ボックスを使用してイメージなどのオプションを提供します。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用されている場合<xref:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox%2A>現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、<xref:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox%2A>クラシック Windows スタイルでチェック ボックスを描画します。 これは、オペレーティング システムの現在の visual スタイル設定を自動的に照合する必要がありますをカスタム コントロールを描画する場合に便利です。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>によって公開されている要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Button.CheckBox?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを記述する方法を示しています、<xref:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox%2A>マウスのクリックに応答する チェック ボックスを描画するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.CheckBoxRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.CheckBoxRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.CheckBoxRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Point,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />チェック ボックスを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるチェック ボックスをオン グリフを描画します。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と位置を使用して、チェック ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、従来の Windows スタイルでチェック ボックスを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string checkBoxText, System.Drawing.Font font, bool focused, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string checkBoxText, class System.Drawing.Font font, bool focused, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Boolean,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="checkBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />チェック ボックスを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるチェック ボックスをオン グリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>checkBoxText</c>にします。</param>
+        <param name="checkBoxText"><see cref="T:System.String" />にチェック ボックスを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>checkBoxText</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と、指定したテキスト、およびオプションでフォーカスを示す四角形の場所でチェック ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、従来の Windows スタイルでチェック ボックスを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string checkBoxText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, bool focused, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string checkBoxText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, bool focused, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Boolean,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="checkBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />チェック ボックスを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるチェック ボックスをオン グリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>checkBoxText</c>にします。</param>
+        <param name="checkBoxText"><see cref="T:System.String" />にチェック ボックスを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>checkBoxText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と位置に、指定したテキストとテキストの書式設定、およびオプションでフォーカスを示す四角形を使用して、チェック ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、従来の Windows スタイルでチェック ボックスを描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox%28System.Drawing.Graphics%2CSystem.Drawing.Point%2CSystem.Drawing.Rectangle%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Windows.Forms.TextFormatFlags%2CSystem.Boolean%2CSystem.Windows.Forms.VisualStyles.CheckBoxState%29>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>マウス ポインターの場所によって決まります状態のチェック ボックスを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.CheckBoxRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.CheckBoxRenderer#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.CheckBoxRenderer#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.CheckBoxRenderer#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string checkBoxText, System.Drawing.Font font, System.Drawing.Image image, System.Drawing.Rectangle imageBounds, bool focused, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string checkBoxText, class System.Drawing.Font font, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageBounds, bool focused, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="checkBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />チェック ボックスを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるチェック ボックスをオン グリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>checkBoxText</c>にします。</param>
+        <param name="checkBoxText"><see cref="T:System.String" />にチェック ボックスを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>checkBoxText</c>です。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />にチェック ボックスを使用して描画します。</param>
+        <param name="imageBounds"><see cref="T:System.Drawing.Rectangle" />の大きさを表す<c>イメージ</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と位置に、指定したテキストとイメージ、およびオプションでフォーカスを示す四角形を使用して、チェック ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、従来の Windows スタイルでチェック ボックスを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawCheckBox">
+      <MemberSignature Language="C#" Value="public static void DrawCheckBox (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string checkBoxText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, System.Drawing.Image image, System.Drawing.Rectangle imageBounds, bool focused, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawCheckBox(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string checkBoxText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageBounds, bool focused, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawCheckBox(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="checkBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />チェック ボックスを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるチェック ボックスをオン グリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>checkBoxText</c>にします。</param>
+        <param name="checkBoxText"><see cref="T:System.String" />にチェック ボックスを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>checkBoxText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />にチェック ボックスを使用して描画します。</param>
+        <param name="imageBounds"><see cref="T:System.Drawing.Rectangle" />の大きさを表す<c>イメージ</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と位置; チェック ボックス コントロールを描画します。指定したテキスト、テキストの書式設定、およびイメージです。省略可能なフォーカス四角形を持つ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでチェック ボックスを描画します。 それ以外の場合、従来の Windows スタイルでチェック ボックスを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawParentBackground">
+      <MemberSignature Language="C#" Value="public static void DrawParentBackground (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.Control childControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawParentBackground(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.Control childControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.DrawParentBackground(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="childControl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />の親の背景を描画するために使用<c>childControl</c>です。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />親コントロールの背景を描画するためにします。 この四角形は、子コントロールの境界内にする必要があります。</param>
+        <param name="childControl">コントロールの親の背景が描画されます。</param>
+        <summary>指定領域にコントロールの親の背景を描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlyphSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetGlyphSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetGlyphSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.GetGlyphSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>チェック ボックスのグリフのサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />チェック ボックスのグリフのサイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェック ボックスのグリフのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CheckBoxRenderer.GetGlyphSize%2A>メソッドをチェック ボックスのテキストの境界を決定します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.CheckBoxRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.CheckBoxRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.CheckBoxRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.CheckBoxRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CheckBoxRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundPartiallyTransparent">
+      <MemberSignature Language="C#" Value="public static bool IsBackgroundPartiallyTransparent (System.Windows.Forms.VisualStyles.CheckBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBackgroundPartiallyTransparent(valuetype System.Windows.Forms.VisualStyles.CheckBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckBoxRenderer.IsBackgroundPartiallyTransparent(System.Windows.Forms.VisualStyles.CheckBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.CheckBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.CheckBoxState" />  チェック ボックスの表示状態を指定する値。</param>
+        <summary>チェック ボックスの背景が半透明またはアルファ ブレンドを持つかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、チェック ボックスの背景がある半透明またはアルファ ブレンドそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderMatchingApplicationState">
+      <MemberSignature Language="C#" Value="public static bool RenderMatchingApplicationState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RenderMatchingApplicationState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CheckBoxRenderer.RenderMatchingApplicationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレンダラーが表示スタイルを決定するアプリケーションの状態を使用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />アプリケーションの状態を使用して描画スタイルを決定する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.CheckBoxRenderer.RenderMatchingApplicationState%2A>プロパティは`true`、<xref:System.Windows.Forms.CheckBoxRenderer>から設定を使用して、<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>描画スタイルを決定するプロパティです。 場合<xref:System.Windows.Forms.CheckBoxRenderer.RenderMatchingApplicationState%2A>は`false`、常にレンダリングされます visual スタイルを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,82 @@
+<Type Name="IUnrestrictedPermission" FullName="System.Security.Permissions.IUnrestrictedPermission">
+  <TypeSignature Language="C#" Value="public interface IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.IUnrestrictedPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクセス許可により、制限なしの状態を公開できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのコード アクセス許可を実装する必要があります<xref:System.Security.Permissions.IUnrestrictedPermission>です。  
+  
+   
+  
+## Examples  
+ この例では、コード アクセス セキュリティを使用するためのアクセス許可クラスを定義する方法を示します。 すべての必要なアクセス許可のインターフェイスが実装されます。  
+  
+ 次のコード例の動作を示します、<xref:System.Security.Permissions.IUnrestrictedPermission>メソッドです。  
+  
+ 例では、表示のメソッドの実行、コードからメソッドを実行したかどうかはものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[Permission#1](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#1)]
+ [!code-csharp[Permission#1](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#1)]
+ [!code-vb[Permission#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.IUnrestrictedPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可により保護されているリソースへの無制限アクセスが可能かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />権限が許可されたによって保護されているリソースの使用を制限する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Security.Permissions.IUnrestrictedPermission.IsUnrestricted%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Permissions.IUnrestrictedPermission>クラスです。  
+  
+ [!code-cpp[Permission#8](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#8)]
+ [!code-csharp[Permission#8](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#8)]
+ [!code-vb[Permission#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

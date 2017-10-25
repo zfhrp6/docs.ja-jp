@@ -1,0 +1,150 @@
+<Type Name="SqlTriggerAttribute" FullName="Microsoft.SqlServer.Server.SqlTriggerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SqlTriggerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SqlTriggerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlTriggerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL Server でのトリガーとしてアセンブリのメソッドの定義を示すために使用します。 この属性でプロパティには、種類が SQL Server に登録されているときに使用する物理属性が反映されます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR トリガーと例については、SQL Server 2005 Books Online の「CLR トリガー」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:Microsoft.SqlServer.Server.SqlTriggerAttribute>トリガー、対象のテーブルとは、トリガーを起動するイベントの名前を指定します。 参照してください<xref:Microsoft.SqlServer.Server.SqlTriggerContext>完全トリガーの例です。  
+  
+ [!code-csharp[DataWorks SqlTriggerAttribute Sample#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTriggerAttribute Sample/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlTriggerAttribute Sample#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTriggerAttribute Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlTriggerAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlTriggerAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>SQL Server でのトリガーとしてメソッドをマークするため、アセンブリ内のメソッド定義の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、既存のデータを更新することにより、トリガーがアクティブ化されたことを指定します (`UPDATE`) テーブルで`authors`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Trigger1.cs#8)]
+ [!code-vb[VbRaddataSQLObjects#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Trigger1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Event">
+      <MemberSignature Language="C#" Value="public string Event { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Event" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlTriggerAttribute.Event" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリガーとどのようなデータ操作言語 (DML) 操作にトリガーが起動の型。</summary>
+        <value>A<see cref="T:System.String" />トリガーとどのようなデータ操作言語 (DML) のアクションがトリガーをアクティブ化の種類を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トリガーをアクティブにする DML アクションは、更新、削除、または INSERT アクション可能性があります。 AFTER または INSTEAD OF トリガーの種類ができます。 トリガーの種類を指定するのには、同じ後に指定することとします。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlTriggerAttribute.Event%2A>プロパティは必須です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlTriggerAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリガーの名前。</summary>
+        <value>A<see cref="T:System.String" />トリガーの名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlTriggerAttribute.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリガーを適用するテーブル。</summary>
+        <value>A<see cref="T:System.String" />テーブル名を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlTriggerAttribute.Target%2A>プロパティは必須です。  
+  
+ 次の例では、名前を使用して、トリガーが参照されていることを指定します`trig_onpubinsert`です。 トリガーは、新しいデータを追加することで (`INSERT`) テーブルに`publishers`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[VbRaddataSQLObjects#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/VbRaddataSQLObjects/CS/Trigger1.cs#9)]
+ [!code-vb[VbRaddataSQLObjects#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRaddataSQLObjects/VB/Trigger1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

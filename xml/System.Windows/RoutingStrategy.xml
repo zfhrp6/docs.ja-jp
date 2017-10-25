@@ -1,0 +1,73 @@
+<Type Name="RoutingStrategy" FullName="System.Windows.RoutingStrategy">
+  <TypeSignature Language="C#" Value="public enum RoutingStrategy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RoutingStrategy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RoutingStrategy" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ルーティング イベントのルーティング方法を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ルーティング イベントのルーティング方法は、これらの値の 1 つだけにする必要があります。 ただし、入力イベントは、基本クラスで、1 つのイベントがバブルのバージョンであり、1 つのイベントは、トンネルのバージョンのペアで多くの場合があります。 入力イベントの一意で、トンネリングとバブル バージョン引数を共有され、イベントを発生させる入力デバイスの状態への応答で連続して発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bubble">
+      <MemberSignature Language="C#" Value="Bubble" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.RoutingStrategy Bubble = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.RoutingStrategy.Bubble" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントは、イベント インスタンスをルートからソース要素へとツリーを介して下方にルーティングするトンネル方法を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Direct">
+      <MemberSignature Language="C#" Value="Direct" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.RoutingStrategy Direct = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.RoutingStrategy.Direct" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントは、要素ツリーを通じてルーティングされませんが、クラス処理などの他のルーティング イベント機能をサポートして<see cref="T:System.Windows.EventTrigger" />または<see cref="T:System.Windows.EventSetter" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tunnel">
+      <MemberSignature Language="C#" Value="Tunnel" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.RoutingStrategy Tunnel = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.RoutingStrategy.Tunnel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutingStrategy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティング イベントは、イベント インスタンスをルートからソース要素へとツリーを介して下方にルーティングするトンネル方法を使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

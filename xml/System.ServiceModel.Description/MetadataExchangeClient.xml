@@ -1,0 +1,749 @@
+<Type Name="MetadataExchangeClient" FullName="System.ServiceModel.Description.MetadataExchangeClient">
+  <TypeSignature Language="C#" Value="public class MetadataExchangeClient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetadataExchangeClient extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MetadataExchangeClient" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス メタデータをダウンロードします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用してメタデータをダウンロードします。 通常、<xref:System.ServiceModel.Description.MetadataExchangeClient> はメタデータ要求に対して構成され、メタデータのダウンロードに使用するために <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A?displayProperty=nameWithType> メソッドまたは <xref:System.ServiceModel.Description.MetadataResolver> メソッドに渡されます。  
+  
+ ただし、<xref:System.ServiceModel.Description.MetadataExchangeClient> を直接使用して、メタデータを、<xref:System.ServiceModel.Description.MetadataSet> オブジェクトを含む <xref:System.ServiceModel.Description.MetadataSection> として取得できます。  
+  
+ 直接使用されるか <xref:System.ServiceModel.Description.MetadataResolver> に渡されるかに関係なく、<xref:System.ServiceModel.Description.MetadataExchangeClient> には、メタデータのダウンロード プロセスを制御する、次のメンバーが含まれます。  
+  
+-   コンストラクターを使用して、メタデータ要求を行うときに使用されるバインディングをカスタマイズします。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.HttpCredentials%2A> プロパティを使用して、HTTP/GET 要求を行うために使用される資格情報を指定します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.SoapCredentials%2A> プロパティを使用して、WS-Transfer メタデータ要求を行うために使用される資格情報を指定します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> プロパティを使用して、<xref:System.ServiceModel.Description.MetadataExchangeClient> が解決するメタデータ参照の数を制限します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> プロパティを使用して、メタデータの取得にかかる時間を制限します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを使用して、元のメタデータのエンドポイントからダウンロードされたメタデータによって参照される他のメタデータ ドキュメントを検索および取得するかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドを使用して、ダウンロード プロセスを開始します。  
+  
+ また、次の 2 つのプロテクト メソッドをオーバーライドできる派生クラスを作成できます。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A> メソッドをオーバーライドして、WS-Transfer を使用してメタデータ要求を行うチャネルを変更します。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A> メソッドをオーバーライドして、HTTP/GET を使用してメタデータ要求を行う <xref:System.Net.HttpWebRequest> を変更します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用したダウンロード バインディングの指定、格納されているメタデータ参照の解決、およびメタデータのダウンロードを次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまなプロトコル スキームに使用できる既定のバインディングの一覧を次の表に示します。  
+  
+|Scheme|バインディング|  
+|------------|-------------|  
+|http|<xref:System.ServiceModel.WSHttpBinding> (<xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType>)|  
+|https|<xref:System.ServiceModel.WSHttpBinding> (<xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType>)|  
+|net.tcp|<xref:System.ServiceModel.Channels.CustomBinding> を持つ <xref:System.ServiceModel.Channels.TcpTransportBindingElement>|  
+|net.pipe|<xref:System.ServiceModel.Channels.CustomBinding> を持つ <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataExchangeClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataExchangeClient (System.ServiceModel.Channels.Binding mexBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding mexBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.#ctor(System.ServiceModel.Channels.Binding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mexBinding" Type="System.ServiceModel.Channels.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="mexBinding">WS-Transfer を使用してメタデータを取得するときに使用するバインディング。</param>
+        <summary>指定したバインディングを使用して、<see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、メタデータをダウンロードするときに使用するバインディングを指定します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用したダウンロード バインディングの指定、格納されているメタデータ参照の解決、およびメタデータのダウンロードを次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataExchangeClient (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.#ctor(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータ アドレス。</param>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、メタデータ エンドポイントのアドレスを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataExchangeClient (string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">メタデータをダウンロードするときに使用するエンドポイント構成情報の名前。</param>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターでは、特定のエンドポイント構成要素のデータを使用して、メタデータをダウンロードするチャネルを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataExchangeClient (Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.#ctor(System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのアドレス。</param>
+        <param name="mode">メタデータをダウンロードするときに使用するモード。</param>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、アドレスと、HTTP GET 要求または WS-Transfer Get を使用するかどうかを指定します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用したダウンロード バインディングの指定、格納されているメタデータ参照の解決、およびメタデータのダウンロードを次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BeginGetMetadata">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Description.MetadataSet" /> を返す非同期メソッド呼び出しを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドの非同期実装を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginGetMetadata">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetMetadata (AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetMetadata(class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.BeginGetMetadata(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>
+          <see cref="T:System.ServiceModel.Description.MetadataSet" /> を返す非同期メソッド呼び出しを開始します。</summary>
+        <returns>メタデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドの非同期実装。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetMetadata">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetMetadata (System.ServiceModel.EndpointAddress address, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetMetadata(class System.ServiceModel.EndpointAddress address, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.BeginGetMetadata(System.ServiceModel.EndpointAddress,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのアドレス。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、コールバック、および非同期状態を使用して、<see cref="T:System.ServiceModel.Description.MetadataSet" /> を返す非同期メソッド呼び出しを開始します。</summary>
+        <returns>指定した <paramref name="address" /> から取得したメタデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドの非同期実装。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetMetadata">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetMetadata (Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetMetadata(class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.BeginGetMetadata(System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのアドレス。</param>
+        <param name="mode">メタデータをダウンロードするときに使用する <see cref="T:System.ServiceModel.Description.MetadataExchangeClientMode" /> の値。</param>
+        <param name="callback">呼び出しが完了したときに呼び出される非同期コールバック デリゲート。</param>
+        <param name="asyncState">非同期呼び出しに関連付けられている状態。</param>
+        <summary>指定したアドレス、コールバック、非同期状態、およびダウンロード メカニズムを使用して、<see cref="T:System.ServiceModel.Description.MetadataSet" /> を返す非同期メソッド呼び出しを開始します。</summary>
+        <returns>指定した <paramref name="address" /> から取得したメタデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> メソッドの非同期実装。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataSet EndGetMetadata (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MetadataSet EndGetMetadata(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.EndGetMetadata(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで受け取る <see cref="Overload:System.ServiceModel.Description.MetadataExchangeClient.BeginGetMetadata" /> オブジェクト。</param>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataSet" /> を返す非同期メソッド呼び出しを終了します。</summary>
+        <returns>ダウンロードされたメタデータを格納している <see cref="T:System.ServiceModel.Description.MetadataSet" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの非同期 <xref:System.ServiceModel.Description.MetadataExchangeClient.BeginGetMetadata%2A> メソッドを終了して、ダウンロードされたメタデータを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannelFactory">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.ChannelFactory&lt;System.ServiceModel.Description.IMetadataExchange&gt; GetChannelFactory (System.ServiceModel.EndpointAddress metadataAddress, string dialect, string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ServiceModel.ChannelFactory`1&lt;class System.ServiceModel.Description.IMetadataExchange&gt; GetChannelFactory(class System.ServiceModel.EndpointAddress metadataAddress, string dialect, string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory(System.ServiceModel.EndpointAddress,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ChannelFactory&lt;System.ServiceModel.Description.IMetadataExchange&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="dialect" Type="System.String" />
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="metadataAddress">メタデータ アドレス。</param>
+        <param name="dialect">メタデータの言語。</param>
+        <param name="identifier">メタデータの識別子。</param>
+        <summary>派生クラスでオーバーライドされると、WS-Transfer メタデータ要求を行うために使用されるチャネル ファクトリを返します。</summary>
+        <returns>WS-Transfer メタデータ要求を行う、<see cref="T:System.ServiceModel.ChannelFactory`1" /> 型の <see cref="T:System.ServiceModel.Channels.IRequestChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Description.MetadataReference> のメタデータを取得するときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataSet GetMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MetadataSet GetMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataSet" /> を返します。</summary>
+        <returns>ダウンロードされたメタデータを格納している <see cref="T:System.ServiceModel.Description.MetadataSet" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient> を使用したダウンロード バインディングの指定、格納されているメタデータ参照の解決、およびメタデータのダウンロードを次のコード例に示します。  
+  
+ [!code-csharp[MetadataResolver#3](~/samples/snippets/csharp/VS_Snippets_CFX/metadataresolver/cs/client.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataSet GetMetadata (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MetadataSet GetMetadata(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのダウンロード元のアドレス。</param>
+        <summary>指定したアドレスの <see cref="T:System.ServiceModel.Description.MetadataSet" /> を返します。</summary>
+        <returns><paramref name="address" /> にあるメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataSet GetMetadata (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MetadataSet GetMetadata(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのダウンロード元のアドレス。</param>
+        <param name="via">メッセージの経路を表す URI アドレス。</param>
+        <summary>指定した経路で、指定したアドレスの <see cref="T:System.ServiceModel.Description.MetadataSet" /> を返します。</summary>
+        <returns>ダウンロードされるメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MetadataSet GetMetadata (Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.MetadataSet GetMetadata(class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata(System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのダウンロード元のアドレス。</param>
+        <param name="mode">使用するダウンロード メカニズム。</param>
+        <summary>指定したダウンロード モードを使用して、指定したアドレスの <see cref="T:System.ServiceModel.Description.MetadataSet" /> を返します。</summary>
+        <returns>ダウンロードされるメタデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレスを指定し、HTTP GET 要求または WS-Transfer Get を使用してメタデータをダウンロードするかどうかを指定するために、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadataAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期のメタデータ セットを返します。</summary>
+        <returns>非同期のメタデータを設定します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadataAsync(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">非同期のメタデータのダウンロード元のアドレス</param>
+        <summary>指定されたアドレスから設定する非同期のメタデータを返します。</summary>
+        <returns>アドレスにある非同期のメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadataAsync(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのダウンロード元のアドレス。</param>
+        <param name="via">メッセージの経路を表す URI アドレス。</param>
+        <summary>指定されたルート指定されたアドレスからを設定する非同期メタデータを返します。</summary>
+        <returns>ダウンロードされるメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync (Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.ServiceModel.Description.MetadataSet&gt; GetMetadataAsync(class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetMetadataAsync(System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.ServiceModel.Description.MetadataSet&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="mode" Type="System.ServiceModel.Description.MetadataExchangeClientMode" />
+      </Parameters>
+      <Docs>
+        <param name="address">メタデータのダウンロード元のアドレス。</param>
+        <param name="mode">使用するダウンロード メカニズム。</param>
+        <summary>指定したダウンロード モードを使用して指定されたアドレスから設定する非同期のメタデータを返します。</summary>
+        <returns>ダウンロードされるメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebRequest">
+      <MemberSignature Language="C#" Value="protected virtual System.Net.HttpWebRequest GetWebRequest (Uri location, string dialect, string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Net.HttpWebRequest GetWebRequest(class System.Uri location, string dialect, string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest(System.Uri,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.HttpWebRequest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Uri" />
+        <Parameter Name="dialect" Type="System.String" />
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="location">メタデータの位置。</param>
+        <param name="dialect">メタデータの言語。</param>
+        <param name="identifier">メタデータの識別子。</param>
+        <summary>派生クラスでオーバーライドされると、HTTP/GET メタデータ要求を行うために使用される <see cref="T:System.Net.HttpWebRequest" /> を返します。</summary>
+        <returns>HTTP GET メタデータ要求を行うために使用される内部 <see cref="T:System.Net.HttpWebRequest" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A> メソッドは、次の場合に呼び出されます。  
+  
+-   <xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> を解決しようとした場合。  
+  
+-   <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> が使用された場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpCredentials">
+      <MemberSignature Language="C#" Value="public System.Net.ICredentials HttpCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials HttpCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataExchangeClient.HttpCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP/GET 要求を行うために使用される資格情報を取得または設定します。</summary>
+        <value>要求の資格情報の確立に使用される <see cref="T:System.Net.ICredentials" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.HttpCredentials%2A> プロパティを使用して、<xref:System.ServiceModel.Description.MetadataExchangeClient> が HTTP/GET を使ってメタデータを要求するときに使用するセキュリティ資格情報をカスタマイズします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumResolvedReferences">
+      <MemberSignature Language="C#" Value="public int MaximumResolvedReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumResolvedReferences" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> がダウンロードするメタデータへの参照の最大数を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Description.MetadataExchangeClient" /> が解決するメタデータ参照の数。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.MaximumResolvedReferences%2A> プロパティを使用して、多数の参照を含むメタデータによってアクセスされるリソースを制限します。 この制限は、メタデータ参照、メタデータの位置、WSDL インポート、XML スキーマ インポートおよびインクルードなど、以降の要求につながるメタデータ内のすべての参照に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan OperationTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan OperationTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外がスローされるまでにメタデータのダウンロードを強制する期間を取得または設定します。</summary>
+        <value>メタデータのダウンロードを強制する期間。既定は 1 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.OperationTimeout%2A> プロパティを使用して、<xref:System.ServiceModel.Description.MetadataExchangeClient> で操作を終了するまでにかかる時間を制限します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMetadataReferences">
+      <MemberSignature Language="C#" Value="public bool ResolveMetadataReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResolveMetadataReferences" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータへの参照を解決するかどうかを制御する値を取得または設定します。</summary>
+        <value>
+          メタデータへの参照が解決される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> プロパティを `false` に設定して、メタデータへの参照が解決されないようにします。 この場合、参照は <xref:System.ServiceModel.Description.MetadataReference?displayProperty=nameWithType> 内の <xref:System.ServiceModel.Description.MetadataLocation?displayProperty=nameWithType> オブジェクトまたは <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> オブジェクトとして返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapCredentials">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ClientCredentials SoapCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ClientCredentials SoapCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MetadataExchangeClient.SoapCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ClientCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Transfer メタデータ要求に使用されるクライアント セキュリティ資格情報を取得または設定します。</summary>
+        <value>WS-Transfer メタデータ要求に使用されるクライアント セキュリティ資格情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MetadataExchangeClient.SoapCredentials%2A> プロパティを使用して、WS-Transfer メタデータ要求を行うときに <xref:System.ServiceModel.Description.MetadataExchangeClient> が使用するセキュリティ資格情報を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

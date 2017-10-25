@@ -1,0 +1,519 @@
+<Type Name="WeakEventManager" FullName="System.Windows.WeakEventManager">
+  <TypeSignature Language="C#" Value="public abstract class WeakEventManager : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract WeakEventManager extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.WeakEventManager" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント マネージャーで使用される基本クラスを提供、*弱いイベント パターン*です。 管理者は、追加し、パターンを使用してもイベント (またはコールバック) のリスナーを削除します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、イベント ソースにオブジェクトの有効期間とは別のイベント リスナーがある場合は、弱いイベント パターンを使用します。 サーバーの全体の機能をディスパッチ イベントを使用して、<xref:System.Windows.WeakEventManager>がガベージ コレクションされるソース オブジェクトが解決しない場合でも、リスナーのハンドラーを使用します。 これに対し、通常のイベント フックアップを使用して、`+=`演算子では、リスナーへの参照を保持するために切断された可能性のあるソースがします。 これは、受信側がガベージ コレクション、迅速にすることを防ぎます。  
+  
+ 1 つ一般的なソースとリスナーの有効期間の関係を使用する必要がありますの弱いイベント パターンは、データのバインドからの更新イベントの処理です。  
+  
+ 弱いイベント パターンは、コールバックと通常のイベントにも使用できます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタムの例については<see cref="T:System.Windows.WeakEventManager" />を参照してください[弱いイベント パターン](~/docs/framework/wpf/advanced/weak-event-patterns.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WeakEventManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスのコンス トラクターによって初期化子として使用される場合は、基本クラスの値を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliverEvent">
+      <MemberSignature Language="C#" Value="protected void DeliverEvent (object sender, EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DeliverEvent(object sender, class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントを処理するオブジェクト。</param>
+        <param name="args"><see cref="T:System.EventArgs" />を配信するイベントのイベント データを格納します。</param>
+        <summary>各リスナーに管理対象のイベントを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.WeakEventManager.DeliverEvent%2A>メソッドが追加または削除するイベント ハンドラー内から、<xref:System.Windows.WeakEventManager.StartListening%2A>と<xref:System.Windows.WeakEventManager.StopListening%2A>サブクラスの実装です。  
+  
+ 呼び出す場合は、<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>メソッドで、`AddListener`クラスの実装は、イベントを受け取るリスナーのリストは、基になるコレクションに保持されます。 (`AddListener`インターフェイスまたはクラスのコントラクトの一部ではありません。 `AddListener`呼び出すマネージャー クラスのメソッドに推奨される名前は、<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>弱いイベント パターンのイベント リスナーを追加します)。  
+  
+ <xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>1 つのリストには、リスナーを追加します。 マネージャーの実装にイベントごとのリスナーの 1 つ以上のリストが保持している場合は使用しないでください<xref:System.Windows.WeakEventManager.DeliverEvent%2A>または<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>です。 代わりに、実装する必要があります作成独自<xref:System.Windows.WeakEventManager.ListenerList>インスタンス、`AddListener`リスナーを該当する一覧に追加する必要があり、イベントは、呼び出すことによって適切なリスナーの一覧に配信する必要があります<xref:System.Windows.WeakEventManager.DeliverEventToList%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliverEventToList">
+      <MemberSignature Language="C#" Value="protected void DeliverEventToList (object sender, EventArgs args, System.Windows.WeakEventManager.ListenerList list);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DeliverEventToList(object sender, class System.EventArgs args, class System.Windows.WeakEventManager/ListenerList list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.EventArgs" />
+        <Parameter Name="list" Type="System.Windows.WeakEventManager+ListenerList" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントを処理するオブジェクト。</param>
+        <param name="args">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <param name="list">指定された<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</param>
+        <summary>指定されたリストのリスナーごとに管理対象のイベントを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マネージャーの実装は、イベント データでキャプチャされた情報に基づいて個別のリスナーのリストを保持する場合は、必要があります。 この高度な手法を使用する場合、作成し、マネージャーの実装の一部として、個別のリストを保持する必要がありますおよび特定のリストにリスナーを追加する方法を提供する必要があります。 ハンドラーの実装を生のイベントをリッスンする必要がありますに対して操作を実行、条件のリストを区別するために使用して、適切なリストまたはリストにのみイベントを配信することです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentManager">
+      <MemberSignature Language="C#" Value="protected static System.Windows.WeakEventManager GetCurrentManager (Type managerType);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.WeakEventManager GetCurrentManager(class System.Type managerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.GetCurrentManager(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="managerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="managerType">取得する型、<see cref="T:System.Windows.WeakEventManager" />用です。</param>
+        <summary>返します、<see cref="T:System.Windows.WeakEventManager" />は指定された型の使用を実装します。</summary>
+        <returns>一致する<see cref="T:System.Windows.WeakEventManager" />実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent%2A>実装は、渡されたを使用してこのメソッドを呼び出す`managerType`です。 返された<xref:System.Windows.WeakEventManager>を調べ、どのイベントを受信しましたがどのプライベート クラス ハンドラーを呼び出すための差別化要因として使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="protected object this[object source] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">要求されたソースの 0 から始まるインデックス。</param>
+        <summary>取得または指定したソースに格納されているデータを設定します。</summary>
+        <value>このソースのマネージャーによって格納されるデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスには、データとこのインデクサーに格納する型を選択できます。 通常これとして実装される、<xref:System.Windows.WeakEventManager.ListenerList>リスナーへの弱い参照の一覧です。 この型を変更する場合にのみ必要があります、<xref:System.Windows.WeakEventManager.ListenerList>型は、必要な情報を含めることはできません。 そのため、オーバーライドする必要が場合、<xref:System.Windows.WeakEventManager.Purge%2A>メソッド基になる型のすべてのクリーンアップが正常に実行できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewListenerList">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.WeakEventManager.ListenerList NewListenerList ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.WeakEventManager/ListenerList NewListenerList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.NewListenerList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントのリスナーを格納する新しいオブジェクトを返します。</summary>
+        <returns>イベントのリスナーを格納する新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedAddHandler">
+      <MemberSignature Language="C#" Value="protected void ProtectedAddHandler (object source, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProtectedAddHandler(object source, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ProtectedAddHandler(System.Object,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="source">ハンドラーのデリゲートがサブスクライブしているソース オブジェクト。</param>
+        <param name="handler">によって発生するイベントを処理するデリゲート<c>ソース</c>です。</param>
+        <summary>指定したソースのイベント ハンドラーとして指定されたデリゲートを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedAddListener">
+      <MemberSignature Language="C#" Value="protected void ProtectedAddListener (object source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProtectedAddListener(object source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ProtectedAddListener(System.Object,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">リスナーを関連付けるソース。</param>
+        <param name="listener">リッスンしているクラス (実装する必要があります<see cref="T:System.Windows.IWeakEventListener" />)。</param>
+        <summary>管理対象のイベントの指定されたソースを指定したリスナーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージャー クラス内には、このメソッドを呼び出す`AddListener`メソッド<xref:System.Windows.WeakEventManager>実装します。 `AddListener`推奨される名前は、弱いイベント パターンにリスナーを追加するには、他のクラスを有効にする、マネージャー クラスで静的メソッドを定義します。 `AddListener`2 つのパラメーターを受け取る必要があります。`source`リスナーが接続されている場所と`listener`インスタンス。 `AddListener`実装、呼び出し、<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>現在のマネージャーとパラメーターを渡す、同じ 2 つのメソッドです。  
+  
+ リスナーのリストが以前は空の場合<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>呼び出し、<xref:System.Windows.WeakEventManager.StartListening%2A>メソッドに固有の仕様を呼び出すを内部的には、<xref:System.Windows.WeakEventManager.StartListening%2A>ポリモーフィズムをオーバーライドします。  
+  
+ <xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>1 つの内部リスナーを追加<xref:System.Windows.WeakEventManager.ListenerList>あたり`source`します。 マネージャーの実装にイベント ソースの組み合わせごとのリスナーの 1 つ以上のリストが保持している場合は使用しないでください<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>です。 代わりに、実装する必要があります作成独自<xref:System.Windows.WeakEventManager.ListenerList>インスタンス、`AddListener`リスナーを該当する一覧に追加する必要があり、イベントは、呼び出すことによって適切なリスナーの一覧に配信する必要があります、<xref:System.Windows.WeakEventManager.DeliverEventToList%2A>イベントの代わりに、<xref:System.Windows.WeakEventManager.DeliverEvent%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedRemoveHandler">
+      <MemberSignature Language="C#" Value="protected void ProtectedRemoveHandler (object source, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProtectedRemoveHandler(object source, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ProtectedRemoveHandler(System.Object,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="source">ハンドラーを削除するソースです。</param>
+        <param name="handler">削除するデリゲート<c>ソース</c>です。</param>
+        <summary>指定したソースから、以前に追加されたハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedRemoveListener">
+      <MemberSignature Language="C#" Value="protected void ProtectedRemoveListener (object source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProtectedRemoveListener(object source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ProtectedRemoveListener(System.Object,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">リスナーを削除するソースです。</param>
+        <param name="listener">リッスンしているクラス (実装する必要があります<see cref="T:System.Windows.IWeakEventListener" />)。</param>
+        <summary>指定されたソースから、以前に追加リスナーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージャー クラス内には、このメソッドを呼び出す`RemoveListener`メソッド<xref:System.Windows.WeakEventManager>実装します。 `RemoveListener`推奨される名前は、弱いイベント パターンにリスナーを削除するには、他のクラスを有効にする、マネージャー クラスで静的メソッドを定義します。 `RemoveListener`2 つのパラメーターを受け取る必要があります。`source`リスナーを削除すると、場所、および`listener`クラスです。 `RemoveListener`実装、呼び出し、<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>現在のマネージャーとパラメーターを渡す、同じ 2 つのメソッドです。  
+  
+ 呼び出し<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>一覧で、最後のリスナーを削除<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>呼び出し、<xref:System.Windows.WeakEventManager.StopListening%2A>メソッドに固有の仕様を呼び出すを内部的には、<xref:System.Windows.WeakEventManager.StopListening%2A>ポリモーフィズムをオーバーライドします。  
+  
+ <xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>1 つの内部からのリスナーを削除<xref:System.Windows.WeakEventManager.ListenerList>あたり`source`します。 マネージャーの実装にイベント ソースの組み合わせごとのリスナーの 1 つ以上のリストが保持している場合は使用しないでください<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>です。 代わりに、実装する必要があります作成独自<xref:System.Windows.WeakEventManager.ListenerList>インスタンス、 `RemoveListener` 、該当する一覧からのリスナーを削除する必要があり、イベントは、呼び出すことによって適切なリスナーの一覧に配信する必要があります、<xref:System.Windows.WeakEventManager.DeliverEventToList%2A>メソッドの代わりに、<xref:System.Windows.WeakEventManager.DeliverEvent%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Purge">
+      <MemberSignature Language="C#" Value="protected virtual bool Purge (object source, object data, bool purgeAll);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool Purge(object source, object data, bool purgeAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="purgeAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="source">リッスンされているイベントのソース。</param>
+        <param name="data">チェックするデータ。 このオブジェクトができると予想される、<see cref="T:System.Windows.WeakEventManager.ListenerList" />実装します。</param>
+        <param name="purgeAll">
+          <see langword="true" />待機を停止する<c>ソース</c>からすべてのエントリを完全に削除<c>データ</c>です。</param>
+        <summary>指定されたソースのデータの一覧から非アクティブなリスナー エントリを削除します。 返します<see langword="true" />いくつかのエントリが実際には、一覧から削除された場合。</summary>
+        <returns>
+          <see langword="true" />いくつかのエントリが実際に削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.WeakEventManager.Purge%2A>メソッドには既定の実装でデータが場合に、すべてのエントリを削除すること、<xref:System.Windows.WeakEventManager.ListenerList>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>型、基になる場合、<see cref="P:System.Windows.WeakEventManager.Item(System.Object)" />以外<see cref="T:System.Windows.WeakEventManager.ListenerList" />、または範囲を超えてデータに含まれている、 <see cref="T:System.Windows.WeakEventManager.ListenerList" />、オーバーライドする必要があります、<see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" />メソッドです。 オーバーライドでは、代替の型の項目リストのパージ動作を提供する必要があります。 一般に、オーバーライドでは、基本実装を呼び出すことがなく動作を提供する必要があります。 場合は、特定<see cref="T:System.Windows.WeakEventManager.ListenerList" />クリアリング、呼び出す必要がある<see cref="M:System.Windows.WeakEventManager.ListenerList.Purge" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLock">
+      <MemberSignature Language="C#" Value="protected IDisposable ReadLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IDisposable ReadLock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.ReadLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ テーブルに読み取りロックを確立し、返します、、<see cref="T:System.IDisposable" />です。</summary>
+        <value>テーブルのデータ メンバーのロックを確立しで破棄適切に使用できるオブジェクト、<see langword="using" />を構築します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスに含まれているテーブルにクエリ<xref:System.Windows.WeakEventManager.Item%2A>内で常に実行する必要があります、`using (ReadLock) { ... }`書き込みロック内では、既にクエリを除くの句。 これらのクエリは、クラスがより高度なサポートされている場合に必要な可能性があります`AddListener`を超える複数のデータを必要とする実装、`source`と`listener`を使用して、<xref:System.Windows.WeakEventManager.Item%2A>余分な情報を格納するコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="protected void Remove (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Remove(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">情報をリスナーを削除するソース。</param>
+        <summary>指定されたソースのすべてのリスナーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleCleanup">
+      <MemberSignature Language="C#" Value="protected void ScheduleCleanup ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ScheduleCleanup() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ScheduleCleanup" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求の優先度の低いスレッドで、基になるリスナー リスト内の未使用のエントリの消去を実行することです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.WeakEventManager.ScheduleCleanup%2A>メソッドの呼び出しに似ていますが、<xref:System.Windows.WeakEventManager.Purge%2A>現在マネージャーの一覧で、スレッドの優先順位の低い、メソッドで、`purgeAll`パラメーターに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCurrentManager">
+      <MemberSignature Language="C#" Value="protected static void SetCurrentManager (Type managerType, System.Windows.WeakEventManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void SetCurrentManager(class System.Type managerType, class System.Windows.WeakEventManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.SetCurrentManager(System.Type,System.Windows.WeakEventManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="managerType" Type="System.Type" />
+        <Parameter Name="manager" Type="System.Windows.WeakEventManager" />
+      </Parameters>
+      <Docs>
+        <param name="managerType">新しいイベント マネージャーを設定する型。</param>
+        <param name="manager">新しいイベント マネージャー。</param>
+        <summary>指定したマネージャーの種類の現在のマネージャーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.WeakEventManager.SetCurrentManager%2A>への呼び出しによって初期化に、マネージャーは、そのメソッドが必要な`CurrentManager`プロパティを<xref:System.Windows.WeakEventManager>実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="protected abstract void StartListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void StartListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">リッスンを開始するソース。</param>
+        <summary>派生クラスでオーバーライドされると、管理対象のイベントのリッスンを開始します。 後に、<see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" />メソッドが最初に呼び出されると、マネージャーは、呼び出し元の状態である必要があります<see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" />または<see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" />指定されたソースから関連するイベントを処理するたびにします。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" />上書きを指定されたハンドラーを追加する必要があります<paramref name="source" />です。 ハンドラーは、マネージャー自体で宣言されています。 クラスのハンドラーをパブリックにすることはできませんし、管理対象のイベントへの応答でのみ呼び出す必要があります。 クラスのハンドラーを呼び出す必要があります、<see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)" />メソッドまたは<see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)" />メソッド適切にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="protected abstract void StopListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void StopListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">リッスンを停止するソース。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたソース管理されているイベントのリッスンを停止します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Windows.WeakEventManager.StopListening(System.Object)" />によって追加されると、実装はクラス ハンドラーを削除する必要があります、<see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)" />メソッドです。 リスナーを削除するリスナーの一覧を消去しないでください。 代わりに、切断するだけに、クラス ハンドラーを (おそらくは一時的に)。 その他のメソッドは、リスト全体を消去するなど、<see cref="M:System.Windows.WeakEventManager.Purge(System.Object,System.Object,System.Boolean)" />メソッドを<paramref name="purgeAll" />パラメーターに設定<see langword="true" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLock">
+      <MemberSignature Language="C#" Value="protected IDisposable WriteLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IDisposable WriteLock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.WriteLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ テーブルに対して書き込みロックを確立し、返します、、<see cref="T:System.IDisposable" />です。</summary>
+        <value>テーブルのデータ メンバーのロックを確立しで破棄適切に使用できるオブジェクト、<see langword="using" />を構築します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは行った変更はすべて、基になるデータ テーブル内で発生する必要があります、`using (WriteLock) { ... }`句。 これらの変更は、クラスがより高度なサポートされている場合に必要な可能性があります`AddListener`を超える複数のデータを必要とする実装、`source`と`listener`を使用して、<xref:System.Windows.WeakEventManager.Item%2A>余分な情報を格納するコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

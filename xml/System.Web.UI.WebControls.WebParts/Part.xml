@@ -1,0 +1,331 @@
+<Type Name="Part" FullName="System.Web.UI.WebControls.WebParts.Part">
+  <TypeSignature Language="C#" Value="public abstract class Part : System.Web.UI.WebControls.Panel, System.Web.UI.INamingContainer, System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Part extends System.Web.UI.WebControls.Panel implements class System.Web.UI.INamingContainer, class System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.Part" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Panel</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.ICompositeControlDesignerAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.PartDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web フォーム ページ上のモジュール式ユーザー インターフェイスをレンダリングするすべての Web パーツのパーツ コントロールの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.Part>クラスに共通するすべてのパーツ コントロールと Web ページ上のモジュールで一貫した外観をあるを有効にするプロパティを定義します。 これらの共通プロパティには、タイトル、説明、および、chrome または部分から成るコントロールを囲む枠の特徴が含まれます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティ パーツ コントロールのタイトルを指定します。 <xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>プロパティは、パーツ コントロールの目的を要約するために使用し、コントロールのタイトル バーのツールヒントとして表示されます。 <xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>プロパティでは一部のコントロールの周りの境界線の種類が表示されるときに、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>プロパティ部分から成るコントロールが通常、レンダリングまたは最小限に抑えるかどうかを示します。 一部のコントロールの境界線はそれを含むゾーンのプロパティの影響を受けたたとえば、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartChromeType%2A>プロパティは、ゾーンに含まれているすべてのパーツ コントロールのフレームに影響します。  
+  
+ 一部のコントロールの種類を 1 つが、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールで、対応するゾーン内のコンテンツをレンダリングします。 別の種類は、<xref:System.Web.UI.WebControls.WebParts.EditorPart>変更に使用するユーザー インターフェイス (UI) コントロールを提供するコントロールを個別の (カスタマイズ)<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 一部のコントロールの 3 番目の型は、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>の一覧を提供するコントロールを<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールをユーザーに追加したり、Web ページから削除します。  
+  
+ ゾーンでは、抽象から派生するすべてのパーツ コントロールが含まれている<xref:System.Web.UI.WebControls.WebParts.WebZone>クラスです。 ゾーンが含まれている一部のコントロールを整理します。 各ゾーンも表示 UI 要素自体のヘッダー、フッター、タイトル バー、および罫線など各格納されているパーツ コントロールの周りの UI 要素を含みます。  
+  
+> [!NOTE]
+>  一部のコントロールは、通常のゾーンに配置する、可能であれば、ゾーンの外部の部分から成るコントロールを配置するコントロールが、Web ページのマークアップで宣言によって参照されている場合。 部分から成るコントロールが、Web ページで、ゾーン外で宣言されている場合、コントロールも機能するが、その Web パーツの機能のほとんどが失われます。 たとえば、コントロールは、編集することはできません、実行時に、ゾーンにドラッグすることはできません。 必ずパーツ コントロールをゾーンからドラッグして実行時に、ゾーンの外部でのページにドロップすると便利です。  
+  
+ 基本のパーツの種類の例をいくつかと、対応するゾーンの種類は、次の表に表示されます。  
+  
+|一部のコントロール型|ゾーンの種類|  
+|-----------------------|---------------|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPart>|<xref:System.Web.UI.WebControls.WebParts.WebPartZone>|  
+|<xref:System.Web.UI.WebControls.WebParts.EditorPart>|<xref:System.Web.UI.WebControls.WebParts.EditorZone>|  
+|<xref:System.Web.UI.WebControls.WebParts.CatalogPart>|<xref:System.Web.UI.WebControls.WebParts.CatalogZone>|  
+  
+ パーツから派生したコントロールのさまざまな種類、<xref:System.Web.UI.WebControls.WebParts.Part>クラスは継承された、UI 指向のプロパティを異なる方法で処理します。 <xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが複数継承の UI プロパティのオーバーライドし、マークに置き換え、`Personalizable`属性 (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>クラスのドキュメント)、パーソナル化と呼ばれる機能を今後のブラウザー セッションでは、保存するには、そのプロパティの値を有効にします。 たとえば、プログラムからの値を更新するユーザーを有効にする場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>(個人用設定が有効にしている既定値) する場合に値をパーソナル化は、実行時にプロパティです。 いくつかの UI プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールから継承、<xref:System.Web.UI.WebControls.WebParts.Part>クラスとの間、<xref:System.Web.UI.WebControls.WebControl>クラス、同じように処理されます。  
+  
+ これに対し、他の部分を制御するように<xref:System.Web.UI.WebControls.WebParts.EditorPart>と<xref:System.Web.UI.WebControls.WebParts.CatalogPart>、パーソナル化を UI の継承されたプロパティを有効にしません。 このため、プロパティは今後のブラウザー セッションの値は保存されませんがプログラムによって割り当てられます。 たとえば、プログラムで更新するユーザーを有効にする場合、<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart>コントロールの<xref:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart.Title%2A>プロパティ実行時に、更新された値は、失われたコントロールが閉じているか、ブラウザー セッションが終了した後です。  
+  
+ このような値を保存する簡単な方法は、の UI プロパティを継承<xref:System.Web.UI.WebControls.WebParts.EditorPart>と<xref:System.Web.UI.WebControls.WebParts.CatalogPart>今後のブラウザー セッションのコントロールがページ永続形式でプロパティの値を宣言することです。 ただし、これは静的なアプローチでありまだ、プロパティの値を個人用に設定するユーザーはできません。 代わりに、ユーザーが、実行時にカスタマイズできるように、UI の継承されたプロパティをプログラムで更新を有効にする場合できる変数を使用するプライベートな静的プロパティの値を保存します。 新しいインスタンスごとに、<xref:System.Web.UI.WebControls.WebParts.EditorPart>または<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールが作成された (たとえば、コントロールを処理するメソッドで<xref:System.Web.UI.Control.Init>イベント)、静的変数の値を対応するプロパティを再割り当てすることができます。 このようなアプローチことができます、編集の UI とカタログの Web パーツのアプリケーションの UI をカスタマイズします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかのプロパティの宣言型の使用法を示します、<xref:System.Web.UI.WebControls.WebParts.Part>クラス、カスタムの 2 つのインスタンスを使用して<xref:System.Web.UI.WebControls.WebParts.WebPart>ASP.NET Web ページで参照されているコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ 例では、最初の部分には、カスタム コントロールは、名前付きコードが含まれています。`TextDisplayWebPart`です。 コントロールがから派生するので<xref:System.Web.UI.WebControls.WebParts.WebPart>、共通のプロパティも継承する、<xref:System.Web.UI.WebControls.WebParts.Part>クラスを提供して、このコード例ではこれらのプロパティの使用方法について説明します。  
+  
+ [!code-csharp[WebParts_Part_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_Part_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/textdisplaywebpart.vb#2)]  
+  
+ 例の 2 番目の部分では、ASP.NET Web ページ内の一部のカスタム コントロールを参照する方法を示します。 注意して、さまざまな<xref:System.Web.UI.WebControls.WebParts.Part>プロパティがカスタム コントロールのインスタンスを宣言によって割り当てられます。 宣言型を参照するコード ページで、2 つのインスタンスを比較し、ブラウザーでページを読み込みます。 さまざまなプロパティが、コントロールの外観に与える影響に注意してください。 たとえば、ブラウザー、2 番目のインスタンス内のページを読み込む後、`TextDisplayWebPart`ために最小化するコントロールが表示されます、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>プロパティの値に設定されて<xref:System.Web.UI.WebControls.WebParts.PartChromeState.Minimized>です。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>通常、する必要がありますいないからしか直接継承、<see cref="T:System.Web.UI.WebControls.WebParts.Part" />カスタム Web パーツ コントロールを開発するクラス。 すべての Web パーツの機能を提供する Web パーツ コントロール セットから派生したクラスが必要です、<see cref="T:System.Web.UI.WebControls.WebParts.Part" />クラス、つまり<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />、 <see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />、および<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ので、カスタム コントロールを開発することから派生する必要があります。 ただしは、ベースの動作を理解することも重要<see cref="T:System.Web.UI.WebControls.WebParts.Part" />クラス、その他のすべての部分クラスで使用されるプロパティの共通セットを提供するためです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="ChromeState">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.PartChromeState ChromeState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeState ChromeState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.Part.ChromeState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または部分から成るコントロールが最小化または標準状態であるかどうかを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PartChromeState" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.PartChromeState.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ コントロールの<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>通常または最小化できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言型の使用を示しています、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>パーツ コントロールのプロパティです。 この例は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール`TextDisplayWebPart`のセクションの例に含まれている、<xref:System.Web.UI.WebControls.WebParts.Part>クラスの概要です。  
+  
+ なお、Web の宣言型マークアップでページで、2 番目のインスタンス、`TextDisplayWebPart`コントロール セットの<xref:System.Web.UI.WebControls.WebParts.Part.ChromeState%2A>プロパティです。 ブラウザーでページを読み込むと、2 つ目のコントロールのインスタンスを最小化されたが表示されます。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeState" />値。</exception>
+        <block subset="none" type="overrides">
+          <para>などのクラスの派生<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />をオーバーライドできます<see cref="P:System.Web.UI.WebControls.WebParts.Part.ChromeState" />コントロールの境界線の状態のユーザーの個人用設定を有効にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ChromeType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.PartChromeType ChromeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeType ChromeType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.Part.ChromeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールを囲む境界線の種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.WebParts.PartChromeType.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ コントロールの<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>プロパティは、境界線の種類は、コントロールを囲むを決定します。 オプションがあります。 どちらも、タイトルのみ、境界線のみ、タイトルと枠線を表示または既定のオプションの値を使用してにすぎません、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartChromeType%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言型の使用を示しています、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>パーツ コントロールのプロパティです。 この例は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール`TextDisplayWebPart`のセクションの例に含まれている、<xref:System.Web.UI.WebControls.WebParts.Part>クラスの概要です。  
+  
+ Web ページで、2 番目のインスタンスの宣言型コードで、`TextDisplayWebPart`コントロール セットの<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>プロパティを最初のインスタンスの場合は、タイトルと境界線、タイトルのみです。 ブラウザーでページを読み込むと、コントロールの 2 番目のインスタンスを最小化されているが表示されます。 コントロールを最大化する場合は、境界線なしのタイトルが表示されます。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" /> 値ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>などのクラスの派生<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />をオーバーライドできます<see cref="P:System.Web.UI.WebControls.WebParts.Part.ChromeType" />コントロールを囲む境界線の種類のユーザーの個人用設定を有効にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.Part.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />ユーザー インターフェイス階層内の指定されたサーバー コントロールの子コントロールを含むオブジェクトです。</summary>
+        <value>指定されたサーバー コントロールの子コントロールのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ASP.NET] ページでは、コントロールは、開始タグと終了タグのサーバー コントロールの間で宣言によって追加されたときに ASP.NET に自動的に追加のコントロールを含むサーバー コントロールの<xref:System.Web.UI.ControlCollection>オブジェクト。 HTML タグまたはサーバーで処理されないテキスト文字列として扱われます<xref:System.Web.UI.LiteralControl>オブジェクト。 これらは、その他のサーバー コントロールと同様に、コレクションに追加されます。  
+  
+ <xref:System.Web.UI.Control.Controls%2A>プロパティがのインスタンスへのプログラムによるアクセスを使用する、<xref:System.Web.UI.ControlCollection>任意のサーバー コントロールのクラスです。 コレクションにコントロールを追加、コントロールをコレクションから削除、またはコレクション内のサーバー コントロールを反復処理することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.Part.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出されたサーバー コントロールとそのすべての子コントロールにデータ ソースをバインドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.Part.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールヒントや一部のコントロールのカタログで使用する、パーツ コントロールの動作をまとめた簡単な語句を設定します。</summary>
+        <value>文字列は、簡潔にパーツ コントロールの機能をまとめたものです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>プロパティは、通常と一部のコントロールのタイトル バーのツールヒントとして、一部のコントロールのリストを提供するカタログで使用されている文字列。 内容、<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>パーツ コントロールのタイトル バーのタイトル テキストの上にマウス ポインターを配置すると、ツールヒントに表示されます。 ツールヒントのテキストがの値から作成された、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティの後に、ハイフンが続けて、<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>プロパティの値。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言型の使用を示しています、<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>パーツ コントロールのプロパティです。 この例は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール`TextDisplayWebPart`のセクションの例に含まれている、<xref:System.Web.UI.WebControls.WebParts.Part>クラスの概要です。  
+  
+ 最初のコントロールのインスタンスのタイトル テキストの上にマウス ポインターを配置する場合、ブラウザーでページを読み込むと、ツールヒントの説明テキストが表示されます。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>などのクラスの派生<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />をオーバーライドできます<see cref="P:System.Web.UI.WebControls.WebParts.Part.Description" />コントロールの説明のユーザーの個人用設定を有効にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls">
+      <MemberSignature Language="C#" Value="void ICompositeControlDesignerAccessor.RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.Part.System#Web#UI#WebControls#ICompositeControlDesignerAccessor#RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン画面でコントロールの子コントロールを再作成するには、複合パーツ コントロールのデザイナーの開発者をできるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public virtual string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.Part.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパーツ コントロールのタイトルを設定します。</summary>
+        <value>一部のコントロールのタイトルを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 部分から成るコントロールのタイトル バーに表示されるタイトルのテキストが設定されて、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティです。 タイトルのテキストも表示ツールヒントのテキストの一部としてのタイトル バーの上にマウス ポインターを置くと、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたはその他のサーバー コントロールに表示される、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンです。  
+  
+ タイトルのテキストのスタイルはによって決定されます、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartTitleStyle%2A>パーツ コントロールを含むゾーンのプロパティです。  
+  
+ コントロールのタイトルを指定しない場合、Web パーツ コントロール セットを自動的には、タイトルとして使用する既定の文字列を計算します。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>」を参照してください。 また、タイトル文字列に付加される標準の字幕を指定することができます。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPart.Subtitle%2A>」を参照してください。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の宣言型の使用を示しています、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>パーツ コントロールのプロパティです。 この例は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール`TextDisplayWebPart`のセクションの例に含まれている、<xref:System.Web.UI.WebControls.WebParts.Part>クラスの概要です。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>などのクラスの派生<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />をオーバーライドできます<see cref="P:System.Web.UI.WebControls.WebParts.Part.Title" />タイトルのユーザーの個人用設定を有効にします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

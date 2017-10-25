@@ -1,0 +1,59 @@
+<Namespace Name="System.Transactions">
+  <Docs>
+    <summary><see cref="N:System.Transactions" /> 名前空間には、トランザクション アプリケーションやリソース マネージャーを独自に作成するためのクラスが含まれます。 具体的には、1 つまたは複数の参加要素を含むローカル トランザクションまたは分散トランザクションを作成し、参加できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  のみ、Windows 2000、Windows XP および Windows 2003 のプラットフォームでは、この名前空間を使用してアプリケーションを作成することができます。 Windows 98 や Windows ME プラットフォーム スロー トランザクションの作成、<xref:System.PlatformNotSupportedException>です。  
+  
+ <xref:System.Transactions>インフラストラクチャにより、トランザクション プログラミング シンプルで、プラットフォーム全体で効率的な SQL Server、ADO.NET、MSMQ、および Microsoft 分散トランザクション コーディネーター (MSDTC) で開始されるトランザクションをサポートします。 明示的なプログラミング モデルに基づく提供、<xref:System.Transactions.Transaction>クラスだけでなく、暗黙的なプログラミング モデルを使用して、<xref:System.Transactions.TransactionScope>トランザクションを自動的にインフラストラクチャを管理するクラス。 開発のため、簡単に暗黙的なモデルを使用することを強くお勧めします。 最初に、次を参照してください、[を実装する、暗黙的なトランザクションを使用してトランザクション スコープ](http://msdn.microsoft.com/en-us/1ddba95e-7587-48b2-8838-708c275e7199)トピックです。 トランザクション アプリケーションの作成の詳細についてを参照してください。  
+  
+ <xref:System.Transactions>また、リソース マネージャーを実装するための型を提供します。 ネイティブに、トランザクション マネージャー、<xref:System.Transactions>インフラストラクチャでは、揮発性リソースまたはコミットまたはロールバック効率的にする 1 つの持続性のあるリソースの参加します。 リソース マネージャーの実装の詳細については、次を参照してください。 [A リソース マネージャーの実装](http://msdn.microsoft.com/en-us/81509719-d579-4530-831e-42e1acdef63e)です。  
+  
+ トランザクション マネージャーは、持続性のある他のリソース マネージャーがそれ自体をトランザクションに参加させたときに、DTC と同様に、ディスク ベースのトランザクション マネージャーを調整することにより、ローカル トランザクションを分散トランザクションを透過的にもエスカレートします。 <xref:System.Transactions> インフラストラクチャでは、主に 2 つの方法でパフォーマンスを向上させています。  
+  
+-   動的のエスカレーションでは、つまり、<xref:System.Transactions>インフラストラクチャは、トランザクションの実際に必要な場合にのみ、MSDTC を予想します。 この領域はで詳しく説明されて、[トランザクション管理のエスカレーション](http://msdn.microsoft.com/en-us/5b87ae58-8ccf-4b9b-9715-41e4aade89b7)トピックです。  
+  
+-   昇格可能参加リスト。これにより、データベースなどのリソースが、トランザクションに参加している唯一のエンティティである場合に、トランザクションの所有権を取得できます。 その後、必要な場合は、<xref:System.Transactions>インフラストラクチャでは、MSDTC トランザクションの管理がエスカレートもできます。 これにより、MSDTC の使用頻度をさらに減らすことができます。 この領域はで詳しく説明されて、[最適化を使用して 1 つのフェーズをコミットし、昇格可能な 1 つのフェーズ通知](http://msdn.microsoft.com/en-us/653d51d1-b4bf-4e34-9a6f-aec073f0f5bb)トピックです。  
+  
+ <xref:System.Transactions>公開されるリソースの種類のアクセスを制限する 3 つの信頼のレベルを定義します。 具体的には、<xref:System.Transactions>でマークされていると、部分的に信頼されたコードによってアセンブリを呼び出すことが、`AllowPartiallyTrustedCallers`属性 (APTCA)。 この属性は基本的に、<xref:System.Security.Permissions.SecurityAction.LinkDemand> アクセス許可セットの暗黙的な `FullTrust` を削除します。削除しない場合、これは各種類のパブリックにアクセスできるメソッドに自動的に配置されます。 ただし、種類やメンバーによっては、さらに強力なアクセス許可が必要となります。  
+  
+ 次の種類の一覧し、れていないメンバーによって呼び出し可能で部分的に信頼されたコードが次の宣言セキュリティ属性で装飾されているため。  
+  
+ `PermissionSetAttribute(SecurityAction.LinkDemand, Name := "FullTrust")`  
+  
+ System.Transactions.Transaction.EnlistDurable  
+  
+ System.Transactions.Transaction.EnlistPromotableSinglePhase  
+  
+ System.Transactions.TransactionInterop  
+  
+ System.Transactions.TransactionManager.DistributedTransactionStarted  
+  
+ System.Transactions.TransactionManager.HostCurrentTransactionCallback  
+  
+ System.Transactions.TransactionManager.Reenlist  
+  
+ System.Transactions.TransactionManager.RecoveryComplete  
+  
+ System.Transactions.TransactionScope.TransactionScope (System.Transactions.Transaction,System.TimeSpan,System.Transactions.EnterpriseServicesInteropOption)  
+  
+ M:System.Transactions.TransactionScope.TransactionScope(System.Transactions.TransactionScopeOption,System.Transactions.TransactionOptions,System.Transactions.EnterpriseServicesInteropOption)  
+  
+ 詳細については、さまざまな信頼レベルを参照してください[リソースへのアクセスのセキュリティ信頼レベル](http://msdn.microsoft.com/en-us/8e45acbc-0d81-4f64-9da7-8f766aebff51)です。  
+  
+ コア開発 Technologies\Data Access\Transaction Processing\  
+  
+ 使用する方法の詳細について、<xref:System.Transactions>名前空間、概念説明のドキュメントを参照してください[トランザクション処理](http://msdn.microsoft.com/en-us/ac1637bf-4032-493b-a4e8-0380e54f82f9), の下にある、"コア開発 Technologies\Data Access\Transaction 処理\\"ドキュメントのセクションです。 具体的には、次のトピックで詳細についてを見つけることができます。  
+  
+ [System.Transactions によって提供される機能](http://msdn.microsoft.com/en-us/99cc5ce0-b7fd-4d78-a553-a3dd3f17ed45)  
+  
+ [リソース マネージャーの実装](http://msdn.microsoft.com/en-us/81509719-d579-4530-831e-42e1acdef63e)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

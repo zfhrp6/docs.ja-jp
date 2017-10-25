@@ -1,0 +1,1306 @@
+<Type Name="OdbcDataReader" FullName="System.Data.Odbc.OdbcDataReader">
+  <TypeSignature Language="C#" Value="public sealed class OdbcDataReader : System.Data.Common.DbDataReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcDataReader extends System.Data.Common.DbDataReader" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcDataReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbDataReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ ソースからデータ行の前方参照専用のストリームを読み取る手段を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する、 <xref:System.Data.Odbc.OdbcDataReader>、呼び出す必要があります、<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>のメソッド、<xref:System.Data.Odbc.OdbcCommand>コンス トラクターを直接使用する代わりに、オブジェクトです。  
+  
+ 中に、<xref:System.Data.Odbc.OdbcDataReader>が使用されている、関連付けられた<xref:System.Data.Odbc.OdbcConnection>がビジー状態であるサービス、<xref:System.Data.Odbc.OdbcDataReader>とで実行できるその他の操作がありません、<xref:System.Data.Odbc.OdbcConnection>閉じる以外です。 これは、まで続きます、<xref:System.Data.Odbc.OdbcDataReader.Close%2A>のメソッド、<xref:System.Data.Odbc.OdbcDataReader>と呼びます。 呼び出した後にまでの出力パラメーターを取得することはできませんなど<xref:System.Data.Odbc.OdbcDataReader.Close%2A>です。  
+  
+ 結果データの読み取り中に、別のプロセスまたはスレッドがセットに加えられた変更は、のユーザーに表示される可能性があります、<xref:System.Data.Odbc.OdbcDataReader>です。 ただし、正確な動作は、ドライバーとタイミングに依存するは。  
+  
+ <xref:System.Data.Odbc.OdbcDataReader.IsClosed%2A>および<xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.Odbc.OdbcDataReader>が閉じられます。 場合によっては、呼び出す必要があります<xref:System.Data.Odbc.OdbcDataReader.Close%2A>を呼び出す前に<xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Odbc.OdbcConnection>、 <xref:System.Data.Odbc.OdbcCommand>、および<xref:System.Data.Odbc.OdbcDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.Odbc.OdbcDataReader>、し、<xref:System.Data.Odbc.OdbcConnection>です。  
+  
+ [!code-csharp[Classic WebData OdbcDataReader#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcDataReader/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcDataReader#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcDataReader/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.Odbc.OdbcDataReader" /> オブジェクトを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Data.Odbc.OdbcDataReader.Close%2A>メソッドが完了したらを使用して、<xref:System.Data.Odbc.OdbcDataReader>を使用して、関連付けられている<xref:System.Data.Odbc.OdbcConnection>他の目的。  
+  
+> [!CAUTION]
+>  呼び出す必要はありません`Close`または`Dispose`接続、DataReader、または その他のマネージ オブジェクトで、`Finalize`クラスのメソッドです。 ファイナライザーで、クラスが直接所有されているアンマネージ リソースだけを解放する必要があります。 クラスがアンマネージ リソースを所有していない場合は、クラス定義に `Finalize` メソッドを含めないでください。 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Odbc.OdbcConnection>、 <xref:System.Data.Odbc.OdbcCommand>、および<xref:System.Data.Odbc.OdbcDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.Odbc.OdbcDataReader>、し、<xref:System.Data.Odbc.OdbcConnection>です。  
+  
+ [!code-csharp[Classic WebData IDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public override int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の入れ子の深さを示す値を取得します。</summary>
+        <value>現在の行の入れ子の深さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も外側のテーブルは深さ 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldCount">
+      <MemberSignature Language="C#" Value="public override int FieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.FieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の列の数を取得します。</summary>
+        <value>有効なレコード セット、0 以外に配置されない場合それ以外の場合、現在のレコード内の列の数。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示フィールドを含めます。 非表示フィールドを除外するには、<xref:System.Data.Common.DbDataReader.VisibleFieldCount%2A> を使用します。  
+  
+ 行を返さないクエリを実行した後<xref:System.Data.Odbc.OdbcDataReader.FieldCount%2A>0 を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データ ソースに現在接続されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public override bool GetBoolean (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetBoolean(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetBoolean(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を Boolean として取得します。</summary>
+        <returns>列の値を示すブール値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public override byte GetByte (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8 GetByte(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetByte(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値をバイトとして取得します。</summary>
+        <returns>バイトとして指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override long GetBytes (int i, long dataIndex, byte[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetBytes(int32 i, int64 dataIndex, unsigned int8[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始フィールド内のインデックス。</param>
+        <param name="buffer">バイトのストリームを読み込むバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">読み取るバイト数。</param>
+        <summary>特定のバッファー オフセットを開始位置として、配列として指定した列オフセットからバイトのストリームをバッファーに読み込みます。</summary>
+        <returns>実際に読み取られたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.GetBytes%2A>フィールドに使用できるバイト数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります<xref:System.Data.Odbc.OdbcDataReader.GetBytes%2A>バイトを取得するフィールドからは既に使用されています。 これは、場合がありますなどの場合、<xref:System.Data.Odbc.OdbcDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ Null の値であるバッファーを渡した場合<xref:System.Data.Odbc.OdbcDataReader.GetBytes%2A>フィールドの長さをバイト単位で返します。  
+  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+> [!NOTE]
+>  例外はスローされない場合の値`bufferIndex`が配列の範囲外です。 データは読み取られず、メソッドは 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public override char GetChar (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetChar(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetChar(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>文字として指定された列の値を取得します。</summary>
+        <returns>文字として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public override long GetChars (int i, long dataIndex, char[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetChars(int32 i, int64 dataIndex, char[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <param name="dataIndex">行で読み取り操作を開始する内のインデックス。</param>
+        <param name="buffer">データのコピー先のバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">読み取る文字の数。</param>
+        <summary>特定のバッファー オフセットを開始位置として、配列として、文字のストリームを指定した列オフセットからバッファーに読み取ります。</summary>
+        <returns>実際に読み取られた文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.GetChars%2A>フィールドに使用できる文字数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります<xref:System.Data.Odbc.OdbcDataReader.GetChars%2A>フィールドから文字を取得するは既に使用されています。 これは、場合がありますなどの場合、<xref:System.Data.Odbc.OdbcDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ Null の値であるバッファーを渡した場合<xref:System.Data.Odbc.OdbcDataReader.GetChars%2A>文字数で、フィールドの長さを返します。  
+  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+> [!NOTE]
+>  例外はスローされない場合の値`bufferIndex`が配列の範囲外です。 データは読み取られず、メソッドは 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataTypeName">
+      <MemberSignature Language="C#" Value="public override string GetDataTypeName (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDataTypeName(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetDataTypeName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>ソースのデータ型の名前を取得します。</summary>
+        <returns>ソースのデータ型の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDate">
+      <MemberSignature Language="C#" Value="public DateTime GetDate (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetDate(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetDate(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.DateTime" /> オブジェクトとして取得します。</summary>
+        <returns>指定した列の値、<see cref="T:System.DateTime" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime GetDateTime (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime GetDateTime(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetDateTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.DateTime" /> オブジェクトとして取得します。</summary>
+        <returns>指定した列の値、<see cref="T:System.DateTime" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecimal">
+      <MemberSignature Language="C#" Value="public override decimal GetDecimal (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Decimal GetDecimal(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetDecimal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.Decimal" /> オブジェクトとして取得します。</summary>
+        <returns>指定した列の値、<see cref="T:System.Decimal" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ <xref:System.Data.Odbc.OdbcDataReader.GetDecimal%2A>28 の最大有効桁数があります。 大きな有効桁数を持つ decimal データの取得を試みたとすると、例外が発生します。 1 つのソリューションは、いずれかに 10 進数の型にキャストするクエリを変更するには、小さいデータ型または文字列またはバイナリに変換することです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDouble">
+      <MemberSignature Language="C#" Value="public override double GetDouble (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float64 GetDouble(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetDouble(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>倍精度浮動小数点数として指定された列の値を取得します。</summary>
+        <returns>倍精度浮動小数点数として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ リーダー内の行に対して反復処理を行うために使用できる <see cref="T:System.Collections.IEnumerator" /> を返します。</summary>
+        <returns>データ リーダー内の行に対して反復処理を行うために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、明示的な列挙子を取得することができます、言語をサポートする、`foreach`構築、データ リーダー内の行を反復処理するために直接ループ構造を使用する方が簡単です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetFieldType (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetFieldType(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトのデータ型です。</summary>
+        <returns>オブジェクトのデータ型である <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFloat">
+      <MemberSignature Language="C#" Value="public override float GetFloat (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float32 GetFloat(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetFloat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>単精度浮動小数点数として指定された列の値を取得します。</summary>
+        <returns>単精度浮動小数点数として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGuid">
+      <MemberSignature Language="C#" Value="public override Guid GetGuid (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Guid GetGuid(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetGuid(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>グローバル一意識別子 (GUID) として指定された列の値を取得します。</summary>
+        <returns>GUID として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt16">
+      <MemberSignature Language="C#" Value="public override short GetInt16 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int16 GetInt16(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetInt16(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>16 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>16 ビット符号付き整数として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt32">
+      <MemberSignature Language="C#" Value="public override int GetInt32 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetInt32(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetInt32(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>32 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>32 ビット符号付き整数として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt64">
+      <MemberSignature Language="C#" Value="public override long GetInt64 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetInt64(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetInt64(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を 64 ビット符号付き整数として取得します。</summary>
+        <returns>64 ビット符号付き整数として指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public override string GetName (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetName(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の名前を取得します。</summary>
+        <returns>指定された列の名前を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrdinal">
+      <MemberSignature Language="C#" Value="public override int GetOrdinal (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetOrdinal(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetOrdinal(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">列の名前。</param>
+        <summary>列の名前を指定して、列の序数を取得します。</summary>
+        <returns>0 から始まる列序数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.GetOrdinal%2A>最初に区別する検索を実行します。 失敗した場合、2 番目の検索が行われます。 メソッドをスロー、 `IndexOutOfRange` 0 から始まる列序数が見つからない場合に例外です。  
+  
+ <xref:System.Data.Odbc.OdbcDataReader.GetOrdinal%2A>カタカナの全角区別されません。  
+  
+ 呼び出す効率的ではありません序数に基づく参照は、名前による参照よりも効率的であるため<xref:System.Data.Odbc.OdbcDataReader.GetOrdinal%2A>ループ内で。 代わりに、 <xref:System.Data.Odbc.OdbcDataReader.GetOrdinal%2A> 1 回し、ループ内の整数型の変数に結果を使用し、割り当てます。  
+  
+   
+  
+## Examples  
+ <xref:System.Data.Odbc.OdbcDataReader.GetOrdinal%2A> メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[Classic WebData OdbcDataReader.GetOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcDataReader.GetOrdinal/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcDataReader.GetOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcDataReader.GetOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchemaTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchemaTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetSchemaTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> の列メタデータを記述する <see cref="T:System.Data.Odbc.OdbcDataReader" /> を返します。</summary>
+        <returns>列メタデータを記述する <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.GetSchemaTable%2A>メソッドは、次の順序で各列に関するメタデータを返します。  
+  
+|DataReader 列|説明|  
+|-----------------------|-----------------|  
+|ColumnName|列の名前これは一意でない可能性があります。 列名を特定できない場合は、null 値が返されます。 この名前は、常に、現在のビューまたはコマンド テキスト内の列の最新の名前が反映されます。|  
+|ColumnOrdinal|0 から始まる列の序数。 この列は、null 値を含めることはできません。|  
+|ColumnSize|列の値の可能な最大長。 固定長データ型を使用する列でのデータ型のサイズです。|  
+|NumericPrecision|場合<xref:System.Data.DbType>数値データ型は、これは、列の最大有効桁数です。 精度は、列の定義に依存します。 場合<xref:System.Data.DbType>が数値データを入力し、この列のデータを使用しないでください。 基になる ODBC ドライバーでは、非数値データ型の有効桁数の値を返します、スキーマ テーブルでこの値が使用されます。|  
+|NumericScale|場合<xref:System.Data.DbType>は<xref:System.Data.DbType.Decimal>小数点の右側にある数字の数。 それ以外の場合、これは、null 値です。 基になる ODBC ドライバーでは、非数値データ型の有効桁数の値を返します、スキーマ テーブルでこの値が使用されます。|  
+|DataType|共通言語ランタイムの型にマップ<xref:System.Data.DbType>です。|  
+|プロバイダーの種類|基になるドライバーの種類。|  
+|IsLong|`true`列にバイナリ長オブジェクト (BLOB) が含まれている場合は、非常に長いデータを含むです。 非常に長いデータの定義は、ドライバー固有です。|  
+|AllowDBNull|`true`コンシューマーは、null 値に列を設定することができる場合、または、ドライバーでは、コンシューマーが列を null 値に設定できるかどうかを判断できない場合は。 それ以外の場合は `false`。 Null 値に設定することはできない場合でも、列は、null 値を含む可能性があります。|  
+|IsReadOnly|`true`場合は、列を変更できません。それ以外の場合`false`です。|  
+|IsRowVersion|列に書き込むことができない、永続的な行識別子を含む行を識別する以外の意味のある値を持つ場合に設定します。|  
+|IsUnique|`true`: ベース テーブルの 2 つの行には、この列に同じ値を持つ (BaseTableName で返されるテーブル) ことができます。 IsUnique が確実にある`true`列がそれ自体でキーを表す場合、またはこの列にのみ適用される UNIQUE 型の制約がある場合。<br /><br /> `false`: 列は、ベース テーブルに重複する値を含めることができます。 この列の既定値は`false`します。|  
+|IsKey|`true`: 列は、行セット内の列のセットの 1 つをまとめると、行を一意に識別します。 Iskey 列のセットに設定されて`true`行セット内の行を一意に識別する必要があります。 この列のセットが列の最小セットである必要はありません。 この列のセットは、ベース テーブルの主キー、unique 制約または一意のインデックスから生成される可能性があります。<br /><br /> `false`: 列は、行を一意に識別する必要はありません。|  
+|IsAutoIncrement|`true`列の値を一定の増加に新しい行に割り当てられる場合それ以外の場合`false`です。 この列の既定値は`false`します。|  
+|BaseSchemaName|列を含むデータ ソース内のスキーマの名前です。 ベースのカタログ名を特定できない場合は NULL です。 この列の既定値は、null 値です。|  
+|BaseCatalogName|列を含むデータ ストア内のカタログの名前。 ベースのカタログ名を特定できない場合は NULL です。 この列の既定値は、null 値です。|  
+|BaseTableName|テーブルまたは列を含むデータ ストア内のビューの名前。 ベース テーブル名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|BaseColumnName|データ ストア内の列の名前。 これは、エイリアスが使用された場合に、[ColumnName] 列で返される列名と異なる可能性があります。 ベースの列名を特定できない場合や行セットの列が派生したと一致しない、データの列ストアの場合は、null 値。 この列の既定値は、null 値です。|  
+  
+ 結果セット内のすべての列の行が返されます。  
+  
+ .NET Framework Data Provider for ODBC は、メタデータ情報は、のいずれかの後に、ODBC ドライバーから使用可能な前提としています。 **SQLPrepare**、 **SQLExecute**、または**SQLExecuteDirect**関数が呼び出されます。 "SchemaOnly"のコマンドを正常に動作する動作**SQLPrepare**必要なメタデータ情報を返す必要があります。 すべての ODBC ドライバーでは、この関数をサポートまたは、メタデータ情報が返されます。 このような場合、SchemaTable 内の情報の一部またはすべて失われます。 呼び出した後**SQLPrepare**、データ プロバイダーを呼び出す ODBC **SQLColAttribute**関数には、クエリの結果 (たとえば、IsLong、IsUnique、AllowDBNull、BaseTableName、BaseColumnName) 内の各列に関連するメタデータ情報を検索します。 基になるドライバーがこの情報の一部にも返さない場合、SchemaTable の対応する値は正しく設定されません。  
+  
+ .NET Framework Data Provider for ODBC の呼び出しも**SQLPrimaryKeys**すべてのテーブルのキーの情報を取得します。 データ プロバイダーを呼び出す場合は、基になる ODBC ドライバーは、この関数をサポートしていない、 **SQLStatistics**し、テーブルの主キーとして、一意のインデックスのいずれかを選択します。 これは常に違う結果が必要です。  
+  
+ <xref:System.Data.Odbc.OdbcCommandBuilder>正常に動作するために、テーブルの主キーの正しい id が必要です。 クエリの結果の各列に対して、BaseTableName が返されない場合、.NET Framework Data Provider for ODBC は、クエリに含まれるテーブルの名前を検索する SQL ステートメントを解析しようとします。 これは、UPDATE、INSERT、DELETE、および、単純な SELECT ステートメントですがストアド プロシージャや結合に基づいて SELECT ステートメントではなく機能します。 一部またはすべてのスキーマ情報がこのテーブルから、不足している場合、<xref:System.Data.Odbc.OdbcCommandBuilder>は正しく動きません、適切な INSERT、UPDATE、または DELETE ステートメントを自動的に生成するが不足しているスキーマ情報があるためです。  
+  
+ メタデータ列は、正しい情報を返すことは、呼び出す必要があるかどうかを確認する<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>動作パラメーターが必要な KeyInfo に設定します。 それ以外の場合、既定値、null、または不適切なデータを返すスキーマ テーブルの列のいくつか可能性があります。  
+  
+ Oracle ODBC ドライバーを経由して ODBC.NET を使用する場合、エイリアス化キー列はキーとして認識されません。 これにより、IsKey および IsUnique 列、odbcdatareader がのスキーマ テーブルが影響します。 更新ロジックを生成する OdbcCommandBuilder の機能にも影響します。 主キー列の別名を使用していないことを検討してください。  
+  
+> [!NOTE]
+>  Microsoft Jet ODBC driver は、常に、一意のインデックスとは null 許容かどうかどうかに関係なく null 値許容と主キー列を返します。 ドライバーも主キー情報は返されません。一意のインデックスとそれらの間を区別することがなく、主キー列を含む、その列の一覧のみを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.Odbc.OdbcDataReader" /> が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public override string GetString (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetString(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.String" />です。</summary>
+        <returns><see cref="T:System.String" /> として指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は、ODBC ドライバーの基になる機能に基づいて実行されます。 変換がサポートされていない場合、メソッドの呼び出しは失敗します。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcDataReader.IsDBNull%2A>にこのメソッドを呼び出す前に null 値を検索します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTime">
+      <MemberSignature Language="C#" Value="public TimeSpan GetTime (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TimeSpan GetTime(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.TimeSpan" /> オブジェクトとして取得します。</summary>
+        <returns>指定した列の値、<see cref="T:System.TimeSpan" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>ネイティブ形式で指定された序数の列の値を取得します。</summary>
+        <returns>戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る<xref:System.DBNull>null データベース列にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public override int GetValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.GetValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">型の配列<see cref="T:System.Object" />属性列のコピー先です。</param>
+        <summary>現在の行の列の値を持つオブジェクトの配列を追加します。</summary>
+        <returns>配列に含まれる <see cref="T:System.Object" /> のインスタンスの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのアプリケーションに対して、<xref:System.Data.Odbc.OdbcDataReader.GetValues%2A>メソッドが各列を個別に取得する代わりに、すべての列を取得するための効率的な方法を提供します。  
+  
+ 渡すことができます、<xref:System.Object>結果の行に含まれる列数より少ないを格納する配列。 データの量のみ、<xref:System.Object>配列では、配列にコピーを保持します。 渡すことも、<xref:System.Object>配列の長さが、結果の行に含まれる列数よりも多い。  
+  
+ このメソッドが戻る<xref:System.DBNull>null データベース列にします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[OdbcDataReader_GetValues#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/odbcdatareader_getvalues/cs/source.cs#1)]
+ [!code-vb[OdbcDataReader_GetValues#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/odbcdatareader_getvalues/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasRows">
+      <MemberSignature Language="C#" Value="public override bool HasRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasRows" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.HasRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Data.Odbc.OdbcDataReader" /> 1 つまたは複数の行が含まれています。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Data.Odbc.OdbcDataReader" /> 1 つまたは複数の行が含まれます。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public override bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.Data.Odbc.OdbcDataReader" />が閉じられます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.Odbc.OdbcDataReader" />が閉じられた場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.IsClosed%2A>および<xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.Odbc.OdbcDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNull">
+      <MemberSignature Language="C#" Value="public override bool IsDBNull (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDBNull(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.IsDBNull(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>存在しない値や欠落値が列に含まれているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定された列の値と等しい場合<see cref="T:System.DBNull" />それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーの発生を避けるため、このメソッドを呼び出して、型指定されたを呼び出す前に null 列値は Get メソッドを探します (たとえば、 <xref:System.Data.Odbc.OdbcDataReader.GetByte%2A>、<xref:System.Data.Odbc.OdbcDataReader.GetChar%2A>など)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[int i] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">列の序数。</param>
+        <summary>序数の列を指定して、ネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IndexOutOfRangeException">渡されたインデックスは 0 から <see cref="P:System.Data.IDataRecord.FieldCount" /> の範囲外にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string value] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">列の名前です。</param>
+        <summary>列の名前を指定されたネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字小文字を区別ルックアップが最初に実行されます。 失敗した場合、2 番目の検索が行われます。  
+  
+ このメソッドは、カタカナの全角を区別します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定した名前の列は見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResult">
+      <MemberSignature Language="C#" Value="public override bool NextResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool NextResult() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.NextResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>進めます、<see cref="T:System.Data.Odbc.OdbcDataReader" />バッチの SQL ステートメントの結果を読み込むときは、次の結果にします。</summary>
+        <returns>
+          <see langword="true" />次の結果セットがある場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチの SQL ステートメントを実行することによって生成される複数の結果を処理するために使用します。  
+  
+ 既定では、<xref:System.Data.Odbc.OdbcDataReader>は最初の結果上に位置します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcDataReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcDataReader" /> を次のレコードに進めます。</summary>
+        <returns>
+          次の行が存在する場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の位置、<xref:System.Data.Odbc.OdbcDataReader>最初のレコードの前に、です。 そのため、呼び出す必要があります<xref:System.Data.Odbc.OdbcDataReader.Read%2A>をデータへのアクセスを開始します。  
+  
+ 中に、<xref:System.Data.Odbc.OdbcDataReader>が使用されている、関連付けられた<xref:System.Data.Odbc.OdbcConnection>機能を提供するまで、呼び出しがビジー<xref:System.Data.Odbc.OdbcDataReader.Close%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Odbc.OdbcConnection>、 <xref:System.Data.Odbc.OdbcCommand>、および<xref:System.Data.Odbc.OdbcDataReader>です。 例は、コンソールに書き出し、データを読み取ります。 最後に、例、 <xref:System.Data.Odbc.OdbcDataReader>、し、<xref:System.Data.Odbc.OdbcConnection>です。  
+  
+ [!code-csharp[Classic WebData IDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData IDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData IDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordsAffected">
+      <MemberSignature Language="C#" Value="public override int RecordsAffected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecordsAffected" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcDataReader.RecordsAffected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL ステートメントの実行によって変更、挿入、または削除された行の数を取得します。</summary>
+        <value>変更、挿入、または削除された行の数。 SELECT ステートメントに達すると-1影響を受けた行がないか、ステートメントが失敗した場合は 0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>プロパティが設定されていないすべての行が読み取られ、<xref:System.Data.Odbc.OdbcDataReader>です。  
+  
+ このプロパティの値は、累積的なです。 たとえば、バッチ モードの値に 2 つのレコードが挿入<xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>は 2 になります。  
+  
+ <xref:System.Data.Odbc.OdbcDataReader.IsClosed%2A>および<xref:System.Data.Odbc.OdbcDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.Odbc.OdbcDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

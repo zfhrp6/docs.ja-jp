@@ -1,0 +1,110 @@
+<Type Name="DirectoryServicesPermission" FullName="System.DirectoryServices.DirectoryServicesPermission">
+  <TypeSignature Language="C#" Value="public sealed class DirectoryServicesPermission : System.Security.Permissions.ResourcePermissionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DirectoryServicesPermission extends System.Security.Permissions.ResourcePermissionBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.DirectoryServicesPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.ResourcePermissionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.DirectoryServicesPermission" />クラスを使用するコード アクセス セキュリティ アクセス許可を制御の<see cref="N:System.DirectoryServices" />します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryServicesPermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryServicesPermission.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryServicesPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryServicesPermission (System.DirectoryServices.DirectoryServicesPermissionEntry[] permissionAccessEntries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.DirectoryServicesPermissionEntry[] permissionAccessEntries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryServicesPermission.#ctor(System.DirectoryServices.DirectoryServicesPermissionEntry[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccessEntries" Type="System.DirectoryServices.DirectoryServicesPermissionEntry[]" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccessEntries"><see cref="T:System.DirectoryServices.DirectoryServicesPermissionEntry" /> オブジェクトの配列。 <see cref="P:System.DirectoryServices.DirectoryServicesPermission.PermissionEntries" />プロパティがこの値に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryServicesPermission" />指定したアクセス許可のアクセス レベルのエントリを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定された値、<paramref name="permissionAccessEntries" />パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryServicesPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryServicesPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定したアクセス許可状態を使用して、<see cref="T:System.DirectoryServices.DirectoryServicesPermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="State" /> パラメーターが <see cref="T:System.Security.Permissions.PermissionState" /> の正しい値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryServicesPermission (System.DirectoryServices.DirectoryServicesPermissionAccess permissionAccess, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.DirectoryServicesPermissionAccess permissionAccess, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryServicesPermission.#ctor(System.DirectoryServices.DirectoryServicesPermissionAccess,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.DirectoryServices.DirectoryServicesPermissionAccess" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.DirectoryServices.DirectoryServicesPermissionAccess" /> 値のいずれか。</param>
+        <param name="path">それ以外の場合、権限を適用する、ADsPath と呼ばれる、Active Directory ドメイン サービス オブジェクトのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryServicesPermission" />した指定したアクセス レベルと Active Directory ドメイン サービス ノードのパスを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionEntries">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryServicesPermission.PermissionEntries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryServicesPermissionEntryCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス許可のアクセス許可エントリのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.DirectoryServicesPermissionEntryCollection" />このアクセス許可のアクセス許可エントリを含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

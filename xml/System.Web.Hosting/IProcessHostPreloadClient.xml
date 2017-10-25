@@ -1,0 +1,57 @@
+<Type Name="IProcessHostPreloadClient" FullName="System.Web.Hosting.IProcessHostPreloadClient">
+  <TypeSignature Language="C#" Value="public interface IProcessHostPreloadClient" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProcessHostPreloadClient" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IProcessHostPreloadClient" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>IIS 7.0 で実行されている ASP.NET アプリケーション内の型を事前読み込みするために、型で実装できるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、HTTP 以外のアプリケーションは、WCF アプリケーションで使用するため、主に目的としています。 ASP.NET Web アプリケーションをプリロードする ASP.NET 開発者がでシミュレートされた HTTP 要求を使用する必要があります[!INCLUDE[iisver](~/includes/iisver-md.md)]と組み合わせて、 `Application_Start` Global.asax ファイル内のメソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Hosting.IProcessHostPreloadClient>型およびそのメソッドで実行されるアプリケーションにのみ適用[!INCLUDE[iisver](~/includes/iisver-md.md)]と[!INCLUDE[win7](~/includes/win7-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Preload">
+      <MemberSignature Language="C#" Value="public void Preload (string[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Preload(string[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IProcessHostPreloadClient.Preload(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">データにアプリケーションを初期化します。 このパラメーターを指定できます<see langword="null" />または空の配列。</param>
+        <summary>アプリケーションをプリロードするために必要な初期化データを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`parameters`できます`null`長さ 0 の配列、またはデータが設定された配列。  
+  
+> [!NOTE]
+>  <xref:System.Web.Hosting.IProcessHostPreloadClient>型およびそのメソッドで実行されるアプリケーションにのみ適用[!INCLUDE[iisver](~/includes/iisver-md.md)]と[!INCLUDE[win7](~/includes/win7-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

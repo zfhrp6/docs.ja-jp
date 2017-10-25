@@ -1,0 +1,275 @@
+<Type Name="DataSource" FullName="Microsoft.Build.Framework.XamlTypes.DataSource">
+  <TypeSignature Language="C#" Value="public sealed class DataSource : System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataSource extends System.Object implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.XamlTypes.DataSource" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>グループ化と場所を表す、<see cref="T:Microsoft.Build.Framework.XamlTypes.BaseProperty" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを手動でインスタンス化する場合は、呼び出し<xref:Microsoft.Build.Framework.XamlTypes.DataSource.BeginInit%2A>オブジェクトの最初のプロパティを設定する前に、<xref:Microsoft.Build.Framework.XamlTypes.DataSource.EndInit%2A>の最後のプロパティを設定した後です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.DataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定のコンストラクター 正しい XAML 逆シリアル化が必要です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.DataSource.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>「<see cref="M:System.ComponentModel.ISupportInitialize.BeginInit" />」を参照してください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.XamlTypes.DataSource.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>「<see cref="M:System.ComponentModel.ISupportInitialize.EndInit" />」を参照してください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasConfigurationCondition">
+      <MemberSignature Language="C#" Value="public bool HasConfigurationCondition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasConfigurationCondition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.HasConfigurationCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティが構成に依存するであるが永続化の場所でプロパティの定義に関連付けられている構成状態の有無によって示されるかどうかを決定するフラグを設定します。</summary>
+        <value>返します<see langword="true" />プロパティが構成に依存する、それ以外の場合は<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは省略可能で、既定値`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public string ItemType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースの項目の種類を設定します。</summary>
+        <value>データ ソースの項目の種類を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:Microsoft.Build.Framework.XamlTypes.BaseProperty>アイテム定義のメタデータは、または項目のメタデータ、このフィールドはそれぞれ、項目の定義または、項目の項目の種類を指定します。 一般的なプロパティは、このフィールドを設定しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティ/アイテム定義のメタデータが所属する MSBuild プロパティ グループ/項目定義グループのラベルを設定します。</summary>
+        <value>プロパティまたは項目のグループのラベルを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、空の文字列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MSBuildTarget">
+      <MemberSignature Language="C#" Value="public string MSBuildTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MSBuildTarget" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.MSBuildTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または読み取り専用のプロパティまたはこのデータ ソースの項目を読み取る前に実行する必要がある MSBuild のターゲットのセミコロン区切りのリストを設定します。</summary>
+        <value>セミコロンで区切られた一覧を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistedName">
+      <MemberSignature Language="C#" Value="public string PersistedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PersistedName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.PersistedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのプロパティの値の読み取り/書き込みに使用される実際の MSBuild プロパティ名を設定します。</summary>
+        <value>このプロパティの値の読み取り/書き込みに使用される実際の MSBuild プロパティ名を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみに適用できる<xref:Microsoft.Build.Framework.XamlTypes.DataSource>オブジェクト プロパティにアタッチします。  
+  
+ 保存される名前場合、通常は、プロパティ名と同じように、<xref:Microsoft.Build.Framework.XamlTypes.Rule>し、このプロパティの値のままにすることがそのためには、既定値は`null`します。  
+  
+ プロパティ名は一意である必要がありますが、必要でない一意 (項目の種類などのデータ ソースの違いがその他の) により永続化ストアために、時間の XAML ファイル内で一意であるが、ファイルのプロパティを MSBuild で永続化する方法を変更せずにルール プロパティ名を変更しなければならない場合があります。  
+  
+ このプロパティが便利にそのような場合は。ここでプロパティ名は異ならなければなりません通常使用される名前、プロジェクト システムとの互換性を維持するために特殊なビルド環境で役に立ちますもあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persistence">
+      <MemberSignature Language="C#" Value="public string Persistence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Persistence" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.Persistence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのデータ ソースの記憶域の場所を設定します。</summary>
+        <value>このデータ ソースの記憶域の場所を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは必須ではあり、カルチャに依存しません。  
+  
+ 現在の許容値は`ProjectFile`と`UserFile`です。 `ProjectFile`によって、プロパティ値に書き込み、プロジェクトのマニフェスト ファイルまたは内のどのノードによって、プロパティ シートから読み取る**ソリューション エクスプ ローラー**または**プロパティ**ウィンドウは、プロパティ ページの UI の起動に使用します。 `UserFile`プロパティの値に書き込み、.user ファイルからの読み取りが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceOfDefaultValue">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation SourceOfDefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation SourceOfDefaultValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.SourceOfDefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="T:Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation" />このデータ ソースの既定値の場所を示します。</summary>
+        <value><see cref="T:Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceType">
+      <MemberSignature Language="C#" Value="public string SourceType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.XamlTypes.DataSource.SourceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド時にデータを処理する方法を指定すると、ソースのデータ型を設定します。</summary>
+        <value>データ型を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、値を持つ`Item`、 `ItemDefinition`、または`Property`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

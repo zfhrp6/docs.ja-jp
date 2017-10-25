@@ -1,0 +1,314 @@
+<Type Name="ContextStack" FullName="System.ComponentModel.Design.Serialization.ContextStack">
+  <TypeSignature Language="C#" Value="public sealed class ContextStack" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContextStack extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ContextStack" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入れ子になったシリアライザーに情報を使用できるように、シリアライザーで使用できるスタック オブジェクトを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアライザーによっては、自身の状態を正しく持続するために、オブジェクトのコンテキストに関する情報を必要とします。 <xref:System.ComponentModel.Design.Serialization.ContextStack>クラスが別のシリアライザーがアクセスできる場所スタックにシリアル化するオブジェクトのコンテキストに関するデータを設定するシリアライザーを使用します。 値、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Context%2A>によって提供されるプロパティ、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>のいくつかのシリアライザーを使用して情報を共有します。  
+  
+ コンテキスト スタック便利なデザイン ドキュメントのシリアル化のプロセスを深く入れ子にすることができます、およびオブジェクトの入れ子の各レベルにはオブジェクトの状態を正しく維持するためのコンテキスト情報が必要です。 シリアライザーは、入れ子になったシリアライザーを呼び出す前に、スタックにコンテキストのオブジェクトを設定できます。 入れ子になったシリアライザーへの呼び出しが返された後に設定するシリアライザーによってスタックに設定された各オブジェクトを削除してください。  
+  
+ 通常、スタック上のオブジェクトには、現在のオブジェクトのシリアル化するコンテキストについての情報が含まれて。 親シリアライザーは、適切なシリアライザーを呼び出しますコンテキスト情報をシリアル化するのには、次のオブジェクトはスタックに追加、および、このシリアライザーは、オブジェクトの実行が完了したら、スタックからコンテキスト情報を削除します。 このスタックにプッシュされるどのようなオブジェクトを決定するには、各シリアライザーの実装の責任です。  
+  
+ たとえば、プロパティを持つオブジェクトが名前付き`Enabled`のデータ型を持つ<xref:System.Boolean>します。 シリアライザーは、この値をデータ ストリームに書き込み場合、は、コンテキストまたはデータが書き込まれてプロパティの型を含める必要があります。 シリアライザーがこの情報は、ただし、書き込むのみから指示されたため、<xref:System.Boolean>値。 親のシリアライザーをプッシュできるシリアライザーにこの情報を提供する、<xref:System.ComponentModel.PropertyDescriptor>を指す、`Enabled`プロパティ コンテキスト スタックにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.Design.Serialization.ContextStack>プッシュし、10 個の値を削除します。  
+  
+ [!code-cpp[ContextStackExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#1)]
+ [!code-csharp[ContextStackExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#1)]
+ [!code-vb[ContextStackExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContextStackExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextStack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ContextStack.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.ContextStack" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例で、<xref:System.ComponentModel.Design.Serialization.ContextStack>インスタンス。  
+  
+ [!code-cpp[ContextStackExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#2)]
+ [!code-csharp[ContextStackExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#2)]
+ [!code-vb[ContextStackExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContextStackExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (object context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(object context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ContextStack.Append(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">スタックに追加するコンテキスト オブジェクト。</param>
+        <summary>スタックの一番上にプッシュするのではなく、スタックの末尾にオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、他のシリアライザーがない順序で削除するコンテキスト データ オブジェクトを追加することによって通信するためにシリアライザーを使用します。 その他のすべてのオブジェクトを削除することがなく、スタックの末尾に追加されたオブジェクトを削除する方法はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public object Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Current" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ContextStack.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタック上には、現在のオブジェクトを取得します。</summary>
+        <value>スタック上の現在のオブジェクトまたは<see langword="null" />オブジェクトにプッシュされていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のオブジェクトは、スタックの上部にあるオブジェクトまたはスタックに最後に追加されたオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int level] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ContextStack.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="level" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="level">スタック上で取得するオブジェクトのレベル。 レベル 0 は、スタックの一番上、レベル 1 次、ダウンします。 このレベルは、0 以上にする必要があります。 レベルがかどうか、スタック上のレベル数より大きく、それを返します<see langword="null" />です。</param>
+        <summary>スタック上で、指定されたレベル オブジェクトを取得します。</summary>
+        <value>指定されたレベルでは、スタック上のオブジェクトまたは<see langword="null" />そのレベルでオブジェクトが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="level" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[Type type] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Type)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.ContextStack.Item(System.Type)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">コンテキスト スタックから取得する型。</param>
+        <summary>継承されるか、指定された型を実装するスタックの最初のオブジェクトを取得します。</summary>
+        <value>継承されるか、指定された型を実装して、スタックの最初のオブジェクトまたは<see langword="null" />型を実装するスタック上のオブジェクトがない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装または継承するオブジェクトを検索、スタックの各レベルのチェックを行う`type`です。 一致が見つかった場合が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pop">
+      <MemberSignature Language="C#" Value="public object Pop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Pop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ContextStack.Pop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>その値を返す、スタックから現在のオブジェクトを削除します。</summary>
+        <returns>スタックから削除されたオブジェクト<see langword="null" />オブジェクトがない場合、スタックにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示しますから値を削除する、<xref:System.ComponentModel.Design.Serialization.ContextStack>です。  
+  
+ [!code-cpp[ContextStackExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#4)]
+ [!code-csharp[ContextStackExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#4)]
+ [!code-vb[ContextStackExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContextStackExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Push">
+      <MemberSignature Language="C#" Value="public void Push (object context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Push(object context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ContextStack.Push(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">スタックにプッシュするコンテキスト オブジェクト。</param>
+        <summary>プッシュ、またはオブジェクトを配置して、指定したスタックにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、プッシュの値を示します、<xref:System.ComponentModel.Design.Serialization.ContextStack>です。  
+  
+ [!code-cpp[ContextStackExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ContextStackExample/CPP/class1.cpp#3)]
+ [!code-csharp[ContextStackExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ContextStackExample/CS/class1.cs#3)]
+ [!code-vb[ContextStackExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ContextStackExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

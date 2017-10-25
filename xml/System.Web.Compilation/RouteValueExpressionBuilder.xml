@@ -1,0 +1,190 @@
+<Type Name="RouteValueExpressionBuilder" FullName="System.Web.Compilation.RouteValueExpressionBuilder">
+  <TypeSignature Language="C#" Value="public class RouteValueExpressionBuilder : System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteValueExpressionBuilder extends System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.RouteValueExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Compilation.ExpressionBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionEditor("System.Web.UI.Design.RouteValueExpressionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Compilation.ExpressionPrefix("Routes")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルーティング ページ内の指定した URL パラメーターに対応する値を取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.RouteValueExpressionBuilder>クラスでは、ルーティングされたページの URL パラメーターのいずれかの値にサーバー コントロールのプロパティを設定するマークアップを使用することです。  
+  
+   
+  
+## Examples  
+ 次の例は、マークアップを使用して、URL パラメーターの値を表示する方法を示しています。`searchterm`です。 使用して、ルートが定義されている`http://www.contoso.com/search/{searchterm}`as URL パターン。  
+  
+```  
+<asp:Label ID="Label1" runat="server"  
+    text="<%$ RouteValue:searchterm %>">  
+</asp:Label>  
+```  
+  
+ ページの URL を使用して要求が場合`http://www.contoso.com/search/Bicycles`、<xref:System.Web.UI.WebControls.Label>コントロールには「自転車」が表示されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteValueExpressionBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.RouteValueExpressionBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.RouteValueExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.RouteValueExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="target">式がバインドされているコントロール。</param>
+        <param name="entry">このプロパティは、式のバインド先です。</param>
+        <param name="parsedData">(このパラメーターはこの実装ではない使用)。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>指定されたルート キーに対応する値を取得します。</summary>
+        <returns>現在のページに指定されている URL パラメーターに対応する値。 メソッドを返します<see langword="null" />場合<paramref name="target" />は<see langword="null" />それから派生していない場合または<see cref="T:System.Web.UI.Control" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET はときに、フォームの式は、このメソッドを呼び出して`<%$ RouteValue:urlparameter %>`コンパイルなし ページで発生しました。 このメソッドは、<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドを呼び出して、<xref:System.Web.Compilation.RouteValueExpressionBuilder.GetRouteValue%2A>メソッドです。 取得、<xref:System.Web.UI.Page>オブジェクトから、`context`パラメーターを式、コントロールの種類と名前を取得、プロパティから、`entry`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public override System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.RouteValueExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="entry">このプロパティは、式のバインド先です。</param>
+        <param name="parsedData">によって返されるを表すオブジェクトが、データを解析<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">コントロールまたはページのプロパティです。</param>
+        <summary>生成されたページ クラスのプロパティの割り当てを実行するために使用されるコード式を返します。</summary>
+        <returns>任意の式を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、CodeDOM のページまたはコントロールの作成時に呼び出されます。 <xref:System.CodeDom.CodeExpression>返されるオブジェクトが生成されたページ クラスのプロパティの割り当てを追加するコード式を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRouteValue">
+      <MemberSignature Language="C#" Value="public static object GetRouteValue (System.Web.UI.Page page, string key, Type controlType, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetRouteValue(class System.Web.UI.Page page, string key, class System.Type controlType, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.RouteValueExpressionBuilder.GetRouteValue(System.Web.UI.Page,System.String,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="page">現在のページ。</param>
+        <param name="key">URL のパラメーターです。</param>
+        <param name="controlType">式にバインドされるコントロールの型。</param>
+        <param name="propertyName">式で設定されるプロパティの名前。</param>
+        <summary>指定した URL パラメーターに対応する値を取得します。</summary>
+        <returns>現在のページの指定した URL パラメーターに対応する値。 場合<paramref name="page" />は<see langword="null" />場合は、<see cref="P:System.Web.UI.Page.RouteData" />プロパティの<paramref name="page" />は<see langword="null" />、または<paramref name="key" />が空または<see langword="null" />、メソッドを返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された適切な値を取得`key`値を使用して、<xref:System.Web.UI.Page.RouteData%2A>プロパティ`page`です。 次を使用して、`controlType`と`propertyName`を取得する値を正しい型に変換するために、適切な型コンバーターを検索する値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEvaluate">
+      <MemberSignature Language="C#" Value="public override bool SupportsEvaluate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.RouteValueExpressionBuilder.SupportsEvaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルされていない ページで、式を評価できるかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.RouteValueExpressionBuilder.SupportsEvaluate%2A>プロパティを示すかどうか、<xref:System.Web.Compilation.RouteValueExpressionBuilder.EvaluateExpression%2A>メソッドは、コンパイルされていない ページで、式の値を返すために、クラスに実装されています。 <xref:System.Web.Compilation.RouteValueExpressionBuilder>クラスがコンパイルされていないページで、式を評価することができます。 そのため、常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

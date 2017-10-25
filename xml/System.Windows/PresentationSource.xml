@@ -1,0 +1,431 @@
+<Type Name="PresentationSource" FullName="System.Windows.PresentationSource">
+  <TypeSignature Language="C#" Value="public abstract class PresentationSource : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract PresentationSource extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.PresentationSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>相互運用のシナリオの一部として別のテクノロジからコンテンツを表示するクラスの抽象基本を提供します。 さらに、このクラスは、基本的なビジュアル層のプレゼンテーションのアーキテクチャと同様に、これらのソースを操作するための静的メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">このクラスから派生します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PresentationSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスのコンス トラクターによって呼び出されたときに、基本クラスの値の初期化を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSource">
+      <MemberSignature Language="C#" Value="protected void AddSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.AddSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加、<see cref="T:System.Windows.PresentationSource" />既知プレゼンテーション ソースのリストにクラスのインスタンスを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追跡する必要があることを示すために、派生クラスによって呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddSourceChangedHandler">
+      <MemberSignature Language="C#" Value="public static void AddSourceChangedHandler (System.Windows.IInputElement element, System.Windows.SourceChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddSourceChangedHandler(class System.Windows.IInputElement element, class System.Windows.SourceChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.AddSourceChangedHandler(System.Windows.IInputElement,System.Windows.SourceChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+        <Parameter Name="handler" Type="System.Windows.SourceChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">ハンドラーを追加する要素。</param>
+        <param name="handler">追加するハンドラーの実装です。</param>
+        <summary>ハンドラーを追加、<see langword="SourceChanged" />指定した要素にイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントの構文のブロックの状態に関係なくが正当ないいえ[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]添付プロパティの使用法。 ハンドラーを追加しないで[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]、し、コード内のハンドラーは、プレゼンテーション用のホストとして機能するオブジェクトにだけ適用する必要があります (<xref:System.Windows.PresentationSource> ) のコンテンツ。 このようなハンドラーは、オブジェクトの初期化中にのみ接続されている必要があり、Dispose メソッドまたは同等のオブジェクトのクリーンアップで明示的に削除する必要があります。  
+  
+ 場合でも、ルーティングされたイベントは、このイベントは意識このイベントを処理する一般的なアプリケーション シナリオ内の要素数が比較的小さいため、通常のルーティング イベントの動作とは異なるに特別な制限があります。  
+  
+-   使用することはできません、<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement><xref:System.Windows.UIElement.AddHandler%2A>ハンドラーを追加する方法です。 使用する必要があります<xref:System.Windows.PresentationSource.AddSourceChangedHandler%2A>です。  
+  
+-   [!INCLUDE[TLA#tla_cshrp](~/includes/tlasharptla-cshrp-md.md)] `+=`と`-=`イベント ハンドラーの構文、および関連する言語固有のハンドラーの構文はサポートされず、イベント自体がパブリックとして公開されていないためです。 のみ、<xref:System.Windows.PresentationSource>ユーティリティ メソッドを追加およびサポートは、直接、ハンドラーを削除します。  
+  
+-   クラスのハンドラーを指定することはできません。 具体的には、呼び出すことができません<xref:System.Windows.EventManager.RegisterClassHandler%2A>クラス コンス トラクターでは、このイベントに対して SourceChanged の識別子フィールドが存在しますが、識別子は public ではないためです。  
+  
+-   すべての登録済みハンドラー、ハンドラーの 1 つが、引数を処理済みとしてマークする場合でも、SourceChanged イベントが表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">呼び出すか、このメソッドを実装します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContentRenderedListeners">
+      <MemberSignature Language="C#" Value="protected void ClearContentRenderedListeners ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ClearContentRenderedListeners() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.ClearContentRenderedListeners" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーの一覧を設定、<see cref="E:System.Windows.PresentationSource.ContentRendered" />イベント<see langword="null" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompositionTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.CompositionTarget CompositionTarget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.CompositionTarget CompositionTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PresentationSource.CompositionTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CompositionTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース内に表示されているビジュアルのビジュアルのターゲットを取得します。</summary>
+        <value>ビジュアルのターゲット (のインスタンス、<see cref="T:System.Windows.Media.CompositionTarget" />派生クラス)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの戻り値の実装に依存<xref:System.Windows.PresentationSource.GetCompositionTargetCore%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスは、型固有の値を提供するには、このプロパティをシャドウするを選択できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentRendered">
+      <MemberSignature Language="C#" Value="public event EventHandler ContentRendered;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ContentRendered" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.PresentationSource.ContentRendered" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツがレンダリングされ、ユーザー操作を受け入れる準備が整ったときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentSources">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable CurrentSources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IEnumerable CurrentSources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PresentationSource.CurrentSources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソースの一覧を返します。</summary>
+        <value>弱い参照の一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されると、返された一覧がソースの一覧の読み取り専用、スレッド セーフであるコピーに対する列挙子をサポート<xref:System.Windows.PresentationSource.AddSource%2A>です。  
+  
+ 列挙子は、一覧のデッド弱い参照をスキップします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ソースを取得します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromDependencyObject">
+      <MemberSignature Language="C#" Value="public static System.Windows.PresentationSource FromDependencyObject (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.PresentationSource FromDependencyObject(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.FromDependencyObject(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.PresentationSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject"><see cref="T:System.Windows.DependencyObject" />のソースを検索します。</param>
+        <summary>これで、ソースを返します、指定された<see cref="T:System.Windows.DependencyObject" />が表示されます。</summary>
+        <returns><see cref="T:System.Windows.PresentationSource" />で依存関係オブジェクトが表示されます。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">呼び出すか、このメソッドを実装します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromVisual">
+      <MemberSignature Language="C#" Value="public static System.Windows.PresentationSource FromVisual (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.PresentationSource FromVisual(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.FromVisual(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.PresentationSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" />のソースを検索します。</param>
+        <summary>これで、ソースを返します、指定された<see cref="T:System.Windows.Media.Visual" />が表示されます。</summary>
+        <returns><see cref="T:System.Windows.PresentationSource" />をビジュアルが表示されてでまたは<see langword="null" />場合<paramref name="visual" />が破棄されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visual" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">呼び出すか、このメソッドを実装します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompositionTargetCore">
+      <MemberSignature Language="C#" Value="protected abstract System.Windows.Media.CompositionTarget GetCompositionTargetCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Media.CompositionTarget GetCompositionTargetCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.GetCompositionTargetCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CompositionTarget</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、指定したソースのビジュアルのターゲットを返します。</summary>
+        <returns>返します、<see cref="T:System.Windows.Media.CompositionTarget" />ビジュアルを表示するためのターゲットされています。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>値を宣言するには、このメソッドをオーバーライドする、<see cref="P:System.Windows.PresentationSource.CompositionTarget" />は読み取り専用プロパティを返します。  
+  
+ オーバーライドの種類に固有のインスタンスを返す必要があります、<see cref="T:System.Windows.Media.CompositionTarget" />相互運用シナリオに使用されるクラスの型を派生します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisposed">
+      <MemberSignature Language="C#" Value="public abstract bool IsDisposed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDisposed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PresentationSource.IsDisposed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、オブジェクトが破棄されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、オブジェクトを破棄するとします。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスの実装が期待される<see cref="T:System.IDisposable" />または同等の動作を提供します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSource">
+      <MemberSignature Language="C#" Value="protected void RemoveSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.RemoveSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="T:System.Windows.PresentationSource" />既知プレゼンテーション ソースの一覧から派生したクラスのインスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSourceChangedHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveSourceChangedHandler (System.Windows.IInputElement e, System.Windows.SourceChangedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveSourceChangedHandler(class System.Windows.IInputElement e, class System.Windows.SourceChangedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.RemoveSourceChangedHandler(System.Windows.IInputElement,System.Windows.SourceChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.IInputElement" />
+        <Parameter Name="handler" Type="System.Windows.SourceChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="e">ハンドラーを削除する要素。</param>
+        <param name="handler">削除するハンドラーの実装です。</param>
+        <summary>ハンドラーを削除、<see langword="SourceChanged" />指定した要素からのイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合でも、ルーティングされたイベントは、このイベントは意識このイベントを処理する一般的なアプリケーション シナリオ内の要素数が比較的小さいため、通常のルーティング イベントの動作とは異なるに特別な制限があります。  
+  
+-   使用することはできません、<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement><xref:System.Windows.UIElement.RemoveHandler%2A>ハンドラーを削除する方法です。 使用する必要があります<xref:System.Windows.PresentationSource.RemoveSourceChangedHandler%2A>です。  
+  
+-   [!INCLUDE[TLA#tla_cshrp](~/includes/tlasharptla-cshrp-md.md)] `+=`と`-=`イベント ハンドラーの構文、およびその他の言語固有のハンドラーの構文はサポートされず、イベント自体がパブリックとして公開されていないためです。 のみ、<xref:System.Windows.PresentationSource>ユーティリティ メソッドを追加およびサポートは、直接、ハンドラーを削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootChanged">
+      <MemberSignature Language="C#" Value="protected void RootChanged (System.Windows.Media.Visual oldRoot, System.Windows.Media.Visual newRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RootChanged(class System.Windows.Media.Visual oldRoot, class System.Windows.Media.Visual newRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PresentationSource.RootChanged(System.Windows.Media.Visual,System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldRoot" Type="System.Windows.Media.Visual" />
+        <Parameter Name="newRoot" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="oldRoot">古いルート<see cref="T:System.Windows.Media.Visual" />です。</param>
+        <param name="newRoot">新しいルート<see cref="T:System.Windows.Media.Visual" />です。</param>
+        <summary>通知を提供するルート<see cref="T:System.Windows.Media.Visual" />が変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスこのメソッドを呼び出すことを示すルートの<xref:System.Windows.Media.Visual>が変更されました。  
+  
+ このメソッドを呼び出すそれらルート ビジュアルは場合にのみ 2 つのオブジェクトの有効期間イベントで、指定したルート ビジュアルに発生すると、<xref:System.Windows.FrameworkElement>クラスを派生します。  
+  
+-   以前のルート visual を生成、<xref:System.Windows.FrameworkElement.Unloaded>イベント、およびその要素ツリーの下に、各子要素には、このイベントをブロードキャストを処理します。  
+  
+-   新しいルート visual を発生させる、<xref:System.Windows.FrameworkElement.Loaded>イベント、およびその要素ツリーの下に、各子要素には、このイベントをブロードキャストを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootVisual">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Visual RootVisual { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual RootVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PresentationSource.RootVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得またはルートのソースに表示されている visual を設定します。</summary>
+        <value>ビジュアルのルートです。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">プロパティを上書きする (<see langword="InheritanceDemand" />)。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

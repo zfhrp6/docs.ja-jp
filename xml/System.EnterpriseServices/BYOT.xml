@@ -1,0 +1,92 @@
+<Type Name="BYOT" FullName="System.EnterpriseServices.BYOT">
+  <TypeSignature Language="C#" Value="public sealed class BYOT" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BYOT extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.BYOT" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>COM + をラップ<see langword="ByotServerEx" />クラスと COM + DTC インターフェイス<see langword="ICreateWithTransactionEx" />と<see langword="ICreateWithTipTransactionEx" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.BYOT>(Bring Your Own トランザクション) を作成するのにまたは外部トランザクションを継承するコンポーネントを使用します。 つまり、関連付けられているトランザクションがないコンポーネントは、トランザクションを取得できます。 COM + での新しいコンポーネントのコンテキストのトランザクション プロパティとして、任意の既存分散トランザクション コーディネーター (DTC) トランザクションまたはトランザクション インターネット プロトコル (TIP) トランザクションを設定できます。 これにより、COM + の存続期間が、トランザクション処理 (TP) モニタ、オブジェクト/タスク セレクター (オブジェクト型)、またはデータベース管理システム (DBMS) によって制御されるトランザクションに関連するコンポーネントです。  
+  
+ <xref:System.EnterpriseServices.BYOT>トランザクションは、注意して使用する必要があります。 特定の状況で複数の同期ドメインをまたがるトランザクションで発生する可能性など、デッドロック状態の原因と、別のトランザクションによる並列化が可能には、します。  
+  
+ 自動トランザクションは、なく<xref:System.EnterpriseServices.BYOT>トランザクションでは、ビジネス コンポーネントのライターの推奨されるプログラミング モデルです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateWithTipTransaction">
+      <MemberSignature Language="C#" Value="public static object CreateWithTipTransaction (string url, Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateWithTipTransaction(string url, class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.BYOT.CreateWithTipTransaction(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="url">トランザクションを指定するヒントの URL です。</param>
+        <param name="t">型。</param>
+        <summary>トランザクション インターネット プロトコル (TIP) を使用して手動トランザクションに参加しているオブジェクトを作成します。</summary>
+        <returns>要求されたトランザクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.BYOT.CreateWithTipTransaction%2A>COM + DTC メソッドに相当するマネージ実行`ICreateWithTIPTransaction::CreateInstance`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWithTransaction">
+      <MemberSignature Language="C#" Value="public static object CreateWithTransaction (object transaction, Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateWithTransaction(object transaction, class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.BYOT.CreateWithTransaction(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Object" />
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="transaction"><see cref="T:System.EnterpriseServices.ITransaction" />または<see cref="T:System.Transactions.Transaction" />トランザクションを指定するオブジェクト。</param>
+        <param name="t">指定された型。</param>
+        <summary>手動トランザクションに参加しているオブジェクトを作成します。</summary>
+        <returns>要求されたトランザクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.BYOT.CreateWithTransaction%2A>COM + 分散トランザクション コーディネーター (DTC) メソッドに相当するマネージ実行`ICreateWithTransaction::CreateInstance`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

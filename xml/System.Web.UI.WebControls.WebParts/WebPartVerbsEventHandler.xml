@@ -1,0 +1,40 @@
+<Type Name="WebPartVerbsEventHandler" FullName="System.Web.UI.WebControls.WebParts.WebPartVerbsEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WebPartVerbsEventHandler(object sender, WebPartVerbsEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartVerbsEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartVerbsEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント引数。</param>
+    <summary>デリゲートを表す、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateVerbs" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerbsEventHandler>への応答で呼び出されるメソッドを指定するクラスが使用される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateVerbs>から派生するゾーンの Web パーツの動詞を作成するときに発生するイベント、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラスです。  
+  
+ Web パーツ動詞は、ユーザーは最小限に抑えを閉じると、復元するコントロールなどの Web パーツ ページのユーザー インターフェイス (UI) で実行できるアクションを表しますページにコントロールを追加します。または、操作をキャンセルします。 動詞が、ゾーンのヘッダーおよびフッターの両方の領域に表示されることができ、Web パーツ コントロール セットで提供される標準的な動詞と開発者によって追加できるカスタム動詞の両方があります。 動詞が UI を使用してでは、ハイパーリンク、画像、または、ボタンとして表示に設定できる、クリック可能なオブジェクトによって表される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.VerbButtonType%2A>プロパティです。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンは、Web パーツ コントロールの動詞メニューに表示される取得動詞の標準セットを提供します。 カスタム Web パーツ ゾーン、または Web パーツ ゾーン内の Web パーツ コントロールでは、他の動詞をメニューに追加できます。  
+  
+ Web パーツ ゾーン内のコントロールはから継承することで、コントロールの動詞メニューに動詞を追加することができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>基本クラスおよびオーバーライド、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>プロパティです。 コントロールがから継承していない場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスを実装することによって新しい動詞を追加することができます、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイス、およびオーバーライドし、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>コレクション。  
+  
+ 保護された<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A?displayProperty=nameWithType>メソッドを使用してデリゲートを結び付けずに、イベントをオーバーライドする派生クラス。 派生クラスは常に呼び出す必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A>を登録されているデリゲートがイベントを受け取れるように、基本クラスのメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

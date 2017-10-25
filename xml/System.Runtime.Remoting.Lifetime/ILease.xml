@@ -1,0 +1,278 @@
+<Type Name="ILease" FullName="System.Runtime.Remoting.Lifetime.ILease">
+  <TypeSignature Language="C#" Value="public interface ILease" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ILease" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Lifetime.ILease" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理の有効期間サービスによって使用される有効期間リース オブジェクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー アプリケーションを削除する場合に、ガベージ コレクションの制御を配布します。 従来、分散のガベージ コレクションは、参照カウントとコントロールの ping を使用します。 オブジェクトあたりのいくつかのクライアントがある場合にこの動作は何千もの各オブジェクトごとのクライアントがある場合にも機能しません。 クライアントの数が増えたときにも、有効期間サービスは従来のガベージ コレクターを分散し、スケールの関数を想定できます。  
+  
+ 有効期間サービスは、リースをリモートでアクティブ化された各オブジェクトに関連付けます。 リースの期限が切れると、オブジェクトが削除されます。 リースでは、オブジェクトが無期限の有効期間を指定できます。  
+  
+ 各<xref:System.AppDomain>ドメインのリースを管理するリース マネージャーが含まれています。 リース マネージャーは、時間の期限切れのリースを定期的にチェックします。 リースの有効期限が切れた場合か、リースへの参照を削除することによってキャンセルしたりできるリースのスポンサーの 1 つ以上の呼び出しにより、更新します。  
+  
+ リースには、リース期間を更新する、ポリシーを決定するプロパティとメソッドが含まれています。 リースを公開、<xref:System.Runtime.Remoting.Lifetime.ILease>インターフェイスです。  
+  
+ 使用する方法を示す例については、<xref:System.Runtime.Remoting.Lifetime.ILease>インターフェイスを参照してください[の有効期間](http://msdn.microsoft.com/en-us/334a30e5-33cb-4f0f-a38a-ed4abc5560fa)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentLeaseTime">
+      <MemberSignature Language="C#" Value="public TimeSpan CurrentLeaseTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CurrentLeaseTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リースの残り時間を取得します。</summary>
+        <value>リースの残りの時間。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentState">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Lifetime.LeaseState CurrentState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Remoting.Lifetime.LeaseState CurrentState" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.CurrentState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Lifetime.LeaseState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.Runtime.Remoting.Lifetime.LeaseState" />リースします。</summary>
+        <value>現在<see cref="T:System.Runtime.Remoting.Lifetime.LeaseState" />リースします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialLeaseTime">
+      <MemberSignature Language="C#" Value="public TimeSpan InitialLeaseTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan InitialLeaseTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリースの最初の時間を設定します。</summary>
+        <value>リースの最初の時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime%2A>プロパティに設定されている<xref:System.TimeSpan?displayProperty=nameWithType>リースがタイムアウトしないおよびそれに関連付けられたオブジェクトが無期限の有効期間になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public void Register (System.Runtime.Remoting.Lifetime.ISponsor obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Register(class System.Runtime.Remoting.Lifetime.ISponsor obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Register(System.Runtime.Remoting.Lifetime.ISponsor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Runtime.Remoting.Lifetime.ISponsor" />
+      </Parameters>
+      <Docs>
+        <param name="obj">スポンサーのコールバック オブジェクト。</param>
+        <summary>リースを更新せずには、リースのスポンサーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スポンサーが現在のメソッドを使用して登録されている場合、リースは更新されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public void Register (System.Runtime.Remoting.Lifetime.ISponsor obj, TimeSpan renewalTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Register(class System.Runtime.Remoting.Lifetime.ISponsor obj, valuetype System.TimeSpan renewalTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Register(System.Runtime.Remoting.Lifetime.ISponsor,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Runtime.Remoting.Lifetime.ISponsor" />
+        <Parameter Name="renewalTime" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="obj">スポンサーのコールバック オブジェクト。</param>
+        <param name="renewalTime">リースを更新する時間の長さ。</param>
+        <summary>リース、スポンサーを登録し、指定した更新<see cref="T:System.TimeSpan" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Renew">
+      <MemberSignature Language="C#" Value="public TimeSpan Renew (TimeSpan renewalTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TimeSpan Renew(valuetype System.TimeSpan renewalTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Renew(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="renewalTime" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="renewalTime">リースを更新する時間の長さ。</param>
+        <summary>指定した時間のリースを更新します。</summary>
+        <returns>リースの新しい有効期限。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リース時間の最大値に設定されて、<xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime%2A>または現在の時刻と更新時間。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RenewOnCallTime">
+      <MemberSignature Language="C#" Value="public TimeSpan RenewOnCallTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RenewOnCallTime" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のリモート オブジェクトへの呼び出しを更新する時間、<see cref="P:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime" />です。</summary>
+        <value>リモート オブジェクトへの呼び出しを更新する時間数、<see cref="P:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効期間サービスを追加、リモート オブジェクトへの呼び出しを行うと、<xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime%2A>を<xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime%2A>場合にのみ、<xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime%2A>以下、<xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime%2A>です。 連続した呼び出ししたがって増やさないで、<xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime%2A>バインドなし。 代わりに、任意の呼び出しの直後後、<xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime%2A>が保証される、<xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime%2A>以上です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SponsorshipTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan SponsorshipTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SponsorshipTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスポンサー リース更新時間を返すまで待機する時間を設定します。</summary>
+        <value>リース更新時間を返すスポンサーを待機する時間の量。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout%2A>は<xref:System.TimeSpan?displayProperty=nameWithType>、このリースはスポンサーになります。  
+  
+ スポンサー、タイムアウト期間内のリースを更新への呼び出しに応答しない場合は配信不能と見なされ、現在のリース スポンサーの一覧から削除されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public void Unregister (System.Runtime.Remoting.Lifetime.ISponsor obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unregister(class System.Runtime.Remoting.Lifetime.ISponsor obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Unregister(System.Runtime.Remoting.Lifetime.ISponsor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Runtime.Remoting.Lifetime.ISponsor" />
+      </Parameters>
+      <Docs>
+        <param name="obj">登録を解除するリース スポンサーです。</param>
+        <summary>スポンサーの一覧から、スポンサーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

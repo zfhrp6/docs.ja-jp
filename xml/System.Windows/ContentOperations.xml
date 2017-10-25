@@ -1,0 +1,87 @@
+<Type Name="ContentOperations" FullName="System.Windows.ContentOperations">
+  <TypeSignature Language="C#" Value="public static class ContentOperations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ContentOperations extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ContentOperations" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的なユーティリティ メソッドを取得または設定の位置を提供、<see cref="T:System.Windows.ContentElement" />要素ツリーでします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのコンテンツ要素のシナリオで、プロパティ<xref:System.Windows.FrameworkContentElement.Parent%2A>のメンバーの代わりに使用する必要があります<xref:System.Windows.ContentOperations>場合は、<xref:System.Windows.FrameworkContentElement.Parent%2A>は使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetParent (System.Windows.ContentElement reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetParent(class System.Windows.ContentElement reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ContentOperations.GetParent(System.Windows.ContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.ContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.ContentElement" />から親を取得します。</param>
+        <summary>指定した親要素を取得<see cref="T:System.Windows.ContentElement" />です。</summary>
+        <returns>現在のツリーの親要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も実用的<xref:System.Windows.ContentElement>の派生クラスは[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]も、<xref:System.Windows.FrameworkContentElement>クラスを派生します。 これらのクラス、<xref:System.Windows.FrameworkContentElement.Parent%2A>プロパティを使用してください。  
+  
+ <xref:System.Windows.FrameworkContentElement.Parent%2A>ない可能性があります、同じ要素によって返される、論理ツリーの親要素を返します<xref:System.Windows.ContentOperations.GetParent%2A>です。 <xref:System.Windows.ContentOperations.GetParent%2A>これにより特定のアーキテクチャに関する問題の解決専用に存在する、<xref:System.Windows.ContentElement>クラスではない、<xref:System.Windows.FrameworkContentElement>は厳密に言うと、論理ツリーまたはビジュアル ツリーをツリー内に存在します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="public static void SetParent (System.Windows.ContentElement reference, System.Windows.DependencyObject parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetParent(class System.Windows.ContentElement reference, class System.Windows.DependencyObject parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ContentOperations.SetParent(System.Windows.ContentElement,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.ContentElement" />
+        <Parameter Name="parent" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.ContentElement" />の親を変更します。</param>
+        <param name="parent">新しい親要素です。</param>
+        <summary>設定の指定された親要素<see cref="T:System.Windows.ContentElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して定義するため、<xref:System.Windows.ContentElement>上のコンテンツとホスティング モデル、<xref:System.Windows.UIElement>クラスです。 <xref:System.Windows.Controls.Primitives.DocumentViewerBase>クラス メソッドを使用してこの内部的にフックするその<xref:System.Windows.Controls.Primitives.DocumentViewerBase.Document%2A>コンテンツ プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

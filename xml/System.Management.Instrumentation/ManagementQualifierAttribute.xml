@@ -1,0 +1,126 @@
+<Type Name="ManagementQualifierAttribute" FullName="System.Management.Instrumentation.ManagementQualifierAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagementQualifierAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementQualifierAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementQualifierAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management.Instrumentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ManagementQualifier 属性には、関連付けられている WMI クラス、インスタンス、プロパティ、フィールドまたはメソッドに関する WMI プロバイダーに関連する追加情報が含まれています。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾子は、WMI インフラストラクチャで使用される名前と値のペアです。 必要な WMI 修飾子のほとんどは、WMI.NET プロバイダー拡張インフラストラクチャによって自動的に生成されます。 その他の属性の多くが原因で WMI 修飾子を生成します。 ただし、この属性では、これを行う必要がある必要があります修飾子の追加を手動で関連付けることができます。  
+  
+ このトピックに関する詳細についてを参照してください[WMI 修飾子](http://go.microsoft.com/fwlink/?LinkId=100924)MSDN オンラインの WMI SDK に含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、クラスが WMI 関連クラスを実装することを示すための ManagementQualifier 属性の使用方法を示します。 この場合、修飾子が、<xref:System.Management.Instrumentation.ManagementQualifierFlavors.DisableOverride>フレーバー サブクラスで、修飾子の効果をオーバーライドできないことを指定します。  
+  
+```  
+[ManagementQualifier("Association", Flavor = ManagementQualifierFlavors.DisableOverride)]  
+public class AssociationSample  
+{  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementQualifierAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.ManagementQualifierAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">修飾子の名前です。</param>
+        <summary>ManagementQualifierAttribute のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flavor">
+      <MemberSignature Language="C#" Value="public System.Management.Instrumentation.ManagementQualifierFlavors Flavor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Management.Instrumentation.ManagementQualifierFlavors Flavor" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementQualifierAttribute.Flavor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.Instrumentation.ManagementQualifierFlavors</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性のフレーバー。</summary>
+        <value>修飾子のフレーバーを示す ManagementQualifierFlavor を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementQualifierAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子の名前です。</summary>
+        <value>修飾子の名前を表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Management.Instrumentation.ManagementQualifierAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management.Instrumentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子に関連付けられている値。</summary>
+        <value>修飾子の値を表すオブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定しない場合の既定値はブール値 true です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

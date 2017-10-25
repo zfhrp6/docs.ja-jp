@@ -1,0 +1,52 @@
+<Type Name="DataGridViewRowContextMenuStripNeededEventHandler" FullName="System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewRowContextMenuStripNeededEventHandler(object sender, DataGridViewRowContextMenuStripNeededEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewRowContextMenuStripNeededEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded" /> の <see cref="T:System.Windows.Forms.DataGridView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。 処理、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントは、行の現在の状態または含まれる値によって決定されたショートカット メニューを表示する場合に便利です。  
+  
+ 処理するときに、 <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded> 、イベント ハンドラーで指定したショートカット メニューが表示されるたびに、ユーザー行を右クリックしない限り、<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>がクリックされた特定のセルのショートカット メニューをオーバーライドします。  
+  
+ <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A?displayProperty=nameWithType>プロパティが取得プログラムからまたはユーザーが行を右クリックします。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.RowIndex%2A?displayProperty=nameWithType>行またはそれに含まれる値の状態を確認して、この情報を使用して、変更または変更するプロパティ、<xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventArgs.ContextMenuStrip%2A?displayProperty=nameWithType>プロパティです。 このプロパティは、行の値で初期化<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>大量の行の設定のパフォーマンスの低下を避けるためにデータを操作するときにイベント<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>複数行の値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewRowContextMenuStripNeededEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントを提供するためには、<xref:System.Windows.Forms.ContextMenuStrip>従業員の役職に基づいて。 この例では 2 つが次の 2 つのコンテキスト メニューのマネージャーおよびその他のすべての従業員です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView_NeededEvents#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_NeededEvents/VB/Form1.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,868 @@
+<Type Name="DependencyPropertyDescriptor" FullName="System.ComponentModel.DependencyPropertyDescriptor">
+  <TypeSignature Language="C#" Value="public sealed class DependencyPropertyDescriptor : System.ComponentModel.PropertyDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DependencyPropertyDescriptor extends System.ComponentModel.PropertyDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DependencyPropertyDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.PropertyDescriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>依存関係プロパティの追加のプロパティ特性を記述する <see cref="T:System.ComponentModel.PropertyDescriptor" /> の拡張機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、主に、デザイナー アプリケーションで使用します。 これらのアプリケーションは、プロパティ ウィンドウやプロパティの値を編集するために使用されるその他のツールによって依存関係プロパティの特性を報告する必要があります。  
+  
+ あるかどうかを確認する特定のプロパティを確認するために<xref:System.ComponentModel.DependencyPropertyDescriptor>として機能するように使用できる、 <xref:System.ComponentModel.PropertyDescriptor>、いずれかを呼び出す<xref:System.ComponentModel.DependencyPropertyDescriptor.FromProperty%28System.ComponentModel.PropertyDescriptor%29?displayProperty=nameWithType>、または<xref:System.ComponentModel.DependencyPropertyDescriptor.FromName%2A?displayProperty=nameWithType>です。 いずれかのメソッドが返された場合`null`、依存関係プロパティがありません。 メソッドを返す有効な場合<xref:System.ComponentModel.DependencyPropertyDescriptor>プロパティは、依存関係プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddValueChanged">
+      <MemberSignature Language="C#" Value="public override void AddValueChanged (object component, EventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddValueChanged(object component, class System.EventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.AddValueChanged(System.Object,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="handler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="component">ハンドラーを追加するコンポーネントです。</param>
+        <param name="handler">リスナーとして追加するデリゲート。</param>
+        <summary>このプロパティが変更されたときに通知するには、その他のオブジェクトを有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの属性のコレクションを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.AttributeCollection" />属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanResetValue">
+      <MemberSignature Language="C#" Value="public override bool CanResetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanResetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.CanResetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">テストするためのコンポーネントは、機能をリセットします。</param>
+        <summary>値の変化値オブジェクトをリセットするかどうかを返します。</summary>
+        <returns>
+          <see langword="true" />コンポーネントをリセットする場合です。 値を変化します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public override string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーが属するカテゴリの名前を取得するように指定した、<see cref="T:System.ComponentModel.CategoryAttribute" />です。</summary>
+        <value>メンバーが属するカテゴリの名前。 ある場合ありません<see cref="T:System.ComponentModel.CategoryAttribute" />、既定のカテゴリにカテゴリ名が設定されている<see langword="Misc" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentType">
+      <MemberSignature Language="C#" Value="public override Type ComponentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ComponentType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.ComponentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティにバインドされているコンポーネントの種類を取得します。</summary>
+        <value>A<see cref="T:System.Type" />にこのプロパティがバインドされているコンポーネントの型を表すです。 ときに<see cref="M:System.ComponentModel.DependencyPropertyDescriptor.GetValue(System.Object)" />または<see cref="M:System.ComponentModel.DependencyPropertyDescriptor.SetValue(System.Object,System.Object)" />が呼び出されると、指定されたオブジェクトはこの型のインスタンスをする可能性があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Converter">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter Converter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.TypeConverter Converter" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.Converter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの型コンバーターを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.TypeConverter" />変換に使用される、<see cref="T:System.Type" />このプロパティのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがあります`null`の場合で、属性付き<xref:System.ComponentModel.TypeConverter>パブリック クラスではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyProperty">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty DependencyProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty DependencyProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.DependencyProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの識別子を返します。</summary>
+        <value>依存関係プロパティの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがあります`null`場合、<xref:System.ComponentModel.DependencyPropertyDescriptor>インスタンスの依存関係プロパティではないプロパティを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public override string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたメンバーの説明を取得、<see cref="T:System.ComponentModel.DescriptionAttribute" />です。</summary>
+        <value>メンバーの説明です。 ある場合ありません<see cref="T:System.ComponentModel.DescriptionAttribute" />プロパティの値が空の文字列は、既定値に設定 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerCoerceValueCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.CoerceValueCallback DesignerCoerceValueCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.CoerceValueCallback DesignerCoerceValueCallback" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.DesignerCoerceValueCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.CoerceValueCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または依存関係プロパティのエンジンに依存関係プロパティの値が格納される前に、依存関係プロパティの有効な値を変更するデザイナーを使用するコールバックを設定します。</summary>
+        <value>依存関係プロパティのエンジンに依存関係プロパティの値が格納される前に、依存関係プロパティの有効な値を変更するデザイナーを使用するコールバック。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeOnly">
+      <MemberSignature Language="C#" Value="public override bool DesignTimeOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignTimeOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.DesignTimeOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーで指定されている、デザイン時にのみ設定する必要があるかどうかを取得、<see cref="T:System.ComponentModel.DesignOnlyAttribute" />です。</summary>
+        <value>
+          <see langword="true" />このメンバーは、デザイン時のみ設定する必要がある場合<see langword="false" />場合は、メンバーは、実行時に設定できます。 ある場合ありません<see cref="T:System.ComponentModel.DesignOnlyAttribute" />、戻り値は、既定値、つまり<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public override string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ ウィンドウなどのウィンドウで表示できる名前を取得します。</summary>
+        <value>プロパティの表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較する <see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />。</param>
+        <summary>2 つの <see cref="T:System.ComponentModel.DependencyPropertyDescriptor" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />値が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromName">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.DependencyPropertyDescriptor FromName (string name, Type ownerType, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.DependencyPropertyDescriptor FromName(string name, class System.Type ownerType, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.FromName(System.String,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DependencyPropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">依存関係プロパティまたは添付プロパティの登録済みの名前。</param>
+        <param name="ownerType"><see cref="T:System.Type" />のプロパティの定義を所有するオブジェクト。</param>
+        <param name="targetType"><see cref="T:System.Type" />のプロパティを設定するオブジェクト。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />の指定されたプロパティ名。</summary>
+        <returns>要求された <see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`は依存関係プロパティまたは添付プロパティを参照し、`name`パラメーターに渡されると、<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyProperty.RegisterAttached%2A>呼び出し、該当するプロパティを定義します。 `ownerType`渡されるとしてもう一度、プロパティを所有するオブジェクトの型<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyProperty.RegisterAttached%2A>です。 `targetType`プロパティを設定するオブジェクトの型です。 依存関係プロパティの`ownerType`と`targetType`は同じ型です。 添付プロパティの通常が異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromName">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.DependencyPropertyDescriptor FromName (string name, Type ownerType, Type targetType, bool ignorePropertyType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.DependencyPropertyDescriptor FromName(string name, class System.Type ownerType, class System.Type targetType, bool ignorePropertyType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.FromName(System.String,System.Type,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DependencyPropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="ignorePropertyType" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">依存関係プロパティまたは添付プロパティの登録済みの名前。</param>
+        <param name="ownerType"><see cref="T:System.Type" />のプロパティの定義を所有するオブジェクト。</param>
+        <param name="targetType"><see cref="T:System.Type" />のプロパティを設定するオブジェクト。</param>
+        <param name="ignorePropertyType">プロパティの型を無視するように指定します。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />の指定されたプロパティ名。</summary>
+        <returns>要求された <see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`は依存関係プロパティまたは添付プロパティを参照し、`name`パラメーターに渡されると、<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyProperty.RegisterAttached%2A>呼び出し、該当するプロパティを定義します。 `ownerType`渡されるとしてもう一度、プロパティを所有するオブジェクトの型<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyProperty.RegisterAttached%2A>です。 `targetType`プロパティを設定するオブジェクトの型です。 依存関係プロパティの`ownerType`と`targetType`は同じ型です。 添付プロパティの通常が異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.DependencyPropertyDescriptor FromProperty (System.ComponentModel.PropertyDescriptor property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.DependencyPropertyDescriptor FromProperty(class System.ComponentModel.PropertyDescriptor property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.FromProperty(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DependencyPropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="property">確認対象の <see cref="T:System.ComponentModel.PropertyDescriptor" />。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />の提供された<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</summary>
+        <returns>プロパティが記述されている場合<paramref name="property" />依存関係プロパティを返す有効な<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />します。 返しますそれ以外の場合、 <see langword="null" /><see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、プライマリを取得するデザイナー アプリケーションで使用される、<xref:System.ComponentModel.DependencyPropertyDescriptor>ごとのすべてのプロパティを確認するのに、<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.DependencyPropertyDescriptor FromProperty (System.Windows.DependencyProperty dependencyProperty, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.DependencyPropertyDescriptor FromProperty(class System.Windows.DependencyProperty dependencyProperty, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.FromProperty(System.Windows.DependencyProperty,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DependencyPropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty">依存関係プロパティの識別子。</param>
+        <param name="targetType">プロパティが設定されているオブジェクトの種類。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />の指定された依存関係プロパティとターゲットの種類。</summary>
+        <returns>A<see cref="T:System.ComponentModel.DependencyPropertyDescriptor" />の指定された依存関係プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `dependencyProperty`は依存関係プロパティまたは添付プロパティを参照します。 `targetType`プロパティを設定するオブジェクトの型です。 型に相当する依存関係プロパティの<xref:System.Windows.DependencyProperty.OwnerType%2A>の`dependencyProperty`です。 添付プロパティの`targetType`通常は他の<xref:System.Windows.DependencyObject>型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetChildProperties (object instance, Attribute[] filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetChildProperties(object instance, class System.Attribute[] filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.GetChildProperties(System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="filter" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティを取得する対象のコンポーネント。</param>
+        <param name="filter">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <summary><see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントの指定した属性と一致するプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public override object GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">複数のエディターに対応するプロパティを区別するために使用されるエディターの基本データ型。</param>
+        <summary>指定した型のエディターを取得します。</summary>
+        <returns>要求されたエディターの種類のインスタンスまたは<see langword="null" />エディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.ComponentModel.DependencyPropertyDescriptor" /> のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コード<xref:System.ComponentModel.DependencyPropertyDescriptor>依存関係プロパティの識別子と設定されている型の両方に基づいています。 この実装により、<xref:System.ComponentModel.DependencyPropertyDescriptor>の多くの可能な派生クラスによって継承されているプロパティまたはプロパティのシステムを再割り当てされるプロパティは、同じハッシュ コードを誤っては返しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">コンポーネントのインスタンス。</param>
+        <summary>コンポーネントのプロパティの現在の値を返します。</summary>
+        <returns>要求された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAttached">
+      <MemberSignature Language="C#" Value="public bool IsAttached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAttached" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.IsAttached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが添付プロパティとして登録され、添付して使う方法で使用されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティが添付プロパティ以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowsable">
+      <MemberSignature Language="C#" Value="public override bool IsBrowsable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBrowsable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.IsBrowsable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を示す値を取得、<see cref="T:System.ComponentModel.BrowsableAttribute" />プロパティにします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.BrowsableAttribute" />がプロパティで指定されている、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocalizable">
+      <MemberSignature Language="C#" Value="public override bool IsLocalizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocalizable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.IsLocalizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをローカライズする必要があるかどうかを示す値を取得するように指定した、<see cref="T:System.ComponentModel.LocalizableAttribute" />です。</summary>
+        <value>
+          <see langword="true" />メンバーが付いている場合、<see cref="T:System.ComponentModel.LocalizableAttribute" />コンス トラクターの値の true、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ 依存関係プロパティは読み取り専用と特定のメソッド呼び出しを使用して登録されているし、規約によって、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]ラッパーのプロパティを表示、リフレクションと記述子のプロパティである必要もあります読み取り専用です。 ただし、これは、規則およびコンパイルする要件ではありません、ためにおくと倍精度浮動小数点状態を確認する、依存関係プロパティの識別子読み取り専用です。 これを行うには、識別子を取得する (<xref:System.Windows.DependencyProperty>) 値<xref:System.ComponentModel.DependencyPropertyDescriptor>の値を確認および<xref:System.Windows.DependencyProperty.ReadOnly%2A>です。 なお、<xref:System.Windows.DependencyProperty.ReadOnly%2A>がメタデータではない、識別子、自体にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyMetadata Metadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PropertyMetadata Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティに関連付けられているメタデータを取得します。</summary>
+        <value>依存関係プロパティのメタデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定できます`null`メタデータが存在しない場合、またはプロパティは、依存関係プロパティではありません。  
+  
+ 概念と一致するメタデータ[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]属性が属性として、再公開されている、<xref:System.ComponentModel.DependencyPropertyDescriptor.Attributes%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public override Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、表される<see cref="T:System.Type" />の依存関係プロパティです。</summary>
+        <value><see cref="T:System.Type" />の依存関係プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Type>依存関係プロパティに登録されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveValueChanged">
+      <MemberSignature Language="C#" Value="public override void RemoveValueChanged (object component, EventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveValueChanged(object component, class System.EventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.RemoveValueChanged(System.Object,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="handler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="component">ハンドラーを追加するコンポーネントです。</param>
+        <param name="handler">リスナーとして追加するデリゲート。</param>
+        <summary>このプロパティが変更されたときに通知するには、その他のオブジェクトを有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetValue">
+      <MemberSignature Language="C#" Value="public override void ResetValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.ResetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">既定値にリセットするのには、プロパティの値を持つコンポーネント。</param>
+        <summary>コンポーネントのこのプロパティの値を既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public override void SetValue (object component, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetValue(object component, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">設定するプロパティの値を持つコンポーネント。</param>
+        <param name="value">新しい値。</param>
+        <summary>別の値をコンポーネントの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeValue">
+      <MemberSignature Language="C#" Value="public override bool ShouldSerializeValue (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ShouldSerializeValue(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.ShouldSerializeValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">永続化のため調査するプロパティを持つコンポーネント。</param>
+        <summary>このプロパティの値をシリアル化プロセスによって保持される必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、プロパティを永続化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsChangeEvents">
+      <MemberSignature Language="C#" Value="public override bool SupportsChangeEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeEvents" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DependencyPropertyDescriptor.SupportsChangeEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの値の変更通知可能性があります以外から発生させてプロパティ記述子など、コンポーネント自体、またはに加えられたかどうか通知は、直接の呼び出しから発信されますのみかどうかを示す<see cref="M:System.ComponentModel.DependencyPropertyDescriptor.SetValue(System.Object,System.Object)" />です。</summary>
+        <value>
+          <see langword="true" />このプロパティの通知可能性がありますから発生させて場合プロパティ記述子の外部など、コンポーネント自体です。 <see langword="false" />通知が、直接の呼び出しからは発信されますのみかどうか<see cref="M:System.ComponentModel.DependencyPropertyDescriptor.SetValue(System.Object,System.Object)" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、`true`場合も、コンポーネントを実装、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイス、または明示的な場合があります`propertyName.Changed`このプロパティのイベントです。  
+  
+ このプロパティが、基になる依存<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DependencyPropertyDescriptor.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの値を、それと等価の文字列形式に変換します。</summary>
+        <returns>返します、<see cref="P:System.ComponentModel.MemberDescriptor.Name" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

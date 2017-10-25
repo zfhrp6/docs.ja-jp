@@ -1,0 +1,121 @@
+<Type Name="DnsPermissionAttribute" FullName="System.Net.DnsPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DnsPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DnsPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Net.DnsPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ドメイン ネーム サーバーから情報を要求するアクセス許可を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 宣言されているセキュリティ情報<xref:System.Net.DnsPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて、<xref:System.Net.DnsPermissionAttribute>を適用します。 システムは、実行時にこの情報にアクセスします。 <xref:System.Security.Permissions.SecurityAction>に渡されるコンス トラクターが、許容される DNS ターゲットを決定します。  
+  
+ これらのセキュリティ属性に対してのみ使用[宣言セキュリティ](http://msdn.microsoft.com/en-us/97e21efd-6e89-4115-90d5-ad239513dad8)です。 [強制セキュリティ](http://msdn.microsoft.com/en-us/15aab1e1-6b7d-41ad-b102-c1ed7bedea27)、対応する使用<xref:System.Net.DnsPermission>クラスです。  
+  
+ セキュリティのアクセス権が完全に制限されるか、完全に無制限です。 設定、<xref:System.Security.Permissions.PermissionState.Unrestricted>プロパティを`true`アクセスを許可してまたは`false`のアクセスはありません。 名前付きパラメーターとしてこのプロパティを設定します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Net.DnsPermissionAttribute>カスタム クラスに宣言セキュリティを適用します。  
+  
+ [!code-cpp[Classic DnsPermissionAttributeExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/CPP/source.cpp#1)]
+ [!code-csharp[Classic DnsPermissionAttributeExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/CS/source.cs#1)]
+ [!code-vb[Classic DnsPermissionAttributeExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DnsPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.SecurityAction" /> 値を使用して、<see cref="T:System.Net.DnsPermissionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.SecurityAction>このコンス トラクターに渡される値が使用可能な範囲を指定します<xref:System.Net.DnsPermissionAttribute>ターゲットです。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Net.DnsPermissionAttribute>カスタム クラスに宣言セキュリティを適用します。  
+  
+ [!code-cpp[Classic DnsPermissionAttributeExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/CPP/source.cpp#1)]
+ [!code-csharp[Classic DnsPermissionAttributeExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/CS/source.cs#1)]
+ [!code-vb[Classic DnsPermissionAttributeExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic DnsPermissionAttributeExample/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="action" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.SecurityAction" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.DnsPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.DnsPermission" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns>A<see cref="T:System.Net.DnsPermission" />セキュリティ宣言に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CreatePermission`メソッドは、アプリケーション コードではなく、セキュリティ システムによって呼び出されます。  
+  
+ によって記述されるセキュリティ情報<xref:System.Net.DnsPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて<xref:System.Net.DnsPermissionAttribute>を適用します。 システムが実行時と呼び出しでの情報にアクセスし<xref:System.Net.DnsPermissionAttribute.CreatePermission%2A>です。 システムを使用して、返された<xref:System.Security.IPermission>指定したセキュリティ要件を強制します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

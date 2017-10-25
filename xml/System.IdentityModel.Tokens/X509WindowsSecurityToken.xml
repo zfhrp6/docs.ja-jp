@@ -1,0 +1,164 @@
+<Type Name="X509WindowsSecurityToken" FullName="System.IdentityModel.Tokens.X509WindowsSecurityToken">
+  <TypeSignature Language="C#" Value="public class X509WindowsSecurityToken : System.IdentityModel.Tokens.X509SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509WindowsSecurityToken extends System.IdentityModel.Tokens.X509SecurityToken" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.X509WindowsSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.X509SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>X.509 証明書に基づくセキュリティ トークンで、証明書が Windows ドメインのユーザーまたはローカル コンピューターのユーザー アカウントにマップされているセキュリティ トークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーション開発者は、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> クラスを使用する必要はありません。ただし、Web サービスで、受信 SOAP メッセージ内で参照されている X.509 証明書や、証明書がマップされているドメインやコンピューター アカウントの詳細にアクセスする必要がある場合は、この限りではありません。 X.509 証明書の詳細を取得するには、<xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> プロパティにアクセスします。 ユーザー ID を取得するには、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.WindowsIdentity%2A> プロパティを確認します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509WindowsSecurityToken (System.Security.Cryptography.X509Certificates.X509Certificate2 cert, System.Security.Principal.WindowsIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 cert, class System.Security.Principal.WindowsIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509WindowsSecurityToken.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Principal.WindowsIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="windowsIdentity" Type="System.Security.Principal.WindowsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="cert">To be added.</param>
+        <param name="identity">To be added.</param>
+        <summary>指定した X.509 証明書と Windows ドメインまたはコンピューター アカウントを使用して、<see cref="T:System.IdentityModel.Tokens.X509WindowsSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> セキュリティ トークンの一意の識別子を作成し、その値を <xref:System.IdentityModel.Tokens.X509SecurityToken.Id%2A> プロパティに割り当てます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509WindowsSecurityToken (System.Security.Cryptography.X509Certificates.X509Certificate2 cert, System.Security.Principal.WindowsIdentity identity, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 cert, class System.Security.Principal.WindowsIdentity identity, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509WindowsSecurityToken.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Principal.WindowsIdentity,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="windowsIdentity" Type="System.Security.Principal.WindowsIdentity" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cert">To be added.</param>
+        <param name="identity">To be added.</param>
+        <param name="id">セキュリティ トークンの一意の識別子。</param>
+        <summary>指定した X.509 証明書、Windows ドメインまたはコンピューター アカウント、および一意の識別子を使用して、<see cref="T:System.IdentityModel.Tokens.X509WindowsSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509WindowsSecurityToken (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, System.Security.Principal.WindowsIdentity windowsIdentity, string authenticationType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, class System.Security.Principal.WindowsIdentity windowsIdentity, string authenticationType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509WindowsSecurityToken.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Principal.WindowsIdentity,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="windowsIdentity" Type="System.Security.Principal.WindowsIdentity" />
+        <Parameter Name="authenticationType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <param name="windowsIdentity">Windows ドメインまたはコンピューター アカウントの ID を表します。</param>
+        <param name="authenticationType">トークンの認証の種類。</param>
+        <param name="id">セキュリティ トークンの一意の識別子。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.X509WindowsSecurityToken" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509WindowsSecurityToken.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンの認証の種類を取得します。</summary>
+        <value><see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509WindowsSecurityToken.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IdentityModel.Tokens.X509WindowsSecurityToken" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.Dispose%2A> メソッドは、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> の使用が完了したときに呼び出します。 <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.Dispose%2A> メソッドによって、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> は使用不可の状態になります。 <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.Dispose%2A> メソッドを呼び出した後、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> が使用していたメモリをガベージ コレクターが再利用できるように、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> への参照をすべて解放する必要があります。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> メソッドを呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsIdentity">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.WindowsIdentity WindowsIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.WindowsIdentity WindowsIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509WindowsSecurityToken.WindowsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows ドメインまたはコンピューター アカウントの ID を取得します。</summary>
+        <value>Windows ドメインまたはコンピューター アカウントの ID を表す <see cref="T:System.Security.Principal.WindowsIdentity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

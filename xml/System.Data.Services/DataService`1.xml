@@ -1,0 +1,265 @@
+<Type Name="DataService&lt;T&gt;" FullName="System.Data.Services.DataService&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class DataService&lt;T&gt; : System.Data.Services.IRequestHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataService`1&lt;T&gt; extends System.Object implements class System.Data.Services.IRequestHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.DataService`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.Services.IRequestHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode=System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(InstanceContextMode=System.ServiceModel.InstanceContextMode.PerCall)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">データ サービスを定義する型。</typeparam>
+    <summary>ADO.NET データ サービスを開発するためのメイン エントリ ポイント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.DataService%601> クラスは、サーバー システムのすべてのコンポーネントの基本的な統合をつかさどります。 <xref:System.Data.Services.DataService%601> クラスから派生したクラスを定義し、互換性のあるデータ モデルを参照することによって、承認とキャッシュにシステムの既定値を使用する新しいデータ サービスが作成されます。  
+  
+ <xref:System.Data.Services.DataService%601> の型は、エンティティ型の <xref:System.Linq.IQueryable%601> コレクションを表すエンティティ セットを返すプロパティを少なくとも 1 つ公開する必要があります。 このクラスにはさらに、エンティティ リソースを更新するための <xref:System.Data.Services.IUpdatable> インターフェイスが実装されている必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>テンプレート クラスによって指定された型のデータを展開する新しいデータ サービスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.DataService%601> クラスから派生したクラスを定義し、互換性のあるデータ モデルを参照することによって、承認とキャッシュにシステムの既定値を使用する新しいデータ サービスが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachHost">
+      <MemberSignature Language="C#" Value="public void AttachHost (System.Data.Services.IDataServiceHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachHost(class System.Data.Services.IDataServiceHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.AttachHost(System.Data.Services.IDataServiceHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Data.Services.IDataServiceHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.Data.Services.IDataServiceHost" /> のインスタンス。</param>
+        <summary><paramref name="host" /> パラメーターによって識別されたデータ サービスにデータ サービス ホストをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ サービスは、アタッチされた <xref:System.Data.Services.IDataServiceHost> ホストを使用して要求を処理します。 データ サービスが Windows Communication Foundation (WCF) でホストされている場合、ホストを設定する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSource">
+      <MemberSignature Language="C#" Value="protected virtual T CreateDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance !T CreateDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.CreateDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ サービスによって使用されるテンプレート クラスのデータ ソースを作成します。</summary>
+        <returns>データ ソースのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターのないコンストラクターが型に存在する場合、そのコンストラクターが既定で使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDataSource">
+      <MemberSignature Language="C#" Value="protected T CurrentDataSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T CurrentDataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.DataService`1.CurrentDataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在要求の処理に使用されているデータ ソース インスタンスを取得します。</summary>
+        <value>サービスのデータ ソース インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスの構築時に使用されたテンプレート クラスのインスタンスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleException">
+      <MemberSignature Language="C#" Value="protected virtual void HandleException (System.Data.Services.HandleExceptionArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void HandleException(class System.Data.Services.HandleExceptionArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.HandleException(System.Data.Services.HandleExceptionArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Data.Services.HandleExceptionArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">例外の引数。</param>
+        <summary>要求の処理中に例外が発生すると呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ サービスで `args` インスタンスに変更を加えることによって、例外を応答に含めて返す方法をカスタマイズすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartProcessingRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnStartProcessingRequest (System.Data.Services.ProcessRequestArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStartProcessingRequest(class System.Data.Services.ProcessRequestArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.OnStartProcessingRequest(System.Data.Services.ProcessRequestArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Data.Services.ProcessRequestArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">
+          要求に関する情報を格納する <see cref="T:System.Data.Services.ProcessRequestArgs" />。</param>
+        <summary>個々の要求が処理される前に呼び出されます。 バッチ要求の場合は、先頭のバッチ要求に対して 1 回、そのバッチの各操作につき 1 回呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessingPipeline">
+      <MemberSignature Language="C#" Value="public System.Data.Services.DataServiceProcessingPipeline ProcessingPipeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.DataServiceProcessingPipeline ProcessingPipeline" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.DataService`1.ProcessingPipeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.DataServiceProcessingPipeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービス処理パイプラインのイベントを定義するオブジェクトを取得します。</summary>
+        <value>データ サービス処理パイプラインのイベントを定義するための <see cref="T:System.Data.Services.DataServiceProcessingPipeline" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ProcessRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.ProcessRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HTTP 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.DataService%601.AttachHost%2A> を呼び出して要求情報を取得し、応答を構築するには、あらかじめ <xref:System.Data.Services.DataService%601.ProcessRequest%2A> メソッドが呼び出されている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequestForMessage">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message ProcessRequestForMessage (System.IO.Stream messageBody);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message ProcessRequestForMessage(class System.IO.Stream messageBody) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataService`1.ProcessRequestForMessage(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBody" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="messageBody">HTTP 要求の本文。</param>
+        <summary>HTTP 要求を処理します。</summary>
+        <returns>応答メッセージ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

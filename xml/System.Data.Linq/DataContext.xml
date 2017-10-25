@@ -1,0 +1,1435 @@
+<Type Name="DataContext" FullName="System.Data.Linq.DataContext">
+  <TypeSignature Language="C#" Value="public class DataContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.DataContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>SQL フレームワークには、LINQ のメイン エントリ ポイントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Linq.DataContext>データベース接続にマップされ、すべてのエンティティのソースです。 取得したすべてのエンティティに対して行った変更を追跡し、「id キャッシュ」で表されるエンティティが 1 つ以上の時間を取得することの保証を維持、同じオブジェクト インスタンスを使用します。  
+  
+ 一般に、<xref:System.Data.Linq.DataContext>インスタンスが、アプリケーションがその用語を定義するただし「の作業単位」1 つの最後までに設計されています。 A<xref:System.Data.Linq.DataContext>は軽量および作成するコストではありません。 一般的な[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]アプリケーション作成<xref:System.Data.Linq.DataContext>メソッドのスコープまたはの論理セットを表す有効期間が短いクラスのメンバーとしてのインスタンスに関連するデータベース操作します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContext (System.Data.IDbConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.IDbConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.#ctor(System.Data.IDbConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.IDbConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">使用する接続、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.DataContext" />クラスによって使用される接続を参照することによって、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Data.Linq.DataContext>開き閉じた接続または接続文字列を指定する場合、必要に応じて、データベース接続を閉じます。 一般に、することはありませんを呼び出す`Dispose`上、<xref:System.Data.Linq.DataContext>です。 入力して、接続が開いている場合、<xref:System.Data.Linq.DataContext>閉じません。 そのため、インスタンス化しないで、<xref:System.Data.Linq.DataContext>開いている接続を使用してこれを行う妥当な理由がない限り、します。 <xref:System.Transactions> 、トランザクション、<xref:System.Data.Linq.DataContext>開くまたは昇格を避けるために、接続を閉じるされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContext (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileOrServerOrConnection" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.DataContext" />ファイル ソースを参照することでクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContext (System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.IDbConnection connection, class System.Data.Linq.Mapping.MappingSource mapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.#ctor(System.Data.IDbConnection,System.Data.Linq.Mapping.MappingSource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.IDbConnection" />
+        <Parameter Name="mapping" Type="System.Data.Linq.Mapping.MappingSource" />
+      </Parameters>
+      <Docs>
+        <param name="connection">.NET Framework で使用される接続です。</param>
+        <param name="mapping">マッピングのソースです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.DataContext" />クラスの接続とマッピング ソースを参照します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContext (string fileOrServerOrConnection, System.Data.Linq.Mapping.MappingSource mapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileOrServerOrConnection, class System.Data.Linq.Mapping.MappingSource mapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.#ctor(System.String,System.Data.Linq.Mapping.MappingSource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileOrServerOrConnection" Type="System.String" />
+        <Parameter Name="mapping" Type="System.Data.Linq.Mapping.MappingSource" />
+      </Parameters>
+      <Docs>
+        <param name="fileOrServerOrConnection">この引数は、次のいずれかを指定できます。  
+  
+ SQL Server Express のデータベースが存在するファイルの名前。  
+  
+ データベースが存在するサーバーの名前。 ここでは、プロバイダーは、ユーザーの既定のデータベースを使用します。  
+  
+ 完全な接続文字列。 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]だけを変更しなくても、プロバイダー文字列を渡します。</param>
+        <param name="mapping">マッピングのソースです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Linq.DataContext" />クラス ファイルのソースとマッピング ソースを参照します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeConflicts">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.ChangeConflictCollection ChangeConflicts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.ChangeConflictCollection ChangeConflicts" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.ChangeConflicts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeConflictCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同時実行の競合の原因となったオブジェクトのコレクションを取得するときに<see cref="M:System.Data.Linq.DataContext.SubmitChanges" />が呼び出されました。</summary>
+        <value>同時実行の競合の原因となったオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、どのコレクション反復処理できる競合情報を取得するを示します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.objectchangeconflict/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.objectchangeconflict/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTimeout">
+      <MemberSignature Language="C#" Value="public int CommandTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CommandTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.CommandTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはそれ以外の場合のタイムアウトを既定のタイムアウト期間中に、クエリのタイムアウト時間が増加する値を設定します。</summary>
+        <value>それ以外の場合のタイムアウトを既定のタイムアウト期間中に、クエリのタイムアウト時間を増加する整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得または生成されたコマンドを実行するために使用するコマンドのタイムアウトを設定 (`IDbCommands`)。 詳細については、「<xref:System.Data.IDbCommand.CommandTimeout%2A>」を参照してください。  
+  
+ ときにこのプロパティが設定されていない、既定値の<xref:System.Data.IDbCommand.CommandTimeout%2A>クエリ コマンドの実行に使用します。 この既定値は、記憶域プロバイダーによって設定されます。 この値は 0 以外の値に設定されている場合に、一部のプロバイダーが例外をスロー可能性がありますに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フレームワークで使用する接続を取得します。</summary>
+        <value>フレームワークによって使用される接続。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リレーショナル ADO.NET コードと相互運用することができます。  
+  
+ ユーザーによって明示的に開いている場合を除き、返される接続は切断されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDatabase">
+      <MemberSignature Language="C#" Value="public void CreateDatabase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateDatabase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.CreateDatabase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー上のデータベースを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベースの名前は、次のアルゴリズムを使用して派生します。  
+  
+-   データベースは、接続文字列で識別される、その名前が使用されます。  
+  
+-   場合、<xref:System.Data.Linq.Mapping.DatabaseAttribute>属性が含まれているその<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>プロパティは、データベースの名前として使用します。  
+  
+-   Database タグで、接続文字列と厳密に型指定がない場合は<xref:System.Data.Linq.DataContext>を使用すると同じ名前を持つデータベース、<xref:System.Data.Linq.DataContext>クラスを継承することが確認されます。  
+  
+-   場合は、弱い型指定された<xref:System.Data.Linq.DataContext>はこれを使用すると、例外がスローされます。  
+  
+-   場合、<xref:System.Data.Linq.DataContext>が作成されたファイル名を使用すると、そのファイル名に対応するデータベースを作成します。  
+  
+   
+  
+## Examples  
+ 次のコードでは、一時的なデータベースを設定し、それを削除する方法を示します。  
+  
+ [!code-csharp[System.Data.Linq.DataContext#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.DataContext/cs/Program.cs#1)]
+ [!code-vb[System.Data.Linq.DataContext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.DataContext/vb/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMethodCallQuery&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="protected System.Linq.IQueryable&lt;TResult&gt; CreateMethodCallQuery&lt;TResult&gt; (object instance, System.Reflection.MethodInfo methodInfo, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Linq.IQueryable`1&lt;!!TResult&gt; CreateMethodCallQuery&lt;TResult&gt;(object instance, class System.Reflection.MethodInfo methodInfo, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.CreateMethodCallQuery``1(System.Object,System.Reflection.MethodInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="methodInfo" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">返されるコレクション内の要素の型。</typeparam>
+        <param name="instance">メソッドの呼び出し (現在のオブジェクト) のインスタンス。</param>
+        <param name="methodInfo"><see cref="T:System.Reflection.MethodInfo" />データベース メソッドに対応する CLR メソッドを識別します。</param>
+        <param name="parameters">コマンドに渡されるパラメーターの配列。</param>
+        <summary>指定された CLR メソッドに関連付けられているデータベースのテーブル値関数を実行します。</summary>
+        <returns>データベース クエリによって返される結果の値のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Linq.DataContext.CreateMethodCallQuery%2A>メソッドは自動的に生成されたコードで使用し、データベース関数をプロキシとして機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DatabaseExists">
+      <MemberSignature Language="C#" Value="public bool DatabaseExists ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DatabaseExists() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.DatabaseExists" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたデータベースを開くことがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、指定されたデータベースを開くことができます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはで接続を使用して、<xref:System.Data.Linq.DataContext.Connection%2A>プロパティ、関連付けられたデータベースを開こうとします。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、データベースが既に存在するかどうかを判断します。  
+  
+ [!code-csharp[System.Data.Linq.DataContext#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.DataContext/cs/Program.cs#1)]
+ [!code-vb[System.Data.Linq.DataContext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.DataContext/vb/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferredLoadingEnabled">
+      <MemberSignature Language="C#" Value="public bool DeferredLoadingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DeferredLoadingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.DeferredLoadingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一対多または一対一のリレーションシップの遅延読み込みするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />遅延読み込みが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップが一対一、一対多である場合、空のコレクションが返された場合、コードからのアクセスをする null これらのリレーションシップのいずれかが返されます。 設定して、リレーションシップを格納することができますも、<xref:System.Data.Linq.DataContext.LoadOptions%2A>プロパティです。  
+  
+ このプロパティの主なシナリオでは、オブジェクト モデルの一部を抽出し、(たとえば、Web サービス) に送信するためです。  
+  
+> [!NOTE]
+>  このプロパティ設定されている場合`false`クエリの実行後に、例外をスローします。 参照してください、**有効なモード**詳細については、後述の「します。  
+  
+## <a name="valid-modes"></a>有効なモード  
+ 遅延読み込みでは、オブジェクトの追跡が必要です。 有効な次の 3 つのモードのみです。  
+  
+-   <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> = `false`. <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A>無視され、推論されます`false`です。 この動作は読み取り専用<xref:System.Data.Linq.DataContext>です。  
+  
+-   <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> = `true`. <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> = `false`. このような状況に対応する、<xref:System.Data.Linq.DataContext>ユーザーを使用して、オブジェクト グラフを読み込むことができます<xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>ディレクティブは、それが遅延読み込みを有効にしません。  
+  
+-   どちら設定されている`true`です。 既定値です。  
+  
+ クエリの実行後、フラグは変更できません。 使用する最初のクエリの実行後に変更<xref:System.Data.Linq.DataContext>例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDatabase">
+      <MemberSignature Language="C#" Value="public void DeleteDatabase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteDatabase() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.DeleteDatabase" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたデータベースを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはで接続を使用して、<xref:System.Data.Linq.DataContext.Connection%2A>プロパティを削除するデータベースを識別します。  
+  
+   
+  
+## Examples  
+ 次の例では、一時的に作成されているデータベースを削除する方法を示します。  
+  
+ [!code-csharp[System.Data.Linq.DataContext#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.DataContext/cs/Program.cs#1)]
+ [!code-vb[System.Data.Linq.DataContext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.DataContext/vb/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.DataContext" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>によって使用されるアンマネージ リソースを解放、<see cref="T:System.Data.Linq.DataContext" />クラスし、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteCommand">
+      <MemberSignature Language="C#" Value="public int ExecuteCommand (string command, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ExecuteCommand(string command, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteCommand(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="command">実行する SQL コマンド。</param>
+        <param name="parameters">コマンドに渡されるパラメーターの配列。 以下の動作に注意してください。  
+  
+ 配列内のオブジェクトの数が、コマンド文字列で識別される最大数より小さい場合は、例外がスローされます。  
+  
+ 配列にコマンド文字列で参照されていないオブジェクトが含まれている場合、例外はスローされません。  
+  
+ パラメーターのいずれかが null の場合、これに変換されます。<see langword="DBNull.Value" />です。</param>
+        <summary>データベース上で直接 SQL コマンドを実行します。</summary>
+        <returns>コマンドの実行によって変更された行の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ケースをパススルーするメカニズムを[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]は特定のシナリオを十分に提供しません。  
+  
+ コマンドの構文は、ADO.NET の作成に使用する構文とほぼ同じ`DataCommand`です。 唯一の違いは、パラメーターを指定する方法です。 中かっこ ({...}) で囲み、パラメーターを指定して、それらを列挙する具体的には、0 から開始します。 パラメーターは、パラメーター配列で均等に番号付きのオブジェクトに関連付けられます。  
+  
+ `ExecuteQuery`および`ExecuteCommand`可変個のパラメーター置換の引数を指定することです。 ExecuteQuery を呼び出すときに、パラメーターを指定するたとえば、\<TResult >:  
+  
+```  
+db.ExecuteQuery<Customer>("select * from dbo.Customers where City = {0}", "London");  
+```  
+  
+ また、別の例。  
+  
+```  
+db.ExecuteCommand("UPDATE Products SET QuantityPerUnit = {0} WHERE ProductID = {1}", "24 boxes", 5);  
+```  
+  
+ 次の例は、接続を開き、SQL を渡します`UPDATE`SQL エンジンにコマンド。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqCommunicatingWithDatabase#3](~/samples/snippets/csharp/VS_Snippets_Data/DLinqCommunicatingWithDatabase/cs/Program.cs#3)]
+ [!code-vb[DLinqCommunicatingWithDatabase#3](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqCommunicatingWithDatabase/vb/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDynamicDelete">
+      <MemberSignature Language="C#" Value="protected void ExecuteDynamicDelete (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void ExecuteDynamicDelete(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteDynamicDelete(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除するエンティティ。</param>
+        <summary>代行させるために、削除のオーバーライド メソッド内で、実行[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]の生成と動的な SQL を実行するタスクが操作を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Data.Linq.DataContext.ExecuteDynamicInsert%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDynamicInsert">
+      <MemberSignature Language="C#" Value="protected void ExecuteDynamicInsert (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void ExecuteDynamicInsert(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteDynamicInsert(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">挿入するエンティティ。</param>
+        <summary>代行させるために、挿入のオーバーライド メソッド内で、実行[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]の生成と動的な SQL を実行するタスクが操作を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の考慮事項に注意してください。  
+  
+-   Protected 修飾子をメソッドにはため、その使用が必要にサブクラス化<xref:System.Data.Linq.DataContext>です。  
+  
+-   この操作が内部呼び出されない場合、例外がスローされます、<xref:System.Data.Linq.DataContext.SubmitChanges%2A>操作します。 スコープ外のスタンドアロン操作として呼び出されるものではありません、<xref:System.Data.Linq.DataContext.SubmitChanges%2A>操作します。 <xref:System.Data.Linq.DataContext.SubmitChanges%2A>自体の呼び出しのメソッドをオーバーライド実装されると、前述の方法は、オーバーライド メソッド内で呼び出すことです。  
+  
+-   正しいエンティティに渡す開発者の役割です。 実装では、渡されたエンティティを追跡することを確認します。 ただし、順序を維持または 2 回、同じエンティティに渡す、開発者の責任であります。  
+  
+-   正しい動的 API を呼び出す開発者の責任においてすることをお勧めします。 たとえば、`Update`のみメソッドをオーバーライドして、<xref:System.Data.Linq.DataContext.ExecuteDynamicUpdate%2A>メソッドを呼び出すことができます。 呼び出した動的メソッドが対象の操作に一致するかどうかについて、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] は、検出や検査は行いません。 適切でないメソッドが呼び出された場合、結果は定義されて (たとえば、呼び出し<xref:System.Data.Linq.DataContext.ExecuteDynamicDelete%2A>オブジェクトを更新するため)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDynamicUpdate">
+      <MemberSignature Language="C#" Value="protected void ExecuteDynamicUpdate (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void ExecuteDynamicUpdate(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteDynamicUpdate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">更新するエンティティ。</param>
+        <summary>代行させるために、更新プログラムのオーバーライド メソッド内で、実行[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]タスクの生成と更新操作のための動的 SQL を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Data.Linq.DataContext.ExecuteDynamicInsert%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteMethodCall">
+      <MemberSignature Language="C#" Value="protected System.Data.Linq.IExecuteResult ExecuteMethodCall (object instance, System.Reflection.MethodInfo methodInfo, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Data.Linq.IExecuteResult ExecuteMethodCall(object instance, class System.Reflection.MethodInfo methodInfo, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteMethodCall(System.Object,System.Reflection.MethodInfo,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.IExecuteResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="methodInfo" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="instance">メソッドの呼び出し (現在のオブジェクト) のインスタンス。</param>
+        <param name="methodInfo">データベースのメソッドに対応する CLR メソッドを識別します。</param>
+        <param name="parameters">コマンドに渡されるパラメーターの配列。</param>
+        <summary>格納されているデータベースのプロシージャまたは指定された CLR メソッドに関連付けられているスカラー関数を実行します。</summary>
+        <returns>指定したメソッドの実行結果 (戻り値と出力パラメーター)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Linq.DataContext.ExecuteMethodCall%2A>メソッドは自動的に生成されたコードで使用し、データベース関数をプロキシとして機能します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteQuery">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable ExecuteQuery (Type elementType, string query, params object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable ExecuteQuery(class System.Type elementType, string query, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteQuery(System.Type,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementType" Type="System.Type" />
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="elementType">型、<see cref="T:System.Collections.Generic.IEnumerable`1" />を指定します。  
+  
+ フィールドに、クエリの結果に一致する列またはオブジェクトのプロパティのアルゴリズムは、次のように動作します。  
+  
+ フィールドまたはプロパティが特定の列名にマップされている場合、結果セットの列名が必要です。  
+  
+ フィールドまたはプロパティがマップされていない場合、結果セットのフィールドまたはプロパティと同じ名前の列が必要です。  
+  
+ 最初の大文字と小文字を検索して比較されます。 この一致が見つからない場合は、大文字と小文字の以降の検索が発生します。  
+  
+ クエリは、すべての追跡対象のフィールドと (除く遅延ごとに読み込まれる) オブジェクトのプロパティを返す必要があります、次の条件が当てはまる場合。  
+  
+ <c>T</c>エンティティに明示的にでは、追跡、<see cref="T:System.Data.Linq.DataContext" />です。  
+  
+ <see cref="P:System.Data.Linq.DataContext.ObjectTrackingEnabled" /> は <see langword="true" /> です。  
+  
+ エンティティは、主キーを持ちます。  
+  
+ それ以外の場合は、例外がスローされます。</param>
+        <param name="query">実行する SQL クエリ。</param>
+        <param name="parameters">コマンドに渡されるパラメーターの配列。 以下の動作に注意してください。  
+  
+ 配列内のオブジェクトの数が、コマンド文字列で識別される最大数より小さい場合は、例外がスローされます。  
+  
+ 配列にコマンド文字列で参照されていないオブジェクトが含まれている場合、例外はスローされません。  
+  
+ パラメーターが場合<see langword="null" />に変換されます<see langword="DBNull.Value" />です。</param>
+        <summary>データベース上で直接には、SQL クエリを実行します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />クエリによって返されるオブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteQuery&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TResult&gt; ExecuteQuery&lt;TResult&gt; (string query, params object[] parameters) where TResult : new();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!TResult&gt; ExecuteQuery&lt;.ctor TResult&gt;(string query, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.ExecuteQuery``1(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">返されるコレクション内の要素の型。</typeparam>
+        <param name="query">実行する SQL クエリ。</param>
+        <param name="parameters">コマンドに渡されるパラメーターの配列。 以下の動作に注意してください。  
+  
+ 配列内のオブジェクトの数が、コマンド文字列で識別される最大数より小さい場合は、例外がスローされます。  
+  
+ 配列にコマンド文字列で参照されていないオブジェクトが含まれている場合、例外はスローされません。  
+  
+ パラメーターが null の場合、これに変換されます。<see langword="DBNull.Value" />です。</param>
+        <summary>データベースに対して直接 SQL クエリを実行し、オブジェクトを返します。</summary>
+        <returns>クエリによって返されるオブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ケースをパススルーするメカニズムを[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]は特定のシナリオを提供しません。  
+  
+ オブジェクトのプロパティおよびフィールドに、クエリの結果に列の一致のアルゴリズムは、次のように動作します。  
+  
+-   フィールドまたはプロパティが特定の列名にマップされている場合、結果セットの列名が必要です。  
+  
+-   フィールドまたはプロパティがマップされていない場合、結果セットのフィールドまたはプロパティと同じ名前の列が必要です。  
+  
+-   大文字と小文字の最初を検索して比較されます。 このような一致が見つからない場合は、大文字と小文字の以降の検索が発生します。  
+  
+-   クエリは、すべての追跡対象のフィールドと (遅延読み込みされる場合を除いて) オブジェクトのプロパティを返す必要があります、次のすべてが true の場合。  
+  
+    -   場合`<T>`エンティティに明示的にでは、追跡、<xref:System.Data.Linq.DataContext>です。  
+  
+    -   ObjectTrackingEnabled は true です。  
+  
+    -   エンティティは、主キーを持ちます。  
+  
+     それ以外の場合は、例外がスローされます。  
+  
+-   それ以外の場合は、クエリは、追跡されるフィールドと、オブジェクトのプロパティのサブセットのみを取得できます。  
+  
+ 次の c# スニペットは、このメソッドの用途の 1 つを示しています。  
+  
+```  
+var customers = db.ExecuteQuery<Customer>(@"SELECT CustomerID, CompanyName, ContactName, ContactTitle,   
+   Address, City, Region, PostalCode, Country, Phone, Fax  
+   FROM   dbo.Customers  
+   WHERE  City = {0}", "London");  
+  
+foreach (Customer c in customers)  
+   Console.WriteLine(c.ContactName);  
+```  
+  
+ Visual Basic で  
+  
+```  
+Dim customers = db.ExecuteQuery(Of Customer)("SELECT CustomerID, _    CompanyName, ContactName, ContactTitle, _  
+   Address, City, Region, PostalCode, Country, Phone, Fax _  
+   FROM dbo.Customers _  
+WHERE City = {0}", "London")  
+  
+For Each c As Customer In customers  
+    Console.WriteLine(c.ContactName)  
+Next  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChangeSet">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.ChangeSet GetChangeSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Linq.ChangeSet GetChangeSet() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.GetChangeSet" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって追跡される変更済みオブジェクトを取得<see cref="T:System.Data.Linq.DataContext" />です。</summary>
+        <returns>オブジェクトのセットは、次の 3 つの読み取り専用のコレクションとして返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の考慮事項に注意してください。  
+  
+-   <xref:System.Data.Linq.DataContext.GetChangeSet%2A>insert の推論など、副作用があるし、削除の各操作時に通常実行される可能性があります<xref:System.Data.Linq.DataContext.SubmitChanges%2A>です。 たとえば、次の操作で使用されるオブジェクトは、次の一覧で対応する、推論される操作を作成できます。  
+  
+    -   <xref:System.Data.Linq.EntitySet%601.Add%2A>to <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>.  
+  
+    -   <xref:System.Data.Linq.EntityRef%601>null の代入 (可能性がありますので、<xref:System.Data.Linq.EntitySet%601.Remove%2A>に<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>です。  
+  
+-   外部キー制約に従って、セットを順序付けされない可能性があります。  
+  
+-   データベースによって生成された値 (たとえば、主キーと外部キーの値、タイムスタンプ、およびなど) は使用できません。 このような情報は、データベース コマンドを実行し、取得した情報 (たとえば、主キーから外部キー) が反映が必要です。  
+  
+-   変更されたオブジェクトのセットは、呼び出し時に計算されます。 後続の呼び出し<xref:System.Data.Linq.DataContext.SubmitChanges%2A>追加の変更が加えられた場合、別のセットを生成できます。  
+  
+ 変更が行われていません時の出力は次のとおりです。  
+  
+ `{Added: 0, Removed: 0, Modified: 0}`  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqDebuggingSupport#2](~/samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#2)]
+ [!code-vb[DLinqDebuggingSupport#2](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand GetCommand (System.Linq.IQueryable query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Common.DbCommand GetCommand(class System.Linq.IQueryable query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.GetCommand(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="query">SQL コマンドの情報を取得するクエリ。</param>
+        <summary>によって生成された SQL コマンドに関する情報を取得[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]です。</summary>
+        <returns>要求されたコマンドについてのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは値の取得のみであり、影響を与えません<xref:System.Data.Linq.DataContext>状態です。  
+  
+ 次の考慮事項に注意してください。  
+  
+-   引数は、null 以外にする必要があります。 それ以外の場合、null の引数の例外がスローされます。  
+  
+-   通常のクエリ変換の例外が中にスローされた[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]変換できないクエリのクエリの実行を適用します。  
+  
+-   最初のクエリ コマンドのみが返されます。 一括読み込みに使用されるその他のコマンド具体的には、(<xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>) は含まれません。  
+  
+-   <xref:System.Data.Linq.DataContext>コマンドを使用して、ユーザーが何を追跡しません。 たとえば返されたコマンドの実行から結果は追跡されませんには影響しません<xref:System.Data.Linq.DataContext>状態です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqDebuggingSupport#3](~/samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#3)]
+ [!code-vb[DLinqDebuggingSupport#3](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIDbCommand">
+      <MemberSignature Language="C#" Value="public System.Data.IDbCommand GetIDbCommand (System.Linq.IQueryable query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.IDbCommand GetIDbCommand(class System.Linq.IQueryable query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.GetIDbCommand(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="query">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTable">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.ITable GetTable (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Linq.ITable GetTable(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.GetTable(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ITable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">返されるオブジェクトの型。</param>
+        <summary>型が定義されている、特定の種類のオブジェクトのコレクションを返します、<paramref name="type" />パラメーター。</summary>
+        <returns>定義されているオブジェクトのコレクション、<paramref name="type" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは弱く型指定されたバージョンの<xref:System.Data.Linq.DataContext.GetTable%2A>します。 クエリを動的に構築するために比較的一般的になっているために、弱く型指定されたバージョンを理解しておくことはできます。 リフレクションを使用して、正しいジェネリック メソッドを呼び出すを強制すると便利なできなくなります。  
+  
+ 特定の型のコレクションがない場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTable&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.Table&lt;TEntity&gt; GetTable&lt;TEntity&gt; () where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Linq.Table`1&lt;!!TEntity&gt; GetTable&lt;class TEntity&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.GetTable``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Table&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TEntity">返されるオブジェクトの型。</typeparam>
+        <summary>型が定義されている、特定の種類のオブジェクトのコレクションを返します、<paramref name="TEntity" />パラメーター。</summary>
+        <returns>定義されているオブジェクトのコレクション、<paramref name="TEntity" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メイン エントリ ポイントを照会するためです。 厳密に型指定されたときに<xref:System.Data.Linq.DataContext>が作成された、新規生成されたプロパティはこのメソッドの呼び出しをカプセル化します。 たとえば、`Customers`を返すプロパティが生成される`GetTable<Customer>`です。  
+  
+ 特定の型のコレクションがない場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadOptions">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.DataLoadOptions LoadOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.DataLoadOptions LoadOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.LoadOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.DataLoadOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Linq.DataLoadOptions" />これに関連付けられている<see cref="T:System.Data.Linq.DataContext" />です。</summary>
+        <value>プリフェッチは、関連するデータのオプションを読み込みます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得または遅延読み込みされるメンバーと関連コレクションのメンバーシップのプリフェッチの動作を定義するために使用するオプションを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public System.IO.TextWriter Log { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.TextWriter Log" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.Log" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SQL クエリまたはコマンドを書き込む宛先を設定します。</summary>
+        <value><see cref="T:System.IO.TextReader" />コマンドの記述に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`null`コマンドのログ記録を無効にします。  
+  
+   
+  
+## Examples  
+ 次の例では、クエリの結果を表示する前に、コンソール ウィンドウに生成された SQL を表示します。  
+  
+ [!code-csharp[System.Data.Linq.DataContext#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.DataContext/cs/Program.cs#2)]
+ [!code-vb[System.Data.Linq.DataContext#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.DataContext/vb/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mapping">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.Mapping.MetaModel Mapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaModel Mapping" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.Mapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Linq.Mapping.MetaModel" />にマッピングが基づいています。</summary>
+        <value>データベースとドメインのオブジェクト間のマッピング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectTrackingEnabled">
+      <MemberSignature Language="C#" Value="public bool ObjectTrackingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ObjectTrackingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.ObjectTrackingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクト トラッキングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オブジェクト トラッキングが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`false`追跡するために以下の項目があるため、取得時にパフォーマンスが向上します。  
+  
+ 例外がスローされます。  
+  
+-   プロパティ設定されている場合`false`クエリが実行された後です。  
+  
+     詳細については、有効なモード」セクションを参照してください。<xref:System.Data.Linq.DataContext>です。  
+  
+-   プロパティ設定されている場合`false`と<xref:System.Data.Linq.DataContext.SubmitChanges%2A>と呼びます。  
+  
+ 場合<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>は`false`、<xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A>は無視され、として扱われます`false`です。 ここで、<xref:System.Data.Linq.DataContext>は読み取り専用です。  
+  
+ <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> が `true` の場合、<xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> は `false` です。 この場合、<xref:System.Data.Linq.DataContext>を使用して、オブジェクト グラフを読み込むことができます<xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>ディレクティブは、遅延読み込みが有効にしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryCacheEnabled">
+      <MemberSignature Language="C#" Value="public bool QueryCacheEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool QueryCacheEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.QueryCacheEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Refresh">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>データベースでデータを使用してオブジェクトの状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにアイテムを取り込む別の試行の状態は、オプティミスティック同時実行制御エラー後に役立ちます。 プリミティブ型のフィールドとプロパティをオブジェクトの状態を更新します。  
+  
+> [!NOTE]
+>  オブジェクトが上にある場合、*多く*一対多のリレーションシップ オブジェクトで外部キーの側が設定され、リレーションシップの相手側のオブジェクトへのポインターは、新しい値に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (System.Data.Linq.RefreshMode mode, System.Collections.IEnumerable entities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(valuetype System.Data.Linq.RefreshMode mode, class System.Collections.IEnumerable entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Refresh(System.Data.Linq.RefreshMode,System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Data.Linq.RefreshMode" />
+        <Parameter Name="entities" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="mode">同時実行の競合をオプティミスティックの方法を指定する値が処理されます。</param>
+        <param name="entities">更新するエンティティのコレクション。</param>
+        <summary>指定されたモードに従ってエンティティ オブジェクトのコレクションを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (System.Data.Linq.RefreshMode mode, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(valuetype System.Data.Linq.RefreshMode mode, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Refresh(System.Data.Linq.RefreshMode,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Data.Linq.RefreshMode" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="mode">同時実行の競合をオプティミスティックの方法を指定する値が処理されます。</param>
+        <param name="entity">更新するオブジェクト。</param>
+        <summary>指定されたモードに従ってエンティティ オブジェクトを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (System.Data.Linq.RefreshMode mode, params object[] entities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(valuetype System.Data.Linq.RefreshMode mode, object[] entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Refresh(System.Data.Linq.RefreshMode,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Data.Linq.RefreshMode" />
+        <Parameter Name="entities" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="mode">同時実行の競合をオプティミスティックの方法を指定する値が処理されます。</param>
+        <param name="entities">更新するエンティティ オブジェクトの配列。</param>
+        <summary>指定されたモードに従ってエンティティ オブジェクトの配列を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SubmitChanges">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>挿入、更新、または削除すると、変更されたオブジェクトのセットを計算し、データベースへの変更を実装する適切なコマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド メソッドが insert、update、または削除、存在する場合<xref:System.Data.Linq.DataContext.SubmitChanges%2A>、既定ではなく、これらのメソッドを実行[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]コマンド。  
+  
+ <xref:System.Data.Linq.DataContext.SubmitChanges%2A>トランザクションを開始し、例外が発生した場合はロールバック中に<xref:System.Data.Linq.DataContext.SubmitChanges%2A>を実行します。 ただし、これはロールバックされません変更でメモリまたはによって追跡される、 <xref:System.Data.Linq.DataContext>; これらの変更は手動でロールバックする必要があります。 新しいインスタンスを開始することができます、<xref:System.Data.Linq.DataContext>場合、メモリ内の変更を破棄します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SubmitChanges">
+      <MemberSignature Language="C#" Value="public void SubmitChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SubmitChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.SubmitChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>挿入、更新、または削除すると、変更されたオブジェクトのセットを計算し、データベースへの変更を実装する適切なコマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド メソッドが insert、update、または削除、存在する場合<xref:System.Data.Linq.DataContext.SubmitChanges%2A>、既定ではなく、これらのメソッドを実行[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]コマンド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmitChanges">
+      <MemberSignature Language="C#" Value="public virtual void SubmitChanges (System.Data.Linq.ConflictMode failureMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SubmitChanges(valuetype System.Data.Linq.ConflictMode failureMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.SubmitChanges(System.Data.Linq.ConflictMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="failureMode" Type="System.Data.Linq.ConflictMode" />
+      </Parameters>
+      <Docs>
+        <param name="failureMode">送信が失敗した場合に実行されるアクションです。 有効な引数は次のとおりです。  
+  
+ <see cref="F:System.Data.Linq.ConflictMode.FailOnFirstConflict" /><see cref="F:System.Data.Linq.ConflictMode.ContinueOnConflict" /></param>
+        <summary>加えられた変更が、基になるデータベースにオブジェクトを取得し、送信が失敗した場合に実行されるアクションを指定を送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のエラー モードは<xref:System.Data.Linq.ConflictMode.FailOnFirstConflict>します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.ConflictModeEnumeration#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.conflictmodeenumeration/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.ConflictModeEnumeration#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.conflictmodeenumeration/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbTransaction Transaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbTransaction Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.DataContext.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のローカル トランザクション、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を使用して、データベースにアクセスします。</summary>
+        <value>によって使用されるトランザクション オブジェクト、<see cref="T:System.Data.Linq.DataContext" />クエリとコマンドを実行するときにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの主なシナリオは、リレーショナルとの相互運用[!INCLUDE[vstecado](~/includes/vstecado-md.md)]コード。 たとえば、独自に作成するときにこのプロパティを使用して`Create` / `Update` / `Delete`を設定する方法、`Transaction`プロパティを ADO`Command`オブジェクト。  
+  
+ 次の点に注意してください。  
+  
+-   このプロパティが明示的に設定されていない場合、get アクセス操作子は null を返します。  
+  
+-   コードが実行されている場合、<xref:System.Transactions.Transaction>コンテキスト、このプロパティの設定は例外をスローします。  
+  
+-   このプロパティが設定され、新しい場合<xref:System.Transactions.Transaction>が開くと、例外がスロー クエリまたは更新を実行するとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Translate">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>既存の変換<see cref="T:System.Data.IDataReader" />オブジェクトにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の行ごと、<xref:System.Data.IDataReader>内のオブジェクトに変換されますが、<xref:System.Collections.Generic.IEnumerable%601>です。  
+  
+```  
+public IEnumerable<T> Translate<T>(IDataReader reader) {}  
+```  
+  
+ 説明: このメソッドを使用して変換既存<xref:System.Data.Common.DbDataReader>オブジェクトにします。 内の行ごと、<xref:System.Data.Common.DbDataReader>内のオブジェクトに変換されますが、<xref:System.Collections.Generic.IEnumerable%601>です。  
+  
+ **ジェネリック パラメーター:**  
+  
+ `T`:「<xref:System.Data.Linq.DataContext.ExecuteQuery%2A>です。  
+  
+ **パラメーター:**  
+  
+ `Query`: コマンドの説明を参照して<xref:System.Data.Linq.DataContext.ExecuteCommand%2A>です。  
+  
+ `Parameters`: パラメーターの説明を参照してください<xref:System.Data.Linq.DataContext.ExecuteCommand%2A>です。  
+  
+ **戻り値の型。**  
+  
+ <xref:System.Collections.Generic.IEnumerable%601>: 変換によって返されるオブジェクトのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.IMultipleResults Translate (System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Linq.IMultipleResults Translate(class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Translate(System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.IMultipleResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">変換される <see cref="T:System.Data.IDataReader" />。</param>
+        <summary>既存の変換<see cref="T:System.Data.Common.DbDataReader" />オブジェクトにします。</summary>
+        <returns>変換によって返されるオブジェクトの一覧。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable Translate (Type elementType, System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable Translate(class System.Type elementType, class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Translate(System.Type,System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementType" Type="System.Type" />
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="elementType">型、<see cref="T:System.Collections.Generic.IEnumerable`1" />を指定します。  
+  
+ オブジェクトのプロパティおよびフィールドに結果の列の一致のアルゴリズムは、次のように動作します。  
+  
+ フィールドまたはプロパティが特定の列名にマップされている場合、結果セットの列名が必要です。  
+  
+ フィールドまたはプロパティがマップされていない場合、結果セットのフィールドまたはプロパティと同じ名前の列が必要です。  
+  
+ 最初の大文字と小文字を検索して比較されます。 以降の検索では、大文字と小文字の発生はこの一致が見つからない場合。  
+  
+ クエリは、すべての追跡対象のフィールドと (除く遅延ごとに読み込まれる) オブジェクトのプロパティを返す必要があります、次の条件が当てはまる場合。  
+  
+ <c>T</c>エンティティに明示的にでは、追跡、<see cref="T:System.Data.Linq.DataContext" />です。  
+  
+ <see cref="P:System.Data.Linq.DataContext.ObjectTrackingEnabled" /> は <see langword="true" /> です。  
+  
+ エンティティは、主キーを持ちます。  
+  
+ それ以外の場合は、例外がスローされます。</param>
+        <param name="reader">変換される <see cref="T:System.Data.IDataReader" />。</param>
+        <summary>既存の変換<see cref="T:System.Data.Common.DbDataReader" />オブジェクトにします。</summary>
+        <returns>変換によって返されるオブジェクトの一覧。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TResult&gt; Translate&lt;TResult&gt; (System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!TResult&gt; Translate&lt;TResult&gt;(class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.DataContext.Translate``1(System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">型、<see cref="T:System.Collections.Generic.IEnumerable`1" />を指定します。</typeparam>
+        <param name="reader">変換される <see cref="T:System.Data.IDataReader" />。</param>
+        <summary>既存の変換<see cref="T:System.Data.Common.DbDataReader" />オブジェクトにします。</summary>
+        <returns>変換によって返されるオブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

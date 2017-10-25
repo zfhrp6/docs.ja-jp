@@ -1,0 +1,207 @@
+<Type Name="AccessKeyManager" FullName="System.Windows.Input.AccessKeyManager">
+  <TypeSignature Language="C#" Value="public sealed class AccessKeyManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AccessKeyManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.AccessKeyManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのアクセス キーの登録と Windows フォーム、Win32、Windows Presentation Foundation (WPF) 間の相互運用キーボード コマンドの処理を維持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.AccessKeyManager>ごとに 1 つ使用して必要に応じてオブジェクトが作成された<xref:System.Windows.Threading.Dispatcher>です。  
+  
+ <xref:System.Windows.Input.AccessKeyManager>のイベント ハンドラーに割り当てられている<xref:System.Windows.Input.InputManager.PostProcessInput>するメソッドを公開および<xref:System.Windows.Input.AccessKeyManager.Register%2A>と<xref:System.Windows.Input.AccessKeyManager.Unregister%2A>キーにアクセスします。  
+  
+ 登録されているアクセス キーが押されたときに、<xref:System.Windows.Input.AccessKeyManager>呼び出し、<xref:System.Windows.UIElement.OnAccessKey%2A>メソッドを対象となる要素。  
+  
+ 要素は、任意の数のアクセス キーを関連付けることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccessKeyPressedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent AccessKeyPressedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent AccessKeyPressedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.AccessKeyManager.AccessKeyPressedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Input.AccessKeyManager.AccessKeyPressed" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAccessKeyPressedHandler">
+      <MemberSignature Language="C#" Value="public static void AddAccessKeyPressedHandler (System.Windows.DependencyObject element, System.Windows.Input.AccessKeyPressedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddAccessKeyPressedHandler(class System.Windows.DependencyObject element, class System.Windows.Input.AccessKeyPressedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.AddAccessKeyPressedHandler(System.Windows.DependencyObject,System.Windows.Input.AccessKeyPressedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.AccessKeyPressedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.AccessKeyManager.AccessKeyPressed" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyRegistered">
+      <MemberSignature Language="C#" Value="public static bool IsKeyRegistered (object scope, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKeyRegistered(object scope, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.IsKeyRegistered(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Object" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scope">クエリの実行にプレゼンテーション ソース<c>キー</c>です。</param>
+        <param name="key">クエリを実行するキー。</param>
+        <summary>指定したキーが指定されたスコープ内のアクセス キーとして登録されているかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />キーが登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessKey">
+      <MemberSignature Language="C#" Value="public static bool ProcessKey (object scope, string key, bool isMultiple);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ProcessKey(object scope, string key, bool isMultiple) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.ProcessKey(System.Object,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Object" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="isMultiple" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scope">アクセス キーの範囲。</param>
+        <param name="key">アクセス キー。</param>
+        <param name="isMultiple">示す場合<c>キー</c>が複数の一致。</param>
+        <summary>指定したアクセス キーを処理として、<see cref="E:System.Windows.UIElement.KeyDown" />にキーのイベントが渡された、<see cref="T:System.Windows.Input.AccessKeyManager" />です。</summary>
+        <returns>
+          <see langword="true" />キーが複数ある; に一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static void Register (string key, System.Windows.IInputElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Register(string key, class System.Windows.IInputElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.Register(System.String,System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="key">アクセス キー。</param>
+        <param name="element">要素に関連付ける<c>キー</c>とします。</param>
+        <summary>指定したアクセス キーを指定した要素に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス キーが押されたときに、<xref:System.Windows.UIElement.OnAccessKey%2A>メソッドの`element`と呼びます。  
+  
+ 要素は、任意の数のアクセス キーを関連付けることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessKeyPressedHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveAccessKeyPressedHandler (System.Windows.DependencyObject element, System.Windows.Input.AccessKeyPressedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAccessKeyPressedHandler(class System.Windows.DependencyObject element, class System.Windows.Input.AccessKeyPressedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.RemoveAccessKeyPressedHandler(System.Windows.DependencyObject,System.Windows.Input.AccessKeyPressedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.AccessKeyPressedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>指定された削除<see cref="E:System.Windows.Input.AccessKeyManager.AccessKeyPressed" />指定したオブジェクトからのイベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public static void Unregister (string key, System.Windows.IInputElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(string key, class System.Windows.IInputElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.AccessKeyManager.Unregister(System.String,System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="key">アクセス キー。</param>
+        <param name="element">元の関連付けを解除する要素<c>キー</c>です。</param>
+        <summary>指定したアクセス キーの関連付けを指定した要素から解除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,147 @@
+<Type Name="ActiveDirectoryRoleFactory" FullName="System.Workflow.Activities.ActiveDirectoryRoleFactory">
+  <TypeSignature Language="C#" Value="public static class ActiveDirectoryRoleFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed ActiveDirectoryRoleFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.ActiveDirectoryRoleFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows NT エイリアス、電子メール アドレス、およびセキュリティ識別子 (SID) から <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> オブジェクトを作成するためのファクトリ クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.ActiveDirectoryRoleFactory> のすべてのメソッドは静的で、インスタンスを作成する必要がありません。 コンストラクターは表示されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Configuration">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration Configuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration Configuration" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ActiveDirectoryRoleFactory.Configuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration" /> に関連付けられている <see cref="T:System.Workflow.Activities.ActiveDirectoryRoleFactory" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration" /> に関連付けられている <see cref="T:System.Workflow.Activities.ActiveDirectoryRoleFactory" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration> オブジェクトは、<xref:System.Workflow.Activities.ActiveDirectoryRole> クラスが使用する標準の Active Directory スキーマ プロパティを変更するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromAlias">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.ActiveDirectoryRole CreateFromAlias (string alias);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.Activities.ActiveDirectoryRole CreateFromAlias(string alias) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRoleFactory.CreateFromAlias(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="alias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="alias"><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を作成するためのエイリアス文字列。</param>
+        <summary>指定した Windows NT エイリアスを使用して <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のインスタンスを作成します。</summary>
+        <returns>指定した Windows NT エイリアスを記述する <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole> は、Active Directory 機能へのアクセスに使用される <xref:System.Workflow.Activities.WorkflowRole> 抽象クラスの具象クラスです。 通常は、Active Directory を使用して組織の人事情報を格納します。 <xref:System.Workflow.Activities.ActiveDirectoryRole> の主な目的は、ビジネス上の理由でこうした組織情報をクエリすることです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromEmailAddress">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.ActiveDirectoryRole CreateFromEmailAddress (string emailAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.Activities.ActiveDirectoryRole CreateFromEmailAddress(string emailAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRoleFactory.CreateFromEmailAddress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="emailAddress"><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を作成するための電子メール アドレス文字列</param>
+        <summary>電子メール アドレスを使用して <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のインスタンスを作成します。</summary>
+        <returns>指定した電子メール アドレスを記述する <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole> は、Active Directory 機能へのアクセスに使用される <xref:System.Workflow.Activities.WorkflowRole> 抽象クラスの具象クラスです。 通常は、Active Directory を使用して組織の人事情報を格納します。 <xref:System.Workflow.Activities.ActiveDirectoryRole> の主な目的は、ビジネス上の理由でこうした組織情報をクエリすることです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromSecurityIdentifier">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.ActiveDirectoryRole CreateFromSecurityIdentifier (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.Activities.ActiveDirectoryRole CreateFromSecurityIdentifier(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRoleFactory.CreateFromSecurityIdentifier(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid"><see cref="T:System.Security.Principal.SecurityIdentifier" /> の作成に使用する <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</param>
+        <summary>Windows NT <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を使用して <see cref="T:System.Security.Principal.SecurityIdentifier" /> のインスタンスを作成します。</summary>
+        <returns>指定した <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を記述する <see cref="T:System.Security.Principal.SecurityIdentifier" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole> は、Active Directory 機能へのアクセスに使用される <xref:System.Workflow.Activities.WorkflowRole> 抽象クラスの具象クラスです。 通常は、Active Directory を使用して組織の人事情報を格納します。 <xref:System.Workflow.Activities.ActiveDirectoryRole> の主な目的は、ビジネス上の理由でこうした組織情報をクエリすることです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

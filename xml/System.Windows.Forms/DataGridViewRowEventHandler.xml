@@ -1,0 +1,67 @@
+<Type Name="DataGridViewRowEventHandler" FullName="System.Windows.Forms.DataGridViewRowEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewRowEventHandler(object sender, DataGridViewRowEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewRowEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewRowEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewRowEventArgs" />。</param>
+    <summary>行に関連するイベントを処理するメソッドを表す、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewRowEventHandler> 、次の処理<xref:System.Windows.Forms.DataGridView>イベント。  
+  
+-   <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded>  
+  
+-   <xref:System.Windows.Forms.DataGridView.NewRowNeeded>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowDefaultCellStyleChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowErrorTextChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowHeaderCellChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowHeightChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowMinimumHeightChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowUnshared>  
+  
+-   <xref:System.Windows.Forms.DataGridView.UserAddedRow>  
+  
+-   <xref:System.Windows.Forms.DataGridView.UserDeletedRow>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowContextMenuStripChanged>  
+  
+-   <xref:System.Windows.Forms.DataGridView.RowDividerHeightChanged>  
+  
+ <xref:System.Windows.Forms.DataGridViewRowEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewRowEventHandler>を処理するデリゲート、<xref:System.Windows.Forms.DataGridView.NewRowNeeded>イベント。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティの参照トピックです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

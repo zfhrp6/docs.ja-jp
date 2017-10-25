@@ -1,0 +1,1008 @@
+<Type Name="FileSystemInfo" FullName="System.IO.FileSystemInfo">
+  <TypeSignature Language="C#" Value="public abstract class FileSystemInfo : MarshalByRefObject, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit FileSystemInfo extends System.MarshalByRefObject implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileSystemInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.IO.FileInfo" /> オブジェクトと <see cref="T:System.IO.DirectoryInfo" /> オブジェクトの両方の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemInfo>クラスには、ファイルおよびディレクトリを操作に共通するメソッドが含まれています。 A<xref:System.IO.FileSystemInfo>ファイルまたはディレクトリをそのための基礎として機能しているオブジェクトを表すことができます<xref:System.IO.FileInfo>または<xref:System.IO.DirectoryInfo>オブジェクト。 多数のファイルとディレクトリを解析するときに、この基本クラスを使用します。  
+  
+ 派生クラスから継承できます<xref:System.IO.FileSystemInfo>、派生クラスにから AllAccess アクセス許可がある場合にのみ、<xref:System.Security.Permissions.FileIOPermissionAccess>列挙します。  
+  
+ パスを受け入れるメンバー ボックスで、パスは、ファイルまたはディレクトリを参照できます。 指定されたパスは相対パスまたは汎用名前付け規則 (UNC) パスのサーバーと共有名にも参照できます。 たとえば、次のすべては、有効なパスは。  
+  
+-   "c:\\\MyDir\\\MyFile.txt"C# の場合、または Visual Basic では、"c:\MyDir\MyFile.txt"です。  
+  
+-   "c:\\\MyDir"C# の場合、または Visual Basic では、"c:\MyDir"です。  
+  
+-   "MyDir\\\MySubdir"C# の場合、または Visual Basic では、"MyDir\MySubDir"です。  
+  
+-   "\\\\\\\MyServer\\\MyShare"C# の場合、または"\\\MyServer\MyShare"Visual Basic でします。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのファイルとディレクトリの場合、各エントリに関する情報を照会をループ処理する方法を示します。  
+  
+ [!code-cpp[FileSystemInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/FileSystemInfo/cpp/program.cpp#1)]
+ [!code-csharp[FileSystemInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemInfo/CS/program.cs#1)]
+ [!code-vb[FileSystemInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemInfo/VB/FileSystemInfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.FileIOPermission">このクラスから継承する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />  
+  
+ セキュリティ アクション: 継承確認要求</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FileSystemInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.FileSystemInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FileSystemInfo (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemInfo.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.IO.FileSystemInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定した<see cref="T:System.Runtime.Serialization.SerializationInfo" />が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.IO.FileAttributes Attributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.FileAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリの属性を取得または設定します。</summary>
+        <value>
+          現在の <see cref="T:System.IO.FileAttributes" /> の <see cref="T:System.IO.FileSystemInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.IO.FileSystemInfo.Attributes%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 値は、キャッシュされたときに、いずれかの値自体またはその他の<xref:System.IO.FileSystemInfo>プロパティにアクセスします。 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。
+
+ キャッシュの最新の状態の時点で、パスが存在しない場合、戻り値は`(FileAttributes)(-1)`します。 <xref:System.IO.FileNotFoundException>または<xref:System.IO.DirectoryNotFoundException>値を設定する場合にのみスローされることができます。
+  
+ このプロパティの値は、archive、compressed、ディレクトリ、非表示、オフライン、読み取り専用のシステム、および一時ファイル属性のフラグの組み合わせです。  
+  
+ この値を設定すると、ビットごとの OR 演算子を使用して (`|` (C#) または`Or`Visual Basic で) 複数の値を適用します。 既存の値を保持する、<xref:System.IO.FileSystemInfo.Attributes%2A>プロパティの値が含まれて、<xref:System.IO.FileSystemInfo.Attributes%2A>の割り当てのプロパティです。 例:  
+  
+ `exampleFile.Attributes = exampleFile.Attributes | FileAttributes.ReadOnly;`  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.IO.FileSystemInfo.Attributes%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.FileSystemInfo>クラスです。  
+  
+ [!code-cpp[FileSystemInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/FileSystemInfo/cpp/program.cpp#2)]
+ [!code-csharp[FileSystemInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemInfo/CS/program.cs#2)]
+ [!code-vb[FileSystemInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemInfo/VB/FileSystemInfo.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイルが存在しません。 プロパティの値を設定するときにスローされるだけです。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません。 たとえば、マップされていないドライブ上にあります。 プロパティの値を設定するときにスローされるだけです。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元は、必要なアクセス許可はありません。</exception>
+        <exception cref="T:System.ArgumentException">呼び出し元は、無効なファイル属性を設定しようとします。  
+  
+ または  
+  
+ ユーザーは、属性値を設定しようとしていますが、書き込みアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリを作成します。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationTime">
+      <MemberSignature Language="C#" Value="public DateTime CreationTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreationTime" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.CreationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリの作成日時を取得または設定します。</summary>
+        <value>現在の <see cref="T:System.IO.FileSystemInfo" /> オブジェクトの日時。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ 値、<xref:System.IO.FileSystemInfo.CreationTime%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ NTFS でフォーマットされたドライブは、ファイルのメタ情報、短時間に、ファイルの作成日時などをキャッシュ可能性があります。 このプロセスは、ファイルのトンネリングと呼ばれます。 その結果、上書きするか、既存のファイルを置き換えている場合、ファイルの作成時刻を明示的に設定する必要があります。  
+  
+ このプロパティの値が`null`場合、ファイル システムを含む、<xref:System.IO.FileSystemInfo>オブジェクトがこの情報をサポートしていません。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.IO.FileSystemInfo.CreationTime%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.FileSystemInfo>クラスです。  
+  
+ [!code-cpp[FileSystemInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/FileSystemInfo/cpp/program.cpp#2)]
+ [!code-csharp[FileSystemInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemInfo/CS/program.cs#2)]
+ [!code-vb[FileSystemInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemInfo/VB/FileSystemInfo.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません。たとえば、マップされていないドライブ上にあります。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元は、無効な作成時間を設定しようとします。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">作成時刻を設定します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime CreationTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreationTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.CreationTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリの作成日時を世界協定時刻 (UTC) で取得または設定します。</summary>
+        <value>現在の <see cref="T:System.IO.FileSystemInfo" /> オブジェクトの UTC 形式での作成日時。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ 値、<xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC)。  
+  
+ NTFS でフォーマットされたドライブは、ファイルのメタ情報、短時間に、ファイルの作成日時などをキャッシュ可能性があります。 このプロセスは、ファイルのトンネリングと呼ばれます。 その結果、上書きするか、既存のファイルを置き換えている場合、ファイルの作成時刻を明示的に設定する必要があります。  
+  
+ このプロパティの値が`null`場合、ファイル システムを含む、<xref:System.IO.FileSystemInfo>オブジェクトがこの情報をサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません。たとえば、マップされていないドライブ上にあります。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元は、無効なアクセス時間を設定しようとします。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">作成時刻を設定します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public abstract void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemInfo.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルまたはディレクトリを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません。たとえば、マップされていないドライブ上にあります。</exception>
+        <exception cref="T:System.IO.IOException">ファイルまたはディレクトリに開いているハンドルがあり、オペレーティング システムが Windows XP 以前のバージョン。 このハンドルが開いている原因は、ディレクトリおよびファイルを列挙したことにある可能性があります。 詳細については、次を参照してください。[する方法: ディレクトリと列挙ファイル](~/docs/standard/io/how-to-enumerate-directories-and-files.md)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public abstract bool Exists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Exists" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.Exists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルまたはディレクトリが存在するかどうかを示す値を取得します。</summary>
+        <value>
+          ファイルまたはディレクトリが存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extension">
+      <MemberSignature Language="C#" Value="public string Extension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Extension" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.Extension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの拡張子部分を表す文字列を取得します。</summary>
+        <value><see cref="T:System.IO.FileSystemInfo" /> 拡張子を格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Extension`プロパティから返される、<xref:System.IO.FileSystemInfo>ピリオド (.) を含む拡張します。 たとえば、ファイル c:\NewFile.txt、このプロパティは".txt"を返します。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルの完全修飾パスを取得します。|<xref:System.IO.Path.GetFullPath%2A>|  
+|ファイル名パスのみを取得します。|<xref:System.IO.Path.GetFileNameWithoutExtension%2A>|  
+|パスから、ディレクトリ名のみを取得します。|<xref:System.IO.Path.GetDirectoryName%2A>|  
+|ファイルの拡張子を変更します。|<xref:System.IO.Path.ChangeExtension%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullName">
+      <MemberSignature Language="C#" Value="public virtual string FullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.FullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリまたはファイルの絶対パスを取得します。</summary>
+        <value>絶対パスを含んでいる文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、ファイル c:\NewFile.txt、このプロパティは"c:\NewFile.txt"を返します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.IO.FileSystemInfo.FullName%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.IO.FileSystemInfo>クラスです。  
+  
+ [!code-cpp[FileSystemInfo#2](~/samples/snippets/cpp/VS_Snippets_CLR/FileSystemInfo/cpp/program.cpp#2)]
+ [!code-csharp[FileSystemInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR/FileSystemInfo/CS/program.cs#2)]
+ [!code-vb[FileSystemInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/FileSystemInfo/VB/FileSystemInfo.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.PathTooLongException">完全修飾パスとファイル名は、260 文字以上です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスにアクセスします。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FullPath">
+      <MemberSignature Language="C#" Value="protected string FullPath;" />
+      <MemberSignature Language="ILAsm" Value=".field family string FullPath" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileSystemInfo.FullPath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリまたはファイルの絶対パスを表します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.PathTooLongException">完全修飾パスが 260 文字以上です。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.IO.FileSystemInfo" />使用できる、<see langword="FullPath" />フィールドを操作しているオブジェクトの完全なパスを決定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemInfo.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>ファイル名と追加の例外情報を使用して <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のインスタンスによって説明されているパスに関する情報にアクセスする権限です。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />  
+  
+ セキュリティ アクション: 必要に応じて</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このクラスにリンクするアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />  
+  
+ セキュリティ アクション: リンク確認要求</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LastAccessTime">
+      <MemberSignature Language="C#" Value="public DateTime LastAccessTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastAccessTime" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.LastAccessTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリに最後にアクセスした時刻を取得または設定します。</summary>
+        <value>現在のファイルまたはディレクトリに最後にアクセスした時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ 値、<xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、更新を示しています、 <xref:System.IO.FileSystemInfo.LastAccessTime%2A> 「タッチ」操作を使用してプロパティです。 この例では、ファイルは、「タッチ」、更新、 <xref:System.IO.FileSystemInfo.CreationTime%2A>、<xref:System.IO.FileSystemInfo.LastAccessTime%2A>と<xref:System.IO.FileSystemInfo.LastWriteTime%2A>プロパティを現在の日付と時刻。  
+  
+ [!code-csharp[System.IO.FileSystemInfo_touch#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileSystemInfo_touch/cs/touch.cs#00)]
+ [!code-vb[System.IO.FileSystemInfo_touch#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileSystemInfo_touch/vb/touch.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元が、無効なアクセス時間を設定しようとしています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">最終アクセス時刻を設定します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LastAccessTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime LastAccessTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastAccessTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.LastAccessTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリに最後にアクセスした時刻を世界協定時刻 (UTC) で取得または設定します。</summary>
+        <value>現在のファイルまたはディレクトリに最後にアクセスした UTC 時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ 値、<xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC)。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元は、無効なアクセス時間を設定しようとします。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">最終アクセス時刻を設定します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LastWriteTime">
+      <MemberSignature Language="C#" Value="public DateTime LastWriteTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastWriteTime" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.LastWriteTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリに最後に書き込みがなされた時刻を取得または設定します。</summary>
+        <value>現在のファイルに最後に書き込みがなされた時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ 値、<xref:System.IO.FileSystemInfo.LastWriteTime%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ このプロパティの値が`null`ファイルを含む、ファイル システムがこの情報をサポートしていない場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、更新を示しています、 <xref:System.IO.FileSystemInfo.LastWriteTime%2A> 「タッチ」操作を使用してプロパティです。 この例では、ファイルは、「タッチ」、更新、 <xref:System.IO.FileSystemInfo.CreationTime%2A>、<xref:System.IO.FileSystemInfo.LastAccessTime%2A>と<xref:System.IO.FileSystemInfo.LastWriteTime%2A>プロパティを現在の日付と時刻。  
+  
+ [!code-csharp[System.IO.FileSystemInfo_touch#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.FileSystemInfo_touch/cs/touch.cs#00)]
+ [!code-vb[System.IO.FileSystemInfo_touch#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.FileSystemInfo_touch/vb/touch.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元は、無効な書き込み時間を設定しようとします。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">設定の最終書き込み時刻を使用します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LastWriteTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime LastWriteTimeUtc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastWriteTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.LastWriteTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルまたはディレクトリに最後に書き込みがなされた時刻を世界協定時刻 (UTC) で取得または設定します。</summary>
+        <value>現在のファイルに最後に書き込みがなされた UTC 時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ 値、<xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>プロパティは事前にキャッシュする場合の現在のインスタンス、<xref:System.IO.FileSystemInfo>から、次のいずれかのオブジェクトが返された<xref:System.IO.DirectoryInfo>メソッド。  
+  
+-   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>  
+  
+-   <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>  
+  
+ 最新の値を取得する呼び出し、<xref:System.IO.FileSystemInfo.Refresh%2A>メソッドです。  
+  
+ ファイルが記述されている場合、<xref:System.IO.FileSystemInfo>オブジェクトが存在しないか、このプロパティは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します (西暦)世界協定時刻 (UTC)。  
+  
+ このプロパティの値が`null`ファイルを含む、ファイル システムがこの情報をサポートしていない場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <see cref="M:System.IO.FileSystemInfo.Refresh" />データを初期化できません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">呼び出し元は、無効な書き込み時間を設定しようとします。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">設定の最終書き込み時刻を使用します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの場合は、そのファイルの名前を取得します。 ディレクトリの場合は、階層が存在する場合は、その階層内にある最後のディレクトリの名前を取得します。 それ以外の場合は、<see langword="Name" /> プロパティはそのディレクトリの名前を取得します。</summary>
+        <value>親ディレクトリの名前、階層内にある最後のディレクトリの名前、またはファイル名拡張子を含むファイル名を示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリの`Name`Dir、いない c:\Dir などの親ディレクトリの名前のみを返します。 サブディレクトリ、 `Name` Sub1, いない c:\Dir\Sub1 などで、サブディレクトリの名前のみを返します。  
+  
+ ファイルの場合、`Name`ファイル名と MyFile.txt、いない c:\Dir\Myfile.txt などのファイル名拡張子のみを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalPath">
+      <MemberSignature Language="C#" Value="protected string OriginalPath;" />
+      <MemberSignature Language="ILAsm" Value=".field family string OriginalPath" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileSystemInfo.OriginalPath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスは、以前にユーザーが相対パスまたは絶対パスで指定したものです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemInfo.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FileSystemInfo.Refresh`現在のファイル システムからファイルのスナップショットを取得します。 `Refresh`ファイル システムが正しくないか、古くなった情報を返す場合でも、基になるファイル システムを修正することはできません。 これは、Windows 98 などのプラットフォームで発生することができます。  
+  
+ 呼び出しを行う必要があります`Refresh`属性情報、または情報を取得しようとしています。 期限切れとなる前にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ディスク ドライブなどのデバイス準備ができていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

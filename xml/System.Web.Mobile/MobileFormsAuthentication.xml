@@ -1,0 +1,136 @@
+<Type Name="MobileFormsAuthentication" FullName="System.Web.Mobile.MobileFormsAuthentication">
+  <TypeSignature Language="C#" Value="public class MobileFormsAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MobileFormsAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Mobile.MobileFormsAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>適切な認証情報を適切な Url に付加して cookie なしのデバイスをサポートします。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このヘルパー クラスは、モバイル Web サイトの認証の書き込みを支援するよう設計されています。 ASP.NET のモバイル デバイスと互換性のあるバージョンは、クラス オブジェクトを通じて<xref:System.Web.Security.FormsAuthentication>クラスのメソッド、<xref:System.Web.Mobile.MobileFormsAuthentication.RedirectFromLoginPage%2A>と<xref:System.Web.Mobile.MobileFormsAuthentication.SignOut%2A>です。 Web アプリケーションを保護する方法の詳細については、次を参照してください。 [Web アプリケーション用の基本的なセキュリティ プラクティス](http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、login.aspx ページを示します。 使用して認証を検証、<xref:System.Web.Security.Membership.ValidateUser%2A>関数。 <xref:System.Web.Security.Membership>クラスは、データ ソースと通信するメンバーシップ プロバイダーに依存します。  
+  
+ [!code-aspx-csharp[MobileFormsAuthentication#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileFormsAuthentication/CS/MobileFormsAuth.aspx#1)]
+ [!code-aspx-vb[MobileFormsAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileFormsAuthentication/VB/MobileFormsAuth.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="RedirectFromLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectFromLoginPage (string userName, bool createPersistentCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectFromLoginPage(string userName, bool createPersistentCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mobile.MobileFormsAuthentication.RedirectFromLoginPage(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userName">Cookie 認証の目的で、ユーザーの名前です。 これにより、アカウント名にマップする必要はありませんし、URL 承認で使用します。</param>
+        <param name="createPersistentCookie">永続的な cookie (1 つはセッション ベースまたはセッションを outlasts) を発行する必要があるかどうかを指定します。</param>
+        <summary>最初に要求された URL にログインした後、認証されたユーザーをリダイレクトします。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、認証 cookie から暗号化された文字列を作成し、発信元の要求のリダイレクト URL を追加します。 クライアント側リダイレクトがその URL に対して発行されます。 か、サポートしていない cookie、または cookie が安全な方法で認証情報を格納するためには小さすぎることをサポートして特定のモバイル デバイスの制限を回避するために使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.Mobile.MobileFormsAuthentication.RedirectFromLoginPage%2A>認証されたユーザーを最初に要求された URL に送信するメソッド。  
+  
+ [!code-aspx-csharp[MobileFormsAuthentication#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileFormsAuthentication/CS/MobileFormsAuth.aspx#1)]
+ [!code-aspx-vb[MobileFormsAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileFormsAuthentication/VB/MobileFormsAuth.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectFromLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectFromLoginPage (string userName, bool createPersistentCookie, string strCookiePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectFromLoginPage(string userName, bool createPersistentCookie, string strCookiePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mobile.MobileFormsAuthentication.RedirectFromLoginPage(System.String,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+        <Parameter Name="strCookiePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">Cookie 認証の目的で、ユーザーの名前です。 これにより、アカウント名にマップする必要はありませんし、URL 承認で使用します。</param>
+        <param name="createPersistentCookie">永続的な cookie (1 つはセッション ベースまたはセッションを outlasts) を発行する必要があるかどうかを指定します。</param>
+        <param name="strCookiePath">現在のアプリケーションで使用される構成された cookie パスを返します。</param>
+        <summary>最初に要求された URL にログインした後、認証されたユーザーをリダイレクトします。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、認証 cookie から暗号化された文字列を作成し、発信元の要求のリダイレクト URL を追加します。 クライアント側リダイレクトがその URL に対して発行されます。 か、サポートしていない cookie、または cookie が安全な方法で認証情報を格納するためには小さすぎることをサポートして特定のモバイル デバイスの制限を回避するために使用できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.Mobile.MobileFormsAuthentication.RedirectFromLoginPage%2A>認証されたユーザーを最初に要求された URL に送信するメソッド。  
+  
+ [!code-aspx-csharp[MobileFormsAuthentication#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileFormsAuthentication/CS/MobileFormsAuth.aspx#1)]
+ [!code-aspx-vb[MobileFormsAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileFormsAuthentication/VB/MobileFormsAuth.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mobile.MobileFormsAuthentication.SignOut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し、<see cref="M:System.Web.Security.FormsAuthentication.SignOut" />メソッドとセット、<see cref="P:System.Web.UI.MobileControls.IPageAdapter.PersistCookielessData" />プロパティを<see langword="false" />です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,188 @@
+<Type Name="ConnectionInterfaceCollection" FullName="System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection">
+  <TypeSignature Language="C#" Value="public sealed class ConnectionInterfaceCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConnectionInterfaceCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web パーツの接続で使用するためのインターフェイスのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーとコンシューマー間の通信には、インターフェイスで定義されたコントラクトが必要です。 このコレクションには、コンシューマーでサポートされているすべての通信インターフェイスが含まれています。 <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint.GetSecondaryInterfaces%2A?displayProperty=nameWithType> メソッドは <xref:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection> オブジェクトを返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionInterfaceCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionInterfaceCollection (System.Collections.ICollection connectionInterfaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection connectionInterfaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionInterfaces" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="connectionInterfaces">変換するオブジェクトのコレクション、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />指定されたコレクションを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">内のオブジェクト<paramref name="connectionInterfaces" />に追加することはできません、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />コレクション。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionInterfaceCollection (System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection existingConnectionInterfaces, System.Collections.ICollection connectionInterfaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection existingConnectionInterfaces, class System.Collections.ICollection connectionInterfaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.#ctor(System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection,System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="existingConnectionInterfaces" Type="System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />
+        <Parameter Name="connectionInterfaces" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="existingConnectionInterfaces">A<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />とを組み合わせる、 <c>connectionInterfaces</c>オブジェクト。</param>
+        <param name="connectionInterfaces">結合するコレクション、 <c>existingConnectionInterfaces</c>オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" /> 2 つの指定したコレクションを組み合わせることによってクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">内のオブジェクト<paramref name="connectionInterfaces" />に追加することはできません、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />コレクション。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (Type value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Type value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.Contains(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value">内で検索する型、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />です。</param>
+        <summary>指定するかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />オブジェクトには、特定の値が含まれています。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="value" /> に存在する場合は <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Type[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Type[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.CopyTo(System.Type[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Type[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ReadOnlyCollectionBase" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>全体をコピー<see cref="T:System.Collections.ReadOnlyCollectionBase" />を互換性のある 1 次元オブジェクト<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>静的な読み取り専用インスタンスを参照して、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (Type value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Type value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.IndexOf(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する型。</param>
+        <summary>指定したオブジェクトを検索し、全体内で最初に見つかった位置の 0 から始まるインデックスを返します<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" />コレクション。</summary>
+        <returns><paramref name="value" /> 全体を対象に <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection" /> を検索し、見つかった場合は、インデックス番号の最も小さい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Type this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionInterfaceCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある要素を取得します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

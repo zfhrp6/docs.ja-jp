@@ -1,0 +1,733 @@
+<Type Name="SecurityElementBase" FullName="System.ServiceModel.Configuration.SecurityElementBase">
+  <TypeSignature Language="C#" Value="public class SecurityElementBase : System.ServiceModel.Configuration.BindingElementExtensionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityElementBase extends System.ServiceModel.Configuration.BindingElementExtensionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.SecurityElementBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.BindingElementExtensionElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ設定の構成に使用する要素に共通のメンバーを持つ基本クラスを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBindingTemplate">
+      <MemberSignature Language="C#" Value="protected void AddBindingTemplate (System.Collections.Generic.Dictionary&lt;System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement&gt; bindingTemplates, System.ServiceModel.Configuration.AuthenticationMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddBindingTemplate(class System.Collections.Generic.Dictionary`2&lt;valuetype System.ServiceModel.Configuration.AuthenticationMode, class System.ServiceModel.Channels.SecurityBindingElement&gt; bindingTemplates, valuetype System.ServiceModel.Configuration.AuthenticationMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement},System.ServiceModel.Configuration.AuthenticationMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingTemplates" Type="System.Collections.Generic.Dictionary&lt;System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement&gt;" />
+        <Parameter Name="mode" Type="System.ServiceModel.Configuration.AuthenticationMode" />
+      </Parameters>
+      <Docs>
+        <param name="bindingTemplates">認証モードおよびバインド要素を構成するペア。</param>
+        <param name="mode">メッセージ交換に使用される認証モード。</param>
+        <summary>指定した構成テンプレートをこのインスタンスに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBindingTemplates">
+      <MemberSignature Language="C#" Value="protected virtual void AddBindingTemplates (System.Collections.Generic.Dictionary&lt;System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement&gt; bindingTemplates);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddBindingTemplates(class System.Collections.Generic.Dictionary`2&lt;valuetype System.ServiceModel.Configuration.AuthenticationMode, class System.ServiceModel.Channels.SecurityBindingElement&gt; bindingTemplates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingTemplates" Type="System.Collections.Generic.Dictionary&lt;System.ServiceModel.Configuration.AuthenticationMode,System.ServiceModel.Channels.SecurityBindingElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="bindingTemplates">認証モードおよびバインド要素を構成するペア。</param>
+        <summary>指定した構成テンプレートをこのインスタンスに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInsecureTransport">
+      <MemberSignature Language="C#" Value="public bool AllowInsecureTransport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowInsecureTransport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.AllowInsecureTransport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("allowInsecureTransport", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ保護されていないトランスポートが使用できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セキュリティ保護されていないトランスポートは許可されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowSerializedSigningTokenOnReply">
+      <MemberSignature Language="C#" Value="public bool AllowSerializedSigningTokenOnReply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowSerializedSigningTokenOnReply" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.AllowSerializedSigningTokenOnReply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("allowSerializedSigningTokenOnReply", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されたトークンを応答で使用できるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          シリアル化されたトークンを応答で使用できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="public override void ApplyConfiguration (System.ServiceModel.Channels.BindingElement bindingElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyConfiguration(class System.ServiceModel.Channels.BindingElement bindingElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.ApplyConfiguration(System.ServiceModel.Channels.BindingElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingElement" Type="System.ServiceModel.Channels.BindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="bindingElement">バインディング要素。</param>
+        <summary>指定されたバインディング要素の内容を、このバインディング構成セクションに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.AuthenticationMode AuthenticationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Configuration.AuthenticationMode AuthenticationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.AuthenticationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("authenticationMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ交換に使用される認証設定を取得または設定します。</summary>
+        <value>メッセージ交換に使用される認証設定です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingElementType">
+      <MemberSignature Language="C#" Value="public override Type BindingElementType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type BindingElementType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.BindingElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディング要素の型を取得します。</summary>
+        <value>このバインド要素の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenewSecurityContextToken">
+      <MemberSignature Language="C#" Value="public bool CanRenewSecurityContextToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenewSecurityContextToken" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.CanRenewSecurityContextToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("canRenewSecurityContextToken", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ コンテキスト トークンを更新できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セキュリティ コンテキスト トークンを更新することができます。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.ServiceModel.Configuration.ServiceModelExtensionElement from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.ServiceModel.Configuration.ServiceModelExtensionElement from) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.CopyFrom(System.ServiceModel.Configuration.ServiceModelExtensionElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.ServiceModel.Configuration.ServiceModelExtensionElement" />
+      </Parameters>
+      <Docs>
+        <param name="from">コピーされる構成要素。</param>
+        <summary>指定された構成要素の内容をこの構成要素にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElement">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Channels.BindingElement CreateBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.ServiceModel.Channels.BindingElement CreateBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.CreateBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの設定からカスタム バインド要素オブジェクトを作成します。</summary>
+        <returns>カスタム <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElement">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.Channels.BindingElement CreateBindingElement (bool createTemplateOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ServiceModel.Channels.BindingElement CreateBindingElement(bool createTemplateOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="createTemplateOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="createTemplateOnly">
+          <see langword="true" />テンプレートのみを作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>このインスタンスの設定からカスタム バインド要素オブジェクトを作成します。</summary>
+        <returns>カスタム <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite DefaultAlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite DefaultAlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.DefaultAlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.SecurityAlgorithmSuiteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultAlgorithmSuite", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングの既定のアルゴリズム スイートを取得または設定します。</summary>
+        <value>このバインディングの既定のアルゴリズム スイートを指定する <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />。 既定値は、<see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUnsecuredResponse">
+      <MemberSignature Language="C#" Value="public bool EnableUnsecuredResponse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableUnsecuredResponse" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.EnableUnsecuredResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableUnsecuredResponse", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ保護されていない応答を許可するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />保護されている応答が許可されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeTimestamp">
+      <MemberSignature Language="C#" Value="public bool IncludeTimestamp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeTimestamp" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.IncludeTimestamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("includeTimestamp", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各メッセージにタイムスタンプを含めるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          メッセージにタイムスタンプが格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeFrom">
+      <MemberSignature Language="C#" Value="protected override void InitializeFrom (System.ServiceModel.Channels.BindingElement bindingElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void InitializeFrom(class System.ServiceModel.Channels.BindingElement bindingElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.InitializeFrom(System.ServiceModel.Channels.BindingElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingElement" Type="System.ServiceModel.Channels.BindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="bindingElement">バインディング要素。</param>
+        <summary>このバインド構成要素を、指定されたバインド要素の内容で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeNestedTokenParameterSettings">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeNestedTokenParameterSettings (System.ServiceModel.Security.Tokens.SecurityTokenParameters sp, bool initializeNestedBindings);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeNestedTokenParameterSettings(class System.ServiceModel.Security.Tokens.SecurityTokenParameters sp, bool initializeNestedBindings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(System.ServiceModel.Security.Tokens.SecurityTokenParameters,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sp" Type="System.ServiceModel.Security.Tokens.SecurityTokenParameters" />
+        <Parameter Name="initializeNestedBindings" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sp">指定したセキュリティ トークンのパラメーターです。</param>
+        <param name="initializeNestedBindings">
+          <see langword="true" />指定された値を持つ入れ子になったすべてのバインドが更新されたことを示すために<c>sp</c>、それ以外の<see langword="false" />します。</param>
+        <summary>指定されたセキュリティ トークンの設定をこのインスタンスに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuedTokenParameters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.IssuedTokenParametersElement IssuedTokenParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.IssuedTokenParametersElement IssuedTokenParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("issuedTokenParameters")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.IssuedTokenParametersElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在発行されているトークンを指定する構成要素を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Configuration.IssuedTokenParametersElement" />現在発行済みトークンを指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEntropyMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityKeyEntropyMode KeyEntropyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.SecurityKeyEntropyMode KeyEntropyMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.KeyEntropyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("keyEntropyMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityKeyEntropyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの作成に使用されるエントロピのソースを取得または設定します。</summary>
+        <value>キーの作成に使用されるエントロピのソースを指定する有効な <see cref="T:System.ServiceModel.Security.SecurityKeyEntropyMode" /> 値。 既定値は <see cref="F:System.ServiceModel.Security.SecurityKeyEntropyMode.CombinedEntropy" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalClientSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.LocalClientSecuritySettingsElement LocalClientSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.LocalClientSecuritySettingsElement LocalClientSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.LocalClientSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("localClientSettings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.LocalClientSecuritySettingsElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのローカル クライアントのセキュリティ設定を取得します。</summary>
+        <value>このバインディングのローカル クライアント セキュリティの設定。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalServiceSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement LocalServiceSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement LocalServiceSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("localServiceSettings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのローカル サービスのセキュリティ設定を取得します。</summary>
+        <value>このバインディングのローカル サービスのセキュリティ設定。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageProtectionOrder">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.MessageProtectionOrder MessageProtectionOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.MessageProtectionOrder MessageProtectionOrder" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.MessageProtectionOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("messageProtectionOrder", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessageProtectionOrder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドのメッセージの暗号化と署名の命令を取得または設定します。</summary>
+        <value>メッセージの保護方法を指定する <see cref="T:System.ServiceModel.Security.MessageProtectionOrder" />。 既定値は、<see cref="F:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageSecurityVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageSecurityVersion MessageSecurityVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageSecurityVersion MessageSecurityVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.MessageSecurityVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.MessageSecurityVersionConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("messageSecurityVersion", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティに使用されるバージョンを取得または設定します。</summary>
+        <value>メッセージ セキュリティに使用されるバージョンを指定する <see cref="T:System.ServiceModel.MessageSecurityVersion" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationPropertyCollection" /> オブジェクトのコレクションが格納されている <see cref="T:System.Configuration.ConfigurationProperty" /> インスタンスを取得します。オブジェクトは、この構成要素の属性または <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationPropertyCollection" /> オブジェクトのコレクションが格納されている <see cref="T:System.Configuration.ConfigurationProperty" /> インスタンス。このオブジェクトは、この構成要素の属性または <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectTokens">
+      <MemberSignature Language="C#" Value="public bool ProtectTokens { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProtectTokens" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.ProtectTokens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("protectTokens", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基本セキュリティ要素がトークンを保護するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />基本セキュリティ要素トークン; を保護する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireDerivedKeys">
+      <MemberSignature Language="C#" Value="public bool RequireDerivedKeys { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireDerivedKeys" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.RequireDerivedKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireDerivedKeys", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生キーが必要かどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          派生キーが必要な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSecurityContextCancellation">
+      <MemberSignature Language="C#" Value="public bool RequireSecurityContextCancellation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireSecurityContextCancellation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.RequireSecurityContextCancellation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireSecurityContextCancellation", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不要になったときにセキュリティ コンテキストをキャンセルして終了する必要があるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          セキュリティ コンテキストが不要になったときにそれをキャンセルし終了する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSignatureConfirmation">
+      <MemberSignature Language="C#" Value="public bool RequireSignatureConfirmation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireSignatureConfirmation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.RequireSignatureConfirmation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requireSignatureConfirmation", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの署名を確認する必要があるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          メッセージの署名を確認する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityHeaderLayout">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.SecurityHeaderLayout SecurityHeaderLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Channels.SecurityHeaderLayout SecurityHeaderLayout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.SecurityElementBase.SecurityHeaderLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("securityHeaderLayout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのセキュリティ ヘッダー内の要素の順序を取得または設定します。</summary>
+        <value>このバインディングのセキュリティ ヘッダー内の要素の順序を指定する <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeElement">
+      <MemberSignature Language="C#" Value="protected override bool SerializeElement (System.Xml.XmlWriter writer, bool serializeCollectionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool SerializeElement(class System.Xml.XmlWriter writer, bool serializeCollectionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="serializeCollectionKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer">構成ファイルを書き込む XML ライター。</param>
+        <param name="serializeCollectionKey">
+          コレクションのキー プロパティだけをシリアル化する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>この構成要素の内容を派生クラスで実装された場合、構成ファイルに書き込みます。</summary>
+        <returns>
+          データが実際にシリアル化された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeToXmlElement">
+      <MemberSignature Language="C#" Value="protected override bool SerializeToXmlElement (System.Xml.XmlWriter writer, string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool SerializeToXmlElement(class System.Xml.XmlWriter writer, string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">構成ファイルへの書き込みに使用される <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="elementName">書き込まれる <see cref="T:System.Configuration.ConfigurationElement" /> の名前。</param>
+        <summary>この構成要素の外側のタグを構成ファイルに書き込みます。</summary>
+        <returns>
+          正常にシリアル化された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmerge">
+      <MemberSignature Language="C#" Value="protected override void Unmerge (System.Configuration.ConfigurationElement sourceElement, System.Configuration.ConfigurationElement parentElement, System.Configuration.ConfigurationSaveMode saveMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Unmerge(class System.Configuration.ConfigurationElement sourceElement, class System.Configuration.ConfigurationElement parentElement, valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="sourceElement">プロパティのマージされたビューを格納する、現在のレベルの <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクト。</param>
+        <param name="parentElement">親である <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクト。これが最上位である場合は <see langword="null" />。</param>
+        <param name="saveMode">含めるプロパティ値を決定する <see cref="T:System.Configuration.ConfigurationSaveMode" /> オブジェクト。</param>
+        <summary>この構成要素を変更して、保存しないすべての値が削除されるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

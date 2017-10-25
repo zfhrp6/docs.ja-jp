@@ -1,0 +1,220 @@
+<Type Name="PageRouteHandler" FullName="System.Web.Routing.PageRouteHandler">
+  <TypeSignature Language="C#" Value="public class PageRouteHandler : System.Web.Routing.IRouteHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PageRouteHandler extends System.Object implements class System.Web.Routing.IRouteHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.PageRouteHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Routing.IRouteHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>プロパティと物理ファイルに URL がどのようにマップを定義するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを渡す<xref:System.Web.Routing.PageRouteHandler>を<xref:System.Web.Routing.Route>物理ファイルの URL にマップするためにコンス トラクターです。 <xref:System.Web.Routing.PageRouteHandler>オブジェクトが物理ファイルの仮想パスを指定し、物理 URL の承認規則がチェックされているかどうかを決定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageRouteHandler (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.PageRouteHandler.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">この物理ファイルの仮想パス<see cref="P:System.Web.Routing.RouteData.Route" />オブジェクト。 ファイルは、現在のアプリケーションである必要があります。 そのため、パスは、チルダ (~) で始める必要があります。</param>
+        <summary><see cref="T:System.Web.Routing.PageRouteHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティに設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="virtualPath" />パラメーターは<see langword="null" />または空の文字列またはで始まっていない"~/"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageRouteHandler (string virtualPath, bool checkPhysicalUrlAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string virtualPath, bool checkPhysicalUrlAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.PageRouteHandler.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="checkPhysicalUrlAccess" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">この物理ファイルの仮想パス<see cref="P:System.Web.Routing.RouteData.Route" />オブジェクト。 ファイルは、現在のアプリケーションである必要があります。 そのため、パスは、チルダ (~) で始める必要があります。</param>
+        <param name="checkPhysicalUrlAccess">このプロパティ設定されている場合<see langword="false" />、要求 URL を除く、物理ページの URL 承認ルールが適用されます。 このプロパティ設定されている場合<see langword="true" />要求の URL の両方に、物理ページの URL に承認ルールが適用されます。</param>
+        <summary><see cref="T:System.Web.Routing.PageRouteHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティは`true`します。 したがって、承認規則をルート URL を物理ページの URL の両方に適用する場合は、使用できます、<xref:System.Web.Routing.PageRouteHandler.%23ctor%28System.String%29>このコンス トラクターではなくコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="virtualPath" />パラメーターは<see langword="null" />または空の文字列またはで始まっていない"~/"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckPhysicalUrlAccess">
+      <MemberSignature Language="C#" Value="public bool CheckPhysicalUrlAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckPhysicalUrlAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>物理ファイルの URL に承認規則が適用されるかどうかを決定する値を取得します。</summary>
+        <value>
+          <see langword="true" />ルートに関連付けられている物理ファイルの URL の承認がオンの場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティを使用するときに、<xref:System.Web.Routing.PageRouteHandler.%23ctor%28System.String%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ 値、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティを決定するかどうか、<xref:System.Web.Routing.PageRouteHandler>オブジェクトはルートの URL に対してのみ、または物理的なページとルート URL の両方のセキュリティ アクセス許可を確認します。  
+  
+ ときに、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティに設定されている`true`(既定値は、)、ユーザーはルートの URL と物理の URL の両方にアクセスする権限が必要です。 ときに、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティに設定されている`false`へのルート URL のアクセス許可のみを要求、および物理 URL に対する権限はチェックされません。  
+  
+ アクセス許可は、次の例のように、Web.config ファイルで定義されます。  
+  
+```  
+<configuration>  
+  <location path="categoriespage.aspx">  
+    <system.web>  
+      <authorization>  
+        <allow roles="admin"/>  
+        <deny users="*"/>  
+      </authorization>  
+    </system.web>  
+  </location>  
+  <location path="category">  
+    <system.web>  
+      <authorization>  
+        <allow users="*"/>  
+      </authorization>  
+    </system.web>  
+  </location>  
+</configuration>  
+```  
+  
+ 含む要求 URL の`Category/food/show`ルートの URL パターンがある場合、ドメイン名の後に`Category/{action}/{categoryName}`であり、物理ページ Categoriespage.aspx、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]次の方法のいずれかで、前の例で定義されているアクセス許可を適用します。  
+  
+-   場合、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティは`false`、すべてのユーザーのアクセスが付与されて、すべてのユーザーがアクセスを許可で始まる URL パターン`category`です。  
+  
+-   場合、<xref:System.Web.Routing.PageRouteHandler.CheckPhysicalUrlAccess%2A>プロパティは`true`、のみ`admin`ユーザー アクセスが付与されます。 始まる URL パターンにすべてのユーザーがアクセス`category`、のみが`admin`Categoriespage.aspx の物理ページにユーザーにアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHttpHandler">
+      <MemberSignature Language="C#" Value="public virtual System.Web.IHttpHandler GetHttpHandler (System.Web.Routing.RequestContext requestContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.IHttpHandler GetHttpHandler(class System.Web.Routing.RequestContext requestContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.PageRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">要求に関する情報をカプセル化するオブジェクト。</param>
+        <summary>要求を処理するオブジェクトを返します。</summary>
+        <returns>要求を処理するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="requestContext" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubstitutedVirtualPath">
+      <MemberSignature Language="C#" Value="public string GetSubstitutedVirtualPath (System.Web.Routing.RequestContext requestContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetSubstitutedVirtualPath(class System.Web.Routing.RequestContext requestContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.PageRouteHandler.GetSubstitutedVirtualPath(System.Web.Routing.RequestContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestContext" Type="System.Web.Routing.RequestContext" />
+      </Parameters>
+      <Docs>
+        <param name="requestContext">要求に関する情報をカプセル化するオブジェクト。</param>
+        <summary>置換パラメーター置換が適用された後は、ルートの物理ファイルの仮想パスを返します。</summary>
+        <returns>ルートから生成された物理ファイルの URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Routing.PageRouteHandler.VirtualPath%2A>値がすべての置換パラメーターを含まない、<xref:System.Web.Routing.PageRouteHandler.GetSubstitutedVirtualPath%2A>メソッドとして同じ値を返します、<xref:System.Web.Routing.PageRouteHandler.VirtualPath%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="requestContext" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.PageRouteHandler.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このルートに関連付けられている Web ページの仮想パスを取得します。</summary>
+        <value>置き換えが置換パラメーターに対して適用される前に、Web ページの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する、<xref:System.Web.Routing.PageRouteHandler.VirtualPath%2A>プロパティに、<xref:System.Web.Routing.PageRouteHandler.%23ctor%2A?displayProperty=nameWithType>コンス トラクターまたは、<xref:System.Web.Routing.PageRouteHandler.%23ctor%2A?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

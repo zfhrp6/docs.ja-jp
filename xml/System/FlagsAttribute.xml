@@ -1,0 +1,134 @@
+<Type Name="FlagsAttribute" FullName="System.FlagsAttribute">
+  <TypeSignature Language="C#" Value="public class FlagsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit FlagsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.FlagsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Enum, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>列挙体をビット フィールド、つまりフラグのセットとして扱えることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビット フィールドは、相互に排他的な要素の一覧の列挙定数が使用される一般に対しの組み合わせで発生する可能性が要素のリスト通常使用されます。 そのため、ビット フィールドは、列挙型定数はない、名前のない値を生成するビットごとの OR 演算と組み合わせるに設計されています。 言語は、列挙型定数と比較して、ビット フィールドの使用によって異なります。  
+  
+## <a name="attributes-of-the-flagsattribute"></a>FlagsAttribute 属性  
+ <xref:System.AttributeUsageAttribute>このクラスに適用されると、その<xref:System.AttributeUsageAttribute.Inherited%2A>プロパティを指定`false`です。 この属性は、列挙型にのみ適用できます。  
+  
+## <a name="guidelines-for-flagsattribute-and-enum"></a>FlagsAttribute 列挙型のガイドライン  
+  
+-   使用して、<xref:System.FlagsAttribute>ビットごとの演算 (AND、OR の排他的 OR) は、数値の値に対して実行する場合にのみ列挙型のカスタム属性です。  
+  
+-   つまり、1、2、4、8、およびよびな 2 の累乗で列挙定数を定義します。 これは、結合された列挙定数の各フラグが重複しないことを意味します。  
+  
+-   一般的に使用されるフラグの組み合わせに対して列挙定数を作成することを検討します。 たとえば、ファイル I/O 操作に使用する列挙体がある場合を含む列挙型定数`Read = 1`と`Write = 2`、列挙型定数の作成を検討して`ReadWrite = Read OR Write`、どの結合、`Read`と`Write`フラグ。 さらに、フラグの組み合わせに使用されるビットごとの OR 演算することはできません、単純なタスクをいくつかの状況での高度な概念と見なされる可能性があります。  
+  
+-   多くのフラグの位置は 1 では、可能性があります、コードが複雑になる場合容易させ、コーディング エラーに設定する可能性がありますので、フラグの列挙定数として負の数を定義する場合は、注意を使用します。  
+  
+-   数値の値で、フラグが設定されているかどうかをテストする便利な方法は、演算を実行して、数値の値とすべてのビットを設定すると、フラグに対応していないゼロに対応する数値で、フラグ列挙型定数の間での操作をテストし、その操作の結果がフラグの列挙型定数と等しいかどうか。  
+  
+-   使用して`None`フラグの名前は列挙定数の値が 0 として。 使用することはできません、`None`のため、結果は常に 0 フラグをテストするビットごとの AND 演算で列挙型定数。 ただし、行うことができます、論理、数値の値の間でビット演算子、比較ではありません、`None`数値の値のビットを設定するかどうかを決定する列挙型定数。  
+  
+     作成するには有用ですフラグ列挙体ではなく値の列挙体を作成する場合、`None`列挙型定数。 その理由は、既定では、列挙に使用されるメモリは 0 に初期化は、共通言語ランタイムによってです。 その結果、値が 0 の定数を定義していない場合が作成されるとき、列挙体は値が無効含まれます。  
+  
+     アプリケーションを表す必要がある、明確な既定のケースがある場合は、値が既定値を表す 0 列挙定数の使用を検討してください。 既定のケースがない場合は、他の列挙定数のいずれかで表されないケースを意味の値は 0 です。 列挙定数の使用を検討してください。  
+  
+-   列挙体自体の状態を反映するだけの列挙値を定義しません。 たとえば、列挙の終了をマークするだけの列挙定数を定義してください。 列挙体の最後の値を決定する必要がある場合は、その値を明示的に確認します。 さらに、範囲内のすべての値は有効な場合は、最初と最後の列挙型定数の範囲チェックを実行できます。  
+  
+-   将来使用するために予約されている列挙型定数は指定しません。  
+  
+-   メソッドまたは値として列挙型定数は、プロパティを定義するときは、値の検証を検討してください。 理由は、その数値の値が列挙体で定義されていない場合でも、列挙型の数値にキャストすることです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、`FlagsAttribute`属性し、の効果を示しています、<xref:System.Enum.ToString%2A>メソッドを使用する`FlagsAttribute`上、<xref:System.Enum>宣言します。  
+  
+ [!code-cpp[System.FlagsAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.FlagsAttribute/CPP/flags.cpp#1)]
+ [!code-csharp[System.FlagsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.FlagsAttribute/CS/flags.cs#1)]
+ [!code-vb[System.FlagsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.FlagsAttribute/VB/flags.vb#1)]  
+  
+ 次の例では、次の 2 つの色関連列挙体、`SingleHue`と`MultiHue`です。 後者は、`FlagsAttribute`属性です。 前者はありません。 例は、列挙型の基になる値ではない整数を含む整数の範囲は、列挙型と表示される、それぞれの文字列表現にキャストするときの動作の違いを示します。   たとえば、3 として表すことができないことに注意してください、`SingleHue`値 3 がいずれかの基になる値ではないため`SingleHue`メンバー、一方、`FlagsAttribute`属性では、3 として表すことが、`MultiHue`の値`Black, Red`です。  
+  
+ [!code-cpp[System.FlagsAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.FlagsAttribute/CPP/flags1.cpp#2)]
+ [!code-csharp[System.FlagsAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.FlagsAttribute/CS/flags1.cs#2)]
+ [!code-vb[System.FlagsAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.FlagsAttribute/VB/flags1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FlagsAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.FlagsAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.FlagsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では定義、`PhoneService`電話会社によって提供されている通信のフォームを表す列挙体です。 次の 3 つの異なる家庭に提供されるサービスを表す 3 つの変数を初期化し、し、どの家庭にサービス、どの家庭携帯電話サービスのみがありどの家庭携帯電話と土地の両方の回線サービスが含まれていないことを示します。 最後に、暗黙的に呼び出す、<xref:System.Enum.ToString%28System.String%29?displayProperty=nameWithType>各世帯に提供されるサービスの種類を表示するメソッド。  
+  
+ [!code-cpp[System.FlagsAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.FlagsAttribute/CPP/flags1.cpp#2)]
+ [!code-csharp[System.FlagsAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.FlagsAttribute/CS/flags1.cs#2)]
+ [!code-vb[System.FlagsAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.FlagsAttribute/VB/flags1.vb#2)]  
+  
+ 次の例では、使用、`FlagsAttribute`属性し、の効果を示しています、<xref:System.Enum.ToString%2A>メソッドを使用する`FlagsAttribute`上、<xref:System.Enum>宣言します。  
+  
+ [!code-cpp[System.FlagsAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.FlagsAttribute/CPP/flags.cpp#1)]
+ [!code-csharp[System.FlagsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.FlagsAttribute/CS/flags.cs#1)]
+ [!code-vb[System.FlagsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.FlagsAttribute/VB/flags.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

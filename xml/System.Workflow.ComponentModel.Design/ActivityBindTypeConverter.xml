@@ -1,0 +1,333 @@
+<Type Name="ActivityBindTypeConverter" FullName="System.Workflow.ComponentModel.Design.ActivityBindTypeConverter">
+  <TypeSignature Language="C#" Value="public class ActivityBindTypeConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityBindTypeConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> クラスからさまざまな表現への変換や、その逆の変換を行う型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このコンバーターは、<xref:System.Workflow.ComponentModel.ActivityBind> オブジェクトから文字列への変換と、その逆の変換だけを実行できます。  
+  
+ 型コンバーターの詳細については、TypeConverter 基本クラスを参照してください。 および[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter> のインスタンスは作成しないでください。 代わりに、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A> クラスの <xref:System.ComponentModel.TypeDescriptor> メソッドを呼び出します。  詳細については、<xref:System.ComponentModel.TypeConverter> クラスのトピックに記載された例を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBindTypeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="sourceType">変換する型を表す <see cref="T:System.Type" />。</param>
+        <summary>このコンバーターが、指定したコンテキストを使用して、指定の型のオブジェクトを <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> に変換できるかどうかを示す値を返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.CanConvertFrom%2A> が文字列である場合、`true` は `sourceType` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" /> の変換後のデータ型を表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary>このコンバーターが、指定のコンテキストを使用して <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> を目的の型に変換できるかどうかを示す値を返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context` パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 このパラメーターは null 参照 (Visual Basic の場合は `Nothing`) の場合があるため、常に確認してください。 また、`context` オブジェクトのプロパティも null 参照 (`Nothing`) を返す場合があります。  
+  
+> [!NOTE]
+>  独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object valueToConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object valueToConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="valueToConvert" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="culture">オプションの <see cref="T:System.Globalization.CultureInfo" />。 指定されなかった場合は、現在のカルチャが使用されます。</param>
+        <param name="valueToConvert">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したコンテキストとカルチャ情報を使用して、指定したオブジェクトを <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンバーターは、<xref:System.Workflow.ComponentModel.ActivityBind> オブジェクトから文字列への変換と、その逆の変換だけを実行できます。  
+  
+ `context` を使用すると、このコンバーターが呼び出されている環境に関する追加情報を抽出できます。 このパラメーターは null 参照 (Visual Basic の場合は `Nothing`) の場合があるため、常に確認してください。 また、`context` オブジェクトのプロパティも null 参照 (`Nothing`) を返す場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="valueToConvert" /> を <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> に変換中に発生したエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" /> の変換後の <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <param name="value">変換対象の <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" /> を変換した後の <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary>指定したコンテキストとカルチャを使用して、指定した <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> オブジェクトを指定した型に変換します。</summary>
+        <returns>変換後のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.ConvertTo%2A> は、<xref:System.Workflow.ComponentModel.ActivityBind> を文字列に変換します。  
+  
+ `context` を使用すると、このコンバーターが呼び出されている環境に関する追加情報を抽出できます。 このパラメーターは null 参照 (Visual Basic の場合は `Nothing`) の場合があるため、常に確認してください。 また、`context` オブジェクトのプロパティも null 参照 (`Nothing`) を返す場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="value">プロパティを取得する対象となる配列の型を指定する <see cref="T:System.Object" />。</param>
+        <param name="attributes">フィルターとして使用される <see cref="T:System.Attribute" /> 配列。</param>
+        <summary>指定したコンテキストと属性を使用して、<paramref name="value" /> パラメーターで指定された配列型のプロパティのコレクションを返します。</summary>
+        <returns>このデータ型に公開されているプロパティを持つ <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />、またはプロパティがない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetPropertiesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetPropertiesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>指定したコンテキストを使用して、<see cref="T:System.Workflow.ComponentModel.ActivityBind" /> がプロパティをサポートしているかどうかを示す値を返します。</summary>
+        <returns>
+          このオブジェクトのプロパティを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>指定したコンテキストを使用して <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> データ型の標準値コレクションを返します。</summary>
+        <returns>有効値の標準セットを保持している <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />。データ型が標準値セットをサポートしていない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context` を使用すると、このコンバーターが呼び出されている環境に関する追加情報を抽出できます。 `context`または、使用可能な任意のプロパティが null 参照にすることができます (`Nothing`)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>指定したコンテキストを使用して、<see cref="Overload:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues" /> から返された標準値のコレクションが有効値の排他的なリストかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> から返された <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> が、有効値の排他的なリストの場合は <see cref="Overload:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues" />。他の値も有効である場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙型の値リストのように、リストが排他的な場合は、他の値は有効ではありません。 リストが排他的ではない場合、<xref:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues%2A> メソッドが提供する標準値に加えて、他にも有効な値が存在する可能性があります。 値が排他的である場合、<xref:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues%2A> で返されるリストでこれらの値を編集することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">書式指定コンテキストを提供する <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>指定したコンテキストを使用して、リストから選択できる標準値セットをオブジェクトがサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          オブジェクトがサポートしている標準値セットを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="Overload:System.Workflow.ComponentModel.Design.ActivityBindTypeConverter.GetStandardValues" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターは null 参照 (Visual Basic の場合は `Nothing`) の場合があるため、常に確認してください。 また、context オブジェクトのプロパティも null 参照 (`Nothing`) を返す場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

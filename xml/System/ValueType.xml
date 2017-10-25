@@ -1,0 +1,248 @@
+<Type Name="ValueType" FullName="System.ValueType">
+  <TypeSignature Language="C#" Value="public abstract class ValueType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit ValueType extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ValueType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値の型の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueType>仮想メソッドをオーバーライド<xref:System.Object>値の型の適切な実装とします。 関連項目<xref:System.Enum>から継承される<xref:System.ValueType>です。  
+  
+ データ型は、値型と参照型に区切られます。 値の型はスタックに割り当てられたか、またはインライン構造体で割り当てられます。 参照型は、ヒープに割り当てられたです。 参照と値の両方の型は、最終的な基底クラスから派生<xref:System.Object>です。 値の型のオブジェクトと同様に動作するために必要な場合、ラッパーようにする、ヒープの参照オブジェクトが割り当てられているし、値型の値がそれにコピーように見えます。 値の型。 値の型が含まれているシステムにわかるように、ラッパーがマークされます。 このプロセスは、ボックス化と呼ばれ、逆のプロセスはボックス化解除と呼ばれます。 ボックス化とボックス化解除には、任意の型をオブジェクトとして扱うことができるようにします。  
+  
+ <xref:System.ValueType>暗黙的な基底クラスは、値型から継承するクラスを作成することはできません<xref:System.ValueType>直接です。 代わりに、個々 のコンパイラの言語のキーワードを提供または構築 (など`struct`C# の場合と`Structure`.`End Structure` Visual Basic) 値の型の作成をサポートします。  
+  
+ .NET Framework における値の型の基底クラスとして機能している場合を除いて、<xref:System.ValueType>構造がコードで直接使用されません一般にします。 ただし、そのことができますとして使用するメソッドの呼び出しでパラメーターまたはいくつかの別の値の型を処理するメソッドを許可するように、すべてのオブジェクトではなく値の型に使用可能な引数を制限します。 次の例を示して 方法<xref:System.ValueType>参照型がメソッドに渡されることを防止します。 という名前のクラスが定義`Utility`4 つのメソッドを格納している: `IsNumeric`、その引数の数値; があるかどうかを示します`IsInteger`、その引数は、整数かどうかを示します`IsFloat`を示します。 かどうかの引数。 浮動小数点数と`Compare`、2 つの数値間の関係を示します。 各ケースで、このメソッドのパラメーターは型の<xref:System.ValueType>とは、参照型をメソッドに渡される阻止します。  
+  
+ [!code-csharp[System.ValueType.Structure#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.valuetype.structure/cs/example1.cs#1)]
+ [!code-vb[System.ValueType.Structure#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.valuetype.structure/vb/example1.vb#1)]  
+  
+ 次の例では、各メソッドを呼び出し、`Utility`クラスです。  
+  
+ [!code-csharp[System.ValueType.Structure#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.valuetype.structure/cs/example1.cs#2)]
+ [!code-vb[System.ValueType.Structure#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.valuetype.structure/vb/example1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ValueType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueType.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ValueType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueType.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> とこのインスタンスが同じ型で、同じ値を表している場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueType.Equals%28System.Object%29?displayProperty=nameWithType>メソッドのオーバーライド<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>し、.NET Framework におけるすべての値の型の値の等価性の既定の実装を提供します。  
+  
+ 現在のインスタンスのフィールドの存在しない場合および`obj`参照型の場合は、<xref:System.ValueType.Equals%2A>メソッドは、メモリに 2 つのオブジェクトのバイトで比較を実行します。 対応するフィールドを比較する、リフレクションを使用して、それ以外の場合、`obj`とこのインスタンス。  
+  
+> [!TIP]
+>  オーバーライドする必要があります、値型、参照型のフィールドが含まれている場合は特に、<xref:System.ValueType.Equals%28System.Object%29>メソッドです。 これはパフォーマンスが向上し、使用するより厳密に型の等値の意味を表します。  
+  
+## <a name="notes-for-the-includewrtincludeswrt-mdmd"></a>は、[!INCLUDE[wrt](~/includes/wrt-md.md)]  
+ 呼び出すと、<xref:System.ValueType.Equals%2A>メソッドを[!INCLUDE[wrt](~/includes/wrt-md.md)]構造体、オーバーライドしなければする値型の既定の動作を提供、<xref:System.ValueType.Equals%2A>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 [!INCLUDE[wrt](~/includes/wrt-md.md)]構造体をオーバーライドできません<xref:System.ValueType.Equals%2A>メソッドすることはできませんので c# または Visual Basic で記述している場合でも、します。 (また、構造体に、[!INCLUDE[wrt](~/includes/wrt-md.md)]自体を継承しない<xref:System.ValueType>)。ただし、それらがように見えます<xref:System.ValueType.ToString%2A>、 <xref:System.ValueType.Equals%2A>、および<xref:System.ValueType.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.ValueType.Equals%2A>派生値型でメソッドをオーバーライドすることができます。  
+  
+ [!code-cpp[ValueType.Equals Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/ValueType.Equals Example/CPP/source.cpp#1)]
+ [!code-csharp[ValueType.Equals Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/ValueType.Equals Example/CS/source.cs#1)]
+ [!code-vb[ValueType.Equals Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ValueType.Equals Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueType.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コードである 32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueType.GetHashCode%2A>メソッドから派生した型に適用<xref:System.ValueType>です。 派生型の 1 つ以上のフィールドは戻り値の計算に使用します。 派生型を呼び出す場合`GetHashCode`メソッド、戻り値は、ハッシュ テーブル内のキーとして使用するのに適したする可能性があります。 さらに、これらのフィールドの 1 つ以上の値が変更された場合は、戻り値がハッシュ テーブル内のキーとして使用するには適さないなる可能性があります。 どちらの場合も、独自の実装の作成を検討、<xref:System.ValueType.GetHashCode%2A>をより厳密に型のハッシュ コードの概念を表すメソッド。  
+  
+ 詳細については、「<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>」および「<xref:System.Collections.Hashtable?displayProperty=nameWithType>」を参照してください。  
+  
+## <a name="notes-for-the-includewrtincludeswrt-mdmd"></a>は、[!INCLUDE[wrt](~/includes/wrt-md.md)]  
+ 呼び出すと、<xref:System.ValueType.GetHashCode%2A>メソッドを[!INCLUDE[wrt](~/includes/wrt-md.md)]構造体、オーバーライドしなければする値型の既定の動作を提供、<xref:System.ValueType.GetHashCode%2A>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 [!INCLUDE[wrt](~/includes/wrt-md.md)]構造体をオーバーライドできません<xref:System.ValueType.GetHashCode%2A>メソッドすることはできませんので c# または Visual Basic で記述している場合でも、します。 (また、構造体に、[!INCLUDE[wrt](~/includes/wrt-md.md)]自体を継承しない<xref:System.ValueType>)。ただし、それらがように見えます<xref:System.ValueType.ToString%2A>、 <xref:System.ValueType.Equals%2A>、および<xref:System.ValueType.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.ValueType.GetHashCode%2A>派生値型でメソッドをオーバーライドすることができます。  
+  
+ [!code-cpp[ValueType.Equals Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/ValueType.Equals Example/CPP/source.cpp#1)]
+ [!code-csharp[ValueType.Equals Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/ValueType.Equals Example/CS/source.cs#1)]
+ [!code-vb[ValueType.Equals Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ValueType.Equals Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ValueType.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの完全修飾型名を返します。</summary>
+        <returns>完全修飾型名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ValueType.ToString%2A?displayProperty=nameWithType>メソッドのオーバーライド、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドの既定の実装を提供し、`ToString`値型のメソッドです。 (値の型によって定義された型は、`struct`キーワード (C#)、および、 `Structure`.`End Structure` Visual Basic で作成します)。機能的は、実装がのと同じ<xref:System.Object.ToString%2A?displayProperty=nameWithType>: 完全修飾型名を返します。  
+  
+ によって定義された型の値、`struct`キーワード (C#) および`Structure`しています.`End Structure` Visual Basic でコンス トラクターは通常オーバーライド、<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>値の型のわかりやすい文字列形式を指定するメソッド。 この違いを次の例に示します。 2 つの値の型を定義`EmployeeA`と`EmployeeB`、それぞれのインスタンスを作成しを呼び出して、その`ToString`メソッドです。 `EmployeeA`構造体をオーバーライドしません、<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>メソッド、完全修飾型名のみが表示されます。 `EmployeeB.ToString`メソッド、その一方で、オブジェクトに関する有益情報を提供します。  
+  
+ [!code-csharp[System.ValueType.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.ValueType.ToString/cs/ToString2.cs#1)]
+ [!code-vb[System.ValueType.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.ValueType.ToString/vb/ToString2.vb#1)]  
+  
+ 列挙型は、値型ではまた、派生元に注意してください、<xref:System.Enum>クラスが優先<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>です。  
+  
+## <a name="notes-for-the-windows-runtime"></a>Windows ランタイムのメモ  
+ 呼び出すと、<xref:System.ValueType.ToString%2A>メソッドを[!INCLUDE[wrt](~/includes/wrt-md.md)]構造体、オーバーライドしなければする値型の既定の動作を提供、<xref:System.ValueType.ToString%2A>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 [!INCLUDE[wrt](~/includes/wrt-md.md)]構造体をオーバーライドできません<xref:System.ValueType.ToString%2A>メソッドすることはできませんので c# または Visual Basic で記述している場合でも、します。 (また、構造体に、[!INCLUDE[wrt](~/includes/wrt-md.md)]自体を継承しない<xref:System.ValueType>)。ただし、それらがように見えます<xref:System.ValueType.ToString%2A>、 <xref:System.ValueType.Equals%2A>、および<xref:System.ValueType.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

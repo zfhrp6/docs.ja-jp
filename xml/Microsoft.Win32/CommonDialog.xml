@@ -1,0 +1,274 @@
+<Type Name="CommonDialog" FullName="Microsoft.Win32.CommonDialog">
+  <TypeSignature Language="C#" Value="public abstract class CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonDialog extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.CommonDialog" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Win32 のコモン ダイアログを表示する抽象基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CommonDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスのコンス トラクターによって呼び出されたときに、基本クラスの値の初期化を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckPermissionsToShowDialog">
+      <MemberSignature Language="C#" Value="protected virtual void CheckPermissionsToShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CheckPermissionsToShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.CheckPermissionsToShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ダイアログ ボックスを表示するための十分なアクセス許可があるかどうかを判断します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">ダイアログを表示するための十分なアクセス許可がありませんでした。 場合、</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">例外を発生させずには、このメソッドを実行します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HookProc">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr HookProc (IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance native int HookProc(native int hwnd, int32 msg, native int wParam, native int lParam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+        <Parameter Name="msg" Type="System.Int32" />
+        <Parameter Name="wParam" Type="System.IntPtr" />
+        <Parameter Name="lParam" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)] ダイアログのウィンドウ ハンドル。</param>
+        <param name="msg">処理する Windows メッセージ、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ダイアログ。</param>
+        <param name="wParam">ダイアログでのアクションのパラメーター。</param>
+        <param name="lParam">ダイアログでのアクションのパラメーター。</param>
+        <summary>コモン ダイアログ ボックスに特定の機能を追加するためにオーバーライドされる、コモン ダイアログ ボックスのフック プロシージャを定義します。</summary>
+        <returns>常に <see cref="F:System.IntPtr.Zero" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.CommonDialog.HookProc%2A>中央揃え ダイアログ ボックスで、画面に対して相対的と既定のコントロールにフォーカスを設定して、ダイアログの初期化を処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public abstract void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、既定値にコモン ダイアログ ボックスのプロパティをリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected abstract bool RunDialog (IntPtr hwndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool RunDialog(native int hwndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwndOwner">ダイアログ ボックスを所有するウィンドウへのハンドルします。</param>
+        <summary>派生クラスでオーバーライドされるがの特定の種類を表示するために呼び出される[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]コモン ダイアログ。</summary>
+        <returns>ユーザーがクリックした場合、 **[ok]**表示されるダイアログ ボックスのボタン (例: <see cref="T:Microsoft.Win32.OpenFileDialog" />、 <see cref="T:Microsoft.Win32.SaveFileDialog" />)、<see langword="true" />を返します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最終的に表示されるダイアログ ボックスには、によって指定される、オーナー ウィンドウが割り当てられている、`hwndOwner`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ShowDialog">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <permission cref="T:System.Security.Permissions.UIPermission">例外を発生させずには、このメソッドを実行します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <summary>コモン ダイアログ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.CommonDialog.ShowDialog%2A>呼び出しの前にすべてのコモン ダイアログの初期化タスクを実行<xref:Microsoft.Win32.CommonDialog.RunDialog%2A>です。 <xref:Microsoft.Win32.CommonDialog.RunDialog%2A>オーナー ウィンドウが必要です<xref:Microsoft.Win32.CommonDialog.ShowDialog%2A>の優先順位の次の順序で 1 つを代入しようとします。  
+  
+-   現在のアプリケーションの*アクティブなウィンドウ*します。  
+  
+-   現在のアプリケーションの*駐車ウィンドウ*します。  
+  
+-   内部的に生成された非表示のウィンドウ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public virtual Nullable&lt;bool&gt; ShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Nullable`1&lt;bool&gt; ShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.ShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コモン ダイアログ ボックスを表示します。</summary>
+        <returns>ユーザーが表示されるダイアログ ボックスの [ok] ボタンをクリックしたかどうか (例: <see cref="T:Microsoft.Win32.OpenFileDialog" />、 <see cref="T:Microsoft.Win32.SaveFileDialog" />)、<see langword="true" />を返します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.CommonDialog.ShowDialog%2A>呼び出しの前にすべてのコモン ダイアログの初期化タスクを実行<xref:Microsoft.Win32.CommonDialog.RunDialog%2A>です。  
+  
+ 現在の実装では、派生クラスで (<xref:Microsoft.Win32.OpenFileDialog>と<xref:Microsoft.Win32.SaveFileDialog>) のみを返すは`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">例外を発生させずには、このメソッドを実行します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; ShowDialog (System.Windows.Window owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;bool&gt; ShowDialog(class System.Windows.Window owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.CommonDialog.ShowDialog(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="owner">ダイアログを所有するウィンドウを識別するハンドル。</param>
+        <summary>コモン ダイアログ ボックスを表示します。</summary>
+        <returns>ユーザーが表示されるダイアログ ボックスの [ok] ボタンをクリックしたかどうか (例: <see cref="T:Microsoft.Win32.OpenFileDialog" />、 <see cref="T:Microsoft.Win32.SaveFileDialog" />)、<see langword="true" />を返します。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.CommonDialog.ShowDialog%2A>呼び出しの前にすべてのコモン ダイアログの初期化タスクを実行<xref:Microsoft.Win32.CommonDialog.RunDialog%2A>です。 によって指定される、オーナー ウィンドウを最終的に表示されるダイアログ ボックスがさらに、割り当てられている、`owner`パラメーター。  
+  
+ 現在の実装では、派生クラスで (<xref:Microsoft.Win32.OpenFileDialog>と<xref:Microsoft.Win32.SaveFileDialog>) のみを返すは`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">例外を発生させずには、このメソッドを実行します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.CommonDialog.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ダイアログに関連付けられているオブジェクト。 これは、ダイアログ ボックスに、任意のオブジェクトをアタッチできる機能を提供します。</summary>
+        <value>A<see cref="T:System.Object" />が接続されているか、ダイアログに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 関連項目  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

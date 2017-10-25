@@ -1,0 +1,722 @@
+<Type Name="CompilerParameters" FullName="System.CodeDom.Compiler.CompilerParameters">
+  <TypeSignature Language="C#" Value="public class CompilerParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CompilerParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CompilerParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイラを呼び出すために使用されるパラメーターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.CodeDom.Compiler.CompilerParameters>オブジェクトは、設定を表し、オプション、<xref:System.CodeDom.Compiler.ICodeCompiler>インターフェイスです。  
+  
+ 設定する必要がある実行可能プログラムをコンパイルする場合、<xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A>プロパティを`true`です。 ときに、<xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A>に設定されている`false`コンパイラはクラス ライブラリを生成します。 既定では、新しい<xref:System.CodeDom.Compiler.CompilerParameters>で初期化がその<xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A>プロパティに設定`false`です。 CodeDOM グラフから実行可能ファイルをコンパイルする場合、グラフに <xref:System.CodeDom.CodeEntryPointMethod> を定義する必要があります。 クラスの名前を設定して使用するエントリ ポイントを定義するクラスを指定するには、複数のコード エントリ ポイントがある場合、<xref:System.CodeDom.Compiler.CompilerParameters.MainClass%2A>プロパティです。  
+  
+ 出力内のアセンブリ ファイル名を指定することができます、<xref:System.CodeDom.Compiler.CompilerParameters.OutputAssembly%2A>プロパティです。 指定しない場合、既定の出力ファイル名が使用されます。 生成されたアセンブリのデバッグ情報は、設定、<xref:System.CodeDom.Compiler.CompilerParameters.IncludeDebugInformation%2A>プロパティを`true`です。 内の項目としてアセンブリ名を指定する必要があります、プロジェクトは、すべてのアセンブリを参照する場合、<xref:System.Collections.Specialized.StringCollection>に設定、<xref:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies%2A>のプロパティ、<xref:System.CodeDom.Compiler.CompilerParameters>コンパイルを起動するときに使用します。  
+  
+ 設定して、ディスクではなく、メモリに書き込まれるアセンブリをコンパイルすることができます、<xref:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory%2A>プロパティを`true`です。 アセンブリをメモリに生成すると、<xref:System.CodeDom.Compiler.CompilerResults> の <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A> プロパティから生成されたアセンブリの参照がコードに与えられることがあります。 アセンブリが記述されている場合、ディスクから生成されたアセンブリ パスを取得することができます、<xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A>のプロパティ、<xref:System.CodeDom.Compiler.CompilerResults>です。  
+  
+ コンパイルを中止する警告レベルを指定するには、コンパイルを中止する警告レベルを表す整数に <xref:System.CodeDom.Compiler.CompilerParameters.WarningLevel%2A> プロパティを設定します。 設定によって警告が発生した場合は、コンパイルを停止するようにコンパイラを構成することも、<xref:System.CodeDom.Compiler.CompilerParameters.TreatWarningsAsErrors%2A>プロパティを`true`です。  
+  
+ コンパイル プロセスを呼び出すときに使用するカスタムのコマンドライン引数を指定するには、<xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> プロパティに文字列を設定します。 コンパイラ プロセスの呼び出しに Win32 セキュリティ トークンが必要な場合、<xref:System.CodeDom.Compiler.CompilerParameters.UserToken%2A> プロパティにトークンを指定します。 .NET Framework リソース ファイル、コンパイルされたアセンブリで、追加するリソース ファイルの名前、<xref:System.CodeDom.Compiler.CompilerParameters.EmbeddedResources%2A>プロパティです。 別のアセンブリ内の .NET Framework のリソースを参照するに追加するリソース ファイルの名前、<xref:System.CodeDom.Compiler.CompilerParameters.LinkedResources%2A>プロパティです。 コンパイルされたアセンブリで Win32 リソース ファイルを含めるで Win32 リソース ファイルの名前を指定、<xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A>プロパティです。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次の例では、単純な Hello World プログラムの CodeDOM ソース グラフを構築します。  ソースは、実行可能ファイルにコンパイルされ、実行、ファイルに保存されます。 `CompileCode`メソッドを使用する方法を示しています、<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定するクラス。  
+  
+ [!code-cpp[CompilerParametersExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#1)]
+ [!code-csharp[CompilerParametersExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#1)]
+ [!code-vb[CompilerParametersExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerParameters.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.Compiler.CompilerParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerParameters (string[] assemblyNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] assemblyNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyNames">参照するアセンブリの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.CompilerParameters" />クラスの指定したアセンブリ名を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerParameters (string[] assemblyNames, string outputName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] assemblyNames, string outputName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyNames" Type="System.String[]" />
+        <Parameter Name="outputName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyNames">参照するアセンブリの名前。</param>
+        <param name="outputName">出力ファイル名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.CompilerParameters" />クラスの指定したアセンブリ名と出力ファイル名を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerParameters (string[] assemblyNames, string outputName, bool includeDebugInformation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] assemblyNames, string outputName, bool includeDebugInformation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerParameters.#ctor(System.String[],System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyNames" Type="System.String[]" />
+        <Parameter Name="outputName" Type="System.String" />
+        <Parameter Name="includeDebugInformation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyNames">参照するアセンブリの名前。</param>
+        <param name="outputName">出力ファイル名。</param>
+        <param name="includeDebugInformation">
+          <see langword="true" />デバッグ情報を含める<see langword="false" />デバッグ情報を除外します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.CompilerParameters" />クラスの指定したアセンブリ名、出力名、およびデバッグ情報を含めるかどうかを示す値を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompilerOptions">
+      <MemberSignature Language="C#" Value="public string CompilerOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompilerOptions" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.CompilerOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイラを呼び出すときに使用する省略可能なコマンドライン引数を設定します。</summary>
+        <value>コンパイラの追加のコマンドライン引数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.ICodeCompiler>通常コマンド ライン コンパイラを呼び出すときに、コマンドラインでは、この文字列が含まれています。 既定では、このプロパティには、空の文字列が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreAssemblyFileName">
+      <MemberSignature Language="C#" Value="public string CoreAssemblyFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CoreAssemblyFileName" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.CoreAssemblyFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コアまたは基本型を含む標準のアセンブリの名前を取得または<see cref="T:System.Object" />、 <see cref="T:System.String" />、または<see cref="T:System.Int32" />です。</summary>
+        <value>基本型を含むコア アセンブリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、このプロパティの値は空の文字列または`null`コンパイラは、既定のコア アセンブリを使用します。 コンパイラのバージョンに応じて、既定のコア アセンブリがあります mscorlib.dll または System.Runtime.dll Framework ディレクトリまたは参照アセンブリのディレクトリにします。 このプロパティの値が空でない場合、Code Document Object Model (CodeDOM) は明示的に指定されたアセンブリを参照し、コンパイラがコンパイル時にアセンブリを暗黙的に参照しないコンパイラ オプションを出力. 既定では、コアまたは標準のアセンブリをのみによって暗黙的に参照するコンパイラのこのプロパティは、独自に使用できます。 コンパイラに暗黙的にアセンブリを参照するさらにコアまたは標準のアセンブリには、このオプションを使用することがあります指定する必要に追加エントリ、<xref:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.CodeDom.Compiler.ICodeCompiler>または<xref:System.CodeDom.Compiler.CodeDomProvider>実装は、このプロパティを無視することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddedResources">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection EmbeddedResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection EmbeddedResources" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.EmbeddedResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリの出力をコンパイルするときに含まれる .NET Framework リソース ファイルを取得します。</summary>
+        <value>生成されたアセンブリに含めるように、.NET Framework リソースのファイル パスを含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 埋め込みリソースは、生成されたアセンブリの出力ファイルに組み込まれます。 このプロパティを使用してファイルを含むに似ていますが、`/resource`さまざまな .NET Framework コンパイラでサポートされているコマンドラインの引数。  
+  
+ 呼び出すことによって、このサポートをテストする必要があります、.NET Framework リソース ファイルをサポートしていないすべてのコンパイラ、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>フラグ メソッド<xref:System.CodeDom.Compiler.GeneratorSupport.Resources>です。  
+  
+ 返された 1 つまたは複数の .NET Framework リソース ファイル パスを追加する<xref:System.Collections.Specialized.StringCollection>コンパイルされたアセンブリにファイルのリソースを埋め込みます。 コンパイル エラーが発生します。 重複しているか、無効なファイル パスは結果を追加します。各文字列が有効な .NET Framework リソース ファイルを一意のパスを指定することを確認します。  
+  
+ 使用して<xref:System.CodeDom.Compiler.CompilerParameters.EmbeddedResources%2A>; アセンブリの既定値またはニュートラル カルチャの .NET Framework のリソースを含めるを使用して、 <xref:System.CodeDom.Compiler.CompilerParameters.LinkedResources%2A> .NET Framework のリソースをサテライト アセンブリを参照するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evidence">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.Evidence Evidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.Evidence Evidence" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.Evidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("CAS policy is obsolete and will be removed in a future release of the .NET Framework. Please see http://go2.microsoft.com/fwlink/?LinkId=131738 for more information.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.Evidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証拠を表すオブジェクトをコンパイルされたアセンブリを付与するセキュリティ ポリシーのアクセス許可を指定します。</summary>
+        <value>コンパイル済みのアセンブリを付与するセキュリティ ポリシーのアクセス許可を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">機能の制御の証拠の アクセス許可の値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateExecutable">
+      <MemberSignature Language="C#" Value="public bool GenerateExecutable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateExecutable" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または実行可能ファイルを生成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />実行可能ファイルを生成する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が場合`false`DLL が生成されます。 既定では、このプロパティの値は`false`します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateInMemory">
+      <MemberSignature Language="C#" Value="public bool GenerateInMemory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateInMemory" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.GenerateInMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメモリ内で出力を生成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラは、メモリ内で出力を生成する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeDebugInformation">
+      <MemberSignature Language="C#" Value="public bool IncludeDebugInformation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeDebugInformation" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.IncludeDebugInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル済みの実行可能ファイルにデバッグ情報を含めるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />デバッグ情報を生成する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkedResources">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection LinkedResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection LinkedResources" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.LinkedResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のソースで参照されている .NET Framework リソース ファイルを取得します。</summary>
+        <value>ソースによって参照されている .NET Framework リソース ファイルのパスを含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リンクされたリソース ファイルには、リソースを参照する .NET Framework アセンブリで実際のリソースを埋め込まなくても、アセンブリが許可されます。 に似ていますがこのプロパティを使用してファイルを参照する、`/linkresource`さまざまな .NET Framework コンパイラでサポートされているコマンドラインの引数。  
+  
+ 呼び出すことによって、このサポートをテストする必要があります、.NET Framework リソース ファイルをサポートしていないすべてのコンパイラ、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>フラグ メソッド<xref:System.CodeDom.Compiler.GeneratorSupport.Resources>です。  
+  
+ 返された 1 つまたは複数の .NET Framework リソース ファイル パスを追加する<xref:System.Collections.Specialized.StringCollection>コンパイルされたアセンブリでリソースへのリンクを作成します。 コンパイル エラーが発生します。 重複しているか、無効なファイル パスは結果を追加します。各文字列が有効な .NET Framework リソース ファイルを一意のパスを指定することを確認します。  
+  
+ 使用して<xref:System.CodeDom.Compiler.CompilerParameters.LinkedResources%2A>特定のカルチャのローカライズされたサテライト アセンブリに .NET Framework のリソースを参照する。 を使用して、<xref:System.CodeDom.Compiler.CompilerParameters.EmbeddedResources%2A>プロパティを、コンパイルされたアセンブリにリソースを埋め込みます。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MainClass">
+      <MemberSignature Language="C#" Value="public string MainClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MainClass" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.MainClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメイン クラスの名前を設定します。</summary>
+        <value>メインのクラスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メイン クラスには、プログラムのエントリ ポイントが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputAssembly">
+      <MemberSignature Language="C#" Value="public string OutputAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OutputAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.OutputAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または出力アセンブリの名前を設定します。</summary>
+        <value>出力アセンブリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection ReferencedAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection ReferencedAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.ReferencedAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロジェクトによって参照されるアセンブリを取得します。</summary>
+        <value>コンパイルするソースによって参照されているアセンブリ名を含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列のコレクションに含まれるか、含めるには、現在のプロジェクトによって参照されるアセンブリください。 返されたアセンブリ ファイル名を追加<xref:System.Collections.Specialized.StringCollection>をアセンブリ マニフェストをインポートし、現在のプロジェクトでアセンブリの型情報を参照します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TempFiles">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.TempFileCollection TempFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.TempFileCollection TempFiles" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.TempFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.TempFileCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一時ファイルを含んでいるコレクションを設定します。</summary>
+        <value>一時ファイルを格納するコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内の一時ファイルを保持またはの値に基づいてコンパイラ アクティビティの完了時に削除された、<xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>コレクション内のプロパティです。 <xref:System.CodeDom.Compiler.TempFileCollection.KeepFiles%2A>プロパティを使用して、コレクションを作成する場合、<xref:System.CodeDom.Compiler.TempFileCollection.%23ctor%28System.String%2CSystem.Boolean%29>を持つコンス トラクター、`keepFiles`パラメーターに設定`true`です。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TreatWarningsAsErrors">
+      <MemberSignature Language="C#" Value="public bool TreatWarningsAsErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TreatWarningsAsErrors" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.TreatWarningsAsErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または警告をエラーとして扱うかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />警告をエラーとして扱う場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserToken">
+      <MemberSignature Language="C#" Value="public IntPtr UserToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int UserToken" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.UserToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイラ プロセスを作成するときに使用するユーザーのトークンを設定します。</summary>
+        <value>使用するユーザー トークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WarningLevel">
+      <MemberSignature Language="C#" Value="public int WarningLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WarningLevel" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.WarningLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイラがコンパイルを中止する警告レベルを設定します。</summary>
+        <value>警告レベル コンパイラがコンパイルを中止します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.CodeDom.Compiler.CompilerParameters>さまざまなコンパイラ設定とオプションを指定します。 このコード例に示されている例の一部である、<xref:System.CodeDom.Compiler.CompilerParameters>クラスです。  
+  
+ [!code-cpp[CompilerParametersExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerParametersExample/CPP/source.cpp#2)]
+ [!code-csharp[CompilerParametersExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerParametersExample/CS/source.cs#2)]
+ [!code-vb[CompilerParametersExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerParametersExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32Resource">
+      <MemberSignature Language="C#" Value="public string Win32Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Win32Resource" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerParameters.Win32Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイルされたアセンブリにリンクする Win32 リソース ファイルのファイル名を設定します。</summary>
+        <value>コンパイルされたアセンブリにリンクする Win32 リソース ファイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してファイルをリンクと似ています、`/winres`と`/winresource`さまざまな .NET Framework コンパイラでサポートされているコマンドラインの引数。  
+  
+ 使用して<xref:System.CodeDom.Compiler.CompilerParameters.Win32Resource%2A>をアセンブリに Win32 リソース ファイルをコンパイルします。 使用して<xref:System.CodeDom.Compiler.CompilerParameters.EmbeddedResources%2A>または<xref:System.CodeDom.Compiler.CompilerParameters.LinkedResources%2A>を .NET Framework リソース ファイルをコンパイルします。  
+  
+ いないすべてのコンパイラは、Win32 リソース ファイルをサポートするため、呼び出すことによって、リソース ファイルをリンクする前にこのサポートのコード ジェネレーターをテストする必要があります、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>フラグ メソッド<xref:System.CodeDom.Compiler.GeneratorSupport.Win32Resources>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

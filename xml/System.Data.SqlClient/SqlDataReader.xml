@@ -1,0 +1,2941 @@
+<Type Name="SqlDataReader" FullName="System.Data.SqlClient.SqlDataReader">
+  <TypeSignature Language="C#" Value="public class SqlDataReader : System.Data.Common.DbDataReader, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlDataReader extends System.Data.Common.DbDataReader implements class System.Data.IDataReader, class System.Data.IDataRecord, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlDataReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbDataReader</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>SQL Server データベースから行の前方向ストリームを読み取る方法を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する、 <xref:System.Data.SqlClient.SqlDataReader>、呼び出す必要があります、<xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>のメソッド、<xref:System.Data.SqlClient.SqlCommand>コンス トラクターを直接使用する代わりに、オブジェクトです。  
+  
+ 中に、<xref:System.Data.SqlClient.SqlDataReader>が使用されている、関連付けられた<xref:System.Data.SqlClient.SqlConnection>がビジー状態であるサービス、<xref:System.Data.SqlClient.SqlDataReader>とで実行できるその他の操作がありません、<xref:System.Data.SqlClient.SqlConnection>閉じる以外です。 これは、まで続きます、<xref:System.Data.SqlClient.SqlDataReader.Close%2A>のメソッド、<xref:System.Data.SqlClient.SqlDataReader>と呼びます。 呼び出した後にまでの出力パラメーターを取得することはできませんなど<xref:System.Data.SqlClient.SqlDataReader.Close%2A>です。  
+  
+ 結果データの読み取り中に、別のプロセスまたはスレッドがセットに加えられた変更は、のユーザーに表示される可能性があります、`SqlDataReader`です。 ただし、正確な動作、タイミングによって決まります。  
+  
+ <xref:System.Data.SqlClient.SqlDataReader.IsClosed%2A>および<xref:System.Data.SqlClient.SqlDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.SqlClient.SqlDataReader>が閉じられます。 <xref:System.Data.SqlClient.SqlDataReader.RecordsAffected%2A>プロパティにアクセスできるときに、<xref:System.Data.SqlClient.SqlDataReader>存在する場合、常に呼び出す<xref:System.Data.SqlClient.SqlDataReader.Close%2A>の値を返す前に<xref:System.Data.SqlClient.SqlDataReader.RecordsAffected%2A>正確な戻り値を保証するためにします。  
+  
+ 順次アクセスを使用する場合 (<xref:System.Data.CommandBehavior?displayProperty=nameWithType>)、<xref:System.InvalidOperationException>場合に生成されます、<xref:System.Data.SqlClient.SqlDataReader>位置を進められ、他の読み取り前の列で操作が試行されます。  
+  
+> [!NOTE]
+>  最適なパフォーマンス、<xref:System.Data.SqlClient.SqlDataReader>不要なオブジェクトを作成またはデータの不要なコピーを作ることを回避できます。 そのため、何度も呼び出すメソッドになど<xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>同じオブジェクトへの参照を返します。 などのメソッドによって返されるオブジェクトの基になる値を変更する場合は、注意を使用して<xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.SqlClient.SqlConnection>、 <xref:System.Data.SqlClient.SqlCommand>、および<xref:System.Data.SqlClient.SqlDataReader>です。 例は、コンソール ウィンドウに書き出し、データを読み取ります。 コードが終了し、<xref:System.Data.SqlClient.SqlDataReader>です。 <xref:System.Data.SqlClient.SqlConnection>はの最後に自動的に閉じ、`using`コード ブロック。  
+  
+ [!code-csharp[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.SqlClient.SqlDataReader" /> オブジェクトを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Data.SqlClient.SqlDataReader.Close%2A>メソッドを使用しているときに、<xref:System.Data.SqlClient.SqlDataReader>を使用して、関連付けられている<xref:System.Data.SqlClient.SqlConnection>他の目的。  
+  
+ `Close`メソッドの出力パラメーター、戻り値の値を入力および`RecordsAffected`、終了するまでにかかる時間を長く、`SqlDataReader`大規模または複雑なクエリの処理に使用されました。 場合、戻り値と、クエリによって影響を受けたレコードの数は意味を持ちません、終了するまでにかかる時間、`SqlDataReader`を呼び出すことによって、減少、<xref:System.Data.SqlClient.SqlCommand.Cancel%2A>関連付けられているメソッド<xref:System.Data.SqlClient.SqlCommand>オブジェクトを呼び出す前に、`Close`メソッドです。  
+  
+> [!CAUTION]
+>  呼び出す必要はありません`Close`または`Dispose`接続、DataReader、または その他のマネージ オブジェクトで、`Finalize`クラスのメソッドです。 ファイナライザーで、クラスが直接所有されているアンマネージ リソースだけを解放する必要があります。 クラスがアンマネージ リソースを所有していない場合は、クラス定義に `Finalize` メソッドを含めないでください。 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.SqlClient.SqlConnection>、 `SqlCommand`、および<xref:System.Data.SqlClient.SqlDataReader>です。 例は、コンソール ウィンドウに書き出し、データを読み取ります。 コードが終了し、<xref:System.Data.SqlClient.SqlDataReader>です。 <xref:System.Data.SqlClient.SqlConnection>はの最後に自動的に閉じ、`using`コード ブロック。  
+  
+ [!code-csharp[Classic WebData SqlDataReader.Close Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Close Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataReader.Close Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Close Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="protected System.Data.SqlClient.SqlConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.SqlClient.SqlConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlConnection" /> に関連付けられている <see cref="T:System.Data.SqlClient.SqlDataReader" /> を取得します。</summary>
+        <value><see cref="T:System.Data.SqlClient.SqlConnection" /> に関連付けられている <see cref="T:System.Data.SqlClient.SqlDataReader" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public override int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の入れ子の深さを示す値を取得します。</summary>
+        <value>現在の行の入れ子の深さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も外側のテーブルは深さ 0 です。 .NET Framework Data Provider for SQL Server では、入れ子構造をサポートしていませんし、常に 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldCount">
+      <MemberSignature Language="C#" Value="public override int FieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.FieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の行の列の数を取得します。</summary>
+        <value>0 を有効なレコード セットに配置されない場合それ以外の場合、現在の行の列の数。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定で、その性質上返しません (DELETE クエリの場合) などの行をクエリを実行する<xref:System.Data.SqlClient.SqlDataReader.FieldCount%2A>を 0 にします。 ただしです。 この混同しないように 0 行を返すクエリを使用して (SELECT など * FROM*テーブル*場所 1 = 2) 後者<xref:System.Data.SqlClient.SqlDataReader.FieldCount%2A>を非表示フィールドを含むテーブルで列の数を返します。 非表示フィールドを除外するには、<xref:System.Data.SqlClient.SqlDataReader.VisibleFieldCount%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">SQL Server のインスタンスに現在接続されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public override bool GetBoolean (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetBoolean(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetBoolean(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を Boolean として取得します。</summary>
+        <returns>列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータには、ブール値が既にあります。 または例外が発生します。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByte">
+      <MemberSignature Language="C#" Value="public override byte GetByte (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8 GetByte(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetByte(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値をバイトとして取得します。</summary>
+        <returns>バイトとして指定された列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、バイトが既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override long GetBytes (int i, long dataIndex, byte[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetBytes(int32 i, int64 dataIndex, unsigned int8[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始位置を示すフィールド内のインデックス。</param>
+        <param name="buffer">バイトのストリームを読み込むバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">バッファーにコピーする最大の長さ。</param>
+        <summary>指定した列オフセットからバイトのストリームを配列として指定したバッファー オフセットからバッファーに読み取ります。</summary>
+        <returns>実際に読み取られたバイト数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>フィールドに使用できるバイト数を返します。 ほとんどの場合これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetBytes`バイトを取得するフィールドからは既に使用されています。 これは、場合がありますなどの場合、<xref:System.Data.SqlClient.SqlDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ バッファーを渡した場合`null`、<xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>バッファー オフセット パラメーターに基づく残りサイズではなくバイト単位で全体のフィールドの長さを返します。  
+  
+ 変換は実行されません。そのため、取得されたデータでは、バイト配列が既にあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChar">
+      <MemberSignature Language="C#" Value="public override char GetChar (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetChar(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetChar(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を単一の文字として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされていません。<xref:System.Data.SqlClient>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChars">
+      <MemberSignature Language="C#" Value="public override long GetChars (int i, long dataIndex, char[] buffer, int bufferIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetChars(int32 i, int64 dataIndex, char[] buffer, int32 bufferIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="dataIndex" Type="System.Int64" />
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="bufferIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <param name="dataIndex">読み取り操作を開始位置を示すフィールド内のインデックス。</param>
+        <param name="buffer">バイトのストリームを読み込むバッファー。</param>
+        <param name="bufferIndex">内のインデックス、<c>バッファー</c>の書き込み操作を開始することができます。</param>
+        <param name="length">バッファーにコピーする最大の長さ。</param>
+        <summary>指定したバッファー オフセットから始まる配列として、文字のストリームを指定した列オフセットからバッファーに読み取ります。</summary>
+        <returns>実際に読み取られた文字数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>フィールドに使用できる文字数を返します。 多くの場合、これは、フィールドの正確な長さです。 ただし、返される数値フィールドの実際の長さよりも小さい場合あります`GetChars`フィールドから文字を取得するは既に使用されています。 これは、場合がありますなどの場合、<xref:System.Data.SqlClient.SqlDataReader>バッファーへの大規模なデータ構造体の読み込みがします。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+ 実際に読み取られた文字数は、フィールドの末尾に達した場合、要求された長さよりも小さいできます。 バッファーを渡した場合`null`、<xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>文字バッファー オフセット パラメーターに基づく残りサイズではなく全体のフィールドの長さを返します。  
+  
+ 変換は実行されません。そこで。 取得されたデータでは、文字配列が既にあります。  
+  
+> [!NOTE]
+>  <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>場合は 0 を返します`dataIndex`が負の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataTypeName">
+      <MemberSignature Language="C#" Value="public override string GetDataTypeName (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDataTypeName(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetDataTypeName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">検索する列の 0 から始まる序数位置。</param>
+        <summary>指定された列のデータ型を表す文字列を取得します。</summary>
+        <returns>指定された列のデータ型を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バックエンドのデータ型の名前を返します。  
+  
+ `numeric`用の SQL Server でシノニムは、`decimal`データ型。 `GetDataTypeName`10 進数または数値のいずれかとして定義されている列の"decimal"を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime GetDateTime (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime GetDateTime(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetDateTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.DateTime" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.DateTime>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDateTimeOffset">
+      <MemberSignature Language="C#" Value="public virtual DateTimeOffset GetDateTimeOffset (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.DateTimeOffset GetDateTimeOffset(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetDateTimeOffset(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.DateTimeOffset" />オブジェクト。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.DateTimeOffset>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecimal">
+      <MemberSignature Language="C#" Value="public override decimal GetDecimal (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Decimal GetDecimal(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetDecimal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を <see cref="T:System.Decimal" /> オブジェクトとして取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.Decimal>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDouble">
+      <MemberSignature Language="C#" Value="public override double GetDouble (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float64 GetDouble(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetDouble(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を倍精度浮動小数点値として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。 そのため、取得されたデータでは、倍精度浮動小数点数が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />を反復処理する、<see cref="T:System.Data.SqlClient.SqlDataReader" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Data.SqlClient.SqlDataReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、明示的な列挙子を取得することができます、言語をサポートする、`foreach`構築、データ リーダー内の行を反復処理するために直接ループ構造を使用する方が簡単です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetFieldType (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetFieldType(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトのデータ型です。</summary>
+        <returns>オブジェクトのデータ型である <see cref="T:System.Type" />。 クライアントでは、場合、ユーザー定義型 (UDT)、データベースから返された型が存在しない場合**GetFieldType**は null を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetFieldValue&lt;T&gt; (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetFieldValue&lt;T&gt;(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetFieldValue``1(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返される値の型。</typeparam>
+        <param name="i">取得する列。</param>
+        <summary>同期的に、型として指定された列の値を取得します。 <see cref="M:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync``1(System.Int32,System.Threading.CancellationToken)" />このメソッドの非同期バージョンです。</summary>
+        <returns>返される型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `T`次の種類のいずれかを指定できます。  
+  
+|||||  
+|-|-|-|-|  
+|ブール型|Byte|Char|DateTime|  
+|DateTimeOffset|Decimal (10 進数型)|倍精度浮動小数点型|浮動小数点型|  
+|Guid|Int16|Int32|Int64|  
+|SqlBoolean|SqlByte|SqlDateTime|SqlDecimal|  
+|SqlDouble|SqlGuid|SqlInt16|SqlInt32|  
+|SqlInt64|SqlMoney|SqlSingle|SqlString|  
+|String|マークされた任意の CLR 型にすることができる UDT<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute>です。|||  
+  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 順次モード以前読み列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+        <exception cref="T:System.Data.SqlTypes.SqlNullValueException">列の値が null (<see cref="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" /> == <see langword="true" />)、SQL 以外の型を取得します。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="T" />によって返される型と一致しません[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]またはキャストできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldValueAsync&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;T&gt; GetFieldValueAsync&lt;T&gt; (int i, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;!!T&gt; GetFieldValueAsync&lt;T&gt;(int32 i, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync``1(System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返される値の型。</typeparam>
+        <param name="i">取得する列。</param>
+        <param name="cancellationToken">取り消し命令、操作を取り消す必要がある通知を伝達します。 これは、操作では、取り消しは保証されません。 設定<see langword="CancellationToken.None" />により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" />です。 取り消された、返されたタスクをマークする必要があります。</param>
+        <summary>非同期的に、型として指定された列の値を取得します。 <see cref="M:System.Data.SqlClient.SqlDataReader.GetFieldValue``1(System.Int32)" />このメソッドの同期バージョンです。</summary>
+        <returns>返される型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `T`次の種類のいずれかを指定できます。  
+  
+|||||  
+|-|-|-|-|  
+|ブール型|Byte|Char|DateTime|  
+|DateTimeOffset|Decimal (10 進数型)|倍精度浮動小数点型|浮動小数点型|  
+|Guid|Int16|Int32|Int64|  
+|SqlBoolean|SqlByte|SqlDateTime|SqlDecimal|  
+|SqlDouble|SqlGuid|SqlInt16|SqlInt32|  
+|SqlInt64|SqlMoney|SqlSingle|SqlString|  
+|String|マークされた任意の CLR 型にすることができる UDT<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute>です。|||  
+  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 順次モード以前読み列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+        <exception cref="T:System.Data.SqlTypes.SqlNullValueException">列の値が null (<see cref="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" /> == <see langword="true" />)、SQL 以外の型を取得します。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="T" />によって返される型と一致しません[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]またはキャストできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFloat">
+      <MemberSignature Language="C#" Value="public override float GetFloat (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float32 GetFloat(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetFloat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を単精度浮動小数点値として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。 そのため、取得されたデータでは、単精度浮動小数点数が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGuid">
+      <MemberSignature Language="C#" Value="public override Guid GetGuid (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Guid GetGuid(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetGuid(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>グローバル一意識別子 (GUID) として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、GUID が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt16">
+      <MemberSignature Language="C#" Value="public override short GetInt16 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int16 GetInt16(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetInt16(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>16 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、16 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt32">
+      <MemberSignature Language="C#" Value="public override int GetInt32 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetInt32(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetInt32(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>32 ビット符号付き整数として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、32 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInt64">
+      <MemberSignature Language="C#" Value="public override long GetInt64 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetInt64(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetInt64(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の値を 64 ビット符号付き整数として取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、64 ビット符号付き整数が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public override string GetName (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetName(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定された列の名前を取得します。</summary>
+        <returns>指定された列の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrdinal">
+      <MemberSignature Language="C#" Value="public override int GetOrdinal (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetOrdinal(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetOrdinal(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前。</param>
+        <summary>列の名前を指定して、列の序数を取得します。</summary>
+        <returns>0 から始まる列序数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetOrdinal`最初に区別する検索を実行します。 大文字と小文字が発生したが失敗した場合、秒、(大文字と小文字の比較が行われデータベースの照合順序を使用して)。 予期しない結果は、比較がカルチャに固有の大文字と小文字の規則によって影響を受けるときに発生します。 たとえば、トルコ語では次の例間違った結果が生成トルコ語で、ファイル システムは、文字 'i' の言語の文字種の規則を使用しないので"file"にします。 メソッドをスロー、 `IndexOutOfRange` 0 から始まる列序数が見つからない場合に例外です。  
+  
+ `GetOrdinal`カタカナの全角区別されません。  
+  
+ 呼び出す効率的ではありません序数に基づく参照は、名前による参照よりも効率的であるため`GetOrdinal`ループ内で。 呼び出すことによって、時間を節約`GetOrdinal`ループ内で使用する整数の変数に結果を割り当てるとします。  
+  
+   
+  
+## Examples  
+ <xref:System.Data.SqlClient.SqlDataReader.GetOrdinal%2A> メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[Classic WebData SqlDataReader.GetOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.GetOrdinal/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataReader.GetOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.GetOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定された名前は、有効な列名ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificFieldType">
+      <MemberSignature Language="C#" Value="public override Type GetProviderSpecificFieldType (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetProviderSpecificFieldType(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetProviderSpecificFieldType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i"><see cref="T:System.Int32" />列の序数を表すです。</param>
+        <summary>取得、<see langword="Object" />基になるプロバイダー固有のフィールド型の表現されています。</summary>
+        <returns>取得、<see cref="T:System.Object" />基になるプロバイダー固有のフィールド型の表現されています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificValue">
+      <MemberSignature Language="C#" Value="public override object GetProviderSpecificValue (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetProviderSpecificValue(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i"><see cref="T:System.Int32" />列の序数を表すです。</param>
+        <summary>取得、<see langword="Object" />基になるプロバイダー固有の値の表現されています。</summary>
+        <returns><see cref="T:System.Object" />基になるプロバイダー固有の値の表現されています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderSpecificValues">
+      <MemberSignature Language="C#" Value="public override int GetProviderSpecificValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetProviderSpecificValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetProviderSpecificValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">配列<see cref="T:System.Object" />を列の値をコピーします。</param>
+        <summary>基になるプロバイダー固有の値の表現であるオブジェクトの配列を取得します。</summary>
+        <returns>基になるプロバイダー固有の値の表現であるオブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchemaTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchemaTable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSchemaTable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> の列メタデータを記述する <see cref="T:System.Data.SqlClient.SqlDataReader" /> を返します。</summary>
+        <returns>列メタデータを記述する <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A>メソッドは、次の順序で各列に関するメタデータを返します。  
+  
+|DataReader 列|説明|  
+|-----------------------|-----------------|  
+|AllowDBNull|コンシューマーは、null 値に列を設定できる場合、またはプロバイダーでは、コンシューマーが列を null 値に設定できるかどうかを判断できない場合に設定します。 それ以外の場合、設定されていません。 Null 値に設定することはできない場合でも、列は、null 値を含む可能性があります。|  
+|BaseCatalogName|列を含むデータ ストア内のカタログの名前。 ベースのカタログ名を特定できない場合は NULL です。 この列の既定値は、null 値です。|  
+|BaseColumnName|データ ストア内の列の名前。 これは、エイリアスが使用されたかどうか、[ColumnName] 列で、列名が返されては異なる可能性があります。 ベースの列名を特定できない場合や行セットの列が派生したと一致しない、データの列ストアの場合は、null 値。 この列の既定値は、null 値です。|  
+|BaseSchemaName|列を含むデータ ストア内のスキーマの名前です。 ベース スキーマ名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|BaseServerName|によって使用される Microsoft SQL Server のインスタンスの名前、<xref:System.Data.SqlClient.SqlDataReader>です。|  
+|BaseTableName|テーブルまたは列を含むデータ ストア内のビューの名前。 ベース テーブル名を特定できない場合は、null 値です。 この列の既定値は、null 値です。|  
+|ColumnName|列の名前これは一意でない可能性があります。 これを特定できない場合は、null 値が返されます。 この名前は、常に、現在のビューまたはコマンド テキスト内の列の最も最近使用した名前の変更が反映されます。|  
+|ColumnOrdinal|0 から始まる列の序数。 この列は、null 値を含めることはできません。|  
+|ColumnSize|列の値の可能な最大長。 固定長データ型を使用する列でのデータ型のサイズです。 `nvarchar(MAX)`、 `varchar(MAX)`、および`varbinary(MAX)`最大サイズ、SQL Server データベースに格納されている列が 2 GB です。 これらの列では、格納され、ファイルとしてアクセスすることが場合、ファイル システムで最大サイズの制限が課せられます。 使用する場合、この値が変更された、`Type System Version`接続文字列キーワードでします。  新しい種類の下位レベルの種類として表されます。 MAX データ型を返すための標準の 4 k`nvarchar`につき 8,000`varchar`です。 詳細については、SQL Server オンライン ブックで TRANSACT-SQL リファレンスを参照してください。|  
+|DataTypeName|指定された列のデータ型を表す文字列を返します。|  
+|IsAliased|`true`: 列名は、エイリアスです。<br /><br /> `false`: 列名は、エイリアスではありません。|  
+|IsAutoIncrement|`true`: 列は、固定された増分で新しい行に値を割り当てます。<br /><br /> `false`: 列は、固定された増分で新しい行に値を割り当てられません。 この列の既定値は`false`します。|  
+|IsColumnSet|`true`列は列セットのメンバーであるスパース列です。|  
+|IsExpression|`true`: 列は、式です。<br /><br /> `false`: 列は、式ではありません。|  
+|IsHidden|`true`: 列は表示されません。<br /><br /> `false`: 列は非表示にします。|  
+|IsIdentity|`true`: 列は、id 列です。<br /><br /> `false`列は、id 列ではありません。|  
+|IsKey|`true`: 列は、行セット内の列のセットの 1 つをまとめると、行を一意に識別します。 列のセット`IsKey`'éý'`true`行セット内の行を一意に識別する必要があります。 この列のセットが列の最小セットである必要はありません。 この列のセットは、ベース テーブルの主キー、unique 制約または一意のインデックスから生成される可能性があります。<br /><br /> `false`: 列は、行を一意に識別する必要はありません。|  
+|IsLong|`true`: 列には、非常に長いデータを含むバイナリ長オブジェクト (BLOB) が含まれています。 非常に長いデータの定義は、プロバイダー固有です。<br /><br /> `false`: 列に非常に長いデータを含むバイナリ長オブジェクト (BLOB) が含まれていません。|  
+|IsReadOnly|`true`: 列を変更することはできません。<br /><br /> `false`: 列を変更することができます。|  
+|IsRowVersion|`true`: 列は、、書き込むことができない永続的な行識別子を含む、意味を持たない値以外の id に、行があります。<br /><br /> `false`: 列は、書き込むことができない永続的な行識別子が含まれていないと、意味を持つ値を除く行を識別します。|  
+|IsUnique|`true`: 列は型`timestamp`です。<br /><br /> `false`: 列の型ではありません`timestamp`です。|  
+|NonVersionedProviderType|関係なく、現在の列の型`Type System Version`接続文字列で指定します。 返される値からでは、<xref:System.Data.SqlDbType>列挙します。|  
+|NumericPrecision|場合`ProviderType`数値データ型は、これは、列の最大有効桁数です。 精度は、列の定義に依存します。 場合`ProviderType`数値データ型ではない 255 です。|  
+|NumericScale|場合`ProviderType`DBTYPE_DECIMAL または DBTYPE_NUMERIC、小数点の右側にある数字の数。 それ以外の場合、これは 255 です。|  
+|ProviderSpecificDataType|に基づいて、列のプロバイダーに固有のデータ型を返します、`Type System Version`接続文字列キーワードでします。|  
+|プロバイダーの種類|列のデータ型のインジケーター。 列のデータ型は、行ごとに変化する場合は、オブジェクトこのなければなりません。 この列は、null 値を含めることはできません。|  
+|UdtAssemblyQualifiedName|これは、1、UDT のアセンブリの修飾名、列がユーザー定義型 (UDT) の場合は、<xref:System.Type.AssemblyQualifiedName%2A>です。 列が UDT ではない場合は null です。|  
+|XmlSchemaCollectionDatabase|この XML インスタンスのスキーマ コレクションが置かれている行に XML 列についての情報が含まれている場合、データベースの名前。 この値は`null`(`Nothing` Visual Basic で) コレクションが現在のデータベース内で定義されている場合。 存在しない場合、スキーマ コレクションの場合は null も、`XmlSchemaCollectionName`と`XmlSchemaCollectionOwningSchema`も null にします。|  
+|XmlSchemaCollectionName|行に XML 列についての情報が含まれている場合、この XML インスタンスのスキーマ コレクションの名前。 この値は`null`(`Nothing` Visual Basic で) 関連付けられているスキーマ コレクションが存在しない場合。 値が null の場合、`XmlSchemaCollectionDatabase`と`XmlSchemaCollectionOwningSchema`も null にします。|  
+|XmlSchemaCollectionOwningSchema|この XML インスタンスのスキーマ コレクションが置かれている行に XML 列についての情報が含まれている場合、所有リレーショナル スキーマ。 この値は`null`(`Nothing` Visual Basic で) コレクションが現在のデータベース内で定義されている場合。 存在しない場合、スキーマ コレクションの場合は null も、`XmlSchemaCollectionDatabase`と`XmlSchemaCollectionName`も null にします。|  
+  
+> [!NOTE]
+>  メタデータ列は、正しい情報を返すことは、呼び出す必要があるかどうかを確認する<xref:System.Data.SqlClient.SqlCommand.ExecuteReader%2A>で、`behavior`パラメーターに設定`KeyInfo`です。 それ以外の場合、既定値、null、または不適切なデータを返すスキーマ テーブルの列のいくつか可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.SqlClient.SqlDataReader" /> が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlBinary">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlBinary GetSqlBinary (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlBinary GetSqlBinary(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlBinary(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlBinary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlBinary" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlBinary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがってバイナリ構造が既に取得したデータがあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlBoolean">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlBoolean GetSqlBoolean (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlBoolean GetSqlBoolean(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlBoolean(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlBoolean" />です。</summary>
+        <returns>列の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータにはブール値が既にあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlByte">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlByte GetSqlByte (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlByte GetSqlByte(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlByte(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlByte" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlByte" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがって取得されたデータには、バイトがある必要があります既にまたは例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlBytes">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlBytes GetSqlBytes (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.SqlTypes.SqlBytes GetSqlBytes(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlBytes(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlBytes</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得<see cref="T:System.Data.SqlTypes.SqlBytes" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlBytes" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlChars">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlChars GetSqlChars (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.SqlTypes.SqlChars GetSqlChars(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlChars(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlChars</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得<see cref="T:System.Data.SqlTypes.SqlChars" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlChars" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlDateTime">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlDateTime GetSqlDateTime (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlDateTime GetSqlDateTime(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlDateTime(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlDateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlDateTime" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlDateTime" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータの日付/時刻値が既にあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlDecimal">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlDecimal GetSqlDecimal (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlDecimal GetSqlDecimal(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlDecimal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlDecimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlDecimal" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlDecimal" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータの 10 進数の値が既にあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlDouble">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlDouble GetSqlDouble (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlDouble GetSqlDouble(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlDouble(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlDouble</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlDouble" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlDouble" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータを倍精度浮動小数点数、おく必要があります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlGuid">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlGuid GetSqlGuid (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlGuid GetSqlGuid(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlGuid(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlGuid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlGuid" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlGuid" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータを GUID、おく必要があります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlInt16">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlInt16 GetSqlInt16 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlInt16 GetSqlInt16(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlInt16(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlInt16" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlInt16" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータを 16 ビット符号付き整数の場合、おく必要があります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlInt32">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlInt32 GetSqlInt32 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlInt32 GetSqlInt32(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlInt32(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlInt32" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlInt32" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。したがって取得されたデータには、32 ビット符号付き整数がある必要があります既にまたは例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlInt64">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlInt64 GetSqlInt64 (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlInt64 GetSqlInt64(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlInt64(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlInt64" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlInt64" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータを 64 ビットの符号付き整数おく必要があります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlMoney">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlMoney GetSqlMoney (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlMoney GetSqlMoney(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlMoney(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlMoney</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlMoney" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlMoney" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータの 10 進数の値が既にあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlSingle">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlSingle GetSqlSingle (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlSingle GetSqlSingle(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlSingle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlSingle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlSingle" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlSingle" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータを単精度浮動小数点数、おく必要があります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlString">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlString GetSqlString (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Data.SqlTypes.SqlString GetSqlString(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlString</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.Data.SqlTypes.SqlString" />です。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlTypes.SqlString" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータには、文字列が既にあります。 または例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlValue">
+      <MemberSignature Language="C#" Value="public virtual object GetSqlValue (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetSqlValue(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>SQL Server 型として指定された列にデータ値を返します。</summary>
+        <returns>として表現される列の値、<see cref="T:System.Data.SqlDbType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.GetSqlValue%2A>SQL Server のネイティブ型を使用してデータを返します。 .NET Framework の型を使用してデータを取得するには、次を参照してください。<xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlValues">
+      <MemberSignature Language="C#" Value="public virtual int GetSqlValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetSqlValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">配列<see cref="T:System.Object" />値をコピー先です。 列の値は、SQL Server 型として表されます。</param>
+        <summary>配列<see cref="T:System.Object" />レコード内のすべての列の値を含む SQL Server 型として表されます。</summary>
+        <returns>コピーする列の数を示す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR 型システムではなく、SQL 型システムを使用して、1 回の呼び出しでレコードのすべての列の値を返します。 長さ、<xref:System.Object>配列は、レコード内の列の数と一致する必要はありません。 渡すことができます、<xref:System.Object>レコードに含まれる列数より少ないを格納する配列。 データの量のみ、<xref:System.Object>配列は、列序数に基づく、0 から始まる、配列にコピーを保持します。 渡すことも、<xref:System.Object>配列の長さが、結果の行に含まれる列の数を超えています。 残りの列は、影響されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="values" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSqlXml">
+      <MemberSignature Language="C#" Value="public virtual System.Data.SqlTypes.SqlXml GetSqlXml (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.SqlTypes.SqlXml GetSqlXml(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetSqlXml(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlTypes.SqlXml</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>XML 値として指定された列の値を取得します。</summary>
+        <returns>A<see cref="T:System.Data.SqlTypes.SqlXml" />対応するフィールド内に格納された XML を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、XML 値が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">渡されたインデックス 0 の範囲外<see cref="P:System.Data.DataTableReader.FieldCount" />- 1</exception>
+        <exception cref="T:System.InvalidOperationException">読み取りまたはアクセス、閉じられた内の列を試みました<see cref="T:System.Data.SqlClient.SqlDataReader" />です。</exception>
+        <exception cref="T:System.InvalidCastException">取得したデータと互換性がない、<see cref="T:System.Data.SqlTypes.SqlXml" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetStream (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetStream(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetStream(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>バイナリ、イメージ、varbinary、UDT、およびとしてバリアント データ型を取得、<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>ストリーム オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.ReadTimeout%2A>既定値は、値の<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>; を変更できますが、<xref:System.IO.Stream.ReadTimeout%2A>を介して<xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>です。  
+  
+ Null 値は空 (0 バイト) として返されます<xref:System.IO.Stream>です。  
+  
+ <xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>生成されます、<xref:System.InvalidOperationException>例外によって返されるオブジェクトで使用すると<xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>とき<xref:System.Data.CommandBehavior.SequentialAccess>が有効になっています。  
+  
+ <xref:System.Data.SqlClient.SqlException>例外が発生した<xref:System.IO.Stream>としてスロー<xref:System.IO.IOException>例外の内部例外を確認して、<xref:System.Data.SqlClient.SqlException>です。  
+  
+ 次<xref:System.IO.Stream>メンバーがによって返されるオブジェクトのご利用いただけません<xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>:  
+  
+-   BeginWrite  
+  
+-   EndWrite  
+  
+-   長さ  
+  
+-   位置  
+  
+-   シーク  
+  
+-   SetLength  
+  
+-   Write  
+  
+-   WriteByte  
+  
+-   WriteTimeout  
+  
+ ときに、接続プロパティ`ContextConnection=true`、<xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>シーケンシャルの両方の同期のデータの取得のみがサポート (<xref:System.Data.CommandBehavior.SequentialAccess>) と連続していない (<xref:System.Data.CommandBehavior.Default>) アクセスします。  
+  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 順次モード以前読み列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+        <exception cref="T:System.InvalidCastException">返された型は、次の種類のいずれかでがないです。  
+  
+-   バイナリ  
+  
+-   イメージ  
+  
+-   varbinary  
+  
+-   udt</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public override string GetString (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetString(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetString(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>文字列として指定された列の値を取得します。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータでは、文字列が既にあります。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextReader">
+      <MemberSignature Language="C#" Value="public override System.IO.TextReader GetTextReader (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.TextReader GetTextReader(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetTextReader(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">取得する列。</param>
+        <summary>Char、NChar、NText、NVarChar、テキスト、varChar、およびとして Variant データ型を取得、<see cref="T:System.IO.TextReader" />です。</summary>
+        <returns>返されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlException>例外が発生した<xref:System.IO.TextReader>としてスロー<xref:System.IO.IOException>例外の内部例外を確認して、<xref:System.Data.SqlClient.SqlException>です。  
+  
+ Null 値は空 (0 バイト) として返されます<xref:System.IO.TextReader>です。  
+  
+ <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>生成されます、<xref:System.InvalidOperationException>例外によって返されるオブジェクトで使用すると<xref:System.Data.SqlClient.SqlDataReader.GetTextReader%2A>とき<xref:System.Data.CommandBehavior.SequentialAccess>が有効になっています。  
+  
+ ときに、接続プロパティ`ContextConnection=true`、<xref:System.Data.SqlClient.SqlDataReader.GetTextReader%2A>シーケンシャルの両方の同期のデータの取得のみがサポート (<xref:System.Data.CommandBehavior.SequentialAccess>) と連続していない (<xref:System.Data.CommandBehavior.Default>) アクセスします。  
+  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 順次モード以前読み列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+        <exception cref="T:System.InvalidCastException">返された型は、次の種類のいずれかでがないです。  
+  
+-   char  
+  
+-   nchar  
+  
+-   ntext  
+  
+-   nvarchar  
+  
+-   テキスト  
+  
+-   varchar</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTimeSpan">
+      <MemberSignature Language="C#" Value="public virtual TimeSpan GetTimeSpan (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TimeSpan GetTimeSpan(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetTimeSpan(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>指定した列の値を取得、<see cref="T:System.TimeSpan" />オブジェクト。</summary>
+        <returns>指定された列の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換は実行されません。そのため、取得されたデータおく必要があります、<xref:System.TimeSpan>オブジェクト。  
+  
+ 呼び出す<xref:System.Data.SqlClient.SqlDataReader.IsDBNull%2A>このメソッドを呼び出す前に null 値をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたキャストは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public override object GetValue (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetValue(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>ネイティブ形式で指定された列の値を取得します。</summary>
+        <returns>このメソッドが戻る<see cref="T:System.DBNull" />null データベース列にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>.NET Framework の型を使用してデータを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public override int GetValues (object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetValues(object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetValues(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">属性列のコピー先の <see cref="T:System.Object" /> の配列。</param>
+        <summary>現在の行の列の値を持つオブジェクトの配列を追加します。</summary>
+        <returns>配列に含まれる <see cref="T:System.Object" /> のインスタンスの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのアプリケーションは、このメソッドは、各列を個別に取得する代わりに、すべての列を取得するための効率的な手段を提供します。  
+  
+ 渡すことができます、<xref:System.Object>結果の行に含まれる列数より少ないを格納する配列。 データの量のみ、<xref:System.Object>配列では、配列にコピーを保持します。 渡すことも、<xref:System.Object>配列の長さが、結果の行に含まれる列の数を超えています。  
+  
+ このメソッドが戻る<xref:System.DBNull>null データベース列にします。  
+  
+   
+  
+## Examples  
+ 次の例で正しいサイズ配列を使用して、指定された現在の行からすべての値を読み取れ<xref:System.Data.SqlClient.SqlDataReader>です。 さらに、使用可能な列の数より大きいか小さい可能性のある固定サイズの配列を使用するかどうかを示します。  
+  
+ [!code-csharp[DataWorks DataTableReader.GetValueObject#2](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/CS/source.cs#2)]
+ [!code-vb[DataWorks DataTableReader.GetValueObject#2](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlReader">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlReader GetXmlReader (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlReader GetXmlReader(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.GetXmlReader(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">指定された列の値。</param>
+        <summary>データを取得するは入力としての XML、<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <returns>返されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReader>によって返されるオブジェクト<xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>非同期操作をサポートしません。 非同期操作を必要とする場合、<xref:System.Xml.XmlReader>サーバーで、nvarchar (max) に XML 列をキャスト、および使用<xref:System.Data.SqlClient.SqlDataReader.GetTextReader%2A>で<xref:System.Xml.XmlReader.Create%2A>です。  
+  
+ <xref:System.Data.SqlClient.SqlException>例外が発生した<xref:System.Xml.XmlReader>としてスロー<xref:System.Xml.XmlException>例外の内部例外を確認して、<xref:System.Data.SqlClient.SqlException>です。  
+  
+ <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>生成されます、<xref:System.InvalidOperationException>例外によって返されるオブジェクトで使用すると<xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>とき<xref:System.Data.CommandBehavior.SequentialAccess>が有効になっています。  
+  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 連続モードで以前に読み取られた列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+        <exception cref="T:System.InvalidCastException">返される種類は、xml ではありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasRows">
+      <MemberSignature Language="C#" Value="public override bool HasRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasRows" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.HasRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Data.SqlClient.SqlDataReader" /> 1 つまたは複数の行が含まれています。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Data.SqlClient.SqlDataReader" /> 1 つまたは複数の行が含まれます。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public override bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すブール値を取得するかどうか、指定した<see cref="T:System.Data.SqlClient.SqlDataReader" />インスタンスが閉じられました。</summary>
+        <value>
+          <see langword="true" />場合、指定した<see cref="T:System.Data.SqlClient.SqlDataReader" />インスタンスが閉じている<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取ることはできません、<xref:System.Data.SqlClient.SqlDataReader>閉じられているインスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCommandBehavior">
+      <MemberSignature Language="C#" Value="protected bool IsCommandBehavior (System.Data.CommandBehavior condition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool IsCommandBehavior(valuetype System.Data.CommandBehavior condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.IsCommandBehavior(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="condition">A<see cref="T:System.Data.CommandBehavior" />列挙します。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Data.CommandBehavior" />のものと一致する、<see cref="T:System.Data.SqlClient.SqlDataReader" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Data.CommandBehavior" />が true の場合、<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNull">
+      <MemberSignature Language="C#" Value="public override bool IsDBNull (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDBNull(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>列に値が存在しないまたは欠損値が含まれるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定された列の値と等しい場合<see cref="T:System.DBNull" />それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チェック、型指定されたを呼び出す前に null 列値は get メソッドには、このメソッドを呼び出す (たとえば、 <xref:System.Data.SqlClient.SqlDataReader.GetByte%2A>、<xref:System.Data.SqlClient.SqlDataReader.GetChar%2A>など)、エラーの発生を防ぐためにします。  
+  
+ [!code-csharp[SqlDataReader_IsDbNull#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/sqldatareader_isdbnull/cs/source.cs#1)]
+ [!code-vb[SqlDataReader_IsDbNull#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/sqldatareader_isdbnull/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNullAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;bool&gt; IsDBNullAsync (int i, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;bool&gt; IsDBNullAsync(int32 i, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.IsDBNullAsync(System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="i">取得する 0 から始まる列です。</param>
+        <param name="cancellationToken">取り消し命令、操作を取り消す必要がある通知を伝達します。 これは、操作では、取り消しは保証されません。 設定<see langword="CancellationToken.None" />により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" />です。 取り消された、返されたタスクをマークする必要があります。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlDataReader.IsDBNull(System.Int32)" />列に値が存在しないまたは欠損値が含まれるかどうかを示す値を取得します。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。 例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>
+          <see langword="true" />指定された列の値と等しい場合<see langword="DBNull" />それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [SqlClient ストリーミング サポート](~/docs/framework/data/adonet/sqlclient-streaming-support.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が切断またはデータの取得中に閉じられました。  
+  
+ <see cref="T:System.Data.SqlClient.SqlDataReader" />データの取得中に終了します。  
+  
+ 読み取ることができるデータがありません (たとえば、1 つ目<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />呼び出されると、または false が返されたされていない)。  
+  
+ 連続モードで以前に読み取られた列を読み取るしようとしています。  
+  
+ 実行中の非同期操作が発生しました。 これに適用されますすべて Get * メソッド順次モードで実行されているときに、ストリームの読み取り中に、呼び出すことができます。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.IndexOutOfRangeException">存在しない列を読み取るしようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[int i] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まる列序数。</param>
+        <summary>序数の列を指定して、ネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IndexOutOfRangeException">渡されたインデックスは 0 から <see cref="P:System.Data.IDataRecord.FieldCount" /> の範囲外にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列の名前です。</param>
+        <summary>列の名前を指定されたネイティブ形式で指定された列の値を取得します。</summary>
+        <value>ネイティブ形式で指定された列の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字小文字を区別ルックアップが最初に実行されます。 2 番目の検索が行われた、失敗した場合は (大文字と小文字の比較が行われデータベース照合順序を使用)。 予期しない結果は、比較がカルチャに固有の大文字と小文字の規則によって影響を受けるときに発生します。 たとえば、トルコ語では次の例間違った結果が生成トルコ語で、ファイル システムは、文字 'i' の言語の文字種の規則を使用しないので"file"にします。  
+  
+ このメソッドは、カタカナの全角を区別します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定した名前の列は見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResult">
+      <MemberSignature Language="C#" Value="public override bool NextResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool NextResult() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.NextResult" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッチ TRANSACT-SQL ステートメントの結果を読み込むときに、次の結果にデータ リーダーを進めます。</summary>
+        <returns>
+          <see langword="true" />次の結果セットがある場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TRANSACT-SQL バッチのステートメントを実行することによって生成される複数の結果を処理するために使用します。  
+  
+ 既定では、データ リーダーは、最初の結果に位置付けられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextResultAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;bool&gt; NextResultAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;bool&gt; NextResultAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.NextResultAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">取り消し命令。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlDataReader.NextResult" />、バッチの結果を読み取っているときに、次の結果にデータ リーダーを進めますを[!INCLUDE[tsql](~/includes/tsql-md.md)]ステートメントです。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">タスクの完了前に、同じインスタンスに対して <see cref="M:System.Data.SqlClient.SqlDataReader.NextResultAsync(System.Threading.CancellationToken)" /> を複数回呼び出しています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">コマンド テキストの実行中に [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] がエラーを返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlDataReader" /> を次のレコードに進めます。</summary>
+        <returns>
+          次の行が存在する場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の位置、<xref:System.Data.SqlClient.SqlDataReader>最初のレコードの前に、です。 そのため、呼び出す必要があります<xref:System.Data.SqlClient.SqlDataReader.Read%2A>データへのアクセスを開始します。  
+  
+ 1 つだけ`SqlDataReader`ごとに関連付けられている<xref:System.Data.SqlClient.SqlConnection>時に、開いている可能性があります最初の 1 つが閉じられるまでを開くには別の試行は失敗します。 同様に、`SqlDataReader`が使用されている、関連付けられた`SqlConnection`機能を提供するまで、呼び出しがビジー<xref:System.Data.SqlClient.SqlDataReader.Close%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.SqlClient.SqlConnection>、 <xref:System.Data.SqlClient.SqlCommand>、および<xref:System.Data.SqlClient.SqlDataReader>です。 例は、コンソール ウィンドウに書き出し、データを読み取ります。 コードが終了し、<xref:System.Data.SqlClient.SqlDataReader>です。 <xref:System.Data.SqlClient.SqlConnection>はの最後に自動的に閉じ、`using`コード ブロック。  
+  
+ [!code-csharp[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlDataReader.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.SqlClient.SqlException">コマンド テキストの実行中に [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] がエラーを返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;bool&gt; ReadAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;bool&gt; ReadAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.ReadAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">取り消し命令。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlDataReader.Read" />、どの進歩、<see cref="T:System.Data.SqlClient.SqlDataReader" />次のレコードにします。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。 例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`behavior`のパラメーター<xref:System.Data.SqlClient.SqlCommand.ExecuteReaderAsync%2A>に設定されている`Default`、<xref:System.Data.SqlClient.SqlDataReader.ReadAsync%2A>タスクを返す前に行全体を読み取ります。  
+  
+ 詳細については、非同期プログラミングの方法のコード サンプルを含む、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">タスクの完了前に、同じインスタンスに対して <see cref="M:System.Data.SqlClient.SqlDataReader.ReadAsync(System.Threading.CancellationToken)" /> を複数回呼び出しています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">コマンド テキストの実行中に [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] がエラーを返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordsAffected">
+      <MemberSignature Language="C#" Value="public override int RecordsAffected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecordsAffected" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.RecordsAffected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更、挿入、または TRANSACT-SQL ステートメントの実行によって削除された行の数を取得します。</summary>
+        <value>変更、挿入、または削除された行の数。影響を受けた行がない、またはステートメントが失敗した場合は 0。SELECT ステートメントの場合は -1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataReader.RecordsAffected%2A>プロパティが設定されていないすべての行が読み取られ、<xref:System.Data.SqlClient.SqlDataReader>です。  
+  
+ このプロパティの値は、累積的なです。 たとえば、バッチ モードの値で 2 つのレコードが挿入された`RecordsAffected`2 になります。  
+  
+ <xref:System.Data.SqlClient.SqlDataReader.IsClosed%2A>および<xref:System.Data.SqlClient.SqlDataReader.RecordsAffected%2A>後に呼び出すことができる唯一のプロパティは、<xref:System.Data.SqlClient.SqlDataReader>が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.IDataRecord.GetData">
+      <MemberSignature Language="C#" Value="System.Data.IDataReader IDataRecord.GetData (int i);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Data.IDataReader System.Data.IDataRecord.GetData(int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlDataReader.System#Data#IDataRecord#GetData(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.IDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">列の序数。</param>
+        <summary>指定された列序数の <see cref="T:System.Data.IDataReader" /> を返します。</summary>
+        <returns><see cref="T:System.Data.IDataReader" />指定された列の序数のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.SqlClient.SqlDataReader> のインスタンスが <xref:System.Data.IDataRecord> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibleFieldCount">
+      <MemberSignature Language="C#" Value="public override int VisibleFieldCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisibleFieldCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlDataReader.VisibleFieldCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlDataReader" /> 内の表示フィールドの数を取得します。</summary>
+        <value>表示フィールドの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、<xref:System.Data.SqlClient.SqlDataReader> 内の表示フィールドの数を調べるために使用します。 たとえば、部分的な主キーに対して SELECT を実行すると、キーの残りの部分が非表示フィールドとして返されます。 非表示フィールドは、常に表示フィールドの後ろに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

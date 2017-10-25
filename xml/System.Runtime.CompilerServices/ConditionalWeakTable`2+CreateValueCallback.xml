@@ -1,0 +1,64 @@
+<Type Name="ConditionalWeakTable&lt;TKey,TValue&gt;+CreateValueCallback" FullName="System.Runtime.CompilerServices.ConditionalWeakTable&lt;TKey,TValue&gt;+CreateValueCallback">
+  <TypeSignature Language="C#" Value="public delegate TValue ConditionalWeakTable&lt;TKey,TValue&gt;.CreateValueCallback(TKey key) where TKey : class where TValue : class;" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed ConditionalWeakTable`2/CreateValueCallback&lt;class TKey, class TValue&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.ConditionalWeakTable`2.CreateValueCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TKey">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="TValue">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="key" Type="TKey" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>TValue</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="key">作成する値に属しているキー。</param>
+    <summary><see cref="T:System.Runtime.CompilerServices.ConditionalWeakTable`2" /> オブジェクトにキー/値ペアの一部として追加する既定値以外の値を作成するメソッドを表します。</summary>
+    <returns>指定したキーにアタッチする値を表す、参照型のインスタンス。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.CreateValueCallback>デリゲートによってカプセル化によって呼び出されるコールバック メソッド、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A?displayProperty=nameWithType>内でキーがメソッドに渡されるときにメソッドが見つからない、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>オブジェクト。 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>メソッドは、キー プロパティ値が動的にアタッチするがマネージ オブジェクトを表すコールバック メソッドに渡します。 メソッドは、呼び出し元に、さらに、テーブルにキー/値ペアを追加するプロパティの値を返すことをします。  
+  
+ <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.CreateValueCallback>指定したキーに関連付けることができる参照型のインスタンスを返すメソッドを使用します。 既定以外の値を使用して初期化するには、そのインスタンスを使用できます。 キーは、テーブル内で見つからない場合、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A?displayProperty=nameWithType>メソッドは、既定値を使用して、値を初期化するキー/値ペアを追加します。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`MainClass`クラスおよび`MainInfo`クラスです。 `MainInfo`に関する情報を提供、`MainClass`インスタンス。 静的なも定義 (`Shared` Visual Basic で)`CreateAttachedValue`に割り当てることのできるメソッド、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.CreateValueCallback>を委任しに渡される、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>メソッドです。 呼び出しの例、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>を追加するメソッド、`MainClass`オブジェクトとそれに対応する`MainInfo`オブジェクトを<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 呼び出しも示します、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>と<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>メソッドを呼び出すと、テーブルにキー/値ペアを追加するため、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>既存のキーに属している値を取得します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

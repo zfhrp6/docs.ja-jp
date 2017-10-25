@@ -1,0 +1,207 @@
+<Type Name="DesignTimeParseData" FullName="System.Web.UI.DesignTimeParseData">
+  <TypeSignature Language="C#" Value="public sealed class DesignTimeParseData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignTimeParseData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DesignTimeParseData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に、パーサーに情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DesignTimeParseData>クラスは、パラメーターを提供するデザイン時にいくつかのメソッドの使用、<xref:System.Web.UI.DesignTimeTemplateParser>クラスは、コントロールのセットにテンプレートを解析します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignTimeParseData (System.ComponentModel.Design.IDesignerHost designerHost, string parseText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Design.IDesignerHost designerHost, string parseText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeParseData.#ctor(System.ComponentModel.Design.IDesignerHost,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="parseText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost">デザイナーのトランザクションとコンポーネントを管理するオブジェクト。</param>
+        <param name="parseText">デザイン時に解析するテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DesignTimeParseData" />クラス、指定したフィルターがない場合。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignTimeParseData (System.ComponentModel.Design.IDesignerHost designerHost, string parseText, string filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Design.IDesignerHost designerHost, string parseText, string filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DesignTimeParseData.#ctor(System.ComponentModel.Design.IDesignerHost,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="parseText" Type="System.String" />
+        <Parameter Name="filter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost">デザイナーのトランザクションとコンポーネントを管理するオブジェクト。</param>
+        <param name="parseText">デザイン時に解析するテキスト。</param>
+        <param name="filter">デザイン時に適用するフィルター。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DesignTimeParseData" />指定されたフィルターを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parseText" /> は <see langword="null" /> です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindingHandler">
+      <MemberSignature Language="C#" Value="public EventHandler DataBindingHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler DataBindingHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.DataBindingHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイン時にデータ バインディングのデリゲートを設定します。</summary>
+        <value><see cref="T:System.EventHandler" />デザイン時にデータ バインディング。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerHost">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesignerHost DesignerHost { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.IDesignerHost DesignerHost" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.DesignerHost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesignerHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのトランザクションおよびコンポーネントを管理するためには、オブジェクトを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.Design.IDesignerHost" />デザイナー トランザクションおよびコンポーネントを管理するためのオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentUrl">
+      <MemberSignature Language="C#" Value="public string DocumentUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DocumentUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.DocumentUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドキュメントがある URL を設定します。</summary>
+        <value>A<see cref="T:System.String" />の URL を含むです。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時に使用されるフィルターを取得します。</summary>
+        <value>A<see cref="T:System.String" />フィルターを表すです。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseText">
+      <MemberSignature Language="C#" Value="public string ParseText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParseText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.ParseText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解析対象のテキストを取得します。</summary>
+        <value>A<see cref="T:System.String" />を解析するテキストを格納します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldApplyTheme">
+      <MemberSignature Language="C#" Value="public bool ShouldApplyTheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShouldApplyTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.ShouldApplyTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーマを適用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テーマを適用する必要があります。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UserControlRegisterEntries">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection UserControlRegisterEntries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection UserControlRegisterEntries" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DesignTimeParseData.UserControlRegisterEntries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー コントロールの登録に関する情報のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />タグ プレフィックス、タグ名、およびユーザー コントロールの場所を含むです。 コレクションが、解析時では、.NET Framework によって自動的に設定されます。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

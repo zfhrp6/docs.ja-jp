@@ -1,0 +1,73 @@
+<Type Name="IRelDecryptor" FullName="System.Security.Cryptography.Xml.IRelDecryptor">
+  <TypeSignature Language="C#" Value="public interface IRelDecryptor" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRelDecryptor" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.IRelDecryptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XrML を復号化するメソッドを定義<see langword="&lt;encryptedGrant&gt;" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.IRelDecryptor>とのインターフェイス、 <xref:System.Security.Cryptography.Xml.XmlLicenseTransform> 、XrML を復号化するクラス`<encryptedGrant>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して XML デジタル署名を検証する方法を示しています、<xref:System.Security.Cryptography.Xml.IRelDecryptor>インターフェイスおよび<xref:System.Security.Cryptography.Xml.XmlLicenseTransform>クラスです。  
+  
+ [!code-cpp[Cryptography.XML.XmlLicenseTransform#2](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlLicenseTransform/cpp/sample.cpp#2)]
+ [!code-csharp[Cryptography.XML.XmlLicenseTransform#2](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlLicenseTransform/CS/sample.cs#2)]
+ [!code-vb[Cryptography.XML.XmlLicenseTransform#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlLicenseTransform/VB/sample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Decrypt (System.Security.Cryptography.Xml.EncryptionMethod encryptionMethod, System.Security.Cryptography.Xml.KeyInfo keyInfo, System.IO.Stream toDecrypt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream Decrypt(class System.Security.Cryptography.Xml.EncryptionMethod encryptionMethod, class System.Security.Cryptography.Xml.KeyInfo keyInfo, class System.IO.Stream toDecrypt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.IRelDecryptor.Decrypt(System.Security.Cryptography.Xml.EncryptionMethod,System.Security.Cryptography.Xml.KeyInfo,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptionMethod" Type="System.Security.Cryptography.Xml.EncryptionMethod" />
+        <Parameter Name="keyInfo" Type="System.Security.Cryptography.Xml.KeyInfo" />
+        <Parameter Name="toDecrypt" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="encryptionMethod"><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" /> XML 暗号化に使用されるアルゴリズムをカプセル化するオブジェクト。</param>
+        <param name="keyInfo">A<see cref="T:System.Security.Cryptography.Xml.KeyInfo" />復号化に使用する非対称キーを含むオブジェクトです。</param>
+        <param name="toDecrypt">ストリーム オブジェクトを含む、<see langword="&lt;encryptedGrant&gt;" />要素を復号化します。</param>
+        <summary>XrML を復号化<see langword="&lt;encryptedGrant&gt;" />要素内に含まれる、<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />を含む、復号化されたオブジェクト<see langword="&lt;encryptedGrant&gt;" />要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.IRelDecryptor.Decrypt%2A>メソッドには、XrML が復号化`<encryptedGrant>`要素をプレーン テキストのストリームを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

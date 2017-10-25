@@ -1,0 +1,103 @@
+<Type Name="ECDiffieHellmanKeyDerivationFunction" FullName="System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction">
+  <TypeSignature Language="C#" Value="public enum ECDiffieHellmanKeyDerivationFunction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ECDiffieHellmanKeyDerivationFunction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キーの派生関数を指定します、<see cref="T:System.Security.Cryptography.ECDiffieHellmanCng" />秘密協定をキー マテリアルに変換するクラスが使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction>列挙キー マテリアルに生秘密協定を変換するために使用するアルゴリズムの型を定義します。 秘密協定は、キー交換の一部として、秘密キーとその他のパーティの公開キーから生成される値です。 によって生成されるキー マテリアルのシード値では、<xref:System.Security.Cryptography.ECDiffieHellmanCng.DeriveKeyMaterial%2A>メソッドです。  
+  
+ <xref:System.Security.Cryptography.ECDiffieHellmanCng.KeyDerivationFunction%2A>プロパティでは、この列挙体を使用して、get のキー派生関数を<xref:System.Security.Cryptography.ECDiffieHellmanCng>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Hash">
+      <MemberSignature Language="C#" Value="Hash" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction Hash = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction.Hash" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ アルゴリズムを使用して、キー マテリアルを生成します。 <see cref="P:System.Security.Cryptography.ECDiffieHellmanCng.HashAlgorithm" />プロパティを使用するアルゴリズムの名前を指定します。 アルゴリズムの名前が指定されていない場合<see cref="T:System.Security.Cryptography.SHA256" />は既定のアルゴリズムとして使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定することも、<xref:System.Security.Cryptography.ECDiffieHellmanCng.SecretPrepend%2A>と<xref:System.Security.Cryptography.ECDiffieHellmanCng.SecretAppend%2A>プロパティも、これらは必須ではありません。  
+  
+ 生成されるキー マテリアルの量は、指定したアルゴリズムのハッシュ値のサイズと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hmac">
+      <MemberSignature Language="C#" Value="Hmac" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction Hmac = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction.Hmac" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ ベース メッセージ認証コード (HMAC) アルゴリズムを使用して、キー マテリアルを生成します。 <see cref="P:System.Security.Cryptography.ECDiffieHellmanCng.HmacKey" />プロパティを使用するキーを指定します。 このいずれかのプロパティを設定する必要がありますまたは<see cref="P:System.Security.Cryptography.ECDiffieHellmanCng.UseSecretAgreementAsHmacKey" />プロパティに設定する必要があります<see langword="true" />です。 それ以外の場合、<see cref="T:System.Security.Cryptography.CryptographicException" />を使用する場合にスローされる<see cref="F:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction.Hmac" />です。 両方のプロパティが設定されている場合は、秘密協定が HMAC キーとして使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定することも、<xref:System.Security.Cryptography.ECDiffieHellmanCng.SecretPrepend%2A>と<xref:System.Security.Cryptography.ECDiffieHellmanCng.SecretAppend%2A>プロパティも、これらは必須ではありません。  
+  
+ 生成されるキー マテリアルの量は、HMAC 値のサイズと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tls">
+      <MemberSignature Language="C#" Value="Tls" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction Tls = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction.Tls" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポート層セキュリティ (TLS) プロトコルを使用して、キー マテリアルを生成します。 <see cref="P:System.Security.Cryptography.ECDiffieHellmanCng.Seed" />と<see cref="P:System.Security.Cryptography.ECDiffieHellmanCng.Label" />プロパティが、それ以外の設定にする必要があります、<see cref="T:System.Security.Cryptography.CryptographicException" />を使用する場合にスローされる<see cref="F:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction.Tls" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、160 ビットのキー マテリアルを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

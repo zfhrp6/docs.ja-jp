@@ -1,0 +1,249 @@
+<Type Name="DataSourceIDConverter" FullName="System.Web.UI.Design.WebControls.DataSourceIDConverter">
+  <TypeSignature Language="C#" Value="public class DataSourceIDConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataSourceIDConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DataSourceIDConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ ソース名のユーザーが選択可能なリストを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter>クラスは、<xref:System.ComponentModel.TypeConverter>オブジェクトによって参照される通常の<xref:System.ComponentModel.TypeConverterAttribute>属性。  
+  
+ データ ソースによって返される名、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValues%2A>メソッドが有効なデータ ソースは、指定したコンテキストのコンテナーからのコンポーネントです。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesExclusive%2A>メソッドは、返されたデータ ソース名が使用可能な値の排他的なリストかどうかを示す値を取得します。 <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesSupported%2A>メソッドは、データ ソースの名前が一覧から選択できる値の標準セットであるかどうかを示す値を取得します。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.ConvertFrom%2A>メソッドが、指定したオブジェクトをコンバーターのネイティブな型に変換します。 <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.CanConvertFrom%2A>メソッドを示す値を取得するかどうかこの<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter>ネイティブな型に、指定したソースの種類のオブジェクトを変換することができます。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.IsValidDataSource%2A>メソッドは、指定したコンポーネントを実装するかどうかを示す、<xref:System.Web.UI.IDataSource>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataSourceIDConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataSourceIDConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter>クラスによってクラスが参照されている場合、<xref:System.ComponentModel.TypeConverterAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <param name="sourceType"><see cref="T:System.Type" />の変換を要求する対象のオブジェクト。</param>
+        <summary>このコンバーターが、指定したソースの種類のオブジェクトをコンバーターのネイティブ型に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="sourceType" />文字列です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.ConvertFrom%2A>メソッドは、文字列からのみ変換できますので、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.CanConvertFrom%2A>のみが返されます`true`とき`sourcetype`文字列です。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.CanConvertFrom%2A>使用しない、`context`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />のカルチャを指定するオブジェクト、<c>値</c>パラメーター。</param>
+        <param name="value">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトをコンバーターのネイティブ型に変換します。</summary>
+        <returns><paramref name="value" />パラメーターが文字列として返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`value`パラメーターが文字列の型を持つ文字列として返されます。 場合`value`は`null`、空の文字列 ("") が返されます。 それ以外の場合は、<xref:System.NotSupportedException> がスローされます。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.ConvertFrom%2A>メソッドを使用しません、`context`または`culture`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="value" />文字列以外または<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>使用可能なデータ ソース名の一覧を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />を実装するコントロールの名前を含む、<see cref="T:System.Web.UI.IDataSource" />インターフェイスし、指定されたコンテキストで使用可能な。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValues%2A>メソッドで指定されているオブジェクトのコンテナーに、有効なデータ ソースにあるコンポーネントの名前のリストを作成する、`context`パラメーター。 その一覧を次に、変換、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>返されたデータ ソース名が使用可能な値の排他的なリストかどうかを示す値を取得します。</summary>
+        <returns>常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスを派生する場合、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter>クラスし、オーバーライド、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValues%2A>をデータ ソース名の排他的なリストを返すメソッドをオーバーライドも、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesExclusive%2A>を返すメソッドを`true`データ ソースの名前リストが排他的な場合です。  
+  
+ `context`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesExclusive%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>このオブジェクトがリストから選択できるデータ ソース名の標準セットを返すかどうかを示す値を取得します。</summary>
+        <returns>常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.GetStandardValuesSupported%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidDataSource">
+      <MemberSignature Language="C#" Value="protected virtual bool IsValidDataSource (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsValidDataSource(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.IsValidDataSource(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" /> インターフェイスを実装するオブジェクト。</param>
+        <summary>指定したコンポーネントが有効なデータ ソースであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="component" />有効なデータ ソースには、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataSourceIDConverter.IsValidDataSource%2A>メソッドでは考慮、`component`を実装する場合に有効なデータ ソースのパラメーター、<xref:System.Web.UI.IDataSource>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.IsValidDataSource(System.ComponentModel.IComponent)" />さらに詳しく調査コンポーネントには、標準値の一覧で返す必要があるかどうかを決定する必要があるコントロールでメソッドをオーバーライドする必要があります。 たとえば、コントロールの動作とのみ<see cref="T:System.Web.UI.WebControls.XmlDataSource" />データ ソース、<see cref="M:System.Web.UI.Design.WebControls.DataSourceIDConverter.IsValidDataSource(System.ComponentModel.IComponent)" />返す必要があります<see langword="true" />のみそれらのコンポーネントである<see cref="T:System.Web.UI.WebControls.XmlDataSource" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

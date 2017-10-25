@@ -1,0 +1,567 @@
+<Type Name="VisualCollection" FullName="System.Windows.Media.VisualCollection">
+  <TypeSignature Language="C#" Value="public sealed class VisualCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit VisualCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.VisualCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Visual" /> オブジェクトの順序付きコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.VisualCollection>が暗黙的にコンテキストの関係。 プロシージャがアクセスを試みた場合、<xref:System.Windows.Media.VisualCollection>所有元のコンテキストとは異なるコンテキストから<xref:System.Windows.Media.ContainerVisual>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.VisualCollection>とメンバーを追加します。  
+  
+ [!code-csharp[DrawingVisualSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[DrawingVisualSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
+  
+> [!NOTE]
+>  サンプル全体については、次を参照してください。 [DrawingVisuals サンプルを使用してテストをヒット](http://go.microsoft.com/fwlink/?LinkID=159994)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualCollection (System.Windows.Media.Visual parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.#ctor(System.Windows.Media.Visual)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="parent">ビジュアルの親オブジェクト<see cref="T:System.Windows.Media.VisualCollection" />が返されます。</param>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.Add(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" />に追加する、<see cref="T:System.Windows.Media.VisualCollection" />です。</param>
+        <summary>追加、<see cref="T:System.Windows.Media.Visual" />の末尾に、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <returns>コレクション内のインデックス<paramref name="visual" />が追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する、<xref:System.Windows.Media.Visual>値がある`null`は許可されており、例外は発生しません。  
+  
+ <xref:System.Windows.Media.VisualCollection.Add%2A>メソッドが所有者である親、ビジュアル間の親子関係を設定もの<xref:System.Windows.Media.VisualCollection>、および子`visual`です。  
+  
+ カスタム クラスの visual の子オブジェクトの基になる記憶域実装大きい低レベルの制御を必要がある場合は、使用を検討して、<xref:System.Windows.Media.Visual.AddVisualChild%2A>と<xref:System.Windows.Media.Visual.RemoveVisualChild%2A>メソッドです。 独自のストレージの実装を定義する必要があり、使用しないこれらのメソッドを使用して、<xref:System.Windows.Media.VisualCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.VisualCollection>とメンバーを追加します。  
+  
+ [!code-csharp[DrawingVisualSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[DrawingVisualSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
+  
+> [!NOTE]
+>  サンプル全体については、次を参照してください。 [DrawingVisuals サンプルを使用してテストをヒット](http://go.microsoft.com/fwlink/?LinkID=159994)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.ArgumentException" />場合にスローされますが、<see cref="T:System.Windows.Media.Visual" />はルート要素です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Capacity">
+      <MemberSignature Language="C#" Value="public int Capacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Capacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.Capacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> に格納できる要素の数を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Media.VisualCollection" /> に格納できる要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Windows.Media.VisualCollection.Capacity%2A>は要素の数を<xref:System.Windows.Media.VisualCollection>が格納できます。 <xref:System.Windows.Media.VisualCollection.Count%2A>実際には、ビジュアルの数、<xref:System.Windows.Media.VisualCollection>です。 <xref:System.Windows.Media.VisualCollection.Capacity%2A>常により大きいまたは等しい<xref:System.Windows.Media.VisualCollection.Count%2A>です。 場合<xref:System.Windows.Media.VisualCollection.Count%2A>を超える<xref:System.Windows.Media.VisualCollection.Capacity%2A>の容量の要素を追加するときに、<xref:System.Windows.Media.VisualCollection>が増加します。 既定では<xref:System.Windows.Media.VisualCollection.Capacity%2A>は 0 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Windows.Media.VisualCollection.Capacity" /> は <see cref="P:System.Windows.Media.VisualCollection.Count" /> より小さい値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.VisualCollection" /> からすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.VisualCollection.Count%2A>はゼロにリセットします。 値、<xref:System.Windows.Media.VisualCollection.Capacity%2A>は変更されません。 容量をリセットする、 <xref:System.Windows.Media.VisualCollection>、設定、<xref:System.Windows.Media.VisualCollection.Capacity%2A>プロパティを目的のサイズ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.Contains(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" />コレクション内で検索します。</param>
+        <summary>返します、<see cref="T:System.Boolean" />を示す値かどうか、指定した<see cref="T:System.Windows.Media.Visual" />コレクションに含まれます。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="visual" />、それ以外のコレクションに含まれている<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数の最悪のシナリオの実行時のシナリオは`O(n)`ここで、`n`内の項目数が、<xref:System.Windows.Media.VisualCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーされる要素の先は、<see cref="T:System.Windows.Media.VisualCollection" />です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>特定の配列インデックスを開始位置、配列にコレクション内の項目をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Windows.Media.Visual[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Windows.Media.Visual[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.CopyTo(System.Windows.Media.Visual[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Windows.Media.Visual[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Windows.Media.Visual" />オブジェクト (を 0 から始まるインデックスを持つ必要があります)。</param>
+        <param name="index">内からコピーを開始するインデックス<c>配列</c>です。</param>
+        <summary>渡された現在のコレクションをコピー<see cref="T:System.Windows.Media.Visual" />配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の要素の数を取得します。</summary>
+        <value>要素の数を<see cref="T:System.Windows.Media.VisualCollection" />が含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.VisualCollection.Count%2A>実際には、要素の数、<xref:System.Windows.Media.VisualCollection>です。 <xref:System.Windows.Media.VisualCollection.Capacity%2A>要素の数を<xref:System.Windows.Media.VisualCollection>が格納できます。  
+  
+ <xref:System.Windows.Media.VisualCollection.Count%2A>常に以下を<xref:System.Windows.Media.VisualCollection.Capacity%2A>です。 場合<xref:System.Windows.Media.VisualCollection.Count%2A>を超える<xref:System.Windows.Media.VisualCollection.Capacity%2A>前の要素をコピーし、新しい要素を追加する前に、内部の配列を自動的に再割り当てして要素を追加するときに、リストの容量が 2 倍にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.VisualCollection.Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.VisualCollection/Enumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.VisualCollection+Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理できる列挙子を取得、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <returns>コレクションの反復処理に使用できる列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.IndexOf(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.VisualCollection" /> 内で検索される <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary>0 から始まるインデックスを返します、<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>インデックス、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Media.Visual>に含まれていない、 <xref:System.Windows.Media.VisualCollection>-1 が返されます。 場合`null`メソッドを持つ最初のエントリのインデックスに渡される`null`が返されます。 Null のエントリがない場合は、-1 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.Insert(System.Int32,System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="index">値を挿入する位置の 0 から始まるインデックス。</param>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" />に挿入する、<see cref="T:System.Windows.Media.VisualCollection" />です。</param>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> 内の指定したインデックスの位置に要素を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Media.VisualCollection.Count%2A>既に同じ<xref:System.Windows.Media.VisualCollection.Capacity%2A>の容量、<xref:System.Windows.Media.VisualCollection>が増加する前に、新しい<xref:System.Windows.Media.Visual>を挿入します。 場合`index`と等しい<xref:System.Windows.Media.VisualCollection.Count%2A>、`visual`の末尾に追加された<xref:System.Windows.Media.VisualCollection>です。 任意の既存のビジュアル オブジェクトを以上になると、`index`に合わせて新しいシフト<xref:System.Windows.Media.Visual>、およびそのインデックス値が更新されます。  
+  
+ <xref:System.Windows.Media.VisualCollection.Insert%2A>メソッドが所有者である親、ビジュアル間の親子関係を設定もの<xref:System.Windows.Media.VisualCollection>、および子`visual`です。  
+  
+ さらに低レベル制御 visual の子オブジェクトの基になるストレージの実装を必要がある場合は、使用を検討して、<xref:System.Windows.Media.Visual.AddVisualChild%2A>と<xref:System.Windows.Media.Visual.RemoveVisualChild%2A>メソッドです。 独自のストレージの実装を定義し、使用しないこれらのメソッドを使用して、<xref:System.Windows.Media.VisualCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 より大きいか小さい<see cref="P:System.Windows.Media.VisualCollection.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>値を示すかどうか、<see cref="T:System.Windows.Media.VisualCollection" />は読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に`false`すべて<xref:System.Windows.Media.VisualCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>値を示すかどうか、 <see cref="T:System.Windows.Media.VisualCollection" /> (スレッド セーフである) が同期されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に`false`すべて<xref:System.Windows.Media.VisualCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Windows.Media.VisualCollection" />を取得または設定する、<see cref="T:System.Windows.Media.Visual" />です。</param>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Visual" />の 0 から始まるインデックス位置に格納されている、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Visual" />に格納されている<paramref name="index" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、固有の仕様にアクセスする機能を提供<xref:System.Windows.Media.Visual>で、<xref:System.Windows.Media.VisualCollection>インデックスを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 未満または<paramref name="index" />と等しいかより大きい<see cref="P:System.Windows.Media.VisualCollection.Count" />です。</exception>
+        <exception cref="T:System.ArgumentException">新しい子要素には既に親、または指定したインデックス位置の値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.Remove(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" /> から削除する <see cref="T:System.Windows.Media.VisualCollection" />。</param>
+        <summary>指定された削除<see cref="T:System.Windows.Media.Visual" />オブジェクトから、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除されたオブジェクトの後ろにある visual オブジェクトは、空いた位置を占めるようにシフトされ、インデックスの値が更新されます。 場合`visual`は`null`、最初の`null`エントリを削除します。 削除することに注意してください、`null`エントリは、コレクションのサイズに比例します。  
+  
+ <xref:System.Windows.Media.VisualCollection.Remove%2A>メソッドは、所有者であるビジュアルで親との間の親子リレーションシップを削除するもの<xref:System.Windows.Media.VisualCollection>と子要素`visual`です。  
+  
+ さらに低レベル制御 visual の子オブジェクトの基になるストレージの実装を必要がある場合は、使用を検討して、<xref:System.Windows.Media.Visual.AddVisualChild%2A>と<xref:System.Windows.Media.Visual.RemoveVisualChild%2A>メソッドです。 独自のストレージの実装を定義し、使用しないこれらのメソッドを使用して、<xref:System.Windows.Media.VisualCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するビジュアルの 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置のビジュアル オブジェクトを削除、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除されたオブジェクトの後ろにある visual オブジェクトは、空いた位置を占めるようにシフトされ、インデックスの値が更新されます。  
+  
+ <xref:System.Windows.Media.VisualCollection.RemoveAt%2A>メソッドは、所有者であるビジュアルで親との間の親子リレーションシップを削除するもの<xref:System.Windows.Media.VisualCollection>と子要素`visual`です。  
+  
+ さらに低レベル制御 visual の子オブジェクトの基になるストレージの実装を必要がある場合は、使用を検討して、<xref:System.Windows.Media.Visual.AddVisualChild%2A>と<xref:System.Windows.Media.Visual.RemoveVisualChild%2A>メソッドです。 独自のストレージの実装を定義し、使用しないこれらのメソッドを使用して、<xref:System.Windows.Media.VisualCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 未満または<paramref name="index" />と等しいかより大きい<see cref="P:System.Windows.Media.VisualCollection.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange">
+      <MemberSignature Language="C#" Value="public void RemoveRange (int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveRange(int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.RemoveRange(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の範囲の 0 から始まるインデックス。</param>
+        <param name="count">削除する要素の数を指定します。</param>
+        <summary>ビジュアルからのオブジェクトの範囲を削除、<see cref="T:System.Windows.Media.VisualCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除されたオブジェクトの後ろにある visual オブジェクトは、空いた位置を占めるようにシフトされ、インデックスの値が更新されます。  
+  
+ <xref:System.Windows.Media.VisualCollection.RemoveRange%2A>メソッドが親のビジュアル、所有者である間の親子リレーションシップを削除もの<xref:System.Windows.Media.VisualCollection>とビジュアルの子の範囲です。  
+  
+ さらに低レベル制御 visual の子オブジェクトの基になるストレージの実装を必要がある場合は、使用を検討して、<xref:System.Windows.Media.Visual.AddVisualChild%2A>と<xref:System.Windows.Media.Visual.RemoveVisualChild%2A>メソッドです。 独自のストレージの実装を定義し、使用しないこれらのメソッドを使用して、<xref:System.Windows.Media.VisualCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 未満または<paramref name="count" />が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="index" />および<paramref name="count" />内の要素の有効な範囲を参照しない、<see cref="T:System.Windows.Media.VisualCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.VisualCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.VisualCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" /> 型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。 このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」を参照してください。</summary>
+        <returns>コレクションを反復処理するために使用できるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

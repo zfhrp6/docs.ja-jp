@@ -1,0 +1,919 @@
+<Type Name="GridColumnStylesCollection" FullName="System.Windows.Forms.GridColumnStylesCollection">
+  <TypeSignature Language="C#" Value="public class GridColumnStylesCollection : System.Windows.Forms.BaseCollection, System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridColumnStylesCollection extends System.Windows.Forms.BaseCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.GridColumnStylesCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.BaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataGridColumnCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Windows.Forms.DataGridColumnStyle" />内のオブジェクト、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridTableStyle>、アクセスする、<xref:System.Windows.Forms.GridColumnStylesCollection>を通じて、<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.GridColumnStylesCollection>規格を使用して<xref:System.Windows.Forms.GridColumnStylesCollection.Add%2A>と<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>コレクションを操作するメソッド。  
+  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドがコレクション内で特定のプロパティ値が存在するかどうかを確認します。 また、使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドのいずれかのインデックスを確認する<xref:System.Windows.Forms.DataGridColumnStyle>コレクション内のオブジェクト。  
+  
+> [!CAUTION]
+>  常に作成<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトに追加して、<xref:System.Windows.Forms.GridColumnStylesCollection>追加する前に<xref:System.Windows.Forms.DataGridTableStyle>オブジェクトを<xref:System.Windows.Forms.GridTableStylesCollection>です。 空の追加と<xref:System.Windows.Forms.DataGridTableStyle>、有効な<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>をコレクションに値<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトが自動的に生成されます。 新規追加しようとする場合に、例外がスローされますその結果、<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトが複製によって<xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A>値を<xref:System.Windows.Forms.GridColumnStylesCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、それぞれに関する情報を出力<xref:System.Windows.Forms.DataGridColumnStyle>で、<xref:System.Windows.Forms.GridColumnStylesCollection>です。  
+  
+ [!code-cpp[Classic GridColumnStylesCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic GridColumnStylesCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic GridColumnStylesCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic GridColumnStylesCollection Example/CS/Source.cs#1)]
+ [!code-vb[Classic GridColumnStylesCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (System.Windows.Forms.DataGridColumnStyle column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(class System.Windows.Forms.DataGridColumnStyle column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Add(System.Windows.Forms.DataGridColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Windows.Forms.DataGridColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="column">追加する <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>列のスタイルをコレクションに追加します。</summary>
+        <returns>新しいインデックス<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をいくつか作成<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトおよび各を追加、 <xref:System.Windows.Forms.GridColumnStylesCollection> 2 つの<xref:System.Windows.Forms.DataGridTableStyle>オブジェクト。  
+  
+ [!code-cpp[GridTableStylesCollectionExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GridTableStylesCollectionExamples/CPP/gridtablestylescollectionexamples.cpp#1)]
+ [!code-csharp[GridTableStylesCollectionExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GridTableStylesCollectionExamples/CS/gridtablestylescollectionexamples.cs#1)]
+ [!code-vb[GridTableStylesCollectionExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GridTableStylesCollectionExamples/VB/gridtablestylescollectionexamples.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.DataGridColumnStyle[] columns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.DataGridColumnStyle[] columns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.AddRange(System.Windows.Forms.DataGridColumnStyle[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columns" Type="System.Windows.Forms.DataGridColumnStyle[]" />
+      </Parameters>
+      <Docs>
+        <param name="columns">配列<see cref="T:System.Windows.Forms.DataGridColumnStyle" />コレクションに追加するオブジェクト。</param>
+        <summary>列スタイル オブジェクトの配列をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の配列を作成する<xref:System.Windows.Forms.DataGridColumnStyle>オブジェクトを使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.AddRange%2A>に配列を追加する方法、<xref:System.Windows.Forms.GridColumnStylesCollection>です。  
+  
+ [!code-cpp[Classic GridColumnStylesCollection.AddRange Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic GridColumnStylesCollection.AddRange Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic GridColumnStylesCollection.AddRange Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic GridColumnStylesCollection.AddRange Example/CS/source.cs#1)]
+ [!code-vb[Classic GridColumnStylesCollection.AddRange Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.AddRange Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションをクリア<see cref="T:System.Windows.Forms.DataGridColumnStyle" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[GridColumnStylesCollection_Members#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GridColumnStylesCollection_Members/CPP/gridcolumnstylescollection_members.cpp#1)]
+ [!code-csharp[GridColumnStylesCollection_Members#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GridColumnStylesCollection_Members/CS/gridcolumnstylescollection_members.cs#1)]
+ [!code-vb[GridColumnStylesCollection_Members#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GridColumnStylesCollection_Members/VB/gridcolumnstylescollection_members.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.GridColumnStylesCollection.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたときに発生、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ハンドラーを追加、<xref:System.Windows.Forms.GridColumnStylesCollection.CollectionChanged>イベント。  
+  
+ [!code-cpp[Classic GridColumnStylesCollection.CollectionChanged Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic GridColumnStylesCollection.CollectionChanged Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic GridColumnStylesCollection.CollectionChanged Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic GridColumnStylesCollection.CollectionChanged Example/CS/source.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.ComponentModel.PropertyDescriptor propertyDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.ComponentModel.PropertyDescriptor propertyDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Contains(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDescriptor" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDescriptor"><see cref="T:System.ComponentModel.PropertyDescriptor" />目的に関連付けられている<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />が含まれています、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />に指定された関連付けられている<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.ComponentModel.PropertyDescriptorCollection>を使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。 渡す、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>の<xref:System.Windows.Forms.DataGridColumnStyle>を<xref:System.ComponentModel.PropertyDescriptorCollection.Item%2A>のプロパティ、<xref:System.ComponentModel.PropertyDescriptorCollection>を返す、<xref:System.ComponentModel.PropertyDescriptor>列ごとにします。  
+  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認特定<xref:System.Windows.Forms.DataGridColumnStyle>を呼び出す前に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>項目を削除する方法です。 かどうかは、特定のインデックスを知る必要があります。 <xref:System.Windows.Forms.DataGridColumnStyle>、を使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドかどうかを<xref:System.Windows.Forms.GridColumnStylesCollection>が含まれています、<xref:System.Windows.Forms.DataGridColumnStyle>に指定された関連付けられている<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Windows.Forms.DataGridColumnStyle.MappingName" /> 、目的の<see cref="T:System.Windows.Forms.DataGridColumnStyle" />します。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />が含まれています、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />指定した名前です。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャプション、<xref:System.Windows.Forms.DataGridColumnStyle>で設定されている、<xref:System.Windows.Forms.DataGridColumnStyle.HeaderText%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認特定<xref:System.Windows.Forms.DataGridColumnStyle>を呼び出す前に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>項目を削除する方法です。 かどうかは、特定のインデックスを知る必要があります。 <xref:System.Windows.Forms.DataGridColumnStyle>、を使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドかどうかを<xref:System.Windows.Forms.DataGridColumnStyle>と、指定された<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>内に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection>です。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.Contains2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.Contains2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.DataGridColumnStyle column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.DataGridColumnStyle column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Contains(System.Windows.Forms.DataGridColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Windows.Forms.DataGridColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="column">必要な <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> 、指定されたを含む<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、 <see cref="T:System.Windows.Forms.DataGridColumnStyle" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認特定<xref:System.Windows.Forms.DataGridColumnStyle>を呼び出す前に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>項目を削除する方法です。 かどうかは、特定のインデックスを知る必要があります。 <xref:System.Windows.Forms.DataGridColumnStyle>、を使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドかどうかを<xref:System.Windows.Forms.GridColumnStylesCollection>特定格納<xref:System.Windows.Forms.DataGridColumnStyle>です。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.DataGridColumnStyle element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.DataGridColumnStyle element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.IndexOf(System.Windows.Forms.DataGridColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Forms.DataGridColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="element">検索する <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</summary>
+        <returns>0 から始まるインデックス、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />内で、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />またはない対応する場合は-1<see cref="T:System.Windows.Forms.DataGridColumnStyle" />が存在します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認場合は、特定<xref:System.Windows.Forms.DataGridColumnStyle>が存在します。 場合は、使用して、コレクション内の要素のインデックスを作成する必要がある、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドかどうかを指定された<xref:System.Windows.Forms.DataGridColumnStyle>内に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection>です。 場合は、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドのインデックスを返します、 <xref:System.Windows.Forms.DataGridColumnStyle>、および<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>コレクションから要素を削除するインデックスを持つメソッドが呼び出されます。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.IndexOf Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.IndexOf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridColumnStyle this[System.ComponentModel.PropertyDescriptor propertyDesciptor] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridColumnStyle Item(class System.ComponentModel.PropertyDescriptor)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.Item(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridColumnStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDesciptor" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDesciptor"><see cref="T:System.ComponentModel.PropertyDescriptor" /> に関連付けられている <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> に関連付けられている <see cref="T:System.ComponentModel.PropertyDescriptor" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridColumnStyle" /> 、指定された関連付けられている<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.Forms.DataGridColumnStyle>を使用して作成されて、<xref:System.ComponentModel.PropertyDescriptor>です。 <xref:System.ComponentModel.PropertyDescriptor>を使用して返すことができます、<xref:System.Windows.Forms.DataGridColumnStyle.PropertyDescriptor%2A>プロパティです。  
+  
+ 取得する、 <xref:System.ComponentModel.PropertyDescriptorCollection> 、特定のデータ ソースを使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。 渡す、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>を<xref:System.ComponentModel.PropertyDescriptorCollection.Item%2A>のプロパティ、<xref:System.ComponentModel.PropertyDescriptorCollection>を返す、<xref:System.ComponentModel.PropertyDescriptor>列ごとにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Data.DataColumn>から、<xref:System.Data.DataTable>で、<xref:System.Data.DataSet>への引数として渡します、<xref:System.Windows.Forms.GridColumnStylesCollection.Add%2A>メソッドです。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.this2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.this2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridColumnStyle this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridColumnStyle Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridColumnStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />を返します。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />指定したインデックス位置。</summary>
+        <value>指定した <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドをコレクション内の要素のインデックスを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.DataGridColumnStyle>を使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Item%2A>プロパティです。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridColumnStyle this[string columnName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridColumnStyle Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridColumnStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName"><see cref="P:System.Windows.Forms.DataGridColumnStyle.MappingName" />の<see cref="T:System.Windows.Forms.DataGridColumnStyle" />を取得します。</param>
+        <summary>指定された名前を持つ <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridColumnStyle" />指定した列ヘッダーを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列見出し、<xref:System.Windows.Forms.DataGridColumnStyle>設定によって明示的に設定されることができます、<xref:System.Windows.Forms.DataGridColumnStyle.HeaderText%2A>プロパティです。 既定では、<xref:System.Windows.Forms.DataGridColumnStyle.HeaderText%2A>使用方法を使用して設定される<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>プロパティの値。  
+  
+ 列ヘッダーと検索する値の比較は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を返します、<xref:System.Windows.Forms.DataGridColumnStyle>という名前で、<xref:System.Windows.Forms.GridColumnStylesCollection.Item%2A>プロパティです。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目の一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />コレクション アイテムを格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollectionChanged">
+      <MemberSignature Language="C#" Value="protected void OnCollectionChanged (System.ComponentModel.CollectionChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnCollectionChanged(class System.ComponentModel.CollectionChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.ComponentModel.CollectionChangeEventArgs" />イベント データを格納しています。</param>
+        <summary><see cref="E:System.Windows.Forms.GridColumnStylesCollection.CollectionChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.GridColumnStylesCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.GridColumnStylesCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.DataGridColumnStyle column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.DataGridColumnStyle column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.Remove(System.Windows.Forms.DataGridColumnStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Windows.Forms.DataGridColumnStyle" />
+      </Parameters>
+      <Docs>
+        <param name="column">コレクションから削除する <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> を <see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Windows.Forms.DataGridColumnStyle>コレクション内に存在します。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.DataGridColumnStyle>から、<xref:System.Windows.Forms.GridColumnStylesCollection>です。  
+  
+ [!code-cpp[GridColumnStylesCollection_RemoveAt#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GridColumnStylesCollection_RemoveAt/CPP/gridcolumnstylescollection_removeat.cpp#1)]
+ [!code-csharp[GridColumnStylesCollection_RemoveAt#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GridColumnStylesCollection_RemoveAt/CS/gridcolumnstylescollection_removeat.cs#1)]
+ [!code-vb[GridColumnStylesCollection_RemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GridColumnStylesCollection_RemoveAt/VB/gridcolumnstylescollection_removeat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> の 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />から指定したインデックスを持つ、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Windows.Forms.DataGridColumnStyle>コレクション内に存在します。  
+  
+ 使用して、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドをコレクション内の要素のインデックスを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.GridColumnStylesCollection.Contains%2A>メソッドかどうかを指定された<xref:System.Windows.Forms.DataGridColumnStyle>内に存在する、<xref:System.Windows.Forms.GridColumnStylesCollection>です。 場合は、<xref:System.Windows.Forms.GridColumnStylesCollection.IndexOf%2A>メソッドのインデックスを返します、 <xref:System.Windows.Forms.DataGridColumnStyle>、および<xref:System.Windows.Forms.GridColumnStylesCollection.Remove%2A>コレクションから要素を削除するインデックスを持つメソッドが呼び出されます。  
+  
+ [!code-vb[Classic GridColumnStylesCollection.IndexOf Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic GridColumnStylesCollection.IndexOf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetPropertyDescriptors">
+      <MemberSignature Language="C#" Value="public void ResetPropertyDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetPropertyDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.ResetPropertyDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="T:System.ComponentModel.PropertyDescriptor" />するコレクション内の各列スタイルの<see langword="null" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[GridColumnStylesCollection_ResetPropertyDescriptor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GridColumnStylesCollection_ResetPropertyDescriptor/CPP/resetpropertydescriptor.cpp#1)]
+ [!code-csharp[GridColumnStylesCollection_ResetPropertyDescriptor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GridColumnStylesCollection_ResetPropertyDescriptor/CS/gridcolumnstylescollection_resetpropertydescriptor.cs#1)]
+ [!code-vb[GridColumnStylesCollection_ResetPropertyDescriptor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GridColumnStylesCollection_ResetPropertyDescriptor/VB/gridcolumnstylescollection_resetpropertydescriptor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />要素がコレクションからコピー先であること。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>互換性のある 1 次元にコレクションをコピー<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ -または-  
+  
+ <see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> の要素の数が、<paramref name="array" /> の <paramref name="index" /> から最後までの空き領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">型、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />の型に自動的にキャストすることはできません<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに格納されている要素の数を取得します。</summary>
+        <value>コレクションに格納されている要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加するオブジェクト。 値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクションにオブジェクトを追加します。</summary>
+        <returns>値が追加された位置のインデックス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" />キャストすることはできません、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションをクリア<see cref="T:System.Windows.Forms.DataGridColumnStyle" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索するオブジェクト。 値として <see langword="null" /> を指定できます。</param>
+        <summary>ある要素がコレクション内に存在するかどうかを判断します。</summary>
+        <returns>
+          対象の要素がコレクション内に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索するオブジェクト。 値として <see langword="null" /> を指定できます。</param>
+        <summary>指定したオブジェクトがコレクション内で最初に出現する位置の、0 から始まるインデックスを返します。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス、 <paramref name="value" /> 、それ以外の場合は、コレクション内のパラメーター-1 です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value">コレクションに挿入するオブジェクト。</param>
+        <summary>このコントロールでは、このメソッドはサポートされていません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある要素を取得します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">操作は、このプロパティを設定しようとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Windows.Forms.DataGridColumnStyle" />。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> を <see cref="T:System.Windows.Forms.GridColumnStylesCollection" /> から削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" />キャストすることはできません、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.GridColumnStylesCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:System.Windows.Forms.DataGridColumnStyle" /> の 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Windows.Forms.DataGridColumnStyle" />から指定したインデックス位置、<see cref="T:System.Windows.Forms.GridColumnStylesCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

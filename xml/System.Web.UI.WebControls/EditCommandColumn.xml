@@ -1,0 +1,364 @@
+<Type Name="EditCommandColumn" FullName="System.Web.UI.WebControls.EditCommandColumn">
+  <TypeSignature Language="C#" Value="public class EditCommandColumn : System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EditCommandColumn extends System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.EditCommandColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataGridColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>各行のデータ項目を編集するための <see langword="Edit" /> ボタンを格納する <see cref="T:System.Web.UI.WebControls.DataGrid" /> コントロールの特別な列の型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn>の特別な列を作成するクラス、<xref:System.Web.UI.WebControls.DataGrid>が含まれるコントロール、 `Edit`、 `Update`、および`Cancel`グリッド内の各データ行のボタンです。 内の行の値を編集することはこれらのボタン、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 行が選択されていない場合、`Edit`でボタンが表示されます、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトの各データ行を<xref:System.Web.UI.WebControls.DataGrid>コントロール。 ときに、`Edit`アイテムがクリックされたボタンをクリックして、<xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベントが発生し、`Edit`ボタンが置き換え、`Update`と`Cancel`ボタン。 処理するコードを提供する必要があります、<xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベント。 一般的なイベント ハンドラーを設定、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを選択した行にデータを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!NOTE]
+>  値を指定する必要があります、 <xref:System.Web.UI.WebControls.EditCommandColumn.CancelText%2A>、 <xref:System.Web.UI.WebControls.EditCommandColumn.EditText%2A>、および<xref:System.Web.UI.WebControls.EditCommandColumn.UpdateText%2A>プロパティです。 それ以外の場合、関連するボタンに表示されません、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+ 内のボタン、<xref:System.Web.UI.WebControls.EditCommandColumn>ハイパーリンクまたはプッシュ ボタンとして設定して、表示に設定することができます、<xref:System.Web.UI.WebControls.EditCommandColumn.ButtonType%2A>プロパティです。  
+  
+ クリックすると、`Update`または`Cancel`ボタンが発生し、<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>または<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベント、それぞれします。 これらのイベントを処理するコードを提供する必要があります。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>イベント データ、設定を更新する、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) する、データを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 一般的なハンドラーを<xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベントのセット、<xref:System.Web.UI.WebControls.DataGrid.EditItemIndex%2A>プロパティを`-1`(項目の選択を解除) する、データを再バインドと、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+> [!CAUTION]
+>  <xref:System.Web.UI.WebControls.EditCommandColumn>悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示するオブジェクトを使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 入力テキストを表示する前にユーザー入力を検証する検証コントロールを使用することができます、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 詳細については、次を参照してください。[標準コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/f3e7718f-63d0-44a3-bd5f-48cc2059c2a8)、[する方法: 保護に対してスクリプトによる攻略の文字列を HTML エンコードを適用することによって、Web アプリケーションで](http://msdn.microsoft.com/library/6f67973f-dda0-45a1-ba9d-e88532d7dc5b)、および[ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ 既定では、ページの検証が実行されるときに、`Update`ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>コントロールがクリックされました。 ページの検証は、検証コントロールによって指定されている検証規則を合格すべて ページで、検証に関連付けられている入力コントロールを制御するかどうかを判断します。 ページの検証の発生を防ぐためには、設定、<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトを<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EditCommandColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EditCommandColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.EditCommandColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.EditCommandColumn>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.EditCommandColumn>クラスです。  
+  
+ [!code-csharp[Classic EditCommandColumn.EditCommandColumn Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic EditCommandColumn.EditCommandColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic EditCommandColumn.EditCommandColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic EditCommandColumn.EditCommandColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ButtonColumnType ButtonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ButtonColumnType ButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.ButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ButtonColumnType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のボタンの種類を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ButtonColumnType" /> 値のいずれか。 既定値は <see langword="LinkButton" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn.ButtonType%2A>プロパティ列のボタンがプッシュ ボタン、ハイパーリンクとして表示するかどうかを指定します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.EditCommandColumn.ButtonType%2A>プロパティを表示、`Edit`コマンド プッシュ ボタンとボタンを配置します。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したボタンの種類が、<see cref="T:System.Web.UI.WebControls.ButtonColumnType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelText">
+      <MemberSignature Language="C#" Value="public virtual string CancelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CancelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.CancelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するテキスト、<see langword="Cancel" />コマンド ボタンで、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</summary>
+        <value>表示するキャプション、<see langword="Cancel" />コマンド ボタンで、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn.CancelText%2A>プロパティを表示するテキストを指定する、`Cancel`コマンド ボタンで、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+> [!NOTE]
+>  値を指定する必要があります、<xref:System.Web.UI.WebControls.EditCommandColumn.CancelText%2A>プロパティです。 それ以外の場合、`Cancel`コマンド ボタンに表示されません、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.EditCommandColumn.CancelText%2A>のカスタム テキストを提供するプロパティ、`Cancel`コマンド ボタンをクリックします。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証が実行されているかどうかを示す値を取得またはときに、<see langword="Update" />ボタンをクリックして、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />オブジェクトをクリックします。</summary>
+        <value>
+          <see langword="true" />検証を実行する場合と、<see langword="Update" />ボタンをクリックして、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />がクリックされた場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ページの検証が実行されるときに、`Update`ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>コントロールがクリックされました。 ページの検証は、検証コントロールによって指定されている検証規則を合格すべて ページで、検証に関連付けられている入力コントロールを制御するかどうかを判断します。  
+  
+ 指定するか、クライアントとサーバーの両方で検証を実行するかどうかを判断するときに、`Update`ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>を使用してコントロールがクリックされた、<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティです。 検証が実行されるを防ぐためには、設定、<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティを`false`です。  
+  
+ ときの値、<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティに設定されている`true`、使用することも、<xref:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、`Update`ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトが原因で検証します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditText">
+      <MemberSignature Language="C#" Value="public virtual string EditText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.EditText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するテキスト、<see langword="Edit" />ボタンをクリックして、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</summary>
+        <value>表示するキャプション、<see langword="Edit" />ボタンをクリックして、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn.EditText%2A>プロパティを表示するテキストを指定する、`Edit`ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>コントロール。  
+  
+> [!NOTE]
+>  値を指定する必要があります、<xref:System.Web.UI.WebControls.EditCommandColumn.EditText%2A>プロパティです。 それ以外の場合、`Edit`にボタンが表示されませんが、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.EditCommandColumn.EditText%2A>のカスタム テキストを提供するプロパティ、`Edit`ボタンをクリックします。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.TableCell cell, int columnIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.TableCell cell, int32 columnIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EditCommandColumn.InitializeCell(System.Web.UI.WebControls.TableCell,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />初期化するためにセルに関する情報を格納します。</param>
+        <param name="columnIndex">セルが配置されている列の番号。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>列内のセルを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateText">
+      <MemberSignature Language="C#" Value="public virtual string UpdateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.UpdateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するテキスト、<see langword="Update" />コマンド ボタンで、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</summary>
+        <value>表示するキャプション、<see langword="Update" />コマンド ボタンで、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn.UpdateText%2A>プロパティを表示するテキストを指定する、`Update`コマンド ボタンで、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+> [!NOTE]
+>  値を指定する必要があります、<xref:System.Web.UI.WebControls.EditCommandColumn.UpdateText%2A>プロパティです。 それ以外の場合、`Update`コマンド ボタンに表示されません、<xref:System.Web.UI.WebControls.EditCommandColumn>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.EditCommandColumn.UpdateText%2A>のカスタム テキストを提供するプロパティ、`Update`コマンド ボタンをクリックします。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の検証コントロールのグループを<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />オブジェクトは、サーバーへのポストバック時に検証を実行します。</summary>
+        <value>検証コントロールを更新ボタンのグループ、<see cref="T:System.Web.UI.WebControls.EditCommandColumn" />が原因で、サーバーへのポストバック時に検証します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup%2A>プロパティを対象の更新ボタン検証グループの名前を指定する、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトは、サーバーへのポストバック時に検証を実行します。  
+  
+ <xref:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup%2A>プロパティは、有効される場合にのみの値、<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup%2A>プロパティ、指定されたグループの一部であるコントロールが検証されます検証のみと、更新ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトがサーバーに再度ポストします。 値を指定しない場合、<xref:System.Web.UI.WebControls.EditCommandColumn.ValidationGroup%2A>プロパティおよび<xref:System.Web.UI.WebControls.EditCommandColumn.CausesValidation%2A>プロパティに設定されている`true`、検証グループに割り当てられていないページ上のすべての検証コントロールが検証される場合、更新ボタンをクリックして、<xref:System.Web.UI.WebControls.EditCommandColumn>オブジェクトがサーバーに再度ポストします。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

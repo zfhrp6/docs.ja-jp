@@ -1,0 +1,61 @@
+<Type Name="FormViewCommandEventHandler" FullName="System.Web.UI.WebControls.FormViewCommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void FormViewCommandEventHandler(object sender, FormViewCommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormViewCommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewCommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.FormViewCommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.FormViewCommandEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.FormView.ItemCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView.ItemCommand>イベントは内でのボタン、<xref:System.Web.UI.WebControls.FormView>コントロールをクリックします。 これにより、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ 内の各ボタン、<xref:System.Web.UI.WebControls.FormView>コントロールは、コントロールの組み込み機能の一部を呼び出すもことができます。 これらの操作のいずれかを実行するのには、設定、`CommandName`に次の表に、値のいずれかのボタンのプロパティです。  
+  
+|CommandName 値|説明|  
+|-----------------------|-----------------|  
+|[キャンセル]|編集または挿入操作をキャンセルしを返します、<xref:System.Web.UI.WebControls.FormView>コントロールによって指定されたモードを<xref:System.Web.UI.WebControls.FormView.DefaultMode%2A>プロパティです。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"削除"|現在のレコードを削除します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemDeleted>と<xref:System.Web.UI.WebControls.FormView.ItemDeleting>イベント。|  
+|"Edit"|配置、<xref:System.Web.UI.WebControls.FormView>編集モードで制御します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"Insert"|データ ソースの現在のレコードを挿入します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemInserted>と<xref:System.Web.UI.WebControls.FormView.ItemInserting>イベント。|  
+|"New"|配置、<xref:System.Web.UI.WebControls.FormView>挿入モードで制御します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ModeChanged>と<xref:System.Web.UI.WebControls.FormView.ModeChanging>イベント。|  
+|"Page"|ページング操作を実行します。 設定、 `CommandArgument` "First「、"最後」にあるボタン、[次へ]、「前」、またはを実行するページング操作の種類を指定するページ番号のプロパティです。 発生させる、<xref:System.Web.UI.WebControls.FormView.PageIndexChanged>と<xref:System.Web.UI.WebControls.FormView.PageIndexChanging>イベント。|  
+|[更新]|データ ソースの現在のレコードを更新します。 発生させる、<xref:System.Web.UI.WebControls.FormView.ItemUpdated>と<xref:System.Web.UI.WebControls.FormView.ItemUpdating>イベント。|  
+  
+ ただし、<xref:System.Web.UI.WebControls.FormView.ItemCommand>イベントは、前の表に一覧表示 ボタンがクリックされたときに、発生の操作の表に示すイベントを処理することをお勧めします。  
+  
+ <xref:System.Web.UI.WebControls.FormViewCommandEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewCommandEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemCommand>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewCommandEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewCommandEventHandler/CS/formviewcommandeventhandlercs.aspx#1)]
+ [!code-aspx-vb[FormViewCommandEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewCommandEventHandler/VB/formviewcommandeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewCommandEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemCommand>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewCommandEventHandlerDeclarative#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewCommandEventHandlerDeclarative/CS/formviewcommandeventhandlerdeclarativecs.aspx#1)]
+ [!code-aspx-vb[FormViewCommandEventHandlerDeclarative#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewCommandEventHandlerDeclarative/VB/formviewcommandeventhandlerdeclarativevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

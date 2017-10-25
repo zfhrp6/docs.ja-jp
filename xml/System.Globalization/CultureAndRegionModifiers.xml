@@ -1,0 +1,102 @@
+<Type Name="CultureAndRegionModifiers" FullName="System.Globalization.CultureAndRegionModifiers">
+  <TypeSignature Language="C#" Value="public enum CultureAndRegionModifiers" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CultureAndRegionModifiers extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.CultureAndRegionModifiers" />
+  <AssemblyInfo>
+    <AssemblyName>sysglobl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Globalization.CultureAndRegionInfoBuilder" /> オブジェクトを定義する定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ以上のビットごとの組み合わせを指定<xref:System.Globalization.CultureAndRegionModifiers>への引数として値、<xref:System.Globalization.CultureAndRegionInfoBuilder.%23ctor%28System.String%2CSystem.Globalization.CultureAndRegionModifiers%29?displayProperty=nameWithType>コンス トラクターです。 その結果を使用する<xref:System.Globalization.CultureAndRegionInfoBuilder>カスタム カルチャを作成するオブジェクト。  
+  
+ カスタム カルチャでは、これらの特性の組み合わせを持つことができます。  
+  
+-   カスタム カルチャには、特定のカルチャまたはニュートラル カルチャを指定できます。  
+  
+     特定のカルチャでは、ニュートラル カルチャの指定が、言語、地域のない言語と地域を指定します。  
+  
+-   カスタム カルチャには、置換カルチャまたは補足のカルチャを指定できます。  
+  
+     置換カルチャでは、.NET Framework または Windows に付属しているロケールの付属するカルチャを置換します。  
+  
+     補足のカルチャは置換カルチャ以外のものです。 補足のカルチャは、まったく新しいまたは既存の .NET Framework カルチャまたは Windows ロケールを拡張できます。  
+  
+> [!IMPORTANT]
+>  なお、 <xref:System.Globalization.CultureAndRegionModifiers> sysglobl.dll をという名前のアセンブリの列挙に存在します。 この型を使用するコードを正常にコンパイルするには、sysglobl.dll への参照を追加することが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プライベート プレフィックスを使用してカスタム カルチャを作成し、そのプロパティのセットを示します。 最初のプロパティは、カルチャの名前です。  
+  
+ [!code-cpp[sys.glob.carib1#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.carib1/CPP/carib.cpp#1)]
+ [!code-csharp[sys.glob.carib1#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.carib1/CS/carib.cs#1)]
+ [!code-vb[sys.glob.carib1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.carib1/VB/carib.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Neutral">
+      <MemberSignature Language="C#" Value="Neutral" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureAndRegionModifiers Neutral = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureAndRegionModifiers.Neutral" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureAndRegionModifiers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ニュートラル カスタム カルチャ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureAndRegionModifiers None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureAndRegionModifiers.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureAndRegionModifiers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の補足カスタム カルチャ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Replacement">
+      <MemberSignature Language="C#" Value="Replacement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.CultureAndRegionModifiers Replacement = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.CultureAndRegionModifiers.Replacement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>sysglobl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureAndRegionModifiers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の .NET Framework カルチャまたは Windows ロケールを置き換えるカスタム カルチャ。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2459 @@
+<Type Name="MaskedTextBox" FullName="System.Windows.Forms.MaskedTextBox">
+  <TypeSignature Language="C#" Value="public class MaskedTextBox : System.Windows.Forms.TextBoxBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MaskedTextBox extends System.Windows.Forms.TextBoxBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MaskedTextBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.TextBoxBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("MaskInputRejected")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Mask")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.MaskedTextBoxDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー入力が適切か不適切かを区別するマスクを使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>クラスは、強化された<xref:System.Windows.Forms.TextBox>承認または拒否するユーザー入力の宣言の構文をサポートするコントロール。 使用して、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティ、次のアプリケーションで任意のカスタム検証ロジックを記述することがなく入力を指定することができます。  
+  
+-   入力文字が必要です。  
+  
+-   省略可能な入力文字です。  
+  
+-   マスク内の指定位置に必要な入力の種類たとえば、数字、または、アルファベットまたは英数字文字します。  
+  
+-   マスク リテラル文字で直接表示する必要があります<xref:System.Windows.Forms.MaskedTextBox>; たとえば、電話番号、または価格で通貨記号でハイフン (-)。  
+  
+-   入力文字の特殊な処理たとえば、アルファベット文字を大文字に変換するには、です。  
+  
+ ときに、<xref:System.Windows.Forms.MaskedTextBox>実行時にコントロールが表示される、一連のプロンプト文字と省略可能なリテラル文字として、マスクを表します。 編集可能なマスクの位置ごと、必須またはオプションの入力を表すには、単一のプロンプト文字が表示されます。 など、数値文字の入力のシャープ記号 (#) がよくプレース ホルダーとして使用します。 使用することができます、<xref:System.Windows.Forms.MaskedTextBox.PromptChar%2A>カスタム プロンプト文字を指定するプロパティです。 <xref:System.Windows.Forms.MaskedTextBox.HidePromptOnLeave%2A>プロパティは、コントロールを失ったときに入力フォーカスがユーザーにプロンプト文字が表示される場合を決定します。  
+  
+ ユーザーの種類の入力マスクされたテキスト ボックスに、有効な入力文字は連続してそれぞれのプロンプト文字を置き換えます。 置換は発生しませんが、代わりに、ビープ音が発行される場合、ユーザーが無効な入力文字を入力した場合、<xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A>プロパティに設定されている`true`、および<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントが発生します。 このイベントを処理して、独自のカスタム エラー ロジックを提供できます。  
+  
+ 現在のカーソル位置は、リテラル文字では、ユーザーはさまざまなオプションを持ちます。  
+  
+-   プロンプト文字以外の文字が入力した、リテラルは自動的にスキップされます、入力文字は、[次へ] の編集可能な位置に適用されますが、次のプロンプト文字で表されます。  
+  
+-   プロンプト文字が入力した場合は、<xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>プロパティが true の場合、プロンプト文字と挿入の入力が上書きされますポイントは、マスク内の次の位置に移動されます。  
+  
+-   ここでは常に、前または後の位置に移動する方向キーを使用できます。  
+  
+ 使用することができます、<xref:System.Windows.Forms.MaskedTextBox.MaskFull%2A>プロパティをユーザーがすべての必要な入力を入力するかどうかどうかを確認してください。 <xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティは、マスクに従って書式設定されたユーザーの入力を常に取得され、<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox>コントロールが実際にすべてのマスク処理を延期、<xref:System.ComponentModel.MaskedTextProvider?displayProperty=nameWithType>によって指定されたクラス、<xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>プロパティです。 この標準のプロバイダーは、サロゲートを除くすべての Unicode 文字をサポートし、垂直方向の文字の組み合わせただし、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>文字セット a ~ z、A ~ Z、0 ~ 9 への入力を制限するプロパティを使用できます。  
+  
+ マスクは必ずしもは保証されません、ユーザーの入力が指定された型の有効な値を表すことたとえば、年齢の-9 を入力する可能性があります。 ユーザーの入力がその値の型のインスタンスを割り当てることによって有効な値を表すことを確認することができます、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティです。 ユーザーがからフォーカスを削除するかどうかを検出できます<xref:System.Windows.Forms.MaskedTextBox>を監視することによって、無効な値がある場合、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。 値を表すオブジェクトがを通じて取得される型の検証に成功した場合、<xref:System.Windows.Forms.TypeValidationEventArgs.ReturnValue%2A>のプロパティ、<xref:System.Windows.Forms.TypeValidationEventArgs>パラメーター。  
+  
+ 同様、<xref:System.Windows.Forms.TextBox>コントロール、いくつかの一般的なキーボード ショートカットと連携していない<xref:System.Windows.Forms.MaskedTextBox>です。 特に、ctrl キーを押し、R (右揃えのテキスト)、ctrl キーを押し L (左揃えのテキスト)、ctrl キーを押し-l (テキストを中央揃え) 影響を与えません。  
+  
+## <a name="compatibility-with-visual-basic-60"></a>Visual Basic 6.0 との互換性  
+ <xref:System.Windows.Forms.MaskedTextBox>マスク エディット コントロールの機能のほとんどを保持するように設計された[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]6.0。 マスク エディット コントロールに共通のプロパティの一覧し、同等では、次の表<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+|マスク エディット コントロール ([!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0) プロパティ|等価の MaskedTextBox ([!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]) プロパティ|  
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|  
+|`AllowPrompt` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>|  
+|`AutoTab` プロパティ|なし|  
+|`ClipMode` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat%2A>|  
+|`ClipText` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.Text%2A>(ときに<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>に設定されている<xref:System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals>)|  
+|`Format` プロパティ|なし|  
+|`FormattedText` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.Text%2A>(ときに<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>に設定されている<xref:System.Windows.Forms.MaskFormat.IncludePromptAndLiterals>)|  
+|`Mask` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>|  
+|`PromptChar` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.PromptChar%2A>|  
+|`PromptInclude` プロパティ|<xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>|  
+|`ValidationError` イベント|<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>|  
+  
+> [!CAUTION]
+>  <xref:System.Windows.Forms.MaskedTextBox>コントロールが複数行の構成または元に戻す機能をサポートしていません。 ただし、これらの機能に関連付けられているメンバーの中に保持されている互換性のため、<xref:System.Windows.Forms.TextBoxBase>基底クラス、その実装がアクションを実行しません。  
+  
+   
+  
+## Examples  
+ 次のコード例の初期化、<xref:System.Windows.Forms.MaskedTextBox>を日付の場合、使用して両方を受け入れるように、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>と<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>無効な入力をユーザーに警告するイベントです。  
+  
+ [!code-csharp[MaskInputRejectedSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MaskInputRejectedSample/CS/form1.cs#1)]
+ [!code-vb[MaskInputRejectedSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MaskInputRejectedSample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MaskedTextBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MaskedTextBox" />クラスの既定値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.Forms.MaskedTextBox.%23ctor>コンス トラクターのセット、 <xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A> "<>"文字列で表される、null、マスク プロパティです。 Null のマスクでは、入力としての文字の任意の組み合わせを受け入れます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MaskedTextBox (System.ComponentModel.MaskedTextProvider maskedTextProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.MaskedTextProvider maskedTextProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.#ctor(System.ComponentModel.MaskedTextProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="maskedTextProvider" Type="System.ComponentModel.MaskedTextProvider" />
+      </Parameters>
+      <Docs>
+        <param name="maskedTextProvider">派生したカスタム マスク言語プロバイダーでは、<see cref="T:System.ComponentModel.MaskedTextProvider" />クラスです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MaskedTextBox" />クラスの指定したカスタム マスク言語プロバイダーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `maskedTextProvider`パラメーター定義で使用するマスク言語<xref:System.Windows.Forms.MaskedTextBox>します。 マスクを解析し、ユーザー入力をマスクの現在位置に準拠しているかどうかを決定するために行います。 新しいクラスを派生させる<xref:System.ComponentModel.MaskedTextProvider?displayProperty=nameWithType>独自のカスタム マスク言語を定義して使用する、<xref:System.Windows.Forms.MaskedTextBox.%23ctor%28System.ComponentModel.MaskedTextProvider%29>標準を置換するコンス トラクター<xref:System.ComponentModel.MaskedTextProvider?displayProperty=nameWithType>です。  
+  
+ 既定の言語のマスクを使用して、独自の入力マスクを指定する場合は、このコンス トラクターを使用する必要はありません。 代わりに、使用するか、<xref:System.Windows.Forms.MaskedTextBox.%23ctor%28System.String%29>コンス トラクター、または既定のコンス トラクターを設定し、使用、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="maskedTextProvider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MaskedTextBox (string mask);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string mask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mask" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mask">A<see cref="T:System.String" />入力マスクを表すです。 初期値、<see cref="P:System.Windows.Forms.MaskedTextBox.Mask" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MaskedTextBox" />クラスの指定した入力マスクを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.%23ctor%28System.String%29>コンス トラクターは、標準を使用して<xref:System.ComponentModel.MaskedTextProvider?displayProperty=nameWithType>入力の`mask`にユーザー入力を解析する、<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ 新しいマスクを割り当てる場合、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティをこのコンス トラクターによって設定された値上書きされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mask" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsTab">
+      <MemberSignature Language="C#" Value="public bool AcceptsTab { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcceptsTab" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.AcceptsTab" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行の構成に対して Tab キーがどのように処理されるかを決定する値を取得または設定します。 このプロパティでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.AcceptsTab%2A>プロパティは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このプロパティはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptsTabChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AcceptsTabChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AcceptsTabChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.AcceptsTabChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.MaskedTextBox.AcceptsTab" /> プロパティの値が変更されたときに発生します。 このイベントは発生しません<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.AcceptsTabChanged>イベントは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このイベントはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPromptAsInput">
+      <MemberSignature Language="C#" Value="public bool AllowPromptAsInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPromptAsInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="P:System.Windows.Forms.MaskedTextBox.PromptChar" />ユーザーによって有効なデータとして入力することができます。</summary>
+        <value>
+          <see langword="true" />プロンプト文字は、コントロールに入力できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合でも<xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>は`true`、プロンプト文字は受け入れられるためにマスク内の現在の場所に対して有効である必要があります。 たとえば場合、<xref:System.Windows.Forms.MaskedTextBox.PromptChar%2A>は"*"、マスク内の現在の場所は、ユーザーは、アスタリスクを入力する数字を入力してくださいを要求し、(\*) が失敗し、なる、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントが発生します。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>プロパティよりも優先<xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsciiOnly">
+      <MemberSignature Language="C#" Value="public bool AsciiOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AsciiOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.AsciiOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Windows.Forms.MaskedTextBox" />コントロールは、ASCII 文字セットの外部での文字を使用します。</summary>
+        <value>
+          <see langword="true" />ASCII が受け入れられるだけの場合<see langword="false" />場合、<see cref="T:System.Windows.Forms.MaskedTextBox" />コントロールは、任意の Unicode 文字を受け入れることができます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>文字 a ~ z と A ~ Z にユーザー入力を制限します。 ASCII 制御文字は使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeepOnError">
+      <MemberSignature Language="C#" Value="public bool BeepOnError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BeepOnError" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.BeepOnError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックス コントロールが、拒否したユーザー キー ストロークごとにビープ音を出すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.MaskedTextBox" />に無効なコントロール ビープ音を鳴らす必要があります、それ以外の入力<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>場合、イベントが引き続き発生する、<xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A>プロパティに設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUndo">
+      <MemberSignature Language="C#" Value="public bool CanUndo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUndo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.CanUndo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが前の操作を元に戻すことができるかどうかを示す値を取得または設定します。 このプロパティでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.CanUndo%2A>プロパティは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため<xref:System.Windows.Forms.MaskedTextBox>サポート元に戻す機能、このプロパティは常にいないは、値を持つ`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearUndo">
+      <MemberSignature Language="C#" Value="public void ClearUndo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearUndo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ClearUndo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスのアンドゥ バッファーから直前に実行された操作に関する情報を削除します。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.ClearUndo%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、<xref:System.Windows.Forms.MaskedTextBox>元に戻す機能をサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandle">
+      <MemberSignature Language="C#" Value="protected override void CreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.CreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのハンドルを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.CreateParams" />コントロールを作成するときに必要な情報を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックスに関連するカルチャ情報を取得または設定します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />でサポートされているカルチャを表す、<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Windows.Forms.MaskedTextBox.Culture" />設定された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CutCopyMaskFormat">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MaskFormat CutCopyMaskFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MaskFormat CutCopyMaskFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MaskFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リテラルおよびプロンプト文字がクリップボードにコピーされるかどうかを決定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.MaskFormat" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.MaskFormat.IncludeLiterals" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat%2A>プロパティを決定内のテキストの選択方法、<xref:System.Windows.Forms.MaskedTextBox>がクリップボードにコピーまたはを介して取得されたときに解釈されますが、制御、<xref:System.Windows.Forms.MaskedTextBox.SelectedText%2A>プロパティです。 具体的には、かどうかのリテラル文字、プロンプト文字、またはその両方が含まれる選択したテキストにアクセスする場合を判断します。 プロンプト文字を除外すると、コピーした文字列内のスペースに変換されます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>プロパティ目的のような方法に関して<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティが解釈されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティの設定、<see cref="T:System.Windows.Forms.MaskFormat" />値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatProvider">
+      <MemberSignature Language="C#" Value="public IFormatProvider FormatProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.FormatProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IFormatProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IFormatProvider" />型の検証を実行するときに使用します。</summary>
+        <value><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>型の検証が発生して、コントロールが null でない場合、通貨、日付、およびその他のカルチャに固有のマスクのプレース ホルダーのどのシンボルが使用されるを決定<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharFromPosition">
+      <MemberSignature Language="C#" Value="public override char GetCharFromPosition (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetCharFromPosition(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetCharFromPosition(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">一番近くにある文字をシークする位置。</param>
+        <summary>コントロール内の指定した位置の一番近くにある文字を取得します。</summary>
+        <returns>指定した位置にある文字。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharIndexFromPosition">
+      <MemberSignature Language="C#" Value="public override int GetCharIndexFromPosition (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetCharIndexFromPosition(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetCharIndexFromPosition(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">検索する位置。</param>
+        <summary>指定位置に最も近い文字のインデックスを取得します。</summary>
+        <returns>指定した位置の 0 から始まる文字インデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstCharIndexFromLine">
+      <MemberSignature Language="C#" Value="public int GetFirstCharIndexFromLine (int lineNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFirstCharIndexFromLine(int32 lineNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetFirstCharIndexFromLine(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lineNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lineNumber">このパラメーターは使用されません。</param>
+        <summary>指定された行の先頭文字のインデックスを取得します。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <returns>このメソッドは、常に 0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.GetFirstCharIndexFromLine%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstCharIndexOfCurrentLine">
+      <MemberSignature Language="C#" Value="public int GetFirstCharIndexOfCurrentLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetFirstCharIndexOfCurrentLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetFirstCharIndexOfCurrentLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の行の先頭文字のインデックスを取得します。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <returns>このメソッドは、常に 0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.GetFirstCharIndexOfCurrentLine%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineFromCharIndex">
+      <MemberSignature Language="C#" Value="public override int GetLineFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLineFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetLineFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">このパラメーターは使用されません。</param>
+        <summary>コントロールのテキスト内で、指定の文字位置からの行数を取得します。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <returns>このメソッドは、常に 0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.GetLineFromCharIndex%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このメソッドはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromCharIndex">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Point GetPositionFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Point GetPositionFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.GetPositionFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の取得対象とする文字のインデックス。</param>
+        <summary>指定の文字インデックスにおけるコントロール内の位置を取得します。</summary>
+        <returns>コントロールのクライアントの四角形領域内における、指定した文字の位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HidePromptOnLeave">
+      <MemberSignature Language="C#" Value="public bool HidePromptOnLeave { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HidePromptOnLeave" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.HidePromptOnLeave" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックスがフォーカスを失ったときに、入力マスクのプロンプト文字を非表示にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Windows.Forms.MaskedTextBox.PromptChar" />と非表示になって<see cref="T:System.Windows.Forms.MaskedTextBox" />がフォーカスされていない、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertKeyMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.InsertKeyMode InsertKeyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.InsertKeyMode InsertKeyMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.InsertKeyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InsertKeyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックス コントロールのテキスト挿入モードを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.InsertKeyMode" />をカーソルの現在のモードを示す値。 既定値は、<see cref="F:System.Windows.Forms.InsertKeyMode.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>プロパティは、文字の挿入動作を制御、<xref:System.Windows.Forms.MaskedTextBox>コントロール。 このプロパティの状態がによって定義された、<xref:System.Windows.Forms.InsertKeyMode>列挙体は、指定できますが、常に on が常に off またはユーザーのキーボードの設定を尊重に設定します。 このプロパティには、キーボードの挿入モードよりも優先されます。 たとえば、キーボードの設定を上書きする場合が<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>に設定されている`Insert`、<xref:System.Windows.Forms.MaskedTextBox>は挿入モードで動作します。 <xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>プロパティにアクセスの場合は true。 挿入モード、<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ 変更する場合<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>の値を変更<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>、<xref:System.Windows.Forms.MaskedTextBox>を発生させる、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged>イベント。  
+  
+ マスクが設定されていない場合は、このプロパティを指定しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">無効な<see cref="T:System.Windows.Forms.InsertKeyMode" />値は、このプロパティの設定時に指定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputKey">
+      <MemberSignature Language="C#" Value="protected override bool IsInputKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsInputKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.IsInputKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 値のいずれか。</param>
+        <summary>指定されているキーが、入力キーであるか、またはプリプロセスを必要とする特殊なキーであるかを確認します。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverwriteMode">
+      <MemberSignature Language="C#" Value="public bool IsOverwriteMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOverwriteMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.IsOverwriteMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいユーザー入力が既存の入力を上書きするかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Windows.Forms.MaskedTextBox" />新しいものを入力すると、既存の文字が上書きされます<see langword="false" />場合<see cref="T:System.Windows.Forms.MaskedTextBox" />フォワード既存の文字が移動します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>両方の値を考慮します<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>プロパティと、ユーザーのキーボードの状態。 場合<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>に設定されている<xref:System.Windows.Forms.InsertKeyMode.Insert>または<xref:System.Windows.Forms.InsertKeyMode.Overwrite>、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>戻ります`false`または`true`、それぞれします。 場合<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>に設定されている<xref:System.Windows.Forms.InsertKeyMode.Default>、INS キーの状態が返されます。  
+  
+ ときに<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>は`false`、<xref:System.Windows.Forms.MaskedTextBox>マスクで任意の場所の違反になる任意の文字のエントリが無効として拒否されます。 詳細については、の文字の挿入が発生する場所が無効になります、マスクの位置にシフトする文字場合文字の挿入は拒否されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverwriteModeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler IsOverwriteModeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler IsOverwriteModeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入モードが変更された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged>の値の後にイベントが発生した、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>プロパティを変更します。  
+  
+ このイベントが正常にデータをバインドするために必要な<xref:System.Windows.Forms.MaskedTextBox>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#484](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#484)]
+ [!code-vb[System.Windows.Forms.EventExamples#484](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#484)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lines">
+      <MemberSignature Language="C#" Value="public string[] Lines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Lines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.Lines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行の構成のテキスト行を取得または設定します。 このプロパティでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>型の配列<see cref="T:System.String" />1 行を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.Lines%2A>プロパティは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このプロパティはサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mask">
+      <MemberSignature Language="C#" Value="public string Mask { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Mask" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.Mask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.MaskPropertyEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または実行時に使用する入力マスクを設定します。</summary>
+        <value>A<see cref="T:System.String" />現在のマスクを表すです。 既定値は、任意の入力を許可する空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>既定のプロパティは、<xref:System.Windows.Forms.MaskedTextBox>クラスです。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>文字列で構成するマスキング要素の 1 つ以上次の表に示すようにします。 使用するマスク言語<xref:System.Windows.Forms.MaskedTextBox>が定義されている、それに関連する<xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>です。 マスク エディット コントロールで使用される 1 つに基づいたマスク言語が指定されて、標準のプロバイダー [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0 では、そのプラットフォームから移行するユーザーにとって非常に使いやすくする必要があります。  
+  
+|マスク要素|説明|  
+|---------------------|-----------------|  
+|0|数字が必要です。 この要素は、1 つの数字 0 ~ 9 の範囲を受け入れます。|  
+|9|数字またはスペース、省略可能。|  
+|#|数字またはスペース、省略可能。 この位置がマスクの空白の場合は、内の領域として表示されます、<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティです。 プラス記号 (+) マイナス記号 (-) 記号が許可されているとします。|  
+|L|文字が必要です。 ASCII 文字 a ~ z と A ~ Z への入力を制限します。 このマスク要素は [a, A-Z] と同等の正規表現にします。|  
+|?|省略可能な文字。 ASCII 文字 a ~ z と A ~ Z への入力を制限します。 このマスク要素は、[a, A-Z] に相当しますか。 正規表現内。|  
+|&|文字が必要です。 場合、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>プロパティが true の場合、この要素に"L"要素と同様に動作します。|  
+|C|省略可能な文字です。 任意の非コントロール文字です。 場合、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>プロパティに設定されている`true`、この要素はのように動作、"?"要素。|  
+|A|英数字、必須。 場合、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>プロパティに設定されている`true`、文字のみを受け入れますが、ASCII 文字 a ~ z と A ~ Z。 このマスク要素は、"a"要素と同様に動作します。|  
+|a|英数字 (省略可能)。 場合、<xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>プロパティに設定されている`true`、文字のみを受け入れますが、ASCII 文字 a ~ z と A ~ Z。 このマスク要素は、"A"要素と同様に動作します。|  
+|」を参照してください。|小数点のプレース ホルダーです。 コントロールのによって決定される、使用される実際の表示の文字は、書式プロバイダーに適した小数点の記号になります<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。|  
+|、|何千ものプレース ホルダーです。 使用される実際の表示の文字は数千になりますプレース ホルダー コントロールのによって決定された書式プロバイダーに適した<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。|  
+|:|時刻の区切り記号。 コントロールのによって決定される、使用される実際の表示の文字は、書式プロバイダーに適した time 記号になります<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。|  
+|/|日付の区切り記号。 コントロールのによって決定される、使用される実際の表示の文字は、書式プロバイダーに適切な日付記号になります<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。|  
+|$|通貨記号。 コントロールのによって決定される、表示される実際の文字は、書式プロバイダーに適切な通貨記号になります<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。|  
+|\<|下方向にシフトします。 小文字に変換後に続くすべての文字に変換します。|  
+|>|上にシフトします。 大文字に続くすべての文字に変換します。|  
+|&#124;|以前のシフトを無効にするにまたは下方向にシフトします。|  
+|\|エスケープします。 リテラルに、マスク文字をエスケープします。 "\\\\"円記号のエスケープ シーケンスです。|  
+|上記以外のすべての文字|リテラルです。 マスク以外のすべての要素は自体が表示されます内<xref:System.Windows.Forms.MaskedTextBox>です。 リテラル常に、実行時にマスク内の静的な位置を埋めるありことはできません、移動やユーザーによって削除されます。|  
+  
+ マスクを変更する場合と<xref:System.Windows.Forms.MaskedTextBox>前のマスクでフィルター処理されたユーザー入力を既に含む<xref:System.Windows.Forms.MaskedTextBox>新しいマスク定義には、その入力を移行しようとします。 失敗した場合は、既存の入力がクリアされます。 マスクとして長さ 0 の文字列を割り当てると、コントロール内の既存のデータが保持されます。 長さ 0 のマスクを使用すると<xref:System.Windows.Forms.MaskedTextBox>単一行のように動作<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ 小数点 (.)、桁区切り (,)、(:)、(/)、日付と時刻 ($) の通貨記号、アプリケーションのカルチャによって定義されたこれらのシンボルを表示するのには、既定です。 使用して別のカルチャのシンボルを表示することを強制することができます、<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>プロパティです。  
+  
+ によって実行時にマスクに文字の挿入を制御、<xref:System.Windows.Forms.MaskedTextBox.InsertKeyMode%2A>プロパティです。 ユーザーは、左と右方向キーまたはマウス カーソルを使用してマスク内を移動できるし、スペースを入力することでマスク内の省略可能な位置を省略できます。  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.Forms.MaskedTextBox>垂直方向に組み合わせ文字のサロゲートを除くすべての Unicode 文字をサポートします。  
+  
+ 次の表は、マスクの例を示します。  
+  
+|マスク|動作|  
+|----------|--------------|  
+|`00/00/0000`|国際対応の日付形式の日付 (1 日、数値の月、年)。 「/」文字論理日付の区切り記号は、アプリケーションの現在のカルチャに適切な日付の区切り記号としてユーザーに表示されます。|  
+|`00->L<LL-0000`|初期文字を大文字小文字の 2 つ続けて 3 桁の月の省略形が表示されている米国形式の日付 (1 日、月の省略形、および year) です。|  
+|`(999)-000-0000`|米国の電話番号、市外局番の省略可能です。 ユーザーは、省略可能な文字を入力しないように場合、か、スペースを入力したり最初の 0 で表されるマスク内の位置に直接マウス ポインターを置きます。|  
+|`$999,999.00`|0 ~ 999999 の範囲の通貨値です。 通貨、区切り記号、および 10 進数の文字は、対応するカルチャ固有の実行時に置き換えられます。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">文字列が指定した、<see cref="P:System.Windows.Forms.MaskedTextBox.Mask" />プロパティは有効なマスクではありません。 無効なマスクには、印刷不可能な文字を含むマスクが含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaskChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler MaskChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MaskChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.MaskChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力マスクが変更された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskChanged>の値の後にイベントが発生した、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティを変更します。 場合、このイベントは発生も、<xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>は直接変更していないメンバーによってなど<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>、 <xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>、 <xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>、および<xref:System.Windows.Forms.MaskedTextBox.Culture%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.MaskChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.MaskChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#485](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#485)]
+ [!code-vb[System.Windows.Forms.EventExamples#485](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#485)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaskCompleted">
+      <MemberSignature Language="C#" Value="public bool MaskCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MaskCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.MaskCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必須の入力がすべて入力マスクに入力されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />すべての必要な入力がマスクに入力されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskCompleted%2A>必要な入力要素のみを確認します。 すべての必須およびオプションの入力要素が入力されているかどうかを判断するのには、使用、<xref:System.Windows.Forms.MaskedTextBox.MaskFull%2A>プロパティ代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaskedTextProvider">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.MaskedTextProvider MaskedTextProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.MaskedTextProvider MaskedTextProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.MaskedTextProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MaskedTextProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックス コントロールのインスタンスに関連付けられたマスク プロバイダーの複製を取得します。</summary>
+        <value>マスクの種類の言語プロバイダー<see cref="P:System.Windows.Forms.MaskedTextBox.MaskedTextProvider" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>プロパティを定義、マスク解析エンジンと、マスク言語で使用される、<xref:System.Windows.Forms.MaskedTextBox>コントロール。 既定のプロバイダーは、<xref:System.ComponentModel.MaskedTextProvider?displayProperty=nameWithType>クラスです。 ただし、カスタム プロバイダーを指定できます、<xref:System.Windows.Forms.MaskedTextBox.%23ctor%28System.ComponentModel.MaskedTextProvider%29>コンス トラクターです。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>直接設定することはできません。 ただし、一部のプロパティの設定<xref:System.Windows.Forms.MaskedTextBox>— など<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>、 <xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>、 <xref:System.Windows.Forms.MaskedTextBox.AsciiOnly%2A>、および<xref:System.Windows.Forms.MaskedTextBox.Culture%2A>-新しいの作成が内部的に生じる<xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaskFull">
+      <MemberSignature Language="C#" Value="public bool MaskFull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MaskFull" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.MaskFull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必須および省略可能な入力をすべて入力マスクに入力されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />すべての必須および省略可能な入力を入力されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.MaskedTextBox.MaskFull%2A>プロパティ内で、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>マスク内の残りの入力がないため、ユーザーの入力になっているかどうかを決定するイベント ハンドラーが拒否されました。 必要な入力要素だけが入力されているかどうかを判断するのには、使用、<xref:System.Windows.Forms.MaskedTextBox.MaskCompleted%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント、および使用して、<xref:System.Windows.Forms.ToolTip>結局のところにデータを入力する試みが行われた場合、ユーザーに警告するマスク内の位置を使用されています。  
+  
+ [!code-csharp[MaskInputRejectedSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MaskInputRejectedSample/CS/form1.cs#1)]
+ [!code-vb[MaskInputRejectedSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MaskInputRejectedSample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaskInputRejected">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MaskInputRejectedEventHandler MaskInputRejected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MaskInputRejectedEventHandler MaskInputRejected" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.MaskInputRejected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MaskInputRejectedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーの入力または割り当てられた文字が、入力マスクの対応する書式要素と一致しない場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>既定のイベントは、<xref:System.Windows.Forms.MaskedTextBox>クラスです。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント文字が入力マスクで拒否されるときに発生します。 によって表される、定型入力、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティが使用してコントロールに関連付けられたマスクされたテキスト プロバイダーで解釈される、<xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider%2A>プロパティです。 <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>次の状況で発生します。  
+  
+-   入力文字は、対応する書式要素には一致しません。 たとえば、ユーザーは、1 桁の数字が必要な場合の文字は英字を入力します。 このイベントが発生した理由最も一般的な原因として考えられます。  
+  
+-   ユーザーが、マスクの末尾を越える余分な文字を入力しようとして、マスクは既に入力されたまたは現在のキャレット位置が、入力マスクが表示されている文字列の末尾に移動されたためです。  
+  
+-   貼り付け操作が、関連する書式要素と一致しない文字を挿入するか、または、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>プロパティは`false`でこれらの要素の書式設定が一致しない新しい位置に移動する既存の文字です。  
+  
+-   切り取り操作を左側の既存の文字のシフトし、1 つ以上の文字が、新たに関連付けられている形式の要素が一致しません。  
+  
+-   割り当てが行われた、 <xref:System.Windows.Forms.MaskedTextBox.Text%2A> 1 つまたは複数のマスク違反の原因となったプロパティと割り当てられている文字列。  
+  
+ 文字列が原因となるコントロールに割り当てられたかどうか<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>が発生する、文字列の一部は表示されずに<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ 既定の処理をに対して<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>ビープ音の場合にサウンドを再生、<xref:System.Windows.Forms.MaskedTextBox.BeepOnError%2A>プロパティに設定されている`true`。 このイベントはたとえば、カスタム エラー処理を実装する、マスクがいっぱいの場合、次のユーザー入力コントロールに移動する、または、入力文字が有効でない場合に、カスタム エラー ダイアログ ボックスまたはツールヒントを表示する多くの場合、処理されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#486](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#486)]
+ [!code-vb[System.Windows.Forms.EventExamples#486](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#486)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public override int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがテキスト ボックス コントロールに入力または貼り付けできる最大文字数を取得または設定します。 このプロパティでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>このプロパティは常に 0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティおよび<xref:System.Windows.Forms.MaskInputRejectedEventArgs.Position%2A>プロパティに、<xref:System.Windows.Forms.MaskInputRejectedEventArgs>クラス内の文字列の最大の長さを決定する方法については、<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiline">
+      <MemberSignature Language="C#" Value="public override bool Multiline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Multiline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.Multiline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールが複数行テキスト ボックス コントロールかどうかを示す値を取得または設定します。 このプロパティが完全にサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.AcceptsTab%2A>プロパティは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このプロパティが完全にサポートされていません; に設定することはできずに常に解決される`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultilineChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler MultilineChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MultilineChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.MultilineChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常が発生したときの値、<see cref="P:System.Windows.Forms.MaskedTextBox.Multiline" />プロパティが変更された; でこのイベントは発生しませんが、<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.MultilineChanged>イベントは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このイベントで実装されていない<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="P:System.Windows.Forms.Control.BackColor" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsOverwriteModeChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnIsOverwriteModeChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnIsOverwriteModeChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnIsOverwriteModeChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.OnIsOverwriteModeChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.MaskedTextBox.OnIsOverwriteModeChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.MaskedTextBox.OnIsOverwriteModeChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyDown" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyPress">
+      <MemberSignature Language="C#" Value="protected override void OnKeyPress (System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyPress(class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyUp" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMaskChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnMaskChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMaskChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnMaskChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.MaskedTextBox.MaskChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.OnMaskChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.MaskedTextBox.OnMaskChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.MaskedTextBox.OnMaskChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMultilineChanged">
+      <MemberSignature Language="C#" Value="protected override void OnMultilineChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMultilineChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnMultilineChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>通常を発生させます、<see cref="E:System.Windows.Forms.MaskedTextBox.MultilineChanged" />イベントでなく、使用不可能になった<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.OnMultilineChanged%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このメソッドをオーバーライドして、操作を実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextAlignChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextAlignChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextAlignChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnTextAlignChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.MaskedTextBox.TextAlignChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.OnTextAlignChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.MaskedTextBox.OnTextAlignChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.MaskedTextBox.OnTextAlignChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTextChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnTextChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.OnTextChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.MaskedTextBox.OnTextChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.MaskedTextBox.OnTextChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidating">
+      <MemberSignature Language="C#" Value="protected override void OnValidating (System.ComponentModel.CancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidating(class System.ComponentModel.CancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.OnValidating(System.ComponentModel.CancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.ComponentModel.CancelEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Validating" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.OnValidating%2A>メソッドにより、入力文字列に対して検証される、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティの場合、<xref:System.Type>がこのプロパティに指定されています。 また発生し、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。  
+  
+> [!NOTE]
+>  テキスト ベースのコントロールとの一貫性を確実には、検証が行われる場合でも、<xref:System.Windows.Forms.MaskedTextBox>は読み取り専用 (その<xref:System.Windows.Forms.MaskedTextBox.ReadOnly%2A>プロパティに設定されている`true`)。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.OnValidating%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">入力文字列の解析中に、重大な例外が発生しました。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.MaskedTextBox.OnValidating(System.ComponentModel.CancelEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.MaskedTextBox.OnValidating(System.ComponentModel.CancelEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordChar">
+      <MemberSignature Language="C#" Value="public char PasswordChar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char PasswordChar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.PasswordChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue('\0')</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー入力の代わりに表示される文字を取得または設定します。</summary>
+        <value><see cref="T:System.Char" />パスワード文字として使用される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 機密性の高いユーザー入力には、実際に、ユーザーが入力した情報を隠すによくあることを勧めします。 場合、<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>プロパティを null 以外の文字、<xref:System.Windows.Forms.MaskedTextBox>のすべての入力コントロールにこの文字が表示されます。 このプロパティを設定`null`この機能を無効になります。  
+  
+ COMCTL32.dll、使用で定義されているオペレーティング システムが指定されたパスワードの文字を使用する場合、<xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>プロパティ代わりにします。 両方の<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>と<xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>プロパティがアクティブ化、後者が優先されます。  
+  
+> [!IMPORTANT]
+>  セキュリティの考慮事項として、<xref:System.Windows.Forms.MaskedTextBox>コントロールには、パスワードで保護された文字列で、切り取りとコピー操作が無効になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された文字のときにこのプロパティの設定が有効なパスワードの文字によって決定される、<see cref="M:System.ComponentModel.MaskedTextProvider.IsValidPasswordChar(System.Char)" />のメソッド、<see cref="T:System.ComponentModel.MaskedTextProvider" />クラスです。</exception>
+        <exception cref="T:System.InvalidOperationException">指定したパスワードの文字は、現在のプロンプト文字と同じ<see cref="P:System.Windows.Forms.MaskedTextBox.PromptChar" />です。 別にするには、2 つが必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCmdKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessCmdKey (ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessCmdKey(valuetype System.Windows.Forms.Message&amp; msg, valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">A<see cref="T:System.Windows.Forms.Message" />を処理するウィンドウ メッセージを表す、参照によって渡されます。</param>
+        <param name="keyData">1 つ、<see cref="T:System.Windows.Forms.Keys" />を処理するショートカット キーを表す値です。</param>
+        <summary>コマンド キーを処理します。</summary>
+        <returns>
+          <see langword="true" />コマンド キーがコントロールによって処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessKeyMessage">
+      <MemberSignature Language="C#" Value="protected override bool ProcessKeyMessage (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool ProcessKeyMessage(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ProcessKeyMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">A<see cref="T:System.Windows.Forms.Message" />を処理するウィンドウ メッセージを表す、参照によって渡されます。</param>
+        <summary>このメソッドの基本実装をオーバーライドして、入力言語の変更を処理します。</summary>
+        <returns>
+          メッセージがコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>その基本コントロールの実装をオーバーライド<xref:System.Windows.Forms.MaskedTextBox.ProcessKeyMessage%2A>正しくイベントを処理する文字、ユーザーが文字を入力するときに入力方式エディター (IME) などを使用して日本語、中国語、およびその他の複雑なラテン文字以外のスクリプトを入力するためです。 <xref:System.Windows.Forms.MaskedTextBox.ProcessKeyMessage%2A>WM_IME_CHAR メッセージを受信し、これらの文字がコントロールに表示するを防ぐためにこれが除外されます後に発生したすべての WM_CHAR メッセージを検出します。 このコントロールから派生し、このメッセージをオーバーライドする場合、Ime を使用する、新しいコントロールを希望する場合、この動作が重複する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PromptChar">
+      <MemberSignature Language="C#" Value="public char PromptChar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char PromptChar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.PromptChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue('_')</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定におけるユーザー入力がない状態を表すために使用する文字<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value>ユーザーに入力を要求するために使用される文字。 既定値はアンダースコア (_) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.PromptChar%2A>表示される<xref:System.Windows.Forms.MaskedTextBox>で、ユーザーがまだ入力いない任意のマスク位置。  
+  
+ 使用して、<xref:System.Windows.Forms.MaskedTextBox.HidePromptOnLeave%2A>プロパティをプロンプトが表示されるかどうかを指定するときに<xref:System.Windows.Forms.MaskedTextBox>がフォーカスされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された文字のときにこのプロパティの設定は有効なプロンプト文字、によって決定される、<see cref="M:System.ComponentModel.MaskedTextProvider.IsValidPasswordChar(System.Char)" />のメソッド、<see cref="T:System.ComponentModel.MaskedTextProvider" />クラスです。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたプロンプト文字は、現在のパスワードの文字と同じ<see cref="P:System.Windows.Forms.MaskedTextBox.PasswordChar" />です。 別にするには、2 つが必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックス内のテキストは読み取り専用であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テキストを示すためには読み取り専用です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RejectInputOnFirstFailure">
+      <MemberSignature Language="C#" Value="public bool RejectInputOnFirstFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RejectInputOnFirstFailure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.RejectInputOnFirstFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の無効な文字に到達した後、ユーザー入力の解析を停止するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />最初の解析エラー; で、入力文字列を終了する場合の処理それ以外の場合、<see langword="false" />処理は、すべてのエラーを無視する場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーにいくつかの文字を入力することがあります、<xref:System.Windows.Forms.MaskedTextBox>通常コピーして貼り付けて、文字列の 1 つの入力操作にします。 文字列全体にのみ、入力マスクの貼り付けの位置に基づいて、有効な文字が含まれている場合は、全体の操作は成功します。 ただしの解析中にエラーが発生したの動作<xref:System.Windows.Forms.MaskedTextBox>の値に依存<xref:System.Windows.Forms.MaskedTextBox.RejectInputOnFirstFailure%2A>、次のようにします。  
+  
+-   このプロパティは、する場合`true`、無効な文字で停止し、入力文字列の処理です。 後続のすべての文字は無視されます。 1 つ<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントが発生します。  
+  
+-   このプロパティが場合`false`、し、無効な文字が拒否されるが、入力文字列内の次の文字の解析が続行します。 A<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントは、入力文字列内のすべての無効な文字に対して発生します。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>、<xref:System.Windows.Forms.MaskedTextBox.ResetOnSpace%2A>と<xref:System.Windows.Forms.MaskedTextBox.SkipLiterals%2A>プロパティは、ユーザー入力の解釈も影響します。  
+  
+ 場合、<xref:System.Windows.Forms.MaskedTextBox.IsOverwriteMode%2A>プロパティは`false`カーソルの右側に入力マスク内の文字は、許容される文字数によって転置はします。 このシフトと、追加の解析エラーが発生する可能性があります。  
+  
+ 貼り付けの操作は設定してプログラムでまねることができます、<xref:System.Windows.Forms.MaskedTextBox.SelectedText%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetOnPrompt">
+      <MemberSignature Language="C#" Value="public bool ResetOnPrompt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResetOnPrompt" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.ResetOnPrompt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロンプト文字と一致する入力文字を処理する方法を決定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />入力されたプロンプト文字です。 リセットするマスク内の現在の編集可能な位置が発生した場合それ以外の場合、<see langword="false" />プロンプト文字が通常の入力文字として処理することを示すです。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>文字の 2 つのカテゴリを扱うことができます: スペースおよびプロンプト文字-特別にします。 マスクに対して各入力文字をテストする通常、承諾または拒否します。 想定されるので、<xref:System.Windows.Forms.MaskedTextBox.PromptChar%2A>プロパティを設定する以外`null`、設定し、<xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>プロパティを`true`プロンプト文字に対する特別な処理が発生します。 マスクにプロンプト文字を入力すると、クリアするのには、現在のマスク文字位置と次の編集可能な文字を強化するのには、現在の位置が行われます。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>も優先、<xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput%2A>プロパティ、次の表に示すようにします。  
+  
+|ResetOnPrompt 値|AllowPromptAsInput 値|結果として生じる動作|  
+|-------------------------|------------------------------|------------------------|  
+|`true`|`true`|プロンプト文字を入力してをリセットするのには、現在のマスク位置になります。 既定値です。|  
+|`true`|`false`|プロンプト文字を入力してをリセットするのには、現在のマスク位置になります。|  
+|`false`|`true`|プロンプト文字は、標準の入力文字として処理されます。|  
+|`false`|`false`|プロンプト文字が無効であるを生成、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetOnSpace">
+      <MemberSignature Language="C#" Value="public bool ResetOnSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResetOnSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.ResetOnSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空白の入力文字の処理方法を決定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />空白文字を入力すると、現在編集可能なマスク内の位置をリセットします。それ以外の場合、<see langword="false" />は通常の入力文字として処理することを示すためにします。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>文字の 2 つのカテゴリを扱うことができます: スペースおよびプロンプト文字-特別にします。 マスクに対して各入力文字をテストする通常、承諾または拒否します。 設定、<xref:System.Windows.Forms.MaskedTextBox.ResetOnSpace%2A>プロパティを`true`をクリアするのには、現在のマスク文字位置と次の編集可能な文字を強化するのには、現在の位置になります。  
+  
+ マスク エンジンについて、マスクでは、次の文字を前方に移動または現在の位置に保持し、一致する文字の待機でかどうかは、文字の入力の種類によって決まります。 場合は、入力文字が、領域で、マスクの現在の編集不可能な文字と一致しません、マスキング エンジンはへ進んでマスク内の次の文字です。 場合は、入力文字、スペースがない、マスクの現在の編集不可能な文字と一致しませんマスク エンジンが現在のマスク位置のままし、それに対して、[次へ] の入力文字を照合するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollToCaret">
+      <MemberSignature Language="C#" Value="public void ScrollToCaret ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollToCaret() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ScrollToCaret" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの内容を現在のキャレット位置までスクロールします。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.ScrollToCaret%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、ため、<xref:System.Windows.Forms.MaskedTextBox>コントロールでは、複数行の構成はサポートされていません、このメソッドをオーバーライドして、操作を実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedText">
+      <MemberSignature Language="C#" Value="public override string SelectedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.SelectedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲で設定を取得または、<see cref="T:System.Windows.Forms.MaskedTextBox" />コントロール。</summary>
+        <value>現在選択されているテキストとして、<see cref="T:System.String" />です。 現在テキストが選択されていない場合、このプロパティは空の文字列に解決されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 選択内容をこのプロパティを使用して取得がように、コントロールの書式設定プロパティに従って書式設定<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>、 <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>、<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>と<xref:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat%2A>です。 このプロパティを使用して設定の選択内容が貼り付け操作と同様に動作: 各文字は、マスクと照合され、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベントは、無効な文字です。 場合<xref:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat%2A>は`true`、設定するときにリテラルおよびプロンプト文字が許可される<xref:System.Windows.Forms.MaskedTextBox.SelectedText%2A>マスクに違反している場合を除き、自動的に削除されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipLiterals">
+      <MemberSignature Language="C#" Value="public bool SkipLiterals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipLiterals" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.SkipLiterals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがリテラル値の再入力を許可されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />リテラルの; 再入力を許可するにはそれ以外の場合、<see langword="false" />ユーザーがリテラル文字を上書きしないようにします。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、定型入力には、リテラルが含まれます。 文字を入力すると、 <xref:System.Windows.Forms.MaskedTextBox> 、実行時に、現在の文字位置はリテラルで分類場合もありますされます。 <xref:System.Windows.Forms.MaskedTextBox.SkipLiterals%2A>プロパティは、次の文字のユーザー入力の次のように、処理する方法について説明します。  
+  
+-   このプロパティが場合`true`ユーザーをできます重複して同じ文字は現在の位置でリテラルとして入力するか、またはこれにより、現在の位置をその位置にジャンプ [次へ] の編集可能な文字を入力できます。  
+  
+-   このプロパティは、する場合`false`、[次へ] の編集可能な文字が入力できるのみです。 マスク内の次の位置は、リテラル文字を受け付けない場合 (たとえば、ユーザー タイプ「/」は次の位置は、半角数字を使用して)、コントロールが生成されます、<xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected>イベント。  
+  
+ たとえば、「90/90/0000」日付エントリ マスクでは、スラッシュ文字は、リテラルがします。 ユーザーが 2 つの初期数字、「11」を入力、現在の位置でマスクがある最初のスラッシュ (/) リテラルであるとします。 場合<xref:System.Windows.Forms.MaskedTextBox.SkipLiterals%2A>は`true`ユーザーは、次の有効な選択。  
+  
+-   ユーザーは、「/」文字を入力できます。 これは、結果、この例では、4 番目の位置の要素をマスク 9 を次の文字へ移動中の位置。  
+  
+-   ユーザーは、[次へ] の編集可能な文字がこの例では、1 桁の数字を入力できます。 数字が検証され、現在の位置は 0 マスキング要素は、5 番目の位置に自動的に移動はします。  
+  
+ 場合<xref:System.Windows.Forms.MaskedTextBox.SkipLiterals%2A>は`false`、し、有効なデータの入力だけが許可された、この例では、1 桁の数字となります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.MaskedTextBoxTextEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーに現在表示されているテキストを設定します。</summary>
+        <value>A<see cref="T:System.String" />コントロールで現在表示されているテキストを格納します。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.Text%2A>既定のバインディング プロパティは、<xref:System.Windows.Forms.MaskedTextBox>クラスです。  
+  
+ このプロパティを使用して取り出した文字列は、コントロールの書式設定プロパティに従ってなど書式設定<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>と<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>です。  
+  
+ 文字列にリテラル文字の有無を割り当てることができます<xref:System.Windows.Forms.MaskedTextBox.Text%2A>の値に応じて<xref:System.Windows.Forms.MaskedTextBox.ResetOnPrompt%2A>、 <xref:System.Windows.Forms.MaskedTextBox.ResetOnSpace%2A>、および<xref:System.Windows.Forms.MaskedTextBox.SkipLiterals%2A>です。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.Text%2A>既定のバインディング プロパティは、<xref:System.Windows.Forms.MaskedTextBox>です。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox>発生させる、<xref:System.Windows.Forms.Control.TextChanged>フォーマットされたテキスト値が変更されるたびにイベント。 さまざまなプロパティを変更するには、この値にならない可能性があります。 変更するなど、<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>プロパティを生成しませんが、<xref:System.Windows.Forms.Control.TextChanged>イベントではなく、変更、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>がプロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティです。  
+  
+ [!code-vb[TestMaskedTextBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TestMaskedTextBox/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlign">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment TextAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment TextAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.TextAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マスクされたテキスト ボックス コントロールでテキストを配置する方法を取得または設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.HorizontalAlignment" />コントロールに対する相対的なテキストを配置する方法を指定する列挙値。 既定値は、<see cref="F:System.Windows.Forms.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.MaskedTextBox.TextAlign%2A>プロパティ内で表示されるテキストに合わせて、<xref:System.Windows.Forms.MaskedTextBox>フォーム上のビジュアル要素のレイアウトと一致します。 たとえば、ある場合は、コントロールはすべて、フォームの右側にある、設定できます、<xref:System.Windows.Forms.MaskedTextBox.TextAlign%2A>プロパティを<xref:System.Windows.Forms.HorizontalAlignment.Right>、テキストは左の既定のアラインメントの代わりに、コントロールの右側に配置するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティに割り当てられた値の種類ではありません<see cref="T:System.Windows.Forms.HorizontalAlignment" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextAlignChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextAlignChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.TextAlignChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの配置が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.TextAlignChanged>後にイベントを生成、<xref:System.Windows.Forms.MaskedTextBox.TextAlign%2A>プロパティを変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MaskedTextBox.TextAlignChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MaskedTextBox>という`MaskedTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MaskedTextBox.TextAlignChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#487](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#487)]
+ [!code-vb[System.Windows.Forms.EventExamples#487](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#487)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextLength">
+      <MemberSignature Language="C#" Value="public override int TextLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TextLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.TextLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるテキストの長さを取得します。</summary>
+        <value>Int32 の文字数を表す、<see cref="P:System.Windows.Forms.MaskedTextBox.Text" />プロパティです。 <see cref="P:System.Windows.Forms.MaskedTextBox.TextLength" />などのプロパティを尊重<see cref="P:System.Windows.Forms.MaskedTextBox.HidePromptOnLeave" />、つまり、戻り値の結果をコントロールにフォーカスがあるかどうかに応じて異なる場合があります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextMaskFormat">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MaskFormat TextMaskFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MaskFormat TextMaskFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.TextMaskFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MaskFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リテラルおよびプロンプト文字が、書式設定された文字列に含まれるかどうかを決定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.MaskFormat" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.MaskFormat.IncludeLiterals" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>プロパティは、マスクのリテラルおよびプロンプト文字の処理方法を決定時に書式設定された文字列を生成します。 具体的には、リテラル文字、プロンプト文字、またはその両方に含めるかどうかを決定、<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティです。 プロンプト文字を除外すると、書式設定された文字列内のスペースに変換されます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.MaskedTextBox.CutCopyMaskFormat%2A>プロパティ目的のような方法に関して<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティが解釈されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティの設定、<see cref="T:System.Windows.Forms.MaskFormat" />値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のマスクされたテキスト ボックスを表す文字列を返します。 このメソッドは<see cref="M:System.Windows.Forms.TextBoxBase.ToString" />します。</summary>
+        <returns>A<see cref="T:System.String" />現在に関する情報を含む<see cref="T:System.Windows.Forms.MaskedTextBox" />です。 文字列には、型、入力文字列の簡素化されたビュー、および書式設定された入力文字列が含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.MaskedTextBox.ToString%2A>メソッドは、このメソッドの基本クラス実装を呼び出して<xref:System.Windows.Forms.TextBoxBase.ToString%2A?displayProperty=nameWithType>、マスクによって、処理後に、入力文字列を追加します。 このメソッドは、次の例外を除き、書式設定された文字列の外観を変更するプロパティを受け入れます。  
+  
+-   返される文字列には常の値に関係なく、プロンプトとリテラルの文字が含まれています、<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>プロパティです。  
+  
+-   実際のユーザーに型指定された文字が返されるように、パスワードの文字は無視されます。 つまり、他の値、<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>と<xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>プロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeValidationCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.TypeValidationEventHandler TypeValidationCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.TypeValidationEventHandler TypeValidationCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TypeValidationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="T:System.Windows.Forms.MaskedTextBox" />が現在の値を使用して、解析を終了、<see cref="P:System.Windows.Forms.MaskedTextBox.ValidatingType" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>コントロールがによって定義された型に対してユーザー入力を検証して必要に応じてその<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A?displayProperty=nameWithType>プロパティです。 このプロパティがない`null`、次の一連のイベントが発生します。  
+  
+1.  検証シーケンスは、次のいずれかが発生すると開始します。  
+  
+    -   <xref:System.Windows.Forms.MaskedTextBox>コントロールがフォーカスを失った。  
+  
+    -   <xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティを取得します。  
+  
+    -   <xref:System.Windows.Forms.MaskedTextBox.ValidateText%2A> メソッドが呼び出された場合。  
+  
+2.  これらのイベントのいずれかへの呼び出しが発生、`Parse`で指定された型のメソッド、<xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType%2A>プロパティです。 `Parse`書式設定された入力文字列のターゲット型への変換を担当します。 検証が成功した変換に成功したに相当します。  
+  
+3.  後に`Parse`が返される、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベントが発生します。 このイベントのイベント ハンドラーは型またはマスクの検証処理を実行する最も広く導入されています。 受信、<xref:System.Windows.Forms.TypeValidationEventArgs>変換に関する情報を含むパラメーターなど、<xref:System.Windows.Forms.TypeValidationEventArgs.IsValidInput%2A>メンバーは、変換が成功したかどうかを示します。  
+  
+4.  イベント ハンドラーの後に、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント、標準の検証のイベントを返します、<xref:System.Windows.Forms.Control.Validating>が発生します。 ハンドラーを実装すると、イベントをキャンセルなど、標準の検証を実行できます。  
+  
+5.  手順 3. でイベントが取り消されない場合、標準は検証イベントを制御<xref:System.Windows.Forms.Control.Validated>が発生します。  
+  
+ 場合、<xref:System.Windows.Forms.TypeValidationEventArgs.Cancel%2A>プロパティに設定されている`true`で、 <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> 、イベント ハンドラー イベントが取り消されますと<xref:System.Windows.Forms.MaskedTextBox>しない限り、コントロールがフォーカスを保持、後続<xref:System.Windows.Forms.Control.Validating>イベントのバージョンを設定する、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A?displayProperty=nameWithType>プロパティ`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、有効なと、ユーザーの入力の解析を試みます<xref:System.DateTime>オブジェクト。 失敗した場合、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント ハンドラーは、ユーザーに、エラー メッセージを表示します。 値が有効な場合<xref:System.DateTime>コードでは、今日の日付より前に指定された日付がないことを確認します。 このコード例では、Windows フォーム プロジェクトが含まれている必要があります、<xref:System.Windows.Forms.MaskedTextBox>という名前のコントロール`MaskedTextBox1`と<xref:System.Windows.Forms.ToolTip>という名前のコントロール`ToolTip1`です。  
+  
+ [!code-csharp[ValidatingTypeSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ValidatingTypeSample/CS/form1.cs#1)]
+ [!code-vb[ValidatingTypeSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ValidatingTypeSample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undo">
+      <MemberSignature Language="C#" Value="public void Undo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Undo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.Undo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ボックスで直前に実行された編集操作を元に戻します。 このメソッドでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.Undo%2A>メソッドは、ベースから継承<xref:System.Windows.Forms.TextBoxBase>クラスです。 ただし、<xref:System.Windows.Forms.MaskedTextBox>元に戻す機能をサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSystemPasswordChar">
+      <MemberSignature Language="C#" Value="public bool UseSystemPasswordChar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSystemPasswordChar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムが提供するパスワード文字を使用する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />プロンプト文字としてシステムのパスワードを使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>プロパティでユーザーが指定した入力を表示するかどうかを決定する、<xref:System.Windows.Forms.MaskedTextBox>複数出現する、オペレーティング システムで定義されているパスワード文字として。 <xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>よく似た機能、<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>プロパティが、プロンプトのプログラマが指定した文字を使用するのではなく<xref:System.Windows.Forms.MaskedTextBox.UseSystemPasswordChar%2A>オペレーティング システムで定義されたプロンプトを使用します。 このプロパティに優先<xref:System.Windows.Forms.MaskedTextBox.PasswordChar%2A>です。  
+  
+> [!IMPORTANT]
+>  セキュリティの考慮事項として、<xref:System.Windows.Forms.MaskedTextBox>コントロールには、パスワードで保護された文字列で、切り取りとコピー操作が無効になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したパスワードの文字は、現在のプロンプト文字と同じ<see cref="P:System.Windows.Forms.MaskedTextBox.PromptChar" />です。 別にするには、2 つが必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateText">
+      <MemberSignature Language="C#" Value="public object ValidateText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ValidateText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.ValidateText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー入力文字列を、検証する型のインスタンスに変換します。</summary>
+        <returns>成功した場合、<see cref="T:System.Object" />で指定された型の<see cref="P:System.Windows.Forms.MaskedTextBox.ValidatingType" />プロパティ以外の場合、<see langword="null" />変換エラーを示すためにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox.ValidateText%2A>メソッドに格納されている書式設定された文字列を変換しようとしています。、<xref:System.Windows.Forms.MaskedTextBox.Text%2A>プロパティで指定された型のインスタンスを、<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>プロパティです。 プロンプト文字が書式設定された文字列で、無視されますが、リテラルは、の現在の値に従って処理は、<xref:System.Windows.Forms.MaskedTextBox.TextMaskFormat%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.MaskedTextBox.ValidateText%2A>発生させる、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベントの成功に関係なく、変換が試行した後です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">入力文字列の解析中に、重大な例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatingType">
+      <MemberSignature Language="C#" Value="public Type ValidatingType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValidatingType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.ValidatingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがデータ入力の検証に使用するデータ型を設定します。</summary>
+        <value>A<see cref="T:System.Type" />検証で使用されるデータ型を表すです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マスク自体ではなくわけでは、ユーザーの入力が、指定された型の有効な値を表すことです。 次の c# コードでは、マスクを示します。  
+  
+```  
+maskedTextBox1.Mask = "99/99/9999";  
+```  
+  
+ 次[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コードはマスクを示します。  
+  
+ `MaskedTextBox1.Mask = "99/99/9999"`  
+  
+ このマスクは、ユーザーが 8 桁の数字を入力が、ユーザーが月、日、および年の値が正しい範囲内に確認できないことを要求できます。「12/20/2003」と「70/90/0000」は、マスクがに関する限り均等に有効です。  
+  
+ 使用することができます<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>、ユーザーが入力したデータが正しい範囲内にあるかどうかを確認する — 前に説明した場合は、インスタンスを割り当てることによって、<xref:System.DateTime>型です。 コントロールの現在のテキストになります、ユーザーがコントロールを離れるときに、いずれかを検証します。 データの監視で検証に失敗したかどうかを決定できます、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント。 <xref:System.Windows.Forms.MaskedTextBox>に対してチェックが実行のみ<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>場合<xref:System.Windows.Forms.MaskedTextBox.MaskCompleted%2A>は`true`します。  
+  
+ 独自のカスタム データ型を使用するかどうかは<xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A>、静的なを実装する必要があります`Parse`文字列をパラメーターとして受け取るメソッド。 このメソッドは、次のシグネチャの一方または両方を実装する必要があります。  
+  
+ `public static Object Parse(string)`  
+  
+ `public static Object Parse(string, IFormatProvider)`  
+  
+   
+  
+## Examples  
+ 次のコード例は、有効なと、ユーザーの入力の解析を試みます<xref:System.DateTime>です。 失敗した場合、<xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted>イベント ハンドラーは、ユーザーに、エラー メッセージを表示します。 値が有効な場合<xref:System.DateTime>今日の日付より前に指定された日付がないことを確認する追加のチェックを実行します。 このコード例では、Windows フォーム プロジェクトが含まれている必要があります、<xref:System.Windows.Forms.MaskedTextBox>という名前のコントロール`MaskedTextBox1`と<xref:System.Windows.Forms.ToolTip>という名前のコントロール`ToolTip1`です。  
+  
+ [!code-csharp[ValidatingTypeSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ValidatingTypeSample/CS/form1.cs#1)]
+ [!code-vb[ValidatingTypeSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ValidatingTypeSample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MaskedTextBox.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WordWrap">
+      <MemberSignature Language="C#" Value="public bool WordWrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WordWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MaskedTextBox.WordWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行テキスト ボックス コントロールで必要に応じて自動的に次の行に折り返すかどうかを示す値を取得または設定します。 このプロパティでサポートされていない<see cref="T:System.Windows.Forms.MaskedTextBox" />です。</summary>
+        <value><see cref="P:System.Windows.Forms.MaskedTextBox.WordWrap" />プロパティは常に返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MaskedTextBox>は、入力の複数の行をサポートしていません、<xref:System.Windows.Forms.MaskedTextBox.WordWrap%2A>プロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,85 @@
+<Type Name="TransferSession" FullName="System.ServiceModel.Channels.TransferSession">
+  <TypeSignature Language="C#" Value="public enum TransferSession" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransferSession extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.TransferSession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>クライアントからアプリケーションへのメッセージ転送のコントラクトでセッションが要求されているかどうか、およびクライアントによる処理の呼び出し順序をメッセージ配信時に維持する必要があるかどうかを判断します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.TransferSession> 列挙体は、通常、サービス コントラクトとの関連付けで使用されます。 クライアントがリモート アプリケーションまたはサービスにメッセージを送信して操作を呼び出す場合、<xref:System.ServiceModel.Channels.TransferSession> を使用して、サービスとの対話にセッションが要求されるかどうか、また、サービスで操作の呼び出しに使用されるメッセージをその送信順に受信する必要があるかどうかが判断されます。  
+  
+ クライアントとサービス間のメッセージ配信では、セッションで、クライアントによって操作が呼び出された順序を保持することが要求されます。 エンドポイント間にセッションがない場合、配信順にはメッセージの送信順は反映されません。  
+  
+-   アプリケーションで使用される <xref:System.ServiceModel.Channels.TransferSession> の値は、アプリケーションが呼び出しシーケンスで特定の順序を要求するかどうかを指定します。 順序付けられている場合、コントラクトに必要なメッセージが送信される順序で受信する必要があります。  
+  
+-   場合は、順序、公開操作の呼び出しに使用されるメッセージは、任意の順序で受信できます。  
+  
+ ない場合は、セッションはありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.TransferSession None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.TransferSession.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransferSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントラクトでのサービスとの対話にはセッションが必要ないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordered">
+      <MemberSignature Language="C#" Value="Ordered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.TransferSession Ordered = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.TransferSession.Ordered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransferSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントラクトでのサービスとの対話に、メッセージ配信の順序が保証されたセッションが必要であることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unordered">
+      <MemberSignature Language="C#" Value="Unordered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.TransferSession Unordered = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.TransferSession.Unordered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransferSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントラクトでのサービスとの対話には、メッセージ配信の順序が保証されないセッションで十分であることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

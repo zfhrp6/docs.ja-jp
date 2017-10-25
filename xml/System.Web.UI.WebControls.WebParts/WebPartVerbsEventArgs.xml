@@ -1,0 +1,106 @@
+<Type Name="WebPartVerbsEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartVerbsEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartVerbsEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのデータを提供、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateVerbs" />によって使用されるイベント、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs(System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs>クラスを表します。 イベント データを、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateVerbs>から派生するゾーンの Web パーツの動詞を作成するときに発生するイベント、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラスです。  
+  
+ Web パーツ動詞は、ユーザーは最小限に抑えを閉じると、復元するコントロールなどの Web パーツ ページのユーザー インターフェイス (UI) で実行できるアクションを表しますページにコントロールを追加します。または、操作をキャンセルします。 動詞が、ゾーンのヘッダーおよびフッターの両方の領域に表示されることができ、Web パーツ コントロール セットで提供される標準的な動詞と開発者によって追加できるカスタム動詞の両方があります。 動詞が UI を使用してでは、ハイパーリンク、画像、または、ボタンとして表示に設定できる、クリック可能なオブジェクトによって表される、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.VerbButtonType%2A>プロパティです。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンは、Web パーツ コントロールの動詞メニューに表示される取得動詞の標準セットを提供します。 カスタム Web パーツ ゾーン、または Web パーツ ゾーン内の Web パーツ コントロールでは、他の動詞をメニューに追加できます。  
+  
+ Web パーツ ゾーン内のコントロールはから継承することで、コントロールの動詞メニューに動詞を追加することができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>基本クラスおよびオーバーライド、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>プロパティです。 コントロールがから継承していない場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>基底クラスを実装することによって新しい動詞を追加することができます、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイス、およびオーバーライドし、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>コレクション。  
+  
+ 保護された<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A?displayProperty=nameWithType>メソッドを使用してデリゲートを結び付けずに、イベントをオーバーライドする派生クラス。 派生クラスは常に呼び出す必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.OnCreateVerbs%2A>を登録されているデリゲートがイベントを受け取れるように、基本クラスのメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartVerbsEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは既定のコンス トラクターであり、空のオブジェクトが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartVerbsEventArgs (System.Web.UI.WebControls.WebParts.WebPartVerbCollection verbs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPartVerbCollection verbs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPartVerbCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="verbs" Type="System.Web.UI.WebControls.WebParts.WebPartVerbCollection" />
+      </Parameters>
+      <Docs>
+        <param name="verbs">Web パーツ動詞のコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs" />クラス、指定した Web パーツ動詞のコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合、<xref:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs.Verbs%2A>プロパティで指定された Web パーツ動詞のコレクションに設定されて、`verbs`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web パーツの動詞を取得または使用される、イベント データ。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbCollection" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に、このプロパティで Web パーツ動詞のコレクションを指定することによって、<xref:System.Web.UI.WebControls.WebParts.WebPartVerbsEventArgs.%23ctor%28System.Web.UI.WebControls.WebParts.WebPartVerbCollection%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,120 @@
+<Type Name="IDispatchImplAttribute" FullName="System.Runtime.InteropServices.IDispatchImplAttribute">
+  <TypeSignature Language="C#" Value="public sealed class IDispatchImplAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IDispatchImplAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.IDispatchImplAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("This attribute is deprecated and will be removed in a future version.", false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示します<see langword="IDispatch" />デュアル インターフェイスおよび com ディスパッチ インターフェイスを公開するときに、共通言語ランタイムを使用して実装。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、クラスやアセンブリに適用できます。  
+  
+ この属性は、明示的な実装が必要な場合にのみ設定する必要があります。 属性を設定すると<xref:System.Runtime.InteropServices.IDispatchImplType.CompatibleImpl>、`IDispatch`に COM のオブジェクトの型情報を渡すことによって実装が提供`CreateStdDispatch`API です。 属性を設定すると<xref:System.Runtime.InteropServices.IDispatchImplType.InternalImpl>、`IDispatch`共通言語ランタイムによって実装を提供します。 属性を設定<xref:System.Runtime.InteropServices.IDispatchImplType.SystemDefinedImpl>により、ランタイムを適切な実装を選択します。 アセンブリの属性を使用して、アセンブリ内で定義されているすべてのクラスに属性が適用されます。 それぞれのクラスで属性を使用して、属性はそのクラスによって公開されるインターフェイスにのみ適用され、すべてアセンブリ レベルの設定をオーバーライドします。  
+  
+   
+  
+## Examples  
+ 次の例では、適用<xref:System.Runtime.InteropServices.IDispatchImplAttribute>を選択する、`IDispatch`共通言語ランタイムによって提供される実装します。  
+  
+ [!code-cpp[ImprovedInteropSnippets#1](~/samples/snippets/cpp/VS_Snippets_CLR/ImprovedInteropSnippets/CPP/codefile1.cpp#1)]
+ [!code-csharp[ImprovedInteropSnippets#1](~/samples/snippets/csharp/VS_Snippets_CLR/ImprovedInteropSnippets/CS/codefile1.cs#1)]
+ [!code-vb[ImprovedInteropSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ImprovedInteropSnippets/VB/codefile1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IDispatchImplAttribute (short implType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int16 implType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.IDispatchImplAttribute.#ctor(System.Int16)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="implType" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="implType">示します。<see cref="T:System.Runtime.InteropServices.IDispatchImplType" />列挙が使用されます。</param>
+        <summary>新しいインスタンスを初期化、<see langword="IDispatchImplAttribute" />を持つクラスが指定された<see cref="T:System.Runtime.InteropServices.IDispatchImplType" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、基になる 16 ビット符号付き整数をそれぞれ表す<xref:System.Runtime.InteropServices.IDispatchImplType>列挙体のメンバーです。 タイプ ライブラリ インポーター (TlbImp.exe) では、このコンス トラクターを使用する typeref が発生しないように、`IDispatchImplType`値`value`表し、そのトークンを使用して署名を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IDispatchImplAttribute (System.Runtime.InteropServices.IDispatchImplType implType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.IDispatchImplType implType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.IDispatchImplAttribute.#ctor(System.Runtime.InteropServices.IDispatchImplType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="implType" Type="System.Runtime.InteropServices.IDispatchImplType" />
+      </Parameters>
+      <Docs>
+        <param name="implType">示します。<see cref="T:System.Runtime.InteropServices.IDispatchImplType" />列挙が使用されます。</param>
+        <summary>新しいインスタンスを初期化、<see langword="IDispatchImplAttribute" />を持つクラスが指定された<see cref="T:System.Runtime.InteropServices.IDispatchImplType" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り可能なコードでエラーが発生しにくくなりました、常にこのコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.IDispatchImplType Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.IDispatchImplType Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.IDispatchImplAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.IDispatchImplType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.InteropServices.IDispatchImplType" />クラスによって使用される値。</summary>
+        <value><see cref="T:System.Runtime.InteropServices.IDispatchImplType" />クラスによって使用される値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

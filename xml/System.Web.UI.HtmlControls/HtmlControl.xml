@@ -1,0 +1,534 @@
+<Type Name="HtmlControl" FullName="System.Web.UI.HtmlControls.HtmlControl">
+  <TypeSignature Language="C#" Value="public abstract class HtmlControl : System.Web.UI.Control, System.Web.UI.IAttributeAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HtmlControl extends System.Web.UI.Control implements class System.Web.UI.IAttributeAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAttributeAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.HtmlIntrinsicControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET ページ フレームワークのすべての HTML サーバー コントロールに共通のメソッド、プロパティ、イベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl>クラスには、すべての HTML サーバー コントロールのクラスによって継承された共通のプロパティが用意されています。 クラスの新しいインスタンスは直接作成されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HtmlControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定値を使用して <see cref="T:System.Web.UI.HtmlControls.HtmlControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの使用を作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlControl>クラスの既定値を使用します。  
+  
+> [!NOTE]
+>  このクラスの新しいインスタンスは直接作成されません。 このコンス トラクターは、このクラスで定義されたプロパティを初期化するために他の HTML コントロールのクラスのコンス トラクターから呼び出されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|"Span"リテラル文字列です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HtmlControl (string tag);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string tag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tag">コントロールのタグ名を指定する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.HtmlControls.HtmlControl" />クラスの指定したタグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの使用を作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlControl>クラスの指定したタグを使用します。  
+  
+> [!NOTE]
+>  このクラスの新しいインスタンスは直接作成されません。 このコンス トラクターは、このクラスで定義されたプロパティを初期化するために他の HTML コントロールのクラスのコンス トラクターから呼び出されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|`tag` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlControl.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET ページ内のサーバー コントロール タグで表されるすべての属性の名前と値のペアのコレクションを取得します。</summary>
+        <value>A <see cref="T:System.Web.UI.AttributeCollection" /> Web ページ内のサーバー コントロール タグで表されるすべての属性の名前と値のペアを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラムによって HTML サーバー コントロールの属性にアクセスするのにには、このプロパティを使用します。 すべての HTML サーバー コントロールでは、その属性を格納する、<xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType>プロパティです。  
+  
+ HTML 属性は、.NET Framework によってが所属する HTML サーバー コントロールのプロパティとして扱われます。  
+  
+ 属性コレクションの詳細については、次を参照してください。、<xref:System.Web.UI.AttributeCollection?displayProperty=nameWithType>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlControl.Attributes%2A>プロパティの属性を確認する、<xref:System.Web.UI.HtmlControls.HtmlSelect>コントロール。  
+  
+ [!code-aspx-csharp[Classic HtmlControl.Attributes Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlControl.Attributes Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlControl.Attributes Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlControl.Attributes Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールの子コントロール (リテラルとサーバーの両方) を保持する新しい <see cref="T:System.Web.UI.ControlCollection" /> オブジェクトを作成します。</summary>
+        <returns>現在のサーバー コントロールの子サーバー コントロールを格納する <see cref="T:System.Web.UI.ControlCollection" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="public bool Disabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Disabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlControl.Disabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.MinimizableAttributeTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML サーバー コントロールが無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールが無効にします。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラウザーで、無効な要素またはコントロールが読み取り専用、次の追加制限があります: フォームとその値は送信されず、要素またはコントロールがフォーカスを受け取ることはできず、タブ移動して、ドキュメントを移動するときに、要素またはコントロールはスキップされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlControl.Disabled%2A>プログラムで有効または無効にするプロパティ、<xref:System.Web.UI.HtmlControls.HtmlInputButton>コントロール。  
+  
+ [!code-aspx-csharp[Classic HtmlControl.Disabled Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlControl.Disabled Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlControl.Disabled Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlControl.Disabled Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttribute">
+      <MemberSignature Language="C#" Value="protected virtual string GetAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性の名前。 この引数では、大文字と小文字が区別されません。</param>
+        <summary>名前付き属性の値を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlControl" />コントロール。</summary>
+        <returns>要素のこの属性の値を、<see cref="T:System.String" /> の値として返します。 指定された属性がこの要素に存在しない場合は、空の文字列 ("") を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlControl.GetAttribute%2A>メソッドの属性へのアクセスを<xref:System.Web.UI.HtmlControls.HtmlControl>サーバー コントロールです。 すべての HTML サーバー コントロールでは、その属性を格納する、<xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType>プロパティです。 HTML 属性は、ASP.NET ページ フレームワークによってが所属する HTML サーバー コントロールのプロパティとして扱われます。 <xref:System.Web.UI.HtmlControls.HtmlControl.GetAttribute%2A>メソッドの`name`パラメーター小文字は区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary>指定したクライアント上に表示するコンテンツを書き込みます<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.Render%2A>メソッドの呼び出し、<xref:System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag%2A>メソッドと、指定されたパス<xref:System.Web.UI.HtmlTextWriter>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlControl" />コントロールの属性を指定された<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.RenderAttributes%2A>メソッドの書き込み、<xref:System.Web.UI.Control.ID%2A?displayProperty=nameWithType>の属性、<xref:System.Web.UI.HtmlControls.HtmlControl>コントロール。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.RenderAttributes%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="protected virtual void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定された開始コントロールの HTML タグをレンダリング<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag%2A>メソッド レンダリング始め山かっこ (\<)、その後に、コントロールのタグ名、属性、および右の山かっこ (>)。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.RenderBeginTag%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlControl>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAttribute">
+      <MemberSignature Language="C#" Value="protected virtual void SetAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定する属性名です。</param>
+        <param name="value">属性を設定する値。</param>
+        <summary>名前付き属性の値を設定、<see cref="T:System.Web.UI.HtmlControls.HtmlControl" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlControl.SetAttribute%2A>で属性を設定するメソッドを<xref:System.Web.UI.HtmlControls.HtmlControl>サーバー コントロールです。 すべての HTML サーバー コントロールでは、その属性を格納する、<xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType>プロパティです。  
+  
+ HTML 属性は、ASP.NET ページ フレームワークによってが所属する HTML サーバー コントロールのプロパティとして扱われます。 <xref:System.Web.UI.HtmlControls.HtmlControl.SetAttribute%2A>メソッドの`name`パラメーター小文字は区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Web.UI.CssStyleCollection Style { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.CssStyleCollection Style" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlControl.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CssStyleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET ファイルで指定された HTML サーバー コントロールに適用されるシート (CSS) のプロパティのすべてのカスケード スタイルのコレクションを取得します。</summary>
+        <value>A <see cref="T:System.Web.UI.CssStyleCollection" /> HTML サーバー コントロールのスタイル プロパティを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、プログラムによって HTML サーバー コントロールのスタイル プロパティにアクセスします。  
+  
+ CSS スタイルのコレクションの詳細については、次を参照してください。、<xref:System.Web.UI.CssStyleCollection?displayProperty=nameWithType>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlControl.Style%2A>のスタイル プロパティを決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlSelect>コントロール。  
+  
+ [!code-aspx-csharp[Classic HtmlControl.Style Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlControl.Style Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlControl.Style Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlControl.Style Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.GetAttribute">
+      <MemberSignature Language="C#" Value="string IAttributeAccessor.GetAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IAttributeAccessor.GetAttribute(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.System#Web#UI#IAttributeAccessor#GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性名。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IAttributeAccessor.GetAttribute(System.String)" />」をご覧ください。</summary>
+        <returns>要素のこの属性の値を、<see cref="T:System.String" /> の値として返します。 指定された属性がこの要素に存在しない場合は、空の文字列 ("") を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.System%23Web%23UI%23IAttributeAccessor%23GetAttribute%2A> メソッドは <xref:System.Web.UI.HtmlControls.HtmlControl.GetAttribute%2A> メソッドを呼び出します。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.HtmlControls.HtmlControl> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.SetAttribute">
+      <MemberSignature Language="C#" Value="void IAttributeAccessor.SetAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IAttributeAccessor.SetAttribute(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlControl.System#Web#UI#IAttributeAccessor#SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定する属性名です。</param>
+        <param name="value">属性を設定する値。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IAttributeAccessor.SetAttribute(System.String,System.String)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.System%23Web%23UI%23IAttributeAccessor%23SetAttribute%2A> メソッドは <xref:System.Web.UI.HtmlControls.HtmlControl.SetAttribute%2A> メソッドを呼び出します。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.HtmlControls.HtmlControl> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagName">
+      <MemberSignature Language="C#" Value="public virtual string TagName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlControl.TagName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含むタグの要素の名前を取得、<see langword="runat=server" />属性と値のペア。</summary>
+        <value>指定したタグの要素名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、プログラムによって HTML サーバー コントロールの要素名を確認します。 たとえば、<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>サーバー側のプロパティ`<div id="myDiv" runat=server>`要素には、"div"の値が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>プロパティをプログラムでタグの要素名を確認します。  
+  
+ [!code-aspx-csharp[Classic HtmlControl.TagName Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlControl.TagName Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlControl.TagName Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlControl.TagName Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateIgnoresCase">
+      <MemberSignature Language="C#" Value="protected override bool ViewStateIgnoresCase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ViewStateIgnoresCase" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlControl.ViewStateIgnoresCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.HtmlControls.HtmlControl" />ビュー ステートが大文字小文字を区別します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlControl.ViewStateIgnoresCase%2A>プロパティの基本クラスのオーバーライド<xref:System.Web.UI.Control.ViewStateIgnoresCase%2A>常に返されるプロパティを`true`から継承されるコントロールを示す<xref:System.Web.UI.HtmlControls.HtmlControl>ケースを考慮せずにビュー ステートを保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,90 @@
+<Type Name="LikeOperator" FullName="Microsoft.VisualBasic.CompilerServices.LikeOperator">
+  <TypeSignature Language="C#" Value="public sealed class LikeOperator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LikeOperator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.LikeOperator" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このクラスは、Visual Basic コンパイラを使用して作業するヘルパーを提供、 [Like 演算子](~/docs/visual-basic/language-reference/operators/like-operator.md)です。 コードから直接呼び出されるものではありません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LikeObject">
+      <MemberSignature Language="C#" Value="public static object LikeObject (object Source, object Pattern, Microsoft.VisualBasic.CompareMethod CompareOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LikeObject(object Source, object Pattern, valuetype Microsoft.VisualBasic.CompareMethod CompareOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LikeOperator.LikeObject(System.Object,System.Object,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.Object" />
+        <Parameter Name="Pattern" Type="System.Object" />
+        <Parameter Name="CompareOption" Type="Microsoft.VisualBasic.CompareMethod" />
+      </Parameters>
+      <Docs>
+        <param name="Source">比較対象の文字列。</param>
+        <param name="Pattern">対象となる文字列<c>ソース</c>が比較されています。</param>
+        <param name="CompareOption">A<see cref="T:Microsoft.VisualBasic.CompareMethod" />テキストの比較を使用するかどうかを指定する列挙です。 場合<see cref="F:Microsoft.VisualBasic.CompareMethod.Text" />場合、このメソッドがテキストの比較です。 を使用して<see cref="F:Microsoft.VisualBasic.CompareMethod.Binary" />、このメソッドはバイナリ比較を使用します。</param>
+        <summary>指定された 2 つのオブジェクトのバイナリまたはテキストの文字列比較を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>A<see langword="Boolean" />文字列と一致しているかどうかを示す値。 返します<see langword="True" />文字列が一致する場合は、それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [Option Compare ステートメント](~/docs/visual-basic/language-reference/statements/option-compare-statement.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LikeString">
+      <MemberSignature Language="C#" Value="public static bool LikeString (string Source, string Pattern, Microsoft.VisualBasic.CompareMethod CompareOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool LikeString(string Source, string Pattern, valuetype Microsoft.VisualBasic.CompareMethod CompareOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.LikeOperator.LikeString(System.String,System.String,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.String" />
+        <Parameter Name="Pattern" Type="System.String" />
+        <Parameter Name="CompareOption" Type="Microsoft.VisualBasic.CompareMethod" />
+      </Parameters>
+      <Docs>
+        <param name="Source">比較対象の文字列。</param>
+        <param name="Pattern">対象となる文字列<c>ソース</c>が比較されています。</param>
+        <param name="CompareOption">A<see cref="T:Microsoft.VisualBasic.CompareMethod" />テキストの比較を使用するかどうかを指定する列挙です。 場合<see cref="F:Microsoft.VisualBasic.CompareMethod.Text" />場合、このメソッドがテキストの比較です。 を使用して<see cref="F:Microsoft.VisualBasic.CompareMethod.Binary" />、このメソッドはバイナリ比較を使用します。</param>
+        <summary>2 つの文字列を指定されたバイナリまたはテキストの文字列比較を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>A<see langword="Boolean" />文字列と一致しているかどうかを示す値。 返します<see langword="True" />文字列が一致する場合は、それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [Option Compare ステートメント](~/docs/visual-basic/language-reference/statements/option-compare-statement.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

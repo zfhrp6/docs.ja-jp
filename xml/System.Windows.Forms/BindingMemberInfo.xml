@@ -1,0 +1,269 @@
+<Type Name="BindingMemberInfo" FullName="System.Windows.Forms.BindingMemberInfo">
+  <TypeSignature Language="C#" Value="public struct BindingMemberInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit BindingMemberInfo extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BindingMemberInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>有効にする情報が含まれています、<see cref="T:System.Windows.Forms.Binding" />いずれかのプロパティは、オブジェクトまたはオブジェクトの一覧の現在のオブジェクトのプロパティにデータ バインドを解決するのには。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingMemberInfo>によって返される、<xref:System.Windows.Forms.Binding.BindingMemberInfo%2A>のプロパティ、<xref:System.Windows.Forms.Binding>クラスです。  
+  
+ <xref:System.Windows.Forms.BindingMemberInfo>に渡された文字列から作成された、<xref:System.Windows.Forms.BindingMemberInfo.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例の出力、 <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>、 <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>、<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>フォーム上の各コントロールです。  
+  
+ [!code-cpp[Classic BindingMemberInfo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingMemberInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingMemberInfo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingMemberInfo Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingMemberInfo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingMemberInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingMemberInfo (string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingMemberInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataMember">オブジェクトのプロパティまたはオブジェクトの一覧の現在のオブジェクトのプロパティのいずれかに解決されるナビゲーション パスです。</param>
+        <summary><see cref="T:System.Windows.Forms.BindingMemberInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.BindingMemberInfo>を呼び出すときに自動的に作成されて、<xref:System.Windows.Forms.BindingMemberInfo.%23ctor%2A>コントロール プロパティ名、データ ソース、およびナビゲーション パスを持つコンス トラクターです。 `dataMember`パラメーターが含まれる、<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingField">
+      <MemberSignature Language="C#" Value="public string BindingField { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BindingField" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingMemberInfo.BindingField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインドされたオブジェクトのプロパティ名を取得します。</summary>
+        <value>データ バインドされたオブジェクトのプロパティ名。 空の文字列を指定できます ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>によって返されるナビゲーション パスで検索する最後の項目は、<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティです。 たとえば、新しい<xref:System.Windows.Forms.Binding>作成時にが、 `dataMember` "Customers.custToOrders.OrderDate"のパラメーター <xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A> "OrderDate"が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingMemberInfo>それぞれの<xref:System.Windows.Forms.Binding>、フォーム、および印刷、 <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>、 <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>、および<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティの値を<xref:System.Windows.Forms.BindingMemberInfo>です。  
+  
+ [!code-cpp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingMember">
+      <MemberSignature Language="C#" Value="public string BindingMember { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BindingMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingMemberInfo.BindingMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインドされたオブジェクトのプロパティ名を指定するために使用される情報を取得します。</summary>
+        <value>空の文字列 ("")、1 つのプロパティ名、または最後のデータ バインドされたオブジェクトのプロパティ名に解決されるピリオド区切りのプロパティ名の階層です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.BindingMemberInfo>を呼び出すときに自動的に作成されて、<xref:System.Windows.Forms.BindingMemberInfo.%23ctor%2A>コントロール プロパティ名、データ ソース、およびナビゲーション パスを持つコンス トラクターです。 `dataMember`パラメーターが含まれる、<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>文字列。  
+  
+ <xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>期間 delimitated を組み合わせたものが、<xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>と<xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>値。 たとえば、新しい<xref:System.Windows.Forms.Binding>を使用して作成された、 `dataMember` "Customers.custToOrders.OrderDate"のパラメーター <xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A> "Customers.custToOrders.OrderDate"が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingMemberInfo>の各オブジェクト<xref:System.Windows.Forms.Binding>、フォーム、および印刷、 <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>、 <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>、および<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティの値を<xref:System.Windows.Forms.BindingMemberInfo>です。  
+  
+ [!code-cpp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingPath">
+      <MemberSignature Language="C#" Value="public string BindingPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BindingPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingMemberInfo.BindingPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ名、またはデータ バインドされたオブジェクトのプロパティ名の前に来る、ピリオド区切りのプロパティ名の階層を取得します。</summary>
+        <value>プロパティ名、またはデータ バインドされたオブジェクトのプロパティ名の前に来る、ピリオド区切りのプロパティ名の階層です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>名のプロパティの組み合わせを区切り、期間が登場する前に、<xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>によって返されるナビゲーション パスで、<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティです。 たとえば、新しい<xref:System.Windows.Forms.Binding>作成時にが、 `dataMember` "Customers.custToOrders.OrderDate"のパラメーター <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A> "Customers.custToOrders"が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingMemberInfo>それぞれの<xref:System.Windows.Forms.Binding>、フォーム、および印刷、 <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>、 <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>、および<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティの値を<xref:System.Windows.Forms.BindingMemberInfo>です。  
+  
+ [!code-cpp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingMemberInfo.BindingPath Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingMemberInfo.BindingPath Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object otherObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object otherObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingMemberInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="otherObject">等しいかどうかを比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、この <see cref="T:System.Windows.Forms.BindingMemberInfo" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="otherObject" />は、<see cref="T:System.Windows.Forms.BindingMemberInfo" />と<see cref="P:System.Windows.Forms.BindingMemberInfo.BindingMember" />文字列は、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>のカルチャ設定を文字列と比較する<xref:System.Globalization.CultureInfo.InvariantCulture%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingMemberInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.BindingMemberInfo" /> のハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.Windows.Forms.BindingMemberInfo" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Forms.BindingMemberInfo a, System.Windows.Forms.BindingMemberInfo b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Forms.BindingMemberInfo a, valuetype System.Windows.Forms.BindingMemberInfo b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingMemberInfo.op_Equality(System.Windows.Forms.BindingMemberInfo,System.Windows.Forms.BindingMemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Windows.Forms.BindingMemberInfo" />
+        <Parameter Name="b" Type="System.Windows.Forms.BindingMemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="a">最初の<see cref="T:System.Windows.Forms.BindingMemberInfo" />等しいかどうかを比較します。</param>
+        <param name="b">2 番目<see cref="T:System.Windows.Forms.BindingMemberInfo" />等しいかどうかを比較します。</param>
+        <summary>2 つの <see cref="T:System.Windows.Forms.BindingMemberInfo" /> オブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.BindingMemberInfo.BindingMember" />文字列<paramref name="a" />と<paramref name="b" />と同じです。 それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Forms.BindingMemberInfo.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Forms.BindingMemberInfo a, System.Windows.Forms.BindingMemberInfo b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Forms.BindingMemberInfo a, valuetype System.Windows.Forms.BindingMemberInfo b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingMemberInfo.op_Inequality(System.Windows.Forms.BindingMemberInfo,System.Windows.Forms.BindingMemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Windows.Forms.BindingMemberInfo" />
+        <Parameter Name="b" Type="System.Windows.Forms.BindingMemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="a">最初の<see cref="T:System.Windows.Forms.BindingMemberInfo" />非等値を比較します。</param>
+        <param name="b">2 番目<see cref="T:System.Windows.Forms.BindingMemberInfo" />非等値を比較します。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Windows.Forms.BindingMemberInfo" />オブジェクトが等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.BindingMemberInfo.BindingMember" />文字列<paramref name="a" />と<paramref name="b" />が等しくない。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Forms.BindingMemberInfo.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

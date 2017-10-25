@@ -1,0 +1,233 @@
+<Type Name="FileShare" FullName="System.IO.FileShare">
+  <TypeSignature Language="C#" Value="public enum FileShare" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed FileShare extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileShare" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その他のアクセスの種類を制御するための定数が含まれます<see cref="T:System.IO.FileStream" />オブジェクトが同じファイルを持つことができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルを作成し、テキスト ファイルへの書き込みの例は、次を参照してください。[する方法: テキスト ファイルを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)です。 ファイルからテキストの読み取りの例は、次を参照してください。[する方法: テキスト ファイルからの読み取り](~/docs/standard/io/how-to-read-text-from-a-file.md)です。 読み取りと書き込み、バイナリ ファイルの例は、次を参照してください。[する方法: 新しく作成されたデータ ファイルに読み書き](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)です。  
+  
+ この列挙体の一般的な使用では、2 つのプロセスを同時に同じファイルから読み取れるかどうかを定義します。 たとえば、ファイルを開く、読み取りが指定されている場合は、他のユーザーは読み取りも書き込みでないも、ファイルを開くことができます。  
+  
+ A<xref:System.IO.FileShare.Read>一部のコンス トラクターのパラメーターが指定されて<xref:System.IO.FileStream>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>、および一部の`Open`のメソッド<xref:System.IO.File>と<xref:System.IO.FileInfo>ファイルを開く方法を制御します。  
+  
+   
+  
+## Examples  
+ 次<xref:System.IO.FileStream>コンス トラクターが、既存のファイルを開き、(読み取り) の他のユーザーに読み取り専用のアクセスを付与します。  
+  
+ [!code-cpp[Classic FileAccess Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileAccess Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileAccess Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileAccess Example/CS/source.cs#1)]
+ [!code-vb[Classic FileAccess Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileAccess Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare Delete = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その後のファイルの削除を許可します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inheritable">
+      <MemberSignature Language="C#" Value="Inheritable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare Inheritable = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.Inheritable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル ハンドルを子プロセスで継承可能なやすきます。 これは Win32 では直接サポートされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のファイルの共有を解除します。 すべての要求 (このプロセスまたは別のプロセスがファイルを開くには、ファイルが閉じられるまで失敗します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare Read = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、後続の読み取り用にファイルを開く。 このフラグが指定されていない場合、ファイルが閉じられるまでを読み取り用にファイルを開きます (このプロセスまたは別のプロセスがすべての要求は失敗します。 ただし、場合でも、このフラグを指定すると、追加のアクセス許可もに必要なファイルにアクセスします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWrite">
+      <MemberSignature Language="C#" Value="ReadWrite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare ReadWrite = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.ReadWrite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの読み取りまたは書き込み用の後続開くことを許可します。 このフラグが指定されていない場合、ファイルが閉じられるまでの読み取りまたは書き込み (このプロセスまたは別のプロセスがファイルを開く要求は失敗します。 ただし、場合でも、このフラグを指定すると、追加のアクセス許可もに必要なファイルにアクセスします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="Write" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.FileShare Write = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.FileShare.Write" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileShare</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、後続の書き込み用にファイルを開く。 このフラグが指定されていない場合、ファイルが閉じられるまで (このプロセスまたは別のプロセス) を書き込み用にファイルを開く要求は失敗します。 ただし、場合でも、このフラグを指定すると、追加のアクセス許可もに必要なファイルにアクセスします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

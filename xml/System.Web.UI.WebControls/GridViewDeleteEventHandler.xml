@@ -1,0 +1,47 @@
+<Type Name="GridViewDeleteEventHandler" FullName="System.Web.UI.WebControls.GridViewDeleteEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void GridViewDeleteEventHandler(object sender, GridViewDeleteEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridViewDeleteEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewDeleteEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.GridViewDeleteEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.WebControls.GridViewDeleteEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.GridView.RowDeleting" />のイベント、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>制御を発生させます、<xref:System.Web.UI.WebControls.GridView.RowDeleting>イベントと削除 ボタン (ボタンをその`CommandName`プロパティが"Delete"に設定) をクリックすると、その前に、<xref:System.Web.UI.WebControls.GridView>コントロールには、レコードが削除されます。 これにより、このイベントが発生するたびに、削除操作の取り消しなどのカスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewDeleteEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewDeleteEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowDeleting>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewDeleteEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewDeleteEventHandler/CS/gridviewdeleteeventhandlercs.aspx#1)]
+ [!code-aspx-vb[GridViewDeleteEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewDeleteEventHandler/VB/gridviewdeleteeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewDeleteEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowDeleting>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewRowDeleting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowDeleting/CS/gridviewrowdeleting.aspx#1)]
+ [!code-aspx-vb[GridViewRowDeleting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowDeleting/VB/gridviewrowdeleting.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

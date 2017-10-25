@@ -1,0 +1,314 @@
+<Type Name="SoapElementAttribute" FullName="System.Xml.Serialization.SoapElementAttribute">
+  <TypeSignature Language="C#" Value="public class SoapElementAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapElementAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapElementAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パブリック メンバーの値がによってシリアル化できることを指定します、<see cref="T:System.Xml.Serialization.XmlSerializer" />でエンコードされた SOAP XML 要素として。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapElementAttribute>を制御する属性のファミリに属しているクラスが、どのように<xref:System.Xml.Serialization.XmlSerializer>でエンコードされた SOAP XML としてオブジェクトを逆シリアル化またはシリアル化します。 結果の XML は、World Wide Web Consortium) (www.w3.org) ドキュメント、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」のセクション 5 に準拠します。 類似する属性の一覧については、次を参照してください。[でエンコードされた SOAP シリアル化を制御する属性](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)です。  
+  
+ エンコードされた SOAP メッセージとしてオブジェクトをシリアル化、構築する必要があります、<xref:System.Xml.Serialization.XmlSerializer>を使用して、<xref:System.Xml.Serialization.XmlTypeMapping>で作成された、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapReflectionImporter>クラスです。  
+  
+ 適用、<xref:System.Xml.Serialization.SoapElementAttribute>パブリック フィールドを送信するために、<xref:System.Xml.Serialization.XmlSerializer>をエンコードされた SOAP XML 要素としてフィールドをシリアル化します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapElementAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapElementAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.SoapElementAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapElementAttribute (string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapElementAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">シリアル化されたメンバーの XML 要素名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapElementAttribute" />クラスし、XML 要素の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public string DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapElementAttribute.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または生成された XML 要素の XML スキーマ定義言語 (XSD) データ型を設定します。</summary>
+        <value>XML スキーマ データ型の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、.NET の同等の XML スキーマの単純なデータ型を一覧表示します。  
+  
+ XML スキーマの`base64Binary`と`hexBinary`データ型の配列を使用して<xref:System.Byte>構造体、および適用、<xref:System.Xml.Serialization.SoapElementAttribute>で、 <xref:System.Xml.Serialization.SoapAttributeAttribute.DataType%2A> "base64Binary"または"hexBinary"、適切に設定します。 XML スキーマの`time`と`date`データ型を使用して、<xref:System.DateTime>入力し、適用、<xref:System.Xml.Serialization.SoapElementAttribute>で、 <xref:System.Xml.Serialization.SoapElementAttribute.DataType%2A> "date"または"time"に設定します。  
+  
+ 文字列にマップされているすべての XML スキーマ データ型には、適用、<xref:System.Xml.Serialization.SoapElementAttribute>でその<xref:System.Xml.Serialization.SoapElementAttribute.DataType%2A>プロパティを XML スキーマ型に設定します。 このメンバーのスキーマだけであり、シリアル化形式は変更されないことに注意してください。  
+  
+> [!NOTE]
+>  プロパティでは、XML スキーマ データ型の 1 つに正確に設定する必要があるため、大文字小文字を区別します。  
+  
+> [!NOTE]
+>  要素は XML としてバイナリ データを渡すことは、XML 属性として渡すことよりも効率的です。  
+  
+ XML データ型の詳細については、World Wide Web Consortium) (www.w3.org) ドキュメント、「XML スキーマ パート 2:: データ型」を参照してください。  
+  
+|XSD データ型|.NET データ型|  
+|-------------------|--------------------|  
+|anyURI|<xref:System.String>|  
+|base64Binary|配列<xref:System.Byte>オブジェクト|  
+|boolean|<xref:System.Boolean>|  
+|byte|<xref:System.SByte>|  
+|date|<xref:System.DateTime>|  
+|dateTime|<xref:System.DateTime>|  
+|decimal|<xref:System.Decimal>|  
+|double|<xref:System.Double>|  
+|ENTITY|<xref:System.String>|  
+|エンティティ|<xref:System.String>|  
+|フローティング|<xref:System.Single>|  
+|gDay|<xref:System.String>|  
+|gMonth|<xref:System.String>|  
+|gMonthDay|<xref:System.String>|  
+|gYear|<xref:System.String>|  
+|gYearMonth|<xref:System.String>|  
+|hexBinary|配列<xref:System.Byte>オブジェクト|  
+|ID|<xref:System.String>|  
+|IDREF|<xref:System.String>|  
+|IDREFS|<xref:System.String>|  
+|int|<xref:System.Int32>|  
+|整数|<xref:System.String>|  
+|language|<xref:System.String>|  
+|long|<xref:System.Int64>|  
+|名前|<xref:System.String>|  
+|NCName|<xref:System.String>|  
+|negativeInteger|<xref:System.String>|  
+|NMTOKEN|<xref:System.String>|  
+|NMTOKENS|<xref:System.String>|  
+|normalizedString|<xref:System.String>|  
+|nonNegativeInteger|<xref:System.String>|  
+|nonPositiveInteger|<xref:System.String>|  
+|NOTATION|<xref:System.String>|  
+|positiveInteger|<xref:System.String>|  
+|QName|<xref:System.Xml.XmlQualifiedName>|  
+|duration|<xref:System.String>|  
+|string|<xref:System.String>|  
+|short|<xref:System.Int16>|  
+|時間|<xref:System.DateTime>|  
+|token|<xref:System.String>|  
+|unsignedByte|<xref:System.Byte>|  
+|unsignedInt|<xref:System.UInt32>|  
+|unsignedLong|<xref:System.UInt64>|  
+|unsignedShort|<xref:System.UInt16>|  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementName">
+      <MemberSignature Language="C#" Value="public string ElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapElementAttribute.ElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または生成された XML 要素の名前を設定します。</summary>
+        <value>生成された XML 要素の名前。 既定値は、メンバー識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapElementAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Xml.Serialization.XmlSerializer" />を持つメンバーをシリアル化する必要があります、<see langword="xsi:null" />属性が「1」に設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Xml.Serialization.XmlSerializer" />生成、<see langword="xsi:null" />属性です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造の XML スキーマの仕様では、要素のコンテンツが不足していることを明示的に通知する、XML ドキュメントを許可します。 このような要素には、属性が含まれています。 `xsi:null` "1"に設定します。 詳細については、「XML スキーマの一部の 1:: 構造」をという名前の World Wide Web Consortium) (www.w3.org) 仕様を参照してください。  
+  
+ 場合、<xref:System.Xml.Serialization.SoapElementAttribute.IsNullable%2A>プロパティに設定されている`true`、`xsi:null`に設定されているクラスのメンバーの属性が生成された`null`です。 たとえば、という名前のフィールドを設定する場合`MyStringArray`に`null`、<xref:System.Xml.Serialization.XmlSerializer>次の XML コードが生成されます。  
+  
+```  
+<MyStringArray xsi:null = "1" />  
+```  
+  
+ 場合、<xref:System.Xml.Serialization.XmlElementAttribute.IsNullable%2A>プロパティは`false`、XML 要素は生成されません。  
+  
+> [!NOTE]
+>  適用することはできません、<xref:System.Xml.Serialization.XmlElementAttribute.IsNullable%2A>メンバーにプロパティが値型として型指定された値の型を含めることはできませんので`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

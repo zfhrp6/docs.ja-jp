@@ -1,0 +1,81 @@
+<Type Name="ServiceInstallerDialogResult" FullName="System.ServiceProcess.Design.ServiceInstallerDialogResult">
+  <TypeSignature Language="C#" Value="public enum ServiceInstallerDialogResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceInstallerDialogResult extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.Design.ServiceInstallerDialogResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>戻り値を指定します、<see cref="T:System.ServiceProcess.Design.ServiceInstallerDialog" />フォーム。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.Design.ServiceInstallerDialog.Result%2A?displayProperty=nameWithType>プロパティでは、この列挙体を使用して、ダイアログ ボックスにユーザーの応答を示します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.Design.ServiceInstallerDialog>サービスのインストール アカウントのユーザーに確認します。  
+  
+ [!code-cpp[ServiceInstallConfig#1](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceInstallConfig/CPP/source.cpp#1)]
+ [!code-csharp[ServiceInstallConfig#1](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceInstallConfig/CS/source.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Canceled">
+      <MemberSignature Language="C#" Value="Canceled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.Design.ServiceInstallerDialogResult Canceled = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.Design.ServiceInstallerDialogResult.Canceled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.Design.ServiceInstallerDialogResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログの戻り値は<see langword="Canceled" />します。 通常、この値は、ユーザーがアカウント フィールドを設定せずにダイアログを取り消したことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OK">
+      <MemberSignature Language="C#" Value="OK" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.Design.ServiceInstallerDialogResult OK = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.Design.ServiceInstallerDialogResult.OK" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.Design.ServiceInstallerDialogResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログの戻り値は<see langword="OK" />します。 この値は、ユーザーがアカウントのプロパティを確認し、押されているに通常を示します、<see langword="OK" />ダイアログを閉じるボタンをクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSystem">
+      <MemberSignature Language="C#" Value="UseSystem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.Design.ServiceInstallerDialogResult UseSystem = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.Design.ServiceInstallerDialogResult.UseSystem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.Design.ServiceInstallerDialogResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー アカウントではなく、システム アカウントでサービスをインストールします。 通常、この値は、ダイアログがユーザーに表示されなかったことを示します。 たとえば、<see cref="P:System.ServiceProcess.ServiceProcessInstaller.Account" />以外のプロパティが値に設定<see langword="User" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

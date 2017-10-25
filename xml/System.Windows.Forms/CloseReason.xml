@@ -1,0 +1,137 @@
+<Type Name="CloseReason" FullName="System.Windows.Forms.CloseReason">
+  <TypeSignature Language="C#" Value="public enum CloseReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CloseReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CloseReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>フォームを終了した理由を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Form.FormClosing>と<xref:System.Windows.Forms.Form.FormClosed>イベントが発生するときに、<xref:System.Windows.Forms.Form>が閉じられる、ユーザーの操作によって、またはプログラムによってです。 これらのイベント ハンドラーは、型のパラメーターを受け取る<xref:System.Windows.Forms.FormClosingEventArgs>と<xref:System.Windows.Forms.FormClosedEventArgs>、それぞれします。 これらのイベント引数クラスの両方を使用して、<xref:System.Windows.Forms.CloseReason>列挙します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationExitCall">
+      <MemberSignature Language="C#" Value="ApplicationExitCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason ApplicationExitCall = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.ApplicationExitCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Windows.Forms.Application.Exit" />のメソッド、<see cref="T:System.Windows.Forms.Application" />クラスが呼び出されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FormOwnerClosing">
+      <MemberSignature Language="C#" Value="FormOwnerClosing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason FormOwnerClosing = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.FormOwnerClosing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>所有者のフォームを閉じています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MdiFormClosing">
+      <MemberSignature Language="C#" Value="MdiFormClosing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason MdiFormClosing = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.MdiFormClosing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このマルチ ドキュメント インターフェイス (MDI) フォームの親フォームを閉じています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クロージャの原因が定義されていないかを特定できませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskManagerClosing">
+      <MemberSignature Language="C#" Value="TaskManagerClosing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason TaskManagerClosing = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.TaskManagerClosing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Windows タスク マネージャーは、アプリケーションを終了しています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserClosing">
+      <MemberSignature Language="C#" Value="UserClosing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason UserClosing = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.UserClosing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが終了ユーザー インターフェイス (UI) によるフォームなどをクリックして、**閉じる**フォーム ウィンドウで、ボタンを選択すると**閉じる**ウィンドウのコントロールのメニューのまたは alt キーを押しながら F4 キーを押してからです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsShutDown">
+      <MemberSignature Language="C#" Value="WindowsShutDown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.CloseReason WindowsShutDown = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CloseReason.WindowsShutDown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムがシャット ダウンする前にすべてのアプリケーションを終了します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

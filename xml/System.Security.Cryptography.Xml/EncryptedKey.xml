@@ -1,0 +1,322 @@
+<Type Name="EncryptedKey" FullName="System.Security.Cryptography.Xml.EncryptedKey">
+  <TypeSignature Language="C#" Value="public sealed class EncryptedKey : System.Security.Cryptography.Xml.EncryptedType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EncryptedKey extends System.Security.Cryptography.Xml.EncryptedType" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.EncryptedKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.EncryptedType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;EncryptedKey&gt;" /> XML 暗号化要素です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを表します、 `<EncryptedKey>` XML 暗号化要素です。 `<EncryptedKey>`要素は暗号化キーの送信に使用します。 スタンドアロンの XML ドキュメント内に作成できます、アプリケーション、ドキュメント内に配置するかの中に、`<EncryptedData>`の子要素として、`<KeyInfo>`要素。 キーの値は、受信者に必ず暗号化されます。 ときに`<EncryptedKey>`は復号化されたキーが使用される、`<EncryptionMethod>`せず、追加の処理アルゴリズムです。  
+  
+ `<EncryptedKey>`要素がに似ていますが、`<EncryptedData>`の要素、<xref:System.Security.Cryptography.Xml.EncryptedData>クラスのデータの暗号化は、キーの値では常にする点を除いて。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 XML 暗号化の規格の詳細については、XML Encryption Syntax and Processing http://www.w3.org/TR/xmlenc-core/ ドキュメントを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddReference">
+      <MemberSignature Language="C#" Value="public void AddReference (System.Security.Cryptography.Xml.DataReference dataReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddReference(class System.Security.Cryptography.Xml.DataReference dataReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedKey.AddReference(System.Security.Cryptography.Xml.DataReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataReference" Type="System.Security.Cryptography.Xml.DataReference" />
+      </Parameters>
+      <Docs>
+        <param name="dataReference">A<see cref="T:System.Security.Cryptography.Xml.DataReference" />に追加するオブジェクト、<see cref="P:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList" />プロパティです。</param>
+        <summary>追加、<see langword="&lt;DataReference&gt;" />要素を<see langword="&lt;ReferenceList&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追加、<xref:System.Security.Cryptography.Xml.DataReference>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList%2A>のプロパティ、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクト。 `<DataReference>`要素がで指定されたキーを使用して暗号化された暗号化されたデータを指す、`<EncryptedKey>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddReference">
+      <MemberSignature Language="C#" Value="public void AddReference (System.Security.Cryptography.Xml.KeyReference keyReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddReference(class System.Security.Cryptography.Xml.KeyReference keyReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedKey.AddReference(System.Security.Cryptography.Xml.KeyReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyReference" Type="System.Security.Cryptography.Xml.KeyReference" />
+      </Parameters>
+      <Docs>
+        <param name="keyReference">A<see cref="T:System.Security.Cryptography.Xml.KeyReference" />に追加するオブジェクト、<see cref="P:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList" />プロパティです。</param>
+        <summary>追加、<see langword="&lt;KeyReference&gt;" />要素を<see langword="&lt;ReferenceList&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを追加する<xref:System.Security.Cryptography.Xml.KeyReference>オブジェクトを<xref:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList%2A>のプロパティ、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクト。 `<KeyReference>`要素で指定されたキーを使用して暗号化された暗号化キーを指します、`<EncryptedKey>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CarriedKeyName">
+      <MemberSignature Language="C#" Value="public string CarriedKeyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CarriedKeyName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedKey.CarriedKeyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能な設定を取得または<see langword="&lt;CarriedKeyName&gt;" />XML 暗号化要素です。</summary>
+        <value>キーの値の名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<CarriedKeyName>`要素が省略可能な要素をキー値を持つユーザーが判読できる名前を関連付けます。 キーを使用して、参照する、この名前を使用してできます、`<KeyName>`内の要素、`<KeyInfo>`要素。 同じ`<CarriedKeyName>`ID の値とは異なり、要素の値が 1 つのドキュメント内で複数回を発生できます。 キーの値はすべて同じである必要があります`<EncryptedKey>`要素が同じで識別される`<CarriedKeyName>`XML ドキュメント内の名前。 空白は、の値で重要なため、`<KeyName>`要素の空白文字は、またの値で重要な`<CarriedKeyName>`要素。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedKey.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />オブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />を表す、 <see langword="&lt;EncryptedKey&gt;" /> XML 暗号化要素です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、出力、 `<EncryptedKey>` XML 内の要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public override void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedKey.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />に使用する XML 要素を表す、<see langword="&lt;EncryptedKey&gt;" />要素。</param>
+        <summary>指定した XML 情報の読み込み、 <see langword="&lt;EncryptedKey&gt;" /> XML 暗号化要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用してに既存の XML 要素を読み込み、`<EncryptedKey>`要素によって表されます、<xref:System.Security.Cryptography.Xml.EncryptedData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />パラメーターが含まれていない、<see cref="T:System.Security.Cryptography.Xml.CipherData" />要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Recipient">
+      <MemberSignature Language="C#" Value="public string Recipient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Recipient" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedKey.Recipient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能な設定を取得または<see langword="Recipient" />XML 暗号化の属性です。</summary>
+        <value>値を表す文字列、<see langword="Recipient" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<Recipient>`属性は、この暗号化されたキーの値は、どの受信者に関する情報を含む省略可能な属性です。 内容は、依存するアプリケーションです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceList">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.ReferenceList ReferenceList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Xml.ReferenceList ReferenceList" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.ReferenceList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="&lt;ReferenceList&gt;" /> XML 暗号化要素です。</summary>
+        <value><see cref="T:System.Security.Cryptography.Xml.ReferenceList" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<ReferenceList>`要素は、データとキーを使用して暗号化されたキーへのポインターを含む省略可能な要素です。 参照リストに複数の参照を含めることができます、`<EncryptedKey>`と`<EncryptedData>`要素を使用して、`<KeyReference>`と`<DataReference>`要素それぞれします。  
+  
+   
+  
+## Examples  
+ 次の例を使用して XML 要素を暗号化/暗号化解除する方法を示しています、<xref:System.Security.Cryptography.Xml.EncryptedKey>クラスです。 この例は、さまざまなプロパティの値を表示、<xref:System.Security.Cryptography.Xml.EncryptedKey>コンソールへのクラスです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/cs/example.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.EncryptedKey/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

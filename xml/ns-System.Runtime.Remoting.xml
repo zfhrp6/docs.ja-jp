@@ -1,0 +1,20 @@
+<Namespace Name="System.Runtime.Remoting">
+  <Docs>
+    <summary><see cref="N:System.Runtime.Remoting" /> 名前空間では、開発者が分散アプリケーションを作成したり構成したりできるクラスとインターフェイスが用意されています。 <see cref="N:System.Runtime.Remoting" /> 名前空間のクラスの中で重要なのは、<see cref="T:System.Runtime.Remoting.RemotingConfiguration" /> クラス、<see cref="T:System.Runtime.Remoting.RemotingServices" /> クラス、<see cref="T:System.Runtime.Remoting.ObjRef" /> クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.RemotingConfiguration>クラスには、構成設定とのやり取りのための静的メソッドが含まれています。 <xref:System.Runtime.Remoting.RemotingConfiguration.Configure%2A?displayProperty=nameWithType>メソッドにより、開発者が XML 形式の構成ファイルを使用して、リモート処理インフラストラクチャを構成します。 <xref:System.Runtime.Remoting.RemotingConfiguration>クラスは、クライアントのクライアント側およびサーバー側の登録のためのいくつかのメソッドも含まれています。 および、server にライセンス認証オブジェクトで、サーバー上に存在します。  
+  
+ <xref:System.Runtime.Remoting.RemotingServices>クラスには、多数の使用およびリモート オブジェクトを公開するのに役立つメソッドが用意されています。 <xref:System.Runtime.Remoting.RemotingServices.Marshal%2A?displayProperty=nameWithType>メソッドは、アクティブ化して、リモート オブジェクトのインスタンスとの通信に必要なすべての関連情報を格納するための機能を提供、<xref:System.Runtime.Remoting.ObjRef>以降のシリアル化およびリモートの場所に送信するためのクラスです。 <xref:System.Runtime.Remoting.RemotingServices.Unmarshal%2A?displayProperty=nameWithType>メソッドが任意のリモート処理の目盛りに関係なく、アプリケーションで使用できるリモート オブジェクトのプロキシを作成する、このプロセスを反転します。  
+  
+ <xref:System.Runtime.Remoting.ObjRef>クラスをアクティブ化して、リモート オブジェクトとの通信に必要なすべての関連情報を保持します。 このクラスはマーシャ リングがない、チャネルを使用してリモートの場所に送信されるオブジェクトのシリアル化可能な表現 (を参照してください<xref:System.Runtime.Remoting.RemotingServices.Unmarshal%2A>) リモート オブジェクトのローカル プロキシを作成するために使用できます。  
+  
+> [!NOTE]
+>  参照渡しのマーシャ リング オブジェクト (Mbr) に存在しないメモリ永久にします。 代わりに、型がオーバーライドしない限り<xref:System.MarshalByRefObject.InitializeLifetimeService%2A?displayProperty=nameWithType>を独自の有効期間ポリシーを制御するには、各 MBR が有限の存続期間、.NET Framework リモート処理システムは、削除して、メモリを再利用のプロセスを開始する前にします。 詳細については、次を参照してください。[有効期間リース](https://msdn.microsoft.com/library/23bk23zc.aspx)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

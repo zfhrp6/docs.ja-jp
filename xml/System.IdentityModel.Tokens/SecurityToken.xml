@@ -1,0 +1,377 @@
+<Type Name="SecurityToken" FullName="System.IdentityModel.Tokens.SecurityToken">
+  <TypeSignature Language="C#" Value="public abstract class SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityToken extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのセキュリティ トークンを実装するために使用される基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ トークンを使用して、認証資格情報を提供するか、メッセージを保護します。  
+  
+ セキュリティ トークン認証の資格情報暗号化のキー マテリアルを提供するために使用したり、セキュリティ トークン サービス (STS) のサブジェクトに関するクレームのコレクションによって発行されたセキュリティ トークンの場合。 派生してすべてのセキュリティ トークン、<xref:System.IdentityModel.Tokens.SecurityToken>クラスです。  
+  
+ .NET 4.5 以降、Windows Identity Foundation (WIF) は、.NET Framework に完全に統合されて、WIF によって公開されるクラス、お勧めの方法で処理、コード内のセキュリティ トークン。 表現でありはから派生したクラスを使用して、検証、XML からと、WIF でセキュリティ トークンのシリアル化および逆シリアル、<xref:System.IdentityModel.Tokens.SecurityTokenHandler>基本クラスです。 トークンが有効であることを確認だけでなくも返すこの際にトークンを検証する、<xref:System.Security.Claims.ClaimsIdentity>認証と承認の判断に使用できるトークンからのインスタンス。 <xref:System.Security.Claims.ClaimsIdentity>のトークン ハンドラーの実装によって構築された、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>トークンに内在する要求から発生もそれ自体を型として、トークンに含まれる要求からのメソッドです。  
+  
+ WIF は、次の種類のセキュリティ トークンのサポートに付属します。  
+  
+-   <xref:System.IdentityModel.Tokens.Saml2SecurityToken>: SAML 2.0 アサーションに基づくセキュリティ トークンを表します。 通常、このトークンの種類は、Ws-trust、Ws-federation またはセキュリティ トークン要求 (RST) への応答でセキュリティ トークン サービスによって発行されます。  
+  
+-   <xref:System.IdentityModel.Tokens.SamlSecurityToken>: SAML 1.1 アサーションに基づくセキュリティ トークンを表します。 通常、このトークンの種類は、Ws-trust、Ws-federation またはセキュリティ トークン要求 (RST) への応答でセキュリティ トークン サービスによって発行されます。  
+  
+-   <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken><xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken>: が受信または SOAP メッセージで送信された Kerberos チケットに基づくセキュリティ トークンを表します  
+  
+-   <xref:System.IdentityModel.Tokens.RsaSecurityToken>: RSA アルゴリズムを使用して作成されるキーに基づいているセキュリティ トークンを表します。  
+  
+-   <xref:System.IdentityModel.Tokens.SessionSecurityToken>: セッションに関する情報が含まれるセキュリティ トークンを表します。  
+  
+-   <xref:System.IdentityModel.Tokens.UserNameSecurityToken>: ユーザー名とパスワードに基づくセキュリティ トークンを表します。  
+  
+-   <xref:System.IdentityModel.Tokens.WindowsSecurityToken>: Windows ドメインまたはユーザー アカウントの id に基づいているセキュリティ トークンを表します。  
+  
+-   <xref:System.IdentityModel.Tokens.X509SecurityToken>: X.509 証明書に基づくセキュリティ トークンを表します。  
+  
+-   <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken>: Windows ドメイン ユーザーまたはローカル コンピューターのユーザー アカウントにマップされている X.509 証明書に基づいているセキュリティ トークンを表します。  
+  
+ 2 つのセキュリティ トークン クラス、<xref:System.IdentityModel.Tokens.GenericXmlSecurityToken>と<xref:System.IdentityModel.Tokens.EncryptedSecurityToken>、一般的なケースを処理するために使用できます。  
+  
+ 大まかに言うとセキュリティ トークンは次の 3 つの主要なカテゴリに分類されます。  
+  
+-   実行するか、暗号化を参照するトークンのキー マテリアルします。 たとえば、<xref:System.IdentityModel.Tokens.RsaSecurityToken>と<xref:System.IdentityModel.Tokens.X509SecurityToken>型がこの目的に使用される多くの場合。  
+  
+-   既に認証済みユーザーの資格情報を表すトークンです。 たとえば、 <xref:System.IdentityModel.Tokens.UserNameSecurityToken>、 <xref:System.IdentityModel.Tokens.WindowsSecurityToken>、および証明書を使用して認証されたユーザーの場合は、<xref:System.IdentityModel.Tokens.X509SecurityToken>型です。  
+  
+-   Ws-trust または Ws-federation プロトコルを使用して、セキュリティ トークン要求に応答するセキュリティ トークン サービス (STS) によって発行されるトークン。 これらは通常で返されます、 `wst:RequestSecurityTokenResponse` XML フラグメントです。 <xref:System.IdentityModel.Tokens.Saml2SecurityToken>と<xref:System.IdentityModel.Tokens.SamlSecurityToken>型は、これらのトークンを表す最もよく使用されます。  
+  
+ 特別なトークンの種類、<xref:System.IdentityModel.Tokens.SessionSecurityToken>セッションをアクティブまたはパッシブのシナリオで使用する場合は、プリンシパルを再作成に必要な情報が含まれています。  
+  
+ 既存のトークンの種類に機能を追加するには、トークンに追加する新しい要素をサポートするには、特定の種類とその関連付けられたトークン ハンドラーから派生できます。 新しいトークンの種類のサポートを追加するから直接派生させることができます、<xref:System.IdentityModel.Tokens.SecurityToken>クラスです。 これを行うときにから派生することによってトークン ハンドラー クラスを作成する必要がありますする、<xref:System.IdentityModel.Tokens.SecurityTokenHandler>クラスです。 によってどのように、トークンを使用して、する必要がありますもから派生することによって、カスタムのトークン リゾルバーを作成する、<xref:System.IdentityModel.Tokens.IssuerTokenResolver>から派生することによっても、1 つ以上のカスタムのキー識別子句型をクラス、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>クラスです。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.Tokens.SecurityToken>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 実装が含まれている、`SimpleWebToken`クラスおよび`SimpleWebTokenHandler`SWT トークンをサポートするその他のクラスと同様に、クラスです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードの実装を示しています、`SimpleWebToken`クラスです。 このクラスは拡張<xref:System.IdentityModel.Tokens.SecurityToken>です。  
+  
+ [!code-csharp[WifCustomTokenST#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtokenconstants.cs#1)]  
+[!code-csharp[WifCustomTokenST#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>オーバーライドする必要があります、 <see cref="P:System.IdentityModel.Tokens.SecurityToken.Id" />、 <see cref="P:System.IdentityModel.Tokens.SecurityToken.SecurityKeys" />、 <see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" />、および<see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" />プロパティです。 <see cref="M:System.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1" />、 <see cref="M:System.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1" />、 <see cref="M:System.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />、および<see cref="M:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />メソッドはすべての種類のキー識別子をサポートする<see cref="T:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause" />です。 派生クラスで他のキー識別子の型をサポートするためにこれらのメソッドをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityToken.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために派生クラスのコンス トラクターによって呼び出される、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual bool CanCreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanCreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>このセキュリティ トークンが、指定したキー識別子を作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> の型が <paramref name="T" /> の場合は <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause%2A> メソッドを使用して、セキュリティ トークンが特定のキー識別子を作成できるかどうかを決定します。 キー識別子を作成するには、<xref:System.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause%2A> メソッドを呼び出します。  
+  
+ 既定の実装は、型のキー識別句をサポートしている<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual T CreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T CreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>指定したキー識別句を作成します。</summary>
+        <returns>セキュリティ トークンのキー識別子句である <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause%2A> メソッドを使用して、セキュリティ トークンが特定のキー識別子を作成できるかどうかを決定します。 キー識別子を作成するには、<xref:System.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause%2A> メソッドを呼び出します。  
+  
+ 既定の実装は、型のキー識別句をサポートしている<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause>です。 場合、型のキー識別子句<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause>作成することはできません、<xref:System.NotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public abstract string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンの一意の識別子を取得します。</summary>
+        <value>セキュリティ トークンの一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、セキュリティ トークンが XML にシリアル化されるときに、セキュリティ トークンの `Id` 属性に、<xref:System.IdentityModel.Tokens.SecurityToken.Id%2A> プロパティの値が設定されます。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.Tokens.SecurityToken>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 実装が含まれている、`SimpleWebToken`クラスおよび`SimpleWebTokenHandler`SWT トークンをサポートするその他のクラスと同様に、クラスです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのオーバーライドを示しています、<xref:System.IdentityModel.Tokens.SecurityToken.Id%2A>プロパティです。  
+  
+ [!code-csharp[WifCustomTokenST#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtokenconstants.cs#1)]  
+[!code-csharp[WifCustomTokenST#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#3)]  
+[!code-csharp[WifCustomTokenST#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする必要があります、<see cref="P:System.IdentityModel.Tokens.SecurityToken.Id" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual bool MatchesKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MatchesKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="skiClause">To be added.</param>
+        <summary>このインスタンスのキー識別子を指定したキー識別子に解決できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="skiClause" /> で <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> プロパティと同じ一意の識別子を保持している場合は <see cref="P:System.IdentityModel.Tokens.SecurityToken.Id" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、型のキー識別句をサポートしています。<xref:System.IdentityModel.Tokens.LocalIdKeyIdentifierClause>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityKey ResolveKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKey ResolveKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="skiClause">To be added.</param>
+        <summary>指定したキー識別句のキーを取得します。</summary>
+        <returns>キーを表す <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause%2A> メソッドは、<xref:System.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause%2A> を呼び出して、指定したキー識別子句がこのインスタンスと同じかどうかを最初に確認します。  
+  
+ 既定の実装の最初の要素を返します、<xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A>コレクション コレクションが空でない場合、<xref:System.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause%2A>を返します`true`、それ以外を返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="T:System.IdentityModel.Tokens.SecurityToken" /> から継承した <see cref="M:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" /> メソッドを実装している場合に、<paramref name="skiClause" /> を解決できないときは、<see langword="null" /> を返します。 <see cref="M:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" /> メソッドから例外をスローすることはできません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられた暗号化キーを取得します。</summary>
+        <value>セキュリティ トークンに関連付けられている一連のキーを含む、<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IdentityModel.Tokens.SamlSecurityToken.SecurityKeys%2A>トークンまたは SOAP メッセージを保護するには、このセキュリティ トークンの暗号化キーを設定するプロパティです。 キーでくため、特に、デジタル署名または暗号化トークンまたは SOAP メッセージのいずれか。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.Tokens.SecurityToken>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 実装が含まれている、`SimpleWebToken`クラスおよび`SimpleWebTokenHandler`SWT トークンをサポートするその他のクラスと同様に、クラスです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのオーバーライドを示しています、<xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A>プロパティです。  
+  
+ [!code-csharp[WifCustomTokenST#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtokenconstants.cs#1)]  
+[!code-csharp[WifCustomTokenST#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#3)]  
+[!code-csharp[WifCustomTokenST#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする必要があります、<see cref="P:System.IdentityModel.Tokens.SecurityToken.SecurityKeys" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public abstract DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の開始時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の開始時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティを使用して、<xref:System.IdentityModel.Tokens.SecurityToken> トークンの有効期間を決定します。 <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティはそれぞれ、セキュリティ トークンの有効期間の開始と終了の時点を示します。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.Tokens.SecurityToken>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 実装が含まれている、`SimpleWebToken`クラスおよび`SimpleWebTokenHandler`SWT トークンをサポートするその他のクラスと同様に、クラスです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのオーバーライドを示しています、<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A>プロパティです。  
+  
+ [!code-csharp[WifCustomTokenST#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtokenconstants.cs#1)]  
+[!code-csharp[WifCustomTokenST#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#3)]  
+[!code-csharp[WifCustomTokenST#6](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#6)]  
+[!code-csharp[WifCustomTokenST#8](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする必要があります、<see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidFrom" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public abstract DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の終了時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の終了の時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティを使用して、<xref:System.IdentityModel.Tokens.SecurityToken> トークンの有効期間を決定します。 <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> および <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティはそれぞれ、セキュリティ トークンの有効期間の開始と終了の時点を示します。  
+  
+   
+  
+## Examples  
+ 使用されているコード例は、<xref:System.IdentityModel.Tokens.SecurityToken>トピックがから取得した、`Custom Token`サンプルです。 このサンプルでは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供します。 実装が含まれている、`SimpleWebToken`クラスおよび`SimpleWebTokenHandler`SWT トークンをサポートするその他のクラスと同様に、クラスです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードのオーバーライドを示しています、<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>プロパティです。  
+  
+ [!code-csharp[WifCustomTokenST#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtokenconstants.cs#1)]  
+[!code-csharp[WifCustomTokenST#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#3)]  
+[!code-csharp[WifCustomTokenST#7](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#7)]  
+[!code-csharp[WifCustomTokenST#8](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokenst/cs/simplewebtoken/simplewebtoken.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする必要があります、<see cref="P:System.IdentityModel.Tokens.SecurityToken.ValidTo" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

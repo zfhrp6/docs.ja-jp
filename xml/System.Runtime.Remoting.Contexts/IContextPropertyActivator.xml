@@ -1,0 +1,180 @@
+<Type Name="IContextPropertyActivator" FullName="System.Runtime.Remoting.Contexts.IContextPropertyActivator">
+  <TypeSignature Language="C#" Value="public interface IContextPropertyActivator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContextPropertyActivator" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.IContextPropertyActivator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装しているプロパティがメッセージ シンク指定されていない可能性がありますが興味アクティべーションに参加していることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContextPropertyActivator>インターフェイスは、すべての公開<xref:System.Runtime.Remoting.Contexts.Context>アクティべーションに参加している対象をしている可能性がありますが指定されていないメッセージ シンクのプロパティです。 クライアント<xref:System.Runtime.Remoting.Contexts.Context>プロパティは、構築されたメッセージで、アクティブ化時に調べて、リモート サイトに対応する情報を送信します。  
+  
+ <xref:System.Runtime.Remoting.Contexts.IContextPropertyActivator>クライアントとサーバーのコンテキスト プロパティから情報を収集し、情報を提供するサーバーからコンテキスト プロパティ、クライアントのコンテキスト プロパティに、クライアントに返されるときにも使用<xref:System.Runtime.Remoting.Contexts.Context>です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CollectFromClientContext">
+      <MemberSignature Language="C#" Value="public void CollectFromClientContext (System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CollectFromClientContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextPropertyActivator.CollectFromClientContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />。</param>
+        <summary>各クライアントのコンテキスト プロパティを建設要求がクライアントを抜ける前に、このインターフェイスを持つで呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト プロパティが確認しの内容を操作できます、<xref:System.Runtime.Remoting.Activation.IConstructionCallMessage>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CollectFromServerContext">
+      <MemberSignature Language="C#" Value="public void CollectFromServerContext (System.Runtime.Remoting.Activation.IConstructionReturnMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CollectFromServerContext(class System.Runtime.Remoting.Activation.IConstructionReturnMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextPropertyActivator.CollectFromServerContext(System.Runtime.Remoting.Activation.IConstructionReturnMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionReturnMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionReturnMessage" />。</param>
+        <summary>構築応答がクライアントのサーバーを抜ける前に、このインターフェイスを持つサーバーの各コンテキスト プロパティで呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト プロパティが確認しの内容を操作できます、<xref:System.Runtime.Remoting.Activation.IConstructionReturnMessage>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DeliverClientContextToServerContext">
+      <MemberSignature Language="C#" Value="public bool DeliverClientContextToServerContext (System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool DeliverClientContextToServerContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextPropertyActivator.DeliverClientContextToServerContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />。</param>
+        <summary>各クライアントのコンテキスト プロパティを建設要求がサーバーからクライアントに返されるときに、このインターフェイスを持つで呼び出されます。</summary>
+        <returns>
+          成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する各サーバー コンテキスト プロパティで、現在のメソッドが呼び出されます、<xref:System.Runtime.Remoting.Contexts.IContextPropertyActivator>インターフェイスの構築の要求がサーバーに到着します。 これにより、それぞれの内容を検査するコンテキスト プロパティ<xref:System.Runtime.Remoting.Activation.IConstructionCallMessage>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DeliverServerContextToClientContext">
+      <MemberSignature Language="C#" Value="public bool DeliverServerContextToClientContext (System.Runtime.Remoting.Activation.IConstructionReturnMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool DeliverServerContextToClientContext(class System.Runtime.Remoting.Activation.IConstructionReturnMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextPropertyActivator.DeliverServerContextToClientContext(System.Runtime.Remoting.Activation.IConstructionReturnMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionReturnMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionReturnMessage" />。</param>
+        <summary>各クライアントのコンテキスト プロパティを建設要求がサーバーからクライアントに返されるときに、このインターフェイスを持つで呼び出されます。</summary>
+        <returns>
+          成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト プロパティの内容を調べることができます、<xref:System.Runtime.Remoting.Activation.IConstructionReturnMessage>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsOKToActivate">
+      <MemberSignature Language="C#" Value="public bool IsOKToActivate (System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsOKToActivate(class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextPropertyActivator.IsOKToActivate(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />。</param>
+        <summary>示されているオブジェクトの種類をアクティブ化するすべての権利があるかどうかを示します、<paramref name="msg" />パラメーター。</summary>
+        <returns>要求された型をアクティブ化できるかどうかを示すブール値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

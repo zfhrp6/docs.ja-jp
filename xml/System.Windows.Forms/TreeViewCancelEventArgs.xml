@@ -1,0 +1,125 @@
+<Type Name="TreeViewCancelEventArgs" FullName="System.Windows.Forms.TreeViewCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class TreeViewCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TreeViewCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeViewCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Windows.Forms.TreeView.BeforeCheck" />、 <see cref="E:System.Windows.Forms.TreeView.BeforeCollapse" />、 <see cref="E:System.Windows.Forms.TreeView.BeforeExpand" />、および<see cref="E:System.Windows.Forms.TreeView.BeforeSelect" />のイベント、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例の折りたたみの状態を変更する方法を示します、<xref:System.Windows.Forms.TreeView>チェックされたすべてのノードが表示されるようにします。 最初に、すべてのノードが折りたたまれているし、ハンドラーが追加されて、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント。 次に、すべてのノードが展開します。 <xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーは、特定のノードがオンになっている子ノードを持つかどうかを決定します。 ノードがチェックされている子を持たない場合は、そのノードの展開が取り消されました。 ノードの横にあるプラス記号をクリックすると、通常のノードの展開を許可するために、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーを削除します。  
+  
+ 処理することによりこの動作を実装することも、<xref:System.Windows.Forms.TreeView.BeforeCollapse?displayProperty=nameWithType>イベント、そのトピックの例に示すようにします。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.CheckBoxes%2A?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewShowCheckedNodes1#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CPP/treeviewshowcheckednodes1.cpp#2)]
+ [!code-csharp[TreeViewShowCheckedNodes1#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CS/treeviewshowcheckednodes1.cs#2)]
+ [!code-vb[TreeViewShowCheckedNodes1#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/VB/treeviewshowcheckednodes1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeViewCancelEventArgs (System.Windows.Forms.TreeNode node, bool cancel, System.Windows.Forms.TreeViewAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node, bool cancel, valuetype System.Windows.Forms.TreeViewAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeViewCancelEventArgs.#ctor(System.Windows.Forms.TreeNode,System.Boolean,System.Windows.Forms.TreeViewAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="cancel" Type="System.Boolean" />
+        <Parameter Name="action" Type="System.Windows.Forms.TreeViewAction" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Windows.Forms.TreeNode" />にイベントが応答しています。</param>
+        <param name="cancel">
+          <see langword="true" />イベントをキャンセルするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="action">1 つ、<see cref="T:System.Windows.Forms.TreeViewAction" />イベントを発生させたアクションの種類を示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeViewCancelEventArgs" />クラス、指定されたツリー ノード、イベントがキャンセル可能かどうかを指定する値、およびイベントを発生させたアクションのツリー表示の種類を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeViewAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TreeViewAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewCancelEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を取得<see cref="T:System.Windows.Forms.TreeView" />イベントを発生させたアクション。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeViewAction" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TreeView.BeforeCheck?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TreeView>という`TreeView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TreeView.BeforeCheck?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#626](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#626)]
+ [!code-vb[System.Windows.Forms.EventExamples#626](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#626)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewCancelEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェックされる、展開される、折りたたまれる、または選択されるツリー ノードを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeNode" />をオンになって、展開、折りたたまれた、または選択します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の折りたたみの状態を変更する方法を示します、<xref:System.Windows.Forms.TreeView>チェックされたすべてのノードが表示されるようにします。 最初に、すべてのノードが折りたたまれているし、ハンドラーが追加されて、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント。 次に、すべてのノードが展開します。 <xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーは、特定のノードがオンになっている子ノードを持つかどうかを決定します。 ノードがチェックされている子を持たない場合は、そのノードの展開が取り消されました。 ノードの横にあるプラス記号をクリックすると、通常のノードの展開を許可するために、<xref:System.Windows.Forms.TreeView.BeforeExpand?displayProperty=nameWithType>イベント ハンドラーを削除します。  
+  
+ 処理することによりこの動作を実装することも、<xref:System.Windows.Forms.TreeView.BeforeCollapse?displayProperty=nameWithType>イベント、そのトピックの例に示すようにします。  
+  
+ 完全な例については、<xref:System.Windows.Forms.TreeView.CheckBoxes%2A?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[TreeViewShowCheckedNodes1#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CPP/treeviewshowcheckednodes1.cpp#2)]
+ [!code-csharp[TreeViewShowCheckedNodes1#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/CS/treeviewshowcheckednodes1.cs#2)]
+ [!code-vb[TreeViewShowCheckedNodes1#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewShowCheckedNodes1/VB/treeviewshowcheckednodes1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

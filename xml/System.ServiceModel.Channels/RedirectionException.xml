@@ -1,0 +1,267 @@
+<Type Name="RedirectionException" FullName="System.ServiceModel.Channels.RedirectionException">
+  <TypeSignature Language="C#" Value="public class RedirectionException : System.ServiceModel.CommunicationException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RedirectionException extends System.ServiceModel.CommunicationException" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.RedirectionException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.CommunicationException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リダイレクト処理で発生するエラーを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RedirectionException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報。</param>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Channels.RedirectionException" /> と <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を使用して、<see cref="T:System.Runtime.Serialization.StreamingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RedirectionException (System.ServiceModel.Channels.RedirectionType type, System.ServiceModel.Channels.RedirectionDuration duration, System.ServiceModel.Channels.RedirectionScope scope, params System.ServiceModel.Channels.RedirectionLocation[] locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.RedirectionType type, class System.ServiceModel.Channels.RedirectionDuration duration, class System.ServiceModel.Channels.RedirectionScope scope, class System.ServiceModel.Channels.RedirectionLocation[] locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.#ctor(System.ServiceModel.Channels.RedirectionType,System.ServiceModel.Channels.RedirectionDuration,System.ServiceModel.Channels.RedirectionScope,System.ServiceModel.Channels.RedirectionLocation[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.ServiceModel.Channels.RedirectionType" />
+        <Parameter Name="duration" Type="System.ServiceModel.Channels.RedirectionDuration" />
+        <Parameter Name="scope" Type="System.ServiceModel.Channels.RedirectionScope" />
+        <Parameter Name="locations" Type="System.ServiceModel.Channels.RedirectionLocation[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="type">リダイレクトの種類。</param>
+        <param name="duration">リダイレクトの期間。</param>
+        <param name="scope">リダイレクトのスコープ。</param>
+        <param name="locations">リダイレクトの場所。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.RedirectionException" />、<see cref="T:System.ServiceModel.Channels.RedirectionType" />、<see cref="T:System.ServiceModel.Channels.RedirectionDuration" />、および <see cref="T:System.ServiceModel.Channels.RedirectionScope" /> オブジェクトの配列を使用して、<see cref="T:System.ServiceModel.Channels.RedirectionLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RedirectionException (System.ServiceModel.Channels.RedirectionType type, System.ServiceModel.Channels.RedirectionDuration duration, System.ServiceModel.Channels.RedirectionScope scope, Exception innerException, params System.ServiceModel.Channels.RedirectionLocation[] locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.RedirectionType type, class System.ServiceModel.Channels.RedirectionDuration duration, class System.ServiceModel.Channels.RedirectionScope scope, class System.Exception innerException, class System.ServiceModel.Channels.RedirectionLocation[] locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.#ctor(System.ServiceModel.Channels.RedirectionType,System.ServiceModel.Channels.RedirectionDuration,System.ServiceModel.Channels.RedirectionScope,System.Exception,System.ServiceModel.Channels.RedirectionLocation[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.ServiceModel.Channels.RedirectionType" />
+        <Parameter Name="duration" Type="System.ServiceModel.Channels.RedirectionDuration" />
+        <Parameter Name="scope" Type="System.ServiceModel.Channels.RedirectionScope" />
+        <Parameter Name="innerException" Type="System.Exception" />
+        <Parameter Name="locations" Type="System.ServiceModel.Channels.RedirectionLocation[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="type">リダイレクトの種類。</param>
+        <param name="duration">リダイレクトの期間。</param>
+        <param name="scope">リダイレクトのスコープ。</param>
+        <param name="innerException">内部例外。</param>
+        <param name="locations">リダイレクトの場所。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.RedirectionException" />、<see cref="T:System.ServiceModel.Channels.RedirectionType" />、<see cref="T:System.ServiceModel.Channels.RedirectionDuration" />、内部例外、および <see cref="T:System.ServiceModel.Channels.RedirectionScope" /> オブジェクトの配列を使用して、<see cref="T:System.ServiceModel.Channels.RedirectionLocation" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RedirectionException (string message, System.ServiceModel.Channels.RedirectionType type, System.ServiceModel.Channels.RedirectionDuration duration, System.ServiceModel.Channels.RedirectionScope scope, params System.ServiceModel.Channels.RedirectionLocation[] locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.ServiceModel.Channels.RedirectionType type, class System.ServiceModel.Channels.RedirectionDuration duration, class System.ServiceModel.Channels.RedirectionScope scope, class System.ServiceModel.Channels.RedirectionLocation[] locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.#ctor(System.String,System.ServiceModel.Channels.RedirectionType,System.ServiceModel.Channels.RedirectionDuration,System.ServiceModel.Channels.RedirectionScope,System.ServiceModel.Channels.RedirectionLocation[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="type" Type="System.ServiceModel.Channels.RedirectionType" />
+        <Parameter Name="duration" Type="System.ServiceModel.Channels.RedirectionDuration" />
+        <Parameter Name="scope" Type="System.ServiceModel.Channels.RedirectionScope" />
+        <Parameter Name="locations" Type="System.ServiceModel.Channels.RedirectionLocation[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="message">現在の例外を説明するメッセージ。</param>
+        <param name="type">リダイレクトの種類。</param>
+        <param name="duration">リダイレクトの期間。</param>
+        <param name="scope">リダイレクトのスコープ。</param>
+        <param name="locations">リダイレクトの場所。</param>
+        <summary>指定したメッセージ、<see cref="T:System.ServiceModel.Channels.RedirectionException" />、<see cref="T:System.ServiceModel.Channels.RedirectionType" />、<see cref="T:System.ServiceModel.Channels.RedirectionDuration" />、および <see cref="T:System.ServiceModel.Channels.RedirectionScope" /> オブジェクトの配列を使用して、<see cref="T:System.ServiceModel.Channels.RedirectionLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RedirectionException (string message, System.ServiceModel.Channels.RedirectionType type, System.ServiceModel.Channels.RedirectionDuration duration, System.ServiceModel.Channels.RedirectionScope scope, Exception innerException, params System.ServiceModel.Channels.RedirectionLocation[] locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.ServiceModel.Channels.RedirectionType type, class System.ServiceModel.Channels.RedirectionDuration duration, class System.ServiceModel.Channels.RedirectionScope scope, class System.Exception innerException, class System.ServiceModel.Channels.RedirectionLocation[] locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.#ctor(System.String,System.ServiceModel.Channels.RedirectionType,System.ServiceModel.Channels.RedirectionDuration,System.ServiceModel.Channels.RedirectionScope,System.Exception,System.ServiceModel.Channels.RedirectionLocation[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="type" Type="System.ServiceModel.Channels.RedirectionType" />
+        <Parameter Name="duration" Type="System.ServiceModel.Channels.RedirectionDuration" />
+        <Parameter Name="scope" Type="System.ServiceModel.Channels.RedirectionScope" />
+        <Parameter Name="innerException" Type="System.Exception" />
+        <Parameter Name="locations" Type="System.ServiceModel.Channels.RedirectionLocation[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="message">リダイレクト メッセージ。</param>
+        <param name="type">リダイレクトの種類。</param>
+        <param name="duration">リダイレクトの期間。</param>
+        <param name="scope">リダイレクトのスコープ。</param>
+        <param name="innerException">内部例外。</param>
+        <param name="locations">リダイレクトの場所。</param>
+        <summary>指定したメッセージ文字列、<see cref="T:System.ServiceModel.Channels.RedirectionException" />、<see cref="T:System.ServiceModel.Channels.RedirectionType" />、<see cref="T:System.ServiceModel.Channels.RedirectionDuration" />、内部例外、および <see cref="T:System.ServiceModel.Channels.RedirectionScope" /> オブジェクトの配列を使用して、<see cref="T:System.ServiceModel.Channels.RedirectionLocation" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RedirectionDuration Duration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.RedirectionDuration Duration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RedirectionException.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RedirectionDuration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Channels.RedirectionDuration" /> に関連付けられた <see cref="T:System.ServiceModel.Channels.RedirectionException" /> を取得します。</summary>
+        <value>この例外に関連付けられているリダイレクトの期間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.RedirectionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報。</param>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>例外に関する情報を含む <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.RedirectionLocation&gt; Locations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Channels.RedirectionLocation&gt; Locations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RedirectionException.Locations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.RedirectionLocation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Channels.RedirectionLocation" /> に関連付けられた <see cref="T:System.ServiceModel.Channels.RedirectionException" /> オブジェクトのコレクションを取得します。</summary>
+        <value>リダイレクトの場所のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RedirectionScope Scope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.RedirectionScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RedirectionException.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RedirectionScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.RedirectionScope" /> に関連付けられている <see cref="T:System.ServiceModel.Channels.RedirectionException" /> を取得します。</summary>
+        <value>この例外に関連付けられているリダイレクトのスコープ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.RedirectionType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.RedirectionType Type" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.RedirectionException.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.RedirectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.RedirectionType" /> に関連付けられている <see cref="T:System.ServiceModel.Channels.RedirectionException" /> を取得します。</summary>
+        <value>この例外に関連付けられているリダイレクトの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

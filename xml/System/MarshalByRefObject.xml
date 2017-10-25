@@ -1,0 +1,255 @@
+<Type Name="MarshalByRefObject" FullName="System.MarshalByRefObject">
+  <TypeSignature Language="C#" Value="public abstract class MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract serializable beforefieldinit MarshalByRefObject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.MarshalByRefObject" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理をサポートするアプリケーションで、アプリケーションのドメインの境界を越えてオブジェクトにアクセスできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション ドメインは、1 つまたは複数のアプリケーションが存在するオペレーティング システムのプロセス内のパーティションです。 同じアプリケーション ドメイン内のオブジェクトは直接通信します。 別のアプリケーション ドメイン内のオブジェクトは、アプリケーション ドメインの境界を越えてオブジェクトのコピーを転送するか、メッセージを交換するプロキシを使用して通信します。  
+  
+ <xref:System.MarshalByRefObject>プロキシを使用してメッセージを交換することで、アプリケーション ドメインの境界を越えて通信オブジェクトの基本クラスです。 継承しないオブジェクト<xref:System.MarshalByRefObject>は暗黙的に値渡しのマーシャ リングします。 リモート アプリケーションは、オブジェクトの値によって、マーシャ リングを参照する場合は、オブジェクトのコピーがアプリケーション ドメインの境界を越えて渡されます。  
+  
+ <xref:System.MarshalByRefObject>オブジェクトは、ローカルのアプリケーション ドメインの境界内に直接アクセスします。 リモート アプリケーションが初めてのアプリケーション ドメインにアクセスする、<xref:System.MarshalByRefObject>プロキシがリモート アプリケーションに渡されます。 後続の呼び出しはプロキシでは、ローカルのアプリケーション ドメイン内に存在するオブジェクトをマーシャ リングされます。  
+  
+ 型を継承する必要があります<xref:System.MarshalByRefObject>型がアプリケーション ドメインの境界を越えて使用して、オブジェクトのメンバーが作成されたアプリケーション ドメインの外部で使用可能ではないために、オブジェクトの状態はコピーされません必要があります。  
+  
+ オブジェクトからの派生を作成するときに<xref:System.MarshalByRefObject>アプリケーション ドメインの境界を越えて使用する必要がありますオーバーライドされませんそのメンバーのいずれか。 またそのメソッドを直接呼び出すする必要があります。 ランタイムはから派生するクラスを認識<xref:System.MarshalByRefObject>アプリ ドメインの境界を越えてマーシャ リングする必要があります。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例では、別のアプリケーション ドメインで、クラスのインスタンスを作成する方法を示します。 2 つ目のコード例では、リモート処理のために使用できる単純なクラスを示します。  
+  
+ **例 1**  
+  
+ 次のコード例では、別のアプリケーション ドメインでコードを実行する最も簡単な方法を示します。 という名前のクラスが定義されています`Worker`継承した<xref:System.MarshalByRefObject>を実行しているアプリケーション ドメインの名前を表示するメソッドを使用します。 インスタンスを作成、`Worker`および既定のアプリケーション ドメインで、新しいアプリケーション ドメイン。  
+  
+> [!NOTE]
+>  含むアセンブリ`Worker`両方のアプリケーション ドメインに読み込まれている必要がありますが、新しいアプリケーション ドメインにのみ存在する他のアセンブリを読み込めませんでした。  
+  
+ [!code-cpp[CreateInstanceAndUnwrap2#1](~/samples/snippets/cpp/VS_Snippets_CLR/CreateInstanceAndUnwrap2/cpp/source.cpp#1)]
+ [!code-csharp[CreateInstanceAndUnwrap2#1](~/samples/snippets/csharp/VS_Snippets_CLR/CreateInstanceAndUnwrap2/cs/source.cs#1)]
+ [!code-vb[CreateInstanceAndUnwrap2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CreateInstanceAndUnwrap2/VB/source.vb#1)]  
+  
+ **例 2**  
+  
+ 次の例から派生したクラス<xref:System.MarshalByRefObject>は後で使用されるリモート処理します。  
+  
+ [!code-cpp[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/cpp/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/CPP/source.cpp#1)]
+ [!code-csharp[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/csharp/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/CS/source.cs#1)]
+ [!code-vb[RemotingServices.SetObjectUriForMarshal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RemotingServices.SetObjectUriForMarshal/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MarshalByRefObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MarshalByRefObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.MarshalByRefObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjRef">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.ObjRef CreateObjRef (Type requestedType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.ObjRef CreateObjRef(class System.Type requestedType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MarshalByRefObject.CreateObjRef(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestedType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="requestedType"><see cref="T:System.Type" />オブジェクトを新しい<see cref="T:System.Runtime.Remoting.ObjRef" />参照することができます。</param>
+        <summary>リモート オブジェクトとの通信に使用するプロキシの生成に必要なすべての関連情報を格納しているオブジェクトを作成します。</summary>
+        <returns>プロキシを生成するために必要な情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.MarshalByRefObject.CreateObjRef%2A>メソッドがなどのリモート オブジェクトの作成方法によって呼び出されます<xref:System.AppDomain.CreateInstance%2A?displayProperty=nameWithType>と<xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType>です。 ほとんどの場合は、このメソッドをオーバーライドする必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">このインスタンスは、有効なリモート処理オブジェクトではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLifetimeService">
+      <MemberSignature Language="C#" Value="public object GetLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MarshalByRefObject.GetLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの有効期間ポリシーを制御する現在の有効期間サービス オブジェクトを取得します。</summary>
+        <returns>型のオブジェクト<see cref="T:System.Runtime.Remoting.Lifetime.ILease" />このインスタンスの有効期間ポリシーを制御するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効期間サービスの詳細については、次を参照してください。、<xref:System.Runtime.Remoting.Lifetime.LifetimeServices>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public virtual object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MarshalByRefObject.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの有効期間ポリシーを制御する有効期間サービス オブジェクトを取得します。</summary>
+        <returns>型のオブジェクト<see cref="T:System.Runtime.Remoting.Lifetime.ILease" />このインスタンスの有効期間ポリシーを制御するために使用します。 これは、1 つの場合は、このインスタンスのサービス オブジェクトが存在する現在の有効期間それ以外の場合、新しい有効期間サービス オブジェクトは初期化の値に、<see cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効期間サービスの詳細については、次を参照してください。、<xref:System.Runtime.Remoting.Lifetime.LifetimeServices>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リースを作成するを示します。  
+  
+ [!code-cpp[Classic MarshalByRefObject.InitializeLifetimeService Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MarshalByRefObject.InitializeLifetimeService Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MarshalByRefObject.InitializeLifetimeService Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MarshalByRefObject.InitializeLifetimeService Example/CS/source.cs#1)]
+ [!code-vb[Classic MarshalByRefObject.InitializeLifetimeService Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic MarshalByRefObject.InitializeLifetimeService Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberwiseClone">
+      <MemberSignature Language="C#" Value="protected MarshalByRefObject MemberwiseClone (bool cloneIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.MarshalByRefObject MemberwiseClone(bool cloneIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MarshalByRefObject.MemberwiseClone(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.MarshalByRefObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cloneIdentity" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cloneIdentity">
+          <see langword="false" />現在の削除に<see cref="T:System.MarshalByRefObject" />これによりがリモート処理の境界を越えてマーシャ リングされるときに、新しい id を割り当てられるオブジェクトのオブジェクトの id。 値<see langword="false" />は大抵適切です。 <see langword="true" />現在のコピーを<see cref="T:System.MarshalByRefObject" />その複製は、リモート サーバー オブジェクトにルーティングされるリモート クライアントの呼び出しが発生するオブジェクトの id。</param>
+        <summary>現在の簡易コピーを作成<see cref="T:System.MarshalByRefObject" />オブジェクト。</summary>
+        <returns>現在の簡易コピー<see cref="T:System.MarshalByRefObject" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.MarshalByRefObject.MemberwiseClone%28System.Boolean%29>メソッドでは、シャロー コピーを作成、新しいを作成して<xref:System.MarshalByRefObject>オブジェクト、および現在の非静的フィールドをコピー<xref:System.MarshalByRefObject>オブジェクトを新しいオブジェクト。 フィールドが値型の場合、フィールドのビットごとのコピーは実行されます。 フィールドが参照型の場合、参照はコピーしますが、参照されるオブジェクトではありません。そのため、元のオブジェクトとその複製は、同じオブジェクトを参照します。  
+  
+ たとえば、<xref:System.MarshalByRefObject>オブジェクト A と B を参照する X と呼ばれるオブジェクトを参照しているオブジェクト c です。X の簡易コピーを作成もオブジェクト A と B を参照する新しいオブジェクト X2これに対し、X の詳細コピーが A2 と B2、A のコピーである新しいオブジェクトを参照する新しいオブジェクト X2 を作成し、B. B2 を参照している C. を実装するクラスを使用してコピーである新しいオブジェクト、C2、<xref:System.ICloneable>オブジェクトの簡易コピーを実行するインターフェイスです。  
+  
+ Id、<xref:System.MarshalByRefObject>オブジェクトはリモート処理クライアントの呼び出しの対象となっているリモート サーバー オブジェクトとして定義します。 既定では、メンバーごとの複製、<xref:System.MarshalByRefObject>オブジェクトには、クライアント側のリモート処理境界を越えてマーシャ リングをサーバー側オブジェクトのクローンが正常に動作が通常、元のオブジェクトと同じ id です。 指定`false`、これは通常、適切な複製の id を削除し、複製は、リモート処理境界を越えてマーシャ リングする際に割り当てられるに新しい id または`true`、複製元の id を保持するが発生する<xref:System.MarshalByRefObject>オブジェクト。 <xref:System.MarshalByRefObject.MemberwiseClone%28System.Boolean%29>メソッドは、開発者がリモート サーバーのオブジェクトを実装するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

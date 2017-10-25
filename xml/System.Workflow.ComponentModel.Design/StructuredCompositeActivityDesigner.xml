@@ -1,0 +1,792 @@
+<Type Name="StructuredCompositeActivityDesigner" FullName="System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner">
+  <TypeSignature Language="C#" Value="public abstract class StructuredCompositeActivityDesigner : System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StructuredCompositeActivityDesigner extends System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.CompositeActivityDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>構造化レイアウトを含む複合アクティビティ デザイナーに共通のメソッドとプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> は子デザイナーが含まれるすべてのデザイナーの基本クラスです。子デザイナーは、デザイン サーフェイスにレンダリングされるコネクタと呼ばれる線を使用して、相互に接続されます。 このクラスによって、アクティビティ デザイナーの開発者は、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> クラスで提供されるレイアウトに束縛されずに、アクティビティ デザイナーのさまざまなレイアウト タイプを作成できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StructuredCompositeActivityDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveView">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.DesignerView ActiveView { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.DesignerView ActiveView" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ActiveView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.DesignerView" /> によって表示されている現在のデザイナー ビューに関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerView" /> によって表示されている現在のビューに関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ActiveView%2A> には、ビューに関連付けられたビュー ID とテキスト、イメージ、アクティビティ デザイナー、ユーザー データが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInsertActivities">
+      <MemberSignature Language="C#" Value="public override bool CanInsertActivities (System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToInsert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanInsertActivities(class System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToInsert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.CanInsertActivities(System.Workflow.ComponentModel.Design.HitTestInfo,System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="insertLocation" Type="System.Workflow.ComponentModel.Design.HitTestInfo" />
+        <Parameter Name="activitiesToInsert" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="insertLocation">アクティビティを挿入しようとする画面位置を格納している <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</param>
+        <param name="activitiesToInsert">追加するアクティビティを格納している読み取り専用の <see cref="T:System.Workflow.ComponentModel.Activity" /> コレクション。</param>
+        <summary>指定したアクティビティをワークフロー デザイン サーフェイス上の指定した位置にある <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に追加できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したアクティビティをワークフロー デザイン サーフェイス上の指定した位置に挿入できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 子アクティビティの挿入を許可しないことによって <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> をロックする方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#25](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#25)]
+ [!code-vb[WF_Samples#25](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRemoveActivities">
+      <MemberSignature Language="C#" Value="public override bool CanRemoveActivities (System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanRemoveActivities(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.CanRemoveActivities(System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activitiesToRemove" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activitiesToRemove">削除するアクティビティを格納している読み取り専用の <see cref="T:System.Workflow.ComponentModel.Activity" /> コレクション。</param>
+        <summary>指定したアクティビティを <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> から削除できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したアクティビティを削除できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.CanRemoveActivities%2A> メソッドをオーバーライドして <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> 内の子アクティビティの移動を可能にする方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#27](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#27)]
+ [!code-vb[WF_Samples#27](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainedDesigners">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesigner&gt; ContainedDesigners { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.ActivityDesigner&gt; ContainedDesigners" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ContainedDesigners" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesigner&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> の子であるすべてのアクティビティ デザイナーを格納している読み取り専用のジェネリック コレクションを取得します。</summary>
+        <value>子デザイナーを格納している読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> クラスからのデザイナー ベースの新しい分岐の追加の例を、次に示します。  <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.CanInsertActivities%2A> が true を返した場合、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A> メソッドを使用して新しい分岐が作成されます。 <xref:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo> メソッドのパラメーターとして、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A> オブジェクトが作成されます。 これが完了すると、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.EnsureVisibleContainedDesigner%2A> メソッドが使用され、<xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ContainedDesigners%2A> コレクションに含まれる単一オブジェクトにアクセスすることによって、新しく追加された分岐がワークフロー デザイナーに表示されるようになります。  
+  
+ [!code-csharp[WF_Samples#28](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#28)]
+ [!code-vb[WF_Samples#28](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDropTarget">
+      <MemberSignature Language="C#" Value="protected virtual int CurrentDropTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentDropTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.CurrentDropTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.GetDropTargets(System.Drawing.Point)" /> によって返されるドロップ ターゲットの配列に含まれる現在のドロップ ターゲットのインデックスを取得または設定します。</summary>
+        <value>デザイナーの現在のドロップ ターゲットのインデックスを表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawConnectors">
+      <MemberSignature Language="C#" Value="protected void DrawConnectors (System.Drawing.Graphics graphics, System.Drawing.Pen pen, System.Drawing.Point[] points, System.Workflow.ComponentModel.Design.LineAnchor startCap, System.Workflow.ComponentModel.Design.LineAnchor endCap);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void DrawConnectors(class System.Drawing.Graphics graphics, class System.Drawing.Pen pen, valuetype System.Drawing.Point[] points, valuetype System.Workflow.ComponentModel.Design.LineAnchor startCap, valuetype System.Workflow.ComponentModel.Design.LineAnchor endCap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.DrawConnectors(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Point[],System.Workflow.ComponentModel.Design.LineAnchor,System.Workflow.ComponentModel.Design.LineAnchor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+        <Parameter Name="startCap" Type="System.Workflow.ComponentModel.Design.LineAnchor" />
+        <Parameter Name="endCap" Type="System.Workflow.ComponentModel.Design.LineAnchor" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">コネクタを描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="pen">コネクタを描画する <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="points">描画する各コネクタの端点を格納している <see cref="T:System.Drawing.Point" /> 配列。</param>
+        <param name="startCap">コネクタの始点に描画するグラフィックを決定する <see cref="T:System.Workflow.ComponentModel.Design.LineAnchor" />。</param>
+        <param name="endCap">コネクタの終点に描画するグラフィックを決定する <see cref="T:System.Workflow.ComponentModel.Design.LineAnchor" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に表示するすべてのコネクタを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コネクタは、ワークフロー デザイン サーフェイス上の異なるデザイナーどうしを関連付けるものです。 これらのリンクはデザイン サーフェイスに線で表示され、線の各終端は接続されるデザイナー上の可視ポイントに接続されます。 これらのポイントはコネクション ポイントと呼ばれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureVisibleContainedDesigner">
+      <MemberSignature Language="C#" Value="public override void EnsureVisibleContainedDesigner (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnsureVisibleContainedDesigner(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.EnsureVisibleContainedDesigner(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">ワークフロー デザイン サーフェイス上に表示するための <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>指定したアクティビティ デザイナーがワークフロー デザイン サーフェイスに表示されるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstSelectableObject">
+      <MemberSignature Language="C#" Value="public override object FirstSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FirstSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.FirstSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> のナビゲーション順で最初の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最初に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.FirstSelectableObject%2A> は、<xref:System.Workflow.ComponentModel.Activity> を通じて公開された <xref:System.Workflow.ComponentModel.Design.DesignerView.AssociatedDesigner%2A> プロパティに関連付けられた <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ActiveView%2A> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDropTargets">
+      <MemberSignature Language="C#" Value="protected virtual System.Drawing.Rectangle[] GetDropTargets (System.Drawing.Point dropPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Drawing.Rectangle[] GetDropTargets(valuetype System.Drawing.Point dropPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.GetDropTargets(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dropPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="dropPoint">デザイン サーフェイスに照会する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> サーフェイス上の有効なドロップ場所の配列を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" /> サーフェイス上の有効なドロップ場所を表す <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInnerConnections">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt; GetInnerConnections (System.Workflow.ComponentModel.Design.DesignerEdges edges);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;valuetype System.Drawing.Point&gt; GetInnerConnections(valuetype System.Workflow.ComponentModel.Design.DesignerEdges edges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.GetInnerConnections(System.Workflow.ComponentModel.Design.DesignerEdges)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Drawing.Point&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edges" Type="System.Workflow.ComponentModel.Design.DesignerEdges" />
+      </Parameters>
+      <Docs>
+        <param name="edges">コネクション ポイントの検索対象場所となる DesignerEdges。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> の内部コネクション ポイントを表すポイントの読み取り専用コレクションを返します。</summary>
+        <returns>デザイナーの内部コネクション ポイントを格納している <see cref="T:System.Drawing.Point" /> 読み取り専用ジェネリック コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コネクタは、ワークフロー デザイン サーフェイス上の異なるデザイナーどうしを関連付けるものです。 これらのリンクはデザイン サーフェイスに線で表示され、線の各終端は接続される各デザイナー上の可視ポイントに接続されます。 これらのポイントはコネクション ポイントと呼ばれます。 <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> クラスから継承したデザイナー クラスには他のデザイナーを格納することができ、<xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.GetInnerConnections%2A> は、`edges` に含まれる <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> に関連付けられたデザイナーのすべてのコネクション ポイントの読み取り専用コレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSelectableObject">
+      <MemberSignature Language="C#" Value="public override object GetNextSelectableObject (object current, System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetNextSelectableObject(object current, valuetype System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.GetNextSelectableObject(System.Object,System.Workflow.ComponentModel.Design.DesignerNavigationDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Object" />
+        <Parameter Name="direction" Type="System.Workflow.ComponentModel.Design.DesignerNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="current">ナビゲーション順の現在のオブジェクト。</param>
+        <param name="direction">デザイナーのナビゲーション順を決定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerNavigationDirection" />。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> のナビゲーション順で、指定されたオブジェクトから後の最初の選択可能オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" /> の後に続く、ナビゲーション順で最初に選択可能な <paramref name="obj" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.Initialize(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity"><see cref="T:System.Workflow.ComponentModel.Activity" /> の初期化に使用する <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />。</param>
+        <summary>指定されたアクティビティを使用してデザイナーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.Initialize%2A> は、ワークフロー デザイン サーフェイスに読み込まれたアクティブ ビューを有効なビューにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertActivities">
+      <MemberSignature Language="C#" Value="public override void InsertActivities (System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToInsert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InsertActivities(class System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToInsert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.InsertActivities(System.Workflow.ComponentModel.Design.HitTestInfo,System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="insertLocation" Type="System.Workflow.ComponentModel.Design.HitTestInfo" />
+        <Parameter Name="activitiesToInsert" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="insertLocation">アクティビティの追加先を指定する <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</param>
+        <param name="activitiesToInsert"><see cref="T:System.Workflow.ComponentModel.Activity" /> に追加するアクティビティを格納している読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> コレクション。</param>
+        <summary>指定したアクティビティをワークフロー デザイン サーフェイス上の指定した位置にある <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSelectableObject">
+      <MemberSignature Language="C#" Value="public override object LastSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object LastSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.LastSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> のナビゲーション順で最後の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最後に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> がアクティブなアクティビティ デザイナーの場合、<xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.LastSelectableObject%2A> は `null` (Visual Basic の場合は `Nothing`) を返します。 子アクティビティ デザイナーがアクティブ デザイナーの場合は、アクティブな子デザイナーに関連付けられた最後の選択可能オブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.LoadViewState(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">デザイナーのビューステートを復元するのに使用される <see cref="T:System.IO.BinaryReader" />。</param>
+        <summary>バイナリ ストリームから <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> のビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> の最小サイズ設定を取得します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> の可能な最小サイズを表す <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveActivities">
+      <MemberSignature Language="C#" Value="public override void MoveActivities (System.Workflow.ComponentModel.Design.HitTestInfo moveLocation, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToMove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MoveActivities(class System.Workflow.ComponentModel.Design.HitTestInfo moveLocation, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToMove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.MoveActivities(System.Workflow.ComponentModel.Design.HitTestInfo,System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="moveLocation" Type="System.Workflow.ComponentModel.Design.HitTestInfo" />
+        <Parameter Name="activitiesToMove" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="moveLocation">アクティビティを移動するためのワークフロー デザイン サーフェイス上の位置を格納している <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</param>
+        <param name="activitiesToMove">移動対象の <see cref="T:System.Workflow.ComponentModel.Activity" /> 読み取り専用コレクション。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に表示されているあるデザイナーに含まれる指定したアクティビティを、別のデザイナーに移動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivityChanged">
+      <MemberSignature Language="C#" Value="protected override void OnActivityChanged (System.Workflow.ComponentModel.Design.ActivityChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnActivityChanged(class System.Workflow.ComponentModel.Design.ActivityChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnActivityChanged(System.Workflow.ComponentModel.Design.ActivityChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更されたアクティビティに関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityChangedEventArgs" />。</param>
+        <summary>関連付けられたアクティビティが変更されたときにデザイナーに通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContainedActivitiesChanging">
+      <MemberSignature Language="C#" Value="protected override void OnContainedActivitiesChanging (System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContainedActivitiesChanging(class System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnContainedActivitiesChanging(System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listChangeArgs" Type="System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="listChangeArgs">変更されたアクティビティに関する情報を格納している <see cref="T:System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />。</param>
+        <summary>含まれるアクティビティの複数が変更されたときに <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragDrop">
+      <MemberSignature Language="C#" Value="protected override void OnDragDrop (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragDrop(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnDragDrop(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>デザイン サーフェイスの境界内でドラッグ ドロップ操作が完了したときに、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragEnter">
+      <MemberSignature Language="C#" Value="protected override void OnDragEnter (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragEnter(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnDragEnter(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界に入ったときに、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragLeave">
+      <MemberSignature Language="C#" Value="protected override void OnDragLeave ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragLeave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnDragLeave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界から出たときに、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="protected override void OnDragOver (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragOver(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnDragOver(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界内にあるときに、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutPosition">
+      <MemberSignature Language="C#" Value="protected override void OnLayoutPosition (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayoutPosition(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnLayoutPosition(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">レイアウト引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> にビジュアル キューと子デザイナーを配置するためのレイアウト タスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size OnLayoutSize (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size OnLayoutSize(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnLayoutSize(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">レイアウト引数を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> によって表示されるデザイナーのビジュアル キューのサイズが変更されたときに、<see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <returns>ワークフロー デザイン サーフェイス上の <see cref="T:System.Drawing.Size" /> の新しいサイズを表す <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnShowSmartTagVerbs">
+      <MemberSignature Language="C#" Value="protected override void OnShowSmartTagVerbs (System.Drawing.Point smartTagPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnShowSmartTagVerbs(valuetype System.Drawing.Point smartTagPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnShowSmartTagVerbs(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="smartTagPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="smartTagPoint">ワークフロー デザイン サーフェイス上の <see cref="T:System.Drawing.Point" /> オブジェクトの表示対象の位置を表す <see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" />。</param>
+        <summary>ワークフロー デザイン サーフェイス上の指定した位置のスマート タグに関連付けられたデザイナー動詞を表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewChanged (System.Workflow.ComponentModel.Design.DesignerView view);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewChanged(class System.Workflow.ComponentModel.Design.DesignerView view) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.OnViewChanged(System.Workflow.ComponentModel.Design.DesignerView)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="view" Type="System.Workflow.ComponentModel.Design.DesignerView" />
+      </Parameters>
+      <Docs>
+        <param name="view">設定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerView" />。</param>
+        <summary>現在のデザイナー ビューが変更されたときに <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override void SaveViewState (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SaveViewState(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.SaveViewState(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">現在のデザイナーのビューステートが格納される <see cref="T:System.IO.BinaryWriter" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> の現在のビューステートをバイナリ ストリームに格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSmartTag">
+      <MemberSignature Language="C#" Value="protected override bool ShowSmartTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSmartTag" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.ShowSmartTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> がスマート タグを表示するかどうかを示す値を取得します。</summary>
+        <value>
+          デザイナーがスマート タグを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmartTagVerbs">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesignerVerb&gt; SmartTagVerbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.ActivityDesignerVerb&gt; SmartTagVerbs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.SmartTagVerbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesignerVerb&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのスマート タグに関連付けられたデザイナー アクションの読み取り専用コレクションを取得します。</summary>
+        <value>デザイナーのスマート タグに関連付けられたすべてのアクションを格納している <see cref="T:System.Workflow.ComponentModel.Design.DesignerAction" /> 読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner> が複数のビューをホストする場合のみ、コレクションが返されます。 現在のデザイナーがホストするビューの数を確認するには、<xref:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.Views%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Views">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.DesignerView&gt; Views { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.DesignerView&gt; Views" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner.Views" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.DesignerView&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> がホストするデザイナー ビューの読み取り専用コレクションを取得します。</summary>
+        <value>現在の <see cref="T:System.Workflow.ComponentModel.Design.DesignerView" /> によってホストされるビューを格納している <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> 読み取り専用コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

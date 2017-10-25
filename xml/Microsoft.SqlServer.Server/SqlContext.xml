@@ -1,0 +1,161 @@
+<Type Name="SqlContext" FullName="Microsoft.SqlServer.Server.SqlContext">
+  <TypeSignature Language="C#" Value="public sealed class SqlContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセスを提供する、呼び出し元のコンテキストの抽象化を表します、 <see cref="T:Microsoft.SqlServer.Server.SqlPipe" />、 <see cref="T:Microsoft.SqlServer.Server.SqlTriggerContext" />、および<see cref="T:System.Security.Principal.WindowsIdentity" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlContext>オブジェクトは、トリガーのコンテキスト (トリガーでコードを実行して) および (場合などに使用できる、ストアド プロシージャ内で)、パイプ オブジェクトの取得に使用できます。 取得に使用することもできます、<xref:System.Security.Principal.WindowsIdentity>統合認証を使用して、サーバーとクライアントが認証されている場合は、呼び出し元のクライアントの Microsoft Windows id を表すオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:Microsoft.SqlServer.Server.SqlDataRecord>とその<xref:Microsoft.SqlServer.Server.SqlMetaData>です。 例を使用して結果セットの先頭をマークし、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart%2A>メソッドを使用してクライアントにデータの例を含むレコードを送信する、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow%2A>メソッド、および記号のセットを結果の終わり、<xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd%2A>メソッドです。  
+  
+ [!code-csharp[DataWorks SqlPipe.SendResultsRow#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsRow/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlPipe.SendResultsRow#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsRow/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsAvailable">
+      <MemberSignature Language="C#" Value="public static bool IsAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsAvailable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlContext.IsAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト接続にアクセスできる場合と、SQL Server の呼び出し元のコードが実行されているかどうかを指定します。</summary>
+        <value>
+          <see langword="True" />コンテキスト接続は使用可能な場合や、その他の<see cref="T:Microsoft.SqlServer.Server.SqlContext" />メンバーにアクセスできます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは false を返します、他のすべて場合<xref:Microsoft.SqlServer.Server.SqlContext>メンバーをスロー、<xref:System.InvalidOperationException>使用されている場合。  
+  
+ このプロパティが false を返す場合しようとするを含む接続オブジェクトを開く"コンテキスト接続 = true"では、接続文字列が失敗します。  
+  
+ このプロパティは読み取り専用です。  
+  
+ データ アクセスに ADO.NET を使用して、コードの部分は、(共通言語ランタイム統合を使用して) SQL Server 内部および外部 SQL Server を実行可能性がある場合は、ときに、コンテキスト接続が利用できるかどうかを確認するこのプロパティを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pipe">
+      <MemberSignature Language="C#" Value="public static Microsoft.SqlServer.Server.SqlPipe Pipe { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.SqlServer.Server.SqlPipe Pipe" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlContext.Pipe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.SqlPipe</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果セットをメッセージ、およびクライアントに返送コマンド実行の結果を送信する呼び出し元を許可するパイプのオブジェクトを取得します。</summary>
+        <value>インスタンス<see cref="T:Microsoft.SqlServer.Server.SqlPipe" />パイプがある場合または<see langword="null" />場所パイプでは使用できません (たとえば、ユーザー定義関数) のコンテキストで呼び出された場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部の SQL Server から呼び出された場合、<xref:System.NotSupportedException>がスローされます。  
+  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TriggerContext">
+      <MemberSignature Language="C#" Value="public static Microsoft.SqlServer.Server.SqlTriggerContext TriggerContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.SqlServer.Server.SqlTriggerContext TriggerContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlContext.TriggerContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.SqlServer.Server.SqlTriggerContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元に、トリガーを起動するには、原因と更新された列のマップに関する情報を提供するために使用するトリガーのコンテキストを取得します。</summary>
+        <value>インスタンス<see cref="T:Microsoft.SqlServer.Server.SqlTriggerContext" />トリガーのコンテキストがある場合または<see langword="null" />トリガーの呼び出しの外部で呼び出された場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlTriggerContext>共通言語ランタイム トリガー内からオブジェクトが取得のみできます。  
+  
+ 場合、<xref:Microsoft.SqlServer.Server.SqlContext.TriggerContext%2A>プロパティは、SQL Server の外部からアクセスは、<xref:System.NotSupportedException>がスローされます。  
+  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsIdentity">
+      <MemberSignature Language="C#" Value="public static System.Security.Principal.WindowsIdentity WindowsIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Principal.WindowsIdentity WindowsIdentity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlContext.WindowsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元の Microsoft Windows id。</summary>
+        <value>A <see cref="T:System.Security.Principal.WindowsIdentity" /> 、呼び出し元の Windows id を表すインスタンスまたは<see langword="null" />SQL サーバー認証を使用して、クライアントが認証された場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL Server の内部の共通言語ランタイム (CLR) コードは、プロセス アカウントのコンテキストで常に呼び出されます。 コードでの SQL Server のプロセス id ではなく呼び出し元のユーザーの id を使用して操作を実行する必要がある場合は、このプロパティで権限借用トークンを入手してください。 呼び出し元は、<xref:System.Security.Principal.WindowsIdentity> オブジェクトを取得すれば、クライアント アカウントを偽装し、クライアントの代わりに動作を実行できます。  
+  
+ 外部の SQL Server から呼び出された場合、<xref:System.NotSupportedException>がスローされます。  
+  
+ `EXTERNAL_ACCESS` アクセス許可または `UNSAFE` アクセス許可でマークされたアセンブリのみが、このプロパティにアクセスできます。  
+  
+ このプロパティは読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出し元のクライアントの Windows id を取得し、クライアントを偽装する方法を示します。 SQL Server オンライン ブックの権限借用の使用例については「権限借用のサンプル」を参照してください、<xref:Microsoft.SqlServer.Server.SqlContext.WindowsIdentity%2A>プロパティです。  
+  
+ [!code-csharp[DataWorks SqlContext.WindowsIdentity Sample#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlContext.WindowsIdentity Sample/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlContext.WindowsIdentity Sample#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlContext.WindowsIdentity Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

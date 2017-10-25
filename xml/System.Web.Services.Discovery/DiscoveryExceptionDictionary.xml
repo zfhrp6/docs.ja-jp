@@ -1,0 +1,244 @@
+<Type Name="DiscoveryExceptionDictionary" FullName="System.Web.Services.Discovery.DiscoveryExceptionDictionary">
+  <TypeSignature Language="C#" Value="public sealed class DiscoveryExceptionDictionary : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DiscoveryExceptionDictionary extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービス探索中に発生した例外を収集します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors%2A>プロパティ<xref:System.Web.Services.Discovery.DiscoveryClientProtocol>の種類は<xref:System.Web.Services.Discovery.DiscoveryExceptionDictionary>します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#1)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#1)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryExceptionDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryExceptionDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string url, Exception value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string url, class System.Exception value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Add(System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="value" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="url">この URL は、XML Web サービス探索中に例外が発生しました。</param>
+        <param name="value"><see cref="T:System.Exception" /> XML Web サービス探索中に発生しました。</param>
+        <summary>追加、<see cref="T:System.Exception" />のキーを持つ<paramref name="url" />を<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#6](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#6)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#6](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#6)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">キーを持つエントリ<paramref name="url" />に既に存在する、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">URL、<see cref="T:System.Exception" />内で検索する、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</param>
+        <summary>決定するかどうか、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />が含まれています、<see cref="T:System.Exception" />指定された URL にします。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />が含まれています、<see cref="T:System.Exception" />指定した URL です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#2](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#2)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#2](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#2)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Exception this[string url] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML Web サービス探索中にスローされる例外の原因となった探索ドキュメントの URL です。</param>
+        <summary>取得または設定、<see cref="T:System.Exception" />から指定された URL を検出するときに発生した、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</summary>
+        <value><see cref="T:System.Exception" />検出スローされた<paramref name="url" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#3](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#3)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#3](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#3)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />内のすべてのキーを持つオブジェクト、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> のキーを保持している <see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#7](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#7)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#7](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#7)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">URL、<see cref="T:System.Exception" />から削除する、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</param>
+        <summary>削除、<see cref="T:System.Exception" />から指定された URL に、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#4](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#4)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#4](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#4)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryExceptionDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />オブジェクト内のすべての値を含む、<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryExceptionDictionary_Property_Method#8](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CPP/discoveryexceptiondictionary_property_method.cpp#8)]
+ [!code-csharp[DiscoveryExceptionDictionary_Property_Method#8](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/CS/discoveryexceptiondictionary_property_method.cs#8)]
+ [!code-vb[DiscoveryExceptionDictionary_Property_Method#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryExceptionDictionary_Property_Method/VB/discoveryexceptiondictionary_property_method.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

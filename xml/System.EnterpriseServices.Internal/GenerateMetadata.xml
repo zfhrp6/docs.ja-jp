@@ -1,0 +1,208 @@
+<Type Name="GenerateMetadata" FullName="System.EnterpriseServices.Internal.GenerateMetadata">
+  <TypeSignature Language="C#" Value="public class GenerateMetadata : System.EnterpriseServices.Internal.IComSoapMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GenerateMetadata extends System.Object implements class System.EnterpriseServices.Internal.IComSoapMetadata" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.GenerateMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.Internal.IComSoapMetadata</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("d8013ff1-730b-45e2-ba24-874b7242c425")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>COM+ コンポーネントの共通言語ランタイム (CLR) メタデータを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、<xref:System.EnterpriseServices.Internal.GenerateMetadata>クラスには、指定したタイプ ライブラリの CLR メタデータを含むアセンブリが生成されます。  
+  
+ <xref:System.EnterpriseServices.Internal.GenerateMetadata>.NET Framework によって内部的に使用されます。 コード内で直接、クラスを使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenerateMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.GenerateMetadata.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.Internal.GenerateMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public string Generate (string strSrcTypeLib, string outPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Generate(string strSrcTypeLib, string outPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.GenerateMetadata.Generate(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strSrcTypeLib" Type="System.String" />
+        <Parameter Name="outPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strSrcTypeLib">アセンブリを生成するタイプ ライブラリの名前。</param>
+        <param name="outPath">アセンブリの生成または既存のアセンブリの検索を実行するフォルダー。</param>
+        <summary>指定したタイプ ライブラリで表される COM+ コンポーネントの共通言語ランタイム (CLR) メタデータを格納するアセンブリの生成または検索を実行します。</summary>
+        <returns>生成されたアセンブリの名前。入力が無効である場合は空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、<xref:System.EnterpriseServices.Internal.GenerateMetadata.Generate%2A>メソッドで指定されたタイプ ライブラリの CLR メタデータを含むアセンブリを生成します。 この処理には、呼び出し、<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData%2A>メソッドです。  
+  
+ これらのメソッドは、コードから直接呼び出される必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateMetaData">
+      <MemberSignature Language="C#" Value="public string GenerateMetaData (string strSrcTypeLib, string outPath, byte[] PublicKey, System.Reflection.StrongNameKeyPair KeyPair);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateMetaData(string strSrcTypeLib, string outPath, unsigned int8[] PublicKey, class System.Reflection.StrongNameKeyPair KeyPair) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData(System.String,System.String,System.Byte[],System.Reflection.StrongNameKeyPair)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strSrcTypeLib" Type="System.String" />
+        <Parameter Name="outPath" Type="System.String" />
+        <Parameter Name="PublicKey" Type="System.Byte[]" />
+        <Parameter Name="KeyPair" Type="System.Reflection.StrongNameKeyPair" />
+      </Parameters>
+      <Docs>
+        <param name="strSrcTypeLib">アセンブリを生成するタイプ ライブラリの名前。</param>
+        <param name="outPath">アセンブリの生成または既存のアセンブリの検索を実行するフォルダー。</param>
+        <param name="PublicKey">アセンブリにタイプ ライブラリ情報をインポートするために使用される公開キー。</param>
+        <param name="KeyPair">生成されたアセンブリに署名するために使用される厳密な名前付きのキー ペア。</param>
+        <summary>指定したタイプ ライブラリで表される COM+ コンポーネントの共通言語ランタイム (CLR) メタデータを格納するアセンブリの生成または検索を実行し、厳密な名前付きのキー ペアを使用してアセンブリに署名し、それをグローバル アセンブリ キャッシュにインストールします。</summary>
+        <returns>生成されたアセンブリの名前。入力が無効である場合は空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData%2A>メソッドで指定されたタイプ ライブラリの CLR メタデータを含むアセンブリを生成します。 文字列内に生成された名前のアセンブリが既にが存在する場合は、アセンブリを生成しない`outPath`フォルダーです。  
+  
+ <xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData%2A>コードから直接呼び出される必要はありません。 両方で呼び出された、<xref:System.EnterpriseServices.Internal.GenerateMetadata.Generate%2A>と<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateSigned%2A>メソッドです。  
+  
+ 呼び出された場合<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateSigned%2A>、<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData%2A>も厳密な名前のキー ペアを生成、アセンブリに署名およびグローバル アセンブリ キャッシュにインストールします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateSigned">
+      <MemberSignature Language="C#" Value="public string GenerateSigned (string strSrcTypeLib, string outPath, bool InstallGac, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GenerateSigned(string strSrcTypeLib, string outPath, bool InstallGac, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.GenerateMetadata.GenerateSigned(System.String,System.String,System.Boolean,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strSrcTypeLib" Type="System.String" />
+        <Parameter Name="outPath" Type="System.String" />
+        <Parameter Name="InstallGac" Type="System.Boolean" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="strSrcTypeLib">アセンブリを生成するタイプ ライブラリの名前。</param>
+        <param name="outPath">アセンブリの生成または既存のアセンブリの検索を実行するフォルダー。</param>
+        <param name="InstallGac">無視されます。</param>
+        <param name="Error">エラー メッセージの書き込み先の文字列。</param>
+        <summary>指定したタイプ ライブラリで表される COM+ コンポーネントの共通言語ランタイム (CLR) メタデータを格納するアセンブリの生成または検索を実行し、厳密な名前付きのキー ペアを使用してアセンブリに署名し、それをグローバル アセンブリ キャッシュにインストールします。</summary>
+        <returns>生成されたアセンブリの名前。入力が無効である場合は空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要に応じて、<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateSigned%2A>メソッドで指定されたタイプ ライブラリの CLR メタデータを含むアセンブリを生成します。 また、厳密な名前のキー ペアを生成し、アセンブリに署名します。  
+  
+ この処理には、呼び出し、<xref:System.EnterpriseServices.Internal.GenerateMetadata.GenerateMetaData%2A>メソッドです。 これらのメソッドは、コードから直接呼び出される必要はありません。  
+  
+ `InstallGac`パラメーターには、グローバル アセンブリ キャッシュにアセンブリをインストールするかどうかを示します。 ただし、実装では、この値は無視し、常に署名されたアセンブリをグローバル アセンブリ キャッシュにインストールします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SearchPath">
+      <MemberSignature Language="C#" Value="public static int SearchPath (string path, string fileName, string extension, int numBufferChars, string buffer, int[] filePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;kernel32.dll&quot; as &quot;SearchPath&quot; unicode winapi lasterr)int32 SearchPath(string path, string fileName, string extension, int32 numBufferChars, string buffer, int32[] filePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.GenerateMetadata.SearchPath(System.String,System.String,System.String,System.Int32,System.String,System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="extension" Type="System.String" />
+        <Parameter Name="numBufferChars" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.String" />
+        <Parameter Name="filePart" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルの検索対象となるパス。</param>
+        <param name="fileName">検索するファイルの名前。</param>
+        <param name="extension">ファイルの検索時にファイル名に追加される拡張子。</param>
+        <param name="numBufferChars">有効なパスとファイル名を受け取るバッファーのサイズ。</param>
+        <param name="buffer">見つかったファイルのパスとファイル名を受け取るバッファー。</param>
+        <param name="filePart">有効なパスとファイル名の最後のコンポーネントのアドレスを受け取る変数。</param>
+        <summary>指定したパスで指定したファイルを検索します。</summary>
+        <returns>検索が成功した場合、戻り値は <paramref name="buffer" /> にコピーされた文字列の長さになります。 検索が失敗した場合、戻り値は 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、プラットフォーム SDK ドキュメントの検索パスについてを参照してください。 [http://msdn.microsoft.com/library/default.asp?url=/library/fileio/base/searchpath.asp](http://msdn.microsoft.com/library/default.asp?url=/library/fileio/base/searchpath.asp)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

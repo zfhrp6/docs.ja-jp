@@ -1,0 +1,184 @@
+<Type Name="OleDbError" FullName="System.Data.OleDb.OleDbError">
+  <TypeSignature Language="C#" Value="public sealed class OleDbError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OleDbError extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbError" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>警告またはデータ ソースから返されたエラーに関連する情報を収集します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、エラーが発生したときに、OleDb データ アダプターによって作成されます。 インスタンス<xref:System.Data.OleDb.OleDbError>がによって作成および管理、<xref:System.Data.OleDb.OleDbErrorCollection>によってさらに作成され、クラス、<xref:System.Data.OleDb.OleDbException>クラスです。  
+  
+ エラーの重大度レベルが高すぎる場合、サーバーは <xref:System.Data.OleDb.OleDbConnection> を閉じることがあります。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+   
+  
+## Examples  
+ 次の例のプロパティを表示する、<xref:System.Data.OleDb.OleDbError>です。  
+  
+ [!code-csharp[Classic WebData OleDbError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbError.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの簡単な説明を取得します。</summary>
+        <value>エラーの簡単な説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のプロパティを表示する、<xref:System.Data.OleDb.OleDbError>です。  
+  
+ [!code-csharp[Classic WebData OleDbError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeError">
+      <MemberSignature Language="C#" Value="public int NativeError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NativeError" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbError.NativeError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベースに固有のエラー情報を取得します。</summary>
+        <value>データベースに固有のエラー情報です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のプロパティを表示する、<xref:System.Data.OleDb.OleDbError>です。  
+  
+ [!code-csharp[Classic WebData OleDbError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbError.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成したプロバイダーの名前を取得します。</summary>
+        <value>エラーを生成したプロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のプロパティを表示する、<xref:System.Data.OleDb.OleDbError>です。  
+  
+ [!code-csharp[Classic WebData OleDbError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SQLState">
+      <MemberSignature Language="C#" Value="public string SQLState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SQLState" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbError.SQLState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベースの標準的な ANSI SQL の 5 文字のエラー コードを取得します。</summary>
+        <value>複数の場所から、エラーが発行される場合に、エラーの発生元を識別する 5 文字のエラー コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のプロパティを表示する、<xref:System.Data.OleDb.OleDbError>です。  
+  
+ [!code-csharp[Classic WebData OleDbError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbError.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラー メッセージの完全なテキストを取得します。</summary>
+        <returns>エラーの完全なテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式は"OleDbError:"」と入力し、 <xref:System.Data.OleDb.OleDbError.Message%2A>、およびスタック トレース。 例:  
+  
+ OleDbError:UserId またはパスワードが無効です。 \<スタック トレース >  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.OleDb.OleDbError>内で、<xref:System.Data.OleDb.OleDbErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData OleDbError.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

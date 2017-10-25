@@ -1,0 +1,192 @@
+<Type Name="SettingsAllowAnonymousAttribute" FullName="System.Web.Profile.SettingsAllowAnonymousAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SettingsAllowAnonymousAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsAllowAnonymousAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.SettingsAllowAnonymousAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロファイル プロパティを設定または匿名ユーザーがアクセスできるかどうかを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>場合は、ユーザーが匿名のユーザー プロファイルのカスタム実装のプロパティにアクセスするかどうかを識別するクラスを使用します。 匿名 id を有効にする方法については、構成要素の付属のマニュアルを参照してください。  
+  
+ ない場合は<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>プロファイル プロパティ、プロファイル プロパティの匿名アクセスを許可しない場合を指定します。  
+  
+ カスタム プロファイルの実装が継承されたクラス、<xref:System.Web.Profile.ProfileBase>クラスを abstract であり、ユーザー プロファイルの構成要素で指定されていないプロパティを定義します。 カスタムのユーザー プロファイルの種類を指定するには、アプリケーションの Web.config ファイルで、`inherits`次の例で示すように構成要素の属性です。  
+  
+ `<configuration>`  
+  
+ `<connectionStrings>`  
+  
+ `<add`  
+  
+ `name="SqlServices"`  
+  
+ `connectionString="Data Source=localhost;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />`  
+  
+ `</connectionStrings>`  
+  
+ `<system.web>`  
+  
+ `<authentication mode="Forms" >`  
+  
+ `<forms`  
+  
+ `loginUrl="login.aspx"`  
+  
+ `name=".ASPXFORMSAUTH" />`  
+  
+ `</authentication>`  
+  
+ `<authorization>`  
+  
+ `<deny users="?" />`  
+  
+ `</authorization>`  
+  
+ `<profile inherits="Samples.AspNet.Profile.EmployeeProfile"`  
+  
+ `defaultProvider="SqlProvider">`  
+  
+ `<providers>`  
+  
+ `<clear />`  
+  
+ `<add`  
+  
+ `name="SqlProvider"`  
+  
+ `type="System.Web.Profile.SqlProfileProvider"`  
+  
+ `connectionStringName="SqlServices"`  
+  
+ `description="SQL Profile Provider for Sample"/>`  
+  
+ `<add`  
+  
+ `name="EmployeeInfoProvider"`  
+  
+ `type="System.Web.Profile.SqlProfileProvider"`  
+  
+ `connectionStringName="SqlServices"`  
+  
+ `description="SQL Profile Provider for Employee Info"/>`  
+  
+ `</providers>`  
+  
+ `<properties>`  
+  
+ `<add name="GarmentSize" />`  
+  
+ `</properties>`  
+  
+ `</profile>`  
+  
+ `</system.web>`  
+  
+ `</configuration>`  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するクラスを定義する、<xref:System.Web.Profile.ProfileBase>カスタム プロファイルを作成します。 カスタム プロファイルの種類が指定された、`inherits`アプリケーションの Web.config ファイルの構成要素の属性です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsAllowAnonymousAttribute (bool allow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool allow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.SettingsAllowAnonymousAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allow" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allow">
+          <see langword="true" />匿名ユーザーは、関連付けられているプロファイル プロパティにアクセスできる場合それ以外の場合<see langword="false" />です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.Profile.SettingsAllowAnonymousAttribute" />クラスし、関連付けられているプロファイル プロパティへの匿名アクセスを許可するかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.SettingsAllowAnonymousAttribute>場合は、ユーザーが匿名のユーザー プロファイルのカスタム実装のプロパティにアクセスするかどうかを識別するクラスを使用します。 匿名 id を有効にする方法については、構成要素を参照してください。  
+  
+ ない場合は<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>プロファイル プロパティ、プロファイル プロパティへの匿名アクセスを許可しない場合を指定します。  
+  
+ カスタム プロファイルの実装が継承されたクラス、<xref:System.Web.Profile.ProfileBase>クラスを abstract であり、ユーザー プロファイルの構成要素で指定されていないプロパティを定義します。  
+  
+   
+  
+## Examples  
+ 次の例から継承するクラスを定義する、<xref:System.Web.Profile.ProfileBase>カスタム プロファイルを作成するクラス。 カスタム プロファイルの種類が指定された、`inherits`アプリケーションの Web.config ファイルの構成要素の属性です。 カスタム プロファイルの実装を指定する構成ファイルの例は、次を参照してください。、<xref:System.Web.Profile.SettingsAllowAnonymousAttribute>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Profile.ProfileBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/CS/employeeprofile.cs#1)]
+ [!code-vb[System.Web.Profile.ProfileBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileBase/VB/employeeprofile.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Allow">
+      <MemberSignature Language="C#" Value="public bool Allow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Allow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.SettingsAllowAnonymousAttribute.Allow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが匿名ユーザーの場合、カスタム プロファイルの実装の関連付けられているプロパティにアクセスできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />匿名ユーザーは、関連付けられているプロファイル プロパティにアクセスできる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.SettingsAllowAnonymousAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Web.Profile.SettingsAllowAnonymousAttribute.Allow" />プロパティが既定値に設定します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Web.Profile.SettingsAllowAnonymousAttribute.Allow" />プロパティが既定値です。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

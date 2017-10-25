@@ -1,0 +1,115 @@
+<Type Name="NumberSubstitutionMethod" FullName="System.Windows.Media.NumberSubstitutionMethod">
+  <TypeSignature Language="C#" Value="public enum NumberSubstitutionMethod" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NumberSubstitutionMethod extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.NumberSubstitutionMethod" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テキスト ランの数値に実行される数字置換の種類を指定する列挙子クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのカルチャを表す数字、10 進法を使用して、カルチャの数が異なる数字形式を使用します。 次の表は、さまざまなカルチャで使用されるいくつかの番号付けシステムを示します。  
+  
+ ![番号代替グリフのテーブル](~/add/media/numbersubstitution01.png "番号代替グリフの表")  
+複数の異なるカルチャの数字の外観の例  
+  
+ 、文字、とは異なり桁の数字が計算で使用されるため、数字の形状のセットごとに代替の Unicode コード ポイントを提供するのに十分ではありません。 すべてのアプリケーション、オペレーティング システム、およびすべてのランタイム ライブラリ、内部のバイナリ形式の数値を文字の文字列に変換する専用のコードが含まれています。 その逆です。 これらの変換ルーチンを設計して、Unicode の数字「0039」から「0030」を使用します。  
+  
+ <xref:System.Windows.Media.NumberSubstitution>クラスには、レンダリング時に適切な数字の代わりに複数の異なるカルチャを可能にする機能が用意されています。 この機能は、フォントの置換および言語依存のフォントのレンダリングを提供するために使用したものに似ています。  
+  
+> [!NOTE]
+>  カルチャの数が、従来の数字形状を破棄すること、西洋の数字の形状を採用するには、数値の置換機能を認識して従来の数字と国内の標準的な数字形式の違いをカルチャごとにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsCulture">
+      <MemberSignature Language="C#" Value="AsCulture" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.NumberSubstitutionMethod AsCulture = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitutionMethod.AsCulture" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定モード。 数値のカルチャに基づく置換方法を決定を指定<see cref="P:System.Globalization.NumberFormatInfo.DigitSubstitution" />プロパティの値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="Context" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.NumberSubstitutionMethod Context = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitutionMethod.Context" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値のカルチャがアラビア語やペルシア語のカルチャの場合は、数字がコンテキストに依存を指定します。 先行する最も近いに応じて従来またはラテン文字のいずれかの数字が使用する厳密な文字は、または、none、段落のテキストの方向を使用する必要がある場合。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="European">
+      <MemberSignature Language="C#" Value="European" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.NumberSubstitutionMethod European = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitutionMethod.European" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード ポイント 0x30 0x39 が常に表示されること、ヨーロッパ桁の数字として数値の置換は実行されない場合を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeNational">
+      <MemberSignature Language="C#" Value="NativeNational" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.NumberSubstitutionMethod NativeNational = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitutionMethod.NativeNational" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国別の数字を使用して、カルチャの指定に従って、数値のカルチャの数字を表示することを示す<see cref="P:System.Globalization.NumberFormatInfo.NativeDigits" />プロパティの値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Traditional">
+      <MemberSignature Language="C#" Value="Traditional" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.NumberSubstitutionMethod Traditional = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.NumberSubstitutionMethod.Traditional" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.NumberSubstitutionMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値のカルチャの従来の数字を使用して数字を表示することを指定します。 ほとんどのカルチャでは、これと同じ、<see cref="F:System.Globalization.DigitShapes.NativeNational" />列挙値。 ただしを使用して<see cref="F:System.Windows.Media.NumberSubstitutionMethod.NativeNational" />される可能性が一部アラビア語のカルチャのラテン桁の数字を使用して、<see cref="F:System.Windows.Media.NumberSubstitutionMethod.Traditional" />アラビア語のすべてのカルチャをアラビア数字の結果します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

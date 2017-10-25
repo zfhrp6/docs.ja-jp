@@ -1,0 +1,97 @@
+<Type Name="AddInEnvironment" FullName="System.AddIn.Hosting.AddInEnvironment">
+  <TypeSignature Language="C#" Value="public sealed class AddInEnvironment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddInEnvironment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ドメインとアドインでのプロセスへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して、次のいずれかの目的の環境にアドインを読み込みます。  
+  
+-   既存のアプリケーション ドメインがある、<xref:System.AppDomain>オブジェクト。  
+  
+-   アドインをアクティブに自動的に生成されたアプリケーション ドメイン。  
+  
+-   既存の外部プロセスです。  
+  
+ 取得する、 <xref:System.AddIn.Hosting.AddInEnvironment> 、アドインのオブジェクト、アドインのアプリケーション ドメインを渡す、<xref:System.AddIn.Hosting.AddInEnvironment>クラスのコンス トラクターです。 また、使用することができます、<xref:System.AddIn.Hosting.AddInController.AddInEnvironment%2A>のプロパティ、<xref:System.AddIn.Hosting.AddInController>クラス アドインの取得を<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクト。  
+  
+ 取得した後、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクトを次を行うことができます。  
+  
+-   渡す<xref:System.AddIn.Hosting.AddInEnvironment>を適切なオブジェクト<xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドのオーバー ロードします。 アドインでは、アプリケーション ドメインとプロセスで表されるでアクティブ化、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクト。  
+  
+-   使用して、<xref:System.AddIn.Hosting.AddInEnvironment.Process%2A>を取得するプロパティ、<xref:System.AddIn.Hosting.AddInProcess>オブジェクト。 適切なオブジェクトを渡す<xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドのオーバー ロードします。 アドインをアクティブ化されますで表されるプロセスで、<xref:System.AddIn.Hosting.AddInProcess>オブジェクトが、新しいアプリケーション ドメインにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddInEnvironment (AppDomain appDomain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.AppDomain appDomain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInEnvironment.#ctor(System.AppDomain)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appDomain" Type="System.AppDomain" />
+      </Parameters>
+      <Docs>
+        <param name="appDomain">アプリケーション ドメインが、アドインが含まれています。</param>
+        <summary><see cref="T:System.AddIn.Hosting.AddInEnvironment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドインの取得をこのコンス トラクターを使用するには、アドインをする必要がありますが含まれています。 アプリケーション ドメインにアクセスする場合、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクト。 それ以外の場合、使用することができます、<xref:System.AddIn.Hosting.AddInController.AddInEnvironment%2A>のプロパティ、<xref:System.AddIn.Hosting.AddInController>を取得するクラス、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appDomain" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">完全信頼のアクセス許可を要求します。 呼び出しチェーン内の呼び出し元には、十分なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Process">
+      <MemberSignature Language="C#" Value="public System.AddIn.Hosting.AddInProcess Process { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.AddIn.Hosting.AddInProcess Process" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInEnvironment.Process" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInProcess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.AddIn.Hosting.AddInProcess" />アドインが実行されているプロセスを表すオブジェクト。</summary>
+        <value>アドインが実行されているプロセスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のアドインが別のドメインに同じプロセス内でアクティブ化するのには、このプロパティを使用することができます。  
+  
+ 渡す、<xref:System.AddIn.Hosting.AddInProcess>を追加するには、このプロパティで取得したオブジェクト<xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドのオーバー ロードします。  
+  
+ 外部プロセスで同じドメインにそれらをアクティブ化する場合を渡す必要があります、<xref:System.AddIn.Hosting.AddInEnvironment>オブジェクトに直接、<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInEnvironment%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

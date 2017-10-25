@@ -1,0 +1,408 @@
+<Type Name="MembershipUserCollection" FullName="System.Web.Security.MembershipUserCollection">
+  <TypeSignature Language="C#" Value="public sealed class MembershipUserCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit MembershipUserCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.MembershipUserCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web, Version=2.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Security.MembershipUser" /> オブジェクトのコレクション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Security.MembershipUserCollection?displayProperty=nameWithType>から返される、 <xref:System.Web.Security.Membership.GetAllUsers%2A>、 <xref:System.Web.Security.Membership.FindUsersByName%2A>、および<xref:System.Web.Security.Membership.FindUsersByEmail%2A>のメソッド、<xref:System.Web.Security.Membership?displayProperty=nameWithType>クラスです。 <xref:System.Web.Security.MembershipUserCollection>によって返されるオブジェクト、 <xref:System.Web.Security.Membership.GetAllUsers%2A>、 <xref:System.Web.Security.Membership.FindUsersByName%2A>、および<xref:System.Web.Security.Membership.FindUsersByEmail%2A>メソッドには、メンバーシップ データ ストアにユーザー情報のスナップショットが含まれます。 つまりのメンバーシップ ユーザーの情報を変更、<xref:System.Web.Security.MembershipUserCollection>メンバーシップ データ ストアには反映されません。 メンバーシップ データ ストア内のメンバーシップ ユーザーの情報を変更するには、使用、 <xref:System.Web.Security.Membership.UpdateUser%2A>、<xref:System.Web.Security.Membership.CreateUser%2A>と<xref:System.Web.Security.Membership.DeleteUser%2A>のメソッド、<xref:System.Web.Security.Membership?displayProperty=nameWithType>クラスです。  
+  
+> [!NOTE]
+>  ASP.NET のメンバーシップ機能に慣れていない場合は、次を参照してください。[メンバーシップの概要](http://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980)続行する前にします。 メンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザーの数のカウントを持つメンバーシップ ユーザーの一覧を返します現在オンラインです。 メンバーシップを使用するように構成、ASP.NET アプリケーションの例は、次を参照してください。、<xref:System.Web.Security.Membership>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/ShowUserscs.aspx#5)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/ShowUsersvb.aspx#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipUserCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい空のメンバーシップ ユーザー コレクションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Security.MembershipUserCollection>メンバーシップ プロバイダーの実装によって作成されから返される、<xref:System.Web.Security.MembershipProvider.GetAllUsers%2A>と<xref:System.Web.Security.MembershipProvider.FindUsersByName%2A>のメソッド、<xref:System.Web.Security.MembershipProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サンプルを示しています。<xref:System.Web.Security.MembershipProvider.GetAllUsers%2A>実装します。  
+  
+ [!code-csharp[System.Web.Security.IMembershipProvider#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IMembershipProvider/CS/imembershipprovidergetallusers.cs#15)]
+ [!code-vb[System.Web.Security.IMembershipProvider#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IMembershipProvider/VB/imembershipprovidergetallusers.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Security.MembershipUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Security.MembershipUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.Add(System.Web.Security.MembershipUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Security.MembershipUser" />
+      </Parameters>
+      <Docs>
+        <param name="user">コレクションに追加する <see cref="T:System.Web.Security.MembershipUser" /> オブジェクト。</param>
+        <summary>指定されたメンバーシップ ユーザーをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipUserCollection.Add%2A>メソッドは、通常のメンバーシップ プロバイダーの実装によって使用、 <xref:System.Web.Security.MembershipProvider.GetAllUsers%2A>、 <xref:System.Web.Security.MembershipProvider.FindUsersByEmail%2A>、および<xref:System.Web.Security.MembershipProvider.FindUsersByName%2A>のメソッド、<xref:System.Web.Security.MembershipProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サンプルを示しています。<xref:System.Web.Security.MembershipProvider.GetAllUsers%2A>実装します。  
+  
+ [!code-csharp[System.Web.Security.IMembershipProvider#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IMembershipProvider/CS/imembershipprovidergetallusers.cs#15)]
+ [!code-vb[System.Web.Security.IMembershipProvider#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IMembershipProvider/VB/imembershipprovidergetallusers.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="user" /> の <see cref="P:System.Web.Security.MembershipUser.UserName" /> が null。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="user" /> と同じ <see cref="P:System.Web.Security.MembershipUser.UserName" /> 値を持つ <see cref="T:System.Web.Security.MembershipUser" /> オブジェクトが､既にコレクション内に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべてのメンバーシップ ユーザー オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をクリア、<xref:System.Web.Security.MembershipUserCollection>の結果を交換する前に、<xref:System.Web.Security.Membership.GetAllUsers%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.MembershipUserCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/CS/snippetscs.aspx#4)]
+ [!code-vb[System.Web.Security.MembershipUserCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/VB/snippetsvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Security.MembershipUser[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Security.MembershipUser[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.CopyTo(System.Web.Security.MembershipUser[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Security.MembershipUser[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.Security.MembershipUserCollection" /> からコピーされる要素のコピー先である <see cref="T:System.Web.Security.MembershipUser" /> 型の 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>メンバーシップ ユーザーのコレクションを 1 次元配列にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipUserCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに含まれるメンバーシップ ユーザー オブジェクトの数を取得します。</summary>
+        <value>数<see cref="T:System.Web.Security.MembershipUser" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、すべてのユーザーの合計数の数を含む、メンバーシップ ユーザーのデータ ソースからユーザーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.MembershipUserCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/CS/countcs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.MembershipUserCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/VB/countvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メンバーシップ ユーザーのコレクションを反復処理できる列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:System.Web.Security.MembershipUserCollection" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、コレクション内のデータの読み取りのみ許可します。 列挙子を使用して、基になるコレクションを変更することはできません。 詳細については、「<xref:System.Collections.IEnumerator>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Collections.IEnumerator>から返される、<xref:System.Web.Security.MembershipUserCollection.GetEnumerator%2A>を反復処理するメソッド、<xref:System.Web.Security.MembershipUserCollection>です。  
+  
+ [!code-csharp[System.Web.Security.MembershipUserCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/CS/snippetscs.aspx#7)]
+ [!code-vb[System.Web.Security.MembershipUserCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/VB/snippetsvb.aspx#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipUserCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーシップ ユーザー コレクションがスレッド セーフであるかどうかを示す値を取得します。</summary>
+        <value>常に<see langword="false" />スレッド セーフなメンバーシップ ユーザー コレクションはサポートされていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードでは、このプロパティは通常使用しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Security.MembershipUser this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Security.MembershipUser Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipUserCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Web.Security.MembershipUser.UserName" />の<see cref="T:System.Web.Security.MembershipUser" />をコレクションから取得します。</param>
+        <summary>指定されたユーザー名によって参照されるコレクションのメンバーシップ ユーザーを取得します。</summary>
+        <value>A<see cref="T:System.Web.Security.MembershipUser" />によって指定されたユーザーを表すオブジェクトを<paramref name="name" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipUser>によって返されるオブジェクト<xref:System.Web.Security.MembershipUserCollection.Item%2A>プロパティには、メンバーシップ データ ストア内のユーザー情報のスナップショットが含まれています。 つまりのメンバーシップ ユーザーの情報を変更、<xref:System.Web.Security.MembershipUserCollection>メンバーシップ データ ストアには反映されません。 メンバーシップ データ ストア内のメンバーシップ ユーザーの情報を変更するには、使用、 <xref:System.Web.Security.Membership.UpdateUser%2A>、 <xref:System.Web.Security.Membership.CreateUser%2A>、および<xref:System.Web.Security.Membership.DeleteUser%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例には、内のすべてのメンバーシップ ユーザー名が表示されます、<xref:System.Web.UI.WebControls.ListBox>され、選択したユーザー名の特定のメンバーシップ情報を表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.MembershipUserCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/CS/itemcs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.MembershipUserCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/VB/itemvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザー名、<see cref="T:System.Web.Security.MembershipUser" />コレクションから削除するオブジェクト。</param>
+        <summary>指定したユーザー名のメンバーシップ ユーザー オブジェクトをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="public void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メンバーシップ ユーザー コレクションのコンテンツを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、<xref:System.Web.Security.MembershipUserCollection>メンバーシップ データ ストア内のメンバーシップ ユーザー情報のスナップショットは読み取り専用考慮します。 メンバーシップ ユーザーの情報が変更された場合を使用して、 <xref:System.Web.Security.Membership.UpdateUser%2A>、<xref:System.Web.Security.Membership.CreateUser%2A>と<xref:System.Web.Security.Membership.DeleteUser%2A>メソッドです。 <xref:System.Web.Security.MembershipUserCollection.SetReadOnly%2A>メソッド マーク、<xref:System.Web.Security.MembershipUserCollection>読み取り専用とように<xref:System.Web.Security.MembershipUser>オブジェクトを追加またはコレクションから削除することはできません。 プロパティの値を<xref:System.Web.Security.MembershipUser>オブジェクトが読み取り専用としてマークされていません。 つまりのプロパティ値を変更することができます、<xref:System.Web.Security.MembershipUser>で、<xref:System.Web.Security.MembershipUserCollection>が、コレクションで読み取り専用としてマークされているかどうかに関係なく、<xref:System.Web.Security.MembershipUserCollection.SetReadOnly%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、すべてのユーザーがメンバーシップ データ ストアから返します。 <xref:System.Web.Security.MembershipUserCollection>返されるに基づく読み取り専用とマークされて、`Boolean`呼び出し元によって指定されたパラメーター。  
+  
+ [!code-csharp[System.Web.Security.MembershipUserCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/CS/snippetscs.aspx#5)]
+ [!code-vb[System.Web.Security.MembershipUserCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipUserCollection/VB/snippetsvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipUserCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期ルートを取得します。</summary>
+        <value>常に<see langword="this" />メンバーシップ ユーザー コレクションの同期がサポートされていないため、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードでは、このプロパティは通常使用しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipUserCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーされるオブジェクトのシリアル化先は、<see cref="T:System.Web.Security.MembershipUserCollection" />オブジェクト。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>内容をコピー、<see cref="T:System.Web.Security.MembershipUserCollection" />オブジェクトを<see cref="T:System.Array" />特定の開始、<see cref="T:System.Array" />インデックス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ <paramref name="index" />長さ以上<paramref name="array" />です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Web.Security.MembershipUserCollection" /> の要素数が、コピー先の配列の <paramref name="index" /> から最後までの領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">ソースの種類<see cref="T:System.Web.Security.MembershipUserCollection" />コピー先の配列の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

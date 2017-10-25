@@ -1,0 +1,137 @@
+<Type Name="LazyThreadSafetyMode" FullName="System.Threading.LazyThreadSafetyMode">
+  <TypeSignature Language="C#" Value="public enum LazyThreadSafetyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LazyThreadSafetyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.LazyThreadSafetyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Lazy`1" /> インスタンスが複数のスレッド間でアクセスを同期する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使用して、`mode`のパラメーター<xref:System.Lazy%601>コンス トラクターです。 あるかどうか、この列挙体の観点からスレッドの同期のすべてのコンス トラクターの効果を記述できます`mode`パラメーター。  
+  
+ A<xref:System.Lazy%601>ユーザー指定の初期化メソッドまたは、既定のコンス トラクターのいずれかのインスタンスが初期化されて`T`です。 初期化メソッドがで指定された、`valueFactory`のパラメーター、<xref:System.Lazy%601>コンス トラクターです。 インスタンスを返します`T`、遅延のインスタンスによってインスタンス化される型で、ある<xref:System.Lazy%601>です。 コンス トラクターがない場合、`valueFactory`パラメーターでは、既定のコンス トラクターの`T`初期化するために使用される、<xref:System.Lazy%601>インスタンス。 どちらの場合の初期化するには、最初に呼び出したときが行われます。、<xref:System.Lazy%601.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+ スレッド セーフを指定するだけでなく、<xref:System.Lazy%601>インスタンス、この列挙体は、例外がキャッシュに影響します。 例外をキャッシュする場合、<xref:System.Lazy%601>インスタンス、インスタンスを初期化する機会を 1 つだけを取得します。 呼び出した場合、例外がスローされて初めて、<xref:System.Lazy%601.Value%2A?displayProperty=nameWithType>プロパティ、例外はキャッシュされにすべての後続の呼び出しで再度スローされ、<xref:System.Lazy%601.Value%2A?displayProperty=nameWithType>プロパティです。 例外のキャッシュの利点は、エラーが発生した場合でも、任意の 2 つのスレッドがその、同じ結果を常に取得します。  
+  
+ PublicationOnly モードを指定するときに、例外はキャッシュことはありません。 None を指定すると中には ExecutionAndPublication、キャッシュ依存する初期化メソッドを指定するか、既定のコンス トラクターを許可または`T`使用します。 初期化メソッドを指定すると、この 2 つのモードで例外キャッシュが有効になります。 初期化メソッドは非常に単純にすることができます。 たとえば、`T` に既定のコンストラクターを呼び出すことができます。C# の場合は `new Lazy<Contents>(() => new Contents(), mode)`、Visual Basic の場合は `New Lazy(Of Contents)(Function() New Contents())` です。 初期化メソッドで、既定のコンス トラクターによってスローされる例外を指定しないコンス トラクターを使用するかどうかは`T`はキャッシュされません。 次の表は、例外はキャッシュの動作をまとめたものです。  
+  
+|モード|初期化メソッドを使用します。|既定のコンス トラクターを使用します。`T`|  
+|----------|---------------------------------|---------------------------------------|  
+|なし|キャッシュ済み|キャッシュされません。|  
+|PublicationOnly|キャッシュされません。|キャッシュされません。|  
+|中には ExecutionAndPublication|キャッシュ済み|キャッシュされません。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExecutionAndPublication">
+      <MemberSignature Language="C#" Value="ExecutionAndPublication" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.LazyThreadSafetyMode ExecutionAndPublication = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LazyThreadSafetyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロックを使って確実に 1 つのスレッドのみが <see cref="T:System.Lazy`1" /> インスタンスをスレッド セーフな方法で初期化します。 初期化メソッド (初期化メソッドがない場合は、既定のコンストラクター) は内部でロックを使うため、デッドロックが発生することがあります。 初期化メソッドを指定した (<paramref name="valueFactory" /> パラメーター) <see cref="T:System.Lazy`1" /> コンストラクターを使った場合に、<see cref="P:System.Lazy`1.Value" /> プロパティを初回に呼び出したときに初期化メソッドが例外をスローした (または例外のハンドルに失敗した) 場合、その例外はキャッシュされ、それ以降に <see cref="P:System.Lazy`1.Value" /> プロパティを呼び出した時点で再度スローされます。 初期化メソッドを指定しない <see cref="T:System.Lazy`1" /> コンストラクターを使った場合、<paramref name="T" /> について既定のコンストラクターからスローされる例外はキャッシュされません。 その場合、<see cref="P:System.Lazy`1.Value" /> プロパティへの後続の呼び出しで <see cref="T:System.Lazy`1" /> インスタンスが正常に初期化される可能性があります。 初期化メソッドが <see cref="T:System.Lazy`1" /> インスタンスの <see cref="P:System.Lazy`1.Value" /> プロパティに再帰的にアクセスすると、<see cref="T:System.InvalidOperationException" /> がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.LazyThreadSafetyMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.LazyThreadSafetyMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LazyThreadSafetyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Lazy`1" /> インスタンスはスレッド セーフではありません。インスタンスに複数のスレッドからアクセスした場合の動作は未定義です。 高いパフォーマンスが重要であり、<see cref="T:System.Lazy`1" /> インスタンスが複数のスレッドから初期化されないことが保証されている場合にのみ、このモードを使ってください。 初期化メソッドを指定した (<paramref name="valueFactory" /> パラメーター) <see cref="T:System.Lazy`1" /> コンストラクターを使った場合に、<see cref="P:System.Lazy`1.Value" /> プロパティを初回に呼び出したときに初期化メソッドが例外をスローした (または例外のハンドルに失敗した) 場合、その例外はキャッシュされ、それ以降に <see cref="P:System.Lazy`1.Value" /> プロパティを呼び出した時点で再度スローされます。 初期化メソッドを指定しない <see cref="T:System.Lazy`1" /> コンストラクターを使った場合、<paramref name="T" /> について既定のコンストラクターからスローされる例外はキャッシュされません。 その場合、<see cref="P:System.Lazy`1.Value" /> プロパティへの後続の呼び出しで <see cref="T:System.Lazy`1" /> インスタンスが正常に初期化される可能性があります。 初期化メソッドが <see cref="T:System.Lazy`1" /> インスタンスの <see cref="P:System.Lazy`1.Value" /> プロパティに再帰的にアクセスすると、<see cref="T:System.InvalidOperationException" /> がスローされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicationOnly">
+      <MemberSignature Language="C#" Value="PublicationOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.LazyThreadSafetyMode PublicationOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.LazyThreadSafetyMode.PublicationOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.LazyThreadSafetyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数のスレッドが <see cref="T:System.Lazy`1" /> のインスタンスを同時に初期化しようとすると、すべてのスレッドが初期化メソッド (または、初期化メソッドが存在しない場合は既定のコンストラクター) の実行を許可されます。 初期化を完了する最初のスレッドの値を設定する、<see cref="T:System.Lazy`1" />インスタンス。 初期化メソッドを同時に実行したその他のスレッドには、その値が返されます。ただし、それらのスレッドで初期化メソッドが例外をスローした場合を除きます。 競合するスレッドによって作成された <paramref name="T" /> のインスタンスは、すべて破棄されます。 いずれかのスレッドで初期化メソッドが例外をスローした場合、その例外はそのスレッドの <see cref="P:System.Lazy`1.Value" /> プロパティの外に伝達されます。 例外はキャッシュされません。 値、<see cref="P:System.Lazy`1.IsValueCreated" />プロパティは<see langword="false" />、および後続の呼び出し、<see cref="P:System.Lazy`1.Value" />プロパティ、例外がスローしたスレッドまたは他のスレッドのいずれかが、初期化メソッドを再度実行します。 初期化メソッドが <see cref="T:System.Lazy`1" /> インスタンスの <see cref="P:System.Lazy`1.Value" /> プロパティに再帰的にアクセスしても、例外はスローされません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

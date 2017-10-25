@@ -1,0 +1,269 @@
+<Type Name="TemplateColumn" FullName="System.Web.UI.WebControls.TemplateColumn">
+  <TypeSignature Language="C#" Value="public class TemplateColumn : System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateColumn extends System.Web.UI.WebControls.DataGridColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TemplateColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataGridColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>列の種類を表す、<see cref="T:System.Web.UI.WebControls.DataGrid" />列内のコントロールのレイアウトをカスタマイズできるコントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateColumn>の列の型、<xref:System.Web.UI.WebControls.DataGrid>カスタマイズされたコントロールのレイアウトを持つ列を作成するコントロール。 使用してヘッダー セクション、フッター セクションおよび列の項目のセクションの独自の外観を指定することができます、 <xref:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate%2A>、 <xref:System.Web.UI.WebControls.TemplateColumn.FooterTemplate%2A>、および<xref:System.Web.UI.WebControls.TemplateColumn.ItemTemplate%2A>プロパティ、それぞれします。 編集されている項目を表示する方法を制御することも、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクトを設定して、<xref:System.Web.UI.WebControls.TemplateColumn.EditItemTemplate%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateColumn>内の列を作成するクラス、<xref:System.Web.UI.WebControls.DataGrid>カスタム レイアウトを制御します。  
+  
+ [!code-aspx-csharp[TemplateColumnEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateColumnEdit/CS/templatecolumncs.aspx#1)]
+ [!code-aspx-vb[TemplateColumnEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateColumnEdit/VB/templatecolumnvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TemplateColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.TemplateColumn>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate EditItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate EditItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateColumn.EditItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataGridItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で編集するために選択した項目を表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-で編集中の項目を表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />です。 既定値は<see langword="null" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateColumn.EditItemTemplate%2A>で編集するために選択した項目の外観を制御するプロパティ、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。 外観を指定するには、列に項目を表示する方法を定義するテンプレートを作成します。 指定するテンプレートを編集するために選択した項目を最初に開始タグと終了`<EditItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateColumn>`要素。 開始タグと終了の間で項目の外観を制御するコンテンツの一覧を表示することができますし、`<EditItemTemplate>`タグ。 できるより複雑なテンプレートにその他のコントロールを埋め込むことでまたはコンテンツはプレーン テキストと同じくらい簡単にできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateColumn.EditItemTemplate%2A>プロパティは編集されているアイテムの外観を制御する、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。  
+  
+ [!code-aspx-csharp[TemplateColumnEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateColumnEdit/CS/templatecolumncs.aspx#1)]
+ [!code-aspx-vb[TemplateColumnEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateColumnEdit/VB/templatecolumnvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate FooterTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate FooterTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateColumn.FooterTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataGridItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のフッター セクションを表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-のフッター セクションを表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />です。 既定値は<see langword="null" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateColumn.FooterTemplate%2A>にフッター セクションの外観を制御するプロパティ、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。 外観を指定するには、列に項目を表示する方法を定義するテンプレートを作成します。 指定するテンプレートを編集するために選択した項目を最初に開始タグと終了`<FooterTemplate>`タグ、開始タグと終了タグの間、`<TemplateColumn>`要素。 開始タグと終了の間で項目の外観を制御するコンテンツの一覧を表示することができますし、`<FooterTemplate>`タグ。 できるより複雑なテンプレートにその他のコントロールを埋め込むことでまたはコンテンツはプレーン テキストと同じくらい簡単にできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateColumn.FooterTemplate%2A>にフッター セクションの外観を制御するプロパティ、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。  
+  
+ [!code-aspx-csharp[TemplateColumnEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateColumnEdit/CS/templatecolumncs.aspx#1)]
+ [!code-aspx-vb[TemplateColumnEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateColumnEdit/VB/templatecolumnvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate HeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate HeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataGridItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のヘッダー セクションを表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-のヘッダー セクションを表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />です。 既定値は<see langword="null" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate%2A>に見出しセクションの外観を制御するプロパティ、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。 外観を指定するには、列に項目を表示する方法を定義するテンプレートを作成します。 指定するテンプレートを編集するために選択した項目を最初に開始タグと終了`<HeaderTemplate>`タグ、開始タグと終了タグの間、`<TemplateColumn>`要素。 開始タグと終了の間で項目の外観を制御するコンテンツの一覧を表示することができますし、`<HeaderTemplate>`タグ。 コンテンツは、プレーン テキストと同じくらい簡単にすることができます。 または可能より複雑なテンプレートにその他のコントロールを埋め込むことでします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateColumn.HeaderTemplate%2A>に見出しセクションの外観を制御するプロパティ、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。  
+  
+ [!code-aspx-csharp[TemplateColumnEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateColumnEdit/CS/templatecolumncs.aspx#1)]
+ [!code-aspx-vb[TemplateColumnEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateColumnEdit/VB/templatecolumnvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.TableCell cell, int columnIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.TableCell cell, int32 columnIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplateColumn.InitializeCell(System.Web.UI.WebControls.TableCell,System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.TableCell" />
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.TableCell" />をリセットするセルを表すオブジェクト。</param>
+        <param name="columnIndex">セルが配置されている列の番号。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary>呼び出し、<see cref="T:System.Web.UI.WebControls.TableCell" />オブジェクトの基本クラスのインスタンスを初期化し、適用、<see cref="T:System.Web.UI.WebControls.ListItemType" />セルにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplateColumn.ItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.DataGridItem))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のデータ項目を表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Web.UI.ITemplate" />-内のデータ項目を表示するためのテンプレートが含まれるオブジェクトを実装する、<see cref="T:System.Web.UI.WebControls.TemplateColumn" />です。 既定値は<see langword="null" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TemplateColumn.ItemTemplate%2A>プロパティ内のデータ項目の外観を制御する、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。 外観を指定するには、列に項目を表示する方法を定義するテンプレートを作成します。 指定するテンプレートを編集するために選択した項目を最初に開始タグと終了`<ItemTemplate>`タグ、開始タグと終了タグの間、`<TemplateColumn>`要素。 開始タグと終了の間で項目の外観を制御するコンテンツの一覧を表示することができますし、`<ItemTemplate>`タグ。 コンテンツは、プレーン テキストと同じくらい簡単にすることができます。 または可能より複雑なテンプレートにその他のコントロールを埋め込むことでします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TemplateColumn.ItemTemplate%2A>プロパティ内のデータ項目の外観を制御する、<xref:System.Web.UI.WebControls.TemplateColumn>オブジェクト。  
+  
+ [!code-aspx-csharp[TemplateColumnEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplateColumnEdit/CS/templatecolumncs.aspx#1)]
+ [!code-aspx-vb[TemplateColumnEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplateColumnEdit/VB/templatecolumnvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

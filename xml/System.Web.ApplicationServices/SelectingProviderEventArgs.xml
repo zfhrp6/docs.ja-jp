@@ -1,0 +1,104 @@
+<Type Name="SelectingProviderEventArgs" FullName="System.Web.ApplicationServices.SelectingProviderEventArgs">
+  <TypeSignature Language="C#" Value="public class SelectingProviderEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SelectingProviderEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.SelectingProviderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ApplicationServices.RoleService.SelectingProvider" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.SelectingProviderEventArgs>クラスを提供する値、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント ハンドラー。 作成する、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント ハンドラーを実行時に、ロール プロバイダーを選択します。  
+  
+ <xref:System.Web.ApplicationServices.RoleService>クラスが生成、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベントときか、<xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A>メソッドまたは<xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>のメソッド、<xref:System.Web.ApplicationServices.RoleService>クラスが呼び出されます。  
+  
+ 使用する、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs.User%2A>ログインしているユーザーに関する情報を取得するプロパティです。 既定以外のロール プロバイダー経由でロール情報を取得するには、設定、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs.ProviderName%2A>プロパティを対象とするロール プロバイダーの名前に、<xref:System.Web.ApplicationServices.RoleService>を使用するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。 イベント ハンドラーを使用して、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs>ユーザー名を確認し、使用するロール プロバイダーを設定するオブジェクト。 イベント ハンドラーにバインドされて、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>内のイベント、 `Application_Start` Global.asax ファイルのメソッドです。  
+  
+ [!code-csharp[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/vb/Global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.SelectingProviderEventArgs.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーのロールを取得するために使用するロール プロバイダーを設定します。</summary>
+        <value>ユーザーのロールを取得するために使用するロール プロバイダーの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs.ProviderName%2A>中に、ロール プロバイダーを設定するプロパティ、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。 イベント ハンドラーを使用して、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs>ユーザー名を確認し、使用するロール プロバイダーを設定するオブジェクト。 イベント ハンドラーにバインドされて、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>内のイベント、 `Application_Start` Global.asax ファイルのメソッドです。  
+  
+ [!code-csharp[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal User { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal User" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.SelectingProviderEventArgs.User" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証済みユーザーを取得します。</summary>
+        <value>認証されたユーザーを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs.User%2A>中に、ユーザーに関する情報を取得するプロパティを<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。 イベント ハンドラーを使用して、<xref:System.Web.ApplicationServices.SelectingProviderEventArgs>にユーザー名を確認して、使用するロール プロバイダーを設定するオブジェクト。 イベント ハンドラーにバインドされて、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>内のイベント、 `Application_Start` Global.asax ファイルのメソッドです。  
+  
+ [!code-csharp[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,832 @@
+<Type Name="DataFormats" FullName="System.Windows.Forms.DataFormats">
+  <TypeSignature Language="C#" Value="public class DataFormats" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataFormats extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataFormats" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供<see langword="static" />、定義済み<see cref="T:System.Windows.Forms.Clipboard" />形式の名前。 格納されているデータの形式の識別に使用する<see cref="T:System.Windows.Forms.IDataObject" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.IDataObject>と<xref:System.Windows.Forms.DataObject>クラスに対しても使用して、 `static` format-list システムから取得されるデータの種類を判断する<xref:System.Windows.Forms.Clipboard>、ドラッグ アンド ドロップ操作で転送されるか。  
+  
+ <xref:System.Windows.Forms.DataFormats.GetFormat%2A>メソッドでは、することができます。  
+  
+-   事前に定義された取得<xref:System.Windows.Forms.DataFormats.Format>形式名または ID 番号のオブジェクト。  
+  
+-   新しい形式名/ID 番号のペアを追加する、`static`形式として、Windows レジストリに登録して、このクラスでボックスの一覧、<xref:System.Windows.Forms.Clipboard>形式名を渡すときに書式を設定します。  
+  
+ 取得することができます、<xref:System.Windows.Forms.DataFormats.Format.Id%2A>数または形式<xref:System.Windows.Forms.DataFormats.Format.Name%2A>で適切なプロパティから、<xref:System.Windows.Forms.DataFormats.Format>インスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前の新しいデータ形式を作成`myFormat`です。 このコードを作成し、`MyNewObject`に格納している、<xref:System.Windows.Forms.DataObject>です。 <xref:System.Windows.Forms.DataObject>にコピーされて、<xref:System.Windows.Forms.Clipboard>です。  
+  
+ 次に、<xref:System.Windows.Forms.DataObject>から取得した、<xref:System.Windows.Forms.Clipboard>と`MyNewObject`を復旧します。 値、`MyNewObject`テキスト ボックスに表示します。 このコードでは、する必要があります`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic DataFormats Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataFormats Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataFormats Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataFormats Example/CS/source.cs#1)]
+ [!code-vb[Classic DataFormats Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataFormats Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bitmap">
+      <MemberSignature Language="C#" Value="public static readonly string Bitmap;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Bitmap" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Bitmap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows ビットマップ形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットマップ グラフィックをコンピューターのメモリ内のビット配列として表し、これらのビットがイメージ内の個々 のピクセルの属性を表します。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommaSeparatedValue">
+      <MemberSignature Language="C#" Value="public static readonly string CommaSeparatedValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string CommaSeparatedValue" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.CommaSeparatedValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スプレッドシートによって使用される一般的なインターチェンジの形式であるコンマ区切り値 (CSV) 形式を指定します。 この形式は、Windows フォームで直接は使用されません。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dib">
+      <MemberSignature Language="C#" Value="public static readonly string Dib;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Dib" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Dib" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows デバイスに依存しないビットマップ (DIB) 形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DIB は、1 つのアプリケーションを使用して作成されたそのビットマップ グラフィックの読み込みし、同様に、元のアプリケーションに表示された別のアプリケーションで表示できることを確認するためのファイル形式です。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dif">
+      <MemberSignature Language="C#" Value="public static readonly string Dif;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Dif" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Dif" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows データ交換形式 (差分)、Windows フォームを直接使用しないように指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 差分は、ASCII コードが、データベース、スプレッドシート、および類似したドキュメントを構造化するによる使用状況を容易にし、他のプログラムに転送するので構成される形式です。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataFormats_CommaSeparatedValue#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataFormats_CommaSeparatedValue/CPP/dataformats_dif.cpp#1)]
+ [!code-csharp[DataFormats_CommaSeparatedValue#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataFormats_CommaSeparatedValue/CS/dataformats_dif.cs#1)]
+ [!code-vb[DataFormats_CommaSeparatedValue#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataFormats_CommaSeparatedValue/VB/dataformats_dif.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnhancedMetafile">
+      <MemberSignature Language="C#" Value="public static readonly string EnhancedMetafile;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string EnhancedMetafile" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.EnhancedMetafile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows 拡張メタファイル形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタファイル形式は、ピクセル単位ではなく、グラフィックス オブジェクトの観点からイメージを格納する Windows ファイルです。 サイズ、メタファイルが保持されますイメージ、ビットマップより優れています。  
+  
+> [!NOTE]
+>  クリップボードをメタファイル形式を使用すると、特別な考慮事項が必要な可能性があります。 現在の実装の制限により、<xref:System.Windows.Forms.DataObject>クラス、.NET Framework で使用されるメタファイル形式は、古いメタファイル形式を使用するアプリケーションで認識されない可能性があります。 この場合、クリップボードの Win32 アプリケーション プログラミング インターフェイス (Api) と相互運用する必要があります。 詳細については、記事、323530「メタファイルでクリップボードはいない表示する、すべてのアプリケーション」http://support.microsoft.com で Microsoft サポート技術情報を参照してください。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileDrop">
+      <MemberSignature Language="C#" Value="public static readonly string FileDrop;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string FileDrop" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.FileDrop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームを直接使用しない Windows ファイル ドロップ形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式は、ドラッグ アンド ドロップ操作中にシェル ファイルとの対話に使用できます。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormat">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DataFormats.Format GetFormat (int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.DataFormats/Format GetFormat(int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataFormats.GetFormat(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataFormats+Format</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">形式の id。</param>
+        <summary>返します、<see cref="T:System.Windows.Forms.DataFormats.Format" />を Windows クリップボードの数値 ID と指定した ID の名前</summary>
+        <returns>A <see cref="T:System.Windows.Forms.DataFormats.Format" /> Windows クリップボードの数値 ID と形式の名前を持ちます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは通常、ネイティブのクリップボード形式を登録に使用されます。  
+  
+ 呼び出す<xref:System.Windows.Forms.DataFormats.GetFormat%2A>ID 番号を取得するときに、 <xref:System.Windows.Forms.DataFormats.Format> ID/の形式の名前のペアを格納しているインスタンス。 ID の名前と番号が使用しているアプリケーションの作成者によって発行された通常、<xref:System.Windows.Forms.Clipboard>とやり取りします。 たとえば、Visual Basic でのダイナミック データ エクス チェンジ (DDE) メッセージ交換について ID 番号は`&HBF00`、形式名が、`vbCFLink`です。  
+  
+ 一意の ID 番号、ID/の形式名のペアを追加すると、このメソッドを呼び出す、`static`形式の名前と ID の一覧で構成されたペア、<xref:System.Windows.Forms.DataFormats>クラスです。 新しい名前は、"Format"と ID 番号を連結して作成されます。 新しいとしては、このペアは登録されていない<xref:System.Windows.Forms.Clipboard>名前が提供されていないためにの書式を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataFormats_GetFormat#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataFormats_GetFormat/CPP/dataformats_getformat.cpp#1)]
+ [!code-csharp[DataFormats_GetFormat#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataFormats_GetFormat/CS/dataformats_getformat.cs#1)]
+ [!code-vb[DataFormats_GetFormat#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataFormats_GetFormat/VB/dataformats_getformat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormat">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DataFormats.Format GetFormat (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.DataFormats/Format GetFormat(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataFormats.GetFormat(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataFormats+Format</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">形式の名前。</param>
+        <summary>返します、 <see cref="T:System.Windows.Forms.DataFormats.Format" /> Windows クリップボードの数値 ID と指定した形式の名前を使用します。</summary>
+        <returns>A <see cref="T:System.Windows.Forms.DataFormats.Format" /> Windows クリップボードの数値 ID と形式の名前を持ちます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Forms.DataFormats.GetFormat%2A>既存の形式の Windows クリップボードの数値 ID を必要なときに、形式名を使用します。  
+  
+ 新しい形式名に置き換えて、このメソッドを呼び出す<xref:System.Windows.Forms.Clipboard>型の書式を設定します。 指定された形式が存在しない場合このメソッドは、Windows レジストリでのクリップボードの形式として、名前を登録し、独自の形式の識別子を取得します。 この新しい名前と ID のペアに追加されます、`static`形式の名前と ID の一覧で構成されたペア、<xref:System.Windows.Forms.DataFormats>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Windows.Forms.DataFormats.Format>形式名/ID ペアを表すです。 <xref:System.Windows.Forms.DataFormats.UnicodeText>形式が要求されるとその内容を取得して、<xref:System.Windows.Forms.DataFormats.Format>テキスト ボックスに表示されます。  
+  
+ このコードが必要な`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic DataFormats.GetFormat Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataFormats.GetFormat Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/CS/source.cs#1)]
+ [!code-vb[Classic DataFormats.GetFormat Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">新しい登録<see cref="T:System.Windows.Forms.Clipboard" />format が失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Html">
+      <MemberSignature Language="C#" Value="public static readonly string Html;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Html" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Html" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML のクリップボード形式でテキストを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>CF_HTML クリップボードのデータ型を示すクラスです。 この形式の詳細については、次を参照してください。 [HTML クリップボード形式](http://go.microsoft.com/fwlink/?LinkId=198813)です。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locale">
+      <MemberSignature Language="C#" Value="public static readonly string Locale;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Locale" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Locale" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームが直接使用しない Windows のカルチャの形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetafilePict">
+      <MemberSignature Language="C#" Value="public static readonly string MetafilePict;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string MetafilePict" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.MetafilePict" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームを直接使用しない Windows のメタファイル形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタファイル形式は、ピクセル単位ではなく、グラフィックス オブジェクトの観点からイメージを格納する Windows ファイルです。 サイズ、メタファイルが保持されますイメージ、ビットマップより優れています。  
+  
+> [!NOTE]
+>  クリップボードをメタファイル形式を使用すると、特別な考慮事項が必要な可能性があります。 現在の実装の制限により、<xref:System.Windows.Forms.DataObject>クラス、.NET Framework で使用されるメタファイル形式は、古いメタファイル形式を使用するアプリケーションで認識されない可能性があります。 この場合、クリップボードの Win32 アプリケーション プログラミング インターフェイス (Api) と相互運用する必要があります。 詳細については、記事、323530「メタファイルでクリップボードはいない表示する、すべてのアプリケーション」http://support.microsoft.com で Microsoft サポート技術情報を参照してください。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OemText">
+      <MemberSignature Language="C#" Value="public static readonly string OemText;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string OemText" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.OemText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の Windows 相手先ブランド供給業者 (OEM) のテキスト形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public static readonly string Palette;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Palette" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Palette" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows パレット形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドにクエリを使用して、<xref:System.Windows.Forms.DataObject>に含まれるデータの形式に関するします。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenData">
+      <MemberSignature Language="C#" Value="public static readonly string PenData;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PenData" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.PenData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>手書き認識ソフトウェア; のペン ストロークで構成される Windows ペン データ形式を指定しますWindows フォームでは、この形式は使用しません。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Riff">
+      <MemberSignature Language="C#" Value="public static readonly string Riff;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Riff" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Riff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームには直接は使用されませんリソース インターチェンジ ファイルの形式 (RIFF) オーディオ形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RIFF は、さまざまな種類のマルチ メディア ファイルの標準形式の定義に使用するように設計広範な仕様です。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rtf">
+      <MemberSignature Language="C#" Value="public static readonly string Rtf;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Rtf" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Rtf" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リッチ テキスト形式 (RTF) データで構成されるテキストを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RTF の転送に使用されるドキュメント コンテンツ アーキテクチャの学習機能は、アプリケーション間でテキスト ドキュメントを書式設定します。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ RTF 形式の詳細については、MSDN ライブラリ http://msdn.microsoft.com/library でリッチ テキスト形式の仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serializable">
+      <MemberSignature Language="C#" Value="public static readonly string Serializable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Serializable" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Serializable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームのオブジェクトの任意の型をカプセル化する形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  シリアル化可能な形式を Windows フォームにのみ、Windows フォームの外部で作成されたアプリケーションでは認識されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StringFormat">
+      <MemberSignature Language="C#" Value="public static readonly string StringFormat;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string StringFormat" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.StringFormat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームの文字列クラス形式、文字列オブジェクトを格納する Windows フォームを使用して指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  クラスの文字列形式を Windows フォームにのみ、Windows フォームの外部で作成されたアプリケーションでは認識されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataFormats_StringFormat#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataFormats_StringFormat/CPP/dataformats_stringformat.cpp#1)]
+ [!code-csharp[DataFormats_StringFormat#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataFormats_StringFormat/CS/dataformats_stringformat.cs#1)]
+ [!code-vb[DataFormats_StringFormat#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataFormats_StringFormat/VB/dataformats_stringformat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SymbolicLink">
+      <MemberSignature Language="C#" Value="public static readonly string SymbolicLink;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string SymbolicLink" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.SymbolicLink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームを直接使用しない Windows シンボリック リンクの形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シンボリック リンクは、時間は、ファイルのディレクトリ エントリの代わりにも、別のディレクトリ内のファイルへの参照を実際には、ディスク ディレクトリ エントリです。 シンボリック リンクは、エイリアス、ショートカット、ソフト リンク、またはシンボリック リンクとも呼ばれます。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public static readonly string Text;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Text" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の ANSI テキスト形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataFormats_UnicodeText1#2](~/samples/snippets/cpp/VS_Snippets_Winforms/DataFormats_UnicodeText1/CPP/dataformats_unicodetext.cpp#2)]
+ [!code-csharp[DataFormats_UnicodeText1#2](~/samples/snippets/csharp/VS_Snippets_Winforms/DataFormats_UnicodeText1/CS/dataformats_unicodetext.cs#2)]
+ [!code-vb[DataFormats_UnicodeText1#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataFormats_UnicodeText1/VB/dataformats_unicodetext.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tiff">
+      <MemberSignature Language="C#" Value="public static readonly string Tiff;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string Tiff" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.Tiff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル形式 TIFF (Tagged Image)、Windows フォームを直接使用しないように指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TIFF は、一般的な用途のスキャン、ストレージ、およびグレースケールのグラフィック イメージのインターチェンジ標準ファイル形式です。  
+  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnicodeText">
+      <MemberSignature Language="C#" Value="public static readonly string UnicodeText;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string UnicodeText" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.UnicodeText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の Windows Unicode テキスト形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataFormats_UnicodeText1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataFormats_UnicodeText1/CPP/dataformats_unicodetext.cpp#1)]
+ [!code-csharp[DataFormats_UnicodeText1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataFormats_UnicodeText1/CS/dataformats_unicodetext.cs#1)]
+ [!code-vb[DataFormats_UnicodeText1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataFormats_UnicodeText1/VB/dataformats_unicodetext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaveAudio">
+      <MemberSignature Language="C#" Value="public static readonly string WaveAudio;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string WaveAudio" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataFormats.WaveAudio" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows フォームには直接は使用されません wave オーディオ形式を指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは使用、<xref:System.Windows.Forms.IDataObject>インターフェイスおよび<xref:System.Windows.Forms.DataObject>データ型を指定するクラス。  
+  
+ 追加する場合、<xref:System.Windows.Forms.IDataObject>またはの実装に<xref:System.Windows.Forms.DataObject>の形式としてこのフィールドを使用して、<xref:System.Windows.Forms.IDataObject.SetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 形式としてこのフィールドを使用して、この型のオブジェクトが存在するかどうか、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この型のオブジェクトを取得するには、形式として使用、<xref:System.Windows.Forms.IDataObject.GetData%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

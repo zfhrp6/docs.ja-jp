@@ -1,0 +1,238 @@
+<Type Name="CacheItemPolicy" FullName="System.Runtime.Caching.CacheItemPolicy">
+  <TypeSignature Language="C#" Value="public class CacheItemPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheItemPolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheItemPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のキャッシュ エントリの削除と有効期限の詳細のセットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Caching.CacheItemPolicy>インスタンスには、キャッシュ エントリに関連付けることができる情報が含まれています。 キャッシュ エントリがキャッシュから削除されようとしてが場合など、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>オブジェクトはコールバック メソッドに渡されます。 <xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItemPolicy%2A>のプロパティ、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>オブジェクトへの参照を渡すことができます、<xref:System.Runtime.Caching.CacheItemPolicy>キャッシュ エントリの削除と有効期限の詳細を含めることができるインスタンスです。  
+  
+ 一部のメソッド、<xref:System.Runtime.Caching.MemoryCache>と<xref:System.Runtime.Caching.ObjectCache>クラスを受け入れる、<xref:System.Runtime.Caching.CacheItemPolicy>のインスタンスを削除または有効期限ポリシーをについて説明します。  
+  
+   
+  
+## Examples  
+ 次の例では、テキスト ファイルのパスを監視するメモリ内キャッシュ アイテムを作成する方法を示します。 キャッシュを作成、<xref:System.Runtime.Caching.CacheItemPolicy>オブジェクトと設定、<xref:System.Runtime.Caching.CacheItemPolicy.AbsoluteExpiration%2A>を 60 秒後にキャッシュを削除するプロパティです。  
+  
+```vb  
+Protected Sub Button1_Click(ByVal sender As Object, _  
+            ByVal e As System.EventArgs) Handles Button1.Click  
+    Dim cache As ObjectCache = MemoryCache.Default  
+    Dim fileContents As String = TryCast(cache("filecontents"), _  
+            String)  
+    If fileContents Is Nothing Then  
+        Dim policy As New CacheItemPolicy()  
+        policy.AbsoluteExpiration = _  
+            DateTimeOffset.Now.AddSeconds(60.0)  
+        Dim filePaths As New List(Of String)()  
+     Dim cachedFilePath As String = Server.MapPath("~") & _  
+         "\cacheText.txt"  
+        filePaths.Add(cachedFilePath)  
+        policy.ChangeMonitors.Add(New _  
+            HostFileChangeMonitor(filePaths))  
+  
+        ' Fetch the file contents.  
+        fileContents = File.ReadAllText(cachedFilePath)  
+        cache.Set("filecontents", fileContents, policy)  
+    End If  
+    Label1.Text = fileContents  
+End Sub  
+```  
+  
+```csharp  
+protected void Button1_Click(object sender, EventArgs e)  
+    {  
+        ObjectCache cache = MemoryCache.Default;  
+            string fileContents = cache["filecontents"] as string;  
+            if (fileContents == null)  
+            {  
+                CacheItemPolicy policy = new CacheItemPolicy();  
+                policy.AbsoluteExpiration =   
+                    DateTimeOffset.Now.AddSeconds(60.0);  
+  
+                List<string> filePaths = new List<string>();  
+             string cachedFilePath = Server.MapPath("~") +   
+                 "\\cacheText.txt";  
+             filePaths.Add(cachedFilePath);  
+  
+                policy.ChangeMonitors.Add(new   
+                    HostFileChangeMonitor(filePaths));  
+  
+                // Fetch the file contents.  
+                fileContents = File.ReadAllText(cachedFilePath);  
+  
+                cache.Set("filecontents", fileContents, policy);  
+  
+            }  
+  
+            Label1.Text = fileContents;  
+        }  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Runtime.Caching.CacheItemPolicy" />型が封印されていないカスタム キャッシュの開発者が拡張できるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheItemPolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheItemPolicy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Caching.CacheItemPolicy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbsoluteExpiration">
+      <MemberSignature Language="C#" Value="public DateTimeOffset AbsoluteExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset AbsoluteExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.AbsoluteExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した期間の後、キャッシュ エントリを削除する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>キャッシュ エントリが削除されるまでの経過時間の期間。 既定値は<see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" />エントリの有効期限がないことを意味します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeMonitors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Runtime.Caching.ChangeMonitor&gt; ChangeMonitors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Runtime.Caching.ChangeMonitor&gt; ChangeMonitors" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.ChangeMonitors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Runtime.Caching.ChangeMonitor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Runtime.Caching.ChangeMonitor" />キャッシュ エントリに関連付けられているオブジェクト。</summary>
+        <value>変更の監視のコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加したり、キャッシュ エントリに関連付けられている変更の監視を削除することができます。 ただし、一連の変更の監視する必要があります全体を渡す前に、<xref:System.Runtime.Caching.CacheItemPolicy>インスタンスを<xref:System.Runtime.Caching.ObjectCache>実装します。 変更モニターのセットを変更する場合、<xref:System.Runtime.Caching.CacheItemPolicy>オブジェクトの後に、<xref:System.Runtime.Caching.CacheItemPolicy>にオブジェクトが渡されました、<xref:System.Runtime.Caching.ObjectCache>実装では、変更内容が影響を与えるありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheItemPriority Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Caching.CacheItemPriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItemPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュ エントリを削除するかどうかを決定するために使用する優先順位設定を設定します。</summary>
+        <value>立ち退きの優先順位を示す列挙値の 1 つ。 既定の優先順位値は<see cref="F:System.Runtime.Caching.CacheItemPriority.Default" />、優先順位はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、優先度の列挙のみが使用できる 2 つの優先順位: <xref:System.Runtime.Caching.CacheItemPriority.Default> (これは優先順位)、および<xref:System.Runtime.Caching.CacheItemPriority.NotRemovable>(つまり、エントリを削除できません)。 したがって、設定できる唯一の優先事項では、かどうかと、キャッシュ エントリが恒久的にキャッシュに残す必要があります。  
+  
+> [!IMPORTANT]
+>  優先度レベルのキャッシュにエントリを追加する<xref:System.Runtime.Caching.CacheItemPriority.NotRemovable>キャッシュを削除しないエントリがオーバーフローする可能性があります。 キャッシュ実装を設定する必要があります、<xref:System.Runtime.Caching.CacheItemPriority.NotRemovable>キャッシュ実装をキャッシュからエントリを削除して、キャッシュ エントリの数を管理する方法を提供する場合にのみ、キャッシュ エントリの優先度。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedCallback">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheEntryRemovedCallback RemovedCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.CacheEntryRemovedCallback RemovedCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.RemovedCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Runtime.Caching.CacheEntryRemovedCallback" />エントリがキャッシュから削除された後に呼び出されるデリゲート。</summary>
+        <value>キャッシュの実装によって呼び出されるデリゲートへの参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュがによって参照されるコールバック オブジェクトを呼び出すキャッシュ エントリがキャッシュから削除された後、<xref:System.Runtime.Caching.CacheItemPolicy.RemovedCallback%2A>プロパティです。 キャッシュ実装では、このコールバックを使用して、キャッシュ エントリが削除されている呼び出し元のメソッドに通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlidingExpiration">
+      <MemberSignature Language="C#" Value="public TimeSpan SlidingExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.SlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または時間の指定の範囲でアクセスされていない場合に、キャッシュ エントリを削除するかどうかを示す値を設定します。</summary>
+        <value>内部では、キャッシュ エントリをキャッシュ エントリ前にアクセスする必要があります期間は、キャッシュから削除されます。 既定値は<see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />つまりする時間間隔に基づいている、項目は期限が切れていません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCallback">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheEntryUpdateCallback UpdateCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.CacheEntryUpdateCallback UpdateCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheItemPolicy.UpdateCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryUpdateCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Runtime.Caching.CacheEntryUpdateCallback" />キャッシュ エントリがキャッシュから削除される前に呼び出されるデリゲート。</summary>
+        <value>キャッシュの実装によって呼び出されるデリゲートへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

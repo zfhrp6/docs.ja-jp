@@ -1,0 +1,53 @@
+<Type Name="PipelineStoreLocation" FullName="System.AddIn.Hosting.PipelineStoreLocation">
+  <TypeSignature Language="C#" Value="public enum PipelineStoreLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PipelineStoreLocation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.PipelineStoreLocation" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ディレクトリへのパスではなく、パイプライン ストアの代替の場所を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、この列挙体には、ApplicationBase 値のみが含まれています。  
+  
+ 内のメソッド、<xref:System.AddIn.Hosting.AddInStore>この列挙体を使用してクラスには、部分的に信頼されたホスト、独自の場所を検出するアクセス許可がない可能性があります、これを検索し、独自のディレクトリ内のアドインをアクティブ化が有効にします。  
+  
+ 使用することができます、<xref:System.AddIn.Hosting.AddInStore.Update%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>と<xref:System.AddIn.Hosting.AddInStore.Rebuild%28System.AddIn.Hosting.PipelineStoreLocation%29?displayProperty=nameWithType>更新または再構築、パイプライン ストアの場所を指定するメソッドのオーバー ロードおよび<xref:System.AddIn.Hosting.AddInStore.FindAddIns%28System.Type%2CSystem.AddIn.Hosting.PipelineStoreLocation%2CSystem.String%5B%5D%29?displayProperty=nameWithType>メソッドのオーバー ロードのアドインを検索するための場所を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、ApplicationBase 値を使用して、ホスト アプリケーションのディレクトリに、パイプライン ストア ファイルからアドインをアクティブ化します。  
+  
+ [!code-csharp[AddInP3Host#4](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#4)]
+ [!code-vb[AddInP3Host#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationBase">
+      <MemberSignature Language="C#" Value="ApplicationBase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.AddIn.Hosting.PipelineStoreLocation ApplicationBase = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Hosting.PipelineStoreLocation.ApplicationBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.PipelineStoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された位置、<see cref="P:System.AppDomainSetup.ApplicationBase" />アプリケーション ドメインのホストを設定するためのプロパティです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

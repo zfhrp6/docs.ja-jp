@@ -1,0 +1,500 @@
+<Type Name="ArcSegment" FullName="System.Windows.Media.ArcSegment">
+  <TypeSignature Language="C#" Value="public sealed class ArcSegment : System.Windows.Media.PathSegment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ArcSegment extends System.Windows.Media.PathSegment" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.ArcSegment" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.PathSegment</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの点の間の楕円の円弧を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.PathFigure>を格納するオブジェクト<xref:System.Windows.Media.ArcSegment>オブジェクトとその他のセグメント。  
+  
+ 楕円の円弧は、その始点と終点を x 半径と y 半径、x 軸回転率を円弧が 180 度、および円弧が描画される方向を示す値を超える必要があるかどうかを示す値によって定義されます。 <xref:System.Windows.Media.ArcSegment>クラスには、円弧の始点のプロパティが含まれていない; が表す円弧の終点のみを定義します。 円弧の始点が、現在のポイントの<xref:System.Windows.Media.PathFigure>先、<xref:System.Windows.Media.ArcSegment>を追加します。  
+  
+ 次の図は、別の終了点を示す<xref:System.Windows.Media.ArcSegment.Size%2A>、および<xref:System.Windows.Media.ArcSegment.RotationAngle%2A>設定します。  
+  
+ ![設定が異なる Arcsegment ポイント](~/add/media/arcsegment-point.png "ポイントの設定が異なる Arcsegment")  
+  
+ ![設定が異なる Arcsegment サイズ](~/add/media/arcsegment-size.png "サイズの設定が異なる Arcsegment")  
+  
+ ![設定が異なる Arcsegment RotationAngle](~/add/media/arcsegment-rotationangle.png "RotationAngle の設定が異なる Arcsegment")  
+  
+## <a name="islargearc-and-sweepdirection"></a>IsLargeArc と SweepDirection  
+ 特定の位置、サイズ、および回転のほとんどの円弧が描画できる 4 つの異なる円弧です。<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>と<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティを使用するには、どの円弧を示します。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合は**false**,、1 つ小さい円弧のスイープを選択します。 残りの 2 つの円弧候補はそれぞれ別の方向に描画:<xref:System.Windows.Media.SweepDirection.Counterclockwise>または<xref:System.Windows.Media.SweepDirection.Clockwise>です。 <xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティは、使用するを指定します。  
+  
+ 次の図は、異なる表示<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>と<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>設定します。  
+  
+ ![設定が異なる arcsegment IsLargeArc](~/add/media/arcsegment-islargearc.png "IsLargeArc の設定が異なる Arcsegment")  
+IsLargeArc の設定が異なる ArcSegment オブジェクト  
+  
+ ![設定が異なる arcsegment SweepDirection](~/add/media/arcsegment-sweepdirection.png "SweepDirection の設定が異なる Arcsegment")  
+SweepDirection の設定が異なる ArcSegment オブジェクト  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ <xref:System.Windows.Media.ArcSegment>の種類は、<xref:System.Windows.Freezable>オブジェクト。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.ArcSegment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ArcSegment>クラス定義のみが表す円弧の終点。 円弧の始点が、現在のポイントの、<xref:System.Windows.Media.PathFigure>をする、<xref:System.Windows.Media.ArcSegment>を追加します。  
+  
+ 描画することができます。 円弧が 4 種類があるほとんどの楕円の円弧の特定の位置、サイズ、および回転では、`largeArc`と`sweepDirection`パラメーターを使用するには、どの円弧を示しています。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合`largeArc`は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合`largeArc`は**false**,、1 つ小さい円弧のスイープを選択します。  
+  
+ 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Clockwise>円弧が正の角の方向に描画します。 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Counterclockwise>円弧が負の角の方向に描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArcSegment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ArcSegment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.ArcSegment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ArcSegment>クラス定義のみが表す円弧の終点。 円弧の始点が、現在のポイントの、<xref:System.Windows.Media.PathFigure>をする、<xref:System.Windows.Media.ArcSegment>を追加します。  
+  
+ 描画することができます。 円弧が 4 種類があるほとんどの楕円の円弧の特定の位置、サイズ、および回転では、`largeArc`と`sweepDirection`パラメーターを使用するには、どの円弧を示しています。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合`largeArc`は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合`largeArc`は**false**,、1 つ小さい円弧のスイープを選択します。  
+  
+ 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Clockwise>円弧が正の角の方向に描画します。 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Counterclockwise>円弧が負の角の方向に描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArcSegment (System.Windows.Point point, System.Windows.Size size, double rotationAngle, bool isLargeArc, System.Windows.Media.SweepDirection sweepDirection, bool isStroked);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point, valuetype System.Windows.Size size, float64 rotationAngle, bool isLargeArc, valuetype System.Windows.Media.SweepDirection sweepDirection, bool isStroked) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ArcSegment.#ctor(System.Windows.Point,System.Windows.Size,System.Double,System.Boolean,System.Windows.Media.SweepDirection,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="size" Type="System.Windows.Size" />
+        <Parameter Name="rotationAngle" Type="System.Double" />
+        <Parameter Name="isLargeArc" Type="System.Boolean" />
+        <Parameter Name="sweepDirection" Type="System.Windows.Media.SweepDirection" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">円弧の終点。円弧の始点は、<see cref="T:System.Windows.Media.ArcSegment" /> の追加先となる <see cref="T:System.Windows.Media.PathFigure" /> の現在の点として定義されます。</param>
+        <param name="size">円弧の x 半径と y 半径。x 半径は <see cref="T:System.Windows.Size" /> 構造体の <see cref="P:System.Windows.Size.Width" /> プロパティで指定され、y 半径は <see cref="T:System.Windows.Size" /> 構造体の <see cref="P:System.Windows.Size.Height" /> プロパティで指定されます。</param>
+        <param name="rotationAngle">楕円の x 軸回転。</param>
+        <param name="isLargeArc">円弧が 180 度を超える必要があるかどうか。</param>
+        <param name="sweepDirection">円弧を正の角の方向に描画するには <see cref="F:System.Windows.Media.SweepDirection.Clockwise" /> に設定します。円弧を負の角の方向に描画するには <see cref="F:System.Windows.Media.SweepDirection.Counterclockwise" /> に設定します。</param>
+        <param name="isStroked">設定<c>true</c>円弧を付けるときに、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、 <c>false</c>です。</param>
+        <summary><see cref="T:System.Windows.Media.ArcSegment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ArcSegment>クラス定義のみが表す円弧の終点。 円弧の始点が、現在のポイントの、<xref:System.Windows.Media.PathFigure>をする、<xref:System.Windows.Media.ArcSegment>を追加します。  
+  
+ 描画することができます。 円弧が 4 種類があるほとんどの楕円の円弧の特定の位置、サイズ、および回転では、`largeArc`と`sweepDirection`パラメーターを使用するには、どの円弧を示しています。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合`largeArc`は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合`largeArc`は**false**,、1 つ小さい円弧のスイープを選択します。  
+  
+ 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Clockwise>円弧が正の角の方向に描画します。 場合`sweepDirection`は<xref:System.Windows.Media.SweepDirection.Counterclockwise>円弧が負の角の方向に描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ArcSegment Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.ArcSegment Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ArcSegment.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ArcSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.ArcSegment" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ArcSegment CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.ArcSegment CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ArcSegment.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ArcSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.ArcSegment" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.ArcSegment.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLargeArc">
+      <MemberSignature Language="C#" Value="public bool IsLargeArc { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLargeArc" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ArcSegment.IsLargeArc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>円弧が 180 度を超えるかどうかを示す値を取得または設定します。</summary>
+        <value>**true**場合は、円弧が 180 度よりも大きい、それ以外にする必要があります**false**です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の位置、サイズ、および回転のほとんどの円弧が描画できる 4 つの異なる円弧です。<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>と<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティを使用するには、どの円弧を示します。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合は**false**,、1 つ小さい円弧のスイープを選択します。 残りの 2 つの円弧候補はそれぞれ別の方向に描画:<xref:System.Windows.Media.SweepDirection.Counterclockwise>または<xref:System.Windows.Media.SweepDirection.Clockwise>です。 <xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティは、使用するを指定します。  
+  
+ 次の図は除いて同一である 2 つの楕円の円弧の<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>設定します。  
+  
+ ![設定が異なる arcsegment IsLargeArc](~/add/media/arcsegment-islargearc.png "IsLargeArc の設定が異なる Arcsegment")  
+IsLargeArc の設定が異なる ArcSegment オブジェクト  
+  
+<a name="dependencyPropertyInfo_IsLargeArc"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.ArcSegment.IsLargeArcProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLargeArcProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsLargeArcProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsLargeArcProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.ArcSegment.IsLargeArcProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.ArcSegment.IsLargeArc" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ArcSegment.Point" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>楕円の円弧の終点を取得または設定します。</summary>
+        <value>円弧が描画される点。 既定値は (0, 0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ArcSegment>クラス定義のみが表す円弧の終点。 円弧の始点が、現在のポイントの、<xref:System.Windows.Media.PathFigure>先、<xref:System.Windows.Media.ArcSegment>を追加します。  
+  
+ 円弧のセグメントの始点と終点が同じ場合、円弧は描画されません。  
+  
+ 特定の位置、サイズ、および回転のほとんどの円弧が描画できる 4 つの異なる円弧です。<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>と<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティを使用するには、どの円弧を示します。  
+  
+ 4 つの候補円弧スイープの 2 つのスイープの 180 °、以上の大きな円弧と小さな円弧スイープ 180 度以下を表す 2 つです。 場合<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>は**true**、選択した、それ以外の 2 つの大きな円弧スイープの 1 つは、場合は**false**,、1 つ小さい円弧のスイープを選択します。 残りの 2 つの円弧候補はそれぞれ別の方向に描画:<xref:System.Windows.Media.SweepDirection.Counterclockwise>または<xref:System.Windows.Media.SweepDirection.Clockwise>です。 <xref:System.Windows.Media.ArcSegment.SweepDirection%2A>プロパティは、使用するを指定します。  
+  
+ 次の図に、いくつかの楕円弧除いて同一である、<xref:System.Windows.Media.ArcSegment.Point%2A>設定します。  
+  
+ ![設定が異なる Arcsegment ポイント](~/add/media/arcsegment-point.png "ポイントの設定が異なる Arcsegment")  
+ポイントの設定が異なるいくつかの ArcSegment オブジェクト  
+  
+<a name="dependencyPropertyInfo_Point"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.ArcSegment.PointProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PointProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PointProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.ArcSegment.PointProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.ArcSegment.Point" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotationAngle">
+      <MemberSignature Language="C#" Value="public double RotationAngle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 RotationAngle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ArcSegment.RotationAngle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>x 軸を中心にして楕円を回転する量 (度単位) を取得または設定します。</summary>
+        <value>x 軸を中心にして楕円を回転する量 (度単位)。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図に、いくつかの楕円弧除いて同一である、<xref:System.Windows.Media.ArcSegment.RotationAngle%2A>設定します。  
+  
+ ![設定が異なる Arcsegment RotationAngle](~/add/media/arcsegment-rotationangle.png "RotationAngle の設定が異なる Arcsegment")  
+RotationAngle の設定が異なるいくつかの ArcSegment オブジェクト  
+  
+ 円弧の幅と高さが同じにある場合、このプロパティの設定も何も起こりませんに注意してください。  
+  
+<a name="dependencyPropertyInfo_RotationAngle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.ArcSegment.RotationAngleProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotationAngleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RotationAngleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RotationAngleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.ArcSegment.RotationAngleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="P:System.Windows.Media.ArcSegment.RotationAngle" />依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Windows.Size Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ArcSegment.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定として円弧の x 半径と y 半径、<see cref="T:System.Windows.Size" />構造体。</summary>
+        <value>A<see cref="T:System.Windows.Size" />楕円の円弧の x 半径と y 半径を記述する構造体。<see cref="T:System.Windows.Size" />構造体の<see cref="P:System.Windows.Size.Width" />円弧の x 軸半径を指定するプロパティ以外の場合はその<see cref="P:System.Windows.Size.Height" />プロパティは、円弧の y 半径を指定します。 既定値は 0,0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図に、いくつかの楕円弧除いて同一である、<xref:System.Windows.Media.ArcSegment.Size%2A>設定します。  
+  
+ ![設定が異なる Arcsegment サイズ](~/add/media/arcsegment-size.png "サイズの設定が異なる Arcsegment")  
+サイズの設定が異なるいくつかの ArcSegment オブジェクト  
+  
+<a name="dependencyPropertyInfo_Size"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.ArcSegment.SizeProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.ArcSegment.SizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.ArcSegment.Size" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SweepDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.SweepDirection SweepDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.SweepDirection SweepDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.ArcSegment.SweepDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.SweepDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に円弧を描画するかどうかを指定する値、<see cref="F:System.Windows.Media.SweepDirection.Clockwise" />または<see cref="F:System.Windows.Media.SweepDirection.Counterclockwise" />方向です。</summary>
+        <value>円弧が描画される方向を指定する値。 既定値は <see cref="F:System.Windows.Media.SweepDirection.Counterclockwise" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.ArcSegment>と、指定された<xref:System.Windows.Media.ArcSegment.Size%2A>、 <xref:System.Windows.Media.ArcSegment.RotationAngle%2A>、始点、および終了<xref:System.Windows.Media.ArcSegment.Point%2A>円弧が 4 種類が考えられます。 指定する、<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>プロパティは、2 つの円弧の数を削減: 円弧の始点から最後に描画<xref:System.Windows.Media.ArcSegment.Point%2A>で、<xref:System.Windows.Media.SweepDirection.Clockwise>方向と円弧の始点からの終点に描画、<xref:System.Windows.Media.SweepDirection.Counterclockwise>方向です。  
+  
+ 次の図は除いて同一である 2 つの楕円の円弧の<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>設定します。  
+  
+ ![設定が異なる arcsegment SweepDirection](~/add/media/arcsegment-sweepdirection.png "SweepDirection の設定が異なる Arcsegment")  
+SweepDirection の設定が異なる ArcSegment オブジェクト  
+  
+<a name="dependencyPropertyInfo_SweepDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.ArcSegment.SweepDirectionProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SweepDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SweepDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SweepDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.ArcSegment.SweepDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.ArcSegment.SweepDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

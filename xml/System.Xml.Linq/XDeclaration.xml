@@ -1,0 +1,441 @@
+<Type Name="XDeclaration" FullName="System.Xml.Linq.XDeclaration">
+  <TypeSignature Language="C#" Value="public class XDeclaration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XDeclaration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XDeclaration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.Linq</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 宣言を使用して XML バージョン、エンコーディングを宣言し、XML ドキュメントがスタンドアロンかどうか。 このクラスは、XML 宣言の XML の概念を表します。  
+  
+ XML 標準のように宣言は、ドキュメントに関連付けられます。 ドキュメントを作成する場合は、ドキュメントの宣言を指定するオプションがあります。 <xref:System.Xml.Linq.XDocument>クラスに含まれる、<xref:System.Xml.Linq.XDocument.Declaration%2A>プロパティで、宣言を取得または設定することができます。 XML 宣言付きの XML ツリーをシリアル化する方法については、次を参照してください。 [XML 宣言付きのシリアル化する](http://msdn.microsoft.com/library/30f1b564-62b5-4e5d-9c36-884e51113feb)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XDeclaration (System.Xml.Linq.XDeclaration other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XDeclaration other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XDeclaration.#ctor(System.Xml.Linq.XDeclaration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.Xml.Linq.XDeclaration" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Xml.Linq.XDeclaration" />これを初期化するために使用される<see cref="T:System.Xml.Linq.XDeclaration" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Linq.XDeclaration" />から別のクラス<see cref="T:System.Xml.Linq.XDeclaration" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、XML ツリーの詳細コピーを作成する、主に内部的に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XDeclaration (string version, string encoding, string standalone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string version, string encoding, string standalone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XDeclaration.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.String" />
+        <Parameter Name="encoding" Type="System.String" />
+        <Parameter Name="standalone" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">XML は、通常「1.0」のバージョン。</param>
+        <param name="encoding">XML ドキュメントのエンコーディング。</param>
+        <param name="standalone">"Yes"または"no"を含む文字列では、XML がスタンドアロンまたは外部エンティティの解決を必要とするかどうかを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Linq.XDeclaration" />指定されたバージョン、エンコーディング、およびスタンドアロンのステータスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、宣言を含んでいるドキュメントを作成します。  
+  
+```csharp  
+  
+                XDocument doc = new XDocument(  
+    new XDeclaration("1.0", "utf-8", "yes"),  
+    new XComment("This is a comment"),  
+    new XElement("Root", "content")  
+);  
+doc.Save("Root.xml");  
+  
+Console.WriteLine(File.ReadAllText("Root.xml"));  
+```  
+  
+```vb  
+  
+                Dim doc As XDocument = _   
+        <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+            <!--This is a comment-->  
+            <Root>content</Root>  
+  
+doc.Save("Root.xml")  
+  
+Console.WriteLine(File.ReadAllText("Root.xml"))  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```xml  
+  
+                <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+<!--This is a comment-->  
+<Root>content</Root>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public string Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XDeclaration.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このドキュメントのエンコーディングを設定します。</summary>
+        <value>A<see cref="T:System.String" />このドキュメントのコード ページ名を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.WebName%2A> から返される値はすべて有効な値です。  
+  
+ エンコードされたドキュメントを読み取る場合、コード ページ名にこのプロパティが設定されます。  
+  
+ 設定するとこのプロパティに有効なコード ページ名をシリアル化するときに、LINQ to XML が指定されたエンコードでシリアル化します。  
+  
+   
+  
+## Examples  
+ 次の例では、UTF-8 エンコーディングのドキュメントと UTF-16 エンコーディングのドキュメントを 1 つずつ作成します。 次に、ドキュメントを読み込み、エンコーディングをコンソールに出力します。  
+  
+```csharp  
+  
+                Console.WriteLine("Creating a document with utf-8 encoding");  
+XDocument encodedDoc8 = new XDocument(  
+    new XDeclaration("1.0", "utf-8", "yes"),  
+    new XElement("Root", "Content")  
+);  
+encodedDoc8.Save("EncodedUtf8.xml");  
+Console.WriteLine("Encoding is:{0}", encodedDoc8.Declaration.Encoding);  
+Console.WriteLine();  
+  
+Console.WriteLine("Creating a document with utf-16 encoding");  
+XDocument encodedDoc16 = new XDocument(  
+    new XDeclaration("1.0", "utf-16", "yes"),  
+    new XElement("Root", "Content")  
+);  
+encodedDoc16.Save("EncodedUtf16.xml");  
+Console.WriteLine("Encoding is:{0}", encodedDoc16.Declaration.Encoding);  
+Console.WriteLine();  
+  
+XDocument newDoc8 = XDocument.Load("EncodedUtf8.xml");  
+Console.WriteLine("Encoded document:");  
+Console.WriteLine(File.ReadAllText("EncodedUtf8.xml"));  
+Console.WriteLine();  
+Console.WriteLine("Encoding of loaded document is:{0}", newDoc8.Declaration.Encoding);  
+Console.WriteLine();  
+  
+XDocument newDoc16 = XDocument.Load("EncodedUtf16.xml");  
+Console.WriteLine("Encoded document:");  
+Console.WriteLine(File.ReadAllText("EncodedUtf16.xml"));  
+Console.WriteLine();  
+Console.WriteLine("Encoding of loaded document is:{0}", newDoc16.Declaration.Encoding);  
+```  
+  
+```vb  
+  
+                Console.WriteLine("Creating a document with utf-8 encoding")  
+Dim encodedDoc8 As XDocument = _   
+        <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+            <Root>Content</Root>  
+encodedDoc8.Save("EncodedUtf8.xml")  
+Console.WriteLine("Encoding is:{0}", encodedDoc8.Declaration.Encoding)  
+Console.WriteLine()  
+  
+Console.WriteLine("Creating a document with utf-16 encoding")  
+Dim encodedDoc16 As XDocument = _   
+        <?xml version="1.0" encoding="utf-16" standalone="yes"?>  
+            <Root>Content</Root>  
+  
+encodedDoc16.Save("EncodedUtf16.xml")  
+Console.WriteLine("Encoding is:{0}", encodedDoc16.Declaration.Encoding)  
+Console.WriteLine()  
+  
+Dim newDoc8 As XDocument = XDocument.Load("EncodedUtf8.xml")  
+Console.WriteLine("Encoded document:")  
+Console.WriteLine(File.ReadAllText("EncodedUtf8.xml"))  
+Console.WriteLine()  
+Console.WriteLine("Encoding of loaded document is:{0}", newDoc8.Declaration.Encoding)  
+Console.WriteLine()  
+  
+Dim newDoc16 As XDocument = XDocument.Load("EncodedUtf16.xml")  
+Console.WriteLine("Encoded document:")  
+Console.WriteLine(File.ReadAllText("EncodedUtf16.xml"))  
+Console.WriteLine()  
+Console.WriteLine("Encoding of loaded document is:{0}", newDoc16.Declaration.Encoding)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Creating a document with utf-8 encoding  
+Encoding is:utf-8  
+  
+Creating a document with utf-16 encoding  
+Encoding is:utf-16  
+  
+Encoded document:  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+<Root>Content</Root>  
+  
+Encoding of loaded document is:utf-8  
+  
+Encoded document:  
+<?xml version="1.0" encoding="utf-16" standalone="yes"?>  
+<Root>Content</Root>  
+  
+Encoding of loaded document is:utf-16  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Standalone">
+      <MemberSignature Language="C#" Value="public string Standalone { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Standalone" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XDeclaration.Standalone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このドキュメントのスタンドアロン プロパティを設定します。</summary>
+        <value>A<see cref="T:System.String" />このドキュメントのスタンドアロン プロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタンドアロンの有効な値は"yes"または"no"です。 これらの値には適用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、宣言のスタンドアロン プロパティを出力するのにこのプロパティを使用します。  
+  
+```csharp  
+  
+                XDeclaration xd = new XDeclaration("1.0", "utf-8", "yes");  
+Console.WriteLine(xd.Version);  
+Console.WriteLine(xd.Encoding);  
+Console.WriteLine(xd.Standalone);  
+```  
+  
+```vb  
+  
+                Dim xd As XDeclaration = New XDeclaration("1.0", "utf-8", "yes")  
+Console.WriteLine(xd.Version)  
+Console.WriteLine(xd.Encoding)  
+Console.WriteLine(xd.Standalone)  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+1.0  
+utf-8  
+yes  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XDeclaration.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書式設定された文字列としての宣言を提供します。</summary>
+        <returns>A<see cref="T:System.String" />書式設定された XML 文字列を格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XDeclaration.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このドキュメントのバージョンのプロパティを設定します。</summary>
+        <value>A<see cref="T:System.String" />このドキュメント バージョン プロパティを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、通常は「1.0」です。 この値は適用されません。  
+  
+   
+  
+## Examples  
+ 次の例では、宣言のバージョンのプロパティを出力するのにこのプロパティを使用します。  
+  
+```csharp  
+XDeclaration xd = new XDeclaration("1.0", "utf-8", "yes");  
+Console.WriteLine(xd.Version);  
+Console.WriteLine(xd.Encoding);  
+Console.WriteLine(xd.Standalone);  
+```  
+  
+```vb  
+Dim xd As XDeclaration = New XDeclaration("1.0", "utf-8", "yes")  
+Console.WriteLine(xd.Version)  
+Console.WriteLine(xd.Encoding)  
+Console.WriteLine(xd.Standalone)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+1.0  
+utf-8  
+yes  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

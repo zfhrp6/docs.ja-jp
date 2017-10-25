@@ -1,0 +1,90 @@
+<Type Name="ReadEntityBodyMode" FullName="System.Web.ReadEntityBodyMode">
+  <TypeSignature Language="C#" Value="public enum ReadEntityBodyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReadEntityBodyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ReadEntityBodyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>HTTP 要求エンティティ本体が読み取られた方法を示す定数を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Buffered">
+      <MemberSignature Language="C#" Value="Buffered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ReadEntityBodyMode Buffered = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ReadEntityBodyMode.Buffered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ReadEntityBodyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ ボディに読み取られた、<see cref="T:System.IO.Stream" />オブジェクトを使用して、<see cref="M:System.Web.HttpRequest.GetBufferedInputStream" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Bufferless">
+      <MemberSignature Language="C#" Value="Bufferless" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ReadEntityBodyMode Bufferless = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ReadEntityBodyMode.Bufferless" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ReadEntityBodyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ ボディに読み取られた、<see cref="T:System.IO.Stream" />オブジェクトを使用して、<see cref="M:System.Web.HttpRequest.GetBufferlessInputStream" />メソッドです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Classic">
+      <MemberSignature Language="C#" Value="Classic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ReadEntityBodyMode Classic = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ReadEntityBodyMode.Classic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ReadEntityBodyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ ボディが既に読み取られてし、その内容のような HTTP 要求のコレクションに格納された<see cref="P:System.Web.HttpRequest.Form" />、 <see cref="P:System.Web.HttpRequest.Files" />、 <see cref="P:System.Web.HttpRequest.InputStream" />、および<see cref="M:System.Web.HttpRequest.BinaryRead(System.Int32)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラシック モードでは、ASP.NET パイプライン処理が既に発生したときに適用されます。  たとえば、ASP.NET ページを実行しているまたはプロパティへのアクセス、HTTP のいずれかで要求コレクション エンティティ本体を読み取る、発生して、エンティティの本文の内容は、適切なコレクションに格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.ReadEntityBodyMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ReadEntityBodyMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ReadEntityBodyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ本体が読み取られていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

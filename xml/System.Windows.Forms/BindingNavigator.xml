@@ -1,0 +1,788 @@
+<Type Name="BindingNavigator" FullName="System.Windows.Forms.BindingNavigator">
+  <TypeSignature Language="C#" Value="public class BindingNavigator : System.Windows.Forms.ToolStrip, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BindingNavigator extends System.Windows.Forms.ToolStrip implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BindingNavigator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStrip</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("RefreshItems")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("BindingSource")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.BindingNavigatorDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データにバインドされている、フォーム上のコントロールを移動および操作するためのユーザー インターフェイス (UI) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールを移動し、フォーム上のデータを操作する標準化された方法を表します。 ほとんどの場合、<xref:System.Windows.Forms.BindingNavigator>と組み合わされて、<xref:System.Windows.Forms.BindingSource>コントロールをフォームのデータ レコード間を移動し、対話機能を使用します。 このような場合、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティが設定されて、関連付けられている<xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType>データ ソースとして機能するコンポーネントです。  
+  
+ 既定では、<xref:System.Windows.Forms.BindingNavigator>コントロールのユーザー インターフェイス (UI) が、一連ので構成される<xref:System.Windows.Forms.ToolStrip>ボタン、テキスト ボックス、および最も一般的なデータ関連のアクション、データの追加、データの削除、およびデータの移動などの静的なテキスト要素です。 取得されたかに関連付けられたメンバーを使用して設定するには、これらの各コントロール、<xref:System.Windows.Forms.BindingNavigator>コントロール。 同様はまた、一対一で対応内のメンバーに、<xref:System.Windows.Forms.BindingSource>次の表に示すように、同じ機能をプログラムで実行するクラス。  
+  
+|UI コントロール|<xref:System.Windows.Forms.BindingNavigator> のメンバー|<xref:System.Windows.Forms.BindingSource> のメンバー|  
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|**最初に移動します。**|<xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A>|<xref:System.Windows.Forms.BindingSource.MoveFirst%2A>|  
+|**前に戻る**|<xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A>|<xref:System.Windows.Forms.BindingSource.MovePrevious%2A>|  
+|**現在の位置**|<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>|<xref:System.Windows.Forms.BindingSource.Current%2A>|  
+|**カウント**|<xref:System.Windows.Forms.BindingNavigator.CountItem%2A>|<xref:System.Windows.Forms.BindingSource.Count%2A>|  
+|**次に移動します。**|<xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A>|<xref:System.Windows.Forms.BindingSource.MoveNext%2A>|  
+|**最後に移動します。**|<xref:System.Windows.Forms.BindingNavigator.MoveLastItem%2A>|<xref:System.Windows.Forms.BindingSource.MoveLast%2A>|  
+|**新規追加します。**|<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A>|<xref:System.Windows.Forms.BindingSource.AddNew%2A>|  
+|**削除**|<xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A>|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A>|  
+  
+ 追加する、<xref:System.Windows.Forms.BindingNavigator>フォームとなど、データ ソースにバインドするコントロール、 <xref:System.Windows.Forms.BindingSource>、このテーブルのリレーションシップを確立する自動的にします。  
+  
+ このツールバーをカスタマイズするのにには、次の手法のいずれかを使用できます。  
+  
+-   作成、<xref:System.Windows.Forms.BindingNavigator>で、<xref:System.Windows.Forms.BindingNavigator.%23ctor%28System.Boolean%29>コンス トラクターは、ブール値を受け入れる`addStandardItems`パラメーター、このパラメーターに設定し、`false`です。 必要な追加<xref:System.Windows.Forms.ToolStripItem>オブジェクトを<xref:System.Windows.Forms.ToolStrip.Items%2A>コレクション。  
+  
+-   さまざまなカスタマイズが必要な場合、またはカスタム設計が再利用されます、派生クラスを<xref:System.Windows.Forms.BindingNavigator>をオーバーライドし、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドを追加または代替の標準的なアイテムを定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.BindingNavigator>データ セット内を移動するコントロール。 セットは <xref:System.Data.DataView> に含まれ、<xref:System.Windows.Forms.BindingSource> コンポーネントを持つ <xref:System.Windows.Forms.TextBox> コントロールにバインドされます。  
+  
+ [!code-csharp[System.Windows.Forms.DataNavigator#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataNavigator/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.DataNavigator#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataNavigator/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingNavigator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.BindingNavigator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、設定、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティを`null`です。 このコンス トラクターは呼び出すことと同じ、<xref:System.Windows.Forms.BindingNavigator.%23ctor%28System.Boolean%29>コンス トラクターのパラメーター値を持つ`false`します。 標準の項目を追加するには個別に呼び出すことによって<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingNavigator (bool addStandardItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool addStandardItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="addStandardItems" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="addStandardItems">
+          <see langword="true" />標準的なナビゲーション UI を表示するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingNavigator" />クラス、標準のナビゲーションのユーザー インターフェイス (UI) を表示するかどうかを示すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティを`null`です。 場合<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>は`false`、 <xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MoveLastItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A>、<xref:System.Windows.Forms.BindingNavigator.CountItem%2A>と<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>も`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingNavigator (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />を追加、新しい<see cref="T:System.Windows.Forms.BindingNavigator" />を制御します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingNavigator" />クラスし、指定されたコンテナーにこの新しいインスタンスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、便宜上指定、新たに作成する次の手順を組み合わせて<xref:System.Windows.Forms.BindingNavigator>コントロールと親への追加<xref:System.ComponentModel.IContainer>です。 既定のコンス トラクターのように設定して、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティを`null`され、標準のユーザー インターフェイスは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingNavigator (System.Windows.Forms.BindingSource bindingSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.BindingSource bindingSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.#ctor(System.Windows.Forms.BindingSource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindingSource" Type="System.Windows.Forms.BindingSource" />
+      </Parameters>
+      <Docs>
+        <param name="bindingSource"><see cref="T:System.Windows.Forms.BindingSource" />データ ソースとして使用します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.BindingNavigator" /> 、指定したクラス<see cref="T:System.Windows.Forms.BindingSource" />データ ソースとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、`BindingSource`パラメーターは初期化するために、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティです。 ナビゲーション ボタンの標準セットを追加し、などに対応するプロパティを設定も<xref:System.Windows.Forms.BindingNavigator.CountItem%2A>と<xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNewItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem AddNewItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem AddNewItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.AddNewItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、**新規追加**ボタンをクリックします。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、**新規追加**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A>プロパティが生成されます、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、**新規追加**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.AddNew%2A>メソッドと、**新規追加**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、**新規追加**ボタンの場合、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`または<xref:System.Windows.Forms.BindingSource.AllowNew%2A>プロパティは`false`します。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddStandardItems">
+      <MemberSignature Language="C#" Value="public virtual void AddStandardItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddStandardItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.AddStandardItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ナビゲーション項目の標準セットを追加、<see cref="T:System.Windows.Forms.BindingNavigator" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは、ユーザー インターフェイスの標準セットを追加<xref:System.Windows.Forms.ToolStripItem>オブジェクトを<xref:System.Windows.Forms.BindingNavigator>など、基本的なナビゲーション操作のストリップをツール**Move First**、 **Move Last**、および**新規追加**です。  
+  
+ オーバーライド<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>で追加または代替のツール ストリップの項目を定義するクラスを派生します。 派生クラスを最適なデザイン時サポートのために、各項目が、意味のある値を確認します、<xref:System.Windows.Forms.ToolStripItem.Name%2A>プロパティです。 デザイン時に、これは、対応するメンバー変数の一意の名前の生成に使用されます。 アイテムの<xref:System.Windows.Forms.ToolStripItem.Name%2A>プロパティにメンバー変数に指定された名前の一致するように更新されます。  
+  
+> [!NOTE]
+>  このメソッドが明示的にから既存のアイテムを削除、 <xref:System.Windows.Forms.BindingNavigator>、新しい値を設定するには、 <xref:System.Windows.Forms.BindingNavigator.MoveNextItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.MoveLastItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>、 <xref:System.Windows.Forms.BindingNavigator.CountItem%2A>、<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A>と<xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A>プロパティです。 また<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>項目の追加中にレイアウトを一時停止しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新プログラムを無効になります、<see cref="T:System.Windows.Forms.ToolStripItem" />の制御、<see cref="T:System.Windows.Forms.BindingNavigator" />コンポーネントの初期化中にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.BeginInit%2A>と<xref:System.Windows.Forms.BindingNavigator.EndInit%2A>メソッドを使用する、<xref:System.Windows.Forms.BindingNavigator>複数のプロパティへの変更の最適化を制御します。 この 2 つのメソッドを使用して、相互に依存するプロパティを初期化することができますか、バッチは、デザイン時に複数のプロパティを設定します。 呼び出す、<xref:System.Windows.Forms.BindingNavigator.BeginInit%2A>初期化の開始をコントロールに通知するメソッド以外の呼び出し、<xref:System.Windows.Forms.BindingNavigator.EndInit%2A>初期化を通知するメソッドが完了しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingSource">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingSource BindingSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingSource BindingSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.BindingSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.BindingSource" />のデータ ソースであるコンポーネント。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingSource" />コンポーネントに関連付けられた<see cref="T:System.Windows.Forms.BindingNavigator" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティを表すデータ ソースを<xref:System.Windows.Forms.BindingNavigator>内を移動します。 具体的には、<xref:System.Windows.Forms.BindingSource.List%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>実際のデータ リストを表します。  
+  
+ これは、既定のプロパティを<xref:System.Windows.Forms.BindingNavigator>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.BindingNavigator>データ セット内を移動するコントロール。 セットは <xref:System.Data.DataView> に含まれ、<xref:System.Windows.Forms.BindingSource> コンポーネントを持つ <xref:System.Windows.Forms.TextBox> コントロールにバインドされます。 このコード例に示されている例の一部である[する方法: 移動を通じて、データセットと Windows フォーム BindingNavigator コントロール](~/docs/framework/winforms/controls/move-through-a-dataset-with-wf-bindingnavigator-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataNavigator#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataNavigator/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.DataNavigator#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataNavigator/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem CountItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem CountItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.CountItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Windows.Forms.ToolStripItem" /> 、関連する項目の合計数を表示する<see cref="T:System.Windows.Forms.BindingSource" />です。</summary>
+        <value>A <see cref="T:System.Windows.Forms.ToolStripItem" /> 、関連する項目の合計数を表示する<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.CountItem%2A>プロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ 項目の数は、<xref:System.Windows.Forms.BindingSource.Count%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>です。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripLabel>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountItemFormat">
+      <MemberSignature Language="C#" Value="public string CountItemFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CountItemFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.CountItemFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示される情報を書式設定に使用する文字列、<see cref="P:System.Windows.Forms.BindingNavigator.CountItem" />コントロール。</summary>
+        <value>形式<see cref="T:System.String" />項目数の書式を設定するために使用します。 既定では文字列 "of {0}" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.CountItem%2A>コントロールは、<xref:System.Windows.Forms.ToolStripLabel>内の項目の合計数を表示する、<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>です。 <xref:System.Windows.Forms.BindingNavigator.CountItemFormat%2A>プロパティは、書式指定文字列の数を書式設定に使用します。  
+  
+ 書式指定文字列の詳細については、次を参照してください。、<xref:System.String.Format%28System.String%2CSystem.Object%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem DeleteItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem DeleteItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.DeleteItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />と関連付けられている、**削除**機能します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、**削除**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、このプロパティを生成、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、**削除**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A>メソッドときに、**削除**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、**削除**で、次の実行時の状況下のボタン:<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`、<xref:System.Windows.Forms.BindingSource.Count%2A>プロパティが 0、または<xref:System.Windows.Forms.BindingSource.AllowRemove%2A>プロパティは`false`。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.BindingNavigator" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Windows.Forms.BindingNavigator>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、更新プログラムを<see cref="T:System.Windows.Forms.ToolStripItem" />の制御、<see cref="T:System.Windows.Forms.BindingNavigator" />コンポーネントの初期化が完了した後です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.BeginInit%2A>と<xref:System.Windows.Forms.BindingNavigator.EndInit%2A>メソッドを使用する、<xref:System.Windows.Forms.BindingNavigator>複数のプロパティへの変更の最適化を制御します。 この 2 つのメソッドを使用して、相互に依存するプロパティを初期化することができますか、バッチは、デザイン時に複数のプロパティを設定します。 呼び出す、<xref:System.Windows.Forms.BindingNavigator.BeginInit%2A>初期化の開始をコントロールに通知するメソッド以外の呼び出し、<xref:System.Windows.Forms.BindingNavigator.EndInit%2A>初期化を通知するメソッドが完了しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFirstItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem MoveFirstItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem MoveFirstItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.MoveFirstItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />と関連付けられている、 **Move First**機能します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、 **Move First**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、このプロパティを生成、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、 **Move First**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.MoveFirst%2A>メソッドと、 **Move First**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、 **Move First**で、次の実行時の状況下のボタン:<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`、<xref:System.Windows.Forms.BindingSource.Position%2A?displayProperty=nameWithType>プロパティが 0、または<xref:System.Windows.Forms.BindingSource.AllowNew%2A>を関連<xref:System.Windows.Forms.BindingSource>は`false`します。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveLastItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem MoveLastItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem MoveLastItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.MoveLastItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />と関連付けられている、 **Move Last**機能します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、 **Move Last**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、このプロパティを生成、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、 **Move Last**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.MoveLast%2A>メソッドと、 **Move Last**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、 **Move Last**で、次の実行時の状況下のボタン:<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`または<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティがより大きいか等しい、<xref:System.Windows.Forms.BindingSource.Count%2A>プロパティです。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNextItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem MoveNextItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem MoveNextItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.MoveNextItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />と関連付けられている、 **Move Next**機能します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、 **Move Next**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、このプロパティを生成、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、 **Move Next**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.MoveNext%2A>メソッドときに、 **Move Next**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、 **Move Next**で、次の実行時の状況下のボタン:<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`または<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティがより大きいか等しい、<xref:System.Windows.Forms.BindingSource.Count%2A>プロパティです。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovePreviousItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem MovePreviousItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem MovePreviousItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.MovePreviousItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />と関連付けられている、 **Move Previous**機能します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ToolStripItem" />を表す、 **Move Previous**ボタンをクリックして、<see cref="T:System.Windows.Forms.BindingSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Forms.BindingNavigator.MovePreviousItem%2A>プロパティが生成されます、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、 **Move Previous**ボタンをクリックします。 このイベント ハンドラーを呼び出す、<xref:System.Windows.Forms.BindingSource.MovePrevious%2A>メソッドと、 **Move Previous**実行時にボタンをクリックします。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ <xref:System.Windows.Forms.BindingNavigator>コントロールが無効になります、 **Move Previous**で、次の実行時の状況下のボタン:<xref:System.Windows.Forms.BindingNavigator.BindingSource%2A>プロパティは`null`または<xref:System.Windows.Forms.BindingSource.Position%2A>プロパティが 0 未満です。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripButton>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRefreshItems">
+      <MemberSignature Language="C#" Value="protected virtual void OnRefreshItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRefreshItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.OnRefreshItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="E:System.Windows.Forms.BindingNavigator.RefreshItems" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ させると、対応するだけでなく<xref:System.Windows.Forms.BindingNavigator.RefreshItems>イベント、<xref:System.Windows.Forms.BindingNavigator.OnRefreshItems%2A>メソッドは、関連する状態に対して、次の操作を実行<xref:System.Windows.Forms.BindingSource>です。  
+  
+-   現在使用して内部のメンバーを設定<xref:System.Windows.Forms.BindingSource>状態です。  
+  
+-   有効または無効に適切に現在のユーザー インターフェイス (UI) の項目<xref:System.Windows.Forms.BindingSource>状態です。  
+  
+-   更新プログラム、<xref:System.Windows.Forms.BindingNavigator.CountItem%2A>と<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.BindingNavigator.OnRefreshItems%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingNavigator.OnRefreshItems" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingNavigator.OnRefreshItems" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripItem PositionItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ToolStripItem PositionItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingNavigator.PositionItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ToolStripItem" />内の現在位置を表示する、<see cref="T:System.Windows.Forms.BindingSource" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripItem" />現在の位置を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装で、<xref:System.Windows.Forms.BindingNavigator.PositionItem%2A>プロパティの型は<xref:System.Windows.Forms.ToolStripTextBox>します。  
+  
+ このプロパティは`null`が以前に設定されていては、アクセスする前に、<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>メソッドは暗黙的または明示的に呼び出されます。  
+  
+ 取得することによって、現在の位置が計算された、<xref:System.Windows.Forms.BindingSource.Position%2A>のプロパティ、<xref:System.Windows.Forms.BindingSource>位置 1 から始まる数に変換する場合は 1 を追加するとします。  
+  
+ 既定の実装では、このプロパティは型のコントロールを表します。<xref:System.Windows.Forms.ToolStripTextBox>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshItems">
+      <MemberSignature Language="C#" Value="public event EventHandler RefreshItems;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RefreshItems" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingNavigator.RefreshItems" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータの現在の状態を反映するために、移動ユーザー インターフェイス (UI) の状態を更新する必要が生じたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingNavigator.RefreshItems?displayProperty=nameWithType>ことを通知するイベントのナビゲーション UI、<xref:System.Windows.Forms.BindingNavigator>関連付けられている現在の状態を反映するように更新する必要がある<xref:System.Windows.Forms.BindingSource>です。  
+  
+ これは、既定のイベントを<xref:System.Windows.Forms.BindingNavigator>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.BindingNavigator.RefreshItems>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.BindingNavigator>という`BindingNavigator1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.BindingNavigator.RefreshItems>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#124](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#124)]
+ [!code-vb[System.Windows.Forms.EventExamples#124](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#124)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshItemsCore">
+      <MemberSignature Language="C#" Value="protected virtual void RefreshItemsCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RefreshItemsCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.RefreshItemsCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データの現在の状態に合わせて標準項目の状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされている場合<xref:System.Windows.Forms.BindingNavigator.AddStandardItems%2A>派生クラスでオーバーライドすることがも<xref:System.Windows.Forms.BindingNavigator.RefreshItemsCore%2A>に追加したカスタムの標準的なアイテムを更新する、<xref:System.Windows.Forms.BindingNavigator>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public bool Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingNavigator.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォーム検証を実行して、検証が成功したかどうかを返します。</summary>
+        <returns>
+          <see langword="true" />検証が成功し、フォーカスを移動する場合、 <see cref="T:System.Windows.Forms.BindingNavigator" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アイテムをクリック アクションを実行する前にフォーカスが移動することを確認するには、このメソッドを使用して、<xref:System.Windows.Forms.BindingNavigator>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

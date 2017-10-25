@@ -1,0 +1,133 @@
+<Type Name="ReceiveErrorHandling" FullName="System.ServiceModel.ReceiveErrorHandling">
+  <TypeSignature Language="C#" Value="public enum ReceiveErrorHandling" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReceiveErrorHandling extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ReceiveErrorHandling" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>有害なメッセージの処理を指定する列挙体です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有害メッセージは、アプリケーションへのメッセージの配信が繰り返し失敗したメッセージです。 これは、メッセージ キュー (MSMQ) ベースのバインディングを使用している場合にのみ適用できます。 既定値は `Fault` です。これにより、リスナーでエラーが発生し、その結果、ServiceHost でもエラーが発生します。 有害メッセージが原因でサービスが失敗した場合は、<xref:System.ServiceModel.MsmqPoisonMessageException> がスローされます。 この例外は、System.Messaging API を使用してメッセージを移動させるために使用できる MSMQ メッセージの `LookupId` を含みます。 <xref:System.ServiceModel.ReceiveErrorHandling> 列挙体の一部の値 (`Reject` や `Move` など) は、[!INCLUDE[wv](~/includes/wv-md.md)] でのみ使用できます。 有害メッセージの処理は、<xref:System.ServiceModel.Channels.MsmqBindingElementBase.ReceiveErrorHandling%2A> プロパティをこの列挙体のいずれかの値に設定することで制御します。  
+  
+   
+  
+## Examples  
+ 次の構成コードは、このプロパティをサービス構成ファイルの中に設定する方法を示しています。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Drop">
+      <MemberSignature Language="C#" Value="Drop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReceiveErrorHandling Drop = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReceiveErrorHandling.Drop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReceiveErrorHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオプションは、有害メッセージを破棄します。 メッセージは、アプリケーションに配信されません。 この時点でメッセージの TTL の有効期限が既に切れている場合、メッセージは、送信側の配信不能キューに表示される可能性があります。 有効期限が切れていない場合は、どこにも表示されません。 このオプションは、メッセージが失われてもユーザーにとって問題がないことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用可能なプラットフォーム : [!INCLUDE[wxp](~/includes/wxp-md.md)]、[!INCLUDE[ws2003](~/includes/ws2003-md.md)]、および [!INCLUDE[wv](~/includes/wv-md.md)]。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fault">
+      <MemberSignature Language="C#" Value="Fault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReceiveErrorHandling Fault = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReceiveErrorHandling.Fault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReceiveErrorHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオプションは、ServiceHost のエラーの原因になったリスナーにエラーを送信します。 アプリケーションでキューのメッセージの処理を継続するには、なんらかの外部機構によってアプリケーション キューからメッセージを削除する必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション プラットフォーム : Windows XP、Windows Server 2003、および Windows Vista。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="Move" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReceiveErrorHandling Move = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReceiveErrorHandling.Move" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReceiveErrorHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、有害メッセージを有害メッセージ キューに移動して、後で有害メッセージ処理アプリケーションで処理できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用可能なプラットフォーム : [!INCLUDE[wv](~/includes/wv-md.md)]のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reject">
+      <MemberSignature Language="C#" Value="Reject" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReceiveErrorHandling Reject = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReceiveErrorHandling.Reject" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReceiveErrorHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、アプリケーションでメッセージを受信できないという否定応答を送信側キュー マネージャーに返信するようメッセージ キュー (MSMQ) に指示します。 メッセージは、送信側キュー マネージャーの配信不能キューに置かれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用可能なプラットフォーム : [!INCLUDE[wv](~/includes/wv-md.md)]のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

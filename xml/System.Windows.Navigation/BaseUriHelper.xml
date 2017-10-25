@@ -1,0 +1,73 @@
+<Type Name="BaseUriHelper" FullName="System.Windows.Navigation.BaseUriHelper">
+  <TypeSignature Language="C#" Value="public static class BaseUriHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed BaseUriHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.BaseUriHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>など、コンテナーのベース URI に対する相対の uniform resource identifier (Uri) を解決する方法を提供する<see cref="T:System.Windows.Controls.Frame" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseUriProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BaseUriProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BaseUriProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.BaseUriHelper.BaseUriProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="BaseUri" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaseUri">
+      <MemberSignature Language="C#" Value="public static Uri GetBaseUri (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Uri GetBaseUri(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.BaseUriHelper.GetBaseUri(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see langword="BaseUri" />の指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ある特定の要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、取得、<xref:System.Windows.Markup.IUriContext.BaseUri%2A?displayProperty=nameWithType>実装されている場合は、プロパティ、または<xref:System.Windows.Navigation.BaseUriHelper.BaseUri%2A>要素に設定されている場合、添付プロパティ。 <xref:System.Windows.Navigation.BaseUriHelper.GetBaseUri%2A>親要素を走査`element`を検索する最も近い<xref:System.Windows.Navigation.BaseUriHelper.BaseUri%2A>(<xref:System.Windows.Markup.IUriContext>添付プロパティまたは)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">値を取得するため、<see langword="BaseUri" />添付プロパティ。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

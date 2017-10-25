@@ -1,0 +1,132 @@
+<Type Name="ClientRolePrincipal" FullName="System.Web.ClientServices.ClientRolePrincipal">
+  <TypeSignature Language="C#" Value="public class ClientRolePrincipal : System.Security.Principal.IPrincipal" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientRolePrincipal extends System.Object implements class System.Security.Principal.IPrincipal" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.ClientRolePrincipal" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Principal.IPrincipal</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ロール情報を含むクライアント アプリケーション サービスのセキュリティ情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスでユーザーを検証するときに、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>または<xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>設定、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティをこのクラスのインスタンス。 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティの新しいインスタンスを<xref:System.Web.ClientServices.ClientFormsIdentity>クラスです。 <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティを<xref:System.Security.Principal.WindowsIdentity>によって返されるオブジェクト、 `static` <xref:System.Security.Principal.WindowsIdentity.GetCurrent?displayProperty=nameWithType>メソッドです。  
+  
+ ない通常このクラスに直接アクセスします。 通常を呼び出す、<xref:System.Security.Principal.IPrincipal.IsInRole%2A>のメソッド、<xref:System.Security.Principal.IPrincipal>によって返される、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティです。 ただし、キャスト、<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティの値を<xref:System.Web.ClientServices.ClientRolePrincipal>呼び出しへの参照、<xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A>メソッド例」のセクションで示したように、明示的にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスを使用して、ユーザーが"manager"ロールの場合にのみ、ボタンを表示する方法を示します。 この例は、<xref:System.Windows.Forms.Button>という`managerOnlyButton`の初期<xref:System.Windows.Forms.Control.Visible%2A>のプロパティの値`false`です。  
+  
+ [!code-csharp[ClientApplicationServices#313](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#313)]
+ [!code-vb[ClientApplicationServices#313](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#313)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientRolePrincipal (System.Security.Principal.IIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.ClientRolePrincipal.#ctor(System.Security.Principal.IIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">現在のユーザーを表します。</param>
+        <summary><see cref="T:System.Web.ClientServices.ClientRolePrincipal" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>の値を持つプロパティが初期化されて、`identity`パラメーター。  
+  
+ クライアント アプリケーション サービスでユーザーを検証するときに、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>または<xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>設定、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティをこのクラスのインスタンス。 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティの新しいインスタンスを<xref:System.Web.ClientServices.ClientFormsIdentity>クラスです。 <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティを<xref:System.Security.Principal.WindowsIdentity>によって返されるオブジェクト、 `static` <xref:System.Security.Principal.WindowsIdentity.GetCurrent?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.ClientRolePrincipal.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているセキュリティ id を取得、<see cref="T:System.Web.ClientServices.ClientRolePrincipal" />です。</summary>
+        <value>現在のユーザーを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント アプリケーション サービスでユーザーを検証するときに、<xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>または<xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>設定、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティをこのクラスのインスタンス。 <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティの新しいインスタンスを<xref:System.Web.ClientServices.ClientFormsIdentity>クラスです。 <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider>を初期化、<xref:System.Web.ClientServices.ClientRolePrincipal.Identity%2A>プロパティを<xref:System.Security.Principal.WindowsIdentity>によって返されるオブジェクト、 `static` <xref:System.Security.Principal.WindowsIdentity.GetCurrent?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public bool IsInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.ClientRolePrincipal.IsInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">確認するロール。</param>
+        <summary>ユーザーがによって表されるかどうかを示す値を取得、<see cref="T:System.Web.ClientServices.ClientRolePrincipal" />が指定されたロールです。</summary>
+        <returns>
+          <see langword="true" />ユーザーが指定されたロールの場合<see langword="false" />ユーザーが指定したロールがないか、認証されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常を呼び出す、<xref:System.Security.Principal.IPrincipal.IsInRole%2A>のメソッド、<xref:System.Security.Principal.IPrincipal>によって返される、 `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティです。 ただし、キャスト、<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティの値を<xref:System.Web.ClientServices.ClientRolePrincipal>このメソッドを呼び出す例」のセクションで示したように、明示的に参照します。  
+  
+ ユーザー ログインの有効期限が切れている場合、 <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> メソッドは常に `false` を返します。 これは発生しませんが、アプリケーションを呼び出した場合、<xref:System.Security.Principal.IPrincipal.IsInRole%2A>メソッドを 1 回認証のすぐ後にします。 アプリケーションが他のタイミングでユーザーのロールを取得する必要がある場合は、ログインの有効期限が切れたユーザーを再検証するコードを追加することができます。 有効なユーザーすべてにロールが割り当てられている場合は、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=nameWithType> メソッドを呼び出してログインの有効期限が切れていないか判断できます。 ロールが返されない場合は、ログインの有効期限が切れています。 この機能の例については、 <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> メソッドを参照してください。 この機能が必要なのは、アプリケーションの構成で **[サーバー クッキーの期限が切れた場合は常に再度ログオンすることをユーザーに要求する]** を選択した場合だけです。 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを使用して、ユーザーが"manager"ロールの場合にのみ、ボタンを表示する方法を示します。 この例は、<xref:System.Windows.Forms.Button>という`managerOnlyButton`の初期<xref:System.Windows.Forms.Control.Visible%2A>のプロパティの値`false`です。  
+  
+ [!code-csharp[ClientApplicationServices#313](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#313)]
+ [!code-vb[ClientApplicationServices#313](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#313)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

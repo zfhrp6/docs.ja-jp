@@ -1,0 +1,146 @@
+<Type Name="DisplayMode" FullName="System.ComponentModel.Design.DisplayMode">
+  <TypeSignature Language="C#" Value="public enum DisplayMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DisplayMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DisplayMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>によって使用される表示モードを示す識別子を定義<see cref="T:System.ComponentModel.Design.ByteViewer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DisplayMode>識別子は、各バイト シーケンスを表示するために使用する表示モードを示すために使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています<xref:System.ComponentModel.Design.DisplayMode>識別子。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ByteViewer>クラスです。  
+  
+ [!code-cpp[ByteViewerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ByteViewerExample/CPP/form1.cpp#1)]
+ [!code-csharp[ByteViewerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ByteViewerExample/CS/form1.cs#1)]
+ [!code-vb[ByteViewerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ByteViewerExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Ansi">
+      <MemberSignature Language="C#" Value="Ansi" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DisplayMode Ansi = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DisplayMode.Ansi" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ANSI 形式の表示。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています<xref:System.ComponentModel.Design.DisplayMode>識別子。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ByteViewer>クラスです。  
+  
+ [!code-cpp[ByteViewerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ByteViewerExample/CPP/form1.cpp#1)]
+ [!code-csharp[ByteViewerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ByteViewerExample/CS/form1.cs#1)]
+ [!code-vb[ByteViewerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ByteViewerExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DisplayMode Auto = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DisplayMode.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示モードが自動的に選択した表示モード。 このモードでは、バイトは 16 進数または印刷可能なかどうかを調べて確認します。 場合は、16 進形式では、バイト、<see cref="F:System.ComponentModel.Design.DisplayMode.Hexdump" />モードを選択します。 いずれかを自動的に選択するテストの実行の文字に印刷できる文字セットが一致する場合、<see cref="F:System.ComponentModel.Design.DisplayMode.Ansi" />または<see cref="F:System.ComponentModel.Design.DisplayMode.Unicode" />モードを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています<xref:System.ComponentModel.Design.DisplayMode>識別子。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ByteViewer>クラスです。  
+  
+ [!code-cpp[ByteViewerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ByteViewerExample/CPP/form1.cpp#1)]
+ [!code-csharp[ByteViewerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ByteViewerExample/CS/form1.cs#1)]
+ [!code-vb[ByteViewerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ByteViewerExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hexdump">
+      <MemberSignature Language="C#" Value="Hexdump" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DisplayMode Hexdump = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DisplayMode.Hexdump" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>16 進数形式表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています<xref:System.ComponentModel.Design.DisplayMode>識別子。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ByteViewer>クラスです。  
+  
+ [!code-cpp[ByteViewerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ByteViewerExample/CPP/form1.cpp#1)]
+ [!code-csharp[ByteViewerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ByteViewerExample/CS/form1.cs#1)]
+ [!code-vb[ByteViewerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ByteViewerExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unicode">
+      <MemberSignature Language="C#" Value="Unicode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DisplayMode Unicode = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DisplayMode.Unicode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode 形式の表示。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています<xref:System.ComponentModel.Design.DisplayMode>識別子。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ByteViewer>クラスです。  
+  
+ [!code-cpp[ByteViewerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ByteViewerExample/CPP/form1.cpp#1)]
+ [!code-csharp[ByteViewerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ByteViewerExample/CS/form1.cs#1)]
+ [!code-vb[ByteViewerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ByteViewerExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

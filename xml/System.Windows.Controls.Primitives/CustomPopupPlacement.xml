@@ -1,0 +1,183 @@
+<Type Name="CustomPopupPlacement" FullName="System.Windows.Controls.Primitives.CustomPopupPlacement">
+  <TypeSignature Language="C#" Value="public struct CustomPopupPlacement" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CustomPopupPlacement extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.CustomPopupPlacement" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールのカスタム配置パラメーターを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacement>構造体を定義する場所、<xref:System.Windows.Controls.Primitives.Popup>に関して、親コントロールし、定義方法、<xref:System.Windows.Controls.Primitives.Popup>表面化するよりそれが画面の境界によって隠されるときに移動します。  
+  
+ A<xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback?displayProperty=nameWithType>デリゲートは、カスタムの配置オプションをこれらの構造体の配列を返します、<xref:System.Windows.Controls.Primitives.Popup>ときに、<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>プロパティに設定されている<xref:System.Windows.Controls.Primitives.PlacementMode.Custom>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomPopupPlacement (System.Windows.Point point, System.Windows.Controls.Primitives.PopupPrimaryAxis primaryAxis);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point, valuetype System.Windows.Controls.Primitives.PopupPrimaryAxis primaryAxis) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.CustomPopupPlacement.#ctor(System.Windows.Point,System.Windows.Controls.Primitives.PopupPrimaryAxis)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="primaryAxis" Type="System.Windows.Controls.Primitives.PopupPrimaryAxis" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Point" />に相対的であること、<see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" />位置の左上隅にある、<see cref="T:System.Windows.Controls.Primitives.Popup" />が配置されます。</param>
+        <param name="primaryAxis"><see cref="T:System.Windows.Controls.Primitives.PopupPrimaryAxis" />に沿って、<see cref="T:System.Windows.Controls.Primitives.Popup" />画面の端でいる場合に、コントロールが移動します。</param>
+        <summary><see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.CustomPopupPlacement.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" />に比較します。</param>
+        <summary>この構造体を別の比較<see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" />構造体をそれらが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />構造体が同じの値です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.CustomPopupPlacement.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この構造体のハッシュ コードを取得します。</summary>
+        <returns>この構造体のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Controls.Primitives.CustomPopupPlacement placement1, System.Windows.Controls.Primitives.CustomPopupPlacement placement2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Controls.Primitives.CustomPopupPlacement placement1, valuetype System.Windows.Controls.Primitives.CustomPopupPlacement placement2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.CustomPopupPlacement.op_Equality(System.Windows.Controls.Primitives.CustomPopupPlacement,System.Windows.Controls.Primitives.CustomPopupPlacement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="placement1" Type="System.Windows.Controls.Primitives.CustomPopupPlacement" />
+        <Parameter Name="placement2" Type="System.Windows.Controls.Primitives.CustomPopupPlacement" />
+      </Parameters>
+      <Docs>
+        <param name="placement1">比較する最初の <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 構造体。</param>
+        <param name="placement2">比較する 2 番目の <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" />構造体をそれらが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />構造体が同じの値です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Controls.Primitives.CustomPopupPlacement placement1, System.Windows.Controls.Primitives.CustomPopupPlacement placement2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Controls.Primitives.CustomPopupPlacement placement1, valuetype System.Windows.Controls.Primitives.CustomPopupPlacement placement2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.CustomPopupPlacement.op_Inequality(System.Windows.Controls.Primitives.CustomPopupPlacement,System.Windows.Controls.Primitives.CustomPopupPlacement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="placement1" Type="System.Windows.Controls.Primitives.CustomPopupPlacement" />
+        <Parameter Name="placement2" Type="System.Windows.Controls.Primitives.CustomPopupPlacement" />
+      </Parameters>
+      <Docs>
+        <param name="placement1">比較する最初の <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 構造体。</param>
+        <param name="placement2">比較する 2 番目の <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" /> 構造体。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacement" />両者が等しくないかどうかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />構造体には、同じ値があるない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.CustomPopupPlacement.Point" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット オブジェクトに対して相対的であるポイントの設定を取得または位置の左上隅にある、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロールが placedl です。</summary>
+        <value>A<see cref="T:System.Windows.Point" />配置に使用される、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は (0, 0) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット オブジェクトが、要素を<xref:System.Windows.Controls.Primitives.Popup>に相対的であります。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryAxis">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.PopupPrimaryAxis PrimaryAxis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.PopupPrimaryAxis PrimaryAxis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.CustomPopupPlacement.PrimaryAxis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PopupPrimaryAxis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を移動する方向、<see cref="T:System.Windows.Controls.Primitives.Popup" />タイミングを制御、<see cref="T:System.Windows.Controls.Primitives.Popup" />が画面の境界によって隠されます。</summary>
+        <value>移動する方向、<see cref="T:System.Windows.Controls.Primitives.Popup" />タイミングを制御、<see cref="T:System.Windows.Controls.Primitives.Popup" />が画面の境界によって隠されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

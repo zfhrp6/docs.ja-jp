@@ -1,0 +1,145 @@
+<Type Name="ServerValidateEventArgs" FullName="System.Web.UI.WebControls.ServerValidateEventArgs">
+  <TypeSignature Language="C#" Value="public class ServerValidateEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServerValidateEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ServerValidateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" />のイベント、<see cref="T:System.Web.UI.WebControls.CustomValidator" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.ServerValidateEventArgs>に渡される、<xref:System.Web.UI.WebControls.CustomValidator.ServerValidate>ハンドラーにイベント データを提供するイベント ハンドラー。 <xref:System.Web.UI.WebControls.CustomValidator.ServerValidate>イベントは、サーバー検証を行うときに発生します。 これにより、入力コントロールの値に対して、サーバー側のカスタム検証ルーチンを実行する (で、<xref:System.Web.UI.WebControls.CustomValidator>それに関連付けられたコントロール)、イベント ハンドラーでします。  
+  
+ 使用して検証する値が決定されます、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>プロパティです。 コードを特定した後、値が有効かどうかの検証の結果を格納、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A>プロパティです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.ServerValidateEventArgs>を参照してください、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ServerValidateEventArgs>のカスタム イベント ハンドラーにイベント データを渡して、<xref:System.Web.UI.WebControls.CustomValidator.ServerValidate>イベント。 注意して、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.ServerValidateEventArgs>を検証する値を決定するために使用、while、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A>検証の結果を格納するプロパティを使用します。  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate2/CS/customvalidatorservervalidate2cs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate2/VB/customvalidatorservervalidate2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServerValidateEventArgs (string value, bool isValid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value, bool isValid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ServerValidateEventArgs.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="isValid" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象の値。</param>
+        <param name="isValid">
+          <see langword="true" />値が検証を渡すことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ServerValidateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.ServerValidateEventArgs>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.ServerValidateEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Value`|`value` パラメーターの値。|  
+|`IsValid`|`isValid` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public bool IsValid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値を指定しているかどうか、<see cref="P:System.Web.UI.WebControls.ServerValidateEventArgs.Value" />プロパティの検証に合格しました。</summary>
+        <value>
+          <see langword="true" />によって指定された値を示すために、 <see cref="P:System.Web.UI.WebControls.ServerValidateEventArgs.Value" /> ; の検証に合格プロパティそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、検証ルーチンが終了した、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A>プロパティの値を指定しているかどうかを示すために、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>プロパティの検証に合格しました。 この値は、入力コントロールに関連付けられているかどうかを判断、<xref:System.Web.UI.WebControls.CustomValidator>コントロールの検証に合格しました。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.IsValid%2A>検証の結果を格納するプロパティです。  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ServerValidateEventArgs.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム イベント ハンドラーで、検証する値を取得、<see cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" />イベント。</summary>
+        <value>カスタム イベント ハンドラーの検証対象の値、<see cref="E:System.Web.UI.WebControls.CustomValidator.ServerValidate" />イベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>プロパティのカスタム イベント ハンドラーの検証対象の値を決定する、<xref:System.Web.UI.WebControls.CustomValidator.ServerValidate>イベント。 この値をプログラムで変更できないことに注意してください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.ServerValidateEventArgs.Value%2A>を検証する値を決定するプロパティです。  
+  
+ [!code-aspx-csharp[CustomValidatorServerValidate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomValidatorServerValidate/CS/customvalidatorservervalidatecs.aspx#1)]
+ [!code-aspx-vb[CustomValidatorServerValidate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomValidatorServerValidate/VB/customvalidatorservervalidatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,403 @@
+<Type Name="CustomPeerResolverService" FullName="System.ServiceModel.PeerResolvers.CustomPeerResolverService">
+  <TypeSignature Language="C#" Value="public class CustomPeerResolverService : System.ServiceModel.PeerResolvers.IPeerResolverContract" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomPeerResolverService extends System.Object implements class System.ServiceModel.PeerResolvers.IPeerResolverContract" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.CustomPeerResolverService" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.PeerResolvers.IPeerResolverContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("PeerChannel feature is obsolete and will be removed in the future.", false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(ConcurrencyMode=System.ServiceModel.ConcurrencyMode.Multiple, InstanceContextMode=System.ServiceModel.InstanceContextMode.Single, UseSynchronizationContext=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>カスタム ピア リゾルバー サービスの基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> クラスは、カスタム ピア リゾルバー サービスの基本実装を定義し、このリゾルバーが保持するメッシュ内のピア エンドポイント アドレスへの登録 ID の解決に対するルックアップを提供します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム ピア リゾルバーを実装する場合は、このクラスから派生し、カスタム実装を提供する特定の機能をオーバーライドする必要があります。 すべてのカスタム ピア リゾルバーは、少なくとも <see cref="T:System.ServiceModel.PeerResolvers.IPeerResolverContract" /> インターフェイスを実装する必要があります。  
+  
+ また、カスタム リゾルバーを使用するクライアントは、ピア リゾルバー サービスの登録を正常に更新するために、クライアントとサーバーの間の待ち時間に一定の上限を設ける必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomPeerResolverService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.PeerResolvers.CustomPeerResolverService" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CleanupInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan CleanupInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CleanupInterval" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.CustomPeerResolverService.CleanupInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルから削除する古いエントリを判断する基準の時間を取得または設定します。</summary>
+        <value>
+          ピア リゾルバー サービスの登録ルックアップ テーブルから削除する古いエントリを判断する基準の時間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ピア リゾルバー サービスを呼び出す前に設定する必要があります。このプロパティの値はゼロ以外である必要があります。 既定の時間は 1 分です。  
+  
+ ピア リゾルバー サービスの登録ルックアップ テーブルに古いエントリが発生するのを防ぐため、この値は <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.RefreshInterval%2A> の値未満にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">時間が、ゼロまたは <see cref="F:System.Int32.MaxValue" /> より大きな値です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> を呼び出した後、プロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ピア リゾルバー サービスを閉じます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">サービスは、このメソッドの以前の呼び出しによって閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlShape">
+      <MemberSignature Language="C#" Value="public bool ControlShape { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ControlShape" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.CustomPeerResolverService.ControlShape" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア リゾルバー サービスが参照を共有するかどうかを取得または設定します。</summary>
+        <value>ピア リゾルバー サービスが参照を共有する場合は True。共有しない場合は False。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServiceSettings">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.ServiceSettingsResponseInfo GetServiceSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.ServiceSettingsResponseInfo GetServiceSettings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.GetServiceSettings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.ServiceSettingsResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ピア リゾルバー サービスの特定の応答設定を取得します。</summary>
+        <returns>
+          カスタム ピア リゾルバー サービスの、クリーンアップ設定やリフレッシュ間隔設定などを含む特定の応答設定が格納されている <see cref="T:System.ServiceModel.PeerResolvers.ServiceSettingsResponseInfo" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public virtual void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ピア リゾルバー サービスを開きます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出されると、<xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.CleanupInterval%2A> プロパティに設定されている値に基づいて、登録ルックアップ テーブルの最初のクリーンアップをスケジュールします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.ServiceModel.PeerResolvers.CustomPeerResolverService.CleanupInterval" /> または <see cref="P:System.ServiceModel.PeerResolvers.CustomPeerResolverService.RefreshInterval" /> の時間間隔が 0 に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは、このメソッドの以前の呼び出しによって開始されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.RefreshResponseInfo Refresh (System.ServiceModel.PeerResolvers.RefreshInfo refreshInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.RefreshResponseInfo Refresh(class System.ServiceModel.PeerResolvers.RefreshInfo refreshInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Refresh(System.ServiceModel.PeerResolvers.RefreshInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.RefreshResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refreshInfo" Type="System.ServiceModel.PeerResolvers.RefreshInfo" />
+      </Parameters>
+      <Docs>
+        <param name="refreshInfo">
+          ピア リゾルバー サービスの登録ルックアップ テーブルをリフレッシュするためのエントリのメッシュ ID と登録 ID を格納している <see cref="T:System.ServiceModel.PeerResolvers.RefreshInfo" /> オブジェクト。</param>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルのエントリの有効期限を更新します。</summary>
+        <returns>
+          新規にリフレッシュされた登録エントリを格納している <see cref="T:System.ServiceModel.PeerResolvers.RefreshResponseInfo" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エントリをリフレッシュすると、エントリが有効状態を維持する期間が延長されます。 エントリを一意に識別するために使用するすべての情報は、このメソッドに与える <xref:System.ServiceModel.PeerResolvers.RefreshInfo> オブジェクト内に指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="refreshInfo" /> が null に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">カスタム ピア リゾルバー サービスは、以前の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出しで開始されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan RefreshInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RefreshInterval" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.CustomPeerResolverService.RefreshInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルでエントリが有効状態を維持する時間を取得または設定します。</summary>
+        <value>
+          ピア リゾルバー サービスの登録ルックアップ テーブルでエントリが有効状態を維持する時間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ピア リゾルバー サービスを呼び出す前に設定する必要があります。このプロパティの値はゼロ以外である必要があります。 既定の時間は 2 分です。  
+  
+ ピア リゾルバー サービスの登録ルックアップ テーブルの特定のエントリについて、このプロパティで指定されている時間が経過した場合、そのエントリは削除対象としてマークされます。 <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.CleanupInterval%2A> プロパティで指定されている時間が経過すると、削除が行われます。  たとえば、このプロパティを 10 分に設定すると、登録ルックアップ テーブル内のエントリは、この時間が経過すると、古くなり、削除対象にマークされます。 したがって、ピア リゾルバー クライアントは、エントリが削除されないようにするには、10 分毎に更新する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">時間が、ゼロまたは <see cref="F:System.Int32.MaxValue" /> より大きな値です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> を呼び出した後、プロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Register">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>カスタム ピア リゾルバー サービスにピアを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のメッシュ内にピア ノードを登録するには、このメソッドのいずれか 1 つのオーバーロードに、正しい形式の <xref:System.ServiceModel.PeerResolvers.RegisterInfo> オブジェクトを与える必要があります。 このオブジェクトには、登録を要求する登録エントリを登録するために必要な詳細情報、すなわち、登録エントリを一意に識別する GUID、メッシュ ID、エンドポイント アドレスなどが格納されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.RegisterResponseInfo Register (System.ServiceModel.PeerResolvers.RegisterInfo registerInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.RegisterResponseInfo Register(class System.ServiceModel.PeerResolvers.RegisterInfo registerInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Register(System.ServiceModel.PeerResolvers.RegisterInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.RegisterResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="registerInfo" Type="System.ServiceModel.PeerResolvers.RegisterInfo" />
+      </Parameters>
+      <Docs>
+        <param name="registerInfo">
+          <see cref="T:System.ServiceModel.PeerResolvers.RegisterInfo" />ピア リゾルバー サービスに登録する登録エントリに関する情報を格納します。</param>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルに、新しいエントリを追加します。</summary>
+        <returns>
+          ピア リゾルバー サービスの登録ルックアップ テーブルに追加されるエントリのコピーを格納している <see cref="T:System.ServiceModel.PeerResolvers.RegisterResponseInfo" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ピア リゾルバー サービスの登録ルックアップ テーブルに新しいエントリを追加します。 サービスが閉じられた後で行われた登録は無効です。このようなエントリは、解決要求では返されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">同じ GUID を持つ登録エントリがルックアップ テーブル内に既に存在するか、前回の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出し時にカスタムのピア リゾルバー サービスが起動されていません。</exception>
+        <exception cref="T:System.ArgumentException">このメソッドに与えられた <see cref="T:System.ServiceModel.PeerResolvers.RegisterInfo" /> オブジェクトが、null であるか、形式が間違っていました。</exception>
+        <exception cref="T:System.NullReferenceException"><paramref name="registerInfo" /> パラメーターで指定されているオブジェクトの AddressInfo プロパティが null でした。</exception>
+        <exception cref="T:System.ArgumentNullException">このメソッドに渡された <paramref name="meshId" /> の値が null に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.RegisterResponseInfo Register (Guid clientId, string meshId, System.ServiceModel.PeerNodeAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.RegisterResponseInfo Register(valuetype System.Guid clientId, string meshId, class System.ServiceModel.PeerNodeAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Register(System.Guid,System.String,System.ServiceModel.PeerNodeAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.RegisterResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientId" Type="System.Guid" />
+        <Parameter Name="meshId" Type="System.String" />
+        <Parameter Name="address" Type="System.ServiceModel.PeerNodeAddress" />
+      </Parameters>
+      <Docs>
+        <param name="clientId">リゾルバー サービスに登録する登録エントリの一意の ID を指定する <see cref="T:System.Guid" />。</param>
+        <param name="meshId">登録エントリが参加するピア メッシュのメッシュ ID を指定する <see cref="T:System.String" />。</param>
+        <param name="address">登録エントリのエンドポイント アドレスを格納している <see cref="T:System.ServiceModel.PeerNodeAddress" />。</param>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルに、新しいエントリを追加します。</summary>
+        <returns>ピア リゾルバー サービスの登録ルックアップ テーブルに追加されるエントリのコピーを格納している <see cref="T:System.ServiceModel.PeerResolvers.RegisterResponseInfo" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">同じ GUID を持つ登録エントリがルックアップ テーブル内に既に存在するか、前回の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出し時にカスタムのピア リゾルバー サービスが起動されていません。</exception>
+        <exception cref="T:System.ArgumentException">このメソッドに与えられた <see cref="T:System.ServiceModel.PeerResolvers.RegisterInfo" /> オブジェクトが、null であるか、形式が間違っていました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="refreshInfo" /> パラメーターで指定されているオブジェクトの MeshId プロパティおよび RegistrationId プロパティの一方または両方が null でした。</exception>
+        <exception cref="T:System.NullReferenceException"><paramref name="refreshInfo" /> パラメーターで指定されているオブジェクトの MeshId プロパティが不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.ResolveResponseInfo Resolve (System.ServiceModel.PeerResolvers.ResolveInfo resolveInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.ResolveResponseInfo Resolve(class System.ServiceModel.PeerResolvers.ResolveInfo resolveInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Resolve(System.ServiceModel.PeerResolvers.ResolveInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.ResolveResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resolveInfo" Type="System.ServiceModel.PeerResolvers.ResolveInfo" />
+      </Parameters>
+      <Docs>
+        <param name="resolveInfo">
+          ピア リゾルバー サービスがルックアップするエンドポイント (既知の場合) の登録エントリに関する情報を格納した <see cref="T:System.ServiceModel.PeerResolvers.ResolveInfo" />。</param>
+        <summary>登録エントリに対する既知のエンドポイントの一覧を返します。</summary>
+        <returns>
+          <see cref="T:System.ServiceModel.PeerResolvers.ResolveResponseInfo" /> パラメーターに指定された情報に一致するルックアップ テーブル内の登録エントリのエンドポイントを格納している <paramref name="resolveInfo" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.PeerResolvers.ResolveInfo> オブジェクトで提供されたデータに基づいて登録エントリを検索し、ピア リゾルバー サービスの登録ルックアップ テーブルで見つかったすべての対応するエンドポイント アドレスを返します。 返されるエンドポイント アドレスの数は、<xref:System.ServiceModel.PeerResolvers.ResolveInfo.MaxAddresses%2A> オブジェクトで設定されている <xref:System.ServiceModel.PeerResolvers.ResolveInfo> プロパティの値以下です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.ServiceModel.PeerResolvers.ResolveInfo" /> オブジェクトが null です、または正しい形式ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">同じ GUID を持つ登録エントリがルックアップ テーブル内に既に存在するか、前回の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出し時にカスタムのピア リゾルバー サービスが起動されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public virtual void Unregister (System.ServiceModel.PeerResolvers.UnregisterInfo unregisterInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unregister(class System.ServiceModel.PeerResolvers.UnregisterInfo unregisterInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Unregister(System.ServiceModel.PeerResolvers.UnregisterInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unregisterInfo" Type="System.ServiceModel.PeerResolvers.UnregisterInfo" />
+      </Parameters>
+      <Docs>
+        <param name="unregisterInfo">
+          登録ルックアップ テーブルから削除する登録エントリを一意に識別するために使用する情報を格納した <see cref="T:System.ServiceModel.PeerResolvers.UnregisterInfo" />。</param>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルから、特定のエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定された登録エントリのエントリが見つかりません。または、指定された <see cref="T:System.ServiceModel.PeerResolvers.UnregisterInfo" /> オブジェクトが null であるか、正しい形式ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">同じ GUID を持つ登録エントリがルックアップ テーブル内に既に存在するか、前回の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出し時にカスタムのピア リゾルバー サービスが起動されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public virtual System.ServiceModel.PeerResolvers.RegisterResponseInfo Update (System.ServiceModel.PeerResolvers.UpdateInfo updateInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolvers.RegisterResponseInfo Update(class System.ServiceModel.PeerResolvers.UpdateInfo updateInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Update(System.ServiceModel.PeerResolvers.UpdateInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.RegisterResponseInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="updateInfo" Type="System.ServiceModel.PeerResolvers.UpdateInfo" />
+      </Parameters>
+      <Docs>
+        <param name="updateInfo">
+          特定の登録エントリを一意に識別し、その更新情報を提供する <see cref="T:System.ServiceModel.PeerResolvers.UpdateInfo" />。</param>
+        <summary>ピア リゾルバー サービスの登録ルックアップ テーブルの既存の登録エントリを更新します。</summary>
+        <returns>
+          更新された登録エントリのコピーが格納されている <see cref="T:System.ServiceModel.PeerResolvers.UpdateInfo" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定された登録エントリのエントリが見つかりません。または、指定された <see cref="T:System.ServiceModel.PeerResolvers.UpdateInfo" /> オブジェクトが正しい形式ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">同じ GUID を持つ登録エントリがルックアップ テーブル内に既に存在するか、前回の <see cref="M:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Open" /> の呼び出し時にカスタムのピア リゾルバー サービスが起動されていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

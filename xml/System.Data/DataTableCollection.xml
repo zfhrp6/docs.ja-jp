@@ -1,0 +1,1105 @@
+<Type Name="DataTableCollection" FullName="System.Data.DataTableCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataTableCollection : System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataTableCollection extends System.Data.InternalDataCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataTableCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.InternalDataCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("CollectionChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.TablesCollectionEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テーブルのコレクションを表す、<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection>すべてが含まれています、 <xref:System.Data.DataTable> 、特定のオブジェクト<xref:System.Data.DataSet>です。 アクセスする、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>を使用して、<xref:System.Data.DataSet.Tables%2A>プロパティです。  
+  
+ <xref:System.Data.DataTableCollection>などのメソッドを使用して<xref:System.Data.DataTableCollection.Add%2A>、 <xref:System.Data.DataTableCollection.Clear%2A>、および<xref:System.Data.DataTableCollection.Remove%2A>コレクション内のアイテムを管理します。  
+  
+ 使用して、 <xref:System.Data.DataTableCollection.Contains%2A> (インデックスまたは名前のいずれかで指定された) 特定のテーブルがコレクション内にあるかどうかを調べます。  
+  
+ 別に、1 つのテーブルから移動するには、使用、<xref:System.Data.DataTable.ChildRelations%2A>または<xref:System.Data.DataTable.ParentRelations%2A>のプロパティ、<xref:System.Data.DataTable>のコレクションにアクセスする<xref:System.Data.DataRelation>オブジェクト。 使用することも、<xref:System.Data.DataSet.Relations%2A>の親/子リレーションシップ間を移動するプロパティ、`DataTables`特定の<xref:System.Data.DataSet>コレクション。  
+  
+   
+  
+## Examples  
+ この例の最初の手順を取得、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>各テーブルの各行の各列の値に出力します。 2 番目の手順が新たに作成<xref:System.Data.DataTable>2 つの列に追加し、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable Add ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable Add() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Add" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Data.DataTable" />既定名を使用してオブジェクトをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前が指定されていないため、`DataTable`追加順序の基準とした、既定の名前を使用して作成します。 既定の名前は「Table1」  
+  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント コレクションに、テーブルを正常に追加するときに発生します。  
+  
+   
+  
+## Examples  
+ 次の例を追加する 3 つの新しい<xref:System.Data.DataTable>オブジェクトを<xref:System.Data.DataTableCollection>を使用して、<xref:System.Data.DataTableCollection.Add%2A>メソッドを引数なし。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Add2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add2 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Add2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Add(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">追加する <see langword="DataTable" /> オブジェクト。</param>
+        <summary>指定された <see langword="DataTable" /> をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント コレクションに、テーブルを正常に追加するときに発生します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.DataTable>に追加し、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add Example/CS/source.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">テーブルが指定された値<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">テーブルは既にこのコレクションに属しているか、別のコレクションに属しています。</exception>
+        <exception cref="T:System.Data.DuplicateNameException">コレクション内のテーブルには、同じ名前があります。 比較では大文字と小文字が区別されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable Add (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable Add(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">作成されたに付ける名前<see cref="T:System.Data.DataTable" />です。</param>
+        <summary>作成、<see cref="T:System.Data.DataTable" />指定した名前を使用してオブジェクトをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか`null`または空の文字列 ("") が渡されますで、既定の名前が指定された、新しく作成した`DataTable`です。 この名前は、(「Table1」や「Table2」) のテーブルが追加順序に基づきます。  
+  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント コレクションに、テーブルを正常に追加する場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では追加、 <xref:System.Data.DataTable> 、指定した名前に、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DuplicateNameException">コレクション内のテーブルには、同じ名前があります。 (比較では大文字と小文字が区別されません) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable Add (string name, string tableNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable Add(string name, string tableNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="tableNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">作成されたに付ける名前<see cref="T:System.Data.DataTable" />です。</param>
+        <param name="tableNamespace">作成されたため、名前空間<see cref="T:System.Data.DataTable" />です。</param>
+        <summary>作成、<see cref="T:System.Data.DataTable" />指定した名前を使用してオブジェクトをコレクションに追加します。</summary>
+        <returns>新しく作成された <see cref="T:System.Data.DataTable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか`null`または空の文字列 ("") が渡されますで、既定の名前が指定された、新しく作成した`DataTable`です。 この名前は、(「Table1」や「Table2」) のテーブルが追加順序に基づきます。  
+  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント コレクションに、テーブルを正常に追加する場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では追加、 <xref:System.Data.DataTable> 、指定した名前に、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Add1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Add1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Add1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.DuplicateNameException">コレクション内のテーブルには、同じ名前があります。 (比較では大文字と小文字が区別されません) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Data.DataTable[] tables);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.DataTable[] tables) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.AddRange(System.Data.DataTable[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tables" Type="System.Data.DataTable[]" />
+      </Parameters>
+      <Docs>
+        <param name="tables">配列<see cref="T:System.Data.DataTable" />コレクションに追加するオブジェクト。</param>
+        <summary>指定した要素をコピー<see cref="T:System.Data.DataTable" />コレクションの末尾までの配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Data.DataTable>オブジェクトを追加して、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.AddRange Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.AddRange Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.AddRange Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.AddRange Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRemove">
+      <MemberSignature Language="C#" Value="public bool CanRemove (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanRemove(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.CanRemove(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table"><see langword="DataTable" />に対してチェックを実行するコレクション。</param>
+        <summary>確認するかどうか、指定した<see cref="T:System.Data.DataTable" />オブジェクトをコレクションから削除することができます。</summary>
+        <returns>
+          <see langword="true" />テーブルを削除できます。 場合、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataTableCollection.CanRemove%2A>から各テーブルを削除できるかどうかをテストする、<xref:System.Data.DataSet>です。 その場合、<xref:System.Data.DataTableCollection.Remove%2A>テーブルを削除するメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.CanRemove Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CanRemove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.CanRemove Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CanRemove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのコレクションをクリア<see cref="T:System.Data.DataTable" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の削除に`DataTable`使用して、コレクションから、<xref:System.Data.DataTableCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の取得、<xref:System.Data.DataTableCollection>の<xref:System.Data.DataSet>、およびすべてのテーブルのコレクションをクリアします。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Data.DataTableCollection.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後に発生、<see cref="T:System.Data.DataTableCollection" />のため変更<see cref="T:System.Data.DataTable" />オブジェクトが追加または削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Data.DataTableCollection.CollectionChanged>イベント。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.CollectionChanged Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CollectionChanged Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.CollectionChanged Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CollectionChanged Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanging">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanging;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanging" />
+      <MemberSignature Language="DocId" Value="E:System.Data.DataTableCollection.CollectionChanging" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生中に、<see cref="T:System.Data.DataTableCollection" />のための変更は<see cref="T:System.Data.DataTable" />オブジェクトが追加または削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Data.DataTableCollection.CollectionChanging>イベント。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.CollectionChanging Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CollectionChanging Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.CollectionChanging Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.CollectionChanging Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Data.DataTable" />を検索します。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.DataTable" />指定の名前を持つオブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />指定したテーブルが存在する場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定する、<xref:System.Data.DataTable>オブジェクトを使用して、<xref:System.Data.DataTable.TableName%2A>プロパティです。 追加する場合、<xref:System.Data.DataTable>を持つコレクションに、<xref:System.Data.DataTableCollection.Add%2A>引数を渡さず、メソッド テーブルが (「Table1」や「Table2」) テーブルが追加順序に基づき既定名前を指定します。  
+  
+ インデックスを取得する、<xref:System.Data.DataTable>を使用して、<xref:System.Data.DataTableCollection.IndexOf%2A>メソッドです。  
+  
+> [!NOTE]
+>  返します`false`と同じ名前が異なる名前空間で 2 つ以上のテーブルがある場合。 呼び出しは、1 つのテーブルにテーブル名を照合するときに、あいまいさがある場合に成功しません。  
+  
+   
+  
+## Examples  
+ 次の例は、仕入先名「」のテーブルに存在するかどうかをテスト、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name, string tableNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name, string tableNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Contains(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="tableNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Data.DataTable" />を検索します。</param>
+        <param name="tableNamespace">名前、<see cref="T:System.Data.DataTable" />名前空間を検索対象にします。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.DataTable" />指定した名前とテーブルの名前空間を持つオブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />指定したテーブルが存在する場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定する、<xref:System.Data.DataTable>オブジェクトを使用して、<xref:System.Data.DataTable.TableName%2A>プロパティです。 追加する場合、<xref:System.Data.DataTable>を持つコレクションに、<xref:System.Data.DataTableCollection.Add%2A>引数を渡さず、メソッド テーブルが (「Table1」や「Table2」) テーブルが追加順序に基づき既定名前を指定します。  
+  
+> [!NOTE]
+>  返します`false`と同じ名前が異なる名前空間で 2 つ以上のテーブルがある場合。 呼び出しは、1 つのテーブルにテーブル名を照合するときに、あいまいさがある場合に成功しません。  
+  
+ インデックスを取得する、<xref:System.Data.DataTable>を使用して、<xref:System.Data.DataTableCollection.IndexOf%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、仕入先名「」のテーブルに存在するかどうかをテスト、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.DataTable[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.DataTable[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.CopyTo(System.Data.DataTable[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.DataTable[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />現在のコピーを<see cref="T:System.Data.DataTableCollection" />にオブジェクトの要素。</param>
+        <param name="index">転送先<see cref="T:System.Array" />へのコピーを開始するインデックス。</param>
+        <summary>現在のすべての要素をコピー<see cref="T:System.Data.DataTableCollection" />を 1 次元<see cref="T:System.Array" />、指定したコピー先配列インデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、派生クラスでオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.IndexOf(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">検索対象の <see langword="DataTable" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Data.DataTable" />オブジェクト。</summary>
+        <returns>テーブル、またはコレクション内でテーブルが見つからない場合は-1 の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataTableCollection.IndexOf%2A>メソッドを指定されたテーブルの正確なインデックスを確認します。  
+  
+ 呼び出しの前に<xref:System.Data.DataTableCollection.IndexOf%2A>を使用して (インデックスまたは名前のいずれかで指定された) テーブルの存在をテストすることができます、<xref:System.Data.DataTableCollection.Contains%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、内の各テーブルのインデックスを返します、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.IndexOf Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.IndexOf Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string tableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string tableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tableName">名前、<see langword="DataTable" />検索対象のオブジェクト。</param>
+        <summary>コレクションのインデックスを取得、<see cref="T:System.Data.DataTable" />指定の名前を持つオブジェクト。</summary>
+        <returns>0 から始まるインデックス、<see langword="DataTable" />と、指定した名前またはコレクション内でテーブルが存在しない場合は-1。  
+  
+ <block subset="none" type="note"><para>  
+ 2 つ以上のテーブルが同じである場合、-1 を返しますが、異なる名前空間を名前。 呼び出しは、1 つのテーブルにテーブル名を照合するときに、あいまいさがある場合に成功しません。  
+  
+</para></block></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定する、`DataTable`オブジェクトを使用して、<xref:System.Data.DataTable.TableName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、名前付きのテーブルのインデックスを返します、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.IndexOf1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.IndexOf1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string tableName, string tableNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string tableName, string tableNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.IndexOf(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tableName" Type="System.String" />
+        <Parameter Name="tableNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tableName">名前、<see cref="T:System.Data.DataTable" />検索対象のオブジェクト。</param>
+        <param name="tableNamespace">名前、<see cref="T:System.Data.DataTable" />名前空間を検索対象にします。</param>
+        <summary>指定したコレクションのインデックスを取得<see cref="T:System.Data.DataTable" />オブジェクト。</summary>
+        <returns>0 から始まるインデックス、<see cref="T:System.Data.DataTable" />と、指定した名前またはコレクション内でテーブルが存在しない場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定する、<xref:System.Data.DataTable>オブジェクトを使用して、<xref:System.Data.DataTable.TableName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、名前付きのテーブルのインデックスを返します、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.IndexOf1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.IndexOf1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.IndexOf1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Data.DataTable" />を検索します。</param>
+        <summary>取得、<see cref="T:System.Data.DataTable" />指定したインデックスにあるオブジェクト。</summary>
+        <value>A <see cref="T:System.Data.DataTable" /> 、指定したインデックス。 それ以外の場合<see langword="null" />場合、<see cref="T:System.Data.DataTable" />存在しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataTableCollection.Contains%2A>メソッドの特定のインデックスを持つテーブルが存在するかどうかを確認します。  
+  
+ ある場合は、テーブルに、そのインデックスなしの名前を使用して、<xref:System.Data.DataTableCollection.IndexOf%2A>インデックスを返すメソッド。  
+  
+   
+  
+## Examples  
+ 次の例では取得、<xref:System.Data.DataTable>インデックスを使用しています。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">インデックス値は、コレクション内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see langword="DataTable" />を検索します。</param>
+        <summary>取得、<see cref="T:System.Data.DataTable" />指定の名前を持つオブジェクト。</summary>
+        <value>A<see cref="T:System.Data.DataTable" />指定した名前です。 それ以外の場合<see langword="null" />場合、<see cref="T:System.Data.DataTable" />存在しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.DataTable>検索文字列の大文字と小文字が一致する名前が存在することが返されます。 それ以外の場合、大文字と小文字を実行、場合に、<xref:System.Data.DataTable>名は、この検索条件に一致する、それが返されます。  
+  
+ 使用して、<xref:System.Data.DataTableCollection.Contains%2A>メソッドは、特定の名前またはインデックスを持つテーブルが存在するかどうかを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つのテーブルを取得名を使用して、<xref:System.Data.DataTableCollection>です。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable this[string name, string tableNamespace] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Item(string, string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableCollection.Item(System.String,System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="tableNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see langword="DataTable" />を検索します。</param>
+        <param name="tableNamespace">名前、<see cref="T:System.Data.DataTable" />名前空間を検索対象にします。</param>
+        <summary>取得、<see cref="T:System.Data.DataTable" />指定した名前空間に指定した名前を持つオブジェクト。</summary>
+        <value>A<see cref="T:System.Data.DataTable" />指定した名前です。 それ以外の場合<see langword="null" />場合、<see cref="T:System.Data.DataTable" />存在しません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataTableCollection.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Remove(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">削除する <see langword="DataTable" />。</param>
+        <summary>指定した <see cref="T:System.Data.DataTable" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント テーブルが正常に削除するときに発生します。  
+  
+ 特定のテーブルが存在しを呼び出す前に削除できるかどうかを判断する<xref:System.Data.DataTableCollection.Remove%2A>を使用して、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataTableCollection.CanRemove%2A>から各テーブルを削除できるかどうかをテストするメソッド、<xref:System.Data.DataSet>です。 その場合、<xref:System.Data.DataTableCollection.Remove%2A>テーブルを削除するメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">テーブルが指定された値<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">テーブルは、このコレクションには属していません。  
+  
+ または  
+  
+ リレーションシップの一部であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Data.DataTable" />削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Data.DataTable" />コレクションから指定した名前を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント テーブルが正常に削除するときに発生します。  
+  
+ 特定のテーブルが存在しを呼び出す前に削除できるかどうかを判断する<xref:System.Data.DataTableCollection.Remove%2A>を使用して、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>を名前付きのテーブルが存在し、削除できるかどうかをテストします。 その場合、<xref:System.Data.DataTableCollection.Remove%2A>テーブルを削除するメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Remove1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Remove1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コレクションには、指定した名前を持つテーブルはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name, string tableNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name, string tableNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.Remove(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="tableNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Data.DataTable" />削除するオブジェクト。</param>
+        <param name="tableNamespace">名前、<see cref="T:System.Data.DataTable" />名前空間を検索対象にします。</param>
+        <summary>削除、<see cref="T:System.Data.DataTable" />コレクションから指定した名前を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント テーブルが正常に削除するときに発生します。  
+  
+ 特定のテーブルが存在しを呼び出す前に削除できるかどうかを判断する<xref:System.Data.DataTableCollection.Remove%2A>を使用して、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>を名前付きのテーブルが存在し、削除できるかどうかをテストします。 その場合、<xref:System.Data.DataTableCollection.Remove%2A>テーブルを削除するメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.Remove1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.Remove1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.Remove1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コレクションには、指定した名前を持つテーブルはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataTableCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see langword="DataTable" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Data.DataTable" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataTableCollection.CollectionChanged>イベント テーブルが正常に削除するときに発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataTableCollection.Contains%2A>と<xref:System.Data.DataTableCollection.CanRemove%2A>10 インデックスを持つテーブルが存在するかどうかをテストするメソッド。 その場合、<xref:System.Data.DataTableCollection.RemoveAt%2A>テーブルを削除するメソッドが呼び出されます。  
+  
+ [!code-csharp[Classic WebData DataTableCollection.RemoveAt#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.RemoveAt/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableCollection.RemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableCollection.RemoveAt/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コレクションには、指定したインデックス位置のテーブルがありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

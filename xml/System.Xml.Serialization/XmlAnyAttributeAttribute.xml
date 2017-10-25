@@ -1,0 +1,117 @@
+<Type Name="XmlAnyAttributeAttribute" FullName="System.Xml.Serialization.XmlAnyAttributeAttribute">
+  <TypeSignature Language="C#" Value="public class XmlAnyAttributeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlAnyAttributeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlAnyAttributeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するメンバー (フィールドの配列を返しますを<see cref="T:System.Xml.XmlAttribute" />オブジェクト) 任意の XML 属性を含めることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Xml.Serialization.XmlAnyAttributeAttribute> (XML 属性) として送信される XML ドキュメントの一部として、メタデータ ドキュメントの一部として送信される任意のデータを格納します。  
+  
+ 適用、<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>の配列を返すフィールドに<xref:System.Xml.XmlAttribute>または<xref:System.Xml.XmlNode>オブジェクト。 ときに、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>のメソッド、<xref:System.Xml.Serialization.XmlSerializer>クラスが呼び出されると、配列に逆シリアル化されるクラスに対応するメンバーを持たないすべての XML 属性が収集されます。 逆シリアル化後のコレクションを反復処理することができます<xref:System.Xml.XmlAttribute>データを処理する項目。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnknownNode>と<xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute>のイベント、<xref:System.Xml.Serialization.XmlSerializer>を適用する場合は発生しません、<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>クラスのメンバーにします。  
+  
+> [!NOTE]
+>  語を使用できます`XmlAnyAttribute`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、すべての不明な属性を収集の配列を<xref:System.Xml.XmlAttribute>オブジェクト。 この例を実行するという名前のファイルを作成`UnknownAttributes.xml`次の XML を格納しています。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
+GroupType = 'Technical' GroupNumber = '42' GroupBase = 'Red'>  
+  <GroupName>MyGroup</GroupName>  
+</Group>  
+```  
+  
+ [!code-cpp[XmlAnyAttributeAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlAnyAttributeAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[XmlAnyAttributeAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlAnyAttributeAttribute Example/CS/anyattribute.cs#1)]
+ [!code-vb[XmlAnyAttributeAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlAnyAttributeAttribute Example/VB/anyattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlAnyAttributeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlAnyAttributeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを構築、<see cref="T:System.Xml.Serialization.XmlAnyAttributeAttribute" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の構築、<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>オブジェクトの逆シリアル化を上書きするために使用されます。 例を実行するには、次の XML を含む UnknownAttributes.xml をという名前のファイルを作成します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" GroupType = 'Technical' GroupNumber = '42' GroupBase = 'Red'>  
+  <GroupName>MyGroup</GroupName>  
+</Group>  
+```  
+  
+ [!code-cpp[XmlAnyAttributeAttribute_ctor Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlAnyAttributeAttribute_ctor Example/CPP/anyattover.cpp#1)]
+ [!code-csharp[XmlAnyAttributeAttribute_ctor Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlAnyAttributeAttribute_ctor Example/CS/anyattover.cs#1)]
+ [!code-vb[XmlAnyAttributeAttribute_ctor Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlAnyAttributeAttribute_ctor Example/VB/anyattover.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

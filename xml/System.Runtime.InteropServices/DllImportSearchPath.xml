@@ -1,0 +1,254 @@
+<Type Name="DllImportSearchPath" FullName="System.Runtime.InteropServices.DllImportSearchPath">
+  <TypeSignature Language="C#" Value="public enum DllImportSearchPath" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DllImportSearchPath extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DllImportSearchPath" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プラットフォーム呼び出しの機能を提供する DLL の検索に使用されるパスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute>属性がアセンブリ全体にパスのセットを適用する個々 のプラットフォーム呼び出しを実行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationDirectory">
+      <MemberSignature Language="C#" Value="ApplicationDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath ApplicationDirectory = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.ApplicationDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DLL 検索パスには、アプリケーション ディレクトリを含めます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyDirectory">
+      <MemberSignature Language="C#" Value="AssemblyDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath AssemblyDirectory = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.AssemblyDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリの依存関係を検索する場合でアセンブリ自体を含むディレクトリを含めるし、そのディレクトリを最初に検索します。 この値は、パスは、Win32 に渡される前に、.NET Framework で使用[LoadLibraryEx](http://go.microsoft.com/fwlink/?LinkId=236091)関数。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LegacyBehavior">
+      <MemberSignature Language="C#" Value="LegacyBehavior" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath LegacyBehavior = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.LegacyBehavior" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ディレクトリを検索し、Win32 を呼び出す[LoadLibraryEx](http://go.microsoft.com/fwlink/?LinkId=236091)で機能、 <c>LOAD_WITH_ALTERED_SEARCH_PATH</c>フラグ。 その他の値が指定されている場合、この値は無視されます。 サポートしないオペレーティング システム、<see cref="T:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute" />属性値を使用し、その他の値を無視します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeDirectories">
+      <MemberSignature Language="C#" Value="SafeDirectories" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath SafeDirectories = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.SafeDirectories" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのディレクトリを含めます、<see langword="%WinDir%\System32" />ディレクトリ、および DLL 検索パス内のユーザー ディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System32">
+      <MemberSignature Language="C#" Value="System32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath System32 = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.System32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含める、 <see langword="%WinDir%\System32" /> DLL 検索パスにディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDllDirectoryForDependencies">
+      <MemberSignature Language="C#" Value="UseDllDirectoryForDependencies" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath UseDllDirectoryForDependencies = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.UseDllDirectoryForDependencies" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のフォルダーを検索する前に、DLL が配置されているフォルダー内の DLL の依存関係を検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserDirectories">
+      <MemberSignature Language="C#" Value="UserDirectories" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.DllImportSearchPath UserDirectories = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportSearchPath.UserDirectories" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Win32 を使用して、プロセス全体の検索パスに明示的に追加された任意のパスを含める<c>AddDllDirectory</c>関数。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

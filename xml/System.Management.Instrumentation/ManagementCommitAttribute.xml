@@ -1,0 +1,79 @@
+<Type Name="ManagementCommitAttribute" FullName="System.Management.Instrumentation.ManagementCommitAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ManagementCommitAttribute : System.Management.Instrumentation.ManagementMemberAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementCommitAttribute extends System.Management.Instrumentation.ManagementMemberAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.ManagementCommitAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.Instrumentation.ManagementMemberAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ManagementCommit 属性は、1 つのアトミック操作で読み書き両用のプロパティを更新する必要があるときに呼び出されるメソッドをマークします。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスの読み取り/書き込みプロパティが付いて、<xref:System.Management.Instrumentation.ManagementConfigurationAttribute>属性。 さらに、各読み書き可能プロパティできる 2 種類のいずれかの:<xref:System.Management.Instrumentation.ManagementConfigurationType.Apply>または<xref:System.Management.Instrumentation.ManagementConfigurationType.OnCommit>です。 OnCommit として構成されている読み取り/書き込みプロパティをクラスには、クラスが ManagementCommit 属性でマークされているメソッドに必要です。 関連付けられたメソッドが、すべての OnCommit プロパティが設定されているときに呼び出されます。  
+  
+ マークされたメソッドはスレッド セーフではありません。  
+  
+ ManagementCommit 属性を持つメソッドがマークされていない場合、クラスは、更新が完了している兆候なく単独で構成の更新を管理します。  
+  
+ ManagementCommit 属性でマークされたメソッドが任意のパラメーターを受け取らないあり、void の戻り値の型。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+public class Process  
+{  
+    /// Key attribute marks a key property. Keys are not changeable.  
+    /// Keys have to be unique information.  
+    [ManagementKey]  
+    public int Id   
+    {  
+        get {    }  
+    }  
+  
+    /// ManagementConfiguration stands for read/write manageable  
+    /// property from a read/write field.  
+    [ManagementConfiguration]  
+    public string UserDefinedString;  
+  
+    [ManagementCommit]  
+    void SaveOnDevice();  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementCommitAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.ManagementCommitAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementCommitAttribute" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

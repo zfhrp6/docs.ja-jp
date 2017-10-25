@@ -1,0 +1,330 @@
+<Type Name="WSFederationSerializer" FullName="System.IdentityModel.Services.WSFederationSerializer">
+  <TypeSignature Language="C#" Value="public class WSFederationSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSFederationSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.WSFederationSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WS フェデレーション メッセージに変換するメソッドを提供<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />と<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />は Ws-trust プロトコル固有のオブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.WSFederationSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンス Ws-federation メッセージにシリアル化 Ws-trust 2005/02 プロトコル メッセージです。インスタンス、<xref:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer>要求とのインスタンスをシリアル化するクラスが使用される、<xref:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer>応答をシリアル化するクラスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationSerializer (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.#ctor(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlDictionaryReader" />応答 XML に開きます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.WSFederationSerializer" />クラスは、XML 応答の名前空間に基づきます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求および応答メッセージは、応答 (適切な Ws-trust シリアライザーが使用される XML 名前空間に基づく) の名前空間に基づくシリアル化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationSerializer (System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, class System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.#ctor(System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer,System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />
+        <Parameter Name="responseSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="requestSerializer">要求 (RST) の読み取りに使用する Ws-trust シリアライザー。</param>
+        <param name="responseSerializer">使用して、応答 (RSTR) を記述する Ws-trust シリアライザー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.WSFederationSerializer" />指定された要求と応答のシリアライザーを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestSerializer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="responseSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadRequest">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadRequest (string trustMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadRequest(string trustMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.CanReadRequest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="trustMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="trustMessage">チェックする Ws-trust メッセージです。</param>
+        <summary>指定した文字列が認識されている名前空間を持つ wst:RequestSecurityToken メッセージであるかどうかをチェックして、ラップされた<see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />です。</summary>
+        <returns>
+          <see langword="true" />場合は、メッセージは有効な wst:RequestSecurityToken メッセージが、Ws-trust プロトコルに一致する名前空間を持つこの<see cref="T:System.IdentityModel.Services.WSFederationSerializer" />サポートしています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadResponse">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadResponse (string trustMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadResponse(string trustMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.CanReadResponse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="trustMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="trustMessage">チェックする Ws-trust メッセージです。</param>
+        <summary>指定した文字列が認識されている名前空間を持つ wst:RequestSecurityTokenResponse メッセージであるかどうかをチェックして、ラップされた<see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" />です。</summary>
+        <returns>
+          <see langword="true" />場合は、メッセージは有効な wst:RequestSecurityTokenResponse メッセージが、Ws-trust プロトコルに一致する名前空間を持つこの<see cref="T:System.IdentityModel.Services.WSFederationSerializer" />サポートしています。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRequest">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityToken CreateRequest (System.IdentityModel.Services.FederationMessage message, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken CreateRequest(class System.IdentityModel.Services.FederationMessage message, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.CreateRequest(System.IdentityModel.Services.FederationMessage,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.IdentityModel.Services.FederationMessage" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="message">変換するメッセージ。 これは、値のインスタンスには<see cref="T:System.IdentityModel.Services.SignInRequestMessage" />します。</param>
+        <param name="context">現在のシリアル化コンテキスト。</param>
+        <summary>Ws-federation サインイン要求メッセージを変換、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />セキュリティ トークン サービスであるオブジェクト (、<see cref="T:System.IdentityModel.SecurityTokenService" />クラス) を使用できます。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />を変換後のサインイン要求メッセージを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> が null です。  
+  
+ または  
+  
+ <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">メッセージの種類ではありません<see cref="T:System.IdentityModel.Services.SignInRequestMessage" />です。  
+  
+ または  
+  
+ <see cref="T:System.IdentityModel.Services.SignInRequestMessage" />オブジェクトで有効な構築するために必要な情報がない<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResponse">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse CreateResponse (System.IdentityModel.Services.FederationMessage message, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse CreateResponse(class System.IdentityModel.Services.FederationMessage message, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.CreateResponse(System.IdentityModel.Services.FederationMessage,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.IdentityModel.Services.FederationMessage" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="message">変換するメッセージ。 これは、値のインスタンスには<see cref="T:System.IdentityModel.Services.SignInResponseMessage" />します。</param>
+        <param name="context">現在のシリアル化コンテキスト。</param>
+        <summary>Ws-federation サインイン応答メッセージ オブジェクトに変換する<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />を変換後のサインイン応答メッセージを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">メッセージの種類ではありません<see cref="T:System.IdentityModel.Services.SignInResponseMessage" />です。  
+  
+ または  
+  
+ <see cref="T:System.IdentityModel.Services.SignInResponseMessage" />オブジェクトで有効な構築するために必要な情報がない<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedRequest">
+      <MemberSignature Language="C#" Value="public virtual string GetReferencedRequest (string wreqptr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetReferencedRequest(string wreqptr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.GetReferencedRequest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wreqptr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="wreqptr">要求データの URL です。</param>
+        <summary>参照先の URL から wreq 文字列を取得します。</summary>
+        <returns>URL から要求データ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照 URL から wreq 文字列を取得するには、このメソッドをオーバーライドします。 既定の実装をスロー、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">既定の実装によってスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedResult">
+      <MemberSignature Language="C#" Value="public virtual string GetReferencedResult (string wresultptr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetReferencedResult(string wresultptr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.GetReferencedResult(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wresultptr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="wresultptr">結果データの URL です。</param>
+        <summary>参照先の URL から wresult 文字列を取得します。</summary>
+        <returns>URL から要求データ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照 URL から wresult 文字列を取得するには、このメソッドをオーバーライドします。 既定の実装をスロー、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">既定の実装によってスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestAsString">
+      <MemberSignature Language="C#" Value="public virtual string GetRequestAsString (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetRequestAsString(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.GetRequestAsString(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />シリアル化するオブジェクト。</param>
+        <param name="context">現在のシリアル化コンテキスト。</param>
+        <summary>指定したシリアル化<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクトを文字列にします。</summary>
+        <returns>シリアル化された文字列表現、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseAsString">
+      <MemberSignature Language="C#" Value="public virtual string GetResponseAsString (System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetResponseAsString(class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse response, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationSerializer.GetResponseAsString(System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="response" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="response"><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />シリアル化するオブジェクト。</param>
+        <param name="context">現在のシリアル化コンテキスト。</param>
+        <summary>指定したシリアル化<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />オブジェクトを文字列にします。</summary>
+        <returns>シリアル化された文字列表現、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="response" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

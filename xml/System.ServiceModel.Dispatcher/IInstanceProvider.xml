@@ -1,0 +1,165 @@
+<Type Name="IInstanceProvider" FullName="System.ServiceModel.Dispatcher.IInstanceProvider">
+  <TypeSignature Language="C#" Value="public interface IInstanceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInstanceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IInstanceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>サービス オブジェクトを指定するか、Windows Communication Foundation (WCF) サービスのサービス オブジェクトをリサイクルするメソッドを宣言します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider> オブジェクトによってサービス オブジェクトが要求または破棄されたときに、サービス オブジェクトの作成およびリサイクルを制御するための <xref:System.ServiceModel.InstanceContext> インターフェイスを実装します。  
+  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装した後は、エンドポイントの動作 (<xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> オブジェクト) またはコントラクトの動作 (<xref:System.ServiceModel.Description.IEndpointBehavior> オブジェクト) を使用して、カスタム インターフェイス プロバイダー オブジェクトを <xref:System.ServiceModel.Description.IContractBehavior> プロパティに割り当てる必要があります。  
+  
+ 挿入メカニズムがエンドポイント動作の場合は、構成ファイルを使用してカスタム動作を挿入できる <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> オブジェクトも実装できます。 挿入メカニズムがコントラクト動作の場合は、サービス ホストを開く前にプログラムで動作を挿入したり、カスタム属性を実装したりできます。 コントラクト動作の例については、「使用例」のセクションを参照してください。  
+  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider> には、2 つのメソッド <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> と <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> があります。 これらのメソッドは、通常、既定以外のコンストラクターを使用してサービス オブジェクトを作成するために、またはオブジェクトの有効期間に関係する状態を初期化または破棄するために実装されます。 サービス オブジェクト プールは、<xref:System.ServiceModel.Dispatcher.IInstanceProvider> のカスタム機能の一例です。  
+  
+ 通常、<xref:System.ServiceModel.InstanceContext> は、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> が最初に作成された時点で <xref:System.ServiceModel.InstanceContext> を呼び出し、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> が閉じられると、<xref:System.ServiceModel.InstanceContext> メソッドを呼び出します。  
+  
+ <xref:System.ServiceModel.InstanceContext> が閉じられる前に <xref:System.ServiceModel.InstanceContext> オブジェクトにサービス オブジェクトを解放させるには、2 つの方法があります。 第 1 の方法は、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> を <xref:System.ServiceModel.ReleaseInstanceMode.AfterCall> または <xref:System.ServiceModel.ReleaseInstanceMode.BeforeAndAfterCall> に設定することです。 第 2 の方法は、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A> メソッドを呼び出すことです。 この方法を使用すると、<xref:System.ServiceModel.InstanceContext> は、ディスパッチャーのインスタンス プロバイダーで <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドを呼び出します。 インスタンスが解放された後で新しいメッセージが着信すると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを使用して新しいインスタンスを作成します。  
+  
+> [!NOTE]
+>  サービスの <xref:System.ServiceModel.InstanceContextMode> が <xref:System.ServiceModel.InstanceContextMode.Single> の場合は、ユーザーが既知のサービス オブジェクトを提供しなかったときでも、システムは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドと <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドのいずれも呼び出しません。ただし、ユーザーが直接 <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A> を呼び出してから、<xref:System.ServiceModel.InstanceContext.GetServiceInstance%2A> を呼び出す場合を除きます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、"シングルトン"動作を実現する <xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装方法を示しています。このインスタンス プロバイダーは常に同じサービス インスタンスを返し、インスタンスを再利用しません。  
+  
+ [!code-csharp[IContractBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#1)]
+ [!code-vb[IContractBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#1)]  
+  
+ 次のコード例は、<xref:System.ServiceModel.Description.IContractBehavior> を実装してカスタムのサービス インスタンス プロバイダーを挿入するカスタム属性の実装方法を示しています。 このコードでは、このカスタム属性の用途を特定のコントラクトに結び付ける <xref:System.ServiceModel.Description.IContractBehaviorAttribute> も実装しています。  
+  
+ [!code-csharp[IContractBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#2)]
+ [!code-vb[IContractBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetInstance">
+      <MemberSignature Language="C#" Value="public object GetInstance (System.ServiceModel.InstanceContext instanceContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInstance(class System.ServiceModel.InstanceContext instanceContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance(System.ServiceModel.InstanceContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">現在の <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトのサービス オブジェクトを返します。</summary>
+        <returns>ユーザー定義のサービス オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%29> メソッドを使用して、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスが新しいサービスを作成しようとするときに受け取る特定のサービス オブジェクトを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、"シングルトン"動作を実現する <xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装方法を示しています。このインスタンス プロバイダーは常に同じサービス インスタンスを返し、インスタンスを再利用しません。  
+  
+ [!code-csharp[IContractBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#1)]
+ [!code-vb[IContractBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#1)]  
+  
+ 次のコード例は、<xref:System.ServiceModel.Description.IContractBehavior> を実装してカスタムのサービス インスタンス プロバイダーを挿入するカスタム属性の実装方法を示しています。 このコードでは、このカスタム属性の用途を特定のコントラクトに結び付ける <xref:System.ServiceModel.Description.IContractBehaviorAttribute> も実装しています。  
+  
+ [!code-csharp[IContractBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#2)]
+ [!code-vb[IContractBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInstance">
+      <MemberSignature Language="C#" Value="public object GetInstance (System.ServiceModel.InstanceContext instanceContext, System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInstance(class System.ServiceModel.InstanceContext instanceContext, class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">現在の <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+        <param name="message">サービス オブジェクトの作成をトリガーしたメッセージ。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトのサービス オブジェクトを返します。</summary>
+        <returns>サービス オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> メソッドを使用して、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスが新しいサービスを作成しようとするときに受け取る特定のサービス オブジェクトを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、"シングルトン"動作を実現する <xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装方法を示しています。このインスタンス プロバイダーは常に同じサービス インスタンスを返し、インスタンスを再利用しません。  
+  
+ [!code-csharp[IContractBehavior#1](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#1)]
+ [!code-vb[IContractBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#1)]  
+  
+ 次のコード例は、<xref:System.ServiceModel.Description.IContractBehavior> を実装してカスタムのサービス インスタンス プロバイダーを挿入するカスタム属性の実装方法を示しています。 このコードでは、このカスタム属性の用途を特定のコントラクトに結び付ける <xref:System.ServiceModel.Description.IContractBehaviorAttribute> も実装しています。  
+  
+ [!code-csharp[IContractBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/icontractbehavior/cs/objectproviderbehavior.cs#2)]
+ [!code-vb[IContractBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/icontractbehavior/vb/objectproviderbehavior.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseInstance">
+      <MemberSignature Language="C#" Value="public void ReleaseInstance (System.ServiceModel.InstanceContext instanceContext, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseInstance(class System.ServiceModel.InstanceContext instanceContext, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance(System.ServiceModel.InstanceContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">サービスのインスタンス コンテキスト。</param>
+        <param name="instance">リサイクルするサービス オブジェクト。</param>
+        <summary><see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトがサービス オブジェクトをリサイクルするときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドは、サービスがサービス オブジェクトをリサイクルするときに何らかの独自のリソース破棄処理またはその他のリサイクルに関するカスタマイズを実行する場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

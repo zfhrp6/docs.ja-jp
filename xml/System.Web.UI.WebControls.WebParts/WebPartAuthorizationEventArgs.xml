@@ -1,0 +1,155 @@
+<Type Name="WebPartAuthorizationEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartAuthorizationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartAuthorizationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart>イベントが発生する前に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがページに追加します。 いくつかの一般的なシナリオがページにコントロールを追加できます。 これらの詳細については、「解説」セクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs>クラスは、ページに追加されている Web パーツ コントロールの概要プロパティへのアクセスを提供します。 コントロールを追加する場合を参照してくださいチェック必要があるかどうか、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティが設定されている、必要な場合は、かどうか、コントロールが承認されると、ページに追加します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartAuthorizationEventArgs (Type type, string path, string authorizationFilter, bool isShared);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string path, string authorizationFilter, bool isShared) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.#ctor(System.Type,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="authorizationFilter" Type="System.String" />
+        <Parameter Name="isShared" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />の承認をチェックするコントロール。</param>
+        <param name="path">コントロールがユーザー コントロールである場合は、承認されているコントロールのソース ファイルへのアプリケーションの相対パス。</param>
+        <param name="authorizationFilter">割り当てられている任意の文字列値、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール、ページにコントロールを追加できるかどうかを承認するために使用します。</param>
+        <param name="isShared">承認をチェックするコントロールは、アプリケーションの多くまたはすべてのユーザーに表示されることを示して、共有コントロールであるかどうかを示すとその<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsShared" />にプロパティの値が設定されている<see langword="true" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationFilter">
+      <MemberSignature Language="C#" Value="public string AuthorizationFilter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthorizationFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.AuthorizationFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられている文字列値を取得、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール、ページにコントロールを追加できるかどうかを承認するために使用します。</summary>
+        <value>A<see cref="T:System.String" />ページに追加する、コントロールが承認されるかどうかを判断するために使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthorized">
+      <MemberSignature Language="C#" Value="public bool IsAuthorized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthorized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.IsAuthorized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールをページに追加できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />Web パーツ コントロールをページに追加できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsShared">
+      <MemberSignature Language="C#" Value="public bool IsShared { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsShared" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.IsShared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web パーツ コントロールを Web パーツ ページのすべてのユーザーに表示するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />Web パーツ コントロールがページのすべてのユーザーに表示される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有 Web パーツ コントロールは、Web ページのすべてのユーザーに表示されます。 共有コントロールの反対は、ユーザー固有であり、そのコントロールをページに追加したユーザーのみに表示される、ユーザー単位コントロールです。  
+  
+ ユーザーが共有パーソナル化スコープでページを表示するときにダイナミック コントロールを追加する場合は、コントロールは共有されます。 ユーザーがユーザー パーソナル化スコープの中に、コントロールが追加された場合、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsShared%2A>そのコントロールのプロパティの値になります`false`です。  
+  
+ 共有の詳細については、ユーザー単位コントロールを参照してください[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがユーザー コントロールである場合は、承認されているコントロールのソース ファイルへの相対アプリケーション パスを取得します。</summary>
+        <value>A<see cref="T:System.String" />アプリケーションの相対パスを含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />の承認をチェックして、Web パーツ コントロールのです。</summary>
+        <value><see cref="T:System.Type" />の承認をチェックするコントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

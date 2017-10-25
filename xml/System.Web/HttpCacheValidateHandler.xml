@@ -1,0 +1,42 @@
+<Type Name="HttpCacheValidateHandler" FullName="System.Web.HttpCacheValidateHandler">
+  <TypeSignature Language="C#" Value="public delegate void HttpCacheValidateHandler(HttpContext context, object data, ref HttpValidationStatus validationStatus);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpCacheValidateHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCacheValidateHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="context" Type="System.Web.HttpContext" />
+    <Parameter Name="data" Type="System.Object" />
+    <Parameter Name="validationStatus" Type="System.Web.HttpValidationStatus&amp;" RefType="ref" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="context"><see cref="T:System.Web.HttpContext" />オブジェクトの現在の要求に関する情報を格納します。</param>
+    <param name="data">ユーザーが指定したデータがキャッシュされた項目を検証するために使用します。</param>
+    <param name="validationStatus"><see cref="T:System.Web.HttpValidationStatus" /> 列挙値。 デリゲートには、検証の結果を示すためにこの値を設定する必要があります。</param>
+    <summary>キャッシュから供給される前に、キャッシュされたアイテムを検証するために呼び出されるメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スコープ内でキャッシュされた項目が無効になったかどうか、<xref:System.Web.HttpCacheValidateHandler>メソッド、キャッシュから削除され、アイテムの要求がキャッシュ ミスとして扱われます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションに新しいキャッシュ検証デリゲートを追加する方法を示します。  
+  
+ [!code-csharp[System.WEb.HttpCacheValidateHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.WEb.HttpCacheValidateHandler/CS/validate.cs#1)]
+ [!code-vb[System.WEb.HttpCacheValidateHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.WEb.HttpCacheValidateHandler/VB/validate.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

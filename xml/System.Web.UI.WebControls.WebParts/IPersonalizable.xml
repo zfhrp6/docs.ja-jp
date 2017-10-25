@@ -1,0 +1,174 @@
+<Type Name="IPersonalizable" FullName="System.Web.UI.WebControls.WebParts.IPersonalizable">
+  <TypeSignature Language="C#" Value="public interface IPersonalizable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPersonalizable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IPersonalizable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションとパーソナル化状態の展開の追加の管理機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するだけでなく、`Personalizable`属性コントロールのプロパティ、コントロールを実装できますも<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>のパーソナル化状態の抽出とアプリケーションの追加の管理機能。 たとえば、プライベートな状態情報を管理する必要があるコントロールでは、このインターフェイスを実装する必要があります。 カスタム キャッシュ ソリューション、メインフレーム、または XML Web サービス、データの永続性などの複雑なメカニズムを個人用に設定されたデータにアクセスするためのコントロールは、このインターフェイスを実装もする必要があります。  
+  
+> [!IMPORTANT]
+>  既定のバイナリのシリアル化機構に依存しと App_Code ディレクトリに定義されているクラスに基づいて型が追加する必要がありますされません。 App_Code ベースのアイテムは一貫してバイナリ シリアル化するという事実よります、アセンブリ名にランダムなポイントで変更されたことがあるできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>インターフェイスです。 例では、という名前の Web パーツ コントロールを参照する .aspx ページから成る`UrlListWebPart`です。 次のコードは、たとえば、.aspx ファイルです。  
+  
+ [!code-aspx-csharp[WebParts_IPersonalizable_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/IPersonalizableCS.aspx#1)]
+ [!code-aspx-vb[WebParts_IPersonalizable_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/IPersonalizableVB.aspx#1)]  
+  
+ 次のコードは、カスタムの基になる<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 このファイルは、App_Code ディレクトリに配置する必要があります。  
+  
+ [!code-csharp[WebParts_IPersonalizable_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/urllistwebpart.cs#2)]
+ [!code-vb[WebParts_IPersonalizable_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/urllistwebpart.vb#2)]  
+  
+ ブラウザーでページを読み込みます。 URL を表すで始まるされて、実際の URL を追加し、名前を入力`http://`、 をクリックし、**追加**URL を追加するボタンをクリックします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsDirty">
+      <MemberSignature Language="C#" Value="public bool IsDirty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを管理するカスタムのデータが変更されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />カスタム データで管理されている場合、<see cref="T:System.Web.UI.WebControls.WebParts.IPersonalizable" />インターフェイスが変更されました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールによって管理されているデータが変更されたときに、コントロールと見なされます「ダーティ」です。 コントロールを返す必要があります`true`かどうか、カスタム データが管理を通じて、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>インターフェイスが変更されました。 コントロールを返す場合`true`からこのプロパティは、コントロールの<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>インターフェイス メソッドの実装は、プロパティ値の抽出中に呼び出されます。  
+  
+> [!NOTE]
+>  後者のフェーズの POST 要求を処理中に、パーソナル化インフラストラクチャによって、自動的にこのプロパティがチェックされます。 ただし、GET 要求に対して返される値から、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty%2A>プロパティはチェックされません。 原因で、コントロールの状態: によって管理されるデータだけでなく、「ダーティ」と見なされるコントロールの他のイベントが<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>--を保存します。 コントロールのマークを付ける自体「ダーティ」GET 要求中に場合、またはインフラストラクチャは、パーソナル化非常に特定する境界条件下で扱いますコントロール「ダーティ」GET 要求中に、場合<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>が常に呼び出されます。  
+  
+ コントロールをそれに関連する参照できます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を制御し、確認、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope%2A>プロパティを現在のスコープを決定します。 コントロールのカスタム データの「ダーティ」の状態を現在のスコープに対して適切にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの使用、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty%2A>プロパティです。 この例の最初の部分がホストする Web ページ、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_IPersonalizable_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/IPersonalizableCS.aspx#1)]
+ [!code-aspx-vb[WebParts_IPersonalizable_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/IPersonalizableVB.aspx#1)]  
+  
+ 例の 2 番目の部分は、カスタム コード<xref:System.Web.UI.WebControls.WebParts.WebPart>と呼ばれるコントロール`UrlListWebPart`です。 このファイルは、例を実行する App_Code ディレクトリに配置する必要があります。 ソース コードを実装することに注意してください、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty%2A>プロパティです。  
+  
+ [!code-csharp[WebParts_IPersonalizable_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/urllistwebpart.cs#2)]
+ [!code-vb[WebParts_IPersonalizable_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/urllistwebpart.vb#2)]  
+  
+ ブラウザーでページを読み込みます。 URL を表すで始まるされて、実際の URL を追加し、名前を入力`http://`、 をクリックし、**追加**URL を追加するボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Web.UI.WebControls.WebParts.PersonalizationDictionary state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load(class System.Web.UI.WebControls.WebParts.PersonalizationDictionary state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IPersonalizable.Load(System.Web.UI.WebControls.WebParts.PersonalizationDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />基になるデータ ストアから読み込まれたカスタムのスコープを持つデータが含まれます。</param>
+        <summary>カスタム データをコントロールに読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはそれ自体にカスタム データを読み込むことができるコントロールに呼び出されます。 コントロールのカスタム状態をページで、他のパーソナル化データが変更されたかどうかに関係なく、基になるデータ ストアに戻る書き込む必要があるかどうかを示す値を返すこともできます。 コントロールでは、独自のカスタム プロパティを設定でき、パーソナル化ディクショナリに含まれる値に基づく追加の内部ロジックを実行することができます。 このメソッドは、Web パーツ コントロールのパーソナル化データをコントロールに適用するときに設定します。  
+  
+ マージの動作の対応する必要があります<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>-とスコープ<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>-に含まれるプロパティのスコープ、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>オブジェクト。 `state`パラメーターには、基になるデータ ストアから読み込まれたカスタム データのマージされた表現が含まれています。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>ページ自体が以前に追加されたすべての値のスコープ<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープすることができます。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>値に関連付けられている場合、スコープ<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>パーソナル化スコープが追加されたときに 1 つの値を持っていた<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ、および別の値を使用しているページが<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ、パーソナル化インフラストラクチャがのみを含めるし、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>-値のスコープ (はなく、<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>値の範囲) 内で、`state`パラメーター。  
+  
+   
+  
+## Examples  
+ 実装を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 この例を実行するために必要な完全なコード例」セクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>クラスの概要です。  
+  
+ [!code-csharp[WebParts_IPersonalizable_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/urllistwebpart.cs#2)]
+ [!code-vb[WebParts_IPersonalizable_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/urllistwebpart.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.Web.UI.WebControls.WebParts.PersonalizationDictionary state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Save(class System.Web.UI.WebControls.WebParts.PersonalizationDictionary state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IPersonalizable.Save(System.Web.UI.WebControls.WebParts.PersonalizationDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />基になるデータ ストアから読み込まれたカスタムのスコープを持つデータが含まれます。</param>
+        <summary>コントロールのカスタム プロパティと内部の状態情報が保存<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールは、独自のカスタム プロパティと内部の状態情報を格納できます、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>で指定されている、`state`パラメーター。 情報は、一連の名前と値のペアとして格納されます。 使用してコントロールに対する後続の呼び出し中には認識できる名前/値ペアを使用するコントロールの役割です、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load%2A>メソッドです。  
+  
+ コントロールをそれに関連する参照できます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を制御し、確認、<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope>オブジェクトを現在のスコープを決定します。 カスタム状態情報は、現在のスコープに対して適切にする必要があります。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry>に追加される値、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>をマージする場合に、パーソナル化インフラストラクチャがこれに依存するための適切なスコープ値に関連付けられるオブジェクト<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>と<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>-に渡す前にカスタム データのスコープ、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load%2A>メソッドです。  
+  
+ コントロールが、ASP.NET によって状態ディクショナリに配置されるオブジェクトをシリアル化できることを確認する必要があります Web パーツの標準の ASP.NET の実装を使用する場合<xref:System.Web.UI.ObjectStateFormatter>クラスです。 実際には、これは、次の意味を。  
+  
+-   .NET Framework のプリミティブ型、文字列、および配列、配列のリスト、ハッシュ テーブル、および、ハイブリッド ディクショナリなどの .NET Framework 型のコレクション指向は、自動的にシリアル化します。  
+  
+-   独自に提供するカスタム型<xref:System.ComponentModel.TypeConverter>にシリアル化して、文字列から逆シリアル化できるクラスがシリアル化可能と見なされます。  
+  
+-   シリアル化できるカスタムの型、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>クラスがシリアル化可能と見なされます。  
+  
+> [!IMPORTANT]
+>  既定のバイナリのシリアル化機構に依存しと App_Code ディレクトリに定義されているクラスに基づいて型が追加する必要がありますされません。 App_Code ベースのアイテムは一貫してバイナリ シリアル化するという事実よります、アセンブリ名にランダムなポイントで変更されたことがあるできます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 この例を実行するために必要な完全なコード例」セクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>クラスの概要です。  
+  
+ [!code-csharp[WebParts_IPersonalizable_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/CS/urllistwebpart.cs#2)]
+ [!code-vb[WebParts_IPersonalizable_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IPersonalizable_Overview/VB/urllistwebpart.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

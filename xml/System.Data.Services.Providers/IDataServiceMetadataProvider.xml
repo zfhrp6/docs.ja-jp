@@ -1,0 +1,263 @@
+<Type Name="IDataServiceMetadataProvider" FullName="System.Data.Services.Providers.IDataServiceMetadataProvider">
+  <TypeSignature Language="C#" Value="public interface IDataServiceMetadataProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataServiceMetadataProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.IDataServiceMetadataProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム データ サービス プロバイダーに関するメタデータを保持します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContainerName">
+      <MemberSignature Language="C#" Value="public string ContainerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceMetadataProvider.ContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースのコンテナー名。</summary>
+        <value>コンテナーの名前を格納する文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerNamespace">
+      <MemberSignature Language="C#" Value="public string ContainerNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContainerNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceMetadataProvider.ContainerNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースの名前空間の名前。</summary>
+        <value>名前空間の名前を格納する文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDerivedTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceType&gt; GetDerivedTypes (System.Data.Services.Providers.ResourceType resourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Services.Providers.ResourceType&gt; GetDerivedTypes(class System.Data.Services.Providers.ResourceType resourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.GetDerivedTypes(System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="resourceType">ベース <see cref="T:System.Data.Services.Providers.ResourceType" />。</param>
+        <summary>指定したリソースの種類から派生するすべての型を返すことを試みます。</summary>
+        <returns>派生する <see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Data.Services.Providers.ResourceType" /> コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.IDataServiceMetadataProvider.GetDerivedTypes%2A> メソッドは、`resourceType` から派生したすべての型のコレクションを返す必要があります。  
+  
+ `resourceType` パラメーターを使用してメソッドに渡される型は、コレクション内に返される必要はありません。  
+  
+ 指定した型から型が派生しない場合、<xref:System.Data.Services.Providers.IDataServiceMetadataProvider> インターフェイスを実装する側は null 値を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceAssociationSet">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Providers.ResourceAssociationSet GetResourceAssociationSet (System.Data.Services.Providers.ResourceSet resourceSet, System.Data.Services.Providers.ResourceType resourceType, System.Data.Services.Providers.ResourceProperty resourceProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.Services.Providers.ResourceAssociationSet GetResourceAssociationSet(class System.Data.Services.Providers.ResourceSet resourceSet, class System.Data.Services.Providers.ResourceType resourceType, class System.Data.Services.Providers.ResourceProperty resourceProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.GetResourceAssociationSet(System.Data.Services.Providers.ResourceSet,System.Data.Services.Providers.ResourceType,System.Data.Services.Providers.ResourceProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Providers.ResourceAssociationSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceSet" Type="System.Data.Services.Providers.ResourceSet" />
+        <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType" />
+        <Parameter Name="resourceProperty" Type="System.Data.Services.Providers.ResourceProperty" />
+      </Parameters>
+      <Docs>
+        <param name="resourceSet">ソースのアソシエーション End のリソース セット。</param>
+        <param name="resourceType">ソースのアソシエーション End のリソースの種類。</param>
+        <param name="resourceProperty">ソースのアソシエーション End のリソース プロパティ。</param>
+        <summary>ソースのアソシエーション End が指定されている場合に、<see cref="T:System.Data.Services.Providers.ResourceAssociationSet" /> インスタンスを取得します。</summary>
+        <returns><see cref="T:System.Data.Services.Providers.ResourceAssociationSet" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDerivedTypes">
+      <MemberSignature Language="C#" Value="public bool HasDerivedTypes (System.Data.Services.Providers.ResourceType resourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasDerivedTypes(class System.Data.Services.Providers.ResourceType resourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.HasDerivedTypes(System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="resourceType">評価する <see cref="T:System.Data.Services.Providers.ResourceType" /> オブジェクト。</param>
+        <summary>リソースの種類に派生型が含まれているかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="resourceType" />派生型; を持つエンティティを表しますそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceSets">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceSet&gt; ResourceSets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Services.Providers.ResourceSet&gt; ResourceSets" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceMetadataProvider.ResourceSets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceSet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なすべてのコンテナーを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Data.Services.Providers.ResourceSet" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceOperations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ServiceOperation&gt; ServiceOperations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Services.Providers.ServiceOperation&gt; ServiceOperations" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceMetadataProvider.ServiceOperations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ServiceOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデータ ソース内のすべてのサービス操作を返します。</summary>
+        <value><see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Data.Services.Providers.ServiceOperation" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveResourceSet">
+      <MemberSignature Language="C#" Value="public bool TryResolveResourceSet (string name, out System.Data.Services.Providers.ResourceSet resourceSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryResolveResourceSet(string name, [out] class System.Data.Services.Providers.ResourceSet&amp; resourceSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.TryResolveResourceSet(System.String,System.Data.Services.Providers.ResourceSet@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="resourceSet" Type="System.Data.Services.Providers.ResourceSet&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決する <see cref="T:System.Data.Services.Providers.ResourceSet" /> の名前。</param>
+        <param name="resourceSet">リソース セットを返しますまたは<see langword="null" />値のリソースに設定されている場合、指定された<c>名前</c>が見つかりません。</param>
+        <summary>指定した名前に基づいてリソース セットの取得を試みます。</summary>
+        <returns>
+          <see langword="true" />リソースに設定すると、指定された<paramref name="name" />は、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveResourceType">
+      <MemberSignature Language="C#" Value="public bool TryResolveResourceType (string name, out System.Data.Services.Providers.ResourceType resourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryResolveResourceType(string name, [out] class System.Data.Services.Providers.ResourceType&amp; resourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.TryResolveResourceType(System.String,System.Data.Services.Providers.ResourceType@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="resourceType" Type="System.Data.Services.Providers.ResourceType&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決する種類の名前。</param>
+        <param name="resourceType">リソースの種類を取得または<see langword="null" />以外の場合、リソースの種類と値、指定された<c>名前</c>が見つかりません。</param>
+        <summary>指定した名前に基づいてリソースの種類の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />リソースを入力すると、指定された<paramref name="name" />は、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveServiceOperation">
+      <MemberSignature Language="C#" Value="public bool TryResolveServiceOperation (string name, out System.Data.Services.Providers.ServiceOperation serviceOperation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryResolveServiceOperation(string name, [out] class System.Data.Services.Providers.ServiceOperation&amp; serviceOperation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.IDataServiceMetadataProvider.TryResolveServiceOperation(System.String,System.Data.Services.Providers.ServiceOperation@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="serviceOperation" Type="System.Data.Services.Providers.ServiceOperation&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決するサービス操作の名前。</param>
+        <param name="serviceOperation">サービス操作を返しますまたは<see langword="null" />以外の場合、サービス操作の値、指定された<c>名前</c>が見つかりません。</param>
+        <summary>指定した名前に基づいてサービス操作の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />サービスで操作の場合、指定された<paramref name="name" />は、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Types">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceType&gt; Types { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Services.Providers.ResourceType&gt; Types" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.IDataServiceMetadataProvider.Types" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデータ ソース内のすべての型を返します。</summary>
+        <value><see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Data.Services.Providers.ResourceType" /> コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

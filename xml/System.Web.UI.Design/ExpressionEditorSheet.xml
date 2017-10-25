@@ -1,0 +1,183 @@
+<Type Name="ExpressionEditorSheet" FullName="System.Web.UI.Design.ExpressionEditorSheet">
+  <TypeSignature Language="C#" Value="public abstract class ExpressionEditorSheet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExpressionEditorSheet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ExpressionEditorSheet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム式のデザイン時にエディター シートを表します。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム式エディターのシートには、デザイン時にカスタム式のプロパティを設定、開発者ことができます。 コントロール プロパティの値は、式文字列を使用して設定できます。式の文字列は、式エディターして式ビルダーによって実行時およびデザイン時に評価されます。  
+  
+ 参照すると、<xref:System.Web.UI.Design.HtmlControlDesigner.Expressions%2A>デザイン時のプロパティ グリッド内のコントロールのプロパティは、ビジュアル デザイナーがコントロールのプロパティの値を指定する式を設定するダイアログ ボックスを表示します。 式のプレフィックスのリストに基づく式の型を選択することができます。 ビジュアル デザイナーを使用して、関連付けられている、一覧から式のプレフィックスを選択すると<xref:System.Web.UI.Design.ExpressionEditor>と<xref:System.Web.UI.Design.ExpressionEditorSheet>を評価し、式の文字列に変換するオブジェクトがその型の式の構文に基づいています。 ビジュアル デザイナーでは、式エディターのシートのプロパティを使用して、カスタム式の文字列に結合する 1 つ以上の文字列の入力を求めます。  
+  
+ 通常、新しい式の型を指定すると、デザイン時に固有の式のプレフィックスを定義し、提供するカスタム、<xref:System.Web.Compilation.ExpressionBuilder>と<xref:System.Web.UI.Design.ExpressionEditor>実装します。 必要に応じて、カスタムを指定できます<xref:System.Web.UI.Design.ExpressionEditorSheet>条件式に使用されるプロパティを定義する実装。 式ビルダーと式エディターには、式のプレフィックスを関連付ける、適用、<xref:System.Web.Compilation.ExpressionEditorAttribute>属性および<xref:System.Web.Compilation.ExpressionPrefixAttribute>をカスタム属性<xref:System.Web.Configuration.ExpressionBuilder>クラス、し、式ビルダーでの式のプレフィックスを構成、 `expressionBuilders` Web 構成ファイル内の要素。  
+  
+ 既定の実装、<xref:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet%2A>メソッドを 1 つの入力文字列を使用して式を作成する基本的なエディター シートを返します。 派生したカスタム式エディター、<xref:System.Web.UI.Design.ExpressionEditor>をオーバーライドできます、<xref:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet%2A>シートの実装のカスタム エディターを返します。 通常、カスタム エディターのシートには、式の文字列の構築に使用される複数のプロパティが含まれています。 <xref:System.Web.UI.Design.ExpressionEditorSheet.GetExpression%2A>メソッドは、現在の式のプロパティに基づく結果として得られる式の文字列を返します。  
+  
+ たとえば、<xref:System.Web.UI.Design.ResourceExpressionEditor>クラスから派生します<xref:System.Web.UI.Design.ExpressionEditor>クラスおよび評価して、デザイン時にコントロール プロパティを持つリソース文字列の参照を関連付けることの実装を提供します。 <xref:System.Web.Compilation.ResourceExpressionBuilder>クラスは、式のプレフィックスに関連付けられた`Resources`と<xref:System.Web.UI.Design.ResourceExpressionEditor>実装します。 <xref:System.Web.UI.Design.ResourceExpressionEditor.GetExpressionEditorSheet%2A>メソッドを返します、<xref:System.Web.UI.Design.ResourceExpressionEditorSheet>リソースの参照式が形成する個々 のプロパティを定義します。  
+  
+ 継承する場合、<xref:System.Web.UI.Design.ExpressionEditorSheet>クラスでは、次のメンバーをオーバーライドする必要があります。  
+  
+-   <xref:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet%2A>シートの実装のカスタム エディターを返します。  
+  
+-   <xref:System.Web.UI.Design.ExpressionEditorSheet.%23ctor%2A>式エディター シートを実装するためのカスタムの初期化のアクションを実装するコンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム式エディター シートからの派生、<see cref="T:System.Web.UI.Design.ExpressionEditorSheet" />コントロール プロパティの値の式の新しい型を定義して、式の文字列をビルドする場合は、クラスが複数の式のプロパティ値に基づきます。 派生クラスの実装を次に含める必要があります。  
+  
+-   デザイン時に設定できる式の文字列で個別の値のパブリック プロパティです。  
+  
+-   実装、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.GetExpression" />エディター シートのプロパティ値からカスタム式の文字列を形成するメソッド。  
+  
+-   必要に応じて、するコンス トラクターの実装シートのプロパティ エディターの初期値を設定します。  
+  
+ 関連付けられているカスタム式エディターのクラスが派生エディター内のシート インスタンスを作成、<see cref="M:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet(System.String,System.IServiceProvider)" />メソッド、コントロール プロパティの現在の式の文字列でそのインスタンスを初期化し、ビジュアル デザイナーにインスタンスを返します。 ビジュアル デザイナーがシートのプロパティ式を設定することができを呼び出して、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.GetExpression" />入力式のシートのプロパティ値から式の文字列を形成します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExpressionEditorSheet (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ExpressionEditorSheet.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary><see cref="T:System.Web.UI.Design.ExpressionEditorSheet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ExpressionEditorSheet>クラスは抽象クラスのインスタンスを作成することはできません、<xref:System.Web.UI.Design.ExpressionEditorSheet>を使用して直接、<xref:System.Web.UI.Design.ExpressionEditorSheet.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生している場合、<see cref="T:System.Web.UI.Design.ExpressionEditorSheet" />クラス、オーバーライド、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.#ctor(System.IServiceProvider)" />式エディター シートを実装するためのカスタムの初期化のアクションを実装するコンス トラクターです。  
+  
+ たとえば、追加の式のプロパティを実装するカスタム式エディター シート クラスが式のプロパティの既定値を定義できます、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.#ctor(System.IServiceProvider)" />コンス トラクターです。 カスタム式エディターのシート クラスには、式のプロパティの初期値を設定する入力パラメーターの値を使用する追加のパブリック コンス トラクターのオーバー ロードを定義できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpression">
+      <MemberSignature Language="C#" Value="public abstract string GetExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetExpression() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ExpressionEditorSheet.GetExpression" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、式エディターのシートのプロパティ値によって形成される式の文字列を返します。</summary>
+        <returns>現在のプロパティ値のカスタム式の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム式エディターのシートには、デザイン時の式の文字列を結合する、複数の式プロパティの設定が含まれています。 コントロール プロパティの値は、式文字列を使用して設定できます。式の文字列は、式ビルダーによって実行時に評価されます。  
+  
+ <xref:System.Web.UI.Design.ExpressionEditorSheet.GetExpression%2A>メソッドは、現在の式のプロパティから組み込まれている式の文字列を返します。 ビジュアル デザイナーがシートのプロパティ式を設定することができを呼び出して、<xref:System.Web.UI.Design.ExpressionEditorSheet.GetExpression%2A>式の文字列を取得し、コントロールのプロパティ値を設定するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム式エディター シートからの派生、<see cref="T:System.Web.UI.Design.ExpressionEditorSheet" />コントロール プロパティの値の式の新しい型を定義して、式の文字列をビルドする場合は、クラスが複数の式のプロパティ値に基づきます。 派生クラスの実装を次に含める必要があります。  
+  
+-   デザイン時に設定できる式の文字列で個別の値のパブリック プロパティです。  
+  
+-   実装、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.GetExpression" />エディター シートのプロパティ値からカスタム式の文字列を形成するメソッド。  
+  
+-   必要に応じて、するコンス トラクターの実装シートのプロパティ エディターの初期値を設定します。  
+  
+ 関連付けられているカスタム式エディターのクラスが派生エディター内のシート インスタンスを作成、<see cref="M:System.Web.UI.Design.ExpressionEditor.GetExpressionEditorSheet(System.String,System.IServiceProvider)" />メソッド、コントロール プロパティの現在の式の文字列でそのインスタンスを初期化し、ビジュアルにはインスタンスを返しますデザイナー。 ビジュアル デザイナーがシートのプロパティ式を設定することができを呼び出して、<see cref="M:System.Web.UI.Design.ExpressionEditorSheet.GetExpression" />入力式のシートのプロパティ値から式の文字列を形成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public virtual bool IsValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ExpressionEditorSheet.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の文字列が有効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、式の文字列が無効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本実装を常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceProvider">
+      <MemberSignature Language="C#" Value="public IServiceProvider ServiceProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IServiceProvider ServiceProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ExpressionEditorSheet.ServiceProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IServiceProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式エディターのシートによって使用されるサービス プロバイダーの実装を取得します。</summary>
+        <value><see cref="T:System.IServiceProvider" />、通常、追加のデザイン時サービスを得るために使用できるデザイン ホストで指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.ExpressionEditorSheet.%23ctor%2A>を設定するコンス トラクター、<xref:System.Web.UI.Design.ExpressionEditorSheet.ServiceProvider%2A>カスタム式エディターのシートの実装です。  
+  
+ <xref:System.Web.UI.Design.ExpressionEditorSheet.ServiceProvider%2A>デザイナー ホストによって提供されるサービスにアクセスするプロパティを使用できます。 たとえば、呼び出し、<xref:System.IServiceProvider.GetService%2A>メソッドを<xref:System.Web.UI.Design.IWebApplication>プロジェクト項目にアクセスする、ドキュメント、または、ビジュアルなデザイナーによって提供される構成ファイルの詳細へのインターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="DiscoveryMessageSequenceCD1" FullName="System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1">
+  <TypeSignature Language="C#" Value="public class DiscoveryMessageSequenceCD1 : System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryMessageSequenceCD1 extends System.Object implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlSchemaProvider("GetSchema")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WS-Discovery プロトコルの Committee Draft 1 バージョンで定義されている AppSequence ヘッダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、探索メッセージの受信先が、それらのメッセージを異なる順序で受信した場合でも正しい順序で処理できるようになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FromDiscoveryMessageSequence">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1 FromDiscoveryMessageSequence (System.ServiceModel.Discovery.DiscoveryMessageSequence discoveryMessageSequence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1 FromDiscoveryMessageSequence(class System.ServiceModel.Discovery.DiscoveryMessageSequence discoveryMessageSequence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.FromDiscoveryMessageSequence(System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="discoveryMessageSequence" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryMessageSequence">探索メッセージのシーケンス。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1" /> インスタンスから <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns><see cref="T:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>WS-Discovery プロトコルの Committee Draft 1 バージョンでの定義に基づいた AppSequence ヘッダーのスキーマを取得します。</summary>
+        <returns>AppSequence ヘッダーのスキーマ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlQualifiedName GetSchema (System.Xml.Schema.XmlSchemaSet schemaSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlQualifiedName GetSchema(class System.Xml.Schema.XmlSchemaSet schemaSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.GetSchema(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemaSet" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemaSet">スキーマ セット。</param>
+        <summary>WS-Discovery プロトコルの Committee Draft 1 バージョンで定義に基づいて AppSequence ヘッダーのスキーマを取得し、そのスキーマが指定されたスキーマ セットにない場合は、そのセットに追加します。</summary>
+        <returns>スキーマの XML 修飾名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取りを行う先の XML リーダー。</param>
+        <summary>XML から探索メッセージ シーケンスを読み取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDiscoveryMessageSequence">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryMessageSequence ToDiscoveryMessageSequence ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Discovery.DiscoveryMessageSequence ToDiscoveryMessageSequence() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.ToDiscoveryMessageSequence" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryMessageSequence</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスを使用して <see cref="T:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の XML ライター。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.VersionCD1.DiscoveryMessageSequenceCD1" /> インスタンスを XML に書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

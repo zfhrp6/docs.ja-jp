@@ -1,0 +1,77 @@
+<Type Name="TransactionMessageProperty" FullName="System.ServiceModel.Channels.TransactionMessageProperty">
+  <TypeSignature Language="C#" Value="public sealed class TransactionMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TransactionMessageProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.TransactionMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>独自のトランザクション フロー メカニズムを使用して、Windows Communication Foundation (WCF) フレームワークへのトランザクションの挿入するカスタム チャネルを使用できます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、チャネルに独自のトランザクション フロー メカニズムを使用するサードパーティのチャネル開発者は、独自のトランザクションを ServiceModel フレームワークに導入できます。 そのトランザクションは、その後、サービス メソッドを実行するときに使用されます。 このメカニズムは <xref:System.ServiceModel.TransactionFlowAttribute> オプションと共には使用できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public static void Set (System.Transactions.Transaction transaction, System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Set(class System.Transactions.Transaction transaction, class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.TransactionMessageProperty.Set(System.Transactions.Transaction,System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Transactions.Transaction" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">サービス メソッドを実行するときに使用されるトランザクション。</param>
+        <param name="message">サービス メソッド呼び出しを発生させる受信メッセージ。</param>
+        <summary>サービス メソッドを実行するときに使用されるトランザクションを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム受信チャネル (サービスのチャネル スタックの一部) は、このメソッドを呼び出して、<xref:System.ServiceModel.Channels.TransactionMessageProperty> パラメーターを含む `transaction` を `Properties` パラメーターの `message` コレクションに追加できます。 これにより、インフラストラクチャは、受信メッセージで要求されているサービス メソッドを呼び出す前に、渡されたトランザクションを使用して <xref:System.Transactions.TransactionScope> のインスタンスを作成します。 サービス メソッドでは、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティが `true` に設定されている必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ServiceModel.FaultException">プロパティは、既に <paramref name="message" /> に設定されています。</exception>
+        <exception cref="T:System.Transactions.TransactionException">
+          <paramref name="transaction" /> のマーシャリングを解除する必要があり、その操作が失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.Transactions.Transaction Transaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Transactions.Transaction Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.TransactionMessageProperty.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.Transaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス メソッドを実行するときに使用されるトランザクションを取得します。</summary>
+        <value>サービス メソッドを実行するときに使用される <see cref="T:System.Transactions.Transaction" /> のインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

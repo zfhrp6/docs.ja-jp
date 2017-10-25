@@ -1,0 +1,56 @@
+<Type Name="AddInAdapterAttribute" FullName="System.AddIn.Pipeline.AddInAdapterAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AddInAdapterAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddInAdapterAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.AddInAdapterAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パイプラインの追加-側アダプター セグメントとしてオブジェクトを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Hosting.AddInStore.Rebuild%2A>と<xref:System.AddIn.Hosting.AddInStore.Update%2A>メソッドで、利用可能なパイプライン セグメントに関する情報のストアを管理するには、この属性を使用してアドイン側アダプターを識別します。  
+  
+ この属性は、パイプラインのセグメントをアクティブ化する型のみで使用する必要があります。 ホストとアドインの間で渡されるオブジェクトを表す型では、この属性は必要ありません。  
+  
+   
+  
+## Examples  
+ 次の例では、アドイン側アダプターを識別します。  
+  
+ [!code-csharp[AddInP1AddInSideAdapters#2](~/samples/snippets/csharp/VS_Snippets_CLR/AddInP1AddInSideAdapters/cs/Calc1ViewToContractAddInSideAdapter.cs#2)]
+ [!code-vb[AddInP1AddInSideAdapters#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInP1AddInSideAdapters/vb/Calc1ViewToContractAddInSideAdapter.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddInAdapterAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.AddInAdapterAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.AddIn.Pipeline.AddInAdapterAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

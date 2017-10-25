@@ -1,0 +1,1365 @@
+<Type Name="MessageBox" FullName="System.Windows.Forms.MessageBox">
+  <TypeSignature Language="C#" Value="public class MessageBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageBox extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MessageBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーに対してメッセージを表示するメッセージ ウィンドウ (ダイアログ ボックスとも呼ばれます) が表示されます。 これはモーダル ウィンドウであり、ユーザーが閉じるまで、このアプリケーションでの他の操作をブロックします。 <see cref="T:System.Windows.Forms.MessageBox" /> には、テキスト、ボタン、およびユーザーに情報や指示を伝えるための記号を格納できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成することはできません、<xref:System.Windows.Forms.MessageBox>クラスです。 メッセージ ボックスを表示するには`static`メソッド<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>です。 タイトル、メッセージ、ボタン、およびメッセージ ボックスに表示されるアイコンは、このメソッドに渡すパラメーターによって決定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.MessageBox>にエントリがないユーザーが通知、<xref:System.Windows.Forms.TextBox>です。 この例で既存のフォームから、メソッドが呼び出されることが必要です、<xref:System.Windows.Forms.TextBox>という**ServerName**にします。  
+  
+ [!code-cpp[MessageBox.Show Variations#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#1)]
+ [!code-csharp[MessageBox.Show Variations#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#1)]
+ [!code-vb[MessageBox.Show Variations#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#1)]  
+  
+ 次のコード例では、ユーザーの質問をはいまたは no を応答に基づいた意思決定を行う方法を示します。  
+  
+ [!code-cpp[Classic MessageBox Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MessageBox Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MessageBox Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MessageBox Example/CS/source.cs#1)]
+ [!code-vb[Classic MessageBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MessageBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <summary>指定したテキストを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、メッセージ ボックスが表示されます、 **OK**ボタンをクリックします。 メッセージ ボックスに、タイトルのキャプションが含まれていません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、簡単なメッセージ ボックスが表示されます。  
+  
+ [!code-csharp[MessageBox.Show Variations#6](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#6)]
+ [!code-vb[MessageBox.Show Variations#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを設定する安全なサブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <summary>指定したテキストとキャプションを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、メッセージ ボックスが表示されます、 **OK**ボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <summary>指定したオブジェクトの前に、指定したテキストを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ 既定では、メッセージ ボックスが表示されます、 **OK**ボタンをクリックします。 メッセージ ボックスに、タイトルのキャプションが含まれていません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <summary>指定したテキスト、キャプション、およびボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>操作をキャンセルするオプションをユーザーに提供します。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#1)]
+ [!code-csharp[MessageBox.Show Variations#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#1)]
+ [!code-vb[MessageBox.Show Variations#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="buttons" />に指定されたパラメーターがのメンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <summary>指定したオブジェクトの前に、指定したテキストとキャプションを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ 既定では、メッセージ ボックスが表示されます、 **OK**ボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <summary>指定したテキスト、キャプション、ボタン、およびアイコンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いずれかを示しています、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドを処理するとき、<xref:System.Windows.Forms.ComboBox.DropDown?displayProperty=nameWithType>イベント。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeComboBox`フォームのコンス トラクターからのメソッドまたは`Load`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="buttons" />に指定されたパラメーターがのメンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />に指定されたパラメーターがのメンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <summary>指定したオブジェクトの前に、指定したテキスト、キャプション、およびボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>操作をキャンセルするオプションをユーザーに提供します。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#5](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#5)]
+ [!code-csharp[MessageBox.Show Variations#5](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#5)]
+ [!code-vb[MessageBox.Show Variations#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、および既定のボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後、文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>質問ボックス アイコンを提供する、ユーザー操作をキャンセルするオプションです。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#3](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#3)]
+ [!code-csharp[MessageBox.Show Variations#3](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#3)]
+ [!code-vb[MessageBox.Show Variations#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <summary>指定したオブジェクトの前に、指定したテキスト、キャプション、ボタン、およびアイコンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>操作をキャンセルするオプションをユーザーに提供します。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#4](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#4)]
+ [!code-csharp[MessageBox.Show Variations#4](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#4)]
+ [!code-vb[MessageBox.Show Variations#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、およびオプションを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後、文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>質問ボックス アイコンを提供する、ユーザー操作をキャンセルするオプションです。 この例では、<xref:System.Windows.Forms.MessageBoxOptions.RightAlign>のメンバー、<xref:System.Windows.Forms.MessageBoxOptions>列挙型をダイアログ ボックスの右端に揃えます。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#2](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#2)]
+ [!code-csharp[MessageBox.Show Variations#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#2)]
+ [!code-vb[MessageBox.Show Variations#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <summary>指定したオブジェクトの前に、指定したテキスト、キャプション、ボタン、アイコン、および既定のボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>操作をキャンセルするオプションをユーザーに提供します。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#2](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#2)]
+ [!code-csharp[MessageBox.Show Variations#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#2)]
+ [!code-vb[MessageBox.Show Variations#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, bool displayHelpButton);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, bool displayHelpButton) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="displayHelpButton" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="displayHelpButton">
+          [ヘルプ] ボタンを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ ユーザーは、[ヘルプ] ボタンをクリックすると、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取る、<xref:System.Windows.Forms.Control.HelpRequested>イベント。 処理、<xref:System.Windows.Forms.Control.HelpRequested>ヘルプのカスタム アクションを実行するイベントです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、[ヘルプ] ボタンを含むメッセージ ボックスを表示するには、処理方法を示します、<xref:System.Windows.Forms.Control.HelpRequested?displayProperty=nameWithType>イベント、およびイベントへの応答でのカスタム ヘルプ ウィンドウを表示します。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#2)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#2)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ ユーザーは、[ヘルプ] ボタンをクリックするで指定されたヘルプ ファイル、`helpFilePath`パラメーターが開かれています。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ボタンを含むメッセージ ボックスを表示する方法を示します。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルを開きます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#3)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#3)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <summary>指定したオブジェクトの前に、指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、およびオプションを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。 メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ メッセージ ボックスで、最大 3 つのボタンのことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示する方法を示しています、<xref:System.Windows.Forms.MessageBox>のこのオーバー ロードでサポートされるオプションと<xref:System.Windows.Forms.MessageBox.Show%2A>です。 確認した後文字列変数`ServerName`が空で、例が表示されます、<xref:System.Windows.Forms.MessageBox>操作をキャンセルするオプションをユーザーに提供します。 場合、<xref:System.Windows.Forms.MessageBox.Show%2A>メソッドの戻り値として評価<xref:System.Windows.Forms.DialogResult.Yes>、フォームが表示される<xref:System.Windows.Forms.MessageBox>が閉じられます。  
+  
+ [!code-cpp[MessageBox.Show Variations#2](~/samples/snippets/cpp/VS_Snippets_Winforms/MessageBox.Show Variations/CPP/form1.cpp#2)]
+ [!code-csharp[MessageBox.Show Variations#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MessageBox.Show Variations/CS/form1.cs#2)]
+ [!code-vb[MessageBox.Show Variations#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MessageBox.Show Variations/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="options" />指定した<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />または<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />内の値を指定し、<paramref name="owner" />パラメーター。 このメソッドを取らないのバージョンを起動する場合にのみ、これら 2 つのオプションを使用する必要があります、<paramref name="owner" />パラメーター。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="keyword">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ キーワード。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルとヘルプ キーワードを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプ キーワードがによって識別される、`keyword`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ボタンを含むメッセージ ボックスを表示する方法を示します。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれ、によって識別される、トピック、`mspaint.chm::/paint_brush.htm`キーワードが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#9)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#9)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, System.Windows.Forms.HelpNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, valuetype System.Windows.Forms.HelpNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.Windows.Forms.HelpNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルと <see langword="HelpNavigator" /> を使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプの内容がによって識別される、`navigator`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ コンパイル済みヘルプ ファイルは、目次、インデックス、検索、およびページ内のキーワードのリンクを提供します。 次の値を使用する`navigator`: <xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Find>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Topic>です。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ボタンを含むメッセージ ボックスを表示する方法を示します。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれ、ヘルプ キーワード タブが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#5)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#5)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。  
+  
+ ユーザーは、[ヘルプ] ボタンをクリックするで指定されたヘルプ ファイル、`helpFilePath`パラメーターが開かれています。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メイン フォームの親をメッセージ ボックスを表示する方法を示します。 メッセージ ボックスには、ヘルプ ボタンが表示されます。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルを開きます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#4)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#4)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, System.Windows.Forms.HelpNavigator navigator, object param);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, valuetype System.Windows.Forms.HelpNavigator navigator, object param) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.Windows.Forms.HelpNavigator,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+        <Parameter Name="param" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <param name="param">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ トピックの数値 ID。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイル、<see langword="HelpNavigator" />、およびヘルプ トピックを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプの内容がによって識別される、`navigator`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ コンパイル済みヘルプ ファイルは、目次、インデックス、検索、およびページ内のキーワードのリンクを提供します。 次の値を使用する`navigator`: <xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Find>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Topic>です。  
+  
+ 使用することができます`param`提供の洗練化ではさらに、<xref:System.Windows.Forms.HelpNavigator.Topic>コマンド。 値が指定されている場合、`navigator`パラメーターは<xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Find>、この値は、`null`です。 場合、`navigator`パラメーター参照<xref:System.Windows.Forms.HelpNavigator.Topic>、この値を表示するトピックの数値の値を格納するオブジェクトを参照する必要があります。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ボタンを含むメッセージ ボックスを表示する方法を示します。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれるとヘルプ キーワード タブで識別されるトピック、`ovals`キーワードが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#7)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#7)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="keyword">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ キーワード。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルとヘルプ キーワードを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位の所有者として使用するインターフェイスです。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプ キーワードがによって識別される、`keyword`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、親のメイン ウィンドウにメッセージ ボックスを表示する方法を示します。 メッセージ ボックスには、ヘルプ ボタンが表示されます。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれ、によって識別される、トピック、`mspaint.chm::/paint_brush.htm`キーワードが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#10)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#10)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, System.Windows.Forms.HelpNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, valuetype System.Windows.Forms.HelpNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.Windows.Forms.HelpNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイルと <see langword="HelpNavigator" /> を使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプの内容がによって識別される、`navigator`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ コンパイル済みヘルプ ファイルは、目次、インデックス、検索、およびページ内のキーワードのリンクを提供します。 次の値を使用する`navigator`: <xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Find>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Topic>です。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、親のメイン ウィンドウにメッセージ ボックスを表示する方法を示します。 メッセージ ボックスには、ヘルプ ボタンが表示されます。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれ、ヘルプ キーワード タブが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#6)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#6)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.DialogResult Show (System.Windows.Forms.IWin32Window owner, string text, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon, System.Windows.Forms.MessageBoxDefaultButton defaultButton, System.Windows.Forms.MessageBoxOptions options, string helpFilePath, System.Windows.Forms.HelpNavigator navigator, object param);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.DialogResult Show(class System.Windows.Forms.IWin32Window owner, string text, string caption, valuetype System.Windows.Forms.MessageBoxButtons buttons, valuetype System.Windows.Forms.MessageBoxIcon icon, valuetype System.Windows.Forms.MessageBoxDefaultButton defaultButton, valuetype System.Windows.Forms.MessageBoxOptions options, string helpFilePath, valuetype System.Windows.Forms.HelpNavigator navigator, object param) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MessageBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton,System.Windows.Forms.MessageBoxOptions,System.String,System.Windows.Forms.HelpNavigator,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="buttons" Type="System.Windows.Forms.MessageBoxButtons" />
+        <Parameter Name="icon" Type="System.Windows.Forms.MessageBoxIcon" />
+        <Parameter Name="defaultButton" Type="System.Windows.Forms.MessageBoxDefaultButton" />
+        <Parameter Name="options" Type="System.Windows.Forms.MessageBoxOptions" />
+        <Parameter Name="helpFilePath" Type="System.String" />
+        <Parameter Name="navigator" Type="System.Windows.Forms.HelpNavigator" />
+        <Parameter Name="param" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="owner">モーダル ダイアログ ボックスを所有する <see cref="T:System.Windows.Forms.IWin32Window" /> の実装。</param>
+        <param name="text">メッセージ ボックスに表示するテキスト。</param>
+        <param name="caption">メッセージ ボックスのタイトル バーに表示するテキスト。</param>
+        <param name="buttons">メッセージ ボックスに表示するボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxButtons" /> 値の 1 つ。</param>
+        <param name="icon">メッセージ ボックスに表示するアイコンを指定する <see cref="T:System.Windows.Forms.MessageBoxIcon" /> 値の 1 つ。</param>
+        <param name="defaultButton">メッセージ ボックスの既定のボタンを指定する <see cref="T:System.Windows.Forms.MessageBoxDefaultButton" /> 値の 1 つ。</param>
+        <param name="options">メッセージ ボックスで使用する表示オプションと関連付けオプションを指定する <see cref="T:System.Windows.Forms.MessageBoxOptions" /> 値の 1 つ。 既定値を使用する場合は、0 を渡します。</param>
+        <param name="helpFilePath">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ ファイルのパスと名前。</param>
+        <param name="navigator"><see cref="T:System.Windows.Forms.HelpNavigator" /> 値のいずれか。</param>
+        <param name="param">ユーザーが [ヘルプ] ボタンをクリックしたときに表示されるヘルプ トピックの数値 ID。</param>
+        <summary>指定したテキスト、キャプション、ボタン、アイコン、既定のボタン、オプション、および指定したヘルプ ファイル、<see langword="HelpNavigator" />、およびヘルプ トピックを使用する [ヘルプ] ボタンを表示するメッセージ ボックスを表示します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、キーボードやマウス クリック) の入力しか発生しません、モーダル フォーム上のオブジェクトにはモーダル ダイアログ ボックスです。 プログラムを非表示にする必要がありますか、閉じる、モーダル形式 (通常はユーザーの操作に対する応答) で別の形式に入力する前にことができます。 使用することができます、`owner`を実装する特定のオブジェクトを指定するパラメーター、 <xref:System.Windows.Forms.IWin32Window>  ダイアログ ボックスの最上位のウィンドウと所有者として使用するインターフェイスです。  
+  
+ 指定されたヘルプ ファイルは、ユーザーは、[ヘルプ] ボタンをクリックすると、`helpFilePath`パラメーターが開かれ、ヘルプの内容がによって識別される、`navigator`パラメーターが表示されます。 また、メッセージ ボックス (または、アクティブなフォーム) を所有するフォームを受け取ります、<xref:System.Windows.Forms.Control.HelpRequested>イベント。  
+  
+ コンパイル済みヘルプ ファイルは、目次、インデックス、検索、およびページ内のキーワードのリンクを提供します。 次の値を使用する`navigator`: <xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Find>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Topic>です。  
+  
+ 使用することができます`param`提供の洗練化ではさらに、<xref:System.Windows.Forms.HelpNavigator.Topic>コマンド。 値が指定されている場合、`navigator`パラメーターは<xref:System.Windows.Forms.HelpNavigator.TableOfContents>、 <xref:System.Windows.Forms.HelpNavigator.Index>、または<xref:System.Windows.Forms.HelpNavigator.Find>、この値は、`null`です。 場合、`navigator`パラメーター参照<xref:System.Windows.Forms.HelpNavigator.Topic>、この値を表示するトピックの数値の値を格納するオブジェクトを参照する必要があります。  
+  
+ `helpFilePath`フォーム C:\path\sample.chm または/folder/file.htm パラメーターであることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、親のメイン ウィンドウにメッセージ ボックスを表示する方法を示します。 メッセージ ボックスには、ヘルプ ボタンが表示されます。 ユーザーがヘルプ ボタンをクリックしたときに、`Mspaint.chm`ヘルプ ファイルが開かれるとヘルプ キーワード タブで識別されるトピック、`ovals`キーワードが表示されます。 この例では、する必要があります、`Mspaint.chm`のヘルプ ファイルをインストールします。  
+  
+ [!code-cpp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.MessageBox with Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.MessageBox with Help#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CPP/form1.cpp#8)]
+[!code-csharp[System.Windows.Forms.MessageBox with Help#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/CS/form1.cs#8)]
+[!code-vb[System.Windows.Forms.MessageBox with Help#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MessageBox with Help/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="buttons" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。  
+  
+ または  
+  
+ <paramref name="icon" />メンバーではない<see cref="T:System.Windows.Forms.MessageBoxIcon" />です。  
+  
+ または  
+  
+ <paramref name="defaultButton" />指定のメンバーではない<see cref="T:System.Windows.Forms.MessageBoxDefaultButton" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">表示しようとしましたが、<see cref="T:System.Windows.Forms.MessageBox" />がユーザー対話モードで実行されていないプロセスでします。 これを指定して、<see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="options" />指定された両方<see cref="F:System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly" />と<see cref="F:System.Windows.Forms.MessageBoxOptions.ServiceNotification" />です。  
+  
+ または  
+  
+ <paramref name="buttons" />無効な組み合わせの指定された<see cref="T:System.Windows.Forms.MessageBoxButtons" />です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すセーフ サブウィンドウです。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" /></permission>
+        <permission cref="T:System.Net.WebPermission">HTML ヘルプ ファイルを HTTP 要求を通じてアクセスします。 関連する列挙。<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">HTML ヘルプ ファイルにアクセスするには、HTTP サーバーから提供されます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

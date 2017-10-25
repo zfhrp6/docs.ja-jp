@@ -1,0 +1,101 @@
+<Type Name="CorrelationProperty" FullName="System.Workflow.Runtime.CorrelationProperty">
+  <TypeSignature Language="C#" Value="public class CorrelationProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CorrelationProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.CorrelationProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージを特定の受信アクティビティに関連付けるために使用される名前と値のペアを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.CorrelationProperty> クラスは、ワークフロー接続サービス アクティビティの <xref:System.Workflow.ComponentModel.ActivityBind> プロパティと定義されます。 既定では、これらのプロパティはルート ワークフロー アクティビティで宣言される変数にバインドされます。 <xref:System.Workflow.Activities.ReplicatorActivity> や <xref:System.Workflow.Activities.ConditionedActivityGroup> などの動的アクティビティの場合、その各子が <xref:System.Workflow.Runtime.CorrelationProperty> 汎用オブジェクトを共有することはできません。 <xref:System.Workflow.Activities.ReplicatorActivity> 内の各タスクが自身のメッセージ交換を管理する必要があるシナリオを考えてみます。 <xref:System.Workflow.Activities.ReplicatorActivity> 内の子アクティビティは、実行コンテキストまたはタスクごとに一意の <xref:System.Workflow.Runtime.CorrelationProperty> インスタンスを必要とします。 これを実現するためには、<xref:System.Workflow.Runtime.CorrelationProperty> インスタンス プロパティを持つカスタム アクティビティを定義する必要があり、ワークフロー接続サービス アクティビティはこのプロパティにバインドする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、関連付けプロパティ オブジェクトを作成する方法と、Name および Value プロパティにアクセスする方法を示しています。  
+  
+ [!code-csharp[WF_Samples#2](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#2)]
+ [!code-vb[WF_Samples#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationProperty (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.CorrelationProperty.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">関連付けセットで使用されているプロパティの名前。</param>
+        <param name="value">関連付けセットのプロパティの値。</param>
+        <summary><see cref="T:System.Workflow.Runtime.CorrelationProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.CorrelationProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けセットで使用されているプロパティの名前を取得します。</summary>
+        <value>関連付けセットで使用されているプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.CorrelationProperty.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けセットのプロパティの値を取得します。</summary>
+        <value>関連付けセットのプロパティの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

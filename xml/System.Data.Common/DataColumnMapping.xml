@@ -1,0 +1,371 @@
+<Type Name="DataColumnMapping" FullName="System.Data.Common.DataColumnMapping">
+  <TypeSignature Language="C#" Value="public sealed class DataColumnMapping : MarshalByRefObject, ICloneable, System.Data.IColumnMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataColumnMapping extends System.MarshalByRefObject implements class System.Data.IColumnMapping, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DataColumnMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.IColumnMapping</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.Common.DataColumnMapping/DataColumnMappingConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>継承されるオブジェクトの汎用の列のマッピングを含む<see cref="T:System.Data.Common.DataAdapter" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Data.Common.DataColumnMapping>内の列名を使用することができます、<xref:System.Data.DataTable>異なるデータ ソース内にあります。 `DataAdapter`マッピングを使用して列を照合するときに内のテーブル、<xref:System.Data.DataSet>またはデータ ソースを更新します。 詳細については、次を参照してください。 [DataAdapter DataTable と DataColumn のマップ](~/docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクトを追加して、<xref:System.Data.Common.DataColumnMappingCollection>です。 マッピングは、コレクションに追加され、マッピングの親を表示で、ユーザーに通知します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumnMapping ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DataColumnMapping" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクト、そのプロパティを設定し、そのクローンを作成します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping.DataColumnMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataColumnMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping.DataColumnMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataColumnMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataColumnMapping (string sourceColumn, string dataSetColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourceColumn, string dataSetColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="dataSetColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumn">データ ソースから区別する列の名前。</param>
+        <param name="dataSetColumn">大文字小文字を区別からではない列名、<see cref="T:System.Data.DataSet" />にマップします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Common.DataColumnMapping" />指定したソース列名を持つクラスと<see cref="T:System.Data.DataSet" />にマップする列の名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクト、そのプロパティを設定し、そのクローンを作成します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping.DataColumnMapping1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataColumnMapping1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping.DataColumnMapping1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataColumnMapping1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSetColumn">
+      <MemberSignature Language="C#" Value="public string DataSetColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSetColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataColumnMapping.DataSetColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の列の名前、<see cref="T:System.Data.DataSet" />にマップします。</summary>
+        <value>内の列の名前、<see cref="T:System.Data.DataSet" />にマップします。 名前は、大文字と小文字が区別されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクト、およびそのプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping.DataSetColumn Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataSetColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping.DataSetColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataSetColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataColumnBySchemaAction">
+      <MemberSignature Language="C#" Value="public System.Data.DataColumn GetDataColumnBySchemaAction (System.Data.DataTable dataTable, Type dataType, System.Data.MissingSchemaAction schemaAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn GetDataColumnBySchemaAction(class System.Data.DataTable dataTable, class System.Type dataType, valuetype System.Data.MissingSchemaAction schemaAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.GetDataColumnBySchemaAction(System.Data.DataTable,System.Type,System.Data.MissingSchemaAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataTable" Type="System.Data.DataTable" />
+        <Parameter Name="dataType" Type="System.Type" />
+        <Parameter Name="schemaAction" Type="System.Data.MissingSchemaAction" />
+      </Parameters>
+      <Docs>
+        <param name="dataTable"><see cref="T:System.Data.DataTable" />から列を取得します。</param>
+        <param name="dataType"><see cref="T:System.Type" />データ列の。</param>
+        <param name="schemaAction"><see cref="T:System.Data.MissingSchemaAction" /> 値のいずれか。</param>
+        <summary>取得、<see cref="T:System.Data.DataColumn" />から、指定された<see cref="T:System.Data.DataTable" />を使用して、<see cref="T:System.Data.MissingSchemaAction" />と<see cref="P:System.Data.Common.DataColumnMapping.DataSetColumn" />プロパティです。</summary>
+        <returns>データ列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataColumnBySchemaAction">
+      <MemberSignature Language="C#" Value="public static System.Data.DataColumn GetDataColumnBySchemaAction (string sourceColumn, string dataSetColumn, System.Data.DataTable dataTable, Type dataType, System.Data.MissingSchemaAction schemaAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataColumn GetDataColumnBySchemaAction(string sourceColumn, string dataSetColumn, class System.Data.DataTable dataTable, class System.Type dataType, valuetype System.Data.MissingSchemaAction schemaAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.GetDataColumnBySchemaAction(System.String,System.String,System.Data.DataTable,System.Type,System.Data.MissingSchemaAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="dataSetColumn" Type="System.String" />
+        <Parameter Name="dataTable" Type="System.Data.DataTable" />
+        <Parameter Name="dataType" Type="System.Type" />
+        <Parameter Name="schemaAction" Type="System.Data.MissingSchemaAction" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumn">データ ソースから区別する列の名前。</param>
+        <param name="dataSetColumn">大文字小文字を区別からではない列名、<see cref="T:System.Data.DataSet" />にマップします。</param>
+        <param name="dataTable"><see cref="T:System.Data.DataTable" /> のインスタンス。</param>
+        <param name="dataType">マップされている列のデータを入力します。</param>
+        <param name="schemaAction">既存のときに実行するアクションを決定<see cref="T:System.Data.DataSet" />スキーマが受信データと一致しません。</param>
+        <summary>静的バージョン<see cref="M:System.Data.Common.DataColumnMapping.GetDataColumnBySchemaAction(System.Data.DataTable,System.Type,System.Data.MissingSchemaAction)" />呼び出すことのできるインスタンス化しなくても、<see cref="T:System.Data.Common.DataColumnMapping" />オブジェクト。</summary>
+        <returns><see cref="T:System.Data.DataColumn" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataColumnMapping.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはからマップするデータ ソース内で列の名前を設定します。 名前は大文字小文字を区別します。</summary>
+        <value>データ ソース内の列の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクト、およびそのプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping.DataSetColumn Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataSetColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping.DataSetColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping.DataSetColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>現在のオブジェクトのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.SqlClient.SqlCommand> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ICloneable.Clone%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataColumnMapping.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の変換<see cref="P:System.Data.Common.DataColumnMapping.SourceColumn" />を文字列名。</summary>
+        <returns>現在<see cref="P:System.Data.Common.DataColumnMapping.SourceColumn" />文字列名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Common.DataColumnMapping>オブジェクトを追加して、<xref:System.Data.Common.DataColumnMappingCollection>コレクション。 マッピングは、コレクションに追加され、マッピングの親を表示で、ユーザーに通知します。  
+  
+ [!code-csharp[Classic WebData DataColumnMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataColumnMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataColumnMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

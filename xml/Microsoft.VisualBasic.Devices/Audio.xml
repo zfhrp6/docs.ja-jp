@@ -1,0 +1,496 @@
+<Type Name="Audio" FullName="Microsoft.VisualBasic.Devices.Audio">
+  <TypeSignature Language="C#" Value="public class Audio" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Audio extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Audio" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サウンドを再生するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`My.Computer.Audio.Play`と`My.Computer.Audio.PlaySystemSound`.wav 音声ファイルやシステム サウンドを再生する方法です。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`AudioPlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコードは、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 ファイルにアクセスし、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Audio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Audio" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [オブジェクト](http://msdn.microsoft.com/library/651c73e4-dca8-402b-9c6b-e3902b3a3f4b)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public void Play (string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Play(string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.Play(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="location">A<see langword="String" />サウンド ファイルの名前を含む</param>
+        <summary>サウンド ファイルを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Play`メソッドにファイルとして格納されている .wav サウンド ファイルが再生`location`、内のバイト配列として`data`、またはでストリームとして`stream`です。  
+  
+ かどうか、オーバー ロードを受け取るだけ、`location`パラメーターを使用すると、`Play`メソッドはバック グラウンドでサウンドを再生します。 それ以外の場合、`playMode`パラメーターは、サウンドを再生する方法を決定します。  
+  
+|`playMode`|説明|  
+|-|-|  
+|`AudioPlayMode.Background`|バック グラウンドでサウンドを再生します。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.BackgroundLoop`|までバック グラウンドでサウンドを再生、<xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>メソッドが呼び出されます。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.WaitToComplete`|サウンドを再生し、呼び出し元のコードを続行する前に完了するまでに待機します。|  
+  
+ バックグラウンド再生により、アプリケーションでサウンドを再生しながら他のコードを実行できます。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`PlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 アクセスすることができますし、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="location" /> が空の文字列です。</exception>
+        <exception cref="T:System.IO.IOException">名前のファイルにアクセスするための十分なアクセス許可がユーザーにない<paramref name="location" />です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ファイル パスが異常な<paramref name="location" />します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パス名<paramref name="location" />が長すぎます。</exception>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public void Play (byte[] data, Microsoft.VisualBasic.AudioPlayMode playMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Play(unsigned int8[] data, valuetype Microsoft.VisualBasic.AudioPlayMode playMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.Play(System.Byte[],Microsoft.VisualBasic.AudioPlayMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="playMode" Type="Microsoft.VisualBasic.AudioPlayMode" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+          <see langword="Byte" />サウンド ファイルを表す配列。</param>
+        <param name="playMode">
+          <see cref="T:Microsoft.VisualBasic.AudioPlayMode" />サウンドの再生のモードです。 既定では、<see langword="AudioPlayMode.Background" />です。</param>
+        <summary>サウンド ファイルを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Play`メソッドにファイルとして格納されている .wav サウンド ファイルが再生`location`、内のバイト配列として`data`、またはでストリームとして`stream`です。  
+  
+ かどうか、オーバー ロードを受け取るだけ、`location`パラメーターを使用すると、`Play`メソッドはバック グラウンドでサウンドを再生します。 それ以外の場合、`playMode`パラメーターは、サウンドを再生する方法を決定します。  
+  
+|`playMode`|説明|  
+|-|-|  
+|`AudioPlayMode.Background`|バック グラウンドでサウンドを再生します。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.BackgroundLoop`|までバック グラウンドでサウンドを再生、<xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>メソッドが呼び出されます。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.WaitToComplete`|サウンドを再生し、呼び出し元のコードを続行する前に完了するまでに待機します。|  
+  
+ バックグラウンド再生により、アプリケーションでサウンドを再生しながら他のコードを実行できます。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`PlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 アクセスすることができますし、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="playMode" />いずれかではない、<see cref="T:Microsoft.VisualBasic.AudioPlayMode" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public void Play (System.IO.Stream stream, Microsoft.VisualBasic.AudioPlayMode playMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Play(class System.IO.Stream stream, valuetype Microsoft.VisualBasic.AudioPlayMode playMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.Play(System.IO.Stream,Microsoft.VisualBasic.AudioPlayMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="playMode" Type="Microsoft.VisualBasic.AudioPlayMode" />
+      </Parameters>
+      <Docs>
+        <param name="stream">
+          <see cref="T:System.IO.Stream" />サウンド ファイルを表します。</param>
+        <param name="playMode">
+          <see cref="T:Microsoft.VisualBasic.AudioPlayMode" />サウンドの再生のモードです。 既定では、<see langword="AudioPlayMode.Background" />です。</param>
+        <summary>サウンド ファイルを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Play`メソッドにファイルとして格納されている .wav サウンド ファイルが再生`location`、内のバイト配列として`data`、またはでストリームとして`stream`です。  
+  
+ かどうか、オーバー ロードを受け取るだけ、`location`パラメーターを使用すると、`Play`メソッドはバック グラウンドでサウンドを再生します。 それ以外の場合、`playMode`パラメーターは、サウンドを再生する方法を決定します。  
+  
+|`playMode`|説明|  
+|-|-|  
+|`AudioPlayMode.Background`|バック グラウンドでサウンドを再生します。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.BackgroundLoop`|までバック グラウンドでサウンドを再生、<xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>メソッドが呼び出されます。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.WaitToComplete`|サウンドを再生し、呼び出し元のコードを続行する前に完了するまでに待機します。|  
+  
+ バックグラウンド再生により、アプリケーションでサウンドを再生しながら他のコードを実行できます。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`PlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 アクセスすることができますし、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="playMode" />いずれかではない、<see cref="T:Microsoft.VisualBasic.AudioPlayMode" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public void Play (string location, Microsoft.VisualBasic.AudioPlayMode playMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Play(string location, valuetype Microsoft.VisualBasic.AudioPlayMode playMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.Play(System.String,Microsoft.VisualBasic.AudioPlayMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.String" />
+        <Parameter Name="playMode" Type="Microsoft.VisualBasic.AudioPlayMode" />
+      </Parameters>
+      <Docs>
+        <param name="location">A<see langword="String" />サウンド ファイルの名前を含む</param>
+        <param name="playMode">
+          <see cref="T:Microsoft.VisualBasic.AudioPlayMode" />サウンドの再生のモードです。 既定では、<see langword="AudioPlayMode.Background" />です。</param>
+        <summary>サウンド ファイルを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Play`メソッドにファイルとして格納されている .wav サウンド ファイルが再生`location`、内のバイト配列として`data`、またはでストリームとして`stream`です。  
+  
+ かどうか、オーバー ロードを受け取るだけ、`location`パラメーターを使用すると、`Play`メソッドはバック グラウンドでサウンドを再生します。 それ以外の場合、`playMode`パラメーターは、サウンドを再生する方法を決定します。  
+  
+|`playMode`|説明|  
+|-|-|  
+|`AudioPlayMode.Background`|バック グラウンドでサウンドを再生します。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.BackgroundLoop`|までバック グラウンドでサウンドを再生、<xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>メソッドが呼び出されます。 呼び出し元のコードでは引き続き実行されます。|  
+|`AudioPlayMode.WaitToComplete`|サウンドを再生し、呼び出し元のコードを続行する前に完了するまでに待機します。|  
+  
+ バックグラウンド再生により、アプリケーションでサウンドを再生しながら他のコードを実行できます。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`PlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 アクセスすることができますし、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="location" /> が空の文字列です。</exception>
+        <exception cref="T:System.IO.IOException">名前のファイルにアクセスするための十分なアクセス許可がユーザーにない<paramref name="location" />です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ファイル パスが異常な<paramref name="location" />します。</exception>
+        <exception cref="T:System.IO.PathTooLongException">パス名<paramref name="location" />が長すぎます。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="playMode" />いずれかではない、<see cref="T:Microsoft.VisualBasic.AudioPlayMode" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PlaySystemSound">
+      <MemberSignature Language="C#" Value="public void PlaySystemSound (System.Media.SystemSound systemSound);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void PlaySystemSound(class System.Media.SystemSound systemSound) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.PlaySystemSound(System.Media.SystemSound)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="systemSound" Type="System.Media.SystemSound" />
+      </Parameters>
+      <Docs>
+        <param name="systemSound">
+          <see cref="T:System.Media.SystemSound" />システム サウンドを再生するを表すオブジェクト。</param>
+        <summary>システム サウンドを再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `PlaySystemSound`メソッドによって記述されているシステム サウンドを再生する`systemSound`; バック グラウンドで 1 回、サウンドを再生します。  
+  
+ 値`systemSound`から共有メンバーのいずれかを指定する必要があります、<xref:System.Media.SystemSounds>クラス。  
+  
+-   <xref:System.Media.SystemSounds.Asterisk%2A>  
+  
+-   <xref:System.Media.SystemSounds.Beep%2A>  
+  
+-   <xref:System.Media.SystemSounds.Exclamation%2A>  
+  
+-   <xref:System.Media.SystemSounds.Hand%2A>  
+  
+-   <xref:System.Media.SystemSounds.Question%2A>  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Audio.PlaySystemSound`システム サウンドを再生する方法です。  
+  
+ [!code-vb[VbVbalrMyComputer#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#17)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="systemSound" /> は <see langword="Nothing" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Audio.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バック グラウンドで再生するサウンドを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Audio.Stop`メソッドによって開始されたバック グラウンドで再生するサウンドを停止する、`My.Computer.Audio.Play`メソッドです。  
+  
+ 一般に、アプリケーションでループ サウンドを再生する場合は、どこかの時点でそのサウンドを停止する必要があります。  
+  
+ 詳細については、次を参照してください。[サウンドの再生に関して](~/docs/visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Audio.Stop`背景を再生中または使用して、サウンドのループを現在のアプリケーションを停止する方法、`My.Computer.Audio.Play`バック グラウンド サウンドのループで再生する方法です。  
+  
+ [!code-vb[VbVbalrMyComputer#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#19)]  
+  
+ このコード例は、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 これらのファイルを介してアクセス、`My.Resources`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

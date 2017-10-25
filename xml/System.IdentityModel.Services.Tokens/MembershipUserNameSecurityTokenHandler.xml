@@ -1,0 +1,151 @@
+<Type Name="MembershipUserNameSecurityTokenHandler" FullName="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public class MembershipUserNameSecurityTokenHandler : System.IdentityModel.Tokens.UserNameSecurityTokenHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MembershipUserNameSecurityTokenHandler extends System.IdentityModel.Tokens.UserNameSecurityTokenHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.UserNameSecurityTokenHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>A<see cref="T:System.IdentityModel.Tokens.UserNameSecurityTokenHandler" />を検証する、<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" />構成を使用して<see cref="T:System.Web.Security.MembershipProvider" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipUserNameSecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler" />アプリケーション用に構成されている既定のメンバーシップ プロバイダーを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションの既定のメンバーシップ プロバイダーが構成されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipUserNameSecurityTokenHandler (System.Web.Security.MembershipProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Security.MembershipProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.#ctor(System.Web.Security.MembershipProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.Security.MembershipProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">トークンの検証に使用するメンバーシップ プロバイダー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler" />を指定されたメンバーシップ プロバイダーを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateToken">
+      <MemberSignature Language="C#" Value="public override bool CanValidateToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanValidateToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.CanValidateToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスが型のセキュリティ トークンを検証できるかどうかを示す値を取得<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" />です。 常に <see langword="true" />。</summary>
+        <value>
+          <see langword="true" />トークン ハンドラーは、ユーザー名セキュリティ トークンを検証できる場合それ以外の場合、<see langword="false" />です。 常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public override void LoadCustomConfiguration (System.Xml.XmlNodeList customConfigElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList customConfigElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customConfigElements" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="customConfigElements">カスタムの XML 要素です。</param>
+        <summary>XML からカスタム構成を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MembershipProvider">
+      <MemberSignature Language="C#" Value="public System.Web.Security.MembershipProvider MembershipProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Security.MembershipProvider MembershipProvider" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Security.MembershipProvider" />現在のインスタンスに対して構成されています。</summary>
+        <value>構成済みのメンバーシップ プロバイダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.ValidateToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証に使用するセキュリティ トークンです。</param>
+        <summary>構成されたを使用して、指定したセキュリティ トークンを検証<see cref="T:System.Web.Security.MembershipProvider" />です。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成済みのメンバーシップ プロバイダーがを通じて参照される、<xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="token" />インスタンスではない<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenValidationException">
+          <paramref name="token" />構成済みの検証に失敗しました<see cref="T:System.Web.Security.MembershipProvider" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

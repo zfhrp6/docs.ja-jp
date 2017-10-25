@@ -1,0 +1,225 @@
+<Type Name="WSTrustServiceHost" FullName="System.ServiceModel.Security.WSTrustServiceHost">
+  <TypeSignature Language="C#" Value="public class WSTrustServiceHost : System.ServiceModel.ServiceHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSTrustServiceHost extends System.ServiceModel.ServiceHost" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.WSTrustServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ServiceHost</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.ServiceModel.ServiceHost" />を登録するため、<see cref="T:System.IdentityModel.SecurityTokenService" />サービス ホストが登録されている複数のエンドポイントが構成に登録されているリスナーの数に基づきます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.ServiceModel.Security.WSTrustServiceHost>クラスは、次を提供します。  
+  
+-   Ws-trust エンドポイントを追加、<xref:System.ServiceModel.ServiceHost>に基づいて、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.TrustEndpoints%2A>プロパティです。  
+  
+-   場合、ベース アドレス経由でメタデータを有効に、<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DisableWsdl%2A>プロパティに設定されている`false`です。  
+  
+-   上のサービス証明書を構成、<xref:System.ServiceModel.ServiceHost>資格情報をサービスする場合は、WIF 構成セクションは、サービス証明書を指定します。 WCF 構成の同等のサービス証明書の設定をオーバーライドがこれに注意してください。  
+  
+-   自体で ExtensibleSecurityCredentials.ConfigureServiceHost メソッドを呼び出すことにより、IdentityModel トークン ハンドラーをセキュリティ処理パイプラインに統合します。  
+  
+ <xref:System.ServiceModel.Security.WSTrustServiceHost>クラスをオーバーライドすると、この動作をカスタマイズすることがあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustServiceHost (System.IdentityModel.Configuration.SecurityTokenServiceConfiguration securityTokenServiceConfiguration, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Configuration.SecurityTokenServiceConfiguration securityTokenServiceConfiguration, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.#ctor(System.IdentityModel.Configuration.SecurityTokenServiceConfiguration,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityTokenServiceConfiguration" Type="System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="securityTokenServiceConfiguration">A<see cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />サービス ホストを初期化するために使用する STS の設定を格納しています。</param>
+        <param name="baseAddresses">配列<see cref="T:System.Uri" />サービス ホストのベース アドレスを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.WSTrustServiceHost" />指定したベース アドレスを持つクラスし、サービス (STS) の構成設定。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の<xref:System.ServiceModel.Security.WSTrustServiceContract>指定を使用して作成<xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration>インスタンス。  
+  
+ <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration>の 1 回限りの初期化のインスタンスが使用される、 <xref:System.ServiceModel.ServiceHost>; そのため、ホストが初期化された後の構成のインスタンスのプロパティの設定が動作の変更にならない可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustServiceHost (System.ServiceModel.Security.WSTrustServiceContract serviceContract, params Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Security.WSTrustServiceContract serviceContract, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.#ctor(System.ServiceModel.Security.WSTrustServiceContract,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceContract" Type="System.ServiceModel.Security.WSTrustServiceContract" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="serviceContract">A<see cref="T:System.ServiceModel.Security.WSTrustServiceContract" />を使用するサービス コントラクトを表すです。</param>
+        <param name="baseAddresses">配列<see cref="T:System.Uri" />サービス ホストのベース アドレスを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.WSTrustServiceHost" />指定したベース アドレスとサービス コントラクトを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseAddresses" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="serviceContract" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="protected override void ApplyConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.ApplyConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成ファイルからサービスの説明情報を読み込んでが構築されることをランタイムに適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureMetadata">
+      <MemberSignature Language="C#" Value="protected virtual void ConfigureMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ConfigureMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.ConfigureMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービス ホストのメタデータ (WSDL) を構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、サービス ホストのベース アドレスを評価し、http、https、net.tcp、mex エンドポイントを追加および net.pipe のアドレス、のみと mex エンドポイントあらかじめ追加していないユーザーがされます。 Http および https アドレス、HTTP と HTTPS を WSDL の取得のため、GET メカニズムを有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRuntime">
+      <MemberSignature Language="C#" Value="protected override void InitializeRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeRuntime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.InitializeRuntime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基底クラス メソッドのオーバーライド。 構成、<see cref="T:System.ServiceModel.ServiceConfiguration" />サービス ホストにして、基本実装を呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.ServiceModel.Security.WSTrustServiceHost.UpdateServiceConfiguration%2A>メソッドして基本実装を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenServiceConfiguration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.SecurityTokenServiceConfiguration SecurityTokenServiceConfiguration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.SecurityTokenServiceConfiguration SecurityTokenServiceConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustServiceHost.SecurityTokenServiceConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.SecurityTokenServiceConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスにこのセキュリティ トークン サービス (STS) の構成を取得します。</summary>
+        <value>STS 構成します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceContract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.WSTrustServiceContract ServiceContract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.WSTrustServiceContract ServiceContract" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustServiceHost.ServiceContract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.WSTrustServiceContract</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられているサービス コントラクトを取得します。</summary>
+        <value>このインスタンスのサービス コントラクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateServiceConfiguration">
+      <MemberSignature Language="C#" Value="protected virtual void UpdateServiceConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void UpdateServiceConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustServiceHost.UpdateServiceConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>上書き、<see cref="P:System.ServiceModel.Description.ServiceCredentials.IdentityConfiguration" />上、<see cref="P:System.ServiceModel.ServiceHostBase.Credentials" />をサービス ホストのプロパティ、<see cref="P:System.ServiceModel.Security.WSTrustServiceHost.SecurityTokenServiceConfiguration" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

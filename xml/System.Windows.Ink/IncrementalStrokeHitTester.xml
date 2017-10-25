@@ -1,0 +1,103 @@
+<Type Name="IncrementalStrokeHitTester" FullName="System.Windows.Ink.IncrementalStrokeHitTester">
+  <TypeSignature Language="C#" Value="public class IncrementalStrokeHitTester : System.Windows.Ink.IncrementalHitTester" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IncrementalStrokeHitTester extends System.Windows.Ink.IncrementalHitTester" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.IncrementalStrokeHitTester" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Ink.IncrementalHitTester</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動的にヒットは、消しゴム パスを使用してストロークをテストします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.IncrementalStrokeHitTester>ヒットは、消しゴムのパスとそのストローク交差しているときに決定することによりストロークをテストします。 使用して、<xref:System.Windows.Ink.IncrementalHitTester.AddPoints%2A>メソッドへのポインターを追加するイベントのスタイラス、<xref:System.Windows.Ink.IncrementalStrokeHitTester>です。 ポイントが追加されたとき、<xref:System.Windows.Ink.IncrementalStrokeHitTester>交差、 <xref:System.Windows.Ink.Stroke>、<xref:System.Windows.Ink.IncrementalStrokeHitTester>を発生させます、<xref:System.Windows.Ink.IncrementalStrokeHitTester.StrokeHit>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、動的にその一部分を消去する方法を示します、<xref:System.Windows.Ink.Stroke>です。 ユーザーがインクを消去できるようにするコントロールを作成するを参照してください。[する方法: カスタム コントロールでインクを消去](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)です。  
+  
+ [!code-csharp[InkEraser#2](~/samples/snippets/csharp/VS_Snippets_Wpf/InkEraser/CSharp/InkEraser.cs#2)]
+ [!code-vb[InkEraser#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkEraser/VisualBasic/InkEraser.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddPointsCore">
+      <MemberSignature Language="C#" Value="protected override void AddPointsCore (System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt; points);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddPointsCore(class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Point&gt; points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.IncrementalStrokeHitTester.AddPointsCore(System.Collections.Generic.IEnumerable{System.Windows.Point})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Point&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="points">追加するポイント。</param>
+        <summary>ポイントを追加、<see cref="T:System.Windows.Ink.IncrementalHitTester" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStrokeHit">
+      <MemberSignature Language="C#" Value="protected void OnStrokeHit (System.Windows.Ink.StrokeHitEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnStrokeHit(class System.Windows.Ink.StrokeHitEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Ink.IncrementalStrokeHitTester.OnStrokeHit(System.Windows.Ink.StrokeHitEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgs" Type="System.Windows.Ink.StrokeHitEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgs">イベント データ。</param>
+        <summary><see cref="E:System.Windows.Ink.IncrementalStrokeHitTester.StrokeHit" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrokeHit">
+      <MemberSignature Language="C#" Value="public event System.Windows.Ink.StrokeHitEventHandler StrokeHit;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Ink.StrokeHitEventHandler StrokeHit" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Ink.IncrementalStrokeHitTester.StrokeHit" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeHitEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Ink.IncrementalStrokeHitTester" />インクと交差する<see cref="T:System.Windows.Ink.Stroke" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、動的にその一部分を消去する方法を示します、<xref:System.Windows.Ink.Stroke>です。 ユーザーがインクを消去できるようにするコントロールを作成するを参照してください。[する方法: カスタム コントロールでインクを消去](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)です。  
+  
+ [!code-csharp[InkEraser#2](~/samples/snippets/csharp/VS_Snippets_Wpf/InkEraser/CSharp/InkEraser.cs#2)]
+ [!code-vb[InkEraser#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkEraser/VisualBasic/InkEraser.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

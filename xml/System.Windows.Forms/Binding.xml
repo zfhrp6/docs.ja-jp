@@ -1,0 +1,1210 @@
+<Type Name="Binding" FullName="System.Windows.Forms.Binding">
+  <TypeSignature Language="C#" Value="public class Binding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Binding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Binding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ListBindingConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトのプロパティ値とコントロールのプロパティ値との間の簡易バインドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Binding>クラスを作成して、コントロールのプロパティと、オブジェクトのプロパティまたはオブジェクトの一覧の現在のオブジェクトのプロパティのいずれかの間の単純なバインドを保持します。  
+  
+ バインドする場合は、最初の例として、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>コントロールを`FirstName`のプロパティ、`Customer`オブジェクト。 バインドする場合は、2 番目の例として、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>コントロールを`FirstName`のプロパティ、<xref:System.Data.DataTable>顧客を格納しています。  
+  
+ <xref:System.Windows.Forms.Binding>クラスすることもできますを表示するための値を書式設定、<xref:System.Windows.Forms.Binding.Format>イベントを使用して書式設定された値を取得して、<xref:System.Windows.Forms.Binding.Parse>イベント。  
+  
+ 構築するときに、<xref:System.Windows.Forms.Binding>インスタンス<xref:System.Windows.Forms.Binding.%23ctor%2A>コンス トラクター、3 つの項目を指定する必要があります。  
+  
+-   バインドするコントロール プロパティの名前。  
+  
+-   データ ソース。  
+  
+-   リストまたはデータ ソースのプロパティに解決されるナビゲーション パスです。 ナビゲーション パスは、オブジェクトの作成にも使用<xref:System.Windows.Forms.Binding.BindingMemberInfo%2A>プロパティです。  
+  
+ まず、データをバインドするコントロール プロパティの名前を指定する必要があります。 たとえば、データを表示する、<xref:System.Windows.Forms.TextBox>コントロールを指定、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティです。  
+  
+ 次に、データ ソースとして、次の表に、クラスのいずれかのインスタンスを指定できます。  
+  
+  3 番目に、空の文字列をとりますナビゲーション パスを指定する必要があります ("")、1 つのプロパティ名、または名のピリオドで区切った階層。 ナビゲーション パスを空の文字列に設定した場合、<xref:System.Object.ToString%2A>メソッドは基になるデータ ソース オブジェクトで呼び出されます。  
+  
+ データ ソースがある場合、 <xref:System.Data.DataTable>、複数を含めることができますを<xref:System.Data.DataColumn>オブジェクトを特定の列を解決するのには、ナビゲーション パスを使用する必要があります。  
+  
+> [!NOTE]
+>  データ ソースの場合は、 <xref:System.Data.DataSet>、 <xref:System.Data.DataViewManager>、または<xref:System.Data.DataTable>、実際にバインドする、<xref:System.Data.DataView>です。 したがって、バインドされた行が、実際には<xref:System.Data.DataRowView>オブジェクト。  
+  
+ データ ソースが複数含まれるオブジェクトに設定されている場合は、ピリオドで区切ったナビゲーション パスが必要<xref:System.Data.DataTable>オブジェクト (など、<xref:System.Data.DataSet>または<xref:System.Data.DataViewManager>)。 (その他のクラス オブジェクトを返すプロパティを持つクラス) などの他のオブジェクトへの参照を返すプロパティを持つオブジェクトをバインドするときにピリオド区切りのナビゲーション パスを使用することもできます。 たとえば、すべて次のナビゲーション パスでは、有効なデータ フィールドについて説明します。  
+  
+-   「1 つ」  
+  
+-   "Suppliers.CompanyName"  
+  
+-   "Regions.regionsToCustomers.CustomerFirstName"  
+  
+-   "Regions.regionsToCustomers.customersToOrders.ordersToDetails.Quantity"  
+  
+ パスの各メンバーには、プロパティ (整数)、単一の値に解決されるか、(文字列の配列) などの値の一覧を返すことができます。 パス内の各メンバーは、リストまたはプロパティが、プロパティに最後のメンバーを解決する必要があります。 各メンバーは、前のメンバーには:"1 つ、<xref:System.Drawing.Size.Height%2A>現在のプロパティ<xref:System.Drawing.Size>です。"Regions.regionsToCustomers.CustomerFirstName"に解決されます名、現在の顧客の顧客が現在の地域の顧客のいずれか。  
+  
+ A<xref:System.Data.DataRelation>リンクする 1 つの値の一覧を返します<xref:System.Data.DataTable>1 秒あたりに<xref:System.Data.DataTable>で、<xref:System.Data.DataSet>です。 場合、<xref:System.Data.DataSet>が含まれています<xref:System.Data.DataRelation>オブジェクトとしてデータ メンバーを指定することができます、<xref:System.Data.DataTable.TableName%2A>続けて、 <xref:System.Data.DataRelation.RelationName%2A>、し、<xref:System.Data.DataColumn.ColumnName%2A>です。 たとえば場合、 <xref:System.Data.DataTable> "Suppliers"という名前が含まれています、 <xref:System.Data.DataRelation> "suppliers2products"という名前をデータ メンバーで"Suppliers.suppliers2products.ProductName"可能性があります。  
+  
+ データ ソースは、関連するクラスのセットで構成できます。 たとえば、太陽系を一連のクラスがあるとします。 という名前のクラス`System`という名前のプロパティを含む`Stars`のコレクションを返す`Star`オブジェクト。 各`Star`オブジェクトが持つ`Name`と`Mass`プロパティと同様に、`Planets`プロパティのコレクションを返す`Planet`オブジェクト。 このシステムで惑星も`Mass`と`Name`プロパティです。 各`Planet`オブジェクトをさらに、`Moons`プロパティのコレクションを返す`Moon`オブジェクト、それぞれが持つも`Name`と`Mass`プロパティです。 指定した場合、`System`オブジェクト データ ソースとしてのデータ メンバーとして、次のいずれかを指定できます。  
+  
+-   "Stars.Name"  
+  
+-   "Stars.Mass"  
+  
+-   "Stars.Planets.Name"  
+  
+-   "Stars.Planets.Mass"  
+  
+-   "Stars.Planets.Moons.Name"  
+  
+-   "Stars.Planets.Moons.Mass"  
+  
+ 機能のコレクションのことができる単純バインド コントロール<xref:System.Windows.Forms.Binding>内のオブジェクト、 <xref:System.Windows.Forms.ControlBindingsCollection>、コントロールのを介してアクセスできる<xref:System.Windows.Forms.Control.DataBindings%2A>プロパティです。 追加する、<xref:System.Windows.Forms.Binding>を呼び出すことによってコレクションに、<xref:System.Windows.Forms.ControlBindingsCollection.Add%2A>メソッド、オブジェクトのプロパティ (または一覧の現在のオブジェクトのプロパティ) これにより、コントロールのプロパティをバインドします。  
+  
+ 単純な連結できますから派生した任意のオブジェクトを<xref:System.Windows.Forms.Control?displayProperty=nameWithType>、たとえば、次の Windows コントロールをクラスします。  
+  
+-   <xref:System.Windows.Forms.Button>  
+  
+-   <xref:System.Windows.Forms.CheckBox>  
+  
+-   <xref:System.Windows.Forms.CheckedListBox>  
+  
+-   <xref:System.Windows.Forms.ComboBox>  
+  
+-   <xref:System.Windows.Forms.DateTimePicker>  
+  
+-   <xref:System.Windows.Forms.DomainUpDown>  
+  
+-   <xref:System.Windows.Forms.GroupBox>  
+  
+-   <xref:System.Windows.Forms.HScrollBar>  
+  
+-   <xref:System.Windows.Forms.Label>  
+  
+-   <xref:System.Windows.Forms.LinkLabel>  
+  
+-   <xref:System.Windows.Forms.ListBox>  
+  
+-   <xref:System.Windows.Forms.ListView>  
+  
+-   <xref:System.Windows.Forms.MonthCalendar>  
+  
+-   <xref:System.Windows.Forms.NumericUpDown>  
+  
+-   <xref:System.Windows.Forms.PictureBox>  
+  
+-   <xref:System.Windows.Forms.ProgressBar>  
+  
+-   <xref:System.Windows.Forms.RadioButton>  
+  
+-   <xref:System.Windows.Forms.RichTextBox>  
+  
+-   <xref:System.Windows.Forms.ScrollBar>  
+  
+-   <xref:System.Windows.Forms.StatusBar>  
+  
+-   <xref:System.Windows.Forms.TextBox>  
+  
+-   <xref:System.Windows.Forms.TreeView>  
+  
+-   <xref:System.Windows.Forms.VScrollBar>  
+  
+> [!NOTE]
+>  のみ、<xref:System.Windows.Forms.ListControl.SelectedValue%2A>のプロパティ、 <xref:System.Windows.Forms.ComboBox>、 <xref:System.Windows.Forms.CheckedListBox>、および<xref:System.Windows.Forms.ListBox>コントロールは、単純なバインドです。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase>クラスはすべてを管理する抽象クラス、<xref:System.Windows.Forms.Binding>特定のデータ ソースおよびデータ メンバーのオブジェクト。 派生したクラス<xref:System.Windows.Forms.BindingManagerBase>は、<xref:System.Windows.Forms.CurrencyManager>と<xref:System.Windows.Forms.PropertyManager>クラスです。 方法、<xref:System.Windows.Forms.Binding>が管理されているかどうかによって異なります、<xref:System.Windows.Forms.Binding>がリストのバインディングまたはプロパティのバインディングです。 たとえば、リストのバインディングの場合は、行うこともできます、<xref:System.Windows.Forms.BindingManagerBase>を指定する、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>一覧にある、 <xref:System.Windows.Forms.BindingManagerBase.Position%2A>、したがって、決定 (外の一覧ですべての項目) には、どの項目がコントロールにバインドが実際にします。 適切な戻ります<xref:System.Windows.Forms.BindingManagerBase>を使用して、<xref:System.Windows.Forms.BindingContext>です。  
+  
+ 同じにバインドされるコントロールのセットに新しい行を追加する<xref:System.Windows.Forms.Binding.DataSource%2A>を使用して、<xref:System.Windows.Forms.BindingManagerBase.AddNew%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>クラスです。 使用して、<xref:System.Windows.Forms.BindingContext.Item%2A>のプロパティ、<xref:System.Windows.Forms.BindingContext>を返す、適切なクラス<xref:System.Windows.Forms.CurrencyManager>です。 新しい行の追加をエスケープするために使用して、<xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、単純データ バインディングを示すいくつかのコントロールを Windows フォームを作成します。 例は、作成、<xref:System.Data.DataSet>という 2 つのテーブルを持つ`Customers`と`Orders`、および<xref:System.Data.DataRelation>という名前`custToOrders`です。 4 つのコントロール (、 <xref:System.Windows.Forms.DateTimePicker> 3<xref:System.Windows.Forms.TextBox>コントロール) は、テーブル内の列にバインドされたデータ。 各コントロールの例を作成し、追加、<xref:System.Windows.Forms.Binding>を使用してコントロールを<xref:System.Windows.Forms.Control.DataBindings%2A>プロパティです。 この例を返します、<xref:System.Windows.Forms.BindingManagerBase>フォームの各テーブルに対して<xref:System.Windows.Forms.BindingContext>です。 次の 4 つ<xref:System.Windows.Forms.Button>インクリメントまたはデクリメントの制御、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティを<xref:System.Windows.Forms.BindingManagerBase>オブジェクト。  
+  
+ [!code-cpp[Classic Binding Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />クラス、データ ソースの指定されたデータ メンバーに指定されたコントロールのプロパティを単純なバインドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のデータ ソースの次のクラスのインスタンスを指定できます。  
+  
+-   <xref:System.Data.DataSet>  
+  
+-   <xref:System.Data.DataTable>  
+  
+-   <xref:System.Data.DataView>  
+  
+-   <xref:System.Data.DataViewManager>  
+  
+-   <xref:System.Windows.Forms.BindingSource>  
+  
+-   実装するクラス、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のクラス  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>クラスの作成に関する詳細について、`dataMember`文字列。  
+  
+ コントロールのプロパティへのバインドを作成するときに、新しい<xref:System.Windows.Forms.Binding>バインドされたコントロールによって公開されるイベントを検査し、2 つの特定のイベントにアタッチします。  
+  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
+  
+-   という名前のイベント*PropertyName* `Changed` (たとえば、 <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
+  
+ 存在しないプロパティにバインドしようとすると、<xref:System.ArgumentException>場合にスローされます、<xref:System.Windows.Forms.Binding>をコントロールの追加は<xref:System.Windows.Forms.Control.DataBindings%2A?displayProperty=nameWithType>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例のバインド、<xref:System.Windows.Forms.TextBox>コントロール内のテーブル列を<xref:System.Data.DataSet>という`myDataSet`です。 例では、宣言されていることが必要です`myDataSet`モジュールの宣言セクションにします。  
+  
+ [!code-cpp[Classic Binding.Binding Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.Binding Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.Binding Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.Binding Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.Binding Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.Binding Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="propertyName" />どちらも、コントロールの有効なプロパティも、空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />を指定されたコントロールのプロパティをデータ ソースの指定されたデータ メンバーにバインドでき、必要に応じて書式を適用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されたプロパティは、読み取り専用プロパティです。</exception>
+        <exception cref="T:System.Exception">書式設定が無効になっていると<paramref name="propertyName" />がどちらも、コントロールの有効なプロパティも、空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="dataSourceUpdateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="dataSourceUpdateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />指定されたデータ ソースの指定されたデータ メンバーに指定したコントロール プロパティをバインドするクラス。 オプションで書式を有効にしたり、特定の更新設定に基づいてデータ ソースに値を反映したりできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のデータ ソースの次のクラスのインスタンスを指定できます。  
+  
+-   <xref:System.Data.DataSet>  
+  
+-   <xref:System.Data.DataTable>  
+  
+-   <xref:System.Data.DataView>  
+  
+-   <xref:System.Data.DataViewManager>  
+  
+-   <xref:System.Windows.Forms.BindingSource>  
+  
+-   実装するクラス、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のクラス  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>クラスの作成に関する詳細について、`dataMember`文字列。  
+  
+ コントロールのプロパティへのバインドを作成するときに、新しい<xref:System.Windows.Forms.Binding>バインドされたコントロールによって公開されるイベントを検査し、2 つの特定のイベントにアタッチします。  
+  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>。  
+  
+-   という名前のイベント*PropertyName* `Changed` (たとえば、 <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されるデータ ソースまたはデータ メンバーまたはコントロール プロパティは、コレクション内の別のバインドに関連付けられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="dataSourceUpdateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="dataSourceUpdateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue"><see cref="T:System.Object" />場合は、データ ソースの値にバインドされたコントロール プロパティに適用されるは<see cref="T:System.DBNull" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />指定されたデータ ソースの指定されたデータ メンバーに指定されたコントロールのプロパティをバインドするクラス。 必要に応じて書式設定を有効に、指定した更新設定に基づいてデータ ソースに値を反映し、設定プロパティを指定したときの値、<see cref="T:System.DBNull" />がデータ ソースから返されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のデータ ソースの次のクラスのインスタンスを指定できます。  
+  
+-   <xref:System.Data.DataSet>  
+  
+-   <xref:System.Data.DataTable>  
+  
+-   <xref:System.Data.DataView>  
+  
+-   <xref:System.Data.DataViewManager>  
+  
+-   <xref:System.Windows.Forms.BindingSource>  
+  
+-   実装するクラス、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のクラス  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>クラスの作成に関する詳細について、`dataMember`文字列。  
+  
+ コントロールのプロパティへのバインドを作成するときに、新しい<xref:System.Windows.Forms.Binding>バインドされたコントロールによって公開されるイベントを検査し、2 つの特定のイベントにアタッチします。  
+  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
+  
+-   という名前のイベント*PropertyName* `Changed` (たとえば、 <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されるデータ ソースまたはデータ メンバーまたはコントロール プロパティは、コレクション内の別のバインドに関連付けられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="dataSourceUpdateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+        <Parameter Name="formatString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="dataSourceUpdateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue"><see cref="T:System.Object" />場合は、データ ソースの値にバインドされたコントロール プロパティに適用されるは<see cref="T:System.DBNull" />します。</param>
+        <param name="formatString">値の表示方法を示す 1 つ以上の書式指定子文字。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />指定されたデータ ソースの指定されたデータ メンバーに指定したコントロール プロパティをバインドするクラス。 必要に応じて有効にされた、指定した書式指定文字列の書式設定指定した更新プログラムの設定に基づいてデータ ソースに値を反映します。指定したプロパティを設定およびときの値、<see cref="T:System.DBNull" />がデータ ソースから返されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のデータ ソースの次のクラスのインスタンスを指定できます。  
+  
+-   <xref:System.Data.DataSet>  
+  
+-   <xref:System.Data.DataTable>  
+  
+-   <xref:System.Data.DataView>  
+  
+-   <xref:System.Data.DataViewManager>  
+  
+-   <xref:System.Windows.Forms.BindingSource>  
+  
+-   実装するクラス、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のクラス  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>クラスの作成に関する詳細について、`dataMember`文字列。  
+  
+ コントロールのプロパティへのバインドを作成するときに、新しい<xref:System.Windows.Forms.Binding>バインドされたコントロールによって公開されるイベントを検査し、2 つの特定のイベントにアタッチします。  
+  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
+  
+-   という名前のイベント*PropertyName* `Changed` (たとえば、 <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されるデータ ソースまたはデータ メンバーまたはコントロール プロパティは、コレクション内の別のバインドに関連付けられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString, IFormatProvider formatInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString, class System.IFormatProvider formatInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String,System.IFormatProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="formattingEnabled" Type="System.Boolean" />
+        <Parameter Name="dataSourceUpdateMode" Type="System.Windows.Forms.DataSourceUpdateMode" />
+        <Parameter Name="nullValue" Type="System.Object" />
+        <Parameter Name="formatString" Type="System.String" />
+        <Parameter Name="formatInfo" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">バインドするコントロール プロパティの名前。</param>
+        <param name="dataSource">データ ソースを表す <see cref="T:System.Object" />。</param>
+        <param name="dataMember">バインド先のプロパティまたはリスト。</param>
+        <param name="formattingEnabled">
+          表示されるデータの書式を指定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="dataSourceUpdateMode"><see cref="T:System.Windows.Forms.DataSourceUpdateMode" /> 値のいずれか。</param>
+        <param name="nullValue"><see cref="T:System.Object" />場合は、データ ソースの値にバインドされたコントロール プロパティに適用されるは<see cref="T:System.DBNull" />します。</param>
+        <param name="formatString">値の表示方法を示す 1 つ以上の書式指定子文字。</param>
+        <param name="formatInfo">既定の書式指定動作をオーバーライドする <see cref="T:System.IFormatProvider" /> の実装。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Binding" />指定されたデータ ソースの指定されたデータ メンバーに指定したコントロール プロパティを持つクラス。 必要に応じて有効にされた、指定した書式指定文字列の書式設定指定した更新プログラムの設定に基づいてデータ ソースに値を反映します。有効にされた、指定した書式指定文字列の書式設定指定したプロパティを設定するときの値、 <see cref="T:System.DBNull" /> ; データ ソースから返され、指定された書式プロバイダーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のデータ ソースの次のクラスのインスタンスを指定できます。  
+  
+-   <xref:System.Data.DataSet>  
+  
+-   <xref:System.Data.DataTable>  
+  
+-   <xref:System.Data.DataView>  
+  
+-   <xref:System.Data.DataViewManager>  
+  
+-   <xref:System.Windows.Forms.BindingSource>  
+  
+-   実装するクラス、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のクラス  
+  
+ 参照してください、<xref:System.Windows.Forms.Binding>クラスの作成に関する詳細について、`dataMember`文字列。  
+  
+ コントロールのプロパティへのバインドを作成するときに、新しい<xref:System.Windows.Forms.Binding>バインドされたコントロールによって公開されるイベントを検査し、2 つの特定のイベントにアタッチします。  
+  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
+  
+-   という名前のイベント*PropertyName* `Changed` (たとえば、 <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたプロパティ<paramref name="propertyName" />コントロールに存在しません。  
+  
+ または  
+  
+ 指定されるデータ ソースまたはデータ メンバーまたはコントロール プロパティは、コレクション内の別のバインドに関連付けられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BindableComponent">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IBindableComponent BindableComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IBindableComponent BindableComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindableComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IBindableComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを取得、<see cref="T:System.Windows.Forms.Binding" />に関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Forms.IBindableComponent" /> 、<see cref="T:System.Windows.Forms.Binding" />に関連付けられています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingComplete">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.BindingCompleteEventHandler BindingComplete;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.BindingCompleteEventHandler BindingComplete" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.BindingComplete" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingCompleteEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.Binding.FormattingEnabled" />プロパティに設定されている<see langword="true" />バインディング操作が完了すると、データ ソースまたはその逆のコントロールからデータをプッシュする場合など、</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、次のいずれかで発生する場合の条件<xref:System.Windows.Forms.Binding.FormattingEnabled%2A>は`true`:  
+  
+-   データ ソースのデータは、コントロールのプロパティにプッシュされます。  
+  
+-   コントロールのプロパティからのデータは、データ ソースにプッシュされます。  
+  
+ このイベントは、完了ステータスに関係なくこれらの操作の完了時に発生します。 バインディングの操作に null 値をバインドする場合など、<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティ、例外がスローされますが、<xref:System.Windows.Forms.Binding.BindingComplete>イベントが引き続き発生します。 このイベントのハンドラーが確認するには、成功した場合、エラー、またはバインド プロセスの例外に基づく、適切なアクションを実行、<xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState%2A>のプロパティ、<xref:System.Windows.Forms.BindingCompleteEventArgs>パラメーター。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.Binding.BindingComplete>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingManagerBase">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingManagerBase BindingManagerBase { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingManagerBase BindingManagerBase" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindingManagerBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingManagerBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.BindingManagerBase" /> の <see cref="T:System.Windows.Forms.Binding" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingManagerBase" />これを管理する<see cref="T:System.Windows.Forms.Binding" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.BindingManagerBase>インクリメントまたはデクリメントしてデータ バインド リストを反復処理する、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティです。 <xref:System.Windows.Forms.BindingManagerBase>クラスは抽象クラスです。 <xref:System.Windows.Forms.CurrencyManager>データ バインド リストを管理するには、クラスの継承、<xref:System.Windows.Forms.BindingManagerBase>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingManagerBase>のすべて<xref:System.Windows.Forms.Binding>形式、および印刷、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>それぞれのプロパティ<xref:System.Windows.Forms.BindingManagerBase>です。  
+  
+ [!code-cpp[Classic Binding.BindingManagerBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.BindingManagerBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.BindingManagerBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.BindingManagerBase Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.BindingManagerBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.BindingManagerBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingMemberInfo">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingMemberInfo BindingMemberInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BindingMemberInfo BindingMemberInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindingMemberInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingMemberInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングに基づくに関する情報を含むオブジェクトを取得、<paramref name="dataMember" />内のパラメーター、<see cref="Overload:System.Windows.Forms.Binding.#ctor" />コンス トラクターです。</summary>
+        <value>A<see cref="T:System.Windows.Forms.BindingMemberInfo" />これに関する情報を含む<see cref="T:System.Windows.Forms.Binding" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingMemberInfo>から作成された、`dataMember`に渡された文字列、<xref:System.Windows.Forms.Binding.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingMemberInfo>それぞれの<xref:System.Windows.Forms.Binding>、フォーム、および印刷、 <xref:System.Windows.Forms.BindingMemberInfo.BindingPath%2A>、 <xref:System.Windows.Forms.BindingMemberInfo.BindingField%2A>、および<xref:System.Windows.Forms.BindingMemberInfo.BindingMember%2A>プロパティの値を<xref:System.Windows.Forms.Binding>です。  
+  
+ [!code-cpp[Classic Binding.BindingMemberInfo Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.BindingMemberInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.BindingMemberInfo Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.BindingMemberInfo Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.BindingMemberInfo Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.BindingMemberInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングが属するコントロールを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />にバインディングが属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingManagerBase>特定のデータ ソース、およびそれぞれに関する情報を印刷<xref:System.Windows.Forms.Binding.Control%2A>データ ソースにバインドされているプロパティ。 この例では、<xref:System.Windows.Forms.BindingManagerBase.Bindings%2A>のプロパティ、<xref:System.Windows.Forms.BindingManagerBase>をすべてのコントロールを取得します。  
+  
+ [!code-cpp[Classic Binding.Control Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.Control Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.Control Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.Control Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.Control Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.Control Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlUpdateMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ControlUpdateMode ControlUpdateMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ControlUpdateMode ControlUpdateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.ControlUpdateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ControlUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースの変更が、バインドされたコントロール プロパティにいつ反映されるかを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ControlUpdateMode" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.ControlUpdateMode.OnPropertyChanged" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのデータ ソースを取得します。</summary>
+        <value>データ ソースを表す <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できるデータ ソースは次のとおりです。  
+  
+-   <xref:System.Data.DataSet>。  
+  
+-   <xref:System.Data.DataTable>。  
+  
+-   <xref:System.Data.DataView>。  
+  
+-   <xref:System.Data.DataViewManager>。  
+  
+-   実装する任意のオブジェクト、<xref:System.Collections.IList>インターフェイス  
+  
+-   任意のオブジェクト  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.Binding.DataSource%2A>返されるプロパティを<xref:System.Data.DataSet>です。  
+  
+ [!code-cpp[Classic Binding.DataSource Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.DataSource Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.DataSource Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.DataSource Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.DataSource Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.DataSource Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceNullValue">
+      <MemberSignature Language="C#" Value="public object DataSourceNullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSourceNullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSourceNullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの値がある場合、データ ソースに格納される値の設定を取得または<see langword="null" />または空です。</summary>
+        <value><see cref="T:System.Object" />コントロール プロパティが空の場合、データ ソースに格納されるまたは<see langword="null" />です。 既定値は<see cref="T:System.DBNull" />値型と<see langword="null" />値以外の型のです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.Binding.NullValue%2A>プロパティをデータ ソースが含まれている場合、バインドされたコントロールに表示される値を指定する<xref:System.DBNull>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceUpdateMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataSourceUpdateMode DataSourceUpdateMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataSourceUpdateMode DataSourceUpdateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSourceUpdateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataSourceUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドされたコントロール プロパティの変更がデータ ソースにいつ反映されるかを示す値を取得または設定します。</summary>
+        <value>変更が反映されたことを示す値。 既定値は、<see cref="F:System.Windows.Forms.DataSourceUpdateMode.OnValidation" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合でもなお<xref:System.Windows.Forms.DataSourceUpdateMode.Never>バインドが最初の構築時に、少なくとも 1 つのときに更新されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ConvertEventHandler Format;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ConvertEventHandler Format" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.Format" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ConvertEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのプロパティをデータ値にバインドすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Binding.Format>をコントロールにデータ ソースからデータがプッシュされたときにイベントが発生します。 処理することができます、<xref:System.Windows.Forms.Binding.Format>書式付きデータを表示するためのイベントにデータ ソースから書式設定されていないデータを変換します。 データ ソースにデータがコントロールからプルされた場合に、<xref:System.Windows.Forms.Binding.Parse>アンフォーマット表示された値をイベントが発生、<xref:System.Windows.Forms.Binding.Format>表示用にデータの書式を変更するイベントが発生します。 これにより、バインドされたコントロールが、ユーザーがコントロールに書式設定された、または書式設定されていないデータを入力するかどうかに関係なく、正しく書式設定されたデータを表示します。  
+  
+ <xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>イベントでは、データを表示するためのカスタム形式を作成できます。 たとえば、テーブル内のデータが型の場合<xref:System.Decimal>、現地の通貨の形式で設定して、データを表示することができます、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>のプロパティ、<xref:System.Windows.Forms.ConvertEventArgs>で書式設定された値を<xref:System.Windows.Forms.Binding.Format>イベント。 その結果に表示される値をアンフォーマットする必要があります、<xref:System.Windows.Forms.Binding.Parse>イベント。  
+  
+ <xref:System.Windows.Forms.Binding.Format>イベントが発生するたびに、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>の値、<xref:System.Windows.Forms.BindingManagerBase>変更が含まれます。  
+  
+-   最初にプロパティがバインドされています。  
+  
+-   いつでも、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>変更します。  
+  
+-   ときにデータ バインド リストが並べ替えまたはフィルター選択、これは実行時に、<xref:System.Data.DataView>一覧を提供します。  
+  
+ <xref:System.Windows.Forms.Binding.Format>イベントが発生した後、<xref:System.Windows.Forms.Binding.Parse>イベント。 たとえば、コントロールがフォーカスを失ったときに、その内容は解析されます。 その後すぐに、新しいデータがコントロールにプッシュされると、<xref:System.Windows.Forms.Binding.Format>イベント発生し、新しい内容を書式設定されます。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.Binding>、追加、<xref:System.Windows.Forms.ConvertEventHandler>両方にデリゲート、<xref:System.Windows.Forms.Binding.Parse>と<xref:System.Windows.Forms.Binding.Format>イベント、し、追加、<xref:System.Windows.Forms.Binding>を<xref:System.Windows.Forms.BindingsCollection>の<xref:System.Windows.Forms.TextBox>を介して制御、 <xref:System.Windows.Forms.Control.DataBindings%2A>プロパティ。 `DecimalToCurrencyString`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Format>イベント、バインドされた値を書式設定 (、<xref:System.Decimal>型) の通貨を使用すると、<xref:System.Decimal.ToString%2A>メソッドです。 `CurrencyStringToDecimal`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Parse>イベントがコントロールによって表示される値を変換に戻す、<xref:System.Decimal>型です。  
+  
+ この例では、存在する、<xref:System.Data.DataSet>という`ds`です。  
+  
+ [!code-cpp[Classic Binding.Format Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.Format Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.Format Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.Format Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.Format Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.Format Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatInfo">
+      <MemberSignature Language="C#" Value="public IFormatProvider FormatInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormatInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IFormatProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IFormatProvider" />カスタム書式設定動作を提供します。</summary>
+        <value><see cref="T:System.IFormatProvider" />をカスタム書式設定動作を提供する実装。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると、既定の書式を使用する動作がオーバーライドされます、<xref:System.Windows.Forms.Application.CurrentCulture%2A?displayProperty=nameWithType>プロパティの設定。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatString">
+      <MemberSignature Language="C#" Value="public string FormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値の表示方法を示す書式指定子文字を取得または設定します。</summary>
+        <value>値の表示方法を示す書式指定子文字の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用される書式指定文字列は、標準の .NET Framework の書式指定に従う必要があります。 詳細については、次を参照してください。 [、.NET Framework 型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattingEnabled">
+      <MemberSignature Language="C#" Value="public bool FormattingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FormattingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormattingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール プロパティ データに型変換および書式指定が適用されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />型変換とコントロール プロパティ データの書式設定が有効な場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`もエラー処理動作を有効にし、<xref:System.Windows.Forms.Binding.BindingComplete>イベントが発生します。 このイベントのハンドラーが確認するには、成功した場合、エラー、またはバインド プロセスの例外に基づく、適切なアクションを実行、<xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState%2A>のプロパティ、<xref:System.Windows.Forms.BindingCompleteEventArgs>パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBinding">
+      <MemberSignature Language="C#" Value="public bool IsBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.IsBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングがアクティブかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />バインディングがアクティブである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディングは、これらの条件を満たしているときにアクティブです。  
+  
+-   すべてのプロパティが設定されます。  
+  
+-   ユーザーを呼び出さなかった<xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A>または<xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A>上、<xref:System.Windows.Forms.BindingManagerBase>を<xref:System.Windows.Forms.Binding>に属しています。  
+  
+-   コントロールを<xref:System.Windows.Forms.Binding>が属しているが作成されました。  
+  
+   
+  
+## Examples  
+ 次のコード例の出力、<xref:System.Windows.Forms.Binding.PropertyName%2A>と<xref:System.Windows.Forms.Binding.IsBinding%2A>の各値<xref:System.Windows.Forms.Binding>フォームにします。  
+  
+ [!code-cpp[Classic Binding.IsBinding Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.IsBinding Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.IsBinding Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.IsBinding Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.IsBinding Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.IsBinding Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullValue">
+      <MemberSignature Language="C#" Value="public object NullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.NullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Object" />データ ソースが含まれている場合、コントロールのプロパティとして設定する、<see cref="T:System.DBNull" />値。</summary>
+        <value><see cref="T:System.Object" />データ ソースが含まれている場合、コントロールのプロパティとして設定する、<see cref="T:System.DBNull" />値。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースを含める必要があります<xref:System.DBNull>の<xref:System.Windows.Forms.Binding.NullValue%2A>プロパティを適切に適用します。 データ ソースの種類の場合は、文字列や整数など、型の値、<xref:System.Windows.Forms.Binding.NullValue%2A>プロパティは無視されます。 また、<xref:System.Windows.Forms.Binding.NullValue%2A>に設定されている場合、プロパティは無視されます`null`です。  
+  
+ オブジェクトにコントロール プロパティが設定されている場合、データ ソースに null 値が追加されます<xref:System.Windows.Forms.Binding.NullValue%2A>です。 場合<xref:System.Windows.Forms.Binding.NullValue%2A>設定されている比較で大文字と小文字は、文字列値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBindingComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnBindingComplete (System.Windows.Forms.BindingCompleteEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBindingComplete(class System.Windows.Forms.BindingCompleteEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.BindingCompleteEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Binding.BindingComplete" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.Binding.OnBindingComplete%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.Binding.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.Binding.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFormat">
+      <MemberSignature Language="C#" Value="protected virtual void OnFormat (System.Windows.Forms.ConvertEventArgs cevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFormat(class System.Windows.Forms.ConvertEventArgs cevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cevent" Type="System.Windows.Forms.ConvertEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="cevent">イベント データを格納している <see cref="T:System.Windows.Forms.ConvertEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Binding.Format" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.Binding.OnFormat%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnParse">
+      <MemberSignature Language="C#" Value="protected virtual void OnParse (System.Windows.Forms.ConvertEventArgs cevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnParse(class System.Windows.Forms.ConvertEventArgs cevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cevent" Type="System.Windows.Forms.ConvertEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="cevent">イベント データを格納している <see cref="T:System.Windows.Forms.ConvertEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Binding.Parse" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.Binding.OnParse%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ConvertEventHandler Parse;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ConvertEventHandler Parse" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.Parse" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ConvertEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ連結コントロールの値が変更されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>イベントでは、データを表示するためのカスタム形式を作成できます。 たとえば、テーブル内のデータが型の場合<xref:System.Decimal>、現地の通貨の形式で設定して、データを表示することができます、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>のプロパティ、<xref:System.Windows.Forms.ConvertEventArgs>で書式設定された値を<xref:System.Windows.Forms.Binding.Format>イベント。 その結果に表示される値をアンフォーマットする必要があります、<xref:System.Windows.Forms.Binding.Parse>イベント。  
+  
+ <xref:System.Windows.Forms.Binding.Parse>イベントは、次の条件が発生します。  
+  
+-   後に、<xref:System.Windows.Forms.Control.Validated>のイベント、<xref:System.Windows.Forms.Control>に発生します。  
+  
+-   ときに、<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>と呼びます。  
+  
+-   ときに、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>の<xref:System.Windows.Forms.BindingManagerBase>変更 (つまり、ときに、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>変更)。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.Binding>、追加、<xref:System.Windows.Forms.ConvertEventHandler>両方にデリゲート、<xref:System.Windows.Forms.Binding.Parse>と<xref:System.Windows.Forms.Binding.Format>イベント、し、追加、<xref:System.Windows.Forms.Binding>を<xref:System.Windows.Forms.BindingsCollection>の<xref:System.Windows.Forms.TextBox>を介して制御、 <xref:System.Windows.Forms.Control.DataBindings%2A>プロパティ。 `DecimalToCurrencyString`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Format>イベント、バインドされた値を書式設定 (、<xref:System.Decimal>型) の通貨を使用すると、<xref:System.Decimal.ToString%2A>メソッドです。 `CurrencyStringToDecimal`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Parse>イベントがコントロールによって表示される値を変換に戻す、<xref:System.Decimal>型です。  
+  
+ [!code-cpp[Classic Binding.Parse Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.Parse Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.Parse Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.Parse Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.Parse Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.Parse Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのデータ連結プロパティの名前を取得または設定します。</summary>
+        <value>バインド先のコントロール プロパティの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Binding.PropertyName%2A>をデータ ソースの一覧にバインドするコントロールのプロパティを指定します。 など、画面のプロパティをバインドするほとんどの場合、<xref:System.Windows.Forms.Control.Text%2A>のプロパティ、<xref:System.Windows.Forms.TextBox>コントロール。 ただし、コントロールの任意のプロパティをバインドすることができます、ためプログラムで作成コントロールをデータベースからデータを使用して実行時にします。  
+  
+   
+  
+## Examples  
+ 次のコード例の出力、<xref:System.Windows.Forms.Binding.PropertyName%2A>の各値<xref:System.Windows.Forms.Binding>フォーム上の各コントロールです。  
+  
+ [!code-cpp[Classic Binding.PropertyName Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Binding.PropertyName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Binding.PropertyName Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Binding.PropertyName Example/CS/source.cs#1)]
+ [!code-vb[Classic Binding.PropertyName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Binding.PropertyName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadValue">
+      <MemberSignature Language="C#" Value="public void ReadValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.ReadValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール プロパティをデータ ソースから読み取った値に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValue">
+      <MemberSignature Language="C#" Value="public void WriteValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.WriteValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール プロパティから現在の値を読み取って、データ ソースに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,215 @@
+<Type Name="MobileCapabilities" FullName="System.Web.Mobile.MobileCapabilities">
+  <TypeSignature Language="C#" Value="public class MobileCapabilities : System.Web.HttpBrowserCapabilities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MobileCapabilities extends System.Web.HttpBrowserCapabilities" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Mobile.MobileCapabilities" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpBrowserCapabilities</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>1 つのソースをクライアント デバイスに関する機能の情報にアクセスするためのデバイスの機能に対してクエリを実行するために提供します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Mobile.MobileCapabilities>クラスを拡張、<xref:System.Web.HttpBrowserCapabilities>クラスです。 <xref:System.Web.Mobile.MobileCapabilities>クラスは、ブラウザーのオブジェクトの機能のディクショナリへのタイプ セーフなアクセスを提供する読み取り専用のプロパティの数が多いを提供します。  
+  
+ ブラウザーのプロパティを使用することができます、<xref:System.Web.HttpRequest>オブジェクトのインスタンスを指す、<xref:System.Web.Mobile.MobileCapabilities>を要求しているブラウザーとデバイスの機能を読み取るために使用するオブジェクト。  
+  
+   
+  
+## Examples  
+ ページの読み込み中に、<xref:System.Web.Mobile.MobileCapabilities>オブジェクトを介して機能を取得する、<xref:System.Web.Configuration.HttpCapabilitiesBase.Browser%2A>プロパティで説明したようです。 <xref:System.Web.Configuration.HttpCapabilitiesBase.PreferredRenderingMime%2A>と<xref:System.Web.Configuration.HttpCapabilitiesBase.ScreenCharactersWidth%2A>のプロパティ、<xref:System.Web.Mobile.MobileCapabilities>オブジェクト ブラウザーにレポートのプロパティを設定して、<xref:System.Web.HttpResponse>オブジェクトと、プログラムで設定しても、 `Text`  ページで特定のコントロールのプロパティです。  
+  
+```csharp  
+<%@ Page Inherits="System.Web.UI.MobileControls.MobilePage"   
+    Language="c#" %>  
+<script language="c#" runat="server">  
+public void Page_Load(Object sender, EventArgs e)  
+{  
+    System.Web.Mobile.MobileCapabilities currentCapabilities;  
+    MobileCapabilities currentCapabilities =   
+        (MobileCapabilities)Request.Browser;  
+    // Programatically find the mobile capabilities without using   
+    // DeviceSpecific Filters.  
+    if(currentCapabilities.PreferredRenderingMIME=="text/html")  
+    {  
+        Label2.Text = "You are using an html supported device.";  
+    }  
+    else if(currentCapabilities.PreferredRenderingMIME ==   
+        "text/vnd.wap.wml")  
+    {  
+        Label2.Text = "You are using a wml supported device.";  
+    }  
+    Label1.Text = "Screen Width (chars): " +   
+        currentCapabilities.ScreenCharactersWidth;  
+ }  
+ </script>  
+ <Mobile:Form runat="server" id=frmTemplate >  
+      <mobile:label ID="Label1" runat="server" />  
+      <mobile:label ID="Label2" runat="server" />  
+ </Mobile:Form>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MobileCapabilities ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mobile.MobileCapabilities.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Mobile.MobileCapabilities" /> クラスのインスタンスを作成します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasCapability">
+      <MemberSignature Language="C#" Value="public bool HasCapability (string delegateName, string optionalParameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasCapability(string delegateName, string optionalParameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Mobile.MobileCapabilities.HasCapability(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delegateName" Type="System.String" />
+        <Parameter Name="optionalParameter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="delegateName">デバイス評価メソッド、プロパティ名、または機能のコレクションに含まれている項目。</param>
+        <param name="optionalParameter">省略可能な引数。</param>
+        <summary>デバイス機能を統一的に評価する方法を提供します。 このメソッドは、コントロール構文で記述されたさまざまなデバイス選択基準を実装するために ASP.NET によって内部的に使用されます。 中から選択するこのメソッドを使用するなど、 [&lt;選択肢&gt;要素 (.NET Framework 開発者ガイド)](http://msdn.microsoft.com/en-us/c81bee77-bb45-4211-be0f-e13a040b3c2d) DeviceSpecific/選択肢内の要素を構築します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>
+          指定した機能がデバイスにある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Web.Mobile.MobileCapabilities.HasCapability%2A>デバイスに固有の情報を収集するときにプログラムでのメソッドです。 場合、`capabilityName`パラメーターは、デバイスの評価方法を指定、`optionalArgument`パラメーターはこのメソッドに渡されます。 場合、`capabilityName`パラメーター機能ディクショナリ内のプロパティの名前または項目の指定、<xref:System.Web.Mobile.MobileCapabilities.HasCapability%2A>メソッドでは、プロパティまたは項目と等しいかどうかを確認、`optionalArgument`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="capabilityName" /> パラメーターが、構成ファイルで指定されたデバイス フィルター名、<see cref="T:System.Web.Mobile.MobileCapabilities" /> プロパティ、または <see cref="T:System.Web.Mobile.MobileCapabilities" /> Item コレクション内の項目として含まれていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="delegateName" /> が <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingTypeChtml10">
+      <MemberSignature Language="C#" Value="public static readonly string PreferredRenderingTypeChtml10;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PreferredRenderingTypeChtml10" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Mobile.MobileCapabilities.PreferredRenderingTypeChtml10" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Compact の HTML 1.0 を使用するソース識別子を返します。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイスの表示の種類を割り当てるために、アダプターによって使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingTypeHtml32">
+      <MemberSignature Language="C#" Value="public static readonly string PreferredRenderingTypeHtml32;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PreferredRenderingTypeHtml32" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Mobile.MobileCapabilities.PreferredRenderingTypeHtml32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML 3.2 の場合に使用するソース識別子を返します。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイスの表示の種類を割り当てるため、アダプターで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingTypeWml11">
+      <MemberSignature Language="C#" Value="public static readonly string PreferredRenderingTypeWml11;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PreferredRenderingTypeWml11" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Mobile.MobileCapabilities.PreferredRenderingTypeWml11" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WML 1.1 を使用するソース識別子を返します。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイスの表示の種類を割り当てるため、アダプターで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingTypeWml12">
+      <MemberSignature Language="C#" Value="public static readonly string PreferredRenderingTypeWml12;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string PreferredRenderingTypeWml12" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Mobile.MobileCapabilities.PreferredRenderingTypeWml12" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WML 1.2 を使用するソース識別子を返します。 このフィールドは読み取り専用です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイスの表示の種類を割り当てるため、アダプターで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

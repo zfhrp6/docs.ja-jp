@@ -1,0 +1,447 @@
+<Type Name="SqlError" FullName="System.Data.SqlClient.SqlError">
+  <TypeSignature Language="C#" Value="public sealed class SqlError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SqlError extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlError" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SQL Server から返された警告またはエラーに関する情報を収集します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが作成によって、.NET Framework Data Provider for SQL Server、エラーが発生されます。 インスタンス<xref:System.Data.SqlClient.SqlError>がによって作成および管理、 <xref:System.Data.SqlClient.SqlErrorCollection>、これには作成して、<xref:System.Data.SqlClient.SqlException>クラスです。  
+  
+ 重大度レベルが 10 以下のメッセージは情報メッセージで、ユーザーの入力ミスによってエラーが発生した場合に表示されます。 重大度レベルが 11 ~ 16 は、ユーザーによって生成され、ユーザーによって修正できます。 重大度レベルが 17 ～ 25 のエラーは、ソフトウェアまたはハードウェアのエラーです。 レベルが 17 ときに、18 または 19 のエラーが発生する作業を継続できる、特定のステートメントを実行できない可能性があります。  
+  
+ 重大度レベルが 19 以下の場合、<xref:System.Data.SqlClient.SqlConnection> は開いたままです。 重大度レベルが 20 以上のときは、通常、サーバーは <xref:System.Data.SqlClient.SqlConnection> を閉じます。 ただし、ユーザーは接続を再び開き、続行できます。 どちらの場合も、コマンドを実行しているメソッドによって <xref:System.Data.SqlClient.SqlException> が生成されます。  
+  
+ によって生成されたエラーの詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[原因と解決のデータベース エンジン エラー](http://msdn.microsoft.com/library/ms365262.aspx)です。 重大度レベルの詳細については、次を参照してください。[データベース エンジン エラーの重大度](http://msdn.microsoft.com/library/ms164086.aspx)です。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Class">
+      <MemberSignature Language="C#" Value="public byte Class { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Class" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Class" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL Server から返されたエラーの重大度レベルを取得します。</summary>
+        <value>エラーの重大度レベルを示す 1 ～ 25 の値。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 重大度レベルが 10 以下のメッセージは情報メッセージで、ユーザーの入力ミスによってエラーが発生した場合に表示されます。 重大度レベルが 11 ~ 16 は、ユーザーによって生成され、ユーザーによって修正できます。 重大度レベルが 17 ～ 25 のエラーは、ソフトウェアまたはハードウェアのエラーです。 レベルが 17 ときに、18 または 19 のエラーが発生する作業を継続できる、特定のステートメントを実行できない可能性があります。  
+  
+ 重大度レベルが 19 以下の場合、<xref:System.Data.SqlClient.SqlConnection> は開いたままです。 重大度レベルが 20 以上のときは、通常、サーバーは <xref:System.Data.SqlClient.SqlConnection> を閉じます。 ただし、ユーザーは接続を再び開き、続行できます。 どちらの場合も、コマンドを実行しているメソッドによって <xref:System.Data.SqlClient.SqlException> が生成されます。  
+  
+ SQL Server によって生成されるエラーの詳細については、SQL Server オンライン ブックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumber">
+      <MemberSignature Language="C#" Value="public int LineNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Transact-SQL コマンドのバッチまたはストアド プロシージャ内の、エラーが含まれる行の番号を示します。</summary>
+        <value>Transact-SQL コマンドのバッチまたはストアド プロシージャ内の、エラーが含まれる行の番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行番号は 1 から始まります。 値が 0 の場合は、行番号は適用されません。  
+  
+ SQL Server によって生成されるエラーの詳細については、SQL Server オンライン ブックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを説明するテキストを取得します。</summary>
+        <value>エラーを説明するテキスト。  
+  
+ SQL Server によって生成されるエラーの詳細については、SQL Server オンライン ブックを参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Number">
+      <MemberSignature Language="C#" Value="public int Number { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Number" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Number" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの種類を示す番号を取得します。</summary>
+        <value>エラーの種類を示す番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表では、このプロパティの値について説明します。  
+  
+|エラーの発生元|SqlError.Number|SqlError.State|SqlException が内部 Win32Exception (使用 Framework 4.5 以降)|  
+|---------------------|---------------------|--------------------|--------------------------------------------------------------------------------|  
+|サーバーからのエラー|サーバー エラー コード<br /><br /> この数は、内のエントリに、`master.dbo.sysmessages`テーブル。|通常、0 より大きい値|いいえ|  
+|接続のタイムアウト|-2|0|はい (番号 = 258)|  
+|通信エラー (LocalDB ではない)|Win32 エラー コード|0|はい (番号 = Win32 エラー コード)|  
+|通信エラー (LocalDB)|Win32 エラー コード|0|いいえ|  
+|暗号化機能が一致しません|20|0|いいえ|  
+|LocalDB の起動に失敗しました|Win32 エラー コード|0|いいえ|  
+|読み取り専用ルーティングの障害|0|0|いいえ|  
+|サーバーが持っている重大なエラー処理クエリ|0|0|いいえ|  
+|結果を解析中に処理後のキャンセル|0|0|いいえ|  
+|ユーザー インスタンスを作成できませんでした。|0|0|いいえ|  
+  
+ SQL Server によって生成されるエラーの詳細については、SQL Server オンライン ブックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Procedure">
+      <MemberSignature Language="C#" Value="public string Procedure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Procedure" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Procedure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成したストアド プロシージャまたはリモート プロシージャ コール (RPC) の名前を取得します。</summary>
+        <value>ストアド プロシージャまたは RPC の名前。  
+  
+ SQL Server によって生成されるエラーの詳細については、SQL Server オンライン ブックを参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public string Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Server" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成した SQL Server インスタンスの名前を取得します。</summary>
+        <value>SQL Server インスタンスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public string Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Source" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成したプロバイダーの名前を取得します。</summary>
+        <value>エラーを生成したプロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public byte State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 State" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlError.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いくつかのエラー メッセージは、データベース エンジンのコードの複数のポイントで表示できます。 たとえば、1105 エラーは、さまざまな条件で発生する可能性があります。 エラーが発生するそれぞれ特定の条件に対して、一意の状態コードが割り当てられます。</summary>
+        <value>状態コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状態は、サーバーから受信したエラーのみ設定されます。  
+  
+ によって生成されたエラーの詳細については[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[データベース エンジン エラーについて](http://msdn.microsoft.com/library/ms165761.aspx)です。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError.State Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError.State Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError.State Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlError.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラー メッセージの完全なテキストを取得します。</summary>
+        <returns>エラーの完全なテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式は"SqlError:"」と入力し、 <xref:System.Data.SqlClient.SqlError.Message%2A>、およびスタック トレース。 例:  
+  
+ SqlError:UserId またはパスワードが無効です。 \<スタック トレース >  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.SqlClient.SqlError>内で、<xref:System.Data.SqlClient.SqlErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData SqlError Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlError Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlError Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlError Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

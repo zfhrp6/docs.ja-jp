@@ -1,0 +1,129 @@
+<Type Name="FlatStyle" FullName="System.Windows.Forms.FlatStyle">
+  <TypeSignature Language="C#" Value="public enum FlatStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FlatStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FlatStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コントロールの外観を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体がなどのメンバーによって使用されます<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.GroupBox.FlatStyle%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.Label.FlatStyle%2A?displayProperty=nameWithType>です。  
+  
+ ポップアップ スタイル ボタンの場合は、この列挙体は、いくつかの動作と外観を制御します。 ポップアップ スタイルのコントロールは、上にマウス ポインターを移動するまで、フラットを最初に表示されます。 ポップアップ コントロール上でマウス ポインターを動かしたときにマウス ポインターがこれからもう一度移動するまで、標準のスタイルのコントロールとして表示されます。  
+  
+ 場合システム スタイルが使用される、コントロールの外観は、ユーザーのオペレーティング システムによって決定されます、次のプロパティ値は無視されます: <xref:System.Windows.Forms.Control.BackgroundImage%2A?displayProperty=nameWithType>、 `ImageAlign`、 `Image`、 `ImageIndex`、 `ImageList`、および`TextAlign`です。 さらに、<xref:System.Windows.Forms.Control.BackColor%2A?displayProperty=nameWithType>ボタン コントロールのプロパティは無視されます。 サポートされている場合、ユーザーは、オペレーティング システムの外観の設定を調整することによってコントロールの外観を変更できます。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>のプロパティ、<xref:System.Windows.Forms.RadioButton>と<xref:System.Windows.Forms.CheckBox>クラスがシステムに設定されている、ユーザーのオペレーティング システムによって、コントロールを描画およびチェックの配置がに基づいて、`CheckAlign`と<xref:System.Windows.Forms.ButtonBase.TextAlign%2A?displayProperty=nameWithType>プロパティの値。 `CheckAlign`プロパティの値は変更されませんが、コントロールの外観が影響を受けることができます。 チェック ボックスは水平方向に (左側または中央揃えで表示される左側右寄せの場合はの変更されていません)、コントロールの左または右のエッジに配置し、説明のテキストと同じを垂直方向に揃えます。 ある場合など、<xref:System.Windows.Forms.CheckBox>コントロールを`CheckAlign`のプロパティの値<xref:System.Drawing.ContentAlignment?displayProperty=nameWithType>と<xref:System.Windows.Forms.ButtonBase.TextAlign%2A>のプロパティの値<xref:System.Drawing.ContentAlignment?displayProperty=nameWithType>、および<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>プロパティの値がシステムに設定されている、するチェック ボックスの配置が表示されます<xref:System.Drawing.ContentAlignment?displayProperty=nameWithType>テキストの配置が変更されないままです。  
+  
+> [!CAUTION]
+>  設定、`FlatStyle`プロパティ システムをお勧めできませんが必要場合、コントロールのイメージを表示するコントロールの背景として画像を表示する正確なテキストの配置を実行します。  
+  
+   
+  
+## Examples  
+ .NET Framework のバージョン 1.0 を使用している場合は、Windows XP で使用できる visual スタイルをサポートするために、アプリケーション マニフェストの例を次に示します。 マニフェストは、リソースとして、またはスタンドアロンのテキスト ファイルとして、アプリケーションに追加できます。 マニフェスト ファイルが、実行可能ファイルと同じディレクトリに存在し、テキスト ファイルの名前は、追加のファイル名拡張子 of.manifest で実行可能ファイルの完全な名前である必要があります。 たとえば、MyApp.exe のマニフェスト ファイルは MyApp.exe.manifest になります。 この例では、`FlatStyle`システムをアプリケーションでは、コントロールのプロパティが設定されます。  
+  
+```  
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+ <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
+ <assemblyIdentity  
+     version="1.0.0.0"  
+     processorArchitecture="X86"  
+     name="CompanyName.ProductName.YourApplication"  
+     type="win32"  
+ />  
+ <description>Your application description here.</description>  
+ <dependency>  
+     <dependentAssembly>  
+         <assemblyIdentity  
+             type="win32"  
+             name="Microsoft.Windows.Common-Controls"  
+             version="6.0.0.0"  
+             processorArchitecture="X86"  
+             publicKeyToken="6595b64144ccf1df"  
+             language="*"  
+         />  
+     </dependentAssembly>  
+ </dependency>  
+ </assembly>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flat">
+      <MemberSignature Language="C#" Value="Flat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlatStyle Flat = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlatStyle.Flat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フラットとしたときに、コントロールが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Popup">
+      <MemberSignature Language="C#" Value="Popup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlatStyle Popup = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlatStyle.Popup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールは、ユーザーがマウス ポインターの上に移動して、この時点で 3 次元表示されるまでに、フラットが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Standard">
+      <MemberSignature Language="C#" Value="Standard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlatStyle Standard = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlatStyle.Standard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 次元としたときに、コントロールが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlatStyle System = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlatStyle.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの外観は、ユーザーのオペレーティング システムによって決定されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

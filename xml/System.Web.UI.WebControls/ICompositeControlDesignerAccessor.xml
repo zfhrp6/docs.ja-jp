@@ -1,0 +1,52 @@
+<Type Name="ICompositeControlDesignerAccessor" FullName="System.Web.UI.WebControls.ICompositeControlDesignerAccessor">
+  <TypeSignature Language="C#" Value="public interface ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICompositeControlDesignerAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ICompositeControlDesignerAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に、関連付けられたコントロールの子コントロールを再作成する複合コントロールのデザイナーを許可するインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Web.UI.WebControls.CompositeControl>を実装する、<xref:System.Web.UI.WebControls.ICompositeControlDesignerAccessor>コントロールの呼び出しに関連付けられているそのデザイナーを許可するインターフェイス<xref:System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls%2A>デザイン時のメソッドです。 関連付けられたデザイナーがから派生する必要があります<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>です。  
+  
+ <xref:System.Web.UI.WebControls.ICompositeControlDesignerAccessor>インターフェイスは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RecreateChildControls">
+      <MemberSignature Language="C#" Value="public void RecreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生したコントロールに<see cref="T:System.Web.UI.WebControls.CompositeControl" />デザイン時に子コントロールを再作成します。 コントロールの関連付けられたデザイナーによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls%2A>メソッドにより、複合コントロールのデザイナーがデザイン時にコントロールの子コントロールを再作成します。  
+  
+ <xref:System.Web.UI.WebControls.ICompositeControlDesignerAccessor.RecreateChildControls%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

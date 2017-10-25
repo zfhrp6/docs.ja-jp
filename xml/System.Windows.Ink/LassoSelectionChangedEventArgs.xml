@@ -1,0 +1,62 @@
+<Type Name="LassoSelectionChangedEventArgs" FullName="System.Windows.Ink.LassoSelectionChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class LassoSelectionChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LassoSelectionChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.LassoSelectionChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeselectedStrokes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection DeselectedStrokes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.StrokeCollection DeselectedStrokes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.LassoSelectionChangedEventArgs.DeselectedStrokes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前回なげなわパスから削除されたストロークを取得、<see cref="E:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged" />イベントが発生しました。</summary>
+        <value>A<see cref="T:System.Windows.Ink.StrokeCollection" />前回なげなわパスから削除されたストロークを格納している、<see cref="E:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged" />イベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Ink.Stroke>なげなわパスの境界内ではなくなったときに、なげなわパスから削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedStrokes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection SelectedStrokes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.StrokeCollection SelectedStrokes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.LassoSelectionChangedEventArgs.SelectedStrokes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前回なげなわパスで囲まれたされてがストロークを取得、<see cref="E:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged" />イベントが発生しました。</summary>
+        <value>A<see cref="T:System.Windows.Ink.StrokeCollection" />前回なげなわパスで囲まれたされてがストロークを格納している、<see cref="E:System.Windows.Ink.IncrementalLassoHitTester.SelectionChanged" />イベントが発生しました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

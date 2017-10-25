@@ -1,0 +1,287 @@
+<Type Name="MatrixCamera" FullName="System.Windows.Media.Media3D.MatrixCamera">
+  <TypeSignature Language="C#" Value="public sealed class MatrixCamera : System.Windows.Media.Media3D.Camera" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MatrixCamera extends System.Windows.Media.Media3D.Camera" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.MatrixCamera" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Media3D.Camera</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビューと投影を指定するカメラを変換として<see cref="T:System.Windows.Media.Media3D.Matrix3D" />オブジェクト</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカメラでは、独自のビューおよびプロジェクションのマトリックスを計算するアプリケーションを使用できます。  これにより、カメラが直接サポートされていないアプリケーション、<xref:System.Windows.Media.Media3D.ProjectionCamera>サブクラスです。  
+  
+ 使用して、<xref:System.Windows.Media.Media3D.MatrixCamera>唯一の方法、アプリケーションがビューのプロジェクション/マトリックスとは何を知っていることができます。  
+  
+ A<xref:System.Windows.Media.Media3D.MatrixCamera>を使用してアニメーション化できる、<xref:System.Windows.Media.Media3D.Camera.Transform%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコードを作成、<xref:System.Windows.Media.Media3D.MatrixCamera>設定と、<xref:System.Windows.Media.Media3D.MatrixCamera.ViewMatrix%2A>と<xref:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrix%2A>プロパティです。  
+  
+ [!code-csharp[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixTransform3DView/CSharp/Window1.xaml.cs#matrixtransform3dview3dn11)]
+ [!code-vb[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MatrixTransform3DView/visualbasic/window1.xaml.vb#matrixtransform3dview3dn11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MatrixCamera ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MatrixCamera.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Media3D.MatrixCamera" /> の新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、MatrixCamera を作成し、ViewMatrix と ProjectionMatrix プロパティを設定します。  
+  
+ [!code-csharp[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixTransform3DView/CSharp/Window1.xaml.cs#matrixtransform3dview3dn11)]
+ [!code-vb[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MatrixTransform3DView/visualbasic/window1.xaml.vb#matrixtransform3dview3dn11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MatrixCamera (System.Windows.Media.Media3D.Matrix3D viewMatrix, System.Windows.Media.Media3D.Matrix3D projectionMatrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Media3D.Matrix3D viewMatrix, valuetype System.Windows.Media.Media3D.Matrix3D projectionMatrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MatrixCamera.#ctor(System.Windows.Media.Media3D.Matrix3D,System.Windows.Media.Media3D.Matrix3D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="viewMatrix" Type="System.Windows.Media.Media3D.Matrix3D" />
+        <Parameter Name="projectionMatrix" Type="System.Windows.Media.Media3D.Matrix3D" />
+      </Parameters>
+      <Docs>
+        <param name="viewMatrix">カメラのビューのマトリックスを指定します。</param>
+        <param name="projectionMatrix">カメラの投影行列を指定します。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Media3D.MatrixCamera" />ビューおよび射影の行列からです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、MatrixCamera を作成し、ViewMatrix と ProjectionMatrix プロパティを設定します。  
+  
+ [!code-csharp[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixTransform3DView/CSharp/Window1.xaml.cs#matrixtransform3dview3dn11)]
+ [!code-vb[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MatrixTransform3DView/visualbasic/window1.xaml.vb#matrixtransform3dview3dn11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.MatrixCamera Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.MatrixCamera Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MatrixCamera.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.MatrixCamera</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.MatrixCamera" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.MatrixCamera CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.MatrixCamera CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MatrixCamera.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.MatrixCamera</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.MatrixCamera" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.MatrixCamera.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectionMatrix">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Matrix3D ProjectionMatrix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Matrix3D ProjectionMatrix" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Matrix3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Media3D.Matrix3D" />として射影変換行列。</summary>
+        <value>
+          <see cref="T:System.Windows.Media.Media3D.Matrix3D" />プロジェクション変換を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アプリケーションが独自の投影行列計算の実装に役立ちます。  
+  
+ このプロパティは、ここで、X 座標と Y 座標-1 ~ 1 の範囲と 0 ~ 1 の Z 座標の範囲の正規化されたキューブにカメラ空間から座標系に変換します。  カメラの領域での最小値と最大の Z 座標は、射影の行列が Z 座標に変換する方法によって定義されます。  
+  
+<a name="dependencyPropertyInfo_ProjectionMatrix"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrixProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次のコードを作成、<xref:System.Windows.Media.Media3D.MatrixCamera>設定と、<xref:System.Windows.Media.Media3D.MatrixCamera.ViewMatrix%2A>と<xref:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrix%2A>プロパティです。  
+  
+ [!code-csharp[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixTransform3DView/CSharp/Window1.xaml.cs#matrixtransform3dview3dn11)]
+ [!code-vb[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MatrixTransform3DView/visualbasic/window1.xaml.vb#matrixtransform3dview3dn11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectionMatrixProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ProjectionMatrixProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ProjectionMatrixProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrixProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrix" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewMatrix">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Matrix3D ViewMatrix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Matrix3D ViewMatrix" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.MatrixCamera.ViewMatrix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Matrix3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Media3D.Matrix3D" />ビューの変換行列とします。</summary>
+        <value>A<see cref="T:System.Windows.Media.Media3D.Matrix3D" />位置を表す、方向、および、カメラのベクターをセットアップします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アプリケーションが独自の投影行列計算の実装に役立ちます。  
+  
+ このマトリックスで指定されたカメラのプロパティは、の最上位変換で、異なる場合があります、<xref:System.Windows.Media.Media3D.Model3D>階層。  
+  
+<a name="dependencyPropertyInfo_ViewMatrix"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.MatrixCamera.ViewMatrixProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次のコードを作成、<xref:System.Windows.Media.Media3D.MatrixCamera>設定と、<xref:System.Windows.Media.Media3D.MatrixCamera.ViewMatrix%2A>と<xref:System.Windows.Media.Media3D.MatrixCamera.ProjectionMatrix%2A>プロパティです。  
+  
+ [!code-csharp[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixTransform3DView/CSharp/Window1.xaml.cs#matrixtransform3dview3dn11)]
+ [!code-vb[matrixtransform3dview#MatrixTransform3DView3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MatrixTransform3DView/visualbasic/window1.xaml.vb#matrixtransform3dview3dn11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewMatrixProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewMatrixProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewMatrixProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.MatrixCamera.ViewMatrixProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Media3D.MatrixCamera.ViewMatrix" />依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

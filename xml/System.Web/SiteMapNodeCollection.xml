@@ -1,0 +1,1252 @@
+<Type Name="SiteMapNodeCollection" FullName="System.Web.SiteMapNodeCollection">
+  <TypeSignature Language="C#" Value="public class SiteMapNodeCollection : System.Collections.IList, System.Web.UI.IHierarchicalEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapNodeCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Web.UI.IHierarchicalEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMapNodeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IHierarchicalEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>厳密に型指定のコレクションを提供<see cref="T:System.Web.SiteMapNode" />オブジェクトと実装、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />コレクションのナビゲーションをサポートするインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNodeCollection>クラスの厳密に型指定されたコレクションを提供する<xref:System.Web.SiteMapNode>オブジェクト。 格納<xref:System.Web.SiteMapNode>内部的には 0 から始まる配列内のオブジェクト。  
+  
+ 変更することができます、<xref:System.Web.SiteMapNodeCollection>それが作成されると、最初、しを使用している場合に、コレクションを追加するには、次のメソッドとコピー、および削除<xref:System.Web.SiteMapNode>オブジェクト。  
+  
+-   追加する<xref:System.Web.SiteMapNode>オブジェクトを使用して、 <xref:System.Web.SiteMapNodeCollection.Add%2A>、 <xref:System.Web.SiteMapNodeCollection.AddRange%2A>、および<xref:System.Web.SiteMapNodeCollection.Insert%2A>メソッドです。  
+  
+-   コピーする<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNodeCollection.CopyTo%2A>メソッドです。  
+  
+-   削除する<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNodeCollection.Remove%2A>メソッドです。  
+  
+ 読み取り専用に作成することができます<xref:System.Web.SiteMapNodeCollection>、追加、コピーも削除を許可しない<xref:System.Web.SiteMapNode>、静的なを使用して、オブジェクト<xref:System.Web.SiteMapNodeCollection.ReadOnly%2A>メソッドです。 <xref:System.Web.SiteMapNodeCollection>によって返されるコレクション、<xref:System.Web.SiteMapNode.GetAllNodes%2A?displayProperty=nameWithType>と<xref:System.Web.UI.IHierarchyData.GetChildren%2A>メソッドは読み取り専用では、<xref:System.Web.SiteMapNodeCollection>ときに返される、<xref:System.Web.SiteMapNode.ChildNodes%2A>プロパティは上でアクセス、<xref:System.Web.SiteMapNode>プロバイダーから返されるオブジェクト。 A<xref:System.NotSupportedException>読み取り専用に変更しようとする場合、例外がスローされます<xref:System.Web.SiteMapNodeCollection>既定のインデクサー プロパティを設定するか、次の方法のいずれかを使用します。  
+  
+-   <xref:System.Web.SiteMapNodeCollection.Add%2A>  
+  
+-   <xref:System.Web.SiteMapNodeCollection.AddRange%2A>  
+  
+-   <xref:System.Web.SiteMapNodeCollection.Clear%2A>  
+  
+-   <xref:System.Web.SiteMapNodeCollection.Insert%2A>  
+  
+-   <xref:System.Web.SiteMapNodeCollection.Remove%2A>  
+  
+-   <xref:System.Web.SiteMapNodeCollection.RemoveAt%2A>  
+  
+ 使用して、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>上記のメソッドを呼び出す前にコレクションを確認するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.SiteMapNodeCollection>コレクションし、追加<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドです。 <xref:System.Web.SiteMapNodeCollection>のみ、最初の 2 つの階層レベルを示す、現在のサイト マップのサブセットです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/CS/webform2smccs.aspx#2)]
+ [!code-vb[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/VB/webform2smcvb.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNodeCollection" />クラスで、既定のインスタンスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Web.SiteMapNodeCollection.%23ctor%2A> 、空を作成するコンス トラクター<xref:System.Web.SiteMapNodeCollection>コレクション。 要素を追加することができます、<xref:System.Web.SiteMapNodeCollection>を使用して、 <xref:System.Web.SiteMapNodeCollection.Add%2A>、 <xref:System.Web.SiteMapNodeCollection.AddRange%2A>、または<xref:System.Web.SiteMapNodeCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>を新規作成するコンス トラクター <xref:System.Web.SiteMapNodeCollection> 、コレクションに要素を追加し、<xref:System.Web.SiteMapNodeCollection>で、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッド。  
+  
+ [!code-csharp[System.Web.SiteMapNode_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNode_2/CS/sitemapnode2acs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMapNode_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNode_2/VB/sitemapnode2avb.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeCollection (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">初期容量、<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNodeCollection" />指定した初期容量を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターを作成する、<xref:System.Web.SiteMapNodeCollection>指定した初期容量を持つコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeCollection (System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.#ctor(System.Web.SiteMapNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.SiteMapNodeCollection" /> に追加する <see cref="T:System.Web.SiteMapNode" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNodeCollection" />クラスし、追加、<see cref="T:System.Web.SiteMapNode" />オブジェクトを<see cref="P:System.Collections.CollectionBase.InnerList" />コレクションのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターを作成する、<xref:System.Web.SiteMapNodeCollection>コレクションと 1 つの初期<xref:System.Web.SiteMapNode>オブジェクト。 要素を追加することができます、<xref:System.Web.SiteMapNodeCollection>を使用して、 <xref:System.Web.SiteMapNodeCollection.Add%2A>、 <xref:System.Web.SiteMapNodeCollection.AddRange%2A>、または<xref:System.Web.SiteMapNodeCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.SiteMapNodeCollection>コレクションと 1 つの初期<xref:System.Web.SiteMapNode>オブジェクト、し、追加、<xref:System.Web.SiteMapNodeCollection>の<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドです。 変更することができます、<xref:System.Web.SiteMapNodeCollection>場合でも、個人<xref:System.Web.SiteMapNode>オブジェクトが読み取り専用である可能性があります。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/CS/webform2smccs.aspx#2)]
+ [!code-vb[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/VB/webform2smcvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeCollection (System.Web.SiteMapNode[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapNode[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.#ctor(System.Web.SiteMapNode[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Web.SiteMapNode" />に追加する、<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNodeCollection" />クラスし、型の配列を追加<see cref="T:System.Web.SiteMapNode" />を<see cref="P:System.Collections.CollectionBase.InnerList" />コレクションのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターは、呼び出すことと同じ、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターと要素の追加、<xref:System.Web.SiteMapNodeCollection>使用して、コレクション、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapNodeCollection (System.Web.SiteMapNodeCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapNodeCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.#ctor(System.Web.SiteMapNodeCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNodeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.SiteMapNodeCollection" />を格納している、<see cref="T:System.Web.SiteMapNode" />現在に追加する<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapNodeCollection" />クラスし、指定したすべてのリスト項目を追加<see cref="T:System.Web.SiteMapNodeCollection" />コレクションに、<see cref="P:System.Collections.CollectionBase.InnerList" />コレクションのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターは、呼び出すことと同じ、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>コンス トラクターと要素の追加、<xref:System.Web.SiteMapNodeCollection>使用して、コレクション、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.SiteMapNodeCollection>別を使用してコレクション<xref:System.Web.SiteMapNodeCollection>の<xref:System.Web.SiteMapNode>ベースとしてオブジェクト。 <xref:System.Web.SiteMapNode.GetAllNodes%2A?displayProperty=nameWithType>メソッドを返します、読み取り専用<xref:System.Web.SiteMapNodeCollection>、どのが検出されたときに、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティから返される`true`です。 新しい<xref:System.Web.SiteMapNodeCollection>、読み取り専用に使用して作成された<xref:System.Web.SiteMapNodeCollection>と<xref:System.Web.SiteMapNodeCollection.Add%2A>と<xref:System.Web.SiteMapNodeCollection.Remove%2A>メソッドが正常に呼び出すことができます。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/CS/webform1smccs.aspx#1)]
+ [!code-vb[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/VB/webform1smcvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.Add(System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.SiteMapNode" /> に追加する <see cref="T:System.Web.SiteMapNodeCollection" />。</param>
+        <summary>1 つの追加<see cref="T:System.Web.SiteMapNode" />オブジェクトをコレクション。</summary>
+        <returns>インデックス、<see cref="P:System.Collections.CollectionBase.InnerList" />場所、<see cref="T:System.Web.SiteMapNode" />挿入されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することはできません、<xref:System.Web.SiteMapNode>オブジェクトを読み取り専用か、固定サイズ<xref:System.Web.SiteMapNodeCollection>コレクション。 テストすることができるかどうか、<xref:System.Web.SiteMapNodeCollection>は読み取り専用チェックして、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、新しく作成する方法を示します<xref:System.Web.SiteMapNodeCollection>コレクションに要素を追加するとします。 2 番目のコード例では、カスタムのサイト マップ プロバイダーに要素を追加する方法を示します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>を新規作成するコンス トラクター <xref:System.Web.SiteMapNodeCollection>、しを使って要素を追加、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNode_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNode_2/CS/sitemapnode2acs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMapNode_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNode_2/VB/sitemapnode2avb.aspx.vb#1)]  
+  
+ 次のコード例は、カスタムのサイト マップ プロバイダーの実装を示していてを使用する方法を示します、<xref:System.Web.SiteMapNodeCollection.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Web.SiteMapNodeCollection>要素を追加し、<xref:System.Web.SiteMapNodeCollection>で、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。  
+  
+ このコード例に示されている例のコードの一部である、<xref:System.Web.SiteMapProvider>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/CS/simpletextsitemapprovider.cs#6)]
+ [!code-vb[Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/VB/simpletextsitemapprovider.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (System.Web.SiteMapNode[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Web.SiteMapNode[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.AddRange(System.Web.SiteMapNode[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Web.SiteMapNode" />現在に追加する<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>型の配列を追加<see cref="T:System.Web.SiteMapNode" />をコレクションにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 渡される配列、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドを含めることができます`null`値です。 ただし、これによって、予期しない例外時に、<xref:System.Web.SiteMapNodeCollection>コレクションを操作します。  
+  
+ 追加することはできません、<xref:System.Web.SiteMapNode>オブジェクトを読み取り専用か、固定サイズ<xref:System.Web.SiteMapNodeCollection>です。 テストすることができるかどうか、<xref:System.Web.SiteMapNodeCollection>は読み取り専用チェックして、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (System.Web.SiteMapNodeCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Web.SiteMapNodeCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.AddRange(System.Web.SiteMapNodeCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNodeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.SiteMapNodeCollection" />を格納している、<see cref="T:System.Web.SiteMapNode" />現在に追加するオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>指定したノードが追加<see cref="T:System.Web.SiteMapNodeCollection" />現在のコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNodeCollection>に渡されるコレクション、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドを含めることができます`null`<xref:System.Web.SiteMapNode>オブジェクトです。 ただし、これによって、予期しない例外時に、<xref:System.Web.SiteMapNodeCollection>操作します。  
+  
+ 追加することはできません、<xref:System.Web.SiteMapNode>オブジェクトを読み取り専用か、固定サイズ<xref:System.Web.SiteMapNodeCollection>です。 テストすることができるかどうか、<xref:System.Web.SiteMapNodeCollection>は読み取り専用チェックして、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、作成、変更可能な<xref:System.Web.SiteMapNodeCollection>コレクションし、追加<xref:System.Web.SiteMapNode>オブジェクトを使用して、<xref:System.Web.SiteMapNodeCollection.AddRange%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/CS/webform2smccs.aspx#2)]
+ [!code-vb[System.Web.SiteMapNodeCollection_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_2/VB/webform2smcvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするかどうか、<xref:System.Web.SiteMapNodeCollection>をチェックしてコレクションは読み取り専用、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+ 特定の要素を削除する、<xref:System.Web.SiteMapNodeCollection>を使用して、<xref:System.Web.SiteMapNodeCollection.Remove%2A>または<xref:System.Web.SiteMapNodeCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.Contains(System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.SiteMapNodeCollection" /> 内で検索される <see cref="T:System.Web.SiteMapNode" />。</param>
+        <summary>コレクションに、固有の仕様が含まれるかどうかを判断<see cref="T:System.Web.SiteMapNode" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Web.SiteMapNodeCollection" /> 、指定されたを含む<see cref="T:System.Web.SiteMapNode" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNodeCollection.Contains%2A>メソッドを呼び出すことで等しいかどうかを判断、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.Contains%2A>と<xref:System.Web.SiteMapNodeCollection.IndexOf%2A>のメソッド、<xref:System.Web.SiteMapNodeCollection>クラスです。 コードは 2 つのプロバイダーをチェック`AspNetXmlSiteMapProvider`と`MyXmlSiteMapProvider`、重複しているルート ノードの子ノードです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_4/cs/sourcecs.aspx#1)]
+ [!code-vb[System.Web.SiteMapNodeCollection_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_4/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (System.Web.SiteMapNode[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Web.SiteMapNode[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.CopyTo(System.Web.SiteMapNode[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.SiteMapNode[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まるインデックスを作成する必要がありますがからコピーした要素の先である 1 次元の配列、<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コレクション全体を互換性のある 1 次元配列にコピーします。コピー操作は、コピー先配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNodeCollection.CopyTo%2A>メソッドからデリゲートを<xref:System.Collections.CollectionBase.List%2A?displayProperty=nameWithType>プロパティで、「例外」に記載されている可能性のある例外のアカウント  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ 数<see cref="T:System.Web.SiteMapNode" />ソース内のオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />から使用可能な領域より大きくなって<paramref name="index" />の末尾に<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Web.SiteMapNodeCollection" /> にある要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataSourceView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SiteMapDataSourceView GetDataSourceView (System.Web.UI.WebControls.SiteMapDataSource owner, string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.SiteMapDataSourceView GetDataSourceView(class System.Web.UI.WebControls.SiteMapDataSource owner, string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.GetDataSourceView(System.Web.UI.WebControls.SiteMapDataSource,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.SiteMapDataSource" />
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Web.UI.WebControls.SiteMapDataSource" />ビューに関連付けられているコントロール。</param>
+        <param name="viewName">ビューの名前。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />現在のコレクション内のノードに関連付けられているオブジェクト。</summary>
+        <returns>名前付き<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />の<see cref="T:System.Web.SiteMapNode" />、現在のオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理に使用される、列挙子オブジェクトへの参照を取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerator" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHierarchicalDataSourceView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView GetHierarchicalDataSourceView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView GetHierarchicalDataSourceView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.GetHierarchicalDataSourceView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />現在のコレクション内のノードに関連付けられているオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />の<see cref="T:System.Web.SiteMapNode" />、現在のオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHierarchyData">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.IHierarchyData GetHierarchyData (object enumeratedItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchyData GetHierarchyData(object enumeratedItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.GetHierarchyData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchyData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumeratedItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumeratedItem"><see cref="T:System.Web.UI.IHierarchyData" /> を返す対象オブジェクト。</param>
+        <summary>指定された列挙項目の階層的なデータ項目を返します。</summary>
+        <returns><see cref="M:System.Web.SiteMapNodeCollection.GetHierarchyData(System.Object)" /> に渡されるオブジェクトを表す <see cref="T:System.Web.UI.IHierarchyData" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public virtual int IndexOf (System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.IndexOf(System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.SiteMapNodeCollection" /> 内で検索される <see cref="T:System.Web.SiteMapNode" />。</param>
+        <summary>指定された検索<see cref="T:System.Web.SiteMapNode" />オブジェクト、および全体のコレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns><paramref name="value" /> 全体を対象に <see cref="T:System.Web.SiteMapNodeCollection" /> を検索し、見つかった場合は、インデックス番号の最も小さい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapNodeCollection.IndexOf%2A>メソッドを呼び出すことで等しいかどうかを判断、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.Contains%2A>と<xref:System.Web.SiteMapNodeCollection.IndexOf%2A>のメソッド、<xref:System.Web.SiteMapNodeCollection>クラスです。 コードは 2 つのプロバイダーをチェック`AspNetXmlSiteMapProvider`と`MyXmlSiteMapProvider`、重複しているルート ノードの子ノードです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_4/cs/sourcecs.aspx#1)]
+ [!code-vb[System.Web.SiteMapNodeCollection_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_4/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual void Insert (int index, System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.Insert(System.Int32,System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Web.SiteMapNode" />を挿入します。</param>
+        <param name="value">挿入する <see cref="T:System.Web.SiteMapNode" />。</param>
+        <summary>指定した挿入<see cref="T:System.Web.SiteMapNode" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするかどうか、<xref:System.Web.SiteMapNodeCollection>をチェックしてコレクションは読み取り専用、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />大きい、<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Web.SiteMapNodeCollection" /> は固定サイズです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public virtual bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ノードの追加またはコレクションから減算するかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />追加できる場合<see cref="T:System.Web.SiteMapNode" />オブジェクトまたは削除する<see cref="T:System.Web.SiteMapNode" />オブジェクトから、 <see cref="T:System.Web.SiteMapNodeCollection" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />変更できる場合、 <see cref="T:System.Web.SiteMapNodeCollection" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されているかどうかを示すブール値 (スレッド セーフである) を取得します。</summary>
+        <value>
+          <see langword="true" />アクセスが同期されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.SiteMapNode" />を検索します。</param>
+        <summary>取得または設定、<see cref="T:System.Web.SiteMapNode" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.Web.SiteMapNode" />内の要素を表す、<see cref="T:System.Web.SiteMapNodeCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.SiteMapNodeCollection.Item%2A>の内容を反復処理するためのインデクサー、<xref:System.Web.SiteMapNodeCollection>コレクションを置換したり、<xref:System.Web.SiteMapNode>指定したインデックス位置にオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.Item%2A>を取得するためのインデクサー、<xref:System.Web.SiteMapNode>オブジェクトから、<xref:System.Web.SiteMapNodeCollection>コレクション。 この例では、<xref:System.Web.SiteMapNode>の内部の配列を使用して、2 番目の要素の位置からオブジェクトを削除、<xref:System.Web.SiteMapNodeCollection.Remove%2A>メソッドが、配列に追加し、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。 挿入する、<xref:System.Web.SiteMapNode>特定のインデックス位置オブジェクト、配列の末尾に追加の代わりに、<xref:System.Web.SiteMapNodeCollection.Insert%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/CS/webform1smccs.aspx#2)]
+ [!code-vb[System.Web.SiteMapNodeCollection_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/VB/webform1smcvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /><see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">Setter に指定された値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected virtual void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象の <see cref="T:System.Web.SiteMapNode" />。</param>
+        <summary>値を検証するときは、追加のカスタム処理を実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="T:System.Web.SiteMapNode" /> ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.SiteMapNodeCollection.OnValidate(System.Object)" />メソッドを使用する、基になるは、標準の動作を実行するときに実行する必要があるプロセスを定義する<see cref="T:System.Collections.ArrayList" />オブジェクト。 定義することによって、<see cref="M:System.Web.SiteMapNodeCollection.OnValidate(System.Object)" />メソッドを実装者機能を追加できます継承されたメソッドを他のすべてのメソッドをオーバーライドする必要はありません。 具体的には、<see cref="M:System.Web.SiteMapNodeCollection.OnValidate(System.Object)" />メソッドはいつでも、<see cref="T:System.Web.SiteMapNodeCollection" />への参照を使用してコレクションを使用する<see cref="T:System.Collections.IList" />インターフェイスです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Web.SiteMapNodeCollection ReadOnly (System.Web.SiteMapNodeCollection collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.SiteMapNodeCollection ReadOnly(class System.Web.SiteMapNodeCollection collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.ReadOnly(System.Web.SiteMapNodeCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapNodeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Web.SiteMapNodeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="collection"><see cref="T:System.Web.SiteMapNodeCollection" />を格納している、 <see cref="T:System.Web.SiteMapNode" /> 、読み取り専用に追加するオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>指定したノードを格納する読み取り専用コレクションを返します<see cref="T:System.Web.SiteMapNodeCollection" />コレクション。</summary>
+        <returns>読み取り専用<see cref="T:System.Web.SiteMapNodeCollection" />同じ<see cref="T:System.Web.SiteMapNode" />要素と、元の構造<see cref="T:System.Web.SiteMapNodeCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするかどうか、<xref:System.Web.SiteMapNodeCollection>をチェックしてコレクションは読み取り専用、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。 <xref:System.Web.SiteMapNodeCollection.IsFixedSize%2A>プロパティも返します`true`ときに、<xref:System.Web.SiteMapNodeCollection>は読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティをテストするかどうか、<xref:System.Web.SiteMapNodeCollection>コレクションが読み取り専用か変更可能です。 場合`siteNodes`は変更できますが、`MoveNode`と呼ばれる、それ以外は、複製<xref:System.Web.SiteMapNodeCollection>を使用して、作成`siteNodes`ベースとして。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/CS/webform1smccs.aspx#1)]
+ [!code-vb[System.Web.SiteMapNodeCollection_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/VB/webform1smcvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>読み取り専用<see cref="T:System.Web.SiteMapNodeCollection" />コレクションが読み取りおよび検索の操作をサポートしていますはサポートしていません、 <see cref="M:System.Web.SiteMapNodeCollection.Add(System.Web.SiteMapNode)" />、 <see cref="Overload:System.Web.SiteMapNodeCollection.AddRange" />、 <see cref="M:System.Web.SiteMapNodeCollection.Clear" />、 <see cref="M:System.Web.SiteMapNodeCollection.Insert(System.Int32,System.Web.SiteMapNode)" />、 <see cref="M:System.Web.SiteMapNodeCollection.Remove(System.Web.SiteMapNode)" />、および<see cref="M:System.Web.SiteMapNodeCollection.RemoveAt(System.Int32)" />メソッド、または既定のインデクサーに setter を含まないプロパティ、<see cref="P:System.Web.SiteMapNodeCollection.Item(System.Int32)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Web.SiteMapNode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Web.SiteMapNode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.Remove(System.Web.SiteMapNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.SiteMapNode" /> から削除する <see cref="T:System.Web.SiteMapNodeCollection" />。</param>
+        <summary>指定した <see cref="T:System.Web.SiteMapNode" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするかどうか、<xref:System.Web.SiteMapNodeCollection>をチェックしてコレクションは読み取り専用、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+ <xref:System.Web.SiteMapNodeCollection.Remove%2A>メソッドを呼び出すことで等しいかどうかを判断、<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.SiteMapNodeCollection.Remove%2A>を削除する方法、<xref:System.Web.SiteMapNode>オブジェクトから、<xref:System.Web.SiteMapNodeCollection>コレクション、しを追加、<xref:System.Web.SiteMapNode>の末尾にオブジェクト、<xref:System.Web.SiteMapNodeCollection>を使用して、<xref:System.Web.SiteMapNodeCollection.Add%2A>メソッドです。 場合、<xref:System.Web.SiteMapNodeCollection>は読み取り専用、<xref:System.NotSupportedException>例外がキャッチされました。  
+  
+ [!code-csharp[System.Web.SiteMapNodeCollection_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/CS/webform1smccs.aspx#2)]
+ [!code-vb[System.Web.SiteMapNodeCollection_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMapNodeCollection_1/VB/webform1smcvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />コレクションに存在しません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Web.SiteMapNodeCollection" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public virtual void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Web.SiteMapNode" />オブジェクト コレクションの指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストするかどうか、<xref:System.Web.SiteMapNodeCollection>をチェックしてコレクションは読み取り専用、<xref:System.Web.SiteMapNodeCollection.IsReadOnly%2A>プロパティです。  
+  
+ 要素を削除する、<xref:System.Web.SiteMapNodeCollection>を指定して、<xref:System.Web.SiteMapNode>オブジェクトを削除するを使用して、<xref:System.Web.SiteMapNodeCollection.Remove%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />大きい、<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.SiteMapNodeCollection" /> は読み取り専用です。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.SiteMapNodeCollection" />が固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.SiteMapNodeCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙、<xref:System.Web.SiteMapNodeCollection>コレクションはスレッド セーフな処理は本質的にします。 場合でも、<xref:System.Web.SiteMapNodeCollection>が同期されている場合、その他のスレッドを変更する、 <xref:System.Web.SiteMapNodeCollection>、それが原因で、列挙子は例外をスローします。 列挙中にスレッド セーフを確保するには、ロック、<xref:System.Web.SiteMapNodeCollection>列挙中に他のスレッドによって行われた変更に起因する例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元配列からコピーした要素のコピー先で、0 から始まるインデックス番号が必要です、<see cref="T:System.Collections.CollectionBase" />です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>要素をコピー、<see cref="T:System.Collections.ICollection" />特定の配列インデックスを開始位置、配列にインターフェイスです。 このクラスは継承できません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ 数<see cref="T:System.Web.SiteMapNode" />ソース内のオブジェクト<see cref="T:System.Web.SiteMapNodeCollection" />から使用可能な領域より大きくなって<paramref name="index" />の末尾に<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>格納されている要素の数を取得、<see cref="T:System.Collections.ICollection" />インターフェイスです。 このクラスは継承できません。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> に格納されている要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />へのアクセスをするかどうかを示す値、<see cref="T:System.Collections.ICollection" />インターフェイスが同期されている (スレッド セーフである)。 このクラスは継承できません。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Collections.ICollection" />インターフェイスです。 このクラスは継承できません。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。 このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」を参照してください。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> を反復処理するために使用できる <see cref="T:System.Web.SiteMapNodeCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> に追加するオブジェクト。</param>
+        <summary>コレクションに項目を追加、<see cref="T:System.Collections.IList" />インターフェイスです。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.Add(System.Object)" />」をご覧ください。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除、<see cref="T:System.Collections.IList" />インターフェイスです。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.Clear" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> 内で検索するオブジェクト。</param>
+        <summary>決定するかどうかのコレクション、<see cref="T:System.Collections.IList" />インターフェイスには、指定したブール値が含まれています。</summary>
+        <returns>
+          そのオブジェクトが <see cref="T:System.Collections.IList" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> 内で検索するオブジェクト。</param>
+        <summary>によって返されるコレクション内の特定の項目のインデックス番号、<see cref="T:System.Collections.IList" />インターフェイスです。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.IndexOf(System.Object)" />」をご覧ください。</summary>
+        <returns>インデックスの一覧で、値の場合が見つかりました。それ以外の場合、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まる<c>インデックス</c>を挿入する位置を示す<c>値</c>です。</param>
+        <param name="value"><see cref="T:System.Collections.IList" /> に挿入するオブジェクト。</param>
+        <summary>内のコレクションに項目を挿入、<see cref="T:System.Collections.IList" />インターフェイスを指定したインデックス位置。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.Insert(System.Int32,System.Object)" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />コレクションが固定サイズかどうかを示す値。 このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsFixedSize" />」を参照してください。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.Web.SiteMapNodeCollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />コレクションは読み取り専用であるかどうかを示す値。 このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsReadOnly" />」を参照してください。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.Web.SiteMapNodeCollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapNodeCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Collections.IList" /> 要素を取得します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Collections.IList" /> から削除するオブジェクト。</param>
+        <summary>コレクションから指定したオブジェクトの最初に見つかったを削除、<see cref="T:System.Collections.IList" />インターフェイスです。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.Remove(System.Object)" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスにある <see cref="T:System.Collections.IList" /> 項目を削除します。 このメンバーの詳細については、「<see cref="M:System.Collections.IList.RemoveAt(System.Int32)" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IHierarchicalEnumerable.GetHierarchyData">
+      <MemberSignature Language="C#" Value="System.Web.UI.IHierarchyData IHierarchicalEnumerable.GetHierarchyData (object enumeratedItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.IHierarchyData System.Web.UI.IHierarchicalEnumerable.GetHierarchyData(object enumeratedItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapNodeCollection.System#Web#UI#IHierarchicalEnumerable#GetHierarchyData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchyData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumeratedItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumeratedItem"><see cref="T:System.Web.UI.IHierarchyData" /> を返す対象オブジェクト。</param>
+        <summary>指定された列挙項目の階層的なデータ項目を返します。 このメンバーの詳細については、「<see cref="M:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData(System.Object)" />」をご覧ください。</summary>
+        <returns><see cref="M:System.Web.SiteMapNodeCollection.System#Web#UI#IHierarchicalEnumerable#GetHierarchyData(System.Object)" /> に渡されるオブジェクトを表す <see cref="T:System.Web.UI.IHierarchyData" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

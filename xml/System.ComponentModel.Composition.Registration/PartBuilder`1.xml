@@ -1,0 +1,261 @@
+<Type Name="PartBuilder&lt;T&gt;" FullName="System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class PartBuilder&lt;T&gt; : System.ComponentModel.Composition.Registration.PartBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PartBuilder`1&lt;T&gt; extends System.ComponentModel.Composition.Registration.PartBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Registration.PartBuilder`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Composition.Registration.PartBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">ターゲットの型。</typeparam>
+    <summary>拡張、<see cref="T:System.ComponentModel.Composition.Registration.PartBuilder" />メンバーを選択する式の使用を許可するクラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExportProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ExportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ExportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <summary>エクスポートするようにするプロパティを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ExportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter, Action&lt;System.ComponentModel.Composition.Registration.ExportBuilder&gt; exportConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ExportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter, class System.Action`1&lt;class System.ComponentModel.Composition.Registration.ExportBuilder&gt; exportConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="exportConfiguration" Type="System.Action&lt;System.ComponentModel.Composition.Registration.ExportBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <param name="exportConfiguration">エクスポートに関する構成情報を格納するオブジェクト。 既定値は <see langword="null" /> です。</param>
+        <summary>エクスポートするようにし、結果のエクスポートの構成情報を提供するプロパティを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ExportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ExportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <summary>指定したコントラクト型としてエクスポートする必要がある、プロパティを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ExportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter, Action&lt;System.ComponentModel.Composition.Registration.ExportBuilder&gt; exportConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ExportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter, class System.Action`1&lt;class System.ComponentModel.Composition.Registration.ExportBuilder&gt; exportConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ExportBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="exportConfiguration" Type="System.Action&lt;System.ComponentModel.Composition.Registration.ExportBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <param name="exportConfiguration">エクスポートに関する構成情報を格納するオブジェクト。 既定値は <see langword="null" /> です。</param>
+        <summary>指定したコントラクト型としてエクスポートするようにするプロパティを指定し、結果のエクスポートの構成情報を提供します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ImportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ImportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <summary>プロパティをインポートする必要がありますを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ImportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter, Action&lt;System.ComponentModel.Composition.Registration.ImportBuilder&gt; importConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ImportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter, class System.Action`1&lt;class System.ComponentModel.Composition.Registration.ImportBuilder&gt; importConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ImportBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="importConfiguration" Type="System.Action&lt;System.ComponentModel.Composition.Registration.ImportBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <param name="importConfiguration">インポートに関する構成情報を格納するオブジェクト。 既定値は <see langword="null" /> です。</param>
+        <summary>プロパティは、インポートして、結果のインポートの構成情報を提供するを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ImportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ImportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">使用するコントラクトの型。</typeparam>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <summary>指定したコントラクト名を使用してプロパティをインポートする必要がありますを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; ImportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertyFilter, Action&lt;System.ComponentModel.Composition.Registration.ImportBuilder&gt; importConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; ImportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertyFilter, class System.Action`1&lt;class System.ComponentModel.Composition.Registration.ImportBuilder&gt; importConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.ComponentModel.Composition.Registration.ImportBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertyFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="importConfiguration" Type="System.Action&lt;System.ComponentModel.Composition.Registration.ImportBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">使用するコントラクト名。</typeparam>
+        <param name="propertyFilter">ターゲット プロパティへの参照に評価される式。</param>
+        <param name="importConfiguration">インポートに関する構成情報を格納するオブジェクト。 既定値は <see langword="null" /> です。</param>
+        <summary>プロパティが指定したコントラクト名を使用してインポートする必要があり、結果のインポートの構成情報を提供するを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="propertyFilter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectConstructor">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt; SelectConstructor (System.Linq.Expressions.Expression&lt;Func&lt;System.ComponentModel.Composition.Registration.ParameterImportBuilder,T&gt;&gt; constructorFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Composition.Registration.PartBuilder`1&lt;!T&gt; SelectConstructor(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;class System.ComponentModel.Composition.Registration.ParameterImportBuilder, !T&gt;&gt; constructorFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Registration.PartBuilder`1.SelectConstructor(System.Linq.Expressions.Expression{System.Func{System.ComponentModel.Composition.Registration.ParameterImportBuilder,`0}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition.Registration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Registration.PartBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructorFilter" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;System.ComponentModel.Composition.Registration.ParameterImportBuilder,T&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="constructorFilter">構築される式<c>T</c>目的のコンス トラクターを使用します。 実際に呼び出される、参照にのみ使用されます。</param>
+        <summary>インポート コンス トラクターとして使用するコンス トラクターを指定します。</summary>
+        <returns>現在のオブジェクトの組み合わせを許可します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

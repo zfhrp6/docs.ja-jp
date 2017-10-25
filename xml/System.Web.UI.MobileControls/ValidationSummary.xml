@@ -1,0 +1,251 @@
+<Type Name="ValidationSummary" FullName="System.Web.UI.MobileControls.ValidationSummary">
+  <TypeSignature Language="C#" Value="public class ValidationSummary : System.Web.UI.MobileControls.MobileControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationSummary extends System.Web.UI.MobileControls.MobileControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ValidationSummary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.MobileControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("FormToValidate")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Web.UI.Design.MobileControls.ValidationSummaryDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem("System.Web.UI.Design.WebControlToolboxItem, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.MobileControls.DesignerAdapter(typeof(System.Web.UI.Design.MobileControls.Adapters.DesignerValidationSummaryAdapter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:ValidationSummary runat="server"&gt;&lt;/{0}:ValidationSummary&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォームで発生したすべての検証エラーの要約を示します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MobileControls.ValidationSummary>クラスは、すべての検証エラーの概要を作成し、インラインでにより表示または別のフォームです。 <xref:System.Web.UI.MobileControls.ValidationSummary>内のテキストを使用して、<xref:System.Web.UI.MobileControls.BaseValidator.ErrorMessage%2A>プロパティ エラーであるが、インラインで表示されているのか概要フォームにします。  
+  
+ ただし、 <xref:System.Web.UI.MobileControls.ValidationSummary> ASP.NET モバイル コントロールのクラスは、Web フォームの動作を模して<xref:System.Web.UI.WebControls.ValidationSummary>モバイル コントロールのバージョンのクラス、さまざまな方法でクラスが Web フォームのバージョンのクラスから直接継承しません。 検証の概要などの出力を変更するプロパティしたがって、<xref:System.Web.UI.WebControls.ValidationSummary.DisplayMode%2A>プロパティでは、モバイル コントロールでは使用できません。 概要のモバイル コントロール バージョンがから直接派生した、<xref:System.Web.UI.MobileControls.MobileControl>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成する方法を示します、<xref:System.Web.UI.MobileControls.ValidationSummary>クラス、およびページの読み込み中に ASP.NET モバイル Web アプリケーションでフォームに追加します。 ユーザー定義`Page_Load`、エラーがあると、フォームを含むを起動するか、イベント ハンドラーが決定、 <xref:System.Web.UI.MobileControls.ValidationSummary>、または祝いお礼フォーム。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[MobileValidationSummarySample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileValidationSummarySample/cs/Default.aspx#1)]
+ [!code-aspx-vb[MobileValidationSummarySample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileValidationSummarySample/vb/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationSummary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ValidationSummary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ValidationSummary" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackLabel">
+      <MemberSignature Language="C#" Value="public string BackLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackLabel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ValidationSummary.BackLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定文字列、検証から概要リンクするエラーを含むフォームをします。 既定値は <see cref="F:System.String.Empty" /> です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>検証の概要にエラーが含まれるフォームにリンクする文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証プロセスが内のテキストを使用して、フォームの表示中にエラーが発生するときに、<xref:System.Web.UI.MobileControls.ValidationSummary.BackLabel%2A>プロパティとして検証の概要 ページに表示されている文字列。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.MobileControls.ValidationSummary.BackLabel%2A>内のリンク テキストを指定するプロパティ、<xref:System.Web.UI.MobileControls.ValidationSummary>エラー フォームに戻る。  
+  
+ [!code-csharp[MobileValidationSummarySample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileValidationSummarySample/cs/Default.aspx#2)]
+ [!code-vb[MobileValidationSummarySample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileValidationSummarySample/vb/Default.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormToValidate">
+      <MemberSignature Language="C#" Value="public string FormToValidate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormToValidate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ValidationSummary.FormToValidate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.MobileControls.Converters.FormConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の識別子、<see cref="T:System.Web.UI.MobileControls.Form" />を検証します。 既定値は、空の文字列 ("") です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>識別子、<see cref="T:System.Web.UI.MobileControls.Form" />を検証します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証を使用する場合は、このプロパティが有効なフォームの ID を表す値を含める必要があります。 <xref:System.Web.UI.MobileControls.ValidationSummary.FormToValidate%2A>コードまたは宣言の例のように、プロパティを設定することができます、<xref:System.Web.UI.MobileControls.ValidationSummary>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorMessages">
+      <MemberSignature Language="C#" Value="public string[] GetErrorMessages ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetErrorMessages() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ValidationSummary.GetErrorMessages" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラー メッセージの配列を取得、<see cref="T:System.Web.UI.MobileControls.ValidationSummary" />ページが表示されます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>メッセージのエラーの配列、<see cref="T:System.Web.UI.MobileControls.ValidationSummary" />ページが表示されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値、<see cref="P:System.Web.UI.MobileControls.ValidationSummary.FormToValidate" />プロパティが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ValidationSummary.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証の概要 ページのヘッダー セクションに表示されるテキストを設定します。 既定値は <see cref="F:System.String.Empty" /> です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>検証の概要 ページのヘッダー セクションに表示されるテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML では、開発している場合、<xref:System.Web.UI.MobileControls.ValidationSummary>ページの値が表示される、<xref:System.Web.UI.MobileControls.ValidationSummary.HeaderText%2A>プロパティ最初。 一連の検証プロセスには、フォームが無効になります、場合に生成<xref:System.Web.UI.MobileControls.BaseValidator.ErrorMessage%2A>ごとの検証コントロールのプロパティです。 各インスタンス、<xref:System.Web.UI.MobileControls.BaseValidator.ErrorMessage%2A>プロパティ一覧の結果、無効な形式でエラーが発生します。 このエラーの一覧が続く、<xref:System.Web.UI.MobileControls.Link>をターゲットと形式が無効です。 リンクのテキストの値になります、<xref:System.Web.UI.MobileControls.ValidationSummary.BackLabel%2A>プロパティです。  
+  
+ WML 1.1 エラーの表示は点を除いて html に似ていますが、<xref:System.Web.UI.MobileControls.ValidationSummary.HeaderText%2A>プロパティは、個々 のエラー メッセージの後におよび、続くプレーンの WML テキストとして表示されます「-」(スペースで後にハイフン)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ValidationSummary.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Load" /> イベントを発生させます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleReference">
+      <MemberSignature Language="C#" Value="public override string StyleReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StyleReference" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ValidationSummary.StyleReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("error")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのスタイル プロパティへの参照を取得または設定します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>コントロールのスタイル プロパティへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

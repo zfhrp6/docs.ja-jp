@@ -1,0 +1,258 @@
+<Type Name="DiscoveryClientDocumentCollection" FullName="System.Web.Services.Discovery.DiscoveryClientDocumentCollection">
+  <TypeSignature Language="C#" Value="public sealed class DiscoveryClientDocumentCollection : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DiscoveryClientDocumentCollection extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアントにダウンロードされている XML Web サービスの検出時に検出されたドキュメントのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>プロパティ<xref:System.Web.Services.Discovery.DiscoveryClientProtocol>の種類は<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、XML Web サービスの探索を実行し、クライアントを探索したドキュメントをダウンロードします。 内で探索ドキュメントの名前、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>コンソールに出力されます。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection2/CPP/discoveryclientdocumentcollection.cpp#1)]
+ [!code-csharp[DiscoveryClientDocumentCollection2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection2/CS/discoveryclientdocumentcollection.cs#1)]
+ [!code-vb[DiscoveryClientDocumentCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection2/VB/discoveryclientdocumentcollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryClientDocumentCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string url, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string url, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="url">追加するドキュメントの URL、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</param>
+        <param name="value">追加する検出されたドキュメント、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</param>
+        <summary>指定した URL にオブジェクトを追加、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を次の 2 つの探索ドキュメントの追加、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>です。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_ctor#2](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CPP/discoveryclientdocumentcollection_ctor.cpp#2)]
+ [!code-csharp[DiscoveryClientDocumentCollection_ctor#2](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CS/discoveryclientdocumentcollection_ctor.cs#2)]
+ [!code-vb[DiscoveryClientDocumentCollection_ctor#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/VB/discoveryclientdocumentcollection_ctor.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">キーを持つエントリ<paramref name="url" />に既に存在する、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">内で検索するドキュメントの URL、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</param>
+        <summary>かどうかを<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />指定された URL を持つオブジェクトが含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />指定された URL を持つオブジェクトが含まれていますそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Contains%2A>メソッドに格納されている URL を持つメンバーが探索ドキュメントに含まれているかどうか、`StringUrl`変数。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_Keys#3](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CPP/discoveryclientdocumentcollection_keys.cpp#3)]
+ [!code-csharp[DiscoveryClientDocumentCollection_Keys#3](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CS/discoveryclientdocumentcollection_keys.cs#3)]
+ [!code-vb[DiscoveryClientDocumentCollection_Keys#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/VB/discoveryclientdocumentcollection_keys.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string url] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">探索ドキュメントの URL を取得または設定から、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</param>
+        <summary>取得または探索ドキュメント オブジェクトからクライアントを設定、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />指定された URL にします。</summary>
+        <value><see cref="T:System.Object" />ドキュメントを表す検出され、クライアントにダウンロードします。 オブジェクトの基になる型を指定できます、 <see cref="T:System.Web.Services.Description.ServiceDescription" />、 <see cref="T:System.Xml.Schema.XmlSchema" />、または<see cref="T:System.Web.Services.Discovery.DiscoveryDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、検出のドキュメントの型をコンソールに出力、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>の値に一致する URL を持つ、`myStringUrl`変数。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_ctor#4](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CPP/discoveryclientdocumentcollection_ctor.cpp#4)]
+ [!code-csharp[DiscoveryClientDocumentCollection_ctor#4](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CS/discoveryclientdocumentcollection_ctor.cs#4)]
+ [!code-vb[DiscoveryClientDocumentCollection_ctor#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/VB/discoveryclientdocumentcollection_ctor.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />内のすべてのキーを持つオブジェクト、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> のキーを保持している <see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の出力内でのキー、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>コンソールにします。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_Keys#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CPP/discoveryclientdocumentcollection_keys.cpp#1)]
+ [!code-csharp[DiscoveryClientDocumentCollection_Keys#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CS/discoveryclientdocumentcollection_keys.cs#1)]
+ [!code-vb[DiscoveryClientDocumentCollection_Keys#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/VB/discoveryclientdocumentcollection_keys.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">削除する、検出されたドキュメントの URL、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</param>
+        <summary>指定した URL からオブジェクトを削除、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の URL を使用して探索ドキュメントを削除する`http://www.contoso.com/service1.disco`から、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>です。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_ctor#3](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CPP/discoveryclientdocumentcollection_ctor.cpp#3)]
+ [!code-csharp[DiscoveryClientDocumentCollection_ctor#3](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/CS/discoveryclientdocumentcollection_ctor.cs#3)]
+ [!code-vb[DiscoveryClientDocumentCollection_ctor#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_ctor/VB/discoveryclientdocumentcollection_ctor.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="url" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientDocumentCollection.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />内のすべての値を持つオブジェクト、<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />です。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の出力内の値、<xref:System.Web.Services.Discovery.DiscoveryClientDocumentCollection>コンソールにします。  
+  
+ [!code-cpp[DiscoveryClientDocumentCollection_Keys#2](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CPP/discoveryclientdocumentcollection_keys.cpp#2)]
+ [!code-csharp[DiscoveryClientDocumentCollection_Keys#2](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/CS/discoveryclientdocumentcollection_keys.cs#2)]
+ [!code-vb[DiscoveryClientDocumentCollection_Keys#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientDocumentCollection_Keys/VB/discoveryclientdocumentcollection_keys.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

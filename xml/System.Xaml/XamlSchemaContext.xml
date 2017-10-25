@@ -1,0 +1,519 @@
+<Type Name="XamlSchemaContext" FullName="System.Xaml.XamlSchemaContext">
+  <TypeSignature Language="C#" Value="public class XamlSchemaContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlSchemaContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlSchemaContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>解釈または XAML 型、およびそれらの基になるアセンブリの種類のマッピングの再利用可能なコンテキストを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML スキーマ コンテキストでは、スキーマまたは xaml でボキャブラリと特定のパーサー実装間で抽象化レイヤーを提供します。 スキーマ コンテキストの概念を挿入してスキーマを別の XAML パーサーで使用できるし、スキーマ コンテキストが特定の XAML パーサーと対話するために必要な詳細を入力します。 たとえば、XAML スキーマ コンテキストは、クエリと CLR バインディングを指定し、XAML 型システムまたは XAML の概念に関連する Api を提供します。 XAML スキーマ コンテキストは、バッキング型の XAML パーサーを検索する場所を定義する、読み込まれたアセンブリのアセンブリ リストを保守管理を担当もできます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.AppDomain" />、<see cref="T:System.Xaml.XamlSchemaContext" />複数の呼び出し元は、両方を完全に含めると部分的に信頼された呼び出しの間で共有することができます。 このような状況は、部分的に信頼されたアクセスを提供する XAML を読み込み、WPF アプリケーションのモデルの部分の WPF などのフレームワークに存在します。 既定値<see cref="T:System.Xaml.XamlSchemaContext" />実装は、変更できないプロパティと設定すべてを保つことによってこのシナリオでの保護を提供します。 派生実装は、次のプロパティの不変のこのモデルと XAML スキーマ コンテキストの設定も考慮する必要があります。  
+  
+ <see cref="T:System.Xaml.XamlSchemaContext" />基底クラスは参照には外部から見える副作用があるないように設計されています。 によって参照されている型<see cref="T:System.Xaml.XamlSchemaContext" />Api ベース クラスなど、<see cref="T:System.Xaml.XamlType" />または<see cref="T:System.Xaml.XamlMember" />、参照による副作用がまた生成されません。 スキーマの決定を行うために必要なすべてのデータを構築との設定から使用可能にする必要があります、<see cref="T:System.AppDomain" />です。 明示的に渡されたサービス; の検索 Api が依存していないことに注意してください。入力は、文字列の入力のみに依存します。  
+  
+ <see cref="T:System.Xaml.XamlSchemaContext" />基底クラス、および<see cref="T:System.Xaml.XamlType" />と<see cref="T:System.Xaml.XamlMember" />すべてのスレッドをその基本実装でセーフです。 派生した場合<see cref="T:System.Xaml.XamlSchemaContext" />など XAML 型システム クラスの派生または<see cref="T:System.Xaml.XamlType" />と<see cref="T:System.Xaml.XamlMember" />、スレッド セーフであると、クラスが動作するかどうかを選択できます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlSchemaContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContext (System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt; referenceAssemblies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Reflection.Assembly&gt; referenceAssemblies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceAssemblies" Type="System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="referenceAssemblies">アセンブリ情報項目の列挙可能なセット。 各アセンブリの情報項目がで指定された、<see cref="T:System.Reflection.Assembly" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlSchemaContext" />参照アセンブリのセットに基づくクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContext (System.Xaml.XamlSchemaContextSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContextSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.#ctor(System.Xaml.XamlSchemaContextSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Xaml.XamlSchemaContextSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">設定オブジェクトを構築するために使用する、<see cref="T:System.Xaml.XamlSchemaContext" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlSchemaContext" />設定オブジェクトに基づくクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定オブジェクトは、コンバーターとスキーマ コンテキストのマークアップ拡張機能の詳細に関する情報を格納します。 詳細については、「<xref:System.Xaml.XamlSchemaContextSettings>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContext (System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt; referenceAssemblies, System.Xaml.XamlSchemaContextSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Reflection.Assembly&gt; referenceAssemblies, class System.Xaml.XamlSchemaContextSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Xaml.XamlSchemaContextSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referenceAssemblies" Type="System.Collections.Generic.IEnumerable&lt;System.Reflection.Assembly&gt;" />
+        <Parameter Name="settings" Type="System.Xaml.XamlSchemaContextSettings" />
+      </Parameters>
+      <Docs>
+        <param name="referenceAssemblies">アセンブリ情報の列挙可能なセット。 各アセンブリの情報項目がで指定された、<see cref="T:System.Reflection.Assembly" />値。</param>
+        <param name="settings">設定オブジェクトを構築するために使用する、<see cref="T:System.Xaml.XamlSchemaContext" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlSchemaContext" />クラス、参照アセンブリおよび設定オブジェクトのセットを基にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~XamlSchemaContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非標準<see langword="Finalize" />呼び出しません実装<see langword="Dispose" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動ガベージ コレクションによって、または手動操作によって、XAML スキーマ コンテキストを破棄されなければなりません。 XAML スキーマ コンテキストには、アンマネージ リソースがない<xref:System.Windows.Markup.XamlDeferLoadAttribute>プロパティがアクティブである可能性があり、関連する遅延読み込み操作に干渉することができますな XAML スキーマ コンテキストを破棄します。  
+  
+ <xref:System.AppDomain.AssemblyLoad>この実装では、イベント ハンドラーは、弱い参照として内部的に接続されているがクリーンアップされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyQualifyAssemblyNamesInClrNamespaces">
+      <MemberSignature Language="C#" Value="public bool FullyQualifyAssemblyNamesInClrNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FullyQualifyAssemblyNamesInClrNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlSchemaContext.FullyQualifyAssemblyNamesInClrNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML スキーマとそのコンテキストが検索 API によって返される値に完全修飾アセンブリ名を使用するかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />XAML スキーマとそのコンテキストは、完全修飾アセンブリ名を使用して、検索 Api で返される値の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Xaml.XamlSchemaContextSettings.FullyQualifyAssemblyNamesInClrNamespaces%2A?displayProperty=nameWithType>値の設定で規定されている、<xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Xaml.XamlSchemaContextSettings%29>コンス トラクターのシグネチャ。 構築の他の署名に使用された場合、または場合<xref:System.Xaml.XamlSchemaContextSettings.FullyQualifyAssemblyNamesInClrNamespaces%2A?displayProperty=nameWithType>に特に設定されていない`true`、このプロパティの値が`false`です。  
+  
+ このプロパティの値によって返される文字列に影響を与えます<xref:System.Xaml.XamlSchemaContext.GetAllXamlNamespaces%2A>です。 場合<xref:System.Xaml.XamlSchemaContext.FullyQualifyAssemblyNamesInClrNamespaces%2A>は`true`、文字列のアセンブリ部分はレポートの該当するショートカットは、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllXamlNamespaces">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;string&gt; GetAllXamlNamespaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; GetAllXamlNamespaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetAllXamlNamespaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これによって保持されているアセンブリが検索<see cref="T:System.Xaml.XamlSchemaContext" />名前空間のセットを返します。</summary>
+        <returns>名前空間の識別子の列挙可能なセット。 これらの識別子は、文字列として提供されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、構築またはプロパティの設定を通じて渡される場合にのみ参照アセンブリを検索します。 このメソッドのロジックが読み込まれているすべてのアセンブリを調べ参照アセンブリとしてアセンブリが作成されていない場合、この<xref:System.Xaml.XamlSchemaContext>がアクティブです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllXamlTypes">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.ICollection&lt;System.Xaml.XamlType&gt; GetAllXamlTypes (string xamlNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.ICollection`1&lt;class System.Xaml.XamlType&gt; GetAllXamlTypes(string xamlNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetAllXamlTypes(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">XAML 名前空間の型を返すにします。</param>
+        <summary>これによって保持されているアセンブリが検索<see cref="T:System.Xaml.XamlSchemaContext" />し、指定の XAML 名前空間の型のセットを返します。</summary>
+        <returns>XAML の型の列挙可能なセット。 各 XAML 型で表される、<see cref="T:System.Xaml.XamlType" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredPrefix">
+      <MemberSignature Language="C#" Value="public virtual string GetPreferredPrefix (string xmlns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPreferredPrefix(string xmlns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetPreferredPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlns">適切なプレフィックスを取得する XAML 名前空間。</param>
+        <summary>指定した XAML 名前空間を割り当てるときに使用するコンシューマーにとって適切なプレフィックスとして報告されている文字列を取得します。</summary>
+        <returns>マークアップの指定の XAML 名前空間を割り当てるときにコンシューマーが使用する文字列を使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 情報の最もイミディ エイトのコンシューマーは、XAML ライターでは通常です。 その他の間接的なコンシューマーには、デザイン ツールが含まれます。  
+  
+ 共通言語ランタイム (CLR) の XAML バインドの一部として、適用することでこの情報を指定できます<xref:System.Windows.Markup.XmlnsPrefixAttribute>アセンブリ レベルでします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlns" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueConverter&lt;TConverterBase&gt;">
+      <MemberSignature Language="C#" Value="protected System.Xaml.Schema.XamlValueConverter&lt;TConverterBase&gt; GetValueConverter&lt;TConverterBase&gt; (Type converterType, System.Xaml.XamlType targetType) where TConverterBase : class;" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Xaml.Schema.XamlValueConverter`1&lt;!!TConverterBase&gt; GetValueConverter&lt;class TConverterBase&gt;(class System.Type converterType, class System.Xaml.XamlType targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetValueConverter``1(System.Type,System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;TConverterBase&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TConverterBase">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="converterType" Type="System.Type" />
+        <Parameter Name="targetType" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TConverterBase">特定のコンバーターの基本クラスです。</typeparam>
+        <param name="converterType">コンバーターの実装です。</param>
+        <param name="targetType">コンバーターの目的の型。</param>
+        <summary>要求されたに変換する値コンバーターを返します<paramref name="targetType" />です。</summary>
+        <returns>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />では、メソッドの呼び出しに配置するための制約に一致する制約です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlDirective">
+      <MemberSignature Language="C#" Value="public virtual System.Xaml.XamlDirective GetXamlDirective (string xamlNamespace, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xaml.XamlDirective GetXamlDirective(string xamlNamespace, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetXamlDirective(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlDirective</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">名前付きのディレクティブを含む XAML 名前空間。</param>
+        <param name="name">取得するディレクティブの名前。</param>
+        <summary>返します、<see cref="T:System.Xaml.XamlDirective" />ディレクティブ、XAML 言語用、または特定の実装を表す値です。</summary>
+        <returns>A<see cref="T:System.Xaml.XamlDirective" />要求されたディレクティブを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスを作成する場合は、このメソッドをオーバーライド<xref:System.Xaml.XamlDirective>XAML 型システムの拡張シナリオの一部として。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlNamespace" /> または <paramref name="name" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlType">
+      <MemberSignature Language="C#" Value="public virtual System.Xaml.XamlType GetXamlType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xaml.XamlType GetXamlType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetXamlType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">取得する型、<see cref="T:System.Xaml.XamlType" />用です。</param>
+        <summary>返します、 <see cref="T:System.Xaml.XamlType" /> CLR 型の識別子に基づきます。</summary>
+        <returns><see cref="T:System.Xaml.XamlType" />入力に一致する<paramref name="type" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードでは、バッキング型システムの CLR を使用していることを前提としています。 CLR 型システムを使用していない場合は使用<xref:System.Xaml.XamlSchemaContext.GetXamlType%28System.Xaml.Schema.XamlTypeName%29>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlType">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlType GetXamlType (System.Xaml.Schema.XamlTypeName xamlTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlType GetXamlType(class System.Xaml.Schema.XamlTypeName xamlTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetXamlType(System.Xaml.Schema.XamlTypeName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlTypeName" Type="System.Xaml.Schema.XamlTypeName" />
+      </Parameters>
+      <Docs>
+        <param name="xamlTypeName">XAML の型名を取得する、<see cref="T:System.Xaml.XamlType" />用です。</param>
+        <summary>返します、 <see cref="T:System.Xaml.XamlType" /> XAML システム型の名前に基づきます。</summary>
+        <returns><see cref="T:System.Xaml.XamlType" />入力に一致する<paramref name="xamlTypeName" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">コンポーネント<paramref name="xamlTypeName" />(<see cref="P:System.Xaml.Schema.XamlTypeName.Name" />または<see cref="P:System.Xaml.Schema.XamlTypeName.Namespace" />) は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlTypeName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlType">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlType GetXamlType (string xamlNamespace, string name, params System.Xaml.XamlType[] typeArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Xaml.XamlType GetXamlType(string xamlNamespace, string name, class System.Xaml.XamlType[] typeArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.GetXamlType(System.String,System.String,System.Xaml.XamlType[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.Xaml.XamlType[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">目的の型を含む XAML 名前空間。</param>
+        <param name="name">目的の型の文字列名。</param>
+        <param name="typeArguments">ジェネリック型の初期化型の引数。</param>
+        <summary>返します、 <see cref="T:System.Xaml.XamlType" /> XAML 名前空間と型の名前に文字列をベースです。 この署名は、目的の型がジェネリック型の場合は、型引数を指定できます。</summary>
+        <returns><see cref="T:System.Xaml.XamlType" />入力条件に一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAssemblyResolve">
+      <MemberSignature Language="C#" Value="protected virtual System.Reflection.Assembly OnAssemblyResolve (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Reflection.Assembly OnAssemblyResolve(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.OnAssemblyResolve(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">読み込むアセンブリの名前。</param>
+        <summary>操作が含まれている XAML 名前空間を解決するために必要なアセンブリを解決するのにはこのスキーマ コンテキストを使用するときに呼び出されます。</summary>
+        <returns>解決済みのアセンブリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部 API には、基になるアセンブリの解決方法に基づいて、アセンブリ名の別の文字列形式の組み込みの公差があると、<xref:System.Reflection.AssemblyName>構築動作します。  
+  
+ この API の目的は、グローバル アセンブリ キャッシュに対するの代わりに、参照アセンブリなど、アセンブリの既知のセットに対する初回の解決を有効にします。 参照アセンブリの一覧が表示される場合、既知の参照アセンブリが既定の実装にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Reflection.Assembly&gt; ReferenceAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Reflection.Assembly&gt; ReferenceAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlSchemaContext.ReferenceAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.Assembly&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML スキーマ コンテキストの参照アセンブリの列挙可能なセットを取得します。</summary>
+        <value>スキーマ コンテキストの参照アセンブリの列挙可能なセット。 各アセンブリの情報項目がで指定された、<see cref="T:System.Reflection.Assembly" />値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportMarkupExtensionsWithDuplicateArity">
+      <MemberSignature Language="C#" Value="public bool SupportMarkupExtensionsWithDuplicateArity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportMarkupExtensionsWithDuplicateArity" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlSchemaContext.SupportMarkupExtensionsWithDuplicateArity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML スキーマとそのコンテキストがアリティ (入力パラメーターの数) が同じ 2 つのコンス トラクターがあるマークアップ拡張機能をサポートするかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />スキーマ コンテキストが重複するアリティのマークアップ拡張機能を許可している場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A?displayProperty=nameWithType>値の設定で規定されている、<xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Xaml.XamlSchemaContextSettings%29>コンス トラクターのシグネチャ。 作成するための他の署名が使用されている場合、または場合<xref:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity%2A?displayProperty=nameWithType>に特に設定されていない`true`、このプロパティの値が`false`です。  
+  
+ 具体的には、マークアップ拡張機能の重複するアリティは XAML の仕様 [MS-XAML] セクション 6.6.7.2 で処理では対応できません。 これは、マークアップ拡張機能の XAML 情報項目の形成がマークアップ拡張機能の実装に存在する重複するアリティに関係なく同じであるためです。 マークアップ拡張機能の実際の呼び出しだけと、その`ProvideValue`重複するアリティに関連する問題を公開します。 重複するアリティの処理の動作は未定義しは、最大で各実装の XAML スキーマ コンテキストと XAML ライターとの統合されません。 既定の XAML スキーマ コンテキスト .NET Framework XAML サービス操作に対して実装されるとは重複するアリティをサポートしていませんさまざまな .NET Framework XAML サービス Api には、基になる重複するアリティによるマークアップ拡張機能の使用を処理するときに例外がスローされます。  
+  
+ マークアップ拡張機能の定義の詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](~/docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetCompatibleXamlNamespace">
+      <MemberSignature Language="C#" Value="public virtual bool TryGetCompatibleXamlNamespace (string xamlNamespace, out string compatibleNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetCompatibleXamlNamespace(string xamlNamespace, [out] string&amp; compatibleNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContext.TryGetCompatibleXamlNamespace(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="compatibleNamespace" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace"><see langword="xmlns" />互換性のある結果をチェックする XAML 名前空間の文字列。</param>
+        <param name="compatibleNamespace">このメソッドが戻るとき、<see langword="xmlns" />互換性のある XAML 名前空間の要求の文字列。 これと同一である可能性があります<c>xamlNamespace</c>メソッドを返す場合<see langword="false" />です。</param>
+        <summary>互換性のある XAML 名前空間の要求の成否を返します。 要求が成功した場合は、out パラメーターとしてその XAML 名前空間を報告します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="compatibleNamespace" />使用可能な結果が含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部的には、このメソッドは、次の検索順序を使用します。  
+  
+1.  内部的に実装された互換性ディクショナリ以前の検索で作成された可能性があります。  
+  
+2.  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute>パラメーター評価します。  
+  
+ 互換性のあるその他の名前空間が検出されないと、このメソッドが戻るかどうか`false`、`compatibleNamespace`パラメーターの出力と同じ値を持つ可能性があります、`xamlNamespace`入力します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlNamespace" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

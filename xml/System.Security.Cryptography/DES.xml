@@ -1,0 +1,315 @@
+<Type Name="DES" FullName="System.Security.Cryptography.DES">
+  <TypeSignature Language="C#" Value="public abstract class DES : System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DES extends System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.DES" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.SymmetricAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての <see cref="T:System.Security.Cryptography.DES" /> の実装の派生元となる DES (Data Encryption Standard) アルゴリズムの基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムには、64 ビットのキー長がサポートされています。  
+  
+> [!NOTE]
+>  新しい非対称暗号化アルゴリズムでは、Advanced Encryption Standard (AES) では、使用可能なです。 使用を検討して、<xref:System.Security.Cryptography.Aes>クラスの代わりに、<xref:System.Security.Cryptography.DES>クラスです。 使用して<xref:System.Security.Cryptography.DES>レガシ アプリケーションとデータとの互換性のみです。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Security.Cryptography.DESCryptoServiceProvider>(の実装<xref:System.Security.Cryptography.DES>) をメモリ内バッファーに文字列を暗号化します。 復号化し、ラウンドト リップ文字列を表示します。  
+  
+ [!code-csharp[TripleDESCryptoServiceProvider#1](~/samples/snippets/csharp/VS_Snippets_CLR/tripledescryptoserviceprovider/cs/program.cs#1)]
+ [!code-vb[TripleDESCryptoServiceProvider#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/tripledescryptoserviceprovider/vb/program.vb#1)]  
+  
+ 復号化は、同じ方法で処理できます。使用して<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateDecryptor%2A>の代わりに<xref:System.Security.Cryptography.DESCryptoServiceProvider.CreateEncryptor%2A>です。 同じキー (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) 暗号化に使用されるファイルを使用して、暗号化を解除する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DES ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DES.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.DES" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。  
+  
+ このメソッドは、保護対象のフィールドを初期化、<xref:System.Security.Cryptography.SymmetricAlgorithm>クラスを次の表に示すように既定値にします。  
+  
+|フィールド|既定値|  
+|-----------|-------------------|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.KeySizeValue>|64|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue>|64|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSizeValue>|64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.DES Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.DES Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DES.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.DES</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>暗号オブジェクトのインスタンスを作成して、Data Encryption Standard (<see cref="T:System.Security.Cryptography.DES" />) アルゴリズムを実行します。</summary>
+        <returns>暗号オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成、<xref:System.Security.Cryptography.DES>のデータを暗号化および暗号化のために使用できるオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DES>を暗号化して、ファイル内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DES.Create.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DES.Create.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.DES.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DES.Create.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.DES.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DES.Create.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DES>を暗号化して、メモリ内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DES.Create.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DES.Create.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.DES.Create.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DES.Create.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.DES.Create.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DES.Create.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.DES Create (string algName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.DES Create(string algName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DES.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.DES</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algName">特定の実装の名前<see cref="T:System.Security.Cryptography.DES" />を使用します。</param>
+        <summary>データ暗号化標準の指定した実装を実行する暗号オブジェクトのインスタンスを作成 (<see cref="T:System.Security.Cryptography.DES" />) アルゴリズム。</summary>
+        <returns>暗号オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DES>を暗号化して、ファイル内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DES.Createstring.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DES.Createstring.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.DES.Createstring.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DES.Createstring.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.DES.Createstring.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DES.Createstring.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.DES>を暗号化して、メモリ内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.DES.Createstring.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DES.Createstring.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.DES.Createstring.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DES.Createstring.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.DES.Createstring.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DES.Createstring.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSemiWeakKey">
+      <MemberSignature Language="C#" Value="public static bool IsSemiWeakKey (byte[] rgbKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSemiWeakKey(unsigned int8[] rgbKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DES.IsSemiWeakKey(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">半脆弱性をテストする共有キー。</param>
+        <summary>指定したキーが半脆弱であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、キーが半脆弱です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 半脆弱なキーは、暗号を解読しやすいで生成するキーのペアです。 テキストが半脆弱なキーで暗号化されている場合に、元のテキストを部分的に弱いキーのパートナーと結果の暗号の暗号化を返します。 6 つ既知半脆弱なキーのペアがありますのデータ暗号化標準 (<xref:System.Security.Cryptography.DES>) アルゴリズムです。 このメソッドは、これらの半脆弱なキーをチェックします。  
+  
+ 半脆弱キー結果を設定しようとして、<xref:System.Security.Cryptography.CryptographicException>です。 ときに<xref:System.Security.Cryptography.DESCryptoServiceProvider.GenerateKey%2A>ランダムなキー、キーは返されません、セミコロン弱を作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="rgbKey" /> パラメーターのサイズが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWeakKey">
+      <MemberSignature Language="C#" Value="public static bool IsWeakKey (byte[] rgbKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsWeakKey(unsigned int8[] rgbKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.DES.IsWeakKey(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">脆弱性をテストする共有キー。</param>
+        <summary>指定したキーが脆弱であるかどうかを判断します。</summary>
+        <returns>
+          キーが脆弱な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 弱いキーは、キーの暗号を解読しやすい結果です。 テキストが弱いキーで暗号化されている場合、同じ弱いキーなのでで結果の暗号を再度暗号化するは元のテキストを返します。 データ暗号化標準の 4 つの既知の弱いキーがある (<xref:System.Security.Cryptography.DES>) アルゴリズムです。 このメソッドは、これらの弱いキーを確認します。  
+  
+ 弱いキー結果を設定しようとして、<xref:System.Security.Cryptography.CryptographicException>です。 ときに<xref:System.Security.Cryptography.DESCryptoServiceProvider.GenerateKey%2A>が呼び出された、ランダムなキーを作成するには、弱いキーが返されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="rgbKey" /> パラメーターのサイズが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public override byte[] Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Key" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.DES.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、秘密キーのデータ暗号化標準 (<see cref="T:System.Security.Cryptography.DES" />) アルゴリズム。</summary>
+        <value><see cref="T:System.Security.Cryptography.DES" /> アルゴリズムの秘密鍵。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、する場合`null`に使用すると、<xref:System.Security.Cryptography.SymmetricAlgorithm.GenerateKey%2A>新しいランダムな値を作成するために呼び出されます。  
+  
+ キーの長さでなければなりません<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue>です。  
+  
+ このアルゴリズムには、64 ビットのキー長がサポートされています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">キーを <see langword="null" /> に設定しようとしました。</exception>
+        <exception cref="T:System.ArgumentException">長さと等しいキーを設定しようとした<see cref="F:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue" />です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">弱いキーを設定しようとしました (を参照してください<see cref="M:System.Security.Cryptography.DES.IsWeakKey(System.Byte[])" />) または部分的に弱いキー (を参照してください<see cref="M:System.Security.Cryptography.DES.IsSemiWeakKey(System.Byte[])" />)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

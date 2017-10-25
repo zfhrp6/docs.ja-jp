@@ -1,0 +1,435 @@
+<Type Name="Cloud" FullName="System.Net.PeerToPeer.Cloud">
+  <TypeSignature Language="C#" Value="public class Cloud : IEquatable&lt;System.Net.PeerToPeer.Cloud&gt;, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable Cloud extends System.Object implements class System.IEquatable`1&lt;class System.Net.PeerToPeer.Cloud&gt;, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Cloud" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Net.PeerToPeer.Cloud&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ピアを定義する値を指定<see cref="T:System.Net.PeerToPeer.Cloud" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Net.PeerToPeer.Cloud>ネットワーク経由で相互に通信できるノードのセットです。 クラウド、ピア メッシュ、ピア ツー ピアのグラフは同義です。 1 つのピアまたはノードを、複数のクラウドに接続できます。  
+  
+ 異なるクラウド間でノード間通信を行うことはできません。 <xref:System.Net.PeerToPeer.Cloud> インスタンスは、名前によって一意に識別されます。名前は大文字と小文字が区別されます。  
+  
+ クラウドは、ネットワーク インターフェイスに非常に密接に結び付けられています。  異なるサブネットに接続された 2 つのネットワーク カードを備えるマルチホーム コンピューターでは、3 つのクラウドが返されます。1 インターフェイスにつきリンクローカル アドレスごとに 1 つ、グローバル スコープ クラウド用に 1 つです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Cloud (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">このインスタンスの逆シリアル化に必要なデータを格納するオブジェクトへの参照。</param>
+        <param name="context">データを逆シリアル化するための手段を提供するコンテキスト。 シリアル化されたデータのソースとも呼ばれます。</param>
+        <summary>PNRP <see cref="T:System.Net.PeerToPeer.Cloud" /> 型の新しいインスタンスを初期化します。 シリアル化情報オブジェクトを、クラウド オブジェクトのシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.PeerToPeer.Cloud.Name%2A>プロパティには、クラウド オブジェクトの名前が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllLinkLocal">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.PeerToPeer.Cloud AllLinkLocal;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.PeerToPeer.Cloud AllLinkLocal" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.Cloud.AllLinkLocal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Cloud</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を返します、<see cref="T:System.Net.PeerToPeer.Cloud" />クライアントまたはピアが現在参加しているすべてのリンク ローカル クラウドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの使用により、<xref:System.Net.PeerToPeer.PeerNameRegistration>または<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>すべての可能なリンク ローカル クラウド内で発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Available">
+      <MemberSignature Language="C#" Value="public static readonly System.Net.PeerToPeer.Cloud Available;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Net.PeerToPeer.Cloud Available" />
+      <MemberSignature Language="DocId" Value="F:System.Net.PeerToPeer.Cloud.Available" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Cloud</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>静的に参照を返します、<see cref="T:System.Net.PeerToPeer.Cloud" />現在クライアントが参加しているすべての利用可能なクラウドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   このフィールドは自動的に呼び出しに使用<xref:System.Net.PeerToPeer.PeerNameRegistration>または<xref:System.Net.PeerToPeer.PeerNameResolver.Resolve%2A>にすべての可能なクラウドでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Net.PeerToPeer.Cloud other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Net.PeerToPeer.Cloud other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.Equals(System.Net.PeerToPeer.Cloud)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Net.PeerToPeer.Cloud" />
+      </Parameters>
+      <Docs>
+        <param name="other">これと比較するクラウド<see cref="T:System.Net.PeerToPeer.Cloud" />です。</param>
+        <summary>2 つのクラウド オブジェクトの間で区別する比較を行います。</summary>
+        <returns>
+          <see langword="True" />場合、<see cref="T:System.Net.PeerToPeer.Cloud" />指定それ以外の場合、現在の 1 つと同じリソースを識別<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較する前に、文字列の正規化は行われません。  すべての正規化を時に完了する必要があります、<xref:System.Net.PeerToPeer.Cloud>オブジェクトが構築されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Object" />これと比較する<see cref="T:System.Net.PeerToPeer.Cloud" />です。</param>
+        <summary>決定するかどうかこのピアのコンテンツ<see cref="T:System.Net.PeerToPeer.Cloud" />の内容には、<see cref="N:System" />オブジェクト。</summary>
+        <returns>
+          <see langword="True" />場合、<see cref="T:System.Net.PeerToPeer.PeerName" />および比較オブジェクトには、同じ情報が含まれます。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定の署名とからの動作を継承<xref:System.Object>です。  
+  
+ その他のオブジェクトと比較することがありますを<xref:System.Net.PeerToPeer>クラウド PeopleNearMe クラウドを含めるし、ピア ツー ピアのメッシュの Windows SDK のネットワーク サービス経由で入手できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAvailableClouds">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.CloudCollection GetAvailableClouds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.CloudCollection GetAvailableClouds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.GetAvailableClouds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.CloudCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラウドの呼び出し元のピアに既知のピアのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Net.PeerToPeer.CloudCollection" />クラウド呼び出し元のピアに既知のピアのコレクションを指定するオブジェクト。  クラウドがない場合、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと<xref:System.Net.PeerToPeer.Cloud.GetCloudByName%2A>メソッドは、の新しいインスタンスを取得する唯一の方法、<xref:System.Net.PeerToPeer.Cloud>クラスです。  
+  
+ クラウドは、ネットワーク インターフェイスに非常に密接に結び付けられています。  マルチホーム コンピューター別々 のサブネットにアタッチされた 2 つのネットワーク カードでは、次の 3 つのクラウドが返されます。 インターフェイス、および 1 つあたりのリンク ローカル アドレスごとに 1 つ<xref:System.Net.PeerToPeer.Cloud.Global%2A>スコープ<xref:System.Net.PeerToPeer.Cloud>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCloudByName">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Cloud GetCloudByName (string cloudName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.PeerToPeer.Cloud GetCloudByName(string cloudName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.GetCloudByName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Cloud</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cloudName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cloudName">PNRP の名前を含む<see cref="T:System.Net.PeerToPeer.Cloud" />です。</param>
+        <summary>返します、<see cref="T:System.Net.PeerToPeer.Cloud" />指定されたクラウドの名前を持つオブジェクト。</summary>
+        <returns><see cref="T:System.Net.PeerToPeer.Cloud" />指定されたクラウドの名前を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前の最大サイズは、256 文字です。  
+  
+ 場合、`cloudName`パラメーターは`null`または空にし、`null`が返されます。  
+  
+ クラウドのスコープ<xref:System.Net.PeerToPeer.Cloud.Global%2A>、リンク ローカル、またはそれ以外の場合で指定された<xref:System.Net.PeerToPeer.Cloud.Scope%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Net.PeerToPeer.Cloud" />名が不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オーバーライド<see cref="M:System.Object.GetHashCode" />です。</summary>
+        <returns>現在のハッシュ コードを<see cref="T:System.Object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのオブジェクトは、このメソッドは、それらの両方に対して同じハッシュ コードを返した場合は、等しいと見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Net.PeerToPeer.Cloud" /> オブジェクトに関連付けられたシリアル化データを保持します。</param>
+        <param name="context"><see cref="T:System.Net.PeerToPeer.Cloud" /> オブジェクトに関連付けられたシリアル化ストリームの転送先を格納します。</param>
+        <summary><see cref="N:System.Runtime.Serialization" /> 情報オブジェクトを、<see cref="T:System.Net.PeerToPeer.Cloud" /> のシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Global">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Cloud Global { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.PeerToPeer.Cloud Global" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Cloud.Global" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Cloud</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Cloud" />グローバルに含まれているインスタンス (インターネット) のピアのスコープです。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Cloud" />これには、グローバル ネットワークのスコープを使用して通信するピアが含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Cloud.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピアの名前を取得<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <value>ピアの名前<see cref="T:System.Net.PeerToPeer.Cloud" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前は大文字と小文字は、Unicode でエンコードです。 これらは、128 文字未満の長さです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.PnrpScope Scope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.PeerToPeer.PnrpScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Cloud.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.PnrpScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピアのネットワークのスコープを取得<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.PnrpScope" />現在のピア クラウド インスタンスの PNRP スコープを指定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラウドは、ネットワーク インターフェイスに非常に密接に結び付けられています。  マルチホーム コンピューター別々 のサブネットにアタッチされた 2 つのネットワーク カードでは、次の 3 つのネットワーク範囲も有効である: インターフェイス、および 1 つあたりのリンク ローカル アドレスごとに 1 つ<xref:System.Net.PeerToPeer.Cloud.Global%2A>スコープ<xref:System.Net.PeerToPeer.Cloud>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeId">
+      <MemberSignature Language="C#" Value="public int ScopeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScopeId" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Cloud.ScopeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このピアの特定の IP アドレスの識別子を取得<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <value>このピア クラウドのスコープに固有の ID を指定する整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチホーム コンピューター別々 のサブネットにアタッチされた 2 つのネットワーク カードでは、次の 2 つのネットワーク範囲も有効である: 1 つは、リンク ローカル<xref:System.Net.PeerToPeer.Cloud.Scope%2A>、もう一方が<xref:System.Net.PeerToPeer.Cloud.Global%2A>スコープ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Net.PeerToPeer.Cloud" /> オブジェクトに関連付けられたシリアル化データを保持します。</param>
+        <param name="context"><see cref="T:System.Net.PeerToPeer.Cloud" /> オブジェクトに関連付けられたシリアル化ストリームの転送先を格納します。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、<see cref="T:System.Net.PeerToPeer.Cloud" /> インスタンスをシリアル化するために必要なデータを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Cloud.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の文字列表現を返します<see cref="T:System.Net.PeerToPeer.Cloud" />です。</summary>
+        <returns>現在の <see cref="T:System.Net.PeerToPeer.Cloud" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定の署名とからの動作を継承<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

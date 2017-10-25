@@ -1,0 +1,87 @@
+<Type Name="ActivityTrackingLocationCollection" FullName="System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection">
+  <TypeSignature Language="C#" Value="public class ActivityTrackingLocationCollection : System.Collections.Generic.List&lt;System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActivityTrackingLocationCollection extends System.Collections.Generic.List`1&lt;class System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Generic.List&lt;System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Workflow.Runtime.Tracking.ActivityTrackingLocation</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> オブジェクトのコレクションを含んでいます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> は 2 つの <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection> オブジェクト (アクティビティ ステータス イベントの照合に使われるパラメーターを指定する <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A>、およびアクティビティ ステータス イベントを照合から除外するために使われるパラメーターを指定する <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A>) を保持します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocationCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection> を空のリストに初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocationCollection (System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt; locations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt; locations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection.#ctor(System.Collections.Generic.IEnumerable{System.Workflow.Runtime.Tracking.ActivityTrackingLocation})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="locations" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Tracking.ActivityTrackingLocation&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="locations"><see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> リスト。</param>
+        <summary>アクティビティの場所のリストを使用して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection> は、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> で指定された `locations` オブジェクトを含むように初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="locations" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

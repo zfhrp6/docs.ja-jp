@@ -1,0 +1,84 @@
+<Type Name="ISimplexDatagramRouter" FullName="System.ServiceModel.Routing.ISimplexDatagramRouter">
+  <TypeSignature Language="C#" Value="public interface ISimplexDatagramRouter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISimplexDatagramRouter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.ISimplexDatagramRouter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceContract(Namespace="http://schemas.microsoft.com/netfx/2009/05/routing", SessionMode=System.ServiceModel.SessionMode.Allowed)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一方向データグラムからのメッセージの処理に必要なインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントラクトには、次の設定があります。  
+  
+-   セッションは許可されますが、必須ではありません。  
+  
+-   一方向のメッセージ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginProcessMessage">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginProcessMessage (System.ServiceModel.Channels.Message message, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginProcessMessage(class System.ServiceModel.Channels.Message message, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.ISimplexDatagramRouter.BeginProcessMessage(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract(Action="*", AsyncPattern=true, IsOneWay=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="message">処理されるメッセージ。</param>
+        <param name="callback">メッセージ処理が完了したときに呼び出される <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">コールバック プロシージャに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>メッセージの非同期処理を開始します。</summary>
+        <returns>結果のポーリング、待機、またはその両方に使用する <see cref="T:System.IAsyncResult" />。この値は、<see cref="M:System.ServiceModel.Routing.ISimplexDatagramRouter.EndProcessMessage(System.IAsyncResult)" /> を呼び出す場合にも必要となります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndProcessMessage">
+      <MemberSignature Language="C#" Value="public void EndProcessMessage (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndProcessMessage(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.ISimplexDatagramRouter.EndProcessMessage(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="M:System.ServiceModel.Routing.ISimplexDatagramRouter.BeginProcessMessage(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" /> の呼び出しから返される非同期の結果。</param>
+        <summary>メッセージ処理の非同期実行を終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

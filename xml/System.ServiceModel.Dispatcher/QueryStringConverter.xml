@@ -1,0 +1,232 @@
+<Type Name="QueryStringConverter" FullName="System.ServiceModel.Dispatcher.QueryStringConverter">
+  <TypeSignature Language="C#" Value="public class QueryStringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryStringConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.QueryStringConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、クエリ文字列のパラメーターを適切な型のオブジェクトに変換します。 また、オブジェクトからのパラメーターをクエリ文字列表現に変換することもできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターは、URL 内のクエリ文字列に指定できます。 このクラスは、文字列に指定されたこれらのパラメーターを取得し、オブジェクトに変換します。 たとえば、次のコントラクトを定義します。  
+  
+```  
+[ServiceContract]  
+interface Calculator  
+{  
+   [WebGet(UriTemplate="Add?n1={n1}&n2={n2}")]  
+   [OperationContract]  
+   long Add(long n1, long n2);  
+}  
+```  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスはこのインターフェイスを実装し、http://localhost:8000/MyCalcService で <xref:System.ServiceModel.Description.WebHttpBehavior> を使用してエンドポイントに公開します。 `Add` サービス操作を呼び出すには、HTTP GET を http://localhost:8000/MyCalcService/Add?n1=10&amp;n2=5 に送信します。 <xref:System.ServiceModel.Dispatcher.QueryStringConverter> はこの URL を受け取り、URL で指定された 2 つのパラメーター (n1 と n2) を、適切な値の 2 つの `long` オブジェクトに変換します。  
+  
+ <xref:System.ServiceModel.Dispatcher.QueryStringConverter> からクラスを派生して、クエリ文字列パラメーターをサービス操作のパラメーターにマップする方法を制御できます。  
+  
+ <xref:System.ServiceModel.Dispatcher.QueryStringConverter> は、既定で次の型をサポートしています。  
+  
+-   <xref:System.Byte>  
+  
+-   <xref:System.SByte>  
+  
+-   <xref:System.Int16>  
+  
+-   <xref:System.Int32>  
+  
+-   <xref:System.Int64>  
+  
+-   <xref:System.UInt16>  
+  
+-   <xref:System.UInt32>  
+  
+-   <xref:System.UInt64>  
+  
+-   <xref:System.Single>  
+  
+-   <xref:System.Double>  
+  
+-   <xref:System.Char>  
+  
+-   <xref:System.Decimal>  
+  
+-   <xref:System.Boolean>  
+  
+-   <xref:System.String>  
+  
+-   <xref:System.DateTime>  
+  
+-   <xref:System.TimeSpan>  
+  
+-   <xref:System.Guid>  
+  
+-   <xref:System.Byte> 配列  
+  
+-   <xref:System.Uri>  
+  
+-   <xref:System.Object>  
+  
+-   <xref:System.DateTimeOffset>  
+  
+-   列挙型  
+  
+-   型と文字列表現を双方向に変換できる `TypeConverterAttribute` を持つ型。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Dispatcher.QueryStringConverter> クラスを使用して文字列と 32 ビット整数間の変換を行う方法を次のコードに示します。  
+  
+ [!code-csharp[QueryStringConverter#0](~/samples/snippets/csharp/VS_Snippets_CFX/querystringconverter/cs/program.cs#0)]
+ [!code-vb[QueryStringConverter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/querystringconverter/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryStringConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.QueryStringConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.QueryStringConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Dispatcher.QueryStringConverter> クラスのインスタンスを作成する方法を次のコードに示します。  
+  
+ [!code-csharp[QueryStringConverter#1](~/samples/snippets/csharp/VS_Snippets_CFX/querystringconverter/cs/program.cs#1)]
+ [!code-vb[QueryStringConverter#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/querystringconverter/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvert">
+      <MemberSignature Language="C#" Value="public virtual bool CanConvert (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanConvert(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.QueryStringConverter.CanConvert(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">変換対象の <see cref="T:System.Type" />。</param>
+        <summary>指定した型と文字列表現を双方向に変換できるかどうかを確認します。</summary>
+        <returns>型を変換できるかどうかを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Dispatcher.QueryStringConverter> を使用して指定の型との間で変換を行うことができるかどうかを調べる方法を次のコードに示します。  
+  
+ [!code-csharp[QueryStringConverter#2](~/samples/snippets/csharp/VS_Snippets_CFX/querystringconverter/cs/program.cs#2)]
+ [!code-vb[QueryStringConverter#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/querystringconverter/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertStringToValue">
+      <MemberSignature Language="C#" Value="public virtual object ConvertStringToValue (string parameter, Type parameterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertStringToValue(string parameter, class System.Type parameterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.QueryStringConverter.ConvertStringToValue(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.String" />
+        <Parameter Name="parameterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">パラメーターと値から構成される文字列形式。</param>
+        <param name="parameterType">パラメーターを変換する <see cref="T:System.Type" />。</param>
+        <summary>クエリ文字列パラメーターを指定した型に変換します。</summary>
+        <returns>変換されるパラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parameterType` が値型で、パラメーターが `null` である場合は、`parameterType` の既定値が返されます。  
+  
+   
+  
+## Examples  
+ 文字列を指定の型に変換する方法を次のコードに示します。  
+  
+ [!code-csharp[QueryStringConverter#2](~/samples/snippets/csharp/VS_Snippets_CFX/querystringconverter/cs/program.cs#2)]
+ [!code-vb[QueryStringConverter#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/querystringconverter/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">指定された文字列の形式が不適切です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertValueToString">
+      <MemberSignature Language="C#" Value="public virtual string ConvertValueToString (object parameter, Type parameterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ConvertValueToString(object parameter, class System.Type parameterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.QueryStringConverter.ConvertValueToString(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="parameterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">変換するパラメーター。</param>
+        <param name="parameterType">変換するパラメーターの <see cref="T:System.Type" />。</param>
+        <summary>パラメーターをクエリ文字列表現に変換します。</summary>
+        <returns>パラメーター名と値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 指定された値をその値の文字列表現に変換する方法を次のコードに示します。  
+  
+ [!code-csharp[QueryStringConverter#3](~/samples/snippets/csharp/VS_Snippets_CFX/querystringconverter/cs/program.cs#3)]
+ [!code-vb[QueryStringConverter#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/querystringconverter/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

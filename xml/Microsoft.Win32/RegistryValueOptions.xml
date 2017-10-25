@@ -1,0 +1,89 @@
+<Type Name="RegistryValueOptions" FullName="Microsoft.Win32.RegistryValueOptions">
+  <TypeSignature Language="C#" Value="public enum RegistryValueOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RegistryValueOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.RegistryValueOptions" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>レジストリ キーから名前/値ペアを取得するときに、オプションの動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含む DoNotExpandEnvironmentNames フラグを使用して、<xref:Microsoft.Win32.RegistryKey.GetValue%28System.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueOptions%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルでは、テスト キーを作成、埋め込まれた環境変数に値を追加し、展開と展開の両方の形式で値を取得します。  
+  
+ [!code-cpp[RegistryValueOptions#1](~/samples/snippets/cpp/VS_Snippets_CLR/RegistryValueOptions/CPP/RegistryValueOptions.cpp#1)]
+ [!code-csharp[RegistryValueOptions#1](~/samples/snippets/csharp/VS_Snippets_CLR/RegistryValueOptions/CS/source.cs#1)]
+ [!code-vb[RegistryValueOptions#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RegistryValueOptions/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DoNotExpandEnvironmentNames">
+      <MemberSignature Language="C#" Value="DoNotExpandEnvironmentNames" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryValueOptions DoNotExpandEnvironmentNames = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryValueOptions.DoNotExpandEnvironmentNames" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryValueOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の値<see cref="F:Microsoft.Win32.RegistryValueKind.ExpandString" />埋め込まれた環境変数を展開することがなく取得されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryValueOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryValueOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryValueOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能な動作が指定されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

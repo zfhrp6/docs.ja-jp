@@ -1,0 +1,124 @@
+<Type Name="ManifestReader" FullName="Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader">
+  <TypeSignature Language="C#" Value="public static class ManifestReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ManifestReader extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML マニフェスト ファイルを読み取り、オブジェクト表現にします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest (System.IO.Stream input, bool preserveStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest(class System.IO.Stream input, bool preserveStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader.ReadManifest(System.IO.Stream,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+        <Parameter Name="preserveStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="input">入力ストリームを指定します。</param>
+        <param name="preserveStream">入力ストリームを保持するかどうかを指定します、<see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest.InputStream" />結果として得られるマニフェスト オブジェクトのプロパティです。 によって使用される<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter" />オブジェクト表現では表されない入力を再構成します。</param>
+        <summary>指定されたマニフェスト XML を読み取り、オブジェクト表現を返します。</summary>
+        <returns>A<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest" />オブジェクト マニフェストの表現。 キャストできる<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.AssemblyManifest" />、 <see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ApplicationManifest" />、または<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.DeployManifest" />より具体的な機能にアクセスします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest (string path, bool preserveStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest(string path, bool preserveStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader.ReadManifest(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">入力ファイルの完全修飾パス名。 たとえば、完全なパスは、c:\directory\folder\filename.manifest などのようになります。</param>
+        <param name="preserveStream">入力ストリームを保持するかどうかを指定します、<see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest.InputStream" />結果として得られるマニフェスト オブジェクトのプロパティです。 によって使用される<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter" />オブジェクト表現では表されない入力を再構成します。</param>
+        <summary>指定されたマニフェスト XML を読み取り、オブジェクト表現を返します。</summary>
+        <returns>A<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest" />オブジェクト マニフェストの表現。 キャストできる<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.AssemblyManifest" />、 <see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ApplicationManifest" />、または<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.DeployManifest" />より具体的な機能にアクセスします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest (string manifestType, System.IO.Stream input, bool preserveStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest(string manifestType, class System.IO.Stream input, bool preserveStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader.ReadManifest(System.String,System.IO.Stream,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manifestType" Type="System.String" />
+        <Parameter Name="input" Type="System.IO.Stream" />
+        <Parameter Name="preserveStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="manifestType">マニフェストの必要な型を指定します。 有効な値は、<see langword="AssemblyManifest" />、<see langword="ApplicationManifest" />、または <see langword="DeployManifest" /> です。</param>
+        <param name="input">入力ストリームを指定します。</param>
+        <param name="preserveStream">入力ストリームを保持するかどうかを指定します、<see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest.InputStream" />結果として得られるマニフェスト オブジェクトのプロパティです。 によって使用される<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter" />オブジェクト表現では表されない入力を再構成します。</param>
+        <summary>指定されたマニフェスト XML を読み取り、オブジェクト表現を返します。</summary>
+        <returns>A<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest" />オブジェクト マニフェストの表現。 キャストできる<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.AssemblyManifest" />、 <see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ApplicationManifest" />、または<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.DeployManifest" />より具体的な機能にアクセスします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest (string manifestType, string path, bool preserveStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest ReadManifest(string manifestType, string path, bool preserveStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader.ReadManifest(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manifestType" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="preserveStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="manifestType">マニフェストの必要な型を指定します。 有効な値は、<see langword="AssemblyManifest" />、<see langword="ApplicationManifest" />、または <see langword="DeployManifest" /> です。</param>
+        <param name="path">入力ファイルのパス名。</param>
+        <param name="preserveStream">入力ストリームを保持するかどうかを指定します、<see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest.InputStream" />結果として得られるマニフェスト オブジェクトのプロパティです。 によって使用される<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter" />オブジェクト表現では表されない入力を再構成します。</param>
+        <summary>指定されたマニフェスト XML を読み取り、オブジェクト表現を返します。</summary>
+        <returns>A<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.Manifest" />オブジェクト マニフェストの表現。 キャストできる<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.AssemblyManifest" />、 <see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ApplicationManifest" />、または<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.DeployManifest" />より具体的な機能にアクセスします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

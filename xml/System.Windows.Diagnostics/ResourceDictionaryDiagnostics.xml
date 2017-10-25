@@ -1,0 +1,117 @@
+<Type Name="ResourceDictionaryDiagnostics" FullName="System.Windows.Diagnostics.ResourceDictionaryDiagnostics">
+  <TypeSignature Language="C#" Value="public static class ResourceDictionaryDiagnostics" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ResourceDictionaryDiagnostics extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Diagnostics.ResourceDictionaryDiagnostics" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>汎用的なテーマの列挙を有効<see cref="T:System.Windows.ResourceDictionary" />インスタンス、および読み込みをリッスンしているのとアンロード通知インフラストラクチャを提供<see cref="T:System.Windows.ResourceDictionary" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は、.NET Framework インフラストラクチャをサポートしているし、アプリケーション コードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GenericResourceDictionaries">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Windows.Diagnostics.ResourceDictionaryInfo&gt; GenericResourceDictionaries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Diagnostics.ResourceDictionaryInfo&gt; GenericResourceDictionaries" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GenericResourceDictionaries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Diagnostics.ResourceDictionaryInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージ デバッガーがアタッチされている場合は、アプリケーションによって読み込まれる、ジェネリック <see cref="T:System.Windows.ResourceDictionary" /> オブジェクトのすべてのインスタンスを取得します。</summary>
+        <value>
+          <see cref="P:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GenericResourceDictionaries" /> プロパティ</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericResourceDictionaryLoaded">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt; GenericResourceDictionaryLoaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt; GenericResourceDictionaryLoaded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GenericResourceDictionaryLoaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ジェネリック、およびマネージ デバッガーがアタッチされたときに発生<see cref="T:System.Windows.ResourceDictionary" />オブジェクトが、アプリケーションによって読み込まれます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemedResourceDictionaries">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Windows.Diagnostics.ResourceDictionaryInfo&gt; ThemedResourceDictionaries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Diagnostics.ResourceDictionaryInfo&gt; ThemedResourceDictionaries" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.ThemedResourceDictionaries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Diagnostics.ResourceDictionaryInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージ デバッガーがアタッチされている場合は、アプリケーションによって読み込まれる、テーマが適用された <see cref="T:System.Windows.ResourceDictionary" /> オブジェクトのすべてのインスタンスを取得します。</summary>
+        <value>
+          <see cref="P:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.ThemedResourceDictionaries" />
+        </value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemedResourceDictionaryLoaded">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt; ThemedResourceDictionaryLoaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt; ThemedResourceDictionaryLoaded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.ThemedResourceDictionaryLoaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryLoadedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマ、およびマネージ デバッガーがアタッチされるときに発生<see cref="T:System.Windows.ResourceDictionary" />オブジェクトが、アプリケーションによって読み込まれます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemedResourceDictionaryUnloaded">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryUnloadedEventArgs&gt; ThemedResourceDictionaryUnloaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Diagnostics.ResourceDictionaryUnloadedEventArgs&gt; ThemedResourceDictionaryUnloaded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.ThemedResourceDictionaryUnloaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Diagnostics.ResourceDictionaryUnloadedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージ デバッガーが接続されているため、テーマが適用されたときに発生<see cref="T:System.Windows.ResourceDictionary" />オブジェクトは、アプリケーションからアンロードされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

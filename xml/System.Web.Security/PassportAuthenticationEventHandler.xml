@@ -1,0 +1,37 @@
+<Type Name="PassportAuthenticationEventHandler" FullName="System.Web.Security.PassportAuthenticationEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void PassportAuthenticationEventHandler(object sender, PassportAuthenticationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PassportAuthenticationEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.PassportAuthenticationEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This type is obsolete. The Passport authentication product is no longer supported and has been superseded by Live ID.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.Security.PassportAuthenticationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントを発生させたオブジェクト。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.Security.PassportAuthenticationEventArgs" /> オブジェクト。</param>
+    <summary><see cref="T:System.Web.Security.PassportAuthenticationModule" /> の <see langword="PassportAuthentication_OnAuthenticate" /> イベントを処理するメソッドを表します。 このクラスは使用されていません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

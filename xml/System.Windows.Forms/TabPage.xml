@@ -1,0 +1,1198 @@
+<Type Name="TabPage" FullName="System.Windows.Forms.TabPage">
+  <TypeSignature Language="C#" Value="public class TabPage : System.Windows.Forms.Panel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TabPage extends System.Windows.Forms.Panel" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TabPage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Panel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Click")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.TabPageDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の 1 つのタブ ページを表す、<see cref="T:System.Windows.Forms.TabControl" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage>コントロールのタブ ページを表す、<xref:System.Windows.Forms.TabControl>コントロール。 内のタブ ページの順序、<xref:System.Windows.Forms.TabControl.TabPages%2A?displayProperty=nameWithType>コレクション内のタブの順序を反映して、<xref:System.Windows.Forms.TabControl>コントロール。 コントロールのタブの順序を変更するには、新しいインデックスに挿入し、削除することによって、コレクション内の位置を変更する必要があります。  
+  
+ <xref:System.Windows.Forms.TabPage>継承されたプロパティの一部であるため、コンテナーによってコントロールが制約、<xref:System.Windows.Forms.Control>基底クラスには、効果はありませんを含む<xref:System.Windows.Forms.Control.Top%2A>、 <xref:System.Windows.Forms.Control.Height%2A>、 <xref:System.Windows.Forms.Control.Left%2A>、 <xref:System.Windows.Forms.Control.Width%2A>、 <xref:System.Windows.Forms.Control.Show%2A>、および<xref:System.Windows.Forms.Control.Hide%2A>です。  
+  
+ タブで、<xref:System.Windows.Forms.TabControl>の一部である、 <xref:System.Windows.Forms.TabControl> 、個々 の部分ではありませんが、<xref:System.Windows.Forms.TabPage>コントロール。 メンバー、<xref:System.Windows.Forms.TabPage>クラスなど、<xref:System.Windows.Forms.Control.ForeColor%2A>プロパティ タブではなく、タブ ページのクライアント四角形のみに影響します。 さらに、<xref:System.Windows.Forms.Control.Hide%2A>のメソッド、<xref:System.Windows.Forms.TabPage>タブが非表示にはなりません。削除する必要があります、タブを非表示に、<xref:System.Windows.Forms.TabPage>から制御、<xref:System.Windows.Forms.TabControl.TabPages%2A?displayProperty=nameWithType>コレクション。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、タブはケースを決定するためのタブ ページの一部と見なされます、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>発生します。 .NET Framework の以前のバージョンで、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>は実行されませんが、フォーカスに入るまたはタブを出るときにフォーカスに入るまたはタブ ページのクライアントの四角形を出るときにのみです。  
+  
+ このコントロールに応答する方法の詳細については、<xref:System.Windows.Forms.Control.Focus%2A>と<xref:System.Windows.Forms.Control.Select%2A>メソッドでは、次を参照してください<xref:System.Windows.Forms.Control>メンバー: <xref:System.Windows.Forms.Control.CanFocus%2A>、 <xref:System.Windows.Forms.Control.CanSelect%2A>、 <xref:System.Windows.Forms.Control.Focused%2A>、 <xref:System.Windows.Forms.Control.ContainsFocus%2A>、 <xref:System.Windows.Forms.Control.Focus%2A>、<xref:System.Windows.Forms.Control.Select%2A>です。  
+  
+> [!NOTE]
+>  含まれるコントロール、<xref:System.Windows.Forms.TabPage>タブ ページが表示され、タブ ページが表示されるまでは、これらのコントロールでデータ バインディングを有効にされませんまでは作成されません。  
+  
+ [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>プロパティを使用して、現在の visual スタイルを使用して、タブ ページの背景を表示するかどうかを指定できます。 のみが発生したこのとき、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>と<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>プロパティの値が両方とも`true`と<xref:System.Windows.Forms.TabControl.Appearance%2A>親のプロパティ<xref:System.Windows.Forms.TabControl>は<xref:System.Windows.Forms.TabAppearance.Normal>します。 それ以外の場合、通常どおり、背景に描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>いずれかで<xref:System.Windows.Forms.TabPage>です。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabPage#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPage/CPP/form1.cpp#1)]
+ [!code-csharp[TabPage#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPage/CS/form1.cs#1)]
+ [!code-vb[TabPage#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPage/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TabPage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TabPage" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>いずれかで<xref:System.Windows.Forms.TabPage>です。 <xref:System.Windows.Forms.TabPage.%23ctor%2A>コンス トラクターをインスタンス化`tabPage1`です。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabPage_constructor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPage_constructor/CPP/form1.cpp#1)]
+ [!code-csharp[TabPage_constructor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPage_constructor/CS/form1.cs#1)]
+ [!code-vb[TabPage_constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPage_constructor/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TabPage (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">タブで使用するテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TabPage" />クラスし、タブのテキストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.Text%2A>の値に設定されて、`text`パラメーター。  
+  
+   
+  
+## Examples  
+ この例で作成、<xref:System.Windows.Forms.TabControl>で、<xref:System.Windows.Forms.TabPage>です。 <xref:System.Windows.Forms.TabPage.%23ctor%2A>コンス トラクターを受け入れる、`myTabPage`として文字列<xref:System.Windows.Forms.TabPage.Text%2A>の`tabPage1`します。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabPage_withText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPage_withText/CPP/form1.cpp#1)]
+ [!code-csharp[TabPage_withText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPage_withText/CS/form1.cs#1)]
+ [!code-vb[TabPage_withText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPage_withText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Anchor">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AnchorStyles Anchor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AnchorStyles Anchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Anchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AnchorStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value><see cref="T:System.Windows.Forms.AnchorStyles" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public override bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AutoSizeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AutoSizeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.AutoSizeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.AutoSize" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を変更できますが、<xref:System.Windows.Forms.TabPage.AutoSize%2A>プロパティ値が変更されたときを判断するには、このイベントを処理し、<xref:System.Windows.Forms.TabPage.AutoSize%2A>プロパティは、このコントロールの意味がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeMode">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AutoSizeMode AutoSizeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AutoSizeMode AutoSizeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.AutoSizeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoSizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>コントロールのサイズが内容に合わせて制限なく拡大されますが、サイズ プロパティの値未満には縮小されません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TabPage" /> の背景色を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.TabPage" /> の背景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティの値は、<xref:System.Windows.Forms.Control.DefaultBackColor%2A?displayProperty=nameWithType>プロパティしない限り、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>と<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>プロパティの値が両方とも`true`と<xref:System.Windows.Forms.TabControl.Appearance%2A>親のプロパティ<xref:System.Windows.Forms.TabControl>の値を持つ<xref:System.Windows.Forms.TabAppearance.Normal>、後者の既定値、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティは<xref:System.Drawing.Color.Transparent%2A>します。 上に配置する子コントロール、<xref:System.Windows.Forms.TabPage>継承、<xref:System.Windows.Forms.TabPage.BackColor%2A>既定では、この動作により、子のバック グラウンド コントロールを現在の visual スタイルをレンダリングするための値。  
+  
+ 値を変更する、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティが自動的に設定、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>プロパティを`false`です。 場合は、<xref:System.Windows.Forms.TabPage>が visual スタイルを使用して表示するためにバック グラウンドを継承する子コントロールの目的、 <xref:System.Windows.Forms.TabPage.BackColor%2A> 、指定した値の設定、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>プロパティを設定した後、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlsInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.Control.ControlCollection CreateControlsInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.Control/ControlCollection CreateControlsInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.CreateControlsInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control+ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのコントロール コレクションの新しいインスタンスを作成します。</summary>
+        <returns>コントロールに割り当てられた <see cref="T:System.Windows.Forms.Control.ControlCollection" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dock">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DockStyle Dock { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DockStyle Dock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Dock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DockStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value><see cref="T:System.Windows.Forms.DockStyle" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DockChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DockChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DockChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.DockChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.Dock" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.Dock%2A>プロパティはその値を変更し、処理できますが、このコントロールでは、<xref:System.Windows.Forms.TabPage.DockChanged>変更を検出するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value>既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnabledChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler EnabledChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EnabledChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.EnabledChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.Enabled" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.Enabled%2A>プロパティはその値を変更し、処理できますが、このコントロールでは、<xref:System.Windows.Forms.TabPage.EnabledChanged>変更を検出するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTabPageOfComponent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.TabPage GetTabPageOfComponent (object comp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.TabPage GetTabPageOfComponent(object comp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.GetTabPageOfComponent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TabPage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comp">検索するオブジェクト。</param>
+        <summary>指定されたオブジェクトが格納されているタブ ページを取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.TabPage" /> 、指定されたオブジェクトを格納しているか、<see langword="null" />オブジェクトが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.TabControl> 、2 つ<xref:System.Windows.Forms.TabPage>オブジェクト、1 つを含む各<xref:System.Windows.Forms.Button>コンポーネントです。 パラメーター`button2`に渡される、<xref:System.Windows.Forms.TabPage.GetTabPageOfComponent%2A>を取得するメソッド、<xref:System.Windows.Forms.TabPage>を含む`button2`です。 正しいタブ ページを取得することを確認する、<xref:System.Windows.Forms.TabControl.SelectedIndex%2A>プロパティ セット、<xref:System.Windows.Forms.TabPage>を含む`button2`現在選択されているタブ ページにします。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[GetTabPageOfComponent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetTabPageOfComponent/CPP/form1.cpp#1)]
+ [!code-csharp[GetTabPageOfComponent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetTabPageOfComponent/CS/form1.cs#1)]
+ [!code-vb[GetTabPageOfComponent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetTabPageOfComponent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageIndex">
+      <MemberSignature Language="C#" Value="public int ImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.ImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageIndexConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタブに表示されているイメージのインデックスを取得または設定します。</summary>
+        <value>0 から始まるインデックスにあるイメージを<see cref="P:System.Windows.Forms.TabControl.ImageList" /> タブで表示されます。既定値は -1 です。これはイメージがないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.ImageIndex%2A> 、関連するイメージを指す<xref:System.Windows.Forms.TabControl.ImageList%2A>の<xref:System.Windows.Forms.TabControl>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>いずれかで<xref:System.Windows.Forms.TabPage>です。 この例では、<xref:System.Windows.Forms.TabPage.ImageIndex%2A>からイメージを指定するプロパティ`myImages`のタブで表示`tabPage1`です。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.ComponentModel>、 <xref:System.Windows.Forms>、および<xref:System.Resources>この例の名前空間。  
+  
+ [!code-cpp[TabPage.ImageIndex#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPage.ImageIndex/CPP/form1.cpp#1)]
+ [!code-csharp[TabPage.ImageIndex#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPage.ImageIndex/CS/form1.cs#1)]
+ [!code-vb[TabPage.ImageIndex#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPage.ImageIndex/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Windows.Forms.TabPage.ImageIndex" />値が-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageKey">
+      <MemberSignature Language="C#" Value="public string ImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.ImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageKeyConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定キー アクセサー内のイメージを<see cref="P:System.Windows.Forms.TabControl.ImageList" />関連付けられている<see cref="T:System.Windows.Forms.TabControl" />です。</summary>
+        <value>イメージのキーを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.ImageKey%2A>プロパティがコントロール上に表示するイメージ リストのイメージを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>オブジェクトの位置を指定する x および y 座標。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocationChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler LocationChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LocationChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.LocationChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.Location" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を変更できますが、<xref:System.Windows.Forms.TabPage.Location%2A>プロパティ値が変更されたときを判断するには、このイベントを処理し、<xref:System.Windows.Forms.TabPage.Location%2A>プロパティは、このコントロールの意味がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MaximumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MaximumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.MaximumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Size), "0, 0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>オブジェクトの上限サイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>オブジェクトの下限サイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEnter">
+      <MemberSignature Language="C#" Value="protected override void OnEnter (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEnter(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.OnEnter(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.Control.Enter" />のイベント、<see cref="T:System.Windows.Forms.TabPage" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、タブはケースを決定するためのタブ ページの一部と見なされます、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>発生します。 .NET Framework の以前のバージョンで、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>は実行されませんが、フォーカスに入るまたはタブを出るときにフォーカスに入るまたはタブ ページのクライアントの四角形を出るときにのみです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.TabPage.OnEnter%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TabPage.OnEnter(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TabPage.OnEnter(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLeave">
+      <MemberSignature Language="C#" Value="protected override void OnLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.OnLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.Control.Leave" />のイベント、<see cref="T:System.Windows.Forms.TabPage" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]、タブはケースを決定するためのタブ ページの一部と見なされます、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>発生します。 .NET Framework の以前のバージョンで、<xref:System.Windows.Forms.Control.Enter>と<xref:System.Windows.Forms.Control.Leave>のイベント、<xref:System.Windows.Forms.TabPage>は実行されませんが、フォーカスに入るまたはタブを出るときにフォーカスに入るまたはタブ ページのクライアントの四角形を出るときにのみです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.TabPage.OnLeave%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.TabPage.OnLeave(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.TabPage.OnLeave(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaintBackground">
+      <MemberSignature Language="C#" Value="protected override void OnPaintBackground (System.Windows.Forms.PaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaintBackground(class System.Windows.Forms.PaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.OnPaintBackground(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.PaintEventArgs" />背景を描画するのに役立つデータを格納しています。</param>
+        <summary><see cref="T:System.Windows.Forms.TabPage" /> の背景を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムの背景を描画するには、このメソッドが呼び出されて、<xref:System.Windows.Forms.TabPage>です。 ときに、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>と<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>プロパティの値が両方とも`true`と<xref:System.Windows.Forms.TabControl.Appearance%2A>、親<xref:System.Windows.Forms.TabControl>は<xref:System.Windows.Forms.TabAppearance.Normal>、このメソッドは、現在の visual スタイルを使用して背景を描画します。 それ以外の場合、このメソッドは、背景を通常どおりに描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size PreferredSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size PreferredSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.PreferredSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>コントロールが適合する四角形領域のサイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBoundsCore">
+      <MemberSignature Language="C#" Value="protected override void SetBoundsCore (int x, int y, int width, int height, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetBoundsCore(int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="x">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Left" /> プロパティ値。</param>
+        <param name="y">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Top" /> プロパティ値。</param>
+        <param name="width">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Width" /> プロパティ値。</param>
+        <param name="height">コントロールの新しい <see cref="P:System.Windows.Forms.Control.Height" /> プロパティ値。</param>
+        <param name="specified">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.BoundsSpecified" />値。</param>
+        <summary>このメンバーは <see cref="M:System.Windows.Forms.Control.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" /> をオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndex">
+      <MemberSignature Language="C#" Value="public int TabIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TabIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.TabIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このプロパティは無効です。</summary>
+        <value>コントロールのタブ オーダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.TabIndex%2A?displayProperty=nameWithType>プロパティはコントロールがフォームのユーザーが TAB キーを押すとフォーカスを受け取るする順序を示します。 <xref:System.Windows.Forms.TabPage>コントロールに含まれる<xref:System.Windows.Forms.TabControl>コントロール、ただし、フォーカスを受け取りません個別にフォームのタブ オーダーの一部としてとします。 そのため、このプロパティは、このクラスに対しては無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndexChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TabIndexChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TabIndexChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.TabIndexChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.TabIndex" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.TabIndex%2A>プロパティはその値を変更し、処理できますが、このコントロールでは、<xref:System.Windows.Forms.TabPage.TabIndexChanged>変更を検出するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabStop">
+      <MemberSignature Language="C#" Value="public bool TabStop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TabStop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.TabStop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value>既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage>コントロールに含まれる<xref:System.Windows.Forms.TabControl>コントロールと、フォーカスを受け取りません個別にフォームのタブ オーダーの一部として。 そのため、このプロパティは、このクラスに対しては無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabStopChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TabStopChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TabStopChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.TabStopChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.TabStop" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.TabStop%2A>プロパティはその値を変更し、処理できますが、このコントロールでは、<xref:System.Windows.Forms.TabPage.TabStopChanged>変更を検出するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タブに表示されるテキストを取得または設定します。</summary>
+        <value>タブに表示されるテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更、<xref:System.Windows.Forms.TabPage.Text%2A>プロパティの値は自動的に中央に表示されません タブで新しい値場合、<xref:System.Windows.Forms.TabControl>が、<xref:System.Windows.Forms.TabControl.SizeMode%2A>のプロパティの値<xref:System.Windows.Forms.TabSizeMode.Fixed>です。 この制限を回避するには、設定して、<xref:System.Windows.Forms.TabControl.ItemSize%2A?displayProperty=nameWithType>プロパティまたは削除することによって、<xref:System.Windows.Forms.TabPage>から、<xref:System.Windows.Forms.TabControl.TabPages%2A?displayProperty=nameWithType>コレクション再度追加して、コレクションにします。 これらのアクションの両方が、自動的にテキストを中央です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>いずれかで<xref:System.Windows.Forms.TabPage>です。 <xref:System.Windows.Forms.TabPage.Text%2A>プロパティでは、タブ ページのテキストを設定`myTabPage`です。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabText/CPP/form1.cpp#1)]
+ [!code-csharp[TabText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabText/CS/form1.cs#1)]
+ [!code-vb[TabText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabControl.Text" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタブのツールヒントのテキストを取得または設定します。</summary>
+        <value>このタブのツールヒントのテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このタブ ページが所属する、<xref:System.Windows.Forms.TabControl>です。 場合、ユーザーがタブの上、マウスを動かすと、ツールヒントのテキストが表示されます、<xref:System.Windows.Forms.TabControl.ShowToolTips%2A>のプロパティ、<xref:System.Windows.Forms.TabControl>は`true`します。 ツールヒントに関する詳細については、次を参照してください。、<xref:System.Windows.Forms.ToolTip>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.TabControl> 、2 つ<xref:System.Windows.Forms.TabPage>オブジェクト。 <xref:System.Windows.Forms.TabControl>ツールヒント、およびタブ ページには、ツールヒントのテキストを割り当てられたできるように設定されます。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[ToolTipText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolTipText/CPP/form1.cpp#1)]
+ [!code-csharp[ToolTipText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolTipText/CS/form1.cs#1)]
+ [!code-vb[ToolTipText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolTipText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabPage.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を含む文字列を返します、<see cref="P:System.Windows.Forms.TabPage.Text" />プロパティです。</summary>
+        <returns>値を含む文字列、<see cref="P:System.Windows.Forms.TabPage.Text" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.TabControl>で、<xref:System.Windows.Forms.TabPage>です。 <xref:System.Windows.Forms.TabPage.ToString%2A>メソッドを含む文字列を作成、<xref:System.Windows.Forms.TabPage.Text%2A>値`tabPage1`し、それを返します、 `tabPage1` <xref:System.Windows.Forms.TabPage.ToolTipText%2A>プロパティです。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[TabPage.ToString#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TabPage.ToString/CPP/form1.cpp#1)]
+ [!code-csharp[TabPage.ToString#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TabPage.ToString/CS/form1.cs#1)]
+ [!code-vb[TabPage.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TabPage.ToString/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseVisualStyleBackColor">
+      <MemberSignature Language="C#" Value="public bool UseVisualStyleBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseVisualStyleBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.UseVisualStyleBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Forms.TabPage" />背景のレンダリングの visual スタイルが有効にすると、現在の visual スタイルを使用します。</summary>
+        <value>
+          <see langword="true" />現在の visual スタイルを使用して背景を表示するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage>背景は、現在の visual スタイルが使用される場合にのみ、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>と<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>プロパティの値が両方とも`true`です。  
+  
+ ときに、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>と<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>プロパティの値が両方とも`true`と<xref:System.Windows.Forms.TabControl.Appearance%2A>親のプロパティ<xref:System.Windows.Forms.TabControl>は<xref:System.Windows.Forms.TabAppearance.Normal>の既定値、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティは<xref:System.Drawing.Color.Transparent%2A>します。 上に配置する子コントロール、<xref:System.Windows.Forms.TabPage>継承、<xref:System.Windows.Forms.TabPage.BackColor%2A>既定では、この動作により、子のバック グラウンド コントロールを現在の visual スタイルをレンダリングするための値。  
+  
+ 値を変更する、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティが自動的に設定、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>プロパティを`false`です。 場合は、<xref:System.Windows.Forms.TabPage>が visual スタイルを使用して表示するためにバック グラウンドを継承する子コントロールの目的、 <xref:System.Windows.Forms.TabPage.BackColor%2A> 、指定した値の設定、<xref:System.Windows.Forms.TabPage.UseVisualStyleBackColor%2A>プロパティを設定した後、<xref:System.Windows.Forms.TabPage.BackColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabPage.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでは、このメンバーは無効です。</summary>
+        <value>既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロールでは、このメンバーは無効です。  
+  
+ タブを非表示にする、 <xref:System.Windows.Forms.TabControl>、コントロールから削除する必要があります<xref:System.Windows.Forms.TabControl.TabPages%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibleChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler VisibleChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler VisibleChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.TabPage.VisibleChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.TabPage.Visible" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabPage.Visible%2A>プロパティはその値を変更し、処理できますが、このコントロールでは、<xref:System.Windows.Forms.TabPage.VisibleChanged>変更を検出するイベントです。  
+  
+ タブを非表示にする、 <xref:System.Windows.Forms.TabControl>、コントロールから削除する必要があります<xref:System.Windows.Forms.TabControl.TabPages%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

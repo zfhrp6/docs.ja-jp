@@ -1,0 +1,110 @@
+<Type Name="SerializationSectionGroup" FullName="System.Xml.Serialization.Configuration.SerializationSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class SerializationSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializationSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.Configuration.SerializationSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML シリアル化の構成に使用する XML 要素を処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して処理を[ &lt;system.xml.serialization&gt;要素](~/docs/standard/serialization/system-xml-serialization-element.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializationSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.Configuration.SerializationSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.Configuration.SerializationSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DateTimeSerialization">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.Configuration.DateTimeSerializationSection DateTimeSerialization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.Configuration.DateTimeSerializationSection DateTimeSerialization" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.Configuration.SerializationSectionGroup.DateTimeSerialization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("dateTimeSerialization")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.DateTimeSerializationSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表すオブジェクトを取得、<see cref="T:System.DateTime" />構成要素のシリアル化します。</summary>
+        <value><see cref="T:System.Xml.Serialization.Configuration.DateTimeSerializationSection" />構成要素を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaImporterExtensions">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.Configuration.SchemaImporterExtensionsSection SchemaImporterExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.Configuration.SchemaImporterExtensionsSection SchemaImporterExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.Configuration.SerializationSectionGroup.SchemaImporterExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("schemaImporterExtensions")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.SchemaImporterExtensionsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成要素を格納するセクションを表すオブジェクトを取得、<see cref="T:System.Xml.Serialization.XmlSchemaImporter" />です。</summary>
+        <value><see cref="T:System.Xml.Serialization.Configuration.SchemaImporterExtensionsSection" />を表す、<see langword="schemaImporterExtenstion" />構成ファイル内の要素。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSerializer">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.Configuration.XmlSerializerSection XmlSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.Configuration.XmlSerializerSection XmlSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.Configuration.SerializationSectionGroup.XmlSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.Configuration.XmlSerializerSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成グループを表すオブジェクトを取得、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</summary>
+        <value><see cref="T:System.Xml.Serialization.Configuration.XmlSerializerSection" />を表す、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

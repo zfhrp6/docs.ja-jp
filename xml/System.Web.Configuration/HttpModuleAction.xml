@@ -1,0 +1,200 @@
+<Type Name="HttpModuleAction" FullName="System.Web.Configuration.HttpModuleAction">
+  <TypeSignature Language="C#" Value="public sealed class HttpModuleAction : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpModuleAction extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpModuleAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see cref="T:System.Web.Configuration.HttpModulesSection" />モジュール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpModuleAction>クラスをプログラムでアクセスおよび変更する方法を提供する、`add`の要素、`httpModules`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.HttpModuleAction>型を含むグループの一部である、 <xref:System.Web.Configuration.HttpModuleActionCollection>、コレクション、および<xref:System.Web.Configuration.HttpModulesSection>型です。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`add`の要素、`httpModules`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.HttpModuleAction>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`httpModules`セクションです。  
+  
+ 参照してください、 [NIB: 方法: を作成し、HTTP モジュールを構成する](http://msdn.microsoft.com/en-us/4174fd13-a9c4-4ff6-baa5-3f7d7fc73ef3)をビルドして、HTTP モジュールを構成する方法を確認します。  
+  
+```  
+<httpModules>  
+    <add name="TimerModule"   
+      type="Samples.Aspnet.Configuration.RequestTimeInterval, RequestTimeInterval Version=1.0.1557.23158, Culture=neutral,  
+      PublicKeyToken=7bfb33146a87b52e, processorArchitecture=MSIL"/>  
+</httpModules>  
+```  
+  
+ <xref:System.Web.Configuration.HttpModuleAction> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleAction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/CS/httpmoduleaction.cs#1)]
+ [!code-vb[System.Web.Configuration.HttpModuleAction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/VB/httpmoduleaction.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpModuleAction (string name, string type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpModuleAction.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">モジュール名。</param>
+        <param name="type">モジュールの型名とアセンブリ情報を含むコンマ区切り一覧。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.HttpModuleAction" />クラス渡されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュール名は、イベント ハンドラーを関連付けるモジュール イベントを使用できますエイリアスです。 ASP.NET は、最初に、アプリケーションのプライベート \bin ディレクトリにし、グローバル アセンブリ キャッシュ (GAC) にアセンブリ DLL を検索します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.HttpModuleAction>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleAction#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/CS/httpmoduleaction.cs#3)]
+ [!code-vb[System.Web.Configuration.HttpModuleAction#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/VB/httpmoduleaction.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleAction.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleAction.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモジュール名を設定します。</summary>
+        <value>モジュール名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュール名がこの識別に使用される<xref:System.Web.Configuration.HttpModuleAction>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HttpModuleAction.Name%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleAction#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/CS/httpmoduleaction.cs#4)]
+ [!code-vb[System.Web.Configuration.HttpModuleAction#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/VB/httpmoduleaction.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleAction.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpModuleAction.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモジュールの種類を設定します。</summary>
+        <value>モジュールの型名とアセンブリ情報を含むコンマ区切り一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって定義されるアセンブリを検索する、 <xref:System.Web.Configuration.HttpModuleAction.Type%2A>、ASP.NET アプリケーションのプライベート \bin ディレクトリでは、最初にし、システム アセンブリ キャッシュにアセンブリ DLL を検索します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.HttpModuleAction.Type%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HttpModuleAction#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/CS/httpmoduleaction.cs#5)]
+ [!code-vb[System.Web.Configuration.HttpModuleAction#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HttpModuleAction/VB/httpmoduleaction.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

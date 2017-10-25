@@ -1,0 +1,177 @@
+<Type Name="ValidationResult" FullName="System.Printing.ValidationResult">
+  <TypeSignature Language="C#" Value="public struct ValidationResult" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ValidationResult extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.ValidationResult" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マージを表す<see cref="T:System.Printing.PrintTicket" />で可能な実行可能なように変更されたすべての設定のレポートをすることが保証されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、初期<xref:System.Printing.PrintTicket>生成を求めます。 印刷、プリンターをサポートしていない機能の有効なチケットを生成するために、プリンター ドライバーがすべての競合を解決します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つの印刷チケットをマージするときにこの型の値を使用する方法を示します。  
+  
+ [!code-csharp[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#usingmergeandvalidate)]
+ [!code-vb[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#usingmergeandvalidate)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConflictStatus">
+      <MemberSignature Language="C#" Value="public System.Printing.ConflictStatus ConflictStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Printing.ConflictStatus ConflictStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.ValidationResult.ConflictStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.ConflictStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンターでサポートされる機能と 2 つのソースの初期合併で要求された機能の間で競合が発生したかどうかを示す値を取得<see cref="T:System.Printing.PrintTicket" />s。</summary>
+        <value>1 つ、<see cref="T:System.Printing.ConflictStatus" />競合が発生していないこと、または少なくとも 1 つの競合が発生しましたが、解決されたことを示す値。 既定値は、<see cref="F:System.Printing.ConflictStatus.NoConflict" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.ValidationResult.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象の <see cref="T:System.Printing.ValidationResult" />。</param>
+        <summary>指定した <see cref="T:System.Printing.ValidationResult" /> が現在の <see cref="T:System.Printing.ValidationResult" /> と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Printing.ValidationResult" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。 <see langword="false" />渡されたオブジェクトがにないかどうかも返されます、<see cref="T:System.Printing.ValidationResult" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.ValidationResult.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたハッシュ コードを取得、<see cref="T:System.Printing.ValidationResult" />とその<see cref="T:System.Printing.PrintTicket" />と印刷のストリーム。</summary>
+        <returns>現在の <see cref="T:System.Printing.ValidationResult" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Printing.ValidationResult a, System.Printing.ValidationResult b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Printing.ValidationResult a, valuetype System.Printing.ValidationResult b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.ValidationResult.op_Equality(System.Printing.ValidationResult,System.Printing.ValidationResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Printing.ValidationResult" />
+        <Parameter Name="b" Type="System.Printing.ValidationResult" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較対象となる最初の <see cref="T:System.Printing.ValidationResult" />。</param>
+        <param name="b">比較対象となる 2 番目の <see cref="T:System.Printing.ValidationResult" />。</param>
+        <summary>かどうかを指定した<see cref="T:System.Printing.ValidationResult" />オブジェクトが等しい。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Printing.ValidationResult" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Printing.ValidationResult a, System.Printing.ValidationResult b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Printing.ValidationResult a, valuetype System.Printing.ValidationResult b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.ValidationResult.op_Inequality(System.Printing.ValidationResult,System.Printing.ValidationResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Printing.ValidationResult" />
+        <Parameter Name="b" Type="System.Printing.ValidationResult" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較対象となる最初の <see cref="T:System.Printing.ValidationResult" />。</param>
+        <param name="b">比較対象となる 2 番目の <see cref="T:System.Printing.ValidationResult" />。</param>
+        <summary>かどうかを指定した<see cref="T:System.Printing.ValidationResult" />オブジェクトが等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Printing.ValidationResult" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatedPrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket ValidatedPrintTicket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket ValidatedPrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.ValidationResult.ValidatedPrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Printing.PrintTicket" /> 2 つのマージを実行した結果オブジェクト<see cref="T:System.Printing.PrintTicket" />オブジェクトで、実行可能性を確実に調整されている場合があります。</summary>
+        <value>有効であり、実行可能な<see cref="T:System.Printing.PrintTicket" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、次の 2 つの印刷チケットをマージするときにこのプロパティを使用する方法を示します。  
+  
+ [!code-csharp[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#usingmergeandvalidate)]
+ [!code-vb[PrintTicketManagment#UsingMergeAndValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#usingmergeandvalidate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

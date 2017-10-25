@@ -1,0 +1,56 @@
+<Type Name="OpenReadCompletedEventHandler" FullName="System.Net.OpenReadCompletedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void OpenReadCompletedEventHandler(object sender, OpenReadCompletedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OpenReadCompletedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.OpenReadCompletedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.WebClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Net.OpenReadCompletedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">A<see cref="T:System.Net.OpenReadCompletedEventArgs" />イベント データを格納します。</param>
+    <summary><see cref="E:System.Net.WebClient.OpenReadCompleted" /> の <see cref="T:System.Net.WebClient" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.OpenReadCompletedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、読み取り用にリソースをダウンロードするを示しています。  
+  
+ [!code-cpp[NCLWebClientAsync#30](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#30)]
+ [!code-csharp[NCLWebClientAsync#30](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#30)]
+ [!code-vb[NCLWebClientAsync#30](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#30)]  
+  
+ ダウンロードが完了したら、次のメソッドが呼び出されます。  
+  
+ [!code-cpp[NCLWebClientAsync#31](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebClientAsync/CPP/asyncmethods.cpp#31)]
+ [!code-csharp[NCLWebClientAsync#31](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebClientAsync/CS/asyncmethods.cs#31)]
+ [!code-vb[NCLWebClientAsync#31](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLWebClientAsync/VB/asyncmethods.vb#31)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

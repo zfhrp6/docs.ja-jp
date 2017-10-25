@@ -1,0 +1,141 @@
+<Type Name="ComponentGuaranteesOptions" FullName="System.Runtime.Versioning.ComponentGuaranteesOptions">
+  <TypeSignature Language="C#" Value="public enum ComponentGuaranteesOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ComponentGuaranteesOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.ComponentGuaranteesOptions" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネント、型、または複数のバージョンにわたる可能性がある型のメンバーの互換性の保証について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesOptions>列挙型を使用して、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>のコンポーネントまたはクラス ライブラリにまたがる複数のバージョンで保証されている互換性レベルを示すためにクラスです。 Exchange では、安定し SideBySide 後に、互換性の最も強力な保証を提供します。 [なし] ことを保証しません互換性バージョン間でします。  
+  
+ 各保証の意味の詳細については、次を参照してください。、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>トピックです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="Exchange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Versioning.ComponentGuaranteesOptions Exchange = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ComponentGuaranteesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発者は、型の複数のバージョンの exchange の互換性を約束します。 型のコンシューマーは、将来のバージョン間の互換性を想定でき、すべてのインターフェイスで型を使用できます。 サイド バイ サイド実行では、バージョン管理の問題を修正することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Versioning.ComponentGuaranteesOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Versioning.ComponentGuaranteesOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ComponentGuaranteesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発者では、異なるバージョン間での互換性は保証されません。 コンポーネント、型、またはメンバーのコンシューマーは、将来のバージョンを既存のクライアントを中断すると想定できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SideBySide">
+      <MemberSignature Language="C#" Value="SideBySide" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Versioning.ComponentGuaranteesOptions SideBySide = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Versioning.ComponentGuaranteesOptions.SideBySide" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ComponentGuaranteesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントは、同じアプリケーション ドメインに 1 つ以上のバージョンのアセンブリが読み込まれるときに使用するテスト済みです。 将来のバージョンでは、互換性を損なうことができます。 ただし、このような重大な変更が加えられたとき、古いバージョンは変更されませんが新しいバージョンと並行して存在し続けます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stable">
+      <MemberSignature Language="C#" Value="Stable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Versioning.ComponentGuaranteesOptions Stable = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ComponentGuaranteesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発者は、異なるバージョン間で安定した互換性を約束します。 型のコンシューマーは、将来のバージョンでは、既存のクライアントが中断されないことを期待できます。 ただし、存在する場合は、およびクライアントがそのインターフェイスで型を使用していない場合は、サイド バイ サイド実行は問題を解決できます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

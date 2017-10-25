@@ -1,0 +1,117 @@
+<Type Name="IResourceService" FullName="System.ComponentModel.Design.IResourceService">
+  <TypeSignature Language="C#" Value="public interface IResourceService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IResourceService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IResourceService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>アクセス リソース リーダーと特定のライターに、デザイナーのインターフェイスを提供<see cref="T:System.Globalization.CultureInfo" />リソースの種類。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース ライターまたは使用するリソース リーダーは、シリアル化に使用できる deserialze オブジェクトまたは指定したに従ってデータ<xref:System.Globalization.CultureInfo>リソースの設定。  
+  
+   
+  
+## Examples  
+ 次の例を使用するデザイナー、<xref:System.ComponentModel.Design.IResourceService>から読み取りおよび関連付けられたコントロールのプロパティを構成するためにリソース ファイルへの書き込みにします。  
+  
+ [!code-cpp[IResourceServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IResourceServiceExample/CPP/source.cpp#1)]
+ [!code-csharp[IResourceServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IResourceServiceExample/CS/source.cs#1)]
+ [!code-vb[IResourceServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IResourceServiceExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetResourceReader">
+      <MemberSignature Language="C#" Value="public System.Resources.IResourceReader GetResourceReader (System.Globalization.CultureInfo info);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Resources.IResourceReader GetResourceReader(class System.Globalization.CultureInfo info) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IResourceService.GetResourceReader(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Globalization.CultureInfo" />リソース リーダーを取得する対象のリソースのです。</param>
+        <summary>指定されたカルチャを使用するリソース リーダーを検索し、それを取得します。</summary>
+        <returns><see cref="T:System.Resources.IResourceReader" />のカルチャのリソースを含むインターフェイスまたは<see langword="null" />カルチャのリソースが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻るかどうかリソースが、デザイナー、特定のカルチャに関連付けられていない、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResourceWriter">
+      <MemberSignature Language="C#" Value="public System.Resources.IResourceWriter GetResourceWriter (System.Globalization.CultureInfo info);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Resources.IResourceWriter GetResourceWriter(class System.Globalization.CultureInfo info) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IResourceService.GetResourceWriter(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Globalization.CultureInfo" />リソース ライターを作成する対象のリソースのです。</param>
+        <summary>指定されたカルチャのリソース ライターを検索し、それを取得します。</summary>
+        <returns><see cref="T:System.Resources.IResourceWriter" />指定のカルチャ用のインターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたカルチャに新しいリソースを作成し、いずれかが既に存在する場合は、既存のリソースを破棄します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

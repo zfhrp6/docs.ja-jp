@@ -1,0 +1,164 @@
+<Type Name="DependencyAttribute" FullName="System.Runtime.CompilerServices.DependencyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DependencyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DependencyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.DependencyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>依存関係が参照元のアセンブリによって読み込まれるときを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を使用して、 [Ngen.exe (ネイティブ イメージ ジェネレーター)](~/docs/framework/tools/ngen-exe-native-image-generator.md)ネイティブ アセンブリの画像を生成します。  
+  
+ 適用、<xref:System.Runtime.CompilerServices.DependencyAttribute>属性の値は、依存アセンブリを<xref:System.Runtime.CompilerServices.LoadHint>参照元のアセンブリの依存関係を読み込めない場合を指定する列挙です。  
+  
+ 依存関係が読み込まれる可能性がありますが (<xref:System.Runtime.CompilerServices.LoadHint.Always>) その依存関係にバインドを Ngen.exe になります。  このヒントを使用すると、コードを生成する原因となる親アセンブリを読み込むときに常に、依存関係を読み込む反面、ワーキング セットを縮小とスループットの向上に Ngen.exe ができます。  
+  
+   
+  
+## Examples  
+ 次の例では、ネイティブ イメージ生成サービスが常にバインドされているを指定します`AssemblyA`し、バインドすることもあります`AssemblyB`です。  
+  
+ [!code-csharp[Runtime.CompilerServices.DependencyAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.CompilerServices.DependencyAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.CompilerServices.DependencyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.CompilerServices.DependencyAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DependencyAttribute (string dependentAssemblyArgument, System.Runtime.CompilerServices.LoadHint loadHintArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dependentAssemblyArgument, valuetype System.Runtime.CompilerServices.LoadHint loadHintArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.DependencyAttribute.#ctor(System.String,System.Runtime.CompilerServices.LoadHint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dependentAssemblyArgument" Type="System.String" />
+        <Parameter Name="loadHintArgument" Type="System.Runtime.CompilerServices.LoadHint" />
+      </Parameters>
+      <Docs>
+        <param name="dependentAssemblyArgument">バインドする依存アセンブリです。</param>
+        <param name="loadHintArgument"><see cref="T:System.Runtime.CompilerServices.LoadHint" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Runtime.CompilerServices.LoadHint" /> 値を使用して、<see cref="T:System.Runtime.CompilerServices.DependencyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.DependencyAttribute>属性は、依存関係へのバインドに密に結合方法の共通言語ランタイムのヒントを示します。 ランタイムでは、これらのヒントを限定的な依存関係のロードと依存関係に効率的なバインドの間のトレードオフの解決に役立てます。 たとえば、ハード バインディングは、ワーキング セットを縮小になる依存ネイティブ イメージへのポインターをエンコードするランタイムを許可します。 この属性は、これらの判断にランタイムをガイドします。  
+  
+   
+  
+## Examples  
+ 次の例では、ネイティブ イメージ生成サービスが常にバインドされているを指定します`AssemblyA`し、バインドすることもあります`AssemblyB`です。  
+  
+ [!code-csharp[Runtime.CompilerServices.DependencyAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.CompilerServices.DependencyAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.CompilerServices.DependencyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.CompilerServices.DependencyAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependentAssembly">
+      <MemberSignature Language="C#" Value="public string DependentAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DependentAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.DependencyAttribute.DependentAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存アセンブリの値を取得します。</summary>
+        <value>依存アセンブリの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、ネイティブ イメージの生成にサービスをバインドするアセンブリの名前を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadHint">
+      <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.LoadHint LoadHint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.CompilerServices.LoadHint LoadHint" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.DependencyAttribute.LoadHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.LoadHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.CompilerServices.LoadHint" />アセンブリの依存関係を読み込めない場合を示す値。</summary>
+        <value><see cref="T:System.Runtime.CompilerServices.LoadHint" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を返しますを使用して、<xref:System.Runtime.CompilerServices.LoadHint>によって使用される列挙体、<xref:System.Runtime.CompilerServices.DependencyAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

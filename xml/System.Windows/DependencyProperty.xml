@@ -1,0 +1,1176 @@
+<Type Name="DependencyProperty" FullName="System.Windows.DependencyProperty">
+  <TypeSignature Language="C#" Value="public sealed class DependencyProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DependencyProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyProperty" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Markup.DependencyPropertyConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.DependencyPropertyValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スタイル設定、データ バインディング、アニメーション、および継承などの方法によって設定できるプロパティを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.DependencyProperty>に次の機能をサポートしている[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]:  
+  
+-   スタイルのプロパティを設定できます。 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+-   プロパティは、データ バインディングによって設定できます。 データ バインディングの依存関係プロパティの詳細については、次を参照してください。[する方法: プロパティの 2 つのコントロールをバインド](~/docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)です。  
+  
+-   動的リソース参照では、プロパティを設定できます。 詳しくは、「[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+  
+-   プロパティは、要素ツリーの親要素からその値を自動的に継承できます。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+-   プロパティをアニメーション化することができます。 詳しくは、「 [アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/animation-overview.md)」をご覧ください。  
+  
+-   プロパティは、プロパティの前の値が変更され、プロパティの値を強制的に変換できる場合に報告できます。 詳しくは、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+  
+-   プロパティに情報が報告[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]かどうか、プロパティ値を変更する必要がありますのビジュアル要素を再構成するには、レイアウト システムなど、します。  
+  
+-   プロパティのサポートの受信、[!INCLUDE[wpfdesigner_current_long](~/includes/wpfdesigner-current-long-md.md)]です。  プロパティの編集など、**プロパティ**ウィンドウです。  
+  
+ 依存関係プロパティの詳細については、次を参照してください。[依存関係プロパティの概要](~/docs/framework/wpf/advanced/dependency-properties-overview.md)です。 上記の機能をサポートするためにカスタム型のプロパティをする場合は、依存関係プロパティを作成する必要があります。  カスタム依存関係プロパティを作成する方法についてを参照してください。[依存関係プロパティをカスタム](~/docs/framework/wpf/advanced/custom-dependency-properties.md)です。  
+  
+ 添付プロパティは、添付プロパティを定義する型情報を報告する任意のオブジェクトを可能にするプロパティです。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、任意の型から継承する<xref:System.Windows.DependencyObject>プロパティを定義する型から型を継承するかどうかに関係なく、添付プロパティを使用できます。 添付プロパティは、の機能、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]言語です。  接続されているプロパティを設定する[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を使用して、 *ownerType*.*propertyName*構文です。 添付プロパティの例は、<xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>プロパティです。 すべてで使用できるプロパティを作成するかどうかは<xref:System.Windows.DependencyObject>型は、次に、添付プロパティを作成する必要があります。 添付プロパティの場合、それらを作成する方法などの詳細についてを参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+<a name="xamlAttributeUsage_DependencyProperty"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="dependencyPropertyName"/>  
+- or -  
+<object property="ownerType.dependencyPropertyName"/>  
+- or -  
+<object property="attachedPropertyOwnerType.attachedPropertyName"/>  
+```  
+  
+<a name="xamlValues_DependencyProperty"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `dependencyPropertyName`  
+ 指定する文字列、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>の必要な依存関係プロパティです。 これは、前に XML 名前空間プレフィックス プロパティが既定の XML 名前空間にない場合 (詳細については、「 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md))。  
+  
+ `ownerType`.`dependencyPropertyName`  
+ 依存関係プロパティをドット (.) の所有者の種類を指定する文字列、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>です。 `ownerType`XML 名前空間プレフィックスによっても前ことができます。 この使用法は遅延バインドのスタイルとテンプレート、ためにコンテキストを解析するため、依存関係プロパティの所有者を指定する必要がありますに特定の`TargetType`が未だ不明です。 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+ `attachedPropertyOwnerType` *.* `attachedPropertyName`  
+ ドット (.)、添付プロパティの名前では、添付プロパティの所有者を指定する文字列。 `attachedPropertyOwnerType`XML 名前空間プレフィックスによっても前ことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddOwner">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty AddOwner (Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyProperty AddOwner(class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.AddOwner(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ownerType">この依存関係プロパティの所有者として追加する型。</param>
+        <summary>登録済みの依存関係プロパティの所有者として、別の型を追加します。</summary>
+        <returns>元への参照を<see cref="T:System.Windows.DependencyProperty" />依存関係プロパティを識別する識別子。 この識別子として追加するクラスによって公開するように、<see langword="public static readonly" />フィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、その特定の依存関係プロパティを最初に登録していない型に依存関係プロパティを認識するプロパティのシステムを使用します。  
+  
+ 通常、<xref:System.Windows.DependencyProperty.AddOwner%2A>既にマネージ クラスの継承によってその依存関係プロパティを公開しないクラスに依存関係プロパティを追加するために使用 (クラスの継承、派生クラスによって継承されるラッパーのプロパティを原因となるをためは一般的なメンバー テーブルにアクセスできる依存関係プロパティ既に)。 <xref:System.Windows.DependencyProperty.AddOwner%2A>その依存関係プロパティを最初に登録していない型に依存関係プロパティを認識するプロパティのシステムを有効にします。  
+  
+ メタデータを指定するのには、この署名することはできません。  このメソッドを使用すると、メタデータが、新しい自動的に生成<xref:System.Windows.DependencyProperty>とその所有者の型。 自動生成されたメタデータは、このプロパティが定義されている基本型のすべてからマージされたメタデータの結果を示します。 マージされたメタデータがない場合、使用可能な場合は、プロパティの既定のメタデータが使用されます。 使用して、プロパティが登録されている場合、<xref:System.Windows.DependencyProperty.RegisterAttached%2A>メソッド後の既定のメタデータと同じ場合は、作成するメタデータ<xref:System.Windows.DependencyProperty.RegisterAttached%2A>が呼び出されました。 それ以外の場合、<xref:System.Windows.PropertyMetadata>でオブジェクトを作成、<xref:System.Windows.PropertyMetadata.DefaultValue%2A>プロパティがプロパティの型の既定値を他のすべてのプロパティの設定、<xref:System.Windows.PropertyMetadata>に設定されている`null`です。 使用して、<xref:System.Windows.DependencyProperty.AddOwner%28System.Type%2CSystem.Windows.PropertyMetadata%29>署名を指定した型に追加されると、依存関係プロパティのバージョンのメタデータを提供する場合。  
+  
+ このメソッドの戻り値は通常、宣言して依存関係プロパティの識別子を格納することにより、依存関係プロパティを公開に使用されます。 識別子には、依存関係プロパティへのアクセスをプロパティ システムに呼び出したい[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]依存関係プロパティに対して特には存在する追加の所有者のクラスにします。 元の所有者と追加された所有者の両方に同じプロパティ名は、同様の機能を示すために使用する必要があります。 使用する必要があります、<xref:System.Windows.DependencyProperty>の値を返す、<xref:System.Windows.DependencyProperty.AddOwner%2A>依存関係プロパティの識別子を定義し、宣言メソッド[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]依存関係プロパティを使用する型に追加されるため、プロパティのラッパー<xref:System.Windows.DependencyProperty.AddOwner%2A>です。  
+  
+ <xref:System.Windows.DependencyProperty.AddOwner%2A>内で宣言されている依存関係プロパティを作成するときに、前の推奨される方法が使用される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 たとえば、両方<xref:System.Windows.Controls.Border>と<xref:System.Windows.Controls.Control>定義、`BorderBrush`類似した機能の依存関係プロパティです。 <xref:System.Windows.Controls.Control>定義、`BorderBrush`プロパティを呼び出してプロパティのシステムを<xref:System.Windows.DependencyProperty.AddOwner%2A>元の所有者に基づく<xref:System.Windows.Controls.Border>とその登録<xref:System.Windows.Controls.Border.BorderBrushProperty>依存関係プロパティの識別子。 <xref:System.Windows.DependencyProperty.AddOwner%2A>戻り値は、新しい静的なを確立するために使用し、<xref:System.Windows.DependencyProperty>フィールド (<xref:System.Windows.Controls.Control.BorderBrushProperty>) 追加の所有者にそのプロパティのおよび`BorderBrush`プロパティ ラッパーにも宣言します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOwner">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty AddOwner (Type ownerType, System.Windows.PropertyMetadata typeMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyProperty AddOwner(class System.Type ownerType, class System.Windows.PropertyMetadata typeMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.AddOwner(System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="ownerType">この依存関係プロパティの所有者として追加する型。</param>
+        <param name="typeMetadata">提供される型に存在する依存関係プロパティを修飾するメタデータ。</param>
+        <summary>既に登録済みの依存関係プロパティの所有者として別の型を追加します。その際、提供される所有者の型に存在する依存関係プロパティに依存関係プロパティのメタデータを提供します。</summary>
+        <returns>元への参照を<see cref="T:System.Windows.DependencyProperty" />依存関係プロパティを識別する識別子。 この識別子として追加するクラスによって公開するように、<see langword="public static readonly" />フィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、その特定の依存関係プロパティを最初に登録していない型に依存関係プロパティを認識するプロパティのシステムを使用します。  
+  
+ 追加の所有者のクラスに存在するように特に宣言および依存関係プロパティを公開するこのメソッドの戻り値が使用します。 一般に、同様の機能を示すために、元の所有者と追加された所有者の両方に同じプロパティ名を使用してください。 同様に新しい識別子を公開することをお勧め[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]依存関係プロパティを使用する型に追加されるため、プロパティのラッパー<xref:System.Windows.DependencyProperty.AddOwner%2A>です。  
+  
+ <xref:System.Windows.DependencyProperty.AddOwner%2A>前の推奨される方法を作成するときに使用[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]内で宣言された[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 たとえば、両方<xref:System.Windows.Controls.Border>と<xref:System.Windows.Controls.Control>定義、`BorderBrush`類似した機能の依存関係プロパティです。 <xref:System.Windows.Controls.Control>定義、`BorderBrush`プロパティを呼び出してプロパティのシステムを<xref:System.Windows.DependencyProperty.AddOwner%2A>元の所有者に<xref:System.Windows.Controls.Border>とその登録<xref:System.Windows.Controls.Border.BorderBrushProperty>依存関係プロパティの識別子。 <xref:System.Windows.DependencyProperty.AddOwner%2A>戻り値は、静的なを確立するために使用し、<xref:System.Windows.DependencyProperty>フィールド (<xref:System.Windows.Controls.Control.BorderBrushProperty>) 追加の所有者にそのプロパティのおよび`BorderBrush`プロパティ ラッパーにも宣言します。  
+  
+ 追加された所有者の依存関係プロパティの識別子を付けるの操作など<xref:System.Windows.DependencyObject.GetValue%2A>です。 ただし、型または異なるメタデータを持つ所有者があるように追加されたクラスのインスタンスのいずれかに関係する型固有の操作を返すいなくても、期待どおりの結果、元 (いない追加の所有者の) などの依存関係プロパティの識別子がメソッドの呼び出しで指定された<xref:System.Windows.DependencyObject.GetValue%2A>または<xref:System.Windows.DependencyProperty.GetMetadata%2A>です。 によって追加された所有者のメタデータを永続的なものは、<xref:System.Windows.DependencyProperty.AddOwner%2A>必ずしも排他的フィールドによって参照される、追加の所有者クラス識別子をそれ自体を呼び出します。 いずれにしても、同様に新しい識別子を公開することをお勧めは[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]依存関係プロパティを使用する型に追加されるため、プロパティのラッパー<xref:System.Windows.DependencyProperty.AddOwner%2A>の間に不一致を作成するように失敗したため、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]と[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロパティの表現。  
+  
+ 提供されたメタデータは、基本の所有者に存在する依存関係プロパティのプロパティ メタデータに結合されます。 元の基本のメタデータで指定された特性が保持されます。 新しいメタデータに変更された特に特徴だけでは、基本のメタデータの特性を上書きします。 いくつかの特性など<xref:System.Windows.PropertyMetadata.DefaultValue%2A>、新しいメタデータに指定されている場合に置き換えられます。 他のユーザーなど<xref:System.Windows.PropertyChangedCallback>、結合されます。 最終的には、マージの動作によって異なりますので、ここで説明されている動作で使用される既存のプロパティのメタデータ クラス用に、上書きに使用されているプロパティのメタデータ型[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]依存関係プロパティです。 詳細については、「[依存関係プロパティのメタデータ](~/docs/framework/wpf/advanced/dependency-property-metadata.md)と[フレームワーク プロパティ メタデータ](~/docs/framework/wpf/advanced/framework-property-metadata.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMetadata">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyMetadata DefaultMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PropertyMetadata DefaultMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.DefaultMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの既定のメタデータを取得します。</summary>
+        <value>依存関係プロパティの既定のメタデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のメタデータは、代替メタデータが指定されていない明示的な特定のオブジェクトまたは派生型のオブジェクトに提供されるプロパティのメタデータ<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>呼び出します。  
+  
+ 元の所有者では、最初にメタデータが適用されている場合<xref:System.Windows.DependencyProperty.Register%2A>としてそのメタデータが返されます、依存関係プロパティを確立する呼び出し<xref:System.Windows.DependencyProperty.DefaultMetadata%2A>です。  
+  
+ 元のメタデータが適用されない場合<xref:System.Windows.DependencyProperty.Register%2A>内から既定のメタデータを生成しを呼び出すと、<xref:System.Windows.DependencyProperty.Register%2A>として呼び出し、この値が返されます、<xref:System.Windows.DependencyProperty.DefaultMetadata%2A>です。  
+  
+ 関連付けられている既定のメタデータを持つの主な目的、<xref:System.Windows.DependencyProperty>はいずれかでこのプロパティの既定値を指定する<xref:System.Windows.DependencyObject>または派生型です。  
+  
+ 非添付プロパティは、このプロパティによって返されるメタデータの種類の派生型にキャストできません<xref:System.Windows.PropertyMetadata>プロパティが最初に登録されたメタデータの派生型を持つ場合でもを入力します。 最初に登録されているメタデータを元のメタデータの可能性のある派生型を含む場合は、呼び出す<xref:System.Windows.DependencyProperty.GetMetadata%28System.Type%29>パラメーターとして代わりに、入力元の登録を渡します。  
+  
+ このプロパティによって返されるメタデータの型が元の指定された型を一致、添付プロパティの<xref:System.Windows.DependencyProperty.RegisterAttached%2A>登録方法です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+[!code-csharp[PropertySystemEsoterics#DPDefaultValue](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpdefaultvalue)]
+[!code-vb[PropertySystemEsoterics#DPDefaultValue](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpdefaultvalue)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Windows.DependencyProperty" />です。</summary>
+        <returns>この <see cref="T:System.Windows.DependencyProperty" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのシステムが、独自の一意の識別子を使用して<xref:System.Windows.DependencyProperty.GlobalIndex%2A>、そのプロパティの値がによって返されると<xref:System.Windows.DependencyProperty.GetHashCode%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyMetadata GetMetadata (Type forType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.PropertyMetadata GetMetadata(class System.Type forType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.GetMetadata(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="forType">依存関係プロパティのメタデータを取得する対象の特定の型。</param>
+        <summary>指定した既存の型に存在する場合の、この依存関係プロパティのメタデータを返します。</summary>
+        <returns>プロパティ メタデータ オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型は、必要なメタデータが原因のいずれかの元の登録から変化するために使用する種類またはオブジェクト参照を指定する<xref:System.Windows.DependencyProperty.AddOwner%2A>または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>の呼び出しを型に存在する依存関係プロパティのメタデータを変更します。  
+  
+   
+  
+## Examples  
+ 次の例では、その型に基づく依存関係プロパティのメタデータを取得します。 使用して型を取得、`typeof`演算子。  
+  
+ [!code-csharp[PropertySystemEsoterics#GetMetadataType](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/default.xaml.cs#getmetadatatype)]
+ [!code-vb[PropertySystemEsoterics#GetMetadataType](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/default.xaml.vb#getmetadatatype)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyMetadata GetMetadata (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.PropertyMetadata GetMetadata(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.GetMetadata(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">メタデータの取得元となる依存関係プロパティの型固有のバージョンを確認するために型をチェックするときの、対象となる依存関係オブジェクト。</param>
+        <summary>この依存関係プロパティのメタデータが指定したオブジェクト インスタンスに存在する場合に、このメタデータを返します。</summary>
+        <returns>プロパティ メタデータ オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型またはオブジェクト参照のいずれかが、指定するために必要な元の登録をいずれかが理由から、指定した依存関係プロパティのメタデータが異なるので<xref:System.Windows.DependencyProperty.AddOwner%2A>または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>の呼び出しを型に存在する場合、プロパティ メタデータを絞り込むことができます。  
+  
+ インスタンスに基づくプロパティのメタデータを要求するときに内部的にその型を評価できるようにインスタンスを渡しているに過ぎません。 依存関係プロパティのメタデータがインスタンスごとに異なるされません。任意の型のプロパティの組み合わせに対して整合性が常にします。  
+  
+   
+  
+## Examples  
+ 次の例は、固有の仕様に基づく依存関係プロパティのメタデータを取得<xref:System.Windows.DependencyObject>インスタンス。  
+  
+ [!code-csharp[PropertySystemEsoterics#GetMetadataDOInstance](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/default.xaml.cs#getmetadatadoinstance)]
+ [!code-vb[PropertySystemEsoterics#GetMetadataDOInstance](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/default.xaml.vb#getmetadatadoinstance)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadata">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyMetadata GetMetadata (System.Windows.DependencyObjectType dependencyObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.PropertyMetadata GetMetadata(class System.Windows.DependencyObjectType dependencyObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.GetMetadata(System.Windows.DependencyObjectType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObjectType" Type="System.Windows.DependencyObjectType" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObjectType">依存関係プロパティ メタデータの取得元となる依存関係オブジェクト型を記録する特定のオブジェクト。</param>
+        <summary>指定した型に存在する場合の、この依存関係プロパティのメタデータを返します。</summary>
+        <returns>プロパティ メタデータ オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型またはオブジェクト参照のいずれかが、指定するために必要な元の登録をいずれかが理由から、指定した依存関係プロパティのメタデータが異なるので<xref:System.Windows.DependencyProperty.AddOwner%2A>または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>の呼び出しを型に存在する場合、プロパティ メタデータを絞り込むことができます。  
+  
+   
+  
+## Examples  
+ 次の例に基づく依存関係プロパティのメタデータの取得、<xref:System.Windows.DependencyObjectType>です。  
+  
+ [!code-csharp[PropertySystemEsoterics#GetMetadataDOType](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/default.xaml.cs#getmetadatadotype)]
+ [!code-vb[PropertySystemEsoterics#GetMetadataDOType](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/default.xaml.vb#getmetadatadotype)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalIndex">
+      <MemberSignature Language="C#" Value="public int GlobalIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GlobalIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.GlobalIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティを一意に識別する内部で生成された値を取得します。</summary>
+        <value>一意の数値識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、整数、[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)]です。 一般に、このインデックスの値を使用して、必要はありませんし、インデックス テーブルにアクセスするすべての依存関係プロパティがありません。 依存関係プロパティは、識別子フィールドで代わりに参照する必要があります。  
+  
+ <xref:System.Windows.DependencyProperty.GlobalIndex%2A>使用するデータ構造へのアクセス速度を内部的に使用される、 <xref:System.Windows.DependencyProperty.GlobalIndex%2A> 0 から始まる配列のインデックス。 ような使用法は、アプリケーションの設計者またはツールがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidType">
+      <MemberSignature Language="C#" Value="public bool IsValidType (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsValidType(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.IsValidType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する値。</param>
+        <summary>元の依存関係プロパティの登録で指定されたプロパティの型に対してチェック済みとして指定された値がこの依存関係プロパティの型の許容されるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、指定された値は、登録済みプロパティの型、または適切な派生型です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`null`または参照型の依存関係プロパティの有効な種類、<xref:System.Nullable%601>依存関係プロパティを返す`true`このような場合です。 依存関係プロパティのどちらの参照がある場合も、<xref:System.Nullable%601>型、<xref:System.Windows.DependencyProperty.IsValidType%2A>が返されます`false`raise 例外ではなく、null 値にします。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.DependencyProperty.IsValidType%2A>チェックを呼び出す前として<xref:System.Windows.DependencyObject.SetValue%2A>依存関係プロパティです。  
+  
+ [!code-csharp[PropertySystemEsoterics#TrySetValue](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#trysetvalue)]
+ [!code-vb[PropertySystemEsoterics#TrySetValue](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#trysetvalue)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidValue">
+      <MemberSignature Language="C#" Value="public bool IsValidValue (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsValidValue(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.IsValidValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する値。</param>
+        <summary>基本型チェックを使用してプロパティの型指定された値が受け入れられるようにするかどうかを判断しも可能性がある、その型の値の許容範囲内にある場合。</summary>
+        <returns>
+          <see langword="true" />値が許容可能なは場合、適切な型または派生型であります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存関係プロパティを通じてその型の値の許容の範囲を指定できます、<xref:System.Windows.ValidateValueCallback>は依存関係プロパティの登録で提供されます。  
+  
+ このメソッドを呼び出す<xref:System.Windows.DependencyProperty.IsValidType%2A>内部的にします。 対象の依存関係プロパティを持たない場合<xref:System.Windows.ValidateValueCallback>、効果的に呼び出すことと同じではこのメソッドを呼び出す<xref:System.Windows.DependencyProperty.IsValidType%2A>です。 依存関係プロパティが設定されている場合、 <xref:System.Windows.ValidateValueCallback>、場合<xref:System.Windows.DependencyProperty.IsValidType%2A>が返される`true`コールバックで実装されたとされる値が返されます。  
+  
+ Null 値または参照型の依存関係プロパティの有効な値は、<xref:System.Nullable%601>依存関係プロパティを返す`true`このような場合です。 依存関係プロパティのどちらの参照がある場合も、<xref:System.Nullable%601>型、<xref:System.Windows.DependencyProperty.IsValidType%2A>が返されます`false`raise 例外ではなく、null 値にします。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.DependencyProperty.IsValidValue%2A>チェックを呼び出す前として<xref:System.Windows.DependencyObject.SetValue%2A>依存関係プロパティです。  
+  
+ [!code-csharp[PropertySystemEsoterics#TrySetValueWithValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#trysetvaluewithvalidate)]
+ [!code-vb[PropertySystemEsoterics#TrySetValueWithValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#trysetvaluewithvalidate)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの名前を取得します。</summary>
+        <value>プロパティの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定された名前を取得する、`name`依存関係プロパティの登録時にパラメーター。 この名前は変更できないとすることはできません`null`または空の文字列。 同じ所有者型に重複する名前登録では、許可されていません、重複を登録しようとしたときに例外がスローされます。  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.DependencyProperty.Name%2A>プロパティの依存関係のサフィックス"Property"マイナスその依存関係プロパティの識別子の名前と一致する規則に従う必要があります。 詳細については、「[カスタム依存関係プロパティ](~/docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例のクエリの依存関係プロパティの識別子では、さまざまな特性を含む、<xref:System.Windows.DependencyProperty.Name%2A>です。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPProps](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpprops)]
+ [!code-vb[PropertySystemEsoterics#DPProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideMetadata">
+      <MemberSignature Language="C#" Value="public void OverrideMetadata (Type forType, System.Windows.PropertyMetadata typeMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OverrideMetadata(class System.Type forType, class System.Windows.PropertyMetadata typeMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.OverrideMetadata(System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="forType">この依存関係プロパティが継承され、指定した代替メタデータが適用される型。</param>
+        <param name="typeMetadata">オーバーライドする型の依存関係プロパティに適用するメタデータ。</param>
+        <summary>指定した型のインスタンスに存在する場合の代替メタデータをこの依存関係プロパティに提供し、基本型から継承されたときにこの依存関係プロパティに存在していたメタデータをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのシステムは、依存関係プロパティを使用する前に、依存関係プロパティのメタデータをオーバーライドする必要があります。 これは、特定のインスタンスは、依存関係プロパティを登録するクラスを使用して作成された時刻に相当します。 呼び出す<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>としてそれ自体を提供する型の静的コンス トラクター内でのみ実行する必要があります、`forType`またはのようなインスタンス化でこのメソッドのパラメーターです。 所有者の型のインスタンスが存在した後、メタデータを変更するとしていますが、例外は発生しませんが、プロパティ システムに一貫性のない動作が発生します。  
+  
+ このメソッドを使用して特定の派生クラスのオーバーライドのメタデータが確立されると、同じ派生クラスでメタデータをオーバーライドしようとするとは、例外が発生します。  
+  
+ 提供されたメタデータは、基本の所有者に存在する依存関係プロパティのプロパティ メタデータに結合されます。 元の基本のメタデータで指定された特性が保持されます。新しいメタデータに変更された特に特徴だけでは、基本のメタデータの特性を上書きします。 などのいくつかの特性<xref:System.Windows.PropertyMetadata.DefaultValue%2A>新しいメタデータに指定されている場合に置き換えられます。 他のユーザーなど<xref:System.Windows.PropertyChangedCallback>、結合されます。 最終的には、マージの動作によって異なりますので、ここで説明されている動作で使用される既存のプロパティのメタデータ クラス用に、上書きに使用されているプロパティのメタデータ型[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]依存関係プロパティです。 詳細については、「[依存関係プロパティのメタデータ](~/docs/framework/wpf/advanced/dependency-property-metadata.md)と[フレームワーク プロパティ メタデータ](~/docs/framework/wpf/advanced/framework-property-metadata.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">読み取り専用の依存関係プロパティでメタデータをオーバーライドしようとしました (このシグネチャを使用してこの操作を行うことはできません)。</exception>
+        <exception cref="T:System.ArgumentException">指定した型に存在する場合のメタデータが、この依存関係プロパティに対して既に確立されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideMetadata">
+      <MemberSignature Language="C#" Value="public void OverrideMetadata (Type forType, System.Windows.PropertyMetadata typeMetadata, System.Windows.DependencyPropertyKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OverrideMetadata(class System.Type forType, class System.Windows.PropertyMetadata typeMetadata, class System.Windows.DependencyPropertyKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.OverrideMetadata(System.Type,System.Windows.PropertyMetadata,System.Windows.DependencyPropertyKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="key" Type="System.Windows.DependencyPropertyKey" />
+      </Parameters>
+      <Docs>
+        <param name="forType">この依存関係プロパティが継承され、指定した代替メタデータが適用される型。</param>
+        <param name="typeMetadata">オーバーライドする型の依存関係プロパティに適用するメタデータ。</param>
+        <param name="key">読み取り専用の依存関係プロパティのアクセス キー。</param>
+        <summary>指定した型のインスタンスに存在する場合に代替メタデータを読み取り専用の依存関係プロパティに提供し、依存関係プロパティの最初の登録時に指定したメタデータをオーバーライドします。 渡す必要があります、<see cref="T:System.Windows.DependencyPropertyKey" />の例外の発生を防ぐために読み取り専用の依存関係プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この署名が読み取り専用の依存関係プロパティの識別子の基になる実装を提供 (<xref:System.Windows.DependencyPropertyKey>) メソッドです。 読み取り/書き込みの依存関係プロパティのメタデータをオーバーライドする場合を使用して<xref:System.Windows.DependencyProperty.OverrideMetadata%28System.Type%2CSystem.Windows.PropertyMetadata%29>です。  
+  
+ プロパティのシステムは、依存関係プロパティを使用する前に、依存関係プロパティのメタデータをオーバーライドする必要があります。 これは、依存関係プロパティを登録するクラスの特定のオブジェクトが作成された時間に相当します。 呼び出す<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>としてそれ自体を提供する型の静的コンス トラクター内でのみ実行する必要があります、`forType`またはのようなインスタンス化でこのメソッドのパラメーターです。 所有者の型のインスタンスが存在した後、メタデータを変更するとしていますが、例外は発生しませんが、プロパティ システムに一貫性のない動作が発生します。  
+  
+ このメソッドを使用して特定の派生クラスのオーバーライドのメタデータが確立されると、同じ派生クラスでメタデータをオーバーライドしようとするとは、例外が発生します。  
+  
+ 提供されたメタデータは、基本の所有者に存在する依存関係プロパティのプロパティ メタデータに結合されます。 元の基本のメタデータで指定された特性が保持されます。新しいメタデータに変更された特に特徴だけでは、基本のメタデータの特性を上書きします。 などのいくつかの特性<xref:System.Windows.PropertyMetadata.DefaultValue%2A>新しいメタデータに指定されている場合に置き換えられます。 他のユーザーなど<xref:System.Windows.PropertyChangedCallback>、結合されます。 マージの動作は、上書きに使用されているプロパティのメタデータの型によって異なります。 詳細については、「[依存関係プロパティのメタデータ](~/docs/framework/wpf/advanced/dependency-property-metadata.md)と[フレームワーク プロパティ メタデータ](~/docs/framework/wpf/advanced/framework-property-metadata.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerType">
+      <MemberSignature Language="C#" Value="public Type OwnerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type OwnerType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.OwnerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティをプロパティ システムに登録したオブジェクト、または自身をプロパティの所有者として追加したオブジェクトの型を取得します。</summary>
+        <value>プロパティを登録したオブジェクト、または自身をプロパティの所有者として追加したオブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、プロパティの登録時に指定されました。 所有者が型にするか元登録の場合、<xref:System.Windows.DependencyProperty>識別子から生成された、<xref:System.Windows.DependencyProperty.Register%2A>呼び出し、または自身の場合、所有者として追加する型、<xref:System.Windows.DependencyProperty>識別子から生成された、<xref:System.Windows.DependencyProperty.AddOwner%2A>呼び出します。  
+  
+ <xref:System.Windows.DependencyProperty.OwnerType%2A>でも、指定した<xref:System.Windows.DependencyProperty>は、変更不可とすることはできません`null`で有効な<xref:System.Windows.DependencyProperty>します。  
+  
+   
+  
+## Examples  
+ 次の例は、依存関係プロパティの識別子に基づいて、所有者型を取得`dp`、その同じ識別子の所有者の型のメタデータを取得します。 この操作は実際に<xref:System.Windows.DependencyProperty.DefaultMetadata%2A>で`dp`です。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpgetmetadatasingle)]
+ [!code-vb[PropertySystemEsoterics#DPGetMetadataSingle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpgetmetadatasingle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの値で使用されている型を取得します。</summary>
+        <value><see cref="T:System.Type" />のプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを元のプロパティの登録によって宣言されたプロパティの値の型を報告する、`propertyType`パラメーター。 ような<xref:System.Windows.DependencyProperty.Name%2A>登録後は、依存関係プロパティのプロパティの型は変更できません。  
+  
+   
+  
+## Examples  
+ 次の例のクエリの依存関係プロパティの識別子では、さまざまな特性を含む、<xref:System.Windows.DependencyProperty.PropertyType%2A>です。 型名の文字列、<xref:System.Windows.DependencyProperty.PropertyType%2A>はから返された<xref:System.Type>です。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPProps](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpprops)]
+ [!code-vb[PropertySystemEsoterics#DPProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この依存関係プロパティを識別するかどうかを示す値を取得<see cref="T:System.Windows.DependencyProperty" />インスタンスが読み取り専用の依存関係プロパティです。</summary>
+        <value>
+          <see langword="true" />依存関係プロパティが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出してプロパティ システム内で読み取り専用の依存関係プロパティが登録されている、<xref:System.Windows.DependencyProperty.RegisterReadOnly%2A>メソッドはなく、<xref:System.Windows.DependencyProperty.Register%2A>メソッドです。 添付プロパティを読み取り専用として登録することもできます。see <xref:System.Windows.DependencyProperty.RegisterAttachedReadOnly%2A>.  
+  
+ 読み取り専用の依存関係プロパティを必要とする<xref:System.Windows.DependencyPropertyKey>識別子ではなく、<xref:System.Windows.DependencyProperty>メタデータ オーバーライドまたは値の設定などのメタデータの操作を実行する識別子。 コレクションを取得した場合は<xref:System.Windows.DependencyProperty>識別子を呼び出すことによって<xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A>別または[!INCLUDE[TLA2#tla_api](~/includes/tla2sharptla-api-md.md)]識別子、チェックを公開する、<xref:System.Windows.DependencyProperty.ReadOnly%2A>呼び出そうとすると前に、の値<xref:System.Windows.DependencyObject.SetValue%2A>または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>入力パラメーターとして、その依存関係プロパティの識別子を使用して、識別子を表す依存関係プロパティが読み取り専用ではないことを確認します。 場合の値<xref:System.Windows.DependencyProperty.ReadOnly%2A>は`true`、依存関係プロパティをへの参照を取得する方法をプログラムではありません、<xref:System.Windows.DependencyPropertyKey>メタデータからまたはその依存関係プロパティの識別子、<xref:System.Windows.DependencyProperty>識別子。 識別子を、呼び出すために、静的フィールドとして使用する必要があります<xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29>に対して読み取り専用の依存関係プロパティです。  
+  
+ カスタム依存関係プロパティを作成、読み取り専用として登録するの get アクセサーだけを定義する必要があります、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]ラッパー プロパティです。 それ以外の場合、クラスは、バックアップの依存関係プロパティへのアクセスと比較してプロパティのラッパーの混乱を招くオブジェクト モデルがあります。 詳細については、「[依存関係プロパティのカスタム](~/docs/framework/wpf/advanced/custom-dependency-properties.md)または[読み取り専用の依存関係プロパティ](~/docs/framework/wpf/advanced/read-only-dependency-properties.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、既定のメタデータと依存関係プロパティの識別子のプロパティをさまざまな依存関係プロパティのフィールドから取得し、情報を使用して、「メタデータ ブラウザー」を実装するテーブルを設定します。  
+  
+ [!code-csharp[PropertySystemEsoterics#DPProps](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/XAMLAPP/page2.xaml.cs#dpprops)]
+ [!code-vb[PropertySystemEsoterics#DPProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/xamlapp/page2.xaml.vb#dpprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty Register (string name, Type propertyType, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty Register(string name, class System.Type propertyType, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.Register(System.String,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。 名前は、所有者型の登録名前空間内で一意である必要があります。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録する所有者型。</param>
+        <summary>プロパティ名、プロパティ型、所有者型を指定して、依存関係プロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WPFAquariumSln#Register3Param](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#register3param)]
+ [!code-vb[WPFAquariumSln#Register3Param](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#register3param)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty Register (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata typeMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty Register(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata typeMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.Register(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="typeMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <summary>プロパティ名、プロパティの型、所有者の型、プロパティ メタデータを指定して、依存関係プロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty Register (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata typeMetadata, System.Windows.ValidateValueCallback validateValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty Register(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata typeMetadata, class System.Windows.ValidateValueCallback validateValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.Register(System.String,System.Type,System.Type,System.Windows.PropertyMetadata,System.Windows.ValidateValueCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="validateValueCallback" Type="System.Windows.ValidateValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="typeMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <param name="validateValueCallback">通常の型検証に加えて、依存関係プロパティ値のカスタム検証を実行する必要があるコールバックへの参照。</param>
+        <summary>プロパティ名、プロパティ型、所有者型、プロパティ メタデータ、およびプロパティの値検証コールバックを指定して、依存関係プロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+   
+  
+## Examples  
+ 次の例は、依存関係プロパティを検証コールバックを登録 (コールバック定義は表示されません以外の場合は、コールバックの定義の詳細については、「 <xref:System.Windows.ValidateValueCallback>).  
+  
+ [!code-csharp[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCallbackOverride/CSharp/SDKSampleLibrary/class1.cs#currentdefinitionwithwrapper)]
+ [!code-vb[DPCallbackOverride#CurrentDefinitionWithWrapper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCallbackOverride/visualbasic/sdksamplelibrary/class1.vb#currentdefinitionwithwrapper)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録する所有者型。</param>
+        <summary>プロパティ名、プロパティ型、および所有者型を指定して、添付プロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 添付プロパティによって定義されたプロパティの概念は、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]依存関係プロパティとしてアタッチされるプロパティを実装します。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]添付プロパティは、依存関係プロパティ、レポート レイアウトの特性などの操作で、[全般] プロパティのシステムで使用できるメタデータが適用されることができます。 詳細については、「[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+   
+  
+## Examples  
+ 次の例は、これを使用して抽象クラスで添付プロパティを登録<xref:System.Windows.DependencyProperty.RegisterAttached%2A>署名します。  
+  
+ [!code-csharp[WPFAquariumSln#RegisterAttachedBubbler2](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler2)]
+ [!code-vb[WPFAquariumSln#RegisterAttachedBubbler2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata defaultMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata defaultMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="defaultMetadata">依存関係プロパティのプロパティ メタデータ。 ここには、既定値などの特性を含めることができます。</param>
+        <summary>プロパティ名、プロパティの型、所有者の型、およびプロパティ メタデータを指定して、アタッチされるプロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 添付プロパティによって定義されたプロパティの概念は、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]依存関係プロパティとしてアタッチされるプロパティを実装します。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]添付プロパティは、依存関係プロパティ、レポート レイアウトの特性などの操作で、[全般] プロパティのシステムで使用できるメタデータが適用されることができます。 詳細については、「[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+## <a name="use-registerattached-for-value-inheriting-dependency-properties"></a>依存関係プロパティの値の継承の RegisterAttached を使用します。  
+ 1 つのシナリオでの依存関係プロパティを登録するため<xref:System.Windows.DependencyProperty.RegisterAttached%2A>の代わりに<xref:System.Windows.DependencyProperty.Register%2A>プロパティ値の継承をサポートするためには、します。 依存関係プロパティの値の継承を登録する必要があります<xref:System.Windows.DependencyProperty.RegisterAttached%2A>場合でも、依存関係プロパティを公開するプロパティのラッパー アクセサーがクラスで定義し、実際の添付プロパティを提供するメソッドにアクセサー サポート Get * とセット * 静的を公開する予定がない場合でもです。   非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリー内の特定要素境界を使用して非添付プロパティの継承の動作は定義されません。 プロパティを登録するように効果的に接続されている添付プロパティ グローバル プロパティをプロパティ システムに行い要素ツリー内のすべての境界を越えてプロパティ値の継承が動作することを保証します。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata defaultMetadata, System.Windows.ValidateValueCallback validateValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata defaultMetadata, class System.Windows.ValidateValueCallback validateValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type,System.Windows.PropertyMetadata,System.Windows.ValidateValueCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="validateValueCallback" Type="System.Windows.ValidateValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="defaultMetadata">依存関係プロパティのプロパティ メタデータ。 ここには、既定値などの特性を含めることができます。</param>
+        <param name="validateValueCallback">通常の型検証に加えて、依存関係プロパティ値のカスタム検証を実行する必要があるコールバックへの参照。</param>
+        <summary>プロパティ型、所有者型、プロパティ メタデータ、および値の検証コールバックを指定して、添付プロパティを登録します。</summary>
+        <returns>依存関係プロパティの識別子の値を設定するために使用する必要があります、<see langword="public static readonly" />クラスのフィールドです。 この識別子は、後で依存関係プロパティを参照する際に使用されます。たとえば、依存関係プロパティの値をプログラムで設定したり、メタデータを取得したりする操作で使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 添付プロパティによって定義されたプロパティの概念は、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]依存関係プロパティとしてアタッチされるプロパティを実装します。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]添付プロパティは、依存関係プロパティ、レポート レイアウトの特性などの操作で、[全般] プロパティのシステムで使用できるメタデータが適用されることができます。 詳細については、「[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)」を参照してください。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+## <a name="use-registerattached-for-value-inheriting-dependency-properties"></a>依存関係プロパティの値の継承の RegisterAttached を使用します。  
+ 1 つのシナリオでの依存関係プロパティを登録するため<xref:System.Windows.DependencyProperty.RegisterAttached%2A>の代わりに<xref:System.Windows.DependencyProperty.Register%2A>プロパティ値の継承をサポートするためには、します。 依存関係プロパティの値の継承を登録する必要があります<xref:System.Windows.DependencyProperty.RegisterAttached%2A>場合でも、依存関係プロパティを公開するプロパティのラッパー アクセサーがクラスで定義し、実際の添付プロパティを提供するメソッドにアクセサー サポート Get * とセット * 静的を公開する予定がない場合でもです。   非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリー内の特定要素境界を使用して非添付プロパティの継承の動作は定義されません。 プロパティを登録するように効果的に接続されている添付プロパティ グローバル プロパティをプロパティ システムに行い要素ツリー内のすべての境界を越えてプロパティ値の継承が動作することを保証します。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、これを使用して抽象クラスで添付プロパティを登録<xref:System.Windows.DependencyProperty.RegisterAttached%2A>署名します。 添付プロパティが列挙型プロパティを登録は、指定された値が列挙体の値であることを確認する検証コールバックを追加します。  
+  
+ [!code-csharp[WPFAquariumSln#RegisterAttachedBubbler2](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler2)]
+ [!code-vb[WPFAquariumSln#RegisterAttachedBubbler2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttachedReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyPropertyKey RegisterAttachedReadOnly (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata defaultMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyPropertyKey RegisterAttachedReadOnly(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata defaultMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterAttachedReadOnly(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyPropertyKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="defaultMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <summary>プロパティ型、所有者型、およびプロパティ メタデータを指定して、読み取り専用の添付プロパティを登録します。</summary>
+        <returns>クラスの静的な読み取り専用フィールドの値を設定するために使用する必要がある依存関係プロパティのキー。これは後で依存関係プロパティの参照に使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る型<xref:System.Windows.DependencyPropertyKey>であるのに対し<xref:System.Windows.DependencyProperty.RegisterAttached%2A>型を返します<xref:System.Windows.DependencyProperty>です。 通常、読み取り専用プロパティを表すキーに対して行われていない、パブリックを呼び出すことによって、依存関係プロパティの値を設定するキーを使用できるため<xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29>です。 クラスのデザインは、要件に影響するが、アクセス権と任意の可視性を制限する、一般にお勧め<xref:System.Windows.DependencyPropertyKey>クラスまたはアプリケーション ロジックの一部としてその依存関係プロパティを設定するために必要なコードの部分のみにします。 値を公開することにより、読み取り専用の依存関係プロパティを依存関係プロパティの識別子を公開することも推奨<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A?displayProperty=nameWithType>として、`public static readonly`クラスのフィールドです。  
+  
+ 添付プロパティの主なシナリオで使用するがあるために、読み取り専用の添付プロパティはまれなシナリオでは、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 パブリック setter、ない場合は、添付プロパティ設定することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文です。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+## <a name="use-registerattached-for-value-inheriting-dependency-properties"></a>依存関係プロパティの値の継承の RegisterAttached を使用します。  
+ プロパティ値の継承をサポートするためには、1 つのシナリオとしての依存関係プロパティを登録するためです。 依存関係プロパティの値の継承を登録する必要があります<xref:System.Windows.DependencyProperty.RegisterAttached%2A>場合でも、依存関係プロパティを公開するプロパティのラッパー アクセサーがクラスで定義し、実際の添付プロパティを提供するメソッドにアクセサー サポート Get * とセット * 静的を公開する予定がない場合でもです。   非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリー内の特定要素境界を使用して非添付プロパティの継承の動作は定義されません。 プロパティを登録するように効果的に接続されている添付プロパティ グローバル プロパティをプロパティ システムに行い要素ツリー内のすべての境界を越えてプロパティ値の継承が動作することを保証します。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttachedReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyPropertyKey RegisterAttachedReadOnly (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata defaultMetadata, System.Windows.ValidateValueCallback validateValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyPropertyKey RegisterAttachedReadOnly(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata defaultMetadata, class System.Windows.ValidateValueCallback validateValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterAttachedReadOnly(System.String,System.Type,System.Type,System.Windows.PropertyMetadata,System.Windows.ValidateValueCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyPropertyKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="validateValueCallback" Type="System.Windows.ValidateValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="defaultMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <param name="validateValueCallback">通常の型検証に加えて、依存関係プロパティ値のカスタム検証を実行する必要があるユーザー作成のコールバックへの参照。</param>
+        <summary>プロパティ型、所有者型、プロパティ メタデータ、および検証コールバックを指定して、読み取り専用の添付プロパティを登録します。</summary>
+        <returns>クラスの静的な読み取り専用フィールドの値を設定するために使用され、次いで依存関係プロパティの参照に使用される、依存関係プロパティのキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る型<xref:System.Windows.DependencyPropertyKey>であるのに対し<xref:System.Windows.DependencyProperty.RegisterAttached%2A>型を返します<xref:System.Windows.DependencyProperty>です。 型を表すキーでは通常、<xref:System.Windows.DependencyProperty>です。 通常、読み取り専用プロパティを表すキーに対して行われていない、パブリックを呼び出すことによって、依存関係プロパティの値を設定するキーを使用できるため<xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29>です。 クラスのデザインは、要件に影響するが、アクセス権と任意の可視性を制限する、一般にお勧め<xref:System.Windows.DependencyPropertyKey>クラスまたはアプリケーション ロジックの一部としてその依存関係プロパティを設定するために必要なコードの部分のみにします。 値を公開することにより、読み取り専用の依存関係プロパティを依存関係プロパティの識別子を公開することも推奨<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A?displayProperty=nameWithType>として、`public static readonly`クラスのフィールドです。  
+  
+ 添付プロパティの主なシナリオで使用するがあるために、読み取り専用の添付プロパティはまれなシナリオでは、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 パブリック setter、ない場合は、添付プロパティ設定することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]構文です。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+## <a name="use-registerattached-for-value-inheriting-dependency-properties"></a>依存関係プロパティの値の継承の RegisterAttached を使用します。  
+ 1 つのシナリオの代わりに接続されているように、依存関係プロパティを登録するため<xref:System.Windows.DependencyProperty.Register%2A>プロパティ値の継承をサポートするためには、します。 依存関係プロパティの値の継承を登録する必要があります<xref:System.Windows.DependencyProperty.RegisterAttached%2A>場合でも、依存関係プロパティを公開するプロパティのラッパー アクセサーがクラスで定義し、実際の添付プロパティを提供するメソッドにアクセサー サポート Get * とセット * 静的を公開する予定がない場合でもです。   非添付依存関係プロパティを使用する、プロパティ値の継承が表示されますが、実行時のツリー内の特定要素境界を使用して非添付プロパティの継承の動作は定義されません。 プロパティを登録するように効果的に接続されている添付プロパティ グローバル プロパティをプロパティ システムに行い要素ツリー内のすべての境界を越えてプロパティ値の継承が動作することを保証します。 常に使用する<xref:System.Windows.DependencyProperty.RegisterAttached%2A>を指定するプロパティを登録する<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>メタデータにします。 詳細については、「[プロパティ値の継承](~/docs/framework/wpf/advanced/property-value-inheritance.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyPropertyKey RegisterReadOnly (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata typeMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyPropertyKey RegisterReadOnly(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata typeMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterReadOnly(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyPropertyKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="typeMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <summary>プロパティ型、所有者型、プロパティ メタデータを指定して、読み取り専用の依存関係プロパティを登録します。</summary>
+        <returns>クラスの静的な読み取り専用フィールドの値を設定するために使用され、次いで依存関係プロパティの参照に使用される、依存関係プロパティのキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る型<xref:System.Windows.DependencyPropertyKey>であるのに対し<xref:System.Windows.DependencyProperty.RegisterAttached%2A>型を返します<xref:System.Windows.DependencyProperty>です。 通常、読み取り専用プロパティを表すキーに対して行われていない、パブリックを呼び出すことによって、依存関係プロパティの値を設定するキーを使用できるため<xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29>です。 クラスのデザインは、要件に影響するが、アクセス権と任意の可視性を制限する、一般にお勧め<xref:System.Windows.DependencyPropertyKey>クラスまたはアプリケーション ロジックの一部としてその依存関係プロパティを設定するために必要なコードの部分のみにします。 値を公開することにより、読み取り専用の依存関係プロパティを依存関係プロパティの識別子を公開することも推奨<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A?displayProperty=nameWithType>として、`public static readonly`クラスのフィールドです。  
+  
+ 読み取り専用の依存関係プロパティは、非常に典型的なシナリオ両方、既存の[!INCLUDE[TLA2#tla_api](~/includes/tla2sharptla-api-md.md)]およびカスタマイズのシナリオのための他の[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]場合でも、そのプロパティはありませんを設定する呼び出し元が、機能が依存関係プロパティを必要と可能性があります。 基づくなどの依存関係プロパティを取得する他のプロパティ システム操作の基礎として読み取り専用の依存関係プロパティの値を使用する、<xref:System.Windows.Trigger>スタイルで依存関係プロパティです。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+   
+  
+## Examples  
+ 次の例では、登録、`AquariumSize`読み取り専用と依存関係プロパティです。 例では定義`AquariumSizeKey`(したがって他のアセンブリのクラスには、メタデータを上書きできます) 内部キーと公開とそのキーに基づいて依存関係プロパティの識別子として`AquariumSizeProperty`です。 ラッパーの作成も、 `AquariumSize`、get アクセサーだけを持つ。  
+  
+ [!code-csharp[WPFAquariumSln#RODP](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#rodp)]
+ [!code-vb[WPFAquariumSln#RODP](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#rodp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyPropertyKey RegisterReadOnly (string name, Type propertyType, Type ownerType, System.Windows.PropertyMetadata typeMetadata, System.Windows.ValidateValueCallback validateValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyPropertyKey RegisterReadOnly(string name, class System.Type propertyType, class System.Type ownerType, class System.Windows.PropertyMetadata typeMetadata, class System.Windows.ValidateValueCallback validateValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.RegisterReadOnly(System.String,System.Type,System.Type,System.Windows.PropertyMetadata,System.Windows.ValidateValueCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyPropertyKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="typeMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="validateValueCallback" Type="System.Windows.ValidateValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する依存関係プロパティの名前。</param>
+        <param name="propertyType">プロパティの型。</param>
+        <param name="ownerType">依存関係プロパティを登録している所有者の型。</param>
+        <param name="typeMetadata">依存関係プロパティのプロパティ メタデータ。</param>
+        <param name="validateValueCallback">通常の型検証に加えて、依存関係プロパティ値のカスタム検証を実行する必要があるユーザー作成のコールバックへの参照。</param>
+        <summary>プロパティ型、所有者型、プロパティ メタデータ、および検証コールバックを指定して、読み取り専用の依存関係プロパティを登録します。</summary>
+        <returns>クラスの静的な読み取り専用フィールドの値を設定するために使用する必要がある依存関係プロパティのキー。これは後で依存関係プロパティの参照に使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る型<xref:System.Windows.DependencyPropertyKey>であるのに対し<xref:System.Windows.DependencyProperty.RegisterAttached%2A>型を返します<xref:System.Windows.DependencyProperty>です。 通常、読み取り専用プロパティを表すキーに対して行われていない、パブリックを呼び出すことによって、依存関係プロパティの値を設定するキーを使用できるため<xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29>です。 クラスのデザインは、要件に影響するが、アクセス権と任意の可視性を制限する、一般にお勧め<xref:System.Windows.DependencyPropertyKey>クラスまたはアプリケーション ロジックの一部としてその依存関係プロパティを設定するために必要なコードの部分のみにします。 値を公開することにより、読み取り専用の依存関係プロパティを依存関係プロパティの識別子を公開することも推奨<xref:System.Windows.DependencyPropertyKey.DependencyProperty%2A?displayProperty=nameWithType>として、`public static readonly`クラスのフィールドです。  
+  
+ 読み取り専用の依存関係プロパティは、非常に典型的なシナリオです。 基づくなどの依存関係プロパティを取得する他のプロパティ システム操作の基礎として読み取り専用の依存関係プロパティの値を使用する、<xref:System.Windows.Trigger>スタイルで依存関係プロパティです。  
+  
+ 依存関係プロパティの登録の詳細については、次を参照してください。<xref:System.Windows.DependencyProperty>です。  
+  
+ 読み取り専用の依存関係プロパティの検証を重要性が低いことがあります。 キーの指定した非パブリックなアクセス レベルは、任意の無効な入力の可能性を軽減します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DependencyProperty.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>依存関係プロパティの文字列表現を返します。</summary>
+        <returns>依存関係プロパティの文字列表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を返します、<xref:System.Windows.DependencyProperty.Name%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsetValue">
+      <MemberSignature Language="C#" Value="public static readonly object UnsetValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly object UnsetValue" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DependencyProperty.UnsetValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用される静的な値を指定します、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ システムなく<see langword="null" />プロパティが存在する場合しますが、プロパティ システムによって設定された値がないことを示すことです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyProperty.UnsetValue>シナリオを使用するための sentinel 値は、場所、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ システムでは、要求を決定することができません<xref:System.Windows.DependencyProperty>値。 <xref:System.Windows.DependencyProperty.UnsetValue>使用がなく`null`ため、 `null` 、有効なプロパティの値だけでなく、有効な可能性があります (および頻繁に使用される)<xref:System.Windows.PropertyMetadata.DefaultValue%2A>です。  
+  
+ <xref:System.Windows.DependencyProperty.UnsetValue>うちは返されません<xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType>です。 呼び出すと<xref:System.Windows.DependencyObject.GetValue%2A?displayProperty=nameWithType>で依存関係プロパティの<xref:System.Windows.DependencyObject>インスタンス、次のいずれかに該当します。  
+  
+-   依存関係プロパティが、既定値はメタデータで確立され、その値が返されます。 この値は<xref:System.Windows.DependencyProperty.DefaultMetadata%2A>します。  
+  
+-   その他の値をプロパティ システムによって確立され、既定値は、関連性がなくなった。 詳細については、「[依存関係プロパティ値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)」を参照してください。  
+  
+ 設定、<xref:System.Windows.PropertyMetadata.DefaultValue%2A>の<xref:System.Windows.DependencyProperty.UnsetValue>は具体的には許可されません。  
+  
+ <xref:System.Windows.DependencyObject.ReadLocalValue%2A?displayProperty=nameWithType>返します<xref:System.Windows.DependencyProperty.UnsetValue>ときに要求されたプロパティが設定されていないローカルです。  
+  
+ <xref:System.Windows.DependencyProperty.UnsetValue>戻り値として使用する場合の特別な意味を持つ、<xref:System.Windows.CoerceValueCallback>です。 詳細については、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)です。  
+  
+ 場合は、データベースにバインドすることに注意<xref:System.Windows.DependencyProperty.UnsetValue>は<xref:System.DBNull.Value>、方法と同様に<xref:System.DBNull.Value>null の場合は true と等価ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateValueCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.ValidateValueCallback ValidateValueCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ValidateValueCallback ValidateValueCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DependencyProperty.ValidateValueCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ValidateValueCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの値検証コールバックを取得します。</summary>
+        <value>この依存関係プロパティの値検証コールバック、<paramref name="validateValueCallback" />元の依存関係プロパティの登録のパラメーターです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが格納されます`null`に登録されている検証コールバックいない依存関係プロパティです。  
+  
+ コールバックは、静的な意味で動作する必要があります値を検証: を通して適用される検証、<xref:System.Windows.ValidateValueCallback>指定された値が、特定のインスタンスに対して有効かどうかを判断できません。 コールバックは、依存関係プロパティを所有するすべてのオブジェクトが必要がありますまたは有効なものとして指定された値を許容しないようにするかどうかにのみを確認できます。 特定のインスタンスを使用するには、その他の依存関係プロパティの値を知ることに依存する検証を実行する必要がある場合、<xref:System.Windows.CoerceValueCallback>代わりにします。 <xref:System.Windows.CoerceValueCallback>依存関係プロパティの識別子の直下にあるではなく、依存関係プロパティのメタデータの一部として登録します。 詳細については、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

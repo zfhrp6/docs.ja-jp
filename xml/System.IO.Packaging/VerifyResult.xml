@@ -1,0 +1,126 @@
+<Type Name="VerifyResult" FullName="System.IO.Packaging.VerifyResult">
+  <TypeSignature Language="C#" Value="public enum VerifyResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VerifyResult extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.VerifyResult" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>証明書または署名の検証結果を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.VerifyResult>列挙します。  
+  
+ [!code-csharp[PackageDigitalSignature#PackageDigSigValidate](~/samples/snippets/csharp/VS_Snippets_Wpf/PackageDigitalSignature/CSharp/PackageDigitalSignature.cs#packagedigsigvalidate)]
+ [!code-vb[PackageDigitalSignature#PackageDigSigValidate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PackageDigitalSignature/visualbasic/packagedigitalsignature.vb#packagedigsigvalidate)]  
+  
+ サンプル全体については、次を参照してください。[デジタル署名のサンプルを使用してパッケージを作成する](http://go.microsoft.com/fwlink/?LinkID=159966)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CertificateRequired">
+      <MemberSignature Language="C#" Value="CertificateRequired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult CertificateRequired = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.CertificateRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書が署名の検証に使用できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidCertificate">
+      <MemberSignature Language="C#" Value="InvalidCertificate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult InvalidCertificate = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.InvalidCertificate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書が有効ではありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidSignature">
+      <MemberSignature Language="C#" Value="InvalidSignature" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult InvalidSignature = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.InvalidSignature" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名が無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotSigned">
+      <MemberSignature Language="C#" Value="NotSigned" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult NotSigned = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.NotSigned" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したパッケージまたはパーツに署名がありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceNotFound">
+      <MemberSignature Language="C#" Value="ReferenceNotFound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult ReferenceNotFound = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.ReferenceNotFound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名への参照リレーションシップが見つかりません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="Success" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Packaging.VerifyResult Success = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Packaging.VerifyResult.Success" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証が成功しました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

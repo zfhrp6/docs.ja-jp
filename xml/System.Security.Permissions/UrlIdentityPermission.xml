@@ -1,0 +1,391 @@
+<Type Name="UrlIdentityPermission" FullName="System.Security.Permissions.UrlIdentityPermission">
+  <TypeSignature Language="C#" Value="public sealed class UrlIdentityPermission : System.Security.CodeAccessPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UrlIdentityPermission extends System.Security.CodeAccessPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.UrlIdentityPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コードの生成元のゾーンの URL の ID アクセス許可を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロトコル (HTTP、HTTPS、FTP) と、ファイルを含む、完全な URL と見なされます。 たとえば、http://www.fourthcoffee.com/process/grind.htm は完全な URL です。  
+  
+ Url 一致するか、最後の位置でのワイルドカードを正確にたとえば: http://www.fourthcoffee.com/process/* です。 ワイルドカードを含めることも ("\*")、ドット区切り記号をプレフィックスします。 たとえば、http:// のサブセットは、URL 名文字列 http://www.fourthcoffee.com/process/grind.htm/\*.fourthcoffee.com/process/grind.htm/ と http://\*.com/process/grind.htm/ です。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可の要求は、呼び出し元のアセンブリが完全に信頼されている場合でも有効です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 以降、.NET Framework version 2.0 では、id アクセス許可を要求していない呼び出し元のアセンブリに完全な信頼がある場合に効果的なされます。 つまり、id の要求は常に成功すると、アセンブリの id に関係なく、アセンブリに完全な信頼が付与されている場合。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+ .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 以降、.NET Framework version 2.0 では、id アクセス許可を要求していない呼び出し元のアセンブリに完全な信頼がある場合に効果的なされます。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+> [!NOTE]
+>  前に .NET Framework のバージョンでは、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、使用する可能性があります、<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>に信頼されたコードによってシステム リソースを不注意によるアクセスを阻止する方法です。 <xref:System.Security.CodeAccessPermission.Deny%2A>現在使用されていません、およびリソースへのアクセスが付与されたアクセス許可がアセンブリのセットによってのみ決定されますようになりました。 ファイルへのアクセスを制限するには、するには、サンド ボックスで部分信頼コードを実行し、コードのアクセスが許可されているリソースにのみアクセス許可を割り当てます。 サンド ボックスで、アプリケーションの実行方法の詳細については、次を参照してください。[する方法: 実行部分信頼コードをサンド ボックスで](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 以降、.NET Framework version 2.0 では、id アクセス許可はアクセス許可の状態値を設定できます。 つまり、2.0 以降のバージョンでは、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlIdentityPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.UrlIdentityPermission" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するか完全に制限 (`None`) または`Unrestricted`権限です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 以降、.NET Framework version 2.0 では、id アクセス許可はアクセス許可の状態値を設定できます。 つまり、2.0 以降のバージョンでは、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 つまり、id の要求は常に成功すると、アセンブリの id に関係なく、アセンブリに完全な信頼が付与されている場合。  
+  
+ .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 以降、.NET Framework version 2.0 では、id アクセス許可を要求していない呼び出し元のアセンブリに完全な信頼がある場合に効果的なされます。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Security.Permissions.UrlIdentityPermission.%23ctor%28System.Security.Permissions.PermissionState%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.UrlIdentityPermission#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/CPP/urlidentity.cpp#7)]
+ [!code-csharp[System.Security.Permissions.UrlIdentityPermission#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/CS/urlidentity.cs#7)]
+ [!code-vb[System.Security.Permissions.UrlIdentityPermission#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/VB/urlidentity.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" /> パラメーターが <see cref="T:System.Security.Permissions.PermissionState" /> の正しい値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlIdentityPermission (string site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="site" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="site">URL またはワイルドカード式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.UrlIdentityPermission" />によって記述された URL の id を表す<paramref name="site" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全な URL を考慮すると、たとえばプロトコル (HTTP、HTTPS、FTP) と、ファイルを含む: http://www.fourthcoffee.com/process/grind.htm/ です。  
+  
+ Url 一致するか、最後の位置でのワイルドカードを正確にたとえば: http://www.fourthcoffee.com/process/* です。 ワイルドカードを含めることも ("\*")、ドット区切り記号をプレフィックスします。 たとえば、http:// のサブセットは、URL 名文字列 http://www.fourthcoffee.com/process/grind.htm/\*.fourthcoffee.com/process/grind.htm/ と http://\*.com/process/grind.htm/ です。  
+  
+> [!NOTE]
+>  無効な .NET Framework version 2.0 では、パフォーマンス上の理由で始まる URL されません新しいクラスのインスタンスの作成時に引数例外。  集合演算 (Union、Intersect、または IsSubsetOf) のいずれかを実行すると、引数の例外が発生します。  アクセス許可が原因でオンデマンド<xref:System.Security.Permissions.UrlIdentityPermission.IsSubsetOf%2A>セキュリティ インフラストラクチャによって呼び出されます。 その結果、引数の例外により、要求が失敗する、<xref:System.Security.SecurityException>がスローされます。 この場合は、元の<xref:System.ArgumentException>例外は表示されません。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Security.Permissions.UrlIdentityPermission.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ [!code-cpp[System.Security.Permissions.UrlIdentityPermission#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/CPP/urlidentity.cpp#8)]
+ [!code-csharp[System.Security.Permissions.UrlIdentityPermission#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/CS/urlidentity.cs#8)]
+ [!code-vb[System.Security.Permissions.UrlIdentityPermission#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UrlIdentityPermission/VB/urlidentity.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="site" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">長さ、<paramref name="site" />パラメーターが 0 です。</exception>
+        <exception cref="T:System.ArgumentException">URL、ディレクトリ、またはサイト部分の<paramref name="site" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement esd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement esd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="esd" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="esd">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="esd" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="esd" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="esd" />パラメーターのバージョン番号が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、両方に共通する Url へのアクセスを説明する権限です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。 たとえば、http://www.fourthcoffee.com/process/grind.htm へのアクセスを表すアクセス許可とアクセス権を表すに http://www.fourthcoffee.com/* アクセス許可の積集合は、http://www.fourthcoffee.com/process/grind.htm へのアクセスを表す、アクセス許可が。  
+  
+ <xref:System.Security.Permissions.UrlIdentityPermission>セットの操作をサポートしています (<xref:System.Security.Permissions.UrlIdentityPermission.IsSubsetOf%2A>、 <xref:System.Security.Permissions.UrlIdentityPermission.Intersect%2A>、および<xref:System.Security.Permissions.UrlIdentityPermission.Union%2A>) 現在のアクセス許可が指定した権限のオブジェクトと等しい場合またはワイルドカード演算子を使用する場合に、そのアクセス許可の 1 つだけ ("*") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。  
+  
+ または  
+  
+ URL プロパティが、正しい URL ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる URL へのアクセスを識別する場合、指定したアクセス許可のサブセットです。 たとえば、http://www.fourthcoffee.com/process/grind.htm へのアクセスを表す、アクセス許可は、アクセスを表すに http://www.fourthcoffee.com/* アクセス許可のサブセットです。 このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+ <xref:System.Security.Permissions.UrlIdentityPermission>セットの操作をサポートしています (<xref:System.Security.Permissions.UrlIdentityPermission.IsSubsetOf%2A>、 <xref:System.Security.Permissions.UrlIdentityPermission.Intersect%2A>、および<xref:System.Security.Permissions.UrlIdentityPermission.Union%2A>) 現在のアクセス許可が、指定した権限に等しい場合またはワイルドカード演算子を使用する場合に、そのアクセス許可の 1 つだけ ("*") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。  
+  
+ または  
+  
+ URL プロパティが、正しい URL ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UrlIdentityPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果、<xref:System.Security.Permissions.UrlIdentityPermission.Union%2A>メソッドは現在のアクセス許可で表される URL へのアクセスだけでなく、指定した権限によって表される URL へのアクセスを表す権限。  
+  
+ <xref:System.Security.Permissions.UrlIdentityPermission>クラスは、セットの操作をサポートしている<xref:System.Security.Permissions.UrlIdentityPermission.IsSubsetOf%2A>、<xref:System.Security.Permissions.UrlIdentityPermission.Intersect%2A>と<xref:System.Security.Permissions.UrlIdentityPermission.Union%2A>) 現在のアクセス許可が、指定した権限に等しい場合にのみ、またはワイルドカード演算子を使用して、権限のいずれか ("*") と 1 つは他方のサブセットです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。  
+  
+ または  
+  
+ <see cref="P:System.Security.Permissions.UrlIdentityPermission.Url" />プロパティは、有効な URL ではありません。  
+  
+ または  
+  
+ 2 つのアクセス許可は等しくありません。また、その 1 つは他方のサブセットでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.UrlIdentityPermission.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネットのコードの ID を表す URL を取得または設定します。</summary>
+        <value>インターネットのコードの ID を表す URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全な URL を考慮すると、たとえばプロトコル (HTTP、HTTPS、FTP) と、ファイルを含む: http://www.fourthcoffee.com/process/grind.htm/ です。  
+  
+ Url 一致するか、最後の位置でのワイルドカードを正確にたとえば: http://www.fourthcoffee.com/process/* です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">不明な ID があるので、URL を取得できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

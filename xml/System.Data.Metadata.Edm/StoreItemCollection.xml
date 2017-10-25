@@ -1,0 +1,103 @@
+<Type Name="StoreItemCollection" FullName="System.Data.Metadata.Edm.StoreItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class StoreItemCollection : System.Data.Metadata.Edm.ItemCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit StoreItemCollection extends System.Data.Metadata.Edm.ItemCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.StoreItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.ItemCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ストレージ (データベース) モデルに関するメタデータを読み込みます。 <see cref="T:System.Data.Metadata.Edm.StoreItemCollection" /> は、ストア スキーマ定義言語 (SSDL) ファイルからメタデータを読み込みます。 このクラスは、<see cref="T:System.Data.Metadata.Edm.ItemCollection" /> クラスから派生しています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StoreItemCollection (System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt; xmlReaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlReader&gt; xmlReaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.StoreItemCollection.#ctor(System.Collections.Generic.IEnumerable{System.Xml.XmlReader})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlReaders" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlReader&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReaders">メタデータを作成するために使用する XMLReader です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Metadata.Edm.StoreItemCollection" />クラスの指定された XMLReader を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StoreItemCollection (params string[] filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.StoreItemCollection.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="filePaths">メタデータを作成するために使用するファイルのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Metadata.Edm.StoreItemCollection" />クラスの指定したファイルのパスを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimitiveTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.PrimitiveType&gt; GetPrimitiveTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.StoreItemCollection.GetPrimitiveTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />オブジェクトのコレクションを表す、<see cref="T:System.Data.Metadata.Edm.PrimitiveType" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreSchemaVersion">
+      <MemberSignature Language="C#" Value="public double StoreSchemaVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StoreSchemaVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.StoreItemCollection.StoreSchemaVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションのストアのスキーマのバージョンを取得します。</summary>
+        <value>このコレクションのストアのスキーマのバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,151 @@
+<Type Name="DbProviderFactories" FullName="System.Data.Common.DbProviderFactories">
+  <TypeSignature Language="C#" Value="public static class DbProviderFactories" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DbProviderFactories extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbProviderFactories" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Data.Common.DbProviderFactory" /> クラスの 1 つ以上のインスタンスを作成するための静的メソッドのセットを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetFactory">
+      <MemberSignature Language="C#" Value="public static System.Data.Common.DbProviderFactory GetFactory (System.Data.Common.DbConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Common.DbProviderFactory GetFactory(class System.Data.Common.DbConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderFactories.GetFactory(System.Data.Common.DbConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.Common.DbConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">使用する接続。</param>
+        <summary><see cref="T:System.Data.Common.DbProviderFactory" /> のインスタンスを返します。</summary>
+        <returns>インスタンス、<see cref="T:System.Data.Common.DbProviderFactory" />の指定された接続。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFactory">
+      <MemberSignature Language="C#" Value="public static System.Data.Common.DbProviderFactory GetFactory (System.Data.DataRow providerRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Common.DbProviderFactory GetFactory(class System.Data.DataRow providerRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderFactories.GetFactory(System.Data.DataRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerRow" Type="System.Data.DataRow" />
+      </Parameters>
+      <Docs>
+        <param name="providerRow">
+          プロバイダーの構成情報が格納されている <see cref="T:System.Data.DataRow" />。</param>
+        <summary><see cref="T:System.Data.Common.DbProviderFactory" /> のインスタンスを返します。</summary>
+        <returns>指定された <see cref="T:System.Data.Common.DbProviderFactory" /> の <see cref="T:System.Data.DataRow" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `providerRow` パラメーターは、<xref:System.Data.DataRow> によって返されるテーブルの <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFactory">
+      <MemberSignature Language="C#" Value="public static System.Data.Common.DbProviderFactory GetFactory (string providerInvariantName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Common.DbProviderFactory GetFactory(string providerInvariantName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderFactories.GetFactory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerInvariantName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerInvariantName">プロバイダーの不変名。</param>
+        <summary><see cref="T:System.Data.Common.DbProviderFactory" /> のインスタンスを返します。</summary>
+        <returns>指定されたプロバイダー名の <see cref="T:System.Data.Common.DbProviderFactory" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `providerInvariantName`パラメーターに対応、**示す InvariantName**によって返されるテーブルの列<xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFactoryClasses">
+      <MemberSignature Language="C#" Value="public static System.Data.DataTable GetFactoryClasses ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.DataTable GetFactoryClasses() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderFactories.GetFactoryClasses" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DataTable" /> を実装するすべてのインストール済みプロバイダーに関する情報が格納されている <see cref="T:System.Data.Common.DbProviderFactory" /> を返します。</summary>
+        <returns>次のデータを格納する <see cref="T:System.Data.DataTable" /> オブジェクトが格納されている <see cref="T:System.Data.DataRow" /> を返します。  
+  
+ <list type="table"><listheader><term>列の序数  
+  
+ </term><description>列名  
+  
+ </description><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>**名**  
+  
+ </description><description>データ プロバイダーの人間が判読できる名前です。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>**の説明**  
+  
+ </description><description>データ プロバイダーの人間が判読できる説明。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>**示す InvariantName**  
+  
+ </description><description>データ プロバイダーを参照するプログラムで使用できる名前です。  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>**AssemblyQualifiedName**  
+  
+ </description><description>オブジェクトをインスタンス化するための十分な情報が含まれています、ファクトリ クラスの完全修飾名。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

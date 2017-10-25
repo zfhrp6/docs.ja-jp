@@ -1,0 +1,149 @@
+<Type Name="XmlFormatExtensionPrefixAttribute" FullName="System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XmlFormatExtensionPrefixAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlFormatExtensionPrefixAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML 名前空間とサービスの説明内でサービスの記述形式拡張機能を使用する XML 名前空間プレフィックスを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス説明の形式の拡張機能では、ASP.NET を使用して作成された XML Web サービスのサービスの説明を生成する方法を拡張します。 具体的には、サービス説明の形式の拡張機能は、サービスの説明に XML 要素を追加します。 これは、機能は、SOAP 拡張機能に関する情報がサービスの説明に含まれないよう、XML Web サービスのクライアントとサーバーの両方の側で実行する SOAP 拡張機能のビルド時に便利です。 サービスの説明には SOAP 拡張機能に関する情報を追加する場合、クライアントに特定の SOAP 拡張機能を実行する必要がありますを解釈することができます。 クライアントとサーバーの両方で実行する必要がある SOAP 拡張機能の例として、暗号化 SOAP 拡張機能があります。 サーバーだけで、暗号化 SOAP 拡張機能で動作し、それらをクライアントに送信する前に戻り値を暗号化する場合、クライアントが SOAP メッセージを復号化を実行している SOAP 拡張機能に必要です。 それ以外の場合、クライアントは、戻り値を処理できません。  
+  
+ サービス説明の形式の拡張機能を構築するのにには、次の手順を使用します。  
+  
+1.  ビルドから派生したクラス<xref:System.Web.Services.Description.ServiceDescriptionFormatExtension>です。  
+  
+2.  適用、<xref:System.Web.Services.Configuration.XmlFormatExtensionAttribute>クラスにし、サービスの記述形式の拡張機能を実行する、拡張ポイントを指定します。  
+  
+3.  必要に応じて、適用、<xref:System.Web.Services.Configuration.XmlFormatExtensionPointAttribute>クラスにし、新しい拡張機能ポイントとして機能するクラス内のメンバーを指定します。  
+  
+4.  必要に応じて、適用、<xref:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute>クラスにし、サービスの記述形式の拡張機能によって生成された XML 要素に関連付けられる XML 名前空間プレフィックスを指定します。  
+  
+5.  内で実行するサービスの記述形式の拡張機能の構成、`serviceDescriptionFormatExtensionTypes`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionFormatExtension#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/CS/source.cs#1)]
+ [!code-vb[ServiceDescriptionFormatExtension#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlFormatExtensionPrefixAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlFormatExtensionPrefixAttribute (string prefix, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string prefix, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">サービス説明の形式の拡張機能に関連付けられている XML 名前空間プレフィックス。</param>
+        <param name="ns">サービス説明の形式の拡張機能に関連付けられている XML 名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute" />クラス、XML 名前空間とサービスの説明の形式の拡張機能の XML 名前空間プレフィックスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionFormatExtension#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/CS/source.cs#2)]
+ [!code-vb[ServiceDescriptionFormatExtension#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスの説明の形式の拡張機能に関連付けられている XML 名前空間を設定します。</summary>
+        <value>サービス説明の形式の拡張機能に関連付けられている XML 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionFormatExtension#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/CS/source.cs#2)]
+ [!code-vb[ServiceDescriptionFormatExtension#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public string Prefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Configuration.XmlFormatExtensionPrefixAttribute.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスの説明の形式の拡張機能に関連付けられている XML 名前空間プレフィックスを設定します。</summary>
+        <value>サービス説明の形式の拡張機能に関連付けられている XML 名前空間プレフィックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionFormatExtension#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/CS/source.cs#2)]
+ [!code-vb[ServiceDescriptionFormatExtension#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionFormatExtension/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

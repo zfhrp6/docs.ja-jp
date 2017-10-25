@@ -1,0 +1,392 @@
+<Type Name="MimeTextMatch" FullName="System.Web.Services.Description.MimeTextMatch">
+  <TypeSignature Language="C#" Value="public sealed class MimeTextMatch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MimeTextMatch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.MimeTextMatch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP 伝送が検索対象のテキストのパターンを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス用のプロトコルを指定する方法の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティとによって公開されるメソッドの使用、`MimeTextMatch`クラスです。  
+  
+ [!code-cpp[MimeText_Binding_Match_8#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CPP/mimetext_binding_match_8.cpp#1)]
+ [!code-csharp[MimeText_Binding_Match_8#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CS/mimetext_binding_match_8.cs#1)]
+ [!code-vb[MimeText_Binding_Match_8#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeText_Binding_Match_8/VB/mimetext_binding_match_8.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MimeTextMatch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MimeTextMatch.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.MimeTextMatch" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public int Capture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Capture" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Capture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("capture")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の 0 から始まるインデックスを示す値、<see cref="T:System.Web.Services.Description.MimeTextMatch" />グループ内。</summary>
+        <value>32 ビット符号付き整数。 既定値は 0、いることを示す、<see cref="T:System.Web.Services.Description.MimeTextMatch" />は、グループ内の最初のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.Web.Services.Description.MimeTextMatch.Group%2A>と<xref:System.Web.Services.Description.MimeTextMatch.Matches%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MimeTextMatch_5#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeTextMatch_5/CPP/mimetextmatch_5.cpp#2)]
+ [!code-csharp[MimeTextMatch_5#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeTextMatch_5/CS/mimetextmatch_5.cs#2)]
+ [!code-vb[MimeTextMatch_5#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeTextMatch_5/VB/mimetextmatch_5.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティの値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public int Group { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Group" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("group")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストの検索の結果を配置するグループの数を示す値を設定します。</summary>
+        <value>32 ビット符号付き整数。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値には、以下の値にする必要があります、<xref:System.Web.Services.Description.MimeTextMatch.Repeats%2A>プロパティ、または XML Web サービスは正常にコンパイルされません。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MimeTextMatch_5#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeTextMatch_5/CPP/mimetextmatch_5.cpp#3)]
+ [!code-csharp[MimeTextMatch_5#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeTextMatch_5/CS/mimetextmatch_5.cs#3)]
+ [!code-vb[MimeTextMatch_5#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeTextMatch_5/VB/mimetextmatch_5.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティの値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="public bool IgnoreCase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreCase" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.IgnoreCase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("ignoreCase")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索で検索するテキストの大文字と小文字を無視すべきかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、検索は、ケースを無視する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MimeText_Binding_Match_8#7](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CPP/mimetext_binding_match_8.cpp#7)]
+ [!code-csharp[MimeText_Binding_Match_8#7](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CS/mimetext_binding_match_8.cs#7)]
+ [!code-vb[MimeText_Binding_Match_8#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeText_Binding_Match_8/VB/mimetext_binding_match_8.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.MimeTextMatchCollection Matches { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.MimeTextMatchCollection Matches" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Matches" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("match")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.MimeTextMatchCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索によって発見されたパターンと一致するテキストのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.MimeTextMatchCollection" />のメンバーを表す、<see cref="P:System.Web.Services.Description.MimeTextMatch.Group" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MimeText_Binding_Match_8#8](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CPP/mimetext_binding_match_8.cpp#8)]
+ [!code-csharp[MimeText_Binding_Match_8#8](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CS/mimetext_binding_match_8.cs#8)]
+ [!code-vb[MimeText_Binding_Match_8#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeText_Binding_Match_8/VB/mimetext_binding_match_8.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.MimeTextMatch" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Web.Services.Description.MimeTextMatch" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[MimeText_Binding_Match_8#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CPP/mimetext_binding_match_8.cpp#4)]
+ [!code-csharp[MimeText_Binding_Match_8#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CS/mimetext_binding_match_8.cs#4)]
+ [!code-vb[MimeText_Binding_Match_8#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeText_Binding_Match_8/VB/mimetext_binding_match_8.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("pattern")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索のテキストのパターンを設定します。</summary>
+        <value>HTTP 伝送を検索するテキストを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、ワイルドカード文字を含めることができます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MimeText_Binding_Match_8#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CPP/mimetext_binding_match_8.cpp#6)]
+ [!code-csharp[MimeText_Binding_Match_8#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeText_Binding_Match_8/CS/mimetext_binding_match_8.cs#6)]
+ [!code-vb[MimeText_Binding_Match_8#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeText_Binding_Match_8/VB/mimetext_binding_match_8.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Repeats">
+      <MemberSignature Language="C#" Value="public int Repeats { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Repeats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Repeats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索では、実行する回数を示す値を設定します。</summary>
+        <value>32 ビット符号付き整数。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の一致が不可能な場合は、1 のプロパティの値は最初の一致のみ検出を返します。 値<xref:System.Int32.MaxValue>すべての一致が返されます。  
+  
+ このプロパティと同じ情報が返されます、<xref:System.Web.Services.Description.MimeTextMatch.RepeatsString%2A>プロパティが、32 ビット符号付き整数としてではなく文字列として。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MimeTextMatch_5#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeTextMatch_5/CPP/mimetextmatch_5.cpp#4)]
+ [!code-csharp[MimeTextMatch_5#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeTextMatch_5/CS/mimetextmatch_5.cs#4)]
+ [!code-vb[MimeTextMatch_5#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeTextMatch_5/VB/mimetextmatch_5.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティの値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RepeatsString">
+      <MemberSignature Language="C#" Value="public string RepeatsString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RepeatsString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.RepeatsString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("1")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("repeats")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索では、実行する回数を示す値を設定します。</summary>
+        <value>検索では、実行する回数を示す文字列。 既定値は、「1」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと同じ情報が返されます、<xref:System.Web.Services.Description.MimeTextMatch.Repeats%2A>プロパティが文字列ではなくとして 32 ビット符号付き整数。 値"*"に対応する<xref:System.Int32.MaxValue>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[MimeTextMatch_5#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MimeTextMatch_5/CPP/mimetextmatch_5.cpp#5)]
+ [!code-csharp[MimeTextMatch_5#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MimeTextMatch_5/CS/mimetextmatch_5.cs#5)]
+ [!code-vb[MimeTextMatch_5#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MimeTextMatch_5/VB/mimetextmatch_5.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MimeTextMatch.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索するテキストの MIME 形式を示す値を設定します。</summary>
+        <value>検索するテキストの MIME 形式を示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、空の文字列を返します ("") の値が設定されていない場合。  
+  
+   
+  
+## Examples  
+ MimeText_Binding_Match_&#8;5  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

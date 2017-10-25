@@ -1,0 +1,87 @@
+<Type Name="ImpersonationOption" FullName="System.ServiceModel.ImpersonationOption">
+  <TypeSignature Language="C#" Value="public enum ImpersonationOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImpersonationOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ImpersonationOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービス インスタンスのサービス操作の偽装動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ImpersonationOption> 列挙型を使用して、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] アプリケーションでの偽装を制御します。  
+  
+ この設定は、次の表に示す <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement.ImpersonateCallerForAllOperations%2A> の構成プロパティと相互関係があります。  
+  
+   
+  
+## Examples  
+ サービスに関する次のコード例は、<xref:System.ServiceModel.OperationBehaviorAttribute> を使用して偽装レベルを設定することで、メソッドに呼び出し元を偽装させる方法を示しています。  
+  
+ [!code-csharp[S_Basic_Service_Behaviors_Security_Impersonation#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_basic_service_behaviors_security_impersonation/cs/service.cs#2)]
+ [!code-vb[S_Basic_Service_Behaviors_Security_Impersonation#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_basic_service_behaviors_security_impersonation/vb/service.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Allowed">
+      <MemberSignature Language="C#" Value="Allowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ImpersonationOption Allowed = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ImpersonationOption.Allowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ImpersonationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>偽装は、資格情報が使用可能であり、<see cref="P:System.ServiceModel.Configuration.ServiceAuthorizationElement.ImpersonateCallerForAllOperations" /> が <see langword="true" /> の場合に実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAllowed">
+      <MemberSignature Language="C#" Value="NotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ImpersonationOption NotAllowed = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ImpersonationOption.NotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ImpersonationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>偽装は実行されません。 <see cref="P:System.ServiceModel.Configuration.ServiceAuthorizationElement.ImpersonateCallerForAllOperations" /> が <see langword="true" /> の場合、サービスの起動時に検証例外が発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ImpersonationOption Required = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ImpersonationOption.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ImpersonationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>偽装する必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

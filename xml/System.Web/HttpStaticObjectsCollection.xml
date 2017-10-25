@@ -1,0 +1,349 @@
+<Type Name="HttpStaticObjectsCollection" FullName="System.Web.HttpStaticObjectsCollection">
+  <TypeSignature Language="C#" Value="public sealed class HttpStaticObjectsCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpStaticObjectsCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpStaticObjectsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アプリケーション スコープのオブジェクトのコレクションを提供、<see cref="P:System.Web.HttpApplicationState.StaticObjects" />プロパティです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpStaticObjectsCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpStaticObjectsCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列、<see cref="T:System.Web.HttpStaticObjectsCollection" />にします。</param>
+        <param name="index">コピーが開始されるコレクションのメンバー。</param>
+        <summary>メンバーのコピー、<see cref="T:System.Web.HttpStaticObjectsCollection" />を配列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Object>必要なサイズの配列、既存のコピーと<xref:System.Web.HttpApplicationState.StaticObjects%2A>にコレクション。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のオブジェクトの数を取得します。</summary>
+        <value>コレクション内のオブジェクトの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のコードは、コレクション内のオブジェクトの数が 5 を超えた場合にのみを実行します。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpStaticObjectsCollection Deserialize (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.HttpStaticObjectsCollection Deserialize(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.Deserialize(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpStaticObjectsCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.IO.BinaryReader" />ストリームからのシリアル化されたコレクションの読み取りに使用される、エンコードされた文字列。</param>
+        <summary>作成、<see cref="T:System.Web.HttpStaticObjectsCollection" />オブジェクトを使用して書き込まれたバイナリ ファイルから、<see cref="M:System.Web.HttpStaticObjectsCollection.Serialize(System.IO.BinaryWriter)" />メソッドです。</summary>
+        <returns><see cref="T:System.Web.HttpStaticObjectsCollection" />を使用して記述されたバイナリ ファイルの内容と設定、<see cref="M:System.Web.HttpStaticObjectsCollection.Serialize(System.IO.BinaryWriter)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpStaticObjectsCollection.Deserialize%2A>の内容を読み取るメソッドが使用される、<xref:System.Web.HttpStaticObjectsCollection>によって作成される記憶域の場所に格納されているオブジェクト、<xref:System.Web.HttpStaticObjectsCollection.Serialize%2A>メソッドです。 シリアル化する、<xref:System.Web.HttpStaticObjectsCollection>を使用して、<xref:System.Web.HttpStaticObjectsCollection.Serialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションに含まれるキーと値のペアの反復処理に使用される、ディクショナリ列挙子を返します。</summary>
+        <returns>コレクションの列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、列挙子を作成、<xref:System.Web.HttpApplicationState.StaticObjects%2A>コレクション。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public object GetObject (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetObject(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.GetObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">返すオブジェクトの大文字小文字を区別しない名前。</param>
+        <summary>コレクションから指定した名前のオブジェクトを返します。 代わりに、このプロパティは、<see langword="this" />アクセサー。</summary>
+        <returns>コレクションからオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例から ArrayList1 をという名前のオブジェクトを返します、<xref:System.Web.HttpApplicationState.StaticObjects%2A>コレクションし、オブジェクト変数にコピーします。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.GetObject Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.GetObject Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.GetObject Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.GetObject Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のコードは、コレクションが読み取り専用である場合にのみを実行します。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.IsReadOnly Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.IsReadOnly Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.IsReadOnly Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.IsReadOnly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが同期されているかどうかを示す値を取得 (つまり、スレッド セーフである)。</summary>
+        <value>この実装でこのプロパティは常を返します<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するオブジェクトの大文字小文字を区別しない名前。</param>
+        <summary>指定した名前のオブジェクトをコレクションから取得します。</summary>
+        <value>コレクションからオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例から ArrayList1 をという名前のオブジェクトの取得、<xref:System.Web.HttpApplicationState.StaticObjects%2A>コレクションし、オブジェクト変数にコピーします。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NeverAccessed">
+      <MemberSignature Language="C#" Value="public bool NeverAccessed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NeverAccessed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.NeverAccessed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前に、コレクションがアクセスされたかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.HttpStaticObjectsCollection" /> 、それ以外のアクセスは、かつて<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpStaticObjectsCollection.Serialize(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.BinaryWriter" />をストリームにシリアル化されたコレクションを記述するために使用またはエンコードされた文字列。</param>
+        <summary>コレクションの内容を書き込みます、<see cref="T:System.IO.BinaryWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.HttpStaticObjectsCollection.Serialize%2A>メソッドの内容の書き込みを<xref:System.Web.HttpStaticObjectsCollection>オブジェクトを<xref:System.IO.BinaryWriter>オブジェクト。 取得、シリアル化された<xref:System.Web.HttpStaticObjectsCollection>オブジェクトを使用して、<xref:System.Web.HttpStaticObjectsCollection.Deserialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpStaticObjectsCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>現在の <see cref="T:System.Web.HttpStaticObjectsCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラム コードで同期操作を実行、通常、<xref:System.Web.HttpStaticObjectsCollection.SyncRoot%2A>コレクション自体で直接ではなく、コレクションのです。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、コレクション オブジェクトを同時に変更する可能性がある別スレッドとの適切な同期を維持します。  
+  
+ この実装で返されるオブジェクトは、<xref:System.Web.HttpStaticObjectsCollection>自体です。  
+  
+   
+  
+## Examples  
+ 次の例へのアクセスを同期するために使用するオブジェクトを作成、<xref:System.Web.HttpStaticObjectsCollection>です。  
+  
+ [!code-csharp[Classic HttpStaticObjectsCollection.SyncRoot Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.SyncRoot Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpStaticObjectsCollection.SyncRoot Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpStaticObjectsCollection.SyncRoot Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

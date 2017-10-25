@@ -1,0 +1,117 @@
+<Type Name="PreserveSigAttribute" FullName="System.Runtime.InteropServices.PreserveSigAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PreserveSigAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PreserveSigAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.PreserveSigAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示します HRESULT または<see langword="retval" />COM 相互運用機能の呼び出し中に行われるシグネチャ変換を中止する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドには、この属性を適用することができます。  
+  
+ 既定では、 [Tlbexp.exe (タイプ ライブラリ エクスポーター)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md)を HRESULT の S_OK を返す呼び出しが変換されることを確認するよう [out, retval] パラメーターは、関数の戻り値として使用します。 S_OK HRESULT は破棄されます。 S_OK 以外の Hresult をランタイムが例外をスローし、破棄 [out, retval] パラメーターです。 適用すると、<xref:System.Runtime.InteropServices.PreserveSigAttribute>マネージ メソッドのシグネチャには、属性付きメソッドのマネージ コードとアンマネージ シグネチャが同じです。  
+  
+ 元のメソッド シグネチャを保持すると、メンバーが 1 つ以上の成功 HRESULT 値を返すし、別の値を検出する必要があります。 COM メンバーのほとんどには、適用することによって、HRESULT が返されるので、 <xref:System.Runtime.InteropServices.PreserveSigAttribute>、成功または失敗を示す HRESULT を表す整数を取得することができます。 Tlbexp.exe 保持 [out, retavl] out がマネージ シグネチャでのパラメーターとして使用されるパラメーター。  
+  
+ [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)でも、この属性に適用される属性ディスパッチ インターフェイス タイプ ライブラリをインポートするとき。  
+  
+> [!NOTE]
+>  型を返す<xref:System.Runtime.InteropServices.UnmanagedType.Currency>、 <xref:System.Guid>、および<xref:System.Object>でサポートされていない、<xref:System.Runtime.InteropServices.PreserveSigAttribute>クラスの相互運用が COM からマネージ コードとマネージ コードが付いて、<xref:System.Runtime.InteropServices.PreserveSigAttribute>クラスです。  これらの戻り値の型のいずれかを使用しようとする、<xref:System.Runtime.InteropServices.PreserveSigAttribute>これらの条件の中にクラス、<xref:System.TypeLoadException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、Tlbexp.exe が c# メソッドをなしに変換する方法を示しています。 <xref:System.Runtime.InteropServices.PreserveSigAttribute> COM タイプ ライブラリにアセンブリをエクスポートする場合。  
+  
+ 管理対象の署名:  
+  
+```  
+int DoSomething (long l);  
+```  
+  
+ アンマネージ シグネチャは:  
+  
+```  
+HRESULT DoSomething ([in] long l, [out, retval] int * i);  
+```  
+  
+ 適用するときに<xref:System.Runtime.InteropServices.PreserveSigAttribute>を c# のメソッドと同じアセンブリのエクスポート、メソッドの変換は、前の例と異なります。 Tlbexp.exe を HRESULT と、[out, retval] 削除ことに注意してくださいパラメーター修飾子。  
+  
+ 管理対象の署名:  
+  
+```  
+[PreserveSig] int DoSomething (long l);  
+```  
+  
+ アンマネージ シグネチャは:  
+  
+```  
+int DoSomething ([in] long l);  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PreserveSigAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.PreserveSigAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.PreserveSigAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

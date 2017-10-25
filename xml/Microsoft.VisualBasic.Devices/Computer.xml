@@ -1,0 +1,352 @@
+<Type Name="Computer" FullName="Microsoft.VisualBasic.Devices.Computer">
+  <TypeSignature Language="C#" Value="public class Computer : Microsoft.VisualBasic.Devices.ServerComputer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Computer extends Microsoft.VisualBasic.Devices.ServerComputer" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Computer" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.VisualBasic.Devices.ServerComputer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オーディオ、時計、キーボード、ファイル システムなどのコンピューター コンポーネントを操作するためのプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Computer`オブジェクトの実行時に決定される、アプリケーションが展開されているコンピューターに関する情報を返します。 通常、このデータは、開発用コンピューター上で利用できるは異なります。  
+  
+ 一部のメンバーなど、`My.Computer.Audio`オブジェクトではないサーバー アプリケーションに対してのみ使用できます。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|接続状態を確認します。|[方法 : 接続ステータスをチェックする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+|レジストリ キーを作成します。|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|クリップボードへのアクセスします。|[クリップボードのデータの格納と読み取り](~/docs/visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Name`コードが実行されているコンピューターの名前を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Computer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Computer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Computer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [オブジェクト](http://msdn.microsoft.com/library/651c73e4-dca8-402b-9c6b-e3902b3a3f4b)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Audio">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Audio Audio { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Audio Audio" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Audio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Audio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サウンドの再生方法用のプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Audio" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Audio`オブジェクト。 詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Devices.Audio>オブジェクト。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`AudioPlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコードは、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 ファイルにアクセスし、`My.Resources`オブジェクト。 詳細については、次を参照してください。 [My.Resources オブジェクト](~/docs/visual-basic/language-reference/objects/my-resources-object.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clipboard">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.MyServices.ClipboardProxy Clipboard { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.MyServices.ClipboardProxy Clipboard" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Clipboard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.MyServices.ClipboardProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードを操作するためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Clipboard" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、<xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>オブジェクト。  
+  
+ このプロパティは、非サーバー アプリケーションに対してのみ使用できます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、クリップボードからテキストを文字列に読み取った`textOnClipboard`です。  
+  
+ [!code-vb[VbVbcnMyClipboard#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#6)]  
+  
+ この例は、クリップボードにテキストがない場合に失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keyboard">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Keyboard Keyboard { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Keyboard Keyboard" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Keyboard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Keyboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが現在、押されているし、キーストロークをアクティブなウィンドウに送信するためのメソッドを提供する新機能など、キーボードの現在の状態にアクセスするためのプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Keyboard" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Keyboard`オブジェクト。 詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Devices.Keyboard>オブジェクト。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.CtrlKeyDown`プロパティをコンピューターの CTRL キーが現在押されたかどうかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#36)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mouse">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Mouse Mouse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Mouse Mouse" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Mouse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Mouse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式と、ローカル コンピューターにインストールされているマウスの構成に関する情報を取得するためのプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Mouse" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Mouse`オブジェクト。 詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Devices.Mouse>オブジェクト。  
+  
+ このプロパティは、非サーバー アプリケーションに対してのみ使用できます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Mouse.WheelExists`と`My.Computer.Mouse.WheelScrollLines`プロパティをそれを回転させると、マウスにスクロール ホイール、およびスクロールにどの程度を確認します。  
+  
+ [!code-vb[VbVbalrMyComputer#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ports">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Ports Ports { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Ports Ports" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Ports" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Ports</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティと、コンピューターのシリアル ポートにアクセスするためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Ports" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Ports`オブジェクト。 詳細については、次を参照してください。<xref:Microsoft.VisualBasic.Devices.Ports>オブジェクト。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例に、コンピューターの文字列を送信する方法を説明する`COM1`シリアル ポートです。  
+  
+ `Using` ブロックを使用すると、アプリケーションが例外を生成した場合でも、シリアル ポートを閉じることができます。 このブロック内で、またはシリアル ポートを操作するすべてのコードが表示されます、`Try...Catch...Finally`ブロックを使用する呼び出しを<xref:System.IO.Ports.SerialPort.Close%2A>メソッドです。  
+  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> メソッドで、データをシリアル ポートに送信しています。  
+  
+ [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
+  
+ 詳細については、次を参照してください。[する方法: シリアル ポートに文字列を送信](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Screen">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Screen Screen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Screen Screen" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Computer.Screen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.Screen" />コンピューターのプライマリ ディスプレイ画面を表すオブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Screen" />コンピューターのプライマリ画面を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Screen`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.Screen.PrimaryScreen%2A>プロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.Screen.WorkingArea%2A>のプロパティ、`My.Computer.Screen`コンピューターの作業領域のプライマリを決定するプロパティの表示、および作業領域に合わせてフォームのサイズを変更します。  
+  
+ [!code-vb[VbVbalrMyComputer#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#10)]  
+  
+ この例では、Windows フォーム アプリケーションで実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,134 @@
+<Type Name="ProfileUpdatedEventArgs" FullName="System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ProfileUpdatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProfileUpdatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated" /> イベントにデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.IProfileNotification> インターフェイスを実装する追跡サービスは、特定のワークフロー <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が変更されたことをランタイム追跡インフラストラクチャに通知するために、<xref:System.Type> イベントを発生させます。 追跡サービスは <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> を使用して、ワークフローの <xref:System.Type> と新しい <xref:System.Workflow.Runtime.Tracking.TrackingProfile> をランタイム追跡インフラストラクチャに提供します。 たとえば、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> を使用して <xref:System.Workflow.Runtime.Tracking.SqlTrackingService.ProfileUpdated?displayProperty=nameWithType> イベントを発生させます。 ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントを受け取ると、自身のプロファイル キャッシュ内の指定されたワークフロー <xref:System.Type> の追跡プロファイルを更新します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileUpdatedEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービス内で <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントを発生させるときにこのコンストラクターを使用する場合は、<xref:System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs.WorkflowType%2A> と <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.TrackingProfile%2A> を明示的に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileUpdatedEventArgs (Type workflowType, System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type workflowType, class System.Workflow.Runtime.Tracking.TrackingProfile profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.#ctor(System.Type,System.Workflow.Runtime.Tracking.TrackingProfile)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType"><see cref="T:System.Type" /> が変更されたワークフローの <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />。</param>
+        <param name="profile">新しい <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />。</param>
+        <summary>指定したワークフロー <see cref="T:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs" /> の新しい <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を指定する <see cref="T:System.Type" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成された <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs> の新しいインスタンスで、<xref:System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs.WorkflowType%2A> は指定した <xref:System.Type> に、<xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.TrackingProfile%2A> は指定したプロファイルにそれぞれ設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingProfile">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingProfile TrackingProfile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingProfile TrackingProfile" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.TrackingProfile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー型の新しい <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />ワークフロー型にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントを受け取ると、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> で指定されたワークフロー <xref:System.Type> の新しい <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.WorkflowType%2A> を使用して、自身のプロファイル キャッシュを更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowType">
+      <MemberSignature Language="C#" Value="public Type WorkflowType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type WorkflowType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.WorkflowType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> を更新する必要があるワークフローの <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を取得または設定します。</summary>
+        <value>ワークフローの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ProfileRemovedEventArgs.WorkflowType%2A> は、追跡プロファイルが変更されたワークフロー <xref:System.Type> を指定します。 <xref:System.Workflow.Runtime.Tracking.ProfileUpdatedEventArgs.TrackingProfile%2A> は、新しい追跡プロファイルに設定されます。  ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントを受け取ると、ワークフロー <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の新しい <xref:System.Type> を使用して、自身のプロファイル キャッシュを更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

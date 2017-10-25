@@ -1,0 +1,82 @@
+<Type Name="DirectoryObjectClassAttribute" FullName="System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DirectoryObjectClassAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DirectoryObjectClassAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ディレクトリでこの型のオブジェクトの作成に使用されるスキーマ オブジェクトを表します。 この属性は、プリンシパルの拡張機能に必要なクラスにのみ設定できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryObjectClassAttribute (string objectClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string objectClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="objectClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="objectClass">クラスのオブジェクトの値を含む文字列です。 <see cref="P:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute.ObjectClass" /> プロパティは、この値に初期化されます。 クラスのオブジェクトの文字列は、アプリケーション ディレクトリとドメイン ディレクトリ オブジェクト クラス属性を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute" />クラスの指定したオブジェクトの値を持つクラス。 ディレクトリに作成されたオブジェクトは、このオブジェクトのクラス型に作成されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.DirectoryServices.AccountManagement.ContextType&gt; Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DirectoryServices.AccountManagement.ContextType&gt; Context" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DirectoryServices.AccountManagement.ContextType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは実装されていませんし常に null を返します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />コンテキストが設定されていない場合は、属性を適用するストアまたは null の型を指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectClass">
+      <MemberSignature Language="C#" Value="public string ObjectClass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ObjectClass" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute.ObjectClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスのオブジェクト クラスの値を返します。</summary>
+        <value>派生クラスのオブジェクト クラスの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

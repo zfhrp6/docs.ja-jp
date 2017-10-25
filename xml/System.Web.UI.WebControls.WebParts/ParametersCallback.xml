@@ -1,0 +1,32 @@
+<Type Name="ParametersCallback" FullName="System.Web.UI.WebControls.WebParts.ParametersCallback">
+  <TypeSignature Language="C#" Value="public delegate void ParametersCallback(IDictionary parametersData);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ParametersCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ParametersCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="parametersData" Type="System.Collections.IDictionary" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="parametersData">プロバイダーから取得するデータ。</param>
+    <summary>プロバイダーから行のデータを取得するときに呼び出すメソッドを参照します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ParametersCallback>デリゲートは、コンシューマーからのパラメーターに基づくプロバイダーから行のデータを取得するために呼び出すメソッドを表します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData%2A?displayProperty=nameWithType>メソッドが含まれています、<xref:System.Web.UI.WebControls.WebParts.ParametersCallback>パラメーターを委任します。 <xref:System.Web.UI.WebControls.WebParts.IWebPartParameters.GetParametersData%2A>でメソッドが使用される、<xref:System.Web.UI.WebControls.WebParts.RowToParametersTransformer>変換用の行のデータを取得するクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,91 @@
+<Type Name="QueryPageSettingsEventArgs" FullName="System.Drawing.Printing.QueryPageSettingsEventArgs">
+  <TypeSignature Language="C#" Value="public class QueryPageSettingsEventArgs : System.Drawing.Printing.PrintEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryPageSettingsEventArgs extends System.Drawing.Printing.PrintEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.QueryPageSettingsEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Printing.PrintEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Drawing.Printing.PrintDocument.QueryPageSettings" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のページの設定を使用してドキュメントの各ページを印刷することができます。 設定ページの個々 のプロパティを変更することによって、<xref:System.Drawing.Printing.QueryPageSettingsEventArgs.PageSettings%2A>プロパティまたはプロパティを設定して、<xref:System.Drawing.Printing.PageSettings>です。 印刷ジョブを設定して取り消すこともできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、色の最初のページ文書を印刷するプリンターがサポートされている場合。 例では、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が作成されたら、および<xref:System.Drawing.Printing.PrintDocument.PrintPage>と<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントが処理されます。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Drawing.Printing>この例の名前空間。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#6)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#6)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryPageSettingsEventArgs (System.Drawing.Printing.PageSettings pageSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Printing.PageSettings pageSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.QueryPageSettingsEventArgs.#ctor(System.Drawing.Printing.PageSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pageSettings" Type="System.Drawing.Printing.PageSettings" />
+      </Parameters>
+      <Docs>
+        <param name="pageSettings">印刷するページのページ設定します。</param>
+        <summary><see cref="T:System.Drawing.Printing.QueryPageSettingsEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PageSettings PageSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PageSettings PageSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.QueryPageSettingsEventArgs.PageSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PageSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または印刷するページのページの設定を設定します。</summary>
+        <value>印刷するページのページ設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のページの設定を使用してドキュメントの各ページを印刷することができます。 設定ページの個々 のプロパティを変更することによって、<xref:System.Drawing.Printing.QueryPageSettingsEventArgs.PageSettings%2A>プロパティまたはプロパティを設定して、<xref:System.Drawing.Printing.PageSettings>です。 印刷ジョブを設定して取り消すこともできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、色の最初のページ文書を印刷するプリンターがサポートされている場合。 例では、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が作成されたら、および<xref:System.Drawing.Printing.PrintDocument.PrintPage>と<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントが処理されます。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Drawing.Printing>この例の名前空間。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#6)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#6)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

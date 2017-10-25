@@ -1,0 +1,143 @@
+<Type Name="InertiaRotationBehavior" FullName="System.Windows.Input.InertiaRotationBehavior">
+  <TypeSignature Language="C#" Value="public class InertiaRotationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InertiaRotationBehavior extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InertiaRotationBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>慣性の中の回転操作の減速を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InertiaRotationBehavior>クラスは、慣性ときの回転操作の動作を指定します。  使用して、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.RotationBehavior%2A>プロパティに、<xref:System.Windows.UIElement.ManipulationInertiaStarting>イベントを次を行うには。  
+  
+-   最初に設定するときに、慣性の初期速度を指定、<xref:System.Windows.Input.InertiaRotationBehavior.InitialVelocity%2A>プロパティです。  
+  
+-   設定して慣性の終了時に操作の必要な回転を指定、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>プロパティです。  
+  
+-   設定して慣性の必要な減速を指定、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>プロパティです。  
+  
+ 設定するか、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>または<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>、両方は使用しません。 これらのプロパティのいずれかを設定すると、その他のプロパティに変更されます<xref:System.Double.NaN?displayProperty=nameWithType>値がある場合。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.UIElement.ManipulationInertiaStarting>イベント ハンドラーおよび必要な減速翻訳、拡張、および回転慣性の中で使用されるを設定します。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationinertiastarting)]
+ [!code-vb[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InertiaRotationBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InertiaRotationBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.InertiaRotationBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredDeceleration">
+      <MemberSignature Language="C#" Value="public double DesiredDeceleration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DesiredDeceleration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または平方ミリ秒あたりの角度の回転速度の低下率を設定します。</summary>
+        <value>速度回転速度の低下 (平方ミリ秒あたり度単位)。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>慣性の必要な減速を指定するプロパティです。 設定するか、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>または<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>、両方は使用しません。 これらのプロパティのいずれかを設定すると、その他のプロパティに変更されます<xref:System.Double.NaN?displayProperty=nameWithType>値がある場合。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">無限に設定されます。  
+  
+ または  
+  
+ プロパティが <see cref="F:System.Double.NaN" /> に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredRotation">
+      <MemberSignature Language="C#" Value="public double DesiredRotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DesiredRotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InertiaRotationBehavior.DesiredRotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または慣性の動作は、最後の角度に回転を設定します。</summary>
+        <value>慣性の動作は、最後の度回転の角度。 既定値は、<see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>慣性の終了時に操作の必要な回転を指定するプロパティです。 設定するか、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>または<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>、両方は使用しません。 これらのプロパティのいずれかを設定すると、その他のプロパティに変更されます<xref:System.Double.NaN?displayProperty=nameWithType>値がある場合。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialVelocity">
+      <MemberSignature Language="C#" Value="public double InitialVelocity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 InitialVelocity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InertiaRotationBehavior.InitialVelocity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または慣性フェーズの開始時に、回転の初期速度を設定します。</summary>
+        <value>慣性フェーズの開始時、回転の初期速度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

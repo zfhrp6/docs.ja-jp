@@ -1,0 +1,53 @@
+<Type Name="ObjectDataSourceFilteringEventHandler" FullName="System.Web.UI.WebControls.ObjectDataSourceFilteringEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ObjectDataSourceFilteringEventHandler(object sender, ObjectDataSourceFilteringEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectDataSourceFilteringEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceFilteringEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.ObjectDataSourceFilteringEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.ObjectDataSourceFilteringEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.ObjectDataSourceView.Filtering" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceFilteringEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用してフィルター選択されたデータを表示する方法を示します、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを中間層のビジネス オブジェクトからデータを取得し、使用して、<xref:System.Web.UI.WebControls.GridView>結果を表示するコントロール。 2 番目のコード例では、最初のコード例で使用される中間層ビジネス オブジェクトの例を示します。  
+  
+ 次のコード例を使用して、フィルター選択されたデータを表示する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールを中間層のビジネス オブジェクトからデータを取得し、使用して、<xref:System.Web.UI.WebControls.GridView>結果を表示するコントロール。 <xref:System.Web.UI.WebControls.ObjectDataSource>としてこのデータを取得するメソッドを取得する場合にのみ、コントロールがデータをフィルター処理できる、<xref:System.Data.DataSet>または<xref:System.Data.DataTable>オブジェクト。 このため、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>プロパティとしてデータを取得するビジネス オブジェクト メソッドを識別する、<xref:System.Data.DataSet>または<xref:System.Data.DataTable>オブジェクト。  
+  
+ コード例は、<xref:System.Web.UI.WebControls.TextBox>コントロール、<xref:System.Web.UI.WebControls.GridView>コントロール、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール、および**送信**ボタンをクリックします。 既定では、<xref:System.Web.UI.WebControls.TextBox>コントロールには、Northwind traders 社の従業員のいずれかの名前が格納されます。 <xref:System.Web.UI.WebControls.GridView>コントロール内の名前によって識別される従業員に関する情報を表示する、<xref:System.Web.UI.WebControls.TextBox>です。 他の従業員のデータを取得する、<xref:System.Web.UI.WebControls.TextBox>を制御、従業員の完全な名前を入力してをクリックして、**送信**ボタンをクリックします。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource.FilterExpression%2A>プロパティで指定されているメソッドによって取得されるデータをフィルター処理に使用される式を指定する、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>プロパティです。 含まれているパラメーターに評価されるパラメーターのプレース ホルダーを使用して、<xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters%2A>コレクション。 この例ではパラメーターのプレース ホルダーは単一引用符 (') で囲まれたパラメーターの型がスペースを含めることができる文字列型であるためです。 パラメーターの型が数値または日付の場合は、引用符は必要ありません。 <xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters%2A>コレクションには、1 つのパラメーターが含まれています、<xref:System.Web.UI.WebControls.FormParameter>にバインドされているオブジェクト、<xref:System.Web.UI.WebControls.TextBox>コントロール。  
+  
+ 名前が指定されていない場合、<xref:System.Web.UI.WebControls.TextBox>コントロール、新しいパラメーター、<xref:System.Web.UI.WebControls.ObjectDataSourceFilteringEventArgs.ParameterValues%2A>コレクション検索が正常に完了できるようにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/objds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/objds9vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を示します。 コード例は、2 つの基本クラスで構成されています:`EmployeeLogic`と`NorthwindEmployee`です。 `EmployeeLogic`クラスは、ビジネス ロジックをカプセル化し、`NorthwindEmployee`クラスは、モデル クラスを読み込んで、データ層からデータを永続化に必要な基本的な機能のみを含むです。 簡略化のため、`EmployeeLogic`クラスは、データ層からデータを取得するのではなく、データの静的セットを作成します。 稼働させるためには、コンパイルして、Web フォームのコード例が提供すると、これらのクラスを使用する必要があります。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_9#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/northwindemployee9.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_9#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/northwindemployee9.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,81 @@
+<Type Name="PropertyExpression" FullName="System.Web.UI.WebControls.Expressions.PropertyExpression">
+  <TypeSignature Language="C#" Value="public class PropertyExpression : System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyExpression extends System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.PropertyExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>作成する方法を提供する<see langword="Where" />句内のパラメーターから、<see cref="P:System.Web.UI.WebControls.LinqDataSource.WhereParameters" />コレクション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.PropertyExpression>クラスが使用されて、<xref:System.Web.UI.WebControls.QueryExtender>のデータ フィールドにデータをフィルター処理するコントロール。 <xref:System.Web.UI.WebControls.Expressions.PropertyExpression>クラスは、指定した値に列のプロパティの値を比較します。 たとえば、データベースの Products テーブルの提供が中止された列の値をブール値を比較できます。  
+  
+ <xref:System.Web.UI.WebControls.Expressions.PropertyExpression>クラスは、等号 (= =) 比較の各パラメーターの値との対応するプロパティを作成、<xref:System.Linq.IQueryable>データ オブジェクト。 1 つ以上のパラメーターを指定する場合、パラメーターで結合論理`AND`演算子。 空の値が含まれているパラメーターは追加されません、`Where`句。  
+  
+   
+  
+## Examples  
+ 次の例の Products テーブルを検索する方法を示しています、AdventureWorks データベースの製品が`MakeFlag`プロパティ (ブール型の列) に設定されて`true`です。 ブール値パラメーターは、チェック ボックスで設定されます。 返されるクエリの結果、<xref:System.Web.UI.WebControls.LinqDataSource>でコントロールが表示される、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ このコード例で提供されている長い例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.PropertyExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Expressions.PropertyExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.PropertyExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">クエリに使用するオブジェクト。</param>
+        <summary>適用される、<see cref="T:System.Web.UI.WebControls.Expressions.PropertyExpression" />オブジェクトの指定を使用して<see cref="T:System.Linq.IQueryable" />データ ソース オブジェクト。</summary>
+        <returns>式が適用されているオブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された結合<xref:System.Linq.IQueryable>オブジェクト内の式を<xref:System.Web.UI.WebControls.LinqDataSource.WhereParameters%2A>論理を使用してコレクション`AND`演算子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

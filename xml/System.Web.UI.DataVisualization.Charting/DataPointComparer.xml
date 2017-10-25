@@ -1,0 +1,69 @@
+<Type Name="DataPointComparer" FullName="System.Web.UI.DataVisualization.Charting.DataPointComparer">
+  <TypeSignature Language="C#" Value="public class DataPointComparer : System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPointComparer extends System.Object implements class System.Collections.Generic.IComparer`1&lt;class System.Web.UI.DataVisualization.Charting.DataPoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.DataPointComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IComparer&lt;System.Web.UI.DataVisualization.Charting.DataPoint&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ポイントを比較します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataPointComparer (System.Web.UI.DataVisualization.Charting.Series series, System.Web.UI.DataVisualization.Charting.PointSortOrder sortOrder, string sortBy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.DataVisualization.Charting.Series series, valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder sortOrder, string sortBy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPointComparer.#ctor(System.Web.UI.DataVisualization.Charting.Series,System.Web.UI.DataVisualization.Charting.PointSortOrder,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="series" Type="System.Web.UI.DataVisualization.Charting.Series" />
+        <Parameter Name="sortOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+        <Parameter Name="sortBy" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="series">データ系列です。</param>
+        <param name="sortOrder">並べ替え順序です。</param>
+        <param name="sortBy">たとえば、並べ替えに使用される値、"X"、"Y または Y1"、"Y2"などです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.DataPointComparer" />指定したデータ系列、並べ替え順序と並べ替えの値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (System.Web.UI.DataVisualization.Charting.DataPoint x, System.Web.UI.DataVisualization.Charting.DataPoint y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(class System.Web.UI.DataVisualization.Charting.DataPoint x, class System.Web.UI.DataVisualization.Charting.DataPoint y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.DataPointComparer.Compare(System.Web.UI.DataVisualization.Charting.DataPoint,System.Web.UI.DataVisualization.Charting.DataPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Web.UI.DataVisualization.Charting.DataPoint" />
+        <Parameter Name="y" Type="System.Web.UI.DataVisualization.Charting.DataPoint" />
+      </Parameters>
+      <Docs>
+        <param name="x">最初のデータ ポイントします。</param>
+        <param name="y">2 番目のデータ ポイントします。</param>
+        <summary>2 つのデータ ポイントを比較します。</summary>
+        <returns><see langword="integer" /> 値。 2 つの値が等しい場合は、0 (0) を返します。 正の整数を返すの値<paramref name="x" />の値よりも大きい<paramref name="y" />、それ以外の負の整数を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

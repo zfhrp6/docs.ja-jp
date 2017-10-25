@@ -1,0 +1,200 @@
+<Type Name="WebFailureAuditEvent" FullName="System.Web.Management.WebFailureAuditEvent">
+  <TypeSignature Language="C#" Value="public class WebFailureAuditEvent : System.Web.Management.WebAuditEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebFailureAuditEvent extends System.Web.Management.WebAuditEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebFailureAuditEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebAuditEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ上の問題についてを説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebFailureAuditEvent>クラスは、セキュリティ操作が失敗したときに使用します。 この例は、Web 要求に対する URL 承認が失敗します。  
+  
+ 発生させる既定では、ASP.NET が構成されている、<xref:System.Web.Management.WebFailureAuditEvent>イベントは、次の機能。  
+  
+-   ファイルの承認。 ASP.NET は、Windows Id が要求に関連付けられている場合にのみ、ファイルの承認を試行します。 関連するイベントの監査のコードは<xref:System.Web.Management.WebEventCodes.AuditFileAuthorizationFailure>します。  
+  
+-   URL 承認します。 これは、URL リソースへのアクセスへの不正アクセスを制御します。 匿名認証のエラーはほとんどの状況で許容されるので、匿名ユーザーによる試行の失敗は監査されません。 関連するイベントの監査のコードは<xref:System.Web.Management.WebEventCodes.AuditUrlAuthorizationFailure>します。  
+  
+-   未処理のジェネリックまたはセキュリティ未処理状態です。 これらの条件に関連するイベント コードの一覧を次に示します。  
+  
+    -   <xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>  
+  
+    -   <xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationFailure>  
+  
+    -   <xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>  
+  
+    -   <xref:System.Web.Management.WebEventCodes.AuditUnhandledSecurityException>  
+  
+    -   <xref:System.Web.Management.WebEventCodes.AuditUnhandledAccessException>  
+  
+ ときに、<xref:System.Web.Management.WebFailureAuditEvent>イベントは、関連するパフォーマンス カウンターの監査失敗イベントの発生とし、チェックをインクリメント ASP.NET 正常性の監視、`healthMonitoring`構成セクションのすべてのプロバイダーがイベントをサブスクライブするかどうかを判断します。 プロバイダーは、イベントにサブスクライブして、ASP.NET は処理のためにイベントをディスパッチします。  
+  
+> [!NOTE]
+>  システム モニター (PerfMon) に監査エラーのイベントが発生したパフォーマンス カウンターを表示する、**カウンターの追加**ウィンドウで、 **ASP.NET**から、**パフォーマンス オブジェクト**ドロップダウン リストで、**監査エラーのイベントが発生**パフォーマンス カウンターをおよびをクリックして、**追加**ボタンをクリックします。 詳細については、次を参照してください。 [ASP.NET アプリケーションをシステム モニター (PerfMon) を使用して](http://go.microsoft.com/fwlink/?linkid=36882)MSDN の IIS のマニュアルでします。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebFailureAuditEvent>クラス、例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 派生する次のコード例には、<xref:System.Web.Management.WebFailureAuditEvent>カスタム監査イベントを作成するクラス。  
+  
+ [!code-csharp[System.Web.Management.WebFailureAuditEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/CS/webfailureauditevent.cs#1)]
+ [!code-vb[System.Web.Management.WebFailureAuditEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/VB/webfailureauditevent.vb#1)]  
+  
+ 次の構成の抜粋が使用する ASP.NET を有効にする方法を示しています、<xref:System.Web.Management.WebFailureAuditEvent>イベント。  
+  
+```  
+<healthMonitoring   
+enabled="true"  
+heartBeatInterval="0">   
+<providers>  
+<add name="EventLogProvider"   
+type="System.Web.Management.EventLogWebEventProvider,  
+System.Web,Version=2.0.3600.0,Culture=neutral,  
+PublicKeyToken=b03f5f7f11d50a3a"/>  
+</providers>  
+  
+<eventMappings>  
+<add  name="SampleWebFailureAuditEvent"   
+type="SamplesAspNet.SampleWebFailureAuditEvent,  
+webfailureauditevent,Version=1.0.1663.31140,   
+Culture=neutral,   
+PublicKeyToken=0d1fa0f69d94de96,   
+processorArchitecture=MSIL"/>  
+</eventMappings>  
+  
+<rules>  
+<add name="Custom Failure Audit Default"  
+eventName=" SampleWebFailureAuditEvent "  
+provider="EventLogProvider"  
+profile="Default"/>    
+</rules>  
+  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>表示するため、カスタム イベントの情報を書式設定と上書き、<see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" />メソッドではなく、<see cref="Overload:System.Web.Management.WebBaseEvent.ToString" />メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebFailureAuditEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebFailureAuditEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスを作成することはありません使用は<xref:System.Web.Management.WebFailureAuditEvent>が、このクラスから継承する独自のイベントの種類を実装する場合は、このコンス トラクターを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例でこのコンス トラクターを呼び出す方法を示しています、`SampleWebFailureAuditEvent`クラスです。 このコード例に示されている例の一部である、<xref:System.Web.Management.WebFailureAuditEvent>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Management.WebFailureAuditEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/CS/webfailureauditevent.cs#2)]
+ [!code-vb[System.Web.Management.WebFailureAuditEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/VB/webfailureauditevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebFailureAuditEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebFailureAuditEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスを作成することはありません使用は<xref:System.Web.Management.WebFailureAuditEvent>が、このクラスから継承する独自のイベントの種類を実装する場合は、このコンス トラクターを呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例でこのコンス トラクターを呼び出す方法を示しています、`SampleWebFailureAuditEvent`クラスです。 このコード例に示されている例の一部である、<xref:System.Web.Management.WebFailureAuditEvent>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Management.WebFailureAuditEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/CS/webfailureauditevent.cs#3)]
+ [!code-vb[System.Web.Management.WebFailureAuditEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebFailureAuditEvent/VB/webfailureauditevent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>監査エラーのイベントが発生したパフォーマンス カウンターをインクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査エラーのイベントが発生のパフォーマンス カウンターは、アプリケーションの開始後に発生する障害が発生した監査イベントの数を追跡します。 このメソッドは、親も呼び出します<xref:System.Web.Management.WebBaseEvent.IncrementPerfCounters%2A>メソッドで、イベントが発生したカウンターをインクリメントします。 このカウンターは、発生したイベントの合計数を追跡します。  
+  
+ システム モニター (PerfMon) でこれらのパフォーマンス カウンターを表示する、**カウンターの追加**ウィンドウを選択**ASP.NET**から、**パフォーマンス オブジェクト**ドロップダウン リストで、をクリックし、表示する場合、パフォーマンス カウンターを選択、**追加**ボタンをクリックします。 詳細については、次を参照してください。 [ASP.NET アプリケーションをシステム モニター (PerfMon) を使用して](http://go.microsoft.com/fwlink/?linkid=36882)MSDN の IIS のマニュアルでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,120 @@
+<Type Name="CodePagesEncodingProvider" FullName="System.Text.CodePagesEncodingProvider">
+  <TypeSignature Language="C#" Value="public sealed class CodePagesEncodingProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CodePagesEncodingProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.CodePagesEncodingProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encoding.CodePages</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>UWP アプリではなく、デスクトップの .NET Framework でサポートされているコード ページのエンコード プロバイダーへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Text.CodePagesEncodingProvider>クラスは、.NET ネイティブの実装で .NET Core のみサポートされています。  
+  
+ Windows デスクトップの .NET Framework には、Unicode とコード ページ エンコーディングの大規模なセットがサポートしています。 ユニバーサル Windows プラットフォームと .NET ネイティブでは、次のエンコーディングのみをサポートして一方で。  
+  
+-   ASCII (コード ページ 20127) によって返される、<xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   ISO 8859-1 (コード ページ 28591)。  
+  
+-   Utf-7 (コード ページ 65000) によって返される、<xref:System.Text.Encoding.UTF7%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   Utf-8 (コード ページ 65001) によって返される、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   Utf-16 と UTF 16LE (コード ページ 1200) によって返される、<xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   UTF-16BE (コード ページ 1201) が呼び出すことによってインスタンス化する、<xref:System.Text.UnicodeEncoding.%23ctor%2A?displayProperty=nameWithType>または<xref:System.Text.UnicodeEncoding.%23ctor%2A?displayProperty=nameWithType>を持つコンス トラクター、`bigEndian`値`true`です。  
+  
+-   Utf-32 と UTF-32LE (コード ページ 12000) によって返される、<xref:System.Text.Encoding.UTF32%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   UTF-32BE (コード ページ 12001) が呼び出すことによってインスタンス化する、<xref:System.Text.UTF32Encoding>コンス トラクターを持つ、`bigEndian`パラメーター値を指定するの`true`メソッドの呼び出しで。  
+  
+ コード ページ 20127、以外のコード ページ エンコーディングはサポートされていません。  
+  
+ <xref:System.Text.CodePagesEncodingProvider>クラスを拡張<xref:System.Text.EncodingProvider>これらのコード ページの .NET ネイティブとユニバーサル Windows プラットフォーム (UWP) アプリを使用できるようにします。 これらの追加のコード ページを使用するには、次が行います。  
+  
+-   System.Text.Encoding.CodePages.dll アセンブリへの参照をプロジェクトに追加します。  
+  
+-   取得、<xref:System.Text.CodePagesEncodingProvider>オブジェクト、静的なから<xref:System.Text.CodePagesEncodingProvider.Instance%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   <xref:System.Text.CodePagesEncodingProvider> オブジェクトを <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> メソッドに渡します。  
+  
+ 後に、<xref:System.Text.EncodingProvider>オブジェクトが登録されているのオーバー ロードを呼び出すことによってサポートされているエンコードは使用可能な<xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>; 呼び出す必要はありません、<xref:System.Text.EncodingProvider.GetEncoding%2A?displayProperty=nameWithType>オーバー ロードします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public static System.Text.EncodingProvider Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.EncodingProvider Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Text.CodePagesEncodingProvider.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.CodePages</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.EncodingProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップの .NET Framework ではサポートされているものの現在の .NET Framework プラットフォームではサポートされていないコード ページのエンコーディング プロバイダーを取得します。</summary>
+        <value>現在の .NET Framework プラットフォームでサポートされていないエンコーディングへのアクセスを許可するエンコーディング プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.CodePagesEncodingProvider.Instance%2A>プロパティから返される、<xref:System.Text.EncodingProvider>エンコーディングを使用できるようにアプリをターゲットとするオブジェクト、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]か、それ以降のバージョンとをそれ以外の場合、Windows デスクトップ上の .NET Framework でのみ使用できます。  
+  
+ Windows デスクトップ上の .NET Framework には、多くの文字エンコーディング、およびコード ページがサポートしています。 呼び出して、エンコーディングの完全な一覧を取得することができます、 <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType> Windows デスクトップで、完全な .NET Framework で使用可能なメソッドです。 UWP アプリの .NET ネイティブ一方で、次のエンコードのみが既定でサポートします。  
+  
+-   ASCII (コード ページ 20127) によって返される、<xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   ISO 8859-1 (コード ページ 28591)。  
+  
+-   Utf-7 (コード ページ 65000) によって返される、<xref:System.Text.Encoding.UTF7%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   Utf-8 (コード ページ 65001) によって返される、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   Utf-16 と UTF 16LE (コード ページ 1200) によって返される、<xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   UTF-16BE (コード ページ 1201) が呼び出すことによってインスタンス化する、<xref:System.Text.UnicodeEncoding.%23ctor%2A?displayProperty=nameWithType>または<xref:System.Text.UnicodeEncoding.%23ctor%2A?displayProperty=nameWithType>を持つコンス トラクター、`bigEndian`値`true`です。  
+  
+-   Utf-32 と UTF-32LE (コード ページ 12000) によって返される、<xref:System.Text.Encoding.UTF32%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   UTF-32BE (コード ページ 12001) が呼び出すことによってインスタンス化する、<xref:System.Text.UTF32Encoding>コンス トラクターを持つ、`bigEndian`パラメーター値を指定するの`true`メソッドの呼び出しで。  
+  
+ UWP アプリではなく、Windows デスクトップ上の .NET Framework に存在するエンコーディングを取得するには、次を行います。  
+  
+-   System.Text.Encoding.CodePages.dll アセンブリへの参照をプロジェクトに追加します。  
+  
+-   取得、<xref:System.Text.EncodingProvider>オブジェクト、静的なから<xref:System.Text.CodePagesEncodingProvider.Instance%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   渡す、<xref:System.Text.EncodingProvider>オブジェクトを<xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>で指定されたエンコーディングを作成するメソッド、<xref:System.Text.EncodingProvider>共通言語ランタイムを使用できるオブジェクト。  
+  
+-   呼び出す、<xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>エンコーディングを取得するオーバー ロードします。 <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> 、対応するメソッドを呼び出す<xref:System.Text.EncodingProvider.GetEncoding%2A?displayProperty=nameWithType>要求のエンコーディングが指定できるかどうかを調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

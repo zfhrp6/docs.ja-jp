@@ -1,0 +1,1090 @@
+<Type Name="ApplicationCommands" FullName="System.Windows.Input.ApplicationCommands">
+  <TypeSignature Language="C#" Value="public static class ApplicationCommands" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ApplicationCommands extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ApplicationCommands" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一連の標準的なアプリケーション関連コマンドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のコマンド、<xref:System.Windows.Input.ApplicationCommands>クラスと、他のコマンドなど、ライブラリ クラスをコマンド<xref:System.Windows.Input.ComponentCommands>と<xref:System.Windows.Input.NavigationCommands>、アプリケーション プログラマが頻繁に発生する一般的なコマンドのセットを表すものではします。  コマンドでは、インスタンスのみを表す、<xref:System.Windows.Input.RoutedCommand>とコマンドの実装ロジックではありません。 実装ロジックを指定してコマンドを<xref:System.Windows.Input.CommandBinding>です。 たとえば場合、<xref:System.Windows.Input.ApplicationCommands.Close%2A>コマンドは、コントロールを実行するロジックで実行される、<xref:System.Windows.Input.ApplicationCommands.Close%2A>コマンドできない可能性があります指定コントロールでためアプリケーション ライターを担当するコントロールをコマンドを処理する方法を決定するロジックを記述します。  
+  
+ 多くのコントロールは、コマンドのライブラリ内のコマンドの多くの実装ロジックを提供しないでください。  たとえば、<xref:System.Windows.Controls.TextBox>クラスのロジックを提供する、 <xref:System.Windows.Input.ApplicationCommands.Paste%2A>、 <xref:System.Windows.Input.ApplicationCommands.Cut%2A>、 <xref:System.Windows.Input.ApplicationCommands.Copy%2A>、 <xref:System.Windows.Input.ApplicationCommands.Undo%2A>、および<xref:System.Windows.Input.ApplicationCommands.Redo%2A>コマンド。  
+  
+ 詳細については、コマンドとコマンド実行を参照してください、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CancelPrint">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand CancelPrint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand CancelPrint" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.CancelPrint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷中止コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>印刷をキャンセルします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、印刷ジョブの取り消しを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_CancelPrint"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="CancelPrint"/>>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Close { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Close" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Close" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>終了コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>閉じる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、アイテム (通常はファイル) を閉じるを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Close"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Close"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ContextMenu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト メニュー コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Shift キーを押しながら f10 キー  
+  
+ アプリ  
+  
+ </description></item><item><term>マウス ジェスチャ  
+  
+ </term><description>このコマンドには、マウス ジェスチャはアタッチされていませんが、ほとんどのアプリケーションを右クリック ジェスチャを使用して、コンテキスト メニューを起動する規則に従います。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>コンテキスト メニュー  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、コンテキスト メニューを開きを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_ContextMenu"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ContextMenu"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Copy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Copy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Copy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Copy コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + C  
+  
+ Ctrl + 挿入  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>コピー  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択範囲をクリップボードにコピーを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Copy"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Copy"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CorrectionList">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand CorrectionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand CorrectionList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.CorrectionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修正候補の一覧コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>修正候補の一覧  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、修正候補の一覧を開きを設定することを示します。  
+  
+ 修正候補の一覧は、コンテキストによって異なります。 たとえば、[!INCLUDE[TLA#tla_ime](~/includes/tlasharptla-ime-md.md)]旨の選択肢を識別する修正候補の一覧を入力します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_CorrectionList"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="CorrectionList"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cut">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Cut { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Cut" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Cut" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>切り取りコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + X  
+  
+ Shift + Delete  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>切り取り  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、クリップボードに選択範囲を設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Cut"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Cut"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Delete { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Delete" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Delete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Del  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>削除  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択項目を削除することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Delete"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Delete"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Find { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Find" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Find" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + F  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>検索  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、専用の検索 ダイアログ ボックスを開くを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Find"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Find"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Help">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Help { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Help" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Help" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>F1  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description> ヘルプ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、(ウィンドウを) [ヘルプ] ダイアログを開きを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Help"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Help"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="New">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand New { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand New" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.New" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新規作成コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + N  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>新機能  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、新しい項目の作成を設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_New"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="New"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotACommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand NotACommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand NotACommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.NotACommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に無視されるコマンドを表します。</summary>
+        <value>コマンド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、常に無視され、その原因となった入力イベントを処理しません。  これにより、既存のコントロールに組み込まれている入力のバインディングをオフにします。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_NotACommand"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NotACommand"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Open { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Open" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Open" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開くコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + O  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>開いています。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、アイテム (通常はファイル) を開くを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Open"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Open"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paste">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Paste { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Paste" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Paste" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>貼り付けコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら V  
+  
+ Shift キーを押しながら挿入  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>貼り付け  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択内容をクリップボードに貼り付けますを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Paste"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Paste"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Print">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Print { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Print" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Print" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら P キーを押す  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>印刷  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、現在の項目を印刷するという意図を示しています。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Print"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Print"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintPreview">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand PrintPreview { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand PrintPreview" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.PrintPreview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷プレビュー コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + F2  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>印刷プレビュー  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、印刷プレビュー ダイアログを開いてを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_PrintPreview"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="PrintPreview"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>F4  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description> プロパティ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、プロパティ ダイアログを開くを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Properties"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Properties"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redo">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Redo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Redo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Redo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>やり直しコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら Y  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>再実行  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、最後の操作を再実行を設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Redo"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Redo"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Replace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Replace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Replace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Replace コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + H  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>置換  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、置換ダイアログを開くを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Replace"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Replace"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Save { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Save" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Save" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保存コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + S  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>保存  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、現在の項目を保存するという意図を示しています。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Save"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Save"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAs">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SaveAs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SaveAs" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.SaveAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を付けて保存コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>としてを保存します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、名前を付けて保存 ダイアログを開いてを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_SaveAs"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SaveAs"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAll">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand SelectAll { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand SelectAll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.SelectAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[すべて選択] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl キーを押しながら A  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>[すべて選択] します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、すべての項目を選択するという意図を示しています。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_SelectAll"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="SelectAll"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Stop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Stop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Stop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>停止コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Esc  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>停止  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、処理を停止するという意図を示しています。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Stop"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Stop"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undo">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Undo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Undo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ApplicationCommands.Undo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻すコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>Ctrl + z  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>元に戻す  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、最後のアクションを元に戻すを設定することを示します。  
+  
+ 必ずしもすべての指定されたオブジェクトで、コマンドの実装多くの場合は、コマンドの実装は、アプリケーションの作成者の責任が。  
+  
+<a name="xamlAttributeUsage_Undo"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Undo"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

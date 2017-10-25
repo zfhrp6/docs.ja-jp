@@ -1,0 +1,104 @@
+<Type Name="CounterSampleCalculator" FullName="System.Diagnostics.CounterSampleCalculator">
+  <TypeSignature Language="C#" Value="public static class CounterSampleCalculator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CounterSampleCalculator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CounterSampleCalculator" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パフォーマンス カウンター データを解釈するためには、一連のユーティリティ関数を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ComputeCounterValue">
+      <MemberSignature Language="C#" Value="public static float ComputeCounterValue (System.Diagnostics.CounterSample newSample);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 ComputeCounterValue(valuetype System.Diagnostics.CounterSample newSample) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSampleCalculator.ComputeCounterValue(System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newSample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="newSample">A<see cref="T:System.Diagnostics.CounterSample" />を示す、システムの最新のサンプルが取得されます。</param>
+        <summary>1 つの未処理のカウンター サンプルの計算値を計算します。</summary>
+        <returns>パフォーマンス カウンターの計算値の浮動小数点表現します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.CounterSampleCalculator.ComputeCounterValue%28System.Diagnostics.CounterSample%29>メソッドのオーバー ロードは、次のパフォーマンス カウンターに対してのみ意味のある結果を返します<xref:System.Diagnostics.PerformanceCounterType>:  
+  
+-   <xref:System.Diagnostics.PerformanceCounterType.RawFraction>  
+  
+-   <xref:System.Diagnostics.PerformanceCounterType.NumberOfItems32>  
+  
+-   <xref:System.Diagnostics.PerformanceCounterType.NumberOfItemsHEX32>  
+  
+-   <xref:System.Diagnostics.PerformanceCounterType.NumberOfItems64>  
+  
+-   <xref:System.Diagnostics.PerformanceCounterType.NumberOfItemsHEX64>  
+  
+ 他のカウンターの種類では、このオーバー ロードは常に 0 (ゼロ) の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeCounterValue">
+      <MemberSignature Language="C#" Value="public static float ComputeCounterValue (System.Diagnostics.CounterSample oldSample, System.Diagnostics.CounterSample newSample);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 ComputeCounterValue(valuetype System.Diagnostics.CounterSample oldSample, valuetype System.Diagnostics.CounterSample newSample) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSampleCalculator.ComputeCounterValue(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("What's the algorithm?")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldSample" Type="System.Diagnostics.CounterSample" />
+        <Parameter Name="newSample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="oldSample">A<see cref="T:System.Diagnostics.CounterSample" />を示す、システムの以前のサンプルが取得されます。</param>
+        <param name="newSample">A<see cref="T:System.Diagnostics.CounterSample" />を示す、システムの最新のサンプルが取得されます。</param>
+        <summary>未処理のカウンター サンプルが 2 つの計算値を計算します。</summary>
+        <returns>パフォーマンス カウンターの計算値の浮動小数点表現します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Diagnostics.CounterSampleCalculator.ComputeCounterValue%28System.Diagnostics.CounterSample%2CSystem.Diagnostics.CounterSample%29>未処理のカウンター サンプルが 2 つの値を計算するメソッドのオーバー ロードします。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="oldSample" />カウンターの種類とは異なるを使用<paramref name="newSample" />です。</exception>
+        <exception cref="T:System.ComponentModel.Win32Exception">
+          <paramref name="newSample" />カウンターの種類には、パフォーマンス データ ヘルパー (PDH) エラーがあります。 詳細については、"チェック PDH インターフェイスを返す"のセクションの値、Win32 および COM 開発に関するこのドキュメントを参照してください。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

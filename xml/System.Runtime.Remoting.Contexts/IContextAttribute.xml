@@ -1,0 +1,87 @@
+<Type Name="IContextAttribute" FullName="System.Runtime.Remoting.Contexts.IContextAttribute">
+  <TypeSignature Language="C#" Value="public interface IContextAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContextAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.IContextAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテキストの属性を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContextAttribute>コンテキストのすべての属性からクラスを公開します。 属性は、コンテキストに存在し、そのコンテキストで作成されたオブジェクトに特定のポリシーを適用するプロパティに影響します。 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetPropertiesForNewContext">
+      <MemberSignature Language="C#" Value="public void GetPropertiesForNewContext (System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetPropertiesForNewContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextAttribute.GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />コンテキスト プロパティを追加します。</param>
+        <summary>指定されたメッセージで、呼び出し元にコンテキスト プロパティを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContextAttribute.GetPropertiesForNewContext%2A>メソッドでは、コンテキスト プロパティに直接追加できる、<xref:System.Runtime.Remoting.Activation.IConstructionCallMessage.ContextProperties%2A>でプロパティ リスト、<xref:System.Runtime.Remoting.Activation.IConstructionCallMessage>インターフェイスです。 既定の実装、<xref:System.Runtime.Remoting.Contexts.ContextAttribute>クラスは、コンテキスト プロパティの一覧にこれを追加します。 コンテキスト属性はオーバーライドするために解放<xref:System.Runtime.Remoting.Contexts.IContextAttribute.GetPropertiesForNewContext%2A>し、独自の動作を実装できます。 たとえば、それらに追加できますリスト コンテキスト プロパティを実装する新しいクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsContextOK">
+      <MemberSignature Language="C#" Value="public bool IsContextOK (System.Runtime.Remoting.Contexts.Context ctx, System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsContextOK(class System.Runtime.Remoting.Contexts.Context ctx, class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContextAttribute.IsContextOK(System.Runtime.Remoting.Contexts.Context,System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">現在のコンテキストの属性と照合するコンテキスト。</param>
+        <param name="msg">コンストラクション呼び出しパラメーターは、現在のコンテキストと照合する必要があります。</param>
+        <summary>指定されたコンテキストがコンテキスト属性の要件を満たしているかどうかを示すブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は渡されたコンテキスト心配はいりません。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

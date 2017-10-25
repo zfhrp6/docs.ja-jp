@@ -1,0 +1,123 @@
+<Type Name="SimpleModelBinderProvider" FullName="System.Web.ModelBinding.SimpleModelBinderProvider">
+  <TypeSignature Language="C#" Value="public sealed class SimpleModelBinderProvider : System.Web.ModelBinding.ModelBinderProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SimpleModelBinderProvider extends System.Web.ModelBinding.ModelBinderProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.SimpleModelBinderProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.ModelBinding.ModelBinderProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単純型のモデル バインダーを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SimpleModelBinderProvider (Type modelType, Func&lt;System.Web.ModelBinding.IModelBinder&gt; modelBinderFactory);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type modelType, class System.Func`1&lt;class System.Web.ModelBinding.IModelBinder&gt; modelBinderFactory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.SimpleModelBinderProvider.#ctor(System.Type,System.Func{System.Web.ModelBinding.IModelBinder})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="modelBinderFactory" Type="System.Func&lt;System.Web.ModelBinding.IModelBinder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="modelType">モデルの種類。</param>
+        <param name="modelBinderFactory">モデル バインダー ファクトリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.SimpleModelBinderProvider" />指定したモデルの型およびモデル バインダー ファクトリを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SimpleModelBinderProvider (Type modelType, System.Web.ModelBinding.IModelBinder modelBinder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type modelType, class System.Web.ModelBinding.IModelBinder modelBinder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.SimpleModelBinderProvider.#ctor(System.Type,System.Web.ModelBinding.IModelBinder)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="modelBinder" Type="System.Web.ModelBinding.IModelBinder" />
+      </Parameters>
+      <Docs>
+        <param name="modelType">モデルの種類。</param>
+        <param name="modelBinder">モデル バインダー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.ModelBinding.SimpleModelBinderProvider" />クラスを指定したモデルの型およびモデル バインダーを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="modelType" /> パラメーターまたは <paramref name="modelBinder" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinder">
+      <MemberSignature Language="C#" Value="public override System.Web.ModelBinding.IModelBinder GetBinder (System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext, System.Web.ModelBinding.ModelBindingContext bindingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.ModelBinding.IModelBinder GetBinder(class System.Web.ModelBinding.ModelBindingExecutionContext modelBindingExecutionContext, class System.Web.ModelBinding.ModelBindingContext bindingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.SimpleModelBinderProvider.GetBinder(System.Web.ModelBinding.ModelBindingExecutionContext,System.Web.ModelBinding.ModelBindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.IModelBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelBindingExecutionContext" Type="System.Web.ModelBinding.ModelBindingExecutionContext" />
+        <Parameter Name="bindingContext" Type="System.Web.ModelBinding.ModelBindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="modelBindingExecutionContext">実行コンテキスト。</param>
+        <param name="bindingContext">バインド コンテキスト。</param>
+        <summary>指定された実行コンテキストおよびバインディング コンテキストを使用して、モデル バインダーを返します。</summary>
+        <returns>モデル バインダーまたは<see langword="null" />モデル バインダーの取得を試行が成功した場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="modelBindingExecutionContext" /> または <paramref name="bindingContext" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelType">
+      <MemberSignature Language="C#" Value="public Type ModelType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ModelType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.SimpleModelBinderProvider.ModelType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの種類を取得します。</summary>
+        <value>モデルの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressPrefixCheck">
+      <MemberSignature Language="C#" Value="public bool SuppressPrefixCheck { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressPrefixCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.SimpleModelBinderProvider.SuppressPrefixCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプレフィックス チェックを抑制する必要があるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />プレフィックス チェックを抑制する必要があります。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

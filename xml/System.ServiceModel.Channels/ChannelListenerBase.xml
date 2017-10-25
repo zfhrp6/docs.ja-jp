@@ -1,0 +1,391 @@
+<Type Name="ChannelListenerBase" FullName="System.ServiceModel.Channels.ChannelListenerBase">
+  <TypeSignature Language="C#" Value="public abstract class ChannelListenerBase : System.ServiceModel.Channels.ChannelManagerBase, System.ServiceModel.Channels.IChannelListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ChannelListenerBase extends System.ServiceModel.Channels.ChannelManagerBase implements class System.ServiceModel.Channels.IChannelListener, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ChannelListenerBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.ChannelManagerBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannelListener</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービスのチャネル リスナーに対して共通の基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスのチャネル リスナーは、クライアントのファクトリによって作成されたチャネルを待機して受け入れます。 クライアントとサービスの間にチャネル接続が確立されると、メッセージの交換、および分散アプリケーション間の通信が可能になります。 リスナーによって提供される処理機能は、チャネル リスナーのスタックされたセットにレイヤー化され、展開する [!INCLUDE[indigo1](~/includes/indigo1-md.md)] 機能をモジュール単位で選択できます。 サービス スタック内の各チャネル リスナーは、クライアント スタック内のチャネル ファクトリに対応します。 ファクトリによって作成されるチャネルは、実際には、サービスのリスナーのスタックによって受け入れられて処理されるチャネルのスタックです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ChannelListenerBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor> コンストラクターは、メッセージを交換するときにサービス モデルのタイムアウト値でタイムアウト プロパティを初期化します。 開く、送信、および閉じる操作の既定値は 1 分、受信操作の既定値は 10 分です。 これらの操作のタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelListenerBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ChannelListenerBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、メッセージを交換するときにサービス モデルのタイムアウト値でタイムアウト プロパティを初期化します。 開く、送信、および閉じる操作の既定値は 1 分、受信操作の既定値は 10 分です。 これらの操作のタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelListenerBase (System.ServiceModel.IDefaultCommunicationTimeouts timeouts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.IDefaultCommunicationTimeouts timeouts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.#ctor(System.ServiceModel.IDefaultCommunicationTimeouts)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeouts" Type="System.ServiceModel.IDefaultCommunicationTimeouts" />
+      </Parameters>
+      <Docs>
+        <param name="timeouts">メッセージを交換するときの、開く、送信、受信、および閉じる操作の既定のタイムアウトを指定する <see cref="T:System.ServiceModel.IDefaultCommunicationTimeouts" />。</param>
+        <summary>指定した既定の通信タイムアウトを使用して、<see cref="T:System.ServiceModel.Channels.ChannelListenerBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開く、送信、受信、および閉じる操作のタイムアウトにサービス モデルの既定値を使用せず、カスタム値を指定する場合は、既定のコンストラクターの代わりに <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWaitForChannel">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginWaitForChannel (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginWaitForChannel(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.BeginWaitForChannel(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">チャネル操作の待機を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</param>
+        <param name="callback">チャネル操作の待機の非同期完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">チャネル操作の非同期待機に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>派生クラスとして実装された場合、チャネルの受信を待機する非同期操作を開始します。</summary>
+        <returns>チャネル操作の非同期待機を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">チャネル リスナーが開かれていないため、使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCloseTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultCloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultCloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelListenerBase.DefaultCloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クローズ操作が完了するまで待機する既定の時間を取得します。</summary>
+        <value>クローズ操作を完了する必要がある、タイムアウトまでの制限時間を指定する既定の <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、新しい <xref:System.ServiceModel.Channels.ChannelListenerBase> オブジェクトを作成するときに設定されます。 既定の <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor> コンストラクターは、<xref:System.ServiceModel.Channels.ChannelListenerBase.DefaultCloseTimeout%2A> プロパティの値を 1 分に設定します。 このタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOpenTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultOpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultOpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelListenerBase.DefaultOpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オープン操作が完了するまで待機する既定の時間を取得します。</summary>
+        <value>オープン操作を完了する必要がある、タイムアウトまでの制限時間を指定する既定の <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、新しい <xref:System.ServiceModel.Channels.ChannelListenerBase> オブジェクトを作成するときに設定されます。 既定の <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor> コンストラクターは、<xref:System.ServiceModel.Channels.ChannelListenerBase.DefaultOpenTimeout%2A> プロパティの値を 1 分に設定します。 このタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultReceiveTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultReceiveTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultReceiveTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelListenerBase.DefaultReceiveTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信操作が完了するまで待機する既定の時間を取得します。</summary>
+        <value>受信操作を完了する必要がある制限時間を指定する既定の <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、新しい <xref:System.ServiceModel.Channels.ChannelListenerBase> オブジェクトを作成するときに設定されます。 既定の <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor> コンストラクターは、<xref:System.ServiceModel.Channels.ChannelListenerBase.DefaultReceiveTimeout%2A> プロパティの値を 10 分に設定します。 このタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSendTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultSendTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultSendTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelListenerBase.DefaultSendTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信操作が完了するまで待機する既定の時間を取得します。</summary>
+        <value>送信操作を完了する必要がある制限時間を指定する既定の <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、新しい <xref:System.ServiceModel.Channels.ChannelListenerBase> オブジェクトを作成するときに設定されます。 既定の <xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor> コンストラクターは、<xref:System.ServiceModel.Channels.ChannelListenerBase.DefaultSendTimeout%2A> プロパティの値を 1 分に設定します。 このタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelListenerBase.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWaitForChannel">
+      <MemberSignature Language="C#" Value="public bool EndWaitForChannel (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EndWaitForChannel(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.EndWaitForChannel(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Channels.ChannelListenerBase.EndWaitForChannel(System.IAsyncResult)" />。</param>
+        <summary>派生クラスとして実装された場合、チャネルの受信を待機する非同期操作を完了します。</summary>
+        <returns>
+          メッセージが到達した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual T GetProperty&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetProperty&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.GetProperty``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <summary>チャネル スタックの適切な層から、要求のあった型指定されたオブジェクト (ある場合) を返します。</summary>
+        <returns>要求される型指定されたオブジェクト T がある場合はそのオブジェクト。ない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル リスナー スタックの適切な層のプロパティを設定したりステータスを取得したりするためのインターフェイスなど、型指定されたオブジェクトを要求するには、このメソッドを使用します。 その層が要求されたオブジェクトを返せる場合は、オブジェクトを返します。 それ以外の場合は、スタック内の次の層に呼び出しを代行させます。 スタックの最下位に達しても、要求されたオブジェクトをサポートする層がない場合、メソッドは、`null` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginWaitForChannel">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginWaitForChannel (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginWaitForChannel(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.OnBeginWaitForChannel(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機開始操作が完了するまでのタイムアウト時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期の待機開始操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期の待機開始操作に関連付けられている状態情報を格納するオブジェクト。アプリケーションで指定します。</param>
+        <summary>派生クラスとして実装された場合、チャネルの受信の待機を開始するときの拡張ポイントを提供します。</summary>
+        <returns>非同期の待機開始操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndWaitForChannel">
+      <MemberSignature Language="C#" Value="protected abstract bool OnEndWaitForChannel (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnEndWaitForChannel(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.OnEndWaitForChannel(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Channels.ChannelListenerBase.OnBeginWaitForChannel(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>派生クラスとして実装された場合、チャネルの受信の待機を終了するときの拡張ポイントを提供します。</summary>
+        <returns>
+          <see langword="true" /> で指定された制限時間内にメソッドが完了した場合は <paramref name="timeout" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWaitForChannel">
+      <MemberSignature Language="C#" Value="protected abstract bool OnWaitForChannel (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnWaitForChannel(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.OnWaitForChannel(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">チャネル操作の待機を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</param>
+        <summary>派生クラスとしてオーバーライドされた場合、チャネルの受信を待機するときの拡張ポイントを提供します。</summary>
+        <returns>
+          <see langword="true" /> で指定された制限時間内にメソッドが完了した場合は <paramref name="timeout" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public abstract Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.ChannelListenerBase.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合、チャネル リスナーが受信チャネルをリッスンする URI を取得します。</summary>
+        <value>チャネル リスナーが受信チャネルをリッスンする <see cref="T:System.Uri" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForChannel">
+      <MemberSignature Language="C#" Value="public bool WaitForChannel (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool WaitForChannel(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelListenerBase.WaitForChannel(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">チャネル操作の待機を完了する必要がある制限時間を指定する <see cref="T:System.TimeSpan" />。この時間を経過すると、タイムアウトします。</param>
+        <summary>派生クラスとして実装された場合、チャネルの受信を待機します。</summary>
+        <returns>
+          <see langword="true" /> で指定した時間内にチャネルを受信した場合は <paramref name="timeout" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

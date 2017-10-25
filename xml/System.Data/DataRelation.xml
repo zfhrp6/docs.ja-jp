@@ -1,0 +1,898 @@
+<Type Name="DataRelation" FullName="System.Data.DataRelation">
+  <TypeSignature Language="C#" Value="public class DataRelation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataRelation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DataRelation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("RelationName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DataRelationEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.RelationshipConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つの親/子リレーションシップを表す<see cref="T:System.Data.DataTable" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Data.DataRelation> 2 つの関連付けに使用が<xref:System.Data.DataTable>によって相互にオブジェクト<xref:System.Data.DataColumn>オブジェクト。 たとえば、顧客と注文のリレーションシップで Customers テーブルの親であるし、Orders テーブルのリレーションシップの子であります。 これは、主キー/外部キーのリレーションシップに似ています。 詳細については、次を参照してください。 [Datarelation の移動](~/docs/framework/data/adonet/dataset-datatable-dataview/navigating-datarelations.md)です。  
+  
+ 親と子テーブルに一致する列の間のリレーションシップが作成されます。 つまり、<xref:System.Data.DataColumn.DataType%2A>値の両方の列を同じにする必要があります。  
+  
+ リレーションシップでは、親からのさまざまな変更を連鎖できるも<xref:System.Data.DataRow>の子行にします。 子の行で値を変更する方法を制御するには、追加、<xref:System.Data.ForeignKeyConstraint>を<xref:System.Data.ConstraintCollection>の<xref:System.Data.DataTable>オブジェクト。 <xref:System.Data.ConstraintCollection>親テーブルで値を実行するには、どのようなアクションを削除または更新を決定します。  
+  
+ ときに、<xref:System.Data.DataRelation>が作成されると、最初に確認の関係を確立できることです。 追加された後、 <xref:System.Data.DataRelationCollection>、それを無効にする変更を禁止することで、リレーションシップは維持されます。 期間の間でときに、<xref:System.Data.DataRelation>が作成され、追加、 <xref:System.Data.DataRelationCollection>、追加の変更が親または子の行になる可能性がします。 これが原因で、リレーションシップが無効になっている場合、例外が生成されます。  
+  
+> [!NOTE]
+>  データの破損は、2 つのテーブル間で双方向の関係が定義されている場合に発生することができます。 双方向の関係は、2 つの`DataRelation`スイッチ、親子の役割を持つ、同じ列を使用するオブジェクト。 例外が発生しなかったときに、`DataRelation`オブジェクトが保存されます。 ただし、データの破損が発生します。  
+  
+ <xref:System.Data.DataRelation>含まれるオブジェクト、 <xref:System.Data.DataRelationCollection>、を介してアクセスできる、<xref:System.Data.DataSet.Relations%2A>のプロパティ、 <xref:System.Data.DataSet>、および<xref:System.Data.DataTable.ChildRelations%2A>と<xref:System.Data.DataTable.ParentRelations%2A>のプロパティ、<xref:System.Data.DataTable>です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRelation>に追加し、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-csharp[Classic WebData DataRelation Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRelation Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRelation Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型は、マルチ スレッドの読み取り操作に対して安全です。 すべての書き込み操作を同期する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, System.Data.DataColumn parentColumn, System.Data.DataColumn childColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, class System.Data.DataColumn parentColumn, class System.Data.DataColumn childColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.Data.DataColumn,System.Data.DataColumn)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentColumn" Type="System.Data.DataColumn" />
+        <Parameter Name="childColumn" Type="System.Data.DataColumn" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="T:System.Data.DataRelation" /> の名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentColumn">親<see cref="T:System.Data.DataColumn" />リレーションシップにします。</param>
+        <param name="childColumn">子<see cref="T:System.Data.DataColumn" />リレーションシップにします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataRelation" />クラス<see cref="T:System.Data.DataRelation" />名、および親と子<see cref="T:System.Data.DataColumn" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRelation>に追加し、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-csharp[Classic WebData DataRelation.DataRelation#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataRelation/CS/datarelation.cs#1)]
+ [!code-vb[Classic WebData DataRelation.DataRelation#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataRelation/VB/datarelation.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方の<see cref="T:System.Data.DataColumn" />オブジェクトを含む<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">列は異なるデータ型であります。  
+  
+ または  
+  
+ テーブルが同じに属していない<see cref="T:System.Data.DataSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, System.Data.DataColumn[] parentColumns, System.Data.DataColumn[] childColumns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, class System.Data.DataColumn[] parentColumns, class System.Data.DataColumn[] childColumns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.Data.DataColumn[],System.Data.DataColumn[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentColumns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="childColumns" Type="System.Data.DataColumn[]" />
+      </Parameters>
+      <Docs>
+        <param name="relationName">リレーションシップの名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentColumns">親の配列<see cref="T:System.Data.DataColumn" />オブジェクト。</param>
+        <param name="childColumns">子の配列<see cref="T:System.Data.DataColumn" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataRelation" />クラス<see cref="T:System.Data.DataRelation" />親と子の名前と一致する配列<see cref="T:System.Data.DataColumn" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRelation>に追加し、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-vb[Classic WebData DataRelation.DataRelation2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataRelation2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方の<see cref="T:System.Data.DataColumn" />オブジェクトを含む<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException"><see cref="T:System.Data.DataColumn" />オブジェクトが別のデータ型を持つ  
+  
+ または  
+  
+ 1 つまたは両方の配列は、同じテーブルから個別の列のいない構成されます。  
+  
+ または  
+  
+ テーブルが同じに属していない<see cref="T:System.Data.DataSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, System.Data.DataColumn parentColumn, System.Data.DataColumn childColumn, bool createConstraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, class System.Data.DataColumn parentColumn, class System.Data.DataColumn childColumn, bool createConstraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.Data.DataColumn,System.Data.DataColumn,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentColumn" Type="System.Data.DataColumn" />
+        <Parameter Name="childColumn" Type="System.Data.DataColumn" />
+        <Parameter Name="createConstraints" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="relationName">リレーションシップの名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentColumn">親<see cref="T:System.Data.DataColumn" />リレーションシップです。</param>
+        <param name="childColumn">子<see cref="T:System.Data.DataColumn" />リレーションシップです。</param>
+        <param name="createConstraints">制約を作成するかどうかを示す値。 <see langword="true" />、制約が作成される場合。 それ以外の場合は <see langword="false" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataRelation" />クラスの指定した名前、親と子を使用して<see cref="T:System.Data.DataColumn" />オブジェクト、および制約を作成するかどうかを示す値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRelation>に追加し、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-vb[Classic WebData DataRelation.DataRelation1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataRelation1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方の<see cref="T:System.Data.DataColumn" />オブジェクトを含む<see langword="null" />です。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">列は異なるデータ型であります。  
+  
+ または  
+  
+ テーブルが同じに属していない<see cref="T:System.Data.DataSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, System.Data.DataColumn[] parentColumns, System.Data.DataColumn[] childColumns, bool createConstraints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, class System.Data.DataColumn[] parentColumns, class System.Data.DataColumn[] childColumns, bool createConstraints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.Data.DataColumn[],System.Data.DataColumn[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentColumns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="childColumns" Type="System.Data.DataColumn[]" />
+        <Parameter Name="createConstraints" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="relationName">リレーションシップの名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentColumns">親の配列<see cref="T:System.Data.DataColumn" />オブジェクト。</param>
+        <param name="childColumns">子の配列<see cref="T:System.Data.DataColumn" />オブジェクト。</param>
+        <param name="createConstraints">制約を作成するかどうかを示す値。 <see langword="true" />、制約が作成される場合。 それ以外の場合は <see langword="false" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.DataRelation" />クラスの名前を指定して、親と子の配列を一致した<see cref="T:System.Data.DataColumn" />オブジェクト、および制約を作成するかどうかを示す値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.DataRelation>に追加し、<xref:System.Data.DataRelationCollection>の<xref:System.Data.DataSet>です。  
+  
+ [!code-vb[Classic WebData DataRelation.DataRelation3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataRelation3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方の<see cref="T:System.Data.DataColumn" />オブジェクトは<see langword="null" />します。</exception>
+        <exception cref="T:System.Data.InvalidConstraintException">列は異なるデータ型であります。  
+  
+ または  
+  
+ テーブルが同じに属していない<see cref="T:System.Data.DataSet" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, string parentTableName, string childTableName, string[] parentColumnNames, string[] childColumnNames, bool nested);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, string parentTableName, string childTableName, string[] parentColumnNames, string[] childColumnNames, bool nested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.String,System.String,System.String[],System.String[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentTableName" Type="System.String" />
+        <Parameter Name="childTableName" Type="System.String" />
+        <Parameter Name="parentColumnNames" Type="System.String[]" />
+        <Parameter Name="childColumnNames" Type="System.String[]" />
+        <Parameter Name="nested" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="relationName">リレーションシップの名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentTableName">名前、<see cref="T:System.Data.DataTable" />リレーションシップの親テーブルはします。</param>
+        <param name="childTableName">名前、<see cref="T:System.Data.DataTable" />リレーションシップの子テーブルはします。</param>
+        <param name="parentColumnNames">配列<see cref="T:System.Data.DataColumn" />オブジェクトの親に名<see cref="T:System.Data.DataTable" />リレーションのです。</param>
+        <param name="childColumnNames">配列<see cref="T:System.Data.DataColumn" />オブジェクト名の子で<see cref="T:System.Data.DataTable" />リレーションのです。</param>
+        <param name="nested">リレーションシップが入れ子になっているかどうかを示す値。</param>
+        <summary>このコンス トラクターは、Visual Studio 環境でデザイン時サポートの提供されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Data.DataRelation>このコンス トラクターを使用して作成されたオブジェクトを使用して、コレクションに追加する必要があります、<xref:System.Data.DataRelationCollection.AddRange%2A>内のメソッド、<xref:System.Data.DataTable.BeginInit%2A>と<xref:System.Data.DataTable.EndInit%2A>ブロックします。 間でこのコンス トラクターが呼び出されない場合<xref:System.Data.DataTable.BeginInit%2A>と<xref:System.Data.DataTable.EndInit%2A>、<xref:System.NullReferenceException>が発生します。 さらに、テーブルと、指定した名前の列は、コンス トラクターが呼び出されたときに存在する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataRelation (string relationName, string parentTableName, string parentTableNamespace, string childTableName, string childTableNamespace, string[] parentColumnNames, string[] childColumnNames, bool nested);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationName, string parentTableName, string parentTableNamespace, string childTableName, string childTableNamespace, string[] parentColumnNames, string[] childColumnNames, bool nested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.#ctor(System.String,System.String,System.String,System.String,System.String,System.String[],System.String[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="relationName" Type="System.String" />
+        <Parameter Name="parentTableName" Type="System.String" />
+        <Parameter Name="parentTableNamespace" Type="System.String" />
+        <Parameter Name="childTableName" Type="System.String" />
+        <Parameter Name="childTableNamespace" Type="System.String" />
+        <Parameter Name="parentColumnNames" Type="System.String[]" />
+        <Parameter Name="childColumnNames" Type="System.String[]" />
+        <Parameter Name="nested" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="relationName"><see cref="T:System.Data.DataRelation" /> の名前。 場合<see langword="null" />または空の文字列 ("") に作成されたオブジェクトが追加されると、既定の名前が与えられます、<see cref="T:System.Data.DataRelationCollection" />です。</param>
+        <param name="parentTableName">名前、<see cref="T:System.Data.DataTable" />リレーションシップの親テーブルはします。</param>
+        <param name="parentTableNamespace">親テーブルの名前空間の名前。</param>
+        <param name="childTableName">名前、<see cref="T:System.Data.DataTable" />リレーションシップの子テーブルはします。</param>
+        <param name="childTableNamespace">子テーブルの名前空間の名前。</param>
+        <param name="parentColumnNames">配列<see cref="T:System.Data.DataColumn" />オブジェクトの親に名<see cref="T:System.Data.DataTable" />リレーションのです。</param>
+        <param name="childColumnNames">配列<see cref="T:System.Data.DataColumn" />オブジェクト名の子で<see cref="T:System.Data.DataTable" />リレーションのです。</param>
+        <param name="nested">リレーションシップが入れ子になっているかどうかを示す値。</param>
+        <summary>このコンス トラクターは、Visual Studio 環境でデザイン時サポートの提供されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Data.DataRelation>このコンス トラクターを使用して作成されたオブジェクトを使用して、コレクションに追加し、必要があります<xref:System.Data.DataRelationCollection.AddRange%2A>です。 テーブルと、指定した名前の列は、メソッドが呼び出されたときに存在する必要がありますまたは<xref:System.Data.DataTable.BeginInit%2A>前に、テーブルと、指定した名前の列、コンス トラクターの呼び出し時に存在する必要がありますが、呼び出されたを<xref:System.Data.DataTable.EndInit%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckStateForProperty">
+      <MemberSignature Language="C#" Value="protected void CheckStateForProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckStateForProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.CheckStateForProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Data.DataException">親と子テーブルが別に属している<see cref="T:System.Data.DataSet" />オブジェクト。  
+  
+ または  
+  
+ 親と子の 1 つまたは複数のペア<see cref="T:System.Data.DataColumn" />オブジェクトには、データ型が一致していません。  
+  
+ または  
+  
+ 親と子<see cref="T:System.Data.DataColumn" />オブジェクトが同じです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildColumns">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataColumn[] ChildColumns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataColumn[] ChildColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ChildColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子を取得します<see cref="T:System.Data.DataColumn" />このリレーションシップのオブジェクト。</summary>
+        <value><see cref="T:System.Data.DataColumn" /> オブジェクトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、子を取得<xref:System.Data.DataColumn>のオブジェクト、<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData DataRelation.ChildColumns Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ChildColumns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildKeyConstraint">
+      <MemberSignature Language="C#" Value="public virtual System.Data.ForeignKeyConstraint ChildKeyConstraint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.ForeignKeyConstraint ChildKeyConstraint" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ChildKeyConstraint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ForeignKeyConstraint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.ForeignKeyConstraint" />関係にします。</summary>
+        <value><see langword="ForeignKeyConstraint" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に関連しない<xref:System.Data.ForeignKeyConstraint>が存在するこのリレーションシップは自動的に作成され、によって示される、`ChildKeyConstraint`リレーションシップがリレーションシップのコレクションに追加されたときに、します。  
+  
+   
+  
+## Examples  
+ 次の例のセット、 `UpdateRule`、 `DeleteRule`、および`AcceptReject`のルール、`ForeignKeyConstraint`に関連付けられている、`DataRelation`です。  
+  
+ [!code-vb[Classic WebData DataRelation.ChildKeyConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ChildKeyConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildTable">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataTable ChildTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable ChildTable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ChildTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリレーションシップの子テーブルを取得します。</summary>
+        <value>A<see cref="T:System.Data.DataTable" />リレーションシップの子テーブルはします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、子を取得<xref:System.Data.DataTable>の<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData DataRelation.ChildTable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ChildTable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSet">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataSet DataSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataSet DataSet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.DataSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataSet" />先、<see cref="T:System.Data.DataRelation" />が属しています。</summary>
+        <value>A<see cref="T:System.Data.DataSet" />先、<see cref="T:System.Data.DataRelation" />が属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataRelationCollection>に関連付けられている、<xref:System.Data.DataSet>を通じてアクセス、<xref:System.Data.DataSet.Relations%2A>のプロパティ、<xref:System.Data.DataSet>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例の取得、<xref:System.Data.DataSet>の<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData DataRelation.DataSet Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.DataSet Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProperties">
+      <MemberSignature Language="C#" Value="public System.Data.PropertyCollection ExtendedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.PropertyCollection ExtendedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ExtendedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.PropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタマイズされたプロパティを格納するコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Data.PropertyCollection" />カスタマイズされたプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.DataRelation.ExtendedProperties%2A>にカスタム情報を追加する、<xref:System.Data.DataRelation>オブジェクト。 追加のメソッドを使用して情報を追加します。 Item メソッドに情報を取得します。  
+  
+ 拡張プロパティが型でなければなりません<xref:System.String>です。 文字列型ではないプロパティは保持されないときに、<xref:System.Data.DataRelation>は XML として書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nested">
+      <MemberSignature Language="C#" Value="public virtual bool Nested { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Nested" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.Nested" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="T:System.Data.DataRelation" />オブジェクトが入れ子になっています。</summary>
+        <value>
+          <see langword="true" />、場合<see cref="T:System.Data.DataRelation" />オブジェクトが、それ以外の入れ子になった<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Data.DataRelation>XML で指定されているなどの階層リレーションシップを定義するオブジェクト。 詳細については、次を参照してください。 [Datarelation の入れ子](~/docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Data.DataTable.TableName%2A>リレーションにおける子テーブルの一致、 <xref:System.Data.DataColumn.ColumnName%2A> 、リレーションシップの親テーブル内の列の<xref:System.Data.DataRelation.Nested%2A>プロパティを false にする必要があります。 これは、.NET Framework version 1.0 と共に必要でした。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanging">
+      <MemberSignature Language="C#" Value="protected void OnPropertyChanging (System.ComponentModel.PropertyChangedEventArgs pcevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void OnPropertyChanging(class System.ComponentModel.PropertyChangedEventArgs pcevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcevent" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pcevent">パラメーターの参照。</param>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentColumns">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataColumn[] ParentColumns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataColumn[] ParentColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ParentColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataColumn[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列を取得<see cref="T:System.Data.DataColumn" />これの親列であるオブジェクト<see cref="T:System.Data.DataRelation" />です。</summary>
+        <value>配列<see cref="T:System.Data.DataColumn" />これの親列であるオブジェクト<see cref="T:System.Data.DataRelation" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の配列を取得する<xref:System.Data.DataColumn>として機能するオブジェクト、リレーションシップの列の親です。  
+  
+ [!code-vb[Classic WebData DataRelation.ParentColumns Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ParentColumns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentKeyConstraint">
+      <MemberSignature Language="C#" Value="public virtual System.Data.UniqueConstraint ParentKeyConstraint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.UniqueConstraint ParentKeyConstraint" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ParentKeyConstraint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.UniqueConstraint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.UniqueConstraint" />の親列の値を保証する、<see cref="T:System.Data.DataRelation" />は一意です。</summary>
+        <value>A<see cref="T:System.Data.UniqueConstraint" />により、親の列の値が一意であることを確認します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の取得、<xref:System.Data.DataRelation.ParentKeyConstraint%2A>の<xref:System.Data.DataRelation>オブジェクト。  
+  
+ [!code-vb[Classic WebData DataRelation.ParentKeyConstraint Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ParentKeyConstraint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentTable">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataTable ParentTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable ParentTable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.ParentTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親を取得します<see cref="T:System.Data.DataTable" />この<see cref="T:System.Data.DataRelation" />です。</summary>
+        <value>A<see cref="T:System.Data.DataTable" />このリレーションシップの親テーブルはします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、親を取得<xref:System.Data.DataTable>の<xref:System.Data.DataRelation>です。  
+  
+ [!code-vb[Classic WebData DataRelation.ParentTable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ParentTable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePropertyChanging">
+      <MemberSignature Language="C#" Value="protected void RaisePropertyChanging (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RaisePropertyChanging(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.RaisePropertyChanging(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの参照。</param>
+        <summary>このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationName">
+      <MemberSignature Language="C#" Value="public virtual string RelationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DataRelation.RelationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を取得するための名前、<see cref="T:System.Data.DataRelation" />から、<see cref="T:System.Data.DataRelationCollection" />です。</summary>
+        <value>名前は、<see cref="T:System.Data.DataRelation" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.DataRelation.RelationName%2A>取得するプロパティを<xref:System.Data.DataRelation>から、<xref:System.Data.DataRelationCollection>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataRelation.RelationName%2A>取得するプロパティを<xref:System.Data.DataRelation>から、<xref:System.Data.DataRelationCollection>です。  
+  
+ [!code-vb[Classic WebData DataRelation.RelationName Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.RelationName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see langword="null" />または空の文字列 ("") に渡された、<see cref="T:System.Data.DataColumn" />されている、<see cref="T:System.Data.DataRelation" />です。</exception>
+        <exception cref="T:System.Data.DuplicateNameException"><see cref="T:System.Data.DataRelation" />が格納されているコレクションに属している、<see cref="T:System.Data.DataRelation" />と同じ名前です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DataRelation.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Data.DataRelation.RelationName" />が存在する場合は、します。</summary>
+        <returns><see cref="P:System.Data.DataRelation.RelationName" /> プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.DataColumn.ToString%2A>プロパティの名前を返す、<xref:System.Data.DataRelation>オブジェクト。  
+  
+ [!code-csharp[Classic WebData DataRelation.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRelation.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataRelation.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRelation.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,108 @@
+<Type Name="DependsOnAttribute" FullName="System.Windows.Markup.DependsOnAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DependsOnAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DependsOnAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.DependsOnAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性付きプロパティが別のプロパティの値に依存することを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XamlWriter.Save%2A>メソッド<xref:System.Windows.Markup.XamlWriter>この属性が設定されているプロパティを処理する前に、指定されたプロパティを処理します。  
+  
+ `name`この属性に適用される値が同じ型に存在するプロパティの単純な非修飾名にする必要があります。 アタッチされるプロパティは、依存するとして指定できません。  
+  
+ この属性を適用するときに注意が必要に循環依存関係を回避します。  のみは循環依存関係を検出するは、サイクル内のすべてのプロパティが書き込まれており、それでもの動作は非決定的な場合です。  
+  
+ この属性をプロパティ定義に適用する XAML オブジェクトの記述に依存するプロパティが最初に処理されることを確認します。 作成されたオブジェクトに適用される属性値の任意の順序で処理することができるよう XAML マークアップの一般的な規則の一部です。 使用状況<xref:System.Windows.Markup.DependsOnAttribute>解析の特定の順序を有効なオブジェクトの作成に従う必要がありますの種類のプロパティの例外的なケースを指定します。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.DependsOnAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ <xref:System.Windows.Setter.Value%2A>プロパティを<xref:System.Windows.Setter>クラスは、WPF では、プロパティの例を<xref:System.Windows.Markup.DependsOnAttribute>属性を適用します。  <xref:System.Windows.Setter.Value%2A>依存<xref:System.Windows.Setter.Property%2A>と<xref:System.Windows.Setter.TargetName%2A>最初に処理されている、それ以外の場合はどのような型は値コンバーターの場合に作成する必要がありますを知る方法です。  
+  
+<a name="xamlTextUsage_DependsOnAttribute"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DependsOnAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.DependsOnAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">この <see cref="T:System.Windows.Markup.DependsOnAttribute" /> に関連付けられたプロパティが依存しているプロパティ。</param>
+        <summary><see cref="T:System.Windows.Markup.DependsOnAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.DependsOnAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで宣言されている関連するプロパティの名前を取得<see cref="T:System.Windows.Markup.DependsOnAttribute" />です。</summary>
+        <value>関連するプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.DependsOnAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Markup.DependsOnAttribute" /> の一意の識別子を取得します。</summary>
+        <value>一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、生成された値が同じ複数の属性を許可するためにオーバーライド動作を使用する<xref:System.Windows.Markup.DependsOnAttribute.Name%2A>を適用できます。 依存関係は循環またはあいまいな場合は、複数ではない限り、<xref:System.Windows.Markup.DependsOnAttribute>同じプロパティ名への参照はサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

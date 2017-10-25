@@ -1,0 +1,48 @@
+<Type Name="ServiceRoute" FullName="System.ServiceModel.Activation.ServiceRoute">
+  <TypeSignature Language="C#" Value="public class ServiceRoute : System.Web.Routing.Route" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceRoute extends System.Web.Routing.Route" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.ServiceRoute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Routing.Route</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張子のないベース アドレスをサポートする WCF サービス向けに HTTP 経由のサービス ルートを作成できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Activation.ServiceRoute> は、<xref:System.Web.Routing.Route> から派生しています。 ときに、<xref:System.ServiceModel.Activation.ServiceRoute>コンス トラクターが呼び出されます[!INCLUDE[indigo2](~/includes/indigo2-md.md)]は対応するルート プレフィックス (url パターン) と追加 (非表示) のルートのハンドラーを ASP.NET <xref:System.Web.Routing.RouteCollection>、および将来のサービスのライセンス認証のための内部ハッシュ テーブルに対応するルート プレフィックス、サービス ホスト ファクトリおよびサービスの種類の情報をキャッシュします。注: 開発者が上のルートのコレクションを直接操作する場合、<xref:System.ServiceModel.Activation.ServiceRoute>コレクションに追加されましたが、変更は許可されませんによって[!INCLUDE[indigo2](~/includes/indigo2-md.md)]です。 ルート コレクション内の要素の変更[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.Web.Routing.RouteCollection>」を参照してください。 開発者は global.asax ファイル内のすべての <xref:System.ServiceModel.Activation.ServiceRoute> を定義して、<xref:System.ServiceModel.Activation.ServiceRoute> から <xref:System.Web.Routing.RouteCollection> を動的に削除しないことが推奨されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceRoute (string routePrefix, System.ServiceModel.Activation.ServiceHostFactoryBase serviceHostFactory, Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string routePrefix, class System.ServiceModel.Activation.ServiceHostFactoryBase serviceHostFactory, class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceRoute.#ctor(System.String,System.ServiceModel.Activation.ServiceHostFactoryBase,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="routePrefix" Type="System.String" />
+        <Parameter Name="serviceHostFactory" Type="System.ServiceModel.Activation.ServiceHostFactoryBase" />
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="routePrefix">ルート プレフィックス。</param>
+        <param name="serviceHostFactory"><see cref="T:System.ServiceModel.Activation.ServiceHostFactory" /> クラスのインスタンス。</param>
+        <param name="serviceType">サービスの型。</param>
+        <summary>指定したルート プレフィックス、サービス ホスト ファクトリ、およびサービスの型を使用して、<see cref="T:System.ServiceModel.Activation.ServiceRoute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

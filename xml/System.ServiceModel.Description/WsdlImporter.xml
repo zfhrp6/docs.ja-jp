@@ -1,0 +1,523 @@
+<Type Name="WsdlImporter" FullName="System.ServiceModel.Description.WsdlImporter">
+  <TypeSignature Language="C#" Value="public class WsdlImporter : System.ServiceModel.Description.MetadataImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WsdlImporter extends System.ServiceModel.Description.MetadataImporter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.WsdlImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.MetadataImporter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WS-Policy が添付された Web サービス記述言語 (WSDL) 1.1 メタデータをインポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter> クラスを使用して、メタデータをインポートすると共に、その情報を、コントラクトおよびエンドポイント情報を表すさまざまなクラスに変換します。  
+  
+ <xref:System.ServiceModel.Description.WsdlImporter> の基本クラスである <xref:System.ServiceModel.Description.MetadataImporter> クラスは、コントラクトおよびエンドポイントの情報やプロパティを選択的にインポートするメソッドを定義します。これらのコントラクトおよびエンドポイントの情報やプロパティは、インポート エラーを公開し、インポートおよび変換プロセスに関連する型情報を受け取ります。 <xref:System.ServiceModel.Description.WsdlImporter> 型は、親の型のカスタム ポリシー インポーター (<xref:System.ServiceModel.Description.IPolicyImportExtension> の実装) を使用してカスタム ポリシー ステートメントを処理し、独自のカスタム WSDL インポーター (<xref:System.ServiceModel.Description.IWsdlImportExtension> の実装) を使用してカスタム WSDL 要素を処理します。 詳細については、「[メタデータ システムの拡張](~/docs/framework/wcf/extending/extending-the-metadata-system.md)です。  
+  
+ WSDL ドキュメントからポリシーをインポートするときに、<xref:System.ServiceModel.Description.WsdlImporter> は、異なる WSDL ポリシー サブジェクトに結び付けられている最大 32 種類のポリシー代替手段の組み合わせを試します。  どの組み合わせを使用しても完全にインポートできない場合は、最初の組み合わせを使用して部分カスタム バインディングが作成されます。  
+  
+ これらのメソッドおよびプロパティに加えて、<xref:System.ServiceModel.Description.WsdlImporter> は、ポリシー ドキュメント、WSDL ドキュメント、WSDL 拡張、および XML スキーマ ドキュメントへのアクセスを提供するバインディング情報およびプロパティのインポートをサポートするメソッドも実装します。 カスタム WSDL 要素をサポートするための <xref:System.ServiceModel.Description.WsdlImporter> の拡張については、<xref:System.ServiceModel.Description.IWsdlImportExtension> を参照してください。  
+  
+ 通常、<xref:System.ServiceModel.Description.WsdlImporter> クラスは、3 つの手順から成るプロセスで使用されます。  
+  
+1.  <xref:System.ServiceModel.Description.WsdlImporter> オブジェクトを作成し、コンストラクターに <xref:System.ServiceModel.Description.MetadataSet> オブジェクトを渡します。  
+  
+2.  適切な `Import` メソッドを呼び出して結果を取得します。  
+  
+3.  <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかどうかを判断します。  
+  
+> [!NOTE]
+>  WSDL ポートの種類をインポートするときに、ポートの種類の QName が <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> ディクショナリ内のエントリに一致する場合、ポートの種類はインポートされず、既知のコントラクトが代わりに使用されます。  
+  
+ いずれかのインポート メソッドが呼び出されるまで、<xref:System.ServiceModel.Description.WsdlImporter> プロパティからは値は返されません。 カスタム<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType>オブジェクトに読み込むことができます、<xref:System.ServiceModel.Description.WsdlImporter>プログラムでクライアント構成を使用してまたは[ &lt;wsdlImporters&gt; ](~/docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)要素。  
+  
+ サービス エンドポイントとしてインポートされたメタデータは、ランタイムの作成やメタデータのエクスポートには使用できません。これは、インポートされたエンドポイントにマネージ型の情報が含まれないからです。 メタデータを使用してクライアントまたはサービスのランタイムを作成したりメタデータを生成したりするには、最初にメタデータからコードを生成してコンパイルし、その型情報を使用して、<xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> によって新しい <xref:System.ServiceModel.Description.ContractDescription.GetContract%2A> オブジェクトを生成します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlImporter> を使用して、カスタムの <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=nameWithType> の追加、すべてのコントラクトのインポート、およびコントラクトのコンパイルとそのファイルへの保存を行う方法を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.ServiceModel.Description.MetadataSet" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">コントラクト、エンドポイント、およびバインディング情報の抽出元であるメタデータ ドキュメントのコレクション。</param>
+        <summary><see cref="T:System.ServiceModel.Description.WsdlImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.%23ctor%2A> コンストラクターを使用して、一連のメタデータ ドキュメントから <xref:System.ServiceModel.Description.WsdlImporter> オブジェクトを作成します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlImporter> クラスを <xref:System.ServiceModel.Description.MetadataResolver> クラスと組み合わせて使用する最も一般的な例を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#10](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IPolicyImportExtension},System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IWsdlImportExtension})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.ServiceModel.Description.MetadataSet" />
+        <Parameter Name="policyImportExtensions" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt;" />
+        <Parameter Name="wsdlImportExtensions" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">ダウンロードされたメタデータ。</param>
+        <param name="policyImportExtensions">カスタム ポリシー ステートメントのインポートに使用されるカスタム ポリシー インポーター。</param>
+        <param name="wsdlImportExtensions">カスタム WSDL 要素のインポートに使用されるカスタム WSDL インポーター。</param>
+        <summary>指定したメタデータ、カスタム ポリシー インポーター、およびカスタム WSDL インポーターから <see cref="T:System.ServiceModel.Description.WsdlImporter" /> オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、インポートするメタデータと、使用するポリシー インポーターおよび WSDL インポーターを制御します。  
+  
+> [!NOTE]
+>  このコンストラクターにカスタム ポリシー インポーターまたはカスタム WSDL インポーターが渡された場合、アプリケーション構成ファイルで指定されているカスタム インポーターは読み込まれません。 カスタム インポーターを追加する場合は、このコンストラクターを使用する前にインポーターのコレクションを再構築する必要があります。 「使用例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ `WSDLDocumentationImporter` オブジェクトを使用する前に、インポーターの既定のセットに新しいカスタム WSDL インポーター (<xref:System.ServiceModel.Description.WsdlImporter>) を追加する方法を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#11](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="metadata" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions, System.ServiceModel.Description.MetadataImporterQuotas quotas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions, class System.ServiceModel.Description.MetadataImporterQuotas quotas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IPolicyImportExtension},System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IWsdlImportExtension},System.ServiceModel.Description.MetadataImporterQuotas)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.ServiceModel.Description.MetadataSet" />
+        <Parameter Name="policyImportExtensions" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt;" />
+        <Parameter Name="wsdlImportExtensions" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt;" />
+        <Parameter Name="quotas" Type="System.ServiceModel.Description.MetadataImporterQuotas" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">ダウンロードされたメタデータ。</param>
+        <param name="policyImportExtensions">カスタム ポリシー ステートメントのインポートに使用されるカスタム ポリシー インポーター。</param>
+        <param name="wsdlImportExtensions">カスタム WSDL 要素のインポートに使用されるカスタム WSDL インポーター。</param>
+        <param name="quotas">一度に取得するメタデータの量。</param>
+        <summary>指定したメタデータ、カスタム ポリシー インポーター、およびカスタム WSDL インポーターから <see cref="T:System.ServiceModel.Description.WsdlImporter" /> オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、インポートするメタデータと、使用するポリシー インポーターおよび WSDL インポーターを制御します。  
+  
+> [!NOTE]
+>  このコンストラクターにカスタム ポリシー インポーターまたはカスタム WSDL インポーターが渡された場合、アプリケーション構成ファイルで指定されているカスタム インポーターは読み込まれません。 カスタム インポーターを追加する場合は、このコンストラクターを使用する前にインポーターのコレクションを再構築する必要があります。 「使用例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ `WSDLDocumentationImporter` オブジェクトを使用する前に、インポーターの既定のセットに新しいカスタム WSDL インポーター (<xref:System.ServiceModel.Description.WsdlImporter>) を追加する方法を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#11](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="metadata" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportAllBindings">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Channels.Binding&gt; ImportAllBindings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Channels.Binding&gt; ImportAllBindings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllBindings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Channels.Binding&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メタデータ ドキュメントからインポートされる一連の <see cref="T:System.ServiceModel.Channels.Binding" /> オブジェクトを返します。</summary>
+        <returns>メタデータ ドキュメントからインポートされる一連の <see cref="T:System.ServiceModel.Channels.Binding" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportAllBindings%2A> メソッドを使用して、メタデータ ドキュメントからすべてのバインディング情報をインポートし、それらを <xref:System.ServiceModel.Channels.Binding> オブジェクトとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ 特定の WSDL バインディングをインポートするには、<xref:System.ServiceModel.Description.WsdlImporter.ImportBinding%2A> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportAllContracts">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllContracts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ContractDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メタデータ ドキュメント内のポートの種類についての情報を表す一連の <see cref="T:System.ServiceModel.Description.ContractDescription" /> オブジェクトを返します。</summary>
+        <returns>メタデータ ドキュメント内のポートの種類についての情報を表す一連の <see cref="T:System.ServiceModel.Description.ContractDescription" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> メソッドを使用して、メタデータ ドキュメントからすべての WSDL ポートの種類についての情報をインポートし、それらを <xref:System.ServiceModel.Description.ContractDescription> オブジェクトとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがないかを確認することをお勧めします。  
+  
+ ポートの種類を 1 つだけインポートするには、<xref:System.ServiceModel.Description.WsdlImporter.ImportContract%2A> メソッドを参照してください。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlImporter> を使用して、カスタムの <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=nameWithType> の追加、すべてのコントラクトのインポート、およびコントラクトのコンパイルとそのファイルへの保存を行う方法を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportAllEndpoints">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllEndpoints" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>WSDL ドキュメント内のエンドポイントを表す <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> を返します。</summary>
+        <returns>WSDL ドキュメント内のエンドポイントを表す <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportAllEndpoints%2A> メソッドを使用して、メタデータ ドキュメントからすべてのエンドポイント情報をインポートし、それらを <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクションとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ 特定の WSDL ポートだけをインポートするには、<xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoint%2A> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding ImportBinding (System.Web.Services.Description.Binding wsdlBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.Binding ImportBinding(class System.Web.Services.Description.Binding wsdlBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportBinding(System.Web.Services.Description.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlBinding" Type="System.Web.Services.Description.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlBinding">メタデータ ファイル内のバインディング情報を表す <see cref="T:System.Web.Services.Description.Binding" /> オブジェクト。</param>
+        <summary>一連のメタデータ ドキュメントから、バインディング情報を表す <see cref="T:System.ServiceModel.Channels.Binding" /> オブジェクトを返します。</summary>
+        <returns>一連のメタデータ ドキュメント内のバインディング情報を表す <see cref="T:System.ServiceModel.Channels.Binding" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportBinding%2A> メソッドを使用して、<xref:System.Web.Services.Description.Binding?displayProperty=nameWithType> オブジェクトでメタデータ内のバインディング情報を検索し、それを <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> オブジェクトとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wsdlBinding" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportContract">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ContractDescription ImportContract (System.Web.Services.Description.PortType wsdlPortType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ContractDescription ImportContract(class System.Web.Services.Description.PortType wsdlPortType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportContract(System.Web.Services.Description.PortType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ContractDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlPortType" Type="System.Web.Services.Description.PortType" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlPortType">必要なポートの種類を表す <see cref="T:System.Web.Services.Description.PortType" /> オブジェクト。</param>
+        <summary>指定したポートの種類についての情報によって検索されたメタデータを表す <see cref="T:System.ServiceModel.Description.ContractDescription" /> オブジェクトを返します。</summary>
+        <returns>指定したポートの種類についての情報によって検索されたメタデータを表す <see cref="T:System.ServiceModel.Description.ContractDescription" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportContract%2A> メソッドを使用して、<xref:System.Web.Services.Description.PortType?displayProperty=nameWithType> オブジェクトでメタデータ内のポートの種類についての情報を検索し、それを <xref:System.ServiceModel.Description.ContractDescription> オブジェクトとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">ポートの種類が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEndpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint ImportEndpoint (System.Web.Services.Description.Port wsdlPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint ImportEndpoint(class System.Web.Services.Description.Port wsdlPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoint(System.Web.Services.Description.Port)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlPort" Type="System.Web.Services.Description.Port" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlPort">必要な WSDL ポートの情報を表す <see cref="T:System.Web.Services.Description.Port" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクトの情報を使用する一連のメタデータ ドキュメント内のバインディング情報を表す <see cref="T:System.Web.Services.Description.Port" /> を返します。</summary>
+        <returns>メタデータ ドキュメント内の特定の WSDL ポートの情報を表す <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoint%2A> メソッドを使用して、<xref:System.Web.Services.Description.Port?displayProperty=nameWithType> オブジェクトでメタデータ内のポートの種類についての情報を検索し、それを <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトとして返します。 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wsdlPort" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEndpoints">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.Binding wsdlBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.Binding wsdlBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.Binding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlBinding" Type="System.Web.Services.Description.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlBinding">WSDL ポートで使用される <see cref="T:System.Web.Services.Description.Binding" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> を使用しているすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.Binding" /> を返します。</summary>
+        <returns>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> を使用しているすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.Binding" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wsdlBinding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEndpoints">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.PortType wsdlPortType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.PortType wsdlPortType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.PortType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlPortType" Type="System.Web.Services.Description.PortType" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlPortType">関連付けられている WSDL ポート情報の検索に使用される <see cref="T:System.Web.Services.Description.PortType" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> に関連付けられているすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.PortType" /> を返します。</summary>
+        <returns>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> に関連付けられているすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.PortType" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wsdlPortType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportEndpoints">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.Service wsdlService);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.Service wsdlService) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.Service)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wsdlService" Type="System.Web.Services.Description.Service" />
+      </Parameters>
+      <Docs>
+        <param name="wsdlService">WSDL ポート情報の検索対象となる <see cref="T:System.Web.Services.Description.Service" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> 内のすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.Service" /> を返します。</summary>
+        <returns>指定した <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" /> 内のすべての WSDL ポートの種類を表す <see cref="T:System.Web.Services.Description.Service" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを使用する前に、<xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> プロパティを調べて、インポート エラーがあるかを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Description.WsdlImporter" /> でエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wsdlService" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WsdlDocuments">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionCollection WsdlDocuments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionCollection WsdlDocuments" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.WsdlDocuments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータ ドキュメント内のコントラクト情報を記述する <see cref="T:System.Web.Services.Description.ServiceDescription" /> オブジェクトのセットを取得します。</summary>
+        <value>メタデータ ドキュメント内のコントラクト情報を記述する <see cref="T:System.Web.Services.Description.ServiceDescription" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.WsdlDocuments%2A> プロパティは、インポート メソッドが呼び出されるまで設定されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WsdlImportExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; WsdlImportExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; WsdlImportExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.WsdlImportExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IWsdlImportExtension&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタムの WSDL 情報のインポートに使用される一連の <see cref="T:System.ServiceModel.Description.IWsdlImportExtension" /> オブジェクトのセットを取得します。</summary>
+        <value>カスタムの WSDL 情報のインポートに使用される一連の <see cref="T:System.ServiceModel.Description.IWsdlImportExtension" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter.WsdlImportExtensions%2A> プロパティを使用して、カスタム WSDL インポーターを追加または削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSchemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet XmlSchemas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSet XmlSchemas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.XmlSchemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータに含まれる型を記述する <see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのセットを取得します。</summary>
+        <value>メタデータに含まれる型を記述する <see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、いずれかのインポート メソッドが呼び出されるまで設定されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,188 @@
+<Type Name="ProcessInputEventArgs" FullName="System.Windows.Input.ProcessInputEventArgs">
+  <TypeSignature Language="C#" Value="public class ProcessInputEventArgs : System.Windows.Input.NotifyInputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessInputEventArgs extends System.Windows.Input.NotifyInputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ProcessInputEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.NotifyInputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>後処理入力イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力イベントの処理へのアクセスを有効にする、<xref:System.Windows.Input.InputManager>ステージング領域です。  
+  
+ 入力のステージング領域に生の入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ <xref:System.Windows.Input.ProcessInputEventArgs>と共に使用される、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PeekInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PeekInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PeekInput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StagingAreaInputItem</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得するをポップアップしません、ステージング領域のスタックの上部にある入力イベント。</summary>
+        <returns>ステージング領域のスタックの一番上にある入力イベントです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値になります`null`ステージング領域が空の場合。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">上部の入力を取得します。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PopInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PopInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PopInput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StagingAreaInputItem</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ステージング領域のスタックの一番上にある入力イベントを削除します。</summary>
+        <returns>ステージング領域のスタックの一番上にあった入力イベントです。 これになります<see langword="null" />ステージング領域が空の場合。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">入力イベントをポップする権限です。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="PushInput">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ステージング領域のスタックの一番上には、入力イベントを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ステージング領域に配置する入力できない`null`ステージング領域内に存在しないとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="PushInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PushInput (System.Windows.Input.StagingAreaInputItem input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PushInput(class System.Windows.Input.StagingAreaInputItem input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PushInput(System.Windows.Input.StagingAreaInputItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StagingAreaInputItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Windows.Input.StagingAreaInputItem" />
+      </Parameters>
+      <Docs>
+        <param name="input">ステージング領域のスタックに配置する入力イベントです。</param>
+        <summary>ステージング領域のスタックの一番上には、指定された入力イベントを配置します。</summary>
+        <returns>ステージング領域の入力項目です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `input`ことはできません`null`とステージング領域に既に存在することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">入力イベントをプッシュします。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PushInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PushInput (System.Windows.Input.InputEventArgs input, System.Windows.Input.StagingAreaInputItem promote);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PushInput(class System.Windows.Input.InputEventArgs input, class System.Windows.Input.StagingAreaInputItem promote) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PushInput(System.Windows.Input.InputEventArgs,System.Windows.Input.StagingAreaInputItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StagingAreaInputItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Windows.Input.InputEventArgs" />
+        <Parameter Name="promote" Type="System.Windows.Input.StagingAreaInputItem" />
+      </Parameters>
+      <Docs>
+        <param name="input">ステージング領域のスタックに配置する入力イベントです。</param>
+        <param name="promote">既存のステージング領域から状態を昇格する項目。</param>
+        <summary>指定したステージング領域のスタックの一番上には、指定された入力イベントを配置します。</summary>
+        <returns>ステージング領域は、指定された入力をラップする項目を入力します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `input`ことはできません`null`とステージング領域に既に存在することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">入力イベントをプッシュします。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,151 @@
+<Type Name="DynamicDiscoveryDocument" FullName="System.Web.Services.Discovery.DynamicDiscoveryDocument">
+  <TypeSignature Language="C#" Value="public sealed class DynamicDiscoveryDocument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DynamicDiscoveryDocument extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("dynamicDiscovery", IsNullable=true, Namespace="urn:schemas-dynamicdiscovery:disco.2000-03-17")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web サービス探索ドキュメントに追加への参照を検索しないファイル システム ディレクトリのパスの一覧を示す XML ドキュメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DynamicDiscoveryDocument>でクラスが採用されている、<xref:System.Web.Services.Discovery.DiscoveryRequestHandler>クラスの<xref:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest%2A>探索ドキュメントに対する HTTP 要求を処理するメソッド。 この要求では、別のドキュメントを除外するディレクトリの一覧を含む XML 動的探索ドキュメントを指定します。 対応する、リスト、<xref:System.Web.Services.Discovery.DynamicDiscoveryDocument>クラスの<xref:System.Web.Services.Discovery.DynamicDiscoveryDocument.ExcludePaths%2A>プロパティ、または XML ドキュメントを含んでいるディレクトリの下のディレクトリが含まれています。  
+  
+ 通常、これらのクラスのいずれも開発者が直接使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicDiscoveryDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DynamicDiscoveryDocument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludePaths">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.ExcludePathInfo[] ExcludePaths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Discovery.ExcludePathInfo[] ExcludePaths" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DynamicDiscoveryDocument.ExcludePaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("exclude", typeof(System.Web.Services.Discovery.ExcludePathInfo))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.ExcludePathInfo[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または探索ドキュメントに追加への参照を検索しないファイル システム ディレクトリのパスを設定します。</summary>
+        <value><see cref="T:System.Web.Services.Discovery.ExcludePathInfo" /> オブジェクトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 除外するパスは、XML 動的探索ドキュメントにシリアル化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static System.Web.Services.Discovery.DynamicDiscoveryDocument Load (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Services.Discovery.DynamicDiscoveryDocument Load(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DynamicDiscoveryDocument.Load(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DynamicDiscoveryDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A <see cref="T:System.IO.Stream" /> XML 動的探索ドキュメントが逆シリアル化するオブジェクトします。</param>
+        <summary>XML ドキュメントを逆シリアル化、<see cref="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" />インスタンス。</summary>
+        <returns><see cref="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" />読み込むことができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`static`メソッドとして表される XML ドキュメントには、 <xref:System.IO.Stream>、内に変換し、<xref:System.Web.Services.Discovery.DynamicDiscoveryDocument>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Discovery.DynamicDiscoveryDocument.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的探索ドキュメントの名前空間を含む"urn: スキーマ-dynamicdiscovery:disco.2000-03-17"です。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DynamicDiscoveryDocument.Write(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A <see cref="T:System.IO.Stream" /> XML 動的探索ドキュメントはシリアル化するオブジェクトします。</param>
+        <summary>シリアル化、<see cref="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" />インスタンスを出力ストリームとして指定した XML ドキュメントにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,3189 @@
+<Type Name="UnicodeRanges" FullName="System.Text.Unicode.UnicodeRanges">
+  <TypeSignature Language="C#" Value="public static class UnicodeRanges" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit UnicodeRanges extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Text.Unicode.UnicodeRanges" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定義済みを返す静的プロパティを提供<see cref="System.Text.Unicode.UnicodeRange" />Unicode 仕様からブロックに対応するインスタンス。</summary>
+        <remarks>
+      <format type="text/markdown"><![CDATA[  
+## Remarks  
+
+使用する<xref:System.Text.Unicode.UnicodeRanges>Unicode コード ポイントの連続ブロックから成る各名前付き範囲、Unicode を取得するプロパティです。 特定の範囲には、未定義のコード ポイントが含まれます。 たとえば、**アルメニア語**Unicode ブロック (0530 U +0-U +0 058F)、U +0 0530、U +0 0557-U +0 0558、U +0 0560、U +0 0588、および 058B 058-c は定義されていません。 1 つ以上の未定義のコード ポイントは、末尾の範囲、または任意の場所間に、範囲の先頭に発生します。 
+
+現時点では、<xref:System.Text.Unicode.UnicodeRange>名前付き範囲に、平面 (bmp: Basic Multilingual)、u+0000 から U+FFFF までを専用のクラスがサポートされます。   
+  ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange All { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange All" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>全体の平面 (bmp: Basic Multilingual)、u+0000 ~ U+FFFF から構成される範囲を取得)。</summary>
+        <value>全体の BMP で構成される範囲です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlphabeticPresentationForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange AlphabeticPresentationForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange AlphabeticPresentationForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.AlphabeticPresentationForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アルファベット順のプレゼンテーション フォーム Unicode ブロックを取得します (FB00 + U-U + FB4F)。</summary>
+        <value>アルファベット順のプレゼンテーション フォーム Unicode ブロック (FB00 + U-U + FB4F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arabic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Arabic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Arabic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Arabic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラビア語の Unicode ブロックを取得します (0600 U +0-U +0 06FF)。</summary>
+        <value>アラビア語の Unicode ブロック (0600 U +0-U +0 06FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArabicExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ArabicExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ArabicExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ArabicExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラビア語 Extended-A Unicode ブロックを取得します (08A0 U +0-U +0 08FF)。</summary>
+        <value>アラビア語 Extended-A Unicode ブロック (08A0 U +0-U +0 08FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArabicPresentationFormsA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ArabicPresentationFormsA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ArabicPresentationFormsA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ArabicPresentationFormsA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラビア語プレゼンテーション Forms-A Unicode ブロックを取得します (FB50 + U-U + FDFF)。</summary>
+        <value>アラビア語プレゼンテーション Forms-A Unicode ブロック (FB50 + U-U + FDFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArabicPresentationFormsB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ArabicPresentationFormsB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ArabicPresentationFormsB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ArabicPresentationFormsB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラビア語プレゼンテーション フォーム B Unicode ブロックを取得します (U + FE70-U+FEFF)。</summary>
+        <value>アラビア語プレゼンテーション フォーム B Unicode ブロック (U + FE70-U+FEFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArabicSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ArabicSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ArabicSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ArabicSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アラビア語の補足 Unicode ブロックを取得します (0750 U +0-U +0 077F)。</summary>
+        <value>アラビア語の補足の Unicode ブロック (0750 U +0-U +0 077F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Armenian">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Armenian { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Armenian" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Armenian" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アルメニア語の Unicode ブロックを取得します (0530 U +0-U +0 058F)。</summary>
+        <value>アルメニア語の Unicode ブロック (0530 U +0-U +0 058F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arrows">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Arrows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Arrows" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Arrows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>矢印 Unicode ブロックを取得します (2190 U +0-U +0 21FF)。</summary>
+        <value>矢印 Unicode ブロック (2190 U +0-U +0 21FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Balinese">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Balinese { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Balinese" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Balinese" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Balinese Unicode ブロックを取得します (1B00 U +0-U +0 1B7F)。</summary>
+        <value>Balinese Unicode ブロック (1B00 U +0-U +0 1B7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bamum">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Bamum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Bamum" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Bamum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Bamum Unicode ブロックを取得します (A6A0 + U-U + A6FF)。</summary>
+        <value>Bamum Unicode ブロック (A6A0 + U-U + A6FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BasicLatin">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange BasicLatin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange BasicLatin" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.BasicLatin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本的なラテン文字の Unicode ブロックを取得します (0021 U +0-U +0 007F)。</summary>
+        <value>基本的なラテン文字の Unicode ブロック (0021 U +0-U +0 007F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Batak">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Batak { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Batak" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Batak" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Batak Unicode ブロックを取得します (1BC0 U +0-U +0 1BFF)。</summary>
+        <value>Batak Unicode ブロック (1BC0 U +0-U +0 1BFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bengali">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Bengali { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Bengali" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Bengali" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベンガル語の Unicode ブロックを取得します (0980 U +0-U +0 09FF)。</summary>
+        <value>ベンガル語の Unicode ブロック (0980 U +0-U +0 09FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlockElements">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange BlockElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange BlockElements" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.BlockElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブロックの要素の Unicode ブロックを取得します (2580 U +0-U +0 259F)。</summary>
+        <value>ブロックの要素の Unicode ブロック (2580 U +0-U +0 259F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bopomofo">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Bopomofo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Bopomofo" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Bopomofo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピンイン Unicode ブロックを取得します (3100 U +0-U +0 312F)。</summary>
+        <value>ピンイン Unicode ブロック (3105 U +0-U +0 312F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BopomofoExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange BopomofoExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange BopomofoExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.BopomofoExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピンイン拡張 Unicode ブロックを取得します (31A0 U +0-U +0 31 bf)。</summary>
+        <value>ピンイン拡張 Unicode ブロック (31A0 U +0-U +0 31 bf)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoxDrawing">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange BoxDrawing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange BoxDrawing" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.BoxDrawing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボックス図面 Unicode ブロックを取得します (2500 U +0-U +0 257F)。</summary>
+        <value>ボックス図面 Unicode ブロック (2500 U +0-U +0 257F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BraillePatterns">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange BraillePatterns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange BraillePatterns" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.BraillePatterns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>点字パターン Unicode ブロックを取得します (2800 U +0-U +0 28FF)。</summary>
+        <value>点字パターン Unicode ブロック (2800 U +0-U +0 28FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Buginese">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Buginese { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Buginese" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Buginese" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Buginese Unicode ブロックを取得します (1A00 U +0-U +0 1A1F)。</summary>
+        <value>Buginese Unicode ブロック (1A00 U +0-U +0 1A1F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Buhid">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Buhid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Buhid" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Buhid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字の Unicode ブロックを取得します (1740 U +0-U +0 175F)。</summary>
+        <value>文字の Unicode ブロック (1740 U +0-U +0 175F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cham">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Cham { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Cham" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Cham" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャム Unicode ブロックを取得します (AA00 + U-U + AA5F)。</summary>
+        <value>チャム Unicode ブロック (AA00 + U-U + AA5F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cherokee">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Cherokee { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Cherokee" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Cherokee" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェロキー Unicode ブロックを取得します (13A0 U +0-U + 13 ff)。</summary>
+        <value>チェロキー Unicode ブロック (13A0 U +0-U + 13 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CherokeeSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CherokeeSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CherokeeSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CherokeeSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェロキー Supplement Unicode ブロックを取得します (AB70 + U-U + ABBF)。</summary>
+        <value>チェロキー Supplement Unicode ブロック (AB70 + U-U + ABBF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkCompatibility">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkCompatibility { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkCompatibility" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkCompatibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 互換性 Unicode ブロックを取得します (3300 U +0-U +0 33FF)。</summary>
+        <value>CJK 互換性 Unicode ブロック (3300 U +0-U +0 33FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkCompatibilityForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkCompatibilityForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkCompatibilityForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkCompatibilityForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 互換性フォーム Unicode ブロックを取得します (FE30 + U-U + FE4F)。</summary>
+        <value>CJK 互換性フォーム Unicode ブロック (FE30 + U-U + FE4F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkCompatibilityIdeographs">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkCompatibilityIdeographs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkCompatibilityIdeographs" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkCompatibilityIdeographs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 互換性表意文字 Unicode ブロックを取得します (F900 + U-U + FAD9)。</summary>
+        <value>CJK 互換性表意文字 Unicode ブロック (F900 + U-U + FAD9)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkRadicalsSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkRadicalsSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkRadicalsSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkRadicalsSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 部首 Supplement Unicode ブロックを取得します (2E80 U +0-U + 2 eff)。</summary>
+        <value>CJK 部首 Supplement Unicode ブロック (2E80 U +0-U + 2 eff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkStrokes">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkStrokes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkStrokes" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkStrokes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK ストローク Unicode ブロックを取得します (U +0 31 C 0-U +0 31EF)。</summary>
+        <value>CJK ストローク Unicode ブロック (U +0 31 C 0-U +0 31EF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkSymbolsandPunctuation">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkSymbolsandPunctuation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkSymbolsandPunctuation" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkSymbolsandPunctuation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 記号および区切り文字の Unicode のブロックを取得します (u+3000-U +0 303F)。</summary>
+        <value>CJK 記号および区切り文字の Unicode ブロック (u+3000-U +0 303F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkUnifiedIdeographs">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkUnifiedIdeographs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkUnifiedIdeographs" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkUnifiedIdeographs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK Unified 表意文字 Unicode ブロックを取得します (4E00 U +0-U +0 9FCC)。</summary>
+        <value>CJK Unified 表意文字 Unicode ブロック (4E00 U +0-U +0 9FCC)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CjkUnifiedIdeographsExtensionA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CjkUnifiedIdeographsExtensionA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CjkUnifiedIdeographsExtensionA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CjkUnifiedIdeographsExtensionA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK Unitied 表意文字拡張子 Unicode ブロックを取得します (3400 U +0-U +0 4DB5)。</summary>
+        <value>CJK Unitied 表意文字拡張子 Unicode ブロック (3400 U +0-U +0 4DB5)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombiningDiacriticalMarks">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CombiningDiacriticalMarks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CombiningDiacriticalMarks" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CombiningDiacriticalMarks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分音記号 Unicode の結合ブロックを取得します (0300 U +0-U +0 036 f)。</summary>
+        <value>分音記号 Unicode の結合ブロック (0300 U +0-U +0 036 f)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombiningDiacriticalMarksExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CombiningDiacriticalMarksExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分音記号拡張 Unicode の結合ブロックを取得します (1AB0 U +0-U +0 1AFF)。</summary>
+        <value>分音記号拡張 Unicode の結合ブロック (1AB0 U +0-U +0 1AFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombiningDiacriticalMarksforSymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksforSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksforSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CombiningDiacriticalMarksforSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンボル Unicode ブロックの結合の分音記号を取得 (U +0 20 D 0-U +0 20FF)。</summary>
+        <value>分音記号の結合シンボル Unicode ブロック (U +0 20 D 0-U +0 20FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombiningDiacriticalMarksSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CombiningDiacriticalMarksSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CombiningDiacriticalMarksSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分音記号マーク補足 Unicode の結合ブロックを取得します (1DC0 U +0-U +0 1DFF)。</summary>
+        <value>マークの分音記号の補足 Unicode の結合ブロック (1DC0 U +0-U +0 1DFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CombiningHalfMarks">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CombiningHalfMarks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CombiningHalfMarks" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CombiningHalfMarks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>半分マーク Unicode の結合ブロックを取得します (FE20 + U-U + FE2F)。</summary>
+        <value>半分マーク Unicode の結合ブロック (FE20 + U-U + FE2F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonIndicNumberForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CommonIndicNumberForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CommonIndicNumberForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CommonIndicNumberForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共通のインド数フォーム Unicode ブロックを取得します (A830 + U-U + A83F)。</summary>
+        <value>共通のインド数フォーム Unicode ブロック (A830 + U-U + A83F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPictures">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ControlPictures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ControlPictures" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ControlPictures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの画像の Unicode ブロックを取得します (2400 U +0-U +0 243F)。</summary>
+        <value>コントロールの画像の Unicode ブロック (2400 U +0-U +0 243F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Coptic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Coptic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Coptic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Coptic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コプト語の Unicode ブロックを取得します (U + 2 C 80-U +0 2CFF)。</summary>
+        <value>コプト語の Unicode ブロック (U + 2 C 80-U +0 2CFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencySymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CurrencySymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CurrencySymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CurrencySymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨記号 Unicode ブロックを取得します (20A0 U +0-U +0 20 cf)。</summary>
+        <value>通貨記号の Unicode ブロック (20A0 U +0-U +0 20 cf)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cyrillic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Cyrillic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Cyrillic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Cyrillic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キリル文字の Unicode ブロックを取得します (U +0 0400-U +0 04FF)。</summary>
+        <value>キリル文字の Unicode ブロック (U +0 0400-U +0 04FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CyrillicExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CyrillicExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CyrillicExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CyrillicExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キリル語 Extended-A Unicode ブロックを取得します (2DE0 U +0-U +0 2DFF)。</summary>
+        <value>キリル語 Extended-A Unicode ブロック (2DE0 U +0-U +0 2DFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CyrillicExtendedB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CyrillicExtendedB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CyrillicExtendedB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CyrillicExtendedB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キリル語拡張 B Unicode ブロックを取得します (A640 + U-U + A69F)。</summary>
+        <value>キリル語拡張 B Unicode ブロック (A640 + U-U + A69F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CyrillicSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange CyrillicSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange CyrillicSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.CyrillicSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キリル文字の補足 Unicode ブロックを取得します (U +0 0500-U +0 052F)。</summary>
+        <value>キリル文字の補足の Unicode ブロック (U +0 0500-U +0 052F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Devanagari">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Devanagari { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Devanagari" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Devanagari" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Devangari Unicode ブロックを取得します (0900 U +0-U +0 097F)。</summary>
+        <value>Devangari Unicode ブロック (0900 U +0-U +0 097F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DevanagariExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange DevanagariExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange DevanagariExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.DevanagariExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバナーガリ拡張 Unicode ブロックを取得します (A8E0 + U-U + A8FF)。</summary>
+        <value>デバナーガリ拡張 Unicode ブロック (A8E0 + U-U + A8FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dingbats">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Dingbats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Dingbats" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Dingbats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>飾り Unicode ブロックを取得します (2700 U +0-U +0 27BF)。</summary>
+        <value>飾り Unicode ブロック (2700 U +0-U +0 27BF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnclosedAlphanumerics">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange EnclosedAlphanumerics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange EnclosedAlphanumerics" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.EnclosedAlphanumerics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>英数字の Unicode を囲むブロックを取得します (2460 U +0-U +0 24FF)。</summary>
+        <value>英数字の Unicode を囲むブロック (2460 U +0-U +0 24FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnclosedCjkLettersandMonths">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange EnclosedCjkLettersandMonths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange EnclosedCjkLettersandMonths" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.EnclosedCjkLettersandMonths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CJK 文字を囲むと月の Unicode のブロックを取得します (3200 U +0-U +0 32FF)。</summary>
+        <value>CJK 文字を囲むおよび月 Unicode ブロック (3200 U +0-U +0 32FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ethiopic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Ethiopic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Ethiopic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Ethiopic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(エチオピア) Unicode ブロックを取得します (1200 U +0-U +0 137 C)。</summary>
+        <value>(エチオピア) Unicode ブロック (1200 U +0-U +0 137 C)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EthiopicExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange EthiopicExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange EthiopicExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.EthiopicExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ethipic 拡張 Unicode ブロックを取得します (U + 2 D 80-U +0 2DDF)。</summary>
+        <value>Ethipic 拡張 Unicode ブロック (U + 2 D 80-U +0 2DDF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EthiopicExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange EthiopicExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange EthiopicExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.EthiopicExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(エチオピア) Extended-A Unicode ブロックを取得します (AB00 + U-U + AB2F)。</summary>
+        <value>(エチオピア) Extended-A Unicode ブロック (AB00 + U-U + AB2F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EthiopicSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange EthiopicSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange EthiopicSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.EthiopicSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(エチオピア) Supplement Unicode ブロックを取得します (1380 U +0-U +0 1399)。</summary>
+        <value>(エチオピア) Supplement Unicode ブロック (1380 U +0-U +0 1399)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneralPunctuation">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange GeneralPunctuation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange GeneralPunctuation" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.GeneralPunctuation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一般的な区切り文字の Unicode ブロックを取得します (2000 U +0-U +0 206F)。</summary>
+        <value>一般的な区切り文字の Unicode ブロック (2000 U +0-U +0 206F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeometricShapes">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange GeometricShapes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange GeometricShapes" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.GeometricShapes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>幾何学図形 Unicode ブロックを取得します (25A0 U +0-U + 25 ff)。</summary>
+        <value>幾何学図形 Unicode ブロック (25A0 U +0-U + 25 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Georgian">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Georgian { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Georgian" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Georgian" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グルジア語の Unicode ブロックを取得します (10A0 U +0-10 ff U +0)。</summary>
+        <value>グルジア語の Unicode ブロック (10A0 U +0-10 ff U +0)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeorgianSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange GeorgianSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange GeorgianSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.GeorgianSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グルジア語 Supplement Unicode ブロックを取得します (U + 2 D 00-U +0 2D2F)。</summary>
+        <value>グルジア語 Supplement Unicode ブロック (U + 2 D 00-U +0 2D2F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Glagolitic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Glagolitic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Glagolitic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Glagolitic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Glagolitic Unicode ブロックを取得します (U + 2 C 00-U +0 2C5F)。</summary>
+        <value>Glagolitic Unicode ブロック (U + 2 C 00-U +0 2C5F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreekandCoptic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange GreekandCoptic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange GreekandCoptic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.GreekandCoptic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ギリシャ語、コプト語の Unicode のブロックを取得します (0370 U +0-U +0 03FF)。</summary>
+        <value>ギリシャ語、コプト語の Unicode ブロック (0370 U +0-U +0 03FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreekExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange GreekExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange GreekExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.GreekExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ギリシャ語拡張 Unicode ブロックを取得します (1F00 U +0-U + 1 fff)。</summary>
+        <value>ギリシャ語拡張 Unicode ブロック (1F00 U +0-U + 1 fff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gujarati">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Gujarati { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Gujarati" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Gujarati" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Gujarti Unicode ブロックを取得します (0A81 U +0-U +0 0 aff)。</summary>
+        <value>Gujarti Unicode ブロック (0A81 U +0-U +0 0 aff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gurmukhi">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Gurmukhi { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Gurmukhi" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Gurmukhi" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グルムキー文字の Unicode ブロックを取得します (0A01 U +0-U +0 0 a7f)。</summary>
+        <value>グルムキー文字の Unicode ブロック (0A01 U +0-U +0 0 a7f)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HalfwidthandFullwidthForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HalfwidthandFullwidthForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HalfwidthandFullwidthForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HalfwidthandFullwidthForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>半角と全角フォーム Unicode ブロックを取得します (FF00 + U-U + FFEE)。</summary>
+        <value>半角と全角フォーム Unicode ブロック (FF00 + U-U + FFEE)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HangulCompatibilityJamo">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HangulCompatibilityJamo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HangulCompatibilityJamo" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HangulCompatibilityJamo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハングル互換性字母 Unicode ブロックを取得します (3131 U +0-U +0 318F)。</summary>
+        <value>ハングル互換性字母 Unicode ブロック (3131 U +0-U +0 318F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HangulJamo">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HangulJamo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HangulJamo" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HangulJamo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハングル字母 Unicode ブロックを取得します (1100 U +0-U +0 11FF)。</summary>
+        <value>ハングル字母 Unicode ブロック (1100 U +0-U +0 11FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HangulJamoExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HangulJamoExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HangulJamoExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HangulJamoExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハングル字母 Extended-A Unicode ブロックを取得します (A960 + U-U + A9F)。</summary>
+        <value>ハングル字母 Extended-A Unicode ブロック (A960 + U-U + A97F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HangulJamoExtendedB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HangulJamoExtendedB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HangulJamoExtendedB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HangulJamoExtendedB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハングル字母拡張 B Unicode ブロックを取得します (D7B0 + U-U + D7FF)。</summary>
+        <value>ハングル字母拡張 B Unicode ブロック (D7B0 + U-U + D7FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HangulSyllables">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange HangulSyllables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange HangulSyllables" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.HangulSyllables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハングル音節 Unicode ブロックを取得します (AC00 + U-U + D7AF)。</summary>
+        <value>ハングル音節 Unicode ブロック (AC00 + U-U + D7AF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hanunoo">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Hanunoo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Hanunoo" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Hanunoo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハヌノオ Unicode ブロックを取得します (1720 U +0-U +0 173F)。</summary>
+        <value>ハヌノオ Unicode ブロック (1720 U +0-U +0 173F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hebrew">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Hebrew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Hebrew" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Hebrew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘブライ語の Unicode ブロックを取得します (0590 U +0-U +0 05FF)。</summary>
+        <value>ヘブライ語の Unicode ブロック (0590 U +0-U +0 05FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hiragana">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Hiragana { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Hiragana" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Hiragana" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ひらがな Unicode ブロックを取得します (3040 U +0-U +0 309F)。</summary>
+        <value>ひらがな Unicode ブロック (3040 U +0-U +0 309F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdeographicDescriptionCharacters">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange IdeographicDescriptionCharacters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange IdeographicDescriptionCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.IdeographicDescriptionCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表意文字の説明の文字の Unicode ブロックを取得します (2FF0 U +0-U + 2 fff)。</summary>
+        <value>表意文字の説明の文字の Unicode ブロック (2FF0 U +0-U + 2 fff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IpaExtensions">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange IpaExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange IpaExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.IpaExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IPA 拡張 Unicode ブロックを取得します (0250 U +0-U +0 02AF)。</summary>
+        <value>IPA 拡張機能の Unicode ブロック (0250 U +0-U +0 02AF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Javanese">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Javanese { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Javanese" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Javanese" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Javanese Unicode ブロックを取得します (A980 + U-U + A9DF)。</summary>
+        <value>Javanese Unicode ブロック (A980 + U-U + A9DF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kanbun">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Kanbun { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Kanbun" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Kanbun" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kanbun Unicode ブロックを取得します (3190 U +0-U +0 319F)。</summary>
+        <value>Kanbun Unicode ブロック (3190 U +0-U +0 319F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KangxiRadicals">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange KangxiRadicals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange KangxiRadicals" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.KangxiRadicals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>康煕部首 Supplement Unicode ブロックを取得します (2F00 U +0-U + 2 fdf)。</summary>
+        <value>康煕部首 Supplement Unicode ブロック (2F00 U +0-U + 2 fdf)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kannada">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Kannada { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Kannada" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Kannada" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カンナダ語の Unicode ブロックを取得します (U +0 0 C 81-U +0 0CFF)。</summary>
+        <value>カンナダ語の Unicode ブロック (U +0 0 C 81-U +0 0CFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Katakana">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Katakana { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Katakana" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Katakana" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタカナ Unicode ブロックを取得します (30A0 U +0-U + 30 ff)。</summary>
+        <value>カタカナ Unicode ブロック (30A0 U +0-U + 30 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KatakanaPhoneticExtensions">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange KatakanaPhoneticExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange KatakanaPhoneticExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.KatakanaPhoneticExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カタカナ Phonetic 拡張 Unicode ブロックを取得します (31F0 U +0-U +0 31 ff)。</summary>
+        <value>カタカナ Phonetic 拡張 Unicode ブロック (31F0 U +0-U +0 31 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KayahLi">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange KayahLi { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange KayahLi" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.KayahLi" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kayah Li Unicode ブロックを取得します (A900 + U-U + A92F)。</summary>
+        <value>Kayah Li Unicode ブロック (A900 + U-U + A92F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Khmer">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Khmer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Khmer" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Khmer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クメール語の Unicode ブロックを取得します (1780 U +0-U +0 17FF)。</summary>
+        <value>クメール語の Unicode ブロック (1780 U +0-U +0 17FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KhmerSymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange KhmerSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange KhmerSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.KhmerSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クメール語シンボル Unicode ブロックを取得します (19E0 U +0-U +0 19FF)。</summary>
+        <value>クメール語シンボル Unicode ブロック (19E0 U +0-U +0 19FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lao">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Lao { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Lao" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Lao" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラオス語の Unicode ブロックを取得します (0E80 U +0-U +0 0EDF)。</summary>
+        <value>ラオス語の Unicode ブロック (0E80 U +0-U +0 0EDF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Latin1Supplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Latin1Supplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Latin1Supplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Latin1Supplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン語-1 の補足 Unicode ブロックを取得します (00A1 U +0-U + 00 ff)。</summary>
+        <value>ラテン語-1 の補足の Unicode ブロック (00A1 U +0-U + 00 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン Extended-A Unicode ブロックを取得します (0100 U +0-U +0 017F)。</summary>
+        <value>ラテン Extended-A Unicode ブロック (0100 U +0-U +0 017F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedAdditional">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedAdditional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedAdditional" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedAdditional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン語の拡張の追加 Unicode ブロックを取得します (1E00 U +0-U + 1 eff)。</summary>
+        <value>ラテン拡張追加の Unicode ブロック (1E00 U +0-U + 1 eff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン拡張 B Unicode ブロックを取得します (0180 U +0-U +0 024F)。</summary>
+        <value>ラテン拡張 B Unicode ブロック (0180 U +0-U +0 024F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedC">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedC { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedC" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedC" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン拡張 C Unicode ブロックを取得します (U + 2 C 60-U +0 2C7F)。</summary>
+        <value>ラテン拡張 C Unicode ブロック (U + 2 C 60-U +0 2C7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedD">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedD { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedD" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedD" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン拡張 D Unicode ブロックを取得します (A720 + U-U + A7FF)。</summary>
+        <value>ラテン拡張 D Unicode ブロック (A720 + U-U + A7FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LatinExtendedE">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LatinExtendedE { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LatinExtendedE" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LatinExtendedE" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラテン拡張-e Unicode ブロックを取得します (AB30 + U-U + AB6F)。</summary>
+        <value>ラテン拡張-e Unicode ブロック (AB30 + U-U + AB6F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lepcha">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Lepcha { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Lepcha" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Lepcha" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レプチャ文字の Unicode ブロックを取得します (U + 1 C 00-U +0 1C4F)。</summary>
+        <value>レプチャ文字の Unicode ブロック (U + 1 C 00-U +0 1C4F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LetterlikeSymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange LetterlikeSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange LetterlikeSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.LetterlikeSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>記号の文字種 Unicode ブロックを取得します (2100 U +0-U +0 214F)。</summary>
+        <value>文字種のシンボル Unicode ブロック (2100 U +0-U +0 214F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Limbu">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Limbu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Limbu" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Limbu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Limbu Unicode ブロックを取得します (1900 U +0-U +0 194F)。</summary>
+        <value>Limbu Unicode ブロック (1900 U +0-U +0 194F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lisu">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Lisu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Lisu" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Lisu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Lisu Unicode ブロックを取得します (A4D0 + U-U + A4FF)。</summary>
+        <value>Lisu Unicode ブロック (A4D0 + U-U + A4FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Malayalam">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Malayalam { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Malayalam" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Malayalam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マラヤーラム語の Unicode ブロックを取得します (U +0 0d00-U +0 0D7F)。</summary>
+        <value>マラヤーラム語の Unicode ブロック (U +0 0d00-U +0 0D7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mandaic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Mandaic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Mandaic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Mandaic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Mandaic Unicode ブロックを取得します (0840 U +0-U +0 085F)。</summary>
+        <value>Mandaic Unicode ブロック (0840 U +0-U +0 085F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MathematicalOperators">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MathematicalOperators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MathematicalOperators" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MathematicalOperators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>算術演算子 Unicode ブロックを取得します (U +0 2200-U +0 22FF)。</summary>
+        <value>算術演算子 Unicode ブロック (U +0 2200-U +0 22FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeeteiMayek">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MeeteiMayek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MeeteiMayek" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MeeteiMayek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Meetei Mayek Unicode ブロックを取得します (ABC0 + U-U + ABFF)。</summary>
+        <value>Meetei Mayek Unicode ブロック (ABC0 + U-U + ABFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeeteiMayekExtensions">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MeeteiMayekExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MeeteiMayekExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MeeteiMayekExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Meetei Mayek 拡張 Unicode ブロックを取得します (AAE0 + U-U + AAFF)。</summary>
+        <value>Meetei Mayek 拡張 Unicode ブロック (AAE0 + U-U + AAFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscellaneousMathematicalSymbolsA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MiscellaneousMathematicalSymbolsA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MiscellaneousMathematicalSymbolsA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MiscellaneousMathematicalSymbolsA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他の数学的 Symbols-A Unicode ブロックを取得します (U +0 27 C 0-U +0 27EF)。</summary>
+        <value>その他の数学的 Symbols-A Unicode ブロック (U +0 27 C 0-U +0 27EF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscellaneousMathematicalSymbolsB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MiscellaneousMathematicalSymbolsB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MiscellaneousMathematicalSymbolsB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MiscellaneousMathematicalSymbolsB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他の算術記号 B Unicode ブロックを取得します (2980 U +0-U +0 29FF)。</summary>
+        <value>その他の算術記号 B Unicode ブロック (2980 U +0-U +0 29FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscellaneousSymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MiscellaneousSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MiscellaneousSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MiscellaneousSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のシンボル Unicode ブロックを取得します (2600 U +0-U +0 26FF)。</summary>
+        <value>その他のシンボル Unicode ブロック (2600 U +0-U +0 26FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscellaneousSymbolsandArrows">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MiscellaneousSymbolsandArrows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MiscellaneousSymbolsandArrows" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MiscellaneousSymbolsandArrows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他の記号と矢印 Unicode ブロックを取得します (2B00 U +0-U + 2 bff)。</summary>
+        <value>その他の記号と矢印 Unicode ブロック (2B00 U +0-U + 2 bff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscellaneousTechnical">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MiscellaneousTechnical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MiscellaneousTechnical" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MiscellaneousTechnical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他の技術的な Unicode ブロックを取得します (2300 U +0-U +0 23FF)。</summary>
+        <value>その他の技術的な Unicode ブロック (2300 U +0-U +0 23FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifierToneLetters">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange ModifierToneLetters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange ModifierToneLetters" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.ModifierToneLetters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子音文字の Unicode ブロックを取得します (A700 + U-U + A71F)。</summary>
+        <value>修飾子音文字の Unicode ブロック (A700 + U-U + A71F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mongolian">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Mongolian { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Mongolian" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Mongolian" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モンゴル Unicode ブロックを取得します (1800 U +0-U +0 18AF)。</summary>
+        <value>モンゴル Unicode ブロック (1800 U +0-U +0 18AF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Myanmar">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Myanmar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Myanmar" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Myanmar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ミャンマー Unicode ブロックを取得します (1000 U +0-U +0 109F)。</summary>
+        <value>ミャンマー Unicode ブロック (1000 U +0-U +0 109F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MyanmarExtendedA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MyanmarExtendedA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MyanmarExtendedA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MyanmarExtendedA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ミャンマー Extended-A Unicode ブロックを取得します (AA60 + U-U + AA7F)。</summary>
+        <value>ミャンマー Extended-A Unicode ブロック (AA60 + U-U + AA7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MyanmarExtendedB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange MyanmarExtendedB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange MyanmarExtendedB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.MyanmarExtendedB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ミャンマー拡張 B Unicode ブロックを取得します (A9E0 + U-U + A9FF)。</summary>
+        <value>ミャンマー拡張 B Unicode ブロック (A9E0 + U-U + A9FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewTaiLue">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange NewTaiLue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange NewTaiLue" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.NewTaiLue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい末尾 Lue Unicode ブロックを取得します (1980 U +0-U +0 19DF)。</summary>
+        <value>新しい末尾 Lue Unicode ブロック (1980 U +0-U +0 19DF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NKo">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange NKo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange NKo" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.NKo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NKo Unicode ブロックを取得します (U +0 07c 0-U +0 07FF)。</summary>
+        <value>NKo Unicode ブロック (U +0 07c 0-U +0 07FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange None { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange None" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.None" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の範囲の Unicode を取得します。 </summary>
+        <value>要素のない Unicode 範囲です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange NumberForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange NumberForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.NumberForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>番号形式の Unicode ブロックを取得します (2150 U +0-U +0 218F)。</summary>
+        <value>番号形式の Unicode ブロック (2150 U +0-U +0 218F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ogham">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Ogham { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Ogham" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Ogham" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ogham Unicode ブロックを取得します (1680 U +0-U +0 169F)。</summary>
+        <value>Ogham Unicode ブロック (1680 U +0-U +0 169F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OlChiki">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange OlChiki { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange OlChiki" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.OlChiki" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ol チキ文字の Unicode ブロックを取得します (U + 1 C 50-U +0 1C7F)。</summary>
+        <value>Ol チキ文字の Unicode ブロック (U + 1 C 50-U +0 1C7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpticalCharacterRecognition">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange OpticalCharacterRecognition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange OpticalCharacterRecognition" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.OpticalCharacterRecognition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode の光学式文字認識のブロックを取得します (2440 U +0-U +0 245F)。</summary>
+        <value>光学式文字認識 Unicode ブロック (2440 U +0-U +0 245F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Oriya">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Oriya { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Oriya" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Oriya" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オリヤー語の Unicode ブロックを取得します (0B00 U +0-U +0 0B7F)。</summary>
+        <value>オリヤー語の Unicode ブロック (0B00 U +0-U +0 0B7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Phagspa">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Phagspa { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Phagspa" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Phagspa" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Phags pa Unicode ブロックを取得します (A840 + U-U + A87F)。</summary>
+        <value>Phags pa Unicode ブロック (A840 + U-U + A87F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhoneticExtensions">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange PhoneticExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange PhoneticExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.PhoneticExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルビの拡張機能 Unicode ブロックを取得します (U + 1 D 00-U +0 1D7F)。</summary>
+        <value>ルビの拡張機能 Unicode ブロック (U + 1 D 00-U +0 1D7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhoneticExtensionsSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange PhoneticExtensionsSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange PhoneticExtensionsSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.PhoneticExtensionsSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルビの拡張機能の補足 Unicode ブロックを取得します (U + 1 D 80-U +0 1DBF)。</summary>
+        <value>ルビの拡張機能の補足 Unicode ブロック (U + 1 D 80-U +0 1DBF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rejang">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Rejang { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Rejang" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Rejang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルジャン Unicode ブロックを取得します (A930 + U-U + A95F)。</summary>
+        <value>ルジャン Unicode ブロック (A930 + U-U + A95F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Runic">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Runic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Runic" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Runic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Runic Unicode ブロックを取得します (16A0 U +0-U + 16 ff)。</summary>
+        <value>Runic Unicode ブロック (16A0 U +0-U + 16 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Samaritan">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Samaritan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Samaritan" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Samaritan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Samaritan Unicode ブロックを取得します (0800 U +0-U +0 083F)。</summary>
+        <value>Samaritan Unicode ブロック (0800 U +0-U +0 083F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Saurashtra">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Saurashtra { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Saurashtra" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Saurashtra" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字の Unicode ブロックを取得します (A880 + U-U + A8DF)。</summary>
+        <value>文字の Unicode ブロック (A880 + U-U + A8DF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sinhala">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Sinhala { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Sinhala" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Sinhala" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンハラ語の Unicode ブロックを取得します (U +0 0 D 80-U +0 0DFF)。</summary>
+        <value>シンハラ語の Unicode ブロック (U +0 0 D 80-U +0 0DFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallFormVariants">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SmallFormVariants { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SmallFormVariants" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SmallFormVariants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小規模の形式のバリアント Unicode ブロックを取得します (FE50 + U-U + FE6F)。</summary>
+        <value>小規模の形式のバリアント Unicode ブロック (FE50 + U-U + FE6F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpacingModifierLetters">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SpacingModifierLetters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SpacingModifierLetters" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SpacingModifierLetters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>間隔修飾子文字の Unicode ブロックを取得します (02B0 U +0-U +0 02 ff)。</summary>
+        <value>間隔修飾子文字の Unicode ブロック (02B0 U +0-U +0 02 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Specials">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Specials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Specials" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Specials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特集 Unicode ブロックを取得します (U + FFF0-U+FFFF)。</summary>
+        <value>特集 Unicode ブロック (U + FFF0-U+FFFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sundanese">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Sundanese { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Sundanese" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Sundanese" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として、スンダ文字の Unicode ブロックを取得します (1B80 U +0-U +0 1BBF)。</summary>
+        <value>として、スンダ文字の Unicode ブロック (1B80 U +0-U +0 1BBF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SundaneseSupplement">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SundaneseSupplement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SundaneseSupplement" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SundaneseSupplement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として、スンダ文字 Supplement Unicode ブロックを取得します (1CC0 U +0-U +0 1CCF)。</summary>
+        <value>として、スンダ文字 Supplement Unicode ブロック (1CC0 U +0-U +0 1CCF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuperscriptsandSubscripts">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SuperscriptsandSubscripts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SuperscriptsandSubscripts" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SuperscriptsandSubscripts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上付き文字と下付き文字の Unicode ブロックの取得 (2070 U +0-U +0 209F)。</summary>
+        <value>上付き文字とブロックの添字の Unicode (2070 U +0-U +0 209F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupplementalArrowsA">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SupplementalArrowsA { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SupplementalArrowsA" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SupplementalArrowsA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補足の Arrows-A Unicode ブロックを取得します (27F0 U +0-U +0 27 ff)。</summary>
+        <value>補足の Arrows-A Unicode ブロック (27F0 U +0-U +0 27 ff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupplementalArrowsB">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SupplementalArrowsB { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SupplementalArrowsB" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SupplementalArrowsB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補足の矢印 B Unicode ブロックを取得します (2900 U +0-U +0 297F)。</summary>
+        <value>補足の矢印 B Unicode ブロック (2900 U +0-U +0 297F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupplementalMathematicalOperators">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SupplementalMathematicalOperators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SupplementalMathematicalOperators" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SupplementalMathematicalOperators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補足の算術演算子 Unicode ブロックを取得します (2A00 U +0-U + 2 aff)。</summary>
+        <value>補足の算術演算子 Unicode ブロック (2A00 U +0-U + 2 aff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupplementalPunctuation">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SupplementalPunctuation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SupplementalPunctuation" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SupplementalPunctuation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>補足の句読点 Unicode ブロックを取得します (2E00 U +0-U +0 2E7F)。</summary>
+        <value>補足の句読点 Unicode ブロック (2E00 U +0-U +0 2E7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SylotiNagri">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange SylotiNagri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange SylotiNagri" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.SylotiNagri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シロティ ナグリ Unicode ブロックを取得します (A800 + U-U + A82F)。</summary>
+        <value>シロティ ナグリ Unicode ブロック (A800 + U-U + A82F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Syriac">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Syriac { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Syriac" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Syriac" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリア語の Unicode ブロックを取得します (0700 U +0-U +0 074F)。</summary>
+        <value>シリア語の Unicode ブロック (0700 U +0-U +0 074F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tagalog">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Tagalog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Tagalog" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Tagalog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タガログ語の Unicode ブロックを取得します (1700 U +0-U +0 171F)。</summary>
+        <value>タガログ語の Unicode ブロック (1700 U +0-U +0 171F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tagbanwa">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Tagbanwa { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Tagbanwa" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Tagbanwa" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タグバンワ文字の Unicode ブロックを取得します (1760 U +0-U +0 177F)。</summary>
+        <value>タグバンワ文字の Unicode ブロック (1760 U +0-U +0 177F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaiLe">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange TaiLe { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange TaiLe" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.TaiLe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾 Le Unicode ブロックを取得します (1950 U +0-U +0 197 f)。</summary>
+        <value>末尾 Le Unicode ブロック (1950 U +0-U +0 197 f)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaiTham">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange TaiTham { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange TaiTham" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.TaiTham" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾 Tham Unicode ブロックを取得します (1A20 U +0-U +0 1AAF)。</summary>
+        <value>末尾 Tham Unicode ブロック (1A20 U +0-U +0 1AAF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaiViet">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange TaiViet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange TaiViet" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.TaiViet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾ベトナム Unicode ブロックを取得します (AA80 + U-U + AADF)。</summary>
+        <value>末尾ベトナム Unicode ブロック (AA80 + U-U + AADF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tamil">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Tamil { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Tamil" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Tamil" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タミール語の Unicode ブロックを取得します (0B80 U +0-U +0 0 bff)。</summary>
+        <value>タミール語の Unicode ブロック (0B82 U +0-U +0 0BFA)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Telugu">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Telugu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Telugu" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Telugu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テルグ語の Unicode ブロックを取得します (U +0 0 C 00-U +0 0C7F)。</summary>
+        <value>テルグ語の Unicode ブロック (U +0 0 C 00-U +0 0C7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thaana">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Thaana { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Thaana" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Thaana" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターナ文字の Unicode ブロックを取得します (0780 U +0-U +0 07BF)。</summary>
+        <value>ターナ文字の Unicode ブロック (0780 U +0-U +0 07BF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thai">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Thai { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Thai" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Thai" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイ語の Unicode ブロックを取得します (0E00 U +0-U +0 0E7F)。</summary>
+        <value>タイ語の Unicode ブロック (0E00 U +0-U +0 0E7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tibetan">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Tibetan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Tibetan" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Tibetan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チベット Unicode ブロックを取得します (0F00 U +0-U +0 0 fff)。</summary>
+        <value>チベット Unicode ブロック (0F00 U +0-U +0 0 fff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tifinagh">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Tifinagh { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Tifinagh" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Tifinagh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ティフナグ Unicode ブロックを取得します (U + 2 D 30-U +0 2D7F)。</summary>
+        <value>ティフナグ Unicode ブロック (U + 2 D 30-U +0 2D7F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnifiedCanadianAboriginalSyllabics">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange UnifiedCanadianAboriginalSyllabics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange UnifiedCanadianAboriginalSyllabics" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.UnifiedCanadianAboriginalSyllabics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カナダの先住民音節文字 Unicode の一元化されたブロックを取得します (1400 U +0-U +0 167F)。</summary>
+        <value>カナダの先住民音節文字 Unicode の Unified ブロック (1400 U +0-U +0 167F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnifiedCanadianAboriginalSyllabicsExtended">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange UnifiedCanadianAboriginalSyllabicsExtended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange UnifiedCanadianAboriginalSyllabicsExtended" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.UnifiedCanadianAboriginalSyllabicsExtended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unified カナダ先住民音節文字拡張 Unicode ブロックを取得します (18B0 U +0-U +0 18FF)。</summary>
+        <value>Unified カナダ先住民音節文字拡張 Unicode ブロック (18B0 U +0-U +0 18FF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Vai">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange Vai { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange Vai" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.Vai" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヴァイ Unicode ブロックを取得します (A500 + U-U + A63F)。</summary>
+        <value>ヴァイ Unicode ブロック (A500 + U-U + A63F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VariationSelectors">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange VariationSelectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange VariationSelectors" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.VariationSelectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バリエーション セレクター Unicode ブロックを取得します (FE00 + U-U + FE0F)。</summary>
+        <value>バリエーション セレクター Unicode ブロック (FE00 + U-U + FE0F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VedicExtensions">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange VedicExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange VedicExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.VedicExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張機能の Vedic Unicode ブロックを取得します (U + 1 CD 0-U +0 1CFF)。</summary>
+        <value>拡張機能の Vedic Unicode ブロック (U + 1 CD 0-U +0 1CFF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalForms">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange VerticalForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange VerticalForms" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.VerticalForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直方向のフォーム Unicode ブロックを取得します (FE10 + U-U + FE1F)。</summary>
+        <value>垂直方向のフォーム Unicode ブロック (FE10 + U-U + FE1F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YijingHexagramSymbols">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange YijingHexagramSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange YijingHexagramSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.YijingHexagramSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>易六線星形シンボル Unicode ブロックを取得します (4DC0 U +0-U + 4 dff)。</summary>
+        <value>易六線星形シンボル Unicode ブロック (4DC0 U +0-U + 4 dff)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YiRadicals">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange YiRadicals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange YiRadicals" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.YiRadicals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イ語部首 Unicode ブロックを取得します (A490 + U-U + A4CF)。</summary>
+        <value>イ語部首 Unicode ブロック (A490 + U-U + A4CF)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YiSyllables">
+      <MemberSignature Language="C#" Value="public static System.Text.Unicode.UnicodeRange YiSyllables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Text.Unicode.UnicodeRange YiSyllables" />
+      <MemberSignature Language="DocId" Value="P:System.Text.Unicode.UnicodeRanges.YiSyllables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Unicode.UnicodeRange</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イ語音節 Unicode ブロックを取得します (A000 + U-U + A48F)。</summary>
+        <value>イ語音節 Unicode ブロック (A000 + U-U + A48F)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

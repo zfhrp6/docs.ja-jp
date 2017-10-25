@@ -1,0 +1,238 @@
+<Type Name="HttpListenerElement" FullName="System.Net.Configuration.HttpListenerElement">
+  <TypeSignature Language="C#" Value="public sealed class HttpListenerElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpListenerElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.HttpListenerElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイルで HttpListener 要素を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに対応して、 \<httpListener > 要素 (ネットワーク設定) の構成要素。 このクラスは、構成ファイルに格納できる情報にプログラムでアクセスを提供します。  
+  
+ <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティを示す場合<xref:System.Net.HttpListener>変換された URI でパーセント エンコード値を変換し、その他の正規化手順は実行ではなく生のエスケープ解除された URI を使用します。  
+  
+ ときに、<xref:System.Net.HttpListener>インスタンスを介して要求を受け取ると、`http.sys`サービスによって提供される URI 文字列のインスタンス作成`http.sys`、として公開して、<xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType>プロパティです。  
+  
+ `http.sys`サービスは 2 つの要求の URI 文字列を公開します。  
+  
+-   生の URI  
+  
+-   変換された URI  
+  
+ 生の URI は、<xref:System.Uri?displayProperty=nameWithType>の HTTP 要求の要求行で提供されます。  
+  
+ `GET /path/`  
+  
+ `Host: www.contoso.com`  
+  
+ によって提供される生の URI `http.sys` 、上記で説明した要求は「/path/」です。 これは、ネットワーク経由で送信された HTTP 動詞の後に、文字列を表します。  
+  
+ `http.sys`サービスが HTTP 要求の行で指定された URI を使用して、要求で提供される情報から変換された URI を作成しに、元のサーバー要求を決定するホスト ヘッダーを転送する必要があります。 これは、一連の登録済み URI プレフィックスの要求からの情報を比較することによって行います。 HTTP サーバー SDK のドキュメントとして変換されたこの URI を指す、 [HTTP_COOKED_URL](http://go.microsoft.com/fwlink/?LinkID=166108)構造体。  
+  
+ 登録されている URI プレフィックスを持つ要求を比較できるようにするには、するために、要求に正規化をいくつか行う必要があります。 変換された URI 上のサンプルではようになります。  
+  
+ `http://www.contoso.com/path/`  
+  
+ `http.sys`を組み合わせたものをサービス、<xref:System.Uri.Host%2A?displayProperty=nameWithType>変換された URI を作成する要求行の文字列とプロパティの値。 さらに、`http.sys`と<xref:System.Uri?displayProperty=nameWithType>クラスも、次の操作します。  
+  
+-   エスケープを解除すべてパーセント エンコードされた値。  
+  
+-   Utf-16 文字表記に非 ASCII 文字をパーセント エンコードに変換します。 Unicode 文字 (Unicode エンコーディング %uxxxx 形式を使用して) だけでなく utf-8 と ANSI や DBCS 文字はサポートされていることに注意してください。  
+  
+-   パスの圧縮など、他の正規化の手順を実行します。  
+  
+ 要求には、パーセントでエンコードされた値に使用されるエンコーディングに関する情報が含まれていない、ためには、パーセント エンコード値を解析するだけ、正しいエンコーディングを決定することはできません。  
+  
+ したがって`http.sys`プロセスを変更するための 2 つのレジストリ キーを提供します。  
+  
+|レジストリ キー|既定値|説明|  
+|------------------|-------------------|-----------------|  
+|EnableNonUTF8|1|0 の場合、 `http.sys` UTF で 8 でエンコードされた Url のみを受け入れます。<br /><br /> 0 以外の場合`http.sys`も要求で ANSI でエンコードされたまたは DBCS でエンコードされた Url を受け取ります。|  
+|FavorUTF8|1|0 以外の場合`http.sys`し、変換に失敗したし、EnableNonUTF8 が 0 でない場合に utf-8 として URL を先にデコードすると常に、Http.sys を ANSI または DBCS としてデコードしようとします。<br /><br /> 0 の場合 (そして EnableNonUTF8 0 ではない)、`http.sys`場合は、その ANSI または DBCS; としてデコードする試行が成功しない、utf-8 の変換を試みます。|  
+  
+ ときに<xref:System.Net.HttpListener>要求を受信して変換された URI を使用して`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ Uri の文字と数字以外の文字をサポートする必要があります。 例としては次の URI は、顧客の顧客情報の取得に使用される「1/3812」番号します。  
+  
+ `http://www.contoso.com/Customer('1%2F3812')/`  
+  
+ Uri (%2f) で、パーセント エンコードのスラッシュを注意してください。 これは、ここでは、スラッシュ文字を表し、データはパス区切り記号ではないため、必要に応じて。  
+  
+ Uri のコンス トラクターに文字列を渡すことは、次の URI になります。  
+  
+ `http://www.contoso.com/Customer('1/3812')/`  
+  
+ 分割して、パスのセグメントに、次の要素の結果になります。  
+  
+ `Customer('1`  
+  
+ `3812')`  
+  
+ これは、要求の送信元の目的ではありません。  
+  
+ 場合、<xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティが false に設定し、<xref:System.Net.HttpListener>要求を受信から変換された URI ではなく生の URI を使用して、`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpListenerElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.HttpListenerElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.HttpListenerElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeouts">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.HttpListenerTimeoutsElement Timeouts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Configuration.HttpListenerTimeoutsElement Timeouts" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerElement.Timeouts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("timeouts")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.HttpListenerTimeoutsElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値に使用するタイムアウト要素を取得、<see cref="T:System.Net.HttpListener" />オブジェクト。</summary>
+        <value><see cref="T:System.Net.Configuration.HttpListenerTimeoutsElement" /> を返します。  
+  
+ 使用するタイムアウトの要素、<see cref="T:System.Net.HttpListener" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnescapeRequestUrl">
+      <MemberSignature Language="C#" Value="public bool UnescapeRequestUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UnescapeRequestUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("unescapeRequestUrl", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どうかを示す値を取得<see cref="T:System.Net.HttpListener" />変換された URI ではなく生のエスケープ解除された URI を使用します。</summary>
+        <value>どうかを示すブール値<see cref="T:System.Net.HttpListener" />は変換された URI ではなく、生のエスケープ解除された URI を使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティを示す場合<xref:System.Net.HttpListener>変換された URI でパーセント エンコード値を変換し、その他の正規化手順は実行ではなく生のエスケープ解除された URI を使用します。  
+  
+ ときに、<xref:System.Net.HttpListener>インスタンスを介して要求を受け取ると、`http.sys`サービスによって提供される URI 文字列のインスタンス作成`http.sys`、として公開して、<xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType>プロパティです。  
+  
+ `http.sys`サービスは 2 つの要求の URI 文字列を公開します。  
+  
+-   生の URI  
+  
+-   変換された URI  
+  
+ 生の URI は、<xref:System.Uri?displayProperty=nameWithType>の HTTP 要求の要求行で提供されます。  
+  
+ `GET /path/`  
+  
+ `Host: www.contoso.com`  
+  
+ によって提供される生の URI `http.sys` 、上記で説明した要求は「/path/」です。 これは、ネットワーク経由で送信された HTTP 動詞の後に、文字列を表します。  
+  
+ `http.sys`サービスが HTTP 要求の行で指定された URI を使用して、要求で提供される情報から変換された URI を作成しに、元のサーバー要求を決定するホスト ヘッダーを転送する必要があります。 これは、一連の登録済み URI プレフィックスの要求からの情報を比較することによって行います。 HTTP サーバー SDK のドキュメントとして変換されたこの URI を指す、 [HTTP_COOKED_URL](http://go.microsoft.com/fwlink/?LinkID=166108)構造体。  
+  
+ 登録されている URI プレフィックスを持つ要求を比較できるようにするには、するために、要求に正規化をいくつか行う必要があります。 変換された URI 上のサンプルではようになります。  
+  
+ `http://www.contoso.com/path/`  
+  
+ `http.sys`を組み合わせたものをサービス、<xref:System.Uri.Host%2A?displayProperty=nameWithType>変換された URI を作成する要求行の文字列とプロパティの値。 さらに、`http.sys`と<xref:System.Uri?displayProperty=nameWithType>クラスも、次の操作します。  
+  
+-   エスケープを解除すべてパーセント エンコードされた値。  
+  
+-   Utf-16 文字表記に非 ASCII 文字をパーセント エンコードに変換します。 Unicode 文字 (Unicode エンコーディング %uxxxx 形式を使用して) だけでなく utf-8 と ANSI や DBCS 文字はサポートされていることに注意してください。  
+  
+-   パスの圧縮など、他の正規化の手順を実行します。  
+  
+ 要求には、パーセントでエンコードされた値に使用されるエンコーディングに関する情報が含まれていない、ためには、パーセント エンコード値を解析するだけ、正しいエンコーディングを決定することはできません。  
+  
+ したがって`http.sys`プロセスを変更するための 2 つのレジストリ キーを提供します。  
+  
+|レジストリ キー|既定値|説明|  
+|------------------|-------------------|-----------------|  
+|EnableNonUTF8|1|0 の場合、 `http.sys` UTF で 8 でエンコードされた Url のみを受け入れます。<br /><br /> 0 以外の場合`http.sys`も要求で ANSI でエンコードされたまたは DBCS でエンコードされた Url を受け取ります。|  
+|FavorUTF8|1|0 以外の場合`http.sys`し、変換に失敗したし、EnableNonUTF8 が 0 でない場合に utf-8 として URL を先にデコードすると常に、Http.sys を ANSI または DBCS としてデコードしようとします。<br /><br /> 0 の場合 (そして EnableNonUTF8 0 ではない)、`http.sys`場合は、その ANSI または DBCS; としてデコードする試行が成功しない、utf-8 の変換を試みます。|  
+  
+ ときに<xref:System.Net.HttpListener>要求を受信して変換された URI を使用して`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ Uri の文字と数字以外の文字をサポートする必要があります。 例としては次の URI は、顧客の顧客情報の取得に使用される「1/3812」番号します。  
+  
+ `http://www.contoso.com/Customer('1%2F3812')/`  
+  
+ Uri (%2f) で、パーセント エンコードのスラッシュを注意してください。 これは、ここでは、スラッシュ文字を表し、データはパス区切り記号ではないため、必要に応じて。  
+  
+ Uri のコンス トラクターに文字列を渡すことは、次の URI になります。  
+  
+ `http://www.contoso.com/Customer('1/3812')/`  
+  
+ 分割して、パスのセグメントに、次の要素の結果になります。  
+  
+ `Customer('1`  
+  
+ `3812')`  
+  
+ これは、要求の送信元の目的ではありません。  
+  
+ 場合、<xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティが false に設定し、<xref:System.Net.HttpListener>要求を受信から変換された URI ではなく生の URI を使用して、`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

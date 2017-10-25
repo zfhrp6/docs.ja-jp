@@ -1,0 +1,41 @@
+<Type Name="HelpEventHandler" FullName="System.Windows.Forms.HelpEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void HelpEventHandler(object sender, HelpEventArgs hlpevent);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HelpEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HelpEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="hlpevent" Type="System.Windows.Forms.HelpEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="hlpevent">イベント データを格納している <see cref="T:System.Windows.Forms.HelpEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.Control.HelpRequested" /> の <see cref="T:System.Windows.Forms.Control" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HelpEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では、処理、 <xref:System.Windows.Forms.Control.HelpRequested> 4 つのアドレス フィールドが含まれるフォーム上のカスタム ヘルプ コンテンツを表示するイベントです。 <xref:System.Windows.Forms.Control.HelpRequested>住所フィールド、フォーカスのある F1 キーを押すかして、状況依存のヘルプ ボタンを使用して、ヘルプ カーソル アドレス フィールドをクリックすると、イベントが発生します。 <xref:System.Windows.Forms.HelpEventArgs.Handled%2A>プロパティが true に設定することを示すため、`HelpRequested`イベントを処理します。 この例でヘルプ テキストを格納する、<xref:System.Windows.Forms.Control.Tag%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.HelpEventHandler#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpEventHandler/CPP/helpevent.cpp#1)]
+ [!code-csharp[System.Windows.Forms.HelpEventHandler#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpEventHandler/CS/helpevent.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpEventHandler/VB/helpevent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

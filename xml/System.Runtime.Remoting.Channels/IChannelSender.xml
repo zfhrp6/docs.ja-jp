@@ -1,0 +1,83 @@
+<Type Name="IChannelSender" FullName="System.Runtime.Remoting.Channels.IChannelSender">
+  <TypeSignature Language="C#" Value="public interface IChannelSender : System.Runtime.Remoting.Channels.IChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelSender implements class System.Runtime.Remoting.Channels.IChannel" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IChannelSender" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>送信者のチャネルに必要な関数とプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルの送信側に公開する必要があります、<xref:System.Runtime.Remoting.Channels.IChannelSender>インターフェイスです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IChannelSender#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IChannelSender/CPP/ichannelsender_2_client.cpp#1)]
+ [!code-csharp[IChannelSender#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IChannelSender/CS/ichannelsender_2_client.cs#1)]
+ [!code-vb[IChannelSender#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IChannelSender/VB/ichannelsender_2_client.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateMessageSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink (string url, object remoteChannelData, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink(string url, object remoteChannelData, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IChannelSender.CreateMessageSink(System.String,System.Object,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="remoteChannelData" Type="System.Object" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">新しいシンクがメッセージを配信する先の URL です。 指定できます<see langword="null" />です。</param>
+        <param name="remoteChannelData">新しいシンクがメッセージを配信する先のリモート ホストのチャネル データ オブジェクト。 指定できます<see langword="null" />です。</param>
+        <param name="objectURI">このメソッドが戻るとき、指定した URL またはチャネル データ オブジェクトにメッセージを配信する、新しいメッセージのチャネル シンクの URI を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。</summary>
+        <returns>指定した URL またはチャネル データ オブジェクトにメッセージを配信するチャネル メッセージ シンクまたは<see langword="null" />チャネルは、特定のエンドポイントに接続できない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.IChannelSender.CreateMessageSink%2A>メソッドは、指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。 場合、`uri`パラメーターは`null`、`remoteChannelData`パラメーターは、シンクのターゲットとして使用します。 いずれか、`url`パラメーターまたは`remoteChannelData`パラメーターを指定できます`null`、両方は使用しません。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IChannelSender#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IChannelSender/CPP/ichannelsender_2_client.cpp#1)]
+ [!code-csharp[IChannelSender#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IChannelSender/CS/ichannelsender_2_client.cs#1)]
+ [!code-vb[IChannelSender#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IChannelSender/VB/ichannelsender_2_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

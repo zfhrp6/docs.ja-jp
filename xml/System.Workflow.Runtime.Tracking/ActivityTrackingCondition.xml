@@ -1,0 +1,188 @@
+<Type Name="ActivityTrackingCondition" FullName="System.Workflow.Runtime.Tracking.ActivityTrackingCondition">
+  <TypeSignature Language="C#" Value="public class ActivityTrackingCondition : System.Workflow.Runtime.Tracking.TrackingCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActivityTrackingCondition extends System.Workflow.Runtime.Tracking.TrackingCondition" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackingCondition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Tracking.TrackingCondition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定した比較演算子を使って、指定した値とアクティビティ メンバーの値を比較するための条件を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> を使用して、<xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> または <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> を制御できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingCondition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターを使用する場合は、明示的に <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member%2A> を設定する必要があります。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value%2A> も設定する必要があります。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Operator%2A> の既定値は `Equals` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingCondition (string member, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string member, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="member">ドットで区切られたアクティビティ メンバーの名前。</param>
+        <param name="value">比較される値</param>
+        <summary>アクティビティ メンバーおよび比較される値を指定して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member%2A> は `member` に設定され、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value%2A> は `value` に設定されます。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Operator%2A> の既定値は `Equals` です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="member" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public override string Member { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Member" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value" /> と比較されるアクティビティ メンバーの名前を取得または設定します。</summary>
+        <value>ドットで区切られたアクティビティ メンバーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティのプロパティやフィールド、アクティビティのプロパティやフィールドのメンバー、または <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するアクティビティのプロパティやフィールド (あるいはどちらか一方のメンバー) の単一要素を指定できます。 たとえば、コレクションの 1 つの要素を指定できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> の既定のコンストラクターを使用する場合は、明示的に <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member%2A> を設定する必要があります。  
+  
+ 指定したアクティビティ メンバーの値は、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value%2A> を適用することによって <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Operator%2A> と比較されます。  
+  
+   
+  
+## Examples  
+ Member プロパティにアクセスするサンプル コードを次に示します。  この例は、追跡プロファイル デザイナーの SDK サンプルです。  詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#120](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#120)]
+ [!code-vb[WF_Samples#120](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">条件を評価した結果、<see cref="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">条件を評価した結果、<see cref="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.MissingMemberException">条件を評価した結果、<see cref="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member" /> が有効なアクティビティ メンバーを参照していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Operator">
+      <MemberSignature Language="C#" Value="public override System.Workflow.Runtime.Tracking.ComparisonOperator Operator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.Runtime.Tracking.ComparisonOperator Operator" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Operator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ComparisonOperator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較で使われる演算子を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Tracking.ComparisonOperator" /> 値のいずれか。 既定値は、<see langword="Equals" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在サポートされているのは、`Equals` と `NotEquals` だけです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member" /> と比較される値。</summary>
+        <value>比較で使用する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value%2A> は、  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Member%2A> を適用することによって <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Operator%2A> の値と比較されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> の既定のコンストラクターを使用する場合は、明示的に <xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition.Value%2A> を設定する必要があります。  
+  
+   
+  
+## Examples  
+ Value プロパティにアクセスするサンプル コードを次に示します。  この例は、追跡プロファイル デザイナーの SDK サンプルです。  詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#120](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#120)]
+ [!code-vb[WF_Samples#120](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

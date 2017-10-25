@@ -1,0 +1,183 @@
+<Type Name="IPHostEntry" FullName="System.Net.IPHostEntry">
+  <TypeSignature Language="C#" Value="public class IPHostEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IPHostEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IPHostEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NameResolution</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット ホスト アドレス情報のコンテナー クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPHostEntry>クラス ドメイン ネーム システム (DNS) ホスト名のエイリアスの配列と一致する IP アドレスの配列とを関連付けます。  
+  
+ <xref:System.Net.IPHostEntry>クラスは、ヘルパー クラスとして使用、<xref:System.Net.Dns>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例については、ホスト www.contoso.com DNS データベースにクエリを実行し、情報が返されます、<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[Classic Dns Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic Dns Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Dns Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic Dns Example/CS/source.cs#1)]
+ [!code-vb[Classic Dns Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic Dns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPHostEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPHostEntry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.IPHostEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressList">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress[] AddressList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress[] AddressList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPHostEntry.AddressList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはホストに関連付けられている IP アドレスのリストを設定します。</summary>
+        <value>型の配列<see cref="T:System.Net.IPAddress" />に含まれているホスト名に解決される IP アドレスを格納している、<see cref="P:System.Net.IPHostEntry.Aliases" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPHostEntry.AddressList%2A>プロパティに関連付けられている IP アドレスへのアクセスを<xref:System.Net.IPHostEntry>です。  
+  
+ [!code-cpp[IPHostEntry_AddressList#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IPHostEntry_AddressList/CPP/iphostentry_addresslist.cpp#1)]
+ [!code-csharp[IPHostEntry_AddressList#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IPHostEntry_AddressList/CS/iphostentry_addresslist.cs#1)]
+ [!code-vb[IPHostEntry_AddressList#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPHostEntry_AddressList/VB/iphostentry_addresslist.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Aliases">
+      <MemberSignature Language="C#" Value="public string[] Aliases { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Aliases" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPHostEntry.Aliases" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはホストに関連付けられているエイリアスの一覧を設定します。</summary>
+        <value>アドレスの ip アドレスに解決される DNS 名を含む文字列の配列、<see cref="P:System.Net.IPHostEntry.AddressList" />プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostName">
+      <MemberSignature Language="C#" Value="public string HostName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HostName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPHostEntry.HostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはホストの DNS 名を設定します。</summary>
+        <value>サーバーのプライマリ ホスト名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPHostEntry.HostName%2A>プロパティには、サーバーのプライマリ ホスト名が含まれています。 サーバーの DNS エントリには、その他のエイリアスが定義されている場合に使用されます、<xref:System.Net.IPHostEntry.Aliases%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPHostEntry.HostName%2A>プライマリ ホスト名を取得するプロパティです。  
+  
+ [!code-cpp[IPHostEntry_AddressList#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IPHostEntry_AddressList/CPP/iphostentry_addresslist.cpp#1)]
+ [!code-csharp[IPHostEntry_AddressList#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IPHostEntry_AddressList/CS/iphostentry_addresslist.cs#1)]
+ [!code-vb[IPHostEntry_AddressList#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPHostEntry_AddressList/VB/iphostentry_addresslist.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

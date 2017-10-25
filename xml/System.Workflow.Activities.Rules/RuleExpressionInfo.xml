@@ -1,0 +1,64 @@
+<Type Name="RuleExpressionInfo" FullName="System.Workflow.Activities.Rules.RuleExpressionInfo">
+  <TypeSignature Language="C#" Value="public class RuleExpressionInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuleExpressionInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleExpressionInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスのインスタンスは、<see cref="M:System.Workflow.Activities.Rules.IRuleExpression.Validate(System.Workflow.Activities.Rules.RuleValidation,System.Boolean)" /> 式の <see cref="T:System.Workflow.Activities.Rules.IRuleExpression" /> メソッドによって返されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleExpressionInfo.ExpressionType%2A> の <xref:System.Workflow.Activities.Rules.RuleExpressionInfo> プロパティは、式の戻り値型を表します。 たとえば比較演算式を評価した場合の戻り値型は Boolean、プロパティにアクセスする式の戻り値は整数型となります。  
+  
+ <xref:System.Workflow.Activities.Rules.RuleExpressionInfo> に格納された情報を使って、式の使い方を検証できます。 たとえば、2 つの式を比較する場合、いずれかの式が Boolean 型を返すときは "より大きい" 比較演算子を使用できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleExpressionInfo (Type expressionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type expressionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionInfo.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expressionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="expressionType">式の <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleExpressionInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionType">
+      <MemberSignature Language="C#" Value="public Type ExpressionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExpressionType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleExpressionInfo.ExpressionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の型を取得します。</summary>
+        <value>式の <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

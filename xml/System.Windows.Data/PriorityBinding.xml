@@ -1,0 +1,186 @@
+<Type Name="PriorityBinding" FullName="System.Windows.Data.PriorityBinding">
+  <TypeSignature Language="C#" Value="public class PriorityBinding : System.Windows.Data.BindingBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PriorityBinding extends System.Windows.Data.BindingBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.PriorityBinding" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.BindingBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Bindings")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを記述<see cref="T:System.Windows.Data.Binding" />正常に値を生成するコレクション内の最初のバインドからその値を受け取って、1 つのバインド ターゲット プロパティに関連付けられているオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.PriorityBinding>バインディングの一覧にバインディング ターゲット (ターゲット) プロパティを関連付けることができます。 アクティブなバインディングを正常に値を返す最初のバインドになります。  
+  
+ バインディング場合、正常に値を返します。  
+  
+1.  バインディング ソースへのパスを正常に解決します。  
+  
+2.  値コンバーター、存在する場合は、結果の値を変換することです。  
+  
+3.  結果の値は、target プロパティに有効です。  
+  
+ 値<xref:System.Windows.DependencyProperty.UnsetValue?displayProperty=nameWithType>成功の戻り値とは見なされません。  
+  
+ バインドの優先度は、一覧内での順番によって決定されます。 一覧の先頭に表示されるバインディングは、最高の優先順位をでいます。  
+  
+ バインディング エンジンが、一覧の最初のバインドで始まり、そのバインディングが正常に値を返すかどうかを確認そのバインディングからの値が使用されます。 バインディング エンジンが正常に値を返すかどうかを決定する 2 つ目のバインドを調べ、最初のバインドで、値が正常に返されない場合場合は、アクティブな値が 2 つ目のバインドからの値になります。 この検証プロセスのバインドの一覧の末尾まで続きます。 バインディングを使用して正常に値を返すなしのバインドの場合、<xref:System.Windows.Data.BindingBase.FallbackValue%2A>です。  
+  
+ すべてのバインディングでの変更をリッスンするようにバインディング エンジンが続行されます。 任意の時点より高い優先順位を持つバインドのいずれかの値を返す場合、正常に、そのバインディングの値アクティブな値になり、現在の値が置き換えられます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PriorityBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.PriorityBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bindings">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.Data.BindingBase&gt; Bindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Data.BindingBase&gt; Bindings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.PriorityBinding.Bindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.Data.BindingBase&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Data.Binding" />オブジェクトのこのインスタンス用に確立される<see cref="T:System.Windows.Data.PriorityBinding" />です。</summary>
+        <value><see cref="T:System.Windows.Data.Binding" /> オブジェクトのコレクション。 <see cref="T:System.Windows.Data.PriorityBinding" />現在の型のオブジェクトのみサポートしている<see cref="T:System.Windows.Data.Binding" />および not<see cref="T:System.Windows.Data.MultiBinding" />または<see cref="T:System.Windows.Data.PriorityBinding" />です。 <see cref="T:System.Windows.Data.PriorityBinding" /> オブジェクトに <see cref="T:System.Windows.Data.Binding" /> の子を追加すると、その子が <see cref="T:System.Windows.Data.MultiBinding" /> オブジェクトの <see cref="T:System.Windows.Data.BindingBase" /> コレクションに暗黙的に追加されます。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]は、次の例に示す、コレクション構文を使用して、またはコレクション オブジェクトにアクセスして追加など、さまざまなメソッドを使用します。 コレクション オブジェクトへのアクセスに使用するプロパティは、コレクション自体は読み取り/書き込みは読み取り専用です。  
+  
+<a name="xamlPropertyElementUsage_Bindings"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+    OneOrMoreBindings  
+</object>  
+```  
+  
+<a name="xamlValues_Bindings"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreBindings*  
+ 1 つまたは複数<xref:System.Windows.Data.Binding>オブジェクトです。<xref:System.Windows.Data.PriorityBinding>はサポートされていません<xref:System.Windows.Data.MultiBinding>または<xref:System.Windows.Data.PriorityBinding>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、 \<PriorityBinding.Bindings > は暗黙の型。 <xref:System.Windows.Data.Binding>の確立されているオブジェクト、<xref:System.Windows.Data.PriorityBinding>に暗黙的に追加されます、<xref:System.Windows.Data.BindingBase>コレクション。 詳細については、このトピックの「「プロパティ値」セクションを参照してください。  
+  
+ [!code-xaml[PriorityBinding#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeBindings">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeBindings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeBindings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBinding.ShouldSerializeBindings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスが有効な値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.Data.PriorityBinding.Bindings" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.Data.PriorityBinding.Bindings" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBinding.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.PriorityBinding.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

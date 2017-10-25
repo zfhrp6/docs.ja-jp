@@ -1,0 +1,100 @@
+<Type Name="ReliableMessagingVersion" FullName="System.ServiceModel.ReliableMessagingVersion">
+  <TypeSignature Language="C#" Value="public abstract class ReliableMessagingVersion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ReliableMessagingVersion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ReliableMessagingVersion" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートされる WS-ReliableMessaging プロトコルのバージョンの設定を格納します。 これは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-ReliableMessaging プロトコルには、現在 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] によってサポートされる WS-ReliableMessaging1.1 と WS-ReliableMessagingFebruary2005 という 2 つのバージョンがあります。 WS-ReliableMessaging1.1 は <xref:System.ServiceModel.ReliableMessagingVersion.WSReliableMessaging11%2A> によって返され、WS-ReliableMessagingFebruary2005 は <xref:System.ServiceModel.ReliableMessagingVersion.WSReliableMessagingFebruary2005%2A> によって返されます。 <xref:System.ServiceModel.ReliableMessagingVersion.Default%2A> バージョンは WS-ReliableMessagingFebruary2005 です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ReliableMessagingVersion ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ReliableMessagingVersion.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.ReliableMessagingVersion Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.ReliableMessagingVersion Default" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ReliableMessagingVersion.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReliableMessagingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-ReliableMessaging プロトコルの既定のバージョンを返します。</summary>
+        <value>WS-ReliableMessaging プロトコルの既定のバージョンを表す <see cref="T:System.ServiceModel.ReliableMessagingVersion" /> から派生したインスタンス。 既定のバージョンは WS-ReliableMessagingFebruary2005 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSReliableMessaging11">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.ReliableMessagingVersion WSReliableMessaging11 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.ReliableMessagingVersion WSReliableMessaging11" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ReliableMessagingVersion.WSReliableMessaging11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReliableMessagingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-ReliableMessaging プロトコルのバージョン 1.1 を取得します。</summary>
+        <value>WS-ReliableMessaging 1.1 バージョンを表す <see cref="T:System.ServiceModel.ReliableMessagingVersion" /> から派生したインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSReliableMessagingFebruary2005">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.ReliableMessagingVersion WSReliableMessagingFebruary2005 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.ReliableMessagingVersion WSReliableMessagingFebruary2005" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ReliableMessagingVersion.WSReliableMessagingFebruary2005" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReliableMessagingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-ReliableMessaging プロトコルの February 2005 バージョンを取得します。</summary>
+        <value>WS-ReliableMessagingFebruary2005 バージョンを表す <see cref="T:System.ServiceModel.ReliableMessagingVersion" /> から派生したインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

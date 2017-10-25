@@ -1,0 +1,231 @@
+<Type Name="RemoteWebConfigurationHostServer" FullName="System.Web.Configuration.RemoteWebConfigurationHostServer">
+  <TypeSignature Language="C#" Value="public class RemoteWebConfigurationHostServer : System.Web.Configuration.IRemoteWebConfigurationHostServer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RemoteWebConfigurationHostServer extends System.Object implements class System.Web.Configuration.IRemoteWebConfigurationHostServer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.RemoteWebConfigurationHostServer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.Configuration.IRemoteWebConfigurationHostServer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDual)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("9FDB6D2C-90EA-4e42-99E6-38B96E28698E")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ProgId("System.Web.Configuration.RemoteWebConfigurationHostServerV4_32")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート アクセスの構成データをサポートするために、実行時に内部的に使用します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RemoteWebConfigurationHostServer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成する実行時に内部的に使用される<see cref="T:System.Web.Configuration.RemoteWebConfigurationHostServer" />です。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DoEncryptOrDecrypt">
+      <MemberSignature Language="C#" Value="public string DoEncryptOrDecrypt (bool doEncrypt, string xmlString, string protectionProviderName, string protectionProviderType, string[] paramKeys, string[] paramValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string DoEncryptOrDecrypt(bool doEncrypt, string xmlString, string protectionProviderName, string protectionProviderType, string[] paramKeys, string[] paramValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.DoEncryptOrDecrypt(System.Boolean,System.String,System.String,System.String,System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doEncrypt" Type="System.Boolean" />
+        <Parameter Name="xmlString" Type="System.String" />
+        <Parameter Name="protectionProviderName" Type="System.String" />
+        <Parameter Name="protectionProviderType" Type="System.String" />
+        <Parameter Name="paramKeys" Type="System.String[]" />
+        <Parameter Name="paramValues" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="doEncrypt">
+          <see langword="true" />暗号化します。<see langword="false" />の暗号化を解除します。</param>
+        <param name="xmlString">暗号化または復号化する XML です。</param>
+        <param name="protectionProviderName">構成データを保護するために使用するプロバイダー。</param>
+        <param name="protectionProviderType"><see cref="T:System.Type" />保護プロバイダー。</param>
+        <param name="paramKeys">保護プロバイダーの省略可能なパラメーターのキー。</param>
+        <param name="paramValues">保護プロバイダーの省略可能なパラメーターの値。</param>
+        <summary>条件付きで暗号化またはによって参照される文字列の値を復号化、<paramref name="xmlString" />パラメーター。</summary>
+        <returns>暗号化または復号化されたいずれかの値を表す文字列<paramref name="xmlString" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="protectionProviderType" />派生していない<see cref="T:System.Configuration.ProtectedConfigurationProvider" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public byte[] GetData (string fileName, bool getReadTimeOnly, out long readTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetData(string fileName, bool getReadTimeOnly, [out] int64&amp; readTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.GetData(System.String,System.Boolean,System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="getReadTimeOnly" Type="System.Boolean" />
+        <Parameter Name="readTime" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">アクセスして、リモートの構成ファイルへのパス。</param>
+        <param name="getReadTimeOnly">指定するブール値のみかどうか、 <c>readTime</c>が返されます。</param>
+        <param name="readTime">ファイルが最後にアクセスした時刻。</param>
+        <summary>構成データへのリモート アクセスをサポートするために内部的に使用します。</summary>
+        <returns><see langword="array" /> 8 ビット符号なし整数 (バイト) の構成データを含むです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="fileName" />拡張子 .config を付けたファイルを指していません。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDetails">
+      <MemberSignature Language="C#" Value="public void GetFileDetails (string name, out bool exists, out long size, out long createDate, out long lastWriteDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetFileDetails(string name, [out] bool&amp; exists, [out] int64&amp; size, [out] int64&amp; createDate, [out] int64&amp; lastWriteDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.GetFileDetails(System.String,System.Boolean@,System.Int64@,System.Int64@,System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="exists" Type="System.Boolean&amp;" RefType="out" />
+        <Parameter Name="size" Type="System.Int64&amp;" RefType="out" />
+        <Parameter Name="createDate" Type="System.Int64&amp;" RefType="out" />
+        <Parameter Name="lastWriteDate" Type="System.Int64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">ファイルの名前です。</param>
+        <param name="exists">
+          <see langword="true" />ファイルが存在する場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="size">ファイルのサイズ。</param>
+        <param name="createDate">ファイルが作成された日付。</param>
+        <param name="lastWriteDate">ファイルが最後に書き込んだ日付。</param>
+        <summary>構成ファイルの詳細を取得します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="name" />拡張子 .config を付けたファイルを指していません。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilePaths">
+      <MemberSignature Language="C#" Value="public string GetFilePaths (int webLevelAsInt, string path, string site, string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetFilePaths(int32 webLevelAsInt, string path, string site, string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.GetFilePaths(System.Int32,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webLevelAsInt" Type="System.Int32" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="site" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webLevelAsInt">構成ファイルのレベル。</param>
+        <param name="path">アクセスして、リモートの構成ファイルへのパス。</param>
+        <param name="site">リモート コンピューターへのパス。</param>
+        <param name="locationSubPath">構成ファイルの場所のサブ パス。</param>
+        <summary>構成データへのリモート アクセスをサポートするために内部的に使用します。</summary>
+        <returns>構成ファイルのファイル パスを表す連結された文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteData">
+      <MemberSignature Language="C#" Value="public void WriteData (string fileName, string templateFileName, byte[] data, ref long readTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteData(string fileName, string templateFileName, unsigned int8[] data, int64&amp; readTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RemoteWebConfigurationHostServer.WriteData(System.String,System.String,System.Byte[],System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="templateFileName" Type="System.String" />
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="readTime" Type="System.Int64&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">アクセスして、リモートの構成ファイルへのパス。</param>
+        <param name="templateFileName">ファイル属性を複製するファイルです。</param>
+        <param name="data">書き込むデータ。</param>
+        <param name="readTime">ファイルが最後にアクセスした時刻。</param>
+        <summary>構成データへのリモート アクセスをサポートするために内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">
+          <paramref name="fileName" />拡張子 .config を付けたファイルを指していません。  
+  
+ \- または  
+  
+ ファイルは、読み取られた後に変更されました。  
+  
+ \- または  
+  
+ ファイルは非表示または読み取り専用です。  
+  
+ \- または  
+  
+ メソッドは、一時ファイルの生成に失敗します。  
+  
+ \- または  
+  
+ メソッドの作成に失敗、<see cref="T:System.IO.FileStream" />です。  
+  
+ \- または  
+  
+ 一時ファイルは、対象ファイルを上書きに失敗します。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

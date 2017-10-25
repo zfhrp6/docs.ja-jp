@@ -1,0 +1,113 @@
+<Type Name="ICivicAddressResolver" FullName="System.Device.Location.ICivicAddressResolver">
+  <TypeSignature Language="C#" Value="public interface ICivicAddressResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICivicAddressResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.ICivicAddressResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドを提供として実装された場合、都市の住所緯度/経度の場所を解決します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 解決するのには、<xref:System.Device.Location.GeoCoordinate>を<xref:System.Device.Location.CivicAddress>、非同期的に実装<xref:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync%2A>、都市の住所データを提供し、<xref:System.Device.Location.ICivicAddressResolver.ResolveAddressCompleted>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ResolveAddress">
+      <MemberSignature Language="C#" Value="public System.Device.Location.CivicAddress ResolveAddress (System.Device.Location.GeoCoordinate coordinate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Device.Location.CivicAddress ResolveAddress(class System.Device.Location.GeoCoordinate coordinate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.ICivicAddressResolver.ResolveAddress(System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.CivicAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="coordinate" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="coordinate">アドレスに解決するのには緯度/経度場所です。</param>
+        <summary>解決、<see cref="T:System.Device.Location.GeoCoordinate" />同期的に、都市に対処します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を呼び出す方法を示します<xref:System.Device.Location.ICivicAddressResolver.ResolveAddress%2A>です。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressSync#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/cs/resolvecivicaddresssync.cs#1)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressSync#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddresssync/vb/resolvecivicaddresssync.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAddressAsync">
+      <MemberSignature Language="C#" Value="public void ResolveAddressAsync (System.Device.Location.GeoCoordinate coordinate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResolveAddressAsync(class System.Device.Location.GeoCoordinate coordinate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync(System.Device.Location.GeoCoordinate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="coordinate" Type="System.Device.Location.GeoCoordinate" />
+      </Parameters>
+      <Docs>
+        <param name="coordinate">アドレスに解決するのには緯度/経度場所です。</param>
+        <summary>緯度/経度の場所をアドレスに解決する要求を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を呼び出す方法を示します<xref:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync%2A>です。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressAsync#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/cs/resolvecivicaddressasync.cs#2)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressAsync#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/vb/resolvecivicaddressasync.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAddressCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Device.Location.ResolveAddressCompletedEventArgs&gt; ResolveAddressCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Device.Location.ResolveAddressCompletedEventArgs&gt; ResolveAddressCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Device.Location.ICivicAddressResolver.ResolveAddressCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Device.Location.ResolveAddressCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期要求を使用して、ときに発生<see cref="M:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync(System.Device.Location.GeoCoordinate)" />緯度/経度都市の住所が完了を解決するのには。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、呼び出す<xref:System.Device.Location.ICivicAddressResolver.ResolveAddressAsync%2A>処理と、<xref:System.Device.Location.ICivicAddressResolver.ResolveAddressCompleted>イベント。  
+  
+ [!code-csharp[System.Device.Location.ResolveCivicAddressAsync#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/cs/resolvecivicaddressasync.cs#2)]
+ [!code-vb[System.Device.Location.ResolveCivicAddressAsync#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.resolvecivicaddressasync/vb/resolvecivicaddressasync.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

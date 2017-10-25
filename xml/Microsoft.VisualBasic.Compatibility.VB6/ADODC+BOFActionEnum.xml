@@ -1,0 +1,67 @@
+<Type Name="ADODC+BOFActionEnum" FullName="Microsoft.VisualBasic.Compatibility.VB6.ADODC+BOFActionEnum">
+  <TypeSignature Language="C#" Value="public enum ADODC.BOFActionEnum" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed ADODC/BOFActionEnum extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.ADODC.BOFActionEnum" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>定数は、Visual Basic 6.0 との互換性<see langword="BOFAction" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0 で、`BOFAction`どのような操作を決定するプロパティは使用されて、`ADODC`ときに、`BOF`プロパティが true です。  
+  
+ これらの定数には、引き続き追加変更せずに実行する Visual Basic 6.0 からアップグレードされたコードが有効にします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="adDoMoveFirst">
+      <MemberSignature Language="C#" Value="adDoMoveFirst" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Compatibility.VB6.ADODC/BOFActionEnum adDoMoveFirst = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.ADODC.BOFActionEnum.adDoMoveFirst" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.ADODC+BOFActionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のレコードとして、最初のレコードを維持します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="adStayBOF">
+      <MemberSignature Language="C#" Value="adStayBOF" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Compatibility.VB6.ADODC/BOFActionEnum adStayBOF = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.ADODC.BOFActionEnum.adStayBOF" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.ADODC+BOFActionEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動の開始後、<see langword="Recordset" />トリガー、<see langword="Validate" />最初のレコードでは、上のイベントで後に、位置変更イベント (BOF) レコードが無効です。 この時点で、 **Move Previous**のボタンでは、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.ADODC" />は無効になります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

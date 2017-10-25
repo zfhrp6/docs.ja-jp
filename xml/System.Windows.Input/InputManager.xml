@@ -1,0 +1,550 @@
+<Type Name="InputManager" FullName="System.Windows.Input.InputManager">
+  <TypeSignature Language="C#" Value="public sealed class InputManager : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InputManager extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての入力システムでは、Windows Presentation Foundation (WPF) を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InputManager>クラスはすべてでは、入力のシステムのコーディネートを担当[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+ フィルターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreProcessInput>または<xref:System.Windows.Input.InputManager.PostProcessInput>です。  フィルターは、入力のステージング領域を変更できます。  
+  
+ モニターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreNotifyInput>または<xref:System.Windows.Input.InputManager.PostNotifyInput>です。  モニターは、入力のステージング領域を変更できません。  
+  
+ <xref:System.Windows.Input.InputManager>入力のステージング領域を制御します。  入力のステージング領域への入力を処理する[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]イベント。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.InputManager Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.InputManager Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.InputManager" />現在のスレッドに関連付けられています。</summary>
+        <value>入力マネージャーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット ゾーンでは、このクラスを使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">現在の入力のマネージャーを取得する権限。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterMenuMode">
+      <MemberSignature Language="C#" Value="public event EventHandler EnterMenuMode;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EnterMenuMode" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.EnterMenuMode" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを呼び出してメニュー モードに入ると発生、<see cref="M:System.Windows.Input.InputManager.PushMenuMode(System.Windows.PresentationSource)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントは、入力のマネージャーのメニューのモードに入るコントロールに応答するには、このイベントにデリゲートを登録します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestInvalidatedAsync">
+      <MemberSignature Language="C#" Value="public event EventHandler HitTestInvalidatedAsync;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler HitTestInvalidatedAsync" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.HitTestInvalidatedAsync" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの結果が変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputProviders">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection InputProviders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection InputProviders" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.InputProviders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="P:System.Windows.Input.InputManager.InputProviders" />に登録されている、<see cref="T:System.Windows.Input.InputManager" />です。</summary>
+        <value>入力のコレクションを提供します。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">入力のプロバイダーのコレクションを取得する権限。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInMenuMode">
+      <MemberSignature Language="C#" Value="public bool IsInMenuMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInMenuMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.IsInMenuMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Interop.ComponentDispatcher" />メニュー モードします。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Windows.Interop.ComponentDispatcher" />メニュー モードでは、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InputManager.IsInMenuMode%2A>プロパティから返される`true`任意のメニューが開き、それが返された場合`false`メニューが開かれていない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaveMenuMode">
+      <MemberSignature Language="C#" Value="public event EventHandler LeaveMenuMode;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LeaveMenuMode" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.LeaveMenuMode" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールは、呼び出すことでメニュー モードを離れたときに発生、<see cref="M:System.Windows.Input.InputManager.PopMenuMode(System.Windows.PresentationSource)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントは、入力のマネージャーのメニュー モードを終了コントロールに応答するには、このイベントにデリゲートを登録します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MostRecentInputDevice">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputDevice MostRecentInputDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputDevice MostRecentInputDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.MostRecentInputDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最新の入力イベントに関連付けられている入力デバイスを表す値を取得します。</summary>
+        <value>入力デバイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopMenuMode">
+      <MemberSignature Language="C#" Value="public void PopMenuMode (System.Windows.PresentationSource menuSite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PopMenuMode(class System.Windows.PresentationSource menuSite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputManager.PopMenuMode(System.Windows.PresentationSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menuSite" Type="System.Windows.PresentationSource" />
+      </Parameters>
+      <Docs>
+        <param name="menuSite">メニューをそのままにします。</param>
+        <summary>メニュー モードを終了するにはコンポーネントによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントは、入力のマネージャーのメニュー モードを終了するには、このメソッドを呼び出します。 `menuSite`ウィンドウ メッセージへのアクセス権限を解放します。  
+  
+ このメソッドを呼び出すと、内部でカウントをデクリメントするメニューを開くの発生して設定、<xref:System.Windows.Input.InputManager.IsInMenuMode%2A>プロパティを`false`これは、最後のメニューを閉じる場合は、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="menuSite" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PostNotifyInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.NotifyInputEventHandler PostNotifyInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.NotifyInputEventHandler PostNotifyInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.PostNotifyInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.NotifyInputEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後に発生、<see cref="E:System.Windows.Input.InputManager.PreNotifyInput" />ハンドラーでは、入力と、対応する処理が完了したら[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]イベントが発生しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モニターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreNotifyInput>または<xref:System.Windows.Input.InputManager.PostNotifyInput>です。  モニターは、入力のステージング領域を変更できません。  
+  
+ 接続されているハンドラー<xref:System.Windows.Input.InputManager.PostNotifyInput>システムにハンドラーの前に、ユーザーによって追加されたハンドラーが呼び出されるように、逆の順序で呼び出されます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">追加や、イベント ハンドラーを削除します。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PostProcessInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.ProcessInputEventHandler PostProcessInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.ProcessInputEventHandler PostProcessInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.PostProcessInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ProcessInputEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後に発生、<see cref="E:System.Windows.Input.InputManager.PreNotifyInput" />ハンドラーの入力の処理が終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreProcessInput>または<xref:System.Windows.Input.InputManager.PostProcessInput>です。  フィルターは、入力のステージング領域を変更できます。  
+  
+ 接続されているハンドラー<xref:System.Windows.Input.InputManager.PostProcessInput>システムにハンドラーの前に、ユーザーによって追加されたハンドラーが呼び出されるように、逆の順序で呼び出されます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">追加や、イベント ハンドラーを削除します。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreNotifyInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.NotifyInputEventHandler PreNotifyInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.NotifyInputEventHandler PreNotifyInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.PreNotifyInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.NotifyInputEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="E:System.Windows.Input.InputManager.PreProcessInput" />ハンドラー処理が終了した、入力、入力が取り消されていない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モニターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreNotifyInput>または<xref:System.Windows.Input.InputManager.PostNotifyInput>です。  モニターは、入力のステージング領域を変更できません。  
+  
+ 接続されているハンドラー<xref:System.Windows.Input.InputManager.PreNotifyInput>システムにハンドラーの前に、ユーザーによって追加されたハンドラーが呼び出されるように、逆の順序で呼び出されます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">追加や、イベント ハンドラーを削除します。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreProcessInput">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.PreProcessInputEventHandler PreProcessInput;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.PreProcessInputEventHandler PreProcessInput" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputManager.PreProcessInput" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.PreProcessInputEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.InputManager" />入力項目の処理を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreProcessInput>または<xref:System.Windows.Input.InputManager.PostProcessInput>です。  フィルターは、入力のステージング領域を変更できます。  
+  
+ 接続されているハンドラー<xref:System.Windows.Input.InputManager.PreProcessInput>システムにハンドラーの前に、ユーザーによって追加されたハンドラーが呼び出されるように、逆の順序で呼び出されます。  
+  
+ 呼び出す<xref:System.Windows.Input.PreProcessInputEventArgs.Cancel%2A>上、<xref:System.Windows.Input.PreProcessInputEventArgs>に渡される、<xref:System.Windows.Input.PreProcessInputEventHandler>は入力の処理が取り消されます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">追加や、イベント ハンドラーを削除します。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryKeyboardDevice">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.KeyboardDevice PrimaryKeyboardDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.KeyboardDevice PrimaryKeyboardDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.PrimaryKeyboardDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyboardDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリのキーボード デバイスを取得します。</summary>
+        <value>キーボード デバイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryMouseDevice">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseDevice PrimaryMouseDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.MouseDevice PrimaryMouseDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputManager.PrimaryMouseDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ マウス デバイスを取得します。</summary>
+        <value>マウス デバイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessInput">
+      <MemberSignature Language="C#" Value="public bool ProcessInput (System.Windows.Input.InputEventArgs input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ProcessInput(class System.Windows.Input.InputEventArgs input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputManager.ProcessInput(System.Windows.Input.InputEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Windows.Input.InputEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="input">処理する入力。</param>
+        <summary>指定された入力を同期的に処理します。</summary>
+        <returns>
+          <see langword="true" />すべての入力イベントが処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreProcessInput>または<xref:System.Windows.Input.InputManager.PostProcessInput>です。  フィルターは、入力のステージング領域を変更できます。  
+  
+ モニターがリッスンするすべてのコードは、<xref:System.Windows.Input.InputManager.PreNotifyInput>または<xref:System.Windows.Input.InputManager.PostNotifyInput>です。  モニターは、入力のステージング領域を変更できません。  
+  
+ 指定された入力はすべてのフィルターとモニターで処理され、入力イベントとして適切な要素に最後にディスパッチされます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">指定された入力を処理します。 関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PushMenuMode">
+      <MemberSignature Language="C#" Value="public void PushMenuMode (System.Windows.PresentationSource menuSite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PushMenuMode(class System.Windows.PresentationSource menuSite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputManager.PushMenuMode(System.Windows.PresentationSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menuSite" Type="System.Windows.PresentationSource" />
+      </Parameters>
+      <Docs>
+        <param name="menuSite">入力にメニューです。</param>
+        <summary>メニュー モードを開始するコンポーネントによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントは、入力のマネージャーのメニューのモードに入るには、このメソッドを呼び出します。 `menuSite`ウィンドウ メッセージへのアクセス権限を取得します。 このメソッドを呼び出すと、内部でカウントをインクリメントするメニューを開くの発生して設定、<xref:System.Windows.Input.InputManager.IsInMenuMode%2A>プロパティを`true`これは、最初のメニューを開く場合は、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="menuSite" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

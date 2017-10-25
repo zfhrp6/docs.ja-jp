@@ -1,0 +1,393 @@
+<Type Name="Control+ControlAccessibleObject" FullName="System.Windows.Forms.Control+ControlAccessibleObject">
+  <TypeSignature Language="C#" Value="public class Control.ControlAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Control/ControlAccessibleObject extends System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Control.ControlAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.AccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクセシビリティ アプリケーションで使用できるコントロールに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームは、組み込まれており、ユーザー補助のサポートを持ち、ユーザー補助クライアント アプリケーションで動作するため、アプリケーションに関する情報を提供します。 ユーザー補助クライアント アプリケーションの例には: キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ ツールとユーティリティのレビュー担当者、音声入力ユーティリティを画面に表示される画面します。 ユーザー補助クライアント アプリケーションに追加の情報を提供する場合があります。 この追加情報を提示するための 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>、 <xref:System.Windows.Forms.Control.AccessibleDescription%2A>、 <xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>、および<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。 また、ユーザー補助機能については、コントロールに含まれているを必要とする場合は、独自のクラスから派生することを記述できます、<xref:System.Windows.Forms.AccessibleObject>または<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラスです。 たとえばから派生していない、独自のコントロールを作成している場合またはコモン コントロール、コントロール内でヒット テストなどの操作を必要と作成を<xref:System.Windows.Forms.Control.ControlAccessibleObject>呼び出すことによって、コントロールの<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。  
+  
+> [!NOTE]
+>  オーバーライドする場合、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A?displayProperty=nameWithType>メソッドを上書きする必要ありますも、<xref:System.Windows.Forms.AccessibleObject.GetChildCount%2A?displayProperty=nameWithType>メソッドです。 取得または設定する、<xref:System.Windows.Forms.Control.AccessibilityObject%2A>プロパティへの参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ユーザー補助オブジェクトの詳細については、MSDN ライブラリの「Active Accessibility」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する チェック ボックス コントロールを作成、<xref:System.Windows.Forms.CheckBox>クラスし、カスタム作成<xref:System.Windows.Forms.Control.ControlAccessibleObject>派生クラスを使用するためです。 派生クラスでは、`MyCheckBox`が、<xref:System.Windows.Forms.CheckBox.Appearance%2A>の<xref:System.Windows.Forms.Appearance.Button>既定では、トグル ボタンとして表示します。 派生した<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラス、`MyCheckBoxControlAccessibleObject`外観の違いに対応する 3 つのプロパティをオーバーライドします。  
+  
+ [!code-cpp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CPP/controlaccessibility.cpp#1)]
+ [!code-csharp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CS/controlaccessibility.cs#1)]
+ [!code-vb[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/VB/controlaccessibility.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlAccessibleObject (System.Windows.Forms.Control ownerControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control ownerControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerControl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ownerControl"><see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary><see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から派生する チェック ボックス コントロールを作成、<xref:System.Windows.Forms.CheckBox>クラスし、カスタム作成<xref:System.Windows.Forms.Control.ControlAccessibleObject>派生クラスを使用するためです。 派生クラスでは、`MyCheckBox`が、<xref:System.Windows.Forms.CheckBox.Appearance%2A>の<xref:System.Windows.Forms.Appearance.Button>既定では、トグル ボタンとして表示します。 派生した<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラス、`MyCheckBoxControlAccessibleObject`外観の違いに対応する 3 つのプロパティをオーバーライドします。  
+  
+ [!code-cpp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CPP/controlaccessibility.cpp#1)]
+ [!code-csharp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CS/controlaccessibility.cs#1)]
+ [!code-vb[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/VB/controlaccessibility.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="ownerControl" />パラメーター値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAction">
+      <MemberSignature Language="C#" Value="public override string DefaultAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.DefaultAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの既定のアクションを説明する文字列を取得します。 既定のアクションがないオブジェクトもあります。</summary>
+        <value>オブジェクトの既定のアクションの説明、またはこのオブジェクトの既定のアクションがない場合は、<see langword="null" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public override string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明を取得、<see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" />です。</summary>
+        <value>説明する文字列、<see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpTopic">
+      <MemberSignature Language="C#" Value="public override int GetHelpTopic (out string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHelpTopic([out] string&amp; fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.GetHelpTopic(System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">このメソッドが戻るとき、ユーザー補助オブジェクトに関連付けられているヘルプ ファイルへのパスを表す文字列を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ユーザー補助オブジェクトに関連付けられているヘルプ ファイルへのヘルプ トピックと、パスの識別子を取得します。</summary>
+        <returns>ヘルプ トピック、またはヘルプ トピックが存在しない場合は-1 の識別子。 戻り時に、<paramref name="fileName" />パラメーターは、ユーザー補助オブジェクトに関連付けられているヘルプ ファイルへのパスを含めるまたは<see langword="null" />がある場合ありません<see langword="IAccessible" />に指定されたインターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した WinHelp ファイルに識別子を渡す、`fileName`パラメーターを目的のヘルプ トピックを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ユーザー補助オブジェクトのハンドルを設定します。</summary>
+        <value><see cref="T:System.IntPtr" />コントロールのハンドルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Forms.Control.ControlAccessibleObject.Handle%2A>プロパティを<xref:System.Windows.Forms.Control.ControlAccessibleObject>と等しい、<xref:System.Windows.Forms.Control.Handle%2A>のプロパティ、<xref:System.Windows.Forms.Control>に関連付けられていること。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Help">
+      <MemberSignature Language="C#" Value="public override string Help { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Help" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Help" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの機能またはオブジェクトの使用方法の説明を取得します。</summary>
+        <value>オブジェクトの機能またはオブジェクトの使用方法の説明。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardShortcut">
+      <MemberSignature Language="C#" Value="public override string KeyboardShortcut { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyboardShortcut" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.KeyboardShortcut" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのショートカットキーまたはアクセス キー ユーザー補助オブジェクトを取得します。</summary>
+        <value>オブジェクトのショートカットキーまたはアクセス可能なオブジェクトのアクセス キーまたは<see langword="null" />かどうかは、オブジェクトに関連付けられているショートカット キーはありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ショートカット キーまたはアクセス キーを持つすべてのオブジェクトには、このプロパティをサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの名前を取得または設定します。</summary>
+        <value>ユーザー補助オブジェクトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyClients">
+      <MemberSignature Language="C#" Value="public void NotifyClients (System.Windows.Forms.AccessibleEvents accEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NotifyClients(valuetype System.Windows.Forms.AccessibleEvents accEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients(System.Windows.Forms.AccessibleEvents)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accEvent" Type="System.Windows.Forms.AccessibleEvents" />
+      </Parameters>
+      <Docs>
+        <param name="accEvent">ユーザー補助クライアント アプリケーションに通知する <see cref="T:System.Windows.Forms.AccessibleEvents" />。</param>
+        <summary>指定したユーザー補助クライアント アプリケーションに通知<see cref="T:System.Windows.Forms.AccessibleEvents" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>メソッドごとに<xref:System.Windows.Forms.AccessibleEvents>オブジェクトのユーザー補助クライアント アプリケーションがの通知されます。 <xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>通常メソッドはプロパティは、設定または内から、イベント ハンドラー。 たとえば、呼び出すことができます、<xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>メソッドを渡します、<xref:System.Windows.Forms.AccessibleEvents>の値`Hide`からのイベント ハンドラー内で、<xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyClients">
+      <MemberSignature Language="C#" Value="public void NotifyClients (System.Windows.Forms.AccessibleEvents accEvent, int childID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NotifyClients(valuetype System.Windows.Forms.AccessibleEvents accEvent, int32 childID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients(System.Windows.Forms.AccessibleEvents,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accEvent" Type="System.Windows.Forms.AccessibleEvents" />
+        <Parameter Name="childID" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="accEvent">ユーザー補助クライアント アプリケーションに通知する <see cref="T:System.Windows.Forms.AccessibleEvents" />。</param>
+        <param name="childID">ユーザー補助対象のイベントを通知する子 <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>指定した子コントロールの指定した <see cref="T:System.Windows.Forms.AccessibleEvents" /> をユーザー補助クライアント アプリケーションに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>メソッドごとに<xref:System.Windows.Forms.AccessibleEvents>オブジェクトのユーザー補助クライアント アプリケーションがの通知されます。 <xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>通常メソッドはプロパティは、設定または内から、イベント ハンドラー。 たとえば、呼び出すことができます、<xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients%2A>メソッドを渡します、<xref:System.Windows.Forms.AccessibleEvents>の値`Hide`内からからのイベント ハンドラー内で、<xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyClients">
+      <MemberSignature Language="C#" Value="public void NotifyClients (System.Windows.Forms.AccessibleEvents accEvent, int objectID, int childID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NotifyClients(valuetype System.Windows.Forms.AccessibleEvents accEvent, int32 objectID, int32 childID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients(System.Windows.Forms.AccessibleEvents,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accEvent" Type="System.Windows.Forms.AccessibleEvents" />
+        <Parameter Name="objectID" Type="System.Int32" />
+        <Parameter Name="childID" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="accEvent">ユーザー補助クライアント アプリケーションに通知する <see cref="T:System.Windows.Forms.AccessibleEvents" />。</param>
+        <param name="objectID"><see cref="T:System.Windows.Forms.AccessibleObject" /> の識別子。</param>
+        <param name="childID">ユーザー補助対象のイベントを通知する子 <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>指定したユーザー補助クライアント アプリケーションに通知<see cref="T:System.Windows.Forms.AccessibleEvents" />の指定した子コントロールの id を与える、<see cref="T:System.Windows.Forms.AccessibleObject" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの所有者を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Control.ControlAccessibleObject" /> を所有している <see cref="T:System.Windows.Forms.Control" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から派生する チェック ボックス コントロールを作成、<xref:System.Windows.Forms.CheckBox>クラスし、カスタム作成<xref:System.Windows.Forms.Control.ControlAccessibleObject>派生クラスを使用するためです。 派生クラスでは、`MyCheckBox`が、<xref:System.Windows.Forms.CheckBox.Appearance%2A>の<xref:System.Windows.Forms.Appearance.Button>既定では、トグル ボタンとして表示します。 派生した<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラス、`MyCheckBoxControlAccessibleObject`外観の違いに対応する 3 つのプロパティをオーバーライドします。  
+  
+ [!code-cpp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CPP/controlaccessibility.cpp#1)]
+ [!code-csharp[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/CS/controlaccessibility.cs#1)]
+ [!code-vb[Windows.Forms.Control.ControlAccessibleObject#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control.ControlAccessibleObject/VB/controlaccessibility.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの親を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.AccessibleObject" /> 、アクセス可能なオブジェクトの親を表すまたは<see langword="null" />親オブジェクトが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトのロールを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.AccessibleRole" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlAccessibleObject.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

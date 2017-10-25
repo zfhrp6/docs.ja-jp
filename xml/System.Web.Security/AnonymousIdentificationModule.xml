@@ -1,0 +1,273 @@
+<Type Name="AnonymousIdentificationModule" FullName="System.Web.Security.AnonymousIdentificationModule">
+  <TypeSignature Language="C#" Value="public sealed class AnonymousIdentificationModule : System.Web.IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AnonymousIdentificationModule extends System.Object implements class System.Web.IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.AnonymousIdentificationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpModule</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ASP.NET アプリケーションの匿名識別子を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AnonymousIdentificationModule>クラスを作成および ASP.NET アプリケーションの匿名識別子を管理します。 匿名の識別子は、ASP.NET などの匿名の id をサポートする機能で使用される<xref:System.Web.Profile>です。  
+  
+ <xref:System.Web.Security.AnonymousIdentificationModule>公開、<xref:System.Web.Security.AnonymousIdentificationModule.Creating>イベントの匿名識別子をカスタム値に設定することができます。 カスタムの匿名識別子の値を指定しない場合、<xref:System.Guid>を使用します。  
+  
+ <xref:System.Web.Security.AnonymousIdentificationModule.Creating>という名前のサブルーチンを指定することでアクセス イベント**AnonymousIdentification_Creating** ASP.NET アプリケーションの Global.asax ファイルでします。  
+  
+ <xref:System.Web.Security.AnonymousIdentificationModule>とき匿名 id の使用のみ<xref:System.Web.Security.AnonymousIdentificationModule.Enabled%2A>する構成要素の有効な属性を設定して`true`です。  
+  
+> [!NOTE]
+>  匿名 id は、任意の型の ASP.NET 認証の独立しています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、匿名の識別を有効にするアプリケーションの Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <anonymousIdentification enabled="true" />  
+  
+    <profile defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList"   
+          allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnonymousIdentificationModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AnonymousIdentificationModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.AnonymousIdentificationModule" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ASP.NET がのインスタンスを作成するこのコンス トラクターを呼び出して、<xref:System.Web.Security.AnonymousIdentificationModule>クラスです。 コンス トラクターを呼び出す、<xref:System.Web.Security.AnonymousIdentificationModule.Init%2A>新しい初期化するメソッドを<xref:System.Web.Security.AnonymousIdentificationModule>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAnonymousIdentifier">
+      <MemberSignature Language="C#" Value="public static void ClearAnonymousIdentifier ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearAnonymousIdentifier() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>匿名 cookie またはセッションに関連付けられている id をクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier%2A>メソッドは、Web サイト上のセッションに関連付けられている匿名の id を削除します。  使用して、<xref:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier%2A>認証されたセッションに関連付けられているユーザー ID では、たとえばときにユーザーを切り替えるときにセッションに関連付けられている匿名の id を削除する方法、<xref:System.Web.Profile.ProfileModule.MigrateAnonymous>イベントが発生します。  
+  
+ 現在の匿名識別子を削除すると場合に、新しいの匿名識別子をすぐに発行されるので、<xref:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier%2A>メソッドがスローされます、<xref:System.NotSupportedException>場合は、セッションは、匿名の id によって識別されるときに呼び出されます。  
+  
+ サイトが、cookie を使用する場合、<xref:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier%2A>メソッドは、ブラウザーからの匿名識別子を削除するクリア cookie を発行します。 匿名の cookie は、前回の要求で送信されなかった場合でも、クリア cookie が発行されます。  
+  
+ クリア cookie の構成は次のとおりです。  
+  
+-   その値として、空の文字列、cookie が発行されるブラウザーでは、cookie に空の文字列をサポートする場合それ以外の場合、その値として、"NoCookie"では、cookie が発行されます。  
+  
+-   Cookie の名前、パス、およびドメインの値は、Web アプリケーションの構成ファイルで構成された既定値に設定されます。  
+  
+-   有効期限日が 1999 年 10 月 12 日に設定されます。  
+  
+ サイトが cookie なしの認証を使用して、匿名の id は URL 内に存在する場合は、匿名 id が URL から削除されます。 アドレスまたはクエリ文字列にその他の変更は行われません。 URL を変更したら、現在実行中のページに戻るにはリダイレクトが発行されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出す<see cref="M:System.Web.Security.AnonymousIdentificationModule.ClearAnonymousIdentifier" />とき匿名の id が有効になっていません。  
+  
+ または  
+  
+ 現在の要求のユーザーは匿名です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Creating">
+      <MemberSignature Language="C#" Value="public event System.Web.Security.AnonymousIdentificationEventHandler Creating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Security.AnonymousIdentificationEventHandler Creating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Security.AnonymousIdentificationModule.Creating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.AnonymousIdentificationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい匿名識別子が作成されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AnonymousIdentificationModule.Creating>中にイベントが発生した、<xref:System.Web.HttpApplication.PostAuthenticateRequest>イベント。  
+  
+ アクセスすることができます、<xref:System.Web.Security.AnonymousIdentificationModule.Creating>のイベント、<xref:System.Web.Security.AnonymousIdentificationModule>という名前のサブルーチンを指定することによってクラス**AnonymousIdentification_Creating** ASP.NET アプリケーションの Global.asax ファイルでします。  
+  
+ 使用することができます、<xref:System.Web.Security.AnonymousIdentificationEventArgs.AnonymousID%2A>のプロパティ、<xref:System.Web.Security.AnonymousIdentificationEventArgs>にオブジェクトが指定、 **AnonymousIdentification_Creating**イベントの匿名識別子をカスタム値に設定します。 値を指定しない場合、<xref:System.Web.Security.AnonymousIdentificationEventArgs.AnonymousID%2A>中にプロパティ、 **AnonymousIdentification_Creating**イベント、<xref:System.Guid>を使用します。  
+  
+ **AnonymousIdentification_Creating**イベントは、匿名の id が場合にだけ発生<xref:System.Web.Security.AnonymousIdentificationModule.Enabled%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 **AnonymousIdentification_Creating**イベントの匿名識別子をカスタム値に設定します。  
+  
+ [!code-csharp[System.Web.Security.AnonymousIdentificationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.AnonymousIdentificationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.AnonymousIdentificationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.AnonymousIdentificationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AnonymousIdentificationModule.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるメモリ以外のすべてのリソースを解放、<see cref="T:System.Web.Security.AnonymousIdentificationModule" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public static bool Enabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.AnonymousIdentificationModule.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーションの匿名 id が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ASP.NET アプリケーションの匿名 id が有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、匿名の識別を有効にするアプリケーションの Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Forms" >  
+      <forms loginUrl="login.aspx" name=".ASPXFORMSAUTH" />  
+    </authentication>  
+  
+    <anonymousIdentification enabled="true" />  
+  
+    <profile defaultProvider="AspNetSqlProvider">  
+      <properties>  
+        <add name="ZipCode" allowAnonymous="true" />  
+        <add name="CityAndState" allowAnonymous="true" />  
+        <add name="StockSymbols" type="System.Collections.ArrayList"   
+          allowAnonymous="true" />  
+      </properties>  
+    </profile>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication app);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication app) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AnonymousIdentificationModule.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="app" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="app">現在の <see cref="T:System.Web.HttpApplication" /> インスタンス。</param>
+        <summary>初期化、<see cref="T:System.Web.Security.AnonymousIdentificationModule" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.Security.AnonymousIdentificationModule.Init%2A>メソッドにより、<xref:System.Web.Security.AnonymousIdentificationModule>の処理に含まれる、<xref:System.Web.HttpApplication.PostAuthenticateRequest>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

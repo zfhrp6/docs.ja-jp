@@ -1,0 +1,2932 @@
+<Type Name="Extensions" FullName="System.Xml.Linq.Extensions">
+  <TypeSignature Language="C#" Value="public static class Extensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Extensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Linq.Extensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.Linq</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>LINQ to XML 拡張メソッドを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]拡張メソッドは、軸メソッドで使用されている[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。 このクラスのメソッドは、コレクションに対して機能し、コレクションを返します。 これらのメソッドは、ソース コレクションを列挙し、コレクション内の各アイテムに対して適切な軸メソッドを呼び出すの結果を連結します。  
+  
+ 2 つ<xref:System.Xml.Linq.Extensions.Remove%2A>拡張メソッドはありません軸メソッドがします。 これらのメソッドは、XML ツリーからノードまたは属性を削除します。  
+  
+ 実装される軸メソッドの別のカテゴリがあることに注意してください、 <xref:System.Xml.Linq.XElement>、 <xref:System.Xml.Linq.XDocument>、および<xref:System.Xml.Linq.XNode>クラスです。 これらの軸メソッドは、1 つのオブジェクトに対して機能しのコレクションを返す<xref:System.Xml.Linq.XElement>、 <xref:System.Xml.Linq.XAttribute>、または<xref:System.Xml.Linq.XNode>オブジェクト。  
+  
+ すべての軸の拡張メソッドは遅延実行を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Ancestors&lt;T&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ソース コレクション内の各ノードの先祖を含む要素のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードがある場合、同じ祖先、先祖が複数回に含める結果のコレクション。 これを回避するを使用して、<xref:System.Linq.Enumerable.Distinct%2A>メソッドです。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Ancestors&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Ancestors&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XNode;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Ancestors&lt;(class System.Xml.Linq.XNode) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XNode</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XNode" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内の各ノードの先祖を含む要素のコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクション内の各ノードの先祖を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードがある場合、同じ祖先、先祖が複数回に含める結果のコレクション。 これを回避するを使用して、<xref:System.Linq.Enumerable.Distinct%2A>メソッドです。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、優れた孫要素のコレクションを取得します。 この軸メソッドを使用して、コレクション内のすべての要素のすべての先祖を取得します。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Child1",  
+        new XElement("GrandChild1",  
+            new XElement("GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement("Child2",  
+        new XElement("GrandChild2",  
+            new XElement("GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.Ancestors().Distinct()  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Child1>  
+            <GrandChild1>  
+                <GreatGrandChild1>content</GreatGrandChild1>  
+            </GrandChild1>  
+        </Child1>  
+        <Child2>  
+            <GrandChild2>  
+                <GreatGrandChild2>content</GreatGrandChild2>  
+            </GrandChild2>  
+        </Child2>  
+    </Root>  
+  
+Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                         Where el.Name.LocalName.StartsWith("Great") _  
+                         Select el  
+  
+Console.WriteLine("Great Grand Children Elements")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In greatGrandChildren  
+    Console.WriteLine(de.Name)  
+Next  
+  
+Dim allAncestors = From el In greatGrandChildren.Ancestors.Distinct _  
+                   Select el  
+  
+Console.WriteLine("")  
+Console.WriteLine("Ancestors")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In allAncestors  
+    Console.WriteLine(de.Name)  
+Next  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+GreatGrandChild1  
+GreatGrandChild2  
+  
+Ancestors  
+----  
+GrandChild1  
+Child1  
+Root  
+GrandChild2  
+Child2  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Child1",  
+        new XElement(aw + "GrandChild1",  
+            new XElement(aw + "GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement(aw + "Child2",  
+        new XElement(aw + "GrandChild2",  
+            new XElement(aw + "GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.Ancestors().Distinct()  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Child1>  
+                    <GrandChild1>  
+                        <GreatGrandChild1>content</GreatGrandChild1>  
+                    </GrandChild1>  
+                </Child1>  
+                <Child2>  
+                    <GrandChild2>  
+                        <GreatGrandChild2>content</GreatGrandChild2>  
+                    </GrandChild2>  
+                </Child2>  
+            </Root>  
+  
+        Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                                 Where el.Name.LocalName.StartsWith("Great") _  
+                                 Select el  
+  
+        Console.WriteLine("Great Grand Children Elements")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In greatGrandChildren  
+            Console.WriteLine(de.Name)  
+        Next  
+  
+        Dim allAncestors = From el In greatGrandChildren.Ancestors.Distinct _  
+                           Select el  
+  
+        Console.WriteLine("")  
+        Console.WriteLine("Ancestors")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In allAncestors  
+            Console.WriteLine(de.Name)  
+        Next  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+{http://www.adventure-works.com}GreatGrandChild2  
+  
+Ancestors  
+----  
+{http://www.adventure-works.com}GrandChild1  
+{http://www.adventure-works.com}Child1  
+{http://www.adventure-works.com}Root  
+{http://www.adventure-works.com}GrandChild2  
+{http://www.adventure-works.com}Child2  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ancestors&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Ancestors&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, System.Xml.Linq.XName name) where T : System.Xml.Linq.XNode;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Ancestors&lt;(class System.Xml.Linq.XNode) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Ancestors``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XNode</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XNode" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>ソース コレクション内の各ノードの先祖を含む、フィルター選択された要素のコレクションを返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクション内の各ノードの先祖を格納しています。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードであれば、対応する、同じ祖先<xref:System.Xml.Linq.XName>先祖が複数回に含める結果のコレクション。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、優れた孫要素のコレクションを取得します。 指定された一致するコレクション内のすべての要素のすべての先祖を取得し、この軸メソッドを使用して<xref:System.Xml.Linq.XName>です。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Child1",  
+        new XElement("GrandChild1",  
+            new XElement("GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement("Child2",  
+        new XElement("GrandChild2",  
+            new XElement("GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.Ancestors("Child1")  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Child1>  
+            <GrandChild1>  
+                <GreatGrandChild1>content</GreatGrandChild1>  
+            </GrandChild1>  
+        </Child1>  
+        <Child2>  
+            <GrandChild2>  
+                <GreatGrandChild2>content</GreatGrandChild2>  
+            </GrandChild2>  
+        </Child2>  
+    </Root>  
+  
+Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                         Where el.Name.LocalName.StartsWith("Great") _  
+                         Select el  
+  
+Console.WriteLine("Great Grand Children Elements")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In greatGrandChildren  
+    Console.WriteLine(de.Name)  
+Next  
+  
+Dim allAncestors = From el In greatGrandChildren.Ancestors("Child1") _  
+                   Select el  
+  
+Console.WriteLine("")  
+Console.WriteLine("Ancestors")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In allAncestors  
+    Console.WriteLine(de.Name)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+GreatGrandChild1  
+GreatGrandChild2  
+  
+Ancestors  
+----  
+Child1  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Child1",  
+        new XElement(aw + "GrandChild1",  
+            new XElement(aw + "GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement(aw + "Child2",  
+        new XElement(aw + "GrandChild2",  
+            new XElement(aw + "GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.Ancestors(aw + "Child1")  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Child1>  
+                    <GrandChild1>  
+                        <GreatGrandChild1>content</GreatGrandChild1>  
+                    </GrandChild1>  
+                </Child1>  
+                <Child2>  
+                    <GrandChild2>  
+                        <GreatGrandChild2>content</GreatGrandChild2>  
+                    </GrandChild2>  
+                </Child2>  
+            </Root>  
+  
+        Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                                 Where el.Name.LocalName.StartsWith("Great") _  
+                                 Select el  
+  
+        Console.WriteLine("Great Grand Children Elements")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In greatGrandChildren  
+            Console.WriteLine(de.Name)  
+        Next  
+  
+        Dim allAncestors = From el In greatGrandChildren.Ancestors(GetXmlNamespace() + "Child1") _  
+                           Select el  
+  
+        Console.WriteLine("")  
+        Console.WriteLine("Ancestors")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In allAncestors  
+            Console.WriteLine(de.Name)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+{http://www.adventure-works.com}GreatGrandChild2  
+  
+Ancestors  
+----  
+{http://www.adventure-works.com}Child1  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AncestorsAndSelf">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ソース コレクション内のすべての要素を含む要素のコレクションと、ソース コレクション内のすべての要素の先祖を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードがある場合、同じ祖先、先祖が複数回に含める結果のコレクション。 これを回避するを使用して、<xref:System.Linq.Enumerable.Distinct%2A>メソッドです。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AncestorsAndSelf">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; AncestorsAndSelf (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; AncestorsAndSelf(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべての要素を含む要素のコレクションと、ソース コレクション内のすべての要素の先祖を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />およびソース コレクション内のすべての要素の先祖がソース コレクションのすべての要素を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードがある場合、同じ祖先、先祖が複数回に含める結果のコレクション。 これを回避するを使用して、<xref:System.Linq.Enumerable.Distinct%2A>メソッドです。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、優れた孫要素のコレクションを取得します。 この軸メソッドを使用して、すべての先祖および自己コレクション内のすべての要素を取得します。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Child1",  
+        new XElement("GrandChild1",  
+            new XElement("GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement("Child2",  
+        new XElement("GrandChild2",  
+            new XElement("GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.AncestorsAndSelf().Distinct()  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors and Self");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _   
+    <Root>  
+        <Child1>  
+            <GrandChild1>  
+                <GreatGrandChild1>content</GreatGrandChild1>  
+            </GrandChild1>  
+        </Child1>  
+        <Child2>  
+            <GrandChild2>  
+                <GreatGrandChild2>content</GreatGrandChild2>  
+            </GrandChild2>  
+        </Child2>  
+    </Root>  
+  
+Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                         Where el.Name.LocalName.StartsWith("Great") _  
+                         Select el  
+  
+Console.WriteLine("Great Grand Children Elements")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In greatGrandChildren  
+    Console.WriteLine(de.Name)  
+Next  
+  
+Dim allAncestors = From el In greatGrandChildren.AncestorsAndSelf.Distinct _  
+                   Select el  
+  
+Console.WriteLine("")  
+Console.WriteLine("Ancestors and Self")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In allAncestors  
+    Console.WriteLine(de.Name)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+GreatGrandChild1  
+GreatGrandChild2  
+  
+Ancestors and Self  
+----  
+GreatGrandChild1  
+GrandChild1  
+Child1  
+Root  
+GreatGrandChild2  
+GrandChild2  
+Child2  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Child1",  
+        new XElement(aw + "GrandChild1",  
+            new XElement(aw + "GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement(aw + "Child2",  
+        new XElement(aw + "GrandChild2",  
+            new XElement(aw + "GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.AncestorsAndSelf().Distinct()  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors and Self");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Child1>  
+                    <GrandChild1>  
+                        <GreatGrandChild1>content</GreatGrandChild1>  
+                    </GrandChild1>  
+                </Child1>  
+                <Child2>  
+                    <GrandChild2>  
+                        <GreatGrandChild2>content</GreatGrandChild2>  
+                    </GrandChild2>  
+                </Child2>  
+            </Root>  
+  
+        Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                                 Where el.Name.LocalName.StartsWith("Great") _  
+                                 Select el  
+  
+        Console.WriteLine("Great Grand Children Elements")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In greatGrandChildren  
+            Console.WriteLine(de.Name)  
+        Next  
+  
+        Dim allAncestors = From el In greatGrandChildren.AncestorsAndSelf.Distinct _  
+                           Select el  
+  
+        Console.WriteLine("")  
+        Console.WriteLine("Ancestors and Self")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In allAncestors  
+            Console.WriteLine(de.Name)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+{http://www.adventure-works.com}GreatGrandChild2  
+  
+Ancestors and Self  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+{http://www.adventure-works.com}GrandChild1  
+{http://www.adventure-works.com}Child1  
+{http://www.adventure-works.com}Root  
+{http://www.adventure-works.com}GreatGrandChild2  
+{http://www.adventure-works.com}GrandChild2  
+{http://www.adventure-works.com}Child2  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AncestorsAndSelf">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; AncestorsAndSelf (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source, System.Xml.Linq.XName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; AncestorsAndSelf(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.AncestorsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>ソース コレクション内のすべての要素を含む要素のフィルター選択されたコレクションと、ソース コレクション内のすべての要素の先祖を返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />およびソース コレクション内のすべての要素の先祖がソース コレクションのすべての要素を格納しています。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コレクション内の複数のノードであれば、対応する、同じ祖先<xref:System.Xml.Linq.XName>先祖が複数回に含める結果のコレクション。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、優れた孫要素のコレクションを取得します。 使用して、この軸メソッドすべての自己を取得し、指定された一致するコレクション内のすべての要素の先祖<xref:System.Xml.Linq.XName>です。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Child1",  
+        new XElement("GrandChild1",  
+            new XElement("GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement("Child2",  
+        new XElement("GrandChild2",  
+            new XElement("GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.AncestorsAndSelf("GreatGrandChild1")  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors and Self");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Child1>  
+            <GrandChild1>  
+                <GreatGrandChild1>content</GreatGrandChild1>  
+            </GrandChild1>  
+        </Child1>  
+        <Child2>  
+            <GrandChild2>  
+                <GreatGrandChild2>content</GreatGrandChild2>  
+            </GrandChild2>  
+        </Child2>  
+    </Root>  
+  
+Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                         Where el.Name.LocalName.StartsWith("Great") _  
+                         Select el  
+  
+Console.WriteLine("Great Grand Children Elements")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In greatGrandChildren  
+    Console.WriteLine(de.Name)  
+Next  
+  
+Dim allAncestors = From el In greatGrandChildren.AncestorsAndSelf("GreatGrandChild1") _  
+                   Select el  
+  
+Console.WriteLine("")  
+Console.WriteLine("Ancestors and Self")  
+Console.WriteLine("----")  
+  
+For Each de As XElement In allAncestors  
+    Console.WriteLine(de.Name)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+GreatGrandChild1  
+GreatGrandChild2  
+  
+Ancestors and Self  
+----  
+GreatGrandChild1  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Child1",  
+        new XElement(aw + "GrandChild1",  
+            new XElement(aw + "GreatGrandChild1", "content")  
+        )  
+    ),  
+    new XElement(aw + "Child2",  
+        new XElement(aw + "GrandChild2",  
+            new XElement(aw + "GreatGrandChild2", "content")  
+        )  
+    )  
+);  
+IEnumerable<XElement> greatGrandChildren =  
+    from el in xmlTree.Descendants()  
+    where el.Name.LocalName.StartsWith("Great")  
+    select el;  
+  
+Console.WriteLine("Great Grand Children Elements");  
+Console.WriteLine("----");  
+foreach (XElement de in greatGrandChildren)  
+    Console.WriteLine(de.Name);  
+  
+IEnumerable<XElement> allAncestors =  
+    from el in greatGrandChildren.AncestorsAndSelf(aw + "GreatGrandChild1")  
+    select el;  
+  
+Console.WriteLine("");  
+Console.WriteLine("Ancestors and Self");  
+Console.WriteLine("----");  
+foreach (XElement de in allAncestors)  
+    Console.WriteLine(de.Name);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Child1>  
+                    <GrandChild1>  
+                        <GreatGrandChild1>content</GreatGrandChild1>  
+                    </GrandChild1>  
+                </Child1>  
+                <Child2>  
+                    <GrandChild2>  
+                        <GreatGrandChild2>content</GreatGrandChild2>  
+                    </GrandChild2>  
+                </Child2>  
+            </Root>  
+  
+        Dim greatGrandChildren = From el In xmlTree.Descendants _  
+                                 Where el.Name.LocalName.StartsWith("Great") _  
+                                 Select el  
+  
+        Console.WriteLine("Great Grand Children Elements")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In greatGrandChildren  
+            Console.WriteLine(de.Name)  
+        Next  
+  
+        Dim allAncestors = From el In greatGrandChildren.AncestorsAndSelf(GetXmlNamespace() + "GreatGrandChild1") _  
+                           Select el  
+  
+        Console.WriteLine("")  
+        Console.WriteLine("Ancestors and Self")  
+        Console.WriteLine("----")  
+  
+        For Each de As XElement In allAncestors  
+            Console.WriteLine(de.Name)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Great Grand Children Elements  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+{http://www.adventure-works.com}GreatGrandChild2  
+  
+Ancestors and Self  
+----  
+{http://www.adventure-works.com}GreatGrandChild1  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Attributes">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ソース コレクション内のすべての要素の属性のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の場合は、統合属性軸を使用して、要素のコレクションから特定の名前を持つ属性を取得します。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt; Attributes (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XAttribute&gt; Attributes(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべての要素の属性のコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XAttribute" />ソース コレクション内のすべての要素の属性を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のいくつかの XML とは異なりプログラミング インターフェイスに注意してください[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]、名前空間が属性として表示されます。  
+  
+ Visual Basic の場合は、要素のコレクションから、指定した名前の属性を取得する統合 attribute 軸を使用できますが、すべての要素がコレクション内のすべての属性を取得する統合された Visual Basic の軸はありません。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素のコレクションを取得し、コレクション内のすべての要素のすべての属性のコレクションを取得します。 結果のコレクションがの属性のみが含まれることに注意してください、`Child1`と`Child2`要素、およびの属性ではなく、`Root`要素。  
+  
+ 名前空間属性がこのメソッドによって返されることに注意してください。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XAttribute(XNamespace.Xmlns + "aw", "http://www.adventure-works.com"),  
+    new XAttribute("Att1", "content1"),  
+    new XAttribute("Att2", "content2"),  
+    new XElement("Child1",  
+        new XAttribute("Att1", "content3"),  
+        new XAttribute("Att2", "content4")  
+    ),  
+    new XElement("Child2",  
+        new XAttribute("Att1", "content5"),  
+        new XAttribute("Att2", "content6")  
+    )  
+);  
+Console.WriteLine(xmlTree);  
+Console.WriteLine("-----");  
+  
+IEnumerable<XAttribute> attList =  
+    from att in xmlTree.DescendantsAndSelf().Attributes()  
+    select att;  
+  
+foreach (XAttribute att in attList)  
+    Console.WriteLine(att);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root xmlns:aw="http://www.adventure-works.com" Att1="content1" Att2="content2">  
+        <Child1 Att1="content3" Att2="content4"/>  
+        <Child2 Att1="content5" Att2="content6"/>  
+    </Root>  
+  
+Dim attList = _  
+    From att In xmlTree.DescendantsAndSelf.Attributes _  
+    Select att  
+  
+Console.WriteLine(xmlTree)  
+Console.WriteLine("-----")  
+  
+For Each att As XAttribute In attList  
+    Console.WriteLine(att)  
+Next  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<Root xmlns:aw="http://www.adventure-works.com" Att1="content1" Att2="content2">  
+  <Child1 Att1="content3" Att2="content4" />  
+  <Child2 Att1="content5" Att2="content6" />  
+</Root>  
+-----  
+xmlns:aw="http://www.adventure-works.com"  
+Att1="content1"  
+Att2="content2"  
+Att1="content3"  
+Att2="content4"  
+Att1="content5"  
+Att2="content6"  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。 名前空間属性が、返されるコレクションに含まれることに注意してください。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XAttribute(XNamespace.Xmlns + "aw", "http://www.adventure-works.com"),  
+    new XAttribute(aw + "Att1", "content1"),  
+    new XAttribute(aw + "Att2", "content2"),  
+    new XElement(aw + "Child1",  
+        new XAttribute(aw + "Att1", "content3"),  
+        new XAttribute(aw + "Att2", "content4")  
+    ),  
+    new XElement(aw + "Child2",  
+        new XAttribute(aw + "Att1", "content5"),  
+        new XAttribute(aw + "Att2", "content6")  
+    )  
+);  
+Console.WriteLine(xmlTree);  
+Console.WriteLine("-----");  
+  
+IEnumerable<XAttribute> attList =  
+    from att in xmlTree.DescendantsAndSelf().Attributes()  
+    select att;  
+  
+foreach (XAttribute att in attList)  
+    Console.WriteLine(att);  
+```  
+  
+```vb  
+  
+                Imports <xmlns:aw="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <aw:Root xmlns:aw="http://www.adventure-works.com" aw:Att1="content1" aw:Att2="content2">  
+                <aw:Child1 aw:Att1="content3" aw:Att2="content4"/>  
+                <aw:Child2 aw:Att1="content5" aw:Att2="content6"/>  
+            </aw:Root>  
+  
+        Dim attList = _  
+            From att In xmlTree.DescendantsAndSelf.Attributes _  
+            Select att  
+  
+        Console.WriteLine(xmlTree)  
+        Console.WriteLine("-----")  
+  
+        For Each att As XAttribute In attList  
+            Console.WriteLine(att)  
+        Next  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<aw:Root xmlns:aw="http://www.adventure-works.com" aw:Att1="content1" aw:Att2="content2">  
+  <aw:Child1 aw:Att1="content3" aw:Att2="content4" />  
+  <aw:Child2 aw:Att1="content5" aw:Att2="content6" />  
+</aw:Root>  
+-----  
+xmlns:aw="http://www.adventure-works.com"  
+aw:Att1="content1"  
+aw:Att2="content2"  
+aw:Att1="content3"  
+aw:Att2="content4"  
+aw:Att1="content5"  
+aw:Att2="content6"  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt; Attributes (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source, System.Xml.Linq.XName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XAttribute&gt; Attributes(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Attributes(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>ソース コレクション内のすべての要素の属性のフィルター選択されたコレクションを返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XAttribute" />ソース コレクション内のすべての要素の属性のフィルター選択されたコレクションを格納します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のいくつかの XML とは異なりプログラミング インターフェイスに注意してください[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]、名前空間が属性として表示されます。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、ここでは、要素のコレクションを取得、`Child1`と`Child2`要素。 名前とその子コレクションのすべての属性を取得します`Att1`です。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XAttribute("Att1", "content1"),  
+    new XAttribute("Att2", "content2"),  
+    new XElement("Child1",  
+        new XAttribute("Att1", "content3"),  
+        new XAttribute("Att2", "content4")  
+    ),  
+    new XElement("Child2",  
+        new XAttribute("Att1", "content5"),  
+        new XAttribute("Att2", "content6")  
+    )  
+);  
+  
+IEnumerable<XAttribute> attList = from att in xmlTree.Elements().Attributes("Att1")  
+                                  select att;  
+  
+foreach (XAttribute att in attList)  
+    Console.WriteLine(att);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root Att1="content1" Att2="content2">  
+        <Child1 Att1="content3" Att2="content4">  
+        </Child1>  
+        <Child2 Att1="content5" Att2="content6">  
+        </Child2>  
+    </Root>  
+  
+Dim attList = From att In xmlTree.Elements.Attributes("Att1") _  
+                          Select att  
+  
+For Each att As XAttribute In attList  
+    Console.WriteLine(att)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Att1="content3"  
+Att1="content5"  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescendantNodes&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt; DescendantNodes&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XNode&gt; DescendantNodes&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.DescendantNodes``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XContainer" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべてのドキュメントおよび要素の子孫ノードのコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />のすべてのドキュメントおよびソース コレクション内の要素の子孫のノードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この軸の拡張メソッドが使用される<xref:System.Xml.Linq.XDocument>と<xref:System.Xml.Linq.XElement>オブジェクト。 派生してこれらの型の両方の<xref:System.Xml.Linq.XContainer>ので、このメソッドによって操作、<xref:System.Collections.Generic.IEnumerable%601>の<xref:System.Xml.Linq.XContainer>ソース コレクションを格納します。  
+  
+ Visual Basic では、要素の子孫要素の統合の XML 軸がない統合軸の子孫のノードのため、Visual Basic ユーザーはこの軸メソッドを明示的に使用する必要があります。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの要素のコレクションを取得し、ソース コレクション内のすべての要素のすべての子孫ノードのコレクションを取得します。 なおの属性、`GrandChild`要素がノードとして表示されません。  
+  
+```csharp  
+  
+                XElement xmlTree = XElement.Parse(  
+@"<Root>  
+    <Child>aaa<GrandChild anAttribute='xyz'>Text</GrandChild>  
+        <!--a comment-->  
+        <?xml-stylesheet type='text/xsl' href='test.xsl'?>  
+    </Child>  
+    <Child>ccc<GrandChild>Text</GrandChild>ddd</Child>  
+</Root>");  
+IEnumerable<XNode> nodes =  
+    from node in xmlTree.Elements("Child").DescendantNodes()  
+    select node;  
+  
+foreach (XNode node in nodes)  
+{  
+    switch (node.NodeType)  
+    {  
+        case XmlNodeType.Element:  
+            Console.WriteLine("Element: {0}", ((XElement)node).Name);  
+            break;  
+        case XmlNodeType.Text:  
+            Console.WriteLine("Text: {0}", ((XText)node).Value);  
+            break;  
+        case XmlNodeType.Comment:  
+            Console.WriteLine("Comment: {0}", ((XComment)node).Value);  
+            break;  
+        case XmlNodeType.ProcessingInstruction:  
+            Console.WriteLine("PI: {0}", ((XProcessingInstruction)node).Data);  
+            break;  
+    }  
+}  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+<Root>  
+    <Child>aaa<GrandChild anAttribute='xyz'>Text</GrandChild>  
+        <!--a comment-->  
+        <?xml-stylesheet type='text/xsl' href='test.xsl'?>  
+    </Child>  
+    <Child>ccc<GrandChild>Text</GrandChild>ddd</Child>  
+</Root>  
+  
+Dim nodes As IEnumerable(Of XNode) = _  
+    From node In xmlTree.<Child>.DescendantNodes _  
+    Select node  
+  
+For Each node As XNode In nodes  
+    Select Case node.NodeType  
+        Case XmlNodeType.Element  
+            Console.WriteLine("Element: {0}", DirectCast(node, XElement).Name)  
+        Case XmlNodeType.Text  
+            Console.WriteLine("Text: {0}", DirectCast(node, XText).Value)  
+        Case XmlNodeType.Comment  
+            Console.WriteLine("Comment: {0}", DirectCast(node, XComment).Value)  
+        Case XmlNodeType.ProcessingInstruction  
+            Console.WriteLine("PI: {0}", DirectCast(node, XProcessingInstruction).Data)  
+    End Select  
+Next  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Text: aaa  
+Element: GrandChild  
+Text: Text  
+Comment: a comment  
+PI: type='text/xsl' href='test.xsl'  
+Text: ccc  
+Element: GrandChild  
+Text: Text  
+Text: ddd  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = XElement.Parse(  
+@"<Root xmlns='http://www.adventure-works.com'>  
+    <Child>aaa<GrandChild anAttribute='xyz'>Text</GrandChild>  
+        <!--a comment-->  
+        <?xml-stylesheet type='text/xsl' href='test.xsl'?>  
+    </Child>  
+    <Child>ccc<GrandChild>Text</GrandChild>ddd</Child>  
+</Root>");  
+IEnumerable<XNode> nodes =  
+    from node in xmlTree.Elements(aw + "Child").DescendantNodes()  
+    select node;  
+  
+foreach (XNode node in nodes)  
+{  
+    switch (node.NodeType)  
+    {  
+        case XmlNodeType.Element:  
+            Console.WriteLine("Element: {0}", ((XElement)node).Name);  
+            break;  
+        case XmlNodeType.Text:  
+            Console.WriteLine("Text: {0}", ((XText)node).Value);  
+            break;  
+        case XmlNodeType.Comment:  
+            Console.WriteLine("Comment: {0}", ((XComment)node).Value);  
+            break;  
+        case XmlNodeType.ProcessingInstruction:  
+            Console.WriteLine("PI: {0}", ((XProcessingInstruction)node).Data);  
+            break;  
+    }  
+}  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+        <Root>  
+            <Child>aaa<GrandChild anAttribute='xyz'>Text</GrandChild>  
+                <!--a comment-->  
+                <?xml-stylesheet type='text/xsl' href='test.xsl'?>  
+            </Child>  
+            <Child>ccc<GrandChild>Text</GrandChild>ddd</Child>  
+        </Root>  
+  
+        Dim nodes As IEnumerable(Of XNode) = _  
+            From node In xmlTree.<Child>.DescendantNodes _  
+            Select node  
+  
+        For Each node As XNode In nodes  
+            Select Case node.NodeType  
+                Case XmlNodeType.Element  
+                    Console.WriteLine("Element: {0}", DirectCast(node, XElement).Name)  
+                Case XmlNodeType.Text  
+                    Console.WriteLine("Text: {0}", DirectCast(node, XText).Value)  
+                Case XmlNodeType.Comment  
+                    Console.WriteLine("Comment: {0}", DirectCast(node, XComment).Value)  
+                Case XmlNodeType.ProcessingInstruction  
+                    Console.WriteLine("PI: {0}", DirectCast(node, XProcessingInstruction).Data)  
+            End Select  
+        Next  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Text: aaa  
+Element: {http://www.adventure-works.com}GrandChild  
+Text: Text  
+Comment: a comment  
+PI: type='text/xsl' href='test.xsl'  
+Text: ccc  
+Element: {http://www.adventure-works.com}GrandChild  
+Text: Text  
+Text: ddd  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescendantNodesAndSelf">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt; DescendantNodesAndSelf (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XNode&gt; DescendantNodesAndSelf(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.DescendantNodesAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべての要素を含むノードと、ソース コレクション内のすべての要素の子孫ノードのコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションと、ソース コレクション内のすべての要素の子孫ノードのすべての要素を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic では、要素の子孫要素の統合の XML 軸がない統合軸の子孫のノードのため、Visual Basic ユーザーはこの軸メソッドを明示的に使用する必要があります。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Descendants&lt;T&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>すべての要素と、ソース コレクション内のドキュメントの子孫要素を含む要素のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の場合は、統合された XML 子孫軸を使用して、コレクションの子孫要素を取得できます。 ただし、統合軸には、指定した名前を持つ子孫だけを取得します。 Visual Basic の場合は、すべての子孫を取得する場合に、必要がありますこの軸メソッドを明示的に使用します。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Descendants&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Descendants&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Descendants&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XContainer" />ソース コレクションを格納します。</param>
+        <summary>すべての要素と、ソース コレクション内のドキュメントの子孫要素を含む要素のコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />すべての要素と、ソース コレクション内のドキュメントの子孫要素を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の場合は、統合された XML 子孫軸を使用して、コレクションの子孫要素を取得できます。 ただし、統合軸には、指定した名前を持つ子孫だけを取得します。 Visual Basic の場合は、すべての子孫を取得する場合に、必要がありますこの軸メソッドを明示的に使用します。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素のコレクションを取得し、この軸メソッドを使用して、要素のコレクション内のすべての項目のすべての子孫要素を取得します。  
+  
+```csharp  
+  
+                XElement xmlTree = XElement.Parse(  
+@"<Root>  
+    <Para>  
+        <t>This is some text </t>  
+        <b>  
+            <t>where</t>  
+        </b>  
+        <t> all of the nodes must be concatenated. </t>  
+    </Para>  
+    <Para>  
+        <t>This is a second sentence.</t>  
+    </Para>  
+</Root>");  
+  
+IEnumerable<XElement> elList =  
+    from el in xmlTree.Elements("Para").Descendants()  
+    select el;  
+  
+foreach (XElement el in elList)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Para>  
+            <t>This is some text </t>  
+            <b>  
+                <t>where</t>  
+            </b>  
+            <t> all of the nodes must be concatenated. </t>  
+        </Para>  
+  
+        <Para>  
+            <t>This is a second sentence.</t>  
+        </Para>  
+    </Root>  
+  
+Dim elList = From el In xmlTree.<Para>.Descendants _  
+                        Select el  
+  
+For Each el As XElement In elList  
+    Console.WriteLine(el)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<t>This is some text </t>  
+<b>  
+  <t>where</t>  
+</b>  
+<t>where</t>  
+<t> all of the nodes must be concatenated. </t>  
+<t>This is a second sentence.</t>  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = XElement.Parse(  
+@"<Root xmlns='http://www.adventure-works.com'>  
+    <Para>  
+        <t>This is some text </t>  
+        <b>  
+            <t>where</t>  
+        </b>  
+        <t> all of the nodes must be concatenated. </t>  
+    </Para>  
+    <Para>  
+        <t>This is a second sentence.</t>  
+    </Para>  
+</Root>");  
+  
+IEnumerable<XElement> elList =  
+    from el in xmlTree.Elements(aw + "Para").Descendants()  
+    select el;  
+  
+foreach (XElement el in elList)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Para>  
+                    <t>This is some text </t>  
+                    <b>  
+                        <t>where</t>  
+                    </b>  
+                    <t> all of the nodes must be concatenated. </t>  
+                </Para>  
+  
+                <Para>  
+                    <t>This is a second sentence.</t>  
+                </Para>  
+            </Root>  
+  
+        Dim elList = From el In xmlTree.<Para>.Descendants _  
+                                Select el  
+  
+        For Each el As XElement In elList  
+            Console.WriteLine(el)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<t xmlns="http://www.adventure-works.com">This is some text </t>  
+<b xmlns="http://www.adventure-works.com">  
+  <t>where</t>  
+</b>  
+<t xmlns="http://www.adventure-works.com">where</t>  
+<t xmlns="http://www.adventure-works.com"> all of the nodes must be concatenated. </t>  
+<t xmlns="http://www.adventure-works.com">This is a second sentence.</t>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Descendants&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Descendants&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, System.Xml.Linq.XName name) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Descendants&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Descendants``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XContainer" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>すべての要素と、ソース コレクション内のドキュメントの子孫要素を含む、フィルター選択された要素のコレクションを返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />すべての要素と、ソース コレクション内のドキュメントの子孫要素を格納しています。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic のユーザーが使用できる、 [Visual Basic (LINQ to XML) の統合言語軸](http://msdn.microsoft.com/library/4143c385-eb50-4286-a7fd-a50f466c7af0)この軸メソッドを明示的に使用する代わりにします。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの要素のコレクションを取得し、指定した要素の名前を持つ 2 つの要素のすべての子孫のコレクションを取得します。  
+  
+```csharp  
+  
+                XElement xmlTree = XElement.Parse(  
+@"<Root>  
+    <Para>  
+        <t>This is some text </t>  
+        <b>  
+            <t>where</t>  
+        </b>  
+        <t> all of the text nodes must be concatenated. </t>  
+    </Para>  
+    <Para>  
+        <t>This is a second sentence.</t>  
+    </Para>  
+</Root>");  
+  
+string str =  
+    (from el in xmlTree.Elements("Para").Descendants("t")  
+    select (string)el)  
+    .Aggregate(new StringBuilder(),  
+        (sb, i) => sb.Append(i),  
+        sb => sb.ToString());  
+  
+Console.WriteLine(str);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Para>  
+            <t>This is some text </t>  
+            <b>  
+                <t>where</t>  
+            </b>  
+            <t> all of the text nodes must be concatenated. </t>  
+        </Para>  
+        <Para>  
+            <t>This is a second sentence.</t>  
+        </Para>  
+    </Root>  
+  
+Dim str As String = _  
+    ( _  
+        From el In xmlTree.<Para>...<t> _  
+        Select CStr(el) _  
+    ) _  
+    .Aggregate(New StringBuilder(), _  
+               Function(ByVal sb, ByVal i) sb.Append(i), _  
+               Function(ByVal sb) sb.ToString())  
+  
+Console.WriteLine(str)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+This is some text where all of the text nodes must be concatenated. This is a second sentence.  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = XElement.Parse(  
+@"<Root xmlns='http://www.adventure-works.com'>  
+    <Para>  
+        <t>This is some text </t>  
+        <b>  
+            <t>where</t>  
+        </b>  
+        <t> all of the text nodes must be concatenated. </t>  
+    </Para>  
+    <Para>  
+        <t>This is a second sentence.</t>  
+    </Para>  
+</Root>");  
+  
+string str =  
+    (from el in xmlTree.Elements(aw + "Para").Descendants(aw + "t")  
+     select (string)el)  
+    .Aggregate(new StringBuilder(),  
+        (sb, i) => sb.Append(i),  
+        sb => sb.ToString());  
+  
+Console.WriteLine(str);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Para>  
+                    <t>This is some text </t>  
+                    <b>  
+                        <t>where</t>  
+                    </b>  
+                    <t> all of the text nodes must be concatenated. </t>  
+                </Para>  
+                <Para>  
+                    <t>This is a second sentence.</t>  
+                </Para>  
+            </Root>  
+  
+        Dim str As String = _  
+            ( _  
+                From el In xmlTree.<Para>...<t> _  
+                Select CStr(el) _  
+            ) _  
+            .Aggregate(New StringBuilder(), _  
+                       Function(sb, i) sb.Append(i), _  
+                       Function(sb) sb.ToString())  
+  
+        Console.WriteLine(str)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+This is some text where all of the text nodes must be concatenated. This is a second sentence.  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DescendantsAndSelf">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ソース コレクション内のすべての要素と、ソース コレクション内の各要素のすべての子孫要素のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic では、要素の子孫要素の統合の XML 軸が、このメソッドのセマンティクスのある統合軸はありません。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DescendantsAndSelf">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; DescendantsAndSelf (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; DescendantsAndSelf(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべての要素を格納していると、ソース コレクション内のすべての要素の子孫要素のコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクション内のすべての要素と、ソース コレクション内のすべての要素の子孫要素を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic では、要素の子孫要素の統合の XML 軸が、統合軸を Visual Basic の場合は、この軸メソッドを明示的に使用する必要がありますので、このメソッドのセマンティクスを持つことはありません。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescendantsAndSelf">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; DescendantsAndSelf (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; source, System.Xml.Linq.XName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; DescendantsAndSelf(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.DescendantsAndSelf(System.Collections.Generic.IEnumerable{System.Xml.Linq.XElement},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>ソース コレクション内のすべての要素を含む要素のフィルター選択されたコレクションと、ソース コレクション内のすべての要素の子孫を返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションと、ソース コレクション内のすべての要素の子孫のすべての要素を格納しています。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic では、要素の子孫要素の統合の XML 軸が、統合軸を Visual Basic の場合は、この軸メソッドを明示的に使用する必要がありますので、このメソッドのセマンティクスを持つことはありません。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Elements&lt;T&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ソース コレクション内の子のコレクションのすべての要素およびドキュメントの要素を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic には、指定したすべての子要素を検索できるようにする統合された要素軸が含まれています。<xref:System.Xml.Linq.XName>ソース コレクション内の各要素。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Elements&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Elements&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Elements&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内の子のコレクションのすべての要素およびドキュメントの要素を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />のすべての要素またはソース コレクション内のドキュメントの子要素です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic には、指定したすべての子要素を検索できるようにする統合された要素軸が含まれている<xref:System.Xml.Linq.XName>ソース コレクション内のすべての要素の場合、ソース コレクション内の各要素のすべての子要素のコレクションを取得できるようにする統合要素軸はありません。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、要素の名前の要素のコレクションを取得`Child`です。 この軸メソッドを使用して、コレクションのすべての子要素を取得します。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Child",  
+        new XElement("GrandChild1", 1),  
+        new XElement("GrandChild2", 2)  
+    ),  
+    new XElement("Child",  
+        new XElement("GrandChild3", 3),  
+        new XElement("GrandChild4", 4)  
+    ),  
+    new XElement("Child",  
+        new XElement("GrandChild5", 5),  
+        new XElement("GrandChild6", 6)  
+    )  
+);  
+  
+IEnumerable<XElement> allGrandChildren =  
+    from el in xmlTree.Elements("Child").Elements()  
+    select el;  
+  
+foreach (XElement el in allGrandChildren)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+     <Root>  
+          <Child>  
+              <GrandChild1>1</GrandChild1>  
+              <GrandChild2>2</GrandChild2>  
+          </Child>  
+  
+          <Child>  
+              <GrandChild3>3</GrandChild3>  
+              <GrandChild4>4</GrandChild4>  
+          </Child>  
+  
+          <Child>  
+              <GrandChild5>5</GrandChild5>  
+              <GrandChild6>6</GrandChild6>  
+          </Child>  
+      </Root>  
+  
+Dim allGrandChildren = From el In xmlTree.<Child>.Elements _  
+                       Select el  
+  
+For Each el As XElement In allGrandChildren  
+    Console.WriteLine(el)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<GrandChild1>1</GrandChild1>  
+<GrandChild2>2</GrandChild2>  
+<GrandChild3>3</GrandChild3>  
+<GrandChild4>4</GrandChild4>  
+<GrandChild5>5</GrandChild5>  
+<GrandChild6>6</GrandChild6>  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Child",  
+        new XElement(aw + "GrandChild1", 1),  
+        new XElement(aw + "GrandChild2", 2)  
+    ),  
+    new XElement(aw + "Child",  
+        new XElement(aw + "GrandChild3", 3),  
+        new XElement(aw + "GrandChild4", 4)  
+    ),  
+    new XElement(aw + "Child",  
+        new XElement(aw + "GrandChild5", 5),  
+        new XElement(aw + "GrandChild6", 6)  
+    )  
+);  
+  
+IEnumerable<XElement> allGrandChildren =  
+    from el in xmlTree.Elements(aw + "Child").Elements()  
+    select el;  
+  
+foreach (XElement el in allGrandChildren)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+             <Root>  
+                 <Child>  
+                     <GrandChild1>1</GrandChild1>  
+                     <GrandChild2>2</GrandChild2>  
+                 </Child>  
+  
+                 <Child>  
+                     <GrandChild3>3</GrandChild3>  
+                     <GrandChild4>4</GrandChild4>  
+                 </Child>  
+  
+                 <Child>  
+                     <GrandChild5>5</GrandChild5>  
+                     <GrandChild6>6</GrandChild6>  
+                 </Child>  
+             </Root>  
+  
+        Dim allGrandChildren = From el In xmlTree.<Child>.Elements _  
+                               Select el  
+  
+        For Each el As XElement In allGrandChildren  
+            Console.WriteLine(el)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<GrandChild1 xmlns="http://www.adventure-works.com">1</GrandChild1>  
+<GrandChild2 xmlns="http://www.adventure-works.com">2</GrandChild2>  
+<GrandChild3 xmlns="http://www.adventure-works.com">3</GrandChild3>  
+<GrandChild4 xmlns="http://www.adventure-works.com">4</GrandChild4>  
+<GrandChild5 xmlns="http://www.adventure-works.com">5</GrandChild5>  
+<GrandChild6 xmlns="http://www.adventure-works.com">6</GrandChild6>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Elements&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt; Elements&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source, System.Xml.Linq.XName name) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XElement&gt; Elements&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source, class System.Xml.Linq.XName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Elements``1(System.Collections.Generic.IEnumerable{``0},System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />ソース コレクションを格納します。</param>
+        <param name="name">照合する <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>ソース コレクション内の子のフィルター選択されたコレクションのすべての要素およびドキュメントの要素を返します。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XElement" />のすべての要素と、ソース コレクション内のドキュメントの子要素です。 一致する要素だけ<see cref="T:System.Xml.Linq.XName" />コレクションに含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic の場合は、統合された要素の軸を使用して、コレクション内のすべての要素の子要素を取得できます。  
+  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ この拡張メソッドは、特定の深さで指定した名前のすべての要素を取得するときに役立ちます。 これは、機能は、ドキュメントが非常に正規がこのドキュメントは、通常は場合を指定できますが難しい場合簡単です。 次の例では、すべてを取得する`aaa`要素の子である`Item`要素。 指定された`Item`要素は、含めることはできません、`aaa`要素。 簡単にこれは次のようにこの拡張メソッドを使用します。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Item",  
+        new XElement("aaa", 1),  
+        new XElement("bbb", 2)  
+    ),  
+    new XElement("Item",  
+        new XElement("ccc", 3),  
+        new XElement("aaa", 4)  
+    ),  
+    new XElement("Item",  
+        new XElement("ddd", 5),  
+        new XElement("eee", 6)  
+    )  
+);  
+  
+IEnumerable<XElement> allGrandChildren =  
+    from el in xmlTree.Elements("Item").Elements("aaa")  
+    select el;  
+  
+foreach (XElement el in allGrandChildren)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Item>  
+            <aaa>1</aaa>  
+            <bbb>2</bbb>  
+        </Item>  
+  
+        <Item>  
+            <ccc>3</ccc>  
+            <aaa>4</aaa>  
+        </Item>  
+  
+        <Item>  
+            <ddd>5</ddd>  
+            <eee>6</eee>  
+        </Item>  
+    </Root>  
+  
+Dim allGrandChildren = From el In xmlTree.<Item>.<aaa> _  
+                       Select el  
+  
+For Each el As XElement In allGrandChildren  
+    Console.WriteLine(el)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<aaa>1</aaa>  
+<aaa>4</aaa>  
+```  
+  
+ 同じ例を次に示しますが、ここで、XML が名前空間には。 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+```csharp  
+XNamespace aw = "http://www.adventure-works.com";  
+XElement xmlTree = new XElement(aw + "Root",  
+    new XElement(aw + "Item",  
+        new XElement(aw + "aaa", 1),  
+        new XElement(aw + "bbb", 2)  
+    ),  
+    new XElement(aw + "Item",  
+        new XElement(aw + "ccc", 3),  
+        new XElement(aw + "aaa", 4)  
+    ),  
+    new XElement(aw + "Item",  
+        new XElement(aw + "ddd", 5),  
+        new XElement(aw + "eee", 6)  
+    )  
+);  
+  
+IEnumerable<XElement> allGrandChildren =  
+    from el in xmlTree.Elements(aw + "Item").Elements(aw + "aaa")  
+    select el;  
+  
+foreach (XElement el in allGrandChildren)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim xmlTree As XElement = _  
+            <Root>  
+                <Item>  
+                    <aaa>1</aaa>  
+                    <bbb>2</bbb>  
+                </Item>  
+  
+                <Item>  
+                    <ccc>3</ccc>  
+                    <aaa>4</aaa>  
+                </Item>  
+  
+                <Item>  
+                    <ddd>5</ddd>  
+                    <eee>6</eee>  
+                </Item>  
+            </Root>  
+  
+        Dim allGrandChildren = From el In xmlTree.<Item>.<aaa> _  
+                               Select el  
+  
+        For Each el As XElement In allGrandChildren  
+            Console.WriteLine(el)  
+        Next  
+    End Sub  
+End Module  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<aaa xmlns="http://www.adventure-works.com">1</aaa>  
+<aaa xmlns="http://www.adventure-works.com">4</aaa>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InDocumentOrder&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;T&gt; InDocumentOrder&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XNode;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; InDocumentOrder&lt;(class System.Xml.Linq.XNode) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.InDocumentOrder``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XNode</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XNode" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションを格納します。</param>
+        <summary>ドキュメント順で並べ替え、ソース コレクション内のすべてのノードを含むノードのコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ドキュメントの順序で並べ替え、ソース コレクション内のすべてのノードを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この軸メソッドは遅延実行を使用します。 ただし、最初のソースのコレクション、並べ替え、ドキュメント順にノードを列挙し、後、結果を生成します。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメント順に含まれていないノードのコレクションを作成し、このノードはドキュメントの順序でを新しいコレクションを作成するこの軸を使用しています。  
+  
+```csharp  
+  
+                XElement xmlTree = new XElement("Root",  
+    new XElement("Item",  
+        new XElement("aaa", 1),  
+        new XElement("bbb", 2)  
+    ),  
+    new XElement("Item",  
+        new XElement("ccc", 3),  
+        new XElement("aaa", 4)  
+    ),  
+    new XElement("Item",  
+        new XElement("ddd", 5),  
+        new XElement("eee", 6)  
+    )  
+);  
+  
+XElement[] elementList = {  
+    xmlTree.Descendants("ddd").First(),  
+    xmlTree.Descendants("ccc").First(),  
+    xmlTree.Descendants("aaa").First()  
+};  
+  
+IEnumerable<XElement> inDocOrder = elementList.InDocumentOrder();  
+  
+foreach (XElement el in inDocOrder)  
+    Console.WriteLine(el);  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Item>  
+            <aaa>1</aaa>  
+            <bbb>2</bbb>  
+        </Item>  
+  
+        <Item>  
+            <ccc>3</ccc>  
+            <aaa>4</aaa>  
+        </Item>  
+  
+        <Item>  
+            <ddd>5</ddd>  
+            <eee>6</eee>  
+        </Item>  
+    </Root>  
+  
+Dim elementList() As XElement = _  
+    { _  
+        xmlTree...<ddd>(0), _  
+        xmlTree...<ccc>(0), _  
+        xmlTree...<aaa>(0) _  
+    }  
+  
+Dim inDocOrder = elementList.InDocumentOrder  
+  
+For Each el As XElement In inDocOrder  
+    Console.WriteLine(el)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<aaa>1</aaa>  
+<ccc>3</ccc>  
+<ddd>5</ddd>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nodes&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt; Nodes&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XContainer;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XNode&gt; Nodes&lt;(class System.Xml.Linq.XContainer) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Nodes``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XNode&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XContainer</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XContainer" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションを格納します。</param>
+        <summary>ソース コレクション内のすべてのドキュメントおよび要素ノード、子のコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />のすべてのドキュメントおよびソース コレクション内の要素の子ノードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは遅延実行を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、すべての名前を持つ要素のコレクション内の各ノードの子ノードの取得`Child`です。  
+  
+```csharp  
+  
+                XElement xmlTree = XElement.Parse(  
+    @"<Root><Child>aaa<GrandChild>Text</GrandChild>bbb</Child>" +  
+    @"<Child>ccc<GrandChild>Text</GrandChild>ddd</Child></Root>");  
+IEnumerable<XNode> nodes = xmlTree.Elements("Child").Nodes();  
+  
+foreach (XNode node in nodes)  
+{  
+    switch (node.NodeType)  
+    {  
+        case XmlNodeType.Element:  
+            Console.WriteLine("Element: {0}", ((XElement)node).Name);  
+            break;  
+        case XmlNodeType.Text:  
+            Console.WriteLine("Text: {0}", ((XText)node).Value);  
+            break;  
+    }  
+}  
+```  
+  
+```vb  
+  
+                Dim xmlTree As XElement = _  
+    <Root>  
+        <Child>aaa<GrandChild>Text</GrandChild>bbb</Child>  
+        <Child>ccc<GrandChild>Text</GrandChild>ddd</Child>  
+    </Root>  
+  
+Dim nodes = xmlTree.<Child>.Nodes()  
+  
+' Note that XNode uses XmlNodeType, which is in the System.Xml namespace.  
+For Each node As XNode In nodes  
+    Select Case node.NodeType  
+        Case XmlNodeType.Element  
+            Console.WriteLine("Element: {0}", DirectCast(node, XElement).Name)  
+        Case XmlNodeType.Text  
+            Console.WriteLine("Text: {0}", DirectCast(node, XText).Value)  
+    End Select  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+Text: aaa  
+Element: GrandChild  
+Text: bbb  
+Text: ccc  
+Element: GrandChild  
+Text: ddd  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public static void Remove (this System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Remove(class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XAttribute&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Remove(System.Collections.Generic.IEnumerable{System.Xml.Linq.XAttribute})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XAttribute" />ソース コレクションを格納します。</param>
+        <summary>その親要素からソース コレクション内のすべての属性を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スナップショットのセマンティクスを使用して、ソース コレクション内の属性は、コピー、<xref:System.Collections.Generic.List%601?displayProperty=nameWithType>親から切断する前にします。 これは、命令型/宣言型コードの混合の問題を回避する必要があります。 詳細については、次を参照してください。[混合宣言型コードと命令型コードのバグ (LINQ to XML)](http://msdn.microsoft.com/library/d9a5c404-2b0e-46cd-a358-0e78773b3094)です。  
+  
+   
+  
+## Examples  
+ 次の例では、属性のコレクションを取得し、親要素から削除するには、このメソッドを呼び出します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", 1),  
+    new XAttribute("Att2", 2),  
+    new XAttribute("Att3", 3),  
+    new XAttribute("Att4", 4),  
+    new XAttribute("Att5", 5)  
+);  
+  
+IEnumerable<XAttribute> atList =  
+    from at in root.Attributes()  
+    where (int)at >= 3  
+    select at;  
+  
+atList.Remove();  
+  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="1" Att2="2" Att3="3" Att4="4" Att5="5"/>  
+  
+Dim atList = From at In root.Attributes _  
+             Where at.Value >= 3 _  
+             Select at  
+  
+atList.Remove()  
+  
+Console.WriteLine(root)  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<Root Att1="1" Att2="2" />  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void Remove&lt;T&gt; (this System.Collections.Generic.IEnumerable&lt;T&gt; source) where T : System.Xml.Linq.XNode;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Remove&lt;(class System.Xml.Linq.XNode) T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.Extensions.Remove``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Xml.Linq.XNode</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">内のオブジェクトの種類<c>ソース</c>に制限<see cref="T:System.Xml.Linq.XNode" />です。</typeparam>
+        <param name="source"><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XNode" />ソース コレクションを格納します。</param>
+        <summary>親ノードから、ソース コレクション内のすべてのノードを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スナップショットのセマンティクスを使用して、ソース コレクション内の属性は、コピー、`List<T>`親から切断する前にします。 これは、命令型/宣言型コードの混合の問題を回避する必要があります。 詳細については、次を参照してください。[混合宣言型コードと命令型コードのバグ (LINQ to XML)](http://msdn.microsoft.com/library/d9a5c404-2b0e-46cd-a358-0e78773b3094)です。  
+  
+   
+  
+## Examples  
+ 次の例では、要素のコレクションを取得します。 それぞれの親要素から要素を削除するには、このメソッドを呼び出します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XElement("Data", 1),  
+    new XElement("Data", 2),  
+    new XElement("Data", 3),  
+    new XElement("Data", 4),  
+    new XElement("Data", 5)  
+);  
+  
+IEnumerable<XElement> elList =  
+    from el in root.Elements()  
+    where (int)el >= 3  
+    select el;  
+  
+elList.Remove();  
+  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = _  
+    <Root>  
+        <Data>1</Data>  
+        <Data>2</Data>  
+        <Data>3</Data>  
+        <Data>4</Data>  
+        <Data>5</Data>  
+    </Root>  
+  
+Dim elList = From el In root.Elements _  
+             Where el.Value >= 3 _  
+             Select el  
+  
+elList.Remove()  
+  
+Console.WriteLine(root)  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<Root>  
+  <Data>1</Data>  
+  <Data>2</Data>  
+</Root>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

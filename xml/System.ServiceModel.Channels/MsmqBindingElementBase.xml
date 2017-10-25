@@ -1,0 +1,577 @@
+<Type Name="MsmqBindingElementBase" FullName="System.ServiceModel.Channels.MsmqBindingElementBase">
+  <TypeSignature Language="C#" Value="public abstract class MsmqBindingElementBase : System.ServiceModel.Channels.TransportBindingElement, System.ServiceModel.Channels.ITransactedBindingElement, System.ServiceModel.Description.IPolicyExportExtension, System.ServiceModel.Description.IWsdlExportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MsmqBindingElementBase extends System.ServiceModel.Channels.TransportBindingElement implements class System.ServiceModel.Channels.ITransactedBindingElement, class System.ServiceModel.Description.IPolicyExportExtension, class System.ServiceModel.Description.IWsdlExportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.TransportBindingElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.ITransactedBindingElement</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyExportExtension</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IWsdlExportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement" /> および <see cref="T:System.ServiceModel.Channels.MsmqTransportBindingElement" /> の基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CustomDeadLetterQueue">
+      <MemberSignature Language="C#" Value="public Uri CustomDeadLetterQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CustomDeadLetterQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>期限切れのメッセージや、配信に失敗したメッセージを送信するカスタムの配信不能キューを識別する <see cref="T:System.Uri" /> を取得または設定します。</summary>
+        <value>カスタム配信不能キューの URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信不能キューは、配信に失敗したメッセージや期限切れメッセージを格納する送信元アプリケーションのキュー マネージャーによって管理されるキューです。 <xref:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue%2A> プロパティでは、既定のシステム全体の配信不能キューを使用する代わりにカスタムの配信不能キューを指定できます。  
+  
+ <xref:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue%2A> によって指定される URI は、`net.msmq scheme` を使用する必要があります。  
+  
+ <xref:System.ServiceModel.Channels.MsmqBindingElementBase.DeadLetterQueue%2A> が <xref:System.ServiceModel.DeadLetterQueue.None> または <xref:System.ServiceModel.DeadLetterQueue.System> に設定されている場合は、<xref:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue%2A> を `null` に設定する必要があります。 <xref:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue%2A> が `null` ではない場合は、<xref:System.ServiceModel.Channels.MsmqBindingElementBase.DeadLetterQueue%2A> を <xref:System.ServiceModel.DeadLetterQueue.Custom> に設定する必要があります。  
+  
+ <xref:System.ServiceModel.Channels.MsmqBindingElementBase.CustomDeadLetterQueue%2A> プロパティは、[!INCLUDE[wv](~/includes/wv-md.md)] 以降のオペレーティング システムでのみ設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeadLetterQueue">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.DeadLetterQueue DeadLetterQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.DeadLetterQueue DeadLetterQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.DeadLetterQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.DeadLetterQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングの <see cref="T:System.ServiceModel.DeadLetterQueue" /> の設定を取得または設定します。</summary>
+        <value>使用する配信不能キューがある場合、その種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信不能キューは、配信に失敗したメッセージや期限切れメッセージを格納する送信元アプリケーションのキュー マネージャーによって管理されるキューです。 メッセージが受信側のアプリケーションに到達できなかった理由としては、次のようなものがあります。  
+  
+-   トランザクション メッセージが、非トランザクション キューに送信されています。  
+  
+-   非トランザクション メッセージが、トランザクション キューに送信されています。  
+  
+-   認証されていないメッセージが、認証されたメッセージだけを受け取るキューに送信されています。  
+  
+-   暗号化されていないメッセージが、暗号化されたメッセージだけを受け取るキューに送信されています。  
+  
+-   受信側に配信される前にメッセージの期限が切れました。  
+  
+-   ターゲット コンピューターのメッセージ ストレージ クォータ、または送信先のキューのストレージ クォータを超えているか、メッセージが到達したときにターゲット コンピューターに使用可能なストレージ スペースがありませんでした。  
+  
+-   送信者がない、[アクセス権を](http://go.microsoft.com/fwlink/?LinkId=96167)送信先キューにメッセージを配置するために必要です。  
+  
+-   メッセージに結び付けられているデジタル署名が無効です。  
+  
+-   暗号化されているメッセージを、送信先のキュー マネージャーが解読できません。  
+  
+-   送信先のキューは、メッセージが取得される前に完全削除または削除されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.DeadLetterQueue" /> で定義されている値の範囲内ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Durable">
+      <MemberSignature Language="C#" Value="public bool Durable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Durable" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.Durable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングによって送信されるメッセージが永続的なものか不安定なものかを指定する値を取得または設定します。</summary>
+        <value>
+          このバインディングによって処理されたメッセージが非揮発性の場合は <see langword="true" />。揮発性の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが `true` に設定されている場合、メッセージは非揮発性です。それ以外の場合、メッセージは揮発性です。 非揮発性メッセージは、キュー マネージャーがクラッシュした場合でも失われません。 このプロパティの既定値は `true` です。 1 回限りの配信の保証が必要な場合 (<xref:System.ServiceModel.Channels.MsmqBindingElementBase.ExactlyOnce%2A> が `true` に設定されている場合)、このプロパティを `true` に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExactlyOnce">
+      <MemberSignature Language="C#" Value="public bool ExactlyOnce { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExactlyOnce" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.ExactlyOnce" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングで送信されるメッセージを正確に 1 回保証するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          このバインディングによって処理されるメッセージの 1 回限りの配信が保証される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MsmqBindingElementBase.ExactlyOnce%2A> は、`true` に設定されている場合、送信されたメッセージが受信メッセージ キューに 1 回だけ配信され、送信に失敗した場合は `DeadLetterQueue` プロパティ設定に応じてメッセージが配信不能キューに送信されることをメッセージ キュー (MSMQ) が保証します。 <xref:System.ServiceModel.Channels.MsmqBindingElementBase.ExactlyOnce%2A> を `true` に設定する場合は、キューがトランザクション キューでなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqBindingElementBase.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">プロパティの種類。</typeparam>
+        <param name="context">バインディング要素の <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>派生クラスでオーバーライドされると、提供したバインド コンテキストに対する指定した型のオブジェクトを取得します。</summary>
+        <returns><paramref name="T" /> 型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素から機能および保護要件を取得するための機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキストが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxRetryCycles">
+      <MemberSignature Language="C#" Value="public int MaxRetryCycles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxRetryCycles" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.MaxRetryCycles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信アプリケーションにメッセージを配信する再試行サイクルの最大数を取得または設定します。</summary>
+        <value>メッセージを有害メッセージ キューに転送する前に試みる再試行サイクル数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再試行サイクルとは、メッセージが再試行キューからアプリケーション キューに転送され、アプリケーションへの配信が試行されるタイミングのことです。 メッセージは、<xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveRetryCount%2A> で指定された回数の即時再試行に失敗した後、再試行キューに置かれます。 `MaxRetryCycles` は、再試行サイクル数を指定します。これには、メッセージの初回の送信試行は含まれません。 メッセージの配信試行は、最大で (1 + MaxRetryCycles) * (ReceiveRetryCount + 1) 回実行されます。 たとえば、ReceiveRetryCount = 0 で、MaxRetryCycles が 1 の場合、メッセージの配信試行は最大 2 回になります。 このプロパティは、[!INCLUDE[wv](~/includes/wv-md.md)] 以降のオペレーティング システムでのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MsmqTransportSecurity">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqTransportSecurity MsmqTransportSecurity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MsmqTransportSecurity MsmqTransportSecurity" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.MsmqTransportSecurity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインド要素に関連付けられている <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得します。</summary>
+        <value>このバインディング要素に関連付けられる <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MsmqTransportSecurity> は、MSMQ 統合トランスポートのセキュリティ設定をカプセル化します。 設定は、MSMQ 統合とキューに置かれているトランスポートの両方で同じです。 <xref:System.ServiceModel.MsmqTransportSecurity> を使用すると、認証モード、暗号化アルゴリズム、セキュア ハッシュ アルゴリズム、および保護レベルを設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveContextEnabled">
+      <MemberSignature Language="C#" Value="public bool ReceiveContextEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReceiveContextEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.ReceiveContextEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信コンテキストの動作が要求されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />バインディングがサポートする場合は受信 contextbehavior です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveErrorHandling">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ReceiveErrorHandling ReceiveErrorHandling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ReceiveErrorHandling ReceiveErrorHandling" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.ReceiveErrorHandling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReceiveErrorHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有害メッセージおよびその他のディスパッチできないメッセージの処理方法を指定する列挙値を取得または設定します。</summary>
+        <value>有害メッセージおよびディスパッチできないメッセージの処理方法を指定する <see cref="T:System.ServiceModel.ReceiveErrorHandling" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが <xref:System.ServiceModel.ReceiveErrorHandling.Fault> に設定されている場合、チャネル リスナーでエラーが発生し、<xref:System.ServiceModel.ProtocolException> (<xref:System.ServiceModel.MsmqPoisonMessageException> をラップ) がトレースおよびスローされます。 メッセージはキューに残されるので、手動で削除する必要があります。 <xref:System.ServiceModel.MsmqPoisonMessageException> は、<xref:System.ServiceModel.MsmqPoisonMessageException.MessageLookupId%2A> を格納します。これを使用して、害のあるメッセージを識別し、それを有害メッセージ キューから手動で削除できます。  
+  
+ このプロパティが <xref:System.ServiceModel.ReceiveErrorHandling.Drop> に設定されている場合、メッセージは削除されます。  
+  
+ このプロパティが <xref:System.ServiceModel.ReceiveErrorHandling.Reject> に設定されている場合は、否定応答がクライアントに送信され、メッセージが有害メッセージ キューから削除されます。 このオプションは、メッセージ キュー 4.0 でのみ利用できます。  
+  
+ <xref:System.ServiceModel.ReceiveErrorHandling.Move> に設定されている場合、メッセージは、最後に存在する有害サブキューに移動されます。 このオプションは、メッセージ キュー 4.0 でのみ利用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.ReceiveErrorHandling" /> で定義されている値の範囲内ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveRetryCount">
+      <MemberSignature Language="C#" Value="public int ReceiveRetryCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveRetryCount" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.ReceiveRetryCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キュー マネージャーがメッセージを再試行キューに転送する前にメッセージ送信を試行する最大回数を取得または設定します。</summary>
+        <value>キュー マネージャーがメッセージを再試行キューに転送する前にメッセージ送信を試行する最大回数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信試行を最大回数実行してもアプリケーションがメッセージにアクセスできない場合、メッセージは、後で再配信するために再試行キューに送信されます。 メッセージが送信キューに戻されるまでの時間は、<xref:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay%2A> で制御されます。 再試行サイクルが MaxRetryCycles 値に達した場合は、メッセージが <xref:System.ServiceModel.Channels.MsmqBindingElementBase.ReceiveErrorHandling%2A> プロパティの値に基づいてディスパッチされます。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]<xref:System.ServiceModel.Channels.MsmqBindingElementBase.MaxRetryCycles%2A> and <xref:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay%2A>.  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RetryCycleDelay">
+      <MemberSignature Language="C#" Value="public TimeSpan RetryCycleDelay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RetryCycleDelay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配信できなかったメッセージを配信しようとするときに、次の再試行サイクルを待機する時間を指定する値を取得または設定します。</summary>
+        <value>受信アプリケーションへの次の配信試行サイクルを開始するまでの待機期間を指定する <see cref="T:System.TimeSpan" />。 既定値は 30 (分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 回の再試行サイクルでは、受信アプリケーションへのメッセージ配信試行が繰り返されます (<xref:System.ServiceModel.Configuration.MsmqBindingElementBase.MaxRetryCycles%2A> プロパティで指定されます)。 すべての試行が失敗すると、メッセージが再試行キューに戻されます。 このプロパティは、メッセージが別の再試行サイクルのアプリケーション キューに転送される前に再試行キューに置かれる期間を指定します。 このプロパティは、[!INCLUDE[wv](~/includes/wv-md.md)] 以降のオペレーティング システムでのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が無限ではなく、Int32.MaxValue ミリ秒を上回っています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy">
+      <MemberSignature Language="C#" Value="void IPolicyExportExtension.ExportPolicy (System.ServiceModel.Description.MetadataExporter exporter, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy(class System.ServiceModel.Description.MetadataExporter exporter, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqBindingElementBase.System#ServiceModel#Description#IPolicyExportExtension#ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">エクスポート プロセスを変更するために使用できる <see cref="T:System.ServiceModel.Description.MetadataExporter" />。</param>
+        <param name="context">カスタム ポリシー アサーションの挿入に使用できる <see cref="T:System.ServiceModel.Description.PolicyConversionContext" />。</param>
+        <summary>バインドに関するカスタム ポリシー アサーションをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Description.IPolicyExportExtension>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IWsdlExportExtension.ExportContract">
+      <MemberSignature Language="C#" Value="void IWsdlExportExtension.ExportContract (System.ServiceModel.Description.WsdlExporter exporter, System.ServiceModel.Description.WsdlContractConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IWsdlExportExtension.ExportContract(class System.ServiceModel.Description.WsdlExporter exporter, class System.ServiceModel.Description.WsdlContractConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqBindingElementBase.System#ServiceModel#Description#IWsdlExportExtension#ExportContract(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlContractConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.WsdlExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.WsdlContractConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">コントラクト情報をエクスポートする <see cref="T:System.ServiceModel.Description.WsdlExporter" />。</param>
+        <param name="context">エクスポートされた WSDL 要素からコントラクトの説明へのマッピングを提供します。</param>
+        <summary>コントラクトに対して生成される Web サービス記述言語 (WSDL) に、カスタム WSDL 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Description.IWsdlExportExtension>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint">
+      <MemberSignature Language="C#" Value="void IWsdlExportExtension.ExportEndpoint (System.ServiceModel.Description.WsdlExporter exporter, System.ServiceModel.Description.WsdlEndpointConversionContext endpointContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint(class System.ServiceModel.Description.WsdlExporter exporter, class System.ServiceModel.Description.WsdlEndpointConversionContext endpointContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqBindingElementBase.System#ServiceModel#Description#IWsdlExportExtension#ExportEndpoint(System.ServiceModel.Description.WsdlExporter,System.ServiceModel.Description.WsdlEndpointConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.WsdlExporter" />
+        <Parameter Name="endpointContext" Type="System.ServiceModel.Description.WsdlEndpointConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">エンドポイント情報をエクスポートする <see cref="T:System.ServiceModel.Description.WsdlExporter" />。</param>
+        <param name="endpointContext">エクスポートされた WSDL 要素からエンドポイントの説明へのマッピングを提供します。</param>
+        <summary>エンドポイントに対して生成される Web サービス記述言語 (WSDL) に、カスタム WSDL 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Description.IWsdlExportExtension>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToLive">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeToLive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToLive" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.TimeToLive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの有効期間を指定する値を取得または設定します。 この期間が経過すると、メッセージは <see langword="DeadLetterQueue" /> の設定に応じて配信不能キューに配置されます。</summary>
+        <value>メッセージの有効期間を指定する <see cref="T:System.TimeSpan" /> 値。 既定値は、24 時間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューに置かれたアプリケーションは切断された状態で動作します。 そのため、送信元アプリケーションと受信側アプリケーションを同時に実行できず、送信元アプリケーションによって送信されたメッセージが受信側アプリケーションですぐには処理されない場合があります。 メッセージには、特定の期間内だけ有効な情報が含まれているものがあります。 このようなメッセージがその期間内に配信されない場合は、有用な情報を含まなくなるので削除する必要があります。 このプロパティでは、メッセージがアプリケーション キューに配信される前に保持される制限時間を指定できます。 メッセージがアプリケーション キューに配信される前にこの制限時間が経過した場合、配信不能キューが有効であれば (<xref:System.ServiceModel.Configuration.MsmqBindingElementBase.DeadLetterQueue%2A> プロパティの値によって判断します)、メッセージは配信不能キューに配置され、配信不能キューが無効であれば、メッセージは破棄されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が無限ではなく、Int32.MaxValue ミリ秒を上回っています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactedReceiveEnabled">
+      <MemberSignature Language="C#" Value="public bool TransactedReceiveEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactedReceiveEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.TransactedReceiveEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングでメッセージを受信するためにトランザクションが必要かどうかを指定する値を取得します。</summary>
+        <value>
+          バインディングで受信操作にトランザクションが必要な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディスパッチャーは、このプロパティにアクセスして、受信操作にトランザクションが必要かどうかを判断します。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] キューに置かれているトランスポートでは、`true` が <xref:System.ServiceModel.Channels.MsmqBindingElementBase.ExactlyOnce%2A> に設定されている場合に限り、このプロパティに対して `true` が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseMsmqTracing">
+      <MemberSignature Language="C#" Value="public bool UseMsmqTracing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseMsmqTracing" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.UseMsmqTracing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ キュー (MSMQ) に組み込まれているメッセージ トレース機能を有効または無効にする値を取得または設定します。</summary>
+        <value>
+          メッセージ キューの組み込みメッセージ トレース (MSMQ) が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.UseMsmqTracing%2A> が `true` に設定されている場合、キューに置かれたチャネルは、メッセージ キューに組み込まれているメッセージ トレース機能を使用します。 この機能により、メッセージがキュー マネージャーに着信するか、キュー マネージャーから発信されるたびに、指定されたレポート キューにレポート メッセージが送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSourceJournal">
+      <MemberSignature Language="C#" Value="public bool UseSourceJournal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSourceJournal" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.UseSourceJournal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングにより処理されるメッセージのコピーをソース ジャーナル キューに保存するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          このバインディングによって処理されるメッセージがソース ジャーナル キューにコピーされる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューに置かれたアプリケーションでは、送信元のコンピューターの発信キューから送信されたメッセージの記録を残す場合は、メッセージをジャーナル キューにコピーできます。 メッセージが発信キューから送信され、送信先のコンピューターで受信されたという応答を受け取った後、メッセージのコピーが送信元のコンピューターのシステム ジャーナル キューに保持されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidityDuration">
+      <MemberSignature Language="C#" Value="public TimeSpan ValidityDuration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ValidityDuration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqBindingElementBase.ValidityDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが受信コンテキスト機能によってロックされる期間を指定する値を取得または設定します。</summary>
+        <value>メッセージが受信コンテキスト機能によってロックされる期間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、5 分です。 受信コンテキストは、メッセージが使用されるか、解放されてキューに戻されるまで、メッセージを検査するためにロックします。 有効期間プロパティは、メッセージが自動的に解放されてキューに戻されるまでに受信コンテキストによってロックされたままになる期間を指定します。  
+  
+> [!IMPORTANT]
+>  メッセージについて <xref:System.ServiceModel.Channels.MsmqBindingElementBase.ValidityDuration%2A> が期限切れになった場合、トランザクション中に期限切れが発生すると、ワークフロー インスタンスと共に、メッセージの処理に使用される可能性があるトランザクションが中止されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">0 未満の値または Int32.MaxValue より大きい値が設定されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

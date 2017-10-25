@@ -1,0 +1,325 @@
+<Type Name="CngKeyCreationParameters" FullName="System.Security.Cryptography.CngKeyCreationParameters">
+  <TypeSignature Language="C#" Value="public sealed class CngKeyCreationParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CngKeyCreationParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.CngKeyCreationParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キー作成の詳細プロパティが含まれます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.CngKey>オブジェクトには、プロパティが含まれます。 作成時に、いくつかのプロパティをキーに追加する必要があります。 キーが作成された後、その他のプロパティを追加できます。  
+  
+ <xref:System.Security.Cryptography.CngKeyCreationParameters>クラスが作成されると、キーにプロパティを追加することができます。 渡すことによってこれを行う、<xref:System.Security.Cryptography.CngKeyCreationParameters>にキー格納プロバイダー (KSP)、ポリシーのエクスポート、キー使用法、ユーザー インターフェイス (UI) のポリシー、および親ウィンドウ ハンドルなどの標準のキー プロパティを格納しているオブジェクト、<xref:System.Security.Cryptography.CngKey.Create%2A>メソッドです。 <xref:System.Security.Cryptography.CngKey>オブジェクトを作成中で初期化されますこれらの値が終了する前にします。  
+  
+ 使用して、キーに非標準のプロパティを追加することも、<xref:System.Security.Cryptography.CngKeyCreationParameters.Parameters%2A>プロパティです。  
+  
+ キーが作成された後にプロパティを追加する必要がある場合、使用して、<xref:System.Security.Cryptography.CngKey.SetProperty%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngKeyCreationParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyCreationParameters.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.CngKeyCreationParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportPolicy">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Security.Cryptography.CngExportPolicies&gt; ExportPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Security.Cryptography.CngExportPolicies&gt; ExportPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.ExportPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Security.Cryptography.CngExportPolicies&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー エクスポート ポリシーを設定します。</summary>
+        <value>キー エクスポート ポリシーを指定するオブジェクト。 既定値は<see langword="null" />、キー記憶域プロバイダーの既定のポリシーのエクスポートが設定されていることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーのエクスポート ポリシーについては、次を参照してください。、<xref:System.Security.Cryptography.CngExportPolicies>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyCreationOptions">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngKeyCreationOptions KeyCreationOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CngKeyCreationOptions KeyCreationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.KeyCreationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキーの作成オプションを設定します。</summary>
+        <value>キーを作成するためのオプションを指定するオブジェクト。 既定値は<see langword="null" />、キー記憶域プロバイダーの既定のキーの作成オプションを設定することを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Security.Cryptography.CngKeyCreationOptions>オブジェクトを新規に作成するときに使用されるオプションを定義<xref:System.Security.Cryptography.CngKey>オブジェクト。 これらのオプションは、ユーザーまたはコンピューターのキー ストアにキーを作成するかどうかと、新しいキーが既存のキーを上書きするかどうかを決定します。 既定では場合、<xref:System.Security.Cryptography.CngKeyCreationOptions?displayProperty=nameWithType>が指定されていない、このキーはユーザー ストアに作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUsage">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Security.Cryptography.CngKeyUsages&gt; KeyUsage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Security.Cryptography.CngKeyUsages&gt; KeyUsage" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.KeyUsage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Security.Cryptography.CngKeyUsages&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のキーに適用される暗号化の操作を設定します。</summary>
+        <value>キー使用法を指定する 1 つまたは複数の列挙値のビットごとの組み合わせ。 既定値は<see langword="null" />、キー記憶域プロバイダーの既定のキー使用法を設定することを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新規に作成するときに、このプロパティは使用<xref:System.Security.Cryptography.CngKey>オブジェクト。 新しいキーで有効になる (暗号化/復号化、署名/検証、および秘密協定の生成) などの使用法を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngPropertyCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngPropertyCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、<see cref="T:System.Security.Cryptography.CngKey" />キーが終了する前に設定されている追加のプロパティで作成するオブジェクト。</summary>
+        <value>設定する必要がある追加のパラメーターを含むコレクション オブジェクト、<see cref="T:System.Security.Cryptography.CngKey" />キーの作成中にオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.CngKeyCreationParameters>クラスでは、新しいを作成することができます<xref:System.Security.Cryptography.CngKey>オブジェクトし、の共通プロパティで初期化します。 作成時に、キーの追加のプロパティを設定する必要があります、これらの手順に従います。  
+  
+1.  新しい<xref:System.Security.Cryptography.CngProperty>オブジェクトの各追加のプロパティを設定する必要があります。  
+  
+2.  呼び出す、 <xref:System.Security.Cryptography.CngKeyCreationParameters.Parameters%2A> 、空を取得するプロパティ<xref:System.Security.Cryptography.CngPropertyCollection>オブジェクト。  
+  
+3.  追加、<xref:System.Security.Cryptography.CngProperty>オブジェクトを<xref:System.Security.Cryptography.CngPropertyCollection>オブジェクト。  
+  
+4.  呼び出す、<xref:System.Security.Cryptography.CngKey.Create%28System.Security.Cryptography.CngAlgorithm%2CSystem.String%2CSystem.Security.Cryptography.CngKeyCreationParameters%29>メソッドのオーバー ロードして、初期化された渡す<xref:System.Security.Cryptography.CngKeyCreationParameters>オブジェクトをそれにします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentWindowHandle">
+      <MemberSignature Language="C#" Value="public IntPtr ParentWindowHandle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int ParentWindowHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.ParentWindowHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Cryptography Next Generation (CNG) クラスによって作成されるダイアログ ボックスの親ウィンドウとして使用するウィンドウ ハンドルを設定します。</summary>
+        <value>CNG のダイアログ ボックスに使用される親ウィンドウの HWND です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの作成時に cng ダイアログ ボックスを表示する場合、このプロパティを設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngProvider Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー記憶域プロバイダー (KSP) キーを作成するを設定します。</summary>
+        <value>KSP で作成される新しいキーを指定するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.CngKeyCreationParameters.Provider" />プロパティに設定されている、<see langword="null" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UIPolicy">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngUIPolicy UIPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngUIPolicy UIPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyCreationParameters.UIPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngUIPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキーを作成またはアクセスされるときに表示されるユーザー インターフェイスに関する情報を設定します。</summary>
+        <value>キーが作成またはアクセスされるときに、Cryptography Next Generation (CNG) クラスによって表示されるユーザー インターフェイスに関する詳細を含むオブジェクトです。 A<see langword="null" />値は、キー記憶域プロバイダーの既定のユーザー インターフェイスのポリシーが設定されていることを示します。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">アンマネージ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

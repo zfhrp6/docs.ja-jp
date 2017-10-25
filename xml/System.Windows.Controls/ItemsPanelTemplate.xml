@@ -1,0 +1,115 @@
+<Type Name="ItemsPanelTemplate" FullName="System.Windows.Controls.ItemsPanelTemplate">
+  <TypeSignature Language="C#" Value="public class ItemsPanelTemplate : System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ItemsPanelTemplate extends System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ItemsPanelTemplate" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkTemplate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パネルを指定する、<see cref="T:System.Windows.Controls.ItemsPresenter" />の項目のレイアウトの作成、<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemsPanelTemplate>項目のレイアウトに使用されるパネルを指定します。 <xref:System.Windows.Controls.GroupStyle><xref:System.Windows.Controls.GroupStyle.Panel%2A>型のプロパティを<xref:System.Windows.Controls.ItemsPanelTemplate>です。 <xref:System.Windows.Controls.ItemsControl>型が、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>型のプロパティを<xref:System.Windows.Controls.ItemsPanelTemplate>です。  
+  
+ 各<xref:System.Windows.Controls.ItemsControl>型は、既定値を持つ<xref:System.Windows.Controls.ItemsPanelTemplate>します。 <xref:System.Windows.Controls.ItemsControl>クラス、既定値<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>値は、<xref:System.Windows.Controls.ItemsPanelTemplate>を指定する、<xref:System.Windows.Controls.StackPanel>です。 <xref:System.Windows.Controls.ListBox>、既定値を使用して、<xref:System.Windows.Controls.VirtualizingStackPanel>です。 <xref:System.Windows.Controls.MenuItem>、既定値を使用して<xref:System.Windows.Controls.WrapPanel>です。 <xref:System.Windows.Controls.Primitives.StatusBar>、既定値を使用して<xref:System.Windows.Controls.DockPanel>です。  
+  
+   
+  
+## Examples  
+ 水平方向を作成する<xref:System.Windows.Controls.ListBox>、水平方向を指定するテンプレートを作成する<xref:System.Windows.Controls.StackPanel>として設定し、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 次の例は、 <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Style>水平を作成する<xref:System.Windows.Controls.ListBox>です。  
+  
+ [!code-xaml[StylingIntroSample_snippet#ItemsPanel](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#itemspanel)]   
+  
+次の例では、<xref:System.Windows.Controls.ControlTemplate>を水平方向を作成する<xref:System.Windows.Controls.ListBox>角が丸いです。 設定ではなく、この例で、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティ前の例のように、水平<xref:System.Windows.Controls.StackPanel>内に指定されて、<xref:System.Windows.Controls.ControlTemplate>です。 注意してください、<xref:System.Windows.Controls.Panel.IsItemsHost%2A>プロパティに設定されている`true`上、<xref:System.Windows.Controls.StackPanel>パネルで、生成された項目が移動する必要があることを示します。 この方法を指定すると、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>を使用せず、コントロールのユーザーによって置き換えることができません、<xref:System.Windows.Controls.ControlTemplate>です。 そのため、のみはこのテンプレートを使用せずに交換するのには、パネルは必要ありませんがわかっている場合。  
+  
+[!code-xaml[StylingIntroSnippet#ListBoxCT](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#ListBoxCT)]
+ 
+また、同じ結果を得るには、次を行うことができます。 ここで、<xref:System.Windows.Controls.ItemsPresenter>に基づいてどのような項目のレイアウトを指定のパネルを作成、<xref:System.Windows.Controls.ItemsPanelTemplate>です。  
+  
+ [!code-xaml[StyleOvw01#ItemsPanelTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#itemspaneltemplate)]   
+  
+ さまざまなスタイルとテンプレートのプロパティを使用する方法の例については、<xref:System.Windows.Controls.ItemsControl>を参照してください[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemsPanelTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsPanelTemplate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Controls.ItemsPanelTemplate" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemsPanelTemplate (System.Windows.FrameworkElementFactory root);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.FrameworkElementFactory root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsPanelTemplate.#ctor(System.Windows.FrameworkElementFactory)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="root" Type="System.Windows.FrameworkElementFactory" />
+      </Parameters>
+      <Docs>
+        <param name="root"><see cref="T:System.Windows.FrameworkElementFactory" />のテンプレートを表すオブジェクト。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Windows.Controls.ItemsPanelTemplate" />指定したテンプレート クラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTemplatedParent">
+      <MemberSignature Language="C#" Value="protected override void ValidateTemplatedParent (System.Windows.FrameworkElement templatedParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateTemplatedParent(class System.Windows.FrameworkElement templatedParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsPanelTemplate.ValidateTemplatedParent(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templatedParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="templatedParent">要素にこのテンプレートが適用されます。 これは、必要があります、<see cref="T:System.Windows.Controls.ItemsPresenter" />オブジェクト。</param>
+        <summary>テンプレート化された親が null でないことを確認<see cref="T:System.Windows.Controls.ItemsPresenter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、次の規則を使用します。  
+  
+ 1. `templatedParent`することはできません`null`です。  
+  
+ 2. `templatedParent`する必要があります、<xref:System.Windows.Controls.ItemsPresenter>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="templatedParent" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="templatedParent" /> が <see cref="T:System.Windows.Controls.ItemsPresenter" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

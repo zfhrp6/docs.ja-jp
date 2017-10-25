@@ -1,0 +1,1266 @@
+<Type Name="ThreadPool" FullName="System.Threading.ThreadPool">
+  <TypeSignature Language="C#" Value="public static class ThreadPool" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ThreadPool extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadPool" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>タスクの実行、作業項目のポスト、非同期 I/O の処理、他のスレッドの代理で行う待機、およびタイマーの処理に使用できるスレッドのプールを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くのアプリケーションでは、長時間時間スリープ状態で、イベントの発生を待機しているスレッドを作成します。 他のスレッドは、スリープ状態の変更をポーリングまたは状態情報の更新を定期的にスリープ解除する場合にのみを入力します。 スレッド プールでは、システムによって管理されるワーカー スレッドのプールを使用してアプリケーションを提供することにより、スレッドをより効率的に使用することができます。 スレッド プールのスレッドを使用する操作の例については、次のとおりです。  
+  
+-   作成するときに、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>タスクがスレッド プールのスレッドで実行するスケジュールを既定では、非同期的にいくつかのタスクを実行するオブジェクト。  
+  
+-   非同期のタイマーは、スレッド プールを使用します。 スレッド プールのスレッドからのコールバックを実行する、<xref:System.Threading.Timer?displayProperty=nameWithType>クラスおよびからイベントを発生させる、<xref:System.Timers.Timer?displayProperty=nameWithType>クラスです。  
+  
+-   登録された待機ハンドルを使用するときにシステム スレッドが待機ハンドルの状態を監視します。 待機操作が完了すると、スレッド プールからワーカー スレッドは、対応するコールバック関数を実行します。  
+  
+-   呼び出すと、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>スレッド プールのスレッド上で実行するメソッドをキューにします。 メソッドを渡すことによって、これを行う、<xref:System.Threading.WaitCallback>を委任します。   デリゲートのシグネチャを持ちます  
+  
+    ```csharp  
+    void WaitCallback(Object state)  
+    ```  
+  
+    ```vb  
+    Sub WaitCallback(state As Object)  
+    ```  
+  
+     ここで`state`デリゲートによって使用されるデータを含むオブジェクトです。 実際のデータは、呼び出すことによって、デリゲートに渡すことが、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%2CSystem.Object%29>メソッドです。  
+  
+> [!NOTE]
+>  マネージ スレッド プール内のスレッドには、バック グラウンド スレッドがあります。 つまり、その<xref:System.Threading.Thread.IsBackground%2A>プロパティは、`true`です。 つまり、<xref:System.Threading.ThreadPool>スレッドでは、すべてのフォア グラウンド スレッドが終了した後に実行されるアプリケーションは保持されません。  
+  
+> [!IMPORTANT]
+>  スレッド ローカル ストレージまたはでマークされたフィールドのデータは消去されません、スレッド プールには、スレッドが再利用、ときに、<xref:System.ThreadStaticAttribute>属性。 したがって、メソッドがスレッド ローカル ストレージを検査またはフィールドが付いている、<xref:System.ThreadStaticAttribute>属性、値が見つかる可能性があります残されるスレッド プールのスレッドの以前の使用。  
+  
+ また、スレッド プールに、待機操作に関連していない作業項目をキューできます。 作業項目をスレッド プール内のスレッドで処理することを要求するには、呼び出し、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>メソッドです。 このメソッドは、メソッドまたはスレッド プールから選択したスレッドで呼び出されるデリゲートへの参照をパラメーターとして受け取ります。 キューに登録されましたが、作業項目をキャンセルする方法はありません。  
+  
+ タイマー キュー タイマーおよび登録された待機操作もスレッド プールを使用します。 これらのコールバック関数は、スレッド プールにキューに入っています。  
+  
+ プロセスごとに 1 つのスレッド プールがあります。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] 以降では、プロセスのスレッド プールの既定のサイズは、仮想アドレス空間のサイズなど、いくつかの要素によって決まります。 スレッドの数は、プロセスで <xref:System.Threading.ThreadPool.GetMaxThreads%2A> メソッドを呼び出せば確認できます。 使用しているスレッド プール内のスレッドの数を変更することができます、<xref:System.Threading.ThreadPool.SetMaxThreads%2A>メソッドです。 各スレッドは、既定のスタック サイズを使用し、既定の優先順位で実行します。  
+  
+> [!NOTE]
+>  .NET Framework をホストするアンマネージ コードを使用して、スレッド プールのサイズを変更できます、 `CorSetMaxThreads` mscoree.h ファイルで定義された関数。  
+  
+ スレッド プールを提供新しいワーカー スレッドまたは I/O 完了スレッド要求時に各カテゴリの最小値に達するまでします。 最低限に達すると、スレッド プールはそのカテゴリに追加のスレッドを作成または、いくつかのタスクを完了するまで待機できます。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] 以降では、スループットを最適化するために、スレッド プールでワーカー スレッドの作成と破棄が行われます。スループットは、タスクの単位時間あたりの完了数として定義されます。 スレッドが少なすぎると使用可能なリソースが最適に使用されない可能性があり、スレッドが多すぎるとリソースの競合が増える可能性があります。  
+  
+> [!NOTE]
+>  要求が少ないときは、スレッド プールの実際のスレッド数が最小値を下回る場合があります。  
+  
+ これらの最小値は、<xref:System.Threading.ThreadPool.GetMinThreads%2A> メソッドを使用して取得できます。  
+  
+> [!CAUTION]
+>  使用することができます、<xref:System.Threading.ThreadPool.SetMinThreads%2A>スレッドの最小数を増加させます。 ただし、これらの値を必要以上に大きくすると、パフォーマンスの問題が発生する可能性があります。 同時に開始するタスクの数が多すぎる場合は、すべてのタスクで処理速度が低下する可能性があります。 ほとんどの場合、スレッドを割り当てるためのスレッド プール独自のアルゴリズムを使用することでスレッド プールのパフォーマンスが向上します。  
+  
+   
+  
+## Examples  
+ メイン アプリケーション スレッド キューという名前のメソッドに次の例では、`ThreadProc`スレッド プールのスレッドで 1 秒、および終了します。 スリープでを実行します。 `ThreadProc`メソッドには、単にメッセージが表示されます。  
+  
+ [!code-cpp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/VB/source.vb#1)]  
+  
+ 呼び出しをコメントにする場合、<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>メソッド、メソッドは、スレッド プールのスレッドで実行する前に、メイン スレッドが終了しました。  スレッド プールは、アプリケーションのすべてのフォア グラウンド スレッドが終了した場合に実行を継続しないバック グラウンドのスレッドを使用します。  (これは、競合状態の簡単な例です)。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="BindHandle">
+      <MemberSignature Language="C#" Value="public static bool BindHandle (IntPtr osHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool BindHandle(native int osHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.BindHandle(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("ThreadPool.BindHandle(IntPtr) has been deprecated.  Please use ThreadPool.BindHandle(SafeHandle) instead.", false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="osHandle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="osHandle">ハンドルを保持する <see cref="T:System.IntPtr" />。 ハンドルは、アンマネージ側の重複 I/O 用に開かれている必要があります。</param>
+        <summary>オペレーティング システム ハンドルを <see cref="T:System.Threading.ThreadPool" /> にバインドします。</summary>
+        <returns>
+          ハンドルがバインドされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BindHandle">
+      <MemberSignature Language="C#" Value="public static bool BindHandle (System.Runtime.InteropServices.SafeHandle osHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool BindHandle(class System.Runtime.InteropServices.SafeHandle osHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.BindHandle(System.Runtime.InteropServices.SafeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="osHandle" Type="System.Runtime.InteropServices.SafeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="osHandle">A<see cref="T:System.Runtime.InteropServices.SafeHandle" />オペレーティング システム ハンドルを保持します。 ハンドルは、アンマネージ側の重複 I/O 用に開かれている必要があります。</param>
+        <summary>オペレーティング システム ハンドルを <see cref="T:System.Threading.ThreadPool" /> にバインドします。</summary>
+        <returns>
+          ハンドルがバインドされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `osHandle`パラメーターでなければなりません、 <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>、抽象から派生した<xref:System.Runtime.InteropServices.SafeHandle>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="osHandle" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAvailableThreads">
+      <MemberSignature Language="C#" Value="public static void GetAvailableThreads (out int workerThreads, out int completionPortThreads);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetAvailableThreads([out] int32&amp; workerThreads, [out] int32&amp; completionPortThreads) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.GetAvailableThreads(System.Int32@,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workerThreads" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="completionPortThreads" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workerThreads">使用できるワーカー スレッドの数。</param>
+        <param name="completionPortThreads">使用できる非同期 I/O スレッドの数。</param>
+        <summary>スレッド プール スレッドの最大数 (<see cref="M:System.Threading.ThreadPool.GetMaxThreads(System.Int32@,System.Int32@)" /> メソッドから返される) と現在アクティブなスレッドの数との差を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Threading.ThreadPool.GetAvailableThreads%2A>で指定された変数を返します。`workerThreads`を開始する追加のワーカー スレッドとで指定された変数の数を表す`completionPortThreads`を起動するその他の非同期 I/O スレッドの数が含まれています。  
+  
+ 使用可能なスレッドがない場合は、追加のスレッド プールの要求までキューに置かれたスレッド プールのスレッドが使用可能になるです。  
+  
+   
+  
+## Examples  
+ 次の例では、簡単なアプリが開始されたときに、ワーカー スレッドと使用可能な I/O スレッドの数が表示されます。  
+  
+ [!code-csharp[System.Threading.ThreadPool.GetAvailableThreads#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetAvailableThreads/CS/Example2.cs#2)]
+ [!code-vb[System.Threading.ThreadPool.GetAvailableThreads#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetAvailableThreads/VB/Example2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaxThreads">
+      <MemberSignature Language="C#" Value="public static void GetMaxThreads (out int workerThreads, out int completionPortThreads);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetMaxThreads([out] int32&amp; workerThreads, [out] int32&amp; completionPortThreads) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.GetMaxThreads(System.Int32@,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workerThreads" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="completionPortThreads" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workerThreads">スレッド プール内のワーカー スレッドの最大数。</param>
+        <param name="completionPortThreads">スレッド プール内の非同期 I/O スレッドの最大数。</param>
+        <summary>同時にアクティブにできるスレッド プールへの要求の数を取得します。 この数を超える要求はすべて、スレッド プール スレッドが使用可能になるまでキューに置かれたままになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Threading.ThreadPool.GetMaxThreads%2A>で指定された変数を返します。`workerThreads`スレッド プールで許可されるワーカー スレッドとで指定された変数の最大数を含む`completionPortThreads`スレッド プールで許可される非同期の I/O スレッドの最大数が含まれています。  
+  
+ 使用することができます、<xref:System.Threading.ThreadPool.GetAvailableThreads%2A>メソッドを特定の時点で実際のスレッド プール内のスレッド数を決定します。  
+  
+ 使用することができます、<xref:System.Threading.ThreadPool.SetMaxThreads%2A>をスレッド プールでワーカー スレッドと非同期の I/O スレッドの最大数を設定します。  
+  
+ システム メモリが許す限り多くのスレッド プールの要求とキューにできます。 スレッド プールのスレッドよりも多くの要求がある場合、追加の要求までキューに置かれたスレッド プールのスレッドが使用可能になります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、スレッド プール内のスレッドの最大値と使用可能な数のカウントを取得する方法を示します。 使用する作業項目がキューに`FileStream`非同期に 2 つのファイルを書き込みます。 オーバー ラップには、コールバック メソッドがタイムアウトしました。 ワーカー スレッドが作業項目を処理し、速度と、コンピューター上のプロセッサの数に応じて 1 つまたは 2 つの完了ポート スレッドが書き込み操作を処理します。  
+  
+ [!code-cpp[System.Threading.ThreadPool.GetAvailableThreads#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetAvailableThreads/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool.GetAvailableThreads#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetAvailableThreads/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool.GetAvailableThreads#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetAvailableThreads/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMinThreads">
+      <MemberSignature Language="C#" Value="public static void GetMinThreads (out int workerThreads, out int completionPortThreads);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void GetMinThreads([out] int32&amp; workerThreads, [out] int32&amp; completionPortThreads) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.GetMinThreads(System.Int32@,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workerThreads" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="completionPortThreads" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workerThreads">このメソッドが戻るとき、スレッド プールがオンデマンドで作成するワーカー スレッドの最小数が含まれています。</param>
+        <param name="completionPortThreads">このメソッドが戻るとき、スレッド プールがオンデマンドで作成する非同期 I/O スレッドの最小数が含まれています。</param>
+        <summary>スレッドがオンデマンドで (新しい要求の発生ごとに) 作成するスレッド プールの数を取得します。この数を超えると、スレッドの作成と破棄を管理するためのアルゴリズムに切り替わります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド プールを提供新しいワーカー スレッドまたは I/O 完了スレッド要求時に各カテゴリの最小値に達するまでします。 既定では、スレッドの最小数は、システム上のプロセッサの数を設定します。 最低限に達すると、スレッド プールはそのカテゴリに追加のスレッドを作成または、いくつかのタスクを完了するまで待機できます。 以降で、 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、スレッド プールを作成し、タスクの単位時間あたりの完了数として定義されるスループットを最適化するためにスレッドを破棄します。 スレッドが少なすぎると使用可能なリソースが最適に使用されない可能性があり、スレッドが多すぎるとリソースの競合が増える可能性があります。  
+  
+> [!NOTE]
+>  要求が少ないときは、スレッド プールの実際のスレッド数が最小値を下回る場合があります。  
+  
+   
+  
+## Examples  
+ 次の例では、ワーカー スレッドの最小数を 4 に設定し、非同期 I/O 完了スレッドの最小数の元の値を保持します。  
+  
+ [!code-cpp[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueUserWorkItem">
+      <MemberSignature Language="C#" Value="public static bool QueueUserWorkItem (System.Threading.WaitCallback callBack);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool QueueUserWorkItem(class System.Threading.WaitCallback callBack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.QueueUserWorkItem(System.Threading.WaitCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callBack" Type="System.Threading.WaitCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callBack">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" />。</param>
+        <summary>メソッドを実行するためのキューに置きます。 メソッドは、スレッド プール スレッドが使用可能になったときに実行されます。</summary>
+        <returns>
+          メソッドが正常にキューに配置された場合は <see langword="true" />。作業項目をキューに配置できなかった場合は <see cref="T:System.NotSupportedException" /> がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラス、メソッドが定義されている、または使用することができますのインスタンス フィールドでキューに置かれたメソッドで必要なデータを配置することができます、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%2CSystem.Object%29>を必要なデータを格納するオブジェクトを受け入れるオーバー ロードします。  
+  
+> [!NOTE]
+>  Visual Basic の場合は省略できます、<xref:System.Threading.WaitCallback>コンス トラクター、および使用するだけで、`AddressOf`演算子にコールバック メソッドを渡すときに<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>です。 Visual Basic では、適切なデリゲート コンス トラクターは、自動的に呼び出します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET framework version 2.0 では、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29>メソッドのオーバー ロードによって表される、タスクをキューに入れ、`ThreadProc`メソッドは、スレッドが使用可能なになったときに実行します。 このオーバー ロードでタスク情報は提供されません。 そのための情報に提供される、`ThreadProc`メソッドは、メソッドが属するオブジェクトに制限されます。  
+  
+ [!code-cpp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool QueueUserWorkItem0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem0/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callBack" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">共通言語ランタイム (CLR) がホストされているし、ホストがこの操作をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueUserWorkItem">
+      <MemberSignature Language="C#" Value="public static bool QueueUserWorkItem (System.Threading.WaitCallback callBack, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool QueueUserWorkItem(class System.Threading.WaitCallback callBack, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.QueueUserWorkItem(System.Threading.WaitCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callBack" Type="System.Threading.WaitCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callBack">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" />。</param>
+        <param name="state">メソッドが使用するデータを格納したオブジェクト。</param>
+        <summary>実行するためのキューにメソッドを置き、そのメソッドが使用するデータを含んだオブジェクトを指定します。 メソッドは、スレッド プール スレッドが使用可能になったときに実行されます。</summary>
+        <returns>
+          メソッドが正常にキューに配置された場合は <see langword="true" />。作業項目をキューに配置できなかった場合は <see cref="T:System.NotSupportedException" /> がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバック メソッドには、複雑なデータが必要とする場合は、データを格納するクラスを定義することができます。  
+  
+> [!NOTE]
+>  Visual Basic の場合は省略できます、<xref:System.Threading.WaitCallback>コンス トラクター、および使用するだけで、`AddressOf`演算子にコールバック メソッドを渡すときに<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>です。 Visual Basic では、適切なデリゲート コンス トラクターは、自動的に呼び出します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET framework version 2.0 では、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+   
+  
+## Examples  
+ 次の例では、タスクの情報を含むオブジェクトを作成する方法を示します。 実行のキューにタスクをスレッド プール内にそのオブジェクトを渡す方法も示します。  
+  
+ [!code-cpp[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool QueueUserWorkItem1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool QueueUserWorkItem1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">共通言語ランタイム (CLR) がホストされているし、ホストがこの操作をサポートしていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callBack" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, int millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, int32 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.Int32" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack"><see cref="T:System.Threading.WaitOrTimerCallback" />ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されるオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>ミリ秒単位のタイムアウトとして 32 ビット符号付き整数を指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。</summary>
+        <returns>ネイティブ ハンドルをカプセル化する <see cref="T:System.Threading.RegisteredWaitHandle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>キューにスレッド プールに指定されたデリゲート メソッド。 次のいずれかが発生すると、ワーカー スレッドは、デリゲートを実行します。  
+  
+-   指定したオブジェクトはシグナルの状態です。  
+  
+-   タイムアウト間隔が経過しました。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドの指定されたオブジェクトの現在の状態をチェックする<xref:System.Threading.WaitHandle>です。 オブジェクトの状態が通知されていない場合、メソッドは、待機操作を登録します。 待機操作は、スレッド プールのスレッドによって実行されます。 デリゲートは、オブジェクトの状態がシグナル状態またはタイムアウト間隔が経過すると、ワーカー スレッドによって実行されます。 場合、`timeOutInterval`パラメーターが 0 (ゼロ) と`executeOnlyOnce`パラメーターが`false`イベントがシグナル状態またはタイムアウト期間が経過するたびに、タイマーがリセットします。  
+  
+> [!IMPORTANT]
+>  使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。 代わりに、<xref:System.Threading.Mutex>を使用して、 <xref:System.Threading.Semaphore> 1 の最大数にします。  
+  
+ 待機操作をキャンセルする、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 待機スレッドが、Win32 を使用して`WaitForMultipleObjects`登録された待機操作を監視する関数。 したがってで同じオペレーティング システムのネイティブ ハンドルを使用する場合は複数回呼び出す<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>、Win32 を使用してハンドルを複製する必要があります`DuplicateHandle`関数。 渡されたイベント オブジェクトをパルスする必要がありますいないことに注意してください<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>待機スレッドでイベントがシグナル状態にリセットされます。 前に、検出されないため、します。  
+  
+ 、戻る前に、この関数は、一部の種類の同期オブジェクトの状態を変更します。 変更は、シグナル状態には、条件が満たされる待機条件が原因となったオブジェクトの場合のみ発生します。 たとえば、セマフォのカウントは 1 ずつ減少します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET Framework バージョン 2.0 以降の<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeOutInterval" />パラメーターが-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, long millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, int64 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.Int64,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.Int64" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack"><see cref="T:System.Threading.WaitOrTimerCallback" />ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されたオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>64 ビット符号付き整数でミリ秒単位のタイムアウトを指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。</summary>
+        <returns>ネイティブ ハンドルをカプセル化する <see cref="T:System.Threading.RegisteredWaitHandle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>キューにスレッド プールに指定されたデリゲート メソッド。 次のいずれかが発生すると、ワーカー スレッドは、デリゲートを実行します。  
+  
+-   指定したオブジェクトはシグナルの状態です。  
+  
+-   タイムアウト間隔が経過しました。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドの指定されたオブジェクトの現在の状態をチェックする<xref:System.Threading.WaitHandle>です。 オブジェクトの状態が通知されていない場合、メソッドは、待機操作を登録します。 待機操作は、スレッド プールのスレッドによって実行されます。 デリゲートは、オブジェクトの状態がシグナル状態またはタイムアウト間隔が経過すると、ワーカー スレッドによって実行されます。 場合、`timeOutInterval`パラメーターが 0 (ゼロ) と`executeOnlyOnce`パラメーターが`false`イベントがシグナル状態またはタイムアウト期間が経過するたびに、タイマーがリセットします。  
+  
+> [!IMPORTANT]
+>  使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。 代わりに、<xref:System.Threading.Mutex>を使用して、 <xref:System.Threading.Semaphore> 1 の最大数にします。  
+  
+ 待機操作をキャンセルする、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 待機スレッドが、Win32 を使用して`WaitForMultipleObjects`登録された待機操作を監視する関数。 したがってで同じオペレーティング システムのネイティブ ハンドルを使用する場合は複数回呼び出す<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>、Win32 を使用してハンドルを複製する必要があります`DuplicateHandle`関数。 渡されたイベント オブジェクトをパルスする必要がありますいないことに注意してください<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>待機スレッドでイベントがシグナル状態にリセットされます。 前に、検出されないため、します。  
+  
+ 、戻る前に、この関数は、一部の種類の同期オブジェクトの状態を変更します。 変更は、シグナル状態には、条件が満たされる待機条件が原因となったオブジェクトの場合のみ発生します。 たとえば、セマフォのカウントは 1 ずつ減少します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET Framework バージョン 2.0 以降の<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeOutInterval" />パラメーターが-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, TimeSpan timeout, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, valuetype System.TimeSpan timeout, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack"><see cref="T:System.Threading.WaitOrTimerCallback" />ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されたオブジェクト。</param>
+        <param name="timeout"><see cref="T:System.TimeSpan" /> で表されるタイムアウト。 場合<c>タイムアウト</c>0 (ゼロ) には、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>タイムアウト</c>-1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary><see cref="T:System.TimeSpan" /> 値をタイムアウトとして指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。</summary>
+        <returns>ネイティブ ハンドルをカプセル化する <see cref="T:System.Threading.RegisteredWaitHandle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>キューにスレッド プールに指定されたデリゲート メソッド。 次のいずれかが発生すると、ワーカー スレッドは、デリゲートを実行します。  
+  
+-   指定したオブジェクトはシグナルの状態です。  
+  
+-   タイムアウト間隔が経過しました。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドの指定されたオブジェクトの現在の状態をチェックする<xref:System.Threading.WaitHandle>です。 オブジェクトの状態が通知されていない場合、メソッドは、待機操作を登録します。 待機操作は、スレッド プールのスレッドによって実行されます。 デリゲートは、オブジェクトの状態がシグナル状態またはタイムアウト間隔が経過すると、ワーカー スレッドによって実行されます。 場合、`timeOutInterval`パラメーターが 0 (ゼロ) と`executeOnlyOnce`パラメーターが`false`イベントがシグナル状態またはタイムアウト期間が経過するたびに、タイマーがリセットします。  
+  
+> [!IMPORTANT]
+>  使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。 代わりに、<xref:System.Threading.Mutex>を使用して、 <xref:System.Threading.Semaphore> 1 の最大数にします。  
+  
+ 待機操作をキャンセルする、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 待機スレッドが、Win32 を使用して`WaitForMultipleObjects`登録された待機操作を監視する関数。 したがってで同じオペレーティング システムのネイティブ ハンドルを使用する場合は複数回呼び出す<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>、Win32 を使用してハンドルを複製する必要があります`DuplicateHandle`関数。 渡されたイベント オブジェクトをパルスする必要がありますいないことに注意してください<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>待機スレッドでイベントがシグナル状態にリセットされます。 前に、検出されないため、します。  
+  
+ 、戻る前に、この関数は、一部の種類の同期オブジェクトの状態を変更します。 変更は、シグナル状態には、条件が満たされる待機条件が原因となったオブジェクトの場合のみ発生します。 たとえば、セマフォのカウントは 1 ずつ減少します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET Framework バージョン 2.0 以降の<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" />パラメーターが-1 未満です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="timeout" />パラメーターがより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, uint millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, unsigned int32 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.UInt32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.UInt32" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack"><see cref="T:System.Threading.WaitOrTimerCallback" />ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されたオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>32 ビット符号なし整数でミリ秒単位のタイムアウトを指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。</summary>
+        <returns>登録された待機操作をキャンセルするために使用できる <see cref="T:System.Threading.RegisteredWaitHandle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>キューにスレッド プールに指定されたデリゲート メソッド。 次のいずれかが発生すると、ワーカー スレッドは、デリゲートを実行します。  
+  
+-   指定したオブジェクトはシグナルの状態です。  
+  
+-   タイムアウト間隔が経過しました。  
+  
+ <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドの指定されたオブジェクトの現在の状態をチェックする<xref:System.Threading.WaitHandle>です。 オブジェクトの状態が通知されていない場合、メソッドは、待機操作を登録します。 待機操作は、スレッド プールのスレッドによって実行されます。 デリゲートは、オブジェクトの状態がシグナル状態またはタイムアウト間隔が経過すると、ワーカー スレッドによって実行されます。 場合、`timeOutInterval`パラメーターが 0 (ゼロ) と`executeOnlyOnce`パラメーターが`false`イベントがシグナル状態またはタイムアウト期間が経過するたびに、タイマーがリセットします。  
+  
+> [!IMPORTANT]
+>  使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。 代わりに、<xref:System.Threading.Mutex>を使用して、 <xref:System.Threading.Semaphore> 1 の最大数にします。  
+  
+ 待機操作をキャンセルする、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 待機スレッドが、Win32 を使用して`WaitForMultipleObjects`登録された待機操作を監視する関数。 したがってで同じオペレーティング システムのネイティブ ハンドルを使用する場合は複数回呼び出す<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>、Win32 を使用してハンドルを複製する必要があります`DuplicateHandle`関数。 渡されたイベント オブジェクトをパルスする必要がありますいないことに注意してください<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>待機スレッドでイベントがシグナル状態にリセットされます。 前に、検出されないため、します。  
+  
+ 、戻る前に、この関数は、一部の種類の同期オブジェクトの状態を変更します。 変更は、シグナル状態には、条件が満たされる待機条件が原因となったオブジェクトの場合のみ発生します。 たとえば、セマフォのカウントは 1 ずつ減少します。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET Framework バージョン 2.0 以降の<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティの値は、ワーカー スレッドに反映されるキューを使用して、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドです。 以前のバージョンでは、プリンシパルの情報は反映されません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドを指定した待機ハンドルがシグナルを受け取ると、指定されたコールバック メソッドを実行します。 この例では、コールバック メソッドは`WaitProc`、および待機ハンドルは、<xref:System.Threading.AutoResetEvent>です。  
+  
+ 例では、定義、`TaskInfo`に実行すると、コールバックに渡される情報を保持するクラス。 例は、作成、`TaskInfo`オブジェクトを文字列データを割り当てます。 <xref:System.Threading.RegisteredWaitHandle>によって返される、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>に割り当てられているメソッド、`Handle`のフィールド、`TaskInfo`オブジェクトをコールバック メソッドへのアクセスには、<xref:System.Threading.RegisteredWaitHandle>です。  
+  
+ 指定するだけでなく`TaskInfo`への呼び出し、コールバック メソッドに渡すオブジェクトとして、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッドを指定します、 <xref:System.Threading.AutoResetEvent> 、タスクが待機する、<xref:System.Threading.WaitOrTimerCallback>を表すデリゲート、`WaitProc`コールバック メソッド、1 秒のタイムアウト間隔、および複数のコールバック。  
+  
+ メイン スレッドに通知すると、<xref:System.Threading.AutoResetEvent>を呼び出してその<xref:System.Threading.EventWaitHandle.Set%2A>メソッド、<xref:System.Threading.WaitOrTimerCallback>デリゲートが呼び出されます。 `WaitProc`メソッド テスト<xref:System.Threading.RegisteredWaitHandle>をタイムアウトが発生したかどうかを判断します。 待機ハンドルがシグナルため、コールバックが呼び出された場合、`WaitProc`メソッドの登録を解除、<xref:System.Threading.RegisteredWaitHandle>コールバックの追加を停止します。 場合は、タイムアウトは、タスクが待機する続けます。 `WaitProc`メソッドは、コンソールにメッセージを出力することによって終了します。  
+  
+ [!code-cpp[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool RegisterWaitForSingleObject0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool RegisterWaitForSingleObject0/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeOutInterval" />パラメーターが-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMaxThreads">
+      <MemberSignature Language="C#" Value="public static bool SetMaxThreads (int workerThreads, int completionPortThreads);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetMaxThreads(int32 workerThreads, int32 completionPortThreads) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.SetMaxThreads(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workerThreads" Type="System.Int32" />
+        <Parameter Name="completionPortThreads" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="workerThreads">スレッド プール内のワーカー スレッドの最大数。</param>
+        <param name="completionPortThreads">スレッド プール内の非同期 I/O スレッドの最大数。</param>
+        <summary>同時にアクティブにできるスレッド プールへの要求の数を設定します。 この数を超える要求はすべて、スレッド プール スレッドが使用可能になるまでキューに置かれたままになります。</summary>
+        <returns>
+          変更が成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ことはできませんワーカー スレッドまたは I/O 完了スレッドの最大数未満に設定、数、コンピューター上のプロセッサの数。 プロセッサの数が存在するには、値の取得、<xref:System.Environment.ProcessorCount%2A?displayProperty=nameWithType>プロパティです。 さらに、ワーカー スレッドまたは I/O 完了スレッド、対応する最小ワーカー スレッド数より小さい数にまたは I/O 完了スレッドの最大数を設定することはできません。 最小スレッド プールのサイズを調べるを呼び出して、<xref:System.Threading.ThreadPool.GetMinThreads%2A>メソッドです。  
+  
+ 共通言語ランタイムがホストされている場合など、インターネット インフォメーション サービス (IIS) または SQL Server によって、ホストを制限したり、スレッド プールのサイズを変更できないようにできます。  
+  
+ スレッド プール内のスレッドの最大数を変更する場合は、注意を使用します。 コードがメリットがあるときに、変更はコード ライブラリを使用するに悪影響を与える可能性があります。  
+  
+ スレッド プールのサイズが大きすぎる設定と、パフォーマンス問題が発生することができます。 スレッドが多すぎるを同時に実行する場合のタスクの切り替えは重要な要因をオーバーヘッドになります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">スレッドを制御する権限です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMinThreads">
+      <MemberSignature Language="C#" Value="public static bool SetMinThreads (int workerThreads, int completionPortThreads);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetMinThreads(int32 workerThreads, int32 completionPortThreads) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.SetMinThreads(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workerThreads" Type="System.Int32" />
+        <Parameter Name="completionPortThreads" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="workerThreads">スレッド プールがオンデマンドで作成するワーカー スレッドの最小数。</param>
+        <param name="completionPortThreads">スレッド プールがオンデマンドで作成する非同期 I/O スレッドの最小数。</param>
+        <summary>スレッドがオンデマンドで (新しい要求の発生ごとに) 作成するスレッド プールの数を設定します。この数を超えると、スレッドの作成と破棄を管理するためのアルゴリズムに切り替わります。</summary>
+        <returns>
+          変更が成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド プールを提供新しいワーカー スレッドまたは I/O 完了スレッド要求時に各カテゴリの最小値に達するまでします。 最低限に達すると、スレッド プールはそのカテゴリに追加のスレッドを作成または、いくつかのタスクを完了するまで待機できます。 以降で、 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、スレッド プールを作成し、タスクの単位時間あたりの完了数として定義されるスループットを最適化するためにスレッドを破棄します。 スレッドが少なすぎると使用可能なリソースが最適に使用されない可能性があり、スレッドが多すぎるとリソースの競合が増える可能性があります。  
+  
+ 要求が少ないときは、スレッド プールの実際のスレッド数が最小値を下回る場合があります。  
+  
+ 負の数またはアクティブなスレッド プールのスレッドの最大数より大きい数値を指定する場合 (を使用して取得<xref:System.Threading.ThreadPool.GetMaxThreads%2A>)、<xref:System.Threading.ThreadPool.SetMinThreads%2A>返します`false`が最小値のいずれかが変更されていないとします。  
+  
+> [!CAUTION]
+>  既定では、スレッドの最小数は、システム上のプロセッサの数を設定します。 使用することができます、<xref:System.Threading.ThreadPool.SetMinThreads%2A>最小番号 ofthreads を増加させます。 ただし、これらの値を必要以上に大きくすると、パフォーマンスの問題が発生する可能性があります。 同時に開始するタスクの数が多すぎる場合は、すべてのタスクで処理速度が低下する可能性があります。 ほとんどの場合、スレッド プールが優れてスレッドを割り当てるための独自のアルゴリズムでします。 プロセッサの数もパフォーマンスを低下させる可能性がより小さくする最低限の削減。  
+  
+   
+  
+## Examples  
+ 次の例では、ワーカー スレッドの最小数を 4 に設定し、非同期 I/O 完了スレッドの最小数の元の値を保持します。  
+  
+ [!code-cpp[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/CS/source.cs#1)]
+ [!code-vb[System.Threading.ThreadPool.GetSetMinThreads#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ThreadPool.GetSetMinThreads/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">スレッドを制御する権限です。 アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeQueueNativeOverlapped">
+      <MemberSignature Language="C#" Value="public static bool UnsafeQueueNativeOverlapped (System.Threading.NativeOverlapped* overlapped);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool UnsafeQueueNativeOverlapped(valuetype System.Threading.NativeOverlapped* overlapped) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped(System.Threading.NativeOverlapped*)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="overlapped" Type="System.Threading.NativeOverlapped*" />
+      </Parameters>
+      <Docs>
+        <param name="overlapped">キューに置く <see cref="T:System.Threading.NativeOverlapped" /> 構造体。</param>
+        <summary>重複した I/O 操作を、実行するためのキューに置きます。</summary>
+        <returns>
+          操作が I/O 完了ポートのキューに正常に置かれた場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネイティブ Win32 を使用して情報には、I/O がオーバー ラップされたを参照してください、<xref:System.Threading.Overlapped>クラス、<xref:System.Threading.NativeOverlapped>構造体、および`OVERLAPPED`Win32 プラットフォーム SDK の構造体。  
+  
+> [!CAUTION]
+>  使用して、<xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped%2A>メソッドは、セキュリティ ホールを誤って開けません。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeQueueUserWorkItem">
+      <MemberSignature Language="C#" Value="public static bool UnsafeQueueUserWorkItem (System.Threading.WaitCallback callBack, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool UnsafeQueueUserWorkItem(class System.Threading.WaitCallback callBack, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeQueueUserWorkItem(System.Threading.WaitCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callBack" Type="System.Threading.WaitCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callBack">スレッド プール内のスレッドが作業項目をピック アップするときに呼び出すデリゲートを表す <see cref="T:System.Threading.WaitCallback" />。</param>
+        <param name="state">スレッド プールから処理されるときにデリゲートに渡されるオブジェクト。</param>
+        <summary>指定したデリゲートをスレッド プールのキューに置きます。ただし、コール スタックをワーカー スレッドに反映しません。</summary>
+        <returns>
+          メソッドが成功した場合は <see langword="true" />。作業項目をキューに配置できなかった場合は <see cref="T:System.OutOfMemoryException" /> がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>メソッド、<xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A>呼び出しスタックをワーカー スレッドに反映しません。 これにより、コード、呼び出し履歴が失われるとセキュリティ特権を昇格することができます。  
+  
+> [!CAUTION]
+>  使用して<xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A>セキュリティ ホールを開くことが誤っています。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ApplicationException">メモリ不足の状態が発生しました。</exception>
+        <exception cref="T:System.OutOfMemoryException">作業項目をキューにありませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callBack" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeRegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, int millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, int32 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.Int32" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack">ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されるオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>ミリ秒単位のタイムアウトとして 32 ビット符号付き整数を使用して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。 このメソッドはコール スタックをワーカー スレッドに反映しません。</summary>
+        <returns>登録された待機操作をキャンセルするために使用できる <see cref="T:System.Threading.RegisteredWaitHandle" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッド、<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>呼び出しスタックをワーカー スレッドに反映しません。 これにより、コード、呼び出し履歴が失われるとセキュリティ特権を昇格することができます。  
+  
+> [!CAUTION]
+>  使用して<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>セキュリティ ホールを開くことが誤っています。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ 使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。  
+  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeOutInterval" />パラメーターが-1 未満です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeRegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, long millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, int64 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.Int64,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.Int64" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack">ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されるオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>64 ビット符号付き整数でミリ秒単位のタイムアウトを指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。 このメソッドはコール スタックをワーカー スレッドに反映しません。</summary>
+        <returns>登録された待機操作をキャンセルするために使用できる <see cref="T:System.Threading.RegisteredWaitHandle" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッド、<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>呼び出しスタックをワーカー スレッドに反映しません。 これにより、コード、呼び出し履歴が失われるとセキュリティ特権を昇格することができます。  
+  
+> [!CAUTION]
+>  使用して<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>セキュリティ ホールを開くことが誤っています。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ 使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。  
+  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeOutInterval" />パラメーターが-1 未満です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeRegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, TimeSpan timeout, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, valuetype System.TimeSpan timeout, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack">ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されるオブジェクト。</param>
+        <param name="timeout"><see cref="T:System.TimeSpan" /> で表されるタイムアウト。 場合<c>タイムアウト</c>0 (ゼロ) には、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>タイムアウト</c>-1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary><see cref="T:System.TimeSpan" /> 値をタイムアウトとして指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。このメソッドはコール スタックをワーカー スレッドに反映しません。</summary>
+        <returns>登録された待機操作をキャンセルするために使用できる <see cref="T:System.Threading.RegisteredWaitHandle" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッド、<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>呼び出しスタックをワーカー スレッドに反映しません。 これにより、コード、呼び出し履歴が失われるとセキュリティ特権を昇格することができます。  
+  
+> [!CAUTION]
+>  使用して<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>セキュリティ ホールを開くことが誤っています。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ 使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。  
+  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" />パラメーターが-1 未満です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="timeout" />パラメーターがより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeRegisterWaitForSingleObject">
+      <MemberSignature Language="C#" Value="public static System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject (System.Threading.WaitHandle waitObject, System.Threading.WaitOrTimerCallback callBack, object state, uint millisecondsTimeOutInterval, bool executeOnlyOnce);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(class System.Threading.WaitHandle waitObject, class System.Threading.WaitOrTimerCallback callBack, object state, unsigned int32 millisecondsTimeOutInterval, bool executeOnlyOnce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.UInt32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.ThreadPool</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.RegisteredWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="waitObject" Type="System.Threading.WaitHandle" />
+        <Parameter Name="callBack" Type="System.Threading.WaitOrTimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="millisecondsTimeOutInterval" Type="System.UInt32" />
+        <Parameter Name="executeOnlyOnce" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="waitObject">登録する <see cref="T:System.Threading.WaitHandle" />。 <see cref="T:System.Threading.Mutex" /> 以外の <see cref="T:System.Threading.WaitHandle" /> を使用します。</param>
+        <param name="callBack">ときに呼び出すデリゲート、 <c>waitObject</c>パラメーターがシグナル状態にします。</param>
+        <param name="state">デリゲートに渡されるオブジェクト。</param>
+        <param name="millisecondsTimeOutInterval">ミリ秒単位のタイムアウト。 場合、 <c>millisecondsTimeOutInterval</c>パラメーターが 0 (ゼロ)、関数、オブジェクトの状態をテストを直ちに返されます。 場合<c>millisecondsTimeOutInterval</c> -1 で、関数のタイムアウトしません。</param>
+        <param name="executeOnlyOnce">
+          <see langword="true" />スレッドが待機不要になったことを示すために、 <c>waitObject</c>デリゲートが呼び出された後のパラメーター<see langword="false" />を待機の登録が解除されるまでの待機操作が完了するたびに、タイマーがリセットされるかを示します。</param>
+        <summary>32 ビット符号なし整数でミリ秒単位のタイムアウトを指定して、<see cref="T:System.Threading.WaitHandle" /> を待機するデリゲートを登録します。 このメソッドはコール スタックをワーカー スレッドに反映しません。</summary>
+        <returns>登録された待機操作をキャンセルするために使用できる <see cref="T:System.Threading.RegisteredWaitHandle" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>メソッド、<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>呼び出しスタックをワーカー スレッドに反映しません。 これにより、コード、呼び出し履歴が失われるとセキュリティ特権を昇格することができます。  
+  
+> [!CAUTION]
+>  使用して<xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>セキュリティ ホールを開くことが誤っています。 コード アクセス セキュリティは、スタックに基づいて、すべての呼び出し元のアクセス許可をその権限のチェックを行います。 ときに作業をキューに置かれたスレッド プールのスレッドを使用して、 <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject%2A>、スレッド プールのスレッドのスタックには、実際の呼び出し元のコンテキストはありません。 悪意のあるコードが必要になるアクセス許可のチェックを避けるためにこれを利用します。  
+  
+ 使用して、<xref:System.Threading.Mutex>の`waitObject`基になる Win32 API は、既定値を使用するため、コールバックの相互排他は提供されません`WT_EXECUTEDEFAULT`フラグ、別のスレッド プールのスレッドで各コールバックがディスパッチされるようにします。  
+  
+ 終了したらを使用して、<xref:System.Threading.RegisteredWaitHandle>このメソッドによって返される、呼び出し、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>待機ハンドルへの参照を解放します。 常に呼び出すことをお勧め、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドを指定する場合でも`true`の`executeOnlyOnce`します。 ガベージ コレクションより効率的に動作を呼び出す場合は、<xref:System.Threading.RegisteredWaitHandle.Unregister%2A?displayProperty=nameWithType>メソッドの代わりに、登録された待機ハンドルのファイナライザーによって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

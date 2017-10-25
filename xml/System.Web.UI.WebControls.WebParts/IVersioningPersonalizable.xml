@@ -1,0 +1,55 @@
+<Type Name="IVersioningPersonalizable" FullName="System.Web.UI.WebControls.WebParts.IVersioningPersonalizable">
+  <TypeSignature Language="C#" Value="public interface IVersioningPersonalizable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVersioningPersonalizable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IVersioningPersonalizable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>以前のバージョンの Web パーツ コントロールに属しているパーソナル化データを管理できるインターフェイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールを新しいバージョンにアップグレードするときに、アップグレードされたクラスのパーソナル化可能なプロパティの変更である可能性があります。 たとえば、Web パーツ コントロールのアップグレード バージョンでは、以前のバージョンで使用可能になったプロパティはサポートされなく可能性があります。 このようなシナリオは、Web パーツ コントロール セットに、パーソナル化データを基になるデータ ストアから読み込むが、このデータを適用先となるプロパティはありませんが可能性があります。 コントロールを実装する場合、<xref:System.Web.UI.WebControls.WebParts.IVersioningPersonalizable>インターフェイス、Web パーツ コントロールが渡される孤立したパーソナル化データです。 アプリケーションは、このデータを使用して、新しいバージョンでのプロパティを更新し、または他の方法でデータを使用します。 Web パーツ コントロールをインポートするときに、孤立したプロパティが検出された場合、<xref:System.Web.UI.WebControls.WebParts.IVersioningPersonalizable.Load%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Collections.IDictionary unknownProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load(class System.Collections.IDictionary unknownProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IVersioningPersonalizable.Load(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unknownProperties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="unknownProperties">コントロールに適用できなかったパーソナル化データのディクショナリ。</param>
+        <summary>バージョン変更のためそのデータに対応する個人用に設定されたプロパティがない Web パーツ コントロールに、パーソナル化データを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `unknownProperties`パラメーターにはコントロールに適用できませんでした「ユーザー」と「共有」の両方のスコープの不明なパーソナル化データのマージされた表現が含まれています。 ページがユーザーのスコープで実行しているときに、不明なユーザー スコープ値は不明な共有スコープの値ではなく (使用可能な場合) が入力されます。 この情報は、一連のそれぞれの名前に、コントロールに見つからなかったプロパティの文字列名あり、それぞれの値には、プロパティの値が含まれています。 名前と値のペアとして格納されます。 キャストまたは値を適切な型に変換し、(など、新しいプロパティに古いプロパティからのデータのマッピング) さらに処理を実行するコントロールの役割です。  
+  
+ 呼び出して、コントロールの状態が変更された場合<xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty%2A>(継承されたメソッドまたはから派生していない、コントロールの場合はパブリックな静的メソッドのいずれか<xref:System.Web.UI.WebControls.WebParts.WebPart>)。 コントロールとしてマークされている「ダーティ」、Web パーツ コントロール セットは、コントロールの「ダーティ」の状態に関係なく、コントロールからパーソナル化データを抽出し、パーソナル化ライフ サイクルの後で基になるデータ ストアに保存します。 コントロールは「ダーティ」の場合、内の値を処理した結果として自体をマークする必要があります、`unknownProperties`パラメーター、コントロールの状態が変化します。  
+  
+ 制御 Web パーツをインポートするときに孤立したプロパティが検出された場合は、このメソッドが自動的に呼び出されるに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

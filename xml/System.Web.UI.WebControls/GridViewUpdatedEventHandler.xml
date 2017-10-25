@@ -1,0 +1,47 @@
+<Type Name="GridViewUpdatedEventHandler" FullName="System.Web.UI.WebControls.GridViewUpdatedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void GridViewUpdatedEventHandler(object sender, GridViewUpdatedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridViewUpdatedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewUpdatedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.GridViewUpdatedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.GridViewUpdatedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.GridView.RowUpdated" />のイベント、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>制御を発生させます、<xref:System.Web.UI.WebControls.GridView.RowUpdated>更新ボタンをクリックしたときにイベント (ボタンをその`CommandName`プロパティが「更新」に設定) コントロール内でをクリックした後は、<xref:System.Web.UI.WebControls.GridView>コントロールは、レコードを更新します。 これにより、このイベントが発生するたびに、更新操作の結果を確認するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowUpdated>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventHandler/CS/gridviewupdatedeventhandlercs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventHandler/VB/gridviewupdatedeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowUpdated>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewRowUpdated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowUpdated/CS/gridviewrowupdatedcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowUpdated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowUpdated/VB/gridviewrowupdatedvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

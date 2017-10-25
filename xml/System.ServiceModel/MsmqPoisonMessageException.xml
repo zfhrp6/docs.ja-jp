@@ -1,0 +1,183 @@
+<Type Name="MsmqPoisonMessageException" FullName="System.ServiceModel.MsmqPoisonMessageException">
+  <TypeSignature Language="C#" Value="public class MsmqPoisonMessageException : System.ServiceModel.PoisonMessageException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MsmqPoisonMessageException extends System.ServiceModel.PoisonMessageException" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqPoisonMessageException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.PoisonMessageException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージが有害メッセージであることをチャネルが検出したときにスローされる例外をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、再試行回数が <xref:System.ServiceModel.Configuration.MsmqElementBase.ReceiveRetryCount%2A> と <xref:System.ServiceModel.Configuration.MsmqElementBase.MaxRetryCycles%2A> に指定された値を超過したために Message Queuing (MSMQ) がメッセージの処理を中止したことを、チャネルが検出したときにスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqPoisonMessageException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqPoisonMessageException (long messageLookupId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 messageLookupId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor(System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="messageLookupId" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="messageLookupId">有害メッセージの検索 ID。</param>
+        <summary>指定した有害メッセージの検索 ID を使用して、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqPoisonMessageException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化するために使用するメッセージ。</param>
+        <summary>指定したメッセージ テキストを使用して、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqPoisonMessageException (long messageLookupId, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 messageLookupId, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor(System.Int64,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="messageLookupId" Type="System.Int64" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="messageLookupId">有害メッセージの検索 ID。</param>
+        <param name="innerException"><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスによりカプセル化される内部例外。</param>
+        <summary>指定した有害メッセージの検索 ID と内部例外を使用して、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MsmqPoisonMessageException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に関連付けられているシリアル化されたデータを保持する <see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> インスタンス。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納する <see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> インスタンス。</param>
+        <summary>例外に関する追加シリアル化情報を使用して、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqPoisonMessageException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化するために使用するメッセージ。</param>
+        <param name="innerException"><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスによりカプセル化される内部例外。</param>
+        <summary>指定したメッセージ テキストと内部例外を使用して、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqPoisonMessageException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に関連付けられているシリアル化されたデータを保持する <see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> インスタンス。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを保持する <see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> インスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> に関連付けられているシリアル化されたデータと、<see cref="T:System.ServiceModel.MsmqPoisonMessageException" /> インスタンスに関連付けられているシリアル化されたストリームのソースおよびデスティネーションを取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageLookupId">
+      <MemberSignature Language="C#" Value="public long MessageLookupId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MessageLookupId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqPoisonMessageException.MessageLookupId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有害メッセージの検索 ID を取得します。</summary>
+        <value>有害メッセージの検索 ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

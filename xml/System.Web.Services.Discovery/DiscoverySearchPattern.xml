@@ -1,0 +1,103 @@
+<Type Name="DiscoverySearchPattern" FullName="System.Web.Services.Discovery.DiscoverySearchPattern">
+  <TypeSignature Language="C#" Value="public abstract class DiscoverySearchPattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DiscoverySearchPattern extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DiscoverySearchPattern" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>探索可能なファイルの種類のファイル拡張機能の検索パターンのインターフェイスを確立します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Web.Services.Discovery.DiscoveryDocument.References%2A?displayProperty=nameWithType> Web サービス ドキュメントに探索可能なファイルの種類を追加するプロパティです。 探索ドキュメントは、通常、.disco 拡張機能を使用してファイルとしてシリアル化、複数のファイルを追加することができます、<xref:System.Web.Services.Discovery.DiscoveryDocument.References%2A>プロパティ、およびそれらのファイルの実装によって表される他の拡張機能を持つことができます<xref:System.Web.Services.Discovery.DiscoverySearchPattern>です。  
+  
+ <xref:System.Web.Services.Discovery.DiscoverySearchPattern>クラスとその具体的な派生クラスがで採用されている、<xref:System.Web.Services.Discovery.DiscoveryRequestHandler>クラスの<xref:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest%2A>探索ドキュメントに対する HTTP 要求を処理するメソッド。 通常、これらのクラスのいずれも開発者が直接使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoverySearchPattern ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoverySearchPattern.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DiscoverySearchPattern" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDiscoveryReference">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Services.Discovery.DiscoveryReference GetDiscoveryReference (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Services.Discovery.DiscoveryReference GetDiscoveryReference(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoverySearchPattern.GetDiscoveryReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">探索ファイルまたは動的に生成された探索ドキュメントに表示されるファイルの名前。 たとえば、.asmx または .xsd ファイル。</param>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.Web.Services.Discovery.DiscoveryReference" />指定されたファイル名のオブジェクト。</summary>
+        <returns>ファイル名です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Web.Services.Discovery.DiscoverySearchPattern>を実装する、<xref:System.Web.Services.Discovery.DiscoverySearchPattern.GetDiscoveryReference%2A>から派生したメソッドの関連する具象クラスを返すことによって<xref:System.Web.Services.Discovery.DiscoveryReference>です。  
+  
+ たとえば、<xref:System.Web.Services.Discovery.ContractSearchPattern>クラスを返します、 <xref:System.Web.Services.Discovery.ContractReference> .asmx Web サービス ファイルと、対応する動的の場所を格納しているインスタンスが Web サービス記述言語 (WSDL) ドキュメントを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public abstract string Pattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoverySearchPattern.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索対象として使用するファイル名のパターンを取得します。</summary>
+        <value>ファイル名のパターン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パターンは、通常、.disco、.asmx など、ファイル名拡張子を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

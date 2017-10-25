@@ -1,0 +1,382 @@
+<Type Name="ProcessModule" FullName="System.Diagnostics.ProcessModule">
+  <TypeSignature Language="C#" Value="public class ProcessModule : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessModule extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Process</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Diagnostics.Design.ProcessModuleDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のプロセスに読み込まれる.dll .exe またはファイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュールは、実行可能ファイルまたはダイナミック リンク ライブラリ (DLL) です。 各プロセスは、1 つまたは複数のモジュールで構成されます。 このクラスを使用するには、モジュールに関する情報を取得します。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルを使用する方法を示します、<xref:System.Diagnostics.ProcessModule>クラスを取得および Notepad.exe アプリケーションによって使用されているすべてのモジュールに関する情報を表示します。  
+  
+ [!code-cpp[ProcessModule#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule/CPP/processmodule.cpp#1)]
+ [!code-csharp[ProcessModule#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule/CS/processmodule.cs#1)]
+ [!code-vb[ProcessModule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule/VB/processmodule.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="BaseAddress">
+      <MemberSignature Language="C#" Value="public IntPtr BaseAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int BaseAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.BaseAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The base memory address of this module")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールが読み込まれたメモリ アドレスを取得します。</summary>
+        <value>モジュールの読み込みアドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>と<xref:System.Diagnostics.ProcessModule.BaseAddress%2A>各モジュールが読み込まれたモジュール名と、メモリ アドレスの表示に使用されるプロパティです。  
+  
+ [!code-cpp[ProcessModule_BaseAddress#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_BaseAddress/CPP/processmodule_baseaddress.cpp#1)]
+ [!code-csharp[ProcessModule_BaseAddress#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_BaseAddress/CS/processmodule_baseaddress.cs#1)]
+ [!code-vb[ProcessModule_BaseAddress#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_BaseAddress/VB/processmodule_baseaddress.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryPointAddress">
+      <MemberSignature Language="C#" Value="public IntPtr EntryPointAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int EntryPointAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.EntryPointAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The base memory address of the entry point of this module")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムを読み込んで、モジュールを実行するときに実行される関数のメモリ アドレスを取得します。</summary>
+        <value>モジュールのエントリ ポイント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュールのエントリ ポイントは、プロセスの起動、スレッドが開始、プロセスのシャット ダウン、およびスレッドのシャット ダウン中に呼び出される関数の場所です。 エントリ ポイントは、DllMain 関数のアドレスではありませんが、ほとんどの目的で近くになります。  
+  
+> [!NOTE]
+>  Windows が、アセンブリを読み込む方法の変更のため<xref:System.Diagnostics.ProcessModule.EntryPointAddress%2A>は常に 0 を返す[!INCLUDE[win8](~/includes/win8-md.md)]または[!INCLUDE[win81](~/includes/win81-md.md)]必要がありますに依存しないこれらのプラットフォームとします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>と<xref:System.Diagnostics.ProcessModule.EntryPointAddress%2A>プロパティを使用して、名前と各モジュールのエントリ ポイントのアドレスを表示します。  
+  
+ [!code-cpp[ProcessModule_EntryPoint#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_EntryPoint/CPP/processmodule_entrypoint.cpp#1)]
+ [!code-csharp[ProcessModule_EntryPoint#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_EntryPoint/CS/processmodule_entrypoint.cs#1)]
+ [!code-vb[ProcessModule_EntryPoint#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_EntryPoint/VB/processmodule_entrypoint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The file name of this module")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールへの完全パスを取得します。</summary>
+        <value>モジュールの場所を定義する完全修飾パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル名が許可される文字の最大数よりも長い場合は、ファイル名は切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>と<xref:System.Diagnostics.ProcessModule.FileName%2A>プロパティを使用して、モジュール名と各モジュールの完全なパス情報を表示します。  
+  
+ [!code-cpp[ProcessModule_FileName#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_FileName/CPP/processmodule_filename.cpp#1)]
+ [!code-csharp[ProcessModule_FileName#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_FileName/CS/processmodule_filename.cs#1)]
+ [!code-vb[ProcessModule_FileName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_FileName/VB/processmodule_filename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileVersionInfo">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.FileVersionInfo FileVersionInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.FileVersionInfo FileVersionInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.FileVersionInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.FileVersionInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールのバージョン情報を取得します。</summary>
+        <value>A<see cref="T:System.Diagnostics.FileVersionInfo" />モジュールのバージョン情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>と<xref:System.Diagnostics.ProcessModule.FileVersionInfo%2A>プロパティを使用して、モジュール名と各モジュールのファイル バージョン情報を表示します。  
+  
+ [!code-cpp[ProcessModule_FileVersionInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_FileVersionInfo/CPP/processmodule_fileversioninfo.cpp#1)]
+ [!code-csharp[ProcessModule_FileVersionInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_FileVersionInfo/CS/processmodule_fileversioninfo.cs#1)]
+ [!code-vb[ProcessModule_FileVersionInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_FileVersionInfo/VB/processmodule_fileversioninfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModuleMemorySize">
+      <MemberSignature Language="C#" Value="public int ModuleMemorySize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ModuleMemorySize" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.ModuleMemorySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The memory needed by this module")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールの読み込みに必要なメモリの量を取得します。</summary>
+        <value>モジュールが占有するメモリのバイト単位のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.ProcessModule.ModuleMemorySize%2A>追加メモリの割り当てが実行されている; が作成するには含まれませんモジュール ファイルには、静的なコードとデータのサイズのみが含まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>と<xref:System.Diagnostics.ProcessModule.ModuleMemorySize%2A>プロパティを使用して、モジュール名と各モジュールに必要なメモリの量を表示します。  
+  
+ [!code-cpp[ProcessModule_ModuleMemorySize#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_ModuleMemorySize/CPP/processmodule_modulememorysize.cpp#1)]
+ [!code-csharp[ProcessModule_ModuleMemorySize#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_ModuleMemorySize/CS/processmodule_modulememorysize.cs#1)]
+ [!code-vb[ProcessModule_ModuleMemorySize#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_ModuleMemorySize/VB/processmodule_modulememorysize.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModuleName">
+      <MemberSignature Language="C#" Value="public string ModuleName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ModuleName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessModule.ModuleName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.MonitoringDescription("The name of this module")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセス モジュールの名前を取得します。</summary>
+        <value>モジュールの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前が許可される文字の最大数よりも長い場合は切り捨てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ModuleName%2A>プロパティの使用に各モジュールの名前を表示します。  
+  
+ [!code-cpp[ProcessModule_ModuleName#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_ModuleName/CPP/processmodule_modulename.cpp#1)]
+ [!code-csharp[ProcessModule_ModuleName#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_ModuleName/CS/processmodule_modulename.cs#1)]
+ [!code-vb[ProcessModule_ModuleName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_ModuleName/VB/processmodule_modulename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.ProcessModule.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>モジュールの名前を文字列に変換します。</summary>
+        <returns><see cref="P:System.Diagnostics.ProcessModule.ModuleName" /> プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Notepad.exe アプリケーションの新しいプロセスを作成します。 反復処理、<xref:System.Diagnostics.ProcessModuleCollection>を取得するクラス、<xref:System.Diagnostics.ProcessModule>コレクション内の各モジュールのオブジェクト。 <xref:System.Diagnostics.ProcessModule.ToString%2A>メソッドの使用に各モジュールの名前を表示します。  
+  
+ [!code-cpp[ProcessModule_ToString#1](~/samples/snippets/cpp/VS_Snippets_CLR/ProcessModule_ToString/CPP/processmodule_tostring.cpp#1)]
+ [!code-csharp[ProcessModule_ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR/ProcessModule_ToString/CS/processmodule_tostring.cs#1)]
+ [!code-vb[ProcessModule_ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ProcessModule_ToString/VB/processmodule_tostring.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

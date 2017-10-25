@@ -1,0 +1,207 @@
+<Type Name="StringEnumerator" FullName="System.Collections.Specialized.StringEnumerator">
+  <TypeSignature Language="C#" Value="public class StringEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringEnumerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.StringEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Collections.Specialized.StringCollection" /> に対する単純な繰り返し処理をサポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.Specialized.StringEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 この位置で、呼び出す<xref:System.Collections.Specialized.StringEnumerator.Current%2A>例外をスローします。 そのため、<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.Specialized.StringEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.Specialized.StringEnumerator.Current%2A> は、<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A> または <xref:System.Collections.Specialized.StringEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A> は、<xref:System.Collections.Specialized.StringEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.Specialized.StringEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.Specialized.StringEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.Specialized.StringEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>または<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>と<xref:System.Collections.Specialized.StringEnumerator.Current%2A>、<xref:System.Collections.Specialized.StringEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringEnumerator>です。  
+  
+ [!code-cpp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CPP/stringenumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CS/stringenumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/VB/stringenumerator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public string Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Current" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.StringEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の現在の要素を取得します。</summary>
+        <value>コレクション内の現在の要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>が呼び出されると、<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>列挙子の値を読み取る前に、コレクションの最初の要素に進めるを呼び出す必要があります<xref:System.Collections.Specialized.StringEnumerator.Current%2A>、それ以外の<xref:System.Collections.Specialized.StringEnumerator.Current%2A>が定義されていません。  
+  
+ <xref:System.Collections.Specialized.StringEnumerator.Current%2A>または例外をスロー、最後の呼び出し<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>返される`false`コレクションの末尾を示します。  
+  
+ <xref:System.Collections.Specialized.StringEnumerator.Current%2A>連続して呼び出すと、列挙子の位置を移動しません<xref:System.Collections.Specialized.StringEnumerator.Current%2A>されるまで、同じオブジェクトを返す<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>または<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>と呼びます。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringEnumerator>です。  
+  
+ [!code-cpp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CPP/stringenumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CS/stringenumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/VB/stringenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">列挙子は、コレクションの最初の要素の前または最後の要素の後に配置されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子をコレクションの次の要素に進めます。</summary>
+        <returns>
+          列挙子が次の要素に正常に進んだ場合は <see langword="true" />。列挙子がコレクションの末尾を越えた場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>が呼び出されると、列挙子が配置されているコレクション、および最初の呼び出しの最初の要素の前に<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>列挙子をコレクションの最初の要素の上に移動します。  
+  
+ 場合<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>を返すことも`false`まで<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>と呼びます。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringEnumerator>です。  
+  
+ [!code-cpp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CPP/stringenumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CS/stringenumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/VB/stringenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは、列挙子の作成後に変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.StringEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を初期位置、つまりコレクションの最初の要素の前に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Specialized.StringEnumerator.Reset%2A>列挙子を最初の要素の前に、コレクションの先頭に移動します。 後に<xref:System.Collections.Specialized.StringEnumerator.Reset%2A>、<xref:System.Collections.Specialized.StringEnumerator.MoveNext%2A>列挙子の値を読み取る前に、コレクションの最初の要素に進めるを呼び出す必要があります<xref:System.Collections.Specialized.StringEnumerator.Current%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、一部のプロパティとメソッドを示しています。<xref:System.Collections.Specialized.StringEnumerator>です。  
+  
+ [!code-cpp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CPP/stringenumerator.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/CS/stringenumerator.cs#1)]
+ [!code-vb[System.Collections.Specialized.StringEnumerator2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.StringEnumerator2/VB/stringenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは、列挙子の作成後に変更されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

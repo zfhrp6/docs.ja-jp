@@ -1,0 +1,507 @@
+<Type Name="DetailsViewDesigner" FullName="System.Web.UI.Design.WebControls.DetailsViewDesigner">
+  <TypeSignature Language="C#" Value="public class DetailsViewDesigner : System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewDesigner extends System.Web.UI.Design.WebControls.DataBoundControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DetailsViewDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.DataBoundControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DetailsView" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.DetailsView>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。  
+  
+ プロパティ、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>クラスは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.AutoFormats%2A>プロパティは、書式指定での表示スキームのコレクションを返します、**オート フォーマット** ダイアログ ボックス。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.TemplateGroups%2A>プロパティは、関連するフィールドについて、テンプレート グループのコレクションを返します<xref:System.Web.UI.WebControls.DetailsView>コントロールと最上位レベル<xref:System.Web.UI.WebControls.DetailsView>テンプレート。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl%2A>プロパティは常に返します`true`、デザイナーに関連付けられている一時的なコピーが作成されることを示す<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時のマークアップを生成します。  
+  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.DataBind%2A>メソッドは、関連付けられているバインド<xref:System.Web.UI.WebControls.DetailsView>デザイン時のデータ ソースを制御します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.DetailsView>デザイン時にします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.DetailsView>です。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnClick%2A>メソッドが呼び出されて、関連するデザイン時ビューの領域<xref:System.Web.UI.WebControls.DetailsView>をクリックします。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnSchemaRefreshed%2A>メソッドが呼び出されます、関連するデータ ソースのスキーマ<xref:System.Web.UI.WebControls.DetailsView>変更します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties%2A>メソッドを使用して削除または追加のプロパティを追加または関連付けられているプロパティをシャドウする<xref:System.Web.UI.WebControls.DetailsView>です。  
+  
+ デザイン時の編集可能な領域がでサポートされていない、<xref:System.Web.UI.WebControls.DetailsView>コントロール、ため、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetEditableDesignerRegionContent%2A>と<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SetEditableDesignerRegionContent%2A>機能を持つメソッドがありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。  
+  
+ 例では、`MyDetailsView`から制御、<xref:System.Web.UI.WebControls.DetailsView>です。 `MyDetailsView`のコピーするだけである、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 例では、`MyDetailsViewDesigner`からクラス<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>され、配置、<xref:System.ComponentModel.DesignerAttribute>オブジェクトに対する`MyDetailsViewDesigner`上、`MyDetailsView`コントロール。  
+  
+ `The MyDetailsViewDesigner`上書き、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount%2A>ことを指定するプロパティのデザイン時ビューのページャー行、 `MyDetailsView` 5 つのページ リンクが含まれます。 も優先、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties%2A>を作成するメソッド、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**デザイン時にグリッドです。 も優先、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>メソッドに含める、<xref:System.Web.UI.WebControls.DetailsView.Caption%2A>で新しい最初の行として、指定される場合は、プロパティ、`MyDetailsView`デザイン時にグリッドです。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>のプロパティ、`MyDetailsView`は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールを囲む青い点線の枠を描画します。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DetailsViewDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/CS/detailsviewdesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.DetailsViewDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/VB/detailsviewdesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DetailsViewDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.DetailsView>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式指定に表示するスキームを自動のコレクションを取得、**オート フォーマット** ダイアログ ボックス。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DetailsView" /> の定義済みスキームを格納している <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerAutoFormatCollection>内部クラスの XML でエンコードされたメンバーから取得されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="protected override void DataBind (System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DataBind(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.DataBind(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl">デザイン時のデータ ソースにバインドする <see cref="T:System.Web.UI.WebControls.DetailsView" /> コントロール。</param>
+        <summary>関連付けられたコントロールをデザイン時のデータ ソースにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.DataBind%2A>メソッドは、関連付けられているバインド<xref:System.Web.UI.WebControls.DetailsView>、デザイン時のデータ ソースを制御し、ポケットベルと必要とされる、指定されている機能に基づいて自動的に生成された行の数を計算、<xref:System.Web.UI.WebControls.DetailsView>です。  
+  
+ `dataBoundControl`パラメーターを表す、<xref:System.Web.UI.WebControls.DetailsView>デザイナー、またはそのコントロールのコピーに関連付けられているコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>デザイン時に <see cref="T:System.Web.UI.WebControls.DetailsView" /> を表示するために使用するマークアップを格納している <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml>メソッドのセット、<xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows%2A>のプロパティ、<xref:System.Web.UI.WebControls.DetailsView>に制御を`true`場合は、<xref:System.Web.UI.WebControls.DetailsView.Fields%2A>コレクションが空です。 <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>を設定し、<xref:System.Web.UI.WebControls.DetailsView.DataKeyNames%2A>のコレクション、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>コントロール、空を<xref:System.String>配列の場合は、データ ソースのスキーマを取得できません。 情報を更新する、<xref:System.ComponentModel.TypeDescriptor>を強制するオブジェクト、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties%2A>に呼び出されるメソッド。 マークアップを生成する基本メソッドを呼び出しています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>から継承されたクラスのメソッド、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>の外観を変更するクラス、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。 この例は、グリッドに表示する新しい最初の行を追加、<xref:System.Web.UI.WebControls.DetailsView.Caption%2A>プロパティの場合、<xref:System.Web.UI.WebControls.DetailsView.Caption%2A>が定義されています。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>から派生したコントロールのプロパティ<xref:System.Web.UI.WebControls.DetailsView>は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールを囲む青い点線の枠を描画します。 コントロールの実行時の外観は変わりません。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DetailsViewDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/CS/detailsviewdesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.DetailsViewDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/VB/detailsviewdesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml" />メソッドを最終的には、いくつかの優先レベルを呼び出すために、基本メソッドを呼び出すことを確認する、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロールまたはマークアップを生成するコントロールのコピー。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml (System.Web.UI.Design.DesignerRegionCollection regions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml(class System.Web.UI.Design.DesignerRegionCollection regions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regions" Type="System.Web.UI.Design.DesignerRegionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="regions">コントロールのデザイン時ビューの選択可能領域およびクリック可能領域の定義の追加先となる <see cref="T:System.Web.UI.Design.DesignerRegionCollection" />。</param>
+        <summary>関連付けられたコントロールをデザインに時表示するために使用するマークアップを取得し、デザイナー画面のコレクションに追加します。</summary>
+        <returns>デザイン時に <see cref="T:System.Web.UI.WebControls.DetailsView" /> を表示するために使用するマークアップを格納している <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>メソッドの呼び出し、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>のレンダリングをデザイン時のマークアップを生成する方法を<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>メソッドが読み込まれます`regions`で、<xref:System.Web.UI.Design.DesignerRegion>各クリック可能なデータ領域または選択可能な領域のデザイン時のレンダリングのオブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.DetailsView>各行の最初のセルが選択可能な行のすべてのセルはクリック可能なです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>の外観を変更するクラス、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。 この例は、グリッドに表示する新しい最初の行を追加、<xref:System.Web.UI.WebControls.DetailsView.Caption%2A>プロパティの場合、<xref:System.Web.UI.WebControls.DetailsView.Caption%2A>が定義されています。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>から派生したコントロールのプロパティ、<xref:System.Web.UI.WebControls.DetailsView>は、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>値、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml%2A>エクステントの詳細に表示されるようにするコントロールを囲む青い点線の枠を描画します。 コントロールの実行時の外観は変わりません。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DetailsViewDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/CS/detailsviewdesigner.cs#4)]
+ [!code-vb[System.Web.UI.Design.WebControls.DetailsViewDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/VB/detailsviewdesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />メソッド、基本メソッドを呼び出すことを確認するまたは<see cref="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml" />最終的には、いくつかの優先レベルを呼び出すことがであるために、オーバー ロード、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロールまたはマークアップを生成するコントロールのコピー。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override string GetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">内容の取得対象の <see cref="T:System.Web.UI.Design.EditableDesignerRegion" />。</param>
+        <summary>関連付けられたコントロールのデザイン時ビューの編集可能領域の内容を返します。</summary>
+        <returns>関連付けられたコントロールのデザイン時ビューの編集可能領域の内容。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能は現在使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" /> を実装するコントロールである <see cref="T:System.Web.UI.WebControls.DetailsView" />。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.Initialize%2A>とその基本メソッドのプロパティを構成およびデザイナーの操作に必要なイベントを設定します。  
+  
+ `component`パラメーターを表す、<xref:System.Web.UI.WebControls.DetailsView>デザイナーまたはそのコントロールのコピーに関連付けられているコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected override void OnClick (System.Web.UI.Design.DesignerRegionMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClick(class System.Web.UI.Design.DesignerRegionMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnClick(System.Web.UI.Design.DesignerRegionMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.Design.DesignerRegionMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">コントロールのクリック領域を定義する <see cref="T:System.Web.UI.Design.DesignerRegionMouseEventArgs" />。</param>
+        <summary>関連付けられたコントロールのデザイン時ビューの領域がクリックされたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnClick%2A>メソッドが選択されている領域のインデックスを保存し、表示するマークアップを更新、<xref:System.Web.UI.WebControls.DetailsView>デザイン サーフェイス上のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSchemaRefreshed">
+      <MemberSignature Language="C#" Value="protected override void OnSchemaRefreshed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSchemaRefreshed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnSchemaRefreshed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソースのスキーマが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレート編集モードでもフィールドでは、デザイナーがいない場合は追加または編集するには、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.OnSchemaRefreshed%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドを呼び出して、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>を更新するメソッド、<xref:System.Web.UI.WebControls.DetailsView>コントロール、データ ソースの変更を反映するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">追加されたプロパティおよびシャドウ プロパティの <see cref="T:System.Collections.IDictionary" /> を実装するコレクション。</param>
+        <summary><paramref name="Properties" /> グリッドの表示に対してプロパティの削除または追加を実行したり、関連するコントロールのプロパティをシャドウしたりするために、デザイナーによって使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、`Properties`グリッドです。  
+  
+ <xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties%2A>メソッドのセット、<xref:System.ComponentModel.BrowsableAttribute>のオブジェクト、<xref:System.Web.UI.WebControls.DetailsView.Fields%2A>プロパティを`false`とコントロールが、テンプレート モード。 これによりを使用してテンプレート モードである列を削除することはできません、 `Fields`  ダイアログ ボックス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>を変更するクラス、`Properties`のグリッド、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。 例は、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、`Properties`グリッドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DetailsViewDesigner#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/CS/detailsviewdesigner.cs#3)]
+ [!code-vb[System.Web.UI.Design.WebControls.DetailsViewDesigner#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/VB/detailsviewdesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleRowCount">
+      <MemberSignature Language="C#" Value="protected override int SampleRowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SampleRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する関連付けられたコントロールのサンプル行の数を取得します。</summary>
+        <value>表示するサンプル行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount%2A>数を常に返します`2`です。 これにより、2 つのページ リンクのページャー行に表示される、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount%2A>から継承されたクラスのプロパティは、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner>のページャー行に表示されるページのリンクの数を変更するクラス、<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時です。 例では、原因、5 つのページ リンクが表示されます。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DetailsViewDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/CS/detailsviewdesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.DetailsViewDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DetailsViewDesigner/VB/detailsviewdesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override void SetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DetailsViewDesigner.SetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region">更新する <see cref="T:System.Web.UI.Design.EditableDesignerRegion" />。</param>
+        <param name="content">A<see cref="T:System.String" />に書き込む<c>地域</c>です。</param>
+        <summary>関連付けられたコントロールのデザイン時ビューの編集可能領域の内容を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SetEditableDesignerRegionContent%2A>メソッドに機能がありません; のデザイン時ビューの編集可能な領域はサポートされていません、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールのフィールドについて、テンプレート グループのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DetailsView" /> コントロール内の各テンプレート フィールドの要素を格納している <see cref="T:System.Web.UI.Design.TemplateGroupCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.TemplateGroups%2A>プロパティのコレクションを構築する<xref:System.Web.UI.Design.TemplateGroup>オブジェクト、テンプレート化されたデータの各フィールドおよびの各コントロール フィールド (ヘッダー、フッター、ポケットベルなど)、関連付けられている<xref:System.Web.UI.WebControls.DetailsView>コントロール。 データ フィールド<xref:System.Web.UI.Design.TemplateGroup>要素が、<xref:System.Web.UI.Design.TemplateDefinition>テンプレートの定義済みの行の種類ごとのオブジェクト。 コントロールのフィールド<xref:System.Web.UI.Design.TemplateGroup>要素を 1 つを含む<xref:System.Web.UI.Design.TemplateDefinition>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するときに、デザイナーに関連付けられた実際のコントロールではなく、一時的なコピーをデザイナーで使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl%2A>プロパティは常に`true`、デザイナーを使用して、 <xref:System.Web.UI.WebControls.View> 、関連付けられているのコピーを含むコントロール<xref:System.Web.UI.WebControls.DetailsView>コントロールをデザイン時のマークアップを生成します。 <xref:System.Web.UI.WebControls.View>コントロールではのすべての永続化には影響しません、<xref:System.Web.UI.WebControls.DetailsView>です。 場合、<xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl%2A>を返すプロパティはオーバーライドされて`false`、デザイナーが関連付けられている使用<xref:System.Web.UI.WebControls.DetailsView>コントロール自体をデザイン時のマークアップを生成します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl" />を返すプロパティ<see langword="false" />またはコントロールをクラス レベルでマークされているかどうかに基づいて、その値を決定する<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />オブジェクト。 場合、<see cref="P:System.Web.UI.Design.WebControls.DetailsViewDesigner.UsePreviewControl" />がオーバーライドされていない、<see cref="T:System.Web.UI.WebControls.DetailsView" />オブジェクトは無視されます、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

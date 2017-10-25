@@ -1,0 +1,1196 @@
+<Type Name="Monitor" FullName="System.Threading.Monitor">
+  <TypeSignature Language="C#" Value="public static class Monitor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Monitor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Monitor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトへのアクセスを同期する機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Monitor>クラスでは、取得、呼び出すことによって、特定のオブジェクトのロックを開放する、コード領域へのアクセスを同期することができます、 <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>、 <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>、および<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>メソッドです。 オブジェクトのロックは、一般、クリティカル セクションと呼ばれる、コードのブロックへのアクセスを制限する機能を提供します。 スレッド オブジェクトのロックを所有しているときにその他のスレッドを取得できますありませんそのロック。 使用することも、<xref:System.Threading.Monitor>にクラスを他のスレッドができないアプリケーションのセクションにアクセスすることを確認するコード、ロックの所有者によって実行されているその他のスレッドが別のロックされたオブジェクトを使用して、コードを実行しない限り、します。  
+  
+ この記事の内容:  
+  
+ [Monitor クラス: 概要](#Overview)   
+ [ロック オブジェクト](#Lock)   
+ [クリティカル セクション](#CriticalSection)   
+ [パルス、PulseAll、および待機](#Pulse)   
+ [モニターおよび待機ハンドル](#WaitHandles)  
+  
+<a name="Overview"></a>   
+## <a name="the-monitor-class-an-overview"></a>Monitor クラス: 概要  
+ <xref:System.Threading.Monitor>次の機能があります。  
+  
+-   要求時にオブジェクトに関連付けられています。  
+  
+-   バインドされている場合、これは、任意のコンテキストから直接呼び出すことができます。  
+  
+-   インスタンス、<xref:System.Threading.Monitor>クラスを作成することはできません。 のメソッド、<xref:System.Threading.Monitor>クラスはすべて静的です。 各メソッドには、アクセスを制御する同期オブジェクトが渡されますクリティカル セクションにします。  
+  
+> [!NOTE]
+>  使用して、<xref:System.Threading.Monitor>文字列以外のオブジェクトをロックするクラス (つまり、参照型を以外の<xref:System.String>)、いない値の型。 詳細については、「のオーバー ロード、<xref:System.Threading.Monitor.Enter%2A>メソッドおよび[ロック オブジェクト](#Lock)この記事で後述する「します。  
+  
+ 次の表では、同期されているオブジェクトにアクセスするスレッドで実行できる操作について説明します。  
+  
+|アクション|説明|  
+|------------|-----------------|  
+|<xref:System.Threading.Monitor.Enter%2A>, <xref:System.Threading.Monitor.TryEnter%2A>|オブジェクトのロックを取得します。 この操作は、クリティカル セクションの先頭を示します。 その他のスレッド加わることはできませんクリティカル セクションの手順を別のロックされたオブジェクトを使用して、重要なセクションで実行されている場合を除き、します。|  
+|<xref:System.Threading.Monitor.Wait%2A>|他のスレッドをロックし、オブジェクトへのアクセスを許可するためにオブジェクトのロックを解放します。 別のスレッド オブジェクトにアクセスするときに、呼び出し元のスレッドが待機します。 パルス シグナルは、待機中のスレッド オブジェクトの状態の変更についての通知に使用されます。|  
+|<xref:System.Threading.Monitor.Pulse%2A>(信号)<xref:System.Threading.Monitor.PulseAll%2A>|1 つ以上の待機中のスレッドにシグナルを送信します。 シグナルが待機中のスレッドのロックされたオブジェクトの状態が変更されたことを通知し、ロックの所有者にロックを解除する準備がします。 オブジェクトのロックが最終的に表示されるように、待機中のスレッドは、オブジェクトの実行待ちキューに配置されます。 スレッドがロックを持つ、必要な状態に達しているかどうかはそのオブジェクトの新しい状態を確認できます。|  
+|<xref:System.Threading.Monitor.Exit%2A>|オブジェクトのロックを解放します。 この操作もロック オブジェクトによって保護されている重要なセクションの末尾をマークします。|  
+  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、2 つのオーバー ロードのセットがある、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.TryEnter%2A>メソッドです。 オーバー ロードの 1 つのセットには、 `ref` (C# の場合) または`ByRef`(Visual Basic) の<xref:System.Boolean>にアトミックに設定されているパラメーター`true`かどうか、ロック、ロックを獲得するときに例外がスローされた場合でもです。 ロックを保護するリソースが一貫した状態にできない可能性がある場合でも、常にロックを解除することが重要である場合は、これらのオーバー ロードを使用します。  
+  
+<a name="Lock"></a>   
+## <a name="the-lock-object"></a>ロック オブジェクト  
+ Monitor クラスから成ります`static`(C# の場合) または`Shared`(Visual Basic) のクリティカル セクションへのアクセスを制御するオブジェクトを操作するメソッド。  次の情報は、同期するオブジェクトごとに保持されます。  
+  
+-   ロックを現在保持しているスレッドへの参照。  
+  
+-   ロックを取得する準備ができているスレッドを格納する準備ができて、キューへの参照。  
+  
+-   ロックされたオブジェクトの状態の変更の通知を待機しているスレッドを含む待機キューへの参照。  
+  
+ <xref:System.Threading.Monitor> は値型ではなく、オブジェクト (つまり、参照型) をロックします。 値型を <xref:System.Threading.Monitor.Enter%2A> と <xref:System.Threading.Monitor.Exit%2A> に渡すことができますが、値型は呼び出しごとに個別にボックス化されます。 呼び出しごとに個別のオブジェクトが作成されるので、<xref:System.Threading.Monitor.Enter%2A> は決してコードをブロックすることはなく、保護していると想定しているコードは実際には同期されません。 さらに、<xref:System.Threading.Monitor.Exit%2A> に渡されたオブジェクトは <xref:System.Threading.Monitor.Enter%2A> に渡されたオブジェクトとは異なるため、<xref:System.Threading.Monitor> は「オブジェクトの同期メソッドが、コードの非同期ブロックから呼び出されました。」というメッセージとともに <xref:System.Threading.SynchronizationLockException> 例外をスローします。  
+  
+ この問題を説明する例を次に示します。 10 個のタスクが起動され、それぞれが 250 ミリ秒間スリープ状態になります。 次に、各タスクはカウンター変数である `nTasks` を更新します。これは実際に起動、実行されるタスクの数をカウントするためのものです。 `nTasks` は複数のタスクで同時に更新可能なグローバル変数なので、複数のタスクによる同時変更を防止するためにモニターを使用します。 しかし、例に示す出力のように、各タスクは <xref:System.Threading.SynchronizationLockException> 例外をスローします。  
+  
+ [!code-csharp[Conceptual.Monitors#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.monitors/cs/badlock1.cs#2)]
+ [!code-vb[Conceptual.Monitors#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.monitors/vb/badlock1.vb#2)]  
+  
+ 各タスクの <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> メソッドに対する呼び出しの前に `nTasks` 変数がボックス化されるため、各タスクは <xref:System.Threading.SynchronizationLockException> 例外をスローします。 つまり、各メソッドの呼び出しは他のメソッドから独立している個別の変数に渡されます。 `nTasks` は <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> メソッドへの呼び出しで再びボックス化されます。 こうして 10 個の新しいボックス化された変数が作成されます。これらは互いに独立したものであり、`nTasks` からも <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> メソッドへの呼び出しで作成された 10 個のボックス化された変数からも独立しています。 それで、以前ロックされていなかった新規に作成された変数のロックを解放しようとしているため、例外がスローされます。  
+  
+ 次の例に示すように、<xref:System.Threading.Monitor.Enter%2A> と <xref:System.Threading.Monitor.Exit%2A> の呼び出しの前に値型の変数をボックス化したり、ボックス化された同じオブジェクトを両方のメソッドに渡したりできますが、これを行う利点はありません。 ボックス化解除された変数への変更は、ボックス化されたコピーには反映されません。またボックス化されたコピーの値を変更する方法はありません。  
+  
+ [!code-csharp[Conceptual.Monitors#3](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.monitors/cs/badbox1.cs#3)]
+ [!code-vb[Conceptual.Monitors#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.monitors/vb/badbox1.vb#3)]  
+  
+ 同期対象のオブジェクトを選択すると、プライベートまたは内部のオブジェクトでのみロックする必要があります。 外部オブジェクトをロック場合は、関連のないコードは、さまざまな目的でロックすると同じオブジェクトを選択できるために、デッドロックを引き起こす可能性があります。  
+  
+ ロックに使用されるオブジェクトがから派生している場合、複数のアプリケーション ドメイン内のオブジェクトで同期することができますに注意してください<xref:System.MarshalByRefObject>です。  
+  
+<a name="CriticalSection"></a>   
+## <a name="the-critical-section"></a>クリティカル セクション  
+ 使用して、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.Exit%2A>の先頭と末尾のクリティカル セクションをマークするメソッド。  
+  
+> [!NOTE]
+>  によって提供される機能、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.Exit%2A>メソッドはによって提供されるものと同じ、[ロック](~/docs/csharp/language-reference/keywords/lock-statement.md)(C#) ステートメント、および[SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) Visual basic でのステートメント言語は、ラップを構築する点を除いて、<xref:System.Threading.Monitor.Enter%28System.Object%2CSystem.Boolean%40%29?displayProperty=nameWithType>メソッドのオーバー ロードおよび<xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>メソッドで、`try`しています.`finally` モニターが解放されることを確認するブロック。  
+  
+ クリティカル セクションが連続する手順についてで取得したロックのセットである場合、<xref:System.Threading.Monitor.Enter%2A>メソッドを 1 つのスレッドだけがロックされたオブジェクトで囲まれたコードを実行できることを保証します。 ここをお勧めからそのコードを配置すること、`try`ブロックへの呼び出しに置き、<xref:System.Threading.Monitor.Exit%2A>メソッドで、`finally`ブロックします。 これにより、例外が発生しても必ずロックが解放されるようになります。 次のコード フラグメントは、このパターンを示します。  
+  
+ [!code-csharp[System.Threading.Monitor.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.class/cs/Pattern2.cs#2)]
+ [!code-vb[System.Threading.Monitor.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.class/vb/Pattern2.vb#2)]  
+  
+ この機能は通常、静的なへのアクセスまたはクラスのインスタンス メソッドを同期するために使用されます。  
+  
+ ロック機能を配置することによって実現できますメソッド全体をクリティカル セクションにまたがっている場合、<xref:System.Runtime.CompilerServices.MethodImplAttribute?displayProperty=nameWithType>方法で指定して、<xref:System.Runtime.CompilerServices.MethodImplOptions.Synchronized>のコンス トラクター内の値<xref:System.Runtime.CompilerServices.MethodImplAttribute?displayProperty=nameWithType>です。 この属性を使用すると、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.Exit%2A>メソッドの呼び出しは必要ありません。 次のコード フラグメントは、このパターンを示しています。  
+  
+ [!code-csharp[System.Threading.Monitor.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.class/cs/Pattern2.cs#3)]
+ [!code-vb[System.Threading.Monitor.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.class/vb/Pattern2.vb#3)]  
+  
+ 属性によって、メソッドが戻るまで、ロックを保持するために、現在のスレッドに注意してください。ロックがすぐに解放する場合を使用して、<xref:System.Threading.Monitor>クラスの c#[ロック](~/docs/csharp/language-reference/keywords/lock-statement.md)ステートメント、または Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md)属性ではなく、メソッド内でステートメント。  
+  
+ ことができますが、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.Exit%2A>ロックおよびメンバーまたはクラスの境界と交差する特定のオブジェクトを解放するステートメントでは、この方法はお勧めできません。  
+  
+<a name="Pulse"></a>   
+## <a name="pulse-pulseall-and-wait"></a>パルス、PulseAll、および待機  
+ スレッドは、ロックを所有するされ、ロックを保護する重要なセクションが入った、呼び出すことができます、 <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType>、 <xref:System.Threading.Monitor.Pulse%2A?displayProperty=nameWithType>、および<xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Threading.Monitor.Wait%2A>保持されている、待機中のスレッドまたはスレッドのロックを取得し、クリティカル セクションの入力を許可しへの呼び出しによって通知されるまで待機する場合、ロックを開放、<xref:System.Threading.Monitor.Pulse%2A?displayProperty=nameWithType>または<xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Threading.Monitor.Wait%2A>  に通知がなされると、制御が戻り、再度ロックが取得されます。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A> および <xref:System.Threading.Monitor.PulseAll%2A> の両方が待機キューの次のスレッドに続行するよう信号を送ります。  
+  
+<a name="WaitHandles"></a>   
+## <a name="monitors-and-wait-handles"></a>モニターおよび待機ハンドル  
+ 使用の違いを確認することが重要、<xref:System.Threading.Monitor>クラスおよび<xref:System.Threading.WaitHandle>オブジェクト。  
+  
+-   <xref:System.Threading.Monitor>クラスは純粋なマネージ、完全に移植可能でありよりオペレーティング システムのリソース要件の観点で効率的な場合があります。  
+  
+-   <xref:System.Threading.WaitHandle> オブジェクトはオペレーティング システムの待機可能オブジェクトを表しており、マネージとアンマネージ コード間で同期するのに便利です。また一度に多くのオブジェクトを待機できる機能などの高度なオペレーティング システム機能を公開します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Threading.Monitor>クラスによって表される乱数ジェネレーターの 1 つのインスタンスへのアクセスを同期するために、<xref:System.Random>クラスです。 例では、タスクが 10 個のスレッド プールのスレッドで非同期的にそれぞれの実行を作成します。 各タスクは、10,000 の乱数を生成、その平均を計算し、生成された乱数の数の集計途中経過し、その合計を維持する 2 つのプロシージャ レベル変数を更新します。 すべてのタスクが実行された後に、これら 2 つの値は、全体の平均を計算に使用されます。  
+  
+ [!code-csharp[System.Threading.Monitor.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.class/cs/example1.cs#1)]
+ [!code-vb[System.Threading.Monitor.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.class/vb/example1.vb#1)]  
+  
+ 変数へのアクセスをスレッド プールのスレッドで実行されているいずれかのタスクからアクセスできる、ため`total`と`n`も同期されている必要があります。 <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType>メソッドは、この目的で使用します。  
+  
+ 次の例では、組み合わせて使用して、<xref:System.Threading.Monitor>クラス (を使用して実装、`lock`または`SyncLock`言語コンストラクト) では、<xref:System.Threading.Interlocked>クラス、および<xref:System.Threading.AutoResetEvent>クラスです。 2 つを定義する`internal`(C# の場合) または`Friend`(Visual Basic) のクラス、`SyncResource`と`UnSyncResource`、それぞれに、リソースへの同期と非同期アクセスを提供します。 (各メソッド呼び出しが迅速に完了した場合、大文字と小文字を生じる可能性) がある同期と非同期アクセスの違いの例は、メソッドにランダムな遅延時間が含まれています: のあるスレッド<xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType>プロパティが偶数でをメソッド呼び出し<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>2,000 ミリ秒の遅延を挿入します。 なお、ため、`SyncResource`クラスがパブリックでない同期されたリソースでロックを受け取るクライアント コードなし 以外の場合は、内部クラス自体がロックを取得します。 これにより、悪意のあるコードがパブリック オブジェクトでロックを取得するのを防ぐことができます。  
+  
+ [!code-csharp[Conceptual.Monitors#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.monitors/cs/source.cs#1)]
+ [!code-vb[Conceptual.Monitors#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.monitors/vb/source.vb#1)]  
+  
+ この例の変数を定義`numOps`リソースへのアクセスを試みるスレッドの数を定義します。 アプリケーションのスレッドの呼び出し、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType>メソッドは同期し、非同期の 5 回それぞれアクセスできます。 <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%29?displayProperty=nameWithType>メソッドが 1 つのパラメーター、パラメーターを受け取らず、値を返さないデリゲートです。 同期アクセスは、呼び出し、`SyncUpdateResource`メソッドを呼び出す、非同期アクセスの`UnSyncUpdateResource`メソッドです。 各一連のメソッド呼び出しでは後、アプリケーション スレッドを呼び出して、 [AutoResetEvent.WaitOne](xref:System.Threading.WaitHandle.WaitOne*)までをブロックするためのメソッド、<xref:System.Threading.AutoResetEvent>インスタンスがシグナル状態にします。  
+  
+ 呼び出しごとに、`SyncUpdateResource`メソッドを呼び出す内部`SyncResource.Access`メソッドを呼び出し、続いて、<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>デクリメントするためのメソッド、`numOps`カウンターです。 <xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>メソッドを使用して、カウンターをデクリメント、それ以外の場合にできないため、特定の 2 番目のスレッドがアクセスすること、値、最初のスレッドがデクリメントの前に値を変数に格納されています。 最後の同期ワーカー スレッド デクリメント カウンターをゼロに、すべての同期スレッドが完了した、リソースへのアクセス、`SyncUpdateResource`メソッドの呼び出し、<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>続行するメイン スレッドに通知するメソッド実行します。  
+  
+ 呼び出しごとに、`UnSyncUpdateResource`メソッドを呼び出す内部`UnSyncResource.Access`メソッドを呼び出し、続いて、<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>デクリメントするためのメソッド、`numOps`カウンターです。 もう一度、<xref:System.Threading.Interlocked.Decrement%2A?displayProperty=nameWithType>メソッドを使用して、2 番目のスレッドがアクセスしていないこと、値、最初のスレッドのデクリメントされた値が変数に割り当てられる前に、カウンターをデクリメントします。 最後のカウンターをゼロにワーカー スレッド デクリメントが同期されていないときより非同期スレッドを示す、リソースにアクセスする必要があります、`UnSyncUpdateResource`メソッドの呼び出し、<xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType>実行を継続するメイン スレッドに通知するメソッド.  
+  
+ 例の出力からわかるように、同期アクセスでは、呼び出し元スレッドが保護リソースを終了してからでないと別のスレッドがそれにアクセスできません。つまり各スレッドはその先行処理を待機します。 その一方で、ロックがない、`UnSyncResource.Access`スレッドが到達する順序でメソッドが呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Enter">
+      <MemberSignature Language="C#" Value="public static void Enter (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Enter(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Enter(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">モニター ロックを取得する対象となるオブジェクト。</param>
+        <summary>指定したオブジェクトの排他ロックを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`Enter`を取得する、<xref:System.Threading.Monitor>パラメーターとして渡されたオブジェクト。 別のスレッドが実行された場合、`Enter`オブジェクトでまだ実行されていない対応するが、 <xref:System.Threading.Monitor.Exit%2A>、他のスレッドがオブジェクトを解放するまで、現在のスレッドがブロックされます。 同じスレッドの呼び出しに適合している`Enter`ブロックが 2 回以上です。 ただし、同数の`Exit`オブジェクトで待機している他のスレッドのブロックを解除する前に、呼び出しを呼び出す必要があります。  
+  
+ 使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 値型の変数を渡す場合`Enter`、オブジェクトとしてボックス化されます。 同じ変数を渡す場合`Enter`もう一度、別個のオブジェクトとしてボックス化され、スレッドをブロックしません。 この場合、コードを`Monitor`が想定している保護が保護されていません。 さらに、変数を渡す場合`Exit`、まだ別のオブジェクトを作成します。 オブジェクトが渡されるため`Exit`に渡されたオブジェクトとは異なる`Enter`、`Monitor`スロー<xref:System.Threading.SynchronizationLockException>です。 詳細については、概念説明のトピックを参照してください。[モニター](xref:System.Threading.Monitor)です。  
+  
+ <xref:System.Threading.Thread.Interrupt%2A>入力を待機しているスレッドを中断することができます、`Monitor`オブジェクト。 A<xref:System.Threading.ThreadInterruptedException>がスローされます。  
+  
+ C# を使用して`try`しています.`finally` ブロック (`Try`.`Finally` Visual Basic の場合)、モニターを解放するか、または c# を使用する`lock`ステートメント (`SyncLock` Visual Basic でのステートメント) をラップ、<xref:System.Threading.Monitor.Enter%2A>と<xref:System.Threading.Monitor.Exit%2A>内のメソッド、`try`しています.`finally` ブロックです。  
+  
+   
+  
+## Examples  
+ `Enter` メソッドの使用方法を次の例に示します。  
+  
+ [!code-cpp[MonitorExmpl2#1](~/samples/snippets/cpp/VS_Snippets_CLR/MonitorExmpl2/CPP/monitor2.cpp#1)]
+ [!code-csharp[MonitorExmpl2#1](~/samples/snippets/csharp/VS_Snippets_CLR/MonitorExmpl2/CS/monitor2.cs#1)]
+ [!code-vb[MonitorExmpl2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MonitorExmpl2/VB/monitor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enter">
+      <MemberSignature Language="C#" Value="public static void Enter (object obj, ref bool lockTaken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Enter(object obj, bool&amp; lockTaken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Enter(System.Object,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="lockTaken" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <param name="lockTaken">ロックを取得しようとした結果で、参照渡しです。 入力は <see langword="false" /> でなければなりません。 ロックが取得された場合、出力は <see langword="true" /> になります。それ以外の場合、出力は <see langword="false" /> です。 ロックを取得しようとしている間に例外が発生した場合でも、出力は設定されます。  
+  
+ このメソッドの出力は常に、例外が発生しない場合に注意してください<see langword="true" />です。</param>
+        <summary>指定したオブジェクトの排他ロックを取得し、ロックが取得されたかどうかを示す値をアトミックに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`Enter`を取得する、<xref:System.Threading.Monitor>として渡されたオブジェクトで、`obj`パラメーター。 別のスレッドが実行された場合、`Enter`オブジェクトでまだ実行されていない対応するが、 <xref:System.Threading.Monitor.Exit%2A>、他のスレッドがオブジェクトを解放するまで、現在のスレッドがブロックされます。 同じスレッドの呼び出しに適合している`Enter`ブロックが 2 回以上です。 ただし、同数の`Exit`オブジェクトで待機している他のスレッドのブロックを解除する前に、呼び出しを呼び出す必要があります。  
+  
+ 指定した場合は、例外がスローされたために、ロックは取得されませんでした、変数、`lockTaken`パラメーターは`false`後、このメソッドを終了します。 これにより、ロックを解除する必要があるかどうかをすべてのケースを決定するプログラムです。 変数が指定された例外をスローせずにこのメソッドが返される場合、`lockTaken`パラメーターは、必ず`true`、し、それをテストする必要はありません。  
+  
+ 使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 値型の変数を渡す場合`Enter`、オブジェクトとしてボックス化されます。 同じ変数を渡す場合`Enter`もう一度、別個のオブジェクトとしてボックス化され、スレッドをブロックしません。 この場合、コードを`Monitor`が想定している保護が保護されていません。 さらに、変数を渡す場合`Exit`、別のオブジェクトを作成します。 オブジェクトが渡されるため`Exit`に渡されたオブジェクトとは異なる`Enter`、`Monitor`スロー<xref:System.Threading.SynchronizationLockException>です。 詳細については、概念説明のトピックを参照してください。[モニター](xref:System.Threading.Monitor)です。  
+  
+ <xref:System.Threading.Thread.Interrupt%2A>入力を待機しているスレッドを中断することができます、`Monitor`オブジェクト。 A<xref:System.Threading.ThreadInterruptedException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコードは、基本的なパターンを使用するため、<xref:System.Threading.Monitor.Enter%28System.Object%2CSystem.Boolean%40%29>メソッドのオーバー ロードします。 このオーバー ロードに渡される変数の値を常に設定する、`ref`パラメーター (`ByRef` Visual Basic で)`lockTaken`のため、変数の値は、信頼性の高い方法をロックするかどうかをテストするメソッドに、例外がスローされる場合でも、解放されます。  
+  
+ [!code-csharp[System.Threading.Monitor.Enter#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.enter/cs/example.cs#2)]
+ [!code-vb[System.Threading.Monitor.Enter#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.enter/vb/example.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="lockTaken" /> への入力は <see langword="true" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exit">
+      <MemberSignature Language="C#" Value="public static void Exit (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Exit(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Exit(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックを解放する対象となるオブジェクト。</param>
+        <summary>指定したオブジェクトの排他ロックを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のスレッドは、上のロックを所有する必要があります、`obj`パラメーター。 呼び出し元スレッドを指定したオブジェクトのロックを所有しているが、同じ数の場合、`Exit`と<xref:System.Threading.Monitor.Enter%2A>ロックを解放し、オブジェクトに対して呼び出します。 呼び出し元のスレッドが呼び出されない場合`Exit`回数だけ`Enter`ロックは解放されません。  
+  
+ ロックが解放され、他のスレッドがオブジェクトの準備完了キューには、スレッドのいずれかのロックを取得します。 他のスレッドが、ロックの取得を待機している待機キューにある場合が自動的にときは移動しない実行待ちキューに、ロックの所有者を呼び出す`Exit`です。 待ちキューに 1 つ以上の待機中のスレッドを移動するには、呼び出す<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>を呼び出す前に`Exit`です。  
+  
+   
+  
+## Examples  
+ `Exit` メソッドの使用方法を次の例に示します。  
+  
+ [!code-cpp[MonitorExmpl2#1](~/samples/snippets/cpp/VS_Snippets_CLR/MonitorExmpl2/CPP/monitor2.cpp#1)]
+ [!code-csharp[MonitorExmpl2#1](~/samples/snippets/csharp/VS_Snippets_CLR/MonitorExmpl2/CS/monitor2.cs#1)]
+ [!code-vb[MonitorExmpl2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MonitorExmpl2/VB/monitor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">現在のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEntered">
+      <MemberSignature Language="C#" Value="public static bool IsEntered (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsEntered(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.IsEntered(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テストするオブジェクト。</param>
+        <summary>現在のスレッドが指定したオブジェクトのロックを保持しているかどうかを判断します。</summary>
+        <returns>
+          現在のスレッドが <paramref name="obj" /> のロックを保持している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのメソッドを使用して取得されるロックに対してのみ使用、<xref:System.Threading.Monitor>クラス、またはを使用して、c#`lock`ステートメントまたは Visual Basic`SyncLock`で実装されているステートメント<xref:System.Threading.Monitor>です。  
+  
+ など、診断ツールは、このメソッドを使用して、<xref:System.Diagnostics.Debug.Assert%2A>メソッドおよび<xref:System.Diagnostics.Contracts.Contract>クラス、関連するロックの問題をデバッグする、<xref:System.Threading.Monitor>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pulse">
+      <MemberSignature Language="C#" Value="public static void Pulse (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Pulse(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Pulse(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">スレッドが待機するオブジェクト。</param>
+        <summary>ロックされたオブジェクトの状態が変更されたことを、待機キュー内のスレッドに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロックの現在の所有者が待機しているオブジェクトを使用して、シグナル送信専用`Pulse`です。  
+  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、次のスレッドにロックのことを通知するには、このメソッドを呼び出します。 パルスを受信したときに、待機中のスレッドが実行待ちキューに移動されます。 ときに、スレッドを呼び出した`Pulse`ロックを解放待ちのキュー (これは必ずしも実行するスレッド) 内の次のスレッドがロックを取得します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Threading.Monitor>クラスがいることを示す状態を維持していない、<xref:System.Threading.Monitor.Pulse%2A>メソッドが呼び出されました。 したがって、呼び出す場合は、<xref:System.Threading.Monitor.Pulse%2A>とスレッド待機中のない、次のスレッドを呼び出す<xref:System.Threading.Monitor.Wait%2A>ブロックとして<xref:System.Threading.Monitor.Pulse%2A>が呼び出されたことはありません。 2 つのスレッドを使用している場合<xref:System.Threading.Monitor.Pulse%2A>と<xref:System.Threading.Monitor.Wait%2A>対話するには、この結果、デッドロックが発生します。 動作と比較してみて、<xref:System.Threading.AutoResetEvent>クラス: ことを通知する場合、<xref:System.Threading.AutoResetEvent>を呼び出してその<xref:System.Threading.EventWaitHandle.Set%2A>メソッドを待機しているスレッドが存在しないと、<xref:System.Threading.AutoResetEvent>スレッドを呼び出すまで、シグナル状態のままに<xref:System.Threading.WaitHandle.WaitOne%2A>、 <xref:System.Threading.WaitHandle.WaitAny%2A>、または<xref:System.Threading.WaitHandle.WaitAll%2A>です。 <xref:System.Threading.AutoResetEvent>そのスレッドを解放し、unsignaled 状態に戻ります。  
+  
+ 同期済みオブジェクトがロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持していることに注意してください。  
+  
+ `Pulse`、 <xref:System.Threading.Monitor.PulseAll%2A>、および<xref:System.Threading.Monitor.Wait%2A>メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 複数のスレッドを通知するには、使用、<xref:System.Threading.Monitor.PulseAll%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">呼び出し元のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PulseAll">
+      <MemberSignature Language="C#" Value="public static void PulseAll (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PulseAll(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.PulseAll(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">パルスを送るオブジェクト。</param>
+        <summary>オブジェクトの状態が変更されたことを、待機中のすべてのスレッドに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、オブジェクトのロックの取得を待機しているすべてのスレッドに通知するには、このメソッドを呼び出します。 シグナルを送信すると、待機中のスレッドが実行待ちキューに移動されます。 ときに、スレッドを呼び出した`PulseAll`ロックを解放待ちのキューの次のスレッドがロックを取得します。  
+  
+ 同期済みオブジェクトがロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持していることに注意してください。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 `PulseAll`、および<xref:System.Threading.Monitor.Wait%2A>メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+ 1 つのスレッドを通知するには、使用、`Pulse`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">呼び出し元のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static bool TryEnter (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryEnter(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <summary>指定したオブジェクトの排他ロックの取得を試みます。</summary>
+        <returns>
+          現在のスレッドがロックを取得した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうかは成功すると、このメソッド排他的にロックで、`obj`パラメーター。 このメソッドは、ロックが使用できるかどうか、すぐに返します。  
+  
+ このメソッドはのような<xref:System.Threading.Monitor.Enter%2A>、現在のスレッドはブロックされませんが、します。 このメソッドを返しますのかどうか、スレッドをブロックすることがなく入力できません、`false,`です。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、次を参照してください。、<xref:System.Threading.Monitor>資料です。  
+  
+ スレッドがクリティカル セクションを入力していないことを確認するには必要があります、メソッドの戻り値を確認し、その戻り値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#1)]
+ [!code-vb[System.Threading.Monitor.TryEnter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#1)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、`TryEnter` メソッドの使用方法を示します。  
+  
+ [!code-cpp[MonitorExmpl2#1](~/samples/snippets/cpp/VS_Snippets_CLR/MonitorExmpl2/CPP/monitor2.cpp#1)]
+ [!code-csharp[MonitorExmpl2#1](~/samples/snippets/csharp/VS_Snippets_CLR/MonitorExmpl2/CS/monitor2.cs#1)]
+ [!code-vb[MonitorExmpl2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/MonitorExmpl2/VB/monitor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static void TryEnter (object obj, ref bool lockTaken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TryEnter(object obj, bool&amp; lockTaken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="lockTaken" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <param name="lockTaken">ロックを取得しようとした結果で、参照渡しです。 入力は <see langword="false" /> でなければなりません。 ロックが取得された場合、出力は <see langword="true" /> になります。それ以外の場合、出力は <see langword="false" /> です。 ロックを取得しようとしている間に例外が発生した場合でも、出力は設定されます。</param>
+        <summary>指定したオブジェクトの排他ロックの取得を試み、ロックが取得されたかどうかを示す値をアトミックに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうかは成功すると、このメソッド排他的にロックで、`obj`パラメーター。 このメソッドは、ロックが使用できるかどうか、すぐに返します。  
+  
+ 指定した場合は、例外がスローされたために、ロックは取得されませんでした、変数、`lockTaken`パラメーターは`false`後、このメソッドを終了します。 これにより、ロックを解除する必要があるかどうかをすべてのケースを決定するプログラムです。  
+  
+ このメソッドはのような<xref:System.Threading.Monitor.Enter%28System.Object%2CSystem.Boolean%40%29>、現在のスレッドはブロックされませんが、します。 スレッドをブロックすることがなく入力できない場合、`lockTaken`に設定されている引数`false`メソッドが返されます。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、「<xref:System.Threading.Monitor>」の記事を参照してください。  
+  
+ スレッドがクリティカル セクションを入力しないようにの値を調べる必要があります`lockTaken`しその値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#2)]
+ [!code-vb[System.Threading.Monitor.TryEnter#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#2)]  
+  
+   
+  
+## Examples  
+ 次のコードは、基本的なパターンを使用するため、<xref:System.Threading.Monitor.TryEnter%28System.Object%2CSystem.Boolean%40%29>メソッドのオーバー ロードします。 このオーバー ロードに渡される変数の値を常に設定する、`ref`パラメーター (`ByRef` Visual Basic で)`lockTaken`のため、変数の値は、信頼性の高い方法をロックするかどうかをテストするメソッドに、例外がスローされる場合でも、解放されます。  
+  
+ [!code-csharp[System.Threading.Monitor.Enter#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.enter/cs/example.cs#3)]
+ [!code-vb[System.Threading.Monitor.Enter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.enter/vb/example.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="lockTaken" /> への入力は <see langword="true" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static bool TryEnter (object obj, int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryEnter(object obj, int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <param name="millisecondsTimeout">ロックを待機するミリ秒単位の時間。</param>
+        <summary>指定したミリ秒間に、指定したオブジェクトの排他ロックの取得を試みます。</summary>
+        <returns>
+          現在のスレッドがロックを取得した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`millisecondsTimeout`パラメーターと等しい<xref:System.Threading.Timeout.Infinite>、このメソッドは<xref:System.Threading.Monitor.Enter%2A>します。 場合`millisecondsTimeout`が 0 と等しい、このメソッドは<xref:System.Threading.Monitor.TryEnter%2A>します。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、次を参照してください。、<xref:System.Threading.Monitor>資料です。  
+  
+ スレッドがクリティカル セクションを入力していないことを確認するには必要があります、メソッドの戻り値を確認し、その戻り値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#3)]
+ [!code-vb[System.Threading.Monitor.TryEnter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は負の値で、<see cref="F:System.Threading.Timeout.Infinite" /> と等しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static bool TryEnter (object obj, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryEnter(object obj, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <param name="timeout">ロックを待機する時間を表す <see cref="T:System.TimeSpan" />。 –1 ミリ秒という値は、無期限の待機を指定します。</param>
+        <summary>指定した時間内に、指定したオブジェクトの排他ロックの取得を試みます。</summary>
+        <returns>
+          現在のスレッドがロックを取得した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、 `timeout` – 1 に等しいパラメーター (ミリ秒) に変換された、このメソッドは<xref:System.Threading.Monitor.Enter%2A>します。 場合の値`timeout`が 0 と等しい、このメソッドは<xref:System.Threading.Monitor.TryEnter%2A>します。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、次を参照してください。、<xref:System.Threading.Monitor>クラスに関するトピック。  
+  
+ スレッドがクリティカル セクションを入力していないことを確認するには必要があります、メソッドの戻り値を確認し、その戻り値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#5)]
+ [!code-vb[System.Threading.Monitor.TryEnter#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> ミリ秒の値が負の値であり、<see cref="F:System.Threading.Timeout.Infinite" /> (–1 ミリ秒) と等しくないか、または <see cref="F:System.Int32.MaxValue" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static void TryEnter (object obj, int millisecondsTimeout, ref bool lockTaken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TryEnter(object obj, int32 millisecondsTimeout, bool&amp; lockTaken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object,System.Int32,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="lockTaken" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <param name="millisecondsTimeout">ロックを待機するミリ秒単位の時間。</param>
+        <param name="lockTaken">ロックを取得しようとした結果で、参照渡しです。 入力は <see langword="false" /> でなければなりません。 ロックが取得された場合、出力は <see langword="true" /> になります。それ以外の場合、出力は <see langword="false" /> です。 ロックを取得しようとしている間に例外が発生した場合でも、出力は設定されます。</param>
+        <summary>指定したオブジェクトの排他ロックの取得を指定したミリ秒間試み、ロックが取得されたかどうかを示す値をアトミックに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`millisecondsTimeout`パラメーターと等しい<xref:System.Threading.Timeout.Infinite>、このメソッドは<xref:System.Threading.Monitor.Enter%28System.Object%29>します。 場合`millisecondsTimeout`が 0 と等しい、このメソッドは<xref:System.Threading.Monitor.TryEnter%28System.Object%29>します。  
+  
+ 指定した場合は、例外がスローされたために、ロックは取得されませんでした、変数、`lockTaken`パラメーターは`false`後、このメソッドを終了します。 これにより、ロックを解除する必要があるかどうかをすべてのケースを決定するプログラムです。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、次を参照してください。、<xref:System.Threading.Monitor>クラスに関するトピック。  
+  
+ スレッドがクリティカル セクションを入力しないようにの値を調べる必要があります`lockTaken`しその値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#4)]
+ [!code-vb[System.Threading.Monitor.TryEnter#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#4)]  
+  
+   
+  
+## Examples  
+ 次のコードは、基本的なパターンを使用するため、<xref:System.Threading.Monitor.TryEnter%28System.Object%2CSystem.Boolean%40%29>メソッドのオーバー ロードします。 このオーバー ロードに渡される変数の値を常に設定する、`ref`パラメーター (`ByRef` Visual Basic で)`lockTaken`のため、変数の値は、信頼性の高い方法をロックするかどうかをテストするメソッドに、例外がスローされる場合でも、解放されます。  
+  
+ [!code-csharp[System.Threading.Monitor.Enter#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.monitor.enter/cs/example.cs#4)]
+ [!code-vb[System.Threading.Monitor.Enter#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.monitor.enter/vb/example.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="lockTaken" /> への入力は <see langword="true" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は負の値で、<see cref="F:System.Threading.Timeout.Infinite" /> と等しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryEnter">
+      <MemberSignature Language="C#" Value="public static void TryEnter (object obj, TimeSpan timeout, ref bool lockTaken);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TryEnter(object obj, valuetype System.TimeSpan timeout, bool&amp; lockTaken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.TryEnter(System.Object,System.TimeSpan,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="lockTaken" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ロックの取得が行われるオブジェクト。</param>
+        <param name="timeout">ロックを待機する時間。 –1 ミリ秒という値は、無期限の待機を指定します。</param>
+        <param name="lockTaken">ロックを取得しようとした結果で、参照渡しです。 入力は <see langword="false" /> でなければなりません。 ロックが取得された場合、出力は <see langword="true" /> になります。それ以外の場合、出力は <see langword="false" /> です。 ロックを取得しようとしている間に例外が発生した場合でも、出力は設定されます。</param>
+        <summary>指定したオブジェクトの排他ロックの取得を指定した時間にわたって試み、ロックが取得されたかどうかを示す値をアトミックに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、 `timeout` – 1 に等しいパラメーター (ミリ秒) に変換された、このメソッドは<xref:System.Threading.Monitor.Enter%28System.Object%29>します。 場合の値`timeout`が 0 と等しい、このメソッドは<xref:System.Threading.Monitor.TryEnter%28System.Object%29>します。  
+  
+ 指定した場合は、例外がスローされたために、ロックは取得されませんでした、変数、`lockTaken`パラメーターは`false`後、このメソッドを終了します。 これにより、ロックを解除する必要があるかどうかをすべてのケースを決定するプログラムです。  
+  
+> [!NOTE]
+>  使用して<xref:System.Threading.Monitor>オブジェクト (つまり、参照型) をロック、いない値の型にします。 詳細については、次を参照してください。、<xref:System.Threading.Monitor>クラスに関するトピック。  
+  
+ スレッドがクリティカル セクションを入力しないようにの値を調べる必要があります`lockTaken`しその値が場合にのみ、クリティカル セクションのコードを実行`true`です。 次のコード フラグメントは、このメソッドを呼び出すために使用パターンを示しています。 呼び出す必要があります<xref:System.Threading.Monitor.Exit%2A>で、`finally`ブロックに例外が発生した場合、呼び出し元のスレッドがクリティカル セクションのロックを解放ことを確認してください。  
+  
+ [!code-csharp[System.Threading.Monitor.TryEnter#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/cs/pattern1.cs#6)]
+ [!code-vb[System.Threading.Monitor.TryEnter#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.Monitor.TryEnter/vb/pattern1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="lockTaken" /> への入力は <see langword="true" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> ミリ秒の値が負の値であり、<see cref="F:System.Threading.Timeout.Infinite" /> (–1 ミリ秒) と等しくないか、または <see cref="F:System.Int32.MaxValue" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public static bool Wait (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Wait(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Wait(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <summary>オブジェクトのロックを解放し、現在のスレッドがロックを再取得するまでそのスレッドをブロックします。</summary>
+        <returns>
+          指定したオブジェクトのロックを呼び出し元が再取得したために、呼び出しが戻った場合は <see langword="true" />。 このメソッドは、ロックが再取得されないと制御を戻しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、別のスレッドがアクセスできるようにするオブジェクトを解放するために、このメソッドを呼び出します。 呼び出し元は、ロックを再取得を待機中にブロックされます。 呼び出し元が、状態の変更が別のスレッドの操作の結果として発生するまで待機する必要がある場合は、このメソッドが呼び出されます。  
+  
+ スレッドを呼び出すと`Wait`オブジェクトのロックを解放し、オブジェクトの待機キューに入ります。 オブジェクトの実行待ちキューには、次のスレッドに (1 つである) 場合は、ロックを獲得おり、オブジェクトが排他的に使用します。 すべてのスレッドを呼び出す`Wait`からの信号を受信するまで待機しているキューに残る<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>ロックの所有者によって送信されました。 場合`Pulse`送信されると、待機キューの先頭にあるスレッドのみが影響を受けます。 場合`PulseAll`送信されると、オブジェクトを待機しているすべてのスレッドが影響を受けます。 シグナルを受信すると、1 つまたは複数のスレッドが待機キューのままにし、実行待ちキューを入力します。 待ちのキュー内のスレッドはロックを再取得を許可します。  
+  
+ このメソッドは、呼び出し元のスレッドがオブジェクトのロックを再取得時を返します。 ロックの所有者が要求されていない場合、このメソッドは無期限にブロック注`Pulse`または`PulseAll`です。  
+  
+ 呼び出し元は、実行`Wait`回数に関係なく 1 回、<xref:System.Threading.Monitor.Enter%2A>指定したオブジェクトが呼び出されてです。 概念的には、`Wait`メソッドは、呼び出し元が呼び出された回数、格納`Enter`オブジェクトで呼び出されます`Exit`ロックされたオブジェクトを完全に解放するために必要な回数だけです。 呼び出し元は、オブジェクトを再取得を待機中に、ブロックします。 呼び出し元は、ロックを再取得、システム呼び出し`Enter`保存していた復元するために必要な回数だけ`Enter`呼び出し元の数。 呼び出す`Wait`指定したオブジェクトのロックを解放するだけです。 呼び出し元がその他のオブジェクトに対するロックの所有者である場合は、これらのロックは解放されません。  
+  
+ 同期済みオブジェクトがロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持していることに注意してください。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 <xref:System.Threading.Monitor.PulseAll%2A>、および`Wait`メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">呼び出し元のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+        <exception cref="T:System.Threading.ThreadInterruptedException">呼び出したスレッド<see langword="Wait" />待機状態から後で中断します。 これは、他のスレッドがこのスレッドの <see cref="M:System.Threading.Thread.Interrupt" /> メソッドを呼び出すときに起こります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public static bool Wait (object obj, int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Wait(object obj, int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Wait(System.Object,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <param name="millisecondsTimeout">スレッドが実行待ちキューに入るまでの待機時間 (ミリ秒)。</param>
+        <summary>オブジェクトのロックを解放し、現在のスレッドがロックを再取得するまでそのスレッドをブロックします。 指定されたタイムアウト期限を過ぎると、スレッドは実行待ちキューに入ります。</summary>
+        <returns>
+          指定した時間が経過する前にロックが再取得された場合は <see langword="true" />。指定した時間が経過した後にロックが再取得された場合は <see langword="false" />。 このメソッドは、ロックが再取得されるまで制御を戻しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他ロックが再取得するまで、このメソッドは返されません、`obj`パラメーター。  
+  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、別のスレッドがアクセスできるようにするオブジェクトを解放するために、このメソッドを呼び出します。 呼び出し元は、ロックを再取得を待機中にブロックされます。 呼び出し元が、状態の変更が別のスレッドの操作の結果として発生するまで待機する必要がある場合は、このメソッドが呼び出されます。  
+  
+ タイムアウトにより、現在のスレッドでブロックしないこと無期限に別のスレッド最初呼び出さずにロックを解放する場合、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッドです。 また、スレッドをロックをすぐに再取得できるように、待機キューの遅れたり他のスレッドをバイパスして、実行待ちキューに移動します。 スレッドの戻り値をテストできます、<xref:System.Threading.Monitor.Wait%2A>タイムアウトする前に、ロックが再取得されるかどうかを調べます。スレッドは、待機状態になる原因となった条件を評価できる場合に必要な呼び出し、<xref:System.Threading.Monitor.Wait%2A>メソッドを再度です。  
+  
+ スレッドを呼び出すと`Wait`オブジェクトのロックを解放し、オブジェクトの待機キューに入ります。 オブジェクトの実行待ちキューには、次のスレッドに (1 つである) 場合は、ロックを獲得おり、オブジェクトが排他的に使用します。 呼び出したスレッド`Wait`されるまで、待機キューのままにロックを保持しているスレッドを呼び出す<xref:System.Threading.Monitor.PulseAll%2A>、または次のキューであるし、ロックを保持しているスレッドを起動<xref:System.Threading.Monitor.Pulse%2A>です。 ただし場合、`millisecondsTimeout`別のスレッドがこのオブジェクトを呼び出す前に経過する<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッド、元のスレッドがロックを再取得するために実行待ちキューに移動します。  
+  
+> [!NOTE]
+>  場合<xref:System.Threading.Timeout.Infinite>が指定されて、`millisecondsTimeout`パラメーターでは、このメソッドは、ブロック無期限にロックの保持者呼び出さない限り、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>です。 場合`millisecondsTimeout`0 を呼び出すスレッドを等しい`Wait`ロックを解放し、実行待ちキューがロックを再取得するためにすぐに入力します。  
+  
+ 呼び出し元は、実行`Wait`回数に関係なく 1 回、<xref:System.Threading.Monitor.Enter%2A>指定したオブジェクトが呼び出されてです。 概念的には、`Wait`メソッドは、呼び出し元が呼び出された回数、格納<xref:System.Threading.Monitor.Enter%2A>オブジェクトで呼び出されます<xref:System.Threading.Monitor.Exit%2A>ロックされたオブジェクトを完全に解放するために必要な回数だけです。 呼び出し元は、オブジェクトを再取得を待機中に、ブロックします。 呼び出し元は、ロックを再取得、システム呼び出し<xref:System.Threading.Monitor.Enter%2A>保存していた復元するために必要な回数だけ<xref:System.Threading.Monitor.Enter%2A>呼び出し元の数。 呼び出す`Wait`指定したオブジェクトのロックを解放するだけです。 呼び出し元がその他のオブジェクトに対するロックの所有者である場合は、これらのロックは解放されません。  
+  
+> [!NOTE]
+>  同期オブジェクトでは、ロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持します。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 <xref:System.Threading.Monitor.PulseAll%2A>、および`Wait`メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">呼び出し元のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+        <exception cref="T:System.Threading.ThreadInterruptedException">呼び出したスレッド<see langword="Wait" />待機状態から後で中断します。 これは、他のスレッドがこのスレッドの <see cref="M:System.Threading.Thread.Interrupt" /> メソッドを呼び出すときに起こります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="millisecondsTimeout" />パラメーターは負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public static bool Wait (object obj, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Wait(object obj, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Wait(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <param name="timeout">スレッドが実行待ちキューに入るまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>オブジェクトのロックを解放し、現在のスレッドがロックを再取得するまでそのスレッドをブロックします。 指定されたタイムアウト期限を過ぎると、スレッドは実行待ちキューに入ります。</summary>
+        <returns>
+          指定した時間が経過する前にロックが再取得された場合は <see langword="true" />。指定した時間が経過した後にロックが再取得された場合は <see langword="false" />。 このメソッドは、ロックが再取得されるまで制御を戻しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他ロックが再取得するまで、このメソッドは返されません、`obj`パラメーター。  
+  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、別のスレッドがアクセスできるようにするオブジェクトを解放するために、このメソッドを呼び出します。 呼び出し元は、ロックを再取得を待機中にブロックされます。 呼び出し元が、状態の変更が別のスレッドの操作の結果として発生するまで待機する必要がある場合は、このメソッドが呼び出されます。  
+  
+ タイムアウトにより、現在のスレッドでブロックしないこと無期限に別のスレッド最初呼び出さずにロックを解放する場合、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッドです。 また、スレッドをロックをすぐに再取得できるように、待機キューの遅れたり他のスレッドをバイパスして、実行待ちキューに移動します。 スレッドの戻り値をテストできます、<xref:System.Threading.Monitor.Wait%2A>タイムアウトする前に、ロックが再取得されるかどうかを調べます。スレッドは、待機状態になる原因となった条件を評価できる場合に必要な呼び出し、<xref:System.Threading.Monitor.Wait%2A>メソッドを再度です。  
+  
+ スレッドを呼び出すと`Wait`オブジェクトのロックを解放し、オブジェクトの待機キューに入ります。 オブジェクトの実行待ちキューには、次のスレッドに (1 つである) 場合は、ロックを獲得おり、オブジェクトが排他的に使用します。 呼び出したスレッド`Wait`されるまで、待機キューのままにロックを保持しているスレッドを呼び出す<xref:System.Threading.Monitor.PulseAll%2A>、または次のキューであるし、ロックを保持しているスレッドを起動<xref:System.Threading.Monitor.Pulse%2A>です。 ただし場合、`timeout`別のスレッドがこのオブジェクトを呼び出す前に経過する<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッド、元のスレッドがロックを再取得するために実行待ちキューに移動します。  
+  
+> [!NOTE]
+>  場合、 <xref:System.TimeSpan> – 1 ミリ秒を表すが指定されて、`timeout`パラメーターでは、このメソッドは、ブロック無期限にロックの保持者呼び出さない限り、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>です。 場合`timeout`0 ミリ秒でを呼び出すスレッド`Wait`ロックを解放し、実行待ちキューがロックを再取得するためにすぐに入力します。  
+  
+ 呼び出し元は、実行`Wait`回数に関係なく 1 回、<xref:System.Threading.Monitor.Enter%2A>指定したオブジェクトが呼び出されてです。 概念的には、`Wait`メソッドは、呼び出し元が呼び出された回数、格納<xref:System.Threading.Monitor.Enter%2A>オブジェクトで呼び出されます<xref:System.Threading.Monitor.Exit%2A>ロックされたオブジェクトを完全に解放するために必要な回数だけです。 呼び出し元は、オブジェクトを再取得を待機中に、ブロックします。 呼び出し元は、ロックを再取得、システム呼び出し<xref:System.Threading.Monitor.Enter%2A>保存していた復元するために必要な回数だけ<xref:System.Threading.Monitor.Enter%2A>呼び出し元の数。 呼び出す`Wait`指定したオブジェクトのロックを解放するだけです。 呼び出し元がその他のオブジェクトに対するロックの所有者である場合は、これらのロックは解放されません。  
+  
+> [!NOTE]
+>  同期オブジェクトでは、ロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持します。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 <xref:System.Threading.Monitor.PulseAll%2A>、および`Wait`メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">呼び出し元のスレッドは、指定したオブジェクトのロックを所有していません。</exception>
+        <exception cref="T:System.Threading.ThreadInterruptedException">呼び出したスレッド<see langword="Wait" />待機状態から後で中断します。 これは、他のスレッドがこのスレッドの <see cref="M:System.Threading.Thread.Interrupt" /> メソッドを呼び出すときに起こります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、 <paramref name="timeout" /> (ミリ秒) 内のパラメーターが負の値とは表しません<see cref="F:System.Threading.Timeout.Infinite" />(– 1 ミリ秒)、またはよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public static bool Wait (object obj, int millisecondsTimeout, bool exitContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Wait(object obj, int32 millisecondsTimeout, bool exitContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Wait(System.Object,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="exitContext" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <param name="millisecondsTimeout">スレッドが実行待ちキューに入るまでの待機時間 (ミリ秒)。</param>
+        <param name="exitContext">
+          待機の前にコンテキストの同期ドメイン (同期されたコンテキストの場合) を終了および再取得する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>オブジェクトのロックを解放し、現在のスレッドがロックを再取得するまでそのスレッドをブロックします。 指定されたタイムアウト期限を過ぎると、スレッドは実行待ちキューに入ります。 このメソッドは、コンテキストの同期ドメイン (同期されたコンテキストの場合) が待機の前に終了し、後で再取得されるかどうかも指定します。</summary>
+        <returns>
+          指定した時間が経過する前にロックが再取得された場合は <see langword="true" />。指定した時間が経過した後にロックが再取得された場合は <see langword="false" />。 このメソッドは、ロックが再取得されるまで制御を戻しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他ロックが再取得するまで、このメソッドは返されません、`obj`パラメーター。  
+  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、別のスレッドがアクセスできるようにするオブジェクトを解放するために、このメソッドを呼び出します。 呼び出し元は、ロックを再取得を待機中にブロックされます。 呼び出し元が、状態の変更が別のスレッドの操作の結果として発生するまで待機する必要がある場合は、このメソッドが呼び出されます。  
+  
+ タイムアウトにより、現在のスレッドでブロックしないこと無期限に別のスレッド最初呼び出さずにロックを解放する場合、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッドです。 また、スレッドをロックをすぐに再取得できるように、待機キューの遅れたり他のスレッドをバイパスして、実行待ちキューに移動します。 スレッドの戻り値をテストできます、<xref:System.Threading.Monitor.Wait%2A>タイムアウトする前に、ロックが再取得されるかどうかを調べます。スレッドは、待機状態になる原因となった条件を評価できる場合に必要な呼び出し、<xref:System.Threading.Monitor.Wait%2A>メソッドを再度です。  
+  
+ スレッドを呼び出すと`Wait`、そのロックを解放し、待機キューに入ります。 この時点では、次のスレッド実行待ちキューに (存在する場合) が許可されたロックを制御します。 呼び出したスレッド`Wait`されるまで、待機キューのままにロックを保持しているスレッドを呼び出す<xref:System.Threading.Monitor.PulseAll%2A>、または次のキューであるし、ロックを保持しているスレッドを起動<xref:System.Threading.Monitor.Pulse%2A>です。 ただし場合、`millisecondsTimeout`別のスレッドがこのオブジェクトを呼び出す前に経過する<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッド、元のスレッドがロックを再取得するために実行待ちキューに移動します。  
+  
+> [!NOTE]
+>  場合<xref:System.Threading.Timeout.Infinite>が指定されて、`millisecondsTimeout`パラメーターでは、このメソッドは、ブロック無期限にロックの保持者呼び出さない限り、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>です。 場合`millisecondsTimeout`0 を呼び出すスレッドを等しい`Wait`ロックを解放し、実行待ちキューがロックを再取得するためにすぐに入力します。  
+  
+ 呼び出し元は、実行`Wait`回数に関係なく 1 回、<xref:System.Threading.Monitor.Enter%2A>指定したオブジェクトが呼び出されてです。 概念的には、`Wait`メソッドは、呼び出し元が呼び出された回数、格納<xref:System.Threading.Monitor.Enter%2A>オブジェクトで呼び出されます<xref:System.Threading.Monitor.Exit%2A>ロックされたオブジェクトを完全に解放するために必要な回数だけです。 呼び出し元は、オブジェクトを再取得を待機中に、ブロックします。 呼び出し元は、ロックを再取得、システム呼び出し<xref:System.Threading.Monitor.Enter%2A>保存していた復元するために必要な回数だけ<xref:System.Threading.Monitor.Enter%2A>呼び出し元の数。 呼び出す`Wait`指定したオブジェクトのロックを解放するだけです。 呼び出し元がその他のオブジェクトに対するロックの所有者である場合は、これらのロックは解放されません。  
+  
+> [!NOTE]
+>  同期オブジェクトでは、ロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持します。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 <xref:System.Threading.Monitor.PulseAll%2A>、および`Wait`メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+## <a name="notes-on-exiting-the-context"></a>コンテキストの終了時の注意  
+ `exitContext`パラメーター影響を及ぼしませんしない限り、<xref:System.Threading.Monitor.Wait%2A>メソッドが既定以外のマネージ コンテキスト内から呼び出されます。 派生したクラスのインスタンスへの呼び出し内部に、スレッドがある場合に発生<xref:System.ContextBoundObject>です。 派生していないクラスのメソッドを実行されている場合でも<xref:System.ContextBoundObject>と同様、 <xref:System.String>、既定以外のコンテキストであることができる場合、<xref:System.ContextBoundObject>が現在のアプリケーション ドメインで、スタック上にします。  
+  
+ 既定以外のコンテキストでコードを実行するとときに、指定する`true`の`exitContext`既定以外のマネージ コンテキストを終了するスレッド (つまり、既定のコンテキストに遷移する) 実行する前に、<xref:System.Threading.Monitor.Wait%2A>メソッドです。 呼び出しの後に元の既定以外のコンテキストを返します、<xref:System.Threading.Monitor.Wait%2A>メソッドが完了しました。  
+  
+ これを利用するときに、コンテキスト バインド クラスには、<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>属性を適用します。 その場合は、クラスのメンバーに対するすべての呼び出しが自動的に同期され、同期ドメインは、クラスのコードの本文全体です。 メンバーの呼び出し履歴内のコードを呼び出すかどうか、<xref:System.Threading.Monitor.Wait%2A>メソッドを指定して`true`の`exitContext`スレッドが続行する、オブジェクトの任意のメンバーへの呼び出しでブロックされているスレッドの同期ドメインを終了します。 ときに、<xref:System.Threading.Monitor.Wait%2A>メソッドが戻る同期ドメインを再入力する呼び出しを行ったスレッドを待機する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">
+          <see langword="Wait" /> は、同期されたコード ブロック内からは呼び出されません。</exception>
+        <exception cref="T:System.Threading.ThreadInterruptedException">呼び出したスレッド<see langword="Wait" />待機状態から後で中断します。 これは、他のスレッドがこのスレッドの <see cref="M:System.Threading.Thread.Interrupt" /> メソッドを呼び出すときに起こります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="millisecondsTimeout" />パラメーターは負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public static bool Wait (object obj, TimeSpan timeout, bool exitContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Wait(object obj, valuetype System.TimeSpan timeout, bool exitContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Monitor.Wait(System.Object,System.TimeSpan,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="exitContext" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="obj">待機を行うオブジェクト。</param>
+        <param name="timeout">スレッドが実行待ちキューに入るまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="exitContext">
+          待機の前にコンテキストの同期ドメイン (同期されたコンテキストの場合) を終了および再取得する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>オブジェクトのロックを解放し、現在のスレッドがロックを再取得するまでそのスレッドをブロックします。 指定されたタイムアウト期限を過ぎると、スレッドは実行待ちキューに入ります。 または、待機の前に同期化されたコンテキストの同期ドメインを終了し、ドメインを後で再取得します。</summary>
+        <returns>
+          指定した時間が経過する前にロックが再取得された場合は <see langword="true" />。指定した時間が経過した後にロックが再取得された場合は <see langword="false" />。 このメソッドは、ロックが再取得されるまで制御を戻しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他ロックが再取得するまで、このメソッドは返されません、`obj`パラメーター。  
+  
+ 指定したオブジェクトのロックを現在所有しているスレッドは、別のスレッドがアクセスできるようにするオブジェクトを解放するために、このメソッドを呼び出します。 呼び出し元は、ロックを再取得を待機中にブロックされます。 呼び出し元が、状態の変更が別のスレッドの操作の結果として発生するまで待機する必要がある場合は、このメソッドが呼び出されます。  
+  
+ タイムアウトにより、現在のスレッドでブロックしないこと無期限に別のスレッド最初呼び出さずにロックを解放する場合、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッドです。 また、スレッドをロックをすぐに再取得できるように、待機キューの遅れたり他のスレッドをバイパスして、実行待ちキューに移動します。 スレッドの戻り値をテストできます、<xref:System.Threading.Monitor.Wait%2A>タイムアウトする前に、ロックが再取得されるかどうかを調べます。スレッドは、待機状態になる原因となった条件を評価できる場合に必要な呼び出し、<xref:System.Threading.Monitor.Wait%2A>メソッドを再度です。  
+  
+ スレッドを呼び出すと`Wait`、そのロックを解放し、待機キューに入ります。 この時点では、次のスレッド実行待ちキューに (存在する場合) が許可されたロックを制御します。 呼び出したスレッド`Wait`されるまで、待機キューのままにロックを保持しているスレッドを呼び出す<xref:System.Threading.Monitor.PulseAll%2A>、または次のキューであるし、ロックを保持しているスレッドを起動<xref:System.Threading.Monitor.Pulse%2A>です。 ただし場合、`timeout`別のスレッドがこのオブジェクトを呼び出すまでのミリ秒<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>メソッド、元のスレッドがロックを再取得するために実行待ちキューに移動します。  
+  
+> [!NOTE]
+>  場合、 <xref:System.TimeSpan> -1 ミリ秒を表すが指定されて、`timeout`パラメーターでは、このメソッドは、ブロック無期限にロックの保持者呼び出さない限り、<xref:System.Threading.Monitor.Pulse%2A>または<xref:System.Threading.Monitor.PulseAll%2A>です。 場合`timeout`0 ミリ秒でを呼び出すスレッド`Wait`ロックを解放し、実行待ちキューがロックを再取得するためにすぐに入力します。  
+  
+ 呼び出し元は、実行`Wait`回数に関係なく 1 回、<xref:System.Threading.Monitor.Enter%2A>指定したオブジェクトが呼び出されてです。 概念的には、`Wait`メソッドは、呼び出し元が呼び出された回数、格納<xref:System.Threading.Monitor.Enter%2A>オブジェクトで呼び出されます<xref:System.Threading.Monitor.Exit%2A>ロックされたオブジェクトを完全に解放するために必要な回数だけです。 呼び出し元は、オブジェクトを再取得を待機中に、ブロックします。 呼び出し元は、ロックを再取得、システム呼び出し<xref:System.Threading.Monitor.Enter%2A>保存していた復元するために必要な回数だけ<xref:System.Threading.Monitor.Enter%2A>呼び出し元の数。 呼び出す`Wait`指定したオブジェクトのロックを解放するだけです。 呼び出し元がその他のオブジェクトに対するロックの所有者である場合は、これらのロックは解放されません。  
+  
+> [!NOTE]
+>  同期オブジェクトでは、ロックを現在保持しているスレッドへの参照をロックを取得する準備ができているスレッドが含まれている実行待ちキューへの参照を含むオブジェクトの状態の変更の通知を待機しているスレッド待機キューへの参照など、複数の参照を保持します。  
+  
+ <xref:System.Threading.Monitor.Pulse%2A>、 <xref:System.Threading.Monitor.PulseAll%2A>、および`Wait`メソッドは、同期されたコード ブロック内から呼び出される必要があります。  
+  
+ 「解説、<xref:System.Threading.Monitor.Pulse%2A>メソッドうなるかを説明する場合は<xref:System.Threading.Monitor.Pulse%2A>待機中スレッドがないときに呼び出されます。  
+  
+## <a name="notes-on-exiting-the-context"></a>コンテキストの終了時の注意  
+ `exitContext`パラメーター影響を及ぼしませんしない限り、<xref:System.Threading.Monitor.Wait%2A>メソッドが既定以外のマネージ コンテキスト内から呼び出されます。 派生したクラスのインスタンスへの呼び出し内部に、スレッドがある場合に発生<xref:System.ContextBoundObject>です。 派生していないクラスのメソッドを実行されている場合でも<xref:System.ContextBoundObject>と同様、 <xref:System.String>、既定以外のコンテキストであることができる場合、<xref:System.ContextBoundObject>が現在のアプリケーション ドメインで、スタック上にします。  
+  
+ 既定以外のコンテキストでコードを実行するとときに、指定する`true`の`exitContext`既定以外のマネージ コンテキストを終了するスレッド (つまり、既定のコンテキストに遷移する) 実行する前に、<xref:System.Threading.Monitor.Wait%2A>メソッドです。 呼び出しの後に元の既定以外のコンテキストを返します、<xref:System.Threading.Monitor.Wait%2A>メソッドが完了しました。  
+  
+ これを利用するときに、コンテキスト バインド クラスには、<xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>属性を適用します。 その場合は、クラスのメンバーに対するすべての呼び出しが自動的に同期され、同期ドメインは、クラスのコードの本文全体です。 メンバーの呼び出し履歴内のコードを呼び出すかどうか、<xref:System.Threading.Monitor.Wait%2A>メソッドを指定して`true`の`exitContext`スレッドが続行する、オブジェクトの任意のメンバーへの呼び出しでブロックされているスレッドの同期ドメインを終了します。 ときに、<xref:System.Threading.Monitor.Wait%2A>メソッドが戻る同期ドメインを再入力する呼び出しを行ったスレッドを待機する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="obj" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.SynchronizationLockException">
+          <see langword="Wait" /> は、同期されたコード ブロック内からは呼び出されません。</exception>
+        <exception cref="T:System.Threading.ThreadInterruptedException">Wait を呼び出すスレッドは待機状態から後で中断されます。 これは、他のスレッドがこのスレッドの <see cref="M:System.Threading.Thread.Interrupt" /> メソッドを呼び出すときに起こります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout" /> パラメーターが負で <see cref="F:System.Threading.Timeout.Infinite" /> (-1 ミリ秒) を表していないか、<see cref="F:System.Int32.MaxValue" /> よりも大きいです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

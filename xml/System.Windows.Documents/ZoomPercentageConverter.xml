@@ -1,0 +1,126 @@
+<Type Name="ZoomPercentageConverter" FullName="System.Windows.Documents.ZoomPercentageConverter">
+  <TypeSignature Language="C#" Value="public sealed class ZoomPercentageConverter : System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ZoomPercentageConverter extends System.Object implements class System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.ZoomPercentageConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>変換する型コンバーターを実装する<see cref="T:System.Double" />(の値として使用される<see cref="P:System.Windows.Controls.DocumentViewer.Zoom" />) とその他の種類の間です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ZoomPercentageConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.ZoomPercentageConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.ZoomPercentageConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object value, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.ZoomPercentageConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の値<see cref="P:System.Windows.Controls.DocumentViewer.Zoom" />です。</param>
+        <param name="targetType">型<c>値</c>を変換します。 これは、必要があります<see cref="T:System.Double" />または<see cref="T:System.String" />です。</param>
+        <param name="parameter">
+          <see langword="null" />。</param>
+        <param name="culture">言語とカルチャの変換中に想定されます。</param>
+        <summary>変換、 <see cref="T:System.Double" /> (の値として使用される<see cref="P:System.Windows.Controls.DocumentViewer.Zoom" />) 指定した型のオブジェクトにします。</summary>
+        <returns>
+          <see cref="F:System.Windows.DependencyProperty.UnsetValue" />コンバーターが、値を生成できません。たとえば、<paramref name="value" />は<see langword="null" />場合や<paramref name="targetType" />は<see cref="T:System.Double" />または<see cref="T:System.String" />です。  
+  
+ \- または  
+  
+ 新しい<see cref="T:System.Object" />指定した型のです。 いずれかでなければなりません、このクラスに実装された、<see cref="T:System.Double" />または<see cref="T:System.String" />です。 文字列の場合はの形式にする適切に、<paramref name="culture" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyProperty.UnsetValue>値がないことと、コンバーターが生成されることを示すために返される可能性がフォールバック (使用可能な場合) または既定値を代わりに使用する必要があります。  
+  
+ 渡す`null`の`parameter`します。 署名によってこのパラメーターは必須<xref:System.Windows.Data.IValueConverter.Convert%2A>、; コンバーターにコンテキスト情報を提供する一部の実装によって使用されますが、このクラスでは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object ConvertBack (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertBack(object value, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.ZoomPercentageConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換するのには、オブジェクト、<see cref="T:System.Double" />です。</param>
+        <param name="targetType">型<c>値</c>です。 これは、必要があります<see cref="T:System.Double" />または<see cref="T:System.String" />です。</param>
+        <param name="parameter">
+          <see langword="null" />。</param>
+        <param name="culture">言語とカルチャの変換中に想定されます。</param>
+        <summary>以前に変換した値を返します<see cref="P:System.Windows.Controls.DocumentViewer.Zoom" />に戻す、<see cref="T:System.Double" />に割り当て可能な<see cref="P:System.Windows.Controls.DocumentViewer.Zoom" />します。</summary>
+        <returns>
+          <see cref="F:System.Windows.DependencyProperty.UnsetValue" />コンバーターが、値を生成できません。たとえば、<paramref name="value" />は有効なパーセント値ではないときに<paramref name="targetType" />は<see cref="T:System.Double" />または<see cref="T:System.String" />です。  
+  
+ \- または  
+  
+ A<see cref="T:System.Double" />のズーム倍率を表す、<see cref="T:System.Windows.Controls.DocumentViewer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインディング エンジンは、バインディング ターゲットからバインディング ソースへ値を移動するときに、このメソッドを呼び出します。  
+  
+ <xref:System.Windows.DependencyProperty.UnsetValue>値がないことと、コンバーターが生成されることを示すために返される可能性がフォールバック (使用可能な場合) または既定値を代わりに使用する必要があります。  
+  
+ 渡す`null`の`parameter`します。 署名によってこのパラメーターは必須<xref:System.Windows.Data.IValueConverter.ConvertBack%2A>、; コンバーターにコンテキスト情報を提供する一部の実装によって使用されますが、このクラスでは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

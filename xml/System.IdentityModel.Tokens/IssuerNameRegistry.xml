@@ -1,0 +1,220 @@
+<Type Name="IssuerNameRegistry" FullName="System.IdentityModel.Tokens.IssuerNameRegistry">
+  <TypeSignature Language="C#" Value="public abstract class IssuerNameRegistry : System.IdentityModel.Configuration.ICustomIdentityConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IssuerNameRegistry extends System.Object implements class System.IdentityModel.Configuration.ICustomIdentityConfiguration" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.IssuerNameRegistry" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IdentityModel.Configuration.ICustomIdentityConfiguration</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>発行者名レジストリの抽象基本クラスです。 発行者名レジストリを使用して、対応する発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルをニーモニック名を関連付けます。 発行者名レジストリでは、証明書利用者 (RP) アプリケーションで信頼される発行者の一覧を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行者名レジストリを使用して、対応する発行元によって生成されるトークンの署名を確認するために必要な暗号化マテリアルをニーモニック名を関連付けます。 この名前は設定を使用して、<xref:System.Security.Claims.Claim.Issuer%2A>または<xref:System.Security.Claims.Claim.OriginalIssuer%2A>要求のプロパティです。 によって公開されるメソッド、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスはトークンを処理しているセキュリティ トークン ハンドラーによって、パイプラインから呼び出されます。 発行者名レジストリによってもマップされません素材によって署名されたトークンが破棄され、信頼されていません。 発行者名レジストリによって返される名前は、RP アプリケーションのコンテキスト内で一意にする必要があります。  
+  
+ コードでは、発行者名レジストリの設定によって、使用するを指定することができます、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerNameRegistry%2A?displayProperty=nameWithType>プロパティです。 指定して構成ファイル、発行者名レジストリを指定することができます、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)要素の下、 [ &lt;securityTokenHandlerConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)要素。  
+  
+ Windows Identity Foundation (WIF) の実装を提供する、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>すぐクラス:<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>クラスです。 この実装を使用する場合は、対象の RP アプリケーションの構成ファイルで信頼された発行者の一覧を指定できます、 [ &lt;trustedIssuers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) の子要素である要素`<issuerNameRegistry>`要素と、 <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>.class がその要素の参照されている`type`属性。 下にある、`<trustedIssuers>`要素、各発行者名がその署名の検証に使用される X.509 証明書にマップします。  
+  
+ カスタムの発行者名レジストリを作成する必要がありますをオーバーライドする、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%28System.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。 このメソッドは、指定したセキュリティ トークンの発行者名を返します。 必要に応じてオーバーライドできます、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%28System.IdentityModel.Tokens.SecurityToken%2CSystem.String%29?displayProperty=nameWithType>発行者名を取得するときに、ヒント表示メカニズムを提供するメソッド、および<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName%2A>メソッドを Windows の場合、発行者名トークンを提供する場合とは異なる<xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>です。 上書き、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A>発行者名レジストリの構成ファイルから初期化を有効にするメソッド。  
+  
+   
+  
+## Examples  
+ 次のコードの実装を示しています、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>のみ証明書のサブジェクトを使用している発行者を受け入れるクラス"CN = localhost"です。  
+  
+> [!WARNING]
+>  次のコードでは、わかりやすくするためだけです。 サブジェクト名に基づいて証明書の検証はことをお勧めします。 実稼働環境では、このコードは使用できません。  
+  
+ [!code-csharp[WifIssuerNameRegistry#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifissuernameregistry/cs/mvcwepapp/trustedissuernameregistry.cs#1)]  
+  
+ 次に示します XML 信頼された発行者名レジストリのアプリケーションを構成するために必要です。  
+  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <issuerNameRegistry type="System.IdentityModel.Samples.TrustedIssuerNameRegistry, MyApp" />  
+  </identityConfiguration>  
+</system.identityModel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IssuerNameRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.IssuerNameRegistry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.IssuerNameRegistry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetIssuerName">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンの発行者名を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンを処理しているセキュリティ トークン ハンドラーによって処理パイプラインから呼び出されます。 メソッドは、RP アプリケーションのコンテキスト内で発行者の一意の名前を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetIssuerName">
+      <MemberSignature Language="C#" Value="public abstract string GetIssuerName (System.IdentityModel.Tokens.SecurityToken securityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetIssuerName(class System.IdentityModel.Tokens.SecurityToken securityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">発行者名を取得するセキュリティ トークンです。</param>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンの発行者の名前を返します。</summary>
+        <returns>発行者の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装には、認識の発行者を識別する null 以外および空以外の文字列または認識されない発行者を識別する null 文字列を返す必要があります。  
+  
+ トークンを処理しているセキュリティ トークン ハンドラーによって処理パイプラインから呼び出されます。 メソッドは、RP アプリケーションのコンテキスト内で発行者の一意の名前を返す必要があります。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%2A>発行者名レジストリのメソッドです。 サンプル全体については、<xref:System.IdentityModel.Tokens.IssuerNameRegistry>クラスの概要に関するトピック。  
+  
+> [!WARNING]
+>  次のコードでは、わかりやすくするためだけです。 サブジェクト名に基づいて証明書の検証はことをお勧めします。 実稼働環境では、このコードは使用できません。  
+  
+ [!code-csharp[WifIssuerNameRegistry#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifissuernameregistry/cs/mvcwepapp/trustedissuernameregistry.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIssuerName">
+      <MemberSignature Language="C#" Value="public virtual string GetIssuerName (System.IdentityModel.Tokens.SecurityToken securityToken, string requestedIssuerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetIssuerName(class System.IdentityModel.Tokens.SecurityToken securityToken, string requestedIssuerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="requestedIssuerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">発行者名を取得するセキュリティ トークンです。</param>
+        <param name="requestedIssuerName">要求で考慮すべき発行者名。</param>
+        <summary>派生クラスでオーバーライドされると、指定したセキュリティ トークンの発行者の名前を返します。 指定した発行者名と思われる発行者名を決定するを返します。</summary>
+        <returns>発行者の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は無視されます、`requestedIssuerName`パラメーターとの呼び出しを単純に、<xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName%28System.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>メソッドです。  
+  
+ トークンを処理しているセキュリティ トークン ハンドラーによって処理パイプラインから呼び出されます。 メソッドは、RP アプリケーションのコンテキスト内で発行者の一意の名前を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWindowsIssuerName">
+      <MemberSignature Language="C#" Value="public virtual string GetWindowsIssuerName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetWindowsIssuerName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Windows クレームを使用する既定の発行者名を返します。</summary>
+        <returns>Windows クレームの既定の発行者名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、<xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer> が返されます。  
+  
+ トークンを処理しているセキュリティ トークン ハンドラーによって処理パイプラインから呼び出されます。 メソッドは、RP アプリケーションのコンテキスト内で発行者の一意の名前を返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public virtual void LoadCustomConfiguration (System.Xml.XmlNodeList nodelist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList nodelist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodelist" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodelist">構成 XML 要素です。 型のリスト内の各ノードは、<see cref="T:System.Xml.XmlElement" />です。</param>
+        <summary>派生クラスでオーバーライドされると、XML からカスタム構成を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A>メソッドは、構成のインフラストラクチャによって呼び出されます。 このメソッドが呼び出されたときに、`nodelist`の最上位レベルの子要素が表示されます、 [ &lt;issuerNameRegistry&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)構成ファイルからの要素。 属性または派生クラスを定義する構成スキーマに応じて子要素これらの各に含めることがあります。  
+  
+ 既定の実装をスロー、<xref:System.NotImplementedException>です。 構成ファイルから発行者名レジストリの初期化を有効にする、派生クラスでこのメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

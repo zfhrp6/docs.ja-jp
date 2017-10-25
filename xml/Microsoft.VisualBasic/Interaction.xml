@@ -1,0 +1,1268 @@
+<Type Name="Interaction" FullName="Microsoft.VisualBasic.Interaction">
+  <TypeSignature Language="C#" Value="public sealed class Interaction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Interaction extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Interaction" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Interaction" />モジュールには、オブジェクト、アプリケーション、およびシステムと対話するための手順が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語キーワードおよびその他のプログラムを実行、メソッドまたはプロパティの呼び出し、コンピューターのビープ音、コマンドライン文字列の入力、COM オブジェクトを操作およびダイアログ ボックスの制御、ランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ 次の例では、`Shell`ユーザーによって指定されたアプリケーションを実行する関数。 指定する<xref:Microsoft.VisualBasic.AppWinStyle?displayProperty=nameWithType>2 つ目として引数アプリケーションで通常のサイズが開き、フォーカスを移します。  
+  
+```  
+Dim procID As Integer  
+' Run calculator.  
+procID = Shell("C:\Windows\system32\calc.exe", AppWinStyle.NormalFocus)  
+' The preceding path is for Windows XP.  
+' The Windows 2000 path is C:\WINNT\system32\calc.exe.  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppActivate">
+      <MemberSignature Language="C#" Value="public static void AppActivate (int ProcessId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void AppActivate(int32 ProcessId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.AppActivate(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ProcessId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ProcessId">
+          <see langword="Integer" />このプロセスに割り当てられている Win32 プロセス ID 番号を指定します。 によって返される ID を使用することができます、 <see cref="M:Microsoft.VisualBasic.Interaction.Shell(System.String,Microsoft.VisualBasic.AppWinStyle,System.Boolean,System.Int32)" />0 ではない提供します。</param>
+        <summary>既に実行されているアプリケーションをアクティブにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する`AppActivate`にアプリケーションのアクティブ ウィンドウにフォーカスを取り込みます。 ハンドルまたはアクティブなウィンドウへの参照がありませんか特定の時点で、どのウィンドウがアクティブに気付いて可能性があります。 このような場合は、使用することはできません、<xref:System.Windows.Forms.Control.Focus%2A>メソッドです。  
+  
+ `AppActivate`関数は、名前付きアプリケーションまたはウィンドウにフォーカスしますが、最大化または最小化するかどうかは影響しません。 ユーザーがいくつかの操作にフォーカスを変更したり、ウィンドウを閉じるときに、フォーカスはアクティブ化されたアプリケーション ウィンドウから移動します。 使用することができます、`Shell`アプリケーションを起動し、ウィンドウのスタイルを設定する関数。  
+  
+ 使用する場合、`Title`パラメーター、`AppActivate`大文字と小文字を使用しますが、それ以外の場合、タイトル バーの内容と正確に一致が必要です。 また、最上位レベルの windows を使用し、子ウィンドウをまず検索します。 一致を見つけられない、スロー、<xref:System.ArgumentException>です。  
+  
+ 使用することができます`AppActivate`のみの windows を所有するプロセスです。 ほとんどのコンソール アプリケーションでは、プロセスの一覧に表示されませんが、windows を所有していない`AppActivate`ものを検索します。 コンソール アプリケーションから実行すると、システムは、アプリケーションを実行する別のプロセスを作成し、コンソール プロセスに出力を返します。 その結果、現在のプロセス ID を要求するときに取得するコンソール アプリケーションのプロセス ID ではなく、この個別のプロセスのプロセス ID  
+  
+ 実行時に、`AppActivate`関数と一致するタイトル付きの実行中のアプリケーションをアクティブに`Title`または一致するプロセス ID を持つ`ProcessId`します。 完全一致がない場合のタイトル文字列で終わるすべてのアプリケーションがアクティブ化`Title`です。 という名前の複数のアプリケーションがあるかどうかは`Title`、`AppActivate`関数が任意にアクティブ化する 1 つを選択します。  
+  
+> [!NOTE]
+>  `AppActivate`関数に必要な`UIPermission`で、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>レベルで、部分的に信頼された状況での実行に影響を与える可能性があります。 詳細については、「<xref:System.Security.Permissions.UIPermission>」を参照してください。  
+  
+   
+  
+## Examples  
+ この例のさまざまな使用を示しています、`AppActivate`アプリケーション ウィンドウにアクティブにします。 メモ帳のプロセスが実行されていない場合がスローされます、<xref:System.ArgumentException>です。 `Shell`プロシージャでは、アプリケーションは、指定されたパスに前提としています。  
+  
+ [!code-vb[VbVbalrCatRef#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppActivate">
+      <MemberSignature Language="C#" Value="public static void AppActivate (string Title);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void AppActivate(string Title) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.AppActivate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Title" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Title">
+          <see langword="String" />アクティブ化するアプリケーションのタイトル バーのタイトルを指定する式。 起動したときに、アプリケーションに割り当てられているタイトルを使用することができます。</param>
+        <summary>既に実行されているアプリケーションをアクティブにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する`AppActivate`にアプリケーションのアクティブ ウィンドウにフォーカスを取り込みます。 ハンドルまたはアクティブなウィンドウへの参照がありませんか特定の時点で、どのウィンドウがアクティブに気付いて可能性があります。 このような場合は、使用することはできません、<xref:System.Windows.Forms.Control.Focus%2A>メソッドです。  
+  
+ `AppActivate`関数は、名前付きアプリケーションまたはウィンドウにフォーカスしますが、最大化または最小化するかどうかは影響しません。 ユーザーがいくつかの操作にフォーカスを変更したり、ウィンドウを閉じるときに、フォーカスはアクティブ化されたアプリケーション ウィンドウから移動します。 使用することができます、`Shell`アプリケーションを起動し、ウィンドウのスタイルを設定する関数。  
+  
+ 使用する場合、`Title`パラメーター、`AppActivate`大文字と小文字を使用しますが、それ以外の場合、タイトル バーの内容と正確に一致が必要です。 また、最上位レベルの windows を使用し、子ウィンドウをまず検索します。 一致を見つけられない、スロー、<xref:System.ArgumentException>です。  
+  
+ 使用することができます`AppActivate`のみの windows を所有するプロセスです。 ほとんどのコンソール アプリケーションでは、プロセスの一覧に表示されませんが、windows を所有していない`AppActivate`ものを検索します。 コンソール アプリケーションから実行すると、システムは、アプリケーションを実行する別のプロセスを作成し、コンソール プロセスに出力を返します。 その結果、現在のプロセス ID を要求するときに取得するコンソール アプリケーションのプロセス ID ではなく、この個別のプロセスのプロセス ID  
+  
+ 実行時に、`AppActivate`関数と一致するタイトル付きの実行中のアプリケーションをアクティブに`Title`または一致するプロセス ID を持つ`ProcessId`します。 完全一致がない場合のタイトル文字列で終わるすべてのアプリケーションがアクティブ化`Title`です。 という名前の複数のアプリケーションがあるかどうかは`Title`、`AppActivate`関数が任意にアクティブ化する 1 つを選択します。  
+  
+> [!NOTE]
+>  `AppActivate`関数に必要な`UIPermission`で、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>レベルで、部分的に信頼された状況での実行に影響を与える可能性があります。 詳細については、「<xref:System.Security.Permissions.UIPermission>」を参照してください。  
+  
+   
+  
+## Examples  
+ この例のさまざまな使用を示しています、`AppActivate`アプリケーション ウィンドウにアクティブにします。 メモ帳のプロセスが実行されていない場合がスローされます、<xref:System.ArgumentException>です。 `Shell`プロシージャでは、アプリケーションは、指定されたパスに前提としています。  
+  
+ [!code-vb[VbVbalrCatRef#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Beep">
+      <MemberSignature Language="C#" Value="public static void Beep ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static void Beep() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Beep" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンピューターのスピーカーを鳴らします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビープ音の期間、ピッチ、ハードウェアおよびシステム ソフトウェアに依存し、そのため、コンピューターによって異なります。  
+  
+> [!NOTE]
+>  `Beep`関数に必要な`UIPermission`で、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>レベルで、部分的に信頼された状況での実行に影響を与える可能性があります。 詳細については、「<xref:System.Security.Permissions.UIPermission>」を参照してください。  
+  
+   
+  
+## Examples  
+ この例では、`Beep`をコンピューターのスピーカーで音を鳴らす関数。  
+  
+ [!code-vb[VbVbalrCatRef#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallByName">
+      <MemberSignature Language="C#" Value="public static object CallByName (object ObjectRef, string ProcName, Microsoft.VisualBasic.CallType UseCallType, params object[] Args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CallByName(object ObjectRef, string ProcName, valuetype Microsoft.VisualBasic.CallType UseCallType, object[] Args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.CallByName(System.Object,System.String,Microsoft.VisualBasic.CallType,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ObjectRef" Type="System.Object" />
+        <Parameter Name="ProcName" Type="System.String" />
+        <Parameter Name="UseCallType" Type="Microsoft.VisualBasic.CallType" />
+        <Parameter Name="Args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="ObjectRef">必須です。 <see langword="Object" />。 プロパティまたはメソッドを公開しているオブジェクトへのポインター。</param>
+        <param name="ProcName">必須です。 <see langword="String" />。 プロパティまたはオブジェクトのメソッドの名前を含む文字列式です。</param>
+        <param name="UseCallType">必須です。 型の列挙体のメンバー<see cref="T:Microsoft.VisualBasic.CallType" />呼び出されるプロシージャの種類を表すです。 値<see langword="CallType" />できます<see langword="Method" />、 <see langword="Get" />、または<see langword="Set" />です。</param>
+        <param name="Args">省略可能です。 <see langword="ParamArray" />。 プロパティまたは呼び出されるメソッドに渡される引数を含むパラメーター配列を返します。</param>
+        <summary>オブジェクトに対してメソッドを実行またはまたは設定オブジェクトのプロパティを返します。</summary>
+        <returns>オブジェクトに対してメソッドを実行またはまたは設定オブジェクトのプロパティを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `CallByName`プロパティを取得する、プロパティを設定またはメソッドの呼び出しを実行時に関数が使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、最初の行を使用して`CallByName`を設定する、`Text`テキスト ボックスのプロパティの値を取得する 2 番目の行、`Text`プロパティ、および 3 番目の行を呼び出す、`Move`テキスト ボックスを移動する方法です。  
+  
+ [!code-vb[VbVbalrFunctions#99](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#99)]  
+  
+ [!code-vb[VbVbalrFunctions#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#20)]  
+  
+ 次の例では、`CallByName`呼び出す関数を`Add`と`Item`コレクション オブジェクトのメソッドです。  
+  
+ [!code-vb[VbVbalrFunctions#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効な<paramref name="UseCallType" />値; の必要があります<see langword="Method" />、 <see langword="Get" />、または<see langword="Set" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Choose">
+      <MemberSignature Language="C#" Value="public static object Choose (double Index, params object[] Choice);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Choose(float64 Index, object[] Choice) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Choose(System.Double,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Double" />
+        <Parameter Name="Choice" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="Index">必須です。 <see langword="Double" />。 1 ~ 要素の数の値に評価される数値式が渡された、<c>選択肢</c>引数。</param>
+        <param name="Choice">必須です。 <see langword="Object" />パラメーターの配列。 1 つの変数またはに評価される式のいずれかを指定することができます、<see langword="Object" />リストへのデータ型、<see langword="Object" />コンマ、またはの 1 次元配列を変数または式で区切られた<see langword="Object" />要素。</param>
+        <summary>選択して、引数の一覧から値を返します。</summary>
+        <returns>選択して、引数の一覧から値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Choose`関数に渡される一覧のメンバーを返します`Choice()`の値に基づいて、`Index`です。 一覧の最初のメンバーが選択されているときに`Index`は 1 です。 一覧の最後のメンバーが選択されているときに`Index`は`UBound`(`Choice()`)。 場合`Index`がこれらの制限の範囲外`Choose`返します`Nothing`です。  
+  
+ 場合`Index`が整数では、評価される前に、最も近い整数に丸められます。  
+  
+ 使用することができます`Choose`候補のリスト内の値を検索します。  
+  
+> [!NOTE]
+>  引数リスト内の式は、関数呼び出しを含めることができます。 呼び出しの引数リストの準備の一環として`Choose`、Visual Basic コンパイラは、すべての式ですべての関数を呼び出します。 つまり別の式が選択されている場合は、呼び出されていない特定の関数には使用できません`Index`です。  
+  
+   
+  
+## Examples  
+ この例では、`Choose`でプロシージャに渡されたインデックスへの応答で名前を表示する関数、`Ind`パラメーター。  
+  
+ [!code-vb[VbVbalrFunctions#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public static string Command ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Command() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Command" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Visual Basic で開発された Visual Basic または実行可能プログラムを開始するためのコマンドラインの引数の部分を返します。 <see langword="My" />生産性とよりもパフォーマンスが向上を提供する機能、<see langword="Command" />関数。 詳細については、「<see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />」を参照してください。</summary>
+        <returns>Visual Basic で開発された Visual Basic または実行可能プログラムを開始するためのコマンドラインの引数の部分を返します。  
+  
+ <see langword="My" />生産性とよりもパフォーマンスが向上を提供する機能、<see langword="Command" />関数。 詳細については、「<see cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 引数が返された後は、空白文字、スラッシュ、ハイフン、または引用符、分割または個別のパラメーターの文字列を検索するなど、一般的な区切り記号を検索できます。  
+  
+ Visual Basic を使用して開発および .exe ファイルにコンパイルされたアプリケーションに対して、`Command`関数は、このフォームでのコマンド ラインで、アプリケーションの名前の後に指定した任意の引数を返します:`MyApp(cmdlineargs)`です。  
+  
+   
+  
+## Examples  
+ この例では、`Command`配列を含むオブジェクトのコマンドライン引数を返す関数。  
+  
+ [!code-vb[VbVbalrCatRef#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#58)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public static object CreateObject (string ProgId, string ServerName = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CreateObject(string ProgId, string ServerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.CreateObject(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ProgId" Type="System.String" />
+        <Parameter Name="ServerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ProgId">必須です。 <see langword="String" />。 作成するオブジェクトのプログラム ID。</param>
+        <param name="ServerName">省略可能です。 <see langword="String" />。 オブジェクトを作成するネットワーク サーバーの名前。 場合<c>ServerName</c>空の文字列 ("")、ローカル コンピューターが使用されます。</param>
+        <summary>作成し、COM オブジェクトへの参照を返します。 <see langword="CreateObject" />Visual Basic でこれらのクラスが COM コンポーネントとして明示的に公開されている場合を除き、クラスのインスタンスを作成するのには使用できません。</summary>
+        <returns>作成し、COM オブジェクトへの参照を返します。 <see langword="CreateObject" />Visual Basic でこれらのクラスが COM コンポーネントとして明示的に公開されている場合を除き、クラスのインスタンスを作成するのには使用できません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM コンポーネントのインスタンスを作成するには、によって返される、オブジェクトを割り当てる`CreateObject`オブジェクト変数に格納します。  
+  
+```vb  
+Sub CreateADODB()  
+   Dim adoApp As Object  
+   adoApp = CreateObject("ADODB.Connection")  
+End Sub  
+```  
+  
+ 使用して、返されたオブジェクトを格納するオブジェクト変数の型は、アプリケーションのパフォーマンスに影響を与えることができます。 オブジェクト変数を宣言する、`As Object`句は、どの型のオブジェクトへの参照を含めることができる変数を作成します。 ただし、その変数を介してそのオブジェクトへのアクセスは*遅延バインディング*、プログラムの実行時に、バインディングに発生します。 アプリケーションのパフォーマンスを低下など、遅延バインディングを避ける必要があります、さまざまな理由があります。  
+  
+ 事前バインディングをオブジェクト変数を作成するなど、プログラムがコンパイルされるときに、バインディングします。 これを行うから、オブジェクトのタイプ ライブラリへの参照を追加、 **COM**のタブ、**参照の追加** ダイアログ ボックスで、**プロジェクト**メニュー。 特定の種類のオブジェクトのオブジェクト変数を宣言できます。 ほとんどの場合、使用する方が効率的です、`Dim`ステートメントおよびオブジェクトを作成するには、使用するよりもプライマリ相互運用機能アセンブリ、`CreateObject`関数。  
+  
+## <a name="interacting-with-unmanaged-code"></a>アンマネージ コードとの対話  
+ 別の問題は、COM オブジェクトがアンマネージ コードを使用するなど、共通言語ランタイムの利点もコード。 COM からアンマネージ コードと Visual Basic のマネージ コードの混合に関係する複雑さの程度があります COM オブジェクトへの参照を追加するときに Visual Basic は、そのライブラリのプライマリ相互運用機能アセンブリ (PIA) の検索します。見つかった場合、それが使用されます。 PIA が見つからない場合は、ローカルの相互運用性クラス、COM ライブラリの各クラスを含む相互運用アセンブリが作成されます。 詳細については、次を参照してください。 [.NET Framework アプリケーションにおける COM 相互運用性](~/docs/visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)です。  
+  
+ 一般に、厳密にバインドされたオブジェクトと可能な限りのプライマリ相互運用機能アセンブリを使用してください。 使用して以下の例、`CreateObject`デモについては、Microsoft Office オブジェクトを持つ関数する目的でのみです。 ただし、これらのオブジェクトを使いやすくする適切なプライマリ相互運用機能アセンブリを使用すると、信頼性が高くします。  
+  
+## <a name="creating-an-object-on-a-remote-computer"></a>リモート コンピューター上のオブジェクトを作成します。  
+ リモート ネットワーク コンピューター上にオブジェクトを作成するには、コンピューターの名前を渡すことによって、`ServerName`の引数、`CreateObject`関数。 その名前は、共有名のコンピューター名の部分と同じ: という名前の共有の"\\\MyServer\Public、"`ServerName`は、"MyServer"  
+  
+> [!NOTE]
+>  COM のマニュアルを参照してください (Microsoft Developer Network を参照してください) の詳細について、リモート ネットワークに接続されたコンピューターでアプリケーションにアクセスできるようにします。 アプリケーションのレジストリ キーを追加する必要があります。  
+  
+ 次のコードを返しますという名前のリモート コンピューターで実行されている Excel のインスタンスのバージョン番号`MyServer`:  
+  
+```vb  
+Sub CreateRemoteExcelObj()  
+    Dim xlApp As Object  
+    ' Replace string "\\MyServer" with name of the remote computer.  
+    xlApp = CreateObject("Excel.Application", "\\MyServer")  
+    MsgBox(xlApp.Version)  
+End Sub  
+```  
+  
+ リモート サーバー名が正しくない場合、またはが利用できない場合は、実行時エラーが発生します。  
+  
+> [!NOTE]
+>  使用して`CreateObject`オブジェクトの現在のインスタンスがない場合。 オブジェクトのインスタンスが既に実行されている場合は、新しいインスタンスを開始すると、し、指定した型のオブジェクトを作成します。 現在のインスタンスを使用するか、アプリケーションを起動し、ファイルを読み込むを使用して、`GetObject`関数。 オブジェクトがそれ自体を単独のオブジェクトとして登録している場合、オブジェクトの 1 つだけのインスタンスが作成、方法に関係なく何度も`CreateObject`を実行します。  
+  
+## <a name="creating-framework-objects"></a>Framework のオブジェクトを作成します。  
+ 使用することができます、 `CreateObject` COM オブジェクトを作成するためのものです。 .NET Framework オブジェクトを作成するため正確な同等のメカニズムはありません、<xref:System.Activator>で、<xref:System>名前空間には、ローカルまたはリモート オブジェクトを作成するメソッドが含まれています。 具体的には、<xref:System.Activator.CreateInstance%2A>メソッドまたは<xref:System.Activator.CreateInstanceFrom%2A>メソッドも役にあります。  
+  
+> [!IMPORTANT]
+>  `CreateObject`関数が、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`CreateObject`関数の Microsoft Excel ワークシートを作成して、ファイルにワークシートを保存します。 この例を使用するには、プログラムを実行するコンピューターで Excel をインストールする必要があります。 また、タイプ ライブラリへの参照を追加する必要があります、 **COM**のタブ、**参照の追加** ダイアログ ボックスで、**プロジェクト**メニュー。 タイプ ライブラリの名前は、コンピューターにインストールされている Excel のバージョンによって異なります。 たとえば、excel のタイプ ライブラリの名前は**Microsoft Excel 10.0 オブジェクト ライブラリ**です。  
+  
+ [!code-vb[VbVbalrExcelObject#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExcelObject/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">サーバーは使用できません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定した型のオブジェクトは存在しません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteSetting">
+      <MemberSignature Language="C#" Value="public static void DeleteSetting (string AppName, string Section = null, string Key = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void DeleteSetting(string AppName, string Section, string Key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.DeleteSetting(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AppName" Type="System.String" />
+        <Parameter Name="Section" Type="System.String" />
+        <Parameter Name="Key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AppName">必須です。 <see langword="String" />アプリケーションまたはセクションまたはキーの設定を適用するプロジェクトの名前を含む式です。</param>
+        <param name="Section">必須です。 <see langword="String" />キーの設定の削除されたセクションの名前を含む式です。 だけの場合<c>AppName</c>と<c>セクション</c>が提供された、関連するすべてのキー設定と共に、指定したセクションを削除します。</param>
+        <param name="Key">省略可能です。 <see langword="String" />削除するキーの設定の名前を含む式です。</param>
+        <summary>Windows レジストリ内のアプリケーションのエントリからセクションまたはキーの設定を削除します。 <see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で、<see langword="DeleteSetting" />関数。 詳細については、「<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての引数を指定しない場合、指定した設定が削除されます。 使用しようとする場合、実行時エラーが発生した`DeleteSetting`セクションが存在しない、またはキーの設定にします。  
+  
+ `DeleteSetting`ユーザーは、下で動作するためログインする必要があります、`HKEY_LOCAL_USER`レジストリ キーは、ユーザーが対話的にログオンするまでアクティブではありません。  
+  
+ いずれかで (Mtx.exe) など非対話型プロセスからアクセスすることは、レジストリ設定を保存するか、`HKEY_LOCAL_MACHINE\Software\`または`HKEY_USER\DEFAULT\Software`レジストリ キー。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、`SaveSetting`の Windows レジストリにエントリを作成する手順、`MyApp`アプリケーション、および、使用、`DeleteSetting`それらを削除する関数。 ありません`Key`引数を指定すると、全体`Startup`セクションを削除すると、セクション名、およびそのキーの含まれます。  
+  
+ [!code-vb[VbVbalrCatRef#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#45)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ユーザーがログインしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Environ">
+      <MemberSignature Language="C#" Value="public static string Environ (int Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Environ(int32 Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Environ(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 環境変数、または環境文字列テーブル内の環境文字列の数値順序に対応する整数の名前を含む文字列を評価する式。</param>
+        <summary>オペレーティング システムの環境変数に関連付けられている文字列を返します。</summary>
+        <returns>オペレーティング システムの環境変数に関連付けられている文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Expression`、文字列を含む、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>関数、指定された環境文字列に割り当てられているテキストを返します: 環境変数の環境文字列テーブルに等号 (=) に続くテキストは、します。 場合内の文字列`Expression`表内の環境文字列、長さ 0 の文字列が見つかりません ("") が返されます。  
+  
+ 場合`Expression`環境文字列テーブル内の数値の位置が返される文字列、整数が含まれています。 この場合、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>のすべての環境変数の名前を含む、テキストを返します。 指定された位置に環境文字列がない場合<xref:Microsoft.VisualBasic.Interaction.Environ%2A>長さ 0 の文字列を返します。  
+  
+> [!IMPORTANT]
+>  <xref:Microsoft.VisualBasic.Interaction.Environ%2A>関数には、環境アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>エントリ数と長さを指定する関数、`PATH`環境文字列テーブルからのステートメント。  
+  
+ [!code-vb[VbVbalrCatRef#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Expression" />見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Environ">
+      <MemberSignature Language="C#" Value="public static string Environ (string Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Environ(string Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Environ(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 環境変数、または環境文字列テーブル内の環境文字列の数値順序に対応する整数の名前を含む文字列を評価する式。</param>
+        <summary>オペレーティング システムの環境変数に関連付けられている文字列を返します。</summary>
+        <returns>オペレーティング システムの環境変数に関連付けられている文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Expression`、文字列を含む、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>関数、指定された環境文字列に割り当てられているテキストを返します: 環境変数の環境文字列テーブルに等号 (=) に続くテキストは、します。 場合内の文字列`Expression`表内の環境文字列、長さ 0 の文字列が見つかりません ("") が返されます。  
+  
+ 場合`Expression`環境文字列テーブル内の数値の位置が返される文字列、整数が含まれています。 この場合、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>のすべての環境変数の名前を含む、テキストを返します。 指定された位置に環境文字列がない場合<xref:Microsoft.VisualBasic.Interaction.Environ%2A>長さ 0 の文字列を返します。  
+  
+> [!IMPORTANT]
+>  <xref:Microsoft.VisualBasic.Interaction.Environ%2A>関数には、環境アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:Microsoft.VisualBasic.Interaction.Environ%2A>エントリ数と長さを指定する関数、`PATH`環境文字列テーブルからのステートメント。  
+  
+ [!code-vb[VbVbalrCatRef#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Expression" />見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllSettings">
+      <MemberSignature Language="C#" Value="public static string[,] GetAllSettings (string AppName, string Section);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string[,] GetAllSettings(string AppName, string Section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.GetAllSettings(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[,]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AppName" Type="System.String" />
+        <Parameter Name="Section" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AppName">必須です。 <see langword="String" />アプリケーションまたはキー設定が必要となるプロジェクトの名前を含む式です。</param>
+        <param name="Section">必須です。 <see langword="String" />キーの設定を持つが要求されたセクションの名前を含む式です。 <see langword="GetAllSettings" />文字列の 2 次元配列を含むオブジェクトを返します。 文字列には、すべてのキー設定では、指定したセクションと、対応する値が含まれます。</param>
+        <summary>キーの設定とそれぞれの値の一覧を返します (使用して作成した<see langword="SaveSetting" />)、Windows レジストリ内のアプリケーションのエントリからです。 使用して、<see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で<see langword="GetAllSettings" />です。 詳細については、「<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />」を参照してください。</summary>
+        <returns>キーの設定とそれぞれの値の一覧を返します (使用して作成した<see langword="SaveSetting" />)、Windows レジストリ内のアプリケーションのエントリからです。  
+  
+ 使用して、<see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で<see langword="GetAllSettings" />です。 詳細については、「<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `GetAllSettings`返します、初期化されていない`Object`場合`AppName`または`Section`存在しません。  
+  
+ 下で動作するため、`HKEY_LOCAL_USER`がアクティブでないユーザーが対話的にログオンするまで、レジストリ キー`GetAllSettings`ユーザーがログオンすることが必要です。  
+  
+ いずれかで (Mtx.exe) など非対話型プロセスからアクセスすることは、レジストリ設定を保存するか、`HKEY_LOCAL_MACHINE\Software\`または`HKEY_USER\DEFAULT\Software`レジストリ キー。  
+  
+   
+  
+## Examples  
+ この例を使用して、`SaveSetting`として指定されたアプリケーションの Windows レジストリにエントリを作成する関数`AppName`を使用して、`GetAllSettings`設定を表示する関数。 そのアプリケーションに注意してください名および`Section`で名前を取得できません`GetAllSettings`です。 最後に、`DeleteSetting`関数は、アプリケーションのエントリを削除します。  
+  
+ [!code-vb[VbVbalrCatRef#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#68)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ユーザーがログインしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public static object GetObject (string PathName = null, string Class = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object GetObject(string PathName, string Class) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.GetObject(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="PathName" Type="System.String" />
+        <Parameter Name="Class" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="PathName">省略可能です。 <see langword="String" />。 完全なパスと取得するオブジェクトを含むファイルの名前。 場合<c>PathName</c>を省略すると、<c>クラス</c>が必要です。</param>
+        <param name="Class">場合は必須<c>PathName</c>が指定されていません。 <see langword="String" />。 オブジェクトのクラスを表す文字列。 <c>クラス</c>引数は、次の構文とパーツ。  
+  
+ <c>appname</c><c>.</c><c>objecttype</c>  
+  
+ [1 | 1]パラメーター  
+  
+ [1 | 2]。説明  
+  
+ [2 | 1]<c>appname</c>  
+  
+ [2 | 2]必須。 <see langword="String" />。 オブジェクトを提供するアプリケーションの名前です。  
+  
+ [3 | 1]<c>objecttype</c>  
+  
+ [3 | 2]必須。 <see langword="String" />。 型またはオブジェクトのクラスを作成します。</param>
+        <summary>COM コンポーネントによって提供されるオブジェクトへの参照を返します。</summary>
+        <returns>COM コンポーネントによって提供されるオブジェクトへの参照を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`GetObject`ファイルから COM コンポーネントのインスタンスを読み込むための関数。 次に例を示します。  
+  
+```vb  
+Dim CADObject As Object  
+CADObject = GetObject("C:\CAD\schema.cad")  
+```  
+  
+ このコードを実行すると、指定したに関連付けられたアプリケーション`PathName`を起動し、指定したファイル内のオブジェクトがアクティブにします。  
+  
+## <a name="default-cases"></a>既定値の場合  
+ 場合`PathName`は長さ 0 の文字列 (`""`)、`GetObject`指定されたクラス型の新しいオブジェクト インスタンスを返します。 場合、`PathName`引数を省略すると、`GetObject`で指定されたクラス型の現在アクティブなオブジェクトを返します`Class`です。 指定した型のオブジェクトが存在しない場合、エラーが発生します。  
+  
+## <a name="accessing-a-subobject"></a>サブオブジェクトへのアクセス  
+ 一部のアプリケーションを使用すると、ファイルに関連付けられているサブオブジェクトをアクティブにできます。 これを行うには、感嘆符を追加します (`!`) に従って、ファイル名の末尾に、ファイルの一部を識別する文字列でアクティブにします。 この文字列を作成する方法については、オブジェクトを作成したアプリケーションのマニュアルを参照してください。  
+  
+ たとえば、描画アプリケーションでは、複数のレイヤーにファイルに格納されている描画があります。 次のコードを使用して記述すると、レイヤーをアクティブにでした`schema.cad`です。  
+  
+```vb  
+layerObject = GetObject("C:\CAD\schema.cad!Layer3")  
+```  
+  
+## <a name="specifying-a-class"></a>クラスを指定します。  
+ オブジェクトの指定しない場合`Class`オートメーションは指定したファイル名に基づくをアクティブ化すると、アプリケーションを開始し、オブジェクトを決定します。 ただし、一部のファイルでは、オブジェクトの 1 つ以上のクラスをサポートできます。 図面が 3 つの異なる種類のオブジェクトをサポートするなど、:`Application`オブジェクト、`Drawing`オブジェクト、および`Toolbar`同じファイルの一部であるすべてのオブジェクト。 使用してアクティブ化するファイルのどのオブジェクトを指定する省略可能な`Class`引数。 次に例を示します。  
+  
+```vb  
+Dim drawObj As Object  
+drawObj = GetObject("C:\Drawings\sample.drw", "Figment.Drawing")  
+```  
+  
+ 前の例で`Figment`描画アプリケーションの名前を指定し、`Drawing`はこれをサポートしているオブジェクトの種類の 1 つです。  
+  
+## <a name="using-the-object"></a>オブジェクトを使用します。  
+ オブジェクトを有効にすると後でを参照することを宣言して、オブジェクト変数を使用してコードをします。 オブジェクト変数を使用して新しいオブジェクトのプロパティおよびメソッドにアクセスする前の例で`drawObj`です。 次に例を示します。  
+  
+```vb  
+drawObj.Line(9, 90)  
+drawObj.InsertText(9, 100, "Hello, world.")  
+drawObj.SaveAs("C:\Drawings\sample.drw")  
+```  
+  
+> [!NOTE]
+>  使用して、`GetObject`オブジェクトの現在のインスタンスがある場合、または読み込まれたファイルで、オブジェクトを作成する場合に機能します。 現在のインスタンスがないと、オブジェクトの使用を開始したくない場合、ファイルが読み込まれ、使用、<xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>関数。  
+>   
+>  ActiveX 単独のオブジェクトとして登録されているオブジェクト場合、オブジェクトの 1 つだけのインスタンスが作成、方法に関係なく何度も`CreateObject`と呼びます。 単一インスタンス オブジェクトは、`GetObject`常に長さ 0 の文字列で呼び出されたときに、同じインスタンスを返します (`""`) 構文、およびその場合はエラーが発生、`PathName`引数を省略します。 使用することはできません`GetObject`を Visual Basic で作成したクラスへの参照を取得します。  
+  
+> [!IMPORTANT]
+>  `GetObject`関数が、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`GetObject`特定の Microsoft Excel ワークシートへの参照を取得します (`excelObj`)。 使用してワークシートの`Application`プロパティを Excel に表示されるを閉じるには、およびその他のアクションを実行するようにします。 2 つの API 呼び出しを使用して、`detectExcel`プロシージャは、Excel が検索され、実行されている場合を実行しているオブジェクト テーブルで入力します。 最初の呼び出し`GetObject`Excel が既に実行されていない場合、この例で、エラーが発生原因、`excelWasNotRunning`フラグを設定する`True`です。 2 番目の呼び出し`GetObject`を開くにはファイルを指定します。 Excel はまだ実行されていない場合、2 つ目の呼び出しが起動され、指定されたファイルによって表されるワークシートへの参照を返します`test.xls`です。 指定した場所にファイルが存在する必要があります。Visual Basic のそれ以外の場合、スロー、<xref:System.IO.FileNotFoundException>です。 次に、コード例は、Excel と表示されている特定のワークシートを含むウィンドウの両方です。  
+  
+ この例は`Option Strict Off`遅延バインディングを使用しているため、オブジェクトに割り当てられた型の変数`Object`です。 指定できます`Option Strict On`、Excel からタイプ ライブラリへの参照を追加する場合は、特定のオブジェクトの種類のオブジェクトを宣言し、 **COM**のタブ、**参照の追加**のダイアログ ボックス、 **プロジェクト**Visual Studio のメニュー。  
+  
+ [!code-vb[VbVbalrExcelObject#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExcelObject/VB/Class1.vb#2)]  
+  
+ [!code-vb[VbVbalrExcelObject#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExcelObject/VB/Class1.vb#4)]  
+  
+ [!code-vb[VbVbalrExcelObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExcelObject/VB/Class1.vb#5)]  
+  
+ 呼び出すと、`getExcel`関数、チェックが実行され、Excel が既に実行されているかどうかにします。 そうでない場合は、インスタンスが作成されます。  
+  
+> [!IMPORTANT]
+>  前の例がいずれかのウィンドウと呼ばれることを想定わかりやすくするため、 `XLMAIN` Microsoft Excel のインスタンスに属しています。 不正な方法で起動された別のオブジェクトは、その名前を持つウィンドウを作成、これは Excel の意図したすべてのメッセージを受け取ります。 実稼働に使用するアプリケーションであることを確認するより厳密なテストを含める必要があります`XLMAIN`本当に Excel に属しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定されたクラス型のオブジェクトが存在しません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスとファイル名を持つオブジェクトが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSetting">
+      <MemberSignature Language="C#" Value="public static string GetSetting (string AppName, string Section, string Key, string Default = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string GetSetting(string AppName, string Section, string Key, string Default) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.GetSetting(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AppName" Type="System.String" />
+        <Parameter Name="Section" Type="System.String" />
+        <Parameter Name="Key" Type="System.String" />
+        <Parameter Name="Default" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AppName">必須です。 <see langword="String" />アプリケーションまたはキー設定が必要となるプロジェクトの名前を含む式です。</param>
+        <param name="Section">必須です。 <see langword="String" />キーの設定が存在するセクションの名前を含む式です。</param>
+        <param name="Key">必須です。 <see langword="String" />返されるキーの設定の名前を含む式です。</param>
+        <param name="Default">省略可能です。 値が設定されていないかどうかに返される値を含む式、<c>キー</c>設定します。 省略した場合、<c>既定</c>長さ 0 の文字列であると見なされます ("") です。</param>
+        <summary>Windows レジストリ内のアプリケーションのエントリからキーの設定値を返します。 <see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で<see langword="GetAllSettings" />です。 詳細については、「<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />」を参照してください。</summary>
+        <returns>Windows レジストリ内のアプリケーションのエントリからキーの設定値を返します。  
+  
+ <see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で<see langword="GetAllSettings" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前のアイテムの場合、`GetSetting`引数が存在しない、`GetSetting`の値を返します`Default`です。  
+  
+ 下で動作するため、`HKEY_LOCAL_USER`がアクティブでないユーザーが対話的にログオンするまで、レジストリ キー`GetSetting`ユーザーがログオンすることが必要です。  
+  
+ いずれかで (Mtx.exe) など非対話型プロセスからアクセスすることは、レジストリ設定を保存するか、`HKEY_LOCAL_MACHINE\Software\`または`HKEY_USER\DEFAULT\Software`レジストリ キー。  
+  
+ `GetSetting`必要があります`Read`<xref:System.Security.Permissions.RegistryPermission>です。  
+  
+   
+  
+## Examples  
+ この例を使用して、`SaveSetting`として指定されたアプリケーションの Windows レジストリにエントリを作成する関数`AppName`、しを使用して、`GetSetting`設定のいずれかを表示する関数。 `Default`引数を指定すると、いくつかの値が必ず返されます。 注意して`Section`で名前を取得できません`GetSetting`です。 最後に、`DeleteSetting`関数は、すべてのアプリケーションのエントリを削除します。  
+  
+ [!code-vb[VbVbalrCatRef#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#61)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つまたは複数の引数は<see langword="String" />式、またはユーザーがログインしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IIf">
+      <MemberSignature Language="C#" Value="public static object IIf (bool Expression, object TruePart, object FalsePart);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object IIf(bool Expression, object TruePart, object FalsePart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.IIf(System.Boolean,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Boolean" />
+        <Parameter Name="TruePart" Type="System.Object" />
+        <Parameter Name="FalsePart" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Boolean" />。 評価する式です。</param>
+        <param name="TruePart">必須です。 <see langword="Object" />。 場合に返される<c>式</c>に評価される<see langword="True" />です。</param>
+        <param name="FalsePart">必須です。 <see langword="Object" />。 場合に返される<c>式</c>に評価される<see langword="False" />です。</param>
+        <summary>式の評価によって、2 つのオブジェクトのいずれかを返します。</summary>
+        <returns>式の評価によって、2 つのオブジェクトのいずれかを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IIf`関数は、相当するもの、三項[条件演算子:?:](http://msdn.microsoft.com/library/88643ee8-7100-4f86-880a-705ec22b6271) Visual C でします。  
+  
+   
+  
+## Examples  
+ この例では、`IIf`を評価する関数、`testMe`のパラメーター、`checkIt`プロシージャを返す、単語"Large"量は 1000 を超えるです。 それ以外の場合、それを返しますという単語"小"です。  
+  
+ [!code-vb[VbVbalrFunctions#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#33)]  
+  
+ されている場合`Option Strict`は`On`、使用する必要があります、`CStr`からの戻り値を明示的に変換するキーワード`Object`に`String`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputBox">
+      <MemberSignature Language="C#" Value="public static string InputBox (string Prompt, string Title = &quot;&quot;, string DefaultResponse = &quot;&quot;, int XPos = -1, int YPos = -1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string InputBox(string Prompt, string Title, string DefaultResponse, int32 XPos, int32 YPos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.InputBox(System.String,System.String,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Prompt" Type="System.String" />
+        <Parameter Name="Title" Type="System.String" />
+        <Parameter Name="DefaultResponse" Type="System.String" />
+        <Parameter Name="XPos" Type="System.Int32" />
+        <Parameter Name="YPos" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Prompt">必要な<see langword="String" />式 ダイアログ ボックスでメッセージとして表示されます。 最大長<c>プロンプト</c>約 1024 文字、によって使用される文字の幅。 場合<c>プロンプト</c>で構成の 1 つ以上の行のキャリッジ リターン文字を使用して行を区切ることができます (<see langword="Chr(" />13<see langword=")" />)、改行文字 (<see langword="Chr(" />10<see langword=")" />)、またはキャリッジ リターン/ライン改行の組み合わせ (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 各行の間です。</param>
+        <param name="Title">省略可能です。 <see langword="String" />式のダイアログ ボックスのタイトル バーに表示されます。 省略した場合<c>タイトル</c>アプリケーション名は、タイトル バーに配置されます。</param>
+        <param name="DefaultResponse">省略可能です。 <see langword="String" />入力しない場合、既定の応答として、テキスト ボックスに表示されますが式を指定します。 省略した場合<c>DefaultResponse</c>、表示されるテキスト ボックスが空です。</param>
+        <param name="XPos">省略可能です。 Twips、画面の左エッジからダイアログ ボックスの左エッジからの距離で指定する数値式です。 省略した場合<c>に対して画面</c>、ダイアログ ボックスは水平方向に中央揃えされます。</param>
+        <param name="YPos">省略可能です。 長さ、画面の上部からダイアログ ボックスの上端までの距離を指定する数値式です。 省略した場合<c>1/3</c>、ダイアログ ボックスには、画面の 3 分の 1 つ垂直方向に約が配置されています。</param>
+        <summary>ダイアログ ボックスで、プロンプトが表示されます、テキストを入力するか、ボタンをクリックするユーザーを待機してから、テキスト ボックスの内容を含む文字列を返します。</summary>
+        <returns>ダイアログ ボックスで、プロンプトが表示されます、テキストを入力するか、ボタンをクリックするユーザーを待機してから、テキスト ボックスの内容を含む文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがクリックした場合**キャンセル**長さ 0 の文字列が返されます。  
+  
+ 複数の最初の引数を指定するに使用する必要があります、`InputBox`関数の式。 位置指定引数を省略する場合は、対応するコンマ区切り記号を保持する必要があります。  
+  
+> [!NOTE]
+>  `InputBox`関数に必要な`UIPermission`で、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>レベルで、部分的に信頼された状況での実行に影響を与える可能性があります。 詳細については、次を参照してください。 および<xref:System.Security.Permissions.UIPermission>です。  
+  
+   
+  
+## Examples  
+ この例を使用するさまざまな方法を示しています、`InputBox`値を入力するユーザー入力を求める関数です。 場合、x と y の位置を省略すると、ダイアログ ボックスが自動的に各軸の中央に配置します。 変数`MyValue`ユーザーは、[ok] をクリックするか、ENTER キーを押した場合に、ユーザーが入力した値が含まれています。  
+  
+ [!code-vb[VbVbalrCatRef#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#67)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MsgBox">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.MsgBoxResult MsgBox (object Prompt, Microsoft.VisualBasic.MsgBoxStyle Buttons = Microsoft.VisualBasic.MsgBoxStyle.ApplicationModal, object Title = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype Microsoft.VisualBasic.MsgBoxResult MsgBox(object Prompt, valuetype Microsoft.VisualBasic.MsgBoxStyle Buttons, object Title) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.MsgBox(System.Object,Microsoft.VisualBasic.MsgBoxStyle,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.MsgBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Prompt" Type="System.Object" />
+        <Parameter Name="Buttons" Type="Microsoft.VisualBasic.MsgBoxStyle" />
+        <Parameter Name="Title" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Prompt">必須です。 <see langword="String" />式は、ダイアログ ボックスにメッセージとして表示されます。 最大長<c>プロンプト</c>約 1024 文字、によって使用される文字の幅。 場合<c>プロンプト</c>で構成の 1 つ以上の行のキャリッジ リターン文字を使用して行を区切ることができます (<see langword="Chr(" />13<see langword=")" />)、改行文字 (<see langword="Chr(" />10<see langword=")" />)、またはキャリッジ リターン/改行文字の組み合わせ (<see langword="Chr(" />13<see langword=")" /> &amp; <see langword="Chr(" />10<see langword=")" />) 各行の間です。</param>
+        <param name="Buttons">省略可能です。 数値式を使用するには既定のボタンの id とメッセージ ボックスのモダリティ アイコンのスタイルを表示するには、数とボタンの種類を指定する値の合計です。 省略した場合<c>ボタン</c>既定値は 0 です。</param>
+        <param name="Title">省略可能です。 <see langword="String" />式のダイアログ ボックスのタイトル バーに表示されます。 省略した場合<c>タイトル</c>アプリケーション名は、タイトル バーに配置されます。</param>
+        <summary>ダイアログ ボックスで、メッセージが表示されます、 をクリックしてから、ユーザーを待機してから、ユーザーがクリックしたボタンを示す整数を返します。</summary>
+        <returns>
+          <list type="table">
+            <item>
+              <term> 定数  
+  
+ </term>
+              <description> 値  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="OK" />
+              </term>
+              <description> 1  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="Cancel" />
+              </term>
+              <description> 2  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="Abort" />
+              </term>
+              <description> 3  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="Retry" />
+              </term>
+              <description> 4  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="Ignore" />
+              </term>
+              <description> 5  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="Yes" />
+              </term>
+              <description> 6  
+  
+ </description>
+            </item>
+            <item>
+              <term>
+                <see langword="No" />
+              </term>
+              <description> 7  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 位置指定引数を省略する場合は、対応するコンマ区切り記号を保持する必要があります。  
+  
+ ダイアログ ボックスが表示される場合、**キャンセル**ESC キーを押すボタンがクリックした場合と同じ効果**キャンセル**  
+  
+ ダイアログ ボックスが含まれている場合、**ヘルプ**ボタン、状況依存のヘルプがダイアログ ボックスに用意されています。 ただし、他のボタンのいずれかを選択するまでの値は返されません。 Windows フォーム アプリケーションで、選択、**ヘルプ**ボタン実行、<xref:System.Windows.Forms.Control.HelpRequested>フォームのイベントです。  
+  
+> [!NOTE]
+>  `MsgBox`関数に必要な`UIPermission`で、<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>レベルで、部分的に信頼された状況での実行に影響を与える可能性があります。 詳細については、「<xref:System.Security.Permissions.UIPermission>」を参照してください。  
+  
+ `MsgBoxStyle`列挙値は、次の表に一覧表示されます。  
+  
+|メンバー|値|説明|  
+|-|-|-|  
+|メンバー|値|説明|  
+|`OKOnly`|0|表示 [ok] ボタンの場合のみです。|  
+|`OKCancel`|1|[キャンセル] ボタンと [ok] を表示します。|  
+|`AbortRetryIgnore`|2|中止、再試行、および Ignore ボタンが表示されます。|  
+|`YesNoCancel`|3|[はい] が表示されます、No、およびキャンセル ボタン。|  
+|`YesNo`|4|[はい] と [いいえ] ボタンを表示します。|  
+|`RetryCancel`|5|[再試行] および [キャンセル] ボタンが表示されます。|  
+|`Critical`|16|メッセージの重要なアイコンを表示します。|  
+|`Question`|32|警告クエリ アイコンを表示します。|  
+|`Exclamation`|48|警告メッセージのアイコンを表示します。|  
+|`Information`|64|情報メッセージ アイコンを表示します。|  
+|`DefaultButton1`|0|最初のボタンは既定値です。|  
+|`DefaultButton2`|256|2 番目のボタンは既定値です。|  
+|`DefaultButton3`|512|3 番目のボタンは既定値です。|  
+|`ApplicationModal`|0|アプリケーションがモーダルでします。 ユーザーは、現在のアプリケーションで作業を続行する前に、メッセージ ボックスに応答する必要があります。|  
+|`SystemModal`|4096|システムがモーダルでします。 すべてのアプリケーションがメッセージ ボックスに、ユーザーが応答するまで中断されます。|  
+|`MsgBoxSetForeground`|65536|前面のウィンドウとして、メッセージ ボックス ウィンドウを指定します。|  
+|`MsgBoxRight`|524288|テキストが右揃えです。|  
+|`MsgBoxRtlReading`|1048576|テキストが右から左のヘブライ語やアラビア語のシステムでの読み取りを表示する必要がありますを指定します。|  
+  
+ 値 (0 ~ 5) の最初のグループには、ダイアログ ボックスに表示されるボタンの種類と数がについて説明します。 2 番目のグループ (16、32、48、64) には、アイコンのスタイルがについて説明します。 3 番目のグループ (0, 256, 512) は、どのボタンは、既定値を決定します。 4 番目のグループ (0, 4096) がメッセージ ボックスのモーダルかどうかを決定し、5 番目のグループは、メッセージ ボックス ウィンドウが前面のウィンドウ、および配置とテキストの方向がかどうかを指定します。 最終的な値を作成する番号を追加するときに、`Buttons`引数、各グループから 1 つだけの値を使用します。  
+  
+   
+  
+## Examples  
+ この例では、 `MsgBox` [はい] と [いいえ] ボタンをダイアログ ボックスで、重大なエラー メッセージを表示する関数。 [いいえ] ボタンは、既定の応答として指定されます。 これは、組み合わせることで、 `MsgBox` 1 つの数値式の定数値です。 ここでは、4 の追加 (、はい/いいえ ボタンの組み合わせ)、16 (、**メッセージの重要な**ウィンドウ) 合計 276 256 (既定のボタンとして 2 番目のボタン) とします。 によって返される値、`MsgBox`関数は、ユーザーが選択したボタンに依存します [はい] に 6; 値を返します。7 の値を返しますがありません。  
+  
+ [!code-vb[VbVbalrCatRef#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Prompt" /><see langword="String" />式、または<paramref name="Title" />が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">プロセスがユーザー対話モードで実行されていません。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">1 つまたは複数のパラメーターのメンバーではないの<see langword="MsgBoxResult" />または<see langword="MsgBoxStyle" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Partition">
+      <MemberSignature Language="C#" Value="public static string Partition (long Number, long Start, long Stop, long Interval);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string Partition(int64 Number, int64 Start, int64 Stop, int64 Interval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Partition(System.Int64,System.Int64,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Int64" />
+        <Parameter Name="Start" Type="System.Int64" />
+        <Parameter Name="Stop" Type="System.Int64" />
+        <Parameter Name="Interval" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="Number">必須です。 <see langword="Long" />。 計算済みの範囲内の場所を確認する整数です。</param>
+        <param name="Start">必須です。 <see langword="Long" />。 一連の計算の範囲の開始を示す整数です。 <c>開始</c>0 未満にすることはできません。</param>
+        <param name="Stop">必須です。 <see langword="Long" />。 一連の計算の範囲の終了を示す整数です。 <c>停止</c>以下にすることはできません<c>開始</c>です。</param>
+        <param name="Interval">必須です。 <see langword="Long" />。 各範囲のサイズを示す整数の計算の間で<c>開始</c>と<c>停止</c>です。 <c>間隔</c>1 未満にすることはできません。</param>
+        <summary>数値を含んだ計算の範囲を表す文字列を返します。</summary>
+        <returns>数値を含んだ計算の範囲を表す文字列を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Partition`関数は、計算一連の数値の範囲で指定された値の数を含む各`Interval`です。 最初の範囲から始まります`Start`、最後の範囲の終点と`Stop`です。 `Partition`関数がどの範囲が含まれるを識別し、`Number`し、その範囲を説明する文字列を返します。 として文字列で表される範囲"*最大*:*最小*"ここで、範囲の下限 (*最大*) は、ハイ エンドから分離 (*最小*)、コロン (:) でします。  
+  
+ 必要に応じて、`Partition`関数は、前に先頭のスペースを挿入*最大*と*最小*両方を持つようにする、値の文字列形式と同じ文字数 (`Stop` + 1)。 によりの出力を使用する場合、`Partition`のいくつかの値を持つ関数`Number`、以後の並べ替え操作中に、生成されるテキストを正しく処理されます。  
+  
+ 次の表は、の 3 つのセットを使用して計算の範囲は、いくつかの文字列の例を示しています。 `Start`、 `Stop`、および`Interval`です。 「最初の範囲」と「最後の範囲」の列範囲を表して、最低と最高の値を指定された`Start`と`Stop`です。 列の値に対して返される文字列の表示"最初の範囲"の前後に"最後の範囲"`Number`より小さい`Start`とよりも大きい`Stop`、それぞれします。  
+  
+|`Start`|`Stop`|`Interval`|最初の範囲の前に|最初の範囲|最後の範囲|最後の範囲の後|  
+|-|-|-|-|-|-|-|  
+|0|99|5|"   : -1"|"  0:  4"|" 95: 99"|"100:   "|  
+|20|199|10|"   : 19"|" 20: 29"|"190:199"|"200:   "|  
+|100|1010|20|"    : 99"|" 100: 119"|"1000:1010"|"1011:    "|  
+  
+ 前の表では、3 番目の行が結果を示しています。 ときに`Start`と`Stop`で均等に分割できない数値のセットを定義する`Interval`です。 最後の範囲の終点`Stop`、なりますは 11 文字の場合でも`Interval`は 20 です。  
+  
+ 場合`Interval`1 に設定されて範囲は"`Number`:`Number`"に関係なく、`Start`と`Stop`引数。 たとえば場合、 `Number` 267 は、 `Stop` 1000 と`Interval`1 に設定されて`Partition`「267: 267」を返します。  
+  
+ `Partition`データベースにクエリを構築するときに役に立ちます。 1001 ~ 2000 の請求書の値を 1 から 1000 を持つなど、さまざまな値の範囲内で発生する注文の数を示す SELECT クエリを作成することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、2049 1950年から数十年の範囲の系列を設定します。 値が見つかる`year`内で適切な範囲を返す、`String`範囲を示す値。 場合`year`1984 の値は、たとえば、 `Partition` 「1980:1989」を返します。  
+  
+ [!code-vb[VbVbalrFunctions#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#45)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Start" />&lt; 0, <paramref name="Stop" /> &lt;= <paramref name="Start" />, or <paramref name="Interval" /> &lt; 1.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveSetting">
+      <MemberSignature Language="C#" Value="public static void SaveSetting (string AppName, string Section, string Key, string Setting);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void SaveSetting(string AppName, string Section, string Key, string Setting) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.SaveSetting(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AppName" Type="System.String" />
+        <Parameter Name="Section" Type="System.String" />
+        <Parameter Name="Key" Type="System.String" />
+        <Parameter Name="Setting" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AppName">必須です。 <see langword="String" />アプリケーションまたは、設定を適用するプロジェクトの名前を含む式です。</param>
+        <param name="Section">必須です。 <see langword="String" />キーの設定を保存するセクションの名前を含む式です。</param>
+        <param name="Key">必須です。 <see langword="String" />保存されているキーの設定の名前を含む式です。</param>
+        <param name="Setting">必須です。 これに値を含む式<c>キー</c>が設定されています。</param>
+        <summary>保存または Windows レジストリ内のアプリケーション エントリを作成します。 <see langword="My" />機能により、生産性とパフォーマンスの向上よりもレジストリ操作で<see langword="SaveSetting" />です。 詳細については、「<see cref="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SaveSetting`関数にキーを追加する`HKEY_CURRENT_USER\Software\VB and VBA Program Settings`です。  
+  
+ 何らかの理由は、キーの設定を保存できません、エラーが発生します。  
+  
+ `SaveSetting`ユーザーは、下で動作するためログインする必要があります、`HKEY_LOCAL_USER`レジストリ キーは、ユーザーが対話的にログオンするまでアクティブではありません。  
+  
+ いずれかで (Mtx.exe) など非対話型プロセスからアクセスすることは、レジストリ設定を保存するか、`HKEY_LOCAL_MACHINE\Software\`または`HKEY_USER\DEFAULT\Software`レジストリ キー。  
+  
+ `SaveSetting`requires `Write` and `Create`<xref:System.Security.Permissions.RegistryPermission> .  
+  
+   
+  
+## Examples  
+ 次の例を使用して、`SaveSetting`の Windows レジストリにエントリを作成する関数、`MyApp`アプリケーション、および、使用、`DeleteSetting`それらを削除する関数。  
+  
+ [!code-vb[VbVbalrCatRef#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#56)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">レジストリ キーを作成できませんでした、またはユーザーがログインしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Shell">
+      <MemberSignature Language="C#" Value="public static int Shell (string PathName, Microsoft.VisualBasic.AppWinStyle Style = Microsoft.VisualBasic.AppWinStyle.MinimizedFocus, bool Wait = false, int Timeout = -1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Shell(string PathName, valuetype Microsoft.VisualBasic.AppWinStyle Style, bool Wait, int32 Timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Shell(System.String,Microsoft.VisualBasic.AppWinStyle,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="PathName" Type="System.String" />
+        <Parameter Name="Style" Type="Microsoft.VisualBasic.AppWinStyle" />
+        <Parameter Name="Wait" Type="System.Boolean" />
+        <Parameter Name="Timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="PathName">必須です。 <see langword="String" />。 すべての必須の引数とコマンド ライン スイッチと共に、実行するプログラムの名前。 <c>パス名</c>ドライブとディレクトリのパスまたはフォルダーを含めることもできます。  
+  
+ 使用することができます、プログラムへのパスがわからない場合、<see cref="Overload:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles" />を検索します。 たとえば、呼び出す<c>不明な ("c:\"、true の場合、"testFile.txt")</c>、という名前のすべてのファイルの完全なパスが返されます<c>testFile.txt</c> c: ドライブに任意の場所\\.</param>
+        <param name="Style">省略可能です。 <see langword="AppWinStyle" />。 選択した値、<see cref="T:Microsoft.VisualBasic.AppWinStyle" />プログラムは実行するウィンドウのスタイルを指定します。 場合<c>スタイル</c>を省略すると、<see langword="Shell" />使用<see langword="AppWinStyle.MinimizedFocus" />、最小化し、フォーカスのあるプログラムを開始します。</param>
+        <param name="Wait">省略可能です。 <see langword="Boolean" />。 値を示すかどうか、<see langword="Shell" />関数は、プログラムの完了を待つ必要があります。 場合<c>待機</c>を省略すると、<see langword="Shell" />使用<see langword="False" />です。</param>
+        <param name="Timeout">省略可能です。 <see langword="Integer" />。 場合の完了を待機するミリ秒数<c>待機</c>は<see langword="True" />します。 場合<c>タイムアウト</c>を省略すると、 <see langword="Shell" /> -1 で、タイムアウトが存在しないことを意味を使用し、<see langword="Shell" />プログラムが終了するまでは返しません。 そのため、省略した場合<c>タイムアウト</c>または-1 で、it を可能であればセットを<see langword="Shell" />をプログラム制御を返さない可能性があります。</param>
+        <summary>実行可能プログラムを実行し、まだ実行されている場合は、プログラムのプロセス ID を表す整数を返します。</summary>
+        <returns>実行可能プログラムを実行し、まだ実行されている場合は、プログラムのプロセス ID を表す整数を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値、`Shell`関数は、プログラムがで指定されたかどうかに依存`PathName`がまだ実行中いつ`Shell`を返します。 設定した場合`Wait`に`True`タイムアウトになると、前に、プログラムが終了して`Shell`は 0 を返します。 省略した場合またはタイムアウトになると、`Wait`またはに設定する`False`、`Shell`プログラムのプロセス ID を返します。 プロセス ID は、実行中のプログラムを識別する一意の番号です。  
+  
+## <a name="failure-to-start"></a>起動の失敗  
+ 場合、`Shell`関数は、指定されたプログラムを開始できません、<xref:System.IO.FileNotFoundException>エラーが発生します。 これを行うなどのように、16 ビット プログラムを実行しようとしたときに`command.com`を使用して、アプリケーションから<xref:System.Windows.Forms?displayProperty=nameWithType>です。 この問題を回避するには、目的の 16 ビット プログラムを呼び出すの 32 ビット プログラムを実行することができます。 場合、 `command.com`、実行することができます`cmd.exe`代わりにします。  
+  
+## <a name="waiting-for-completion"></a>完了を待機しています  
+ 既定では、`Shell`関数では、プログラムを非同期的に実行されます。 これでプログラムが開始されていることを意味、`Shell`関数は、ステートメントの次の前に、で実行を終了しなくても、`Shell`関数が実行されます。 続行する前に終了するプログラムを待機する場合は、設定`Wait`に`True`です。  
+  
+## <a name="determining-the-exit-code"></a>終了コードを決定します。  
+ プロセスを返すことができます、*終了コード*が終了するとします。 ただし、使用することはできません`Shell`ためこの終了コードを取得する`Shell`連続コピーの終了まで待機する場合は 0 を返しますとも、プロセスで実行されるため、別のオブジェクトから`Shell`です。  
+  
+ プロセスの終了コードを取得するには、プロセスを開始および終了の待機に独自のコードを記述する必要があります。 次の例では、プロセスを開始、終了するまでお待ちしてアプリケーションの終了コードを取得する方法を示します。  
+  
+```vb  
+Dim procID As Integer  
+Dim newProc As Diagnostics.Process  
+newProc = Diagnostics.Process.Start("C:\WINDOWS\NOTEPAD.EXE")  
+procID = newProc.Id  
+newProc.WaitForExit()  
+Dim procEC As Integer = -1  
+If newProc.HasExited Then  
+    procEC = newProc.ExitCode  
+End If  
+MsgBox("Process with ID " & CStr(ProcID) & _  
+    " terminated with exit code " & CStr(procEC))  
+```  
+  
+## <a name="protecting-the-file-specification"></a>ファイルの仕様を保護します。  
+ 全体のパスとファイルの仕様は、次の例のように、引用符で常に囲む必要があります。  
+  
+```vb  
+ID = Shell("""C:\Program Files\display.exe"" -a -q", , True, 100000)  
+```  
+  
+ 隣接する二重引用符の各ペア (`" "`) 文字列内のリテラル文字列内の 1 つの二重引用符文字として解釈されます。 そのため、前の例に次の文字列を表示、`Shell`関数。  
+  
+```  
+"C:\Program Files\display.exe" -a -q  
+```  
+  
+ 引用符で囲まれたパスを使用する必要はありません、Windows がという名前のファイルの検索は`Program.exe`、C:\ ディレクトリ内の代わりに`display.exe`C:\Program Files ディレクトリにします。  
+  
+> [!IMPORTANT]
+>  引用符で囲まれたパスとファイルの仕様を囲まないで場合は、セキュリティ上のリスク ファイル名またはパスのノードにスペースが含まれている場合。 前の例では、パス ノードで`\Program Files`スペースが含まれています。 仕様引用符とという名前のプログラムの内部されなかったかどうか`Program.exe`c: でインストールされた\\、たとえば不正な方法で Windows が実行の代わりに`display.exe`です。  
+  
+> [!IMPORTANT]
+>  `Shell`関数が、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`Shell`ユーザーによって指定されたアプリケーションを実行する関数。 指定する<xref:Microsoft.VisualBasic.AppWinStyle?displayProperty=nameWithType>2 つ目として引数アプリケーションで通常のサイズが開き、フォーカスを移します。  
+  
+ [!code-vb[VbVbalrFunctions#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#47)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Style" />範囲 0 ~ 9、包括的内はありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <see langword="Shell" />見つからない、<paramref name="PathName" />ファイル。</exception>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="PathName" /> は <see langword="Nothing" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Switch">
+      <MemberSignature Language="C#" Value="public static object Switch (params object[] VarExpr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object Switch(object[] VarExpr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Interaction.Switch(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VarExpr" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="VarExpr">必須です。 <see langword="Object" />パラメーターの配列。 偶数個の要素が必要です。 一覧を指定する<see langword="Object" />変数または式は、コンマ、またはの 1 次元配列で区切られた<see langword="Object" />要素。</param>
+        <summary>式を返しますの一覧を評価、<see langword="Object" />あるリストで最初の式に対応する値<see langword="True" />です。</summary>
+        <returns>式を返しますの一覧を評価、<see langword="Object" />あるリストで最初の式に対応する値<see langword="True" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 引数が指定される`VarExpr`ペア式および値で構成されます。 `Switch`関数式を評価、奇数から最も低いインデックスの最高`VarExpr`、し、最初に評価された式に関連付けられている偶数の値を返します`True`です。 たとえば場合、`VarExpr(0)`は`True`、`Switch`を返します`VarExpr(1)`、場合`VarExpr(0)`は`False`が`VarExpr(2)`は`True`、`Switch`を返します`VarExpr(3)`などです。  
+  
+ 指定しない場合、`VarExpr`引数、`Switch`返します`Nothing`です。  
+  
+> [!NOTE]
+>  引数リスト内の式は、関数呼び出しを含めることができます。 呼び出しの引数リストの準備の一環として`Switch`、Visual Basic コンパイラは、すべての式ですべての関数を呼び出します。 つまり、引数リストの前の式がある場合は、呼び出されていない特定の関数には使用できません`True`です。  
+  
+   
+  
+## Examples  
+ 次の例では、`Switch`市区町村の名前に一致する言語の名前を返す関数。 いる必要があります`Option Strict`する`Off`です。  
+  
+ [!code-vb[VbVbalrFunctions#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#48)]  
+  
+ <xref:System.Diagnostics>名前空間と呼ばれるクラスも含まれています。 <xref:System.Diagnostics.Switch>、への呼び出し、`Switch`で関数を修飾する必要があります、<xref:Microsoft.VisualBasic>名前空間。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数の数が奇数です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

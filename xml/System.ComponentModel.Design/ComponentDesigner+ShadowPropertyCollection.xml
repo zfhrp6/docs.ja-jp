@@ -1,0 +1,78 @@
+<Type Name="ComponentDesigner+ShadowPropertyCollection" FullName="System.ComponentModel.Design.ComponentDesigner+ShadowPropertyCollection">
+  <TypeSignature Language="C#" Value="protected sealed class ComponentDesigner.ShadowPropertyCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi sealed beforefieldinit ComponentDesigner/ShadowPropertyCollection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentDesigner.ShadowPropertyCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>継承された既定値を上書きする必要がありますか、特定のプロパティの値を割り当てられているシャドウ プロパティのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ComponentDesigner.ShadowPropertyCollection>デザイン時にこれらのプロパティの他の値をオーバーライドする特定のプロパティの値のコレクションを格納します。 これはバック グラウンド フォームがある、表示されるプロパティを設定するときの状況で、特定のプロパティがなど、設定、特定の値にことを保証するために役立ちます`true`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ComponentDesigner.ShadowPropertyCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">コレクション内の確認対象のプロパティの名前。</param>
+        <summary>指定した名前と一致するプロパティがコレクション内に存在するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />プロパティ コレクション内に存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string propertyName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentDesigner.ShadowPropertyCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">コレクション内にアクセスするプロパティの名前。</param>
+        <summary>取得または指定したインデックスにあるオブジェクトを設定します。</summary>
+        <value>コレクション内に存在する場合は、指定したプロパティの値です。 それ以外の場合、値は、シャドウ プロパティの現在の値から取得されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティが影付きされていない場合、このメソッドは、プロパティの現在の値を返します。 したがって、プロパティが呼び出すことによりシャドウされているかどうかを確認しておくことは<xref:System.ComponentModel.Design.ComponentDesigner.ShadowPropertyCollection.Contains%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

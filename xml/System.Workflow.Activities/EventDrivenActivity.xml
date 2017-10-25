@@ -1,0 +1,142 @@
+<Type Name="EventDrivenActivity" FullName="System.Workflow.Activities.EventDrivenActivity">
+  <TypeSignature Language="C#" Value="public sealed class EventDrivenActivity : System.Workflow.Activities.SequenceActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventDrivenActivity extends System.Workflow.Activities.SequenceActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.EventDrivenActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.SequenceActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.EventDrivenDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Workflow.ComponentModel.Design.ActivityToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.EventDrivenActivity), "Resources.EventDriven.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.EventDrivenValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行がイベントによって初期化される <see cref="T:System.Workflow.ComponentModel.Activity" /> をラップします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ これは、イベントの処理に使用される <xref:System.Workflow.ComponentModel.CompositeActivity> です。通常、イベントは、遅延タイマーの期限切れに応答してホストまたはランタイムによって発生させることができます。 <xref:System.Workflow.Activities.EventDrivenActivity> は、<xref:System.Workflow.Activities.SequenceActivity> から継承されるため、これは、最初のアクティビティを <xref:System.Workflow.Activities.IEventActivity> にする必要があるという追加の制約が加えられたシーケンスです。  
+  
+ <xref:System.Workflow.Activities.EventDrivenActivity> は <xref:System.Workflow.ComponentModel.CompositeActivity> です。つまり、<xref:System.Workflow.Activities.EventDrivenActivity> には他のアクティビティを含めることができます。 <xref:System.Workflow.Activities.EventDrivenActivity> は、<xref:System.Workflow.Activities.SequenceActivity> アクティビティに似ています。ただし、いくつかの特性が追加されています。  
+  
+ <xref:System.Workflow.Activities.EventDrivenActivity> には、<xref:System.Workflow.Activities.ListenActivity>、<xref:System.Workflow.Activities.StateActivity>、または <xref:System.Workflow.Activities.StateMachineWorkflowActivity> である親が必要です。  
+  
+ <xref:System.Workflow.Activities.EventDrivenActivity> アクティビティの最初の子は、<xref:System.Workflow.Activities.IEventActivity> から継承するアクティビティである必要があります。 後続のすべての子アクティビティには、任意の型を使用できます。 <xref:System.Workflow.Activities.IEventActivity> は、ブロックし、タイマーの開始、メッセージの到着など、保留中の一部のイベントを待機します。 イベントが発生すると、<xref:System.Workflow.Activities.IEventActivity> は実行を終了し、後続のすべてのアクティビティが実行されます。  
+  
+ <xref:System.Workflow.Activities.StateMachineWorkflowActivity> が <xref:System.Workflow.Activities.EventDrivenActivity> を格納しているとき、<xref:System.Workflow.Activities.EventDrivenActivity> にはいくつかの制約があります。  
+  
+-   <xref:System.Workflow.Activities.EventDrivenActivity> に格納できるアクティビティは 1 つだけで、型は <xref:System.Workflow.Activities.IEventActivity> に制限されます。  
+  
+-   <xref:System.Workflow.Activities.HandleExternalEventActivity> を最初の子アクティビティにする必要があります。 <xref:System.Workflow.Activities.HandleExternalEventActivity> が最初の子でない場合は、<xref:System.Workflow.Activities.EventDrivenActivity> を子アクティビティのイベント ハンドラーに入れることも、<xref:System.Workflow.Activities.HandleExternalEventActivity> の子にすることもできません。  
+  
+-   最初のアクティビティが <xref:System.Workflow.Activities.HandleExternalEventActivity> であれば、イベント ハンドラーはどのアクティビティでも格納できます。 <xref:System.Workflow.Activities.HandleExternalEventActivity> 以外のアクティビティが <xref:System.Workflow.Activities.EventDrivenActivity> に格納されている場合、そのアクティビティにはイベント ハンドラーを設定できません。  
+  
+ たとえば、イベント処理をサポートするアクティビティは <xref:System.Workflow.Activities.EventDrivenActivity> の内部で使用できますが、このアクティビティにはイベント ハンドラーを関連付けることができません。  
+  
+ また、<xref:System.Workflow.Activities.EventDrivenActivity> は <xref:System.Workflow.Activities.ConditionedActivityGroup> を格納できますが、<xref:System.Workflow.Activities.ConditionedActivityGroup> は <xref:System.Workflow.Activities.HandleExternalEventActivity> クラスを格納できません。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.EventDrivenActivity> を使用してステート マシンの遷移を実行する方法を次のコード例に示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#185](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#185)]
+ [!code-vb[wf_samples#185](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#185)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDrivenActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventDrivenActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.EventDrivenActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.EventDrivenActivity> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#187](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#187)]
+ [!code-vb[wf_samples#187](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#187)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDrivenActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventDrivenActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティのユーザー識別名。</param>
+        <summary>アクティビティ名を使用して、<see cref="T:System.Workflow.Activities.EventDrivenActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventActivity">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.IEventActivity EventActivity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.IEventActivity EventActivity" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.EventDrivenActivity.EventActivity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.IEventActivity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更を発生させるイベント アクティビティを取得します。</summary>
+        <value>変更を発生させるイベント アクティビティ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

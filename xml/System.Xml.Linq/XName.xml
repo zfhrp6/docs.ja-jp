@@ -1,0 +1,1001 @@
+<Type Name="XName" FullName="System.Xml.Linq.XName">
+  <TypeSignature Language="C#" Value="public sealed class XName : IEquatable&lt;System.Xml.Linq.XName&gt;, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit XName extends System.Object implements class System.IEquatable`1&lt;class System.Xml.Linq.XName&gt;, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.Linq</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Xml.Linq.XName&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.KnownType(typeof(System.Xml.Linq.NameSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML 要素または属性の名前を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 名には、名前空間とローカル名が含まれます。 A*完全修飾名*は名前空間とローカル名の組み合わせです。  
+  
+## <a name="creating-an-xname-object"></a>XName オブジェクトを作成します。  
+ <xref:System.Xml.Linq.XName>パブリック コンス トラクターは含まれません。 このクラスから暗黙的な変換は、代わりに、<xref:System.String>を作成することができます、<xref:System.Xml.Linq.XName>です。 この変換を使用する最も一般的な場所は、要素または属性を構築するときに: 最初の引数、<xref:System.Xml.Linq.XElement>コンス トラクターは、<xref:System.Xml.Linq.XName>です。 文字列を渡すことで活用する暗黙的な変換です。 次のコードでは、ない名前空間の名前を持つ要素を作成します。  
+  
+```csharp  
+  
+                XElement root = new XElement("ElementName", "content");  
+Console.WriteLine(root);  
+```  
+  
+ Visual basic では、XML リテラルを使用する適切なは。  
+  
+```vb  
+  
+                Dim root As XElement = <ElementName>content</ElementName>  
+Console.WriteLine(root)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```xml  
+  
+<ElementName>content</ElementName>  
+```  
+  
+ 文字列を割り当てる、<xref:System.Xml.Linq.XName>から暗黙の変換を使用して<xref:System.String>です。  
+  
+ Visual Basic の例を作成、 <xref:System.Xml.Linq.XElement> XML リテラルを使用します。 XML リテラルを使用する場合でも、<xref:System.Xml.Linq.XName>にオブジェクトを作成、<xref:System.Xml.Linq.XElement>です。  
+  
+ さらに、呼び出す、<xref:System.Xml.Linq.XName.Get%2A>のメソッド、<xref:System.Xml.Linq.XName>オブジェクト。 ただし、推奨される方法は、文字列からの暗黙的な変換を使用するです。  
+  
+## <a name="creating-an-xname-in-a-namespace"></a>Namespace XName を作成します。  
+ 同様に、XML、<xref:System.Xml.Linq.XName>名前空間に置くか、名前空間なしで実行できます。  
+  
+ C# の場合、作成するための推奨アプローチ、<xref:System.Xml.Linq.XName>名前空間で宣言には、<xref:System.Xml.Linq.XNamespace>オブジェクト、し、加算演算子の上書きを使用しています。  
+  
+ Visual Basic では、XML リテラルおよびグローバル名前空間宣言を使用して、名前空間に含まれる XML を作成することをお勧めします。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "ElementName", "content");  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <ElementName>content</ElementName>  
+        Console.WriteLine(root)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```xml  
+  
+<ElementName xmlns="http://www.adventure-works.com">content</ElementName>  
+```  
+  
+## <a name="creating-an-xname-in-no-namespace"></a>ない Namespace XName を作成します。  
+ <xref:System.Xml.Linq.XName.Namespace%2A>のプロパティ、<xref:System.Xml.Linq.XName>オブジェクトはありません、null にすることが保証されます。 場合、<xref:System.Xml.Linq.XName>ない名前空間には、<xref:System.Xml.Linq.XName.Namespace%2A>プロパティ設定されます<xref:System.Xml.Linq.XNamespace.None%2A>です。 次のコードでは、これを示しています。  
+  
+```csharp  
+  
+                XElement root = new XElement("ElementName", "content");  
+if (root.Name.Namespace == XNamespace.None)  
+    Console.WriteLine("The element is in no namespace.");  
+else  
+    Console.WriteLine("The element is in a namespace.");  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <ElementName>content</ElementName>  
+If (root.Name.Namespace Is XNamespace.None) Then  
+    Console.WriteLine("The element is in no namespace.")  
+Else  
+    Console.WriteLine("The element is in a namespace.")  
+End If  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+The element is in no namespace.  
+```  
+  
+## <a name="using-expanded-names"></a>拡張名の使用  
+ 作成することも、<xref:System.Xml.Linq.XName>形式で展開された XML 名から`{namespace}localname`:  
+  
+```csharp  
+  
+                XElement root = new XElement("{http://www.adventure-works.com}ElementName", "content");  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = New XElement("{http://www.adventure-works.com}ElementName", "content")  
+Console.WriteLine(root)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```xml  
+  
+<ElementName xmlns="http://www.adventure-works.com">content</ElementName>  
+```  
+  
+ 注意してくださいを作成する、<xref:System.Xml.Linq.XName>拡張名が作成するよりも効率が低下、<xref:System.Xml.Linq.XNamespace>オブジェクトと、加算演算子の上書きを使用します。 グローバル名前空間をインポートして、Visual Basic で XML リテラルを使用するよりも非効率です。  
+  
+ 作成する場合、<xref:System.Xml.Linq.XName>拡張名を使用して、LINQ to XML は名前空間のアトミック化されたインスタンスを検索する必要があります。 この作業は、拡張名を使用するたびに繰り返す必要があります。 この余分な時間は、LINQ クエリを作成するときに、ごくわずかでありする可能性があります。ただし、あります大幅な大きい XML ツリーを作成するときにします。  
+  
+## <a name="xname-objects-are-atomized"></a>XName オブジェクトは、アトミック化します。  
+ <xref:System.Xml.Linq.XName>オブジェクトはアトミック化することが保証されます。つまり、2 つ<xref:System.Xml.Linq.XName>正確に同じ名前空間と同じローカル名とまったく同じオブジェクトがある、同じインスタンスを共有します。 等値演算子および比較演算子は、この目的でも明示的に指定します。  
+  
+ その他の利点は、この機能は、高速なクエリを実行できます。 要素または属性の名前をフィルター処理、述語で、比較演算子は、identity 比較値を比較できませんを使用します。 2 つの参照が実際には 2 つの文字列を比較するよりも、同じオブジェクトを参照しているかを決定する方が速くなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Xml.Linq.XName" />現在と比較する<see cref="T:System.Xml.Linq.XName" />です。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Xml.Linq.XName" />がこれに等しい<see cref="T:System.Xml.Linq.XName" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Xml.Linq.XName" />が現在に等しい<see cref="T:System.Xml.Linq.XName" />それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの<xref:System.Xml.Linq.XName>するオブジェクトと等しく、同じ拡張名がある必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Get">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Linq.XName" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成するためのオーバー ロードを提供する、<xref:System.Xml.Linq.XName>拡張 XML 名から。 作成することができます、<xref:System.Xml.Linq.XName>形式の文字列から`{namespace}localname`、または名前空間とローカル名が、個別に指定します。  
+  
+ 一般的なと簡単に作成する方法、<xref:System.Xml.Linq.XName>文字列からの暗黙的な変換を使用することです。 名前空間内にある名前を作成する、一般的には結合することができます加算演算子オーバー ロードを使用して、<xref:System.Xml.Linq.XNamespace>オブジェクトおよび文字列。  
+  
+ 詳細と例については、次を参照してください。[する方法: 名前空間 (c#) (LINQ to XML) を持つドキュメントを作成する](http://msdn.microsoft.com/library/af4a595e-ffb2-4187-a61b-d5ed71642c4c)です。  
+  
+ 内の名前空間を使用する方法についての[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]を参照してください[Visual Basic (LINQ to XML) の名前空間](http://msdn.microsoft.com/library/10b7ba7b-518c-4f14-899f-892575d14dcc)です。  
+  
+ <xref:System.Xml.Linq.XName>既存がある場合、オブジェクトをアトミック<xref:System.Xml.Linq.XName>と同じ名前を正確に割り当てられている変数は既存を参照<xref:System.Xml.Linq.XName>です。 既存がない場合は<xref:System.Xml.Linq.XName>、新しい 1 つが作成され初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public static System.Xml.Linq.XName Get (string expandedName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Linq.XName Get(string expandedName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expandedName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expandedName">A<see cref="T:System.String" />形式で展開された XML 名を格納している<c>{名前空間} localname</c>です。</param>
+        <summary>取得、<see cref="T:System.Xml.Linq.XName" />展開名からのオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Linq.XName" />展開名から構築されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには作成するためのオーバー ロードが含まれています、<xref:System.Xml.Linq.XName>です。 フォーム内の拡張の XML 名から作成することができます`{namespace}localname`、または名前空間とローカル名が、個別に指定します。  
+  
+ 一般的なと簡単に作成する方法、<xref:System.Xml.Linq.XName>文字列からの暗黙的な変換を使用することです。  
+  
+ <xref:System.Xml.Linq.XName>既存がある場合は、アトミックは<xref:System.Xml.Linq.XName>と同じ名前を正確に割り当てられている変数は既存を参照<xref:System.Xml.Linq.XName>です。 既存がない場合は<xref:System.Xml.Linq.XName>、新しい 1 つが作成され初期化します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+```csharp  
+  
+                XName name = XName.Get("{http://www.adventure-works.com}Root");  
+XElement el = new XElement(name, "content");  
+Console.WriteLine(el);  
+  
+// This is the preferred approach for specifying the XName in the  
+// constructor of XElement.  
+XNamespace aw = "http://www.adventure-works.com";  
+XElement el2 = new XElement(aw + "Root", "content");  
+Console.WriteLine(el2);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim name As XName = XName.Get("{http://www.adventure-works.com}Root")  
+        Dim el As XElement = New XElement(name, "content")  
+        Console.WriteLine(el)  
+  
+        ' The preferred approach for specifying an XName in a namespace  
+        ' for Visual Basic is to import a global namespace.  
+        Dim el2 As XElement = <Root>content</Root>  
+        Console.WriteLine(el2)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<Root xmlns="http://www.adventure-works.com">content</Root>  
+<Root xmlns="http://www.adventure-works.com">content</Root>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public static System.Xml.Linq.XName Get (string localName, string namespaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Linq.XName Get(string localName, string namespaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.Get(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">ローカルの (非修飾) 名。</param>
+        <param name="namespaceName">XML 名前空間。</param>
+        <summary>取得、<see cref="T:System.Xml.Linq.XName" />ローカル名と名前空間からのオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Linq.XName" />指定されたローカル名と名前空間から作成されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには作成するためのオーバー ロードが含まれています、<xref:System.Xml.Linq.XName>です。 フォーム内の拡張の XML 名から作成することができます`{namespace}localname`、または名前空間とローカル名が、個別に指定します。  
+  
+ 一般的なと簡単に作成する方法、<xref:System.Xml.Linq.XName>文字列からの暗黙的な変換を使用することです。  
+  
+ <xref:System.Xml.Linq.XName>既存がある場合は、アトミックは<xref:System.Xml.Linq.XName>と同じ名前を正確に割り当てられている変数は既存を参照<xref:System.Xml.Linq.XName>です。 既存がない場合は<xref:System.Xml.Linq.XName>、新しい 1 つが作成され初期化します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドの使用方法を示します。  
+  
+```csharp  
+  
+                XName name = XName.Get("Root", "http://www.adventure-works.com");  
+XElement el = new XElement(name, "content");  
+Console.WriteLine(el);  
+  
+// This is the preferred form.  
+XNamespace aw = "http://www.adventure-works.com";  
+XElement el2 = new XElement(aw + "Root", "content");  
+Console.WriteLine(el2);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim name As XName = XName.Get("{http://www.adventure-works.com}Root")  
+        Dim el As XElement = New XElement(name, "content")  
+        Console.WriteLine(el)  
+  
+        ' The preferred approach for specifying an XName in a namespace  
+        ' for Visual Basic is to import a global namespace.  
+        Dim el2 As XElement = <Root>content</Root>  
+        Console.WriteLine(el2)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+<Root xmlns="http://www.adventure-works.com">content</Root>  
+<Root xmlns="http://www.adventure-works.com">content</Root>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Xml.Linq.XName" /> のハッシュ コードを取得します。</summary>
+        <returns><see cref="T:System.Int32" />のハッシュ コードを格納している、<see cref="T:System.Xml.Linq.XName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ハッシュ関数として機能<xref:System.Xml.Linq.XName>します。 使用することができます<xref:System.Xml.Linq.XName.GetHashCode%2A>ハッシュ アルゴリズム、またはハッシュ テーブルなどのデータ構造です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XName.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前のローカルの (非修飾) 部分を取得します。</summary>
+        <value>A<see cref="T:System.String" />名前のローカルの (非修飾) 部分を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがあることが保証されません`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの使用を示します。  
+  
+```csharp  
+  
+                XNamespace ns = "http://www.adventure-works.com";  
+XElement root = new XElement(ns + "Root", "content");  
+Console.WriteLine(root.Name);  
+Console.WriteLine(root.Name.LocalName);  
+Console.WriteLine(root.Name.Namespace);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <Root/>  
+        Console.WriteLine(root.Name)  
+        Console.WriteLine(root.Name.LocalName)  
+        Console.WriteLine(root.Name.Namespace)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+{http://www.adventure-works.com}Root  
+Root  
+http://www.adventure-works.com  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XNamespace Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XNamespace Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XName.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XNamespace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全修飾名の名前空間の部分を取得します。</summary>
+        <value><see cref="T:System.Xml.Linq.XNamespace" />名の名前空間の部分を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Linq.XName.Namespace%2A> プロパティが `null` になることはありません。 場合、<xref:System.Xml.Linq.XName>ない名前空間には、このプロパティを返します<xref:System.Xml.Linq.XNamespace.None%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの使用を示します。  
+  
+```csharp  
+  
+                XNamespace ns = "http://www.adventure-works.com";  
+XElement root = new XElement(ns + "Root", "content");  
+Console.WriteLine(root.Name);  
+Console.WriteLine(root.Name.LocalName);  
+Console.WriteLine(root.Name.Namespace);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <Root/>  
+        Console.WriteLine(root.Name)  
+        Console.WriteLine(root.Name.LocalName)  
+        Console.WriteLine(root.Name.Namespace)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+{http://www.adventure-works.com}Root  
+Root  
+http://www.adventure-works.com  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceName">
+      <MemberSignature Language="C#" Value="public string NamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XName.NamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI を返します、<see cref="T:System.Xml.Linq.XNamespace" />この<see cref="T:System.Xml.Linq.XName" />です。</summary>
+        <value>URI、<see cref="T:System.Xml.Linq.XNamespace" />この<see cref="T:System.Xml.Linq.XName" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これから名前空間の名前を取得する便利なプロパティ、<xref:System.Xml.Linq.XName>です。  
+  
+   
+  
+## Examples  
+ この例では、名前空間、要素を作成し、次に、要素の名前空間を出力します。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "Root");  
+Console.WriteLine(root.Name.NamespaceName);  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <Root/>  
+        Console.WriteLine(root.Name.NamespaceName)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+http://www.adventure-works.com  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Xml.Linq.XName left, System.Xml.Linq.XName right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Xml.Linq.XName left, class System.Xml.Linq.XName right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.op_Equality(System.Xml.Linq.XName,System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Xml.Linq.XName" />
+        <Parameter Name="right" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Xml.Linq.XName" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary><see cref="T:System.Xml.Linq.XName" /> の 2 つのインスタンスが等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="left" />と<paramref name="right" />と同じです。 それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 演算子のオーバー ロード`==`と`!=`間の比較を有効にするためには、<xref:System.Xml.Linq.XName>と`string`など`element.Name == "SomeElementName"`です。 定義済みの参照の等値演算子 (C#) では、参照変換でのみ、他の型に変換する 1 つのオペランドが必要です。 これらの演算子は、文字列からの暗黙的な変換を考慮しない<xref:System.Xml.Linq.XName>です。  
+  
+ この演算子を同等の方法は? qualifyHint = True & autoUpgrade = False  
+  
+## Examples  
+ 次の例では、いくつかの比較<xref:System.Xml.Linq.XName>オブジェクトと文字列。  
+  
+```csharp  
+  
+                XName xn;  
+xn = XName.Get("Root");  
+Console.WriteLine(xn == "Root");  
+  
+xn = XName.Get("Root", "http://www.adventure-works.com");  
+Console.WriteLine(xn == "{http://www.adventure-works.com}Root");  
+  
+XElement root = new XElement("Root", "content");  
+Console.WriteLine(root.Name == "Root");  
+```  
+  
+```vb  
+  
+                Dim xn As XName  
+xn = XName.Get("Root")  
+Console.WriteLine(xn = "Root")  
+  
+xn = XName.Get("Root", "http://www.adventure-works.com")  
+Console.WriteLine(xn = "{http://www.adventure-works.com}Root")  
+  
+Dim root As XElement = New XElement("Root", "content")  
+Console.WriteLine(root.Name = "Root")  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+True  
+True  
+True  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Xml.Linq.XName (string expandedName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Xml.Linq.XName op_Implicit(string expandedName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.op_Implicit(System.String)~System.Xml.Linq.XName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expandedName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expandedName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Xml.Linq.XName left, System.Xml.Linq.XName right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Xml.Linq.XName left, class System.Xml.Linq.XName right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.op_Inequality(System.Xml.Linq.XName,System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Xml.Linq.XName" />
+        <Parameter Name="right" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Xml.Linq.XName" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Xml.Linq.XName" />。</param>
+        <summary>2 つのインスタンスかどうかを示す値を返しますの<see cref="T:System.Xml.Linq.XName" />が等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="left" />と<paramref name="right" />が等しくない。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 演算子のオーバー ロード`==`と`!=`間の比較を有効にするためには、<xref:System.Xml.Linq.XName>文字列、およびなど`element.Name == "SomeElementName"`です。 定義済みの参照の等値演算子 (C#) では、参照変換でのみ、他の型に変換する 1 つのオペランドが必要です。 これらの演算子は、文字列からの暗黙的な変換を考慮しない<xref:System.Xml.Linq.XName>です。  
+  
+ この演算子を同等の方法は? qualifyHint = True & autoUpgrade = False  
+  
+## Examples  
+ 次の c# の例を比較して、<xref:System.Xml.Linq.XName>オブジェクトを文字列は、この操作を呼び出します。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "Root", "content");  
+  
+Console.WriteLine(root.Name != "{http://www.adventure-works.com}Root");  
+  
+// the following is the preferred idiom  
+Console.WriteLine(root.Name != aw + "Root");  
+```  
+  
+```vb  
+  
+                Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <Root>content</Root>  
+        Console.WriteLine(root.Name <> "{http://www.adventure-works.com}Root")  
+  
+        ' the following is the preferred idiom  
+        Console.WriteLine(root.Name <> GetXmlNamespace() + "Root")  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+False  
+False  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IEquatable&lt;System.Xml.Linq.XName&gt;.Equals">
+      <MemberSignature Language="C#" Value="bool IEquatable&lt;XName&gt;.Equals (System.Xml.Linq.XName other);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IEquatable&lt;System.Xml.Linq.XName&gt;.Equals(class System.Xml.Linq.XName other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.System#IEquatable&lt;System#Xml#Linq#XName&gt;#Equals(System.Xml.Linq.XName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Xml.Linq.XName" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Xml.Linq.XName" />これと比較する<see cref="T:System.Xml.Linq.XName" />です。</param>
+        <summary>示すかどうか、現在<see cref="T:System.Xml.Linq.XName" />が、指定したのと等しい<see cref="T:System.Xml.Linq.XName" />。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xml.Linq.XName" />が、指定したのと等しい<see cref="T:System.Xml.Linq.XName" />それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、ターゲット オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、LINQ には to XML オブジェクトが含まれているオブジェクト グラフのシリアル化に内部的に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XName.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>形式で展開された XML の名前を返します<c>{名前空間} localname</c>です。</summary>
+        <returns>A<see cref="T:System.String" />形式で展開された XML 名を含む<c>{名前空間} localname</c>です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Console.WriteLine%2A>渡す、<xref:System.Xml.Linq.XName>です。 これにより、<xref:System.Xml.Linq.XName.ToString%2A>に呼び出されるメソッド。  
+  
+```csharp  
+  
+                XNamespace ns = "http://www.adventure-works.com";  
+XElement root = new XElement(ns + "Root", "content");  
+Console.WriteLine(root.Name);  
+Console.WriteLine(root.Name.LocalName);  
+Console.WriteLine(root.Name.Namespace);  
+```  
+  
+```vb  
+Imports <xmlns="http://www.adventure-works.com">  
+  
+Module Module1  
+    Sub Main()  
+        Dim root As XElement = <Root>content</Root>  
+        Console.WriteLine(root.Name)  
+        Console.WriteLine(root.Name.LocalName)  
+        Console.WriteLine(root.Name.Namespace)  
+    End Sub  
+End Module  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+{http://www.adventure-works.com}Root  
+Root  
+http://www.adventure-works.com  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

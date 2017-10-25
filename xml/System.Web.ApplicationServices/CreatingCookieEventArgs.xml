@@ -1,0 +1,203 @@
+<Type Name="CreatingCookieEventArgs" FullName="System.Web.ApplicationServices.CreatingCookieEventArgs">
+  <TypeSignature Language="C#" Value="public class CreatingCookieEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CreatingCookieEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.CreatingCookieEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ApplicationServices.AuthenticationService.CreatingCookie" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.CreatingCookieEventArgs>クラスにいずれかの値を指定する<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント ハンドラー。 このクラスのプロパティを使用すると、カスタム認証クッキーを作成するときにユーザーの資格情報を取得できます。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService>クラスが生成、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>ユーザーの資格情報が認証された後に、認証 cookie を設定したときにイベント。 <xref:System.Web.ApplicationServices.AuthenticationService>構成体をクラス、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>オブジェクトを任意に渡します。<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント ハンドラー。  
+  
+ ユーザーの資格情報を取得する、 <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.UserName%2A> <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.Password%2A>、および<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティです。 <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティは、id 番号など、認証のために必要な任意のカスタム値を含めることができます。 <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.IsPersistent%2A>プロパティは、過去の現在のセッションの認証クッキーを保持するかどうかを示します。 設定、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet%2A>プロパティを`true`認証クッキーを作成する場合できるように、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、cookie を作成できません。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 ハンドラーがユーザーからの値を取得、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>認証クッキーをカスタマイズするオブジェクト。 ハンドラーがから値を保存、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>認証チケットおよびセット内のプロパティ、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet%2A>プロパティを`true`認証 cookie が作成されたことを示すためにします。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CookieIsSet">
+      <MemberSignature Language="C#" Value="public bool CookieIsSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CookieIsSet" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証クッキーが作成されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />認証 cookie が作成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService>クラスのチェック、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet%2A>認証 cookie が作成されているかどうかを決定するプロパティです。 この値を設定する`true`のイベント ハンドラーで、認証 cookie を作成するかどうか、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 場合<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet%2A>に設定されている`false`(既定値)、<xref:System.Web.ApplicationServices.AuthenticationService>クラスには、認証 cookie が作成されますが、このハンドラーで作成したすべての cookie が上書きされます、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 ハンドラーがユーザーからの値を取得、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>認証クッキーをカスタマイズするオブジェクト。 <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CookieIsSet%2A>プロパティに設定されている`true`認証チケットの作成後にします。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCredential">
+      <MemberSignature Language="C#" Value="public string CustomCredential { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomCredential" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーによって提供される追加の認証の値を取得します。</summary>
+        <value>ユーザー名とパスワード以外の認証に必要なカスタム値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>認証チケットのカスタム値を取得するプロパティです。 <xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティに渡された値が含まれています、<xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドです。 通常、このプロパティは、ユーザー名と id 番号などのパスワードを使用して検証する必要がありますをカスタム値を渡すため使用されます。 解析する必要があります複数の値がプロパティに格納されている場合、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティの値を取得するためにします。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 ハンドラーがユーザーからの値を取得、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>認証クッキーをカスタマイズするためにオブジェクト。 渡された値、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>でプロパティが格納されている、<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>フォーム認証チケットのプロパティです。  
+  
+> [!NOTE]
+>  ストア、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティ内のデータは区別されないことがわかっている場合にのみ、クッキー内のプロパティです。 悪意のあるユーザーは、cookie の値にアクセスできます。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersistent">
+      <MemberSignature Language="C#" Value="public bool IsPersistent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersistent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.CreatingCookieEventArgs.IsPersistent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッション以降、認証 cookie を保持するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のセッション以降、cookie を保持する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.Security.FormsAuthenticationTicket>オブジェクトを使用する、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.IsPersistent%2A>プロパティを現在のセッション以降、認証 cookie を保持するかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 ハンドラーがユーザーからの値を取得、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>認証クッキーをカスタマイズするためにオブジェクト。 <xref:System.Web.Security.FormsAuthenticationTicket.IsPersistent%2A>のプロパティ、<xref:System.Web.Security.FormsAuthenticationTicket>オブジェクトがの値に設定されている、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.IsPersistent%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.CreatingCookieEventArgs.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのパスワードを取得します。</summary>
+        <value>認証のユーザーによって提供されるパスワードです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.Password%2A>認証チケットのカスタム値を設定するときにパスワードを取得するプロパティです。  
+  
+> [!NOTE]
+>  値を保存しないで、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.Password%2A>認証チケット内のプロパティです。 悪意のあるユーザーは、cookie にアクセスし、cookie が暗号化されている場合でもパスワードを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.CreatingCookieEventArgs.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーの名前を取得します。</summary>
+        <value>認証のためにユーザーによって指定される名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.UserName%2A>認証チケットのカスタム値を設定すると、認証名を取得するプロパティです。 通常、設定、<xref:System.Web.Security.FormsAuthenticationTicket.Name%2A>のプロパティ、<xref:System.Web.Security.FormsAuthenticationTicket>オブジェクトを<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.UserName%2A>値。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 ハンドラーがユーザーからの値を取得、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs>認証クッキーをカスタマイズするオブジェクト。 <xref:System.Web.Security.FormsAuthenticationTicket.Name%2A>の値に設定されて、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.UserName%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

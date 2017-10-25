@@ -1,0 +1,422 @@
+<Type Name="TypeUsage" FullName="System.Data.Metadata.Edm.TypeUsage">
+  <TypeSignature Language="C#" Value="public sealed class TypeUsage : System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeUsage extends System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.TypeUsage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.MetadataItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("EdmType={EdmType}, Facets.Count={Facets.Count}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型と、その型のファセットのセットを記述します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuiltInTypeKind">
+      <MemberSignature Language="C#" Value="public override System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.TypeUsage.BuiltInTypeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.BuiltInTypeKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> の組み込み型種別を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" /> の組み込み型種別を表す <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBinaryTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateBinaryTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isFixedLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateBinaryTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isFixedLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateBinaryTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="isFixedLength" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <param name="isFixedLength">
+          <see langword="true" />バイナリ型の長さを固定; に設定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたファセット値を使用してバイナリ型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクトを作成します。</summary>
+        <returns>指定されたファセット値を使用してバイナリ型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイナリ型の詳細については、次を参照してください。[バイナリ (EDM)](http://msdn.microsoft.com/en-us/ca858ce4-62d3-4516-bfb1-8a943dc66c61)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBinaryTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateBinaryTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isFixedLength, int maxLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateBinaryTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isFixedLength, int32 maxLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateBinaryTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="isFixedLength" Type="System.Boolean" />
+        <Parameter Name="maxLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <param name="isFixedLength">
+          <see langword="true" />バイナリ型の長さを固定; に設定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="maxLength">バイナリ型の最大長。</param>
+        <summary>指定されたファセット値を使用してバイナリ型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクトを作成します。</summary>
+        <returns>指定されたファセット値を使用してバイナリ型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイナリ型の詳細については、次を参照してください。[バイナリ (EDM)](http://msdn.microsoft.com/en-us/ca858ce4-62d3-4516-bfb1-8a943dc66c61)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDateTimeOffsetTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateDateTimeOffsetTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, Nullable&lt;byte&gt; precision);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateDateTimeOffsetTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, valuetype System.Nullable`1&lt;unsigned int8&gt; precision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateDateTimeOffsetTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Nullable{System.Byte})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="precision" Type="System.Nullable&lt;System.Byte&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">オフセットの測定単位を定義する単純型です。</param>
+        <param name="precision">粒度の程度、<see cref="T:System.DateTimeOffset" />秒の小数部は、サポートされている小数点以下桁数に基づきます。 たとえば、3 の場合、サポートされる単位の精度はミリ秒です。</param>
+        <summary>作成、<see cref="T:System.Data.Metadata.Edm.DateTimeOffsetTypeUsage" />パラメーターを記述する型のオブジェクト。</summary>
+        <returns><see cref="T:System.Data.Metadata.Edm.DateTimeOffsetTypeUsage" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDateTimeTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateDateTimeTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, Nullable&lt;byte&gt; precision);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateDateTimeTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, valuetype System.Nullable`1&lt;unsigned int8&gt; precision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateDateTimeTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Nullable{System.Byte})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="precision" Type="System.Nullable&lt;System.Byte&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">単純型の測定単位を定義する、<see cref="T:System.DateTime" />オブジェクト。</param>
+        <param name="precision">粒度の程度、<see cref="T:System.DateTimeOffset" />秒の小数部は、サポートされている小数点以下桁数に基づきます。 たとえば、3 の場合、サポートされる単位の精度はミリ秒です。</param>
+        <summary>作成、<see cref="T:System.Data.Metadata.Edm.DateTimeTypeUsage" />パラメーターを記述する型のオブジェクト。</summary>
+        <returns><see cref="T:System.Data.Metadata.Edm.DateTimeTypeUsage" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecimalTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateDecimalTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateDecimalTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateDecimalTypeUsage(System.Data.Metadata.Edm.PrimitiveType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <summary>制限のない有効桁数ファセット値および小数部桁数ファセット値を使用して 10 進数型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクトを作成します。</summary>
+        <returns>制限のない有効桁数ファセット値および小数部桁数ファセット値を使用して 10 進数型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 10 進数型の詳細については、次を参照してください。 [Decimal(EDM)](http://msdn.microsoft.com/en-us/99239537-0336-4705-b581-a79d89430bc7)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecimalTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateDecimalTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, byte precision, byte scale);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateDecimalTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, unsigned int8 precision, unsigned int8 scale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateDecimalTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Byte,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="precision" Type="System.Byte" />
+        <Parameter Name="scale" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <param name="precision">種類として 10 進数型の有効桁数<see cref="T:System.Byte" />です。</param>
+        <param name="scale">種類として 10 進数型の小数点以下桁数<see cref="T:System.Byte" />です。</param>
+        <summary>指定されたファセット値を使用して 10 進数型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクトを作成します。</summary>
+        <returns>指定されたファセット値を使用して 10 進数型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 10 進数型の詳細については、次を参照してください。 [Decimal(EDM)](http://msdn.microsoft.com/en-us/99239537-0336-4705-b581-a79d89430bc7)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateDefaultTypeUsage (System.Data.Metadata.Edm.EdmType edmType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateDefaultTypeUsage(class System.Data.Metadata.Edm.EdmType edmType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateDefaultTypeUsage(System.Data.Metadata.Edm.EdmType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmType" Type="System.Data.Metadata.Edm.EdmType" />
+      </Parameters>
+      <Docs>
+        <param name="edmType">対応する <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <summary>作成、<see cref="T:System.Data.Metadata.Edm.TypeUsage" />の指定された概念モデル型のオブジェクト。</summary>
+        <returns>指定された <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> の既定のファセット値を持つ <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.Metadata.Edm.EdmType>などのプリミティブ型は、 `String`、 `Decimal`、`Binary`または`DateTime`、このメソッドは、対応するで宣言されたメソッドのいずれか、<xref:System.Data.Metadata.Edm.TypeUsage>クラスです。 それ以外の場合、指定された <xref:System.Data.Metadata.Edm.TypeUsage> を持つ <xref:System.Data.Metadata.Edm.EdmType> オブジェクトを直接作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStringTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateStringTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isUnicode, bool isFixedLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateStringTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isUnicode, bool isFixedLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateStringTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="isUnicode" Type="System.Boolean" />
+        <Parameter Name="isFixedLength" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <param name="isUnicode">
+          <see langword="true" />文字エンコーディングを設定する; unicode 文字列型の標準それ以外の場合、<see langword="false" />です。</param>
+        <param name="isFixedLength">
+          <see langword="true" />固定; に、文字列型の長さを設定するにはそれ以外の場合<see langword="false" /></param>
+        <summary>作成、<see cref="T:System.Data.Metadata.Edm.TypeUsage" />指定されたファセット値を使用して、文字列型を記述するオブジェクトと制限のない<see langword="MaxLength" />です。</summary>
+        <returns>A<see cref="T:System.Data.Metadata.Edm.TypeUsage" />指定されたファセット値を使用して、文字列型を記述するオブジェクトと制限のない<see langword="MaxLength" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列型の詳細については、次を参照してください。[文字列 (EDM)](http://msdn.microsoft.com/en-us/66035587-41f3-4c36-8be0-71b035700c82)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStringTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateStringTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isUnicode, bool isFixedLength, int maxLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateStringTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, bool isUnicode, bool isFixedLength, int32 maxLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateStringTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Boolean,System.Boolean,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="isUnicode" Type="System.Boolean" />
+        <Parameter Name="isFixedLength" Type="System.Boolean" />
+        <Parameter Name="maxLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">対応する <see cref="T:System.Data.Metadata.Edm.PrimitiveType" /> オブジェクトが作成される <see cref="T:System.Data.Metadata.Edm.TypeUsage" />。</param>
+        <param name="isUnicode">
+          <see langword="true" />文字エンコーディングを設定する; unicode 文字列型の標準それ以外の場合、<see langword="false" />です。</param>
+        <param name="isFixedLength">
+          <see langword="true" />文字エンコーディングを設定する; unicode 文字列型の標準それ以外の場合、<see langword="false" />です。</param>
+        <param name="maxLength">
+          <see langword="true" />固定; に、文字列型の長さを設定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたファセット値を使用して文字列型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクトを作成します。</summary>
+        <returns>指定されたファセット値を使用して文字列型を記述する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列型の詳細については、次を参照してください。[文字列 (EDM)](http://msdn.microsoft.com/en-us/66035587-41f3-4c36-8be0-71b035700c82)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTimeTypeUsage">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.TypeUsage CreateTimeTypeUsage (System.Data.Metadata.Edm.PrimitiveType primitiveType, Nullable&lt;byte&gt; precision);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.TypeUsage CreateTimeTypeUsage(class System.Data.Metadata.Edm.PrimitiveType primitiveType, valuetype System.Nullable`1&lt;unsigned int8&gt; precision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.CreateTimeTypeUsage(System.Data.Metadata.Edm.PrimitiveType,System.Nullable{System.Byte})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primitiveType" Type="System.Data.Metadata.Edm.PrimitiveType" />
+        <Parameter Name="precision" Type="System.Nullable&lt;System.Byte&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="primitiveType">単純型の測定単位を定義する、<see cref="T:System.DateTime" />オブジェクト。</param>
+        <param name="precision">粒度の程度、<see cref="T:System.DateTimeOffset" />秒の小数部は、サポートされている小数点以下桁数に基づきます。 たとえば、3 の場合、サポートされる単位の精度はミリ秒です。</param>
+        <summary>作成、<see cref="T:System.Data.Metadata.Edm.TimeTypeUsage" />パラメーターを記述する型のオブジェクト。</summary>
+        <returns><see cref="T:System.Data.Metadata.Edm.TimeTypeUsage" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EdmType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmType EdmType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EdmType EdmType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.TypeUsage.EdmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> によって記述される型情報を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.EdmType" /> によって記述される型情報を表す <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Facets">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.Facet&gt; Facets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1&lt;class System.Data.Metadata.Edm.Facet&gt; Facets" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.TypeUsage.Facets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.Facet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> によって記述される型のファセットの一覧を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1" /> によって記述される型のファセットの一覧を格納する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> 型のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubtypeOf">
+      <MemberSignature Language="C#" Value="public bool IsSubtypeOf (System.Data.Metadata.Edm.TypeUsage typeUsage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsSubtypeOf(class System.Data.Metadata.Edm.TypeUsage typeUsage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.IsSubtypeOf(System.Data.Metadata.Edm.TypeUsage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeUsage" Type="System.Data.Metadata.Edm.TypeUsage" />
+      </Parameters>
+      <Docs>
+        <param name="typeUsage">確認する <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> オブジェクト。</param>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> が、指定された <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> のサブタイプかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Data.Metadata.Edm.TypeUsage" />、指定のサブタイプである<see cref="T:System.Data.Metadata.Edm.TypeUsage" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.TypeUsage.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.TypeUsage" /> によって記述された型の完全な名前を返します。</summary>
+        <returns>これによって記述された型の完全名<see cref="T:System.Data.Metadata.Edm.TypeUsage" />文字列として。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

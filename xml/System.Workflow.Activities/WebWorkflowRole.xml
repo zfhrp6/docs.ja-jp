@@ -1,0 +1,180 @@
+<Type Name="WebWorkflowRole" FullName="System.Workflow.Activities.WebWorkflowRole">
+  <TypeSignature Language="C#" Value="public class WebWorkflowRole : System.Workflow.Activities.WorkflowRole" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WebWorkflowRole extends System.Workflow.Activities.WorkflowRole" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.WebWorkflowRole" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.WorkflowRole</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Security.RoleProvider" /> によってサポートされるワークフロー ロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ASP.NET のロールの詳細については、次を参照してください。[ロール プロバイダー](http://go.microsoft.com/fwlink/?LinkId=96709)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebWorkflowRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.WebWorkflowRole.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">ロールの名前を定義する文字列。</param>
+        <summary>指定したロール名を使用して、<see cref="T:System.Workflow.Activities.WebWorkflowRole" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebWorkflowRole (string roleName, string provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string roleName, string provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.WebWorkflowRole.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="provider" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">ロールの名前を定義する文字列。</param>
+        <param name="provider">ロール プロバイダーを定義する文字列。</param>
+        <summary>指定したロール名とロール プロバイダーを使用して、<see cref="T:System.Workflow.Activities.WebWorkflowRole" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最もよく使用される <xref:System.Workflow.Activities.WebWorkflowRole> のロール プロバイダーは、<xref:System.Web.Security.RoleProvider> を継承するクラスです。 これらのクラスには、<xref:System.Web.Security.AuthorizationStoreRoleProvider>、<xref:System.Web.Security.SqlRoleProvider>、および <xref:System.Web.Security.WindowsTokenRoleProvider> があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIdentities">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;string&gt; GetIdentities ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;string&gt; GetIdentities() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.WebWorkflowRole.GetIdentities" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> に関連付けられた ASP.NET アカウントのジェネリック リストを返します。</summary>
+        <returns><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> に関連付けられた ASP.NET アカウントを表す文字列値のジェネリック リスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider> では、<xref:System.Web.Security.Roles.IsUserInRole%2A> と <xref:System.Web.Security.Roles.GetRolesForUser%2A> だけがサポートされます。 さらに、これらのメソッドがサポートされるのは、要求コンテキストに関連付けられた WindowsPrincipal であるユーザー アカウントに対してのみです。したがって、ドメインのどのユーザー アカウントに対しても <xref:System.Web.Security.Roles.GetRolesForUser%2A> を呼び出すことができるわけではありません。 <xref:System.Workflow.Activities.WebWorkflowRole.GetIdentities%2A> で <xref:System.Web.Security.WindowsTokenRoleProvider> メソッドを使用すると、次のプロバイダー例外がスローされます。  
+  
+ 構成済みのロール プロバイダー (WindowsTokenRoleProvider) は、ユーザーがメンバーになることができるグループを決定するために Windows 認証に依存します。 ASP.NET ロール マネージャーを使用して、Windows ユーザーとグループを管理することはできません。 カスタムのユーザーとロールの割り当てをサポートするには、SQLRoleProvider を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludesIdentity">
+      <MemberSignature Language="C#" Value="public override bool IncludesIdentity (string identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IncludesIdentity(string identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.WebWorkflowRole.IncludesIdentity(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">テストする ID の名前です。</param>
+        <summary><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> が指定された ID を格納しているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が指定された ID を格納している場合は <see cref="T:System.Workflow.Activities.WebWorkflowRole" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WebWorkflowRole.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> の名前を含む文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Workflow.Activities.WebWorkflowRole.Name" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) に設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleProvider">
+      <MemberSignature Language="C#" Value="public string RoleProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RoleProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WebWorkflowRole.RoleProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> のロール プロバイダーを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.Activities.WebWorkflowRole" /> のロール プロバイダーを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最もよく使用される <xref:System.Workflow.Activities.WebWorkflowRole> のロール プロバイダーは、<xref:System.Web.Security.RoleProvider> を継承するクラスです。 これらのクラスには、<xref:System.Web.Security.AuthorizationStoreRoleProvider>、<xref:System.Web.Security.SqlRoleProvider>、および <xref:System.Web.Security.WindowsTokenRoleProvider> があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

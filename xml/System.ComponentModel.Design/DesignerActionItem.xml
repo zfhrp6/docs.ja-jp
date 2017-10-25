@@ -1,0 +1,237 @@
+<Type Name="DesignerActionItem" FullName="System.ComponentModel.Design.DesignerActionItem">
+  <TypeSignature Language="C#" Value="public abstract class DesignerActionItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerActionItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スマート タグ パネルで、パネルのアイテムを表す型の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionItem>クラスは、スマート タグ パネルで、スマート タグのメニューのようなユーザー インターフェイス (UI) を表す個々 のパネルの項目を表すクラスの基本抽象として機能します。 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]装置が、スマート タグ パネルで、プレーン テキスト、ヘッダーのテキスト、プロパティおよび関連付けられているメソッドを含むさまざまな一般的なエントリを表すクラスを派生<xref:System.ComponentModel.Design.DesignerActionList>クラス、およびデザイナー動詞です。  
+  
+ 通常、`DesignerAction`機能が、プログラマが提供するクラスから派生したで定義されている<xref:System.ComponentModel.Design.DesignerActionList>が含まれています、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>スマート タグ パネルを形成する個々 のパネルの項目をグループ化するメソッド。 <xref:System.ComponentModel.Design.DesignerActionPropertyItem>と<xref:System.ComponentModel.Design.DesignerActionMethodItem>型から派生したクラスのメンバーに割り当てられた<xref:System.ComponentModel.Design.DesignerActionList>、および<xref:System.ComponentModel.Design.DesignerActionMethodItem>関連付けられているパネル エントリが、ユーザーが選択されているときにオブジェクトをアクティブにします。  
+  
+> [!NOTE]
+>  派生したクラスのメンバーによってフォームとダイアログ ボックスを表示できる<xref:System.ComponentModel.Design.DesignerActionList>です。 既定では、スマート タグ パネルの [コンテナー] ウィンドウがこれらのウィンドウの親になります。 明示的に別のサービスまたはウィンドウにこれらの子ウィンドウの親が正しく表示する項目があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ スマート タグを実装する完全な例を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionItem (string displayName, string category, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string category, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionItem.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">この項目のパネルのテキストです。</param>
+        <param name="category">大文字小文字を区別、<see cref="T:System.String" />パネル エントリのグループを定義します。</param>
+        <param name="description">ツールヒントやステータス バーで使用される項目、可能性のあるこの補足のテキスト。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionItem>抽象クラスでは、<xref:System.ComponentModel.Design.DesignerActionItem.%23ctor%2A>コンス トラクターが派生クラスのみから呼び出すことを目的としています。  
+  
+ 方法の詳細については`category`をパネルに項目をグループ化を参照してパラメーターを使用、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowAssociate">
+      <MemberSignature Language="C#" Value="public bool AllowAssociate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowAssociate" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.AllowAssociate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定が同じである項目のグループに配置するのには、この項目を許可するかどうかを示す値を取得または<see cref="P:System.ComponentModel.Design.DesignerActionItem.Category" />プロパティの値。</summary>
+        <value>
+          <see langword="true" />場合は、項目をグループ化できます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数<xref:System.ComponentModel.Design.DesignerActionList>オブジェクトは、1 つのスマート タグ パネルでは、フォームを組み合わせることができます、<xref:System.ComponentModel.Design.DesignerActionItem.AllowAssociate%2A>プロパティがカテゴリで、現在の項目を並べ替えたかどうかを示します。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionItem.AllowAssociate%2A>と共にプロパティが使用される、<xref:System.ComponentModel.Design.DesignerActionMethodItem.RelatedComponent%2A>プロパティを<xref:System.ComponentModel.Design.DesignerActionMethodItem>と<xref:System.ComponentModel.Design.DesignerActionPropertyItem>型です。  
+  
+ たとえば、ASP.NET がのようにデータ バインド コントロールを使用して<xref:System.Web.UI.WebControls.GridView>などのデータ ソース管理への接続に<xref:System.Web.UI.WebControls.SqlDataSource>です。 両方とも、 <xref:System.ComponentModel.Design.DesignerActionList> 、独自のセットと<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。 <xref:System.Web.UI.WebControls.GridView>コントロールなどの項目がある<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>、 `Edit Fields`、および`AutoFormat`です。 <xref:System.Web.UI.WebControls.SqlDataSource>クラスには`Configure`と`Refresh Items`、ある<xref:System.ComponentModel.Design.DesignerActionItem.AllowAssociate%2A>'éý'`true`です。  
+  
+ <xref:System.Web.UI.WebControls.GridView>コントロールの<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>項目は、関連するコンポーネントには、<xref:System.Web.UI.WebControls.SqlDataSource>オブジェクト。 すべての<xref:System.Web.UI.WebControls.SqlDataSource>を持つオブジェクトのアイテム<xref:System.ComponentModel.Design.DesignerActionItem.AllowAssociate%2A>に設定`true`に自動的に含まれる、<xref:System.Web.UI.WebControls.GridView>コントロールのアクションの一覧です。 次の表に 2 つのリストにマージする方法を示しています、<xref:System.Web.UI.WebControls.GridView>コントロールのデザイナー アクション リスト。  
+  
+|GridView 項目|SqlDataSource 項目|  
+|--------------------|-------------------------|  
+|-   `DataSourceID`(関連するコンポーネント = `SqlDataSource`)<br />-フィールドを編集します。<br />-オート フォーマット|構成 (`AllowAssociate` = `true`)<br />-更新 (`AllowAssociate` = `true`)|  
+  
+|マージされた GridView コントロールのスマート タスク パネル|  
+|-------------------------------------------------|  
+|-Datasourceid<br />構成します。<br />更新<br />-フィールドを編集します。<br />-オート フォーマット|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public virtual string Category { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Category" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のグループ名を取得します。</summary>
+        <value>項目のメンバーであるグループを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目のカテゴリは、その名前は大文字小文字を区別によって定義されます。  
+  
+ 項目がカテゴリでグループ化する方法の詳細については、次を参照してください。、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイテムの補足のテキストを取得します。</summary>
+        <value>A<see cref="T:System.String" />項目の説明のテキストを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionItem.Description%2A> (たとえば、ツールヒントとステータス バー) 内の項目のプレーン テキストの説明が必要なときにプロパティを使用します。  
+  
+ このプロパティの値は、このクラスのコンス トラクターで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目のテキストを取得します。</summary>
+        <value>A<see cref="T:System.String" />アイテムの表示テキストを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.ComponentModel.Design.DesignerActionItem.DisplayName%2A>プロパティはこのクラスのコンス トラクターで設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プログラマが定義したキー/値ペアを格納するために使用するコレクションへの参照を取得します。</summary>
+        <value>実装するコレクション<see cref="T:System.Collections.IDictionary" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionItem.Properties%2A>プロパティでは、プログラマは、アイテム内の任意のデータを格納します。 この標準プロパティ クラスなど、<xref:System.ComponentModel.Design.DesignerActionItem.Category%2A>と<xref:System.ComponentModel.Design.DesignerActionItem.DisplayName%2A>、このコレクションに格納されません。  
+  
+ このプロパティの型が実際に<xref:System.Collections.Specialized.HybridDictionary?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInSourceView">
+      <MemberSignature Language="C#" Value="public bool ShowInSourceView { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowInSourceView" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionItem.ShowInSourceView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはソース コード ビューでは、この項目が表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ソース コード ビューでは、この項目が表示された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

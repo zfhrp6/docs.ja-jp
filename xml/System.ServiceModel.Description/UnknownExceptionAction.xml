@@ -1,0 +1,62 @@
+<Type Name="UnknownExceptionAction" FullName="System.ServiceModel.Description.UnknownExceptionAction">
+  <TypeSignature Language="C#" Value="public enum UnknownExceptionAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UnknownExceptionAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.UnknownExceptionAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>永続性サービスが不明な例外を処理する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、永続性サービスが作成されると、 <xref:System.ServiceModel.Description.DurableServiceAttribute.UnknownExceptionAction%2A> TerminateInstance に設定されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbortInstance">
+      <MemberSignature Language="C#" Value="AbortInstance" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.UnknownExceptionAction AbortInstance = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.UnknownExceptionAction.AbortInstance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.UnknownExceptionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスは突然終了します。既存の状態情報は永続化ストアに残ります。 不明な例外がスローされた操作時にインスタンス状態に加えられたすべての変更内容は失われます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TerminateInstance">
+      <MemberSignature Language="C#" Value="TerminateInstance" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Description.UnknownExceptionAction TerminateInstance = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Description.UnknownExceptionAction.TerminateInstance" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.UnknownExceptionAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスによってすべてのチャネルが閉じられ、その永続化ストアから状態情報が削除されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

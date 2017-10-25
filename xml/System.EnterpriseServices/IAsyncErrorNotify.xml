@@ -1,0 +1,63 @@
+<Type Name="IAsyncErrorNotify" FullName="System.EnterpriseServices.IAsyncErrorNotify">
+  <TypeSignature Language="C#" Value="public interface IAsyncErrorNotify" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAsyncErrorNotify" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IAsyncErrorNotify" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("FE6777FB-A674-4177-8F32-6D707E113484")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>送信される、作業の非同期バッチを実装してエラーのトラッピング、<see cref="T:System.EnterpriseServices.Activity" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.IAsyncErrorNotify>送信される、作業の非同期バッチ エラー トラップを実装するため、<xref:System.EnterpriseServices.Activity>オブジェクト。 このインターフェイスへの呼び出しで渡されるオブジェクトに実装<xref:System.EnterpriseServices.Activity.AsynchronousCall%2A>上、<xref:System.EnterpriseServices.Activity>オブジェクト。 <xref:System.EnterpriseServices.Activity.AsynchronousCall%2A>非同期的に実行されているバッチ作業でエラーが発生したかを判断します。 このインターフェイスを使用すると、非同期バッチ作業で発生したエラーを通知して、プロセスは、回復不能なエラー (failfast) を終了します。  
+  
+ Failfast 詳細については、MSDN のプラットフォーム SDK の「エラー分離と Failfast ポリシー」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnError">
+      <MemberSignature Language="C#" Value="public void OnError (int hresult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnError(int32 hresult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IAsyncErrorNotify.OnError(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hresult" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hresult">バッチ処理が非同期的に実行しているときに発生したエラーの HRESULT です。</param>
+        <summary>作業の非同期バッチのエラーを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バッチ作業が非同期的に実行されているときに発生するエラーを適切に処理を実装する必要があります。 プロセスでは、回復不能なエラー failfast が終了するためこの方法がない場合は非同期バッチ作業では、エラーが発生したときを知る方法です。 プロセスは、このメソッドは、戻り値としてエラーを返す場合にも終了します。 バッチ作業自体の実装<xref:System.EnterpriseServices.IServiceCall.OnCall%2A>、呼び出すことによって非同期的に実行および<xref:System.EnterpriseServices.Activity.AsynchronousCall%2A>です。  
+  
+ このメソッドは、標準の戻り値をサポートしている`E_FAIL`、 `E_INVALIDARG`、および`E_OUTOFMEMORY`、だけでなく`S_OK`メソッドの呼び出しが正常に返されたを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,360 @@
+<Type Name="CornerRadius" FullName="System.Windows.CornerRadius">
+  <TypeSignature Language="C#" Value="public struct CornerRadius : IEquatable&lt;System.Windows.CornerRadius&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CornerRadius extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.CornerRadius&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.CornerRadius" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.CornerRadius&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.CornerRadiusConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>四角形の角の半径を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには 4 つのプロパティ<xref:System.Windows.CornerRadius.TopLeft%2A>、 <xref:System.Windows.CornerRadius.TopRight%2A>、 <xref:System.Windows.CornerRadius.BottomLeft%2A>、および<xref:System.Windows.CornerRadius.BottomRight%2A>四角形の個々 のコーナーに対応します。  それぞれが、<xref:System.Double>構造を個別に設定することができます。  
+  
+ 半径は負の値にすることはできません。  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="TopLeft,TopRight,BottomRight,BottomLeft "/>  
+- or -  
+<object property="AllCorners"/>  
+```  
+  
+<a name="xamlValues_Thickness"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *左上端*  
+ <xref:System.Double>左上角の半径を指定する値。  
+  
+ *TopRight*  
+ <xref:System.Double>右上隅を指定する値。  
+  
+ *BottomRight*  
+ <xref:System.Double>右下隅を指定する値。  
+  
+ *斜め*  
+ <xref:System.Double>左下隅を指定する値。  
+  
+ *AllCorners*  
+ 場合は、1 つだけ<xref:System.Double>値を指定すると、すべてのメジャーが適用される、*左上端*、 *TopRight*、 *BottomRight*、および*斜め*のコーナー、<xref:System.Windows.CornerRadius>です。  
+  
+> [!NOTE]
+>  値では、文字列として指定するときに明示的に小数点が含まれません必要があります。 文字列「1」で提供される[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]1.0 コードで参照されている場合の値に評価します。  
+  
+   
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、<xref:System.Windows.Controls.Border.CornerRadius%2A>プロパティを使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]とコード。  
+  
+ [!code-csharp[ThicknessStruct#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ThicknessStruct/CSharp/ThicknessSamp.cs#1)]
+ [!code-vb[ThicknessStruct#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThicknessStruct/VisualBasic/ThicknessSampVB.vb#1)]
+ [!code-xaml[ThicknessStruct#1](~/samples/snippets/xaml/VS_Snippets_Wpf/ThicknessStruct/XAML/default.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CornerRadius (double uniformRadius);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 uniformRadius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uniformRadius" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="uniformRadius">すべての四角形の角に適用される半径の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.CornerRadius" />あらゆる場所または四角形の均一の半径を指定した値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CornerRadius (double topLeft, double topRight, double bottomRight, double bottomLeft);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 topLeft, float64 topRight, float64 bottomRight, float64 bottomLeft) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.#ctor(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="topLeft" Type="System.Double" />
+        <Parameter Name="topRight" Type="System.Double" />
+        <Parameter Name="bottomRight" Type="System.Double" />
+        <Parameter Name="bottomLeft" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="topLeft">左上角の半径。</param>
+        <param name="topRight">右上角の半径。</param>
+        <param name="bottomRight">右下隅の半径。</param>
+        <param name="bottomLeft">左下角の半径。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.CornerRadius" />四角形の各コーナーの半径を指定した値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomLeft">
+      <MemberSignature Language="C#" Value="public double BottomLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 BottomLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CornerRadius.BottomLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の左下角の半径。</summary>
+        <value>左下角の半径。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 左下角の半径は、四角形の他の四隅とは独立して設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomRight">
+      <MemberSignature Language="C#" Value="public double BottomRight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 BottomRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CornerRadius.BottomRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または右下隅の半径を設定します。</summary>
+        <value>右下隅の半径。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 右下隅の半径は、四角形の他の四隅とは独立して設定できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.CornerRadius.TopRight%2A>  
+  
+ <xref:System.Windows.CornerRadius.BottomLeft%2A>  
+  
+ <xref:System.Windows.CornerRadius.TopLeft%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象の <see cref="T:System.Object" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.CornerRadius" />かどうかが含まれていると、この同じ上隅にある radius 値と<see cref="T:System.Windows.CornerRadius" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、<see cref="T:System.Windows.CornerRadius" />これと同じ上隅にある radius 値が含まれていますと<see cref="T:System.Windows.CornerRadius" />、それ以外の<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.CornerRadius cornerRadius);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.CornerRadius cornerRadius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.Equals(System.Windows.CornerRadius)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cornerRadius" Type="System.Windows.CornerRadius" />
+      </Parameters>
+      <Docs>
+        <param name="cornerRadius"><see cref="T:System.Windows.CornerRadius" />これと比較する<see cref="T:System.Windows.CornerRadius" />です。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.CornerRadius" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="cornerRadius" />これと同じ上隅にある radius 値を含む<see cref="T:System.Windows.CornerRadius" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.CornerRadius" /> のハッシュ コードを返します。</summary>
+        <returns>ハッシュ コードをこの<see cref="T:System.Windows.CornerRadius" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.CornerRadius cr1, System.Windows.CornerRadius cr2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.CornerRadius cr1, valuetype System.Windows.CornerRadius cr2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.op_Equality(System.Windows.CornerRadius,System.Windows.CornerRadius)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cr1" Type="System.Windows.CornerRadius" />
+        <Parameter Name="cr2" Type="System.Windows.CornerRadius" />
+      </Parameters>
+      <Docs>
+        <param name="cr1">比較対象となる最初の <see cref="T:System.Windows.CornerRadius" />。</param>
+        <param name="cr2">比較対象となる 2 番目の <see cref="T:System.Windows.CornerRadius" />。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.CornerRadius" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="cr1" />と<paramref name="cr2" />のすべてのコーナーの同じ値を持つ (同じの値を<see cref="P:System.Windows.CornerRadius.TopLeft" />、 <see cref="P:System.Windows.CornerRadius.TopRight" />、 <see cref="P:System.Windows.CornerRadius.BottomLeft" />、 <see cref="P:System.Windows.CornerRadius.BottomRight" />) です。<see langword="false" />場合<paramref name="cr1" />と<paramref name="cr2" />の 1 つまたは複数のコーナーの異なる値を設定します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.CornerRadius cr1, System.Windows.CornerRadius cr2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.CornerRadius cr1, valuetype System.Windows.CornerRadius cr2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.op_Inequality(System.Windows.CornerRadius,System.Windows.CornerRadius)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cr1" Type="System.Windows.CornerRadius" />
+        <Parameter Name="cr2" Type="System.Windows.CornerRadius" />
+      </Parameters>
+      <Docs>
+        <param name="cr1">比較対象となる最初の <see cref="T:System.Windows.CornerRadius" />。</param>
+        <param name="cr2">比較対象となる 2 番目の <see cref="T:System.Windows.CornerRadius" />。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.CornerRadius" />非等値の構造体。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="cr1" />と<paramref name="cr2" />の 1 つまたは複数のコーナーの異なる値を持つ (の値が異なる<see cref="P:System.Windows.CornerRadius.TopLeft" />、 <see cref="P:System.Windows.CornerRadius.TopRight" />、 <see cref="P:System.Windows.CornerRadius.BottomLeft" />、 <see cref="P:System.Windows.CornerRadius.BottomRight" />) です。<see langword="false" />場合<paramref name="cr1" />と<paramref name="cr2" />同一角があります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopLeft">
+      <MemberSignature Language="C#" Value="public double TopLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TopLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CornerRadius.TopLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の左上角の半径。</summary>
+        <value>左上角の半径。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 左上角の半径は、四角形の他の四隅とは独立して設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopRight">
+      <MemberSignature Language="C#" Value="public double TopRight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TopRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CornerRadius.TopRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または右上角の半径を設定します。</summary>
+        <value>右上角の半径。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 右上角の半径は、他の四角形の角とは独立して設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CornerRadius.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.CornerRadius" /> の文字列形式を返します。</summary>
+        <returns><see cref="T:System.Windows.CornerRadius" /> の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

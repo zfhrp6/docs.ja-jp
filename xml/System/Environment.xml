@@ -1,0 +1,1855 @@
+<Type Name="Environment" FullName="System.Environment">
+  <TypeSignature Language="C#" Value="public static class Environment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Environment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Environment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在の環境およびプラットフォームに関する情報、およびそれらを操作する手段を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Environment>システムの起動、および共通言語ランタイムのバージョン以降のコマンドライン引数、終了コード、環境変数の設定、呼び出し履歴、時間の内容などの情報を取得するクラス。  
+  
+   
+  
+## Examples  
+ 次の例については、現在の環境の一覧を表示します。  
+  
+ [!code-cpp[environment.class#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.class/CPP/env0.cpp#1)]
+ [!code-csharp[environment.class#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.class/CS/env0.cs#1)]
+ [!code-vb[environment.class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.class/VB/env0.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CommandLine">
+      <MemberSignature Language="C#" Value="public static string CommandLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CommandLine" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.CommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロセス用のコマンド ラインを取得します。</summary>
+        <value>コマンド ラインの引数を格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、プログラム名や、現在のプロセスが開始されたときに、コマンドラインで指定された引数へのアクセスを提供します。  
+  
+ プログラム名は、パス情報を含めることができますが、これを行う必要はありません。 使用して、<xref:System.Environment.GetCommandLineArgs%2A>コマンドラインの情報を取得するメソッドが解析され、文字列の配列に格納します。  
+  
+ コマンドラインのバッファーの最大サイズは、特定の数の文字は; に設定されていません。これは、コンピューターで実行されている Windows オペレーティング システムによって異なります。  
+  
+   
+  
+## Examples  
+ 次の例では、独自のコマンド ラインが表示されます。  
+  
+ [!code-cpp[environment.commandline#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.CommandLine/CPP/commandline.cpp#1)]
+ [!code-csharp[environment.commandline#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.CommandLine/CS/commandline.cs#1)]
+ [!code-vb[environment.commandline#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.CommandLine/VB/commandline.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">PATH 環境変数への読み取りアクセス。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDirectory">
+      <MemberSignature Language="C#" Value="public static string CurrentDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CurrentDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.CurrentDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の作業ディレクトリの絶対パスを取得または設定します。</summary>
+        <value>ディレクトリのパスを格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義上、ローカルのルート ディレクトリまたはネットワーク ドライブは、このプロセスが開始された場合このプロパティの値は、末尾にスラッシュが続くドライブ名 (たとえば、"c:\\") です。 このプロセスを開始、サブディレクトリに、このプロパティの値がドライブと、サブディレクトリ パスの末尾にスラッシュ (たとえば、"C:\mySubDirectory") せず  
+  
+   
+  
+## Examples  
+ 次の例では、設定、<xref:System.Environment.CurrentDirectory%2A>プロパティです。  
+  
+ [!code-cpp[System.Environment#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Environment/CPP/Vars1.cpp#4)]
+ [!code-csharp[System.Environment#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Environment/CS/Vars1.cs#4)]
+ [!code-vb[System.Environment#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Environment/VB/Vars1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">空の文字列 ("") に設定しようとしました。</exception>
+        <exception cref="T:System.ArgumentNullException">設定しようとしています。<see langword="null." /></exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">見つからないローカル パスを設定しようとしました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、該当するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ファイルや設定操作でディレクトリを書き込んでいます。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">get 操作では、パス自体の情報にアクセスする権限。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentManagedThreadId">
+      <MemberSignature Language="C#" Value="public static int CurrentManagedThreadId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 CurrentManagedThreadId" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.CurrentManagedThreadId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のマネージ スレッドの一意の識別子を取得します。</summary>
+        <value>このマネージ スレッドの一意の識別子を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exit">
+      <MemberSignature Language="C#" Value="public static void Exit (int exitCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Exit(int32 exitCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.Exit(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exitCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="exitCode">オペレーティング システムに返す終了コード。 処理が正常に完了したことを示す場合は 0 (ゼロ) を使用します。</param>
+        <summary>このプロセスを終了し、オペレーティング システムに終了コードを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `exitCode`パラメーター、エラーを示す数を 0 以外を使用します。 アプリケーションで、列挙体で、独自のエラー コードを定義し、シナリオに基づいて適切なエラー コードを返すできます。 たとえば、必要なファイルが存在しないことを示すために 1 の値と、ファイルが間違った形式であることを示す 2 の値を返します。 Windows オペレーティング システムによって使用されている終了コードの一覧は、次を参照してください。[システム エラー コード](http://msdn.microsoft.com/library/ms681381.aspx)、Windows のマニュアルでします。  
+  
+ 呼び出す、<xref:System.Environment.Exit%2A>メソッドが、プログラミング言語を使用して異なる`return`次のようにステートメント。  
+  
+-   <xref:System.Environment.Exit%2A>常にアプリケーションを終了します。 使用して、`return`として使用されるアプリケーションのエントリ ポイントでなどの場合にのみ、ステートメントが、アプリケーションを終了させることがあります、`Main`メソッドです。  
+  
+-   <xref:System.Environment.Exit%2A>他のスレッドを実行している場合でも、すぐにアプリケーションを終了します。 場合、`return`ステートメントがアプリケーションのエントリ ポイントで呼び出されると、すべてのフォア グラウンド スレッドが終了した後にのみを終了するアプリケーションになります。  
+  
+-   <xref:System.Environment.Exit%2A>呼び出し元がアンマネージ コードを呼び出す権限を持っている必要があります。 `return`ステートメントは返しません。  
+  
+-   場合<xref:System.Environment.Exit%2A>から呼び出される、`try`または`catch`いずれかでコードをブロックします。`finally`ブロックは実行されません。 場合、`return`ステートメントを使用すると、コード、`finally`ブロックは実行されます。  
+  
+-   場合<xref:System.Environment.Exit%2A>時に呼び出されるコードで、[制約された実行領域](~/docs/framework/performance/constrained-execution-regions.md)(CER) が実行されている、CER は実行を完了していません。 場合、`return`ステートメントを使用して、CER の実行が完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、この機能を実行するのに十分なセキュリティ アクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitCode">
+      <MemberSignature Language="C#" Value="public static int ExitCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ExitCode" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.ExitCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの終了コードを取得または設定します。</summary>
+        <value>終了コードを格納している 32 ビット符号付き整数。 既定値は 0 (ゼロ) です。この値は、プロセスが成功して完了したことを意味します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`Main`メソッドを返します。 `void`、このプロパティを使用して呼び出し元の環境に返される終了コードを設定することができます。 場合`Main`返さない`void`、このプロパティは無視されます。 このプロパティの初期値は 0 です。  
+  
+> [!WARNING]
+>  <xref:System.Environment.ExitCode%2A>プロパティは、符号付き 32 ビット整数。 プロパティが負の値の終了コードを返さないようにするを 0x80000000 以上の値を使用する必要があります。  
+  
+ 0 以外の値を使用して、エラーを示します。 アプリケーションで、列挙体で、独自のエラー コードを定義し、シナリオに基づいて適切なエラー コードを返すできます。 たとえば、必要なファイルが存在しないことを示すために 1 の値と、ファイルが間違った形式であることを示す 2 の値を返します。 Windows オペレーティング システムによって使用されている終了コードの一覧は、次を参照してください。[システム エラー コード](http://msdn.microsoft.com/library/ms681381\(v=vs.85\))、Windows のマニュアルでします。  
+  
+   
+  
+## Examples  
+ コマンドライン引数として渡された整数値を 2 倍に Double.exe をという名前の単純なアプリを次に示します。 値がエラー コードを割り当てます、<xref:System.Environment.ExitCode%2A>をエラー状態を示すプロパティです。 例を正常にコンパイルする System.Numerics.dll アセンブリへの参照を追加する必要がありますに注意してください。  
+  
+ [!code-csharp[System.Environment.ExitCode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.exitcode/cs/double.cs#1)]
+ [!code-vb[System.Environment.ExitCode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.exitcode/vb/double.vb#1)]  
+  
+ 例を使用して、エラー コードにアクセスできるよう、次のようにバッチ ファイルからは呼び出され、`ERRORLEVEL`コマンド。  
+  
+```  
+  
+echo off  
+Double.exe %1  
+If errorlevel 1639 goto NoArg   
+if errorlevel 534 goto Overflow  
+if errorlevel 160 goto BadArg  
+if errorlevel 0 echo Completed Successfully   
+goto :EOF  
+  
+:NoArg  
+echo Missing argument  
+goto :EOF  
+  
+: Overflow  
+echo Arithmetic overflow  
+goto :EOF  
+  
+:BadArg  
+echo Invalid argument  
+goto :EOF  
+  
+```  
+  
+ バッチ ファイルを呼び出すことによって生成されるサンプルの出力を次に示します。  
+  
+```Output  
+  
+>getdouble 123>echo offResult: 246Completed Successfully>getdouble 5912323109093>echo offArithmetic overflow>getdouble>echo offMissing argument>getdouble "a string">echo offInvalid argument  
+  
+```  
+  
+ Double.exe が次の例と同じ関数では、前者は、という名前のエントリ ポイントを定義する点を除いて、そのコードを注意してください`Main`を持たない戻り値は、この例で定義という名前のエントリ ポイントが`Main`整数を返します。  
+  
+ [!code-csharp[System.Environment.ExitCode#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.exitcode/cs/double1.cs#2)]
+ [!code-vb[System.Environment.ExitCode#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.exitcode/vb/double1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandEnvironmentVariables">
+      <MemberSignature Language="C#" Value="public static string ExpandEnvironmentVariables (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ExpandEnvironmentVariables(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.ExpandEnvironmentVariables(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">0 個以上の環境変数の名前を格納している文字列。 各環境変数は、パーセント文字 (%) で囲まれます。</param>
+        <summary>指定した文字列に埋め込まれている各環境変数の名前を、その変数の値を表す文字列で置換し、置換後の文字列全体を返します。</summary>
+        <returns>各環境変数をその値で置換した文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM 相互運用機能を使用して、オペレーティング システムから環境変数を取得します。 エラーの原因を示す HRESULT を; いくつかの可能性のある例外の 1 つの生成に使用する COM エラーのための環境変数を取得できない場合つまり、例外は、HRESULT によって異なります。 HRESULT の処理方法の詳細については、の「解説」セクションを参照してください、<xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 置換は、設定されている環境変数にのみ発生します。 たとえば、`name`は"MyENV MyENV % ="です。 このメソッドが戻るかどうかは、環境変数、MyENV が 42 に設定は、"MyENV = 42"です。 MyENV が設定されていない場合は、変更は行われません。このメソッドが戻る"MyENV MyENV % ="です。  
+  
+ 戻り値のサイズは 32 K に制限されます。  
+  
+   
+  
+## Examples  
+ 次の例では、システム ドライブとシステム ルート変数を取得する方法を示します。  
+  
+ [!code-cpp[Environment.ExpandEnvironmentVariables#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.ExpandEnvironmentVariables/CPP/expandenvironmentvariables.cpp#1)]
+ [!code-csharp[Environment.ExpandEnvironmentVariables#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.ExpandEnvironmentVariables/CS/expandenvironmentvariables.cs#1)]
+ [!code-vb[Environment.ExpandEnvironmentVariables#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.ExpandEnvironmentVariables/VB/expandenvironmentvariables.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">環境変数にアクセスする機能を<paramref name="name" />です。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FailFast">
+      <MemberSignature Language="C#" Value="public static void FailFast (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FailFast(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.FailFast(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">プロセスが終了させられた原因を説明するメッセージ。説明を提供しない場合は <see langword="null" />。</param>
+        <summary>メッセージを Windows アプリケーションのイベント ログに書き込んだ直後にプロセスを終了させ、Microsoft に送信するエラー レポートにそのメッセージを含めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクティブなを実行せず、プロセスを終了`try` / `finally`ブロックまたはファイナライザーを使用します。  
+  
+ <xref:System.Environment.FailFast%2A>メソッドの書き込み、 `message` Windows アプリケーション イベント ログへの文字列は、アプリケーションのダンプを作成し、現在のプロセスを終了します。 `message`文字列が Microsoft に送信するエラーにも含まれます。  
+  
+ 使用して、<xref:System.Environment.FailFast%2A>メソッドの代わりに、<xref:System.Environment.Exit%2A>メソッドをアプリケーションの状態が修復できないほど破損している場合、アプリケーションを終了して、アプリケーションの実行`try` / `finally`ブロックおよびファイナライザーがプログラム リソースは破損します。  
+  
+ 情報は、Windows エラー報告を使用して Microsoft に報告されます。 詳細については、次を参照してください。 [Windows エラー報告: 作業の開始](http://msdn.microsoft.com/library/windows/hardware/dn641144.aspx)です。  
+  
+   
+  
+## Examples  
+ 次の例では、Windows アプリケーション イベント ログにログ エントリを書き込み、現在のプロセスを終了します。  
+  
+ [!code-csharp[environment.FailFast#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.FailFast/cs/ff.cs#1)]
+ [!code-vb[environment.FailFast#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.FailFast/vb/ff.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FailFast">
+      <MemberSignature Language="C#" Value="public static void FailFast (string message, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FailFast(string message, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.FailFast(System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">プロセスが終了させられた原因を説明するメッセージ。説明を提供しない場合は <see langword="null" />。</param>
+        <param name="exception">終了の原因となったエラーを表す例外。 通常、これは <see langword="catch" /> ブロックでの例外です。</param>
+        <summary>メッセージを Windows アプリケーションのイベント ログに書き込んだ直後にプロセスを終了させ、Microsoft に送信するエラー レポートにそのメッセージと例外情報を含めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アクティブなを実行せず、プロセスを終了`try` / `finally`ブロックまたはファイナライザーを使用します。  
+  
+ <xref:System.Environment.FailFast%2A>メソッドの書き込み、 `message` Windows アプリケーション イベント ログへの文字列は、アプリケーションのダンプを作成し、現在のプロセスを終了します。  
+  
+ 情報は、Windows エラー報告を使用して Microsoft に報告されます。 詳細については、次を参照してください。 [Windows エラー報告: 作業の開始](http://msdn.microsoft.com/library/windows/hardware/dn641144.aspx)です。 エラー Microsoft にレポートにはが含まれています`message`と`exception`についてを使用して、エラー分類の詳細を提供します。 `exception`は、プロセスが終了したためが処理されない例外が発生したコンテキスト情報は現在でも入手できます。  
+  
+ 場合`exception`は`null`、または`exception`はスローされず、このメソッドと同様に動作、<xref:System.Environment.FailFast%28System.String%29>メソッドのオーバー ロードします。  
+  
+ 使用して、<xref:System.Environment.FailFast%2A>メソッドの代わりに、<xref:System.Environment.Exit%2A>メソッドをアプリケーションの状態が修復できないほど破損している場合、アプリケーションを終了して、アプリケーションの実行`try` / `finally`ブロックおよびファイナライザーがプログラム リソースは破損します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCommandLineArgs">
+      <MemberSignature Language="C#" Value="public static string[] GetCommandLineArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetCommandLineArgs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetCommandLineArgs" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロセスに対するコマンド ライン引数を格納している文字列配列を返します。</summary>
+        <returns>各要素にコマンド ライン引数を格納している文字列の配列。 先頭の要素には実行可能ファイルの名前、それに続く 0 個以上の要素には残りのコマンド ライン引数が格納されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の最初の要素には、実行中のプログラムのファイル名が含まれています。 最初の要素と等しい場合は、ファイル名を使用できない<xref:System.String?displayProperty=nameWithType>です。 残りの要素には、コマンドラインで入力したその他のすべてのトークンが含まれます。  
+  
+ プログラム ファイルの名前できます。 ただし、パス情報を含める必要はありません。  
+  
+ コマンドライン引数はスペースで区切られます。 引数内のスペースを含めるには、二重引用符 (") を使用できます。 ただし、単一引用符 (') では、この機能は提供されません。  
+  
+ 二重引用符に依存する円記号の数が偶数か 2 つ、各続行円記号のペアが 1 つの円記号に置き換えられ、二重引用符を削除します。 二重引用符を含む 1 つだけで、円記号の数が奇数に依存して上記の各ペアが 1 つの円記号に置き換えられ、残りの円記号が削除されました。ただし、ここでは、二重引用符は削除されません。  
+  
+ 次の表を前提し、コマンドライン引数が区切られた、する方法を示します`MyApp`として現在の実行中のアプリケーションです。  
+  
+|コマンドライン入力します。|結果として得られるコマンドライン引数|  
+|-------------------------------|--------------------------------------|  
+|`MyApp alpha beta`|`MyApp, alpha, beta`|  
+|`MyApp "alpha with spaces" "beta with spaces"`|`MyApp, alpha with spaces, beta with spaces`|  
+|`MyApp 'alpha with spaces' beta`|`MyApp, 'alpha, with, spaces', beta`|  
+|`MyApp \\\alpha \\\\"beta`|`MyApp, \\\alpha, \\beta`|  
+|`MyApp \\\\\"alpha \"beta`|`MyApp, \\"alpha, "beta`|  
+  
+ 1 つの文字列としてコマンドラインを取得するを使用して、<xref:System.Environment.CommandLine%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーションのコマンドライン引数を表示します。  
+  
+ [!code-cpp[Environment.GetCommandLineArgs#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.GetCommandLineArgs/CPP/getcommandlineargs.cpp#1)]
+ [!code-csharp[Environment.GetCommandLineArgs#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.GetCommandLineArgs/CS/getcommandlineargs.cs#1)]
+ [!code-vb[Environment.GetCommandLineArgs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.GetCommandLineArgs/VB/getcommandlineargs.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">システムでは、コマンドライン引数はサポートされません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">PATH 環境変数への読み取りアクセス。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvironmentVariable">
+      <MemberSignature Language="C#" Value="public static string GetEnvironmentVariable (string variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetEnvironmentVariable(string variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetEnvironmentVariable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="variable">環境変数の名前。</param>
+        <summary>現在のプロセスから環境変数の値を取得します。</summary>
+        <returns><paramref name="variable" /> で指定された環境変数の値。環境変数が見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Environment.GetEnvironmentVariable%28System.String%29>メソッドは、現在のプロセスのみの環境ブロックから環境変数を取得します。 呼び出すことと等価である、<xref:System.Environment.GetEnvironmentVariable%28System.String%2CSystem.EnvironmentVariableTarget%29>メソッドを`target`値<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>です。 現在のプロセスの環境ブロックには、次の環境変数が含まれています。  
+  
+-   すべてコンピューターごとの環境変数の値と共に、プロセスが作成時に定義されています。  
+  
+-   時に定義されているすべてのユーザーごとの環境変数、プロセスを作成するとその値。  
+  
+-   呼び出して、プロセスが実行中のプロセス ブロックに追加された任意の変数、<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%29>メソッドまたは<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>メソッドを`target`値<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>です。  
+  
+ 呼び出すことによって作成された変数のみを取得するこのメソッドを使用するには、プロセスが開始した後、環境変数が作成する場合、<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%29>メソッドまたは<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>メソッドを`target`の値。<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>です。  
+  
+ すべての環境変数とその値を取得する、<xref:System.Environment.GetEnvironmentVariables%2A>メソッドです。  
+  
+ 環境変数の名前は区別されません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Environment.GetEnvironmentVariable%2A>を取得する方法、`windir`環境変数は、Windows ディレクトリのパスが含まれています。  
+  
+ [!code-cpp[System.Environment#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Environment/CPP/Vars1.cpp#4)]
+ [!code-csharp[System.Environment#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Environment/CS/Vars1.cs#4)]
+ [!code-vb[System.Environment#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Environment/VB/Vars1.vb#4)]  
+  
+ 次の例が、という環境変数の値を取得しようとしています。`Test1`プロセスの環境ブロックからです。 変数が存在しない場合、例、およびその値を取得します。 この例では、変数の値を表示します。 場合の例では、変数を作成も呼び出して、<xref:System.Environment.GetEnvironmentVariables%28System.EnvironmentVariableTarget%29>の各メンバーを持つメソッド、<xref:System.EnvironmentVariableTarget>変数を現在のプロセスの環境ブロックからのみ取得できることを確立するために列挙です。 最後に、例では、変数を作成、削除されます。  
+  
+ [!code-csharp[System.Environment.GetEnvironmentVariable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.getenvironmentvariable/cs/getenvironmentvariableex1.cs#2)]
+ [!code-vb[System.Environment.GetEnvironmentVariable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.getenvironmentvariable/vb/getenvironmentvariableex1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="variable" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、この操作を実行するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">値の読み取りに必要なアクセス許可<paramref name="variable" />です。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvironmentVariable">
+      <MemberSignature Language="C#" Value="public static string GetEnvironmentVariable (string variable, EnvironmentVariableTarget target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetEnvironmentVariable(string variable, valuetype System.EnvironmentVariableTarget target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetEnvironmentVariable(System.String,System.EnvironmentVariableTarget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+        <Parameter Name="target" Type="System.EnvironmentVariableTarget" />
+      </Parameters>
+      <Docs>
+        <param name="variable">環境変数の名前。</param>
+        <param name="target"><see cref="T:System.EnvironmentVariableTarget" /> 値のいずれか。</param>
+        <summary>環境変数の値を取得します。取得する場所として、現在のプロセス、現在のユーザー用に予約されている Windows オペレーティング システムのレジストリ キー、および、ローカル コンピューター用に予約されているレジストリ キーのいずれかを選択できます。</summary>
+        <returns><paramref name="variable" /> パラメーターと <paramref name="target" /> パラメーターで指定された環境変数の値。環境変数が見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `target`パラメーターは、現在のプロセスまたは現在のユーザーまたはローカル コンピューターの Windows オペレーティング システムのレジストリ キーから、環境変数が取得されるかどうかを指定します。 すべてのユーザーおよびコンピューターごとの環境変数は、現在のプロセスの環境ブロックに自動的にコピーされます。 ただし、現在のプロセスの環境ブロックにのみ追加される環境変数は、プロセスの期間に対してのみ保持されます。  
+  
+ すべての環境変数とその値を取得する、<xref:System.Environment.GetEnvironmentVariables%2A>メソッドです。  
+  
+ 環境変数の名前は区別されません。  
+  
+   
+  
+## Examples  
+ 次の例では、プロセス、ユーザー、およびコンピューターのターゲットの環境変数を作成、オペレーティング システムのレジストリが、ユーザーとコンピューターの環境変数を含むその環境変数を削除するかどうかを確認します。  
+  
+ [!code-cpp[environment.getsetenvar#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.getsetenvar/CPP/source.cpp#1)]
+ [!code-csharp[environment.getsetenvar#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.getsetenvar/CS/gsev.cs#1)]
+ [!code-vb[environment.getsetenvar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.getsetenvar/VB/gsev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="variable" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> は有効な <see cref="T:System.EnvironmentVariableTarget" /> 値ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、この操作を実行するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">値の読み取りに必要なアクセス許可<paramref name="variable" />場合<paramref name="target" />は<see cref="F:System.EnvironmentVariableTarget.Process" />(関連する列挙値: <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" />)、  
+  
+ または  
+  
+ 環境変数へのフル アクセスの場合は<paramref name="target" />は<see cref="F:System.EnvironmentVariableTarget.User" />または<see cref="F:System.EnvironmentVariableTarget.Machine" />(関連する列挙値: <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />)。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvironmentVariables">
+      <MemberSignature Language="C#" Value="public static System.Collections.IDictionary GetEnvironmentVariables ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IDictionary GetEnvironmentVariables() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetEnvironmentVariables" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての環境変数の名前と値を現在のプロセスから取得します。</summary>
+        <returns>すべての環境変数の名前と値を保持するディクショナリ。環境変数が見つからなかった場合は空のディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前と環境変数の値が返されたキーと値のペアとして格納されている<xref:System.Collections.IDictionary>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Environment.GetEnvironmentVariables%2A>メソッドです。  
+  
+ [!code-cpp[Environment.GetEnvironmentVariables#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.GetEnvironmentVariables/CPP/getenvironmentvariables.cpp#1)]
+ [!code-csharp[Environment.GetEnvironmentVariables#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.GetEnvironmentVariables/CS/getenvironmentvariables.cs#1)]
+ [!code-vb[Environment.GetEnvironmentVariables#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.GetEnvironmentVariables/VB/getenvironmentvariables.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、この操作を実行するために必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.OutOfMemoryException">バッファーがメモリ不足です。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">名前と環境変数の値を読み取る権限です。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnvironmentVariables">
+      <MemberSignature Language="C#" Value="public static System.Collections.IDictionary GetEnvironmentVariables (EnvironmentVariableTarget target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IDictionary GetEnvironmentVariables(valuetype System.EnvironmentVariableTarget target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetEnvironmentVariables(System.EnvironmentVariableTarget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.EnvironmentVariableTarget" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.EnvironmentVariableTarget" /> 値のいずれか。</param>
+        <summary>現在のプロセスから、または Windows オペレーティング システムのレジストリ キー (現在のユーザー用に予約されているレジストリ キーまたはローカル コンピューター用に予約されているレジストリ キー) から、すべての環境変数の名前と値を取得します。</summary>
+        <returns><paramref name="target" /> パラメーターに指定したソースから取得された、すべての環境変数の名前と値を保持するディクショナリ。環境変数が見つからない場合は空のディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `target`パラメーターは、ソースが現在のプロセス、現在のユーザーのレジストリ キーまたはローカル コンピューターのレジストリ キーがあるかどうかを指定します。  
+  
+ 名前と環境変数の値が返されたキーと値のペアとして格納されている<xref:System.Collections.IDictionary>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、プロセス、ユーザー、およびコンピューターのターゲットの環境変数を作成、オペレーティング システムのレジストリが、ユーザーとコンピューターの環境変数を含むその環境変数を削除するかどうかを確認します。  
+  
+ [!code-cpp[environment.getsetenvar#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.getsetenvar/CPP/source.cpp#1)]
+ [!code-csharp[environment.getsetenvar#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.getsetenvar/CS/gsev.cs#1)]
+ [!code-vb[environment.getsetenvar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.getsetenvar/VB/gsev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">指定された値に対してこの操作の実行に必要なアクセス許可が呼び出し元にない<paramref name="target" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" />無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">場合、名前と環境変数の値を読み取る<paramref name="target" />は<see cref="F:System.EnvironmentVariableTarget.Process" />(関連する列挙値: <see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" />)、  
+  
+ または  
+  
+ 環境変数へのフル アクセスの場合は<paramref name="target" />は<see cref="F:System.EnvironmentVariableTarget.User" />または<see cref="F:System.EnvironmentVariableTarget.Machine" />(関連する列挙値: <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />)。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFolderPath">
+      <MemberSignature Language="C#" Value="public static string GetFolderPath (Environment.SpecialFolder folder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFolderPath(valuetype System.Environment/SpecialFolder folder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetFolderPath(System.Environment.SpecialFolder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="folder" Type="System.Environment+SpecialFolder" />
+      </Parameters>
+      <Docs>
+        <param name="folder">システムの固定フォルダーを識別する列挙定数。</param>
+        <summary>指定した列挙体によって識別されるシステムの特別なフォルダーへのパスを取得します。</summary>
+        <returns>指定したシステムの特別なフォルダーがコンピューター上に物理的に存在する場合は、そのフォルダーへのパス。それ以外の場合は、空の文字列 ("")。  
+  
+ オペレーティング システムがフォルダーを作成していない場合、存在していたフォルダーを削除した場合、またはフォルダーが物理パスに対応しない [マイ コンピューター] などの仮想ディレクトリの場合、フォルダーは物理的に存在しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、プログラム ファイル、プログラム、システム、またはスタートアップ時に、一般的な情報にアクセスするために使用するなどのシステム特別なフォルダーへのパスを取得します。 特別なフォルダーは既定では、システムによってまたは明示的に設定、ユーザーが Windows のバージョンをインストールするときにします。  
+  
+ `folder`パラメーターを取得する特別なフォルダーを指定し、内の値のいずれかを指定する必要があります、<xref:System.Environment.SpecialFolder>列挙以外の場合は、他の値は、例外をスローします。  
+  
+ 特別なフォルダーの詳細については、次を参照してください。、 [CSIDL](http://go.microsoft.com/fwlink/?LinkId=116664)トピック値。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Environment.GetFolderPath%2A>を取得して関連付けられているパスを表示する方法、`folder`パラメーター。  
+  
+ [!code-cpp[Environment.GetFolderPath#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.GetFolderPath/CPP/getfolderpath.cpp#1)]
+ [!code-csharp[Environment.GetFolderPath#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.GetFolderPath/CS/getfolderpath.cs#1)]
+ [!code-vb[Environment.GetFolderPath#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.GetFolderPath/VB/getfolderpath.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="folder" />メンバーではない<see cref="T:System.Environment.SpecialFolder" />です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のプラットフォームはサポートされていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パス自体の情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFolderPath">
+      <MemberSignature Language="C#" Value="public static string GetFolderPath (Environment.SpecialFolder folder, Environment.SpecialFolderOption option);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFolderPath(valuetype System.Environment/SpecialFolder folder, valuetype System.Environment/SpecialFolderOption option) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetFolderPath(System.Environment.SpecialFolder,System.Environment.SpecialFolderOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="folder" Type="System.Environment+SpecialFolder" />
+        <Parameter Name="option" Type="System.Environment+SpecialFolderOption" />
+      </Parameters>
+      <Docs>
+        <param name="folder">システムの固定フォルダーを識別する列挙定数。</param>
+        <param name="option">特別なフォルダーへのアクセスに使用するオプションを指定します。</param>
+        <summary>指定した列挙体によって識別されるシステムの特別なフォルダーへのパスを取得します。指定したオプションを使用して特別なフォルダーにアクセスします。</summary>
+        <returns>指定したシステムの特別なフォルダーがコンピューター上に物理的に存在する場合は、そのフォルダーへのパス。それ以外の場合は、空の文字列 ("")。  
+  
+ オペレーティング システムがフォルダーを作成していない場合、存在していたフォルダーを削除した場合、またはフォルダーが物理パスに対応しない [マイ コンピューター] などの仮想ディレクトリの場合、フォルダーは物理的に存在しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、プログラム ファイル、プログラム、システム、またはスタートアップ時に、一般的な情報にアクセスするために使用するなどのシステム特別なフォルダーへのパスを取得します。 特別なフォルダーは既定では、システムによってまたは明示的に設定、ユーザーが Windows のバージョンをインストールするときにします。  
+  
+ `folder`パラメーターを取得する特別なフォルダーを指定し、内の値のいずれかを指定する必要があります、<xref:System.Environment.SpecialFolder>列挙以外の場合は、他の値は、例外をスローします。  
+  
+ 特別なフォルダーの詳細については、次を参照してください。、 [CSIDL](http://go.microsoft.com/fwlink/?LinkId=116664)トピック値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="folder" />メンバーではありません。<see cref="T:System.Environment.SpecialFolder" /></exception>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.PlatformNotSupportedException" />
+        </exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パス自体の情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLogicalDrives">
+      <MemberSignature Language="C#" Value="public static string[] GetLogicalDrives ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetLogicalDrives() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.GetLogicalDrives" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコンピューターの論理ドライブの名前を格納している文字列の配列を返します。</summary>
+        <returns>各要素に論理ドライブの名前を格納している文字列の配列。 たとえば場合は、コンピューターのハード ディスク ドライブが最初の論理ドライブを返される最初の要素が"c:\\"です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して現在のコンピューターの論理ドライブを表示する方法を示しています、<xref:System.Environment.GetLogicalDrives%2A>メソッドです。  
+  
+ [!code-cpp[Environment.GetLogicalDrives#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.GetLogicalDrives/CPP/getlogicaldrives.cpp#1)]
+ [!code-csharp[Environment.GetLogicalDrives#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.GetLogicalDrives/CS/getlogicaldrives.cs#1)]
+ [!code-vb[Environment.GetLogicalDrives#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.GetLogicalDrives/VB/getlogicaldrives.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このアクセス許可によって保護されているリソースへのフル アクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HasShutdownStarted">
+      <MemberSignature Language="C#" Value="public static bool HasShutdownStarted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool HasShutdownStarted" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.HasShutdownStarted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインがアンロード中か、または共通言語ランタイム (CLR) がシャットダウン中かどうかを示す値を取得します。</summary>
+        <value>
+          現在のアプリケーション ドメインがアンロード中か、CLR がシャットダウン中の場合は <see langword="true" />。それ以外の場合は <see langword="false." />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR では、アプリケーション ドメインをアンロードするときに、ファイナライザー メソッドがそのアプリケーション ドメインにあるすべてのオブジェクトに対してファイナライザーを実行します。 CLR シャット ダウンすると、ファイナライザー メソッドがあるすべてのオブジェクトに対してファイナライザー スレッドを開始します。 <xref:System.Environment.HasShutdownStarted%2A>プロパティから返される`true`ファイナライザー スレッドが開始された後のみです。 プロパティが返されるときに`true`、アプリケーション ドメインがアンロード中か、CLR 自体が呼び出すことによってシャット ダウン中かどうかを指定できます、<xref:System.AppDomain.IsFinalizingForUnload%2A?displayProperty=nameWithType>メソッドです。 このメソッドが戻る`true`アプリケーション ドメインがアンロード中であるために、ファイナライザーが呼び出されるかどうか、または`false`場合は、CLR がシャット ダウンします。  
+  
+ <xref:System.Environment.HasShutdownStarted%2A>プロパティから返される`false`ファイナライザー スレッドが開始されていない場合。  
+  
+ このプロパティを使用すると、静的変数、終了コードにアクセスするかどうかを判断できます。 場合は、アプリケーション ドメインまたは CLR がシャット ダウン中、終了処理メソッドを持つし、は、静的フィールドによって参照される任意のオブジェクトを確実にアクセスできません。 これは、これらのオブジェクトが既に終了されている可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Is64BitOperatingSystem">
+      <MemberSignature Language="C#" Value="public static bool Is64BitOperatingSystem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Is64BitOperatingSystem" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.Is64BitOperatingSystem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のオペレーティング システムが 64 ビット オペレーティング システムかどうかを判断します。</summary>
+        <value>
+          オペレーティング システムが 64 ビットの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Is64BitProcess">
+      <MemberSignature Language="C#" Value="public static bool Is64BitProcess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Is64BitProcess" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.Is64BitProcess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスが 64 ビット プロセスかどうかを判断します。</summary>
+        <value>
+          プロセスが 64 ビットの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public static string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル コンピューターの NetBIOS 名を取得します。</summary>
+        <value>このコンピューターの名前を格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前がレジストリから読み取られるときに、システムの起動時にこのコンピューターの名前が確立されます。 このコンピューターがクラスター内のノードの場合は、ノードの名前が返されます。  
+  
+   
+  
+## Examples  
+ 次の例では、このコード例を実行しているコンピューターの名前を表示します。 (コンピューター名を省略すると、例の出力のセキュリティ上の理由からです。)  
+  
+ [!code-cpp[environment.machinename#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.MachineName/CPP/machinename.cpp#1)]
+ [!code-csharp[environment.machinename#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.MachineName/CS/machinename.cs#1)]
+ [!code-vb[environment.machinename#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.MachineName/VB/machinename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このコンピューターの名前を取得できません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">読み取りアクセス COMPUTERNAME 環境変数。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLine">
+      <MemberSignature Language="C#" Value="public static string NewLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string NewLine" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.NewLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この環境で定義されている改行文字列を取得します。</summary>
+        <value>UNIX 以外のプラットフォームでは "\r\n" を含む文字列。UNIX プラットフォームでは "\n" を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値<xref:System.Environment.NewLine%2A>は、現在のプラットフォームおよび .NET Framework の実装に合わせてカスタマイズされた定数です。 プロパティの値にエスケープ文字の詳細については、次を参照してください。[文字のエスケープ](~/docs/standard/base-types/character-escapes-in-regular-expressions.md)です。  
+  
+ によって提供される機能<xref:System.Environment.NewLine%2A>条項改行、ライン フィード、改行、復帰、CRLF、および行の末尾の意味がよくあります。  
+  
+ <xref:System.Environment.NewLine%2A>エスケープ文字 '\r' と Microsoft c# および C と C++ では、"\n"などの言語固有の改行のサポートと組み合わせて使用できますか`vbCrLf`Microsoft Visual Basic でします。  
+  
+ <xref:System.Environment.NewLine%2A>によって処理されるテキストを自動的に追加される、<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>と<xref:System.Text.StringBuilder.AppendLine%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、改行で区切られた 3 つの行が表示されます。  
+  
+ [!code-cpp[environment.newline#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.NewLine/CPP/newline.cpp#1)]
+ [!code-csharp[environment.newline#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.NewLine/CS/newline.cs#1)]
+ [!code-vb[environment.newline#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.NewLine/VB/newline.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OSVersion">
+      <MemberSignature Language="C#" Value="public static OperatingSystem OSVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.OperatingSystem OSVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.OSVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.OperatingSystem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプラットフォーム ID とバージョン番号を格納している <see cref="T:System.OperatingSystem" /> オブジェクトを取得します。</summary>
+        <value>プラットフォーム ID とバージョン番号を格納しているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  Windows 8 以降、<xref:System.Environment.OSVersion%2A>プロパティはすべての Windows プラットフォームに対して、同じメジャーおよびマイナー バージョン番号を返します。 そのため、オペレーティング システムのバージョンを特定するには、このプロパティの値を取得することはお勧めできません。  
+  
+ 通常、<xref:System.Environment.OSVersion%2A>プロパティを使用して、特定の機能が導入されたオペレーティング システムのいくつかの基本バージョンのアプリが実行されていることを確認してください。 現在のオペレーティング システムのバージョンがによって返されるかどうかをテストすることによって、バージョン チェックを行う必要があります、そうでは、ときに、<xref:System.Environment.OSVersion%2A>プロパティは、同じか、基本オペレーティング システムのバージョンよりも大きいです。 詳細については、次を参照してください。、<xref:System.Version>クラスに関するトピック。  
+  
+ Windows 8 から、<xref:System.Environment.OSVersion%2A>プロパティは、Windows によって報告されたバージョンを返します[による GetVersionEx](http://msdn.microsoft.com/library/windows/desktop/ms724451\(v=vs.85\).aspx)関数。 Windows デスクトップ オペレーティング システムのバージョンと対応するバージョン番号の一覧は、次を参照してください。[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)、Windows デベロッパー センターにします。  
+  
+> [!NOTE]
+>  <xref:System.Environment.OSVersion%2A>プロパティは、両方に同じバージョン番号 (6.2.0.0) を報告[!INCLUDE[win8](~/includes/win8-md.md)]と[!INCLUDE[win81](~/includes/win81-md.md)]と Windows 10 の同じメジャーおよびマイナー バージョン番号。  
+  
+ 場合によっては、<xref:System.Environment.OSVersion%2A>プロパティで指定されている Windows プログラム互換性モードの機能のバージョンに一致するオペレーティング システムのバージョンを返さない可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、プラットフォーム id とコード例を実行しているコンピューターのバージョン番号を表示します。  
+  
+ [!code-cpp[environment.osversion#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.OSVersion/CPP/osversion.cpp#1)]
+ [!code-csharp[environment.osversion#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.OSVersion/CS/osversion.cs#1)]
+ [!code-vb[environment.osversion#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.OSVersion/VB/osversion.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティはシステムのバージョンを取得できませんでした。  
+  
+ または  
+  
+ 取得したプラットフォーム ID が <see cref="T:System.PlatformID" /> のメンバーではありません</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessorCount">
+      <MemberSignature Language="C#" Value="public static int ProcessorCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ProcessorCount" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.ProcessorCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンピューター上のプロセッサ数を取得します。</summary>
+        <value>現在のコンピューター上のプロセッサ数を示す 32 ビット符号付き整数。 既定値はありません。 現在のコンピューターが複数のプロセッサ グループを持っている場合、このプロパティは共通言語ランタイム (CLR) で使用できる論理プロセッサの数を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理プロセッサのプロセッサ グループの詳細については、次を参照してください。[プロセッサ グループ](http://msdn.microsoft.com/library/windows/desktop/dd405503.aspx)です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Environment.ProcessorCount%2A>プロパティです。  
+  
+ [!code-cpp[environment.processorcount#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.processorcount/CPP/pc.cpp#1)]
+ [!code-csharp[environment.processorcount#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.processorcount/CS/pc.cs#1)]
+ [!code-vb[environment.processorcount#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.processorcount/VB/pc.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEnvironmentVariable">
+      <MemberSignature Language="C#" Value="public static void SetEnvironmentVariable (string variable, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetEnvironmentVariable(string variable, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.SetEnvironmentVariable(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="variable">環境変数の名前。</param>
+        <param name="value">代入する値<c>変数</c>です。</param>
+        <summary>現在のプロセスに格納されている環境変数を作成、変更、または削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>の値を持つオーバー ロード<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>の`target`引数。  
+  
+ 場合、`value`引数が空でない (空の値の定義をこのセクションの後で環境変数の削除の説明を参照してください) としてという名前の環境変数、`variable`パラメーターが存在しないか、環境変数が作成されの内容を割り当てられている`value`です。 存在する場合、値を変更します。 環境変数が現在のプロセスのみの環境ブロックで定義されているため、後は保持されない、プロセスが終了しました。  
+  
+ 場合`variable`文字を含む非初期 16 進数 0 文字では、前に、ゼロ文字には、環境変数名と見なされ、後続のすべての文字は無視されます。  
+  
+ 場合`value`文字を含む非初期 16 進数 0 文字では、前に、ゼロ文字は、環境変数に割り当てられ、後続のすべての文字は無視されます。  
+  
+ 場合`value`空としてという名前の環境変数は、`variable`が存在する環境変数を削除します。 場合`variable`が存在しないエラーが発生しない場合でも、操作を実行することはできません。 `value`次の条件のいずれかで空と見なされます。  
+  
+-   `null`します。  
+  
+-   <xref:System.String.Empty?displayProperty=nameWithType>します。  
+  
+-   1 つの値を持つの u+0000 文字で構成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、という環境変数かどうかを検査`APPDOMAIN`現在のプロセス内に存在します。 そうでない場合を作成して、その値を"True"を設定します。 場合の値、`APPDOMAIN`環境変数が"True"を呼び出して、`Message.Display`新しいアプリケーション ドメイン内のメソッドです。 それ以外の場合、実行、`Message.Display`現在のアプリケーション ドメイン内のメソッドです。  
+  
+ [!code-csharp[System.Environment.SetEnvironmentVariable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.setenvironmentvariable/cs/setenvironmentvariable1.cs#1)]
+ [!code-vb[System.Environment.SetEnvironmentVariable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.setenvironmentvariable/vb/setenvironmentvariable1.vb#1)]  
+  
+ 最初に例を実行する場合、メッセージ「Domain2 のドメインで実行」をコンソールに表示します。 場合は、コマンドラインから環境変数を設定するには、コマンドを使用します。  
+  
+ `Set AppDomain=False`  
+  
+ 例には、メッセージが表示されます。"ドメインでの実行*exeName*.exe"ここで、 *exeName*実行可能ファイルの名前を指定します。  
+  
+ 次の例が、という環境変数の値を取得しようとしています。`Test1`プロセスの環境ブロックからです。 変数が存在しない場合、この例は、変数を作成し、その値を取得します。 この例では、変数の値を表示します。 場合の例では、変数を作成も呼び出して、<xref:System.Environment.GetEnvironmentVariables%28System.EnvironmentVariableTarget%29>の各メンバーを持つメソッド、<xref:System.EnvironmentVariableTarget>変数を現在のプロセスの環境ブロックからのみ取得できることを確立するために列挙です。 最後に、例では、変数を作成、削除されます。  
+  
+ [!code-csharp[System.Environment.GetEnvironmentVariable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.getenvironmentvariable/cs/getenvironmentvariableex1.cs#2)]
+ [!code-vb[System.Environment.GetEnvironmentVariable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.getenvironmentvariable/vb/getenvironmentvariableex1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="variable" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="variable" />長さ 0 の文字列では、最初に 16 進数 0 文字が含まれています (0x00) または等号 (「=」) です。  
+  
+ または  
+  
+ 長さ<paramref name="variable" />または<paramref name="value" />32,767 文字以上です。  
+  
+ または  
+  
+ この操作の実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、この操作を実行するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">環境変数へのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEnvironmentVariable">
+      <MemberSignature Language="C#" Value="public static void SetEnvironmentVariable (string variable, string value, EnvironmentVariableTarget target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetEnvironmentVariable(string variable, string value, valuetype System.EnvironmentVariableTarget target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Environment.SetEnvironmentVariable(System.String,System.String,System.EnvironmentVariableTarget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="target" Type="System.EnvironmentVariableTarget" />
+      </Parameters>
+      <Docs>
+        <param name="variable">環境変数の名前。</param>
+        <param name="value">代入する値<c>変数</c>です。</param>
+        <param name="target">環境変数の位置を指定する列挙値の 1 つ。</param>
+        <summary>現在のプロセス、または Windows オペレーティング システムのレジストリ キー (現在のユーザー用に予約されているレジストリ キーまたはローカル コンピューター用に予約されているレジストリ キー) に格納される環境変数を作成、変更、または削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Environment.SetEnvironmentVariable%28System.String%2CSystem.String%2CSystem.EnvironmentVariableTarget%29>メソッドでは、コンピューター上で実行されるすべてのプロセスに提供される環境変数を定義できます。 (、<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>値) に、すべてのプロセスがユーザーによって実行 (、<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>値)、または現在のプロセス (、<xref:System.EnvironmentVariableTarget.Process>値)。 コンピューターごとおよびユーザーごとの環境変数は、現在のプロセスの環境ブロックにコピーされます。 ただし、現在のプロセスの環境ブロックに固有の環境変数は、プロセスが終了するまでの間だけ保持されます。  
+  
+ 場合、`value`引数が空でない (空の値の定義をこのセクションの後で環境変数の削除の説明を参照してください) としてという名前の環境変数、`variable`パラメーターが存在しないか、環境変数が作成されの内容を割り当てられている`value`です。  存在する場合、値を変更します。  
+  
+ 場合`variable`文字を含む非初期 16 進数 0 文字では、前に、ゼロ文字には、環境変数名と見なされ、後続のすべての文字は無視されます。  
+  
+ 場合`value`文字を含む非初期 16 進数 0 文字では、前に、ゼロ文字は、環境変数に割り当てられ、後続のすべての文字は無視されます。  
+  
+ 場合`value`空としてという名前の環境変数は、`variable`が存在する環境変数を削除します。 `value`次の条件のいずれかで空と見なされます。  
+  
+-   `null`します。  
+  
+-   <xref:System.String.Empty?displayProperty=nameWithType>します。  
+  
+-   1 つの値を持つの u+0000 文字で構成されます。  
+  
+ 場合`variable`がありません。 エラーは発生しませんが、操作を実行することはできません。 慎重に行ってください`target`は<xref:System.EnvironmentVariableTarget.Machine>であるため、現在のプロセスまたはユーザーではだけでなく、ローカル マシン全体に影響する環境変数を誤って削除したことができます。  
+  
+ 場合`target`は<xref:System.EnvironmentVariableTarget.User>、環境変数は、ローカル コンピューターのレジストリの hkey_current_user \environment キーに格納します。 これは、現在のユーザーとして実行されているファイル エクスプ ローラーのインスタンスにもコピーします。 環境変数は、ファイル エクスプ ローラーから、ユーザーが起動される新しいプロセスによって継承されます。  
+  
+ 同様に場合、`target`は<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>、環境変数は、ローカル コンピューターのレジストリの HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Environment キーに格納します。 これは、ファイル エクスプ ローラーのすべてのインスタンスにもコピーします。 環境変数は、ファイル エクスプ ローラーから起動されるすべての新しいプロセスによって継承されます。  
+  
+ 場合`target`は<xref:System.EnvironmentVariableTarget.User>または<xref:System.EnvironmentVariableTarget.Machine>、Windows によって、設定操作の他のアプリケーションが通知される`WM_SETTINGCHANGE`メッセージ。  
+  
+ 場合`target`は<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>または<xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>、ことをお勧めの長さ`value`より小さい 2048 文字です。  
+  
+   
+  
+## Examples  
+ 次の例の環境変数の作成、 <xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>、 <xref:System.EnvironmentVariableTarget?displayProperty=nameWithType>、および<xref:System.EnvironmentVariableTarget.Machine>を対象に、オペレーティング システムのレジストリが、ユーザーとコンピューターの環境変数が含まれていますし、環境を削除するかどうかを調べる変数。  
+  
+ [!code-cpp[environment.getsetenvar#1](~/samples/snippets/cpp/VS_Snippets_CLR/environment.getsetenvar/CPP/source.cpp#1)]
+ [!code-csharp[environment.getsetenvar#1](~/samples/snippets/csharp/VS_Snippets_CLR/environment.getsetenvar/CS/gsev.cs#1)]
+ [!code-vb[environment.getsetenvar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/environment.getsetenvar/VB/gsev.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="variable" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="variable" />長さ 0 の文字列では、最初に 16 進数 0 文字が含まれています (0x00) または等号 (「=」) です。  
+  
+ または  
+  
+ 長さ<paramref name="variable" />32,767 文字以上です。  
+  
+ または  
+  
+ <paramref name="target" />メンバーではない、<see cref="T:System.EnvironmentVariableTarget" />列挙します。  
+  
+ または  
+  
+ <paramref name="target" /><see cref="F:System.EnvironmentVariableTarget.Machine" />または<see cref="F:System.EnvironmentVariableTarget.User" />との長さ<paramref name="variable" />255 以上です。  
+  
+ または  
+  
+ <paramref name="target" /><see cref="F:System.EnvironmentVariableTarget.Process" />の長さと<paramref name="value" />32,767 文字以上です。  
+  
+ または  
+  
+ この操作の実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、この操作を実行するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">環境変数へのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StackTrace">
+      <MemberSignature Language="C#" Value="public static string StackTrace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string StackTrace" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.StackTrace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスタック トレース情報を取得します。</summary>
+        <value>スタック トレース情報を格納している文字列。 この値は、<see cref="F:System.String.Empty" /> の場合もあります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Environment.StackTrace%2A>プロパティ リストから順にメソッドの呼び出しは、最新のメソッド呼び出しが最初に、説明およびスタックの各メソッド呼び出しのスタック トレース情報の 1 つの行が一覧表示します。 ただし、<xref:System.Environment.StackTrace%2A>プロパティは多くのメソッド呼び出しの最適化中に発生するコードの変換が原因で期待どおりに、報告可能性があります。  
+  
+> [!NOTE]
+>  クラスによって、スタック トレース情報の階層ビューを使用して、<xref:System.Diagnostics.StackTrace>クラスです。  
+  
+ <xref:System.Environment.StackTrace%2A>プロパティの各メソッド呼び出しのスタック トレース情報は次のように書式設定します。  
+  
+ "at `FullClassName`.`MethodName`(`MethodParams`) in `FileName` :line `LineNumber` "  
+  
+ 「アット」リテラルは、3 つのスペースを付けたものし、デバッグ シンボルが利用できない場合に"in"で始まる部分文字列全体を省略するとします。 プレース ホルダー、 `FullClassName`、 `MethodName`、 `MethodParams`、 `FileName`、および`LineNumber`、実際の値に置き換えられます、次のように定義されます。  
+  
+ FullClassName  
+ 名前空間を含むクラスの完全名。  
+  
+ `MethodName`  
+ メソッドの名前。  
+  
+ `MethodParams`  
+ パラメーターの型/名前の組み合わせの一覧。 各ペアはコンマで区切られます (「,」) です。 場合、この情報は省略されます`MethodName`パラメーターを受け取りません。  
+  
+ `FileName`  
+ ソースの名前のファイルの場所、`MethodName`メソッドを宣言します。 デバッグ シンボルが利用できない場合、この情報は省略されます。  
+  
+ `LineNumber`  
+ 内の行の数`FileName`からソース コードを含む`MethodName`コール スタック上にある命令のです。 デバッグ シンボルが利用できない場合、この情報は省略されます。  
+  
+ <xref:System.Environment.NewLine%2A?displayProperty=nameWithType>文字列は、スタック トレースの各行を終了します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Environment.StackTrace%2A>プロパティです。  
+  
+ [!code-cpp[environment.stacktrace#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.StackTrace/CPP/stacktrace.cpp#1)]
+ [!code-csharp[environment.stacktrace#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.StackTrace/CS/stacktrace.cs#1)]
+ [!code-vb[environment.stacktrace#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.StackTrace/VB/stacktrace.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">アクセス許可によって保護されているリソースへのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDirectory">
+      <MemberSignature Language="C#" Value="public static string SystemDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SystemDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.SystemDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム ディレクトリの絶対パスを取得します。</summary>
+        <value>ディレクトリのパスを格納している文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値の例は、文字列"C:\WinNT\System32"です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコード例を実行しているコンピューターのシステム ディレクトリを表示します。 (システム ディレクトリを省略すると、例の出力のセキュリティ上の理由からです。)  
+  
+ [!code-cpp[environment.systemdirectory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.SystemDirectory/CPP/systemdirectory.cpp#1)]
+ [!code-csharp[environment.systemdirectory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.SystemDirectory/CS/systemdirectory.cs#1)]
+ [!code-vb[environment.systemdirectory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.SystemDirectory/VB/systemdirectory.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パス自体の情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemPageSize">
+      <MemberSignature Language="C#" Value="public static int SystemPageSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 SystemPageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.SystemPageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムのメモリ ページ内にあるバイト数を取得します。</summary>
+        <value>システム メモリ ページ内のバイト数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するかどうかを判断する場合、この情報が役に立ちます、<xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions?displayProperty=nameWithType>メモリ マップト ファイルを使用するオプションを選択します。  
+  
+ この値は、Windows では、`dwPageSize`内のメンバー、`SYSTEM_INFO`構造体。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">システムおよびユーザーの環境変数にアクセスします。 関連付けられている例外:  
+  
+ <see cref="P:System.Security.SecurityException.PermissionState" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TickCount">
+      <MemberSignature Language="C#" Value="public static int TickCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 TickCount" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.TickCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム起動後のミリ秒単位の経過時間を取得します。</summary>
+        <value>コンピューターが最後に起動してからの経過時間をミリ秒単位で保持している 32 ビット符号付き整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、システム タイマーからは派生し、32 ビット符号付き整数として格納されます。 システム タイマーの解像度から派生したそのため、注意してください。、<xref:System.Environment.TickCount%2A>プロパティは、システム タイマー、10 ~ 16 時間 (ミリ秒) の範囲内では、通常の解像度に制限されます。  
+  
+> [!IMPORTANT]
+>  の値、<xref:System.Environment.TickCount%2A>継続的に、システムが実行されている場合、プロパティの値が 32 ビットの符号付き整数<xref:System.Environment.TickCount%2A>0 ~ 1 ずつ増分されます<xref:System.Int32?displayProperty=nameWithType>続けたに移動し、<xref:System.Int32?displayProperty=nameWithType>が負の数値である、中に 0 に戻るをインクリメントします。 この問題を回避するには、Windows を呼び出すことによって[GetTickCount](https://msdn.microsoft.com/library/windows/desktop/ms724408.aspx)を約 49.7 日後に、または呼び出すことによって、ゼロにリセットされる関数、 [GetTickCount64](https://msdn.microsoft.com/library/windows/desktop/ms724411.aspx)関数。  
+  
+ <xref:System.Environment.TickCount%2A>異なる、<xref:System.DateTime.Ticks%2A?displayProperty=nameWithType>プロパティで、1/1/0001、12時 00分 am 以降の経過時間を 100 ナノ秒間隔の数です。  
+  
+ 使用して、<xref:System.DateTime.Now%2A?displayProperty=nameWithType>プロパティをこのコンピューターの時刻と現在の現地日時を取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、正の値によって返される値の範囲を取得する方法を示します、<xref:System.Environment.TickCount%2A>プロパティです。 <xref:System.Environment.TickCount%2A>プロパティが切り替わります<xref:System.Int32.MinValue?displayProperty=nameWithType>、負の数値であると<xref:System.Int32.MaxValue?displayProperty=nameWithType>49.8 日ごとに 1 回です。 このサンプル コードが 0 との間にサイクルを負でない数値を生成する、符号ビットを削除し、 <xref:System.Int32.MaxValue> 24.9 日ごとに 1 回です。  
+  
+ [!code-cpp[environment.tickcount#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.TickCount/CPP/tickcount.cpp#1)]
+ [!code-csharp[environment.tickcount#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.TickCount/CS/tickcount.cs#1)]
+ [!code-vb[environment.tickcount#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.TickCount/VB/tickcount.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserDomainName">
+      <MemberSignature Language="C#" Value="public static string UserDomainName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserDomainName" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.UserDomainName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザーに関連付けられているネットワーク ドメイン名を取得します。</summary>
+        <value>現在のユーザーに関連付けられているネットワーク ドメイン名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーのドメイン アカウントの資格情報は、ユーザーのドメイン名として書式設定、'\\' 文字、およびユーザー名。 使用して、<xref:System.Environment.UserDomainName%2A>ユーザー名がない場合、ユーザーのドメイン名を取得するプロパティと<xref:System.Environment.UserName%2A>プロパティをドメイン名のないユーザー名を取得します。  たとえば、ユーザーのドメイン名とユーザー名が、CORPORATENETWORK\john、 <xref:System.Environment.UserDomainName%2A> "CORPORATENETWORK"を返します。  
+  
+ <xref:System.Environment.UserDomainName%2A>プロパティは、まず、現在のユーザーの Windows アカウント名のドメイン名のコンポーネントの取得を試みます。 このプロパティによって提供されるユーザー名に関連付けられているドメイン名を取得しようと試みに失敗する場合、<xref:System.Environment.UserName%2A>プロパティです。 失敗した場合、ホスト コンピューターがドメインに参加していないため、ホスト コンピューター名が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">オペレーティング システムでは、ネットワークのドメイン名を取得できません。</exception>
+        <exception cref="T:System.InvalidOperationException">ネットワークのドメイン名を取得できません。</exception>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">読み取りアクセス USERDOMAIN 環境変数。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UserInteractive">
+      <MemberSignature Language="C#" Value="public static bool UserInteractive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UserInteractive" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.UserInteractive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスがユーザー対話モードで実行されているかどうかを示す値を取得します。</summary>
+        <value>
+          現在のプロセスがユーザー対話モードで実行されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Environment.UserInteractive%2A>プロパティ レポート`false`Windows プロセスまたはユーザー インターフェイスなしに実行される IIS のようなサービスです。 このプロパティが場合`false`モーダル ダイアログ ボックスを表示しない、またはメッセージ ボックス-ユーザーと対話するためのグラフィカル ユーザー インターフェイスがないためです。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のプロセスがユーザー対話モードで実行されているかどうかが表示されます。  
+  
+ [!code-cpp[Environment.UserInteractive#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.UserInteractive/CPP/userinteractive.cpp#1)]
+ [!code-csharp[Environment.UserInteractive#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.UserInteractive/CS/userinteractive.cs#1)]
+ [!code-vb[Environment.UserInteractive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.UserInteractive/VB/userinteractive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public static string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在 Windows オペレーティング システムにログオンしている人のユーザー名を取得します。</summary>
+        <value>Windows にログオンしている人のユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Environment.UserName%2A>システムとセキュリティまたはアクセスのためにアプリケーションに、現在のスレッドでユーザーを識別するプロパティです。 各ユーザーの特定のアプリケーションをカスタマイズするも使用できます。  
+  
+ <xref:System.Environment.UserName%2A>プロパティは、Windows への呼び出しをラップ[GetUserName](http://msdn.microsoft.com/library/windows/desktop/ms724432.aspx)関数。 ユーザーのドメイン アカウントの資格情報は、ユーザーのドメイン名として書式設定、'\\' 文字、およびユーザー名。 使用して、<xref:System.Environment.UserDomainName%2A>ユーザーのドメイン名を取得するプロパティと<xref:System.Environment.UserName%2A>プロパティをユーザー名を取得します。  
+  
+ ASP.NET アプリケーションを開発環境で実行する場合、<xref:System.Environment.UserName%2A>プロパティは、現在のユーザーの名前を返します。 発行の ASP.NET アプリケーションでは、このプロパティは、(既定の AppPool) などのアプリケーション プール アカウントの名前を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のスレッドを開始した人のユーザー名を表示します。  
+  
+ [!code-cpp[Environment.UserName#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.UserName/CPP/username.cpp#1)]
+ [!code-csharp[Environment.UserName#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.UserName/CS/username.cs#1)]
+ [!code-vb[Environment.UserName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.UserName/VB/username.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">ユーザー名の環境変数への読み取りアクセス。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public static Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共通言語ランタイムのメジャー バージョン番号、マイナー バージョン番号、ビルド番号、およびリビジョン番号を記述する <see cref="T:System.Version" /> オブジェクトを取得します。</summary>
+        <value>共通言語ランタイムのバージョンを表示するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework バージョン 4、4.5、4.5.1、および 4.5.2 の場合は、<xref:System.Environment.Version%2A?displayProperty=nameWithType> プロパティから返される <xref:System.Version> オブジェクトの文字列表現が `4.0.30319.xxxxx` という形式になっています。 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、そのポイント リリース、および .NET Framework 4.7 の書式を`4.0.30319.42000`です。  
+  
+> [!WARNING]
+>  [!INCLUDE[net_v45](~/includes/net-v45-md.md)]以降をお勧めしませんを使用して、<xref:System.Environment.Version%2A>プロパティです。 ランタイムのバージョンを検出する代わりに、レジストリを照会して、共通言語ランタイムのバージョンを調べることができます。 詳細については、次を参照してください。[する方法: 決定 .NET Framework のバージョンがインストールされている](~/docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)です。  
+  
+ 詳細については、.NET Framework の各バージョンと共にインストールされる共通言語ランタイムのバージョンは、次を参照してください。[バージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、共通言語ランタイムのバージョンを表示します。 (バージョンを省略すると、例の出力のセキュリティ上の理由からです。)  
+  
+ [!code-cpp[Environment.Version#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.Version/CPP/version.cpp#1)]
+ [!code-csharp[Environment.Version#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.Version/CS/version.cs#1)]
+ [!code-vb[Environment.Version#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.Version/VB/version.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkingSet">
+      <MemberSignature Language="C#" Value="public static long WorkingSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int64 WorkingSet" />
+      <MemberSignature Language="DocId" Value="P:System.Environment.WorkingSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセス コンテキストに割り当てられる物理メモリ量を取得します。</summary>
+        <value>プロセス コンテキストに割り当てられる物理メモリのバイト数を格納している 64 ビット符号付き整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコード例を実行しているコンピューターのワーキング セットのサイズを表示します。  
+  
+ [!code-cpp[Environment.WorkingSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.WorkingSet/CPP/workingset.cpp#1)]
+ [!code-csharp[Environment.WorkingSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.WorkingSet/CS/workingset.cs#1)]
+ [!code-vb[Environment.WorkingSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.WorkingSet/VB/workingset.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このアクセス許可によって保護されているリソースへのフル アクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

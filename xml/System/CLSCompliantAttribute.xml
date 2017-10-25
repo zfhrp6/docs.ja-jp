@@ -1,0 +1,153 @@
+<Type Name="CLSCompliantAttribute" FullName="System.CLSCompliantAttribute">
+  <TypeSignature Language="C#" Value="public sealed class CLSCompliantAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CLSCompliantAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.CLSCompliantAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プログラム要素が共通言語仕様 (CLS) に準拠しているかどうかを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CLSCompliantAttribute>属性はで、共通言語仕様 (CLS)、.NET Framework を対象とする任意の言語をサポートする必要がある機能を定義するが、特定のプログラム要素に準拠しているかどうかを示すために使用します。 CLS 準拠は、主にそれらのライブラリが .NET Framework を対象とする任意の言語でアクセスできることを保証するライブラリ開発者は特に問題です。 詳細については、次を参照してください。[言語非依存および言語非依存コンポーネント](~/docs/standard/language-independence-and-language-independent-components.md)です。  
+  
+ 適用することができます、<xref:System.CLSCompliantAttribute>次のプログラム要素に属性: アセンブリ、モジュール、クラス、構造体、列挙型、コンス トラクター、メソッド、プロパティ、フィールド、イベント、インターフェイス、デリゲート、パラメーター、および戻り値。 ただし、CLS 準拠の概念では、アセンブリ、モジュール、型、およびメンバーのシグネチャの一部の型のメンバーの意味のあるのみです。 その結果、<xref:System.CLSCompliantAttribute>パラメーターに適用されるか、プログラム要素の値を返す場合は無視されます。  
+  
+ ない場合は<xref:System.CLSCompliantAttribute>のプログラム要素に、既定では適用。  
+  
+-   アセンブリが CLS 準拠ではありません。  
+  
+-   型は、外側の型またはアセンブリが CLS に準拠している場合にのみ、CLS に準拠していません。  
+  
+-   型が CLS に準拠している場合にのみ、型のメンバーは CLS 準拠です。  
+  
+ アセンブリが CLS 準拠としてマークされている場合は CLS に準拠するアセンブリ内の任意のパブリックに公開された型をと共に設定されなければなりません<xref:System.CLSCompliantAttribute>を使用して、`false`引数。 同様に、クラスが CLS 準拠としてマークされている場合は、CLS 準拠ではないすべてのメンバーを個別に指定する必要があります。 すべての非準拠メンバーは、対応する CLS 準拠の代替を提供する必要があります。  
+  
+ アセンブリまたはモジュールに適用される属性は、c# の後に行う必要があります`using`(`Imports` Visual Basic で) 句とコードの前にします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  現在の Microsoft Visual Basic コンパイラは意図的に CLS 準拠の警告を生成しません、ただし、コンパイラの将来のリリースは警告を発行します。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.CLSCompliantAttribute>アセンブリ全体にします。  
+  
+```  
+using System;  
+    [assembly: CLSCompliant(true)]  
+```  
+  
+ 次の宣言は CLS 準拠の警告が生成されます型`UInt32`CLS で指定されていません。  
+  
+```  
+public int SetValue(UInt32 value);  
+```  
+  
+ 宣言が付いている場合、<xref:System.CLSCompliantAttribute>コンパイラの警告またはエラーは生成されません。  
+  
+```  
+[CLSCompliant(false)]  
+ public int SetValue(UInt32 value);  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CLSCompliantAttribute (bool isCompliant);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isCompliant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CLSCompliantAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isCompliant" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isCompliant">
+          <see langword="true" />場合は、CLS に準拠していません。それ以外の場合、<see langword="false" />です。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.CLSCompliantAttribute" />指定したプログラム要素が CLS に準拠しているかどうかを示すブール値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompliant">
+      <MemberSignature Language="C#" Value="public bool IsCompliant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompliant" />
+      <MemberSignature Language="DocId" Value="P:System.CLSCompliantAttribute.IsCompliant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したプログラム要素が CLS に準拠しているかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、プログラム要素が CLS に準拠していません。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

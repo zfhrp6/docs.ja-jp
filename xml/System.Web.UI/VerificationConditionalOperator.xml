@@ -1,0 +1,57 @@
+<Type Name="VerificationConditionalOperator" FullName="System.Web.UI.VerificationConditionalOperator">
+  <TypeSignature Language="C#" Value="public enum VerificationConditionalOperator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VerificationConditionalOperator extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.VerificationConditionalOperator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用する条件式の演算子を指定します、<see cref="T:System.Web.UI.VerificationAttribute" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラス、メンバー、またはインデクサーに対しての拡張を使用する場合、<xref:System.Web.UI.VerificationAttribute>アクセシビリティの確認方法を定義する条件式を使用することがあります。 条件式の左側にあるは、<xref:System.Web.UI.VerificationAttribute.ConditionalProperty%2A>右側にあるは、<xref:System.Web.UI.VerificationAttribute.ConditionalValue%2A>です。 等号演算子を使用すると、左側にあるレポート true に、検証規則の条件式の右側にあるでなければなりません。 NotEquals 演算子を使用すると、左側にあるレポート true に、検証規則の条件式の右側にある必要があります等しくないです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="Equals" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.VerificationConditionalOperator Equals = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.VerificationConditionalOperator.Equals" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationConditionalOperator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>演算子 (=) に等しいかどうか。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEquals">
+      <MemberSignature Language="C#" Value="NotEquals" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.VerificationConditionalOperator NotEquals = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.VerificationConditionalOperator.NotEquals" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.VerificationConditionalOperator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Not 等しく演算子 (! =)。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

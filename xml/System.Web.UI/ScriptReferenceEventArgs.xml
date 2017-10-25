@@ -1,0 +1,87 @@
+<Type Name="ScriptReferenceEventArgs" FullName="System.Web.UI.ScriptReferenceEventArgs">
+  <TypeSignature Language="C#" Value="public class ScriptReferenceEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScriptReferenceEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ScriptReferenceEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.ScriptManager.ResolveScriptReference" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スクリプト参照が表示されると、<xref:System.Web.UI.ScriptReferenceEventArgs>オブジェクトが含まれています、<xref:System.Web.UI.ScriptReference>で定義されているオブジェクト、<xref:System.Web.UI.ScriptManager>インスタンス。 イベント ハンドラーを作成することができます、<xref:System.Web.UI.ScriptManager.ResolveScriptReference>イベントを確認する、<xref:System.Web.UI.ScriptReference>オブジェクトし、必要に応じて変更します。  
+  
+   
+  
+## Examples  
+ 次の例では、CustomScript.js というスクリプト ファイルを参照する ASP.NET Web ページを示します。 Www.contoso.com ドメインで、[ScriptReference.Path]、Web アプリケーションがホストされている場合<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティがそのドメインに固有の値に設定します。 イベント ハンドラー、<xref:System.Web.UI.ScriptManager.ResolveScriptReference>イベントは、ホスト URL を確認し、[ScriptReference.Path] の値を変更<xref:System.Web.UI.ScriptReferenceBase.Path%2A>必要がある場合は、プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ScriptReferenceEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReferenceEventArgs/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ScriptReferenceEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReferenceEventArgs/VB/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptReferenceEventArgs (System.Web.UI.ScriptReference script);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.ScriptReference script) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ScriptReferenceEventArgs.#ctor(System.Web.UI.ScriptReference)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="script" Type="System.Web.UI.ScriptReference" />
+      </Parameters>
+      <Docs>
+        <param name="script">A <see cref="T:System.Web.UI.ScriptReference" /> Web ページで参照されているクライアント スクリプトを含むオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.ScriptReferenceEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="script" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Script">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ScriptReference Script { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ScriptReference Script" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ScriptReferenceEventArgs.Script" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ScriptReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ScriptReference" />スクリプト ライブラリを含むオブジェクトです。</summary>
+        <value>A <see cref="T:System.Web.UI.ScriptReference" /> Web ページで参照されているクライアント スクリプトを含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ScriptReference>内のオブジェクト、<xref:System.Web.UI.ScriptReferenceEventArgs.Script%2A>にプロパティが追加、<xref:System.Web.UI.ScriptManager.Scripts%2A>プロパティと、<xref:System.Web.UI.ScriptManager.ResolveScriptReference>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、CustomScript.js というスクリプト ファイルを参照する ASP.NET Web ページを示します。 Www.contoso.com ドメインで、[ScriptReference.Path]、Web アプリケーションがホストされている場合<xref:System.Web.UI.ScriptReferenceBase.Path%2A>プロパティがそのドメインに固有の値に設定します。 イベント ハンドラー、<xref:System.Web.UI.ScriptManager.ResolveScriptReference>イベントは、ホスト URL を確認し、[ScriptReference.Path] の値を変更<xref:System.Web.UI.ScriptReferenceBase.Path%2A>必要がある場合は、プロパティです。 <xref:System.Web.UI.ScriptReference>を介してオブジェクトが取得される、<xref:System.Web.UI.ScriptReferenceEventArgs.Script%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ScriptReferenceEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.ScriptReferenceEventArgs/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ScriptReferenceEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.ScriptReferenceEventArgs/VB/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

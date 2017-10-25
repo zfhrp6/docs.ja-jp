@@ -1,0 +1,115 @@
+<Type Name="SiteMapResolveEventArgs" FullName="System.Web.SiteMapResolveEventArgs">
+  <TypeSignature Language="C#" Value="public class SiteMapResolveEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapResolveEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SiteMapResolveEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>呼び出すことによって発生するイベントのデータを提供、<see cref="P:System.Web.SiteMapProvider.CurrentNode" />のプロパティ、<see cref="T:System.Web.SiteMapProvider" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SiteMapResolveEventArgs>クラスが使用されて、<xref:System.Web.SiteMapProvider.ResolveSiteMapNode%2A>にサブスクライバーを有効にする方法、<xref:System.Web.SiteMapProvider.SiteMapResolve>イベントのインスタンスを返す、<xref:System.Web.SiteMapNode>クラスです。 処理するイベント ハンドラー デリゲートを追加することによって、<xref:System.Web.SiteMapProvider.SiteMapResolve>イベントを作成、<xref:System.Web.SiteMapNode>カスタム サイト マップ プロバイダーを実装することがなく、ページの表現。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Web.SiteMap.SiteMapResolve>など、サイトのナビゲーション コントロールで表示される対象 Url を変更する ASP.NET Web ページ上のイベント、<xref:System.Web.UI.WebControls.SiteMapPath>コントロール。 この例では、現在のページは、オンラインの掲示板またはフォーラムで送信ページがします。 わかりやすく表示するためには、サイトのナビゲーション、ナビゲーション コントロールによって表示されるノードの Url は、コンテキストに関連するクエリ文字列に付加されます。  
+  
+ **注**へのアクセスは安全では、<xref:System.Web.SiteMap.CurrentNode%2A>内からのプロパティ、<xref:System.Web.SiteMapResolveEventHandler>クラスです。 ASP.NET サイトのナビゲーション インフラストラクチャは、ここでは無限再帰を防ぐ。  
+  
+ [!code-csharp[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/CS/sitemapresolve1cs.aspx.cs#1)]
+ [!code-vb[System.Web.SiteMap.SiteMapResolve#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SiteMap.SiteMapResolve/VB/sitemapresolve1vb.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapResolveEventArgs (System.Web.HttpContext context, System.Web.SiteMapProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context, class System.Web.SiteMapProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SiteMapResolveEventArgs.#ctor(System.Web.HttpContext,System.Web.SiteMapProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="provider" Type="System.Web.SiteMapProvider" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />の現在のページ要求のコンテキストを表すです。</param>
+        <param name="provider"><see cref="T:System.Web.SiteMapProvider" />を発生させた、<see cref="E:System.Web.SiteMapProvider.SiteMapResolve" />イベント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.SiteMapResolveEventArgs" />クラス<see cref="T:System.Web.HttpContext" />と<see cref="T:System.Web.SiteMapProvider" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の`context`と`provider`パラメーター可能性があります`null`です。  
+  
+ <xref:System.Web.XmlSiteMapProvider>オブジェクトの新しいインスタンスを初期化します、<xref:System.Web.SiteMapResolveEventArgs>はない値を持つクラス`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapResolveEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたノードを表すページ要求のコンテキストを取得します。</summary>
+        <value><see cref="T:System.Web.HttpContext" />が指定された、それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント サブスクライバーが使用できる、<xref:System.Web.HttpContext>と<xref:System.Web.SiteMapProvider>を動的に作成するオブジェクト、<xref:System.Web.SiteMapNode>オブジェクトおよびユーザー情報だけでなく、要求された URL など、要求されたページに関する情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.SiteMapProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SiteMapResolveEventArgs.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SiteMapProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.SiteMapProvider" />を発生させたオブジェクト、<see cref="E:System.Web.SiteMapProvider.SiteMapResolve" />イベント。</summary>
+        <value><see cref="T:System.Web.SiteMapProvider" />イベントを発生させた、それ以外の<see langword="null" />中にプロバイダーが指定されていない場合は、<see langword="EventArgs" />オブジェクトの構築します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント サブスクライバーが使用できる、<xref:System.Web.HttpContext>と<xref:System.Web.SiteMapProvider>を動的に作成するオブジェクト、<xref:System.Web.SiteMapNode>オブジェクトおよびユーザー情報だけでなく、要求された URL など、要求されたページに関する情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,51 @@
+<Type Name="ISite2" FullName="Microsoft.JScript.ISite2">
+  <TypeSignature Language="C#" Value="public interface ISite2" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISite2" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ISite2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("BFF6C980-0705-4394-88B8-A03A4B8B4CD7")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって使用されているメソッドを定義、<see cref="T:Microsoft.JScript.Vsa.VsaEngine" />名前解決のためです。 IActiveScript ホストが必要とする追加の機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetParentChain">
+      <MemberSignature Language="C#" Value="public object[] GetParentChain (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetParentChain(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ISite2.GetParentChain(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Reflection.IReflect" />の親階層を取得するオブジェクト。</param>
+        <summary>クラスで実装された場合、親オブジェクト階層、指定オブジェクトを取得します。</summary>
+        <returns>親オブジェクトを含む配列<paramref name="obj" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

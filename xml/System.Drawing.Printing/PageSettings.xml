@@ -1,0 +1,580 @@
+<Type Name="PageSettings" FullName="System.Drawing.Printing.PageSettings">
+  <TypeSignature Language="C#" Value="public class PageSettings : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PageSettings extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PageSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>単一の印刷されたページに適用される設定を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PageSettings>ページを印刷する方法を変更する設定を指定するクラスを使用します。 通常、すべてのページを印刷する、既定の設定を設定する、<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A?displayProperty=nameWithType>プロパティです。 ページの単位で設定を指定するには、処理、<xref:System.Drawing.Printing.PrintDocument.PrintPage?displayProperty=nameWithType>または<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings?displayProperty=nameWithType>イベントを変更し、<xref:System.Drawing.Printing.PageSettings>引数に含まれる、<xref:System.Drawing.Printing.PrintPageEventArgs>または<xref:System.Drawing.Printing.QueryPageSettingsEventArgs>、それぞれします。  
+  
+ 処理の詳細については<xref:System.Drawing.Printing.PrintDocument>イベントを参照してください、<xref:System.Drawing.Printing.PrintDocument>クラスの概要です。 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+   
+  
+## Examples  
+ 次の例では、処理、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントとチェック、<xref:System.Drawing.Printing.PageSettings>の引数<xref:System.Drawing.Printing.PrintPageEventArgs>です。 このコードを使用するには追加、<xref:System.Drawing.Printing.PrintDocument>という名前のコンポーネント`PrintDocument1`に Windows フォームおよび関連付けその<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントと、`printDocument1_PrintPage`例のメソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.MiscBugDriven#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.MiscBugDriven#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MiscBugDriven/VB/form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Printing.PageSettings" />クラスの既定のプリンターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、すべてのフィールドを既定値を初期化します。  
+  
+ 通常はいないインスタンスを作成するの<xref:System.Drawing.Printing.PageSettings>ではなく、<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A?displayProperty=nameWithType>すべてのページの設定を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageSettings (System.Drawing.Printing.PrinterSettings printerSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Printing.PrinterSettings printerSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.#ctor(System.Drawing.Printing.PrinterSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="printerSettings" Type="System.Drawing.Printing.PrinterSettings" />
+      </Parameters>
+      <Docs>
+        <param name="printerSettings"><see cref="T:System.Drawing.Printing.PrinterSettings" />を使用するプリンターをについて説明します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Printing.PageSettings" />クラスの指定されたプリンターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PageSettings.%23ctor%2A>コンス トラクターはの新しいインスタンスを初期化中に似ています<xref:System.Drawing.Printing.PageSettings>と設定、<xref:System.Drawing.Printing.PageSettings.PrinterSettings%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたページの向きを考慮に入れて、ページのサイズを取得、<see cref="P:System.Drawing.Printing.PageSettings.Landscape" />プロパティです。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />長さと、ページのインチの 100 分の幅を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Drawing.Printing.PageSettings.Bounds%2A>プロパティと共に、<xref:System.Drawing.Printing.PageSettings.Margins%2A>プロパティ ページの印刷領域を計算します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコピーを作成<see cref="T:System.Drawing.Printing.PageSettings" />です。</summary>
+        <returns>このオブジェクトのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public bool Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Color" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページがカラーで印刷するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ページをカラーで印刷する場合それ以外の場合、<see langword="false" />です。 既定値は、プリンターによって決定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Printing.PrinterSettings.SupportsColor%2A?displayProperty=nameWithType>プリンターがカラー印刷をサポートしているかを決定するプロパティです。 プリンターがカラーをサポートしますが、設定、カラーで印刷したくない場合、<xref:System.Drawing.Printing.PageSettings.Color%2A>プロパティを`false`です。 既定値になります`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、色の最初のページ文書を印刷するプリンターがサポートされている場合。 例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が作成されたら、および<xref:System.Drawing.Printing.PrintDocument.PrintPage>と<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントが処理されます。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Drawing.Printing>この例の名前空間。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#6)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#6)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToHdevmode">
+      <MemberSignature Language="C#" Value="public void CopyToHdevmode (IntPtr hdevmode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyToHdevmode(native int hdevmode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.CopyToHdevmode(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hdevmode" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hdevmode">Win32 ハンドル<see langword="DEVMODE" />構造体。</param>
+        <summary>関連情報をコピー、<see cref="T:System.Drawing.Printing.PageSettings" />を指定した<see langword="DEVMODE" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Drawing.Printing.PageSettings.CopyToHdevmode%2A>に関連する情報をコピーする方法、`DEVMODE`から構造体、<xref:System.Drawing.Printing.PageSettings>です。 このメソッドを必要とするアンマネージ Win32 呼び出しを行う場合に便利な`DEVMODE`します。  
+  
+ 情報をコピーする、`DEVMODE`に構造体、 <xref:System.Drawing.Printing.PageSettings>、呼び出す<xref:System.Drawing.Printing.PageSettings.SetHdevmode%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティが存在しないか、インストールされている既定のプリンターはありません。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">印刷と、ネットワーク上のすべてのプリンターにアクセスします。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HardMarginX">
+      <MemberSignature Language="C#" Value="public float HardMarginX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 HardMarginX" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.HardMarginX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>100 のハード ページの左側の余白をインチで、x 座標を取得します。</summary>
+        <value>X 座標、100 の左側のハード マージン、インチにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハード マージンは、プリンターによって設定される物理的な余白を表します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙体:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">すべてのプリンターへのフル アクセスできます。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HardMarginY">
+      <MemberSignature Language="C#" Value="public float HardMarginY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 HardMarginY" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.HardMarginY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの上部にあるハード マージンの 1 インチの部分の 1/100 の y 座標を取得します。</summary>
+        <value>Y 座標、100 ページの上部にあるハード マージン、インチにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハード マージンは、プリンターによって設定される物理的な余白を表します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙体:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">すべてのプリンターへのフル アクセスできます。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Landscape">
+      <MemberSignature Language="C#" Value="public bool Landscape { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Landscape" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.Landscape" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または横または縦方向のページを印刷するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ページを横向きに印刷する場合それ以外の場合、<see langword="false" />です。 既定値は、プリンターによって決定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Drawing.Printing.PrinterSettings.LandscapeAngle%2A?displayProperty=nameWithType>角度 (度数)、縦向きを回転して横向きにすることを決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を横向きにドキュメントの既定のページの向きを設定する、<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A?displayProperty=nameWithType>プロパティ、し、文書を印刷します。 この例は、次の 3 つの前提条件。  
+  
+-   という名前の変数`filePath`を印刷するファイルのパスに設定されています。  
+  
+-   という名前のメソッド`pd_PrintPage`、処理する、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントが定義されています。  
+  
+-   という名前の変数`printer`プリンターの名前に設定されています。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PageSettings Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PageSettings Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PageSettings Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PageSettings Example/CS/source.cs#1)]
+ [!code-vb[Classic PageSettings Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PageSettings Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Margins">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.Margins Margins { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.Margins Margins" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.Margins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.Margins</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのページの余白を設定します。</summary>
+        <value>A <see cref="T:System.Drawing.Printing.Margins" /> 、100 ページのインチの余白を表すです。 既定値は、すべての側面に 1 インチの余白です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するときに、<xref:System.Drawing.Printing.PrintDocument.PrintPage?displayProperty=nameWithType>イベントと共に、このプロパティを使用することができます、<xref:System.Drawing.Printing.PageSettings.Bounds%2A>プロパティ ページの印刷領域を計算します。  
+  
+   
+  
+## Examples  
+ 次のコード例の既定ページ設定をドキュメントの 1 インチの余白にそれぞれの側。 この例は、次の 3 つの前提条件。  
+  
+-   という名前の変数`filePath`を印刷するファイルのパスに設定されています。  
+  
+-   という名前のメソッド`pd_PrintPage`、処理する、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントが定義されています。  
+  
+-   という名前の変数`printer`プリンターの名前に設定されています。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PageSettings.Margins Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PageSettings.Margins Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PageSettings.Margins Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PageSettings.Margins Example/CS/source.cs#1)]
+ [!code-vb[Classic PageSettings.Margins Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PageSettings.Margins Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaperSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PaperSize PaperSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PaperSize PaperSize" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.PaperSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PaperSize</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページの用紙サイズを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PaperSize" />用紙のサイズを表すです。 既定では、プリンターの既定の用紙サイズです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Printing.PaperSize>に用紙のサイズを表す、<xref:System.Drawing.Printing.PaperSize.Kind%2A?displayProperty=nameWithType>プロパティのいずれかが含まれています、<xref:System.Drawing.Printing.PaperKind>値。  
+  
+ 設定、<xref:System.Drawing.Printing.PageSettings.PaperSize%2A>プロパティに有効なページを<xref:System.Drawing.Printing.PaperSize>、を通じて利用可能な<xref:System.Drawing.Printing.PrinterSettings.PaperSizes%2A?displayProperty=nameWithType>コレクション。  
+  
+ カスタム用紙サイズを指定する方法については、次を参照してください。、<xref:System.Drawing.Printing.PaperSize.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例で指定されたサイズに基づく用紙サイズを含むドキュメントの既定のページの 3 つのプロパティの設定、`comboPaperSize`コンボ ボックス、しを使用してドキュメントを印刷、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドです。 この例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在して、特定のコンボ ボックスに存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#1)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#1)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#1)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#2)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#2)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#2)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#3)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#3)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#3)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#4)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#4)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティが存在しないか、インストールされている既定のプリンターはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaperSource">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PaperSource PaperSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PaperSource PaperSource" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.PaperSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PaperSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ページの用紙のソースです。たとえば、プリンターの上段のトレイです。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PaperSource" />用紙のソースを指定します。 既定では、プリンターの既定の給紙方法です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Printing.PaperSource>を通じて、用紙のソースを表す、<xref:System.Drawing.Printing.PaperSource.Kind%2A?displayProperty=nameWithType>プロパティのいずれかが含まれています、<xref:System.Drawing.Printing.PaperSourceKind>値。  
+  
+ 設定、<xref:System.Drawing.Printing.PageSettings.PaperSource%2A>プロパティに有効なページを<xref:System.Drawing.Printing.PaperSource>、を通じて利用可能な<xref:System.Drawing.Printing.PrinterSettings.PaperSources%2A?displayProperty=nameWithType>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例で選択したソースに基づく給紙方法を含むドキュメントの既定のページの 3 つのプロパティの設定、`comboPaperSource`コンボ ボックス、しを使用してドキュメントを印刷、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドです。 この例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在して、特定のコンボ ボックスに存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#1)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#1)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#1)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#2)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#2)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#2)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#3)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#3)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#3)]  
+[!code-cpp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#4)]
+[!code-csharp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#4)]
+[!code-vb[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティが存在しないか、インストールされている既定のプリンターはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintableArea">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF PrintableArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.RectangleF PrintableArea" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.PrintableArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンターのページの印刷可能領域の境界を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.RectangleF" />長さと幅 100 分の領域のインチ単位を表す、プリンターが印刷できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PageSettings.PrintableArea%2A>プロパティがページの向きは横または縦かどうか、適切な値を返します。  
+  
+ このプロパティを使用すると、印刷可能領域内では、ページの余白に印刷します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterResolution">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterResolution PrinterResolution { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrinterResolution PrinterResolution" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.PrinterResolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterResolution</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページのプリンターの解像度を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PrinterResolution" />ページのプリンターの解像度を指定します。 既定では、プリンターの既定の解像度です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Printing.PrinterResolution>経由のプリンターの解像度を表す、<xref:System.Drawing.Printing.PrinterResolution.Kind%2A?displayProperty=nameWithType>プロパティのいずれかが含まれています、<xref:System.Drawing.Printing.PrinterResolutionKind>値。  
+  
+ 設定、<xref:System.Drawing.Printing.PageSettings.PrinterResolution%2A>プロパティに有効なページを<xref:System.Drawing.Printing.PrinterResolution>、を通じて利用可能な<xref:System.Drawing.Printing.PrinterSettings.PrinterResolutions%2A?displayProperty=nameWithType>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プリンターの解像度で選択した解像度に基づくを含め、ドキュメントの既定のページの 3 つのプロパティを設定、`comboPrintResolution`コンボ ボックス、しを使用してドキュメントを印刷、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドです。 この例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在して、特定のコンボ ボックスに存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#4)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#4)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティが存在しないか、インストールされている既定のプリンターはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterSettings PrinterSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrinterSettings PrinterSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PageSettings.PrinterSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページに関連付けられているプリンターの設定を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PrinterSettings" />ページに関連付けられているプリンターの設定を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンターの設定を使用すると、設定されていないページのプロパティの既定値を検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHdevmode">
+      <MemberSignature Language="C#" Value="public void SetHdevmode (IntPtr hdevmode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHdevmode(native int hdevmode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.SetHdevmode(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hdevmode" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hdevmode">Win32 ハンドル<see langword="DEVMODE" />構造体。</param>
+        <summary>関連する情報をコピー、<see cref="T:System.Drawing.Printing.PageSettings" />から、指定した<see langword="DEVMODE" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの関連する情報を使用して、`DEVMODE`に構造体、<xref:System.Drawing.Printing.PageSettings>です。  
+  
+ 情報をコピーする、<xref:System.Drawing.Printing.PageSettings>を`DEVMODE`、呼び出す<xref:System.Drawing.Printing.PageSettings.CopyToHdevmode%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プリンターのハンドルが正しくありません。</exception>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティが存在しないか、インストールされている既定のプリンターはありません。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">印刷と、ネットワーク上のすべてのプリンターにアクセスします。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PageSettings.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換、<see cref="T:System.Drawing.Printing.PageSettings" />文字列形式にします。</summary>
+        <returns>さまざまなプロパティの設定を示す文字列、<see cref="T:System.Drawing.Printing.PageSettings" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

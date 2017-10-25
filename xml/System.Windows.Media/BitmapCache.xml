@@ -1,0 +1,319 @@
+<Type Name="BitmapCache" FullName="System.Windows.Media.BitmapCache">
+  <TypeSignature Language="C#" Value="public sealed class BitmapCache : System.Windows.Media.CacheMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BitmapCache extends System.Windows.Media.CacheMode" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.BitmapCache" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.CacheMode</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>作成し、キャッシュのビットマップ形式、<see cref="T:System.Windows.UIElement" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.BitmapCache>の複雑なレンダリング パフォーマンスを向上させるためにクラス<xref:System.Windows.UIElement>です。 作成、<xref:System.Windows.Media.BitmapCache>に割り当てると、<xref:System.Windows.UIElement.CacheMode%2A>のプロパティ、<xref:System.Windows.UIElement>ビデオ メモリ内のビットマップとして、要素とそのサブツリーをキャッシュします。 アニメーション化する、変換、または拡大縮小する必要がある場合に便利ですが、<xref:System.Windows.UIElement>可能な限り早くです。 この方法は、コンテンツがキャッシュのパフォーマンスと表示品質のトレードオフをできます。  
+  
+ 使用して、<xref:System.Windows.Media.BitmapCacheBrush>を効率的にキャッシュされた要素を再利用するクラス。  
+  
+ 設定、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>ビットマップのキャッシュを拡張するプロパティです。 これは、要素を拡大し、キャッシュは、要素のネイティブ解像度で単に生成された場合よりもさらに、明確に表示するために、要素が必要な場合に便利です。  
+  
+ 設定、<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>キャッシュが適切に描画する、ClearType テキストなどのピクセル アラインメントを必要とするコンテンツを表示するプロパティです。 このプロパティは無視されます、<xref:System.Windows.Media.BitmapCacheBrush>と<xref:System.Windows.Media.Media3D.Viewport2DVisual3D>クラスです。  
+  
+ コントロールのキャッシュ マウス ポイント動作に影響しません、ビットマップがあるかのように動作するので、マウス オーバー ヒット テスト ライブ コントロール。  
+  
+ キャッシュの再生成にのみ発生時の構造、<xref:System.Windows.UIElement>またはそのサブツリー変更場合や、<xref:System.Windows.Media.CacheMode>設定の変更。 設定、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>または<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>プロパティ原因キャッシュの再生成します。 キャッシュされたの親のビジュアル ツリーを変更<xref:System.Windows.UIElement>の変換、スケール、不透明、および特殊効果には影響しません、キャッシュなど、します。  
+  
+ ハードウェア アクセラレーションが使用できない場合は、キャッシュ機能します。 この場合、ソフトウェアでは、ビットマップを描画し、ビットマップの最大サイズは 2048 x 2048。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Media.RenderOptions>および<xref:System.Windows.Media.TextOptions>キャッシュされた要素からには反映されません。 キャッシュの下の子要素にもう一度これらのオプションを設定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の XAML 示しますキャッシュする方法、<xref:System.Windows.Controls.Canvas>要素。 完全なコード例は、次を参照してください。[する方法: 要素をキャッシュすることによってレンダリング パフォーマンスを向上させる](~/docs/framework/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element.md)です。  
+  
+ [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheCreation](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachecreation)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCache.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.BitmapCache" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapCache (double renderAtScale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 renderAtScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCache.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="renderAtScale" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="renderAtScale">ビットマップを拡大縮小する double 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.BitmapCache" />小数点以下桁数が指定したクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の XAML を作成して割り当てる方法を示しています、<xref:System.Windows.Media.BitmapCache>を<xref:System.Windows.Controls.Canvas>要素。 完全なコード例は、次を参照してください。[する方法: 要素をキャッシュすることによってレンダリング パフォーマンスを向上させる](~/docs/framework/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element.md)です。  
+  
+ [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheCreation](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachecreation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BitmapCache Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BitmapCache Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCache.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BitmapCache</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.BitmapCache" /> の変更可能な複製を作成し、オブジェクトの値の詳細コピーを作成します。 このメソッドは、オブジェクトの依存関係プロパティをコピーするときに式をコピーしますが (コピーされた式は解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BitmapCache CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BitmapCache CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCache.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BitmapCache</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更可能な複製 (詳細コピー) を作成、<see cref="T:System.Windows.Media.BitmapCache" />その現在の値を使用します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCache.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableClearType">
+      <MemberSignature Language="C#" Value="public bool EnableClearType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableClearType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCache.EnableClearType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ClearType がアクティブで、ビットマップを描画するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ClearType がアクティブである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>キャッシュ内に表示する ClearType テキストを有効にするプロパティです。  
+  
+ ときに、<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>プロパティは`true`アプリケーションは、不透明な背景上、ClearType テキスト全体をレンダリングする必要があります。  
+  
+ ときに、<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>プロパティは`false`キャッシュ内のテキストはグレースケール アンチエイリアシングと共に表示されます。  
+  
+ ClearType テキストには、レンダリングされた文字の正しいピクセル アラインメントが必要なため、設定する必要があります、<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>プロパティを`true`です。 このプロパティを設定しない場合は、コンテンツが正しく blend いない可能性があります。  
+  
+ 使用して、 <xref:System.Windows.Media.BitmapCache.EnableClearType%2A> ClearType テキストをキャッシュする安全では、ピクセルの境界でキャッシュがわかっている場合にプロパティが表示されます。 このような状況は、文字列のスクロールのシナリオで一般的に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableClearTypeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EnableClearTypeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EnableClearTypeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCache.EnableClearTypeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCache.EnableClearType" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAtScale">
+      <MemberSignature Language="C#" Value="public double RenderAtScale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 RenderAtScale" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCache.RenderAtScale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビットマップに適用される小数点以下桁数を示す値を設定します。</summary>
+        <value>ビットマップに適用するスケール。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>プロパティを表示するために、<xref:System.Windows.Media.BitmapCache>通常のビットマップのサイズの倍数にします。 通常のサイズは、要素のローカルのサイズによって決まります。  
+  
+ 1 は、要素のネイティブの解像度を基準としたビットマップの解像度を上げるより大きい値と値の 1 より小さい解像度を低きます。 たとえば場合、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>プロパティが 2.0 に設定し、ファクターは 2 でコンテンツを拡大するスケール変換を適用する、コンテンツが同じコンテンツと同じビジュアル品質<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>1.0 とトランス フォーム小数点以下桁数は 1 に設定します。  
+  
+ ときに<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>設定は 0、ビットマップがレンダリングされません。 負の値は 0 に固定されます。  
+  
+ この値を変更する場合は、適切な新しい解像度でキャッシュが再生成します。  
+  
+ 次の図は、の値が異なる同じコンテンツを表示する方法を示して、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>プロパティです。  
+  
+ **RenderAtScale = 1**  
+  
+ ![RenderAtScale & #61 です。1](~/add/media/ndp-scale-1.png "RenderAtScale = 1")  
+  
+ **RenderAtScale 0.5 を =**  
+  
+ ![RenderAtScale & #61 です。0.5](~/add/media/ndp-scale05.png "RenderAtScale 0.5 を =")  
+  
+ **RenderAtScale 0.2 を =**  
+  
+ ![RenderAtScale & #61 です。0.2](~/add/media/ndp-scale02.png "RenderAtScale 0.2 を =")  
+  
+ 次の図は、キャッシュされた要素の先祖に適用する変換をズームします。 ズームを 1 に設定すると<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>設定は 1、画質が場合とほぼ同じ<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>が 2 に設定します。 ズームが 1、設定を超える場合、 <xref:System.Windows.Media.BitmapCache.RenderAtScale%2A> 2 にが画質です。  
+  
+ **RenderAtScale 1.0 を =**  
+  
+ ![RenderAtScale & #61 です。1.0](~/add/media/ndp-scale-10.png "RenderAtScale 1.0 を =")  
+  
+ **RenderAtScale 2.0 を =**  
+  
+ ![RenderAtScale & #61 です。2.0](~/add/media/ndp-scale-20.png "RenderAtScale 2.0 を =")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAtScaleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RenderAtScaleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RenderAtScaleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCache.RenderAtScaleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCache.RenderAtScale" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SnapsToDevicePixels">
+      <MemberSignature Language="C#" Value="public bool SnapsToDevicePixels { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SnapsToDevicePixels" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCache.SnapsToDevicePixels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはピクセル スナップで、ビットマップを描画するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ピクセル スナップがアクティブな場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>キャッシュが適切に描画するピクセルのアラインメントを必要とするコンテンツを表示するプロパティです。 これは、ClearType テキストの場合です。 設定した場合、<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>プロパティを`true`、設定を検討してください<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>に`true`を適切な出力を確認します。  
+  
+ ときに、<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>プロパティに設定されている`false`bilinear フィルタ リングを適用、および移動して、ピクセルの割合で、キャッシュされた要素を拡張します。  
+  
+ ときに、<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>プロパティに設定されている`true`、ビットマップ キャッシュは、変換先のピクセルの境界に揃えられます。 移動またはピクセルの割合で、キャッシュされた要素を拡張する場合、ビットマップはピクセル グリッドにスナップされます。 この場合、ビットマップの左上隅が切り上げられピクセル グリッドにスナップしますが、小数部のピクセルの境界には、右下隅です。  
+  
+ <xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>プロパティは<xref:System.Windows.Media.BitmapCacheBrush>と共に使用する場合と、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SnapsToDevicePixelsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SnapsToDevicePixelsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SnapsToDevicePixelsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCache.SnapsToDevicePixelsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCache.SnapsToDevicePixels" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

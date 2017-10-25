@@ -1,0 +1,359 @@
+<Type Name="DocumentPage" FullName="System.Windows.Documents.DocumentPage">
+  <TypeSignature Language="C#" Value="public class DocumentPage : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocumentPage extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DocumentPage" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ページネータによって生成されるドキュメント ページを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DocumentPage (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.#ctor(System.Windows.Media.Visual)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">ページのビジュアル表現。</param>
+        <summary>指定された <see cref="T:System.Windows.Documents.DocumentPage" /> を使用して、<see cref="T:System.Windows.Media.Visual" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DocumentPage (System.Windows.Media.Visual visual, System.Windows.Size pageSize, System.Windows.Rect bleedBox, System.Windows.Rect contentBox);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual visual, valuetype System.Windows.Size pageSize, valuetype System.Windows.Rect bleedBox, valuetype System.Windows.Rect contentBox) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.#ctor(System.Windows.Media.Visual,System.Windows.Size,System.Windows.Rect,System.Windows.Rect)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="pageSize" Type="System.Windows.Size" />
+        <Parameter Name="bleedBox" Type="System.Windows.Rect" />
+        <Parameter Name="contentBox" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="visual">ページのビジュアル表現。</param>
+        <param name="pageSize">ページのサイズと余白を含む、トリミング後されます。</param>
+        <param name="bleedBox">印刷の製作関連の裁ち落とし、登録マーク、および裁ちトンボ、物理的な用紙論理的なページ境界の外側に表示される領域。</param>
+        <param name="contentBox">余白内のページの領域です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.DocumentPage" />クラスを指定して<see cref="T:System.Windows.Media.Visual" />およびサイズのボックスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `bleedBox`ディメンションを超えることがあります、`pageSize`ディメンションを物理的な用紙がその最終的なページ サイズにトリミングすることが予想される場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BleedBox">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Rect BleedBox { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect BleedBox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentPage.BleedBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、物理的な用紙上の論理的なページ境界外に表示される、印刷物製作関連の裁ち落とし位置、レジスタ マーク、および裁ちトンボのための領域を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Rect" />裁ち落としボックス領域の位置とサイズを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 裁ち落としボックスは、ページの外側、物理的な用紙がその最終的なページ サイズにトリミングすることが予想される場合に拡張します。  
+  
+ 使用して、保護された<xref:System.Windows.Documents.DocumentPage.SetBleedBox%2A>このプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentBox">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Rect ContentBox { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect ContentBox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentPage.ContentBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、余白内のページの領域を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Rect" />の余白を含まない、ページ領域を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、保護された<xref:System.Windows.Documents.DocumentPage.SetContentBox%2A>このプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.DocumentPage" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.DocumentPage.Dispose%2A> を使い終わったら <xref:System.Windows.Documents.DocumentPage> を呼び出します。 <xref:System.Windows.Documents.DocumentPage.Dispose%2A> メソッドによって、<xref:System.Windows.Documents.DocumentPage> は使用不可の状態になります。 呼び出した後<xref:System.Windows.Documents.DocumentPage.Dispose%2A>に対するすべての参照を解放する必要があります、<xref:System.Windows.Documents.DocumentPage>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Windows.Documents.DocumentPage>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Documents.DocumentPage.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Windows.Documents.DocumentPage> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Windows.Documents.DocumentPage> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Missing">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Documents.DocumentPage Missing;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Documents.DocumentPage Missing" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.DocumentPage.Missing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.DocumentPage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不足しているページを表します。 このプロパティは、静的および読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を返す<xref:System.Windows.Documents.DocumentPage.Missing?displayProperty=nameWithType>1 ページのドキュメントの 2 ページなど、コードの要求が存在しない場合、ページを呼び出すときにします。  
+  
+ 1 つだけの不足しているページ オブジェクトは常にします。 その<xref:System.Windows.Documents.DocumentPage.Visual%2A>プロパティは`null`します。 その<xref:System.Windows.Documents.DocumentPage.Size%2A>、 <xref:System.Windows.Documents.DocumentPage.BleedBox%2A>、および<xref:System.Windows.Documents.DocumentPage.ContentBox%2A>プロパティはすべて"empty"の特殊な値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPageDestroyed">
+      <MemberSignature Language="C#" Value="protected void OnPageDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPageDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.OnPageDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Documents.DocumentPage.PageDestroyed" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageDestroyed">
+      <MemberSignature Language="C#" Value="public event EventHandler PageDestroyed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PageDestroyed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.DocumentPage.PageDestroyed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Documents.DocumentPage.Visual" />を示しています、<see cref="T:System.Windows.Documents.DocumentPage" />が破棄され、表示に使用できなくできます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBleedBox">
+      <MemberSignature Language="C#" Value="protected void SetBleedBox (System.Windows.Rect bleedBox);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetBleedBox(valuetype System.Windows.Rect bleedBox) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.SetBleedBox(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bleedBox" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="bleedBox">四角形のサイズと場所を指定するオブジェクト。</param>
+        <summary>ディメンションとの位置を設定、<see cref="P:System.Windows.Documents.DocumentPage.BleedBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 裁ち落としボックスには、資料は含まれていない必ずしも最終的なトリミング後、物理ページに裁ちトンボなどが含まれています。 このため、<xref:System.Windows.Rect.X%2A>と<xref:System.Windows.Rect.Y%2A>の調整、`bleedBox`ページの左上隅に対して相対的に指定されているために、パラメーターが負の数値を指定できます。 同じ理由から、<xref:System.Windows.Rect.Height%2A>と<xref:System.Windows.Rect.Width%2A>の`bleedBox`ページの幅と高さよりも大きくすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContentBox">
+      <MemberSignature Language="C#" Value="protected void SetContentBox (System.Windows.Rect contentBox);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetContentBox(valuetype System.Windows.Rect contentBox) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.SetContentBox(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentBox" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="contentBox">四角形のサイズと場所を指定するオブジェクト。</param>
+        <summary>ディメンションとの位置を設定、<see cref="P:System.Windows.Documents.DocumentPage.ContentBox" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSize">
+      <MemberSignature Language="C#" Value="protected void SetSize (System.Windows.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetSize(valuetype System.Windows.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.SetSize(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="size">ページのサイズ。</param>
+        <summary>セット、<see cref="P:System.Windows.Documents.DocumentPage.Size" />物理ページのトリミング後にされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVisual">
+      <MemberSignature Language="C#" Value="protected void SetVisual (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetVisual(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentPage.SetVisual(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">ページのビジュアル表現。</param>
+        <summary>セット、<see cref="P:System.Windows.Documents.DocumentPage.Visual" />は、ページを示しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Size Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentPage.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、トリミング後のページの実際のサイズを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Size" />ページの幅と高さを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、物理ページのトリミング後のサイズを表します。 そのためとは限りませんシートの物理サイズ トリミングされる前にします。  
+  
+ 使用して、保護された<xref:System.Windows.Documents.DocumentPage.SetSize%2A>このプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Visual Visual { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual Visual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentPage.Visual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ページのビジュアル表現を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Visual" />ページを描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、保護された<xref:System.Windows.Documents.DocumentPage.SetVisual%2A>このプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,228 @@
+<Type Name="SerializableObjectData" FullName="System.AddIn.Contract.SerializableObjectData">
+  <TypeSignature Language="C#" Value="public struct SerializableObjectData" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit SerializableObjectData extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.SerializableObjectData" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化可能なオブジェクトについてを説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData>構造にシリアル化可能なオブジェクトを逆シリアル化に使用できるデータが含まれています。  
+  
+ 取得する、 <xref:System.AddIn.Contract.SerializableObjectData>、呼び出し、<xref:System.AddIn.Contract.ISerializableObjectContract.GetSerializableObjectData%2A>のメソッド、<xref:System.AddIn.Contract.ISerializableObjectContract>です。  
+  
+ 唯一<xref:System.AddIn.Contract.SerializableObjectData>すべてシリアル化可能なオブジェクトの値を含むフィールドは、<xref:System.AddIn.Contract.SerializableObjectData.ObjectId>フィールドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DimensionLengths">
+      <MemberSignature Language="C#" Value="public int[] DimensionLengths;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32[] DimensionLengths" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.DimensionLengths" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この配列の各、serializable の次元の長さを含む配列を表す<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.DimensionLengths>is `null` if <xref:System.AddIn.Contract.SerializableObjectData.IsArray> is `false`.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DimensionLowerBounds">
+      <MemberSignature Language="C#" Value="public int[] DimensionLowerBounds;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32[] DimensionLowerBounds" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.DimensionLowerBounds" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この配列の各のシリアル化可能なディメンションの下を格納する配列のバインドを表します<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.DimensionLowerBounds>is `null` if <xref:System.AddIn.Contract.SerializableObjectData.IsArray> is `false`.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementIndexes">
+      <MemberSignature Language="C#" Value="public int[] ElementIndexes;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32[] ElementIndexes" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.ElementIndexes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化可能なオブジェクトを含む親配列のインデックスを含む配列を表すこの<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.ElementIndexes>is `null` if <xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement> is `false`.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsArray">
+      <MemberSignature Language="C#" Value="public bool IsArray;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool IsArray" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.IsArray" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.AddIn.Contract.SerializableObjectData" />シリアル化可能な配列を記述します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.IsArray>`true`場合、<xref:System.AddIn.Contract.SerializableObjectData>配列について説明します。 それ以外の場合、<xref:System.AddIn.Contract.SerializableObjectData.IsArray>は`false`します。  
+  
+ 場合<xref:System.AddIn.Contract.SerializableObjectData.IsArray>と<xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement>が両方とも`true`、<xref:System.AddIn.Contract.SerializableObjectData>ジャグ配列を記述します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsArrayElement">
+      <MemberSignature Language="C#" Value="public bool IsArrayElement;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool IsArrayElement" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.IsArrayElement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.AddIn.Contract.SerializableObjectData" />シリアル化可能な配列内の要素について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement>`true`場合、 <xref:System.AddIn.Contract.SerializableObjectData> ; 配列内の要素について説明しますそれ以外の場合、<xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement>は`false`します。  
+  
+ 場合<xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement>は`true`、し<xref:System.AddIn.Contract.SerializableObjectData.ParentId>、配列を識別および<xref:System.AddIn.Contract.SerializableObjectData.MemberName>は`null`します。  
+  
+ 場合<xref:System.AddIn.Contract.SerializableObjectData.IsArray>と<xref:System.AddIn.Contract.SerializableObjectData.IsArrayElement>が両方とも`true`、<xref:System.AddIn.Contract.SerializableObjectData>ジャグ配列を記述します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberName">
+      <MemberSignature Language="C#" Value="public string MemberName;" />
+      <MemberSignature Language="ILAsm" Value=".field public string MemberName" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.MemberName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化可能なオブジェクトのメンバー名を表すこの<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.MemberName>`null`場合、<xref:System.AddIn.Contract.SerializableObjectData>別のオブジェクトのメンバーではないオブジェクトを表します (つまり、<xref:System.AddIn.Contract.SerializableObjectData.ParentId>は`null`)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectId">
+      <MemberSignature Language="C#" Value="public long ObjectId;" />
+      <MemberSignature Language="ILAsm" Value=".field public int64 ObjectId" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.ObjectId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化可能なオブジェクトの ID を表すこの<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト ID の実装を作成する<xref:System.AddIn.Contract.ISerializableObjectContract>使用できる、<xref:System.Runtime.Serialization.ObjectIDGenerator?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentId">
+      <MemberSignature Language="C#" Value="public long ParentId;" />
+      <MemberSignature Language="ILAsm" Value=".field public int64 ParentId" />
+      <MemberSignature Language="DocId" Value="F:System.AddIn.Contract.SerializableObjectData.ParentId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化可能なオブジェクトの親の ID を表すこの<see cref="T:System.AddIn.Contract.SerializableObjectData" />について説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.SerializableObjectData.ParentId>`null`場合、<xref:System.AddIn.Contract.SerializableObjectData>別のオブジェクトのメンバーではないのシリアル化可能なオブジェクトを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,465 @@
+<Type Name="AbandonedMutexException" FullName="System.Threading.AbandonedMutexException">
+  <TypeSignature Language="C#" Value="public class AbandonedMutexException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit AbandonedMutexException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.AbandonedMutexException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>1 つのスレッドを取得するときにスローされる例外を<see cref="T:System.Threading.Mutex" />オブジェクトの別のスレッドが解放しないによって破棄されていること。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドはミュー テックスを破棄、ミュー テックスを取得する次のスレッドで例外がスローされます。 ミュー テックスを既に待機していたか、後で、ミュー テックスが入るために、スレッドはミュー テックスを取得可能性があります。  
+  
+ 放棄されたミュー テックスは、重大なプログラミング エラーを示します。 ミュー テックスを解放せずに、スレッドが終了したときにミュー テックスで保護されているデータ構造体できない可能性があります一貫した状態にします。 .NET Framework のバージョン 2.0 より前は、このような問題は、待機が放棄されたミュー テックスの結果として完了した場合、例外はスローされませんを検出するのには困難でした。 詳細については、<xref:System.Threading.Mutex> クラスを参照してください。  
+  
+ ミュー テックスの所有権を要求する次のスレッドでは、この例外を処理でき、データ構造の整合性を検証できる、続行することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例にその効果を示す 5 つのミュー テックスを破棄するスレッドを実行する、 <xref:System.Threading.WaitHandle.WaitOne%2A>、 <xref:System.Threading.WaitHandle.WaitAny%2A>、および<xref:System.Threading.WaitHandle.WaitAll%2A>メソッドです。 値、<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>のプロパティが表示されます、<xref:System.Threading.WaitHandle.WaitAny%2A>呼び出します。  
+  
+> [!NOTE]
+>  呼び出し、<xref:System.Threading.WaitHandle.WaitAny%2A>により放棄されたミュー テックスのいずれかの方法が中断します。 でも、その他の放棄されたミュー テックスが生じる可能性があります、<xref:System.Threading.AbandonedMutexException>後続待機メソッドによってスローされます。  
+  
+ [!code-cpp[System.Threading.AbandonedMutexException#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/CPP/koax.cpp#1)]
+ [!code-csharp[System.Threading.AbandonedMutexException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/CS/koax.cs#1)]
+ [!code-vb[System.Threading.AbandonedMutexException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/VB/koax.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Threading.AbandonedMutexException" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「放棄されたミュー テックスのため完了、待機」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.Threading.AbandonedMutexException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|システム提供のエラー メッセージ文字列。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`null`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|(マイナス 1) – 1。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.Threading.AbandonedMutexException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Threading.AbandonedMutexException>このコンス トラクターを使用して初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|`message`。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`null`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|(マイナス 1) – 1。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException (int location, System.Threading.WaitHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 location, class System.Threading.WaitHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.Int32,System.Threading.WaitHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int32" />
+        <Parameter Name="handle" Type="System.Threading.WaitHandle" />
+      </Parameters>
+      <Docs>
+        <param name="location">待機の配列に放棄されたミュー テックスのインデックス処理の例外がスローされた場合、<see cref="Overload:System.Threading.WaitHandle.WaitAny" />メソッド、またはの例外がスローされた場合は – 1、<see cref="Overload:System.Threading.WaitHandle.WaitOne" />または<see cref="Overload:System.Threading.WaitHandle.WaitAll" />メソッドです。</param>
+        <param name="handle">A<see cref="T:System.Threading.Mutex" />放棄されたミュー テックスを表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.AbandonedMutexException" />放棄されたミュー テックスの指定したインデックスを持つクラスの該当する場合、および<see cref="T:System.Threading.Mutex" />ミュー テックスを表すオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「放棄されたミュー テックスのため完了、待機」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Threading.AbandonedMutexException>このコンス トラクターを使用して初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|システム提供のエラー メッセージ文字列。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`handle`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|`location`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AbandonedMutexException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context">転送元または転送先に関するコンテキスト情報を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" /> オブジェクト。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Threading.AbandonedMutexException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.AbandonedMutexException" />指定したエラー メッセージと内部例外を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Threading.AbandonedMutexException>このコンス トラクターを使用して初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`inner`。|  
+|<xref:System.Exception.Message%2A>|`message`。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`null`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|(マイナス 1) – 1。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException (string message, int location, System.Threading.WaitHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, int32 location, class System.Threading.WaitHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.String,System.Int32,System.Threading.WaitHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="location" Type="System.Int32" />
+        <Parameter Name="handle" Type="System.Threading.WaitHandle" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="location">待機の配列に放棄されたミュー テックスのインデックス処理の例外がスローされた場合、<see cref="Overload:System.Threading.WaitHandle.WaitAny" />メソッド、またはの例外がスローされた場合は – 1、<see cref="Overload:System.Threading.WaitHandle.WaitOne" />または<see cref="Overload:System.Threading.WaitHandle.WaitAll" />メソッドです。</param>
+        <param name="handle">A<see cref="T:System.Threading.Mutex" />放棄されたミュー テックスを表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.AbandonedMutexException" />クラスを指定したエラー メッセージをミュー テックスの破棄、該当する場合、および放棄されたミュー テックスのインデックス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Threading.AbandonedMutexException>このコンス トラクターを使用して初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|`message`。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`handle`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|`location`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AbandonedMutexException (string message, Exception inner, int location, System.Threading.WaitHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner, int32 location, class System.Threading.WaitHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AbandonedMutexException.#ctor(System.String,System.Exception,System.Int32,System.Threading.WaitHandle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+        <Parameter Name="location" Type="System.Int32" />
+        <Parameter Name="handle" Type="System.Threading.WaitHandle" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <param name="location">待機の配列に放棄されたミュー テックスのインデックス処理の例外がスローされた場合、<see cref="Overload:System.Threading.WaitHandle.WaitAny" />メソッド、またはの例外がスローされた場合は – 1、<see cref="Overload:System.Threading.WaitHandle.WaitOne" />または<see cref="Overload:System.Threading.WaitHandle.WaitAll" />メソッドです。</param>
+        <param name="handle">A<see cref="T:System.Threading.Mutex" />放棄されたミュー テックスを表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Threading.AbandonedMutexException" /> 、該当する場合、指定したエラー メッセージ、内部例外、放棄されたミュー テックスのインデックスを持つクラス<see cref="T:System.Threading.Mutex" />ミュー テックスを表すオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ`message`テキスト文字列は、例外に関する、ユーザーに通知します。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Threading.AbandonedMutexException>このコンス トラクターを使用して初期化します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`inner`。|  
+|<xref:System.Exception.Message%2A>|`message`。|  
+|<xref:System.Threading.AbandonedMutexException.Mutex%2A>|`handle`。|  
+|<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>|`location`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mutex">
+      <MemberSignature Language="C#" Value="public System.Threading.Mutex Mutex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Mutex Mutex" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.AbandonedMutexException.Mutex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Mutex</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合、例外の原因となった放棄されたミュー テックスを取得します。</summary>
+        <value>A<see cref="T:System.Threading.Mutex" />放棄されたミュー テックスを表すオブジェクトまたは<see langword="null" />放棄されたミュー テックスを識別できなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しで例外がスローされた場合、 <xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType> 、メソッド、<xref:System.Threading.Mutex>の配列内の最下位のインデックスを持つ放棄されたミュー テックスは、返される<xref:System.Threading.WaitHandle>に渡されたオブジェクト<xref:System.Threading.WaitHandle.WaitAny%2A>、または`null`放棄されたミュー テックスを識別できなかった場合。 呼び出しで例外がスローされた場合<xref:System.Threading.WaitHandle.WaitOne%2A>または<xref:System.Threading.WaitHandle.WaitAll%2A>、このプロパティは常に返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MutexIndex">
+      <MemberSignature Language="C#" Value="public int MutexIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MutexIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.AbandonedMutexException.MutexIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合は、この例外の原因となった放棄されたミュー テックスのインデックスを取得します。</summary>
+        <value>渡された待機ハンドルの配列内のインデックス、<see cref="Overload:System.Threading.WaitHandle.WaitAny" />メソッドの<see cref="T:System.Threading.Mutex" />放棄されたミュー テックスのインデックスを特定できなかった場合、-1 を放棄されたミュー テックスを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しで例外がスローされた場合、<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>メソッドでは、このプロパティのインデックスを返します放棄されたミュー テックス最小のインデックスでの配列に<xref:System.Threading.WaitHandle>に渡されたオブジェクト<xref:System.Threading.WaitHandle.WaitAny%2A>、ミュー テックスの破棄を識別できなかった場合は-1 を返します。 呼び出しで例外がスローされた場合<xref:System.Threading.WaitHandle.WaitOne%2A>または<xref:System.Threading.WaitHandle.WaitAll%2A>、このプロパティは常に-1 を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、5 つのミュー テックスを破棄するスレッドを実行します。 放棄されたミュー テックスがの効果を示すために使用される、 <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>、 <xref:System.Threading.WaitHandle.WaitAny%2A>、および<xref:System.Threading.WaitHandle.WaitAll%2A>メソッドの呼び出しです。 値、<xref:System.Threading.AbandonedMutexException.MutexIndex%2A>のプロパティが表示されます、<xref:System.Threading.WaitHandle.WaitAny%2A>呼び出します。  
+  
+> [!NOTE]
+>  呼び出し<xref:System.Threading.WaitHandle.WaitAny%2A>により放棄されたミュー テックスのいずれかが中断します。 でも、その他の放棄されたミュー テックスが生じる可能性があります、<xref:System.Threading.AbandonedMutexException>後続待機メソッドによってスローされます。  
+  
+ [!code-cpp[System.Threading.AbandonedMutexException#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/CPP/koax.cpp#1)]
+ [!code-csharp[System.Threading.AbandonedMutexException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/CS/koax.cs#1)]
+ [!code-vb[System.Threading.AbandonedMutexException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.AbandonedMutexException/VB/koax.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,228 @@
+<Type Name="IObserver&lt;T&gt;" FullName="System.IObserver&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IObserver&lt;in T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IObserver`1&lt;- T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.IObserver`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">通知情報を提供するオブジェクト。</typeparam>
+    <summary>プッシュ ベースの通知を受信するメカニズムを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IObserver%601>と<xref:System.IObservable%601>インターフェイスが汎用化されたプッシュ ベースの通知、オブザーバー デザイン パターンとも呼ばれるメカニズムを提供します。 <xref:System.IObservable%601>インターフェイスを表します (プロバイダー); の通知を送信するクラス、<xref:System.IObserver%601>インターフェイスが (observer) 受信するクラスを表します。 `T`通知情報を提供するクラスを表します。  
+  
+ <xref:System.IObserver%601>プロバイダーから通知を受信するように手配実装 (、<xref:System.IObservable%601>実装) をプロバイダーのそれ自体のインスタンスを渡すことによって<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッドです。 このメソッドが戻る、<xref:System.IDisposable>プロバイダーにオブザーバーをアンサブスク ライブするのに使用できるオブジェクトは、通知の送信が完了するとします。  
+  
+ <xref:System.IObserver%601>インターフェイスはオブザーバーを実装する必要がある次の 3 つのメソッドを定義します。  
+  
+-   <xref:System.IObserver%601.OnNext%2A>メソッドで、通常はオブザーバーに新しいデータまたは状態の情報を指定するプロバイダーによって呼び出されます。  
+  
+-   <xref:System.IObserver%601.OnError%2A>メソッドで、データが使用できない、アクセスできないか破損していることを示す、プロバイダーによって通常と呼ばれる、またはプロバイダーには、その他のエラー条件が発生しました。  
+  
+-   <xref:System.IObserver%601.OnCompleted%2A>メソッドで、通常はオブザーバーに通知の送信が完了したことを示すために、プロバイダーによって呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、オブザーバー デザイン パターンを示します。 定義する、`Location`緯度と経度の情報を含むクラスです。  
+  
+ [!code-csharp[System.IObserver.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/provider.cs#5)]
+ [!code-vb[System.IObserver.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/provider.vb#5)]  
+  
+ `LocationReporter`クラスを提供、<xref:System.IObserver%601>実装します。 コンソールに、現在の場所に関する情報を表示します。 コンス トラクターが含まれています、`name`パラメーターは、これにより、`LocationReporter`の文字列の出力で自身を識別するインスタンス。 含まれています、`Subscribe`をプロバイダーの呼び出しをラップするメソッド<xref:System.IObservable%601.Subscribe%2A>メソッドです。 これにより、返された割り当てるメソッド<xref:System.IDisposable>プライベート変数への参照。 `LocationReporter`クラスも含まれます、`Unsubscribe`メソッドを呼び出して、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>によって返されるオブジェクトのメソッド、<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッドです。 次のコード定義、`LocationReporter`クラスです。  
+  
+ [!code-csharp[System.IObserver.Class#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/observer.cs#8)]
+ [!code-vb[System.IObserver.Class#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/observer.vb#8)]  
+  
+ `LocationTracker`クラスを提供、<xref:System.IObservable%601>実装します。 その`TrackLocation`メソッドは null 許容型に渡されます`Location`緯度と経度のデータを格納しているオブジェクト。 場合、`Location`値がない`null`、`TrackLocation`メソッドの呼び出し、<xref:System.IObserver%601.OnNext%2A>各オブザーバーのメソッドです。  
+  
+ [!code-csharp[System.IObserver.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/provider.cs#6)]
+ [!code-vb[System.IObserver.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/provider.vb#6)]  
+  
+ 場合、`Location`値は`null`、`TrackLocation`メソッドがインスタンス化、`LocationNotFoundException`次の例に示されているオブジェクト。 各オブザーバーの順に呼び出して<xref:System.IObserver%601.OnError%2A>メソッドに渡すと、`LocationNotFoundException`オブジェクト。 なお`LocationNotFoundException`から派生した<xref:System.Exception>は、新しいメンバーを追加しません。  
+  
+ [!code-csharp[System.IObserver.Class#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/provider.cs#7)]
+ [!code-vb[System.IObserver.Class#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/provider.vb#7)]  
+  
+ 通知を受信するオブザーバーを登録、`TrackLocation`オブジェクトを呼び出してその<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッドで、プライベート ジェネリックにオブザーバー オブジェクトへの参照を割り当てます<xref:System.Collections.Generic.List%601>オブジェクト。 このメソッドを返します、`Unsubscriber`オブジェクトは、<xref:System.IDisposable>により、通知の受信を停止するオブザーバーを実装します。 `LocationTracker`クラスも含まれます、`EndTransmission`メソッドです。 さらに場所データを使用できない場合、メソッドの各オブザーバーの<xref:System.IObserver%601.OnCompleted%2A>メソッドおよびオブザーバーの内部リストをクリアします。  
+  
+ 次のコードは、プロバイダーとオブザーバーにし、インスタンス化します。  
+  
+ [!code-csharp[System.IObserver.Class#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/program.cs#9)]
+ [!code-vb[System.IObserver.Class#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/module1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnCompleted">
+      <MemberSignature Language="C#" Value="public void OnCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IObserver`1.OnCompleted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーでプッシュ ベースの通知の送信が完了したことをオブザーバーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにオブザーバーの<xref:System.IObserver%601.OnCompleted%2A>実装が呼び出される、<xref:System.IObserver%601.OnCompleted%2A>メソッドを呼び出すことができます必要に応じて、<xref:System.IDisposable.Dispose%2A>のメソッド、<xref:System.IDisposable>呼び出されると、オブザーバーに返されたオブジェクトで、<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の実装を提供する、<xref:System.IObserver%601.OnCompleted%2A>緯度/経度追跡アプリケーション内のメソッドです。 メソッドは、単にないさらにそのデータが使用可能なは、プロバイダーの呼び出しに報告<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装します。 使用例を参照してください、<xref:System.IObserver%601>コード例全体についてのトピックです。  
+  
+ [!code-csharp[System.IObserver.Class#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/observer.cs#11)]
+ [!code-vb[System.IObserver.Class#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/observer.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnError">
+      <MemberSignature Language="C#" Value="public void OnError (Exception error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnError(class System.Exception error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IObserver`1.OnError(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="error" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="error">エラーに関する追加情報を提供するオブジェクト。</param>
+        <summary>プロバイダーでエラー状態が発生したことをオブザーバーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `error`から派生したオブジェクトは、 <xref:System.Exception?displayProperty=nameWithType>、これは必ずしも表しませんプロバイダーによってスローされる例外。 見つからないか、使用できなくなったデータなど、日常的なまたは予期されるエラー条件を表すこともできます。 <xref:System.IObserver%601.OnError%2A>メソッドは、情報として見なす必要があります、プロバイダーは、エラー処理を提供するオブザーバーを予期しない必要があります。  
+  
+   
+  
+## Examples  
+ 次の例の実装を提供する、<xref:System.IObserver%601.OnError%2A>緯度/経度追跡アプリケーション内のメソッドです。 メソッドが単にデータが現在使用できないことを示してください。言えませんの使用、<xref:System.Exception>をパラメーターとして、それに渡されるオブジェクト。 使用例を参照してください、<xref:System.IObserver%601>コード例全体についてのトピックです。  
+  
+ [!code-csharp[System.IObserver.Class#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/observer.cs#10)]
+ [!code-vb[System.IObserver.Class#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/observer.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNext">
+      <MemberSignature Language="C#" Value="public void OnNext (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnNext(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IObserver`1.OnNext(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の通知情報。</param>
+        <summary>新しいデータをオブザーバーに提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブザーバーには、プロバイダーが呼び出された後に<xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>メソッド、プロバイダーはオブザーバーの<xref:System.IObserver%601.OnNext%2A>メソッド、通知を提供します。  
+  
+   
+  
+## Examples  
+ 次の例の実装を提供する、<xref:System.IObserver%601.OnNext%2A>緯度/経度追跡アプリケーション内のメソッドです。 使用例を参照してください、<xref:System.IObserver%601>コード例全体についてのトピックです。  
+  
+ [!code-csharp[System.IObserver.Class#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.iobserver.class/cs/observer.cs#12)]
+ [!code-vb[System.IObserver.Class#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.iobserver.class/vb/observer.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

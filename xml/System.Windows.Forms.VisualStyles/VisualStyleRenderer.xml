@@ -1,0 +1,1418 @@
+<Type Name="VisualStyleRenderer" FullName="System.Windows.Forms.VisualStyles.VisualStyleRenderer">
+  <TypeSignature Language="C#" Value="public sealed class VisualStyleRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VisualStyleRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>描画および情報を取得するメソッドを提供する<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType>名前空間を公開<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>インターフェイス visual スタイルでサポートされている (UI) 要素のすべてのコントロールおよびユーザーを表すオブジェクト。 描画または特定の要素に関する情報を取得、設定する必要があります、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>興味のある要素。 A<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>が自動的に、指定されたセット<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>で、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.%23ctor%2A>コンス トラクターができますも設定して、既存<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>を呼び出すことによって異なる要素に、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters%2A>メソッドです。  
+  
+ 要素を描画するには、使用、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A>メソッドです。 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスもなどが含まれるメソッド、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetColor%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>、によって現在の visual スタイル要素を定義する方法に関する情報が提供されます。  
+  
+ <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.%23ctor%2A>コンス トラクターと多くの<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>オペレーティング システムで visual スタイルが有効になっているし、visual スタイルがアプリケーション ウィンドウのクライアント領域に適用されていない限り、メソッドが例外をスローします。 これらの条件を確認するには、使用、 `static` <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスが visual スタイル (UxTheme) API、Windows プラットフォーム SDK の Windows シェルの部分からの機能をラップします。 Visual スタイルの詳細については、MSDN ライブラリでのプラットフォーム SDK の部分に「を使用して Windows XP の視覚スタイル」を参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>のタイトル バーをドラッグする、変更、サイズ変更ハンドルをサイズ変更、および終了を含む、ウィンドウの基本的な UI の一部をシミュレートするカスタム コントロールを実装するクラス。 この例では、いくつかを使って<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>によって公開されている要素を含む、ウィンドウの標準的な部分を表すオブジェクト、 <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Window.Caption>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Window.CloseButton>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Status.Gripper>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualStyleRenderer (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.#ctor(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Forms.VisualStyles.VisualStyleElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />この<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />クラスを使用して、指定された<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、 <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Part%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.State%2A?displayProperty=nameWithType>のプロパティ、`element`パラメーターは初期化するために、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A>プロパティです。  
+  
+ このコンス トラクターを使用する前に呼び出す必要がある、 `static` <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>現在の visual スタイルがで指定した要素の定義を提供するかどうかを確認するメソッド、`element`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.%23ctor%28System.Windows.Forms.VisualStyles.VisualStyleElement%29>コンス トラクターを作成する、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>です。 このコード例に示されている例のコードの一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#40)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="element" />現在の visual スタイルによって定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualStyleRenderer (string className, int part, int state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string className, int32 part, int32 state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="part" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="className">要素のクラス名この<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />を表します。</param>
+        <param name="part">要素の部品この<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />を表します。</param>
+        <param name="state">要素の状態をこの<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />クラスの特定のクラス、部品、および状態の値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、 `className`、 `part`、および`state`パラメーターは初期化するために、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A>プロパティです。  
+  
+ このコンス トラクターを使用する前に呼び出す必要がある、 `static` <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>現在の visual スタイルがで指定した要素の定義を提供するかどうかを確認するメソッド、 `className`、 `part`、および`state`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+        <exception cref="T:System.ArgumentException">組み合わせ<paramref name="className" />、 <paramref name="part" />、および<paramref name="state" />が現在の visual スタイルによって定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Class">
+      <MemberSignature Language="C#" Value="public string Class { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Class" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイル要素のクラス名を取得します。</summary>
+        <value>現在の visual スタイル要素のクラスを識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、関連するコントロールまたはユーザー インターフェイス (UI) 要素のグループを識別します。 クラス、部品、および visual スタイル要素の状態の詳細については、次を参照してください。、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBackground">
+      <MemberSignature Language="C#" Value="public void DrawBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />背景イメージを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />背景イメージを描画します。</param>
+        <summary>指定された外接する四角形内の現在の visual スタイル要素の背景イメージを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された現在の visual スタイル要素の背景を描画する、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A>プロパティです。  
+  
+ 場合、<xref:System.Drawing.Rectangle.Width%2A>または<xref:System.Drawing.Rectangle.Height%2A>によって指定される四角形の`bounds`パラメーターが 0 より小さい、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A>メソッドは、背景を描画することがなくを返します。  
+  
+ Visual スタイル要素の背景には、ビットマップ ファイルまたは塗りつぶされた罫線を指定できます。 背景の種類を特定するのには、呼び出し、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>メソッドの引数の値を<xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=nameWithType>です。 要素の背景は、指定した境界に合わせて拡大縮小するかどうかを判断するのには、呼び出し、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>メソッドの引数の値を<xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%28System.Drawing.IDeviceContext%2CSystem.Drawing.Rectangle%29>描画する方法、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>内にカスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#20)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#20)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawBackground">
+      <MemberSignature Language="C#" Value="public void DrawBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Drawing.Rectangle clipRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Rectangle clipRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="clipRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />背景イメージを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />背景イメージを描画します。</param>
+        <param name="clipRectangle">A<see cref="T:System.Drawing.Rectangle" />描画操作のクリッピング四角形を定義します。</param>
+        <summary>指定された外接する四角形およびクリップされた内の現在の visual スタイル要素の背景画像をクリッピング四角形に描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された現在の visual スタイル要素の背景を描画する、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>、および<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A>プロパティです。 指定された領域は、背景、クリップされます、`clipRectangle`パラメーター。  
+  
+ 場合、<xref:System.Drawing.Rectangle.Width%2A>または<xref:System.Drawing.Rectangle.Height%2A>いずれかで指定された四角形の`bounds`または`clipRectangle`パラメーターが 0 より小さい、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A>メソッドは、背景を描画することがなくを返します。  
+  
+ Visual スタイル要素の背景には、ビットマップ ファイルまたは塗りつぶされた罫線を指定できます。 背景の種類を特定するのには、呼び出し、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>メソッドの引数の値を<xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=nameWithType>です。 要素の背景は、指定した境界に合わせて拡大縮小するかどうかを判断するのには、呼び出し、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>メソッドの引数の値を<xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawEdge">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle DrawEdge (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.Edges edges, System.Windows.Forms.VisualStyles.EdgeStyle style, System.Windows.Forms.VisualStyles.EdgeEffects effects);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle DrawEdge(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.Edges edges, valuetype System.Windows.Forms.VisualStyles.EdgeStyle style, valuetype System.Windows.Forms.VisualStyles.EdgeEffects effects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawEdge(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.Edges,System.Windows.Forms.VisualStyles.EdgeStyle,System.Windows.Forms.VisualStyles.EdgeEffects)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="edges" Type="System.Windows.Forms.VisualStyles.Edges" />
+        <Parameter Name="style" Type="System.Windows.Forms.VisualStyles.EdgeStyle" />
+        <Parameter Name="effects" Type="System.Windows.Forms.VisualStyles.EdgeEffects" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />エッジを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />の境界を描画する端を定義します。</param>
+        <param name="edges"><see cref="T:System.Windows.Forms.VisualStyles.Edges" /> 値のビットごとの組み合わせ。</param>
+        <param name="style"><see cref="T:System.Windows.Forms.VisualStyles.EdgeStyle" /> 値のビットごとの組み合わせ。</param>
+        <param name="effects"><see cref="T:System.Windows.Forms.VisualStyles.EdgeEffects" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定された外接する四角形の 1 つまたは複数のエッジに描画します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />の内部を表す、<paramref name="bounds" />描画された端マイナスのパラメーターです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public void DrawImage (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImage(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />イメージを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />でイメージを描画します。</param>
+        <param name="image">描画する <see cref="T:System.Drawing.Image" />。</param>
+        <summary>指定した範囲内で指定したイメージを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された効果のいずれかの visual スタイルが適用される場合、<xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=nameWithType>現在の要素では、このメソッドに値が効果を描画するイメージに適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> または <paramref name="image" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawImage">
+      <MemberSignature Language="C#" Value="public void DrawImage (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.ImageList imageList, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImage(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.ImageList imageList, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ImageList,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="imageList" Type="System.Windows.Forms.ImageList" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />イメージを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />でイメージを描画します。</param>
+        <param name="imageList"><see cref="T:System.Windows.Forms.ImageList" />を格納している、<see cref="T:System.Drawing.Image" />を描画します。</param>
+        <param name="imageIndex">インデックス、<see cref="T:System.Drawing.Image" />内<c>imageList</c>を描画します。</param>
+        <summary>指定された対象からイメージを描画<see cref="T:System.Windows.Forms.ImageList" />指定した範囲内です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された効果のいずれかの visual スタイルが適用される場合、<xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=nameWithType>現在の要素では、このメソッドに値が効果を描画するイメージに適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> または <paramref name="image" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="imageIndex" />小さい 0 の場合、またはより大きいか内のイメージの数と等しく<paramref name="imageList" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawParentBackground">
+      <MemberSignature Language="C#" Value="public void DrawParentBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.Control childControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawParentBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.Control childControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawParentBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="childControl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />の親の背景を描画するために使用<c>childControl</c>です。 このオブジェクトは、通常、子コントロールに属しています。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />親コントロールの背景を描画するためにします。 この四角形は、子コントロールの境界内にする必要があります。</param>
+        <param name="childControl">コントロールの親の背景が描画されます。</param>
+        <summary>指定領域にコントロールの親の背景を描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textToDraw" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />テキストを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />先となるテキストを描画します。</param>
+        <param name="textToDraw">描画するテキスト。</param>
+        <summary>既定の書式設定を使用して、指定した範囲でテキストを描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textToDraw" Type="System.String" />
+        <Parameter Name="drawDisabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />テキストを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />先となるテキストを描画します。</param>
+        <param name="textToDraw">描画するテキスト。</param>
+        <param name="drawDisabled">
+          <see langword="true" />灰色のテキストを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>無効なテキストの表示オプションを使用して、指定した範囲でテキストを描画します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Boolean,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textToDraw" Type="System.String" />
+        <Parameter Name="drawDisabled" Type="System.Boolean" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />テキストを描画するために使用します。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />先となるテキストを描画します。</param>
+        <param name="textToDraw">描画するテキスト。</param>
+        <param name="drawDisabled">
+          <see langword="true" />灰色のテキストを描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定された外接する四角形の表示オプションでテキストを描画には、テキストおよびその他のテキストの書式設定の適用が無効になります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackgroundContentRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBackgroundContentRectangle (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBackgroundContentRectangle(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundContentRectangle(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />背景領域全体、現在の visual スタイル要素を格納しています。</param>
+        <summary>現在の visual スタイル要素の背景のコンテンツ領域を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />コンテンツ領域の現在の visual スタイル要素の背景を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、各バック グラウンド イメージ内のコンテンツ領域を定義できます。 これは、テキストなど、どのコンテンツでは、領域および背景の境界線を上書きすることがなくアイコンを配置することができます。 このメソッドでは、指定した背景領域を使用して、現在の visual スタイル要素のコンテンツ領域を計算します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackgroundExtent">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBackgroundExtent (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle contentBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBackgroundExtent(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle contentBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundExtent(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="contentBounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="contentBounds">A<see cref="T:System.Drawing.Rectangle" />現在の visual スタイル要素のコンテンツ領域を格納します。</param>
+        <summary>現在の visual スタイル要素の背景全体の領域を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />背景領域全体、現在の visual スタイル要素を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、各バック グラウンド イメージ内のコンテンツ領域を定義できます。 これは、テキストなど、どのコンテンツでは、領域および背景の境界線を上書きすることがなくアイコンを配置することができます。 このメソッドは、特定のコンテンツ領域を使用して、現在の visual スタイル要素の背景全体の領域を計算します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBackgroundRegion">
+      <MemberSignature Language="C#" Value="public System.Drawing.Region GetBackgroundRegion (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Region GetBackgroundRegion(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SuppressUnmanagedCodeSecurity</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Region</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />背景領域全体、現在の visual スタイル要素を格納しています。</param>
+        <summary>現在の visual スタイル要素の背景の領域を返します。</summary>
+        <returns><see cref="T:System.Drawing.Region" />現在の visual スタイル要素の背景を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して取得できます、 <xref:System.Drawing.Region> visual スタイル要素のバック グラウンドで部分的に透過的またはアルファ ブレンドの部分を持つのです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A>カスタム コントロールのメソッドです。 この例では<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A>を取得する、<xref:System.Drawing.Region>によって返されるウィンドウのタイトル バーの要素の<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Window.Caption.Active%2A?displayProperty=nameWithType>プロパティです。 これは、<xref:System.Drawing.Region>設定に使用される、<xref:System.Windows.Forms.Control.Region%2A?displayProperty=nameWithType>プロパティ、コントロールの標準の Windows XP の visual スタイルによって定義された角の丸いウィンドウのタイトル バーが表示されるようにします。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#30)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#30)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolean">
+      <MemberSignature Language="C#" Value="public bool GetBoolean (System.Windows.Forms.VisualStyles.BooleanProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetBoolean(valuetype System.Windows.Forms.VisualStyles.BooleanProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBoolean(System.Windows.Forms.VisualStyles.BooleanProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.BooleanProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.BooleanProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定したブール型プロパティの値を返します。</summary>
+        <returns>
+          <see langword="true" />プロパティが指定されている場合、<paramref name="prop" />パラメーターは<see langword="true" />; 現在の visual スタイル要素のそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに一連のブール値を使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.BooleanProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.BooleanProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color GetColor (System.Windows.Forms.VisualStyles.ColorProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Color GetColor(valuetype System.Windows.Forms.VisualStyles.ColorProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetColor(System.Windows.Forms.VisualStyles.ColorProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.ColorProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ColorProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の色を指定したプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Color" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに一連の色の値を使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.ColorProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.ColorProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumValue">
+      <MemberSignature Language="C#" Value="public int GetEnumValue (System.Windows.Forms.VisualStyles.EnumProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetEnumValue(valuetype System.Windows.Forms.VisualStyles.EnumProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue(System.Windows.Forms.VisualStyles.EnumProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.EnumProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.EnumProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定した列挙型プロパティの値を返します。</summary>
+        <returns>指定されたプロパティの整数値、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに列挙型のセットを使用します。 これらの列挙型がでカプセル化された、<xref:System.Windows.Forms.VisualStyles.EnumProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.EnumProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilename">
+      <MemberSignature Language="C#" Value="public string GetFilename (System.Windows.Forms.VisualStyles.FilenameProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetFilename(valuetype System.Windows.Forms.VisualStyles.FilenameProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetFilename(System.Windows.Forms.VisualStyles.FilenameProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.FilenameProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.FilenameProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定したファイル名のプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.String" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、さまざまなサイズと解像度の特定の要素の描画に使用されるイメージ ファイルの名前を指定できます。 これらのファイル名がによってカプセル化、<xref:System.Windows.Forms.VisualStyles.FilenameProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.FilenameProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font GetFont (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.FontProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Font GetFont(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.FontProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetFont(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.FontProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.FontProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.FontProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定したフォントのプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Font" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに一連のフォントの値を使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.FontProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.FontProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInteger">
+      <MemberSignature Language="C#" Value="public int GetInteger (System.Windows.Forms.VisualStyles.IntegerProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetInteger(valuetype System.Windows.Forms.VisualStyles.IntegerProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetInteger(System.Windows.Forms.VisualStyles.IntegerProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.IntegerProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.IntegerProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定した整数プロパティの値を返します。</summary>
+        <returns>指定されたプロパティの整数値、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに一連の整数値を使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.IntegerProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.IntegerProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMargins">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding GetMargins (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.MarginProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.Padding GetMargins(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.MarginProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetMargins(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.MarginProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.MarginProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.MarginProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の余白の指定したプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Padding" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに余白の値のセットを使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.MarginProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.MarginProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size GetPartSize (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.ThemeSizeType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size GetPartSize(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.ThemeSizeType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPartSize(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.ThemeSizeType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="type" Type="System.Windows.Forms.VisualStyles.ThemeSizeType" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ThemeSizeType" />の要素を取得するには、どのサイズ値を指定する値。</param>
+        <summary>現在の visual スタイル パーツの指定したサイズ プロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />で指定されたサイズを格納する、<paramref name="type" />現在の visual スタイル パーツのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、のみ、<xref:System.Windows.Forms.VisualStyles.ThemeSizeType.True>と<xref:System.Windows.Forms.VisualStyles.ThemeSizeType.Minimum>値が使用する必要があります、`type`このメソッドのパラメーターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPartSize%28System.Drawing.IDeviceContext%2CSystem.Windows.Forms.VisualStyles.ThemeSizeType%29> 、ウィンドウ タイトル バーのサイズを取得するカスタム コントロール内のメソッド**閉じる**ボタン、罫線、およびサイズ変更ハンドルの視覚スタイルで指定します。 これらのサイズを使用して計算のサイズ、<xref:System.Drawing.Rectangle>の描画に使用されるオブジェクト、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>をこれらのウィンドウの一部を表すオブジェクト。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#10)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.ThemeSizeType" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size GetPartSize (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ThemeSizeType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size GetPartSize(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ThemeSizeType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPartSize(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ThemeSizeType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="type" Type="System.Windows.Forms.VisualStyles.ThemeSizeType" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />部分を描画する領域を格納します。</param>
+        <param name="type">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ThemeSizeType" />の要素を取得するには、どのサイズ値を指定する値。</param>
+        <summary>指定したサイズの指定した図面境界を使用して現在の visual スタイル パーツのプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />で指定されたサイズを格納する、<paramref name="type" />現在の visual スタイル パーツのパラメーターです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.ThemeSizeType" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point GetPoint (System.Windows.Forms.VisualStyles.PointProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point GetPoint(valuetype System.Windows.Forms.VisualStyles.PointProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPoint(System.Windows.Forms.VisualStyles.PointProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.PointProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.PointProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定した点のプロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Point" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのにポイント値のセットを使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.PointProperty>値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPoint%2A>ウィンドウのオフセットを取得するカスタム コントロール**閉じる**タイトル バーの右上隅に関連してボタンをクリックします。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#10)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.PointProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public string GetString (System.Windows.Forms.VisualStyles.StringProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetString(valuetype System.Windows.Forms.VisualStyles.StringProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetString(System.Windows.Forms.VisualStyles.StringProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Windows.Forms.VisualStyles.StringProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.StringProperty" />現在の visual スタイル要素を取得するプロパティ値を指定する値。</param>
+        <summary>現在の visual スタイル要素の指定した文字列プロパティの値を返します。</summary>
+        <returns>A<see cref="T:System.String" />によって指定されたプロパティの値を格納している、<paramref name="prop" />現在の visual スタイル要素のパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルは、スタイルで定義されている要素の一部のプロパティを記述するのに文字列値のセットを使用します。 これらのプロパティがによってカプセル化、<xref:System.Windows.Forms.VisualStyles.StringProperty>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="prop" /> は <see cref="T:System.Windows.Forms.VisualStyles.StringProperty" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextExtent">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetTextExtent (System.Drawing.IDeviceContext dc, string textToDraw, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetTextExtent(class System.Drawing.IDeviceContext dc, string textToDraw, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextExtent(System.Drawing.IDeviceContext,System.String,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="textToDraw" Type="System.String" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="textToDraw">計測する文字列。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>現在の visual スタイル要素のフォントで描画した場合、指定した文字列の位置とサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />表示されたテキストに合わせて必要な領域を格納します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextExtent">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetTextExtent (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetTextExtent(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextExtent(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textToDraw" Type="System.String" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="bounds">A<see cref="T:System.Drawing.Rectangle" />流れと、テキストの折り返しを制御するために使用します。</param>
+        <param name="textToDraw">計測する文字列。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定した初期外接する四角形内の現在の visual スタイル要素のフォントで描画した場合、指定した文字列の位置とサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />表示されたテキストに合わせて必要な領域を格納します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextMetrics">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.TextMetrics GetTextMetrics (System.Drawing.IDeviceContext dc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.TextMetrics GetTextMetrics(class System.Drawing.IDeviceContext dc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextMetrics(System.Drawing.IDeviceContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.TextMetrics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <summary>現在の visual スタイル要素によって指定されたフォントに関する情報を取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.VisualStyles.TextMetrics" />現在の visual スタイル要素によって指定されたフォントに関する情報を提供します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Visual スタイル要素の現在のクラスの一意の識別子を取得します。</summary>
+        <value><see cref="T:System.IntPtr" />によって指定される要素のクラスを定義するデータのセットを識別する<see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは内部で使用される、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>メソッドです。 要素のクラスがで指定された場合、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>プロパティが現在の visual スタイルによって定義されていませんし、このプロパティを返します<xref:System.IntPtr.Zero?displayProperty=nameWithType>です。  
+  
+ オペレーティング システムの visual スタイルが変更されたときに、またはユーザーには、visual スタイルが無効には、このプロパティの値が無効にします。 コードが新しいを取得するには、もう一度このプロパティのクエリを実行する必要がある場合、このプロパティに直接アクセスする、時に処理、<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged?displayProperty=nameWithType>イベントが発生、<xref:Microsoft.Win32.UserPreferenceChangedEventArgs.Category%2A?displayProperty=nameWithType>のプロパティの値<xref:Microsoft.Win32.UserPreferenceCategory?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle backgroundRectangle, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle backgroundRectangle, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.HitTestCode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="backgroundRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="options" Type="System.Windows.Forms.VisualStyles.HitTestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="backgroundRectangle">A<see cref="T:System.Drawing.Rectangle" />現在の visual スタイル要素の背景を格納しています。</param>
+        <param name="pt">テスト対象の <see cref="T:System.Drawing.Point" />。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.VisualStyles.HitTestOptions" /> 値のビットごとの組み合わせ。</param>
+        <summary>現在の visual スタイル要素のバック グラウンドで、ポイントが含まれているかどうかを示すヒット テスト コードを返します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.VisualStyles.HitTestCode" />場所を説明する<paramref name="pt" />は現在の visual スタイル要素の背景にあります。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.Graphics g, System.Drawing.Rectangle backgroundRectangle, System.Drawing.Region region, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle backgroundRectangle, class System.Drawing.Region region, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Region,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.HitTestCode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="backgroundRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="region" Type="System.Drawing.Region" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="options" Type="System.Windows.Forms.VisualStyles.HitTestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="backgroundRectangle">A<see cref="T:System.Drawing.Rectangle" />現在の visual スタイル要素の背景を格納しています。</param>
+        <param name="region">A<see cref="T:System.Drawing.Region" />バック グラウンドでヒット テスト領域の境界を指定します。</param>
+        <param name="pt">テスト対象の <see cref="T:System.Drawing.Point" />。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.VisualStyles.HitTestOptions" /> 値のビットごとの組み合わせ。</param>
+        <summary>現在の visual スタイル要素の指定した範囲内には、バック グラウンドで、ポイントが含まれているかどうかを示すヒット テスト コードを返します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.VisualStyles.HitTestCode" />場所を説明する<paramref name="pt" />場合は、現在の visual スタイル要素の背景にあります。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="g" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle backgroundRectangle, IntPtr hRgn, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle backgroundRectangle, native int hRgn, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.IntPtr,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.HitTestCode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="backgroundRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="hRgn" Type="System.IntPtr" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="options" Type="System.Windows.Forms.VisualStyles.HitTestOptions" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Drawing.IDeviceContext" />この操作が使用されます。</param>
+        <param name="backgroundRectangle">A<see cref="T:System.Drawing.Rectangle" />現在の visual スタイル要素の背景を格納しています。</param>
+        <param name="hRgn">Windows のハンドル、<see cref="T:System.Drawing.Region" />バック グラウンドでヒット テスト領域の境界を指定します。</param>
+        <param name="pt">テスト対象の <see cref="T:System.Drawing.Point" />。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.VisualStyles.HitTestOptions" /> 値のビットごとの組み合わせ。</param>
+        <summary>現在の visual スタイル要素の指定した領域内でのバック グラウンドで、ポイントが含まれているかどうかを示すヒット テスト コードを返します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.VisualStyles.HitTestCode" />場所を説明する<paramref name="pt" />は現在の visual スタイル要素の背景にあります。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundPartiallyTransparent">
+      <MemberSignature Language="C#" Value="public bool IsBackgroundPartiallyTransparent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBackgroundPartiallyTransparent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsBackgroundPartiallyTransparent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の visual スタイル要素の背景が任意の半透明またはアルファ ブレンドの部分を持つかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />現在の visual スタイル要素の背景、または半透明アルファ ブレンドの部分がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsElementDefined">
+      <MemberSignature Language="C#" Value="public static bool IsElementDefined (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsElementDefined(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Forms.VisualStyles.VisualStyleElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />がクラスと一部の組み合わせが検証されます。</param>
+        <summary>Visual スタイルを指定した要素が現在の visual スタイルによって定義されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合の組み合わせ、<see cref="P:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName" />と<see cref="P:System.Windows.Forms.VisualStyles.VisualStyleElement.Part" />プロパティの<paramref name="element" />が定義されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A>プロパティ内部的にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>を初期化するかどうかを決定するメソッド、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>を指定された<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>です。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#40)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムがコントロールを描画する visual スタイルを使用するかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />オペレーティング システムでは、visual スタイルをサポートする場合、ユーザーには、オペレーティング システムで visual スタイルが有効にし、visual スタイル; のアプリケーション ウィンドウのクライアント領域に適用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に残す必要のある 3 つの条件の各を個別にチェックする方法、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A>を返すプロパティ`true`です。  
+  
+|条件|個別に確認する方法|  
+|---------------|---------------------------------|  
+|オペレーティング システム視覚スタイルをサポートしている。|いることを確認、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS%2A>のプロパティ、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation>クラスは`true`します。|  
+|ユーザーがオペレーティング システムで視覚スタイルを有効にしている。|いることを確認、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A>のプロパティ、<xref:System.Windows.Forms.VisualStyles.VisualStyleInformation>クラスは`true`します。|  
+|アプリケーション ウィンドウのクライアント領域を描画するために視覚スタイルが使用されている。|いることを確認、<xref:System.Windows.Forms.Application.VisualStyleState%2A>のプロパティ、<xref:System.Windows.Forms.Application>クラス プロパティ値を持つ<xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType>または<xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType>です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastHResult">
+      <MemberSignature Language="C#" Value="public int LastHResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LastHResult" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.LastHResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネイティブの visual スタイルによってカプセル化 (UxTheme) API のメソッドによって返される最後のエラー コードを取得、<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />クラスです。</summary>
+        <value>ネイティブの visual スタイルをこのクラスにカプセル化 API のメソッドによって返される最後のエラー コードを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのメンバーによって呼び出された最後のネイティブの visual スタイル API メソッドによって返された HRESULT 値を取得する、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスです。 ネイティブの visual スタイル API の詳細については、MSDN ライブラリの Platform SDK 部分の「を使用して Windows XP の視覚スタイル」を参照して[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library/)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Part">
+      <MemberSignature Language="C#" Value="public int Part { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Part" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイル要素の一部を取得します。</summary>
+        <value>現在の visual スタイル要素の一部を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、特定の特化したクラスを識別します。 クラス、部品、および visual スタイル要素の状態の詳細については、次を参照してください。、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameters">
+      <MemberSignature Language="C#" Value="public void SetParameters (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Forms.VisualStyles.VisualStyleElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />の新しい値を指定する、 <see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class" />、 <see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part" />、および<see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State" />プロパティです。</param>
+        <summary>この設定<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />visual スタイル要素を指定したによって表されるを<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A>プロパティ内部的にします。 このメソッドを呼び出す前に呼び出す必要がある、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>現在の visual スタイルがで指定した要素の定義を提供することを確認するメソッド、`element`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters%28System.Windows.Forms.VisualStyles.VisualStyleElement%29>を設定するメソッド、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>を新しい<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>です。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>クラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#40)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#40)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleRenderer#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/VB/form1.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="element" />現在の visual スタイルによって定義されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameters">
+      <MemberSignature Language="C#" Value="public void SetParameters (string className, int part, int state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(string className, int32 part, int32 state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="part" Type="System.Int32" />
+        <Parameter Name="state" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="className"><see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class" /> プロパティの新しい値。</param>
+        <param name="part"><see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part" /> プロパティの新しい値。</param>
+        <param name="state"><see cref="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State" /> プロパティの新しい値。</param>
+        <summary>この設定<see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />指定したクラス、部品、および状態の値によって表される visual スタイル要素をします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の値を調べて、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported%2A>プロパティ内部的にします。 このメソッドを呼び出す前に呼び出す必要があります、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A>現在の visual スタイルがで指定した要素の定義を提供することを確認するメソッド、 `className`、 `part`、および`state`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">組み合わせ<paramref name="className" />、 <paramref name="part" />、および<paramref name="state" />が現在の visual スタイルによって定義されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public int State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の visual スタイル要素の状態を取得します。</summary>
+        <value>現在の visual スタイル要素の状態を識別する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在によって識別される要素の現在の表示状態を識別<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>と<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>プロパティの値。 クラス、部品、および visual スタイル要素の状態の詳細については、次を参照してください。、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1318 @@
+<Type Name="XmlReaderSettings" FullName="System.Xml.XmlReaderSettings">
+  <TypeSignature Language="C#" Value="public sealed class XmlReaderSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlReaderSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlReaderSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートする機能のセットを示す、<see cref="T:System.Xml.XmlReader" />によって作成されたオブジェクト、<see cref="Overload:System.Xml.XmlReader.Create" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Xml.XmlReader.Create%2A>メソッドを取得する<xref:System.Xml.XmlReader>インスタンス。 このメソッドを使用して、<xref:System.Xml.XmlReaderSettings>クラスで実装する機能を指定する、<xref:System.Xml.XmlReader>オブジェクトが作成されます。  
+  
+ 「解説」セクションを参照して、<xref:System.Xml.XmlReader>と<xref:System.Xml.XmlReader.Create%2A>準拠チェック検証、およびその他一般的なシナリオを使用する設定についてのページを参照します。 参照してください、<xref:System.Xml.XmlReaderSettings.%23ctor>既定の設定の一覧については、コンス トラクターです。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ 使用する場合は、次を検討してください、<xref:System.Xml.XmlReaderSettings>クラスです。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> オブジェクトの <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> および <xref:System.Xml.XmlReaderSettings> の検証フラグは、既定では設定されていません。 これらのフラグが設定されていると、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A> オブジェクトの <xref:System.Xml.XmlReaderSettings> が <xref:System.Xml.XmlReader> のインスタンス ドキュメント中に出現したスキーマの場所を解決するために使用されます。 場合、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>オブジェクトが`null`、スキーマの場所が解決しない場合でも、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>と<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>検証フラグを設定します。  
+  
+-   検証を実行しているときにスキーマを追加すると新しい型が追加されるため、検証しているドキュメントの検証結果を変えることができます。 結果として、信頼できるソースからの外部スキーマだけが解決されるようにする必要があります。  
+  
+-   検証エラー メッセージには、コンテンツ モデルを機密情報が公開します。 検証エラーおよび警告メッセージが処理されるを使用して、<xref:System.Xml.Schema.ValidationEventHandler>デリゲート、またはとして公開される、<xref:System.Xml.Schema.XmlSchemaValidationException>にイベント ハンドラーが指定されていない場合、<xref:System.Xml.XmlReaderSettings>オブジェクト (検証の警告が発生しない、<xref:System.Xml.Schema.XmlSchemaValidationException>がスローされます)。 コンテンツ モデルの情報は信頼されていないシナリオで公開する必要があります。 検証の警告メッセージが既定で抑制し、設定によって報告できる、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings>フラグ。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaValidationException>例外が発生したスキーマ ファイル パスが URI パスを返します。 <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>信頼されていないシナリオ プロパティを公開するべきはありません。  
+  
+-   無効にすると、 <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints> id 制約を含むスキーマに対して高可用性のシナリオのドキュメントの大部分を検証する、信頼されていない、大きな XML ドキュメントと (既定で有効になっている) フラグをお勧めします。  
+  
+-   <xref:System.Xml.XmlReaderSettings> オブジェクトはユーザー資格情報など、重要な情報を含むことがあります。 <xref:System.Xml.XmlReaderSettings> オブジェクトをキャッシュしたり、<xref:System.Xml.XmlReaderSettings> オブジェクトをあるコンポーネントから別のコンポーネントに渡したりする場合には注意が必要です。  
+  
+-   既定で DTD の処理は無効になっています。 DTD 処理を有効にした場合は、信頼されていないソースおよび可能なサービス拒否攻撃からの Dtd を含むに注意する必要があります。 使用して、<xref:System.Xml.XmlSecureResolver>リソースを制限する、<xref:System.Xml.XmlReader>にアクセスできます。  
+  
+-   信頼できないソースからの <xref:System.Xml.NameTable>、<xref:System.Xml.XmlNamespaceManager>、および <xref:System.Xml.XmlResolver> オブジェクトなどのサポート コンポーネントは受け入れないようにします。  
+  
+-   <xref:System.Xml.XmlReader> を使用するアプリケーションのメモリ使用量が、解析済み XML ドキュメントのサイズに相関する場合があります。 非常に大きな XML ドキュメントを送信して解析させることは、サービス拒否攻撃 (DoS) の一種です。 設定によって解析されるドキュメントのサイズを制限することができます、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A>プロパティと設定してエンティティの展開により生成される文字の数を制限、<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlReader>を使用して、<xref:System.Xml.XmlUrlResolver>必要な資格情報を使用します。  
+  
+ [!code-csharp[XmlReader.Create#2](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader.Create/CS/XmlReader_Create.cs#2)]
+ [!code-vb[XmlReader.Create#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader.Create/VB/XmlReader_Create.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlReaderSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlReaderSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlReaderSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Xml.XmlReaderSettings>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Xml.XmlReaderSettings.Async%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A>|`true`。|  
+|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A>|<xref:System.Xml.ConformanceLevel.Document>。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreComments%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreProcessingInstructions%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreWhitespace%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.LineNumberOffset%2A>|0.|  
+|<xref:System.Xml.XmlReaderSettings.LinePositionOffset%2A>|0.|  
+|<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A>|(エンティティの展開により生成される文字数に制限はありません) は 0 です。|  
+|<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A>|0 (制限はありません、XML ドキュメントのサイズ) です。|  
+|<xref:System.Xml.XmlReaderSettings.NameTable%2A>|`null`。|  
+|<xref:System.Xml.XmlTextReader.DtdProcessing%2A>|<xref:System.Xml.DtdProcessing.Prohibit>|  
+|<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>|`true`。 このプロパティは今後使用しません。 代わりに、<xref:System.Xml.XmlTextReader.DtdProcessing%2A> を使用してください。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>を既定値に`true`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Prohibit`です。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>に`false`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Parse`です。|  
+|<xref:System.Xml.XmlReaderSettings.Schemas%2A>|空の <xref:System.Xml.Schema.XmlSchemaSet> オブジェクト。|  
+|<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>|<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints>。|  
+|<xref:System.Xml.XmlReaderSettings.ValidationType%2A>|<xref:System.Xml.ValidationType.None>。|  
+|<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>|新しい <xref:System.Xml.XmlUrlResolver> オブジェクト。|  
+  
+   
+  
+## Examples  
+ 次に、処理命令、コメント、および有意の空白文字を取り除くリーダーを構築するために使用できる設定オブジェクトを作成します。  
+  
+ [!code-cpp[XmlReaderSettings.cctor#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.cctor/CPP/XmlReaderSettings.cctor.cpp#1)]
+ [!code-csharp[XmlReaderSettings.cctor#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.cctor/CS/factory_rdr_cctor2.cs#1)]
+ [!code-vb[XmlReaderSettings.cctor#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.cctor/VB/factory_rdr_cctor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlReaderSettings (System.Xml.XmlResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlReaderSettings.#ctor(System.Xml.XmlResolver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="resolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="resolver">XML リゾルバー。</param>
+        <summary><see cref="T:System.Xml.XmlReaderSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Async">
+      <MemberSignature Language="C#" Value="public bool Async { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Async" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.Async" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得かどうかを非同期<see cref="T:System.Xml.XmlReader" />特定のメソッドを使用できます<see cref="T:System.Xml.XmlReader" />インスタンス。</summary>
+        <value>
+          <see langword="true" />非同期メソッドを使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を設定する必要があります`true`新規に作成するときに<xref:System.Xml.XmlReader>非同期を使用する場合をインスタンス化<xref:System.Xml.XmlReader>そのインスタンス上のメソッドです。 後に、<xref:System.Xml.XmlReader>インスタンスが作成される、<xref:System.Xml.XmlReaderSettings.Async%2A>プロパティは読み取り専用です。 このプロパティの既定値は `false` です。  
+  
+ このフラグは無視されます、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>オーバー ロードします。 つまり、新規に作成する場合<xref:System.Xml.XmlReader>既存に基づいて<xref:System.Xml.XmlReader>、非同期動作は、入力に依存<xref:System.Xml.XmlReader>、使用することはできませんし、<xref:System.Xml.XmlReaderSettings.Async%2A>非同期動作を変更するフラグ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckCharacters">
+      <MemberSignature Language="C#" Value="public bool CheckCharacters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.CheckCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字のチェックを行うかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />文字をチェックします。それ以外の場合<see langword="false" />です。 既定値は、<see langword="true" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ 場合、<see cref="T:System.Xml.XmlReader" />はテキスト データを処理するには、常に確認 XML 名とテキストの内容が、プロパティの設定に関係なく、有効であります。 設定<see cref="P:System.Xml.XmlReaderSettings.CheckCharacters" />に<see langword="false" />文字の文字エン ティティ参照のチェックをオフにします。  
+  
+</para></block></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが読み取って、スロー、XML データ内の文字を確認する XML リーダーに指示する<xref:System.Xml.XmlException>任意の文字が有効な XML 文字の範囲外にある場合。 文字チェックが有効な場合は、以下が保証されます。  
+  
+-   定義されている文字が有効な XML 文字の範囲内では、 [2.2 文字](http://www.w3.org/TR/2006/REC-xml-20060816/#charsets)W3C XML 1.0 』 勧告のセクションです。  
+  
+-   定義されているすべての XML 名が有効で、 [2.3 Common Syntactic Constructs](http://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name) W3C XML 1.0 』 勧告のセクションです。  
+  
+ このプロパティを設定すると`true`、これは、既定の設定、 <xref:System.Xml.XmlException> XML ファイルには、無効な文字または無効な XML 名が含まれている場合、例外がスローされます (たとえば、要素名は、開始を数字で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReaderSettings Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlReaderSettings Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlReaderSettings.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReaderSettings</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlReaderSettings" /> インスタンスのコピーを作成します。</summary>
+        <returns>複製された<see cref="T:System.Xml.XmlReaderSettings" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製された<xref:System.Xml.XmlReaderSettings>オブジェクトを元のオブジェクトの設定の影響を与えずに変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseInput">
+      <MemberSignature Language="C#" Value="public bool CloseInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CloseInput" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.CloseInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基になるストリームのかどうかを示す値を設定または<see cref="T:System.IO.TextReader" />リーダーが閉じられたときに閉じる必要があります。</summary>
+        <value>
+          <see langword="true" />基になるストリームを閉じないまたは<see cref="T:System.IO.TextReader" />リーダーは、それ以外の終了と<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームの場合にこの設定が使用または<xref:System.IO.TextReader>に渡される、<xref:System.Xml.XmlReader.Create%2A>メソッドです。 場合は、ストリームは、URI を持つ、または外部ドキュメント型定義が開くときにリーダーが作成されるが常に閉じている、リーダーが閉じられたときなどに独自の処理用のリーダーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConformanceLevel">
+      <MemberSignature Language="C#" Value="public System.Xml.ConformanceLevel ConformanceLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.ConformanceLevel ConformanceLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.ConformanceLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ConformanceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または準拠のレベルを設定する、<see cref="T:System.Xml.XmlReader" />準拠することです。</summary>
+        <value>XML リーダーが適用する準拠のレベルを指定する列挙値のいずれか。 既定値は、<see cref="F:System.Xml.ConformanceLevel.Document" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML リーダーによって作成される、<xref:System.Xml.XmlReader.Create%2A>メソッドは、既定では、次のコンプライアンス要件を満たしています。  
+  
+-   新しい行と属性値は、W3C に従って正規化[XML 1.0 勧告](http://www.w3.org/TR/2006/REC-xml-20060816/)です。  
+  
+-   すべてのエンティティは自動的に展開します。  
+  
+-   リーダーでは検証されない場合でも、文書型定義で宣言されている既定の属性が常に追加します。  
+  
+-   正しい XML 名前空間 URI にマップされている XML プレフィックスの宣言が許可されています。  
+  
+-   1 つの記法名`NotationType`属性の宣言と`NmTokens`1 つの`Enumeration`属性の宣言は異なります。  
+  
+ 使用することができます、<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A>プロパティを確認し、読み込むストリームが整形式 XML 1.0 ドキュメントまたはドキュメント フラグメントの規則に準拠していることを保証します。 データが準拠していない場合、<xref:System.Xml.XmlException>例外がスローされます。 既定値は<xref:System.Xml.ConformanceLevel?displayProperty=nameWithType>(ドキュメント レベルの一致)。  
+  
+ 次の 3 つの準拠レベルは次のとおりです。  
+  
+|設定|説明|  
+|-------------|-----------------|  
+|<xref:System.Xml.ConformanceLevel.Document>|XML データが整形式 XML 1.0 のドキュメントの規則に準拠していることを確認します。 このレベルのチェックにより、いずれかのプロセッサとして読み取られて、ストリームを利用できる、[整形式 XML 1.0 ドキュメント](http://www.w3.org/TR/2006/REC-xml-20060816/#sec-well-formed)です。<br /><br /> リーダーは以下をチェックします。<br /><br /> 最上位項目では、XML 宣言、ドキュメント型定義 (DTD)、要素、コメント、空白文字、または処理命令以外のノードをことはできません。<br />XML データには、1 つの最上位の要素ノードが必要です。|  
+|<xref:System.Xml.ConformanceLevel.Fragment>|XML データが整形式 XML 1.0 ドキュメント フラグメントの規則に準拠していることを確認します。<br /><br /> この設定では、複数のルート要素を持つ XML データやトップレベルのテキスト ノードが受け入れられます。 このレベルのチェックにより、いずれかのプロセッサとして読み取られて、ストリームを利用できる、[外部解析エンティティ](http://www.w3.org/TR/2006/REC-xml-20060816/#wf-entities)です。|  
+|<xref:System.Xml.ConformanceLevel.Auto>|リーダーが、受信データに基づくの一致チェック レベルを決定する必要がありますを指定します。<br /><br /> XML データに DTD 情報が含まれている場合、ドキュメントの一致チェックが適用されます。<br /><br /> XML データに次のいずれかが含まれている場合、フラグメントの一致チェックが適用されます。<br /><br /> ルート レベルのテキスト、CDATA、またはエンティティ参照ノード。<br />のルート レベルで複数の要素。<br />でルート レベルの要素がないです。<br /><br /> ルート レベルにテキスト ノードと DTD があるなどの矛盾がある場合には <xref:System.Xml.XmlException> がスローされます。<br /><br /> この設定は、既存の <xref:System.Xml.XmlReader.Create%2A> に追加機能を追加するために <xref:System.Xml.XmlReader> メソッドが使われた場合のラップ シナリオで使用することができます。 この場合、<xref:System.Xml.ConformanceLevel?displayProperty=nameWithType>任意の新しい一致チェックは追加されません。 一致チェックはラップされている <xref:System.Xml.XmlReader> に任されます。|  
+  
+> [!NOTE]
+>  XML 1.0 勧告では、DTD がある場合にはドキュメント レベルの一致が必要です。 そのため、リーダーがサポートするために構成されている場合<xref:System.Xml.ConformanceLevel?displayProperty=nameWithType>、XML データには、ドキュメント型定義 (DTD) が含まれていますが、<xref:System.Xml.XmlException>がスローされます。  
+  
+ ここでは、リーダーがの設定に応じて、特定の準拠違反を処理する方法、<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A>プロパティ。  
+  
+|状態|<xref:System.Xml.ConformanceLevel.Document>|<xref:System.Xml.ConformanceLevel.Fragment>|<xref:System.Xml.ConformanceLevel.Auto>|  
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|  
+|テキストまたは型指定された値は、最上位レベルに表示されます。|<xref:System.Xml.XmlException>スローされます。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|  
+|複数の要素または要素がないが、最上位レベルに表示されます。|<xref:System.Xml.XmlException>スローされます。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|  
+|最上位の項目は空白です。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|  
+|最上位の項目は、(テキスト ノードとして認識) 属性です。|<xref:System.Xml.XmlException>スローされます。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|  
+|複数の連続したテキスト ノードがある。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|この設定に違反とは見なされません。|  
+|同じ名前空間プレフィックスは、同じローカル スコープで 2 回宣言されます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|要素または属性の名前空間は、ローカル スコープに存在しません。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|データには、プレフィックスと名前空間の不一致が含まれています。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|`xml:space`属性には、無効な値が含まれています。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|無効な名前が検出される。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|`xml` URI http://www.w3.org/XML/1998/namespace にプレフィックスが一致はありません。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlReader>を XML フラグメントを読み込むオブジェクト。  
+  
+ [!code-csharp[XmlReader.Create#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader.Create/CS/XmlReader_Create.cs#1)]
+ [!code-vb[XmlReader.Create#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader.Create/VB/XmlReader_Create.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DtdProcessing">
+      <MemberSignature Language="C#" Value="public System.Xml.DtdProcessing DtdProcessing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.DtdProcessing DtdProcessing" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.DtdProcessing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.DtdProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DTD の処理を決定する値を取得または設定します。</summary>
+        <value>DTD の処理を決定する列挙値の 1 つ。 既定値は、<see cref="F:System.Xml.DtdProcessing.Prohibit" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ W3C で定義されている検証制約を使用して、ドキュメント型定義 (DTD) の検証が実装されている[拡張マークアップ言語 (XML) 1.0 (第 4 版) 勧告](http://www.w3.org/TR/2006/REC-xml-20060816/)です。 Dtd では、正式な文法を使用して、構造と準拠する XML ドキュメントの構文を記述するにはコンテンツと、XML ドキュメントに対して許可される値を指定します。  
+  
+ このプロパティは、次の値のいずれか 1 つをとります。  
+  
+-   <xref:System.Xml.DtdProcessing?displayProperty=nameWithType>DTD 処理できるようにします。  
+  
+-   <xref:System.Xml.DtdProcessing?displayProperty=nameWithType>スローする、 <xref:System.Xml.XmlException> DTD が発生したときに例外です。  
+  
+-   <xref:System.Xml.DtdProcessing?displayProperty=nameWithType>DTD せずに警告や例外処理を無効にします。  
+  
+ DTD を基準として検証を実行する場合、<xref:System.Xml.XmlReader> は、XML ドキュメントの DOCTYPE 宣言で定義されている DTD を使用します。 DOCTYPE 宣言では、インラインの DTD を指定するか、または外部 DTD ファイルへの参照を指定できます。 DTD に対して XML ファイルを検証します。  
+  
+-   <xref:System.Xml.XmlReaderSettings.DtdProcessing%2A?displayProperty=nameWithType> プロパティを `DtdProcessing.Parse.` に設定します。  
+  
+-   <xref:System.Xml.XmlReaderSettings.ValidationType%2A?displayProperty=nameWithType> プロパティを `ValidationType.DTD` に設定します。  
+  
+-   DTD が認証を必要とするネットワーク上に格納された外部ファイルの場合は、<xref:System.Xml.XmlResolver> オブジェクトを必要な資格情報と共に <xref:System.Xml.XmlReader.Create%2A> メソッドに渡します。  
+  
+> [!IMPORTANT]
+>  場合、<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A>プロパティに設定されている<xref:System.Xml.DtdProcessing?displayProperty=nameWithType>、 <xref:System.Xml.XmlReader> Dtd を報告しません。 これは、DTD/DOCTYPE が出力時に失われるということを意味します。  
+  
+   
+  
+## Examples  
+ DTD ファイルを使用して XML ファイルの検証を行う例を次に示します。  
+  
+ [!code-cpp[XmlReaderSettings.DtdValidate#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.DtdValidate/CPP/XmlReaderSettings.DtdValidate.cpp#1)]
+ [!code-csharp[XmlReaderSettings.DtdValidate#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.DtdValidate/CS/validdtd.cs#1)]
+ [!code-vb[XmlReaderSettings.DtdValidate#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.DtdValidate/VB/validdtd.vb#1)]  
+  
+## <a name="input"></a>入力  
+ この例は、`itemDTD.xml` ファイルを入力として使用します。  
+  
+ [!code-xml[XmlReaderSettings.DtdValidate#2](~/samples/snippets/xml/VS_Snippets_Data/XmlReaderSettings.DtdValidate/XML/itemDTD.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreComments">
+      <MemberSignature Language="C#" Value="public bool IgnoreComments { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreComments" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.IgnoreComments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コメントを無視するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コメントを無視します。それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`リーダーから返される複数の連続したテキスト ノードで発生することができます。 これは、検証には影響ありません。  
+  
+   
+  
+## Examples  
+ 次に、処理命令、コメント、および有意の空白文字を取り除くリーダーを構築するために使用できる設定オブジェクトを作成します。  
+  
+ [!code-cpp[XmlReaderSettings.cctor#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.cctor/CPP/XmlReaderSettings.cctor.cpp#1)]
+ [!code-csharp[XmlReaderSettings.cctor#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.cctor/CS/factory_rdr_cctor2.cs#1)]
+ [!code-vb[XmlReaderSettings.cctor#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.cctor/VB/factory_rdr_cctor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreProcessingInstructions">
+      <MemberSignature Language="C#" Value="public bool IgnoreProcessingInstructions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreProcessingInstructions" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.IgnoreProcessingInstructions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理命令を無視するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />処理命令; を無視するにはそれ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`リーダーから返される複数の連続したテキスト ノードで発生することができます。 これは、検証には影響ありません。  
+  
+   
+  
+## Examples  
+ 次に、処理命令、コメント、および有意の空白文字を取り除くリーダーを構築するために使用できる設定オブジェクトを作成します。  
+  
+ [!code-cpp[XmlReaderSettings.cctor#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.cctor/CPP/XmlReaderSettings.cctor.cpp#1)]
+ [!code-csharp[XmlReaderSettings.cctor#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.cctor/CS/factory_rdr_cctor2.cs#1)]
+ [!code-vb[XmlReaderSettings.cctor#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.cctor/VB/factory_rdr_cctor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreWhitespace">
+      <MemberSignature Language="C#" Value="public bool IgnoreWhitespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreWhitespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.IgnoreWhitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>意味のない空白を無視するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />空白文字以外を無視するにはそれ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ないと見なされる重要な空白文字には、スペース、タブ、およびマークアップを読みやすくするための分離に使用される空白行が含まれています。 この例は、要素のコンテンツで空白文字です。  
+  
+ このプロパティの設定では、混合コンテンツ モード、または空白のスコープ内に発生するマークアップ間に空白文字には影響しません、`xml:space='preserve'`属性。  
+  
+   
+  
+## Examples  
+ 次に、処理命令、コメント、および有意の空白文字を取り除くリーダーを構築するために使用できる設定オブジェクトを作成します。  
+  
+ [!code-cpp[XmlReaderSettings.cctor#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.cctor/CPP/XmlReaderSettings.cctor.cpp#1)]
+ [!code-csharp[XmlReaderSettings.cctor#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.cctor/CS/factory_rdr_cctor2.cs#1)]
+ [!code-vb[XmlReaderSettings.cctor#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.cctor/VB/factory_rdr_cctor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumberOffset">
+      <MemberSignature Language="C#" Value="public int LineNumberOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumberOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.LineNumberOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の行番号オフセット、<see cref="T:System.Xml.XmlReader" />オブジェクト。</summary>
+        <value>行番号オフセット。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReaderSettings.LineNumberOffset%2A> 、ポイントを指定します。 ここで、<xref:System.Xml.IXmlLineInfo.LineNumber%2A>プロパティがカウントを開始します。 これは、XML データが大きなドキュメント内に埋め込まれている場合に役立ちます。 たとえば場合は、XML データが大きなドキュメントに埋め込まれているし、ドキュメントの行番号 101 のデータの開始、可能性がある 100 行目で、リーダーを開始することを指定します。 そのため、リーダーは、XML の最初の行を解析中に例外をスローしましたには 1 行目ではなく、101 行番号報告します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePositionOffset">
+      <MemberSignature Language="C#" Value="public int LinePositionOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LinePositionOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.LinePositionOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の行の位置のオフセット、<see cref="T:System.Xml.XmlReader" />オブジェクト。</summary>
+        <value>ラインの位置のオフセット。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReaderSettings.LinePositionOffset%2A> 、ポイントを指定します。 ここで、<xref:System.Xml.IXmlLineInfo.LinePosition%2A>プロパティがカウントを開始します。 これは、大きなドキュメント内の XML データが埋め込まれているし、XML の先頭に新しい行がない場合に便利です。 ここでは、リーダーは、XML の解析中に例外をスローする場合は、主要なドキュメントの基準とした、XML フラグメントを基準としただけでなく、行の位置を返すことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCharactersFromEntities">
+      <MemberSignature Language="C#" Value="public long MaxCharactersFromEntities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxCharactersFromEntities" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.MaxCharactersFromEntities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティの展開時に許容されるドキュメント内の最大文字数を示す値を取得または設定します。</summary>
+        <value>エンティティの展開時に許容される最大文字数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ゼロ (0) の値は、エンティティの展開により生成される文字の数に制限がないことを意味します。 0 以外の値は、エンティティの展開に起因する文字の最大数を指定します。  
+  
+ リーダーを超えることは、このプロパティは拡張サイズは、エンティティを含むドキュメントを読み取るしようとすると、<xref:System.Xml.XmlException>がスローされます。  
+  
+ このプロパティを使用すると、サービス拒否攻撃の軽減、攻撃者がエンティティの展開を使用してメモリの制限を超えたしようとする XML ドキュメントを送信できます。 エンティティの展開により生成される文字を制限すると、攻撃を検出し、確実に回復できます。  
+  
+   
+  
+## Examples  
+ 次のコードでは、このプロパティを設定し、設定した制限より大きいサイズに展開されるエンティティを含むドキュメントの解析を試みます。 実際のシナリオで、まだ有効なドキュメントを処理するのに十分な大きさの値にこの制限の程度制限する悪意のあるドキュメントからの脅威に設定するは。  
+  
+```csharp  
+string markup =  
+@"<!DOCTYPE Root [  
+  <!ENTITY anEntity ""Expands to more than 30 characters"">  
+  <!ELEMENT Root (#PCDATA)>  
+]>  
+<Root>Content &anEntity;</Root>";  
+  
+XmlReaderSettings settings = new XmlReaderSettings();  
+settings.DtdProcessing = DtdProcessing.Parse;  
+settings.ValidationType = ValidationType.DTD;  
+settings.MaxCharactersFromEntities = 30;  
+  
+try  
+{  
+    XmlReader reader = XmlReader.Create(new StringReader(markup), settings);  
+    while (reader.Read()) { }  
+}  
+catch (XmlException ex)  
+{  
+    Console.WriteLine(ex.Message);  
+}  
+```  
+  
+```vb  
+Dim markup As String = _  
+    "<!DOCTYPE Root [" + Environment.NewLine + _  
+    "  <!ENTITY anEntity ""Expands to more than 30 characters"">" + Environment.NewLine + _  
+    "  <!ELEMENT Root (#PCDATA)>" + Environment.NewLine + _  
+    "]>" + Environment.NewLine + _  
+    "<Root>Content &anEntity;</Root>"  
+  
+Dim settings As XmlReaderSettings = New XmlReaderSettings()  
+settings.DtdProcessing = DtdProcessing.Parse;  
+settings.ValidationType = ValidationType.DTD  
+settings.MaxCharactersFromEntities = 30  
+  
+Try  
+    Dim reader As XmlReader = XmlReader.Create(New StringReader(markup), settings)  
+    While (reader.Read())  
+    End While  
+Catch ex As XmlException  
+    Console.WriteLine(ex.Message)  
+End Try  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+There is an error in XML document (MaxCharactersFromEntities, ).  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCharactersInDocument">
+      <MemberSignature Language="C#" Value="public long MaxCharactersInDocument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxCharactersInDocument" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.MaxCharactersInDocument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML ドキュメントの最大文字数を示す値を取得または設定します。 ゼロ (0) の値は、XML ドキュメントのサイズに制限がないことを示します。 0 以外の値は、最大サイズを文字数で示します。</summary>
+        <value>XML ドキュメント内の最大文字数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ゼロ (0) の値は、解析済みドキュメント内の文字の数に制限がないことを意味します。 0 以外の値は、解析可能な文字の最大数を指定します。  
+  
+ ドキュメントの最大文字数には、エンティティの展開により生成される文字の数が含まれています。  
+  
+ リーダーが、このプロパティを超えるサイズでドキュメントを読み取ろうとすると場合、<xref:System.Xml.XmlException>がスローされます。  
+  
+ このプロパティを使用すると、サービス拒否攻撃の軽減、攻撃者が非常に大きな XML ドキュメントを送信できます。 ドキュメントのサイズを制限すると、攻撃を検出し、確実に回復できます。  
+  
+   
+  
+## Examples  
+ 次のコードでは、このプロパティを設定し、制限よりも大きいドキュメントの解析を試みます。 実際のシナリオで、まだ有効なドキュメントを処理するのに十分な大きさの値にこの制限の程度制限する悪意のあるドキュメントからの脅威に設定するは。  
+  
+```csharp  
+string markup = "<Root>Content</Root>";  
+  
+XmlReaderSettings settings = new XmlReaderSettings();  
+settings.MaxCharactersInDocument = 10;  
+  
+try  
+{  
+    XmlReader reader = XmlReader.Create(new StringReader(markup), settings);  
+    while (reader.Read()) { }  
+}  
+catch (XmlException ex)  
+{  
+    Console.WriteLine(ex.Message);  
+}  
+```  
+  
+```vb  
+Dim markup As String = "<Root>Content</Root>"  
+  
+Dim settings As XmlReaderSettings = New XmlReaderSettings()  
+settings.MaxCharactersInDocument = 10  
+  
+Try  
+    Dim reader As XmlReader = XmlReader.Create(New StringReader(markup), settings)  
+    While (reader.Read())  
+    End While  
+Catch ex As XmlException  
+    Console.WriteLine(ex.Message)  
+End Try  
+```  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+There is an error in XML document (MaxCharactersInDocument, ).  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNameTable NameTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlNameTable" />アトミック化された文字列比較に使用します。</summary>
+        <value><see cref="T:System.Xml.XmlNameTable" />すべてで使用されるすべてのアトミック化された文字列を格納する<see cref="T:System.Xml.XmlReader" />これを使用して作成されたインスタンス<see cref="T:System.Xml.XmlReaderSettings" />オブジェクト。  
+  
+ 既定値は、<see langword="null" /> です。 作成された<see cref="T:System.Xml.XmlReader" />インスタンスが新しい空を使用する<see cref="T:System.Xml.NameTable" />場合は、この値は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定、<xref:System.Xml.XmlNameTable>インスタンスのすべての間で共通の名前テーブルを共有する場合、作成した<xref:System.Xml.XmlReader>インスタンス。  
+  
+> [!NOTE]
+>  <xref:System.Xml.NameTable> クラスはスレッドセーフではありません。 したがって間で共有できませんする<xref:System.Xml.XmlReader>異なるスレッドで同時に実行されているオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProhibitDtd">
+      <MemberSignature Language="C#" Value="public bool ProhibitDtd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ProhibitDtd" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.ProhibitDtd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use XmlReaderSettings.DtdProcessing property instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文書型定義 (DTD) 処理を禁止するかどうかを示す値を取得または設定します。 このプロパティは今後使用しません。 代わりに、<see cref="P:System.Xml.XmlTextReader.DtdProcessing" /> を使用してください。</summary>
+        <value>
+          <see langword="true" />DTD 処理を禁止するにはそれ以外の場合<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`true`、<xref:System.Xml.XmlReader>スロー、 <xref:System.Xml.XmlException> DTD コンテンツが発生したとき。 サービス拒否攻撃が懸念される場合や、信頼関係のないソースを扱う場合は、DTD 処理を無効にしてください。  
+  
+ DTD 処理を有効にした場合、<xref:System.Xml.XmlSecureResolver> を使用して <xref:System.Xml.XmlReader> でアクセス可能なリソースを制限できます。 また、XML 処理に対するメモリと時間の割り当てが制限されるようにアプリケーションをデザインすることもできます。 たとえば、ASP.NET アプリケーション内でタイムアウト制限を設定します。  
+  
+ このプロパティは今後使用しません。 代わりに、<xref:System.Xml.XmlTextReader.DtdProcessing%2A> を使用してください。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>を既定値に`true`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Prohibit`です。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>に`false`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Parse`です。  
+  
+   
+  
+## Examples  
+ 次の例では、DTD を使用してデータを検証します。  
+  
+ [!code-cpp[XmlReaderSettings.DtdValidate#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReaderSettings.DtdValidate/CPP/XmlReaderSettings.DtdValidate.cpp#1)]
+ [!code-csharp[XmlReaderSettings.DtdValidate#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.DtdValidate/CS/validdtd.cs#1)]
+ [!code-vb[XmlReaderSettings.DtdValidate#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.DtdValidate/VB/validdtd.vb#1)]  
+  
+ この例では、入力として、itemDTD.xml ファイルを使用します。  
+  
+ [!code-xml[XmlReaderSettings.DtdValidate#2](~/samples/snippets/xml/VS_Snippets_Data/XmlReaderSettings.DtdValidate/XML/itemDTD.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlReaderSettings.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>設定クラスのメンバーを既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Xml.XmlReaderSettings>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Xml.XmlReaderSettings.Async%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.CheckCharacters%2A>|`true`。|  
+|<xref:System.Xml.XmlReaderSettings.ConformanceLevel%2A>|<xref:System.Xml.ConformanceLevel.Document>。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreComments%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreProcessingInstructions%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.IgnoreWhitespace%2A>|`false`。|  
+|<xref:System.Xml.XmlReaderSettings.LineNumberOffset%2A>|0.|  
+|<xref:System.Xml.XmlReaderSettings.LinePositionOffset%2A>|0.|  
+|<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A>|(エンティティの展開により生成される文字数に制限はありません) は 0 です。|  
+|<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A>|0 (制限はありません、XML ドキュメントのサイズ) です。|  
+|<xref:System.Xml.XmlReaderSettings.NameTable%2A>|`null`。|  
+|<xref:System.Xml.XmlTextReader.DtdProcessing%2A>|<xref:System.Xml.DtdProcessing.Prohibit>|  
+|<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>|`true`。 このプロパティは今後使用しません。 代わりに、<xref:System.Xml.XmlTextReader.DtdProcessing%2A> を使用してください。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>を既定値に`true`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Prohibit`です。 設定した場合<xref:System.Xml.XmlReaderSettings.ProhibitDtd%2A>に`false`設定<xref:System.Xml.XmlTextReader.DtdProcessing%2A>に`Parse`です。|  
+|<xref:System.Xml.XmlReaderSettings.Schemas%2A>|空の <xref:System.Xml.Schema.XmlSchemaSet> オブジェクト。|  
+|<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>|<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints>。|  
+|<xref:System.Xml.XmlReaderSettings.ValidationType%2A>|<xref:System.Xml.ValidationType.None>。|  
+|<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>|新しい <xref:System.Xml.XmlUrlResolver> オブジェクト。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet Schemas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSet Schemas" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.Schemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.Schema.XmlSchemaSet" />スキーマ検証を実行するときに使用します。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaSet" />スキーマ検証を実行するときに使用します。 既定値は、空<see cref="T:System.Xml.Schema.XmlSchemaSet" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  -   場所や不明または信頼できないソースからスキーマを使用しないでください。 これは、コードのセキュリティが低下します。  
+> -   XML スキーマ (インライン スキーマを含む) を受けます本質的にサービス拒否攻撃です。信頼されていないシナリオでに同意されません。  
+> -   スキーマ検証エラー メッセージと例外には、コンテンツ モデルや、スキーマ ファイルの URI パスに関する機密情報が公開します。 信頼されていない呼び出し元にこの情報を公開しないように注意します。  
+> -   詳細については、「セキュリティの考慮事項」セクションを参照してください。  
+  
+ <xref:System.Xml.Schema.XmlSchemaSet>クラスでは、XML スキーマ定義言語 (XSD) スキーマのみがサポートされます。 <xref:System.Xml.XmlReader>によって作成されたインスタンス、 <xref:System.Xml.XmlReader.Create%2A> Xml-data Reduced (XDR) スキーマ検証を有効にする方法を構成することはできません。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+  
+-   不明または信頼できないソースからスキーマを使用しないでください。 これは、コードのセキュリティが低下します。 <xref:System.Xml.XmlUrlResolver>クラスは、外部スキーマを解決するのには既定で使用します。 インクルード、インポートの解像度を無効にして、スキーマの要素を再定義、設定、<xref:System.Xml.Schema.XmlSchemaSet.XmlResolver%2A?displayProperty=nameWithType>プロパティを`null`です。  
+  
+-   使用した結果として発生した例外、<xref:System.Xml.Schema.XmlSchemaSet>クラスなど、<xref:System.Xml.Schema.XmlSchemaException>クラスは、信頼されていないシナリオで公開するべきではない機密情報を含めることがあります。 たとえば、<xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaException>例外が発生したスキーマ ファイル パスが URI パスを返します。 <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>信頼されていないシナリオ プロパティを公開するべきはありません。 例外は、信頼されていないシナリオでは、この機密情報は公開されていないように正しく処理する必要があります。  
+  
+   
+  
+## Examples  
+ 使用して次の例、<xref:System.Xml.XmlReaderSettings>オブジェクトおよび<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>にスキーマを XML ドキュメントに関連付けるメソッド。 スキーマを追加、<xref:System.Xml.XmlReaderSettings.Schemas%2A>のプロパティ、<xref:System.Xml.XmlReaderSettings>オブジェクト。 値、<xref:System.Xml.XmlReaderSettings.Schemas%2A>プロパティは、<xref:System.Xml.Schema.XmlSchemaSet>オブジェクト。 スキーマは、XML ドキュメントがスキーマのコンテンツ モデルに準拠していることの検証に使用します。 スキーマ検証エラーと警告の処理によって、<xref:System.Xml.XmlReaderSettings.ValidationEventHandler>で定義されている、<xref:System.Xml.XmlReaderSettings>オブジェクト。  
+  
+ [!code-cpp[XmlSchemaSetOverall Example#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaSetOverall Example/CPP/xmlschemasetexample.cpp#1)]
+ [!code-csharp[XmlSchemaSetOverall Example#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaSetOverall Example/CS/xmlschemasetexample.cs#1)]
+ [!code-vb[XmlSchemaSetOverall Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaSetOverall Example/VB/xmlschemasetexample.vb#1)]  
+  
+ この例では、入力として books.xml ファイルを使用します。  
+  
+ [!code-xml[XmlSchemaSetOverall Example#2](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaSetOverall Example/XML/books.xml#2)]  
+  
+ 例では、入力値として books.xsd ファイルを使用します。  
+  
+ [!code-xml[XmlSchemaSetOverall Example#3](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaSetOverall Example/XML/books.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationEventHandler">
+      <MemberSignature Language="C#" Value="public event System.Xml.Schema.ValidationEventHandler ValidationEventHandler;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Schema.ValidationEventHandler ValidationEventHandler" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.XmlReaderSettings.ValidationEventHandler" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.ValidationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーが検証エラーを検出すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのイベントの場合は、XML インスタンス ドキュメントを読み取り中に発生する、<xref:System.Xml.XmlReaderSettings.ValidationType%2A>に設定されている<xref:System.Xml.ValidationType.DTD>または<xref:System.Xml.ValidationType.Schema>です。 場合、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings>で設定が有効になって、<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>プロパティのこれらのイベントは、任意の検証警告が発生したときにも発生します。  
+  
+ 検証のため、リーダーが構成されているし、検証イベント ハンドラーが設定されていない場合、<xref:System.Xml.Schema.XmlSchemaValidationException>すべての検証エラーがスローされます。 (検証の警告が発生しない、<xref:System.Xml.Schema.XmlSchemaValidationException>がスローされます)。  
+  
+> [!IMPORTANT]
+>  検証エラー メッセージには、コンテンツ モデルを機密情報が公開します。 検証エラーおよび警告メッセージが処理されるを使用して、<xref:System.Xml.Schema.ValidationEventHandler>デリゲート、またはとして公開される、<xref:System.Xml.Schema.XmlSchemaValidationException>にイベント ハンドラーが指定されていない場合、<xref:System.Xml.XmlReaderSettings>オブジェクト (検証の警告が発生しない、<xref:System.Xml.Schema.XmlSchemaValidationException>がスローされます)。 コンテンツ モデルの情報は信頼されていないシナリオで公開する必要があります。 検証の警告メッセージが既定で抑制し、設定によって報告できる、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings>フラグ。  
+>   
+>  <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaValidationException>例外が発生したスキーマ ファイル パスが URI パスを返します。 <xref:System.Xml.Schema.XmlSchemaException.SourceUri%2A>信頼されていないシナリオ プロパティを公開するべきはありません。  
+  
+   
+  
+## Examples  
+ 次の例では、インライン スキーマを使用することを検証し、検証の警告も表示リーダーを作成するを指定する設定を示します。 検証イベント ハンドラーを使用して、<xref:System.Xml.Schema.XmlSeverityType>警告とエラーを区別するために列挙されます。  
+  
+ [!code-csharp[XmlReaderSettings.IgnoreInlineSchema#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.IgnoreInlineSchema/CS/factory_rdr_cctor.cs#1)]
+ [!code-vb[XmlReaderSettings.IgnoreInlineSchema#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.IgnoreInlineSchema/VB/factory_rdr_cctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationFlags">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaValidationFlags ValidationFlags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaValidationFlags ValidationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.ValidationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマ検証の設定を示す値を取得または設定します。 この設定に適用されます<see cref="T:System.Xml.XmlReader" />スキーマを検証するオブジェクト (<see cref="P:System.Xml.XmlReaderSettings.ValidationType" />プロパティに設定<see langword="ValidationType.Schema" />)。</summary>
+        <value>検証オプションを指定する列挙値のビットごとの組み合わせ。 <see cref="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints" />および<see cref="F:System.Xml.Schema.XmlSchemaValidationFlags.AllowXmlAttributes" />既定で有効にします。 <see cref="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema" />、 <see cref="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation" />、および<see cref="F:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings" />既定で無効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> オブジェクトの <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> および <xref:System.Xml.XmlReaderSettings> の検証フラグは、既定では設定されていません。 これらのフラグが設定されていると、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A> オブジェクトの <xref:System.Xml.XmlReaderSettings> が <xref:System.Xml.XmlReader> のインスタンス ドキュメント中に出現したスキーマの場所を解決するために使用されます。 場合、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>オブジェクトが`null`、スキーマの場所が解決しない場合でも、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>と<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>検証フラグを設定します。  
+>   
+>  検証を実行しているときにスキーマを追加すると新しい型が追加されるため、検証しているドキュメントの検証結果を変えることができます。 結果として、信頼できるソースからの外部スキーマだけが解決されるようにする必要があります。  
+>   
+>  無効にすると、 <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints> id 制約を含むスキーマに対して高可用性のシナリオのドキュメントの大部分を検証する、信頼されていない、大きな XML ドキュメントと (既定で有効になっている) フラグをお勧めします。  
+  
+   
+  
+## Examples  
+ 次の例では、インライン XML スキーマに対して XML ファイルを検証を有効にして、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>設定します。 XML リーダーが検証の警告を表示するよう構成、sp するも予期される警告ルート要素になります。  
+  
+ [!code-csharp[XmlReaderSettings.IgnoreInlineSchema#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReaderSettings.IgnoreInlineSchema/CS/factory_rdr_cctor.cs#1)]
+ [!code-vb[XmlReaderSettings.IgnoreInlineSchema#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReaderSettings.IgnoreInlineSchema/VB/factory_rdr_cctor.vb#1)]  
+  
+## <a name="input"></a>入力  
+ この例では、inlineSchema.xml ファイルを入力として使用します。  
+  
+ [!code-xml[XmlReaderSettings.IgnoreInlineSchema#3](~/samples/snippets/xml/VS_Snippets_Data/XmlReaderSettings.IgnoreInlineSchema/XML/inlineSchema.xml#3)]  
+  
+## <a name="output"></a>出力  
+ 警告: 照合のスキーマが見つかりません。 検証が実行されませんでした。 要素 'root' のスキーマ情報が見つかりませんでした。  
+  
+ 検証エラー: 要素 'xsdHeadCount:HeadCount' に無効な子要素 'division' です。 'ID' を指定してください。"  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationType">
+      <MemberSignature Language="C#" Value="public System.Xml.ValidationType ValidationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.ValidationType ValidationType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.ValidationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ValidationType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Xml.XmlReader" />検証を実行または割り当てを読み取るときに入力されます。</summary>
+        <value>1 つ、 <see cref="T:System.Xml.ValidationType" /> XmlReader は検証を実行するかを読み取るときに、割り当てを入力するかどうかを示す値。 既定値は、<see langword="ValidationType.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表、<xref:System.Xml.ValidationType>値。  
+  
+> [!NOTE]
+>  <xref:System.Xml.ValidationType.Auto>と<xref:System.Xml.ValidationType.XDR>列挙値は、.NET Framework version 2.0 廃止されています。  
+  
+|[Validationtype]|説明|  
+|--------------------|-----------------|  
+|`DTD`|ドキュメント型定義 (DTD) を使用して検証が実行されます。 **注:** 、<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A>プロパティを設定する必要がありますも<xref:System.Xml.DtdProcessing.Parse>します。|  
+|`None`|<xref:System.Xml.XmlReader>任意の種類の割り当てを実行またはデータを検証しません。|  
+|`Schema`|XML スキーマ定義言語 (XSD) スキーマを使用して、検証と型の割り当てが実行されます。 リーダーは、次を使用して、XML スキーマにアクセスします。<br /><br /> -使用、<xref:System.Xml.XmlReaderSettings.Schemas%2A>プロパティへのアクセスを<xref:System.Xml.Schema.XmlSchemaSet>このリーダーに関連付けられているオブジェクト。<br />-XML インスタンス ドキュメントに含まれていると、インライン スキーマを使用します。 (、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>オプションを有効にする必要があります)。<br />-スキーマの場所のヒントで指定された XML スキーマを使用する (`xsi:schemaLocation`または`xsi:noNamespaceSchemaLocation`属性)、XML インスタンス ドキュメントで見つかった。 (、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>オプションを有効にする必要があります)。|  
+  
+   
+  
+## Examples  
+ 次の例の検証に格納されているスキーマを使用して、<xref:System.Xml.Schema.XmlSchemaSet>です。  
+  
+ [!code-cpp[XmlReader_Validate_SchemaSet#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlReader_Validate_SchemaSet/CPP/XmlReader_Validate_SchemaSet.cpp#1)]
+ [!code-csharp[XmlReader_Validate_SchemaSet#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader_Validate_SchemaSet/CS/validschemaset.cs#1)]
+ [!code-vb[XmlReader_Validate_SchemaSet#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader_Validate_SchemaSet/VB/validschemaset.vb#1)]  
+  
+ このサンプルは、次の入力ファイルを使用します。  
+  
+ `booksSchemaFail.xml`  
+  
+ [!code-xml[XmlReader_Validate_SchemaSet#2](~/samples/snippets/xml/VS_Snippets_Data/XmlReader_Validate_SchemaSet/XML/booksschemafail.xml#2)]  
+  
+ `books.xsd`  
+  
+ [!code-xml[XmlReader_Validate_SchemaSet#3](~/samples/snippets/xml/VS_Snippets_Data/XmlReader_Validate_SchemaSet/XML/books.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlResolver">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlResolver XmlResolver { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver XmlResolver" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlReaderSettings.XmlResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セット、<see cref="T:System.Xml.XmlResolver" />外部ドキュメントにアクセスするために使用します。</summary>
+        <value><see cref="T:System.Xml.XmlResolver" />外部ドキュメントにアクセスするために使用します。 場合設定<see langword="null" />、<see cref="T:System.Xml.XmlException" />場合にスローされる、<see cref="T:System.Xml.XmlReader" />外部リソースにアクセスしようとしています。 既定値は、新しい<see cref="T:System.Xml.XmlUrlResolver" />資格情報を持たない。  この設定は、既定値は、.NET Framework 4.5.2 以降、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlResolver>を見つけて、XML インスタンス ドキュメントを開くかを探して、XML インスタンス ドキュメントによって参照される外部リソースを開けないために使用します。 これには、エンティティ、DTD またはスキーマを含めることができます。 <xref:System.Xml.XmlResolver.Credentials%2A?displayProperty=nameWithType>プロパティは、ネットワーク認証に必要なすべての資格情報を指定するために使用できます。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.XmlReaderSettings.XmlResolver%2A>含めることができます、ユーザー資格情報などの機密情報ように注意する必要がありますをキャッシュ中<xref:System.Xml.XmlReaderSettings>、オブジェクトを渡すときや、 <xref:System.Xml.XmlReaderSettings> 1 つのコンポーネントからを別のオブジェクト。  
+>   
+>  <xref:System.Xml.XmlSecureResolver>外部ドキュメントにアクセスするために使用できます。 <xref:System.Xml.XmlSecureResolver>クラスの別の実装をセキュリティで保護できます<xref:System.Xml.XmlResolver>ラップすることによって、<xref:System.Xml.XmlResolver>オブジェクトとリソースを制限することを基になる<xref:System.Xml.XmlResolver>にアクセスします。  
+>   
+>  <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> オブジェクトの <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> および <xref:System.Xml.XmlReaderSettings> の検証フラグは、既定では設定されていません。 これらのフラグが設定されていると、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A> オブジェクトの <xref:System.Xml.XmlReaderSettings> が <xref:System.Xml.XmlReader> のインスタンス ドキュメント中に出現したスキーマの場所を解決するために使用されます。 場合、<xref:System.Xml.XmlReaderSettings.XmlResolver%2A>オブジェクトが`null`、スキーマの場所が解決しない場合でも、<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema>と<xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation>検証フラグを設定します。  
+>   
+>  検証を実行しているときにスキーマを追加すると新しい型が追加されるため、検証しているドキュメントの検証結果を変えることができます。 結果として、信頼できるソースからの外部スキーマだけが解決されるようにする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlReader>を使用して、<xref:System.Xml.XmlSecureResolver>既定の資格情報を使用します。  
+  
+ [!code-csharp[XmlReader.Create#10](~/samples/snippets/csharp/VS_Snippets_Data/XmlReader.Create/CS/XmlReader_Create.cs#10)]
+ [!code-vb[XmlReader.Create#10](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlReader.Create/VB/XmlReader_Create.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

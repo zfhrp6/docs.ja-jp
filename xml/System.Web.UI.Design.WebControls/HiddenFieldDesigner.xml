@@ -1,0 +1,126 @@
+<Type Name="HiddenFieldDesigner" FullName="System.Web.UI.Design.WebControls.HiddenFieldDesigner">
+  <TypeSignature Language="C#" Value="public class HiddenFieldDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HiddenFieldDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.HiddenFieldDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.HiddenField" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーで、ユーザーがソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.HiddenField>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ユーザーは、ソース ビューに切り替える、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner>クラスは、デザイン時サポートを提供、<xref:System.Web.UI.WebControls.HiddenField>ビジュアル デザイナーでします。  
+  
+ <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml%2A>メソッドは、関連付けられている表示するために使用するマークアップを返します<xref:System.Web.UI.WebControls.HiddenField>デザイン時にします。 <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたデザインにデザイナーができるように準備<xref:System.Web.UI.WebControls.HiddenField>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.HiddenField>コントロールをデザイン時です。  
+  
+ 例では、`MyHiddenField`から制御、<xref:System.Web.UI.WebControls.HiddenField>です。 `MyHiddenField`のコピーである、<xref:System.Web.UI.WebControls.HiddenField>です。 例ではまた、`MyHiddenFieldDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner>クラスし、適用されます、<xref:System.ComponentModel.DesignerAttribute>属性を`MyHiddenFieldDesigner`上、`MyHiddenField`コントロール。  
+  
+ `MyHiddenFieldDesigner`よりも優先、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml%2A>を含んだプレース ホルダーを生成する方法を<xref:System.Web.UI.WebControls.HiddenField.Value%2A>コントロール クラスの名前と共に、プレース ホルダーのプロパティと<xref:System.Web.UI.Control.ID%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.HiddenFieldDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HiddenFieldDesigner/CS/HiddenFieldDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.HiddenFieldDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HiddenFieldDesigner/VB/HiddenFieldDesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HiddenFieldDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HiddenFieldDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.HiddenFieldDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.HiddenField>コントロールまたはのコピー、<xref:System.Web.UI.WebControls.HiddenField>デザイン サーフェイス上のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>表示するために使用するマークアップを含む文字列、<see cref="T:System.Web.UI.WebControls.HiddenField" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml%2A>メソッドは、コントロールのクラス名が含まれているプレース ホルダーのマークアップを生成し、<xref:System.Web.UI.Control.ID%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner>の外観を変更するクラス、<xref:System.Web.UI.WebControls.HiddenField>コントロールをデザイン時です。 <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.GetDesignTimeHtml%2A>上書きが含まれるプレース ホルダーが生成されます、<xref:System.Web.UI.WebControls.HiddenField.Value%2A>コントロール クラスの名前と共に、プレース ホルダーのプロパティと<xref:System.Web.UI.Control.ID%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.HiddenFieldDesigner#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HiddenFieldDesigner/CS/HiddenFieldDesigner.cs#3)]
+ [!code-vb[System.Web.UI.Design.WebControls.HiddenFieldDesigner#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HiddenFieldDesigner/VB/HiddenFieldDesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HiddenFieldDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" /> を実装する <see cref="T:System.Web.UI.WebControls.HiddenField" />。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの呼び出し、<xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.Initialize%2A>メソッドを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.HiddenField>コントロール。 <xref:System.Web.UI.Design.WebControls.HiddenFieldDesigner.Initialize%2A>とその基本メソッドのプロパティを構成およびデザイナーの操作に必要なイベントに接続します。  
+  
+ `component`パラメーターは、<xref:System.Web.UI.WebControls.HiddenField>デザイナーまたはのコピーに関連付けられているコントロール、<xref:System.Web.UI.WebControls.HiddenField>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

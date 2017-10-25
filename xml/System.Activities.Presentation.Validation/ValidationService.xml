@@ -1,0 +1,147 @@
+<Type Name="ValidationService" FullName="System.Activities.Presentation.Validation.ValidationService">
+  <TypeSignature Language="C#" Value="public class ValidationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Validation.ValidationService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>編集中にワークフロー アクティビティ デザイナーを検証するために必要な機能、および検証プロセスの結果を提供するために必要な機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationService (System.Activities.Presentation.EditingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Presentation.EditingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Validation.ValidationService.#ctor(System.Activities.Presentation.EditingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.Presentation.EditingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">デザイナー インスタンスについての永続的状態と一時的状態のコンテキスト情報を含むオブジェクト。</param>
+        <summary>アクティビティ デザイナーについての永続的状態と一時的状態のコンテキスト情報を使用して、<see cref="T:System.Activities.Presentation.Validation.ValidationService" /> の新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状態情報オブジェクトに含めることができるものの例として、デザイナーで実行されているサービスのリストである永続的状態や、現在選択されている項目のセットである一時的状態があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateToError">
+      <MemberSignature Language="C#" Value="public void NavigateToError (System.Activities.Presentation.Validation.ValidationErrorInfo validationErrorInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NavigateToError(class System.Activities.Presentation.Validation.ValidationErrorInfo validationErrorInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Validation.ValidationService.NavigateToError(System.Activities.Presentation.Validation.ValidationErrorInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validationErrorInfo" Type="System.Activities.Presentation.Validation.ValidationErrorInfo" />
+      </Parameters>
+      <Docs>
+        <param name="validationErrorInfo">検証エラーの情報です。</param>
+        <summary>作業画面で、アクティビティのエラーの場所にキーボード フォーカスを移動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateToError">
+      <MemberSignature Language="C#" Value="public void NavigateToError (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NavigateToError(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Validation.ValidationService.NavigateToError(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">エラー ID 番号。</param>
+        <summary>作業画面で、アクティビティのエラーの場所にキーボード フォーカスを移動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidationCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnValidationCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValidationCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Validation.ValidationService.OnValidationCompleted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい検証完了イベントをトリガーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Settings">
+      <MemberSignature Language="C#" Value="public System.Activities.Validation.ValidationSettings Settings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Validation.ValidationSettings Settings" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Validation.ValidationService.Settings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Validation.ValidationSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアクティビティ ツリーの検証の設定を取得します。</summary>
+        <value>検証の設定を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証設定では、実行する検証の種類、スキーマ名前空間の場所、データ型、許可する内容、許可しない内容などの条件が構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateWorkflow">
+      <MemberSignature Language="C#" Value="public void ValidateWorkflow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateWorkflow() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Validation.ValidationService.ValidateWorkflow" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティビティ ツリーの検証が呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,179 @@
+<Type Name="MyGroupCollectionAttribute" FullName="Microsoft.VisualBasic.MyGroupCollectionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MyGroupCollectionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MyGroupCollectionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.MyGroupCollectionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この属性をサポートしている<see langword="My.Forms" />と<see langword="My.WebServices" />Visual Basic でします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性をサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ コンパイラがで指定された型から派生した、プロジェクト内のすべての型に対応するプロパティでそのクラスを埋めますクラスでこの属性を設定すると、<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.MyGroupName%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MyGroupCollectionAttribute (string typeToCollect, string createInstanceMethodName, string disposeInstanceMethodName, string defaultInstanceAlias);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string typeToCollect, string createInstanceMethodName, string disposeInstanceMethodName, string defaultInstanceAlias) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyGroupCollectionAttribute.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeToCollect" Type="System.String" />
+        <Parameter Name="createInstanceMethodName" Type="System.String" />
+        <Parameter Name="disposeInstanceMethodName" Type="System.String" />
+        <Parameter Name="defaultInstanceAlias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeToCollect">
+          <see langword="String" />。 初期化、<see cref="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.MyGroupName" />プロパティです。 コンパイラは、この型から派生するクラスのアクセサー プロパティを生成します。</param>
+        <param name="createInstanceMethodName">
+          <see langword="String" />。 初期化、<see cref="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.CreateMethod" />プロパティです。 型のインスタンスを作成するクラスのメソッドを指定します。</param>
+        <param name="disposeInstanceMethodName">
+          <see langword="String" />。 初期化、<see cref="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.DisposeMethod" />プロパティです。 型のインスタンスを破棄するクラスのメソッドを指定します。</param>
+        <param name="defaultInstanceAlias">
+          <see langword="String" />。 初期化、<see cref="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.DefaultInstanceAlias" />プロパティです。 クラスの既定のインスタンスを返すプロパティの名前を指定します。</param>
+        <summary>この属性をサポートしている<see langword="My.Forms" />と<see langword="My.WebServices" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性をサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ コンパイラがで指定された型から派生した、プロジェクト内のすべての型に対応するプロパティでそのクラスを埋めますクラスでこの属性を設定すると、<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.MyGroupName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMethod">
+      <MemberSignature Language="C#" Value="public string CreateMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CreateMethod" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.CreateMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをサポートしている<see langword="My" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <value>型のインスタンスを作成するクラスのメソッドを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInstanceAlias">
+      <MemberSignature Language="C#" Value="public string DefaultInstanceAlias { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultInstanceAlias" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.DefaultInstanceAlias" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをサポートしている<see langword="My" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <value>クラスの既定のインスタンスを返すプロパティの名前を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DisposeMethod">
+      <MemberSignature Language="C#" Value="public string DisposeMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisposeMethod" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.DisposeMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをサポートしている<see langword="My" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <value>型のインスタンスを破棄するクラスのメソッドを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MyGroupName">
+      <MemberSignature Language="C#" Value="public string MyGroupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MyGroupName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyGroupCollectionAttribute.MyGroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをサポートしている<see langword="My" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。</summary>
+        <value>アクセサー プロパティを生成するコンパイラ タイプの名前を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをサポートしている`My.Forms`と`My.WebServices`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 コードから直接使用するためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

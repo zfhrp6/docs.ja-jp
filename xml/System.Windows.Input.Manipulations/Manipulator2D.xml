@@ -1,0 +1,213 @@
+<Type Name="Manipulator2D" FullName="System.Windows.Input.Manipulations.Manipulator2D">
+  <TypeSignature Language="C#" Value="public struct Manipulator2D" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Manipulator2D extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.Manipulator2D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>瞬間に 2D の操作を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Manipulator2D (int id, float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 id, float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.Manipulator2D.#ctor(System.Int32,System.Single,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="id">このマニピュレーターの一意の ID。</param>
+        <param name="x">マニピュレーターの x 座標。</param>
+        <param name="y">マニピュレーターの y 座標。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />指定したプロパティを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X と y の両方のパラメーターが有限数をする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="x" />-調整または<paramref name="y" />の座標は<see langword="float.NaN" />、 <see langword="float.PositiveInfinity" />、または<see langword="float.NegativeInfinity" />です。 これらの値では、すべて有効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.Manipulator2D.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />をこのオブジェクトを比較するオブジェクト。</param>
+        <summary>この <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクトの値が指定した <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクトの値と同一かどうかを判断します。</summary>
+        <returns>
+          2 つの <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクトが同じ型で、同じ値を表している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.Manipulator2D.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>対象のインスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public int Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulator2D.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一意の ID を設定を取得または<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</summary>
+        <value>この一意の ID<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Input.Manipulations.Manipulator2D manipulator1, System.Windows.Input.Manipulations.Manipulator2D manipulator2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Input.Manipulations.Manipulator2D manipulator1, valuetype System.Windows.Input.Manipulations.Manipulator2D manipulator2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.Manipulator2D.op_Equality(System.Windows.Input.Manipulations.Manipulator2D,System.Windows.Input.Manipulations.Manipulator2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manipulator1" Type="System.Windows.Input.Manipulations.Manipulator2D" />
+        <Parameter Name="manipulator2" Type="System.Windows.Input.Manipulations.Manipulator2D" />
+      </Parameters>
+      <Docs>
+        <param name="manipulator1">比較する最初の <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクト。</param>
+        <param name="manipulator2">比較する 2 番目の <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクトの値が同一かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクトが同じ値を持つ、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Windows.Input.Manipulations.Manipulator2D.Equals%2A?displayProperty=nameWithType>]]>.</format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Input.Manipulations.Manipulator2D manipulator1, System.Windows.Input.Manipulations.Manipulator2D manipulator2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Input.Manipulations.Manipulator2D manipulator1, valuetype System.Windows.Input.Manipulations.Manipulator2D manipulator2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.Manipulator2D.op_Inequality(System.Windows.Input.Manipulations.Manipulator2D,System.Windows.Input.Manipulations.Manipulator2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manipulator1" Type="System.Windows.Input.Manipulations.Manipulator2D" />
+        <Parameter Name="manipulator2" Type="System.Windows.Input.Manipulations.Manipulator2D" />
+      </Parameters>
+      <Docs>
+        <param name="manipulator1">比較する最初の <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクト。</param>
+        <param name="manipulator2">比較する 2 番目の <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" /> オブジェクト。</param>
+        <summary>指定した 2 つあるかどうかを判断<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクトが異なる値を設定します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクトが異なる値を持つ、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法の否定である<xref:System.Windows.Input.Manipulations.Manipulator2D.Equals%2A?displayProperty=nameWithType>]>. </format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public float X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulator2D.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの x 座標を取得または<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</summary>
+        <value>これの x 座標<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するときに、値が有限値をする必要があります。 このプロパティの既定値は、ゼロ (0) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public float Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.Manipulator2D.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの y 座標の設定を取得または<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</summary>
+        <value>これの y 座標<see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するときに、値が有限値をする必要があります。 このプロパティの既定値は、ゼロ (0) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,80 @@
+<Type Name="DataBindingHandler" FullName="System.Web.UI.Design.DataBindingHandler">
+  <TypeSignature Language="C#" Value="public abstract class DataBindingHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataBindingHandler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DataBindingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインディングのハンドラーの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataBindingHandler>データ バインディングのハンドラーの基本クラスを提供します。 データ バインディングのハンドラーは、デザイン サーフェイス上のコントロールのわかりやすい表示を有効にするデータ バインディングを実行するデザイナー内で使用できます。 通常、コントロールのデザイナーは、この機能を担当します。 ただし、ときにコントロールは、デザイン画面でライブなど、別のコントロールのテンプレート内の必要はありませんデザイナーでは、この機能は、ハンドラーによって提供される、データ バインディングで指定されている場合、<xref:System.Web.UI.DataBindingHandlerAttribute>コントロール用のコードにします。  
+  
+ データ バインディングのハンドラーを使用するのにはデータ バインドされたプロパティまたはプロパティを持つコントロールが、必要があります、<xref:System.Web.UI.DataBindingHandlerAttribute>を使用するデータ バインド ハンドラーの種類を示すコード内で指定します。  
+  
+ たとえば、<xref:System.Web.UI.WebControls.Label>コントロールに関連付けられている、<xref:System.Web.UI.Design.TextDataBindingHandler>クラスを通じて、<xref:System.Web.UI.DataBindingHandlerAttribute>のコードで、<xref:System.Web.UI.WebControls.Label>クラスです。 テンプレート内で、 <xref:System.Web.UI.WebControls.DataList>、<xref:System.Web.UI.WebControls.Label>テキスト プロパティを持つがデータ バインドされたコントロールのラベルに「データ バインド」という単語が表示されます。 データ バインディング ハンドラーがない場合、ラベルは表示されませんデザイン時に、デザイン時テンプレートのコントロールでデータ バインドされたプロパティをバインドするデザイナーがあるないようです。  
+  
+ データ バインディングのハンドラーを実装するこのクラスと実装から派生する新しいクラスを定義、<xref:System.Web.UI.Design.DataBindingHandler.DataBindControl%2A>適切なプロパティを設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataBindingHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataBindingHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DataBindingHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindControl">
+      <MemberSignature Language="C#" Value="public abstract void DataBindControl (System.ComponentModel.Design.IDesignerHost designerHost, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DataBindControl(class System.ComponentModel.Design.IDesignerHost designerHost, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataBindingHandler.DataBindControl(System.ComponentModel.Design.IDesignerHost,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />ドキュメントにします。</param>
+        <param name="control">バインドする <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定したコントロールをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カスタムのデータ バインディング ハンドラーに機能を提供する派生クラスで実装する必要があります。 データ バインディングのロジックでは、このメソッド内でを実装して、型、またはプロパティまたはプロパティをバインドするのには、データ バインディングのハンドラーが型に変わる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ほとんどのデータ バインディングのハンドラーは、コントロールでは、データ バインディングのコレクションを検査する必要がありますを使用して、<see cref="T:System.Web.UI.IDataBindingsAccessor" />インターフェイスを処理できる特定のプロパティがデータ バインドがかどうかを判断します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

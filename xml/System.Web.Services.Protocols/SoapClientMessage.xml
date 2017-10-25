@@ -1,0 +1,278 @@
+<Type Name="SoapClientMessage" FullName="System.Web.Services.Protocols.SoapClientMessage">
+  <TypeSignature Language="C#" Value="public sealed class SoapClientMessage : System.Web.Services.Protocols.SoapMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapClientMessage extends System.Web.Services.Protocols.SoapMessage" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapClientMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.SoapMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>送信される SOAP 要求または特定の XML Web サービス クライアントが受信した SOAP 応答にデータを表す<see cref="T:System.Web.Services.Protocols.SoapMessageStage" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメントの処理、<xref:System.Web.Services.Protocols.SoapClientMessage>に渡される、<xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A?displayProperty=nameWithType>のプロパティを記述して、SOAP 拡張機能のメソッド、<xref:System.Web.Services.Protocols.SoapClientMessage>ログ ファイルにします。  
+  
+ [!code-cpp[SoapClientMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#1)]
+ [!code-csharp[SoapClientMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#1)]
+ [!code-vb[SoapClientMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public override string Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="SOAPAction" /> SOAP 要求または SOAP 応答の HTTP 要求ヘッダー フィールド。</summary>
+        <value><see langword="SOAPAction" /> SOAP 要求または SOAP 応答の HTTP 要求ヘッダー フィールド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapClientMessage.Action%2A>プロパティがいずれかで使用可能な<xref:System.Web.Services.Protocols.SoapMessageStage>します。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメントがそのログ ファイルへの値を出力、 `SOAPAction` HTTP 要求ヘッダー フィールド。  
+  
+ [!code-cpp[SoapClientMessage#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#2)]
+ [!code-csharp[SoapClientMessage#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#2)]
+ [!code-vb[SoapClientMessage#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Client">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapHttpClientProtocol Client { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.SoapHttpClientProtocol Client" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.Client" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHttpClientProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生して、クライアント プロキシ クラスのインスタンスを取得<see cref="T:System.Web.Services.Protocols.SoapHttpClientProtocol" />です。</summary>
+        <value>クライアント プロキシ クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapClientMessage.Client%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメント出力ログ ファイルにプロキシ クラスの型である場合`MathSvc`です。  
+  
+ [!code-cpp[SoapClientMessage#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#3)]
+ [!code-csharp[SoapClientMessage#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#3)]
+ [!code-vb[SoapClientMessage#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureInStage">
+      <MemberSignature Language="C#" Value="protected override void EnsureInStage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EnsureInStage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapClientMessage.EnsureInStage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureOutStage">
+      <MemberSignature Language="C#" Value="protected override void EnsureOutStage ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EnsureOutStage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapClientMessage.EnsureOutStage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodInfo">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Protocols.LogicalMethodInfo MethodInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.LogicalMethodInfo MethodInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.MethodInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.LogicalMethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP 要求の対象となる XML Web サービス メソッドのメソッドのプロトタイプの表現を取得します。</summary>
+        <value>A <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> SOAP 要求の対象となる XML Web サービス メソッドを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただし、<xref:System.Web.Services.Protocols.SoapClientMessage.MethodInfo%2A>プロパティにアクセスするすべてのステージ中に、中に使用できるメソッドについては<xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>と<xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>です。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメントは、そのログ ファイルに、クライアントによって呼び出されるプロキシ クラスのメソッドの名前を出力します。  
+  
+ [!code-cpp[SoapClientMessage#4](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#4)]
+ [!code-csharp[SoapClientMessage#4](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#4)]
+ [!code-vb[SoapClientMessage#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWay">
+      <MemberSignature Language="C#" Value="public override bool OneWay { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OneWay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.OneWay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーが、XML Web サービス メソッドの処理を完了するために、クライアントが待機するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、クライアントは、サーバーが完全にメソッドを処理するは待機しません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>適用を XML Web サービス メソッドまたは XML Web サービス クライアントを指定できるかどうか、XML Web サービス メソッドが 1 つの方法を設定して、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay%2A>属性のプロパティです。  
+  
+ <xref:System.Web.Services.Protocols.SoapClientMessage.OneWay%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメントがログ ファイルには出力 XML Web サービス メソッドは一方向でときを示す語句、<xref:System.Web.Services.Protocols.SoapClientMessage.OneWay%2A>プロパティは`true`します。  
+  
+ [!code-cpp[SoapClientMessage#5](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#5)]
+ [!code-csharp[SoapClientMessage#5](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#5)]
+ [!code-vb[SoapClientMessage#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapVersion">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Protocols.SoapProtocolVersion SoapVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapProtocolVersion SoapVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.SoapVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapProtocolVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスとの通信に使用する SOAP プロトコルのバージョンを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapProtocolVersion" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Services.Protocols.SoapProtocolVersion.Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスは、SOAP 1.1 をサポートするときに、.NET Framework クライアントは既定ではそのバージョンで XML Web サービスと通信します。 SOAP プロトコルのバージョンを変更する方法の詳細については、次を参照してください。、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.SoapVersion%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public override string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapClientMessage.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスの URL を取得します。</summary>
+        <value>XML Web サービスの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapClientMessage.Url%2A>中にいずれかのプロパティにアクセスする<xref:System.Web.Services.Protocols.SoapMessageStage>です。  
+  
+   
+  
+## Examples  
+ 次のコード フラグメントは、XML Web サービス クライアントによって送受信される SOAP メッセージをログに記録する SOAP 拡張機能の一部です。 この特定のフラグメントは、そのログ ファイルに XML Web サービスの URL を出力します。  
+  
+ [!code-cpp[SoapClientMessage#6](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientMessage/CPP/SoapClientMessage.cpp#6)]
+ [!code-csharp[SoapClientMessage#6](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientMessage/CS/soapclientmessage.cs#6)]
+ [!code-vb[SoapClientMessage#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientMessage/VB/soapclientmessage.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

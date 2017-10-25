@@ -1,0 +1,225 @@
+<Type Name="WebPartDisplayMode" FullName="System.Web.UI.WebControls.WebParts.WebPartDisplayMode">
+  <TypeSignature Language="C#" Value="public abstract class WebPartDisplayMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebPartDisplayMode extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web パーツ ページに入力できるいくつかの表示モードのプロパティの共通セットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ページには、いくつかの異なる表示モードを入力できます。 各表示モードでは、Web パーツのユーザー インターフェイス (UI) の特定の要素は非表示にするか、またはページに対するユーザーの変更の表示、および特定の種類の有効または無効にします。 <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは Web パーツ コントロール セットで使用可能な表示モードの実装を格納し、ページの表示モードを管理します。  
+  
+ 次の表は、使用可能な表示モードを表すフィールドを一覧表示します。  
+  
+|表示モード|説明|  
+|------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode>|エンドユーザーがページを表示する通常モードで Web パーツ コントロールと UI 要素を表示します。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode>|ゾーンの UI 要素が表示され、ページのレイアウトを変更する Web パーツ コントロールをドラッグすることができます。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode>|特殊な表示は、UI 要素を編集し、エンドユーザーが、ページ上のコントロールの編集を有効にします。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode>|特別なカタログ UI 要素を表示し、エンドユーザーはページ コントロールを追加および削除します。|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode>|特別な接続の UI 要素を表示し、エンドユーザー Web パーツ コントロールの接続をできるようにします。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web パーツ ページの表示モードの宣言型の使用法を示します。 これらの各の表示モードを Web パーツ コントロール セットによって実装されるから派生した、<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode>クラスです。  
+  
+ このコード例では、4 つの部分があります。  
+  
+-   カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   カスタム コントロールをホストするゾーンを含む Web ページです。  
+  
+-   ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。  
+  
+-   ページがブラウザーで動作する方法の説明。  
+  
+ この例の最初の部分は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、`TextDisplayWebPart`です。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法のデモについては、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartDisplayMode_Overview#9](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/CS/textdisplaywebpart.cs#9)]
+ [!code-vb[WebParts_WebPartDisplayMode_Overview#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/VB/textdisplaywebpart.vb#9)]  
+  
+ コード例の 2 番目の部分は、標準の ASP.NET を参照している Web ページ<xref:System.Web.UI.WebControls.Calendar>内で制御、`<asp:webpartzone>`要素でコントロールをラップできるように、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールし、実行時に Web パーツの基本的な機能を指定します。 ページを参照しても、`TextDisplayWebPart`内で制御、`<asp:catalogzone>`要素は、カタログのモードに切り替えるし、ページにコントロールを追加する、エンドユーザーの機能を示します。 ページにも含まれています、`<asp:editorzone>`要素に含まれるコントロールを編集することができます、`<asp:webpartzone>`ページが編集モードのときにします。 ページの上部には、`register`ディレクティブ、カスタム コントロールおよびユーザー コントロールのもう 1 つです。  
+  
+ [!code-aspx-csharp[WebParts_WebPartDisplayMode_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/CS/WebPartDisplayModecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartDisplayMode_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/VB/WebPartDisplayModevb.aspx#1)]  
+  
+ コード例の 3 番目の部分は、ユーザーが Web ページの表示モードを切り替えるにはできるユーザー コントロールです。 DisplayModeMenuCS.ascx または DisplayModeMenuVB.ascx (言語に応じて使用するコード例については)、という名前のファイルにこのコントロールのソース コードを保存し、Web ページと同じディレクトリに格納します。 詳細については、このコントロールでモードと、ソース コードの説明を表示するトピックを参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartDisplayMode_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_WebPartDisplayMode_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDisplayMode_Overview/VB/displaymodemenuvb.ascx#5)]  
+  
+ ブラウザーでページを読み込むときに行うこともできます、**表示モード**別に切り替えるにはドロップダウン リスト コントロールの表示モード。 コントロールを編集するには、選択**編集**ドロップダウン リスト コントロール。 特定のコントロールを編集するには、コントロールのタイトル バーの矢印をクリックし、をクリックして動詞メニューを表示**編集**動詞メニューにします。 コントロールが編集モードでは、ときに、編集するコントロールの外観およびレイアウトを変更するこのページに追加の編集コントロールが有効にします。 完了したら、選択**参照**で、**表示モード**ドロップダウン リスト コントロールに、ページを通常のビューに戻ります。 ページにコントロールを追加するには、カタログのモードに切り替えます。 通知を使用するか、**表示モード**ドロップダウン リスト コントロール、またはページの下部にあるボタンをクリックします。 インライン コードを`Button1_Click`メソッドは、プログラムによって表示モードを変更する方法を示します。 ユーザー設定を追加するにはカタログ モードでは、`TextDisplayWebPart`コントロールをページ。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>開発者がから派生させることができます、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />カスタムを作成するクラスの表示モード。 カスタムさせる<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />Web パーツ ページで使用可能なも必要になりますから派生する、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラス、およびオーバーライドその<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDisplayModes" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebPartDisplayMode (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">表示モードの名前。</param>
+        <summary>表示モードの名前の値を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode>クラスが抽象であるために、オブジェクトは作成されません。 実行時に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>使用を制御、<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode>クラスにさまざまなページの表示モードの各オブジェクトの基本クラスを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>派生した場合、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />基底コンス トラクターを呼び出すし、カスタムの表示モードの名前を含む文字列を渡す必要があります、クラス宣言で、カスタムの表示モードを作成するクラス。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPageDesign">
+      <MemberSignature Language="C#" Value="public virtual bool AllowPageDesign { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPageDesign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.AllowPageDesign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページが特定の表示モードのときに、ユーザーが Web パーツ ページのレイアウトを変更できるかどうかを決定する値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザーが、ページ レイアウトを変更した場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedWithToolZone">
+      <MemberSignature Language="C#" Value="public virtual bool AssociatedWithToolZone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AssociatedWithToolZone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.AssociatedWithToolZone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の表示モードがから派生したクラスに関連付けられているかどうかを示す値を取得、<see cref="T:System.Web.UI.WebControls.WebParts.ToolZone" />クラスです。</summary>
+        <value>
+          <see langword="true" />表示モードに関連付けられている場合、<see cref="T:System.Web.UI.WebControls.WebParts.ToolZone" />クラスです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ ページが表示モードに入ったときの<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.AssociatedWithToolZone%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールに関連付けられているクラスから派生することを意味することでは、解釈、<xref:System.Web.UI.WebControls.WebParts.ToolZone>クラス、およびその他のユーザー インターフェイス (UI) 要素を表示する必要があること。 たとえば、ページが編集モードになるときに ページで Web パーツ コントロールを編集するための UI 要素が含まれる特殊なゾーンが表示されます。 この動作は可能になりますので、<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.AssociatedWithToolZone%2A>プロパティ値、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode>にフィールドが設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />カスタムの表示モードを作成するための基本クラスをオーバーライドする必要があります、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.AssociatedWithToolZone" />プロパティの値を設定するためにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public virtual bool IsEnabled (System.Web.UI.WebControls.WebParts.WebPartManager webPartManager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEnabled(class System.Web.UI.WebControls.WebParts.WebPartManager webPartManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.IsEnabled(System.Web.UI.WebControls.WebParts.WebPartManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPartManager" Type="System.Web.UI.WebControls.WebParts.WebPartManager" />
+      </Parameters>
+      <Docs>
+        <param name="webPartManager"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />現在のページにコントロールのインスタンス。</param>
+        <summary>ページは、特定の表示モードでは、ユーザーがページをカスタマイズできるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ユーザーは、ページをカスタマイズできます場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。 ただし、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.RequiresPersonalization" />に設定されている<see langword="true" />、ページ上の個人用設定が無効になっていると、既定値になります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示モードの名前を取得します。</summary>
+        <value>表示モードの名前を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresPersonalization">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresPersonalization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresPersonalization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.RequiresPersonalization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の表示モードがパーソナル化を有効にするを必要とするかどうかを示す値を取得します。</summary>
+        <value>パーソナル化が必要かどうかを示すブール値。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHiddenWebParts">
+      <MemberSignature Language="C#" Value="public virtual bool ShowHiddenWebParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHiddenWebParts" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayMode.ShowHiddenWebParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうかのコントロールがあるかを示す値を取得、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.Hidden" />プロパティに設定<see langword="true" />が表示されます。</summary>
+        <value>非表示コントロールを表示するかどうかを示すブール値。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="SoapEnvelopeProcessingElement" FullName="System.Web.Services.Configuration.SoapEnvelopeProcessingElement">
+  <TypeSignature Language="C#" Value="public sealed class SoapEnvelopeProcessingElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapEnvelopeProcessingElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Configuration.SoapEnvelopeProcessingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成のタイムアウトよりも時間がかかっているすべての要求を終了することによって、サービス拒否攻撃を軽減する<see cref="P:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.ReadTimeout" />プロパティの値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すたびに、タイムアウト値がオンになって<xref:System.Xml.XmlReader.Read%2A>と<xref:System.Xml.XmlReader.MoveToContent%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapEnvelopeProcessingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Configuration.SoapEnvelopeProcessingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapEnvelopeProcessingElement (int readTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 readTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="readTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="readTimeout">タイムアウト期間の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Configuration.SoapEnvelopeProcessingElement" />クラスの指定されたを使用して<see cref="T:System.Int32" />値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapEnvelopeProcessingElement (int readTimeout, bool strict);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 readTimeout, bool strict) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.#ctor(System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="readTimeout" Type="System.Int32" />
+        <Parameter Name="strict" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="readTimeout">終了する前に待機する時間を要求する<see cref="M:System.Xml.XmlReader.Read" />と<see cref="M:System.Xml.XmlReader.MoveToContent" />です。</param>
+        <param name="strict">要素または属性をシリアライザーできない場合に例外をスローするかどうかでした。 元のスキーマ。 詳細については、次を参照してください。、<see cref="P:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.IsStrict" />プロパティです。</param>
+        <summary>取得またはサービス拒否攻撃を防ぐために要求を終了するかどうかを判断するために使用するタイムアウト期間を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStrict">
+      <MemberSignature Language="C#" Value="public bool IsStrict { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStrict" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.IsStrict" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("strict", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアライザーでは、予期しない要素または属性が検出されると、例外をスローするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、Web サービスのシリアライザーが、予期しない要素または属性を検出しようとしています。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.IsStrict%2A>プロパティを`true`相互運用シナリオのデバッグを支援するためにします。 通常、<xref:System.Xml.Serialization.XmlSerializer>クラスが要素または属性を生成します。 が想定されていない、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントして処理を続行します。 (同じ true の場合は、 <xref:System.Xml.Serialization.XmlArrayAttribute.Order%2A>、 <xref:System.Xml.Serialization.XmlElementAttribute.Order%2A>、または<xref:System.Xml.Serialization.XmlAnyElementAttribute.Order%2A>プロパティが使用されますが、データが順序どおりに送信します)。設定、<xref:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.IsStrict%2A>プロパティを`true`Web サービスは、そのイベントを処理し、スローする時間を実行するよう指示、<xref:System.InvalidOperationException>予期された要素と属性のリストを格納します。  
+  
+> [!NOTE]
+>  すべての予期しない要素と属性、例外がスローされなかったため、<xref:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.IsStrict%2A>プロパティが依存していないを除く、デバッグを目的として。 たとえば、予期しない`xml:lang`と`xml:space`属性では、例外は発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadTimeout">
+      <MemberSignature Language="C#" Value="public int ReadTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Configuration.SoapEnvelopeProcessingElement.ReadTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("readTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス拒否攻撃を防ぐために要求を終了するかどうかを判断するために使用するタイムアウト期間を設定します。</summary>
+        <value>終了する前に待機する時間を要求する<see cref="M:System.Xml.XmlReader.Read" />と<see cref="M:System.Xml.XmlReader.MoveToContent" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

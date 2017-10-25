@@ -1,0 +1,528 @@
+<Type Name="HtmlElementEventArgs" FullName="System.Windows.Forms.HtmlElementEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class HtmlElementEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlElementEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlElementEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定義されたイベントのデータを提供<see cref="T:System.Windows.Forms.HtmlDocument" />と<see cref="T:System.Windows.Forms.HtmlElement" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlElementEventArgs>検出された、同じ情報をカプセル化、`window.event`オブジェクトのアンマネージ HTML DOM に対するプログラミング時に、または HTML ページのアクティブ スクリプトを記述します。  
+  
+ ほとんどの場合で使用できます<xref:System.Windows.Forms.HtmlElementEventArgs.ToElement%2A>イベント アクションを受信している HTML 要素を検索および<xref:System.Windows.Forms.HtmlElementEventArgs.FromElement%2A>のままにすること、現在のイベントの原因となった、HTML 要素を検索します。 ただし、すべてのイベントがこれらのプロパティの値を提供するイベントの管理対象のドキュメントまたはドキュメントでは、Internet Explorer の SDK を検出すると、イベントが提供、対応するドキュメントを参照してください。  
+  
+ HTML DOM 内の多数のイベントは、それらが取り消されない限り、親要素に送信されます。 これは、イベント バブルと呼ばれます。 場合、`SPAN`内の`DIV`の click イベントが発生し、クリックを受け取る、`SPAN`最初に、次に、 `DIV`、最後に HTML ページの`BODY`要素。 <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent%2A>かイベントがこの方法で動作するかどうかを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AltKeyPressed">
+      <MemberSignature Language="C#" Value="public bool AltKeyPressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AltKeyPressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.AltKeyPressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントが発生したときに ALT キーが押されたかどうかを示します。</summary>
+        <value>
+          <see langword="true" />ALT キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BubbleEvent">
+      <MemberSignature Language="C#" Value="public bool BubbleEvent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BubbleEvent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML ドキュメント オブジェクト モデルの要素の階層で、現在のイベントがバブルアップしたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、イベントをバブルです。<see langword="false" />そうでない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメント オブジェクト モデルのバブルですべてのイベントです。 すべてのイベントによって公開されている、<xref:System.Windows.Forms.HtmlDocument>マネージ ラッパー バブルの例外を除いて<xref:System.Windows.Forms.HtmlDocument.Stop>です。 <xref:System.Windows.Forms.HtmlElement>、`Error`と`Load`イベントがバブルアップしません。 設定`BubbleEvent`に`true`中にこれらのイベントのいずれかの影響はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientMousePosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point ClientMousePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point ClientMousePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドキュメントのクライアント領域でマウスのカーソルの位置を設定します。</summary>
+        <value>マウス カーソルの現在の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ClientMousePosition`ドキュメントの左上隅を基準としたカーソルのマウスの位置を示します。 使用して<xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>イベントを発生させた要素に相対的なマウス座標を必要がある場合。  
+  
+   
+  
+## Examples  
+ 次の HTML ファイルは、の相対位置を示しています、`TABLE`の内側、`BODY`タグ。  
+  
+```  
+<HTML>  
+  
+<BODY>  
+  
+    <TABLE style="position:relative;top:100px;left:100px;">  
+        <TR>  
+            <TD>Text</TD>  
+            <TD>More text</TD>  
+        </TR>  
+    </TABLE>  
+  
+</BODY>  
+  
+</HTML>  
+  
+```  
+  
+ 次のコード例の差を表示する<xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>、 <xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>、および<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>の要素に対して、ユーザーがクリックしたとき、`TABLE`です。 <xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>ドキュメントのクライアント領域の左上隅に対する相対座標が表示されます。 <xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>左上隅に対する相対座標が表示されます、`TABLE`です。 テキストの行の 1 つをクリックすると<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>と相対的に座標が表示されます`TD`要素。  
+  
+ この例では、構成されている必要があります`Document_MouseDown`のハンドラーとして、<xref:System.Windows.Forms.HtmlDocument.MouseDown>でイベントを<xref:System.Windows.Forms.HtmlDocument>です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CtrlKeyPressed">
+      <MemberSignature Language="C#" Value="public bool CtrlKeyPressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CtrlKeyPressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.CtrlKeyPressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントが発生したときに、CTRL キーが押されたかどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合は、CTRL キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventType">
+      <MemberSignature Language="C#" Value="public string EventType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EventType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.EventType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したイベントの名前を取得します。</summary>
+        <value>イベントの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement FromElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElement FromElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.FromElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.HtmlElement" />マウス ポインターがから移動します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlElement" />マウス ポインターがから移動します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlElementEventArgs.FromElement%2A>有効な値、中がマウス イベントなど<xref:System.Windows.Forms.HtmlElement.MouseEnter>と<xref:System.Windows.Forms.HtmlElement.MouseLeave>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyPressedCode">
+      <MemberSignature Language="C#" Value="public int KeyPressedCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyPressedCode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.KeyPressedCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型指定されたキーボードの文字の ASCII 値を取得、 <see cref="E:System.Windows.Forms.HtmlElement.KeyPress" />、 <see cref="E:System.Windows.Forms.HtmlElement.KeyDown" />、または<see cref="E:System.Windows.Forms.HtmlElement.KeyUp" />イベント。</summary>
+        <value>構成済みのキーボード入力の ASCII 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseButtonsPressed">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MouseButtons MouseButtonsPressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MouseButtons MouseButtonsPressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.MouseButtonsPressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのボタンでクリックされたの取得、<see cref="E:System.Windows.Forms.HtmlElement.MouseDown" />または<see cref="E:System.Windows.Forms.HtmlElement.MouseUp" />イベント。</summary>
+        <value>マウス ボタンがクリックされたです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MousePosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point MousePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point MousePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.MousePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または相対的に配置した親要素に相対的なマウスのカーソルの位置を設定します。</summary>
+        <value>親要素が比較的配置されている場合に、イベントを発生させた要素の親の左上隅に対する相対マウス カーソルの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対的な位置については、要素の親との関連ページ上に配置する html 形式で使用されます。  
+  
+ このプロパティと同じ結果を返す場合は、要素の位置、<xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>です。  
+  
+   
+  
+## Examples  
+ 次の HTML ファイルは、の相対位置を示しています、`TABLE`の内側、`BODY`タグ。  
+  
+```  
+<HTML>  
+  
+<BODY>  
+  
+    <TABLE style="position:relative;top:100px;left:100px;">  
+        <TR>  
+            <TD>Text/TD>  
+            <TD>More text</TD>  
+        </TR>  
+    </TABLE>  
+  
+</BODY>  
+  
+</HTML>  
+  
+```  
+  
+ 次のコード例の差を表示する<xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>、 <xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>、および<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>の要素に対して、ユーザーがクリックしたとき、`TABLE`です。 <xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>ドキュメントのクライアント領域の左上隅に対する相対座標が表示されます。 <xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>左上隅に対する相対座標が表示されます、`TABLE`です。 テキストの行の 1 つをクリックすると<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>と相対的に座標が表示されます`TD`要素。  
+  
+ この例では、構成されている必要があります`Document_MouseDown`のハンドラーとして、<xref:System.Windows.Forms.HtmlDocument.MouseDown>でイベントを<xref:System.Windows.Forms.HtmlDocument>です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetMousePosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point OffsetMousePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point OffsetMousePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントを発生させる要素に相対的なマウスのカーソルの位置を設定します。</summary>
+        <value>イベントを発生させる要素に相対的なマウスの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の HTML ファイルは、の相対位置を示しています、`TABLE`の内側、`BODY`タグ。  
+  
+```  
+<HTML>  
+  
+<BODY>  
+  
+    <TABLE style="position:relative;top:100px;left:100px;">  
+        <TR>  
+            <TD>Text</TD>  
+            <TD>More text</TD>  
+        </TR>  
+    </TABLE>  
+  
+</BODY>  
+  
+</HTML>  
+  
+```  
+  
+ 次のコード例の差を表示する<xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>、<xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>と<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>の要素に対して、ユーザーがクリックしたとき、`TABLE`です。 <xref:System.Windows.Forms.HtmlElementEventArgs.ClientMousePosition%2A>ドキュメントのクライアント領域の左上隅に対する相対座標が表示されます。 <xref:System.Windows.Forms.HtmlElementEventArgs.MousePosition%2A>左上隅に対する相対座標が表示されます、`TABLE`です。 テキストの行の 1 つをクリックすると<xref:System.Windows.Forms.HtmlElementEventArgs.OffsetMousePosition%2A>と相対的に座標が表示されます`TD`要素。  
+  
+ この例では、構成されている必要があります`Document_MouseDown`のハンドラーとして、<xref:System.Windows.Forms.HtmlDocument.MouseDown>でイベントを<xref:System.Windows.Forms.HtmlDocument>です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlElementEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlElementEventArgs/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValue">
+      <MemberSignature Language="C#" Value="public bool ReturnValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.ReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または処理するイベントの戻り値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントが処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShiftKeyPressed">
+      <MemberSignature Language="C#" Value="public bool ShiftKeyPressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShiftKeyPressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.ShiftKeyPressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントが発生したときに、SHIFT キーが押されたかどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合は、SHIFT キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement ToElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElement ToElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlElementEventArgs.ToElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.HtmlElement" />対象となる、ユーザーがマウス ポインターを移動します。</summary>
+        <value>マウス ポインターが移動先である要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlElementEventArgs.ToElement%2A>有効な値、中がマウス イベントなど<xref:System.Windows.Forms.HtmlElement.MouseEnter>と<xref:System.Windows.Forms.HtmlElement.MouseLeave>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Click?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#422](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#422)]
+ [!code-vb[System.Windows.Forms.EventExamples#422](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#422)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

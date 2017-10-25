@@ -1,0 +1,2866 @@
+<Type Name="NativeActivityUpdateContext" FullName="System.Activities.DynamicUpdate.NativeActivityUpdateContext">
+  <TypeSignature Language="C#" Value="public class NativeActivityUpdateContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NativeActivityUpdateContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.NativeActivityUpdateContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネイティブ アクティビティの更新プログラムのコンテキストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivityInstanceId">
+      <MemberSignature Language="C#" Value="public string ActivityInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActivityInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ActivityInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中のアクティビティ インスタンスの一意の識別子を取得します。</summary>
+        <value>現在実行中のアクティビティ インスタンスの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>NativeActivity が受動的に待機できるを再開するポイントを作成します。</summary>
+        <returns>ブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (System.Activities.BookmarkCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(class System.Activities.BookmarkCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.Activities.BookmarkCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <summary>NativeActivity が受動的に待機できるを再開するポイントを作成し、再開操作の通知が完了したら実行する指定されたメソッドをスケジュールします。</summary>
+        <returns>コールバック メソッド</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <summary>NativeActivity が受動的に待機できるを再開する、指定した名前をポイントを作成します。</summary>
+        <returns>ブックマークの名前を含むブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (System.Activities.BookmarkCallback callback, System.Activities.BookmarkOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(class System.Activities.BookmarkCallback callback, valuetype System.Activities.BookmarkOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.Activities.BookmarkCallback,System.Activities.BookmarkOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+        <Parameter Name="options" Type="System.Activities.BookmarkOptions" />
+      </Parameters>
+      <Docs>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <param name="options">他のスレッドに関連して現在の NativeActivity の実行中に、ブックマークの動作を制御する列挙された設定します。</param>
+        <summary>NativeActivity が受動的に待機できる再開操作の通知が完了し、現在 NativeActivity の実行中にブックマークを使用する方法を制御するオプションを指定したときに実行する指定されたメソッドを使用して、再開するポイントを作成します。</summary>
+        <returns>コールバック メソッドおよびブックマーク実行オプションを含むブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (string name, System.Activities.BookmarkCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(string name, class System.Activities.BookmarkCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.String,System.Activities.BookmarkCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <summary>NativeActivity が受動的に待機できる指定された名前、再開操作の通知が完了したら実行する指定されたメソッドを使用して再開するポイントを作成します。</summary>
+        <returns>ブックマーク名およびコールバック メソッドを含むブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (string name, System.Activities.BookmarkCallback callback, System.Activities.BookmarkOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(string name, class System.Activities.BookmarkCallback callback, valuetype System.Activities.BookmarkOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.String,System.Activities.BookmarkCallback,System.Activities.BookmarkOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+        <Parameter Name="options" Type="System.Activities.BookmarkOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <param name="options">現在の NativeActivity の実行中にブックマークを使用する方法を制御するブックマーク オプション。</param>
+        <summary>NativeActivity が受動的に待機できる、指定された名前、再開操作の通知が完了したら実行する指定されたメソッドと現在の NativeActivity の実行中にブックマークを使用する方法を制御する指定したオプションで再開するポイントを作成します。</summary>
+        <returns>ブックマーク名、コールバック メソッド、およびブックマーク実行オプションを含むブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (string name, System.Activities.BookmarkCallback callback, System.Activities.BookmarkScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(string name, class System.Activities.BookmarkCallback callback, class System.Activities.BookmarkScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.String,System.Activities.BookmarkCallback,System.Activities.BookmarkScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+        <Parameter Name="scope" Type="System.Activities.BookmarkScope" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <param name="scope">ワークフロー実行時に同じプロトコルの下で動作する複数のブックマークで構成されるグループに適用される識別子。</param>
+        <summary>NativeActivity が受動的に待機できる、指定した名前、再開操作の通知が完了したら実行する指定されたメソッドおよびブックマークの指定したスコープを持つ再開ポイントを作成します。</summary>
+        <returns>ブックマーク名、コールバック メソッド、およびブックマークのスコープを格納するブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBookmark">
+      <MemberSignature Language="C#" Value="public System.Activities.Bookmark CreateBookmark (string name, System.Activities.BookmarkCallback callback, System.Activities.BookmarkScope scope, System.Activities.BookmarkOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Bookmark CreateBookmark(string name, class System.Activities.BookmarkCallback callback, class System.Activities.BookmarkScope scope, valuetype System.Activities.BookmarkOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.CreateBookmark(System.String,System.Activities.BookmarkCallback,System.Activities.BookmarkScope,System.Activities.BookmarkOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Bookmark</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="callback" Type="System.Activities.BookmarkCallback" />
+        <Parameter Name="scope" Type="System.Activities.BookmarkScope" />
+        <Parameter Name="options" Type="System.Activities.BookmarkOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <param name="callback">通知は、NativeActivity の再開を合図すると呼び出されるメソッド。</param>
+        <param name="scope">ワークフロー実行時に同じプロトコルの下で動作する複数のブックマークで構成されるグループに適用される識別子。</param>
+        <param name="options">現在の NativeActivity の実行中にブックマークを使用する方法を制御するブックマーク オプション。</param>
+        <summary>NativeActivity が受動的に待機できる、指定された名前、再開操作の通知が完了したら実行する指定されたメソッドおよびブックマークおよびブックマークが現在の NativeActivity の実行中に使用される方法を制御する指定されたオプションの指定されたスコープで再開するポイントを作成します。</summary>
+        <returns>ブックマーク、コールバック メソッド、ブックマークおよびブックマーク実行オプションのスコープの名前を含むブックマーク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultBookmarkScope">
+      <MemberSignature Language="C#" Value="public System.Activities.BookmarkScope DefaultBookmarkScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.BookmarkScope DefaultBookmarkScope" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.NativeActivityUpdateContext.DefaultBookmarkScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.BookmarkScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローのルートに関連付けられているブックマークのスコープを取得します。</summary>
+        <value>ワークフローのルートに関連付けられているブックマーク スコープです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisallowUpdate">
+      <MemberSignature Language="C#" Value="public void DisallowUpdate (string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisallowUpdate(string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.DisallowUpdate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="reason">コンテキストの禁止の理由です。</param>
+        <summary>更新は許可されていません、<see cref="T:System.Activities.DynamicUpdate.NativeActivityUpdateContext" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindExecutionProperty">
+      <MemberSignature Language="C#" Value="public object FindExecutionProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object FindExecutionProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.FindExecutionProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ワークフロー実行プロパティの名前。</param>
+        <summary>ワークフロー実行プロパティに指定した名前を検索します。</summary>
+        <returns>指定の名前を持つワークフロー実行プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocation&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Activities.Location&lt;T&gt; GetLocation&lt;T&gt; (System.Activities.Variable variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Location`1&lt;!!T&gt; GetLocation&lt;T&gt;(class System.Activities.Variable variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetLocation``1(System.Activities.Variable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Location&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返す場所の型。</typeparam>
+        <param name="variable">場所から変数です。</param>
+        <summary>指定された参照先の場所の型指定された場所を返します。</summary>
+        <returns>指定した型指定された場所には、場所が参照されています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSavedOriginalValue">
+      <MemberSignature Language="C#" Value="public object GetSavedOriginalValue (System.Activities.Activity childActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetSavedOriginalValue(class System.Activities.Activity childActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetSavedOriginalValue(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childActivity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="childActivity">子アクティビティ。</param>
+        <summary>現在のアクティビティは、元の値を保存するオブジェクトを示します。</summary>
+        <returns>現在のアクティビティは、元の値を保存するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSavedOriginalValue">
+      <MemberSignature Language="C#" Value="public object GetSavedOriginalValue (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetSavedOriginalValue(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetSavedOriginalValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">プロパティの名前。</param>
+        <summary>現在のアクティビティは、元の値を保存するオブジェクトを示します。</summary>
+        <returns>現在のアクティビティは、元の値を保存するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.Activities.Argument argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.Activities.Argument argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetValue(System.Activities.Argument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Activities.Argument" />
+      </Parameters>
+      <Docs>
+        <param name="argument">検査対象の引数。</param>
+        <summary>指定された引数の値を取得します。</summary>
+        <returns>指定された引数の値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.Activities.RuntimeArgument runtimeArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.Activities.RuntimeArgument runtimeArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetValue(System.Activities.RuntimeArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="runtimeArgument" Type="System.Activities.RuntimeArgument" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeArgument">検査対象の引数。</param>
+        <summary>指定した、RuntimeArgument の値を取得します。</summary>
+        <returns>指定した、RuntimeArgument の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.Activities.Variable variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.Activities.Variable variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetValue(System.Activities.Variable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+      </Parameters>
+      <Docs>
+        <param name="variable">NativeActivity の現在のインスタンスの実行中に値を取得する変数。</param>
+        <summary>現在の NativeActivity インスタンスで指定された変数の値を取得します。</summary>
+        <returns>現在の NativeActivity インスタンス内の指定された変数の値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetValue&lt;T&gt; (System.Activities.Variable&lt;T&gt; variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetValue&lt;T&gt;(class System.Activities.Variable`1&lt;!!T&gt; variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.GetValue``1(System.Activities.Variable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">値を取得中の変数の型。</typeparam>
+        <param name="variable">NativeActivity の現在のインスタンスの実行中に値を取得するジェネリック変数。</param>
+        <summary>現在の NativeActivity インスタンスで指定されたジェネリック変数の値を返します。</summary>
+        <returns>現在の NativeActivity インスタンス内の指定されたジェネリック変数の値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCancellationRequested">
+      <MemberSignature Language="C#" Value="public bool IsCancellationRequested { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCancellationRequested" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.NativeActivityUpdateContext.IsCancellationRequested" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在実行中の NativeActivity インスタンスが取り消されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="True" />現在実行中の NativeActivity インスタンスをキャンセルする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNewlyAdded">
+      <MemberSignature Language="C#" Value="public bool IsNewlyAdded (System.Activities.Activity childActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNewlyAdded(class System.Activities.Activity childActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.IsNewlyAdded(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childActivity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="childActivity">子アクティビティ。</param>
+        <summary>初期化するかどうか、<see cref="T:System.Activities.DynamicUpdate.NativeActivityUpdateContext" />が新しく追加します。</summary>
+        <returns>
+          <see langword="True" />場合、<see cref="T:System.Activities.DynamicUpdate.NativeActivityUpdateContext" />が新しく追加されたそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAllBookmarks">
+      <MemberSignature Language="C#" Value="public void RemoveAllBookmarks ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAllBookmarks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.RemoveAllBookmarks" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在実行中の NativeActivity インスタンスに関連付けられているすべてのブックマークを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBookmark">
+      <MemberSignature Language="C#" Value="public bool RemoveBookmark (System.Activities.Bookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveBookmark(class System.Activities.Bookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.RemoveBookmark(System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="bookmark">NativeActivity インスタンスが受動的に待機できるを再開するポイントです。</param>
+        <summary>現在実行中の NativeActivity インスタンスから指定されたブックマークを削除します。</summary>
+        <returns>
+          <see langword="True" />現在実行中の NativeActivity インスタンスから指定されたブックマークが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBookmark">
+      <MemberSignature Language="C#" Value="public bool RemoveBookmark (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveBookmark(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.RemoveBookmark(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <summary>指定された名前を持つブックマークを削除します。</summary>
+        <returns>
+          <see langword="True" />指定した名前を持つブックマークが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBookmark">
+      <MemberSignature Language="C#" Value="public bool RemoveBookmark (string name, System.Activities.BookmarkScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveBookmark(string name, class System.Activities.BookmarkScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.RemoveBookmark(System.String,System.Activities.BookmarkScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scope" Type="System.Activities.BookmarkScope" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークの名前。</param>
+        <param name="scope">同じプロトコルの下で動作として分類されるブックマーク オブジェクトのグループの一意の GUID 識別子。</param>
+        <summary>指定された名前および指定されたブックマーク スコープを持つブックマークを削除します。</summary>
+        <returns>
+          <see langword="True" />指定した名前および指定されたブックマーク スコープを持つブックマークが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction">
+      <MemberSignature Language="C#" Value="public void ScheduleAction (System.Activities.ActivityAction activityAction, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction(class System.Activities.ActivityAction activityAction, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction(System.Activities.ActivityAction,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了。</param>
+        <summary>パラメーターを指定せず、および、ActivityAction の完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークを持つ指定した ActivityAction の実行をスケジュールします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T&gt; (System.Activities.ActivityAction&lt;T&gt; activityAction, T argument, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T&gt;(class System.Activities.ActivityAction`1&lt;!!T&gt; activityAction, !!T argument, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``1(System.Activities.ActivityAction{``0},``0,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T&gt;" />
+        <Parameter Name="argument" Type="T" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T&gt;いる in 引数の 1 つのパラメーターがあり、ActivityAction の完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマーク&lt;T&gt;.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2&gt; (System.Activities.ActivityAction&lt;T1,T2&gt; activityAction, T1 argument1, T2 argument2, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2&gt;(class System.Activities.ActivityAction`2&lt;!!T1, !!T2&gt; activityAction, !!T1 argument1, !!T2 argument2, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``2(System.Activities.ActivityAction{``0,``1},``0,``1,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1, T2&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1, T2&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1, T2&gt; in 引数の 2 つのパラメーターを持つし、ActivityActionの完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。&lt;T1, T2&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3&gt; (System.Activities.ActivityAction&lt;T1,T2,T3&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3&gt;(class System.Activities.ActivityAction`3&lt;!!T1, !!T2, !!T3&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``3(System.Activities.ActivityAction{``0,``1,``2},``0,``1,``2,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3&gt; in 引数の 3 つのパラメーターを持つし、ActivityAction の完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。&lt;T1、T2、T3&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4&gt;(class System.Activities.ActivityAction`4&lt;!!T1, !!T2, !!T3, !!T4&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``4(System.Activities.ActivityAction{``0,``1,``2,``3},``0,``1,``2,``3,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4&gt; in 引数の 4 つのパラメーターを持つし、ActivityAction の完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。&lt;T1、T2、T3、T4&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5&gt;(class System.Activities.ActivityAction`5&lt;!!T1, !!T2, !!T3, !!T4, !!T5&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``5(System.Activities.ActivityAction{``0,``1,``2,``3,``4},``0,``1,``2,``3,``4,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;、T1、T2、T3、T4 T5&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;、T1、T2、T3、T4 T5&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;、T1、T2、T3、T4 T5&gt; in 引数の 5 つのパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityAction&lt;、T1、T2、T3、T4 T5&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6&gt;(class System.Activities.ActivityAction`6&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``6(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5},``0,``1,``2,``3,``4,``5,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6&gt; in 引数を 6 個のパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityAction&lt;T1、T2、T3、T4、T5、T6&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7&gt;(class System.Activities.ActivityAction`7&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``7(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6},``0,``1,``2,``3,``4,``5,``6,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7&gt; in 引数を 7 個のパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityAction&lt;T1、T2、T3、T4、T5、T6、T7&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8&gt;(class System.Activities.ActivityAction`8&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``8(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7},``0,``1,``2,``3,``4,``5,``6,``7,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8&gt; in 引数を 8 個のパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityAction&lt;T1、T2、T3、T4、T5、T6、T7、T8&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9&gt;(class System.Activities.ActivityAction`9&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``9(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8},``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9&gt; in 引数を 9 個のパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityAction&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10&gt;(class System.Activities.ActivityAction`10&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``10(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10&gt; in 引数の 10 個のパラメーターを持つし、完了したときに、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityAction の&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11&gt;(class System.Activities.ActivityAction`11&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``11(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11&gt; 11 個のパラメーターの引数を持ち時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。完了、ActivityAction&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12&gt;(class System.Activities.ActivityAction`12&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``12(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時&gt;in 引数の 12 個のパラメーターを持つし、したときに、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。完了、ActivityAction&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13&gt;(class System.Activities.ActivityAction`13&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``13(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13&gt;を 13 個のパラメーターの引数があり、親プロセスが、指定されたコールバック場所をブックマークします。ActivityAction の完了時に再開&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14&gt;(class System.Activities.ActivityAction`14&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``14(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14&gt; in 引数の 14 個のパラメーターを持つし、親プロセスが、指定されたコールバック場所をブックマークします。ActivityAction の完了時に再開&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, T15 argument15, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15&gt;(class System.Activities.ActivityAction`15&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14, !!T15&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, !!T15 argument15, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``15(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+        <TypeParameter Name="T15" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="argument15" Type="T15" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T15">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="argument15">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15&gt; in 引数の 15 個のパラメーターを持つ、指定されたコールバック場所をブックマークする場所、親処理、ActivityAction の完了時に履歴書&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16&gt; (System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16&gt; activityAction, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, T15 argument15, T16 argument16, System.Activities.CompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleAction&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16&gt;(class System.Activities.ActivityAction`16&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14, !!T15, !!T16&gt; activityAction, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, !!T15 argument15, !!T16 argument16, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleAction``16(System.Activities.ActivityAction{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+        <TypeParameter Name="T15" />
+        <TypeParameter Name="T16" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityAction" Type="System.Activities.ActivityAction&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="argument15" Type="T15" />
+        <Parameter Name="argument16" Type="T16" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T15">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T16">アクティビティに持ち込まれるデータ。</typeparam>
+        <param name="activityAction">親アクティビティ内で特定のイベントが発生すると実行されるアクション。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="argument15">データをアクティビティに持ち込む引数。</param>
+        <param name="argument16">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16&gt; in 引数の 16 個のパラメーターを持つ、指定されたコールバック場所をブックマークする場所、親処理、ActivityAction の完了時に履歴書&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleActivity">
+      <MemberSignature Language="C#" Value="public void ScheduleActivity (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleActivity(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleActivity(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">親の NativeActivity の実行中に発生するイベントによってトリガーされる子アクティビティ。</param>
+        <summary>指定した NativeActivity 子アクティビティの実行をスケジュールします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleActivity">
+      <MemberSignature Language="C#" Value="public void ScheduleActivity (System.Activities.Activity activity, System.Activities.CompletionCallback onCompleted);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleActivity(class System.Activities.Activity activity, class System.Activities.CompletionCallback onCompleted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleActivity(System.Activities.Activity,System.Activities.CompletionCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+      </Parameters>
+      <Docs>
+        <param name="activity">親の NativeActivity の実行中に発生するイベントによってトリガーされる子アクティビティ。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク。</param>
+        <summary>指定の NativeActivity の子アクティビティのアクティビティの完了時に、親プロセスが再開される場所の指定された完了コールバック場所を使用して実行をスケジュールします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleActivity">
+      <MemberSignature Language="C#" Value="public void ScheduleActivity (System.Activities.Activity activity, System.Activities.FaultCallback onFaulted);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleActivity(class System.Activities.Activity activity, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleActivity(System.Activities.Activity,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <param name="activity">親の NativeActivity の実行中に発生するイベントによってトリガーされる子アクティビティ。</param>
+        <param name="onFaulted">ブックマークを NativeActivity の実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了。</param>
+        <summary>指定の NativeActivity の子アクティビティの指定されたエラー コールバックの場所が、アクティビティが途中終了状態に入るときに、親プロセスが再開される場所を使用して実行をスケジュールします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleActivity">
+      <MemberSignature Language="C#" Value="public void ScheduleActivity (System.Activities.Activity activity, System.Activities.CompletionCallback onCompleted, System.Activities.FaultCallback onFaulted);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleActivity(class System.Activities.Activity activity, class System.Activities.CompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleActivity(System.Activities.Activity,System.Activities.CompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <param name="activity">親の NativeActivity の実行中に発生するイベントによってトリガーされる子アクティビティ。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク。</param>
+        <param name="onFaulted">ブックマークを NativeActivity の実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了。</param>
+        <summary>指定の NativeActivity の子アクティビティの指定されたエラー コールバックの場所が、アクティビティが途中終了状態に入るときに、親プロセスが再開される場所を使用して実行をスケジュールします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleActivity&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleActivity&lt;TResult&gt; (System.Activities.Activity&lt;TResult&gt; activity, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleActivity&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; activity, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleActivity``1(System.Activities.Activity{``0},System.Activities.CompletionCallback{``0},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity&lt;TResult&gt;" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activity">親の NativeActivity の実行中に発生するイベントによってトリガーされる子アクティビティ。</param>
+        <param name="onCompleted">ActivityAction の完了時に、NativeActivity の実行が再開される場所を示すブックマーク&lt;T&gt;です。</param>
+        <param name="onFaulted">ブックマークを NativeActivity の実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了。</param>
+        <summary>In 引数の 1 つのパラメーターと実行のため指定の NativeActivity の子のアクティビティをスケジュールし、ActivityAction の完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマーク&lt;T&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleDelegate">
+      <MemberSignature Language="C#" Value="public void ScheduleDelegate (System.Activities.ActivityDelegate activityDelegate, System.Collections.Generic.IDictionary&lt;string,object&gt; inputParameters, System.Activities.DelegateCompletionCallback onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleDelegate(class System.Activities.ActivityDelegate activityDelegate, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputParameters, class System.Activities.DelegateCompletionCallback onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleDelegate(System.Activities.ActivityDelegate,System.Collections.Generic.IDictionary{System.String,System.Object},System.Activities.DelegateCompletionCallback,System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activityDelegate" Type="System.Activities.ActivityDelegate" />
+        <Parameter Name="inputParameters" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="onCompleted" Type="System.Activities.DelegateCompletionCallback" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <param name="activityDelegate">指定されたアクティビティのアクションが完了したらアクティビティが戻るコールバック メソッド。</param>
+        <param name="inputParameters">アクティビティ引数の名前および値のディクショナリ一覧。</param>
+        <param name="onCompleted">ActivityAction の完了時に、親アクティビティの実行が再開される場所を示すブックマーク。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityAction の終了。</param>
+        <summary>アクティビティのコールバック メソッドを作業項目プールにプッシュします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;TResult&gt; (System.Activities.ActivityFunc&lt;TResult&gt; activityFunc, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;TResult&gt;(class System.Activities.ActivityFunc`1&lt;!!TResult&gt; activityFunc, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``1(System.Activities.ActivityFunc{``0},System.Activities.CompletionCallback{``0},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;TResult&gt;" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;TResult&gt;戻り値を保持し、ActivityFuncの完了時に、親プロセスが再開される場所の指定されたコールバック場所をブックマークを1つのパラメーターを持つ&lt;TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T,TResult&gt; (System.Activities.ActivityFunc&lt;T,TResult&gt; activityFunc, T argument, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T, TResult&gt;(class System.Activities.ActivityFunc`2&lt;!!T, !!TResult&gt; activityFunc, !!T argument, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``2(System.Activities.ActivityFunc{``0,``1},``0,System.Activities.CompletionCallback{``1},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T,TResult&gt;" />
+        <Parameter Name="argument" Type="T" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T, TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T, TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T, TResult&gt;戻り値および in 引数を 2 つのパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityFunc&lt;T, TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,TResult&gt; activityFunc, T1 argument1, T2 argument2, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, TResult&gt;(class System.Activities.ActivityFunc`3&lt;!!T1, !!T2, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``3(System.Activities.ActivityFunc{``0,``1,``2},``0,``1,System.Activities.CompletionCallback{``2},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、TResult&gt; 3 つのパラメーターに戻り値および in 引数を持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityFunc&lt;T1、T2、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, TResult&gt;(class System.Activities.ActivityFunc`4&lt;!!T1, !!T2, !!T3, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``4(System.Activities.ActivityFunc{``0,``1,``2,``3},``0,``1,``2,System.Activities.CompletionCallback{``3},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、TResult&gt; 4 つのパラメーターに戻り値および in 引数を持つし、完了したときに、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityFunc の&lt;T1、T2、T3、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, TResult&gt;(class System.Activities.ActivityFunc`5&lt;!!T1, !!T2, !!T3, !!T4, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``5(System.Activities.ActivityFunc{``0,``1,``2,``3,``4},``0,``1,``2,``3,System.Activities.CompletionCallback{``4},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;、T1、T2、T3、T4 TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;、T1、T2、T3、T4 TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;、T1、T2、T3、T4 TResult&gt; 5 つのパラメーターに戻り値および in 引数を持つし、したときに、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。入力候補、ActivityFunc の&lt;、T1、T2、T3、T4 TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, TResult&gt;(class System.Activities.ActivityFunc`6&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``6(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5},``0,``1,``2,``3,``4,System.Activities.CompletionCallback{``5},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、TResult&gt; 6 つのパラメーターに戻り値および in 引数を持つし、したときに、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。入力候補、ActivityFunc の&lt;T1、T2、T3、T4、T5、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, TResult&gt;(class System.Activities.ActivityFunc`7&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``7(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6},``0,``1,``2,``3,``4,``5,System.Activities.CompletionCallback{``6},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、TResult&gt;です。</param>
+        <summary>指定した ActivityAction の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7&gt; in 引数を 7 個のパラメーターを持つし、完了すると、親プロセスが再開される場所の指定されたコールバック場所をブックマークしますActivityAction&lt;T1、T2、T3、T4、T5、T6、T7&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, TResult&gt;(class System.Activities.ActivityFunc`8&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``8(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7},``0,``1,``2,``3,``4,``5,``6,System.Activities.CompletionCallback{``7},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、TResult&gt; 8 個のパラメーターに戻り値および in 引数を持つし、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityFunc の完了時に&lt;T1、T2、T3、T4、T5、T6、T7、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, TResult&gt;(class System.Activities.ActivityFunc`9&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``9(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8},``0,``1,``2,``3,``4,``5,``6,``7,System.Activities.CompletionCallback{``8},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、TResult&gt; 9 個のパラメーターに戻り値および in 引数を持つし、親プロセスが再開される場所の指定されたコールバック場所をブックマークします。ActivityFunc の完了時に&lt;T1、T2、T3、T4、T5、T6、T7、T8、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, TResult&gt;(class System.Activities.ActivityFunc`10&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``10(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9},``0,``1,``2,``3,``4,``5,``6,``7,``8,System.Activities.CompletionCallback{``9},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、TResult&gt;親プロセスが再開される場所の指定されたコールバック場所を 10 個のパラメーターと引数やブックマークに戻り値を持つActivityFunc の完了時に&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, TResult&gt;(class System.Activities.ActivityFunc`11&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``11(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,System.Activities.CompletionCallback{``10},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、TResult&gt;に戻り値および in 引数を 11 個のパラメーターがあり、親プロセスが、指定されたコールバック場所をブックマークします。ActivityFunc の完了時に再開&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, TResult&gt;(class System.Activities.ActivityFunc`12&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``12(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,System.Activities.CompletionCallback{``11},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、TResult&gt; 12 個のパラメーターに戻り値および in 引数を持つ、指定されたコールバック場所をブックマークする場所、親処理、ActivityFunc の完了時に履歴書&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, TResult&gt;(class System.Activities.ActivityFunc`13&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``13(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,System.Activities.CompletionCallback{``12},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、TResult&gt; 13 個のパラメーターと引数やブックマークに戻り値を指定されたコールバック場所を持つ場所、ActivityFunc の完了時に親プロセスが再開&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, TResult&gt;(class System.Activities.ActivityFunc`14&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``14(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,System.Activities.CompletionCallback{``13},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、TResult&gt; 14 個のパラメーターに戻り値および in 引数を持つ、指定されたコールバック場所をブックマークする場所ActivityFunc の完了時に、親プロセスが再開&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, TResult&gt;(class System.Activities.ActivityFunc`15&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``15(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,System.Activities.CompletionCallback{``14},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、TResult&gt; 15 個のパラメーターに戻り値および in 引数を持つ、指定されたコールバック場所をブックマークします。ActivityFunc の完了時に、親プロセスが再開される場所&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, T15 argument15, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, TResult&gt;(class System.Activities.ActivityFunc`16&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14, !!T15, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, !!T15 argument15, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``16(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,System.Activities.CompletionCallback{``15},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+        <TypeParameter Name="T15" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="argument15" Type="T15" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T15">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="argument15">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、TResult&gt; 16 個のパラメーターに戻り値および in 引数を持つし、指定されたコールバックをブックマークします。場所、ActivityFunc の完了時に、親プロセスが再開される場所&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult&gt;">
+      <MemberSignature Language="C#" Value="public void ScheduleFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult&gt; (System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult&gt; activityFunc, T1 argument1, T2 argument2, T3 argument3, T4 argument4, T5 argument5, T6 argument6, T7 argument7, T8 argument8, T9 argument9, T10 argument10, T11 argument11, T12 argument12, T13 argument13, T14 argument14, T15 argument15, T16 argument16, System.Activities.CompletionCallback&lt;TResult&gt; onCompleted = null, System.Activities.FaultCallback onFaulted = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScheduleFunc&lt;T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, TResult&gt;(class System.Activities.ActivityFunc`17&lt;!!T1, !!T2, !!T3, !!T4, !!T5, !!T6, !!T7, !!T8, !!T9, !!T10, !!T11, !!T12, !!T13, !!T14, !!T15, !!T16, !!TResult&gt; activityFunc, !!T1 argument1, !!T2 argument2, !!T3 argument3, !!T4 argument4, !!T5 argument5, !!T6 argument6, !!T7 argument7, !!T8 argument8, !!T9 argument9, !!T10 argument10, !!T11 argument11, !!T12 argument12, !!T13 argument13, !!T14 argument14, !!T15 argument15, !!T16 argument16, class System.Activities.CompletionCallback`1&lt;!!TResult&gt; onCompleted, class System.Activities.FaultCallback onFaulted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.ScheduleFunc``17(System.Activities.ActivityFunc{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16},``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,System.Activities.CompletionCallback{``16},System.Activities.FaultCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T1" />
+        <TypeParameter Name="T2" />
+        <TypeParameter Name="T3" />
+        <TypeParameter Name="T4" />
+        <TypeParameter Name="T5" />
+        <TypeParameter Name="T6" />
+        <TypeParameter Name="T7" />
+        <TypeParameter Name="T8" />
+        <TypeParameter Name="T9" />
+        <TypeParameter Name="T10" />
+        <TypeParameter Name="T11" />
+        <TypeParameter Name="T12" />
+        <TypeParameter Name="T13" />
+        <TypeParameter Name="T14" />
+        <TypeParameter Name="T15" />
+        <TypeParameter Name="T16" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="activityFunc" Type="System.Activities.ActivityFunc&lt;T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult&gt;" />
+        <Parameter Name="argument1" Type="T1" />
+        <Parameter Name="argument2" Type="T2" />
+        <Parameter Name="argument3" Type="T3" />
+        <Parameter Name="argument4" Type="T4" />
+        <Parameter Name="argument5" Type="T5" />
+        <Parameter Name="argument6" Type="T6" />
+        <Parameter Name="argument7" Type="T7" />
+        <Parameter Name="argument8" Type="T8" />
+        <Parameter Name="argument9" Type="T9" />
+        <Parameter Name="argument10" Type="T10" />
+        <Parameter Name="argument11" Type="T11" />
+        <Parameter Name="argument12" Type="T12" />
+        <Parameter Name="argument13" Type="T13" />
+        <Parameter Name="argument14" Type="T14" />
+        <Parameter Name="argument15" Type="T15" />
+        <Parameter Name="argument16" Type="T16" />
+        <Parameter Name="onCompleted" Type="System.Activities.CompletionCallback&lt;TResult&gt;" />
+        <Parameter Name="onFaulted" Type="System.Activities.FaultCallback" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T1">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T2">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T3">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T4">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T5">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T6">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T7">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T8">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T9">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T10">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T11">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T12">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T13">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T14">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T15">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="T16">アクティビティに持ち込まれるデータ。</typeparam>
+        <typeparam name="TResult">Out 引数 NativeActivity の子アクティビティの型。</typeparam>
+        <param name="activityFunc">親アクティビティで特定のイベントが発生すると実行され値を返す子アクティビティ。</param>
+        <param name="argument1">データをアクティビティに持ち込む引数。</param>
+        <param name="argument2">データをアクティビティに持ち込む引数。</param>
+        <param name="argument3">データをアクティビティに持ち込む引数。</param>
+        <param name="argument4">データをアクティビティに持ち込む引数。</param>
+        <param name="argument5">データをアクティビティに持ち込む引数。</param>
+        <param name="argument6">データをアクティビティに持ち込む引数。</param>
+        <param name="argument7">データをアクティビティに持ち込む引数。</param>
+        <param name="argument8">データをアクティビティに持ち込む引数。</param>
+        <param name="argument9">データをアクティビティに持ち込む引数。</param>
+        <param name="argument10">データをアクティビティに持ち込む引数。</param>
+        <param name="argument11">データをアクティビティに持ち込む引数。</param>
+        <param name="argument12">データをアクティビティに持ち込む引数。</param>
+        <param name="argument13">データをアクティビティに持ち込む引数。</param>
+        <param name="argument14">データをアクティビティに持ち込む引数。</param>
+        <param name="argument15">データをアクティビティに持ち込む引数。</param>
+        <param name="argument16">データをアクティビティに持ち込む引数。</param>
+        <param name="onCompleted">ActivityFunc の完了時に、親アクティビティの実行が再開される場所を示すブックマーク&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16、TResult&gt;です。</param>
+        <param name="onFaulted">ブックマークを親アクティビティの実行が再開される場所を示す場合は、エラーが原因で、ActivityFunc の終了&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16、TResult&gt;です。</param>
+        <summary>指定した ActivityFunc の実行をスケジュール&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16、TResult&gt; 17 個のパラメーターに戻り値および in 引数を持つし、指定されたコールバックをブックマークします。場所、ActivityFunc の完了時に、親プロセスが再開される場所&lt;T1、T2、T3、T4、T5、T6、T7、T8、T9、T10、T11、t12 が同時、T13、T14、T15、T16、TResult&gt;です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (System.Activities.Argument argument, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(class System.Activities.Argument argument, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.SetValue(System.Activities.Argument,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.Activities.Argument" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="argument">新しい値を受け取る引数。</param>
+        <param name="value">引数の新しい値。</param>
+        <summary>指定された引数に値を割り当てます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (System.Activities.Variable variable, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(class System.Activities.Variable variable, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.SetValue(System.Activities.Variable,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="variable">値オブジェクトを割り当てることができる指定された型を持たない変数オブジェクト。</param>
+        <param name="value">変数オブジェクトに割り当てることができる指定された型を持たないオブジェクト。</param>
+        <summary>指定された変数オブジェクトに指定された値オブジェクトを割り当てます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void SetValue&lt;T&gt; (System.Activities.Variable&lt;T&gt; variable, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue&lt;T&gt;(class System.Activities.Variable`1&lt;!!T&gt; variable, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.NativeActivityUpdateContext.SetValue``1(System.Activities.Variable{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable&lt;T&gt;" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">変数の型。</typeparam>
+        <param name="variable">値オブジェクトを割り当てることができる指定された型を持つ変数オブジェクト。</param>
+        <param name="value">変数オブジェクトに割り当てることができる指定された型を持つオブジェクト。</param>
+        <summary>ジェネリック変数オブジェクトに指定されたジェネリック値オブジェクトを割り当てます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

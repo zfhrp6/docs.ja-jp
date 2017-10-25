@@ -1,0 +1,50 @@
+<Type Name="BindIPEndPoint" FullName="System.Net.BindIPEndPoint">
+  <TypeSignature Language="C#" Value="public delegate System.Net.IPEndPoint BindIPEndPoint(ServicePoint servicePoint, IPEndPoint remoteEndPoint, int retryCount);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BindIPEndPoint extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.BindIPEndPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.ServicePoint</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="servicePoint" Type="System.Net.ServicePoint" />
+    <Parameter Name="remoteEndPoint" Type="System.Net.IPEndPoint" />
+    <Parameter Name="retryCount" Type="System.Int32" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Net.IPEndPoint</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="servicePoint"><see cref="T:System.Net.ServicePoint" />作成への接続に関連付けられています。</param>
+    <param name="remoteEndPoint">リモート<see cref="T:System.Net.IPEndPoint" />リモート ホストを指定します。</param>
+    <param name="retryCount">指定された接続をこのデリゲートが呼び出された回数。</param>
+    <summary>ローカル インターネット プロトコル アドレスとポート番号を指定するメソッドを表します、<see cref="T:System.Net.ServicePoint" />です。</summary>
+    <returns>ローカル<see cref="T:System.Net.IPEndPoint" />先、<see cref="T:System.Net.ServicePoint" />がバインドされています。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する、<xref:System.Net.BindIPEndPoint>デリゲートを使用して、<xref:System.Net.ServicePoint>を設定して、<xref:System.Net.ServicePoint.BindIPEndPointDelegate%2A?displayProperty=nameWithType>を引数としてデリゲートを持つプロパティです。 このデリゲートは、返されるローカル IP アドレスとポート番号を指定する必要があります<xref:System.Net.IPEndPoint>です。  
+  
+ .NET Framework は、返されたバインドできない場合<xref:System.Net.IPEndPoint>を<xref:System.Net.ServicePoint>後<xref:System.Int32.MaxValue?displayProperty=nameWithType>しようとすると、<xref:System.OverflowException>がスローされます。  
+  
+ デリゲートを返す必要があるかどうかは、サービス ポイントを制御できるように、接続のバインドにデリゲート、`null`です。 接続を中止する場合は、デリゲートは例外をスローする必要があります。  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.OverflowException">
+      <paramref name="retryCount" />等しい<see cref="F:System.Int32.MaxValue" /></exception>
+  </Docs>
+</Type>

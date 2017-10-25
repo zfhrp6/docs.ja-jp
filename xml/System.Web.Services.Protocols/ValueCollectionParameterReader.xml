@@ -1,0 +1,179 @@
+<Type Name="ValueCollectionParameterReader" FullName="System.Web.Services.Protocols.ValueCollectionParameterReader">
+  <TypeSignature Language="C#" Value="public abstract class ValueCollectionParameterReader : System.Web.Services.Protocols.MimeParameterReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ValueCollectionParameterReader extends System.Web.Services.Protocols.MimeParameterReader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.ValueCollectionParameterReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.MimeParameterReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力方向の要求パラメーター SOAP ことがなく HTTP を使用して実装されている Web サービス用のリーダーの基本クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.ValueCollectionParameterReader>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。 <xref:System.Web.Services.Protocols.ValueCollectionParameterReader>クラスは、次の他のメソッドでは、一般的に使われる<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Read%2A>Web メソッドのパラメーターに名前/値のコレクションのすべてのサービス側リーダーのメソッドのペアします。 名前/値ペアは、受信 HTTP 要求から解析されています。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.ValueCollectionParameterReader>またはその派生クラスを直接です。 ASP.NET 構成ファイル (Web.config) の設定に従って、適切な型が使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ValueCollectionParameterReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.ValueCollectionParameterReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public override object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">初期化子を取得する Web メソッドを指定する <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> 。</param>
+        <summary>指定したメソッドの初期化子を返します。</summary>
+        <returns>A <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> Web メソッドを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクト、<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.GetInitializer%2A>メソッドは、<xref:System.Web.Services.Protocols.LogicalMethodInfo.InParameters%2A>のプロパティ、`methodinfo`パラメーター。 <xref:System.Web.Services.Protocols.LogicalMethodInfo.InParameters%2A>プロパティの値が型の配列<xref:System.Reflection.ParameterInfo>です。  
+  
+ <xref:System.Web.Services.Protocols.ValueCollectionParameterReader.GetInitializer%2A>サービスの初期化中にメソッドが呼び出されます。 後で、要求が処理される時点で、初期化子が渡されたオブジェクトを<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Initialize%2A>別のメソッド<xref:System.Web.Services.Protocols.ValueCollectionParameterReader>インスタンス。 その他のインスタンスでは、実際に読み込みを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">A<see cref="T:System.Reflection.ParameterInfo" />を通じて取得した、配列、<see cref="P:System.Web.Services.Protocols.LogicalMethodInfo.InParameters" />のプロパティ、<see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />クラスです。</param>
+        <summary>インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Initialize%2A>メソッドが要求の処理時に呼び出されます。  
+  
+ 入力パラメーター `o`、呼び出すことによって取得されて、<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.GetInitializer%2A>サービスの初期化中に別のインスタンス上のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported (System.Reflection.ParameterInfo paramInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSupported(class System.Reflection.ParameterInfo paramInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.IsSupported(System.Reflection.ParameterInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paramInfo" Type="System.Reflection.ParameterInfo" />
+      </Parameters>
+      <Docs>
+        <param name="paramInfo">A<see cref="T:System.Reflection.ParameterInfo" />を確認するパラメーターを指定します。</param>
+        <summary>特定のパラメーターの種類をサポートしているかどうかを判断、<see cref="T:System.Web.Services.Protocols.ValueCollectionParameterReader" />クラスです。</summary>
+        <returns>
+          <see langword="true" />メソッドのパラメーターの定義がリーダーでサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSupported(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.IsSupported(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">A<see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />を確認するメソッドを指定します。</param>
+        <summary>メソッド定義のパラメーターの定義がでサポートされているかどうかを判断、<see cref="T:System.Web.Services.Protocols.ValueCollectionParameterReader" />クラスです。</summary>
+        <returns>
+          <see langword="true" />メソッドのパラメーターの定義がリーダーでサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="protected object[] Read (System.Collections.Specialized.NameValueCollection collection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object[] Read(class System.Collections.Specialized.NameValueCollection collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.ValueCollectionParameterReader.Read(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="collection">A<see cref="T:System.Collections.Specialized.NameValueCollection" />コンテナーのメソッド パラメーター名と値のペアを名前/値のコレクションを指定するオブジェクト。</param>
+        <summary>メソッドのパラメーター値を表すオブジェクトの配列を名前/値ペアのコレクションを変換します。</summary>
+        <returns>配列<see cref="T:System.Object" />メソッドのパラメーター値を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Read%2A>メソッドによって呼び出されます、<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Read%2A>から派生した 2 つのクラスで定義されたメソッド<xref:System.Web.Services.Protocols.ValueCollectionParameterReader>、<xref:System.Web.Services.Protocols.UrlParameterReader>と<xref:System.Web.Services.Protocols.HtmlFormParameterReader>です。 これら 2 つのクラス<xref:System.Web.Services.Protocols.ValueCollectionParameterReader.Read%2A>メソッド、<xref:System.Web.HttpRequest>パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

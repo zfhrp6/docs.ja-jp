@@ -1,0 +1,97 @@
+<Type Name="IObjectReference" FullName="System.Runtime.Serialization.IObjectReference">
+  <TypeSignature Language="C#" Value="public interface IObjectReference" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IObjectReference" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.IObjectReference" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のインターフェイスの実装者が別のオブジェクトへの参照であることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[IObjectReference Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IObjectReference Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[IObjectReference Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IObjectReference Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[IObjectReference Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IObjectReference Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>現在のオブジェクトが完全に復元されるまでに解決できない別のオブジェクトへの参照であるオブジェクトのこのインターフェイスを実装します。 修正段階では、任意のオブジェクトを実装する<see cref="T:System.Runtime.Serialization.IObjectReference" />その実際のクエリが実行オブジェクトとそのオブジェクトは、グラフに挿入します。 フィックス アップは、既に完了していないオブジェクトの逆シリアル化プロセス中に参照を最終処理中のプロセスを指します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="GetRealObject">
+      <MemberSignature Language="C#" Value="public object GetRealObject (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetRealObject(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IObjectReference.GetRealObject(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />から現在のオブジェクトが逆シリアル化します。</param>
+        <summary>必要がありますを逆シリアル化、シリアル化ストリームを指定するオブジェクトではなく実際のオブジェクトを返します。</summary>
+        <returns>グラフに挿入されている実際のオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リモート処理の実際のオブジェクトではなく、プロキシ作成者オブジェクトをシリアル化する場合に役立ちます。 シリアル化解除の呼び出しをプロキシ作成オブジェクトが逆シリアル化されると、その<xref:System.Runtime.Serialization.IObjectReference.GetRealObject%2A>メソッドです。 この時点では、プロキシ作成オブジェクトでは、リモート コンピューター上で、元実際のオブジェクトを逆参照するプロキシ オブジェクトの新しいインスタンスを作成します。 最後に、プロキシ作成オブジェクトが破棄され、後でガベージ コレクションによるクリアします。  
+  
+ たとえば、どのように<xref:System.Type>オブジェクトはシリアル化します。 データを転送するのではなく、<xref:System.Type>オブジェクトをシステムで実装するオブジェクトが見つかりましたが、アセンブリに関する情報、型のオブジェクトの名前を持つ所有者オブジェクトの転送<xref:System.Runtime.Serialization.IObjectReference>です。 型名とアセンブリ名の両方が使用できる場合は、逆シリアル化インフラストラクチャが呼び出し<xref:System.Runtime.Serialization.IObjectReference.GetRealObject%2A>が送信された所有者オブジェクトにします。 この所有者を返します、<xref:System.Type>グラフに挿入するオブジェクト。  
+  
+ このメソッドは、によって保護されている、<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>の<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>指定します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IObjectReference Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IObjectReference Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[IObjectReference Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IObjectReference Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[IObjectReference Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IObjectReference Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。 中程度の信頼されたサーバーでは、呼び出しが行われません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

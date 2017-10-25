@@ -1,0 +1,304 @@
+<Type Name="BitmapCacheBrush" FullName="System.Windows.Media.BitmapCacheBrush">
+  <TypeSignature Language="C#" Value="public sealed class BitmapCacheBrush : System.Windows.Media.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BitmapCacheBrush extends System.Windows.Media.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.BitmapCacheBrush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュされたコンテンツを使用して領域を描画します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.BitmapCacheBrush>を効率的にキャッシュされた要素を再利用するクラス。 これは、複合コンテンツを複数の要素を描画する必要がある場合に便利です。 使用して、<xref:System.Windows.Media.BitmapCache>複合型の要素をキャッシュするクラス。  
+  
+ 割り当てる、<xref:System.Windows.Media.Visual>を<xref:System.Windows.Media.BitmapCacheBrush.Target%2A>プロパティ オプションで割り当てると、<xref:System.Windows.Media.BitmapCache>を<xref:System.Windows.Media.BitmapCacheBrush.BitmapCache%2A>プロパティです。 <xref:System.Windows.Media.CacheMode>ブラシおよびターゲットの<xref:System.Windows.Media.Visual>異なる動作を生成するために対話します。 次の表では、この相互作用について説明します。  
+  
+||ターゲットには、CacheMode がないです。|ターゲット CacheMode があります。|  
+|-|-----------------------------|--------------------------|  
+|ブラシには、CacheMode がありません。|ビジュアルのレンダリングを通常; ターゲットします。ブラシは、既定のキャッシュ動作を使用します。|ターゲット ビジュアルは、独自のキャッシュを表示します。ブラシは、表示するときに、ターゲットのキャッシュを使用します。|  
+|ブラシが CacheMode|ビジュアルのレンダリングを通常; ターゲットします。ブラシは、独自のキャッシュにターゲットをレンダリングし、これを表示するために使用します。|ターゲット ビジュアルは、独自のキャッシュを表示します。ブラシはブラシのキャッシュにターゲットをレンダリングし、これを表示するために使用します。|  
+  
+ <xref:System.Windows.Media.BitmapCacheBrush>クラスがに似ていますが、<xref:System.Windows.Media.VisualBrush>クラスが<xref:System.Windows.Media.BitmapCacheBrush>対象要素のキャッシュからまたはによって定義されたキャッシュは常に表示、<xref:System.Windows.Media.BitmapCacheBrush.BitmapCache%2A>プロパティです。 <xref:System.Windows.Media.BitmapCacheBrush>クラスには、ダーティ領域もサポートしています。  
+  
+ 次の表は、既定のビットマップのキャッシュの設定、<xref:System.Windows.Media.BitmapCacheBrush>クラスです。  
+  
+|ビットマップのキャッシュ プロパティ|既定の設定|  
+|---------------------------|---------------------|  
+|<xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>|`false`|  
+|<xref:System.Windows.Media.BitmapCache.EnableClearType%2A>|`false`|  
+|<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>|1|  
+  
+ <xref:System.Windows.Media.BitmapCache.SnapsToDevicePixels%2A>プロパティは、<xref:System.Windows.Media.BitmapCacheBrush>クラスです。  
+  
+ <xref:System.Windows.Media.BitmapCacheBrush>クラスは、ルートで、次のプロパティを無視<xref:System.Windows.Media.Visual>です。 この動作は、<xref:System.Windows.Media.VisualBrush>クラスです。  
+  
+-   <xref:System.Windows.Media.Visual.VisualOffset%2A>  
+  
+-   <xref:System.Windows.Media.Visual.VisualTransform%2A>  
+  
+-   <xref:System.Windows.Media.Visual.VisualClip%2A>  
+  
+-   <xref:System.Windows.Media.Visual.VisualEffect%2A>  
+  
+-   <xref:System.Windows.Media.Visual.VisualOpacity%2A>  
+  
+-   <xref:System.Windows.Media.Visual.VisualOpacityMask%2A>  
+  
+   
+  
+## Examples  
+ 次のコード例に関連付ける方法を示しています、<xref:System.Windows.Media.BitmapCache>で、<xref:System.Windows.Media.BitmapCacheBrush>です。 使用することができます、<xref:System.Windows.Media.BitmapCacheBrush>リソースを複数の要素に良好なパフォーマンスを実現します。 完全なコード リストを参照してください。[する方法: キャッシュされた要素を使用して、ブラシとして](~/docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)です。  
+  
+ [!code-xaml[System.Windows.Media.BitmapCacheBrush#_BitmapCacheBrushCreation](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcachebrush/cs/window1.xaml#_bitmapcachebrushcreation)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapCacheBrush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.BitmapCacheBrush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapCacheBrush (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.#ctor(System.Windows.Media.Visual)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">A<see cref="T:System.Windows.Media.Visual" />キャッシュとして使用して、<see cref="P:System.Windows.Media.BitmapCacheBrush.Target" />です。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.BitmapCacheBrush" /> を使用して、<see cref="T:System.Windows.Media.Visual" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoLayoutContent">
+      <MemberSignature Language="C#" Value="public bool AutoLayoutContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoLayoutContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCacheBrush.AutoLayoutContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレイアウトがこのブラシの内容に適用されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />レイアウトが適用される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Media.BitmapCacheBrush.AutoLayoutContent%2A>プロパティは`true`、レイアウトに適用されたブラシのコンテンツ<xref:System.Windows.Media.BitmapCacheBrush.Target%2A>は、<xref:System.Windows.UIElement>親のないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoLayoutContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AutoLayoutContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AutoLayoutContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCacheBrush.AutoLayoutContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCacheBrush.AutoLayoutContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapCache">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BitmapCache BitmapCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.BitmapCache BitmapCache" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCacheBrush.BitmapCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BitmapCache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.CacheMode" />キャッシュされたコンテンツを表すです。</summary>
+        <value>A<see cref="T:System.Windows.Media.BitmapCache" />キャッシュされたコンテンツを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.BitmapCacheBrush.BitmapCache%2A>プロパティの対話、<xref:System.Windows.Media.BitmapCacheBrush.Target%2A>プロパティです。 この対話を示す表を参照してください、<xref:System.Windows.Media.BitmapCacheBrush>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapCacheProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BitmapCacheProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BitmapCacheProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCacheBrush.BitmapCacheProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCacheBrush.BitmapCache" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BitmapCacheBrush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BitmapCacheBrush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BitmapCacheBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.BitmapCacheBrush" /> の変更可能な複製を作成し、オブジェクトの値の詳細コピーを作成します。 このメソッドは、オブジェクトの依存関係プロパティをコピーするときに式をコピーしますが (コピーされた式は解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BitmapCacheBrush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BitmapCacheBrush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BitmapCacheBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更可能な複製 (詳細コピー) を作成、<see cref="T:System.Windows.Media.BitmapCacheBrush" />その現在の値を使用します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BitmapCacheBrush.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual Target" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BitmapCacheBrush.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ターゲット ビジュアル キャッシュします。</summary>
+        <value>A<see cref="T:System.Windows.Media.Visual" />をキャッシュしで描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.BitmapCacheBrush.Target%2A>プロパティの対話、<xref:System.Windows.Media.BitmapCacheBrush.BitmapCache%2A>プロパティです。 この対話を示す表を参照してください、<xref:System.Windows.Media.BitmapCacheBrush>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BitmapCacheBrush.TargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BitmapCacheBrush.Target" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,62 @@
+<Type Name="ConflictStatus" FullName="System.Printing.ConflictStatus">
+  <TypeSignature Language="C#" Value="public enum ConflictStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConflictStatus extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.ConflictStatus" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>変更されたかどうかを指定します。 マージする<see cref="T:System.Printing.PrintTicket" />、実行可能なことを確認する<see cref="T:System.Printing.PrintTicket" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドは、2 つのマージ<xref:System.Printing.PrintTicket>オブジェクト、初期の印刷チケットは、プリンターがサポートしていない印刷機能を要求可能性があります。 このような場合は、プリンター ドライバーは、最後の印刷チケットが有効なことを確認する非実行可能な設定を変更します。 <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドはこの列挙体を使用して、実行可能な印刷チケットをことを確認するために変更があったかどうかを報告します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConflictResolved">
+      <MemberSignature Language="C#" Value="ConflictResolved" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.ConflictStatus ConflictResolved = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.ConflictStatus.ConflictResolved" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.ConflictStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数の競合が検出された、すべての競合が解決されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoConflict">
+      <MemberSignature Language="C#" Value="NoConflict" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.ConflictStatus NoConflict = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.ConflictStatus.NoConflict" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.ConflictStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期のマージされた印刷チケットおよび関数がサポートされているプリンターの間の競合は見つかりませんでした。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,541 @@
+<Type Name="ImmutableList" FullName="System.Collections.Immutable.ImmutableList">
+  <TypeSignature Language="C#" Value="public static class ImmutableList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ImmutableList extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Immutable.ImmutableList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Immutable</AssemblyName>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Collections.Immutable.ImmutableList`1" /> クラスのインスタンスの一連の初期化メソッドを提供します。  
+  
+ [!INCLUDE[immutable_nuget_short](~/includes/immutable-nuget-short-md.md)]</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;T&gt; Create&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1&lt;!!T&gt; Create&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.Create``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">リストに格納する項目の型。</typeparam>
+        <summary>空の変更できないリストを作成します。</summary>
+        <returns>空のリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;T&gt; Create&lt;T&gt; (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1&lt;!!T&gt; Create&lt;T&gt;(!!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.Create``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="item">リストに事前に設定する項目。</param>
+        <summary>指定された項目を含む、新しい変更できないリストを作成します。</summary>
+        <returns>指定した項目を含む、新しい変更できないリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;T&gt; Create&lt;T&gt; (params T[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1&lt;!!T&gt; Create&lt;T&gt;(!!T[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.Create``1(``0[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="T[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="items">リストに事前に設定する項目を格納している配列。</param>
+        <summary>指定された項目の配列を含む、新しい変更できないリストを作成します。</summary>
+        <returns>指定された項目を含む、新しい変更できないリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;T&gt;.Builder CreateBuilder&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1/Builder&lt;!!T&gt; CreateBuilder&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.CreateBuilder``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;T&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">コレクションによって格納される項目の型。</typeparam>
+        <summary>新しい変更できないリスト ビルダーを作成します。</summary>
+        <returns>変更できないコレクション ビルダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;T&gt; CreateRange&lt;T&gt; (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1&lt;!!T&gt; CreateRange&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.CreateRange``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="items">リストに追加する項目。</param>
+        <summary>指定された項目を含む、新しい変更できないリストを作成します。</summary>
+        <returns>指定された項目を含む、変更できないリストを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int IndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 IndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">リスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <summary>リスト内で指定したオブジェクトを検索し、最初に見つかったオブジェクトの 0 から始まるインデックスを返します。</summary>
+        <returns>リストで、インデックスから最後の要素までの要素範囲内で項目が見つかった場合は、最初に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int IndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, System.Collections.Generic.IEqualityComparer&lt;T&gt; equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 IndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, class System.Collections.Generic.IEqualityComparer`1&lt;!!T&gt; equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="equalityComparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="equalityComparer">検索に使用する等値比較子。</param>
+        <summary>リスト内で指定したオブジェクトを検索し、最初に見つかったオブジェクトの 0 から始まるインデックスを返します。</summary>
+        <returns>変更できないリストで、インデックスから最後の要素までの要素範囲内で項目が見つかった場合は、最初に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int IndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 IndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="startIndex">検索の開始位置を示す 0 から始まるインデックス。 空のリストでは 0 (ゼロ) は正しい値です。</param>
+        <summary>変更できないリストのうち、指定したインデックスから最後の要素までの要素範囲の中から、指定したオブジェクトを検索し、最初に出現する位置の 0 から始まるインデックス番号を返します。</summary>
+        <returns>変更できないリストで、インデックスから最後の要素までの要素範囲内で項目が見つかった場合は、最初に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int IndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 IndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.IndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="startIndex">検索の開始位置を示す 0 から始まるインデックス。 空のリストでは 0 (ゼロ) は正しい値です。</param>
+        <param name="count">検索対象の範囲内にある要素の数。</param>
+        <summary>変更できないリストのうち、指定したインデックスから最後の要素までの要素範囲の中から、指定したオブジェクトを検索し、最初に出現する位置の 0 から始まるインデックス番号を返します。</summary>
+        <returns>変更できないリストで、インデックスから最後の要素までの要素範囲内で項目が見つかった場合は、最初に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastIndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int LastIndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 LastIndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <summary>変更できないリスト全体から、指定したオブジェクトを検索し、最後に見つかったオブジェクトの 0 から始まるインデックスを返します。</summary>
+        <returns>変更できないリスト全体で項目を検索し、見つかった場合は、インデックス番号の最も大きい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastIndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int LastIndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, System.Collections.Generic.IEqualityComparer&lt;T&gt; equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 LastIndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, class System.Collections.Generic.IEqualityComparer`1&lt;!!T&gt; equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="equalityComparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="equalityComparer">検索に使用する等値比較子。</param>
+        <summary>変更できないリスト全体から、指定したオブジェクトを検索し、最後に見つかったオブジェクトの 0 から始まるインデックスを返します。</summary>
+        <returns>変更できないリスト全体で項目を検索し、見つかった場合は、インデックス番号の最も大きい要素の 0 から始まるインデックス番号、それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastIndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int LastIndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 LastIndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="startIndex">後方検索の開始位置を示す 0 から始まるインデックス。</param>
+        <summary>変更できないリストのうち、最初の要素から指定したインデックスまでの要素範囲の中で、指定したオブジェクトを検索し、最後に出現する位置の 0 から始まるインデックス番号を返します。</summary>
+        <returns>変更できないリストのうち、最初の要素からインデックスまでの要素範囲内で項目が見つかった場合は、最後に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastIndexOf&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int LastIndexOf&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T item, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 LastIndexOf&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T item, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.LastIndexOf``1(System.Collections.Immutable.IImmutableList{``0},``0,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="item" Type="T" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="item">変更できないリスト内で検索するオブジェクト。 参照型の場合は、値を null にできます。</param>
+        <param name="startIndex">後方検索の開始位置を示す 0 から始まるインデックス。</param>
+        <param name="count">検索対象の範囲内にある要素の数。</param>
+        <summary>変更できないリストのうち、最初の要素から指定したインデックスまでの要素範囲の中で、指定したオブジェクトを検索し、最後に出現する位置の 0 から始まるインデックス番号を返します。</summary>
+        <returns>変更できないリストのうち、最初の要素からインデックスまでの要素範囲内で項目が見つかった場合は、最後に見つかった位置の 0 から始まるインデックス番号。それ以外の場合は -1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.IImmutableList&lt;T&gt; Remove&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; Remove&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.Remove``1(System.Collections.Immutable.IImmutableList{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.IImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="value">削除する値。</param>
+        <summary>指定した値をこのリストから削除します。</summary>
+        <returns>要素が削除された、新しい変更できないリスト。このリスト内に要素がない場合は、このリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.IImmutableList&lt;T&gt; RemoveRange&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; RemoveRange&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.RemoveRange``1(System.Collections.Immutable.IImmutableList{``0},System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.IImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="items">このリストに一致するものが見つかった場合に削除する項目。</param>
+        <summary>指定した値をこのリストから削除します。</summary>
+        <returns>要素が削除された新しい変更できないリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.IImmutableList&lt;T&gt; Replace&lt;T&gt; (this System.Collections.Immutable.IImmutableList&lt;T&gt; list, T oldValue, T newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; Replace&lt;T&gt;(class System.Collections.Immutable.IImmutableList`1&lt;!!T&gt; list, !!T oldValue, !!T newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.Replace``1(System.Collections.Immutable.IImmutableList{``0},``0,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.IImmutableList&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Immutable.IImmutableList&lt;T&gt;" RefType="this" />
+        <Parameter Name="oldValue" Type="T" />
+        <Parameter Name="newValue" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">リスト内の項目の型。</typeparam>
+        <param name="list">検索するリスト。</param>
+        <param name="oldValue">置換する要素。</param>
+        <param name="newValue">古い要素を置換する要素。</param>
+        <summary>リスト内で最初に一致する要素を、指定した要素に置換します。</summary>
+        <returns>新しいリスト (置き換えられる値がその位置の新しい値と同じ場合も)。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">古い値が一覧に存在しない場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableList&lt;TSource&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableList&lt;TSource&gt; ToImmutableList&lt;TSource&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableList`1&lt;!!TSource&gt; ToImmutableList&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableList.ToImmutableList``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableList&lt;TSource&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="source" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">シーケンス内の要素の型。</typeparam>
+        <param name="source">列挙するシーケンス。</param>
+        <summary>シーケンスを列挙し、その内容の変更できないリストを生成します。</summary>
+        <returns>指定されたシーケンス内の項目を含む、変更できないリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

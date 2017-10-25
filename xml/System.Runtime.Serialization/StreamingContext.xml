@@ -1,0 +1,275 @@
+<Type Name="StreamingContext" FullName="System.Runtime.Serialization.StreamingContext">
+  <TypeSignature Language="C#" Value="public struct StreamingContext" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit StreamingContext extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.StreamingContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シリアル化された指定のストリームのソースと宛先を記述し、呼び出し元が定義した追加のコンテキストを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信元または送信先のフォーマッタを使用するビットのことを示します。 サロゲートまたは実装するクラス<xref:System.Runtime.Serialization.ISerializable>シリアル化またはフィールドとストリーム コンテキストに格納されている情報に基づいて値を無視することができます。 たとえば、ウィンドウ ハンドルがまだ有効場合、<xref:System.Runtime.Serialization.StreamingContext.State%2A>プロパティに設定されている`System.Runtime.Serialization.StreamingContextStates.CrossProcess`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Runtime.Serialization.StreamingContext>構造体。  
+  
+ [!code-csharp[StreamingContext Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/StreamingContext Example/CS/streamingcontext.cs#1)]
+ [!code-vb[StreamingContext Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/StreamingContext Example/VB/streamingcontext.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamingContext (System.Runtime.Serialization.StreamingContextStates state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Serialization.StreamingContextStates state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.StreamingContext.#ctor(System.Runtime.Serialization.StreamingContextStates)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Runtime.Serialization.StreamingContextStates" />
+      </Parameters>
+      <Docs>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Runtime.Serialization.StreamingContextStates" />これの送信元または送信先のコンテキストを指定する値<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Serialization.StreamingContext" />クラスと特定のコンテキスト状態。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamingContext (System.Runtime.Serialization.StreamingContextStates state, object additional);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Serialization.StreamingContextStates state, object additional) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.StreamingContext.#ctor(System.Runtime.Serialization.StreamingContextStates,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Runtime.Serialization.StreamingContextStates" />
+        <Parameter Name="additional" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Runtime.Serialization.StreamingContextStates" />これの送信元または送信先のコンテキストを指定する値<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</param>
+        <param name="additional">追加情報に関連付けられる、<see cref="T:System.Runtime.Serialization.StreamingContext" />です。 この情報を実装する任意のオブジェクトで使用できる<see cref="T:System.Runtime.Serialization.ISerializable" />または任意のシリアル化サロゲート。 ほとんどのユーザーは、このパラメーターを設定する必要はありません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Serialization.StreamingContext" />特定のコンテキスト状態、およびいくつかの情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成する、<xref:System.Runtime.Serialization.StreamingContext>クラスを使用して、`state`と`additional`パラメーター。  
+  
+ [!code-csharp[StreamingContext_Context#0](~/samples/snippets/csharp/VS_Snippets_Remoting/StreamingContext_Context/CS/StreamingContext_Context.cs#0)]
+ [!code-vb[StreamingContext_Context#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/StreamingContext_Context/VB/StreamingContext_Context.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public object Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Context" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.StreamingContext.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加のコンテキストの一部として指定されたコンテキストを取得します。</summary>
+        <value>追加のコンテキストの一部として指定されたコンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定できます`null`です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する、<xref:System.Runtime.Serialization.StreamingContext>クラスを使用して、`state`と`additional`パラメーター。 コードでは、値を取得して、オブジェクトの逆シリアル化も示しています、<xref:System.Runtime.Serialization.StreamingContext.Context%2A>プロパティです。  
+  
+ [!code-csharp[StreamingContext_Context#0](~/samples/snippets/csharp/VS_Snippets_Remoting/StreamingContext_Context/CS/StreamingContext_Context.cs#0)]
+ [!code-vb[StreamingContext_Context#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/StreamingContext_Context/VB/StreamingContext_Context.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.StreamingContext.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Runtime.Serialization.StreamingContext" />インスタンスが同じ値を含んでいます。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがのインスタンスの場合<see cref="T:System.Runtime.Serialization.StreamingContext" />、現在のインスタンスの値に等しいと、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのコード グループは、それらが同じである場合に等価<xref:System.Runtime.Serialization.StreamingContext.Context%2A>と<xref:System.Runtime.Serialization.StreamingContext.State%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.StreamingContext.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns><see cref="T:System.Runtime.Serialization.StreamingContextStates" />ソースまたはこのシリアル化先を含む値<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.StreamingContextStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContextStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.StreamingContext.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.StreamingContextStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>転送元または転送されるデータのコピー先を取得します。</summary>
+        <value>シリアル化で送信されるデータのコピー先です。 シリアル化解除は、データのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化では、現在のプロパティは、送信されるデータのコピー先を指定します。 たとえば、AppDomain 間のリモート処理からデータをシリアル化するとき、<xref:System.Runtime.Serialization.StreamingContextStates>は<xref:System.Runtime.Serialization.StreamingContextStates.CrossProcess>します。 逆シリアル化中には、状態は、逆シリアル化されたストリームのソースを示します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[StreamingContext Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/StreamingContext Example/CS/streamingcontext.cs#1)]
+ [!code-vb[StreamingContext Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/StreamingContext Example/VB/streamingcontext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

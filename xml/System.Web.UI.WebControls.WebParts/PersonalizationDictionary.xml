@@ -1,0 +1,700 @@
+<Type Name="PersonalizationDictionary" FullName="System.Web.UI.WebControls.WebParts.PersonalizationDictionary">
+  <TypeSignature Language="C#" Value="public class PersonalizationDictionary : System.Collections.IDictionary" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PersonalizationDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>かどうかのカスタム データはいずれかでパーソナライズできると見なすを示す基本的な検証規則をカプセル化<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />または<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" />スコープ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>インスタンスのコレクションは、<xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry>パーソナル化スコープとオブジェクトの値で構成されたオブジェクト。 これらのエントリには、内のキーが割り当てられて、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>オブジェクト。  
+  
+ お勧めするディクショナリを使用して、すべてのプロパティを追加する、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>ページのスコープに関係なく、メソッドです。 .NET Framework は、適切な方法で情報を保存します。ページが、するときに共有データを保存するなど、<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ。 ただし、Web パーツの値が保存されているときに、共有のプロパティは保存されませんが、ページが<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ、および<xref:System.Web.UI.WebControls.WebParts.WebPart>内のページで、コントロールが追加された<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空のディクショナリを初期化します。 ディクショナリでは、キーの値を大文字として扱います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationDictionary (int initialSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialSize">ディクショナリに格納されるエントリの推定数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスの指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空のディクショナリに格納するエントリの推定数に基づいてディクショナリを初期化します。 ディクショナリでは、キーの値を大文字として扱います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (string key, System.Web.UI.WebControls.WebParts.PersonalizationEntry value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(string key, class System.Web.UI.WebControls.WebParts.PersonalizationEntry value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Add(System.String,System.Web.UI.WebControls.WebParts.PersonalizationEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.PersonalizationEntry" />
+      </Parameters>
+      <Docs>
+        <param name="key">特定の状態情報の一意の識別子。</param>
+        <param name="value">パーソナル化ディクショナリに追加される状態情報の一部です。 この値は、<see langword="null" /> の場合もあります。</param>
+        <summary>パーソナル化ディクショナリにパーソナル化エントリを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、状態オブジェクトにカスタム状態情報のさまざまな部分を配置し、状態の値に関連付けられているスコープを指定できます。 ときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ、いずれかに関連付けられている名前と状態の情報を追加することができます<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープまたは<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ。 <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープのみに関連付けられている名前と状態の情報を追加することができます<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ。  
+  
+ お勧め、ただし、ディクショナリを使用するすべてのプロパティを追加する<xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save%2A>でプロパティを含む<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>または<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>ページのスコープに関係なく、スコープ。  
+  
+ .NET Framework でこれらのプロパティのみが保存<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープの該当する場合。 つまり、共有のプロパティも保存されません、<xref:System.Web.UI.WebControls.WebParts.WebPart>で最初に追加されたコントロール<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>中は、ページに後で、スコープが保存<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ。 反対側のシナリオの場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>内のページに追加したコントロール<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>スコープ、およびコントロールは、後で保存中にページ<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>スコープ、カスタム共有プロパティの値は、(カスタム ユーザー スコープのプロパティ) と共に保存されます。 パーソナル化データの詳細と共有する方法とユーザー スコープのプロパティは、ページのパーソナル化スコープに影響されますを参照してください、 [Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)トピックです。  
+  
+ 同様に、どのコレクションには、このメソッドは、いずれかによってコレクションのカウントをインクリメントおよびコレクション上で現在アクティブな列挙子が無効にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" />既にディクショナリ内のキーの複製です。  
+  
+ \- または  
+  
+ <paramref name="key" />空の文字列であるか、("") またはトリミング<paramref name="key" />空の文字列になります。  
+  
+ \- または  
+  
+ <paramref name="value" /> が <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のすべてのカスタム状態情報を削除<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のすべてのカスタム状態情報をクリア<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>オブジェクト。 コレクションに対して現在アクティブな列挙子が無効にする必要があります。 パーソナル化ディクショナリに特定のパーソナル化エントリのみを削除するには、使用、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Remove%2A>メソッドです。  
+  
+ 空のパーソナル化辞書でこのメソッドを呼び出してもエラーは発生しませんに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キーの値。</param>
+        <summary>パーソナル化ディクショナリ内の同じキーを持つカスタム状態情報が含まれているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定されたキー、パーソナル化ディクショナリのキーに一致する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化ディクショナリに特定のカスタム状態情報が含まれているかどうかを決定するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" />空の文字列であるか、("")、またはトリミング<paramref name="key" />空の文字列になります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public virtual void CopyTo (System.Collections.DictionaryEntry[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(valuetype System.Collections.DictionaryEntry[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.DictionaryEntry[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列、<see cref="T:System.Collections.DictionaryEntry" />インスタンスにコピーします。</param>
+        <param name="index">コピーを開始するインデックスの位置。</param>
+        <summary>エントリをコピー、パーソナル化ディクショナリ状態として<see cref="T:System.Collections.DictionaryEntry" />インスタンスを指定した配列にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列を作成するには、このメソッドを使用して<xref:System.Collections.DictionaryEntry>パーソナル化ディクショナリ内の状態のエントリからインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ \- または  
+  
+ <paramref name="array" />間違ったサイズに基づいて、<paramref name="index" />パラメーター。  
+  
+ \- または  
+  
+ <paramref name="array" />値を保持するのに十分な容量は、パーソナル化ディクショナリに含まれます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディクショナリ内のエントリの数を取得します。</summary>
+        <value>ディクショナリ内のエントリの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、パーソナル化ディクショナリ内のエントリの数を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パーソナル化ディクショナリ内のエントリを反復処理に使用できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" />のパーソナル化ディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子はコレクションでは、データの読み取りに使用できますが、基になるコレクションを変更するのには使用できません。 列挙子の詳細については、次を参照してください。、<xref:System.Collections.IEnumerator>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public virtual bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化ディクショナリが固定サイズかどうかを取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`パーソナル化ディクショナリは固定サイズではないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化ディクショナリが読み取り専用であるかどうかを取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`パーソナル化ディクショナリが読み取り専用ではないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public virtual bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化ディクショナリが同期されているかどうかを取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`パーソナル化ディクショナリが同期されていないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.PersonalizationEntry this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.PersonalizationEntry Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得または変更エントリのキー。</param>
+        <summary>取得またはパーソナル化ディクショナリ内のエントリを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />で識別されるカスタムのパーソナル化情報を表す、<paramref name="key" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが連動、<xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry>によって識別されるカスタムのパーソナル化情報を表すオブジェクト、`key`パラメーター。 値がない場合`key`、`null`が返されます。  
+  
+ 場合`key`が既に存在しない、 `key` (とその関連付けられた値) をディクショナリに追加されます。  
+  
+ Null 値を追加するには、ディクショナリに、インデクサーを使用して、個人用設定の値を更新することもすることに注意してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" />空の文字列であるか、("")、またはトリミング<paramref name="key" />空の文字列になります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Collections.ICollection" />ディクショナリのキーの個人用設定を含むオブジェクト。</summary>
+        <value><see cref="T:System.Collections.ICollection" />パーソナル化ディクショナリのキーを保持します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、パーソナル化ディクショナリのキーを取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するエントリのキー。</param>
+        <summary>指定されたキーに基づくカスタム状態エントリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部的には、カスタム状態エントリを削除するときにパーソナル化ディクショナリの数は 1 だけデクリメントします。 ディクショナリに対して現在アクティブな列挙子が無効にする必要があります。  
+  
+ 存在しないキーを削除しようとする場合は、エラーは発生しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" />空の文字列であるか、("")、またはトリミング<paramref name="key" />空の文字列になります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public virtual object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化ディクショナリへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>パーソナル化ディクショナリへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になっているストアがパブリックではないコレクションの場合、現在のインスタンスを返す実装が要求されます。 現在のインスタンスへのポインターできないことがあります。 その他のコレクションをラップするコレクションには十分に注意してください。基になるコレクションを返す必要があります、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.SyncRoot%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />の<see cref="T:System.Collections.DictionaryEntry" />にコピーするアイテム、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />です。</param>
+        <param name="index">内の開始点、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />を挿入する位置を示す<c>配列</c>です。</param>
+        <summary>実装して、<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />のメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.CopyTo%2A>メソッドを確認するかどうか`array`の配列は、<xref:System.Collections.DictionaryEntry>項目、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.CopyTo%2A>に渡して、メソッド`array`と`index`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />配列ではありません<see cref="T:System.Collections.DictionaryEntry" />項目。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Add">
+      <MemberSignature Language="C#" Value="void IDictionary.Add (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IDictionary.Add(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#IDictionary#Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.String" />パーソナル化ディクショナリ内の項目のキーとして使用します。</param>
+        <param name="value"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />パーソナル化ディクショナリに追加します。</param>
+        <summary>実装して、<see cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" />のメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Add%2A>メソッドはチェックの有効性を確保するためのいくつか詳細`value`と`key`パーソナル化ディクショナリに追加する前にします。 メソッドを呼び出すのチェックが成功した場合は、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Add%2A>に渡して、メソッド、`key`と`value`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" /> は <see cref="T:System.String" /> オブジェクトではありません。  
+  
+ \- または  
+  
+ <paramref name="value" /> は <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Contains">
+      <MemberSignature Language="C#" Value="bool IDictionary.Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IDictionary.Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#IDictionary#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">A<see cref="T:System.String" />オブジェクトを特定の識別<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />のパーソナル化ディクショナリの有無を確認します。</param>
+        <summary>実装して、<see cref="M:System.Collections.IDictionary.Contains(System.Object)" />のメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="key" />、パーソナル化ディクショナリ内に存在する場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Contains%2A>メソッド チェック`key`に渡す場合で、パーソナル化辞書のチェックの有効なオブジェクトがあることを確認する、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Contains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" /> が <see cref="T:System.String" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IDictionary.Item[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IDictionary.Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#IDictionary#Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">A<see cref="T:System.String" />特定を識別する<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />パーソナル化ディクショナリ内のオブジェクト。</param>
+        <summary>取得または設定、<see cref="P:System.Collections.IDictionary.Item(System.Object)" />のプロパティの値、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />オブジェクトの値と一致する<paramref name="key" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Item%2A>最初確実に`key`は、<xref:System.String>オブジェクト、そのため、アプリケーションが呼び出した場合と、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Item%2A>返されるプロパティを<xref:System.Web.UI.WebControls.WebParts.PersonalizationEntry>キーを持つと等しい`key`現在ディクショナリ内の。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" /> は <see cref="T:System.String" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Remove">
+      <MemberSignature Language="C#" Value="void IDictionary.Remove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IDictionary.Remove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#IDictionary#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">A<see cref="T:System.String" />特定を識別する<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationEntry" />パーソナル化ディクショナリから削除するオブジェクト。</param>
+        <summary>実装して、<see cref="M:System.Collections.IDictionary.Remove(System.Object)" />のメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Remove%2A>メソッド チェックかどうか`key`は、<xref:System.String>オブジェクト、そのため、アプリケーションが呼び出した場合と、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Remove%2A>渡してメソッドを`key`にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" /> が <see cref="T:System.String" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装して、<see cref="M:System.Collections.IEnumerable.GetEnumerator" />のメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationDictionary" />クラスです。</summary>
+        <returns>インスタンス<see cref="T:System.Collections.IEnumerator" />パーソナル化ディクショナリ内の項目を列挙します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.GetEnumerator%2A>メソッドを直接呼び出す、<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary>クラスの<xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Collections.ICollection" />パーソナル化ディクショナリの値を含むオブジェクト。</summary>
+        <value><see cref="T:System.Collections.ICollection" />パーソナル化ディクショナリの値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化ディクショナリから値を取得するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

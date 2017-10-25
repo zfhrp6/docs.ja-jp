@@ -1,0 +1,83 @@
+<Type Name="SizeType" FullName="System.Windows.Forms.SizeType">
+  <TypeSignature Language="C#" Value="public enum SizeType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SizeType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SizeType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>どのユーザー インターフェイス (UI) 要素の行または列のサイズは、そのコンテナーを基準としてを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SizeType>列挙型の UI 要素の行または列通常を制御する方法を指定します、そのコンテナーのサイズに比べてサイズ必要があります。 この列挙を使用、<xref:System.Windows.Forms.RowStyle>と<xref:System.Windows.Forms.ColumnStyle>推奨されるサイズ属性を指定するクラス。 <xref:System.Windows.Forms.TableLayoutPanel>クラス、さらに、これらのスタイル クラスを使用します。  
+  
+ 行または列のスタイルの間で初期の割り当て後に残りの領域を配布する行または列属性は別の推奨されるサイズを使用して、コンテナーをレイアウトするときに<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A?displayProperty=nameWithType>AutoSize または % のプロパティ値。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Forms.ColumnStyle>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/CS/form1.cs#8)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/VB/form1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Absolute">
+      <MemberSignature Language="C#" Value="Absolute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SizeType Absolute = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SizeType.Absolute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SizeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行または列は、ピクセル数が正確なサイズ必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="AutoSize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SizeType AutoSize = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SizeType.AutoSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SizeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行または列は、そのピアと領域を共有するは自動的に変更する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Percent">
+      <MemberSignature Language="C#" Value="Percent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SizeType Percent = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SizeType.Percent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SizeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行または列のサイズは、親コンテナーの割合として設定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

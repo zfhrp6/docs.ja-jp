@@ -1,0 +1,297 @@
+<Type Name="IAsyncResult" FullName="System.IAsyncResult">
+  <TypeSignature Language="C#" Value="public interface IAsyncResult" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAsyncResult" />
+  <TypeSignature Language="DocId" Value="T:System.IAsyncResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>非同期操作のステータスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IAsyncResult>インターフェイスは非同期に処理するメソッドを含むクラスによって実装されます。 など、非同期操作を開始するメソッドの戻り値の型である<xref:System.IO.FileStream.BeginRead%2A?displayProperty=nameWithType>、および最後になど、非同期操作をメソッドに渡されるという<xref:System.IO.FileStream.EndRead%2A?displayProperty=nameWithType>です。 <xref:System.IAsyncResult>オブジェクトによって呼び出されたメソッドに渡されるも<xref:System.AsyncCallback>非同期操作が完了したときに委任します。  
+  
+ サポートするオブジェクト、<xref:System.IAsyncResult>インターフェイスは非同期操作の状態情報を格納し、スレッド操作の完了時に通知することができるようにする同期オブジェクトを提供します。  
+  
+> [!NOTE]
+>  <xref:System.Runtime.Remoting.Messaging.AsyncResult>クラスの実装は、<xref:System.IAsyncResult>によって返される、`BeginInvoke`メソッドは、メソッドを非同期的に呼び出すデリゲートを使用するとします。  
+  
+ 方法の詳細な説明の<xref:System.IAsyncResult>インターフェイスを使用してを参照してください、[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle%2A>を取得するプロパティ、 <xref:System.Threading.WaitHandle>、およびデリゲート上での非同期呼び出しを待機する方法です。 <xref:System.Threading.WaitHandle> は非同期呼び出しが完了すると通知され、<xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを呼び出すことによってこれを待機できます。  
+  
+ 例は、2 つのクラスで構成されています: 非同期的に呼び出されるメソッドとを含むクラスを含むクラス、`Main`呼び出しを行うメソッドです。  
+  
+ 詳細については、およびデリゲートを使用するメソッドの非同期呼び出しの例については、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ [!code-cpp[AsyncDelegateExamples#1](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/TestMethod.cpp#1)]
+ [!code-csharp[AsyncDelegateExamples#1](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/TestMethod.cs#1)]
+ [!code-vb[AsyncDelegateExamples#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]  
+[!code-cpp[AsyncDelegateExamples#3](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/waithandle.cpp#3)]
+[!code-csharp[AsyncDelegateExamples#3](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/waithandle.cs#3)]
+[!code-vb[AsyncDelegateExamples#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/WaitHandle.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncState">
+      <MemberSignature Language="C#" Value="public object AsyncState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AsyncState" />
+      <MemberSignature Language="DocId" Value="P:System.IAsyncResult.AsyncState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作に関する情報を限定または格納するユーザー定義オブジェクトを取得します。</summary>
+        <value>非同期操作に関する情報を限定または格納するユーザー定義オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、非同期操作を開始するメソッドの最後のパラメーターであるオブジェクトを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncState%2A>コールバック メソッドに情報を渡すプロパティを使用します。 最後のパラメーター、`BeginInvoke`メソッドの呼び出しは、コールバック メソッドは、出力メッセージの書式を使用している書式指定文字列。  
+  
+ 例は、2 つのクラスで構成されています: 非同期的に呼び出されるメソッドとを含むクラスを含むクラス、`Main`呼び出しを行うメソッドです。  
+  
+ 詳細については、このコールバックの例のしくみとデリゲートを使用するメソッドの非同期呼び出しの例については、「[同期メソッド非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ [!code-cpp[AsyncDelegateExamples#1](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/TestMethod.cpp#1)]
+ [!code-csharp[AsyncDelegateExamples#1](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/TestMethod.cs#1)]
+ [!code-vb[AsyncDelegateExamples#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]  
+[!code-cpp[AsyncDelegateExamples#5](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/callback.cpp#5)]
+[!code-csharp[AsyncDelegateExamples#5](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/callback.cs#5)]
+[!code-vb[AsyncDelegateExamples#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/callback.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>操作の開始時に指定されたアプリケーション定義のオブジェクトを取得する非同期操作の呼び出し元を許可するには、このプロパティを実装します。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>このオブジェクトを渡すための非同期操作の状態情報を使用できます、<see cref="T:System.AsyncCallback" />提供します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncWaitHandle">
+      <MemberSignature Language="C#" Value="public System.Threading.WaitHandle AsyncWaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle AsyncWaitHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IAsyncResult.AsyncWaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</summary>
+        <value>A<see cref="T:System.Threading.WaitHandle" />非同期操作が完了するまで待機するために使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値により、非同期の操作をポーリングではなく完了するまで待機するクライアント<xref:System.IAsyncResult.IsCompleted%2A>操作の終了までです。 戻り値を実行するために使用できます、 <xref:System.Threading.WaitHandle.WaitOne%2A>、 <xref:System.Threading.WaitHandle.WaitAny%2A>、または<xref:System.Threading.WaitHandle.WaitAll%2A>操作します。  
+  
+ 共通言語ランタイムの待機可能オブジェクトの数を提供<xref:System.Threading.ManualResetEvent>、 <xref:System.Threading.AutoResetEvent>、および<xref:System.Threading.Mutex>Win32 の同期プリミティブをすべてのミラー化します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.IAsyncResult.AsyncWaitHandle%2A>を取得するプロパティ、 <xref:System.Threading.WaitHandle>、およびデリゲート上での非同期呼び出しを待機する方法です。 <xref:System.Threading.WaitHandle> は非同期呼び出しが完了すると通知され、<xref:System.Threading.WaitHandle.WaitOne%2A> メソッドを呼び出すことによってこれを待機できます。  
+  
+ 例は、2 つのクラスで構成されています: 非同期的に呼び出されるメソッドとを含むクラスを含むクラス、`Main`呼び出しを行うメソッドです。  
+  
+ 詳細については、およびデリゲートを使用するメソッドの非同期呼び出しの例については、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ [!code-cpp[AsyncDelegateExamples#1](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/TestMethod.cpp#1)]
+ [!code-csharp[AsyncDelegateExamples#1](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/TestMethod.cs#1)]
+ [!code-vb[AsyncDelegateExamples#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]  
+[!code-cpp[AsyncDelegateExamples#3](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/waithandle.cpp#3)]
+[!code-csharp[AsyncDelegateExamples#3](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/waithandle.cs#3)]
+[!code-vb[AsyncDelegateExamples#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/WaitHandle.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装するオブジェクト<see cref="T:System.IAsyncResult" />を作成する必要はありません、<see cref="T:System.Threading.WaitHandle" />まで、<see cref="P:System.IAsyncResult.AsyncWaitHandle" />プロパティは読み取りです。 選択することですが、<see cref="T:System.IAsyncResult" />実行者します。 ただし、実装を作成する場合<see cref="P:System.IAsyncResult.AsyncWaitHandle" />、信号を実装者の責任である、<see cref="T:System.Threading.WaitHandle" />を適切なタイミングで待機が終了されます。 たとえば、<see cref="T:System.Runtime.Remoting.Messaging.AsyncResult" />非同期的に呼び出されたメソッドが戻るときに、呼び出し元の代わり待機を終了します。 作成すると、<see cref="P:System.IAsyncResult.AsyncWaitHandle" />が維持される、ユーザーは、非同期操作を完了するメソッドを呼び出すまでです。 時刻の背後にあるオブジェクト at<see cref="P:System.IAsyncResult.AsyncWaitHandle" />破棄することができます。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>操作が (ポーリング) ではなく完了するを待機しているクライアントでは、このプロパティを使用して、待機する同期オブジェクトを取得します。  
+  
+ <block subset="none" type="note"><para>  
+ 使用すると、<see langword="BeginInvoke" />メソッドを非同期的に呼び出すし、その結果から待機ハンドルを取得するデリゲートのメソッド<see cref="T:System.IAsyncResult" />、呼び出すことによって、使用を終了するとすぐには、待機ハンドルを終了することをお勧め、<see cref="M:System.Threading.WaitHandle.Close" />メソッドです。 待機ハンドルへのすべての参照を解放するだけで、ガベージ コレクションをクリア、待機ハンドルが破棄可能なオブジェクトを明示的に終了または破棄されるときにガベージ コレクションはより効率的に動作時にシステム リソースが解放されます。 詳細については、<see cref="P:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle" /> プロパティを参照してください。  
+  
+</para></block></para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletedSynchronously">
+      <MemberSignature Language="C#" Value="public bool CompletedSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CompletedSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.IAsyncResult.CompletedSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作が同期的に完了したかどうかを示す値を取得します。</summary>
+        <value>
+          非同期操作が同期的に完了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの同期の完了がで検出されたかどうか、<xref:System.AsyncCallback>デリゲート、非同期操作を開始したスレッドが現在のスレッドであると考えられます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ほとんどの実行者、<see cref="T:System.IAsyncResult" />インターフェイスは、このプロパティは使用しませんし、返す必要があります<see langword="false" />です。 以降で、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]で作成されるタスク、<see cref="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult},System.Threading.Tasks.TaskCreationOptions)" />メソッドは、このプロパティが正しく実装されていない場合は完了しません。 参照してください[4.5 でのアプリケーションの互換性](~/docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-5.md)です。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>このプロパティを使用して、非同期操作が同期的に完了したかどうかを確認します。 たとえば、このプロパティを返すことができます<see langword="true" />非同期 I/O 操作の I/O 要求が小さい場合。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.IAsyncResult.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作が完了したかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、操作が完了しました。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが`true`、安全、非同期操作で使用するために割り当てるすべてのリソースを破棄することが前提としています。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IAsyncResult.IsCompleted%2A>のプロパティ、<xref:System.IAsyncResult>の非同期呼び出しの完了時に検出します。 この例では、非同期呼び出しを使用して、`BeginInvoke`デリゲートのメソッドです。 使用する場合があります、<xref:System.IAsyncResult.IsCompleted%2A>完了スレッドから非同期呼び出しを行うときに、ユーザー インターフェイスのサービスをポーリングするプロパティです。 完了をポーリングすると、呼び出し元スレッドは、<xref:System.Threading.ThreadPool> スレッドで非同期呼び出しを実行しながら、実行を継続できます。  
+  
+ 例は、2 つのクラスで構成されています: 非同期的に呼び出されるメソッドとを含むクラスを含むクラス、`Main`呼び出しを行うメソッドです。  
+  
+ 詳細については、およびデリゲートを使用するメソッドの非同期呼び出しの例については、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ [!code-cpp[AsyncDelegateExamples#1](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/TestMethod.cpp#1)]
+ [!code-csharp[AsyncDelegateExamples#1](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/TestMethod.cs#1)]
+ [!code-vb[AsyncDelegateExamples#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]  
+[!code-cpp[AsyncDelegateExamples#4](~/samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/polling.cpp#4)]
+[!code-csharp[AsyncDelegateExamples#4](~/samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/polling.cs#4)]
+[!code-vb[AsyncDelegateExamples#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/polling.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>通常実装者がこのプロパティの値としてプライベート フィールドまたは内部のテストの値を返します。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>(同期オブジェクトで待機している) ではなく操作のステータスのポーリングを行うクライアントでは、このプロパティを使用して、操作の状態を確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

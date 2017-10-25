@@ -1,0 +1,43 @@
+<Type Name="PropertyValueUIHandler" FullName="System.Drawing.Design.PropertyValueUIHandler">
+  <TypeSignature Language="C#" Value="public delegate void PropertyValueUIHandler(ITypeDescriptorContext context, PropertyDescriptor propDesc, ArrayList valueUIItemList);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PropertyValueUIHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.PropertyValueUIHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+    <Parameter Name="propDesc" Type="System.ComponentModel.PropertyDescriptor" />
+    <Parameter Name="valueUIItemList" Type="System.Collections.ArrayList" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />を使用してコンテキスト情報を取得できます。</param>
+    <param name="propDesc">A<see cref="T:System.ComponentModel.PropertyDescriptor" />クエリ対象のプロパティを表すです。</param>
+    <param name="valueUIItemList"><see cref="T:System.Collections.ArrayList" />の<see cref="T:System.Drawing.Design.PropertyValueUIItem" />オブジェクト プロパティを使用して関連付けられている UI 項目を格納します。</param>
+    <summary>実装にデリゲートを追加するメソッドを表す<see cref="T:System.Drawing.Design.IPropertyValueUIService" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートが呼び出されたときに追加できます、<xref:System.Drawing.Design.PropertyValueUIItem>に指定したプロパティの UI 項目を含む、<xref:System.Collections.ArrayList>として渡される、`valueUIItemList`パラメーター。  
+  
+   
+  
+## Examples  
+ この次のコード例で、<xref:System.Drawing.Design.PropertyValueUIHandler>イベント ハンドラー メソッドを提供する<xref:System.Drawing.Design.PropertyValueUIItem>という名前のプロパティ オブジェクト`HorizontalMargin`または`VerticalMargin`です。  
+  
+ [!code-cpp[IPropertyValueUIServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CPP/propertyuicomponent.cpp#2)]
+ [!code-csharp[IPropertyValueUIServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IPropertyValueUIServiceExample/CS/propertyuicomponent.cs#2)]
+ [!code-vb[IPropertyValueUIServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IPropertyValueUIServiceExample/VB/propertyuicomponent.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

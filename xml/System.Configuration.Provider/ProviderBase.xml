@@ -1,0 +1,162 @@
+<Type Name="ProviderBase" FullName="System.Configuration.Provider.ProviderBase">
+  <TypeSignature Language="C#" Value="public abstract class ProviderBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProviderBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Provider.ProviderBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張可能なプロバイダー モデルの基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダー モデルは、メンバーシップ、プロファイル、および保護された構成など、ASP.NET の複数の機能の一部またはすべてをカプセル化するためのものです。 これにより、開発者をカプセル化された機能の複数の実装を提供するサポート クラスを作成します。 さらに、開発者は、プロバイダー モデルを使用して新しい機能を記述できます。 機能コードを複製するか、実装メソッドを変更する必要がある場合は、アプリケーション層を変更せずに、機能の複数の実装をサポートする効果的な方法を指定できます。  
+  
+ <xref:System.Configuration.Provider.ProviderBase>クラスは、単純とのみを含む、いくつかの基本的な方法は、すべてのプロバイダーに共通するプロパティです。 機能固有のプロバイダー (など<xref:System.Web.Security.MembershipProvider>) から継承<xref:System.Configuration.Provider.ProviderBase>し、必要なメソッドとその機能の実装に固有のプロバイダーのサポートが必要なプロパティを確立します。 実装に固有のプロバイダー (など<xref:System.Web.Security.SqlMembershipProvider>) 機能固有のプロバイダーからさらに継承 (この場合、 <xref:System.Web.Security.MembershipProvider>)。  
+  
+ プロバイダー モデルの最も重要な点は、(たとえば、かどうかデータが保存される、テキスト ファイルとして、またはデータベース内) の実装は、アプリケーション コードから切り離されます。 特定の機能の実装に固有のプロバイダーの種類は、構成ファイルで指定されます。 機能レベルのプロバイダーを構成ファイルからの型に読み込んで、機能コードに対するファクトリとして機能します。 アプリケーション開発者は、アプリケーション コードで機能のクラスを使用できます。 実装の種類ことができますにスワップ アウトする構成ファイルで別の実装方法に合わせてコードを書き換える必要があります。  
+  
+ ASP.NET に含まれているプロバイダーは、主に、データの永続性機能の実装プロファイルやメンバーシップなどの抽象化です。 ただし、このモデルは、その他の種類の抽象化され、複数の方法で実装されている可能性があります機能に適用できます。  
+  
+   
+  
+## Examples  
+ 使用する方法の例については、<xref:System.Configuration.Provider.ProviderBase>クラスを参照してください[プロファイル プロバイダーの実装例](http://msdn.microsoft.com/library/c36e8a56-b416-40b7-95c1-c662cfb8f906)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProviderBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Provider.ProviderBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Provider.ProviderBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Provider.ProviderBase.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理ツールまたはその他のユーザー インターフェイス (Ui) での表示に適した簡単でわかりやすい説明を取得します。</summary>
+        <value>簡単でわかりやすい説明管理ツールまたは他の Ui での表示に適したです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成されているプロバイダーが、説明の値を指定しないかどうか、<xref:System.Configuration.Provider.ProviderBase.Name%2A>プロパティは、既定値として返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロバイダーのフレンドリ名。</param>
+        <param name="config">このプロバイダーの構成で指定された、プロバイダー固有の属性を表す名前と値のペアのコレクション。</param>
+        <summary>構成ビルダーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスの実装を内部的に追跡回数、プロバイダーの`Initialize`メソッドが呼び出されました。 プロバイダーが複数回初期化される場合、`InvalidOperationException`プロバイダーが既に初期化されていることを示すがスローされます。  
+  
+ ほとんどの機能のプロバイダーの呼び出し<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>プロバイダー固有の初期化を実行する前に、このメソッドは double 型の初期化を回避するための集中管理された場所。  
+  
+   
+  
+## Examples  
+ 使用する方法の例については<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>を参照してください[プロファイル プロバイダーの実装例](http://msdn.microsoft.com/library/c36e8a56-b416-40b7-95c1-c662cfb8f906)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロバイダーの名前は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">プロバイダーの名前の長さは 0 です。</exception>
+        <exception cref="T:System.InvalidOperationException">プロバイダーが既に初期化された後に、プロバイダーで <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> の呼び出しが試行されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Provider.ProviderBase.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成時にプロバイダーを参照するために使用するフレンドリ名を取得します。</summary>
+        <value>構成時にプロバイダーを参照するために使用するフレンドリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この文字列の推奨パターンは: [*プロバイダー作成者*] [*実装型*] [*機能*] プロバイダー。 ただし、<xref:System.Configuration.Provider.ProviderBase.Description%2A>プロパティもわかりやすい説明を提供、<xref:System.Configuration.Provider.ProviderBase.Name%2A>プロパティは、プロバイダーの識別子として使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

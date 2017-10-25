@@ -1,0 +1,421 @@
+<Type Name="RecognizerInfo" FullName="System.Speech.Recognition.RecognizerInfo">
+  <TypeSignature Language="C#" Value="public class RecognizerInfo : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RecognizerInfo extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizerInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>に関する情報を表します、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化された認識エンジンを使用して、識別情報を取得できる<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerInfo%2A?displayProperty=nameWithType>の<xref:System.Speech.Recognition.SpeechRecognizer>オブジェクトまたは<xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizerInfo%2A?displayProperty=nameWithType>の<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクト。  
+  
+ インスタンスで、情報が返されます<xref:System.Speech.Recognition.RecognizerInfo>から取得した、<xref:System.Speech.Recognition.SpeechRecognizer>の設定によって決まりますが、**音声プロパティ**のメンバー、**コントロール パネル**です。  
+  
+ インスタンスを使用して<xref:System.Speech.Recognition.RecognizerInfo>の特定の構成を構築するために<xref:System.Speech.Recognition.SpeechRecognitionEngine>を使用して、<xref:System.Speech.Recognition.SpeechRecognitionEngine.%23ctor%28System.Speech.Recognition.RecognizerInfo%29>コンス トラクターです。  
+  
+ 静的メソッド<xref:System.Speech.Recognition.SpeechRecognitionEngine.InstalledRecognizers%2A>使用可能なすべての一覧を返します<xref:System.Speech.Recognition.SpeechRecognitionEngine>として構成<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例は、検証、指定された<xref:System.Globalization.CultureInfo>と識別子の文字列に対して、許可されている<xref:System.Speech.Recognition.SpeechRecognitionEngine>構成では、一覧として表される<xref:System.Speech.Recognition.RecognizerInfo>オブジェクト。  
+  
+ 場合、<xref:System.Globalization.CultureInfo>と識別子の文字列が有効では、例では、新しいインスタンスを作成する<xref:System.Speech.Recognition.SpeechRecognitionEngine>を使用して、<xref:System.Speech.Recognition.RecognizerInfo>インスタンスを引数として。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine SelectRecognizer(CultureInfo requiredCulture, string requiredId)   
+{  
+  // Select based on a specific recognizer configuration  
+  SpeechRecognitionEngine speechRecognitionEngine=null;  
+  foreach (RecognizerInfo config in SpeechRecognitionEngine.InstalledRecognizers())   
+  {  
+    if (config.Culture.Equals(requiredCulture) && config.Id== requiredId)   
+    {  
+      speechRecognitionEngine = new SpeechRecognitionEngine(config);  
+      break;  
+    }  
+  }  
+  return speechRecognitionEngine;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdditionalInfo">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; AdditionalInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; AdditionalInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.AdditionalInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>に関する追加情報を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>インスタンスを返します<see cref="T:System.Collections.Generic.IDictionary`2" />の構成に関する情報を含む、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の実装内のすべての情報を表示するボタンをクリック、<xref:System.Speech.Recognition.RecognizerInfo>内のオブジェクト、<xref:System.Windows.Forms.MessageBox>です。  
+  
+ 含まれているキー/値ペアの<xref:System.Collections.Generic.IDictionary%602>によって返されるインスタンス<xref:System.Speech.Recognition.RecognizerInfo.AdditionalInfo%2A>テキスト テーブルに連結されます。  
+  
+```csharp  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n", fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                     "Name:                 {0 } \n" +  
+                     "Description:          {1} \n" +  
+                     "SupportedAudioFormats:\n" +  
+                     " {2} " +  
+                     "Culture:              {3} \n" +  
+                     "AdditionalInfo:       \n" +  
+                     " {4}\n",  
+                     info.Name.ToString(),  
+                     info.Description.ToString(),  
+                     AudioFormats,  
+                     info.Culture.ToString(),  
+                     AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サポートされているカルチャを取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>サポートされているカルチャに関する情報を返します、指定された<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Globalization.CultureInfo>オブジェクトは、カルチャ、関連付けられている言語、国/地域、使用する暦、および日付形式や文字列の並べ替え方法の名前を含めることができます。  
+  
+   
+  
+## Examples  
+ 次の例の実装内のすべての情報を表示するボタンのクリック、<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。 この例では、<xref:System.Speech.Recognition.RecognizerInfo.Culture%2A>の特定を取得するプロパティが文字列、<xref:System.Globalization.CultureInfo>認識エンジンの構成で使用します。  
+  
+```csharp  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n", fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                     "Name:                 {0 }\n" +  
+                     "Description:          {1} \n" +  
+                     "SupportedAudioFormats:\n" +  
+                     "{2} " +  
+                     "Culture:              {3} \n" +  
+                     "AdditionalInfo:       \n" +  
+                     " {4}\n",  
+                     info.Name.ToString(),  
+                     info.Description.ToString(),  
+                     AudioFormats,  
+                     info.Culture.ToString(),  
+                     AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>返します、 <see langword="string" /> 、特定の構成を説明する<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を次の実装内のすべての情報を表示するボタンをクリック、<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。 この例では、<xref:System.Speech.Recognition.RecognizerInfo.Description%2A>音声認識エンジンの構成の説明を取得するプロパティで表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+```csharp  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n", fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                     "Name:                 {0 }\n" +  
+                     "Description:          {1} \n" +  
+                     "SupportedAudioFormats:\n" +  
+                     "{2} " +  
+                     "Culture:              {3} \n" +  
+                     "AdditionalInfo:       \n" +  
+                     " {4}\n",  
+                     info.Name.ToString(),  
+                     info.Description.ToString(),  
+                     AudioFormats,  
+                     info.Culture.ToString(),  
+                     AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizerInfo.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>破棄、 <c>RecognizerInfo</c>オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別子を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>特定の識別子を返します<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返された識別子、<xref:System.Speech.Recognition.RecognizerInfo.Id%2A>プロパティは、Windows レジストリ内で認識エンジンのトークンの名前と同じです。  
+  
+   
+  
+## Examples  
+ 次の例の実装内のすべての情報を表示するボタンのクリック、<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。 この例では、<xref:System.Speech.Recognition.RecognizerInfo.Id%2A>認識エンジンの構成の識別子の文字列を取得するプロパティで表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+```  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n",  fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                           "Name:                 {0 }\n" +  
+                           "Description:          {1} \n" +  
+                           "SupportedAudioFormats:\n" +  
+                           "{2} " +  
+                           "Culture:              {3} \n" +  
+                           "AdditionalInfo:       \n" +  
+                           " {4}\n",  
+                           info.Name.ToString(),  
+                           info.Description.ToString(),  
+                           AudioFormats,  
+                           info.Culture.ToString(),  
+                           AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フレンドリ名を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>特定のフレンドリ名を返します<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の実装内のすべての情報を表示するボタンのクリック、<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。 この例では、<xref:System.Speech.Recognition.RecognizerInfo.Name%2A>認識エンジンの構成のフレンドリ名を取得するプロパティで表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+```  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n", fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                           "Name:                 {0 }\n" +  
+                           "Description:          {1} \n" +  
+                           "SupportedAudioFormats:\n" +  
+                           "{2} " +  
+                           "Culture:              {3} \n" +  
+                           "AdditionalInfo:       \n" +  
+                           " {4}\n",  
+                           info.Name.ToString(),  
+                           info.Description.ToString(),  
+                           AudioFormats,  
+                           info.Culture.ToString(),  
+                           AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedAudioFormats">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.AudioFormat.SpeechAudioFormatInfo&gt; SupportedAudioFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.AudioFormat.SpeechAudioFormatInfo&gt; SupportedAudioFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizerInfo.SupportedAudioFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.AudioFormat.SpeechAudioFormatInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サポートされるオーディオ形式を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</summary>
+        <value>特定のでサポートされるオーディオ形式の一覧を返します<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の実装内のすべての情報を表示するボタンのクリック、<xref:System.Speech.Recognition.RecognizerInfo>インスタンス。 この例では、<xref:System.Speech.Recognition.RecognizerInfo.SupportedAudioFormats%2A>のエンコード形式を取得するプロパティが認識エンジンの構成でサポートされているしでそれを表示、<xref:System.Windows.Forms.MessageBox>です。  
+  
+```  
+private void recognizerInfoButton_Click(object sender, EventArgs e)   
+{  
+  RecognizerInfo info = _recognizer.RecognizerInfo;  
+  string AudioFormats = "";  
+  foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)   
+  {  
+    AudioFormats += String.Format("       {0}\n", fmt.EncodingFormat.ToString());  
+  }  
+  string AdditionalInfo = "";  
+  foreach (string key in info.AdditionalInfo.Keys)   
+  {  
+    AdditionalInfo += String.Format("      {0}: {1}\n", key, info.AdditionalInfo[key]);  
+  }  
+  MessageBox.Show(String.Format(  
+                           "Name:                 {0 }\n" +  
+                           "Description:          {1} \n" +  
+                           "SupportedAudioFormats:\n" +  
+                           "{2} " +  
+                           "Culture:              {3} \n" +  
+                           "AdditionalInfo:       \n" +  
+                           " {4}\n",  
+                           info.Name.ToString(),  
+                           info.Description.ToString(),  
+                           AudioFormats,  
+                           info.Culture.ToString(),  
+                           AdditionalInfo));  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

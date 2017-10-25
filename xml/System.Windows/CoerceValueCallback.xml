@@ -1,0 +1,57 @@
+<Type Name="CoerceValueCallback" FullName="System.Windows.CoerceValueCallback">
+  <TypeSignature Language="C#" Value="public delegate object CoerceValueCallback(DependencyObject d, object baseValue);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CoerceValueCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.CoerceValueCallback" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="d" Type="System.Windows.DependencyObject" />
+    <Parameter Name="baseValue" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Object</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="d">プロパティが存在するオブジェクト。 コールバックが呼び出されたときに、プロパティのシステムはこの値を渡します。</param>
+    <param name="baseValue">強制が試行する前に、プロパティの新しい値。</param>
+    <summary>依存関係プロパティの値が再評価されている、または強制変換を個別に要求されるたびに呼び出されるメソッドのテンプレートを提供します。</summary>
+    <returns>(適切な型) の資格情報を持つ値です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバックがに基づいて<xref:System.Windows.CoerceValueCallback>いくつかの方法を使用して依存関係プロパティを割り当てることができます。 これらの手法のそれぞれは、最初に新しいプロパティ メタデータ オブジェクトを作成することが必要です。 (<xref:System.Windows.PropertyMetadata>、やなどの派生クラス<xref:System.Windows.FrameworkPropertyMetadata>)。 受け取るコンス トラクターのシグネチャを使用してメタデータ オブジェクトを作成、`coerceValueCallback`パラメーター、コールバック ハンドラーにそのパラメーターを割り当てるとします。 署名とセット メタデータを作成したり、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>使用中でメタデータを配置する前にプロパティです。  
+  
+ このメタデータがある場合は、次のことができます。  
+  
+-   新しい依存関係プロパティのいずれかの署名を使用して、新しいクラスを定義<xref:System.Windows.DependencyProperty.Register%2A>、としてのメタデータを提供、`typeMetadata`値。  
+  
+-   メタデータをオーバーライド (呼び出し<xref:System.Windows.DependencyProperty.OverrideMetadata%28System.Type%2CSystem.Windows.PropertyMetadata%29>) 既存の依存関係プロパティを依存関係プロパティを所有するクラスから派生するときにします。  
+  
+-   新しいの既存の依存関係プロパティの追加<xref:System.Windows.DependencyObject>クラスを呼び出すことによって、新しいメタデータを使用して<xref:System.Windows.DependencyProperty.AddOwner%28System.Type%2CSystem.Windows.PropertyMetadata%29>です。  
+  
+ このコールバックの実装は、値を確認する必要があります`baseValue`を決定し、これは、さらに強制的に変換する必要がある値かどうか、値型または型に基づきます。  
+  
+ <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>依存関係プロパティが呼び出さプロパティ システムまたはその他の任意の呼び出し元がいつでも<xref:System.Windows.DependencyObject.CoerceValue%2A>上、<xref:System.Windows.DependencyObject>とそのプロパティの識別子を指定して、インスタンス、`dp`です。  
+  
+ プロパティの値への変更は、プロパティ システムに考えられる任意参加要素から取得が可能性があります。 これには、スタイル、ジェネリックの無効化、トリガー、プロパティ値の継承、およびローカル値の設定が含まれます。  
+  
+ 1 つ以上を指定することを避ける必要があります、通常<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>いずれかの依存関係プロパティを指定します (が既に存在する依存関係プロパティの新しいメタデータを追加またはオーバーライド、 <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>)。 コールバックの 1 つだけは、機能することができます。コールバックと比べて、継承の最も派生クラスに適用されている 1 つになります、<xref:System.Windows.DependencyObject>呼び出し元。 存在していた以上、所有者の階層内の依存関係プロパティのメタデータに割り当てられているその他のコールバックは、メタデータがオーバーライドされるときに置き換えられます。  
+  
+   
+  
+## Examples  
+ 次の例には、別のプロパティの値など、他の入力に基づく依存関係プロパティの格納されている値を強制するには、このコールバックの実装が含まれています。 この場合、コールバックかを確認するかどうか、`ShirtType`プロパティはボタンを持つシャツの種類に対応ですその場合の既定の開始色を確立、 `ButtonColor`、強制的に変換シャツ型には、ボタンがなければ、、`ButtonColor`値。開始値にそれが原因で、 [!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)] (非表示) を有効な選択肢の中からそのドロップダウン リストを削除します。  
+  
+ [!code-csharp[DPCustom#CoerceValueCallback](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCustom/CSharp/default.xaml.cs#coercevaluecallback)]
+ [!code-vb[DPCustom#CoerceValueCallback](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCustom/visualbasic/default.xaml.vb#coercevaluecallback)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

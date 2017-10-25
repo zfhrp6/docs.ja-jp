@@ -1,0 +1,189 @@
+<Type Name="WmiWebEventProvider" FullName="System.Web.Management.WmiWebEventProvider">
+  <TypeSignature Language="C#" Value="public class WmiWebEventProvider : System.Web.Management.WebEventProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WmiWebEventProvider extends System.Web.Management.WebEventProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WmiWebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebEventProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の稼働状況の監視イベントを Windows Management Instrumentation (WMI) イベントにマップされるイベント プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ ASP.NET では、このクラスを使用して、WMI イベントにイベントの稼働状況の監視をマップします。 構成する必要があります、WMI のサブシステムへの ASP.NET の稼働状況の監視イベントの配信を有効にする、<xref:System.Web.Management.WmiWebEventProvider>クラスで適切な設定を追加することによって、`<healthMonitoring>`構成ファイルのセクションです。  
+  
+ Aspnet.mof ファイルに含まれる情報は、ASP.NET の稼働状況の監視イベントにルーティングされるときに発生する WMI イベントのパラメーターを示して、<xref:System.Web.Management.WmiWebEventProvider>クラス、WMI イベントにマップします。 .NET Framework のビルド ディレクトリ、たとえば、%windir%\Microsoft.NET\Framework Aspnet.mof ファイルが格納されている\\*BuildNumber*です。 WMI イベントの稼働状況の監視イベントをレポートの詳細については、次を参照してください。 [NIB: ASP.NET 状態監視イベントの配信を使用して WMI](http://msdn.microsoft.com/en-us/e57fea2f-610f-4432-9dd6-dd10a6c5bd10)です。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`<healthMonitoring>`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム プロバイダーの作成の例は、次を参照してください。[する方法: 例を実装、正常性監視カスタム プロバイダー](http://msdn.microsoft.com/library/bbb1c959-e6e4-42b2-be62-49b7ca5ab72c)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ASP.NET の正常性の Web アプリケーションの正常性イベントの結果として監視によって発行された WMI イベントのコンシューマーを作成する方法を示します。  
+  
+> [!NOTE]
+>  <xref:System.Web.Management.WmiWebEventProvider>クラスとを監視するヘルス イベントの種類は既定で構成されています。 すべての正常性イベントの規則を定義するのにを行う必要があるだけです。 正常性イベントにディスパッチされていないことに注意してください、<xref:System.Web.Management.WmiWebEventProvider>既定プロバイダー。  
+  
+ [!code-csharp[System.Web.Management.WmiWebEventProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WmiWebEventProvider/CS/WmiWebEventListener.cs#1)]
+ [!code-vb[System.Web.Management.WmiWebEventProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WmiWebEventProvider/VB/WmiWebEventListener.vb#1)]  
+  
+ 次の例は構成ファイルの抜粋を示す、 `<healthMonitoring>` ASP.NET で使用できるようにする構成セクション、<xref:System.Web.Management.WmiWebEventProvider>稼働状況の監視のすべてのイベントを処理するプロバイダー。  
+  
+```  
+<healthMonitoring>  
+  <rules>  
+    <add   
+      name="Using Wmi"  
+      eventName="All Events"   
+      provider="WmiWebEventProvider"   
+      profile="Critical"/>  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WmiWebEventProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WmiWebEventProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Management.WmiWebEventProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.TraceWebEventProvider>が、クラスは、このクラスから継承する独自のプロバイダーの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WmiWebEventProvider.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのバッファーからすべてのイベントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、プロバイダーのバッファー内のイベントは直ちに削除されると、すべて、最後からどれ時間だけが経過したに関係なく書き込みまたはイベントの数が、バッファー内です。 最後の書き込みの時間は、フラッシュ操作の時間にリセットされます。 バッファーの機能が有効でない場合は、このメソッドを呼び出しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WmiWebEventProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">このプロバイダーを識別する構成ファイルで使用する名前。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />このプロバイダーの構成ファイルに割り当てられている属性を指定するオブジェクト。</param>
+        <summary>このオブジェクトの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.WmiWebEventProvider.Initialize%2A>メソッドを呼び出した後、<xref:System.Web.Management.WmiWebEventProvider.%23ctor%2A>コンス トラクターです。 初期化するためにこのメソッドは、<xref:System.Web.Management.WmiWebEventProvider>構成設定と構成ファイルで指定された名前を持つクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEvent">
+      <MemberSignature Language="C#" Value="public override void ProcessEvent (System.Web.Management.WebBaseEvent eventRaised);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessEvent(class System.Web.Management.WebBaseEvent eventRaised) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WmiWebEventProvider.ProcessEvent(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventRaised" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="eventRaised"><see cref="T:System.Web.Management.WebBaseEvent" />オブジェクトを処理します。</param>
+        <summary>プロバイダーに渡されたイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、イベントの処理を開始するを呼び出す ASP.NET 正常性の監視方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">イベントを発生させることができませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public override void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WmiWebEventProvider.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのシャット ダウンに関連付けられているタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.EventLogWebEventProvider.Shutdown%2A>メソッドは、Web アプリケーションをホストするアプリケーション ドメインが終了するとします。 メソッドは正常に終了するアプリケーションを許可するタスクを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

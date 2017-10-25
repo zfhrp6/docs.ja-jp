@@ -1,0 +1,693 @@
+<Type Name="ImageMap" FullName="System.Web.UI.WebControls.ImageMap">
+  <TypeSignature Language="C#" Value="public class ImageMap : System.Web.UI.WebControls.Image, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageMap extends System.Web.UI.WebControls.Image implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ImageMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Image</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Click")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("HotSpots")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "HotSpots")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ページ上にイメージを表示するコントロールを作成します。 ホット スポット領域内で定義されているときに、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールがクリックされると、コントロールは、サーバーへのポストバックが生成されますか、指定した URL に移動します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.ImageMap>コントロールを含むイメージを作成するには、ホット スポット領域が定義されています。 ユーザーには、ホット スポット領域がクリックすると、コントロール、サーバーへのポストバックを生成するか、指定した URL に移動します。 たとえば、このコントロールを使用すると、地理的地域の地図を表示します。 ユーザーは、マップ上の特定の地域をクリックすると、コントロールが選択されている領域に関する追加データを提供する URL に移動します。 このコントロールを使用して、サーバーへのポストバックを生成し、クリックしてされたホット スポット領域に基づいた特定のコードを実行することができますも。 たとえば、使用することができます、<xref:System.Web.UI.WebControls.ImageMap>投票などのユーザーの応答をキャプチャするコントロール。 ユーザーには、[はい] 投票に対して定義されているホット スポット領域がクリックすると、データベースで、[はい] 応答を記録するコードが呼び出されます。 ユーザーがいない投票に対して定義されているホット スポット領域をクリックすると、応答がありませんが記録されます。 これら 2 つのシナリオ内の 1 つを組み合わせることもできます<xref:System.Web.UI.WebControls.ImageMap>コントロール。 たとえば、URL に移動する 1 つのホット スポット領域と、サーバーへのポストバックを別のホット スポット領域を指定できます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティを表示するイメージへのパスを指定する、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 任意の数を定義する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクトは、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 使用することができます、 <xref:System.Web.UI.WebControls.CircleHotSpot>、 <xref:System.Web.UI.WebControls.RectangleHotSpot>、および<xref:System.Web.UI.WebControls.PolygonHotSpot>ホット スポット領域を定義するクラス。 また、要約から派生できます<xref:System.Web.UI.WebControls.HotSpot>を独自のカスタムのホット スポット オブジェクトを定義するクラス。  
+  
+ 動作を指定する 2 つの方法、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>タイミングを制御、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用するか、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロールまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>、個別のプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 これらのプロパティを設定のいずれかを使用して、<xref:System.Web.UI.WebControls.HotSpotMode>列挙値。 両方のプロパティが設定されている場合、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>ごとに指定されたプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクトよりも優先、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ を URL に移動するには、いずれかを設定、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティを`HotSpotMode.Navigate`です。 使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>プロパティに移動する URL を指定します。  
+  
+ サーバーへのポストバックを生成するには、いずれかを設定、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティを`HotSpotMode.Postback`です。 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>ホット スポット領域の名前を指定するプロパティです。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>ポストバック イベントが発生するイベント データ。 ポストバック時に<xref:System.Web.UI.WebControls.HotSpot>がクリックされると、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生します。 ポストバック時にプログラムによってコントロールに、操作を実行<xref:System.Web.UI.WebControls.HotSpot>がのイベント ハンドラーを指定する をクリックして、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント。  
+  
+ すべてが発生する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールを使用して、同じ動作に、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティの動作を指定します。 次に、設定するか、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを`HotSpotMode.NotSet`かの値を指定しないで、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。  
+  
+ さまざまな動作を指定する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、 <xref:System.Web.UI.WebControls.ImageMap>、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>するか、オブジェクト`HotSpotMode.Navigate`または`HotSpotMode.PostBack`です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティのいずれかを<xref:System.Web.UI.WebControls.HotSpot>に設定されているオブジェクトが含まれている`HotSpotMode.NotSet`動作は既定では、値に設定されていない、または`HotSpotMode.Navigate`です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:ImageMap  
+    AccessKey="string"  
+    AlternateText="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    DescriptionUrl="uri"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    HotSpotMode="NotSet|Navigate|PostBack|Inactive"  
+    ID="string"  
+    ImageAlign="NotSet|Left|Right|Baseline|Top|Middle|Bottom|  
+        AbsBottom|AbsMiddle|TextTop"  
+    ImageUrl="uri"  
+    OnClick="Click event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Target="string"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+>  
+            <asp:CircleHotSpot  
+                AccessKey="string"  
+                AlternateText="string"  
+                HotSpotMode="NotSet|Navigate|PostBack|Inactive"  
+                NavigateUrl="uri"  
+                PostBackValue="string"  
+                Radius="integer"  
+                TabIndex="integer"  
+                Target="string|_blank|_parent|_search|_self|_top"  
+                X="integer"  
+                Y="integer"  
+            />  
+            <asp:PolygonHotSpot  
+                AccessKey="string"  
+                AlternateText="string"  
+                Coordinates="string"  
+                HotSpotMode="NotSet|Navigate|PostBack|Inactive"  
+                NavigateUrl="uri"  
+                PostBackValue="string"  
+                TabIndex="integer"  
+                Target="string|_blank|_parent|_search|_self|_top"  
+            />  
+            <asp:RectangleHotSpot  
+                AccessKey="string"  
+                AlternateText="string"  
+                Bottom="integer"  
+                HotSpotMode="NotSet|Navigate|PostBack|Inactive"  
+                Left="integer"  
+                NavigateUrl="uri"  
+                PostBackValue="string"  
+                Right="integer"  
+                TabIndex="integer"  
+                Target="string|_blank|_parent|_search|_self|_top"  
+                Top="integer"  
+            />  
+</asp:ImageMap>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.Navigate`、それが原因で、ページ URL に移動して、指定したたびにユーザーを円のホット スポット領域のいずれかをクリックします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass1/CS/imagemapclass1cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass1/VB/imagemapclass1vb.aspx#1)]  
+  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass2/CS/imagemapclass2cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass2/VB/imagemapclass2vb.aspx#1)]  
+  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ImageMap>ホット スポットのさまざまなビヘイビアーの使用を制御します。 背景の領域は、1 つとして定義されている<xref:System.Web.UI.WebControls.RectangleHotSpot>投稿がサーバーにバックアップを作成します。 次の 3 つ<xref:System.Web.UI.WebControls.RectangleHotSpot>同じリージョン内のオブジェクトが定義されます。 ホット スポットがこれらの各ボタンのようになり、URL に移動します。 ときに、<xref:System.Web.UI.WebControls.ImageMap>最初が優先順位を 2 つのホット スポットは重複して宣言されているホット スポット領域にコントロールをクリックします。 この例でボタンのホット スポットが最初に宣言し、それを含むバック グラウンドのホット スポットが最後に宣言します。 ユーザーがボタンの動作を取得するため、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト、バック グラウンドではない<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト、ユーザーがボタンのホット スポットをクリックするとします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass3/CS/imagemapclass3cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass3/VB/imagemapclass3vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageMap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ImageMap" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ImageMap>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を制御し、ページに追加します。  
+  
+ [!code-aspx-csharp[ImageMap.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.Cstr/CS/imagemap.cstrcs.aspx#1)]
+ [!code-aspx-vb[ImageMap.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.Cstr/VB/imagemap.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML コンテンツをクライアントに表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>HTML 属性およびスタイルの追加、<see cref="T:System.Web.UI.WebControls.ImageMap" />レンダリングするコントロールを指定した<see cref="T:System.Web.UI.HtmlTextWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にコントロールの開発者によって適切な属性を挿入するために使用しにスタイル、<xref:System.Web.UI.HtmlTextWriter?displayProperty=nameWithType>の出力ストリームは、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 このメソッドは<xref:System.Web.UI.WebControls.WebControl.AddAttributesToRender%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.ImageMapEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.ImageMapEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.ImageMap.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ImageMapEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Web.UI.WebControls.HotSpot" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールがクリックされました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生したときに、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールがクリックされました。 使用できるように、<xref:System.Web.UI.WebControls.HotSpot>させる、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント、する必要があります最初に設定するか、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロールまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを`HotSpotMode.Postback`です。  
+  
+ ポストバック時にプログラムによってコントロールに、操作を実行<xref:System.Web.UI.WebControls.HotSpot>がのイベント ハンドラーを指定する をクリックして、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生したときに実行するコードを保持するイベントです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 `VoteMap_Clicked`イベント ハンドラーの click イベントを処理する、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass2/CS/imagemapclass2cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass2/VB/imagemapclass2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public override bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageMap.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがユーザーとの対話に応答できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがユーザーのクリックに応答する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageMap.Enabled%2A>プロパティを有効または無効にする、<xref:System.Web.UI.WebControls.ImageMap>実行時に制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HotSpotMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HotSpotMode HotSpotMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HotSpotMode HotSpotMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageMap.HotSpotMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の既定の動作、<see cref="T:System.Web.UI.WebControls.HotSpot" />のオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />タイミングを制御、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトをクリックします。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HotSpotMode" /> 列挙値のいずれか。 既定値は、<see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを既定値を指定するには、動作がをクリックして、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクトは、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.HotSpotMode>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|`Inactive`|<xref:System.Web.UI.WebControls.HotSpot>オブジェクトには、すべての動作はありません。|  
+|`NotSet`|<xref:System.Web.UI.WebControls.HotSpot>オブジェクト設定されている動作を使用して、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールを動作を一切定義しません、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをすべて URL に移動します。|  
+|`Navigate`|<xref:System.Web.UI.WebControls.HotSpot>オブジェクトが、URL に移動します。|  
+|`PostBack`|<xref:System.Web.UI.WebControls.HotSpot>オブジェクトは、サーバーへのポストバックを生成します。|  
+  
+ 指定することができます、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトの動作のいずれかを使用して、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.ImageMap>コントロールまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティをそれぞれ個別<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 両方のプロパティが設定されている場合、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>ごとに指定されたプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクトよりも優先、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ 設定すると、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>のプロパティ、<xref:System.Web.UI.WebControls.ImageMap>制御で確認する、`HotSpotMode.NotSet`と`HotSpotMode.Navigate`値が、同じ動作がある: 両方 URL に移動します。 指定すると`HotSpotMode.NotSet`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>、1 つのプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクト、<xref:System.Web.UI.WebControls.HotSpot>の値からその動作を決定、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>のプロパティ、<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ 指定する場合`HotSpotMode.Navigate`の<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティ ページは、URL に移動時に、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>プロパティに移動する URL を指定します。  
+  
+ 指定する場合`HotSpotMode.PostBack`の<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティ ページで、サーバーへのポストバックが生成されるときに、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>ホット スポット領域の名前を指定するプロパティです。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>ポストバック イベントが発生するイベント データ。 ポストバック時に<xref:System.Web.UI.WebControls.HotSpot>がクリックされると、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生します。 ポストバック時にプログラムによってコントロールに、操作を実行<xref:System.Web.UI.WebControls.HotSpot>がのイベント ハンドラーを指定する をクリックして、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント。  
+  
+ 指定した場合`HotSpotMode.Inactive`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを持たないすべての動作がクリックされたとき。 この値を使用するより大きな active ホット スポットの中の非アクティブのホット スポットを作成します。 このオプションを指定すると、内のホット スポットのより複雑なゾーンを作成すること、<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ アクティブなホット スポット内の非アクティブな領域を作成するでアクティブなホット スポットの前に、非アクティブなホット スポットを指定する必要があります、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 たとえば、次<xref:System.Web.UI.WebControls.ImageMap>大規模な active 円形のホット スポット内で非アクティブな循環ホット スポットを指定することで、アクティブなリングを定義します。  
+  
+```  
+<asp:ImageMap ID="SaturnImage"   
+       ImageUrl="~/saturn.PNG"   
+       runat="server" OnClick="SaturnImage_Click">  
+    <asp:CircleHotSpot AlternateText="planet" HotSpotMode=PostBack  
+          PostBackValue="planet" Radius=40 X=100 Y=100 />  
+  
+    <asp:CircleHotSpot HotSpotMode=Inactive   
+          Radius=60 X=100 Y=100 />  
+    <asp:CircleHotSpot AlternateText="rings" HotSpotMode=PostBack  
+          PostBackValue="rings" Radius=80 X=100 Y=100 />  
+</asp:ImageMap>  
+```  
+  
+ すべてが発生する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールを使用して、同じ動作に、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロールの動作を指定します。 次に、設定するか、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを`HotSpotMode.NotSet`かの値を指定しないで、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。  
+  
+ さまざまな動作を指定する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールを設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>するか、オブジェクト`HotSpotMode.Navigate`、 `HotSpotMode.PostBack`、または`HotSpotMode.Inactive`です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティのいずれかを<xref:System.Web.UI.WebControls.HotSpot>が含まれているオブジェクトは、設定するかを`HotSpotMode.NotSet`動作は既定では、値に設定されていない、または`HotSpotMode.Navigate`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>上の各プロパティが設定されていない、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを取得するための動作、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.HotSpotMode1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.HotSpotMode1/CS/imagemap.hotspotmode1cs.aspx#1)]
+ [!code-aspx-vb[ImageMap.HotSpotMode1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.HotSpotMode1/VB/imagemap.hotspotmode1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.HotSpotMode" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HotSpots">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.HotSpotCollection HotSpots { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.HotSpotCollection HotSpots" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageMap.HotSpots" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトを表す、定義されたホット スポット領域で、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.HotSpotCollection" />で定義されているホット スポット領域を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティ内のホット スポット領域をプログラムで管理を<xref:System.Web.UI.WebControls.ImageMap>コントロール。 使用することができます、<xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティを追加、挿入、削除、および取得を<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 詳細については、「<xref:System.Web.UI.WebControls.HotSpotCollection>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を制御し、2 つ追加<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpots%2A>プロパティを使用してアクセスする、<xref:System.Web.UI.WebControls.HotSpotCollection>の<xref:System.Web.UI.WebControls.ImageMap>を制御し、追加、<xref:System.Web.UI.WebControls.CircleHotSpot>オブジェクトをします。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMap.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMap.Cstr/CS/imagemap.cstrcs.aspx#1)]
+ [!code-aspx-vb[ImageMap.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMap.Cstr/VB/imagemap.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />を表す、<see cref="T:System.Web.UI.WebControls.ImageMap" />を復元するコントロール。</param>
+        <summary>ビュー ステート情報を復元する、<see cref="T:System.Web.UI.WebControls.ImageMap" />によって保存された前回のページ要求からのコントロール、<see cref="M:System.Web.UI.WebControls.ImageMap.SaveViewState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。  ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="savedState" /> は有効な <see cref="P:System.Web.UI.Control.ViewState" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick (System.Web.UI.WebControls.ImageMapEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick(class System.Web.UI.WebControls.ImageMapEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.OnClick(System.Web.UI.WebControls.ImageMapEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.ImageMapEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">型の引数<see cref="T:System.Web.UI.WebControls.ImageMapEventArgs" />イベント データを格納します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ImageMap" /> コントロールの <see cref="E:System.Web.UI.WebControls.ImageMap.Click" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生したときに、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールがクリックされました。 使用できるように、<xref:System.Web.UI.WebControls.HotSpot>させる、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント、する必要があります最初に設定するか、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロールまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを`HotSpotMode.Postback`です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.ImageMap.OnClick%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.ImageMap.OnClick(System.Web.UI.WebControls.ImageMapEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.ImageMap.OnClick(System.Web.UI.WebControls.ImageMapEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数。</param>
+        <summary>フォームがサーバーにポストバックされるときに、<see cref="T:System.Web.UI.WebControls.ImageMap" /> コントロールのイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が渡されます、`eventArgument`パラメーターを<xref:System.Web.UI.WebControls.ImageMap.RaisePostBackEvent%2A>のメソッド、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 <xref:System.Web.UI.WebControls.ImageMap>を生成、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントを<xref:System.Web.UI.WebControls.HotSpot>がクリックされたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでのクリック イベントを処理するには、上書き、<see cref="M:System.Web.UI.WebControls.ImageMap.OnClick(System.Web.UI.WebControls.ImageMapEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.WebControls.ImageMap" /> コントロールの内容を受け取る <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>指定された <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトに <see cref="T:System.Web.UI.WebControls.ImageMap" /> コントロールの内容を渡します。このオブジェクトが、クライアントに表示する内容を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にコントロールの開発者によって使用されます。 派生したカスタムのサーバー コントロールの開発時、<xref:System.Web.UI.WebControls.ImageMap>コントロールのコンテンツを生成するには、このメソッドをオーバーライドすることができます、<xref:System.Web.UI.WebControls.ImageMap>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を保存、<see cref="T:System.Web.UI.WebControls.ImageMap" />ページ時間以降に発生したコントロールのビューステートがサーバーにポストされました。</summary>
+        <returns>返します、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールの現在のビュー ステート。 コントロールに関連付けられているビューステートがない場合、メソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ 格納されている変数として、この文字列オブジェクトが、クライアントに返されるビュー ステートを保存すると、 `Hidden` HTML 要素です。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます`ViewState`プロパティです。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(System.String)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.ImageMap.RaisePostBackEvent%2A?displayProperty=nameWithType>イベントを発生させるためのメソッド、<xref:System.Web.UI.WebControls.ImageMap>フォームがサーバーにポストバックされるときに制御します。  
+  
+ <xref:System.Web.UI.WebControls.ImageMap.System%23Web%23UI%23IPostBackEventHandler%23RaisePostBackEvent%28System.String%29>メソッドは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.ImageMap> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>イベントを発生させるためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.ImageMap" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.ImageMap.RaisePostBackEvent(System.String)" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.ImageMap.RaisePostBackEvent(System.String)" />コントロールのポストされたデータが変更されたときにイベントを発生させる方法です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public virtual string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ImageMap.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定対象のウィンドウまたはフレームときにリンクされている Web ページの内容を表示する、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールをクリックします。</summary>
+        <value>対象のウィンドウまたはフレームを指定した Web を表示するページ、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールをクリックします。 値は、範囲の A ~ Z (大文字)、アンダー スコアで始まる次の特殊な値以外の文字で始まる必要があります。  
+  
+ <list type="table"><item><term><see langword="_blank" /></term><description>新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_parent" /></term><description>直前のフレーム セットの親に内容を表示します。  
+  
+ </description></item><item><term><see langword="_search" /></term><description>[検索] ウィンドウの内容を表示します。  
+  
+ </description></item><item><term><see langword="_self" /></term><description>フォーカスのあるフレームのコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_top" /></term><description>フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item></list><block subset="none" type="note"><para>  
+ ブラウザーのマニュアルを参照するかどうかを<see langword="_search" />値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、<see langword="_search" />ターゲット値。  
+  
+</para></block>  
+  
+ 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ImageMap.Target%2A>プロパティをフレームまたは r Web ページを表示するウィンドウを指定するときに、<xref:System.Web.UI.WebControls.ImageMap>コントロールがクリックされました。 Web ページを設定して指定した、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ImageMap.Target%2A>プロパティを使用してときの値、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティは`HotSpotMode.Navigate`; は無視されるときの値、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティは`HotSpotMode.PostBack`します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.ImageMap.Target%2A>プロパティが設定されていない、ブラウザーまたはフォーカスがあるウィンドウを更新時に、<xref:System.Web.UI.WebControls.ImageMap>コントロールをクリックします。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ImageMap.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.ImageMap.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.ImageMap> XHTML を 1.1 に準拠する必要があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.ImageMap.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ImageMap.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ImageMap" /> コントロールに対するビューステートの変更を追跡し、コントロールの <see cref="T:System.Web.UI.StateBag" /> オブジェクトに保存できるようにします。 このオブジェクトは、<see cref="P:System.Web.UI.Control.ViewState" /> プロパティによってアクセスできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ASP.NET によって自動的に呼び出されます。 ときに、<xref:System.Web.UI.WebControls.ImageMap>コントロールを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

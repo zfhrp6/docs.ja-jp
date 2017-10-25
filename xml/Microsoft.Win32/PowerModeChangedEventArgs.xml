@@ -1,0 +1,78 @@
+<Type Name="PowerModeChangedEventArgs" FullName="Microsoft.Win32.PowerModeChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class PowerModeChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PowerModeChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.PowerModeChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:Microsoft.Win32.SystemEvents.PowerModeChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Win32.SystemEvents.PowerModeChanged>イベントは、ユーザーが中断またはオペレーティング システムを再開するとき、またはシステム電源の状態の通知が発生したときに発生します。 システム電源の状態の通知は、弱いまたは充電の電源が検出されると、または AC またはバッテリ電源からの移行が発生したときに発生することができます。  
+  
+ <xref:Microsoft.Win32.PowerModeChangedEventArgs.Mode%2A>のプロパティ、<xref:Microsoft.Win32.PowerModeChangedEventArgs>が発生した電源モード イベントの種類を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PowerModeChangedEventArgs (Microsoft.Win32.PowerModes mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Win32.PowerModes mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.PowerModeChangedEventArgs.#ctor(Microsoft.Win32.PowerModes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="Microsoft.Win32.PowerModes" />
+      </Parameters>
+      <Docs>
+        <param name="mode">1 つ、<see cref="T:Microsoft.Win32.PowerModes" />電源モード イベントの種類を表す値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Win32.PowerModeChangedEventArgs" />クラス、指定した電力モード イベントの種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、作成に使用できる、<xref:Microsoft.Win32.PowerModeChangedEventArgs>電源モード イベントの種類を示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.PowerModes Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Win32.PowerModes Mode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.PowerModeChangedEventArgs.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.PowerModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生した電源モード イベントの種類を示す識別子を取得します。</summary>
+        <value><see cref="T:Microsoft.Win32.PowerModes" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、発生している、電力モードへの移行の種類を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

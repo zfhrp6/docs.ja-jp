@@ -1,0 +1,689 @@
+<Type Name="DataSourceControl" FullName="System.Web.UI.DataSourceControl">
+  <TypeSignature Language="C#" Value="public abstract class DataSourceControl : System.Web.UI.Control, System.ComponentModel.IListSource, System.Web.UI.IDataSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataSourceControl extends System.Web.UI.Control implements class System.ComponentModel.IListSource, class System.Web.UI.IDataSource" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IListSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.DataSourceDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.DataSourceControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.NonVisualControl</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ バインド コントロールに対してデータ ソースを表すコントロールの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、Web サーバー コントロールの一貫した方法でデータをバインドできるようにするコントロールのデータ バインディング アーキテクチャがサポートされています。 データにバインドする web サーバー コントロールは、データ バインド コントロールとバインディングは、という名前のデータ ソース コントロールを促進するクラスと呼ばれます。 データ ソース コントロールが任意のデータ ソースを表すことができます。 リレーショナル データベース、ファイル、ストリーム、ビジネス オブジェクト、およびなどです。 データ ソースは、ソースまたは基になるデータの形式に関係なく、データ バインド コントロールに一貫した方法でデータ表示を制御します。  
+  
+ ASP.NET で提供されているデータ ソース コントロールを使用して、含む<xref:System.Web.UI.WebControls.SqlDataSource>、 <xref:System.Web.UI.WebControls.AccessDataSource>、および<xref:System.Web.UI.WebControls.XmlDataSource>、ほとんどの Web 開発タスクを実行します。 基数を使用する<xref:System.Web.UI.DataSourceControl>独自のカスタム データ ソース コントロールを実装するクラスします。  
+  
+ 実装するクラスの中に、<xref:System.Web.UI.IDataSource>インターフェイスは、データ ソース コントロール、ASP.NET のほとんどのデータ ソース コントロールの拡張は抽象<xref:System.Web.UI.DataSourceControl>の基本実装を提供するクラス、<xref:System.Web.UI.IDataSource>インターフェイスです。 <xref:System.Web.UI.DataSourceControl>クラスは、の実装も用意されています。、<xref:System.ComponentModel.IListSource>インターフェイスで、プログラムによって、データ ソース コントロールにを割り当てることができます、`DataSource`プロパティのデータ バインド コントロールと基本的なリストとしてコントロールにデータを返す。  
+  
+ 派生した任意の ASP.NET コントロール、<xref:System.Web.UI.WebControls.DataBoundControl>クラスは、データ ソース コントロールにバインドできます。 ときに、<xref:System.Web.UI.WebControls.DataBoundControl>がバインドされているデータ ソース コントロールにデータ バインドは自動的に実行時に実行します。 ASP.NET コントロールを公開すると、データ ソース コントロールを使用することも、`DataSource`または`DataSourceID`プロパティと基本的なデータ バインディングのサポートはされてから派生していない<xref:System.Web.UI.WebControls.DataBoundControl>です。 これらのデータ バインド コントロールを使用して、明示的に呼び出す必要があります、`DataBind`メソッドです。 データ バインディングの詳細については、次を参照してください。 [ASP.NET データ アクセス コンテンツ マップ](http://msdn.microsoft.com/en-us/f9219396-a0fa-481f-894d-e3d9c67d64f2)です。  
+  
+ 組み合わせとしてデータ ソース コントロールの考えることができます、<xref:System.Web.UI.DataSourceControl>オブジェクトと関連付けられているデータ ソース ビューと呼ばれる、データの一覧です。 データの各リストで表される、<xref:System.Web.UI.DataSourceView>オブジェクト。 基になるデータ ストレージにデータの 1 つまたは複数のリストが含まれているため、<xref:System.Web.UI.DataSourceControl>は常にいずれかの関連付けまたは名前付きより<xref:System.Web.UI.DataSourceView>オブジェクト。 <xref:System.Web.UI.IDataSource>インターフェイスは、データ ソース ビューと対話するすべてのデータ ソース コントロールで使用するメソッドを定義:<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>メソッドを使用して、データ ソース コントロールに関連付けられているデータ ソース ビューを列挙し、<xref:System.Web.UI.DataSourceControl.GetView%2A>名前で特定のデータ ソース ビューのインスタンスを取得するメソッドを使用します。  
+  
+ 2 つの異なるインターフェイスをデータにアクセスするには、その呼び出し元使用としても、目的のデータ ソース コントロールの考えることができます。 <xref:System.Web.UI.DataSourceControl>クラスはページの開発者と直接やり取りを Web フォーム ページを開発するときに、インターフェイス、および<xref:System.Web.UI.DataSourceView>クラスは、データ バインド コントロールとデータ バインド コントロールの作成者と対話するインターフェイスです。 <xref:System.Web.UI.DataSourceView>オブジェクトは、実行時にのみ使用可能なデータ ソース コントロールのいずれかの状態が永続化またはデータ ソース コントロールによって直接データ ソース ビューを公開する必要があります。  
+  
+ ASP.NET のデータ ソース コントロールのビジュアル表示はありません。これらは、宣言によって、作成できるようにコントロールとして、必要に応じて、状態管理に参加できるように実装されます。 その結果、データ ソース コントロールはサポートしません visual 機能など、<xref:System.Web.UI.DataSourceControl.EnableTheming%2A>または<xref:System.Web.UI.DataSourceControl.SkinID%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クラス拡張方法を示しています、<xref:System.Web.UI.DataSourceControl>クラスです。 `CsvDataSource`コントロールは、.csv ファイルに格納されているコンマ区切りのファイル データを表します。 `CsvDataSource`クラスの実装を提供する、 <xref:System.Web.UI.DataSourceControl.GetView%2A>、 <xref:System.Web.UI.DataSourceControl.GetViewNames%2A>、およびその他のメソッドでは、基本クラス実装は機能しないためです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#1)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、 `CsvDataSource` Web フォームのコントロールです。  
+  
+ [!code-aspx-csharp[Urtue.Samples.Alexkr.CsvDataSource_1_webform#50](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1_webform/CS/webform6cs.aspx#50)]
+ [!code-aspx-vb[Urtue.Samples.Alexkr.CsvDataSource_1_webform#50](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1_webform/VB/webform6vb.aspx#50)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataSourceControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataSourceControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyStyleSheetSkin">
+      <MemberSignature Language="C#" Value="public override void ApplyStyleSheetSkin (System.Web.UI.Page page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyStyleSheetSkin(class System.Web.UI.Page page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.ApplyStyleSheetSkin(System.Web.UI.Page)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+      </Parameters>
+      <Docs>
+        <param name="page"><see cref="T:System.Web.UI.Page" />コントロールを含むです。</param>
+        <summary>コントロールをページのスタイル シートで定義されているスタイル プロパティを適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientID">
+      <MemberSignature Language="C#" Value="public override string ClientID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.ClientID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET によって生成されたサーバー コントロールの識別子を取得します。</summary>
+        <value>ASP.NET によって生成されたサーバー コントロールの識別子です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientIDMode">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ClientIDMode ClientIDMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ClientIDMode ClientIDMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.ClientIDMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、データ ソース コントロールでは使用されません。</summary>
+        <value>このプロパティは、データ ソース コントロールでは使用されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの<xref:System.Web.UI.Control>データ ソース コントロールのマークアップにレンダリングされないために、データ ソース コントロールの基底クラスが使用されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI 階層内の指定されたサーバー コントロールの子コントロールを表す <see cref="T:System.Web.UI.ControlCollection" /> オブジェクトを取得します。</summary>
+        <value>指定されたサーバー コントロールの子コントロールのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子コントロールを格納するコレクションを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.EmptyControlCollection" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  データ ソース コントロールは、子コントロールを許可していないので、<xref:System.Web.UI.DataSourceControl>クラスの既定の実装では、子コントロールの埋め込みはサポートされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールはテーマをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceControl>コントロールは視覚的なレンダリングを持たず、テーマをサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を設定しようとしましたが、<see cref="P:System.Web.UI.DataSourceControl.EnableTheming" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindControl">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Control FindControl (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Control FindControl(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.FindControl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">検索するコントロールの識別子。</param>
+        <summary>指定したサーバー コントロールの現在の名前付けコンテナーを検索<paramref name="id" />パラメーター。</summary>
+        <returns>指定したコントロールまたは<see langword="null" />指定されたコントロールが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public override void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールに入力フォーカスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceControl> Visual を持たない呼び出し、レンダリング、<xref:System.Web.UI.DataSourceControl.Focus%2A>にメソッドをスロー、<xref:System.NotSupportedException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出すしようとしましたが、<see cref="M:System.Web.UI.DataSourceControl.Focus" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="protected abstract System.Web.UI.DataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.DataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得する <see cref="T:System.Web.UI.DataSourceView" /> の名前。 などの 1 つのビューをサポートするデータ ソース コントロールに<see cref="T:System.Web.UI.WebControls.SqlDataSource" />、このパラメーターは無視されます。</param>
+        <summary>データ ソース コントロールに関連付けられている名前付きのデータ ソース ビューを取得します。</summary>
+        <returns>名前付き返します<see cref="T:System.Web.UI.DataSourceView" />に関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによって、データ ソース コントロールに関連付けられているビューのセットを列挙できる、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>メソッドです。  
+  
+ データ ソース コントロール クラスには、その基になるデータの 1 つまたは複数のビューをサポートできます。 これらのビューがのインスタンスによって表される、<xref:System.Web.UI.DataSourceView>クラスです。 データ ソース ビューは、データ ソース コントロールの機能を定義し、基になるデータ ストアからデータを取得するために必要なすべての作業を行う、並べ替え、挿入、削除、および更新などの操作を実行します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceControl>クラスの既定の実装を返します`null`です。 拡張する場合、<xref:System.Web.UI.DataSourceControl>クラス、オーバーライド、<xref:System.Web.UI.DataSourceControl.GetView%2A>を返す、指定されたメソッドを<xref:System.Web.UI.DataSourceView>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソース コントロール クラスを拡張する方法を示しています、<xref:System.Web.UI.DataSourceControl>クラスが実装する、<xref:System.Web.UI.IDataSource.GetView%2A>の厳密に型指定されたインスタンスを返すメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 データ ソース コントロールでは、1 つのビューをサポートするため、名前が無視され、既定のビュー名が指定されたビューを返します。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ICollection GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ICollection GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リストを表す、名前のコレクションを取得<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />コントロール。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />の名前を含む、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection>名のコレクションが使用可能な一連の値を渡すことができる、<xref:System.Web.UI.DataSourceControl.GetView%2A>メソッドです。  
+  
+ <xref:System.Web.UI.ListSourceHelper>に使用されるクラス、<xref:System.Web.UI.DataSourceControl>クラスの<xref:System.ComponentModel.IListSource>実装では、チェック、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>両方のメソッド、<xref:System.Web.UI.DataSourceControl.System%23ComponentModel%23IListSource%23ContainsListCollection%2A>と<xref:System.Web.UI.DataSourceControl.System%23ComponentModel%23IListSource%23GetList%2A>ソース ビューの呼び出しをデータ ソース コントロールが 1 つまたは複数のデータに関連付けられているかどうかを判断します。 場合<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>を返します`null`、これは、メソッドの既定の実装<xref:System.Web.UI.DataSourceControl.System%23ComponentModel%23IListSource%23ContainsListCollection%2A>を返します`false`と<xref:System.Web.UI.DataSourceControl.System%23ComponentModel%23IListSource%23GetList%2A>返します`null`です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceControl>クラスの既定の実装を返します`null`です。 拡張する場合、<xref:System.Web.UI.DataSourceControl>クラス、オーバーライド、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>ビュー名のコレクションを返すメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、方法を拡張するクラスについて説明します。、<xref:System.Web.UI.DataSourceControl>クラスは、返す既定の実装をオーバーライドできます`null`、ビュー名のコレクションを提供します。 `CsvDataSource`クラスには、1 つのビューのみがサポートされます。 したがって、既定のビュー名を持つ 1 つの要素のコレクションが返されます。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#4)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasControls">
+      <MemberSignature Language="C#" Value="public override bool HasControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool HasControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.HasControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールに子コントロールが含まれるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コントロールには、その他のコントロールが含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseDataSourceChangedEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaiseDataSourceChangedEvent (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaiseDataSourceChangedEvent(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.IDataSource.DataSourceChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent%2A>メソッドは、データ バインド コントロールに通知を基になるデータ ソースまたはメモリにキャッシュされたデータが変更され、コントロールがバインドし、必要な追加の作業を実行する必要があります。 通常、<xref:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent%2A>パラメーターの値またはデータ ソース コントロールのプロパティが変更されたときに、メソッドが呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent%2A>メソッドのいずれかに影響を与える方法で、データ ソースまたはその基になるデータが変更されたときに、コントロールがバインドされています。 この例では、ファイルベースのデータ ソース コントロールを拡張、<xref:System.Web.UI.DataSourceControl>クラスが生成、<xref:System.Web.UI.IDataSource.DataSourceChanged>を呼び出してイベント<xref:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent%2A>いつでも、`FileName`プロパティを変更します。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#1)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.DataSourceControl.RaiseDataSourceChangedEvent(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderControl">
+      <MemberSignature Language="C#" Value="public override void RenderControl (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderControl(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.RenderControl(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">コントロールの内容を受け取る <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>指定の <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにサーバー コントロールの内容を出力し、トレースが有効である場合はコントロールに関するトレース情報を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkinID">
+      <MemberSignature Language="C#" Value="public override string SkinID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkinID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.SkinID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>適用するスキンを取得、<see cref="T:System.Web.UI.DataSourceControl" />コントロール。</summary>
+        <value>
+          <see cref="F:System.String.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceControl>コントロールは視覚的なレンダリングを持たず、設定することはできません、<xref:System.Web.UI.DataSourceControl.SkinID%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を設定しようとしましたが、<see cref="P:System.Web.UI.DataSourceControl.SkinID" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.ContainsListCollection">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IListSource.ContainsListCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IListSource.ContainsListCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.System#ComponentModel#IListSource#ContainsListCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース コントロールがデータの 1 つまたは複数のリストに関連付けられているかどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.DataSourceControl" /> 1 つまたは複数の操作に関連付けられた<see cref="T:System.Web.UI.DataSourceView" />オブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、現在のオブジェクトをデータのリストを 1 つまたは複数のソースとして使用できるかどうかを決定をします。 データ ソース コントロールとしてデータのリストをカプセル化<xref:System.Web.UI.DataSourceView>オブジェクトで、そのため、1 つ以上関連付けられている場合<xref:System.Web.UI.DataSourceView>、オブジェクト、<xref:System.Web.UI.DataSourceControl>コントロール一覧のソース オブジェクトとプロパティを表しますを返します`true`です。  
+  
+ このプロパティは、静的、呼び出し<xref:System.Web.UI.ListSourceHelper.ContainsListCollection%2A?displayProperty=nameWithType>は現在のデータ ソース コントロールであるかどうかを決定するメソッドは、データのソースとして使用できます。 <xref:System.Web.UI.ListSourceHelper>クラスによって異なるかどうか、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>メソッド ビュー名の有効なコレクションを返します。 このプロパティを返しますのかどうかは、`true`です。 場合<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>返します`null`の既定の実装は、<xref:System.Web.UI.DataSourceControl>クラス、メソッドを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.GetList">
+      <MemberSignature Language="C#" Value="System.Collections.IList IListSource.GetList ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IList System.ComponentModel.IListSource.GetList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.System#ComponentModel#IListSource#GetList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データの一覧のソースとして使用できるデータ ソース コントロールの一覧を取得します。</summary>
+        <returns><see cref="T:System.Collections.IList" />のデータの一覧のソースとして使用できるデータ ソース コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、一連のデータのソースとして使用できるオブジェクトを取得します。 データ ソース コントロールとしてデータのリストをカプセル化<xref:System.Web.UI.DataSourceView>オブジェクトで、そのため、1 つ以上関連付けられている場合<xref:System.Web.UI.DataSourceView>、オブジェクト、<xref:System.Web.UI.DataSourceControl>コントロール一覧のソース オブジェクトを表し、メソッドを返します、 <xref:System.Collections.IList> 1 つの要素のコレクション、<xref:System.Web.UI.DataSourceControl>自体です。  
+  
+ このメソッドは、静的な<xref:System.Web.UI.ListSourceHelper.GetList%2A?displayProperty=nameWithType>を取得する方法、<xref:System.Collections.IList>データのソースとして使用できるオブジェクトのコレクション。 <xref:System.Web.UI.ListSourceHelper>クラスによって異なるかどうか<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>ビュー名の有効なコレクションを返します。 その場合、<xref:System.Web.UI.ListSourceHelper>クラスを返します、 <xref:System.Collections.IList> 1 つの要素のコレクション、<xref:System.Web.UI.DataSourceControl>コントロール。 場合<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>返します`null`の既定の実装は、<xref:System.Web.UI.DataSourceControl>クラス、<xref:System.Web.UI.ListSourceHelper>クラスも返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSource.GetView">
+      <MemberSignature Language="C#" Value="System.Web.UI.DataSourceView IDataSource.GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.DataSourceView System.Web.UI.IDataSource.GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.System#Web#UI#IDataSource#GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得する <see cref="T:System.Web.UI.DataSourceView" /> の名前。 などの 1 つのビューをサポートするデータ ソース コントロールに<see cref="T:System.Web.UI.WebControls.SqlDataSource" />、このパラメーターは無視されます。</param>
+        <summary>名前付きの取得<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />コントロール。 一部のデータ ソース コントロールは、1 つ以上をサポートして他のユーザーに 1 つのビューをサポートします。</summary>
+        <returns>名前付き返します<see cref="T:System.Web.UI.DataSourceView" />に関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `viewName`など、1 つのビューをサポートするデータ ソース コントロールにこのメソッドが呼び出されたときに、パラメーターは無視されます、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceControl>このインターフェイス メソッドによって呼び出されますが、クラスの既定の実装を返します`null`です。 拡張する場合、<xref:System.Web.UI.DataSourceControl>クラス、オーバーライド、<xref:System.Web.UI.DataSourceControl.GetView%2A>を返す、指定されたメソッドを<xref:System.Web.UI.DataSourceView>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="viewName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSource.GetViewNames">
+      <MemberSignature Language="C#" Value="System.Collections.ICollection IDataSource.GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.ICollection System.Web.UI.IDataSource.GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataSourceControl.System#Web#UI#IDataSource#GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リストを表す、名前のコレクションを取得<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />コントロール。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />の名前を含む、<see cref="T:System.Web.UI.DataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.DataSourceControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.DataSourceControl>このインターフェイス メソッドによって呼び出されますが、クラスの既定の実装を返します`null`、サポートされている 1 つのビューを示します。 拡張する場合、<xref:System.Web.UI.DataSourceControl>クラス、オーバーライド、<xref:System.Web.UI.DataSourceControl.GetViewNames%2A>ビュー名のコレクションを返すメソッド。 名前を渡すことができます、<xref:System.Web.UI.DataSourceControl.GetView%2A>を返すメソッドを<xref:System.Web.UI.DataSourceView>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataSourceControl.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが視覚的に表示されるかどうかを示す値を設定します。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataSourceControl>コントロールに視覚的に表示がない、<xref:System.Web.UI.DataSourceControl.Visible%2A>プロパティは常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を設定しようとしましたが、<see cref="P:System.Web.UI.DataSourceControl.Visible" />プロパティです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

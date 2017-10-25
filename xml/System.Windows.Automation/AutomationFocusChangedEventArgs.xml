@@ -1,0 +1,96 @@
+<Type Name="AutomationFocusChangedEventArgs" FullName="System.Windows.Automation.AutomationFocusChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class AutomationFocusChangedEventArgs : System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutomationFocusChangedEventArgs extends System.Windows.Automation.AutomationEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationFocusChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フォーカス変更イベントに対してデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AutomationFocusChangedEventArgs (int idObject, int idChild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 idObject, int32 idChild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AutomationFocusChangedEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="idObject" Type="System.Int32" />
+        <Parameter Name="idChild" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="idObject">フォーカスを受け取ったオブジェクトの [!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]。</param>
+        <param name="idChild">フォーカスを受け取ったオブジェクトの子 [!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]。</param>
+        <summary><see cref="T:System.Windows.Automation.AutomationFocusChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `idObject`と`idChild`パラメーターに含まれる、[!INCLUDE[TLA#tla_aa](~/includes/tlasharptla-aa-md.md)]オブジェクトの UI オートメーション クライアントのリンクを使用する識別子、<xref:System.Windows.Automation.AutomationElement>を`IAccessible`古い技術がアプリケーション内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildId">
+      <MemberSignature Language="C#" Value="public int ChildId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChildId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationFocusChangedEventArgs.ChildId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスを受け取るオブジェクトの子 [!INCLUDE[TLA#tla_aa](~/includes/tlasharptla-aa-md.md)] 識別子を取得します。</summary>
+        <value>識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]はアプリケーション内でのユーザー補助オブジェクトのカテゴリを識別する 32 ビット値です。 `idObject`と`idChild`パラメーター オブジェクトに含まれて[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]にリンクするクライアントが使用できる、<xref:System.Windows.Automation.AutomationElement>を`IAccessible`古い技術がアプリケーション内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectId">
+      <MemberSignature Language="C#" Value="public int ObjectId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ObjectId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationFocusChangedEventArgs.ObjectId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを生成した [!INCLUDE[TLA#tla_aa](~/includes/tlasharptla-aa-md.md)] オブジェクトの[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)] を取得します。</summary>
+        <value>フォーカスを受け取る [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] 要素の [!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]。 使用可能な値は、次を参照してください。[オブジェクト識別子](http://msdn.microsoft.com/library/default.asp?url=/library/msaa/msaaccrf_5q05.asp)、Microsoft Active Accessibility マニュアルを参照します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]はアプリケーション内でのユーザー補助オブジェクトのカテゴリを識別する 32 ビット値です。 `idObject`と`idChild`パラメーター オブジェクトに含まれて[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]にリンクするクライアントが使用できる、<xref:System.Windows.Automation.AutomationElement>を`IAccessible`古い技術がアプリケーション内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

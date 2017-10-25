@@ -1,0 +1,617 @@
+<Type Name="GenericWebPart" FullName="System.Web.UI.WebControls.WebParts.GenericWebPart">
+  <TypeSignature Language="C#" Value="public class GenericWebPart : System.Web.UI.WebControls.WebParts.WebPart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GenericWebPart extends System.Web.UI.WebControls.WebParts.WebPart" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.WebPart</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ないサーバー コントロールをラップ<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />には、表示や true として動作するよう<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />実行時にコントロールできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart>はないサーバー コントロールのランタイム ラッパーを提供するコントロールが存在する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、Web パーツ ページとアプリケーションでこのようなコントロールを使用できるようにします。 ときにユーザー コントロール、ASP.NET サーバー コントロール、または既存のカスタム コントロール--など--サーバー コントロールの追加の開発者に、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>コントロール、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールが true と同じ機能を発生することができますので、実行時にサーバー コントロールが自動的に折り返される<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ 次の表に、比較を行って<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールと<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+|<xref:System.Web.UI.WebControls.WebParts.GenericWebPart> コントロール|<xref:System.Web.UI.WebControls.WebParts.WebPart> コントロール|  
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|ないサーバー コントロールを身に存在する<xref:System.Web.UI.WebControls.WebParts.WebPart>Web パーツの機能を制御するいずれか、ASP.NET カスタム、またはユーザー コントロールは、Web パーツ アプリケーションに参加できます。|組み込まれているネイティブの Web パーツ機能を持つカスタムの ASP.NET コントロールを作成する場合に存在します。 これには、パーソナル化、接続、インポートとエクスポート、およびドラッグ アンド ドロップ機能が含まれます。|  
+|ページのマークアップでは宣言されません。 だけを実行時に、サーバー コントロールをラップして、ラップされたコントロール (または子コントロール) のすべての機能を提供するが存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。|内で宣言でき、ページのマークアップ、ASP.NET サーバー コントロールと同様のデザイン時で宣言されていることを除き、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。|  
+|含まれており、その子コントロールを Web パーツのパーソナル化として機能するための処理に統合<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これにより、Web パーツ アプリケーションでサーバー コントロールおよびユーザー コントロールを使用する開発者向けの単純なこれが、自動的に発生します。|Web パーツのパーソナル化プロセスで自動的に含まれます。|  
+|実行時にプログラムからアクセスできます (を使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart%2A>メソッドを渡すことを子サーバー コントロール) などの真の<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたは標準の ASP.NET コントロール。|標準の ASP.NET コントロールと同様に、実行時にプログラムからアクセスすることができます。|  
+  
+ ユーザーの恩恵、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>一貫性のあるユーザー エクスペリエンスを提供するために制御します。 同様に機能する任意のサーバー コントロールができる、<xref:System.Web.UI.WebControls.WebParts.WebPart>制御、およびが動詞、アイコン、タイトル、およびヘッダーなど、同じの一貫性のあるユーザー インターフェイス (UI) 要素があります。 開発者にとって、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>既存のユーザー コントロールと Web パーツ アプリケーション内のサーバー コントロールを再利用することができるため、制御します。  
+  
+> [!NOTE]
+>  Web パーツ ページを作成するときに既存のユーザー コントロールまたはカスタム コントロールをラップするようにするために何もする必要はありません、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 単に、サーバーまたはユーザー コントロールを追加して、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーン、プログラム、またはページのマークアップで宣言することによって、設定は自動的に Web パーツ コントロールでコントロールをラップする、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>実行時にオブジェクト。  
+  
+ サーバーを制御するために配置されます<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>でゾーンがラップされて、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール、実行時に、開発者が通常のサーバーを使用でき、ユーザー コントロールの場合と同様に振る舞います<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 カスタムを宣言する場合を制御することは、ベースから継承<xref:System.Web.UI.Control>クラス内で、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone>、これらのコントロールは、組み込みの使用をサポートできない<xref:System.Web.UI.WebControls.WebParts.WebPart>プロパティです。 したがって、宣言することはできません、<xref:System.Web.UI.WebControls.WebParts.IWebPart>などのプロパティを含む、このようなコントロールのプロパティ、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>プロパティおよび<xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>プロパティです。 これに対し、他の種類のサーバー制御 (など<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、ユーザー コントロール、およびカスタム コントロールから継承する<xref:System.Web.UI.WebControls.WebControl>) expando プロパティの使用をサポートするために、これらのプロパティを宣言できます。  
+  
+ Expando プロパティは、追加できるクラスを動的にプロパティとしての文字列に実際には、<xref:System.Web.UI.IAttributeAccessor>インターフェイスです。 このインターフェイスを実装するコントロールを含む、<xref:System.Web.UI.WebControls.WebControl>クラスとその子 expando プロパティを使用できます。 ベース<xref:System.Web.UI.Control>クラスから継承するカスタム コントロールにある場合の expando プロパティをサポートしません、<xref:System.Web.UI.Control>でクラスを配置している、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>でラップし、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール、実行時に Web パーツ コントロール セットに動的に追加できません、組み込み<xref:System.Web.UI.WebControls.WebParts.IWebPart>カスタム コントロールのプロパティです。 ここでは 2 つの選択肢があります。 せずカスタム コントロールを使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPart>プロパティ、またはを実装できます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>プロパティを使用するように有効にすると、カスタム コントロールのインターフェイスです。  
+  
+ 方法の例を制御するようから継承<xref:System.Web.UI.WebControls.WebControl>使用できる、 <xref:System.Web.UI.WebControls.WebParts.IWebPart> ASP.NET を宣言する場合は、プロパティ<xref:System.Web.UI.WebControls.Calendar>コントロールをページのマークアップ (内で、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーン)、デザイン時にいなくてもこのコントロールから継承していない、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスは、ネイティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>メンバー、まだ扱うことができますと同様に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 宣言することができます<xref:System.Web.UI.WebControls.WebParts.WebPart>カレンダーのプロパティを制御するように<xref:System.Web.UI.WebControls.WebParts.IWebPart.Title%2A>、 <xref:System.Web.UI.WebControls.WebParts.IWebPart.Description%2A>、およびその他。 使用することができます、実行時に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart%2A>を返すメソッド、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールが動的に予定表コントロールでラップしの場合と同様に正確にプログラムで操作を<xref:System.Web.UI.WebControls.WebParts.WebPart>を制御するへのアクセスとまったく同じプロパティ、イベント、およびメソッドです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールの基になるサーバー コントロールにアクセスできるようにする重要なプロパティがある:<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プロパティです。 このプロパティでは、サーバー コントロールをプログラムでアクセスをすることができます。 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>でプロパティを使用しても、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、子コントロールから、パーソナル化データにアクセスする場合、承認を実行して、<xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter%2A>プロパティを設定します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールが他のいくつかのプロパティをベースから継承されたプロパティをオーバーライドする<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスです。 前述のように、プロパティを使用できますこれらの子コントロールとそのとして動作できるように、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 1 つの重要なプロパティは、<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティはエクスポート可能なすべてのプロパティまたはのみに依存したがマークされているかどうかをエクスポートできることを決定します。 UI 指向プロパティから継承、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスなど<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A>、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Description%2A>、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Height%2A>、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A>、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl%2A>、および<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Width%2A>に配置されているすべてのサーバー コントロールの宣言型マークアップで設定することができます、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。  
+  
+ 重要なメソッドで、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスが含まれて、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateControlCollection%2A>に関連付けられているコントロールの子コントロールを含む) のコレクションを作成するメソッド、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール、および<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Render%2A>メソッドで、ラップされた子コントロールに表示するすべてのデリゲートします。 上のコンス トラクター、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスは保護され、内部で使用するか、機能拡張シナリオを対象としています。  
+  
+ 操作するためのいくつか追加の便利なインサイトがある<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 オーバーライドされたプロパティの既定値を設定するかどうか、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラス、ユーザー コントロール、カスタム サーバー コントロールを実装できる、<xref:System.Web.UI.WebControls.WebParts.IWebPart>と<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイス、およびそのメンバーをオーバーライドします。 実行時に、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールは、インターフェイスを実装する子コントロールから実装されたプロパティの値を取得します。 コントロールのプロパティのいずれかの定義をパーソナル化可能としてかどうか (を使用して、`Personalizable`メタデータ属性) では、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールが自動的にパーソナル化可能なプロパティと同じように、実行時にパーソナル化のため、これらのプロパティを有効に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ コントロールに Web パーツの編集機能を提供する場合は、実装、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスです。 実行時に、ときに、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドが呼び出されると、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールのコードを<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.WebBrowsableObject%2A>プロパティは、子コントロールで、同じプロパティを呼び出すし、子コントロールの実装を使用して、関連付けられたカスタムを作成する<xref:System.Web.UI.WebControls.WebParts.EditorPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールではないサーバー コントロールを自動的に折り返されて、<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時にコントロールです。  
+  
+ このコード例の最初の部分には、2 つの Web パーツ ページが含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 各ゾーン内で、標準の ASP.NET サーバー コントロールです。 コントロールがあるため、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーン、それらが自動的に折り返されると、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>ページをコンパイルする場合を制御します。 したがって、宣言することができます<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスのこれらのコントロールのプロパティです。 クリックすると、ブラウザーでページを読み込んだ後、**プロパティ値をすべて表示**ボタンの場合は、各コントロールがラベルに表示されているの詳細。 表示する方法、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> 、動作を制御、<xref:System.Web.UI.WebControls.Calendar>最初のゾーン内のコントロールがいくつかの<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>一方、.aspx ページの宣言型マークアップでプロパティを設定、<xref:System.Web.UI.WebControls.BulletedList>コントロールはありません。 ページの読み込み後の 2 つのコントロールのプロパティの値の違いに注意して、親を持つ両方と<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#1)]  
+  
+ コード例の 2 番目の部分の一部のプロパティにアクセスする部分クラスを示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>をプログラムで制御します。 注意、 `Page_Load` 、メソッド、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart%2A>の実行時インスタンスを取得するメソッドを使用、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>サーバー コントロールをラップするコントロール。 親への参照を取得するには、このアプローチ<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールを有効にする場合と同様に、通常のサーバーまたはユーザー コントロールをプログラムで操作、<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時に制御します。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#3)]
+ [!code-vb[WebParts_GenericWebPart_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>あるいくつかの状況から継承する必要がある、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />クラスです。 このような 1 つのケースは、開発者が、コンス トラクターで何らかのカスタム アクションを実装するかどうかはときに、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールを作成します。 子コントロールには、コントロール コレクション以外の場所を保存するなど、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />クラスです。 継承する場合、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />クラス、する必要がありますから継承、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスし、オーバーライドの<see cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart(System.Web.UI.Control)" />メソッドにカスタム コントロールを作成します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected GenericWebPart (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.#ctor(System.Web.UI.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー コントロールの子コントロールとなる、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールのインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />子コントロールになったコントロールへの参照を渡すことによって制御されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.%23ctor%28System.Web.UI.Control%29>コンス トラクターを呼び出す、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールにその<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart%2A>のインスタンスを初期化するために、メソッド、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>子サーバー コントロールへの参照を渡すことによって制御されます。 後に、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクトが作成されると、子コントロールを使用して、参照することができます、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="control" /> は <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> 型です。  
+  
+ \- または  
+  
+ <paramref name="control" /><see langword="null" />または空<see cref="P:System.Web.UI.Control.ID" />プロパティです。  
+  
+ \- または  
+  
+ <paramref name="control" />出力キャッシュされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogIconImageUrl">
+      <MemberSignature Language="C#" Value="public override string CatalogIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の URL を表すイメージ、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールのカタログ内のコントロールです。</summary>
+        <value>カタログ内のコントロールを表すために使用されるイメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの場合、web パーツ アプリケーションは、ユーザーがページに追加できるコントロールのカタログ (または一覧) を提供します。 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A>コントロールのプロパティにコントロールを表すカタログで表示されるイメージの URL が含まれています。 このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ プログラミングで Web ページの宣言型マークアップのコントロールのプロパティの値を設定できます。 提供するため、既定値は、プロパティ、コントロールが使用されるたびに、実装することができます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ コード例の最初の部分を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A>宣言内のサーバー コントロールのプロパティが設定、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
+  
+ コード例の 2 番目の部分は、ユーザーがクリックしたときに、プロパティの値をプログラムでアクセスするメソッドを示しています、**プロパティ値をすべて表示**ボタンをクリックします。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ChildControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control ChildControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってラップされている子コントロールへの参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />実行時に制御します。</summary>
+        <value>A<see cref="T:System.Web.UI.Control" />ラップされた子コントロールを参照します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プロパティによってラップした子コントロールにアクセスする手段を提供する、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 たとえば、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>子コントロールからパーソナル化データを抽出するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プロパティです。 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プログラムからの子コントロールの概要情報を取得するプロパティにアクセスする<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET ページ フレームワークによって呼び出され、ポストバックまたはレンダリングの準備として、合成ベースの実装を使うサーバー コントロールに対し、それらのコントロールに含まれる子コントロールを作成するように通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によってラップした子コントロールで構成される読み取り専用コレクションを作成する基本メソッドをオーバーライドして、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ControlCollection" />子コントロールを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateControlCollection%2A>メソッドを作成した子コントロールは、1 つのコントロールで構成されるプライベートな読み取り専用コレクションの<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 このコレクションを作成すると、他のコントロールの開発者を手動で追加されるため、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。  
+  
+ カスタムを作成する場合<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールを派生させる秘密のコレクションに子コントロールを追加せず、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラス、オーバーライド、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.%23ctor%2A>コンス トラクター、によって参照されている子コントロールを格納するためのさまざまなメソッドを提供し、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEditorParts">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateEditorParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.EditorPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタムのコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />の子コントロールを編集するために使用するコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />で編集モードにある場合を制御します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.WebParts.EditorPartCollection" />を含むカスタム<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />サーバー コントロールに関連付けられているコントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateEditorParts%2A>コントロールが編集表示モードに入るときに、メソッドが呼び出されます。 このメソッドから継承する基本メソッドのオーバーライド、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスための場合、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>編集されている、いない子コントロールは、コントロール、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>自体を制御します。 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateEditorParts%2A>メソッドを子コントロールではキャスト、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイスで、編集する制御を有効にします。  
+  
+ このオーバーライドされたメソッドは、新機能により、サーバー コントロールから派生していないこと、 <xref:System.Web.UI.WebControls.WebParts.WebPart> ASP.NET サーバー コントロールと正常に編集する--カスタム サーバー コントロールを含む--クラス<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public override string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールヒントやサーバー コントロールのカタログで使用する、コントロールの動作をまとめた簡単な語句を設定します。</summary>
+        <value>文字列には、コントロールの機能を簡単に説明をまとめたものです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Description%2A>プロパティの値は、サーバー コントロールのリストを提供するカタログ内のコントロールの説明の文字列とは、コントロールのタイトル バーのツールヒントとして通常使用されます。 プロパティのコンテンツは、ユーザーがコントロールのタイトル バーのタイトル テキストの上にマウス ポインターを置いたときに、ツールヒントに表示されます。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ プログラミングで Web ページの宣言型マークアップのコントロールのプロパティの値を設定できます。 提供するため、既定値は、プロパティ、コントロールが使用されるたびに、実装することができます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Description%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ コード例の最初の部分を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Description%2A>宣言内のサーバー コントロールのプロパティが設定、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
+  
+ コード例の 2 番目の部分では、ラベルに値を表示するには、プログラムによってプロパティにアクセスする方法を示します。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コントロールの高さをピクセル単位) を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />コントロールの高さを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得したり、真の場合と同様、子コントロールの高さを設定できるように、このプロパティは、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public override sealed string ID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの ID を設定します。 この値は、継承ではありません。</summary>
+        <value>コントロールの ID を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>デリゲートを子コントロールにコントロールの内容を表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtitle">
+      <MemberSignature Language="C#" Value="public override string Subtitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subtitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Subtitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連結した文字列を取得、<see cref="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Title" />コントロールの完全なタイトルを形成するプロパティ値。</summary>
+        <value>コントロールのサブタイトルとして機能する文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Subtitle%2A>必要に応じて文字列を返す、標準のサブタイトル独自に追加されるプロパティ<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールのタイトル。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ 実装する場合、<xref:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle%2A>ユーザー コントロールや既定値を指定するカスタム コントロールのプロパティを Web パーツ コントロール セットを自動的に追加のコントロールの値に<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A>完全なタイトルを作成する実行時にプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のタイトル、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。</summary>
+        <value>一部のコントロールのタイトルを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 部分から成るコントロールのタイトル バーに表示されるタイトルのテキストが設定されて、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A>プロパティです。  
+  
+ コントロールのタイトルを指定しない場合、Web パーツ コントロール セットを自動的には、タイトルとして使用する既定の文字列を計算します。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>」を参照してください。 また、タイトル文字列に追加される既定のサブタイトルを指定することができます。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Subtitle%2A>」を参照してください。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ プログラミングで Web ページの宣言型マークアップのコントロールのプロパティの値を設定できます。 提供するため、既定値は、プロパティ、コントロールが使用されるたびに、実装することができます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ コード例の最初の部分を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A>宣言内のサーバー コントロールのプロパティが設定、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
+  
+ コード例の 2 番目の部分では、ラベルに値を表示するには、プログラムによってプロパティにアクセスする方法を示します。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleIconImageUrl">
+      <MemberSignature Language="C#" Value="public override string TitleIconImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の URL を表すために使用されるイメージ、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロールのタイトル バーにコントロールできます。</summary>
+        <value>イメージの URL を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl%2A>プロパティをアイコンに関連付ける方法を提供する、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 コントロールのタイトル バーにアイコンが表示されます。 テーマの一貫性をアプリケーション開発者多くの場合は、このアイコンを Web パーツ コントロールのカタログ内のコントロールを表す画像のように (で参照されている画像、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A>プロパティ)。  
+  
+ Web パーツ コントロール セットに実装されている、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl%2A>プロパティは、イメージまたはコントロールのタイトル バーに表示されるアイコンを変更するのには、エンドユーザーがカスタマイズできます。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ プログラミングで Web ページの宣言型マークアップのコントロールのプロパティの値を設定できます。 提供するため、既定値は、プロパティ、コントロールが使用されるたびに、実装することができます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ コード例の最初の部分を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl%2A>宣言内のサーバー コントロールのプロパティが設定、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
+  
+ コード例の 2 番目の部分では、ラベルに値を表示するには、プログラムによってプロパティにアクセスする方法を示します。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleUrl">
+      <MemberSignature Language="C#" Value="public override string TitleUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または補足情報への URL を設定、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。</summary>
+        <value>についての詳細情報への URL を表す文字列、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL を割り当てると、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl%2A>プロパティ、コントロールのタイトルはリンクになります。 このプロパティは、コントロールに関する追加情報にアクセスするエンドユーザー用の便利な方法を提供します。 追加の情報は、著作権情報、連絡先データは、コントロールの作成者やコントロールの目的の概要の詳細を含めることができます。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ プログラミングで Web ページの宣言型マークアップのコントロールのプロパティの値を設定できます。 提供するため、既定値は、プロパティ、コントロールが使用されるたびに、実装することができます、<xref:System.Web.UI.WebControls.WebParts.IWebPart>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl%2A>プロパティです。 使用例」の例の完全なソース コードが検出された、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>概要トピックです。  
+  
+ コード例の最初の部分を示しています、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl%2A>宣言内のサーバー コントロールのプロパティが設定、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
+  
+ コード例の 2 番目の部分では、ラベルに値を表示するには、プログラムによってプロパティにアクセスする方法を示します。  
+  
+ [!code-csharp[WebParts_GenericWebPart_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpart.cs#4)]
+ [!code-vb[WebParts_GenericWebPart_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpart.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているカスタム動詞のコレクションを取得、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbCollection" />を含むカスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。 既定値は <see cref="F:System.Web.UI.WebControls.WebParts.WebPartVerbCollection.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生して動詞、<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>クラス、でき、ユーザー インターフェイス (UI) のアクションに対してユーザーが実行される、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 通常、動詞は、ボタン、リンク、またはメニュー項目として、UI に表示されます。 標準の動詞を開く、閉じる、編集、およびコントロール、およびコントロールの定義をエクスポートするか、ヘルプ ファイルの読み込みの他の動詞を最小限に抑えることがあります。 これらの動詞は含まれていない、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A>コレクション、コレクションにカスタム動詞のみが含まれているためです。  
+  
+ このプロパティが真の場合と同様に、子コントロールのプロパティをアクセスできるようにする、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 場合する子コントロールを実装して、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスなり上書きその<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A?displayProperty=nameWithType>プロパティ、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロールで子コントロールの実装を使用してときに、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A?displayProperty=nameWithType>に対してプロパティが呼び出される、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。  
+  
+ カスタム動詞を作成しに追加する際、 <xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A> 、コレクションにアクセスできますからプログラムによって動詞、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebBrowsableObject">
+      <MemberSignature Language="C#" Value="public override object WebBrowsableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WebBrowsableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.WebBrowsableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム編集して制御を有効にした子コントロールへの参照を取得<see cref="T:System.Web.UI.WebControls.WebParts.EditorPart" />コントロール。</summary>
+        <value><see cref="T:System.Object" />の子コントロールで構成される、<see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子コントロールを実装する場合、<xref:System.Web.UI.WebControls.WebParts.IWebEditable>インターフェイス、および上書きその<xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>プロパティをユーザーが、編集のためのコントロールを選択すると、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>を使用して子コントロールにコントロールが呼び出す、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject%2A>プロパティの子コントロールの実装を使用して、<xref:System.Web.UI.WebControls.WebParts.IWebEditable.CreateEditorParts%2A>メソッドです。 このメカニズムでは、サーバーまたはユーザー コントロールではない、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを定義した関連付けられているカスタム動作<xref:System.Web.UI.WebControls.WebParts.EditorPart>Web パーツ アプリケーションでのコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Width" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コントロールの幅をピクセル単位) を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />コントロールの幅を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得したり、真の場合と同様に、子コントロールに幅を設定できるように、このプロパティは、基本プロパティをオーバーライド<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

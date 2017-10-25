@@ -1,0 +1,53 @@
+<Type Name="PartialCachingControl" FullName="System.Web.UI.PartialCachingControl">
+  <TypeSignature Language="C#" Value="public class PartialCachingControl : System.Web.UI.BasePartialCachingControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PartialCachingControl extends System.Web.UI.BasePartialCachingControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PartialCachingControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.BasePartialCachingControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページ ディレクティブを使用して出力キャッシュのユーザー コントロール (.ascx ファイル) が指定されたときに作成または<see cref="T:System.Web.UI.PartialCachingAttribute" />でユーザー コントロールの動的な読み込みによって、属性、およびユーザー コントロールをページのコントロールの階層に挿入されたが、<see cref="M:System.Web.UI.TemplateControl.LoadControl(System.String)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページおよびコントロールの開発者が使用できません、<xref:System.Web.UI.PartialCachingControl>クラスに直接できます。 ASP.NET のインスタンスを作成する、<xref:System.Web.UI.PartialCachingControl>ユーザー コントロール (.ascx ファイル) をラップするクラスと、動的に読み込まれるユーザー コントロールにより、出力キャッシュします。 いずれかを使用してユーザー コントロールの出力キャッシュを有効にする、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ページ ディレクティブまたは<xref:System.Web.UI.PartialCachingAttribute>属性。  
+  
+ ユーザー コントロールをページに追加する、プログラムで呼び出すことによって、<xref:System.Web.UI.TemplateControl.LoadControl%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CachedControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control CachedControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control CachedControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingControl.CachedControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされているユーザー コントロールへの参照を取得します。</summary>
+        <value>キャッシュされているユーザー コントロールです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、その出力がキャッシュされていない場合にのみ、ユーザー コントロールを返します。 ユーザー コントロールの出力が存在するかどうか、出力キャッシュに、このプロパティを返します`null`コントロールのインスタンスが作成されていないため、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

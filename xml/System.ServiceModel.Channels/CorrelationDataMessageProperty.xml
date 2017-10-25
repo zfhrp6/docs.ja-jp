@@ -1,0 +1,235 @@
+<Type Name="CorrelationDataMessageProperty" FullName="System.ServiceModel.Channels.CorrelationDataMessageProperty">
+  <TypeSignature Language="C#" Value="public class CorrelationDataMessageProperty : System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CorrelationDataMessageProperty extends System.Object implements class System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IMessageProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>受信メッセージを介してデータが <see cref="T:System.ServiceModel.MessageQuerySet" /> から返されるときなど、プロトコルが適用されたときにメッセージに関する追加の関連付け情報を蓄積するメッセージ プロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.CorrelationDataMessageProperty> によって蓄積される関連付けデータは、メッセージを他のメッセージと関連付けるインスタンス キーを計算するときに、メッセージ コンテンツを拡張します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CorrelationDataMessageProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name, Func&lt;string&gt; dataProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, class System.Func`1&lt;string&gt; dataProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.Add(System.String,System.Func{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dataProvider" Type="System.Func&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">関連付けデータ プロバイダーの名前。</param>
+        <param name="dataProvider">関連付けデータ プロバイダー。</param>
+        <summary>プロバイダーに関するプロパティのプライベート ディクショナリに関連付けデータ プロバイダーを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddData">
+      <MemberSignature Language="C#" Value="public static void AddData (System.ServiceModel.Channels.Message message, string name, Func&lt;string&gt; dataProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddData(class System.ServiceModel.Channels.Message message, string name, class System.Func`1&lt;string&gt; dataProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.AddData(System.ServiceModel.Channels.Message,System.String,System.Func{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="dataProvider" Type="System.Func&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="message">変更するメッセージ。</param>
+        <param name="name">関連付けデータ プロバイダーの名前。</param>
+        <param name="dataProvider">関連付けデータ プロバイダー。</param>
+        <summary>指定されたメッセージに関連付けデータを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージに <xref:System.ServiceModel.Channels.CorrelationDataMessageProperty> がある場合は、関連付けデータは <xref:System.ServiceModel.Channels.CorrelationDataMessageProperty> に追加されます。それ以外の場合は、関連付けデータを含む新しい <xref:System.ServiceModel.Channels.CorrelationDataMessageProperty> が追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" /> インスタンスのコピーである、新しい <see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" /> インスタンスを初期化して返します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CorrelationDataMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージ プロパティの名前を取得します。"CorrelationDataMessageProperty"。</summary>
+        <value>文字列値"CorrelationDataMessageProperty"。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するデータ プロバイダーの名前。</param>
+        <summary>データ プロバイダーのプライベート ディクショナリから関連付けデータ プロバイダーを削除します。</summary>
+        <returns>
+          <see langword="true" />削除操作が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.Message message, out System.ServiceModel.Channels.CorrelationDataMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Channels.CorrelationDataMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.TryGet(System.ServiceModel.Channels.Message,System.ServiceModel.Channels.CorrelationDataMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationDataMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">検査対象の <see cref="P:System.ServiceModel.Channels.Message.Properties" /> を格納するメッセージ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />指定されたメッセージの格納されている<see cref="P:System.ServiceModel.Channels.Message.Properties" />、それ以外の<see langword="null" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージの <see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" /> から <see cref="P:System.ServiceModel.Channels.Message.Properties" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />場合、メッセージの<see cref="P:System.ServiceModel.Channels.Message.Properties" />プロパティが含まれています、<see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />クラスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.MessageProperties properties, out System.ServiceModel.Channels.CorrelationDataMessageProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.MessageProperties properties, [out] class System.ServiceModel.Channels.CorrelationDataMessageProperty&amp; property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.TryGet(System.ServiceModel.Channels.MessageProperties,System.ServiceModel.Channels.CorrelationDataMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+        <Parameter Name="property" Type="System.ServiceModel.Channels.CorrelationDataMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="properties">検査対象のメッセージ プロパティ。</param>
+        <param name="property">このメソッドが戻るとき、<see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />指定されたメッセージ プロパティが含まれている、それ以外の<see langword="null" />します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたメッセージ プロパティから <see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" /> の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />メッセージのプロパティが含まれている場合、 <see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (string name, out string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetValue(string name, [out] string&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CorrelationDataMessageProperty.TryGetValue(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">データ プロバイダーの名前。</param>
+        <param name="value">このメソッドが戻るときにそれが存在する場合、データ プロバイダーの値を含むそれ以外の場合、<see langword="null" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>データ プロバイダーのプライベート ディクショナリからの、指定された関連付けデータ プロバイダーの取得を試みます。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ServiceModel.Channels.CorrelationDataMessageProperty" />指定された関連付けデータ プロバイダーが含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

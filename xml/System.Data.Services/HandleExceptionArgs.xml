@@ -1,0 +1,137 @@
+<Type Name="HandleExceptionArgs" FullName="System.Data.Services.HandleExceptionArgs">
+  <TypeSignature Language="C#" Value="public class HandleExceptionArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HandleExceptionArgs extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.HandleExceptionArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>発生した例外の詳細と、関連付けられている HTTP 応答の詳細を指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.HandleExceptionArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理されて応答として返される例外を取得または設定します。</summary>
+        <value>処理されて応答として返される例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が <xref:System.Data.Services.DataServiceException> である場合は、<xref:System.Data.Services.HandleExceptionArgs.UseVerboseErrors%2A> 値に関係なく常に、例外のメッセージがクライアントに返されます。 <xref:System.Data.Services.HandleExceptionArgs.UseVerboseErrors%2A> が true の場合、内部例外もクライアントに返されます。それ以外の場合、<xref:System.Data.Services.DataServiceException> メッセージのみが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseContentType">
+      <MemberSignature Language="C#" Value="public string ResponseContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.HandleExceptionArgs.ResponseContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のコンテンツ タイプを取得します。</summary>
+        <value>応答形式を示す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのエラーは、エラー ペイロードとしてサービスから返されます。 サービスの作成者は、このプロパティを使用して、返されるエラーの形式を知ることができます。 このプロパティの値は常に、有効なインターネット割り当て番号機関 (IANA) の MIME の種類になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseStatusCode">
+      <MemberSignature Language="C#" Value="public int ResponseStatusCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ResponseStatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.HandleExceptionArgs.ResponseStatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスでエラーが発生したときに応答の HTTP ヘッダー セクションとして返されるステータス コードを取得します。</summary>
+        <value>HTTP 応答のステータス コードの整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseWritten">
+      <MemberSignature Language="C#" Value="public bool ResponseWritten { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResponseWritten" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.HandleExceptionArgs.ResponseWritten" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答が書き込まれているかどうかを示す値を取得します。</summary>
+        <value>応答が書き込まれているかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値が true の場合、HTTP 応答ヘッダーと (場合によっては) 応答の本文部分もクライアントに既に送信されていて変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseVerboseErrors">
+      <MemberSignature Language="C#" Value="public bool UseVerboseErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseVerboseErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.HandleExceptionArgs.UseVerboseErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>詳細なエラーが返されるかどうかを示すブール値を取得または設定します。</summary>
+        <value>詳細なエラーが返されるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.HandleExceptionArgs.UseVerboseErrors%2A> が true に設定されている場合、すべての例外の詳細が応答として返されます。 セキュリティに関するメモ: この値を true に設定した場合、本来非公開とする必要のある情報がサービスに公開される可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

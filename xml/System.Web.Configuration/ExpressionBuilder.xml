@@ -1,0 +1,148 @@
+<Type Name="ExpressionBuilder" FullName="System.Web.Configuration.ExpressionBuilder">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionBuilder : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ExpressionBuilder extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイル時に動的なリソースを取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET がページを使用して解析時に自動的に式を評価、<xref:System.Web.Configuration.ExpressionBuilder>クラスです。 <xref:System.Web.Configuration.ExpressionBuilderCollection>で構成された、コレクション、`expressionBuilders`に含まれる要素の`compilation`構成セクション。 <xref:System.Web.Configuration.ExpressionBuilder>キー/値ペア内の特定の値を格納します。  
+  
+ フォームの式を含めることによって、値を取得します。  
+  
+ `<%$ ExpressionPrefix: ExpressionKey %>`  
+  
+ 内でのページです。 `ExpressionPrefix`を入力するか、共通式ビルダーとして取得する式の型をマップ (つまり、 <xref:System.Web.Compilation.AppSettingsExpressionBuilder>) またはカスタム式ビルダーの型。 `ExpressionKey`戻り値を参照するために使用するキーを指定します。  
+  
+ 式ビルダーの一般的な型を実装する場合は、構成に関連するセクション名を式ビルダーをマップする必要があります。 カスタム式ビルダー型を実装する場合から派生する必要がある、カスタム式ビルダー クラスに、式ビルダーをマップする必要があります、<xref:System.Web.Configuration.ExpressionBuilder>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionBuilder (string expressionPrefix, string theType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string expressionPrefix, string theType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ExpressionBuilder.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="expressionPrefix" Type="System.String" />
+        <Parameter Name="theType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="expressionPrefix">取得する式の型を識別する文字列。</param>
+        <param name="theType">式の型を指定する文字列。</param>
+        <summary><see cref="T:System.Web.Configuration.ExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.ExpressionBuilder>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ExpressionBuilderCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ExpressionBuilderCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/CS/ExpressionBuilderCollection.cs#2)]
+ [!code-vb[System.Web.Configuration.ExpressionBuilderCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ExpressionBuilderCollection/VB/ExpressionBuilderCollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionPrefix">
+      <MemberSignature Language="C#" Value="public string ExpressionPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExpressionPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilder.ExpressionPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("expressionPrefix", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を取得する式の型を識別する文字列。</summary>
+        <value>取得する式の型を識別する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ExpressionBuilder.ExpressionPrefix%2A>共通式の型に対する構成に関連するセクション名に式を割り当てたり、式を式のカスタム クラスにマップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilder.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ExpressionBuilder.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または式の型を指定する文字列を設定します。</summary>
+        <value>式の型を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ExpressionBuilder.Type%2A>式の値を決定するために使用するオブジェクトの種類を指定します。 型には、構成内のセクションまたはカスタム クラスのいずれかを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

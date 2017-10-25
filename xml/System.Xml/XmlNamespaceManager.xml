@@ -1,0 +1,734 @@
+<Type Name="XmlNamespaceManager" FullName="System.Xml.XmlNamespaceManager">
+  <TypeSignature Language="C#" Value="public class XmlNamespaceManager : System.Collections.IEnumerable, System.Xml.IXmlNamespaceResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNamespaceManager extends System.Object implements class System.Collections.IEnumerable, class System.Xml.IXmlNamespaceResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlNamespaceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Xml.IXmlNamespaceResolver</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>名前空間の解決、コレクションへの追加と削除を実行します。また、名前空間のスコープ管理機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間の宣言し、XML ドキュメントで使用される方法の詳細については、次を参照してください。 [XML ドキュメント内の名前空間を管理する](~/docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)です。  
+  
+ <xref:System.Xml.XmlNamespaceManager>プレフィックスと名前空間を文字列として格納されます。 このクラスで実行できるタスクを管理および検索の概要を次に示します。 使用例を含む詳細については、各メソッドまたはプロパティのリファレンス ページへのリンクをクリックしてください。  
+  
+|目的|用途|  
+|--------|---------|  
+|名前空間を追加する|<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A> メソッド|  
+|名前空間を削除する|<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A> メソッド|  
+|既定の名前空間の URI を検索する|<xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A> プロパティ|  
+|名前空間プレフィックスの URI を検索する|<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A> メソッド|  
+|名前空間 URI のプレフィックスを検索する|<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A> メソッド|  
+|現在のノードの名前空間の一覧を取得する|<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A> メソッド|  
+|名前空間のスコープを指定する|<xref:System.Xml.XmlNamespaceManager.PushScope%2A> メソッドおよび <xref:System.Xml.XmlNamespaceManager.PopScope%2A> メソッド|  
+|現在のスコープ内にプレフィックスが定義されているかどうかを確認する|<xref:System.Xml.XmlNamespaceManager.HasNamespace%2A> メソッド|  
+|プレフィックスおよび URI を検索するときに使用する名前テーブルを取得する|<xref:System.Xml.XmlNamespaceManager.NameTable%2A> プロパティ|  
+  
+ 作成する、名前空間マネージャーには、名前空間を追加するには<xref:System.Xml.XmlNamespaceManager>オブジェクトを使用して、<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>メソッドです。 作成時に、既定のプレフィックスと名前空間のペアが名前空間マネージャーに自動的に追加されます。  
+  
+ 名前テーブルを指定するには、名前空間マネージャーを作成するとき、 <xref:System.Xml.XmlReader>、 <xref:System.Xml.Xsl.XsltContext>、または<xref:System.Xml.XmlDocument>クラス、しを使用して、<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>メソッド名前空間を追加します。  
+  
+ 指定することができます、<xref:System.Xml.XmlNamespaceManager>オブジェクトをパラメーターとして、<xref:System.Xml.XmlNode.SelectNodes%2A>または<xref:System.Xml.XmlNode.SelectSingleNode%2A>のメソッド、<xref:System.Xml.XmlDocument>名前空間で修飾された要素と属性名を参照する XPath クエリ式を実行するクラス。  
+  
+ 名前空間マネージャーでは、プレフィックスと名前空間が既に確認し、に準拠している、 [W3C 名前空間](http://www.w3.org/TR/REC-xml-names/)仕様です。 名前空間マネージャーでは、いずれかの検証は実行されません。  
+  
+ 使用して追加されるときに、名前空間マネージャーが、文字列を atomizes、<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>メソッドを使用して、照合を実行するときに、<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>または<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>メソッドです。  
+  
+ 名前空間マネージャーにより、名前空間の追加と取得だけでなく、列挙のサポートも実装されます。 使用して、名前空間マネージャーに保存された情報をループできます、`foreach`を構築します。 たとえば、名前を持つ名前空間マネージャーを作成する`nsmanager`を使用してテーブルを反復処理できる`foreach (String prefix in nsmanager)`です。  
+  
+ 名前空間マネージャーには、プレフィックスと名前空間をオブジェクトとして文字列比較する機能があるため、文字列を直接比較するのではなく名前空間マネージャーを使用することでパフォーマンスを向上できます。  
+  
+ 次のコード例は、プレフィックスをバインドする方法を示しています。`xsd`名前空間 URI の`http://www.w3.org/2001/XMLSchema`し、名前空間マネージャーに追加します。  
+  
+```vb  
+nsmgr.AddNamespace("xsd", "http://www.w3.org/2001/XMLSchema")  
+```  
+  
+```csharp  
+nsmgr.AddNamespace("xsd", "http://www.w3.org/2001/XMLSchema");  
+```  
+  
+ 使用して、名前空間を検索することができますし、<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>メソッド。  
+  
+```vb  
+nsmgr.LookupNamespace("xsd")  
+```  
+  
+```csharp  
+nsmgr.LookupNamespace("xsd");  
+```  
+  
+ 次の例を作成、 <xref:System.Xml.XmlNamespaceManager> XML リーダーから名前テーブルを使用しています。  
+  
+```vb  
+Dim reader As New XmlTextReader("myfile.xml")  
+Dim nsmanager As New XmlNamespaceManager(reader.NameTable)  
+nsmanager.AddNamespace("msbooks", "www.microsoft.com/books")  
+nsmanager.PushScope()  
+nsmanager.AddNamespace("msstore", "www.microsoft.com/store")  
+While reader.Read()  
+    Console.WriteLine("Reader Prefix:{0}", reader.Prefix)  
+    Console.WriteLine("XmlNamespaceManager Prefix:{0}",  
+     nsmanager.LookupPrefix(nsmanager.NameTable.Get(reader.NamespaceURI)))  
+End While  
+```  
+  
+```csharp  
+XmlTextReader reader = new XmlTextReader("myfile.xml");  
+XmlNamespaceManager nsmanager = new XmlNamespaceManager(reader.NameTable);  
+nsmanager.AddNamespace("msbooks", "www.microsoft.com/books");  
+nsmanager.PushScope();  
+nsmanager.AddNamespace("msstore", "www.microsoft.com/store");  
+while (reader.Read())  
+{  
+    Console.WriteLine("Reader Prefix:{0}", reader.Prefix);  
+    Console.WriteLine("XmlNamespaceManager Prefix:{0}",  
+    nsmanager.LookupPrefix(nsmanager.NameTable.Get(reader.NamespaceURI)));  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlNamespaceManager (System.Xml.XmlNameTable nameTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nameTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.#ctor(System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nameTable" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="nameTable">使用する <see cref="T:System.Xml.XmlNameTable" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlNamespaceManager" /> を使用して、<see cref="T:System.Xml.XmlNameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前テーブルを使用すると、プレフィックスと名前空間を検索します。 事前アトミック化された文字列と既存の名前テーブルは、コンス トラクターで指定できます。 これには、いくつかの利点があります。 たとえば場合の名前のテーブル、<xref:System.Xml.XmlReader>オブジェクトが使用される、読み取り、任意の名前空間およびプレフィックス文字列が名前のテーブルへのプッシュは各後で再利用できます<xref:System.Xml.XmlNamespaceManager>です。  
+  
+ アトミック化された文字列の詳細については、次を参照してください。<xref:System.Xml.XmlNameTable>です。  
+  
+> [!NOTE]
+>  名前の既存のテーブルを指定する場合、名前空間の名前テーブルでに自動的には追加されません<xref:System.Xml.XmlNamespaceManager>です。 使用する必要があります<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>と<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>を追加または名前空間を削除します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlNamespaceManager>リーダーの名前テーブルを使用します。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.XmlNamespaceManager Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.XmlNamespaceManager Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.XmlNamespaceManager Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.XmlNamespaceManager Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.XmlNamespaceManager Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.XmlNamespaceManager Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException">
+          <see langword="null" />コンス トラクターに渡される</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNamespace">
+      <MemberSignature Language="C#" Value="public virtual void AddNamespace (string prefix, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddNamespace(string prefix, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.AddNamespace(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">追加する名前空間に関連付けるプリフィックス。 String.Empty を使用して、既定の名前空間を追加します。  
+  
+ **注**場合、<see cref="T:System.Xml.XmlNamespaceManager" />使用される XML Path Language (XPath) 式の中で名前空間を解決するには、プレフィックスを指定する必要があります。 XPath 式にプレフィックスが含まれていない場合、名前空間 URI (Uniform Resource Identifier) は、空の名前空間であると見なされます。 XPath 式の詳細については、<see cref="T:System.Xml.XmlNamespaceManager" />を参照してください、<see cref="M:System.Xml.XmlNode.SelectNodes(System.String)" />と<see cref="M:System.Xml.XPath.XPathExpression.SetContext(System.Xml.XmlNamespaceManager)" />メソッドです。</param>
+        <param name="uri">追加する名前空間。</param>
+        <summary>指定した名前空間をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlNamespaceManager>チェックしません`prefix`と`uri`準拠するためです。  
+  
+ <xref:System.Xml.XmlReader>World Wide Web Consortium (W3C) に従って有効な XML 名があることを保証するプレフィックスおよび名前空間を含め、名の確認[名前空間の仕様](http://www.w3.org/TR/REC-xml-names/)です。 <xref:System.Xml.XmlNamespaceManager>内部で使用される<xref:System.Xml.XmlReader>作業の重複を避けるために、<xref:System.Xml.XmlNamespaceManager>すべてのプレフィックスと名前空間は有効では前提としています。  
+  
+ 現在のスコープ内で、プレフィックスと名前空間が既に存在する場合、新しいプレフィックスおよび名前空間のペアは既存のプレフィックス/名前空間の組み合わせを置き換えます。 同じプレフィックスと名前空間の組み合わせは、さまざまなスコープに存在できます。  
+  
+ 既定で次のプレフィックス/名前空間のペアは追加、<xref:System.Xml.XmlNamespaceManager>です。 これらは、すべてのスコープで確認できます。  
+  
+|プレフィックス|名前空間|  
+|------------|---------------|  
+|xmlns|http://www.w3.org/2000/xmlns/(xmlns プレフィックスの名前空間)|  
+|xml|http://www.w3.org/XML/1998/namespace (XML 名前空間)|  
+|String.Empty|String.Empty (空の名前空間)。 この値は、別のプレフィックスを再割り当ています。 たとえば、xmlns =""空の名前空間に既定の名前空間を定義します|  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Xml.XmlNamespaceManager>XML フラグメントで名前空間を解決するのには。  
+  
+ [!code-csharp[Classic WebData XmlNamespaceManager.AddNamespace Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.AddNamespace Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.AddNamespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.AddNamespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値は、 <paramref name="prefix" /> "xml"または"xmlns"です。</exception>
+        <exception cref="T:System.ArgumentNullException">値は、<paramref name="prefix" />または<paramref name="uri" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNamespace">
+      <MemberSignature Language="C#" Value="public virtual string DefaultNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNamespaceManager.DefaultNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の名前空間の名前空間 URI を取得します。</summary>
+        <value>既定の名前空間の名前空間 URI を返します。既定の名前空間がない場合は String.Empty を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出し元 LookupNamespace(String.Empty) と同じです。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つが存在する場合、既定の名前空間が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して名前空間を反復処理する列挙子を返します、<see cref="T:System.Xml.XmlNamespaceManager" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />によって格納されるプレフィックスを含む、<see cref="T:System.Xml.XmlNamespaceManager" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のコードを使用する方法を示しています、<xref:System.Collections.IEnumerator>に名前空間のペアが格納されているすべてを表示する、<xref:System.Xml.XmlNamespaceManager>オブジェクト。  
+  
+```  
+Dim nsEnum As IEnumerator = nsmgr.GetEnumerator()  
+Do While nsEnum.MoveNext  
+  If nsEnum.Current <> "" Then  
+    MsgBox("xmlns:" + nsEnum.Current + "=" + nsmgr.LookupNamespace(nsEnum.Current))  
+  End If  
+Loop  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamespacesInScope">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;string,string&gt; GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Xml.XmlNamespaceScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">返される名前空間ノードの種類を指定する列挙値。</param>
+        <summary>現在スコープ内にある名前空間を列挙するために使用できる、プレフィックスをキーとした、名前空間の名前のコレクションを取得します。</summary>
+        <returns>現在スコープ内にある名前空間とプレフィックスのペアのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリは、プレフィックスによってキー指定された名前空間名のコレクションで構成されます。 スコープに名前空間を列挙するために使用します。 ディクショナリは、切断されている名前空間の一覧のコピーです。 現在のスコープ内の名前空間のリストの変更として変更されないままになります。  
+  
+ 次の表にどのように<xref:System.Xml.XmlNamespaceScope>値によって返される名前空間の影響、<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>メソッドです。  
+  
+|XmlNamespaceScope 値|xmlns:xml|xmlns:xmlns|xmlns =""|  
+|-----------------------------|---------------|-----------------|---------------|  
+|`All`|はい|いいえ|いいえ|  
+|`ExcludeXml`|いいえ|いいえ|いいえ|  
+|`Local`|いいえ|いいえ|はい|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasNamespace">
+      <MemberSignature Language="C#" Value="public virtual bool HasNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.HasNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">検索する名前空間のプレフィックス。</param>
+        <summary>提供されたプリフィックスに現在のプッシュされたスコープに対して定義された名前空間があるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />定義されている名前空間がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の名前空間が定義されている、既定値があるかどうかを確認するのには、設定`prefix`String.Empty にします。 戻り値の`true`; 現在のスコープで定義されている既定の名前空間があることを示します`false`既定の名前空間が定義されていないことを示します。  
+  
+> [!NOTE]
+>  xmlns:x =""は無効によると、 [W3C 名前空間](http://www.w3.org/TR/REC-xml-names/)推奨します。  
+  
+   
+  
+## Examples  
+ 次の例では、1 つが存在する場合、既定の名前空間が表示されます。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.DefaultNamespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.DefaultNamespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupNamespace">
+      <MemberSignature Language="C#" Value="public virtual string LookupNamespace (string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string LookupNamespace(string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.LookupNamespace(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">解決する対象となる名前空間 URI のプレフィックス。 既定の名前空間に一致するようにするには、String.Empty を渡します。</param>
+        <summary>指定したプレフィックスの名前空間 URI を取得します。</summary>
+        <returns>名前空間 URI を返しますの<paramref name="prefix" />または<see langword="null" />マップされている名前空間がない場合。 返される文字列は最小単位に分割されます。  
+  
+ アトミック化された文字列の詳細については、次を参照してください。、<see cref="T:System.Xml.XmlNameTable" />クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、プレフィックス/名前空間のペアを追加、 <xref:System.Xml.XmlNamespaceManager>、し、コレクション内のすべてのペアを表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupPrefix">
+      <MemberSignature Language="C#" Value="public virtual string LookupPrefix (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string LookupPrefix(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.LookupPrefix(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">プリフィックスに対して解決する名前空間。</param>
+        <summary>指定した名前空間 URI に対して宣言されたプリフィックスを検索します。</summary>
+        <returns>一致するプリフィックス。 割り当てられたプリフィックスがない場合、メソッドは String.Empty を返します。 Null 値を指定する場合、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スタック ウォークすることによって割り当てられたプレフィックスを検索 (つまり、グローバルに検索します。 指定された文字列が検索を正常に最小単位に分割する必要があります。 つまり、指定された文字列オブジェクトは名前空間マネージャーの名前テーブルに存在する必要があります (<xref:System.Xml.XmlNamespaceManager.NameTable%2A>)。  
+  
+ 返される文字列も最小単位に分割します。 アトミック化された文字列の詳細については、次を参照してください。、<xref:System.Xml.XmlNameTable>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>メソッド属性を書き込むときにします。 使用して、 <xref:System.Xml.XmlWriter.WriteStartAttribute%2A?displayProperty=nameWithType> 、属性を開始するメソッドは、プレフィックスを検索、`urn:samples`名前空間 URI でそのプレフィックスを使用して、<xref:System.Xml.XmlWriter.WriteStartAttribute%2A?displayProperty=nameWithType>の書き込み時に、`ISBN`属性。  
+  
+```vb  
+Dim prefix As String = nsMgr.LookupPrefix("urn:samples")  
+writer.WriteStartAttribute(prefix, "ISBN", "urn:samples")  
+  
+```  
+  
+```csharp  
+XmlNameTable nt = new XmlNameTable();  
+XmlNamespaceManager nsMgr = new XmlNamespaceManager(nt);  
+nsMgr.AddNamespace("bk","urn:samples");string prefix = writer nsMgr.LookupPrefix("urn:samples");  
+writer.WriteStartAttribute(prefix, "ISBN", "urn:samples");  
+```  
+  
+ 次の例では<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>要素で定義されたプレフィックスが見つかりません。  
+  
+```vb  
+writer.WriteStartElement("root", "book")  
+writer.WriteStartElement("x", "node", "author")  
+s = writer.LookupPrefix("author")  
+CError.Compare(s, "x", "Error in nested element")  
+writer.WriteEndElement()  
+s = writer.LookupPrefix("book")  
+CError.Compare(s, Nothing, "Error in root element")  
+writer.WriteEndElement()  
+  
+```  
+  
+ **出力**  
+  
+```  
+<root xmlns="book">  
+  <x:node xmlns:x="author" />   
+</root>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlNameTable NameTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlNamespaceManager.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlNameTable" />このオブジェクトに関連付けられています。</summary>
+        <value>このオブジェクトで使用される <see cref="T:System.Xml.XmlNameTable" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前テーブルを使用すると、プレフィックスと名前空間 Uri を検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopScope">
+      <MemberSignature Language="C#" Value="public virtual bool PopScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PopScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.PopScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前空間スコープをスタックからポップします。</summary>
+        <returns>
+          <see langword="true" />名前空間のスコープがスタック上の残りがある場合<see langword="false" /> pop にない複数の名前空間がある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての名前空間に追加されて、このメソッドを呼び出す場合<xref:System.Xml.XmlNamespaceManager>(を呼び出して<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>)、最後の呼び出し以降に<xref:System.Xml.XmlNamespaceManager.PopScope%2A>が削除されます。  
+  
+   
+  
+## Examples  
+ 次の例は、プレフィックス/名前空間のペアを追加、<xref:System.Xml.XmlNamespaceManager>し、コレクション内のすべてのペアを表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushScope">
+      <MemberSignature Language="C#" Value="public virtual void PushScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.PushScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前空間スコープをスタックにプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されるすべての名前空間は、このメソッドを呼び出した後<xref:System.Xml.XmlNamespaceManager>(を呼び出して<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>)、プッシュされた名前空間のスコープに属しています。  
+  
+   
+  
+## Examples  
+ 次の例は、プレフィックス/名前空間のペアを追加、<xref:System.Xml.XmlNamespaceManager>し、コレクション内のすべてのペアを表示します。  
+  
+ [!code-cpp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlNamespaceManager.PopScope Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlNamespaceManager.PopScope Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveNamespace">
+      <MemberSignature Language="C#" Value="public virtual void RemoveNamespace (string prefix, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveNamespace(string prefix, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlNamespaceManager.RemoveNamespace(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">名前空間のプリフィックス。</param>
+        <param name="uri">指定したプリフィックスに対して削除する名前空間。 削除された名前空間は、現在の名前空間スコープに由来しています。 現在のスコープ外の名前空間は無視されます。</param>
+        <summary>指定したプリフィックスの指定した名前空間を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">値<paramref name="prefix" />または<paramref name="uri" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

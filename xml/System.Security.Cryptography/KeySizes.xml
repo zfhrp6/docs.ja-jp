@@ -1,0 +1,205 @@
+<Type Name="KeySizes" FullName="System.Security.Cryptography.KeySizes">
+  <TypeSignature Language="C#" Value="public sealed class KeySizes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit KeySizes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.KeySizes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>対称暗号化アルゴリズムの有効なキー サイズのセットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メンバーの使用、<xref:System.Security.Cryptography.KeySizes>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.KeySizes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CPP/members.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.KeySizes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CS/members.cs#1)]
+ [!code-vb[System.Security.Cryptography.KeySizes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/VB/members.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeySizes (int minSize, int maxSize, int skipSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minSize, int32 maxSize, int32 skipSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.KeySizes.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minSize" Type="System.Int32" />
+        <Parameter Name="maxSize" Type="System.Int32" />
+        <Parameter Name="skipSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minSize">有効な最小キー サイズ。</param>
+        <param name="maxSize">最大有効なキー サイズ。</param>
+        <param name="skipSize">有効なキー サイズ間の間隔。</param>
+        <summary>指定されたキー値で、<see cref="T:System.Security.Cryptography.KeySizes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Cryptography.KeySizes.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.KeySizes>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.KeySizes#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CPP/members.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.KeySizes#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CS/members.cs#2)]
+ [!code-vb[System.Security.Cryptography.KeySizes#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/VB/members.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSize">
+      <MemberSignature Language="C#" Value="public int MaxSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.KeySizes.MaxSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの最大サイズをビット単位で指定します。</summary>
+        <value>ビット単位で最大のキー サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を取得する方法を示しています、<xref:System.Security.Cryptography.KeySizes.MaxSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.KeySizes>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.KeySizes#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CPP/members.cpp#4)]
+ [!code-csharp[System.Security.Cryptography.KeySizes#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CS/members.cs#4)]
+ [!code-vb[System.Security.Cryptography.KeySizes#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/VB/members.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSize">
+      <MemberSignature Language="C#" Value="public int MinSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.KeySizes.MinSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの最小サイズをビット単位で指定します。</summary>
+        <value>Bits の最小キー サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を取得する方法を示しています、<xref:System.Security.Cryptography.KeySizes.MinSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.KeySizes>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.KeySizes#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CPP/members.cpp#3)]
+ [!code-csharp[System.Security.Cryptography.KeySizes#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CS/members.cs#3)]
+ [!code-vb[System.Security.Cryptography.KeySizes#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/VB/members.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipSize">
+      <MemberSignature Language="C#" Value="public int SkipSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SkipSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.KeySizes.SkipSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビット単位で有効なキー サイズの間の間隔を指定します。</summary>
+        <value>ビット単位で有効なキー サイズ間の間隔。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を取得する方法を示しています、<xref:System.Security.Cryptography.KeySizes.SkipSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.KeySizes>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.KeySizes#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CPP/members.cpp#5)]
+ [!code-csharp[System.Security.Cryptography.KeySizes#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/CS/members.cs#5)]
+ [!code-vb[System.Security.Cryptography.KeySizes#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.KeySizes/VB/members.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

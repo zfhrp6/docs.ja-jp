@@ -1,0 +1,138 @@
+<Type Name="SecurityRulesAttribute" FullName="System.Security.SecurityRulesAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SecurityRulesAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityRulesAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecurityRulesAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>共通言語ランタイムがアセンブリに適用されるセキュリティ規則のセットを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、共通言語ランタイムがアセンブリに適用されるセキュリティ規則のセットを示します。 マークされているアセンブリなど、`[SecurityRules(SecurityRuleSet.Level1)]`がセキュリティ クリティカルなパブリックの型とメンバー扱われるようセキュリティ セーフ クリティカル アセンブリの外側では、.NET Framework version 2.0 の透過性ルールを使用します。 これは、セキュリティ クリティカルな型とメンバーを完全な信頼のリンク確認要求を実行する外部の呼び出し元によってアクセスされるときに、セキュリティ上重要な動作を適用する必要があります。 通常、レベル 1 のルールは、アセンブリのバージョン 2.0 のプロセスなど、互換性のためだけ使用する必要があります。 レベル 1 の動作の詳細については、次を参照してください。[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)です。 レベル 2 の動作については、次を参照してください。[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityRulesAttribute (System.Security.SecurityRuleSet ruleSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.SecurityRuleSet ruleSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityRulesAttribute.#ctor(System.Security.SecurityRuleSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ruleSet" Type="System.Security.SecurityRuleSet" />
+      </Parameters>
+      <Docs>
+        <param name="ruleSet">透過性規則を指定する列挙値のいずれかを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.SecurityRulesAttribute" />クラス設定値の指定した規則を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると、`ruleSet`パラメーターを使用して<xref:System.Security.SecurityRuleSet.Level1>の .NET Framework のバージョン 2.0 のルールまたは<xref:System.Security.SecurityRuleSet.Level2>の[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]ルール。 詳細については<xref:System.Security.SecurityRuleSet.Level1>動作を参照してください[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)です。 について<xref:System.Security.SecurityRuleSet.Level2>動作を参照してください[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuleSet">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityRuleSet RuleSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.SecurityRuleSet RuleSet" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityRulesAttribute.RuleSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityRuleSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>規則を適用するセットを取得します。</summary>
+        <value>透過性規則を適用するを指定する列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipVerificationInFullTrust">
+      <MemberSignature Language="C#" Value="public bool SkipVerificationInFullTrust { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipVerificationInFullTrust" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全に信頼される透過的なコードが Microsoft intermediate language (MSIL) 検証をスキップするかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />MSIL 検証をスキップする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コードが検証可能な場合は、透過的なコードのセキュリティ保証を適用することはできませんので最適化、に対してのみ使用する必要があります。  
+  
+ アセンブリの MSIL の検査をスキップするこのプロパティを使用する場合、`transparent`オプションで、コードを満たしているタイプ セーフ要件を静的に アセンブリの透過的なことを確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1028 @@
+<Type Name="WindowsFormsHost" FullName="System.Windows.Forms.Integration.WindowsFormsHost">
+  <TypeSignature Language="C#" Value="public class WindowsFormsHost : System.Windows.Interop.HwndHost, System.Windows.Interop.IKeyboardInputSink" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WindowsFormsHost extends System.Windows.Interop.HwndHost implements class System.Windows.Interop.IKeyboardInputSink" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Integration.WindowsFormsHost" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsFormsIntegration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Interop.HwndHost</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Interop.IKeyboardInputSink</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ChildChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignerCategory("code")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Child")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WPF ページ上の Windows フォーム コントロールをホストできるようにする要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素を配置する、[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]内の制御、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]要素またはページです。  
+  
+ ホストに、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]内の要素、[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロールまたはフォームを使用して、<xref:System.Windows.Forms.Integration.ElementHost>コントロール。  
+  
+> [!NOTE]
+>  WindowsFormsIntegration.dll がインストールされている、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]アセンブリ。 アセンブリの既定の場所は、%programfiles%\Reference Assemblies\Microsoft\Framework\v3.0\WindowsFormsIntegration.dll です。  
+  
+ ホストに、[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]内の制御、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]要素を割り当てる必要があります、[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロールを<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A>間のカスタム マッピングを割り当てるプロパティを<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素とそのホストされる[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlObjectElementUsage_WindowsFormsHost"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<WindowsFormsHost.../>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Integration.WindowsFormsHost>ホストへの要素、<xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType>コントロール。 詳細については、次を参照してください。[チュートリアル: wpf xaml を使用して Windows フォーム コントロールをホストしている](~/docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)です。  
+  
+ [!code-xaml[HostingWfInWpfWithXaml#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWpfWithXaml/CSharp/HostingWfInWpf/Window1.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsFormsHost ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">呼び出し履歴内の上位にあるすべての呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size finalSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size finalSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="finalSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="finalSize">この要素が要素自体と子を配置するために使用する親の末尾の領域。</param>
+        <summary>派生クラスで実装された場合、子要素を配置しのサイズを決定する<see cref="T:System.Windows.FrameworkElement" />-クラスを派生します。</summary>
+        <returns>使用する実際のサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされているコントロールの背景をアンビエント プロパティとして取得または設定します。</summary>
+        <value>背景色に設定する <see cref="T:System.Windows.Media.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.BackgroundProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.BackColor%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.Control.BackgroundImage%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。  
+  
+ マッピングの詳細については、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Background%2A>プロパティを参照してください[Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_Background"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Background="Brush"/>  
+```  
+  
+<a name="xamlValues_Background"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ブラシ*  
+ 参照してください<xref:System.Windows.Media.Brush>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildWindowCore">
+      <MemberSignature Language="C#" Value="protected override System.Runtime.InteropServices.HandleRef BuildWindowCore (System.Runtime.InteropServices.HandleRef hwndParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Runtime.InteropServices.HandleRef BuildWindowCore(valuetype System.Runtime.InteropServices.HandleRef hwndParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.HandleRef</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwndParent" Type="System.Runtime.InteropServices.HandleRef" />
+      </Parameters>
+      <Docs>
+        <param name="hwndParent">親ウィンドウのハンドル (HWND)) です。</param>
+        <summary>基本クラス実装をオーバーライド<see cref="M:System.Windows.Interop.HwndHost.BuildWindowCore(System.Runtime.InteropServices.HandleRef)" />をホストされるビルド[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</summary>
+        <returns>このオブジェクトのウィンドウ ハンドル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Child">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Child { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Child" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.Child" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によってホストされている子コントロール、<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />要素。</summary>
+        <value>ホスト[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つだけの子コントロールをホストできますが、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>子供の数を持つことができます。  
+  
+ 子コントロールは、トップレベルのフォームにすることはできません。  
+  
+ 場合<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>は、 <xref:System.Windows.Forms.Form>、フォームの<xref:System.Windows.Forms.Form.ControlBox%2A>プロパティに設定されている`false`です。  
+  
+<a name="xamlTextUsage_Child"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ `<`*object*`>`  
+  
+ `<`*hostedControl*  `.../>`  
+  
+ `</`*object*`>`  
+  
+<a name="xamlValues_Child"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *object*  
+ A<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素 (または、可能なサブクラス)。  
+  
+ *hostedControl*  
+ ホストを指定する要素[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。 カスタム コントロールのマークアップには、xmlns マッピングでは、通常必要があります。 指定する場合は[XAML 名前空間と WPF XAML 向け Namespace マッピング](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>にホストされるコントロールを追加するプロパティ、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素。 詳細については、次を参照してください。[チュートリアル: WPF で ActiveX コントロールをホストしている](~/docs/framework/wpf/advanced/walkthrough-hosting-an-activex-control-in-wpf.md)です。  
+  
+ [!code-csharp[HostingAxInWpf#11](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingAxInWpf/CSharp/HostingAxInWpf/window1.xaml.cs#11)]
+ [!code-vb[HostingAxInWpf#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingAxInWpf/VisualBasic/HostingAxInWpf/window1.xaml.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">最上位フォームとしてホストされるコントロールを代入しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Forms.Integration.ChildChangedEventArgs&gt; ChildChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Forms.Integration.ChildChangedEventArgs&gt; ChildChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Integration.WindowsFormsHost.ChildChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Forms.Integration.ChildChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Child" />プロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_ChildChanged"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ChildChanged="eventHandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyWindowCore">
+      <MemberSignature Language="C#" Value="protected override void DestroyWindowCore (System.Runtime.InteropServices.HandleRef hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DestroyWindowCore(valuetype System.Runtime.InteropServices.HandleRef hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.DestroyWindowCore(System.Runtime.InteropServices.HandleRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.Runtime.InteropServices.HandleRef" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">ウィンドウ ハンドル。 このパラメーターは使用されません。</param>
+        <summary>オーバーライド<see cref="M:System.Windows.Interop.HwndHost.DestroyWindowCore(System.Runtime.InteropServices.HandleRef)" />をこのオブジェクトを含むウィンドウを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" /> が使用しているアンマネージ リソースを解放します。オプションとして、マネージ リソースを解放することもできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Dispose%2A>メソッドは、ベースで破棄<xref:System.Windows.Interop.HwndHost>と<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableWindowsFormsInterop">
+      <MemberSignature Language="C#" Value="public static void EnableWindowsFormsInterop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableWindowsFormsInterop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>有効な<see cref="T:System.Windows.Forms.Form" />モードレスから開かれたときに正常に機能する[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop%2A>メソッドすべて転送をキーボード メッセージ、<xref:System.Windows.Forms.Form?displayProperty=nameWithType>がモードレス開かれています。 <xref:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop%2A>メソッドによって開かれたときに正常に機能するモードレスのフォームに必要なメッセージ フィルターはインストール[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 特定の 1 回だけ、このメソッドを呼び出す必要がある<xref:System.Windows.Forms.Integration.WindowsFormsHost>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">呼び出し履歴内の上位にあるすべての呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamily">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontFamily FontFamily { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.FontFamily FontFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.FontFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールのフォント ファミリを取得または設定します。</summary>
+        <value>ホストされるコントロールで使用されるフォント ファミリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定では、テンプレートを持つプロパティを使用して、パラメーターとしてそれらのコントロールのみに影響します。 その他のコントロールの影響を与えません。  
+  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontFamilyProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.Font%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_FontFamily"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontFamily="fontFamily"/>  
+```  
+  
+<a name="xamlValues_FontFamily"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontFamily*  
+ 参照してください<xref:System.Windows.Media.FontFamily>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_FontFamily"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontFamilyProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontFamilyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontFamilyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontFamilyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.FontFamilyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.FontFamily" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSize">
+      <MemberSignature Language="C#" Value="public double FontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.FontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールのフォント サイズを取得または設定します。</summary>
+        <value>ホストされるコントロールで使用されるフォント サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontSizeProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.Font%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_FontSize"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontSize="double"/>  
+```  
+  
+<a name="xamlValues_FontSize"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ 文字列表現を<xref:System.Double>値より小さくなります、0.0 以上<xref:System.Double.PositiveInfinity>です。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 明示的に、文字列では、小数点を含める必要がありますされません。 インスタンス 1 の値が許容されます。  
+  
+<a name="dependencyPropertyInfo_FontSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.FontSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.FontSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle FontStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle FontStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.FontStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールのフォント スタイルを取得または設定します。</summary>
+        <value>ホストされるコントロールで使用されるフォント スタイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontStyleProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.Font%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_FontStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontStyle="fontStyle"/>  
+```  
+  
+<a name="xamlValues_FontStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontStyle*  
+ 参照してください<xref:System.Windows.FontStyle>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_FontStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.FontStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.FontStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight FontWeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight FontWeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.FontWeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールのフォントの太さを取得または設定します。</summary>
+        <value>ホストされるコントロールで使用されるフォントの太さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontWeightProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.Font%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_FontWeight"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object FontWeight="fontWeight"/>  
+```  
+  
+<a name="xamlValues_FontWeight"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *fontWeight*  
+ 参照してください<xref:System.Windows.FontWeight>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_FontWeight"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.FontWeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontWeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FontWeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FontWeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.FontWeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.FontWeight" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Foreground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Foreground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Foreground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.Foreground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされるコントロールの前景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Brush" />ホストされるコントロールの前景色を設定するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.ForegroundProperty>フィールドです。 更新に既定では、このプロパティがマップされている、<xref:System.Windows.Forms.Control.ForeColor%2A?displayProperty=nameWithType>ホストされるコントロールのプロパティです。 マッピングの詳細については、<xref:System.Windows.Forms.Integration.WindowsFormsHost.Foreground%2A>プロパティを参照してください[Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+<a name="xamlAttributeUsage_Foreground"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Foreground="Brush"/>  
+```  
+  
+<a name="xamlValues_Foreground"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ブラシ*  
+ 参照してください<xref:System.Windows.Media.Brush>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_Foreground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.ForegroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>、<br /><br /> <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>、<br /><br /> <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.ForegroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Foreground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayoutError">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Forms.Integration.LayoutExceptionEventArgs&gt; LayoutError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Forms.Integration.LayoutExceptionEventArgs&gt; LayoutError" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Forms.Integration.LayoutExceptionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>傾斜または回転などのレイアウト エラーときに発生する<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />が発生したをサポートしていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_LayoutError"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object LayoutError="eventHandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">利用可能なサイズ、<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />オブジェクト。</param>
+        <summary>基本クラス実装をオーバーライド<see cref="M:System.Windows.Interop.HwndHost.MeasureOverride(System.Windows.Size)" />のサイズを測定する、<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />オブジェクトし、適切なサイズをレイアウト エンジンに返します。</summary>
+        <returns>目的のサイズ、<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の制約のサイズを[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]レイアウトはハード制限です。 制約を超えた場合、ホストは、ホストされるリージョン内でコンテンツをクリップする必要があります。 このメソッドの実装では、この動作を適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Windows.Automation.Peers.WindowsFormsHostAutomationPeer" />の<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />要素。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.WindowsFormsHostAutomationPeer" />の<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">そのプロパティの古い値と新しい値を提供するだけで変更されたプロパティを識別する引数。</param>
+        <summary>マッピングされたプロパティの変換を強制します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.Integration.WindowsFormsHost.OnPropertyChanged%2A>のローカル値ですが、先祖要素のプロパティが変更されたときに、メソッドが必要な可能性があります、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素は変更されていません。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内で、ホストされている目的の余白のサイズを指定[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</summary>
+        <value>A<see cref="T:System.Windows.Thickness" />パディング pf ホストを表す構造体[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Padding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Padding="Thickness"/>  
+```  
+  
+<a name="xamlValues_Padding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *太さ*  
+ 参照してください<xref:System.Windows.Thickness>XAML 属性の構文についてはします。  
+  
+<a name="dependencyPropertyInfo_Padding"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.PaddingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PaddingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PaddingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.PaddingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.Padding" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyMap">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Integration.PropertyMap PropertyMap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Integration.PropertyMap PropertyMap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Integration.PropertyMap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>決定するプロパティのマップを取得する方法のプロパティを設定、<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />要素に、ホストされている影響を与えます[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Integration.PropertyMap" />マップされる<see cref="T:System.Windows.Forms.Integration.WindowsFormsHost" />プロパティに、ホストされているプロパティ[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]と[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]テクノロジに 2 つの似ているが異なるプロパティ モデルがあります。 *プロパティ マッピング*2 つのアーキテクチャ間の相互運用をサポートしています。 詳細については、次を参照してください。 [Windows フォームと WPF プロパティ マッピング](~/docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のマッピングを追加する方法を示しています、<xref:System.Windows.FrameworkElement.FlowDirection%2A>プロパティを<xref:System.Windows.Forms.Integration.WindowsFormsHost>コントロール。  
+  
+ [!code-csharp[PropertyMappingWithWfh#12](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#12)] 
+ [!code-vb[PropertyMappingWithWfh#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#12)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleChild">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Vector ScaleChild (System.Windows.Vector newScale);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Windows.Vector ScaleChild(valuetype System.Windows.Vector newScale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild(System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newScale" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="newScale">新しいスケール ファクター。</param>
+        <summary>ホストのスケールを設定[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]制御、およびスケール ファクターを追跡します。</summary>
+        <returns>A<see cref="T:System.Windows.Vector" />ホストに適用するスケール ファクターを表す[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winforms](~/includes/tla2sharptla-winforms-md.md)]コントロールと同じようにスケーリングをサポートしていません[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]要素。 たとえば、スケーリング、 [!INCLUDE[TLA2#tla_winforms](~/includes/tla2sharptla-winforms-md.md)] 0.5 の係数および 1 の要素への 1 倍からコントロールがコントロールの元のサイズを一般に、復旧しない、します。 詳細については、次を参照してください。 [WindowsFormsHost 要素のレイアウトに関する考慮事項](~/docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)です。  
+  
+ 上書き、<xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A>ホストのスケールのカスタム動作を提供するメソッドを[!INCLUDE[TLA2#tla_winforms](~/includes/tla2sharptla-winforms-md.md)]コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndex">
+      <MemberSignature Language="C#" Value="public int TabIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TabIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされたコントロールのタブ インデックスを取得または設定します。</summary>
+        <value>タブのナビゲーションとフォーカス用のタブ インデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によってこの依存関係プロパティを識別、<xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndexProperty>フィールドです。  
+  
+ このプロパティを使用して、フォーム上のコントロール間のタブ ナビゲーションの順序を変更します。 下のタブ インデックスを持つコントロールより高いインデックスを持つコントロールの前にフォーカスが表示されます。  
+  
+<a name="xamlAttributeUsage_TabIndex"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object TabIndex="int"/>  
+```  
+  
+<a name="dependencyPropertyInfo_TabIndex"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndexProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TabIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TabIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Integration.WindowsFormsHost.TabIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabInto">
+      <MemberSignature Language="C#" Value="public virtual bool TabInto (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TabInto(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.TabInto(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">A<see cref="T:System.Windows.Input.TraversalRequest" />フォーカスの動作を指定します。</param>
+        <summary>フォーカスは転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ホストに[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]コントロール。</summary>
+        <returns>
+          コントロールがアクティブにされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.Integration.WindowsFormsHost>要素からタブ コマンドを受信する、<xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A>メソッド、最初の対象となるコントロールに<xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A>がフォーカスを取得します。  
+  
+ 最初のコントロールがで指定された、`request`パラメーター。 ときに`request`は<xref:System.Windows.Input.FocusNavigationDirection.Next>動作は、TAB キーを押すことに似ています。 ときに`request`は<xref:System.Windows.Input.FocusNavigationDirection.Previous>動作は shift キーを押しながら TAB キーを押してに似ています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override IntPtr WndProc (IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance native int WndProc(native int hwnd, int32 msg, native int wParam, native int lParam, bool&amp; handled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.WindowsFormsHost.WndProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+        <Parameter Name="msg" Type="System.Int32" />
+        <Parameter Name="wParam" Type="System.IntPtr" />
+        <Parameter Name="lParam" Type="System.IntPtr" />
+        <Parameter Name="handled" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">ホストされたウィンドウのウィンドウ ハンドル。</param>
+        <param name="msg">対象となるメッセージ。</param>
+        <param name="wParam">メッセージの処理に関連する情報です。 これは通常、小規模フラグなどの情報の格納に使用されます。</param>
+        <param name="lParam">メッセージの処理に関連する情報です。 これは通常、オブジェクトを参照に使用されます。</param>
+        <param name="handled">処理イベントの結果をマークするかどうか。</param>
+        <summary>派生クラスで実装された場合、ホストされている子ウィンドウのウィンドウのプロセスにアクセスします。</summary>
+        <returns>子ウィンドウのウィンドウ ハンドル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="IDReferencePropertyAttribute" FullName="System.Web.UI.IDReferencePropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class IDReferencePropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IDReferencePropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IDReferencePropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ID 参照が含まれているプロパティに適用される属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IDReferencePropertyAttribute>クラスは、ID の参照を含んでいるプロパティに適用します。 <xref:System.Web.UI.WebControls.Content.ContentPlaceHolderID%2A>ID 参照を含むプロパティの例を示します。 この属性が適用されるときに、デザイナーは、Id の一覧表示など、デザイン時に追加の機能を提供できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.IDReferencePropertyAttribute>属性は、文字列に評価されるプロパティに適用します。 この例では、`DataSourceID`メンバーがデータ ソース コントロールを識別し、したがって指定、<xref:System.Web.UI.DataSourceControl>型です。  
+  
+ [!code-csharp[System.Web.UI.IDReferencePropertyAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/CS/IDReferencePropertyAttribute2.cs#2)]
+ [!code-vb[System.Web.UI.IDReferencePropertyAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/VB/IDReferencePropertyAttribute2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IDReferencePropertyAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDReferencePropertyAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.IDReferencePropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを呼び出すときに、<xref:System.Web.UI.IDReferencePropertyAttribute.ReferencedControlType%2A>プロパティに設定されている<xref:System.Web.UI.Control>、これは、既定値です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.IDReferencePropertyAttribute>属性は、文字列に評価されるプロパティに適用します。 この例では、`DataSourceID`メンバーは、実行時にデータ ソース コントロールを識別します。 既定のコンス トラクターを使用して、<xref:System.Web.UI.IDReferencePropertyAttribute.ReferencedControlType%2A>プロパティが既定値に設定<xref:System.Web.UI.Control>です。  
+  
+ [!code-csharp[System.Web.UI.IDReferencePropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/CS/IDReferencePropertyAttribute1.cs#1)]
+ [!code-vb[System.Web.UI.IDReferencePropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/VB/IDReferencePropertyAttribute1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IDReferencePropertyAttribute (Type referencedControlType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type referencedControlType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDReferencePropertyAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="referencedControlType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="referencedControlType">A<see cref="T:System.Type" />をプロパティによって表されるコントロールの種類を指定する、<see cref="T:System.Web.UI.IDReferencePropertyAttribute" />を適用します。</param>
+        <summary>指定された型を使用して、<see cref="T:System.Web.UI.IDReferencePropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.IDReferencePropertyAttribute>属性は、文字列に評価されるプロパティに適用します。 この例では、`DataSourceID`メンバーがデータ ソース コントロールを識別し、したがって指定、<xref:System.Web.UI.DataSourceControl>型です。  
+  
+ [!code-csharp[System.Web.UI.IDReferencePropertyAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/CS/IDReferencePropertyAttribute2.cs#2)]
+ [!code-vb[System.Web.UI.IDReferencePropertyAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IDReferencePropertyAttribute/VB/IDReferencePropertyAttribute2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDReferencePropertyAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスまたは null 参照と比較する <see cref="T:System.Object" /> (Visual Basic では <see langword="Nothing" />)。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDReferencePropertyAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedControlType">
+      <MemberSignature Language="C#" Value="public Type ReferencedControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReferencedControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDReferencePropertyAttribute.ReferencedControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティで許容されているコントロールの種類を取得、<see cref="T:System.Web.UI.IDReferencePropertyAttribute" />属性を適用します。</summary>
+        <value>A<see cref="T:System.Type" />プロパティで許容されているコントロールの種類を表す、<see cref="T:System.Web.UI.IDReferencePropertyAttribute" />を適用します。 既定値は、<see cref="T:System.Web.UI.Control" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

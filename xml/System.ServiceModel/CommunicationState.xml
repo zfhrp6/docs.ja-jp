@@ -1,0 +1,206 @@
+<Type Name="CommunicationState" FullName="System.ServiceModel.CommunicationState">
+  <TypeSignature Language="C#" Value="public enum CommunicationState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CommunicationState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.CommunicationState" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.ICommunicationObject" /> が存在できる状態を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、チャネル、リスナー、ファクトリ、ディスパッチャー、およびサービス ホストを含むシステム内のすべての通信オブジェクトにとって有効な状態を定義します。  
+  
+ これらの状態の間の移行を管理するメソッドと、それらに関連付けることができるイベントが、<xref:System.ServiceModel.ICommunicationObject> インターフェイスに定義されます。 オブジェクトの状態は、<xref:System.ServiceModel.ICommunicationObject.State%2A> プロパティを使用して取得できます。  
+  
+ 通信オブジェクトが取ることができる状態には、4 つのメイン状態と 2 つの移行状態があります。 メイン状態は、次のとおりです。  
+  
+-   作成日時  
+  
+-   Opened  
+  
+-   Closed  
+  
+-   Faulted  
+  
+ 通信オブジェクトがこれらのメイン状態の間を移行するときに取ることができる 2 つの移行状態は、次のとおりです。  
+  
+-   Opening  
+  
+-   Closing  
+  
+ 通信オブジェクトは、状態が Created で構成できます。 たとえば、プロパティの変更や、イベントの登録を実行できます。 この状態にあるときは、入力または出力が発生することはありません。 したがって、たとえば、チャネルからのメッセージの送信または受信は、この状態中には実行できません。  
+  
+ 開くには、通信オブジェクトは入力時に一時的な状態、<xref:System.ServiceModel.ICommunicationObject.Open%2A>メソッドが呼び出されます。 派生クラスで特に指示しない限り、Opening 状態にあるオブジェクトは構成できません。 この遷移の状態を Created 状態からのみ入力できます。  
+  
+ 開いているプロセスが完了したら、Opened 状態への移行をオブジェクト。 Opened 状態への移行は、Opening 状態からのみ有効です。 派生クラスで特に指示しない限り、オブジェクトの構成はこの時点で無効になります。 この時点で、オブジェクトはメッセージを転送するために完全に使用可能です。  
+  
+ 終了は、オブジェクトは入力時に一時的な状態、<xref:System.ServiceModel.ICommunicationObject.Close%2A>正常なシャット ダウンが呼び出されるメソッドまたはオブジェクトが中止されました。 この時点で、オブジェクトは使用不能になります (既に使用不能になっていない場合)。 この移行は Closed の状態を除く任意の状態から有効です。  
+  
+ Closed の状態は破棄されるに相当し、オブジェクトの構成はまだ検査できます。  
+  
+ Faulted 状態は、オブジェクトが、不要になった使用できます状態に移行ことを示すために使用されます。 これが発生する可能性がある主なシナリオには、次の 2 つがあります。  
+  
+-   <xref:System.ServiceModel.ICommunicationObject.Open%2A> メソッドが何らかの理由で失敗した場合、オブジェクトは Faulted 状態に移行します。  
+  
+-   セッション ベースのチャネルが、回復できないエラーを検出した場合は、Faulted 状態に移行します。 これは、たとえばプロトコル エラーが発生した (つまり、無効な時間にプロトコル メッセージを受信した) 場合や、リモート エンドポイントでセッションが中止された場合に発生することがあります。  
+  
+ Faulted 状態のオブジェクトが終了していないリソースを保持します。 Fault 状態にあるオブジェクトは、<xref:System.ServiceModel.ICommunicationObject.Abort%2A> メソッドを使用して閉じる必要があります。 場合<xref:System.ServiceModel.ICommunicationObject.Close%2A>が Faulted 状態にあるオブジェクトに対して呼び出される、<xref:System.ServiceModel.CommunicationObjectFaultedException>がスローされるため、オブジェクトが正常に終了することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="Closed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Closed = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Closed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが閉じた状態にあり、使用できなくなっていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Closing">
+      <MemberSignature Language="C#" Value="Closing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Closing = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Closing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態に移行中であることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Created">
+      <MemberSignature Language="C#" Value="Created" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Created = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Created" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトはインスタンス化され、構成可能であるが、まだ開いていないか、使用できる準備ができていないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Faulted">
+      <MemberSignature Language="C#" Value="Faulted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Faulted = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Faulted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトで回復不能なエラーや障害が発生し、使用できない状態になっていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Opened">
+      <MemberSignature Language="C#" Value="Opened" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Opened = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Opened" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが開かれ、使用できる状態になっていることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Opening">
+      <MemberSignature Language="C#" Value="Opening" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.CommunicationState Opening = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.CommunicationState.Opening" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトが <see cref="F:System.ServiceModel.CommunicationState.Created" /> 状態から <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態に移行中であることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

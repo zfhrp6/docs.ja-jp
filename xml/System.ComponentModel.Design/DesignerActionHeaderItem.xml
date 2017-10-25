@@ -1,0 +1,100 @@
+<Type Name="DesignerActionHeaderItem" FullName="System.ComponentModel.Design.DesignerActionHeaderItem">
+  <TypeSignature Language="C#" Value="public sealed class DesignerActionHeaderItem : System.ComponentModel.Design.DesignerActionTextItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignerActionHeaderItem extends System.ComponentModel.Design.DesignerActionTextItem" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionHeaderItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.DesignerActionTextItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的なヘッダー項目のスマート タグ パネルを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に、<xref:System.ComponentModel.Design.DesignerActionTextItem>基底クラス、<xref:System.ComponentModel.Design.DesignerActionHeaderItem>スマート タグ パネルで静的なテキストの個々 の項目を表します。 ただし、<xref:System.ComponentModel.Design.DesignerActionHeaderItem>太字のテキストを使用してエントリが表示されます。 通常、ヘッダー項目を使用して、パネルの項目のグループの見出しを作成します。 ヘッダー項目をクリックしても、処理は行われません。  
+  
+ 呼び出してパネルを形成する関連付けられている個々 のパネルの項目、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>のメソッド、<xref:System.ComponentModel.Design.DesignerActionList>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ スマート タグを実装する完全な例を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionHeaderItem (string displayName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionHeaderItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ヘッダーに表示されるテキストです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.DesignerActionHeaderItem" />クラスの指定した名前の文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが両方を設定、<xref:System.ComponentModel.Design.DesignerActionItem.DisplayName%2A>と<xref:System.ComponentModel.Design.DesignerActionItem.Category%2A>プロパティの値を`displayName`パラメーターと設定、<xref:System.ComponentModel.Design.DesignerActionItem.Description%2A>プロパティを`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ スマート タグを実装する完全な例を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionHeaderItem (string displayName, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionHeaderItem.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="displayName" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="displayName">ヘッダーに表示されるテキストです。</param>
+        <param name="category">大文字小文字を区別、<see cref="T:System.String" />パネル エントリのグループを定義します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.DesignerActionHeaderItem" />クラスの指定された名前とカテゴリ文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.ComponentModel.Design.DesignerActionItem.Description%2A>プロパティを`null`です。 <xref:System.ComponentModel.Design.DesignerActionItem.Category%2A>プロパティは、大文字小文字を区別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

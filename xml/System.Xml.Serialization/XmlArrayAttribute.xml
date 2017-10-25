@@ -1,0 +1,393 @@
+<Type Name="XmlArrayAttribute" FullName="System.Xml.Serialization.XmlArrayAttribute">
+  <TypeSignature Language="C#" Value="public class XmlArrayAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlArrayAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlArrayAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定する、 <see cref="T:System.Xml.Serialization.XmlSerializer" /> XML 要素の配列として特定のクラス メンバーをシリアル化する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlArrayAttribute>を制御する属性のファミリに属するどの<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを逆シリアル化またはシリアル化します。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlArrayAttribute>パブリック フィールドまたは読み取り/書き込みプロパティをオブジェクトの配列を返します。 コレクションとを返すフィールドに適用することも、<xref:System.Collections.ArrayList>またはを実装するオブジェクトを返す任意のフィールド、<xref:System.Collections.IEnumerable>インターフェイスです。  
+  
+ 適用すると、<xref:System.Xml.Serialization.XmlArrayAttribute>クラスのメンバーに、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>のメソッド、<xref:System.Xml.Serialization.XmlSerializer>クラスがそのメンバーからの XML 要素の入れ子になったシーケンスを生成します。 XML スキーマ ドキュメント (.xsd ファイル) は、このような配列としてを示す、`complexType`です。 たとえば、シリアル化するクラスを表す場合、購買発注、生成できます購入した項目の配列を適用して、<xref:System.Xml.Serialization.XmlArrayAttribute>フィールドを公開するアイテムの順序を表すオブジェクトの配列を返します。  
+  
+ パブリック フィールドまたはプロパティの複合またはプリミティブ型のオブジェクトの配列を返すには属性が適用されていない場合、<xref:System.Xml.Serialization.XmlSerializer>既定では XML 要素の入れ子になったシーケンスを生成します。 正確にどのような XML 要素は、生成を制御するには、適用、<xref:System.Xml.Serialization.XmlArrayItemAttribute>と<xref:System.Xml.Serialization.XmlArrayAttribute>フィールドまたはプロパティにします。 例では、既定では、生成された XML 要素の名前がから派生したメンバーの識別子を設定して、生成される XML 要素の名前を変更することができます、<xref:System.Xml.Serialization.XmlArrayAttribute.ElementName%2A>プロパティです。  
+  
+ 項目の特定の種類を格納する配列をシリアル化すると、すべてのクラスから派生した型を使用することする必要があります、<xref:System.Xml.Serialization.XmlArrayItemAttribute>をそれぞれの型を宣言します。  
+  
+> [!NOTE]
+>  使用することができます`XmlArray`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlArrayAttribute>です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、クラス インスタンスをいくつかのオブジェクトの配列を含む XML ドキュメントにシリアル化します。 <xref:System.Xml.Serialization.XmlArrayAttribute>は XML 要素の配列になるメンバーに適用します。  
+  
+ [!code-cpp[Classic XmlArrayAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlArrayAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlArrayAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、 <xref:System.Xml.Serialization.XmlArrayAttribute> 2 つの配列にします。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.XmlArrayAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.XmlArrayAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.XmlArrayAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlArrayAttribute (string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlArrayAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML 要素の名前を<see cref="T:System.Xml.Serialization.XmlSerializer" />が生成されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlArrayAttribute" />クラスし、XML ドキュメントのインスタンスで生成される XML 要素名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例、 <xref:System.Xml.Serialization.XmlArrayAttribute> 2 つの配列にし、これらの配列を含むクラスのインスタンスをシリアル化します。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.XmlArrayAttribute1 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.XmlArrayAttribute1 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute1 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.XmlArrayAttribute1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute1 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlArrayAttribute.XmlArrayAttribute1 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlArrayAttribute.XmlArrayAttribute1 Example/Common/MyClass1.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementName">
+      <MemberSignature Language="C#" Value="public string ElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlArrayAttribute.ElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはシリアル化された配列に指定される XML 要素名を設定します。</summary>
+        <value>シリアル化された配列の XML 要素名。 既定値は、メンバーの名前、<see cref="T:System.Xml.Serialization.XmlArrayAttribute" />が割り当てられます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定して、<xref:System.Xml.Serialization.XmlArrayAttribute.ElementName%2A>する必要がある場合、生成する XML 要素名、メンバーの識別子とは異なります。  
+  
+ 同じように設定することができます<xref:System.Xml.Serialization.XmlArrayAttribute.ElementName%2A>生成された XML ドキュメントが同じ名前を持つメンバーを区別する XML 名前空間を使用している限り、1 つ以上のメンバーに値します。 名前空間を使用して、XML ドキュメントでプレフィックスが指定された名前を作成する詳細については、次を参照してください。<xref:System.Xml.Serialization.XmlSerializerNamespaces>です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスをシリアル化、`Library`という名前のプロパティを含むクラス`Books`の配列を返す`Book`項目。 この例では、<xref:System.Xml.Serialization.XmlArrayAttribute.ElementName%2A>プロパティを XML 要素の配列に名前を付けることを指定する`My_Books`なく`Books`です。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.ElementName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.ElementName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.ElementName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.ElementName Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.ElementName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.ElementName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Form">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaForm Form { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaForm Form" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlArrayAttribute.Form" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を XML 要素名がによって生成されたかどうかを示す値、<see cref="T:System.Xml.Serialization.XmlSerializer" />は、修飾付きまたは修飾されていません。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaForm" /> 値のいずれか。 既定値は、<see langword="XmlSchemaForm.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlArrayAttribute.Form%2A>プロパティは、XML 要素名が修飾付きまたは修飾されていないかどうかを決定します。 <xref:System.Xml.Serialization.XmlArrayAttribute.Form%2A> 「Namespaces in XML」というタイトル 1999 World Wide Web Consortium) (www.w3.org) ドキュメントに準拠しているプロパティ  
+  
+ 場合、<xref:System.Xml.Serialization.XmlAttributeAttribute.Namespace%2A>を設定しようとすると、任意の値に設定されて、<xref:System.Xml.Serialization.XmlElementAttribute.Form%2A>プロパティを`XmlSchemaForm.Unqualified`例外をスローします。  
+  
+ 既定の設定、 `XmlSchemaForm.None`、指示、<xref:System.Xml.Serialization.XmlSerializer>スキーマ名前空間が修飾されているかどうかを決定する、XML ドキュメントを確認します。 スキーマで、個々 の要素または属性の値が指定されていない場合、<xref:System.Xml.Serialization.XmlSerializer>を使用して、`elementFormDefault`と`attributeFormDefault`要素または属性を修飾するかどうかを決定する値。 次の XML コードは、スキーマを示しています。  
+  
+```  
+<schema elementFormDefault="qualified"   
+attributeFormDefault="unqualified"... >  
+   <element name="Name"/>  
+   <attribute name="Number"/>  
+</schema>  
+```  
+  
+ ときに、 <xref:System.Xml.Serialization.XmlSerializer> 、スキーマを読み取り、<xref:System.Xml.Serialization.XmlAttributeAttribute.Form%2A>両方の値、`Name`と`Number`は`XmlSchemaForm.None`、ですが、`Name`要素を修飾すると、中に、`Number`要素が修飾されていません。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスをシリアル化、`Enterprises`クラスです。 2 つの XML 要素が同じローカル名を持つ (`Company`) が異なるプレフィックス。 例のセット、<xref:System.Xml.Serialization.XmlArrayAttribute.Form%2A>プロパティに設定されている`XmlForm.Qualified`を修飾名が、XML インスタンスで発生することを確認します。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.Form Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.Form Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.Form Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.Form Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.Form Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.Form Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlArrayAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Xml.Serialization.XmlSerializer" />で空の XML タグとしてメンバーをシリアル化する必要があります、<see langword="xsi:nil" />属性に設定<see langword="true" />です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Xml.Serialization.XmlSerializer" />生成、<see langword="xsi:nil" />属性です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造の XML スキーマの仕様では、要素のコンテンツが不足していることを明示的に通知する、XML ドキュメントを許可します。 このような要素には、属性が含まれています。 `xsi:nil` 'éý'`true`です。 詳細については、「World Wide Web Consortium) (www.w3.org) 仕様を参照してください。"XML Schema Part 1: 構造体です。"  
+  
+ 場合、<xref:System.Xml.Serialization.XmlArrayAttribute.IsNullable%2A>プロパティに設定されている`true`、`xsi:nil`に設定されているクラスのメンバーの属性が生成された`null`です。 たとえば、という名前のフィールドを設定する場合`MyStringArray`に`null`、<xref:System.Xml.Serialization.XmlSerializer>次の XML コードが生成されます。  
+  
+```  
+<MyStringArray xsi:nil = "true" />  
+```  
+  
+ 場合、<xref:System.Xml.Serialization.XmlArrayAttribute.IsNullable%2A>プロパティは`false`、XML 要素は生成されません。  
+  
+> [!NOTE]
+>  適用することはできません、<xref:System.Xml.Serialization.XmlArrayAttribute.IsNullable%2A>メンバーにプロパティが値型として型指定された値の型を含めることはできませんので`null`です。  
+  
+   
+  
+## Examples  
+ 次の例には、2 つの配列が含まれています: のいずれか、<xref:System.Xml.Serialization.XmlArrayAttribute.IsNullable%2A>プロパティに設定`true`、もう 1、<xref:System.Xml.Serialization.XmlArrayAttribute.IsNullable%2A>プロパティに設定`false`です。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.IsNullable Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.IsNullable Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.IsNullable Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.IsNullable Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.IsNullable Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.IsNullable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlArrayAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML 要素の名前空間を設定します。</summary>
+        <value>XML 要素の名前空間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlArrayAttribute.Namespace%2A>プロパティでは、修飾 XML 要素名を作成することができます。 <xref:System.Xml.Serialization.XmlArrayAttribute.Namespace%2A>プロパティが「Namespaces in XML」というタイトル 1999 World Wide Web Consortium) (www.w3.org) ドキュメントにある XML 名前空間を作成するための規則に準拠  
+  
+ プレフィックスに関連付けられている名前空間を作成するには、インスタンスを作成する必要があります、<xref:System.Xml.Serialization.XmlSerializerNamespaces>名前空間と XML ドキュメントで使用されるプレフィックスを含むクラスです。 各名前空間を設定する場合と<xref:System.Xml.Serialization.XmlArrayAttribute>、内の名前空間のいずれかに一致する必要があります、<xref:System.Xml.Serialization.XmlSerializerNamespaces>です。 XML が生成されると、各配列が正しく指定された名前空間に関連付けられているプレフィックスで付けられます。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスをシリアル化、`Library`書籍のタイトルを含む 1 つ使用し、定期的なタイトルを含む別を使用する、2 つのメンバーを含むクラスです。 両方の XML 要素が名前付き`Titles`、それぞれに別のプレフィックスが含まれています。 この例は、のインスタンスも含まれています。、<xref:System.Xml.Serialization.XmlSerializerNamespaces>名前空間と 2 つの要素名を修飾するために使用されるプレフィックスを含むクラスです。  
+  
+ [!code-cpp[Classic XmlArrayAttribute.Namespace Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlArrayAttribute.Namespace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlArrayAttribute.Namespace Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlArrayAttribute.Namespace Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlArrayAttribute.Namespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlArrayAttribute.Namespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public int Order { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Order" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlArrayAttribute.Order" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素をシリアル化または逆シリアル化は、明示的な順序を設定します。</summary>
+        <value>コード生成の順序。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xml.Serialization.CodeGenerationOptions.GenerateOrder>に指示するための列挙、<xref:System.Web.Services.Description.ServiceDescriptionImporter>を設定するコードを生成する、<xref:System.Xml.Serialization.XmlElementAttribute.Order%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  1 回、<xref:System.Xml.Serialization.XmlElementAttribute.Order%2A>プロパティが 1 つのパブリック プロパティまたは型のフィールドで使用されている、すべてのパブリック プロパティおよびその型および継承されたすべての型のフィールドに適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,631 @@
+<Type Name="Visual3D" FullName="System.Windows.Media.Media3D.Visual3D">
+  <TypeSignature Language="C#" Value="public abstract class Visual3D : System.Windows.DependencyObject, System.Windows.Media.Animation.IAnimatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Visual3D extends System.Windows.DependencyObject implements class System.Windows.Media.Animation.IAnimatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Visual3D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Media.Animation.IAnimatable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービスと、ヒット テスト、座標の変換では、境界ボックスの計算などのビジュアルの 3-D オブジェクトに共通するプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Windows.Media.Media3D.Model3D>クラス、<xref:System.Windows.Media.Media3D.Visual3D>オブジェクトを共有または再利用することはできません。  
+  
+ アクセス<xref:System.Windows.Media.Media3D.Visual3D>で静的メソッドを使用して、サービス、<xref:System.Windows.Media.VisualTreeHelper>クラスです。  
+  
+ <xref:System.Windows.Media.Media3D.Visual3D>オブジェクトは、シーン ノードに最適化されます。 たとえば、境界がキャッシュされます。 ときに使用することができます、<xref:System.Windows.Media.Media3D.Visual3D>シーン内のオブジェクトの一意のインスタンスのオブジェクト。 この使用法はのと対照的<xref:System.Windows.Media.Media3D.Model3D>オブジェクトで、共有され、再利用できるように最適化された軽量オブジェクトです。 たとえば、使用して、 <xref:System.Windows.Media.Media3D.Model3D> ; 車のモデルを構築し、10 を使用するオブジェクト<xref:System.Windows.Media.Media3D.ModelVisual3D>シーンに 10 個の車を配置するオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddVisual3DChild">
+      <MemberSignature Language="C#" Value="protected void AddVisual3DChild (System.Windows.Media.Media3D.Visual3D child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddVisual3DChild(class System.Windows.Media.Media3D.Visual3D child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.AddVisual3DChild(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="child">親の 3-D visual オブジェクトに追加する子 3-D visual オブジェクト。</param>
+        <summary>3-D の 2 つのビジュアル間の親子リレーションシップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.AddVisual3DChild%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ビジュアル子イテレーションが進行中で子コレクションを変更することはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Media.Media3D.Visual3D" />に通知するには、このメソッドを呼び出す必要があります、<see cref="T:System.Windows.Media.Media3D.Visual3D" />新しい子が子コレクション内に存在するレイヤー。 <see cref="T:System.Windows.Media.Media3D.Visual3D" />レイヤーからの呼び出し、<see cref="M:System.Windows.Media.Media3D.Visual3D.GetVisual3DChild(System.Int32)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAnimationClock">
+      <MemberSignature Language="C#" Value="public void ApplyAnimationClock (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationClock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyAnimationClock(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationClock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.ApplyAnimationClock(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化する <see cref="T:System.Windows.DependencyProperty" />。</param>
+        <param name="clock">プロパティをアニメーション化する <see cref="T:System.Windows.Media.Animation.AnimationClock" />。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.Animation.AnimationClock" /> の効果を、指定された依存関係プロパティに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAnimationClock">
+      <MemberSignature Language="C#" Value="public void ApplyAnimationClock (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationClock clock, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyAnimationClock(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationClock clock, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.ApplyAnimationClock(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationClock,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化する <see cref="T:System.Windows.DependencyProperty" />。</param>
+        <param name="clock">プロパティをアニメーション化する <see cref="T:System.Windows.Media.Animation.AnimationClock" />。</param>
+        <param name="handoffBehavior">関連するすべてのアニメーションと対話する方法を指定するオブジェクト。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.Animation.AnimationClock" /> の効果を、指定された依存関係プロパティに適用します。 新しいの効果<see cref="T:System.Windows.Media.Animation.AnimationClock" />の値によって決まりますが、現在のアニメーションで、<paramref name="handoffBehavior" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAnimation">
+      <MemberSignature Language="C#" Value="public void BeginAnimation (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationTimeline animation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginAnimation(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationTimeline animation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.BeginAnimation(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationTimeline)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
+      </Parameters>
+      <Docs>
+        <param name="dp"><see cref="T:System.Windows.DependencyProperty" />アニメーション化するオブジェクト。</param>
+        <param name="animation">プロパティをアニメーション化するために必要な機能を備えたタイムラインです。</param>
+        <summary>一連のアニメーションの開始、<see cref="T:System.Windows.DependencyProperty" />に基づいて、指定されたオブジェクト<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーション シーケンスは、次のフレームがレンダリングされるときにトリガーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAnimation">
+      <MemberSignature Language="C#" Value="public void BeginAnimation (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationTimeline animation, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginAnimation(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationTimeline animation, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.BeginAnimation(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationTimeline,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="dp"><see cref="T:System.Windows.DependencyProperty" />アニメーション化するオブジェクト。</param>
+        <param name="animation">新しいアニメーションをカスタマイズするために必要な機能を備えたタイムラインです。</param>
+        <param name="handoffBehavior">関連するすべてのアニメーションと対話する方法を指定するオブジェクト。</param>
+        <summary>一連のアニメーションの開始、<see cref="T:System.Windows.DependencyProperty" />両方指定に基づいて、オブジェクト<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />と<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーション シーケンスは、次のフレームがレンダリングされるときにトリガーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindCommonVisualAncestor">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject FindCommonVisualAncestor (System.Windows.DependencyObject otherVisual);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyObject FindCommonVisualAncestor(class System.Windows.DependencyObject otherVisual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.FindCommonVisualAncestor(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherVisual" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="otherVisual">共通の先祖の検索に使用するビジュアル オブジェクト。</param>
+        <summary>ビジュアル オブジェクトと別の指定された visual オブジェクトの共通の先祖を返します。</summary>
+        <returns>現在のビジュアル オブジェクトの共通の先祖と<paramref name="otherVisual" />; または<see langword="null" />の共通の先祖が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnimationBaseValue">
+      <MemberSignature Language="C#" Value="public object GetAnimationBaseValue (System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetAnimationBaseValue(class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.GetAnimationBaseValue(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dp">底の値を要求する対象のオブジェクト。</param>
+        <summary>指定した基本の値を取得<see cref="T:System.Windows.DependencyProperty" />オブジェクト。</summary>
+        <returns>ベース値を表すオブジェクト<paramref name="dp" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisual3DChild">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Media.Media3D.Visual3D GetVisual3DChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Media.Media3D.Visual3D GetVisual3DChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.GetVisual3DChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Visual3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の 3-D ビジュアル オブジェクトのインデックス。</param>
+        <summary>指定したを返します<see cref="T:System.Windows.Media.Media3D.Visual3D" />親<see cref="T:System.Windows.Media.Media3D.Visual3DCollection" />です。</summary>
+        <returns>指定したコレクション内の子<paramref name="index" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Media.Visual>子を持っていません。  
+  
+ <xref:System.Windows.Media.Media3D.Visual3D.GetVisual3DChild%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />値が無効です。</exception>
+        <block subset="none" type="overrides">
+          <para>派生するクラスをビジュアル ツリーを正常に列挙する<see cref="T:System.Windows.Media.Media3D.Visual3D" />このメソッドをオーバーライドし、またをオーバーライドする必要があります、<see cref="P:System.Windows.Media.Media3D.Visual3D.Visual3DChildrenCount" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HasAnimatedProperties">
+      <MemberSignature Language="C#" Value="public bool HasAnimatedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasAnimatedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Visual3D.HasAnimatedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Media3D.Visual3D" />いずれかにアニメーション化されたプロパティ。</summary>
+        <value>
+          <see langword="true" />この要素があるアニメーション; 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAncestorOf">
+      <MemberSignature Language="C#" Value="public bool IsAncestorOf (System.Windows.DependencyObject descendant);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsAncestorOf(class System.Windows.DependencyObject descendant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.IsAncestorOf(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="descendant" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="descendant">可能な子である visual オブジェクト。</param>
+        <summary>ビジュアル オブジェクトが子孫のビジュアル オブジェクトの先祖であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />ビジュアル オブジェクトの先祖であるが、する場合<paramref name="descendant" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDescendantOf">
+      <MemberSignature Language="C#" Value="public bool IsDescendantOf (System.Windows.DependencyObject ancestor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsDescendantOf(class System.Windows.DependencyObject ancestor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.IsDescendantOf(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ancestor" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="ancestor">可能な先祖である visual オブジェクト。</param>
+        <summary>ビジュアル オブジェクトが先祖ビジュアル オブジェクトの子孫であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />ビジュアル オブジェクトの子孫である場合<paramref name="ancestor" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualChildrenChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnVisualChildrenChanged (System.Windows.DependencyObject visualAdded, System.Windows.DependencyObject visualRemoved);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnVisualChildrenChanged(class System.Windows.DependencyObject visualAdded, class System.Windows.DependencyObject visualRemoved) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.OnVisualChildrenChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visualAdded" Type="System.Windows.DependencyObject" />
+        <Parameter Name="visualRemoved" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="visualAdded"><see cref="T:System.Windows.Media.Media3D.Visual3D" />をコレクションに追加されました。</param>
+        <param name="visualRemoved"><see cref="T:System.Windows.Media.Media3D.Visual3D" />ですが、コレクションから削除されました。</param>
+        <summary>ときに呼び出されます、<see cref="T:System.Windows.Media.Media3D.Visual3DCollection" />ビジュアル オブジェクトの変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualParentChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnVisualParentChanged(class System.Windows.DependencyObject oldParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.OnVisualParentChanged(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldParent" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="oldParent">型の値<see cref="T:System.Windows.DependencyObject" />の以前の親を表す、<see cref="T:System.Windows.Media.Media3D.Visual3D" />オブジェクト。 場合、<see cref="T:System.Windows.Media.Media3D.Visual3D" />オブジェクトは以前の親がありません、パラメーターの値は<see langword="null" />します。</param>
+        <summary>3-D のビジュアル オブジェクトの親が変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.OnVisualParentChanged%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveVisual3DChild">
+      <MemberSignature Language="C#" Value="protected void RemoveVisual3DChild (System.Windows.Media.Media3D.Visual3D child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RemoveVisual3DChild(class System.Windows.Media.Media3D.Visual3D child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.RemoveVisual3DChild(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="child">ビジュアルの親から削除する子 3-D visual オブジェクト。</param>
+        <summary>3-D の 2 つのビジュアル間の親子リレーションシップを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.RemoveVisual3DChild%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Media.Media3D.Visual3D" />に通知するには、このメソッドを呼び出す必要があります、<see cref="T:System.Windows.Media.Media3D.Visual3D" />レイヤーの子が子コレクションから削除されました。 <see cref="T:System.Windows.Media.Media3D.Visual3D" />レイヤーからの呼び出し、<see cref="M:System.Windows.Media.Media3D.Visual3D.GetVisual3DChild(System.Int32)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Transform3D Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Transform3D Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Visual3D.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Transform3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3-D オブジェクトに適用される変換を設定します。</summary>
+        <value>3-D オブジェクトに適用する変換です。 既定値は、<see cref="P:System.Windows.Media.Media3D.Transform3D.Identity" />変換します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.Transform%2A>プロパティが .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_Transform"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.Visual3D.TransformProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TransformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TransformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Visual3D.TransformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Visual3D.Transform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.TransformProperty>.NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TransformToAncestor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このオブジェクトから指定したオブジェクトの先祖の座標に変換するために使用する変換を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.TransformToAncestor%2A>.NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TransformToAncestor">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.GeneralTransform3D TransformToAncestor (System.Windows.Media.Media3D.Visual3D ancestor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.GeneralTransform3D TransformToAncestor(class System.Windows.Media.Media3D.Visual3D ancestor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.TransformToAncestor(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.GeneralTransform3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ancestor" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="ancestor">座標の変換先となる <see cref="T:System.Windows.Media.Media3D.Visual3D" />。</param>
+        <summary>これから座標に変換するために使用する変換を返します<see cref="T:System.Windows.Media.Media3D.Visual3D" />を指定したオブジェクト<see cref="T:System.Windows.Media.Media3D.Visual3D" />オブジェクトの先祖です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Media3D.GeneralTransform3D" />オブジェクトまたは<see langword="null" />トランス フォームを作成できない場合、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.TransformToAncestor%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ancestor" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定した<paramref name="ancestor" />オブジェクトは、このオブジェクトの先祖ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Media.Media3D.Visual3D" /> オブジェクトは関連していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformToAncestor">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.GeneralTransform3DTo2D TransformToAncestor (System.Windows.Media.Visual ancestor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.GeneralTransform3DTo2D TransformToAncestor(class System.Windows.Media.Visual ancestor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.TransformToAncestor(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.GeneralTransform3DTo2D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ancestor" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="ancestor">座標の変換先となる <see cref="T:System.Windows.Media.Visual" />。</param>
+        <summary>これから座標に変換するために使用する変換を返します<see cref="T:System.Windows.Media.Media3D.Visual3D" />を指定したオブジェクト<see cref="T:System.Windows.Media.Visual" />オブジェクトの先祖です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Media3D.GeneralTransform3DTo2D" />オブジェクトまたは<see langword="null" />トランス フォームを作成できない場合、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この変換は、2 次元空間 3-D の点を射影します。 結果として得られる点は、指定した先祖の座標空間に変換された 3-D 点です。  
+  
+ <xref:System.Windows.Media.Media3D.Visual3D.TransformToAncestor%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ancestor" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定した<paramref name="ancestor" />オブジェクトは、このオブジェクトの先祖ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformToDescendant">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.GeneralTransform3D TransformToDescendant (System.Windows.Media.Media3D.Visual3D descendant);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.GeneralTransform3D TransformToDescendant(class System.Windows.Media.Media3D.Visual3D descendant) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Visual3D.TransformToDescendant(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.GeneralTransform3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="descendant" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="descendant">座標の変換先となる <see cref="T:System.Windows.Media.Media3D.Visual3D" />。</param>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.Visual3D" /> オブジェクトから指定した <see cref="T:System.Windows.Media.Media3D.Visual3D" /> 降下オブジェクトへの座標変換に使用できる変換を返します。</summary>
+        <returns><see cref="T:System.Windows.Media.Media3D.GeneralTransform3D" /> オブジェクト、または <paramref name="descendant" /> からこのオブジェクトへの変換が非可逆である場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.TransformToDescendant%2A>メソッドは .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="descendant" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">このオブジェクトは指定された <paramref name="descendant" /> オブジェクトの先祖ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Media.Media3D.Visual3D" /> オブジェクトは関連していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual3DChildrenCount">
+      <MemberSignature Language="C#" Value="protected virtual int Visual3DChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Visual3DChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Visual3D.Visual3DChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子要素の数を取得、<see cref="T:System.Windows.Media.Media3D.Visual3D" />オブジェクト。</summary>
+        <value>子要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Media.Media3D.Visual3D>子要素が存在しません。 したがって、既定の実装を常に 0 を返します。  
+  
+ <xref:System.Windows.Media.Media3D.Visual3D.Visual3DChildrenCount%2A>プロパティが .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生するクラスをビジュアル ツリーを正常に列挙する<see cref="T:System.Windows.Media.Media3D.Visual3D" />このプロパティをオーバーライドして上書きも必要があります、<see cref="M:System.Windows.Media.Media3D.Visual3D.GetVisual3DChild(System.Int32)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual3DModel">
+      <MemberSignature Language="C#" Value="protected System.Windows.Media.Media3D.Model3D Visual3DModel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Model3D Visual3DModel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Visual3D.Visual3DModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Model3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Media3D.Model3D" />をレンダリングするオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Media.Media3D.Model3D" />をレンダリングするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Visual3D.Visual3DModel%2A>プロパティが .NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

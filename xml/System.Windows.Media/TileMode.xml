@@ -1,0 +1,108 @@
+<Type Name="TileMode" FullName="System.Windows.Media.TileMode">
+  <TypeSignature Language="C#" Value="public enum TileMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TileMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TileMode" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>について説明する方法、<see cref="T:System.Windows.Media.TileBrush" />出力領域の上にタイルを描画します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、さまざまなタイル モードを示します。  
+  
+ ![使用できるタイル モード](~/add/media/graphicsmm-tilemode-enum-enumorder.png "使用できるタイル モード")  
+TileMode 列挙のために使用できるタイル モード  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FlipX">
+      <MemberSignature Language="C#" Value="FlipX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.TileMode FlipX = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileMode.FlipX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じ<see cref="F:System.Windows.Media.TileMode.Tile" />にタイルの代替列が水平方向に反転します。 基本タイルそのものは反転されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipXY">
+      <MemberSignature Language="C#" Value="FlipXY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.TileMode FlipXY = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileMode.FlipXY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>組み合わせ<see cref="F:System.Windows.Media.TileMode.FlipX" />と<see cref="F:System.Windows.Media.TileMode.FlipY" />です。 基本タイルそのものは反転されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipY">
+      <MemberSignature Language="C#" Value="FlipY" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.TileMode FlipY = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileMode.FlipY" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じ<see cref="F:System.Windows.Media.TileMode.Tile" />にタイルの代替の行が垂直方向に反転します。 基本タイルそのものは反転されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.TileMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本タイルを描画するだけで、繰り返されません。 残りの領域は透明になります</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tile">
+      <MemberSignature Language="C#" Value="Tile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.TileMode Tile = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileMode.Tile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本タイルが描画され、残りの領域は基本タイルの繰り返しで塗りつぶされます。 1 つのタイルの右端が次のタイルの左端と接合されます。上端と下端も同様です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

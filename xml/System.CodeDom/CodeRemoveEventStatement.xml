@@ -1,0 +1,162 @@
+<Type Name="CodeRemoveEventStatement" FullName="System.CodeDom.CodeRemoveEventStatement">
+  <TypeSignature Language="C#" Value="public class CodeRemoveEventStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeRemoveEventStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeRemoveEventStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベント ハンドラーを削除するステートメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeRemoveEventStatement>イベントのイベント ハンドラーを削除するステートメントを表すために使用できます。  
+  
+ <xref:System.CodeDom.CodeRemoveEventStatement.Event%2A>プロパティからイベント ハンドラーを削除するイベントを指定します。 <xref:System.CodeDom.CodeRemoveEventStatement.Listener%2A>プロパティを削除するイベント ハンドラーを指定します。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.CodeDom.CodeRemoveEventStatement>イベントからデリゲートを削除します。  
+  
+ [!code-cpp[CodeRemoveEventExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeRemoveEventExample/CPP/coderemoveeventexample.cpp#2)]
+ [!code-csharp[CodeRemoveEventExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeRemoveEventExample/CS/coderemoveeventexample.cs#2)]
+ [!code-vb[CodeRemoveEventExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeRemoveEventExample/VB/coderemoveeventexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeRemoveEventStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeRemoveEventStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeRemoveEventStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeRemoveEventStatement (System.CodeDom.CodeEventReferenceExpression eventRef, System.CodeDom.CodeExpression listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeEventReferenceExpression eventRef, class System.CodeDom.CodeExpression listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeRemoveEventStatement.#ctor(System.CodeDom.CodeEventReferenceExpression,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventRef" Type="System.CodeDom.CodeEventReferenceExpression" />
+        <Parameter Name="listener" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="eventRef">A<see cref="T:System.CodeDom.CodeEventReferenceExpression" />からイベント ハンドラーをデタッチするイベントを示すです。</param>
+        <param name="listener">A<see cref="T:System.CodeDom.CodeExpression" />を示す、イベント ハンドラーを削除します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeRemoveEventStatement" />指定されたイベントとイベント ハンドラーを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeRemoveEventStatement (System.CodeDom.CodeExpression targetObject, string eventName, System.CodeDom.CodeExpression listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression targetObject, string eventName, class System.CodeDom.CodeExpression listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeRemoveEventStatement.#ctor(System.CodeDom.CodeExpression,System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="listener" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">A<see cref="T:System.CodeDom.CodeExpression" />を示すイベントを含むオブジェクト。</param>
+        <param name="eventName">イベントの名前です。</param>
+        <param name="listener">A<see cref="T:System.CodeDom.CodeExpression" />を示す、イベント ハンドラーを削除します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeRemoveEventStatement" />クラスの指定されたターゲット オブジェクト、イベント名、およびイベント ハンドラーを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Event">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeEventReferenceExpression Event { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeEventReferenceExpression Event" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeRemoveEventStatement.Event" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeEventReferenceExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはからのリスナーを削除するイベントを設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeEventReferenceExpression" />からのリスナーを削除するイベントを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Listener">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Listener { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Listener" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeRemoveEventStatement.Listener" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または削除するイベント ハンドラーを設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を示す、イベント ハンドラーを削除します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

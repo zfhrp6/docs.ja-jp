@@ -1,0 +1,364 @@
+<Type Name="BuildResult" FullName="Microsoft.Build.Execution.BuildResult">
+  <TypeSignature Language="C#" Value="public class BuildResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildResult extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Execution.BuildResult" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在の結果セットのすべての特定の構成の結果を生成したターゲットを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildResult.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>ビルドの結果セットを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResultsForTarget">
+      <MemberSignature Language="C#" Value="public void AddResultsForTarget (string target, Microsoft.Build.Execution.TargetResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddResultsForTarget(string target, class Microsoft.Build.Execution.TargetResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildResult.AddResultsForTarget(System.String,Microsoft.Build.Execution.TargetResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="result" Type="Microsoft.Build.Execution.TargetResult" />
+      </Parameters>
+      <Docs>
+        <param name="target">追加するのには結果が対象です。</param>
+        <param name="result">ターゲットの結果。</param>
+        <summary>このビルドの結果セットに指定された対象の結果を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CircularDependency">
+      <MemberSignature Language="C#" Value="public bool CircularDependency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CircularDependency" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.CircularDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>循環する依存関係が検出されたかどうかを示すフラグを取得します。</summary>
+        <value>循環する依存関係が検出された場合、true を返しますfalse それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationId">
+      <MemberSignature Language="C#" Value="public int ConfigurationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConfigurationId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.ConfigurationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セットの構成の ID を取得します。</summary>
+        <value>このビルドの結果セットの構成の ID を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セットに対して生成された例外を取得します。</summary>
+        <value>このビルドの結果セットに対して生成された例外を返します。 例外が発生していない場合は false を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalRequestId">
+      <MemberSignature Language="C#" Value="public int GlobalRequestId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GlobalRequestId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.GlobalRequestId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セットのビルド要求 id を取得します。</summary>
+        <value>このビルドの結果セットのビルド要求 id を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasResultsForTarget">
+      <MemberSignature Language="C#" Value="public bool HasResultsForTarget (string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasResultsForTarget(string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildResult.HasResultsForTarget(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">結果を取得するターゲット。</param>
+        <summary>指定されたターゲットのすべての結果があるかどうかを判断します。</summary>
+        <returns>結果が存在する場合、true を返しますfalse それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.ITargetResult this[string target] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Execution.ITargetResult Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.ITargetResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">インデックス付きのターゲットです。</param>
+        <summary>指定されたターゲットのビルド結果を取得するために使用するインデクサーを取得します。</summary>
+        <value>インデックス付きのターゲットのビルドの結果。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スロー、`KeyNotFoundException`このビルドの結果で指定されたターゲットが存在しない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeResults">
+      <MemberSignature Language="C#" Value="public void MergeResults (Microsoft.Build.Execution.BuildResult results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MergeResults(class Microsoft.Build.Execution.BuildResult results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildResult.MergeResults(Microsoft.Build.Execution.BuildResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="Microsoft.Build.Execution.BuildResult" />
+      </Parameters>
+      <Docs>
+        <param name="results">マージする結果。</param>
+        <summary>このビルドの結果セットと指定した結果をマージします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeRequestId">
+      <MemberSignature Language="C#" Value="public int NodeRequestId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NodeRequestId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.NodeRequestId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のノードのビルド要求 ID を取得します。</summary>
+        <value>元のノードのビルド要求 ID を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverallResult">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.BuildResultCode OverallResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Execution.BuildResultCode OverallResult" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.OverallResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.BuildResultCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの全体的な結果を取得します。</summary>
+        <value>このビルドの全体的な結果を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentGlobalRequestId">
+      <MemberSignature Language="C#" Value="public int ParentGlobalRequestId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ParentGlobalRequestId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.ParentGlobalRequestId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セットに要求を発行したグローバル ビルド要求 ID を取得します。</summary>
+        <value>このビルドの結果セットに要求を発行したグローバル ビルド要求 ID を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectStateAfterBuild">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.ProjectInstance ProjectStateAfterBuild { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Execution.ProjectInstance ProjectStateAfterBuild" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.ProjectStateAfterBuild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.ProjectInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定<see cref="T:Microsoft.Build.Execution.ProjectInstance" />ビルドの後に状態です。</summary>
+        <value>返します、<see langword="ProjectInstance" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ダミー オブジェクトである可能性がありますおよび取得する以外は使用できません<xref:Microsoft.Build.Execution.ProjectInstance.Properties%2A>、<xref:Microsoft.Build.Execution.ProjectInstance.GlobalProperties%2A>と<xref:Microsoft.Build.Execution.ProjectInstance.Items%2A>です。 その他の操作はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultsByTarget">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,Microsoft.Build.Execution.TargetResult&gt; ResultsByTarget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, class Microsoft.Build.Execution.TargetResult&gt; ResultsByTarget" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.ResultsByTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Build.Execution.TargetResult&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セット内のすべてのターゲット結果に対する列挙子を取得します。</summary>
+        <value>このビルドの結果セット内のすべてのターゲット結果に対する列挙子を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmissionId">
+      <MemberSignature Language="C#" Value="public int SubmissionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SubmissionId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildResult.SubmissionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの結果セットがビルドの送信に関連付けられているを取得します。</summary>
+        <value>関連付けられているビルド送信このビルドの結果セットを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

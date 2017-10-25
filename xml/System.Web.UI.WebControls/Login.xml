@@ -1,0 +1,3034 @@
+<Type Name="Login" FullName="System.Web.UI.WebControls.Login">
+  <TypeSignature Language="C#" Value="public class Login : System.Web.UI.WebControls.CompositeControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Login extends System.Web.UI.WebControls.CompositeControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Login" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CompositeControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Authenticate")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LoginDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web サイトにログインするためのユーザー インターフェイス (UI) 要素を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [スタイルおよびテンプレート](#styles_and_templates)  
+  
+-   [検証のグループ化](#validation_groupings)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [CSS スタイルを適用します。](#applying_styles)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.Login>コントロールは、Web サイトでユーザーを認証するために必要なすべての一般的な UI 要素を提供する複合コントロール。 次の 3 つの要素は、すべてのログインのシナリオの必要があります。  
+  
+-   ユーザーを識別する一意のユーザー名。  
+  
+-   ユーザーの id を検証するパスワードです。  
+  
+-   サーバーにログイン情報を送信するログイン ボタンをクリックします。  
+  
+ <xref:System.Web.UI.WebControls.Login>コントロールにも追加の関数をサポートする次の省略可能な UI 要素が用意されています。  
+  
+-   パスワード関連語句のリンク。  
+  
+-   アカウントを記憶するチェック ボックス セッション間でのログイン情報を保持します。  
+  
+-   ログインに関して問題が発生しているユーザー向けヘルプ リンクします。  
+  
+-   登録ページにユーザーをリダイレクトする新しいユーザーの登録のリンク。  
+  
+-   ログイン フォームに表示される指示テキストです。  
+  
+-   ユーザーは、ユーザー名またはパスワードのフィールドで入力しなくてもログイン ボタンをクリックしたときに表示されるカスタム エラー テキスト。  
+  
+-   ログインが失敗した場合に表示されるカスタム エラー テキストです。  
+  
+-   ログインが成功したときに発生するカスタム アクション。  
+  
+-   ユーザーは既にログインして、サイトにログイン コントロールを非表示にする方法。  
+  
+ どのコントロールが必要か、省略可能を示す表を参照してください<xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>プロパティです。  
+  
+> [!NOTE]
+>  ASP.NET で使用できるログイン コントロールのセットに慣れていない場合は、次を参照してください。 [ASP.NET ログイン コントロールの概要](http://msdn.microsoft.com/library/ac032230-6469-4b03-b68d-03ef2643a24d)続行する前にします。 ログイン コントロールおよびメンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+> [!IMPORTANT]
+>  ユーザー入力を受け付けるは、潜在的なセキュリティ脅威です。 悪意のあるユーザーは、上の脆弱性を公開するか、またはプログラムを実行するためのものでは、データは、自動生成されたパスワードを再試行してください。 送信できます。 セキュリティを向上させるには、ユーザー入力を使用する場合をするには、コントロールの検証機能を使用し、コントロール用に構成されているすべてのデータ プロバイダーをセキュリティで保護します。 詳細については、次を参照してください。[ログイン コントロールのセキュリティで保護する](http://msdn.microsoft.com/library/d85075bc-9c1a-4453-8a0c-539b10853c9c)、 [Web アプリケーション用の基本的なセキュリティ プラクティス](http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad)、および[セキュリティで保護するメンバーシップ](http://msdn.microsoft.com/library/2dab2012-c278-426a-bb0d-93b260c428a7)です。  
+  
+ <xref:System.Web.UI.WebControls.Login>コントロールでは、メンバーシップ プロバイダーを使用してユーザーの資格情報を取得します。 それ以外の場合、指定しない限り、<xref:System.Web.UI.WebControls.Login>コントロールは、Web.config ファイルで定義されている既定のメンバーシップ プロバイダーを使用します。 別のプロバイダーを指定する設定、<xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>アプリケーションの Web.config ファイルで定義されているプロパティをメンバーシップ プロバイダー名のいずれか。 詳細については、次を参照してください。[メンバーシップ プロバイダー](http://msdn.microsoft.com/library/d2c90ff6-aa86-4001-b2c5-e5c99cb7f68f)です。  
+  
+ カスタム認証サービスを使用する場合は、使用、<xref:System.Web.UI.WebControls.Login.OnAuthenticate%2A>サービスを呼び出すメソッド。  
+  
+<a name="styles_and_templates"></a>   
+## <a name="styles-and-templates"></a>スタイルおよびテンプレート  
+ 外観、<xref:System.Web.UI.WebControls.Login>コントロールは、テンプレート、およびスタイル設定を完全にカスタマイズ可能です。 プロパティをカスタマイズ可能なすべての UI テキスト メッセージも、<xref:System.Web.UI.WebControls.Login>クラスです。 インターフェイスの既定のテキストは、サーバーでロケールの設定に基づいて自動的にローカライズされます。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login>テンプレートと、コントロールをカスタマイズする、<xref:System.Web.UI.WebControls.WebControl.AccessKey%2A>プロパティおよび<xref:System.Web.UI.WebControls.WebControl.TabIndex%2A>プロパティは無視されます。 この場合、設定、<xref:System.Web.UI.WebControls.WebControl.AccessKey%2A>プロパティおよび<xref:System.Web.UI.WebControls.WebControl.TabIndex%2A>直接各テンプレート子コントロールのプロパティです。  
+  
+ <xref:System.Web.UI.WebControls.Login>コントロールのプロパティなどのテキスト ボックス、によって表される<xref:System.Web.UI.WebControls.Login.UserName%2A>と<xref:System.Web.UI.WebControls.Login.Password%2A>はページのライフ サイクルのすべてのフェーズ中にアクセスします。 コントロールのエンド ユーザーによって行われた変更を取得、<xref:System.Web.UI.WebControls.TextBox.TextChanged>のテキスト ボックスによってトリガーされるイベント。  
+  
+> [!NOTE]
+>  埋め込む場合、<xref:System.Web.UI.WebControls.Login>内の制御、<xref:System.Web.UI.WebControls.WizardStep>オブジェクトを明示的に設定、<xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex%2A>プロパティに、`Page_Load`ユーザーが認証されている場合、イベント ハンドラー。 <xref:System.Web.UI.WebControls.Wizard>コントロールは、次に自動的に変化しません<xref:System.Web.UI.WebControls.WizardStep>このシナリオでのオブジェクト。  
+  
+ 次の表、<xref:System.Web.UI.WebControls.Login>スタイル プロパティを制御し、各スタイル プロパティに影響する UI 要素について説明します。 各スタイルが適用されるプロパティの一覧は、個々 のスタイル プロパティのマニュアルを参照してください。  
+  
+|スタイル プロパティ|影響を受ける UI 要素|  
+|--------------------|-------------------------|  
+|<xref:System.Web.UI.WebControls.Login.BorderPadding%2A>|コントロールの内容とコントロールの境界線間の領域。|  
+|<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>|次回のチェック ボックスをオンします。|  
+|<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>|ログイン エラー テキスト。|  
+|<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>|ユーザー コントロールを使用する方法を説明するページ上の説明テキストです。|  
+|<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>|テキスト ボックスなどのすべての入力フィールドのラベル。|  
+|<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>|テキスト入力の入力フィールド|  
+|<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>|タイトル テキスト。|  
+|<xref:System.Web.UI.WebControls.Login.ValidatorTextStyle%2A>|ログインの試行が検証エラーのため失敗したときにユーザーに表示されるテキスト。|  
+|<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>|他のページにリンクします。|  
+|<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>|ログイン ボタンをクリックします。|  
+  
+<a name="validation_groupings"></a>   
+## <a name="validation-groupings"></a>検証のグループ化  
+ <xref:System.Web.UI.WebControls.Login.UserName%2A>と<xref:System.Web.UI.WebControls.Login.Password%2A>プロパティが<xref:System.Web.UI.WebControls.RequiredFieldValidator>をユーザーが必要な情報を提供せず、ページを送信することを防ぐためにそれらに関連付けられているコントロール。  
+  
+ <xref:System.Web.UI.WebControls.Login>の他のフィールドと同じページに表示できるように、コントロールが検証グループを使用して、<xref:System.Web.UI.WebControls.Login>コントロールを個別に検証することができます。 既定では、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Login>コントロールは、検証グループの名前として使用します。 たとえば、 <xref:System.Web.UI.WebControls.Login> "Login1"の ID を持つコントロールが"Login1"の検証グループ名を使用します。 検証グループを設定する場合、<xref:System.Web.UI.WebControls.Login>コントロールの一部である、する必要がありますテンプレート コントロールの検証グループ名を変更します。  
+  
+<a name="applying_styles"></a>   
+## <a name="applying-css-styles"></a>CSS スタイルを適用します。  
+ <xref:System.Web.UI.WebControls.Login>コントロールでは、マークアップで CSS スタイル規則を指定することができます。 外観をカスタマイズするテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、テンプレートのマークアップで CSS スタイルを指定できます。 その場合は、他の外側のテーブルは必要ありません。 テーブルが設定して表示されないように、<xref:System.Web.UI.WebControls.Login.RenderOuterTable%2A>プロパティを`false`です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Login  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderPadding="integer"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CreateUserIconUrl="uri"  
+    CreateUserText="string"  
+    CreateUserUrl="uri"  
+    CssClass="string"  
+    DestinationPageUrl="uri"  
+    DisplayRememberMe="True|False"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    FailureAction="Refresh|RedirectToLoginPage"  
+    FailureText="string"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+               Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    HelpPageIconUrl="uri"  
+    HelpPageText="string"  
+    HelpPageUrl="uri"  
+    ID="string"  
+    InstructionText="string"  
+    LoginButtonImageUrl="uri"  
+    LoginButtonText="string"  
+    LoginButtonType="Button|Image|Link"  
+    MembershipProvider="string"  
+    OnAuthenticate="Authenticate event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnLoggedIn="LoggedIn event handler"  
+    OnLoggingIn="LoggingIn event handler"  
+    OnLoginError="LoginError event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    Orientation="Horizontal|Vertical"  
+    PasswordLabelText="string"  
+    PasswordRecoveryIconUrl="uri"  
+    PasswordRecoveryText="string"  
+    PasswordRecoveryUrl="uri"  
+    PasswordRequiredErrorMessage="string"  
+    RememberMeSet="True|False"  
+    RememberMeText="string"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    TextLayout="TextOnLeft|TextOnTop"  
+    TitleText="string"  
+    ToolTip="string"  
+    UserName="string"  
+    UserNameLabelText="string"  
+    UserNameRequiredErrorMessage="string"  
+    Visible="True|False"  
+    VisibleWhenLoggedIn="True|False"  
+    Width="size"  
+>  
+        <CheckBoxStyle />  
+        <FailureTextStyle />  
+        <HyperLinkStyle />  
+        <InstructionTextStyle />  
+        <LabelStyle />  
+        <LayoutTemplate>  
+            <!-- child controls -->  
+        </LayoutTemplate>  
+        <LoginButtonStyle />  
+        <TextBoxStyle />  
+        <TitleTextStyle />  
+        <ValidatorTextStyle />  
+</asp:Login>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login>コントロールを Web サイトにログインするための UI を提供します。  
+  
+ [!code-aspx-csharp[LoginClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginClass/CS/loginclasscs.aspx#1)]
+ [!code-aspx-vb[LoginClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginClass/VB/loginclassvb.aspx#1)]  
+  
+ 次のコード例では、拡張する方法を示しています、<xref:System.Web.UI.WebControls.Login>コントロール。 `CustomLogin`コントロールが含まれています、<xref:System.Web.UI.WebControls.DropDownList>をユーザー コントロールを使用して認証されますがメンバーシップ プロバイダーを選択します。 (これらのプロバイダーは、Web.config で構成されています)。<xref:System.Web.UI.WebControls.Login.OnLoggingIn%2A> 、メソッド、<xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>の選択した値に設定されて、<xref:System.Web.UI.WebControls.DropDownList>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[Samples.AspNet.Controls.CustomLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Controls.CustomLogin/CS/FarmasLogin.cs#1)]
+ [!code-vb[Samples.AspNet.Controls.CustomLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Controls.CustomLogin/VB/FarmasLogin.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Login ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login>コンス トラクターは、の新しいインスタンスを作成、<xref:System.Web.UI.WebControls.Login>コントロール、Web ページにプログラムによって挿入できます。  
+  
+ 次の表は、の新しいインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Login>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>|`true`|  
+|<xref:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn%2A>|`true`|  
+|<xref:System.Web.UI.WebControls.Login.FailureAction%2A>|`true`|  
+|<xref:System.Web.UI.WebControls.Login.FailureText%2A>|"ログインの試行が失敗しました。 もう一度やり直してください。"|  
+|<xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>|"Default"|  
+|<xref:System.Web.UI.WebControls.Login.Orientation%2A>|<xref:System.Web.UI.WebControls.Orientation.Vertical>|  
+|<xref:System.Web.UI.WebControls.Login.PasswordLabelText%2A>|"パスワード:"|  
+|<xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>|「パスワード」です。|  
+|<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>|`false`|  
+|<xref:System.Web.UI.WebControls.Login.RememberMeText%2A>|「次回。」|  
+|<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>|「ログイン」|  
+|<xref:System.Web.UI.WebControls.Login.TextLayout%2A>|<xref:System.Web.UI.WebControls.LoginTextLayout.TextOnLeft>|  
+|<xref:System.Web.UI.WebControls.Login.TitleText%2A>|「ログイン」|  
+|<xref:System.Web.UI.WebControls.Login.UserNameLabelText%2A>|"ユーザー名:"|  
+|<xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>|「ユーザー名。」|  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.Login>を制御し、そのインスタンスを追加、<xref:System.Web.UI.Control.Controls%2A>のコレクション、<xref:System.Web.UI.WebControls.PlaceHolder>コントロール。  
+  
+ [!code-aspx-csharp[LoginLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLogin/CS/loginlogincs.aspx#1)]
+ [!code-aspx-vb[LoginLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLogin/VB/loginloginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.AuthenticateEventHandler Authenticate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.AuthenticateEventHandler Authenticate" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Login.Authenticate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.AuthenticateEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが認証されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.Authenticate>イベントは、ユーザーが使用する場合、<xref:System.Web.UI.WebControls.Login>コントロールを Web サイトにログインします。 カスタム認証方式を使用できる、<xref:System.Web.UI.WebControls.Login.Authenticate>ユーザーを認証するイベントです。  
+  
+> [!NOTE]
+>  ユーザーを使用する場合、 <xref:System.Web.UI.WebControls.Login> Web サイトにログインするコントロールをビューの状態のすべてのデータとすべてのポスト データは失われます。 操作を実行しない、<xref:System.Web.UI.WebControls.Login.Authenticate>ビュー ステートに依存するイベントです。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.Authenticate>サイト固有のカスタム認証コードを呼び出すイベントです。  
+  
+ [!code-aspx-csharp[LoginAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAuthenticate/CS/loginauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAuthenticate/VB/loginauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタム認証方式を設定する必要があります、<see cref="P:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated" />プロパティを<see langword="true" />をユーザーが認証されたことを示します。  
+  
+ ユーザーが自分のログイン情報を送信するときに、<see cref="T:System.Web.UI.WebControls.Login" />最初の発生を制御、<see cref="E:System.Web.UI.WebControls.Login.LoggingIn" />イベント、<see cref="E:System.Web.UI.WebControls.Login.Authenticate" />イベント、および最後に、<see cref="E:System.Web.UI.WebControls.Login.LoggedIn" />イベント。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderPadding">
+      <MemberSignature Language="C#" Value="public virtual int BorderPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.BorderPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の余白の罫線の内側、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>までの間隔 (ピクセル単位) の内容の量、<see cref="T:System.Web.UI.WebControls.Login" />コントロールと<see cref="T:System.Web.UI.WebControls.Login" />コントロールの境界線です。 既定値は <see langword="1" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.Login.BorderPadding%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.Login.BorderPadding" />プロパティが-1 未満の値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckBoxStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle CheckBoxStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle CheckBoxStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.CheckBoxStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、 <see cref="T:System.Web.UI.WebControls.Style" /> Me を記憶する の設定を定義する、オブジェクト チェック ボックスをオンします。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.Style" />のスタイルの設定を定義する、<see cref="T:System.Web.UI.WebControls.Login" />コントロールの次回のチェック ボックスをオンします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>プロパティへの参照を取得する、<xref:System.Web.UI.WebControls.Style>オブジェクトの外観を変更に使用すること、<xref:System.Web.UI.WebControls.Login>コントロールの次回のチェック ボックスをオンします。  
+  
+ このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.Style>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.Style>クラス (たとえば、 `CheckBoxStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `CheckBoxStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>プロパティの外観を定義する、<xref:System.Web.UI.WebControls.Login.RememberMeText%2A>プロパティです。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>コントロールのスタイル プロパティはによってオーバーライドされる<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例テキストの色を設定を記憶する チェック ボックス青にし、フォント スタイル斜体のプロパティを設定して、<xref:System.Web.UI.WebControls.Style>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.CheckBoxStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginCheckBoxStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginCheckBoxStyle/CS/logincheckboxstylecs.aspx#1)]
+ [!code-aspx-vb[LoginCheckBoxStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginCheckBoxStyle/VB/logincheckboxstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成する個々 のコントロールを作成、<see cref="T:System.Web.UI.WebControls.Login" />のイベントでイベント ハンドラーをコントロールと関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.CreateChildControls%2A>メソッドが作成されるコントロールのインスタンスを作成、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserIconUrl">
+      <MemberSignature Language="C#" Value="public virtual string CreateUserIconUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CreateUserIconUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.CreateUserIconUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいユーザーの登録ページへのリンクの横に表示するイメージの場所を取得します。</summary>
+        <value>表示するイメージの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserText">
+      <MemberSignature Language="C#" Value="public virtual string CreateUserText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CreateUserText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.CreateUserText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、新規ユーザーの登録ページへのリンクのテキストを設定します。</summary>
+        <value>新しいユーザーの登録 ページへのリンク テキストです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.CreateUserText%2A>プロパティには、サイトの [登録] ページへのリンクのテキストが含まれています。 登録 ページの URL が指定されて、<xref:System.Web.UI.WebControls.Login.CreateUserUrl%2A>プロパティです。  
+  
+ 場合<xref:System.Web.UI.WebControls.Login.CreateUserUrl%2A>が空か、内のテキスト、<xref:System.Web.UI.WebControls.Login.CreateUserText%2A>プロパティは、ユーザーに表示されますが、リンクとしてフォーマットされていません。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.CreateUserText%2A>プロパティが空で、[登録] ページへのリンクは、ユーザーに使用できません。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Web.UI.WebControls.Login.CreateUserText%2A> 「レジスタ新しいユーザー...」プロパティ  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginCreateUserText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginCreateUserText/CS/logincreateusertextcs.aspx#1)]
+ [!code-aspx-vb[LoginCreateUserText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginCreateUserText/VB/logincreateusertextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUserUrl">
+      <MemberSignature Language="C#" Value="public virtual string CreateUserUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CreateUserUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.CreateUserUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しいユーザーの登録 ページの URL を設定します。</summary>
+        <value>新しいユーザーの登録 ページの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.CreateUserUrl%2A>プロパティには、Web サイトの新しいユーザーの登録 ページの URL が含まれています。 <xref:System.Web.UI.WebControls.Login.CreateUserText%2A>プロパティにはリンクに使用するテキストが含まれています。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.CreateUserText%2A>プロパティが空、登録ページへのリンクは、ユーザーに使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.CreateUserUrl%2A>プロパティを"register.aspx"です。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginCreateUserText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginCreateUserText/CS/logincreateusertextcs.aspx#1)]
+ [!code-aspx-vb[LoginCreateUserText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginCreateUserText/VB/logincreateusertextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationPageUrl">
+      <MemberSignature Language="C#" Value="public virtual string DestinationPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DestinationPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.DestinationPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログインの試行が成功すると、ユーザーに表示されるページの URL を設定します。</summary>
+        <value>ページの URL、ユーザーはログインの試行が成功した場合にリダイレクトされます。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.DestinationPageUrl%2A>プロパティは、ログインの試行が成功したときに表示されるページを指定します。  
+  
+ 既定の動作、<xref:System.Web.UI.WebControls.Login>またはを返す、ユーザー、参照元のページで定義されているページには、コントロール、 `defaultUrl` Web.config ファイル内の要素の属性です。  
+  
+ <xref:System.Web.UI.WebControls.Login.DestinationPageUrl%2A>プロパティの既定の動作のオーバーライド、<xref:System.Web.UI.WebControls.Login>コントロールだけでなく、`defaultUrl`構成ファイルで行った設定します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.DestinationPageUrl%2A>プロパティです。 Page_Load メソッドを使用して、先のページの URL を参照しているページの URL に取り付けます先のページは、必要な場合に、元のページへのユーザーを返すことができます。  
+  
+ [!code-aspx-csharp[LoginDestinationPageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginDestinationPageUrl/CS/logindestinationpageurlcs.aspx#1)]
+ [!code-aspx-vb[LoginDestinationPageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginDestinationPageUrl/VB/logindestinationpageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayRememberMe">
+      <MemberSignature Language="C#" Value="public virtual bool DisplayRememberMe { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisplayRememberMe" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.DisplayRememberMe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブラウザーに永続的な cookie かどうかを制御するユーザーを有効にする チェック ボックスを表示するを送信したかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />チェック ボックスを表示するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティに設定されている`true`に含まれるテキスト、<xref:System.Web.UI.WebControls.Login.RememberMeText%2A>プロパティは、ページに表示される、と共に、保存 チェック ボックスをオンします。 ユーザーを選択すると、保存 Me、ユーザーは、サイトへの今後の訪問履歴に自動的に認証できるようにチェック ボックスで、自分のコンピューターに送信された認証 cookie が永続化します。 値、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティは選択範囲で設定を記憶する Me チェック ボックスをオンします。  
+  
+ 場合<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>は`false` ページを記憶する チェック ボックスが表示されない、および、ユーザーには制御する方法がないか、認証 cookie が引き続き発生するかどうか。 設定することができます、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティを`true` チェック ボックスを表示せず、ユーザーのブラウザーに永続的な認証クッキーを送信します。  
+  
+> [!NOTE]
+>  ユーザーのブラウザーで永続的な認証 cookie の設定に特有のセキュリティ リスクがあります。 これらのセキュリティ リスクが、サイトに許容されるかどうかを決定する必要があります。 設定した場合、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティを`true`と<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティを`false`、パブリックのブラウザーから Web サイトを訪問するユーザー、インターネットのようにカフェたとえば、誤ってのままに永続的な認証 cookie の背後にあると、ブラウザーの次のユーザーが以前のユーザーの資格情報を使用して、Web サイトにアクセスできます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を記憶する を設定 チェック ボックスを無効になります、<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティを`false`です。  
+  
+ [!code-aspx-csharp[LoginEnableRememberMe#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginEnableRememberMe/CS/loginenableremembermecs.aspx#1)]
+ [!code-aspx-vb[LoginEnableRememberMe#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginEnableRememberMe/VB/loginenableremembermevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureAction">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.LoginFailureAction FailureAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.LoginFailureAction FailureAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.FailureAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LoginFailureAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログイン試行が失敗したときに発生するアクションを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.LoginFailureAction" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.LoginFailureAction.Refresh" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.FailureAction%2A>プロパティの動作を定義する、<xref:System.Web.UI.WebControls.Login>ときに、ユーザーはログインできませんを Web サイトを制御します。  
+  
+ 既定の動作は、ページを再読み込みおよびの内容を表示、<xref:System.Web.UI.WebControls.Login.FailureText%2A>ログイン試行が失敗したユーザーに警告するプロパティです。  
+  
+ ときに<xref:System.Web.UI.WebControls.Login.FailureAction%2A>に設定されている<xref:System.Web.UI.WebControls.LoginFailureAction.RedirectToLoginPage>ユーザーが Web.config ファイルで定義されたログイン ページにリダイレクトします。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.Login.FailureAction%2A>プロパティ宣言とコードの両方です。  
+  
+ [!code-aspx-csharp[LoginLoginFailureAction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLoginFailureAction/CS/loginloginfailureactioncs.aspx#1)]
+ [!code-aspx-vb[LoginLoginFailureAction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLoginFailureAction/VB/loginloginfailureactionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.LoginFailureAction" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureText">
+      <MemberSignature Language="C#" Value="public virtual string FailureText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FailureText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.FailureText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログインに失敗したときに表示されるテキストを設定します。</summary>
+        <value>ログインに失敗したときに、ユーザーに表示するテキストです。 既定値は"、ログインに失敗しました。 もう一度やり直してください。"</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.FailureText%2A>プロパティ ログイン試行が失敗したときに表示される文字列を指定します。  
+  
+ 用のテンプレートを定義する場合、<xref:System.Web.UI.WebControls.Login>コントロールを表示するテンプレート上の場所を指定できます、<xref:System.Web.UI.WebControls.Login.FailureText%2A>プロパティを使用して、<xref:System.Web.UI.WebControls.Literal>コントロールと提供される ID"FailureText"を制御します。 テンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティがで指定したテキストに適用されません、<xref:System.Web.UI.WebControls.Login.FailureText%2A>プロパティです。  
+  
+ プロパティの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、ログイン エラー テキストは、失敗の特定の理由を含めないでください。 など、エラー メッセージなど、"パスワードがユーザーの無効\<ユーザー名 >"潜在的な攻撃者をすることがわかりますを\<ユーザー名 > は、システム上のユーザーです。 詳細については、次を参照してください。[する方法: エラー メッセージを安全な表示](http://msdn.microsoft.com/library/6f70ac33-6e11-4e98-ab7d-bae9c0e7eefa)です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.FailureText%2A>プロパティを"エラーが発生しました、ログインしています。 もう一度やり直してください。"です。  
+  
+ [!code-aspx-csharp[LoginLoginFailureText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLoginFailureText/CS/loginloginfailuretextcs.aspx#1)]
+ [!code-aspx-vb[LoginLoginFailureText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLoginFailureText/VB/loginloginfailuretextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailureTextStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle FailureTextStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle FailureTextStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.FailureTextStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー テキストの外観を定義するプロパティのコレクションへの参照を取得、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />エラー テキストの外観を定義するプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティへの参照を取得する、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトの使用してログイン エラー テキストの外観を変更することです。 既定では、テキストが赤で表示します。  
+  
+ このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.TableItemStyle>クラス (たとえば、 `FailureTextStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `FailureTextStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティの外観を定義する、<xref:System.Web.UI.WebControls.Login.FailureText%2A>プロパティです。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>コントロールのスタイル プロパティはによってオーバーライドされる<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、背景色とテキストの色のプロパティを設定してログイン エラー テキストのスタイルを指定、<xref:System.Web.UI.WebControls.TableItemStyle>で参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.FailureTextStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginLoginFailureText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLoginFailureText/CS/loginloginfailuretextcs.aspx#1)]
+ [!code-aspx-vb[LoginLoginFailureText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLoginFailureText/VB/loginloginfailuretextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPageIconUrl">
+      <MemberSignature Language="C#" Value="public virtual string HelpPageIconUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpPageIconUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.HelpPageIconUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログインのヘルプ ページへのリンクの横に表示するイメージの場所を取得します。</summary>
+        <value>表示するイメージの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPageText">
+      <MemberSignature Language="C#" Value="public virtual string HelpPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.HelpPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログインのヘルプ ページへのリンクのテキストを設定します。</summary>
+        <value>ログインのヘルプ ページへのリンク テキストです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティには、ログインのヘルプ ページに、サイト リンクのテキストが含まれています。 ログインのヘルプ ページの URL がで指定された、<xref:System.Web.UI.WebControls.Login.HelpPageUrl%2A>プロパティです。  
+  
+ 場合<xref:System.Web.UI.WebControls.Login.HelpPageUrl%2A>が空か、内のテキスト、<xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティ ページで、ユーザーに表示されますが、リンクとしてフォーマットされていません。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティが空のログインのヘルプ ページへのリンクは、ユーザーに使用できません場合、。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティをサイトのログインのヘルプ ページへのリンクのテキストを指定します。  
+  
+ [!code-aspx-csharp[LoginHelpPageText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginHelpPageText/CS/loginhelppagetextcs.aspx#1)]
+ [!code-aspx-vb[LoginHelpPageText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginHelpPageText/VB/loginhelppagetextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPageUrl">
+      <MemberSignature Language="C#" Value="public virtual string HelpPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.HelpPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはログインのヘルプ ページの URL を設定します。</summary>
+        <value>ログインのヘルプ ページの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.HelpPageUrl%2A>プロパティには、ヘルプのログイン ページ、Web サイトの URL が含まれています。 <xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティにはリンクに使用するテキストが含まれています。  
+  
+ 場合<xref:System.Web.UI.WebControls.Login.HelpPageUrl%2A>が空か、内のテキスト、<xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティは、ユーザーに表示されますが、リンクとしてフォーマットされていません。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.HelpPageText%2A>プロパティが空のログインのヘルプ ページへのリンクは、ユーザーに使用できません場合、。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.HelpPageUrl%2A>プロパティをサイトのログインのヘルプ ページの URL を指定します。  
+  
+ [!code-aspx-csharp[LoginHelpPageText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginHelpPageText/CS/loginhelppagetextcs.aspx#1)]
+ [!code-aspx-vb[LoginHelpPageText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginHelpPageText/VB/loginhelppagetextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HyperLinkStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle HyperLinkStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle HyperLinkStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.HyperLinkStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のハイパーリンクの外観を定義するプロパティのコレクションへの参照を取得、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />ハイパーリンクの外観を定義するプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>プロパティ内のハイパーリンクの外観を定義する、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.TableItemStyle>クラス (たとえば、 `HyperLinkStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `HyperLinkStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>プロパティは、次のプロパティの外観を定義します。  
+  
+-   <xref:System.Web.UI.WebControls.Login.CreateUserText%2A>  
+  
+-   <xref:System.Web.UI.WebControls.Login.HelpPageText%2A>  
+  
+-   <xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ハイパーリンクを設定、<xref:System.Web.UI.WebControls.Login>コントロールのプロパティを設定して緑色の斜体のテキストを<xref:System.Web.UI.WebControls.TableItemStyle>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.HyperLinkStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginHyperLinkStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginHyperLinkStyle/CS/loginhyperlinkstylecs.aspx#1)]
+ [!code-aspx-vb[LoginHyperLinkStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginHyperLinkStyle/VB/loginhyperlinkstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstructionText">
+      <MemberSignature Language="C#" Value="public virtual string InstructionText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InstructionText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.InstructionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーのログインの指示テキストを設定します。</summary>
+        <value>ユーザーに表示するログインの指示テキストです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.InstructionText%2A>プロパティがユーザーの Web サイトにログインする方法について説明します。 このテキストを表示、<xref:System.Web.UI.WebControls.Login>タイトルの後のコントロールです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.InstructionText%2A>プロパティに設定されている<xref:System.String.Empty>ユーザーを命令テキストがありません。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.InstructionText%2A>の命令のテキストを挿入するプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ [!code-aspx-csharp[LoginInstructionText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginInstructionText/CS/logininstructiontextcs.aspx#1)]
+ [!code-aspx-vb[LoginInstructionText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginInstructionText/VB/logininstructiontextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstructionTextStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle InstructionTextStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle InstructionTextStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.InstructionTextStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />命令テキストの設定を定義するオブジェクト、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のスタイル設定を格納している、<see cref="T:System.Web.UI.WebControls.Login" />命令のテキストを制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>プロパティが命令のテキストの外観を定義、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.TableItemStyle>クラス (たとえば、 `InstructionTextStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `InstructionTextStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>プロパティの外観を定義する、<xref:System.Web.UI.WebControls.Login.InstructionText%2A>プロパティです。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを設定して指示テキスト、指示テキストの背景色を設定、<xref:System.Web.UI.WebControls.TableItemStyle>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.InstructionTextStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginInstructionText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginInstructionText/CS/logininstructiontextcs.aspx#1)]
+ [!code-aspx-vb[LoginInstructionText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginInstructionText/VB/logininstructiontextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle LabelStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle LabelStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LabelStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />の設定を定義するオブジェクト<see cref="T:System.Web.UI.WebControls.Login" />ラベルを制御します。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のスタイル設定を定義する、<see cref="T:System.Web.UI.WebControls.Login" />ラベルを制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LabelStyle%2A>プロパティ内のテキスト ボックスのラベルの外観を定義する、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.TableItemStyle>クラス (たとえば、 `LabelStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `LableStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.LabelStyle%2A>プロパティは、次のプロパティの外観を定義します。  
+  
+-   <xref:System.Web.UI.WebControls.Login.PasswordLabelText%2A>  
+  
+-   <xref:System.Web.UI.WebControls.Login.UserNameLabelText%2A>  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、テキスト ボックスのラベルのプロパティを設定して斜体のテキストを青色を設定、<xref:System.Web.UI.WebControls.TableItemStyle>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.LabelStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginLabelStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLabelStyle/CS/loginlabelstylecs.aspx#1)]
+ [!code-aspx-vb[LoginLabelStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLabelStyle/VB/loginlabelstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayoutTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate LayoutTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate LayoutTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LayoutTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.Login))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するために使用するテンプレート、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を表示するためのテンプレートを含む、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>プロパティには定義するテンプレートが含まれていますが、どのように<xref:System.Web.UI.WebControls.Login>コントロールがユーザーに表示されます。  
+  
+ 次の表で使用する必須およびオプションのコントロール、<xref:System.Web.UI.WebControls.Login>コントロール テンプレート。  
+  
+|ID またはコマンドの名前|コントロールの種類|必須/オプション|  
+|------------------------|------------------|------------------------|  
+|`UserName`|実装する任意のコントロール<xref:System.Web.UI.IEditableTextControl>など、 <xref:System.Web.UI.WebControls.TextBox>、または、カスタムまたはサードパーティ製コントロール。|必須|  
+|`Password`|実装する任意のコントロール<xref:System.Web.UI.IEditableTextControl>など、 <xref:System.Web.UI.WebControls.TextBox>、または、カスタムまたはサードパーティ製コントロール。|必須|  
+|`RememberMe`|<xref:System.Web.UI.WebControls.CheckBox>|Optional|  
+|`FailureText`|実装する任意のコントロール<xref:System.Web.UI.ITextControl>です。|Optional|  
+|`Login`|イベントのバブルの原因となるコントロールです。|省略可能|  
+  
+ <xref:System.Web.UI.WebControls.Login>スローを制御する<xref:System.Web.HttpException>レイアウト テンプレートには、必要なコントロールが含まれていない場合は例外です。 間違った型; のコントロールにオプションのコントロール ID を提供する場合に例外がスローされません。ただし、コントロール、その後では無視されます、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ ログイン コントロールが原因となるイベント バブルなど、任意のコントロールを指定できます<xref:System.Web.UI.WebControls.Button>、 <xref:System.Web.UI.WebControls.LinkButton>、または<xref:System.Web.UI.WebControls.ImageButton>です。 コントロールのコマンド名のプロパティは、"Login"に設定する必要があります。  
+  
+ テンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>だけで、次のプロパティ、コントロールの動作に影響を制御します。  
+  
+-   すべてのプロパティが継承<xref:System.Web.UI.WebControls.WebControl>です。 (詳細については、次を参照してください、<xref:System.Web.UI.WebControls.Login>制御メンバー テーブルです。)。  
+  
+-   <xref:System.Web.UI.WebControls.Login.DestinationPageUrl%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.LayoutTemplate%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.FailureAction%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.Password%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>。  
+  
+-   <xref:System.Web.UI.WebControls.Login.UserName%2A>。  
+  
+ その他のすべてのプロパティは、テンプレートを設定すると、アクティブ、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のテンプレートを作成、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginLayoutTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLayoutTemplate/CS/loginlayouttemplatecs.aspx#1)]
+ [!code-aspx-vb[LoginLayoutTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLayoutTemplate/VB/loginlayouttemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表すオブジェクト。</param>
+        <summary><see cref="M:System.Web.UI.WebControls.WebControl.SaveViewState" /> メソッドによって保存された前回の要求からビューステート情報を復元します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="savedState" /> は有効な <see cref="P:System.Web.UI.PageStatePersister.ViewState" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoggedIn">
+      <MemberSignature Language="C#" Value="public event EventHandler LoggedIn;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LoggedIn" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Login.LoggedIn" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが Web サイトにログインが認証されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoggedIn>認証プロバイダーがユーザーの資格情報をチェックし、認証 cookie は、次の応答にブラウザーに送信するキューに配置した後にイベントが発生します。 使用して、<xref:System.Web.UI.WebControls.Login.LoggedIn>ユーザーが認証されると、ユーザーごとのデータへのアクセスなど、追加の処理を提供するイベントです。  
+  
+ ユーザーが自分のログイン情報を送信するときに、<xref:System.Web.UI.WebControls.Login>最初の発生を制御、<xref:System.Web.UI.WebControls.Login.LoggingIn>イベント、<xref:System.Web.UI.WebControls.Login.Authenticate>イベント、および最後に、<xref:System.Web.UI.WebControls.Login.LoggedIn>イベント。  
+  
+> [!NOTE]
+>  ユーザーを使用する場合、 <xref:System.Web.UI.WebControls.Login> Web サイトにログインするコントロールをビューの状態のすべてのデータとすべてのポスト データは失われます。 操作を実行しない、<xref:System.Web.UI.WebControls.Login.LoggedIn>ビュー ステートに依存するイベントです。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoggedIn>ユーザー ログインのレコードを保持するサイト固有のメソッドを呼び出すイベントです。  
+  
+ [!code-aspx-csharp[LoginAfterLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAfterLogin/CS/loginafterlogincs.aspx#1)]
+ [!code-aspx-vb[LoginAfterLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAfterLogin/VB/loginafterloginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoggingIn">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.LoginCancelEventHandler LoggingIn;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.LoginCancelEventHandler LoggingIn" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Login.LoggingIn" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LoginCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証が行われる前に、ユーザーがログイン情報を送信するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoggingIn>ユーザー ログイン情報を送信するときに、Web サイトで、ユーザーが認証される前にイベントが発生します。 使用して、<xref:System.Web.UI.WebControls.Login.LoggingIn>ユーザーを認証する前に必要な情報を設定するイベントです。  
+  
+ ログインの試行中を取り消すことができます、<xref:System.Web.UI.WebControls.Login.LoggingIn>イベントを設定して、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.ComponentModel.CancelEventArgs>オブジェクトを`true`です。  
+  
+ 後に、<xref:System.Web.UI.WebControls.Login.LoggingIn>イベントが発生すると、<xref:System.Web.UI.WebControls.Login>昇給を制御、<xref:System.Web.UI.WebControls.Login.Authenticate>イベントし、<xref:System.Web.UI.WebControls.Login.LoggedIn>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoggingIn>で適切な形式の電子メール アドレスをユーザーが入力したことを確認するイベント、<xref:System.Web.UI.WebControls.Login.UserName%2A>プロパティです。 ない場合、<xref:System.Web.UI.WebControls.Login.LoggingIn>イベントは、ログイン試行をキャンセルし、使用してエラー メッセージが表示されます、<xref:System.Web.UI.WebControls.Login.InstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginBeforeLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginBeforeLogin/CS/loginbeforelogincs.aspx#1)]
+ [!code-aspx-vb[LoginBeforeLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginBeforeLogin/VB/loginbeforeloginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginButtonCommandName">
+      <MemberSignature Language="C#" Value="public static readonly string LoginButtonCommandName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string LoginButtonCommandName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Login.LoginButtonCommandName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[ログイン] ボタンに関連付けられているコマンド名を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoginButtonCommandName>読み取り専用フィールドであり、既定値は"Login"です。 この値は、 <xref:System.Web.UI.WebControls.Login.OnBubbleEvent%2A>、し、コントロールが現在のユーザーにログインしようとした値が「ログイン」の場合は、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginButtonImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string LoginButtonImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoginButtonImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LoginButtonImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、[ログイン] ボタンを使用するイメージの URL を設定します。</summary>
+        <value>[ログイン] ボタンを使用するイメージの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoginButtonImageUrl%2A>プロパティにはとして表示されるイメージの URL が含まれています、<xref:System.Web.UI.WebControls.Login>コントロール ログイン ボタン、<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType.Image>です。  
+  
+ <xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティは、イメージを表示できないのブラウザーでイメージの代替テキストとして使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.LoginButtonImageUrl%2A>プロパティをイメージの URL。  
+  
+ [!code-aspx-csharp[LoginSubmitButtonImageUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginSubmitButtonImageUrl/CS/loginsubmitbuttonimageurlcs.aspx#1)]
+ [!code-aspx-vb[LoginSubmitButtonImageUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginSubmitButtonImageUrl/VB/loginsubmitbuttonimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginButtonStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style LoginButtonStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style LoginButtonStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LoginButtonStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.Style" />ログイン ボタンの外観を設定できるようにするオブジェクト、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、 <see cref="T:System.Web.UI.WebControls.Style" /> [ログイン] ボタンのスタイルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>ログイン ボタンの外観を制御するプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.Style>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.Style>クラス (たとえば、 `LoginButtonStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `LoginButtonStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>プロパティは、[ログイン] ボタンの外観を定義します。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoginButtonStyle%2A>の外観を定義するプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール ログイン ボタンをクリックします。  
+  
+ [!code-aspx-csharp[LoginButtonStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginButtonStyle/CS/loginbuttonstylecs.aspx#1)]
+ [!code-aspx-vb[LoginButtonStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginButtonStyle/VB/loginbuttonstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginButtonText">
+      <MemberSignature Language="C#" Value="public virtual string LoginButtonText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LoginButtonText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LoginButtonText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを取得または設定、<see cref="T:System.Web.UI.WebControls.Login" />コントロールのログイン ボタンをクリックします。</summary>
+        <value>使用するテキスト、<see cref="T:System.Web.UI.WebControls.Login" />コントロールのログイン ボタンをクリックします。 既定値は、「ログイン」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティには、表示されるテキストが含まれています、<xref:System.Web.UI.WebControls.Login>コントロールのログイン ボタンをクリックします。 値に応じて、 <xref:System.Web.UI.WebControls.Login.LoginButtonType%2A> 、プロパティ、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティ ブラウザーで、イメージをレンダリングできません、イメージの代わりとして、またはリンクのテキストとして表示されるテキストとして、ボタンのテキストとして表示されます。 次の表方法、異なる<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A>値に影響する、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティです。  
+  
+|<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A> の設定|どのように<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティを使用します。|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Web.UI.WebControls.ButtonType.Button>|ボタンのとして`Text`プロパティです。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Image>|イメージの代替テキストです。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Link>|リンク テキスト。|  
+  
+ コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法内のテキスト、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティがの値によって影響を受ける、<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginButtonType/CS/loginbuttontypecs.aspx#1)]
+ [!code-aspx-vb[LoginButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginButtonType/VB/loginbuttontypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginButtonType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ButtonType LoginButtonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ButtonType LoginButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.LoginButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ButtonType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するときに使用するボタンの種類、<see cref="T:System.Web.UI.WebControls.Login" />ボタンをクリックします。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ButtonType" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.ButtonType.Button" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoginButtonType%2A>プロパティを使用するにはボタンの種類を決定する、<xref:System.Web.UI.WebControls.Login>コントロールのログイン ボタンをクリックします。 次の表では、さまざまなボタンの種類について説明します。  
+  
+|<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A> の設定|表示されるボタンの種類|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|  
+|<xref:System.Web.UI.WebControls.ButtonType.Button>|指定したテキストと HTML ボタン、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティです。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Image>|イメージです。 イメージの URL がで指定された、<xref:System.Web.UI.WebControls.Login.LoginButtonImageUrl%2A>プロパティです。 指定する文字列、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティは、イメージの代替テキストとして使用します。|  
+|<xref:System.Web.UI.WebControls.ButtonType.Link>|指定したテキストと HTML リンク、<xref:System.Web.UI.WebControls.Login.LoginButtonText%2A>プロパティです。|  
+  
+ ときに、<xref:System.Web.UI.WebControls.Login.LoginButtonType%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ButtonType.Button>または<xref:System.Web.UI.WebControls.ButtonType.Link>のコンテンツ、<xref:System.Web.UI.WebControls.Login.LoginButtonImageUrl%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用できるログイン ボタンのさまざまな種類を示しています、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginButtonType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginButtonType/CS/loginbuttontypecs.aspx#1)]
+ [!code-aspx-vb[LoginButtonType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginButtonType/VB/loginbuttontypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.Login.LoginButtonType" />プロパティが有効に設定されていない<see cref="T:System.Web.UI.WebControls.ButtonType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginError">
+      <MemberSignature Language="C#" Value="public event EventHandler LoginError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LoginError" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Login.LoginError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログイン エラーが検出されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.LoginError>ユーザーが入力した資格情報が無効であるイベントが発生します。 使用することができます、<xref:System.Web.UI.WebControls.Login.LoginError>カスタム エラー ページに追加のヘルプを提供する、または失敗したログイン試行をログにユーザーをリダイレクトするイベントです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoginError>ログイン試行が失敗したときに、ユーザーにヘルプ リンクを表示するイベントです。  
+  
+ [!code-aspx-csharp[LoginLoginError#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLoginError/CS/loginloginerrorcs.aspx#1)]
+ [!code-aspx-vb[LoginLoginError#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLoginError/VB/loginloginerrorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MembershipProvider">
+      <MemberSignature Language="C#" Value="public virtual string MembershipProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MembershipProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.MembershipProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールによって使用されるメンバーシップ データ プロバイダーの名前を設定します。</summary>
+        <value>コントロールで使用するメンバーシップ データ プロバイダーの名前。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>プロパティには認証情報を提供するデータ プロバイダーの名前が含まれています、<xref:System.Web.UI.WebControls.Login>コントロール。 有効なメンバーシップ プロバイダー名が定義されている、`<membership>`アプリケーションの Machine.config または Web.config ファイル内の要素。  
+  
+ 設定しない場合、<xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>プロパティが常に返されます<xref:System.String.Empty>です。  
+  
+ 詳細については、<xref:System.Web.Security.Membership> クラスを参照してください。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAuthenticate">
+      <MemberSignature Language="C#" Value="protected virtual void OnAuthenticate (System.Web.UI.WebControls.AuthenticateEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAuthenticate(class System.Web.UI.WebControls.AuthenticateEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnAuthenticate(System.Web.UI.WebControls.AuthenticateEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.AuthenticateEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.AuthenticateEventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Login.Authenticate" />ユーザーを認証するイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnAuthenticate%2A> メソッドは、<xref:System.Web.UI.WebControls.Login.Authenticate> イベントを発生させます。 使用して、<xref:System.Web.UI.WebControls.Login.Authenticate>カスタム認証方式を実装するイベントです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.Login.OnAuthenticate%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.Authenticate>サイト固有のカスタム認証コードを呼び出すイベントです。  
+  
+ [!code-aspx-csharp[LoginOnAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginOnAuthenticate/CS/loginonauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginOnAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginOnAuthenticate/VB/loginonauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnAuthenticate(System.Web.UI.WebControls.AuthenticateEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnAuthenticate(System.Web.UI.WebControls.AuthenticateEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e"><see cref="T:System.EventArgs" />イベントのデータを格納します。</param>
+        <summary>ページのユーザー インターフェイス (UI) サーバー コントロールの階層構造のイベントを渡すかどうかを判断します。</summary>
+        <returns>
+          イベントがキャンセルされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnBubbleEvent%2A>メソッドを実装して、<xref:System.Web.UI.Control.OnBubbleEvent%2A?displayProperty=nameWithType>ページ階層に子コントロールからイベントを渡す方法です。  
+  
+ によって、現在のイベントが送信された場合、 <xref:System.Web.UI.WebControls.Login> [ログイン] ボタンを制御、<xref:System.Web.UI.WebControls.Login>コントロールは、Web サイトにログインしようとしています。 それ以外の場合、ページ コントロール階層をイベントが渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnBubbleEvent(System.Object,System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnBubbleEvent(System.Object,System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoggedIn">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoggedIn (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoggedIn(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnLoggedIn(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Login.LoggedIn" />ユーザーが Web サイトにログインし、認証された後にイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnLoggedIn%2A> メソッドは、<xref:System.Web.UI.WebControls.Login.LoggedIn> イベントを発生させます。 使用して、<xref:System.Web.UI.WebControls.Login.LoggedIn>ユーザーが認証されると、ユーザーごとのデータへのアクセスなど、追加の処理を提供するイベントです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Web.UI.WebControls.Login.OnLoggedIn%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoggedIn>ユーザー ログインのレコードを保持するサイト固有のメソッドを呼び出すイベントです。  
+  
+ [!code-aspx-csharp[LoginOnAfterLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginOnAfterLogin/CS/loginonafterlogincs.aspx#1)]
+ [!code-aspx-vb[LoginOnAfterLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginOnAfterLogin/VB/loginonafterloginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnLoggedIn(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnLoggedIn(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoggingIn">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoggingIn (System.Web.UI.WebControls.LoginCancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoggingIn(class System.Web.UI.WebControls.LoginCancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnLoggingIn(System.Web.UI.WebControls.LoginCancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.LoginCancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.WebControls.LoginCancelEventArgs" />イベント データを格納します。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Login.LoggingIn" />イベント、ユーザーがログイン情報を送信するときは、認証が行われます前にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnLoggingIn%2A> メソッドは、<xref:System.Web.UI.WebControls.Login.LoggingIn> イベントを発生させます。 使用して、<xref:System.Web.UI.WebControls.Login.LoggingIn>ユーザーを認証する前に必要な処理を実行する場合、またはカスタム検証を実行するイベントです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Web.UI.WebControls.Login.OnLoggingIn%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoggingIn>で適切な形式の電子メール アドレスをユーザーが入力したことを確認するイベント、<xref:System.Web.UI.WebControls.Login.UserName%2A>プロパティです。 ない場合、<xref:System.Web.UI.WebControls.Login.LoggingIn>イベント ハンドラーは、ログイン試行をキャンセルしで指定されたエラー メッセージが表示されます、<xref:System.Web.UI.WebControls.Login.InstructionText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginOnBeforeLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginOnBeforeLogin/CS/loginonbeforelogincs.aspx#1)]
+ [!code-aspx-vb[LoginOnBeforeLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginOnBeforeLogin/VB/loginonbeforeloginvb.aspx#1)]  
+  
+ 次のコード例では、拡張する方法を示しています、<xref:System.Web.UI.WebControls.Login>コントロール。 `CustomLogin`コントロールが含まれています、<xref:System.Web.UI.WebControls.DropDownList>をユーザー コントロールを使用して認証されますがメンバーシップ プロバイダーを選択します。 (これらのプロバイダーは、Web.config で構成されています)。<xref:System.Web.UI.WebControls.Login.OnLoggingIn%2A> 、メソッド、<xref:System.Web.UI.WebControls.Login.MembershipProvider%2A>の選択した値に設定されて、<xref:System.Web.UI.WebControls.DropDownList>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[Samples.AspNet.Controls.CustomLogin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.Controls.CustomLogin/CS/FarmasLogin.cs#1)]
+ [!code-vb[Samples.AspNet.Controls.CustomLogin#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.Controls.CustomLogin/VB/FarmasLogin.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnLoggingIn(System.Web.UI.WebControls.LoginCancelEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnLoggingIn(System.Web.UI.WebControls.LoginCancelEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoginError">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoginError (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoginError(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnLoginError(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Login.LoginError" />ログインに失敗したときにイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnLoginError%2A> メソッドは、<xref:System.Web.UI.WebControls.Login.LoginError> イベントを発生させます。 使用して、<xref:System.Web.UI.WebControls.Login.LoginError>ユーザーのログイン試行が失敗したときに、エラーのログ記録など、追加の処理を提供するイベントです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.Login.OnLoginError%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Login.LoginError>ログイン試行が失敗したときに、ユーザーにヘルプ リンクを表示するイベントです。  
+  
+ [!code-aspx-csharp[LoginOnLoginError#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginOnLoginError/CS/loginonloginerrorcs.aspx#1)]
+ [!code-aspx-vb[LoginOnLoginError#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginOnLoginError/VB/loginonloginerrorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnLoginError(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnLoginError(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>基本の実装<see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.OnPreRender%2A>メソッドを実装して、<xref:System.Web.UI.Control.OnPreRender%2A?displayProperty=nameWithType>に通知するメソッド、<xref:System.Web.UI.WebControls.Login>ビュー ステートや内容の表示を保存する前に、必要な表示前の手順を実行するコントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.Login.OnPreRender%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Login.OnPreRender(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Login.OnPreRender(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.Orientation Orientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Orientation Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要素の位置を示す値を設定、<see cref="T:System.Web.UI.WebControls.Login" />ページ上のコントロールです。</summary>
+        <value>1 つ、<see cref="T:System.Web.UI.WebControls.Orientation" />列挙値。 既定値は、<see cref="F:System.Web.UI.WebControls.Orientation.Vertical" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.Orientation%2A>プロパティを表示するかどうかを決定、<xref:System.Web.UI.WebControls.Login>で垂直の形式で制御、<xref:System.Web.UI.WebControls.Login.UserName%2A>テキスト入力フィールドの上、<xref:System.Web.UI.WebControls.Login.Password%2A>テキスト入力フィールド、または水平方向の形式での<xref:System.Web.UI.WebControls.Login.UserName%2A>横にテキスト入力フィールド、<xref:System.Web.UI.WebControls.Login.Password%2A>テキスト入力フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、変更の効果を示します、<xref:System.Web.UI.WebControls.Login.Orientation%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginLoginLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLoginLayout/CS/loginloginlayoutcs.aspx#1)]
+ [!code-aspx-vb[LoginLoginLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLoginLayout/VB/loginloginlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.Login.Orientation" />プロパティが有効に設定されていない<see cref="T:System.Web.UI.WebControls.Orientation" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public virtual string Password { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが入力したパスワードを取得します。</summary>
+        <value>ユーザーが入力したパスワードです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.Password%2A>プロパティには、ユーザーが入力したパスワードが含まれています。 パスワードはクリア テキストです。 詳細については、次を参照してください。 [Web アプリケーション用の基本的なセキュリティ プラクティス](http://msdn.microsoft.com/library/3eeeee9e-b09f-4c7f-8ce5-d9ca1f9322ad)です。  
+  
+> [!NOTE]
+>  操作する場合、<xref:System.Web.UI.WebControls.Login.UserName%2A>または<xref:System.Web.UI.WebControls.Login.Password%2A>プロパティ プログラムでは、ことが重要ページのライフ サイクル中に正しい時刻にそのようにします。 値<xref:System.Web.UI.WebControls.Login.UserName%2A>と<xref:System.Web.UI.WebControls.Login.Password%2A>中にご利用いただけません、`Page_Load`フェーズしますが、中には、`Pre_Render`フェーズ。  
+  
+ <xref:System.Web.UI.WebControls.Login>コントロールのプロパティなどのテキスト ボックス、によって表される<xref:System.Web.UI.WebControls.Login.UserName%2A>と<xref:System.Web.UI.WebControls.Login.Password%2A>はページのライフ サイクルのすべてのフェーズ中にアクセスします。 コントロールのエンド ユーザーによって行われた変更を取得、<xref:System.Web.UI.WebControls.TextBox.TextChanged>のテキスト ボックスによってトリガーされるイベント。  
+  
+   
+  
+## Examples  
+ 次のコード例のパス、<xref:System.Web.UI.WebControls.Login.Password%2A>プロパティをカスタムの認証方法です。  
+  
+ [!code-aspx-csharp[LoginAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAuthenticate/CS/loginauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAuthenticate/VB/loginauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordLabelText">
+      <MemberSignature Language="C#" Value="public virtual string PasswordLabelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordLabelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.PasswordLabelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のラベルのテキスト、<see cref="P:System.Web.UI.WebControls.Login.Password" />テキスト ボックス。</summary>
+        <value>ラベルのテキスト、<see cref="P:System.Web.UI.WebControls.Login.Password" />テキスト ボックス。 既定値は"パスワード:"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.PasswordLabelText%2A>プロパティにはラベル テキストが含まれています、<xref:System.Web.UI.WebControls.Login.Password%2A>テキスト ボックス。  
+  
+ <xref:System.Web.UI.WebControls.Login.TextLayout%2A>プロパティは、フィールド ラベルの位置を定義します。  
+  
+ コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.PasswordLabelText%2A>プロパティを"ユーザーのパスワード:"です。  
+  
+ [!code-aspx-csharp[LoginLabelText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLabelText/CS/loginlabeltextcs.aspx#1)]
+ [!code-aspx-vb[LoginLabelText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLabelText/VB/loginlabeltextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordRecoveryIconUrl">
+      <MemberSignature Language="C#" Value="public virtual string PasswordRecoveryIconUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordRecoveryIconUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.PasswordRecoveryIconUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードの回復 ページへのリンクの横に表示するイメージの場所を取得します。</summary>
+        <value>表示するイメージの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordRecoveryText">
+      <MemberSignature Language="C#" Value="public virtual string PasswordRecoveryText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordRecoveryText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.PasswordRecoveryText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスワードの回復ページへのリンクのテキストを設定します。</summary>
+        <value>パスワードの回復 ページへのリンク テキストです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティには、パスワードの回復、サイトのページへのリンクのテキストが含まれています。 パスワードの回復 ページの URL がで指定された、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>プロパティです。  
+  
+ 場合<xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>が空か、内のテキスト、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティは、ユーザーに表示されますが、リンクとしてフォーマットされていません。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティが空、パスワードの回復 ページへのリンクは、ユーザーに使用できません。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティをサイトのパスワードの回復 ページへのリンクのテキストを指定します。 ログイン フォームを表示し、設定、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>と<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティです。 ユーザーは、「パスワードを忘れた場合」クリックすると、getPass.aspx ページが表示されます。  
+  
+ [!code-aspx-csharp[LoginPasswordRecoveryText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginPasswordRecoveryText/CS/loginpasswordrecoverytextcs.aspx#1)]
+ [!code-aspx-vb[LoginPasswordRecoveryText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginPasswordRecoveryText/VB/loginpasswordrecoverytextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordRecoveryUrl">
+      <MemberSignature Language="C#" Value="public virtual string PasswordRecoveryUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordRecoveryUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.PasswordRecoveryUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスワードの回復 ページの URL を設定します。</summary>
+        <value>パスワードの回復 ページの URL です。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>プロパティには、Web サイトのパスワードの回復 ページの URL が含まれています。 <xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティにはリンクに使用するテキストが含まれています。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティが空、パスワードの回復 ページへのリンクは、ユーザーに使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>プロパティをサイトのパスワードの回復 ページの URL を指定します。 ログイン フォームを表示し、設定、<xref:System.Web.UI.WebControls.Login.PasswordRecoveryUrl%2A>と<xref:System.Web.UI.WebControls.Login.PasswordRecoveryText%2A>プロパティです。 ユーザーは、「パスワードを忘れた場合」クリックすると、getPass.aspx ページが表示されます。  
+  
+ [!code-aspx-csharp[LoginPasswordRecoveryText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginPasswordRecoveryText/CS/loginpasswordrecoverytextcs.aspx#1)]
+ [!code-aspx-vb[LoginPasswordRecoveryText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginPasswordRecoveryText/VB/loginpasswordrecoverytextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordRequiredErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string PasswordRequiredErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordRequiredErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するエラー メッセージ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />ときに、パスワード フィールドは空白のままを制御します。</summary>
+        <value>表示するエラー メッセージ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />ときに、パスワード フィールドは空白のままを制御します。 既定値は「パスワード」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>プロパティに表示されるエラー メッセージが含まれています、<xref:System.Web.UI.WebControls.ValidationSummary>ログイン ページ上のコントロールです。  
+  
+ <xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>プロパティ値が次の両方の条件に当てはまる場合にのみ表示されます。  
+  
+-   A<xref:System.Web.UI.WebControls.ValidationSummary>コントロールがページ上に存在します。  
+  
+-   パスワード テキスト ボックスは空白のまま、ユーザーがします。  
+  
+ プロパティの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ 両方の<xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>と<xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>値は検証のグループ内にラップされます、<xref:System.Web.UI.WebControls.Login>コントロール。 これらの値を表示するには、<xref:System.Web.UI.WebControls.ValidationSummary.ValidationGroup%2A>のプロパティ、<xref:System.Web.UI.WebControls.ValidationSummary>にコントロールを設定する必要があります、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.ValidationSummary>で指定したエラー メッセージを表示するコントロールを<xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginRequiredErrorMessage#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginRequiredErrorMessage/CS/loginrequirederrormessagecs.aspx#1)]
+ [!code-aspx-vb[LoginRequiredErrorMessage#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginRequiredErrorMessage/VB/loginrequirederrormessagevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RememberMeSet">
+      <MemberSignature Language="C#" Value="public virtual bool RememberMeSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RememberMeSet" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.RememberMeSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーのブラウザーに永続的な認証クッキーを送信するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />永続的な認証クッキーを送信するにはそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティは`true`ユーザーのコンピューターに送信された認証 cookie が有効期限に設定 50 年は、ユーザーが次に、Web サイトを訪問したときに使用される永続的な cookie を作成します。 認証 cookie は、ユーザーのコンピューター上に存在するが、ため、ユーザーと見なされます既に認証されていると、Web サイトにもう一度ログインする必要はありません。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティは`true`、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティがユーザーに表示 チェック ボックスの値に設定します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティは`false` ページを記憶する チェック ボックスが表示されない、およびユーザーには制御する方法がない、認証 cookie が永続的かどうか。 場合、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティは`true`ユーザーのブラウザーに送信された認証 cookie が永続的な cookie になります。  
+  
+ ユーザーをログアウト、Web サイトを使用するかどうか、<xref:System.Web.UI.WebControls.LoginStatus>コントロール、永続的な cookie がユーザーのコンピューターから削除し、ユーザーが次回アクセス時に、サイトにログインする必要があります。  
+  
+> [!NOTE]
+>  ユーザーのブラウザーで永続的な認証 cookie の設定に特有のセキュリティ リスクがあります。 これらのセキュリティ リスクが、サイトに許容されるかどうかを決定する必要があります。 設定した場合、<xref:System.Web.UI.WebControls.Login.RememberMeSet%2A>プロパティを`true`と<xref:System.Web.UI.WebControls.Login.DisplayRememberMe%2A>プロパティを`false`、パブリックのブラウザーから Web サイトを訪問するユーザー、インターネットのようにカフェたとえば、誤ってのままに永続的な認証 cookie の背後にあると、ブラウザーの次のユーザーが以前のユーザーの資格情報を使用して、Web サイトにアクセスできます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RememberMeText">
+      <MemberSignature Language="C#" Value="public virtual string RememberMeText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RememberMeText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.RememberMeText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを記憶する チェック ボックスのラベルのテキストを設定します。</summary>
+        <value>テキストを記憶する のラベルの Me チェック ボックスをオンします。 既定値は「次回」</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.RememberMeText%2A>プロパティは、次回のラベルのテキストを含む<xref:System.Web.UI.WebControls.CheckBox>コントロール。  
+  
+ プロパティの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HMTL ライター。</param>
+        <summary>指定された HTML ライターを使用してログイン フォームを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderOuterTable">
+      <MemberSignature Language="C#" Value="public virtual bool RenderOuterTable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderOuterTable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.RenderOuterTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがでレンダリングされる HTML を囲むかどうかを示す値を設定、<see langword="table" />インライン スタイルを適用するために要素。</summary>
+        <value>
+          <see langword="true" />コントロールは、レンダリングされた HTML の場合、<see langword="table" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ようなインライン スタイル プロパティを設定するために<xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>コントロールに表示されるすべての HTML に適用されます、ASP.NET を囲むでレンダリングされる HTML、`table`要素。 場合は、外側しないようにする`table`レンダリングされる要素では、このプロパティを設定`false`です。 その場合は、インライン コントロール全体に適用されるスタイル プロパティを設定しようとすると、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Web.UI.WebControls.Style.TrackViewState" /> メソッドが呼び出された後に変更された状態を保存します。</summary>
+        <returns>コントロールの現在のビュー ステートを格納するオブジェクト。このコントロールに関連付けられたビュー ステートがない場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override void SetDesignModeState (System.Collections.IDictionary data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDesignModeState(class System.Collections.IDictionary data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.SetDesignModeState(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="data">コントロールのデザイン時データを格納する <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>コントロールのデザイン時データを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlTextWriterTag" /> コントロールに対応する <see cref="T:System.Web.UI.WebControls.Login" /> 値を取得します。 このプロパティは、主にコントロールの開発者によって使用されます。</summary>
+        <value>常に <see cref="F:System.Web.UI.HtmlTextWriterTag.Table" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Login.TagKey%2A>を決定するプロパティ、<xref:System.Web.UI.HtmlTextWriterTag>に関連付けられている値、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextBoxStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style TextBoxStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style TextBoxStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.TextBoxStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボックスのテキストの外観を定義するプロパティのコレクションへの参照を取得、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.Style" />のテキスト ボックスの外観を定義するプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>プロパティは、ユーザー名とパスワードの外観を定義<xref:System.Web.UI.WebControls.TextBox>コントロールで、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.Style>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.Style>クラス (たとえば、 `TextBoxStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `TextBoxStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>プロパティは、ユーザー名とパスワードのテキスト ボックスの外観を定義します。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー名とパスワードの背景色とテキストの色を設定<xref:System.Web.UI.WebControls.TextBox>のコントロールのプロパティの設定によって、<xref:System.Web.UI.WebControls.Style>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.TextBoxStyle%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginTextBoxStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginTextBoxStyle/CS/logintextboxstylecs.aspx#1)]
+ [!code-aspx-vb[LoginTextBoxStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginTextBoxStyle/VB/logintextboxstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextLayout">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.LoginTextLayout TextLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.LoginTextLayout TextLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.TextLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LoginTextLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各ラベルに関連付けられているテキスト ボックスに対する相対の位置を示す、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.LoginTextLayout" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.LoginTextLayout.TextOnLeft" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Web.UI.WebControls.Login.TextLayout%2A> 、関連付けられているテキストを基準にラベルの位置を指定するプロパティのボックスをオン、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.LoginTextLayout>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|LoginTextLayout 値|説明|  
+|---------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.LoginTextLayout.TextOnLeft>|関連付けられているテキスト入力フィールドの左側にラベルを配置します。|  
+|<xref:System.Web.UI.WebControls.LoginTextLayout.TextOnTop>|ラベルは、関連付けられているテキスト入力フィールド上に配置します。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.WebControls.LoginTextLayout>列挙型を設定する、<xref:System.Web.UI.WebControls.Login.TextLayout%2A>のプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.LoginTextLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LoginTextLayout/CS/logintextlayoutcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.LoginTextLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LoginTextLayout/VB/logintextlayoutvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.LoginTextLayout" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleText">
+      <MemberSignature Language="C#" Value="public virtual string TitleText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TitleText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.TitleText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のタイトル、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>タイトル、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。 既定値は、「ログイン」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.TitleText%2A>プロパティの上部に表示されるタイトルを指定する、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.TitleText%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginTitleText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginTitleText/CS/logintitletextcs.aspx#1)]
+ [!code-aspx-vb[LoginTitleText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginTitleText/VB/logintitletextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleTextStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle TitleTextStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle TitleTextStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.TitleTextStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイトルのテキストの外観を定義するプロパティのコレクションへの参照を取得、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.TableItemStyle" />タイトルのテキストの外観を定義するプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティへの参照を取得する、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトに含まれているタイトルの外観を変更するために使用、<xref:System.Web.UI.WebControls.Login.TitleText%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティのタイトルの外観を定義する、<xref:System.Web.UI.WebControls.Login>コントロール。 このプロパティは読み取り専用です。ただしのプロパティを設定することができます、<xref:System.Web.UI.WebControls.TableItemStyle>オブジェクトを返します。 フォームで宣言によってこれらのプロパティを設定することができます`Property-Subproperty`ここで、`Subproperty`のプロパティを表す、<xref:System.Web.UI.WebControls.TableItemStyle>クラス (たとえば、 `TitleStyle-ForeColor`)。 プロパティをプログラムで設定するには、フォームで`Property.Subproperty`(たとえば、 `TitleStyle.ForeColor`)。  
+  
+ 一般的な設定には、カスタムの背景色には、テキストの色、フォントのプロパティが含まれます。 <xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティの外観を定義する、<xref:System.Web.UI.WebControls.Login.TitleText%2A>プロパティです。  
+  
+ スタイルの設定、<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>のスタイルの設定とプロパティがマージされます、<xref:System.Web.UI.WebControls.Login>コントロール。 行った設定はすべて、<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティは、対応するプロパティの設定を上書き、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+ 次<xref:System.Web.UI.WebControls.Login>スタイル プロパティは<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>設定。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BackColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Enabled%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Font%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Height%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ToolTip%2A>  
+  
+-   <xref:System.Web.UI.Control.Visible%2A>  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.Width%2A>  
+  
+ 外観を定義するテンプレートを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティは影響を与えません。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを設定して、テキストの色、背景色とタイトルのフォントの太さを設定、<xref:System.Web.UI.WebControls.TableItemStyle>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.Login.TitleTextStyle%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[LoginTitleText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginTitleText/CS/logintitletextcs.aspx#1)]
+ [!code-aspx-vb[LoginTitleText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginTitleText/VB/logintitletextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Login.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基本のオーバーライド<see cref="M:System.Web.UI.Control.TrackViewState" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public virtual string UserName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが入力したユーザー名を取得します。</summary>
+        <value>ユーザーが入力したユーザー名。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.UserName%2A>プロパティには、ユーザーが入力したユーザー名が含まれています。 <xref:System.Web.UI.WebControls.Login>コントロールのプロパティなどのテキスト ボックス、によって表される<xref:System.Web.UI.WebControls.Login.UserName%2A>と<xref:System.Web.UI.WebControls.Login.Password%2A>はページのライフ サイクルのすべてのフェーズ中にアクセスします。 コントロールのエンド ユーザーによって行われた変更を取得、<xref:System.Web.UI.WebControls.TextBox.TextChanged>のテキスト ボックスによってトリガーされるイベント。  
+  
+   
+  
+## Examples  
+ 次のコード例のパス、<xref:System.Web.UI.WebControls.Login.UserName%2A>プロパティをカスタムの認証方法です。  
+  
+ [!code-aspx-csharp[LoginAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAuthenticate/CS/loginauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAuthenticate/VB/loginauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserNameLabelText">
+      <MemberSignature Language="C#" Value="public virtual string UserNameLabelText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserNameLabelText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.UserNameLabelText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のラベルのテキスト、<see cref="P:System.Web.UI.WebControls.Login.UserName" />テキスト ボックス。</summary>
+        <value>ラベルのテキスト、<see cref="P:System.Web.UI.WebControls.Login.UserName" />テキスト ボックス。 既定値は"ユーザー名:"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.UserNameLabelText%2A>プロパティにはラベル テキストが含まれています、<xref:System.Web.UI.WebControls.Login.UserName%2A>テキスト ボックス。  
+  
+ <xref:System.Web.UI.WebControls.Login.TextLayout%2A>プロパティは、フィールド ラベルの位置を定義します。  
+  
+ コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Web.UI.WebControls.Login.UserNameLabelText%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginLabelText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginLabelText/CS/loginlabeltextcs.aspx#1)]
+ [!code-aspx-vb[LoginLabelText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginLabelText/VB/loginlabeltextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserNameRequiredErrorMessage">
+      <MemberSignature Language="C#" Value="public virtual string UserNameRequiredErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserNameRequiredErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するエラー メッセージ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />ときにユーザー名フィールドは空白のままを制御します。</summary>
+        <value>表示するエラー メッセージ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />ときにユーザー名フィールドは空白のままを制御します。 既定値は「ユーザー名」</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>プロパティに表示されるエラー メッセージが含まれています、<xref:System.Web.UI.WebControls.ValidationSummary>ログイン ページ上のコントロールです。  
+  
+ <xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>プロパティ値が次の両方の条件に当てはまる場合にのみ表示されます。  
+  
+-   A<xref:System.Web.UI.WebControls.ValidationSummary>コントロールがページ上に存在します。  
+  
+-   ユーザー名 テキスト ボックスは空白のまま、ユーザーがします。  
+  
+ コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ 両方の<xref:System.Web.UI.WebControls.Login.PasswordRequiredErrorMessage%2A>と<xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>値は検証のグループ内にラップされます、<xref:System.Web.UI.WebControls.Login>コントロール。 これらの値を表示するには、<xref:System.Web.UI.WebControls.ValidationSummary.ValidationGroup%2A>のプロパティ、<xref:System.Web.UI.WebControls.ValidationSummary>にコントロールを設定する必要があります、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.WebControls.ValidationSummary>で指定したエラー メッセージを表示するコントロールを<xref:System.Web.UI.WebControls.Login.UserNameRequiredErrorMessage%2A>プロパティです。  
+  
+ [!code-aspx-csharp[LoginRequiredErrorMessage#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginRequiredErrorMessage/CS/loginrequirederrormessagecs.aspx#1)]
+ [!code-aspx-vb[LoginRequiredErrorMessage#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginRequiredErrorMessage/VB/loginrequirederrormessagevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorTextStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style ValidatorTextStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style ValidatorTextStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.ValidatorTextStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへの参照を取得<see cref="T:System.Web.UI.WebControls.Style" />によって使用される検証コントロールに関連付けられているエラー メッセージの外観を定義するプロパティ、<see cref="T:System.Web.UI.WebControls.Login" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Style" />スタイル設定を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、スタイルの設定を使用したカスタマイズで利用可能な<xref:System.Web.UI.WebControls.Login.ValidatorTextStyle%2A>プロパティです。  
+  
+|設定|説明|  
+|-------------|-----------------|  
+|`BackColor`|エラー メッセージの背景色です。 色には、いずれかを指定できる、<xref:System.Drawing.Color>プロパティです。|  
+|`BorderColor`|エラー メッセージの周りの境界線の色。 色には、いずれかを指定できる、<xref:System.Drawing.Color>プロパティです。|  
+|`BorderStyle`|エラー メッセージの周りの境界線のスタイルです。 指定できます"None"、「点線」、「点線」、「ソリッド」、"Double"、「グルーブ」、「ねじ山」、「埋め込み」または「現段階」です。 既定値は、"NotSet"です。 一部のスタイルを明確に表示しない場合を除き、`BorderWidth`値が 2 より大きい。|  
+|`BorderWidth`|エラー メッセージの周りの境界線の幅。|  
+|`CssClass`|エラー メッセージを表示するために使用されるカスケード スタイル シート (CSS)。 その他の設定を指定するとスタイル シートの設定よりも優先されます。|  
+|`Font-Bold`|`true`エラー メッセージのテキストを太字で表示します。|  
+|`Font-Italic`|`true`斜体でエラー メッセージのテキストを表示します。|  
+|`Font-Names`|フォントのフォント フェイスの名前。|  
+|`Font-Overline`|`true`その上の行をエラー メッセージ テキストを表示します。|  
+|`Font-Size`|エラー メッセージとしてのテキストのサイズ、<xref:System.Web.UI.WebControls.FontUnit>オブジェクト。|  
+|`Font-Strikeout`|`true`取り消しは、エラー メッセージのテキストを表示します。|  
+|`Font-Underline`|`true`エラー メッセージ テキストに下線を表示します。|  
+|`ForeColor`|エラー メッセージのテキストの色。 色には、いずれかを指定できる、<xref:System.Drawing.Color>プロパティです。|  
+|`Height`|A<xref:System.Web.UI.WebControls.Unit>のエラー メッセージの高さを表すオブジェクト。|  
+|`Width`|A<xref:System.Web.UI.WebControls.Unit>のエラー メッセージの幅を表すオブジェクト。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibleWhenLoggedIn">
+      <MemberSignature Language="C#" Value="public virtual bool VisibleWhenLoggedIn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VisibleWhenLoggedIn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示するかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.Login" />ユーザーが認証された後に制御します。</summary>
+        <value>
+          <see langword="false" />場合、<see cref="T:System.Web.UI.WebControls.Login" />ユーザーが認証されている、それ以外の場合、コントロールを非表示にする<see langword="true" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn%2A>プロパティを指定するかどうか、<xref:System.Web.UI.WebControls.Login>コントロールが認証されたユーザーに表示されます。 このプロパティが`false`、<xref:System.Web.UI.WebControls.Login>認証されたユーザーがサイトにアクセスするときに、コントロールがページに表示されません。 これは非表示にログイン ページとページの情報の両方に使用される Web ページで、使用、<xref:System.Web.UI.WebControls.Login>ユーザーが認証された後に制御します。  
+  
+ <xref:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn%2A>プロパティも何も起こりません、<xref:System.Web.UI.WebControls.Login>既定のログイン ページに表示されるコントロールは、Web.config で、またはアプリケーションの構成ファイルで定義されています。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.Login.VisibleWhenLoggedIn%2A>プロパティを`true`ことを指定する、<xref:System.Web.UI.WebControls.Login>コントロールは非表示とページで、ユーザーが認証されているかどうかに関係なく、常に表示されます。  
+  
+ [!code-aspx-csharp[LoginHideWhenLoggedIn#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginHideWhenLoggedIn/CS/loginhidewhenloggedincs.aspx#1)]
+ [!code-aspx-vb[LoginHideWhenLoggedIn#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginHideWhenLoggedIn/VB/loginhidewhenloggedinvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

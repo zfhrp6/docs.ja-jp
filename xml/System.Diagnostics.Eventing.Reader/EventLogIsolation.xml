@@ -1,0 +1,66 @@
+<Type Name="EventLogIsolation" FullName="System.Diagnostics.Eventing.Reader.EventLogIsolation">
+  <TypeSignature Language="C#" Value="public enum EventLogIsolation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventLogIsolation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventLogIsolation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>イベント ログの既定のアクセス許可を定義します。 アプリケーションおよびシステムの値は、ログを共有するアクセス制御リスト (ACL) 適切な Windows ログ (アプリケーションまたはシステム イベント ログ) と共有を使用同じ分離の他のログと Event Tracing for Windows (ETW) セッションを示します。 カスタム分離されたすべてのチャネルは、プライベートの ETW セッションを使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="Application" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.Reader.EventLogIsolation Application = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.Reader.EventLogIsolation.Application" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogIsolation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログは、アプリケーション イベント ログとアクセス制御リストを共有し、アプリケーションの分離が設定された他のログの ETW セッションを共有します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.Reader.EventLogIsolation Custom = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.Reader.EventLogIsolation.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogIsolation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログは、独自のプライベートの ETW セッションを使用してカスタム イベント ログです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.Reader.EventLogIsolation System = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.Reader.EventLogIsolation.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogIsolation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログは、アクセス制御リストをシステム イベント ログを共有し、System 分離が設定された他のログ ETW セッションを共有します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2640 @@
+<Type Name="SqlDataSource" FullName="System.Web.UI.WebControls.SqlDataSource">
+  <TypeSignature Language="C#" Value="public class SqlDataSource : System.Web.UI.DataSourceControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlDataSource extends System.Web.UI.DataSourceControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SqlDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataSourceControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Selecting")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("SelectQuery")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.SqlDataSourceDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.SqlDataSource))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ バインド コントロールには、SQL データベースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [データ接続](#data_connections)  
+  
+-   [データ操作を実行します。](#performing_data_operations)  
+  
+-   [データ プロバイダー](#data_provider)  
+  
+-   [キャッシュ](#caching)  
+  
+-   [その他の機能](#additional_features)  
+  
+-   [データ ソース ビュー](#data_source_view)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.SqlDataSource>データ ソース コントロールがデータ バインド コントロールを SQL リレーショナル データベース内のデータを表します。 使用することができます、<xref:System.Web.UI.WebControls.SqlDataSource>リレーショナル データベースからデータを取得および表示、編集、およびほとんどまたはまったくないコードを含む Web ページ上のデータを並べ替えるデータ バインド コントロールで組み合わせて制御します。  
+  
+<a name="data_connections"></a>   
+## <a name="data-connections"></a>データ接続  
+ 設定する必要があります、データベースに接続する場合、<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティを有効な接続文字列にします。 <xref:System.Web.UI.WebControls.SqlDataSource>などを使用して、ADO.NET プロバイダーに接続できる SQL リレーショナル データベースをサポートできる、 `SqlClient`、 `OleDb`、 `Odbc`、または`OracleClient`プロバイダー。 接続文字列をセキュリティで保護する方法については、次を参照してください。[操作方法: セキュリティで保護された接続文字列を使用するデータ ソースを制御する際](http://msdn.microsoft.com/library/942f6dcb-d278-4bec-8403-60eede9bcd62)です。  
+  
+ 基になるデータベースからデータを取得するには設定、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A> SQL クエリを持つプロパティです。 場合、データベースを<xref:System.Web.UI.WebControls.SqlDataSource>が関連付けられているサポートするストアド プロシージャで設定することができます、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティをストアド プロシージャの名前にします。 指定した SQL クエリでは、パラメーター化クエリこともできます。 追加することができます<xref:System.Web.UI.WebControls.Parameter>をパラメーター化クエリに関連付けられているオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクション。 パラメーター化 SQL クエリとその構文の詳細については、次を参照してください。[フィルターのデータ ソース コントロールを持つパラメーターの使用](http://msdn.microsoft.com/library/88622d04-2989-484e-93fe-594cd98dcf5f)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロール データを取得するたびに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが呼び出されます。 このメソッドで指定されたメソッドへのプログラムによるアクセスを提供する<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>プロパティです。 <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが自動的にバインドされたコントロールによって呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource>ときにその<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッドが呼び出されます。 設定した場合、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>データ バインド コントロールのプロパティ、コントロールに自動的にデータにバインドされているとおり、データ ソースからです。 設定、`DataSourceID`プロパティは推奨されるメソッドのバインディング、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールをデータ バインド コントロールです。 また、使用することができます、`DataSource`プロパティ、それをする必要があります明示的に呼び出す、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>データ バインド コントロールのメソッドです。 使用できるデータ バインド コントロールの例をいくつか<xref:System.Web.UI.WebControls.SqlDataSource>は<xref:System.Web.UI.WebControls.DataGrid>、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.DataList>、および<xref:System.Web.UI.WebControls.DropDownList>です。 呼び出すことができます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを基になるデータベースからデータを取得するためにプログラムでします。  
+  
+ 宣言とプログラムの ASP.NET シナリオで設定することができます、<xref:System.Web.UI.WebControls.DataBoundControl.DataSourceID%2A>の ID に、データ バインド コントロールのプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 インスタンスを割り当てることも、<xref:System.Web.UI.WebControls.SqlDataSource>クラスを<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>データ バインド コントロールのプロパティです。 データ ソース コントロールにデータ バインド コントロールのバインドの詳細については、次を参照してください。 [ASP.NET データ アクセス オプション](http://msdn.microsoft.com/en-us/a5ff235e-397f-4bbe-9bfe-2720b6e7ab9d)です。  
+  
+<a name="performing_data_operations"></a>   
+## <a name="performing-data-operations"></a>データ操作を実行します。  
+ 基になるデータベースの製品とのインスタンスの構成の機能によって、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、データ操作、更新、挿入、および削除などを実行することができます。 これらのデータ操作を実行するには、適切なコマンド テキストと実行する操作に関連するパラメーターを設定します。 たとえば、更新操作では、次のように設定します。、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティを SQL 文字列またはストアド プロシージャの名前に、必要なパラメーターを追加し、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクション。 更新プログラムが実行されるときに、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドが、コードによって明示的にまたは自動的にデータ バインドされたコントロールによって呼び出されます。 同じ一般的なパターンに従うは<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>操作します。  
+  
+ SQL クエリとコマンドで使用する、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>、および<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティをパラメーター化することができます。 つまり、クエリまたはコマンドことができますリテラル値ではなくプレース ホルダーを使用して、プレース ホルダーをアプリケーションまたはユーザー定義変数にバインドします。 セッション変数、Web フォーム ページのクエリ文字列で渡される値、その他のサーバー コントロールと複数のプロパティ値を SQL クエリでパラメーターをバインドできます。 含む SQL クエリでパラメーターを使用する方法について、<xref:System.Web.UI.WebControls.SqlDataSource>を参照してください[フィルターのデータ ソース コントロールを持つパラメーターの使用](http://msdn.microsoft.com/library/88622d04-2989-484e-93fe-594cd98dcf5f)と[SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+> [!NOTE]
+>  既定では、パラメーターの 1 つ`null`を実行すると、`Select`コマンドで返されるデータがないと、例外はスローされません。 この動作を変更するには設定して、<xref:System.Web.UI.WebControls.SqlDataSource.CancelSelectOnNullParameter%2A>プロパティを`false`です。  
+  
+<a name="data_provider"></a>   
+## <a name="data-provider"></a>データ プロバイダー  
+ 既定では、 <xref:System.Web.UI.WebControls.SqlDataSource> 、.NET Framework Data Provider for SQL Server による制御が<xref:System.Web.UI.WebControls.SqlDataSource>は Microsoft SQL Server 特有です。 接続することができます、<xref:System.Web.UI.WebControls.SqlDataSource>が管理されている ADO.NET プロバイダーが存在する任意のデータベース製品で制御します。 使用すると、<xref:System.Data.OleDb?displayProperty=nameWithType>プロバイダー、 <xref:System.Web.UI.WebControls.SqlDataSource> OLE DB 準拠のデータベースを使用できます。 使用すると、<xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダー、<xref:System.Web.UI.WebControls.SqlDataSource>任意の ODBC ドライバーおよび IBM DB2、MySQL、PostgreSQL など、データベースで使用できます。 使用すると、<xref:System.Data.OracleClient?displayProperty=nameWithType>プロバイダー、 <xref:System.Web.UI.WebControls.SqlDataSource> 8.1.7 Oracle データベースと、後で操作できます。 使用可能なプロバイダーの一覧が登録されている、`DbProviderFactories`は Machine.config または Web.config ファイルのいずれかの構成ファイルのセクションです。 詳細については、次を参照してください。 [SqlDataSource コントロールを使用してデータを選択する](http://msdn.microsoft.com/library/44623286-ff5a-4148-8a3c-85c56ed545eb)です。  
+  
+<a name="caching"></a>   
+## <a name="caching"></a>キャッシュ  
+ 使用して、ページにデータを表示すると、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、データ キャッシュのデータ ソース コントロールの機能を使用して、ページのパフォーマンスが向上することができます。 Web サーバー上のメモリを犠牲にして、データベース サーバーの処理負荷が軽減キャッシュほとんどの場合、これは適切なトレードオフです。 <xref:System.Web.UI.WebControls.SqlDataSource>は自動的にデータをキャッシュときに、<xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティに設定されている`true`と<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>プロパティが、キャッシュ エントリが破棄される前に、キャッシュがデータを格納する秒数に設定します。 指定することも、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>と省略可能な<xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency%2A>値。  
+  
+<a name="additional_features"></a>   
+## <a name="additional-features"></a>その他の機能  
+ <xref:System.Web.UI.WebControls.SqlDataSource>次の表に記載されているその他の機能を提供します。  
+  
+|機能|要件|  
+|----------------|------------------|  
+|キャッシュ|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値、<xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティを`true`、および<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに従って、キャッシュされたデータのキャッシュ動作をします。|  
+|Deleting|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティ データの削除に使用される SQL ステートメントをします。 このステートメントは、通常パラメーター化されます。|  
+|フィルター処理|設定、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値。 設定、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティ データをフィルター処理するために使用するフィルター式をときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが呼び出されます。|  
+|挿入|設定、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>プロパティ データの挿入に使用される SQL ステートメントをします。 このステートメントは、通常パラメーター化されます。|  
+|ページング|現在サポートされていません、 <xref:System.Web.UI.WebControls.SqlDataSource>、ただし一部のデータ バインドなどのコントロール<xref:System.Web.UI.WebControls.GridView>、サポートのページングを設定すると、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値。|  
+|選択|設定、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティ データの取得に使用される SQL ステートメントをします。|  
+|並べ替え|<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A> プロパティを <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> に設定します。|  
+|Updating|設定、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティを使用してデータを更新する SQL ステートメントにします。 このステートメントは、通常パラメーター化されます。|  
+  
+<a name="data_source_view"></a>   
+## <a name="data-source-view"></a>データ ソース ビュー  
+ すべてのデータ ソース コントロールと同様、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールがデータ ソース ビュー クラスを使用すると、関連付けられています。 <xref:System.Web.UI.WebControls.SqlDataSource>コントロールに関連付けられている 1 つだけ<xref:System.Web.UI.WebControls.SqlDataSourceView>、という名前が常と`Table`です。  
+  
+ ビジュアル表示はありません、 <xref:System.Web.UI.WebControls.SqlDataSource> ; を制御することができます宣言によって作成、必要に応じて、状態管理に参加することを許可するようコントロールとして実装されます。 その結果、<xref:System.Web.UI.WebControls.SqlDataSource>によって提供されるものなどのビジュアル機能をサポートしない、<xref:System.Web.UI.DataSourceControl.EnableTheming%2A>または<xref:System.Web.UI.DataSourceControl.SkinID%2A>プロパティです。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:SqlDataSource  
+    CacheDuration="string|Infinite"  
+    CacheExpirationPolicy="Absolute|Sliding"  
+    CacheKeyDependency="string"  
+    CancelSelectOnNullParameter="True|False"  
+    ConflictDetection="OverwriteChanges|CompareAllValues"  
+    ConnectionString="string"  
+    DataSourceMode="DataReader|DataSet"  
+    DeleteCommand="string"  
+    DeleteCommandType="Text|StoredProcedure"  
+    EnableCaching="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    FilterExpression="string"  
+    ID="string"  
+    InsertCommand="string"  
+    InsertCommandType="Text|StoredProcedure"  
+    OldValuesParameterFormatString="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleted="Deleted event handler"  
+    OnDeleting="Deleting event handler"  
+    OnDisposed="Disposed event handler"  
+    OnFiltering="Filtering event handler"  
+    OnInit="Init event handler"  
+    OnInserted="Inserted event handler"  
+    OnInserting="Inserting event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelected="Selected event handler"  
+    OnSelecting="Selecting event handler"  
+    OnUnload="Unload event handler"  
+    OnUpdated="Updated event handler"  
+    OnUpdating="Updating event handler"  
+    ProviderName="string|System.Data.Odbc|System.Data.OleDb|  
+        System.Data.OracleClient|System.Data.SqlClient|  
+        Microsoft.SqlServerCe.Client"  
+    runat="server"  
+    SelectCommand="string"  
+    SelectCommandType="Text|StoredProcedure"  
+    SkinID="string"  
+    SortParameterName="string"  
+    SqlCacheDependency="string"  
+    UpdateCommand="string"  
+    UpdateCommandType="Text|StoredProcedure"  
+    Visible="True|False"  
+>  
+        <DeleteParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </DeleteParameters>  
+        <FilterParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </FilterParameters>  
+        <InsertParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </InsertParameters>  
+        <SelectParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </SelectParameters>  
+        <UpdateParameters>  
+                <asp:ControlParameter  
+                    ControlID="string"  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:CookieParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    CookieName="string"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:FormParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    FormField="string"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:Parameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:ProfileParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    PropertyName="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:QueryStringParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    QueryStringField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+                <asp:SessionParameter  
+                    ConvertEmptyStringToNull="True|False"  
+                    DefaultValue="string"  
+                    Direction="Input|Output|InputOutput|ReturnValue"  
+                    Name="string"  
+                    SessionField="string"  
+                    Size="integer"  
+                    Type="Empty|Object|DBNull|Boolean|Char|SByte|  
+                        Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|  
+                        Single|Double|Decimal|DateTime|String"  
+                />  
+        </UpdateParameters>  
+</asp:SqlDataSource>  
+```  
+  
+   
+  
+## Examples  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=192424)です。  
+  
+ このセクションには、4 つのコード例が含まれています。  
+  
+-   最初のコード例は、SQL Server でのデータを表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>宣言の構文を使用して制御します。  
+  
+-   2 番目のコード例は、ODBC 準拠のデータベース内のデータを表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>宣言の構文を使用して制御します。  
+  
+-   3 番目のコード例を表示し、内のデータを更新する方法を示しています、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+-   4 番目のコード例を表示し、内のデータを更新する方法を示しています、<xref:System.Web.UI.WebControls.DropDownList>コントロール。  
+  
+    > [!NOTE]
+    >  これらの例では、データ アクセスの宣言の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>宣言によって SQL Server からデータを取得し表示するにはコントロール、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/CS/sql3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/VB/sql3vb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを ODBC 準拠のデータベースからデータを取得し、表示で宣言によって、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティは、odbc の場合は、.NET Framework データ プロバイダーの名前<xref:System.Data.Odbc?displayProperty=nameWithType>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_3odbc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3odbc/CS/odbc3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_3odbc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3odbc/VB/odbc3vb.aspx#1)]  
+  
+ 次のコード例は、一般的な表示と更新シナリオを示しています。、<xref:System.Web.UI.WebControls.GridView>コントロール。 前の例では、Northwind データベースからデータに表示される、<xref:System.Web.UI.WebControls.GridView>コントロール。 さらに、ため、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティが指定されて、<xref:System.Web.UI.WebControls.GridView.AutoGenerateEditButton%2A>プロパティに設定されている`true`、編集および追加のコードを持たないレコードを更新できます。 <xref:System.Web.UI.WebControls.GridView>するパラメーターの追加コントロールが自動的に処理、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクションと呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドと、**更新**ボタンをクリックして、<xref:System.Web.UI.WebControls.GridView>コントロールがクリックされました。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_5sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_5sql/CS/sql5cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_5sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_5sql/VB/sql5vb.aspx#1)]  
+  
+ 次のコード例は、一般的な表示と更新シナリオを示しています。、<xref:System.Web.UI.WebControls.DropDownList>と<xref:System.Web.UI.WebControls.TextBox>コントロール。 <xref:System.Web.UI.WebControls.DropDownList>コントロールが自動的に更新プログラムのパラメーターを追加、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクションも呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッド、ため、これを行う必要があります。 パラメーターを変更しては宣言によって指定され、実行するイベント ハンドラーを追加することができます、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>イベントが発生したときに操作します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/CS/sql8cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/VB/sql8vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.SqlDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSource (string connectionString, string selectCommand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, string selectCommand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="selectCommand" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">基になるデータベースに接続するために使用する接続文字列。</param>
+        <param name="selectCommand">SQL クエリは、基になるデータベースからデータを取得するために使用します。 SQL クエリがパラメーター化された SQL 文字列の場合は、可能性がありますを追加する必要があります。<see cref="T:System.Web.UI.WebControls.Parameter" />オブジェクトを、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />コレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />した指定した接続文字列および Select コマンド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のデータベース製品ごとに使用する SQL の構文のため`selectCommand`は、現在使用されている ADO.NET プロバイダーによって異なります、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティです。 SQL 文字列がパラメーター化されたクエリまたはコメントである場合は、パラメーターのプレースホルダーも現在使用している ADO.NET プロバイダーによって決まります。 たとえば、プロバイダーは、<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、パラメーターのプレース ホルダーは`'@parameterName'`します。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>値から、データ ソースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>制御を使用して、<xref:System.Web.UI.WebControls.SqlDataSource.%23ctor%2A>コンス トラクターです。 例は、通常のことで、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールが使用されている中間層オブジェクトの実装では、Web フォーム ページではなくビジネス オブジェクトの簡単な方法として、データベースとやり取りします。 例では、Web.config ファイルに格納されている接続文字列を使用します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ObjectDataSource>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/CS/northwindemployee1.cs#3)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/VB/northwindemployee1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSource (string providerName, string connectionString, string selectCommand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerName, string connectionString, string selectCommand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="selectCommand" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="providerName">データ プロバイダーの名前を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />を使用します。 プロバイダーが設定されていない場合、 <see cref="T:System.Web.UI.WebControls.SqlDataSource" /> for Microsoft SQL Server では、既定では、ADO.NET プロバイダーを使用します。</param>
+        <param name="connectionString">基になるデータベースに接続するために使用する接続文字列。</param>
+        <param name="selectCommand">SQL クエリは、基になるデータベースからデータを取得するために使用します。 SQL クエリがパラメーター化された SQL 文字列の場合は、可能性がありますを追加する必要があります。<see cref="T:System.Web.UI.WebControls.Parameter" />オブジェクトを、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />コレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />した指定した接続文字列および Select コマンド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のデータベース製品ごとに使用する SQL の構文のため`selectCommand`は、現在使用されている ADO.NET プロバイダーによって異なります、`providerName`パラメーター。 SQL 文字列がパラメーター化されたクエリまたはコメントである場合は、パラメーターのプレースホルダーも現在使用している ADO.NET プロバイダーによって決まります。 たとえば、プロバイダーは<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、パラメーターのプレース ホルダーは`'@parameterName'`します。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティから、データ ソースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheDuration">
+      <MemberSignature Language="C#" Value="public virtual int CacheDuration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CacheDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.CacheDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataSourceCacheDurationConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の時間の長さ (秒単位)、データ ソース コントロールがデータをキャッシュすることによって取得される、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />メソッドです。</summary>
+        <value>秒の数、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />の結果をキャッシュする<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />操作します。 既定値は 0 です。 値を負の値にすることはできません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールはデータのキャッシュをサポートします。 データがキャッシュされるときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを基になるデータベースではなく、キャッシュからデータを取得します。 キャッシュが期限切れになったときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが、基になるデータベースからデータを取得および再度データをキャッシュします。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールが自動的にデータをキャッシュ時に、<xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティに設定されている`true`と<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>プロパティが、キャッシュは、キャッシュ エントリが破棄される前にデータを格納する時間を秒数を示す 0 より大きい値に設定します。 0 の値では、無限の深さのキャッシュを示します。  
+  
+ キャッシュの動作は、実行時間の組み合わせによって決まりますが、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Absolute>値、<xref:System.Web.UI.WebControls.SqlDataSource>最初のデータ取得操作にデータをキャッシュ、多くても、時間数で指定されているのメモリに保持<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>プロパティです。 データは、メモリが必要な場合は、継続時間の前にリリースされる可能性があります。 キャッシュは、次の操作中に更新されます。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Sliding>値、データ ソース コントロールは、最初のデータの取得操作上のデータをキャッシュしますが、後続の各操作用のキャッシュが保持している時間枠をリセットします。 相当する時間のアクティビティがない場合、キャッシュが期限切れ、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>前回値<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>内にある場合にのみ、コントロールがデータをキャッシュできる<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>モード。 A<xref:System.NotSupportedException>によって例外がスローされます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッド場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>値とキャッシュがも有効にします。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータが取得されるたびにする、キャッシュを使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server で Northwind データベースからデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール、データ キャッシュを有効にします。 <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A> 20 秒に設定されているので、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Absolute>既定では、このページのユーザーの値はデータを表示新規 20 秒ごとです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_18sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_18sql/CS/sql18cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_18sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_18sql/VB/sql18vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheExpirationPolicy">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataSourceCacheExpiry CacheExpirationPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceCacheExpiry CacheExpirationPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceCacheExpiry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定キャッシュ有効期限の動作、期間と組み合わせると、データ ソース コントロールを使用するキャッシュの動作について説明します。</summary>
+        <value><see cref="T:System.Web.UI.DataSourceCacheExpiry" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.DataSourceCacheExpiry.Absolute" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールはデータのキャッシュをサポートします。 データがキャッシュされるときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを基になるデータベースではなく、キャッシュからデータを取得します。 キャッシュが期限切れになったときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが、基になるデータベースからデータを取得および再度データをキャッシュします。  
+  
+ キャッシュの動作の組み合わせによって決定されます、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>設定します。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Absolute>値、<xref:System.Web.UI.WebControls.SqlDataSource>最初のデータ取得操作にデータをキャッシュで指定された時間分のメモリに保持、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>プロパティ、し、時間の有効期限が切れて後に破棄します。 キャッシュは、次の操作中に更新されます。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Sliding>値、データ ソース コントロールは、最初のデータの取得操作上のデータをキャッシュしますが、後続の各操作用のキャッシュが保持している時間枠をリセットします。 相当する時間のアクティビティがない場合、キャッシュが期限切れ、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>前回値<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールがデータをキャッシュ時にのみ、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>モード。 A<xref:System.NotSupportedException>によって例外がスローされます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッド場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>値とキャッシュがも有効にします。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータが取得されるたびにする、キャッシュを使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server で Northwind データベースからデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール、データ キャッシュを有効にします。 <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Sliding>値、ユーザーが新しいデータをいなくても表示されません、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>値は 20 秒です。 アクティビティがない ページで、最後のページ読み込みから 20 秒より多くの場合にのみ、キャッシュされたデータが更新されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_19sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_19sql/CS/sql19cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_19sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_19sql/VB/sql19vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheKeyDependency">
+      <MemberSignature Language="C#" Value="public virtual string CacheKeyDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CacheKeyDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.CacheKeyDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソース コントロールによって作成されたキャッシュ オブジェクトのすべてのデータにリンクされているユーザー定義のキー依存関係を設定します。 すべてのキャッシュ オブジェクトには、キーの有効期限が切れてが明示的に期限が切れています。</summary>
+        <value>によって作成されたすべてのキャッシュ オブジェクトを識別するキーを<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールはデータのキャッシュをサポートします。 データがキャッシュされるときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを基になるデータベースではなく、キャッシュからデータを取得します。 キャッシュが期限切れになったときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが、基になるデータベースからデータを取得および再度データをキャッシュします。  
+  
+ 設定することができます、<xref:System.Web.UI.WebControls.SqlDataSource.CacheKeyDependency%2A>によって作成されるすべてのキャッシュ エントリ間の依存関係を作成するプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>制御とキー。 いつでもすべてのキャッシュ エントリを期限切れプログラムで期限切れにして、キーにできます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールがデータをキャッシュ時にのみ、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>モード。 A<xref:System.NotSupportedException>によって例外がスローされます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッド場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>値とキャッシュがも有効にします。  
+  
+ 組み合わせごとに一意のキャッシュ エントリが作成された、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>、および<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>プロパティです。 複数<xref:System.Web.UI.WebControls.SqlDataSource>コントロールで使用できる、同じキャッシュ エントリのシナリオで同じ基になるデータベースからのコントロールが、同じデータを読み込みます。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータが取得されるたびにする、キャッシュを使用しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelSelectOnNullParameter">
+      <MemberSignature Language="C#" Value="public virtual bool CancelSelectOnNullParameter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelSelectOnNullParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.CancelSelectOnNullParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または任意のパラメーターであるときに、データ取得操作が取り消されたかどうかを示す値を設定に含まれている、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />にコレクションが評価される<see langword="null" />です。</summary>
+        <value>
+          <see langword="true" />パラメーターが含まれている場合、データ取得操作が取り消された場合、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />にコレクションが評価される<see langword="null" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.SqlDataSource.CancelSelectOnNullParameter%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConflictDetection">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ConflictOptions ConflictDetection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ConflictOptions ConflictDetection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.ConflictDetection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ConflictOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値が、どのように<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールは、更新プログラムを実行して、操作の期間中に、データベースの変更を基になる行のデータを削除します。</summary>
+        <value><see cref="T:System.Web.UI.ConflictOptions" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.ConflictOptions.OverwriteChanges" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに古い値と新しい値のパラメーターを適用するかどうかを決定する、`Update`メソッドです。 コマンドである場合などで指定された、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティから返される、 <xref:System.Data.DataTable> 、列を持つオブジェクト`Name`と`Number`と<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定されている、 <xref:System.Web.UI.ConflictOptions.OverwriteChanges> 、パラメーターが作成された値の`Name`と`Number`の`Update`メソッドです。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定されている、 <xref:System.Web.UI.ConflictOptions.CompareAllValues> 、パラメーターが作成された値の`Name`、 `Number`、 `original_Name`、および`original_Number`です。 (元の値のパラメーターの正確な名前が異なります、<xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString%2A>プロパティです)。<xref:System.Web.UI.WebControls.SqlDataSource>コントロール場合を決定し、`Update`メソッドで指定されている、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティが一致するパラメーターです。  
+  
+ 同時実行制御は、データを読み取るし、複数のクライアントがアクセスして、同じデータを操作するときに、ストアで変更する方法を制御するデータ ストアを使用する手法です。 たとえば、1 つのクライアントは、データを読み取り、別のクライアントが、同じデータを読み取り、別のユーザーに提示中に、ユーザーに提示します。 両方のユーザーは、データ更新、データ ストレージに送信すると、予期しない結果が発生する、両方のクライアントは、同じデータの異なる値を更新するためです。 これは、競合と見なされます。 設定して、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティを<xref:System.Web.UI.ConflictOptions.CompareAllValues>値、`Update`メソッドの競合を検出し、必要に応じて、それらの処理を元のデータ ソースの新旧の値を比較し、します。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.ConflictDetection%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public virtual string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.SqlDataSourceConnectionStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ADO.NET プロバイダー固有の接続文字列を設定、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールでは、使用して基になるデータベースに接続します。</summary>
+        <value>.NET Framework データ プロバイダー固有の文字列を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />それが表す SQL database への接続に使用します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>で ADO.NET プロバイダーのさまざまなコントロールを使用できるし、基になるデータ ソースへの接続に使用される接続文字列の構文は、プロバイダーに固有です。  
+  
+ 構成するとき、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを設定する、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティをデータベースの種類 (既定値は<xref:System.Data.SqlClient?displayProperty=nameWithType>) に設定して、<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティをデータベースに接続するために必要な情報を含む接続文字列にします。 接続文字列の内容は、データベースへのアクセスは、データ ソース コントロールの種類によって異なります。 たとえば、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、サーバー名、データベース (カタログ) 名、および SQL Server に接続するときにユーザーを認証する方法に関する情報が必要です。 接続文字列の内容については、次を参照してください。、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>プロパティを、<xref:System.Data.SqlClient.SqlConnection>クラス、<xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>プロパティを、<xref:System.Data.OracleClient.OracleConnection>クラス、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>プロパティを、<xref:System.Data.OleDb.OleDbConnection>クラス、または<xref:System.Data.Odbc.OdbcConnection.ConnectionString%2A>プロパティを、<xref:System.Data.Odbc.OdbcConnection>クラスです。  
+  
+ 変更した場合、<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティ、<xref:System.Web.UI.IDataSource.DataSourceChanged>イベントが発生原因で、コントロールにバインドされている、<xref:System.Web.UI.WebControls.SqlDataSource>再バインドするコントロール。  
+  
+> [!IMPORTANT]
+>  接続文字列を格納する方法については、次を参照してください。[操作方法: を使用するデータ ソース コントロールとの接続文字列をセキュリティで保護](http://msdn.microsoft.com/library/942f6dcb-d278-4bec-8403-60eede9bcd62)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、設定する方法を示します、 <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A> Microsoft SQL Server データベースに接続し、結果を表示するプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティに、<xref:System.Web.UI.WebControls.GridView>コントロール。 2 つ目のコード例に示しますより複雑なシナリオでは、ここで、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを表示し、パスワードで保護された Access データベース内のデータの更新に使用します。 各ケースで、 `connectionStrings` 、Web.config ファイルの要素が最初に表示されを含む ASP.NET ページで、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ 次のコード例は、設定する方法を示します、 <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A> 、SQL Server データベースに接続し、結果を表示するプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティに、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/CS/sql3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_3sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_3sql/VB/sql3vb.aspx#1)]  
+  
+ 次のコード例は、前のコード例より複雑なシナリオを示します場所、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを使用して、パスワードで保護された Access データベースのデータを更新します。 <xref:System.Web.UI.WebControls.SqlDataSource>アクセスでは、使用、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティに設定されている、<xref:System.Data.OleDb>プロバイダー、および<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>を UNC 共有アクセス データベースの適切な接続文字列プロパティを設定します。 A<xref:System.Web.UI.WebControls.GridView>コントロールは、出荷日の注文を表示します。 適切なチェック ボックスをクリックすると、注文を更新することができます、**更新**ボタンをクリックします。  
+  
+> [!IMPORTANT]
+>  この例には、説明のためだけにプレーン テキスト パスワードが含まれます。 実稼働アプリケーションでパスワードを含む接続文字列を暗号化する必要があります。 詳細については、「[接続情報の保護](~/docs/framework/data/adonet/protecting-connection-information.md)」を参照してください。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_22sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/CS/sql22cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_22sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/VB/sql22vb.aspx#1)]  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_22sql#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/CS/sql22cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_22sql#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_22sql/VB/sql22vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSourceView">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.SqlDataSourceView CreateDataSourceView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.SqlDataSourceView CreateDataSourceView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.CreateDataSourceView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">データ ソース ビューの名前。</param>
+        <summary>データ ソース コントロールに関連付けられているデータ ソース ビュー オブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />と関連付けられている、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Web.UI.WebControls.SqlDataSource>クラスをオーバーライドできます、<xref:System.Web.UI.WebControls.SqlDataSource.CreateDataSourceView%2A>強くを返すメソッドがデータ ソース ビュー オブジェクトを入力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SqlDataSourceMode DataSourceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SqlDataSourceMode DataSourceMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.DataSourceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ取得のモードを設定、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />データをフェッチするコントロールを使用します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SqlDataSourceMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.SqlDataSourceMode.DataSet" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データの取得のモードを識別する方法、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、基になるデータベースからデータを取得します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値にデータを読み込む、<xref:System.Data.DataSet>オブジェクトと、サーバー上に格納されているメモリです。 これにより、シナリオ、ユーザー インターフェイスなどのコントロール、 <xref:System.Web.UI.WebControls.GridView>、並べ替え、フィルター、およびページング機能を提供します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>値、データを取得して、<xref:System.Data.IDataReader>順方向専用、読み取り専用カーソルであるオブジェクト。 特定の種類の<xref:System.Data.IDataReader>オブジェクト NET データ プロバイダーに依存する、<xref:System.Web.UI.WebControls.SqlDataSource>によって識別される使用方法は、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティです。 既定では、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、プロバイダーを使用して、Microsoft SQL Server 用、 <xref:System.Data.SqlClient?displayProperty=nameWithType>、し、データ リーダーが、<xref:System.Data.SqlClient.SqlDataReader>オブジェクト。  
+  
+ 変更した場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティ、<xref:System.Web.UI.IDataSource.DataSourceChanged>イベントが発生原因で、コントロールにバインドされている、<xref:System.Web.UI.WebControls.SqlDataSource>再バインドします。  
+  
+ 値、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティは viewstate に格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>、シナリオでの値、<xref:System.Web.UI.WebControls.ListBox>コントロールを必要としない並べ替え、ページング、およびフィルター処理します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/CS/sql1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/VB/sql1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.SqlDataSource.DataSourceMode" />プロパティで定義されている値のいずれかではない、<see cref="T:System.Web.UI.WebControls.SqlDataSourceMode" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public int Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して削除操作を実行、<see cref="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommand" />内にある SQL 文字列とパラメーター、<see cref="P:System.Web.UI.WebControls.SqlDataSource.DeleteParameters" />コレクション。</summary>
+        <returns>基になるデータベースから削除された行の数を表す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除操作を実行すると、前に、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnDeleting%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>イベント。 パラメーターの値を確認し、削除操作の前に処理を実行するこのイベントを処理することができます。  
+  
+ 操作の完了後、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnDeleted%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Deleted>イベント。 任意の戻り値およびエラー コードを調べ、後処理を実行するこのイベントを処理することができます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドは、プログラムへのアクセス提供、`Delete`メソッドです。 場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールがデータ バインド コントロールに関連付け、データ バインド コントロールを自動的に呼び出して、**削除**メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドからデリゲートを<xref:System.Web.UI.WebControls.SqlDataSourceView.Delete%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView>ビルド、<xref:System.Data.Common.DbCommand>オブジェクトを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>テキストおよび関連<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>値、および実行し、<xref:System.Data.Common.DbCommand>基になるデータベースに対して。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A> Northwind データベースから注文を削除するテキスト。 最初に、データは Orders テーブルから取得および表示で、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 明示的に宣言する必要があります、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>プロパティと呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドなど、データ バインド コントロールを使用する場合、 <xref:System.Web.UI.WebControls.DropDownList> (その他のコントロールとは異なりなど<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>、自動的に設定する、パラメーターと呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>データ ソース コントロールのメソッド)。 この例では、<xref:System.Web.UI.WebControls.Button.OnClick%2A>イベントは、プライベートに委任`OnDelete`を明示的に呼び出すイベント ハンドラー、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_11sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_11sql/CS/sql11cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_11sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_11sql/VB/sql11vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.SqlDataSource" />基になるデータ ソースとの接続を確立することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommand">
+      <MemberSignature Language="C#" Value="public string DeleteCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、SQL 文字列、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールを使用して、基になるデータベースからデータを削除します。</summary>
+        <value>SQL の文字列を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />を使用してデータを削除します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>によって使用され、SQL クエリまたはストアド プロシージャの名前を表す、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドです。  
+  
+ データベース製品ごとに使用する SQL が異なるため、SQL 文字列の構文は、現在使用している ADO.NET プロバイダーによって決まります。これは、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A> プロパティから識別できます。 SQL 文字列がパラメーター化されたクエリまたはコマンドの場合は、パラメーターの構文も使用している ADO.NET プロバイダーに依存します。 たとえば、プロバイダーは、<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>パラメーターの構文は、クラス、`'@parameterName'`です。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティから、データベースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  セキュリティのため、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティは viewstate に格納されません。 クライアント上のビュー ステートの内容をデコードできるため、データベース構造に関する機密情報を格納すると、ビューに状態可能性があります、情報漏えいの脆弱性。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>テキストを Northwind データベースの Orders テーブルからの注文を削除します。 データは Orders テーブルから取得されに表示される、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.GridView>レンダリング、**削除**ボタンを自動的にときに、<xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton%2A>プロパティに設定されている`true`です。 さらに、**削除**ボタンをクリックすると、<xref:System.Web.UI.WebControls.GridView>コントロールを自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>コレクションと呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドです。 最後に、このコード例では、データを削除、されるため、イベント ハンドラーを追加する前にディスクにデータベースをバックアップしようとする、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>操作を実行します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_10sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_10sql/CS/sql10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_10sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_10sql/VB/sql10vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteCommandType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SqlDataSourceCommandType DeleteCommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SqlDataSourceCommandType DeleteCommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかのテキスト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommand" />プロパティは、SQL ステートメントまたはストアド プロシージャの名前。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.SqlDataSourceCommandType.Text" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommandType%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommandType%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Deleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Deleted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Deleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceStatusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除操作が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Deleted>削除操作が完了した後の値を確認するイベントを出力パラメーターです。 出力パラメーターは、<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>イベントに関連付けられているオブジェクト。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection DeleteParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection DeleteParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.DeleteParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ParameterCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用されているパラメーターを含むパラメーターのコレクションを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommand" />プロパティから、<see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />によって使用されるパラメーターを格納している、<see cref="P:System.Web.UI.WebControls.SqlDataSource.DeleteCommand" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A>プロパティには、パラメーター化 SQL クエリが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>コレクションには、いずれかが含まれます<xref:System.Web.UI.WebControls.Parameter>SQL 文字列のパラメーターのプレース ホルダーに対応するオブジェクト。  
+  
+> [!NOTE]
+>  確認していない<xref:System.Web.UI.WebControls.BoundField>にバインドするデータ バインド コントロール内のコントロール、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール内の任意のパラメーター名に一致する名前がある、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>コレクション。 パラメーターをバインドされたフィールドは、SQL コマンドと「パラメーターが指定されませんでした」エラーから除外されるように、同じ名前を持つ可能性があります。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定されている、<xref:System.Web.UI.ConflictOptions.CompareAllValues>値、データの新旧両方の値のパラメーターが作成されます。 古い値のパラメーターがに従って名前付き、<xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString%2A>プロパティです。  
+  
+ ADO.NET プロバイダーでは、パラメーターの順序によって、<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>コレクションが重要であります。 <xref:System.Data.OleDb?displayProperty=nameWithType>と<xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダーがパラメーター化 SQL クエリでパラメーターが表示される順序に従って、コレクション内のパラメーターを関連付けます。 <xref:System.Data.SqlClient?displayProperty=nameWithType>プロバイダーは、既定の ADO.NET プロバイダーは、の<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを SQL クエリにプレース ホルダーで、パラメーターの名前を照合することによって、コレクション内のパラメーターに関連付けます。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>プロパティの取得、<xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteParameters%2A>プロパティに含まれています、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand%2A> Northwind データベースから注文を削除するテキスト。 最初に、データは Orders テーブルから取得および表示で、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 明示的に宣言する必要があります<xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters%2A>プロパティと呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>メソッドなどを使用して、データ バインド コントロールと<xref:System.Web.UI.WebControls.DropDownList>(他のコントロールとは異なりなど<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>パラメーターを自動的に設定して呼び出す<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>データ ソース コントロールに)。 この例では、<xref:System.Web.UI.WebControls.Button.OnClick%2A>イベントは、プライベートに委任`OnDelete`を明示的に呼び出すイベント ハンドラー、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_11sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_11sql/CS/sql11cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_11sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_11sql/VB/sql11vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleting">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Deleting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Deleting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Deleting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除操作の前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>イベントは、パラメーターの値を検証する、または前に、のパラメーターの値を変更する、アプリケーションに固有の追加の初期化の操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、削除操作を実行します。  
+  
+ 基になるデータ ソースへの接続がまだ開いていないイベント ハンドラー デリゲートが呼び出されるとします。 そのため、操作を呼び出すことによって直接取り消すことはできません、<xref:System.Data.Common.DbCommand.Cancel%2A>メソッドを<xref:System.Data.Common.DbCommand>によって公開されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>オブジェクト。 ただしを設定して、データベースの操作をキャンセルできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>オブジェクトを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.Deleting>する前に発生するイベントを<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>操作が発生します。 この例は、Northwind データベースからデータを削除するため、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnDeleting%2A>前に、ディスクにデータベースをバックアップしようとするハンドラーを追加、<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>操作を実行します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_10sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_10sql/CS/sql10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_10sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_10sql/VB/sql10vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCaching">
+      <MemberSignature Language="C#" Value="public virtual bool EnableCaching { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableCaching" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.EnableCaching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールがデータ キャッシュを有効にします。</summary>
+        <value>
+          <see langword="true" />データ ソース コントロールのデータのキャッシュが有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールはデータのキャッシュをサポートします。 データがキャッシュされるときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを基になるデータベースではなく、キャッシュからデータを取得します。 キャッシュが期限切れになったときに、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが、基になるデータベースからデータを取得および再度データをキャッシュします。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールが自動的にデータをキャッシュ時に、<xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティに設定されている`true`と<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>プロパティが、キャッシュが最新のセットを取得する前にデータを格納する秒数を示す、0 より大きい値に設定します。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータが取得されるたびにする、キャッシュを使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server で Northwind データベースからデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール、データ キャッシュを有効にします。 <xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching%2A>プロパティに設定されている`true`と<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>は 20 秒に設定します。 <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティに設定されている、<xref:System.Web.UI.DataSourceCacheExpiry.Absolute>既定では、このページのユーザー フィールドはデータを表示新規 20 秒ごとです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_18sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_18sql/CS/sql18cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_18sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_18sql/VB/sql18vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.UI.WebControls.SqlDataSource.EnableCaching" />プロパティに設定されている<see langword="true" />キャッシュがサポートされていない場合で、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterExpression">
+      <MemberSignature Language="C#" Value="public string FilterExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilterExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.FilterExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" /> メソッドが呼び出されるときに適用されるフィルター式を取得または設定します。</summary>
+        <value><see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" /> メソッドを使用してデータを取得するときに適用されるフィルター式を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティの値が書式指定文字列式 (で処理される文字列、<xref:System.String.Format%2A?displayProperty=nameWithType>メソッド) 内の値を使用する、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>文字列に含まれる任意の置換パラメーターのコレクション。 フィルター式の構文は同じ構文で受け入れを<xref:System.Data.DataView.RowFilter%2A>プロパティ、フィルター式が適用されるので、<xref:System.Data.DataView.RowFilter%2A>のプロパティ、<xref:System.Data.DataView>実行から返されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドです。 詳細については、「<xref:System.Data.DataColumn.Expression%2A>」を参照してください。  
+  
+ パラメーターを追加する場合、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション、書式文字列のプレース ホルダーを含めることもできます (たとえば、`"{0}")`パラメーター値の代わりに式でします。 内のパラメーターのインデックスに従ってプレースは、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 オブジェクトの<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクションが`null`オブジェクトは空の文字列で置き換えられます。  
+  
+ 内のパラメーターを含めることができます、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティです。 パラメーターが文字列型または char 型の場合は、パラメーターを単一引用符で囲みます。 パラメーターが数値型の場合、引用符がある場合は、必要ではありません。 <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクションに含まれているプレース ホルダーに評価されるパラメーターが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、データのフィルター処理をサポートしている時にのみ、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>モード。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.FilterExpression%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Northwind データベースからデータを取得しを使用してフィルター処理する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>文字列と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティには、いつでもが適用される、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>データを取得するメソッドを実行します。 この例では、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>に含まれているフィルター パラメーターのプレース ホルダーが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 さらに、フィルターのパラメーターは、<xref:System.Web.UI.WebControls.ControlParameter>にバインドされているオブジェクト、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>のプロパティ、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 <xref:System.Web.UI.WebControls.DropDownList>コントロールがその<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>プロパティに設定`true`の選択を変更しても、<xref:System.Web.UI.WebControls.DropDownList>コントロールが原因で、サーバーに情報を投稿するページと<xref:System.Web.UI.WebControls.GridView>データ ソースを再バインドするコントロール新しいフィルターを使用して制御します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_17sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_17sql/CS/sql17cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_17sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_17sql/VB/sql17vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.UI.WebControls.SqlDataSource.FilterExpression" /> プロパティが設定され、<see cref="T:System.Web.UI.WebControls.SqlDataSource" /> が <see cref="F:System.Web.UI.WebControls.SqlDataSourceMode.DataReader" /> モードです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Filtering">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceFilteringEventHandler Filtering;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceFilteringEventHandler Filtering" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Filtering" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceFilteringEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター操作の前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>イベント フィルターの前にパラメーター値の検証操作を実行、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、フィルター操作を実行します。 取り消すことができます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>を設定することによって、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceFilteringEventArgs>オブジェクトを`true`です。 場合にのみこのイベントは、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティを設定します。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Filtering?displayProperty=nameWithType>イベントを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.Filtering?displayProperty=nameWithType>のイベント、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection FilterParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection FilterParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.FilterParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ParameterCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターのプレース ホルダー内にある関連付けられているパラメーターのコレクションを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.FilterExpression" />文字列。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />で見つかったすべてのパラメーター プレース ホルダーに関連付けられているパラメーターのセットを含む、<see cref="P:System.Web.UI.WebControls.SqlDataSource.FilterExpression" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のパラメーター、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクションがで指定されているすべてのパラメーターで関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティです。 指定されているパラメーターのプレース ホルダー、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>内のパラメーター オブジェクトに注文されたと一致するプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクションと、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが呼び出されます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティの取得、<xref:System.Web.UI.WebControls.SqlDataSourceView.FilterParameters%2A>プロパティに含まれています、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Northwind データベースからデータを取得しを使用してフィルター処理する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティです。 <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールはいつでも適用、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>データを取得するメソッドを実行します。 この例では、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティに含まれているフィルター パラメーターのプレース ホルダーが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>コレクション。 さらに、フィルターのパラメーターは、<xref:System.Web.UI.WebControls.ControlParameter>にバインドされているオブジェクト、<xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>のプロパティ、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 <xref:System.Web.UI.WebControls.DropDownList>コントロールがその<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>プロパティに設定`true`の変化、<xref:System.Web.UI.WebControls.DropDownList>の選択は、サーバーに情報を投稿するページと<xref:System.Web.UI.WebControls.GridView>データ ソース コントロールにバインドするコントロール、新しいフィルターです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_17sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_17sql/CS/sql17cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_17sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_17sql/VB/sql17vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDbProviderFactory">
+      <MemberSignature Language="C#" Value="protected virtual System.Data.Common.DbProviderFactory GetDbProviderFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.Common.DbProviderFactory GetDbProviderFactory() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.GetDbProviderFactory" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Data.Common.DbProviderFactory" />によって識別される ADO.NET プロバイダーに関連付けられているオブジェクト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.ProviderName" />プロパティです。</summary>
+        <returns>A<see cref="T:System.Data.Common.DbProviderFactory" />識別された ADO.NET プロバイダーを表す、それ以外のインスタンスと、<see cref="N:System.Data.SqlClient" />プロバイダーが設定されていない場合は、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbProviderFactory>プロパティを使用、<xref:System.Web.UI.WebControls.SqlDataSource>データベースとやり取りするときに正しい ADO.NET 接続、コマンド、およびパラメーター オブジェクトを作成するコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.DataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.DataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得するビューの名前。 <see cref="T:System.Web.UI.WebControls.SqlDataSource" /> 1 つのビューをサポートしている<c>viewName</c>は無視されます。</param>
+        <summary>データ ソース コントロールに関連付けられている名前付きのデータ ソース ビューを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />に関連付けられている"Table"という名前の<see cref="T:System.Web.UI.WebControls.SqlDataSource" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、1 つだけのデータ ソース ビューをサポートしています。 すべてのデータ ソース ビュー オブジェクトと同様、<xref:System.Web.UI.WebControls.SqlDataSourceView>データ ソース コントロールに関連付けられているオブジェクトは、その機能を定義は、基になるデータベースからデータを取得する必要はし、並べ替え、挿入、削除、および更新などの操作を実行するすべての作業を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="viewName" /><see langword="null" />以外の項目または<c>テーブル</c>です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ICollection GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ICollection GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられているビュー オブジェクトの一覧を表す名前のコレクションを取得、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />に関連付けられているビューの名前を格納している、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールがその基になるデータ、という名前の 1 つのビューをサポートする`"Table"`です。 <xref:System.Web.UI.WebControls.SqlDataSource.GetViewNames%2A>メソッドは、この 1 つのビューの名前の 1 つの要素のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public int Insert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Insert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.Insert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>挿入操作を使用して、実行、<see cref="P:System.Web.UI.WebControls.SqlDataSource.InsertCommand" />内にある SQL 文字列とパラメーター、<see cref="P:System.Web.UI.WebControls.SqlDataSource.InsertParameters" />コレクション。</summary>
+        <returns>基になるデータベースに挿入される行の数を表す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 挿入操作を実行すると、前に、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>イベント。 パラメーターの値を確認する前に処理を実行して、このイベントを処理することができます、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>操作します。 挿入操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトのビルド、<xref:System.Data.Common.DbCommand>オブジェクトを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>テキストと、関連付けられたすべて<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>プロパティ、し、実行、<xref:System.Data.Common.DbCommand>基になるデータベースに対してオブジェクト。  
+  
+ 操作の完了後、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント。 任意の戻り値およびエラー コードを調べ、後処理を実行するこのイベントを処理することができます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドは、プログラムへのアクセス提供、`Insert`メソッドです。 場合、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールがデータ バインド コントロールに関連付け、データ バインド コントロールを自動的に呼び出して、`Insert`メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドからデリゲートを<xref:System.Web.UI.WebControls.SqlDataSourceView.Insert%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してデータベースにデータを挿入する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと、単純な Web フォーム ページ。 データ テーブルの現在のデータが表示されます、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 内の値を入力して新しいレコードを追加することができます、<xref:System.Web.UI.WebControls.TextBox>コントロールをクリックして、**挿入**ボタンをクリックします。 ときに、**挿入**ボタンがクリックされると、指定した値が、データベースに挿入し、<xref:System.Web.UI.WebControls.DropDownList>は更新します。  
+  
+> [!IMPORTANT]
+>  この例では、潜在的なセキュリティ上の脅威がユーザー入力を受け付けるテキスト ボックスとも潜在的なセキュリティの脅威の検証を伴わないパラメーターに値が挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+> [!NOTE]
+>  この例では、データ アクセスの宣言型の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.SqlDataSource" />基になるデータ ソースとの接続を確立することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertCommand">
+      <MemberSignature Language="C#" Value="public string InsertCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InsertCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.InsertCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、SQL 文字列、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />基になるデータベースにデータを挿入するコントロールを使用します。</summary>
+        <value>SQL の文字列を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />を使用してデータを挿入します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>によって使用され、SQL クエリまたはストアド プロシージャの名前を表す、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドです。  
+  
+ データベース製品ごとに使用する SQL が異なるため、SQL 文字列の構文は、現在使用している ADO.NET プロバイダーによって決まります。これは、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A> プロパティから識別できます。 SQL 文字列がパラメーター化されたクエリまたはコメントである場合は、パラメーターのプレースホルダーも現在使用している ADO.NET プロバイダーによって決まります。 たとえば、プロバイダーは、<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、パラメーターのプレース ホルダーは`'@parameterName'`します。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>データ ソースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+ このプロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>と関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  セキュリティのため、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>プロパティは格納されませんビュー ステートがします。 クライアント上のビュー ステートの内容をデコードできるため、データベース構造に関する機密情報を格納すると、ビューに状態可能性があります、情報漏えいの脆弱性。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用してデータベースにデータを挿入する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと、単純な Web フォーム ページ。 2 番目のコード例は、Microsoft SQL Server からデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロールと使用方法、<xref:System.Web.UI.WebControls.DetailsView>に選択した行の詳細を表示するコントロール、<xref:System.Web.UI.WebControls.GridView>コントロールと新しいレコードを挿入するためのフォームです。  
+  
+> [!NOTE]
+>  これらの例では、データ アクセスの宣言の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ 次のコード例を使用してデータベースにデータを挿入する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと、単純な Web フォーム ページ。 データ テーブルの現在のデータが表示されます、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 値を入力して新しいレコードを追加することができます、<xref:System.Web.UI.WebControls.TextBox>コントロールをクリックして、**挿入**ボタンをクリックします。 ときに、**挿入**ボタンがクリックされると、指定した値が、データベースに挿入され、<xref:System.Web.UI.WebControls.DropDownList>コントロールが更新されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威には、ユーザー入力を受け付けるテキスト ボックスが含まれています。 し、値が、これは、潜在的なセキュリティの脅威も検証を伴わないパラメーターに挿入します。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  
+  
+ 次のコード例は、SQL Server からデータを取得し、表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロールと使用方法、<xref:System.Web.UI.WebControls.DetailsView>コントロールで選択した行の詳細を表示する、<xref:System.Web.UI.WebControls.GridView>コントロールと新しいレコードを挿入するためのフォームです。  
+  
+ 最初に、データが内に表示されます、<xref:System.Web.UI.WebControls.GridView>制御、および選択した行の<xref:System.Web.UI.WebControls.GridView>にも表示されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>コントロールが別のデータを使用してソース コントロール; に関連付けられている 1 つ、<xref:System.Web.UI.WebControls.DetailsView>が、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティで、確実に選択した行の<xref:System.Web.UI.WebControls.GridView>は表示されます。  
+  
+ 自動的に生成された をクリックすると**挿入**のボタン、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>新しいレコードを挿入するために使用する別のユーザー インターフェイスを示しています。 この例では、レコードを挿入するストアド プロシージャを使用し、挿入された行の主キーを返します。 レコードを挿入する場合、<xref:System.Web.UI.WebControls.DetailsView>を自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>呼び出し、バインドされた列から値を使用して、コレクション、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドです。 <xref:System.Web.UI.WebControls.DetailsView>から適切なパラメーターを推論できる<xref:System.Web.UI.WebControls.BoundField>オブジェクトとパラメーターを<xref:System.Web.UI.WebControls.TemplateField>ASP.NET 双方向データ バインディングの構文を使用する場合のオブジェクトします。 この例では、追加のパラメーターが追加された、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>ストアド プロシージャによって返される主キーを処理するイベント ハンドラー。  
+  
+ 最後に、データがデータベースに挿入した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>を処理するイベント ハンドラーが呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント、挿入された行の主キーの値が表示されます、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A> のメソッド<xref:System.Web.UI.WebControls.GridView>データを更新するコントロールを明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertCommandType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SqlDataSourceCommandType InsertCommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SqlDataSourceCommandType InsertCommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.InsertCommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかのテキスト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.InsertCommand" />プロパティは、SQL ステートメントまたはストアド プロシージャの名前。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.SqlDataSourceCommandType.Text" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommandType%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommandType%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server データベースからデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール。 使用する方法も示します、<xref:System.Web.UI.WebControls.DetailsView>コントロールで選択した行の詳細を表示する、<xref:System.Web.UI.WebControls.GridView>と新しいレコードを挿入するためのフォームです。  
+  
+ <xref:System.Web.UI.WebControls.GridView>コントロールは、一連のデータを表示し、<xref:System.Web.UI.WebControls.DetailsView>特定の行の詳細を表示します。 自動的に生成された をクリックすると**挿入**のボタン、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>新しいレコードを挿入するために使用する別のユーザー インターフェイスを示しています。 この例では、レコードを挿入するストアド プロシージャを使用し、挿入された行の主キーを返します。 ストアド プロシージャの名前を設定、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>プロパティを設定して、ストアド プロシージャとして識別されると、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommandType%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure>値。  
+  
+ データベースにデータを挿入した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>を処理するイベント ハンドラーが呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント、挿入された行の主キーの値が表示されたら、および<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>のメソッド、 <xref:System.Web.UI.WebControls.GridView>コントロールは、データの更新を明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inserted">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Inserted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Inserted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Inserted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceStatusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入操作が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>挿入操作が完了した後の値を確認するイベントを出力パラメーターです。 出力パラメーターは、<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>イベントに関連付けられているオブジェクト。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server からデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロールと使用方法、<xref:System.Web.UI.WebControls.DetailsView>コントロールで選択した行の詳細を表示する、<xref:System.Web.UI.WebControls.GridView>と新しいレコードを挿入するためのフォームです。  
+  
+> [!NOTE]
+>  この例では、データ アクセスの宣言型の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ 最初に、データが内に表示されます、<xref:System.Web.UI.WebControls.GridView>制御、および選択した行の<xref:System.Web.UI.WebControls.GridView>にも表示されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>コントロールが別のデータを使用してソース コントロール; に関連付けられている 1 つ、<xref:System.Web.UI.WebControls.DetailsView>が、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティで、確実に選択した行の<xref:System.Web.UI.WebControls.GridView>は表示されます。  
+  
+ 自動的に生成された をクリックすると**挿入**のボタン、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>新しいレコードを挿入するために使用する別のユーザー インターフェイスを示しています。 この例では、レコードを挿入するストアド プロシージャを使用し、挿入された行の主キーを返します。 レコードを挿入する場合、<xref:System.Web.UI.WebControls.DetailsView>を自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>呼び出し、バインドされた列から値を使用して、コレクション、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドです。 <xref:System.Web.UI.WebControls.DetailsView>から適切なパラメーターを推論できる<xref:System.Web.UI.WebControls.BoundField>オブジェクトとパラメーターを<xref:System.Web.UI.WebControls.TemplateField>ASP.NET 双方向データ バインディングの構文を使用する場合のオブジェクトします。 この例では、追加のパラメーターが追加された、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>ストアド プロシージャによって返される主キーを処理するイベント ハンドラー。  
+  
+ 最後に、データがデータベースに挿入した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>を処理するイベント ハンドラーが呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント、挿入された行の主キーの値が表示されたら、および<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>のメソッド<xref:System.Web.UI.WebControls.GridView>データを更新するコントロールを明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inserting">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Inserting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Inserting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Inserting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入操作の前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>イベントは、パラメーターの値を検証する、または前に、のパラメーターの値を変更する、アプリケーションに固有の追加の初期化の操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、挿入操作を実行します。 基になるデータ ソースへの接続がまだ開いていないイベント ハンドラー デリゲートが呼び出されるとします。 そのため、操作を呼び出すことによって直接取り消すことはできません、<xref:System.Data.Common.DbCommand.Cancel%2A>メソッドを<xref:System.Data.Common.DbCommand>によって公開されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>プロパティです。 ただしを設定して、データベースの操作をキャンセルできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>オブジェクトを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Microsoft SQL Server からデータを取得および表示する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロールと使用方法、<xref:System.Web.UI.WebControls.DetailsView>コントロールで選択した行の詳細を表示する、<xref:System.Web.UI.WebControls.GridView>と新しいレコードを挿入するためのフォームです。  
+  
+> [!NOTE]
+>  この例では、データ アクセスの宣言型の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ 最初に、データが内に表示されます、<xref:System.Web.UI.WebControls.GridView>制御、および選択した行の<xref:System.Web.UI.WebControls.GridView>にも表示されます、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>コントロールが別のデータを使用してソース コントロール; に関連付けられている 1 つ、<xref:System.Web.UI.WebControls.DetailsView>が、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティで、確実に選択した行の<xref:System.Web.UI.WebControls.GridView>は表示されます。  
+  
+ 自動的に生成された をクリックすると**挿入**のボタン、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>新しいレコードを挿入するために使用する別のユーザー インターフェイスを示しています。 この例では、レコードを挿入するストアド プロシージャを使用し、挿入された行の主キーを返します。 レコードを挿入する場合、<xref:System.Web.UI.WebControls.DetailsView>を自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>呼び出し、バインドされた列から値を使用して、コレクション、<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>メソッドです。 <xref:System.Web.UI.WebControls.DetailsView>から適切なパラメーターを推論できる<xref:System.Web.UI.WebControls.BoundField>オブジェクトとパラメーターを<xref:System.Web.UI.WebControls.TemplateField>ASP.NET 双方向データ バインディングの構文を使用する場合。 この例では、追加のパラメーターが追加された、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserting%2A>ストアド プロシージャによって返される主キーを処理するイベント ハンドラー。  
+  
+ 最後に、データがデータベースに挿入した後、<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnInserted%2A>を処理するイベント ハンドラーが呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>イベント、挿入された行の主キーの値が表示されたら、および`DataBind`のメソッド<xref:System.Web.UI.WebControls.GridView>データを更新するコントロールを明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection InsertParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection InsertParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.InsertParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ParameterCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用されているパラメーターを含むパラメーターのコレクションを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.InsertCommand" />プロパティから、<see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />によって使用されるパラメーターを格納している、<see cref="P:System.Web.UI.WebControls.SqlDataSource.InsertCommand" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>プロパティの取得、<xref:System.Web.UI.WebControls.SqlDataSourceView.InsertParameters%2A>プロパティに含まれています、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand%2A>プロパティには、パラメーター化 SQL クエリが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>コレクションには、いずれかが含まれます<xref:System.Web.UI.WebControls.Parameter>SQL 文字列のパラメーターのプレース ホルダーに対応するオブジェクト。  
+  
+ ADO.NET プロバイダーでは、パラメーターの順序によって、<xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters%2A>コレクションが重要であります。 <xref:System.Data.OleDb?displayProperty=nameWithType>と<xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダーがパラメーター化 SQL クエリで使用されるパラメーターの順序に従って、コレクション内のパラメーターを関連付けます。 <xref:System.Data.SqlClient?displayProperty=nameWithType>プロバイダーは、既定の ADO.NET プロバイダーは、の<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを SQL クエリ内のプレース ホルダーの別名を持つパラメーターの名前を照合することによって、コレクション内のパラメーターに関連付けます。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してデータベースにデータを挿入する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールと、単純な Web フォーム ページ。 データ テーブルの現在のデータが表示されます、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 内の値を入力して新しいレコードを追加することができます、<xref:System.Web.UI.WebControls.TextBox>コントロールをクリックして、**挿入**ボタンをクリックします。 ときに、**挿入**ボタンがクリックされると、指定した値が、データベースに挿入され、<xref:System.Web.UI.WebControls.DropDownList>コントロールが更新されます。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威には、ユーザー入力を受け付けるテキスト ボックスが含まれています。 し、値が、これは、潜在的なセキュリティの脅威も検証を伴わないパラメーターに挿入します。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+> [!NOTE]
+>  この例では、データ アクセスの宣言型の構文を使用する方法を示します。 マークアップではなくコードを使用してデータにアクセスする方法については、次を参照してください。 [Visual Studio でのデータにアクセスする](http://msdn.microsoft.com/library/9812a6d5-23d2-4427-8b98-70a2abfec3bc)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">状態を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</param>
+        <summary>永続化する必要がある <see cref="T:System.Web.UI.WebControls.SqlDataSource" /> コントロールのプロパティの状態を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.LoadViewState%2A>メソッドはの以前に保存したビューステートの読み込みに使用、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValuesParameterFormatString">
+      <MemberSignature Language="C#" Value="public string OldValuesParameterFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldValuesParameterFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("{0}")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に渡されるパラメーターの名前に適用する書式指定文字列、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Delete" />または<see cref="M:System.Web.UI.WebControls.SqlDataSource.Update" />メソッドです。</summary>
+        <value>いずれかの名前に適用される書式指定文字列を表す文字列<paramref name="oldValues" />に渡されるパラメーター、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Delete" />または<see cref="M:System.Web.UI.WebControls.SqlDataSource.Update" />メソッドです。 既定値が必要な場合は、"0"} を使用しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString%2A>書式指定文字列はによって識別されるものなど、主キーにのみ適用、`DataKeyNames`または delete で関連付けられたデータ バインド コントロールのプロパティ更新シナリオと場所、<xref:System.Web.UI.WebControls.SqlDataSourceView.ConflictDetection%2A>プロパティに設定されている、<xref:System.Web.UI.ConflictOptions.CompareAllValues>値と一連の`oldValues`は対応するデータのメソッドに渡されます。 各パラメーターの名前に、書式指定文字列を適用するこの例では、`oldValues`コレクション。  
+  
+ 2 つの一般的なシナリオが変わることがあります、<xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString%2A>プロパティには次のようにします。  
+  
+-   古い値と新しい値に更新プログラムを区別します。 ときに、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定されている、 <xref:System.Web.UI.ConflictOptions.CompareAllValues> 、パラメーターの値と元の新しい値の両方に追加する、<xref:System.Web.UI.WebControls.ObjectDataSource.UpdateParameters%2A>コレクション。 書式指定文字列をなしの各データ フィールドの同じ名前の 2 つのパラメーターが作成されます。 元の値パラメーターの名前を変更すると、競合を検出し、キーの値を比較する元のデータ ソースへのデータを比較できます。  
+  
+-   一部のビジュアル デザイナーでは、元の値とキーの特定の名前付けスキームを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>追加、<see cref="E:System.Web.UI.Page.LoadComplete" />イベント ハンドラーを<see cref="T:System.Web.UI.Page" />が含まれるコントロール、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーで追加される、<xref:System.Web.UI.WebControls.SqlDataSource>オブジェクトの更新プログラム、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>値。 値が更新された場合、<xref:System.Web.UI.IDataSource.DataSourceChanged>イベントが発生原因で、コントロールにバインドされている、<xref:System.Web.UI.WebControls.SqlDataSource>再バインドするコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public virtual string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.WebControls.DataProviderNameConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または .NET Framework データ プロバイダーの名前を設定、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールを使用して基になるデータ ソースに接続します。</summary>
+        <value>データ プロバイダーの名前を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />; を使用してそれ以外の場合、プロバイダーが設定されていない場合、Microsoft SQL Server 用の ADO.NET プロバイダー。 既定値は、Microsoft SQL Server の ADO.NET プロバイダーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework には、次のデータ プロバイダーが含まれています。  
+  
+-   <xref:System.Data.SqlClient?displayProperty=nameWithType>プロバイダーは、.NET Framework Data Provider for SQL Server の既定値です。  
+  
+-   <xref:System.Data.OleDb?displayProperty=nameWithType>プロバイダーは、.NET Framework Data Provider for OLE DB します。  
+  
+-   <xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダーは、.NET Framework Data Provider for ODBC です。  
+  
+-   <xref:System.Data.OracleClient?displayProperty=nameWithType>プロバイダーは、.NET Framework Data Provider for Oracle です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティがなど、アンマネージの ADO.NET プロバイダーの名前に設定しないで`MSDAORA`です。 詳細については、次を参照してください。 [SqlDataSource コントロールを使用してデータを選択する](http://msdn.microsoft.com/library/44623286-ff5a-4148-8a3c-85c56ed545eb)です。  
+  
+ 変更した場合、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティ、<xref:System.Web.UI.IDataSource.DataSourceChanged>イベントが発生原因で、コントロールにバインドされている、<xref:System.Web.UI.WebControls.SqlDataSource>再バインドします。  
+  
+ 使用可能なプロバイダーの一覧を指定する、`DbProviderFactories`のサブセクション、 `system.data` Machine.config ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、既定値を使用して SQL Server データベースに .NET Framework Data Provider 用の SQL Server に接続する方法、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、<xref:System.Data.SqlClient?displayProperty=nameWithType>です。 2 番目のコード例は、odbc の場合、.NET Framework Data Provider を使用して ODBC データベースに接続する方法を示します、<xref:System.Data.Odbc?displayProperty=nameWithType>です。  
+  
+ 次のコード例は、の既定のデータ プロバイダーを使用して SQL Server データベースに接続する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、<xref:System.Data.SqlClient?displayProperty=nameWithType>です。 ときに、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A>プロパティが明示的に設定されていない、既定のプロバイダーを使用します。 <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティは、プロバイダーに固有です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/CS/sql1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/VB/sql1vb.aspx#1)]  
+  
+ 前のコード例と同じは機能的には、次のコード例は、odbc の場合、.NET Framework Data Provider を使用して ODBC データベースに接続する方法を示します、<xref:System.Data.Odbc?displayProperty=nameWithType>です。 <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティが ODBC データベースへの接続に使用される ODBC データ ソース名 (DSN) の名前に設定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_1odbc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1odbc/CS/odbc1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_1odbc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1odbc/VB/odbc1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のビューステートを保存、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <returns>保存された状態を格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable Select (System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable Select(class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータ操作を要求するために使用できるオブジェクト。</param>
+        <summary>使用して、基になるデータベースからデータを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />内にある SQL 文字列とパラメーター、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />データ行のリスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが中に自動的に呼び出されます、<xref:System.Web.UI.Control.PreRender>ページ ライフ サイクルの段階です。 アタッチされているデータ バインドされたコントロールによって呼び出されます、<xref:System.Web.UI.WebControls.SqlDataSource>を介して制御、<xref:System.Web.UI.WebControls.DataBoundControl.DataSourceID%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceView.Select%2A>メソッドを返します、<xref:System.Data.DataView>オブジェクトの場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet>値。 <xref:System.Web.UI.WebControls.SqlDataSourceView.Select%2A>メソッドを返します、<xref:System.Data.IDataReader>オブジェクトの場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>値。 閉じる、<xref:System.Data.IDataReader>オブジェクト データの読み取りが完了したとき。  
+  
+ 前に、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnSelecting%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>イベント。 パラメーターの値を確認する前に処理を実行して、このイベントを処理することができます、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。  
+  
+ 後に、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作が完了すると、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnSelected%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Selected>イベント。 任意の戻り値およびエラー コードを調べ、後処理を実行するこのイベントを処理することができます。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.SqlDataSourceMode?displayProperty=nameWithType>キャッシュが有効になっていると、<xref:System.Web.UI.WebControls.SqlDataSource>オブジェクトからデータを取得し、の間にキャッシュにデータを保存、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。 キャッシュが作成、破棄、または更新の組み合わせで指定されているキャッシュの動作に基づいて、<xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータの取得されるたび、キャッシュを使用しません。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.SqlDataSourceMode?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>プロパティが指定されて、指定されたいずれかと、フィルター式が評価される<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティとその結果のフィルターの適用中にデータの一覧に、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>操作します。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドからデリゲートを<xref:System.Web.UI.WebControls.SqlDataSourceView.Select%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 データの取得操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView>ビルド、<xref:System.Data.Common.DbCommand>オブジェクトを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>テキストと、関連付けられたすべて<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>値、および実行し、<xref:System.Data.Common.DbCommand>基になるデータベースに対して。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次の例をプログラムによって呼び出す方法を示して、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドし、クエリの結果に基づいて値を設定します。 次の例では、Web コントロールの宣言型コードを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource.Select#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource.Select/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource.Select#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource.Select/VB/Default.aspx#1)]  
+  
+ 次の例をプログラムによって呼び出す方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドです。 <xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、整数を返します。 テキストを設定する整数の値が使用される、<xref:System.Web.UI.WebControls.Label>コントロールを表示するかどうかを判断し、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ [!code-csharp[System.Web.UI.WebControls.SqlDataSource.Select#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource.Select/CS/Default.aspx.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.SqlDataSource.Select#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource.Select/VB/Default.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.SqlDataSource" />オブジェクトは、基になるデータ ソースとの接続を確立できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCommand">
+      <MemberSignature Language="C#" Value="public string SelectCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、SQL 文字列、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールを使用して、基になるデータベースからデータを取得します。</summary>
+        <value>SQL 文字列またはストアド プロシージャの名前を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />を使用してデータを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティは、SQL クエリまたはストアド プロシージャの名前を表しで使用される、 <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A> SQL Server データベースからデータを取得します。 Select コマンドのアスタリスク (*) を使用して、すべての列を選択して、自動コード生成を使用して更新を実施するか、操作を削除する場合、以下のことを確認する場合列にはスペースが含まれていない、名前にします。  
+  
+ データベース製品ごとに使用する SQL が異なるため、SQL 文字列の構文は、現在使用している ADO.NET プロバイダーによって決まります。これは、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A> プロパティから識別できます。 SQL 文字列がパラメーター化されたクエリまたはコメントである場合は、パラメーターのプレースホルダーも現在使用している ADO.NET プロバイダーによって決まります。 たとえば、プロバイダーは、<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、パラメーターのプレース ホルダーは`'@parameterName'`します。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティから、データ ソースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.SelectCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  セキュリティのため、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティは格納されませんビュー ステートがします。 クライアント上のビュー ステートの内容をデコードできるため、データベース構造に関する機密情報を格納すると、ビューに状態可能性があります、情報漏えいの脆弱性。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>を ODBC 準拠のデータベースからデータを取得して表示で基本的な SQL クエリ テキスト、<xref:System.Web.UI.WebControls.GridView>コントロール。 2 番目のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>ストアド プロシージャの名前にテキストと<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure>値を Microsoft SQL Server データベースからデータを取得し、表示、<xref:System.Web.UI.WebControls.DropDownList>コントロール。  
+  
+ どちらの例では、明示的に呼び出す必要はありません、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドを介してデータ ソースに接続されているデータ バインド コントロールを制御するため、<xref:System.Web.UI.WebControls.DataBoundControl.DataSourceID%2A>プロパティは自動的に呼び出す、 <xref:System.Web.UI.WebControls.SqlDataSource.Select%2A> 中にメソッド<xref:System.Web.UI.Control.PreRender>フェーズ。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>を ODBC 準拠のデータベースからデータを取得して表示で基本的な SQL クエリ テキスト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_4odbc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_4odbc/CS/odbc4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_4odbc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_4odbc/VB/odbc4vb.aspx#1)]  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>ストアド プロシージャの名前にテキストと<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure>値を SQL Server データベースからデータを取得し、表示、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティから、データ ソースには、ストアド プロシージャがサポートされている場合、SQL クエリまたはストアド プロシージャの名前を指定できます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/CS/sql14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/VB/sql14vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCommandType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SqlDataSourceCommandType SelectCommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SqlDataSourceCommandType SelectCommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.SelectCommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかのテキスト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />プロパティは、SQL クエリまたはストアド プロシージャの名前。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.SqlDataSourceCommandType.Text" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.SelectCommandType%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>ストアド プロシージャの名前にテキストと<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType%2A>プロパティを<xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure>値は、Microsoft SQL Server データベースからデータを取得して表示するために、 <xref:System.Web.UI.WebControls.DropDownList>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/CS/sql14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_14sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_14sql/VB/sql14vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Selected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Selected" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Selected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceStatusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ取得操作が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Selected>データ取得操作が完了した後の値を確認するイベントを出力パラメーターです。 出力パラメーターは、<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>イベントに関連付けられているオブジェクト。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selecting">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceSelectingEventHandler Selecting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceSelectingEventHandler Selecting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Selecting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceSelectingEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの取得操作の前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>イベントは、パラメーターの値を検証する、または前に、のパラメーターの値を変更する、アプリケーションに固有の追加の初期化の操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、select 操作を実行します。 Select の引数は、<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs>イベントに関連付けられているオブジェクト。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection SelectParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection SelectParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.SelectParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ParameterCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用されているパラメーターを含むパラメーターのコレクションを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />プロパティから、<see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />オブジェクトに関連付けられている、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />によって使用されるパラメーターを格納している、<see cref="P:System.Web.UI.WebControls.SqlDataSource.SelectCommand" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティには、パラメーター化 SQL クエリが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクションには、いずれかが含まれます<xref:System.Web.UI.WebControls.Parameter>SQL 文字列のパラメーターのプレース ホルダーに対応するオブジェクト。  
+  
+ ADO.NET プロバイダーでは、パラメーターの順序によって、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクションが重要であります。 <xref:System.Data.OleDb?displayProperty=nameWithType>と<xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダーがパラメーター化 SQL クエリで使用されるパラメーターの順序に従って、コレクション内のパラメーターを関連付けます。 <xref:System.Data.SqlClient?displayProperty=nameWithType>プロバイダーは、既定の ADO.NET プロバイダーは、の<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを SQL クエリ内のプレース ホルダーの別名を持つパラメーターの名前を照合することによって、コレクション内のパラメーターに関連付けます。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>プロパティの取得、<xref:System.Web.UI.WebControls.SqlDataSourceView.SelectParameters%2A>プロパティに含まれています、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を設定して、Microsoft SQL Server で Northwind データベースからデータを取得する方法を示しています、 <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A> SQL クエリのプロパティです。 SQL クエリがパラメーター化と内のプレース ホルダー、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティが照合する、<xref:System.Web.UI.WebControls.ControlParameter>に追加されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コレクション。 <xref:System.Web.UI.WebControls.DropDownList>を制御する、<xref:System.Web.UI.WebControls.ControlParameter>にバインドされて、動作にどのようなフィルターが表示されるとおり、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ 使用できるパラメーターの他の種類については、次を参照してください。、<xref:System.Web.UI.WebControls.Parameter>クラスの概要です。  
+  
+> [!NOTE]
+>  パラメーターが使用する、WHERE 句で使用されるため、<xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters%2A>コード例では機能的にを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression%2A>と<xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_2sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_2sql/CS/sql2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_2sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_2sql/VB/sql2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortParameterName">
+      <MemberSignature Language="C#" Value="public string SortParameterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortParameterName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.SortParameterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアド プロシージャを使用してデータの取得が実行されるときに取得したデータの並べ替えに使用するストアド プロシージャ パラメーターの名前を設定します。</summary>
+        <value>ストアド プロシージャを使用してデータの取得が実行されるときに取得したデータの並べ替えに使用されるストアド プロシージャのパラメーターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSourceView.SortParameterName%2A>プロパティが評価されるだけで、SQL コマンドに含まれる、<xref:System.Web.UI.WebControls.SqlDataSourceView.SelectCommand%2A>プロパティは、ストアド プロシージャの名前。 この例では場合、<xref:System.Web.UI.WebControls.SqlDataSource.SortParameterName%2A>プロパティが設定されて、ストアド プロシージャの結果の並べ替えに使用されるパラメーターの名前が含まれています。  
+  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.ParameterPrefix%2A>プロパティが設定されて、前に付加、<xref:System.Web.UI.WebControls.SqlDataSourceView.SortParameterName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlCacheDependency">
+      <MemberSignature Language="C#" Value="public virtual string SqlCacheDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SqlCacheDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータベースと Microsoft SQL Server のキャッシュ依存のために使用するテーブルを示す、セミコロンで区切られた文字列を設定します。</summary>
+        <value>SQL Server のキャッシュの依存関係を使用するテーブルのどのデータベースを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールに基づくオプションの有効期限ポリシーをサポートしている、 <xref:System.Web.Caching.SqlCacheDependency> (データベース サーバーのサービスを構成する必要があります)、データ キャッシュのオブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency%2A>データベースと同じ形式で使用されるに従ってテーブルを識別する文字列、`@ Page`ディレクティブについては、ここで、文字列の最初の部分は、Microsoft SQL Server データベースへの接続文字列とそれに続くコロン区切り記号、および最後に、データベース テーブルの名前 (たとえば、 `"connectionstring1:table1"`)。 場合、<xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency%2A>プロパティが 1 つ以上のテーブルに依存、接続文字列とテーブル名のペアをセミコロンで区切られます (たとえば、 `"connectionstring1:table1";connectionstring2:table2"`)。  
+  
+> [!IMPORTANT]
+>  Microsoft Windows 認証ではクライアントの偽装を使用しているときに、最初のユーザー データにアクセスするときに、データがキャッシュされます。 別のユーザーは、同じデータを要求している場合は、データがキャッシュから取得されます。 データは、データへのユーザーのアクセスを確認するデータベースを別の呼び出しを行っては取得されません。 予定の場合、データにアクセスする 1 つ以上のユーザー、データベースのセキュリティ構成を検証するデータが取得されるたびにする、キャッシュを使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、SQL Server のキャッシュの依存関係を作成し、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 この例では、データベースは 120 秒ごとにポーリングされます。 中に、Northwind traders 社の従業員のデータ テーブルが変更された場合は時間、によってキャッシュされているすべてのデータ、<xref:System.Web.UI.WebControls.SqlDataSource>して表示して、制御、<xref:System.Web.UI.WebControls.GridView>によってコントロールが更新される、<xref:System.Web.UI.WebControls.SqlDataSource>次回データベースをポーリングを制御します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_23sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_23sql/CS/sql23cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_23sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_23sql/VB/sql23vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トラック状態の変更の表示、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />制御に変更を保存できるように、<see cref="T:System.Web.UI.StateBag" />コントロールのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.TrackViewState%2A>コントロールのビュー ステートの一部としてコントロールに対する変更の追跡と保存を開始する開始位置をマークするメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public int Update ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Update() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSource.Update" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新操作を使用して、実行、<see cref="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommand" />内にある SQL 文字列とパラメーター、<see cref="P:System.Web.UI.WebControls.SqlDataSource.UpdateParameters" />コレクション。</summary>
+        <returns>基になるデータベースで更新された行の数を表す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドを呼び出すときに自動的に、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>ポストバック中にデータが変更されている場合を制御します。 その他のコントロールが変更されているデータの<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>ポストバック中に、メソッドを明示的に呼び出すことができる、<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ 前に、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnUpdating%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Updating>イベント。 パラメーターの値を確認する前に処理を実行して、このイベントを処理することができます、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>操作します。  
+  
+ 後に、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>操作が完了すると、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnUpdated%2A>させるメソッドが呼び出された、<xref:System.Web.UI.WebControls.SqlDataSource.Updated>イベント。 任意の戻り値およびエラー コードを調べ、後処理を実行するこのイベントを処理することができます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドからデリゲートを<xref:System.Web.UI.WebControls.SqlDataSourceView.Update%2A>のメソッド、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 更新操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSourceView>ビルド、<xref:System.Data.Common.DbCommand>オブジェクトを使用して、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>テキストと、関連付けられたすべて<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>プロパティ、し、実行、<xref:System.Data.Common.DbCommand>基になるデータベースに対してオブジェクト。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Updating>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>内のデータを表示するコントロールを<xref:System.Web.UI.WebControls.DropDownList>制御および更新データときに、**送信**ボタンをクリックします。 2 番目のコード例は、Microsoft SQL Server データベースから取得されるデータを表示する方法を示します、<xref:System.Web.UI.WebControls.DropDownList>コントロールし、レコードを使用して、更新、<xref:System.Web.UI.WebControls.TextBox>コントロール。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>内のデータを表示するコントロールを<xref:System.Web.UI.WebControls.DropDownList>制御および更新データときに、**送信**ボタンをクリックします。 <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティはパラメーター化された SQL ステートメントと 2 つ<xref:System.Web.UI.WebControls.ControlParameter>パラメーターに追加されます、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクション。 ときに、**送信**ボタンをクリックして、<xref:System.Web.UI.WebControls.Button.OnClick%2A>を呼び出すイベントが処理される、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドに明示的にします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/CS/sql8cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/VB/sql8vb.aspx#1)]  
+  
+ 次のコード例では、SQL Server データベースから取得されるデータを表示する方法を示します、<xref:System.Web.UI.WebControls.DropDownList>コントロールし、レコードを使用して、更新、<xref:System.Web.UI.WebControls.TextBox>コントロール。 使用する方法の例を示しています、<xref:System.Data.Common.DbTransaction>を使用する場合は、トランザクション コンテキストを追加するオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールにデータを更新します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/CS/sql9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/VB/sql9vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.SqlDataSource" />基になるデータ ソースとの接続を確立することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommand">
+      <MemberSignature Language="C#" Value="public string UpdateCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdateCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、SQL 文字列、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロールを使用して基になるデータベース内のデータを更新します。</summary>
+        <value>SQL の文字列を<see cref="T:System.Web.UI.WebControls.SqlDataSource" />を使用してデータを更新します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>によって使用され、SQL クエリまたはストアド プロシージャの名前を表す、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドです。  
+  
+ データベース製品ごとに使用する SQL が異なるため、SQL 文字列の構文は、現在使用している ADO.NET プロバイダーによって決まります。これは、<xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A> プロパティから識別できます。 SQL 文字列がパラメーター化されたクエリまたはコメントである場合は、パラメーターのプレースホルダーも現在使用している ADO.NET プロバイダーによって決まります。 たとえば、プロバイダーは、<xref:System.Data.SqlClient?displayProperty=nameWithType>の既定のプロバイダーは、<xref:System.Web.UI.WebControls.SqlDataSource>クラス、パラメーターのプレース ホルダーは`'@parameterName'`します。 ただし、プロバイダーに設定されている場合、<xref:System.Data.Odbc?displayProperty=nameWithType>または<xref:System.Data.OleDb?displayProperty=nameWithType>、パラメーターのプレース ホルダーは`'?'`します。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティから、データ ソースには、ストアド プロシージャがサポートされている場合、SQL 文字列またはストアド プロシージャの名前を指定できます。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  セキュリティのため、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティは格納されませんビュー ステートがします。 クライアント上のビュー ステートの内容をデコードできるため、データベース構造に関する機密情報を格納すると、ビューに状態可能性があります、情報漏えいの脆弱性。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>制御および更新のデータを使用して Microsoft SQL Server データベース、<xref:System.Web.UI.WebControls.GridView>コントロール。 2 番目のコード例は、ODBC を使用してデータベースのデータを更新する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSource>制御および更新のデータを使用して SQL Server データベース、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.GridView>を自動的に入力、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>からパラメーターを推論するとき、コレクション、<xref:System.Web.UI.WebControls.BoundField>オブジェクトし、呼び出し、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドときに、**更新**リンクを編集可能な<xref:System.Web.UI.WebControls.GridView>が選択されています。 この例では、いくつかの後処理も含まれます: レコードが更新されると、通知の電子メールが送信されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_7sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7sql/CS/sql7cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_7sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7sql/VB/sql7vb.aspx#1)]  
+  
+ コードと同じように上記のコード例は、次のコード例は、ODBC を使用してデータベースのデータを更新する方法を示します、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.SqlDataSource.ProviderName%2A> For ODBC、ADO.NET プロバイダーに設定されている、 <xref:System.Data.Odbc?displayProperty=nameWithType>、および<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティが ODBC データ ソース名 (DSN) の名前に設定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_7odbc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7odbc/CS/odbc7cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_7odbc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7odbc/VB/odbc7vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCommandType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SqlDataSourceCommandType UpdateCommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SqlDataSourceCommandType UpdateCommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかのテキスト、<see cref="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommand" />プロパティは、SQL ステートメントまたはストアド プロシージャの名前。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandType" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.SqlDataSourceCommandType.Text" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommandType%2A>プロパティを委任する場合、<xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommandType%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Updated">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Updated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceStatusEventHandler Updated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Updated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceStatusEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作が完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Updated>更新操作が完了した後の値を確認するイベントを出力パラメーターです。 出力パラメーターは、<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>イベントに関連付けられているオブジェクト。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を表示し、ODBC データベースから取得されるデータを更新する方法を示しています、<xref:System.Web.UI.WebControls.GridView>コントロール。 レコードは正常に更新した後、<xref:System.Web.UI.WebControls.SqlDataSource.Updated>する処理後の手順を実行するには、電子メール通知の送信先にイベント ハンドラーでイベントが処理されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_7odbc#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7odbc/CS/odbc7cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_7odbc#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_7odbc/VB/odbc7vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection UpdateParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection UpdateParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSource.UpdateParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.ParameterCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用されているパラメーターを含むパラメーターのコレクションを取得、<see cref="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommand" />プロパティから、<see cref="T:System.Web.UI.WebControls.SqlDataSourceView" />に関連付けられているコントロール、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />によって使用されるパラメーターを格納している、<see cref="P:System.Web.UI.WebControls.SqlDataSource.UpdateCommand" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>プロパティには、パラメーター化 SQL クエリが含まれています、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクションには、いずれかが含まれます<xref:System.Web.UI.WebControls.Parameter>SQL 文字列のパラメーターのプレース ホルダーに対応するオブジェクト。  
+  
+ パラメーター名の影響を受ける、<xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString%2A>具体的には、名前を使用して指定したキーなどの主キーを識別する場合は、プロパティ、`DataKeyNames`プロパティ、または削除、データ バインド コントロールの更新シナリオと場所、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定されている、<xref:System.Web.UI.ConflictOptions.CompareAllValues>値と一連の`oldValues`は対応するデータのメソッドに渡されます。 各パラメーターの名前に、書式指定文字列を適用するこの例では、`oldValues`コレクション。  
+  
+ 内のパラメーターの順序、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクションは、ADO.NET プロバイダーによって、重要な可能性があります。 <xref:System.Data.OleDb?displayProperty=nameWithType>と<xref:System.Data.Odbc?displayProperty=nameWithType>プロバイダーがパラメーター化 SQL クエリで使用されるパラメーターの順序に従って、コレクション内のパラメーターを関連付けます。 <xref:System.Data.SqlClient?displayProperty=nameWithType>プロバイダーは、既定の ADO.NET プロバイダーは、の<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを SQL クエリ内のプレース ホルダーの別名を持つパラメーターの名前を照合することによって、コレクション内のパラメーターに関連付けます。 パラメーター化された SQL クエリとコマンドの詳細については、次を参照してください。 [SqlDataSource コントロールを使用してパラメーター](http://msdn.microsoft.com/library/403ff44a-dd0b-484d-968e-dcd1dcd4c295)です。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>プロパティの取得、<xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateParameters%2A>プロパティに含まれています、<xref:System.Web.UI.WebControls.SqlDataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Filtering>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.SqlDataSource>内のデータを表示するコントロールを<xref:System.Web.UI.WebControls.DropDownList>制御および更新データときに、**送信**ボタンをクリックします。 <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand%2A>パラメーター化された SQL ステートメントで、2 つのセットが<xref:System.Web.UI.WebControls.ControlParameter>パラメーターに追加されます、<xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters%2A>コレクション。 ときに、**送信**ボタンをクリックして、<xref:System.Web.UI.WebControls.Button.OnClick%2A>を呼び出すイベントが処理される、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>メソッドに明示的にします。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威には、ユーザー入力を受け付けるテキスト ボックスが含まれています。 し、値が、これは、潜在的なセキュリティの脅威も検証を伴わないパラメーターに挿入します。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/CS/sql8cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_8sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/VB/sql8vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Updating">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Updating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.SqlDataSourceCommandEventHandler Updating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.SqlDataSource.Updating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceCommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作の前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.SqlDataSource.Updating>イベントは、パラメーターの値を検証する、または前に、のパラメーターの値を変更する、アプリケーションに固有の追加の初期化の操作を実行する、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、更新操作を実行します。 基になるデータ ソースへの接続がまだ開いていないイベント ハンドラー デリゲートが呼び出されるとします。 そのため、直接はキャンセルできません、<xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>データベース操作を呼び出すことによって、<xref:System.Data.Common.DbCommand.Cancel%2A>メソッドを<xref:System.Data.Common.DbCommand>によって公開されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>オブジェクト。 ただしを設定して、データベースの操作をキャンセルできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>に`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+> [!IMPORTANT]
+>  値は、潜在的なセキュリティ上の脅威が検証を伴わないパラメーターに挿入されます。 使用して、<xref:System.Web.UI.WebControls.SqlDataSource.Updating>クエリを実行する前にパラメーター値を検証するイベントです。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Microsoft SQL Server データベースから取得されるデータを表示する方法を示します、<xref:System.Web.UI.WebControls.DropDownList>コントロールし、レコードを使用して、更新、<xref:System.Web.UI.WebControls.TextBox>コントロール。 使用する方法の例を示しています、<xref:System.Data.Common.DbTransaction>を使用する場合は、トランザクション コンテキストを追加するオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールにデータを更新します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/CS/sql9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_9sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_9sql/VB/sql9vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

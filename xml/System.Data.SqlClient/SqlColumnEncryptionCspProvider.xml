@@ -1,0 +1,110 @@
+<Type Name="SqlColumnEncryptionCspProvider" FullName="System.Data.SqlClient.SqlColumnEncryptionCspProvider">
+  <TypeSignature Language="C#" Value="public class SqlColumnEncryptionCspProvider : System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlColumnEncryptionCspProvider extends System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlColumnEncryptionCspProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Microsoft CAPI を使用するための CMK ストア プロバイダー実装と暗号化サービス プロバイダー (CSP) のベース[Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベース有効にしますストアに Always Encrypted の列マスター _ キーのキーを格納するなど、ハードウェア セキュリティ モジュール (HSM) を Microsoft CAPI をサポートする暗号化サービス プロバイダー (CSP)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlColumnEncryptionCspProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCspProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlColumnEncryptionCspProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptColumnEncryptionKey">
+      <MemberSignature Language="C#" Value="public override byte[] DecryptColumnEncryptionKey (string masterKeyPath, string encryptionAlgorithm, byte[] encryptedColumnEncryptionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] DecryptColumnEncryptionKey(string masterKeyPath, string encryptionAlgorithm, unsigned int8[] encryptedColumnEncryptionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCspProvider.DecryptColumnEncryptionKey(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="masterKeyPath" Type="System.String" />
+        <Parameter Name="encryptionAlgorithm" Type="System.String" />
+        <Parameter Name="encryptedColumnEncryptionKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="masterKeyPath">マスター キーのパス。</param>
+        <param name="encryptionAlgorithm">暗号化アルゴリズム。</param>
+        <param name="encryptedColumnEncryptionKey">暗号化された列暗号化キー。</param>
+        <summary>キーのパスとアルゴリズムで指定された非対称キーを使用して、特定の暗号化された値の暗号化を解除します。 キーのパスは、[ProviderName]/KeyIdentifier の形式になります。また、指定した CSP プロバイダーに格納されている非対称キーにする必要があります。 CEK の暗号化/暗号解除に使用される有効なアルゴリズムは、'RSA_OAEP' です。</summary>
+        <returns>暗号化が解除された列暗号化キー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptColumnEncryptionKey">
+      <MemberSignature Language="C#" Value="public override byte[] EncryptColumnEncryptionKey (string masterKeyPath, string encryptionAlgorithm, byte[] columnEncryptionKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] EncryptColumnEncryptionKey(string masterKeyPath, string encryptionAlgorithm, unsigned int8[] columnEncryptionKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlColumnEncryptionCspProvider.EncryptColumnEncryptionKey(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="masterKeyPath" Type="System.String" />
+        <Parameter Name="encryptionAlgorithm" Type="System.String" />
+        <Parameter Name="columnEncryptionKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="masterKeyPath">マスター キーのパス。</param>
+        <param name="encryptionAlgorithm">暗号化アルゴリズム。</param>
+        <param name="columnEncryptionKey">暗号化された列暗号化キー。</param>
+        <summary>キーのパスにより指定された非対称キーと、指定されたアルゴリズムを使用して、特定のプレーン テキストの列暗号化キーを暗号化します。 キーのパスは、[ProviderName]/KeyIdentifier の形式になります。また、指定した CSP プロバイダーに格納されている非対称キーにする必要があります。 CEK の暗号化/暗号解除に使用される有効なアルゴリズムは、'RSA_OAEP' です。</summary>
+        <returns>暗号化された列暗号化キー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public const string ProviderName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string ProviderName" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlColumnEncryptionCspProvider.ProviderName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダー名 'MSSQL_CSP_PROVIDER' の定数文字列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

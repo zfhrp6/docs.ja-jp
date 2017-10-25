@@ -1,0 +1,134 @@
+<Type Name="RepeaterCommandEventArgs" FullName="System.Web.UI.WebControls.RepeaterCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class RepeaterCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RepeaterCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeaterCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.Repeater.ItemCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.Repeater" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs>を参照してください、<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs.%23ctor%2A>コンス トラクターです。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています、<xref:System.Web.UI.WebControls.Repeater.ItemCommand>のイベント、<xref:System.Web.UI.WebControls.Repeater>です。 ボタンについての情報が表示されるたびに、<xref:System.Web.UI.WebControls.Button>内で制御、<xref:System.Web.UI.WebControls.Repeater>がクリックされました。  
+  
+ [!code-aspx-csharp[Classic RepeaterCommandEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterCommandEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeaterCommandEventArgs (System.Web.UI.WebControls.RepeaterItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.RepeaterItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterCommandEventArgs.#ctor(System.Web.UI.WebControls.RepeaterItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.RepeaterItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内の項目を表す、<see cref="T:System.Web.UI.WebControls.Repeater" />です。 <see cref="P:System.Web.UI.WebControls.RepeaterCommandEventArgs.Item" />プロパティがこの値に設定します。</param>
+        <param name="commandSource">コマンドのソース。 <see cref="P:System.Web.UI.WebControls.RepeaterCommandEventArgs.CommandSource" />プロパティがこの値に設定します。</param>
+        <param name="originalArgs">元のイベント引数。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeaterCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Item`|`item`パラメーター|  
+|`CommandSource`|`commandSource`パラメーター|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのソースを取得します。</summary>
+        <value>コマンドのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、コマンドの原因を特定します。  
+  
+   
+  
+## Examples  
+ 次の例では、元のコマンドを確認する方法、<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs.CommandSource%2A>プロパティです。  
+  
+ [!code-csharp[Classic RepeaterCommandEventArgs.CommandSource Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs.CommandSource Example/CS/source.cs#1)]
+ [!code-vb[Classic RepeaterCommandEventArgs.CommandSource Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs.CommandSource Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.RepeaterItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.RepeaterItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterCommandEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeaterItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />イベントに関連付けられています。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.RepeaterItem" />イベントに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのプロパティにアクセスを使用して、<xref:System.Web.UI.WebControls.RepeaterItem>このイベントに関連付けられています。  
+  
+   
+  
+## Examples  
+ 次の例では、インデックス番号を確認する方法、<xref:System.Web.UI.WebControls.RepeaterCommandEventArgs.Item%2A>プロパティです。  
+  
+ [!code-csharp[Classic RepeaterCommandEventArgs.Item Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs.Item Example/CS/source.cs#1)]
+ [!code-vb[Classic RepeaterCommandEventArgs.Item Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterCommandEventArgs.Item Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

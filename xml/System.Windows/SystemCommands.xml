@@ -1,0 +1,248 @@
+<Type Name="SystemCommands" FullName="System.Windows.SystemCommands">
+  <TypeSignature Language="C#" Value="public static class SystemCommands" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed SystemCommands extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SystemCommands" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ウィンドウの管理に共通するルーティング コマンドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のコマンド、<xref:System.Windows.SystemCommands>を管理する一般的なコマンドのセットを表すクラス、<xref:System.Windows.Window>です。  このクラスのプロパティを表す<xref:System.Windows.Input.RoutedCommand>オブジェクト、コマンドの実装ロジックを指定しないとします。 コマンドのロジックを用意してコマンドをバインドすることによって、<xref:System.Windows.Input.CommandBinding>です。  詳細については、次を参照してください。[する方法: フックを、コントロールにコマンドとコマンドのサポートがありません](~/docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)です。 または、<xref:System.Windows.SystemCommands>クラスが、指定されたロジックを実装する静的メソッドを提供<xref:System.Windows.Window>です。 静的メソッドを実装する型を渡すことができます<xref:System.Windows.Input.ICommand>デリゲートを受け入れるとします。 詳細については、例を参照してください、<xref:System.Windows.Input.InputBinding>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CloseWindow">
+      <MemberSignature Language="C#" Value="public static void CloseWindow (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CloseWindow(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SystemCommands.CloseWindow(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">ウィンドウを閉じます。</param>
+        <summary>指定されたウィンドウを閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseWindowCommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedCommand CloseWindowCommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedCommand CloseWindowCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SystemCommands.CloseWindowCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド ウィンドウを閉じるを取得します。</summary>
+        <value>コマンド ウィンドウを閉じるです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximizeWindow">
+      <MemberSignature Language="C#" Value="public static void MaximizeWindow (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MaximizeWindow(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SystemCommands.MaximizeWindow(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">最大化するウィンドウです。</param>
+        <summary>指定されたウィンドウを最大化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximizeWindowCommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedCommand MaximizeWindowCommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedCommand MaximizeWindowCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SystemCommands.MaximizeWindowCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを最大化するコマンドを取得します。</summary>
+        <value>このコマンドは、ウィンドウを最大表示です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimizeWindow">
+      <MemberSignature Language="C#" Value="public static void MinimizeWindow (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MinimizeWindow(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SystemCommands.MinimizeWindow(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">最小化ウィンドウです。</param>
+        <summary>指定されたウィンドウを最小化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimizeWindowCommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedCommand MinimizeWindowCommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedCommand MinimizeWindowCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SystemCommands.MinimizeWindowCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを最大化するコマンドを取得します。</summary>
+        <value>このコマンドは、ウィンドウを最大表示です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreWindow">
+      <MemberSignature Language="C#" Value="public static void RestoreWindow (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RestoreWindow(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SystemCommands.RestoreWindow(System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">復元するウィンドウです。</param>
+        <summary>指定した改ページを復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreWindowCommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedCommand RestoreWindowCommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedCommand RestoreWindowCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SystemCommands.RestoreWindowCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを復元するコマンドを取得します。</summary>
+        <value>ウィンドウを復元するコマンドです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSystemMenu">
+      <MemberSignature Language="C#" Value="public static void ShowSystemMenu (System.Windows.Window window, System.Windows.Point screenLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ShowSystemMenu(class System.Windows.Window window, valuetype System.Windows.Point screenLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SystemCommands.ShowSystemMenu(System.Windows.Window,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+        <Parameter Name="screenLocation" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="window">そのシステム メニューを表示するウィンドウです。</param>
+        <param name="screenLocation">システム メニューの場所です。</param>
+        <summary>指定したウィンドウの [システム] メニューを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSystemMenuCommand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedCommand ShowSystemMenuCommand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedCommand ShowSystemMenuCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SystemCommands.ShowSystemMenuCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム メニューを表示するコマンドを取得します。</summary>
+        <value>システム メニューを表示するコマンド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

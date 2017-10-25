@@ -1,0 +1,50 @@
+<Type Name="IDefineEvent" FullName="Microsoft.JScript.IDefineEvent">
+  <TypeSignature Language="C#" Value="public interface IDefineEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDefineEvent" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.IDefineEvent" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("D1A19408-BB6B-43eb-BB6F-E7CF6AF047D7")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティブ スクリプト ホストが必要とする追加の機能を定義します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AddEvent">
+      <MemberSignature Language="C#" Value="public object AddEvent (string code, int startLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddEvent(string code, int32 startLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDefineEvent.AddEvent(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.String" />
+        <Parameter Name="startLine" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="code">このコードは、イベントが含まれています。</param>
+        <param name="startLine">コードの開始行番号。</param>
+        <summary>アクティブ スクリプト ホストで使用すると、イベントを定義します。</summary>
+        <returns>イベントが正常に追加された場合。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>
